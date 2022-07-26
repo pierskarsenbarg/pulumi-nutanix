@@ -12,27 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package xyz
+package nutanix
 
 import (
 	"fmt"
 	"path/filepath"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/provider/pkg/version"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	shim "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
-	"github.com/pulumi/pulumi-xyz/provider/pkg/version"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
-	"github.com/terraform-providers/terraform-provider-xyz/xyz"
+	"github.com/terraform-providers/terraform-provider-nutanix/nutanix"
 )
 
 // all of the token components used below.
 const (
 	// This variable controls the default name of the package in the package
 	// registries for nodejs and python:
-	mainPkg = "xyz"
+	mainPkg = "nutanix"
 	// modules:
-	mainMod = "index" // the xyz module
+	mainMod = "index" // the nutanix module
 )
 
 // preConfigureCallback is called before the providerConfigure function of the underlying provider.
@@ -46,15 +46,15 @@ func preConfigureCallback(vars resource.PropertyMap, c shim.ResourceConfig) erro
 // Provider returns additional overlaid schema and metadata associated with the provider..
 func Provider() tfbridge.ProviderInfo {
 	// Instantiate the Terraform provider
-	p := shimv2.NewProvider(xyz.Provider())
+	p := shimv2.NewProvider(nutanix.Provider())
 
 	// Create a Pulumi provider mapping
 	prov := tfbridge.ProviderInfo{
 		P:    p,
-		Name: "xyz",
+		Name: "nutanix",
 		// DisplayName is a way to be able to change the casing of the provider
 		// name when being displayed on the Pulumi registry
-		DisplayName: "",
+		DisplayName: "Nutanix",
 		// The default publisher for all packages is Pulumi.
 		// Change this to your personal name (or a company name) that you
 		// would like to be shown in the Pulumi Registry if this package is published
@@ -70,14 +70,14 @@ func Provider() tfbridge.ProviderInfo {
 		// for use in Pulumi programs
 		// e.g https://github.com/org/pulumi-provider-name/releases/
 		PluginDownloadURL: "",
-		Description:       "A Pulumi package for creating and managing xyz cloud resources.",
+		Description:       "A Pulumi package for creating and managing nutanix cloud resources.",
 		// category/cloud tag helps with categorizing the package in the Pulumi Registry.
 		// For all available categories, see `Keywords` in
 		// https://www.pulumi.com/docs/guides/pulumi-packages/schema/#package.
-		Keywords:   []string{"pulumi", "xyz", "category/cloud"},
+		Keywords:   []string{"pulumi", "nutanix", "category/cloud"},
 		License:    "Apache-2.0",
 		Homepage:   "https://www.pulumi.com",
-		Repository: "https://github.com/pulumi/pulumi-xyz",
+		Repository: "https://github.com/pierskarsenbarg/pulumi-nutanix",
 		// The GitHub Org for the provider - defaults to `terraform-providers`. Note that this
 		// should match the TF provider module's require directive, not any replace directives.
 		GitHubOrg: "",
@@ -92,24 +92,133 @@ func Provider() tfbridge.ProviderInfo {
 			// },
 		},
 		PreConfigureCallback: preConfigureCallback,
-		Resources:            map[string]*tfbridge.ResourceInfo{
-			// Map each resource in the Terraform provider to a Pulumi type. Two examples
-			// are below - the single line form is the common case. The multi-line form is
-			// needed only if you wish to override types or other default options.
-			//
-			// "aws_iam_role": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "IamRole")}
-			//
-			// "aws_acm_certificate": {
-			// 	Tok: tfbridge.MakeResource(mainPkg, mainMod, "Certificate"),
-			// 	Fields: map[string]*tfbridge.SchemaInfo{
-			// 		"tags": {Type: tfbridge.MakeType(mainPkg, "Tags")},
-			// 	},
-			// },
+		Resources: map[string]*tfbridge.ResourceInfo{
+			"nutanix_access_control_policy": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "AccessControlPolicy")},
+			"nutanix_address_group":         {Tok: tfbridge.MakeResource(mainPkg, mainMod, "AddressGroup")},
+			"nutanix_category_key":          {Tok: tfbridge.MakeResource(mainPkg, mainMod, "CategoryKey")},
+			"nutanix_category_value":        {Tok: tfbridge.MakeResource(mainPkg, mainMod, "CategoryValue")},
+			"nutanix_floating_ip":           {Tok: tfbridge.MakeResource(mainPkg, mainMod, "FloatingIp")},
+			"nutanix_foundation_central_api_keys": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "FoundationCentralApiKeys"),
+				Docs: &tfbridge.DocInfo{
+					Markdown: []byte(" "), // no upstream docs
+				},
+			},
+			"nutanix_foundation_central_image_cluster": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "FoundationCentralImageCluster")},
+			"nutanix_foundation_image":                 {Tok: tfbridge.MakeResource(mainPkg, mainMod, "FoundationImage")},
+			"nutanix_foundation_image_nodes":           {Tok: tfbridge.MakeResource(mainPkg, mainMod, "FoundationImageNodes")},
+			"nutanix_foundation_ipmi_config":           {Tok: tfbridge.MakeResource(mainPkg, mainMod, "FoundationIpmiConfig")},
+			"nutanix_image":                            {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Image")},
+			"nutanix_karbon_cluster":                   {Tok: tfbridge.MakeResource(mainPkg, mainMod, "KarbonCluster")},
+			"nutanix_karbon_private_registry":          {Tok: tfbridge.MakeResource(mainPkg, mainMod, "KarbonPrivateRegistry")},
+			"nutanix_network_security_rule":            {Tok: tfbridge.MakeResource(mainPkg, mainMod, "NetworkSecurityRule")},
+			"nutanix_pbr":                              {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Pbr")},
+			"nutanix_project":                          {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Project")},
+			"nutanix_protection_rule":                  {Tok: tfbridge.MakeResource(mainPkg, mainMod, "ProtectionRule")},
+			"nutanix_recovery_plan":                    {Tok: tfbridge.MakeResource(mainPkg, mainMod, "RecoveryPlan")},
+			"nutanix_role":                             {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Role")},
+			"nutanix_service_group":                    {Tok: tfbridge.MakeResource(mainPkg, mainMod, "ServiceGroup")},
+			"nutanix_static_routes":                    {Tok: tfbridge.MakeResource(mainPkg, mainMod, "StaticRoutes")},
+			"nutanix_subnet":                           {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Subnet")},
+			"nutanix_user":                             {Tok: tfbridge.MakeResource(mainPkg, mainMod, "User")},
+			"nutanix_virtual_machine":                  {Tok: tfbridge.MakeResource(mainPkg, mainMod, "VirtualMachine")},
+			"nutanix_vpc":                              {Tok: tfbridge.MakeResource(mainPkg, mainMod, "Vpc")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
-			// Map each resource in the Terraform provider to a Pulumi function. An example
-			// is below.
-			// "aws_ami": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getAmi")},
+			"nutanix_access_control_policies": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getAccessControlPolicies")},
+			"nutanix_access_control_policy":   {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getAccessControlPolicy")},
+			"nutanix_address_group":           {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getAddressGroup")},
+			"nutanix_address_groups":          {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getAddressGroups")},
+			"nutanix_assert_helper": {
+				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getAssertHelper"),
+				Docs: &tfbridge.DocInfo{
+					Markdown: []byte(" "), // no upstream docs
+				},
+			},
+			"nutanix_category_key": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getCategoryKey")},
+			"nutanix_cluster":      {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getCluster")},
+			"nutanix_clusters":     {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getClusters")},
+			"nutanix_floating_ip":  {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFloatingIp")},
+			"nutanix_floating_ips": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFloatingIps")},
+			"nutanix_foundation_central_api_keys": {
+				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationCentralApiKeys"),
+				Docs: &tfbridge.DocInfo{
+					Markdown: []byte(" "), // no upstream docs
+				},
+			},
+			"nutanix_foundation_central_cluster_details": {
+				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationCentralClusterDetails"),
+				Docs: &tfbridge.DocInfo{
+					Markdown: []byte(" "), // no upstream docs
+				},
+			},
+			"nutanix_foundation_central_imaged_clusters_list": {
+				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationCentralImagedClustersList"),
+				Docs: &tfbridge.DocInfo{
+					Markdown: []byte(" "), // no upstream docs
+				},
+			},
+			"nutanix_foundation_central_imaged_node_details": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationCentralImagedNodeDetails")},
+			"nutanix_foundation_central_imaged_nodes_list": {
+				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationCentralImagedNodesList"),
+				Docs: &tfbridge.DocInfo{
+					Markdown: []byte(" "), // no upstream docs
+				},
+			},
+			"nutanix_foundation_central_list_api_keys": {
+				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationCentralListApiKeys"),
+				Docs: &tfbridge.DocInfo{
+					Markdown: []byte(" "), // no upstream docs
+				},
+			},
+			"nutanix_foundation_discover_nodes":       {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationDiscoverNodes")},
+			"nutanix_foundation_hypervisor_isos":      {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationHypervisorIsos")},
+			"nutanix_foundation_node_network_details": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationNodeNetworkDetails")},
+			"nutanix_foundation_nos_packages":         {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationNodPackages")},
+			"nutanix_host":                            {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getHost")},
+			"nutanix_hosts":                           {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getHosts")},
+			"nutanix_image":                           {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getImage")},
+			"nutanix_karbon_cluster":                  {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getKarbonCluster")},
+			"nutanix_karbon_cluster_kubeconfig":       {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getKarbonClusterKubeConfig")},
+			"nutanix_karbon_cluster_ssh":              {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getKarbonClusterSsh")},
+			"nutanix_karbon_clusters":                 {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getKarbonClusters")},
+			"nutanix_karbon_private_registries":       {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getKarbonPrivateRegistries")},
+			"nutanix_karbon_private_registry":         {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getKarbonPrivateRegistry")},
+			"nutanix_network_security_rule":           {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getNetworkSecurityRule")},
+			"nutanix_pbr":                             {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getPbr")},
+			"nutanix_pbrs":                            {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getPbrs")},
+			"nutanix_permission":                      {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getPermission")},
+			"nutanix_permissions":                     {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getPermissions")},
+			"nutanix_project":                         {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getProject")},
+			"nutanix_projects":                        {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getProjects")},
+			"nutanix_protection_rule":                 {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getProtectionRule")},
+			"nutanix_protection_rules":                {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getProtectionRules")},
+			"nutanix_recovery_plan":                   {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getRecoveryPlan")},
+			"nutanix_recovery_plans":                  {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getRecoveryPlans")},
+			"nutanix_role":                            {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getRole")},
+			"nutanix_roles":                           {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getRoles")},
+			"nutanix_service_group": {
+				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getServiceGroup"),
+				Docs: &tfbridge.DocInfo{
+					Markdown: []byte(" "), // no upstream docs
+				},
+			},
+			"nutanix_service_groups": {
+				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getServiceGroups"),
+				Docs: &tfbridge.DocInfo{
+					Markdown: []byte(" "), // no upstream docs
+				},
+			},
+			"nutanix_static_routes":   {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getStaticRoutes")},
+			"nutanix_subnet":          {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getSubnet")},
+			"nutanix_subnets":         {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getSubnets")},
+			"nutanix_user":            {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getUser")},
+			"nutanix_users":           {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getUsers")},
+			"nutanix_user_group":      {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getUserGroup")},
+			"nutanix_user_groups":     {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getUserGroups")},
+			"nutanix_virtual_machine": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getVirtualMachine")},
+			"nutanix_vpc":             {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getVpc")},
+			"nutanix_vpcs":            {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getVpcs")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
 			// List any npm dependencies and their versions
