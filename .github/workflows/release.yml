@@ -160,7 +160,7 @@ jobs:
         - "3.7"
   publish:
     name: publish
-    needs: prerequisites
+    needs: build_sdk
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
@@ -197,7 +197,7 @@ jobs:
         - "3.7"
   publish_sdk:
     name: publish_sdk
-    needs: build_sdk
+    needs: publish
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
