@@ -74,7 +74,7 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: ${{ matrix.language  }}-sdk.tar.gz
+        name: ${{ matrix.language  }}.tar.gz
         path: ${{ github.workspace}}/sdk/${{ matrix.language }}.tar.gz
     strategy:
       fail-fast: true
@@ -236,21 +236,21 @@ jobs:
     - name: Download python SDK
       uses: actions/download-artifact@v2
       with:
-        name: python-sdk.tar.gz
+        name: python.tar.gz
         path: ${{ github.workspace}}/sdk/
     - name: Uncompress python SDK
       run: tar -zxf ${{github.workspace}}/sdk/python.tar.gz -C ${{github.workspace}}/sdk/python
     - name: Download dotnet SDK
       uses: actions/download-artifact@v2
       with:
-        name: dotnet-sdk.tar.gz
+        name: dotnet.tar.gz
         path: ${{ github.workspace}}/sdk/
     - name: Uncompress dotnet SDK
       run: tar -zxf ${{github.workspace}}/sdk/dotnet.tar.gz -C ${{github.workspace}}/sdk/dotnet
     - name: Download nodejs SDK
       uses: actions/download-artifact@v2
       with:
-        name: nodejs-sdk.tar.gz
+        name: nodejs.tar.gz
         path: ${{ github.workspace}}/sdk/
     - name: Uncompress nodejs SDK
       run: tar -zxf ${{github.workspace}}/sdk/nodejs.tar.gz -C ${{github.workspace}}/sdk/nodejs
