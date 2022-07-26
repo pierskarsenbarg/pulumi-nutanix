@@ -1,4 +1,4 @@
-# Foo Resource Provider
+# Nutanix Resource Provider
 
 The Foo Resource Provider lets you manage [Foo](http://example.com) resources.
 

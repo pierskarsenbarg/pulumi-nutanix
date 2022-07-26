@@ -122,7 +122,7 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-          - 3.1.301
+          - 6.0.302
         goversion:
           - 1.17.x
         language:
