@@ -357,13 +357,13 @@ jobs:
   #       pythonversion:
   #       - "3.7"
 name: main
-# "on":
-#   push:
-#     branches:
-#     - main
-#     paths-ignore:
-#     - CHANGELOG.md
-#     tags-ignore:
-#     - v*
-#     - sdk/*
-#     - '**'
+"on":
+  push:
+    branches:
+    - main
+    paths-ignore:
+    - CHANGELOG.md
+    tags-ignore:
+    - v*
+    - sdk/*
+    - '**'
