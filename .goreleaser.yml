@@ -5,7 +5,7 @@ before:
   hooks:
   - make tfgen
 builds:
-- binary: pulumi-resource-scaleway
+- binary: pulumi-resource-nutanix
   dir: provider
   env:
   - CGO_ENABLED=0
@@ -20,11 +20,11 @@ builds:
   ldflags:
   - -s
   - -w
-  - -X github.com/jaxxstorm/pulumi-scaleway/provider/pkg/version.Version={{.Tag}}
+  - -X github.com/pierskarsenbarg/pulumi-nutanix/provider/pkg/version.Version={{.Tag}}
   main: ./cmd/pulumi-resource-scaleway/
 changelog:
   skip: true
 release:
-  disable: false
+  prerelease: auto
 snapshot:
   name_template: '{{ .Tag }}-SNAPSHOT'
