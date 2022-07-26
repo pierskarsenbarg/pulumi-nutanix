@@ -126,15 +126,7 @@ jobs:
       uses: jaxxstorm/action-install-gh-release@v1.2.0
       with:
         repo: mikhailshilkov/schema-tools
-    - name: Set env
-      run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-    - name: Test
-      run: |
-        echo $RELEASE_VERSION
-        echo ${{ env.RELEASE_VERSION }}
-    - name: Testing pulumictl
-      run: |
-        pulumictl get version -p python
+    
     # - name: Build tfgen & provider binaries
     #   run: make provider
     # - if: github.event_name == 'pull_request'
