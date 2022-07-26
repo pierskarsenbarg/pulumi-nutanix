@@ -247,6 +247,8 @@ jobs:
       with:
         name: dotnet.tar.gz
         path: ${{ github.workspace}}/sdk/
+    - name: Create dotnet directory
+      run: mkdir -p ${{github.workspace}}/sdk/dotnet
     - name: Uncompress dotnet SDK
       run: tar -zxf ${{github.workspace}}/sdk/dotnet.tar.gz -C ${{github.workspace}}/sdk/dotnet
     - name: Download nodejs SDK
@@ -254,6 +256,8 @@ jobs:
       with:
         name: nodejs.tar.gz
         path: ${{ github.workspace}}/sdk/
+    - name: Create nodejs directory
+      run: mkdir -p ${{github.workspace}}/sdk/nodejs
     - name: Uncompress nodejs SDK
       run: tar -zxf ${{github.workspace}}/sdk/nodejs.tar.gz -C ${{github.workspace}}/sdk/nodejs
     - run: python -m pip install pip twine
