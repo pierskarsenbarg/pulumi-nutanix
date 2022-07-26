@@ -165,7 +165,7 @@ jobs:
         - "3.7"
   publish:
     name: publish
-    needs: test
+    needs: prerequisites
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
