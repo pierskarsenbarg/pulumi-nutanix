@@ -238,6 +238,8 @@ jobs:
       with:
         name: python.tar.gz
         path: ${{ github.workspace}}/sdk/
+    - name: Create python directory
+      run: mkdir -p ${{github.workspace}}/sdk/python
     - name: Uncompress python SDK
       run: tar -zxf ${{github.workspace}}/sdk/python.tar.gz -C ${{github.workspace}}/sdk/python
     - name: Download dotnet SDK
