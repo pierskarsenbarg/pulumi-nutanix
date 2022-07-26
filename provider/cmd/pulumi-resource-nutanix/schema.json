@@ -11,6 +11,7 @@
     "license": "Apache-2.0",
     "attribution": "This Pulumi package is based on the [`nutanix` Terraform Provider](https://github.com/terraform-providers/terraform-provider-nutanix).",
     "repository": "https://github.com/pierskarsenbarg/pulumi-nutanix",
+    "pluginDownloadURL": "https://github.com/pierskarsenbarg/pulumi-nutanix/releases/download/v${VERSION}",
     "publisher": "Pulumi",
     "meta": {
         "moduleFormat": "(.*)(?:/[^/]*)"
