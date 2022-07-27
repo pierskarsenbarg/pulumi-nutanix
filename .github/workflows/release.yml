@@ -268,8 +268,7 @@ jobs:
     - name: Publish Nuget package
       env: 
         NUGET_PUBLISH_KEY: ${{ secrets.NUGET_PUBLISH_KEY }}
-      run: find "${SOURCE_ROOT}/sdk/dotnet/bin/Debug/" -name 'PiersKarsenbarg.*.nupkg' \
-            -exec dotnet nuget push -k "${NUGET_PUBLISH_KEY}" -s https://api.nuget.org/v3/index.json {} ';'
+      run: find "${SOURCE_ROOT}/sdk/dotnet/bin/Debug/" -name 'PiersKarsenbarg.*.nupkg' -exec dotnet nuget push -k "${NUGET_PUBLISH_KEY}" -s https://api.nuget.org/v3/index.json {} ';'
     strategy:
       fail-fast: true
       matrix:
