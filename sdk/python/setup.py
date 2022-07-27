@@ -46,7 +46,7 @@ setup(name='pulumi_nutanix',
           'install': InstallPluginCommand,
       },
       keywords='pulumi nutanix category/cloud',
-      url='https://www.pulumi.com',
+      url='https://github.com/pierskarsenbarg/pulumi-nutanix',
       project_urls={
           'Repository': 'https://github.com/pierskarsenbarg/pulumi-nutanix'
       },

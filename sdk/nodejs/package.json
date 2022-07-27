@@ -7,7 +7,7 @@
         "nutanix",
         "category/cloud"
     ],
-    "homepage": "https://www.pulumi.com",
+    "homepage": "https://github.com/pierskarsenbarg/pulumi-nutanix",
     "repository": "https://github.com/pierskarsenbarg/pulumi-nutanix",
     "license": "Apache-2.0",
     "scripts": {
