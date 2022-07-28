@@ -46,10 +46,10 @@ dotnet add package PiersKarsenbarg.Nutanix
 
 ## Configuration
 
-The following configuration points are available for the `foo` provider:
+The following configuration points are available for the `nutanix` provider:
 
-- `foo:apiKey` (environment: `FOO_API_KEY`) - the API key for `foo`
-- `foo:region` (environment: `FOO_REGION`) - the region in which to deploy resources
+- `nutanix:apiKey` (environment: `NUTANIX_API_KEY`) - the API key for `nutanix`
+- `nutanix:region` (environment: `NUTANIX_REGION`) - the region in which to deploy resources
 
 ## Reference
 
