@@ -24,6 +24,6 @@
     },
     "pulumi": {
         "resource": true,
-        "pluginDownloadURL": "https://github.com/pierskarsenbarg/pulumi-nutanix/releases/download/v${VERSION}"
+        "pluginDownloadURL": "https://github.com/pierskarsenbarg/pulumi-nutanix/releases/download/${VERSION}"
     }
 }
