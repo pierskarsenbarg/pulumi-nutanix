@@ -37,7 +37,7 @@ import * as utilities from "./utilities";
  * ### Usage with service and address groups
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as pulumi_nutanix from "@pierskarsenbarg/pulumi-nutanix";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const service1 = new nutanix.ServiceGroup("service1", {
  *     description: "test",

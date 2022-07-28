@@ -12,7 +12,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as pulumi_nutanix from "@pierskarsenbarg/pulumi-nutanix";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const subnet = new nutanix.Subnet("subnet", {
  *     clusterUuid: "<YOUR_CLUSTER_ID>",

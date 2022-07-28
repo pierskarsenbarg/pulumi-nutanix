@@ -1,5 +1,5 @@
 {
-    "name": "@pierskarsenbarg/pulumi-nutanix",
+    "name": "@pierskarsenbarg/nutanix",
     "version": "${VERSION}",
     "description": "A Pulumi package for creating and managing nutanix cloud resources.",
     "keywords": [

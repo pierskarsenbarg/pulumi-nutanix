@@ -11,7 +11,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as pulumi_nutanix from "@pierskarsenbarg/pulumi-nutanix";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const test_category_key = new nutanix.CategoryKey("test-category-key", {description: "App Support Category Key"});
  * const test = new nutanix.CategoryValue("test", {

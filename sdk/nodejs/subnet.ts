@@ -12,8 +12,8 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
  * import * as nutanix from "@pulumi/nutanix";
- * import * as pulumi_nutanix from "@pierskarsenbarg/pulumi-nutanix";
  *
  * const clusters = nutanix.getClusters({
  *     metadata: {

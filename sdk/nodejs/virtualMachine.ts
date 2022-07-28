@@ -12,8 +12,8 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
  * import * as nutanix from "@pulumi/nutanix";
- * import * as pulumi_nutanix from "@pierskarsenbarg/pulumi-nutanix";
  *
  * const clusters = nutanix.getClusters({});
  * const vm1 = new nutanix.VirtualMachine("vm1", {
@@ -30,8 +30,8 @@ import * as utilities from "./utilities";
  * ### With Storage Config
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
  * import * as nutanix from "@pulumi/nutanix";
- * import * as pulumi_nutanix from "@pierskarsenbarg/pulumi-nutanix";
  *
  * const clusters = nutanix.getClusters({});
  * const vm = new nutanix.VirtualMachine("vm", {
