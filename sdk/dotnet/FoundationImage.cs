@@ -16,28 +16,28 @@ namespace PiersKarsenbarg.Nutanix
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var nos_image = new Nutanix.FoundationImage("nos-image", new()
     ///     {
-    ///         var nos_image = new Nutanix.FoundationImage("nos-image", new Nutanix.FoundationImageArgs
-    ///         {
-    ///             Filename = "nos_image.tar",
-    ///             InstallerType = "nos",
-    ///             Source = "../../../files/nutanix_installer_x86_64.tar",
-    ///         });
-    ///         var hypervisor_image = new Nutanix.FoundationImage("hypervisor-image", new Nutanix.FoundationImageArgs
-    ///         {
-    ///             Filename = "esx_image.iso",
-    ///             InstallerType = "esx",
-    ///             Source = "../../../files/VMware-Installer.x86_64.iso",
-    ///         });
-    ///     }
+    ///         Filename = "nos_image.tar",
+    ///         InstallerType = "nos",
+    ///         Source = "../../../files/nutanix_installer_x86_64.tar",
+    ///     });
     /// 
-    /// }
+    ///     var hypervisor_image = new Nutanix.FoundationImage("hypervisor-image", new()
+    ///     {
+    ///         Filename = "esx_image.iso",
+    ///         InstallerType = "esx",
+    ///         Source = "../../../files/VMware-Installer.x86_64.iso",
+    ///     });
+    /// 
+    /// });
     /// ```
     /// ## lifecycle
     /// 
@@ -46,23 +46,41 @@ namespace PiersKarsenbarg.Nutanix
     /// See detailed information in [Nutanix Foundation Image](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjM0MDQ-upload-hypervisor-or-aos-image-to-foundation).
     /// </summary>
     [NutanixResourceType("nutanix:index/foundationImage:FoundationImage")]
-    public partial class FoundationImage : Pulumi.CustomResource
+    public partial class FoundationImage : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// - (Required) Name of installer file to be kept in foundation vm.
+        /// </summary>
         [Output("filename")]
         public Output<string> Filename { get; private set; } = null!;
 
+        /// <summary>
+        /// - If hypervisor ISO is in whitelist.
+        /// </summary>
         [Output("inWhitelist")]
         public Output<bool> InWhitelist { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
+        /// </summary>
         [Output("installerType")]
         public Output<string> InstallerType { get; private set; } = null!;
 
+        /// <summary>
+        /// - md5sum of the ISO.
+        /// </summary>
         [Output("md5sum")]
         public Output<string> Md5sum { get; private set; } = null!;
 
+        /// <summary>
+        /// - file location in foundation vm
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) Complete path to the file in machine where the .tf  files runs.
+        /// </summary>
         [Output("source")]
         public Output<string> Source { get; private set; } = null!;
 
@@ -111,44 +129,73 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class FoundationImageArgs : Pulumi.ResourceArgs
+    public sealed class FoundationImageArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Required) Name of installer file to be kept in foundation vm.
+        /// </summary>
         [Input("filename", required: true)]
         public Input<string> Filename { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
+        /// </summary>
         [Input("installerType", required: true)]
         public Input<string> InstallerType { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) Complete path to the file in machine where the .tf  files runs.
+        /// </summary>
         [Input("source", required: true)]
         public Input<string> Source { get; set; } = null!;
 
         public FoundationImageArgs()
         {
         }
+        public static new FoundationImageArgs Empty => new FoundationImageArgs();
     }
 
-    public sealed class FoundationImageState : Pulumi.ResourceArgs
+    public sealed class FoundationImageState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Required) Name of installer file to be kept in foundation vm.
+        /// </summary>
         [Input("filename")]
         public Input<string>? Filename { get; set; }
 
+        /// <summary>
+        /// - If hypervisor ISO is in whitelist.
+        /// </summary>
         [Input("inWhitelist")]
         public Input<bool>? InWhitelist { get; set; }
 
+        /// <summary>
+        /// - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
+        /// </summary>
         [Input("installerType")]
         public Input<string>? InstallerType { get; set; }
 
+        /// <summary>
+        /// - md5sum of the ISO.
+        /// </summary>
         [Input("md5sum")]
         public Input<string>? Md5sum { get; set; }
 
+        /// <summary>
+        /// - file location in foundation vm
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - (Required) Complete path to the file in machine where the .tf  files runs.
+        /// </summary>
         [Input("source")]
         public Input<string>? Source { get; set; }
 
         public FoundationImageState()
         {
         }
+        public static new FoundationImageState Empty => new FoundationImageState();
     }
 }

@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve all the vpcs.
@@ -18,23 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetVpcs(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetVpcs(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetVpcs(ctx *pulumi.Context, args *GetVpcsArgs, opts ...pulumi.InvokeOption) (*GetVpcsResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVpcsResult
 	err := ctx.Invoke("nutanix:index/getVpcs:getVpcs", args, &rv, opts...)
 	if err != nil {
@@ -45,15 +49,19 @@ func GetVpcs(ctx *pulumi.Context, args *GetVpcsArgs, opts ...pulumi.InvokeOption
 
 // A collection of arguments for invoking getVpcs.
 type GetVpcsArgs struct {
+	// - The vpc kind metadata.
 	Metadatas []GetVpcsMetadata `pulumi:"metadatas"`
 }
 
 // A collection of values returned by getVpcs.
 type GetVpcsResult struct {
-	ApiVersion string          `pulumi:"apiVersion"`
-	Entities   []GetVpcsEntity `pulumi:"entities"`
+	// version of the API
+	ApiVersion string `pulumi:"apiVersion"`
+	// List of VPCs
+	Entities []GetVpcsEntity `pulumi:"entities"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string            `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// - The vpc kind metadata.
 	Metadatas []GetVpcsMetadata `pulumi:"metadatas"`
 }
 
@@ -72,6 +80,7 @@ func GetVpcsOutput(ctx *pulumi.Context, args GetVpcsOutputArgs, opts ...pulumi.I
 
 // A collection of arguments for invoking getVpcs.
 type GetVpcsOutputArgs struct {
+	// - The vpc kind metadata.
 	Metadatas GetVpcsMetadataArrayInput `pulumi:"metadatas"`
 }
 
@@ -94,10 +103,18 @@ func (o GetVpcsResultOutput) ToGetVpcsResultOutputWithContext(ctx context.Contex
 	return o
 }
 
+func (o GetVpcsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVpcsResult] {
+	return pulumix.Output[GetVpcsResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// version of the API
 func (o GetVpcsResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVpcsResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// List of VPCs
 func (o GetVpcsResultOutput) Entities() GetVpcsEntityArrayOutput {
 	return o.ApplyT(func(v GetVpcsResult) []GetVpcsEntity { return v.Entities }).(GetVpcsEntityArrayOutput)
 }
@@ -107,6 +124,7 @@ func (o GetVpcsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVpcsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - The vpc kind metadata.
 func (o GetVpcsResultOutput) Metadatas() GetVpcsMetadataArrayOutput {
 	return o.ApplyT(func(v GetVpcsResult) []GetVpcsMetadata { return v.Metadatas }).(GetVpcsMetadataArrayOutput)
 }

@@ -7,87 +7,64 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		clusters, err := nutanix.GetClusters(ctx, map[string]interface{}{
-// 			"metadata": map[string]interface{}{
-// 				"length": 2,
-// 			},
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		ctx.Export("cluster", clusters.Entities[0].Metadata.Uuid)
-// 		_, err = nutanix.NewSubnet(ctx, "next-iac-managed", &nutanix.SubnetArgs{
-// 			ClusterUuid:      pulumi.String(clusters.Entities[0].Metadata.Uuid),
-// 			VlanId:           pulumi.Int(101),
-// 			SubnetType:       pulumi.String("VLAN"),
-// 			PrefixLength:     pulumi.Int(20),
-// 			DefaultGatewayIp: pulumi.String("10.5.80.1"),
-// 			SubnetIp:         pulumi.String("10.5.80.0"),
-// 			DhcpDomainNameServerLists: pulumi.StringArray{
-// 				pulumi.String("8.8.8.8"),
-// 				pulumi.String("4.2.2.2"),
-// 			},
-// 			DhcpDomainSearchLists: pulumi.StringArray{
-// 				pulumi.String("nutanix.com"),
-// 				pulumi.String("eng.nutanix.com"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
 type Subnet struct {
 	pulumi.CustomResourceState
 
 	// The version of the API.
-	ApiVersion                    pulumi.StringOutput       `pulumi:"apiVersion"`
-	AvailabilityZoneReference     pulumi.StringMapOutput    `pulumi:"availabilityZoneReference"`
-	Categories                    SubnetCategoryArrayOutput `pulumi:"categories"`
-	ClusterName                   pulumi.StringOutput       `pulumi:"clusterName"`
-	ClusterUuid                   pulumi.StringPtrOutput    `pulumi:"clusterUuid"`
-	DefaultGatewayIp              pulumi.StringOutput       `pulumi:"defaultGatewayIp"`
-	Description                   pulumi.StringOutput       `pulumi:"description"`
-	DhcpDomainNameServerLists     pulumi.StringArrayOutput  `pulumi:"dhcpDomainNameServerLists"`
-	DhcpDomainSearchLists         pulumi.StringArrayOutput  `pulumi:"dhcpDomainSearchLists"`
-	DhcpOptions                   pulumi.StringMapOutput    `pulumi:"dhcpOptions"`
-	DhcpServerAddress             pulumi.StringMapOutput    `pulumi:"dhcpServerAddress"`
-	DhcpServerAddressPort         pulumi.IntOutput          `pulumi:"dhcpServerAddressPort"`
-	EnableNat                     pulumi.BoolOutput         `pulumi:"enableNat"`
-	IpConfigPoolListRanges        pulumi.StringArrayOutput  `pulumi:"ipConfigPoolListRanges"`
-	IsExternal                    pulumi.BoolOutput         `pulumi:"isExternal"`
-	Metadata                      pulumi.StringMapOutput    `pulumi:"metadata"`
-	Name                          pulumi.StringOutput       `pulumi:"name"`
-	NetworkFunctionChainReference pulumi.StringMapOutput    `pulumi:"networkFunctionChainReference"`
-	OwnerReference                pulumi.StringMapOutput    `pulumi:"ownerReference"`
-	PrefixLength                  pulumi.IntOutput          `pulumi:"prefixLength"`
-	ProjectReference              pulumi.StringMapOutput    `pulumi:"projectReference"`
-	State                         pulumi.StringOutput       `pulumi:"state"`
-	SubnetIp                      pulumi.StringOutput       `pulumi:"subnetIp"`
-	SubnetType                    pulumi.StringOutput       `pulumi:"subnetType"`
-	VlanId                        pulumi.IntOutput          `pulumi:"vlanId"`
-	VpcReferenceUuid              pulumi.StringOutput       `pulumi:"vpcReferenceUuid"`
-	VswitchName                   pulumi.StringOutput       `pulumi:"vswitchName"`
+	ApiVersion pulumi.StringOutput `pulumi:"apiVersion"`
+	// - (Optional) The reference to a availability_zone.
+	AvailabilityZoneReference pulumi.StringMapOutput `pulumi:"availabilityZoneReference"`
+	// - (Optional) The categories of the resource.
+	Categories  SubnetCategoryArrayOutput `pulumi:"categories"`
+	ClusterName pulumi.StringOutput       `pulumi:"clusterName"`
+	// - (Required) The UUID of the cluster.
+	ClusterUuid pulumi.StringPtrOutput `pulumi:"clusterUuid"`
+	// - (Optional) Default gateway IP address.
+	DefaultGatewayIp pulumi.StringOutput `pulumi:"defaultGatewayIp"`
+	// - (Optional) A description for subnet.
+	Description               pulumi.StringOutput      `pulumi:"description"`
+	DhcpDomainNameServerLists pulumi.StringArrayOutput `pulumi:"dhcpDomainNameServerLists"`
+	// - (Optional).
+	DhcpDomainSearchLists pulumi.StringArrayOutput `pulumi:"dhcpDomainSearchLists"`
+	// - (Optional) Spec for defining DHCP options.
+	DhcpOptions pulumi.StringMapOutput `pulumi:"dhcpOptions"`
+	// - (Optional) Host address.
+	DhcpServerAddress pulumi.StringMapOutput `pulumi:"dhcpServerAddress"`
+	// - (Optional) Port Number.
+	DhcpServerAddressPort  pulumi.IntOutput         `pulumi:"dhcpServerAddressPort"`
+	EnableNat              pulumi.BoolOutput        `pulumi:"enableNat"`
+	IpConfigPoolListRanges pulumi.StringArrayOutput `pulumi:"ipConfigPoolListRanges"`
+	IsExternal             pulumi.BoolOutput        `pulumi:"isExternal"`
+	// - (Required) The subnet kind metadata.
+	Metadata pulumi.StringMapOutput `pulumi:"metadata"`
+	// - (Optional) Subnet name (Readonly).
+	Name pulumi.StringOutput `pulumi:"name"`
+	// - (Optional) The reference to a network_function_chain.
+	NetworkFunctionChainReference pulumi.StringMapOutput `pulumi:"networkFunctionChainReference"`
+	// - (Optional) The reference to a user.
+	OwnerReference pulumi.StringMapOutput `pulumi:"ownerReference"`
+	// - (Optional).
+	PrefixLength pulumi.IntOutput `pulumi:"prefixLength"`
+	// - (Optional) The reference to a project.
+	ProjectReference pulumi.StringMapOutput `pulumi:"projectReference"`
+	// - The state of the subnet.
+	State pulumi.StringOutput `pulumi:"state"`
+	// - (Optional) Subnet IP address.
+	SubnetIp pulumi.StringOutput `pulumi:"subnetIp"`
+	// - (Optional).
+	SubnetType pulumi.StringOutput `pulumi:"subnetType"`
+	// - (Optional).
+	VlanId           pulumi.IntOutput    `pulumi:"vlanId"`
+	VpcReferenceUuid pulumi.StringOutput `pulumi:"vpcReferenceUuid"`
+	// - (Optional).
+	VswitchName pulumi.StringOutput `pulumi:"vswitchName"`
 }
 
 // NewSubnet registers a new resource with the given unique name, arguments, and options.
@@ -100,7 +77,7 @@ func NewSubnet(ctx *pulumi.Context,
 	if args.SubnetType == nil {
 		return nil, errors.New("invalid value for required argument 'SubnetType'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Subnet
 	err := ctx.RegisterResource("nutanix:index/subnet:Subnet", name, args, &resource, opts...)
 	if err != nil {
@@ -124,64 +101,104 @@ func GetSubnet(ctx *pulumi.Context,
 // Input properties used for looking up and filtering Subnet resources.
 type subnetState struct {
 	// The version of the API.
-	ApiVersion                    *string           `pulumi:"apiVersion"`
-	AvailabilityZoneReference     map[string]string `pulumi:"availabilityZoneReference"`
-	Categories                    []SubnetCategory  `pulumi:"categories"`
-	ClusterName                   *string           `pulumi:"clusterName"`
-	ClusterUuid                   *string           `pulumi:"clusterUuid"`
-	DefaultGatewayIp              *string           `pulumi:"defaultGatewayIp"`
-	Description                   *string           `pulumi:"description"`
-	DhcpDomainNameServerLists     []string          `pulumi:"dhcpDomainNameServerLists"`
-	DhcpDomainSearchLists         []string          `pulumi:"dhcpDomainSearchLists"`
-	DhcpOptions                   map[string]string `pulumi:"dhcpOptions"`
-	DhcpServerAddress             map[string]string `pulumi:"dhcpServerAddress"`
-	DhcpServerAddressPort         *int              `pulumi:"dhcpServerAddressPort"`
-	EnableNat                     *bool             `pulumi:"enableNat"`
-	IpConfigPoolListRanges        []string          `pulumi:"ipConfigPoolListRanges"`
-	IsExternal                    *bool             `pulumi:"isExternal"`
-	Metadata                      map[string]string `pulumi:"metadata"`
-	Name                          *string           `pulumi:"name"`
+	ApiVersion *string `pulumi:"apiVersion"`
+	// - (Optional) The reference to a availability_zone.
+	AvailabilityZoneReference map[string]string `pulumi:"availabilityZoneReference"`
+	// - (Optional) The categories of the resource.
+	Categories  []SubnetCategory `pulumi:"categories"`
+	ClusterName *string          `pulumi:"clusterName"`
+	// - (Required) The UUID of the cluster.
+	ClusterUuid *string `pulumi:"clusterUuid"`
+	// - (Optional) Default gateway IP address.
+	DefaultGatewayIp *string `pulumi:"defaultGatewayIp"`
+	// - (Optional) A description for subnet.
+	Description               *string  `pulumi:"description"`
+	DhcpDomainNameServerLists []string `pulumi:"dhcpDomainNameServerLists"`
+	// - (Optional).
+	DhcpDomainSearchLists []string `pulumi:"dhcpDomainSearchLists"`
+	// - (Optional) Spec for defining DHCP options.
+	DhcpOptions map[string]string `pulumi:"dhcpOptions"`
+	// - (Optional) Host address.
+	DhcpServerAddress map[string]string `pulumi:"dhcpServerAddress"`
+	// - (Optional) Port Number.
+	DhcpServerAddressPort  *int     `pulumi:"dhcpServerAddressPort"`
+	EnableNat              *bool    `pulumi:"enableNat"`
+	IpConfigPoolListRanges []string `pulumi:"ipConfigPoolListRanges"`
+	IsExternal             *bool    `pulumi:"isExternal"`
+	// - (Required) The subnet kind metadata.
+	Metadata map[string]string `pulumi:"metadata"`
+	// - (Optional) Subnet name (Readonly).
+	Name *string `pulumi:"name"`
+	// - (Optional) The reference to a network_function_chain.
 	NetworkFunctionChainReference map[string]string `pulumi:"networkFunctionChainReference"`
-	OwnerReference                map[string]string `pulumi:"ownerReference"`
-	PrefixLength                  *int              `pulumi:"prefixLength"`
-	ProjectReference              map[string]string `pulumi:"projectReference"`
-	State                         *string           `pulumi:"state"`
-	SubnetIp                      *string           `pulumi:"subnetIp"`
-	SubnetType                    *string           `pulumi:"subnetType"`
-	VlanId                        *int              `pulumi:"vlanId"`
-	VpcReferenceUuid              *string           `pulumi:"vpcReferenceUuid"`
-	VswitchName                   *string           `pulumi:"vswitchName"`
+	// - (Optional) The reference to a user.
+	OwnerReference map[string]string `pulumi:"ownerReference"`
+	// - (Optional).
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - (Optional) The reference to a project.
+	ProjectReference map[string]string `pulumi:"projectReference"`
+	// - The state of the subnet.
+	State *string `pulumi:"state"`
+	// - (Optional) Subnet IP address.
+	SubnetIp *string `pulumi:"subnetIp"`
+	// - (Optional).
+	SubnetType *string `pulumi:"subnetType"`
+	// - (Optional).
+	VlanId           *int    `pulumi:"vlanId"`
+	VpcReferenceUuid *string `pulumi:"vpcReferenceUuid"`
+	// - (Optional).
+	VswitchName *string `pulumi:"vswitchName"`
 }
 
 type SubnetState struct {
 	// The version of the API.
-	ApiVersion                    pulumi.StringPtrInput
-	AvailabilityZoneReference     pulumi.StringMapInput
-	Categories                    SubnetCategoryArrayInput
-	ClusterName                   pulumi.StringPtrInput
-	ClusterUuid                   pulumi.StringPtrInput
-	DefaultGatewayIp              pulumi.StringPtrInput
-	Description                   pulumi.StringPtrInput
-	DhcpDomainNameServerLists     pulumi.StringArrayInput
-	DhcpDomainSearchLists         pulumi.StringArrayInput
-	DhcpOptions                   pulumi.StringMapInput
-	DhcpServerAddress             pulumi.StringMapInput
-	DhcpServerAddressPort         pulumi.IntPtrInput
-	EnableNat                     pulumi.BoolPtrInput
-	IpConfigPoolListRanges        pulumi.StringArrayInput
-	IsExternal                    pulumi.BoolPtrInput
-	Metadata                      pulumi.StringMapInput
-	Name                          pulumi.StringPtrInput
+	ApiVersion pulumi.StringPtrInput
+	// - (Optional) The reference to a availability_zone.
+	AvailabilityZoneReference pulumi.StringMapInput
+	// - (Optional) The categories of the resource.
+	Categories  SubnetCategoryArrayInput
+	ClusterName pulumi.StringPtrInput
+	// - (Required) The UUID of the cluster.
+	ClusterUuid pulumi.StringPtrInput
+	// - (Optional) Default gateway IP address.
+	DefaultGatewayIp pulumi.StringPtrInput
+	// - (Optional) A description for subnet.
+	Description               pulumi.StringPtrInput
+	DhcpDomainNameServerLists pulumi.StringArrayInput
+	// - (Optional).
+	DhcpDomainSearchLists pulumi.StringArrayInput
+	// - (Optional) Spec for defining DHCP options.
+	DhcpOptions pulumi.StringMapInput
+	// - (Optional) Host address.
+	DhcpServerAddress pulumi.StringMapInput
+	// - (Optional) Port Number.
+	DhcpServerAddressPort  pulumi.IntPtrInput
+	EnableNat              pulumi.BoolPtrInput
+	IpConfigPoolListRanges pulumi.StringArrayInput
+	IsExternal             pulumi.BoolPtrInput
+	// - (Required) The subnet kind metadata.
+	Metadata pulumi.StringMapInput
+	// - (Optional) Subnet name (Readonly).
+	Name pulumi.StringPtrInput
+	// - (Optional) The reference to a network_function_chain.
 	NetworkFunctionChainReference pulumi.StringMapInput
-	OwnerReference                pulumi.StringMapInput
-	PrefixLength                  pulumi.IntPtrInput
-	ProjectReference              pulumi.StringMapInput
-	State                         pulumi.StringPtrInput
-	SubnetIp                      pulumi.StringPtrInput
-	SubnetType                    pulumi.StringPtrInput
-	VlanId                        pulumi.IntPtrInput
-	VpcReferenceUuid              pulumi.StringPtrInput
-	VswitchName                   pulumi.StringPtrInput
+	// - (Optional) The reference to a user.
+	OwnerReference pulumi.StringMapInput
+	// - (Optional).
+	PrefixLength pulumi.IntPtrInput
+	// - (Optional) The reference to a project.
+	ProjectReference pulumi.StringMapInput
+	// - The state of the subnet.
+	State pulumi.StringPtrInput
+	// - (Optional) Subnet IP address.
+	SubnetIp pulumi.StringPtrInput
+	// - (Optional).
+	SubnetType pulumi.StringPtrInput
+	// - (Optional).
+	VlanId           pulumi.IntPtrInput
+	VpcReferenceUuid pulumi.StringPtrInput
+	// - (Optional).
+	VswitchName pulumi.StringPtrInput
 }
 
 func (SubnetState) ElementType() reflect.Type {
@@ -189,56 +206,92 @@ func (SubnetState) ElementType() reflect.Type {
 }
 
 type subnetArgs struct {
-	AvailabilityZoneReference     map[string]string `pulumi:"availabilityZoneReference"`
-	Categories                    []SubnetCategory  `pulumi:"categories"`
-	ClusterUuid                   *string           `pulumi:"clusterUuid"`
-	DefaultGatewayIp              *string           `pulumi:"defaultGatewayIp"`
-	Description                   *string           `pulumi:"description"`
-	DhcpDomainNameServerLists     []string          `pulumi:"dhcpDomainNameServerLists"`
-	DhcpDomainSearchLists         []string          `pulumi:"dhcpDomainSearchLists"`
-	DhcpOptions                   map[string]string `pulumi:"dhcpOptions"`
-	DhcpServerAddress             map[string]string `pulumi:"dhcpServerAddress"`
-	DhcpServerAddressPort         *int              `pulumi:"dhcpServerAddressPort"`
-	EnableNat                     *bool             `pulumi:"enableNat"`
-	IpConfigPoolListRanges        []string          `pulumi:"ipConfigPoolListRanges"`
-	IsExternal                    *bool             `pulumi:"isExternal"`
-	Name                          *string           `pulumi:"name"`
+	// - (Optional) The reference to a availability_zone.
+	AvailabilityZoneReference map[string]string `pulumi:"availabilityZoneReference"`
+	// - (Optional) The categories of the resource.
+	Categories []SubnetCategory `pulumi:"categories"`
+	// - (Required) The UUID of the cluster.
+	ClusterUuid *string `pulumi:"clusterUuid"`
+	// - (Optional) Default gateway IP address.
+	DefaultGatewayIp *string `pulumi:"defaultGatewayIp"`
+	// - (Optional) A description for subnet.
+	Description               *string  `pulumi:"description"`
+	DhcpDomainNameServerLists []string `pulumi:"dhcpDomainNameServerLists"`
+	// - (Optional).
+	DhcpDomainSearchLists []string `pulumi:"dhcpDomainSearchLists"`
+	// - (Optional) Spec for defining DHCP options.
+	DhcpOptions map[string]string `pulumi:"dhcpOptions"`
+	// - (Optional) Host address.
+	DhcpServerAddress map[string]string `pulumi:"dhcpServerAddress"`
+	// - (Optional) Port Number.
+	DhcpServerAddressPort  *int     `pulumi:"dhcpServerAddressPort"`
+	EnableNat              *bool    `pulumi:"enableNat"`
+	IpConfigPoolListRanges []string `pulumi:"ipConfigPoolListRanges"`
+	IsExternal             *bool    `pulumi:"isExternal"`
+	// - (Optional) Subnet name (Readonly).
+	Name *string `pulumi:"name"`
+	// - (Optional) The reference to a network_function_chain.
 	NetworkFunctionChainReference map[string]string `pulumi:"networkFunctionChainReference"`
-	OwnerReference                map[string]string `pulumi:"ownerReference"`
-	PrefixLength                  *int              `pulumi:"prefixLength"`
-	ProjectReference              map[string]string `pulumi:"projectReference"`
-	SubnetIp                      *string           `pulumi:"subnetIp"`
-	SubnetType                    string            `pulumi:"subnetType"`
-	VlanId                        *int              `pulumi:"vlanId"`
-	VpcReferenceUuid              *string           `pulumi:"vpcReferenceUuid"`
-	VswitchName                   *string           `pulumi:"vswitchName"`
+	// - (Optional) The reference to a user.
+	OwnerReference map[string]string `pulumi:"ownerReference"`
+	// - (Optional).
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - (Optional) The reference to a project.
+	ProjectReference map[string]string `pulumi:"projectReference"`
+	// - (Optional) Subnet IP address.
+	SubnetIp *string `pulumi:"subnetIp"`
+	// - (Optional).
+	SubnetType string `pulumi:"subnetType"`
+	// - (Optional).
+	VlanId           *int    `pulumi:"vlanId"`
+	VpcReferenceUuid *string `pulumi:"vpcReferenceUuid"`
+	// - (Optional).
+	VswitchName *string `pulumi:"vswitchName"`
 }
 
 // The set of arguments for constructing a Subnet resource.
 type SubnetArgs struct {
-	AvailabilityZoneReference     pulumi.StringMapInput
-	Categories                    SubnetCategoryArrayInput
-	ClusterUuid                   pulumi.StringPtrInput
-	DefaultGatewayIp              pulumi.StringPtrInput
-	Description                   pulumi.StringPtrInput
-	DhcpDomainNameServerLists     pulumi.StringArrayInput
-	DhcpDomainSearchLists         pulumi.StringArrayInput
-	DhcpOptions                   pulumi.StringMapInput
-	DhcpServerAddress             pulumi.StringMapInput
-	DhcpServerAddressPort         pulumi.IntPtrInput
-	EnableNat                     pulumi.BoolPtrInput
-	IpConfigPoolListRanges        pulumi.StringArrayInput
-	IsExternal                    pulumi.BoolPtrInput
-	Name                          pulumi.StringPtrInput
+	// - (Optional) The reference to a availability_zone.
+	AvailabilityZoneReference pulumi.StringMapInput
+	// - (Optional) The categories of the resource.
+	Categories SubnetCategoryArrayInput
+	// - (Required) The UUID of the cluster.
+	ClusterUuid pulumi.StringPtrInput
+	// - (Optional) Default gateway IP address.
+	DefaultGatewayIp pulumi.StringPtrInput
+	// - (Optional) A description for subnet.
+	Description               pulumi.StringPtrInput
+	DhcpDomainNameServerLists pulumi.StringArrayInput
+	// - (Optional).
+	DhcpDomainSearchLists pulumi.StringArrayInput
+	// - (Optional) Spec for defining DHCP options.
+	DhcpOptions pulumi.StringMapInput
+	// - (Optional) Host address.
+	DhcpServerAddress pulumi.StringMapInput
+	// - (Optional) Port Number.
+	DhcpServerAddressPort  pulumi.IntPtrInput
+	EnableNat              pulumi.BoolPtrInput
+	IpConfigPoolListRanges pulumi.StringArrayInput
+	IsExternal             pulumi.BoolPtrInput
+	// - (Optional) Subnet name (Readonly).
+	Name pulumi.StringPtrInput
+	// - (Optional) The reference to a network_function_chain.
 	NetworkFunctionChainReference pulumi.StringMapInput
-	OwnerReference                pulumi.StringMapInput
-	PrefixLength                  pulumi.IntPtrInput
-	ProjectReference              pulumi.StringMapInput
-	SubnetIp                      pulumi.StringPtrInput
-	SubnetType                    pulumi.StringInput
-	VlanId                        pulumi.IntPtrInput
-	VpcReferenceUuid              pulumi.StringPtrInput
-	VswitchName                   pulumi.StringPtrInput
+	// - (Optional) The reference to a user.
+	OwnerReference pulumi.StringMapInput
+	// - (Optional).
+	PrefixLength pulumi.IntPtrInput
+	// - (Optional) The reference to a project.
+	ProjectReference pulumi.StringMapInput
+	// - (Optional) Subnet IP address.
+	SubnetIp pulumi.StringPtrInput
+	// - (Optional).
+	SubnetType pulumi.StringInput
+	// - (Optional).
+	VlanId           pulumi.IntPtrInput
+	VpcReferenceUuid pulumi.StringPtrInput
+	// - (Optional).
+	VswitchName pulumi.StringPtrInput
 }
 
 func (SubnetArgs) ElementType() reflect.Type {
@@ -264,10 +317,16 @@ func (i *Subnet) ToSubnetOutputWithContext(ctx context.Context) SubnetOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SubnetOutput)
 }
 
+func (i *Subnet) ToOutput(ctx context.Context) pulumix.Output[*Subnet] {
+	return pulumix.Output[*Subnet]{
+		OutputState: i.ToSubnetOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SubnetArrayInput is an input type that accepts SubnetArray and SubnetArrayOutput values.
 // You can construct a concrete instance of `SubnetArrayInput` via:
 //
-//          SubnetArray{ SubnetArgs{...} }
+//	SubnetArray{ SubnetArgs{...} }
 type SubnetArrayInput interface {
 	pulumi.Input
 
@@ -289,10 +348,16 @@ func (i SubnetArray) ToSubnetArrayOutputWithContext(ctx context.Context) SubnetA
 	return pulumi.ToOutputWithContext(ctx, i).(SubnetArrayOutput)
 }
 
+func (i SubnetArray) ToOutput(ctx context.Context) pulumix.Output[[]*Subnet] {
+	return pulumix.Output[[]*Subnet]{
+		OutputState: i.ToSubnetArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // SubnetMapInput is an input type that accepts SubnetMap and SubnetMapOutput values.
 // You can construct a concrete instance of `SubnetMapInput` via:
 //
-//          SubnetMap{ "key": SubnetArgs{...} }
+//	SubnetMap{ "key": SubnetArgs{...} }
 type SubnetMapInput interface {
 	pulumi.Input
 
@@ -314,6 +379,12 @@ func (i SubnetMap) ToSubnetMapOutputWithContext(ctx context.Context) SubnetMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(SubnetMapOutput)
 }
 
+func (i SubnetMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Subnet] {
+	return pulumix.Output[map[string]*Subnet]{
+		OutputState: i.ToSubnetMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type SubnetOutput struct{ *pulumi.OutputState }
 
 func (SubnetOutput) ElementType() reflect.Type {
@@ -328,15 +399,23 @@ func (o SubnetOutput) ToSubnetOutputWithContext(ctx context.Context) SubnetOutpu
 	return o
 }
 
+func (o SubnetOutput) ToOutput(ctx context.Context) pulumix.Output[*Subnet] {
+	return pulumix.Output[*Subnet]{
+		OutputState: o.OutputState,
+	}
+}
+
 // The version of the API.
 func (o SubnetOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringOutput { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// - (Optional) The reference to a availability_zone.
 func (o SubnetOutput) AvailabilityZoneReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringMapOutput { return v.AvailabilityZoneReference }).(pulumi.StringMapOutput)
 }
 
+// - (Optional) The categories of the resource.
 func (o SubnetOutput) Categories() SubnetCategoryArrayOutput {
 	return o.ApplyT(func(v *Subnet) SubnetCategoryArrayOutput { return v.Categories }).(SubnetCategoryArrayOutput)
 }
@@ -345,14 +424,17 @@ func (o SubnetOutput) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringOutput { return v.ClusterName }).(pulumi.StringOutput)
 }
 
+// - (Required) The UUID of the cluster.
 func (o SubnetOutput) ClusterUuid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringPtrOutput { return v.ClusterUuid }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Default gateway IP address.
 func (o SubnetOutput) DefaultGatewayIp() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringOutput { return v.DefaultGatewayIp }).(pulumi.StringOutput)
 }
 
+// - (Optional) A description for subnet.
 func (o SubnetOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
@@ -361,18 +443,22 @@ func (o SubnetOutput) DhcpDomainNameServerLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringArrayOutput { return v.DhcpDomainNameServerLists }).(pulumi.StringArrayOutput)
 }
 
+// - (Optional).
 func (o SubnetOutput) DhcpDomainSearchLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringArrayOutput { return v.DhcpDomainSearchLists }).(pulumi.StringArrayOutput)
 }
 
+// - (Optional) Spec for defining DHCP options.
 func (o SubnetOutput) DhcpOptions() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringMapOutput { return v.DhcpOptions }).(pulumi.StringMapOutput)
 }
 
+// - (Optional) Host address.
 func (o SubnetOutput) DhcpServerAddress() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringMapOutput { return v.DhcpServerAddress }).(pulumi.StringMapOutput)
 }
 
+// - (Optional) Port Number.
 func (o SubnetOutput) DhcpServerAddressPort() pulumi.IntOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.IntOutput { return v.DhcpServerAddressPort }).(pulumi.IntOutput)
 }
@@ -389,42 +475,52 @@ func (o SubnetOutput) IsExternal() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.BoolOutput { return v.IsExternal }).(pulumi.BoolOutput)
 }
 
+// - (Required) The subnet kind metadata.
 func (o SubnetOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringMapOutput { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
+// - (Optional) Subnet name (Readonly).
 func (o SubnetOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// - (Optional) The reference to a network_function_chain.
 func (o SubnetOutput) NetworkFunctionChainReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringMapOutput { return v.NetworkFunctionChainReference }).(pulumi.StringMapOutput)
 }
 
+// - (Optional) The reference to a user.
 func (o SubnetOutput) OwnerReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringMapOutput { return v.OwnerReference }).(pulumi.StringMapOutput)
 }
 
+// - (Optional).
 func (o SubnetOutput) PrefixLength() pulumi.IntOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.IntOutput { return v.PrefixLength }).(pulumi.IntOutput)
 }
 
+// - (Optional) The reference to a project.
 func (o SubnetOutput) ProjectReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringMapOutput { return v.ProjectReference }).(pulumi.StringMapOutput)
 }
 
+// - The state of the subnet.
 func (o SubnetOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
+// - (Optional) Subnet IP address.
 func (o SubnetOutput) SubnetIp() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringOutput { return v.SubnetIp }).(pulumi.StringOutput)
 }
 
+// - (Optional).
 func (o SubnetOutput) SubnetType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringOutput { return v.SubnetType }).(pulumi.StringOutput)
 }
 
+// - (Optional).
 func (o SubnetOutput) VlanId() pulumi.IntOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.IntOutput { return v.VlanId }).(pulumi.IntOutput)
 }
@@ -433,6 +529,7 @@ func (o SubnetOutput) VpcReferenceUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringOutput { return v.VpcReferenceUuid }).(pulumi.StringOutput)
 }
 
+// - (Optional).
 func (o SubnetOutput) VswitchName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringOutput { return v.VswitchName }).(pulumi.StringOutput)
 }
@@ -449,6 +546,12 @@ func (o SubnetArrayOutput) ToSubnetArrayOutput() SubnetArrayOutput {
 
 func (o SubnetArrayOutput) ToSubnetArrayOutputWithContext(ctx context.Context) SubnetArrayOutput {
 	return o
+}
+
+func (o SubnetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Subnet] {
+	return pulumix.Output[[]*Subnet]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SubnetArrayOutput) Index(i pulumi.IntInput) SubnetOutput {
@@ -469,6 +572,12 @@ func (o SubnetMapOutput) ToSubnetMapOutput() SubnetMapOutput {
 
 func (o SubnetMapOutput) ToSubnetMapOutputWithContext(ctx context.Context) SubnetMapOutput {
 	return o
+}
+
+func (o SubnetMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Subnet] {
+	return pulumix.Output[map[string]*Subnet]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o SubnetMapOutput) MapIndex(k pulumi.StringInput) SubnetOutput {

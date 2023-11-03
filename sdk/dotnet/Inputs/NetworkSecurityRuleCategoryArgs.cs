@@ -11,8 +11,11 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class NetworkSecurityRuleCategoryArgs : Pulumi.ResourceArgs
+    public sealed class NetworkSecurityRuleCategoryArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Required) The name for the network_security_rule.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
@@ -22,5 +25,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public NetworkSecurityRuleCategoryArgs()
         {
         }
+        public static new NetworkSecurityRuleCategoryArgs Empty => new NetworkSecurityRuleCategoryArgs();
     }
 }

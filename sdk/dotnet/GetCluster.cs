@@ -16,161 +16,275 @@ namespace PiersKarsenbarg.Nutanix
         /// Describes Clusters
         /// </summary>
         public static Task<GetClusterResult> InvokeAsync(GetClusterArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetClusterResult>("nutanix:index/getCluster:getCluster", args ?? new GetClusterArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetClusterResult>("nutanix:index/getCluster:getCluster", args ?? new GetClusterArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes Clusters
         /// </summary>
         public static Output<GetClusterResult> Invoke(GetClusterInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetClusterResult>("nutanix:index/getCluster:getCluster", args ?? new GetClusterInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetClusterResult>("nutanix:index/getCluster:getCluster", args ?? new GetClusterInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetClusterArgs : Pulumi.InvokeArgs
+    public sealed class GetClusterArgs : global::Pulumi.InvokeArgs
     {
         [Input("categories")]
         private List<Inputs.GetClusterCategoryArgs>? _categories;
+
+        /// <summary>
+        /// - Categories for the image.
+        /// </summary>
         public List<Inputs.GetClusterCategoryArgs> Categories
         {
             get => _categories ?? (_categories = new List<Inputs.GetClusterCategoryArgs>());
             set => _categories = value;
         }
 
+        /// <summary>
+        /// Represents clusters uuid
+        /// </summary>
         [Input("clusterId")]
         public string? ClusterId { get; set; }
 
+        /// <summary>
+        /// Represents the name of cluster
+        /// </summary>
         [Input("name")]
         public string? Name { get; set; }
 
         public GetClusterArgs()
         {
         }
+        public static new GetClusterArgs Empty => new GetClusterArgs();
     }
 
-    public sealed class GetClusterInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetClusterInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("categories")]
         private InputList<Inputs.GetClusterCategoryInputArgs>? _categories;
+
+        /// <summary>
+        /// - Categories for the image.
+        /// </summary>
         public InputList<Inputs.GetClusterCategoryInputArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.GetClusterCategoryInputArgs>());
             set => _categories = value;
         }
 
+        /// <summary>
+        /// Represents clusters uuid
+        /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }
 
+        /// <summary>
+        /// Represents the name of cluster
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         public GetClusterInvokeArgs()
         {
         }
+        public static new GetClusterInvokeArgs Empty => new GetClusterInvokeArgs();
     }
 
 
     [OutputType]
     public sealed class GetClusterResult
     {
+        /// <summary>
+        /// - Map of cluster efficiency which includes numbers of inefficient vms. The value is populated by analytics on PC. (Readonly)
+        /// </summary>
         public readonly ImmutableDictionary<string, string> AnalysisVmEfficiencyMap;
         /// <summary>
         /// The API version.
-        /// * `description`: - A description for image.
-        /// * `metadata`: - The image kind metadata.
-        /// * `state`: - The state of the cluster entity.
-        /// * `gpu_driver_version`: - GPU driver version.
-        /// * `client_auth`: - Client authentication config.
-        /// * `authorized_piblic_key_list`: - List of valid ssh keys for the cluster.
-        /// * `software_map_ncc`: - Map of software on the cluster with software type as the key.
-        /// * `software_map_nos`: - Map of software on the cluster with software type as the key.
-        /// * `encryption_status`: - Cluster encryption status.
-        /// * `ssl_key_type`: - SSL key type. Key types with RSA_2048, ECDSA_256 and ECDSA_384 are supported for key generation and importing.
-        /// * `ssl_key_signing_info`: - Customer information used in Certificate Signing Request for creating digital certificates.
-        /// * `ssl_key_expire_datetime`: - UTC date and time in RFC-3339 format when the key expires
-        /// * `service_list`: - Array of enabled cluster services. For example, a cluster can function as both AOS and cloud data gateway. - 'AOS': Regular Prism Element - 'PRISM_CENTRAL': Prism Central - 'CLOUD_DATA_GATEWAY': Cloud backup and DR gateway - 'AFS': Cluster for file server - 'WITNESS' : Witness cluster - 'XI_PORTAL': Xi cluster.
-        /// * `supported_information_verbosity`: - Verbosity level settings for populating support information. - 'Nothing': Send nothing - 'Basic': Send basic information - skip core dump and hypervisor stats information - 'BasicPlusCoreDump': Send basic and core dump information - 'All': Send all information (Default value: BASIC_PLUS_CORE_DUMP)
-        /// * `certification_signing_info`: - Customer information used in Certificate Signing Request for creating digital certificates.
-        /// * `operation_mode`: - Cluster operation mode. - 'NORMAL': Cluster is operating normally. - 'READ_ONLY': Cluster is operating in read only mode. - 'STAND_ALONE': Only one node is operational in the cluster. This is valid only for single node or two node clusters. - 'SWITCH_TO_TWO_NODE': Cluster is moving from single node to two node cluster. - 'OVERRIDE': Valid only for single node cluster. If the user wants to run vms on a single node cluster in read only mode, he can set the cluster peration mode to override. Writes will be allowed in override mode.
-        /// * `ca_certificate_list`: - Zone name used in value of TZ environment variable.
-        /// * `enabled_feature_list`: - Array of enabled features.
-        /// * `is_available`: - Indicates if cluster is available to contact. (Readonly)
-        /// * `build`: - Cluster build details.
-        /// * `timezone`: - Zone name used in value of TZ environment variable.
-        /// * `cluster_arch`: - Cluster architecture. (Readonly, Options: Options : X86_64 , PPC64LE)
-        /// * `management_server_list`: - List of cluster management servers. (Readonly)
-        /// * `masquerading_port`: - Port used together with masquerading_ip to connect to the cluster.
-        /// * `masquerading_ip`: - The cluster NAT'd or proxy IP which maps to the cluster local IP.
-        /// * `external_ip`: - The local IP of cluster visible externally.
-        /// * `http_proxy_list`: - List of proxies to connect to the service centers.
-        /// * `smtp_server_type`: - SMTP Server type.
-        /// * `smtp_server_email_address`: - SMTP Server Email Address.
-        /// * `smtp_server_credentials`: - SMTP Server Credentials.
-        /// * `smtp_server_proxy_type_list`: - SMTP Server Proxy Type List
-        /// * `smtp_server_address`: - SMTP Server Address.
-        /// * `ntp_server_ip_list`: - The list of IP addresses or FQDNs of the NTP servers.
-        /// * `external_subnet`: - External subnet for cross server communication. The format is IP/netmask. (default 172.16.0.0/255.240.0.0)
-        /// * `external_data_services_ip`: - The cluster IP address that provides external entities access to various cluster data services.
-        /// * `internal_subnet`: - The internal subnet is local to every server - its not visible outside.iSCSI requests generated internally within the appliance (by user VMs or VMFS) are sent to the internal subnet. The format is IP/netmask.
-        /// * `domain_server_nameserver`: -  The IP of the nameserver that can resolve the domain name. Must set when joining the domain.
-        /// * `domain_server_name`: - Joined domain name. In 'put' request, empty name will unjoin the cluster from current domain.
-        /// * `domain_server_credentials`: - Cluster domain credentials.
-        /// * `nfs_subnet_whitelist`: - Comma separated list of subnets (of the form 'a.b.c.d/l.m.n.o') that are allowed to send NFS requests to this container. If not specified, the global NFS whitelist will be looked up for access permission. The internal subnet is always automatically considered part of the whitelist, even if the field below does not explicitly specify it. Similarly, all the hypervisor IPs are considered part of the whitelist. Finally, to permit debugging, all of the SVMs local IPs are considered to be implicitly part of the whitelist.
-        /// * `name_server_ip_list`: - The list of IP addresses of the name servers.
-        /// * `http_proxy_whitelist`: - HTTP proxy whitelist.
-        /// * `analysis_vm_efficiency_map`: - Map of cluster efficiency which includes numbers of inefficient vms. The value is populated by analytics on PC. (Readonly)
         /// </summary>
         public readonly string ApiVersion;
         public readonly ImmutableArray<Outputs.GetClusterAuthorizedPublicKeyListResult> AuthorizedPublicKeyLists;
+        /// <summary>
+        /// - Cluster build details.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Build;
+        /// <summary>
+        /// - Zone name used in value of TZ environment variable.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterCaCertificateListResult> CaCertificateLists;
+        /// <summary>
+        /// - Categories for the image.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterCategoryResult> Categories;
+        /// <summary>
+        /// - Customer information used in Certificate Signing Request for creating digital certificates.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> CertificationSigningInfo;
+        /// <summary>
+        /// - Client authentication config.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> ClientAuth;
+        /// <summary>
+        /// - Cluster architecture. (Readonly, Options: Options : X86_64 , PPC64LE)
+        /// </summary>
         public readonly string ClusterArch;
         public readonly string ClusterId;
+        /// <summary>
+        /// - Cluster domain credentials.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> DomainServerCredentials;
+        /// <summary>
+        /// - Joined domain name. In 'put' request, empty name will unjoin the cluster from current domain.
+        /// </summary>
         public readonly string DomainServerName;
+        /// <summary>
+        /// -  The IP of the nameserver that can resolve the domain name. Must set when joining the domain.
+        /// </summary>
         public readonly string DomainServerNameserver;
+        /// <summary>
+        /// - Array of enabled features.
+        /// </summary>
         public readonly ImmutableArray<string> EnabledFeatureLists;
+        /// <summary>
+        /// - Cluster encryption status.
+        /// </summary>
         public readonly string EncryptionStatus;
+        /// <summary>
+        /// - The cluster IP address that provides external entities access to various cluster data services.
+        /// </summary>
         public readonly string ExternalDataServicesIp;
+        /// <summary>
+        /// - The local IP of cluster visible externally.
+        /// </summary>
         public readonly string ExternalIp;
+        /// <summary>
+        /// - External subnet for cross server communication. The format is IP/netmask. (default 172.16.0.0/255.240.0.0)
+        /// </summary>
         public readonly string ExternalSubnet;
+        /// <summary>
+        /// - GPU driver version.
+        /// </summary>
         public readonly string GpuDriverVersion;
+        /// <summary>
+        /// - List of proxies to connect to the service centers.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterHttpProxyListResult> HttpProxyLists;
+        /// <summary>
+        /// - HTTP proxy whitelist.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterHttpProxyWhitelistResult> HttpProxyWhitelists;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - The internal subnet is local to every server - its not visible outside.iSCSI requests generated internally within the appliance (by user VMs or VMFS) are sent to the internal subnet. The format is IP/netmask.
+        /// </summary>
         public readonly string InternalSubnet;
+        /// <summary>
+        /// - Indicates if cluster is available to contact. (Readonly)
+        /// </summary>
         public readonly bool IsAvailable;
+        /// <summary>
+        /// - List of cluster management servers. (Readonly)
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterManagementServerListResult> ManagementServerLists;
+        /// <summary>
+        /// - The cluster NAT'd or proxy IP which maps to the cluster local IP.
+        /// </summary>
         public readonly string MasqueradingIp;
+        /// <summary>
+        /// - Port used together with masquerading_ip to connect to the cluster.
+        /// </summary>
         public readonly int MasqueradingPort;
+        /// <summary>
+        /// - The image kind metadata.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
+        /// <summary>
+        /// - the name.
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - The list of IP addresses of the name servers.
+        /// </summary>
         public readonly ImmutableArray<string> NameServerIpLists;
+        /// <summary>
+        /// - Comma separated list of subnets (of the form 'a.b.c.d/l.m.n.o') that are allowed to send NFS requests to this container. If not specified, the global NFS whitelist will be looked up for access permission. The internal subnet is always automatically considered part of the whitelist, even if the field below does not explicitly specify it. Similarly, all the hypervisor IPs are considered part of the whitelist. Finally, to permit debugging, all of the SVMs local IPs are considered to be implicitly part of the whitelist.
+        /// </summary>
         public readonly ImmutableArray<string> NfsSubnetWhitelists;
         public readonly ImmutableArray<Outputs.GetClusterNodeResult> Nodes;
+        /// <summary>
+        /// - The list of IP addresses or FQDNs of the NTP servers.
+        /// </summary>
         public readonly ImmutableArray<string> NtpServerIpLists;
+        /// <summary>
+        /// - Cluster operation mode. - 'NORMAL': Cluster is operating normally. - 'READ_ONLY': Cluster is operating in read only mode. - 'STAND_ALONE': Only one node is operational in the cluster. This is valid only for single node or two node clusters. - 'SWITCH_TO_TWO_NODE': Cluster is moving from single node to two node cluster. - 'OVERRIDE': Valid only for single node cluster. If the user wants to run vms on a single node cluster in read only mode, he can set the cluster peration mode to override. Writes will be allowed in override mode.
+        /// </summary>
         public readonly string OperationMode;
+        /// <summary>
+        /// - The reference to a user.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> OwnerReference;
+        /// <summary>
+        /// - The reference to a project.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> ProjectReference;
+        /// <summary>
+        /// - Array of enabled cluster services. For example, a cluster can function as both AOS and cloud data gateway. - 'AOS': Regular Prism Element - 'PRISM_CENTRAL': Prism Central - 'CLOUD_DATA_GATEWAY': Cloud backup and DR gateway - 'AFS': Cluster for file server - 'WITNESS' : Witness cluster - 'XI_PORTAL': Xi cluster.
+        /// </summary>
         public readonly ImmutableArray<string> ServiceLists;
+        /// <summary>
+        /// - SMTP Server Address.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> SmtpServerAddress;
+        /// <summary>
+        /// - SMTP Server Credentials.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> SmtpServerCredentials;
+        /// <summary>
+        /// - SMTP Server Email Address.
+        /// </summary>
         public readonly string SmtpServerEmailAddress;
+        /// <summary>
+        /// - SMTP Server Proxy Type List
+        /// </summary>
         public readonly ImmutableArray<string> SmtpServerProxyTypeLists;
+        /// <summary>
+        /// - SMTP Server type.
+        /// </summary>
         public readonly string SmtpServerType;
+        /// <summary>
+        /// - Map of software on the cluster with software type as the key.
+        /// </summary>
         public readonly ImmutableDictionary<string, object> SoftwareMapNcc;
+        /// <summary>
+        /// - Map of software on the cluster with software type as the key.
+        /// </summary>
         public readonly ImmutableDictionary<string, object> SoftwareMapNos;
+        /// <summary>
+        /// - UTC date and time in RFC-3339 format when the key expires
+        /// </summary>
         public readonly string SslKeyExpireDatetime;
         public readonly string SslKeyName;
+        /// <summary>
+        /// - Customer information used in Certificate Signing Request for creating digital certificates.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> SslKeySigningInfo;
+        /// <summary>
+        /// - SSL key type. Key types with RSA_2048, ECDSA_256 and ECDSA_384 are supported for key generation and importing.
+        /// </summary>
         public readonly string SslKeyType;
+        /// <summary>
+        /// - The state of the cluster entity.
+        /// </summary>
         public readonly string State;
+        /// <summary>
+        /// - Verbosity level settings for populating support information. - 'Nothing': Send nothing - 'Basic': Send basic information - skip core dump and hypervisor stats information - 'BasicPlusCoreDump': Send basic and core dump information - 'All': Send all information (Default value: BASIC_PLUS_CORE_DUMP)
+        /// </summary>
         public readonly string SupportedInformationVerbosity;
+        /// <summary>
+        /// - Zone name used in value of TZ environment variable.
+        /// </summary>
         public readonly string Timezone;
 
         [OutputConstructor]

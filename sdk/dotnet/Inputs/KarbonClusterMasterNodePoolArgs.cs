@@ -11,30 +11,54 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class KarbonClusterMasterNodePoolArgs : Pulumi.ResourceArgs
+    public sealed class KarbonClusterMasterNodePoolArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) VM configuration in AHV. **Note:** Updates to this attribute forces new resource creation.
+        /// * `ahv_config.cpu`: - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+        /// * `ahv_config.disk_mib`: - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+        /// * `ahv_config.memory_mib`: - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+        /// * `ahv_config.network_uuid`: - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+        /// * `ahv_config.prism_element_cluster_uuid`: - (Required) The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        /// </summary>
         [Input("ahvConfig")]
         public Input<Inputs.KarbonClusterMasterNodePoolAhvConfigArgs>? AhvConfig { get; set; }
 
+        /// <summary>
+        /// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - (Required) The version of the node OS image. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("nodeOsVersion", required: true)]
         public Input<string> NodeOsVersion { get; set; } = null!;
 
         [Input("nodes")]
         private InputList<Inputs.KarbonClusterMasterNodePoolNodeArgs>? _nodes;
+
+        /// <summary>
+        /// - List of the deployed nodes in the node pool.
+        /// * `nodes.hostname`: - Hostname of the deployed node.
+        /// * `nodes.ipv4_address`: - IP of the deployed node.
+        /// </summary>
         public InputList<Inputs.KarbonClusterMasterNodePoolNodeArgs> Nodes
         {
             get => _nodes ?? (_nodes = new InputList<Inputs.KarbonClusterMasterNodePoolNodeArgs>());
             set => _nodes = value;
         }
 
+        /// <summary>
+        /// - (Required) Number of nodes in the node pool. **Note:** Updates to etcd or master node pool forces new resource creation.
+        /// </summary>
         [Input("numInstances", required: true)]
         public Input<int> NumInstances { get; set; } = null!;
 
         public KarbonClusterMasterNodePoolArgs()
         {
         }
+        public static new KarbonClusterMasterNodePoolArgs Empty => new KarbonClusterMasterNodePoolArgs();
     }
 }

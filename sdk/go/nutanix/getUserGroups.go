@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve all the user groups.
@@ -18,23 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetUserGroups(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetUserGroups(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetUserGroups(ctx *pulumi.Context, args *GetUserGroupsArgs, opts ...pulumi.InvokeOption) (*GetUserGroupsResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUserGroupsResult
 	err := ctx.Invoke("nutanix:index/getUserGroups:getUserGroups", args, &rv, opts...)
 	if err != nil {
@@ -45,6 +49,7 @@ func GetUserGroups(ctx *pulumi.Context, args *GetUserGroupsArgs, opts ...pulumi.
 
 // A collection of arguments for invoking getUserGroups.
 type GetUserGroupsArgs struct {
+	// - The user group kind metadata.
 	Metadatas []GetUserGroupsMetadata `pulumi:"metadatas"`
 }
 
@@ -72,6 +77,7 @@ func GetUserGroupsOutput(ctx *pulumi.Context, args GetUserGroupsOutputArgs, opts
 
 // A collection of arguments for invoking getUserGroups.
 type GetUserGroupsOutputArgs struct {
+	// - The user group kind metadata.
 	Metadatas GetUserGroupsMetadataArrayInput `pulumi:"metadatas"`
 }
 
@@ -92,6 +98,12 @@ func (o GetUserGroupsResultOutput) ToGetUserGroupsResultOutput() GetUserGroupsRe
 
 func (o GetUserGroupsResultOutput) ToGetUserGroupsResultOutputWithContext(ctx context.Context) GetUserGroupsResultOutput {
 	return o
+}
+
+func (o GetUserGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserGroupsResult] {
+	return pulumix.Output[GetUserGroupsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserGroupsResultOutput) ApiVersion() pulumi.StringOutput {

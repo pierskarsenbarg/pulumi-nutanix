@@ -2,18 +2,16 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
  * Describes a list of hosts
  */
 export function getHosts(opts?: pulumi.InvokeOptions): Promise<GetHostsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getHosts:getHosts", {
     }, opts);
 }
@@ -24,30 +22,20 @@ export function getHosts(opts?: pulumi.InvokeOptions): Promise<GetHostsResult> {
 export interface GetHostsResult {
     /**
      * The API version.
-     * * `gpuDriverVersion`: - Host GPU driver version.
-     * * `failoverCluster`: - Hyper-V failover cluster.
-     * * `ipmi`: - Host IPMI info.
-     * * `cpuModel`: - Host CPU model.
-     * * `hostNicsIdList`: - Host NICs.
-     * * `numCpuSockets`: - Number of CPU sockets.
-     * * `windowsDomain`: - The name of the node to be renamed to during domain-join. If not given,a new name will be automatically assigned.
-     * * `gpuList`: - List of GPUs on the host.
-     * * `serialNumber`: - Node serial number.
-     * * `cpuCapacityHz`: - Host CPU capacity.
-     * * `memoryCapacityMib`: - Host memory capacity in MiB.
-     * * `hostDisksReferenceList`: - The reference to a disk.
-     * * `monitoringState`: - Host monitoring status.
-     * * `hypervisor`: - Host Hypervisor information.
-     * * `hostType`: - Host type.
-     * * `numCpuCores`: - Number of CPU cores on Host.
-     * * `rackableUnitReference`: - The reference to a rackable_unit.
-     * * `controllerVm`: - Host controller vm information.
-     * * `block`: - Host block config info.
      */
     readonly apiVersion: string;
+    /**
+     * List of Hosts
+     */
     readonly entities: outputs.GetHostsEntity[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+}
+/**
+ * Describes a list of hosts
+ */
+export function getHostsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetHostsResult> {
+    return pulumi.output(getHosts(opts))
 }

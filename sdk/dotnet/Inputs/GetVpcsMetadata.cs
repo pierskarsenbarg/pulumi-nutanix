@@ -11,11 +11,14 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetVpcsMetadataArgs : Pulumi.InvokeArgs
+    public sealed class GetVpcsMetadataArgs : global::Pulumi.InvokeArgs
     {
         [Input("filter", required: true)]
         public string Filter { get; set; } = null!;
 
+        /// <summary>
+        /// - The kind name (Default value: project).
+        /// </summary>
         [Input("kind", required: true)]
         public string Kind { get; set; } = null!;
 
@@ -37,5 +40,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetVpcsMetadataArgs()
         {
         }
+        public static new GetVpcsMetadataArgs Empty => new GetVpcsMetadataArgs();
     }
 }

@@ -16,17 +16,17 @@ namespace PiersKarsenbarg.Nutanix
         /// Provides a datasource to retrieve VPC with vpc_uuid or vpc_name .
         /// </summary>
         public static Task<GetVpcResult> InvokeAsync(GetVpcArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVpcResult>("nutanix:index/getVpc:getVpc", args ?? new GetVpcArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVpcResult>("nutanix:index/getVpc:getVpc", args ?? new GetVpcArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a datasource to retrieve VPC with vpc_uuid or vpc_name .
         /// </summary>
         public static Output<GetVpcResult> Invoke(GetVpcInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVpcResult>("nutanix:index/getVpc:getVpc", args ?? new GetVpcInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVpcResult>("nutanix:index/getVpc:getVpc", args ?? new GetVpcInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetVpcArgs : Pulumi.InvokeArgs
+    public sealed class GetVpcArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// vpc Name
@@ -43,9 +43,10 @@ namespace PiersKarsenbarg.Nutanix
         public GetVpcArgs()
         {
         }
+        public static new GetVpcArgs Empty => new GetVpcArgs();
     }
 
-    public sealed class GetVpcInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVpcInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// vpc Name
@@ -62,6 +63,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetVpcInvokeArgs()
         {
         }
+        public static new GetVpcInvokeArgs Empty => new GetVpcInvokeArgs();
     }
 
 
@@ -76,6 +78,9 @@ namespace PiersKarsenbarg.Nutanix
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - The vpc kind metadata.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
         /// VPC input spec

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -10,11 +11,8 @@ import * as utilities from "./utilities";
  */
 export function getAccessControlPolicy(args?: GetAccessControlPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessControlPolicyResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getAccessControlPolicy:getAccessControlPolicy", {
         "accessControlPolicyId": args.accessControlPolicyId,
         "accessControlPolicyName": args.accessControlPolicyName,
@@ -26,8 +24,14 @@ export function getAccessControlPolicy(args?: GetAccessControlPolicyArgs, opts?:
  * A collection of arguments for invoking getAccessControlPolicy.
  */
 export interface GetAccessControlPolicyArgs {
+    /**
+     * - (Required) The UUID of an access control policy.
+     */
     accessControlPolicyId?: string;
     accessControlPolicyName?: string;
+    /**
+     * - The category values represented as a dictionary of key > list of values.
+     */
     categories?: inputs.GetAccessControlPolicyCategory[];
 }
 
@@ -39,35 +43,72 @@ export interface GetAccessControlPolicyResult {
     readonly accessControlPolicyName?: string;
     /**
      * The version of the API.
-     * * `state`: - The state of the Access Control Policy.
      */
     readonly apiVersion: string;
+    /**
+     * - The category values represented as a dictionary of key > list of values.
+     */
     readonly categories: outputs.GetAccessControlPolicyCategory[];
     readonly contextFilterLists: outputs.GetAccessControlPolicyContextFilterList[];
+    /**
+     * - The description of the Access Control Policy.
+     */
     readonly description: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - The Access Control Policy kind metadata.
+     */
     readonly metadata: {[key: string]: string};
+    /**
+     * - the name(Optional).
+     */
     readonly name: string;
+    /**
+     * - The reference to a user.
+     */
     readonly ownerReference: {[key: string]: string};
+    /**
+     * - The reference to a project.
+     */
     readonly projectReference: {[key: string]: string};
+    /**
+     * - The reference to a role.
+     */
     readonly roleReferences: outputs.GetAccessControlPolicyRoleReference[];
+    /**
+     * - The state of the Access Control Policy.
+     */
     readonly state: string;
+    /**
+     * - The User group(s) being assigned a given role.
+     */
     readonly userGroupReferenceLists: outputs.GetAccessControlPolicyUserGroupReferenceList[];
+    /**
+     * - The User(s) being assigned a given role.
+     */
     readonly userReferenceLists: outputs.GetAccessControlPolicyUserReferenceList[];
 }
-
+/**
+ * Describes an Access Control Policy.
+ */
 export function getAccessControlPolicyOutput(args?: GetAccessControlPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessControlPolicyResult> {
-    return pulumi.output(args).apply(a => getAccessControlPolicy(a, opts))
+    return pulumi.output(args).apply((a: any) => getAccessControlPolicy(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getAccessControlPolicy.
  */
 export interface GetAccessControlPolicyOutputArgs {
+    /**
+     * - (Required) The UUID of an access control policy.
+     */
     accessControlPolicyId?: pulumi.Input<string>;
     accessControlPolicyName?: pulumi.Input<string>;
+    /**
+     * - The category values represented as a dictionary of key > list of values.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.GetAccessControlPolicyCategoryArgs>[]>;
 }

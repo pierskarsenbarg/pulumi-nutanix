@@ -15,7 +15,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetUserGroupsEntityDirectoryServiceUserGroupResult
     {
         public readonly string DefaultUserPrincipalName;
+        /// <summary>
+        /// - The reference to a directory service. See #reference for to look the supported attributes.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReferenceResult> DirectoryServiceReferences;
+        /// <summary>
+        /// - The Distinguished name for the user group
+        /// </summary>
         public readonly string DistinguishedName;
 
         [OutputConstructor]

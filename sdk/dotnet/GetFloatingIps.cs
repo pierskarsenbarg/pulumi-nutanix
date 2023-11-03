@@ -20,23 +20,22 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var test = Output.Create(Nutanix.GetFloatingIps.InvokeAsync());
-        ///     }
+        ///     var test = Nutanix.GetFloatingIps.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFloatingIpsResult> InvokeAsync(GetFloatingIpsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFloatingIpsResult>("nutanix:index/getFloatingIps:getFloatingIps", args ?? new GetFloatingIpsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFloatingIpsResult>("nutanix:index/getFloatingIps:getFloatingIps", args ?? new GetFloatingIpsArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a datasource to retrieve all the floating IPs .
@@ -46,30 +45,33 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var test = Output.Create(Nutanix.GetFloatingIps.InvokeAsync());
-        ///     }
+        ///     var test = Nutanix.GetFloatingIps.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFloatingIpsResult> Invoke(GetFloatingIpsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFloatingIpsResult>("nutanix:index/getFloatingIps:getFloatingIps", args ?? new GetFloatingIpsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFloatingIpsResult>("nutanix:index/getFloatingIps:getFloatingIps", args ?? new GetFloatingIpsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetFloatingIpsArgs : Pulumi.InvokeArgs
+    public sealed class GetFloatingIpsArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private List<Inputs.GetFloatingIpsMetadataArgs>? _metadatas;
+
+        /// <summary>
+        /// - The floating_ip kind metadata.
+        /// </summary>
         public List<Inputs.GetFloatingIpsMetadataArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new List<Inputs.GetFloatingIpsMetadataArgs>());
@@ -79,12 +81,17 @@ namespace PiersKarsenbarg.Nutanix
         public GetFloatingIpsArgs()
         {
         }
+        public static new GetFloatingIpsArgs Empty => new GetFloatingIpsArgs();
     }
 
-    public sealed class GetFloatingIpsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFloatingIpsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private InputList<Inputs.GetFloatingIpsMetadataInputArgs>? _metadatas;
+
+        /// <summary>
+        /// - The floating_ip kind metadata.
+        /// </summary>
         public InputList<Inputs.GetFloatingIpsMetadataInputArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new InputList<Inputs.GetFloatingIpsMetadataInputArgs>());
@@ -94,18 +101,28 @@ namespace PiersKarsenbarg.Nutanix
         public GetFloatingIpsInvokeArgs()
         {
         }
+        public static new GetFloatingIpsInvokeArgs Empty => new GetFloatingIpsInvokeArgs();
     }
 
 
     [OutputType]
     public sealed class GetFloatingIpsResult
     {
+        /// <summary>
+        /// version of the API
+        /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// List of Floating IPs.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetFloatingIpsEntityResult> Entities;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - The floating_ip kind metadata.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetFloatingIpsMetadataResult> Metadatas;
 
         [OutputConstructor]

@@ -13,14 +13,14 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetServiceGroups
     {
         public static Task<GetServiceGroupsResult> InvokeAsync(GetServiceGroupsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetServiceGroupsResult>("nutanix:index/getServiceGroups:getServiceGroups", args ?? new GetServiceGroupsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetServiceGroupsResult>("nutanix:index/getServiceGroups:getServiceGroups", args ?? new GetServiceGroupsArgs(), options.WithDefaults());
 
         public static Output<GetServiceGroupsResult> Invoke(GetServiceGroupsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetServiceGroupsResult>("nutanix:index/getServiceGroups:getServiceGroups", args ?? new GetServiceGroupsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetServiceGroupsResult>("nutanix:index/getServiceGroups:getServiceGroups", args ?? new GetServiceGroupsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetServiceGroupsArgs : Pulumi.InvokeArgs
+    public sealed class GetServiceGroupsArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private List<Inputs.GetServiceGroupsMetadataArgs>? _metadatas;
@@ -33,9 +33,10 @@ namespace PiersKarsenbarg.Nutanix
         public GetServiceGroupsArgs()
         {
         }
+        public static new GetServiceGroupsArgs Empty => new GetServiceGroupsArgs();
     }
 
-    public sealed class GetServiceGroupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetServiceGroupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private InputList<Inputs.GetServiceGroupsMetadataInputArgs>? _metadatas;
@@ -48,6 +49,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetServiceGroupsInvokeArgs()
         {
         }
+        public static new GetServiceGroupsInvokeArgs Empty => new GetServiceGroupsInvokeArgs();
     }
 
 

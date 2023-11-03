@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetListArgs : Pulumi.ResourceArgs
+    public sealed class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetListArgs : global::Pulumi.ResourceArgs
     {
         [Input("externalConnectivityState")]
         public Input<string>? ExternalConnectivityState { get; set; }
@@ -25,5 +25,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetListArgs()
         {
         }
+        public static new RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetListArgs Empty => new RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetListArgs();
     }
 }

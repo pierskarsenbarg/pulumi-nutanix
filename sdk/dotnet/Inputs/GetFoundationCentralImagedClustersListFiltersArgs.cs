@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetFoundationCentralImagedClustersListFiltersInputArgs : Pulumi.ResourceArgs
+    public sealed class GetFoundationCentralImagedClustersListFiltersInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("archived")]
         public Input<bool>? Archived { get; set; }
@@ -19,5 +19,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetFoundationCentralImagedClustersListFiltersInputArgs()
         {
         }
+        public static new GetFoundationCentralImagedClustersListFiltersInputArgs Empty => new GetFoundationCentralImagedClustersListFiltersInputArgs();
     }
 }

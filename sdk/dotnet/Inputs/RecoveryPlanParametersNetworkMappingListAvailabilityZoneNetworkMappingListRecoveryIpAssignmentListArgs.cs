@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListArgs : Pulumi.ResourceArgs
+    public sealed class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListArgs : global::Pulumi.ResourceArgs
     {
         [Input("ipConfigLists", required: true)]
         private InputList<Inputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListIpConfigListArgs>? _ipConfigLists;
@@ -27,5 +27,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListArgs()
         {
         }
+        public static new RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListArgs Empty => new RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListArgs();
     }
 }

@@ -11,13 +11,13 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationImageNodesEosMetadataGetArgs : Pulumi.ResourceArgs
+    public sealed class FoundationImageNodesEosMetadataGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("accountNames")]
         private InputList<string>? _accountNames;
 
         /// <summary>
-        /// : - arrya of account names
+        /// - arrya of account names
         /// </summary>
         public InputList<string> AccountNames
         {
@@ -26,13 +26,13 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         }
 
         /// <summary>
-        /// : - Id of the Eos config uploaded in foundation GUI.
+        /// - Id of the Eos config uploaded in foundation GUI.
         /// </summary>
         [Input("configId")]
         public Input<string>? ConfigId { get; set; }
 
         /// <summary>
-        /// : - Email address of the user who downloaded Eos config.
+        /// - Email address of the user who downloaded Eos config.
         /// </summary>
         [Input("email")]
         public Input<string>? Email { get; set; }
@@ -40,5 +40,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public FoundationImageNodesEosMetadataGetArgs()
         {
         }
+        public static new FoundationImageNodesEosMetadataGetArgs Empty => new FoundationImageNodesEosMetadataGetArgs();
     }
 }

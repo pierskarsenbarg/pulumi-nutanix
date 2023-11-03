@@ -11,25 +11,41 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationIpmiConfigBlockNodeGetArgs : Pulumi.ResourceArgs
+    public sealed class FoundationIpmiConfigBlockNodeGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Required) Whether IPMI should be configured. Should be kept true to configure
+        /// </summary>
         [Input("ipmiConfigureNow", required: true)]
         public Input<bool> IpmiConfigureNow { get; set; } = null!;
 
+        /// <summary>
+        /// - Whether IPMI was successfully configured.
+        /// </summary>
         [Input("ipmiConfigureSuccessful")]
         public Input<bool>? IpmiConfigureSuccessful { get; set; }
 
+        /// <summary>
+        /// - IPMI IP address.
+        /// </summary>
         [Input("ipmiIp", required: true)]
         public Input<string> IpmiIp { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) IPMI mac address.
+        /// </summary>
         [Input("ipmiMac", required: true)]
         public Input<string> IpmiMac { get; set; } = null!;
 
+        /// <summary>
+        /// - IPMI configuration status message if any.
+        /// </summary>
         [Input("ipmiMessage")]
         public Input<string>? IpmiMessage { get; set; }
 
         public FoundationIpmiConfigBlockNodeGetArgs()
         {
         }
+        public static new FoundationIpmiConfigBlockNodeGetArgs Empty => new FoundationIpmiConfigBlockNodeGetArgs();
     }
 }

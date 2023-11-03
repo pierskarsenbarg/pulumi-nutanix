@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetKarbonPrivateRegistriesPrivateRegistryResult
     {
+        /// <summary>
+        /// - Endpoint of the private in format `url:port`.
+        /// </summary>
         public readonly string Endpoint;
+        /// <summary>
+        /// - Name of the private registry.
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - UUID of the private registry.
+        /// </summary>
         public readonly string Uuid;
 
         [OutputConstructor]

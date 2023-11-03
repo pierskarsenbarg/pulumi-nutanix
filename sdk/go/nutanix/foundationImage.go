@@ -7,8 +7,10 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Uploads hypervisor or AOS image to foundation.
@@ -19,31 +21,34 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.NewFoundationImage(ctx, "nos-image", &nutanix.FoundationImageArgs{
-// 			Filename:      pulumi.String("nos_image.tar"),
-// 			InstallerType: pulumi.String("nos"),
-// 			Source:        pulumi.String("../../../files/nutanix_installer_x86_64.tar"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = nutanix.NewFoundationImage(ctx, "hypervisor-image", &nutanix.FoundationImageArgs{
-// 			Filename:      pulumi.String("esx_image.iso"),
-// 			InstallerType: pulumi.String("esx"),
-// 			Source:        pulumi.String("../../../files/VMware-Installer.x86_64.iso"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewFoundationImage(ctx, "nos-image", &nutanix.FoundationImageArgs{
+//				Filename:      pulumi.String("nos_image.tar"),
+//				InstallerType: pulumi.String("nos"),
+//				Source:        pulumi.String("../../../files/nutanix_installer_x86_64.tar"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.NewFoundationImage(ctx, "hypervisor-image", &nutanix.FoundationImageArgs{
+//				Filename:      pulumi.String("esx_image.iso"),
+//				InstallerType: pulumi.String("esx"),
+//				Source:        pulumi.String("../../../files/VMware-Installer.x86_64.iso"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## lifecycle
 //
@@ -53,12 +58,18 @@ import (
 type FoundationImage struct {
 	pulumi.CustomResourceState
 
-	Filename      pulumi.StringOutput `pulumi:"filename"`
-	InWhitelist   pulumi.BoolOutput   `pulumi:"inWhitelist"`
+	// - (Required) Name of installer file to be kept in foundation vm.
+	Filename pulumi.StringOutput `pulumi:"filename"`
+	// - If hypervisor ISO is in whitelist.
+	InWhitelist pulumi.BoolOutput `pulumi:"inWhitelist"`
+	// - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
 	InstallerType pulumi.StringOutput `pulumi:"installerType"`
-	Md5sum        pulumi.StringOutput `pulumi:"md5sum"`
-	Name          pulumi.StringOutput `pulumi:"name"`
-	Source        pulumi.StringOutput `pulumi:"source"`
+	// - md5sum of the ISO.
+	Md5sum pulumi.StringOutput `pulumi:"md5sum"`
+	// - file location in foundation vm
+	Name pulumi.StringOutput `pulumi:"name"`
+	// - (Required) Complete path to the file in machine where the .tf  files runs.
+	Source pulumi.StringOutput `pulumi:"source"`
 }
 
 // NewFoundationImage registers a new resource with the given unique name, arguments, and options.
@@ -77,7 +88,7 @@ func NewFoundationImage(ctx *pulumi.Context,
 	if args.Source == nil {
 		return nil, errors.New("invalid value for required argument 'Source'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource FoundationImage
 	err := ctx.RegisterResource("nutanix:index/foundationImage:FoundationImage", name, args, &resource, opts...)
 	if err != nil {
@@ -100,21 +111,33 @@ func GetFoundationImage(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering FoundationImage resources.
 type foundationImageState struct {
-	Filename      *string `pulumi:"filename"`
-	InWhitelist   *bool   `pulumi:"inWhitelist"`
+	// - (Required) Name of installer file to be kept in foundation vm.
+	Filename *string `pulumi:"filename"`
+	// - If hypervisor ISO is in whitelist.
+	InWhitelist *bool `pulumi:"inWhitelist"`
+	// - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
 	InstallerType *string `pulumi:"installerType"`
-	Md5sum        *string `pulumi:"md5sum"`
-	Name          *string `pulumi:"name"`
-	Source        *string `pulumi:"source"`
+	// - md5sum of the ISO.
+	Md5sum *string `pulumi:"md5sum"`
+	// - file location in foundation vm
+	Name *string `pulumi:"name"`
+	// - (Required) Complete path to the file in machine where the .tf  files runs.
+	Source *string `pulumi:"source"`
 }
 
 type FoundationImageState struct {
-	Filename      pulumi.StringPtrInput
-	InWhitelist   pulumi.BoolPtrInput
+	// - (Required) Name of installer file to be kept in foundation vm.
+	Filename pulumi.StringPtrInput
+	// - If hypervisor ISO is in whitelist.
+	InWhitelist pulumi.BoolPtrInput
+	// - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
 	InstallerType pulumi.StringPtrInput
-	Md5sum        pulumi.StringPtrInput
-	Name          pulumi.StringPtrInput
-	Source        pulumi.StringPtrInput
+	// - md5sum of the ISO.
+	Md5sum pulumi.StringPtrInput
+	// - file location in foundation vm
+	Name pulumi.StringPtrInput
+	// - (Required) Complete path to the file in machine where the .tf  files runs.
+	Source pulumi.StringPtrInput
 }
 
 func (FoundationImageState) ElementType() reflect.Type {
@@ -122,16 +145,22 @@ func (FoundationImageState) ElementType() reflect.Type {
 }
 
 type foundationImageArgs struct {
-	Filename      string `pulumi:"filename"`
+	// - (Required) Name of installer file to be kept in foundation vm.
+	Filename string `pulumi:"filename"`
+	// - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
 	InstallerType string `pulumi:"installerType"`
-	Source        string `pulumi:"source"`
+	// - (Required) Complete path to the file in machine where the .tf  files runs.
+	Source string `pulumi:"source"`
 }
 
 // The set of arguments for constructing a FoundationImage resource.
 type FoundationImageArgs struct {
-	Filename      pulumi.StringInput
+	// - (Required) Name of installer file to be kept in foundation vm.
+	Filename pulumi.StringInput
+	// - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
 	InstallerType pulumi.StringInput
-	Source        pulumi.StringInput
+	// - (Required) Complete path to the file in machine where the .tf  files runs.
+	Source pulumi.StringInput
 }
 
 func (FoundationImageArgs) ElementType() reflect.Type {
@@ -157,10 +186,16 @@ func (i *FoundationImage) ToFoundationImageOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationImageOutput)
 }
 
+func (i *FoundationImage) ToOutput(ctx context.Context) pulumix.Output[*FoundationImage] {
+	return pulumix.Output[*FoundationImage]{
+		OutputState: i.ToFoundationImageOutputWithContext(ctx).OutputState,
+	}
+}
+
 // FoundationImageArrayInput is an input type that accepts FoundationImageArray and FoundationImageArrayOutput values.
 // You can construct a concrete instance of `FoundationImageArrayInput` via:
 //
-//          FoundationImageArray{ FoundationImageArgs{...} }
+//	FoundationImageArray{ FoundationImageArgs{...} }
 type FoundationImageArrayInput interface {
 	pulumi.Input
 
@@ -182,10 +217,16 @@ func (i FoundationImageArray) ToFoundationImageArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationImageArrayOutput)
 }
 
+func (i FoundationImageArray) ToOutput(ctx context.Context) pulumix.Output[[]*FoundationImage] {
+	return pulumix.Output[[]*FoundationImage]{
+		OutputState: i.ToFoundationImageArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // FoundationImageMapInput is an input type that accepts FoundationImageMap and FoundationImageMapOutput values.
 // You can construct a concrete instance of `FoundationImageMapInput` via:
 //
-//          FoundationImageMap{ "key": FoundationImageArgs{...} }
+//	FoundationImageMap{ "key": FoundationImageArgs{...} }
 type FoundationImageMapInput interface {
 	pulumi.Input
 
@@ -207,6 +248,12 @@ func (i FoundationImageMap) ToFoundationImageMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationImageMapOutput)
 }
 
+func (i FoundationImageMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FoundationImage] {
+	return pulumix.Output[map[string]*FoundationImage]{
+		OutputState: i.ToFoundationImageMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type FoundationImageOutput struct{ *pulumi.OutputState }
 
 func (FoundationImageOutput) ElementType() reflect.Type {
@@ -221,26 +268,38 @@ func (o FoundationImageOutput) ToFoundationImageOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o FoundationImageOutput) ToOutput(ctx context.Context) pulumix.Output[*FoundationImage] {
+	return pulumix.Output[*FoundationImage]{
+		OutputState: o.OutputState,
+	}
+}
+
+// - (Required) Name of installer file to be kept in foundation vm.
 func (o FoundationImageOutput) Filename() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationImage) pulumi.StringOutput { return v.Filename }).(pulumi.StringOutput)
 }
 
+// - If hypervisor ISO is in whitelist.
 func (o FoundationImageOutput) InWhitelist() pulumi.BoolOutput {
 	return o.ApplyT(func(v *FoundationImage) pulumi.BoolOutput { return v.InWhitelist }).(pulumi.BoolOutput)
 }
 
+// - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
 func (o FoundationImageOutput) InstallerType() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationImage) pulumi.StringOutput { return v.InstallerType }).(pulumi.StringOutput)
 }
 
+// - md5sum of the ISO.
 func (o FoundationImageOutput) Md5sum() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationImage) pulumi.StringOutput { return v.Md5sum }).(pulumi.StringOutput)
 }
 
+// - file location in foundation vm
 func (o FoundationImageOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationImage) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// - (Required) Complete path to the file in machine where the .tf  files runs.
 func (o FoundationImageOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationImage) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
 }
@@ -257,6 +316,12 @@ func (o FoundationImageArrayOutput) ToFoundationImageArrayOutput() FoundationIma
 
 func (o FoundationImageArrayOutput) ToFoundationImageArrayOutputWithContext(ctx context.Context) FoundationImageArrayOutput {
 	return o
+}
+
+func (o FoundationImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FoundationImage] {
+	return pulumix.Output[[]*FoundationImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o FoundationImageArrayOutput) Index(i pulumi.IntInput) FoundationImageOutput {
@@ -277,6 +342,12 @@ func (o FoundationImageMapOutput) ToFoundationImageMapOutput() FoundationImageMa
 
 func (o FoundationImageMapOutput) ToFoundationImageMapOutputWithContext(ctx context.Context) FoundationImageMapOutput {
 	return o
+}
+
+func (o FoundationImageMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FoundationImage] {
+	return pulumix.Output[map[string]*FoundationImage]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o FoundationImageMapOutput) MapIndex(k pulumi.StringInput) FoundationImageOutput {

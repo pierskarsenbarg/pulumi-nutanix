@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetHostHostDisksReferenceListResult
     {
+        /// <summary>
+        /// - The kind name (Default value: project).
+        /// </summary>
         public readonly string Kind;
+        /// <summary>
+        /// - the key name.
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - image uuid.
+        /// </summary>
         public readonly string Uuid;
 
         [OutputConstructor]

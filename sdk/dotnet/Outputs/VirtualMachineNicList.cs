@@ -14,16 +14,49 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VirtualMachineNicList
     {
+        /// <summary>
+        /// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VirtualMachineNicListIpEndpointList> IpEndpointLists;
+        /// <summary>
+        /// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        /// </summary>
         public readonly string? IsConnected;
+        /// <summary>
+        /// - The MAC address for the adapter.
+        /// </summary>
         public readonly string? MacAddress;
+        /// <summary>
+        /// - The model of this NIC. (Options : VIRTIO , E1000).
+        /// </summary>
         public readonly string? Model;
+        /// <summary>
+        /// - The reference to a network_function_chain.
+        /// </summary>
         public readonly ImmutableDictionary<string, string>? NetworkFunctionChainReference;
+        /// <summary>
+        /// - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
+        /// </summary>
         public readonly string? NetworkFunctionNicType;
+        /// <summary>
+        /// - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
+        /// </summary>
         public readonly string? NicType;
+        /// <summary>
+        /// - The number of tx/rx queue pairs for this NIC.
+        /// </summary>
         public readonly int? NumQueues;
+        /// <summary>
+        /// - The name of the subnet reference to.
+        /// </summary>
         public readonly string? SubnetName;
+        /// <summary>
+        /// - The reference to a subnet.
+        /// </summary>
         public readonly string? SubnetUuid;
+        /// <summary>
+        /// - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

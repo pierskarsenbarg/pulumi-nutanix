@@ -4,12 +4,17 @@
 package nutanix
 
 import (
+	"context"
+	"reflect"
+
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes a list of hosts
 func GetHosts(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetHostsResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetHostsResult
 	err := ctx.Invoke("nutanix:index/getHosts:getHosts", nil, &rv, opts...)
 	if err != nil {
@@ -21,27 +26,60 @@ func GetHosts(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetHostsResult
 // A collection of values returned by getHosts.
 type GetHostsResult struct {
 	// The API version.
-	// * `gpuDriverVersion`: - Host GPU driver version.
-	// * `failoverCluster`: - Hyper-V failover cluster.
-	// * `ipmi`: - Host IPMI info.
-	// * `cpuModel`: - Host CPU model.
-	// * `hostNicsIdList`: - Host NICs.
-	// * `numCpuSockets`: - Number of CPU sockets.
-	// * `windowsDomain`: - The name of the node to be renamed to during domain-join. If not given,a new name will be automatically assigned.
-	// * `gpuList`: - List of GPUs on the host.
-	// * `serialNumber`: - Node serial number.
-	// * `cpuCapacityHz`: - Host CPU capacity.
-	// * `memoryCapacityMib`: - Host memory capacity in MiB.
-	// * `hostDisksReferenceList`: - The reference to a disk.
-	// * `monitoringState`: - Host monitoring status.
-	// * `hypervisor`: - Host Hypervisor information.
-	// * `hostType`: - Host type.
-	// * `numCpuCores`: - Number of CPU cores on Host.
-	// * `rackableUnitReference`: - The reference to a rackable_unit.
-	// * `controllerVm`: - Host controller vm information.
-	// * `block`: - Host block config info.
-	ApiVersion string           `pulumi:"apiVersion"`
-	Entities   []GetHostsEntity `pulumi:"entities"`
+	ApiVersion string `pulumi:"apiVersion"`
+	// List of Hosts
+	Entities []GetHostsEntity `pulumi:"entities"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+}
+
+func GetHostsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetHostsResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetHostsResult, error) {
+		r, err := GetHosts(ctx, opts...)
+		var s GetHostsResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetHostsResultOutput)
+}
+
+// A collection of values returned by getHosts.
+type GetHostsResultOutput struct{ *pulumi.OutputState }
+
+func (GetHostsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostsResult)(nil)).Elem()
+}
+
+func (o GetHostsResultOutput) ToGetHostsResultOutput() GetHostsResultOutput {
+	return o
+}
+
+func (o GetHostsResultOutput) ToGetHostsResultOutputWithContext(ctx context.Context) GetHostsResultOutput {
+	return o
+}
+
+func (o GetHostsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetHostsResult] {
+	return pulumix.Output[GetHostsResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The API version.
+func (o GetHostsResultOutput) ApiVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostsResult) string { return v.ApiVersion }).(pulumi.StringOutput)
+}
+
+// List of Hosts
+func (o GetHostsResultOutput) Entities() GetHostsEntityArrayOutput {
+	return o.ApplyT(func(v GetHostsResult) []GetHostsEntity { return v.Entities }).(GetHostsEntityArrayOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetHostsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetHostsResultOutput{})
 }

@@ -16,17 +16,40 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         /// <summary>
         /// The version of the API.
-        /// * `state`: - The state of the role.
         /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// - Categories for the role.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetRolesEntityCategoryResult> Categories;
+        /// <summary>
+        /// - The description of the role.
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// - The role kind metadata.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
+        /// <summary>
+        /// - the name(Optional).
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - The reference to a user.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> OwnerReference;
+        /// <summary>
+        /// - (Required) List of permission references.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetRolesEntityPermissionReferenceListResult> PermissionReferenceLists;
+        /// <summary>
+        /// - The reference to a project.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> ProjectReference;
         public readonly string RoleId;
+        /// <summary>
+        /// - The state of the role.
+        /// </summary>
         public readonly string State;
 
         [OutputConstructor]

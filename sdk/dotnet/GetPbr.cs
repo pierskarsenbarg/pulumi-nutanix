@@ -16,17 +16,17 @@ namespace PiersKarsenbarg.Nutanix
         /// Provides a datasource to retrieve PBR with pbr_uuid .
         /// </summary>
         public static Task<GetPbrResult> InvokeAsync(GetPbrArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPbrResult>("nutanix:index/getPbr:getPbr", args ?? new GetPbrArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPbrResult>("nutanix:index/getPbr:getPbr", args ?? new GetPbrArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a datasource to retrieve PBR with pbr_uuid .
         /// </summary>
         public static Output<GetPbrResult> Invoke(GetPbrInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPbrResult>("nutanix:index/getPbr:getPbr", args ?? new GetPbrInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPbrResult>("nutanix:index/getPbr:getPbr", args ?? new GetPbrInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetPbrArgs : Pulumi.InvokeArgs
+    public sealed class GetPbrArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// pbr UUID
@@ -37,9 +37,10 @@ namespace PiersKarsenbarg.Nutanix
         public GetPbrArgs()
         {
         }
+        public static new GetPbrArgs Empty => new GetPbrArgs();
     }
 
-    public sealed class GetPbrInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPbrInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// pbr UUID
@@ -50,6 +51,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetPbrInvokeArgs()
         {
         }
+        public static new GetPbrInvokeArgs Empty => new GetPbrInvokeArgs();
     }
 
 
@@ -64,6 +66,9 @@ namespace PiersKarsenbarg.Nutanix
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - The routing policies kind metadata.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
         public readonly string PbrUuid;
         /// <summary>

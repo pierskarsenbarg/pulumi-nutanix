@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class FoundationImageNodesBlock
     {
         /// <summary>
-        /// : - Block ID.
+        /// - Block ID.
         /// </summary>
         public readonly string? BlockId;
         public readonly ImmutableArray<Outputs.FoundationImageNodesBlockNode> Nodes;

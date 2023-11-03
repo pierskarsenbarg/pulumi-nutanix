@@ -11,16 +11,23 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class VirtualMachineNicListIpEndpointListArgs : Pulumi.ResourceArgs
+    public sealed class VirtualMachineNicListIpEndpointListArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - Address string.
+        /// </summary>
         [Input("ip")]
         public Input<string>? Ip { get; set; }
 
+        /// <summary>
+        /// - Address type. It can only be "ASSIGNED" in the spec. If no type is specified in the spec, the default type is set to "ASSIGNED". (Options : ASSIGNED , LEARNED)
+        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         public VirtualMachineNicListIpEndpointListArgs()
         {
         }
+        public static new VirtualMachineNicListIpEndpointListArgs Empty => new VirtualMachineNicListIpEndpointListArgs();
     }
 }

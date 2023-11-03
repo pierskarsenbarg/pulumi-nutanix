@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReferenceArgs : Pulumi.ResourceArgs
+    public sealed class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReferenceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Required) The kind name (Default value: `project`).
@@ -34,5 +34,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReferenceArgs()
         {
         }
+        public static new RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReferenceArgs Empty => new RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReferenceArgs();
     }
 }

@@ -20,23 +20,47 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var clusters = Output.Create(Nutanix.GetKarbonClusters.InvokeAsync());
-        ///     }
+        ///     var clusters = Nutanix.GetKarbonClusters.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetKarbonClustersResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetKarbonClustersResult>("nutanix:index/getKarbonClusters:getKarbonClusters", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetKarbonClustersResult>("nutanix:index/getKarbonClusters:getKarbonClusters", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// Describes Karbon Clusters
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var clusters = Nutanix.GetKarbonClusters.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetKarbonClustersResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetKarbonClustersResult>("nutanix:index/getKarbonClusters:getKarbonClusters", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

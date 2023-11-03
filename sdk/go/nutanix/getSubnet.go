@@ -7,12 +7,14 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
 func LookupSubnet(ctx *pulumi.Context, args *LookupSubnetArgs, opts ...pulumi.InvokeOption) (*LookupSubnetResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSubnetResult
 	err := ctx.Invoke("nutanix:index/getSubnet:getSubnet", args, &rv, opts...)
 	if err != nil {
@@ -23,47 +25,72 @@ func LookupSubnet(ctx *pulumi.Context, args *LookupSubnetArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getSubnet.
 type LookupSubnetArgs struct {
+	// - Additional filters to narrow down list of subnets.
 	AdditionalFilters []GetSubnetAdditionalFilter `pulumi:"additionalFilters"`
-	Categories        []GetSubnetCategory         `pulumi:"categories"`
-	SubnetId          *string                     `pulumi:"subnetId"`
-	SubnetName        *string                     `pulumi:"subnetName"`
+	// The API Version.
+	Categories []GetSubnetCategory `pulumi:"categories"`
+	// - (Optional) The ID for the subnet.
+	SubnetId *string `pulumi:"subnetId"`
+	// - (Optional) The name for the subnet
+	SubnetName *string `pulumi:"subnetName"`
 }
 
 // A collection of values returned by getSubnet.
 type LookupSubnetResult struct {
-	AdditionalFilters         []GetSubnetAdditionalFilter `pulumi:"additionalFilters"`
-	ApiVersion                string                      `pulumi:"apiVersion"`
-	AvailabilityZoneReference map[string]string           `pulumi:"availabilityZoneReference"`
-	Categories                []GetSubnetCategory         `pulumi:"categories"`
-	ClusterName               string                      `pulumi:"clusterName"`
-	ClusterUuid               string                      `pulumi:"clusterUuid"`
-	DefaultGatewayIp          string                      `pulumi:"defaultGatewayIp"`
-	Description               string                      `pulumi:"description"`
-	DhcpDomainNameServerLists []string                    `pulumi:"dhcpDomainNameServerLists"`
-	DhcpDomainSearchLists     []string                    `pulumi:"dhcpDomainSearchLists"`
-	DhcpOptions               map[string]string           `pulumi:"dhcpOptions"`
-	DhcpServerAddress         map[string]string           `pulumi:"dhcpServerAddress"`
-	DhcpServerAddressPort     int                         `pulumi:"dhcpServerAddressPort"`
-	EnableNat                 bool                        `pulumi:"enableNat"`
+	// - Additional filters to narrow down list of subnets.
+	AdditionalFilters []GetSubnetAdditionalFilter `pulumi:"additionalFilters"`
+	ApiVersion        string                      `pulumi:"apiVersion"`
+	// The reference to a availability_zone.
+	AvailabilityZoneReference map[string]string `pulumi:"availabilityZoneReference"`
+	// The API Version.
+	Categories []GetSubnetCategory `pulumi:"categories"`
+	// The name of a cluster.
+	ClusterName string `pulumi:"clusterName"`
+	ClusterUuid string `pulumi:"clusterUuid"`
+	// Default gateway IP address.
+	DefaultGatewayIp string `pulumi:"defaultGatewayIp"`
+	// A description for subnet.
+	Description               string   `pulumi:"description"`
+	DhcpDomainNameServerLists []string `pulumi:"dhcpDomainNameServerLists"`
+	// DHCP domain search list for a subnet.
+	DhcpDomainSearchLists []string `pulumi:"dhcpDomainSearchLists"`
+	// Spec for defining DHCP options.
+	DhcpOptions map[string]string `pulumi:"dhcpOptions"`
+	// Host address.
+	DhcpServerAddress map[string]string `pulumi:"dhcpServerAddress"`
+	// Port Number.
+	DhcpServerAddressPort int  `pulumi:"dhcpServerAddressPort"`
+	EnableNat             bool `pulumi:"enableNat"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                            string                 `pulumi:"id"`
-	IpConfigPoolListRanges        []string               `pulumi:"ipConfigPoolListRanges"`
-	IsExternal                    bool                   `pulumi:"isExternal"`
-	MessageLists                  []GetSubnetMessageList `pulumi:"messageLists"`
-	Metadata                      map[string]string      `pulumi:"metadata"`
-	Name                          string                 `pulumi:"name"`
-	NetworkFunctionChainReference map[string]string      `pulumi:"networkFunctionChainReference"`
-	OwnerReference                map[string]string      `pulumi:"ownerReference"`
-	PrefixLength                  int                    `pulumi:"prefixLength"`
-	ProjectReference              map[string]string      `pulumi:"projectReference"`
-	State                         string                 `pulumi:"state"`
-	SubnetId                      *string                `pulumi:"subnetId"`
-	SubnetIp                      string                 `pulumi:"subnetIp"`
-	SubnetName                    *string                `pulumi:"subnetName"`
-	SubnetType                    string                 `pulumi:"subnetType"`
-	VlanId                        int                    `pulumi:"vlanId"`
-	VpcReference                  map[string]string      `pulumi:"vpcReference"`
-	VswitchName                   string                 `pulumi:"vswitchName"`
+	Id                     string                 `pulumi:"id"`
+	IpConfigPoolListRanges []string               `pulumi:"ipConfigPoolListRanges"`
+	IsExternal             bool                   `pulumi:"isExternal"`
+	MessageLists           []GetSubnetMessageList `pulumi:"messageLists"`
+	// The subnet kind metadata.
+	Metadata map[string]string `pulumi:"metadata"`
+	// - the name(Optional).
+	Name string `pulumi:"name"`
+	// The reference to a network_function_chain.
+	NetworkFunctionChainReference map[string]string `pulumi:"networkFunctionChainReference"`
+	// The reference to a user.
+	OwnerReference map[string]string `pulumi:"ownerReference"`
+	// - (Optional). IP prefix length of the Subnet.
+	PrefixLength int `pulumi:"prefixLength"`
+	// The reference to a project.
+	ProjectReference map[string]string `pulumi:"projectReference"`
+	// - The state of the subnet.
+	State    string  `pulumi:"state"`
+	SubnetId *string `pulumi:"subnetId"`
+	// Subnet IP address.
+	SubnetIp   string  `pulumi:"subnetIp"`
+	SubnetName *string `pulumi:"subnetName"`
+	// The type of the subnet.
+	SubnetType string `pulumi:"subnetType"`
+	// VLAN assigned to the subnet.
+	VlanId       int               `pulumi:"vlanId"`
+	VpcReference map[string]string `pulumi:"vpcReference"`
+	// The name of the vswitch.
+	VswitchName string `pulumi:"vswitchName"`
 }
 
 func LookupSubnetOutput(ctx *pulumi.Context, args LookupSubnetOutputArgs, opts ...pulumi.InvokeOption) LookupSubnetResultOutput {
@@ -81,10 +108,14 @@ func LookupSubnetOutput(ctx *pulumi.Context, args LookupSubnetOutputArgs, opts .
 
 // A collection of arguments for invoking getSubnet.
 type LookupSubnetOutputArgs struct {
+	// - Additional filters to narrow down list of subnets.
 	AdditionalFilters GetSubnetAdditionalFilterArrayInput `pulumi:"additionalFilters"`
-	Categories        GetSubnetCategoryArrayInput         `pulumi:"categories"`
-	SubnetId          pulumi.StringPtrInput               `pulumi:"subnetId"`
-	SubnetName        pulumi.StringPtrInput               `pulumi:"subnetName"`
+	// The API Version.
+	Categories GetSubnetCategoryArrayInput `pulumi:"categories"`
+	// - (Optional) The ID for the subnet.
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+	// - (Optional) The name for the subnet
+	SubnetName pulumi.StringPtrInput `pulumi:"subnetName"`
 }
 
 func (LookupSubnetOutputArgs) ElementType() reflect.Type {
@@ -106,6 +137,13 @@ func (o LookupSubnetResultOutput) ToLookupSubnetResultOutputWithContext(ctx cont
 	return o
 }
 
+func (o LookupSubnetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSubnetResult] {
+	return pulumix.Output[LookupSubnetResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// - Additional filters to narrow down list of subnets.
 func (o LookupSubnetResultOutput) AdditionalFilters() GetSubnetAdditionalFilterArrayOutput {
 	return o.ApplyT(func(v LookupSubnetResult) []GetSubnetAdditionalFilter { return v.AdditionalFilters }).(GetSubnetAdditionalFilterArrayOutput)
 }
@@ -114,14 +152,17 @@ func (o LookupSubnetResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// The reference to a availability_zone.
 func (o LookupSubnetResultOutput) AvailabilityZoneReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupSubnetResult) map[string]string { return v.AvailabilityZoneReference }).(pulumi.StringMapOutput)
 }
 
+// The API Version.
 func (o LookupSubnetResultOutput) Categories() GetSubnetCategoryArrayOutput {
 	return o.ApplyT(func(v LookupSubnetResult) []GetSubnetCategory { return v.Categories }).(GetSubnetCategoryArrayOutput)
 }
 
+// The name of a cluster.
 func (o LookupSubnetResultOutput) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.ClusterName }).(pulumi.StringOutput)
 }
@@ -130,10 +171,12 @@ func (o LookupSubnetResultOutput) ClusterUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.ClusterUuid }).(pulumi.StringOutput)
 }
 
+// Default gateway IP address.
 func (o LookupSubnetResultOutput) DefaultGatewayIp() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.DefaultGatewayIp }).(pulumi.StringOutput)
 }
 
+// A description for subnet.
 func (o LookupSubnetResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -142,18 +185,22 @@ func (o LookupSubnetResultOutput) DhcpDomainNameServerLists() pulumi.StringArray
 	return o.ApplyT(func(v LookupSubnetResult) []string { return v.DhcpDomainNameServerLists }).(pulumi.StringArrayOutput)
 }
 
+// DHCP domain search list for a subnet.
 func (o LookupSubnetResultOutput) DhcpDomainSearchLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupSubnetResult) []string { return v.DhcpDomainSearchLists }).(pulumi.StringArrayOutput)
 }
 
+// Spec for defining DHCP options.
 func (o LookupSubnetResultOutput) DhcpOptions() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupSubnetResult) map[string]string { return v.DhcpOptions }).(pulumi.StringMapOutput)
 }
 
+// Host address.
 func (o LookupSubnetResultOutput) DhcpServerAddress() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupSubnetResult) map[string]string { return v.DhcpServerAddress }).(pulumi.StringMapOutput)
 }
 
+// Port Number.
 func (o LookupSubnetResultOutput) DhcpServerAddressPort() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupSubnetResult) int { return v.DhcpServerAddressPort }).(pulumi.IntOutput)
 }
@@ -179,30 +226,37 @@ func (o LookupSubnetResultOutput) MessageLists() GetSubnetMessageListArrayOutput
 	return o.ApplyT(func(v LookupSubnetResult) []GetSubnetMessageList { return v.MessageLists }).(GetSubnetMessageListArrayOutput)
 }
 
+// The subnet kind metadata.
 func (o LookupSubnetResultOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupSubnetResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
+// - the name(Optional).
 func (o LookupSubnetResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// The reference to a network_function_chain.
 func (o LookupSubnetResultOutput) NetworkFunctionChainReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupSubnetResult) map[string]string { return v.NetworkFunctionChainReference }).(pulumi.StringMapOutput)
 }
 
+// The reference to a user.
 func (o LookupSubnetResultOutput) OwnerReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupSubnetResult) map[string]string { return v.OwnerReference }).(pulumi.StringMapOutput)
 }
 
+// - (Optional). IP prefix length of the Subnet.
 func (o LookupSubnetResultOutput) PrefixLength() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupSubnetResult) int { return v.PrefixLength }).(pulumi.IntOutput)
 }
 
+// The reference to a project.
 func (o LookupSubnetResultOutput) ProjectReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupSubnetResult) map[string]string { return v.ProjectReference }).(pulumi.StringMapOutput)
 }
 
+// - The state of the subnet.
 func (o LookupSubnetResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -211,6 +265,7 @@ func (o LookupSubnetResultOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LookupSubnetResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
+// Subnet IP address.
 func (o LookupSubnetResultOutput) SubnetIp() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.SubnetIp }).(pulumi.StringOutput)
 }
@@ -219,10 +274,12 @@ func (o LookupSubnetResultOutput) SubnetName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LookupSubnetResult) *string { return v.SubnetName }).(pulumi.StringPtrOutput)
 }
 
+// The type of the subnet.
 func (o LookupSubnetResultOutput) SubnetType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.SubnetType }).(pulumi.StringOutput)
 }
 
+// VLAN assigned to the subnet.
 func (o LookupSubnetResultOutput) VlanId() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupSubnetResult) int { return v.VlanId }).(pulumi.IntOutput)
 }
@@ -231,6 +288,7 @@ func (o LookupSubnetResultOutput) VpcReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupSubnetResult) map[string]string { return v.VpcReference }).(pulumi.StringMapOutput)
 }
 
+// The name of the vswitch.
 func (o LookupSubnetResultOutput) VswitchName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubnetResult) string { return v.VswitchName }).(pulumi.StringOutput)
 }

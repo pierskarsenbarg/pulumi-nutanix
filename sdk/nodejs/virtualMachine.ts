@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -17,7 +18,7 @@ import * as utilities from "./utilities";
  *
  * const clusters = nutanix.getClusters({});
  * const vm1 = new nutanix.VirtualMachine("vm1", {
- *     clusterUuid: clusters.then(clusters => clusters.entities?[0]?.metadata?.uuid),
+ *     clusterUuid: clusters.then(clusters => clusters.entities?.[0]?.metadata?.uuid),
  *     categories: [{
  *         name: "Environment",
  *         value: "Staging",
@@ -35,7 +36,7 @@ import * as utilities from "./utilities";
  *
  * const clusters = nutanix.getClusters({});
  * const vm = new nutanix.VirtualMachine("vm", {
- *     clusterUuid: clusters.then(clusters => clusters.entities?[0]?.metadata?.uuid),
+ *     clusterUuid: clusters.then(clusters => clusters.entities?.[0]?.metadata?.uuid),
  *     numVcpusPerSocket: 1,
  *     numSockets: 1,
  *     memorySizeMib: 186,
@@ -82,92 +83,186 @@ export class VirtualMachine extends pulumi.CustomResource {
 
     /**
      * The version of the API.
-     * * `state`: - The state of the vm.
-     * * `clusterName`: - The name of the cluster.
-     * * `hostReference`: - Reference to a host.
-     * * `hypervisorType`: - The hypervisor type for the hypervisor the VM is hosted on.
-     * * `nicListStatus`: - Status NICs attached to the VM.
      */
     public /*out*/ readonly apiVersion!: pulumi.Output<string>;
+    /**
+     * - (Optional) The reference to a availability_zone.
+     */
     public readonly availabilityZoneReference!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - (Optional) Address of disk to boot from.
+     */
     public readonly bootDeviceDiskAddress!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - (Optional) MAC address of nic to boot from.
+     */
     public readonly bootDeviceMacAddress!: pulumi.Output<string>;
+    /**
+     * - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
+     */
     public readonly bootDeviceOrderLists!: pulumi.Output<string[]>;
+    /**
+     * - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like bootDevice and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+     */
     public readonly bootType!: pulumi.Output<string>;
+    /**
+     * - (Optional) Categories for the vm.
+     */
     public readonly categories!: pulumi.Output<outputs.VirtualMachineCategory[]>;
     public readonly cloudInitCdromUuid!: pulumi.Output<string>;
+    /**
+     * - The name of the cluster.
+     */
     public /*out*/ readonly clusterName!: pulumi.Output<string>;
+    /**
+     * - (Required) The UUID of the cluster.
+     */
     public readonly clusterUuid!: pulumi.Output<string>;
+    /**
+     * - (Optional) A description for vm.
+     */
     public readonly description!: pulumi.Output<string>;
     /**
      * Disks attached to the VM.
-     * * `useHotAdd`: - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
-     * * `numThreadsPerCore`: - (Optional) Number of threads per core.
-     * * `enableCpuPassthrough`: - (Optional) Add true to enable CPU passthrough.
-     * * `isVcpuHardPinned`: - (Optional) Add true to enable CPU pinning.
      */
     public readonly diskLists!: pulumi.Output<outputs.VirtualMachineDiskList[]>;
+    /**
+     * - (Optional) Add true to enable CPU passthrough.
+     */
     public readonly enableCpuPassthrough!: pulumi.Output<boolean | undefined>;
+    /**
+     * - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
+     */
     public readonly enableScriptExec!: pulumi.Output<boolean>;
+    /**
+     * - (Optional) GPUs attached to the VM.
+     */
     public readonly gpuLists!: pulumi.Output<outputs.VirtualMachineGpuList[]>;
+    /**
+     * - (Optional) Generic key value pair used for custom attributes in cloud init.
+     */
     public readonly guestCustomizationCloudInitCustomKeyValues!: pulumi.Output<{[key: string]: string}>;
     /**
      * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
-     * * `guestCustomizationCloudInitCustomKeyValues`: - (Optional) Generic key value pair used for custom attributes in cloud init.
-     * * `guestCustomizationIsOverridable`: - (Optional) Flag to allow override of customization by deployer.
-     * * `guestCustomizationSysprep`: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
-     * * `guestCustomizationSysrepCustomKeyValues`: - (Optional) Generic key value pair used for custom attributes in sysrep.
-     * * `shouldFailOnScriptFailure`: - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
-     * * `enableScriptExec`: - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
-     * * `powerStateMechanism`: - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
-     * * `vgaConsoleEnabled`: - (Optional) Indicates whether VGA console should be enabled or not.
      */
     public readonly guestCustomizationCloudInitMetaData!: pulumi.Output<string>;
+    /**
+     * - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+     */
     public readonly guestCustomizationCloudInitUserData!: pulumi.Output<string>;
+    /**
+     * - (Optional) Flag to allow override of customization by deployer.
+     */
     public readonly guestCustomizationIsOverridable!: pulumi.Output<boolean>;
+    /**
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     */
     public readonly guestCustomizationSysprep!: pulumi.Output<{[key: string]: string}>;
     public readonly guestCustomizationSysprepCustomKeyValues!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
+     */
     public readonly guestOsId!: pulumi.Output<string>;
+    /**
+     * - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+     */
     public readonly hardwareClockTimezone!: pulumi.Output<string>;
+    /**
+     * - Reference to a host.
+     */
     public /*out*/ readonly hostReference!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - The hypervisor type for the hypervisor the VM is hosted on.
+     */
     public /*out*/ readonly hypervisorType!: pulumi.Output<string>;
+    /**
+     * - (Optional) Add true to enable CPU pinning.
+     */
     public readonly isVcpuHardPinned!: pulumi.Output<boolean | undefined>;
+    /**
+     * - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+     */
     public readonly machineType!: pulumi.Output<string>;
+    /**
+     * - (Optional) Memory size in MiB.
+     */
     public readonly memorySizeMib!: pulumi.Output<number>;
+    /**
+     * - The vm kind metadata.
+     */
     public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - (Required) The name for the vm.
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * - (Ooptional) Credentials to login server.
+     */
     public readonly ngtCredentials!: pulumi.Output<{[key: string]: any}>;
     /**
      * Application names that are enabled.
-     * * `numVcpusPerSocket`: - (Optional) Number of vCPUs per socket.
-     * * `numSockets`: - (Optional) Number of vCPU sockets.
-     * * `gpuList`: - (Optional) GPUs attached to the VM.
-     * * `parentReferece`: - (Optional) Reference to an entity that the VM cloned from.
-     * * `memorySizeMib`: - (Optional) Memory size in MiB.
-     * * `bootDeviceOrderList`: - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
-     * * `bootDeviceDiskAddress`: - (Optional) Address of disk to boot from.
-     * * `bootDeviceMacAddress`: - (Optional) MAC address of nic to boot from.
-     * * `bootType`: - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like bootDevice and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
-     * * `machineType`: - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-     * * `hardwareClockTimezone`: - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
-     * * `guestCustomizationCloudInitUserData`: - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
      */
     public readonly ngtEnabledCapabilityLists!: pulumi.Output<string[]>;
+    /**
+     * - Status NICs attached to the VM.
+     */
     public /*out*/ readonly nicListStatuses!: pulumi.Output<outputs.VirtualMachineNicListStatus[]>;
+    /**
+     * - (Optional) Spec NICs attached to the VM.
+     */
     public readonly nicLists!: pulumi.Output<outputs.VirtualMachineNicList[]>;
+    /**
+     * - (Optional) Number of vCPU sockets.
+     */
     public readonly numSockets!: pulumi.Output<number>;
+    /**
+     * - (Optional) Number of vCPUs per socket.
+     */
     public readonly numVcpusPerSocket!: pulumi.Output<number>;
+    /**
+     * - (Optional) Number of vNUMA nodes. 0 means vNUMA is disabled.
+     */
     public readonly numVnumaNodes!: pulumi.Output<number>;
+    /**
+     * - (Optional) Information regarding Nutanix Guest Tools.
+     */
     public readonly nutanixGuestTools!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - (Optional) The reference to a user.
+     */
     public readonly ownerReference!: pulumi.Output<{[key: string]: string}>;
     public readonly parentReference!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
+     */
     public /*out*/ readonly powerState!: pulumi.Output<string>;
+    /**
+     * - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
+     */
     public readonly powerStateMechanism!: pulumi.Output<string>;
+    /**
+     * - (Optional) The reference to a project.
+     */
     public readonly projectReference!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - (Optional) Serial Ports configured on the VM.
+     */
     public readonly serialPortLists!: pulumi.Output<outputs.VirtualMachineSerialPortList[] | undefined>;
+    /**
+     * - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
+     */
     public readonly shouldFailOnScriptFailure!: pulumi.Output<boolean>;
+    /**
+     * - (Optional) Nutanix Guest Tools is enabled or not.
+     */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
+     */
     public readonly useHotAdd!: pulumi.Output<boolean | undefined>;
+    /**
+     * - (Optional) Indicates whether VGA console should be enabled or not.
+     */
     public readonly vgaConsoleEnabled!: pulumi.Output<boolean>;
 
     /**
@@ -296,92 +391,186 @@ export class VirtualMachine extends pulumi.CustomResource {
 export interface VirtualMachineState {
     /**
      * The version of the API.
-     * * `state`: - The state of the vm.
-     * * `clusterName`: - The name of the cluster.
-     * * `hostReference`: - Reference to a host.
-     * * `hypervisorType`: - The hypervisor type for the hypervisor the VM is hosted on.
-     * * `nicListStatus`: - Status NICs attached to the VM.
      */
     apiVersion?: pulumi.Input<string>;
+    /**
+     * - (Optional) The reference to a availability_zone.
+     */
     availabilityZoneReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) Address of disk to boot from.
+     */
     bootDeviceDiskAddress?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) MAC address of nic to boot from.
+     */
     bootDeviceMacAddress?: pulumi.Input<string>;
+    /**
+     * - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
+     */
     bootDeviceOrderLists?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like bootDevice and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+     */
     bootType?: pulumi.Input<string>;
+    /**
+     * - (Optional) Categories for the vm.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.VirtualMachineCategory>[]>;
     cloudInitCdromUuid?: pulumi.Input<string>;
+    /**
+     * - The name of the cluster.
+     */
     clusterName?: pulumi.Input<string>;
+    /**
+     * - (Required) The UUID of the cluster.
+     */
     clusterUuid?: pulumi.Input<string>;
+    /**
+     * - (Optional) A description for vm.
+     */
     description?: pulumi.Input<string>;
     /**
      * Disks attached to the VM.
-     * * `useHotAdd`: - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
-     * * `numThreadsPerCore`: - (Optional) Number of threads per core.
-     * * `enableCpuPassthrough`: - (Optional) Add true to enable CPU passthrough.
-     * * `isVcpuHardPinned`: - (Optional) Add true to enable CPU pinning.
      */
     diskLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineDiskList>[]>;
+    /**
+     * - (Optional) Add true to enable CPU passthrough.
+     */
     enableCpuPassthrough?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
+     */
     enableScriptExec?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) GPUs attached to the VM.
+     */
     gpuLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineGpuList>[]>;
+    /**
+     * - (Optional) Generic key value pair used for custom attributes in cloud init.
+     */
     guestCustomizationCloudInitCustomKeyValues?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
-     * * `guestCustomizationCloudInitCustomKeyValues`: - (Optional) Generic key value pair used for custom attributes in cloud init.
-     * * `guestCustomizationIsOverridable`: - (Optional) Flag to allow override of customization by deployer.
-     * * `guestCustomizationSysprep`: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
-     * * `guestCustomizationSysrepCustomKeyValues`: - (Optional) Generic key value pair used for custom attributes in sysrep.
-     * * `shouldFailOnScriptFailure`: - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
-     * * `enableScriptExec`: - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
-     * * `powerStateMechanism`: - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
-     * * `vgaConsoleEnabled`: - (Optional) Indicates whether VGA console should be enabled or not.
      */
     guestCustomizationCloudInitMetaData?: pulumi.Input<string>;
+    /**
+     * - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+     */
     guestCustomizationCloudInitUserData?: pulumi.Input<string>;
+    /**
+     * - (Optional) Flag to allow override of customization by deployer.
+     */
     guestCustomizationIsOverridable?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     */
     guestCustomizationSysprep?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     guestCustomizationSysprepCustomKeyValues?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
+     */
     guestOsId?: pulumi.Input<string>;
+    /**
+     * - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+     */
     hardwareClockTimezone?: pulumi.Input<string>;
+    /**
+     * - Reference to a host.
+     */
     hostReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - The hypervisor type for the hypervisor the VM is hosted on.
+     */
     hypervisorType?: pulumi.Input<string>;
+    /**
+     * - (Optional) Add true to enable CPU pinning.
+     */
     isVcpuHardPinned?: pulumi.Input<boolean>;
+    /**
+     * - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+     */
     machineType?: pulumi.Input<string>;
+    /**
+     * - (Optional) Memory size in MiB.
+     */
     memorySizeMib?: pulumi.Input<number>;
+    /**
+     * - The vm kind metadata.
+     */
     metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Required) The name for the vm.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Ooptional) Credentials to login server.
+     */
     ngtCredentials?: pulumi.Input<{[key: string]: any}>;
     /**
      * Application names that are enabled.
-     * * `numVcpusPerSocket`: - (Optional) Number of vCPUs per socket.
-     * * `numSockets`: - (Optional) Number of vCPU sockets.
-     * * `gpuList`: - (Optional) GPUs attached to the VM.
-     * * `parentReferece`: - (Optional) Reference to an entity that the VM cloned from.
-     * * `memorySizeMib`: - (Optional) Memory size in MiB.
-     * * `bootDeviceOrderList`: - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
-     * * `bootDeviceDiskAddress`: - (Optional) Address of disk to boot from.
-     * * `bootDeviceMacAddress`: - (Optional) MAC address of nic to boot from.
-     * * `bootType`: - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like bootDevice and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
-     * * `machineType`: - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-     * * `hardwareClockTimezone`: - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
-     * * `guestCustomizationCloudInitUserData`: - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
      */
     ngtEnabledCapabilityLists?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * - Status NICs attached to the VM.
+     */
     nicListStatuses?: pulumi.Input<pulumi.Input<inputs.VirtualMachineNicListStatus>[]>;
+    /**
+     * - (Optional) Spec NICs attached to the VM.
+     */
     nicLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineNicList>[]>;
+    /**
+     * - (Optional) Number of vCPU sockets.
+     */
     numSockets?: pulumi.Input<number>;
+    /**
+     * - (Optional) Number of vCPUs per socket.
+     */
     numVcpusPerSocket?: pulumi.Input<number>;
+    /**
+     * - (Optional) Number of vNUMA nodes. 0 means vNUMA is disabled.
+     */
     numVnumaNodes?: pulumi.Input<number>;
+    /**
+     * - (Optional) Information regarding Nutanix Guest Tools.
+     */
     nutanixGuestTools?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) The reference to a user.
+     */
     ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     parentReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
+     */
     powerState?: pulumi.Input<string>;
+    /**
+     * - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
+     */
     powerStateMechanism?: pulumi.Input<string>;
+    /**
+     * - (Optional) The reference to a project.
+     */
     projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) Serial Ports configured on the VM.
+     */
     serialPortLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineSerialPortList>[]>;
+    /**
+     * - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
+     */
     shouldFailOnScriptFailure?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Nutanix Guest Tools is enabled or not.
+     */
     state?: pulumi.Input<string>;
+    /**
+     * - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
+     */
     useHotAdd?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Indicates whether VGA console should be enabled or not.
+     */
     vgaConsoleEnabled?: pulumi.Input<boolean>;
 }
 
@@ -389,77 +578,155 @@ export interface VirtualMachineState {
  * The set of arguments for constructing a VirtualMachine resource.
  */
 export interface VirtualMachineArgs {
+    /**
+     * - (Optional) The reference to a availability_zone.
+     */
     availabilityZoneReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) Address of disk to boot from.
+     */
     bootDeviceDiskAddress?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) MAC address of nic to boot from.
+     */
     bootDeviceMacAddress?: pulumi.Input<string>;
+    /**
+     * - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
+     */
     bootDeviceOrderLists?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like bootDevice and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+     */
     bootType?: pulumi.Input<string>;
+    /**
+     * - (Optional) Categories for the vm.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.VirtualMachineCategory>[]>;
     cloudInitCdromUuid?: pulumi.Input<string>;
+    /**
+     * - (Required) The UUID of the cluster.
+     */
     clusterUuid: pulumi.Input<string>;
+    /**
+     * - (Optional) A description for vm.
+     */
     description?: pulumi.Input<string>;
     /**
      * Disks attached to the VM.
-     * * `useHotAdd`: - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
-     * * `numThreadsPerCore`: - (Optional) Number of threads per core.
-     * * `enableCpuPassthrough`: - (Optional) Add true to enable CPU passthrough.
-     * * `isVcpuHardPinned`: - (Optional) Add true to enable CPU pinning.
      */
     diskLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineDiskList>[]>;
+    /**
+     * - (Optional) Add true to enable CPU passthrough.
+     */
     enableCpuPassthrough?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
+     */
     enableScriptExec?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) GPUs attached to the VM.
+     */
     gpuLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineGpuList>[]>;
+    /**
+     * - (Optional) Generic key value pair used for custom attributes in cloud init.
+     */
     guestCustomizationCloudInitCustomKeyValues?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
-     * * `guestCustomizationCloudInitCustomKeyValues`: - (Optional) Generic key value pair used for custom attributes in cloud init.
-     * * `guestCustomizationIsOverridable`: - (Optional) Flag to allow override of customization by deployer.
-     * * `guestCustomizationSysprep`: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
-     * * `guestCustomizationSysrepCustomKeyValues`: - (Optional) Generic key value pair used for custom attributes in sysrep.
-     * * `shouldFailOnScriptFailure`: - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
-     * * `enableScriptExec`: - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
-     * * `powerStateMechanism`: - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
-     * * `vgaConsoleEnabled`: - (Optional) Indicates whether VGA console should be enabled or not.
      */
     guestCustomizationCloudInitMetaData?: pulumi.Input<string>;
+    /**
+     * - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+     */
     guestCustomizationCloudInitUserData?: pulumi.Input<string>;
+    /**
+     * - (Optional) Flag to allow override of customization by deployer.
+     */
     guestCustomizationIsOverridable?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     */
     guestCustomizationSysprep?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     guestCustomizationSysprepCustomKeyValues?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
+     */
     guestOsId?: pulumi.Input<string>;
+    /**
+     * - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+     */
     hardwareClockTimezone?: pulumi.Input<string>;
+    /**
+     * - (Optional) Add true to enable CPU pinning.
+     */
     isVcpuHardPinned?: pulumi.Input<boolean>;
+    /**
+     * - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+     */
     machineType?: pulumi.Input<string>;
+    /**
+     * - (Optional) Memory size in MiB.
+     */
     memorySizeMib?: pulumi.Input<number>;
+    /**
+     * - (Required) The name for the vm.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Ooptional) Credentials to login server.
+     */
     ngtCredentials?: pulumi.Input<{[key: string]: any}>;
     /**
      * Application names that are enabled.
-     * * `numVcpusPerSocket`: - (Optional) Number of vCPUs per socket.
-     * * `numSockets`: - (Optional) Number of vCPU sockets.
-     * * `gpuList`: - (Optional) GPUs attached to the VM.
-     * * `parentReferece`: - (Optional) Reference to an entity that the VM cloned from.
-     * * `memorySizeMib`: - (Optional) Memory size in MiB.
-     * * `bootDeviceOrderList`: - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
-     * * `bootDeviceDiskAddress`: - (Optional) Address of disk to boot from.
-     * * `bootDeviceMacAddress`: - (Optional) MAC address of nic to boot from.
-     * * `bootType`: - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like bootDevice and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
-     * * `machineType`: - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-     * * `hardwareClockTimezone`: - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
-     * * `guestCustomizationCloudInitUserData`: - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
      */
     ngtEnabledCapabilityLists?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * - (Optional) Spec NICs attached to the VM.
+     */
     nicLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineNicList>[]>;
+    /**
+     * - (Optional) Number of vCPU sockets.
+     */
     numSockets?: pulumi.Input<number>;
+    /**
+     * - (Optional) Number of vCPUs per socket.
+     */
     numVcpusPerSocket?: pulumi.Input<number>;
+    /**
+     * - (Optional) Number of vNUMA nodes. 0 means vNUMA is disabled.
+     */
     numVnumaNodes?: pulumi.Input<number>;
+    /**
+     * - (Optional) Information regarding Nutanix Guest Tools.
+     */
     nutanixGuestTools?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) The reference to a user.
+     */
     ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     parentReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
+     */
     powerStateMechanism?: pulumi.Input<string>;
+    /**
+     * - (Optional) The reference to a project.
+     */
     projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) Serial Ports configured on the VM.
+     */
     serialPortLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineSerialPortList>[]>;
+    /**
+     * - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
+     */
     shouldFailOnScriptFailure?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
+     */
     useHotAdd?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Indicates whether VGA console should be enabled or not.
+     */
     vgaConsoleEnabled?: pulumi.Input<boolean>;
 }

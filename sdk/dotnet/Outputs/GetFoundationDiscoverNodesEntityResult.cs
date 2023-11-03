@@ -14,9 +14,21 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetFoundationDiscoverNodesEntityResult
     {
+        /// <summary>
+        /// Chassis serial number.
+        /// </summary>
         public readonly string BlockId;
+        /// <summary>
+        /// ID number of the block.
+        /// </summary>
         public readonly int ChassisN;
+        /// <summary>
+        /// Model name of the node.
+        /// </summary>
         public readonly string Model;
+        /// <summary>
+        /// Node level properties.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetFoundationDiscoverNodesEntityNodeResult> Nodes;
 
         [OutputConstructor]

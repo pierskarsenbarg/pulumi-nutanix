@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VirtualMachineSerialPortList
     {
+        /// <summary>
+        /// - Index of the serial port (int).
+        /// </summary>
         public readonly int? Index;
+        /// <summary>
+        /// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        /// </summary>
         public readonly bool? IsConnected;
 
         [OutputConstructor]

@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetPermissionFieldResult
     {
+        /// <summary>
+        /// Allow or disallow the fields mentioned.
+        /// </summary>
         public readonly string FieldMode;
+        /// <summary>
+        /// The list of fields.
+        /// </summary>
         public readonly ImmutableArray<string> FieldNameLists;
 
         [OutputConstructor]

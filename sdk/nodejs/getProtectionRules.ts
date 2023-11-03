@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,15 +15,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const protectionRules = pulumi.output(nutanix.getProtectionRules());
+ * const protectionRules = nutanix.getProtectionRules({});
  * ```
  */
 export function getProtectionRules(opts?: pulumi.InvokeOptions): Promise<GetProtectionRulesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getProtectionRules:getProtectionRules", {
     }, opts);
 }
@@ -31,10 +29,31 @@ export function getProtectionRules(opts?: pulumi.InvokeOptions): Promise<GetProt
  * A collection of values returned by getProtectionRules.
  */
 export interface GetProtectionRulesResult {
+    /**
+     * version of the API
+     */
     readonly apiVersion: string;
+    /**
+     * List of Protection Rules
+     */
     readonly entities: outputs.GetProtectionRulesEntity[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+}
+/**
+ * Describes Protection Rules
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const protectionRules = nutanix.getProtectionRules({});
+ * ```
+ */
+export function getProtectionRulesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionRulesResult> {
+    return pulumi.output(getProtectionRules(opts))
 }

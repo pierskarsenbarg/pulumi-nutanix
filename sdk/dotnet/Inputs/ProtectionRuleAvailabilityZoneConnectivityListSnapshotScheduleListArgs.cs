@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs : Pulumi.ResourceArgs
+    public sealed class ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs : global::Pulumi.ResourceArgs
     {
         [Input("autoSuspendTimeoutSecs")]
         public Input<int>? AutoSuspendTimeoutSecs { get; set; }
@@ -31,5 +31,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs()
         {
         }
+        public static new ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs Empty => new ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs();
     }
 }

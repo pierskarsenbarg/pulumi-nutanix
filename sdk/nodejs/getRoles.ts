@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,16 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const test = pulumi.output(nutanix.getRoles());
+ * const test = nutanix.getRoles({});
  * ```
  */
 export function getRoles(args?: GetRolesArgs, opts?: pulumi.InvokeOptions): Promise<GetRolesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getRoles:getRoles", {
         "metadatas": args.metadatas,
     }, opts);
@@ -33,6 +31,9 @@ export function getRoles(args?: GetRolesArgs, opts?: pulumi.InvokeOptions): Prom
  * A collection of arguments for invoking getRoles.
  */
 export interface GetRolesArgs {
+    /**
+     * - The role kind metadata.
+     */
     metadatas?: inputs.GetRolesMetadata[];
 }
 
@@ -42,24 +43,43 @@ export interface GetRolesArgs {
 export interface GetRolesResult {
     /**
      * The version of the API.
-     * * `state`: - The state of the role.
      */
     readonly apiVersion: string;
+    /**
+     * List of Roles
+     */
     readonly entities: outputs.GetRolesEntity[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - The role kind metadata.
+     */
     readonly metadatas: outputs.GetRolesMetadata[];
 }
-
+/**
+ * Describes a list of roles.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const test = nutanix.getRoles({});
+ * ```
+ */
 export function getRolesOutput(args?: GetRolesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRolesResult> {
-    return pulumi.output(args).apply(a => getRoles(a, opts))
+    return pulumi.output(args).apply((a: any) => getRoles(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getRoles.
  */
 export interface GetRolesOutputArgs {
+    /**
+     * - The role kind metadata.
+     */
     metadatas?: pulumi.Input<pulumi.Input<inputs.GetRolesMetadataArgs>[]>;
 }

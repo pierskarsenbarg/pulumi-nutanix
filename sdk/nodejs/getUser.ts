@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -10,11 +11,8 @@ import * as utilities from "./utilities";
  */
 export function getUser(args?: GetUserArgs, opts?: pulumi.InvokeOptions): Promise<GetUserResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getUser:getUser", {
         "categories": args.categories,
         "ownerReference": args.ownerReference,
@@ -28,8 +26,17 @@ export function getUser(args?: GetUserArgs, opts?: pulumi.InvokeOptions): Promis
  * A collection of arguments for invoking getUser.
  */
 export interface GetUserArgs {
+    /**
+     * - (Optional) Categories for the Access Control Policy.
+     */
     categories?: inputs.GetUserCategory[];
+    /**
+     * - (Optional) The reference to a user.
+     */
     ownerReference?: {[key: string]: string};
+    /**
+     * - (Optional) The reference to a project.
+     */
     projectReference?: {[key: string]: string};
     userId?: string;
     userName?: string;
@@ -39,50 +46,83 @@ export interface GetUserArgs {
  * A collection of values returned by getUser.
  */
 export interface GetUserResult {
+    /**
+     * - List of ACP references. See #reference for more details.
+     */
     readonly accessControlPolicyReferenceLists: outputs.GetUserAccessControlPolicyReferenceList[];
     /**
      * The version of the API.
-     * * `state`: - The state of the entity.
-     * * `name`: - The name of the user.
-     * * `userType`: - The name of the user.
-     * * `displayName`: - The display name of the user (common name) provided by the directory service.
-     * * `projectReferenceList`: - A list of projects the user is part of. See #reference for more details.
-     * * `accessControlPolicyReferenceList`: - List of ACP references. See #reference for more details.
-     * * `directoryServiceUser`: - (Optional) The directory service user configuration. See below for more information.
-     * * `identityProviderUser`: - (Optional) (Optional) The identity provider user configuration. See below for more information.
-     * * `categories`: - (Optional) Categories for the Access Control Policy.
-     * * `projectReference`: - (Optional) The reference to a project.
-     * * `ownerReference`: - (Optional) The reference to a user.
      */
     readonly apiVersion: string;
+    /**
+     * - (Optional) Categories for the Access Control Policy.
+     */
     readonly categories: outputs.GetUserCategory[];
+    /**
+     * - (Optional) The directory service user configuration. See below for more information.
+     */
     readonly directoryServiceUsers: outputs.GetUserDirectoryServiceUser[];
+    /**
+     * - The display name of the user (common name) provided by the directory service.
+     */
     readonly displayName: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - (Optional) (Optional) The identity provider user configuration. See below for more information.
+     */
     readonly identityProviderUsers: outputs.GetUserIdentityProviderUser[];
+    /**
+     * - The user kind metadata.
+     */
     readonly metadata: {[key: string]: string};
+    /**
+     * - (Optional) The reference to a user.
+     */
     readonly ownerReference: {[key: string]: string};
+    /**
+     * - (Optional) The reference to a project.
+     */
     readonly projectReference?: {[key: string]: string};
+    /**
+     * - A list of projects the user is part of. See #reference for more details.
+     */
     readonly projectReferenceLists: outputs.GetUserProjectReferenceList[];
+    /**
+     * - The state of the entity.
+     */
     readonly state: string;
     readonly userId?: string;
     readonly userName?: string;
+    /**
+     * - The name of the user.
+     */
     readonly userType: string;
 }
-
+/**
+ * Provides a datasource to retrieve a user based on the input parameters.
+ */
 export function getUserOutput(args?: GetUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserResult> {
-    return pulumi.output(args).apply(a => getUser(a, opts))
+    return pulumi.output(args).apply((a: any) => getUser(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getUser.
  */
 export interface GetUserOutputArgs {
+    /**
+     * - (Optional) Categories for the Access Control Policy.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.GetUserCategoryArgs>[]>;
+    /**
+     * - (Optional) The reference to a user.
+     */
     ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) The reference to a project.
+     */
     projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     userId?: pulumi.Input<string>;
     userName?: pulumi.Input<string>;

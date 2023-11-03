@@ -20,23 +20,22 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var test = Output.Create(Nutanix.GetRoles.InvokeAsync());
-        ///     }
+        ///     var test = Nutanix.GetRoles.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRolesResult> InvokeAsync(GetRolesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRolesResult>("nutanix:index/getRoles:getRoles", args ?? new GetRolesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRolesResult>("nutanix:index/getRoles:getRoles", args ?? new GetRolesArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes a list of roles.
@@ -46,30 +45,33 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var test = Output.Create(Nutanix.GetRoles.InvokeAsync());
-        ///     }
+        ///     var test = Nutanix.GetRoles.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRolesResult> Invoke(GetRolesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRolesResult>("nutanix:index/getRoles:getRoles", args ?? new GetRolesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRolesResult>("nutanix:index/getRoles:getRoles", args ?? new GetRolesInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetRolesArgs : Pulumi.InvokeArgs
+    public sealed class GetRolesArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private List<Inputs.GetRolesMetadataArgs>? _metadatas;
+
+        /// <summary>
+        /// - The role kind metadata.
+        /// </summary>
         public List<Inputs.GetRolesMetadataArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new List<Inputs.GetRolesMetadataArgs>());
@@ -79,12 +81,17 @@ namespace PiersKarsenbarg.Nutanix
         public GetRolesArgs()
         {
         }
+        public static new GetRolesArgs Empty => new GetRolesArgs();
     }
 
-    public sealed class GetRolesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRolesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private InputList<Inputs.GetRolesMetadataInputArgs>? _metadatas;
+
+        /// <summary>
+        /// - The role kind metadata.
+        /// </summary>
         public InputList<Inputs.GetRolesMetadataInputArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new InputList<Inputs.GetRolesMetadataInputArgs>());
@@ -94,6 +101,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetRolesInvokeArgs()
         {
         }
+        public static new GetRolesInvokeArgs Empty => new GetRolesInvokeArgs();
     }
 
 
@@ -102,14 +110,19 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// The version of the API.
-        /// * `state`: - The state of the role.
         /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// List of Roles
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetRolesEntityResult> Entities;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - The role kind metadata.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetRolesMetadataResult> Metadatas;
 
         [OutputConstructor]

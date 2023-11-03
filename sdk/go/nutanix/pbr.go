@@ -7,8 +7,10 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides Nutanix resource to create Policy Based Routing inside VPCs.
@@ -20,31 +22,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.NewPbr(ctx, "pbr", &nutanix.PbrArgs{
-// 			Action: pulumi.String("PERMIT"),
-// 			Destination: &PbrDestinationArgs{
-// 				AddressType: pulumi.String("ALL"),
-// 			},
-// 			Priority:     pulumi.Int(123),
-// 			ProtocolType: pulumi.String("ALL"),
-// 			Source: &PbrSourceArgs{
-// 				AddressType: pulumi.String("ALL"),
-// 			},
-// 			VpcName: pulumi.String("test123"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewPbr(ctx, "pbr", &nutanix.PbrArgs{
+//				Action: pulumi.String("PERMIT"),
+//				Destination: &nutanix.PbrDestinationArgs{
+//					AddressType: pulumi.String("ALL"),
+//				},
+//				Priority:     pulumi.Int(123),
+//				ProtocolType: pulumi.String("ALL"),
+//				Source: &nutanix.PbrSourceArgs{
+//					AddressType: pulumi.String("ALL"),
+//				},
+//				VpcName: pulumi.String("test123"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## source
 //
@@ -64,7 +68,7 @@ import (
 //
 // ## protocolParameters
 //
-// Routing policy IP protocol parameters
+// # Routing policy IP protocol parameters
 //
 // * `tcp` - (Optional) TCP parameters in routing policy
 // * `udp` - (Optional) UDP parameters in routing policy
@@ -130,7 +134,7 @@ func NewPbr(ctx *pulumi.Context,
 	if args.Source == nil {
 		return nil, errors.New("invalid value for required argument 'Source'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Pbr
 	err := ctx.RegisterResource("nutanix:index/pbr:Pbr", name, args, &resource, opts...)
 	if err != nil {
@@ -280,10 +284,16 @@ func (i *Pbr) ToPbrOutputWithContext(ctx context.Context) PbrOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PbrOutput)
 }
 
+func (i *Pbr) ToOutput(ctx context.Context) pulumix.Output[*Pbr] {
+	return pulumix.Output[*Pbr]{
+		OutputState: i.ToPbrOutputWithContext(ctx).OutputState,
+	}
+}
+
 // PbrArrayInput is an input type that accepts PbrArray and PbrArrayOutput values.
 // You can construct a concrete instance of `PbrArrayInput` via:
 //
-//          PbrArray{ PbrArgs{...} }
+//	PbrArray{ PbrArgs{...} }
 type PbrArrayInput interface {
 	pulumi.Input
 
@@ -305,10 +315,16 @@ func (i PbrArray) ToPbrArrayOutputWithContext(ctx context.Context) PbrArrayOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(PbrArrayOutput)
 }
 
+func (i PbrArray) ToOutput(ctx context.Context) pulumix.Output[[]*Pbr] {
+	return pulumix.Output[[]*Pbr]{
+		OutputState: i.ToPbrArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // PbrMapInput is an input type that accepts PbrMap and PbrMapOutput values.
 // You can construct a concrete instance of `PbrMapInput` via:
 //
-//          PbrMap{ "key": PbrArgs{...} }
+//	PbrMap{ "key": PbrArgs{...} }
 type PbrMapInput interface {
 	pulumi.Input
 
@@ -330,6 +346,12 @@ func (i PbrMap) ToPbrMapOutputWithContext(ctx context.Context) PbrMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PbrMapOutput)
 }
 
+func (i PbrMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Pbr] {
+	return pulumix.Output[map[string]*Pbr]{
+		OutputState: i.ToPbrMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type PbrOutput struct{ *pulumi.OutputState }
 
 func (PbrOutput) ElementType() reflect.Type {
@@ -342,6 +364,12 @@ func (o PbrOutput) ToPbrOutput() PbrOutput {
 
 func (o PbrOutput) ToPbrOutputWithContext(ctx context.Context) PbrOutput {
 	return o
+}
+
+func (o PbrOutput) ToOutput(ctx context.Context) pulumix.Output[*Pbr] {
+	return pulumix.Output[*Pbr]{
+		OutputState: o.OutputState,
+	}
 }
 
 // Routing policy action. Must be one of {DENY, PERMIT, REROUTE} .
@@ -420,6 +448,12 @@ func (o PbrArrayOutput) ToPbrArrayOutputWithContext(ctx context.Context) PbrArra
 	return o
 }
 
+func (o PbrArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Pbr] {
+	return pulumix.Output[[]*Pbr]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o PbrArrayOutput) Index(i pulumi.IntInput) PbrOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Pbr {
 		return vs[0].([]*Pbr)[vs[1].(int)]
@@ -438,6 +472,12 @@ func (o PbrMapOutput) ToPbrMapOutput() PbrMapOutput {
 
 func (o PbrMapOutput) ToPbrMapOutputWithContext(ctx context.Context) PbrMapOutput {
 	return o
+}
+
+func (o PbrMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Pbr] {
+	return pulumix.Output[map[string]*Pbr]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o PbrMapOutput) MapIndex(k pulumi.StringInput) PbrOutput {

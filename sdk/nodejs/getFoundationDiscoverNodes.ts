@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,15 +15,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const discoveredNodes = pulumi.output(nutanix.getFoundationDiscoverNodes());
+ * const discoveredNodes = nutanix.getFoundationDiscoverNodes({});
  * ```
  */
 export function getFoundationDiscoverNodes(opts?: pulumi.InvokeOptions): Promise<GetFoundationDiscoverNodesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationDiscoverNodes:getFoundationDiscoverNodes", {
     }, opts);
 }
@@ -31,9 +29,27 @@ export function getFoundationDiscoverNodes(opts?: pulumi.InvokeOptions): Promise
  * A collection of values returned by getFoundationDiscoverNodes.
  */
 export interface GetFoundationDiscoverNodesResult {
+    /**
+     * List of Nutanix-imaged nodes within an IPv6 network
+     */
     readonly entities: outputs.GetFoundationDiscoverNodesEntity[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+}
+/**
+ * Discovers and lists Nutanix-imaged nodes within an IPv6 network.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const discoveredNodes = nutanix.getFoundationDiscoverNodes({});
+ * ```
+ */
+export function getFoundationDiscoverNodesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationDiscoverNodesResult> {
+    return pulumi.output(getFoundationDiscoverNodes(opts))
 }

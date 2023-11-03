@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve a user group based on the input parameters.
@@ -18,37 +20,39 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetUserGroup(ctx, &GetUserGroupArgs{
-// 			UserGroupId: pulumi.StringRef("dd30a856-8e72-4158-b716-98455ceda220"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = nutanix.GetUserGroup(ctx, &GetUserGroupArgs{
-// 			UserGroupName: pulumi.StringRef("example-group-1"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = nutanix.GetUserGroup(ctx, &GetUserGroupArgs{
-// 			UserGroupDistinguishedName: pulumi.StringRef("cn=example-group-1,cn=users,dc=ntnxlab,dc=local"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetUserGroup(ctx, &nutanix.GetUserGroupArgs{
+//				UserGroupId: pulumi.StringRef("dd30a856-8e72-4158-b716-98455ceda220"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.GetUserGroup(ctx, &nutanix.GetUserGroupArgs{
+//				UserGroupName: pulumi.StringRef("example-group-1"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.GetUserGroup(ctx, &nutanix.GetUserGroupArgs{
+//				UserGroupDistinguishedName: pulumi.StringRef("cn=example-group-1,cn=users,dc=ntnxlab,dc=local"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetUserGroup(ctx *pulumi.Context, args *GetUserGroupArgs, opts ...pulumi.InvokeOption) (*GetUserGroupResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUserGroupResult
 	err := ctx.Invoke("nutanix:index/getUserGroup:getUserGroup", args, &rv, opts...)
 	if err != nil {
@@ -59,44 +63,49 @@ func GetUserGroup(ctx *pulumi.Context, args *GetUserGroupArgs, opts ...pulumi.In
 
 // A collection of arguments for invoking getUserGroup.
 type GetUserGroupArgs struct {
-	Categories       []GetUserGroupCategory `pulumi:"categories"`
-	OwnerReference   map[string]string      `pulumi:"ownerReference"`
-	ProjectReference map[string]string      `pulumi:"projectReference"`
+	// - The Distinguished Categories for the user group.
+	Categories []GetUserGroupCategory `pulumi:"categories"`
+	// - The reference to a user.
+	OwnerReference map[string]string `pulumi:"ownerReference"`
+	// - The Distinguished The reference to a project.
+	ProjectReference map[string]string `pulumi:"projectReference"`
 	// The distinguished name for the user group
 	UserGroupDistinguishedName *string `pulumi:"userGroupDistinguishedName"`
-	UserGroupId                *string `pulumi:"userGroupId"`
-	UserGroupName              *string `pulumi:"userGroupName"`
+	// - (Optional) The UUID for the user group
+	UserGroupId *string `pulumi:"userGroupId"`
+	// - (Optional) The name for the user group
+	UserGroupName *string `pulumi:"userGroupName"`
 }
 
 // A collection of values returned by getUserGroup.
 type GetUserGroupResult struct {
+	// - List of ACP references. See #reference for more details.
 	AccessControlPolicyReferenceLists []GetUserGroupAccessControlPolicyReferenceList `pulumi:"accessControlPolicyReferenceLists"`
 	// The version of the API.
-	// * `metadata`: - The user group kind metadata.
-	// * `categories`: - The Distinguished Categories for the user group.
-	// * `ownerReference`: - The reference to a user.
-	// * `projectReference`: - The Distinguished The reference to a project.
-	// * `userGroupType`: - The type of the user group.
-	// * `displayName`: - The display name of the user group.
-	// * `directoryServiceUserGroup`: - A Directory Service User Group.
-	// * `projectReferenceList`: - A list of projects the user is part of. See #reference for more details.
-	// * `accessControlPolicyReferenceList`: - List of ACP references. See #reference for more details.
-	// * `state`: - The state of the entity.
-	ApiVersion                 string                                  `pulumi:"apiVersion"`
-	Categories                 []GetUserGroupCategory                  `pulumi:"categories"`
+	ApiVersion string `pulumi:"apiVersion"`
+	// - The Distinguished Categories for the user group.
+	Categories []GetUserGroupCategory `pulumi:"categories"`
+	// - A Directory Service User Group.
 	DirectoryServiceUserGroups []GetUserGroupDirectoryServiceUserGroup `pulumi:"directoryServiceUserGroups"`
-	DisplayName                string                                  `pulumi:"displayName"`
+	// - The display name of the user group.
+	DisplayName string `pulumi:"displayName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                         string                             `pulumi:"id"`
-	Metadata                   map[string]string                  `pulumi:"metadata"`
-	OwnerReference             map[string]string                  `pulumi:"ownerReference"`
-	ProjectReference           map[string]string                  `pulumi:"projectReference"`
-	ProjectReferenceLists      []GetUserGroupProjectReferenceList `pulumi:"projectReferenceLists"`
-	State                      string                             `pulumi:"state"`
-	UserGroupDistinguishedName *string                            `pulumi:"userGroupDistinguishedName"`
-	UserGroupId                *string                            `pulumi:"userGroupId"`
-	UserGroupName              *string                            `pulumi:"userGroupName"`
-	UserGroupType              string                             `pulumi:"userGroupType"`
+	Id string `pulumi:"id"`
+	// - The user group kind metadata.
+	Metadata map[string]string `pulumi:"metadata"`
+	// - The reference to a user.
+	OwnerReference map[string]string `pulumi:"ownerReference"`
+	// - The Distinguished The reference to a project.
+	ProjectReference map[string]string `pulumi:"projectReference"`
+	// - A list of projects the user is part of. See #reference for more details.
+	ProjectReferenceLists []GetUserGroupProjectReferenceList `pulumi:"projectReferenceLists"`
+	// - The state of the entity.
+	State                      string  `pulumi:"state"`
+	UserGroupDistinguishedName *string `pulumi:"userGroupDistinguishedName"`
+	UserGroupId                *string `pulumi:"userGroupId"`
+	UserGroupName              *string `pulumi:"userGroupName"`
+	// - The type of the user group.
+	UserGroupType string `pulumi:"userGroupType"`
 }
 
 func GetUserGroupOutput(ctx *pulumi.Context, args GetUserGroupOutputArgs, opts ...pulumi.InvokeOption) GetUserGroupResultOutput {
@@ -114,13 +123,18 @@ func GetUserGroupOutput(ctx *pulumi.Context, args GetUserGroupOutputArgs, opts .
 
 // A collection of arguments for invoking getUserGroup.
 type GetUserGroupOutputArgs struct {
-	Categories       GetUserGroupCategoryArrayInput `pulumi:"categories"`
-	OwnerReference   pulumi.StringMapInput          `pulumi:"ownerReference"`
-	ProjectReference pulumi.StringMapInput          `pulumi:"projectReference"`
+	// - The Distinguished Categories for the user group.
+	Categories GetUserGroupCategoryArrayInput `pulumi:"categories"`
+	// - The reference to a user.
+	OwnerReference pulumi.StringMapInput `pulumi:"ownerReference"`
+	// - The Distinguished The reference to a project.
+	ProjectReference pulumi.StringMapInput `pulumi:"projectReference"`
 	// The distinguished name for the user group
 	UserGroupDistinguishedName pulumi.StringPtrInput `pulumi:"userGroupDistinguishedName"`
-	UserGroupId                pulumi.StringPtrInput `pulumi:"userGroupId"`
-	UserGroupName              pulumi.StringPtrInput `pulumi:"userGroupName"`
+	// - (Optional) The UUID for the user group
+	UserGroupId pulumi.StringPtrInput `pulumi:"userGroupId"`
+	// - (Optional) The name for the user group
+	UserGroupName pulumi.StringPtrInput `pulumi:"userGroupName"`
 }
 
 func (GetUserGroupOutputArgs) ElementType() reflect.Type {
@@ -142,6 +156,13 @@ func (o GetUserGroupResultOutput) ToGetUserGroupResultOutputWithContext(ctx cont
 	return o
 }
 
+func (o GetUserGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserGroupResult] {
+	return pulumix.Output[GetUserGroupResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// - List of ACP references. See #reference for more details.
 func (o GetUserGroupResultOutput) AccessControlPolicyReferenceLists() GetUserGroupAccessControlPolicyReferenceListArrayOutput {
 	return o.ApplyT(func(v GetUserGroupResult) []GetUserGroupAccessControlPolicyReferenceList {
 		return v.AccessControlPolicyReferenceLists
@@ -149,30 +170,23 @@ func (o GetUserGroupResultOutput) AccessControlPolicyReferenceLists() GetUserGro
 }
 
 // The version of the API.
-// * `metadata`: - The user group kind metadata.
-// * `categories`: - The Distinguished Categories for the user group.
-// * `ownerReference`: - The reference to a user.
-// * `projectReference`: - The Distinguished The reference to a project.
-// * `userGroupType`: - The type of the user group.
-// * `displayName`: - The display name of the user group.
-// * `directoryServiceUserGroup`: - A Directory Service User Group.
-// * `projectReferenceList`: - A list of projects the user is part of. See #reference for more details.
-// * `accessControlPolicyReferenceList`: - List of ACP references. See #reference for more details.
-// * `state`: - The state of the entity.
 func (o GetUserGroupResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// - The Distinguished Categories for the user group.
 func (o GetUserGroupResultOutput) Categories() GetUserGroupCategoryArrayOutput {
 	return o.ApplyT(func(v GetUserGroupResult) []GetUserGroupCategory { return v.Categories }).(GetUserGroupCategoryArrayOutput)
 }
 
+// - A Directory Service User Group.
 func (o GetUserGroupResultOutput) DirectoryServiceUserGroups() GetUserGroupDirectoryServiceUserGroupArrayOutput {
 	return o.ApplyT(func(v GetUserGroupResult) []GetUserGroupDirectoryServiceUserGroup {
 		return v.DirectoryServiceUserGroups
 	}).(GetUserGroupDirectoryServiceUserGroupArrayOutput)
 }
 
+// - The display name of the user group.
 func (o GetUserGroupResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -182,22 +196,27 @@ func (o GetUserGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - The user group kind metadata.
 func (o GetUserGroupResultOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetUserGroupResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
+// - The reference to a user.
 func (o GetUserGroupResultOutput) OwnerReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetUserGroupResult) map[string]string { return v.OwnerReference }).(pulumi.StringMapOutput)
 }
 
+// - The Distinguished The reference to a project.
 func (o GetUserGroupResultOutput) ProjectReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetUserGroupResult) map[string]string { return v.ProjectReference }).(pulumi.StringMapOutput)
 }
 
+// - A list of projects the user is part of. See #reference for more details.
 func (o GetUserGroupResultOutput) ProjectReferenceLists() GetUserGroupProjectReferenceListArrayOutput {
 	return o.ApplyT(func(v GetUserGroupResult) []GetUserGroupProjectReferenceList { return v.ProjectReferenceLists }).(GetUserGroupProjectReferenceListArrayOutput)
 }
 
+// - The state of the entity.
 func (o GetUserGroupResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -214,6 +233,7 @@ func (o GetUserGroupResultOutput) UserGroupName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetUserGroupResult) *string { return v.UserGroupName }).(pulumi.StringPtrOutput)
 }
 
+// - The type of the user group.
 func (o GetUserGroupResultOutput) UserGroupType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupResult) string { return v.UserGroupType }).(pulumi.StringOutput)
 }

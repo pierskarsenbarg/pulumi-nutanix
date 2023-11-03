@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class StaticRoutesDefaultRouteNexthopArgs : Pulumi.ResourceArgs
+    public sealed class StaticRoutesDefaultRouteNexthopArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Reference to a subnet.
@@ -22,5 +22,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public StaticRoutesDefaultRouteNexthopArgs()
         {
         }
+        public static new StaticRoutesDefaultRouteNexthopArgs Empty => new StaticRoutesDefaultRouteNexthopArgs();
     }
 }

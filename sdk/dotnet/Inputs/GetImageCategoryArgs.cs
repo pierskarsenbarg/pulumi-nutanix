@@ -11,8 +11,11 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetImageCategoryInputArgs : Pulumi.ResourceArgs
+    public sealed class GetImageCategoryInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - the name.
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
@@ -22,5 +25,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetImageCategoryInputArgs()
         {
         }
+        public static new GetImageCategoryInputArgs Empty => new GetImageCategoryInputArgs();
     }
 }

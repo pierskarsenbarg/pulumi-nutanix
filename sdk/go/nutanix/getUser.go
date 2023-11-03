@@ -7,12 +7,14 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve a user based on the input parameters.
 func LookupUser(ctx *pulumi.Context, args *LookupUserArgs, opts ...pulumi.InvokeOption) (*LookupUserResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupUserResult
 	err := ctx.Invoke("nutanix:index/getUser:getUser", args, &rv, opts...)
 	if err != nil {
@@ -23,8 +25,11 @@ func LookupUser(ctx *pulumi.Context, args *LookupUserArgs, opts ...pulumi.Invoke
 
 // A collection of arguments for invoking getUser.
 type LookupUserArgs struct {
-	Categories       []GetUserCategory `pulumi:"categories"`
-	OwnerReference   map[string]string `pulumi:"ownerReference"`
+	// - (Optional) Categories for the Access Control Policy.
+	Categories []GetUserCategory `pulumi:"categories"`
+	// - (Optional) The reference to a user.
+	OwnerReference map[string]string `pulumi:"ownerReference"`
+	// - (Optional) The reference to a project.
 	ProjectReference map[string]string `pulumi:"projectReference"`
 	UserId           *string           `pulumi:"userId"`
 	UserName         *string           `pulumi:"userName"`
@@ -32,34 +37,34 @@ type LookupUserArgs struct {
 
 // A collection of values returned by getUser.
 type LookupUserResult struct {
+	// - List of ACP references. See #reference for more details.
 	AccessControlPolicyReferenceLists []GetUserAccessControlPolicyReferenceList `pulumi:"accessControlPolicyReferenceLists"`
 	// The version of the API.
-	// * `state`: - The state of the entity.
-	// * `name`: - The name of the user.
-	// * `userType`: - The name of the user.
-	// * `displayName`: - The display name of the user (common name) provided by the directory service.
-	// * `projectReferenceList`: - A list of projects the user is part of. See #reference for more details.
-	// * `accessControlPolicyReferenceList`: - List of ACP references. See #reference for more details.
-	// * `directoryServiceUser`: - (Optional) The directory service user configuration. See below for more information.
-	// * `identityProviderUser`: - (Optional) (Optional) The identity provider user configuration. See below for more information.
-	// * `categories`: - (Optional) Categories for the Access Control Policy.
-	// * `projectReference`: - (Optional) The reference to a project.
-	// * `ownerReference`: - (Optional) The reference to a user.
-	ApiVersion            string                        `pulumi:"apiVersion"`
-	Categories            []GetUserCategory             `pulumi:"categories"`
+	ApiVersion string `pulumi:"apiVersion"`
+	// - (Optional) Categories for the Access Control Policy.
+	Categories []GetUserCategory `pulumi:"categories"`
+	// - (Optional) The directory service user configuration. See below for more information.
 	DirectoryServiceUsers []GetUserDirectoryServiceUser `pulumi:"directoryServiceUsers"`
-	DisplayName           string                        `pulumi:"displayName"`
+	// - The display name of the user (common name) provided by the directory service.
+	DisplayName string `pulumi:"displayName"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                    string                        `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// - (Optional) (Optional) The identity provider user configuration. See below for more information.
 	IdentityProviderUsers []GetUserIdentityProviderUser `pulumi:"identityProviderUsers"`
-	Metadata              map[string]string             `pulumi:"metadata"`
-	OwnerReference        map[string]string             `pulumi:"ownerReference"`
-	ProjectReference      map[string]string             `pulumi:"projectReference"`
+	// - The user kind metadata.
+	Metadata map[string]string `pulumi:"metadata"`
+	// - (Optional) The reference to a user.
+	OwnerReference map[string]string `pulumi:"ownerReference"`
+	// - (Optional) The reference to a project.
+	ProjectReference map[string]string `pulumi:"projectReference"`
+	// - A list of projects the user is part of. See #reference for more details.
 	ProjectReferenceLists []GetUserProjectReferenceList `pulumi:"projectReferenceLists"`
-	State                 string                        `pulumi:"state"`
-	UserId                *string                       `pulumi:"userId"`
-	UserName              *string                       `pulumi:"userName"`
-	UserType              string                        `pulumi:"userType"`
+	// - The state of the entity.
+	State    string  `pulumi:"state"`
+	UserId   *string `pulumi:"userId"`
+	UserName *string `pulumi:"userName"`
+	// - The name of the user.
+	UserType string `pulumi:"userType"`
 }
 
 func LookupUserOutput(ctx *pulumi.Context, args LookupUserOutputArgs, opts ...pulumi.InvokeOption) LookupUserResultOutput {
@@ -77,11 +82,14 @@ func LookupUserOutput(ctx *pulumi.Context, args LookupUserOutputArgs, opts ...pu
 
 // A collection of arguments for invoking getUser.
 type LookupUserOutputArgs struct {
-	Categories       GetUserCategoryArrayInput `pulumi:"categories"`
-	OwnerReference   pulumi.StringMapInput     `pulumi:"ownerReference"`
-	ProjectReference pulumi.StringMapInput     `pulumi:"projectReference"`
-	UserId           pulumi.StringPtrInput     `pulumi:"userId"`
-	UserName         pulumi.StringPtrInput     `pulumi:"userName"`
+	// - (Optional) Categories for the Access Control Policy.
+	Categories GetUserCategoryArrayInput `pulumi:"categories"`
+	// - (Optional) The reference to a user.
+	OwnerReference pulumi.StringMapInput `pulumi:"ownerReference"`
+	// - (Optional) The reference to a project.
+	ProjectReference pulumi.StringMapInput `pulumi:"projectReference"`
+	UserId           pulumi.StringPtrInput `pulumi:"userId"`
+	UserName         pulumi.StringPtrInput `pulumi:"userName"`
 }
 
 func (LookupUserOutputArgs) ElementType() reflect.Type {
@@ -103,6 +111,13 @@ func (o LookupUserResultOutput) ToLookupUserResultOutputWithContext(ctx context.
 	return o
 }
 
+func (o LookupUserResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupUserResult] {
+	return pulumix.Output[LookupUserResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// - List of ACP references. See #reference for more details.
 func (o LookupUserResultOutput) AccessControlPolicyReferenceLists() GetUserAccessControlPolicyReferenceListArrayOutput {
 	return o.ApplyT(func(v LookupUserResult) []GetUserAccessControlPolicyReferenceList {
 		return v.AccessControlPolicyReferenceLists
@@ -110,29 +125,21 @@ func (o LookupUserResultOutput) AccessControlPolicyReferenceLists() GetUserAcces
 }
 
 // The version of the API.
-// * `state`: - The state of the entity.
-// * `name`: - The name of the user.
-// * `userType`: - The name of the user.
-// * `displayName`: - The display name of the user (common name) provided by the directory service.
-// * `projectReferenceList`: - A list of projects the user is part of. See #reference for more details.
-// * `accessControlPolicyReferenceList`: - List of ACP references. See #reference for more details.
-// * `directoryServiceUser`: - (Optional) The directory service user configuration. See below for more information.
-// * `identityProviderUser`: - (Optional) (Optional) The identity provider user configuration. See below for more information.
-// * `categories`: - (Optional) Categories for the Access Control Policy.
-// * `projectReference`: - (Optional) The reference to a project.
-// * `ownerReference`: - (Optional) The reference to a user.
 func (o LookupUserResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// - (Optional) Categories for the Access Control Policy.
 func (o LookupUserResultOutput) Categories() GetUserCategoryArrayOutput {
 	return o.ApplyT(func(v LookupUserResult) []GetUserCategory { return v.Categories }).(GetUserCategoryArrayOutput)
 }
 
+// - (Optional) The directory service user configuration. See below for more information.
 func (o LookupUserResultOutput) DirectoryServiceUsers() GetUserDirectoryServiceUserArrayOutput {
 	return o.ApplyT(func(v LookupUserResult) []GetUserDirectoryServiceUser { return v.DirectoryServiceUsers }).(GetUserDirectoryServiceUserArrayOutput)
 }
 
+// - The display name of the user (common name) provided by the directory service.
 func (o LookupUserResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -142,26 +149,32 @@ func (o LookupUserResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - (Optional) (Optional) The identity provider user configuration. See below for more information.
 func (o LookupUserResultOutput) IdentityProviderUsers() GetUserIdentityProviderUserArrayOutput {
 	return o.ApplyT(func(v LookupUserResult) []GetUserIdentityProviderUser { return v.IdentityProviderUsers }).(GetUserIdentityProviderUserArrayOutput)
 }
 
+// - The user kind metadata.
 func (o LookupUserResultOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupUserResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
+// - (Optional) The reference to a user.
 func (o LookupUserResultOutput) OwnerReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupUserResult) map[string]string { return v.OwnerReference }).(pulumi.StringMapOutput)
 }
 
+// - (Optional) The reference to a project.
 func (o LookupUserResultOutput) ProjectReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupUserResult) map[string]string { return v.ProjectReference }).(pulumi.StringMapOutput)
 }
 
+// - A list of projects the user is part of. See #reference for more details.
 func (o LookupUserResultOutput) ProjectReferenceLists() GetUserProjectReferenceListArrayOutput {
 	return o.ApplyT(func(v LookupUserResult) []GetUserProjectReferenceList { return v.ProjectReferenceLists }).(GetUserProjectReferenceListArrayOutput)
 }
 
+// - The state of the entity.
 func (o LookupUserResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -174,6 +187,7 @@ func (o LookupUserResultOutput) UserName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LookupUserResult) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
 
+// - The name of the user.
 func (o LookupUserResultOutput) UserType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.UserType }).(pulumi.StringOutput)
 }

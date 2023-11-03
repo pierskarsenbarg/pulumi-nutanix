@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetStaticRoutesSpecResult
     {
         /// <summary>
-        /// vpc_route_table Name.
+        /// - the name.
         /// </summary>
         public readonly string Name;
         /// <summary>

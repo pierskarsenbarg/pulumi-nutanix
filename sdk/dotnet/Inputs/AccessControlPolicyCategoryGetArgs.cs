@@ -11,16 +11,23 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class AccessControlPolicyCategoryGetArgs : Pulumi.ResourceArgs
+    public sealed class AccessControlPolicyCategoryGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) Name of the Access Control Policy.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - value of the key.
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 
         public AccessControlPolicyCategoryGetArgs()
         {
         }
+        public static new AccessControlPolicyCategoryGetArgs Empty => new AccessControlPolicyCategoryGetArgs();
     }
 }

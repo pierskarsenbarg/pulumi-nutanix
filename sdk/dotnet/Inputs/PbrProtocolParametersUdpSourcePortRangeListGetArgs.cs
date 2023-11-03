@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class PbrProtocolParametersUdpSourcePortRangeListGetArgs : Pulumi.ResourceArgs
+    public sealed class PbrProtocolParametersUdpSourcePortRangeListGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("endPort")]
         public Input<int>? EndPort { get; set; }
@@ -22,5 +22,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public PbrProtocolParametersUdpSourcePortRangeListGetArgs()
         {
         }
+        public static new PbrProtocolParametersUdpSourcePortRangeListGetArgs Empty => new PbrProtocolParametersUdpSourcePortRangeListGetArgs();
     }
 }

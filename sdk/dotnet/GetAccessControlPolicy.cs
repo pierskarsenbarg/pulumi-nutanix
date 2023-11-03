@@ -16,18 +16,21 @@ namespace PiersKarsenbarg.Nutanix
         /// Describes an Access Control Policy.
         /// </summary>
         public static Task<GetAccessControlPolicyResult> InvokeAsync(GetAccessControlPolicyArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAccessControlPolicyResult>("nutanix:index/getAccessControlPolicy:getAccessControlPolicy", args ?? new GetAccessControlPolicyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAccessControlPolicyResult>("nutanix:index/getAccessControlPolicy:getAccessControlPolicy", args ?? new GetAccessControlPolicyArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes an Access Control Policy.
         /// </summary>
         public static Output<GetAccessControlPolicyResult> Invoke(GetAccessControlPolicyInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAccessControlPolicyResult>("nutanix:index/getAccessControlPolicy:getAccessControlPolicy", args ?? new GetAccessControlPolicyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAccessControlPolicyResult>("nutanix:index/getAccessControlPolicy:getAccessControlPolicy", args ?? new GetAccessControlPolicyInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAccessControlPolicyArgs : Pulumi.InvokeArgs
+    public sealed class GetAccessControlPolicyArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) The UUID of an access control policy.
+        /// </summary>
         [Input("accessControlPolicyId")]
         public string? AccessControlPolicyId { get; set; }
 
@@ -36,6 +39,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("categories")]
         private List<Inputs.GetAccessControlPolicyCategoryArgs>? _categories;
+
+        /// <summary>
+        /// - The category values represented as a dictionary of key &gt; list of values.
+        /// </summary>
         public List<Inputs.GetAccessControlPolicyCategoryArgs> Categories
         {
             get => _categories ?? (_categories = new List<Inputs.GetAccessControlPolicyCategoryArgs>());
@@ -45,10 +52,14 @@ namespace PiersKarsenbarg.Nutanix
         public GetAccessControlPolicyArgs()
         {
         }
+        public static new GetAccessControlPolicyArgs Empty => new GetAccessControlPolicyArgs();
     }
 
-    public sealed class GetAccessControlPolicyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAccessControlPolicyInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) The UUID of an access control policy.
+        /// </summary>
         [Input("accessControlPolicyId")]
         public Input<string>? AccessControlPolicyId { get; set; }
 
@@ -57,6 +68,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("categories")]
         private InputList<Inputs.GetAccessControlPolicyCategoryInputArgs>? _categories;
+
+        /// <summary>
+        /// - The category values represented as a dictionary of key &gt; list of values.
+        /// </summary>
         public InputList<Inputs.GetAccessControlPolicyCategoryInputArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.GetAccessControlPolicyCategoryInputArgs>());
@@ -66,6 +81,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetAccessControlPolicyInvokeArgs()
         {
         }
+        public static new GetAccessControlPolicyInvokeArgs Empty => new GetAccessControlPolicyInvokeArgs();
     }
 
 
@@ -76,23 +92,52 @@ namespace PiersKarsenbarg.Nutanix
         public readonly string? AccessControlPolicyName;
         /// <summary>
         /// The version of the API.
-        /// * `state`: - The state of the Access Control Policy.
         /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// - The category values represented as a dictionary of key &gt; list of values.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAccessControlPolicyCategoryResult> Categories;
         public readonly ImmutableArray<Outputs.GetAccessControlPolicyContextFilterListResult> ContextFilterLists;
+        /// <summary>
+        /// - The description of the Access Control Policy.
+        /// </summary>
         public readonly string Description;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - The Access Control Policy kind metadata.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
+        /// <summary>
+        /// - the name(Optional).
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - The reference to a user.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> OwnerReference;
+        /// <summary>
+        /// - The reference to a project.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> ProjectReference;
+        /// <summary>
+        /// - The reference to a role.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAccessControlPolicyRoleReferenceResult> RoleReferences;
+        /// <summary>
+        /// - The state of the Access Control Policy.
+        /// </summary>
         public readonly string State;
+        /// <summary>
+        /// - The User group(s) being assigned a given role.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAccessControlPolicyUserGroupReferenceListResult> UserGroupReferenceLists;
+        /// <summary>
+        /// - The User(s) being assigned a given role.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAccessControlPolicyUserReferenceListResult> UserReferenceLists;
 
         [OutputConstructor]

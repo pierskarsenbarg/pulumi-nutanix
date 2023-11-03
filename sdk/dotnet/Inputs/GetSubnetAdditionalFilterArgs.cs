@@ -11,8 +11,11 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetSubnetAdditionalFilterInputArgs : Pulumi.ResourceArgs
+    public sealed class GetSubnetAdditionalFilterInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - the name(Optional).
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
@@ -27,5 +30,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetSubnetAdditionalFilterInputArgs()
         {
         }
+        public static new GetSubnetAdditionalFilterInputArgs Empty => new GetSubnetAdditionalFilterInputArgs();
     }
 }

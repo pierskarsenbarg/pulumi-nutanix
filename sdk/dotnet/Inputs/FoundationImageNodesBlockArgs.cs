@@ -11,10 +11,10 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationImageNodesBlockArgs : Pulumi.ResourceArgs
+    public sealed class FoundationImageNodesBlockArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// : - Block ID.
+        /// - Block ID.
         /// </summary>
         [Input("blockId")]
         public Input<string>? BlockId { get; set; }
@@ -30,5 +30,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public FoundationImageNodesBlockArgs()
         {
         }
+        public static new FoundationImageNodesBlockArgs Empty => new FoundationImageNodesBlockArgs();
     }
 }

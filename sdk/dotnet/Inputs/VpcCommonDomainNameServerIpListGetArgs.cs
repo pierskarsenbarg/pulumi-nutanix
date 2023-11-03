@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class VpcCommonDomainNameServerIpListGetArgs : Pulumi.ResourceArgs
+    public sealed class VpcCommonDomainNameServerIpListGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// ip address.
@@ -22,5 +22,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public VpcCommonDomainNameServerIpListGetArgs()
         {
         }
+        public static new VpcCommonDomainNameServerIpListGetArgs Empty => new VpcCommonDomainNameServerIpListGetArgs();
     }
 }

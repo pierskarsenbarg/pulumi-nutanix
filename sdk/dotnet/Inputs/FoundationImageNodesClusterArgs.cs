@@ -11,40 +11,40 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationImageNodesClusterArgs : Pulumi.ResourceArgs
+    public sealed class FoundationImageNodesClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// : - Backplane netmask.
+        /// - Backplane netmask.
         /// </summary>
         [Input("backplaneNetmask")]
         public Input<string>? BackplaneNetmask { get; set; }
 
         /// <summary>
-        /// : - Backplane subnet address.
+        /// - Backplane subnet address.
         /// </summary>
         [Input("backplaneSubnet")]
         public Input<string>? BackplaneSubnet { get; set; }
 
         /// <summary>
-        /// : - Backplane vlan.
+        /// - Backplane vlan.
         /// </summary>
         [Input("backplaneVlan")]
         public Input<string>? BackplaneVlan { get; set; }
 
         /// <summary>
-        /// : - External IP of the cluster.
+        /// - External IP of the cluster.
         /// </summary>
         [Input("clusterExternalIp")]
         public Input<string>? ClusterExternalIp { get; set; }
 
         /// <summary>
-        /// : - (Optional, Default = true) If cluster should be created.
+        /// - (Optional, Default = true) If cluster should be created.
         /// </summary>
         [Input("clusterInitNow")]
         public Input<bool>? ClusterInitNow { get; set; }
 
         /// <summary>
-        /// : - If cluster initialization was successful.
+        /// - If cluster initialization was successful.
         /// </summary>
         [Input("clusterInitSuccessful")]
         public Input<bool>? ClusterInitSuccessful { get; set; }
@@ -53,7 +53,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<string>? _clusterMembers;
 
         /// <summary>
-        /// : - (Required) Members in the cluster.
+        /// - (Required) Members in the cluster.
         /// </summary>
         public InputList<string> ClusterMembers
         {
@@ -62,43 +62,43 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         }
 
         /// <summary>
-        /// : - (Required) Name of the cluster.
+        /// - (Required) Name of the cluster.
         /// </summary>
         [Input("clusterName", required: true)]
         public Input<string> ClusterName { get; set; } = null!;
 
         /// <summary>
-        /// : - DNS servers of CVM.
+        /// - DNS servers of CVM.
         /// </summary>
         [Input("cvmDnsServers")]
         public Input<string>? CvmDnsServers { get; set; }
 
         /// <summary>
-        /// : - NTP servers of CVM.
+        /// - NTP servers of CVM.
         /// </summary>
         [Input("cvmNtpServers")]
         public Input<string>? CvmNtpServers { get; set; }
 
         /// <summary>
-        /// : - If network segmentation should be enabled.
+        /// - If network segmentation should be enabled.
         /// </summary>
         [Input("enableNs")]
         public Input<bool>? EnableNs { get; set; }
 
         /// <summary>
-        /// : - NTP servers of hypervisor.
+        /// - NTP servers of hypervisor.
         /// </summary>
         [Input("hypervisorNtpServers")]
         public Input<string>? HypervisorNtpServers { get; set; }
 
         /// <summary>
-        /// : - (Required) Cluster Redundancy Factor.
+        /// - (Required) Cluster Redundancy Factor.
         /// </summary>
         [Input("redundancyFactor", required: true)]
         public Input<int> RedundancyFactor { get; set; } = null!;
 
         /// <summary>
-        /// : - If it is a single node cluster.
+        /// - If it is a single node cluster.
         /// </summary>
         [Input("singleNodeCluster")]
         public Input<bool>? SingleNodeCluster { get; set; }
@@ -106,5 +106,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public FoundationImageNodesClusterArgs()
         {
         }
+        public static new FoundationImageNodesClusterArgs Empty => new FoundationImageNodesClusterArgs();
     }
 }

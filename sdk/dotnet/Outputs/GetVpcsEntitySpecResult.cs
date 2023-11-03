@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetVpcsEntitySpecResult
     {
         /// <summary>
-        /// The name of the VPC
+        /// - the name.
         /// </summary>
         public readonly string Name;
         /// <summary>

@@ -2,10 +2,17 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 
 export interface AccessControlPolicyCategory {
+    /**
+     * - (Optional) Name of the Access Control Policy.
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
@@ -14,69 +21,164 @@ export interface AccessControlPolicyContextFilterList {
      * A list of Entity filter expressions.
      */
     entityFilterExpressionLists: outputs.AccessControlPolicyContextFilterListEntityFilterExpressionList[];
+    /**
+     * - (Optional) Filter the scope of an Access Control Policy.
+     */
     scopeFilterExpressionLists: outputs.AccessControlPolicyContextFilterListScopeFilterExpressionList[];
 }
 
 export interface AccessControlPolicyContextFilterListEntityFilterExpressionList {
+    /**
+     * - (Optional)  The LHS of the filter expression - the entity type.
+     */
     leftHandSideEntityType: string;
+    /**
+     * - (Required) The operator in the filter expression.
+     */
     operator: string;
+    /**
+     * - (Required) The right hand side (RHS) of an scope expression.
+     */
     rightHandSide: outputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSide;
 }
 
 export interface AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSide {
+    /**
+     * - (Optional) The category values represented as a dictionary of key > list of values.
+     */
     categories: outputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategories;
+    /**
+     * - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+     */
     collection: string;
+    /**
+     * - (Optional) The explicit list of UUIDs for the given kind.
+     */
     uuidLists: string[];
 }
 
 export interface AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategories {
+    /**
+     * - (Optional) Name of the Access Control Policy.
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     values: string[];
 }
 
 export interface AccessControlPolicyContextFilterListScopeFilterExpressionList {
+    /**
+     * - (Optional)  The LHS of the filter expression - the scope type.
+     */
     leftHandSide: string;
+    /**
+     * - (Required) The operator of the filter expression.
+     */
     operator: string;
+    /**
+     * - (Required) The right hand side (RHS) of an scope expression.
+     */
     rightHandSide: outputs.AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSide;
 }
 
 export interface AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSide {
+    /**
+     * - (Optional) The category values represented as a dictionary of key > list of values.
+     */
     categories: outputs.AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideCategories;
+    /**
+     * - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+     */
     collection: string;
+    /**
+     * - (Optional) The explicit list of UUIDs for the given kind.
+     */
     uuidLists: string[];
 }
 
 export interface AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideCategories {
+    /**
+     * - (Optional) Name of the Access Control Policy.
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     values: string[];
 }
 
 export interface AccessControlPolicyOwnerReference {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: string;
+    /**
+     * - (Optional) Name of the Access Control Policy.
+     */
     name?: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: string;
 }
 
 export interface AccessControlPolicyRoleReference {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - (Optional) Name of the Access Control Policy.
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface AccessControlPolicyUserGroupReferenceList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - (Optional) Name of the Access Control Policy.
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface AccessControlPolicyUserReferenceList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - (Optional) Name of the Access Control Policy.
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface AddressGroupIpAddressBlockList {
+    /**
+     * - (Required) IP of the address block
+     */
     ip: string;
+    /**
+     * - (Required) Prefix length of address block in int
+     *
+     * See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/reference/prism_central/v3/api/address-groups/postaddressgroups).
+     */
     prefixLength: number;
 }
 
@@ -92,6 +194,9 @@ export interface FoundationCentralImageClusterClusterStatus {
 }
 
 export interface FoundationCentralImageClusterClusterStatusClusterProgressDetail {
+    /**
+     * Name of the cluster.
+     */
     clusterName: string;
     messageLists: string[];
     percentComplete: number;
@@ -99,6 +204,9 @@ export interface FoundationCentralImageClusterClusterStatusClusterProgressDetail
 }
 
 export interface FoundationCentralImageClusterClusterStatusNodeProgressDetail {
+    /**
+     * UUID of the node.
+     */
     imagedNodeUuid: string;
     imagingStopped: boolean;
     intentPickedUp: boolean;
@@ -108,25 +216,61 @@ export interface FoundationCentralImageClusterClusterStatusNodeProgressDetail {
 }
 
 export interface FoundationCentralImageClusterCommonNetworkSettings {
+    /**
+     * List of dns servers for the cvms in the cluster.
+     */
     cvmDnsServers: string[];
+    /**
+     * List of ntp servers for the cvms in the cluster.
+     */
     cvmNtpServers: string[];
+    /**
+     * List of dns servers for the hypervisors in the cluster.
+     */
     hypervisorDnsServers: string[];
+    /**
+     * List of ntp servers for the hypervisors in the cluster.
+     */
     hypervisorNtpServers: string[];
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfig {
     blocks: outputs.FoundationCentralImageClusterFoundationInitConfigBlock[];
     clusters: outputs.FoundationCentralImageClusterFoundationInitConfigCluster[];
+    /**
+     * Gateway of the cvm.
+     */
     cvmGateway: string;
+    /**
+     * Netmask of the cvm.
+     */
     cvmNetmask: string;
     dnsServers: string;
+    /**
+     * Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+     */
     hypervProductKey: string;
+    /**
+     * SKU of hyperv to be installed if hypervisorType is hyperv.
+     */
     hypervSku: string;
+    /**
+     * Gateway of the hypervisor.
+     */
     hypervisorGateway: string;
     hypervisorIsoUrl: {[key: string]: string};
     hypervisorIsos: outputs.FoundationCentralImageClusterFoundationInitConfigHypervisorIso[];
+    /**
+     * Netmask of the hypervisor.
+     */
     hypervisorNetmask: string;
+    /**
+     * Gateway of the ipmi.
+     */
     ipmiGateway: string;
+    /**
+     * Netmask of the ipmi.
+     */
     ipmiNetmask: string;
     nosPackageUrls: outputs.FoundationCentralImageClusterFoundationInitConfigNosPackageUrl[];
 }
@@ -137,14 +281,35 @@ export interface FoundationCentralImageClusterFoundationInitConfigBlock {
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigBlockNode {
+    /**
+     * IP address to be set for the cvm on the node.
+     */
     cvmIp: string;
+    /**
+     * Vlan tag of the cvm, if the cvm is on a vlan.
+     */
     cvmVlanId: number;
     fcImagedNodeUuid: string;
+    /**
+     * Hardware attributes override json for the node.
+     */
     hardwareAttributesOverride: {[key: string]: string};
     hypervisor: string;
+    /**
+     * Name to be set for the hypervisor host.
+     */
     hypervisorHostname: string;
+    /**
+     * IP address to be set for the hypervisor on the node.
+     */
     hypervisorIp: string;
+    /**
+     * True, if the node should be imaged, False, otherwise.
+     */
     imageNow: boolean;
+    /**
+     * IP address to be set for the ipmi of the node.
+     */
     ipmiIp: string;
     ipv6Address: string;
     nodePosition: string;
@@ -152,59 +317,158 @@ export interface FoundationCentralImageClusterFoundationInitConfigBlockNode {
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigCluster {
+    /**
+     * External management ip of the cluster.
+     */
     clusterExternalIp: string;
     clusterInitNow: boolean;
     clusterInitSuccessful: boolean;
     clusterMembers: string[];
+    /**
+     * Name of the cluster.
+     */
     clusterName: string;
+    /**
+     * List of dns servers for the cvms in the cluster.
+     */
     cvmDnsServers: string;
+    /**
+     * List of ntp servers for the cvms in the cluster.
+     */
     cvmNtpServers: string;
+    /**
+     * Redundancy factor of the cluster.
+     */
     redundancyFactor: number;
+    /**
+     * Timezone to be set on the cluster.
+     */
     timezone: string;
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigHypervisorIso {
+    /**
+     * Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+     */
     hypervisorType: string;
+    /**
+     * sha256sum of the hypervisor iso.
+     */
     sha256sum: string;
+    /**
+     * URL to download hypervisor iso. Required only if imaging is needed.
+     */
     url: string;
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigNosPackageUrl {
+    /**
+     * sha256sum of the hypervisor iso.
+     */
     sha256sum: string;
+    /**
+     * URL to download hypervisor iso. Required only if imaging is needed.
+     */
     url: string;
 }
 
 export interface FoundationCentralImageClusterHypervisorIsoDetails {
+    /**
+     * Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+     */
     hypervProductKey: string;
+    /**
+     * SKU of hyperv to be installed if hypervisorType is hyperv.
+     */
     hypervSku: string;
+    /**
+     * sha256sum of the hypervisor iso.
+     */
     sha256sum: string;
+    /**
+     * URL to download hypervisor iso. Required only if imaging is needed.
+     */
     url?: string;
 }
 
 export interface FoundationCentralImageClusterNodeList {
+    /**
+     * Gateway of the cvm.
+     */
     cvmGateway: string;
+    /**
+     * IP address to be set for the cvm on the node.
+     */
     cvmIp: string;
+    /**
+     * Netmask of the cvm.
+     */
     cvmNetmask?: string;
+    /**
+     * Amount of memory to be assigned for the cvm.
+     */
     cvmRamGb?: number;
+    /**
+     * Vlan tag of the cvm, if the cvm is on a vlan.
+     */
     cvmVlanId: number;
+    /**
+     * Hardware attributes override json for the node.
+     */
     hardwareAttributesOverride: {[key: string]: any};
+    /**
+     * Gateway of the hypervisor.
+     */
     hypervisorGateway: string;
+    /**
+     * Name to be set for the hypervisor host.
+     */
     hypervisorHostname: string;
+    /**
+     * IP address to be set for the hypervisor on the node.
+     */
     hypervisorIp: string;
+    /**
+     * Netmask of the hypervisor.
+     */
     hypervisorNetmask: string;
+    /**
+     * Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+     */
     hypervisorType?: string;
+    /**
+     * True, if the node should be imaged, False, otherwise.
+     */
     imageNow: boolean;
+    /**
+     * UUID of the node.
+     */
     imagedNodeUuid: string;
+    /**
+     * Gateway of the ipmi.
+     */
     ipmiGateway: string;
+    /**
+     * IP address to be set for the ipmi of the node.
+     */
     ipmiIp: string;
+    /**
+     * Netmask of the ipmi.
+     */
     ipmiNetmask?: string;
+    /**
+     * Passthrough RDMA nic to CVM if possible, default to false.
+     */
     rdmaPassthrough?: boolean;
+    /**
+     * Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
+     */
     useExistingNetworkSettings?: boolean;
 }
 
 export interface FoundationImageNodesBlock {
     /**
-     * : - Block ID.
+     * - Block ID.
      */
     blockId?: string;
     nodes: outputs.FoundationImageNodesBlockNode[];
@@ -212,130 +476,130 @@ export interface FoundationImageNodesBlock {
 
 export interface FoundationImageNodesBlockNode {
     /**
-     * :- (Required if node is lacp configured) slow or fast if lacp if being used at the switch
+     * - (Required if node is lacp configured) slow or fast if lacp if being used at the switch
      */
     bondLacpRate?: string;
     /**
-     * :- (Required if node is capable) dynamic if using LACP, static for LAG
+     * - (Required if node is capable) dynamic if using LACP, static for LAG
      */
     bondMode?: string;
     /**
-     * :- MAC Addresses of NICs in a team/bond
+     * - MAC Addresses of NICs in a team/bond
      */
     bondUplinks?: string;
     /**
-     * :- ID of cluster.
+     * - ID of cluster.
      */
     clusterId?: string;
     /**
-     * :- Current CVM vlan tag. 0 Value with remove vlan tag.
+     * - Current CVM vlan tag. 0 Value with remove vlan tag.
      */
     currentCvmVlanTag?: number;
     /**
-     * :- CVM current network interface.
+     * - CVM current network interface.
      */
     currentNetworkInterface?: string;
     /**
-     * :- RAM capacity of CVM in GB.
+     * - RAM capacity of CVM in GB.
      */
     cvmGbRam?: number;
     cvmIp?: string;
     /**
-     * :- Number of CVM vcpus.
+     * - Number of CVM vcpus.
      */
     cvmNumVcpus?: number;
     /**
-     * :- use "vmInstaller" to enable CVM imaging from standalone.
+     * - use "vmInstaller" to enable CVM imaging from standalone.
      */
     deviceHint?: string;
     /**
-     * :- serial of boot device to be excluded (used by NX G6 platforms)
+     * - serial of boot device to be excluded (used by NX G6 platforms)
      */
     exludeBootSerial?: string;
     hypervisor?: string;
     /**
-     * :- (Required) Hypervisor Hostname.
+     * - (Required) Hypervisor Hostname.
      */
     hypervisorHostname: string;
     /**
-     * :- (Required) Hypervisor IP address.
+     * - (Required) Hypervisor IP address.
      */
     hypervisorIp: string;
     /**
-     * :- Imaging delay.
+     * - Imaging delay.
      */
     imageDelay?: number;
     /**
-     * :- (Optional, Default = true) If the node should be imaged now.
+     * - (Optional, Default = true) If the node should be imaged now.
      */
     imageNow?: boolean;
     imageSuccessful?: boolean;
     /**
-     * :- Whether IPMI should be configured.
+     * - Whether IPMI should be configured.
      */
     ipmiConfigureNow?: boolean;
     /**
-     * :- (Required incase using IPMI based imaging either here or outside blocks) IPMI gateway for this node
+     * - (Required incase using IPMI based imaging either here or outside blocks) IPMI gateway for this node
      */
     ipmiGateway?: string;
     /**
-     * :- (Required) IPMI IP address.
+     * - (Required) IPMI IP address.
      */
     ipmiIp?: string;
     /**
-     * :- IPMI MAC address.
+     * - IPMI MAC address.
      */
     ipmiMac?: string;
     /**
-     * :- (Required incase using IPMI based imaging either here or outside blocks) IPMI netmask for this node
+     * - (Required incase using IPMI based imaging either here or outside blocks) IPMI netmask for this node
      */
     ipmiNetmask?: string;
     /**
-     * :- (Required incase using IPMI based imaging either here or outside blocks) IPMI username
+     * - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
      */
     ipmiPassword?: string;
     /**
-     * :- (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+     * - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
      */
     ipmiUser?: string;
     /**
-     * :- (Required when deviceHint = "vmInstaller" for imaging using node's existing cvm for imaging) IPV6 address.
+     * - (Required when deviceHint = "vmInstaller" for imaging using node's existing cvm for imaging) IPV6 address.
      */
     ipv6Address?: string;
     /**
-     * :- (Required when deviceHint = "vmInstaller" for imaging using node's existing cvm for imaging) ipv6 interface.
+     * - (Required when deviceHint = "vmInstaller" for imaging using node's existing cvm for imaging) ipv6 interface.
      */
     ipv6Interface?: string;
     /**
-     * :- relocate bootbank files to make space for phoenix files.
+     * - relocate bootbank files to make space for phoenix files.
      */
     mitigateLowBootSpace?: boolean;
     /**
-     * :- (Required) Position of the node in the block.
+     * - (Required) Position of the node in the block.
      */
     nodePosition: string;
     /**
-     * :- serial number of the node.
+     * - serial number of the node.
      */
     nodeSerial?: string;
     /**
-     * :- mac address of nic to be used for rdma
+     * - mac address of nic to be used for rdma
      */
     rdmaMacAddr?: string;
     /**
-     * :- (Required if node is capable) passthru RDMA nic to CVM if possible, default to false
+     * - (Required if node is capable) passthru RDMA nic to CVM if possible, default to false
      */
     rdmaPassthrough?: boolean;
     /**
-     * :- UCSM Managed mode.
+     * - UCSM Managed mode.
      */
     ucsmManagedMode?: string;
     /**
-     * :- UCSM node serial.
+     * - UCSM node serial.
      */
     ucsmNodeSerial?: string;
     /**
-     * :- Object of UCSM parameters.
+     * - Object of UCSM parameters.
      * * `ucsm_params.native_vlan` :- If the vlan is native.
      * * `ucsm_params.keep_ucsm_settings` :- Whether UCSM settings should be kept.
      * * `ucsm_params.mac_pool` :- Mac address pool.
@@ -354,7 +618,7 @@ export interface FoundationImageNodesBlockNodeUcsmParams {
 
 export interface FoundationImageNodesBlockNodeVswitch {
     /**
-     * :- (Required if node is capable) dynamic if using LACP, static for LAG
+     * - (Required if node is capable) dynamic if using LACP, static for LAG
      */
     bondMode?: string;
     lacp?: string;
@@ -366,66 +630,66 @@ export interface FoundationImageNodesBlockNodeVswitch {
 
 export interface FoundationImageNodesCluster {
     /**
-     * : - Backplane netmask.
+     * - Backplane netmask.
      */
     backplaneNetmask?: string;
     /**
-     * : - Backplane subnet address.
+     * - Backplane subnet address.
      */
     backplaneSubnet?: string;
     /**
-     * : - Backplane vlan.
+     * - Backplane vlan.
      */
     backplaneVlan?: string;
     /**
-     * : - External IP of the cluster.
+     * - External IP of the cluster.
      */
     clusterExternalIp?: string;
     /**
-     * : - (Optional, Default = true) If cluster should be created.
+     * - (Optional, Default = true) If cluster should be created.
      */
     clusterInitNow?: boolean;
     /**
-     * : - If cluster initialization was successful.
+     * - If cluster initialization was successful.
      */
     clusterInitSuccessful?: boolean;
     /**
-     * : - (Required) Members in the cluster.
+     * - (Required) Members in the cluster.
      */
     clusterMembers: string[];
     /**
-     * : - (Required) Name of the cluster.
+     * - (Required) Name of the cluster.
      */
     clusterName: string;
     /**
-     * : - DNS servers of CVM.
+     * - DNS servers of CVM.
      */
     cvmDnsServers?: string;
     /**
-     * : - NTP servers of CVM.
+     * - NTP servers of CVM.
      */
     cvmNtpServers?: string;
     /**
-     * : - If network segmentation should be enabled.
+     * - If network segmentation should be enabled.
      */
     enableNs?: boolean;
     /**
-     * : - NTP servers of hypervisor.
+     * - NTP servers of hypervisor.
      */
     hypervisorNtpServers?: string;
     /**
-     * : - (Required) Cluster Redundancy Factor.
+     * - (Required) Cluster Redundancy Factor.
      */
     redundancyFactor: number;
     /**
-     * : - If it is a single node cluster.
+     * - If it is a single node cluster.
      */
     singleNodeCluster?: boolean;
 }
 
 export interface FoundationImageNodesClusterUrl {
     /**
-     * : - (Required) Name of the cluster.
+     * - (Required) Name of the cluster.
      */
     clusterName: string;
     clusterUrl: string;
@@ -433,28 +697,28 @@ export interface FoundationImageNodesClusterUrl {
 
 export interface FoundationImageNodesEosMetadata {
     /**
-     * : - arrya of account names
+     * - arrya of account names
      */
     accountNames?: string[];
     /**
-     * : - Id of the Eos config uploaded in foundation GUI.
+     * - Id of the Eos config uploaded in foundation GUI.
      */
     configId?: string;
     /**
-     * : - Email address of the user who downloaded Eos config.
+     * - Email address of the user who downloaded Eos config.
      */
     email?: string;
 }
 
 export interface FoundationImageNodesFcSettings {
     /**
-     * :- Foundation Central metadata which will be transferred to the newly imaged node.
+     * - Foundation Central metadata which will be transferred to the newly imaged node.
      * * `fc_metadata.fc_ip` :- IP address of foundation central.
      * * `fc_metadata.api_key` :- apiKey which the node uses to register itself with foundation central.
      */
     fcMetadata: outputs.FoundationImageNodesFcSettingsFcMetadata;
     /**
-     * :- If this attribute is set to True, FC workflow will be invoked.
+     * - If this attribute is set to True, FC workflow will be invoked.
      */
     foundationCentral: boolean;
 }
@@ -466,88 +730,109 @@ export interface FoundationImageNodesFcSettingsFcMetadata {
 
 export interface FoundationImageNodesHypervisorIso {
     /**
-     * : - Details of hypervisor ISO of type esx.
+     * - Details of hypervisor ISO of type esx.
      */
     esx?: outputs.FoundationImageNodesHypervisorIsoEsx;
     /**
-     * : - Details of hypervisor ISO of type hyperv.
+     * - Details of hypervisor ISO of type hyperv.
      */
     hyperv?: outputs.FoundationImageNodesHypervisorIsoHyperv;
     /**
-     * : - Details of hypervisor ISO of type kvm.
+     * - Details of hypervisor ISO of type kvm.
      */
     kvm?: outputs.FoundationImageNodesHypervisorIsoKvm;
     /**
-     * : - Details of hypervisor ISO of type xen.
+     * - Details of hypervisor ISO of type xen.
      */
     xen?: outputs.FoundationImageNodesHypervisorIsoXen;
 }
 
 export interface FoundationImageNodesHypervisorIsoEsx {
     /**
-     * :- (Required) Filename of hypervisor ISO.
+     * - (Required) Filename of hypervisor ISO.
      */
     checksum: string;
     /**
-     * :- (Required) Checksum for ISO file.
+     * - (Required) Checksum for ISO file.
      */
     filename: string;
 }
 
 export interface FoundationImageNodesHypervisorIsoHyperv {
     /**
-     * :- (Required) Filename of hypervisor ISO.
+     * - (Required) Filename of hypervisor ISO.
      */
     checksum: string;
     /**
-     * :- (Required) Checksum for ISO file.
+     * - (Required) Checksum for ISO file.
      */
     filename: string;
 }
 
 export interface FoundationImageNodesHypervisorIsoKvm {
     /**
-     * :- (Required) Filename of hypervisor ISO.
+     * - (Required) Filename of hypervisor ISO.
      */
     checksum: string;
     /**
-     * :- (Required) Checksum for ISO file.
+     * - (Required) Checksum for ISO file.
      */
     filename: string;
 }
 
 export interface FoundationImageNodesHypervisorIsoXen {
     /**
-     * :- (Required) Filename of hypervisor ISO.
+     * - (Required) Filename of hypervisor ISO.
      */
     checksum: string;
     /**
-     * :- (Required) Checksum for ISO file.
+     * - (Required) Checksum for ISO file.
      */
     filename: string;
 }
 
 export interface FoundationImageNodesTests {
     /**
-     * : - Whether NCC checks should run.
+     * - Whether NCC checks should run.
      */
     runNcc?: boolean;
     /**
-     * : - Whether system checks should run.
+     * - Whether system checks should run.
      */
     runSyscheck?: boolean;
 }
 
 export interface FoundationIpmiConfigBlock {
+    /**
+     * - (Optional) Block Id
+     */
     blockId?: string;
+    /**
+     * - (Required) array of nodes for ipmi config.
+     */
     nodes: outputs.FoundationIpmiConfigBlockNode[];
 }
 
 export interface FoundationIpmiConfigBlockNode {
+    /**
+     * - (Required) Whether IPMI should be configured. Should be kept true to configure
+     */
     ipmiConfigureNow: boolean;
+    /**
+     * - Whether IPMI was successfully configured.
+     */
     ipmiConfigureSuccessful: boolean;
+    /**
+     * - IPMI IP address.
+     */
     ipmiIp: string;
+    /**
+     * - (Required) IPMI mac address.
+     */
     ipmiMac: string;
+    /**
+     * - IPMI configuration status message if any.
+     */
     ipmiMessage: string;
 }
 
@@ -555,24 +840,59 @@ export interface GetAccessControlPoliciesEntity {
     accessControlPolicyId: string;
     /**
      * The version of the API.
-     * * `state`: - The state of the Access Control Policy.
      */
     apiVersion: string;
+    /**
+     * - The category values represented as a dictionary of key > list of values.
+     */
     categories: outputs.GetAccessControlPoliciesEntityCategory[];
     contextFilterLists: outputs.GetAccessControlPoliciesEntityContextFilterList[];
+    /**
+     * - The description of the Access Control Policy.
+     */
     description: string;
+    /**
+     * - The Access Control Policy kind metadata.
+     */
     metadata: {[key: string]: string};
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - The reference to a user.
+     */
     ownerReference: {[key: string]: string};
+    /**
+     * - The reference to a project.
+     */
     projectReference: {[key: string]: string};
+    /**
+     * - The reference to a role.
+     */
     roleReferences: outputs.GetAccessControlPoliciesEntityRoleReference[];
+    /**
+     * - The state of the Access Control Policy.
+     */
     state: string;
+    /**
+     * - The User group(s) being assigned a given role.
+     */
     userGroupReferenceLists: outputs.GetAccessControlPoliciesEntityUserGroupReferenceList[];
+    /**
+     * - The User(s) being assigned a given role.
+     */
     userReferenceLists: outputs.GetAccessControlPoliciesEntityUserReferenceList[];
 }
 
 export interface GetAccessControlPoliciesEntityCategory {
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
@@ -581,63 +901,144 @@ export interface GetAccessControlPoliciesEntityContextFilterList {
      * A list of Entity filter expressions.
      */
     entityFilterExpressionLists: outputs.GetAccessControlPoliciesEntityContextFilterListEntityFilterExpressionList[];
+    /**
+     * - The device ID which is used to uniquely identify this particular disk.
+     */
     scopeFilterExpressionLists: outputs.GetAccessControlPoliciesEntityContextFilterListScopeFilterExpressionList[];
 }
 
 export interface GetAccessControlPoliciesEntityContextFilterListEntityFilterExpressionList {
+    /**
+     * -  The LHS of the filter expression - the entity type.
+     */
     leftHandSideEntityType: string;
+    /**
+     * - The operator in the filter expression.
+     */
     operator: string;
+    /**
+     * - The right hand side (RHS) of an scope expression.
+     */
     rightHandSides: outputs.GetAccessControlPoliciesEntityContextFilterListEntityFilterExpressionListRightHandSide[];
 }
 
 export interface GetAccessControlPoliciesEntityContextFilterListEntityFilterExpressionListRightHandSide {
+    /**
+     * - The category values represented as a dictionary of key > list of values.
+     */
     categories: outputs.GetAccessControlPoliciesEntityContextFilterListEntityFilterExpressionListRightHandSideCategory[];
+    /**
+     * -  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+     */
     collection: string;
+    /**
+     * - The explicit list of UUIDs for the given kind.
+     */
     uuidLists: string[];
 }
 
 export interface GetAccessControlPoliciesEntityContextFilterListEntityFilterExpressionListRightHandSideCategory {
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     values: string[];
 }
 
 export interface GetAccessControlPoliciesEntityContextFilterListScopeFilterExpressionList {
+    /**
+     * -  The LHS of the filter expression - the scope type.
+     */
     leftHandSide: string;
+    /**
+     * - The operator in the filter expression.
+     */
     operator: string;
+    /**
+     * - The right hand side (RHS) of an scope expression.
+     */
     rightHandSides: outputs.GetAccessControlPoliciesEntityContextFilterListScopeFilterExpressionListRightHandSide[];
 }
 
 export interface GetAccessControlPoliciesEntityContextFilterListScopeFilterExpressionListRightHandSide {
+    /**
+     * - The category values represented as a dictionary of key > list of values.
+     */
     categories: outputs.GetAccessControlPoliciesEntityContextFilterListScopeFilterExpressionListRightHandSideCategory[];
+    /**
+     * -  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+     */
     collection: string;
+    /**
+     * - The explicit list of UUIDs for the given kind.
+     */
     uuidLists: string[];
 }
 
 export interface GetAccessControlPoliciesEntityContextFilterListScopeFilterExpressionListRightHandSideCategory {
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     values: string[];
 }
 
 export interface GetAccessControlPoliciesEntityRoleReference {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface GetAccessControlPoliciesEntityUserGroupReferenceList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface GetAccessControlPoliciesEntityUserReferenceList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface GetAccessControlPoliciesMetadata {
     filter: string;
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
     length: number;
     offset: number;
@@ -646,7 +1047,13 @@ export interface GetAccessControlPoliciesMetadata {
 }
 
 export interface GetAccessControlPolicyCategory {
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
@@ -655,95 +1062,224 @@ export interface GetAccessControlPolicyContextFilterList {
      * A list of Entity filter expressions.
      */
     entityFilterExpressionLists: outputs.GetAccessControlPolicyContextFilterListEntityFilterExpressionList[];
+    /**
+     * - The device ID which is used to uniquely identify this particular disk.
+     */
     scopeFilterExpressionLists: outputs.GetAccessControlPolicyContextFilterListScopeFilterExpressionList[];
 }
 
 export interface GetAccessControlPolicyContextFilterListEntityFilterExpressionList {
+    /**
+     * -  The LHS of the filter expression - the entity type.
+     */
     leftHandSideEntityType: string;
+    /**
+     * - The operator in the filter expression.
+     */
     operator: string;
+    /**
+     * - The right hand side (RHS) of an scope expression.
+     */
     rightHandSides: outputs.GetAccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSide[];
 }
 
 export interface GetAccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSide {
+    /**
+     * - The category values represented as a dictionary of key > list of values.
+     */
     categories: outputs.GetAccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategory[];
+    /**
+     * -  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+     */
     collection: string;
+    /**
+     * - The explicit list of UUIDs for the given kind.
+     */
     uuidLists: string[];
 }
 
 export interface GetAccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategory {
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     values: string[];
 }
 
 export interface GetAccessControlPolicyContextFilterListScopeFilterExpressionList {
+    /**
+     * -  The LHS of the filter expression - the scope type.
+     */
     leftHandSide: string;
+    /**
+     * - The operator in the filter expression.
+     */
     operator: string;
+    /**
+     * - The right hand side (RHS) of an scope expression.
+     */
     rightHandSides: outputs.GetAccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSide[];
 }
 
 export interface GetAccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSide {
+    /**
+     * - The category values represented as a dictionary of key > list of values.
+     */
     categories: outputs.GetAccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideCategory[];
+    /**
+     * -  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+     */
     collection: string;
+    /**
+     * - The explicit list of UUIDs for the given kind.
+     */
     uuidLists: string[];
 }
 
 export interface GetAccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideCategory {
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     values: string[];
 }
 
 export interface GetAccessControlPolicyRoleReference {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface GetAccessControlPolicyUserGroupReferenceList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface GetAccessControlPolicyUserReferenceList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface GetAddressGroupIpAddressBlockList {
+    /**
+     * - (ReadOnly) IP of the address block
+     */
     ip: string;
+    /**
+     * - (ReadOnly) Prefix length of address block in int
+     */
     prefixLength: number;
 }
 
 export interface GetAddressGroupsEntity {
+    /**
+     * Information about address_group
+     */
     addressGroups: outputs.GetAddressGroupsEntityAddressGroup[];
+    /**
+     * List of associated policies to address group
+     */
     associatedPoliciesLists: outputs.GetAddressGroupsEntityAssociatedPoliciesList[];
 }
 
 export interface GetAddressGroupsEntityAddressGroup {
+    /**
+     * - (ReadOnly) Address Group string
+     */
     addressGroupString: string;
+    /**
+     * - (ReadOnly) Description of the address group
+     */
     description?: string;
+    /**
+     * - (ReadOnly) list of IP address blocks with their prefix length
+     */
     ipAddressBlockLists: outputs.GetAddressGroupsEntityAddressGroupIpAddressBlockList[];
+    /**
+     * - (ReadOnly) Name of associated policy
+     */
     name: string;
 }
 
 export interface GetAddressGroupsEntityAddressGroupIpAddressBlockList {
+    /**
+     * - (ReadOnly) IP of the address block
+     */
     ip: string;
+    /**
+     * - (ReadOnly) Prefix length of address block in int
+     */
     prefixLength: number;
 }
 
 export interface GetAddressGroupsEntityAssociatedPoliciesList {
     kind: string;
+    /**
+     * - (ReadOnly) Name of associated policy
+     */
     name: string;
+    /**
+     * - (ReadOnly) UUID of associated policy
+     */
     uuid: string;
 }
 
 export interface GetAddressGroupsMetadata {
+    /**
+     * (Optional) Filter in FIQL Syntax
+     */
     filter: string;
     kind: string;
+    /**
+     * (Optional) Integer
+     */
     length: number;
+    /**
+     * (Optional) Integer
+     */
     offset: number;
+    /**
+     * (Optional) attribute to sort
+     */
     sortAttribute: string;
+    /**
+     * (Optional) order of sorting
+     */
     sortOrder: string;
 }
 
@@ -754,6 +1290,9 @@ export interface GetAssertHelperCheck {
 
 export interface GetClusterAuthorizedPublicKeyList {
     key: string;
+    /**
+     * Represents the name of cluster
+     */
     name: string;
 }
 
@@ -763,7 +1302,13 @@ export interface GetClusterCaCertificateList {
 }
 
 export interface GetClusterCategory {
+    /**
+     * - the key name.
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
@@ -792,105 +1337,200 @@ export interface GetClusterNode {
 }
 
 export interface GetClustersEntity {
+    /**
+     * - Map of cluster efficiency which includes numbers of inefficient vms. The value is populated by analytics on PC. (Readonly)
+     */
     analysisVmEfficiencyMap: {[key: string]: string};
     /**
      * The API version.
-     * * `description`: - A description for image.
-     * * `metadata`: - The image kind metadata.
-     * * `state`: - The state of the cluster entity.
-     * * `gpuDriverVersion`: - GPU driver version.
-     * * `clientAuth`: - Client authentication config.
-     * * `authorizedPiblicKeyList`: - List of valid ssh keys for the cluster.
-     * * `softwareMapNcc`: - Map of software on the cluster with software type as the key.
-     * * `softwareMapNos`: - Map of software on the cluster with software type as the key.
-     * * `encryptionStatus`: - Cluster encryption status.
-     * * `sslKeyType`: - SSL key type. Key types with RSA_2048, ECDSA_256 and ECDSA_384 are supported for key generation and importing.
-     * * `sslKeySigningInfo`: - Customer information used in Certificate Signing Request for creating digital certificates.
-     * * `sslKeyExpireDatetime`: - UTC date and time in RFC-3339 format when the key expires
-     * * `serviceList`: - Array of enabled cluster services. For example, a cluster can function as both AOS and cloud data gateway. - 'AOS': Regular Prism Element - 'PRISM_CENTRAL': Prism Central - 'CLOUD_DATA_GATEWAY': Cloud backup and DR gateway - 'AFS': Cluster for file server - 'WITNESS' : Witness cluster - 'XI_PORTAL': Xi cluster.
-     * * `supportedInformationVerbosity`: - Verbosity level settings for populating support information. - 'Nothing': Send nothing - 'Basic': Send basic information - skip core dump and hypervisor stats information - 'BasicPlusCoreDump': Send basic and core dump information - 'All': Send all information (Default value: BASIC_PLUS_CORE_DUMP)
-     * * `certificationSigningInfo`: - Customer information used in Certificate Signing Request for creating digital certificates.
-     * * `operationMode`: - Cluster operation mode. - 'NORMAL': Cluster is operating normally. - 'READ_ONLY': Cluster is operating in read only mode. - 'STAND_ALONE': Only one node is operational in the cluster. This is valid only for single node or two node clusters. - 'SWITCH_TO_TWO_NODE': Cluster is moving from single node to two node cluster. - 'OVERRIDE': Valid only for single node cluster. If the user wants to run vms on a single node cluster in read only mode, he can set the cluster peration mode to override. Writes will be allowed in override mode.
-     * * `caCertificateList`: - Zone name used in value of TZ environment variable.
-     * * `enabledFeatureList`: - Array of enabled features.
-     * * `isAvailable`: - Indicates if cluster is available to contact. (Readonly)
-     * * `build`: - Cluster build details.
-     * * `timezone`: - Zone name used in value of TZ environment variable.
-     * * `clusterArch`: - Cluster architecture. (Readonly, Options: Options : X86_64 , PPC64LE)
-     * * `managementServerList`: - List of cluster management servers. (Readonly)
-     * * `masqueradingPort`: - Port used together with masqueradingIp to connect to the cluster.
-     * * `masqueradingIp`: - The cluster NAT'd or proxy IP which maps to the cluster local IP.
-     * * `externalIp`: - The local IP of cluster visible externally.
-     * * `httpProxyList`: - List of proxies to connect to the service centers.
-     * * `smtpServerType`: - SMTP Server type.
-     * * `smtpServerEmailAddress`: - SMTP Server Email Address.
-     * * `smtpServerCredentials`: - SMTP Server Credentials.
-     * * `smtpServerProxyTypeList`: - SMTP Server Proxy Type List
-     * * `smtpServerAddress`: - SMTP Server Address.
-     * * `ntpServerIpList`: - The list of IP addresses or FQDNs of the NTP servers.
-     * * `externalSubnet`: - External subnet for cross server communication. The format is IP/netmask. (default 172.16.0.0/255.240.0.0)
-     * * `externalDataServicesIp`: - The cluster IP address that provides external entities access to various cluster data services.
-     * * `internalSubnet`: - The internal subnet is local to every server - its not visible outside.iSCSI requests generated internally within the appliance (by user VMs or VMFS) are sent to the internal subnet. The format is IP/netmask.
-     * * `domainServerNameserver`: -  The IP of the nameserver that can resolve the domain name. Must set when joining the domain.
-     * * `domainServerName`: - Joined domain name. In 'put' request, empty name will unjoin the cluster from current domain.
-     * * `domainServerCredentials`: - Cluster domain credentials.
-     * * `nfsSubnetWhitelist`: - Comma separated list of subnets (of the form 'a.b.c.d/l.m.n.o') that are allowed to send NFS requests to this container. If not specified, the global NFS whitelist will be looked up for access permission. The internal subnet is always automatically considered part of the whitelist, even if the field below does not explicitly specify it. Similarly, all the hypervisor IPs are considered part of the whitelist. Finally, to permit debugging, all of the SVMs local IPs are considered to be implicitly part of the whitelist.
-     * * `nameServerIpList`: - The list of IP addresses of the name servers.
-     * * `httpProxyWhitelist`: - HTTP proxy whitelist.
-     * * `analysisVmEfficiencyMap`: - Map of cluster efficiency which includes numbers of inefficient vms. The value is populated by analytics on PC. (Readonly)
      */
     apiVersion: string;
     authorizedPublicKeyLists: outputs.GetClustersEntityAuthorizedPublicKeyList[];
+    /**
+     * - Cluster build details.
+     */
     build: {[key: string]: string};
+    /**
+     * - Zone name used in value of TZ environment variable.
+     */
     caCertificateLists: outputs.GetClustersEntityCaCertificateList[];
+    /**
+     * - Categories for the image.
+     */
     categories: outputs.GetClustersEntityCategory[];
+    /**
+     * - Customer information used in Certificate Signing Request for creating digital certificates.
+     */
     certificationSigningInfo: {[key: string]: string};
+    /**
+     * - Client authentication config.
+     */
     clientAuth: {[key: string]: string};
+    /**
+     * - Cluster architecture. (Readonly, Options: Options : X86_64 , PPC64LE)
+     */
     clusterArch: string;
+    /**
+     * - Cluster domain credentials.
+     */
     domainServerCredentials: {[key: string]: string};
+    /**
+     * - Joined domain name. In 'put' request, empty name will unjoin the cluster from current domain.
+     */
     domainServerName: string;
+    /**
+     * -  The IP of the nameserver that can resolve the domain name. Must set when joining the domain.
+     */
     domainServerNameserver: string;
+    /**
+     * - Array of enabled features.
+     */
     enabledFeatureLists: string[];
+    /**
+     * - Cluster encryption status.
+     */
     encryptionStatus: string;
+    /**
+     * - The cluster IP address that provides external entities access to various cluster data services.
+     */
     externalDataServicesIp: string;
+    /**
+     * - The local IP of cluster visible externally.
+     */
     externalIp: string;
+    /**
+     * - External subnet for cross server communication. The format is IP/netmask. (default 172.16.0.0/255.240.0.0)
+     */
     externalSubnet: string;
+    /**
+     * - GPU driver version.
+     */
     gpuDriverVersion: string;
+    /**
+     * - List of proxies to connect to the service centers.
+     */
     httpProxyLists: outputs.GetClustersEntityHttpProxyList[];
+    /**
+     * - HTTP proxy whitelist.
+     */
     httpProxyWhitelists: outputs.GetClustersEntityHttpProxyWhitelist[];
+    /**
+     * - The internal subnet is local to every server - its not visible outside.iSCSI requests generated internally within the appliance (by user VMs or VMFS) are sent to the internal subnet. The format is IP/netmask.
+     */
     internalSubnet: string;
+    /**
+     * - Indicates if cluster is available to contact. (Readonly)
+     */
     isAvailable: boolean;
+    /**
+     * - List of cluster management servers. (Readonly)
+     */
     managementServerLists: outputs.GetClustersEntityManagementServerList[];
+    /**
+     * - The cluster NAT'd or proxy IP which maps to the cluster local IP.
+     */
     masqueradingIp: string;
+    /**
+     * - Port used together with masqueradingIp to connect to the cluster.
+     */
     masqueradingPort: number;
+    /**
+     * - The image kind metadata.
+     */
     metadata: {[key: string]: string};
+    /**
+     * - the key name.
+     */
     name: string;
+    /**
+     * - The list of IP addresses of the name servers.
+     */
     nameServerIpLists: string[];
+    /**
+     * - Comma separated list of subnets (of the form 'a.b.c.d/l.m.n.o') that are allowed to send NFS requests to this container. If not specified, the global NFS whitelist will be looked up for access permission. The internal subnet is always automatically considered part of the whitelist, even if the field below does not explicitly specify it. Similarly, all the hypervisor IPs are considered part of the whitelist. Finally, to permit debugging, all of the SVMs local IPs are considered to be implicitly part of the whitelist.
+     */
     nfsSubnetWhitelists: string[];
     nodes: outputs.GetClustersEntityNode[];
+    /**
+     * - The list of IP addresses or FQDNs of the NTP servers.
+     */
     ntpServerIpLists: string[];
+    /**
+     * - Cluster operation mode. - 'NORMAL': Cluster is operating normally. - 'READ_ONLY': Cluster is operating in read only mode. - 'STAND_ALONE': Only one node is operational in the cluster. This is valid only for single node or two node clusters. - 'SWITCH_TO_TWO_NODE': Cluster is moving from single node to two node cluster. - 'OVERRIDE': Valid only for single node cluster. If the user wants to run vms on a single node cluster in read only mode, he can set the cluster peration mode to override. Writes will be allowed in override mode.
+     */
     operationMode: string;
+    /**
+     * - The reference to a user.
+     */
     ownerReference: {[key: string]: string};
+    /**
+     * - The reference to a project.
+     */
     projectReference: {[key: string]: string};
+    /**
+     * - Array of enabled cluster services. For example, a cluster can function as both AOS and cloud data gateway. - 'AOS': Regular Prism Element - 'PRISM_CENTRAL': Prism Central - 'CLOUD_DATA_GATEWAY': Cloud backup and DR gateway - 'AFS': Cluster for file server - 'WITNESS' : Witness cluster - 'XI_PORTAL': Xi cluster.
+     */
     serviceLists: string[];
+    /**
+     * - SMTP Server Address.
+     */
     smtpServerAddress: {[key: string]: string};
+    /**
+     * - SMTP Server Credentials.
+     */
     smtpServerCredentials: {[key: string]: string};
+    /**
+     * - SMTP Server Email Address.
+     */
     smtpServerEmailAddress: string;
+    /**
+     * - SMTP Server Proxy Type List
+     */
     smtpServerProxyTypeLists: string[];
+    /**
+     * - SMTP Server type.
+     */
     smtpServerType: string;
+    /**
+     * - Map of software on the cluster with software type as the key.
+     */
     softwareMapNcc: {[key: string]: any};
+    /**
+     * - Map of software on the cluster with software type as the key.
+     */
     softwareMapNos: {[key: string]: any};
+    /**
+     * - UTC date and time in RFC-3339 format when the key expires
+     */
     sslKeyExpireDatetime: string;
     sslKeyName: string;
+    /**
+     * - Customer information used in Certificate Signing Request for creating digital certificates.
+     */
     sslKeySigningInfo: {[key: string]: string};
+    /**
+     * - SSL key type. Key types with RSA_2048, ECDSA_256 and ECDSA_384 are supported for key generation and importing.
+     */
     sslKeyType: string;
+    /**
+     * - The state of the cluster entity.
+     */
     state: string;
+    /**
+     * - Verbosity level settings for populating support information. - 'Nothing': Send nothing - 'Basic': Send basic information - skip core dump and hypervisor stats information - 'BasicPlusCoreDump': Send basic and core dump information - 'All': Send all information (Default value: BASIC_PLUS_CORE_DUMP)
+     */
     supportedInformationVerbosity: string;
+    /**
+     * - Zone name used in value of TZ environment variable.
+     */
     timezone: string;
 }
 
 export interface GetClustersEntityAuthorizedPublicKeyList {
     key: string;
+    /**
+     * - the key name.
+     */
     name: string;
 }
 
@@ -900,7 +1540,13 @@ export interface GetClustersEntityCaCertificateList {
 }
 
 export interface GetClustersEntityCategory {
+    /**
+     * - the key name.
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
@@ -956,7 +1602,7 @@ export interface GetFloatingIpStatus {
      */
     executionContexts: outputs.GetFloatingIpStatusExecutionContext[];
     /**
-     * floating_ip Name.
+     * - the name.
      */
     name: string;
     /**
@@ -993,6 +1639,9 @@ export interface GetFloatingIpStatusResource {
 }
 
 export interface GetFloatingIpsEntity {
+    /**
+     * - The floatingIp kind metadata.
+     */
     metadata: {[key: string]: string};
     /**
      * Floating IP spec
@@ -1032,7 +1681,7 @@ export interface GetFloatingIpsEntityStatus {
      */
     executionContexts: outputs.GetFloatingIpsEntityStatusExecutionContext[];
     /**
-     * floating_ip Name.
+     * - the name.
      */
     name: string;
     /**
@@ -1070,6 +1719,9 @@ export interface GetFloatingIpsEntityStatusResource {
 
 export interface GetFloatingIpsMetadata {
     filter: string;
+    /**
+     * - The kind name (Default value: project).
+     */
     kind: string;
     length: number;
     offset: number;
@@ -1358,73 +2010,205 @@ export interface GetFoundationCentralListApiKeysMetadata {
 }
 
 export interface GetFoundationDiscoverNodesEntity {
+    /**
+     * Chassis serial number.
+     */
     blockId: string;
+    /**
+     * ID number of the block.
+     */
     chassisN: number;
+    /**
+     * Model name of the node.
+     */
     model: string;
+    /**
+     * Node level properties.
+     */
     nodes: outputs.GetFoundationDiscoverNodesEntityNode[];
 }
 
 export interface GetFoundationDiscoverNodesEntityNode {
+    /**
+     * ID of the cluster the node is part of.
+     */
     clusterId: string;
+    /**
+     * Whether the node is configured.
+     */
     configured: boolean;
+    /**
+     * vlan tag of cvm.
+     */
     currentCvmVlanTag: string;
+    /**
+     * Current network interface of the node.
+     */
     currentNetworkInterface: string;
+    /**
+     * Version of foundation.
+     */
     foundationVersion: string;
+    /**
+     * Type of hypervisor installed on the node.
+     */
     hypervisor: string;
+    /**
+     * Version of hypervisor installed.
+     */
     hypervisorVersion: string;
+    /**
+     * IPV6 address of the node.
+     */
     ipv6Address: string;
+    /**
+     * Model name of the node.
+     */
     model: string;
+    /**
+     * Position of the node in the block.
+     */
     nodePosition: string;
+    /**
+     * Node serial of the node.
+     */
     nodeSerial: string;
+    /**
+     * UUID of the node.
+     */
     nodeUuid: string;
+    /**
+     * Version of NOS installed on the node.
+     */
     nosVersion: string;
+    /**
+     * IP address of CVM.
+     */
     svmIp: string;
 }
 
 export interface GetFoundationHypervisorIsosEsx {
+    /**
+     * Name of installer.
+     */
     filename: string;
+    /**
+     * Whether front-end should treat hyp as supported.
+     */
     supported: boolean;
 }
 
 export interface GetFoundationHypervisorIsosHyperv {
+    /**
+     * Name of installer.
+     */
     filename: string;
+    /**
+     * Whether front-end should treat hyp as supported.
+     */
     supported: boolean;
 }
 
 export interface GetFoundationHypervisorIsosKvm {
+    /**
+     * Name of installer.
+     */
     filename: string;
+    /**
+     * Whether front-end should treat hyp as supported.
+     */
     supported: boolean;
 }
 
 export interface GetFoundationHypervisorIsosLinux {
+    /**
+     * Name of installer.
+     */
     filename: string;
+    /**
+     * Whether front-end should treat hyp as supported.
+     */
     supported: boolean;
 }
 
 export interface GetFoundationHypervisorIsosXen {
+    /**
+     * Name of installer.
+     */
     filename: string;
+    /**
+     * Whether front-end should treat hyp as supported.
+     */
     supported: boolean;
 }
 
 export interface GetFoundationNodeNetworkDetailsNode {
+    /**
+     * Gateway of CVM.
+     */
     cvmGateway: string;
+    /**
+     * CVM IP address.
+     */
     cvmIp: string;
+    /**
+     * Netmask of CVM.
+     */
     cvmNetmask: string;
+    /**
+     * CVM vlan tag.
+     */
     cvmVlanId: string;
+    /**
+     * Only exists when failed to fetch node_info, with the reason of failure. all other fields will be empty.
+     */
     error: string;
+    /**
+     * Gateway of the hypervisor.
+     */
     hypervisorGateway: string;
+    /**
+     * Hypervisor hostname.
+     */
     hypervisorHostname: string;
+    /**
+     * Hypervisor IP address.
+     */
     hypervisorIp: string;
+    /**
+     * Netmask of the hypervisor.
+     */
     hypervisorNetmask: string;
+    /**
+     * IPMI gateway.
+     */
     ipmiGateway: string;
+    /**
+     * IPMI IP address.
+     */
     ipmiIp: string;
+    /**
+     * IPMI netmask.
+     */
     ipmiNetmask: string;
+    /**
+     * IPV6 address of the CVM.
+     */
     ipv6Address: string;
+    /**
+     * Node serial.
+     */
     nodeSerial: string;
 }
 
 export interface GetHostCategory {
+    /**
+     * - the key name.
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
@@ -1439,75 +2223,149 @@ export interface GetHostGpuList {
     licenseLists: string[];
     maxResolution: string;
     mode: string;
+    /**
+     * - the key name.
+     */
     name: string;
     numVgpusAllocated: number;
     numVirtualDisplayHeads: number;
     numaNode: number;
     pciAddress: string;
     status: string;
+    /**
+     * - image uuid.
+     */
     uuid: string;
     vendor: string;
 }
 
 export interface GetHostHostDisksReferenceList {
+    /**
+     * - The kind name (Default value: project).
+     */
     kind: string;
+    /**
+     * - the key name.
+     */
     name: string;
+    /**
+     * - image uuid.
+     */
     uuid: string;
 }
 
 export interface GetHostsEntity {
     /**
      * The API version.
-     * * `gpuDriverVersion`: - Host GPU driver version.
-     * * `failoverCluster`: - Hyper-V failover cluster.
-     * * `ipmi`: - Host IPMI info.
-     * * `cpuModel`: - Host CPU model.
-     * * `hostNicsIdList`: - Host NICs.
-     * * `numCpuSockets`: - Number of CPU sockets.
-     * * `windowsDomain`: - The name of the node to be renamed to during domain-join. If not given,a new name will be automatically assigned.
-     * * `gpuList`: - List of GPUs on the host.
-     * * `serialNumber`: - Node serial number.
-     * * `cpuCapacityHz`: - Host CPU capacity.
-     * * `memoryCapacityMib`: - Host memory capacity in MiB.
-     * * `hostDisksReferenceList`: - The reference to a disk.
-     * * `monitoringState`: - Host monitoring status.
-     * * `hypervisor`: - Host Hypervisor information.
-     * * `hostType`: - Host type.
-     * * `numCpuCores`: - Number of CPU cores on Host.
-     * * `rackableUnitReference`: - The reference to a rackable_unit.
-     * * `controllerVm`: - Host controller vm information.
-     * * `block`: - Host block config info.
      */
     apiVersion: string;
+    /**
+     * - Host block config info.
+     */
     block: {[key: string]: string};
+    /**
+     * - Categories for the image.
+     */
     categories: outputs.GetHostsEntityCategory[];
+    /**
+     * - Reference to a kind. Either one of (kind, uuid) or url needs to be specified.
+     */
     clusterReference: {[key: string]: string};
+    /**
+     * - Host controller vm information.
+     */
     controllerVm: {[key: string]: string};
+    /**
+     * - Host CPU capacity.
+     */
     cpuCapacityHz: number;
+    /**
+     * - Host CPU model.
+     */
     cpuModel: string;
+    /**
+     * - Hyper-V failover cluster.
+     */
     failoverCluster: {[key: string]: string};
+    /**
+     * - Host GPU driver version.
+     */
     gpuDriverVersion: string;
+    /**
+     * - List of GPUs on the host.
+     */
     gpuLists: outputs.GetHostsEntityGpuList[];
+    /**
+     * - The reference to a disk.
+     */
     hostDisksReferenceLists: outputs.GetHostsEntityHostDisksReferenceList[];
+    /**
+     * - Host NICs.
+     */
     hostNicsIdLists: string[];
+    /**
+     * - Host type.
+     */
     hostType: string;
+    /**
+     * - Host Hypervisor information.
+     */
     hypervisor: {[key: string]: string};
+    /**
+     * - Host IPMI info.
+     */
     ipmi: {[key: string]: string};
+    /**
+     * - Host memory capacity in MiB.
+     */
     memoryCapacityMib: number;
     metadata: {[key: string]: string};
+    /**
+     * - Host monitoring status.
+     */
     monitoringState: string;
+    /**
+     * - the name.
+     */
     name: string;
+    /**
+     * - Number of CPU cores on Host.
+     */
     numCpuCores: number;
+    /**
+     * - Number of CPU sockets.
+     */
     numCpuSockets: number;
+    /**
+     * - The reference to a user.
+     */
     ownerReference: {[key: string]: string};
+    /**
+     * - The reference to a project.
+     */
     projectReference: {[key: string]: string};
+    /**
+     * - The reference to a rackable_unit.
+     */
     rackableUnitReference: {[key: string]: string};
+    /**
+     * - Node serial number.
+     */
     serialNumber: string;
+    /**
+     * - The name of the node to be renamed to during domain-join. If not given,a new name will be automatically assigned.
+     */
     windowsDomain: {[key: string]: string};
 }
 
 export interface GetHostsEntityCategory {
+    /**
+     * - the name.
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
@@ -1522,44 +2380,102 @@ export interface GetHostsEntityGpuList {
     licenseLists: string[];
     maxResolution: string;
     mode: string;
+    /**
+     * - the name.
+     */
     name: string;
     numVgpusAllocated: number;
     numVirtualDisplayHeads: number;
     numaNode: number;
     pciAddress: string;
     status: string;
+    /**
+     * - the uuid.
+     */
     uuid: string;
     vendor: string;
 }
 
 export interface GetHostsEntityHostDisksReferenceList {
+    /**
+     * - The kind name (Default value: project).
+     */
     kind: string;
+    /**
+     * - the name.
+     */
     name: string;
+    /**
+     * - the uuid.
+     */
     uuid: string;
 }
 
 export interface GetImageCategory {
+    /**
+     * - the name.
+     */
     name: string;
     value: string;
 }
 
 export interface GetImageClusterReference {
+    /**
+     * - The kind name (Default value: project).
+     */
     kind: string;
+    /**
+     * - the name.
+     */
     name: string;
+    /**
+     * - the UUID.
+     */
     uuid: string;
 }
 
 export interface GetImageCurrentClusterReferenceList {
+    /**
+     * - The kind name (Default value: project).
+     */
     kind: string;
+    /**
+     * - the name.
+     */
     name: string;
+    /**
+     * - the UUID.
+     */
     uuid: string;
 }
 
 export interface GetKarbonClusterEtcdNodePool {
+    /**
+     * - VM configuration in AHV.
+     * * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
+     * * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
+     * * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
+     * * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
+     * * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     ahvConfigs: outputs.GetKarbonClusterEtcdNodePoolAhvConfig[];
+    /**
+     * - Unique name of the node pool.
+     */
     name: string;
+    /**
+     * - The version of the node OS image.
+     */
     nodeOsVersion: string;
+    /**
+     * - List of the deployed nodes in the node pool.
+     * * `nodes.hostname`: - Hostname of the deployed node.
+     * * `nodes.ipv4_address`: - IP of the deployed node.
+     */
     nodes: outputs.GetKarbonClusterEtcdNodePoolNode[];
+    /**
+     * - Number of nodes in the node pool.
+     */
     numInstances: number;
 }
 
@@ -1577,10 +2493,32 @@ export interface GetKarbonClusterEtcdNodePoolNode {
 }
 
 export interface GetKarbonClusterMasterNodePool {
+    /**
+     * - VM configuration in AHV.
+     * * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
+     * * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
+     * * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
+     * * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
+     * * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     ahvConfigs: outputs.GetKarbonClusterMasterNodePoolAhvConfig[];
+    /**
+     * - Unique name of the node pool.
+     */
     name: string;
+    /**
+     * - The version of the node OS image.
+     */
     nodeOsVersion: string;
+    /**
+     * - List of the deployed nodes in the node pool.
+     * * `nodes.hostname`: - Hostname of the deployed node.
+     * * `nodes.ipv4_address`: - IP of the deployed node.
+     */
     nodes: outputs.GetKarbonClusterMasterNodePoolNode[];
+    /**
+     * - Number of nodes in the node pool.
+     */
     numInstances: number;
 }
 
@@ -1598,10 +2536,32 @@ export interface GetKarbonClusterMasterNodePoolNode {
 }
 
 export interface GetKarbonClusterWorkerNodePool {
+    /**
+     * - VM configuration in AHV.
+     * * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
+     * * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
+     * * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
+     * * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
+     * * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     ahvConfigs: outputs.GetKarbonClusterWorkerNodePoolAhvConfig[];
+    /**
+     * - Unique name of the node pool.
+     */
     name: string;
+    /**
+     * - The version of the node OS image.
+     */
     nodeOsVersion: string;
+    /**
+     * - List of the deployed nodes in the node pool.
+     * * `nodes.hostname`: - Hostname of the deployed node.
+     * * `nodes.ipv4_address`: - IP of the deployed node.
+     */
     nodes: outputs.GetKarbonClusterWorkerNodePoolNode[];
+    /**
+     * - Number of nodes in the node pool.
+     */
     numInstances: number;
 }
 
@@ -1620,21 +2580,54 @@ export interface GetKarbonClusterWorkerNodePoolNode {
 
 export interface GetKarbonClustersCluster {
     deploymentType: string;
+    /**
+     * - Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
+     */
     etcdNodePools: outputs.GetKarbonClustersClusterEtcdNodePool[];
     kubeapiServerIpv4Address: string;
+    /**
+     * - .
+     */
     masterNodePools: outputs.GetKarbonClustersClusterMasterNodePool[];
+    /**
+     * - Unique name of the node pool.
+     */
     name: string;
     status: string;
     uuid: string;
+    /**
+     * - K8s version of the cluster.
+     */
     version: string;
     workerNodePools: outputs.GetKarbonClustersClusterWorkerNodePool[];
 }
 
 export interface GetKarbonClustersClusterEtcdNodePool {
+    /**
+     * - .
+     * * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
+     * * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
+     * * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
+     * * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
+     * * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     ahvConfigs: outputs.GetKarbonClustersClusterEtcdNodePoolAhvConfig[];
+    /**
+     * - Unique name of the node pool.
+     */
     name: string;
+    /**
+     * - The version of the node OS image.
+     */
     nodeOsVersion: string;
+    /**
+     * * `nodes.hostname`
+     * * `nodes.ipv4_address`
+     */
     nodes: outputs.GetKarbonClustersClusterEtcdNodePoolNode[];
+    /**
+     * - Number of nodes in the node pool.
+     */
     numInstances: number;
 }
 
@@ -1652,10 +2645,31 @@ export interface GetKarbonClustersClusterEtcdNodePoolNode {
 }
 
 export interface GetKarbonClustersClusterMasterNodePool {
+    /**
+     * - .
+     * * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
+     * * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
+     * * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
+     * * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
+     * * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     ahvConfigs: outputs.GetKarbonClustersClusterMasterNodePoolAhvConfig[];
+    /**
+     * - Unique name of the node pool.
+     */
     name: string;
+    /**
+     * - The version of the node OS image.
+     */
     nodeOsVersion: string;
+    /**
+     * * `nodes.hostname`
+     * * `nodes.ipv4_address`
+     */
     nodes: outputs.GetKarbonClustersClusterMasterNodePoolNode[];
+    /**
+     * - Number of nodes in the node pool.
+     */
     numInstances: number;
 }
 
@@ -1673,10 +2687,31 @@ export interface GetKarbonClustersClusterMasterNodePoolNode {
 }
 
 export interface GetKarbonClustersClusterWorkerNodePool {
+    /**
+     * - .
+     * * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
+     * * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
+     * * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
+     * * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
+     * * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     ahvConfigs: outputs.GetKarbonClustersClusterWorkerNodePoolAhvConfig[];
+    /**
+     * - Unique name of the node pool.
+     */
     name: string;
+    /**
+     * - The version of the node OS image.
+     */
     nodeOsVersion: string;
+    /**
+     * * `nodes.hostname`
+     * * `nodes.ipv4_address`
+     */
     nodes: outputs.GetKarbonClustersClusterWorkerNodePoolNode[];
+    /**
+     * - Number of nodes in the node pool.
+     */
     numInstances: number;
 }
 
@@ -1694,8 +2729,17 @@ export interface GetKarbonClustersClusterWorkerNodePoolNode {
 }
 
 export interface GetKarbonPrivateRegistriesPrivateRegistry {
+    /**
+     * - Endpoint of the private in format `url:port`.
+     */
     endpoint: string;
+    /**
+     * - Name of the private registry.
+     */
     name: string;
+    /**
+     * - UUID of the private registry.
+     */
     uuid: string;
 }
 
@@ -1717,12 +2761,24 @@ export interface GetNetworkSecurityRuleAdRuleInboundAllowList {
 }
 
 export interface GetNetworkSecurityRuleAdRuleInboundAllowListAddressGroupInclusionList {
+    /**
+     * - The kind name (Default value: project).
+     */
     kind: string;
+    /**
+     * - the name.
+     */
     name: string;
+    /**
+     * - the UUID.
+     */
     uuid: string;
 }
 
 export interface GetNetworkSecurityRuleAdRuleInboundAllowListFilterParam {
+    /**
+     * - the name.
+     */
     name: string;
     values: string[];
 }
@@ -1733,8 +2789,17 @@ export interface GetNetworkSecurityRuleAdRuleInboundAllowListIcmpTypeCodeList {
 }
 
 export interface GetNetworkSecurityRuleAdRuleInboundAllowListServiceGroupList {
+    /**
+     * - The kind name (Default value: project).
+     */
     kind: string;
+    /**
+     * - the name.
+     */
     name: string;
+    /**
+     * - the UUID.
+     */
     uuid: string;
 }
 
@@ -1766,12 +2831,24 @@ export interface GetNetworkSecurityRuleAdRuleOutboundAllowList {
 }
 
 export interface GetNetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionList {
+    /**
+     * - The kind name (Default value: project).
+     */
     kind: string;
+    /**
+     * - the name.
+     */
     name: string;
+    /**
+     * - the UUID.
+     */
     uuid: string;
 }
 
 export interface GetNetworkSecurityRuleAdRuleOutboundAllowListFilterParam {
+    /**
+     * - the name.
+     */
     name: string;
     values: string[];
 }
@@ -1782,8 +2859,17 @@ export interface GetNetworkSecurityRuleAdRuleOutboundAllowListIcmpTypeCodeList {
 }
 
 export interface GetNetworkSecurityRuleAdRuleOutboundAllowListServiceGroupList {
+    /**
+     * - The kind name (Default value: project).
+     */
     kind: string;
+    /**
+     * - the name.
+     */
     name: string;
+    /**
+     * - the UUID.
+     */
     uuid: string;
 }
 
@@ -1798,6 +2884,9 @@ export interface GetNetworkSecurityRuleAdRuleOutboundAllowListUdpPortRangeList {
 }
 
 export interface GetNetworkSecurityRuleAdRuleTargetGroupFilterParam {
+    /**
+     * - the name.
+     */
     name: string;
     values: string[];
 }
@@ -1820,12 +2909,24 @@ export interface GetNetworkSecurityRuleAppRuleInboundAllowList {
 }
 
 export interface GetNetworkSecurityRuleAppRuleInboundAllowListAddressGroupInclusionList {
+    /**
+     * - The kind name (Default value: project).
+     */
     kind: string;
+    /**
+     * - the name.
+     */
     name: string;
+    /**
+     * - the UUID.
+     */
     uuid: string;
 }
 
 export interface GetNetworkSecurityRuleAppRuleInboundAllowListFilterParam {
+    /**
+     * - the name.
+     */
     name: string;
     values: string[];
 }
@@ -1836,8 +2937,17 @@ export interface GetNetworkSecurityRuleAppRuleInboundAllowListIcmpTypeCodeList {
 }
 
 export interface GetNetworkSecurityRuleAppRuleInboundAllowListServiceGroupList {
+    /**
+     * - The kind name (Default value: project).
+     */
     kind: string;
+    /**
+     * - the name.
+     */
     name: string;
+    /**
+     * - the UUID.
+     */
     uuid: string;
 }
 
@@ -1867,6 +2977,9 @@ export interface GetNetworkSecurityRuleAppRuleOutboundAllowList {
 }
 
 export interface GetNetworkSecurityRuleAppRuleOutboundAllowListFilterParam {
+    /**
+     * - the name.
+     */
     name: string;
     values: string[];
 }
@@ -1887,21 +3000,36 @@ export interface GetNetworkSecurityRuleAppRuleOutboundAllowListUdpPortRangeList 
 }
 
 export interface GetNetworkSecurityRuleAppRuleTargetGroupFilterParam {
+    /**
+     * - the name.
+     */
     name: string;
     values: string[];
 }
 
 export interface GetNetworkSecurityRuleCategory {
+    /**
+     * - the name.
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
 export interface GetNetworkSecurityRuleIsolationRuleFirstEntityFilterParam {
+    /**
+     * - the name.
+     */
     name: string;
     values: string[];
 }
 
 export interface GetNetworkSecurityRuleIsolationRuleSecondEntityFilterParam {
+    /**
+     * - the name.
+     */
     name: string;
     values: string[];
 }
@@ -1922,6 +3050,9 @@ export interface GetNetworkSecurityRuleQuarantineRuleInboundAllowList {
 }
 
 export interface GetNetworkSecurityRuleQuarantineRuleInboundAllowListFilterParam {
+    /**
+     * - the name.
+     */
     name: string;
     values: string[];
 }
@@ -1959,12 +3090,24 @@ export interface GetNetworkSecurityRuleQuarantineRuleOutboundAllowList {
 }
 
 export interface GetNetworkSecurityRuleQuarantineRuleOutboundAllowListAddressGroupInclusionList {
+    /**
+     * - The kind name (Default value: project).
+     */
     kind: string;
+    /**
+     * - the name.
+     */
     name: string;
+    /**
+     * - the UUID.
+     */
     uuid: string;
 }
 
 export interface GetNetworkSecurityRuleQuarantineRuleOutboundAllowListFilterParam {
+    /**
+     * - the name.
+     */
     name: string;
     values: string[];
 }
@@ -1975,8 +3118,17 @@ export interface GetNetworkSecurityRuleQuarantineRuleOutboundAllowListIcmpTypeCo
 }
 
 export interface GetNetworkSecurityRuleQuarantineRuleOutboundAllowListServiceGroupList {
+    /**
+     * - The kind name (Default value: project).
+     */
     kind: string;
+    /**
+     * - the name.
+     */
     name: string;
+    /**
+     * - the UUID.
+     */
     uuid: string;
 }
 
@@ -1991,13 +3143,16 @@ export interface GetNetworkSecurityRuleQuarantineRuleOutboundAllowListUdpPortRan
 }
 
 export interface GetNetworkSecurityRuleQuarantineRuleTargetGroupFilterParam {
+    /**
+     * - the name.
+     */
     name: string;
     values: string[];
 }
 
 export interface GetPbrSpec {
     /**
-     * The name of the PBR
+     * - the name.
      */
     name: string;
     /**
@@ -2051,14 +3206,32 @@ export interface GetPbrSpecResourceAction {
 
 export interface GetPbrSpecResourceDestination {
     addressType: string;
+    /**
+     * prefix length of provided subnet.
+     */
     prefixLength?: number;
+    /**
+     * IP subnet provided as an address.
+     */
     subnetIp?: string;
 }
 
 export interface GetPbrSpecResourceProtocolParameter {
+    /**
+     * ICMP parameters in routing policy.
+     */
     icmps: outputs.GetPbrSpecResourceProtocolParameterIcmp[];
+    /**
+     * Protocol number in routing policy
+     */
     protocolNumber: number;
+    /**
+     * TCP parameters in routing policy
+     */
     tcps: outputs.GetPbrSpecResourceProtocolParameterTcp[];
+    /**
+     * UDP parameters in routing policy
+     */
     udps: outputs.GetPbrSpecResourceProtocolParameterUdp[];
 }
 
@@ -2099,7 +3272,13 @@ export interface GetPbrSpecResourceProtocolParameterUdpSourcePortRangeList {
 
 export interface GetPbrSpecResourceSource {
     addressType: string;
+    /**
+     * prefix length of provided subnet.
+     */
     prefixLength?: number;
+    /**
+     * IP subnet provided as an address.
+     */
     subnetIp?: string;
 }
 
@@ -2109,7 +3288,7 @@ export interface GetPbrStatus {
      */
     executionContexts: outputs.GetPbrStatusExecutionContext[];
     /**
-     * The name of the PBR
+     * - the name.
      */
     name: string;
     /**
@@ -2172,14 +3351,32 @@ export interface GetPbrStatusResourceAction {
 
 export interface GetPbrStatusResourceDestination {
     addressType: string;
+    /**
+     * prefix length of provided subnet.
+     */
     prefixLength?: number;
+    /**
+     * IP subnet provided as an address.
+     */
     subnetIp?: string;
 }
 
 export interface GetPbrStatusResourceProtocolParameter {
+    /**
+     * ICMP parameters in routing policy.
+     */
     icmps: outputs.GetPbrStatusResourceProtocolParameterIcmp[];
+    /**
+     * Protocol number in routing policy
+     */
     protocolNumber: number;
+    /**
+     * TCP parameters in routing policy
+     */
     tcps: outputs.GetPbrStatusResourceProtocolParameterTcp[];
+    /**
+     * UDP parameters in routing policy
+     */
     udps: outputs.GetPbrStatusResourceProtocolParameterUdp[];
 }
 
@@ -2225,11 +3422,20 @@ export interface GetPbrStatusResourceRoutingPolicyCounter {
 
 export interface GetPbrStatusResourceSource {
     addressType: string;
+    /**
+     * prefix length of provided subnet.
+     */
     prefixLength?: number;
+    /**
+     * IP subnet provided as an address.
+     */
     subnetIp?: string;
 }
 
 export interface GetPbrsEntity {
+    /**
+     * - The routing policies kind metadata.
+     */
     metadata: {[key: string]: string};
     /**
      * PBR spec
@@ -2243,7 +3449,7 @@ export interface GetPbrsEntity {
 
 export interface GetPbrsEntitySpec {
     /**
-     * The name of the PBR
+     * - the name.
      */
     name: string;
     /**
@@ -2297,14 +3503,32 @@ export interface GetPbrsEntitySpecResourceAction {
 
 export interface GetPbrsEntitySpecResourceDestination {
     addressType: string;
+    /**
+     * prefix length of provided subnet.
+     */
     prefixLength?: number;
+    /**
+     * IP subnet provided as an address.
+     */
     subnetIp?: string;
 }
 
 export interface GetPbrsEntitySpecResourceProtocolParameter {
+    /**
+     * ICMP parameters in routing policy.
+     */
     icmps: outputs.GetPbrsEntitySpecResourceProtocolParameterIcmp[];
+    /**
+     * Protocol number in routing policy
+     */
     protocolNumber: number;
+    /**
+     * TCP parameters in routing policy
+     */
     tcps: outputs.GetPbrsEntitySpecResourceProtocolParameterTcp[];
+    /**
+     * UDP parameters in routing policy
+     */
     udps: outputs.GetPbrsEntitySpecResourceProtocolParameterUdp[];
 }
 
@@ -2345,7 +3569,13 @@ export interface GetPbrsEntitySpecResourceProtocolParameterUdpSourcePortRangeLis
 
 export interface GetPbrsEntitySpecResourceSource {
     addressType: string;
+    /**
+     * prefix length of provided subnet.
+     */
     prefixLength?: number;
+    /**
+     * IP subnet provided as an address.
+     */
     subnetIp?: string;
 }
 
@@ -2355,7 +3585,7 @@ export interface GetPbrsEntityStatus {
      */
     executionContexts: outputs.GetPbrsEntityStatusExecutionContext[];
     /**
-     * The name of the PBR
+     * - the name.
      */
     name: string;
     /**
@@ -2418,14 +3648,32 @@ export interface GetPbrsEntityStatusResourceAction {
 
 export interface GetPbrsEntityStatusResourceDestination {
     addressType: string;
+    /**
+     * prefix length of provided subnet.
+     */
     prefixLength?: number;
+    /**
+     * IP subnet provided as an address.
+     */
     subnetIp?: string;
 }
 
 export interface GetPbrsEntityStatusResourceProtocolParameter {
+    /**
+     * ICMP parameters in routing policy.
+     */
     icmps: outputs.GetPbrsEntityStatusResourceProtocolParameterIcmp[];
+    /**
+     * Protocol number in routing policy
+     */
     protocolNumber: number;
+    /**
+     * TCP parameters in routing policy
+     */
     tcps: outputs.GetPbrsEntityStatusResourceProtocolParameterTcp[];
+    /**
+     * UDP parameters in routing policy
+     */
     udps: outputs.GetPbrsEntityStatusResourceProtocolParameterUdp[];
 }
 
@@ -2471,12 +3719,21 @@ export interface GetPbrsEntityStatusResourceRoutingPolicyCounter {
 
 export interface GetPbrsEntityStatusResourceSource {
     addressType: string;
+    /**
+     * prefix length of provided subnet.
+     */
     prefixLength?: number;
+    /**
+     * IP subnet provided as an address.
+     */
     subnetIp?: string;
 }
 
 export interface GetPbrsMetadata {
     filter: string;
+    /**
+     * - The kind name (Default value: project).
+     */
     kind: string;
     length: number;
     offset: number;
@@ -2497,27 +3754,60 @@ export interface GetPermissionCategory {
 }
 
 export interface GetPermissionField {
+    /**
+     * Allow or disallow the fields mentioned.
+     */
     fieldMode: string;
+    /**
+     * The list of fields.
+     */
     fieldNameLists: string[];
 }
 
 export interface GetPermissionsEntity {
+    /**
+     * version of the API
+     */
     apiVersion: string;
+    /**
+     * The categories for this resource.
+     */
     categories: outputs.GetPermissionsEntityCategory[];
+    /**
+     * A description for the permission.
+     */
     description: string;
+    /**
+     * . The fields that can/cannot be accessed during the specified operation. fieldNameList will be a list of fields. e.g. if fieldMode = disallowed, fieldNameList = [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
+     */
     fields: outputs.GetPermissionsEntityField[];
     /**
      * (Required) The kind name (Default value: `project`).
      */
     kind: string;
+    /**
+     * The permission kind metadata.
+     */
     metadata: {[key: string]: string};
     /**
      * the name.
      */
     name: string;
+    /**
+     * The operation that is being performed on a given kind.
+     */
     operation: string;
+    /**
+     * The reference to a user.
+     */
     ownerReference: {[key: string]: string};
+    /**
+     * The reference to a project.
+     */
     projectReference: {[key: string]: string};
+    /**
+     * The state of the permission.
+     */
     state: string;
 }
 
@@ -2533,7 +3823,13 @@ export interface GetPermissionsEntityCategory {
 }
 
 export interface GetPermissionsEntityField {
+    /**
+     * Allow or disallow the fields mentioned.
+     */
     fieldMode: string;
+    /**
+     * The list of fields.
+     */
     fieldNameLists: string[];
 }
 
@@ -2668,6 +3964,9 @@ export interface GetProjectsEntity {
      * * `account_reference_list.#.name` - The name of an account.
      */
     accountReferenceLists: outputs.GetProjectsEntityAccountReferenceList[];
+    /**
+     * version of the API
+     */
     apiVersion: string;
     categories: outputs.GetProjectsEntityCategory[];
     /**
@@ -2677,6 +3976,9 @@ export interface GetProjectsEntity {
      * * `default_subnet_reference.name` - The name of a subnet.
      */
     defaultSubnetReference: {[key: string]: string};
+    /**
+     * A description for project.
+     */
     description: string;
     /**
      * List of environments associated with the project.
@@ -2706,6 +4008,14 @@ export interface GetProjectsEntity {
     name: string;
     ownerReference: {[key: string]: string};
     projectReference: {[key: string]: string};
+    /**
+     * The status for a resource domain (limits and values)
+     * * `resource_domain.resources` Array of the utilization/limit for resource types
+     * * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+     * * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+     * * `resource_domain.resources.#.units` - The units of the resource type
+     * * `resource_domain.resources.#.value` - The amount of resource consumed
+     */
     resourceDomains: outputs.GetProjectsEntityResourceDomain[];
     state: string;
     /**
@@ -2922,6 +4232,9 @@ export interface GetProtectionRuleProjectReference {
 }
 
 export interface GetProtectionRulesEntity {
+    /**
+     * version of the API
+     */
     apiVersion: string;
     /**
      * (Required) This encodes the datapipes between various availability zones and\nthe backup policy of the pipes.
@@ -2946,6 +4259,9 @@ export interface GetProtectionRulesEntity {
      * * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
      */
     categoryFilters: outputs.GetProtectionRulesEntityCategoryFilter[];
+    /**
+     * A description for protection rule.
+     */
     description: string;
     metadata: {[key: string]: string};
     /**
@@ -3351,8 +4667,14 @@ export interface GetRecoveryPlanStageListStageWorkRecoverEntityEntityInfoListScr
 }
 
 export interface GetRecoveryPlansEntity {
+    /**
+     * version of the API
+     */
     apiVersion: string;
     categories: outputs.GetRecoveryPlansEntityCategory[];
+    /**
+     * A description for recovery plan.
+     */
     description: string;
     metadata: {[key: string]: string};
     /**
@@ -3744,46 +5066,102 @@ export interface GetRecoveryPlansEntityStageListStageWorkRecoverEntityEntityInfo
 }
 
 export interface GetRoleCategory {
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
 export interface GetRolePermissionReferenceList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface GetRolesEntity {
     /**
      * The version of the API.
-     * * `state`: - The state of the role.
      */
     apiVersion: string;
+    /**
+     * - Categories for the role.
+     */
     categories: outputs.GetRolesEntityCategory[];
+    /**
+     * - The description of the role.
+     */
     description: string;
+    /**
+     * - The role kind metadata.
+     */
     metadata: {[key: string]: string};
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - The reference to a user.
+     */
     ownerReference: {[key: string]: string};
+    /**
+     * - (Required) List of permission references.
+     */
     permissionReferenceLists: outputs.GetRolesEntityPermissionReferenceList[];
+    /**
+     * - The reference to a project.
+     */
     projectReference: {[key: string]: string};
     roleId: string;
+    /**
+     * - The state of the role.
+     */
     state: string;
 }
 
 export interface GetRolesEntityCategory {
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
 export interface GetRolesEntityPermissionReferenceList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface GetRolesMetadata {
     filter: string;
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
     length: number;
     offset: number;
@@ -3865,7 +5243,7 @@ export interface GetServiceGroupsMetadata {
 
 export interface GetStaticRoutesSpec {
     /**
-     * vpc_route_table Name.
+     * - the name.
      */
     name: string;
     /**
@@ -4129,12 +5507,21 @@ export interface GetStaticRoutesStatusResourceStaticRoutesListNexthop {
 }
 
 export interface GetSubnetAdditionalFilter {
+    /**
+     * - the name(Optional).
+     */
     name: string;
     values: string[];
 }
 
 export interface GetSubnetCategory {
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
@@ -4145,41 +5532,113 @@ export interface GetSubnetMessageList {
 }
 
 export interface GetSubnetsEntity {
+    /**
+     * version of the API
+     */
     apiVersion: string;
+    /**
+     * The reference to a availability_zone.
+     */
     availabilityZoneReference: {[key: string]: string};
+    /**
+     * The API Version.
+     */
     categories: outputs.GetSubnetsEntityCategory[];
+    /**
+     * The name of a cluster.
+     */
     clusterName: string;
+    /**
+     * The reference to a cluster.
+     */
     clusterReference: {[key: string]: string};
     clusterUuid: string;
+    /**
+     * Default gateway IP address.
+     */
     defaultGatewayIp: string;
+    /**
+     * A description for subnet.
+     */
     description: string;
     dhcpDomainNameServerLists: string[];
+    /**
+     * DHCP domain search list for a subnet.
+     */
     dhcpDomainSearchLists: string[];
+    /**
+     * Spec for defining DHCP options.
+     */
     dhcpOptions: {[key: string]: string};
+    /**
+     * Host address.
+     */
     dhcpServerAddress: {[key: string]: string};
+    /**
+     * Port Number.
+     */
     dhcpServerAddressPort: number;
     enableNat: boolean;
     ipConfigPoolListRanges: string[];
     isExternal: boolean;
     messageLists: outputs.GetSubnetsEntityMessageList[];
+    /**
+     * The subnet kind metadata.
+     */
     metadata: {[key: string]: string};
+    /**
+     * the name.
+     */
     name: string;
+    /**
+     * The reference to a network_function_chain.
+     */
     networkFunctionChainReference: {[key: string]: string};
+    /**
+     * The reference to a user.
+     */
     ownerReference: {[key: string]: string};
+    /**
+     * -. IP prefix length of the Subnet.
+     */
     prefixLength: number;
+    /**
+     * The reference to a project.
+     */
     projectReference: {[key: string]: string};
+    /**
+     * The state of the subnet.
+     */
     state: string;
     subnetId: string;
+    /**
+     * Subnet IP address.
+     */
     subnetIp: string;
     subnetName: string;
+    /**
+     * The type of the subnet.
+     */
     subnetType: string;
+    /**
+     * VLAN assigned to the subnet.
+     */
     vlanId: number;
     vpcReference: {[key: string]: string};
+    /**
+     * The name of the vswitch.
+     */
     vswitchName: string;
 }
 
 export interface GetSubnetsEntityCategory {
+    /**
+     * the name.
+     */
     name: string;
+    /**
+     * value of the key.
+     */
     value: string;
 }
 
@@ -4191,6 +5650,9 @@ export interface GetSubnetsEntityMessageList {
 
 export interface GetSubnetsMetadata {
     filter: string;
+    /**
+     * The kind name (Default value: project.
+     */
     kind: string;
     length: number;
     offset: number;
@@ -4199,115 +5661,246 @@ export interface GetSubnetsMetadata {
 }
 
 export interface GetUserAccessControlPolicyReferenceList {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
+    /**
+     * - (Optional) The name for the user
+     */
     name: string;
+    /**
+     * - (Optional) The UUID for the user.
+     */
     uuid: string;
 }
 
 export interface GetUserCategory {
+    /**
+     * - (Optional) The name for the user
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
 export interface GetUserDirectoryServiceUser {
     defaultUserPrincipalName: string;
+    /**
+     * - (Optional) The reference to a directory service. See #reference for to look the supported attributes.
+     */
     directoryServiceReferences: outputs.GetUserDirectoryServiceUserDirectoryServiceReference[];
+    /**
+     * - (Optional) The UserPrincipalName of the user from the directory service.
+     */
     userPrincipalName: string;
 }
 
 export interface GetUserDirectoryServiceUserDirectoryServiceReference {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
+    /**
+     * - (Optional) The name for the user
+     */
     name: string;
+    /**
+     * - (Optional) The UUID for the user.
+     */
     uuid: string;
 }
 
 export interface GetUserGroupAccessControlPolicyReferenceList {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface GetUserGroupCategory {
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
 export interface GetUserGroupDirectoryServiceUserGroup {
     defaultUserPrincipalName: string;
+    /**
+     * - The reference to a directory service. See #reference for to look the supported attributes.
+     */
     directoryServiceReferences: outputs.GetUserGroupDirectoryServiceUserGroupDirectoryServiceReference[];
+    /**
+     * - The Distinguished name for the user group
+     */
     distinguishedName: string;
 }
 
 export interface GetUserGroupDirectoryServiceUserGroupDirectoryServiceReference {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface GetUserGroupProjectReferenceList {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface GetUserGroupsEntity {
+    /**
+     * - List of ACP references. See #reference for more details.
+     */
     accessControlPolicyReferenceLists: outputs.GetUserGroupsEntityAccessControlPolicyReferenceList[];
     /**
      * The version of the API.
-     * * `metadata`: - The user group kind metadata.
-     * * `categories`: - The Categories for the user group.
-     * * `ownerReference`: - The reference to a user.
-     * * `projectReference`: - The reference to a project.
-     * * `userGroupType`: - The type of the user group.
-     * * `displayName`: - The display name of the user group.
-     * * `directoryServiceUserGroup`: - A Directory Service User Group.
-     * * `projectReferenceList`: - A list of projects the user is part of. See #reference for more details.
-     * * `accessControlPolicyReferenceList`: - List of ACP references. See #reference for more details.
-     * * `state`: - The state of the entity.
      */
     apiVersion: string;
+    /**
+     * - The Categories for the user group.
+     */
     categories: outputs.GetUserGroupsEntityCategory[];
+    /**
+     * - A Directory Service User Group.
+     */
     directoryServiceUserGroups: outputs.GetUserGroupsEntityDirectoryServiceUserGroup[];
+    /**
+     * - The display name of the user group.
+     */
     displayName: string;
+    /**
+     * - The user group kind metadata.
+     */
     metadata: {[key: string]: string};
+    /**
+     * - The reference to a user.
+     */
     ownerReference: {[key: string]: string};
+    /**
+     * - The reference to a project.
+     */
     projectReference?: {[key: string]: string};
+    /**
+     * - A list of projects the user is part of. See #reference for more details.
+     */
     projectReferenceLists: outputs.GetUserGroupsEntityProjectReferenceList[];
+    /**
+     * - The state of the entity.
+     */
     state: string;
+    /**
+     * - The type of the user group.
+     */
     userGroupType: string;
 }
 
 export interface GetUserGroupsEntityAccessControlPolicyReferenceList {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
+    /**
+     * - the key name.
+     */
     name: string;
+    /**
+     * - User group UUID.
+     */
     uuid: string;
 }
 
 export interface GetUserGroupsEntityCategory {
+    /**
+     * - the key name.
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
 export interface GetUserGroupsEntityDirectoryServiceUserGroup {
     defaultUserPrincipalName: string;
+    /**
+     * - The reference to a directory service. See #reference for to look the supported attributes.
+     */
     directoryServiceReferences: outputs.GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReference[];
+    /**
+     * - The Distinguished name for the user group
+     */
     distinguishedName: string;
 }
 
 export interface GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReference {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
+    /**
+     * - the key name.
+     */
     name: string;
+    /**
+     * - User group UUID.
+     */
     uuid: string;
 }
 
 export interface GetUserGroupsEntityProjectReferenceList {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
+    /**
+     * - the key name.
+     */
     name: string;
+    /**
+     * - User group UUID.
+     */
     uuid: string;
 }
 
 export interface GetUserGroupsMetadata {
     filter: string;
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
     length: number;
     offset: number;
@@ -4316,94 +5909,200 @@ export interface GetUserGroupsMetadata {
 }
 
 export interface GetUserIdentityProviderUser {
+    /**
+     * - (Optional) The reference to a identity provider. See #reference for to look the supported attributes.
+     */
     identityProviderReferences: outputs.GetUserIdentityProviderUserIdentityProviderReference[];
+    /**
+     * - (Optional) The username from identity provider. Name ID for SAML Identity Provider.
+     */
     username: string;
 }
 
 export interface GetUserIdentityProviderUserIdentityProviderReference {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
+    /**
+     * - (Optional) The name for the user
+     */
     name: string;
+    /**
+     * - (Optional) The UUID for the user.
+     */
     uuid: string;
 }
 
 export interface GetUserProjectReferenceList {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
+    /**
+     * - (Optional) The name for the user
+     */
     name: string;
+    /**
+     * - (Optional) The UUID for the user.
+     */
     uuid: string;
 }
 
 export interface GetUsersEntity {
+    /**
+     * - List of ACP references. See #reference for more details.
+     */
     accessControlPolicyReferenceLists: outputs.GetUsersEntityAccessControlPolicyReferenceList[];
     /**
      * The version of the API.
-     * * `state`: - The state of the entity.
-     * * `name`: - The name of the user.
-     * * `userType`: - The name of the user.
-     * * `displayName`: - The display name of the user (common name) provided by the directory service.
-     * * `projectReferenceList`: - A list of projects the user is part of. See #reference for more details.
-     * * `accessControlPolicyReferenceList`: - List of ACP references. See #reference for more details.
-     * * `directoryServiceUser`: - (Optional) The directory service user configuration. See below for more information.
-     * * `identityProviderUser`: - (Optional) (Optional) The identity provider user configuration. See below for more information.
-     * * `categories`: - (Optional) Categories for the user.
-     * * `projectReference`: - (Optional) The reference to a project.
-     * * `ownerReference`: - (Optional) The reference to a user.
      */
     apiVersion: string;
+    /**
+     * - (Optional) Categories for the user.
+     */
     categories: outputs.GetUsersEntityCategory[];
+    /**
+     * - (Optional) The directory service user configuration. See below for more information.
+     */
     directoryServiceUsers: outputs.GetUsersEntityDirectoryServiceUser[];
+    /**
+     * - The display name of the user (common name) provided by the directory service.
+     */
     displayName: string;
+    /**
+     * - (Optional) (Optional) The identity provider user configuration. See below for more information.
+     */
     identityProviderUsers: outputs.GetUsersEntityIdentityProviderUser[];
+    /**
+     * - The user kind metadata.
+     */
     metadata: {[key: string]: string};
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - (Optional) The reference to a user.
+     */
     ownerReference: {[key: string]: string};
+    /**
+     * - (Optional) The reference to a project.
+     */
     projectReference?: {[key: string]: string};
+    /**
+     * - A list of projects the user is part of. See #reference for more details.
+     */
     projectReferenceLists: outputs.GetUsersEntityProjectReferenceList[];
+    /**
+     * - The state of the entity.
+     */
     state: string;
+    /**
+     * - The name of the user.
+     */
     userType: string;
 }
 
 export interface GetUsersEntityAccessControlPolicyReferenceList {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface GetUsersEntityCategory {
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
 export interface GetUsersEntityDirectoryServiceUser {
     defaultUserPrincipalName: string;
+    /**
+     * - (Optional) The reference to a directory service. See #reference for to look the supported attributes.
+     */
     directoryServiceReferences: outputs.GetUsersEntityDirectoryServiceUserDirectoryServiceReference[];
+    /**
+     * - (Optional) The UserPrincipalName of the user from the directory service.
+     */
     userPrincipalName: string;
 }
 
 export interface GetUsersEntityDirectoryServiceUserDirectoryServiceReference {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface GetUsersEntityIdentityProviderUser {
+    /**
+     * - (Optional) The reference to a identity provider. See #reference for to look the supported attributes.
+     */
     identityProviderReferences: outputs.GetUsersEntityIdentityProviderUserIdentityProviderReference[];
+    /**
+     * - (Optional) The username from identity provider. Name ID for SAML Identity Provider.
+     */
     username: string;
 }
 
 export interface GetUsersEntityIdentityProviderUserIdentityProviderReference {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface GetUsersEntityProjectReferenceList {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface GetUsersMetadata {
     filter: string;
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
     length: number;
     offset: number;
@@ -4412,7 +6111,13 @@ export interface GetUsersMetadata {
 }
 
 export interface GetVirtualMachineCategory {
+    /**
+     * - the name.
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
@@ -4434,6 +6139,9 @@ export interface GetVirtualMachineDiskList {
      */
     diskSizeMib: number;
     storageConfigs: outputs.GetVirtualMachineDiskListStorageConfig[];
+    /**
+     * - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
+     */
     uuid: string;
     /**
      * Reference to a volume group.
@@ -4442,42 +6150,87 @@ export interface GetVirtualMachineDiskList {
 }
 
 export interface GetVirtualMachineDiskListDeviceProperty {
+    /**
+     * - A Disk type (default: DISK).
+     */
     deviceType: string;
+    /**
+     * - Address of disk to boot from.
+     */
     diskAddress: {[key: string]: string};
 }
 
 export interface GetVirtualMachineDiskListStorageConfig {
+    /**
+     * - State of the storage policy to pin virtual disks to the hot tier. When specified as a VM attribute, the storage policy applies to all virtual disks of the VM unless overridden by the same attribute specified for a virtual disk.
+     */
     flashMode: string;
+    /**
+     * - Reference to a kind. Either one of (kind, uuid) or url needs to be specified.
+     * * `storage_container_reference.#.url`: - GET query on the URL will provide information on the source.
+     * * `storage_container_reference.#.kind`: - kind of the container reference
+     * * `storage_container_reference.#.name`: - name of the container reference
+     * * `storage_container_reference.#.uuid`: - uiid of the container reference
+     */
     storageContainerReferences: outputs.GetVirtualMachineDiskListStorageConfigStorageContainerReference[];
 }
 
 export interface GetVirtualMachineDiskListStorageConfigStorageContainerReference {
+    /**
+     * - The kind name (Default value: project).
+     */
     kind: string;
+    /**
+     * - the name.
+     */
     name: string;
     url: string;
+    /**
+     * - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
+     */
     uuid: string;
 }
 
 export interface GetVirtualMachineGpuList {
+    /**
+     * - (Computed) The device ID of the GPU.
+     */
     deviceId: number;
     /**
      * Fraction of the physical GPU assigned.
-     * * `mode`: - The mode of this GPU.
-     * * `numVirtualDisplayHeads`: - Number of supported virtual display heads.
-     * * `guestDriverVersion`: - Last determined guest driver version.
-     * * `deviceId`: - (Computed) The device ID of the GPU.
      */
     fraction: number;
+    /**
+     * - GPU frame buffer size in MiB.
+     */
     frameBufferSizeMib: number;
+    /**
+     * - Last determined guest driver version.
+     */
     guestDriverVersion: string;
+    /**
+     * - The mode of this GPU.
+     */
     mode: string;
+    /**
+     * - the name.
+     */
     name: string;
+    /**
+     * - Number of supported virtual display heads.
+     */
     numVirtualDisplayHeads: number;
     /**
      * GPU {segment:bus:device:function} (sbdf) address if assigned.
      */
     pciAddress: string;
+    /**
+     * - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
+     */
     uuid: string;
+    /**
+     * - The vendor of the GPU.
+     */
     vendor: string;
 }
 
@@ -4488,33 +6241,81 @@ export interface GetVirtualMachineMessageList {
 }
 
 export interface GetVirtualMachineNicList {
+    /**
+     * -  The Floating IP associated with the vnic.
+     */
     floatingIp: string;
+    /**
+     * - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+     */
     ipEndpointLists: outputs.GetVirtualMachineNicListIpEndpointList[];
+    /**
+     * - Indicates whether the serial port connection is connected or not (`true` or `false`).
+     */
     isConnected: string;
+    /**
+     * - The MAC address for the adapter.
+     */
     macAddress: string;
+    /**
+     * - The model of this NIC. (Options : VIRTIO , E1000).
+     */
     model: string;
+    /**
+     * - The reference to a network_function_chain.
+     */
     networkFunctionChainReference: {[key: string]: string};
+    /**
+     * - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
+     */
     networkFunctionNicType: string;
+    /**
+     * - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
+     */
     nicType: string;
+    /**
+     * - The number of tx/rx queue pairs for this NIC.
+     */
     numQueues: number;
+    /**
+     * - The name of the subnet reference to.
+     */
     subnetName: string;
+    /**
+     * - The reference to a subnet.
+     */
     subnetUuid: string;
+    /**
+     * - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
+     */
     uuid: string;
 }
 
 export interface GetVirtualMachineNicListIpEndpointList {
+    /**
+     * - Address string.
+     */
     ip: string;
+    /**
+     * - Address type. It can only be "ASSIGNED" in the spec. If no type is specified in the spec, the default type is set to "ASSIGNED". (Options : ASSIGNED , LEARNED)
+     */
     type: string;
 }
 
 export interface GetVirtualMachineSerialPortList {
+    /**
+     * - Index of the serial port (int).
+     */
     index: number;
+    /**
+     * - Indicates whether the serial port connection is connected or not (`true` or `false`).
+     */
     isConnected: boolean;
 }
 
 export interface GetVpcSpec {
     /**
-     * The name of the VPC
+     * - the name.
      */
     name: string;
     /**
@@ -4569,7 +6370,7 @@ export interface GetVpcStatus {
      */
     executionContexts: outputs.GetVpcStatusExecutionContext[];
     /**
-     * The name of the VPC
+     * - the name.
      */
     name: string;
     /**
@@ -4646,6 +6447,9 @@ export interface GetVpcStatusResourceExternallyRoutablePrefixList {
 }
 
 export interface GetVpcsEntity {
+    /**
+     * - The vpc kind metadata.
+     */
     metadata: {[key: string]: string};
     /**
      * VPC input spec
@@ -4659,7 +6463,7 @@ export interface GetVpcsEntity {
 
 export interface GetVpcsEntitySpec {
     /**
-     * The name of the VPC
+     * - the name.
      */
     name: string;
     /**
@@ -4714,7 +6518,7 @@ export interface GetVpcsEntityStatus {
      */
     executionContexts: outputs.GetVpcsEntityStatusExecutionContext[];
     /**
-     * The name of the VPC
+     * - the name.
      */
     name: string;
     /**
@@ -4792,6 +6596,9 @@ export interface GetVpcsEntityStatusResourceExternallyRoutablePrefixList {
 
 export interface GetVpcsMetadata {
     filter: string;
+    /**
+     * - The kind name (Default value: project).
+     */
     kind: string;
     length: number;
     offset: number;
@@ -4801,19 +6608,40 @@ export interface GetVpcsMetadata {
 }
 
 export interface ImageCategory {
+    /**
+     * - (Required) The name for the image.
+     */
     name: string;
     value: string;
 }
 
 export interface ImageClusterReference {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - (Required) The name for the image.
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface ImageCurrentClusterReferenceList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - (Required) The name for the image.
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
@@ -4822,10 +6650,31 @@ export interface KarbonClusterActivePassiveConfig {
 }
 
 export interface KarbonClusterCniConfig {
+    /**
+     * - (Optional) Configuration of the calico CNI provider.
+     * * `calico_config.ip_pool_config`: - (Optional) List of IP pools to be configured/managed by calico.
+     * * `calico_config.ip_pool_config.cidr`: - (Optional) IP range to use for this pool, it should fall within pod cidr.
+     *
+     * **Note:** Updates to this attribute forces new resource creation.
+     *
+     * See detailed information in [Nutanix Karbon Cluster](https://www.nutanix.dev/reference/karbon/api-reference/cluster/).
+     */
     calicoConfig?: outputs.KarbonClusterCniConfigCalicoConfig;
+    /**
+     * - (Optional) Configuration of the flannel container network interface (CNI) provider.
+     */
     flannelConfigs?: outputs.KarbonClusterCniConfigFlannelConfig[];
+    /**
+     * - (Optional) The size of the subnet from the podIpv4Cidr assigned to each host. A value of 24 would allow up to 255 pods per node.
+     */
     nodeCidrMaskSize?: number;
+    /**
+     * - (Optional) CIDR for pods in the cluster.
+     */
     podIpv4Cidr?: string;
+    /**
+     * - (Optional) Classless inter-domain routing (CIDR) for k8s services in the cluster.
+     */
     serviceIpv4Cidr?: string;
 }
 
@@ -4841,10 +6690,32 @@ export interface KarbonClusterCniConfigFlannelConfig {
 }
 
 export interface KarbonClusterEtcdNodePool {
+    /**
+     * - (Optional) VM configuration in AHV. **Note:** Updates to this attribute forces new resource creation.
+     * * `ahv_config.cpu`: - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+     * * `ahv_config.disk_mib`: - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+     * * `ahv_config.memory_mib`: - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+     * * `ahv_config.network_uuid`: - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+     * * `ahv_config.prism_element_cluster_uuid`: - (Required) The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     ahvConfig?: outputs.KarbonClusterEtcdNodePoolAhvConfig;
+    /**
+     * - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
+     */
     name?: string;
+    /**
+     * - (Required) The version of the node OS image. **Note:** Updates to this attribute forces new resource creation.
+     */
     nodeOsVersion: string;
+    /**
+     * - List of the deployed nodes in the node pool.
+     * * `nodes.hostname`: - Hostname of the deployed node.
+     * * `nodes.ipv4_address`: - IP of the deployed node.
+     */
     nodes: outputs.KarbonClusterEtcdNodePoolNode[];
+    /**
+     * - (Required) Number of nodes in the node pool. **Note:** Updates to etcd or master node pool forces new resource creation.
+     */
     numInstances: number;
 }
 
@@ -4872,10 +6743,32 @@ export interface KarbonClusterExternalLbConfigMasterNodesConfig {
 }
 
 export interface KarbonClusterMasterNodePool {
+    /**
+     * - (Optional) VM configuration in AHV. **Note:** Updates to this attribute forces new resource creation.
+     * * `ahv_config.cpu`: - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+     * * `ahv_config.disk_mib`: - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+     * * `ahv_config.memory_mib`: - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+     * * `ahv_config.network_uuid`: - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+     * * `ahv_config.prism_element_cluster_uuid`: - (Required) The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     ahvConfig?: outputs.KarbonClusterMasterNodePoolAhvConfig;
+    /**
+     * - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+     */
     name?: string;
+    /**
+     * - (Required) The version of the node OS image. **Note:** Updates to this attribute forces new resource creation.
+     */
     nodeOsVersion: string;
+    /**
+     * - List of the deployed nodes in the node pool.
+     * * `nodes.hostname`: - Hostname of the deployed node.
+     * * `nodes.ipv4_address`: - IP of the deployed node.
+     */
     nodes: outputs.KarbonClusterMasterNodePoolNode[];
+    /**
+     * - (Required) Number of nodes in the node pool. **Note:** Updates to etcd or master node pool forces new resource creation.
+     */
     numInstances: number;
 }
 
@@ -4900,6 +6793,9 @@ export interface KarbonClusterSingleMasterConfig {
 }
 
 export interface KarbonClusterStorageClassConfig {
+    /**
+     * - (Required) The name of the storage class.
+     */
     name?: string;
     /**
      * Reclaim policy for persistent volumes provisioned using the specified storage class.
@@ -4909,6 +6805,8 @@ export interface KarbonClusterStorageClassConfig {
      * * `volumes_config.#.prism_element_cluster_uuid` - (Required) The universally unique identifier (UUID) of the Prism Element cluster.
      * * `volumes_config.#.storage_container` - (Required) Name of the storage container the storage container uses to provision volumes.
      * * `volumes_config.#.username` - (Required) Username of the Prism Element user that the API calls use to provision volumes.
+     *
+     * **Note:** Updates to this attribute forces new resource creation.
      */
     reclaimPolicy?: string;
     volumesConfig: outputs.KarbonClusterStorageClassConfigVolumesConfig;
@@ -4924,10 +6822,32 @@ export interface KarbonClusterStorageClassConfigVolumesConfig {
 }
 
 export interface KarbonClusterWorkerNodePool {
+    /**
+     * - (Optional) VM configuration in AHV. **Note:** Updates to this attribute forces new resource creation.
+     * * `ahv_config.cpu`: - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+     * * `ahv_config.disk_mib`: - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+     * * `ahv_config.memory_mib`: - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+     * * `ahv_config.network_uuid`: - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+     * * `ahv_config.prism_element_cluster_uuid`: - (Required) The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     ahvConfig?: outputs.KarbonClusterWorkerNodePoolAhvConfig;
+    /**
+     * - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+     */
     name?: string;
+    /**
+     * - (Required) The version of the node OS image. **Note:** Updates to this attribute forces new resource creation.
+     */
     nodeOsVersion: string;
+    /**
+     * - List of the deployed nodes in the node pool.
+     * * `nodes.hostname`: - Hostname of the deployed node.
+     * * `nodes.ipv4_address`: - IP of the deployed node.
+     */
     nodes: outputs.KarbonClusterWorkerNodePoolNode[];
+    /**
+     * - (Required) Number of nodes in the node pool. **Note:** Updates to etcd or master node pool forces new resource creation.
+     */
     numInstances: number;
 }
 
@@ -4962,12 +6882,24 @@ export interface NetworkSecurityRuleAdRuleInboundAllowList {
 }
 
 export interface NetworkSecurityRuleAdRuleInboundAllowListAddressGroupInclusionList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface NetworkSecurityRuleAdRuleInboundAllowListFilterParam {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: string;
     values: string[];
 }
@@ -4978,8 +6910,17 @@ export interface NetworkSecurityRuleAdRuleInboundAllowListIcmpTypeCodeList {
 }
 
 export interface NetworkSecurityRuleAdRuleInboundAllowListServiceGroupList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
@@ -5011,12 +6952,24 @@ export interface NetworkSecurityRuleAdRuleOutboundAllowList {
 }
 
 export interface NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface NetworkSecurityRuleAdRuleOutboundAllowListFilterParam {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: string;
     values: string[];
 }
@@ -5027,8 +6980,17 @@ export interface NetworkSecurityRuleAdRuleOutboundAllowListIcmpTypeCodeList {
 }
 
 export interface NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
@@ -5043,6 +7005,9 @@ export interface NetworkSecurityRuleAdRuleOutboundAllowListUdpPortRangeList {
 }
 
 export interface NetworkSecurityRuleAdRuleTargetGroupFilterParam {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: string;
     values: string[];
 }
@@ -5065,12 +7030,24 @@ export interface NetworkSecurityRuleAppRuleInboundAllowList {
 }
 
 export interface NetworkSecurityRuleAppRuleInboundAllowListAddressGroupInclusionList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface NetworkSecurityRuleAppRuleInboundAllowListFilterParam {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: string;
     values: string[];
 }
@@ -5081,8 +7058,17 @@ export interface NetworkSecurityRuleAppRuleInboundAllowListIcmpTypeCodeList {
 }
 
 export interface NetworkSecurityRuleAppRuleInboundAllowListServiceGroupList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
@@ -5114,12 +7100,24 @@ export interface NetworkSecurityRuleAppRuleOutboundAllowList {
 }
 
 export interface NetworkSecurityRuleAppRuleOutboundAllowListAddressGroupInclusionList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface NetworkSecurityRuleAppRuleOutboundAllowListFilterParam {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: string;
     values: string[];
 }
@@ -5130,8 +7128,17 @@ export interface NetworkSecurityRuleAppRuleOutboundAllowListIcmpTypeCodeList {
 }
 
 export interface NetworkSecurityRuleAppRuleOutboundAllowListServiceGroupList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: string;
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
@@ -5146,21 +7153,33 @@ export interface NetworkSecurityRuleAppRuleOutboundAllowListUdpPortRangeList {
 }
 
 export interface NetworkSecurityRuleAppRuleTargetGroupFilterParam {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: string;
     values: string[];
 }
 
 export interface NetworkSecurityRuleCategory {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: string;
     value: string;
 }
 
 export interface NetworkSecurityRuleIsolationRuleFirstEntityFilterParam {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: string;
     values: string[];
 }
 
 export interface NetworkSecurityRuleIsolationRuleSecondEntityFilterParam {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: string;
     values: string[];
 }
@@ -5732,37 +7751,88 @@ export interface RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListScri
 }
 
 export interface RoleCategory {
+    /**
+     * - (Optional) Name of the role.
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
 export interface RoleOwnerReference {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: string;
+    /**
+     * - (Optional) Name of the role.
+     */
     name?: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: string;
 }
 
 export interface RolePermissionReferenceList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: string;
+    /**
+     * - (Optional) Name of the role.
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface RoleProjectReference {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: string;
+    /**
+     * - (Optional) Name of the role.
+     */
     name?: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: string;
 }
 
 export interface ServiceGroupServiceList {
+    /**
+     * - (Optional) ICMP type code list
+     */
     icmpTypeCodeLists?: outputs.ServiceGroupServiceListIcmpTypeCodeList[];
+    /**
+     * - (Optional) The UserPrincipalName of the user from the directory service.
+     */
     protocol?: string;
+    /**
+     * - (Optional) TCP Port range list
+     */
     tcpPortRangeLists?: outputs.ServiceGroupServiceListTcpPortRangeList[];
+    /**
+     * - (Optional) UDP port range list
+     */
     udpPortRangeLists?: outputs.ServiceGroupServiceListUdpPortRangeList[];
 }
 
 export interface ServiceGroupServiceListIcmpTypeCodeList {
+    /**
+     * - (Optional) Code as text
+     */
     code?: string;
+    /**
+     * - (Optional) Type as text
+     */
     type?: string;
 }
 
@@ -5771,6 +7841,9 @@ export interface ServiceGroupServiceListTcpPortRangeList {
      * End Port (Int)
      */
     endPort?: number;
+    /**
+     * - (Optional) Start Port (Int)
+     */
     startPort?: number;
 }
 
@@ -5779,6 +7852,9 @@ export interface ServiceGroupServiceListUdpPortRangeList {
      * End Port (Int)
      */
     endPort?: number;
+    /**
+     * - (Optional) Start Port (Int)
+     */
     startPort?: number;
 }
 
@@ -5795,7 +7871,7 @@ export interface StaticRoutesStaticRoutesList {
      */
     destination: string;
     /**
-     * Reference to a subnet.
+     * Reference to a subnet. Supported with 2022.x .
      */
     externalSubnetReferenceUuid?: string;
     /**
@@ -5805,52 +7881,118 @@ export interface StaticRoutesStaticRoutesList {
 }
 
 export interface SubnetCategory {
+    /**
+     * - (Optional) Subnet name (Readonly).
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
 export interface UserAccessControlPolicyReferenceList {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface UserCategory {
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
 export interface UserDirectoryServiceUser {
     defaultUserPrincipalName: string;
+    /**
+     * - (Optional) The reference to a directory service. See #reference for to look the supported attributes.
+     */
     directoryServiceReference: outputs.UserDirectoryServiceUserDirectoryServiceReference;
+    /**
+     * - (Optional) The UserPrincipalName of the user from the directory service.
+     */
     userPrincipalName: string;
 }
 
 export interface UserDirectoryServiceUserDirectoryServiceReference {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind?: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface UserIdentityProviderUser {
+    /**
+     * - (Optional) The reference to a identity provider. See #reference for to look the supported attributes.
+     */
     identityProviderReference: outputs.UserIdentityProviderUserIdentityProviderReference;
+    /**
+     * - (Optional) The username from identity provider. Name ID for SAML Identity Provider.
+     */
     username: string;
 }
 
 export interface UserIdentityProviderUserIdentityProviderReference {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind?: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface UserProjectReferenceList {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind: string;
+    /**
+     * - the name(Optional).
+     */
     name: string;
+    /**
+     * - the UUID(Required).
+     */
     uuid: string;
 }
 
 export interface VirtualMachineCategory {
+    /**
+     * - (Required) The name for the vm.
+     */
     name: string;
+    /**
+     * - value of the key.
+     */
     value: string;
 }
 
@@ -5872,94 +8014,231 @@ export interface VirtualMachineDiskList {
      */
     diskSizeMib: number;
     storageConfig: outputs.VirtualMachineDiskListStorageConfig;
+    /**
+     * - (Optional) The device ID which is used to uniquely identify this particular disk.
+     */
     uuid: string;
     /**
      * Reference to a volume group.
+     *
+     * The diskSize (the disk sizeMib and the diskSizeBytes attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk sizeMib or diskSizeBytes when you set dataSourceReference but, you can update the diskSize after creation (second apply).
      */
     volumeGroupReference: {[key: string]: string};
 }
 
 export interface VirtualMachineDiskListDeviceProperties {
+    /**
+     * - A Disk type (default: DISK).
+     */
     deviceType?: string;
+    /**
+     * - Address of disk to boot from.
+     */
     diskAddress: {[key: string]: string};
 }
 
 export interface VirtualMachineDiskListStorageConfig {
+    /**
+     * - State of the storage policy to pin virtual disks to the hot tier. When specified as a VM attribute, the storage policy applies to all virtual disks of the VM unless overridden by the same attribute specified for a virtual disk.
+     */
     flashMode?: string;
+    /**
+     * - Reference to a kind. Either one of (kind, uuid) or url needs to be specified. Requires Prism Central / AOS 5.17+.
+     * * `storage_container_reference.#.url`: - GET query on the URL will provide information on the source.
+     * * `storage_container_reference.#.kind`: - kind of the container reference
+     * * `storage_container_reference.#.name`: - name of the container reference
+     * * `storage_container_reference.#.uuid`: - uiid of the container reference
+     */
     storageContainerReferences: outputs.VirtualMachineDiskListStorageConfigStorageContainerReference[];
 }
 
 export interface VirtualMachineDiskListStorageConfigStorageContainerReference {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: string;
+    /**
+     * - (Required) The name for the vm.
+     */
     name: string;
     url: string;
+    /**
+     * - (Optional) The device ID which is used to uniquely identify this particular disk.
+     */
     uuid: string;
 }
 
 export interface VirtualMachineGpuList {
+    /**
+     * - (Computed) The device ID of the GPU.
+     */
     deviceId: number;
     /**
      * Fraction of the physical GPU assigned.
-     * * `mode`: - (Optional) The mode of this GPU.
-     * * `numVirtualDisplayHeads`: - (ReadOnly) Number of supported virtual display heads.
-     * * `guestDriverVersion`: - (ReadOnly) Last determined guest driver version.
-     * * `deviceId`: - (Computed) The device ID of the GPU.
      */
     fraction: number;
+    /**
+     * - (ReadOnly) GPU frame buffer size in MiB.
+     */
     frameBufferSizeMib: number;
+    /**
+     * - (ReadOnly) Last determined guest driver version.
+     */
     guestDriverVersion: string;
+    /**
+     * - (Optional) The mode of this GPU.
+     */
     mode: string;
+    /**
+     * - (ReadOnly) Name of the GPU resource.
+     */
     name: string;
+    /**
+     * - (ReadOnly) Number of supported virtual display heads.
+     */
     numVirtualDisplayHeads: number;
     /**
      * GPU {segment:bus:device:function} (sbdf) address if assigned.
      */
     pciAddress: string;
+    /**
+     * - (ReadOnly) UUID of the GPU.
+     */
     uuid: string;
+    /**
+     * - (Optional) The vendor of the GPU.
+     */
     vendor: string;
 }
 
 export interface VirtualMachineNicList {
+    /**
+     * - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+     */
     ipEndpointLists: outputs.VirtualMachineNicListIpEndpointList[];
+    /**
+     * - Indicates whether the serial port connection is connected or not (`true` or `false`).
+     */
     isConnected?: string;
+    /**
+     * - The MAC address for the adapter.
+     */
     macAddress: string;
+    /**
+     * - The model of this NIC. (Options : VIRTIO , E1000).
+     */
     model: string;
+    /**
+     * - The reference to a network_function_chain.
+     */
     networkFunctionChainReference: {[key: string]: string};
+    /**
+     * - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
+     */
     networkFunctionNicType: string;
+    /**
+     * - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
+     */
     nicType: string;
+    /**
+     * - The number of tx/rx queue pairs for this NIC.
+     */
     numQueues: number;
+    /**
+     * - The name of the subnet reference to.
+     */
     subnetName: string;
+    /**
+     * - The reference to a subnet.
+     */
     subnetUuid?: string;
+    /**
+     * - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
+     */
     uuid: string;
 }
 
 export interface VirtualMachineNicListIpEndpointList {
+    /**
+     * - Address string.
+     */
     ip: string;
+    /**
+     * - Address type. It can only be "ASSIGNED" in the spec. If no type is specified in the spec, the default type is set to "ASSIGNED". (Options : ASSIGNED , LEARNED)
+     */
     type: string;
 }
 
 export interface VirtualMachineNicListStatus {
+    /**
+     * -  The Floating IP associated with the vnic. (Only in `nicListStatus`)
+     */
     floatingIp: string;
+    /**
+     * - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+     */
     ipEndpointLists: outputs.VirtualMachineNicListStatusIpEndpointList[];
+    /**
+     * - Indicates whether the serial port connection is connected or not (`true` or `false`).
+     */
     isConnected: string;
+    /**
+     * - The MAC address for the adapter.
+     */
     macAddress: string;
+    /**
+     * - The model of this NIC. (Options : VIRTIO , E1000).
+     */
     model: string;
+    /**
+     * - The reference to a network_function_chain.
+     */
     networkFunctionChainReference: {[key: string]: string};
+    /**
+     * - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
+     */
     networkFunctionNicType: string;
+    /**
+     * - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
+     */
     nicType: string;
+    /**
+     * - The number of tx/rx queue pairs for this NIC.
+     */
     numQueues: number;
+    /**
+     * - The name of the subnet reference to.
+     */
     subnetName: string;
+    /**
+     * - The reference to a subnet.
+     */
     subnetUuid: string;
+    /**
+     * - (Optional) The device ID which is used to uniquely identify this particular disk.
+     */
     uuid: string;
 }
 
 export interface VirtualMachineNicListStatusIpEndpointList {
+    /**
+     * - Address string.
+     */
     ip: string;
+    /**
+     * - Address type. It can only be "ASSIGNED" in the spec. If no type is specified in the spec, the default type is set to "ASSIGNED". (Options : ASSIGNED , LEARNED)
+     */
     type: string;
 }
 
 export interface VirtualMachineSerialPortList {
+    /**
+     * - Index of the serial port (int).
+     */
     index: number;
+    /**
+     * - Indicates whether the serial port connection is connected or not (`true` or `false`).
+     */
     isConnected: boolean;
 }
 

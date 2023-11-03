@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class KarbonClusterMasterNodePoolAhvConfigArgs : Pulumi.ResourceArgs
+    public sealed class KarbonClusterMasterNodePoolAhvConfigArgs : global::Pulumi.ResourceArgs
     {
         [Input("cpu")]
         public Input<int>? Cpu { get; set; }
@@ -31,5 +31,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public KarbonClusterMasterNodePoolAhvConfigArgs()
         {
         }
+        public static new KarbonClusterMasterNodePoolAhvConfigArgs Empty => new KarbonClusterMasterNodePoolAhvConfigArgs();
     }
 }

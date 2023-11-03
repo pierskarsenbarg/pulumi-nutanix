@@ -7,111 +7,37 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a resource to create an access control policy based on the input parameters.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.NewAccessControlPolicy(ctx, "test", &nutanix.AccessControlPolicyArgs{
-// 			ContextFilterLists: AccessControlPolicyContextFilterListArray{
-// 				&AccessControlPolicyContextFilterListArgs{
-// 					EntityFilterExpressionLists: AccessControlPolicyContextFilterListEntityFilterExpressionListArray{
-// 						&AccessControlPolicyContextFilterListEntityFilterExpressionListArgs{
-// 							LeftHandSideEntityType: pulumi.String("cluster"),
-// 							Operator:               pulumi.String("IN"),
-// 							RightHandSide: &AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs{
-// 								UuidList: []string{
-// 									"00058ef8-c31c-f0bc-0000-000000007b23",
-// 								},
-// 							},
-// 						},
-// 						&AccessControlPolicyContextFilterListEntityFilterExpressionListArgs{
-// 							LeftHandSideEntityType: pulumi.String("image"),
-// 							Operator:               pulumi.String("IN"),
-// 							RightHandSide: &AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs{
-// 								Collection: pulumi.String("ALL"),
-// 							},
-// 						},
-// 						&AccessControlPolicyContextFilterListEntityFilterExpressionListArgs{
-// 							LeftHandSideEntityType: pulumi.String("category"),
-// 							Operator:               pulumi.String("IN"),
-// 							RightHandSide: &AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs{
-// 								Collection: pulumi.String("ALL"),
-// 							},
-// 						},
-// 						&AccessControlPolicyContextFilterListEntityFilterExpressionListArgs{
-// 							LeftHandSideEntityType: pulumi.String("marketplace_item"),
-// 							Operator:               pulumi.String("IN"),
-// 							RightHandSide: &AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs{
-// 								Collection: pulumi.String("SELF_OWNED"),
-// 							},
-// 						},
-// 						&AccessControlPolicyContextFilterListEntityFilterExpressionListArgs{
-// 							LeftHandSideEntityType: pulumi.String("app_task"),
-// 							Operator:               pulumi.String("IN"),
-// 							RightHandSide: &AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs{
-// 								Collection: pulumi.String("SELF_OWNED"),
-// 							},
-// 						},
-// 						&AccessControlPolicyContextFilterListEntityFilterExpressionListArgs{
-// 							LeftHandSideEntityType: pulumi.String("app_variable"),
-// 							Operator:               pulumi.String("IN"),
-// 							RightHandSide: &AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs{
-// 								Collection: pulumi.String("SELF_OWNED"),
-// 							},
-// 						},
-// 					},
-// 				},
-// 			},
-// 			Description: pulumi.String("DESCRIPTION OF THE ACCESS CONTROL POLICY"),
-// 			RoleReference: &AccessControlPolicyRoleReferenceArgs{
-// 				Kind: pulumi.String("role"),
-// 				Uuid: pulumi.String("UUID of role"),
-// 			},
-// 			UserReferenceLists: AccessControlPolicyUserReferenceListArray{
-// 				&AccessControlPolicyUserReferenceListArgs{
-// 					Name: pulumi.String("admin"),
-// 					Uuid: pulumi.String("UUID of User existent"),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
 type AccessControlPolicy struct {
 	pulumi.CustomResourceState
 
 	// The version of the API.
-	// * `state`: - The state of the Access Control Policy.
-	ApiVersion              pulumi.StringOutput                                  `pulumi:"apiVersion"`
-	Categories              AccessControlPolicyCategoryArrayOutput               `pulumi:"categories"`
-	ContextFilterLists      AccessControlPolicyContextFilterListArrayOutput      `pulumi:"contextFilterLists"`
-	Description             pulumi.StringOutput                                  `pulumi:"description"`
-	Metadata                pulumi.StringMapOutput                               `pulumi:"metadata"`
-	Name                    pulumi.StringOutput                                  `pulumi:"name"`
-	OwnerReference          AccessControlPolicyOwnerReferenceOutput              `pulumi:"ownerReference"`
-	RoleReference           AccessControlPolicyRoleReferenceOutput               `pulumi:"roleReference"`
-	State                   pulumi.StringOutput                                  `pulumi:"state"`
+	ApiVersion pulumi.StringOutput `pulumi:"apiVersion"`
+	// - (Optional) Categories for the Access Control Policy.
+	Categories         AccessControlPolicyCategoryArrayOutput          `pulumi:"categories"`
+	ContextFilterLists AccessControlPolicyContextFilterListArrayOutput `pulumi:"contextFilterLists"`
+	// - (Optional) The description of Access Control Policy.
+	Description pulumi.StringOutput `pulumi:"description"`
+	// - The Access Control Policy kind metadata.
+	Metadata pulumi.StringMapOutput `pulumi:"metadata"`
+	// - (Optional) Name of the Access Control Policy.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// - (Optional) The reference to a user.
+	OwnerReference AccessControlPolicyOwnerReferenceOutput `pulumi:"ownerReference"`
+	// - (Required) The reference to a role.
+	RoleReference AccessControlPolicyRoleReferenceOutput `pulumi:"roleReference"`
+	// - The state of the Access Control Policy.
+	State pulumi.StringOutput `pulumi:"state"`
+	// - (Optional) The User group(s) being assigned a given role.
 	UserGroupReferenceLists AccessControlPolicyUserGroupReferenceListArrayOutput `pulumi:"userGroupReferenceLists"`
-	UserReferenceLists      AccessControlPolicyUserReferenceListArrayOutput      `pulumi:"userReferenceLists"`
+	// - (Optional) The User(s) being assigned a given role.
+	UserReferenceLists AccessControlPolicyUserReferenceListArrayOutput `pulumi:"userReferenceLists"`
 }
 
 // NewAccessControlPolicy registers a new resource with the given unique name, arguments, and options.
@@ -124,7 +50,7 @@ func NewAccessControlPolicy(ctx *pulumi.Context,
 	if args.RoleReference == nil {
 		return nil, errors.New("invalid value for required argument 'RoleReference'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AccessControlPolicy
 	err := ctx.RegisterResource("nutanix:index/accessControlPolicy:AccessControlPolicy", name, args, &resource, opts...)
 	if err != nil {
@@ -148,34 +74,50 @@ func GetAccessControlPolicy(ctx *pulumi.Context,
 // Input properties used for looking up and filtering AccessControlPolicy resources.
 type accessControlPolicyState struct {
 	// The version of the API.
-	// * `state`: - The state of the Access Control Policy.
-	ApiVersion              *string                                     `pulumi:"apiVersion"`
-	Categories              []AccessControlPolicyCategory               `pulumi:"categories"`
-	ContextFilterLists      []AccessControlPolicyContextFilterList      `pulumi:"contextFilterLists"`
-	Description             *string                                     `pulumi:"description"`
-	Metadata                map[string]string                           `pulumi:"metadata"`
-	Name                    *string                                     `pulumi:"name"`
-	OwnerReference          *AccessControlPolicyOwnerReference          `pulumi:"ownerReference"`
-	RoleReference           *AccessControlPolicyRoleReference           `pulumi:"roleReference"`
-	State                   *string                                     `pulumi:"state"`
+	ApiVersion *string `pulumi:"apiVersion"`
+	// - (Optional) Categories for the Access Control Policy.
+	Categories         []AccessControlPolicyCategory          `pulumi:"categories"`
+	ContextFilterLists []AccessControlPolicyContextFilterList `pulumi:"contextFilterLists"`
+	// - (Optional) The description of Access Control Policy.
+	Description *string `pulumi:"description"`
+	// - The Access Control Policy kind metadata.
+	Metadata map[string]string `pulumi:"metadata"`
+	// - (Optional) Name of the Access Control Policy.
+	Name *string `pulumi:"name"`
+	// - (Optional) The reference to a user.
+	OwnerReference *AccessControlPolicyOwnerReference `pulumi:"ownerReference"`
+	// - (Required) The reference to a role.
+	RoleReference *AccessControlPolicyRoleReference `pulumi:"roleReference"`
+	// - The state of the Access Control Policy.
+	State *string `pulumi:"state"`
+	// - (Optional) The User group(s) being assigned a given role.
 	UserGroupReferenceLists []AccessControlPolicyUserGroupReferenceList `pulumi:"userGroupReferenceLists"`
-	UserReferenceLists      []AccessControlPolicyUserReferenceList      `pulumi:"userReferenceLists"`
+	// - (Optional) The User(s) being assigned a given role.
+	UserReferenceLists []AccessControlPolicyUserReferenceList `pulumi:"userReferenceLists"`
 }
 
 type AccessControlPolicyState struct {
 	// The version of the API.
-	// * `state`: - The state of the Access Control Policy.
-	ApiVersion              pulumi.StringPtrInput
-	Categories              AccessControlPolicyCategoryArrayInput
-	ContextFilterLists      AccessControlPolicyContextFilterListArrayInput
-	Description             pulumi.StringPtrInput
-	Metadata                pulumi.StringMapInput
-	Name                    pulumi.StringPtrInput
-	OwnerReference          AccessControlPolicyOwnerReferencePtrInput
-	RoleReference           AccessControlPolicyRoleReferencePtrInput
-	State                   pulumi.StringPtrInput
+	ApiVersion pulumi.StringPtrInput
+	// - (Optional) Categories for the Access Control Policy.
+	Categories         AccessControlPolicyCategoryArrayInput
+	ContextFilterLists AccessControlPolicyContextFilterListArrayInput
+	// - (Optional) The description of Access Control Policy.
+	Description pulumi.StringPtrInput
+	// - The Access Control Policy kind metadata.
+	Metadata pulumi.StringMapInput
+	// - (Optional) Name of the Access Control Policy.
+	Name pulumi.StringPtrInput
+	// - (Optional) The reference to a user.
+	OwnerReference AccessControlPolicyOwnerReferencePtrInput
+	// - (Required) The reference to a role.
+	RoleReference AccessControlPolicyRoleReferencePtrInput
+	// - The state of the Access Control Policy.
+	State pulumi.StringPtrInput
+	// - (Optional) The User group(s) being assigned a given role.
 	UserGroupReferenceLists AccessControlPolicyUserGroupReferenceListArrayInput
-	UserReferenceLists      AccessControlPolicyUserReferenceListArrayInput
+	// - (Optional) The User(s) being assigned a given role.
+	UserReferenceLists AccessControlPolicyUserReferenceListArrayInput
 }
 
 func (AccessControlPolicyState) ElementType() reflect.Type {
@@ -183,26 +125,40 @@ func (AccessControlPolicyState) ElementType() reflect.Type {
 }
 
 type accessControlPolicyArgs struct {
-	Categories              []AccessControlPolicyCategory               `pulumi:"categories"`
-	ContextFilterLists      []AccessControlPolicyContextFilterList      `pulumi:"contextFilterLists"`
-	Description             *string                                     `pulumi:"description"`
-	Name                    *string                                     `pulumi:"name"`
-	OwnerReference          *AccessControlPolicyOwnerReference          `pulumi:"ownerReference"`
-	RoleReference           AccessControlPolicyRoleReference            `pulumi:"roleReference"`
+	// - (Optional) Categories for the Access Control Policy.
+	Categories         []AccessControlPolicyCategory          `pulumi:"categories"`
+	ContextFilterLists []AccessControlPolicyContextFilterList `pulumi:"contextFilterLists"`
+	// - (Optional) The description of Access Control Policy.
+	Description *string `pulumi:"description"`
+	// - (Optional) Name of the Access Control Policy.
+	Name *string `pulumi:"name"`
+	// - (Optional) The reference to a user.
+	OwnerReference *AccessControlPolicyOwnerReference `pulumi:"ownerReference"`
+	// - (Required) The reference to a role.
+	RoleReference AccessControlPolicyRoleReference `pulumi:"roleReference"`
+	// - (Optional) The User group(s) being assigned a given role.
 	UserGroupReferenceLists []AccessControlPolicyUserGroupReferenceList `pulumi:"userGroupReferenceLists"`
-	UserReferenceLists      []AccessControlPolicyUserReferenceList      `pulumi:"userReferenceLists"`
+	// - (Optional) The User(s) being assigned a given role.
+	UserReferenceLists []AccessControlPolicyUserReferenceList `pulumi:"userReferenceLists"`
 }
 
 // The set of arguments for constructing a AccessControlPolicy resource.
 type AccessControlPolicyArgs struct {
-	Categories              AccessControlPolicyCategoryArrayInput
-	ContextFilterLists      AccessControlPolicyContextFilterListArrayInput
-	Description             pulumi.StringPtrInput
-	Name                    pulumi.StringPtrInput
-	OwnerReference          AccessControlPolicyOwnerReferencePtrInput
-	RoleReference           AccessControlPolicyRoleReferenceInput
+	// - (Optional) Categories for the Access Control Policy.
+	Categories         AccessControlPolicyCategoryArrayInput
+	ContextFilterLists AccessControlPolicyContextFilterListArrayInput
+	// - (Optional) The description of Access Control Policy.
+	Description pulumi.StringPtrInput
+	// - (Optional) Name of the Access Control Policy.
+	Name pulumi.StringPtrInput
+	// - (Optional) The reference to a user.
+	OwnerReference AccessControlPolicyOwnerReferencePtrInput
+	// - (Required) The reference to a role.
+	RoleReference AccessControlPolicyRoleReferenceInput
+	// - (Optional) The User group(s) being assigned a given role.
 	UserGroupReferenceLists AccessControlPolicyUserGroupReferenceListArrayInput
-	UserReferenceLists      AccessControlPolicyUserReferenceListArrayInput
+	// - (Optional) The User(s) being assigned a given role.
+	UserReferenceLists AccessControlPolicyUserReferenceListArrayInput
 }
 
 func (AccessControlPolicyArgs) ElementType() reflect.Type {
@@ -228,10 +184,16 @@ func (i *AccessControlPolicy) ToAccessControlPolicyOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(AccessControlPolicyOutput)
 }
 
+func (i *AccessControlPolicy) ToOutput(ctx context.Context) pulumix.Output[*AccessControlPolicy] {
+	return pulumix.Output[*AccessControlPolicy]{
+		OutputState: i.ToAccessControlPolicyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AccessControlPolicyArrayInput is an input type that accepts AccessControlPolicyArray and AccessControlPolicyArrayOutput values.
 // You can construct a concrete instance of `AccessControlPolicyArrayInput` via:
 //
-//          AccessControlPolicyArray{ AccessControlPolicyArgs{...} }
+//	AccessControlPolicyArray{ AccessControlPolicyArgs{...} }
 type AccessControlPolicyArrayInput interface {
 	pulumi.Input
 
@@ -253,10 +215,16 @@ func (i AccessControlPolicyArray) ToAccessControlPolicyArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(AccessControlPolicyArrayOutput)
 }
 
+func (i AccessControlPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*AccessControlPolicy] {
+	return pulumix.Output[[]*AccessControlPolicy]{
+		OutputState: i.ToAccessControlPolicyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AccessControlPolicyMapInput is an input type that accepts AccessControlPolicyMap and AccessControlPolicyMapOutput values.
 // You can construct a concrete instance of `AccessControlPolicyMapInput` via:
 //
-//          AccessControlPolicyMap{ "key": AccessControlPolicyArgs{...} }
+//	AccessControlPolicyMap{ "key": AccessControlPolicyArgs{...} }
 type AccessControlPolicyMapInput interface {
 	pulumi.Input
 
@@ -278,6 +246,12 @@ func (i AccessControlPolicyMap) ToAccessControlPolicyMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(AccessControlPolicyMapOutput)
 }
 
+func (i AccessControlPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AccessControlPolicy] {
+	return pulumix.Output[map[string]*AccessControlPolicy]{
+		OutputState: i.ToAccessControlPolicyMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AccessControlPolicyOutput struct{ *pulumi.OutputState }
 
 func (AccessControlPolicyOutput) ElementType() reflect.Type {
@@ -292,12 +266,18 @@ func (o AccessControlPolicyOutput) ToAccessControlPolicyOutputWithContext(ctx co
 	return o
 }
 
+func (o AccessControlPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*AccessControlPolicy] {
+	return pulumix.Output[*AccessControlPolicy]{
+		OutputState: o.OutputState,
+	}
+}
+
 // The version of the API.
-// * `state`: - The state of the Access Control Policy.
 func (o AccessControlPolicyOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *AccessControlPolicy) pulumi.StringOutput { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// - (Optional) Categories for the Access Control Policy.
 func (o AccessControlPolicyOutput) Categories() AccessControlPolicyCategoryArrayOutput {
 	return o.ApplyT(func(v *AccessControlPolicy) AccessControlPolicyCategoryArrayOutput { return v.Categories }).(AccessControlPolicyCategoryArrayOutput)
 }
@@ -308,36 +288,44 @@ func (o AccessControlPolicyOutput) ContextFilterLists() AccessControlPolicyConte
 	}).(AccessControlPolicyContextFilterListArrayOutput)
 }
 
+// - (Optional) The description of Access Control Policy.
 func (o AccessControlPolicyOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *AccessControlPolicy) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
+// - The Access Control Policy kind metadata.
 func (o AccessControlPolicyOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *AccessControlPolicy) pulumi.StringMapOutput { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
+// - (Optional) Name of the Access Control Policy.
 func (o AccessControlPolicyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *AccessControlPolicy) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// - (Optional) The reference to a user.
 func (o AccessControlPolicyOutput) OwnerReference() AccessControlPolicyOwnerReferenceOutput {
 	return o.ApplyT(func(v *AccessControlPolicy) AccessControlPolicyOwnerReferenceOutput { return v.OwnerReference }).(AccessControlPolicyOwnerReferenceOutput)
 }
 
+// - (Required) The reference to a role.
 func (o AccessControlPolicyOutput) RoleReference() AccessControlPolicyRoleReferenceOutput {
 	return o.ApplyT(func(v *AccessControlPolicy) AccessControlPolicyRoleReferenceOutput { return v.RoleReference }).(AccessControlPolicyRoleReferenceOutput)
 }
 
+// - The state of the Access Control Policy.
 func (o AccessControlPolicyOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *AccessControlPolicy) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
+// - (Optional) The User group(s) being assigned a given role.
 func (o AccessControlPolicyOutput) UserGroupReferenceLists() AccessControlPolicyUserGroupReferenceListArrayOutput {
 	return o.ApplyT(func(v *AccessControlPolicy) AccessControlPolicyUserGroupReferenceListArrayOutput {
 		return v.UserGroupReferenceLists
 	}).(AccessControlPolicyUserGroupReferenceListArrayOutput)
 }
 
+// - (Optional) The User(s) being assigned a given role.
 func (o AccessControlPolicyOutput) UserReferenceLists() AccessControlPolicyUserReferenceListArrayOutput {
 	return o.ApplyT(func(v *AccessControlPolicy) AccessControlPolicyUserReferenceListArrayOutput {
 		return v.UserReferenceLists
@@ -358,6 +346,12 @@ func (o AccessControlPolicyArrayOutput) ToAccessControlPolicyArrayOutputWithCont
 	return o
 }
 
+func (o AccessControlPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AccessControlPolicy] {
+	return pulumix.Output[[]*AccessControlPolicy]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o AccessControlPolicyArrayOutput) Index(i pulumi.IntInput) AccessControlPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AccessControlPolicy {
 		return vs[0].([]*AccessControlPolicy)[vs[1].(int)]
@@ -376,6 +370,12 @@ func (o AccessControlPolicyMapOutput) ToAccessControlPolicyMapOutput() AccessCon
 
 func (o AccessControlPolicyMapOutput) ToAccessControlPolicyMapOutputWithContext(ctx context.Context) AccessControlPolicyMapOutput {
 	return o
+}
+
+func (o AccessControlPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AccessControlPolicy] {
+	return pulumix.Output[map[string]*AccessControlPolicy]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AccessControlPolicyMapOutput) MapIndex(k pulumi.StringInput) AccessControlPolicyOutput {

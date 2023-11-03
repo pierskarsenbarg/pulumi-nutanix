@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class VpcExternalSubnetListStatusGetArgs : Pulumi.ResourceArgs
+    public sealed class VpcExternalSubnetListStatusGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("activeGatewayNode")]
         public Input<Inputs.VpcExternalSubnetListStatusActiveGatewayNodeGetArgs>? ActiveGatewayNode { get; set; }
@@ -35,5 +35,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public VpcExternalSubnetListStatusGetArgs()
         {
         }
+        public static new VpcExternalSubnetListStatusGetArgs Empty => new VpcExternalSubnetListStatusGetArgs();
     }
 }

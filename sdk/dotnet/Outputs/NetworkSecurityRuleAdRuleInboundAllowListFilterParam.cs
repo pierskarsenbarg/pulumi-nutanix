@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NetworkSecurityRuleAdRuleInboundAllowListFilterParam
     {
+        /// <summary>
+        /// - (Required) The name for the network_security_rule.
+        /// </summary>
         public readonly string Name;
         public readonly ImmutableArray<string> Values;
 

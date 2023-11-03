@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -10,11 +11,8 @@ import * as utilities from "./utilities";
  */
 export function getSubnet(args?: GetSubnetArgs, opts?: pulumi.InvokeOptions): Promise<GetSubnetResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getSubnet:getSubnet", {
         "additionalFilters": args.additionalFilters,
         "categories": args.categories,
@@ -27,9 +25,21 @@ export function getSubnet(args?: GetSubnetArgs, opts?: pulumi.InvokeOptions): Pr
  * A collection of arguments for invoking getSubnet.
  */
 export interface GetSubnetArgs {
+    /**
+     * - Additional filters to narrow down list of subnets.
+     */
     additionalFilters?: inputs.GetSubnetAdditionalFilter[];
+    /**
+     * The API Version.
+     */
     categories?: inputs.GetSubnetCategory[];
+    /**
+     * - (Optional) The ID for the subnet.
+     */
     subnetId?: string;
+    /**
+     * - (Optional) The name for the subnet
+     */
     subnetName?: string;
 }
 
@@ -37,18 +47,48 @@ export interface GetSubnetArgs {
  * A collection of values returned by getSubnet.
  */
 export interface GetSubnetResult {
+    /**
+     * - Additional filters to narrow down list of subnets.
+     */
     readonly additionalFilters?: outputs.GetSubnetAdditionalFilter[];
     readonly apiVersion: string;
+    /**
+     * The reference to a availability_zone.
+     */
     readonly availabilityZoneReference: {[key: string]: string};
+    /**
+     * The API Version.
+     */
     readonly categories: outputs.GetSubnetCategory[];
+    /**
+     * The name of a cluster.
+     */
     readonly clusterName: string;
     readonly clusterUuid: string;
+    /**
+     * Default gateway IP address.
+     */
     readonly defaultGatewayIp: string;
+    /**
+     * A description for subnet.
+     */
     readonly description: string;
     readonly dhcpDomainNameServerLists: string[];
+    /**
+     * DHCP domain search list for a subnet.
+     */
     readonly dhcpDomainSearchLists: string[];
+    /**
+     * Spec for defining DHCP options.
+     */
     readonly dhcpOptions: {[key: string]: string};
+    /**
+     * Host address.
+     */
     readonly dhcpServerAddress: {[key: string]: string};
+    /**
+     * Port Number.
+     */
     readonly dhcpServerAddressPort: number;
     readonly enableNat: boolean;
     /**
@@ -58,32 +98,79 @@ export interface GetSubnetResult {
     readonly ipConfigPoolListRanges: string[];
     readonly isExternal: boolean;
     readonly messageLists: outputs.GetSubnetMessageList[];
+    /**
+     * The subnet kind metadata.
+     */
     readonly metadata: {[key: string]: string};
+    /**
+     * - the name(Optional).
+     */
     readonly name: string;
+    /**
+     * The reference to a network_function_chain.
+     */
     readonly networkFunctionChainReference: {[key: string]: string};
+    /**
+     * The reference to a user.
+     */
     readonly ownerReference: {[key: string]: string};
+    /**
+     * - (Optional). IP prefix length of the Subnet.
+     */
     readonly prefixLength: number;
+    /**
+     * The reference to a project.
+     */
     readonly projectReference: {[key: string]: string};
+    /**
+     * - The state of the subnet.
+     */
     readonly state: string;
     readonly subnetId?: string;
+    /**
+     * Subnet IP address.
+     */
     readonly subnetIp: string;
     readonly subnetName?: string;
+    /**
+     * The type of the subnet.
+     */
     readonly subnetType: string;
+    /**
+     * VLAN assigned to the subnet.
+     */
     readonly vlanId: number;
     readonly vpcReference: {[key: string]: string};
+    /**
+     * The name of the vswitch.
+     */
     readonly vswitchName: string;
 }
-
+/**
+ * Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
+ */
 export function getSubnetOutput(args?: GetSubnetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubnetResult> {
-    return pulumi.output(args).apply(a => getSubnet(a, opts))
+    return pulumi.output(args).apply((a: any) => getSubnet(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getSubnet.
  */
 export interface GetSubnetOutputArgs {
+    /**
+     * - Additional filters to narrow down list of subnets.
+     */
     additionalFilters?: pulumi.Input<pulumi.Input<inputs.GetSubnetAdditionalFilterArgs>[]>;
+    /**
+     * The API Version.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.GetSubnetCategoryArgs>[]>;
+    /**
+     * - (Optional) The ID for the subnet.
+     */
     subnetId?: pulumi.Input<string>;
+    /**
+     * - (Optional) The name for the subnet
+     */
     subnetName?: pulumi.Input<string>;
 }

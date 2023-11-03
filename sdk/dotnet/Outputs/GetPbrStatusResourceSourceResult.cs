@@ -15,7 +15,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetPbrStatusResourceSourceResult
     {
         public readonly string AddressType;
+        /// <summary>
+        /// prefix length of provided subnet.
+        /// </summary>
         public readonly int? PrefixLength;
+        /// <summary>
+        /// IP subnet provided as an address.
+        /// </summary>
         public readonly string? SubnetIp;
 
         [OutputConstructor]

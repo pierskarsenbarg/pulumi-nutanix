@@ -11,10 +11,10 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationImageNodesClusterUrlGetArgs : Pulumi.ResourceArgs
+    public sealed class FoundationImageNodesClusterUrlGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// : - (Required) Name of the cluster.
+        /// - (Required) Name of the cluster.
         /// </summary>
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }
@@ -25,5 +25,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public FoundationImageNodesClusterUrlGetArgs()
         {
         }
+        public static new FoundationImageNodesClusterUrlGetArgs Empty => new FoundationImageNodesClusterUrlGetArgs();
     }
 }

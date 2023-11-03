@@ -11,16 +11,23 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class SubnetCategoryArgs : Pulumi.ResourceArgs
+    public sealed class SubnetCategoryArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) Subnet name (Readonly).
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - value of the key.
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 
         public SubnetCategoryArgs()
         {
         }
+        public static new SubnetCategoryArgs Empty => new SubnetCategoryArgs();
     }
 }

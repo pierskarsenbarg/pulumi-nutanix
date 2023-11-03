@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetNetworkSecurityRuleAdRuleInboundAllowListAddressGroupInclusionListResult
     {
+        /// <summary>
+        /// - The kind name (Default value: project).
+        /// </summary>
         public readonly string Kind;
+        /// <summary>
+        /// - the name.
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - the UUID.
+        /// </summary>
         public readonly string Uuid;
 
         [OutputConstructor]

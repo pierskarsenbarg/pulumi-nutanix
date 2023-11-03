@@ -7,11 +7,13 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetFoundationCentralClusterDetails(ctx *pulumi.Context, args *GetFoundationCentralClusterDetailsArgs, opts ...pulumi.InvokeOption) (*GetFoundationCentralClusterDetailsResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFoundationCentralClusterDetailsResult
 	err := ctx.Invoke("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", args, &rv, opts...)
 	if err != nil {
@@ -96,6 +98,12 @@ func (o GetFoundationCentralClusterDetailsResultOutput) ToGetFoundationCentralCl
 
 func (o GetFoundationCentralClusterDetailsResultOutput) ToGetFoundationCentralClusterDetailsResultOutputWithContext(ctx context.Context) GetFoundationCentralClusterDetailsResultOutput {
 	return o
+}
+
+func (o GetFoundationCentralClusterDetailsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFoundationCentralClusterDetailsResult] {
+	return pulumix.Output[GetFoundationCentralClusterDetailsResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetFoundationCentralClusterDetailsResultOutput) Archived() pulumi.BoolOutput {

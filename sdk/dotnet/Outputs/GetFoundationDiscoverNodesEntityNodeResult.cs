@@ -14,19 +14,61 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetFoundationDiscoverNodesEntityNodeResult
     {
+        /// <summary>
+        /// ID of the cluster the node is part of.
+        /// </summary>
         public readonly string ClusterId;
+        /// <summary>
+        /// Whether the node is configured.
+        /// </summary>
         public readonly bool Configured;
+        /// <summary>
+        /// vlan tag of cvm.
+        /// </summary>
         public readonly string CurrentCvmVlanTag;
+        /// <summary>
+        /// Current network interface of the node.
+        /// </summary>
         public readonly string CurrentNetworkInterface;
+        /// <summary>
+        /// Version of foundation.
+        /// </summary>
         public readonly string FoundationVersion;
+        /// <summary>
+        /// Type of hypervisor installed on the node.
+        /// </summary>
         public readonly string Hypervisor;
+        /// <summary>
+        /// Version of hypervisor installed.
+        /// </summary>
         public readonly string HypervisorVersion;
+        /// <summary>
+        /// IPV6 address of the node.
+        /// </summary>
         public readonly string Ipv6Address;
+        /// <summary>
+        /// Model name of the node.
+        /// </summary>
         public readonly string Model;
+        /// <summary>
+        /// Position of the node in the block.
+        /// </summary>
         public readonly string NodePosition;
+        /// <summary>
+        /// Node serial of the node.
+        /// </summary>
         public readonly string NodeSerial;
+        /// <summary>
+        /// UUID of the node.
+        /// </summary>
         public readonly string NodeUuid;
+        /// <summary>
+        /// Version of NOS installed on the node.
+        /// </summary>
         public readonly string NosVersion;
+        /// <summary>
+        /// IP address of CVM.
+        /// </summary>
         public readonly string SvmIp;
 
         [OutputConstructor]

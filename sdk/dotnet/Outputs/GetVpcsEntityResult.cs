@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVpcsEntityResult
     {
+        /// <summary>
+        /// - The vpc kind metadata.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
         /// VPC input spec

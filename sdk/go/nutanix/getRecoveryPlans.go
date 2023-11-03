@@ -4,7 +4,12 @@
 package nutanix
 
 import (
+	"context"
+	"reflect"
+
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes Recovery Plans
@@ -15,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetRecoveryPlans(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetRecoveryPlans(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRecoveryPlans(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetRecoveryPlansResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRecoveryPlansResult
 	err := ctx.Invoke("nutanix:index/getRecoveryPlans:getRecoveryPlans", nil, &rv, opts...)
 	if err != nil {
@@ -41,8 +49,61 @@ func GetRecoveryPlans(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetRec
 
 // A collection of values returned by getRecoveryPlans.
 type GetRecoveryPlansResult struct {
-	ApiVersion string                   `pulumi:"apiVersion"`
-	Entities   []GetRecoveryPlansEntity `pulumi:"entities"`
+	// version of the API
+	ApiVersion string `pulumi:"apiVersion"`
+	// List of Recovery Plans
+	Entities []GetRecoveryPlansEntity `pulumi:"entities"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+}
+
+func GetRecoveryPlansOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetRecoveryPlansResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetRecoveryPlansResult, error) {
+		r, err := GetRecoveryPlans(ctx, opts...)
+		var s GetRecoveryPlansResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetRecoveryPlansResultOutput)
+}
+
+// A collection of values returned by getRecoveryPlans.
+type GetRecoveryPlansResultOutput struct{ *pulumi.OutputState }
+
+func (GetRecoveryPlansResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRecoveryPlansResult)(nil)).Elem()
+}
+
+func (o GetRecoveryPlansResultOutput) ToGetRecoveryPlansResultOutput() GetRecoveryPlansResultOutput {
+	return o
+}
+
+func (o GetRecoveryPlansResultOutput) ToGetRecoveryPlansResultOutputWithContext(ctx context.Context) GetRecoveryPlansResultOutput {
+	return o
+}
+
+func (o GetRecoveryPlansResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecoveryPlansResult] {
+	return pulumix.Output[GetRecoveryPlansResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// version of the API
+func (o GetRecoveryPlansResultOutput) ApiVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecoveryPlansResult) string { return v.ApiVersion }).(pulumi.StringOutput)
+}
+
+// List of Recovery Plans
+func (o GetRecoveryPlansResultOutput) Entities() GetRecoveryPlansEntityArrayOutput {
+	return o.ApplyT(func(v GetRecoveryPlansResult) []GetRecoveryPlansEntity { return v.Entities }).(GetRecoveryPlansEntityArrayOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetRecoveryPlansResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRecoveryPlansResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetRecoveryPlansResultOutput{})
 }

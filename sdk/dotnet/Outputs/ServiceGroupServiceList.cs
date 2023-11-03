@@ -14,9 +14,21 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class ServiceGroupServiceList
     {
+        /// <summary>
+        /// - (Optional) ICMP type code list
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceGroupServiceListIcmpTypeCodeList> IcmpTypeCodeLists;
+        /// <summary>
+        /// - (Optional) The UserPrincipalName of the user from the directory service.
+        /// </summary>
         public readonly string? Protocol;
+        /// <summary>
+        /// - (Optional) TCP Port range list
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceGroupServiceListTcpPortRangeList> TcpPortRangeLists;
+        /// <summary>
+        /// - (Optional) UDP port range list
+        /// </summary>
         public readonly ImmutableArray<Outputs.ServiceGroupServiceListUdpPortRangeList> UdpPortRangeLists;
 
         [OutputConstructor]

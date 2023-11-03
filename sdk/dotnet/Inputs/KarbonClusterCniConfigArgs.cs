@@ -11,30 +11,53 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class KarbonClusterCniConfigArgs : Pulumi.ResourceArgs
+    public sealed class KarbonClusterCniConfigArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) Configuration of the calico CNI provider.
+        /// * `calico_config.ip_pool_config`: - (Optional) List of IP pools to be configured/managed by calico.
+        /// * `calico_config.ip_pool_config.cidr`: - (Optional) IP range to use for this pool, it should fall within pod cidr.
+        /// 
+        /// **Note:** Updates to this attribute forces new resource creation.
+        /// 
+        /// See detailed information in [Nutanix Karbon Cluster](https://www.nutanix.dev/reference/karbon/api-reference/cluster/).
+        /// </summary>
         [Input("calicoConfig")]
         public Input<Inputs.KarbonClusterCniConfigCalicoConfigArgs>? CalicoConfig { get; set; }
 
         [Input("flannelConfigs")]
         private InputList<Inputs.KarbonClusterCniConfigFlannelConfigArgs>? _flannelConfigs;
+
+        /// <summary>
+        /// - (Optional) Configuration of the flannel container network interface (CNI) provider.
+        /// </summary>
         public InputList<Inputs.KarbonClusterCniConfigFlannelConfigArgs> FlannelConfigs
         {
             get => _flannelConfigs ?? (_flannelConfigs = new InputList<Inputs.KarbonClusterCniConfigFlannelConfigArgs>());
             set => _flannelConfigs = value;
         }
 
+        /// <summary>
+        /// - (Optional) The size of the subnet from the pod_ipv4_cidr assigned to each host. A value of 24 would allow up to 255 pods per node.
+        /// </summary>
         [Input("nodeCidrMaskSize")]
         public Input<int>? NodeCidrMaskSize { get; set; }
 
+        /// <summary>
+        /// - (Optional) CIDR for pods in the cluster.
+        /// </summary>
         [Input("podIpv4Cidr")]
         public Input<string>? PodIpv4Cidr { get; set; }
 
+        /// <summary>
+        /// - (Optional) Classless inter-domain routing (CIDR) for k8s services in the cluster.
+        /// </summary>
         [Input("serviceIpv4Cidr")]
         public Input<string>? ServiceIpv4Cidr { get; set; }
 
         public KarbonClusterCniConfigArgs()
         {
         }
+        public static new KarbonClusterCniConfigArgs Empty => new KarbonClusterCniConfigArgs();
     }
 }

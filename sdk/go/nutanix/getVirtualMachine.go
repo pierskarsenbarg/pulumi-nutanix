@@ -7,12 +7,14 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes a Virtual Machine
 func LookupVirtualMachine(ctx *pulumi.Context, args *LookupVirtualMachineArgs, opts ...pulumi.InvokeOption) (*LookupVirtualMachineResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupVirtualMachineResult
 	err := ctx.Invoke("nutanix:index/getVirtualMachine:getVirtualMachine", args, &rv, opts...)
 	if err != nil {
@@ -23,100 +25,107 @@ func LookupVirtualMachine(ctx *pulumi.Context, args *LookupVirtualMachineArgs, o
 
 // A collection of arguments for invoking getVirtualMachine.
 type LookupVirtualMachineArgs struct {
-	BootDeviceDiskAddress map[string]string           `pulumi:"bootDeviceDiskAddress"`
-	BootDeviceMacAddress  *string                     `pulumi:"bootDeviceMacAddress"`
-	Categories            []GetVirtualMachineCategory `pulumi:"categories"`
-	VmId                  string                      `pulumi:"vmId"`
+	// - Address of disk to boot from.
+	BootDeviceDiskAddress map[string]string `pulumi:"bootDeviceDiskAddress"`
+	// - MAC address of nic to boot from.
+	BootDeviceMacAddress *string `pulumi:"bootDeviceMacAddress"`
+	// - Categories for the vm.
+	Categories []GetVirtualMachineCategory `pulumi:"categories"`
+	// Represents virtual machine UUID
+	VmId string `pulumi:"vmId"`
 }
 
 // A collection of values returned by getVirtualMachine.
 type LookupVirtualMachineResult struct {
 	// The version of the API.
-	// * `description`: - A description for vm.
-	// * `numVnumaNodes`: - Number of vNUMA nodes. 0 means vNUMA is disabled.
-	// * `nicList`: - NICs attached to the VM.
-	// * `serialPortList`: - (Optional) Serial Ports configured on the VM.
-	// * `guestOsId`: - Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
-	// * `powerState`: - The current or desired power state of the VM. (Options : ON , OFF)
-	// * `nutanixGuestTools`: - Information regarding Nutanix Guest Tools.
-	// * `ngtCredentials`: - Credentials to login server.
-	ApiVersion                                 string                      `pulumi:"apiVersion"`
-	AvailabilityZoneReference                  map[string]string           `pulumi:"availabilityZoneReference"`
-	BootDeviceDiskAddress                      map[string]string           `pulumi:"bootDeviceDiskAddress"`
-	BootDeviceMacAddress                       string                      `pulumi:"bootDeviceMacAddress"`
-	BootDeviceOrderLists                       []string                    `pulumi:"bootDeviceOrderLists"`
-	BootType                                   string                      `pulumi:"bootType"`
-	Categories                                 []GetVirtualMachineCategory `pulumi:"categories"`
-	ClusterName                                string                      `pulumi:"clusterName"`
-	ClusterUuid                                string                      `pulumi:"clusterUuid"`
-	Description                                string                      `pulumi:"description"`
-	DiskLists                                  []GetVirtualMachineDiskList `pulumi:"diskLists"`
-	EnableCpuPassthrough                       bool                        `pulumi:"enableCpuPassthrough"`
-	EnableScriptExec                           bool                        `pulumi:"enableScriptExec"`
-	GpuLists                                   []GetVirtualMachineGpuList  `pulumi:"gpuLists"`
-	GuestCustomizationCloudInitCustomKeyValues map[string]interface{}      `pulumi:"guestCustomizationCloudInitCustomKeyValues"`
+	ApiVersion string `pulumi:"apiVersion"`
+	// - The reference to a availability_zone.
+	AvailabilityZoneReference map[string]string `pulumi:"availabilityZoneReference"`
+	// - Address of disk to boot from.
+	BootDeviceDiskAddress map[string]string `pulumi:"bootDeviceDiskAddress"`
+	// - MAC address of nic to boot from.
+	BootDeviceMacAddress string `pulumi:"bootDeviceMacAddress"`
+	// - Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
+	BootDeviceOrderLists []string `pulumi:"bootDeviceOrderLists"`
+	// - Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like bootDevice and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+	BootType string `pulumi:"bootType"`
+	// - Categories for the vm.
+	Categories []GetVirtualMachineCategory `pulumi:"categories"`
+	// - The name of the reference to the cluster.
+	ClusterName string `pulumi:"clusterName"`
+	ClusterUuid string `pulumi:"clusterUuid"`
+	// - A description for vm.
+	Description string `pulumi:"description"`
+	// Disks attached to the VM.
+	DiskLists            []GetVirtualMachineDiskList `pulumi:"diskLists"`
+	EnableCpuPassthrough bool                        `pulumi:"enableCpuPassthrough"`
+	// - Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
+	EnableScriptExec bool `pulumi:"enableScriptExec"`
+	// - GPUs attached to the VM.
+	GpuLists []GetVirtualMachineGpuList `pulumi:"gpuLists"`
+	// - Generic key value pair used for custom attributes in cloud init.
+	GuestCustomizationCloudInitCustomKeyValues map[string]interface{} `pulumi:"guestCustomizationCloudInitCustomKeyValues"`
 	// The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
-	// * `guestCustomizationIsOverridable`: - Flag to allow override of customization by deployer.
-	// * `guestCustomizationCloudInitCustomKeyValues`: - Generic key value pair used for custom attributes in cloud init.
-	// * `guestCustomizationSysprep`: - VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
-	// * `guestCustomizationSysrepCustomKeyValues`: - Generic key value pair used for custom attributes in sysrep.
-	// * `shouldFailOnScriptFailure`: -  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
-	// * `enableScriptExec`: - Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
-	// * `powerStateMechanism`: - Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
-	// * `vgaConsoleEnabled`: - Indicates whether VGA console should be enabled or not.
-	// * `diskList` Disks attached to the VM.
-	// * `metadata`: - The vm kind metadata.
-	// * `state`: - The state of the vm.
-	// * `ipAddress`: - An IP address.
-	// * `hostReference`: - Reference to a host.
-	// * `hypervisorType`: - The hypervisor type for the hypervisor the VM is hosted on.
-	GuestCustomizationCloudInitMetaData      string                 `pulumi:"guestCustomizationCloudInitMetaData"`
-	GuestCustomizationCloudInitUserData      string                 `pulumi:"guestCustomizationCloudInitUserData"`
-	GuestCustomizationIsOverridable          bool                   `pulumi:"guestCustomizationIsOverridable"`
+	GuestCustomizationCloudInitMetaData string `pulumi:"guestCustomizationCloudInitMetaData"`
+	// - The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+	GuestCustomizationCloudInitUserData string `pulumi:"guestCustomizationCloudInitUserData"`
+	// - Flag to allow override of customization by deployer.
+	GuestCustomizationIsOverridable bool `pulumi:"guestCustomizationIsOverridable"`
+	// - VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	GuestCustomizationSysprep                map[string]string      `pulumi:"guestCustomizationSysprep"`
 	GuestCustomizationSysprepCustomKeyValues map[string]interface{} `pulumi:"guestCustomizationSysprepCustomKeyValues"`
-	GuestOsId                                string                 `pulumi:"guestOsId"`
-	HardwareClockTimezone                    string                 `pulumi:"hardwareClockTimezone"`
-	HostReference                            map[string]string      `pulumi:"hostReference"`
-	HypervisorType                           string                 `pulumi:"hypervisorType"`
+	// - Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
+	GuestOsId string `pulumi:"guestOsId"`
+	// - VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+	HardwareClockTimezone string `pulumi:"hardwareClockTimezone"`
+	// - Reference to a host.
+	HostReference map[string]string `pulumi:"hostReference"`
+	// - The hypervisor type for the hypervisor the VM is hosted on.
+	HypervisorType string `pulumi:"hypervisorType"`
 	// The provider-assigned unique ID for this managed resource.
-	Id               string                         `pulumi:"id"`
-	IsVcpuHardPinned bool                           `pulumi:"isVcpuHardPinned"`
-	MachineType      string                         `pulumi:"machineType"`
-	MemorySizeMib    int                            `pulumi:"memorySizeMib"`
-	MessageLists     []GetVirtualMachineMessageList `pulumi:"messageLists"`
-	Metadata         map[string]string              `pulumi:"metadata"`
-	Name             string                         `pulumi:"name"`
-	NgtCredentials   map[string]interface{}         `pulumi:"ngtCredentials"`
+	Id               string `pulumi:"id"`
+	IsVcpuHardPinned bool   `pulumi:"isVcpuHardPinned"`
+	// - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+	MachineType string `pulumi:"machineType"`
+	// - Memory size in MiB.
+	MemorySizeMib int                            `pulumi:"memorySizeMib"`
+	MessageLists  []GetVirtualMachineMessageList `pulumi:"messageLists"`
+	// - The vm kind metadata.
+	Metadata map[string]string `pulumi:"metadata"`
+	// - the name.
+	Name string `pulumi:"name"`
+	// - Credentials to login server.
+	NgtCredentials map[string]interface{} `pulumi:"ngtCredentials"`
 	// Application names that are enabled.
-	// * `numVcpusPerSocket`: - Number of vCPUs per socket.
-	// * `numSockets`: - Number of vCPU sockets.
-	// * `gpuList`: - GPUs attached to the VM.
-	// * `parentReferece`: - Reference to an entity that the VM cloned from.
-	// * `memorySizeMib`: - Memory size in MiB.
-	// * `bootDeviceOrderList`: - Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
-	// * `bootDeviceDiskAddress`: - Address of disk to boot from.
-	// * `bootDeviceMacAddress`: - MAC address of nic to boot from.
-	// * `bootType`: - Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like bootDevice and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
-	// * `machineType`: - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-	// * `hardwareClockTimezone`: - VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
-	// * `guestCustomizationCloudInitUserData`: - The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
-	NgtEnabledCapabilityLists []string                          `pulumi:"ngtEnabledCapabilityLists"`
-	NicLists                  []GetVirtualMachineNicList        `pulumi:"nicLists"`
-	NumSockets                int                               `pulumi:"numSockets"`
-	NumVcpusPerSocket         int                               `pulumi:"numVcpusPerSocket"`
-	NumVnumaNodes             int                               `pulumi:"numVnumaNodes"`
-	NutanixGuestTools         map[string]string                 `pulumi:"nutanixGuestTools"`
-	OwnerReference            map[string]string                 `pulumi:"ownerReference"`
-	ParentReference           map[string]string                 `pulumi:"parentReference"`
-	PowerState                string                            `pulumi:"powerState"`
-	PowerStateMechanism       string                            `pulumi:"powerStateMechanism"`
-	ProjectReference          map[string]string                 `pulumi:"projectReference"`
-	SerialPortLists           []GetVirtualMachineSerialPortList `pulumi:"serialPortLists"`
-	ShouldFailOnScriptFailure bool                              `pulumi:"shouldFailOnScriptFailure"`
-	State                     string                            `pulumi:"state"`
-	VgaConsoleEnabled         bool                              `pulumi:"vgaConsoleEnabled"`
-	VmId                      string                            `pulumi:"vmId"`
+	NgtEnabledCapabilityLists []string `pulumi:"ngtEnabledCapabilityLists"`
+	// - NICs attached to the VM.
+	NicLists []GetVirtualMachineNicList `pulumi:"nicLists"`
+	// - Number of vCPU sockets.
+	NumSockets int `pulumi:"numSockets"`
+	// - Number of vCPUs per socket.
+	NumVcpusPerSocket int `pulumi:"numVcpusPerSocket"`
+	// - Number of vNUMA nodes. 0 means vNUMA is disabled.
+	NumVnumaNodes int `pulumi:"numVnumaNodes"`
+	// - Information regarding Nutanix Guest Tools.
+	NutanixGuestTools map[string]string `pulumi:"nutanixGuestTools"`
+	// - The reference to a user.
+	OwnerReference  map[string]string `pulumi:"ownerReference"`
+	ParentReference map[string]string `pulumi:"parentReference"`
+	// - The current or desired power state of the VM. (Options : ON , OFF)
+	PowerState string `pulumi:"powerState"`
+	// - Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
+	PowerStateMechanism string `pulumi:"powerStateMechanism"`
+	// - The reference to a project.
+	ProjectReference map[string]string `pulumi:"projectReference"`
+	// - (Optional) Serial Ports configured on the VM.
+	SerialPortLists []GetVirtualMachineSerialPortList `pulumi:"serialPortLists"`
+	// -  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
+	ShouldFailOnScriptFailure bool `pulumi:"shouldFailOnScriptFailure"`
+	// - Nutanix Guest Tools is enabled or not.
+	State string `pulumi:"state"`
+	// - Indicates whether VGA console should be enabled or not.
+	VgaConsoleEnabled bool   `pulumi:"vgaConsoleEnabled"`
+	VmId              string `pulumi:"vmId"`
 }
 
 func LookupVirtualMachineOutput(ctx *pulumi.Context, args LookupVirtualMachineOutputArgs, opts ...pulumi.InvokeOption) LookupVirtualMachineResultOutput {
@@ -134,10 +143,14 @@ func LookupVirtualMachineOutput(ctx *pulumi.Context, args LookupVirtualMachineOu
 
 // A collection of arguments for invoking getVirtualMachine.
 type LookupVirtualMachineOutputArgs struct {
-	BootDeviceDiskAddress pulumi.StringMapInput               `pulumi:"bootDeviceDiskAddress"`
-	BootDeviceMacAddress  pulumi.StringPtrInput               `pulumi:"bootDeviceMacAddress"`
-	Categories            GetVirtualMachineCategoryArrayInput `pulumi:"categories"`
-	VmId                  pulumi.StringInput                  `pulumi:"vmId"`
+	// - Address of disk to boot from.
+	BootDeviceDiskAddress pulumi.StringMapInput `pulumi:"bootDeviceDiskAddress"`
+	// - MAC address of nic to boot from.
+	BootDeviceMacAddress pulumi.StringPtrInput `pulumi:"bootDeviceMacAddress"`
+	// - Categories for the vm.
+	Categories GetVirtualMachineCategoryArrayInput `pulumi:"categories"`
+	// Represents virtual machine UUID
+	VmId pulumi.StringInput `pulumi:"vmId"`
 }
 
 func (LookupVirtualMachineOutputArgs) ElementType() reflect.Type {
@@ -159,43 +172,48 @@ func (o LookupVirtualMachineResultOutput) ToLookupVirtualMachineResultOutputWith
 	return o
 }
 
+func (o LookupVirtualMachineResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupVirtualMachineResult] {
+	return pulumix.Output[LookupVirtualMachineResult]{
+		OutputState: o.OutputState,
+	}
+}
+
 // The version of the API.
-// * `description`: - A description for vm.
-// * `numVnumaNodes`: - Number of vNUMA nodes. 0 means vNUMA is disabled.
-// * `nicList`: - NICs attached to the VM.
-// * `serialPortList`: - (Optional) Serial Ports configured on the VM.
-// * `guestOsId`: - Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
-// * `powerState`: - The current or desired power state of the VM. (Options : ON , OFF)
-// * `nutanixGuestTools`: - Information regarding Nutanix Guest Tools.
-// * `ngtCredentials`: - Credentials to login server.
 func (o LookupVirtualMachineResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// - The reference to a availability_zone.
 func (o LookupVirtualMachineResultOutput) AvailabilityZoneReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) map[string]string { return v.AvailabilityZoneReference }).(pulumi.StringMapOutput)
 }
 
+// - Address of disk to boot from.
 func (o LookupVirtualMachineResultOutput) BootDeviceDiskAddress() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) map[string]string { return v.BootDeviceDiskAddress }).(pulumi.StringMapOutput)
 }
 
+// - MAC address of nic to boot from.
 func (o LookupVirtualMachineResultOutput) BootDeviceMacAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.BootDeviceMacAddress }).(pulumi.StringOutput)
 }
 
+// - Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
 func (o LookupVirtualMachineResultOutput) BootDeviceOrderLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) []string { return v.BootDeviceOrderLists }).(pulumi.StringArrayOutput)
 }
 
+// - Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like bootDevice and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
 func (o LookupVirtualMachineResultOutput) BootType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.BootType }).(pulumi.StringOutput)
 }
 
+// - Categories for the vm.
 func (o LookupVirtualMachineResultOutput) Categories() GetVirtualMachineCategoryArrayOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) []GetVirtualMachineCategory { return v.Categories }).(GetVirtualMachineCategoryArrayOutput)
 }
 
+// - The name of the reference to the cluster.
 func (o LookupVirtualMachineResultOutput) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.ClusterName }).(pulumi.StringOutput)
 }
@@ -204,10 +222,12 @@ func (o LookupVirtualMachineResultOutput) ClusterUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.ClusterUuid }).(pulumi.StringOutput)
 }
 
+// - A description for vm.
 func (o LookupVirtualMachineResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// Disks attached to the VM.
 func (o LookupVirtualMachineResultOutput) DiskLists() GetVirtualMachineDiskListArrayOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) []GetVirtualMachineDiskList { return v.DiskLists }).(GetVirtualMachineDiskListArrayOutput)
 }
@@ -216,14 +236,17 @@ func (o LookupVirtualMachineResultOutput) EnableCpuPassthrough() pulumi.BoolOutp
 	return o.ApplyT(func(v LookupVirtualMachineResult) bool { return v.EnableCpuPassthrough }).(pulumi.BoolOutput)
 }
 
+// - Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
 func (o LookupVirtualMachineResultOutput) EnableScriptExec() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) bool { return v.EnableScriptExec }).(pulumi.BoolOutput)
 }
 
+// - GPUs attached to the VM.
 func (o LookupVirtualMachineResultOutput) GpuLists() GetVirtualMachineGpuListArrayOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) []GetVirtualMachineGpuList { return v.GpuLists }).(GetVirtualMachineGpuListArrayOutput)
 }
 
+// - Generic key value pair used for custom attributes in cloud init.
 func (o LookupVirtualMachineResultOutput) GuestCustomizationCloudInitCustomKeyValues() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) map[string]interface{} {
 		return v.GuestCustomizationCloudInitCustomKeyValues
@@ -231,32 +254,21 @@ func (o LookupVirtualMachineResultOutput) GuestCustomizationCloudInitCustomKeyVa
 }
 
 // The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
-// * `guestCustomizationIsOverridable`: - Flag to allow override of customization by deployer.
-// * `guestCustomizationCloudInitCustomKeyValues`: - Generic key value pair used for custom attributes in cloud init.
-// * `guestCustomizationSysprep`: - VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
-// * `guestCustomizationSysrepCustomKeyValues`: - Generic key value pair used for custom attributes in sysrep.
-// * `shouldFailOnScriptFailure`: -  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
-// * `enableScriptExec`: - Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
-// * `powerStateMechanism`: - Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
-// * `vgaConsoleEnabled`: - Indicates whether VGA console should be enabled or not.
-// * `diskList` Disks attached to the VM.
-// * `metadata`: - The vm kind metadata.
-// * `state`: - The state of the vm.
-// * `ipAddress`: - An IP address.
-// * `hostReference`: - Reference to a host.
-// * `hypervisorType`: - The hypervisor type for the hypervisor the VM is hosted on.
 func (o LookupVirtualMachineResultOutput) GuestCustomizationCloudInitMetaData() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.GuestCustomizationCloudInitMetaData }).(pulumi.StringOutput)
 }
 
+// - The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
 func (o LookupVirtualMachineResultOutput) GuestCustomizationCloudInitUserData() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.GuestCustomizationCloudInitUserData }).(pulumi.StringOutput)
 }
 
+// - Flag to allow override of customization by deployer.
 func (o LookupVirtualMachineResultOutput) GuestCustomizationIsOverridable() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) bool { return v.GuestCustomizationIsOverridable }).(pulumi.BoolOutput)
 }
 
+// - VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 func (o LookupVirtualMachineResultOutput) GuestCustomizationSysprep() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) map[string]string { return v.GuestCustomizationSysprep }).(pulumi.StringMapOutput)
 }
@@ -267,18 +279,22 @@ func (o LookupVirtualMachineResultOutput) GuestCustomizationSysprepCustomKeyValu
 	}).(pulumi.MapOutput)
 }
 
+// - Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
 func (o LookupVirtualMachineResultOutput) GuestOsId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.GuestOsId }).(pulumi.StringOutput)
 }
 
+// - VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
 func (o LookupVirtualMachineResultOutput) HardwareClockTimezone() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.HardwareClockTimezone }).(pulumi.StringOutput)
 }
 
+// - Reference to a host.
 func (o LookupVirtualMachineResultOutput) HostReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) map[string]string { return v.HostReference }).(pulumi.StringMapOutput)
 }
 
+// - The hypervisor type for the hypervisor the VM is hosted on.
 func (o LookupVirtualMachineResultOutput) HypervisorType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.HypervisorType }).(pulumi.StringOutput)
 }
@@ -292,10 +308,12 @@ func (o LookupVirtualMachineResultOutput) IsVcpuHardPinned() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) bool { return v.IsVcpuHardPinned }).(pulumi.BoolOutput)
 }
 
+// - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
 func (o LookupVirtualMachineResultOutput) MachineType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.MachineType }).(pulumi.StringOutput)
 }
 
+// - Memory size in MiB.
 func (o LookupVirtualMachineResultOutput) MemorySizeMib() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) int { return v.MemorySizeMib }).(pulumi.IntOutput)
 }
@@ -304,55 +322,52 @@ func (o LookupVirtualMachineResultOutput) MessageLists() GetVirtualMachineMessag
 	return o.ApplyT(func(v LookupVirtualMachineResult) []GetVirtualMachineMessageList { return v.MessageLists }).(GetVirtualMachineMessageListArrayOutput)
 }
 
+// - The vm kind metadata.
 func (o LookupVirtualMachineResultOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
+// - the name.
 func (o LookupVirtualMachineResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// - Credentials to login server.
 func (o LookupVirtualMachineResultOutput) NgtCredentials() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) map[string]interface{} { return v.NgtCredentials }).(pulumi.MapOutput)
 }
 
 // Application names that are enabled.
-// * `numVcpusPerSocket`: - Number of vCPUs per socket.
-// * `numSockets`: - Number of vCPU sockets.
-// * `gpuList`: - GPUs attached to the VM.
-// * `parentReferece`: - Reference to an entity that the VM cloned from.
-// * `memorySizeMib`: - Memory size in MiB.
-// * `bootDeviceOrderList`: - Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
-// * `bootDeviceDiskAddress`: - Address of disk to boot from.
-// * `bootDeviceMacAddress`: - MAC address of nic to boot from.
-// * `bootType`: - Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like bootDevice and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
-// * `machineType`: - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-// * `hardwareClockTimezone`: - VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
-// * `guestCustomizationCloudInitUserData`: - The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
 func (o LookupVirtualMachineResultOutput) NgtEnabledCapabilityLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) []string { return v.NgtEnabledCapabilityLists }).(pulumi.StringArrayOutput)
 }
 
+// - NICs attached to the VM.
 func (o LookupVirtualMachineResultOutput) NicLists() GetVirtualMachineNicListArrayOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) []GetVirtualMachineNicList { return v.NicLists }).(GetVirtualMachineNicListArrayOutput)
 }
 
+// - Number of vCPU sockets.
 func (o LookupVirtualMachineResultOutput) NumSockets() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) int { return v.NumSockets }).(pulumi.IntOutput)
 }
 
+// - Number of vCPUs per socket.
 func (o LookupVirtualMachineResultOutput) NumVcpusPerSocket() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) int { return v.NumVcpusPerSocket }).(pulumi.IntOutput)
 }
 
+// - Number of vNUMA nodes. 0 means vNUMA is disabled.
 func (o LookupVirtualMachineResultOutput) NumVnumaNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) int { return v.NumVnumaNodes }).(pulumi.IntOutput)
 }
 
+// - Information regarding Nutanix Guest Tools.
 func (o LookupVirtualMachineResultOutput) NutanixGuestTools() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) map[string]string { return v.NutanixGuestTools }).(pulumi.StringMapOutput)
 }
 
+// - The reference to a user.
 func (o LookupVirtualMachineResultOutput) OwnerReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) map[string]string { return v.OwnerReference }).(pulumi.StringMapOutput)
 }
@@ -361,30 +376,37 @@ func (o LookupVirtualMachineResultOutput) ParentReference() pulumi.StringMapOutp
 	return o.ApplyT(func(v LookupVirtualMachineResult) map[string]string { return v.ParentReference }).(pulumi.StringMapOutput)
 }
 
+// - The current or desired power state of the VM. (Options : ON , OFF)
 func (o LookupVirtualMachineResultOutput) PowerState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.PowerState }).(pulumi.StringOutput)
 }
 
+// - Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
 func (o LookupVirtualMachineResultOutput) PowerStateMechanism() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.PowerStateMechanism }).(pulumi.StringOutput)
 }
 
+// - The reference to a project.
 func (o LookupVirtualMachineResultOutput) ProjectReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) map[string]string { return v.ProjectReference }).(pulumi.StringMapOutput)
 }
 
+// - (Optional) Serial Ports configured on the VM.
 func (o LookupVirtualMachineResultOutput) SerialPortLists() GetVirtualMachineSerialPortListArrayOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) []GetVirtualMachineSerialPortList { return v.SerialPortLists }).(GetVirtualMachineSerialPortListArrayOutput)
 }
 
+// -  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
 func (o LookupVirtualMachineResultOutput) ShouldFailOnScriptFailure() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) bool { return v.ShouldFailOnScriptFailure }).(pulumi.BoolOutput)
 }
 
+// - Nutanix Guest Tools is enabled or not.
 func (o LookupVirtualMachineResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) string { return v.State }).(pulumi.StringOutput)
 }
 
+// - Indicates whether VGA console should be enabled or not.
 func (o LookupVirtualMachineResultOutput) VgaConsoleEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVirtualMachineResult) bool { return v.VgaConsoleEnabled }).(pulumi.BoolOutput)
 }

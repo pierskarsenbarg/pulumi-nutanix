@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class RecoveryPlanParametersFloatingIpAssignmentListGetArgs : Pulumi.ResourceArgs
+    public sealed class RecoveryPlanParametersFloatingIpAssignmentListGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("availabilityZoneUrl", required: true)]
         public Input<string> AvailabilityZoneUrl { get; set; } = null!;
@@ -27,5 +27,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public RecoveryPlanParametersFloatingIpAssignmentListGetArgs()
         {
         }
+        public static new RecoveryPlanParametersFloatingIpAssignmentListGetArgs Empty => new RecoveryPlanParametersFloatingIpAssignmentListGetArgs();
     }
 }

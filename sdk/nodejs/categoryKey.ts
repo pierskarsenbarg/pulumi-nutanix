@@ -11,11 +11,9 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const test = new nutanix.CategoryKey("test", {
- *     description: "App Support Category Key",
- * });
+ * const test = new nutanix.CategoryKey("test", {description: "App Support Category Key"});
  * ```
  */
 export class CategoryKey extends pulumi.CustomResource {
@@ -50,8 +48,17 @@ export class CategoryKey extends pulumi.CustomResource {
      * (Optional) The version of the API.
      */
     public /*out*/ readonly apiVersion!: pulumi.Output<string>;
+    /**
+     * - (Optional) A description for category key.
+     */
     public readonly description!: pulumi.Output<string>;
+    /**
+     * - (Required) The name for the category key.
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * - Specifying whether its a system defined category.
+     */
     public /*out*/ readonly systemDefined!: pulumi.Output<boolean>;
 
     /**
@@ -91,8 +98,17 @@ export interface CategoryKeyState {
      * (Optional) The version of the API.
      */
     apiVersion?: pulumi.Input<string>;
+    /**
+     * - (Optional) A description for category key.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * - (Required) The name for the category key.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - Specifying whether its a system defined category.
+     */
     systemDefined?: pulumi.Input<boolean>;
 }
 
@@ -100,6 +116,12 @@ export interface CategoryKeyState {
  * The set of arguments for constructing a CategoryKey resource.
  */
 export interface CategoryKeyArgs {
+    /**
+     * - (Optional) A description for category key.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * - (Required) The name for the category key.
+     */
     name?: pulumi.Input<string>;
 }

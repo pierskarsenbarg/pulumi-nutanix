@@ -7,12 +7,14 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve static routes within VPCs given vpc_uuid.
 func LookupStaticRoutes(ctx *pulumi.Context, args *LookupStaticRoutesArgs, opts ...pulumi.InvokeOption) (*LookupStaticRoutesResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupStaticRoutesResult
 	err := ctx.Invoke("nutanix:index/getStaticRoutes:getStaticRoutes", args, &rv, opts...)
 	if err != nil {
@@ -81,6 +83,12 @@ func (o LookupStaticRoutesResultOutput) ToLookupStaticRoutesResultOutput() Looku
 
 func (o LookupStaticRoutesResultOutput) ToLookupStaticRoutesResultOutputWithContext(ctx context.Context) LookupStaticRoutesResultOutput {
 	return o
+}
+
+func (o LookupStaticRoutesResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupStaticRoutesResult] {
+	return pulumix.Output[LookupStaticRoutesResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // API version

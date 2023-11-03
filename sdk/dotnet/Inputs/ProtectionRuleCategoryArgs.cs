@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class ProtectionRuleCategoryArgs : Pulumi.ResourceArgs
+    public sealed class ProtectionRuleCategoryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name for the protection rule.
@@ -28,5 +28,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public ProtectionRuleCategoryArgs()
         {
         }
+        public static new ProtectionRuleCategoryArgs Empty => new ProtectionRuleCategoryArgs();
     }
 }

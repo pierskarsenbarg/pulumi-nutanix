@@ -14,22 +14,49 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetPermissionsEntityResult
     {
+        /// <summary>
+        /// version of the API
+        /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// The categories for this resource.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetPermissionsEntityCategoryResult> Categories;
+        /// <summary>
+        /// A description for the permission.
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// . The fields that can/cannot be accessed during the specified operation. field_name_list will be a list of fields. e.g. if field_mode = disallowed, field_name_list = [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetPermissionsEntityFieldResult> Fields;
         /// <summary>
         /// (Required) The kind name (Default value: `project`).
         /// </summary>
         public readonly string Kind;
+        /// <summary>
+        /// The permission kind metadata.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
         /// the name.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The operation that is being performed on a given kind.
+        /// </summary>
         public readonly string Operation;
+        /// <summary>
+        /// The reference to a user.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> OwnerReference;
+        /// <summary>
+        /// The reference to a project.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> ProjectReference;
+        /// <summary>
+        /// The state of the permission.
+        /// </summary>
         public readonly string State;
 
         [OutputConstructor]

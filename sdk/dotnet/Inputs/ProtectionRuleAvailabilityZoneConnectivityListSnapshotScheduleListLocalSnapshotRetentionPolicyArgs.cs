@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs : Pulumi.ResourceArgs
+    public sealed class ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs : global::Pulumi.ResourceArgs
     {
         [Input("numSnapshots")]
         public Input<int>? NumSnapshots { get; set; }
@@ -25,5 +25,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs()
         {
         }
+        public static new ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs Empty => new ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs();
     }
 }

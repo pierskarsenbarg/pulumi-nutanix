@@ -11,11 +11,14 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetSubnetsMetadataArgs : Pulumi.InvokeArgs
+    public sealed class GetSubnetsMetadataArgs : global::Pulumi.InvokeArgs
     {
         [Input("filter", required: true)]
         public string Filter { get; set; } = null!;
 
+        /// <summary>
+        /// The kind name (Default value: project.
+        /// </summary>
         [Input("kind", required: true)]
         public string Kind { get; set; } = null!;
 
@@ -34,5 +37,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetSubnetsMetadataArgs()
         {
         }
+        public static new GetSubnetsMetadataArgs Empty => new GetSubnetsMetadataArgs();
     }
 }

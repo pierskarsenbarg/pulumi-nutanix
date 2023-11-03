@@ -12,57 +12,9 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides a Nutanix Recovery Plan resource to Create a Recovery Plan.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var recoveryPlanTest = new Nutanix.RecoveryPlan("recoveryPlanTest", new Nutanix.RecoveryPlanArgs
-    ///         {
-    ///             Description = "%s",
-    ///             Parameters = ,
-    ///             StageLists = 
-    ///             {
-    ///                 new Nutanix.Inputs.RecoveryPlanStageListArgs
-    ///                 {
-    ///                     DelayTimeSecs = 0,
-    ///                     StageUuid = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
-    ///                     StageWork = new Nutanix.Inputs.RecoveryPlanStageListStageWorkArgs
-    ///                     {
-    ///                         RecoverEntities = new Nutanix.Inputs.RecoveryPlanStageListStageWorkRecoverEntitiesArgs
-    ///                         {
-    ///                             EntityInfoList = 
-    ///                             {
-    ///                                 
-    ///                                 {
-    ///                                     { "categories", 
-    ///                                     {
-    ///                                         
-    ///                                         {
-    ///                                             { "name", "Environment" },
-    ///                                             { "value", "Dev" },
-    ///                                         },
-    ///                                     } },
-    ///                                 },
-    ///                             },
-    ///                         },
-    ///                     },
-    ///                 },
-    ///             },
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/recoveryPlan:RecoveryPlan")]
-    public partial class RecoveryPlan : Pulumi.CustomResource
+    public partial class RecoveryPlan : global::Pulumi.CustomResource
     {
         [Output("apiVersion")]
         public Output<string> ApiVersion { get; private set; } = null!;
@@ -222,7 +174,7 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class RecoveryPlanArgs : Pulumi.ResourceArgs
+    public sealed class RecoveryPlanArgs : global::Pulumi.ResourceArgs
     {
         [Input("categories")]
         private InputList<Inputs.RecoveryPlanCategoryArgs>? _categories;
@@ -342,9 +294,10 @@ namespace PiersKarsenbarg.Nutanix
         public RecoveryPlanArgs()
         {
         }
+        public static new RecoveryPlanArgs Empty => new RecoveryPlanArgs();
     }
 
-    public sealed class RecoveryPlanState : Pulumi.ResourceArgs
+    public sealed class RecoveryPlanState : global::Pulumi.ResourceArgs
     {
         [Input("apiVersion")]
         public Input<string>? ApiVersion { get; set; }
@@ -478,5 +431,6 @@ namespace PiersKarsenbarg.Nutanix
         public RecoveryPlanState()
         {
         }
+        public static new RecoveryPlanState Empty => new RecoveryPlanState();
     }
 }

@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix
 {
     [NutanixResourceType("nutanix:index/foundationCentralApiKeys:FoundationCentralApiKeys")]
-    public partial class FoundationCentralApiKeys : Pulumi.CustomResource
+    public partial class FoundationCentralApiKeys : global::Pulumi.CustomResource
     {
         [Output("alias")]
         public Output<string> Alias { get; private set; } = null!;
@@ -73,7 +73,7 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class FoundationCentralApiKeysArgs : Pulumi.ResourceArgs
+    public sealed class FoundationCentralApiKeysArgs : global::Pulumi.ResourceArgs
     {
         [Input("alias", required: true)]
         public Input<string> Alias { get; set; } = null!;
@@ -81,9 +81,10 @@ namespace PiersKarsenbarg.Nutanix
         public FoundationCentralApiKeysArgs()
         {
         }
+        public static new FoundationCentralApiKeysArgs Empty => new FoundationCentralApiKeysArgs();
     }
 
-    public sealed class FoundationCentralApiKeysState : Pulumi.ResourceArgs
+    public sealed class FoundationCentralApiKeysState : global::Pulumi.ResourceArgs
     {
         [Input("alias")]
         public Input<string>? Alias { get; set; }
@@ -103,5 +104,6 @@ namespace PiersKarsenbarg.Nutanix
         public FoundationCentralApiKeysState()
         {
         }
+        public static new FoundationCentralApiKeysState Empty => new FoundationCentralApiKeysState();
     }
 }

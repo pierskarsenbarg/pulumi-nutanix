@@ -7,12 +7,14 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes a Role.
 func LookupRole(ctx *pulumi.Context, args *LookupRoleArgs, opts ...pulumi.InvokeOption) (*LookupRoleResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupRoleResult
 	err := ctx.Invoke("nutanix:index/getRole:getRole", args, &rv, opts...)
 	if err != nil {
@@ -23,28 +25,38 @@ func LookupRole(ctx *pulumi.Context, args *LookupRoleArgs, opts ...pulumi.Invoke
 
 // A collection of arguments for invoking getRole.
 type LookupRoleArgs struct {
+	// - Categories for the Role.
 	Categories []GetRoleCategory `pulumi:"categories"`
-	RoleId     *string           `pulumi:"roleId"`
-	RoleName   *string           `pulumi:"roleName"`
+	// - (Optional) The UUID of a Role.
+	RoleId *string `pulumi:"roleId"`
+	// - (Optional) The name of a Role.
+	RoleName *string `pulumi:"roleName"`
 }
 
 // A collection of values returned by getRole.
 type LookupRoleResult struct {
 	// The version of the API.
-	// * `state`: - The state of the role.
-	ApiVersion  string            `pulumi:"apiVersion"`
-	Categories  []GetRoleCategory `pulumi:"categories"`
-	Description string            `pulumi:"description"`
+	ApiVersion string `pulumi:"apiVersion"`
+	// - Categories for the Role.
+	Categories []GetRoleCategory `pulumi:"categories"`
+	// - The description of the Role.
+	Description string `pulumi:"description"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                       string                           `pulumi:"id"`
-	Metadata                 map[string]string                `pulumi:"metadata"`
-	Name                     string                           `pulumi:"name"`
-	OwnerReference           map[string]string                `pulumi:"ownerReference"`
+	Id string `pulumi:"id"`
+	// - The role kind metadata.
+	Metadata map[string]string `pulumi:"metadata"`
+	// - the name(Optional).
+	Name string `pulumi:"name"`
+	// - The reference to a user.
+	OwnerReference map[string]string `pulumi:"ownerReference"`
+	// - (Required) List of permission references.
 	PermissionReferenceLists []GetRolePermissionReferenceList `pulumi:"permissionReferenceLists"`
-	ProjectReference         map[string]string                `pulumi:"projectReference"`
-	RoleId                   *string                          `pulumi:"roleId"`
-	RoleName                 *string                          `pulumi:"roleName"`
-	State                    string                           `pulumi:"state"`
+	// - The reference to a project.
+	ProjectReference map[string]string `pulumi:"projectReference"`
+	RoleId           *string           `pulumi:"roleId"`
+	RoleName         *string           `pulumi:"roleName"`
+	// - The state of the role.
+	State string `pulumi:"state"`
 }
 
 func LookupRoleOutput(ctx *pulumi.Context, args LookupRoleOutputArgs, opts ...pulumi.InvokeOption) LookupRoleResultOutput {
@@ -62,9 +74,12 @@ func LookupRoleOutput(ctx *pulumi.Context, args LookupRoleOutputArgs, opts ...pu
 
 // A collection of arguments for invoking getRole.
 type LookupRoleOutputArgs struct {
+	// - Categories for the Role.
 	Categories GetRoleCategoryArrayInput `pulumi:"categories"`
-	RoleId     pulumi.StringPtrInput     `pulumi:"roleId"`
-	RoleName   pulumi.StringPtrInput     `pulumi:"roleName"`
+	// - (Optional) The UUID of a Role.
+	RoleId pulumi.StringPtrInput `pulumi:"roleId"`
+	// - (Optional) The name of a Role.
+	RoleName pulumi.StringPtrInput `pulumi:"roleName"`
 }
 
 func (LookupRoleOutputArgs) ElementType() reflect.Type {
@@ -86,16 +101,23 @@ func (o LookupRoleResultOutput) ToLookupRoleResultOutputWithContext(ctx context.
 	return o
 }
 
+func (o LookupRoleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRoleResult] {
+	return pulumix.Output[LookupRoleResult]{
+		OutputState: o.OutputState,
+	}
+}
+
 // The version of the API.
-// * `state`: - The state of the role.
 func (o LookupRoleResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRoleResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// - Categories for the Role.
 func (o LookupRoleResultOutput) Categories() GetRoleCategoryArrayOutput {
 	return o.ApplyT(func(v LookupRoleResult) []GetRoleCategory { return v.Categories }).(GetRoleCategoryArrayOutput)
 }
 
+// - The description of the Role.
 func (o LookupRoleResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRoleResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -105,22 +127,27 @@ func (o LookupRoleResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRoleResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - The role kind metadata.
 func (o LookupRoleResultOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupRoleResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
+// - the name(Optional).
 func (o LookupRoleResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRoleResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// - The reference to a user.
 func (o LookupRoleResultOutput) OwnerReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupRoleResult) map[string]string { return v.OwnerReference }).(pulumi.StringMapOutput)
 }
 
+// - (Required) List of permission references.
 func (o LookupRoleResultOutput) PermissionReferenceLists() GetRolePermissionReferenceListArrayOutput {
 	return o.ApplyT(func(v LookupRoleResult) []GetRolePermissionReferenceList { return v.PermissionReferenceLists }).(GetRolePermissionReferenceListArrayOutput)
 }
 
+// - The reference to a project.
 func (o LookupRoleResultOutput) ProjectReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupRoleResult) map[string]string { return v.ProjectReference }).(pulumi.StringMapOutput)
 }
@@ -133,6 +160,7 @@ func (o LookupRoleResultOutput) RoleName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LookupRoleResult) *string { return v.RoleName }).(pulumi.StringPtrOutput)
 }
 
+// - The state of the role.
 func (o LookupRoleResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRoleResult) string { return v.State }).(pulumi.StringOutput)
 }

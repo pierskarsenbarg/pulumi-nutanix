@@ -15,59 +15,59 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class FoundationImageNodesCluster
     {
         /// <summary>
-        /// : - Backplane netmask.
+        /// - Backplane netmask.
         /// </summary>
         public readonly string? BackplaneNetmask;
         /// <summary>
-        /// : - Backplane subnet address.
+        /// - Backplane subnet address.
         /// </summary>
         public readonly string? BackplaneSubnet;
         /// <summary>
-        /// : - Backplane vlan.
+        /// - Backplane vlan.
         /// </summary>
         public readonly string? BackplaneVlan;
         /// <summary>
-        /// : - External IP of the cluster.
+        /// - External IP of the cluster.
         /// </summary>
         public readonly string? ClusterExternalIp;
         /// <summary>
-        /// : - (Optional, Default = true) If cluster should be created.
+        /// - (Optional, Default = true) If cluster should be created.
         /// </summary>
         public readonly bool? ClusterInitNow;
         /// <summary>
-        /// : - If cluster initialization was successful.
+        /// - If cluster initialization was successful.
         /// </summary>
         public readonly bool? ClusterInitSuccessful;
         /// <summary>
-        /// : - (Required) Members in the cluster.
+        /// - (Required) Members in the cluster.
         /// </summary>
         public readonly ImmutableArray<string> ClusterMembers;
         /// <summary>
-        /// : - (Required) Name of the cluster.
+        /// - (Required) Name of the cluster.
         /// </summary>
         public readonly string ClusterName;
         /// <summary>
-        /// : - DNS servers of CVM.
+        /// - DNS servers of CVM.
         /// </summary>
         public readonly string? CvmDnsServers;
         /// <summary>
-        /// : - NTP servers of CVM.
+        /// - NTP servers of CVM.
         /// </summary>
         public readonly string? CvmNtpServers;
         /// <summary>
-        /// : - If network segmentation should be enabled.
+        /// - If network segmentation should be enabled.
         /// </summary>
         public readonly bool? EnableNs;
         /// <summary>
-        /// : - NTP servers of hypervisor.
+        /// - NTP servers of hypervisor.
         /// </summary>
         public readonly string? HypervisorNtpServers;
         /// <summary>
-        /// : - (Required) Cluster Redundancy Factor.
+        /// - (Required) Cluster Redundancy Factor.
         /// </summary>
         public readonly int RedundancyFactor;
         /// <summary>
-        /// : - If it is a single node cluster.
+        /// - If it is a single node cluster.
         /// </summary>
         public readonly bool? SingleNodeCluster;
 

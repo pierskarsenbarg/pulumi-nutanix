@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -12,30 +13,26 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const user = new nutanix.User("user", {
- *     directoryServiceUser: {
- *         directoryServiceReference: {
- *             uuid: "<directory-service-uuid>",
- *         },
- *         userPrincipalName: "test-user@ntnxlab.local",
+ * const user = new nutanix.User("user", {directoryServiceUser: {
+ *     directoryServiceReference: {
+ *         uuid: "<directory-service-uuid>",
  *     },
- * });
+ *     userPrincipalName: "test-user@ntnxlab.local",
+ * }});
  * ```
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const user = new nutanix.User("user", {
- *     identityProviderUser: {
- *         identityProviderReference: {
- *             uuid: "<identity-provider-uuid>",
- *         },
- *         username: "username",
+ * const user = new nutanix.User("user", {identityProviderUser: {
+ *     identityProviderReference: {
+ *         uuid: "<identity-provider-uuid>",
  *     },
- * });
+ *     username: "username",
+ * }});
  * ```
  */
 export class User extends pulumi.CustomResource {
@@ -66,27 +63,57 @@ export class User extends pulumi.CustomResource {
         return obj['__pulumiType'] === User.__pulumiType;
     }
 
+    /**
+     * - List of ACP references. See #reference for more details.
+     */
     public /*out*/ readonly accessControlPolicyReferenceLists!: pulumi.Output<outputs.UserAccessControlPolicyReferenceList[]>;
     /**
      * The version of the API.
-     * * `state`: - The state of the entity.
-     * * `name`: - The name of the user.
-     * * `userType`: - The name of the user.
-     * * `displayName`: - The display name of the user (common name) provided by the directory service.
-     * * `projectReferenceList`: - A list of projects the user is part of. See #reference for more details.
-     * * `accessControlPolicyReferenceList`: - List of ACP references. See #reference for more details.
      */
     public /*out*/ readonly apiVersion!: pulumi.Output<string>;
+    /**
+     * - (Optional) Categories for the Access Control Policy.
+     */
     public readonly categories!: pulumi.Output<outputs.UserCategory[]>;
+    /**
+     * - (Optional) The directory service user configuration. See below for more information.
+     */
     public readonly directoryServiceUser!: pulumi.Output<outputs.UserDirectoryServiceUser>;
+    /**
+     * - The display name of the user (common name) provided by the directory service.
+     */
     public /*out*/ readonly displayName!: pulumi.Output<string>;
+    /**
+     * - (Optional) (Optional) The identity provider user configuration. See below for more information.
+     */
     public readonly identityProviderUser!: pulumi.Output<outputs.UserIdentityProviderUser>;
+    /**
+     * - The vm kind metadata.
+     */
     public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - the name(Optional).
+     */
     public /*out*/ readonly name!: pulumi.Output<string>;
+    /**
+     * - (Optional) The reference to a user.
+     */
     public readonly ownerReference!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - (Optional) The reference to a project.
+     */
     public readonly projectReference!: pulumi.Output<{[key: string]: string} | undefined>;
+    /**
+     * - A list of projects the user is part of. See #reference for more details.
+     */
     public /*out*/ readonly projectReferenceLists!: pulumi.Output<outputs.UserProjectReferenceList[]>;
+    /**
+     * - The state of the entity.
+     */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * - The name of the user.
+     */
     public /*out*/ readonly userType!: pulumi.Output<string>;
 
     /**
@@ -140,27 +167,57 @@ export class User extends pulumi.CustomResource {
  * Input properties used for looking up and filtering User resources.
  */
 export interface UserState {
+    /**
+     * - List of ACP references. See #reference for more details.
+     */
     accessControlPolicyReferenceLists?: pulumi.Input<pulumi.Input<inputs.UserAccessControlPolicyReferenceList>[]>;
     /**
      * The version of the API.
-     * * `state`: - The state of the entity.
-     * * `name`: - The name of the user.
-     * * `userType`: - The name of the user.
-     * * `displayName`: - The display name of the user (common name) provided by the directory service.
-     * * `projectReferenceList`: - A list of projects the user is part of. See #reference for more details.
-     * * `accessControlPolicyReferenceList`: - List of ACP references. See #reference for more details.
      */
     apiVersion?: pulumi.Input<string>;
+    /**
+     * - (Optional) Categories for the Access Control Policy.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.UserCategory>[]>;
+    /**
+     * - (Optional) The directory service user configuration. See below for more information.
+     */
     directoryServiceUser?: pulumi.Input<inputs.UserDirectoryServiceUser>;
+    /**
+     * - The display name of the user (common name) provided by the directory service.
+     */
     displayName?: pulumi.Input<string>;
+    /**
+     * - (Optional) (Optional) The identity provider user configuration. See below for more information.
+     */
     identityProviderUser?: pulumi.Input<inputs.UserIdentityProviderUser>;
+    /**
+     * - The vm kind metadata.
+     */
     metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - the name(Optional).
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Optional) The reference to a user.
+     */
     ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) The reference to a project.
+     */
     projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - A list of projects the user is part of. See #reference for more details.
+     */
     projectReferenceLists?: pulumi.Input<pulumi.Input<inputs.UserProjectReferenceList>[]>;
+    /**
+     * - The state of the entity.
+     */
     state?: pulumi.Input<string>;
+    /**
+     * - The name of the user.
+     */
     userType?: pulumi.Input<string>;
 }
 
@@ -168,9 +225,24 @@ export interface UserState {
  * The set of arguments for constructing a User resource.
  */
 export interface UserArgs {
+    /**
+     * - (Optional) Categories for the Access Control Policy.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.UserCategory>[]>;
+    /**
+     * - (Optional) The directory service user configuration. See below for more information.
+     */
     directoryServiceUser?: pulumi.Input<inputs.UserDirectoryServiceUser>;
+    /**
+     * - (Optional) (Optional) The identity provider user configuration. See below for more information.
+     */
     identityProviderUser?: pulumi.Input<inputs.UserIdentityProviderUser>;
+    /**
+     * - (Optional) The reference to a user.
+     */
     ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) The reference to a project.
+     */
     projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

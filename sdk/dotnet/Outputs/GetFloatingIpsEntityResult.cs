@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetFloatingIpsEntityResult
     {
+        /// <summary>
+        /// - The floating_ip kind metadata.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
         /// Floating IP spec

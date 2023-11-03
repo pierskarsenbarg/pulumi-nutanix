@@ -21,6 +21,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// * `account_reference_list.#.name` - The name of an account.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectsEntityAccountReferenceListResult> AccountReferenceLists;
+        /// <summary>
+        /// version of the API
+        /// </summary>
         public readonly string ApiVersion;
         public readonly ImmutableArray<Outputs.GetProjectsEntityCategoryResult> Categories;
         /// <summary>
@@ -30,6 +33,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// * `default_subnet_reference.name` - The name of a subnet.
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefaultSubnetReference;
+        /// <summary>
+        /// A description for project.
+        /// </summary>
         public readonly string Description;
         /// <summary>
         /// List of environments associated with the project.
@@ -59,6 +65,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string Name;
         public readonly ImmutableDictionary<string, string> OwnerReference;
         public readonly ImmutableDictionary<string, string> ProjectReference;
+        /// <summary>
+        /// The status for a resource domain (limits and values)
+        /// * `resource_domain.resources` Array of the utilization/limit for resource types
+        /// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+        /// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+        /// * `resource_domain.resources.#.units` - The units of the resource type
+        /// * `resource_domain.resources.#.value` - The amount of resource consumed
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectsEntityResourceDomainResult> ResourceDomains;
         public readonly string State;
         /// <summary>

@@ -20,113 +20,145 @@ namespace PiersKarsenbarg.Nutanix
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var exampleCluster = new Nutanix.KarbonCluster("exampleCluster", new()
     ///     {
-    ///         var exampleCluster = new Nutanix.KarbonCluster("exampleCluster", new Nutanix.KarbonClusterArgs
+    ///         CniConfig = new Nutanix.Inputs.KarbonClusterCniConfigArgs
     ///         {
-    ///             CniConfig = new Nutanix.Inputs.KarbonClusterCniConfigArgs
+    ///             NodeCidrMaskSize = 24,
+    ///             PodIpv4Cidr = "172.20.0.0/16",
+    ///             ServiceIpv4Cidr = "172.19.0.0/16",
+    ///         },
+    ///         EtcdNodePool = new Nutanix.Inputs.KarbonClusterEtcdNodePoolArgs
+    ///         {
+    ///             AhvConfig = new Nutanix.Inputs.KarbonClusterEtcdNodePoolAhvConfigArgs
     ///             {
-    ///                 NodeCidrMaskSize = 24,
-    ///                 PodIpv4Cidr = "172.20.0.0/16",
-    ///                 ServiceIpv4Cidr = "172.19.0.0/16",
+    ///                 NetworkUuid = "my_subnet_id",
+    ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
     ///             },
-    ///             EtcdNodePool = new Nutanix.Inputs.KarbonClusterEtcdNodePoolArgs
+    ///             NodeOsVersion = "ntnx-1.0",
+    ///             NumInstances = 1,
+    ///         },
+    ///         MasterNodePool = new Nutanix.Inputs.KarbonClusterMasterNodePoolArgs
+    ///         {
+    ///             AhvConfig = new Nutanix.Inputs.KarbonClusterMasterNodePoolAhvConfigArgs
     ///             {
-    ///                 AhvConfig = new Nutanix.Inputs.KarbonClusterEtcdNodePoolAhvConfigArgs
-    ///                 {
-    ///                     NetworkUuid = "my_subnet_id",
-    ///                     PrismElementClusterUuid = "my_pe_cluster_uuid",
-    ///                 },
-    ///                 NodeOsVersion = "ntnx-1.0",
-    ///                 NumInstances = 1,
+    ///                 NetworkUuid = "my_subnet_id",
+    ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
     ///             },
-    ///             MasterNodePool = new Nutanix.Inputs.KarbonClusterMasterNodePoolArgs
+    ///             NodeOsVersion = "ntnx-1.0",
+    ///             NumInstances = 1,
+    ///         },
+    ///         StorageClassConfig = new Nutanix.Inputs.KarbonClusterStorageClassConfigArgs
+    ///         {
+    ///             ReclaimPolicy = "Delete",
+    ///             VolumesConfig = new Nutanix.Inputs.KarbonClusterStorageClassConfigVolumesConfigArgs
     ///             {
-    ///                 AhvConfig = new Nutanix.Inputs.KarbonClusterMasterNodePoolAhvConfigArgs
-    ///                 {
-    ///                     NetworkUuid = "my_subnet_id",
-    ///                     PrismElementClusterUuid = "my_pe_cluster_uuid",
-    ///                 },
-    ///                 NodeOsVersion = "ntnx-1.0",
-    ///                 NumInstances = 1,
+    ///                 FileSystem = "ext4",
+    ///                 FlashMode = false,
+    ///                 Password = "my_pe_pw",
+    ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
+    ///                 StorageContainer = "my_storage_container_name",
+    ///                 Username = "my_pe_username",
     ///             },
-    ///             StorageClassConfig = new Nutanix.Inputs.KarbonClusterStorageClassConfigArgs
+    ///         },
+    ///         Version = "1.18.15-1",
+    ///         WorkerNodePool = new Nutanix.Inputs.KarbonClusterWorkerNodePoolArgs
+    ///         {
+    ///             AhvConfig = new Nutanix.Inputs.KarbonClusterWorkerNodePoolAhvConfigArgs
     ///             {
-    ///                 ReclaimPolicy = "Delete",
-    ///                 VolumesConfig = new Nutanix.Inputs.KarbonClusterStorageClassConfigVolumesConfigArgs
-    ///                 {
-    ///                     FileSystem = "ext4",
-    ///                     FlashMode = false,
-    ///                     Password = "my_pe_pw",
-    ///                     PrismElementClusterUuid = "my_pe_cluster_uuid",
-    ///                     StorageContainer = "my_storage_container_name",
-    ///                     Username = "my_pe_username",
-    ///                 },
+    ///                 NetworkUuid = "my_subnet_id",
+    ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
     ///             },
-    ///             Version = "1.18.15-1",
-    ///             WorkerNodePool = new Nutanix.Inputs.KarbonClusterWorkerNodePoolArgs
-    ///             {
-    ///                 AhvConfig = new Nutanix.Inputs.KarbonClusterWorkerNodePoolAhvConfigArgs
-    ///                 {
-    ///                     NetworkUuid = "my_subnet_id",
-    ///                     PrismElementClusterUuid = "my_pe_cluster_uuid",
-    ///                 },
-    ///                 NodeOsVersion = "ntnx-1.0",
-    ///                 NumInstances = 1,
-    ///             },
-    ///         });
-    ///     }
+    ///             NodeOsVersion = "ntnx-1.0",
+    ///             NumInstances = 1,
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/karbonCluster:KarbonCluster")]
-    public partial class KarbonCluster : Pulumi.CustomResource
+    public partial class KarbonCluster : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Output("activePassiveConfig")]
         public Output<Outputs.KarbonClusterActivePassiveConfig?> ActivePassiveConfig { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Output("cniConfig")]
         public Output<Outputs.KarbonClusterCniConfig> CniConfig { get; private set; } = null!;
 
         [Output("deploymentType")]
         public Output<string> DeploymentType { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
+        /// </summary>
         [Output("etcdNodePool")]
         public Output<Outputs.KarbonClusterEtcdNodePool> EtcdNodePool { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Output("externalLbConfig")]
         public Output<Outputs.KarbonClusterExternalLbConfig?> ExternalLbConfig { get; private set; } = null!;
 
         [Output("kubeapiServerIpv4Address")]
         public Output<string> KubeapiServerIpv4Address { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) Configuration of the master node pools.
+        /// </summary>
         [Output("masterNodePool")]
         public Output<Outputs.KarbonClusterMasterNodePool> MasterNodePool { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
+        /// </summary>
         [Output("privateRegistries")]
         public Output<ImmutableArray<Outputs.KarbonClusterPrivateRegistry>> PrivateRegistries { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Output("singleMasterConfig")]
         public Output<Outputs.KarbonClusterSingleMasterConfig?> SingleMasterConfig { get; private set; } = null!;
 
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) Storage class configuration attribute for defining the persistent volume attributes. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Output("storageClassConfig")]
         public Output<Outputs.KarbonClusterStorageClassConfig> StorageClassConfig { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Output("version")]
         public Output<string> Version { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Maximum wait time for the Karbon cluster to provision.
+        /// </summary>
         [Output("waitTimeoutMinutes")]
         public Output<int?> WaitTimeoutMinutes { get; private set; } = null!;
 
@@ -178,43 +210,77 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class KarbonClusterArgs : Pulumi.ResourceArgs
+    public sealed class KarbonClusterArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("activePassiveConfig")]
         public Input<Inputs.KarbonClusterActivePassiveConfigArgs>? ActivePassiveConfig { get; set; }
 
+        /// <summary>
+        /// - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("cniConfig", required: true)]
         public Input<Inputs.KarbonClusterCniConfigArgs> CniConfig { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
+        /// </summary>
         [Input("etcdNodePool", required: true)]
         public Input<Inputs.KarbonClusterEtcdNodePoolArgs> EtcdNodePool { get; set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("externalLbConfig")]
         public Input<Inputs.KarbonClusterExternalLbConfigArgs>? ExternalLbConfig { get; set; }
 
+        /// <summary>
+        /// - (Required) Configuration of the master node pools.
+        /// </summary>
         [Input("masterNodePool", required: true)]
         public Input<Inputs.KarbonClusterMasterNodePoolArgs> MasterNodePool { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("privateRegistries")]
         private InputList<Inputs.KarbonClusterPrivateRegistryArgs>? _privateRegistries;
+
+        /// <summary>
+        /// - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
+        /// </summary>
         public InputList<Inputs.KarbonClusterPrivateRegistryArgs> PrivateRegistries
         {
             get => _privateRegistries ?? (_privateRegistries = new InputList<Inputs.KarbonClusterPrivateRegistryArgs>());
             set => _privateRegistries = value;
         }
 
+        /// <summary>
+        /// - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("singleMasterConfig")]
         public Input<Inputs.KarbonClusterSingleMasterConfigArgs>? SingleMasterConfig { get; set; }
 
+        /// <summary>
+        /// - (Required) Storage class configuration attribute for defining the persistent volume attributes. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("storageClassConfig", required: true)]
         public Input<Inputs.KarbonClusterStorageClassConfigArgs> StorageClassConfig { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("version", required: true)]
         public Input<string> Version { get; set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Maximum wait time for the Karbon cluster to provision.
+        /// </summary>
         [Input("waitTimeoutMinutes")]
         public Input<int>? WaitTimeoutMinutes { get; set; }
 
@@ -224,54 +290,89 @@ namespace PiersKarsenbarg.Nutanix
         public KarbonClusterArgs()
         {
         }
+        public static new KarbonClusterArgs Empty => new KarbonClusterArgs();
     }
 
-    public sealed class KarbonClusterState : Pulumi.ResourceArgs
+    public sealed class KarbonClusterState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("activePassiveConfig")]
         public Input<Inputs.KarbonClusterActivePassiveConfigGetArgs>? ActivePassiveConfig { get; set; }
 
+        /// <summary>
+        /// - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("cniConfig")]
         public Input<Inputs.KarbonClusterCniConfigGetArgs>? CniConfig { get; set; }
 
         [Input("deploymentType")]
         public Input<string>? DeploymentType { get; set; }
 
+        /// <summary>
+        /// - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
+        /// </summary>
         [Input("etcdNodePool")]
         public Input<Inputs.KarbonClusterEtcdNodePoolGetArgs>? EtcdNodePool { get; set; }
 
+        /// <summary>
+        /// - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("externalLbConfig")]
         public Input<Inputs.KarbonClusterExternalLbConfigGetArgs>? ExternalLbConfig { get; set; }
 
         [Input("kubeapiServerIpv4Address")]
         public Input<string>? KubeapiServerIpv4Address { get; set; }
 
+        /// <summary>
+        /// - (Required) Configuration of the master node pools.
+        /// </summary>
         [Input("masterNodePool")]
         public Input<Inputs.KarbonClusterMasterNodePoolGetArgs>? MasterNodePool { get; set; }
 
+        /// <summary>
+        /// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("privateRegistries")]
         private InputList<Inputs.KarbonClusterPrivateRegistryGetArgs>? _privateRegistries;
+
+        /// <summary>
+        /// - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
+        /// </summary>
         public InputList<Inputs.KarbonClusterPrivateRegistryGetArgs> PrivateRegistries
         {
             get => _privateRegistries ?? (_privateRegistries = new InputList<Inputs.KarbonClusterPrivateRegistryGetArgs>());
             set => _privateRegistries = value;
         }
 
+        /// <summary>
+        /// - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("singleMasterConfig")]
         public Input<Inputs.KarbonClusterSingleMasterConfigGetArgs>? SingleMasterConfig { get; set; }
 
         [Input("status")]
         public Input<string>? Status { get; set; }
 
+        /// <summary>
+        /// - (Required) Storage class configuration attribute for defining the persistent volume attributes. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("storageClassConfig")]
         public Input<Inputs.KarbonClusterStorageClassConfigGetArgs>? StorageClassConfig { get; set; }
 
+        /// <summary>
+        /// - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }
 
+        /// <summary>
+        /// - (Optional) Maximum wait time for the Karbon cluster to provision.
+        /// </summary>
         [Input("waitTimeoutMinutes")]
         public Input<int>? WaitTimeoutMinutes { get; set; }
 
@@ -281,5 +382,6 @@ namespace PiersKarsenbarg.Nutanix
         public KarbonClusterState()
         {
         }
+        public static new KarbonClusterState Empty => new KarbonClusterState();
     }
 }

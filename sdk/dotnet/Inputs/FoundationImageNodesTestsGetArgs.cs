@@ -11,16 +11,16 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationImageNodesTestsGetArgs : Pulumi.ResourceArgs
+    public sealed class FoundationImageNodesTestsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// : - Whether NCC checks should run.
+        /// - Whether NCC checks should run.
         /// </summary>
         [Input("runNcc")]
         public Input<bool>? RunNcc { get; set; }
 
         /// <summary>
-        /// : - Whether system checks should run.
+        /// - Whether system checks should run.
         /// </summary>
         [Input("runSyscheck")]
         public Input<bool>? RunSyscheck { get; set; }
@@ -28,5 +28,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public FoundationImageNodesTestsGetArgs()
         {
         }
+        public static new FoundationImageNodesTestsGetArgs Empty => new FoundationImageNodesTestsGetArgs();
     }
 }

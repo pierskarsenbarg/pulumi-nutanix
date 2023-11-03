@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VirtualMachineDiskListDeviceProperties
     {
+        /// <summary>
+        /// - A Disk type (default: DISK).
+        /// </summary>
         public readonly string? DeviceType;
+        /// <summary>
+        /// - Address of disk to boot from.
+        /// </summary>
         public readonly ImmutableDictionary<string, string>? DiskAddress;
 
         [OutputConstructor]

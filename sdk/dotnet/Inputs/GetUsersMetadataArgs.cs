@@ -11,11 +11,14 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetUsersMetadataInputArgs : Pulumi.ResourceArgs
+    public sealed class GetUsersMetadataInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("filter", required: true)]
         public Input<string> Filter { get; set; } = null!;
 
+        /// <summary>
+        /// - The kind name. (Default depends on the resource you are referencing)
+        /// </summary>
         [Input("kind", required: true)]
         public Input<string> Kind { get; set; } = null!;
 
@@ -34,5 +37,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetUsersMetadataInputArgs()
         {
         }
+        public static new GetUsersMetadataInputArgs Empty => new GetUsersMetadataInputArgs();
     }
 }

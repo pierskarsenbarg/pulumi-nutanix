@@ -20,23 +20,22 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var test = Output.Create(Nutanix.GetAccessControlPolicies.InvokeAsync());
-        ///     }
+        ///     var test = Nutanix.GetAccessControlPolicies.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAccessControlPoliciesResult> InvokeAsync(GetAccessControlPoliciesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAccessControlPoliciesResult>("nutanix:index/getAccessControlPolicies:getAccessControlPolicies", args ?? new GetAccessControlPoliciesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAccessControlPoliciesResult>("nutanix:index/getAccessControlPolicies:getAccessControlPolicies", args ?? new GetAccessControlPoliciesArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes a list of access control policies.
@@ -46,30 +45,33 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var test = Output.Create(Nutanix.GetAccessControlPolicies.InvokeAsync());
-        ///     }
+        ///     var test = Nutanix.GetAccessControlPolicies.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAccessControlPoliciesResult> Invoke(GetAccessControlPoliciesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAccessControlPoliciesResult>("nutanix:index/getAccessControlPolicies:getAccessControlPolicies", args ?? new GetAccessControlPoliciesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAccessControlPoliciesResult>("nutanix:index/getAccessControlPolicies:getAccessControlPolicies", args ?? new GetAccessControlPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAccessControlPoliciesArgs : Pulumi.InvokeArgs
+    public sealed class GetAccessControlPoliciesArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private List<Inputs.GetAccessControlPoliciesMetadataArgs>? _metadatas;
+
+        /// <summary>
+        /// - The Access Control Policy kind metadata.
+        /// </summary>
         public List<Inputs.GetAccessControlPoliciesMetadataArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new List<Inputs.GetAccessControlPoliciesMetadataArgs>());
@@ -79,12 +81,17 @@ namespace PiersKarsenbarg.Nutanix
         public GetAccessControlPoliciesArgs()
         {
         }
+        public static new GetAccessControlPoliciesArgs Empty => new GetAccessControlPoliciesArgs();
     }
 
-    public sealed class GetAccessControlPoliciesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAccessControlPoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private InputList<Inputs.GetAccessControlPoliciesMetadataInputArgs>? _metadatas;
+
+        /// <summary>
+        /// - The Access Control Policy kind metadata.
+        /// </summary>
         public InputList<Inputs.GetAccessControlPoliciesMetadataInputArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new InputList<Inputs.GetAccessControlPoliciesMetadataInputArgs>());
@@ -94,6 +101,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetAccessControlPoliciesInvokeArgs()
         {
         }
+        public static new GetAccessControlPoliciesInvokeArgs Empty => new GetAccessControlPoliciesInvokeArgs();
     }
 
 
@@ -102,14 +110,19 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// The version of the API.
-        /// * `state`: - The state of the Access Control Policy.
         /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// List of Access Control Policies
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAccessControlPoliciesEntityResult> Entities;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - The Access Control Policy kind metadata.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAccessControlPoliciesMetadataResult> Metadatas;
 
         [OutputConstructor]

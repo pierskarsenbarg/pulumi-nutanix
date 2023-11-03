@@ -2,18 +2,16 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
  * Provides a datasource to retrieve floating IPs with floatingIpUuid .
  */
 export function getFloatingIp(args: GetFloatingIpArgs, opts?: pulumi.InvokeOptions): Promise<GetFloatingIpResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFloatingIp:getFloatingIp", {
         "floatingIpUuid": args.floatingIpUuid,
     }, opts);
@@ -42,6 +40,9 @@ export interface GetFloatingIpResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - The floatingIp kind metadata.
+     */
     readonly metadata: {[key: string]: string};
     /**
      * Floating IP spec
@@ -52,9 +53,11 @@ export interface GetFloatingIpResult {
      */
     readonly statuses: outputs.GetFloatingIpStatus[];
 }
-
+/**
+ * Provides a datasource to retrieve floating IPs with floatingIpUuid .
+ */
 export function getFloatingIpOutput(args: GetFloatingIpOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFloatingIpResult> {
-    return pulumi.output(args).apply(a => getFloatingIp(a, opts))
+    return pulumi.output(args).apply((a: any) => getFloatingIp(a, opts))
 }
 
 /**

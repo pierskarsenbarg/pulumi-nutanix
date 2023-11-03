@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,16 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const test = pulumi.output(nutanix.getVpcs());
+ * const test = nutanix.getVpcs({});
  * ```
  */
 export function getVpcs(args?: GetVpcsArgs, opts?: pulumi.InvokeOptions): Promise<GetVpcsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getVpcs:getVpcs", {
         "metadatas": args.metadatas,
     }, opts);
@@ -33,6 +31,9 @@ export function getVpcs(args?: GetVpcsArgs, opts?: pulumi.InvokeOptions): Promis
  * A collection of arguments for invoking getVpcs.
  */
 export interface GetVpcsArgs {
+    /**
+     * - The vpc kind metadata.
+     */
     metadatas?: inputs.GetVpcsMetadata[];
 }
 
@@ -40,22 +41,45 @@ export interface GetVpcsArgs {
  * A collection of values returned by getVpcs.
  */
 export interface GetVpcsResult {
+    /**
+     * version of the API
+     */
     readonly apiVersion: string;
+    /**
+     * List of VPCs
+     */
     readonly entities: outputs.GetVpcsEntity[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - The vpc kind metadata.
+     */
     readonly metadatas: outputs.GetVpcsMetadata[];
 }
-
+/**
+ * Provides a datasource to retrieve all the vpcs.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const test = nutanix.getVpcs({});
+ * ```
+ */
 export function getVpcsOutput(args?: GetVpcsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVpcsResult> {
-    return pulumi.output(args).apply(a => getVpcs(a, opts))
+    return pulumi.output(args).apply((a: any) => getVpcs(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getVpcs.
  */
 export interface GetVpcsOutputArgs {
+    /**
+     * - The vpc kind metadata.
+     */
     metadatas?: pulumi.Input<pulumi.Input<inputs.GetVpcsMetadataArgs>[]>;
 }

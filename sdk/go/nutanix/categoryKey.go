@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Nutanix Category key resource to Create a category key name.
@@ -18,30 +20,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.NewCategoryKey(ctx, "test", &nutanix.CategoryKeyArgs{
-// 			Description: pulumi.String("App Support Category Key"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewCategoryKey(ctx, "test", &nutanix.CategoryKeyArgs{
+//				Description: pulumi.String("App Support Category Key"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type CategoryKey struct {
 	pulumi.CustomResourceState
 
 	// (Optional) The version of the API.
-	ApiVersion    pulumi.StringOutput `pulumi:"apiVersion"`
-	Description   pulumi.StringOutput `pulumi:"description"`
-	Name          pulumi.StringOutput `pulumi:"name"`
-	SystemDefined pulumi.BoolOutput   `pulumi:"systemDefined"`
+	ApiVersion pulumi.StringOutput `pulumi:"apiVersion"`
+	// - (Optional) A description for category key.
+	Description pulumi.StringOutput `pulumi:"description"`
+	// - (Required) The name for the category key.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// - Specifying whether its a system defined category.
+	SystemDefined pulumi.BoolOutput `pulumi:"systemDefined"`
 }
 
 // NewCategoryKey registers a new resource with the given unique name, arguments, and options.
@@ -51,7 +59,7 @@ func NewCategoryKey(ctx *pulumi.Context,
 		args = &CategoryKeyArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource CategoryKey
 	err := ctx.RegisterResource("nutanix:index/categoryKey:CategoryKey", name, args, &resource, opts...)
 	if err != nil {
@@ -75,17 +83,23 @@ func GetCategoryKey(ctx *pulumi.Context,
 // Input properties used for looking up and filtering CategoryKey resources.
 type categoryKeyState struct {
 	// (Optional) The version of the API.
-	ApiVersion    *string `pulumi:"apiVersion"`
-	Description   *string `pulumi:"description"`
-	Name          *string `pulumi:"name"`
-	SystemDefined *bool   `pulumi:"systemDefined"`
+	ApiVersion *string `pulumi:"apiVersion"`
+	// - (Optional) A description for category key.
+	Description *string `pulumi:"description"`
+	// - (Required) The name for the category key.
+	Name *string `pulumi:"name"`
+	// - Specifying whether its a system defined category.
+	SystemDefined *bool `pulumi:"systemDefined"`
 }
 
 type CategoryKeyState struct {
 	// (Optional) The version of the API.
-	ApiVersion    pulumi.StringPtrInput
-	Description   pulumi.StringPtrInput
-	Name          pulumi.StringPtrInput
+	ApiVersion pulumi.StringPtrInput
+	// - (Optional) A description for category key.
+	Description pulumi.StringPtrInput
+	// - (Required) The name for the category key.
+	Name pulumi.StringPtrInput
+	// - Specifying whether its a system defined category.
 	SystemDefined pulumi.BoolPtrInput
 }
 
@@ -94,14 +108,18 @@ func (CategoryKeyState) ElementType() reflect.Type {
 }
 
 type categoryKeyArgs struct {
+	// - (Optional) A description for category key.
 	Description *string `pulumi:"description"`
-	Name        *string `pulumi:"name"`
+	// - (Required) The name for the category key.
+	Name *string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a CategoryKey resource.
 type CategoryKeyArgs struct {
+	// - (Optional) A description for category key.
 	Description pulumi.StringPtrInput
-	Name        pulumi.StringPtrInput
+	// - (Required) The name for the category key.
+	Name pulumi.StringPtrInput
 }
 
 func (CategoryKeyArgs) ElementType() reflect.Type {
@@ -127,10 +145,16 @@ func (i *CategoryKey) ToCategoryKeyOutputWithContext(ctx context.Context) Catego
 	return pulumi.ToOutputWithContext(ctx, i).(CategoryKeyOutput)
 }
 
+func (i *CategoryKey) ToOutput(ctx context.Context) pulumix.Output[*CategoryKey] {
+	return pulumix.Output[*CategoryKey]{
+		OutputState: i.ToCategoryKeyOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CategoryKeyArrayInput is an input type that accepts CategoryKeyArray and CategoryKeyArrayOutput values.
 // You can construct a concrete instance of `CategoryKeyArrayInput` via:
 //
-//          CategoryKeyArray{ CategoryKeyArgs{...} }
+//	CategoryKeyArray{ CategoryKeyArgs{...} }
 type CategoryKeyArrayInput interface {
 	pulumi.Input
 
@@ -152,10 +176,16 @@ func (i CategoryKeyArray) ToCategoryKeyArrayOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(CategoryKeyArrayOutput)
 }
 
+func (i CategoryKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*CategoryKey] {
+	return pulumix.Output[[]*CategoryKey]{
+		OutputState: i.ToCategoryKeyArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // CategoryKeyMapInput is an input type that accepts CategoryKeyMap and CategoryKeyMapOutput values.
 // You can construct a concrete instance of `CategoryKeyMapInput` via:
 //
-//          CategoryKeyMap{ "key": CategoryKeyArgs{...} }
+//	CategoryKeyMap{ "key": CategoryKeyArgs{...} }
 type CategoryKeyMapInput interface {
 	pulumi.Input
 
@@ -177,6 +207,12 @@ func (i CategoryKeyMap) ToCategoryKeyMapOutputWithContext(ctx context.Context) C
 	return pulumi.ToOutputWithContext(ctx, i).(CategoryKeyMapOutput)
 }
 
+func (i CategoryKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CategoryKey] {
+	return pulumix.Output[map[string]*CategoryKey]{
+		OutputState: i.ToCategoryKeyMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type CategoryKeyOutput struct{ *pulumi.OutputState }
 
 func (CategoryKeyOutput) ElementType() reflect.Type {
@@ -191,19 +227,28 @@ func (o CategoryKeyOutput) ToCategoryKeyOutputWithContext(ctx context.Context) C
 	return o
 }
 
+func (o CategoryKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*CategoryKey] {
+	return pulumix.Output[*CategoryKey]{
+		OutputState: o.OutputState,
+	}
+}
+
 // (Optional) The version of the API.
 func (o CategoryKeyOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *CategoryKey) pulumi.StringOutput { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// - (Optional) A description for category key.
 func (o CategoryKeyOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *CategoryKey) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
+// - (Required) The name for the category key.
 func (o CategoryKeyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *CategoryKey) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// - Specifying whether its a system defined category.
 func (o CategoryKeyOutput) SystemDefined() pulumi.BoolOutput {
 	return o.ApplyT(func(v *CategoryKey) pulumi.BoolOutput { return v.SystemDefined }).(pulumi.BoolOutput)
 }
@@ -220,6 +265,12 @@ func (o CategoryKeyArrayOutput) ToCategoryKeyArrayOutput() CategoryKeyArrayOutpu
 
 func (o CategoryKeyArrayOutput) ToCategoryKeyArrayOutputWithContext(ctx context.Context) CategoryKeyArrayOutput {
 	return o
+}
+
+func (o CategoryKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CategoryKey] {
+	return pulumix.Output[[]*CategoryKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CategoryKeyArrayOutput) Index(i pulumi.IntInput) CategoryKeyOutput {
@@ -240,6 +291,12 @@ func (o CategoryKeyMapOutput) ToCategoryKeyMapOutput() CategoryKeyMapOutput {
 
 func (o CategoryKeyMapOutput) ToCategoryKeyMapOutputWithContext(ctx context.Context) CategoryKeyMapOutput {
 	return o
+}
+
+func (o CategoryKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CategoryKey] {
+	return pulumix.Output[map[string]*CategoryKey]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o CategoryKeyMapOutput) MapIndex(k pulumi.StringInput) CategoryKeyOutput {

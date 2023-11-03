@@ -7,8 +7,10 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type FoundationCentralApiKeys struct {
@@ -31,7 +33,7 @@ func NewFoundationCentralApiKeys(ctx *pulumi.Context,
 	if args.Alias == nil {
 		return nil, errors.New("invalid value for required argument 'Alias'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource FoundationCentralApiKeys
 	err := ctx.RegisterResource("nutanix:index/foundationCentralApiKeys:FoundationCentralApiKeys", name, args, &resource, opts...)
 	if err != nil {
@@ -105,10 +107,16 @@ func (i *FoundationCentralApiKeys) ToFoundationCentralApiKeysOutputWithContext(c
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationCentralApiKeysOutput)
 }
 
+func (i *FoundationCentralApiKeys) ToOutput(ctx context.Context) pulumix.Output[*FoundationCentralApiKeys] {
+	return pulumix.Output[*FoundationCentralApiKeys]{
+		OutputState: i.ToFoundationCentralApiKeysOutputWithContext(ctx).OutputState,
+	}
+}
+
 // FoundationCentralApiKeysArrayInput is an input type that accepts FoundationCentralApiKeysArray and FoundationCentralApiKeysArrayOutput values.
 // You can construct a concrete instance of `FoundationCentralApiKeysArrayInput` via:
 //
-//          FoundationCentralApiKeysArray{ FoundationCentralApiKeysArgs{...} }
+//	FoundationCentralApiKeysArray{ FoundationCentralApiKeysArgs{...} }
 type FoundationCentralApiKeysArrayInput interface {
 	pulumi.Input
 
@@ -130,10 +138,16 @@ func (i FoundationCentralApiKeysArray) ToFoundationCentralApiKeysArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationCentralApiKeysArrayOutput)
 }
 
+func (i FoundationCentralApiKeysArray) ToOutput(ctx context.Context) pulumix.Output[[]*FoundationCentralApiKeys] {
+	return pulumix.Output[[]*FoundationCentralApiKeys]{
+		OutputState: i.ToFoundationCentralApiKeysArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // FoundationCentralApiKeysMapInput is an input type that accepts FoundationCentralApiKeysMap and FoundationCentralApiKeysMapOutput values.
 // You can construct a concrete instance of `FoundationCentralApiKeysMapInput` via:
 //
-//          FoundationCentralApiKeysMap{ "key": FoundationCentralApiKeysArgs{...} }
+//	FoundationCentralApiKeysMap{ "key": FoundationCentralApiKeysArgs{...} }
 type FoundationCentralApiKeysMapInput interface {
 	pulumi.Input
 
@@ -155,6 +169,12 @@ func (i FoundationCentralApiKeysMap) ToFoundationCentralApiKeysMapOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationCentralApiKeysMapOutput)
 }
 
+func (i FoundationCentralApiKeysMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FoundationCentralApiKeys] {
+	return pulumix.Output[map[string]*FoundationCentralApiKeys]{
+		OutputState: i.ToFoundationCentralApiKeysMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type FoundationCentralApiKeysOutput struct{ *pulumi.OutputState }
 
 func (FoundationCentralApiKeysOutput) ElementType() reflect.Type {
@@ -167,6 +187,12 @@ func (o FoundationCentralApiKeysOutput) ToFoundationCentralApiKeysOutput() Found
 
 func (o FoundationCentralApiKeysOutput) ToFoundationCentralApiKeysOutputWithContext(ctx context.Context) FoundationCentralApiKeysOutput {
 	return o
+}
+
+func (o FoundationCentralApiKeysOutput) ToOutput(ctx context.Context) pulumix.Output[*FoundationCentralApiKeys] {
+	return pulumix.Output[*FoundationCentralApiKeys]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o FoundationCentralApiKeysOutput) Alias() pulumi.StringOutput {
@@ -203,6 +229,12 @@ func (o FoundationCentralApiKeysArrayOutput) ToFoundationCentralApiKeysArrayOutp
 	return o
 }
 
+func (o FoundationCentralApiKeysArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FoundationCentralApiKeys] {
+	return pulumix.Output[[]*FoundationCentralApiKeys]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o FoundationCentralApiKeysArrayOutput) Index(i pulumi.IntInput) FoundationCentralApiKeysOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *FoundationCentralApiKeys {
 		return vs[0].([]*FoundationCentralApiKeys)[vs[1].(int)]
@@ -221,6 +253,12 @@ func (o FoundationCentralApiKeysMapOutput) ToFoundationCentralApiKeysMapOutput()
 
 func (o FoundationCentralApiKeysMapOutput) ToFoundationCentralApiKeysMapOutputWithContext(ctx context.Context) FoundationCentralApiKeysMapOutput {
 	return o
+}
+
+func (o FoundationCentralApiKeysMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FoundationCentralApiKeys] {
+	return pulumix.Output[map[string]*FoundationCentralApiKeys]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o FoundationCentralApiKeysMapOutput) MapIndex(k pulumi.StringInput) FoundationCentralApiKeysOutput {

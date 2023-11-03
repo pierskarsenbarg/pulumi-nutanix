@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetFoundationHypervisorIsosLinuxResult
     {
+        /// <summary>
+        /// Name of installer.
+        /// </summary>
         public readonly string Filename;
+        /// <summary>
+        /// Whether front-end should treat hyp as supported.
+        /// </summary>
         public readonly bool Supported;
 
         [OutputConstructor]

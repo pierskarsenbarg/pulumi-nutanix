@@ -14,9 +14,21 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetAddressGroupsEntityAddressGroupResult
     {
+        /// <summary>
+        /// - (ReadOnly) Address Group string
+        /// </summary>
         public readonly string AddressGroupString;
+        /// <summary>
+        /// - (ReadOnly) Description of the address group
+        /// </summary>
         public readonly string? Description;
+        /// <summary>
+        /// - (ReadOnly) list of IP address blocks with their prefix length
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAddressGroupsEntityAddressGroupIpAddressBlockListResult> IpAddressBlockLists;
+        /// <summary>
+        /// - (ReadOnly) Name of associated policy
+        /// </summary>
         public readonly string Name;
 
         [OutputConstructor]

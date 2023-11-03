@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetAddressGroupIpAddressBlockListResult
     {
+        /// <summary>
+        /// - (ReadOnly) IP of the address block
+        /// </summary>
         public readonly string Ip;
+        /// <summary>
+        /// - (ReadOnly) Prefix length of address block in int
+        /// </summary>
         public readonly int PrefixLength;
 
         [OutputConstructor]

@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class ProtectionRuleCategoryFilterArgs : Pulumi.ResourceArgs
+    public sealed class ProtectionRuleCategoryFilterArgs : global::Pulumi.ResourceArgs
     {
         [Input("kindLists")]
         private InputList<string>? _kindLists;
@@ -35,5 +35,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public ProtectionRuleCategoryFilterArgs()
         {
         }
+        public static new ProtectionRuleCategoryFilterArgs Empty => new ProtectionRuleCategoryFilterArgs();
     }
 }

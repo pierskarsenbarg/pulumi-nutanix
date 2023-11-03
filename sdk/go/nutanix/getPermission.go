@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describe a Nutanix Permission and its values (if it has them).
@@ -18,31 +20,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetPermission(ctx, &GetPermissionArgs{
-// 			PermissionId: pulumi.StringRef("26b81a55-2bca-48c6-9fab-4f82c6bb4284"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = nutanix.GetPermission(ctx, &GetPermissionArgs{
-// 			PermissionName: pulumi.StringRef("Access_Console_Virtual_Machine"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetPermission(ctx, &nutanix.GetPermissionArgs{
+//				PermissionId: pulumi.StringRef("26b81a55-2bca-48c6-9fab-4f82c6bb4284"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.GetPermission(ctx, &nutanix.GetPermissionArgs{
+//				PermissionName: pulumi.StringRef("Access_Console_Virtual_Machine"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPermission(ctx *pulumi.Context, args *GetPermissionArgs, opts ...pulumi.InvokeOption) (*GetPermissionResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPermissionResult
 	err := ctx.Invoke("nutanix:index/getPermission:getPermission", args, &rv, opts...)
 	if err != nil {
@@ -53,30 +57,41 @@ func GetPermission(ctx *pulumi.Context, args *GetPermissionArgs, opts ...pulumi.
 
 // A collection of arguments for invoking getPermission.
 type GetPermissionArgs struct {
-	Categories     []GetPermissionCategory `pulumi:"categories"`
-	PermissionId   *string                 `pulumi:"permissionId"`
-	PermissionName *string                 `pulumi:"permissionName"`
+	// The categories for this resource.
+	Categories []GetPermissionCategory `pulumi:"categories"`
+	// The `id` of the permission.
+	PermissionId *string `pulumi:"permissionId"`
+	// The `name` of the permission.
+	PermissionName *string `pulumi:"permissionName"`
 }
 
 // A collection of values returned by getPermission.
 type GetPermissionResult struct {
-	ApiVersion  string                  `pulumi:"apiVersion"`
-	Categories  []GetPermissionCategory `pulumi:"categories"`
-	Description string                  `pulumi:"description"`
-	Fields      []GetPermissionField    `pulumi:"fields"`
+	ApiVersion string `pulumi:"apiVersion"`
+	// The categories for this resource.
+	Categories []GetPermissionCategory `pulumi:"categories"`
+	// A description for the permission.
+	Description string `pulumi:"description"`
+	// . The fields that can/cannot be accessed during the specified operation. fieldNameList will be a list of fields. e.g. if fieldMode = disallowed, fieldNameList = [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
+	Fields []GetPermissionField `pulumi:"fields"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// (Required) The kind name (Default value: `project`).
-	Kind     string            `pulumi:"kind"`
+	Kind string `pulumi:"kind"`
+	// The permission kind metadata.
 	Metadata map[string]string `pulumi:"metadata"`
 	// the name.
-	Name             string            `pulumi:"name"`
-	Operation        string            `pulumi:"operation"`
-	OwnerReference   map[string]string `pulumi:"ownerReference"`
-	PermissionId     *string           `pulumi:"permissionId"`
-	PermissionName   *string           `pulumi:"permissionName"`
+	Name string `pulumi:"name"`
+	// The operation that is being performed on a given kind.
+	Operation string `pulumi:"operation"`
+	// The reference to a user.
+	OwnerReference map[string]string `pulumi:"ownerReference"`
+	PermissionId   *string           `pulumi:"permissionId"`
+	PermissionName *string           `pulumi:"permissionName"`
+	// The reference to a project.
 	ProjectReference map[string]string `pulumi:"projectReference"`
-	State            string            `pulumi:"state"`
+	// The state of the permission.
+	State string `pulumi:"state"`
 }
 
 func GetPermissionOutput(ctx *pulumi.Context, args GetPermissionOutputArgs, opts ...pulumi.InvokeOption) GetPermissionResultOutput {
@@ -94,9 +109,12 @@ func GetPermissionOutput(ctx *pulumi.Context, args GetPermissionOutputArgs, opts
 
 // A collection of arguments for invoking getPermission.
 type GetPermissionOutputArgs struct {
-	Categories     GetPermissionCategoryArrayInput `pulumi:"categories"`
-	PermissionId   pulumi.StringPtrInput           `pulumi:"permissionId"`
-	PermissionName pulumi.StringPtrInput           `pulumi:"permissionName"`
+	// The categories for this resource.
+	Categories GetPermissionCategoryArrayInput `pulumi:"categories"`
+	// The `id` of the permission.
+	PermissionId pulumi.StringPtrInput `pulumi:"permissionId"`
+	// The `name` of the permission.
+	PermissionName pulumi.StringPtrInput `pulumi:"permissionName"`
 }
 
 func (GetPermissionOutputArgs) ElementType() reflect.Type {
@@ -118,18 +136,27 @@ func (o GetPermissionResultOutput) ToGetPermissionResultOutputWithContext(ctx co
 	return o
 }
 
+func (o GetPermissionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPermissionResult] {
+	return pulumix.Output[GetPermissionResult]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o GetPermissionResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPermissionResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// The categories for this resource.
 func (o GetPermissionResultOutput) Categories() GetPermissionCategoryArrayOutput {
 	return o.ApplyT(func(v GetPermissionResult) []GetPermissionCategory { return v.Categories }).(GetPermissionCategoryArrayOutput)
 }
 
+// A description for the permission.
 func (o GetPermissionResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPermissionResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// . The fields that can/cannot be accessed during the specified operation. fieldNameList will be a list of fields. e.g. if fieldMode = disallowed, fieldNameList = [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
 func (o GetPermissionResultOutput) Fields() GetPermissionFieldArrayOutput {
 	return o.ApplyT(func(v GetPermissionResult) []GetPermissionField { return v.Fields }).(GetPermissionFieldArrayOutput)
 }
@@ -144,6 +171,7 @@ func (o GetPermissionResultOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPermissionResult) string { return v.Kind }).(pulumi.StringOutput)
 }
 
+// The permission kind metadata.
 func (o GetPermissionResultOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetPermissionResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
@@ -153,10 +181,12 @@ func (o GetPermissionResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPermissionResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// The operation that is being performed on a given kind.
 func (o GetPermissionResultOutput) Operation() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPermissionResult) string { return v.Operation }).(pulumi.StringOutput)
 }
 
+// The reference to a user.
 func (o GetPermissionResultOutput) OwnerReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetPermissionResult) map[string]string { return v.OwnerReference }).(pulumi.StringMapOutput)
 }
@@ -169,10 +199,12 @@ func (o GetPermissionResultOutput) PermissionName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetPermissionResult) *string { return v.PermissionName }).(pulumi.StringPtrOutput)
 }
 
+// The reference to a project.
 func (o GetPermissionResultOutput) ProjectReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetPermissionResult) map[string]string { return v.ProjectReference }).(pulumi.StringMapOutput)
 }
 
+// The state of the permission.
 func (o GetPermissionResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPermissionResult) string { return v.State }).(pulumi.StringOutput)
 }

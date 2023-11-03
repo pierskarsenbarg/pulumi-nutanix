@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetAccessControlPoliciesEntityContextFilterListEntityFilterExpressionListResult
     {
+        /// <summary>
+        /// -  The LHS of the filter expression - the entity type.
+        /// </summary>
         public readonly string LeftHandSideEntityType;
+        /// <summary>
+        /// - The operator in the filter expression.
+        /// </summary>
         public readonly string Operator;
+        /// <summary>
+        /// - The right hand side (RHS) of an scope expression.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAccessControlPoliciesEntityContextFilterListEntityFilterExpressionListRightHandSideResult> RightHandSides;
 
         [OutputConstructor]

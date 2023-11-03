@@ -11,29 +11,47 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix
 {
     [NutanixResourceType("nutanix:index/foundationCentralImageCluster:FoundationCentralImageCluster")]
-    public partial class FoundationCentralImageCluster : Pulumi.CustomResource
+    public partial class FoundationCentralImageCluster : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// Sha256sum of AOS package.
+        /// </summary>
         [Output("aosPackageSha256sum")]
         public Output<string> AosPackageSha256sum { get; private set; } = null!;
 
+        /// <summary>
+        /// URL to download AOS package. Required only if imaging is needed.
+        /// </summary>
         [Output("aosPackageUrl")]
         public Output<string> AosPackageUrl { get; private set; } = null!;
 
         [Output("archived")]
         public Output<bool> Archived { get; private set; } = null!;
 
+        /// <summary>
+        /// External management ip of the cluster.
+        /// </summary>
         [Output("clusterExternalIp")]
         public Output<string> ClusterExternalIp { get; private set; } = null!;
 
+        /// <summary>
+        /// Name of the cluster.
+        /// </summary>
         [Output("clusterName")]
         public Output<string> ClusterName { get; private set; } = null!;
 
+        /// <summary>
+        /// Number of nodes in the cluster.
+        /// </summary>
         [Output("clusterSize")]
         public Output<int> ClusterSize { get; private set; } = null!;
 
         [Output("clusterStatus")]
         public Output<Outputs.FoundationCentralImageClusterClusterStatus> ClusterStatus { get; private set; } = null!;
 
+        /// <summary>
+        /// Common network settings across the nodes in the cluster.
+        /// </summary>
         [Output("commonNetworkSettings")]
         public Output<Outputs.FoundationCentralImageClusterCommonNetworkSettings> CommonNetworkSettings { get; private set; } = null!;
 
@@ -52,12 +70,18 @@ namespace PiersKarsenbarg.Nutanix
         [Output("foundationInitNodeUuid")]
         public Output<string> FoundationInitNodeUuid { get; private set; } = null!;
 
+        /// <summary>
+        /// Details of the hypervisor iso.
+        /// </summary>
         [Output("hypervisorIsoDetails")]
         public Output<Outputs.FoundationCentralImageClusterHypervisorIsoDetails> HypervisorIsoDetails { get; private set; } = null!;
 
         [Output("imageClusterUuid")]
         public Output<string> ImageClusterUuid { get; private set; } = null!;
 
+        /// <summary>
+        /// Unique id of the cluster.
+        /// </summary>
         [Output("imagedClusterUuid")]
         public Output<string> ImagedClusterUuid { get; private set; } = null!;
 
@@ -67,15 +91,24 @@ namespace PiersKarsenbarg.Nutanix
         [Output("nodeLists")]
         public Output<ImmutableArray<Outputs.FoundationCentralImageClusterNodeList>> NodeLists { get; private set; } = null!;
 
+        /// <summary>
+        /// Redundancy factor of the cluster.
+        /// </summary>
         [Output("redundancyFactor")]
         public Output<int> RedundancyFactor { get; private set; } = null!;
 
         [Output("skipClusterCreation")]
         public Output<bool?> SkipClusterCreation { get; private set; } = null!;
 
+        /// <summary>
+        /// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+        /// </summary>
         [Output("storageNodeCount")]
         public Output<int> StorageNodeCount { get; private set; } = null!;
 
+        /// <summary>
+        /// Timezone to be set on the cluster.
+        /// </summary>
         [Output("timezone")]
         public Output<string> Timezone { get; private set; } = null!;
 
@@ -127,29 +160,50 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class FoundationCentralImageClusterArgs : Pulumi.ResourceArgs
+    public sealed class FoundationCentralImageClusterArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Sha256sum of AOS package.
+        /// </summary>
         [Input("aosPackageSha256sum")]
         public Input<string>? AosPackageSha256sum { get; set; }
 
+        /// <summary>
+        /// URL to download AOS package. Required only if imaging is needed.
+        /// </summary>
         [Input("aosPackageUrl")]
         public Input<string>? AosPackageUrl { get; set; }
 
+        /// <summary>
+        /// External management ip of the cluster.
+        /// </summary>
         [Input("clusterExternalIp")]
         public Input<string>? ClusterExternalIp { get; set; }
 
+        /// <summary>
+        /// Name of the cluster.
+        /// </summary>
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }
 
+        /// <summary>
+        /// Number of nodes in the cluster.
+        /// </summary>
         [Input("clusterSize")]
         public Input<int>? ClusterSize { get; set; }
 
         [Input("clusterStatus")]
         public Input<Inputs.FoundationCentralImageClusterClusterStatusArgs>? ClusterStatus { get; set; }
 
+        /// <summary>
+        /// Common network settings across the nodes in the cluster.
+        /// </summary>
         [Input("commonNetworkSettings")]
         public Input<Inputs.FoundationCentralImageClusterCommonNetworkSettingsArgs>? CommonNetworkSettings { get; set; }
 
+        /// <summary>
+        /// Details of the hypervisor iso.
+        /// </summary>
         [Input("hypervisorIsoDetails")]
         public Input<Inputs.FoundationCentralImageClusterHypervisorIsoDetailsArgs>? HypervisorIsoDetails { get; set; }
 
@@ -164,46 +218,74 @@ namespace PiersKarsenbarg.Nutanix
             set => _nodeLists = value;
         }
 
+        /// <summary>
+        /// Redundancy factor of the cluster.
+        /// </summary>
         [Input("redundancyFactor")]
         public Input<int>? RedundancyFactor { get; set; }
 
         [Input("skipClusterCreation")]
         public Input<bool>? SkipClusterCreation { get; set; }
 
+        /// <summary>
+        /// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+        /// </summary>
         [Input("storageNodeCount")]
         public Input<int>? StorageNodeCount { get; set; }
 
+        /// <summary>
+        /// Timezone to be set on the cluster.
+        /// </summary>
         [Input("timezone")]
         public Input<string>? Timezone { get; set; }
 
         public FoundationCentralImageClusterArgs()
         {
         }
+        public static new FoundationCentralImageClusterArgs Empty => new FoundationCentralImageClusterArgs();
     }
 
-    public sealed class FoundationCentralImageClusterState : Pulumi.ResourceArgs
+    public sealed class FoundationCentralImageClusterState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Sha256sum of AOS package.
+        /// </summary>
         [Input("aosPackageSha256sum")]
         public Input<string>? AosPackageSha256sum { get; set; }
 
+        /// <summary>
+        /// URL to download AOS package. Required only if imaging is needed.
+        /// </summary>
         [Input("aosPackageUrl")]
         public Input<string>? AosPackageUrl { get; set; }
 
         [Input("archived")]
         public Input<bool>? Archived { get; set; }
 
+        /// <summary>
+        /// External management ip of the cluster.
+        /// </summary>
         [Input("clusterExternalIp")]
         public Input<string>? ClusterExternalIp { get; set; }
 
+        /// <summary>
+        /// Name of the cluster.
+        /// </summary>
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }
 
+        /// <summary>
+        /// Number of nodes in the cluster.
+        /// </summary>
         [Input("clusterSize")]
         public Input<int>? ClusterSize { get; set; }
 
         [Input("clusterStatus")]
         public Input<Inputs.FoundationCentralImageClusterClusterStatusGetArgs>? ClusterStatus { get; set; }
 
+        /// <summary>
+        /// Common network settings across the nodes in the cluster.
+        /// </summary>
         [Input("commonNetworkSettings")]
         public Input<Inputs.FoundationCentralImageClusterCommonNetworkSettingsGetArgs>? CommonNetworkSettings { get; set; }
 
@@ -227,12 +309,18 @@ namespace PiersKarsenbarg.Nutanix
         [Input("foundationInitNodeUuid")]
         public Input<string>? FoundationInitNodeUuid { get; set; }
 
+        /// <summary>
+        /// Details of the hypervisor iso.
+        /// </summary>
         [Input("hypervisorIsoDetails")]
         public Input<Inputs.FoundationCentralImageClusterHypervisorIsoDetailsGetArgs>? HypervisorIsoDetails { get; set; }
 
         [Input("imageClusterUuid")]
         public Input<string>? ImageClusterUuid { get; set; }
 
+        /// <summary>
+        /// Unique id of the cluster.
+        /// </summary>
         [Input("imagedClusterUuid")]
         public Input<string>? ImagedClusterUuid { get; set; }
 
@@ -252,15 +340,24 @@ namespace PiersKarsenbarg.Nutanix
             set => _nodeLists = value;
         }
 
+        /// <summary>
+        /// Redundancy factor of the cluster.
+        /// </summary>
         [Input("redundancyFactor")]
         public Input<int>? RedundancyFactor { get; set; }
 
         [Input("skipClusterCreation")]
         public Input<bool>? SkipClusterCreation { get; set; }
 
+        /// <summary>
+        /// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+        /// </summary>
         [Input("storageNodeCount")]
         public Input<int>? StorageNodeCount { get; set; }
 
+        /// <summary>
+        /// Timezone to be set on the cluster.
+        /// </summary>
         [Input("timezone")]
         public Input<string>? Timezone { get; set; }
 
@@ -270,5 +367,6 @@ namespace PiersKarsenbarg.Nutanix
         public FoundationCentralImageClusterState()
         {
         }
+        public static new FoundationCentralImageClusterState Empty => new FoundationCentralImageClusterState();
     }
 }

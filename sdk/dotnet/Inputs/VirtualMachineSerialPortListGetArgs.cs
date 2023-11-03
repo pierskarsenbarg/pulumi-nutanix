@@ -11,16 +11,23 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class VirtualMachineSerialPortListGetArgs : Pulumi.ResourceArgs
+    public sealed class VirtualMachineSerialPortListGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - Index of the serial port (int).
+        /// </summary>
         [Input("index")]
         public Input<int>? Index { get; set; }
 
+        /// <summary>
+        /// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        /// </summary>
         [Input("isConnected")]
         public Input<bool>? IsConnected { get; set; }
 
         public VirtualMachineSerialPortListGetArgs()
         {
         }
+        public static new VirtualMachineSerialPortListGetArgs Empty => new VirtualMachineSerialPortListGetArgs();
     }
 }

@@ -2,76 +2,12 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
  * Provides a resource to create an access control policy based on the input parameters.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
- *
- * const test = new nutanix.AccessControlPolicy("test", {
- *     contextFilterLists: [{
- *         entityFilterExpressionLists: [
- *             {
- *                 leftHandSideEntityType: "cluster",
- *                 operator: "IN",
- *                 rightHandSide: {
- *                     uuidLists: ["00058ef8-c31c-f0bc-0000-000000007b23"],
- *                 },
- *             },
- *             {
- *                 leftHandSideEntityType: "image",
- *                 operator: "IN",
- *                 rightHandSide: {
- *                     collection: "ALL",
- *                 },
- *             },
- *             {
- *                 leftHandSideEntityType: "category",
- *                 operator: "IN",
- *                 rightHandSide: {
- *                     collection: "ALL",
- *                 },
- *             },
- *             {
- *                 leftHandSideEntityType: "marketplace_item",
- *                 operator: "IN",
- *                 rightHandSide: {
- *                     collection: "SELF_OWNED",
- *                 },
- *             },
- *             {
- *                 leftHandSideEntityType: "app_task",
- *                 operator: "IN",
- *                 rightHandSide: {
- *                     collection: "SELF_OWNED",
- *                 },
- *             },
- *             {
- *                 leftHandSideEntityType: "app_variable",
- *                 operator: "IN",
- *                 rightHandSide: {
- *                     collection: "SELF_OWNED",
- *                 },
- *             },
- *         ],
- *     }],
- *     description: "DESCRIPTION OF THE ACCESS CONTROL POLICY",
- *     roleReference: {
- *         kind: "role",
- *         uuid: "UUID of role",
- *     },
- *     userReferenceLists: [{
- *         name: "admin",
- *         uuid: "UUID of User existent",
- *     }],
- * });
- * ```
  */
 export class AccessControlPolicy extends pulumi.CustomResource {
     /**
@@ -103,18 +39,44 @@ export class AccessControlPolicy extends pulumi.CustomResource {
 
     /**
      * The version of the API.
-     * * `state`: - The state of the Access Control Policy.
      */
     public /*out*/ readonly apiVersion!: pulumi.Output<string>;
+    /**
+     * - (Optional) Categories for the Access Control Policy.
+     */
     public readonly categories!: pulumi.Output<outputs.AccessControlPolicyCategory[]>;
     public readonly contextFilterLists!: pulumi.Output<outputs.AccessControlPolicyContextFilterList[]>;
+    /**
+     * - (Optional) The description of Access Control Policy.
+     */
     public readonly description!: pulumi.Output<string>;
+    /**
+     * - The Access Control Policy kind metadata.
+     */
     public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - (Optional) Name of the Access Control Policy.
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * - (Optional) The reference to a user.
+     */
     public readonly ownerReference!: pulumi.Output<outputs.AccessControlPolicyOwnerReference>;
+    /**
+     * - (Required) The reference to a role.
+     */
     public readonly roleReference!: pulumi.Output<outputs.AccessControlPolicyRoleReference>;
+    /**
+     * - The state of the Access Control Policy.
+     */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * - (Optional) The User group(s) being assigned a given role.
+     */
     public readonly userGroupReferenceLists!: pulumi.Output<outputs.AccessControlPolicyUserGroupReferenceList[]>;
+    /**
+     * - (Optional) The User(s) being assigned a given role.
+     */
     public readonly userReferenceLists!: pulumi.Output<outputs.AccessControlPolicyUserReferenceList[]>;
 
     /**
@@ -169,18 +131,44 @@ export class AccessControlPolicy extends pulumi.CustomResource {
 export interface AccessControlPolicyState {
     /**
      * The version of the API.
-     * * `state`: - The state of the Access Control Policy.
      */
     apiVersion?: pulumi.Input<string>;
+    /**
+     * - (Optional) Categories for the Access Control Policy.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyCategory>[]>;
     contextFilterLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyContextFilterList>[]>;
+    /**
+     * - (Optional) The description of Access Control Policy.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * - The Access Control Policy kind metadata.
+     */
     metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) Name of the Access Control Policy.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Optional) The reference to a user.
+     */
     ownerReference?: pulumi.Input<inputs.AccessControlPolicyOwnerReference>;
+    /**
+     * - (Required) The reference to a role.
+     */
     roleReference?: pulumi.Input<inputs.AccessControlPolicyRoleReference>;
+    /**
+     * - The state of the Access Control Policy.
+     */
     state?: pulumi.Input<string>;
+    /**
+     * - (Optional) The User group(s) being assigned a given role.
+     */
     userGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyUserGroupReferenceList>[]>;
+    /**
+     * - (Optional) The User(s) being assigned a given role.
+     */
     userReferenceLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyUserReferenceList>[]>;
 }
 
@@ -188,12 +176,33 @@ export interface AccessControlPolicyState {
  * The set of arguments for constructing a AccessControlPolicy resource.
  */
 export interface AccessControlPolicyArgs {
+    /**
+     * - (Optional) Categories for the Access Control Policy.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyCategory>[]>;
     contextFilterLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyContextFilterList>[]>;
+    /**
+     * - (Optional) The description of Access Control Policy.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * - (Optional) Name of the Access Control Policy.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Optional) The reference to a user.
+     */
     ownerReference?: pulumi.Input<inputs.AccessControlPolicyOwnerReference>;
+    /**
+     * - (Required) The reference to a role.
+     */
     roleReference: pulumi.Input<inputs.AccessControlPolicyRoleReference>;
+    /**
+     * - (Optional) The User group(s) being assigned a given role.
+     */
     userGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyUserGroupReferenceList>[]>;
+    /**
+     * - (Optional) The User(s) being assigned a given role.
+     */
     userReferenceLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyUserReferenceList>[]>;
 }

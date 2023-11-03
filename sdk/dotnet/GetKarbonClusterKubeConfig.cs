@@ -20,30 +20,30 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configbyid = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
-        ///         var configbyid = Output.Create(Nutanix.GetKarbonClusterKubeConfig.InvokeAsync(new Nutanix.GetKarbonClusterKubeConfigArgs
-        ///         {
-        ///             KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
-        ///         }));
-        ///         var configbyname = Output.Create(Nutanix.GetKarbonClusterKubeConfig.InvokeAsync(new Nutanix.GetKarbonClusterKubeConfigArgs
-        ///         {
-        ///             KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
-        ///         }));
-        ///     }
+        ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
+        ///     });
         /// 
-        /// }
+        ///     var configbyname = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
+        ///     {
+        ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetKarbonClusterKubeConfigResult> InvokeAsync(GetKarbonClusterKubeConfigArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetKarbonClusterKubeConfigResult>("nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig", args ?? new GetKarbonClusterKubeConfigArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetKarbonClusterKubeConfigResult>("nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig", args ?? new GetKarbonClusterKubeConfigArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes the SSH config from a Karbon Cluster
@@ -53,57 +53,71 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var configbyid = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
         ///     {
-        ///         var configbyid = Output.Create(Nutanix.GetKarbonClusterKubeConfig.InvokeAsync(new Nutanix.GetKarbonClusterKubeConfigArgs
-        ///         {
-        ///             KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
-        ///         }));
-        ///         var configbyname = Output.Create(Nutanix.GetKarbonClusterKubeConfig.InvokeAsync(new Nutanix.GetKarbonClusterKubeConfigArgs
-        ///         {
-        ///             KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
-        ///         }));
-        ///     }
+        ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
+        ///     });
         /// 
-        /// }
+        ///     var configbyname = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()
+        ///     {
+        ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetKarbonClusterKubeConfigResult> Invoke(GetKarbonClusterKubeConfigInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetKarbonClusterKubeConfigResult>("nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig", args ?? new GetKarbonClusterKubeConfigInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetKarbonClusterKubeConfigResult>("nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig", args ?? new GetKarbonClusterKubeConfigInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetKarbonClusterKubeConfigArgs : Pulumi.InvokeArgs
+    public sealed class GetKarbonClusterKubeConfigArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Represents karbon cluster uuid
+        /// </summary>
         [Input("karbonClusterId")]
         public string? KarbonClusterId { get; set; }
 
+        /// <summary>
+        /// Represents the name of karbon cluster
+        /// </summary>
         [Input("karbonClusterName")]
         public string? KarbonClusterName { get; set; }
 
         public GetKarbonClusterKubeConfigArgs()
         {
         }
+        public static new GetKarbonClusterKubeConfigArgs Empty => new GetKarbonClusterKubeConfigArgs();
     }
 
-    public sealed class GetKarbonClusterKubeConfigInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetKarbonClusterKubeConfigInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Represents karbon cluster uuid
+        /// </summary>
         [Input("karbonClusterId")]
         public Input<string>? KarbonClusterId { get; set; }
 
+        /// <summary>
+        /// Represents the name of karbon cluster
+        /// </summary>
         [Input("karbonClusterName")]
         public Input<string>? KarbonClusterName { get; set; }
 
         public GetKarbonClusterKubeConfigInvokeArgs()
         {
         }
+        public static new GetKarbonClusterKubeConfigInvokeArgs Empty => new GetKarbonClusterKubeConfigInvokeArgs();
     }
 
 

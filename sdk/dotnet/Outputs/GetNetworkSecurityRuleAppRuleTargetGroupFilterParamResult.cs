@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetNetworkSecurityRuleAppRuleTargetGroupFilterParamResult
     {
+        /// <summary>
+        /// - the name.
+        /// </summary>
         public readonly string Name;
         public readonly ImmutableArray<string> Values;
 

@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListScriptListGetArgs : Pulumi.ResourceArgs
+    public sealed class RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListScriptListGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("enableScriptExec", required: true)]
         public Input<bool> EnableScriptExec { get; set; } = null!;
@@ -22,5 +22,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListScriptListGetArgs()
         {
         }
+        public static new RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListScriptListGetArgs Empty => new RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListScriptListGetArgs();
     }
 }

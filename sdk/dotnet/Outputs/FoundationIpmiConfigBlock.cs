@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class FoundationIpmiConfigBlock
     {
+        /// <summary>
+        /// - (Optional) Block Id
+        /// </summary>
         public readonly string? BlockId;
+        /// <summary>
+        /// - (Required) array of nodes for ipmi config.
+        /// </summary>
         public readonly ImmutableArray<Outputs.FoundationIpmiConfigBlockNode> Nodes;
 
         [OutputConstructor]

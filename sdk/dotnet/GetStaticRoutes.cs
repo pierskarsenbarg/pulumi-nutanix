@@ -16,17 +16,17 @@ namespace PiersKarsenbarg.Nutanix
         /// Provides a datasource to retrieve static routes within VPCs given vpc_uuid.
         /// </summary>
         public static Task<GetStaticRoutesResult> InvokeAsync(GetStaticRoutesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetStaticRoutesResult>("nutanix:index/getStaticRoutes:getStaticRoutes", args ?? new GetStaticRoutesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetStaticRoutesResult>("nutanix:index/getStaticRoutes:getStaticRoutes", args ?? new GetStaticRoutesArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a datasource to retrieve static routes within VPCs given vpc_uuid.
         /// </summary>
         public static Output<GetStaticRoutesResult> Invoke(GetStaticRoutesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetStaticRoutesResult>("nutanix:index/getStaticRoutes:getStaticRoutes", args ?? new GetStaticRoutesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetStaticRoutesResult>("nutanix:index/getStaticRoutes:getStaticRoutes", args ?? new GetStaticRoutesInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetStaticRoutesArgs : Pulumi.InvokeArgs
+    public sealed class GetStaticRoutesArgs : global::Pulumi.InvokeArgs
     {
         [Input("vpcName")]
         public string? VpcName { get; set; }
@@ -40,9 +40,10 @@ namespace PiersKarsenbarg.Nutanix
         public GetStaticRoutesArgs()
         {
         }
+        public static new GetStaticRoutesArgs Empty => new GetStaticRoutesArgs();
     }
 
-    public sealed class GetStaticRoutesInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetStaticRoutesInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("vpcName")]
         public Input<string>? VpcName { get; set; }
@@ -56,6 +57,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetStaticRoutesInvokeArgs()
         {
         }
+        public static new GetStaticRoutesInvokeArgs Empty => new GetStaticRoutesInvokeArgs();
     }
 
 

@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceGetArgs : Pulumi.ResourceArgs
+    public sealed class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Required) The kind name (Default value: `project`).
@@ -34,5 +34,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceGetArgs()
         {
         }
+        public static new RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceGetArgs Empty => new RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceGetArgs();
     }
 }

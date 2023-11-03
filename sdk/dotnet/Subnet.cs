@@ -12,54 +12,9 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// using Nutanix = Pulumi.Nutanix;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var clusters = Output.Create(Nutanix.GetClusters.InvokeAsync(
-    ///         {
-    ///             { "metadata", 
-    ///             {
-    ///                 { "length", 2 },
-    ///             } },
-    ///         }));
-    ///         this.Cluster = clusters.Apply(clusters =&gt; clusters.Entities?[0]?.Metadata?.Uuid);
-    ///         var next_iac_managed = new Nutanix.Subnet("next-iac-managed", new Nutanix.SubnetArgs
-    ///         {
-    ///             ClusterUuid = clusters.Apply(clusters =&gt; clusters.Entities?[0]?.Metadata?.Uuid),
-    ///             VlanId = 101,
-    ///             SubnetType = "VLAN",
-    ///             PrefixLength = 20,
-    ///             DefaultGatewayIp = "10.5.80.1",
-    ///             SubnetIp = "10.5.80.0",
-    ///             DhcpDomainNameServerLists = 
-    ///             {
-    ///                 "8.8.8.8",
-    ///                 "4.2.2.2",
-    ///             },
-    ///             DhcpDomainSearchLists = 
-    ///             {
-    ///                 "nutanix.com",
-    ///                 "eng.nutanix.com",
-    ///             },
-    ///         });
-    ///     }
-    /// 
-    ///     [Output("cluster")]
-    ///     public Output&lt;string&gt; Cluster { get; set; }
-    /// }
-    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/subnet:Subnet")]
-    public partial class Subnet : Pulumi.CustomResource
+    public partial class Subnet : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The version of the API.
@@ -67,36 +22,63 @@ namespace PiersKarsenbarg.Nutanix
         [Output("apiVersion")]
         public Output<string> ApiVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The reference to a availability_zone.
+        /// </summary>
         [Output("availabilityZoneReference")]
         public Output<ImmutableDictionary<string, string>> AvailabilityZoneReference { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The categories of the resource.
+        /// </summary>
         [Output("categories")]
         public Output<ImmutableArray<Outputs.SubnetCategory>> Categories { get; private set; } = null!;
 
         [Output("clusterName")]
         public Output<string> ClusterName { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) The UUID of the cluster.
+        /// </summary>
         [Output("clusterUuid")]
         public Output<string?> ClusterUuid { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Default gateway IP address.
+        /// </summary>
         [Output("defaultGatewayIp")]
         public Output<string> DefaultGatewayIp { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) A description for subnet.
+        /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         [Output("dhcpDomainNameServerLists")]
         public Output<ImmutableArray<string>> DhcpDomainNameServerLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional).
+        /// </summary>
         [Output("dhcpDomainSearchLists")]
         public Output<ImmutableArray<string>> DhcpDomainSearchLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Spec for defining DHCP options.
+        /// </summary>
         [Output("dhcpOptions")]
         public Output<ImmutableDictionary<string, string>> DhcpOptions { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Host address.
+        /// </summary>
         [Output("dhcpServerAddress")]
         public Output<ImmutableDictionary<string, string>> DhcpServerAddress { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Port Number.
+        /// </summary>
         [Output("dhcpServerAddressPort")]
         public Output<int> DhcpServerAddressPort { get; private set; } = null!;
 
@@ -109,39 +91,72 @@ namespace PiersKarsenbarg.Nutanix
         [Output("isExternal")]
         public Output<bool> IsExternal { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) The subnet kind metadata.
+        /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Subnet name (Readonly).
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The reference to a network_function_chain.
+        /// </summary>
         [Output("networkFunctionChainReference")]
         public Output<ImmutableDictionary<string, string>> NetworkFunctionChainReference { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         [Output("ownerReference")]
         public Output<ImmutableDictionary<string, string>> OwnerReference { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional).
+        /// </summary>
         [Output("prefixLength")]
         public Output<int> PrefixLength { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The reference to a project.
+        /// </summary>
         [Output("projectReference")]
         public Output<ImmutableDictionary<string, string>> ProjectReference { get; private set; } = null!;
 
+        /// <summary>
+        /// - The state of the subnet.
+        /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Subnet IP address.
+        /// </summary>
         [Output("subnetIp")]
         public Output<string> SubnetIp { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional).
+        /// </summary>
         [Output("subnetType")]
         public Output<string> SubnetType { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional).
+        /// </summary>
         [Output("vlanId")]
         public Output<int> VlanId { get; private set; } = null!;
 
         [Output("vpcReferenceUuid")]
         public Output<string> VpcReferenceUuid { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional).
+        /// </summary>
         [Output("vswitchName")]
         public Output<string> VswitchName { get; private set; } = null!;
 
@@ -190,10 +205,14 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class SubnetArgs : Pulumi.ResourceArgs
+    public sealed class SubnetArgs : global::Pulumi.ResourceArgs
     {
         [Input("availabilityZoneReference")]
         private InputMap<string>? _availabilityZoneReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a availability_zone.
+        /// </summary>
         public InputMap<string> AvailabilityZoneReference
         {
             get => _availabilityZoneReference ?? (_availabilityZoneReference = new InputMap<string>());
@@ -202,18 +221,31 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("categories")]
         private InputList<Inputs.SubnetCategoryArgs>? _categories;
+
+        /// <summary>
+        /// - (Optional) The categories of the resource.
+        /// </summary>
         public InputList<Inputs.SubnetCategoryArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.SubnetCategoryArgs>());
             set => _categories = value;
         }
 
+        /// <summary>
+        /// - (Required) The UUID of the cluster.
+        /// </summary>
         [Input("clusterUuid")]
         public Input<string>? ClusterUuid { get; set; }
 
+        /// <summary>
+        /// - (Optional) Default gateway IP address.
+        /// </summary>
         [Input("defaultGatewayIp")]
         public Input<string>? DefaultGatewayIp { get; set; }
 
+        /// <summary>
+        /// - (Optional) A description for subnet.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
@@ -227,6 +259,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("dhcpDomainSearchLists")]
         private InputList<string>? _dhcpDomainSearchLists;
+
+        /// <summary>
+        /// - (Optional).
+        /// </summary>
         public InputList<string> DhcpDomainSearchLists
         {
             get => _dhcpDomainSearchLists ?? (_dhcpDomainSearchLists = new InputList<string>());
@@ -235,6 +271,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("dhcpOptions")]
         private InputMap<string>? _dhcpOptions;
+
+        /// <summary>
+        /// - (Optional) Spec for defining DHCP options.
+        /// </summary>
         public InputMap<string> DhcpOptions
         {
             get => _dhcpOptions ?? (_dhcpOptions = new InputMap<string>());
@@ -243,12 +283,19 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("dhcpServerAddress")]
         private InputMap<string>? _dhcpServerAddress;
+
+        /// <summary>
+        /// - (Optional) Host address.
+        /// </summary>
         public InputMap<string> DhcpServerAddress
         {
             get => _dhcpServerAddress ?? (_dhcpServerAddress = new InputMap<string>());
             set => _dhcpServerAddress = value;
         }
 
+        /// <summary>
+        /// - (Optional) Port Number.
+        /// </summary>
         [Input("dhcpServerAddressPort")]
         public Input<int>? DhcpServerAddressPort { get; set; }
 
@@ -266,11 +313,18 @@ namespace PiersKarsenbarg.Nutanix
         [Input("isExternal")]
         public Input<bool>? IsExternal { get; set; }
 
+        /// <summary>
+        /// - (Optional) Subnet name (Readonly).
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("networkFunctionChainReference")]
         private InputMap<string>? _networkFunctionChainReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a network_function_chain.
+        /// </summary>
         public InputMap<string> NetworkFunctionChainReference
         {
             get => _networkFunctionChainReference ?? (_networkFunctionChainReference = new InputMap<string>());
@@ -279,44 +333,68 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("ownerReference")]
         private InputMap<string>? _ownerReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         public InputMap<string> OwnerReference
         {
             get => _ownerReference ?? (_ownerReference = new InputMap<string>());
             set => _ownerReference = value;
         }
 
+        /// <summary>
+        /// - (Optional).
+        /// </summary>
         [Input("prefixLength")]
         public Input<int>? PrefixLength { get; set; }
 
         [Input("projectReference")]
         private InputMap<string>? _projectReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a project.
+        /// </summary>
         public InputMap<string> ProjectReference
         {
             get => _projectReference ?? (_projectReference = new InputMap<string>());
             set => _projectReference = value;
         }
 
+        /// <summary>
+        /// - (Optional) Subnet IP address.
+        /// </summary>
         [Input("subnetIp")]
         public Input<string>? SubnetIp { get; set; }
 
+        /// <summary>
+        /// - (Optional).
+        /// </summary>
         [Input("subnetType", required: true)]
         public Input<string> SubnetType { get; set; } = null!;
 
+        /// <summary>
+        /// - (Optional).
+        /// </summary>
         [Input("vlanId")]
         public Input<int>? VlanId { get; set; }
 
         [Input("vpcReferenceUuid")]
         public Input<string>? VpcReferenceUuid { get; set; }
 
+        /// <summary>
+        /// - (Optional).
+        /// </summary>
         [Input("vswitchName")]
         public Input<string>? VswitchName { get; set; }
 
         public SubnetArgs()
         {
         }
+        public static new SubnetArgs Empty => new SubnetArgs();
     }
 
-    public sealed class SubnetState : Pulumi.ResourceArgs
+    public sealed class SubnetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The version of the API.
@@ -326,6 +404,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("availabilityZoneReference")]
         private InputMap<string>? _availabilityZoneReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a availability_zone.
+        /// </summary>
         public InputMap<string> AvailabilityZoneReference
         {
             get => _availabilityZoneReference ?? (_availabilityZoneReference = new InputMap<string>());
@@ -334,6 +416,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("categories")]
         private InputList<Inputs.SubnetCategoryGetArgs>? _categories;
+
+        /// <summary>
+        /// - (Optional) The categories of the resource.
+        /// </summary>
         public InputList<Inputs.SubnetCategoryGetArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.SubnetCategoryGetArgs>());
@@ -343,12 +429,21 @@ namespace PiersKarsenbarg.Nutanix
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }
 
+        /// <summary>
+        /// - (Required) The UUID of the cluster.
+        /// </summary>
         [Input("clusterUuid")]
         public Input<string>? ClusterUuid { get; set; }
 
+        /// <summary>
+        /// - (Optional) Default gateway IP address.
+        /// </summary>
         [Input("defaultGatewayIp")]
         public Input<string>? DefaultGatewayIp { get; set; }
 
+        /// <summary>
+        /// - (Optional) A description for subnet.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
@@ -362,6 +457,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("dhcpDomainSearchLists")]
         private InputList<string>? _dhcpDomainSearchLists;
+
+        /// <summary>
+        /// - (Optional).
+        /// </summary>
         public InputList<string> DhcpDomainSearchLists
         {
             get => _dhcpDomainSearchLists ?? (_dhcpDomainSearchLists = new InputList<string>());
@@ -370,6 +469,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("dhcpOptions")]
         private InputMap<string>? _dhcpOptions;
+
+        /// <summary>
+        /// - (Optional) Spec for defining DHCP options.
+        /// </summary>
         public InputMap<string> DhcpOptions
         {
             get => _dhcpOptions ?? (_dhcpOptions = new InputMap<string>());
@@ -378,12 +481,19 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("dhcpServerAddress")]
         private InputMap<string>? _dhcpServerAddress;
+
+        /// <summary>
+        /// - (Optional) Host address.
+        /// </summary>
         public InputMap<string> DhcpServerAddress
         {
             get => _dhcpServerAddress ?? (_dhcpServerAddress = new InputMap<string>());
             set => _dhcpServerAddress = value;
         }
 
+        /// <summary>
+        /// - (Optional) Port Number.
+        /// </summary>
         [Input("dhcpServerAddressPort")]
         public Input<int>? DhcpServerAddressPort { get; set; }
 
@@ -403,17 +513,28 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("metadata")]
         private InputMap<string>? _metadata;
+
+        /// <summary>
+        /// - (Required) The subnet kind metadata.
+        /// </summary>
         public InputMap<string> Metadata
         {
             get => _metadata ?? (_metadata = new InputMap<string>());
             set => _metadata = value;
         }
 
+        /// <summary>
+        /// - (Optional) Subnet name (Readonly).
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("networkFunctionChainReference")]
         private InputMap<string>? _networkFunctionChainReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a network_function_chain.
+        /// </summary>
         public InputMap<string> NetworkFunctionChainReference
         {
             get => _networkFunctionChainReference ?? (_networkFunctionChainReference = new InputMap<string>());
@@ -422,43 +543,70 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("ownerReference")]
         private InputMap<string>? _ownerReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         public InputMap<string> OwnerReference
         {
             get => _ownerReference ?? (_ownerReference = new InputMap<string>());
             set => _ownerReference = value;
         }
 
+        /// <summary>
+        /// - (Optional).
+        /// </summary>
         [Input("prefixLength")]
         public Input<int>? PrefixLength { get; set; }
 
         [Input("projectReference")]
         private InputMap<string>? _projectReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a project.
+        /// </summary>
         public InputMap<string> ProjectReference
         {
             get => _projectReference ?? (_projectReference = new InputMap<string>());
             set => _projectReference = value;
         }
 
+        /// <summary>
+        /// - The state of the subnet.
+        /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// - (Optional) Subnet IP address.
+        /// </summary>
         [Input("subnetIp")]
         public Input<string>? SubnetIp { get; set; }
 
+        /// <summary>
+        /// - (Optional).
+        /// </summary>
         [Input("subnetType")]
         public Input<string>? SubnetType { get; set; }
 
+        /// <summary>
+        /// - (Optional).
+        /// </summary>
         [Input("vlanId")]
         public Input<int>? VlanId { get; set; }
 
         [Input("vpcReferenceUuid")]
         public Input<string>? VpcReferenceUuid { get; set; }
 
+        /// <summary>
+        /// - (Optional).
+        /// </summary>
         [Input("vswitchName")]
         public Input<string>? VswitchName { get; set; }
 
         public SubnetState()
         {
         }
+        public static new SubnetState Empty => new SubnetState();
     }
 }

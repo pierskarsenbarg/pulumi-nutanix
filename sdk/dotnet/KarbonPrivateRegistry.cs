@@ -16,44 +16,63 @@ namespace PiersKarsenbarg.Nutanix
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// using Nutanix = Pulumi.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
-    ///     {
-    ///         var registries = Output.Create(Nutanix.GetKarbonPrivateRegistry.InvokeAsync());
-    ///         var registry = new Nutanix.KarbonPrivateRegistry("registry", new Nutanix.KarbonPrivateRegistryArgs
-    ///         {
-    ///         });
-    ///     }
+    ///     var registries = Nutanix.GetKarbonPrivateRegistry.Invoke();
     /// 
-    /// }
+    ///     var registry = new Nutanix.KarbonPrivateRegistry("registry");
+    /// 
+    /// });
     /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/karbonPrivateRegistry:KarbonPrivateRegistry")]
-    public partial class KarbonPrivateRegistry : Pulumi.CustomResource
+    public partial class KarbonPrivateRegistry : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Output("cert")]
         public Output<string?> Cert { get; private set; } = null!;
 
+        /// <summary>
+        /// - Endpoint of the private in format `url:port`.
+        /// </summary>
         [Output("endpoint")]
         public Output<string> Endpoint { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) Name of the private registry configuration. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Password for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Output("password")]
         public Output<string?> Password { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Port of the private registry.
+        /// </summary>
         [Output("port")]
         public Output<int> Port { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Output("url")]
         public Output<string> Url { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Username for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Output("username")]
         public Output<string?> Username { get; private set; } = null!;
 
@@ -81,6 +100,10 @@ namespace PiersKarsenbarg.Nutanix
             {
                 Version = Utilities.Version,
                 PluginDownloadURL = "https://github.com/pierskarsenbarg/pulumi-nutanix/releases/download/${VERSION}",
+                AdditionalSecretOutputs =
+                {
+                    "password",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -102,56 +125,117 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class KarbonPrivateRegistryArgs : Pulumi.ResourceArgs
+    public sealed class KarbonPrivateRegistryArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("cert")]
         public Input<string>? Cert { get; set; }
 
+        /// <summary>
+        /// - (Required) Name of the private registry configuration. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("password")]
-        public Input<string>? Password { get; set; }
+        private Input<string>? _password;
 
+        /// <summary>
+        /// - (Optional) Password for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// - (Optional) Port of the private registry.
+        /// </summary>
         [Input("port", required: true)]
         public Input<int> Port { get; set; } = null!;
 
+        /// <summary>
+        /// - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("url", required: true)]
         public Input<string> Url { get; set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Username for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }
 
         public KarbonPrivateRegistryArgs()
         {
         }
+        public static new KarbonPrivateRegistryArgs Empty => new KarbonPrivateRegistryArgs();
     }
 
-    public sealed class KarbonPrivateRegistryState : Pulumi.ResourceArgs
+    public sealed class KarbonPrivateRegistryState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("cert")]
         public Input<string>? Cert { get; set; }
 
+        /// <summary>
+        /// - Endpoint of the private in format `url:port`.
+        /// </summary>
         [Input("endpoint")]
         public Input<string>? Endpoint { get; set; }
 
+        /// <summary>
+        /// - (Required) Name of the private registry configuration. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("password")]
-        public Input<string>? Password { get; set; }
+        private Input<string>? _password;
 
+        /// <summary>
+        /// - (Optional) Password for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// - (Optional) Port of the private registry.
+        /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }
 
+        /// <summary>
+        /// - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }
 
+        /// <summary>
+        /// - (Optional) Username for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
+        /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }
 
         public KarbonPrivateRegistryState()
         {
         }
+        public static new KarbonPrivateRegistryState Empty => new KarbonPrivateRegistryState();
     }
 }

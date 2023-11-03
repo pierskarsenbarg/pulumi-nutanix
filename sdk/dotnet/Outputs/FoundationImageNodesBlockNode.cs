@@ -15,130 +15,130 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class FoundationImageNodesBlockNode
     {
         /// <summary>
-        /// :- (Required if node is lacp configured) slow or fast if lacp if being used at the switch
+        /// - (Required if node is lacp configured) slow or fast if lacp if being used at the switch
         /// </summary>
         public readonly string? BondLacpRate;
         /// <summary>
-        /// :- (Required if node is capable) dynamic if using LACP, static for LAG
+        /// - (Required if node is capable) dynamic if using LACP, static for LAG
         /// </summary>
         public readonly string? BondMode;
         /// <summary>
-        /// :- MAC Addresses of NICs in a team/bond
+        /// - MAC Addresses of NICs in a team/bond
         /// </summary>
         public readonly string? BondUplinks;
         /// <summary>
-        /// :- ID of cluster.
+        /// - ID of cluster.
         /// </summary>
         public readonly string? ClusterId;
         /// <summary>
-        /// :- Current CVM vlan tag. 0 Value with remove vlan tag.
+        /// - Current CVM vlan tag. 0 Value with remove vlan tag.
         /// </summary>
         public readonly int? CurrentCvmVlanTag;
         /// <summary>
-        /// :- CVM current network interface.
+        /// - CVM current network interface.
         /// </summary>
         public readonly string? CurrentNetworkInterface;
         /// <summary>
-        /// :- RAM capacity of CVM in GB.
+        /// - RAM capacity of CVM in GB.
         /// </summary>
         public readonly int? CvmGbRam;
         public readonly string? CvmIp;
         /// <summary>
-        /// :- Number of CVM vcpus.
+        /// - Number of CVM vcpus.
         /// </summary>
         public readonly int? CvmNumVcpus;
         /// <summary>
-        /// :- use "vm_installer" to enable CVM imaging from standalone.
+        /// - use "vm_installer" to enable CVM imaging from standalone.
         /// </summary>
         public readonly string? DeviceHint;
         /// <summary>
-        /// :- serial of boot device to be excluded (used by NX G6 platforms)
+        /// - serial of boot device to be excluded (used by NX G6 platforms)
         /// </summary>
         public readonly string? ExludeBootSerial;
         public readonly string? Hypervisor;
         /// <summary>
-        /// :- (Required) Hypervisor Hostname.
+        /// - (Required) Hypervisor Hostname.
         /// </summary>
         public readonly string HypervisorHostname;
         /// <summary>
-        /// :- (Required) Hypervisor IP address.
+        /// - (Required) Hypervisor IP address.
         /// </summary>
         public readonly string HypervisorIp;
         /// <summary>
-        /// :- Imaging delay.
+        /// - Imaging delay.
         /// </summary>
         public readonly int? ImageDelay;
         /// <summary>
-        /// :- (Optional, Default = true) If the node should be imaged now.
+        /// - (Optional, Default = true) If the node should be imaged now.
         /// </summary>
         public readonly bool? ImageNow;
         public readonly bool? ImageSuccessful;
         /// <summary>
-        /// :- Whether IPMI should be configured.
+        /// - Whether IPMI should be configured.
         /// </summary>
         public readonly bool? IpmiConfigureNow;
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI gateway for this node
+        /// - (Required incase using IPMI based imaging either here or outside blocks) IPMI gateway for this node
         /// </summary>
         public readonly string? IpmiGateway;
         /// <summary>
-        /// :- (Required) IPMI IP address.
+        /// - (Required) IPMI IP address.
         /// </summary>
         public readonly string? IpmiIp;
         /// <summary>
-        /// :- IPMI MAC address.
+        /// - IPMI MAC address.
         /// </summary>
         public readonly string? IpmiMac;
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI netmask for this node
+        /// - (Required incase using IPMI based imaging either here or outside blocks) IPMI netmask for this node
         /// </summary>
         public readonly string? IpmiNetmask;
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI username
+        /// - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
         /// </summary>
         public readonly string? IpmiPassword;
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+        /// - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
         /// </summary>
         public readonly string? IpmiUser;
         /// <summary>
-        /// :- (Required when device_hint = "vm_installer" for imaging using node's existing cvm for imaging) IPV6 address.
+        /// - (Required when device_hint = "vm_installer" for imaging using node's existing cvm for imaging) IPV6 address.
         /// </summary>
         public readonly string? Ipv6Address;
         /// <summary>
-        /// :- (Required when device_hint = "vm_installer" for imaging using node's existing cvm for imaging) ipv6 interface.
+        /// - (Required when device_hint = "vm_installer" for imaging using node's existing cvm for imaging) ipv6 interface.
         /// </summary>
         public readonly string? Ipv6Interface;
         /// <summary>
-        /// :- relocate bootbank files to make space for phoenix files.
+        /// - relocate bootbank files to make space for phoenix files.
         /// </summary>
         public readonly bool? MitigateLowBootSpace;
         /// <summary>
-        /// :- (Required) Position of the node in the block.
+        /// - (Required) Position of the node in the block.
         /// </summary>
         public readonly string NodePosition;
         /// <summary>
-        /// :- serial number of the node.
+        /// - serial number of the node.
         /// </summary>
         public readonly string? NodeSerial;
         /// <summary>
-        /// :- mac address of nic to be used for rdma
+        /// - mac address of nic to be used for rdma
         /// </summary>
         public readonly string? RdmaMacAddr;
         /// <summary>
-        /// :- (Required if node is capable) passthru RDMA nic to CVM if possible, default to false
+        /// - (Required if node is capable) passthru RDMA nic to CVM if possible, default to false
         /// </summary>
         public readonly bool? RdmaPassthrough;
         /// <summary>
-        /// :- UCSM Managed mode.
+        /// - UCSM Managed mode.
         /// </summary>
         public readonly string? UcsmManagedMode;
         /// <summary>
-        /// :- UCSM node serial.
+        /// - UCSM node serial.
         /// </summary>
         public readonly string? UcsmNodeSerial;
         /// <summary>
-        /// :- Object of UCSM parameters.
+        /// - Object of UCSM parameters.
         /// * `ucsm_params.native_vlan` :- If the vlan is native.
         /// * `ucsm_params.keep_ucsm_settings` :- Whether UCSM settings should be kept.
         /// * `ucsm_params.mac_pool` :- Mac address pool.

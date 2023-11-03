@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailInputArgs : Pulumi.ResourceArgs
+    public sealed class GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("imagedNodeUuid", required: true)]
         public Input<string> ImagedNodeUuid { get; set; } = null!;
@@ -39,5 +39,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailInputArgs()
         {
         }
+        public static new GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailInputArgs Empty => new GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailInputArgs();
     }
 }

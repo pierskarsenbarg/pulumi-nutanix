@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class KarbonClusterCniConfigCalicoConfigIpPoolConfigArgs : Pulumi.ResourceArgs
+    public sealed class KarbonClusterCniConfigCalicoConfigIpPoolConfigArgs : global::Pulumi.ResourceArgs
     {
         [Input("cidr")]
         public Input<string>? Cidr { get; set; }
@@ -19,5 +19,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public KarbonClusterCniConfigCalicoConfigIpPoolConfigArgs()
         {
         }
+        public static new KarbonClusterCniConfigCalicoConfigIpPoolConfigArgs Empty => new KarbonClusterCniConfigCalicoConfigIpPoolConfigArgs();
     }
 }

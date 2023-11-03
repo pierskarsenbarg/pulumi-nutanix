@@ -6,25 +6,11 @@ import * as utilities from "./utilities";
 
 /**
  * Describes Karbon private registry entry
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
- *
- * const registry = pulumi.output(nutanix.getKarbonPrivateRegistry({
- *     clusterId: "<YOUR-CLUSTER-ID>",
- * }));
- * ```
  */
 export function getKarbonPrivateRegistry(args?: GetKarbonPrivateRegistryArgs, opts?: pulumi.InvokeOptions): Promise<GetKarbonPrivateRegistryResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry", {
         "privateRegistryId": args.privateRegistryId,
         "privateRegistryName": args.privateRegistryName,
@@ -35,7 +21,13 @@ export function getKarbonPrivateRegistry(args?: GetKarbonPrivateRegistryArgs, op
  * A collection of arguments for invoking getKarbonPrivateRegistry.
  */
 export interface GetKarbonPrivateRegistryArgs {
+    /**
+     * Represents karbon private registry uuid
+     */
     privateRegistryId?: string;
+    /**
+     * Represents the name of karbon private registry
+     */
     privateRegistryName?: string;
 }
 
@@ -43,25 +35,42 @@ export interface GetKarbonPrivateRegistryArgs {
  * A collection of values returned by getKarbonPrivateRegistry.
  */
 export interface GetKarbonPrivateRegistryResult {
+    /**
+     * - Endpoint of the private in format `url:port`.
+     */
     readonly endpoint: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - Name of the private registry.
+     */
     readonly name: string;
     readonly privateRegistryId?: string;
     readonly privateRegistryName?: string;
+    /**
+     * - UUID of the private registry.
+     */
     readonly uuid: string;
 }
-
+/**
+ * Describes Karbon private registry entry
+ */
 export function getKarbonPrivateRegistryOutput(args?: GetKarbonPrivateRegistryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKarbonPrivateRegistryResult> {
-    return pulumi.output(args).apply(a => getKarbonPrivateRegistry(a, opts))
+    return pulumi.output(args).apply((a: any) => getKarbonPrivateRegistry(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getKarbonPrivateRegistry.
  */
 export interface GetKarbonPrivateRegistryOutputArgs {
+    /**
+     * Represents karbon private registry uuid
+     */
     privateRegistryId?: pulumi.Input<string>;
+    /**
+     * Represents the name of karbon private registry
+     */
     privateRegistryName?: pulumi.Input<string>;
 }

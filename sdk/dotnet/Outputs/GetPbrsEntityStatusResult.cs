@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPbrsEntityStatusExecutionContextResult> ExecutionContexts;
         /// <summary>
-        /// The name of the PBR
+        /// - the name.
         /// </summary>
         public readonly string Name;
         /// <summary>

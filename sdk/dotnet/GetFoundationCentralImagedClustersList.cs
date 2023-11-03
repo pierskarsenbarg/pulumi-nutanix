@@ -13,14 +13,14 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetFoundationCentralImagedClustersList
     {
         public static Task<GetFoundationCentralImagedClustersListResult> InvokeAsync(GetFoundationCentralImagedClustersListArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralImagedClustersListResult>("nutanix:index/getFoundationCentralImagedClustersList:getFoundationCentralImagedClustersList", args ?? new GetFoundationCentralImagedClustersListArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralImagedClustersListResult>("nutanix:index/getFoundationCentralImagedClustersList:getFoundationCentralImagedClustersList", args ?? new GetFoundationCentralImagedClustersListArgs(), options.WithDefaults());
 
         public static Output<GetFoundationCentralImagedClustersListResult> Invoke(GetFoundationCentralImagedClustersListInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFoundationCentralImagedClustersListResult>("nutanix:index/getFoundationCentralImagedClustersList:getFoundationCentralImagedClustersList", args ?? new GetFoundationCentralImagedClustersListInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralImagedClustersListResult>("nutanix:index/getFoundationCentralImagedClustersList:getFoundationCentralImagedClustersList", args ?? new GetFoundationCentralImagedClustersListInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetFoundationCentralImagedClustersListArgs : Pulumi.InvokeArgs
+    public sealed class GetFoundationCentralImagedClustersListArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         public Inputs.GetFoundationCentralImagedClustersListFiltersArgs? Filters { get; set; }
@@ -34,9 +34,10 @@ namespace PiersKarsenbarg.Nutanix
         public GetFoundationCentralImagedClustersListArgs()
         {
         }
+        public static new GetFoundationCentralImagedClustersListArgs Empty => new GetFoundationCentralImagedClustersListArgs();
     }
 
-    public sealed class GetFoundationCentralImagedClustersListInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFoundationCentralImagedClustersListInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         public Input<Inputs.GetFoundationCentralImagedClustersListFiltersInputArgs>? Filters { get; set; }
@@ -50,6 +51,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetFoundationCentralImagedClustersListInvokeArgs()
         {
         }
+        public static new GetFoundationCentralImagedClustersListInvokeArgs Empty => new GetFoundationCentralImagedClustersListInvokeArgs();
     }
 
 

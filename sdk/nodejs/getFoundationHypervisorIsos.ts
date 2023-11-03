@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,7 +15,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const hypervisorIsos = pulumi.output(nutanix.getFoundationHypervisorIsos());
+ * const hypervisorIsos = nutanix.getFoundationHypervisorIsos({});
  * ```
  * ## Note
  *
@@ -23,11 +24,8 @@ import * as utilities from "./utilities";
  * See detailed information in [Nutanix Foundation Hypervisor Isos](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjM0MDE-list-hypervisor-images-available-in-foundation).
  */
 export function getFoundationHypervisorIsos(opts?: pulumi.InvokeOptions): Promise<GetFoundationHypervisorIsosResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationHypervisorIsos:getFoundationHypervisorIsos", {
     }, opts);
 }
@@ -36,13 +34,48 @@ export function getFoundationHypervisorIsos(opts?: pulumi.InvokeOptions): Promis
  * A collection of values returned by getFoundationHypervisorIsos.
  */
 export interface GetFoundationHypervisorIsosResult {
+    /**
+     * List of esx isos and theirdetails present in foundation vm
+     */
     readonly esxes: outputs.GetFoundationHypervisorIsosEsx[];
+    /**
+     * List of hyperv isos and their details present in foundation vm
+     */
     readonly hypervs: outputs.GetFoundationHypervisorIsosHyperv[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * List of kvm isos and their details present in foundation vm
+     */
     readonly kvms: outputs.GetFoundationHypervisorIsosKvm[];
+    /**
+     * List of linux isos and their details present in foundation vm
+     */
     readonly linuxes: outputs.GetFoundationHypervisorIsosLinux[];
+    /**
+     * List of esx isos and theirdetails present in foundation vm
+     */
     readonly xens: outputs.GetFoundationHypervisorIsosXen[];
+}
+/**
+ * Describes a list of hypervisor isos image file details present in foundation vm
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const hypervisorIsos = nutanix.getFoundationHypervisorIsos({});
+ * ```
+ * ## Note
+ *
+ * * This data source only lists .iso files details.
+ *
+ * See detailed information in [Nutanix Foundation Hypervisor Isos](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjM0MDE-list-hypervisor-images-available-in-foundation).
+ */
+export function getFoundationHypervisorIsosOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationHypervisorIsosResult> {
+    return pulumi.output(getFoundationHypervisorIsos(opts))
 }

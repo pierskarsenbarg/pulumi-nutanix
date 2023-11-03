@@ -11,16 +11,23 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class ServiceGroupServiceListIcmpTypeCodeListArgs : Pulumi.ResourceArgs
+    public sealed class ServiceGroupServiceListIcmpTypeCodeListArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) Code as text
+        /// </summary>
         [Input("code")]
         public Input<string>? Code { get; set; }
 
+        /// <summary>
+        /// - (Optional) Type as text
+        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         public ServiceGroupServiceListIcmpTypeCodeListArgs()
         {
         }
+        public static new ServiceGroupServiceListIcmpTypeCodeListArgs Empty => new ServiceGroupServiceListIcmpTypeCodeListArgs();
     }
 }

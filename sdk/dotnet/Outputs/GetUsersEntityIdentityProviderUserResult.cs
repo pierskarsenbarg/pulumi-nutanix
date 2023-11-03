@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetUsersEntityIdentityProviderUserResult
     {
+        /// <summary>
+        /// - (Optional) The reference to a identity provider. See #reference for to look the supported attributes.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUsersEntityIdentityProviderUserIdentityProviderReferenceResult> IdentityProviderReferences;
+        /// <summary>
+        /// - (Optional) The username from identity provider. Name ID for SAML Identity Provider.
+        /// </summary>
         public readonly string Username;
 
         [OutputConstructor]

@@ -11,46 +11,46 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationImageNodesBlockNodeGetArgs : Pulumi.ResourceArgs
+    public sealed class FoundationImageNodesBlockNodeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// :- (Required if node is lacp configured) slow or fast if lacp if being used at the switch
+        /// - (Required if node is lacp configured) slow or fast if lacp if being used at the switch
         /// </summary>
         [Input("bondLacpRate")]
         public Input<string>? BondLacpRate { get; set; }
 
         /// <summary>
-        /// :- (Required if node is capable) dynamic if using LACP, static for LAG
+        /// - (Required if node is capable) dynamic if using LACP, static for LAG
         /// </summary>
         [Input("bondMode")]
         public Input<string>? BondMode { get; set; }
 
         /// <summary>
-        /// :- MAC Addresses of NICs in a team/bond
+        /// - MAC Addresses of NICs in a team/bond
         /// </summary>
         [Input("bondUplinks")]
         public Input<string>? BondUplinks { get; set; }
 
         /// <summary>
-        /// :- ID of cluster.
+        /// - ID of cluster.
         /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }
 
         /// <summary>
-        /// :- Current CVM vlan tag. 0 Value with remove vlan tag.
+        /// - Current CVM vlan tag. 0 Value with remove vlan tag.
         /// </summary>
         [Input("currentCvmVlanTag")]
         public Input<int>? CurrentCvmVlanTag { get; set; }
 
         /// <summary>
-        /// :- CVM current network interface.
+        /// - CVM current network interface.
         /// </summary>
         [Input("currentNetworkInterface")]
         public Input<string>? CurrentNetworkInterface { get; set; }
 
         /// <summary>
-        /// :- RAM capacity of CVM in GB.
+        /// - RAM capacity of CVM in GB.
         /// </summary>
         [Input("cvmGbRam")]
         public Input<int>? CvmGbRam { get; set; }
@@ -59,19 +59,19 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<string>? CvmIp { get; set; }
 
         /// <summary>
-        /// :- Number of CVM vcpus.
+        /// - Number of CVM vcpus.
         /// </summary>
         [Input("cvmNumVcpus")]
         public Input<int>? CvmNumVcpus { get; set; }
 
         /// <summary>
-        /// :- use "vm_installer" to enable CVM imaging from standalone.
+        /// - use "vm_installer" to enable CVM imaging from standalone.
         /// </summary>
         [Input("deviceHint")]
         public Input<string>? DeviceHint { get; set; }
 
         /// <summary>
-        /// :- serial of boot device to be excluded (used by NX G6 platforms)
+        /// - serial of boot device to be excluded (used by NX G6 platforms)
         /// </summary>
         [Input("exludeBootSerial")]
         public Input<string>? ExludeBootSerial { get; set; }
@@ -80,25 +80,25 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<string>? Hypervisor { get; set; }
 
         /// <summary>
-        /// :- (Required) Hypervisor Hostname.
+        /// - (Required) Hypervisor Hostname.
         /// </summary>
         [Input("hypervisorHostname", required: true)]
         public Input<string> HypervisorHostname { get; set; } = null!;
 
         /// <summary>
-        /// :- (Required) Hypervisor IP address.
+        /// - (Required) Hypervisor IP address.
         /// </summary>
         [Input("hypervisorIp", required: true)]
         public Input<string> HypervisorIp { get; set; } = null!;
 
         /// <summary>
-        /// :- Imaging delay.
+        /// - Imaging delay.
         /// </summary>
         [Input("imageDelay")]
         public Input<int>? ImageDelay { get; set; }
 
         /// <summary>
-        /// :- (Optional, Default = true) If the node should be imaged now.
+        /// - (Optional, Default = true) If the node should be imaged now.
         /// </summary>
         [Input("imageNow")]
         public Input<bool>? ImageNow { get; set; }
@@ -107,103 +107,103 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<bool>? ImageSuccessful { get; set; }
 
         /// <summary>
-        /// :- Whether IPMI should be configured.
+        /// - Whether IPMI should be configured.
         /// </summary>
         [Input("ipmiConfigureNow")]
         public Input<bool>? IpmiConfigureNow { get; set; }
 
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI gateway for this node
+        /// - (Required incase using IPMI based imaging either here or outside blocks) IPMI gateway for this node
         /// </summary>
         [Input("ipmiGateway")]
         public Input<string>? IpmiGateway { get; set; }
 
         /// <summary>
-        /// :- (Required) IPMI IP address.
+        /// - (Required) IPMI IP address.
         /// </summary>
         [Input("ipmiIp")]
         public Input<string>? IpmiIp { get; set; }
 
         /// <summary>
-        /// :- IPMI MAC address.
+        /// - IPMI MAC address.
         /// </summary>
         [Input("ipmiMac")]
         public Input<string>? IpmiMac { get; set; }
 
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI netmask for this node
+        /// - (Required incase using IPMI based imaging either here or outside blocks) IPMI netmask for this node
         /// </summary>
         [Input("ipmiNetmask")]
         public Input<string>? IpmiNetmask { get; set; }
 
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI username
+        /// - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
         /// </summary>
         [Input("ipmiPassword")]
         public Input<string>? IpmiPassword { get; set; }
 
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+        /// - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
         /// </summary>
         [Input("ipmiUser")]
         public Input<string>? IpmiUser { get; set; }
 
         /// <summary>
-        /// :- (Required when device_hint = "vm_installer" for imaging using node's existing cvm for imaging) IPV6 address.
+        /// - (Required when device_hint = "vm_installer" for imaging using node's existing cvm for imaging) IPV6 address.
         /// </summary>
         [Input("ipv6Address")]
         public Input<string>? Ipv6Address { get; set; }
 
         /// <summary>
-        /// :- (Required when device_hint = "vm_installer" for imaging using node's existing cvm for imaging) ipv6 interface.
+        /// - (Required when device_hint = "vm_installer" for imaging using node's existing cvm for imaging) ipv6 interface.
         /// </summary>
         [Input("ipv6Interface")]
         public Input<string>? Ipv6Interface { get; set; }
 
         /// <summary>
-        /// :- relocate bootbank files to make space for phoenix files.
+        /// - relocate bootbank files to make space for phoenix files.
         /// </summary>
         [Input("mitigateLowBootSpace")]
         public Input<bool>? MitigateLowBootSpace { get; set; }
 
         /// <summary>
-        /// :- (Required) Position of the node in the block.
+        /// - (Required) Position of the node in the block.
         /// </summary>
         [Input("nodePosition", required: true)]
         public Input<string> NodePosition { get; set; } = null!;
 
         /// <summary>
-        /// :- serial number of the node.
+        /// - serial number of the node.
         /// </summary>
         [Input("nodeSerial")]
         public Input<string>? NodeSerial { get; set; }
 
         /// <summary>
-        /// :- mac address of nic to be used for rdma
+        /// - mac address of nic to be used for rdma
         /// </summary>
         [Input("rdmaMacAddr")]
         public Input<string>? RdmaMacAddr { get; set; }
 
         /// <summary>
-        /// :- (Required if node is capable) passthru RDMA nic to CVM if possible, default to false
+        /// - (Required if node is capable) passthru RDMA nic to CVM if possible, default to false
         /// </summary>
         [Input("rdmaPassthrough")]
         public Input<bool>? RdmaPassthrough { get; set; }
 
         /// <summary>
-        /// :- UCSM Managed mode.
+        /// - UCSM Managed mode.
         /// </summary>
         [Input("ucsmManagedMode")]
         public Input<string>? UcsmManagedMode { get; set; }
 
         /// <summary>
-        /// :- UCSM node serial.
+        /// - UCSM node serial.
         /// </summary>
         [Input("ucsmNodeSerial")]
         public Input<string>? UcsmNodeSerial { get; set; }
 
         /// <summary>
-        /// :- Object of UCSM parameters.
+        /// - Object of UCSM parameters.
         /// * `ucsm_params.native_vlan` :- If the vlan is native.
         /// * `ucsm_params.keep_ucsm_settings` :- Whether UCSM settings should be kept.
         /// * `ucsm_params.mac_pool` :- Mac address pool.
@@ -223,5 +223,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public FoundationImageNodesBlockNodeGetArgs()
         {
         }
+        public static new FoundationImageNodesBlockNodeGetArgs Empty => new FoundationImageNodesBlockNodeGetArgs();
     }
 }

@@ -20,29 +20,56 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var discoveredNodes = Output.Create(Nutanix.GetFoundationDiscoverNodes.InvokeAsync());
-        ///     }
+        ///     var discoveredNodes = Nutanix.GetFoundationDiscoverNodes.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFoundationDiscoverNodesResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFoundationDiscoverNodesResult>("nutanix:index/getFoundationDiscoverNodes:getFoundationDiscoverNodes", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationDiscoverNodesResult>("nutanix:index/getFoundationDiscoverNodes:getFoundationDiscoverNodes", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// Discovers and lists Nutanix-imaged nodes within an IPv6 network.
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var discoveredNodes = Nutanix.GetFoundationDiscoverNodes.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetFoundationDiscoverNodesResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationDiscoverNodesResult>("nutanix:index/getFoundationDiscoverNodes:getFoundationDiscoverNodes", InvokeArgs.Empty, options.WithDefaults());
     }
 
 
     [OutputType]
     public sealed class GetFoundationDiscoverNodesResult
     {
+        /// <summary>
+        /// List of Nutanix-imaged nodes within an IPv6 network
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetFoundationDiscoverNodesEntityResult> Entities;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.

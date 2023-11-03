@@ -20,34 +20,35 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var usergroup = Nutanix.GetUserGroup.Invoke(new()
         ///     {
-        ///         var usergroup = Output.Create(Nutanix.GetUserGroup.InvokeAsync(new Nutanix.GetUserGroupArgs
-        ///         {
-        ///             UserGroupId = "dd30a856-8e72-4158-b716-98455ceda220",
-        ///         }));
-        ///         var usergroupbyname = Output.Create(Nutanix.GetUserGroup.InvokeAsync(new Nutanix.GetUserGroupArgs
-        ///         {
-        ///             UserGroupName = "example-group-1",
-        ///         }));
-        ///         var test = Output.Create(Nutanix.GetUserGroup.InvokeAsync(new Nutanix.GetUserGroupArgs
-        ///         {
-        ///             UserGroupDistinguishedName = "cn=example-group-1,cn=users,dc=ntnxlab,dc=local",
-        ///         }));
-        ///     }
+        ///         UserGroupId = "dd30a856-8e72-4158-b716-98455ceda220",
+        ///     });
         /// 
-        /// }
+        ///     var usergroupbyname = Nutanix.GetUserGroup.Invoke(new()
+        ///     {
+        ///         UserGroupName = "example-group-1",
+        ///     });
+        /// 
+        ///     var test = Nutanix.GetUserGroup.Invoke(new()
+        ///     {
+        ///         UserGroupDistinguishedName = "cn=example-group-1,cn=users,dc=ntnxlab,dc=local",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetUserGroupResult> InvokeAsync(GetUserGroupArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetUserGroupResult>("nutanix:index/getUserGroup:getUserGroup", args ?? new GetUserGroupArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserGroupResult>("nutanix:index/getUserGroup:getUserGroup", args ?? new GetUserGroupArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a datasource to retrieve a user group based on the input parameters.
@@ -57,41 +58,46 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var usergroup = Nutanix.GetUserGroup.Invoke(new()
         ///     {
-        ///         var usergroup = Output.Create(Nutanix.GetUserGroup.InvokeAsync(new Nutanix.GetUserGroupArgs
-        ///         {
-        ///             UserGroupId = "dd30a856-8e72-4158-b716-98455ceda220",
-        ///         }));
-        ///         var usergroupbyname = Output.Create(Nutanix.GetUserGroup.InvokeAsync(new Nutanix.GetUserGroupArgs
-        ///         {
-        ///             UserGroupName = "example-group-1",
-        ///         }));
-        ///         var test = Output.Create(Nutanix.GetUserGroup.InvokeAsync(new Nutanix.GetUserGroupArgs
-        ///         {
-        ///             UserGroupDistinguishedName = "cn=example-group-1,cn=users,dc=ntnxlab,dc=local",
-        ///         }));
-        ///     }
+        ///         UserGroupId = "dd30a856-8e72-4158-b716-98455ceda220",
+        ///     });
         /// 
-        /// }
+        ///     var usergroupbyname = Nutanix.GetUserGroup.Invoke(new()
+        ///     {
+        ///         UserGroupName = "example-group-1",
+        ///     });
+        /// 
+        ///     var test = Nutanix.GetUserGroup.Invoke(new()
+        ///     {
+        ///         UserGroupDistinguishedName = "cn=example-group-1,cn=users,dc=ntnxlab,dc=local",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetUserGroupResult> Invoke(GetUserGroupInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetUserGroupResult>("nutanix:index/getUserGroup:getUserGroup", args ?? new GetUserGroupInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetUserGroupResult>("nutanix:index/getUserGroup:getUserGroup", args ?? new GetUserGroupInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetUserGroupArgs : Pulumi.InvokeArgs
+    public sealed class GetUserGroupArgs : global::Pulumi.InvokeArgs
     {
         [Input("categories")]
         private List<Inputs.GetUserGroupCategoryArgs>? _categories;
+
+        /// <summary>
+        /// - The Distinguished Categories for the user group.
+        /// </summary>
         public List<Inputs.GetUserGroupCategoryArgs> Categories
         {
             get => _categories ?? (_categories = new List<Inputs.GetUserGroupCategoryArgs>());
@@ -100,6 +106,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("ownerReference")]
         private Dictionary<string, string>? _ownerReference;
+
+        /// <summary>
+        /// - The reference to a user.
+        /// </summary>
         public Dictionary<string, string> OwnerReference
         {
             get => _ownerReference ?? (_ownerReference = new Dictionary<string, string>());
@@ -108,6 +118,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("projectReference")]
         private Dictionary<string, string>? _projectReference;
+
+        /// <summary>
+        /// - The Distinguished The reference to a project.
+        /// </summary>
         public Dictionary<string, string> ProjectReference
         {
             get => _projectReference ?? (_projectReference = new Dictionary<string, string>());
@@ -120,21 +134,32 @@ namespace PiersKarsenbarg.Nutanix
         [Input("userGroupDistinguishedName")]
         public string? UserGroupDistinguishedName { get; set; }
 
+        /// <summary>
+        /// - (Optional) The UUID for the user group
+        /// </summary>
         [Input("userGroupId")]
         public string? UserGroupId { get; set; }
 
+        /// <summary>
+        /// - (Optional) The name for the user group
+        /// </summary>
         [Input("userGroupName")]
         public string? UserGroupName { get; set; }
 
         public GetUserGroupArgs()
         {
         }
+        public static new GetUserGroupArgs Empty => new GetUserGroupArgs();
     }
 
-    public sealed class GetUserGroupInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetUserGroupInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("categories")]
         private InputList<Inputs.GetUserGroupCategoryInputArgs>? _categories;
+
+        /// <summary>
+        /// - The Distinguished Categories for the user group.
+        /// </summary>
         public InputList<Inputs.GetUserGroupCategoryInputArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.GetUserGroupCategoryInputArgs>());
@@ -143,6 +168,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("ownerReference")]
         private InputMap<string>? _ownerReference;
+
+        /// <summary>
+        /// - The reference to a user.
+        /// </summary>
         public InputMap<string> OwnerReference
         {
             get => _ownerReference ?? (_ownerReference = new InputMap<string>());
@@ -151,6 +180,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("projectReference")]
         private InputMap<string>? _projectReference;
+
+        /// <summary>
+        /// - The Distinguished The reference to a project.
+        /// </summary>
         public InputMap<string> ProjectReference
         {
             get => _projectReference ?? (_projectReference = new InputMap<string>());
@@ -163,51 +196,78 @@ namespace PiersKarsenbarg.Nutanix
         [Input("userGroupDistinguishedName")]
         public Input<string>? UserGroupDistinguishedName { get; set; }
 
+        /// <summary>
+        /// - (Optional) The UUID for the user group
+        /// </summary>
         [Input("userGroupId")]
         public Input<string>? UserGroupId { get; set; }
 
+        /// <summary>
+        /// - (Optional) The name for the user group
+        /// </summary>
         [Input("userGroupName")]
         public Input<string>? UserGroupName { get; set; }
 
         public GetUserGroupInvokeArgs()
         {
         }
+        public static new GetUserGroupInvokeArgs Empty => new GetUserGroupInvokeArgs();
     }
 
 
     [OutputType]
     public sealed class GetUserGroupResult
     {
+        /// <summary>
+        /// - List of ACP references. See #reference for more details.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUserGroupAccessControlPolicyReferenceListResult> AccessControlPolicyReferenceLists;
         /// <summary>
         /// The version of the API.
-        /// * `metadata`: - The user group kind metadata.
-        /// * `categories`: - The Distinguished Categories for the user group.
-        /// * `owner_reference`: - The reference to a user.
-        /// * `project_reference`: - The Distinguished The reference to a project.
-        /// * `user_group_type`: - The type of the user group.
-        /// * `display_name`: - The display name of the user group.
-        /// * `directory_service_user_group`: - A Directory Service User Group.
-        /// * `project_reference_list`: - A list of projects the user is part of. See #reference for more details.
-        /// * `access_control_policy_reference_list`: - List of ACP references. See #reference for more details.
-        /// * `state`: - The state of the entity.
         /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// - The Distinguished Categories for the user group.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUserGroupCategoryResult> Categories;
+        /// <summary>
+        /// - A Directory Service User Group.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUserGroupDirectoryServiceUserGroupResult> DirectoryServiceUserGroups;
+        /// <summary>
+        /// - The display name of the user group.
+        /// </summary>
         public readonly string DisplayName;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - The user group kind metadata.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
+        /// <summary>
+        /// - The reference to a user.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> OwnerReference;
+        /// <summary>
+        /// - The Distinguished The reference to a project.
+        /// </summary>
         public readonly ImmutableDictionary<string, string>? ProjectReference;
+        /// <summary>
+        /// - A list of projects the user is part of. See #reference for more details.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUserGroupProjectReferenceListResult> ProjectReferenceLists;
+        /// <summary>
+        /// - The state of the entity.
+        /// </summary>
         public readonly string State;
         public readonly string? UserGroupDistinguishedName;
         public readonly string? UserGroupId;
         public readonly string? UserGroupName;
+        /// <summary>
+        /// - The type of the user group.
+        /// </summary>
         public readonly string UserGroupType;
 
         [OutputConstructor]

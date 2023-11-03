@@ -11,13 +11,20 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationIpmiConfigBlockGetArgs : Pulumi.ResourceArgs
+    public sealed class FoundationIpmiConfigBlockGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) Block Id
+        /// </summary>
         [Input("blockId")]
         public Input<string>? BlockId { get; set; }
 
         [Input("nodes", required: true)]
         private InputList<Inputs.FoundationIpmiConfigBlockNodeGetArgs>? _nodes;
+
+        /// <summary>
+        /// - (Required) array of nodes for ipmi config.
+        /// </summary>
         public InputList<Inputs.FoundationIpmiConfigBlockNodeGetArgs> Nodes
         {
             get => _nodes ?? (_nodes = new InputList<Inputs.FoundationIpmiConfigBlockNodeGetArgs>());
@@ -27,5 +34,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public FoundationIpmiConfigBlockGetArgs()
         {
         }
+        public static new FoundationIpmiConfigBlockGetArgs Empty => new FoundationIpmiConfigBlockGetArgs();
     }
 }

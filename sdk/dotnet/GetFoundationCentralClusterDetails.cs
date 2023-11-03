@@ -13,14 +13,14 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetFoundationCentralClusterDetails
     {
         public static Task<GetFoundationCentralClusterDetailsResult> InvokeAsync(GetFoundationCentralClusterDetailsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralClusterDetailsResult>("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", args ?? new GetFoundationCentralClusterDetailsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralClusterDetailsResult>("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", args ?? new GetFoundationCentralClusterDetailsArgs(), options.WithDefaults());
 
         public static Output<GetFoundationCentralClusterDetailsResult> Invoke(GetFoundationCentralClusterDetailsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFoundationCentralClusterDetailsResult>("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", args ?? new GetFoundationCentralClusterDetailsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralClusterDetailsResult>("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", args ?? new GetFoundationCentralClusterDetailsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetFoundationCentralClusterDetailsArgs : Pulumi.InvokeArgs
+    public sealed class GetFoundationCentralClusterDetailsArgs : global::Pulumi.InvokeArgs
     {
         [Input("clusterExternalIp")]
         public string? ClusterExternalIp { get; set; }
@@ -49,9 +49,10 @@ namespace PiersKarsenbarg.Nutanix
         public GetFoundationCentralClusterDetailsArgs()
         {
         }
+        public static new GetFoundationCentralClusterDetailsArgs Empty => new GetFoundationCentralClusterDetailsArgs();
     }
 
-    public sealed class GetFoundationCentralClusterDetailsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFoundationCentralClusterDetailsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("clusterExternalIp")]
         public Input<string>? ClusterExternalIp { get; set; }
@@ -80,6 +81,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetFoundationCentralClusterDetailsInvokeArgs()
         {
         }
+        public static new GetFoundationCentralClusterDetailsInvokeArgs Empty => new GetFoundationCentralClusterDetailsInvokeArgs();
     }
 
 

@@ -20,23 +20,22 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var usergroups = Output.Create(Nutanix.GetUserGroups.InvokeAsync());
-        ///     }
+        ///     var usergroups = Nutanix.GetUserGroups.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetUserGroupsResult> InvokeAsync(GetUserGroupsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetUserGroupsResult>("nutanix:index/getUserGroups:getUserGroups", args ?? new GetUserGroupsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserGroupsResult>("nutanix:index/getUserGroups:getUserGroups", args ?? new GetUserGroupsArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a datasource to retrieve all the user groups.
@@ -46,30 +45,33 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var usergroups = Output.Create(Nutanix.GetUserGroups.InvokeAsync());
-        ///     }
+        ///     var usergroups = Nutanix.GetUserGroups.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetUserGroupsResult> Invoke(GetUserGroupsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetUserGroupsResult>("nutanix:index/getUserGroups:getUserGroups", args ?? new GetUserGroupsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetUserGroupsResult>("nutanix:index/getUserGroups:getUserGroups", args ?? new GetUserGroupsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetUserGroupsArgs : Pulumi.InvokeArgs
+    public sealed class GetUserGroupsArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private List<Inputs.GetUserGroupsMetadataArgs>? _metadatas;
+
+        /// <summary>
+        /// - The user group kind metadata.
+        /// </summary>
         public List<Inputs.GetUserGroupsMetadataArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new List<Inputs.GetUserGroupsMetadataArgs>());
@@ -79,12 +81,17 @@ namespace PiersKarsenbarg.Nutanix
         public GetUserGroupsArgs()
         {
         }
+        public static new GetUserGroupsArgs Empty => new GetUserGroupsArgs();
     }
 
-    public sealed class GetUserGroupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetUserGroupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private InputList<Inputs.GetUserGroupsMetadataInputArgs>? _metadatas;
+
+        /// <summary>
+        /// - The user group kind metadata.
+        /// </summary>
         public InputList<Inputs.GetUserGroupsMetadataInputArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new InputList<Inputs.GetUserGroupsMetadataInputArgs>());
@@ -94,6 +101,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetUserGroupsInvokeArgs()
         {
         }
+        public static new GetUserGroupsInvokeArgs Empty => new GetUserGroupsInvokeArgs();
     }
 
 

@@ -20,17 +20,16 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var hypervisorIsos = Output.Create(Nutanix.GetFoundationHypervisorIsos.InvokeAsync());
-        ///     }
+        ///     var hypervisorIsos = Nutanix.GetFoundationHypervisorIsos.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -41,21 +40,66 @@ namespace PiersKarsenbarg.Nutanix
         /// See detailed information in [Nutanix Foundation Hypervisor Isos](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjM0MDE-list-hypervisor-images-available-in-foundation).
         /// </summary>
         public static Task<GetFoundationHypervisorIsosResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFoundationHypervisorIsosResult>("nutanix:index/getFoundationHypervisorIsos:getFoundationHypervisorIsos", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationHypervisorIsosResult>("nutanix:index/getFoundationHypervisorIsos:getFoundationHypervisorIsos", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// Describes a list of hypervisor isos image file details present in foundation vm
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var hypervisorIsos = Nutanix.GetFoundationHypervisorIsos.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// ## Note
+        /// 
+        /// * This data source only lists .iso files details.
+        /// 
+        /// See detailed information in [Nutanix Foundation Hypervisor Isos](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjM0MDE-list-hypervisor-images-available-in-foundation).
+        /// </summary>
+        public static Output<GetFoundationHypervisorIsosResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationHypervisorIsosResult>("nutanix:index/getFoundationHypervisorIsos:getFoundationHypervisorIsos", InvokeArgs.Empty, options.WithDefaults());
     }
 
 
     [OutputType]
     public sealed class GetFoundationHypervisorIsosResult
     {
+        /// <summary>
+        /// List of esx isos and theirdetails present in foundation vm
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetFoundationHypervisorIsosEsxResult> Esxes;
+        /// <summary>
+        /// List of hyperv isos and their details present in foundation vm
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetFoundationHypervisorIsosHypervResult> Hypervs;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// List of kvm isos and their details present in foundation vm
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetFoundationHypervisorIsosKvmResult> Kvms;
+        /// <summary>
+        /// List of linux isos and their details present in foundation vm
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetFoundationHypervisorIsosLinuxResult> Linuxes;
+        /// <summary>
+        /// List of esx isos and theirdetails present in foundation vm
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetFoundationHypervisorIsosXenResult> Xens;
 
         [OutputConstructor]

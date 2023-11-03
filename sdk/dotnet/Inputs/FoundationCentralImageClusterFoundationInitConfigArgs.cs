@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationCentralImageClusterFoundationInitConfigArgs : Pulumi.ResourceArgs
+    public sealed class FoundationCentralImageClusterFoundationInitConfigArgs : global::Pulumi.ResourceArgs
     {
         [Input("blocks")]
         private InputList<Inputs.FoundationCentralImageClusterFoundationInitConfigBlockArgs>? _blocks;
@@ -29,21 +29,36 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _clusters = value;
         }
 
+        /// <summary>
+        /// Gateway of the cvm.
+        /// </summary>
         [Input("cvmGateway")]
         public Input<string>? CvmGateway { get; set; }
 
+        /// <summary>
+        /// Netmask of the cvm.
+        /// </summary>
         [Input("cvmNetmask")]
         public Input<string>? CvmNetmask { get; set; }
 
         [Input("dnsServers")]
         public Input<string>? DnsServers { get; set; }
 
+        /// <summary>
+        /// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+        /// </summary>
         [Input("hypervProductKey")]
         public Input<string>? HypervProductKey { get; set; }
 
+        /// <summary>
+        /// SKU of hyperv to be installed if hypervisor_type is hyperv.
+        /// </summary>
         [Input("hypervSku")]
         public Input<string>? HypervSku { get; set; }
 
+        /// <summary>
+        /// Gateway of the hypervisor.
+        /// </summary>
         [Input("hypervisorGateway")]
         public Input<string>? HypervisorGateway { get; set; }
 
@@ -63,12 +78,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _hypervisorIsos = value;
         }
 
+        /// <summary>
+        /// Netmask of the hypervisor.
+        /// </summary>
         [Input("hypervisorNetmask")]
         public Input<string>? HypervisorNetmask { get; set; }
 
+        /// <summary>
+        /// Gateway of the ipmi.
+        /// </summary>
         [Input("ipmiGateway")]
         public Input<string>? IpmiGateway { get; set; }
 
+        /// <summary>
+        /// Netmask of the ipmi.
+        /// </summary>
         [Input("ipmiNetmask")]
         public Input<string>? IpmiNetmask { get; set; }
 
@@ -83,5 +107,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public FoundationCentralImageClusterFoundationInitConfigArgs()
         {
         }
+        public static new FoundationCentralImageClusterFoundationInitConfigArgs Empty => new FoundationCentralImageClusterFoundationInitConfigArgs();
     }
 }

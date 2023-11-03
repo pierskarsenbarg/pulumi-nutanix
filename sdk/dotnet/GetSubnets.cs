@@ -20,23 +20,22 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var subnets = Output.Create(Nutanix.GetSubnets.InvokeAsync());
-        ///     }
+        ///     var subnets = Nutanix.GetSubnets.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSubnetsResult> InvokeAsync(GetSubnetsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSubnetsResult>("nutanix:index/getSubnets:getSubnets", args ?? new GetSubnetsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubnetsResult>("nutanix:index/getSubnets:getSubnets", args ?? new GetSubnetsArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes a list of subnets
@@ -46,30 +45,33 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var subnets = Output.Create(Nutanix.GetSubnets.InvokeAsync());
-        ///     }
+        ///     var subnets = Nutanix.GetSubnets.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSubnetsResult> Invoke(GetSubnetsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSubnetsResult>("nutanix:index/getSubnets:getSubnets", args ?? new GetSubnetsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubnetsResult>("nutanix:index/getSubnets:getSubnets", args ?? new GetSubnetsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetSubnetsArgs : Pulumi.InvokeArgs
+    public sealed class GetSubnetsArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private List<Inputs.GetSubnetsMetadataArgs>? _metadatas;
+
+        /// <summary>
+        /// The subnet kind metadata.
+        /// </summary>
         public List<Inputs.GetSubnetsMetadataArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new List<Inputs.GetSubnetsMetadataArgs>());
@@ -79,12 +81,17 @@ namespace PiersKarsenbarg.Nutanix
         public GetSubnetsArgs()
         {
         }
+        public static new GetSubnetsArgs Empty => new GetSubnetsArgs();
     }
 
-    public sealed class GetSubnetsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSubnetsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private InputList<Inputs.GetSubnetsMetadataInputArgs>? _metadatas;
+
+        /// <summary>
+        /// The subnet kind metadata.
+        /// </summary>
         public InputList<Inputs.GetSubnetsMetadataInputArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new InputList<Inputs.GetSubnetsMetadataInputArgs>());
@@ -94,18 +101,28 @@ namespace PiersKarsenbarg.Nutanix
         public GetSubnetsInvokeArgs()
         {
         }
+        public static new GetSubnetsInvokeArgs Empty => new GetSubnetsInvokeArgs();
     }
 
 
     [OutputType]
     public sealed class GetSubnetsResult
     {
+        /// <summary>
+        /// version of the API
+        /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// List of Subnets
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsEntityResult> Entities;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The subnet kind metadata.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsMetadataResult> Metadatas;
 
         [OutputConstructor]

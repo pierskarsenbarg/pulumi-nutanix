@@ -2,10 +2,17 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 
 export interface AccessControlPolicyCategory {
+    /**
+     * - (Optional) Name of the Access Control Policy.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - value of the key.
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -14,69 +21,164 @@ export interface AccessControlPolicyContextFilterList {
      * A list of Entity filter expressions.
      */
     entityFilterExpressionLists: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyContextFilterListEntityFilterExpressionList>[]>;
+    /**
+     * - (Optional) Filter the scope of an Access Control Policy.
+     */
     scopeFilterExpressionLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyContextFilterListScopeFilterExpressionList>[]>;
 }
 
 export interface AccessControlPolicyContextFilterListEntityFilterExpressionList {
+    /**
+     * - (Optional)  The LHS of the filter expression - the entity type.
+     */
     leftHandSideEntityType?: pulumi.Input<string>;
+    /**
+     * - (Required) The operator in the filter expression.
+     */
     operator: pulumi.Input<string>;
+    /**
+     * - (Required) The right hand side (RHS) of an scope expression.
+     */
     rightHandSide: pulumi.Input<inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSide>;
 }
 
 export interface AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSide {
+    /**
+     * - (Optional) The category values represented as a dictionary of key > list of values.
+     */
     categories?: pulumi.Input<inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategories>;
+    /**
+     * - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+     */
     collection?: pulumi.Input<string>;
+    /**
+     * - (Optional) The explicit list of UUIDs for the given kind.
+     */
     uuidLists?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategories {
+    /**
+     * - (Optional) Name of the Access Control Policy.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - value of the key.
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface AccessControlPolicyContextFilterListScopeFilterExpressionList {
+    /**
+     * - (Optional)  The LHS of the filter expression - the scope type.
+     */
     leftHandSide: pulumi.Input<string>;
+    /**
+     * - (Required) The operator of the filter expression.
+     */
     operator: pulumi.Input<string>;
+    /**
+     * - (Required) The right hand side (RHS) of an scope expression.
+     */
     rightHandSide: pulumi.Input<inputs.AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSide>;
 }
 
 export interface AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSide {
+    /**
+     * - (Optional) The category values represented as a dictionary of key > list of values.
+     */
     categories?: pulumi.Input<inputs.AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideCategories>;
+    /**
+     * - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+     */
     collection?: pulumi.Input<string>;
+    /**
+     * - (Optional) The explicit list of UUIDs for the given kind.
+     */
     uuidLists?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideCategories {
+    /**
+     * - (Optional) Name of the Access Control Policy.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - value of the key.
+     */
     values?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface AccessControlPolicyOwnerReference {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - (Optional) Name of the Access Control Policy.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: pulumi.Input<string>;
 }
 
 export interface AccessControlPolicyRoleReference {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind: pulumi.Input<string>;
+    /**
+     * - (Optional) Name of the Access Control Policy.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid: pulumi.Input<string>;
 }
 
 export interface AccessControlPolicyUserGroupReferenceList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - (Optional) Name of the Access Control Policy.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid: pulumi.Input<string>;
 }
 
 export interface AccessControlPolicyUserReferenceList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - (Optional) Name of the Access Control Policy.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid: pulumi.Input<string>;
 }
 
 export interface AddressGroupIpAddressBlockList {
+    /**
+     * - (Required) IP of the address block
+     */
     ip: pulumi.Input<string>;
+    /**
+     * - (Required) Prefix length of address block in int
+     *
+     * See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/reference/prism_central/v3/api/address-groups/postaddressgroups).
+     */
     prefixLength: pulumi.Input<number>;
 }
 
@@ -92,6 +194,9 @@ export interface FoundationCentralImageClusterClusterStatus {
 }
 
 export interface FoundationCentralImageClusterClusterStatusClusterProgressDetail {
+    /**
+     * Name of the cluster.
+     */
     clusterName?: pulumi.Input<string>;
     messageLists?: pulumi.Input<pulumi.Input<string>[]>;
     percentComplete?: pulumi.Input<number>;
@@ -99,6 +204,9 @@ export interface FoundationCentralImageClusterClusterStatusClusterProgressDetail
 }
 
 export interface FoundationCentralImageClusterClusterStatusNodeProgressDetail {
+    /**
+     * UUID of the node.
+     */
     imagedNodeUuid?: pulumi.Input<string>;
     imagingStopped?: pulumi.Input<boolean>;
     intentPickedUp?: pulumi.Input<boolean>;
@@ -108,25 +216,61 @@ export interface FoundationCentralImageClusterClusterStatusNodeProgressDetail {
 }
 
 export interface FoundationCentralImageClusterCommonNetworkSettings {
+    /**
+     * List of dns servers for the cvms in the cluster.
+     */
     cvmDnsServers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * List of ntp servers for the cvms in the cluster.
+     */
     cvmNtpServers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * List of dns servers for the hypervisors in the cluster.
+     */
     hypervisorDnsServers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * List of ntp servers for the hypervisors in the cluster.
+     */
     hypervisorNtpServers?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfig {
     blocks?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterFoundationInitConfigBlock>[]>;
     clusters?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterFoundationInitConfigCluster>[]>;
+    /**
+     * Gateway of the cvm.
+     */
     cvmGateway?: pulumi.Input<string>;
+    /**
+     * Netmask of the cvm.
+     */
     cvmNetmask?: pulumi.Input<string>;
     dnsServers?: pulumi.Input<string>;
+    /**
+     * Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+     */
     hypervProductKey?: pulumi.Input<string>;
+    /**
+     * SKU of hyperv to be installed if hypervisorType is hyperv.
+     */
     hypervSku?: pulumi.Input<string>;
+    /**
+     * Gateway of the hypervisor.
+     */
     hypervisorGateway?: pulumi.Input<string>;
     hypervisorIsoUrl?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     hypervisorIsos?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterFoundationInitConfigHypervisorIso>[]>;
+    /**
+     * Netmask of the hypervisor.
+     */
     hypervisorNetmask?: pulumi.Input<string>;
+    /**
+     * Gateway of the ipmi.
+     */
     ipmiGateway?: pulumi.Input<string>;
+    /**
+     * Netmask of the ipmi.
+     */
     ipmiNetmask?: pulumi.Input<string>;
     nosPackageUrls?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterFoundationInitConfigNosPackageUrl>[]>;
 }
@@ -137,14 +281,35 @@ export interface FoundationCentralImageClusterFoundationInitConfigBlock {
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigBlockNode {
+    /**
+     * IP address to be set for the cvm on the node.
+     */
     cvmIp?: pulumi.Input<string>;
+    /**
+     * Vlan tag of the cvm, if the cvm is on a vlan.
+     */
     cvmVlanId?: pulumi.Input<number>;
     fcImagedNodeUuid?: pulumi.Input<string>;
+    /**
+     * Hardware attributes override json for the node.
+     */
     hardwareAttributesOverride?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     hypervisor?: pulumi.Input<string>;
+    /**
+     * Name to be set for the hypervisor host.
+     */
     hypervisorHostname?: pulumi.Input<string>;
+    /**
+     * IP address to be set for the hypervisor on the node.
+     */
     hypervisorIp?: pulumi.Input<string>;
+    /**
+     * True, if the node should be imaged, False, otherwise.
+     */
     imageNow?: pulumi.Input<boolean>;
+    /**
+     * IP address to be set for the ipmi of the node.
+     */
     ipmiIp?: pulumi.Input<string>;
     ipv6Address?: pulumi.Input<string>;
     nodePosition?: pulumi.Input<string>;
@@ -152,59 +317,158 @@ export interface FoundationCentralImageClusterFoundationInitConfigBlockNode {
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigCluster {
+    /**
+     * External management ip of the cluster.
+     */
     clusterExternalIp?: pulumi.Input<string>;
     clusterInitNow?: pulumi.Input<boolean>;
     clusterInitSuccessful?: pulumi.Input<boolean>;
     clusterMembers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Name of the cluster.
+     */
     clusterName?: pulumi.Input<string>;
+    /**
+     * List of dns servers for the cvms in the cluster.
+     */
     cvmDnsServers?: pulumi.Input<string>;
+    /**
+     * List of ntp servers for the cvms in the cluster.
+     */
     cvmNtpServers?: pulumi.Input<string>;
+    /**
+     * Redundancy factor of the cluster.
+     */
     redundancyFactor?: pulumi.Input<number>;
+    /**
+     * Timezone to be set on the cluster.
+     */
     timezone?: pulumi.Input<string>;
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigHypervisorIso {
+    /**
+     * Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+     */
     hypervisorType?: pulumi.Input<string>;
+    /**
+     * sha256sum of the hypervisor iso.
+     */
     sha256sum?: pulumi.Input<string>;
+    /**
+     * URL to download hypervisor iso. Required only if imaging is needed.
+     */
     url?: pulumi.Input<string>;
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigNosPackageUrl {
+    /**
+     * sha256sum of the hypervisor iso.
+     */
     sha256sum?: pulumi.Input<string>;
+    /**
+     * URL to download hypervisor iso. Required only if imaging is needed.
+     */
     url?: pulumi.Input<string>;
 }
 
 export interface FoundationCentralImageClusterHypervisorIsoDetails {
+    /**
+     * Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+     */
     hypervProductKey?: pulumi.Input<string>;
+    /**
+     * SKU of hyperv to be installed if hypervisorType is hyperv.
+     */
     hypervSku?: pulumi.Input<string>;
+    /**
+     * sha256sum of the hypervisor iso.
+     */
     sha256sum?: pulumi.Input<string>;
+    /**
+     * URL to download hypervisor iso. Required only if imaging is needed.
+     */
     url?: pulumi.Input<string>;
 }
 
 export interface FoundationCentralImageClusterNodeList {
+    /**
+     * Gateway of the cvm.
+     */
     cvmGateway?: pulumi.Input<string>;
+    /**
+     * IP address to be set for the cvm on the node.
+     */
     cvmIp?: pulumi.Input<string>;
+    /**
+     * Netmask of the cvm.
+     */
     cvmNetmask?: pulumi.Input<string>;
+    /**
+     * Amount of memory to be assigned for the cvm.
+     */
     cvmRamGb?: pulumi.Input<number>;
+    /**
+     * Vlan tag of the cvm, if the cvm is on a vlan.
+     */
     cvmVlanId?: pulumi.Input<number>;
+    /**
+     * Hardware attributes override json for the node.
+     */
     hardwareAttributesOverride?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Gateway of the hypervisor.
+     */
     hypervisorGateway?: pulumi.Input<string>;
+    /**
+     * Name to be set for the hypervisor host.
+     */
     hypervisorHostname?: pulumi.Input<string>;
+    /**
+     * IP address to be set for the hypervisor on the node.
+     */
     hypervisorIp?: pulumi.Input<string>;
+    /**
+     * Netmask of the hypervisor.
+     */
     hypervisorNetmask?: pulumi.Input<string>;
+    /**
+     * Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+     */
     hypervisorType?: pulumi.Input<string>;
+    /**
+     * True, if the node should be imaged, False, otherwise.
+     */
     imageNow?: pulumi.Input<boolean>;
+    /**
+     * UUID of the node.
+     */
     imagedNodeUuid?: pulumi.Input<string>;
+    /**
+     * Gateway of the ipmi.
+     */
     ipmiGateway?: pulumi.Input<string>;
+    /**
+     * IP address to be set for the ipmi of the node.
+     */
     ipmiIp?: pulumi.Input<string>;
+    /**
+     * Netmask of the ipmi.
+     */
     ipmiNetmask?: pulumi.Input<string>;
+    /**
+     * Passthrough RDMA nic to CVM if possible, default to false.
+     */
     rdmaPassthrough?: pulumi.Input<boolean>;
+    /**
+     * Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
+     */
     useExistingNetworkSettings?: pulumi.Input<boolean>;
 }
 
 export interface FoundationImageNodesBlock {
     /**
-     * : - Block ID.
+     * - Block ID.
      */
     blockId?: pulumi.Input<string>;
     nodes: pulumi.Input<pulumi.Input<inputs.FoundationImageNodesBlockNode>[]>;
@@ -212,130 +476,130 @@ export interface FoundationImageNodesBlock {
 
 export interface FoundationImageNodesBlockNode {
     /**
-     * :- (Required if node is lacp configured) slow or fast if lacp if being used at the switch
+     * - (Required if node is lacp configured) slow or fast if lacp if being used at the switch
      */
     bondLacpRate?: pulumi.Input<string>;
     /**
-     * :- (Required if node is capable) dynamic if using LACP, static for LAG
+     * - (Required if node is capable) dynamic if using LACP, static for LAG
      */
     bondMode?: pulumi.Input<string>;
     /**
-     * :- MAC Addresses of NICs in a team/bond
+     * - MAC Addresses of NICs in a team/bond
      */
     bondUplinks?: pulumi.Input<string>;
     /**
-     * :- ID of cluster.
+     * - ID of cluster.
      */
     clusterId?: pulumi.Input<string>;
     /**
-     * :- Current CVM vlan tag. 0 Value with remove vlan tag.
+     * - Current CVM vlan tag. 0 Value with remove vlan tag.
      */
     currentCvmVlanTag?: pulumi.Input<number>;
     /**
-     * :- CVM current network interface.
+     * - CVM current network interface.
      */
     currentNetworkInterface?: pulumi.Input<string>;
     /**
-     * :- RAM capacity of CVM in GB.
+     * - RAM capacity of CVM in GB.
      */
     cvmGbRam?: pulumi.Input<number>;
     cvmIp?: pulumi.Input<string>;
     /**
-     * :- Number of CVM vcpus.
+     * - Number of CVM vcpus.
      */
     cvmNumVcpus?: pulumi.Input<number>;
     /**
-     * :- use "vmInstaller" to enable CVM imaging from standalone.
+     * - use "vmInstaller" to enable CVM imaging from standalone.
      */
     deviceHint?: pulumi.Input<string>;
     /**
-     * :- serial of boot device to be excluded (used by NX G6 platforms)
+     * - serial of boot device to be excluded (used by NX G6 platforms)
      */
     exludeBootSerial?: pulumi.Input<string>;
     hypervisor?: pulumi.Input<string>;
     /**
-     * :- (Required) Hypervisor Hostname.
+     * - (Required) Hypervisor Hostname.
      */
     hypervisorHostname: pulumi.Input<string>;
     /**
-     * :- (Required) Hypervisor IP address.
+     * - (Required) Hypervisor IP address.
      */
     hypervisorIp: pulumi.Input<string>;
     /**
-     * :- Imaging delay.
+     * - Imaging delay.
      */
     imageDelay?: pulumi.Input<number>;
     /**
-     * :- (Optional, Default = true) If the node should be imaged now.
+     * - (Optional, Default = true) If the node should be imaged now.
      */
     imageNow?: pulumi.Input<boolean>;
     imageSuccessful?: pulumi.Input<boolean>;
     /**
-     * :- Whether IPMI should be configured.
+     * - Whether IPMI should be configured.
      */
     ipmiConfigureNow?: pulumi.Input<boolean>;
     /**
-     * :- (Required incase using IPMI based imaging either here or outside blocks) IPMI gateway for this node
+     * - (Required incase using IPMI based imaging either here or outside blocks) IPMI gateway for this node
      */
     ipmiGateway?: pulumi.Input<string>;
     /**
-     * :- (Required) IPMI IP address.
+     * - (Required) IPMI IP address.
      */
     ipmiIp?: pulumi.Input<string>;
     /**
-     * :- IPMI MAC address.
+     * - IPMI MAC address.
      */
     ipmiMac?: pulumi.Input<string>;
     /**
-     * :- (Required incase using IPMI based imaging either here or outside blocks) IPMI netmask for this node
+     * - (Required incase using IPMI based imaging either here or outside blocks) IPMI netmask for this node
      */
     ipmiNetmask?: pulumi.Input<string>;
     /**
-     * :- (Required incase using IPMI based imaging either here or outside blocks) IPMI username
+     * - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
      */
     ipmiPassword?: pulumi.Input<string>;
     /**
-     * :- (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+     * - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
      */
     ipmiUser?: pulumi.Input<string>;
     /**
-     * :- (Required when deviceHint = "vmInstaller" for imaging using node's existing cvm for imaging) IPV6 address.
+     * - (Required when deviceHint = "vmInstaller" for imaging using node's existing cvm for imaging) IPV6 address.
      */
     ipv6Address?: pulumi.Input<string>;
     /**
-     * :- (Required when deviceHint = "vmInstaller" for imaging using node's existing cvm for imaging) ipv6 interface.
+     * - (Required when deviceHint = "vmInstaller" for imaging using node's existing cvm for imaging) ipv6 interface.
      */
     ipv6Interface?: pulumi.Input<string>;
     /**
-     * :- relocate bootbank files to make space for phoenix files.
+     * - relocate bootbank files to make space for phoenix files.
      */
     mitigateLowBootSpace?: pulumi.Input<boolean>;
     /**
-     * :- (Required) Position of the node in the block.
+     * - (Required) Position of the node in the block.
      */
     nodePosition: pulumi.Input<string>;
     /**
-     * :- serial number of the node.
+     * - serial number of the node.
      */
     nodeSerial?: pulumi.Input<string>;
     /**
-     * :- mac address of nic to be used for rdma
+     * - mac address of nic to be used for rdma
      */
     rdmaMacAddr?: pulumi.Input<string>;
     /**
-     * :- (Required if node is capable) passthru RDMA nic to CVM if possible, default to false
+     * - (Required if node is capable) passthru RDMA nic to CVM if possible, default to false
      */
     rdmaPassthrough?: pulumi.Input<boolean>;
     /**
-     * :- UCSM Managed mode.
+     * - UCSM Managed mode.
      */
     ucsmManagedMode?: pulumi.Input<string>;
     /**
-     * :- UCSM node serial.
+     * - UCSM node serial.
      */
     ucsmNodeSerial?: pulumi.Input<string>;
     /**
-     * :- Object of UCSM parameters.
+     * - Object of UCSM parameters.
      * * `ucsm_params.native_vlan` :- If the vlan is native.
      * * `ucsm_params.keep_ucsm_settings` :- Whether UCSM settings should be kept.
      * * `ucsm_params.mac_pool` :- Mac address pool.
@@ -354,7 +618,7 @@ export interface FoundationImageNodesBlockNodeUcsmParams {
 
 export interface FoundationImageNodesBlockNodeVswitch {
     /**
-     * :- (Required if node is capable) dynamic if using LACP, static for LAG
+     * - (Required if node is capable) dynamic if using LACP, static for LAG
      */
     bondMode?: pulumi.Input<string>;
     lacp?: pulumi.Input<string>;
@@ -366,66 +630,66 @@ export interface FoundationImageNodesBlockNodeVswitch {
 
 export interface FoundationImageNodesCluster {
     /**
-     * : - Backplane netmask.
+     * - Backplane netmask.
      */
     backplaneNetmask?: pulumi.Input<string>;
     /**
-     * : - Backplane subnet address.
+     * - Backplane subnet address.
      */
     backplaneSubnet?: pulumi.Input<string>;
     /**
-     * : - Backplane vlan.
+     * - Backplane vlan.
      */
     backplaneVlan?: pulumi.Input<string>;
     /**
-     * : - External IP of the cluster.
+     * - External IP of the cluster.
      */
     clusterExternalIp?: pulumi.Input<string>;
     /**
-     * : - (Optional, Default = true) If cluster should be created.
+     * - (Optional, Default = true) If cluster should be created.
      */
     clusterInitNow?: pulumi.Input<boolean>;
     /**
-     * : - If cluster initialization was successful.
+     * - If cluster initialization was successful.
      */
     clusterInitSuccessful?: pulumi.Input<boolean>;
     /**
-     * : - (Required) Members in the cluster.
+     * - (Required) Members in the cluster.
      */
     clusterMembers: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * : - (Required) Name of the cluster.
+     * - (Required) Name of the cluster.
      */
     clusterName: pulumi.Input<string>;
     /**
-     * : - DNS servers of CVM.
+     * - DNS servers of CVM.
      */
     cvmDnsServers?: pulumi.Input<string>;
     /**
-     * : - NTP servers of CVM.
+     * - NTP servers of CVM.
      */
     cvmNtpServers?: pulumi.Input<string>;
     /**
-     * : - If network segmentation should be enabled.
+     * - If network segmentation should be enabled.
      */
     enableNs?: pulumi.Input<boolean>;
     /**
-     * : - NTP servers of hypervisor.
+     * - NTP servers of hypervisor.
      */
     hypervisorNtpServers?: pulumi.Input<string>;
     /**
-     * : - (Required) Cluster Redundancy Factor.
+     * - (Required) Cluster Redundancy Factor.
      */
     redundancyFactor: pulumi.Input<number>;
     /**
-     * : - If it is a single node cluster.
+     * - If it is a single node cluster.
      */
     singleNodeCluster?: pulumi.Input<boolean>;
 }
 
 export interface FoundationImageNodesClusterUrl {
     /**
-     * : - (Required) Name of the cluster.
+     * - (Required) Name of the cluster.
      */
     clusterName?: pulumi.Input<string>;
     clusterUrl?: pulumi.Input<string>;
@@ -433,28 +697,28 @@ export interface FoundationImageNodesClusterUrl {
 
 export interface FoundationImageNodesEosMetadata {
     /**
-     * : - arrya of account names
+     * - arrya of account names
      */
     accountNames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * : - Id of the Eos config uploaded in foundation GUI.
+     * - Id of the Eos config uploaded in foundation GUI.
      */
     configId?: pulumi.Input<string>;
     /**
-     * : - Email address of the user who downloaded Eos config.
+     * - Email address of the user who downloaded Eos config.
      */
     email?: pulumi.Input<string>;
 }
 
 export interface FoundationImageNodesFcSettings {
     /**
-     * :- Foundation Central metadata which will be transferred to the newly imaged node.
+     * - Foundation Central metadata which will be transferred to the newly imaged node.
      * * `fc_metadata.fc_ip` :- IP address of foundation central.
      * * `fc_metadata.api_key` :- apiKey which the node uses to register itself with foundation central.
      */
     fcMetadata: pulumi.Input<inputs.FoundationImageNodesFcSettingsFcMetadata>;
     /**
-     * :- If this attribute is set to True, FC workflow will be invoked.
+     * - If this attribute is set to True, FC workflow will be invoked.
      */
     foundationCentral: pulumi.Input<boolean>;
 }
@@ -466,102 +730,117 @@ export interface FoundationImageNodesFcSettingsFcMetadata {
 
 export interface FoundationImageNodesHypervisorIso {
     /**
-     * : - Details of hypervisor ISO of type esx.
+     * - Details of hypervisor ISO of type esx.
      */
     esx?: pulumi.Input<inputs.FoundationImageNodesHypervisorIsoEsx>;
     /**
-     * : - Details of hypervisor ISO of type hyperv.
+     * - Details of hypervisor ISO of type hyperv.
      */
     hyperv?: pulumi.Input<inputs.FoundationImageNodesHypervisorIsoHyperv>;
     /**
-     * : - Details of hypervisor ISO of type kvm.
+     * - Details of hypervisor ISO of type kvm.
      */
     kvm?: pulumi.Input<inputs.FoundationImageNodesHypervisorIsoKvm>;
     /**
-     * : - Details of hypervisor ISO of type xen.
+     * - Details of hypervisor ISO of type xen.
      */
     xen?: pulumi.Input<inputs.FoundationImageNodesHypervisorIsoXen>;
 }
 
 export interface FoundationImageNodesHypervisorIsoEsx {
     /**
-     * :- (Required) Filename of hypervisor ISO.
+     * - (Required) Filename of hypervisor ISO.
      */
     checksum: pulumi.Input<string>;
     /**
-     * :- (Required) Checksum for ISO file.
+     * - (Required) Checksum for ISO file.
      */
     filename: pulumi.Input<string>;
 }
 
 export interface FoundationImageNodesHypervisorIsoHyperv {
     /**
-     * :- (Required) Filename of hypervisor ISO.
+     * - (Required) Filename of hypervisor ISO.
      */
     checksum: pulumi.Input<string>;
     /**
-     * :- (Required) Checksum for ISO file.
+     * - (Required) Checksum for ISO file.
      */
     filename: pulumi.Input<string>;
 }
 
 export interface FoundationImageNodesHypervisorIsoKvm {
     /**
-     * :- (Required) Filename of hypervisor ISO.
+     * - (Required) Filename of hypervisor ISO.
      */
     checksum: pulumi.Input<string>;
     /**
-     * :- (Required) Checksum for ISO file.
+     * - (Required) Checksum for ISO file.
      */
     filename: pulumi.Input<string>;
 }
 
 export interface FoundationImageNodesHypervisorIsoXen {
     /**
-     * :- (Required) Filename of hypervisor ISO.
+     * - (Required) Filename of hypervisor ISO.
      */
     checksum: pulumi.Input<string>;
     /**
-     * :- (Required) Checksum for ISO file.
+     * - (Required) Checksum for ISO file.
      */
     filename: pulumi.Input<string>;
 }
 
 export interface FoundationImageNodesTests {
     /**
-     * : - Whether NCC checks should run.
+     * - Whether NCC checks should run.
      */
     runNcc?: pulumi.Input<boolean>;
     /**
-     * : - Whether system checks should run.
+     * - Whether system checks should run.
      */
     runSyscheck?: pulumi.Input<boolean>;
 }
 
 export interface FoundationIpmiConfigBlock {
+    /**
+     * - (Optional) Block Id
+     */
     blockId?: pulumi.Input<string>;
+    /**
+     * - (Required) array of nodes for ipmi config.
+     */
     nodes: pulumi.Input<pulumi.Input<inputs.FoundationIpmiConfigBlockNode>[]>;
 }
 
 export interface FoundationIpmiConfigBlockNode {
+    /**
+     * - (Required) Whether IPMI should be configured. Should be kept true to configure
+     */
     ipmiConfigureNow: pulumi.Input<boolean>;
+    /**
+     * - Whether IPMI was successfully configured.
+     */
     ipmiConfigureSuccessful?: pulumi.Input<boolean>;
+    /**
+     * - IPMI IP address.
+     */
     ipmiIp: pulumi.Input<string>;
+    /**
+     * - (Required) IPMI mac address.
+     */
     ipmiMac: pulumi.Input<string>;
+    /**
+     * - IPMI configuration status message if any.
+     */
     ipmiMessage?: pulumi.Input<string>;
-}
-
-export interface GetAccessControlPoliciesMetadataArgs {
-    filter?: pulumi.Input<string>;
-    kind?: pulumi.Input<string>;
-    length?: pulumi.Input<number>;
-    offset?: pulumi.Input<number>;
-    sortAttribute?: pulumi.Input<string>;
-    sortOrder?: pulumi.Input<string>;
 }
 
 export interface GetAccessControlPoliciesMetadata {
     filter?: string;
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: string;
     length?: number;
     offset?: number;
@@ -569,27 +848,11 @@ export interface GetAccessControlPoliciesMetadata {
     sortOrder?: string;
 }
 
-export interface GetAccessControlPolicyCategory {
-    name?: string;
-    value?: string;
-}
-
-export interface GetAccessControlPolicyCategoryArgs {
-    name?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetAddressGroupsMetadata {
-    filter?: string;
-    kind?: string;
-    length?: number;
-    offset?: number;
-    sortAttribute?: string;
-    sortOrder?: string;
-}
-
-export interface GetAddressGroupsMetadataArgs {
+export interface GetAccessControlPoliciesMetadataArgs {
     filter?: pulumi.Input<string>;
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
     length?: pulumi.Input<number>;
     offset?: pulumi.Input<number>;
@@ -597,9 +860,74 @@ export interface GetAddressGroupsMetadataArgs {
     sortOrder?: pulumi.Input<string>;
 }
 
-export interface GetAssertHelperCheckArgs {
-    condition: pulumi.Input<boolean>;
-    errorMessage: pulumi.Input<string>;
+export interface GetAccessControlPolicyCategory {
+    /**
+     * - the name(Optional).
+     */
+    name?: string;
+    /**
+     * - value of the key.
+     */
+    value?: string;
+}
+
+export interface GetAccessControlPolicyCategoryArgs {
+    /**
+     * - the name(Optional).
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * - value of the key.
+     */
+    value?: pulumi.Input<string>;
+}
+
+export interface GetAddressGroupsMetadata {
+    /**
+     * (Optional) Filter in FIQL Syntax
+     */
+    filter?: string;
+    kind?: string;
+    /**
+     * (Optional) Integer
+     */
+    length?: number;
+    /**
+     * (Optional) Integer
+     */
+    offset?: number;
+    /**
+     * (Optional) attribute to sort
+     */
+    sortAttribute?: string;
+    /**
+     * (Optional) order of sorting
+     */
+    sortOrder?: string;
+}
+
+export interface GetAddressGroupsMetadataArgs {
+    /**
+     * (Optional) Filter in FIQL Syntax
+     */
+    filter?: pulumi.Input<string>;
+    kind?: pulumi.Input<string>;
+    /**
+     * (Optional) Integer
+     */
+    length?: pulumi.Input<number>;
+    /**
+     * (Optional) Integer
+     */
+    offset?: pulumi.Input<number>;
+    /**
+     * (Optional) attribute to sort
+     */
+    sortAttribute?: pulumi.Input<string>;
+    /**
+     * (Optional) order of sorting
+     */
+    sortOrder?: pulumi.Input<string>;
 }
 
 export interface GetAssertHelperCheck {
@@ -607,18 +935,38 @@ export interface GetAssertHelperCheck {
     errorMessage: string;
 }
 
-export interface GetClusterCategoryArgs {
-    name?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
+export interface GetAssertHelperCheckArgs {
+    condition: pulumi.Input<boolean>;
+    errorMessage: pulumi.Input<string>;
 }
 
 export interface GetClusterCategory {
+    /**
+     * - the key name.
+     */
     name?: string;
+    /**
+     * - value of the key.
+     */
     value?: string;
+}
+
+export interface GetClusterCategoryArgs {
+    /**
+     * - the key name.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * - value of the key.
+     */
+    value?: pulumi.Input<string>;
 }
 
 export interface GetFloatingIpsMetadata {
     filter?: string;
+    /**
+     * - The kind name (Default value: project).
+     */
     kind?: string;
     length?: number;
     offset?: number;
@@ -629,23 +977,15 @@ export interface GetFloatingIpsMetadata {
 
 export interface GetFloatingIpsMetadataArgs {
     filter?: pulumi.Input<string>;
+    /**
+     * - The kind name (Default value: project).
+     */
     kind?: pulumi.Input<string>;
     length?: pulumi.Input<number>;
     offset?: pulumi.Input<number>;
     sortAttribute?: pulumi.Input<string>;
     sortOrder?: pulumi.Input<string>;
     totalMatches?: pulumi.Input<number>;
-}
-
-export interface GetFoundationCentralClusterDetailsClusterStatusArgs {
-    aggregatePercentComplete?: pulumi.Input<number>;
-    clusterCreationStarted?: pulumi.Input<boolean>;
-    clusterProgressDetails?: pulumi.Input<pulumi.Input<inputs.GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs>[]>;
-    currentFoundationIp?: pulumi.Input<string>;
-    foundationSessionId?: pulumi.Input<string>;
-    imagingStopped?: pulumi.Input<boolean>;
-    intentPickedUp?: pulumi.Input<boolean>;
-    nodeProgressDetails?: pulumi.Input<pulumi.Input<inputs.GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs>[]>;
 }
 
 export interface GetFoundationCentralClusterDetailsClusterStatus {
@@ -659,11 +999,15 @@ export interface GetFoundationCentralClusterDetailsClusterStatus {
     nodeProgressDetails?: inputs.GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetail[];
 }
 
-export interface GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs {
-    clusterName?: pulumi.Input<string>;
-    messageLists?: pulumi.Input<pulumi.Input<string>[]>;
-    percentComplete?: pulumi.Input<number>;
-    status?: pulumi.Input<string>;
+export interface GetFoundationCentralClusterDetailsClusterStatusArgs {
+    aggregatePercentComplete?: pulumi.Input<number>;
+    clusterCreationStarted?: pulumi.Input<boolean>;
+    clusterProgressDetails?: pulumi.Input<pulumi.Input<inputs.GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs>[]>;
+    currentFoundationIp?: pulumi.Input<string>;
+    foundationSessionId?: pulumi.Input<string>;
+    imagingStopped?: pulumi.Input<boolean>;
+    intentPickedUp?: pulumi.Input<boolean>;
+    nodeProgressDetails?: pulumi.Input<pulumi.Input<inputs.GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs>[]>;
 }
 
 export interface GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetail {
@@ -673,10 +1017,8 @@ export interface GetFoundationCentralClusterDetailsClusterStatusClusterProgressD
     status?: string;
 }
 
-export interface GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs {
-    imagedNodeUuid?: pulumi.Input<string>;
-    imagingStopped?: pulumi.Input<boolean>;
-    intentPickedUp?: pulumi.Input<boolean>;
+export interface GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs {
+    clusterName?: pulumi.Input<string>;
     messageLists?: pulumi.Input<pulumi.Input<string>[]>;
     percentComplete?: pulumi.Input<number>;
     status?: pulumi.Input<string>;
@@ -691,11 +1033,13 @@ export interface GetFoundationCentralClusterDetailsClusterStatusNodeProgressDeta
     status?: string;
 }
 
-export interface GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs {
-    cvmDnsServers?: pulumi.Input<pulumi.Input<string>[]>;
-    cvmNtpServers?: pulumi.Input<pulumi.Input<string>[]>;
-    hypervisorDnsServers?: pulumi.Input<pulumi.Input<string>[]>;
-    hypervisorNtpServers?: pulumi.Input<pulumi.Input<string>[]>;
+export interface GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs {
+    imagedNodeUuid?: pulumi.Input<string>;
+    imagingStopped?: pulumi.Input<boolean>;
+    intentPickedUp?: pulumi.Input<boolean>;
+    messageLists?: pulumi.Input<pulumi.Input<string>[]>;
+    percentComplete?: pulumi.Input<number>;
+    status?: pulumi.Input<string>;
 }
 
 export interface GetFoundationCentralClusterDetailsCommonNetworkSettings {
@@ -703,6 +1047,13 @@ export interface GetFoundationCentralClusterDetailsCommonNetworkSettings {
     cvmNtpServers?: string[];
     hypervisorDnsServers?: string[];
     hypervisorNtpServers?: string[];
+}
+
+export interface GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs {
+    cvmDnsServers?: pulumi.Input<pulumi.Input<string>[]>;
+    cvmNtpServers?: pulumi.Input<pulumi.Input<string>[]>;
+    hypervisorDnsServers?: pulumi.Input<pulumi.Input<string>[]>;
+    hypervisorNtpServers?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface GetFoundationCentralImagedClustersListFilters {
@@ -713,12 +1064,12 @@ export interface GetFoundationCentralImagedClustersListFiltersArgs {
     archived?: pulumi.Input<boolean>;
 }
 
-export interface GetFoundationCentralImagedNodesListFiltersArgs {
-    nodeState?: pulumi.Input<string>;
-}
-
 export interface GetFoundationCentralImagedNodesListFilters {
     nodeState?: string;
+}
+
+export interface GetFoundationCentralImagedNodesListFiltersArgs {
+    nodeState?: pulumi.Input<string>;
 }
 
 export interface GetFoundationCentralListApiKeysMetadata {
@@ -733,38 +1084,71 @@ export interface GetFoundationCentralListApiKeysMetadataArgs {
     totalMatches?: pulumi.Input<number>;
 }
 
-export interface GetHostCategoryArgs {
-    name?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
 export interface GetHostCategory {
+    /**
+     * - the key name.
+     */
     name?: string;
+    /**
+     * - value of the key.
+     */
     value?: string;
 }
 
+export interface GetHostCategoryArgs {
+    /**
+     * - the key name.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * - value of the key.
+     */
+    value?: pulumi.Input<string>;
+}
+
 export interface GetImageCategory {
+    /**
+     * - the name.
+     */
     name?: string;
     value?: string;
 }
 
 export interface GetImageCategoryArgs {
+    /**
+     * - the name.
+     */
     name?: pulumi.Input<string>;
     value?: pulumi.Input<string>;
 }
 
 export interface GetNetworkSecurityRuleCategory {
+    /**
+     * - the name.
+     */
     name?: string;
+    /**
+     * - value of the key.
+     */
     value?: string;
 }
 
 export interface GetNetworkSecurityRuleCategoryArgs {
+    /**
+     * - the name.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - value of the key.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface GetPbrsMetadata {
     filter?: string;
+    /**
+     * - The kind name (Default value: project).
+     */
     kind?: string;
     length?: number;
     offset?: number;
@@ -775,6 +1159,9 @@ export interface GetPbrsMetadata {
 
 export interface GetPbrsMetadataArgs {
     filter?: pulumi.Input<string>;
+    /**
+     * - The kind name (Default value: project).
+     */
     kind?: pulumi.Input<string>;
     length?: pulumi.Input<number>;
     offset?: pulumi.Input<number>;
@@ -805,18 +1192,6 @@ export interface GetPermissionCategoryArgs {
     value?: pulumi.Input<string>;
 }
 
-export interface GetPermissionsMetadataArgs {
-    filter?: pulumi.Input<string>;
-    /**
-     * (Required) The kind name (Default value: `project`).
-     */
-    kind?: pulumi.Input<string>;
-    length?: pulumi.Input<number>;
-    offset?: pulumi.Input<number>;
-    sortAttribute?: pulumi.Input<string>;
-    sortOrder?: pulumi.Input<string>;
-}
-
 export interface GetPermissionsMetadata {
     filter?: string;
     /**
@@ -827,6 +1202,18 @@ export interface GetPermissionsMetadata {
     offset?: number;
     sortAttribute?: string;
     sortOrder?: string;
+}
+
+export interface GetPermissionsMetadataArgs {
+    filter?: pulumi.Input<string>;
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: pulumi.Input<string>;
+    length?: pulumi.Input<number>;
+    offset?: pulumi.Input<number>;
+    sortAttribute?: pulumi.Input<string>;
+    sortOrder?: pulumi.Input<string>;
 }
 
 export interface GetProjectCategory {
@@ -851,21 +1238,6 @@ export interface GetProjectCategoryArgs {
     value?: pulumi.Input<string>;
 }
 
-export interface GetProjectExternalUserGroupReferenceListArgs {
-    /**
-     * (Required) The kind name (Default value: `project`).
-     */
-    kind?: pulumi.Input<string>;
-    /**
-     * the name.
-     */
-    name?: pulumi.Input<string>;
-    /**
-     * (Required) the UUID.
-     */
-    uuid?: pulumi.Input<string>;
-}
-
 export interface GetProjectExternalUserGroupReferenceList {
     /**
      * (Required) The kind name (Default value: `project`).
@@ -881,7 +1253,7 @@ export interface GetProjectExternalUserGroupReferenceList {
     uuid?: string;
 }
 
-export interface GetProjectSubnetReferenceListArgs {
+export interface GetProjectExternalUserGroupReferenceListArgs {
     /**
      * (Required) The kind name (Default value: `project`).
      */
@@ -911,7 +1283,7 @@ export interface GetProjectSubnetReferenceList {
     uuid?: string;
 }
 
-export interface GetProjectUserReferenceListArgs {
+export interface GetProjectSubnetReferenceListArgs {
     /**
      * (Required) The kind name (Default value: `project`).
      */
@@ -941,15 +1313,19 @@ export interface GetProjectUserReferenceList {
     uuid?: string;
 }
 
-export interface GetProtectionRuleCategoryArgs {
+export interface GetProjectUserReferenceListArgs {
     /**
-     * (Optional) the name.
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: pulumi.Input<string>;
+    /**
+     * the name.
      */
     name?: pulumi.Input<string>;
     /**
-     * value of the key.
+     * (Required) the UUID.
      */
-    value?: pulumi.Input<string>;
+    uuid?: pulumi.Input<string>;
 }
 
 export interface GetProtectionRuleCategory {
@@ -963,7 +1339,7 @@ export interface GetProtectionRuleCategory {
     value?: string;
 }
 
-export interface GetRecoveryPlanCategoryArgs {
+export interface GetProtectionRuleCategoryArgs {
     /**
      * (Optional) the name.
      */
@@ -985,18 +1361,44 @@ export interface GetRecoveryPlanCategory {
     value?: string;
 }
 
+export interface GetRecoveryPlanCategoryArgs {
+    /**
+     * (Optional) the name.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * value of the key.
+     */
+    value?: pulumi.Input<string>;
+}
+
 export interface GetRoleCategory {
+    /**
+     * - the name(Optional).
+     */
     name?: string;
+    /**
+     * - value of the key.
+     */
     value?: string;
 }
 
 export interface GetRoleCategoryArgs {
+    /**
+     * - the name(Optional).
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - value of the key.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface GetRolesMetadata {
     filter?: string;
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: string;
     length?: number;
     offset?: number;
@@ -1006,15 +1408,9 @@ export interface GetRolesMetadata {
 
 export interface GetRolesMetadataArgs {
     filter?: pulumi.Input<string>;
-    kind?: pulumi.Input<string>;
-    length?: pulumi.Input<number>;
-    offset?: pulumi.Input<number>;
-    sortAttribute?: pulumi.Input<string>;
-    sortOrder?: pulumi.Input<string>;
-}
-
-export interface GetServiceGroupsMetadataArgs {
-    filter?: pulumi.Input<string>;
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
     length?: pulumi.Input<number>;
     offset?: pulumi.Input<number>;
@@ -1031,27 +1427,7 @@ export interface GetServiceGroupsMetadata {
     sortOrder?: string;
 }
 
-export interface GetSubnetAdditionalFilterArgs {
-    name: pulumi.Input<string>;
-    values: pulumi.Input<pulumi.Input<string>[]>;
-}
-
-export interface GetSubnetAdditionalFilter {
-    name: string;
-    values: string[];
-}
-
-export interface GetSubnetCategoryArgs {
-    name?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetSubnetCategory {
-    name?: string;
-    value?: string;
-}
-
-export interface GetSubnetsMetadataArgs {
+export interface GetServiceGroupsMetadataArgs {
     filter?: pulumi.Input<string>;
     kind?: pulumi.Input<string>;
     length?: pulumi.Input<number>;
@@ -1060,8 +1436,49 @@ export interface GetSubnetsMetadataArgs {
     sortOrder?: pulumi.Input<string>;
 }
 
+export interface GetSubnetAdditionalFilter {
+    /**
+     * - the name(Optional).
+     */
+    name: string;
+    values: string[];
+}
+
+export interface GetSubnetAdditionalFilterArgs {
+    /**
+     * - the name(Optional).
+     */
+    name: pulumi.Input<string>;
+    values: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface GetSubnetCategory {
+    /**
+     * - the name(Optional).
+     */
+    name?: string;
+    /**
+     * - value of the key.
+     */
+    value?: string;
+}
+
+export interface GetSubnetCategoryArgs {
+    /**
+     * - the name(Optional).
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * - value of the key.
+     */
+    value?: pulumi.Input<string>;
+}
+
 export interface GetSubnetsMetadata {
     filter?: string;
+    /**
+     * The kind name (Default value: project.
+     */
     kind?: string;
     length?: number;
     offset?: number;
@@ -1069,28 +1486,67 @@ export interface GetSubnetsMetadata {
     sortOrder?: string;
 }
 
+export interface GetSubnetsMetadataArgs {
+    filter?: pulumi.Input<string>;
+    /**
+     * The kind name (Default value: project.
+     */
+    kind?: pulumi.Input<string>;
+    length?: pulumi.Input<number>;
+    offset?: pulumi.Input<number>;
+    sortAttribute?: pulumi.Input<string>;
+    sortOrder?: pulumi.Input<string>;
+}
+
 export interface GetUserCategory {
+    /**
+     * - (Optional) The name for the user
+     */
     name?: string;
+    /**
+     * - value of the key.
+     */
     value?: string;
 }
 
 export interface GetUserCategoryArgs {
+    /**
+     * - (Optional) The name for the user
+     */
     name?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
-}
-
-export interface GetUserGroupCategoryArgs {
-    name?: pulumi.Input<string>;
+    /**
+     * - value of the key.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface GetUserGroupCategory {
+    /**
+     * - the name(Optional).
+     */
     name?: string;
+    /**
+     * - value of the key.
+     */
     value?: string;
+}
+
+export interface GetUserGroupCategoryArgs {
+    /**
+     * - the name(Optional).
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * - value of the key.
+     */
+    value?: pulumi.Input<string>;
 }
 
 export interface GetUserGroupsMetadata {
     filter?: string;
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind?: string;
     length?: number;
     offset?: number;
@@ -1100,6 +1556,9 @@ export interface GetUserGroupsMetadata {
 
 export interface GetUserGroupsMetadataArgs {
     filter?: pulumi.Input<string>;
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind?: pulumi.Input<string>;
     length?: pulumi.Input<number>;
     offset?: pulumi.Input<number>;
@@ -1109,6 +1568,9 @@ export interface GetUserGroupsMetadataArgs {
 
 export interface GetUsersMetadata {
     filter?: string;
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind?: string;
     length?: number;
     offset?: number;
@@ -1118,35 +1580,43 @@ export interface GetUsersMetadata {
 
 export interface GetUsersMetadataArgs {
     filter?: pulumi.Input<string>;
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind?: pulumi.Input<string>;
     length?: pulumi.Input<number>;
     offset?: pulumi.Input<number>;
     sortAttribute?: pulumi.Input<string>;
     sortOrder?: pulumi.Input<string>;
-}
-
-export interface GetVirtualMachineCategoryArgs {
-    name?: pulumi.Input<string>;
-    value?: pulumi.Input<string>;
 }
 
 export interface GetVirtualMachineCategory {
+    /**
+     * - the name.
+     */
     name?: string;
+    /**
+     * - value of the key.
+     */
     value?: string;
 }
 
-export interface GetVpcsMetadataArgs {
-    filter?: pulumi.Input<string>;
-    kind?: pulumi.Input<string>;
-    length?: pulumi.Input<number>;
-    offset?: pulumi.Input<number>;
-    sortAttribute?: pulumi.Input<string>;
-    sortOrder?: pulumi.Input<string>;
-    totalMatches?: pulumi.Input<number>;
+export interface GetVirtualMachineCategoryArgs {
+    /**
+     * - the name.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * - value of the key.
+     */
+    value?: pulumi.Input<string>;
 }
 
 export interface GetVpcsMetadata {
     filter?: string;
+    /**
+     * - The kind name (Default value: project).
+     */
     kind?: string;
     length?: number;
     offset?: number;
@@ -1155,20 +1625,54 @@ export interface GetVpcsMetadata {
     totalMatches?: number;
 }
 
+export interface GetVpcsMetadataArgs {
+    filter?: pulumi.Input<string>;
+    /**
+     * - The kind name (Default value: project).
+     */
+    kind?: pulumi.Input<string>;
+    length?: pulumi.Input<number>;
+    offset?: pulumi.Input<number>;
+    sortAttribute?: pulumi.Input<string>;
+    sortOrder?: pulumi.Input<string>;
+    totalMatches?: pulumi.Input<number>;
+}
+
 export interface ImageCategory {
+    /**
+     * - (Required) The name for the image.
+     */
     name?: pulumi.Input<string>;
     value?: pulumi.Input<string>;
 }
 
 export interface ImageClusterReference {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - (Required) The name for the image.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: pulumi.Input<string>;
 }
 
 export interface ImageCurrentClusterReferenceList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - (Required) The name for the image.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: pulumi.Input<string>;
 }
 
@@ -1177,10 +1681,31 @@ export interface KarbonClusterActivePassiveConfig {
 }
 
 export interface KarbonClusterCniConfig {
+    /**
+     * - (Optional) Configuration of the calico CNI provider.
+     * * `calico_config.ip_pool_config`: - (Optional) List of IP pools to be configured/managed by calico.
+     * * `calico_config.ip_pool_config.cidr`: - (Optional) IP range to use for this pool, it should fall within pod cidr.
+     *
+     * **Note:** Updates to this attribute forces new resource creation.
+     *
+     * See detailed information in [Nutanix Karbon Cluster](https://www.nutanix.dev/reference/karbon/api-reference/cluster/).
+     */
     calicoConfig?: pulumi.Input<inputs.KarbonClusterCniConfigCalicoConfig>;
+    /**
+     * - (Optional) Configuration of the flannel container network interface (CNI) provider.
+     */
     flannelConfigs?: pulumi.Input<pulumi.Input<inputs.KarbonClusterCniConfigFlannelConfig>[]>;
+    /**
+     * - (Optional) The size of the subnet from the podIpv4Cidr assigned to each host. A value of 24 would allow up to 255 pods per node.
+     */
     nodeCidrMaskSize?: pulumi.Input<number>;
+    /**
+     * - (Optional) CIDR for pods in the cluster.
+     */
     podIpv4Cidr?: pulumi.Input<string>;
+    /**
+     * - (Optional) Classless inter-domain routing (CIDR) for k8s services in the cluster.
+     */
     serviceIpv4Cidr?: pulumi.Input<string>;
 }
 
@@ -1196,10 +1721,32 @@ export interface KarbonClusterCniConfigFlannelConfig {
 }
 
 export interface KarbonClusterEtcdNodePool {
+    /**
+     * - (Optional) VM configuration in AHV. **Note:** Updates to this attribute forces new resource creation.
+     * * `ahv_config.cpu`: - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+     * * `ahv_config.disk_mib`: - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+     * * `ahv_config.memory_mib`: - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+     * * `ahv_config.network_uuid`: - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+     * * `ahv_config.prism_element_cluster_uuid`: - (Required) The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     ahvConfig?: pulumi.Input<inputs.KarbonClusterEtcdNodePoolAhvConfig>;
+    /**
+     * - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Required) The version of the node OS image. **Note:** Updates to this attribute forces new resource creation.
+     */
     nodeOsVersion: pulumi.Input<string>;
+    /**
+     * - List of the deployed nodes in the node pool.
+     * * `nodes.hostname`: - Hostname of the deployed node.
+     * * `nodes.ipv4_address`: - IP of the deployed node.
+     */
     nodes?: pulumi.Input<pulumi.Input<inputs.KarbonClusterEtcdNodePoolNode>[]>;
+    /**
+     * - (Required) Number of nodes in the node pool. **Note:** Updates to etcd or master node pool forces new resource creation.
+     */
     numInstances: pulumi.Input<number>;
 }
 
@@ -1227,10 +1774,32 @@ export interface KarbonClusterExternalLbConfigMasterNodesConfig {
 }
 
 export interface KarbonClusterMasterNodePool {
+    /**
+     * - (Optional) VM configuration in AHV. **Note:** Updates to this attribute forces new resource creation.
+     * * `ahv_config.cpu`: - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+     * * `ahv_config.disk_mib`: - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+     * * `ahv_config.memory_mib`: - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+     * * `ahv_config.network_uuid`: - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+     * * `ahv_config.prism_element_cluster_uuid`: - (Required) The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     ahvConfig?: pulumi.Input<inputs.KarbonClusterMasterNodePoolAhvConfig>;
+    /**
+     * - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Required) The version of the node OS image. **Note:** Updates to this attribute forces new resource creation.
+     */
     nodeOsVersion: pulumi.Input<string>;
+    /**
+     * - List of the deployed nodes in the node pool.
+     * * `nodes.hostname`: - Hostname of the deployed node.
+     * * `nodes.ipv4_address`: - IP of the deployed node.
+     */
     nodes?: pulumi.Input<pulumi.Input<inputs.KarbonClusterMasterNodePoolNode>[]>;
+    /**
+     * - (Required) Number of nodes in the node pool. **Note:** Updates to etcd or master node pool forces new resource creation.
+     */
     numInstances: pulumi.Input<number>;
 }
 
@@ -1255,6 +1824,9 @@ export interface KarbonClusterSingleMasterConfig {
 }
 
 export interface KarbonClusterStorageClassConfig {
+    /**
+     * - (Required) The name of the storage class.
+     */
     name?: pulumi.Input<string>;
     /**
      * Reclaim policy for persistent volumes provisioned using the specified storage class.
@@ -1264,6 +1836,8 @@ export interface KarbonClusterStorageClassConfig {
      * * `volumes_config.#.prism_element_cluster_uuid` - (Required) The universally unique identifier (UUID) of the Prism Element cluster.
      * * `volumes_config.#.storage_container` - (Required) Name of the storage container the storage container uses to provision volumes.
      * * `volumes_config.#.username` - (Required) Username of the Prism Element user that the API calls use to provision volumes.
+     *
+     * **Note:** Updates to this attribute forces new resource creation.
      */
     reclaimPolicy?: pulumi.Input<string>;
     volumesConfig: pulumi.Input<inputs.KarbonClusterStorageClassConfigVolumesConfig>;
@@ -1279,10 +1853,32 @@ export interface KarbonClusterStorageClassConfigVolumesConfig {
 }
 
 export interface KarbonClusterWorkerNodePool {
+    /**
+     * - (Optional) VM configuration in AHV. **Note:** Updates to this attribute forces new resource creation.
+     * * `ahv_config.cpu`: - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+     * * `ahv_config.disk_mib`: - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+     * * `ahv_config.memory_mib`: - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+     * * `ahv_config.network_uuid`: - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+     * * `ahv_config.prism_element_cluster_uuid`: - (Required) The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     ahvConfig?: pulumi.Input<inputs.KarbonClusterWorkerNodePoolAhvConfig>;
+    /**
+     * - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Required) The version of the node OS image. **Note:** Updates to this attribute forces new resource creation.
+     */
     nodeOsVersion: pulumi.Input<string>;
+    /**
+     * - List of the deployed nodes in the node pool.
+     * * `nodes.hostname`: - Hostname of the deployed node.
+     * * `nodes.ipv4_address`: - IP of the deployed node.
+     */
     nodes?: pulumi.Input<pulumi.Input<inputs.KarbonClusterWorkerNodePoolNode>[]>;
+    /**
+     * - (Required) Number of nodes in the node pool. **Note:** Updates to etcd or master node pool forces new resource creation.
+     */
     numInstances: pulumi.Input<number>;
 }
 
@@ -1317,12 +1913,24 @@ export interface NetworkSecurityRuleAdRuleInboundAllowList {
 }
 
 export interface NetworkSecurityRuleAdRuleInboundAllowListAddressGroupInclusionList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: pulumi.Input<string>;
 }
 
 export interface NetworkSecurityRuleAdRuleInboundAllowListFilterParam {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: pulumi.Input<string>;
     values: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -1333,8 +1941,17 @@ export interface NetworkSecurityRuleAdRuleInboundAllowListIcmpTypeCodeList {
 }
 
 export interface NetworkSecurityRuleAdRuleInboundAllowListServiceGroupList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: pulumi.Input<string>;
 }
 
@@ -1366,12 +1983,24 @@ export interface NetworkSecurityRuleAdRuleOutboundAllowList {
 }
 
 export interface NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: pulumi.Input<string>;
 }
 
 export interface NetworkSecurityRuleAdRuleOutboundAllowListFilterParam {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: pulumi.Input<string>;
     values: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -1382,8 +2011,17 @@ export interface NetworkSecurityRuleAdRuleOutboundAllowListIcmpTypeCodeList {
 }
 
 export interface NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: pulumi.Input<string>;
 }
 
@@ -1398,6 +2036,9 @@ export interface NetworkSecurityRuleAdRuleOutboundAllowListUdpPortRangeList {
 }
 
 export interface NetworkSecurityRuleAdRuleTargetGroupFilterParam {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: pulumi.Input<string>;
     values: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -1420,12 +2061,24 @@ export interface NetworkSecurityRuleAppRuleInboundAllowList {
 }
 
 export interface NetworkSecurityRuleAppRuleInboundAllowListAddressGroupInclusionList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: pulumi.Input<string>;
 }
 
 export interface NetworkSecurityRuleAppRuleInboundAllowListFilterParam {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: pulumi.Input<string>;
     values: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -1436,8 +2089,17 @@ export interface NetworkSecurityRuleAppRuleInboundAllowListIcmpTypeCodeList {
 }
 
 export interface NetworkSecurityRuleAppRuleInboundAllowListServiceGroupList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: pulumi.Input<string>;
 }
 
@@ -1469,12 +2131,24 @@ export interface NetworkSecurityRuleAppRuleOutboundAllowList {
 }
 
 export interface NetworkSecurityRuleAppRuleOutboundAllowListAddressGroupInclusionList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: pulumi.Input<string>;
 }
 
 export interface NetworkSecurityRuleAppRuleOutboundAllowListFilterParam {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: pulumi.Input<string>;
     values: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -1485,8 +2159,17 @@ export interface NetworkSecurityRuleAppRuleOutboundAllowListIcmpTypeCodeList {
 }
 
 export interface NetworkSecurityRuleAppRuleOutboundAllowListServiceGroupList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: pulumi.Input<string>;
 }
 
@@ -1501,21 +2184,33 @@ export interface NetworkSecurityRuleAppRuleOutboundAllowListUdpPortRangeList {
 }
 
 export interface NetworkSecurityRuleAppRuleTargetGroupFilterParam {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: pulumi.Input<string>;
     values: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface NetworkSecurityRuleCategory {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name?: pulumi.Input<string>;
     value?: pulumi.Input<string>;
 }
 
 export interface NetworkSecurityRuleIsolationRuleFirstEntityFilterParam {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: pulumi.Input<string>;
     values: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface NetworkSecurityRuleIsolationRuleSecondEntityFilterParam {
+    /**
+     * - (Required) The name for the network_security_rule.
+     */
     name: pulumi.Input<string>;
     values: pulumi.Input<pulumi.Input<string>[]>;
 }
@@ -2087,37 +2782,88 @@ export interface RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListScri
 }
 
 export interface RoleCategory {
+    /**
+     * - (Optional) Name of the role.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - value of the key.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface RoleOwnerReference {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - (Optional) Name of the role.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: pulumi.Input<string>;
 }
 
 export interface RolePermissionReferenceList {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - (Optional) Name of the role.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid: pulumi.Input<string>;
 }
 
 export interface RoleProjectReference {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - (Optional) Name of the role.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: pulumi.Input<string>;
 }
 
 export interface ServiceGroupServiceList {
+    /**
+     * - (Optional) ICMP type code list
+     */
     icmpTypeCodeLists?: pulumi.Input<pulumi.Input<inputs.ServiceGroupServiceListIcmpTypeCodeList>[]>;
+    /**
+     * - (Optional) The UserPrincipalName of the user from the directory service.
+     */
     protocol?: pulumi.Input<string>;
+    /**
+     * - (Optional) TCP Port range list
+     */
     tcpPortRangeLists?: pulumi.Input<pulumi.Input<inputs.ServiceGroupServiceListTcpPortRangeList>[]>;
+    /**
+     * - (Optional) UDP port range list
+     */
     udpPortRangeLists?: pulumi.Input<pulumi.Input<inputs.ServiceGroupServiceListUdpPortRangeList>[]>;
 }
 
 export interface ServiceGroupServiceListIcmpTypeCodeList {
+    /**
+     * - (Optional) Code as text
+     */
     code?: pulumi.Input<string>;
+    /**
+     * - (Optional) Type as text
+     */
     type?: pulumi.Input<string>;
 }
 
@@ -2126,6 +2872,9 @@ export interface ServiceGroupServiceListTcpPortRangeList {
      * End Port (Int)
      */
     endPort?: pulumi.Input<number>;
+    /**
+     * - (Optional) Start Port (Int)
+     */
     startPort?: pulumi.Input<number>;
 }
 
@@ -2134,6 +2883,9 @@ export interface ServiceGroupServiceListUdpPortRangeList {
      * End Port (Int)
      */
     endPort?: pulumi.Input<number>;
+    /**
+     * - (Optional) Start Port (Int)
+     */
     startPort?: pulumi.Input<number>;
 }
 
@@ -2150,7 +2902,7 @@ export interface StaticRoutesStaticRoutesList {
      */
     destination: pulumi.Input<string>;
     /**
-     * Reference to a subnet.
+     * Reference to a subnet. Supported with 2022.x .
      */
     externalSubnetReferenceUuid?: pulumi.Input<string>;
     /**
@@ -2160,52 +2912,118 @@ export interface StaticRoutesStaticRoutesList {
 }
 
 export interface SubnetCategory {
+    /**
+     * - (Optional) Subnet name (Readonly).
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - value of the key.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface UserAccessControlPolicyReferenceList {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - the name(Optional).
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: pulumi.Input<string>;
 }
 
 export interface UserCategory {
+    /**
+     * - the name(Optional).
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - value of the key.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface UserDirectoryServiceUser {
     defaultUserPrincipalName?: pulumi.Input<string>;
+    /**
+     * - (Optional) The reference to a directory service. See #reference for to look the supported attributes.
+     */
     directoryServiceReference: pulumi.Input<inputs.UserDirectoryServiceUserDirectoryServiceReference>;
+    /**
+     * - (Optional) The UserPrincipalName of the user from the directory service.
+     */
     userPrincipalName?: pulumi.Input<string>;
 }
 
 export interface UserDirectoryServiceUserDirectoryServiceReference {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - the name(Optional).
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid: pulumi.Input<string>;
 }
 
 export interface UserIdentityProviderUser {
+    /**
+     * - (Optional) The reference to a identity provider. See #reference for to look the supported attributes.
+     */
     identityProviderReference: pulumi.Input<inputs.UserIdentityProviderUserIdentityProviderReference>;
+    /**
+     * - (Optional) The username from identity provider. Name ID for SAML Identity Provider.
+     */
     username?: pulumi.Input<string>;
 }
 
 export interface UserIdentityProviderUserIdentityProviderReference {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - the name(Optional).
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid: pulumi.Input<string>;
 }
 
 export interface UserProjectReferenceList {
+    /**
+     * - The kind name. (Default depends on the resource you are referencing)
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - the name(Optional).
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
     uuid?: pulumi.Input<string>;
 }
 
 export interface VirtualMachineCategory {
+    /**
+     * - (Required) The name for the vm.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - value of the key.
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -2227,94 +3045,231 @@ export interface VirtualMachineDiskList {
      */
     diskSizeMib?: pulumi.Input<number>;
     storageConfig?: pulumi.Input<inputs.VirtualMachineDiskListStorageConfig>;
+    /**
+     * - (Optional) The device ID which is used to uniquely identify this particular disk.
+     */
     uuid?: pulumi.Input<string>;
     /**
      * Reference to a volume group.
+     *
+     * The diskSize (the disk sizeMib and the diskSizeBytes attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk sizeMib or diskSizeBytes when you set dataSourceReference but, you can update the diskSize after creation (second apply).
      */
     volumeGroupReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }
 
 export interface VirtualMachineDiskListDeviceProperties {
+    /**
+     * - A Disk type (default: DISK).
+     */
     deviceType?: pulumi.Input<string>;
+    /**
+     * - Address of disk to boot from.
+     */
     diskAddress?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }
 
 export interface VirtualMachineDiskListStorageConfig {
+    /**
+     * - State of the storage policy to pin virtual disks to the hot tier. When specified as a VM attribute, the storage policy applies to all virtual disks of the VM unless overridden by the same attribute specified for a virtual disk.
+     */
     flashMode?: pulumi.Input<string>;
+    /**
+     * - Reference to a kind. Either one of (kind, uuid) or url needs to be specified. Requires Prism Central / AOS 5.17+.
+     * * `storage_container_reference.#.url`: - GET query on the URL will provide information on the source.
+     * * `storage_container_reference.#.kind`: - kind of the container reference
+     * * `storage_container_reference.#.name`: - name of the container reference
+     * * `storage_container_reference.#.uuid`: - uiid of the container reference
+     */
     storageContainerReferences?: pulumi.Input<pulumi.Input<inputs.VirtualMachineDiskListStorageConfigStorageContainerReference>[]>;
 }
 
 export interface VirtualMachineDiskListStorageConfigStorageContainerReference {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
     kind?: pulumi.Input<string>;
+    /**
+     * - (Required) The name for the vm.
+     */
     name?: pulumi.Input<string>;
     url?: pulumi.Input<string>;
+    /**
+     * - (Optional) The device ID which is used to uniquely identify this particular disk.
+     */
     uuid?: pulumi.Input<string>;
 }
 
 export interface VirtualMachineGpuList {
+    /**
+     * - (Computed) The device ID of the GPU.
+     */
     deviceId?: pulumi.Input<number>;
     /**
      * Fraction of the physical GPU assigned.
-     * * `mode`: - (Optional) The mode of this GPU.
-     * * `numVirtualDisplayHeads`: - (ReadOnly) Number of supported virtual display heads.
-     * * `guestDriverVersion`: - (ReadOnly) Last determined guest driver version.
-     * * `deviceId`: - (Computed) The device ID of the GPU.
      */
     fraction?: pulumi.Input<number>;
+    /**
+     * - (ReadOnly) GPU frame buffer size in MiB.
+     */
     frameBufferSizeMib?: pulumi.Input<number>;
+    /**
+     * - (ReadOnly) Last determined guest driver version.
+     */
     guestDriverVersion?: pulumi.Input<string>;
+    /**
+     * - (Optional) The mode of this GPU.
+     */
     mode?: pulumi.Input<string>;
+    /**
+     * - (ReadOnly) Name of the GPU resource.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (ReadOnly) Number of supported virtual display heads.
+     */
     numVirtualDisplayHeads?: pulumi.Input<number>;
     /**
      * GPU {segment:bus:device:function} (sbdf) address if assigned.
      */
     pciAddress?: pulumi.Input<string>;
+    /**
+     * - (ReadOnly) UUID of the GPU.
+     */
     uuid?: pulumi.Input<string>;
+    /**
+     * - (Optional) The vendor of the GPU.
+     */
     vendor?: pulumi.Input<string>;
 }
 
 export interface VirtualMachineNicList {
+    /**
+     * - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+     */
     ipEndpointLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineNicListIpEndpointList>[]>;
+    /**
+     * - Indicates whether the serial port connection is connected or not (`true` or `false`).
+     */
     isConnected?: pulumi.Input<string>;
+    /**
+     * - The MAC address for the adapter.
+     */
     macAddress?: pulumi.Input<string>;
+    /**
+     * - The model of this NIC. (Options : VIRTIO , E1000).
+     */
     model?: pulumi.Input<string>;
+    /**
+     * - The reference to a network_function_chain.
+     */
     networkFunctionChainReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
+     */
     networkFunctionNicType?: pulumi.Input<string>;
+    /**
+     * - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
+     */
     nicType?: pulumi.Input<string>;
+    /**
+     * - The number of tx/rx queue pairs for this NIC.
+     */
     numQueues?: pulumi.Input<number>;
+    /**
+     * - The name of the subnet reference to.
+     */
     subnetName?: pulumi.Input<string>;
+    /**
+     * - The reference to a subnet.
+     */
     subnetUuid?: pulumi.Input<string>;
+    /**
+     * - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
+     */
     uuid?: pulumi.Input<string>;
 }
 
 export interface VirtualMachineNicListIpEndpointList {
+    /**
+     * - Address string.
+     */
     ip?: pulumi.Input<string>;
+    /**
+     * - Address type. It can only be "ASSIGNED" in the spec. If no type is specified in the spec, the default type is set to "ASSIGNED". (Options : ASSIGNED , LEARNED)
+     */
     type?: pulumi.Input<string>;
 }
 
 export interface VirtualMachineNicListStatus {
+    /**
+     * -  The Floating IP associated with the vnic. (Only in `nicListStatus`)
+     */
     floatingIp?: pulumi.Input<string>;
+    /**
+     * - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+     */
     ipEndpointLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineNicListStatusIpEndpointList>[]>;
+    /**
+     * - Indicates whether the serial port connection is connected or not (`true` or `false`).
+     */
     isConnected?: pulumi.Input<string>;
+    /**
+     * - The MAC address for the adapter.
+     */
     macAddress?: pulumi.Input<string>;
+    /**
+     * - The model of this NIC. (Options : VIRTIO , E1000).
+     */
     model?: pulumi.Input<string>;
+    /**
+     * - The reference to a network_function_chain.
+     */
     networkFunctionChainReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
+     */
     networkFunctionNicType?: pulumi.Input<string>;
+    /**
+     * - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
+     */
     nicType?: pulumi.Input<string>;
+    /**
+     * - The number of tx/rx queue pairs for this NIC.
+     */
     numQueues?: pulumi.Input<number>;
+    /**
+     * - The name of the subnet reference to.
+     */
     subnetName?: pulumi.Input<string>;
+    /**
+     * - The reference to a subnet.
+     */
     subnetUuid?: pulumi.Input<string>;
+    /**
+     * - (Optional) The device ID which is used to uniquely identify this particular disk.
+     */
     uuid?: pulumi.Input<string>;
 }
 
 export interface VirtualMachineNicListStatusIpEndpointList {
+    /**
+     * - Address string.
+     */
     ip?: pulumi.Input<string>;
+    /**
+     * - Address type. It can only be "ASSIGNED" in the spec. If no type is specified in the spec, the default type is set to "ASSIGNED". (Options : ASSIGNED , LEARNED)
+     */
     type?: pulumi.Input<string>;
 }
 
 export interface VirtualMachineSerialPortList {
+    /**
+     * - Index of the serial port (int).
+     */
     index?: pulumi.Input<number>;
+    /**
+     * - Indicates whether the serial port connection is connected or not (`true` or `false`).
+     */
     isConnected?: pulumi.Input<boolean>;
 }
 
@@ -2346,4 +3301,3 @@ export interface VpcExternallyRoutablePrefixList {
      */
     prefixLength: pulumi.Input<number>;
 }
-

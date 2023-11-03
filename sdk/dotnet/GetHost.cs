@@ -16,50 +16,66 @@ namespace PiersKarsenbarg.Nutanix
         /// Describes a Host
         /// </summary>
         public static Task<GetHostResult> InvokeAsync(GetHostArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetHostResult>("nutanix:index/getHost:getHost", args ?? new GetHostArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetHostResult>("nutanix:index/getHost:getHost", args ?? new GetHostArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes a Host
         /// </summary>
         public static Output<GetHostResult> Invoke(GetHostInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetHostResult>("nutanix:index/getHost:getHost", args ?? new GetHostInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetHostResult>("nutanix:index/getHost:getHost", args ?? new GetHostInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetHostArgs : Pulumi.InvokeArgs
+    public sealed class GetHostArgs : global::Pulumi.InvokeArgs
     {
         [Input("categories")]
         private List<Inputs.GetHostCategoryArgs>? _categories;
+
+        /// <summary>
+        /// - Categories for the image.
+        /// </summary>
         public List<Inputs.GetHostCategoryArgs> Categories
         {
             get => _categories ?? (_categories = new List<Inputs.GetHostCategoryArgs>());
             set => _categories = value;
         }
 
+        /// <summary>
+        /// Represents hosts uuid
+        /// </summary>
         [Input("hostId", required: true)]
         public string HostId { get; set; } = null!;
 
         public GetHostArgs()
         {
         }
+        public static new GetHostArgs Empty => new GetHostArgs();
     }
 
-    public sealed class GetHostInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetHostInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("categories")]
         private InputList<Inputs.GetHostCategoryInputArgs>? _categories;
+
+        /// <summary>
+        /// - Categories for the image.
+        /// </summary>
         public InputList<Inputs.GetHostCategoryInputArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.GetHostCategoryInputArgs>());
             set => _categories = value;
         }
 
+        /// <summary>
+        /// Represents hosts uuid
+        /// </summary>
         [Input("hostId", required: true)]
         public Input<string> HostId { get; set; } = null!;
 
         public GetHostInvokeArgs()
         {
         }
+        public static new GetHostInvokeArgs Empty => new GetHostInvokeArgs();
     }
 
 
@@ -68,56 +84,109 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// The API version.
-        /// * `gpu_driver_version`: - Host GPU driver version.
-        /// * `failover_cluster`: - Hyper-V failover cluster.
-        /// * `ipmi`: - Host IPMI info.
-        /// * `cpu_model`: - Host CPU model.
-        /// * `host_nics_id_list`: - Host NICs.
-        /// * `num_cpu_sockets`: - Number of CPU sockets.
-        /// * `windows_domain`: - The name of the node to be renamed to during domain-join. If not given,a new name will be automatically assigned.
-        /// * `gpu_list`: - List of GPUs on the host.
-        /// * `serial_number`: - Node serial number.
-        /// * `cpu_capacity_hz`: - Host CPU capacity.
-        /// * `memory_capacity_mib`: - Host memory capacity in MiB.
-        /// * `host_disks_reference_list`: - The reference to a disk.
-        /// * `monitoring_state`: - Host monitoring status.
-        /// * `hypervisor`: - Host Hypervisor information.
-        /// * `host_type`: - Host type.
-        /// * `num_cpu_cores`: - Number of CPU cores on Host.
-        /// * `rackable_unit_reference`: - The reference to a rackable_unit.
-        /// * `controller_vm`: - Host controller vm information.
-        /// * `block`: - Host block config info.
         /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// - Host block config info.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Block;
+        /// <summary>
+        /// - Categories for the image.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetHostCategoryResult> Categories;
+        /// <summary>
+        /// - Reference to a kind. Either one of (kind, uuid) or url needs to be specified.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> ClusterReference;
+        /// <summary>
+        /// - Host controller vm information.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> ControllerVm;
+        /// <summary>
+        /// - Host CPU capacity.
+        /// </summary>
         public readonly int CpuCapacityHz;
+        /// <summary>
+        /// - Host CPU model.
+        /// </summary>
         public readonly string CpuModel;
+        /// <summary>
+        /// - Hyper-V failover cluster.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> FailoverCluster;
+        /// <summary>
+        /// - Host GPU driver version.
+        /// </summary>
         public readonly string GpuDriverVersion;
+        /// <summary>
+        /// - List of GPUs on the host.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetHostGpuListResult> GpuLists;
+        /// <summary>
+        /// - The reference to a disk.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetHostHostDisksReferenceListResult> HostDisksReferenceLists;
         public readonly string HostId;
+        /// <summary>
+        /// - Host NICs.
+        /// </summary>
         public readonly ImmutableArray<string> HostNicsIdLists;
+        /// <summary>
+        /// - Host type.
+        /// </summary>
         public readonly string HostType;
+        /// <summary>
+        /// - Host Hypervisor information.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Hypervisor;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - Host IPMI info.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Ipmi;
+        /// <summary>
+        /// - Host memory capacity in MiB.
+        /// </summary>
         public readonly int MemoryCapacityMib;
         public readonly ImmutableDictionary<string, string> Metadata;
+        /// <summary>
+        /// - Host monitoring status.
+        /// </summary>
         public readonly string MonitoringState;
+        /// <summary>
+        /// - the name.
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - Number of CPU cores on Host.
+        /// </summary>
         public readonly int NumCpuCores;
+        /// <summary>
+        /// - Number of CPU sockets.
+        /// </summary>
         public readonly int NumCpuSockets;
+        /// <summary>
+        /// - The reference to a user.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> OwnerReference;
+        /// <summary>
+        /// - The reference to a project.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> ProjectReference;
+        /// <summary>
+        /// - The reference to a rackable_unit.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> RackableUnitReference;
+        /// <summary>
+        /// - Node serial number.
+        /// </summary>
         public readonly string SerialNumber;
+        /// <summary>
+        /// - The name of the node to be renamed to during domain-join. If not given,a new name will be automatically assigned.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> WindowsDomain;
 
         [OutputConstructor]

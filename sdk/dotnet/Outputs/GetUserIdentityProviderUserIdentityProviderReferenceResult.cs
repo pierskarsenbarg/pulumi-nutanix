@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetUserIdentityProviderUserIdentityProviderReferenceResult
     {
+        /// <summary>
+        /// - The kind name. (Default depends on the resource you are referencing)
+        /// </summary>
         public readonly string Kind;
+        /// <summary>
+        /// - (Optional) The name for the user
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - (Optional) The UUID for the user.
+        /// </summary>
         public readonly string Uuid;
 
         [OutputConstructor]

@@ -7,8 +7,10 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a resource to create a service group based on the input parameters.
@@ -19,45 +21,51 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.NewServiceGroup(ctx, "test", &nutanix.ServiceGroupArgs{
-// 			Description: pulumi.String("this is service group"),
-// 			ServiceLists: ServiceGroupServiceListArray{
-// 				&ServiceGroupServiceListArgs{
-// 					Protocol: pulumi.String("TCP"),
-// 					TcpPortRangeLists: ServiceGroupServiceListTcpPortRangeListArray{
-// 						&ServiceGroupServiceListTcpPortRangeListArgs{
-// 							EndPort:   pulumi.Int(22),
-// 							StartPort: pulumi.Int(22),
-// 						},
-// 						&ServiceGroupServiceListTcpPortRangeListArgs{
-// 							EndPort:   pulumi.Int(2222),
-// 							StartPort: pulumi.Int(2222),
-// 						},
-// 					},
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewServiceGroup(ctx, "test", &nutanix.ServiceGroupArgs{
+//				Description: pulumi.String("this is service group"),
+//				ServiceLists: nutanix.ServiceGroupServiceListArray{
+//					&nutanix.ServiceGroupServiceListArgs{
+//						Protocol: pulumi.String("TCP"),
+//						TcpPortRangeLists: nutanix.ServiceGroupServiceListTcpPortRangeListArray{
+//							&nutanix.ServiceGroupServiceListTcpPortRangeListArgs{
+//								EndPort:   pulumi.Int(22),
+//								StartPort: pulumi.Int(22),
+//							},
+//							&nutanix.ServiceGroupServiceListTcpPortRangeListArgs{
+//								EndPort:   pulumi.Int(2222),
+//								StartPort: pulumi.Int(2222),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type ServiceGroup struct {
 	pulumi.CustomResourceState
 
-	Description   pulumi.StringPtrOutput             `pulumi:"description"`
-	Name          pulumi.StringOutput                `pulumi:"name"`
-	ServiceLists  ServiceGroupServiceListArrayOutput `pulumi:"serviceLists"`
-	SystemDefined pulumi.BoolOutput                  `pulumi:"systemDefined"`
+	// - (Optional) Description of the service group
+	Description pulumi.StringPtrOutput `pulumi:"description"`
+	// - (Required) Name of the service group
+	Name pulumi.StringOutput `pulumi:"name"`
+	// - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
+	ServiceLists ServiceGroupServiceListArrayOutput `pulumi:"serviceLists"`
+	// - (ReadOnly) boolean value to denote if the service group is system defined
+	SystemDefined pulumi.BoolOutput `pulumi:"systemDefined"`
 }
 
 // NewServiceGroup registers a new resource with the given unique name, arguments, and options.
@@ -70,7 +78,7 @@ func NewServiceGroup(ctx *pulumi.Context,
 	if args.ServiceLists == nil {
 		return nil, errors.New("invalid value for required argument 'ServiceLists'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ServiceGroup
 	err := ctx.RegisterResource("nutanix:index/serviceGroup:ServiceGroup", name, args, &resource, opts...)
 	if err != nil {
@@ -93,16 +101,24 @@ func GetServiceGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ServiceGroup resources.
 type serviceGroupState struct {
-	Description   *string                   `pulumi:"description"`
-	Name          *string                   `pulumi:"name"`
-	ServiceLists  []ServiceGroupServiceList `pulumi:"serviceLists"`
-	SystemDefined *bool                     `pulumi:"systemDefined"`
+	// - (Optional) Description of the service group
+	Description *string `pulumi:"description"`
+	// - (Required) Name of the service group
+	Name *string `pulumi:"name"`
+	// - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
+	ServiceLists []ServiceGroupServiceList `pulumi:"serviceLists"`
+	// - (ReadOnly) boolean value to denote if the service group is system defined
+	SystemDefined *bool `pulumi:"systemDefined"`
 }
 
 type ServiceGroupState struct {
-	Description   pulumi.StringPtrInput
-	Name          pulumi.StringPtrInput
-	ServiceLists  ServiceGroupServiceListArrayInput
+	// - (Optional) Description of the service group
+	Description pulumi.StringPtrInput
+	// - (Required) Name of the service group
+	Name pulumi.StringPtrInput
+	// - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
+	ServiceLists ServiceGroupServiceListArrayInput
+	// - (ReadOnly) boolean value to denote if the service group is system defined
 	SystemDefined pulumi.BoolPtrInput
 }
 
@@ -111,15 +127,21 @@ func (ServiceGroupState) ElementType() reflect.Type {
 }
 
 type serviceGroupArgs struct {
-	Description  *string                   `pulumi:"description"`
-	Name         *string                   `pulumi:"name"`
+	// - (Optional) Description of the service group
+	Description *string `pulumi:"description"`
+	// - (Required) Name of the service group
+	Name *string `pulumi:"name"`
+	// - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
 	ServiceLists []ServiceGroupServiceList `pulumi:"serviceLists"`
 }
 
 // The set of arguments for constructing a ServiceGroup resource.
 type ServiceGroupArgs struct {
-	Description  pulumi.StringPtrInput
-	Name         pulumi.StringPtrInput
+	// - (Optional) Description of the service group
+	Description pulumi.StringPtrInput
+	// - (Required) Name of the service group
+	Name pulumi.StringPtrInput
+	// - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
 	ServiceLists ServiceGroupServiceListArrayInput
 }
 
@@ -146,10 +168,16 @@ func (i *ServiceGroup) ToServiceGroupOutputWithContext(ctx context.Context) Serv
 	return pulumi.ToOutputWithContext(ctx, i).(ServiceGroupOutput)
 }
 
+func (i *ServiceGroup) ToOutput(ctx context.Context) pulumix.Output[*ServiceGroup] {
+	return pulumix.Output[*ServiceGroup]{
+		OutputState: i.ToServiceGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ServiceGroupArrayInput is an input type that accepts ServiceGroupArray and ServiceGroupArrayOutput values.
 // You can construct a concrete instance of `ServiceGroupArrayInput` via:
 //
-//          ServiceGroupArray{ ServiceGroupArgs{...} }
+//	ServiceGroupArray{ ServiceGroupArgs{...} }
 type ServiceGroupArrayInput interface {
 	pulumi.Input
 
@@ -171,10 +199,16 @@ func (i ServiceGroupArray) ToServiceGroupArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ServiceGroupArrayOutput)
 }
 
+func (i ServiceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*ServiceGroup] {
+	return pulumix.Output[[]*ServiceGroup]{
+		OutputState: i.ToServiceGroupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ServiceGroupMapInput is an input type that accepts ServiceGroupMap and ServiceGroupMapOutput values.
 // You can construct a concrete instance of `ServiceGroupMapInput` via:
 //
-//          ServiceGroupMap{ "key": ServiceGroupArgs{...} }
+//	ServiceGroupMap{ "key": ServiceGroupArgs{...} }
 type ServiceGroupMapInput interface {
 	pulumi.Input
 
@@ -196,6 +230,12 @@ func (i ServiceGroupMap) ToServiceGroupMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(ServiceGroupMapOutput)
 }
 
+func (i ServiceGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ServiceGroup] {
+	return pulumix.Output[map[string]*ServiceGroup]{
+		OutputState: i.ToServiceGroupMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ServiceGroupOutput struct{ *pulumi.OutputState }
 
 func (ServiceGroupOutput) ElementType() reflect.Type {
@@ -210,18 +250,28 @@ func (o ServiceGroupOutput) ToServiceGroupOutputWithContext(ctx context.Context)
 	return o
 }
 
+func (o ServiceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*ServiceGroup] {
+	return pulumix.Output[*ServiceGroup]{
+		OutputState: o.OutputState,
+	}
+}
+
+// - (Optional) Description of the service group
 func (o ServiceGroupOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ServiceGroup) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) Name of the service group
 func (o ServiceGroupOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *ServiceGroup) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
 func (o ServiceGroupOutput) ServiceLists() ServiceGroupServiceListArrayOutput {
 	return o.ApplyT(func(v *ServiceGroup) ServiceGroupServiceListArrayOutput { return v.ServiceLists }).(ServiceGroupServiceListArrayOutput)
 }
 
+// - (ReadOnly) boolean value to denote if the service group is system defined
 func (o ServiceGroupOutput) SystemDefined() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ServiceGroup) pulumi.BoolOutput { return v.SystemDefined }).(pulumi.BoolOutput)
 }
@@ -238,6 +288,12 @@ func (o ServiceGroupArrayOutput) ToServiceGroupArrayOutput() ServiceGroupArrayOu
 
 func (o ServiceGroupArrayOutput) ToServiceGroupArrayOutputWithContext(ctx context.Context) ServiceGroupArrayOutput {
 	return o
+}
+
+func (o ServiceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ServiceGroup] {
+	return pulumix.Output[[]*ServiceGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ServiceGroupArrayOutput) Index(i pulumi.IntInput) ServiceGroupOutput {
@@ -258,6 +314,12 @@ func (o ServiceGroupMapOutput) ToServiceGroupMapOutput() ServiceGroupMapOutput {
 
 func (o ServiceGroupMapOutput) ToServiceGroupMapOutputWithContext(ctx context.Context) ServiceGroupMapOutput {
 	return o
+}
+
+func (o ServiceGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ServiceGroup] {
+	return pulumix.Output[map[string]*ServiceGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ServiceGroupMapOutput) MapIndex(k pulumi.StringInput) ServiceGroupOutput {

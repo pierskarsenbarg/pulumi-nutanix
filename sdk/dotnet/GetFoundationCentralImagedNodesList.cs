@@ -13,14 +13,14 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetFoundationCentralImagedNodesList
     {
         public static Task<GetFoundationCentralImagedNodesListResult> InvokeAsync(GetFoundationCentralImagedNodesListArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralImagedNodesListResult>("nutanix:index/getFoundationCentralImagedNodesList:getFoundationCentralImagedNodesList", args ?? new GetFoundationCentralImagedNodesListArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralImagedNodesListResult>("nutanix:index/getFoundationCentralImagedNodesList:getFoundationCentralImagedNodesList", args ?? new GetFoundationCentralImagedNodesListArgs(), options.WithDefaults());
 
         public static Output<GetFoundationCentralImagedNodesListResult> Invoke(GetFoundationCentralImagedNodesListInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFoundationCentralImagedNodesListResult>("nutanix:index/getFoundationCentralImagedNodesList:getFoundationCentralImagedNodesList", args ?? new GetFoundationCentralImagedNodesListInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralImagedNodesListResult>("nutanix:index/getFoundationCentralImagedNodesList:getFoundationCentralImagedNodesList", args ?? new GetFoundationCentralImagedNodesListInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetFoundationCentralImagedNodesListArgs : Pulumi.InvokeArgs
+    public sealed class GetFoundationCentralImagedNodesListArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         public Inputs.GetFoundationCentralImagedNodesListFiltersArgs? Filters { get; set; }
@@ -34,9 +34,10 @@ namespace PiersKarsenbarg.Nutanix
         public GetFoundationCentralImagedNodesListArgs()
         {
         }
+        public static new GetFoundationCentralImagedNodesListArgs Empty => new GetFoundationCentralImagedNodesListArgs();
     }
 
-    public sealed class GetFoundationCentralImagedNodesListInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFoundationCentralImagedNodesListInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("filters")]
         public Input<Inputs.GetFoundationCentralImagedNodesListFiltersInputArgs>? Filters { get; set; }
@@ -50,6 +51,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetFoundationCentralImagedNodesListInvokeArgs()
         {
         }
+        public static new GetFoundationCentralImagedNodesListInvokeArgs Empty => new GetFoundationCentralImagedNodesListInvokeArgs();
     }
 
 

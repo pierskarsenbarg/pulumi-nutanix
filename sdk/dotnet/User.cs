@@ -16,101 +16,129 @@ namespace PiersKarsenbarg.Nutanix
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var user = new Nutanix.User("user", new()
     ///     {
-    ///         var user = new Nutanix.User("user", new Nutanix.UserArgs
+    ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
     ///         {
-    ///             DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
+    ///             DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
     ///             {
-    ///                 DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
-    ///                 {
-    ///                     Uuid = "&lt;directory-service-uuid&gt;",
-    ///                 },
-    ///                 UserPrincipalName = "test-user@ntnxlab.local",
+    ///                 Uuid = "&lt;directory-service-uuid&gt;",
     ///             },
-    ///         });
-    ///     }
+    ///             UserPrincipalName = "test-user@ntnxlab.local",
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var user = new Nutanix.User("user", new()
     ///     {
-    ///         var user = new Nutanix.User("user", new Nutanix.UserArgs
+    ///         IdentityProviderUser = new Nutanix.Inputs.UserIdentityProviderUserArgs
     ///         {
-    ///             IdentityProviderUser = new Nutanix.Inputs.UserIdentityProviderUserArgs
+    ///             IdentityProviderReference = new Nutanix.Inputs.UserIdentityProviderUserIdentityProviderReferenceArgs
     ///             {
-    ///                 IdentityProviderReference = new Nutanix.Inputs.UserIdentityProviderUserIdentityProviderReferenceArgs
-    ///                 {
-    ///                     Uuid = "&lt;identity-provider-uuid&gt;",
-    ///                 },
-    ///                 Username = "username",
+    ///                 Uuid = "&lt;identity-provider-uuid&gt;",
     ///             },
-    ///         });
-    ///     }
+    ///             Username = "username",
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/user:User")]
-    public partial class User : Pulumi.CustomResource
+    public partial class User : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// - List of ACP references. See #reference for more details.
+        /// </summary>
         [Output("accessControlPolicyReferenceLists")]
         public Output<ImmutableArray<Outputs.UserAccessControlPolicyReferenceList>> AccessControlPolicyReferenceLists { get; private set; } = null!;
 
         /// <summary>
         /// The version of the API.
-        /// * `state`: - The state of the entity.
-        /// * `name`: - The name of the user.
-        /// * `user_type`: - The name of the user.
-        /// * `display_name`: - The display name of the user (common name) provided by the directory service.
-        /// * `project_reference_list`: - A list of projects the user is part of. See #reference for more details.
-        /// * `access_control_policy_reference_list`: - List of ACP references. See #reference for more details.
         /// </summary>
         [Output("apiVersion")]
         public Output<string> ApiVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Categories for the Access Control Policy.
+        /// </summary>
         [Output("categories")]
         public Output<ImmutableArray<Outputs.UserCategory>> Categories { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The directory service user configuration. See below for more information.
+        /// </summary>
         [Output("directoryServiceUser")]
         public Output<Outputs.UserDirectoryServiceUser> DirectoryServiceUser { get; private set; } = null!;
 
+        /// <summary>
+        /// - The display name of the user (common name) provided by the directory service.
+        /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) (Optional) The identity provider user configuration. See below for more information.
+        /// </summary>
         [Output("identityProviderUser")]
         public Output<Outputs.UserIdentityProviderUser> IdentityProviderUser { get; private set; } = null!;
 
+        /// <summary>
+        /// - The vm kind metadata.
+        /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
 
+        /// <summary>
+        /// - the name(Optional).
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         [Output("ownerReference")]
         public Output<ImmutableDictionary<string, string>> OwnerReference { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The reference to a project.
+        /// </summary>
         [Output("projectReference")]
         public Output<ImmutableDictionary<string, string>?> ProjectReference { get; private set; } = null!;
 
+        /// <summary>
+        /// - A list of projects the user is part of. See #reference for more details.
+        /// </summary>
         [Output("projectReferenceLists")]
         public Output<ImmutableArray<Outputs.UserProjectReferenceList>> ProjectReferenceLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - The state of the entity.
+        /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
+        /// <summary>
+        /// - The name of the user.
+        /// </summary>
         [Output("userType")]
         public Output<string> UserType { get; private set; } = null!;
 
@@ -159,24 +187,38 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class UserArgs : Pulumi.ResourceArgs
+    public sealed class UserArgs : global::Pulumi.ResourceArgs
     {
         [Input("categories")]
         private InputList<Inputs.UserCategoryArgs>? _categories;
+
+        /// <summary>
+        /// - (Optional) Categories for the Access Control Policy.
+        /// </summary>
         public InputList<Inputs.UserCategoryArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.UserCategoryArgs>());
             set => _categories = value;
         }
 
+        /// <summary>
+        /// - (Optional) The directory service user configuration. See below for more information.
+        /// </summary>
         [Input("directoryServiceUser")]
         public Input<Inputs.UserDirectoryServiceUserArgs>? DirectoryServiceUser { get; set; }
 
+        /// <summary>
+        /// - (Optional) (Optional) The identity provider user configuration. See below for more information.
+        /// </summary>
         [Input("identityProviderUser")]
         public Input<Inputs.UserIdentityProviderUserArgs>? IdentityProviderUser { get; set; }
 
         [Input("ownerReference")]
         private InputMap<string>? _ownerReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         public InputMap<string> OwnerReference
         {
             get => _ownerReference ?? (_ownerReference = new InputMap<string>());
@@ -185,6 +227,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("projectReference")]
         private InputMap<string>? _projectReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a project.
+        /// </summary>
         public InputMap<string> ProjectReference
         {
             get => _projectReference ?? (_projectReference = new InputMap<string>());
@@ -194,12 +240,17 @@ namespace PiersKarsenbarg.Nutanix
         public UserArgs()
         {
         }
+        public static new UserArgs Empty => new UserArgs();
     }
 
-    public sealed class UserState : Pulumi.ResourceArgs
+    public sealed class UserState : global::Pulumi.ResourceArgs
     {
         [Input("accessControlPolicyReferenceLists")]
         private InputList<Inputs.UserAccessControlPolicyReferenceListGetArgs>? _accessControlPolicyReferenceLists;
+
+        /// <summary>
+        /// - List of ACP references. See #reference for more details.
+        /// </summary>
         public InputList<Inputs.UserAccessControlPolicyReferenceListGetArgs> AccessControlPolicyReferenceLists
         {
             get => _accessControlPolicyReferenceLists ?? (_accessControlPolicyReferenceLists = new InputList<Inputs.UserAccessControlPolicyReferenceListGetArgs>());
@@ -208,46 +259,64 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// The version of the API.
-        /// * `state`: - The state of the entity.
-        /// * `name`: - The name of the user.
-        /// * `user_type`: - The name of the user.
-        /// * `display_name`: - The display name of the user (common name) provided by the directory service.
-        /// * `project_reference_list`: - A list of projects the user is part of. See #reference for more details.
-        /// * `access_control_policy_reference_list`: - List of ACP references. See #reference for more details.
         /// </summary>
         [Input("apiVersion")]
         public Input<string>? ApiVersion { get; set; }
 
         [Input("categories")]
         private InputList<Inputs.UserCategoryGetArgs>? _categories;
+
+        /// <summary>
+        /// - (Optional) Categories for the Access Control Policy.
+        /// </summary>
         public InputList<Inputs.UserCategoryGetArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.UserCategoryGetArgs>());
             set => _categories = value;
         }
 
+        /// <summary>
+        /// - (Optional) The directory service user configuration. See below for more information.
+        /// </summary>
         [Input("directoryServiceUser")]
         public Input<Inputs.UserDirectoryServiceUserGetArgs>? DirectoryServiceUser { get; set; }
 
+        /// <summary>
+        /// - The display name of the user (common name) provided by the directory service.
+        /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// - (Optional) (Optional) The identity provider user configuration. See below for more information.
+        /// </summary>
         [Input("identityProviderUser")]
         public Input<Inputs.UserIdentityProviderUserGetArgs>? IdentityProviderUser { get; set; }
 
         [Input("metadata")]
         private InputMap<string>? _metadata;
+
+        /// <summary>
+        /// - The vm kind metadata.
+        /// </summary>
         public InputMap<string> Metadata
         {
             get => _metadata ?? (_metadata = new InputMap<string>());
             set => _metadata = value;
         }
 
+        /// <summary>
+        /// - the name(Optional).
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("ownerReference")]
         private InputMap<string>? _ownerReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         public InputMap<string> OwnerReference
         {
             get => _ownerReference ?? (_ownerReference = new InputMap<string>());
@@ -256,6 +325,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("projectReference")]
         private InputMap<string>? _projectReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a project.
+        /// </summary>
         public InputMap<string> ProjectReference
         {
             get => _projectReference ?? (_projectReference = new InputMap<string>());
@@ -264,20 +337,31 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("projectReferenceLists")]
         private InputList<Inputs.UserProjectReferenceListGetArgs>? _projectReferenceLists;
+
+        /// <summary>
+        /// - A list of projects the user is part of. See #reference for more details.
+        /// </summary>
         public InputList<Inputs.UserProjectReferenceListGetArgs> ProjectReferenceLists
         {
             get => _projectReferenceLists ?? (_projectReferenceLists = new InputList<Inputs.UserProjectReferenceListGetArgs>());
             set => _projectReferenceLists = value;
         }
 
+        /// <summary>
+        /// - The state of the entity.
+        /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// - The name of the user.
+        /// </summary>
         [Input("userType")]
         public Input<string>? UserType { get; set; }
 
         public UserState()
         {
         }
+        public static new UserState Empty => new UserState();
     }
 }

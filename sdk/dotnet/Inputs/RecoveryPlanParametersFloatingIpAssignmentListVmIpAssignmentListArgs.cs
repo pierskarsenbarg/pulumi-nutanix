@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListArgs : Pulumi.ResourceArgs
+    public sealed class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListArgs : global::Pulumi.ResourceArgs
     {
         [Input("recoveryFloatingIpConfig")]
         public Input<Inputs.RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListRecoveryFloatingIpConfigArgs>? RecoveryFloatingIpConfig { get; set; }
@@ -28,5 +28,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListArgs()
         {
         }
+        public static new RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListArgs Empty => new RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListArgs();
     }
 }

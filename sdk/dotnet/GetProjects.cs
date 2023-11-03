@@ -20,30 +20,60 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var projects = Output.Create(Nutanix.GetProjects.InvokeAsync());
-        ///     }
+        ///     var projects = Nutanix.GetProjects.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetProjectsResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetProjectsResult>("nutanix:index/getProjects:getProjects", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetProjectsResult>("nutanix:index/getProjects:getProjects", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// Describes Projects
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var projects = Nutanix.GetProjects.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetProjectsResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProjectsResult>("nutanix:index/getProjects:getProjects", InvokeArgs.Empty, options.WithDefaults());
     }
 
 
     [OutputType]
     public sealed class GetProjectsResult
     {
+        /// <summary>
+        /// version of the API
+        /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// List of Projects
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectsEntityResult> Entities;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.

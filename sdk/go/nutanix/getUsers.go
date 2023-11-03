@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve all the users.
@@ -18,34 +20,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.NewUser(ctx, "user", &nutanix.UserArgs{
-// 			DirectoryServiceUser: &UserDirectoryServiceUserArgs{
-// 				DirectoryServiceReference: &UserDirectoryServiceUserDirectoryServiceReferenceArgs{
-// 					Uuid: pulumi.String("<directory-service-uuid>"),
-// 				},
-// 				UserPrincipalName: pulumi.String("test-user@ntnxlab.local"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = nutanix.LookupUser(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewUser(ctx, "user", &nutanix.UserArgs{
+//				DirectoryServiceUser: &nutanix.UserDirectoryServiceUserArgs{
+//					DirectoryServiceReference: &nutanix.UserDirectoryServiceUserDirectoryServiceReferenceArgs{
+//						Uuid: pulumi.String("<directory-service-uuid>"),
+//					},
+//					UserPrincipalName: pulumi.String("test-user@ntnxlab.local"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.LookupUser(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetUsers(ctx *pulumi.Context, args *GetUsersArgs, opts ...pulumi.InvokeOption) (*GetUsersResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUsersResult
 	err := ctx.Invoke("nutanix:index/getUsers:getUsers", args, &rv, opts...)
 	if err != nil {
@@ -56,27 +60,19 @@ func GetUsers(ctx *pulumi.Context, args *GetUsersArgs, opts ...pulumi.InvokeOpti
 
 // A collection of arguments for invoking getUsers.
 type GetUsersArgs struct {
+	// - The user kind metadata.
 	Metadatas []GetUsersMetadata `pulumi:"metadatas"`
 }
 
 // A collection of values returned by getUsers.
 type GetUsersResult struct {
 	// The version of the API.
-	// * `state`: - The state of the entity.
-	// * `name`: - The name of the user.
-	// * `userType`: - The name of the user.
-	// * `displayName`: - The display name of the user (common name) provided by the directory service.
-	// * `projectReferenceList`: - A list of projects the user is part of. See #reference for more details.
-	// * `accessControlPolicyReferenceList`: - List of ACP references. See #reference for more details.
-	// * `directoryServiceUser`: - (Optional) The directory service user configuration. See below for more information.
-	// * `identityProviderUser`: - (Optional) (Optional) The identity provider user configuration. See below for more information.
-	// * `categories`: - (Optional) Categories for the user.
-	// * `projectReference`: - (Optional) The reference to a project.
-	// * `ownerReference`: - (Optional) The reference to a user.
-	ApiVersion string           `pulumi:"apiVersion"`
-	Entities   []GetUsersEntity `pulumi:"entities"`
+	ApiVersion string `pulumi:"apiVersion"`
+	// List of Users
+	Entities []GetUsersEntity `pulumi:"entities"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string             `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// - The user kind metadata.
 	Metadatas []GetUsersMetadata `pulumi:"metadatas"`
 }
 
@@ -95,6 +91,7 @@ func GetUsersOutput(ctx *pulumi.Context, args GetUsersOutputArgs, opts ...pulumi
 
 // A collection of arguments for invoking getUsers.
 type GetUsersOutputArgs struct {
+	// - The user kind metadata.
 	Metadatas GetUsersMetadataArrayInput `pulumi:"metadatas"`
 }
 
@@ -117,22 +114,18 @@ func (o GetUsersResultOutput) ToGetUsersResultOutputWithContext(ctx context.Cont
 	return o
 }
 
+func (o GetUsersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUsersResult] {
+	return pulumix.Output[GetUsersResult]{
+		OutputState: o.OutputState,
+	}
+}
+
 // The version of the API.
-// * `state`: - The state of the entity.
-// * `name`: - The name of the user.
-// * `userType`: - The name of the user.
-// * `displayName`: - The display name of the user (common name) provided by the directory service.
-// * `projectReferenceList`: - A list of projects the user is part of. See #reference for more details.
-// * `accessControlPolicyReferenceList`: - List of ACP references. See #reference for more details.
-// * `directoryServiceUser`: - (Optional) The directory service user configuration. See below for more information.
-// * `identityProviderUser`: - (Optional) (Optional) The identity provider user configuration. See below for more information.
-// * `categories`: - (Optional) Categories for the user.
-// * `projectReference`: - (Optional) The reference to a project.
-// * `ownerReference`: - (Optional) The reference to a user.
 func (o GetUsersResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsersResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// List of Users
 func (o GetUsersResultOutput) Entities() GetUsersEntityArrayOutput {
 	return o.ApplyT(func(v GetUsersResult) []GetUsersEntity { return v.Entities }).(GetUsersEntityArrayOutput)
 }
@@ -142,6 +135,7 @@ func (o GetUsersResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUsersResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - The user kind metadata.
 func (o GetUsersResultOutput) Metadatas() GetUsersMetadataArrayOutput {
 	return o.ApplyT(func(v GetUsersResult) []GetUsersMetadata { return v.Metadatas }).(GetUsersMetadataArrayOutput)
 }

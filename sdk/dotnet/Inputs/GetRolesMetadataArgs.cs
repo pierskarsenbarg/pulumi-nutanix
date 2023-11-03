@@ -11,11 +11,14 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetRolesMetadataInputArgs : Pulumi.ResourceArgs
+    public sealed class GetRolesMetadataInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("filter", required: true)]
         public Input<string> Filter { get; set; } = null!;
 
+        /// <summary>
+        /// - The kind name (Default value: project)(Required).
+        /// </summary>
         [Input("kind", required: true)]
         public Input<string> Kind { get; set; } = null!;
 
@@ -34,5 +37,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetRolesMetadataInputArgs()
         {
         }
+        public static new GetRolesMetadataInputArgs Empty => new GetRolesMetadataInputArgs();
     }
 }

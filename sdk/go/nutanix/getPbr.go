@@ -7,12 +7,14 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve PBR with pbrUuid .
 func LookupPbr(ctx *pulumi.Context, args *LookupPbrArgs, opts ...pulumi.InvokeOption) (*LookupPbrResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupPbrResult
 	err := ctx.Invoke("nutanix:index/getPbr:getPbr", args, &rv, opts...)
 	if err != nil {
@@ -32,7 +34,8 @@ type LookupPbrResult struct {
 	// The version of the API.
 	ApiVersion string `pulumi:"apiVersion"`
 	// The provider-assigned unique ID for this managed resource.
-	Id       string            `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// - The routing policies kind metadata.
 	Metadata map[string]string `pulumi:"metadata"`
 	PbrUuid  string            `pulumi:"pbrUuid"`
 	// PBR input spec
@@ -79,6 +82,12 @@ func (o LookupPbrResultOutput) ToLookupPbrResultOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o LookupPbrResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPbrResult] {
+	return pulumix.Output[LookupPbrResult]{
+		OutputState: o.OutputState,
+	}
+}
+
 // The version of the API.
 func (o LookupPbrResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPbrResult) string { return v.ApiVersion }).(pulumi.StringOutput)
@@ -89,6 +98,7 @@ func (o LookupPbrResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPbrResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - The routing policies kind metadata.
 func (o LookupPbrResultOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupPbrResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }

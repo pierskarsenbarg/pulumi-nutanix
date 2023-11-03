@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class RoleCategory
     {
+        /// <summary>
+        /// - (Optional) Name of the role.
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// - value of the key.
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

@@ -20,30 +20,60 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var recoveryPlans = Output.Create(Nutanix.GetRecoveryPlans.InvokeAsync());
-        ///     }
+        ///     var recoveryPlans = Nutanix.GetRecoveryPlans.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRecoveryPlansResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRecoveryPlansResult>("nutanix:index/getRecoveryPlans:getRecoveryPlans", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRecoveryPlansResult>("nutanix:index/getRecoveryPlans:getRecoveryPlans", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// Describes Recovery Plans
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var recoveryPlans = Nutanix.GetRecoveryPlans.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetRecoveryPlansResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRecoveryPlansResult>("nutanix:index/getRecoveryPlans:getRecoveryPlans", InvokeArgs.Empty, options.WithDefaults());
     }
 
 
     [OutputType]
     public sealed class GetRecoveryPlansResult
     {
+        /// <summary>
+        /// version of the API
+        /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// List of Recovery Plans
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetRecoveryPlansEntityResult> Entities;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.

@@ -16,63 +16,62 @@ namespace PiersKarsenbarg.Nutanix
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var protectionRuleTest = new Nutanix.ProtectionRule("protectionRuleTest", new()
     ///     {
-    ///         var protectionRuleTest = new Nutanix.ProtectionRule("protectionRuleTest", new Nutanix.ProtectionRuleArgs
+    ///         AvailabilityZoneConnectivityLists = new[]
     ///         {
-    ///             AvailabilityZoneConnectivityLists = 
+    ///             new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs
     ///             {
-    ///                 new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs
+    ///                 SnapshotScheduleLists = new[]
     ///                 {
-    ///                     SnapshotScheduleLists = 
+    ///                     new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs
     ///                     {
-    ///                         new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs
+    ///                         LocalSnapshotRetentionPolicy = new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs
     ///                         {
-    ///                             LocalSnapshotRetentionPolicy = new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs
-    ///                             {
-    ///                                 NumSnapshots = 1,
-    ///                             },
-    ///                             RecoveryPointObjectiveSecs = 3600,
-    ///                             SnapshotType = "CRASH_CONSISTENT",
+    ///                             NumSnapshots = 1,
     ///                         },
+    ///                         RecoveryPointObjectiveSecs = 3600,
+    ///                         SnapshotType = "CRASH_CONSISTENT",
     ///                     },
     ///                 },
     ///             },
-    ///             CategoryFilter = new Nutanix.Inputs.ProtectionRuleCategoryFilterArgs
+    ///         },
+    ///         CategoryFilter = new Nutanix.Inputs.ProtectionRuleCategoryFilterArgs
+    ///         {
+    ///             Params = new[]
     ///             {
-    ///                 Params = 
+    ///                 new Nutanix.Inputs.ProtectionRuleCategoryFilterParamArgs
     ///                 {
-    ///                     new Nutanix.Inputs.ProtectionRuleCategoryFilterParamArgs
+    ///                     Name = "Environment",
+    ///                     Values = new[]
     ///                     {
-    ///                         Name = "Environment",
-    ///                         Values = 
-    ///                         {
-    ///                             "Dev",
-    ///                         },
+    ///                         "Dev",
     ///                     },
     ///                 },
     ///             },
-    ///             Description = "test",
-    ///             OrderedAvailabilityZoneLists = 
+    ///         },
+    ///         Description = "test",
+    ///         OrderedAvailabilityZoneLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ProtectionRuleOrderedAvailabilityZoneListArgs
     ///             {
-    ///                 new Nutanix.Inputs.ProtectionRuleOrderedAvailabilityZoneListArgs
-    ///                 {
-    ///                     AvailabilityZoneUrl = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
-    ///                 },
+    ///                 AvailabilityZoneUrl = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/protectionRule:ProtectionRule")]
-    public partial class ProtectionRule : Pulumi.CustomResource
+    public partial class ProtectionRule : global::Pulumi.CustomResource
     {
         [Output("apiVersion")]
         public Output<string> ApiVersion { get; private set; } = null!;
@@ -185,7 +184,7 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class ProtectionRuleArgs : Pulumi.ResourceArgs
+    public sealed class ProtectionRuleArgs : global::Pulumi.ResourceArgs
     {
         [Input("availabilityZoneConnectivityLists", required: true)]
         private InputList<Inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs>? _availabilityZoneConnectivityLists;
@@ -264,9 +263,10 @@ namespace PiersKarsenbarg.Nutanix
         public ProtectionRuleArgs()
         {
         }
+        public static new ProtectionRuleArgs Empty => new ProtectionRuleArgs();
     }
 
-    public sealed class ProtectionRuleState : Pulumi.ResourceArgs
+    public sealed class ProtectionRuleState : global::Pulumi.ResourceArgs
     {
         [Input("apiVersion")]
         public Input<string>? ApiVersion { get; set; }
@@ -359,5 +359,6 @@ namespace PiersKarsenbarg.Nutanix
         public ProtectionRuleState()
         {
         }
+        public static new ProtectionRuleState Empty => new ProtectionRuleState();
     }
 }

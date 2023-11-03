@@ -11,8 +11,7 @@
     "repository": "https://github.com/pierskarsenbarg/pulumi-nutanix",
     "license": "Apache-2.0",
     "scripts": {
-        "build": "tsc",
-        "install": "node scripts/install-pulumi-plugin.js resource nutanix ${VERSION}"
+        "build": "tsc"
     },
     "dependencies": {
         "@pulumi/pulumi": "^3.0.0"
@@ -24,6 +23,7 @@
     },
     "pulumi": {
         "resource": true,
-        "pluginDownloadURL": "https://github.com/pierskarsenbarg/pulumi-nutanix/releases/download/${VERSION}"
+        "name": "nutanix",
+        "server": "https://github.com/pierskarsenbarg/pulumi-nutanix/releases/download/${VERSION}"
     }
 }

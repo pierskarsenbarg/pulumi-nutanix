@@ -7,12 +7,14 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve VPC with vpcUuid or vpcName .
 func LookupVpc(ctx *pulumi.Context, args *LookupVpcArgs, opts ...pulumi.InvokeOption) (*LookupVpcResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupVpcResult
 	err := ctx.Invoke("nutanix:index/getVpc:getVpc", args, &rv, opts...)
 	if err != nil {
@@ -34,7 +36,8 @@ type LookupVpcResult struct {
 	// The version of the API.
 	ApiVersion string `pulumi:"apiVersion"`
 	// The provider-assigned unique ID for this managed resource.
-	Id       string            `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// - The vpc kind metadata.
 	Metadata map[string]string `pulumi:"metadata"`
 	// VPC input spec
 	Specs []GetVpcSpec `pulumi:"specs"`
@@ -84,6 +87,12 @@ func (o LookupVpcResultOutput) ToLookupVpcResultOutputWithContext(ctx context.Co
 	return o
 }
 
+func (o LookupVpcResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupVpcResult] {
+	return pulumix.Output[LookupVpcResult]{
+		OutputState: o.OutputState,
+	}
+}
+
 // The version of the API.
 func (o LookupVpcResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpcResult) string { return v.ApiVersion }).(pulumi.StringOutput)
@@ -94,6 +103,7 @@ func (o LookupVpcResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVpcResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - The vpc kind metadata.
 func (o LookupVpcResultOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupVpcResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }

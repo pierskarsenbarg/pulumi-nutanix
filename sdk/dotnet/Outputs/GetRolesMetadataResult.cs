@@ -15,6 +15,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetRolesMetadataResult
     {
         public readonly string Filter;
+        /// <summary>
+        /// - The kind name (Default value: project)(Required).
+        /// </summary>
         public readonly string Kind;
         public readonly int Length;
         public readonly int Offset;

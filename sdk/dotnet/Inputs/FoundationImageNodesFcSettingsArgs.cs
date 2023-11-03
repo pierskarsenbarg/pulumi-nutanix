@@ -11,10 +11,10 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationImageNodesFcSettingsArgs : Pulumi.ResourceArgs
+    public sealed class FoundationImageNodesFcSettingsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// :- Foundation Central metadata which will be transferred to the newly imaged node.
+        /// - Foundation Central metadata which will be transferred to the newly imaged node.
         /// * `fc_metadata.fc_ip` :- IP address of foundation central.
         /// * `fc_metadata.api_key` :- api_key which the node uses to register itself with foundation central.
         /// </summary>
@@ -22,7 +22,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<Inputs.FoundationImageNodesFcSettingsFcMetadataArgs> FcMetadata { get; set; } = null!;
 
         /// <summary>
-        /// :- If this attribute is set to True, FC workflow will be invoked.
+        /// - If this attribute is set to True, FC workflow will be invoked.
         /// </summary>
         [Input("foundationCentral", required: true)]
         public Input<bool> FoundationCentral { get; set; } = null!;
@@ -30,5 +30,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public FoundationImageNodesFcSettingsArgs()
         {
         }
+        public static new FoundationImageNodesFcSettingsArgs Empty => new FoundationImageNodesFcSettingsArgs();
     }
 }

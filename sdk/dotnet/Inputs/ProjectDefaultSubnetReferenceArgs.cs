@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class ProjectDefaultSubnetReferenceArgs : Pulumi.ResourceArgs
+    public sealed class ProjectDefaultSubnetReferenceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Required) The kind name (Default value: `project`).
@@ -34,5 +34,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public ProjectDefaultSubnetReferenceArgs()
         {
         }
+        public static new ProjectDefaultSubnetReferenceArgs Empty => new ProjectDefaultSubnetReferenceArgs();
     }
 }

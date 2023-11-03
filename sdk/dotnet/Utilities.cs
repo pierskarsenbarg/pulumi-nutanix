@@ -75,7 +75,7 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    internal sealed class NutanixResourceTypeAttribute : Pulumi.ResourceTypeAttribute
+    internal sealed class NutanixResourceTypeAttribute : global::Pulumi.ResourceTypeAttribute
     {
         public NutanixResourceTypeAttribute(string type) : base(type, Utilities.Version)
         {

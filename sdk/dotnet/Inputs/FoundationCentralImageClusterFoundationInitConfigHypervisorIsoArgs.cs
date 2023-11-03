@@ -11,19 +11,29 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs : Pulumi.ResourceArgs
+    public sealed class FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+        /// </summary>
         [Input("hypervisorType")]
         public Input<string>? HypervisorType { get; set; }
 
+        /// <summary>
+        /// sha256sum of the hypervisor iso.
+        /// </summary>
         [Input("sha256sum")]
         public Input<string>? Sha256sum { get; set; }
 
+        /// <summary>
+        /// URL to download hypervisor iso. Required only if imaging is needed.
+        /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }
 
         public FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs()
         {
         }
+        public static new FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs Empty => new FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs();
     }
 }

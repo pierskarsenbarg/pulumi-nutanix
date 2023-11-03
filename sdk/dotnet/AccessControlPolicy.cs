@@ -12,142 +12,70 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides a resource to create an access control policy based on the input parameters.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using Pulumi;
-    /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// 
-    /// class MyStack : Stack
-    /// {
-    ///     public MyStack()
-    ///     {
-    ///         var test = new Nutanix.AccessControlPolicy("test", new Nutanix.AccessControlPolicyArgs
-    ///         {
-    ///             ContextFilterLists = 
-    ///             {
-    ///                 new Nutanix.Inputs.AccessControlPolicyContextFilterListArgs
-    ///                 {
-    ///                     EntityFilterExpressionLists = 
-    ///                     {
-    ///                         new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs
-    ///                         {
-    ///                             LeftHandSideEntityType = "cluster",
-    ///                             Operator = "IN",
-    ///                             RightHandSide = new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs
-    ///                             {
-    ///                                 UuidList = 
-    ///                                 {
-    ///                                     "00058ef8-c31c-f0bc-0000-000000007b23",
-    ///                                 },
-    ///                             },
-    ///                         },
-    ///                         new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs
-    ///                         {
-    ///                             LeftHandSideEntityType = "image",
-    ///                             Operator = "IN",
-    ///                             RightHandSide = new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs
-    ///                             {
-    ///                                 Collection = "ALL",
-    ///                             },
-    ///                         },
-    ///                         new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs
-    ///                         {
-    ///                             LeftHandSideEntityType = "category",
-    ///                             Operator = "IN",
-    ///                             RightHandSide = new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs
-    ///                             {
-    ///                                 Collection = "ALL",
-    ///                             },
-    ///                         },
-    ///                         new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs
-    ///                         {
-    ///                             LeftHandSideEntityType = "marketplace_item",
-    ///                             Operator = "IN",
-    ///                             RightHandSide = new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs
-    ///                             {
-    ///                                 Collection = "SELF_OWNED",
-    ///                             },
-    ///                         },
-    ///                         new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs
-    ///                         {
-    ///                             LeftHandSideEntityType = "app_task",
-    ///                             Operator = "IN",
-    ///                             RightHandSide = new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs
-    ///                             {
-    ///                                 Collection = "SELF_OWNED",
-    ///                             },
-    ///                         },
-    ///                         new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs
-    ///                         {
-    ///                             LeftHandSideEntityType = "app_variable",
-    ///                             Operator = "IN",
-    ///                             RightHandSide = new Nutanix.Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs
-    ///                             {
-    ///                                 Collection = "SELF_OWNED",
-    ///                             },
-    ///                         },
-    ///                     },
-    ///                 },
-    ///             },
-    ///             Description = "DESCRIPTION OF THE ACCESS CONTROL POLICY",
-    ///             RoleReference = new Nutanix.Inputs.AccessControlPolicyRoleReferenceArgs
-    ///             {
-    ///                 Kind = "role",
-    ///                 Uuid = "UUID of role",
-    ///             },
-    ///             UserReferenceLists = 
-    ///             {
-    ///                 new Nutanix.Inputs.AccessControlPolicyUserReferenceListArgs
-    ///                 {
-    ///                     Name = "admin",
-    ///                     Uuid = "UUID of User existent",
-    ///                 },
-    ///             },
-    ///         });
-    ///     }
-    /// 
-    /// }
-    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/accessControlPolicy:AccessControlPolicy")]
-    public partial class AccessControlPolicy : Pulumi.CustomResource
+    public partial class AccessControlPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The version of the API.
-        /// * `state`: - The state of the Access Control Policy.
         /// </summary>
         [Output("apiVersion")]
         public Output<string> ApiVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Categories for the Access Control Policy.
+        /// </summary>
         [Output("categories")]
         public Output<ImmutableArray<Outputs.AccessControlPolicyCategory>> Categories { get; private set; } = null!;
 
         [Output("contextFilterLists")]
         public Output<ImmutableArray<Outputs.AccessControlPolicyContextFilterList>> ContextFilterLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The description of Access Control Policy.
+        /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
+        /// <summary>
+        /// - The Access Control Policy kind metadata.
+        /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Name of the Access Control Policy.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         [Output("ownerReference")]
         public Output<Outputs.AccessControlPolicyOwnerReference> OwnerReference { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) The reference to a role.
+        /// </summary>
         [Output("roleReference")]
         public Output<Outputs.AccessControlPolicyRoleReference> RoleReference { get; private set; } = null!;
 
+        /// <summary>
+        /// - The state of the Access Control Policy.
+        /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The User group(s) being assigned a given role.
+        /// </summary>
         [Output("userGroupReferenceLists")]
         public Output<ImmutableArray<Outputs.AccessControlPolicyUserGroupReferenceList>> UserGroupReferenceLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The User(s) being assigned a given role.
+        /// </summary>
         [Output("userReferenceLists")]
         public Output<ImmutableArray<Outputs.AccessControlPolicyUserReferenceList>> UserReferenceLists { get; private set; } = null!;
 
@@ -196,10 +124,14 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class AccessControlPolicyArgs : Pulumi.ResourceArgs
+    public sealed class AccessControlPolicyArgs : global::Pulumi.ResourceArgs
     {
         [Input("categories")]
         private InputList<Inputs.AccessControlPolicyCategoryArgs>? _categories;
+
+        /// <summary>
+        /// - (Optional) Categories for the Access Control Policy.
+        /// </summary>
         public InputList<Inputs.AccessControlPolicyCategoryArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.AccessControlPolicyCategoryArgs>());
@@ -214,20 +146,36 @@ namespace PiersKarsenbarg.Nutanix
             set => _contextFilterLists = value;
         }
 
+        /// <summary>
+        /// - (Optional) The description of Access Control Policy.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// - (Optional) Name of the Access Control Policy.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         [Input("ownerReference")]
         public Input<Inputs.AccessControlPolicyOwnerReferenceArgs>? OwnerReference { get; set; }
 
+        /// <summary>
+        /// - (Required) The reference to a role.
+        /// </summary>
         [Input("roleReference", required: true)]
         public Input<Inputs.AccessControlPolicyRoleReferenceArgs> RoleReference { get; set; } = null!;
 
         [Input("userGroupReferenceLists")]
         private InputList<Inputs.AccessControlPolicyUserGroupReferenceListArgs>? _userGroupReferenceLists;
+
+        /// <summary>
+        /// - (Optional) The User group(s) being assigned a given role.
+        /// </summary>
         public InputList<Inputs.AccessControlPolicyUserGroupReferenceListArgs> UserGroupReferenceLists
         {
             get => _userGroupReferenceLists ?? (_userGroupReferenceLists = new InputList<Inputs.AccessControlPolicyUserGroupReferenceListArgs>());
@@ -236,6 +184,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("userReferenceLists")]
         private InputList<Inputs.AccessControlPolicyUserReferenceListArgs>? _userReferenceLists;
+
+        /// <summary>
+        /// - (Optional) The User(s) being assigned a given role.
+        /// </summary>
         public InputList<Inputs.AccessControlPolicyUserReferenceListArgs> UserReferenceLists
         {
             get => _userReferenceLists ?? (_userReferenceLists = new InputList<Inputs.AccessControlPolicyUserReferenceListArgs>());
@@ -245,19 +197,23 @@ namespace PiersKarsenbarg.Nutanix
         public AccessControlPolicyArgs()
         {
         }
+        public static new AccessControlPolicyArgs Empty => new AccessControlPolicyArgs();
     }
 
-    public sealed class AccessControlPolicyState : Pulumi.ResourceArgs
+    public sealed class AccessControlPolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The version of the API.
-        /// * `state`: - The state of the Access Control Policy.
         /// </summary>
         [Input("apiVersion")]
         public Input<string>? ApiVersion { get; set; }
 
         [Input("categories")]
         private InputList<Inputs.AccessControlPolicyCategoryGetArgs>? _categories;
+
+        /// <summary>
+        /// - (Optional) Categories for the Access Control Policy.
+        /// </summary>
         public InputList<Inputs.AccessControlPolicyCategoryGetArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.AccessControlPolicyCategoryGetArgs>());
@@ -272,31 +228,54 @@ namespace PiersKarsenbarg.Nutanix
             set => _contextFilterLists = value;
         }
 
+        /// <summary>
+        /// - (Optional) The description of Access Control Policy.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         [Input("metadata")]
         private InputMap<string>? _metadata;
+
+        /// <summary>
+        /// - The Access Control Policy kind metadata.
+        /// </summary>
         public InputMap<string> Metadata
         {
             get => _metadata ?? (_metadata = new InputMap<string>());
             set => _metadata = value;
         }
 
+        /// <summary>
+        /// - (Optional) Name of the Access Control Policy.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         [Input("ownerReference")]
         public Input<Inputs.AccessControlPolicyOwnerReferenceGetArgs>? OwnerReference { get; set; }
 
+        /// <summary>
+        /// - (Required) The reference to a role.
+        /// </summary>
         [Input("roleReference")]
         public Input<Inputs.AccessControlPolicyRoleReferenceGetArgs>? RoleReference { get; set; }
 
+        /// <summary>
+        /// - The state of the Access Control Policy.
+        /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         [Input("userGroupReferenceLists")]
         private InputList<Inputs.AccessControlPolicyUserGroupReferenceListGetArgs>? _userGroupReferenceLists;
+
+        /// <summary>
+        /// - (Optional) The User group(s) being assigned a given role.
+        /// </summary>
         public InputList<Inputs.AccessControlPolicyUserGroupReferenceListGetArgs> UserGroupReferenceLists
         {
             get => _userGroupReferenceLists ?? (_userGroupReferenceLists = new InputList<Inputs.AccessControlPolicyUserGroupReferenceListGetArgs>());
@@ -305,6 +284,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("userReferenceLists")]
         private InputList<Inputs.AccessControlPolicyUserReferenceListGetArgs>? _userReferenceLists;
+
+        /// <summary>
+        /// - (Optional) The User(s) being assigned a given role.
+        /// </summary>
         public InputList<Inputs.AccessControlPolicyUserReferenceListGetArgs> UserReferenceLists
         {
             get => _userReferenceLists ?? (_userReferenceLists = new InputList<Inputs.AccessControlPolicyUserReferenceListGetArgs>());
@@ -314,5 +297,6 @@ namespace PiersKarsenbarg.Nutanix
         public AccessControlPolicyState()
         {
         }
+        public static new AccessControlPolicyState Empty => new AccessControlPolicyState();
     }
 }

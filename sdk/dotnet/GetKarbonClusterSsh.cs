@@ -20,30 +20,30 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var sshbyid = Nutanix.GetKarbonClusterSsh.Invoke(new()
         ///     {
-        ///         var sshbyid = Output.Create(Nutanix.GetKarbonClusterSsh.InvokeAsync(new Nutanix.GetKarbonClusterSshArgs
-        ///         {
-        ///             KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
-        ///         }));
-        ///         var sshbyname = Output.Create(Nutanix.GetKarbonClusterSsh.InvokeAsync(new Nutanix.GetKarbonClusterSshArgs
-        ///         {
-        ///             KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
-        ///         }));
-        ///     }
+        ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
+        ///     });
         /// 
-        /// }
+        ///     var sshbyname = Nutanix.GetKarbonClusterSsh.Invoke(new()
+        ///     {
+        ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetKarbonClusterSshResult> InvokeAsync(GetKarbonClusterSshArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetKarbonClusterSshResult>("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", args ?? new GetKarbonClusterSshArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetKarbonClusterSshResult>("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", args ?? new GetKarbonClusterSshArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes the SSH config from a Karbon Cluster
@@ -53,64 +53,84 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var sshbyid = Nutanix.GetKarbonClusterSsh.Invoke(new()
         ///     {
-        ///         var sshbyid = Output.Create(Nutanix.GetKarbonClusterSsh.InvokeAsync(new Nutanix.GetKarbonClusterSshArgs
-        ///         {
-        ///             KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
-        ///         }));
-        ///         var sshbyname = Output.Create(Nutanix.GetKarbonClusterSsh.InvokeAsync(new Nutanix.GetKarbonClusterSshArgs
-        ///         {
-        ///             KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
-        ///         }));
-        ///     }
+        ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
+        ///     });
         /// 
-        /// }
+        ///     var sshbyname = Nutanix.GetKarbonClusterSsh.Invoke(new()
+        ///     {
+        ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetKarbonClusterSshResult> Invoke(GetKarbonClusterSshInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetKarbonClusterSshResult>("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", args ?? new GetKarbonClusterSshInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetKarbonClusterSshResult>("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", args ?? new GetKarbonClusterSshInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetKarbonClusterSshArgs : Pulumi.InvokeArgs
+    public sealed class GetKarbonClusterSshArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Represents karbon cluster uuid
+        /// </summary>
         [Input("karbonClusterId")]
         public string? KarbonClusterId { get; set; }
 
+        /// <summary>
+        /// Represents the name of karbon cluster
+        /// </summary>
         [Input("karbonClusterName")]
         public string? KarbonClusterName { get; set; }
 
         public GetKarbonClusterSshArgs()
         {
         }
+        public static new GetKarbonClusterSshArgs Empty => new GetKarbonClusterSshArgs();
     }
 
-    public sealed class GetKarbonClusterSshInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetKarbonClusterSshInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Represents karbon cluster uuid
+        /// </summary>
         [Input("karbonClusterId")]
         public Input<string>? KarbonClusterId { get; set; }
 
+        /// <summary>
+        /// Represents the name of karbon cluster
+        /// </summary>
         [Input("karbonClusterName")]
         public Input<string>? KarbonClusterName { get; set; }
 
         public GetKarbonClusterSshInvokeArgs()
         {
         }
+        public static new GetKarbonClusterSshInvokeArgs Empty => new GetKarbonClusterSshInvokeArgs();
     }
 
 
     [OutputType]
     public sealed class GetKarbonClusterSshResult
     {
+        /// <summary>
+        /// Certificate of the user for SSH access.
+        /// </summary>
         public readonly string Certificate;
+        /// <summary>
+        /// Timestamp of certificate expiry in the ISO 8601 format (YYYY-MM-DDThh:mm:ss.sssZ).
+        /// </summary>
         public readonly string ExpiryTime;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -118,7 +138,13 @@ namespace PiersKarsenbarg.Nutanix
         public readonly string Id;
         public readonly string? KarbonClusterId;
         public readonly string? KarbonClusterName;
+        /// <summary>
+        /// The private key of the user for SSH access.
+        /// </summary>
         public readonly string PrivateKey;
+        /// <summary>
+        /// The username for which credentials are returned.
+        /// </summary>
         public readonly string Username;
 
         [OutputConstructor]

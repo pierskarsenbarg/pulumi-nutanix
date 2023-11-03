@@ -2,29 +2,16 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
  * Describes a List of Karbon private registry entry
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
- *
- * const registry = pulumi.output(nutanix.getKarbonPrivateRegistries({
- *     clusterId: "<YOUR-CLUSTER-ID>",
- * }));
- * ```
  */
 export function getKarbonPrivateRegistries(opts?: pulumi.InvokeOptions): Promise<GetKarbonPrivateRegistriesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getKarbonPrivateRegistries:getKarbonPrivateRegistries", {
     }, opts);
 }
@@ -38,4 +25,10 @@ export interface GetKarbonPrivateRegistriesResult {
      */
     readonly id: string;
     readonly privateRegistries: outputs.GetKarbonPrivateRegistriesPrivateRegistry[];
+}
+/**
+ * Describes a List of Karbon private registry entry
+ */
+export function getKarbonPrivateRegistriesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetKarbonPrivateRegistriesResult> {
+    return pulumi.output(getKarbonPrivateRegistries(opts))
 }

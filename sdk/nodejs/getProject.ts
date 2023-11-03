@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -61,11 +62,8 @@ import * as utilities from "./utilities";
  */
 export function getProject(args?: GetProjectArgs, opts?: pulumi.InvokeOptions): Promise<GetProjectResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getProject:getProject", {
         "categories": args.categories,
         "externalUserGroupReferenceLists": args.externalUserGroupReferenceLists,
@@ -88,6 +86,9 @@ export interface GetProjectArgs {
      * * `external_user_group_reference_list.#.name` - The name of a user_group
      */
     externalUserGroupReferenceLists?: inputs.GetProjectExternalUserGroupReferenceList[];
+    /**
+     * - (Required) The `id` of the project.
+     */
     projectId?: string;
     projectName?: string;
     /**
@@ -126,6 +127,9 @@ export interface GetProjectResult {
      * * `default_subnet_reference.name` - The name of a subnet.
      */
     readonly defaultSubnetReference: {[key: string]: string};
+    /**
+     * A description for project.
+     */
     readonly description: string;
     /**
      * List of environments associated with the project.
@@ -161,6 +165,14 @@ export interface GetProjectResult {
     readonly projectId?: string;
     readonly projectName?: string;
     readonly projectReference: {[key: string]: string};
+    /**
+     * The status for a resource domain (limits and values)
+     * * `resource_domain.resources` Array of the utilization/limit for resource types
+     * * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+     * * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+     * * `resource_domain.resources.#.units` - The units of the resource type
+     * * `resource_domain.resources.#.value` - The amount of resource consumed
+     */
     readonly resourceDomains: outputs.GetProjectResourceDomain[];
     readonly state: string;
     /**
@@ -178,9 +190,62 @@ export interface GetProjectResult {
      */
     readonly userReferenceLists: outputs.GetProjectUserReferenceList[];
 }
-
+/**
+ * Describe a Nutanix Project and its values (if it has them).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const subnet = new nutanix.Subnet("subnet", {
+ *     clusterUuid: "<YOUR_CLUSTER_ID>",
+ *     description: "Description of my unit test VLAN",
+ *     vlanId: 31,
+ *     subnetType: "VLAN",
+ *     subnetIp: "10.250.140.0",
+ *     defaultGatewayIp: "10.250.140.1",
+ *     prefixLength: 24,
+ *     dhcpOptions: {
+ *         boot_file_name: "bootfile",
+ *         domain_name: "nutanix",
+ *         tftp_server_name: "10.250.140.200",
+ *     },
+ *     dhcpDomainNameServerLists: [
+ *         "8.8.8.8",
+ *         "4.2.2.2",
+ *     ],
+ *     dhcpDomainSearchLists: [
+ *         "terraform.nutanix.com",
+ *         "terraform.unit.test.com",
+ *     ],
+ * });
+ * const projectTest = new nutanix.Project("projectTest", {
+ *     description: "This is my project",
+ *     categories: [{
+ *         name: "Environment",
+ *         value: "Staging",
+ *     }],
+ *     resourceDomain: {
+ *         resources: [{
+ *             limit: 4,
+ *             resourceType: "STORAGE",
+ *         }],
+ *     },
+ *     defaultSubnetReference: {
+ *         uuid: subnet.metadata.uuid,
+ *     },
+ *     apiVersion: "3.1",
+ * });
+ * const test = nutanix.getProjectOutput({
+ *     projectId: projectTest.id,
+ * });
+ * ```
+ */
 export function getProjectOutput(args?: GetProjectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProjectResult> {
-    return pulumi.output(args).apply(a => getProject(a, opts))
+    return pulumi.output(args).apply((a: any) => getProject(a, opts))
 }
 
 /**
@@ -195,6 +260,9 @@ export interface GetProjectOutputArgs {
      * * `external_user_group_reference_list.#.name` - The name of a user_group
      */
     externalUserGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.GetProjectExternalUserGroupReferenceListArgs>[]>;
+    /**
+     * - (Required) The `id` of the project.
+     */
     projectId?: pulumi.Input<string>;
     projectName?: pulumi.Input<string>;
     /**

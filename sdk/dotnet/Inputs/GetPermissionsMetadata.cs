@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetPermissionsMetadataArgs : Pulumi.InvokeArgs
+    public sealed class GetPermissionsMetadataArgs : global::Pulumi.InvokeArgs
     {
         [Input("filter", required: true)]
         public string Filter { get; set; } = null!;
@@ -37,5 +37,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetPermissionsMetadataArgs()
         {
         }
+        public static new GetPermissionsMetadataArgs Empty => new GetPermissionsMetadataArgs();
     }
 }

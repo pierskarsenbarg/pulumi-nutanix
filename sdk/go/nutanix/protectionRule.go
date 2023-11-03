@@ -7,8 +7,10 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Nutanix Protection Rule resource to Create a Protection Rule.
@@ -19,50 +21,52 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.NewProtectionRule(ctx, "protectionRuleTest", &nutanix.ProtectionRuleArgs{
-// 			AvailabilityZoneConnectivityLists: ProtectionRuleAvailabilityZoneConnectivityListArray{
-// 				&ProtectionRuleAvailabilityZoneConnectivityListArgs{
-// 					SnapshotScheduleLists: ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArray{
-// 						&ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs{
-// 							LocalSnapshotRetentionPolicy: &ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs{
-// 								NumSnapshots: pulumi.Int(1),
-// 							},
-// 							RecoveryPointObjectiveSecs: pulumi.Int(3600),
-// 							SnapshotType:               pulumi.String("CRASH_CONSISTENT"),
-// 						},
-// 					},
-// 				},
-// 			},
-// 			CategoryFilter: &ProtectionRuleCategoryFilterArgs{
-// 				Params: ProtectionRuleCategoryFilterParamArray{
-// 					&ProtectionRuleCategoryFilterParamArgs{
-// 						Name: pulumi.String("Environment"),
-// 						Values: pulumi.StringArray{
-// 							pulumi.String("Dev"),
-// 						},
-// 					},
-// 				},
-// 			},
-// 			Description: pulumi.String("test"),
-// 			OrderedAvailabilityZoneLists: ProtectionRuleOrderedAvailabilityZoneListArray{
-// 				&ProtectionRuleOrderedAvailabilityZoneListArgs{
-// 					AvailabilityZoneUrl: pulumi.String("ab788130-0820-4d07-a1b5-b0ba4d3a42asd"),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewProtectionRule(ctx, "protectionRuleTest", &nutanix.ProtectionRuleArgs{
+//				AvailabilityZoneConnectivityLists: nutanix.ProtectionRuleAvailabilityZoneConnectivityListArray{
+//					&nutanix.ProtectionRuleAvailabilityZoneConnectivityListArgs{
+//						SnapshotScheduleLists: nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArray{
+//							&nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs{
+//								LocalSnapshotRetentionPolicy: &nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs{
+//									NumSnapshots: pulumi.Int(1),
+//								},
+//								RecoveryPointObjectiveSecs: pulumi.Int(3600),
+//								SnapshotType:               pulumi.String("CRASH_CONSISTENT"),
+//							},
+//						},
+//					},
+//				},
+//				CategoryFilter: &nutanix.ProtectionRuleCategoryFilterArgs{
+//					Params: nutanix.ProtectionRuleCategoryFilterParamArray{
+//						&nutanix.ProtectionRuleCategoryFilterParamArgs{
+//							Name: pulumi.String("Environment"),
+//							Values: pulumi.StringArray{
+//								pulumi.String("Dev"),
+//							},
+//						},
+//					},
+//				},
+//				Description: pulumi.String("test"),
+//				OrderedAvailabilityZoneLists: nutanix.ProtectionRuleOrderedAvailabilityZoneListArray{
+//					&nutanix.ProtectionRuleOrderedAvailabilityZoneListArgs{
+//						AvailabilityZoneUrl: pulumi.String("ab788130-0820-4d07-a1b5-b0ba4d3a42asd"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type ProtectionRule struct {
 	pulumi.CustomResourceState
@@ -114,7 +118,7 @@ func NewProtectionRule(ctx *pulumi.Context,
 	if args.OrderedAvailabilityZoneLists == nil {
 		return nil, errors.New("invalid value for required argument 'OrderedAvailabilityZoneLists'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ProtectionRule
 	err := ctx.RegisterResource("nutanix:index/protectionRule:ProtectionRule", name, args, &resource, opts...)
 	if err != nil {
@@ -298,10 +302,16 @@ func (i *ProtectionRule) ToProtectionRuleOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionRuleOutput)
 }
 
+func (i *ProtectionRule) ToOutput(ctx context.Context) pulumix.Output[*ProtectionRule] {
+	return pulumix.Output[*ProtectionRule]{
+		OutputState: i.ToProtectionRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ProtectionRuleArrayInput is an input type that accepts ProtectionRuleArray and ProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `ProtectionRuleArrayInput` via:
 //
-//          ProtectionRuleArray{ ProtectionRuleArgs{...} }
+//	ProtectionRuleArray{ ProtectionRuleArgs{...} }
 type ProtectionRuleArrayInput interface {
 	pulumi.Input
 
@@ -323,10 +333,16 @@ func (i ProtectionRuleArray) ToProtectionRuleArrayOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionRuleArrayOutput)
 }
 
+func (i ProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*ProtectionRule] {
+	return pulumix.Output[[]*ProtectionRule]{
+		OutputState: i.ToProtectionRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ProtectionRuleMapInput is an input type that accepts ProtectionRuleMap and ProtectionRuleMapOutput values.
 // You can construct a concrete instance of `ProtectionRuleMapInput` via:
 //
-//          ProtectionRuleMap{ "key": ProtectionRuleArgs{...} }
+//	ProtectionRuleMap{ "key": ProtectionRuleArgs{...} }
 type ProtectionRuleMapInput interface {
 	pulumi.Input
 
@@ -348,6 +364,12 @@ func (i ProtectionRuleMap) ToProtectionRuleMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionRuleMapOutput)
 }
 
+func (i ProtectionRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProtectionRule] {
+	return pulumix.Output[map[string]*ProtectionRule]{
+		OutputState: i.ToProtectionRuleMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (ProtectionRuleOutput) ElementType() reflect.Type {
@@ -360,6 +382,12 @@ func (o ProtectionRuleOutput) ToProtectionRuleOutput() ProtectionRuleOutput {
 
 func (o ProtectionRuleOutput) ToProtectionRuleOutputWithContext(ctx context.Context) ProtectionRuleOutput {
 	return o
+}
+
+func (o ProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*ProtectionRule] {
+	return pulumix.Output[*ProtectionRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ProtectionRuleOutput) ApiVersion() pulumi.StringOutput {
@@ -448,6 +476,12 @@ func (o ProtectionRuleArrayOutput) ToProtectionRuleArrayOutputWithContext(ctx co
 	return o
 }
 
+func (o ProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ProtectionRule] {
+	return pulumix.Output[[]*ProtectionRule]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ProtectionRuleArrayOutput) Index(i pulumi.IntInput) ProtectionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ProtectionRule {
 		return vs[0].([]*ProtectionRule)[vs[1].(int)]
@@ -466,6 +500,12 @@ func (o ProtectionRuleMapOutput) ToProtectionRuleMapOutput() ProtectionRuleMapOu
 
 func (o ProtectionRuleMapOutput) ToProtectionRuleMapOutputWithContext(ctx context.Context) ProtectionRuleMapOutput {
 	return o
+}
+
+func (o ProtectionRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ProtectionRule] {
+	return pulumix.Output[map[string]*ProtectionRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ProtectionRuleMapOutput) MapIndex(k pulumi.StringInput) ProtectionRuleOutput {

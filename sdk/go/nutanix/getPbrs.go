@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve all the pbrs.
@@ -18,23 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetPbrs(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetPbrs(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPbrs(ctx *pulumi.Context, args *GetPbrsArgs, opts ...pulumi.InvokeOption) (*GetPbrsResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPbrsResult
 	err := ctx.Invoke("nutanix:index/getPbrs:getPbrs", args, &rv, opts...)
 	if err != nil {
@@ -45,15 +49,19 @@ func GetPbrs(ctx *pulumi.Context, args *GetPbrsArgs, opts ...pulumi.InvokeOption
 
 // A collection of arguments for invoking getPbrs.
 type GetPbrsArgs struct {
+	// - The routing policies kind metadata.
 	Metadatas []GetPbrsMetadata `pulumi:"metadatas"`
 }
 
 // A collection of values returned by getPbrs.
 type GetPbrsResult struct {
-	ApiVersion string          `pulumi:"apiVersion"`
-	Entities   []GetPbrsEntity `pulumi:"entities"`
+	// version of the API
+	ApiVersion string `pulumi:"apiVersion"`
+	// List of PBRs.
+	Entities []GetPbrsEntity `pulumi:"entities"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string            `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// - The routing policies kind metadata.
 	Metadatas []GetPbrsMetadata `pulumi:"metadatas"`
 }
 
@@ -72,6 +80,7 @@ func GetPbrsOutput(ctx *pulumi.Context, args GetPbrsOutputArgs, opts ...pulumi.I
 
 // A collection of arguments for invoking getPbrs.
 type GetPbrsOutputArgs struct {
+	// - The routing policies kind metadata.
 	Metadatas GetPbrsMetadataArrayInput `pulumi:"metadatas"`
 }
 
@@ -94,10 +103,18 @@ func (o GetPbrsResultOutput) ToGetPbrsResultOutputWithContext(ctx context.Contex
 	return o
 }
 
+func (o GetPbrsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbrsResult] {
+	return pulumix.Output[GetPbrsResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// version of the API
 func (o GetPbrsResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPbrsResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// List of PBRs.
 func (o GetPbrsResultOutput) Entities() GetPbrsEntityArrayOutput {
 	return o.ApplyT(func(v GetPbrsResult) []GetPbrsEntity { return v.Entities }).(GetPbrsEntityArrayOutput)
 }
@@ -107,6 +124,7 @@ func (o GetPbrsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPbrsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - The routing policies kind metadata.
 func (o GetPbrsResultOutput) Metadatas() GetPbrsMetadataArrayOutput {
 	return o.ApplyT(func(v GetPbrsResult) []GetPbrsMetadata { return v.Metadatas }).(GetPbrsMetadataArrayOutput)
 }

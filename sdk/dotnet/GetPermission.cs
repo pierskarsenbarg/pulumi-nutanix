@@ -20,30 +20,30 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var byuuid = Nutanix.GetPermission.Invoke(new()
         ///     {
-        ///         var byuuid = Output.Create(Nutanix.GetPermission.InvokeAsync(new Nutanix.GetPermissionArgs
-        ///         {
-        ///             PermissionId = "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
-        ///         }));
-        ///         var byname = Output.Create(Nutanix.GetPermission.InvokeAsync(new Nutanix.GetPermissionArgs
-        ///         {
-        ///             PermissionName = "Access_Console_Virtual_Machine",
-        ///         }));
-        ///     }
+        ///         PermissionId = "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
+        ///     });
         /// 
-        /// }
+        ///     var byname = Nutanix.GetPermission.Invoke(new()
+        ///     {
+        ///         PermissionName = "Access_Console_Virtual_Machine",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPermissionResult> InvokeAsync(GetPermissionArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPermissionResult>("nutanix:index/getPermission:getPermission", args ?? new GetPermissionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPermissionResult>("nutanix:index/getPermission:getPermission", args ?? new GetPermissionArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describe a Nutanix Permission and its values (if it has them).
@@ -53,73 +53,95 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var byuuid = Nutanix.GetPermission.Invoke(new()
         ///     {
-        ///         var byuuid = Output.Create(Nutanix.GetPermission.InvokeAsync(new Nutanix.GetPermissionArgs
-        ///         {
-        ///             PermissionId = "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
-        ///         }));
-        ///         var byname = Output.Create(Nutanix.GetPermission.InvokeAsync(new Nutanix.GetPermissionArgs
-        ///         {
-        ///             PermissionName = "Access_Console_Virtual_Machine",
-        ///         }));
-        ///     }
+        ///         PermissionId = "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
+        ///     });
         /// 
-        /// }
+        ///     var byname = Nutanix.GetPermission.Invoke(new()
+        ///     {
+        ///         PermissionName = "Access_Console_Virtual_Machine",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPermissionResult> Invoke(GetPermissionInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPermissionResult>("nutanix:index/getPermission:getPermission", args ?? new GetPermissionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPermissionResult>("nutanix:index/getPermission:getPermission", args ?? new GetPermissionInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetPermissionArgs : Pulumi.InvokeArgs
+    public sealed class GetPermissionArgs : global::Pulumi.InvokeArgs
     {
         [Input("categories")]
         private List<Inputs.GetPermissionCategoryArgs>? _categories;
+
+        /// <summary>
+        /// The categories for this resource.
+        /// </summary>
         public List<Inputs.GetPermissionCategoryArgs> Categories
         {
             get => _categories ?? (_categories = new List<Inputs.GetPermissionCategoryArgs>());
             set => _categories = value;
         }
 
+        /// <summary>
+        /// The `id` of the permission.
+        /// </summary>
         [Input("permissionId")]
         public string? PermissionId { get; set; }
 
+        /// <summary>
+        /// The `name` of the permission.
+        /// </summary>
         [Input("permissionName")]
         public string? PermissionName { get; set; }
 
         public GetPermissionArgs()
         {
         }
+        public static new GetPermissionArgs Empty => new GetPermissionArgs();
     }
 
-    public sealed class GetPermissionInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPermissionInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("categories")]
         private InputList<Inputs.GetPermissionCategoryInputArgs>? _categories;
+
+        /// <summary>
+        /// The categories for this resource.
+        /// </summary>
         public InputList<Inputs.GetPermissionCategoryInputArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.GetPermissionCategoryInputArgs>());
             set => _categories = value;
         }
 
+        /// <summary>
+        /// The `id` of the permission.
+        /// </summary>
         [Input("permissionId")]
         public Input<string>? PermissionId { get; set; }
 
+        /// <summary>
+        /// The `name` of the permission.
+        /// </summary>
         [Input("permissionName")]
         public Input<string>? PermissionName { get; set; }
 
         public GetPermissionInvokeArgs()
         {
         }
+        public static new GetPermissionInvokeArgs Empty => new GetPermissionInvokeArgs();
     }
 
 
@@ -127,8 +149,17 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetPermissionResult
     {
         public readonly string ApiVersion;
+        /// <summary>
+        /// The categories for this resource.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetPermissionCategoryResult> Categories;
+        /// <summary>
+        /// A description for the permission.
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// . The fields that can/cannot be accessed during the specified operation. field_name_list will be a list of fields. e.g. if field_mode = disallowed, field_name_list = [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetPermissionFieldResult> Fields;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -138,16 +169,31 @@ namespace PiersKarsenbarg.Nutanix
         /// (Required) The kind name (Default value: `project`).
         /// </summary>
         public readonly string Kind;
+        /// <summary>
+        /// The permission kind metadata.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
         /// the name.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The operation that is being performed on a given kind.
+        /// </summary>
         public readonly string Operation;
+        /// <summary>
+        /// The reference to a user.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> OwnerReference;
         public readonly string? PermissionId;
         public readonly string? PermissionName;
+        /// <summary>
+        /// The reference to a project.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> ProjectReference;
+        /// <summary>
+        /// The state of the permission.
+        /// </summary>
         public readonly string State;
 
         [OutputConstructor]

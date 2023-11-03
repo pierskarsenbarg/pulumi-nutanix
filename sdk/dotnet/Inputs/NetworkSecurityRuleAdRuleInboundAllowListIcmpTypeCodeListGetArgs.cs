@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class NetworkSecurityRuleAdRuleInboundAllowListIcmpTypeCodeListGetArgs : Pulumi.ResourceArgs
+    public sealed class NetworkSecurityRuleAdRuleInboundAllowListIcmpTypeCodeListGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("code")]
         public Input<string>? Code { get; set; }
@@ -22,5 +22,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public NetworkSecurityRuleAdRuleInboundAllowListIcmpTypeCodeListGetArgs()
         {
         }
+        public static new NetworkSecurityRuleAdRuleInboundAllowListIcmpTypeCodeListGetArgs Empty => new NetworkSecurityRuleAdRuleInboundAllowListIcmpTypeCodeListGetArgs();
     }
 }

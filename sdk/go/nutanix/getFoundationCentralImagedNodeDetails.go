@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Get the details of a single node given its UUID.
@@ -18,25 +20,27 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetFoundationCentralImagedNodeDetails(ctx, &GetFoundationCentralImagedNodeDetailsArgs{
-// 			ImagedNodeUuid: "<IMAGED-NODE-UUID>",
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetFoundationCentralImagedNodeDetails(ctx, &nutanix.GetFoundationCentralImagedNodeDetailsArgs{
+//				ImagedNodeUuid: "<IMAGED-NODE-UUID>",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetFoundationCentralImagedNodeDetails(ctx *pulumi.Context, args *GetFoundationCentralImagedNodeDetailsArgs, opts ...pulumi.InvokeOption) (*GetFoundationCentralImagedNodeDetailsResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFoundationCentralImagedNodeDetailsResult
 	err := ctx.Invoke("nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails", args, &rv, opts...)
 	if err != nil {
@@ -47,49 +51,86 @@ func GetFoundationCentralImagedNodeDetails(ctx *pulumi.Context, args *GetFoundat
 
 // A collection of arguments for invoking getFoundationCentralImagedNodeDetails.
 type GetFoundationCentralImagedNodeDetailsArgs struct {
-	ImagedNodeUuid string  `pulumi:"imagedNodeUuid"`
-	Ipv6Interface  *string `pulumi:"ipv6Interface"`
-	ObjectVersion  *int    `pulumi:"objectVersion"`
+	// UUID of the node whose details need to be fetched.
+	ImagedNodeUuid string `pulumi:"imagedNodeUuid"`
+	// Name of the cvm interface having ipv6 address.
+	Ipv6Interface *string `pulumi:"ipv6Interface"`
+	// Version of the node used for CAS.
+	ObjectVersion *int `pulumi:"objectVersion"`
 }
 
 // A collection of values returned by getFoundationCentralImagedNodeDetails.
 type GetFoundationCentralImagedNodeDetailsResult struct {
-	AosVersion         string                 `pulumi:"aosVersion"`
-	ApiKeyUuid         string                 `pulumi:"apiKeyUuid"`
-	Available          bool                   `pulumi:"available"`
-	BlockSerial        string                 `pulumi:"blockSerial"`
-	CreatedTimestamp   string                 `pulumi:"createdTimestamp"`
-	CurrentTime        string                 `pulumi:"currentTime"`
-	CvmGateway         string                 `pulumi:"cvmGateway"`
-	CvmIp              string                 `pulumi:"cvmIp"`
-	CvmIpv6            string                 `pulumi:"cvmIpv6"`
-	CvmNetmask         string                 `pulumi:"cvmNetmask"`
-	CvmUp              bool                   `pulumi:"cvmUp"`
-	CvmUuid            string                 `pulumi:"cvmUuid"`
-	CvmVlanId          int                    `pulumi:"cvmVlanId"`
-	FoundationVersion  string                 `pulumi:"foundationVersion"`
+	// AOS version currently installed on the node.
+	AosVersion string `pulumi:"aosVersion"`
+	// API key used to register the node.
+	ApiKeyUuid string `pulumi:"apiKeyUuid"`
+	// Specifies whether the node is available for cluster creation.
+	Available bool `pulumi:"available"`
+	// Serial number of the block to which the node belongs.
+	BlockSerial string `pulumi:"blockSerial"`
+	// Time when the node was discovered in Foundation Central.
+	CreatedTimestamp string `pulumi:"createdTimestamp"`
+	// Current time of Foundation Central.
+	CurrentTime string `pulumi:"currentTime"`
+	// gateway of the cvm.
+	CvmGateway string `pulumi:"cvmGateway"`
+	// IP address of the cvm.
+	CvmIp string `pulumi:"cvmIp"`
+	// IPv6 address of the cvm.
+	CvmIpv6 string `pulumi:"cvmIpv6"`
+	// netmask of the cvm.
+	CvmNetmask string `pulumi:"cvmNetmask"`
+	// Denotes whether the CVM is up or not on this node.
+	CvmUp bool `pulumi:"cvmUp"`
+	// Node UUID from the node's cvm.
+	CvmUuid string `pulumi:"cvmUuid"`
+	// Vlan tag of the cvm, if the cvm is on a vlan.
+	CvmVlanId int `pulumi:"cvmVlanId"`
+	// Foundation version installed on the node.
+	FoundationVersion string `pulumi:"foundationVersion"`
+	// Hardware attributes json of the node.
 	HardwareAttributes map[string]interface{} `pulumi:"hardwareAttributes"`
-	HypervisorGateway  string                 `pulumi:"hypervisorGateway"`
-	HypervisorHostname string                 `pulumi:"hypervisorHostname"`
-	HypervisorIp       string                 `pulumi:"hypervisorIp"`
-	HypervisorNetmask  string                 `pulumi:"hypervisorNetmask"`
-	HypervisorType     string                 `pulumi:"hypervisorType"`
-	HypervisorVersion  string                 `pulumi:"hypervisorVersion"`
+	// gateway of the hypervisor.
+	HypervisorGateway string `pulumi:"hypervisorGateway"`
+	// Name of the hypervisor host.
+	HypervisorHostname string `pulumi:"hypervisorHostname"`
+	// IP address of the hypervisor.
+	HypervisorIp string `pulumi:"hypervisorIp"`
+	// netmask of the hypervisor.
+	HypervisorNetmask string `pulumi:"hypervisorNetmask"`
+	// Hypervisor type currently installed on the node. Must be one of {kvm, esx, hyperv}.
+	HypervisorType string `pulumi:"hypervisorType"`
+	// Version of the hypervisor currently installed on the node.
+	HypervisorVersion string `pulumi:"hypervisorVersion"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string   `pulumi:"id"`
-	ImagedClusterUuid string   `pulumi:"imagedClusterUuid"`
-	ImagedNodeUuid    string   `pulumi:"imagedNodeUuid"`
-	IpmiGateway       string   `pulumi:"ipmiGateway"`
-	IpmiIp            string   `pulumi:"ipmiIp"`
-	IpmiNetmask       string   `pulumi:"ipmiNetmask"`
-	Ipv6Interface     string   `pulumi:"ipv6Interface"`
-	LatestHbTsLists   []string `pulumi:"latestHbTsLists"`
-	Model             string   `pulumi:"model"`
-	NodePosition      string   `pulumi:"nodePosition"`
-	NodeSerial        string   `pulumi:"nodeSerial"`
-	NodeState         string   `pulumi:"nodeState"`
-	NodeType          string   `pulumi:"nodeType"`
-	ObjectVersion     int      `pulumi:"objectVersion"`
+	Id string `pulumi:"id"`
+	// UUID of the cluster to which the node belongs, if any.
+	ImagedClusterUuid string `pulumi:"imagedClusterUuid"`
+	// UUID of the node.
+	ImagedNodeUuid string `pulumi:"imagedNodeUuid"`
+	// gateway of the ipmi.
+	IpmiGateway string `pulumi:"ipmiGateway"`
+	// IP address of the ipmi.
+	IpmiIp string `pulumi:"ipmiIp"`
+	// netmask of the ipmi.
+	IpmiNetmask string `pulumi:"ipmiNetmask"`
+	// Name of the cvm interface having ipv6 address.
+	Ipv6Interface string `pulumi:"ipv6Interface"`
+	// List of timestamps when the node has sent heartbeats to Foundation Central.
+	LatestHbTsLists []string `pulumi:"latestHbTsLists"`
+	// Model of the node.
+	Model string `pulumi:"model"`
+	// Position of the node in the block.
+	NodePosition string `pulumi:"nodePosition"`
+	// Serial number of the node.
+	NodeSerial string `pulumi:"nodeSerial"`
+	// Specifies whether the node is discovering, available or unavailable for cluster creation.
+	NodeState string `pulumi:"nodeState"`
+	// Specifies the type of node - on-prem, AWS, GCP etc.
+	NodeType string `pulumi:"nodeType"`
+	// Version of the node used for CAS.
+	ObjectVersion int `pulumi:"objectVersion"`
 }
 
 func GetFoundationCentralImagedNodeDetailsOutput(ctx *pulumi.Context, args GetFoundationCentralImagedNodeDetailsOutputArgs, opts ...pulumi.InvokeOption) GetFoundationCentralImagedNodeDetailsResultOutput {
@@ -107,9 +148,12 @@ func GetFoundationCentralImagedNodeDetailsOutput(ctx *pulumi.Context, args GetFo
 
 // A collection of arguments for invoking getFoundationCentralImagedNodeDetails.
 type GetFoundationCentralImagedNodeDetailsOutputArgs struct {
-	ImagedNodeUuid pulumi.StringInput    `pulumi:"imagedNodeUuid"`
-	Ipv6Interface  pulumi.StringPtrInput `pulumi:"ipv6Interface"`
-	ObjectVersion  pulumi.IntPtrInput    `pulumi:"objectVersion"`
+	// UUID of the node whose details need to be fetched.
+	ImagedNodeUuid pulumi.StringInput `pulumi:"imagedNodeUuid"`
+	// Name of the cvm interface having ipv6 address.
+	Ipv6Interface pulumi.StringPtrInput `pulumi:"ipv6Interface"`
+	// Version of the node used for CAS.
+	ObjectVersion pulumi.IntPtrInput `pulumi:"objectVersion"`
 }
 
 func (GetFoundationCentralImagedNodeDetailsOutputArgs) ElementType() reflect.Type {
@@ -131,88 +175,115 @@ func (o GetFoundationCentralImagedNodeDetailsResultOutput) ToGetFoundationCentra
 	return o
 }
 
+func (o GetFoundationCentralImagedNodeDetailsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFoundationCentralImagedNodeDetailsResult] {
+	return pulumix.Output[GetFoundationCentralImagedNodeDetailsResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// AOS version currently installed on the node.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) AosVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.AosVersion }).(pulumi.StringOutput)
 }
 
+// API key used to register the node.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) ApiKeyUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.ApiKeyUuid }).(pulumi.StringOutput)
 }
 
+// Specifies whether the node is available for cluster creation.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) Available() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) bool { return v.Available }).(pulumi.BoolOutput)
 }
 
+// Serial number of the block to which the node belongs.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) BlockSerial() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.BlockSerial }).(pulumi.StringOutput)
 }
 
+// Time when the node was discovered in Foundation Central.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) CreatedTimestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.CreatedTimestamp }).(pulumi.StringOutput)
 }
 
+// Current time of Foundation Central.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) CurrentTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.CurrentTime }).(pulumi.StringOutput)
 }
 
+// gateway of the cvm.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) CvmGateway() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.CvmGateway }).(pulumi.StringOutput)
 }
 
+// IP address of the cvm.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) CvmIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.CvmIp }).(pulumi.StringOutput)
 }
 
+// IPv6 address of the cvm.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) CvmIpv6() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.CvmIpv6 }).(pulumi.StringOutput)
 }
 
+// netmask of the cvm.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) CvmNetmask() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.CvmNetmask }).(pulumi.StringOutput)
 }
 
+// Denotes whether the CVM is up or not on this node.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) CvmUp() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) bool { return v.CvmUp }).(pulumi.BoolOutput)
 }
 
+// Node UUID from the node's cvm.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) CvmUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.CvmUuid }).(pulumi.StringOutput)
 }
 
+// Vlan tag of the cvm, if the cvm is on a vlan.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) CvmVlanId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) int { return v.CvmVlanId }).(pulumi.IntOutput)
 }
 
+// Foundation version installed on the node.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) FoundationVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.FoundationVersion }).(pulumi.StringOutput)
 }
 
+// Hardware attributes json of the node.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) HardwareAttributes() pulumi.MapOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) map[string]interface{} {
 		return v.HardwareAttributes
 	}).(pulumi.MapOutput)
 }
 
+// gateway of the hypervisor.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) HypervisorGateway() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.HypervisorGateway }).(pulumi.StringOutput)
 }
 
+// Name of the hypervisor host.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) HypervisorHostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.HypervisorHostname }).(pulumi.StringOutput)
 }
 
+// IP address of the hypervisor.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) HypervisorIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.HypervisorIp }).(pulumi.StringOutput)
 }
 
+// netmask of the hypervisor.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) HypervisorNetmask() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.HypervisorNetmask }).(pulumi.StringOutput)
 }
 
+// Hypervisor type currently installed on the node. Must be one of {kvm, esx, hyperv}.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) HypervisorType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.HypervisorType }).(pulumi.StringOutput)
 }
 
+// Version of the hypervisor currently installed on the node.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) HypervisorVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.HypervisorVersion }).(pulumi.StringOutput)
 }
@@ -222,54 +293,67 @@ func (o GetFoundationCentralImagedNodeDetailsResultOutput) Id() pulumi.StringOut
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// UUID of the cluster to which the node belongs, if any.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) ImagedClusterUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.ImagedClusterUuid }).(pulumi.StringOutput)
 }
 
+// UUID of the node.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) ImagedNodeUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.ImagedNodeUuid }).(pulumi.StringOutput)
 }
 
+// gateway of the ipmi.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) IpmiGateway() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.IpmiGateway }).(pulumi.StringOutput)
 }
 
+// IP address of the ipmi.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) IpmiIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.IpmiIp }).(pulumi.StringOutput)
 }
 
+// netmask of the ipmi.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) IpmiNetmask() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.IpmiNetmask }).(pulumi.StringOutput)
 }
 
+// Name of the cvm interface having ipv6 address.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) Ipv6Interface() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.Ipv6Interface }).(pulumi.StringOutput)
 }
 
+// List of timestamps when the node has sent heartbeats to Foundation Central.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) LatestHbTsLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) []string { return v.LatestHbTsLists }).(pulumi.StringArrayOutput)
 }
 
+// Model of the node.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) Model() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.Model }).(pulumi.StringOutput)
 }
 
+// Position of the node in the block.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) NodePosition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.NodePosition }).(pulumi.StringOutput)
 }
 
+// Serial number of the node.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) NodeSerial() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.NodeSerial }).(pulumi.StringOutput)
 }
 
+// Specifies whether the node is discovering, available or unavailable for cluster creation.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) NodeState() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.NodeState }).(pulumi.StringOutput)
 }
 
+// Specifies the type of node - on-prem, AWS, GCP etc.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) NodeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) string { return v.NodeType }).(pulumi.StringOutput)
 }
 
+// Version of the node used for CAS.
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) ObjectVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) int { return v.ObjectVersion }).(pulumi.IntOutput)
 }

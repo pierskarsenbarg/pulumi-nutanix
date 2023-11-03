@@ -16,54 +16,65 @@ namespace PiersKarsenbarg.Nutanix
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var test = new Nutanix.ServiceGroup("test", new()
     ///     {
-    ///         var test = new Nutanix.ServiceGroup("test", new Nutanix.ServiceGroupArgs
+    ///         Description = "this is service group",
+    ///         ServiceLists = new[]
     ///         {
-    ///             Description = "this is service group",
-    ///             ServiceLists = 
+    ///             new Nutanix.Inputs.ServiceGroupServiceListArgs
     ///             {
-    ///                 new Nutanix.Inputs.ServiceGroupServiceListArgs
+    ///                 Protocol = "TCP",
+    ///                 TcpPortRangeLists = new[]
     ///                 {
-    ///                     Protocol = "TCP",
-    ///                     TcpPortRangeLists = 
+    ///                     new Nutanix.Inputs.ServiceGroupServiceListTcpPortRangeListArgs
     ///                     {
-    ///                         new Nutanix.Inputs.ServiceGroupServiceListTcpPortRangeListArgs
-    ///                         {
-    ///                             EndPort = 22,
-    ///                             StartPort = 22,
-    ///                         },
-    ///                         new Nutanix.Inputs.ServiceGroupServiceListTcpPortRangeListArgs
-    ///                         {
-    ///                             EndPort = 2222,
-    ///                             StartPort = 2222,
-    ///                         },
+    ///                         EndPort = 22,
+    ///                         StartPort = 22,
+    ///                     },
+    ///                     new Nutanix.Inputs.ServiceGroupServiceListTcpPortRangeListArgs
+    ///                     {
+    ///                         EndPort = 2222,
+    ///                         StartPort = 2222,
     ///                     },
     ///                 },
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/serviceGroup:ServiceGroup")]
-    public partial class ServiceGroup : Pulumi.CustomResource
+    public partial class ServiceGroup : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// - (Optional) Description of the service group
+        /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) Name of the service group
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
+        /// </summary>
         [Output("serviceLists")]
         public Output<ImmutableArray<Outputs.ServiceGroupServiceList>> ServiceLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (ReadOnly) boolean value to denote if the service group is system defined
+        /// </summary>
         [Output("systemDefined")]
         public Output<bool> SystemDefined { get; private set; } = null!;
 
@@ -112,16 +123,26 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class ServiceGroupArgs : Pulumi.ResourceArgs
+    public sealed class ServiceGroupArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) Description of the service group
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// - (Required) Name of the service group
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("serviceLists", required: true)]
         private InputList<Inputs.ServiceGroupServiceListArgs>? _serviceLists;
+
+        /// <summary>
+        /// - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
+        /// </summary>
         public InputList<Inputs.ServiceGroupServiceListArgs> ServiceLists
         {
             get => _serviceLists ?? (_serviceLists = new InputList<Inputs.ServiceGroupServiceListArgs>());
@@ -131,29 +152,44 @@ namespace PiersKarsenbarg.Nutanix
         public ServiceGroupArgs()
         {
         }
+        public static new ServiceGroupArgs Empty => new ServiceGroupArgs();
     }
 
-    public sealed class ServiceGroupState : Pulumi.ResourceArgs
+    public sealed class ServiceGroupState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) Description of the service group
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// - (Required) Name of the service group
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("serviceLists")]
         private InputList<Inputs.ServiceGroupServiceListGetArgs>? _serviceLists;
+
+        /// <summary>
+        /// - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
+        /// </summary>
         public InputList<Inputs.ServiceGroupServiceListGetArgs> ServiceLists
         {
             get => _serviceLists ?? (_serviceLists = new InputList<Inputs.ServiceGroupServiceListGetArgs>());
             set => _serviceLists = value;
         }
 
+        /// <summary>
+        /// - (ReadOnly) boolean value to denote if the service group is system defined
+        /// </summary>
         [Input("systemDefined")]
         public Input<bool>? SystemDefined { get; set; }
 
         public ServiceGroupState()
         {
         }
+        public static new ServiceGroupState Empty => new ServiceGroupState();
     }
 }

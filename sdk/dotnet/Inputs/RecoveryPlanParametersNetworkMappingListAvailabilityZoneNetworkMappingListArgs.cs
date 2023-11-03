@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListArgs : Pulumi.ResourceArgs
+    public sealed class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListArgs : global::Pulumi.ResourceArgs
     {
         [Input("availabilityZoneUrl")]
         public Input<string>? AvailabilityZoneUrl { get; set; }
@@ -49,5 +49,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListArgs()
         {
         }
+        public static new RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListArgs Empty => new RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListArgs();
     }
 }

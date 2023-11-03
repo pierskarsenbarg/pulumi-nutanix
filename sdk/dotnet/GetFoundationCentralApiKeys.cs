@@ -13,14 +13,14 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetFoundationCentralApiKeys
     {
         public static Task<GetFoundationCentralApiKeysResult> InvokeAsync(GetFoundationCentralApiKeysArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralApiKeysResult>("nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys", args ?? new GetFoundationCentralApiKeysArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralApiKeysResult>("nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys", args ?? new GetFoundationCentralApiKeysArgs(), options.WithDefaults());
 
         public static Output<GetFoundationCentralApiKeysResult> Invoke(GetFoundationCentralApiKeysInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFoundationCentralApiKeysResult>("nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys", args ?? new GetFoundationCentralApiKeysInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralApiKeysResult>("nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys", args ?? new GetFoundationCentralApiKeysInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetFoundationCentralApiKeysArgs : Pulumi.InvokeArgs
+    public sealed class GetFoundationCentralApiKeysArgs : global::Pulumi.InvokeArgs
     {
         [Input("keyUuid", required: true)]
         public string KeyUuid { get; set; } = null!;
@@ -28,9 +28,10 @@ namespace PiersKarsenbarg.Nutanix
         public GetFoundationCentralApiKeysArgs()
         {
         }
+        public static new GetFoundationCentralApiKeysArgs Empty => new GetFoundationCentralApiKeysArgs();
     }
 
-    public sealed class GetFoundationCentralApiKeysInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFoundationCentralApiKeysInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("keyUuid", required: true)]
         public Input<string> KeyUuid { get; set; } = null!;
@@ -38,6 +39,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetFoundationCentralApiKeysInvokeArgs()
         {
         }
+        public static new GetFoundationCentralApiKeysInvokeArgs Empty => new GetFoundationCentralApiKeysInvokeArgs();
     }
 
 

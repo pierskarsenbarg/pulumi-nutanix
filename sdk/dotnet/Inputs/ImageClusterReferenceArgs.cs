@@ -11,19 +11,29 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class ImageClusterReferenceArgs : Pulumi.ResourceArgs
+    public sealed class ImageClusterReferenceArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - The kind name (Default value: project)(Required).
+        /// </summary>
         [Input("kind")]
         public Input<string>? Kind { get; set; }
 
+        /// <summary>
+        /// - (Required) The name for the image.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - the UUID(Required).
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 
         public ImageClusterReferenceArgs()
         {
         }
+        public static new ImageClusterReferenceArgs Empty => new ImageClusterReferenceArgs();
     }
 }

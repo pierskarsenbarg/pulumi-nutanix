@@ -11,16 +11,23 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetClusterCategoryInputArgs : Pulumi.ResourceArgs
+    public sealed class GetClusterCategoryInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - the key name.
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// - value of the key.
+        /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;
 
         public GetClusterCategoryInputArgs()
         {
         }
+        public static new GetClusterCategoryInputArgs Empty => new GetClusterCategoryInputArgs();
     }
 }

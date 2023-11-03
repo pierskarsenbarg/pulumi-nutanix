@@ -11,28 +11,28 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationImageNodesHypervisorIsoArgs : Pulumi.ResourceArgs
+    public sealed class FoundationImageNodesHypervisorIsoArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// : - Details of hypervisor ISO of type esx.
+        /// - Details of hypervisor ISO of type esx.
         /// </summary>
         [Input("esx")]
         public Input<Inputs.FoundationImageNodesHypervisorIsoEsxArgs>? Esx { get; set; }
 
         /// <summary>
-        /// : - Details of hypervisor ISO of type hyperv.
+        /// - Details of hypervisor ISO of type hyperv.
         /// </summary>
         [Input("hyperv")]
         public Input<Inputs.FoundationImageNodesHypervisorIsoHypervArgs>? Hyperv { get; set; }
 
         /// <summary>
-        /// : - Details of hypervisor ISO of type kvm.
+        /// - Details of hypervisor ISO of type kvm.
         /// </summary>
         [Input("kvm")]
         public Input<Inputs.FoundationImageNodesHypervisorIsoKvmArgs>? Kvm { get; set; }
 
         /// <summary>
-        /// : - Details of hypervisor ISO of type xen.
+        /// - Details of hypervisor ISO of type xen.
         /// </summary>
         [Input("xen")]
         public Input<Inputs.FoundationImageNodesHypervisorIsoXenArgs>? Xen { get; set; }
@@ -40,5 +40,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public FoundationImageNodesHypervisorIsoArgs()
         {
         }
+        public static new FoundationImageNodesHypervisorIsoArgs Empty => new FoundationImageNodesHypervisorIsoArgs();
     }
 }

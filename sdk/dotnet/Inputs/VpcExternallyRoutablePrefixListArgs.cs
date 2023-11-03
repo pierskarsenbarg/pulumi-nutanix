@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class VpcExternallyRoutablePrefixListArgs : Pulumi.ResourceArgs
+    public sealed class VpcExternallyRoutablePrefixListArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// ip address.
@@ -28,5 +28,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public VpcExternallyRoutablePrefixListArgs()
         {
         }
+        public static new VpcExternallyRoutablePrefixListArgs Empty => new VpcExternallyRoutablePrefixListArgs();
     }
 }

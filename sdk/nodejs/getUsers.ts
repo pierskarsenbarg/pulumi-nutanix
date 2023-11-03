@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -12,26 +13,22 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const user = new nutanix.User("user", {
- *     directoryServiceUser: {
- *         directoryServiceReference: {
- *             uuid: "<directory-service-uuid>",
- *         },
- *         userPrincipalName: "test-user@ntnxlab.local",
+ * const user = new nutanix.User("user", {directoryServiceUser: {
+ *     directoryServiceReference: {
+ *         uuid: "<directory-service-uuid>",
  *     },
- * });
- * const users = pulumi.output(nutanix.getUser());
+ *     userPrincipalName: "test-user@ntnxlab.local",
+ * }});
+ * const users = nutanix.getUser({});
  * ```
  */
 export function getUsers(args?: GetUsersArgs, opts?: pulumi.InvokeOptions): Promise<GetUsersResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getUsers:getUsers", {
         "metadatas": args.metadatas,
     }, opts);
@@ -41,6 +38,9 @@ export function getUsers(args?: GetUsersArgs, opts?: pulumi.InvokeOptions): Prom
  * A collection of arguments for invoking getUsers.
  */
 export interface GetUsersArgs {
+    /**
+     * - The user kind metadata.
+     */
     metadatas?: inputs.GetUsersMetadata[];
 }
 
@@ -50,34 +50,50 @@ export interface GetUsersArgs {
 export interface GetUsersResult {
     /**
      * The version of the API.
-     * * `state`: - The state of the entity.
-     * * `name`: - The name of the user.
-     * * `userType`: - The name of the user.
-     * * `displayName`: - The display name of the user (common name) provided by the directory service.
-     * * `projectReferenceList`: - A list of projects the user is part of. See #reference for more details.
-     * * `accessControlPolicyReferenceList`: - List of ACP references. See #reference for more details.
-     * * `directoryServiceUser`: - (Optional) The directory service user configuration. See below for more information.
-     * * `identityProviderUser`: - (Optional) (Optional) The identity provider user configuration. See below for more information.
-     * * `categories`: - (Optional) Categories for the user.
-     * * `projectReference`: - (Optional) The reference to a project.
-     * * `ownerReference`: - (Optional) The reference to a user.
      */
     readonly apiVersion: string;
+    /**
+     * List of Users
+     */
     readonly entities: outputs.GetUsersEntity[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - The user kind metadata.
+     */
     readonly metadatas: outputs.GetUsersMetadata[];
 }
-
+/**
+ * Provides a datasource to retrieve all the users.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const user = new nutanix.User("user", {directoryServiceUser: {
+ *     directoryServiceReference: {
+ *         uuid: "<directory-service-uuid>",
+ *     },
+ *     userPrincipalName: "test-user@ntnxlab.local",
+ * }});
+ * const users = nutanix.getUser({});
+ * ```
+ */
 export function getUsersOutput(args?: GetUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsersResult> {
-    return pulumi.output(args).apply(a => getUsers(a, opts))
+    return pulumi.output(args).apply((a: any) => getUsers(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getUsers.
  */
 export interface GetUsersOutputArgs {
+    /**
+     * - The user kind metadata.
+     */
     metadatas?: pulumi.Input<pulumi.Input<inputs.GetUsersMetadataArgs>[]>;
 }

@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Gets hypervisor, CVM & IPMI info of the discovered nodes using their ipv6 address.
@@ -18,29 +20,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetFoundationNodeNetworkDetails(ctx, &GetFoundationNodeNetworkDetailsArgs{
-// 			Ipv6Addresses: []string{
-// 				"<ipv6-address-1>",
-// 				"<ipv6-address-2>",
-// 			},
-// 			Timeout: pulumi.StringRef("30"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetFoundationNodeNetworkDetails(ctx, &nutanix.GetFoundationNodeNetworkDetailsArgs{
+//				Ipv6Addresses: []string{
+//					"<ipv6-address-1>",
+//					"<ipv6-address-2>",
+//				},
+//				Timeout: pulumi.StringRef("30"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetFoundationNodeNetworkDetails(ctx *pulumi.Context, args *GetFoundationNodeNetworkDetailsArgs, opts ...pulumi.InvokeOption) (*GetFoundationNodeNetworkDetailsResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFoundationNodeNetworkDetailsResult
 	err := ctx.Invoke("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", args, &rv, opts...)
 	if err != nil {
@@ -51,17 +55,20 @@ func GetFoundationNodeNetworkDetails(ctx *pulumi.Context, args *GetFoundationNod
 
 // A collection of arguments for invoking getFoundationNodeNetworkDetails.
 type GetFoundationNodeNetworkDetailsArgs struct {
+	// list of ipv6 addresses
 	Ipv6Addresses []string `pulumi:"ipv6Addresses"`
-	Timeout       *string  `pulumi:"timeout"`
+	// timeout in seconds
+	Timeout *string `pulumi:"timeout"`
 }
 
 // A collection of values returned by getFoundationNodeNetworkDetails.
 type GetFoundationNodeNetworkDetailsResult struct {
 	// The provider-assigned unique ID for this managed resource.
-	Id            string                                `pulumi:"id"`
-	Ipv6Addresses []string                              `pulumi:"ipv6Addresses"`
-	Nodes         []GetFoundationNodeNetworkDetailsNode `pulumi:"nodes"`
-	Timeout       *string                               `pulumi:"timeout"`
+	Id            string   `pulumi:"id"`
+	Ipv6Addresses []string `pulumi:"ipv6Addresses"`
+	// nodes array.
+	Nodes   []GetFoundationNodeNetworkDetailsNode `pulumi:"nodes"`
+	Timeout *string                               `pulumi:"timeout"`
 }
 
 func GetFoundationNodeNetworkDetailsOutput(ctx *pulumi.Context, args GetFoundationNodeNetworkDetailsOutputArgs, opts ...pulumi.InvokeOption) GetFoundationNodeNetworkDetailsResultOutput {
@@ -79,8 +86,10 @@ func GetFoundationNodeNetworkDetailsOutput(ctx *pulumi.Context, args GetFoundati
 
 // A collection of arguments for invoking getFoundationNodeNetworkDetails.
 type GetFoundationNodeNetworkDetailsOutputArgs struct {
+	// list of ipv6 addresses
 	Ipv6Addresses pulumi.StringArrayInput `pulumi:"ipv6Addresses"`
-	Timeout       pulumi.StringPtrInput   `pulumi:"timeout"`
+	// timeout in seconds
+	Timeout pulumi.StringPtrInput `pulumi:"timeout"`
 }
 
 func (GetFoundationNodeNetworkDetailsOutputArgs) ElementType() reflect.Type {
@@ -102,6 +111,12 @@ func (o GetFoundationNodeNetworkDetailsResultOutput) ToGetFoundationNodeNetworkD
 	return o
 }
 
+func (o GetFoundationNodeNetworkDetailsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFoundationNodeNetworkDetailsResult] {
+	return pulumix.Output[GetFoundationNodeNetworkDetailsResult]{
+		OutputState: o.OutputState,
+	}
+}
+
 // The provider-assigned unique ID for this managed resource.
 func (o GetFoundationNodeNetworkDetailsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationNodeNetworkDetailsResult) string { return v.Id }).(pulumi.StringOutput)
@@ -111,6 +126,7 @@ func (o GetFoundationNodeNetworkDetailsResultOutput) Ipv6Addresses() pulumi.Stri
 	return o.ApplyT(func(v GetFoundationNodeNetworkDetailsResult) []string { return v.Ipv6Addresses }).(pulumi.StringArrayOutput)
 }
 
+// nodes array.
 func (o GetFoundationNodeNetworkDetailsResultOutput) Nodes() GetFoundationNodeNetworkDetailsNodeArrayOutput {
 	return o.ApplyT(func(v GetFoundationNodeNetworkDetailsResult) []GetFoundationNodeNetworkDetailsNode { return v.Nodes }).(GetFoundationNodeNetworkDetailsNodeArrayOutput)
 }

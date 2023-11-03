@@ -14,10 +14,25 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class FoundationIpmiConfigBlockNode
     {
+        /// <summary>
+        /// - (Required) Whether IPMI should be configured. Should be kept true to configure
+        /// </summary>
         public readonly bool IpmiConfigureNow;
+        /// <summary>
+        /// - Whether IPMI was successfully configured.
+        /// </summary>
         public readonly bool? IpmiConfigureSuccessful;
+        /// <summary>
+        /// - IPMI IP address.
+        /// </summary>
         public readonly string IpmiIp;
+        /// <summary>
+        /// - (Required) IPMI mac address.
+        /// </summary>
         public readonly string IpmiMac;
+        /// <summary>
+        /// - IPMI configuration status message if any.
+        /// </summary>
         public readonly string? IpmiMessage;
 
         [OutputConstructor]

@@ -15,13 +15,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class FoundationImageNodesFcSettings
     {
         /// <summary>
-        /// :- Foundation Central metadata which will be transferred to the newly imaged node.
+        /// - Foundation Central metadata which will be transferred to the newly imaged node.
         /// * `fc_metadata.fc_ip` :- IP address of foundation central.
         /// * `fc_metadata.api_key` :- api_key which the node uses to register itself with foundation central.
         /// </summary>
         public readonly Outputs.FoundationImageNodesFcSettingsFcMetadata FcMetadata;
         /// <summary>
-        /// :- If this attribute is set to True, FC workflow will be invoked.
+        /// - If this attribute is set to True, FC workflow will be invoked.
         /// </summary>
         public readonly bool FoundationCentral;
 

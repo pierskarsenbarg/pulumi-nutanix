@@ -15,6 +15,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetClusterAuthorizedPublicKeyListResult
     {
         public readonly string Key;
+        /// <summary>
+        /// Represents the name of cluster
+        /// </summary>
         public readonly string Name;
 
         [OutputConstructor]

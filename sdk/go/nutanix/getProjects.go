@@ -4,7 +4,12 @@
 package nutanix
 
 import (
+	"context"
+	"reflect"
+
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes Projects
@@ -15,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetProjects(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetProjects(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetProjects(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetProjectsResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProjectsResult
 	err := ctx.Invoke("nutanix:index/getProjects:getProjects", nil, &rv, opts...)
 	if err != nil {
@@ -41,8 +49,61 @@ func GetProjects(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetProjects
 
 // A collection of values returned by getProjects.
 type GetProjectsResult struct {
-	ApiVersion string              `pulumi:"apiVersion"`
-	Entities   []GetProjectsEntity `pulumi:"entities"`
+	// version of the API
+	ApiVersion string `pulumi:"apiVersion"`
+	// List of Projects
+	Entities []GetProjectsEntity `pulumi:"entities"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+}
+
+func GetProjectsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetProjectsResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetProjectsResult, error) {
+		r, err := GetProjects(ctx, opts...)
+		var s GetProjectsResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetProjectsResultOutput)
+}
+
+// A collection of values returned by getProjects.
+type GetProjectsResultOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsResult)(nil)).Elem()
+}
+
+func (o GetProjectsResultOutput) ToGetProjectsResultOutput() GetProjectsResultOutput {
+	return o
+}
+
+func (o GetProjectsResultOutput) ToGetProjectsResultOutputWithContext(ctx context.Context) GetProjectsResultOutput {
+	return o
+}
+
+func (o GetProjectsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProjectsResult] {
+	return pulumix.Output[GetProjectsResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// version of the API
+func (o GetProjectsResultOutput) ApiVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsResult) string { return v.ApiVersion }).(pulumi.StringOutput)
+}
+
+// List of Projects
+func (o GetProjectsResultOutput) Entities() GetProjectsEntityArrayOutput {
+	return o.ApplyT(func(v GetProjectsResult) []GetProjectsEntity { return v.Entities }).(GetProjectsEntityArrayOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetProjectsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetProjectsResultOutput{})
 }

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,16 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const test = pulumi.output(nutanix.getFloatingIps());
+ * const test = nutanix.getFloatingIps({});
  * ```
  */
 export function getFloatingIps(args?: GetFloatingIpsArgs, opts?: pulumi.InvokeOptions): Promise<GetFloatingIpsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFloatingIps:getFloatingIps", {
         "metadatas": args.metadatas,
     }, opts);
@@ -33,6 +31,9 @@ export function getFloatingIps(args?: GetFloatingIpsArgs, opts?: pulumi.InvokeOp
  * A collection of arguments for invoking getFloatingIps.
  */
 export interface GetFloatingIpsArgs {
+    /**
+     * - The floatingIp kind metadata.
+     */
     metadatas?: inputs.GetFloatingIpsMetadata[];
 }
 
@@ -40,22 +41,45 @@ export interface GetFloatingIpsArgs {
  * A collection of values returned by getFloatingIps.
  */
 export interface GetFloatingIpsResult {
+    /**
+     * version of the API
+     */
     readonly apiVersion: string;
+    /**
+     * List of Floating IPs.
+     */
     readonly entities: outputs.GetFloatingIpsEntity[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - The floatingIp kind metadata.
+     */
     readonly metadatas: outputs.GetFloatingIpsMetadata[];
 }
-
+/**
+ * Provides a datasource to retrieve all the floating IPs .
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const test = nutanix.getFloatingIps({});
+ * ```
+ */
 export function getFloatingIpsOutput(args?: GetFloatingIpsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFloatingIpsResult> {
-    return pulumi.output(args).apply(a => getFloatingIps(a, opts))
+    return pulumi.output(args).apply((a: any) => getFloatingIps(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getFloatingIps.
  */
 export interface GetFloatingIpsOutputArgs {
+    /**
+     * - The floatingIp kind metadata.
+     */
     metadatas?: pulumi.Input<pulumi.Input<inputs.GetFloatingIpsMetadataArgs>[]>;
 }

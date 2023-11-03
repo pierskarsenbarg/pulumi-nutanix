@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class PbrSourceArgs : Pulumi.ResourceArgs
+    public sealed class PbrSourceArgs : global::Pulumi.ResourceArgs
     {
         [Input("addressType")]
         public Input<string>? AddressType { get; set; }
@@ -25,5 +25,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public PbrSourceArgs()
         {
         }
+        public static new PbrSourceArgs Empty => new PbrSourceArgs();
     }
 }

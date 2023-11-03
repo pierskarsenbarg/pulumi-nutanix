@@ -8,11 +8,8 @@ import * as utilities from "./utilities";
  * Describe a Nutanix Category Key and its values (if it has them).
  */
 export function getCategoryKey(args: GetCategoryKeyArgs, opts?: pulumi.InvokeOptions): Promise<GetCategoryKeyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getCategoryKey:getCategoryKey", {
         "name": args.name,
     }, opts);
@@ -22,6 +19,9 @@ export function getCategoryKey(args: GetCategoryKeyArgs, opts?: pulumi.InvokeOpt
  * A collection of arguments for invoking getCategoryKey.
  */
 export interface GetCategoryKeyArgs {
+    /**
+     * - (Required) The name for the category key.
+     */
     name: string;
 }
 
@@ -31,26 +31,39 @@ export interface GetCategoryKeyArgs {
 export interface GetCategoryKeyResult {
     /**
      * The version of the API.
-     * * `values`: - A list of the values from this category key (if it has them).
      */
     readonly apiVersion: string;
+    /**
+     * - A description for category key.
+     */
     readonly description: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
     readonly name: string;
+    /**
+     * - Specifying whether its a system defined category.
+     */
     readonly systemDefined: boolean;
+    /**
+     * - A list of the values from this category key (if it has them).
+     */
     readonly values: string[];
 }
-
+/**
+ * Describe a Nutanix Category Key and its values (if it has them).
+ */
 export function getCategoryKeyOutput(args: GetCategoryKeyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCategoryKeyResult> {
-    return pulumi.output(args).apply(a => getCategoryKey(a, opts))
+    return pulumi.output(args).apply((a: any) => getCategoryKey(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getCategoryKey.
  */
 export interface GetCategoryKeyOutputArgs {
+    /**
+     * - (Required) The name for the category key.
+     */
     name: pulumi.Input<string>;
 }

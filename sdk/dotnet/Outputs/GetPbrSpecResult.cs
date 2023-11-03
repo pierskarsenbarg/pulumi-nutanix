@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetPbrSpecResult
     {
         /// <summary>
-        /// The name of the PBR
+        /// - the name.
         /// </summary>
         public readonly string Name;
         /// <summary>

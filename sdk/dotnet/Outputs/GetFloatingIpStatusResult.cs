@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFloatingIpStatusExecutionContextResult> ExecutionContexts;
         /// <summary>
-        /// floating_ip Name.
+        /// - the name.
         /// </summary>
         public readonly string Name;
         /// <summary>

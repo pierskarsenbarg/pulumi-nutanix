@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetSubnetsEntityCategoryResult
     {
+        /// <summary>
+        /// the name.
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// value of the key.
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

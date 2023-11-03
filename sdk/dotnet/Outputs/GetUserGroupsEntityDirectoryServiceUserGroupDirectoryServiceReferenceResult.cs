@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReferenceResult
     {
+        /// <summary>
+        /// - The kind name. (Default depends on the resource you are referencing)
+        /// </summary>
         public readonly string Kind;
+        /// <summary>
+        /// - the key name.
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - User group UUID.
+        /// </summary>
         public readonly string Uuid;
 
         [OutputConstructor]

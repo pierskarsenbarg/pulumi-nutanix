@@ -18,6 +18,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// A list of Entity filter expressions.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAccessControlPolicyContextFilterListEntityFilterExpressionListResult> EntityFilterExpressionLists;
+        /// <summary>
+        /// - The device ID which is used to uniquely identify this particular disk.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAccessControlPolicyContextFilterListScopeFilterExpressionListResult> ScopeFilterExpressionLists;
 
         [OutputConstructor]

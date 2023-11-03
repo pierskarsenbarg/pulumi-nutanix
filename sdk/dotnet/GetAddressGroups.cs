@@ -20,23 +20,22 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var addrGroups = Output.Create(Nutanix.GetAddressGroups.InvokeAsync());
-        ///     }
+        ///     var addrGroups = Nutanix.GetAddressGroups.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAddressGroupsResult> InvokeAsync(GetAddressGroupsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAddressGroupsResult>("nutanix:index/getAddressGroups:getAddressGroups", args ?? new GetAddressGroupsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAddressGroupsResult>("nutanix:index/getAddressGroups:getAddressGroups", args ?? new GetAddressGroupsArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a datasource to retrieve list of address groups.
@@ -46,30 +45,33 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var addrGroups = Output.Create(Nutanix.GetAddressGroups.InvokeAsync());
-        ///     }
+        ///     var addrGroups = Nutanix.GetAddressGroups.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAddressGroupsResult> Invoke(GetAddressGroupsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAddressGroupsResult>("nutanix:index/getAddressGroups:getAddressGroups", args ?? new GetAddressGroupsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAddressGroupsResult>("nutanix:index/getAddressGroups:getAddressGroups", args ?? new GetAddressGroupsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAddressGroupsArgs : Pulumi.InvokeArgs
+    public sealed class GetAddressGroupsArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private List<Inputs.GetAddressGroupsMetadataArgs>? _metadatas;
+
+        /// <summary>
+        /// - (Optional) Use metadata to specify filters
+        /// </summary>
         public List<Inputs.GetAddressGroupsMetadataArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new List<Inputs.GetAddressGroupsMetadataArgs>());
@@ -79,12 +81,17 @@ namespace PiersKarsenbarg.Nutanix
         public GetAddressGroupsArgs()
         {
         }
+        public static new GetAddressGroupsArgs Empty => new GetAddressGroupsArgs();
     }
 
-    public sealed class GetAddressGroupsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAddressGroupsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private InputList<Inputs.GetAddressGroupsMetadataInputArgs>? _metadatas;
+
+        /// <summary>
+        /// - (Optional) Use metadata to specify filters
+        /// </summary>
         public InputList<Inputs.GetAddressGroupsMetadataInputArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new InputList<Inputs.GetAddressGroupsMetadataInputArgs>());
@@ -94,17 +101,24 @@ namespace PiersKarsenbarg.Nutanix
         public GetAddressGroupsInvokeArgs()
         {
         }
+        public static new GetAddressGroupsInvokeArgs Empty => new GetAddressGroupsInvokeArgs();
     }
 
 
     [OutputType]
     public sealed class GetAddressGroupsResult
     {
+        /// <summary>
+        /// - (ReadOnly) List of address groups
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAddressGroupsEntityResult> Entities;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - (Optional) Use metadata to specify filters
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAddressGroupsMetadataResult> Metadatas;
 
         [OutputConstructor]

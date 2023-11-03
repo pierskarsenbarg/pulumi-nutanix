@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -12,7 +13,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const test = new nutanix.ServiceGroup("test", {
  *     description: "this is service group",
@@ -60,9 +61,21 @@ export class ServiceGroup extends pulumi.CustomResource {
         return obj['__pulumiType'] === ServiceGroup.__pulumiType;
     }
 
+    /**
+     * - (Optional) Description of the service group
+     */
     public readonly description!: pulumi.Output<string | undefined>;
+    /**
+     * - (Required) Name of the service group
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
+     */
     public readonly serviceLists!: pulumi.Output<outputs.ServiceGroupServiceList[]>;
+    /**
+     * - (ReadOnly) boolean value to denote if the service group is system defined
+     */
     public /*out*/ readonly systemDefined!: pulumi.Output<boolean>;
 
     /**
@@ -101,9 +114,21 @@ export class ServiceGroup extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ServiceGroup resources.
  */
 export interface ServiceGroupState {
+    /**
+     * - (Optional) Description of the service group
+     */
     description?: pulumi.Input<string>;
+    /**
+     * - (Required) Name of the service group
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
+     */
     serviceLists?: pulumi.Input<pulumi.Input<inputs.ServiceGroupServiceList>[]>;
+    /**
+     * - (ReadOnly) boolean value to denote if the service group is system defined
+     */
     systemDefined?: pulumi.Input<boolean>;
 }
 
@@ -111,7 +136,16 @@ export interface ServiceGroupState {
  * The set of arguments for constructing a ServiceGroup resource.
  */
 export interface ServiceGroupArgs {
+    /**
+     * - (Optional) Description of the service group
+     */
     description?: pulumi.Input<string>;
+    /**
+     * - (Required) Name of the service group
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
+     */
     serviceLists: pulumi.Input<pulumi.Input<inputs.ServiceGroupServiceList>[]>;
 }

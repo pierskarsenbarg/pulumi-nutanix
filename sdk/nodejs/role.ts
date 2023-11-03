@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -12,7 +13,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const test = new nutanix.Role("test", {
  *     description: "DESCRIPTION",
@@ -63,16 +64,39 @@ export class Role extends pulumi.CustomResource {
 
     /**
      * The version of the API.
-     * * `state`: - The state of the role.
      */
     public /*out*/ readonly apiVersion!: pulumi.Output<string>;
+    /**
+     * - (Optional) Categories for the role.
+     */
     public readonly categories!: pulumi.Output<outputs.RoleCategory[]>;
+    /**
+     * - (Optional) The description of the role.
+     */
     public readonly description!: pulumi.Output<string>;
+    /**
+     * - The role kind metadata.
+     */
     public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - (Optional) Name of the role.
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * - (Optional) The reference to a user.
+     */
     public readonly ownerReference!: pulumi.Output<outputs.RoleOwnerReference>;
+    /**
+     * - (Required) List of permission references.
+     */
     public readonly permissionReferenceLists!: pulumi.Output<outputs.RolePermissionReferenceList[]>;
+    /**
+     * - (Optional) The reference to a project.
+     */
     public readonly projectReference!: pulumi.Output<outputs.RoleProjectReference>;
+    /**
+     * - The state of the role.
+     */
     public /*out*/ readonly state!: pulumi.Output<string>;
 
     /**
@@ -123,16 +147,39 @@ export class Role extends pulumi.CustomResource {
 export interface RoleState {
     /**
      * The version of the API.
-     * * `state`: - The state of the role.
      */
     apiVersion?: pulumi.Input<string>;
+    /**
+     * - (Optional) Categories for the role.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.RoleCategory>[]>;
+    /**
+     * - (Optional) The description of the role.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * - The role kind metadata.
+     */
     metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) Name of the role.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Optional) The reference to a user.
+     */
     ownerReference?: pulumi.Input<inputs.RoleOwnerReference>;
+    /**
+     * - (Required) List of permission references.
+     */
     permissionReferenceLists?: pulumi.Input<pulumi.Input<inputs.RolePermissionReferenceList>[]>;
+    /**
+     * - (Optional) The reference to a project.
+     */
     projectReference?: pulumi.Input<inputs.RoleProjectReference>;
+    /**
+     * - The state of the role.
+     */
     state?: pulumi.Input<string>;
 }
 
@@ -140,10 +187,28 @@ export interface RoleState {
  * The set of arguments for constructing a Role resource.
  */
 export interface RoleArgs {
+    /**
+     * - (Optional) Categories for the role.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.RoleCategory>[]>;
+    /**
+     * - (Optional) The description of the role.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * - (Optional) Name of the role.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Optional) The reference to a user.
+     */
     ownerReference?: pulumi.Input<inputs.RoleOwnerReference>;
+    /**
+     * - (Required) List of permission references.
+     */
     permissionReferenceLists: pulumi.Input<pulumi.Input<inputs.RolePermissionReferenceList>[]>;
+    /**
+     * - (Optional) The reference to a project.
+     */
     projectReference?: pulumi.Input<inputs.RoleProjectReference>;
 }

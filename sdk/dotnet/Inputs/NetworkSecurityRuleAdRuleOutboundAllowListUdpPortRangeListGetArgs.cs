@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class NetworkSecurityRuleAdRuleOutboundAllowListUdpPortRangeListGetArgs : Pulumi.ResourceArgs
+    public sealed class NetworkSecurityRuleAdRuleOutboundAllowListUdpPortRangeListGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("endPort")]
         public Input<int>? EndPort { get; set; }
@@ -22,5 +22,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public NetworkSecurityRuleAdRuleOutboundAllowListUdpPortRangeListGetArgs()
         {
         }
+        public static new NetworkSecurityRuleAdRuleOutboundAllowListUdpPortRangeListGetArgs Empty => new NetworkSecurityRuleAdRuleOutboundAllowListUdpPortRangeListGetArgs();
     }
 }

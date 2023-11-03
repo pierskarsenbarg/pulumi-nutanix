@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class RecoveryPlanStageListArgs : Pulumi.ResourceArgs
+    public sealed class RecoveryPlanStageListArgs : global::Pulumi.ResourceArgs
     {
         [Input("delayTimeSecs")]
         public Input<int>? DelayTimeSecs { get; set; }
@@ -25,5 +25,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public RecoveryPlanStageListArgs()
         {
         }
+        public static new RecoveryPlanStageListArgs Empty => new RecoveryPlanStageListArgs();
     }
 }

@@ -11,16 +11,26 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs : Pulumi.ResourceArgs
+    public sealed class AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) The category values represented as a dictionary of key &gt; list of values.
+        /// </summary>
         [Input("categories")]
         public Input<Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs>? Categories { get; set; }
 
+        /// <summary>
+        /// - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+        /// </summary>
         [Input("collection")]
         public Input<string>? Collection { get; set; }
 
         [Input("uuidLists")]
         private InputList<string>? _uuidLists;
+
+        /// <summary>
+        /// - (Optional) The explicit list of UUIDs for the given kind.
+        /// </summary>
         public InputList<string> UuidLists
         {
             get => _uuidLists ?? (_uuidLists = new InputList<string>());
@@ -30,5 +40,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs()
         {
         }
+        public static new AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs Empty => new AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs();
     }
 }

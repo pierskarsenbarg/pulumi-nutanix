@@ -14,9 +14,21 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetPbrsEntityStatusResourceProtocolParameterResult
     {
+        /// <summary>
+        /// ICMP parameters in routing policy.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetPbrsEntityStatusResourceProtocolParameterIcmpResult> Icmps;
+        /// <summary>
+        /// Protocol number in routing policy
+        /// </summary>
         public readonly int ProtocolNumber;
+        /// <summary>
+        /// TCP parameters in routing policy
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetPbrsEntityStatusResourceProtocolParameterTcpResult> Tcps;
+        /// <summary>
+        /// UDP parameters in routing policy
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetPbrsEntityStatusResourceProtocolParameterUdpResult> Udps;
 
         [OutputConstructor]

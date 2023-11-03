@@ -17,88 +17,86 @@ namespace PiersKarsenbarg.Nutanix
     /// ### vpc creation with external subnet name
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var vpc = new Nutanix.Vpc("vpc", new()
     ///     {
-    ///         var vpc = new Nutanix.Vpc("vpc", new Nutanix.VpcArgs
+    ///         CommonDomainNameServerIpLists = new[]
     ///         {
-    ///             CommonDomainNameServerIpLists = 
+    ///             new Nutanix.Inputs.VpcCommonDomainNameServerIpListArgs
     ///             {
-    ///                 new Nutanix.Inputs.VpcCommonDomainNameServerIpListArgs
-    ///                 {
-    ///                     Ip = "8.8.8.8",
-    ///                 },
-    ///                 new Nutanix.Inputs.VpcCommonDomainNameServerIpListArgs
-    ///                 {
-    ///                     Ip = "8.8.8.9",
-    ///                 },
+    ///                 Ip = "8.8.8.8",
     ///             },
-    ///             ExternalSubnetReferenceNames = 
+    ///             new Nutanix.Inputs.VpcCommonDomainNameServerIpListArgs
     ///             {
-    ///                 "test-Ext1",
-    ///                 "test-ext2",
+    ///                 Ip = "8.8.8.9",
     ///             },
-    ///             ExternallyRoutablePrefixLists = 
+    ///         },
+    ///         ExternalSubnetReferenceNames = new[]
+    ///         {
+    ///             "test-Ext1",
+    ///             "test-ext2",
+    ///         },
+    ///         ExternallyRoutablePrefixLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VpcExternallyRoutablePrefixListArgs
     ///             {
-    ///                 new Nutanix.Inputs.VpcExternallyRoutablePrefixListArgs
-    ///                 {
-    ///                     Ip = "192.43.0.0",
-    ///                     PrefixLength = 16,
-    ///                 },
+    ///                 Ip = "192.43.0.0",
+    ///                 PrefixLength = 16,
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// ### vpc creation with external subnet uuid
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var vpc = new Nutanix.Vpc("vpc", new()
     ///     {
-    ///         var vpc = new Nutanix.Vpc("vpc", new Nutanix.VpcArgs
+    ///         CommonDomainNameServerIpLists = new[]
     ///         {
-    ///             CommonDomainNameServerIpLists = 
+    ///             new Nutanix.Inputs.VpcCommonDomainNameServerIpListArgs
     ///             {
-    ///                 new Nutanix.Inputs.VpcCommonDomainNameServerIpListArgs
-    ///                 {
-    ///                     Ip = "8.8.8.8",
-    ///                 },
+    ///                 Ip = "8.8.8.8",
     ///             },
-    ///             ExternalSubnetReferenceUuids = 
+    ///         },
+    ///         ExternalSubnetReferenceUuids = new[]
+    ///         {
+    ///             "&lt;subnet_uuid&gt;",
+    ///         },
+    ///         ExternallyRoutablePrefixLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VpcExternallyRoutablePrefixListArgs
     ///             {
-    ///                 "&lt;subnet_uuid&gt;",
+    ///                 Ip = "192.43.0.0",
+    ///                 PrefixLength = 16,
     ///             },
-    ///             ExternallyRoutablePrefixLists = 
+    ///             new Nutanix.Inputs.VpcExternallyRoutablePrefixListArgs
     ///             {
-    ///                 new Nutanix.Inputs.VpcExternallyRoutablePrefixListArgs
-    ///                 {
-    ///                     Ip = "192.43.0.0",
-    ///                     PrefixLength = 16,
-    ///                 },
-    ///                 new Nutanix.Inputs.VpcExternallyRoutablePrefixListArgs
-    ///                 {
-    ///                     Ip = "192.42.0.0",
-    ///                     PrefixLength = 16,
-    ///                 },
+    ///                 Ip = "192.42.0.0",
+    ///                 PrefixLength = 16,
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/vpc:Vpc")]
-    public partial class Vpc : Pulumi.CustomResource
+    public partial class Vpc : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The version of the API.
@@ -193,7 +191,7 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class VpcArgs : Pulumi.ResourceArgs
+    public sealed class VpcArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The version of the API.
@@ -258,9 +256,10 @@ namespace PiersKarsenbarg.Nutanix
         public VpcArgs()
         {
         }
+        public static new VpcArgs Empty => new VpcArgs();
     }
 
-    public sealed class VpcState : Pulumi.ResourceArgs
+    public sealed class VpcState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The version of the API.
@@ -349,5 +348,6 @@ namespace PiersKarsenbarg.Nutanix
         public VpcState()
         {
         }
+        public static new VpcState Empty => new VpcState();
     }
 }

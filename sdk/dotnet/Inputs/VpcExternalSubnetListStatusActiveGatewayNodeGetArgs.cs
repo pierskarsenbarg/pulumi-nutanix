@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class VpcExternalSubnetListStatusActiveGatewayNodeGetArgs : Pulumi.ResourceArgs
+    public sealed class VpcExternalSubnetListStatusActiveGatewayNodeGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("hostReference", required: true)]
         private InputMap<string>? _hostReference;
@@ -27,5 +27,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public VpcExternalSubnetListStatusActiveGatewayNodeGetArgs()
         {
         }
+        public static new VpcExternalSubnetListStatusActiveGatewayNodeGetArgs Empty => new VpcExternalSubnetListStatusActiveGatewayNodeGetArgs();
     }
 }

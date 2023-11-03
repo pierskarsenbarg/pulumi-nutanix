@@ -11,8 +11,11 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class KarbonClusterStorageClassConfigArgs : Pulumi.ResourceArgs
+    public sealed class KarbonClusterStorageClassConfigArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Required) The name of the storage class.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
@@ -24,6 +27,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// * `volumes_config.#.prism_element_cluster_uuid` - (Required) The universally unique identifier (UUID) of the Prism Element cluster.
         /// * `volumes_config.#.storage_container` - (Required) Name of the storage container the storage container uses to provision volumes.
         /// * `volumes_config.#.username` - (Required) Username of the Prism Element user that the API calls use to provision volumes.
+        /// 
+        /// **Note:** Updates to this attribute forces new resource creation.
         /// </summary>
         [Input("reclaimPolicy")]
         public Input<string>? ReclaimPolicy { get; set; }
@@ -34,5 +39,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public KarbonClusterStorageClassConfigArgs()
         {
         }
+        public static new KarbonClusterStorageClassConfigArgs Empty => new KarbonClusterStorageClassConfigArgs();
     }
 }

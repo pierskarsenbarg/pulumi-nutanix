@@ -11,13 +11,20 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategoriesGetArgs : Pulumi.ResourceArgs
+    public sealed class AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategoriesGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) Name of the Access Control Policy.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("values")]
         private InputList<string>? _values;
+
+        /// <summary>
+        /// - value of the key.
+        /// </summary>
         public InputList<string> Values
         {
             get => _values ?? (_values = new InputList<string>());
@@ -27,5 +34,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategoriesGetArgs()
         {
         }
+        public static new AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategoriesGetArgs Empty => new AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategoriesGetArgs();
     }
 }

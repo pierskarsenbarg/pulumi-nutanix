@@ -7,8 +7,10 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Nutanix Karbon Registry resource to Create a private registry entry in Karbon.
@@ -19,34 +21,43 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.LookupKarbonPrivateRegistry(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = nutanix.NewKarbonPrivateRegistry(ctx, "registry", nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.LookupKarbonPrivateRegistry(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.NewKarbonPrivateRegistry(ctx, "registry", nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type KarbonPrivateRegistry struct {
 	pulumi.CustomResourceState
 
-	Cert     pulumi.StringPtrOutput `pulumi:"cert"`
-	Endpoint pulumi.StringOutput    `pulumi:"endpoint"`
-	Name     pulumi.StringOutput    `pulumi:"name"`
+	// - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
+	Cert pulumi.StringPtrOutput `pulumi:"cert"`
+	// - Endpoint of the private in format `url:port`.
+	Endpoint pulumi.StringOutput `pulumi:"endpoint"`
+	// - (Required) Name of the private registry configuration. **Note:** Updates to this attribute forces new resource creation.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// - (Optional) Password for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
 	Password pulumi.StringPtrOutput `pulumi:"password"`
-	Port     pulumi.IntOutput       `pulumi:"port"`
-	Url      pulumi.StringOutput    `pulumi:"url"`
+	// - (Optional) Port of the private registry.
+	Port pulumi.IntOutput `pulumi:"port"`
+	// - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.
+	Url pulumi.StringOutput `pulumi:"url"`
+	// - (Optional) Username for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
 	Username pulumi.StringPtrOutput `pulumi:"username"`
 }
 
@@ -63,7 +74,14 @@ func NewKarbonPrivateRegistry(ctx *pulumi.Context,
 	if args.Url == nil {
 		return nil, errors.New("invalid value for required argument 'Url'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	if args.Password != nil {
+		args.Password = pulumi.ToSecret(args.Password).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"password",
+	})
+	opts = append(opts, secrets)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource KarbonPrivateRegistry
 	err := ctx.RegisterResource("nutanix:index/karbonPrivateRegistry:KarbonPrivateRegistry", name, args, &resource, opts...)
 	if err != nil {
@@ -86,22 +104,36 @@ func GetKarbonPrivateRegistry(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering KarbonPrivateRegistry resources.
 type karbonPrivateRegistryState struct {
-	Cert     *string `pulumi:"cert"`
+	// - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
+	Cert *string `pulumi:"cert"`
+	// - Endpoint of the private in format `url:port`.
 	Endpoint *string `pulumi:"endpoint"`
-	Name     *string `pulumi:"name"`
+	// - (Required) Name of the private registry configuration. **Note:** Updates to this attribute forces new resource creation.
+	Name *string `pulumi:"name"`
+	// - (Optional) Password for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
 	Password *string `pulumi:"password"`
-	Port     *int    `pulumi:"port"`
-	Url      *string `pulumi:"url"`
+	// - (Optional) Port of the private registry.
+	Port *int `pulumi:"port"`
+	// - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.
+	Url *string `pulumi:"url"`
+	// - (Optional) Username for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
 	Username *string `pulumi:"username"`
 }
 
 type KarbonPrivateRegistryState struct {
-	Cert     pulumi.StringPtrInput
+	// - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
+	Cert pulumi.StringPtrInput
+	// - Endpoint of the private in format `url:port`.
 	Endpoint pulumi.StringPtrInput
-	Name     pulumi.StringPtrInput
+	// - (Required) Name of the private registry configuration. **Note:** Updates to this attribute forces new resource creation.
+	Name pulumi.StringPtrInput
+	// - (Optional) Password for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
 	Password pulumi.StringPtrInput
-	Port     pulumi.IntPtrInput
-	Url      pulumi.StringPtrInput
+	// - (Optional) Port of the private registry.
+	Port pulumi.IntPtrInput
+	// - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.
+	Url pulumi.StringPtrInput
+	// - (Optional) Username for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
 	Username pulumi.StringPtrInput
 }
 
@@ -110,21 +142,33 @@ func (KarbonPrivateRegistryState) ElementType() reflect.Type {
 }
 
 type karbonPrivateRegistryArgs struct {
-	Cert     *string `pulumi:"cert"`
-	Name     *string `pulumi:"name"`
+	// - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
+	Cert *string `pulumi:"cert"`
+	// - (Required) Name of the private registry configuration. **Note:** Updates to this attribute forces new resource creation.
+	Name *string `pulumi:"name"`
+	// - (Optional) Password for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
 	Password *string `pulumi:"password"`
-	Port     int     `pulumi:"port"`
-	Url      string  `pulumi:"url"`
+	// - (Optional) Port of the private registry.
+	Port int `pulumi:"port"`
+	// - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.
+	Url string `pulumi:"url"`
+	// - (Optional) Username for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
 	Username *string `pulumi:"username"`
 }
 
 // The set of arguments for constructing a KarbonPrivateRegistry resource.
 type KarbonPrivateRegistryArgs struct {
-	Cert     pulumi.StringPtrInput
-	Name     pulumi.StringPtrInput
+	// - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
+	Cert pulumi.StringPtrInput
+	// - (Required) Name of the private registry configuration. **Note:** Updates to this attribute forces new resource creation.
+	Name pulumi.StringPtrInput
+	// - (Optional) Password for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
 	Password pulumi.StringPtrInput
-	Port     pulumi.IntInput
-	Url      pulumi.StringInput
+	// - (Optional) Port of the private registry.
+	Port pulumi.IntInput
+	// - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.
+	Url pulumi.StringInput
+	// - (Optional) Username for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
 	Username pulumi.StringPtrInput
 }
 
@@ -151,10 +195,16 @@ func (i *KarbonPrivateRegistry) ToKarbonPrivateRegistryOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(KarbonPrivateRegistryOutput)
 }
 
+func (i *KarbonPrivateRegistry) ToOutput(ctx context.Context) pulumix.Output[*KarbonPrivateRegistry] {
+	return pulumix.Output[*KarbonPrivateRegistry]{
+		OutputState: i.ToKarbonPrivateRegistryOutputWithContext(ctx).OutputState,
+	}
+}
+
 // KarbonPrivateRegistryArrayInput is an input type that accepts KarbonPrivateRegistryArray and KarbonPrivateRegistryArrayOutput values.
 // You can construct a concrete instance of `KarbonPrivateRegistryArrayInput` via:
 //
-//          KarbonPrivateRegistryArray{ KarbonPrivateRegistryArgs{...} }
+//	KarbonPrivateRegistryArray{ KarbonPrivateRegistryArgs{...} }
 type KarbonPrivateRegistryArrayInput interface {
 	pulumi.Input
 
@@ -176,10 +226,16 @@ func (i KarbonPrivateRegistryArray) ToKarbonPrivateRegistryArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(KarbonPrivateRegistryArrayOutput)
 }
 
+func (i KarbonPrivateRegistryArray) ToOutput(ctx context.Context) pulumix.Output[[]*KarbonPrivateRegistry] {
+	return pulumix.Output[[]*KarbonPrivateRegistry]{
+		OutputState: i.ToKarbonPrivateRegistryArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // KarbonPrivateRegistryMapInput is an input type that accepts KarbonPrivateRegistryMap and KarbonPrivateRegistryMapOutput values.
 // You can construct a concrete instance of `KarbonPrivateRegistryMapInput` via:
 //
-//          KarbonPrivateRegistryMap{ "key": KarbonPrivateRegistryArgs{...} }
+//	KarbonPrivateRegistryMap{ "key": KarbonPrivateRegistryArgs{...} }
 type KarbonPrivateRegistryMapInput interface {
 	pulumi.Input
 
@@ -201,6 +257,12 @@ func (i KarbonPrivateRegistryMap) ToKarbonPrivateRegistryMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(KarbonPrivateRegistryMapOutput)
 }
 
+func (i KarbonPrivateRegistryMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*KarbonPrivateRegistry] {
+	return pulumix.Output[map[string]*KarbonPrivateRegistry]{
+		OutputState: i.ToKarbonPrivateRegistryMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type KarbonPrivateRegistryOutput struct{ *pulumi.OutputState }
 
 func (KarbonPrivateRegistryOutput) ElementType() reflect.Type {
@@ -215,30 +277,43 @@ func (o KarbonPrivateRegistryOutput) ToKarbonPrivateRegistryOutputWithContext(ct
 	return o
 }
 
+func (o KarbonPrivateRegistryOutput) ToOutput(ctx context.Context) pulumix.Output[*KarbonPrivateRegistry] {
+	return pulumix.Output[*KarbonPrivateRegistry]{
+		OutputState: o.OutputState,
+	}
+}
+
+// - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
 func (o KarbonPrivateRegistryOutput) Cert() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KarbonPrivateRegistry) pulumi.StringPtrOutput { return v.Cert }).(pulumi.StringPtrOutput)
 }
 
+// - Endpoint of the private in format `url:port`.
 func (o KarbonPrivateRegistryOutput) Endpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v *KarbonPrivateRegistry) pulumi.StringOutput { return v.Endpoint }).(pulumi.StringOutput)
 }
 
+// - (Required) Name of the private registry configuration. **Note:** Updates to this attribute forces new resource creation.
 func (o KarbonPrivateRegistryOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *KarbonPrivateRegistry) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// - (Optional) Password for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
 func (o KarbonPrivateRegistryOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KarbonPrivateRegistry) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Port of the private registry.
 func (o KarbonPrivateRegistryOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v *KarbonPrivateRegistry) pulumi.IntOutput { return v.Port }).(pulumi.IntOutput)
 }
 
+// - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.
 func (o KarbonPrivateRegistryOutput) Url() pulumi.StringOutput {
 	return o.ApplyT(func(v *KarbonPrivateRegistry) pulumi.StringOutput { return v.Url }).(pulumi.StringOutput)
 }
 
+// - (Optional) Username for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
 func (o KarbonPrivateRegistryOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KarbonPrivateRegistry) pulumi.StringPtrOutput { return v.Username }).(pulumi.StringPtrOutput)
 }
@@ -255,6 +330,12 @@ func (o KarbonPrivateRegistryArrayOutput) ToKarbonPrivateRegistryArrayOutput() K
 
 func (o KarbonPrivateRegistryArrayOutput) ToKarbonPrivateRegistryArrayOutputWithContext(ctx context.Context) KarbonPrivateRegistryArrayOutput {
 	return o
+}
+
+func (o KarbonPrivateRegistryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*KarbonPrivateRegistry] {
+	return pulumix.Output[[]*KarbonPrivateRegistry]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o KarbonPrivateRegistryArrayOutput) Index(i pulumi.IntInput) KarbonPrivateRegistryOutput {
@@ -275,6 +356,12 @@ func (o KarbonPrivateRegistryMapOutput) ToKarbonPrivateRegistryMapOutput() Karbo
 
 func (o KarbonPrivateRegistryMapOutput) ToKarbonPrivateRegistryMapOutputWithContext(ctx context.Context) KarbonPrivateRegistryMapOutput {
 	return o
+}
+
+func (o KarbonPrivateRegistryMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*KarbonPrivateRegistry] {
+	return pulumix.Output[map[string]*KarbonPrivateRegistry]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o KarbonPrivateRegistryMapOutput) MapIndex(k pulumi.StringInput) KarbonPrivateRegistryOutput {

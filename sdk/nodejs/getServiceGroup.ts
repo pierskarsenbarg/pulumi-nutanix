@@ -2,15 +2,13 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getServiceGroup(args: GetServiceGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceGroupResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getServiceGroup:getServiceGroup", {
         "uuid": args.uuid,
     }, opts);
@@ -37,9 +35,8 @@ export interface GetServiceGroupResult {
     readonly serviceLists: outputs.GetServiceGroupServiceList[];
     readonly uuid: string;
 }
-
 export function getServiceGroupOutput(args: GetServiceGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceGroupResult> {
-    return pulumi.output(args).apply(a => getServiceGroup(a, opts))
+    return pulumi.output(args).apply((a: any) => getServiceGroup(a, opts))
 }
 
 /**

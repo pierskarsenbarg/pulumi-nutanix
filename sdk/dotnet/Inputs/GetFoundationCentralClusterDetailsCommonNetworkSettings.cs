@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs : Pulumi.InvokeArgs
+    public sealed class GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs : global::Pulumi.InvokeArgs
     {
         [Input("cvmDnsServers", required: true)]
         private List<string>? _cvmDnsServers;
@@ -48,5 +48,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs()
         {
         }
+        public static new GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs Empty => new GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs();
     }
 }

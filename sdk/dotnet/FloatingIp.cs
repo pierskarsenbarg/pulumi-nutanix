@@ -16,45 +16,43 @@ namespace PiersKarsenbarg.Nutanix
     /// ## create Floating IP with External Subnet UUID
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var fip1 = new Nutanix.FloatingIp("fip1", new()
     ///     {
-    ///         var fip1 = new Nutanix.FloatingIp("fip1", new Nutanix.FloatingIpArgs
-    ///         {
-    ///             ExternalSubnetReferenceUuid = "{{ext_sub_uuid}}",
-    ///         });
-    ///     }
+    ///         ExternalSubnetReferenceUuid = "{{ext_sub_uuid}}",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## create Floating IP with vpc name with external subnet name
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var fip2 = new Nutanix.FloatingIp("fip2", new()
     ///     {
-    ///         var fip2 = new Nutanix.FloatingIp("fip2", new Nutanix.FloatingIpArgs
-    ///         {
-    ///             ExternalSubnetReferenceName = "{{ext_sub_name}}",
-    ///             PrivateIp = "{{ip_address}}",
-    ///             VpcReferenceName = "{{vpc_name}}",
-    ///         });
-    ///     }
+    ///         ExternalSubnetReferenceName = "{{ext_sub_name}}",
+    ///         PrivateIp = "{{ip_address}}",
+    ///         VpcReferenceName = "{{vpc_name}}",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/floatingIp:FloatingIp")]
-    public partial class FloatingIp : Pulumi.CustomResource
+    public partial class FloatingIp : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The version of the API.
@@ -150,7 +148,7 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class FloatingIpArgs : Pulumi.ResourceArgs
+    public sealed class FloatingIpArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The version of the API.
@@ -198,9 +196,10 @@ namespace PiersKarsenbarg.Nutanix
         public FloatingIpArgs()
         {
         }
+        public static new FloatingIpArgs Empty => new FloatingIpArgs();
     }
 
-    public sealed class FloatingIpState : Pulumi.ResourceArgs
+    public sealed class FloatingIpState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The version of the API.
@@ -260,5 +259,6 @@ namespace PiersKarsenbarg.Nutanix
         public FloatingIpState()
         {
         }
+        public static new FloatingIpState Empty => new FloatingIpState();
     }
 }

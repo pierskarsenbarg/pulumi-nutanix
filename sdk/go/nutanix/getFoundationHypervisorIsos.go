@@ -4,7 +4,12 @@
 package nutanix
 
 import (
+	"context"
+	"reflect"
+
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes a list of hypervisor isos image file details present in foundation vm
@@ -15,19 +20,22 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetFoundationHypervisorIsos(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetFoundationHypervisorIsos(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Note
 //
@@ -35,7 +43,7 @@ import (
 //
 // See detailed information in [Nutanix Foundation Hypervisor Isos](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjM0MDE-list-hypervisor-images-available-in-foundation).
 func GetFoundationHypervisorIsos(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetFoundationHypervisorIsosResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFoundationHypervisorIsosResult
 	err := ctx.Invoke("nutanix:index/getFoundationHypervisorIsos:getFoundationHypervisorIsos", nil, &rv, opts...)
 	if err != nil {
@@ -46,11 +54,82 @@ func GetFoundationHypervisorIsos(ctx *pulumi.Context, opts ...pulumi.InvokeOptio
 
 // A collection of values returned by getFoundationHypervisorIsos.
 type GetFoundationHypervisorIsosResult struct {
-	Esxes   []GetFoundationHypervisorIsosEsx    `pulumi:"esxes"`
+	// List of esx isos and theirdetails present in foundation vm
+	Esxes []GetFoundationHypervisorIsosEsx `pulumi:"esxes"`
+	// List of hyperv isos and their details present in foundation vm
 	Hypervs []GetFoundationHypervisorIsosHyperv `pulumi:"hypervs"`
 	// The provider-assigned unique ID for this managed resource.
-	Id      string                             `pulumi:"id"`
-	Kvms    []GetFoundationHypervisorIsosKvm   `pulumi:"kvms"`
+	Id string `pulumi:"id"`
+	// List of kvm isos and their details present in foundation vm
+	Kvms []GetFoundationHypervisorIsosKvm `pulumi:"kvms"`
+	// List of linux isos and their details present in foundation vm
 	Linuxes []GetFoundationHypervisorIsosLinux `pulumi:"linuxes"`
-	Xens    []GetFoundationHypervisorIsosXen   `pulumi:"xens"`
+	// List of esx isos and theirdetails present in foundation vm
+	Xens []GetFoundationHypervisorIsosXen `pulumi:"xens"`
+}
+
+func GetFoundationHypervisorIsosOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetFoundationHypervisorIsosResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetFoundationHypervisorIsosResult, error) {
+		r, err := GetFoundationHypervisorIsos(ctx, opts...)
+		var s GetFoundationHypervisorIsosResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetFoundationHypervisorIsosResultOutput)
+}
+
+// A collection of values returned by getFoundationHypervisorIsos.
+type GetFoundationHypervisorIsosResultOutput struct{ *pulumi.OutputState }
+
+func (GetFoundationHypervisorIsosResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFoundationHypervisorIsosResult)(nil)).Elem()
+}
+
+func (o GetFoundationHypervisorIsosResultOutput) ToGetFoundationHypervisorIsosResultOutput() GetFoundationHypervisorIsosResultOutput {
+	return o
+}
+
+func (o GetFoundationHypervisorIsosResultOutput) ToGetFoundationHypervisorIsosResultOutputWithContext(ctx context.Context) GetFoundationHypervisorIsosResultOutput {
+	return o
+}
+
+func (o GetFoundationHypervisorIsosResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFoundationHypervisorIsosResult] {
+	return pulumix.Output[GetFoundationHypervisorIsosResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// List of esx isos and theirdetails present in foundation vm
+func (o GetFoundationHypervisorIsosResultOutput) Esxes() GetFoundationHypervisorIsosEsxArrayOutput {
+	return o.ApplyT(func(v GetFoundationHypervisorIsosResult) []GetFoundationHypervisorIsosEsx { return v.Esxes }).(GetFoundationHypervisorIsosEsxArrayOutput)
+}
+
+// List of hyperv isos and their details present in foundation vm
+func (o GetFoundationHypervisorIsosResultOutput) Hypervs() GetFoundationHypervisorIsosHypervArrayOutput {
+	return o.ApplyT(func(v GetFoundationHypervisorIsosResult) []GetFoundationHypervisorIsosHyperv { return v.Hypervs }).(GetFoundationHypervisorIsosHypervArrayOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetFoundationHypervisorIsosResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFoundationHypervisorIsosResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// List of kvm isos and their details present in foundation vm
+func (o GetFoundationHypervisorIsosResultOutput) Kvms() GetFoundationHypervisorIsosKvmArrayOutput {
+	return o.ApplyT(func(v GetFoundationHypervisorIsosResult) []GetFoundationHypervisorIsosKvm { return v.Kvms }).(GetFoundationHypervisorIsosKvmArrayOutput)
+}
+
+// List of linux isos and their details present in foundation vm
+func (o GetFoundationHypervisorIsosResultOutput) Linuxes() GetFoundationHypervisorIsosLinuxArrayOutput {
+	return o.ApplyT(func(v GetFoundationHypervisorIsosResult) []GetFoundationHypervisorIsosLinux { return v.Linuxes }).(GetFoundationHypervisorIsosLinuxArrayOutput)
+}
+
+// List of esx isos and theirdetails present in foundation vm
+func (o GetFoundationHypervisorIsosResultOutput) Xens() GetFoundationHypervisorIsosXenArrayOutput {
+	return o.ApplyT(func(v GetFoundationHypervisorIsosResult) []GetFoundationHypervisorIsosXen { return v.Xens }).(GetFoundationHypervisorIsosXenArrayOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetFoundationHypervisorIsosResultOutput{})
 }

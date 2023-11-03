@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class RecoveryPlanOwnerReferenceArgs : Pulumi.ResourceArgs
+    public sealed class RecoveryPlanOwnerReferenceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Required) The kind name (Default value: `project`).
@@ -34,5 +34,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public RecoveryPlanOwnerReferenceArgs()
         {
         }
+        public static new RecoveryPlanOwnerReferenceArgs Empty => new RecoveryPlanOwnerReferenceArgs();
     }
 }

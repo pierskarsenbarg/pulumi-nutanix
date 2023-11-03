@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes a list of access control policies.
@@ -18,23 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetAccessControlPolicies(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetAccessControlPolicies(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetAccessControlPolicies(ctx *pulumi.Context, args *GetAccessControlPoliciesArgs, opts ...pulumi.InvokeOption) (*GetAccessControlPoliciesResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAccessControlPoliciesResult
 	err := ctx.Invoke("nutanix:index/getAccessControlPolicies:getAccessControlPolicies", args, &rv, opts...)
 	if err != nil {
@@ -45,17 +49,19 @@ func GetAccessControlPolicies(ctx *pulumi.Context, args *GetAccessControlPolicie
 
 // A collection of arguments for invoking getAccessControlPolicies.
 type GetAccessControlPoliciesArgs struct {
+	// - The Access Control Policy kind metadata.
 	Metadatas []GetAccessControlPoliciesMetadata `pulumi:"metadatas"`
 }
 
 // A collection of values returned by getAccessControlPolicies.
 type GetAccessControlPoliciesResult struct {
 	// The version of the API.
-	// * `state`: - The state of the Access Control Policy.
-	ApiVersion string                           `pulumi:"apiVersion"`
-	Entities   []GetAccessControlPoliciesEntity `pulumi:"entities"`
+	ApiVersion string `pulumi:"apiVersion"`
+	// List of Access Control Policies
+	Entities []GetAccessControlPoliciesEntity `pulumi:"entities"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string                             `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// - The Access Control Policy kind metadata.
 	Metadatas []GetAccessControlPoliciesMetadata `pulumi:"metadatas"`
 }
 
@@ -74,6 +80,7 @@ func GetAccessControlPoliciesOutput(ctx *pulumi.Context, args GetAccessControlPo
 
 // A collection of arguments for invoking getAccessControlPolicies.
 type GetAccessControlPoliciesOutputArgs struct {
+	// - The Access Control Policy kind metadata.
 	Metadatas GetAccessControlPoliciesMetadataArrayInput `pulumi:"metadatas"`
 }
 
@@ -96,12 +103,18 @@ func (o GetAccessControlPoliciesResultOutput) ToGetAccessControlPoliciesResultOu
 	return o
 }
 
+func (o GetAccessControlPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessControlPoliciesResult] {
+	return pulumix.Output[GetAccessControlPoliciesResult]{
+		OutputState: o.OutputState,
+	}
+}
+
 // The version of the API.
-// * `state`: - The state of the Access Control Policy.
 func (o GetAccessControlPoliciesResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAccessControlPoliciesResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// List of Access Control Policies
 func (o GetAccessControlPoliciesResultOutput) Entities() GetAccessControlPoliciesEntityArrayOutput {
 	return o.ApplyT(func(v GetAccessControlPoliciesResult) []GetAccessControlPoliciesEntity { return v.Entities }).(GetAccessControlPoliciesEntityArrayOutput)
 }
@@ -111,6 +124,7 @@ func (o GetAccessControlPoliciesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAccessControlPoliciesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - The Access Control Policy kind metadata.
 func (o GetAccessControlPoliciesResultOutput) Metadatas() GetAccessControlPoliciesMetadataArrayOutput {
 	return o.ApplyT(func(v GetAccessControlPoliciesResult) []GetAccessControlPoliciesMetadata { return v.Metadatas }).(GetAccessControlPoliciesMetadataArrayOutput)
 }

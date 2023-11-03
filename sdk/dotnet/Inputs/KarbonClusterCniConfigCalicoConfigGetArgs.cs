@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class KarbonClusterCniConfigCalicoConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class KarbonClusterCniConfigCalicoConfigGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("ipPoolConfigs")]
         private InputList<Inputs.KarbonClusterCniConfigCalicoConfigIpPoolConfigGetArgs>? _ipPoolConfigs;
@@ -24,5 +24,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public KarbonClusterCniConfigCalicoConfigGetArgs()
         {
         }
+        public static new KarbonClusterCniConfigCalicoConfigGetArgs Empty => new KarbonClusterCniConfigCalicoConfigGetArgs();
     }
 }

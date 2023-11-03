@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getAddressGroup(args: GetAddressGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetAddressGroupResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getAddressGroup:getAddressGroup", {
         "uuid": args.uuid,
     }, opts);
@@ -42,6 +40,9 @@ export function getAddressGroup(args: GetAddressGroupArgs, opts?: pulumi.InvokeO
  * A collection of arguments for invoking getAddressGroup.
  */
 export interface GetAddressGroupArgs {
+    /**
+     * - (Required) UUID of the address group
+     */
     uuid: string;
 }
 
@@ -49,24 +50,63 @@ export interface GetAddressGroupArgs {
  * A collection of values returned by getAddressGroup.
  */
 export interface GetAddressGroupResult {
+    /**
+     * - (ReadOnly) Address Group string
+     */
     readonly addressGroupString: string;
+    /**
+     * - (ReadOnly) Description of the address group
+     */
     readonly description: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - (ReadOnly) list of IP address blocks with their prefix length
+     */
     readonly ipAddressBlockLists: outputs.GetAddressGroupIpAddressBlockList[];
+    /**
+     * - (ReadOnly) Name of the address group
+     */
     readonly name: string;
+    /**
+     * - (Required) UUID of the address group
+     */
     readonly uuid: string;
 }
-
+/**
+ * Provides a datasource to retrieve a address group.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const testAddress = new nutanix.AddressGroup("testAddress", {
+ *     description: "test address groups resource",
+ *     ipAddressBlockLists: [{
+ *         ip: "10.0.0.0",
+ *         prefixLength: 24,
+ *     }],
+ * });
+ * const addrGroup = nutanix.getAddressGroupOutput({
+ *     uuid: testAddress.id,
+ * });
+ * ```
+ */
 export function getAddressGroupOutput(args: GetAddressGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressGroupResult> {
-    return pulumi.output(args).apply(a => getAddressGroup(a, opts))
+    return pulumi.output(args).apply((a: any) => getAddressGroup(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getAddressGroup.
  */
 export interface GetAddressGroupOutputArgs {
+    /**
+     * - (Required) UUID of the address group
+     */
     uuid: pulumi.Input<string>;
 }

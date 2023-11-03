@@ -16,56 +16,78 @@ namespace PiersKarsenbarg.Nutanix
         /// Describes a Role.
         /// </summary>
         public static Task<GetRoleResult> InvokeAsync(GetRoleArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRoleResult>("nutanix:index/getRole:getRole", args ?? new GetRoleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRoleResult>("nutanix:index/getRole:getRole", args ?? new GetRoleArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes a Role.
         /// </summary>
         public static Output<GetRoleResult> Invoke(GetRoleInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRoleResult>("nutanix:index/getRole:getRole", args ?? new GetRoleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRoleResult>("nutanix:index/getRole:getRole", args ?? new GetRoleInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetRoleArgs : Pulumi.InvokeArgs
+    public sealed class GetRoleArgs : global::Pulumi.InvokeArgs
     {
         [Input("categories")]
         private List<Inputs.GetRoleCategoryArgs>? _categories;
+
+        /// <summary>
+        /// - Categories for the Role.
+        /// </summary>
         public List<Inputs.GetRoleCategoryArgs> Categories
         {
             get => _categories ?? (_categories = new List<Inputs.GetRoleCategoryArgs>());
             set => _categories = value;
         }
 
+        /// <summary>
+        /// - (Optional) The UUID of a Role.
+        /// </summary>
         [Input("roleId")]
         public string? RoleId { get; set; }
 
+        /// <summary>
+        /// - (Optional) The name of a Role.
+        /// </summary>
         [Input("roleName")]
         public string? RoleName { get; set; }
 
         public GetRoleArgs()
         {
         }
+        public static new GetRoleArgs Empty => new GetRoleArgs();
     }
 
-    public sealed class GetRoleInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetRoleInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("categories")]
         private InputList<Inputs.GetRoleCategoryInputArgs>? _categories;
+
+        /// <summary>
+        /// - Categories for the Role.
+        /// </summary>
         public InputList<Inputs.GetRoleCategoryInputArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.GetRoleCategoryInputArgs>());
             set => _categories = value;
         }
 
+        /// <summary>
+        /// - (Optional) The UUID of a Role.
+        /// </summary>
         [Input("roleId")]
         public Input<string>? RoleId { get; set; }
 
+        /// <summary>
+        /// - (Optional) The name of a Role.
+        /// </summary>
         [Input("roleName")]
         public Input<string>? RoleName { get; set; }
 
         public GetRoleInvokeArgs()
         {
         }
+        public static new GetRoleInvokeArgs Empty => new GetRoleInvokeArgs();
     }
 
 
@@ -74,22 +96,45 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// The version of the API.
-        /// * `state`: - The state of the role.
         /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// - Categories for the Role.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetRoleCategoryResult> Categories;
+        /// <summary>
+        /// - The description of the Role.
+        /// </summary>
         public readonly string Description;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - The role kind metadata.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
+        /// <summary>
+        /// - the name(Optional).
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - The reference to a user.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> OwnerReference;
+        /// <summary>
+        /// - (Required) List of permission references.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetRolePermissionReferenceListResult> PermissionReferenceLists;
+        /// <summary>
+        /// - The reference to a project.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> ProjectReference;
         public readonly string? RoleId;
         public readonly string? RoleName;
+        /// <summary>
+        /// - The state of the role.
+        /// </summary>
         public readonly string State;
 
         [OutputConstructor]

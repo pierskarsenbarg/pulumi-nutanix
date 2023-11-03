@@ -11,21 +11,32 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class ServiceGroupServiceListGetArgs : Pulumi.ResourceArgs
+    public sealed class ServiceGroupServiceListGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("icmpTypeCodeLists")]
         private InputList<Inputs.ServiceGroupServiceListIcmpTypeCodeListGetArgs>? _icmpTypeCodeLists;
+
+        /// <summary>
+        /// - (Optional) ICMP type code list
+        /// </summary>
         public InputList<Inputs.ServiceGroupServiceListIcmpTypeCodeListGetArgs> IcmpTypeCodeLists
         {
             get => _icmpTypeCodeLists ?? (_icmpTypeCodeLists = new InputList<Inputs.ServiceGroupServiceListIcmpTypeCodeListGetArgs>());
             set => _icmpTypeCodeLists = value;
         }
 
+        /// <summary>
+        /// - (Optional) The UserPrincipalName of the user from the directory service.
+        /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }
 
         [Input("tcpPortRangeLists")]
         private InputList<Inputs.ServiceGroupServiceListTcpPortRangeListGetArgs>? _tcpPortRangeLists;
+
+        /// <summary>
+        /// - (Optional) TCP Port range list
+        /// </summary>
         public InputList<Inputs.ServiceGroupServiceListTcpPortRangeListGetArgs> TcpPortRangeLists
         {
             get => _tcpPortRangeLists ?? (_tcpPortRangeLists = new InputList<Inputs.ServiceGroupServiceListTcpPortRangeListGetArgs>());
@@ -34,6 +45,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("udpPortRangeLists")]
         private InputList<Inputs.ServiceGroupServiceListUdpPortRangeListGetArgs>? _udpPortRangeLists;
+
+        /// <summary>
+        /// - (Optional) UDP port range list
+        /// </summary>
         public InputList<Inputs.ServiceGroupServiceListUdpPortRangeListGetArgs> UdpPortRangeLists
         {
             get => _udpPortRangeLists ?? (_udpPortRangeLists = new InputList<Inputs.ServiceGroupServiceListUdpPortRangeListGetArgs>());
@@ -43,5 +58,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public ServiceGroupServiceListGetArgs()
         {
         }
+        public static new ServiceGroupServiceListGetArgs Empty => new ServiceGroupServiceListGetArgs();
     }
 }
