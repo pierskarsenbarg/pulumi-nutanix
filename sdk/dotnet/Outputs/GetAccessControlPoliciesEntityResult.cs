@@ -17,19 +17,48 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string AccessControlPolicyId;
         /// <summary>
         /// The version of the API.
-        /// * `state`: - The state of the Access Control Policy.
         /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// - The category values represented as a dictionary of key &gt; list of values.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAccessControlPoliciesEntityCategoryResult> Categories;
         public readonly ImmutableArray<Outputs.GetAccessControlPoliciesEntityContextFilterListResult> ContextFilterLists;
+        /// <summary>
+        /// - The description of the Access Control Policy.
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// - The Access Control Policy kind metadata.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
+        /// <summary>
+        /// - the name(Optional).
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - The reference to a user.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> OwnerReference;
+        /// <summary>
+        /// - The reference to a project.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> ProjectReference;
+        /// <summary>
+        /// - The reference to a role.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAccessControlPoliciesEntityRoleReferenceResult> RoleReferences;
+        /// <summary>
+        /// - The state of the Access Control Policy.
+        /// </summary>
         public readonly string State;
+        /// <summary>
+        /// - The User group(s) being assigned a given role.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAccessControlPoliciesEntityUserGroupReferenceListResult> UserGroupReferenceLists;
+        /// <summary>
+        /// - The User(s) being assigned a given role.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAccessControlPoliciesEntityUserReferenceListResult> UserReferenceLists;
 
         [OutputConstructor]

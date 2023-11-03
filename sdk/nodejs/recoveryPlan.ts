@@ -2,37 +2,12 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
  * Provides a Nutanix Recovery Plan resource to Create a Recovery Plan.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
- *
- * const recoveryPlanTest = new nutanix.RecoveryPlan("recovery_plan_test", {
- *     description: "%s",
- *     parameters: {},
- *     stageLists: [{
- *         delayTimeSecs: 0,
- *         stageUuid: "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
- *         stageWork: {
- *             recoverEntities: {
- *                 entityInfoLists: [{
- *                     categories: [{
- *                         name: "Environment",
- *                         value: "Dev",
- *                     }],
- *                 }],
- *             },
- *         },
- *     }],
- * });
- * ```
  */
 export class RecoveryPlan extends pulumi.CustomResource {
     /**

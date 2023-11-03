@@ -20,39 +20,39 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAddress = new Nutanix.AddressGroup("testAddress", new()
         ///     {
-        ///         var testAddress = new Nutanix.AddressGroup("testAddress", new Nutanix.AddressGroupArgs
+        ///         Description = "test address groups resource",
+        ///         IpAddressBlockLists = new[]
         ///         {
-        ///             Description = "test address groups resource",
-        ///             IpAddressBlockLists = 
+        ///             new Nutanix.Inputs.AddressGroupIpAddressBlockListArgs
         ///             {
-        ///                 new Nutanix.Inputs.AddressGroupIpAddressBlockListArgs
-        ///                 {
-        ///                     Ip = "10.0.0.0",
-        ///                     PrefixLength = 24,
-        ///                 },
+        ///                 Ip = "10.0.0.0",
+        ///                 PrefixLength = 24,
         ///             },
-        ///         });
-        ///         var addrGroup = Nutanix.GetAddressGroup.Invoke(new Nutanix.GetAddressGroupInvokeArgs
-        ///         {
-        ///             Uuid = testAddress.Id,
-        ///         });
-        ///     }
+        ///         },
+        ///     });
         /// 
-        /// }
+        ///     var addrGroup = Nutanix.GetAddressGroup.Invoke(new()
+        ///     {
+        ///         Uuid = testAddress.Id,
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAddressGroupResult> InvokeAsync(GetAddressGroupArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAddressGroupResult>("nutanix:index/getAddressGroup:getAddressGroup", args ?? new GetAddressGroupArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAddressGroupResult>("nutanix:index/getAddressGroup:getAddressGroup", args ?? new GetAddressGroupArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a datasource to retrieve a address group.
@@ -62,74 +62,97 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var testAddress = new Nutanix.AddressGroup("testAddress", new()
         ///     {
-        ///         var testAddress = new Nutanix.AddressGroup("testAddress", new Nutanix.AddressGroupArgs
+        ///         Description = "test address groups resource",
+        ///         IpAddressBlockLists = new[]
         ///         {
-        ///             Description = "test address groups resource",
-        ///             IpAddressBlockLists = 
+        ///             new Nutanix.Inputs.AddressGroupIpAddressBlockListArgs
         ///             {
-        ///                 new Nutanix.Inputs.AddressGroupIpAddressBlockListArgs
-        ///                 {
-        ///                     Ip = "10.0.0.0",
-        ///                     PrefixLength = 24,
-        ///                 },
+        ///                 Ip = "10.0.0.0",
+        ///                 PrefixLength = 24,
         ///             },
-        ///         });
-        ///         var addrGroup = Nutanix.GetAddressGroup.Invoke(new Nutanix.GetAddressGroupInvokeArgs
-        ///         {
-        ///             Uuid = testAddress.Id,
-        ///         });
-        ///     }
+        ///         },
+        ///     });
         /// 
-        /// }
+        ///     var addrGroup = Nutanix.GetAddressGroup.Invoke(new()
+        ///     {
+        ///         Uuid = testAddress.Id,
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAddressGroupResult> Invoke(GetAddressGroupInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAddressGroupResult>("nutanix:index/getAddressGroup:getAddressGroup", args ?? new GetAddressGroupInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAddressGroupResult>("nutanix:index/getAddressGroup:getAddressGroup", args ?? new GetAddressGroupInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAddressGroupArgs : Pulumi.InvokeArgs
+    public sealed class GetAddressGroupArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) UUID of the address group
+        /// </summary>
         [Input("uuid", required: true)]
         public string Uuid { get; set; } = null!;
 
         public GetAddressGroupArgs()
         {
         }
+        public static new GetAddressGroupArgs Empty => new GetAddressGroupArgs();
     }
 
-    public sealed class GetAddressGroupInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAddressGroupInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) UUID of the address group
+        /// </summary>
         [Input("uuid", required: true)]
         public Input<string> Uuid { get; set; } = null!;
 
         public GetAddressGroupInvokeArgs()
         {
         }
+        public static new GetAddressGroupInvokeArgs Empty => new GetAddressGroupInvokeArgs();
     }
 
 
     [OutputType]
     public sealed class GetAddressGroupResult
     {
+        /// <summary>
+        /// - (ReadOnly) Address Group string
+        /// </summary>
         public readonly string AddressGroupString;
+        /// <summary>
+        /// - (ReadOnly) Description of the address group
+        /// </summary>
         public readonly string Description;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - (ReadOnly) list of IP address blocks with their prefix length
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAddressGroupIpAddressBlockListResult> IpAddressBlockLists;
+        /// <summary>
+        /// - (ReadOnly) Name of the address group
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - (Required) UUID of the address group
+        /// </summary>
         public readonly string Uuid;
 
         [OutputConstructor]

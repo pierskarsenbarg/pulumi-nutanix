@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,16 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const test = pulumi.output(nutanix.getPbrs());
+ * const test = nutanix.getPbrs({});
  * ```
  */
 export function getPbrs(args?: GetPbrsArgs, opts?: pulumi.InvokeOptions): Promise<GetPbrsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getPbrs:getPbrs", {
         "metadatas": args.metadatas,
     }, opts);
@@ -33,6 +31,9 @@ export function getPbrs(args?: GetPbrsArgs, opts?: pulumi.InvokeOptions): Promis
  * A collection of arguments for invoking getPbrs.
  */
 export interface GetPbrsArgs {
+    /**
+     * - The routing policies kind metadata.
+     */
     metadatas?: inputs.GetPbrsMetadata[];
 }
 
@@ -40,22 +41,45 @@ export interface GetPbrsArgs {
  * A collection of values returned by getPbrs.
  */
 export interface GetPbrsResult {
+    /**
+     * version of the API
+     */
     readonly apiVersion: string;
+    /**
+     * List of PBRs.
+     */
     readonly entities: outputs.GetPbrsEntity[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - The routing policies kind metadata.
+     */
     readonly metadatas: outputs.GetPbrsMetadata[];
 }
-
+/**
+ * Provides a datasource to retrieve all the pbrs.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const test = nutanix.getPbrs({});
+ * ```
+ */
 export function getPbrsOutput(args?: GetPbrsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPbrsResult> {
-    return pulumi.output(args).apply(a => getPbrs(a, opts))
+    return pulumi.output(args).apply((a: any) => getPbrs(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getPbrs.
  */
 export interface GetPbrsOutputArgs {
+    /**
+     * - The routing policies kind metadata.
+     */
     metadatas?: pulumi.Input<pulumi.Input<inputs.GetPbrsMetadataArgs>[]>;
 }

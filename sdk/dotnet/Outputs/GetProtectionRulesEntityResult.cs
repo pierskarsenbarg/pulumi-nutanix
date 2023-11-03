@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetProtectionRulesEntityResult
     {
+        /// <summary>
+        /// version of the API
+        /// </summary>
         public readonly string ApiVersion;
         /// <summary>
         /// (Required) This encodes the datapipes between various availability zones and\nthe backup policy of the pipes.
@@ -38,6 +41,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProtectionRulesEntityCategoryFilterResult> CategoryFilters;
+        /// <summary>
+        /// A description for protection rule.
+        /// </summary>
         public readonly string Description;
         public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>

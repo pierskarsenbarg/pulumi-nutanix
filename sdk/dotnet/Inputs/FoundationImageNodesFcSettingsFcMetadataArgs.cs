@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationImageNodesFcSettingsFcMetadataArgs : Pulumi.ResourceArgs
+    public sealed class FoundationImageNodesFcSettingsFcMetadataArgs : global::Pulumi.ResourceArgs
     {
         [Input("apiKey", required: true)]
         public Input<string> ApiKey { get; set; } = null!;
@@ -22,5 +22,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public FoundationImageNodesFcSettingsFcMetadataArgs()
         {
         }
+        public static new FoundationImageNodesFcSettingsFcMetadataArgs Empty => new FoundationImageNodesFcSettingsFcMetadataArgs();
     }
 }

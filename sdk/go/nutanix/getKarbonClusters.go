@@ -4,7 +4,12 @@
 package nutanix
 
 import (
+	"context"
+	"reflect"
+
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes Karbon Clusters
@@ -15,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetKarbonClusters(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetKarbonClusters(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetKarbonClusters(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetKarbonClustersResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetKarbonClustersResult
 	err := ctx.Invoke("nutanix:index/getKarbonClusters:getKarbonClusters", nil, &rv, opts...)
 	if err != nil {
@@ -44,4 +52,49 @@ type GetKarbonClustersResult struct {
 	Clusters []GetKarbonClustersCluster `pulumi:"clusters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+}
+
+func GetKarbonClustersOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetKarbonClustersResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetKarbonClustersResult, error) {
+		r, err := GetKarbonClusters(ctx, opts...)
+		var s GetKarbonClustersResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetKarbonClustersResultOutput)
+}
+
+// A collection of values returned by getKarbonClusters.
+type GetKarbonClustersResultOutput struct{ *pulumi.OutputState }
+
+func (GetKarbonClustersResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKarbonClustersResult)(nil)).Elem()
+}
+
+func (o GetKarbonClustersResultOutput) ToGetKarbonClustersResultOutput() GetKarbonClustersResultOutput {
+	return o
+}
+
+func (o GetKarbonClustersResultOutput) ToGetKarbonClustersResultOutputWithContext(ctx context.Context) GetKarbonClustersResultOutput {
+	return o
+}
+
+func (o GetKarbonClustersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetKarbonClustersResult] {
+	return pulumix.Output[GetKarbonClustersResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+func (o GetKarbonClustersResultOutput) Clusters() GetKarbonClustersClusterArrayOutput {
+	return o.ApplyT(func(v GetKarbonClustersResult) []GetKarbonClustersCluster { return v.Clusters }).(GetKarbonClustersClusterArrayOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetKarbonClustersResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKarbonClustersResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetKarbonClustersResultOutput{})
 }

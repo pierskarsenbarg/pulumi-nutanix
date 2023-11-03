@@ -11,69 +11,125 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationCentralImageClusterNodeListGetArgs : Pulumi.ResourceArgs
+    public sealed class FoundationCentralImageClusterNodeListGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Gateway of the cvm.
+        /// </summary>
         [Input("cvmGateway")]
         public Input<string>? CvmGateway { get; set; }
 
+        /// <summary>
+        /// IP address to be set for the cvm on the node.
+        /// </summary>
         [Input("cvmIp")]
         public Input<string>? CvmIp { get; set; }
 
+        /// <summary>
+        /// Netmask of the cvm.
+        /// </summary>
         [Input("cvmNetmask")]
         public Input<string>? CvmNetmask { get; set; }
 
+        /// <summary>
+        /// Amount of memory to be assigned for the cvm.
+        /// </summary>
         [Input("cvmRamGb")]
         public Input<int>? CvmRamGb { get; set; }
 
+        /// <summary>
+        /// Vlan tag of the cvm, if the cvm is on a vlan.
+        /// </summary>
         [Input("cvmVlanId")]
         public Input<int>? CvmVlanId { get; set; }
 
         [Input("hardwareAttributesOverride")]
         private InputMap<object>? _hardwareAttributesOverride;
+
+        /// <summary>
+        /// Hardware attributes override json for the node.
+        /// </summary>
         public InputMap<object> HardwareAttributesOverride
         {
             get => _hardwareAttributesOverride ?? (_hardwareAttributesOverride = new InputMap<object>());
             set => _hardwareAttributesOverride = value;
         }
 
+        /// <summary>
+        /// Gateway of the hypervisor.
+        /// </summary>
         [Input("hypervisorGateway")]
         public Input<string>? HypervisorGateway { get; set; }
 
+        /// <summary>
+        /// Name to be set for the hypervisor host.
+        /// </summary>
         [Input("hypervisorHostname")]
         public Input<string>? HypervisorHostname { get; set; }
 
+        /// <summary>
+        /// IP address to be set for the hypervisor on the node.
+        /// </summary>
         [Input("hypervisorIp")]
         public Input<string>? HypervisorIp { get; set; }
 
+        /// <summary>
+        /// Netmask of the hypervisor.
+        /// </summary>
         [Input("hypervisorNetmask")]
         public Input<string>? HypervisorNetmask { get; set; }
 
+        /// <summary>
+        /// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+        /// </summary>
         [Input("hypervisorType")]
         public Input<string>? HypervisorType { get; set; }
 
+        /// <summary>
+        /// True, if the node should be imaged, False, otherwise.
+        /// </summary>
         [Input("imageNow")]
         public Input<bool>? ImageNow { get; set; }
 
+        /// <summary>
+        /// UUID of the node.
+        /// </summary>
         [Input("imagedNodeUuid")]
         public Input<string>? ImagedNodeUuid { get; set; }
 
+        /// <summary>
+        /// Gateway of the ipmi.
+        /// </summary>
         [Input("ipmiGateway")]
         public Input<string>? IpmiGateway { get; set; }
 
+        /// <summary>
+        /// IP address to be set for the ipmi of the node.
+        /// </summary>
         [Input("ipmiIp")]
         public Input<string>? IpmiIp { get; set; }
 
+        /// <summary>
+        /// Netmask of the ipmi.
+        /// </summary>
         [Input("ipmiNetmask")]
         public Input<string>? IpmiNetmask { get; set; }
 
+        /// <summary>
+        /// Passthrough RDMA nic to CVM if possible, default to false.
+        /// </summary>
         [Input("rdmaPassthrough")]
         public Input<bool>? RdmaPassthrough { get; set; }
 
+        /// <summary>
+        /// Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
+        /// </summary>
         [Input("useExistingNetworkSettings")]
         public Input<bool>? UseExistingNetworkSettings { get; set; }
 
         public FoundationCentralImageClusterNodeListGetArgs()
         {
         }
+        public static new FoundationCentralImageClusterNodeListGetArgs Empty => new FoundationCentralImageClusterNodeListGetArgs();
     }
 }

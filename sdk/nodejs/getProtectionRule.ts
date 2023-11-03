@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -43,11 +44,8 @@ import * as utilities from "./utilities";
  */
 export function getProtectionRule(args?: GetProtectionRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectionRuleResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getProtectionRule:getProtectionRule", {
         "categories": args.categories,
         "protectionRuleId": args.protectionRuleId,
@@ -60,6 +58,9 @@ export function getProtectionRule(args?: GetProtectionRuleArgs, opts?: pulumi.In
  */
 export interface GetProtectionRuleArgs {
     categories?: inputs.GetProtectionRuleCategory[];
+    /**
+     * - (Required) The `id` of the protection rule.
+     */
     protectionRuleId?: string;
     protectionRuleName?: string;
 }
@@ -92,6 +93,9 @@ export interface GetProtectionRuleResult {
      * * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
      */
     readonly categoryFilters: outputs.GetProtectionRuleCategoryFilter[];
+    /**
+     * A description for protection rule.
+     */
     readonly description: string;
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -115,9 +119,44 @@ export interface GetProtectionRuleResult {
     readonly startTime: string;
     readonly state: string;
 }
-
+/**
+ * Describe a Nutanix Protection Rule and its values (if it has them).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const protectionRuleTest = new nutanix.ProtectionRule("protectionRuleTest", {
+ *     description: "test",
+ *     orderedAvailabilityZoneLists: [{
+ *         availabilityZoneUrl: "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+ *     }],
+ *     availabilityZoneConnectivityLists: [{
+ *         snapshotScheduleLists: [{
+ *             recoveryPointObjectiveSecs: 3600,
+ *             snapshotType: "CRASH_CONSISTENT",
+ *             localSnapshotRetentionPolicy: {
+ *                 numSnapshots: 1,
+ *             },
+ *         }],
+ *     }],
+ *     categoryFilter: {
+ *         params: [{
+ *             name: "Environment",
+ *             values: ["Dev"],
+ *         }],
+ *     },
+ * });
+ * const test = nutanix.getProtectionRuleOutput({
+ *     protectionRuleId: protectionRuleTest.id,
+ * });
+ * ```
+ */
 export function getProtectionRuleOutput(args?: GetProtectionRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionRuleResult> {
-    return pulumi.output(args).apply(a => getProtectionRule(a, opts))
+    return pulumi.output(args).apply((a: any) => getProtectionRule(a, opts))
 }
 
 /**
@@ -125,6 +164,9 @@ export function getProtectionRuleOutput(args?: GetProtectionRuleOutputArgs, opts
  */
 export interface GetProtectionRuleOutputArgs {
     categories?: pulumi.Input<pulumi.Input<inputs.GetProtectionRuleCategoryArgs>[]>;
+    /**
+     * - (Required) The `id` of the protection rule.
+     */
     protectionRuleId?: pulumi.Input<string>;
     protectionRuleName?: pulumi.Input<string>;
 }

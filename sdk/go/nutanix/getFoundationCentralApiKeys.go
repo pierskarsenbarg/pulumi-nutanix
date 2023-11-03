@@ -7,11 +7,13 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupFoundationCentralApiKeys(ctx *pulumi.Context, args *LookupFoundationCentralApiKeysArgs, opts ...pulumi.InvokeOption) (*LookupFoundationCentralApiKeysResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupFoundationCentralApiKeysResult
 	err := ctx.Invoke("nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys", args, &rv, opts...)
 	if err != nil {
@@ -71,6 +73,12 @@ func (o LookupFoundationCentralApiKeysResultOutput) ToLookupFoundationCentralApi
 
 func (o LookupFoundationCentralApiKeysResultOutput) ToLookupFoundationCentralApiKeysResultOutputWithContext(ctx context.Context) LookupFoundationCentralApiKeysResultOutput {
 	return o
+}
+
+func (o LookupFoundationCentralApiKeysResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupFoundationCentralApiKeysResult] {
+	return pulumix.Output[LookupFoundationCentralApiKeysResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupFoundationCentralApiKeysResultOutput) Alias() pulumi.StringOutput {

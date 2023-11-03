@@ -2,16 +2,14 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getFoundationCentralImagedNodesList(args?: GetFoundationCentralImagedNodesListArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralImagedNodesListResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationCentralImagedNodesList:getFoundationCentralImagedNodesList", {
         "filters": args.filters,
         "length": args.length,
@@ -42,9 +40,8 @@ export interface GetFoundationCentralImagedNodesListResult {
     readonly metadatas: outputs.GetFoundationCentralImagedNodesListMetadata[];
     readonly offset?: number;
 }
-
 export function getFoundationCentralImagedNodesListOutput(args?: GetFoundationCentralImagedNodesListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralImagedNodesListResult> {
-    return pulumi.output(args).apply(a => getFoundationCentralImagedNodesList(a, opts))
+    return pulumi.output(args).apply((a: any) => getFoundationCentralImagedNodesList(a, opts))
 }
 
 /**

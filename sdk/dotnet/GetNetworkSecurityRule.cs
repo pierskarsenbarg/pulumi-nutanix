@@ -23,64 +23,64 @@ namespace PiersKarsenbarg.Nutanix
         /// ### Isolate Development VMs From Production VMs And Get Its Information)
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var isolation = new Nutanix.NetworkSecurityRule("isolation", new()
         ///     {
-        ///         var isolation = new Nutanix.NetworkSecurityRule("isolation", new Nutanix.NetworkSecurityRuleArgs
+        ///         Description = "Isolation Rule Example",
+        ///         IsolationRuleAction = "APPLY",
+        ///         IsolationRuleFirstEntityFilterKindLists = new[]
         ///         {
-        ///             Description = "Isolation Rule Example",
-        ///             IsolationRuleAction = "APPLY",
-        ///             IsolationRuleFirstEntityFilterKindLists = 
+        ///             "vm",
+        ///         },
+        ///         IsolationRuleFirstEntityFilterParams = new[]
+        ///         {
+        ///             new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs
         ///             {
-        ///                 "vm",
-        ///             },
-        ///             IsolationRuleFirstEntityFilterParams = 
-        ///             {
-        ///                 new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs
+        ///                 Name = "Environment",
+        ///                 Values = new[]
         ///                 {
-        ///                     Name = "Environment",
-        ///                     Values = 
-        ///                     {
-        ///                         "Dev",
-        ///                     },
+        ///                     "Dev",
         ///                 },
         ///             },
-        ///             IsolationRuleFirstEntityFilterType = "CATEGORIES_MATCH_ALL",
-        ///             IsolationRuleSecondEntityFilterKindLists = 
+        ///         },
+        ///         IsolationRuleFirstEntityFilterType = "CATEGORIES_MATCH_ALL",
+        ///         IsolationRuleSecondEntityFilterKindLists = new[]
+        ///         {
+        ///             "vm",
+        ///         },
+        ///         IsolationRuleSecondEntityFilterParams = new[]
+        ///         {
+        ///             new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs
         ///             {
-        ///                 "vm",
-        ///             },
-        ///             IsolationRuleSecondEntityFilterParams = 
-        ///             {
-        ///                 new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs
+        ///                 Name = "Environment",
+        ///                 Values = new[]
         ///                 {
-        ///                     Name = "Environment",
-        ///                     Values = 
-        ///                     {
-        ///                         "Production",
-        ///                     },
+        ///                     "Production",
         ///                 },
         ///             },
-        ///             IsolationRuleSecondEntityFilterType = "CATEGORIES_MATCH_ALL",
-        ///         });
-        ///         var test = Nutanix.GetNetworkSecurityRule.Invoke(new Nutanix.GetNetworkSecurityRuleInvokeArgs
-        ///         {
-        ///             NetworkSecurityRuleId = isolation.Id,
-        ///         });
-        ///     }
+        ///         },
+        ///         IsolationRuleSecondEntityFilterType = "CATEGORIES_MATCH_ALL",
+        ///     });
         /// 
-        /// }
+        ///     var test = Nutanix.GetNetworkSecurityRule.Invoke(new()
+        ///     {
+        ///         NetworkSecurityRuleId = isolation.Id,
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetNetworkSecurityRuleResult> InvokeAsync(GetNetworkSecurityRuleArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetNetworkSecurityRuleResult>("nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule", args ?? new GetNetworkSecurityRuleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkSecurityRuleResult>("nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule", args ?? new GetNetworkSecurityRuleArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes a Network security rule
@@ -93,71 +93,75 @@ namespace PiersKarsenbarg.Nutanix
         /// ### Isolate Development VMs From Production VMs And Get Its Information)
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var isolation = new Nutanix.NetworkSecurityRule("isolation", new()
         ///     {
-        ///         var isolation = new Nutanix.NetworkSecurityRule("isolation", new Nutanix.NetworkSecurityRuleArgs
+        ///         Description = "Isolation Rule Example",
+        ///         IsolationRuleAction = "APPLY",
+        ///         IsolationRuleFirstEntityFilterKindLists = new[]
         ///         {
-        ///             Description = "Isolation Rule Example",
-        ///             IsolationRuleAction = "APPLY",
-        ///             IsolationRuleFirstEntityFilterKindLists = 
+        ///             "vm",
+        ///         },
+        ///         IsolationRuleFirstEntityFilterParams = new[]
+        ///         {
+        ///             new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs
         ///             {
-        ///                 "vm",
-        ///             },
-        ///             IsolationRuleFirstEntityFilterParams = 
-        ///             {
-        ///                 new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs
+        ///                 Name = "Environment",
+        ///                 Values = new[]
         ///                 {
-        ///                     Name = "Environment",
-        ///                     Values = 
-        ///                     {
-        ///                         "Dev",
-        ///                     },
+        ///                     "Dev",
         ///                 },
         ///             },
-        ///             IsolationRuleFirstEntityFilterType = "CATEGORIES_MATCH_ALL",
-        ///             IsolationRuleSecondEntityFilterKindLists = 
+        ///         },
+        ///         IsolationRuleFirstEntityFilterType = "CATEGORIES_MATCH_ALL",
+        ///         IsolationRuleSecondEntityFilterKindLists = new[]
+        ///         {
+        ///             "vm",
+        ///         },
+        ///         IsolationRuleSecondEntityFilterParams = new[]
+        ///         {
+        ///             new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs
         ///             {
-        ///                 "vm",
-        ///             },
-        ///             IsolationRuleSecondEntityFilterParams = 
-        ///             {
-        ///                 new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs
+        ///                 Name = "Environment",
+        ///                 Values = new[]
         ///                 {
-        ///                     Name = "Environment",
-        ///                     Values = 
-        ///                     {
-        ///                         "Production",
-        ///                     },
+        ///                     "Production",
         ///                 },
         ///             },
-        ///             IsolationRuleSecondEntityFilterType = "CATEGORIES_MATCH_ALL",
-        ///         });
-        ///         var test = Nutanix.GetNetworkSecurityRule.Invoke(new Nutanix.GetNetworkSecurityRuleInvokeArgs
-        ///         {
-        ///             NetworkSecurityRuleId = isolation.Id,
-        ///         });
-        ///     }
+        ///         },
+        ///         IsolationRuleSecondEntityFilterType = "CATEGORIES_MATCH_ALL",
+        ///     });
         /// 
-        /// }
+        ///     var test = Nutanix.GetNetworkSecurityRule.Invoke(new()
+        ///     {
+        ///         NetworkSecurityRuleId = isolation.Id,
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetNetworkSecurityRuleResult> Invoke(GetNetworkSecurityRuleInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityRuleResult>("nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule", args ?? new GetNetworkSecurityRuleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityRuleResult>("nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule", args ?? new GetNetworkSecurityRuleInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetNetworkSecurityRuleArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkSecurityRuleArgs : global::Pulumi.InvokeArgs
     {
         [Input("categories")]
         private List<Inputs.GetNetworkSecurityRuleCategoryArgs>? _categories;
+
+        /// <summary>
+        /// Categories for the network_security_rule.
+        /// </summary>
         public List<Inputs.GetNetworkSecurityRuleCategoryArgs> Categories
         {
             get => _categories ?? (_categories = new List<Inputs.GetNetworkSecurityRuleCategoryArgs>());
@@ -165,45 +169,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// (Required) The ID for the rule you want to retrieve.
-        /// * `name`: - The name for the network_security_rule.
-        /// * `categories`: Categories for the network_security_rule.
-        /// * `project_reference`: The reference to a project.
-        /// * `owner_reference`: The reference to a user.
-        /// * `api_version`
-        /// * `description`: A description for network_security_rule.
-        /// * `quarantine_rule_action`: These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty inbound_allow_list will not allow anything into target group. Empty outbound_allow_list will allow everything from target group.
-        /// * `quarantine_rule_outbound_allow_list`:
-        /// * `quarantine_rule_target_group_default_internal_policy`: - Default policy for communication within target group.
-        /// * `quarantine_rule_target_group_peer_specification_type`: - Way to identify the object for which rule is applied.
-        /// * `quarantine_rule_target_group_filter_kind_list`: - List of kinds associated with this filter.
-        /// * `quarantine_rule_target_group_filter_type`: - The type of the filter being used.
-        /// * `quarantine_rule_target_group_filter_params`: - A list of category key and list of values.
-        /// * `quarantine_rule_inbound_allow_list`:
-        /// * `app_rule_action`: - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
-        /// * `app_rule_outbound_allow_list`:
-        /// * `app_rule_target_group_default_internal_policy`: - Default policy for communication within target group.
-        /// * `app_rule_target_group_peer_specification_type`: - Way to identify the object for which rule is applied.
-        /// * `app_rule_target_group_filter_kind_list`: - List of kinds associated with this filter.
-        /// * `app_rule_target_group_filter_type`: - The type of the filter being used.
-        /// * `app_rule_target_group_filter_params`: - A list of category key and list of values.
-        /// * `app_rule_inbound_allow_list`: The set of categories that matching VMs need to have.
-        /// * `ad_rule_action`: - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
-        /// * `ad_rule_outbound_allow_list`:
-        /// * `ad_rule_target_group_default_internal_policy`: - Default policy for communication within target group.
-        /// * `ad_rule_target_group_peer_specification_type`: - Way to identify the object for which rule is applied.
-        /// * `ad_rule_target_group_filter_kind_list`: - List of kinds associated with this filter.
-        /// * `ad_rule_target_group_filter_type`: - The type of the filter being used.
-        /// * `ad_rule_target_group_filter_params`: - A list of category key and list of values.
-        /// * `ad_rule_inbound_allow_list`: The set of categories that matching VMs need to have.
-        /// * `isolation_rule_action`: - These rules are used for environmental isolation.
-        /// * `app_rule_inbound_allow_list`:
-        /// * `isolation_rule_first_entity_filter_kind_list`: - List of kinds associated with this filter.
-        /// * `isolation_rule_first_entity_filter_type`: - The type of the filter being used.
-        /// * `isolation_rule_first_entity_filter_params`: - A list of category key and list of values.
-        /// * `isolation_rule_second_entity_filter_kind_list`: - List of kinds associated with this filter.
-        /// * `isolation_rule_second_entity_filter_type`: - The type of the filter being used.
-        /// * `isolation_rule_second_entity_filter_params`: - A list of category key and list of values.
+        /// Represents network security rule UUID
         /// </summary>
         [Input("networkSecurityRuleId", required: true)]
         public string NetworkSecurityRuleId { get; set; } = null!;
@@ -211,12 +177,17 @@ namespace PiersKarsenbarg.Nutanix
         public GetNetworkSecurityRuleArgs()
         {
         }
+        public static new GetNetworkSecurityRuleArgs Empty => new GetNetworkSecurityRuleArgs();
     }
 
-    public sealed class GetNetworkSecurityRuleInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkSecurityRuleInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("categories")]
         private InputList<Inputs.GetNetworkSecurityRuleCategoryInputArgs>? _categories;
+
+        /// <summary>
+        /// Categories for the network_security_rule.
+        /// </summary>
         public InputList<Inputs.GetNetworkSecurityRuleCategoryInputArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.GetNetworkSecurityRuleCategoryInputArgs>());
@@ -224,45 +195,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// (Required) The ID for the rule you want to retrieve.
-        /// * `name`: - The name for the network_security_rule.
-        /// * `categories`: Categories for the network_security_rule.
-        /// * `project_reference`: The reference to a project.
-        /// * `owner_reference`: The reference to a user.
-        /// * `api_version`
-        /// * `description`: A description for network_security_rule.
-        /// * `quarantine_rule_action`: These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty inbound_allow_list will not allow anything into target group. Empty outbound_allow_list will allow everything from target group.
-        /// * `quarantine_rule_outbound_allow_list`:
-        /// * `quarantine_rule_target_group_default_internal_policy`: - Default policy for communication within target group.
-        /// * `quarantine_rule_target_group_peer_specification_type`: - Way to identify the object for which rule is applied.
-        /// * `quarantine_rule_target_group_filter_kind_list`: - List of kinds associated with this filter.
-        /// * `quarantine_rule_target_group_filter_type`: - The type of the filter being used.
-        /// * `quarantine_rule_target_group_filter_params`: - A list of category key and list of values.
-        /// * `quarantine_rule_inbound_allow_list`:
-        /// * `app_rule_action`: - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
-        /// * `app_rule_outbound_allow_list`:
-        /// * `app_rule_target_group_default_internal_policy`: - Default policy for communication within target group.
-        /// * `app_rule_target_group_peer_specification_type`: - Way to identify the object for which rule is applied.
-        /// * `app_rule_target_group_filter_kind_list`: - List of kinds associated with this filter.
-        /// * `app_rule_target_group_filter_type`: - The type of the filter being used.
-        /// * `app_rule_target_group_filter_params`: - A list of category key and list of values.
-        /// * `app_rule_inbound_allow_list`: The set of categories that matching VMs need to have.
-        /// * `ad_rule_action`: - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
-        /// * `ad_rule_outbound_allow_list`:
-        /// * `ad_rule_target_group_default_internal_policy`: - Default policy for communication within target group.
-        /// * `ad_rule_target_group_peer_specification_type`: - Way to identify the object for which rule is applied.
-        /// * `ad_rule_target_group_filter_kind_list`: - List of kinds associated with this filter.
-        /// * `ad_rule_target_group_filter_type`: - The type of the filter being used.
-        /// * `ad_rule_target_group_filter_params`: - A list of category key and list of values.
-        /// * `ad_rule_inbound_allow_list`: The set of categories that matching VMs need to have.
-        /// * `isolation_rule_action`: - These rules are used for environmental isolation.
-        /// * `app_rule_inbound_allow_list`:
-        /// * `isolation_rule_first_entity_filter_kind_list`: - List of kinds associated with this filter.
-        /// * `isolation_rule_first_entity_filter_type`: - The type of the filter being used.
-        /// * `isolation_rule_first_entity_filter_params`: - A list of category key and list of values.
-        /// * `isolation_rule_second_entity_filter_kind_list`: - List of kinds associated with this filter.
-        /// * `isolation_rule_second_entity_filter_type`: - The type of the filter being used.
-        /// * `isolation_rule_second_entity_filter_params`: - A list of category key and list of values.
+        /// Represents network security rule UUID
         /// </summary>
         [Input("networkSecurityRuleId", required: true)]
         public Input<string> NetworkSecurityRuleId { get; set; } = null!;
@@ -270,97 +203,153 @@ namespace PiersKarsenbarg.Nutanix
         public GetNetworkSecurityRuleInvokeArgs()
         {
         }
+        public static new GetNetworkSecurityRuleInvokeArgs Empty => new GetNetworkSecurityRuleInvokeArgs();
     }
 
 
     [OutputType]
     public sealed class GetNetworkSecurityRuleResult
     {
+        /// <summary>
+        /// - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// </summary>
         public readonly string AdRuleAction;
+        /// <summary>
+        /// The set of categories that matching VMs need to have.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleAdRuleInboundAllowListResult> AdRuleInboundAllowLists;
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleAdRuleOutboundAllowListResult> AdRuleOutboundAllowLists;
+        /// <summary>
+        /// - Default policy for communication within target group.
+        /// </summary>
         public readonly string AdRuleTargetGroupDefaultInternalPolicy;
+        /// <summary>
+        /// - List of kinds associated with this filter.
+        /// </summary>
         public readonly ImmutableArray<string> AdRuleTargetGroupFilterKindLists;
+        /// <summary>
+        /// - A list of category key and list of values.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleAdRuleTargetGroupFilterParamResult> AdRuleTargetGroupFilterParams;
+        /// <summary>
+        /// - The type of the filter being used.
+        /// </summary>
         public readonly string AdRuleTargetGroupFilterType;
+        /// <summary>
+        /// - Way to identify the object for which rule is applied.
+        /// </summary>
         public readonly string AdRuleTargetGroupPeerSpecificationType;
         public readonly bool AllowIpv6Traffic;
         public readonly string ApiVersion;
+        /// <summary>
+        /// - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// </summary>
         public readonly string AppRuleAction;
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleAppRuleInboundAllowListResult> AppRuleInboundAllowLists;
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleAppRuleOutboundAllowListResult> AppRuleOutboundAllowLists;
+        /// <summary>
+        /// - Default policy for communication within target group.
+        /// </summary>
         public readonly string AppRuleTargetGroupDefaultInternalPolicy;
+        /// <summary>
+        /// - List of kinds associated with this filter.
+        /// </summary>
         public readonly ImmutableArray<string> AppRuleTargetGroupFilterKindLists;
+        /// <summary>
+        /// - A list of category key and list of values.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleAppRuleTargetGroupFilterParamResult> AppRuleTargetGroupFilterParams;
+        /// <summary>
+        /// - The type of the filter being used.
+        /// </summary>
         public readonly string AppRuleTargetGroupFilterType;
+        /// <summary>
+        /// - Way to identify the object for which rule is applied.
+        /// </summary>
         public readonly string AppRuleTargetGroupPeerSpecificationType;
+        /// <summary>
+        /// Categories for the network_security_rule.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleCategoryResult> Categories;
+        /// <summary>
+        /// A description for network_security_rule.
+        /// </summary>
         public readonly string Description;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
         public readonly bool IsPolicyHitlogEnabled;
+        /// <summary>
+        /// - These rules are used for environmental isolation.
+        /// </summary>
         public readonly string IsolationRuleAction;
+        /// <summary>
+        /// - List of kinds associated with this filter.
+        /// </summary>
         public readonly ImmutableArray<string> IsolationRuleFirstEntityFilterKindLists;
+        /// <summary>
+        /// - A list of category key and list of values.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleIsolationRuleFirstEntityFilterParamResult> IsolationRuleFirstEntityFilterParams;
+        /// <summary>
+        /// - The type of the filter being used.
+        /// </summary>
         public readonly string IsolationRuleFirstEntityFilterType;
+        /// <summary>
+        /// - List of kinds associated with this filter.
+        /// </summary>
         public readonly ImmutableArray<string> IsolationRuleSecondEntityFilterKindLists;
+        /// <summary>
+        /// - A list of category key and list of values.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleIsolationRuleSecondEntityFilterParamResult> IsolationRuleSecondEntityFilterParams;
+        /// <summary>
+        /// - The type of the filter being used.
+        /// </summary>
         public readonly string IsolationRuleSecondEntityFilterType;
         public readonly ImmutableDictionary<string, string> Metadata;
+        /// <summary>
+        /// - the name.
+        /// </summary>
         public readonly string Name;
         /// <summary>
         /// (Required) The ID for the rule you want to retrieve.
-        /// * `name`: - The name for the network_security_rule.
-        /// * `categories`: Categories for the network_security_rule.
-        /// * `project_reference`: The reference to a project.
-        /// * `owner_reference`: The reference to a user.
-        /// * `api_version`
-        /// * `description`: A description for network_security_rule.
-        /// * `quarantine_rule_action`: These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty inbound_allow_list will not allow anything into target group. Empty outbound_allow_list will allow everything from target group.
-        /// * `quarantine_rule_outbound_allow_list`:
-        /// * `quarantine_rule_target_group_default_internal_policy`: - Default policy for communication within target group.
-        /// * `quarantine_rule_target_group_peer_specification_type`: - Way to identify the object for which rule is applied.
-        /// * `quarantine_rule_target_group_filter_kind_list`: - List of kinds associated with this filter.
-        /// * `quarantine_rule_target_group_filter_type`: - The type of the filter being used.
-        /// * `quarantine_rule_target_group_filter_params`: - A list of category key and list of values.
-        /// * `quarantine_rule_inbound_allow_list`:
-        /// * `app_rule_action`: - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
-        /// * `app_rule_outbound_allow_list`:
-        /// * `app_rule_target_group_default_internal_policy`: - Default policy for communication within target group.
-        /// * `app_rule_target_group_peer_specification_type`: - Way to identify the object for which rule is applied.
-        /// * `app_rule_target_group_filter_kind_list`: - List of kinds associated with this filter.
-        /// * `app_rule_target_group_filter_type`: - The type of the filter being used.
-        /// * `app_rule_target_group_filter_params`: - A list of category key and list of values.
-        /// * `app_rule_inbound_allow_list`: The set of categories that matching VMs need to have.
-        /// * `ad_rule_action`: - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
-        /// * `ad_rule_outbound_allow_list`:
-        /// * `ad_rule_target_group_default_internal_policy`: - Default policy for communication within target group.
-        /// * `ad_rule_target_group_peer_specification_type`: - Way to identify the object for which rule is applied.
-        /// * `ad_rule_target_group_filter_kind_list`: - List of kinds associated with this filter.
-        /// * `ad_rule_target_group_filter_type`: - The type of the filter being used.
-        /// * `ad_rule_target_group_filter_params`: - A list of category key and list of values.
-        /// * `ad_rule_inbound_allow_list`: The set of categories that matching VMs need to have.
-        /// * `isolation_rule_action`: - These rules are used for environmental isolation.
-        /// * `app_rule_inbound_allow_list`:
-        /// * `isolation_rule_first_entity_filter_kind_list`: - List of kinds associated with this filter.
-        /// * `isolation_rule_first_entity_filter_type`: - The type of the filter being used.
-        /// * `isolation_rule_first_entity_filter_params`: - A list of category key and list of values.
-        /// * `isolation_rule_second_entity_filter_kind_list`: - List of kinds associated with this filter.
-        /// * `isolation_rule_second_entity_filter_type`: - The type of the filter being used.
-        /// * `isolation_rule_second_entity_filter_params`: - A list of category key and list of values.
         /// </summary>
         public readonly string NetworkSecurityRuleId;
+        /// <summary>
+        /// The reference to a user.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> OwnerReference;
+        /// <summary>
+        /// The reference to a project.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> ProjectReference;
+        /// <summary>
+        /// These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty inbound_allow_list will not allow anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// </summary>
         public readonly string QuarantineRuleAction;
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleQuarantineRuleInboundAllowListResult> QuarantineRuleInboundAllowLists;
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleQuarantineRuleOutboundAllowListResult> QuarantineRuleOutboundAllowLists;
+        /// <summary>
+        /// - Default policy for communication within target group.
+        /// </summary>
         public readonly string QuarantineRuleTargetGroupDefaultInternalPolicy;
+        /// <summary>
+        /// - List of kinds associated with this filter.
+        /// </summary>
         public readonly ImmutableArray<string> QuarantineRuleTargetGroupFilterKindLists;
+        /// <summary>
+        /// - A list of category key and list of values.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkSecurityRuleQuarantineRuleTargetGroupFilterParamResult> QuarantineRuleTargetGroupFilterParams;
+        /// <summary>
+        /// - The type of the filter being used.
+        /// </summary>
         public readonly string QuarantineRuleTargetGroupFilterType;
+        /// <summary>
+        /// - Way to identify the object for which rule is applied.
+        /// </summary>
         public readonly string QuarantineRuleTargetGroupPeerSpecificationType;
 
         [OutputConstructor]

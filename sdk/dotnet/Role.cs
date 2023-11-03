@@ -16,71 +16,93 @@ namespace PiersKarsenbarg.Nutanix
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var test = new Nutanix.Role("test", new()
     ///     {
-    ///         var test = new Nutanix.Role("test", new Nutanix.RoleArgs
+    ///         Description = "DESCRIPTION",
+    ///         PermissionReferenceLists = new[]
     ///         {
-    ///             Description = "DESCRIPTION",
-    ///             PermissionReferenceLists = 
+    ///             new Nutanix.Inputs.RolePermissionReferenceListArgs
     ///             {
-    ///                 new Nutanix.Inputs.RolePermissionReferenceListArgs
-    ///                 {
-    ///                     Kind = "permission",
-    ///                     Uuid = "ID OF PERMISSION",
-    ///                 },
-    ///                 new Nutanix.Inputs.RolePermissionReferenceListArgs
-    ///                 {
-    ///                     Kind = "permission",
-    ///                     Uuid = "ID OF PERMISSION",
-    ///                 },
-    ///                 new Nutanix.Inputs.RolePermissionReferenceListArgs
-    ///                 {
-    ///                     Kind = "permission",
-    ///                     Uuid = "ID OF PERMISSION",
-    ///                 },
+    ///                 Kind = "permission",
+    ///                 Uuid = "ID OF PERMISSION",
     ///             },
-    ///         });
-    ///     }
+    ///             new Nutanix.Inputs.RolePermissionReferenceListArgs
+    ///             {
+    ///                 Kind = "permission",
+    ///                 Uuid = "ID OF PERMISSION",
+    ///             },
+    ///             new Nutanix.Inputs.RolePermissionReferenceListArgs
+    ///             {
+    ///                 Kind = "permission",
+    ///                 Uuid = "ID OF PERMISSION",
+    ///             },
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/role:Role")]
-    public partial class Role : Pulumi.CustomResource
+    public partial class Role : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The version of the API.
-        /// * `state`: - The state of the role.
         /// </summary>
         [Output("apiVersion")]
         public Output<string> ApiVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Categories for the role.
+        /// </summary>
         [Output("categories")]
         public Output<ImmutableArray<Outputs.RoleCategory>> Categories { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The description of the role.
+        /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
+        /// <summary>
+        /// - The role kind metadata.
+        /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Name of the role.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         [Output("ownerReference")]
         public Output<Outputs.RoleOwnerReference> OwnerReference { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) List of permission references.
+        /// </summary>
         [Output("permissionReferenceLists")]
         public Output<ImmutableArray<Outputs.RolePermissionReferenceList>> PermissionReferenceLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The reference to a project.
+        /// </summary>
         [Output("projectReference")]
         public Output<Outputs.RoleProjectReference> ProjectReference { get; private set; } = null!;
 
+        /// <summary>
+        /// - The state of the role.
+        /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
@@ -129,91 +151,139 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class RoleArgs : Pulumi.ResourceArgs
+    public sealed class RoleArgs : global::Pulumi.ResourceArgs
     {
         [Input("categories")]
         private InputList<Inputs.RoleCategoryArgs>? _categories;
+
+        /// <summary>
+        /// - (Optional) Categories for the role.
+        /// </summary>
         public InputList<Inputs.RoleCategoryArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.RoleCategoryArgs>());
             set => _categories = value;
         }
 
+        /// <summary>
+        /// - (Optional) The description of the role.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// - (Optional) Name of the role.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         [Input("ownerReference")]
         public Input<Inputs.RoleOwnerReferenceArgs>? OwnerReference { get; set; }
 
         [Input("permissionReferenceLists", required: true)]
         private InputList<Inputs.RolePermissionReferenceListArgs>? _permissionReferenceLists;
+
+        /// <summary>
+        /// - (Required) List of permission references.
+        /// </summary>
         public InputList<Inputs.RolePermissionReferenceListArgs> PermissionReferenceLists
         {
             get => _permissionReferenceLists ?? (_permissionReferenceLists = new InputList<Inputs.RolePermissionReferenceListArgs>());
             set => _permissionReferenceLists = value;
         }
 
+        /// <summary>
+        /// - (Optional) The reference to a project.
+        /// </summary>
         [Input("projectReference")]
         public Input<Inputs.RoleProjectReferenceArgs>? ProjectReference { get; set; }
 
         public RoleArgs()
         {
         }
+        public static new RoleArgs Empty => new RoleArgs();
     }
 
-    public sealed class RoleState : Pulumi.ResourceArgs
+    public sealed class RoleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The version of the API.
-        /// * `state`: - The state of the role.
         /// </summary>
         [Input("apiVersion")]
         public Input<string>? ApiVersion { get; set; }
 
         [Input("categories")]
         private InputList<Inputs.RoleCategoryGetArgs>? _categories;
+
+        /// <summary>
+        /// - (Optional) Categories for the role.
+        /// </summary>
         public InputList<Inputs.RoleCategoryGetArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.RoleCategoryGetArgs>());
             set => _categories = value;
         }
 
+        /// <summary>
+        /// - (Optional) The description of the role.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         [Input("metadata")]
         private InputMap<string>? _metadata;
+
+        /// <summary>
+        /// - The role kind metadata.
+        /// </summary>
         public InputMap<string> Metadata
         {
             get => _metadata ?? (_metadata = new InputMap<string>());
             set => _metadata = value;
         }
 
+        /// <summary>
+        /// - (Optional) Name of the role.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         [Input("ownerReference")]
         public Input<Inputs.RoleOwnerReferenceGetArgs>? OwnerReference { get; set; }
 
         [Input("permissionReferenceLists")]
         private InputList<Inputs.RolePermissionReferenceListGetArgs>? _permissionReferenceLists;
+
+        /// <summary>
+        /// - (Required) List of permission references.
+        /// </summary>
         public InputList<Inputs.RolePermissionReferenceListGetArgs> PermissionReferenceLists
         {
             get => _permissionReferenceLists ?? (_permissionReferenceLists = new InputList<Inputs.RolePermissionReferenceListGetArgs>());
             set => _permissionReferenceLists = value;
         }
 
+        /// <summary>
+        /// - (Optional) The reference to a project.
+        /// </summary>
         [Input("projectReference")]
         public Input<Inputs.RoleProjectReferenceGetArgs>? ProjectReference { get; set; }
 
+        /// <summary>
+        /// - The state of the role.
+        /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         public RoleState()
         {
         }
+        public static new RoleState Empty => new RoleState();
     }
 }

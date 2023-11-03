@@ -14,32 +14,15 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Describes a List of Karbon private registry entry
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var registry = Output.Create(Nutanix.GetKarbonPrivateRegistries.InvokeAsync(
-        ///         {
-        ///             { "clusterId", "&lt;YOUR-CLUSTER-ID&gt;" },
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetKarbonPrivateRegistriesResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetKarbonPrivateRegistriesResult>("nutanix:index/getKarbonPrivateRegistries:getKarbonPrivateRegistries", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetKarbonPrivateRegistriesResult>("nutanix:index/getKarbonPrivateRegistries:getKarbonPrivateRegistries", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// Describes a List of Karbon private registry entry
+        /// </summary>
+        public static Output<GetKarbonPrivateRegistriesResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetKarbonPrivateRegistriesResult>("nutanix:index/getKarbonPrivateRegistries:getKarbonPrivateRegistries", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

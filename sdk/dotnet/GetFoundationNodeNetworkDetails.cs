@@ -20,31 +20,30 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var networkDetails = Nutanix.GetFoundationNodeNetworkDetails.Invoke(new()
         ///     {
-        ///         var networkDetails = Output.Create(Nutanix.GetFoundationNodeNetworkDetails.InvokeAsync(new Nutanix.GetFoundationNodeNetworkDetailsArgs
+        ///         Ipv6Addresses = new[]
         ///         {
-        ///             Ipv6Addresses = 
-        ///             {
-        ///                 "&lt;ipv6-address-1&gt;",
-        ///                 "&lt;ipv6-address-2&gt;",
-        ///             },
-        ///             Timeout = "30",
-        ///         }));
-        ///     }
+        ///             "&lt;ipv6-address-1&gt;",
+        ///             "&lt;ipv6-address-2&gt;",
+        ///         },
+        ///         Timeout = "30",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFoundationNodeNetworkDetailsResult> InvokeAsync(GetFoundationNodeNetworkDetailsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFoundationNodeNetworkDetailsResult>("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", args ?? new GetFoundationNodeNetworkDetailsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationNodeNetworkDetailsResult>("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", args ?? new GetFoundationNodeNetworkDetailsArgs(), options.WithDefaults());
 
         /// <summary>
         /// Gets hypervisor, CVM &amp; IPMI info of the discovered nodes using their ipv6 address.
@@ -54,68 +53,83 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var networkDetails = Nutanix.GetFoundationNodeNetworkDetails.Invoke(new()
         ///     {
-        ///         var networkDetails = Output.Create(Nutanix.GetFoundationNodeNetworkDetails.InvokeAsync(new Nutanix.GetFoundationNodeNetworkDetailsArgs
+        ///         Ipv6Addresses = new[]
         ///         {
-        ///             Ipv6Addresses = 
-        ///             {
-        ///                 "&lt;ipv6-address-1&gt;",
-        ///                 "&lt;ipv6-address-2&gt;",
-        ///             },
-        ///             Timeout = "30",
-        ///         }));
-        ///     }
+        ///             "&lt;ipv6-address-1&gt;",
+        ///             "&lt;ipv6-address-2&gt;",
+        ///         },
+        ///         Timeout = "30",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFoundationNodeNetworkDetailsResult> Invoke(GetFoundationNodeNetworkDetailsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFoundationNodeNetworkDetailsResult>("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", args ?? new GetFoundationNodeNetworkDetailsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationNodeNetworkDetailsResult>("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", args ?? new GetFoundationNodeNetworkDetailsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetFoundationNodeNetworkDetailsArgs : Pulumi.InvokeArgs
+    public sealed class GetFoundationNodeNetworkDetailsArgs : global::Pulumi.InvokeArgs
     {
         [Input("ipv6Addresses", required: true)]
         private List<string>? _ipv6Addresses;
+
+        /// <summary>
+        /// list of ipv6 addresses
+        /// </summary>
         public List<string> Ipv6Addresses
         {
             get => _ipv6Addresses ?? (_ipv6Addresses = new List<string>());
             set => _ipv6Addresses = value;
         }
 
+        /// <summary>
+        /// timeout in seconds
+        /// </summary>
         [Input("timeout")]
         public string? Timeout { get; set; }
 
         public GetFoundationNodeNetworkDetailsArgs()
         {
         }
+        public static new GetFoundationNodeNetworkDetailsArgs Empty => new GetFoundationNodeNetworkDetailsArgs();
     }
 
-    public sealed class GetFoundationNodeNetworkDetailsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFoundationNodeNetworkDetailsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("ipv6Addresses", required: true)]
         private InputList<string>? _ipv6Addresses;
+
+        /// <summary>
+        /// list of ipv6 addresses
+        /// </summary>
         public InputList<string> Ipv6Addresses
         {
             get => _ipv6Addresses ?? (_ipv6Addresses = new InputList<string>());
             set => _ipv6Addresses = value;
         }
 
+        /// <summary>
+        /// timeout in seconds
+        /// </summary>
         [Input("timeout")]
         public Input<string>? Timeout { get; set; }
 
         public GetFoundationNodeNetworkDetailsInvokeArgs()
         {
         }
+        public static new GetFoundationNodeNetworkDetailsInvokeArgs Empty => new GetFoundationNodeNetworkDetailsInvokeArgs();
     }
 
 
@@ -127,6 +141,9 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Id;
         public readonly ImmutableArray<string> Ipv6Addresses;
+        /// <summary>
+        /// nodes array.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetFoundationNodeNetworkDetailsNodeResult> Nodes;
         public readonly string? Timeout;
 

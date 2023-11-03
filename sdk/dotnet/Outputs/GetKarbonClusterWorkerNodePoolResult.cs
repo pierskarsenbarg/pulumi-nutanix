@@ -14,10 +14,32 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetKarbonClusterWorkerNodePoolResult
     {
+        /// <summary>
+        /// - VM configuration in AHV.
+        /// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
+        /// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
+        /// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
+        /// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
+        /// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetKarbonClusterWorkerNodePoolAhvConfigResult> AhvConfigs;
+        /// <summary>
+        /// - Unique name of the node pool.
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - The version of the node OS image.
+        /// </summary>
         public readonly string NodeOsVersion;
+        /// <summary>
+        /// - List of the deployed nodes in the node pool.
+        /// * `nodes.hostname`: - Hostname of the deployed node.
+        /// * `nodes.ipv4_address`: - IP of the deployed node.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetKarbonClusterWorkerNodePoolNodeResult> Nodes;
+        /// <summary>
+        /// - Number of nodes in the node pool.
+        /// </summary>
         public readonly int NumInstances;
 
         [OutputConstructor]

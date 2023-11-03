@@ -7,12 +7,14 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes a Host
 func GetHost(ctx *pulumi.Context, args *GetHostArgs, opts ...pulumi.InvokeOption) (*GetHostResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetHostResult
 	err := ctx.Invoke("nutanix:index/getHost:getHost", args, &rv, opts...)
 	if err != nil {
@@ -23,61 +25,68 @@ func GetHost(ctx *pulumi.Context, args *GetHostArgs, opts ...pulumi.InvokeOption
 
 // A collection of arguments for invoking getHost.
 type GetHostArgs struct {
+	// - Categories for the image.
 	Categories []GetHostCategory `pulumi:"categories"`
-	HostId     string            `pulumi:"hostId"`
+	// Represents hosts uuid
+	HostId string `pulumi:"hostId"`
 }
 
 // A collection of values returned by getHost.
 type GetHostResult struct {
 	// The API version.
-	// * `gpuDriverVersion`: - Host GPU driver version.
-	// * `failoverCluster`: - Hyper-V failover cluster.
-	// * `ipmi`: - Host IPMI info.
-	// * `cpuModel`: - Host CPU model.
-	// * `hostNicsIdList`: - Host NICs.
-	// * `numCpuSockets`: - Number of CPU sockets.
-	// * `windowsDomain`: - The name of the node to be renamed to during domain-join. If not given,a new name will be automatically assigned.
-	// * `gpuList`: - List of GPUs on the host.
-	// * `serialNumber`: - Node serial number.
-	// * `cpuCapacityHz`: - Host CPU capacity.
-	// * `memoryCapacityMib`: - Host memory capacity in MiB.
-	// * `hostDisksReferenceList`: - The reference to a disk.
-	// * `monitoringState`: - Host monitoring status.
-	// * `hypervisor`: - Host Hypervisor information.
-	// * `hostType`: - Host type.
-	// * `numCpuCores`: - Number of CPU cores on Host.
-	// * `rackableUnitReference`: - The reference to a rackable_unit.
-	// * `controllerVm`: - Host controller vm information.
-	// * `block`: - Host block config info.
-	ApiVersion              string                          `pulumi:"apiVersion"`
-	Block                   map[string]string               `pulumi:"block"`
-	Categories              []GetHostCategory               `pulumi:"categories"`
-	ClusterReference        map[string]string               `pulumi:"clusterReference"`
-	ControllerVm            map[string]string               `pulumi:"controllerVm"`
-	CpuCapacityHz           int                             `pulumi:"cpuCapacityHz"`
-	CpuModel                string                          `pulumi:"cpuModel"`
-	FailoverCluster         map[string]string               `pulumi:"failoverCluster"`
-	GpuDriverVersion        string                          `pulumi:"gpuDriverVersion"`
-	GpuLists                []GetHostGpuList                `pulumi:"gpuLists"`
+	ApiVersion string `pulumi:"apiVersion"`
+	// - Host block config info.
+	Block map[string]string `pulumi:"block"`
+	// - Categories for the image.
+	Categories []GetHostCategory `pulumi:"categories"`
+	// - Reference to a kind. Either one of (kind, uuid) or url needs to be specified.
+	ClusterReference map[string]string `pulumi:"clusterReference"`
+	// - Host controller vm information.
+	ControllerVm map[string]string `pulumi:"controllerVm"`
+	// - Host CPU capacity.
+	CpuCapacityHz int `pulumi:"cpuCapacityHz"`
+	// - Host CPU model.
+	CpuModel string `pulumi:"cpuModel"`
+	// - Hyper-V failover cluster.
+	FailoverCluster map[string]string `pulumi:"failoverCluster"`
+	// - Host GPU driver version.
+	GpuDriverVersion string `pulumi:"gpuDriverVersion"`
+	// - List of GPUs on the host.
+	GpuLists []GetHostGpuList `pulumi:"gpuLists"`
+	// - The reference to a disk.
 	HostDisksReferenceLists []GetHostHostDisksReferenceList `pulumi:"hostDisksReferenceLists"`
 	HostId                  string                          `pulumi:"hostId"`
-	HostNicsIdLists         []string                        `pulumi:"hostNicsIdLists"`
-	HostType                string                          `pulumi:"hostType"`
-	Hypervisor              map[string]string               `pulumi:"hypervisor"`
+	// - Host NICs.
+	HostNicsIdLists []string `pulumi:"hostNicsIdLists"`
+	// - Host type.
+	HostType string `pulumi:"hostType"`
+	// - Host Hypervisor information.
+	Hypervisor map[string]string `pulumi:"hypervisor"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                    string            `pulumi:"id"`
-	Ipmi                  map[string]string `pulumi:"ipmi"`
-	MemoryCapacityMib     int               `pulumi:"memoryCapacityMib"`
-	Metadata              map[string]string `pulumi:"metadata"`
-	MonitoringState       string            `pulumi:"monitoringState"`
-	Name                  string            `pulumi:"name"`
-	NumCpuCores           int               `pulumi:"numCpuCores"`
-	NumCpuSockets         int               `pulumi:"numCpuSockets"`
-	OwnerReference        map[string]string `pulumi:"ownerReference"`
-	ProjectReference      map[string]string `pulumi:"projectReference"`
+	Id string `pulumi:"id"`
+	// - Host IPMI info.
+	Ipmi map[string]string `pulumi:"ipmi"`
+	// - Host memory capacity in MiB.
+	MemoryCapacityMib int               `pulumi:"memoryCapacityMib"`
+	Metadata          map[string]string `pulumi:"metadata"`
+	// - Host monitoring status.
+	MonitoringState string `pulumi:"monitoringState"`
+	// - the name.
+	Name string `pulumi:"name"`
+	// - Number of CPU cores on Host.
+	NumCpuCores int `pulumi:"numCpuCores"`
+	// - Number of CPU sockets.
+	NumCpuSockets int `pulumi:"numCpuSockets"`
+	// - The reference to a user.
+	OwnerReference map[string]string `pulumi:"ownerReference"`
+	// - The reference to a project.
+	ProjectReference map[string]string `pulumi:"projectReference"`
+	// - The reference to a rackable_unit.
 	RackableUnitReference map[string]string `pulumi:"rackableUnitReference"`
-	SerialNumber          string            `pulumi:"serialNumber"`
-	WindowsDomain         map[string]string `pulumi:"windowsDomain"`
+	// - Node serial number.
+	SerialNumber string `pulumi:"serialNumber"`
+	// - The name of the node to be renamed to during domain-join. If not given,a new name will be automatically assigned.
+	WindowsDomain map[string]string `pulumi:"windowsDomain"`
 }
 
 func GetHostOutput(ctx *pulumi.Context, args GetHostOutputArgs, opts ...pulumi.InvokeOption) GetHostResultOutput {
@@ -95,8 +104,10 @@ func GetHostOutput(ctx *pulumi.Context, args GetHostOutputArgs, opts ...pulumi.I
 
 // A collection of arguments for invoking getHost.
 type GetHostOutputArgs struct {
+	// - Categories for the image.
 	Categories GetHostCategoryArrayInput `pulumi:"categories"`
-	HostId     pulumi.StringInput        `pulumi:"hostId"`
+	// Represents hosts uuid
+	HostId pulumi.StringInput `pulumi:"hostId"`
 }
 
 func (GetHostOutputArgs) ElementType() reflect.Type {
@@ -118,66 +129,63 @@ func (o GetHostResultOutput) ToGetHostResultOutputWithContext(ctx context.Contex
 	return o
 }
 
+func (o GetHostResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetHostResult] {
+	return pulumix.Output[GetHostResult]{
+		OutputState: o.OutputState,
+	}
+}
+
 // The API version.
-// * `gpuDriverVersion`: - Host GPU driver version.
-// * `failoverCluster`: - Hyper-V failover cluster.
-// * `ipmi`: - Host IPMI info.
-// * `cpuModel`: - Host CPU model.
-// * `hostNicsIdList`: - Host NICs.
-// * `numCpuSockets`: - Number of CPU sockets.
-// * `windowsDomain`: - The name of the node to be renamed to during domain-join. If not given,a new name will be automatically assigned.
-// * `gpuList`: - List of GPUs on the host.
-// * `serialNumber`: - Node serial number.
-// * `cpuCapacityHz`: - Host CPU capacity.
-// * `memoryCapacityMib`: - Host memory capacity in MiB.
-// * `hostDisksReferenceList`: - The reference to a disk.
-// * `monitoringState`: - Host monitoring status.
-// * `hypervisor`: - Host Hypervisor information.
-// * `hostType`: - Host type.
-// * `numCpuCores`: - Number of CPU cores on Host.
-// * `rackableUnitReference`: - The reference to a rackable_unit.
-// * `controllerVm`: - Host controller vm information.
-// * `block`: - Host block config info.
 func (o GetHostResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// - Host block config info.
 func (o GetHostResultOutput) Block() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetHostResult) map[string]string { return v.Block }).(pulumi.StringMapOutput)
 }
 
+// - Categories for the image.
 func (o GetHostResultOutput) Categories() GetHostCategoryArrayOutput {
 	return o.ApplyT(func(v GetHostResult) []GetHostCategory { return v.Categories }).(GetHostCategoryArrayOutput)
 }
 
+// - Reference to a kind. Either one of (kind, uuid) or url needs to be specified.
 func (o GetHostResultOutput) ClusterReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetHostResult) map[string]string { return v.ClusterReference }).(pulumi.StringMapOutput)
 }
 
+// - Host controller vm information.
 func (o GetHostResultOutput) ControllerVm() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetHostResult) map[string]string { return v.ControllerVm }).(pulumi.StringMapOutput)
 }
 
+// - Host CPU capacity.
 func (o GetHostResultOutput) CpuCapacityHz() pulumi.IntOutput {
 	return o.ApplyT(func(v GetHostResult) int { return v.CpuCapacityHz }).(pulumi.IntOutput)
 }
 
+// - Host CPU model.
 func (o GetHostResultOutput) CpuModel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostResult) string { return v.CpuModel }).(pulumi.StringOutput)
 }
 
+// - Hyper-V failover cluster.
 func (o GetHostResultOutput) FailoverCluster() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetHostResult) map[string]string { return v.FailoverCluster }).(pulumi.StringMapOutput)
 }
 
+// - Host GPU driver version.
 func (o GetHostResultOutput) GpuDriverVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostResult) string { return v.GpuDriverVersion }).(pulumi.StringOutput)
 }
 
+// - List of GPUs on the host.
 func (o GetHostResultOutput) GpuLists() GetHostGpuListArrayOutput {
 	return o.ApplyT(func(v GetHostResult) []GetHostGpuList { return v.GpuLists }).(GetHostGpuListArrayOutput)
 }
 
+// - The reference to a disk.
 func (o GetHostResultOutput) HostDisksReferenceLists() GetHostHostDisksReferenceListArrayOutput {
 	return o.ApplyT(func(v GetHostResult) []GetHostHostDisksReferenceList { return v.HostDisksReferenceLists }).(GetHostHostDisksReferenceListArrayOutput)
 }
@@ -186,14 +194,17 @@ func (o GetHostResultOutput) HostId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostResult) string { return v.HostId }).(pulumi.StringOutput)
 }
 
+// - Host NICs.
 func (o GetHostResultOutput) HostNicsIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetHostResult) []string { return v.HostNicsIdLists }).(pulumi.StringArrayOutput)
 }
 
+// - Host type.
 func (o GetHostResultOutput) HostType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostResult) string { return v.HostType }).(pulumi.StringOutput)
 }
 
+// - Host Hypervisor information.
 func (o GetHostResultOutput) Hypervisor() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetHostResult) map[string]string { return v.Hypervisor }).(pulumi.StringMapOutput)
 }
@@ -203,10 +214,12 @@ func (o GetHostResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - Host IPMI info.
 func (o GetHostResultOutput) Ipmi() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetHostResult) map[string]string { return v.Ipmi }).(pulumi.StringMapOutput)
 }
 
+// - Host memory capacity in MiB.
 func (o GetHostResultOutput) MemoryCapacityMib() pulumi.IntOutput {
 	return o.ApplyT(func(v GetHostResult) int { return v.MemoryCapacityMib }).(pulumi.IntOutput)
 }
@@ -215,38 +228,47 @@ func (o GetHostResultOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetHostResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
+// - Host monitoring status.
 func (o GetHostResultOutput) MonitoringState() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostResult) string { return v.MonitoringState }).(pulumi.StringOutput)
 }
 
+// - the name.
 func (o GetHostResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// - Number of CPU cores on Host.
 func (o GetHostResultOutput) NumCpuCores() pulumi.IntOutput {
 	return o.ApplyT(func(v GetHostResult) int { return v.NumCpuCores }).(pulumi.IntOutput)
 }
 
+// - Number of CPU sockets.
 func (o GetHostResultOutput) NumCpuSockets() pulumi.IntOutput {
 	return o.ApplyT(func(v GetHostResult) int { return v.NumCpuSockets }).(pulumi.IntOutput)
 }
 
+// - The reference to a user.
 func (o GetHostResultOutput) OwnerReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetHostResult) map[string]string { return v.OwnerReference }).(pulumi.StringMapOutput)
 }
 
+// - The reference to a project.
 func (o GetHostResultOutput) ProjectReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetHostResult) map[string]string { return v.ProjectReference }).(pulumi.StringMapOutput)
 }
 
+// - The reference to a rackable_unit.
 func (o GetHostResultOutput) RackableUnitReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetHostResult) map[string]string { return v.RackableUnitReference }).(pulumi.StringMapOutput)
 }
 
+// - Node serial number.
 func (o GetHostResultOutput) SerialNumber() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostResult) string { return v.SerialNumber }).(pulumi.StringOutput)
 }
 
+// - The name of the node to be renamed to during domain-join. If not given,a new name will be automatically assigned.
 func (o GetHostResultOutput) WindowsDomain() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetHostResult) map[string]string { return v.WindowsDomain }).(pulumi.StringMapOutput)
 }

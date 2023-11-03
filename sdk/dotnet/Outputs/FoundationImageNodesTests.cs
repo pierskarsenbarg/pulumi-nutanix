@@ -15,11 +15,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class FoundationImageNodesTests
     {
         /// <summary>
-        /// : - Whether NCC checks should run.
+        /// - Whether NCC checks should run.
         /// </summary>
         public readonly bool? RunNcc;
         /// <summary>
-        /// : - Whether system checks should run.
+        /// - Whether system checks should run.
         /// </summary>
         public readonly bool? RunSyscheck;
 

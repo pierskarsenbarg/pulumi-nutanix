@@ -11,22 +11,32 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class VirtualMachineDiskListStorageConfigStorageContainerReferenceArgs : Pulumi.ResourceArgs
+    public sealed class VirtualMachineDiskListStorageConfigStorageContainerReferenceArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - The kind name (Default value: project)(Required).
+        /// </summary>
         [Input("kind")]
         public Input<string>? Kind { get; set; }
 
+        /// <summary>
+        /// - (Required) The name for the vm.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("url")]
         public Input<string>? Url { get; set; }
 
+        /// <summary>
+        /// - (Optional) The device ID which is used to uniquely identify this particular disk.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 
         public VirtualMachineDiskListStorageConfigStorageContainerReferenceArgs()
         {
         }
+        public static new VirtualMachineDiskListStorageConfigStorageContainerReferenceArgs Empty => new VirtualMachineDiskListStorageConfigStorageContainerReferenceArgs();
     }
 }

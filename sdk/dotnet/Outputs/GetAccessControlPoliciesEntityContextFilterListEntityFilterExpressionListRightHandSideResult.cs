@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetAccessControlPoliciesEntityContextFilterListEntityFilterExpressionListRightHandSideResult
     {
+        /// <summary>
+        /// - The category values represented as a dictionary of key &gt; list of values.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAccessControlPoliciesEntityContextFilterListEntityFilterExpressionListRightHandSideCategoryResult> Categories;
+        /// <summary>
+        /// -  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+        /// </summary>
         public readonly string Collection;
+        /// <summary>
+        /// - The explicit list of UUIDs for the given kind.
+        /// </summary>
         public readonly ImmutableArray<string> UuidLists;
 
         [OutputConstructor]

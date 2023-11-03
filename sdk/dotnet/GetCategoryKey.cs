@@ -16,34 +16,42 @@ namespace PiersKarsenbarg.Nutanix
         /// Describe a Nutanix Category Key and its values (if it has them).
         /// </summary>
         public static Task<GetCategoryKeyResult> InvokeAsync(GetCategoryKeyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCategoryKeyResult>("nutanix:index/getCategoryKey:getCategoryKey", args ?? new GetCategoryKeyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCategoryKeyResult>("nutanix:index/getCategoryKey:getCategoryKey", args ?? new GetCategoryKeyArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describe a Nutanix Category Key and its values (if it has them).
         /// </summary>
         public static Output<GetCategoryKeyResult> Invoke(GetCategoryKeyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCategoryKeyResult>("nutanix:index/getCategoryKey:getCategoryKey", args ?? new GetCategoryKeyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCategoryKeyResult>("nutanix:index/getCategoryKey:getCategoryKey", args ?? new GetCategoryKeyInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetCategoryKeyArgs : Pulumi.InvokeArgs
+    public sealed class GetCategoryKeyArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) The name for the category key.
+        /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 
         public GetCategoryKeyArgs()
         {
         }
+        public static new GetCategoryKeyArgs Empty => new GetCategoryKeyArgs();
     }
 
-    public sealed class GetCategoryKeyInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetCategoryKeyInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - (Required) The name for the category key.
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         public GetCategoryKeyInvokeArgs()
         {
         }
+        public static new GetCategoryKeyInvokeArgs Empty => new GetCategoryKeyInvokeArgs();
     }
 
 
@@ -52,16 +60,24 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// The version of the API.
-        /// * `values`: - A list of the values from this category key (if it has them).
         /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// - A description for category key.
+        /// </summary>
         public readonly string Description;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
         public readonly string Name;
+        /// <summary>
+        /// - Specifying whether its a system defined category.
+        /// </summary>
         public readonly bool SystemDefined;
+        /// <summary>
+        /// - A list of the values from this category key (if it has them).
+        /// </summary>
         public readonly ImmutableArray<string> Values;
 
         [OutputConstructor]

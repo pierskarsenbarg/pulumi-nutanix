@@ -7,35 +7,48 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type FoundationCentralImageCluster struct {
 	pulumi.CustomResourceState
 
-	AosPackageSha256sum    pulumi.StringOutput                                          `pulumi:"aosPackageSha256sum"`
-	AosPackageUrl          pulumi.StringOutput                                          `pulumi:"aosPackageUrl"`
-	Archived               pulumi.BoolOutput                                            `pulumi:"archived"`
-	ClusterExternalIp      pulumi.StringOutput                                          `pulumi:"clusterExternalIp"`
-	ClusterName            pulumi.StringOutput                                          `pulumi:"clusterName"`
-	ClusterSize            pulumi.IntOutput                                             `pulumi:"clusterSize"`
-	ClusterStatus          FoundationCentralImageClusterClusterStatusOutput             `pulumi:"clusterStatus"`
+	// Sha256sum of AOS package.
+	AosPackageSha256sum pulumi.StringOutput `pulumi:"aosPackageSha256sum"`
+	// URL to download AOS package. Required only if imaging is needed.
+	AosPackageUrl pulumi.StringOutput `pulumi:"aosPackageUrl"`
+	Archived      pulumi.BoolOutput   `pulumi:"archived"`
+	// External management ip of the cluster.
+	ClusterExternalIp pulumi.StringOutput `pulumi:"clusterExternalIp"`
+	// Name of the cluster.
+	ClusterName pulumi.StringOutput `pulumi:"clusterName"`
+	// Number of nodes in the cluster.
+	ClusterSize   pulumi.IntOutput                                 `pulumi:"clusterSize"`
+	ClusterStatus FoundationCentralImageClusterClusterStatusOutput `pulumi:"clusterStatus"`
+	// Common network settings across the nodes in the cluster.
 	CommonNetworkSettings  FoundationCentralImageClusterCommonNetworkSettingsOutput     `pulumi:"commonNetworkSettings"`
 	CreatedTimestamp       pulumi.StringOutput                                          `pulumi:"createdTimestamp"`
 	CurrentTime            pulumi.StringOutput                                          `pulumi:"currentTime"`
 	Destroyed              pulumi.BoolOutput                                            `pulumi:"destroyed"`
 	FoundationInitConfigs  FoundationCentralImageClusterFoundationInitConfigArrayOutput `pulumi:"foundationInitConfigs"`
 	FoundationInitNodeUuid pulumi.StringOutput                                          `pulumi:"foundationInitNodeUuid"`
-	HypervisorIsoDetails   FoundationCentralImageClusterHypervisorIsoDetailsOutput      `pulumi:"hypervisorIsoDetails"`
-	ImageClusterUuid       pulumi.StringOutput                                          `pulumi:"imageClusterUuid"`
-	ImagedClusterUuid      pulumi.StringOutput                                          `pulumi:"imagedClusterUuid"`
-	ImagedNodeUuidLists    pulumi.StringArrayOutput                                     `pulumi:"imagedNodeUuidLists"`
-	NodeLists              FoundationCentralImageClusterNodeListArrayOutput             `pulumi:"nodeLists"`
-	RedundancyFactor       pulumi.IntOutput                                             `pulumi:"redundancyFactor"`
-	SkipClusterCreation    pulumi.BoolPtrOutput                                         `pulumi:"skipClusterCreation"`
-	StorageNodeCount       pulumi.IntOutput                                             `pulumi:"storageNodeCount"`
-	Timezone               pulumi.StringOutput                                          `pulumi:"timezone"`
-	WorkflowType           pulumi.StringOutput                                          `pulumi:"workflowType"`
+	// Details of the hypervisor iso.
+	HypervisorIsoDetails FoundationCentralImageClusterHypervisorIsoDetailsOutput `pulumi:"hypervisorIsoDetails"`
+	ImageClusterUuid     pulumi.StringOutput                                     `pulumi:"imageClusterUuid"`
+	// Unique id of the cluster.
+	ImagedClusterUuid   pulumi.StringOutput                              `pulumi:"imagedClusterUuid"`
+	ImagedNodeUuidLists pulumi.StringArrayOutput                         `pulumi:"imagedNodeUuidLists"`
+	NodeLists           FoundationCentralImageClusterNodeListArrayOutput `pulumi:"nodeLists"`
+	// Redundancy factor of the cluster.
+	RedundancyFactor    pulumi.IntOutput     `pulumi:"redundancyFactor"`
+	SkipClusterCreation pulumi.BoolPtrOutput `pulumi:"skipClusterCreation"`
+	// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+	StorageNodeCount pulumi.IntOutput `pulumi:"storageNodeCount"`
+	// Timezone to be set on the cluster.
+	Timezone     pulumi.StringOutput `pulumi:"timezone"`
+	WorkflowType pulumi.StringOutput `pulumi:"workflowType"`
 }
 
 // NewFoundationCentralImageCluster registers a new resource with the given unique name, arguments, and options.
@@ -45,7 +58,7 @@ func NewFoundationCentralImageCluster(ctx *pulumi.Context,
 		args = &FoundationCentralImageClusterArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource FoundationCentralImageCluster
 	err := ctx.RegisterResource("nutanix:index/foundationCentralImageCluster:FoundationCentralImageCluster", name, args, &resource, opts...)
 	if err != nil {
@@ -68,55 +81,77 @@ func GetFoundationCentralImageCluster(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering FoundationCentralImageCluster resources.
 type foundationCentralImageClusterState struct {
-	AosPackageSha256sum    *string                                             `pulumi:"aosPackageSha256sum"`
-	AosPackageUrl          *string                                             `pulumi:"aosPackageUrl"`
-	Archived               *bool                                               `pulumi:"archived"`
-	ClusterExternalIp      *string                                             `pulumi:"clusterExternalIp"`
-	ClusterName            *string                                             `pulumi:"clusterName"`
-	ClusterSize            *int                                                `pulumi:"clusterSize"`
-	ClusterStatus          *FoundationCentralImageClusterClusterStatus         `pulumi:"clusterStatus"`
+	// Sha256sum of AOS package.
+	AosPackageSha256sum *string `pulumi:"aosPackageSha256sum"`
+	// URL to download AOS package. Required only if imaging is needed.
+	AosPackageUrl *string `pulumi:"aosPackageUrl"`
+	Archived      *bool   `pulumi:"archived"`
+	// External management ip of the cluster.
+	ClusterExternalIp *string `pulumi:"clusterExternalIp"`
+	// Name of the cluster.
+	ClusterName *string `pulumi:"clusterName"`
+	// Number of nodes in the cluster.
+	ClusterSize   *int                                        `pulumi:"clusterSize"`
+	ClusterStatus *FoundationCentralImageClusterClusterStatus `pulumi:"clusterStatus"`
+	// Common network settings across the nodes in the cluster.
 	CommonNetworkSettings  *FoundationCentralImageClusterCommonNetworkSettings `pulumi:"commonNetworkSettings"`
 	CreatedTimestamp       *string                                             `pulumi:"createdTimestamp"`
 	CurrentTime            *string                                             `pulumi:"currentTime"`
 	Destroyed              *bool                                               `pulumi:"destroyed"`
 	FoundationInitConfigs  []FoundationCentralImageClusterFoundationInitConfig `pulumi:"foundationInitConfigs"`
 	FoundationInitNodeUuid *string                                             `pulumi:"foundationInitNodeUuid"`
-	HypervisorIsoDetails   *FoundationCentralImageClusterHypervisorIsoDetails  `pulumi:"hypervisorIsoDetails"`
-	ImageClusterUuid       *string                                             `pulumi:"imageClusterUuid"`
-	ImagedClusterUuid      *string                                             `pulumi:"imagedClusterUuid"`
-	ImagedNodeUuidLists    []string                                            `pulumi:"imagedNodeUuidLists"`
-	NodeLists              []FoundationCentralImageClusterNodeList             `pulumi:"nodeLists"`
-	RedundancyFactor       *int                                                `pulumi:"redundancyFactor"`
-	SkipClusterCreation    *bool                                               `pulumi:"skipClusterCreation"`
-	StorageNodeCount       *int                                                `pulumi:"storageNodeCount"`
-	Timezone               *string                                             `pulumi:"timezone"`
-	WorkflowType           *string                                             `pulumi:"workflowType"`
+	// Details of the hypervisor iso.
+	HypervisorIsoDetails *FoundationCentralImageClusterHypervisorIsoDetails `pulumi:"hypervisorIsoDetails"`
+	ImageClusterUuid     *string                                            `pulumi:"imageClusterUuid"`
+	// Unique id of the cluster.
+	ImagedClusterUuid   *string                                 `pulumi:"imagedClusterUuid"`
+	ImagedNodeUuidLists []string                                `pulumi:"imagedNodeUuidLists"`
+	NodeLists           []FoundationCentralImageClusterNodeList `pulumi:"nodeLists"`
+	// Redundancy factor of the cluster.
+	RedundancyFactor    *int  `pulumi:"redundancyFactor"`
+	SkipClusterCreation *bool `pulumi:"skipClusterCreation"`
+	// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+	StorageNodeCount *int `pulumi:"storageNodeCount"`
+	// Timezone to be set on the cluster.
+	Timezone     *string `pulumi:"timezone"`
+	WorkflowType *string `pulumi:"workflowType"`
 }
 
 type FoundationCentralImageClusterState struct {
-	AosPackageSha256sum    pulumi.StringPtrInput
-	AosPackageUrl          pulumi.StringPtrInput
-	Archived               pulumi.BoolPtrInput
-	ClusterExternalIp      pulumi.StringPtrInput
-	ClusterName            pulumi.StringPtrInput
-	ClusterSize            pulumi.IntPtrInput
-	ClusterStatus          FoundationCentralImageClusterClusterStatusPtrInput
+	// Sha256sum of AOS package.
+	AosPackageSha256sum pulumi.StringPtrInput
+	// URL to download AOS package. Required only if imaging is needed.
+	AosPackageUrl pulumi.StringPtrInput
+	Archived      pulumi.BoolPtrInput
+	// External management ip of the cluster.
+	ClusterExternalIp pulumi.StringPtrInput
+	// Name of the cluster.
+	ClusterName pulumi.StringPtrInput
+	// Number of nodes in the cluster.
+	ClusterSize   pulumi.IntPtrInput
+	ClusterStatus FoundationCentralImageClusterClusterStatusPtrInput
+	// Common network settings across the nodes in the cluster.
 	CommonNetworkSettings  FoundationCentralImageClusterCommonNetworkSettingsPtrInput
 	CreatedTimestamp       pulumi.StringPtrInput
 	CurrentTime            pulumi.StringPtrInput
 	Destroyed              pulumi.BoolPtrInput
 	FoundationInitConfigs  FoundationCentralImageClusterFoundationInitConfigArrayInput
 	FoundationInitNodeUuid pulumi.StringPtrInput
-	HypervisorIsoDetails   FoundationCentralImageClusterHypervisorIsoDetailsPtrInput
-	ImageClusterUuid       pulumi.StringPtrInput
-	ImagedClusterUuid      pulumi.StringPtrInput
-	ImagedNodeUuidLists    pulumi.StringArrayInput
-	NodeLists              FoundationCentralImageClusterNodeListArrayInput
-	RedundancyFactor       pulumi.IntPtrInput
-	SkipClusterCreation    pulumi.BoolPtrInput
-	StorageNodeCount       pulumi.IntPtrInput
-	Timezone               pulumi.StringPtrInput
-	WorkflowType           pulumi.StringPtrInput
+	// Details of the hypervisor iso.
+	HypervisorIsoDetails FoundationCentralImageClusterHypervisorIsoDetailsPtrInput
+	ImageClusterUuid     pulumi.StringPtrInput
+	// Unique id of the cluster.
+	ImagedClusterUuid   pulumi.StringPtrInput
+	ImagedNodeUuidLists pulumi.StringArrayInput
+	NodeLists           FoundationCentralImageClusterNodeListArrayInput
+	// Redundancy factor of the cluster.
+	RedundancyFactor    pulumi.IntPtrInput
+	SkipClusterCreation pulumi.BoolPtrInput
+	// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+	StorageNodeCount pulumi.IntPtrInput
+	// Timezone to be set on the cluster.
+	Timezone     pulumi.StringPtrInput
+	WorkflowType pulumi.StringPtrInput
 }
 
 func (FoundationCentralImageClusterState) ElementType() reflect.Type {
@@ -124,38 +159,58 @@ func (FoundationCentralImageClusterState) ElementType() reflect.Type {
 }
 
 type foundationCentralImageClusterArgs struct {
-	AosPackageSha256sum   *string                                             `pulumi:"aosPackageSha256sum"`
-	AosPackageUrl         *string                                             `pulumi:"aosPackageUrl"`
-	ClusterExternalIp     *string                                             `pulumi:"clusterExternalIp"`
-	ClusterName           *string                                             `pulumi:"clusterName"`
-	ClusterSize           *int                                                `pulumi:"clusterSize"`
-	ClusterStatus         *FoundationCentralImageClusterClusterStatus         `pulumi:"clusterStatus"`
+	// Sha256sum of AOS package.
+	AosPackageSha256sum *string `pulumi:"aosPackageSha256sum"`
+	// URL to download AOS package. Required only if imaging is needed.
+	AosPackageUrl *string `pulumi:"aosPackageUrl"`
+	// External management ip of the cluster.
+	ClusterExternalIp *string `pulumi:"clusterExternalIp"`
+	// Name of the cluster.
+	ClusterName *string `pulumi:"clusterName"`
+	// Number of nodes in the cluster.
+	ClusterSize   *int                                        `pulumi:"clusterSize"`
+	ClusterStatus *FoundationCentralImageClusterClusterStatus `pulumi:"clusterStatus"`
+	// Common network settings across the nodes in the cluster.
 	CommonNetworkSettings *FoundationCentralImageClusterCommonNetworkSettings `pulumi:"commonNetworkSettings"`
-	HypervisorIsoDetails  *FoundationCentralImageClusterHypervisorIsoDetails  `pulumi:"hypervisorIsoDetails"`
-	ImageClusterUuid      *string                                             `pulumi:"imageClusterUuid"`
-	NodeLists             []FoundationCentralImageClusterNodeList             `pulumi:"nodeLists"`
-	RedundancyFactor      *int                                                `pulumi:"redundancyFactor"`
-	SkipClusterCreation   *bool                                               `pulumi:"skipClusterCreation"`
-	StorageNodeCount      *int                                                `pulumi:"storageNodeCount"`
-	Timezone              *string                                             `pulumi:"timezone"`
+	// Details of the hypervisor iso.
+	HypervisorIsoDetails *FoundationCentralImageClusterHypervisorIsoDetails `pulumi:"hypervisorIsoDetails"`
+	ImageClusterUuid     *string                                            `pulumi:"imageClusterUuid"`
+	NodeLists            []FoundationCentralImageClusterNodeList            `pulumi:"nodeLists"`
+	// Redundancy factor of the cluster.
+	RedundancyFactor    *int  `pulumi:"redundancyFactor"`
+	SkipClusterCreation *bool `pulumi:"skipClusterCreation"`
+	// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+	StorageNodeCount *int `pulumi:"storageNodeCount"`
+	// Timezone to be set on the cluster.
+	Timezone *string `pulumi:"timezone"`
 }
 
 // The set of arguments for constructing a FoundationCentralImageCluster resource.
 type FoundationCentralImageClusterArgs struct {
-	AosPackageSha256sum   pulumi.StringPtrInput
-	AosPackageUrl         pulumi.StringPtrInput
-	ClusterExternalIp     pulumi.StringPtrInput
-	ClusterName           pulumi.StringPtrInput
-	ClusterSize           pulumi.IntPtrInput
-	ClusterStatus         FoundationCentralImageClusterClusterStatusPtrInput
+	// Sha256sum of AOS package.
+	AosPackageSha256sum pulumi.StringPtrInput
+	// URL to download AOS package. Required only if imaging is needed.
+	AosPackageUrl pulumi.StringPtrInput
+	// External management ip of the cluster.
+	ClusterExternalIp pulumi.StringPtrInput
+	// Name of the cluster.
+	ClusterName pulumi.StringPtrInput
+	// Number of nodes in the cluster.
+	ClusterSize   pulumi.IntPtrInput
+	ClusterStatus FoundationCentralImageClusterClusterStatusPtrInput
+	// Common network settings across the nodes in the cluster.
 	CommonNetworkSettings FoundationCentralImageClusterCommonNetworkSettingsPtrInput
-	HypervisorIsoDetails  FoundationCentralImageClusterHypervisorIsoDetailsPtrInput
-	ImageClusterUuid      pulumi.StringPtrInput
-	NodeLists             FoundationCentralImageClusterNodeListArrayInput
-	RedundancyFactor      pulumi.IntPtrInput
-	SkipClusterCreation   pulumi.BoolPtrInput
-	StorageNodeCount      pulumi.IntPtrInput
-	Timezone              pulumi.StringPtrInput
+	// Details of the hypervisor iso.
+	HypervisorIsoDetails FoundationCentralImageClusterHypervisorIsoDetailsPtrInput
+	ImageClusterUuid     pulumi.StringPtrInput
+	NodeLists            FoundationCentralImageClusterNodeListArrayInput
+	// Redundancy factor of the cluster.
+	RedundancyFactor    pulumi.IntPtrInput
+	SkipClusterCreation pulumi.BoolPtrInput
+	// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+	StorageNodeCount pulumi.IntPtrInput
+	// Timezone to be set on the cluster.
+	Timezone pulumi.StringPtrInput
 }
 
 func (FoundationCentralImageClusterArgs) ElementType() reflect.Type {
@@ -181,10 +236,16 @@ func (i *FoundationCentralImageCluster) ToFoundationCentralImageClusterOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationCentralImageClusterOutput)
 }
 
+func (i *FoundationCentralImageCluster) ToOutput(ctx context.Context) pulumix.Output[*FoundationCentralImageCluster] {
+	return pulumix.Output[*FoundationCentralImageCluster]{
+		OutputState: i.ToFoundationCentralImageClusterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // FoundationCentralImageClusterArrayInput is an input type that accepts FoundationCentralImageClusterArray and FoundationCentralImageClusterArrayOutput values.
 // You can construct a concrete instance of `FoundationCentralImageClusterArrayInput` via:
 //
-//          FoundationCentralImageClusterArray{ FoundationCentralImageClusterArgs{...} }
+//	FoundationCentralImageClusterArray{ FoundationCentralImageClusterArgs{...} }
 type FoundationCentralImageClusterArrayInput interface {
 	pulumi.Input
 
@@ -206,10 +267,16 @@ func (i FoundationCentralImageClusterArray) ToFoundationCentralImageClusterArray
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationCentralImageClusterArrayOutput)
 }
 
+func (i FoundationCentralImageClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]*FoundationCentralImageCluster] {
+	return pulumix.Output[[]*FoundationCentralImageCluster]{
+		OutputState: i.ToFoundationCentralImageClusterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // FoundationCentralImageClusterMapInput is an input type that accepts FoundationCentralImageClusterMap and FoundationCentralImageClusterMapOutput values.
 // You can construct a concrete instance of `FoundationCentralImageClusterMapInput` via:
 //
-//          FoundationCentralImageClusterMap{ "key": FoundationCentralImageClusterArgs{...} }
+//	FoundationCentralImageClusterMap{ "key": FoundationCentralImageClusterArgs{...} }
 type FoundationCentralImageClusterMapInput interface {
 	pulumi.Input
 
@@ -231,6 +298,12 @@ func (i FoundationCentralImageClusterMap) ToFoundationCentralImageClusterMapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationCentralImageClusterMapOutput)
 }
 
+func (i FoundationCentralImageClusterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FoundationCentralImageCluster] {
+	return pulumix.Output[map[string]*FoundationCentralImageCluster]{
+		OutputState: i.ToFoundationCentralImageClusterMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type FoundationCentralImageClusterOutput struct{ *pulumi.OutputState }
 
 func (FoundationCentralImageClusterOutput) ElementType() reflect.Type {
@@ -245,10 +318,18 @@ func (o FoundationCentralImageClusterOutput) ToFoundationCentralImageClusterOutp
 	return o
 }
 
+func (o FoundationCentralImageClusterOutput) ToOutput(ctx context.Context) pulumix.Output[*FoundationCentralImageCluster] {
+	return pulumix.Output[*FoundationCentralImageCluster]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Sha256sum of AOS package.
 func (o FoundationCentralImageClusterOutput) AosPackageSha256sum() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.StringOutput { return v.AosPackageSha256sum }).(pulumi.StringOutput)
 }
 
+// URL to download AOS package. Required only if imaging is needed.
 func (o FoundationCentralImageClusterOutput) AosPackageUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.StringOutput { return v.AosPackageUrl }).(pulumi.StringOutput)
 }
@@ -257,14 +338,17 @@ func (o FoundationCentralImageClusterOutput) Archived() pulumi.BoolOutput {
 	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.BoolOutput { return v.Archived }).(pulumi.BoolOutput)
 }
 
+// External management ip of the cluster.
 func (o FoundationCentralImageClusterOutput) ClusterExternalIp() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.StringOutput { return v.ClusterExternalIp }).(pulumi.StringOutput)
 }
 
+// Name of the cluster.
 func (o FoundationCentralImageClusterOutput) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.StringOutput { return v.ClusterName }).(pulumi.StringOutput)
 }
 
+// Number of nodes in the cluster.
 func (o FoundationCentralImageClusterOutput) ClusterSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.IntOutput { return v.ClusterSize }).(pulumi.IntOutput)
 }
@@ -275,6 +359,7 @@ func (o FoundationCentralImageClusterOutput) ClusterStatus() FoundationCentralIm
 	}).(FoundationCentralImageClusterClusterStatusOutput)
 }
 
+// Common network settings across the nodes in the cluster.
 func (o FoundationCentralImageClusterOutput) CommonNetworkSettings() FoundationCentralImageClusterCommonNetworkSettingsOutput {
 	return o.ApplyT(func(v *FoundationCentralImageCluster) FoundationCentralImageClusterCommonNetworkSettingsOutput {
 		return v.CommonNetworkSettings
@@ -303,6 +388,7 @@ func (o FoundationCentralImageClusterOutput) FoundationInitNodeUuid() pulumi.Str
 	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.StringOutput { return v.FoundationInitNodeUuid }).(pulumi.StringOutput)
 }
 
+// Details of the hypervisor iso.
 func (o FoundationCentralImageClusterOutput) HypervisorIsoDetails() FoundationCentralImageClusterHypervisorIsoDetailsOutput {
 	return o.ApplyT(func(v *FoundationCentralImageCluster) FoundationCentralImageClusterHypervisorIsoDetailsOutput {
 		return v.HypervisorIsoDetails
@@ -313,6 +399,7 @@ func (o FoundationCentralImageClusterOutput) ImageClusterUuid() pulumi.StringOut
 	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.StringOutput { return v.ImageClusterUuid }).(pulumi.StringOutput)
 }
 
+// Unique id of the cluster.
 func (o FoundationCentralImageClusterOutput) ImagedClusterUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.StringOutput { return v.ImagedClusterUuid }).(pulumi.StringOutput)
 }
@@ -327,6 +414,7 @@ func (o FoundationCentralImageClusterOutput) NodeLists() FoundationCentralImageC
 	}).(FoundationCentralImageClusterNodeListArrayOutput)
 }
 
+// Redundancy factor of the cluster.
 func (o FoundationCentralImageClusterOutput) RedundancyFactor() pulumi.IntOutput {
 	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.IntOutput { return v.RedundancyFactor }).(pulumi.IntOutput)
 }
@@ -335,10 +423,12 @@ func (o FoundationCentralImageClusterOutput) SkipClusterCreation() pulumi.BoolPt
 	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.BoolPtrOutput { return v.SkipClusterCreation }).(pulumi.BoolPtrOutput)
 }
 
+// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
 func (o FoundationCentralImageClusterOutput) StorageNodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.IntOutput { return v.StorageNodeCount }).(pulumi.IntOutput)
 }
 
+// Timezone to be set on the cluster.
 func (o FoundationCentralImageClusterOutput) Timezone() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.StringOutput { return v.Timezone }).(pulumi.StringOutput)
 }
@@ -361,6 +451,12 @@ func (o FoundationCentralImageClusterArrayOutput) ToFoundationCentralImageCluste
 	return o
 }
 
+func (o FoundationCentralImageClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FoundationCentralImageCluster] {
+	return pulumix.Output[[]*FoundationCentralImageCluster]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o FoundationCentralImageClusterArrayOutput) Index(i pulumi.IntInput) FoundationCentralImageClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *FoundationCentralImageCluster {
 		return vs[0].([]*FoundationCentralImageCluster)[vs[1].(int)]
@@ -379,6 +475,12 @@ func (o FoundationCentralImageClusterMapOutput) ToFoundationCentralImageClusterM
 
 func (o FoundationCentralImageClusterMapOutput) ToFoundationCentralImageClusterMapOutputWithContext(ctx context.Context) FoundationCentralImageClusterMapOutput {
 	return o
+}
+
+func (o FoundationCentralImageClusterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FoundationCentralImageCluster] {
+	return pulumix.Output[map[string]*FoundationCentralImageCluster]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o FoundationCentralImageClusterMapOutput) MapIndex(k pulumi.StringInput) FoundationCentralImageClusterOutput {

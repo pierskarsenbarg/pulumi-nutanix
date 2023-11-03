@@ -14,32 +14,57 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetUsersEntityResult
     {
+        /// <summary>
+        /// - List of ACP references. See #reference for more details.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUsersEntityAccessControlPolicyReferenceListResult> AccessControlPolicyReferenceLists;
         /// <summary>
         /// The version of the API.
-        /// * `state`: - The state of the entity.
-        /// * `name`: - The name of the user.
-        /// * `user_type`: - The name of the user.
-        /// * `display_name`: - The display name of the user (common name) provided by the directory service.
-        /// * `project_reference_list`: - A list of projects the user is part of. See #reference for more details.
-        /// * `access_control_policy_reference_list`: - List of ACP references. See #reference for more details.
-        /// * `directory_service_user`: - (Optional) The directory service user configuration. See below for more information.
-        /// * `identity_provider_user`: - (Optional) (Optional) The identity provider user configuration. See below for more information.
-        /// * `categories`: - (Optional) Categories for the user.
-        /// * `project_reference`: - (Optional) The reference to a project.
-        /// * `owner_reference`: - (Optional) The reference to a user.
         /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// - (Optional) Categories for the user.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUsersEntityCategoryResult> Categories;
+        /// <summary>
+        /// - (Optional) The directory service user configuration. See below for more information.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUsersEntityDirectoryServiceUserResult> DirectoryServiceUsers;
+        /// <summary>
+        /// - The display name of the user (common name) provided by the directory service.
+        /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// - (Optional) (Optional) The identity provider user configuration. See below for more information.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUsersEntityIdentityProviderUserResult> IdentityProviderUsers;
+        /// <summary>
+        /// - The user kind metadata.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
+        /// <summary>
+        /// - the name(Optional).
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> OwnerReference;
+        /// <summary>
+        /// - (Optional) The reference to a project.
+        /// </summary>
         public readonly ImmutableDictionary<string, string>? ProjectReference;
+        /// <summary>
+        /// - A list of projects the user is part of. See #reference for more details.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUsersEntityProjectReferenceListResult> ProjectReferenceLists;
+        /// <summary>
+        /// - The state of the entity.
+        /// </summary>
         public readonly string State;
+        /// <summary>
+        /// - The name of the user.
+        /// </summary>
         public readonly string UserType;
 
         [OutputConstructor]

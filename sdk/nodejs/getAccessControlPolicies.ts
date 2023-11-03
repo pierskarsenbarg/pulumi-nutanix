@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,16 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const test = pulumi.output(nutanix.getAccessControlPolicies());
+ * const test = nutanix.getAccessControlPolicies({});
  * ```
  */
 export function getAccessControlPolicies(args?: GetAccessControlPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessControlPoliciesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getAccessControlPolicies:getAccessControlPolicies", {
         "metadatas": args.metadatas,
     }, opts);
@@ -33,6 +31,9 @@ export function getAccessControlPolicies(args?: GetAccessControlPoliciesArgs, op
  * A collection of arguments for invoking getAccessControlPolicies.
  */
 export interface GetAccessControlPoliciesArgs {
+    /**
+     * - The Access Control Policy kind metadata.
+     */
     metadatas?: inputs.GetAccessControlPoliciesMetadata[];
 }
 
@@ -42,24 +43,43 @@ export interface GetAccessControlPoliciesArgs {
 export interface GetAccessControlPoliciesResult {
     /**
      * The version of the API.
-     * * `state`: - The state of the Access Control Policy.
      */
     readonly apiVersion: string;
+    /**
+     * List of Access Control Policies
+     */
     readonly entities: outputs.GetAccessControlPoliciesEntity[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - The Access Control Policy kind metadata.
+     */
     readonly metadatas: outputs.GetAccessControlPoliciesMetadata[];
 }
-
+/**
+ * Describes a list of access control policies.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const test = nutanix.getAccessControlPolicies({});
+ * ```
+ */
 export function getAccessControlPoliciesOutput(args?: GetAccessControlPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessControlPoliciesResult> {
-    return pulumi.output(args).apply(a => getAccessControlPolicies(a, opts))
+    return pulumi.output(args).apply((a: any) => getAccessControlPolicies(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getAccessControlPolicies.
  */
 export interface GetAccessControlPoliciesOutputArgs {
+    /**
+     * - The Access Control Policy kind metadata.
+     */
     metadatas?: pulumi.Input<pulumi.Input<inputs.GetAccessControlPoliciesMetadataArgs>[]>;
 }

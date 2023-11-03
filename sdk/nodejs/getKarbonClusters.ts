@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,15 +15,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const clusters = pulumi.output(nutanix.getKarbonClusters());
+ * const clusters = nutanix.getKarbonClusters({});
  * ```
  */
 export function getKarbonClusters(opts?: pulumi.InvokeOptions): Promise<GetKarbonClustersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getKarbonClusters:getKarbonClusters", {
     }, opts);
 }
@@ -36,4 +34,19 @@ export interface GetKarbonClustersResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+}
+/**
+ * Describes Karbon Clusters
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const clusters = nutanix.getKarbonClusters({});
+ * ```
+ */
+export function getKarbonClustersOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetKarbonClustersResult> {
+    return pulumi.output(getKarbonClusters(opts))
 }

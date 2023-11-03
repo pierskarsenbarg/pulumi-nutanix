@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVpcsEntityStatusExecutionContextResult> ExecutionContexts;
         /// <summary>
-        /// The name of the VPC
+        /// - the name.
         /// </summary>
         public readonly string Name;
         /// <summary>

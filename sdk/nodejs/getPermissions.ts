@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,16 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const permissions = pulumi.output(nutanix.getPermission());
+ * const permissions = nutanix.getPermission({});
  * ```
  */
 export function getPermissions(args?: GetPermissionsArgs, opts?: pulumi.InvokeOptions): Promise<GetPermissionsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getPermissions:getPermissions", {
         "metadatas": args.metadatas,
     }, opts);
@@ -33,6 +31,9 @@ export function getPermissions(args?: GetPermissionsArgs, opts?: pulumi.InvokeOp
  * A collection of arguments for invoking getPermissions.
  */
 export interface GetPermissionsArgs {
+    /**
+     * The permission kind metadata.
+     */
     metadatas?: inputs.GetPermissionsMetadata[];
 }
 
@@ -40,22 +41,45 @@ export interface GetPermissionsArgs {
  * A collection of values returned by getPermissions.
  */
 export interface GetPermissionsResult {
+    /**
+     * version of the API
+     */
     readonly apiVersion: string;
+    /**
+     * List of Permissions
+     */
     readonly entities: outputs.GetPermissionsEntity[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * The permission kind metadata.
+     */
     readonly metadatas: outputs.GetPermissionsMetadata[];
 }
-
+/**
+ * Provides a datasource to retrieve all the permissions.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const permissions = nutanix.getPermission({});
+ * ```
+ */
 export function getPermissionsOutput(args?: GetPermissionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPermissionsResult> {
-    return pulumi.output(args).apply(a => getPermissions(a, opts))
+    return pulumi.output(args).apply((a: any) => getPermissions(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getPermissions.
  */
 export interface GetPermissionsOutputArgs {
+    /**
+     * The permission kind metadata.
+     */
     metadatas?: pulumi.Input<pulumi.Input<inputs.GetPermissionsMetadataArgs>[]>;
 }

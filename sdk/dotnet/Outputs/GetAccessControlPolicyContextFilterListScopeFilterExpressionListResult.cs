@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetAccessControlPolicyContextFilterListScopeFilterExpressionListResult
     {
+        /// <summary>
+        /// -  The LHS of the filter expression - the scope type.
+        /// </summary>
         public readonly string LeftHandSide;
+        /// <summary>
+        /// - The operator in the filter expression.
+        /// </summary>
         public readonly string Operator;
+        /// <summary>
+        /// - The right hand side (RHS) of an scope expression.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideResult> RightHandSides;
 
         [OutputConstructor]

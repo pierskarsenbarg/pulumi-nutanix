@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationCentralImageClusterClusterStatusGetArgs : Pulumi.ResourceArgs
+    public sealed class FoundationCentralImageClusterClusterStatusGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("aggregatePercentComplete")]
         public Input<double>? AggregatePercentComplete { get; set; }
@@ -50,5 +50,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public FoundationCentralImageClusterClusterStatusGetArgs()
         {
         }
+        public static new FoundationCentralImageClusterClusterStatusGetArgs Empty => new FoundationCentralImageClusterClusterStatusGetArgs();
     }
 }

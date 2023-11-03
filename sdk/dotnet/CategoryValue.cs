@@ -16,29 +16,29 @@ namespace PiersKarsenbarg.Nutanix
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var test_category_key = new Nutanix.CategoryKey("test-category-key", new()
     ///     {
-    ///         var test_category_key = new Nutanix.CategoryKey("test-category-key", new Nutanix.CategoryKeyArgs
-    ///         {
-    ///             Description = "App Support Category Key",
-    ///         });
-    ///         var test = new Nutanix.CategoryValue("test", new Nutanix.CategoryValueArgs
-    ///         {
-    ///             Description = "Test Category Value",
-    ///             Value = "test-value",
-    ///         });
-    ///     }
+    ///         Description = "App Support Category Key",
+    ///     });
     /// 
-    /// }
+    ///     var test = new Nutanix.CategoryValue("test", new()
+    ///     {
+    ///         Description = "Test Category Value",
+    ///         Value = "test-value",
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/categoryValue:CategoryValue")]
-    public partial class CategoryValue : Pulumi.CustomResource
+    public partial class CategoryValue : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Optional) The version of the API.
@@ -46,18 +46,26 @@ namespace PiersKarsenbarg.Nutanix
         [Output("apiVersion")]
         public Output<string> ApiVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) A description for category value.
+        /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) The category_key name for the category value.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// - Specifying whether its a system defined category.
+        /// </summary>
         [Output("systemDefined")]
         public Output<bool> SystemDefined { get; private set; } = null!;
 
         /// <summary>
         /// The value for the category value.
-        /// * `description`: - (Optional) A description for category value.
         /// </summary>
         [Output("value")]
         public Output<string> Value { get; private set; } = null!;
@@ -107,17 +115,22 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class CategoryValueArgs : Pulumi.ResourceArgs
+    public sealed class CategoryValueArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) A description for category value.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// - (Required) The category_key name for the category value.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
         /// The value for the category value.
-        /// * `description`: - (Optional) A description for category value.
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;
@@ -125,9 +138,10 @@ namespace PiersKarsenbarg.Nutanix
         public CategoryValueArgs()
         {
         }
+        public static new CategoryValueArgs Empty => new CategoryValueArgs();
     }
 
-    public sealed class CategoryValueState : Pulumi.ResourceArgs
+    public sealed class CategoryValueState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Optional) The version of the API.
@@ -135,18 +149,26 @@ namespace PiersKarsenbarg.Nutanix
         [Input("apiVersion")]
         public Input<string>? ApiVersion { get; set; }
 
+        /// <summary>
+        /// - (Optional) A description for category value.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// - (Required) The category_key name for the category value.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - Specifying whether its a system defined category.
+        /// </summary>
         [Input("systemDefined")]
         public Input<bool>? SystemDefined { get; set; }
 
         /// <summary>
         /// The value for the category value.
-        /// * `description`: - (Optional) A description for category value.
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
@@ -154,5 +176,6 @@ namespace PiersKarsenbarg.Nutanix
         public CategoryValueState()
         {
         }
+        public static new CategoryValueState Empty => new CategoryValueState();
     }
 }

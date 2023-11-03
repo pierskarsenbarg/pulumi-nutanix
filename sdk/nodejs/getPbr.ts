@@ -2,18 +2,16 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
  * Provides a datasource to retrieve PBR with pbrUuid .
  */
 export function getPbr(args: GetPbrArgs, opts?: pulumi.InvokeOptions): Promise<GetPbrResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getPbr:getPbr", {
         "pbrUuid": args.pbrUuid,
     }, opts);
@@ -41,6 +39,9 @@ export interface GetPbrResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - The routing policies kind metadata.
+     */
     readonly metadata: {[key: string]: string};
     readonly pbrUuid: string;
     /**
@@ -52,9 +53,11 @@ export interface GetPbrResult {
      */
     readonly statuses: outputs.GetPbrStatus[];
 }
-
+/**
+ * Provides a datasource to retrieve PBR with pbrUuid .
+ */
 export function getPbrOutput(args: GetPbrOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPbrResult> {
-    return pulumi.output(args).apply(a => getPbr(a, opts))
+    return pulumi.output(args).apply((a: any) => getPbr(a, opts))
 }
 
 /**

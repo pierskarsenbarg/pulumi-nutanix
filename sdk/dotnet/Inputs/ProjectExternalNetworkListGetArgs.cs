@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class ProjectExternalNetworkListGetArgs : Pulumi.ResourceArgs
+    public sealed class ProjectExternalNetworkListGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name for the project.
@@ -28,5 +28,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public ProjectExternalNetworkListGetArgs()
         {
         }
+        public static new ProjectExternalNetworkListGetArgs Empty => new ProjectExternalNetworkListGetArgs();
     }
 }

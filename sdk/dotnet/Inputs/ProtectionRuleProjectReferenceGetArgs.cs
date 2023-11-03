@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class ProtectionRuleProjectReferenceGetArgs : Pulumi.ResourceArgs
+    public sealed class ProtectionRuleProjectReferenceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Required) The kind name (Default value: `project`).
@@ -34,5 +34,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public ProtectionRuleProjectReferenceGetArgs()
         {
         }
+        public static new ProtectionRuleProjectReferenceGetArgs Empty => new ProtectionRuleProjectReferenceGetArgs();
     }
 }

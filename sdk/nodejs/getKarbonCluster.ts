@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,18 +15,15 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const cluster = pulumi.output(nutanix.getKarbonCluster({
+ * const cluster = nutanix.getKarbonCluster({
  *     karbonClusterId: "<YOUR-CLUSTER-ID>",
- * }));
+ * });
  * ```
  */
 export function getKarbonCluster(args?: GetKarbonClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetKarbonClusterResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getKarbonCluster:getKarbonCluster", {
         "karbonClusterId": args.karbonClusterId,
         "karbonClusterName": args.karbonClusterName,
@@ -36,7 +34,13 @@ export function getKarbonCluster(args?: GetKarbonClusterArgs, opts?: pulumi.Invo
  * A collection of arguments for invoking getKarbonCluster.
  */
 export interface GetKarbonClusterArgs {
+    /**
+     * Represents karbon cluster uuid
+     */
     karbonClusterId?: string;
+    /**
+     * Represents the name of karbon cluster
+     */
     karbonClusterName?: string;
 }
 
@@ -45,6 +49,9 @@ export interface GetKarbonClusterArgs {
  */
 export interface GetKarbonClusterResult {
     readonly deploymentType: string;
+    /**
+     * - Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
+     */
     readonly etcdNodePools: outputs.GetKarbonClusterEtcdNodePool[];
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -53,22 +60,50 @@ export interface GetKarbonClusterResult {
     readonly karbonClusterId?: string;
     readonly karbonClusterName?: string;
     readonly kubeapiServerIpv4Address: string;
+    /**
+     * - Configuration of the master node pools.
+     */
     readonly masterNodePools: outputs.GetKarbonClusterMasterNodePool[];
+    /**
+     * - Unique name of the node pool.
+     */
     readonly name: string;
     readonly status: string;
     readonly uuid: string;
+    /**
+     * - K8s version of the cluster.
+     */
     readonly version: string;
     readonly workerNodePools: outputs.GetKarbonClusterWorkerNodePool[];
 }
-
+/**
+ * Describes a Karbon Cluster
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const cluster = nutanix.getKarbonCluster({
+ *     karbonClusterId: "<YOUR-CLUSTER-ID>",
+ * });
+ * ```
+ */
 export function getKarbonClusterOutput(args?: GetKarbonClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKarbonClusterResult> {
-    return pulumi.output(args).apply(a => getKarbonCluster(a, opts))
+    return pulumi.output(args).apply((a: any) => getKarbonCluster(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getKarbonCluster.
  */
 export interface GetKarbonClusterOutputArgs {
+    /**
+     * Represents karbon cluster uuid
+     */
     karbonClusterId?: pulumi.Input<string>;
+    /**
+     * Represents the name of karbon cluster
+     */
     karbonClusterName?: pulumi.Input<string>;
 }

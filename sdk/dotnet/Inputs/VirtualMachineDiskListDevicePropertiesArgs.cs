@@ -11,13 +11,20 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class VirtualMachineDiskListDevicePropertiesArgs : Pulumi.ResourceArgs
+    public sealed class VirtualMachineDiskListDevicePropertiesArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - A Disk type (default: DISK).
+        /// </summary>
         [Input("deviceType")]
         public Input<string>? DeviceType { get; set; }
 
         [Input("diskAddress")]
         private InputMap<string>? _diskAddress;
+
+        /// <summary>
+        /// - Address of disk to boot from.
+        /// </summary>
         public InputMap<string> DiskAddress
         {
             get => _diskAddress ?? (_diskAddress = new InputMap<string>());
@@ -27,5 +34,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public VirtualMachineDiskListDevicePropertiesArgs()
         {
         }
+        public static new VirtualMachineDiskListDevicePropertiesArgs Empty => new VirtualMachineDiskListDevicePropertiesArgs();
     }
 }

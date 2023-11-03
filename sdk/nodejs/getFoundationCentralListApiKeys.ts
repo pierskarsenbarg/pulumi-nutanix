@@ -2,16 +2,14 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getFoundationCentralListApiKeys(args?: GetFoundationCentralListApiKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralListApiKeysResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationCentralListApiKeys:getFoundationCentralListApiKeys", {
         "length": args.length,
         "metadata": args.metadata,
@@ -41,9 +39,8 @@ export interface GetFoundationCentralListApiKeysResult {
     readonly metadata?: outputs.GetFoundationCentralListApiKeysMetadata;
     readonly offset?: number;
 }
-
 export function getFoundationCentralListApiKeysOutput(args?: GetFoundationCentralListApiKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralListApiKeysResult> {
-    return pulumi.output(args).apply(a => getFoundationCentralListApiKeys(a, opts))
+    return pulumi.output(args).apply((a: any) => getFoundationCentralListApiKeys(a, opts))
 }
 
 /**

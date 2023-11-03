@@ -20,26 +20,25 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var cluster = Nutanix.GetKarbonCluster.Invoke(new()
         ///     {
-        ///         var cluster = Output.Create(Nutanix.GetKarbonCluster.InvokeAsync(new Nutanix.GetKarbonClusterArgs
-        ///         {
-        ///             KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
-        ///         }));
-        ///     }
+        ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetKarbonClusterResult> InvokeAsync(GetKarbonClusterArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetKarbonClusterResult>("nutanix:index/getKarbonCluster:getKarbonCluster", args ?? new GetKarbonClusterArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetKarbonClusterResult>("nutanix:index/getKarbonCluster:getKarbonCluster", args ?? new GetKarbonClusterArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes a Karbon Cluster
@@ -49,53 +48,66 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var cluster = Nutanix.GetKarbonCluster.Invoke(new()
         ///     {
-        ///         var cluster = Output.Create(Nutanix.GetKarbonCluster.InvokeAsync(new Nutanix.GetKarbonClusterArgs
-        ///         {
-        ///             KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
-        ///         }));
-        ///     }
+        ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetKarbonClusterResult> Invoke(GetKarbonClusterInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetKarbonClusterResult>("nutanix:index/getKarbonCluster:getKarbonCluster", args ?? new GetKarbonClusterInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetKarbonClusterResult>("nutanix:index/getKarbonCluster:getKarbonCluster", args ?? new GetKarbonClusterInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetKarbonClusterArgs : Pulumi.InvokeArgs
+    public sealed class GetKarbonClusterArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Represents karbon cluster uuid
+        /// </summary>
         [Input("karbonClusterId")]
         public string? KarbonClusterId { get; set; }
 
+        /// <summary>
+        /// Represents the name of karbon cluster
+        /// </summary>
         [Input("karbonClusterName")]
         public string? KarbonClusterName { get; set; }
 
         public GetKarbonClusterArgs()
         {
         }
+        public static new GetKarbonClusterArgs Empty => new GetKarbonClusterArgs();
     }
 
-    public sealed class GetKarbonClusterInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetKarbonClusterInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Represents karbon cluster uuid
+        /// </summary>
         [Input("karbonClusterId")]
         public Input<string>? KarbonClusterId { get; set; }
 
+        /// <summary>
+        /// Represents the name of karbon cluster
+        /// </summary>
         [Input("karbonClusterName")]
         public Input<string>? KarbonClusterName { get; set; }
 
         public GetKarbonClusterInvokeArgs()
         {
         }
+        public static new GetKarbonClusterInvokeArgs Empty => new GetKarbonClusterInvokeArgs();
     }
 
 
@@ -103,6 +115,9 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetKarbonClusterResult
     {
         public readonly string DeploymentType;
+        /// <summary>
+        /// - Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetKarbonClusterEtcdNodePoolResult> EtcdNodePools;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -111,10 +126,19 @@ namespace PiersKarsenbarg.Nutanix
         public readonly string? KarbonClusterId;
         public readonly string? KarbonClusterName;
         public readonly string KubeapiServerIpv4Address;
+        /// <summary>
+        /// - Configuration of the master node pools.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetKarbonClusterMasterNodePoolResult> MasterNodePools;
+        /// <summary>
+        /// - Unique name of the node pool.
+        /// </summary>
         public readonly string Name;
         public readonly string Status;
         public readonly string Uuid;
+        /// <summary>
+        /// - K8s version of the cluster.
+        /// </summary>
         public readonly string Version;
         public readonly ImmutableArray<Outputs.GetKarbonClusterWorkerNodePoolResult> WorkerNodePools;
 

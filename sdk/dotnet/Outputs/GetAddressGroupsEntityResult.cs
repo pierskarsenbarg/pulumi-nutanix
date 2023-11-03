@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetAddressGroupsEntityResult
     {
+        /// <summary>
+        /// Information about address_group
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAddressGroupsEntityAddressGroupResult> AddressGroups;
+        /// <summary>
+        /// List of associated policies to address group
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAddressGroupsEntityAssociatedPoliciesListResult> AssociatedPoliciesLists;
 
         [OutputConstructor]

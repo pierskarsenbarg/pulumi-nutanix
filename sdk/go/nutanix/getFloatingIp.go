@@ -7,12 +7,14 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve floating IPs with floatingIpUuid .
 func LookupFloatingIp(ctx *pulumi.Context, args *LookupFloatingIpArgs, opts ...pulumi.InvokeOption) (*LookupFloatingIpResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupFloatingIpResult
 	err := ctx.Invoke("nutanix:index/getFloatingIp:getFloatingIp", args, &rv, opts...)
 	if err != nil {
@@ -33,7 +35,8 @@ type LookupFloatingIpResult struct {
 	ApiVersion     string `pulumi:"apiVersion"`
 	FloatingIpUuid string `pulumi:"floatingIpUuid"`
 	// The provider-assigned unique ID for this managed resource.
-	Id       string            `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// - The floatingIp kind metadata.
 	Metadata map[string]string `pulumi:"metadata"`
 	// Floating IP spec
 	Specs []GetFloatingIpSpec `pulumi:"specs"`
@@ -79,6 +82,12 @@ func (o LookupFloatingIpResultOutput) ToLookupFloatingIpResultOutputWithContext(
 	return o
 }
 
+func (o LookupFloatingIpResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupFloatingIpResult] {
+	return pulumix.Output[LookupFloatingIpResult]{
+		OutputState: o.OutputState,
+	}
+}
+
 // The version of the API.
 func (o LookupFloatingIpResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFloatingIpResult) string { return v.ApiVersion }).(pulumi.StringOutput)
@@ -93,6 +102,7 @@ func (o LookupFloatingIpResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFloatingIpResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - The floatingIp kind metadata.
 func (o LookupFloatingIpResultOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupFloatingIpResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }

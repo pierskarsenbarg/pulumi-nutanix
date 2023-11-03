@@ -20,17 +20,16 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var nosPackages = Output.Create(Nutanix.GetFoundationNodPackages.InvokeAsync());
-        ///     }
+        ///     var nosPackages = Nutanix.GetFoundationNodPackages.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -41,13 +40,46 @@ namespace PiersKarsenbarg.Nutanix
         /// See detailed information in [Nutanix Foundation Nos Packages](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzODg-get-list-of-aos-packages-available-in-foundation).
         /// </summary>
         public static Task<GetFoundationNodPackagesResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFoundationNodPackagesResult>("nutanix:index/getFoundationNodPackages:getFoundationNodPackages", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationNodPackagesResult>("nutanix:index/getFoundationNodPackages:getFoundationNodPackages", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// Describes a list of nos (aos) packages present in foundation vm
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var nosPackages = Nutanix.GetFoundationNodPackages.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// ## Note
+        /// 
+        /// * This data source only lists .tar file names.
+        /// 
+        /// See detailed information in [Nutanix Foundation Nos Packages](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzODg-get-list-of-aos-packages-available-in-foundation).
+        /// </summary>
+        public static Output<GetFoundationNodPackagesResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationNodPackagesResult>("nutanix:index/getFoundationNodPackages:getFoundationNodPackages", InvokeArgs.Empty, options.WithDefaults());
     }
 
 
     [OutputType]
     public sealed class GetFoundationNodPackagesResult
     {
+        /// <summary>
+        /// List of nos packages file names present in foundation vm
+        /// </summary>
         public readonly ImmutableArray<string> Entities;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.

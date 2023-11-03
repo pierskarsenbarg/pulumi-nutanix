@@ -20,26 +20,25 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var nodesDetails = Nutanix.GetFoundationCentralImagedNodeDetails.Invoke(new()
         ///     {
-        ///         var nodesDetails = Output.Create(Nutanix.GetFoundationCentralImagedNodeDetails.InvokeAsync(new Nutanix.GetFoundationCentralImagedNodeDetailsArgs
-        ///         {
-        ///             ImagedNodeUuid = "&lt;IMAGED-NODE-UUID&gt;",
-        ///         }));
-        ///     }
+        ///         ImagedNodeUuid = "&lt;IMAGED-NODE-UUID&gt;",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFoundationCentralImagedNodeDetailsResult> InvokeAsync(GetFoundationCentralImagedNodeDetailsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralImagedNodeDetailsResult>("nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails", args ?? new GetFoundationCentralImagedNodeDetailsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralImagedNodeDetailsResult>("nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails", args ?? new GetFoundationCentralImagedNodeDetailsArgs(), options.WithDefaults());
 
         /// <summary>
         /// Get the details of a single node given its UUID.
@@ -49,102 +48,223 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var nodesDetails = Nutanix.GetFoundationCentralImagedNodeDetails.Invoke(new()
         ///     {
-        ///         var nodesDetails = Output.Create(Nutanix.GetFoundationCentralImagedNodeDetails.InvokeAsync(new Nutanix.GetFoundationCentralImagedNodeDetailsArgs
-        ///         {
-        ///             ImagedNodeUuid = "&lt;IMAGED-NODE-UUID&gt;",
-        ///         }));
-        ///     }
+        ///         ImagedNodeUuid = "&lt;IMAGED-NODE-UUID&gt;",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFoundationCentralImagedNodeDetailsResult> Invoke(GetFoundationCentralImagedNodeDetailsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFoundationCentralImagedNodeDetailsResult>("nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails", args ?? new GetFoundationCentralImagedNodeDetailsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralImagedNodeDetailsResult>("nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails", args ?? new GetFoundationCentralImagedNodeDetailsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetFoundationCentralImagedNodeDetailsArgs : Pulumi.InvokeArgs
+    public sealed class GetFoundationCentralImagedNodeDetailsArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// UUID of the node whose details need to be fetched.
+        /// </summary>
         [Input("imagedNodeUuid", required: true)]
         public string ImagedNodeUuid { get; set; } = null!;
 
+        /// <summary>
+        /// Name of the cvm interface having ipv6 address.
+        /// </summary>
         [Input("ipv6Interface")]
         public string? Ipv6Interface { get; set; }
 
+        /// <summary>
+        /// Version of the node used for CAS.
+        /// </summary>
         [Input("objectVersion")]
         public int? ObjectVersion { get; set; }
 
         public GetFoundationCentralImagedNodeDetailsArgs()
         {
         }
+        public static new GetFoundationCentralImagedNodeDetailsArgs Empty => new GetFoundationCentralImagedNodeDetailsArgs();
     }
 
-    public sealed class GetFoundationCentralImagedNodeDetailsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFoundationCentralImagedNodeDetailsInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// UUID of the node whose details need to be fetched.
+        /// </summary>
         [Input("imagedNodeUuid", required: true)]
         public Input<string> ImagedNodeUuid { get; set; } = null!;
 
+        /// <summary>
+        /// Name of the cvm interface having ipv6 address.
+        /// </summary>
         [Input("ipv6Interface")]
         public Input<string>? Ipv6Interface { get; set; }
 
+        /// <summary>
+        /// Version of the node used for CAS.
+        /// </summary>
         [Input("objectVersion")]
         public Input<int>? ObjectVersion { get; set; }
 
         public GetFoundationCentralImagedNodeDetailsInvokeArgs()
         {
         }
+        public static new GetFoundationCentralImagedNodeDetailsInvokeArgs Empty => new GetFoundationCentralImagedNodeDetailsInvokeArgs();
     }
 
 
     [OutputType]
     public sealed class GetFoundationCentralImagedNodeDetailsResult
     {
+        /// <summary>
+        /// AOS version currently installed on the node.
+        /// </summary>
         public readonly string AosVersion;
+        /// <summary>
+        /// API key used to register the node.
+        /// </summary>
         public readonly string ApiKeyUuid;
+        /// <summary>
+        /// Specifies whether the node is available for cluster creation.
+        /// </summary>
         public readonly bool Available;
+        /// <summary>
+        /// Serial number of the block to which the node belongs.
+        /// </summary>
         public readonly string BlockSerial;
+        /// <summary>
+        /// Time when the node was discovered in Foundation Central.
+        /// </summary>
         public readonly string CreatedTimestamp;
+        /// <summary>
+        /// Current time of Foundation Central.
+        /// </summary>
         public readonly string CurrentTime;
+        /// <summary>
+        /// gateway of the cvm.
+        /// </summary>
         public readonly string CvmGateway;
+        /// <summary>
+        /// IP address of the cvm.
+        /// </summary>
         public readonly string CvmIp;
+        /// <summary>
+        /// IPv6 address of the cvm.
+        /// </summary>
         public readonly string CvmIpv6;
+        /// <summary>
+        /// netmask of the cvm.
+        /// </summary>
         public readonly string CvmNetmask;
+        /// <summary>
+        /// Denotes whether the CVM is up or not on this node.
+        /// </summary>
         public readonly bool CvmUp;
+        /// <summary>
+        /// Node UUID from the node's cvm.
+        /// </summary>
         public readonly string CvmUuid;
+        /// <summary>
+        /// Vlan tag of the cvm, if the cvm is on a vlan.
+        /// </summary>
         public readonly int CvmVlanId;
+        /// <summary>
+        /// Foundation version installed on the node.
+        /// </summary>
         public readonly string FoundationVersion;
+        /// <summary>
+        /// Hardware attributes json of the node.
+        /// </summary>
         public readonly ImmutableDictionary<string, object> HardwareAttributes;
+        /// <summary>
+        /// gateway of the hypervisor.
+        /// </summary>
         public readonly string HypervisorGateway;
+        /// <summary>
+        /// Name of the hypervisor host.
+        /// </summary>
         public readonly string HypervisorHostname;
+        /// <summary>
+        /// IP address of the hypervisor.
+        /// </summary>
         public readonly string HypervisorIp;
+        /// <summary>
+        /// netmask of the hypervisor.
+        /// </summary>
         public readonly string HypervisorNetmask;
+        /// <summary>
+        /// Hypervisor type currently installed on the node. Must be one of {kvm, esx, hyperv}.
+        /// </summary>
         public readonly string HypervisorType;
+        /// <summary>
+        /// Version of the hypervisor currently installed on the node.
+        /// </summary>
         public readonly string HypervisorVersion;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// UUID of the cluster to which the node belongs, if any.
+        /// </summary>
         public readonly string ImagedClusterUuid;
+        /// <summary>
+        /// UUID of the node.
+        /// </summary>
         public readonly string ImagedNodeUuid;
+        /// <summary>
+        /// gateway of the ipmi.
+        /// </summary>
         public readonly string IpmiGateway;
+        /// <summary>
+        /// IP address of the ipmi.
+        /// </summary>
         public readonly string IpmiIp;
+        /// <summary>
+        /// netmask of the ipmi.
+        /// </summary>
         public readonly string IpmiNetmask;
+        /// <summary>
+        /// Name of the cvm interface having ipv6 address.
+        /// </summary>
         public readonly string Ipv6Interface;
+        /// <summary>
+        /// List of timestamps when the node has sent heartbeats to Foundation Central.
+        /// </summary>
         public readonly ImmutableArray<string> LatestHbTsLists;
+        /// <summary>
+        /// Model of the node.
+        /// </summary>
         public readonly string Model;
+        /// <summary>
+        /// Position of the node in the block.
+        /// </summary>
         public readonly string NodePosition;
+        /// <summary>
+        /// Serial number of the node.
+        /// </summary>
         public readonly string NodeSerial;
+        /// <summary>
+        /// Specifies whether the node is discovering, available or unavailable for cluster creation.
+        /// </summary>
         public readonly string NodeState;
+        /// <summary>
+        /// Specifies the type of node - on-prem, AWS, GCP etc.
+        /// </summary>
         public readonly string NodeType;
+        /// <summary>
+        /// Version of the node used for CAS.
+        /// </summary>
         public readonly int ObjectVersion;
 
         [OutputConstructor]

@@ -20,23 +20,22 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var test = Output.Create(Nutanix.GetPbrs.InvokeAsync());
-        ///     }
+        ///     var test = Nutanix.GetPbrs.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPbrsResult> InvokeAsync(GetPbrsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPbrsResult>("nutanix:index/getPbrs:getPbrs", args ?? new GetPbrsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPbrsResult>("nutanix:index/getPbrs:getPbrs", args ?? new GetPbrsArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a datasource to retrieve all the pbrs.
@@ -46,30 +45,33 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var test = Output.Create(Nutanix.GetPbrs.InvokeAsync());
-        ///     }
+        ///     var test = Nutanix.GetPbrs.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPbrsResult> Invoke(GetPbrsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPbrsResult>("nutanix:index/getPbrs:getPbrs", args ?? new GetPbrsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPbrsResult>("nutanix:index/getPbrs:getPbrs", args ?? new GetPbrsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetPbrsArgs : Pulumi.InvokeArgs
+    public sealed class GetPbrsArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private List<Inputs.GetPbrsMetadataArgs>? _metadatas;
+
+        /// <summary>
+        /// - The routing policies kind metadata.
+        /// </summary>
         public List<Inputs.GetPbrsMetadataArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new List<Inputs.GetPbrsMetadataArgs>());
@@ -79,12 +81,17 @@ namespace PiersKarsenbarg.Nutanix
         public GetPbrsArgs()
         {
         }
+        public static new GetPbrsArgs Empty => new GetPbrsArgs();
     }
 
-    public sealed class GetPbrsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPbrsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private InputList<Inputs.GetPbrsMetadataInputArgs>? _metadatas;
+
+        /// <summary>
+        /// - The routing policies kind metadata.
+        /// </summary>
         public InputList<Inputs.GetPbrsMetadataInputArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new InputList<Inputs.GetPbrsMetadataInputArgs>());
@@ -94,18 +101,28 @@ namespace PiersKarsenbarg.Nutanix
         public GetPbrsInvokeArgs()
         {
         }
+        public static new GetPbrsInvokeArgs Empty => new GetPbrsInvokeArgs();
     }
 
 
     [OutputType]
     public sealed class GetPbrsResult
     {
+        /// <summary>
+        /// version of the API
+        /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// List of PBRs.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetPbrsEntityResult> Entities;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - The routing policies kind metadata.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetPbrsMetadataResult> Metadatas;
 
         [OutputConstructor]

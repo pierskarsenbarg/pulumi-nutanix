@@ -13,14 +13,14 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetServiceGroup
     {
         public static Task<GetServiceGroupResult> InvokeAsync(GetServiceGroupArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetServiceGroupResult>("nutanix:index/getServiceGroup:getServiceGroup", args ?? new GetServiceGroupArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetServiceGroupResult>("nutanix:index/getServiceGroup:getServiceGroup", args ?? new GetServiceGroupArgs(), options.WithDefaults());
 
         public static Output<GetServiceGroupResult> Invoke(GetServiceGroupInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetServiceGroupResult>("nutanix:index/getServiceGroup:getServiceGroup", args ?? new GetServiceGroupInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetServiceGroupResult>("nutanix:index/getServiceGroup:getServiceGroup", args ?? new GetServiceGroupInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetServiceGroupArgs : Pulumi.InvokeArgs
+    public sealed class GetServiceGroupArgs : global::Pulumi.InvokeArgs
     {
         [Input("uuid", required: true)]
         public string Uuid { get; set; } = null!;
@@ -28,9 +28,10 @@ namespace PiersKarsenbarg.Nutanix
         public GetServiceGroupArgs()
         {
         }
+        public static new GetServiceGroupArgs Empty => new GetServiceGroupArgs();
     }
 
-    public sealed class GetServiceGroupInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetServiceGroupInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("uuid", required: true)]
         public Input<string> Uuid { get; set; } = null!;
@@ -38,6 +39,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetServiceGroupInvokeArgs()
         {
         }
+        public static new GetServiceGroupInvokeArgs Empty => new GetServiceGroupInvokeArgs();
     }
 
 

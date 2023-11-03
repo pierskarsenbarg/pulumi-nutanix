@@ -19,195 +19,220 @@ namespace PiersKarsenbarg.Nutanix
     /// ### Isolation Rule Example
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var isolation = new Nutanix.NetworkSecurityRule("isolation", new()
     ///     {
-    ///         var isolation = new Nutanix.NetworkSecurityRule("isolation", new Nutanix.NetworkSecurityRuleArgs
+    ///         Description = "Isolation Rule Example",
+    ///         IsolationRuleAction = "APPLY",
+    ///         IsolationRuleFirstEntityFilterKindLists = new[]
     ///         {
-    ///             Description = "Isolation Rule Example",
-    ///             IsolationRuleAction = "APPLY",
-    ///             IsolationRuleFirstEntityFilterKindLists = 
+    ///             "vm",
+    ///         },
+    ///         IsolationRuleFirstEntityFilterParams = new[]
+    ///         {
+    ///             new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs
     ///             {
-    ///                 "vm",
-    ///             },
-    ///             IsolationRuleFirstEntityFilterParams = 
-    ///             {
-    ///                 new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs
+    ///                 Name = "Environment",
+    ///                 Values = new[]
     ///                 {
-    ///                     Name = "Environment",
-    ///                     Values = 
-    ///                     {
-    ///                         "Dev",
-    ///                     },
+    ///                     "Dev",
     ///                 },
     ///             },
-    ///             IsolationRuleFirstEntityFilterType = "CATEGORIES_MATCH_ALL",
-    ///             IsolationRuleSecondEntityFilterKindLists = 
+    ///         },
+    ///         IsolationRuleFirstEntityFilterType = "CATEGORIES_MATCH_ALL",
+    ///         IsolationRuleSecondEntityFilterKindLists = new[]
+    ///         {
+    ///             "vm",
+    ///         },
+    ///         IsolationRuleSecondEntityFilterParams = new[]
+    ///         {
+    ///             new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs
     ///             {
-    ///                 "vm",
-    ///             },
-    ///             IsolationRuleSecondEntityFilterParams = 
-    ///             {
-    ///                 new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs
+    ///                 Name = "Environment",
+    ///                 Values = new[]
     ///                 {
-    ///                     Name = "Environment",
-    ///                     Values = 
-    ///                     {
-    ///                         "Production",
-    ///                     },
+    ///                     "Production",
     ///                 },
     ///             },
-    ///             IsolationRuleSecondEntityFilterType = "CATEGORIES_MATCH_ALL",
-    ///         });
-    ///     }
+    ///         },
+    ///         IsolationRuleSecondEntityFilterType = "CATEGORIES_MATCH_ALL",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// ### Usage with service and address groups
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var service1 = new Nutanix.ServiceGroup("service1", new()
     ///     {
-    ///         var service1 = new Nutanix.ServiceGroup("service1", new Nutanix.ServiceGroupArgs
+    ///         Description = "test",
+    ///         ServiceLists = new[]
     ///         {
-    ///             Description = "test",
-    ///             ServiceLists = 
+    ///             new Nutanix.Inputs.ServiceGroupServiceListArgs
     ///             {
-    ///                 new Nutanix.Inputs.ServiceGroupServiceListArgs
+    ///                 Protocol = "TCP",
+    ///                 TcpPortRangeLists = new[]
     ///                 {
-    ///                     Protocol = "TCP",
-    ///                     TcpPortRangeLists = 
+    ///                     new Nutanix.Inputs.ServiceGroupServiceListTcpPortRangeListArgs
     ///                     {
-    ///                         new Nutanix.Inputs.ServiceGroupServiceListTcpPortRangeListArgs
-    ///                         {
-    ///                             StartPort = 22,
-    ///                             EndPort = 22,
-    ///                         },
-    ///                         new Nutanix.Inputs.ServiceGroupServiceListTcpPortRangeListArgs
-    ///                         {
-    ///                             StartPort = 2222,
-    ///                             EndPort = 2222,
-    ///                         },
+    ///                         StartPort = 22,
+    ///                         EndPort = 22,
+    ///                     },
+    ///                     new Nutanix.Inputs.ServiceGroupServiceListTcpPortRangeListArgs
+    ///                     {
+    ///                         StartPort = 2222,
+    ///                         EndPort = 2222,
     ///                     },
     ///                 },
     ///             },
-    ///         });
-    ///         var address1 = new Nutanix.AddressGroup("address1", new Nutanix.AddressGroupArgs
-    ///         {
-    ///             Description = "test",
-    ///             IpAddressBlockLists = 
-    ///             {
-    ///                 new Nutanix.Inputs.AddressGroupIpAddressBlockListArgs
-    ///                 {
-    ///                     Ip = "10.0.0.0",
-    ///                     PrefixLength = 24,
-    ///                 },
-    ///             },
-    ///         });
-    ///         var ad_group_user_1 = new Nutanix.CategoryValue("ad-group-user-1", new Nutanix.CategoryValueArgs
-    ///         {
-    ///             Description = "group user category value",
-    ///             Value = "AD",
-    ///         });
-    ///         var vDI = new Nutanix.NetworkSecurityRule("vDI", new Nutanix.NetworkSecurityRuleArgs
-    ///         {
-    ///             AdRuleAction = "APPLY",
-    ///             Description = "test",
-    ///             AdRuleInboundAllowLists = 
-    ///             {
-    ///                 new Nutanix.Inputs.NetworkSecurityRuleAdRuleInboundAllowListArgs
-    ///                 {
-    ///                     IpSubnet = "10.0.0.0",
-    ///                     IpSubnetPrefixLength = "8",
-    ///                     PeerSpecificationType = "IP_SUBNET",
-    ///                     Protocol = "ALL",
-    ///                 },
-    ///             },
-    ///             AdRuleTargetGroupDefaultInternalPolicy = "DENY_ALL",
-    ///             AdRuleTargetGroupFilterKindLists = 
-    ///             {
-    ///                 "vm",
-    ///             },
-    ///             AdRuleTargetGroupFilterParams = 
-    ///             {
-    ///                 new Nutanix.Inputs.NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs
-    ///                 {
-    ///                     Name = "AD",
-    ///                     Values = 
-    ///                     {
-    ///                         "AD",
-    ///                     },
-    ///                 },
-    ///             },
-    ///             AdRuleTargetGroupFilterType = "CATEGORIES_MATCH_ALL",
-    ///             AdRuleTargetGroupPeerSpecificationType = "FILTER",
-    ///             AdRuleOutboundAllowLists = 
-    ///             {
-    ///                 new Nutanix.Inputs.NetworkSecurityRuleAdRuleOutboundAllowListArgs
-    ///                 {
-    ///                     PeerSpecificationType = "ALL",
-    ///                     ServiceGroupLists = 
-    ///                     {
-    ///                         new Nutanix.Inputs.NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupListArgs
-    ///                         {
-    ///                             Kind = "service_group",
-    ///                             Uuid = service1.Id,
-    ///                         },
-    ///                     },
-    ///                     AddressGroupInclusionLists = 
-    ///                     {
-    ///                         new Nutanix.Inputs.NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionListArgs
-    ///                         {
-    ///                             Kind = "address_group",
-    ///                             Uuid = address1.Id,
-    ///                         },
-    ///                     },
-    ///                 },
-    ///             },
-    ///         }, new CustomResourceOptions
-    ///         {
-    ///             DependsOn = 
-    ///             {
-    ///                 ad_group_user_1,
-    ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    ///     var address1 = new Nutanix.AddressGroup("address1", new()
+    ///     {
+    ///         Description = "test",
+    ///         IpAddressBlockLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.AddressGroupIpAddressBlockListArgs
+    ///             {
+    ///                 Ip = "10.0.0.0",
+    ///                 PrefixLength = 24,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     var ad_group_user_1 = new Nutanix.CategoryValue("ad-group-user-1", new()
+    ///     {
+    ///         Description = "group user category value",
+    ///         Value = "AD",
+    ///     });
+    /// 
+    ///     var vDI = new Nutanix.NetworkSecurityRule("vDI", new()
+    ///     {
+    ///         AdRuleAction = "APPLY",
+    ///         Description = "test",
+    ///         AdRuleInboundAllowLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.NetworkSecurityRuleAdRuleInboundAllowListArgs
+    ///             {
+    ///                 IpSubnet = "10.0.0.0",
+    ///                 IpSubnetPrefixLength = "8",
+    ///                 PeerSpecificationType = "IP_SUBNET",
+    ///                 Protocol = "ALL",
+    ///             },
+    ///         },
+    ///         AdRuleTargetGroupDefaultInternalPolicy = "DENY_ALL",
+    ///         AdRuleTargetGroupFilterKindLists = new[]
+    ///         {
+    ///             "vm",
+    ///         },
+    ///         AdRuleTargetGroupFilterParams = new[]
+    ///         {
+    ///             new Nutanix.Inputs.NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs
+    ///             {
+    ///                 Name = "AD",
+    ///                 Values = new[]
+    ///                 {
+    ///                     "AD",
+    ///                 },
+    ///             },
+    ///         },
+    ///         AdRuleTargetGroupFilterType = "CATEGORIES_MATCH_ALL",
+    ///         AdRuleTargetGroupPeerSpecificationType = "FILTER",
+    ///         AdRuleOutboundAllowLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.NetworkSecurityRuleAdRuleOutboundAllowListArgs
+    ///             {
+    ///                 PeerSpecificationType = "ALL",
+    ///                 ServiceGroupLists = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupListArgs
+    ///                     {
+    ///                         Kind = "service_group",
+    ///                         Uuid = service1.Id,
+    ///                     },
+    ///                 },
+    ///                 AddressGroupInclusionLists = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionListArgs
+    ///                     {
+    ///                         Kind = "address_group",
+    ///                         Uuid = address1.Id,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     }, new CustomResourceOptions
+    ///     {
+    ///         DependsOn = new[]
+    ///         {
+    ///             ad_group_user_1,
+    ///         },
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/networkSecurityRule:NetworkSecurityRule")]
-    public partial class NetworkSecurityRule : Pulumi.CustomResource
+    public partial class NetworkSecurityRule : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// </summary>
         [Output("adRuleAction")]
         public Output<string> AdRuleAction { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The set of categories that matching VMs need to have.
+        /// </summary>
         [Output("adRuleInboundAllowLists")]
         public Output<ImmutableArray<Outputs.NetworkSecurityRuleAdRuleInboundAllowList>> AdRuleInboundAllowLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional)
+        /// </summary>
         [Output("adRuleOutboundAllowLists")]
         public Output<ImmutableArray<Outputs.NetworkSecurityRuleAdRuleOutboundAllowList>> AdRuleOutboundAllowLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - Default policy for communication within target group.
+        /// </summary>
         [Output("adRuleTargetGroupDefaultInternalPolicy")]
         public Output<string?> AdRuleTargetGroupDefaultInternalPolicy { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - List of kinds associated with this filter.
+        /// </summary>
         [Output("adRuleTargetGroupFilterKindLists")]
         public Output<ImmutableArray<string>> AdRuleTargetGroupFilterKindLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - A list of category key and list of values.
+        /// </summary>
         [Output("adRuleTargetGroupFilterParams")]
         public Output<ImmutableArray<Outputs.NetworkSecurityRuleAdRuleTargetGroupFilterParam>> AdRuleTargetGroupFilterParams { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - The type of the filter being used.
+        /// </summary>
         [Output("adRuleTargetGroupFilterType")]
         public Output<string> AdRuleTargetGroupFilterType { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - Way to identify the object for which rule is applied.
+        /// </summary>
         [Output("adRuleTargetGroupPeerSpecificationType")]
         public Output<string?> AdRuleTargetGroupPeerSpecificationType { get; private set; } = null!;
 
@@ -220,69 +245,132 @@ namespace PiersKarsenbarg.Nutanix
         [Output("apiVersion")]
         public Output<string> ApiVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// </summary>
         [Output("appRuleAction")]
         public Output<string> AppRuleAction { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The set of categories that matching VMs need to have.
+        /// </summary>
         [Output("appRuleInboundAllowLists")]
         public Output<ImmutableArray<Outputs.NetworkSecurityRuleAppRuleInboundAllowList>> AppRuleInboundAllowLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional)
+        /// </summary>
         [Output("appRuleOutboundAllowLists")]
         public Output<ImmutableArray<Outputs.NetworkSecurityRuleAppRuleOutboundAllowList>> AppRuleOutboundAllowLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - Default policy for communication within target group.
+        /// </summary>
         [Output("appRuleTargetGroupDefaultInternalPolicy")]
         public Output<string?> AppRuleTargetGroupDefaultInternalPolicy { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - List of kinds associated with this filter.
+        /// </summary>
         [Output("appRuleTargetGroupFilterKindLists")]
         public Output<ImmutableArray<string>> AppRuleTargetGroupFilterKindLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - A list of category key and list of values.
+        /// </summary>
         [Output("appRuleTargetGroupFilterParams")]
         public Output<ImmutableArray<Outputs.NetworkSecurityRuleAppRuleTargetGroupFilterParam>> AppRuleTargetGroupFilterParams { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - The type of the filter being used.
+        /// </summary>
         [Output("appRuleTargetGroupFilterType")]
         public Output<string> AppRuleTargetGroupFilterType { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - Way to identify the object for which rule is applied.
+        /// </summary>
         [Output("appRuleTargetGroupPeerSpecificationType")]
         public Output<string?> AppRuleTargetGroupPeerSpecificationType { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Categories for the network_security_rule.
+        /// </summary>
         [Output("categories")]
         public Output<ImmutableArray<Outputs.NetworkSecurityRuleCategory>> Categories { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) A description for network_security_rule.
+        /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         [Output("isPolicyHitlogEnabled")]
         public Output<bool> IsPolicyHitlogEnabled { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - These rules are used for environmental isolation.
+        /// </summary>
         [Output("isolationRuleAction")]
         public Output<string> IsolationRuleAction { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - List of kinds associated with this filter.
+        /// </summary>
         [Output("isolationRuleFirstEntityFilterKindLists")]
         public Output<ImmutableArray<string>> IsolationRuleFirstEntityFilterKindLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - A list of category key and list of values.
+        /// </summary>
         [Output("isolationRuleFirstEntityFilterParams")]
         public Output<ImmutableArray<Outputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParam>> IsolationRuleFirstEntityFilterParams { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - The type of the filter being used.
+        /// </summary>
         [Output("isolationRuleFirstEntityFilterType")]
         public Output<string> IsolationRuleFirstEntityFilterType { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - List of kinds associated with this filter.
+        /// </summary>
         [Output("isolationRuleSecondEntityFilterKindLists")]
         public Output<ImmutableArray<string>> IsolationRuleSecondEntityFilterKindLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - A list of category key and list of values.
+        /// </summary>
         [Output("isolationRuleSecondEntityFilterParams")]
         public Output<ImmutableArray<Outputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParam>> IsolationRuleSecondEntityFilterParams { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) - The type of the filter being used.
+        /// </summary>
         [Output("isolationRuleSecondEntityFilterType")]
         public Output<string> IsolationRuleSecondEntityFilterType { get; private set; } = null!;
 
+        /// <summary>
+        /// - The network_security_rule kind metadata.
+        /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) The name for the network_security_rule.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         [Output("ownerReference")]
         public Output<ImmutableDictionary<string, string>> OwnerReference { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The reference to a project.
+        /// </summary>
         [Output("projectReference")]
         public Output<ImmutableDictionary<string, string>> ProjectReference { get; private set; } = null!;
 
@@ -331,13 +419,20 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class NetworkSecurityRuleArgs : Pulumi.ResourceArgs
+    public sealed class NetworkSecurityRuleArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// </summary>
         [Input("adRuleAction")]
         public Input<string>? AdRuleAction { get; set; }
 
         [Input("adRuleInboundAllowLists")]
         private InputList<Inputs.NetworkSecurityRuleAdRuleInboundAllowListArgs>? _adRuleInboundAllowLists;
+
+        /// <summary>
+        /// - (Optional) The set of categories that matching VMs need to have.
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleAdRuleInboundAllowListArgs> AdRuleInboundAllowLists
         {
             get => _adRuleInboundAllowLists ?? (_adRuleInboundAllowLists = new InputList<Inputs.NetworkSecurityRuleAdRuleInboundAllowListArgs>());
@@ -346,17 +441,28 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("adRuleOutboundAllowLists")]
         private InputList<Inputs.NetworkSecurityRuleAdRuleOutboundAllowListArgs>? _adRuleOutboundAllowLists;
+
+        /// <summary>
+        /// - (Optional)
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleAdRuleOutboundAllowListArgs> AdRuleOutboundAllowLists
         {
             get => _adRuleOutboundAllowLists ?? (_adRuleOutboundAllowLists = new InputList<Inputs.NetworkSecurityRuleAdRuleOutboundAllowListArgs>());
             set => _adRuleOutboundAllowLists = value;
         }
 
+        /// <summary>
+        /// - (Optional) - Default policy for communication within target group.
+        /// </summary>
         [Input("adRuleTargetGroupDefaultInternalPolicy")]
         public Input<string>? AdRuleTargetGroupDefaultInternalPolicy { get; set; }
 
         [Input("adRuleTargetGroupFilterKindLists")]
         private InputList<string>? _adRuleTargetGroupFilterKindLists;
+
+        /// <summary>
+        /// - (Optional) - List of kinds associated with this filter.
+        /// </summary>
         public InputList<string> AdRuleTargetGroupFilterKindLists
         {
             get => _adRuleTargetGroupFilterKindLists ?? (_adRuleTargetGroupFilterKindLists = new InputList<string>());
@@ -365,26 +471,43 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("adRuleTargetGroupFilterParams")]
         private InputList<Inputs.NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs>? _adRuleTargetGroupFilterParams;
+
+        /// <summary>
+        /// - (Optional) - A list of category key and list of values.
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs> AdRuleTargetGroupFilterParams
         {
             get => _adRuleTargetGroupFilterParams ?? (_adRuleTargetGroupFilterParams = new InputList<Inputs.NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs>());
             set => _adRuleTargetGroupFilterParams = value;
         }
 
+        /// <summary>
+        /// - (Optional) - The type of the filter being used.
+        /// </summary>
         [Input("adRuleTargetGroupFilterType")]
         public Input<string>? AdRuleTargetGroupFilterType { get; set; }
 
+        /// <summary>
+        /// - (Optional) - Way to identify the object for which rule is applied.
+        /// </summary>
         [Input("adRuleTargetGroupPeerSpecificationType")]
         public Input<string>? AdRuleTargetGroupPeerSpecificationType { get; set; }
 
         [Input("allowIpv6Traffic")]
         public Input<bool>? AllowIpv6Traffic { get; set; }
 
+        /// <summary>
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// </summary>
         [Input("appRuleAction")]
         public Input<string>? AppRuleAction { get; set; }
 
         [Input("appRuleInboundAllowLists")]
         private InputList<Inputs.NetworkSecurityRuleAppRuleInboundAllowListArgs>? _appRuleInboundAllowLists;
+
+        /// <summary>
+        /// - (Optional) The set of categories that matching VMs need to have.
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleAppRuleInboundAllowListArgs> AppRuleInboundAllowLists
         {
             get => _appRuleInboundAllowLists ?? (_appRuleInboundAllowLists = new InputList<Inputs.NetworkSecurityRuleAppRuleInboundAllowListArgs>());
@@ -393,17 +516,28 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("appRuleOutboundAllowLists")]
         private InputList<Inputs.NetworkSecurityRuleAppRuleOutboundAllowListArgs>? _appRuleOutboundAllowLists;
+
+        /// <summary>
+        /// - (Optional)
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleAppRuleOutboundAllowListArgs> AppRuleOutboundAllowLists
         {
             get => _appRuleOutboundAllowLists ?? (_appRuleOutboundAllowLists = new InputList<Inputs.NetworkSecurityRuleAppRuleOutboundAllowListArgs>());
             set => _appRuleOutboundAllowLists = value;
         }
 
+        /// <summary>
+        /// - (Optional) - Default policy for communication within target group.
+        /// </summary>
         [Input("appRuleTargetGroupDefaultInternalPolicy")]
         public Input<string>? AppRuleTargetGroupDefaultInternalPolicy { get; set; }
 
         [Input("appRuleTargetGroupFilterKindLists")]
         private InputList<string>? _appRuleTargetGroupFilterKindLists;
+
+        /// <summary>
+        /// - (Optional) - List of kinds associated with this filter.
+        /// </summary>
         public InputList<string> AppRuleTargetGroupFilterKindLists
         {
             get => _appRuleTargetGroupFilterKindLists ?? (_appRuleTargetGroupFilterKindLists = new InputList<string>());
@@ -412,37 +546,61 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("appRuleTargetGroupFilterParams")]
         private InputList<Inputs.NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs>? _appRuleTargetGroupFilterParams;
+
+        /// <summary>
+        /// - (Optional) - A list of category key and list of values.
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs> AppRuleTargetGroupFilterParams
         {
             get => _appRuleTargetGroupFilterParams ?? (_appRuleTargetGroupFilterParams = new InputList<Inputs.NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs>());
             set => _appRuleTargetGroupFilterParams = value;
         }
 
+        /// <summary>
+        /// - (Optional) - The type of the filter being used.
+        /// </summary>
         [Input("appRuleTargetGroupFilterType")]
         public Input<string>? AppRuleTargetGroupFilterType { get; set; }
 
+        /// <summary>
+        /// - (Optional) - Way to identify the object for which rule is applied.
+        /// </summary>
         [Input("appRuleTargetGroupPeerSpecificationType")]
         public Input<string>? AppRuleTargetGroupPeerSpecificationType { get; set; }
 
         [Input("categories")]
         private InputList<Inputs.NetworkSecurityRuleCategoryArgs>? _categories;
+
+        /// <summary>
+        /// - (Optional) Categories for the network_security_rule.
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleCategoryArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.NetworkSecurityRuleCategoryArgs>());
             set => _categories = value;
         }
 
+        /// <summary>
+        /// - (Optional) A description for network_security_rule.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         [Input("isPolicyHitlogEnabled")]
         public Input<bool>? IsPolicyHitlogEnabled { get; set; }
 
+        /// <summary>
+        /// - (Optional) - These rules are used for environmental isolation.
+        /// </summary>
         [Input("isolationRuleAction")]
         public Input<string>? IsolationRuleAction { get; set; }
 
         [Input("isolationRuleFirstEntityFilterKindLists")]
         private InputList<string>? _isolationRuleFirstEntityFilterKindLists;
+
+        /// <summary>
+        /// - (Optional) - List of kinds associated with this filter.
+        /// </summary>
         public InputList<string> IsolationRuleFirstEntityFilterKindLists
         {
             get => _isolationRuleFirstEntityFilterKindLists ?? (_isolationRuleFirstEntityFilterKindLists = new InputList<string>());
@@ -451,17 +609,28 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("isolationRuleFirstEntityFilterParams")]
         private InputList<Inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs>? _isolationRuleFirstEntityFilterParams;
+
+        /// <summary>
+        /// - (Optional) - A list of category key and list of values.
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs> IsolationRuleFirstEntityFilterParams
         {
             get => _isolationRuleFirstEntityFilterParams ?? (_isolationRuleFirstEntityFilterParams = new InputList<Inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs>());
             set => _isolationRuleFirstEntityFilterParams = value;
         }
 
+        /// <summary>
+        /// - (Optional) - The type of the filter being used.
+        /// </summary>
         [Input("isolationRuleFirstEntityFilterType")]
         public Input<string>? IsolationRuleFirstEntityFilterType { get; set; }
 
         [Input("isolationRuleSecondEntityFilterKindLists")]
         private InputList<string>? _isolationRuleSecondEntityFilterKindLists;
+
+        /// <summary>
+        /// - (Optional) - List of kinds associated with this filter.
+        /// </summary>
         public InputList<string> IsolationRuleSecondEntityFilterKindLists
         {
             get => _isolationRuleSecondEntityFilterKindLists ?? (_isolationRuleSecondEntityFilterKindLists = new InputList<string>());
@@ -470,20 +639,34 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("isolationRuleSecondEntityFilterParams")]
         private InputList<Inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs>? _isolationRuleSecondEntityFilterParams;
+
+        /// <summary>
+        /// - (Optional) - A list of category key and list of values.
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs> IsolationRuleSecondEntityFilterParams
         {
             get => _isolationRuleSecondEntityFilterParams ?? (_isolationRuleSecondEntityFilterParams = new InputList<Inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs>());
             set => _isolationRuleSecondEntityFilterParams = value;
         }
 
+        /// <summary>
+        /// - (Optional) - The type of the filter being used.
+        /// </summary>
         [Input("isolationRuleSecondEntityFilterType")]
         public Input<string>? IsolationRuleSecondEntityFilterType { get; set; }
 
+        /// <summary>
+        /// - (Required) The name for the network_security_rule.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("ownerReference")]
         private InputMap<string>? _ownerReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         public InputMap<string> OwnerReference
         {
             get => _ownerReference ?? (_ownerReference = new InputMap<string>());
@@ -492,6 +675,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("projectReference")]
         private InputMap<string>? _projectReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a project.
+        /// </summary>
         public InputMap<string> ProjectReference
         {
             get => _projectReference ?? (_projectReference = new InputMap<string>());
@@ -501,15 +688,23 @@ namespace PiersKarsenbarg.Nutanix
         public NetworkSecurityRuleArgs()
         {
         }
+        public static new NetworkSecurityRuleArgs Empty => new NetworkSecurityRuleArgs();
     }
 
-    public sealed class NetworkSecurityRuleState : Pulumi.ResourceArgs
+    public sealed class NetworkSecurityRuleState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// </summary>
         [Input("adRuleAction")]
         public Input<string>? AdRuleAction { get; set; }
 
         [Input("adRuleInboundAllowLists")]
         private InputList<Inputs.NetworkSecurityRuleAdRuleInboundAllowListGetArgs>? _adRuleInboundAllowLists;
+
+        /// <summary>
+        /// - (Optional) The set of categories that matching VMs need to have.
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleAdRuleInboundAllowListGetArgs> AdRuleInboundAllowLists
         {
             get => _adRuleInboundAllowLists ?? (_adRuleInboundAllowLists = new InputList<Inputs.NetworkSecurityRuleAdRuleInboundAllowListGetArgs>());
@@ -518,17 +713,28 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("adRuleOutboundAllowLists")]
         private InputList<Inputs.NetworkSecurityRuleAdRuleOutboundAllowListGetArgs>? _adRuleOutboundAllowLists;
+
+        /// <summary>
+        /// - (Optional)
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleAdRuleOutboundAllowListGetArgs> AdRuleOutboundAllowLists
         {
             get => _adRuleOutboundAllowLists ?? (_adRuleOutboundAllowLists = new InputList<Inputs.NetworkSecurityRuleAdRuleOutboundAllowListGetArgs>());
             set => _adRuleOutboundAllowLists = value;
         }
 
+        /// <summary>
+        /// - (Optional) - Default policy for communication within target group.
+        /// </summary>
         [Input("adRuleTargetGroupDefaultInternalPolicy")]
         public Input<string>? AdRuleTargetGroupDefaultInternalPolicy { get; set; }
 
         [Input("adRuleTargetGroupFilterKindLists")]
         private InputList<string>? _adRuleTargetGroupFilterKindLists;
+
+        /// <summary>
+        /// - (Optional) - List of kinds associated with this filter.
+        /// </summary>
         public InputList<string> AdRuleTargetGroupFilterKindLists
         {
             get => _adRuleTargetGroupFilterKindLists ?? (_adRuleTargetGroupFilterKindLists = new InputList<string>());
@@ -537,15 +743,25 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("adRuleTargetGroupFilterParams")]
         private InputList<Inputs.NetworkSecurityRuleAdRuleTargetGroupFilterParamGetArgs>? _adRuleTargetGroupFilterParams;
+
+        /// <summary>
+        /// - (Optional) - A list of category key and list of values.
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleAdRuleTargetGroupFilterParamGetArgs> AdRuleTargetGroupFilterParams
         {
             get => _adRuleTargetGroupFilterParams ?? (_adRuleTargetGroupFilterParams = new InputList<Inputs.NetworkSecurityRuleAdRuleTargetGroupFilterParamGetArgs>());
             set => _adRuleTargetGroupFilterParams = value;
         }
 
+        /// <summary>
+        /// - (Optional) - The type of the filter being used.
+        /// </summary>
         [Input("adRuleTargetGroupFilterType")]
         public Input<string>? AdRuleTargetGroupFilterType { get; set; }
 
+        /// <summary>
+        /// - (Optional) - Way to identify the object for which rule is applied.
+        /// </summary>
         [Input("adRuleTargetGroupPeerSpecificationType")]
         public Input<string>? AdRuleTargetGroupPeerSpecificationType { get; set; }
 
@@ -558,11 +774,18 @@ namespace PiersKarsenbarg.Nutanix
         [Input("apiVersion")]
         public Input<string>? ApiVersion { get; set; }
 
+        /// <summary>
+        /// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
+        /// </summary>
         [Input("appRuleAction")]
         public Input<string>? AppRuleAction { get; set; }
 
         [Input("appRuleInboundAllowLists")]
         private InputList<Inputs.NetworkSecurityRuleAppRuleInboundAllowListGetArgs>? _appRuleInboundAllowLists;
+
+        /// <summary>
+        /// - (Optional) The set of categories that matching VMs need to have.
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleAppRuleInboundAllowListGetArgs> AppRuleInboundAllowLists
         {
             get => _appRuleInboundAllowLists ?? (_appRuleInboundAllowLists = new InputList<Inputs.NetworkSecurityRuleAppRuleInboundAllowListGetArgs>());
@@ -571,17 +794,28 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("appRuleOutboundAllowLists")]
         private InputList<Inputs.NetworkSecurityRuleAppRuleOutboundAllowListGetArgs>? _appRuleOutboundAllowLists;
+
+        /// <summary>
+        /// - (Optional)
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleAppRuleOutboundAllowListGetArgs> AppRuleOutboundAllowLists
         {
             get => _appRuleOutboundAllowLists ?? (_appRuleOutboundAllowLists = new InputList<Inputs.NetworkSecurityRuleAppRuleOutboundAllowListGetArgs>());
             set => _appRuleOutboundAllowLists = value;
         }
 
+        /// <summary>
+        /// - (Optional) - Default policy for communication within target group.
+        /// </summary>
         [Input("appRuleTargetGroupDefaultInternalPolicy")]
         public Input<string>? AppRuleTargetGroupDefaultInternalPolicy { get; set; }
 
         [Input("appRuleTargetGroupFilterKindLists")]
         private InputList<string>? _appRuleTargetGroupFilterKindLists;
+
+        /// <summary>
+        /// - (Optional) - List of kinds associated with this filter.
+        /// </summary>
         public InputList<string> AppRuleTargetGroupFilterKindLists
         {
             get => _appRuleTargetGroupFilterKindLists ?? (_appRuleTargetGroupFilterKindLists = new InputList<string>());
@@ -590,37 +824,61 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("appRuleTargetGroupFilterParams")]
         private InputList<Inputs.NetworkSecurityRuleAppRuleTargetGroupFilterParamGetArgs>? _appRuleTargetGroupFilterParams;
+
+        /// <summary>
+        /// - (Optional) - A list of category key and list of values.
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleAppRuleTargetGroupFilterParamGetArgs> AppRuleTargetGroupFilterParams
         {
             get => _appRuleTargetGroupFilterParams ?? (_appRuleTargetGroupFilterParams = new InputList<Inputs.NetworkSecurityRuleAppRuleTargetGroupFilterParamGetArgs>());
             set => _appRuleTargetGroupFilterParams = value;
         }
 
+        /// <summary>
+        /// - (Optional) - The type of the filter being used.
+        /// </summary>
         [Input("appRuleTargetGroupFilterType")]
         public Input<string>? AppRuleTargetGroupFilterType { get; set; }
 
+        /// <summary>
+        /// - (Optional) - Way to identify the object for which rule is applied.
+        /// </summary>
         [Input("appRuleTargetGroupPeerSpecificationType")]
         public Input<string>? AppRuleTargetGroupPeerSpecificationType { get; set; }
 
         [Input("categories")]
         private InputList<Inputs.NetworkSecurityRuleCategoryGetArgs>? _categories;
+
+        /// <summary>
+        /// - (Optional) Categories for the network_security_rule.
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleCategoryGetArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.NetworkSecurityRuleCategoryGetArgs>());
             set => _categories = value;
         }
 
+        /// <summary>
+        /// - (Optional) A description for network_security_rule.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         [Input("isPolicyHitlogEnabled")]
         public Input<bool>? IsPolicyHitlogEnabled { get; set; }
 
+        /// <summary>
+        /// - (Optional) - These rules are used for environmental isolation.
+        /// </summary>
         [Input("isolationRuleAction")]
         public Input<string>? IsolationRuleAction { get; set; }
 
         [Input("isolationRuleFirstEntityFilterKindLists")]
         private InputList<string>? _isolationRuleFirstEntityFilterKindLists;
+
+        /// <summary>
+        /// - (Optional) - List of kinds associated with this filter.
+        /// </summary>
         public InputList<string> IsolationRuleFirstEntityFilterKindLists
         {
             get => _isolationRuleFirstEntityFilterKindLists ?? (_isolationRuleFirstEntityFilterKindLists = new InputList<string>());
@@ -629,17 +887,28 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("isolationRuleFirstEntityFilterParams")]
         private InputList<Inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamGetArgs>? _isolationRuleFirstEntityFilterParams;
+
+        /// <summary>
+        /// - (Optional) - A list of category key and list of values.
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamGetArgs> IsolationRuleFirstEntityFilterParams
         {
             get => _isolationRuleFirstEntityFilterParams ?? (_isolationRuleFirstEntityFilterParams = new InputList<Inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamGetArgs>());
             set => _isolationRuleFirstEntityFilterParams = value;
         }
 
+        /// <summary>
+        /// - (Optional) - The type of the filter being used.
+        /// </summary>
         [Input("isolationRuleFirstEntityFilterType")]
         public Input<string>? IsolationRuleFirstEntityFilterType { get; set; }
 
         [Input("isolationRuleSecondEntityFilterKindLists")]
         private InputList<string>? _isolationRuleSecondEntityFilterKindLists;
+
+        /// <summary>
+        /// - (Optional) - List of kinds associated with this filter.
+        /// </summary>
         public InputList<string> IsolationRuleSecondEntityFilterKindLists
         {
             get => _isolationRuleSecondEntityFilterKindLists ?? (_isolationRuleSecondEntityFilterKindLists = new InputList<string>());
@@ -648,28 +917,46 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("isolationRuleSecondEntityFilterParams")]
         private InputList<Inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamGetArgs>? _isolationRuleSecondEntityFilterParams;
+
+        /// <summary>
+        /// - (Optional) - A list of category key and list of values.
+        /// </summary>
         public InputList<Inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamGetArgs> IsolationRuleSecondEntityFilterParams
         {
             get => _isolationRuleSecondEntityFilterParams ?? (_isolationRuleSecondEntityFilterParams = new InputList<Inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamGetArgs>());
             set => _isolationRuleSecondEntityFilterParams = value;
         }
 
+        /// <summary>
+        /// - (Optional) - The type of the filter being used.
+        /// </summary>
         [Input("isolationRuleSecondEntityFilterType")]
         public Input<string>? IsolationRuleSecondEntityFilterType { get; set; }
 
         [Input("metadata")]
         private InputMap<string>? _metadata;
+
+        /// <summary>
+        /// - The network_security_rule kind metadata.
+        /// </summary>
         public InputMap<string> Metadata
         {
             get => _metadata ?? (_metadata = new InputMap<string>());
             set => _metadata = value;
         }
 
+        /// <summary>
+        /// - (Required) The name for the network_security_rule.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("ownerReference")]
         private InputMap<string>? _ownerReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         public InputMap<string> OwnerReference
         {
             get => _ownerReference ?? (_ownerReference = new InputMap<string>());
@@ -678,6 +965,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("projectReference")]
         private InputMap<string>? _projectReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a project.
+        /// </summary>
         public InputMap<string> ProjectReference
         {
             get => _projectReference ?? (_projectReference = new InputMap<string>());
@@ -687,5 +978,6 @@ namespace PiersKarsenbarg.Nutanix
         public NetworkSecurityRuleState()
         {
         }
+        public static new NetworkSecurityRuleState Empty => new NetworkSecurityRuleState();
     }
 }

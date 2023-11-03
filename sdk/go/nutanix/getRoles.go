@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes a list of roles.
@@ -18,23 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetRoles(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetRoles(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetRoles(ctx *pulumi.Context, args *GetRolesArgs, opts ...pulumi.InvokeOption) (*GetRolesResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRolesResult
 	err := ctx.Invoke("nutanix:index/getRoles:getRoles", args, &rv, opts...)
 	if err != nil {
@@ -45,17 +49,19 @@ func GetRoles(ctx *pulumi.Context, args *GetRolesArgs, opts ...pulumi.InvokeOpti
 
 // A collection of arguments for invoking getRoles.
 type GetRolesArgs struct {
+	// - The role kind metadata.
 	Metadatas []GetRolesMetadata `pulumi:"metadatas"`
 }
 
 // A collection of values returned by getRoles.
 type GetRolesResult struct {
 	// The version of the API.
-	// * `state`: - The state of the role.
-	ApiVersion string           `pulumi:"apiVersion"`
-	Entities   []GetRolesEntity `pulumi:"entities"`
+	ApiVersion string `pulumi:"apiVersion"`
+	// List of Roles
+	Entities []GetRolesEntity `pulumi:"entities"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string             `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// - The role kind metadata.
 	Metadatas []GetRolesMetadata `pulumi:"metadatas"`
 }
 
@@ -74,6 +80,7 @@ func GetRolesOutput(ctx *pulumi.Context, args GetRolesOutputArgs, opts ...pulumi
 
 // A collection of arguments for invoking getRoles.
 type GetRolesOutputArgs struct {
+	// - The role kind metadata.
 	Metadatas GetRolesMetadataArrayInput `pulumi:"metadatas"`
 }
 
@@ -96,12 +103,18 @@ func (o GetRolesResultOutput) ToGetRolesResultOutputWithContext(ctx context.Cont
 	return o
 }
 
+func (o GetRolesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRolesResult] {
+	return pulumix.Output[GetRolesResult]{
+		OutputState: o.OutputState,
+	}
+}
+
 // The version of the API.
-// * `state`: - The state of the role.
 func (o GetRolesResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRolesResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// List of Roles
 func (o GetRolesResultOutput) Entities() GetRolesEntityArrayOutput {
 	return o.ApplyT(func(v GetRolesResult) []GetRolesEntity { return v.Entities }).(GetRolesEntityArrayOutput)
 }
@@ -111,6 +124,7 @@ func (o GetRolesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRolesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - The role kind metadata.
 func (o GetRolesResultOutput) Metadatas() GetRolesMetadataArrayOutput {
 	return o.ApplyT(func(v GetRolesResult) []GetRolesMetadata { return v.Metadatas }).(GetRolesMetadataArrayOutput)
 }

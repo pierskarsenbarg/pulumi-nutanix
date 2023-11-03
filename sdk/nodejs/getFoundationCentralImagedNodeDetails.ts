@@ -13,17 +13,14 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const nodesDetails = pulumi.output(nutanix.getFoundationCentralImagedNodeDetails({
+ * const nodesDetails = nutanix.getFoundationCentralImagedNodeDetails({
  *     imagedNodeUuid: "<IMAGED-NODE-UUID>",
- * }));
+ * });
  * ```
  */
 export function getFoundationCentralImagedNodeDetails(args: GetFoundationCentralImagedNodeDetailsArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralImagedNodeDetailsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails", {
         "imagedNodeUuid": args.imagedNodeUuid,
         "ipv6Interface": args.ipv6Interface,
@@ -35,8 +32,17 @@ export function getFoundationCentralImagedNodeDetails(args: GetFoundationCentral
  * A collection of arguments for invoking getFoundationCentralImagedNodeDetails.
  */
 export interface GetFoundationCentralImagedNodeDetailsArgs {
+    /**
+     * UUID of the node whose details need to be fetched.
+     */
     imagedNodeUuid: string;
+    /**
+     * Name of the cvm interface having ipv6 address.
+     */
     ipv6Interface?: string;
+    /**
+     * Version of the node used for CAS.
+     */
     objectVersion?: number;
 }
 
@@ -44,55 +50,179 @@ export interface GetFoundationCentralImagedNodeDetailsArgs {
  * A collection of values returned by getFoundationCentralImagedNodeDetails.
  */
 export interface GetFoundationCentralImagedNodeDetailsResult {
+    /**
+     * AOS version currently installed on the node.
+     */
     readonly aosVersion: string;
+    /**
+     * API key used to register the node.
+     */
     readonly apiKeyUuid: string;
+    /**
+     * Specifies whether the node is available for cluster creation.
+     */
     readonly available: boolean;
+    /**
+     * Serial number of the block to which the node belongs.
+     */
     readonly blockSerial: string;
+    /**
+     * Time when the node was discovered in Foundation Central.
+     */
     readonly createdTimestamp: string;
+    /**
+     * Current time of Foundation Central.
+     */
     readonly currentTime: string;
+    /**
+     * gateway of the cvm.
+     */
     readonly cvmGateway: string;
+    /**
+     * IP address of the cvm.
+     */
     readonly cvmIp: string;
+    /**
+     * IPv6 address of the cvm.
+     */
     readonly cvmIpv6: string;
+    /**
+     * netmask of the cvm.
+     */
     readonly cvmNetmask: string;
+    /**
+     * Denotes whether the CVM is up or not on this node.
+     */
     readonly cvmUp: boolean;
+    /**
+     * Node UUID from the node's cvm.
+     */
     readonly cvmUuid: string;
+    /**
+     * Vlan tag of the cvm, if the cvm is on a vlan.
+     */
     readonly cvmVlanId: number;
+    /**
+     * Foundation version installed on the node.
+     */
     readonly foundationVersion: string;
+    /**
+     * Hardware attributes json of the node.
+     */
     readonly hardwareAttributes: {[key: string]: any};
+    /**
+     * gateway of the hypervisor.
+     */
     readonly hypervisorGateway: string;
+    /**
+     * Name of the hypervisor host.
+     */
     readonly hypervisorHostname: string;
+    /**
+     * IP address of the hypervisor.
+     */
     readonly hypervisorIp: string;
+    /**
+     * netmask of the hypervisor.
+     */
     readonly hypervisorNetmask: string;
+    /**
+     * Hypervisor type currently installed on the node. Must be one of {kvm, esx, hyperv}.
+     */
     readonly hypervisorType: string;
+    /**
+     * Version of the hypervisor currently installed on the node.
+     */
     readonly hypervisorVersion: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * UUID of the cluster to which the node belongs, if any.
+     */
     readonly imagedClusterUuid: string;
+    /**
+     * UUID of the node.
+     */
     readonly imagedNodeUuid: string;
+    /**
+     * gateway of the ipmi.
+     */
     readonly ipmiGateway: string;
+    /**
+     * IP address of the ipmi.
+     */
     readonly ipmiIp: string;
+    /**
+     * netmask of the ipmi.
+     */
     readonly ipmiNetmask: string;
+    /**
+     * Name of the cvm interface having ipv6 address.
+     */
     readonly ipv6Interface: string;
+    /**
+     * List of timestamps when the node has sent heartbeats to Foundation Central.
+     */
     readonly latestHbTsLists: string[];
+    /**
+     * Model of the node.
+     */
     readonly model: string;
+    /**
+     * Position of the node in the block.
+     */
     readonly nodePosition: string;
+    /**
+     * Serial number of the node.
+     */
     readonly nodeSerial: string;
+    /**
+     * Specifies whether the node is discovering, available or unavailable for cluster creation.
+     */
     readonly nodeState: string;
+    /**
+     * Specifies the type of node - on-prem, AWS, GCP etc.
+     */
     readonly nodeType: string;
+    /**
+     * Version of the node used for CAS.
+     */
     readonly objectVersion: number;
 }
-
+/**
+ * Get the details of a single node given its UUID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const nodesDetails = nutanix.getFoundationCentralImagedNodeDetails({
+ *     imagedNodeUuid: "<IMAGED-NODE-UUID>",
+ * });
+ * ```
+ */
 export function getFoundationCentralImagedNodeDetailsOutput(args: GetFoundationCentralImagedNodeDetailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralImagedNodeDetailsResult> {
-    return pulumi.output(args).apply(a => getFoundationCentralImagedNodeDetails(a, opts))
+    return pulumi.output(args).apply((a: any) => getFoundationCentralImagedNodeDetails(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getFoundationCentralImagedNodeDetails.
  */
 export interface GetFoundationCentralImagedNodeDetailsOutputArgs {
+    /**
+     * UUID of the node whose details need to be fetched.
+     */
     imagedNodeUuid: pulumi.Input<string>;
+    /**
+     * Name of the cvm interface having ipv6 address.
+     */
     ipv6Interface?: pulumi.Input<string>;
+    /**
+     * Version of the node used for CAS.
+     */
     objectVersion?: pulumi.Input<number>;
 }

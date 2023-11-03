@@ -13,14 +13,14 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetFoundationCentralListApiKeys
     {
         public static Task<GetFoundationCentralListApiKeysResult> InvokeAsync(GetFoundationCentralListApiKeysArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralListApiKeysResult>("nutanix:index/getFoundationCentralListApiKeys:getFoundationCentralListApiKeys", args ?? new GetFoundationCentralListApiKeysArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralListApiKeysResult>("nutanix:index/getFoundationCentralListApiKeys:getFoundationCentralListApiKeys", args ?? new GetFoundationCentralListApiKeysArgs(), options.WithDefaults());
 
         public static Output<GetFoundationCentralListApiKeysResult> Invoke(GetFoundationCentralListApiKeysInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFoundationCentralListApiKeysResult>("nutanix:index/getFoundationCentralListApiKeys:getFoundationCentralListApiKeys", args ?? new GetFoundationCentralListApiKeysInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralListApiKeysResult>("nutanix:index/getFoundationCentralListApiKeys:getFoundationCentralListApiKeys", args ?? new GetFoundationCentralListApiKeysInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetFoundationCentralListApiKeysArgs : Pulumi.InvokeArgs
+    public sealed class GetFoundationCentralListApiKeysArgs : global::Pulumi.InvokeArgs
     {
         [Input("length")]
         public int? Length { get; set; }
@@ -34,9 +34,10 @@ namespace PiersKarsenbarg.Nutanix
         public GetFoundationCentralListApiKeysArgs()
         {
         }
+        public static new GetFoundationCentralListApiKeysArgs Empty => new GetFoundationCentralListApiKeysArgs();
     }
 
-    public sealed class GetFoundationCentralListApiKeysInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFoundationCentralListApiKeysInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("length")]
         public Input<int>? Length { get; set; }
@@ -50,6 +51,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetFoundationCentralListApiKeysInvokeArgs()
         {
         }
+        public static new GetFoundationCentralListApiKeysInvokeArgs Empty => new GetFoundationCentralListApiKeysInvokeArgs();
     }
 
 

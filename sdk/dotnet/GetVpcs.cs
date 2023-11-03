@@ -20,23 +20,22 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var test = Output.Create(Nutanix.GetVpcs.InvokeAsync());
-        ///     }
+        ///     var test = Nutanix.GetVpcs.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVpcsResult> InvokeAsync(GetVpcsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVpcsResult>("nutanix:index/getVpcs:getVpcs", args ?? new GetVpcsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVpcsResult>("nutanix:index/getVpcs:getVpcs", args ?? new GetVpcsArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a datasource to retrieve all the vpcs.
@@ -46,30 +45,33 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var test = Output.Create(Nutanix.GetVpcs.InvokeAsync());
-        ///     }
+        ///     var test = Nutanix.GetVpcs.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVpcsResult> Invoke(GetVpcsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVpcsResult>("nutanix:index/getVpcs:getVpcs", args ?? new GetVpcsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVpcsResult>("nutanix:index/getVpcs:getVpcs", args ?? new GetVpcsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetVpcsArgs : Pulumi.InvokeArgs
+    public sealed class GetVpcsArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private List<Inputs.GetVpcsMetadataArgs>? _metadatas;
+
+        /// <summary>
+        /// - The vpc kind metadata.
+        /// </summary>
         public List<Inputs.GetVpcsMetadataArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new List<Inputs.GetVpcsMetadataArgs>());
@@ -79,12 +81,17 @@ namespace PiersKarsenbarg.Nutanix
         public GetVpcsArgs()
         {
         }
+        public static new GetVpcsArgs Empty => new GetVpcsArgs();
     }
 
-    public sealed class GetVpcsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetVpcsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private InputList<Inputs.GetVpcsMetadataInputArgs>? _metadatas;
+
+        /// <summary>
+        /// - The vpc kind metadata.
+        /// </summary>
         public InputList<Inputs.GetVpcsMetadataInputArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new InputList<Inputs.GetVpcsMetadataInputArgs>());
@@ -94,18 +101,28 @@ namespace PiersKarsenbarg.Nutanix
         public GetVpcsInvokeArgs()
         {
         }
+        public static new GetVpcsInvokeArgs Empty => new GetVpcsInvokeArgs();
     }
 
 
     [OutputType]
     public sealed class GetVpcsResult
     {
+        /// <summary>
+        /// version of the API
+        /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// List of VPCs
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetVpcsEntityResult> Entities;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - The vpc kind metadata.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetVpcsMetadataResult> Metadatas;
 
         [OutputConstructor]

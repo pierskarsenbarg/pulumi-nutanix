@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -12,9 +13,9 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const testAddress = new nutanix.AddressGroup("test_address", {
+ * const testAddress = new nutanix.AddressGroup("testAddress", {
  *     description: "test address groups resource",
  *     ipAddressBlockLists: [{
  *         ip: "10.0.0.0",
@@ -51,9 +52,21 @@ export class AddressGroup extends pulumi.CustomResource {
         return obj['__pulumiType'] === AddressGroup.__pulumiType;
     }
 
+    /**
+     * - (ReadOnly) Address Group string
+     */
     public /*out*/ readonly addressGroupString!: pulumi.Output<string>;
+    /**
+     * - (Optional) Description of the service group
+     */
     public readonly description!: pulumi.Output<string | undefined>;
+    /**
+     * - (Required) list of IP address blocks with their prefix length
+     */
     public readonly ipAddressBlockLists!: pulumi.Output<outputs.AddressGroupIpAddressBlockList[]>;
+    /**
+     * - (Required) Name of the service group
+     */
     public readonly name!: pulumi.Output<string>;
 
     /**
@@ -92,9 +105,21 @@ export class AddressGroup extends pulumi.CustomResource {
  * Input properties used for looking up and filtering AddressGroup resources.
  */
 export interface AddressGroupState {
+    /**
+     * - (ReadOnly) Address Group string
+     */
     addressGroupString?: pulumi.Input<string>;
+    /**
+     * - (Optional) Description of the service group
+     */
     description?: pulumi.Input<string>;
+    /**
+     * - (Required) list of IP address blocks with their prefix length
+     */
     ipAddressBlockLists?: pulumi.Input<pulumi.Input<inputs.AddressGroupIpAddressBlockList>[]>;
+    /**
+     * - (Required) Name of the service group
+     */
     name?: pulumi.Input<string>;
 }
 
@@ -102,7 +127,16 @@ export interface AddressGroupState {
  * The set of arguments for constructing a AddressGroup resource.
  */
 export interface AddressGroupArgs {
+    /**
+     * - (Optional) Description of the service group
+     */
     description?: pulumi.Input<string>;
+    /**
+     * - (Required) list of IP address blocks with their prefix length
+     */
     ipAddressBlockLists: pulumi.Input<pulumi.Input<inputs.AddressGroupIpAddressBlockList>[]>;
+    /**
+     * - (Required) Name of the service group
+     */
     name?: pulumi.Input<string>;
 }

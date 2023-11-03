@@ -11,11 +11,14 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetFloatingIpsMetadataArgs : Pulumi.InvokeArgs
+    public sealed class GetFloatingIpsMetadataArgs : global::Pulumi.InvokeArgs
     {
         [Input("filter", required: true)]
         public string Filter { get; set; } = null!;
 
+        /// <summary>
+        /// - The kind name (Default value: project).
+        /// </summary>
         [Input("kind", required: true)]
         public string Kind { get; set; } = null!;
 
@@ -37,5 +40,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetFloatingIpsMetadataArgs()
         {
         }
+        public static new GetFloatingIpsMetadataArgs Empty => new GetFloatingIpsMetadataArgs();
     }
 }

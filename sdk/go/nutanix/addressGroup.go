@@ -7,8 +7,10 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a resource to create a address group based on the input parameters.
@@ -19,36 +21,42 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.NewAddressGroup(ctx, "testAddress", &nutanix.AddressGroupArgs{
-// 			Description: pulumi.String("test address groups resource"),
-// 			IpAddressBlockLists: AddressGroupIpAddressBlockListArray{
-// 				&AddressGroupIpAddressBlockListArgs{
-// 					Ip:           pulumi.String("10.0.0.0"),
-// 					PrefixLength: pulumi.Int(24),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewAddressGroup(ctx, "testAddress", &nutanix.AddressGroupArgs{
+//				Description: pulumi.String("test address groups resource"),
+//				IpAddressBlockLists: nutanix.AddressGroupIpAddressBlockListArray{
+//					&nutanix.AddressGroupIpAddressBlockListArgs{
+//						Ip:           pulumi.String("10.0.0.0"),
+//						PrefixLength: pulumi.Int(24),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type AddressGroup struct {
 	pulumi.CustomResourceState
 
-	AddressGroupString  pulumi.StringOutput                       `pulumi:"addressGroupString"`
-	Description         pulumi.StringPtrOutput                    `pulumi:"description"`
+	// - (ReadOnly) Address Group string
+	AddressGroupString pulumi.StringOutput `pulumi:"addressGroupString"`
+	// - (Optional) Description of the service group
+	Description pulumi.StringPtrOutput `pulumi:"description"`
+	// - (Required) list of IP address blocks with their prefix length
 	IpAddressBlockLists AddressGroupIpAddressBlockListArrayOutput `pulumi:"ipAddressBlockLists"`
-	Name                pulumi.StringOutput                       `pulumi:"name"`
+	// - (Required) Name of the service group
+	Name pulumi.StringOutput `pulumi:"name"`
 }
 
 // NewAddressGroup registers a new resource with the given unique name, arguments, and options.
@@ -61,7 +69,7 @@ func NewAddressGroup(ctx *pulumi.Context,
 	if args.IpAddressBlockLists == nil {
 		return nil, errors.New("invalid value for required argument 'IpAddressBlockLists'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource AddressGroup
 	err := ctx.RegisterResource("nutanix:index/addressGroup:AddressGroup", name, args, &resource, opts...)
 	if err != nil {
@@ -84,17 +92,25 @@ func GetAddressGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AddressGroup resources.
 type addressGroupState struct {
-	AddressGroupString  *string                          `pulumi:"addressGroupString"`
-	Description         *string                          `pulumi:"description"`
+	// - (ReadOnly) Address Group string
+	AddressGroupString *string `pulumi:"addressGroupString"`
+	// - (Optional) Description of the service group
+	Description *string `pulumi:"description"`
+	// - (Required) list of IP address blocks with their prefix length
 	IpAddressBlockLists []AddressGroupIpAddressBlockList `pulumi:"ipAddressBlockLists"`
-	Name                *string                          `pulumi:"name"`
+	// - (Required) Name of the service group
+	Name *string `pulumi:"name"`
 }
 
 type AddressGroupState struct {
-	AddressGroupString  pulumi.StringPtrInput
-	Description         pulumi.StringPtrInput
+	// - (ReadOnly) Address Group string
+	AddressGroupString pulumi.StringPtrInput
+	// - (Optional) Description of the service group
+	Description pulumi.StringPtrInput
+	// - (Required) list of IP address blocks with their prefix length
 	IpAddressBlockLists AddressGroupIpAddressBlockListArrayInput
-	Name                pulumi.StringPtrInput
+	// - (Required) Name of the service group
+	Name pulumi.StringPtrInput
 }
 
 func (AddressGroupState) ElementType() reflect.Type {
@@ -102,16 +118,22 @@ func (AddressGroupState) ElementType() reflect.Type {
 }
 
 type addressGroupArgs struct {
-	Description         *string                          `pulumi:"description"`
+	// - (Optional) Description of the service group
+	Description *string `pulumi:"description"`
+	// - (Required) list of IP address blocks with their prefix length
 	IpAddressBlockLists []AddressGroupIpAddressBlockList `pulumi:"ipAddressBlockLists"`
-	Name                *string                          `pulumi:"name"`
+	// - (Required) Name of the service group
+	Name *string `pulumi:"name"`
 }
 
 // The set of arguments for constructing a AddressGroup resource.
 type AddressGroupArgs struct {
-	Description         pulumi.StringPtrInput
+	// - (Optional) Description of the service group
+	Description pulumi.StringPtrInput
+	// - (Required) list of IP address blocks with their prefix length
 	IpAddressBlockLists AddressGroupIpAddressBlockListArrayInput
-	Name                pulumi.StringPtrInput
+	// - (Required) Name of the service group
+	Name pulumi.StringPtrInput
 }
 
 func (AddressGroupArgs) ElementType() reflect.Type {
@@ -137,10 +159,16 @@ func (i *AddressGroup) ToAddressGroupOutputWithContext(ctx context.Context) Addr
 	return pulumi.ToOutputWithContext(ctx, i).(AddressGroupOutput)
 }
 
+func (i *AddressGroup) ToOutput(ctx context.Context) pulumix.Output[*AddressGroup] {
+	return pulumix.Output[*AddressGroup]{
+		OutputState: i.ToAddressGroupOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AddressGroupArrayInput is an input type that accepts AddressGroupArray and AddressGroupArrayOutput values.
 // You can construct a concrete instance of `AddressGroupArrayInput` via:
 //
-//          AddressGroupArray{ AddressGroupArgs{...} }
+//	AddressGroupArray{ AddressGroupArgs{...} }
 type AddressGroupArrayInput interface {
 	pulumi.Input
 
@@ -162,10 +190,16 @@ func (i AddressGroupArray) ToAddressGroupArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(AddressGroupArrayOutput)
 }
 
+func (i AddressGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*AddressGroup] {
+	return pulumix.Output[[]*AddressGroup]{
+		OutputState: i.ToAddressGroupArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // AddressGroupMapInput is an input type that accepts AddressGroupMap and AddressGroupMapOutput values.
 // You can construct a concrete instance of `AddressGroupMapInput` via:
 //
-//          AddressGroupMap{ "key": AddressGroupArgs{...} }
+//	AddressGroupMap{ "key": AddressGroupArgs{...} }
 type AddressGroupMapInput interface {
 	pulumi.Input
 
@@ -187,6 +221,12 @@ func (i AddressGroupMap) ToAddressGroupMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(AddressGroupMapOutput)
 }
 
+func (i AddressGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AddressGroup] {
+	return pulumix.Output[map[string]*AddressGroup]{
+		OutputState: i.ToAddressGroupMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type AddressGroupOutput struct{ *pulumi.OutputState }
 
 func (AddressGroupOutput) ElementType() reflect.Type {
@@ -201,18 +241,28 @@ func (o AddressGroupOutput) ToAddressGroupOutputWithContext(ctx context.Context)
 	return o
 }
 
+func (o AddressGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*AddressGroup] {
+	return pulumix.Output[*AddressGroup]{
+		OutputState: o.OutputState,
+	}
+}
+
+// - (ReadOnly) Address Group string
 func (o AddressGroupOutput) AddressGroupString() pulumi.StringOutput {
 	return o.ApplyT(func(v *AddressGroup) pulumi.StringOutput { return v.AddressGroupString }).(pulumi.StringOutput)
 }
 
+// - (Optional) Description of the service group
 func (o AddressGroupOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AddressGroup) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) list of IP address blocks with their prefix length
 func (o AddressGroupOutput) IpAddressBlockLists() AddressGroupIpAddressBlockListArrayOutput {
 	return o.ApplyT(func(v *AddressGroup) AddressGroupIpAddressBlockListArrayOutput { return v.IpAddressBlockLists }).(AddressGroupIpAddressBlockListArrayOutput)
 }
 
+// - (Required) Name of the service group
 func (o AddressGroupOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *AddressGroup) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
@@ -229,6 +279,12 @@ func (o AddressGroupArrayOutput) ToAddressGroupArrayOutput() AddressGroupArrayOu
 
 func (o AddressGroupArrayOutput) ToAddressGroupArrayOutputWithContext(ctx context.Context) AddressGroupArrayOutput {
 	return o
+}
+
+func (o AddressGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AddressGroup] {
+	return pulumix.Output[[]*AddressGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AddressGroupArrayOutput) Index(i pulumi.IntInput) AddressGroupOutput {
@@ -249,6 +305,12 @@ func (o AddressGroupMapOutput) ToAddressGroupMapOutput() AddressGroupMapOutput {
 
 func (o AddressGroupMapOutput) ToAddressGroupMapOutputWithContext(ctx context.Context) AddressGroupMapOutput {
 	return o
+}
+
+func (o AddressGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AddressGroup] {
+	return pulumix.Output[map[string]*AddressGroup]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o AddressGroupMapOutput) MapIndex(k pulumi.StringInput) AddressGroupOutput {

@@ -14,25 +14,45 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVirtualMachineGpuListResult
     {
+        /// <summary>
+        /// - (Computed) The device ID of the GPU.
+        /// </summary>
         public readonly int DeviceId;
         /// <summary>
         /// Fraction of the physical GPU assigned.
-        /// * `mode`: - The mode of this GPU.
-        /// * `num_virtual_display_heads`: - Number of supported virtual display heads.
-        /// * `guest_driver_version`: - Last determined guest driver version.
-        /// * `device_id`: - (Computed) The device ID of the GPU.
         /// </summary>
         public readonly int Fraction;
+        /// <summary>
+        /// - GPU frame buffer size in MiB.
+        /// </summary>
         public readonly int FrameBufferSizeMib;
+        /// <summary>
+        /// - Last determined guest driver version.
+        /// </summary>
         public readonly string GuestDriverVersion;
+        /// <summary>
+        /// - The mode of this GPU.
+        /// </summary>
         public readonly string Mode;
+        /// <summary>
+        /// - the name.
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - Number of supported virtual display heads.
+        /// </summary>
         public readonly int NumVirtualDisplayHeads;
         /// <summary>
         /// GPU {segment:bus:device:function} (sbdf) address if assigned.
         /// </summary>
         public readonly string PciAddress;
+        /// <summary>
+        /// - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
+        /// </summary>
         public readonly string Uuid;
+        /// <summary>
+        /// - The vendor of the GPU.
+        /// </summary>
         public readonly string Vendor;
 
         [OutputConstructor]

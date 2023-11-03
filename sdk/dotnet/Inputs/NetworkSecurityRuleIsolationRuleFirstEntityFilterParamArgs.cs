@@ -11,8 +11,11 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs : Pulumi.ResourceArgs
+    public sealed class NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Required) The name for the network_security_rule.
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
@@ -27,5 +30,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs()
         {
         }
+        public static new NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs Empty => new NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs();
     }
 }

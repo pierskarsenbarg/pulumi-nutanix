@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class RecoveryPlanStageListStageWorkRecoverEntitiesGetArgs : Pulumi.ResourceArgs
+    public sealed class RecoveryPlanStageListStageWorkRecoverEntitiesGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("entityInfoLists")]
         private InputList<Inputs.RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListGetArgs>? _entityInfoLists;
@@ -24,5 +24,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public RecoveryPlanStageListStageWorkRecoverEntitiesGetArgs()
         {
         }
+        public static new RecoveryPlanStageListStageWorkRecoverEntitiesGetArgs Empty => new RecoveryPlanStageListStageWorkRecoverEntitiesGetArgs();
     }
 }

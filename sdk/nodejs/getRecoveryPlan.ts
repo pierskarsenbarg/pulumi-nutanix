@@ -2,45 +2,17 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
  * Describe a Nutanix Recovery Plan and its values (if it has them).
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
- *
- * const recoveryPlanTest = new nutanix.RecoveryPlan("recovery_plan_test", {
- *     description: "%s",
- *     parameters: {},
- *     stageLists: [{
- *         delayTimeSecs: 0,
- *         stageUuid: "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
- *         stageWork: {
- *             recoverEntities: {
- *                 entityInfoLists: [{
- *                     categories: [{
- *                         name: "Environment",
- *                         value: "Dev",
- *                     }],
- *                 }],
- *             },
- *         },
- *     }],
- * });
- * ```
  */
 export function getRecoveryPlan(args?: GetRecoveryPlanArgs, opts?: pulumi.InvokeOptions): Promise<GetRecoveryPlanResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getRecoveryPlan:getRecoveryPlan", {
         "categories": args.categories,
         "recoveryPlanId": args.recoveryPlanId,
@@ -53,6 +25,9 @@ export function getRecoveryPlan(args?: GetRecoveryPlanArgs, opts?: pulumi.Invoke
  */
 export interface GetRecoveryPlanArgs {
     categories?: inputs.GetRecoveryPlanCategory[];
+    /**
+     * - (Required) The `id` of the Recovery Plan.
+     */
     recoveryPlanId?: string;
     recoveryPlanName?: string;
 }
@@ -63,6 +38,9 @@ export interface GetRecoveryPlanArgs {
 export interface GetRecoveryPlanResult {
     readonly apiVersion: string;
     readonly categories: outputs.GetRecoveryPlanCategory[];
+    /**
+     * A description for Recovery Plan.
+     */
     readonly description: string;
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -158,9 +136,11 @@ export interface GetRecoveryPlanResult {
     readonly stageLists: outputs.GetRecoveryPlanStageList[];
     readonly state: string;
 }
-
+/**
+ * Describe a Nutanix Recovery Plan and its values (if it has them).
+ */
 export function getRecoveryPlanOutput(args?: GetRecoveryPlanOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecoveryPlanResult> {
-    return pulumi.output(args).apply(a => getRecoveryPlan(a, opts))
+    return pulumi.output(args).apply((a: any) => getRecoveryPlan(a, opts))
 }
 
 /**
@@ -168,6 +148,9 @@ export function getRecoveryPlanOutput(args?: GetRecoveryPlanOutputArgs, opts?: p
  */
 export interface GetRecoveryPlanOutputArgs {
     categories?: pulumi.Input<pulumi.Input<inputs.GetRecoveryPlanCategoryArgs>[]>;
+    /**
+     * - (Required) The `id` of the Recovery Plan.
+     */
     recoveryPlanId?: pulumi.Input<string>;
     recoveryPlanName?: pulumi.Input<string>;
 }

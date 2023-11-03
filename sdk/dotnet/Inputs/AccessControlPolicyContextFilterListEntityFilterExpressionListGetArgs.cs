@@ -11,19 +11,29 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class AccessControlPolicyContextFilterListEntityFilterExpressionListGetArgs : Pulumi.ResourceArgs
+    public sealed class AccessControlPolicyContextFilterListEntityFilterExpressionListGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional)  The LHS of the filter expression - the entity type.
+        /// </summary>
         [Input("leftHandSideEntityType")]
         public Input<string>? LeftHandSideEntityType { get; set; }
 
+        /// <summary>
+        /// - (Required) The operator in the filter expression.
+        /// </summary>
         [Input("operator", required: true)]
         public Input<string> Operator { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) The right hand side (RHS) of an scope expression.
+        /// </summary>
         [Input("rightHandSide", required: true)]
         public Input<Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideGetArgs> RightHandSide { get; set; } = null!;
 
         public AccessControlPolicyContextFilterListEntityFilterExpressionListGetArgs()
         {
         }
+        public static new AccessControlPolicyContextFilterListEntityFilterExpressionListGetArgs Empty => new AccessControlPolicyContextFilterListEntityFilterExpressionListGetArgs();
     }
 }

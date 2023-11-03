@@ -2,16 +2,14 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getAssertHelper(args?: GetAssertHelperArgs, opts?: pulumi.InvokeOptions): Promise<GetAssertHelperResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getAssertHelper:getAssertHelper", {
         "checks": args.checks,
     }, opts);
@@ -34,9 +32,8 @@ export interface GetAssertHelperResult {
      */
     readonly id: string;
 }
-
 export function getAssertHelperOutput(args?: GetAssertHelperOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAssertHelperResult> {
-    return pulumi.output(args).apply(a => getAssertHelper(a, opts))
+    return pulumi.output(args).apply((a: any) => getAssertHelper(a, opts))
 }
 
 /**

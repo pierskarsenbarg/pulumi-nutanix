@@ -11,8 +11,11 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationCentralImageClusterFoundationInitConfigClusterArgs : Pulumi.ResourceArgs
+    public sealed class FoundationCentralImageClusterFoundationInitConfigClusterArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// External management ip of the cluster.
+        /// </summary>
         [Input("clusterExternalIp")]
         public Input<string>? ClusterExternalIp { get; set; }
 
@@ -30,23 +33,39 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _clusterMembers = value;
         }
 
+        /// <summary>
+        /// Name of the cluster.
+        /// </summary>
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }
 
+        /// <summary>
+        /// List of dns servers for the cvms in the cluster.
+        /// </summary>
         [Input("cvmDnsServers")]
         public Input<string>? CvmDnsServers { get; set; }
 
+        /// <summary>
+        /// List of ntp servers for the cvms in the cluster.
+        /// </summary>
         [Input("cvmNtpServers")]
         public Input<string>? CvmNtpServers { get; set; }
 
+        /// <summary>
+        /// Redundancy factor of the cluster.
+        /// </summary>
         [Input("redundancyFactor")]
         public Input<int>? RedundancyFactor { get; set; }
 
+        /// <summary>
+        /// Timezone to be set on the cluster.
+        /// </summary>
         [Input("timezone")]
         public Input<string>? Timezone { get; set; }
 
         public FoundationCentralImageClusterFoundationInitConfigClusterArgs()
         {
         }
+        public static new FoundationCentralImageClusterFoundationInitConfigClusterArgs Empty => new FoundationCentralImageClusterFoundationInitConfigClusterArgs();
     }
 }

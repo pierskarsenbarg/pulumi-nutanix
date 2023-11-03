@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetAssertHelperCheckArgs : Pulumi.InvokeArgs
+    public sealed class GetAssertHelperCheckArgs : global::Pulumi.InvokeArgs
     {
         [Input("condition", required: true)]
         public bool Condition { get; set; }
@@ -22,5 +22,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetAssertHelperCheckArgs()
         {
         }
+        public static new GetAssertHelperCheckArgs Empty => new GetAssertHelperCheckArgs();
     }
 }

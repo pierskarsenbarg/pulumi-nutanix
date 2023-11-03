@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class AccessControlPolicyContextFilterListArgs : Pulumi.ResourceArgs
+    public sealed class AccessControlPolicyContextFilterListArgs : global::Pulumi.ResourceArgs
     {
         [Input("entityFilterExpressionLists", required: true)]
         private InputList<Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListArgs>? _entityFilterExpressionLists;
@@ -27,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("scopeFilterExpressionLists")]
         private InputList<Inputs.AccessControlPolicyContextFilterListScopeFilterExpressionListArgs>? _scopeFilterExpressionLists;
+
+        /// <summary>
+        /// - (Optional) Filter the scope of an Access Control Policy.
+        /// </summary>
         public InputList<Inputs.AccessControlPolicyContextFilterListScopeFilterExpressionListArgs> ScopeFilterExpressionLists
         {
             get => _scopeFilterExpressionLists ?? (_scopeFilterExpressionLists = new InputList<Inputs.AccessControlPolicyContextFilterListScopeFilterExpressionListArgs>());
@@ -36,5 +40,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public AccessControlPolicyContextFilterListArgs()
         {
         }
+        public static new AccessControlPolicyContextFilterListArgs Empty => new AccessControlPolicyContextFilterListArgs();
     }
 }

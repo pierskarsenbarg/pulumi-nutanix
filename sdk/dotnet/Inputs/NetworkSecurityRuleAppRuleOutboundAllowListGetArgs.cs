@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class NetworkSecurityRuleAppRuleOutboundAllowListGetArgs : Pulumi.ResourceArgs
+    public sealed class NetworkSecurityRuleAppRuleOutboundAllowListGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("addressGroupInclusionLists")]
         private InputList<Inputs.NetworkSecurityRuleAppRuleOutboundAllowListAddressGroupInclusionListGetArgs>? _addressGroupInclusionLists;
@@ -98,5 +98,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public NetworkSecurityRuleAppRuleOutboundAllowListGetArgs()
         {
         }
+        public static new NetworkSecurityRuleAppRuleOutboundAllowListGetArgs Empty => new NetworkSecurityRuleAppRuleOutboundAllowListGetArgs();
     }
 }

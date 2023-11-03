@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes a list of subnets
@@ -18,23 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetSubnets(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetSubnets(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetSubnets(ctx *pulumi.Context, args *GetSubnetsArgs, opts ...pulumi.InvokeOption) (*GetSubnetsResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSubnetsResult
 	err := ctx.Invoke("nutanix:index/getSubnets:getSubnets", args, &rv, opts...)
 	if err != nil {
@@ -45,15 +49,19 @@ func GetSubnets(ctx *pulumi.Context, args *GetSubnetsArgs, opts ...pulumi.Invoke
 
 // A collection of arguments for invoking getSubnets.
 type GetSubnetsArgs struct {
+	// The subnet kind metadata.
 	Metadatas []GetSubnetsMetadata `pulumi:"metadatas"`
 }
 
 // A collection of values returned by getSubnets.
 type GetSubnetsResult struct {
-	ApiVersion string             `pulumi:"apiVersion"`
-	Entities   []GetSubnetsEntity `pulumi:"entities"`
+	// version of the API
+	ApiVersion string `pulumi:"apiVersion"`
+	// List of Subnets
+	Entities []GetSubnetsEntity `pulumi:"entities"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string               `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// The subnet kind metadata.
 	Metadatas []GetSubnetsMetadata `pulumi:"metadatas"`
 }
 
@@ -72,6 +80,7 @@ func GetSubnetsOutput(ctx *pulumi.Context, args GetSubnetsOutputArgs, opts ...pu
 
 // A collection of arguments for invoking getSubnets.
 type GetSubnetsOutputArgs struct {
+	// The subnet kind metadata.
 	Metadatas GetSubnetsMetadataArrayInput `pulumi:"metadatas"`
 }
 
@@ -94,10 +103,18 @@ func (o GetSubnetsResultOutput) ToGetSubnetsResultOutputWithContext(ctx context.
 	return o
 }
 
+func (o GetSubnetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubnetsResult] {
+	return pulumix.Output[GetSubnetsResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// version of the API
 func (o GetSubnetsResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubnetsResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// List of Subnets
 func (o GetSubnetsResultOutput) Entities() GetSubnetsEntityArrayOutput {
 	return o.ApplyT(func(v GetSubnetsResult) []GetSubnetsEntity { return v.Entities }).(GetSubnetsEntityArrayOutput)
 }
@@ -107,6 +124,7 @@ func (o GetSubnetsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubnetsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The subnet kind metadata.
 func (o GetSubnetsResultOutput) Metadatas() GetSubnetsMetadataArrayOutput {
 	return o.ApplyT(func(v GetSubnetsResult) []GetSubnetsMetadata { return v.Metadatas }).(GetSubnetsMetadataArrayOutput)
 }

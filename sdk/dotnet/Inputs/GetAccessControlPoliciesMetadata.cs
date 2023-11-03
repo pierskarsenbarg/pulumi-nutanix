@@ -11,11 +11,14 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetAccessControlPoliciesMetadataArgs : Pulumi.InvokeArgs
+    public sealed class GetAccessControlPoliciesMetadataArgs : global::Pulumi.InvokeArgs
     {
         [Input("filter", required: true)]
         public string Filter { get; set; } = null!;
 
+        /// <summary>
+        /// - The kind name (Default value: project)(Required).
+        /// </summary>
         [Input("kind", required: true)]
         public string Kind { get; set; } = null!;
 
@@ -34,5 +37,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetAccessControlPoliciesMetadataArgs()
         {
         }
+        public static new GetAccessControlPoliciesMetadataArgs Empty => new GetAccessControlPoliciesMetadataArgs();
     }
 }

@@ -2,42 +2,12 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
  * Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- * import * as nutanix from "@pulumi/nutanix";
- *
- * const clusters = nutanix.getClusters({
- *     metadata: {
- *         length: 2,
- *     },
- * });
- * export const cluster = clusters.then(clusters => clusters.entities?[0]?.metadata?.uuid);
- * const next_iac_managed = new nutanix.Subnet("next-iac-managed", {
- *     clusterUuid: clusters.then(clusters => clusters.entities?[0]?.metadata?.uuid),
- *     vlanId: 101,
- *     subnetType: "VLAN",
- *     prefixLength: 20,
- *     defaultGatewayIp: "10.5.80.1",
- *     subnetIp: "10.5.80.0",
- *     dhcpDomainNameServerLists: [
- *         "8.8.8.8",
- *         "4.2.2.2",
- *     ],
- *     dhcpDomainSearchLists: [
- *         "nutanix.com",
- *         "eng.nutanix.com",
- *     ],
- * });
- * ```
  */
 export class Subnet extends pulumi.CustomResource {
     /**
@@ -71,31 +41,91 @@ export class Subnet extends pulumi.CustomResource {
      * The version of the API.
      */
     public /*out*/ readonly apiVersion!: pulumi.Output<string>;
+    /**
+     * - (Optional) The reference to a availability_zone.
+     */
     public readonly availabilityZoneReference!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - (Optional) The categories of the resource.
+     */
     public readonly categories!: pulumi.Output<outputs.SubnetCategory[]>;
     public /*out*/ readonly clusterName!: pulumi.Output<string>;
+    /**
+     * - (Required) The UUID of the cluster.
+     */
     public readonly clusterUuid!: pulumi.Output<string | undefined>;
+    /**
+     * - (Optional) Default gateway IP address.
+     */
     public readonly defaultGatewayIp!: pulumi.Output<string>;
+    /**
+     * - (Optional) A description for subnet.
+     */
     public readonly description!: pulumi.Output<string>;
     public readonly dhcpDomainNameServerLists!: pulumi.Output<string[]>;
+    /**
+     * - (Optional).
+     */
     public readonly dhcpDomainSearchLists!: pulumi.Output<string[]>;
+    /**
+     * - (Optional) Spec for defining DHCP options.
+     */
     public readonly dhcpOptions!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - (Optional) Host address.
+     */
     public readonly dhcpServerAddress!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - (Optional) Port Number.
+     */
     public readonly dhcpServerAddressPort!: pulumi.Output<number>;
     public readonly enableNat!: pulumi.Output<boolean>;
     public readonly ipConfigPoolListRanges!: pulumi.Output<string[]>;
     public readonly isExternal!: pulumi.Output<boolean>;
+    /**
+     * - (Required) The subnet kind metadata.
+     */
     public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - (Optional) Subnet name (Readonly).
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * - (Optional) The reference to a network_function_chain.
+     */
     public readonly networkFunctionChainReference!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - (Optional) The reference to a user.
+     */
     public readonly ownerReference!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - (Optional).
+     */
     public readonly prefixLength!: pulumi.Output<number>;
+    /**
+     * - (Optional) The reference to a project.
+     */
     public readonly projectReference!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - The state of the subnet.
+     */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * - (Optional) Subnet IP address.
+     */
     public readonly subnetIp!: pulumi.Output<string>;
+    /**
+     * - (Optional).
+     */
     public readonly subnetType!: pulumi.Output<string>;
+    /**
+     * - (Optional).
+     */
     public readonly vlanId!: pulumi.Output<number>;
     public readonly vpcReferenceUuid!: pulumi.Output<string>;
+    /**
+     * - (Optional).
+     */
     public readonly vswitchName!: pulumi.Output<string>;
 
     /**
@@ -184,31 +214,91 @@ export interface SubnetState {
      * The version of the API.
      */
     apiVersion?: pulumi.Input<string>;
+    /**
+     * - (Optional) The reference to a availability_zone.
+     */
     availabilityZoneReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) The categories of the resource.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.SubnetCategory>[]>;
     clusterName?: pulumi.Input<string>;
+    /**
+     * - (Required) The UUID of the cluster.
+     */
     clusterUuid?: pulumi.Input<string>;
+    /**
+     * - (Optional) Default gateway IP address.
+     */
     defaultGatewayIp?: pulumi.Input<string>;
+    /**
+     * - (Optional) A description for subnet.
+     */
     description?: pulumi.Input<string>;
     dhcpDomainNameServerLists?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * - (Optional).
+     */
     dhcpDomainSearchLists?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * - (Optional) Spec for defining DHCP options.
+     */
     dhcpOptions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) Host address.
+     */
     dhcpServerAddress?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) Port Number.
+     */
     dhcpServerAddressPort?: pulumi.Input<number>;
     enableNat?: pulumi.Input<boolean>;
     ipConfigPoolListRanges?: pulumi.Input<pulumi.Input<string>[]>;
     isExternal?: pulumi.Input<boolean>;
+    /**
+     * - (Required) The subnet kind metadata.
+     */
     metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) Subnet name (Readonly).
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Optional) The reference to a network_function_chain.
+     */
     networkFunctionChainReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) The reference to a user.
+     */
     ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional).
+     */
     prefixLength?: pulumi.Input<number>;
+    /**
+     * - (Optional) The reference to a project.
+     */
     projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - The state of the subnet.
+     */
     state?: pulumi.Input<string>;
+    /**
+     * - (Optional) Subnet IP address.
+     */
     subnetIp?: pulumi.Input<string>;
+    /**
+     * - (Optional).
+     */
     subnetType?: pulumi.Input<string>;
+    /**
+     * - (Optional).
+     */
     vlanId?: pulumi.Input<number>;
     vpcReferenceUuid?: pulumi.Input<string>;
+    /**
+     * - (Optional).
+     */
     vswitchName?: pulumi.Input<string>;
 }
 
@@ -216,27 +306,81 @@ export interface SubnetState {
  * The set of arguments for constructing a Subnet resource.
  */
 export interface SubnetArgs {
+    /**
+     * - (Optional) The reference to a availability_zone.
+     */
     availabilityZoneReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) The categories of the resource.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.SubnetCategory>[]>;
+    /**
+     * - (Required) The UUID of the cluster.
+     */
     clusterUuid?: pulumi.Input<string>;
+    /**
+     * - (Optional) Default gateway IP address.
+     */
     defaultGatewayIp?: pulumi.Input<string>;
+    /**
+     * - (Optional) A description for subnet.
+     */
     description?: pulumi.Input<string>;
     dhcpDomainNameServerLists?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * - (Optional).
+     */
     dhcpDomainSearchLists?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * - (Optional) Spec for defining DHCP options.
+     */
     dhcpOptions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) Host address.
+     */
     dhcpServerAddress?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) Port Number.
+     */
     dhcpServerAddressPort?: pulumi.Input<number>;
     enableNat?: pulumi.Input<boolean>;
     ipConfigPoolListRanges?: pulumi.Input<pulumi.Input<string>[]>;
     isExternal?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Subnet name (Readonly).
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Optional) The reference to a network_function_chain.
+     */
     networkFunctionChainReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) The reference to a user.
+     */
     ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional).
+     */
     prefixLength?: pulumi.Input<number>;
+    /**
+     * - (Optional) The reference to a project.
+     */
     projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) Subnet IP address.
+     */
     subnetIp?: pulumi.Input<string>;
+    /**
+     * - (Optional).
+     */
     subnetType: pulumi.Input<string>;
+    /**
+     * - (Optional).
+     */
     vlanId?: pulumi.Input<number>;
     vpcReferenceUuid?: pulumi.Input<string>;
+    /**
+     * - (Optional).
+     */
     vswitchName?: pulumi.Input<string>;
 }

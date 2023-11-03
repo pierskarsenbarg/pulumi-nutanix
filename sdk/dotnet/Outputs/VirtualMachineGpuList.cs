@@ -14,25 +14,45 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VirtualMachineGpuList
     {
+        /// <summary>
+        /// - (Computed) The device ID of the GPU.
+        /// </summary>
         public readonly int? DeviceId;
         /// <summary>
         /// Fraction of the physical GPU assigned.
-        /// * `mode`: - (Optional) The mode of this GPU.
-        /// * `num_virtual_display_heads`: - (ReadOnly) Number of supported virtual display heads.
-        /// * `guest_driver_version`: - (ReadOnly) Last determined guest driver version.
-        /// * `device_id`: - (Computed) The device ID of the GPU.
         /// </summary>
         public readonly int? Fraction;
+        /// <summary>
+        /// - (ReadOnly) GPU frame buffer size in MiB.
+        /// </summary>
         public readonly int? FrameBufferSizeMib;
+        /// <summary>
+        /// - (ReadOnly) Last determined guest driver version.
+        /// </summary>
         public readonly string? GuestDriverVersion;
+        /// <summary>
+        /// - (Optional) The mode of this GPU.
+        /// </summary>
         public readonly string? Mode;
+        /// <summary>
+        /// - (ReadOnly) Name of the GPU resource.
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// - (ReadOnly) Number of supported virtual display heads.
+        /// </summary>
         public readonly int? NumVirtualDisplayHeads;
         /// <summary>
         /// GPU {segment:bus:device:function} (sbdf) address if assigned.
         /// </summary>
         public readonly string? PciAddress;
+        /// <summary>
+        /// - (ReadOnly) UUID of the GPU.
+        /// </summary>
         public readonly string? Uuid;
+        /// <summary>
+        /// - (Optional) The vendor of the GPU.
+        /// </summary>
         public readonly string? Vendor;
 
         [OutputConstructor]

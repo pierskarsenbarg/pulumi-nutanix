@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class ImageCurrentClusterReferenceList
     {
+        /// <summary>
+        /// - The kind name (Default value: project)(Required).
+        /// </summary>
         public readonly string? Kind;
+        /// <summary>
+        /// - (Required) The name for the image.
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// - the UUID(Required).
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

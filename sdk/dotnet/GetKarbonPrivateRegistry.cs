@@ -14,102 +14,79 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Describes Karbon private registry entry
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var registry = Output.Create(Nutanix.GetKarbonPrivateRegistry.InvokeAsync(new Nutanix.GetKarbonPrivateRegistryArgs
-        ///         {
-        ///             ClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetKarbonPrivateRegistryResult> InvokeAsync(GetKarbonPrivateRegistryArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetKarbonPrivateRegistryResult>("nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry", args ?? new GetKarbonPrivateRegistryArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetKarbonPrivateRegistryResult>("nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry", args ?? new GetKarbonPrivateRegistryArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes Karbon private registry entry
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// class MyStack : Stack
-        /// {
-        ///     public MyStack()
-        ///     {
-        ///         var registry = Output.Create(Nutanix.GetKarbonPrivateRegistry.InvokeAsync(new Nutanix.GetKarbonPrivateRegistryArgs
-        ///         {
-        ///             ClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
-        ///         }));
-        ///     }
-        /// 
-        /// }
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetKarbonPrivateRegistryResult> Invoke(GetKarbonPrivateRegistryInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetKarbonPrivateRegistryResult>("nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry", args ?? new GetKarbonPrivateRegistryInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetKarbonPrivateRegistryResult>("nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry", args ?? new GetKarbonPrivateRegistryInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetKarbonPrivateRegistryArgs : Pulumi.InvokeArgs
+    public sealed class GetKarbonPrivateRegistryArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Represents karbon private registry uuid
+        /// </summary>
         [Input("privateRegistryId")]
         public string? PrivateRegistryId { get; set; }
 
+        /// <summary>
+        /// Represents the name of karbon private registry
+        /// </summary>
         [Input("privateRegistryName")]
         public string? PrivateRegistryName { get; set; }
 
         public GetKarbonPrivateRegistryArgs()
         {
         }
+        public static new GetKarbonPrivateRegistryArgs Empty => new GetKarbonPrivateRegistryArgs();
     }
 
-    public sealed class GetKarbonPrivateRegistryInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetKarbonPrivateRegistryInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Represents karbon private registry uuid
+        /// </summary>
         [Input("privateRegistryId")]
         public Input<string>? PrivateRegistryId { get; set; }
 
+        /// <summary>
+        /// Represents the name of karbon private registry
+        /// </summary>
         [Input("privateRegistryName")]
         public Input<string>? PrivateRegistryName { get; set; }
 
         public GetKarbonPrivateRegistryInvokeArgs()
         {
         }
+        public static new GetKarbonPrivateRegistryInvokeArgs Empty => new GetKarbonPrivateRegistryInvokeArgs();
     }
 
 
     [OutputType]
     public sealed class GetKarbonPrivateRegistryResult
     {
+        /// <summary>
+        /// - Endpoint of the private in format `url:port`.
+        /// </summary>
         public readonly string Endpoint;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - Name of the private registry.
+        /// </summary>
         public readonly string Name;
         public readonly string? PrivateRegistryId;
         public readonly string? PrivateRegistryName;
+        /// <summary>
+        /// - UUID of the private registry.
+        /// </summary>
         public readonly string Uuid;
 
         [OutputConstructor]

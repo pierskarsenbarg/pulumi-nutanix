@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class KarbonClusterStorageClassConfigVolumesConfigArgs : Pulumi.ResourceArgs
+    public sealed class KarbonClusterStorageClassConfigVolumesConfigArgs : global::Pulumi.ResourceArgs
     {
         [Input("fileSystem")]
         public Input<string>? FileSystem { get; set; }
@@ -20,7 +20,16 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<bool>? FlashMode { get; set; }
 
         [Input("password", required: true)]
-        public Input<string> Password { get; set; } = null!;
+        private Input<string>? _password;
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("prismElementClusterUuid", required: true)]
         public Input<string> PrismElementClusterUuid { get; set; } = null!;
@@ -34,5 +43,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public KarbonClusterStorageClassConfigVolumesConfigArgs()
         {
         }
+        public static new KarbonClusterStorageClassConfigVolumesConfigArgs Empty => new KarbonClusterStorageClassConfigVolumesConfigArgs();
     }
 }

@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class ProjectResourceDomainResourceArgs : Pulumi.ResourceArgs
+    public sealed class ProjectResourceDomainResourceArgs : global::Pulumi.ResourceArgs
     {
         [Input("limit", required: true)]
         public Input<int> Limit { get; set; } = null!;
@@ -31,5 +31,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public ProjectResourceDomainResourceArgs()
         {
         }
+        public static new ProjectResourceDomainResourceArgs Empty => new ProjectResourceDomainResourceArgs();
     }
 }

@@ -7,18 +7,25 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type FoundationIpmiConfig struct {
 	pulumi.CustomResourceState
 
-	Blocks       FoundationIpmiConfigBlockArrayOutput `pulumi:"blocks"`
-	IpmiGateway  pulumi.StringOutput                  `pulumi:"ipmiGateway"`
-	IpmiNetmask  pulumi.StringOutput                  `pulumi:"ipmiNetmask"`
-	IpmiPassword pulumi.StringOutput                  `pulumi:"ipmiPassword"`
-	IpmiUser     pulumi.StringOutput                  `pulumi:"ipmiUser"`
+	// - (Required) List of blocks.
+	Blocks FoundationIpmiConfigBlockArrayOutput `pulumi:"blocks"`
+	// - (Required) IPMI gateway.
+	IpmiGateway pulumi.StringOutput `pulumi:"ipmiGateway"`
+	// - (Required) IPMI netmask.
+	IpmiNetmask pulumi.StringOutput `pulumi:"ipmiNetmask"`
+	// - (Required) IPMI password.
+	IpmiPassword pulumi.StringOutput `pulumi:"ipmiPassword"`
+	// - (Required) IPMI username.
+	IpmiUser pulumi.StringOutput `pulumi:"ipmiUser"`
 }
 
 // NewFoundationIpmiConfig registers a new resource with the given unique name, arguments, and options.
@@ -43,7 +50,7 @@ func NewFoundationIpmiConfig(ctx *pulumi.Context,
 	if args.IpmiUser == nil {
 		return nil, errors.New("invalid value for required argument 'IpmiUser'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource FoundationIpmiConfig
 	err := ctx.RegisterResource("nutanix:index/foundationIpmiConfig:FoundationIpmiConfig", name, args, &resource, opts...)
 	if err != nil {
@@ -66,19 +73,29 @@ func GetFoundationIpmiConfig(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering FoundationIpmiConfig resources.
 type foundationIpmiConfigState struct {
-	Blocks       []FoundationIpmiConfigBlock `pulumi:"blocks"`
-	IpmiGateway  *string                     `pulumi:"ipmiGateway"`
-	IpmiNetmask  *string                     `pulumi:"ipmiNetmask"`
-	IpmiPassword *string                     `pulumi:"ipmiPassword"`
-	IpmiUser     *string                     `pulumi:"ipmiUser"`
+	// - (Required) List of blocks.
+	Blocks []FoundationIpmiConfigBlock `pulumi:"blocks"`
+	// - (Required) IPMI gateway.
+	IpmiGateway *string `pulumi:"ipmiGateway"`
+	// - (Required) IPMI netmask.
+	IpmiNetmask *string `pulumi:"ipmiNetmask"`
+	// - (Required) IPMI password.
+	IpmiPassword *string `pulumi:"ipmiPassword"`
+	// - (Required) IPMI username.
+	IpmiUser *string `pulumi:"ipmiUser"`
 }
 
 type FoundationIpmiConfigState struct {
-	Blocks       FoundationIpmiConfigBlockArrayInput
-	IpmiGateway  pulumi.StringPtrInput
-	IpmiNetmask  pulumi.StringPtrInput
+	// - (Required) List of blocks.
+	Blocks FoundationIpmiConfigBlockArrayInput
+	// - (Required) IPMI gateway.
+	IpmiGateway pulumi.StringPtrInput
+	// - (Required) IPMI netmask.
+	IpmiNetmask pulumi.StringPtrInput
+	// - (Required) IPMI password.
 	IpmiPassword pulumi.StringPtrInput
-	IpmiUser     pulumi.StringPtrInput
+	// - (Required) IPMI username.
+	IpmiUser pulumi.StringPtrInput
 }
 
 func (FoundationIpmiConfigState) ElementType() reflect.Type {
@@ -86,20 +103,30 @@ func (FoundationIpmiConfigState) ElementType() reflect.Type {
 }
 
 type foundationIpmiConfigArgs struct {
-	Blocks       []FoundationIpmiConfigBlock `pulumi:"blocks"`
-	IpmiGateway  string                      `pulumi:"ipmiGateway"`
-	IpmiNetmask  string                      `pulumi:"ipmiNetmask"`
-	IpmiPassword string                      `pulumi:"ipmiPassword"`
-	IpmiUser     string                      `pulumi:"ipmiUser"`
+	// - (Required) List of blocks.
+	Blocks []FoundationIpmiConfigBlock `pulumi:"blocks"`
+	// - (Required) IPMI gateway.
+	IpmiGateway string `pulumi:"ipmiGateway"`
+	// - (Required) IPMI netmask.
+	IpmiNetmask string `pulumi:"ipmiNetmask"`
+	// - (Required) IPMI password.
+	IpmiPassword string `pulumi:"ipmiPassword"`
+	// - (Required) IPMI username.
+	IpmiUser string `pulumi:"ipmiUser"`
 }
 
 // The set of arguments for constructing a FoundationIpmiConfig resource.
 type FoundationIpmiConfigArgs struct {
-	Blocks       FoundationIpmiConfigBlockArrayInput
-	IpmiGateway  pulumi.StringInput
-	IpmiNetmask  pulumi.StringInput
+	// - (Required) List of blocks.
+	Blocks FoundationIpmiConfigBlockArrayInput
+	// - (Required) IPMI gateway.
+	IpmiGateway pulumi.StringInput
+	// - (Required) IPMI netmask.
+	IpmiNetmask pulumi.StringInput
+	// - (Required) IPMI password.
 	IpmiPassword pulumi.StringInput
-	IpmiUser     pulumi.StringInput
+	// - (Required) IPMI username.
+	IpmiUser pulumi.StringInput
 }
 
 func (FoundationIpmiConfigArgs) ElementType() reflect.Type {
@@ -125,10 +152,16 @@ func (i *FoundationIpmiConfig) ToFoundationIpmiConfigOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationIpmiConfigOutput)
 }
 
+func (i *FoundationIpmiConfig) ToOutput(ctx context.Context) pulumix.Output[*FoundationIpmiConfig] {
+	return pulumix.Output[*FoundationIpmiConfig]{
+		OutputState: i.ToFoundationIpmiConfigOutputWithContext(ctx).OutputState,
+	}
+}
+
 // FoundationIpmiConfigArrayInput is an input type that accepts FoundationIpmiConfigArray and FoundationIpmiConfigArrayOutput values.
 // You can construct a concrete instance of `FoundationIpmiConfigArrayInput` via:
 //
-//          FoundationIpmiConfigArray{ FoundationIpmiConfigArgs{...} }
+//	FoundationIpmiConfigArray{ FoundationIpmiConfigArgs{...} }
 type FoundationIpmiConfigArrayInput interface {
 	pulumi.Input
 
@@ -150,10 +183,16 @@ func (i FoundationIpmiConfigArray) ToFoundationIpmiConfigArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationIpmiConfigArrayOutput)
 }
 
+func (i FoundationIpmiConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]*FoundationIpmiConfig] {
+	return pulumix.Output[[]*FoundationIpmiConfig]{
+		OutputState: i.ToFoundationIpmiConfigArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // FoundationIpmiConfigMapInput is an input type that accepts FoundationIpmiConfigMap and FoundationIpmiConfigMapOutput values.
 // You can construct a concrete instance of `FoundationIpmiConfigMapInput` via:
 //
-//          FoundationIpmiConfigMap{ "key": FoundationIpmiConfigArgs{...} }
+//	FoundationIpmiConfigMap{ "key": FoundationIpmiConfigArgs{...} }
 type FoundationIpmiConfigMapInput interface {
 	pulumi.Input
 
@@ -175,6 +214,12 @@ func (i FoundationIpmiConfigMap) ToFoundationIpmiConfigMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationIpmiConfigMapOutput)
 }
 
+func (i FoundationIpmiConfigMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FoundationIpmiConfig] {
+	return pulumix.Output[map[string]*FoundationIpmiConfig]{
+		OutputState: i.ToFoundationIpmiConfigMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type FoundationIpmiConfigOutput struct{ *pulumi.OutputState }
 
 func (FoundationIpmiConfigOutput) ElementType() reflect.Type {
@@ -189,22 +234,33 @@ func (o FoundationIpmiConfigOutput) ToFoundationIpmiConfigOutputWithContext(ctx 
 	return o
 }
 
+func (o FoundationIpmiConfigOutput) ToOutput(ctx context.Context) pulumix.Output[*FoundationIpmiConfig] {
+	return pulumix.Output[*FoundationIpmiConfig]{
+		OutputState: o.OutputState,
+	}
+}
+
+// - (Required) List of blocks.
 func (o FoundationIpmiConfigOutput) Blocks() FoundationIpmiConfigBlockArrayOutput {
 	return o.ApplyT(func(v *FoundationIpmiConfig) FoundationIpmiConfigBlockArrayOutput { return v.Blocks }).(FoundationIpmiConfigBlockArrayOutput)
 }
 
+// - (Required) IPMI gateway.
 func (o FoundationIpmiConfigOutput) IpmiGateway() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationIpmiConfig) pulumi.StringOutput { return v.IpmiGateway }).(pulumi.StringOutput)
 }
 
+// - (Required) IPMI netmask.
 func (o FoundationIpmiConfigOutput) IpmiNetmask() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationIpmiConfig) pulumi.StringOutput { return v.IpmiNetmask }).(pulumi.StringOutput)
 }
 
+// - (Required) IPMI password.
 func (o FoundationIpmiConfigOutput) IpmiPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationIpmiConfig) pulumi.StringOutput { return v.IpmiPassword }).(pulumi.StringOutput)
 }
 
+// - (Required) IPMI username.
 func (o FoundationIpmiConfigOutput) IpmiUser() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationIpmiConfig) pulumi.StringOutput { return v.IpmiUser }).(pulumi.StringOutput)
 }
@@ -221,6 +277,12 @@ func (o FoundationIpmiConfigArrayOutput) ToFoundationIpmiConfigArrayOutput() Fou
 
 func (o FoundationIpmiConfigArrayOutput) ToFoundationIpmiConfigArrayOutputWithContext(ctx context.Context) FoundationIpmiConfigArrayOutput {
 	return o
+}
+
+func (o FoundationIpmiConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FoundationIpmiConfig] {
+	return pulumix.Output[[]*FoundationIpmiConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o FoundationIpmiConfigArrayOutput) Index(i pulumi.IntInput) FoundationIpmiConfigOutput {
@@ -241,6 +303,12 @@ func (o FoundationIpmiConfigMapOutput) ToFoundationIpmiConfigMapOutput() Foundat
 
 func (o FoundationIpmiConfigMapOutput) ToFoundationIpmiConfigMapOutputWithContext(ctx context.Context) FoundationIpmiConfigMapOutput {
 	return o
+}
+
+func (o FoundationIpmiConfigMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FoundationIpmiConfig] {
+	return pulumix.Output[map[string]*FoundationIpmiConfig]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o FoundationIpmiConfigMapOutput) MapIndex(k pulumi.StringInput) FoundationIpmiConfigOutput {

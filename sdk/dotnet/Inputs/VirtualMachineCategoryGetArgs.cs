@@ -11,16 +11,23 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class VirtualMachineCategoryGetArgs : Pulumi.ResourceArgs
+    public sealed class VirtualMachineCategoryGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Required) The name for the vm.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - value of the key.
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 
         public VirtualMachineCategoryGetArgs()
         {
         }
+        public static new VirtualMachineCategoryGetArgs Empty => new VirtualMachineCategoryGetArgs();
     }
 }

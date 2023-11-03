@@ -11,16 +11,23 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetNetworkSecurityRuleCategoryArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkSecurityRuleCategoryArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// - the name.
+        /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 
+        /// <summary>
+        /// - value of the key.
+        /// </summary>
         [Input("value", required: true)]
         public string Value { get; set; } = null!;
 
         public GetNetworkSecurityRuleCategoryArgs()
         {
         }
+        public static new GetNetworkSecurityRuleCategoryArgs Empty => new GetNetworkSecurityRuleCategoryArgs();
     }
 }

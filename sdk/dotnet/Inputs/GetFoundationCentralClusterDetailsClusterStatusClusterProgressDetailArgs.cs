@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailInputArgs : Pulumi.ResourceArgs
+    public sealed class GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("clusterName", required: true)]
         public Input<string> ClusterName { get; set; } = null!;
@@ -33,5 +33,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailInputArgs()
         {
         }
+        public static new GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailInputArgs Empty => new GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailInputArgs();
     }
 }

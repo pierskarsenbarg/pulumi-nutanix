@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class RecoveryPlanParametersNetworkMappingListGetArgs : Pulumi.ResourceArgs
+    public sealed class RecoveryPlanParametersNetworkMappingListGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("areNetworksStretched")]
         public Input<bool>? AreNetworksStretched { get; set; }
@@ -27,5 +27,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public RecoveryPlanParametersNetworkMappingListGetArgs()
         {
         }
+        public static new RecoveryPlanParametersNetworkMappingListGetArgs Empty => new RecoveryPlanParametersNetworkMappingListGetArgs();
     }
 }

@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class ProjectCategoryArgs : Pulumi.ResourceArgs
+    public sealed class ProjectCategoryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name for the project.
@@ -28,5 +28,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public ProjectCategoryArgs()
         {
         }
+        public static new ProjectCategoryArgs Empty => new ProjectCategoryArgs();
     }
 }

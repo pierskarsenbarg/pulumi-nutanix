@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class KarbonClusterWorkerNodePoolNodeArgs : Pulumi.ResourceArgs
+    public sealed class KarbonClusterWorkerNodePoolNodeArgs : global::Pulumi.ResourceArgs
     {
         [Input("hostname")]
         public Input<string>? Hostname { get; set; }
@@ -22,5 +22,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public KarbonClusterWorkerNodePoolNodeArgs()
         {
         }
+        public static new KarbonClusterWorkerNodePoolNodeArgs Empty => new KarbonClusterWorkerNodePoolNodeArgs();
     }
 }

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,16 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const usergroups = pulumi.output(nutanix.getUserGroups());
+ * const usergroups = nutanix.getUserGroups({});
  * ```
  */
 export function getUserGroups(args?: GetUserGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetUserGroupsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getUserGroups:getUserGroups", {
         "metadatas": args.metadatas,
     }, opts);
@@ -33,6 +31,9 @@ export function getUserGroups(args?: GetUserGroupsArgs, opts?: pulumi.InvokeOpti
  * A collection of arguments for invoking getUserGroups.
  */
 export interface GetUserGroupsArgs {
+    /**
+     * - The user group kind metadata.
+     */
     metadatas?: inputs.GetUserGroupsMetadata[];
 }
 
@@ -48,14 +49,28 @@ export interface GetUserGroupsResult {
     readonly id: string;
     readonly metadatas: outputs.GetUserGroupsMetadata[];
 }
-
+/**
+ * Provides a datasource to retrieve all the user groups.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const usergroups = nutanix.getUserGroups({});
+ * ```
+ */
 export function getUserGroupsOutput(args?: GetUserGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserGroupsResult> {
-    return pulumi.output(args).apply(a => getUserGroups(a, opts))
+    return pulumi.output(args).apply((a: any) => getUserGroups(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getUserGroups.
  */
 export interface GetUserGroupsOutputArgs {
+    /**
+     * - The user group kind metadata.
+     */
     metadatas?: pulumi.Input<pulumi.Input<inputs.GetUserGroupsMetadataArgs>[]>;
 }

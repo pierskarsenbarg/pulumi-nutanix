@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes the SSH config from a Karbon Cluster
@@ -18,31 +20,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetKarbonClusterKubeConfig(ctx, &GetKarbonClusterKubeConfigArgs{
-// 			KarbonClusterId: pulumi.StringRef("<YOUR-CLUSTER-ID>"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = nutanix.GetKarbonClusterKubeConfig(ctx, &GetKarbonClusterKubeConfigArgs{
-// 			KarbonClusterName: pulumi.StringRef("<YOUR-CLUSTER-NAME>"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetKarbonClusterKubeConfig(ctx, &nutanix.GetKarbonClusterKubeConfigArgs{
+//				KarbonClusterId: pulumi.StringRef("<YOUR-CLUSTER-ID>"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.GetKarbonClusterKubeConfig(ctx, &nutanix.GetKarbonClusterKubeConfigArgs{
+//				KarbonClusterName: pulumi.StringRef("<YOUR-CLUSTER-NAME>"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetKarbonClusterKubeConfig(ctx *pulumi.Context, args *GetKarbonClusterKubeConfigArgs, opts ...pulumi.InvokeOption) (*GetKarbonClusterKubeConfigResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetKarbonClusterKubeConfigResult
 	err := ctx.Invoke("nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig", args, &rv, opts...)
 	if err != nil {
@@ -53,7 +57,9 @@ func GetKarbonClusterKubeConfig(ctx *pulumi.Context, args *GetKarbonClusterKubeC
 
 // A collection of arguments for invoking getKarbonClusterKubeConfig.
 type GetKarbonClusterKubeConfigArgs struct {
-	KarbonClusterId   *string `pulumi:"karbonClusterId"`
+	// Represents karbon cluster uuid
+	KarbonClusterId *string `pulumi:"karbonClusterId"`
+	// Represents the name of karbon cluster
 	KarbonClusterName *string `pulumi:"karbonClusterName"`
 }
 
@@ -84,7 +90,9 @@ func GetKarbonClusterKubeConfigOutput(ctx *pulumi.Context, args GetKarbonCluster
 
 // A collection of arguments for invoking getKarbonClusterKubeConfig.
 type GetKarbonClusterKubeConfigOutputArgs struct {
-	KarbonClusterId   pulumi.StringPtrInput `pulumi:"karbonClusterId"`
+	// Represents karbon cluster uuid
+	KarbonClusterId pulumi.StringPtrInput `pulumi:"karbonClusterId"`
+	// Represents the name of karbon cluster
 	KarbonClusterName pulumi.StringPtrInput `pulumi:"karbonClusterName"`
 }
 
@@ -105,6 +113,12 @@ func (o GetKarbonClusterKubeConfigResultOutput) ToGetKarbonClusterKubeConfigResu
 
 func (o GetKarbonClusterKubeConfigResultOutput) ToGetKarbonClusterKubeConfigResultOutputWithContext(ctx context.Context) GetKarbonClusterKubeConfigResultOutput {
 	return o
+}
+
+func (o GetKarbonClusterKubeConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetKarbonClusterKubeConfigResult] {
+	return pulumix.Output[GetKarbonClusterKubeConfigResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetKarbonClusterKubeConfigResultOutput) AccessToken() pulumi.StringOutput {

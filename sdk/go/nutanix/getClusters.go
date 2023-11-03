@@ -4,7 +4,12 @@
 package nutanix
 
 import (
+	"context"
+	"reflect"
+
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes Clusters
@@ -15,19 +20,22 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetClusters(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetClusters(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ## Reference
 //
@@ -46,7 +54,7 @@ import (
 //
 // See detailed information in [Nutanix Image](https://nutanix.github.io/Automation/experimental/swagger-redoc-sandbox/#tag/clusters/paths/~1clusters~1multicluster_config/post).
 func GetClusters(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetClustersResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetClustersResult
 	err := ctx.Invoke("nutanix:index/getClusters:getClusters", nil, &rv, opts...)
 	if err != nil {
@@ -58,51 +66,60 @@ func GetClusters(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetClusters
 // A collection of values returned by getClusters.
 type GetClustersResult struct {
 	// The API version.
-	// * `description`: - A description for image.
-	// * `metadata`: - The image kind metadata.
-	// * `state`: - The state of the cluster entity.
-	// * `gpuDriverVersion`: - GPU driver version.
-	// * `clientAuth`: - Client authentication config.
-	// * `authorizedPiblicKeyList`: - List of valid ssh keys for the cluster.
-	// * `softwareMapNcc`: - Map of software on the cluster with software type as the key.
-	// * `softwareMapNos`: - Map of software on the cluster with software type as the key.
-	// * `encryptionStatus`: - Cluster encryption status.
-	// * `sslKeyType`: - SSL key type. Key types with RSA_2048, ECDSA_256 and ECDSA_384 are supported for key generation and importing.
-	// * `sslKeySigningInfo`: - Customer information used in Certificate Signing Request for creating digital certificates.
-	// * `sslKeyExpireDatetime`: - UTC date and time in RFC-3339 format when the key expires
-	// * `serviceList`: - Array of enabled cluster services. For example, a cluster can function as both AOS and cloud data gateway. - 'AOS': Regular Prism Element - 'PRISM_CENTRAL': Prism Central - 'CLOUD_DATA_GATEWAY': Cloud backup and DR gateway - 'AFS': Cluster for file server - 'WITNESS' : Witness cluster - 'XI_PORTAL': Xi cluster.
-	// * `supportedInformationVerbosity`: - Verbosity level settings for populating support information. - 'Nothing': Send nothing - 'Basic': Send basic information - skip core dump and hypervisor stats information - 'BasicPlusCoreDump': Send basic and core dump information - 'All': Send all information (Default value: BASIC_PLUS_CORE_DUMP)
-	// * `certificationSigningInfo`: - Customer information used in Certificate Signing Request for creating digital certificates.
-	// * `operationMode`: - Cluster operation mode. - 'NORMAL': Cluster is operating normally. - 'READ_ONLY': Cluster is operating in read only mode. - 'STAND_ALONE': Only one node is operational in the cluster. This is valid only for single node or two node clusters. - 'SWITCH_TO_TWO_NODE': Cluster is moving from single node to two node cluster. - 'OVERRIDE': Valid only for single node cluster. If the user wants to run vms on a single node cluster in read only mode, he can set the cluster peration mode to override. Writes will be allowed in override mode.
-	// * `caCertificateList`: - Zone name used in value of TZ environment variable.
-	// * `enabledFeatureList`: - Array of enabled features.
-	// * `isAvailable`: - Indicates if cluster is available to contact. (Readonly)
-	// * `build`: - Cluster build details.
-	// * `timezone`: - Zone name used in value of TZ environment variable.
-	// * `clusterArch`: - Cluster architecture. (Readonly, Options: Options : X86_64 , PPC64LE)
-	// * `managementServerList`: - List of cluster management servers. (Readonly)
-	// * `masqueradingPort`: - Port used together with masqueradingIp to connect to the cluster.
-	// * `masqueradingIp`: - The cluster NAT'd or proxy IP which maps to the cluster local IP.
-	// * `externalIp`: - The local IP of cluster visible externally.
-	// * `httpProxyList`: - List of proxies to connect to the service centers.
-	// * `smtpServerType`: - SMTP Server type.
-	// * `smtpServerEmailAddress`: - SMTP Server Email Address.
-	// * `smtpServerCredentials`: - SMTP Server Credentials.
-	// * `smtpServerProxyTypeList`: - SMTP Server Proxy Type List
-	// * `smtpServerAddress`: - SMTP Server Address.
-	// * `ntpServerIpList`: - The list of IP addresses or FQDNs of the NTP servers.
-	// * `externalSubnet`: - External subnet for cross server communication. The format is IP/netmask. (default 172.16.0.0/255.240.0.0)
-	// * `externalDataServicesIp`: - The cluster IP address that provides external entities access to various cluster data services.
-	// * `internalSubnet`: - The internal subnet is local to every server - its not visible outside.iSCSI requests generated internally within the appliance (by user VMs or VMFS) are sent to the internal subnet. The format is IP/netmask.
-	// * `domainServerNameserver`: -  The IP of the nameserver that can resolve the domain name. Must set when joining the domain.
-	// * `domainServerName`: - Joined domain name. In 'put' request, empty name will unjoin the cluster from current domain.
-	// * `domainServerCredentials`: - Cluster domain credentials.
-	// * `nfsSubnetWhitelist`: - Comma separated list of subnets (of the form 'a.b.c.d/l.m.n.o') that are allowed to send NFS requests to this container. If not specified, the global NFS whitelist will be looked up for access permission. The internal subnet is always automatically considered part of the whitelist, even if the field below does not explicitly specify it. Similarly, all the hypervisor IPs are considered part of the whitelist. Finally, to permit debugging, all of the SVMs local IPs are considered to be implicitly part of the whitelist.
-	// * `nameServerIpList`: - The list of IP addresses of the name servers.
-	// * `httpProxyWhitelist`: - HTTP proxy whitelist.
-	// * `analysisVmEfficiencyMap`: - Map of cluster efficiency which includes numbers of inefficient vms. The value is populated by analytics on PC. (Readonly)
-	ApiVersion string              `pulumi:"apiVersion"`
-	Entities   []GetClustersEntity `pulumi:"entities"`
+	ApiVersion string `pulumi:"apiVersion"`
+	// List of Clusters
+	Entities []GetClustersEntity `pulumi:"entities"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+}
+
+func GetClustersOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetClustersResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetClustersResult, error) {
+		r, err := GetClusters(ctx, opts...)
+		var s GetClustersResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetClustersResultOutput)
+}
+
+// A collection of values returned by getClusters.
+type GetClustersResultOutput struct{ *pulumi.OutputState }
+
+func (GetClustersResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersResult)(nil)).Elem()
+}
+
+func (o GetClustersResultOutput) ToGetClustersResultOutput() GetClustersResultOutput {
+	return o
+}
+
+func (o GetClustersResultOutput) ToGetClustersResultOutputWithContext(ctx context.Context) GetClustersResultOutput {
+	return o
+}
+
+func (o GetClustersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetClustersResult] {
+	return pulumix.Output[GetClustersResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The API version.
+func (o GetClustersResultOutput) ApiVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersResult) string { return v.ApiVersion }).(pulumi.StringOutput)
+}
+
+// List of Clusters
+func (o GetClustersResultOutput) Entities() GetClustersEntityArrayOutput {
+	return o.ApplyT(func(v GetClustersResult) []GetClustersEntity { return v.Entities }).(GetClustersEntityArrayOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetClustersResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetClustersResultOutput{})
 }

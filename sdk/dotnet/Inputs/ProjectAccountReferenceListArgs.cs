@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class ProjectAccountReferenceListArgs : Pulumi.ResourceArgs
+    public sealed class ProjectAccountReferenceListArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Required) The kind name (Default value: `project`).
@@ -34,5 +34,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public ProjectAccountReferenceListArgs()
         {
         }
+        public static new ProjectAccountReferenceListArgs Empty => new ProjectAccountReferenceListArgs();
     }
 }

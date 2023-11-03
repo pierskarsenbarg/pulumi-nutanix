@@ -11,20 +11,35 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix
 {
     [NutanixResourceType("nutanix:index/foundationIpmiConfig:FoundationIpmiConfig")]
-    public partial class FoundationIpmiConfig : Pulumi.CustomResource
+    public partial class FoundationIpmiConfig : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// - (Required) List of blocks.
+        /// </summary>
         [Output("blocks")]
         public Output<ImmutableArray<Outputs.FoundationIpmiConfigBlock>> Blocks { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) IPMI gateway.
+        /// </summary>
         [Output("ipmiGateway")]
         public Output<string> IpmiGateway { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) IPMI netmask.
+        /// </summary>
         [Output("ipmiNetmask")]
         public Output<string> IpmiNetmask { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) IPMI password.
+        /// </summary>
         [Output("ipmiPassword")]
         public Output<string> IpmiPassword { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) IPMI username.
+        /// </summary>
         [Output("ipmiUser")]
         public Output<string> IpmiUser { get; private set; } = null!;
 
@@ -73,57 +88,91 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class FoundationIpmiConfigArgs : Pulumi.ResourceArgs
+    public sealed class FoundationIpmiConfigArgs : global::Pulumi.ResourceArgs
     {
         [Input("blocks", required: true)]
         private InputList<Inputs.FoundationIpmiConfigBlockArgs>? _blocks;
+
+        /// <summary>
+        /// - (Required) List of blocks.
+        /// </summary>
         public InputList<Inputs.FoundationIpmiConfigBlockArgs> Blocks
         {
             get => _blocks ?? (_blocks = new InputList<Inputs.FoundationIpmiConfigBlockArgs>());
             set => _blocks = value;
         }
 
+        /// <summary>
+        /// - (Required) IPMI gateway.
+        /// </summary>
         [Input("ipmiGateway", required: true)]
         public Input<string> IpmiGateway { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) IPMI netmask.
+        /// </summary>
         [Input("ipmiNetmask", required: true)]
         public Input<string> IpmiNetmask { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) IPMI password.
+        /// </summary>
         [Input("ipmiPassword", required: true)]
         public Input<string> IpmiPassword { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) IPMI username.
+        /// </summary>
         [Input("ipmiUser", required: true)]
         public Input<string> IpmiUser { get; set; } = null!;
 
         public FoundationIpmiConfigArgs()
         {
         }
+        public static new FoundationIpmiConfigArgs Empty => new FoundationIpmiConfigArgs();
     }
 
-    public sealed class FoundationIpmiConfigState : Pulumi.ResourceArgs
+    public sealed class FoundationIpmiConfigState : global::Pulumi.ResourceArgs
     {
         [Input("blocks")]
         private InputList<Inputs.FoundationIpmiConfigBlockGetArgs>? _blocks;
+
+        /// <summary>
+        /// - (Required) List of blocks.
+        /// </summary>
         public InputList<Inputs.FoundationIpmiConfigBlockGetArgs> Blocks
         {
             get => _blocks ?? (_blocks = new InputList<Inputs.FoundationIpmiConfigBlockGetArgs>());
             set => _blocks = value;
         }
 
+        /// <summary>
+        /// - (Required) IPMI gateway.
+        /// </summary>
         [Input("ipmiGateway")]
         public Input<string>? IpmiGateway { get; set; }
 
+        /// <summary>
+        /// - (Required) IPMI netmask.
+        /// </summary>
         [Input("ipmiNetmask")]
         public Input<string>? IpmiNetmask { get; set; }
 
+        /// <summary>
+        /// - (Required) IPMI password.
+        /// </summary>
         [Input("ipmiPassword")]
         public Input<string>? IpmiPassword { get; set; }
 
+        /// <summary>
+        /// - (Required) IPMI username.
+        /// </summary>
         [Input("ipmiUser")]
         public Input<string>? IpmiUser { get; set; }
 
         public FoundationIpmiConfigState()
         {
         }
+        public static new FoundationIpmiConfigState Empty => new FoundationIpmiConfigState();
     }
 }

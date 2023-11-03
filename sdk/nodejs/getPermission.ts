@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,21 +15,18 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const byuuid = pulumi.output(nutanix.getPermission({
+ * const byuuid = nutanix.getPermission({
  *     permissionId: "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
- * }));
- * const byname = pulumi.output(nutanix.getPermission({
+ * });
+ * const byname = nutanix.getPermission({
  *     permissionName: "Access_Console_Virtual_Machine",
- * }));
+ * });
  * ```
  */
 export function getPermission(args?: GetPermissionArgs, opts?: pulumi.InvokeOptions): Promise<GetPermissionResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getPermission:getPermission", {
         "categories": args.categories,
         "permissionId": args.permissionId,
@@ -40,8 +38,17 @@ export function getPermission(args?: GetPermissionArgs, opts?: pulumi.InvokeOpti
  * A collection of arguments for invoking getPermission.
  */
 export interface GetPermissionArgs {
+    /**
+     * The categories for this resource.
+     */
     categories?: inputs.GetPermissionCategory[];
+    /**
+     * The `id` of the permission.
+     */
     permissionId?: string;
+    /**
+     * The `name` of the permission.
+     */
     permissionName?: string;
 }
 
@@ -50,8 +57,17 @@ export interface GetPermissionArgs {
  */
 export interface GetPermissionResult {
     readonly apiVersion: string;
+    /**
+     * The categories for this resource.
+     */
     readonly categories: outputs.GetPermissionCategory[];
+    /**
+     * A description for the permission.
+     */
     readonly description: string;
+    /**
+     * . The fields that can/cannot be accessed during the specified operation. fieldNameList will be a list of fields. e.g. if fieldMode = disallowed, fieldNameList = [“xyz”] then the list of allowed fields is ALL fields minus xyz. Seee Field for more info.
+     */
     readonly fields: outputs.GetPermissionField[];
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -61,28 +77,68 @@ export interface GetPermissionResult {
      * (Required) The kind name (Default value: `project`).
      */
     readonly kind: string;
+    /**
+     * The permission kind metadata.
+     */
     readonly metadata: {[key: string]: string};
     /**
      * the name.
      */
     readonly name: string;
+    /**
+     * The operation that is being performed on a given kind.
+     */
     readonly operation: string;
+    /**
+     * The reference to a user.
+     */
     readonly ownerReference: {[key: string]: string};
     readonly permissionId?: string;
     readonly permissionName?: string;
+    /**
+     * The reference to a project.
+     */
     readonly projectReference: {[key: string]: string};
+    /**
+     * The state of the permission.
+     */
     readonly state: string;
 }
-
+/**
+ * Describe a Nutanix Permission and its values (if it has them).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const byuuid = nutanix.getPermission({
+ *     permissionId: "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
+ * });
+ * const byname = nutanix.getPermission({
+ *     permissionName: "Access_Console_Virtual_Machine",
+ * });
+ * ```
+ */
 export function getPermissionOutput(args?: GetPermissionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPermissionResult> {
-    return pulumi.output(args).apply(a => getPermission(a, opts))
+    return pulumi.output(args).apply((a: any) => getPermission(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getPermission.
  */
 export interface GetPermissionOutputArgs {
+    /**
+     * The categories for this resource.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.GetPermissionCategoryArgs>[]>;
+    /**
+     * The `id` of the permission.
+     */
     permissionId?: pulumi.Input<string>;
+    /**
+     * The `name` of the permission.
+     */
     permissionName?: pulumi.Input<string>;
 }

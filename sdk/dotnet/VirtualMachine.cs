@@ -16,261 +16,355 @@ namespace PiersKarsenbarg.Nutanix
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// using Nutanix = Pulumi.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
-    ///     {
-    ///         var clusters = Output.Create(Nutanix.GetClusters.InvokeAsync());
-    ///         var vm1 = new Nutanix.VirtualMachine("vm1", new Nutanix.VirtualMachineArgs
-    ///         {
-    ///             ClusterUuid = clusters.Apply(clusters =&gt; clusters.Entities?[0]?.Metadata?.Uuid),
-    ///             Categories = 
-    ///             {
-    ///                 new Nutanix.Inputs.VirtualMachineCategoryArgs
-    ///                 {
-    ///                     Name = "Environment",
-    ///                     Value = "Staging",
-    ///                 },
-    ///             },
-    ///             NumVcpusPerSocket = 1,
-    ///             NumSockets = 1,
-    ///             MemorySizeMib = 2048,
-    ///         });
-    ///     }
+    ///     var clusters = Nutanix.GetClusters.Invoke();
     /// 
-    /// }
+    ///     var vm1 = new Nutanix.VirtualMachine("vm1", new()
+    ///     {
+    ///         ClusterUuid = clusters.Apply(getClustersResult =&gt; getClustersResult.Entities[0]?.Metadata?.Uuid),
+    ///         Categories = new[]
+    ///         {
+    ///             new Nutanix.Inputs.VirtualMachineCategoryArgs
+    ///             {
+    ///                 Name = "Environment",
+    ///                 Value = "Staging",
+    ///             },
+    ///         },
+    ///         NumVcpusPerSocket = 1,
+    ///         NumSockets = 1,
+    ///         MemorySizeMib = 2048,
+    ///     });
+    /// 
+    /// });
     /// ```
     /// ### With Storage Config
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// using Nutanix = Pulumi.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var clusters = Nutanix.GetClusters.Invoke();
+    /// 
+    ///     var vm = new Nutanix.VirtualMachine("vm", new()
     ///     {
-    ///         var clusters = Output.Create(Nutanix.GetClusters.InvokeAsync());
-    ///         var vm = new Nutanix.VirtualMachine("vm", new Nutanix.VirtualMachineArgs
+    ///         ClusterUuid = clusters.Apply(getClustersResult =&gt; getClustersResult.Entities[0]?.Metadata?.Uuid),
+    ///         NumVcpusPerSocket = 1,
+    ///         NumSockets = 1,
+    ///         MemorySizeMib = 186,
+    ///         DiskLists = new[]
     ///         {
-    ///             ClusterUuid = clusters.Apply(clusters =&gt; clusters.Entities?[0]?.Metadata?.Uuid),
-    ///             NumVcpusPerSocket = 1,
-    ///             NumSockets = 1,
-    ///             MemorySizeMib = 186,
-    ///             DiskLists = 
+    ///             new Nutanix.Inputs.VirtualMachineDiskListArgs
     ///             {
-    ///                 new Nutanix.Inputs.VirtualMachineDiskListArgs
+    ///                 DiskSizeBytes = 68157440,
+    ///                 DiskSizeMib = 65,
+    ///                 StorageConfig = new Nutanix.Inputs.VirtualMachineDiskListStorageConfigArgs
     ///                 {
-    ///                     DiskSizeBytes = 68157440,
-    ///                     DiskSizeMib = 65,
-    ///                     StorageConfig = new Nutanix.Inputs.VirtualMachineDiskListStorageConfigArgs
+    ///                     StorageContainerReferences = new[]
     ///                     {
-    ///                         StorageContainerReferences = 
+    ///                         new Nutanix.Inputs.VirtualMachineDiskListStorageConfigStorageContainerReferenceArgs
     ///                         {
-    ///                             new Nutanix.Inputs.VirtualMachineDiskListStorageConfigStorageContainerReferenceArgs
-    ///                             {
-    ///                                 Kind = "storage_container",
-    ///                                 Uuid = "2bbe67bc-fd14-4637-8de1-6379257f4219",
-    ///                             },
+    ///                             Kind = "storage_container",
+    ///                             Uuid = "2bbe67bc-fd14-4637-8de1-6379257f4219",
     ///                         },
     ///                     },
     ///                 },
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/virtualMachine:VirtualMachine")]
-    public partial class VirtualMachine : Pulumi.CustomResource
+    public partial class VirtualMachine : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The version of the API.
-        /// * `state`: - The state of the vm.
-        /// * `cluster_name`: - The name of the cluster.
-        /// * `host_reference`: - Reference to a host.
-        /// * `hypervisor_type`: - The hypervisor type for the hypervisor the VM is hosted on.
-        /// * `nic_list_status`: - Status NICs attached to the VM.
         /// </summary>
         [Output("apiVersion")]
         public Output<string> ApiVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The reference to a availability_zone.
+        /// </summary>
         [Output("availabilityZoneReference")]
         public Output<ImmutableDictionary<string, string>> AvailabilityZoneReference { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Address of disk to boot from.
+        /// </summary>
         [Output("bootDeviceDiskAddress")]
         public Output<ImmutableDictionary<string, string>> BootDeviceDiskAddress { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) MAC address of nic to boot from.
+        /// </summary>
         [Output("bootDeviceMacAddress")]
         public Output<string> BootDeviceMacAddress { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
+        /// </summary>
         [Output("bootDeviceOrderLists")]
         public Output<ImmutableArray<string>> BootDeviceOrderLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like boot_device and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+        /// </summary>
         [Output("bootType")]
         public Output<string> BootType { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Categories for the vm.
+        /// </summary>
         [Output("categories")]
         public Output<ImmutableArray<Outputs.VirtualMachineCategory>> Categories { get; private set; } = null!;
 
         [Output("cloudInitCdromUuid")]
         public Output<string> CloudInitCdromUuid { get; private set; } = null!;
 
+        /// <summary>
+        /// - The name of the cluster.
+        /// </summary>
         [Output("clusterName")]
         public Output<string> ClusterName { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) The UUID of the cluster.
+        /// </summary>
         [Output("clusterUuid")]
         public Output<string> ClusterUuid { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) A description for vm.
+        /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
         /// Disks attached to the VM.
-        /// * `use_hot_add`: - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
-        /// * `num_threads_per_core`: - (Optional) Number of threads per core.
-        /// * `enable_cpu_passthrough`: - (Optional) Add true to enable CPU passthrough.
-        /// * `is_vcpu_hard_pinned`: - (Optional) Add true to enable CPU pinning.
         /// </summary>
         [Output("diskLists")]
         public Output<ImmutableArray<Outputs.VirtualMachineDiskList>> DiskLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Add true to enable CPU passthrough.
+        /// </summary>
         [Output("enableCpuPassthrough")]
         public Output<bool?> EnableCpuPassthrough { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
+        /// </summary>
         [Output("enableScriptExec")]
         public Output<bool> EnableScriptExec { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) GPUs attached to the VM.
+        /// </summary>
         [Output("gpuLists")]
         public Output<ImmutableArray<Outputs.VirtualMachineGpuList>> GpuLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Generic key value pair used for custom attributes in cloud init.
+        /// </summary>
         [Output("guestCustomizationCloudInitCustomKeyValues")]
         public Output<ImmutableDictionary<string, string>> GuestCustomizationCloudInitCustomKeyValues { get; private set; } = null!;
 
         /// <summary>
         /// The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
-        /// * `guest_customization_cloud_init_custom_key_values`: - (Optional) Generic key value pair used for custom attributes in cloud init.
-        /// * `guest_customization_is_overridable`: - (Optional) Flag to allow override of customization by deployer.
-        /// * `guest_customization_sysprep`: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloud_init should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
-        /// * `guest_customization_sysrep_custom_key_values`: - (Optional) Generic key value pair used for custom attributes in sysrep.
-        /// * `should_fail_on_script_failure`: - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
-        /// * `enable_script_exec`: - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
-        /// * `power_state_mechanism`: - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
-        /// * `vga_console_enabled`: - (Optional) Indicates whether VGA console should be enabled or not.
         /// </summary>
         [Output("guestCustomizationCloudInitMetaData")]
         public Output<string> GuestCustomizationCloudInitMetaData { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The contents of the user_data configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+        /// </summary>
         [Output("guestCustomizationCloudInitUserData")]
         public Output<string> GuestCustomizationCloudInitUserData { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Flag to allow override of customization by deployer.
+        /// </summary>
         [Output("guestCustomizationIsOverridable")]
         public Output<bool> GuestCustomizationIsOverridable { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloud_init should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+        /// </summary>
         [Output("guestCustomizationSysprep")]
         public Output<ImmutableDictionary<string, string>> GuestCustomizationSysprep { get; private set; } = null!;
 
         [Output("guestCustomizationSysprepCustomKeyValues")]
         public Output<ImmutableDictionary<string, object>> GuestCustomizationSysprepCustomKeyValues { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
+        /// </summary>
         [Output("guestOsId")]
         public Output<string> GuestOsId { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+        /// </summary>
         [Output("hardwareClockTimezone")]
         public Output<string> HardwareClockTimezone { get; private set; } = null!;
 
+        /// <summary>
+        /// - Reference to a host.
+        /// </summary>
         [Output("hostReference")]
         public Output<ImmutableDictionary<string, string>> HostReference { get; private set; } = null!;
 
+        /// <summary>
+        /// - The hypervisor type for the hypervisor the VM is hosted on.
+        /// </summary>
         [Output("hypervisorType")]
         public Output<string> HypervisorType { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Add true to enable CPU pinning.
+        /// </summary>
         [Output("isVcpuHardPinned")]
         public Output<bool?> IsVcpuHardPinned { get; private set; } = null!;
 
+        /// <summary>
+        /// - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+        /// </summary>
         [Output("machineType")]
         public Output<string> MachineType { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Memory size in MiB.
+        /// </summary>
         [Output("memorySizeMib")]
         public Output<int> MemorySizeMib { get; private set; } = null!;
 
+        /// <summary>
+        /// - The vm kind metadata.
+        /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) The name for the vm.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Ooptional) Credentials to login server.
+        /// </summary>
         [Output("ngtCredentials")]
         public Output<ImmutableDictionary<string, object>> NgtCredentials { get; private set; } = null!;
 
         /// <summary>
         /// Application names that are enabled.
-        /// * `num_vcpus_per_socket`: - (Optional) Number of vCPUs per socket.
-        /// * `num_sockets`: - (Optional) Number of vCPU sockets.
-        /// * `gpu_list`: - (Optional) GPUs attached to the VM.
-        /// * `parent_referece`: - (Optional) Reference to an entity that the VM cloned from.
-        /// * `memory_size_mib`: - (Optional) Memory size in MiB.
-        /// * `boot_device_order_list`: - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
-        /// * `boot_device_disk_address`: - (Optional) Address of disk to boot from.
-        /// * `boot_device_mac_address`: - (Optional) MAC address of nic to boot from.
-        /// * `boot_type`: - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like boot_device and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
-        /// * `machine_type`: - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-        /// * `hardware_clock_timezone`: - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
-        /// * `guest_customization_cloud_init_user_data`: - (Optional) The contents of the user_data configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         /// </summary>
         [Output("ngtEnabledCapabilityLists")]
         public Output<ImmutableArray<string>> NgtEnabledCapabilityLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - Status NICs attached to the VM.
+        /// </summary>
         [Output("nicListStatuses")]
         public Output<ImmutableArray<Outputs.VirtualMachineNicListStatus>> NicListStatuses { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Spec NICs attached to the VM.
+        /// </summary>
         [Output("nicLists")]
         public Output<ImmutableArray<Outputs.VirtualMachineNicList>> NicLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Number of vCPU sockets.
+        /// </summary>
         [Output("numSockets")]
         public Output<int> NumSockets { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Number of vCPUs per socket.
+        /// </summary>
         [Output("numVcpusPerSocket")]
         public Output<int> NumVcpusPerSocket { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Number of vNUMA nodes. 0 means vNUMA is disabled.
+        /// </summary>
         [Output("numVnumaNodes")]
         public Output<int> NumVnumaNodes { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Information regarding Nutanix Guest Tools.
+        /// </summary>
         [Output("nutanixGuestTools")]
         public Output<ImmutableDictionary<string, string>> NutanixGuestTools { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         [Output("ownerReference")]
         public Output<ImmutableDictionary<string, string>> OwnerReference { get; private set; } = null!;
 
         [Output("parentReference")]
         public Output<ImmutableDictionary<string, string>> ParentReference { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
+        /// </summary>
         [Output("powerState")]
         public Output<string> PowerState { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
+        /// </summary>
         [Output("powerStateMechanism")]
         public Output<string> PowerStateMechanism { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The reference to a project.
+        /// </summary>
         [Output("projectReference")]
         public Output<ImmutableDictionary<string, string>> ProjectReference { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Serial Ports configured on the VM.
+        /// </summary>
         [Output("serialPortLists")]
         public Output<ImmutableArray<Outputs.VirtualMachineSerialPortList>> SerialPortLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
+        /// </summary>
         [Output("shouldFailOnScriptFailure")]
         public Output<bool> ShouldFailOnScriptFailure { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Nutanix Guest Tools is enabled or not.
+        /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
+        /// </summary>
         [Output("useHotAdd")]
         public Output<bool?> UseHotAdd { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Indicates whether VGA console should be enabled or not.
+        /// </summary>
         [Output("vgaConsoleEnabled")]
         public Output<bool> VgaConsoleEnabled { get; private set; } = null!;
 
@@ -319,10 +413,14 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class VirtualMachineArgs : Pulumi.ResourceArgs
+    public sealed class VirtualMachineArgs : global::Pulumi.ResourceArgs
     {
         [Input("availabilityZoneReference")]
         private InputMap<string>? _availabilityZoneReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a availability_zone.
+        /// </summary>
         public InputMap<string> AvailabilityZoneReference
         {
             get => _availabilityZoneReference ?? (_availabilityZoneReference = new InputMap<string>());
@@ -331,28 +429,46 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("bootDeviceDiskAddress")]
         private InputMap<string>? _bootDeviceDiskAddress;
+
+        /// <summary>
+        /// - (Optional) Address of disk to boot from.
+        /// </summary>
         public InputMap<string> BootDeviceDiskAddress
         {
             get => _bootDeviceDiskAddress ?? (_bootDeviceDiskAddress = new InputMap<string>());
             set => _bootDeviceDiskAddress = value;
         }
 
+        /// <summary>
+        /// - (Optional) MAC address of nic to boot from.
+        /// </summary>
         [Input("bootDeviceMacAddress")]
         public Input<string>? BootDeviceMacAddress { get; set; }
 
         [Input("bootDeviceOrderLists")]
         private InputList<string>? _bootDeviceOrderLists;
+
+        /// <summary>
+        /// - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
+        /// </summary>
         public InputList<string> BootDeviceOrderLists
         {
             get => _bootDeviceOrderLists ?? (_bootDeviceOrderLists = new InputList<string>());
             set => _bootDeviceOrderLists = value;
         }
 
+        /// <summary>
+        /// - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like boot_device and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+        /// </summary>
         [Input("bootType")]
         public Input<string>? BootType { get; set; }
 
         [Input("categories")]
         private InputList<Inputs.VirtualMachineCategoryArgs>? _categories;
+
+        /// <summary>
+        /// - (Optional) Categories for the vm.
+        /// </summary>
         public InputList<Inputs.VirtualMachineCategoryArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.VirtualMachineCategoryArgs>());
@@ -362,9 +478,15 @@ namespace PiersKarsenbarg.Nutanix
         [Input("cloudInitCdromUuid")]
         public Input<string>? CloudInitCdromUuid { get; set; }
 
+        /// <summary>
+        /// - (Required) The UUID of the cluster.
+        /// </summary>
         [Input("clusterUuid", required: true)]
         public Input<string> ClusterUuid { get; set; } = null!;
 
+        /// <summary>
+        /// - (Optional) A description for vm.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
@@ -373,10 +495,6 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// Disks attached to the VM.
-        /// * `use_hot_add`: - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
-        /// * `num_threads_per_core`: - (Optional) Number of threads per core.
-        /// * `enable_cpu_passthrough`: - (Optional) Add true to enable CPU passthrough.
-        /// * `is_vcpu_hard_pinned`: - (Optional) Add true to enable CPU pinning.
         /// </summary>
         public InputList<Inputs.VirtualMachineDiskListArgs> DiskLists
         {
@@ -384,14 +502,24 @@ namespace PiersKarsenbarg.Nutanix
             set => _diskLists = value;
         }
 
+        /// <summary>
+        /// - (Optional) Add true to enable CPU passthrough.
+        /// </summary>
         [Input("enableCpuPassthrough")]
         public Input<bool>? EnableCpuPassthrough { get; set; }
 
+        /// <summary>
+        /// - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
+        /// </summary>
         [Input("enableScriptExec")]
         public Input<bool>? EnableScriptExec { get; set; }
 
         [Input("gpuLists")]
         private InputList<Inputs.VirtualMachineGpuListArgs>? _gpuLists;
+
+        /// <summary>
+        /// - (Optional) GPUs attached to the VM.
+        /// </summary>
         public InputList<Inputs.VirtualMachineGpuListArgs> GpuLists
         {
             get => _gpuLists ?? (_gpuLists = new InputList<Inputs.VirtualMachineGpuListArgs>());
@@ -400,6 +528,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("guestCustomizationCloudInitCustomKeyValues")]
         private InputMap<string>? _guestCustomizationCloudInitCustomKeyValues;
+
+        /// <summary>
+        /// - (Optional) Generic key value pair used for custom attributes in cloud init.
+        /// </summary>
         public InputMap<string> GuestCustomizationCloudInitCustomKeyValues
         {
             get => _guestCustomizationCloudInitCustomKeyValues ?? (_guestCustomizationCloudInitCustomKeyValues = new InputMap<string>());
@@ -408,26 +540,28 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
-        /// * `guest_customization_cloud_init_custom_key_values`: - (Optional) Generic key value pair used for custom attributes in cloud init.
-        /// * `guest_customization_is_overridable`: - (Optional) Flag to allow override of customization by deployer.
-        /// * `guest_customization_sysprep`: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloud_init should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
-        /// * `guest_customization_sysrep_custom_key_values`: - (Optional) Generic key value pair used for custom attributes in sysrep.
-        /// * `should_fail_on_script_failure`: - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
-        /// * `enable_script_exec`: - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
-        /// * `power_state_mechanism`: - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
-        /// * `vga_console_enabled`: - (Optional) Indicates whether VGA console should be enabled or not.
         /// </summary>
         [Input("guestCustomizationCloudInitMetaData")]
         public Input<string>? GuestCustomizationCloudInitMetaData { get; set; }
 
+        /// <summary>
+        /// - (Optional) The contents of the user_data configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+        /// </summary>
         [Input("guestCustomizationCloudInitUserData")]
         public Input<string>? GuestCustomizationCloudInitUserData { get; set; }
 
+        /// <summary>
+        /// - (Optional) Flag to allow override of customization by deployer.
+        /// </summary>
         [Input("guestCustomizationIsOverridable")]
         public Input<bool>? GuestCustomizationIsOverridable { get; set; }
 
         [Input("guestCustomizationSysprep")]
         private InputMap<string>? _guestCustomizationSysprep;
+
+        /// <summary>
+        /// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloud_init should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+        /// </summary>
         public InputMap<string> GuestCustomizationSysprep
         {
             get => _guestCustomizationSysprep ?? (_guestCustomizationSysprep = new InputMap<string>());
@@ -442,26 +576,48 @@ namespace PiersKarsenbarg.Nutanix
             set => _guestCustomizationSysprepCustomKeyValues = value;
         }
 
+        /// <summary>
+        /// - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
+        /// </summary>
         [Input("guestOsId")]
         public Input<string>? GuestOsId { get; set; }
 
+        /// <summary>
+        /// - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+        /// </summary>
         [Input("hardwareClockTimezone")]
         public Input<string>? HardwareClockTimezone { get; set; }
 
+        /// <summary>
+        /// - (Optional) Add true to enable CPU pinning.
+        /// </summary>
         [Input("isVcpuHardPinned")]
         public Input<bool>? IsVcpuHardPinned { get; set; }
 
+        /// <summary>
+        /// - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+        /// </summary>
         [Input("machineType")]
         public Input<string>? MachineType { get; set; }
 
+        /// <summary>
+        /// - (Optional) Memory size in MiB.
+        /// </summary>
         [Input("memorySizeMib")]
         public Input<int>? MemorySizeMib { get; set; }
 
+        /// <summary>
+        /// - (Required) The name for the vm.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("ngtCredentials")]
         private InputMap<object>? _ngtCredentials;
+
+        /// <summary>
+        /// - (Ooptional) Credentials to login server.
+        /// </summary>
         public InputMap<object> NgtCredentials
         {
             get => _ngtCredentials ?? (_ngtCredentials = new InputMap<object>());
@@ -473,18 +629,6 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// Application names that are enabled.
-        /// * `num_vcpus_per_socket`: - (Optional) Number of vCPUs per socket.
-        /// * `num_sockets`: - (Optional) Number of vCPU sockets.
-        /// * `gpu_list`: - (Optional) GPUs attached to the VM.
-        /// * `parent_referece`: - (Optional) Reference to an entity that the VM cloned from.
-        /// * `memory_size_mib`: - (Optional) Memory size in MiB.
-        /// * `boot_device_order_list`: - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
-        /// * `boot_device_disk_address`: - (Optional) Address of disk to boot from.
-        /// * `boot_device_mac_address`: - (Optional) MAC address of nic to boot from.
-        /// * `boot_type`: - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like boot_device and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
-        /// * `machine_type`: - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-        /// * `hardware_clock_timezone`: - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
-        /// * `guest_customization_cloud_init_user_data`: - (Optional) The contents of the user_data configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         /// </summary>
         public InputList<string> NgtEnabledCapabilityLists
         {
@@ -494,23 +638,40 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("nicLists")]
         private InputList<Inputs.VirtualMachineNicListArgs>? _nicLists;
+
+        /// <summary>
+        /// - (Optional) Spec NICs attached to the VM.
+        /// </summary>
         public InputList<Inputs.VirtualMachineNicListArgs> NicLists
         {
             get => _nicLists ?? (_nicLists = new InputList<Inputs.VirtualMachineNicListArgs>());
             set => _nicLists = value;
         }
 
+        /// <summary>
+        /// - (Optional) Number of vCPU sockets.
+        /// </summary>
         [Input("numSockets")]
         public Input<int>? NumSockets { get; set; }
 
+        /// <summary>
+        /// - (Optional) Number of vCPUs per socket.
+        /// </summary>
         [Input("numVcpusPerSocket")]
         public Input<int>? NumVcpusPerSocket { get; set; }
 
+        /// <summary>
+        /// - (Optional) Number of vNUMA nodes. 0 means vNUMA is disabled.
+        /// </summary>
         [Input("numVnumaNodes")]
         public Input<int>? NumVnumaNodes { get; set; }
 
         [Input("nutanixGuestTools")]
         private InputMap<string>? _nutanixGuestTools;
+
+        /// <summary>
+        /// - (Optional) Information regarding Nutanix Guest Tools.
+        /// </summary>
         public InputMap<string> NutanixGuestTools
         {
             get => _nutanixGuestTools ?? (_nutanixGuestTools = new InputMap<string>());
@@ -519,6 +680,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("ownerReference")]
         private InputMap<string>? _ownerReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         public InputMap<string> OwnerReference
         {
             get => _ownerReference ?? (_ownerReference = new InputMap<string>());
@@ -533,11 +698,18 @@ namespace PiersKarsenbarg.Nutanix
             set => _parentReference = value;
         }
 
+        /// <summary>
+        /// - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
+        /// </summary>
         [Input("powerStateMechanism")]
         public Input<string>? PowerStateMechanism { get; set; }
 
         [Input("projectReference")]
         private InputMap<string>? _projectReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a project.
+        /// </summary>
         public InputMap<string> ProjectReference
         {
             get => _projectReference ?? (_projectReference = new InputMap<string>());
@@ -546,41 +718,54 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("serialPortLists")]
         private InputList<Inputs.VirtualMachineSerialPortListArgs>? _serialPortLists;
+
+        /// <summary>
+        /// - (Optional) Serial Ports configured on the VM.
+        /// </summary>
         public InputList<Inputs.VirtualMachineSerialPortListArgs> SerialPortLists
         {
             get => _serialPortLists ?? (_serialPortLists = new InputList<Inputs.VirtualMachineSerialPortListArgs>());
             set => _serialPortLists = value;
         }
 
+        /// <summary>
+        /// - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
+        /// </summary>
         [Input("shouldFailOnScriptFailure")]
         public Input<bool>? ShouldFailOnScriptFailure { get; set; }
 
+        /// <summary>
+        /// - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
+        /// </summary>
         [Input("useHotAdd")]
         public Input<bool>? UseHotAdd { get; set; }
 
+        /// <summary>
+        /// - (Optional) Indicates whether VGA console should be enabled or not.
+        /// </summary>
         [Input("vgaConsoleEnabled")]
         public Input<bool>? VgaConsoleEnabled { get; set; }
 
         public VirtualMachineArgs()
         {
         }
+        public static new VirtualMachineArgs Empty => new VirtualMachineArgs();
     }
 
-    public sealed class VirtualMachineState : Pulumi.ResourceArgs
+    public sealed class VirtualMachineState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The version of the API.
-        /// * `state`: - The state of the vm.
-        /// * `cluster_name`: - The name of the cluster.
-        /// * `host_reference`: - Reference to a host.
-        /// * `hypervisor_type`: - The hypervisor type for the hypervisor the VM is hosted on.
-        /// * `nic_list_status`: - Status NICs attached to the VM.
         /// </summary>
         [Input("apiVersion")]
         public Input<string>? ApiVersion { get; set; }
 
         [Input("availabilityZoneReference")]
         private InputMap<string>? _availabilityZoneReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a availability_zone.
+        /// </summary>
         public InputMap<string> AvailabilityZoneReference
         {
             get => _availabilityZoneReference ?? (_availabilityZoneReference = new InputMap<string>());
@@ -589,28 +774,46 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("bootDeviceDiskAddress")]
         private InputMap<string>? _bootDeviceDiskAddress;
+
+        /// <summary>
+        /// - (Optional) Address of disk to boot from.
+        /// </summary>
         public InputMap<string> BootDeviceDiskAddress
         {
             get => _bootDeviceDiskAddress ?? (_bootDeviceDiskAddress = new InputMap<string>());
             set => _bootDeviceDiskAddress = value;
         }
 
+        /// <summary>
+        /// - (Optional) MAC address of nic to boot from.
+        /// </summary>
         [Input("bootDeviceMacAddress")]
         public Input<string>? BootDeviceMacAddress { get; set; }
 
         [Input("bootDeviceOrderLists")]
         private InputList<string>? _bootDeviceOrderLists;
+
+        /// <summary>
+        /// - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
+        /// </summary>
         public InputList<string> BootDeviceOrderLists
         {
             get => _bootDeviceOrderLists ?? (_bootDeviceOrderLists = new InputList<string>());
             set => _bootDeviceOrderLists = value;
         }
 
+        /// <summary>
+        /// - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like boot_device and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+        /// </summary>
         [Input("bootType")]
         public Input<string>? BootType { get; set; }
 
         [Input("categories")]
         private InputList<Inputs.VirtualMachineCategoryGetArgs>? _categories;
+
+        /// <summary>
+        /// - (Optional) Categories for the vm.
+        /// </summary>
         public InputList<Inputs.VirtualMachineCategoryGetArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.VirtualMachineCategoryGetArgs>());
@@ -620,12 +823,21 @@ namespace PiersKarsenbarg.Nutanix
         [Input("cloudInitCdromUuid")]
         public Input<string>? CloudInitCdromUuid { get; set; }
 
+        /// <summary>
+        /// - The name of the cluster.
+        /// </summary>
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }
 
+        /// <summary>
+        /// - (Required) The UUID of the cluster.
+        /// </summary>
         [Input("clusterUuid")]
         public Input<string>? ClusterUuid { get; set; }
 
+        /// <summary>
+        /// - (Optional) A description for vm.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
@@ -634,10 +846,6 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// Disks attached to the VM.
-        /// * `use_hot_add`: - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
-        /// * `num_threads_per_core`: - (Optional) Number of threads per core.
-        /// * `enable_cpu_passthrough`: - (Optional) Add true to enable CPU passthrough.
-        /// * `is_vcpu_hard_pinned`: - (Optional) Add true to enable CPU pinning.
         /// </summary>
         public InputList<Inputs.VirtualMachineDiskListGetArgs> DiskLists
         {
@@ -645,14 +853,24 @@ namespace PiersKarsenbarg.Nutanix
             set => _diskLists = value;
         }
 
+        /// <summary>
+        /// - (Optional) Add true to enable CPU passthrough.
+        /// </summary>
         [Input("enableCpuPassthrough")]
         public Input<bool>? EnableCpuPassthrough { get; set; }
 
+        /// <summary>
+        /// - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
+        /// </summary>
         [Input("enableScriptExec")]
         public Input<bool>? EnableScriptExec { get; set; }
 
         [Input("gpuLists")]
         private InputList<Inputs.VirtualMachineGpuListGetArgs>? _gpuLists;
+
+        /// <summary>
+        /// - (Optional) GPUs attached to the VM.
+        /// </summary>
         public InputList<Inputs.VirtualMachineGpuListGetArgs> GpuLists
         {
             get => _gpuLists ?? (_gpuLists = new InputList<Inputs.VirtualMachineGpuListGetArgs>());
@@ -661,6 +879,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("guestCustomizationCloudInitCustomKeyValues")]
         private InputMap<string>? _guestCustomizationCloudInitCustomKeyValues;
+
+        /// <summary>
+        /// - (Optional) Generic key value pair used for custom attributes in cloud init.
+        /// </summary>
         public InputMap<string> GuestCustomizationCloudInitCustomKeyValues
         {
             get => _guestCustomizationCloudInitCustomKeyValues ?? (_guestCustomizationCloudInitCustomKeyValues = new InputMap<string>());
@@ -669,26 +891,28 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
-        /// * `guest_customization_cloud_init_custom_key_values`: - (Optional) Generic key value pair used for custom attributes in cloud init.
-        /// * `guest_customization_is_overridable`: - (Optional) Flag to allow override of customization by deployer.
-        /// * `guest_customization_sysprep`: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloud_init should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
-        /// * `guest_customization_sysrep_custom_key_values`: - (Optional) Generic key value pair used for custom attributes in sysrep.
-        /// * `should_fail_on_script_failure`: - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
-        /// * `enable_script_exec`: - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
-        /// * `power_state_mechanism`: - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
-        /// * `vga_console_enabled`: - (Optional) Indicates whether VGA console should be enabled or not.
         /// </summary>
         [Input("guestCustomizationCloudInitMetaData")]
         public Input<string>? GuestCustomizationCloudInitMetaData { get; set; }
 
+        /// <summary>
+        /// - (Optional) The contents of the user_data configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+        /// </summary>
         [Input("guestCustomizationCloudInitUserData")]
         public Input<string>? GuestCustomizationCloudInitUserData { get; set; }
 
+        /// <summary>
+        /// - (Optional) Flag to allow override of customization by deployer.
+        /// </summary>
         [Input("guestCustomizationIsOverridable")]
         public Input<bool>? GuestCustomizationIsOverridable { get; set; }
 
         [Input("guestCustomizationSysprep")]
         private InputMap<string>? _guestCustomizationSysprep;
+
+        /// <summary>
+        /// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloud_init should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+        /// </summary>
         public InputMap<string> GuestCustomizationSysprep
         {
             get => _guestCustomizationSysprep ?? (_guestCustomizationSysprep = new InputMap<string>());
@@ -703,45 +927,78 @@ namespace PiersKarsenbarg.Nutanix
             set => _guestCustomizationSysprepCustomKeyValues = value;
         }
 
+        /// <summary>
+        /// - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
+        /// </summary>
         [Input("guestOsId")]
         public Input<string>? GuestOsId { get; set; }
 
+        /// <summary>
+        /// - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+        /// </summary>
         [Input("hardwareClockTimezone")]
         public Input<string>? HardwareClockTimezone { get; set; }
 
         [Input("hostReference")]
         private InputMap<string>? _hostReference;
+
+        /// <summary>
+        /// - Reference to a host.
+        /// </summary>
         public InputMap<string> HostReference
         {
             get => _hostReference ?? (_hostReference = new InputMap<string>());
             set => _hostReference = value;
         }
 
+        /// <summary>
+        /// - The hypervisor type for the hypervisor the VM is hosted on.
+        /// </summary>
         [Input("hypervisorType")]
         public Input<string>? HypervisorType { get; set; }
 
+        /// <summary>
+        /// - (Optional) Add true to enable CPU pinning.
+        /// </summary>
         [Input("isVcpuHardPinned")]
         public Input<bool>? IsVcpuHardPinned { get; set; }
 
+        /// <summary>
+        /// - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+        /// </summary>
         [Input("machineType")]
         public Input<string>? MachineType { get; set; }
 
+        /// <summary>
+        /// - (Optional) Memory size in MiB.
+        /// </summary>
         [Input("memorySizeMib")]
         public Input<int>? MemorySizeMib { get; set; }
 
         [Input("metadata")]
         private InputMap<string>? _metadata;
+
+        /// <summary>
+        /// - The vm kind metadata.
+        /// </summary>
         public InputMap<string> Metadata
         {
             get => _metadata ?? (_metadata = new InputMap<string>());
             set => _metadata = value;
         }
 
+        /// <summary>
+        /// - (Required) The name for the vm.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("ngtCredentials")]
         private InputMap<object>? _ngtCredentials;
+
+        /// <summary>
+        /// - (Ooptional) Credentials to login server.
+        /// </summary>
         public InputMap<object> NgtCredentials
         {
             get => _ngtCredentials ?? (_ngtCredentials = new InputMap<object>());
@@ -753,18 +1010,6 @@ namespace PiersKarsenbarg.Nutanix
 
         /// <summary>
         /// Application names that are enabled.
-        /// * `num_vcpus_per_socket`: - (Optional) Number of vCPUs per socket.
-        /// * `num_sockets`: - (Optional) Number of vCPU sockets.
-        /// * `gpu_list`: - (Optional) GPUs attached to the VM.
-        /// * `parent_referece`: - (Optional) Reference to an entity that the VM cloned from.
-        /// * `memory_size_mib`: - (Optional) Memory size in MiB.
-        /// * `boot_device_order_list`: - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
-        /// * `boot_device_disk_address`: - (Optional) Address of disk to boot from.
-        /// * `boot_device_mac_address`: - (Optional) MAC address of nic to boot from.
-        /// * `boot_type`: - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like boot_device and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
-        /// * `machine_type`: - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-        /// * `hardware_clock_timezone`: - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
-        /// * `guest_customization_cloud_init_user_data`: - (Optional) The contents of the user_data configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         /// </summary>
         public InputList<string> NgtEnabledCapabilityLists
         {
@@ -774,6 +1019,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("nicListStatuses")]
         private InputList<Inputs.VirtualMachineNicListStatusGetArgs>? _nicListStatuses;
+
+        /// <summary>
+        /// - Status NICs attached to the VM.
+        /// </summary>
         public InputList<Inputs.VirtualMachineNicListStatusGetArgs> NicListStatuses
         {
             get => _nicListStatuses ?? (_nicListStatuses = new InputList<Inputs.VirtualMachineNicListStatusGetArgs>());
@@ -782,23 +1031,40 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("nicLists")]
         private InputList<Inputs.VirtualMachineNicListGetArgs>? _nicLists;
+
+        /// <summary>
+        /// - (Optional) Spec NICs attached to the VM.
+        /// </summary>
         public InputList<Inputs.VirtualMachineNicListGetArgs> NicLists
         {
             get => _nicLists ?? (_nicLists = new InputList<Inputs.VirtualMachineNicListGetArgs>());
             set => _nicLists = value;
         }
 
+        /// <summary>
+        /// - (Optional) Number of vCPU sockets.
+        /// </summary>
         [Input("numSockets")]
         public Input<int>? NumSockets { get; set; }
 
+        /// <summary>
+        /// - (Optional) Number of vCPUs per socket.
+        /// </summary>
         [Input("numVcpusPerSocket")]
         public Input<int>? NumVcpusPerSocket { get; set; }
 
+        /// <summary>
+        /// - (Optional) Number of vNUMA nodes. 0 means vNUMA is disabled.
+        /// </summary>
         [Input("numVnumaNodes")]
         public Input<int>? NumVnumaNodes { get; set; }
 
         [Input("nutanixGuestTools")]
         private InputMap<string>? _nutanixGuestTools;
+
+        /// <summary>
+        /// - (Optional) Information regarding Nutanix Guest Tools.
+        /// </summary>
         public InputMap<string> NutanixGuestTools
         {
             get => _nutanixGuestTools ?? (_nutanixGuestTools = new InputMap<string>());
@@ -807,6 +1073,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("ownerReference")]
         private InputMap<string>? _ownerReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a user.
+        /// </summary>
         public InputMap<string> OwnerReference
         {
             get => _ownerReference ?? (_ownerReference = new InputMap<string>());
@@ -821,14 +1091,24 @@ namespace PiersKarsenbarg.Nutanix
             set => _parentReference = value;
         }
 
+        /// <summary>
+        /// - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
+        /// </summary>
         [Input("powerState")]
         public Input<string>? PowerState { get; set; }
 
+        /// <summary>
+        /// - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
+        /// </summary>
         [Input("powerStateMechanism")]
         public Input<string>? PowerStateMechanism { get; set; }
 
         [Input("projectReference")]
         private InputMap<string>? _projectReference;
+
+        /// <summary>
+        /// - (Optional) The reference to a project.
+        /// </summary>
         public InputMap<string> ProjectReference
         {
             get => _projectReference ?? (_projectReference = new InputMap<string>());
@@ -837,26 +1117,43 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("serialPortLists")]
         private InputList<Inputs.VirtualMachineSerialPortListGetArgs>? _serialPortLists;
+
+        /// <summary>
+        /// - (Optional) Serial Ports configured on the VM.
+        /// </summary>
         public InputList<Inputs.VirtualMachineSerialPortListGetArgs> SerialPortLists
         {
             get => _serialPortLists ?? (_serialPortLists = new InputList<Inputs.VirtualMachineSerialPortListGetArgs>());
             set => _serialPortLists = value;
         }
 
+        /// <summary>
+        /// - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
+        /// </summary>
         [Input("shouldFailOnScriptFailure")]
         public Input<bool>? ShouldFailOnScriptFailure { get; set; }
 
+        /// <summary>
+        /// - (Optional) Nutanix Guest Tools is enabled or not.
+        /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
+        /// </summary>
         [Input("useHotAdd")]
         public Input<bool>? UseHotAdd { get; set; }
 
+        /// <summary>
+        /// - (Optional) Indicates whether VGA console should be enabled or not.
+        /// </summary>
         [Input("vgaConsoleEnabled")]
         public Input<bool>? VgaConsoleEnabled { get; set; }
 
         public VirtualMachineState()
         {
         }
+        public static new VirtualMachineState Empty => new VirtualMachineState();
     }
 }

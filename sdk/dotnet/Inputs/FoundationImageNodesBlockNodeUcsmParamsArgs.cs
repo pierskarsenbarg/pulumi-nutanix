@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationImageNodesBlockNodeUcsmParamsArgs : Pulumi.ResourceArgs
+    public sealed class FoundationImageNodesBlockNodeUcsmParamsArgs : global::Pulumi.ResourceArgs
     {
         [Input("keepUcsmSettings")]
         public Input<bool>? KeepUcsmSettings { get; set; }
@@ -28,5 +28,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public FoundationImageNodesBlockNodeUcsmParamsArgs()
         {
         }
+        public static new FoundationImageNodesBlockNodeUcsmParamsArgs Empty => new FoundationImageNodesBlockNodeUcsmParamsArgs();
     }
 }

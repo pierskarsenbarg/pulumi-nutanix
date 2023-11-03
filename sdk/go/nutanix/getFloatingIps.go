@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve all the floating IPs .
@@ -18,23 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetFloatingIps(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetFloatingIps(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetFloatingIps(ctx *pulumi.Context, args *GetFloatingIpsArgs, opts ...pulumi.InvokeOption) (*GetFloatingIpsResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFloatingIpsResult
 	err := ctx.Invoke("nutanix:index/getFloatingIps:getFloatingIps", args, &rv, opts...)
 	if err != nil {
@@ -45,15 +49,19 @@ func GetFloatingIps(ctx *pulumi.Context, args *GetFloatingIpsArgs, opts ...pulum
 
 // A collection of arguments for invoking getFloatingIps.
 type GetFloatingIpsArgs struct {
+	// - The floatingIp kind metadata.
 	Metadatas []GetFloatingIpsMetadata `pulumi:"metadatas"`
 }
 
 // A collection of values returned by getFloatingIps.
 type GetFloatingIpsResult struct {
-	ApiVersion string                 `pulumi:"apiVersion"`
-	Entities   []GetFloatingIpsEntity `pulumi:"entities"`
+	// version of the API
+	ApiVersion string `pulumi:"apiVersion"`
+	// List of Floating IPs.
+	Entities []GetFloatingIpsEntity `pulumi:"entities"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string                   `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// - The floatingIp kind metadata.
 	Metadatas []GetFloatingIpsMetadata `pulumi:"metadatas"`
 }
 
@@ -72,6 +80,7 @@ func GetFloatingIpsOutput(ctx *pulumi.Context, args GetFloatingIpsOutputArgs, op
 
 // A collection of arguments for invoking getFloatingIps.
 type GetFloatingIpsOutputArgs struct {
+	// - The floatingIp kind metadata.
 	Metadatas GetFloatingIpsMetadataArrayInput `pulumi:"metadatas"`
 }
 
@@ -94,10 +103,18 @@ func (o GetFloatingIpsResultOutput) ToGetFloatingIpsResultOutputWithContext(ctx 
 	return o
 }
 
+func (o GetFloatingIpsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFloatingIpsResult] {
+	return pulumix.Output[GetFloatingIpsResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// version of the API
 func (o GetFloatingIpsResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFloatingIpsResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// List of Floating IPs.
 func (o GetFloatingIpsResultOutput) Entities() GetFloatingIpsEntityArrayOutput {
 	return o.ApplyT(func(v GetFloatingIpsResult) []GetFloatingIpsEntity { return v.Entities }).(GetFloatingIpsEntityArrayOutput)
 }
@@ -107,6 +124,7 @@ func (o GetFloatingIpsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFloatingIpsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - The floatingIp kind metadata.
 func (o GetFloatingIpsResultOutput) Metadatas() GetFloatingIpsMetadataArrayOutput {
 	return o.ApplyT(func(v GetFloatingIpsResult) []GetFloatingIpsMetadata { return v.Metadatas }).(GetFloatingIpsMetadataArrayOutput)
 }

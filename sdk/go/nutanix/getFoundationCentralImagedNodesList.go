@@ -7,11 +7,13 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetFoundationCentralImagedNodesList(ctx *pulumi.Context, args *GetFoundationCentralImagedNodesListArgs, opts ...pulumi.InvokeOption) (*GetFoundationCentralImagedNodesListResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFoundationCentralImagedNodesListResult
 	err := ctx.Invoke("nutanix:index/getFoundationCentralImagedNodesList:getFoundationCentralImagedNodesList", args, &rv, opts...)
 	if err != nil {
@@ -75,6 +77,12 @@ func (o GetFoundationCentralImagedNodesListResultOutput) ToGetFoundationCentralI
 
 func (o GetFoundationCentralImagedNodesListResultOutput) ToGetFoundationCentralImagedNodesListResultOutputWithContext(ctx context.Context) GetFoundationCentralImagedNodesListResultOutput {
 	return o
+}
+
+func (o GetFoundationCentralImagedNodesListResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFoundationCentralImagedNodesListResult] {
+	return pulumix.Output[GetFoundationCentralImagedNodesListResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetFoundationCentralImagedNodesListResultOutput) Filters() GetFoundationCentralImagedNodesListFiltersPtrOutput {

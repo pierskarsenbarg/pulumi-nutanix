@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -10,11 +11,8 @@ import * as utilities from "./utilities";
  */
 export function getVpc(args?: GetVpcArgs, opts?: pulumi.InvokeOptions): Promise<GetVpcResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getVpc:getVpc", {
         "vpcName": args.vpcName,
         "vpcUuid": args.vpcUuid,
@@ -47,6 +45,9 @@ export interface GetVpcResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - The vpc kind metadata.
+     */
     readonly metadata: {[key: string]: string};
     /**
      * VPC input spec
@@ -59,9 +60,11 @@ export interface GetVpcResult {
     readonly vpcName?: string;
     readonly vpcUuid?: string;
 }
-
+/**
+ * Provides a datasource to retrieve VPC with vpcUuid or vpcName .
+ */
 export function getVpcOutput(args?: GetVpcOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVpcResult> {
-    return pulumi.output(args).apply(a => getVpc(a, opts))
+    return pulumi.output(args).apply((a: any) => getVpc(a, opts))
 }
 
 /**

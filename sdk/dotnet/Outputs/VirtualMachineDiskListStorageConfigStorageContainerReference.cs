@@ -14,9 +14,18 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VirtualMachineDiskListStorageConfigStorageContainerReference
     {
+        /// <summary>
+        /// - The kind name (Default value: project)(Required).
+        /// </summary>
         public readonly string? Kind;
+        /// <summary>
+        /// - (Required) The name for the vm.
+        /// </summary>
         public readonly string? Name;
         public readonly string? Url;
+        /// <summary>
+        /// - (Optional) The device ID which is used to uniquely identify this particular disk.
+        /// </summary>
         public readonly string? Uuid;
 
         [OutputConstructor]

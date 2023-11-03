@@ -7,12 +7,14 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describe a Nutanix Category Key and its values (if it has them).
 func LookupCategoryKey(ctx *pulumi.Context, args *LookupCategoryKeyArgs, opts ...pulumi.InvokeOption) (*LookupCategoryKeyResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupCategoryKeyResult
 	err := ctx.Invoke("nutanix:index/getCategoryKey:getCategoryKey", args, &rv, opts...)
 	if err != nil {
@@ -23,20 +25,23 @@ func LookupCategoryKey(ctx *pulumi.Context, args *LookupCategoryKeyArgs, opts ..
 
 // A collection of arguments for invoking getCategoryKey.
 type LookupCategoryKeyArgs struct {
+	// - (Required) The name for the category key.
 	Name string `pulumi:"name"`
 }
 
 // A collection of values returned by getCategoryKey.
 type LookupCategoryKeyResult struct {
 	// The version of the API.
-	// * `values`: - A list of the values from this category key (if it has them).
-	ApiVersion  string `pulumi:"apiVersion"`
+	ApiVersion string `pulumi:"apiVersion"`
+	// - A description for category key.
 	Description string `pulumi:"description"`
 	// The provider-assigned unique ID for this managed resource.
-	Id            string   `pulumi:"id"`
-	Name          string   `pulumi:"name"`
-	SystemDefined bool     `pulumi:"systemDefined"`
-	Values        []string `pulumi:"values"`
+	Id   string `pulumi:"id"`
+	Name string `pulumi:"name"`
+	// - Specifying whether its a system defined category.
+	SystemDefined bool `pulumi:"systemDefined"`
+	// - A list of the values from this category key (if it has them).
+	Values []string `pulumi:"values"`
 }
 
 func LookupCategoryKeyOutput(ctx *pulumi.Context, args LookupCategoryKeyOutputArgs, opts ...pulumi.InvokeOption) LookupCategoryKeyResultOutput {
@@ -54,6 +59,7 @@ func LookupCategoryKeyOutput(ctx *pulumi.Context, args LookupCategoryKeyOutputAr
 
 // A collection of arguments for invoking getCategoryKey.
 type LookupCategoryKeyOutputArgs struct {
+	// - (Required) The name for the category key.
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -76,12 +82,18 @@ func (o LookupCategoryKeyResultOutput) ToLookupCategoryKeyResultOutputWithContex
 	return o
 }
 
+func (o LookupCategoryKeyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCategoryKeyResult] {
+	return pulumix.Output[LookupCategoryKeyResult]{
+		OutputState: o.OutputState,
+	}
+}
+
 // The version of the API.
-// * `values`: - A list of the values from this category key (if it has them).
 func (o LookupCategoryKeyResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCategoryKeyResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// - A description for category key.
 func (o LookupCategoryKeyResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCategoryKeyResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -95,10 +107,12 @@ func (o LookupCategoryKeyResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCategoryKeyResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// - Specifying whether its a system defined category.
 func (o LookupCategoryKeyResultOutput) SystemDefined() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupCategoryKeyResult) bool { return v.SystemDefined }).(pulumi.BoolOutput)
 }
 
+// - A list of the values from this category key (if it has them).
 func (o LookupCategoryKeyResultOutput) Values() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupCategoryKeyResult) []string { return v.Values }).(pulumi.StringArrayOutput)
 }

@@ -4,7 +4,12 @@
 package nutanix
 
 import (
+	"context"
+	"reflect"
+
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes Protection Rules
@@ -15,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetProtectionRules(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetProtectionRules(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetProtectionRules(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetProtectionRulesResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProtectionRulesResult
 	err := ctx.Invoke("nutanix:index/getProtectionRules:getProtectionRules", nil, &rv, opts...)
 	if err != nil {
@@ -41,8 +49,61 @@ func GetProtectionRules(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetP
 
 // A collection of values returned by getProtectionRules.
 type GetProtectionRulesResult struct {
-	ApiVersion string                     `pulumi:"apiVersion"`
-	Entities   []GetProtectionRulesEntity `pulumi:"entities"`
+	// version of the API
+	ApiVersion string `pulumi:"apiVersion"`
+	// List of Protection Rules
+	Entities []GetProtectionRulesEntity `pulumi:"entities"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+}
+
+func GetProtectionRulesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetProtectionRulesResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetProtectionRulesResult, error) {
+		r, err := GetProtectionRules(ctx, opts...)
+		var s GetProtectionRulesResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetProtectionRulesResultOutput)
+}
+
+// A collection of values returned by getProtectionRules.
+type GetProtectionRulesResultOutput struct{ *pulumi.OutputState }
+
+func (GetProtectionRulesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProtectionRulesResult)(nil)).Elem()
+}
+
+func (o GetProtectionRulesResultOutput) ToGetProtectionRulesResultOutput() GetProtectionRulesResultOutput {
+	return o
+}
+
+func (o GetProtectionRulesResultOutput) ToGetProtectionRulesResultOutputWithContext(ctx context.Context) GetProtectionRulesResultOutput {
+	return o
+}
+
+func (o GetProtectionRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRulesResult] {
+	return pulumix.Output[GetProtectionRulesResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// version of the API
+func (o GetProtectionRulesResultOutput) ApiVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProtectionRulesResult) string { return v.ApiVersion }).(pulumi.StringOutput)
+}
+
+// List of Protection Rules
+func (o GetProtectionRulesResultOutput) Entities() GetProtectionRulesEntityArrayOutput {
+	return o.ApplyT(func(v GetProtectionRulesResult) []GetProtectionRulesEntity { return v.Entities }).(GetProtectionRulesEntityArrayOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetProtectionRulesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProtectionRulesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetProtectionRulesResultOutput{})
 }

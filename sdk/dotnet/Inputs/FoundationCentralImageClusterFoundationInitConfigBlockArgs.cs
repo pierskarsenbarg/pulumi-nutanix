@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationCentralImageClusterFoundationInitConfigBlockArgs : Pulumi.ResourceArgs
+    public sealed class FoundationCentralImageClusterFoundationInitConfigBlockArgs : global::Pulumi.ResourceArgs
     {
         [Input("blockId")]
         public Input<string>? BlockId { get; set; }
@@ -27,5 +27,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public FoundationCentralImageClusterFoundationInitConfigBlockArgs()
         {
         }
+        public static new FoundationCentralImageClusterFoundationInitConfigBlockArgs Empty => new FoundationCentralImageClusterFoundationInitConfigBlockArgs();
     }
 }

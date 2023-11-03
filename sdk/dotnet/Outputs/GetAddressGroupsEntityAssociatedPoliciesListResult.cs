@@ -15,7 +15,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetAddressGroupsEntityAssociatedPoliciesListResult
     {
         public readonly string Kind;
+        /// <summary>
+        /// - (ReadOnly) Name of associated policy
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - (ReadOnly) UUID of associated policy
+        /// </summary>
         public readonly string Uuid;
 
         [OutputConstructor]

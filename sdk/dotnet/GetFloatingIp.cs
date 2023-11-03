@@ -16,17 +16,17 @@ namespace PiersKarsenbarg.Nutanix
         /// Provides a datasource to retrieve floating IPs with floating_ip_uuid .
         /// </summary>
         public static Task<GetFloatingIpResult> InvokeAsync(GetFloatingIpArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFloatingIpResult>("nutanix:index/getFloatingIp:getFloatingIp", args ?? new GetFloatingIpArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFloatingIpResult>("nutanix:index/getFloatingIp:getFloatingIp", args ?? new GetFloatingIpArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a datasource to retrieve floating IPs with floating_ip_uuid .
         /// </summary>
         public static Output<GetFloatingIpResult> Invoke(GetFloatingIpInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFloatingIpResult>("nutanix:index/getFloatingIp:getFloatingIp", args ?? new GetFloatingIpInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFloatingIpResult>("nutanix:index/getFloatingIp:getFloatingIp", args ?? new GetFloatingIpInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetFloatingIpArgs : Pulumi.InvokeArgs
+    public sealed class GetFloatingIpArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Floating IP UUID
@@ -37,9 +37,10 @@ namespace PiersKarsenbarg.Nutanix
         public GetFloatingIpArgs()
         {
         }
+        public static new GetFloatingIpArgs Empty => new GetFloatingIpArgs();
     }
 
-    public sealed class GetFloatingIpInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetFloatingIpInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// Floating IP UUID
@@ -50,6 +51,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetFloatingIpInvokeArgs()
         {
         }
+        public static new GetFloatingIpInvokeArgs Empty => new GetFloatingIpInvokeArgs();
     }
 
 
@@ -65,6 +67,9 @@ namespace PiersKarsenbarg.Nutanix
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - The floating_ip kind metadata.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
         /// Floating IP spec

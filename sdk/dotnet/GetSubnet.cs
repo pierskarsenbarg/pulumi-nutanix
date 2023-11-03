@@ -16,20 +16,24 @@ namespace PiersKarsenbarg.Nutanix
         /// Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
         /// </summary>
         public static Task<GetSubnetResult> InvokeAsync(GetSubnetArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSubnetResult>("nutanix:index/getSubnet:getSubnet", args ?? new GetSubnetArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubnetResult>("nutanix:index/getSubnet:getSubnet", args ?? new GetSubnetArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
         /// </summary>
         public static Output<GetSubnetResult> Invoke(GetSubnetInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSubnetResult>("nutanix:index/getSubnet:getSubnet", args ?? new GetSubnetInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubnetResult>("nutanix:index/getSubnet:getSubnet", args ?? new GetSubnetInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetSubnetArgs : Pulumi.InvokeArgs
+    public sealed class GetSubnetArgs : global::Pulumi.InvokeArgs
     {
         [Input("additionalFilters")]
         private List<Inputs.GetSubnetAdditionalFilterArgs>? _additionalFilters;
+
+        /// <summary>
+        /// - Additional filters to narrow down list of subnets.
+        /// </summary>
         public List<Inputs.GetSubnetAdditionalFilterArgs> AdditionalFilters
         {
             get => _additionalFilters ?? (_additionalFilters = new List<Inputs.GetSubnetAdditionalFilterArgs>());
@@ -38,27 +42,42 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("categories")]
         private List<Inputs.GetSubnetCategoryArgs>? _categories;
+
+        /// <summary>
+        /// The API Version.
+        /// </summary>
         public List<Inputs.GetSubnetCategoryArgs> Categories
         {
             get => _categories ?? (_categories = new List<Inputs.GetSubnetCategoryArgs>());
             set => _categories = value;
         }
 
+        /// <summary>
+        /// - (Optional) The ID for the subnet.
+        /// </summary>
         [Input("subnetId")]
         public string? SubnetId { get; set; }
 
+        /// <summary>
+        /// - (Optional) The name for the subnet
+        /// </summary>
         [Input("subnetName")]
         public string? SubnetName { get; set; }
 
         public GetSubnetArgs()
         {
         }
+        public static new GetSubnetArgs Empty => new GetSubnetArgs();
     }
 
-    public sealed class GetSubnetInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetSubnetInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("additionalFilters")]
         private InputList<Inputs.GetSubnetAdditionalFilterInputArgs>? _additionalFilters;
+
+        /// <summary>
+        /// - Additional filters to narrow down list of subnets.
+        /// </summary>
         public InputList<Inputs.GetSubnetAdditionalFilterInputArgs> AdditionalFilters
         {
             get => _additionalFilters ?? (_additionalFilters = new InputList<Inputs.GetSubnetAdditionalFilterInputArgs>());
@@ -67,39 +86,80 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("categories")]
         private InputList<Inputs.GetSubnetCategoryInputArgs>? _categories;
+
+        /// <summary>
+        /// The API Version.
+        /// </summary>
         public InputList<Inputs.GetSubnetCategoryInputArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.GetSubnetCategoryInputArgs>());
             set => _categories = value;
         }
 
+        /// <summary>
+        /// - (Optional) The ID for the subnet.
+        /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
 
+        /// <summary>
+        /// - (Optional) The name for the subnet
+        /// </summary>
         [Input("subnetName")]
         public Input<string>? SubnetName { get; set; }
 
         public GetSubnetInvokeArgs()
         {
         }
+        public static new GetSubnetInvokeArgs Empty => new GetSubnetInvokeArgs();
     }
 
 
     [OutputType]
     public sealed class GetSubnetResult
     {
+        /// <summary>
+        /// - Additional filters to narrow down list of subnets.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetAdditionalFilterResult> AdditionalFilters;
         public readonly string ApiVersion;
+        /// <summary>
+        /// The reference to a availability_zone.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> AvailabilityZoneReference;
+        /// <summary>
+        /// The API Version.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetCategoryResult> Categories;
+        /// <summary>
+        /// The name of a cluster.
+        /// </summary>
         public readonly string ClusterName;
         public readonly string ClusterUuid;
+        /// <summary>
+        /// Default gateway IP address.
+        /// </summary>
         public readonly string DefaultGatewayIp;
+        /// <summary>
+        /// A description for subnet.
+        /// </summary>
         public readonly string Description;
         public readonly ImmutableArray<string> DhcpDomainNameServerLists;
+        /// <summary>
+        /// DHCP domain search list for a subnet.
+        /// </summary>
         public readonly ImmutableArray<string> DhcpDomainSearchLists;
+        /// <summary>
+        /// Spec for defining DHCP options.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> DhcpOptions;
+        /// <summary>
+        /// Host address.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> DhcpServerAddress;
+        /// <summary>
+        /// Port Number.
+        /// </summary>
         public readonly int DhcpServerAddressPort;
         public readonly bool EnableNat;
         /// <summary>
@@ -109,19 +169,52 @@ namespace PiersKarsenbarg.Nutanix
         public readonly ImmutableArray<string> IpConfigPoolListRanges;
         public readonly bool IsExternal;
         public readonly ImmutableArray<Outputs.GetSubnetMessageListResult> MessageLists;
+        /// <summary>
+        /// The subnet kind metadata.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
+        /// <summary>
+        /// - the name(Optional).
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The reference to a network_function_chain.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> NetworkFunctionChainReference;
+        /// <summary>
+        /// The reference to a user.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> OwnerReference;
+        /// <summary>
+        /// - (Optional). IP prefix length of the Subnet.
+        /// </summary>
         public readonly int PrefixLength;
+        /// <summary>
+        /// The reference to a project.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> ProjectReference;
+        /// <summary>
+        /// - The state of the subnet.
+        /// </summary>
         public readonly string State;
         public readonly string? SubnetId;
+        /// <summary>
+        /// Subnet IP address.
+        /// </summary>
         public readonly string SubnetIp;
         public readonly string? SubnetName;
+        /// <summary>
+        /// The type of the subnet.
+        /// </summary>
         public readonly string SubnetType;
+        /// <summary>
+        /// VLAN assigned to the subnet.
+        /// </summary>
         public readonly int VlanId;
         public readonly ImmutableDictionary<string, string> VpcReference;
+        /// <summary>
+        /// The name of the vswitch.
+        /// </summary>
         public readonly string VswitchName;
 
         [OutputConstructor]

@@ -11,16 +11,16 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationImageNodesHypervisorIsoHypervGetArgs : Pulumi.ResourceArgs
+    public sealed class FoundationImageNodesHypervisorIsoHypervGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// :- (Required) Filename of hypervisor ISO.
+        /// - (Required) Filename of hypervisor ISO.
         /// </summary>
         [Input("checksum", required: true)]
         public Input<string> Checksum { get; set; } = null!;
 
         /// <summary>
-        /// :- (Required) Checksum for ISO file.
+        /// - (Required) Checksum for ISO file.
         /// </summary>
         [Input("filename", required: true)]
         public Input<string> Filename { get; set; } = null!;
@@ -28,5 +28,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public FoundationImageNodesHypervisorIsoHypervGetArgs()
         {
         }
+        public static new FoundationImageNodesHypervisorIsoHypervGetArgs Empty => new FoundationImageNodesHypervisorIsoHypervGetArgs();
     }
 }

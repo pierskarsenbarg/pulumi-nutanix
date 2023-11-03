@@ -11,16 +11,23 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs : Pulumi.ResourceArgs
+    public sealed class FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// sha256sum of the hypervisor iso.
+        /// </summary>
         [Input("sha256sum")]
         public Input<string>? Sha256sum { get; set; }
 
+        /// <summary>
+        /// URL to download hypervisor iso. Required only if imaging is needed.
+        /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }
 
         public FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs()
         {
         }
+        public static new FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs Empty => new FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs();
     }
 }

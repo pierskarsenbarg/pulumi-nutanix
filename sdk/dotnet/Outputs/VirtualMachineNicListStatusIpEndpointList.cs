@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VirtualMachineNicListStatusIpEndpointList
     {
+        /// <summary>
+        /// - Address string.
+        /// </summary>
         public readonly string? Ip;
+        /// <summary>
+        /// - Address type. It can only be "ASSIGNED" in the spec. If no type is specified in the spec, the default type is set to "ASSIGNED". (Options : ASSIGNED , LEARNED)
+        /// </summary>
         public readonly string? Type;
 
         [OutputConstructor]

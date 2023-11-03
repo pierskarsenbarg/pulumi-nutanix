@@ -4,7 +4,12 @@
 package nutanix
 
 import (
+	"context"
+	"reflect"
+
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Discovers and lists Nutanix-imaged nodes within an IPv6 network.
@@ -15,22 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetFoundationDiscoverNodes(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetFoundationDiscoverNodes(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetFoundationDiscoverNodes(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetFoundationDiscoverNodesResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFoundationDiscoverNodesResult
 	err := ctx.Invoke("nutanix:index/getFoundationDiscoverNodes:getFoundationDiscoverNodes", nil, &rv, opts...)
 	if err != nil {
@@ -41,7 +49,54 @@ func GetFoundationDiscoverNodes(ctx *pulumi.Context, opts ...pulumi.InvokeOption
 
 // A collection of values returned by getFoundationDiscoverNodes.
 type GetFoundationDiscoverNodesResult struct {
+	// List of Nutanix-imaged nodes within an IPv6 network
 	Entities []GetFoundationDiscoverNodesEntity `pulumi:"entities"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+}
+
+func GetFoundationDiscoverNodesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetFoundationDiscoverNodesResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetFoundationDiscoverNodesResult, error) {
+		r, err := GetFoundationDiscoverNodes(ctx, opts...)
+		var s GetFoundationDiscoverNodesResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetFoundationDiscoverNodesResultOutput)
+}
+
+// A collection of values returned by getFoundationDiscoverNodes.
+type GetFoundationDiscoverNodesResultOutput struct{ *pulumi.OutputState }
+
+func (GetFoundationDiscoverNodesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFoundationDiscoverNodesResult)(nil)).Elem()
+}
+
+func (o GetFoundationDiscoverNodesResultOutput) ToGetFoundationDiscoverNodesResultOutput() GetFoundationDiscoverNodesResultOutput {
+	return o
+}
+
+func (o GetFoundationDiscoverNodesResultOutput) ToGetFoundationDiscoverNodesResultOutputWithContext(ctx context.Context) GetFoundationDiscoverNodesResultOutput {
+	return o
+}
+
+func (o GetFoundationDiscoverNodesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFoundationDiscoverNodesResult] {
+	return pulumix.Output[GetFoundationDiscoverNodesResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// List of Nutanix-imaged nodes within an IPv6 network
+func (o GetFoundationDiscoverNodesResultOutput) Entities() GetFoundationDiscoverNodesEntityArrayOutput {
+	return o.ApplyT(func(v GetFoundationDiscoverNodesResult) []GetFoundationDiscoverNodesEntity { return v.Entities }).(GetFoundationDiscoverNodesEntityArrayOutput)
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetFoundationDiscoverNodesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFoundationDiscoverNodesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetFoundationDiscoverNodesResultOutput{})
 }

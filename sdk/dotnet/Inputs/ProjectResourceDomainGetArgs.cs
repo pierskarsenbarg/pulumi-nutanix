@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class ProjectResourceDomainGetArgs : Pulumi.ResourceArgs
+    public sealed class ProjectResourceDomainGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("resources", required: true)]
         private InputList<Inputs.ProjectResourceDomainResourceGetArgs>? _resources;
@@ -24,5 +24,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public ProjectResourceDomainGetArgs()
         {
         }
+        public static new ProjectResourceDomainGetArgs Empty => new ProjectResourceDomainGetArgs();
     }
 }

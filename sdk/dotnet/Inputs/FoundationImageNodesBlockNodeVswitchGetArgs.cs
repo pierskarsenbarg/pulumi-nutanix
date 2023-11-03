@@ -11,10 +11,10 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationImageNodesBlockNodeVswitchGetArgs : Pulumi.ResourceArgs
+    public sealed class FoundationImageNodesBlockNodeVswitchGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// :- (Required if node is capable) dynamic if using LACP, static for LAG
+        /// - (Required if node is capable) dynamic if using LACP, static for LAG
         /// </summary>
         [Input("bondMode")]
         public Input<string>? BondMode { get; set; }
@@ -47,5 +47,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public FoundationImageNodesBlockNodeVswitchGetArgs()
         {
         }
+        public static new FoundationImageNodesBlockNodeVswitchGetArgs Empty => new FoundationImageNodesBlockNodeVswitchGetArgs();
     }
 }

@@ -52,12 +52,20 @@ export class CategoryValue extends pulumi.CustomResource {
      * (Optional) The version of the API.
      */
     public /*out*/ readonly apiVersion!: pulumi.Output<string>;
+    /**
+     * - (Optional) A description for category value.
+     */
     public readonly description!: pulumi.Output<string>;
+    /**
+     * - (Required) The categoryKey name for the category value.
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * - Specifying whether its a system defined category.
+     */
     public /*out*/ readonly systemDefined!: pulumi.Output<boolean>;
     /**
      * The value for the category value.
-     * * `description`: - (Optional) A description for category value.
      */
     public readonly value!: pulumi.Output<string>;
 
@@ -103,12 +111,20 @@ export interface CategoryValueState {
      * (Optional) The version of the API.
      */
     apiVersion?: pulumi.Input<string>;
+    /**
+     * - (Optional) A description for category value.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * - (Required) The categoryKey name for the category value.
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - Specifying whether its a system defined category.
+     */
     systemDefined?: pulumi.Input<boolean>;
     /**
      * The value for the category value.
-     * * `description`: - (Optional) A description for category value.
      */
     value?: pulumi.Input<string>;
 }
@@ -117,11 +133,16 @@ export interface CategoryValueState {
  * The set of arguments for constructing a CategoryValue resource.
  */
 export interface CategoryValueArgs {
+    /**
+     * - (Optional) A description for category value.
+     */
     description?: pulumi.Input<string>;
+    /**
+     * - (Required) The categoryKey name for the category value.
+     */
     name?: pulumi.Input<string>;
     /**
      * The value for the category value.
-     * * `description`: - (Optional) A description for category value.
      */
     value: pulumi.Input<string>;
 }

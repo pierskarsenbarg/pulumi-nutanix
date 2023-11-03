@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -10,11 +11,8 @@ import * as utilities from "./utilities";
  */
 export function getRole(args?: GetRoleArgs, opts?: pulumi.InvokeOptions): Promise<GetRoleResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getRole:getRole", {
         "categories": args.categories,
         "roleId": args.roleId,
@@ -26,8 +24,17 @@ export function getRole(args?: GetRoleArgs, opts?: pulumi.InvokeOptions): Promis
  * A collection of arguments for invoking getRole.
  */
 export interface GetRoleArgs {
+    /**
+     * - Categories for the Role.
+     */
     categories?: inputs.GetRoleCategory[];
+    /**
+     * - (Optional) The UUID of a Role.
+     */
     roleId?: string;
+    /**
+     * - (Optional) The name of a Role.
+     */
     roleName?: string;
 }
 
@@ -37,34 +44,68 @@ export interface GetRoleArgs {
 export interface GetRoleResult {
     /**
      * The version of the API.
-     * * `state`: - The state of the role.
      */
     readonly apiVersion: string;
+    /**
+     * - Categories for the Role.
+     */
     readonly categories: outputs.GetRoleCategory[];
+    /**
+     * - The description of the Role.
+     */
     readonly description: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - The role kind metadata.
+     */
     readonly metadata: {[key: string]: string};
+    /**
+     * - the name(Optional).
+     */
     readonly name: string;
+    /**
+     * - The reference to a user.
+     */
     readonly ownerReference: {[key: string]: string};
+    /**
+     * - (Required) List of permission references.
+     */
     readonly permissionReferenceLists: outputs.GetRolePermissionReferenceList[];
+    /**
+     * - The reference to a project.
+     */
     readonly projectReference: {[key: string]: string};
     readonly roleId?: string;
     readonly roleName?: string;
+    /**
+     * - The state of the role.
+     */
     readonly state: string;
 }
-
+/**
+ * Describes a Role.
+ */
 export function getRoleOutput(args?: GetRoleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRoleResult> {
-    return pulumi.output(args).apply(a => getRole(a, opts))
+    return pulumi.output(args).apply((a: any) => getRole(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getRole.
  */
 export interface GetRoleOutputArgs {
+    /**
+     * - Categories for the Role.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.GetRoleCategoryArgs>[]>;
+    /**
+     * - (Optional) The UUID of a Role.
+     */
     roleId?: pulumi.Input<string>;
+    /**
+     * - (Optional) The name of a Role.
+     */
     roleName?: pulumi.Input<string>;
 }

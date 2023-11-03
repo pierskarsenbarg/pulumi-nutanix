@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describe a Nutanix Project and its values (if it has them).
@@ -18,73 +20,75 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		subnet, err := nutanix.NewSubnet(ctx, "subnet", &nutanix.SubnetArgs{
-// 			ClusterUuid:      pulumi.String("<YOUR_CLUSTER_ID>"),
-// 			Description:      pulumi.String("Description of my unit test VLAN"),
-// 			VlanId:           pulumi.Int(31),
-// 			SubnetType:       pulumi.String("VLAN"),
-// 			SubnetIp:         pulumi.String("10.250.140.0"),
-// 			DefaultGatewayIp: pulumi.String("10.250.140.1"),
-// 			PrefixLength:     pulumi.Int(24),
-// 			DhcpOptions: pulumi.StringMap{
-// 				"boot_file_name":   pulumi.String("bootfile"),
-// 				"domain_name":      pulumi.String("nutanix"),
-// 				"tftp_server_name": pulumi.String("10.250.140.200"),
-// 			},
-// 			DhcpDomainNameServerLists: pulumi.StringArray{
-// 				pulumi.String("8.8.8.8"),
-// 				pulumi.String("4.2.2.2"),
-// 			},
-// 			DhcpDomainSearchLists: pulumi.StringArray{
-// 				pulumi.String("terraform.nutanix.com"),
-// 				pulumi.String("terraform.unit.test.com"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		projectTest, err := nutanix.NewProject(ctx, "projectTest", &nutanix.ProjectArgs{
-// 			Description: pulumi.String("This is my project"),
-// 			Categories: ProjectCategoryArray{
-// 				&ProjectCategoryArgs{
-// 					Name:  pulumi.String("Environment"),
-// 					Value: pulumi.String("Staging"),
-// 				},
-// 			},
-// 			ResourceDomain: &ProjectResourceDomainArgs{
-// 				Resources: ProjectResourceDomainResourceArray{
-// 					&ProjectResourceDomainResourceArgs{
-// 						Limit:        pulumi.Int(4),
-// 						ResourceType: pulumi.String("STORAGE"),
-// 					},
-// 				},
-// 			},
-// 			DefaultSubnetReference: &ProjectDefaultSubnetReferenceArgs{
-// 				Uuid: subnet.Metadata.ApplyT(func(metadata map[string]string) (string, error) {
-// 					return metadata.Uuid, nil
-// 				}).(pulumi.StringOutput),
-// 			},
-// 			ApiVersion: pulumi.String("3.1"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_ = nutanix.LookupProjectOutput(ctx, GetProjectOutputArgs{
-// 			ProjectId: projectTest.ID(),
-// 		}, nil)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			subnet, err := nutanix.NewSubnet(ctx, "subnet", &nutanix.SubnetArgs{
+//				ClusterUuid:      pulumi.String("<YOUR_CLUSTER_ID>"),
+//				Description:      pulumi.String("Description of my unit test VLAN"),
+//				VlanId:           pulumi.Int(31),
+//				SubnetType:       pulumi.String("VLAN"),
+//				SubnetIp:         pulumi.String("10.250.140.0"),
+//				DefaultGatewayIp: pulumi.String("10.250.140.1"),
+//				PrefixLength:     pulumi.Int(24),
+//				DhcpOptions: pulumi.StringMap{
+//					"boot_file_name":   pulumi.String("bootfile"),
+//					"domain_name":      pulumi.String("nutanix"),
+//					"tftp_server_name": pulumi.String("10.250.140.200"),
+//				},
+//				DhcpDomainNameServerLists: pulumi.StringArray{
+//					pulumi.String("8.8.8.8"),
+//					pulumi.String("4.2.2.2"),
+//				},
+//				DhcpDomainSearchLists: pulumi.StringArray{
+//					pulumi.String("terraform.nutanix.com"),
+//					pulumi.String("terraform.unit.test.com"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			projectTest, err := nutanix.NewProject(ctx, "projectTest", &nutanix.ProjectArgs{
+//				Description: pulumi.String("This is my project"),
+//				Categories: nutanix.ProjectCategoryArray{
+//					&nutanix.ProjectCategoryArgs{
+//						Name:  pulumi.String("Environment"),
+//						Value: pulumi.String("Staging"),
+//					},
+//				},
+//				ResourceDomain: &nutanix.ProjectResourceDomainArgs{
+//					Resources: nutanix.ProjectResourceDomainResourceArray{
+//						&nutanix.ProjectResourceDomainResourceArgs{
+//							Limit:        pulumi.Int(4),
+//							ResourceType: pulumi.String("STORAGE"),
+//						},
+//					},
+//				},
+//				DefaultSubnetReference: &nutanix.ProjectDefaultSubnetReferenceArgs{
+//					Uuid: subnet.Metadata.ApplyT(func(metadata map[string]string) (string, error) {
+//						return metadata.Uuid, nil
+//					}).(pulumi.StringOutput),
+//				},
+//				ApiVersion: pulumi.String("3.1"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_ = nutanix.LookupProjectOutput(ctx, nutanix.GetProjectOutputArgs{
+//				ProjectId: projectTest.ID(),
+//			}, nil)
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupProject(ctx *pulumi.Context, args *LookupProjectArgs, opts ...pulumi.InvokeOption) (*LookupProjectResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupProjectResult
 	err := ctx.Invoke("nutanix:index/getProject:getProject", args, &rv, opts...)
 	if err != nil {
@@ -101,8 +105,9 @@ type LookupProjectArgs struct {
 	// * `external_user_group_reference_list.#.uuid` - The UUID of a userGroup
 	// * `external_user_group_reference_list.#.name` - The name of a user_group
 	ExternalUserGroupReferenceLists []GetProjectExternalUserGroupReferenceList `pulumi:"externalUserGroupReferenceLists"`
-	ProjectId                       *string                                    `pulumi:"projectId"`
-	ProjectName                     *string                                    `pulumi:"projectName"`
+	// - (Required) The `id` of the project.
+	ProjectId   *string `pulumi:"projectId"`
+	ProjectName *string `pulumi:"projectName"`
 	// List of subnets for the project.
 	// * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
 	// * `subnet_reference_list.#.uuid` - The UUID of a subnet
@@ -129,7 +134,8 @@ type LookupProjectResult struct {
 	// * `default_subnet_reference.uuid` - The UUID of a subnet.
 	// * `default_subnet_reference.name` - The name of a subnet.
 	DefaultSubnetReference map[string]string `pulumi:"defaultSubnetReference"`
-	Description            string            `pulumi:"description"`
+	// A description for project.
+	Description string `pulumi:"description"`
 	// List of environments associated with the project.
 	// * `environment_reference_list.#.kind` - The kind name. Default value is `environment`
 	// * `environment_reference_list.#.uuid` - The UUID of an environment.
@@ -149,13 +155,19 @@ type LookupProjectResult struct {
 	IsDefault bool              `pulumi:"isDefault"`
 	Metadata  map[string]string `pulumi:"metadata"`
 	// the name.
-	Name             string                     `pulumi:"name"`
-	OwnerReference   map[string]string          `pulumi:"ownerReference"`
-	ProjectId        *string                    `pulumi:"projectId"`
-	ProjectName      *string                    `pulumi:"projectName"`
-	ProjectReference map[string]string          `pulumi:"projectReference"`
-	ResourceDomains  []GetProjectResourceDomain `pulumi:"resourceDomains"`
-	State            string                     `pulumi:"state"`
+	Name             string            `pulumi:"name"`
+	OwnerReference   map[string]string `pulumi:"ownerReference"`
+	ProjectId        *string           `pulumi:"projectId"`
+	ProjectName      *string           `pulumi:"projectName"`
+	ProjectReference map[string]string `pulumi:"projectReference"`
+	// The status for a resource domain (limits and values)
+	// * `resource_domain.resources` Array of the utilization/limit for resource types
+	// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+	// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+	// * `resource_domain.resources.#.units` - The units of the resource type
+	// * `resource_domain.resources.#.value` - The amount of resource consumed
+	ResourceDomains []GetProjectResourceDomain `pulumi:"resourceDomains"`
+	State           string                     `pulumi:"state"`
 	// List of subnets for the project.
 	// * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
 	// * `subnet_reference_list.#.uuid` - The UUID of a subnet
@@ -189,8 +201,9 @@ type LookupProjectOutputArgs struct {
 	// * `external_user_group_reference_list.#.uuid` - The UUID of a userGroup
 	// * `external_user_group_reference_list.#.name` - The name of a user_group
 	ExternalUserGroupReferenceLists GetProjectExternalUserGroupReferenceListArrayInput `pulumi:"externalUserGroupReferenceLists"`
-	ProjectId                       pulumi.StringPtrInput                              `pulumi:"projectId"`
-	ProjectName                     pulumi.StringPtrInput                              `pulumi:"projectName"`
+	// - (Required) The `id` of the project.
+	ProjectId   pulumi.StringPtrInput `pulumi:"projectId"`
+	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
 	// List of subnets for the project.
 	// * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
 	// * `subnet_reference_list.#.uuid` - The UUID of a subnet
@@ -222,6 +235,12 @@ func (o LookupProjectResultOutput) ToLookupProjectResultOutputWithContext(ctx co
 	return o
 }
 
+func (o LookupProjectResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupProjectResult] {
+	return pulumix.Output[LookupProjectResult]{
+		OutputState: o.OutputState,
+	}
+}
+
 // List of accounts associated with the project.
 // * `account_reference_list.#.kind` - The kind name. Default value is `account`
 // * `account_reference_list.#.uuid` - The UUID of an account.
@@ -246,6 +265,7 @@ func (o LookupProjectResultOutput) DefaultSubnetReference() pulumi.StringMapOutp
 	return o.ApplyT(func(v LookupProjectResult) map[string]string { return v.DefaultSubnetReference }).(pulumi.StringMapOutput)
 }
 
+// A description for project.
 func (o LookupProjectResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -309,6 +329,12 @@ func (o LookupProjectResultOutput) ProjectReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupProjectResult) map[string]string { return v.ProjectReference }).(pulumi.StringMapOutput)
 }
 
+// The status for a resource domain (limits and values)
+// * `resource_domain.resources` Array of the utilization/limit for resource types
+// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+// * `resource_domain.resources.#.units` - The units of the resource type
+// * `resource_domain.resources.#.value` - The amount of resource consumed
 func (o LookupProjectResultOutput) ResourceDomains() GetProjectResourceDomainArrayOutput {
 	return o.ApplyT(func(v LookupProjectResult) []GetProjectResourceDomain { return v.ResourceDomains }).(GetProjectResourceDomainArrayOutput)
 }

@@ -7,8 +7,10 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Nutanix Karbon Cluster resource to Create a k8s cluster.
@@ -23,81 +25,94 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.NewKarbonCluster(ctx, "exampleCluster", &nutanix.KarbonClusterArgs{
-// 			CniConfig: &KarbonClusterCniConfigArgs{
-// 				NodeCidrMaskSize: pulumi.Int(24),
-// 				PodIpv4Cidr:      pulumi.String("172.20.0.0/16"),
-// 				ServiceIpv4Cidr:  pulumi.String("172.19.0.0/16"),
-// 			},
-// 			EtcdNodePool: &KarbonClusterEtcdNodePoolArgs{
-// 				AhvConfig: &KarbonClusterEtcdNodePoolAhvConfigArgs{
-// 					NetworkUuid:             pulumi.String("my_subnet_id"),
-// 					PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
-// 				},
-// 				NodeOsVersion: pulumi.String("ntnx-1.0"),
-// 				NumInstances:  pulumi.Int(1),
-// 			},
-// 			MasterNodePool: &KarbonClusterMasterNodePoolArgs{
-// 				AhvConfig: &KarbonClusterMasterNodePoolAhvConfigArgs{
-// 					NetworkUuid:             pulumi.String("my_subnet_id"),
-// 					PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
-// 				},
-// 				NodeOsVersion: pulumi.String("ntnx-1.0"),
-// 				NumInstances:  pulumi.Int(1),
-// 			},
-// 			StorageClassConfig: &KarbonClusterStorageClassConfigArgs{
-// 				ReclaimPolicy: pulumi.String("Delete"),
-// 				VolumesConfig: &KarbonClusterStorageClassConfigVolumesConfigArgs{
-// 					FileSystem:              pulumi.String("ext4"),
-// 					FlashMode:               pulumi.Bool(false),
-// 					Password:                pulumi.String("my_pe_pw"),
-// 					PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
-// 					StorageContainer:        pulumi.String("my_storage_container_name"),
-// 					Username:                pulumi.String("my_pe_username"),
-// 				},
-// 			},
-// 			Version: pulumi.String("1.18.15-1"),
-// 			WorkerNodePool: &KarbonClusterWorkerNodePoolArgs{
-// 				AhvConfig: &KarbonClusterWorkerNodePoolAhvConfigArgs{
-// 					NetworkUuid:             pulumi.String("my_subnet_id"),
-// 					PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
-// 				},
-// 				NodeOsVersion: pulumi.String("ntnx-1.0"),
-// 				NumInstances:  pulumi.Int(1),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewKarbonCluster(ctx, "exampleCluster", &nutanix.KarbonClusterArgs{
+//				CniConfig: &nutanix.KarbonClusterCniConfigArgs{
+//					NodeCidrMaskSize: pulumi.Int(24),
+//					PodIpv4Cidr:      pulumi.String("172.20.0.0/16"),
+//					ServiceIpv4Cidr:  pulumi.String("172.19.0.0/16"),
+//				},
+//				EtcdNodePool: &nutanix.KarbonClusterEtcdNodePoolArgs{
+//					AhvConfig: &nutanix.KarbonClusterEtcdNodePoolAhvConfigArgs{
+//						NetworkUuid:             pulumi.String("my_subnet_id"),
+//						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
+//					},
+//					NodeOsVersion: pulumi.String("ntnx-1.0"),
+//					NumInstances:  pulumi.Int(1),
+//				},
+//				MasterNodePool: &nutanix.KarbonClusterMasterNodePoolArgs{
+//					AhvConfig: &nutanix.KarbonClusterMasterNodePoolAhvConfigArgs{
+//						NetworkUuid:             pulumi.String("my_subnet_id"),
+//						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
+//					},
+//					NodeOsVersion: pulumi.String("ntnx-1.0"),
+//					NumInstances:  pulumi.Int(1),
+//				},
+//				StorageClassConfig: &nutanix.KarbonClusterStorageClassConfigArgs{
+//					ReclaimPolicy: pulumi.String("Delete"),
+//					VolumesConfig: &nutanix.KarbonClusterStorageClassConfigVolumesConfigArgs{
+//						FileSystem:              pulumi.String("ext4"),
+//						FlashMode:               pulumi.Bool(false),
+//						Password:                pulumi.String("my_pe_pw"),
+//						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
+//						StorageContainer:        pulumi.String("my_storage_container_name"),
+//						Username:                pulumi.String("my_pe_username"),
+//					},
+//				},
+//				Version: pulumi.String("1.18.15-1"),
+//				WorkerNodePool: &nutanix.KarbonClusterWorkerNodePoolArgs{
+//					AhvConfig: &nutanix.KarbonClusterWorkerNodePoolAhvConfigArgs{
+//						NetworkUuid:             pulumi.String("my_subnet_id"),
+//						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
+//					},
+//					NodeOsVersion: pulumi.String("ntnx-1.0"),
+//					NumInstances:  pulumi.Int(1),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type KarbonCluster struct {
 	pulumi.CustomResourceState
 
-	ActivePassiveConfig      KarbonClusterActivePassiveConfigPtrOutput `pulumi:"activePassiveConfig"`
-	CniConfig                KarbonClusterCniConfigOutput              `pulumi:"cniConfig"`
-	DeploymentType           pulumi.StringOutput                       `pulumi:"deploymentType"`
-	EtcdNodePool             KarbonClusterEtcdNodePoolOutput           `pulumi:"etcdNodePool"`
-	ExternalLbConfig         KarbonClusterExternalLbConfigPtrOutput    `pulumi:"externalLbConfig"`
-	KubeapiServerIpv4Address pulumi.StringOutput                       `pulumi:"kubeapiServerIpv4Address"`
-	MasterNodePool           KarbonClusterMasterNodePoolOutput         `pulumi:"masterNodePool"`
-	Name                     pulumi.StringOutput                       `pulumi:"name"`
-	PrivateRegistries        KarbonClusterPrivateRegistryArrayOutput   `pulumi:"privateRegistries"`
-	SingleMasterConfig       KarbonClusterSingleMasterConfigPtrOutput  `pulumi:"singleMasterConfig"`
-	Status                   pulumi.StringOutput                       `pulumi:"status"`
-	StorageClassConfig       KarbonClusterStorageClassConfigOutput     `pulumi:"storageClassConfig"`
-	Version                  pulumi.StringOutput                       `pulumi:"version"`
-	WaitTimeoutMinutes       pulumi.IntPtrOutput                       `pulumi:"waitTimeoutMinutes"`
-	WorkerNodePool           KarbonClusterWorkerNodePoolOutput         `pulumi:"workerNodePool"`
+	// - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
+	ActivePassiveConfig KarbonClusterActivePassiveConfigPtrOutput `pulumi:"activePassiveConfig"`
+	// - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
+	CniConfig      KarbonClusterCniConfigOutput `pulumi:"cniConfig"`
+	DeploymentType pulumi.StringOutput          `pulumi:"deploymentType"`
+	// - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
+	EtcdNodePool KarbonClusterEtcdNodePoolOutput `pulumi:"etcdNodePool"`
+	// - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
+	ExternalLbConfig         KarbonClusterExternalLbConfigPtrOutput `pulumi:"externalLbConfig"`
+	KubeapiServerIpv4Address pulumi.StringOutput                    `pulumi:"kubeapiServerIpv4Address"`
+	// - (Required) Configuration of the master node pools.
+	MasterNodePool KarbonClusterMasterNodePoolOutput `pulumi:"masterNodePool"`
+	// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
+	PrivateRegistries KarbonClusterPrivateRegistryArrayOutput `pulumi:"privateRegistries"`
+	// - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
+	SingleMasterConfig KarbonClusterSingleMasterConfigPtrOutput `pulumi:"singleMasterConfig"`
+	Status             pulumi.StringOutput                      `pulumi:"status"`
+	// - (Required) Storage class configuration attribute for defining the persistent volume attributes. **Note:** Updates to this attribute forces new resource creation.
+	StorageClassConfig KarbonClusterStorageClassConfigOutput `pulumi:"storageClassConfig"`
+	// - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
+	Version pulumi.StringOutput `pulumi:"version"`
+	// - (Optional) Maximum wait time for the Karbon cluster to provision.
+	WaitTimeoutMinutes pulumi.IntPtrOutput               `pulumi:"waitTimeoutMinutes"`
+	WorkerNodePool     KarbonClusterWorkerNodePoolOutput `pulumi:"workerNodePool"`
 }
 
 // NewKarbonCluster registers a new resource with the given unique name, arguments, and options.
@@ -125,7 +140,7 @@ func NewKarbonCluster(ctx *pulumi.Context,
 	if args.WorkerNodePool == nil {
 		return nil, errors.New("invalid value for required argument 'WorkerNodePool'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource KarbonCluster
 	err := ctx.RegisterResource("nutanix:index/karbonCluster:KarbonCluster", name, args, &resource, opts...)
 	if err != nil {
@@ -148,39 +163,61 @@ func GetKarbonCluster(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering KarbonCluster resources.
 type karbonClusterState struct {
-	ActivePassiveConfig      *KarbonClusterActivePassiveConfig `pulumi:"activePassiveConfig"`
-	CniConfig                *KarbonClusterCniConfig           `pulumi:"cniConfig"`
-	DeploymentType           *string                           `pulumi:"deploymentType"`
-	EtcdNodePool             *KarbonClusterEtcdNodePool        `pulumi:"etcdNodePool"`
-	ExternalLbConfig         *KarbonClusterExternalLbConfig    `pulumi:"externalLbConfig"`
-	KubeapiServerIpv4Address *string                           `pulumi:"kubeapiServerIpv4Address"`
-	MasterNodePool           *KarbonClusterMasterNodePool      `pulumi:"masterNodePool"`
-	Name                     *string                           `pulumi:"name"`
-	PrivateRegistries        []KarbonClusterPrivateRegistry    `pulumi:"privateRegistries"`
-	SingleMasterConfig       *KarbonClusterSingleMasterConfig  `pulumi:"singleMasterConfig"`
-	Status                   *string                           `pulumi:"status"`
-	StorageClassConfig       *KarbonClusterStorageClassConfig  `pulumi:"storageClassConfig"`
-	Version                  *string                           `pulumi:"version"`
-	WaitTimeoutMinutes       *int                              `pulumi:"waitTimeoutMinutes"`
-	WorkerNodePool           *KarbonClusterWorkerNodePool      `pulumi:"workerNodePool"`
+	// - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
+	ActivePassiveConfig *KarbonClusterActivePassiveConfig `pulumi:"activePassiveConfig"`
+	// - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
+	CniConfig      *KarbonClusterCniConfig `pulumi:"cniConfig"`
+	DeploymentType *string                 `pulumi:"deploymentType"`
+	// - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
+	EtcdNodePool *KarbonClusterEtcdNodePool `pulumi:"etcdNodePool"`
+	// - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
+	ExternalLbConfig         *KarbonClusterExternalLbConfig `pulumi:"externalLbConfig"`
+	KubeapiServerIpv4Address *string                        `pulumi:"kubeapiServerIpv4Address"`
+	// - (Required) Configuration of the master node pools.
+	MasterNodePool *KarbonClusterMasterNodePool `pulumi:"masterNodePool"`
+	// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+	Name *string `pulumi:"name"`
+	// - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
+	PrivateRegistries []KarbonClusterPrivateRegistry `pulumi:"privateRegistries"`
+	// - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
+	SingleMasterConfig *KarbonClusterSingleMasterConfig `pulumi:"singleMasterConfig"`
+	Status             *string                          `pulumi:"status"`
+	// - (Required) Storage class configuration attribute for defining the persistent volume attributes. **Note:** Updates to this attribute forces new resource creation.
+	StorageClassConfig *KarbonClusterStorageClassConfig `pulumi:"storageClassConfig"`
+	// - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
+	Version *string `pulumi:"version"`
+	// - (Optional) Maximum wait time for the Karbon cluster to provision.
+	WaitTimeoutMinutes *int                         `pulumi:"waitTimeoutMinutes"`
+	WorkerNodePool     *KarbonClusterWorkerNodePool `pulumi:"workerNodePool"`
 }
 
 type KarbonClusterState struct {
-	ActivePassiveConfig      KarbonClusterActivePassiveConfigPtrInput
-	CniConfig                KarbonClusterCniConfigPtrInput
-	DeploymentType           pulumi.StringPtrInput
-	EtcdNodePool             KarbonClusterEtcdNodePoolPtrInput
+	// - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
+	ActivePassiveConfig KarbonClusterActivePassiveConfigPtrInput
+	// - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
+	CniConfig      KarbonClusterCniConfigPtrInput
+	DeploymentType pulumi.StringPtrInput
+	// - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
+	EtcdNodePool KarbonClusterEtcdNodePoolPtrInput
+	// - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
 	ExternalLbConfig         KarbonClusterExternalLbConfigPtrInput
 	KubeapiServerIpv4Address pulumi.StringPtrInput
-	MasterNodePool           KarbonClusterMasterNodePoolPtrInput
-	Name                     pulumi.StringPtrInput
-	PrivateRegistries        KarbonClusterPrivateRegistryArrayInput
-	SingleMasterConfig       KarbonClusterSingleMasterConfigPtrInput
-	Status                   pulumi.StringPtrInput
-	StorageClassConfig       KarbonClusterStorageClassConfigPtrInput
-	Version                  pulumi.StringPtrInput
-	WaitTimeoutMinutes       pulumi.IntPtrInput
-	WorkerNodePool           KarbonClusterWorkerNodePoolPtrInput
+	// - (Required) Configuration of the master node pools.
+	MasterNodePool KarbonClusterMasterNodePoolPtrInput
+	// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+	Name pulumi.StringPtrInput
+	// - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
+	PrivateRegistries KarbonClusterPrivateRegistryArrayInput
+	// - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
+	SingleMasterConfig KarbonClusterSingleMasterConfigPtrInput
+	Status             pulumi.StringPtrInput
+	// - (Required) Storage class configuration attribute for defining the persistent volume attributes. **Note:** Updates to this attribute forces new resource creation.
+	StorageClassConfig KarbonClusterStorageClassConfigPtrInput
+	// - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
+	Version pulumi.StringPtrInput
+	// - (Optional) Maximum wait time for the Karbon cluster to provision.
+	WaitTimeoutMinutes pulumi.IntPtrInput
+	WorkerNodePool     KarbonClusterWorkerNodePoolPtrInput
 }
 
 func (KarbonClusterState) ElementType() reflect.Type {
@@ -188,34 +225,56 @@ func (KarbonClusterState) ElementType() reflect.Type {
 }
 
 type karbonClusterArgs struct {
+	// - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
 	ActivePassiveConfig *KarbonClusterActivePassiveConfig `pulumi:"activePassiveConfig"`
-	CniConfig           KarbonClusterCniConfig            `pulumi:"cniConfig"`
-	EtcdNodePool        KarbonClusterEtcdNodePool         `pulumi:"etcdNodePool"`
-	ExternalLbConfig    *KarbonClusterExternalLbConfig    `pulumi:"externalLbConfig"`
-	MasterNodePool      KarbonClusterMasterNodePool       `pulumi:"masterNodePool"`
-	Name                *string                           `pulumi:"name"`
-	PrivateRegistries   []KarbonClusterPrivateRegistry    `pulumi:"privateRegistries"`
-	SingleMasterConfig  *KarbonClusterSingleMasterConfig  `pulumi:"singleMasterConfig"`
-	StorageClassConfig  KarbonClusterStorageClassConfig   `pulumi:"storageClassConfig"`
-	Version             string                            `pulumi:"version"`
-	WaitTimeoutMinutes  *int                              `pulumi:"waitTimeoutMinutes"`
-	WorkerNodePool      KarbonClusterWorkerNodePool       `pulumi:"workerNodePool"`
+	// - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
+	CniConfig KarbonClusterCniConfig `pulumi:"cniConfig"`
+	// - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
+	EtcdNodePool KarbonClusterEtcdNodePool `pulumi:"etcdNodePool"`
+	// - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
+	ExternalLbConfig *KarbonClusterExternalLbConfig `pulumi:"externalLbConfig"`
+	// - (Required) Configuration of the master node pools.
+	MasterNodePool KarbonClusterMasterNodePool `pulumi:"masterNodePool"`
+	// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+	Name *string `pulumi:"name"`
+	// - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
+	PrivateRegistries []KarbonClusterPrivateRegistry `pulumi:"privateRegistries"`
+	// - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
+	SingleMasterConfig *KarbonClusterSingleMasterConfig `pulumi:"singleMasterConfig"`
+	// - (Required) Storage class configuration attribute for defining the persistent volume attributes. **Note:** Updates to this attribute forces new resource creation.
+	StorageClassConfig KarbonClusterStorageClassConfig `pulumi:"storageClassConfig"`
+	// - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
+	Version string `pulumi:"version"`
+	// - (Optional) Maximum wait time for the Karbon cluster to provision.
+	WaitTimeoutMinutes *int                        `pulumi:"waitTimeoutMinutes"`
+	WorkerNodePool     KarbonClusterWorkerNodePool `pulumi:"workerNodePool"`
 }
 
 // The set of arguments for constructing a KarbonCluster resource.
 type KarbonClusterArgs struct {
+	// - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
 	ActivePassiveConfig KarbonClusterActivePassiveConfigPtrInput
-	CniConfig           KarbonClusterCniConfigInput
-	EtcdNodePool        KarbonClusterEtcdNodePoolInput
-	ExternalLbConfig    KarbonClusterExternalLbConfigPtrInput
-	MasterNodePool      KarbonClusterMasterNodePoolInput
-	Name                pulumi.StringPtrInput
-	PrivateRegistries   KarbonClusterPrivateRegistryArrayInput
-	SingleMasterConfig  KarbonClusterSingleMasterConfigPtrInput
-	StorageClassConfig  KarbonClusterStorageClassConfigInput
-	Version             pulumi.StringInput
-	WaitTimeoutMinutes  pulumi.IntPtrInput
-	WorkerNodePool      KarbonClusterWorkerNodePoolInput
+	// - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
+	CniConfig KarbonClusterCniConfigInput
+	// - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
+	EtcdNodePool KarbonClusterEtcdNodePoolInput
+	// - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
+	ExternalLbConfig KarbonClusterExternalLbConfigPtrInput
+	// - (Required) Configuration of the master node pools.
+	MasterNodePool KarbonClusterMasterNodePoolInput
+	// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+	Name pulumi.StringPtrInput
+	// - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
+	PrivateRegistries KarbonClusterPrivateRegistryArrayInput
+	// - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
+	SingleMasterConfig KarbonClusterSingleMasterConfigPtrInput
+	// - (Required) Storage class configuration attribute for defining the persistent volume attributes. **Note:** Updates to this attribute forces new resource creation.
+	StorageClassConfig KarbonClusterStorageClassConfigInput
+	// - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
+	Version pulumi.StringInput
+	// - (Optional) Maximum wait time for the Karbon cluster to provision.
+	WaitTimeoutMinutes pulumi.IntPtrInput
+	WorkerNodePool     KarbonClusterWorkerNodePoolInput
 }
 
 func (KarbonClusterArgs) ElementType() reflect.Type {
@@ -241,10 +300,16 @@ func (i *KarbonCluster) ToKarbonClusterOutputWithContext(ctx context.Context) Ka
 	return pulumi.ToOutputWithContext(ctx, i).(KarbonClusterOutput)
 }
 
+func (i *KarbonCluster) ToOutput(ctx context.Context) pulumix.Output[*KarbonCluster] {
+	return pulumix.Output[*KarbonCluster]{
+		OutputState: i.ToKarbonClusterOutputWithContext(ctx).OutputState,
+	}
+}
+
 // KarbonClusterArrayInput is an input type that accepts KarbonClusterArray and KarbonClusterArrayOutput values.
 // You can construct a concrete instance of `KarbonClusterArrayInput` via:
 //
-//          KarbonClusterArray{ KarbonClusterArgs{...} }
+//	KarbonClusterArray{ KarbonClusterArgs{...} }
 type KarbonClusterArrayInput interface {
 	pulumi.Input
 
@@ -266,10 +331,16 @@ func (i KarbonClusterArray) ToKarbonClusterArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(KarbonClusterArrayOutput)
 }
 
+func (i KarbonClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]*KarbonCluster] {
+	return pulumix.Output[[]*KarbonCluster]{
+		OutputState: i.ToKarbonClusterArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // KarbonClusterMapInput is an input type that accepts KarbonClusterMap and KarbonClusterMapOutput values.
 // You can construct a concrete instance of `KarbonClusterMapInput` via:
 //
-//          KarbonClusterMap{ "key": KarbonClusterArgs{...} }
+//	KarbonClusterMap{ "key": KarbonClusterArgs{...} }
 type KarbonClusterMapInput interface {
 	pulumi.Input
 
@@ -291,6 +362,12 @@ func (i KarbonClusterMap) ToKarbonClusterMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(KarbonClusterMapOutput)
 }
 
+func (i KarbonClusterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*KarbonCluster] {
+	return pulumix.Output[map[string]*KarbonCluster]{
+		OutputState: i.ToKarbonClusterMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type KarbonClusterOutput struct{ *pulumi.OutputState }
 
 func (KarbonClusterOutput) ElementType() reflect.Type {
@@ -305,10 +382,18 @@ func (o KarbonClusterOutput) ToKarbonClusterOutputWithContext(ctx context.Contex
 	return o
 }
 
+func (o KarbonClusterOutput) ToOutput(ctx context.Context) pulumix.Output[*KarbonCluster] {
+	return pulumix.Output[*KarbonCluster]{
+		OutputState: o.OutputState,
+	}
+}
+
+// - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
 func (o KarbonClusterOutput) ActivePassiveConfig() KarbonClusterActivePassiveConfigPtrOutput {
 	return o.ApplyT(func(v *KarbonCluster) KarbonClusterActivePassiveConfigPtrOutput { return v.ActivePassiveConfig }).(KarbonClusterActivePassiveConfigPtrOutput)
 }
 
+// - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
 func (o KarbonClusterOutput) CniConfig() KarbonClusterCniConfigOutput {
 	return o.ApplyT(func(v *KarbonCluster) KarbonClusterCniConfigOutput { return v.CniConfig }).(KarbonClusterCniConfigOutput)
 }
@@ -317,10 +402,12 @@ func (o KarbonClusterOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v *KarbonCluster) pulumi.StringOutput { return v.DeploymentType }).(pulumi.StringOutput)
 }
 
+// - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
 func (o KarbonClusterOutput) EtcdNodePool() KarbonClusterEtcdNodePoolOutput {
 	return o.ApplyT(func(v *KarbonCluster) KarbonClusterEtcdNodePoolOutput { return v.EtcdNodePool }).(KarbonClusterEtcdNodePoolOutput)
 }
 
+// - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
 func (o KarbonClusterOutput) ExternalLbConfig() KarbonClusterExternalLbConfigPtrOutput {
 	return o.ApplyT(func(v *KarbonCluster) KarbonClusterExternalLbConfigPtrOutput { return v.ExternalLbConfig }).(KarbonClusterExternalLbConfigPtrOutput)
 }
@@ -329,18 +416,22 @@ func (o KarbonClusterOutput) KubeapiServerIpv4Address() pulumi.StringOutput {
 	return o.ApplyT(func(v *KarbonCluster) pulumi.StringOutput { return v.KubeapiServerIpv4Address }).(pulumi.StringOutput)
 }
 
+// - (Required) Configuration of the master node pools.
 func (o KarbonClusterOutput) MasterNodePool() KarbonClusterMasterNodePoolOutput {
 	return o.ApplyT(func(v *KarbonCluster) KarbonClusterMasterNodePoolOutput { return v.MasterNodePool }).(KarbonClusterMasterNodePoolOutput)
 }
 
+// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
 func (o KarbonClusterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *KarbonCluster) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
 func (o KarbonClusterOutput) PrivateRegistries() KarbonClusterPrivateRegistryArrayOutput {
 	return o.ApplyT(func(v *KarbonCluster) KarbonClusterPrivateRegistryArrayOutput { return v.PrivateRegistries }).(KarbonClusterPrivateRegistryArrayOutput)
 }
 
+// - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
 func (o KarbonClusterOutput) SingleMasterConfig() KarbonClusterSingleMasterConfigPtrOutput {
 	return o.ApplyT(func(v *KarbonCluster) KarbonClusterSingleMasterConfigPtrOutput { return v.SingleMasterConfig }).(KarbonClusterSingleMasterConfigPtrOutput)
 }
@@ -349,14 +440,17 @@ func (o KarbonClusterOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *KarbonCluster) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
+// - (Required) Storage class configuration attribute for defining the persistent volume attributes. **Note:** Updates to this attribute forces new resource creation.
 func (o KarbonClusterOutput) StorageClassConfig() KarbonClusterStorageClassConfigOutput {
 	return o.ApplyT(func(v *KarbonCluster) KarbonClusterStorageClassConfigOutput { return v.StorageClassConfig }).(KarbonClusterStorageClassConfigOutput)
 }
 
+// - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
 func (o KarbonClusterOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *KarbonCluster) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }
 
+// - (Optional) Maximum wait time for the Karbon cluster to provision.
 func (o KarbonClusterOutput) WaitTimeoutMinutes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *KarbonCluster) pulumi.IntPtrOutput { return v.WaitTimeoutMinutes }).(pulumi.IntPtrOutput)
 }
@@ -379,6 +473,12 @@ func (o KarbonClusterArrayOutput) ToKarbonClusterArrayOutputWithContext(ctx cont
 	return o
 }
 
+func (o KarbonClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*KarbonCluster] {
+	return pulumix.Output[[]*KarbonCluster]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o KarbonClusterArrayOutput) Index(i pulumi.IntInput) KarbonClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *KarbonCluster {
 		return vs[0].([]*KarbonCluster)[vs[1].(int)]
@@ -397,6 +497,12 @@ func (o KarbonClusterMapOutput) ToKarbonClusterMapOutput() KarbonClusterMapOutpu
 
 func (o KarbonClusterMapOutput) ToKarbonClusterMapOutputWithContext(ctx context.Context) KarbonClusterMapOutput {
 	return o
+}
+
+func (o KarbonClusterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*KarbonCluster] {
+	return pulumix.Output[map[string]*KarbonCluster]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o KarbonClusterMapOutput) MapIndex(k pulumi.StringInput) KarbonClusterOutput {

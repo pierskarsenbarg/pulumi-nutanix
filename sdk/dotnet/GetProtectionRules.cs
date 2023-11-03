@@ -20,30 +20,60 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var protectionRules = Output.Create(Nutanix.GetProtectionRules.InvokeAsync());
-        ///     }
+        ///     var protectionRules = Nutanix.GetProtectionRules.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetProtectionRulesResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetProtectionRulesResult>("nutanix:index/getProtectionRules:getProtectionRules", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectionRulesResult>("nutanix:index/getProtectionRules:getProtectionRules", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// Describes Protection Rules
+        /// 
+        /// {{% examples %}}
+        /// ## Example Usage
+        /// {{% example %}}
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var protectionRules = Nutanix.GetProtectionRules.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// {{% /example %}}
+        /// {{% /examples %}}
+        /// </summary>
+        public static Output<GetProtectionRulesResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProtectionRulesResult>("nutanix:index/getProtectionRules:getProtectionRules", InvokeArgs.Empty, options.WithDefaults());
     }
 
 
     [OutputType]
     public sealed class GetProtectionRulesResult
     {
+        /// <summary>
+        /// version of the API
+        /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// List of Protection Rules
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetProtectionRulesEntityResult> Entities;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.

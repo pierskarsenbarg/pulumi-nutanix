@@ -11,11 +11,16 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix
 {
     [NutanixResourceType("nutanix:index/foundationImageNodes:FoundationImageNodes")]
-    public partial class FoundationImageNodes : Pulumi.CustomResource
+    public partial class FoundationImageNodes : global::Pulumi.CustomResource
     {
         [Output("blocks")]
         public Output<ImmutableArray<Outputs.FoundationImageNodesBlock>> Blocks { get; private set; } = null!;
 
+        /// <summary>
+        /// - list containing cluster name and cluster urls for created clusters in current session
+        /// * `cluster_urls.#.cluster_name` :- cluster_name
+        /// * `cluster_urls.#.cluster_url` :- url to access the cluster login
+        /// </summary>
         [Output("clusterUrls")]
         public Output<ImmutableArray<Outputs.FoundationImageNodesClusterUrl>> ClusterUrls { get; private set; } = null!;
 
@@ -23,61 +28,61 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.FoundationImageNodesCluster>> Clusters { get; private set; } = null!;
 
         /// <summary>
-        /// : - (Required) CVM gateway.
+        /// - (Required) CVM gateway.
         /// </summary>
         [Output("cvmGateway")]
         public Output<string> CvmGateway { get; private set; } = null!;
 
         /// <summary>
-        /// : - (Required) CVM netmask.
+        /// - (Required) CVM netmask.
         /// </summary>
         [Output("cvmNetmask")]
         public Output<string> CvmNetmask { get; private set; } = null!;
 
         /// <summary>
-        /// : - Contains user data from Eos portal.
+        /// - Contains user data from Eos portal.
         /// </summary>
         [Output("eosMetadata")]
         public Output<Outputs.FoundationImageNodesEosMetadata?> EosMetadata { get; private set; } = null!;
 
         /// <summary>
-        /// : - Foundation Central specific settings.
+        /// - Foundation Central specific settings.
         /// </summary>
         [Output("fcSettings")]
         public Output<Outputs.FoundationImageNodesFcSettings?> FcSettings { get; private set; } = null!;
 
         /// <summary>
-        /// : - Hyperv External virtual network adapter name.
+        /// - Hyperv External virtual network adapter name.
         /// </summary>
         [Output("hypervExternalVnic")]
         public Output<string?> HypervExternalVnic { get; private set; } = null!;
 
         /// <summary>
-        /// : - Hyperv External vswitch name.
+        /// - Hyperv External vswitch name.
         /// </summary>
         [Output("hypervExternalVswitch")]
         public Output<string?> HypervExternalVswitch { get; private set; } = null!;
 
         /// <summary>
-        /// : - Hyperv product key.
+        /// - Hyperv product key.
         /// </summary>
         [Output("hypervProductKey")]
         public Output<string?> HypervProductKey { get; private set; } = null!;
 
         /// <summary>
-        /// : - Hyperv SKU.
+        /// - Hyperv SKU.
         /// </summary>
         [Output("hypervSku")]
         public Output<bool?> HypervSku { get; private set; } = null!;
 
         /// <summary>
-        /// : - (Required) Hypervisor gateway.
+        /// - (Required) Hypervisor gateway.
         /// </summary>
         [Output("hypervisorGateway")]
         public Output<string> HypervisorGateway { get; private set; } = null!;
 
         /// <summary>
-        /// : - Hypervisor ISO.
+        /// - Hypervisor ISO.
         /// </summary>
         [Output("hypervisorIso")]
         public Output<Outputs.FoundationImageNodesHypervisorIso?> HypervisorIso { get; private set; } = null!;
@@ -86,139 +91,145 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string?> HypervisorNameserver { get; private set; } = null!;
 
         /// <summary>
-        /// : - (Required) Hypervisor netmask.
+        /// - (Required) Hypervisor netmask.
         /// </summary>
         [Output("hypervisorNetmask")]
         public Output<string> HypervisorNetmask { get; private set; } = null!;
 
         /// <summary>
-        /// : - Hypervisor password.
+        /// - Hypervisor password.
         /// </summary>
         [Output("hypervisorPassword")]
         public Output<string?> HypervisorPassword { get; private set; } = null!;
 
         /// <summary>
-        /// : - install script.
+        /// - install script.
         /// </summary>
         [Output("installScript")]
         public Output<string?> InstallScript { get; private set; } = null!;
 
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI gateway for this node
+        /// - (Required incase using IPMI based imaging either here or inside node spec) default IPMI gateway
         /// </summary>
         [Output("ipmiGateway")]
         public Output<string?> IpmiGateway { get; private set; } = null!;
 
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI netmask for this node
+        /// - (Required incase using IPMI based imaging either here or inside node spec) default IPMI netmask
         /// </summary>
         [Output("ipmiNetmask")]
         public Output<string?> IpmiNetmask { get; private set; } = null!;
 
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI username
+        /// - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
         /// </summary>
         [Output("ipmiPassword")]
         public Output<string?> IpmiPassword { get; private set; } = null!;
 
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+        /// - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
         /// </summary>
         [Output("ipmiUser")]
         public Output<string?> IpmiUser { get; private set; } = null!;
 
         /// <summary>
-        /// : - Id of the custom layout which needs to be passed to imaging request.
+        /// - Id of the custom layout which needs to be passed to imaging request.
         /// </summary>
         [Output("layoutEggUuid")]
         public Output<string?> LayoutEggUuid { get; private set; } = null!;
 
         /// <summary>
-        /// : - (Required) NOS package.
+        /// - (Required) NOS package.
         /// </summary>
         [Output("nosPackage")]
         public Output<string> NosPackage { get; private set; } = null!;
 
+        /// <summary>
+        /// - session_id of the imaging session
+        /// </summary>
         [Output("sessionId")]
         public Output<string> SessionId { get; private set; } = null!;
 
         /// <summary>
-        /// : - If hypervisor installation should be skipped.
+        /// - If hypervisor installation should be skipped.
         /// </summary>
         [Output("skipHypervisor")]
         public Output<bool?> SkipHypervisor { get; private set; } = null!;
 
         /// <summary>
-        /// : - Arguments to be passed to svm_rescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+        /// - Arguments to be passed to svm_rescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         /// </summary>
         [Output("svmRescueArgs")]
         public Output<ImmutableArray<string>> SvmRescueArgs { get; private set; } = null!;
 
         /// <summary>
-        /// : - Types of tests to be performed.
+        /// - Types of tests to be performed.
         /// </summary>
         [Output("tests")]
         public Output<Outputs.FoundationImageNodesTests?> Tests { get; private set; } = null!;
 
         /// <summary>
-        /// : - UCSM IP address.
+        /// - UCSM IP address.
         /// </summary>
         [Output("ucsmIp")]
         public Output<string?> UcsmIp { get; private set; } = null!;
 
         /// <summary>
-        /// : - UCSM password.
+        /// - UCSM password.
         /// </summary>
         [Output("ucsmPassword")]
         public Output<string?> UcsmPassword { get; private set; } = null!;
 
         /// <summary>
-        /// : - UCSM username.
+        /// - UCSM username.
         /// </summary>
         [Output("ucsmUser")]
         public Output<string?> UcsmUser { get; private set; } = null!;
 
         /// <summary>
-        /// : - UNC password.
+        /// - UNC password.
         /// </summary>
         [Output("uncPassword")]
         public Output<string?> UncPassword { get; private set; } = null!;
 
         /// <summary>
-        /// : - UNC Path.
+        /// - UNC Path.
         /// </summary>
         [Output("uncPath")]
         public Output<string?> UncPath { get; private set; } = null!;
 
         /// <summary>
-        /// : - UNC username.
+        /// - UNC username.
         /// </summary>
         [Output("uncUsername")]
         public Output<string?> UncUsername { get; private set; } = null!;
 
         /// <summary>
-        /// : - xen config types.
+        /// - xen config types.
         /// </summary>
         [Output("xenConfigType")]
         public Output<string?> XenConfigType { get; private set; } = null!;
 
         /// <summary>
-        /// : - xen server master IP address.
+        /// - xen server master IP address.
         /// </summary>
         [Output("xsMasterIp")]
         public Output<string?> XsMasterIp { get; private set; } = null!;
 
+        /// <summary>
+        /// - xen server master label.
+        /// </summary>
         [Output("xsMasterLabel")]
         public Output<string?> XsMasterLabel { get; private set; } = null!;
 
         /// <summary>
-        /// : - xen server master password.
+        /// - xen server master password.
         /// </summary>
         [Output("xsMasterPassword")]
         public Output<string?> XsMasterPassword { get; private set; } = null!;
 
         /// <summary>
-        /// : - xen server master username.
+        /// - xen server master username.
         /// </summary>
         [Output("xsMasterUsername")]
         public Output<string?> XsMasterUsername { get; private set; } = null!;
@@ -268,7 +279,7 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class FoundationImageNodesArgs : Pulumi.ResourceArgs
+    public sealed class FoundationImageNodesArgs : global::Pulumi.ResourceArgs
     {
         [Input("blocks", required: true)]
         private InputList<Inputs.FoundationImageNodesBlockArgs>? _blocks;
@@ -287,61 +298,61 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// : - (Required) CVM gateway.
+        /// - (Required) CVM gateway.
         /// </summary>
         [Input("cvmGateway", required: true)]
         public Input<string> CvmGateway { get; set; } = null!;
 
         /// <summary>
-        /// : - (Required) CVM netmask.
+        /// - (Required) CVM netmask.
         /// </summary>
         [Input("cvmNetmask", required: true)]
         public Input<string> CvmNetmask { get; set; } = null!;
 
         /// <summary>
-        /// : - Contains user data from Eos portal.
+        /// - Contains user data from Eos portal.
         /// </summary>
         [Input("eosMetadata")]
         public Input<Inputs.FoundationImageNodesEosMetadataArgs>? EosMetadata { get; set; }
 
         /// <summary>
-        /// : - Foundation Central specific settings.
+        /// - Foundation Central specific settings.
         /// </summary>
         [Input("fcSettings")]
         public Input<Inputs.FoundationImageNodesFcSettingsArgs>? FcSettings { get; set; }
 
         /// <summary>
-        /// : - Hyperv External virtual network adapter name.
+        /// - Hyperv External virtual network adapter name.
         /// </summary>
         [Input("hypervExternalVnic")]
         public Input<string>? HypervExternalVnic { get; set; }
 
         /// <summary>
-        /// : - Hyperv External vswitch name.
+        /// - Hyperv External vswitch name.
         /// </summary>
         [Input("hypervExternalVswitch")]
         public Input<string>? HypervExternalVswitch { get; set; }
 
         /// <summary>
-        /// : - Hyperv product key.
+        /// - Hyperv product key.
         /// </summary>
         [Input("hypervProductKey")]
         public Input<string>? HypervProductKey { get; set; }
 
         /// <summary>
-        /// : - Hyperv SKU.
+        /// - Hyperv SKU.
         /// </summary>
         [Input("hypervSku")]
         public Input<bool>? HypervSku { get; set; }
 
         /// <summary>
-        /// : - (Required) Hypervisor gateway.
+        /// - (Required) Hypervisor gateway.
         /// </summary>
         [Input("hypervisorGateway", required: true)]
         public Input<string> HypervisorGateway { get; set; } = null!;
 
         /// <summary>
-        /// : - Hypervisor ISO.
+        /// - Hypervisor ISO.
         /// </summary>
         [Input("hypervisorIso")]
         public Input<Inputs.FoundationImageNodesHypervisorIsoArgs>? HypervisorIso { get; set; }
@@ -350,61 +361,61 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? HypervisorNameserver { get; set; }
 
         /// <summary>
-        /// : - (Required) Hypervisor netmask.
+        /// - (Required) Hypervisor netmask.
         /// </summary>
         [Input("hypervisorNetmask", required: true)]
         public Input<string> HypervisorNetmask { get; set; } = null!;
 
         /// <summary>
-        /// : - Hypervisor password.
+        /// - Hypervisor password.
         /// </summary>
         [Input("hypervisorPassword")]
         public Input<string>? HypervisorPassword { get; set; }
 
         /// <summary>
-        /// : - install script.
+        /// - install script.
         /// </summary>
         [Input("installScript")]
         public Input<string>? InstallScript { get; set; }
 
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI gateway for this node
+        /// - (Required incase using IPMI based imaging either here or inside node spec) default IPMI gateway
         /// </summary>
         [Input("ipmiGateway")]
         public Input<string>? IpmiGateway { get; set; }
 
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI netmask for this node
+        /// - (Required incase using IPMI based imaging either here or inside node spec) default IPMI netmask
         /// </summary>
         [Input("ipmiNetmask")]
         public Input<string>? IpmiNetmask { get; set; }
 
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI username
+        /// - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
         /// </summary>
         [Input("ipmiPassword")]
         public Input<string>? IpmiPassword { get; set; }
 
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+        /// - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
         /// </summary>
         [Input("ipmiUser")]
         public Input<string>? IpmiUser { get; set; }
 
         /// <summary>
-        /// : - Id of the custom layout which needs to be passed to imaging request.
+        /// - Id of the custom layout which needs to be passed to imaging request.
         /// </summary>
         [Input("layoutEggUuid")]
         public Input<string>? LayoutEggUuid { get; set; }
 
         /// <summary>
-        /// : - (Required) NOS package.
+        /// - (Required) NOS package.
         /// </summary>
         [Input("nosPackage", required: true)]
         public Input<string> NosPackage { get; set; } = null!;
 
         /// <summary>
-        /// : - If hypervisor installation should be skipped.
+        /// - If hypervisor installation should be skipped.
         /// </summary>
         [Input("skipHypervisor")]
         public Input<bool>? SkipHypervisor { get; set; }
@@ -413,7 +424,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _svmRescueArgs;
 
         /// <summary>
-        /// : - Arguments to be passed to svm_rescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+        /// - Arguments to be passed to svm_rescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         /// </summary>
         public InputList<string> SvmRescueArgs
         {
@@ -422,70 +433,73 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// : - Types of tests to be performed.
+        /// - Types of tests to be performed.
         /// </summary>
         [Input("tests")]
         public Input<Inputs.FoundationImageNodesTestsArgs>? Tests { get; set; }
 
         /// <summary>
-        /// : - UCSM IP address.
+        /// - UCSM IP address.
         /// </summary>
         [Input("ucsmIp")]
         public Input<string>? UcsmIp { get; set; }
 
         /// <summary>
-        /// : - UCSM password.
+        /// - UCSM password.
         /// </summary>
         [Input("ucsmPassword")]
         public Input<string>? UcsmPassword { get; set; }
 
         /// <summary>
-        /// : - UCSM username.
+        /// - UCSM username.
         /// </summary>
         [Input("ucsmUser")]
         public Input<string>? UcsmUser { get; set; }
 
         /// <summary>
-        /// : - UNC password.
+        /// - UNC password.
         /// </summary>
         [Input("uncPassword")]
         public Input<string>? UncPassword { get; set; }
 
         /// <summary>
-        /// : - UNC Path.
+        /// - UNC Path.
         /// </summary>
         [Input("uncPath")]
         public Input<string>? UncPath { get; set; }
 
         /// <summary>
-        /// : - UNC username.
+        /// - UNC username.
         /// </summary>
         [Input("uncUsername")]
         public Input<string>? UncUsername { get; set; }
 
         /// <summary>
-        /// : - xen config types.
+        /// - xen config types.
         /// </summary>
         [Input("xenConfigType")]
         public Input<string>? XenConfigType { get; set; }
 
         /// <summary>
-        /// : - xen server master IP address.
+        /// - xen server master IP address.
         /// </summary>
         [Input("xsMasterIp")]
         public Input<string>? XsMasterIp { get; set; }
 
+        /// <summary>
+        /// - xen server master label.
+        /// </summary>
         [Input("xsMasterLabel")]
         public Input<string>? XsMasterLabel { get; set; }
 
         /// <summary>
-        /// : - xen server master password.
+        /// - xen server master password.
         /// </summary>
         [Input("xsMasterPassword")]
         public Input<string>? XsMasterPassword { get; set; }
 
         /// <summary>
-        /// : - xen server master username.
+        /// - xen server master username.
         /// </summary>
         [Input("xsMasterUsername")]
         public Input<string>? XsMasterUsername { get; set; }
@@ -493,9 +507,10 @@ namespace PiersKarsenbarg.Nutanix
         public FoundationImageNodesArgs()
         {
         }
+        public static new FoundationImageNodesArgs Empty => new FoundationImageNodesArgs();
     }
 
-    public sealed class FoundationImageNodesState : Pulumi.ResourceArgs
+    public sealed class FoundationImageNodesState : global::Pulumi.ResourceArgs
     {
         [Input("blocks")]
         private InputList<Inputs.FoundationImageNodesBlockGetArgs>? _blocks;
@@ -507,6 +522,12 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("clusterUrls")]
         private InputList<Inputs.FoundationImageNodesClusterUrlGetArgs>? _clusterUrls;
+
+        /// <summary>
+        /// - list containing cluster name and cluster urls for created clusters in current session
+        /// * `cluster_urls.#.cluster_name` :- cluster_name
+        /// * `cluster_urls.#.cluster_url` :- url to access the cluster login
+        /// </summary>
         public InputList<Inputs.FoundationImageNodesClusterUrlGetArgs> ClusterUrls
         {
             get => _clusterUrls ?? (_clusterUrls = new InputList<Inputs.FoundationImageNodesClusterUrlGetArgs>());
@@ -522,61 +543,61 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// : - (Required) CVM gateway.
+        /// - (Required) CVM gateway.
         /// </summary>
         [Input("cvmGateway")]
         public Input<string>? CvmGateway { get; set; }
 
         /// <summary>
-        /// : - (Required) CVM netmask.
+        /// - (Required) CVM netmask.
         /// </summary>
         [Input("cvmNetmask")]
         public Input<string>? CvmNetmask { get; set; }
 
         /// <summary>
-        /// : - Contains user data from Eos portal.
+        /// - Contains user data from Eos portal.
         /// </summary>
         [Input("eosMetadata")]
         public Input<Inputs.FoundationImageNodesEosMetadataGetArgs>? EosMetadata { get; set; }
 
         /// <summary>
-        /// : - Foundation Central specific settings.
+        /// - Foundation Central specific settings.
         /// </summary>
         [Input("fcSettings")]
         public Input<Inputs.FoundationImageNodesFcSettingsGetArgs>? FcSettings { get; set; }
 
         /// <summary>
-        /// : - Hyperv External virtual network adapter name.
+        /// - Hyperv External virtual network adapter name.
         /// </summary>
         [Input("hypervExternalVnic")]
         public Input<string>? HypervExternalVnic { get; set; }
 
         /// <summary>
-        /// : - Hyperv External vswitch name.
+        /// - Hyperv External vswitch name.
         /// </summary>
         [Input("hypervExternalVswitch")]
         public Input<string>? HypervExternalVswitch { get; set; }
 
         /// <summary>
-        /// : - Hyperv product key.
+        /// - Hyperv product key.
         /// </summary>
         [Input("hypervProductKey")]
         public Input<string>? HypervProductKey { get; set; }
 
         /// <summary>
-        /// : - Hyperv SKU.
+        /// - Hyperv SKU.
         /// </summary>
         [Input("hypervSku")]
         public Input<bool>? HypervSku { get; set; }
 
         /// <summary>
-        /// : - (Required) Hypervisor gateway.
+        /// - (Required) Hypervisor gateway.
         /// </summary>
         [Input("hypervisorGateway")]
         public Input<string>? HypervisorGateway { get; set; }
 
         /// <summary>
-        /// : - Hypervisor ISO.
+        /// - Hypervisor ISO.
         /// </summary>
         [Input("hypervisorIso")]
         public Input<Inputs.FoundationImageNodesHypervisorIsoGetArgs>? HypervisorIso { get; set; }
@@ -585,64 +606,67 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? HypervisorNameserver { get; set; }
 
         /// <summary>
-        /// : - (Required) Hypervisor netmask.
+        /// - (Required) Hypervisor netmask.
         /// </summary>
         [Input("hypervisorNetmask")]
         public Input<string>? HypervisorNetmask { get; set; }
 
         /// <summary>
-        /// : - Hypervisor password.
+        /// - Hypervisor password.
         /// </summary>
         [Input("hypervisorPassword")]
         public Input<string>? HypervisorPassword { get; set; }
 
         /// <summary>
-        /// : - install script.
+        /// - install script.
         /// </summary>
         [Input("installScript")]
         public Input<string>? InstallScript { get; set; }
 
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI gateway for this node
+        /// - (Required incase using IPMI based imaging either here or inside node spec) default IPMI gateway
         /// </summary>
         [Input("ipmiGateway")]
         public Input<string>? IpmiGateway { get; set; }
 
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI netmask for this node
+        /// - (Required incase using IPMI based imaging either here or inside node spec) default IPMI netmask
         /// </summary>
         [Input("ipmiNetmask")]
         public Input<string>? IpmiNetmask { get; set; }
 
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI username
+        /// - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
         /// </summary>
         [Input("ipmiPassword")]
         public Input<string>? IpmiPassword { get; set; }
 
         /// <summary>
-        /// :- (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+        /// - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
         /// </summary>
         [Input("ipmiUser")]
         public Input<string>? IpmiUser { get; set; }
 
         /// <summary>
-        /// : - Id of the custom layout which needs to be passed to imaging request.
+        /// - Id of the custom layout which needs to be passed to imaging request.
         /// </summary>
         [Input("layoutEggUuid")]
         public Input<string>? LayoutEggUuid { get; set; }
 
         /// <summary>
-        /// : - (Required) NOS package.
+        /// - (Required) NOS package.
         /// </summary>
         [Input("nosPackage")]
         public Input<string>? NosPackage { get; set; }
 
+        /// <summary>
+        /// - session_id of the imaging session
+        /// </summary>
         [Input("sessionId")]
         public Input<string>? SessionId { get; set; }
 
         /// <summary>
-        /// : - If hypervisor installation should be skipped.
+        /// - If hypervisor installation should be skipped.
         /// </summary>
         [Input("skipHypervisor")]
         public Input<bool>? SkipHypervisor { get; set; }
@@ -651,7 +675,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _svmRescueArgs;
 
         /// <summary>
-        /// : - Arguments to be passed to svm_rescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
+        /// - Arguments to be passed to svm_rescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         /// </summary>
         public InputList<string> SvmRescueArgs
         {
@@ -660,70 +684,73 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
-        /// : - Types of tests to be performed.
+        /// - Types of tests to be performed.
         /// </summary>
         [Input("tests")]
         public Input<Inputs.FoundationImageNodesTestsGetArgs>? Tests { get; set; }
 
         /// <summary>
-        /// : - UCSM IP address.
+        /// - UCSM IP address.
         /// </summary>
         [Input("ucsmIp")]
         public Input<string>? UcsmIp { get; set; }
 
         /// <summary>
-        /// : - UCSM password.
+        /// - UCSM password.
         /// </summary>
         [Input("ucsmPassword")]
         public Input<string>? UcsmPassword { get; set; }
 
         /// <summary>
-        /// : - UCSM username.
+        /// - UCSM username.
         /// </summary>
         [Input("ucsmUser")]
         public Input<string>? UcsmUser { get; set; }
 
         /// <summary>
-        /// : - UNC password.
+        /// - UNC password.
         /// </summary>
         [Input("uncPassword")]
         public Input<string>? UncPassword { get; set; }
 
         /// <summary>
-        /// : - UNC Path.
+        /// - UNC Path.
         /// </summary>
         [Input("uncPath")]
         public Input<string>? UncPath { get; set; }
 
         /// <summary>
-        /// : - UNC username.
+        /// - UNC username.
         /// </summary>
         [Input("uncUsername")]
         public Input<string>? UncUsername { get; set; }
 
         /// <summary>
-        /// : - xen config types.
+        /// - xen config types.
         /// </summary>
         [Input("xenConfigType")]
         public Input<string>? XenConfigType { get; set; }
 
         /// <summary>
-        /// : - xen server master IP address.
+        /// - xen server master IP address.
         /// </summary>
         [Input("xsMasterIp")]
         public Input<string>? XsMasterIp { get; set; }
 
+        /// <summary>
+        /// - xen server master label.
+        /// </summary>
         [Input("xsMasterLabel")]
         public Input<string>? XsMasterLabel { get; set; }
 
         /// <summary>
-        /// : - xen server master password.
+        /// - xen server master password.
         /// </summary>
         [Input("xsMasterPassword")]
         public Input<string>? XsMasterPassword { get; set; }
 
         /// <summary>
-        /// : - xen server master username.
+        /// - xen server master username.
         /// </summary>
         [Input("xsMasterUsername")]
         public Input<string>? XsMasterUsername { get; set; }
@@ -731,5 +758,6 @@ namespace PiersKarsenbarg.Nutanix
         public FoundationImageNodesState()
         {
         }
+        public static new FoundationImageNodesState Empty => new FoundationImageNodesState();
     }
 }

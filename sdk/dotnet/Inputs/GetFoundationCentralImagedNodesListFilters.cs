@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetFoundationCentralImagedNodesListFiltersArgs : Pulumi.InvokeArgs
+    public sealed class GetFoundationCentralImagedNodesListFiltersArgs : global::Pulumi.InvokeArgs
     {
         [Input("nodeState")]
         public string? NodeState { get; set; }
@@ -19,5 +19,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetFoundationCentralImagedNodesListFiltersArgs()
         {
         }
+        public static new GetFoundationCentralImagedNodesListFiltersArgs Empty => new GetFoundationCentralImagedNodesListFiltersArgs();
     }
 }

@@ -16,74 +16,74 @@ namespace PiersKarsenbarg.Nutanix
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var subnet = new Nutanix.Subnet("subnet", new()
     ///     {
-    ///         var subnet = new Nutanix.Subnet("subnet", new Nutanix.SubnetArgs
+    ///         ClusterUuid = "&lt;YOUR_CLUSTER_ID&gt;",
+    ///         Description = "Description of my unit test VLAN",
+    ///         VlanId = 31,
+    ///         SubnetType = "VLAN",
+    ///         SubnetIp = "10.250.140.0",
+    ///         DefaultGatewayIp = "10.250.140.1",
+    ///         PrefixLength = 24,
+    ///         DhcpOptions = 
     ///         {
-    ///             ClusterUuid = "&lt;YOUR_CLUSTER_ID&gt;",
-    ///             Description = "Description of my unit test VLAN",
-    ///             VlanId = 31,
-    ///             SubnetType = "VLAN",
-    ///             SubnetIp = "10.250.140.0",
-    ///             DefaultGatewayIp = "10.250.140.1",
-    ///             PrefixLength = 24,
-    ///             DhcpOptions = 
-    ///             {
-    ///                 { "boot_file_name", "bootfile" },
-    ///                 { "domain_name", "nutanix" },
-    ///                 { "tftp_server_name", "10.250.140.200" },
-    ///             },
-    ///             DhcpDomainNameServerLists = 
-    ///             {
-    ///                 "8.8.8.8",
-    ///                 "4.2.2.2",
-    ///             },
-    ///             DhcpDomainSearchLists = 
-    ///             {
-    ///                 "terraform.nutanix.com",
-    ///                 "terraform.unit.test.com",
-    ///             },
-    ///         });
-    ///         var projectTest = new Nutanix.Project("projectTest", new Nutanix.ProjectArgs
+    ///             { "boot_file_name", "bootfile" },
+    ///             { "domain_name", "nutanix" },
+    ///             { "tftp_server_name", "10.250.140.200" },
+    ///         },
+    ///         DhcpDomainNameServerLists = new[]
     ///         {
-    ///             Description = "This is my project",
-    ///             Categories = 
-    ///             {
-    ///                 new Nutanix.Inputs.ProjectCategoryArgs
-    ///                 {
-    ///                     Name = "Environment",
-    ///                     Value = "Staging",
-    ///                 },
-    ///             },
-    ///             ResourceDomain = new Nutanix.Inputs.ProjectResourceDomainArgs
-    ///             {
-    ///                 Resources = 
-    ///                 {
-    ///                     new Nutanix.Inputs.ProjectResourceDomainResourceArgs
-    ///                     {
-    ///                         Limit = 4,
-    ///                         ResourceType = "STORAGE",
-    ///                     },
-    ///                 },
-    ///             },
-    ///             DefaultSubnetReference = new Nutanix.Inputs.ProjectDefaultSubnetReferenceArgs
-    ///             {
-    ///                 Uuid = subnet.Metadata.Apply(metadata =&gt; metadata.Uuid),
-    ///             },
-    ///             ApiVersion = "3.1",
-    ///         });
-    ///     }
+    ///             "8.8.8.8",
+    ///             "4.2.2.2",
+    ///         },
+    ///         DhcpDomainSearchLists = new[]
+    ///         {
+    ///             "terraform.nutanix.com",
+    ///             "terraform.unit.test.com",
+    ///         },
+    ///     });
     /// 
-    /// }
+    ///     var projectTest = new Nutanix.Project("projectTest", new()
+    ///     {
+    ///         Description = "This is my project",
+    ///         Categories = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ProjectCategoryArgs
+    ///             {
+    ///                 Name = "Environment",
+    ///                 Value = "Staging",
+    ///             },
+    ///         },
+    ///         ResourceDomain = new Nutanix.Inputs.ProjectResourceDomainArgs
+    ///         {
+    ///             Resources = new[]
+    ///             {
+    ///                 new Nutanix.Inputs.ProjectResourceDomainResourceArgs
+    ///                 {
+    ///                     Limit = 4,
+    ///                     ResourceType = "STORAGE",
+    ///                 },
+    ///             },
+    ///         },
+    ///         DefaultSubnetReference = new Nutanix.Inputs.ProjectDefaultSubnetReferenceArgs
+    ///         {
+    ///             Uuid = subnet.Metadata.Apply(metadata =&gt; metadata.Uuid),
+    ///         },
+    ///         ApiVersion = "3.1",
+    ///     });
+    /// 
+    /// });
     /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/project:Project")]
-    public partial class Project : Pulumi.CustomResource
+    public partial class Project : global::Pulumi.CustomResource
     {
         /// <summary>
         /// List of accounts associated with the project.
@@ -234,7 +234,7 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class ProjectArgs : Pulumi.ResourceArgs
+    public sealed class ProjectArgs : global::Pulumi.ResourceArgs
     {
         [Input("accountReferenceLists")]
         private InputList<Inputs.ProjectAccountReferenceListArgs>? _accountReferenceLists;
@@ -385,9 +385,10 @@ namespace PiersKarsenbarg.Nutanix
         public ProjectArgs()
         {
         }
+        public static new ProjectArgs Empty => new ProjectArgs();
     }
 
-    public sealed class ProjectState : Pulumi.ResourceArgs
+    public sealed class ProjectState : global::Pulumi.ResourceArgs
     {
         [Input("accountReferenceLists")]
         private InputList<Inputs.ProjectAccountReferenceListGetArgs>? _accountReferenceLists;
@@ -552,5 +553,6 @@ namespace PiersKarsenbarg.Nutanix
         public ProjectState()
         {
         }
+        public static new ProjectState Empty => new ProjectState();
     }
 }

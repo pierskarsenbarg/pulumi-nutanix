@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -15,6 +16,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const isolation = new nutanix.NetworkSecurityRule("isolation", {
@@ -33,17 +35,14 @@ import * as utilities from "./utilities";
  *     }],
  *     isolationRuleSecondEntityFilterType: "CATEGORIES_MATCH_ALL",
  * });
- * const test = isolation.id.apply(id => nutanix.getNetworkSecurityRule({
- *     networkSecurityRuleId: id,
- * }));
+ * const test = nutanix.getNetworkSecurityRuleOutput({
+ *     networkSecurityRuleId: isolation.id,
+ * });
  * ```
  */
 export function getNetworkSecurityRule(args: GetNetworkSecurityRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkSecurityRuleResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule", {
         "categories": args.categories,
         "networkSecurityRuleId": args.networkSecurityRuleId,
@@ -54,47 +53,12 @@ export function getNetworkSecurityRule(args: GetNetworkSecurityRuleArgs, opts?: 
  * A collection of arguments for invoking getNetworkSecurityRule.
  */
 export interface GetNetworkSecurityRuleArgs {
+    /**
+     * Categories for the network_security_rule.
+     */
     categories?: inputs.GetNetworkSecurityRuleCategory[];
     /**
-     * (Required) The ID for the rule you want to retrieve.
-     * * `name`: - The name for the network_security_rule.
-     * * `categories`: Categories for the network_security_rule.
-     * * `projectReference`: The reference to a project.
-     * * `ownerReference`: The reference to a user.
-     * * `apiVersion`
-     * * `description`: A description for network_security_rule.
-     * * `quarantineRuleAction`: These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty inboundAllowList will not allow anything into target group. Empty outboundAllowList will allow everything from target group.
-     * * `quarantineRuleOutboundAllowList`:
-     * * `quarantineRuleTargetGroupDefaultInternalPolicy`: - Default policy for communication within target group.
-     * * `quarantineRuleTargetGroupPeerSpecificationType`: - Way to identify the object for which rule is applied.
-     * * `quarantineRuleTargetGroupFilterKindList`: - List of kinds associated with this filter.
-     * * `quarantineRuleTargetGroupFilterType`: - The type of the filter being used.
-     * * `quarantineRuleTargetGroupFilterParams`: - A list of category key and list of values.
-     * * `quarantineRuleInboundAllowList`:
-     * * `appRuleAction`: - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
-     * * `appRuleOutboundAllowList`:
-     * * `appRuleTargetGroupDefaultInternalPolicy`: - Default policy for communication within target group.
-     * * `appRuleTargetGroupPeerSpecificationType`: - Way to identify the object for which rule is applied.
-     * * `appRuleTargetGroupFilterKindList`: - List of kinds associated with this filter.
-     * * `appRuleTargetGroupFilterType`: - The type of the filter being used.
-     * * `appRuleTargetGroupFilterParams`: - A list of category key and list of values.
-     * * `appRuleInboundAllowList`: The set of categories that matching VMs need to have.
-     * * `adRuleAction`: - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
-     * * `adRuleOutboundAllowList`:
-     * * `adRuleTargetGroupDefaultInternalPolicy`: - Default policy for communication within target group.
-     * * `adRuleTargetGroupPeerSpecificationType`: - Way to identify the object for which rule is applied.
-     * * `adRuleTargetGroupFilterKindList`: - List of kinds associated with this filter.
-     * * `adRuleTargetGroupFilterType`: - The type of the filter being used.
-     * * `adRuleTargetGroupFilterParams`: - A list of category key and list of values.
-     * * `adRuleInboundAllowList`: The set of categories that matching VMs need to have.
-     * * `isolationRuleAction`: - These rules are used for environmental isolation.
-     * * `appRuleInboundAllowList`:
-     * * `isolationRuleFirstEntityFilterKindList`: - List of kinds associated with this filter.
-     * * `isolationRuleFirstEntityFilterType`: - The type of the filter being used.
-     * * `isolationRuleFirstEntityFilterParams`: - A list of category key and list of values.
-     * * `isolationRuleSecondEntityFilterKindList`: - List of kinds associated with this filter.
-     * * `isolationRuleSecondEntityFilterType`: - The type of the filter being used.
-     * * `isolationRuleSecondEntityFilterParams`: - A list of category key and list of values.
+     * Represents network security rule UUID
      */
     networkSecurityRuleId: string;
 }
@@ -103,143 +67,196 @@ export interface GetNetworkSecurityRuleArgs {
  * A collection of values returned by getNetworkSecurityRule.
  */
 export interface GetNetworkSecurityRuleResult {
+    /**
+     * - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
+     */
     readonly adRuleAction: string;
+    /**
+     * The set of categories that matching VMs need to have.
+     */
     readonly adRuleInboundAllowLists: outputs.GetNetworkSecurityRuleAdRuleInboundAllowList[];
     readonly adRuleOutboundAllowLists: outputs.GetNetworkSecurityRuleAdRuleOutboundAllowList[];
+    /**
+     * - Default policy for communication within target group.
+     */
     readonly adRuleTargetGroupDefaultInternalPolicy: string;
+    /**
+     * - List of kinds associated with this filter.
+     */
     readonly adRuleTargetGroupFilterKindLists: string[];
+    /**
+     * - A list of category key and list of values.
+     */
     readonly adRuleTargetGroupFilterParams: outputs.GetNetworkSecurityRuleAdRuleTargetGroupFilterParam[];
+    /**
+     * - The type of the filter being used.
+     */
     readonly adRuleTargetGroupFilterType: string;
+    /**
+     * - Way to identify the object for which rule is applied.
+     */
     readonly adRuleTargetGroupPeerSpecificationType: string;
     readonly allowIpv6Traffic: boolean;
     readonly apiVersion: string;
+    /**
+     * - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
+     */
     readonly appRuleAction: string;
     readonly appRuleInboundAllowLists: outputs.GetNetworkSecurityRuleAppRuleInboundAllowList[];
     readonly appRuleOutboundAllowLists: outputs.GetNetworkSecurityRuleAppRuleOutboundAllowList[];
+    /**
+     * - Default policy for communication within target group.
+     */
     readonly appRuleTargetGroupDefaultInternalPolicy: string;
+    /**
+     * - List of kinds associated with this filter.
+     */
     readonly appRuleTargetGroupFilterKindLists: string[];
+    /**
+     * - A list of category key and list of values.
+     */
     readonly appRuleTargetGroupFilterParams: outputs.GetNetworkSecurityRuleAppRuleTargetGroupFilterParam[];
+    /**
+     * - The type of the filter being used.
+     */
     readonly appRuleTargetGroupFilterType: string;
+    /**
+     * - Way to identify the object for which rule is applied.
+     */
     readonly appRuleTargetGroupPeerSpecificationType: string;
+    /**
+     * Categories for the network_security_rule.
+     */
     readonly categories: outputs.GetNetworkSecurityRuleCategory[];
+    /**
+     * A description for network_security_rule.
+     */
     readonly description: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
     readonly isPolicyHitlogEnabled: boolean;
+    /**
+     * - These rules are used for environmental isolation.
+     */
     readonly isolationRuleAction: string;
+    /**
+     * - List of kinds associated with this filter.
+     */
     readonly isolationRuleFirstEntityFilterKindLists: string[];
+    /**
+     * - A list of category key and list of values.
+     */
     readonly isolationRuleFirstEntityFilterParams: outputs.GetNetworkSecurityRuleIsolationRuleFirstEntityFilterParam[];
+    /**
+     * - The type of the filter being used.
+     */
     readonly isolationRuleFirstEntityFilterType: string;
+    /**
+     * - List of kinds associated with this filter.
+     */
     readonly isolationRuleSecondEntityFilterKindLists: string[];
+    /**
+     * - A list of category key and list of values.
+     */
     readonly isolationRuleSecondEntityFilterParams: outputs.GetNetworkSecurityRuleIsolationRuleSecondEntityFilterParam[];
+    /**
+     * - The type of the filter being used.
+     */
     readonly isolationRuleSecondEntityFilterType: string;
     readonly metadata: {[key: string]: string};
+    /**
+     * - the name.
+     */
     readonly name: string;
     /**
      * (Required) The ID for the rule you want to retrieve.
-     * * `name`: - The name for the network_security_rule.
-     * * `categories`: Categories for the network_security_rule.
-     * * `projectReference`: The reference to a project.
-     * * `ownerReference`: The reference to a user.
-     * * `apiVersion`
-     * * `description`: A description for network_security_rule.
-     * * `quarantineRuleAction`: These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty inboundAllowList will not allow anything into target group. Empty outboundAllowList will allow everything from target group.
-     * * `quarantineRuleOutboundAllowList`:
-     * * `quarantineRuleTargetGroupDefaultInternalPolicy`: - Default policy for communication within target group.
-     * * `quarantineRuleTargetGroupPeerSpecificationType`: - Way to identify the object for which rule is applied.
-     * * `quarantineRuleTargetGroupFilterKindList`: - List of kinds associated with this filter.
-     * * `quarantineRuleTargetGroupFilterType`: - The type of the filter being used.
-     * * `quarantineRuleTargetGroupFilterParams`: - A list of category key and list of values.
-     * * `quarantineRuleInboundAllowList`:
-     * * `appRuleAction`: - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
-     * * `appRuleOutboundAllowList`:
-     * * `appRuleTargetGroupDefaultInternalPolicy`: - Default policy for communication within target group.
-     * * `appRuleTargetGroupPeerSpecificationType`: - Way to identify the object for which rule is applied.
-     * * `appRuleTargetGroupFilterKindList`: - List of kinds associated with this filter.
-     * * `appRuleTargetGroupFilterType`: - The type of the filter being used.
-     * * `appRuleTargetGroupFilterParams`: - A list of category key and list of values.
-     * * `appRuleInboundAllowList`: The set of categories that matching VMs need to have.
-     * * `adRuleAction`: - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
-     * * `adRuleOutboundAllowList`:
-     * * `adRuleTargetGroupDefaultInternalPolicy`: - Default policy for communication within target group.
-     * * `adRuleTargetGroupPeerSpecificationType`: - Way to identify the object for which rule is applied.
-     * * `adRuleTargetGroupFilterKindList`: - List of kinds associated with this filter.
-     * * `adRuleTargetGroupFilterType`: - The type of the filter being used.
-     * * `adRuleTargetGroupFilterParams`: - A list of category key and list of values.
-     * * `adRuleInboundAllowList`: The set of categories that matching VMs need to have.
-     * * `isolationRuleAction`: - These rules are used for environmental isolation.
-     * * `appRuleInboundAllowList`:
-     * * `isolationRuleFirstEntityFilterKindList`: - List of kinds associated with this filter.
-     * * `isolationRuleFirstEntityFilterType`: - The type of the filter being used.
-     * * `isolationRuleFirstEntityFilterParams`: - A list of category key and list of values.
-     * * `isolationRuleSecondEntityFilterKindList`: - List of kinds associated with this filter.
-     * * `isolationRuleSecondEntityFilterType`: - The type of the filter being used.
-     * * `isolationRuleSecondEntityFilterParams`: - A list of category key and list of values.
      */
     readonly networkSecurityRuleId: string;
+    /**
+     * The reference to a user.
+     */
     readonly ownerReference: {[key: string]: string};
+    /**
+     * The reference to a project.
+     */
     readonly projectReference: {[key: string]: string};
+    /**
+     * These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty inboundAllowList will not allow anything into target group. Empty outboundAllowList will allow everything from target group.
+     */
     readonly quarantineRuleAction: string;
     readonly quarantineRuleInboundAllowLists: outputs.GetNetworkSecurityRuleQuarantineRuleInboundAllowList[];
     readonly quarantineRuleOutboundAllowLists: outputs.GetNetworkSecurityRuleQuarantineRuleOutboundAllowList[];
+    /**
+     * - Default policy for communication within target group.
+     */
     readonly quarantineRuleTargetGroupDefaultInternalPolicy: string;
+    /**
+     * - List of kinds associated with this filter.
+     */
     readonly quarantineRuleTargetGroupFilterKindLists: string[];
+    /**
+     * - A list of category key and list of values.
+     */
     readonly quarantineRuleTargetGroupFilterParams: outputs.GetNetworkSecurityRuleQuarantineRuleTargetGroupFilterParam[];
+    /**
+     * - The type of the filter being used.
+     */
     readonly quarantineRuleTargetGroupFilterType: string;
+    /**
+     * - Way to identify the object for which rule is applied.
+     */
     readonly quarantineRuleTargetGroupPeerSpecificationType: string;
 }
-
+/**
+ * Describes a Network security rule
+ *
+ * > NOTE: The use of networkSecurityRule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+ *
+ * ## Example Usage
+ * ### Isolate Development VMs From Production VMs And Get Its Information)
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const isolation = new nutanix.NetworkSecurityRule("isolation", {
+ *     description: "Isolation Rule Example",
+ *     isolationRuleAction: "APPLY",
+ *     isolationRuleFirstEntityFilterKindLists: ["vm"],
+ *     isolationRuleFirstEntityFilterParams: [{
+ *         name: "Environment",
+ *         values: ["Dev"],
+ *     }],
+ *     isolationRuleFirstEntityFilterType: "CATEGORIES_MATCH_ALL",
+ *     isolationRuleSecondEntityFilterKindLists: ["vm"],
+ *     isolationRuleSecondEntityFilterParams: [{
+ *         name: "Environment",
+ *         values: ["Production"],
+ *     }],
+ *     isolationRuleSecondEntityFilterType: "CATEGORIES_MATCH_ALL",
+ * });
+ * const test = nutanix.getNetworkSecurityRuleOutput({
+ *     networkSecurityRuleId: isolation.id,
+ * });
+ * ```
+ */
 export function getNetworkSecurityRuleOutput(args: GetNetworkSecurityRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSecurityRuleResult> {
-    return pulumi.output(args).apply(a => getNetworkSecurityRule(a, opts))
+    return pulumi.output(args).apply((a: any) => getNetworkSecurityRule(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getNetworkSecurityRule.
  */
 export interface GetNetworkSecurityRuleOutputArgs {
+    /**
+     * Categories for the network_security_rule.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.GetNetworkSecurityRuleCategoryArgs>[]>;
     /**
-     * (Required) The ID for the rule you want to retrieve.
-     * * `name`: - The name for the network_security_rule.
-     * * `categories`: Categories for the network_security_rule.
-     * * `projectReference`: The reference to a project.
-     * * `ownerReference`: The reference to a user.
-     * * `apiVersion`
-     * * `description`: A description for network_security_rule.
-     * * `quarantineRuleAction`: These rules are used for quarantining suspected VMs. Target group is a required attribute. Empty inboundAllowList will not allow anything into target group. Empty outboundAllowList will allow everything from target group.
-     * * `quarantineRuleOutboundAllowList`:
-     * * `quarantineRuleTargetGroupDefaultInternalPolicy`: - Default policy for communication within target group.
-     * * `quarantineRuleTargetGroupPeerSpecificationType`: - Way to identify the object for which rule is applied.
-     * * `quarantineRuleTargetGroupFilterKindList`: - List of kinds associated with this filter.
-     * * `quarantineRuleTargetGroupFilterType`: - The type of the filter being used.
-     * * `quarantineRuleTargetGroupFilterParams`: - A list of category key and list of values.
-     * * `quarantineRuleInboundAllowList`:
-     * * `appRuleAction`: - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
-     * * `appRuleOutboundAllowList`:
-     * * `appRuleTargetGroupDefaultInternalPolicy`: - Default policy for communication within target group.
-     * * `appRuleTargetGroupPeerSpecificationType`: - Way to identify the object for which rule is applied.
-     * * `appRuleTargetGroupFilterKindList`: - List of kinds associated with this filter.
-     * * `appRuleTargetGroupFilterType`: - The type of the filter being used.
-     * * `appRuleTargetGroupFilterParams`: - A list of category key and list of values.
-     * * `appRuleInboundAllowList`: The set of categories that matching VMs need to have.
-     * * `adRuleAction`: - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
-     * * `adRuleOutboundAllowList`:
-     * * `adRuleTargetGroupDefaultInternalPolicy`: - Default policy for communication within target group.
-     * * `adRuleTargetGroupPeerSpecificationType`: - Way to identify the object for which rule is applied.
-     * * `adRuleTargetGroupFilterKindList`: - List of kinds associated with this filter.
-     * * `adRuleTargetGroupFilterType`: - The type of the filter being used.
-     * * `adRuleTargetGroupFilterParams`: - A list of category key and list of values.
-     * * `adRuleInboundAllowList`: The set of categories that matching VMs need to have.
-     * * `isolationRuleAction`: - These rules are used for environmental isolation.
-     * * `appRuleInboundAllowList`:
-     * * `isolationRuleFirstEntityFilterKindList`: - List of kinds associated with this filter.
-     * * `isolationRuleFirstEntityFilterType`: - The type of the filter being used.
-     * * `isolationRuleFirstEntityFilterParams`: - A list of category key and list of values.
-     * * `isolationRuleSecondEntityFilterKindList`: - List of kinds associated with this filter.
-     * * `isolationRuleSecondEntityFilterType`: - The type of the filter being used.
-     * * `isolationRuleSecondEntityFilterParams`: - A list of category key and list of values.
+     * Represents network security rule UUID
      */
     networkSecurityRuleId: pulumi.Input<string>;
 }

@@ -14,14 +14,32 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class FoundationCentralImageClusterFoundationInitConfigCluster
     {
+        /// <summary>
+        /// External management ip of the cluster.
+        /// </summary>
         public readonly string? ClusterExternalIp;
         public readonly bool? ClusterInitNow;
         public readonly bool? ClusterInitSuccessful;
         public readonly ImmutableArray<string> ClusterMembers;
+        /// <summary>
+        /// Name of the cluster.
+        /// </summary>
         public readonly string? ClusterName;
+        /// <summary>
+        /// List of dns servers for the cvms in the cluster.
+        /// </summary>
         public readonly string? CvmDnsServers;
+        /// <summary>
+        /// List of ntp servers for the cvms in the cluster.
+        /// </summary>
         public readonly string? CvmNtpServers;
+        /// <summary>
+        /// Redundancy factor of the cluster.
+        /// </summary>
         public readonly int? RedundancyFactor;
+        /// <summary>
+        /// Timezone to be set on the cluster.
+        /// </summary>
         public readonly string? Timezone;
 
         [OutputConstructor]

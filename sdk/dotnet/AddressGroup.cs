@@ -16,42 +16,53 @@ namespace PiersKarsenbarg.Nutanix
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var testAddress = new Nutanix.AddressGroup("testAddress", new()
     ///     {
-    ///         var testAddress = new Nutanix.AddressGroup("testAddress", new Nutanix.AddressGroupArgs
+    ///         Description = "test address groups resource",
+    ///         IpAddressBlockLists = new[]
     ///         {
-    ///             Description = "test address groups resource",
-    ///             IpAddressBlockLists = 
+    ///             new Nutanix.Inputs.AddressGroupIpAddressBlockListArgs
     ///             {
-    ///                 new Nutanix.Inputs.AddressGroupIpAddressBlockListArgs
-    ///                 {
-    ///                     Ip = "10.0.0.0",
-    ///                     PrefixLength = 24,
-    ///                 },
+    ///                 Ip = "10.0.0.0",
+    ///                 PrefixLength = 24,
     ///             },
-    ///         });
-    ///     }
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/addressGroup:AddressGroup")]
-    public partial class AddressGroup : Pulumi.CustomResource
+    public partial class AddressGroup : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// - (ReadOnly) Address Group string
+        /// </summary>
         [Output("addressGroupString")]
         public Output<string> AddressGroupString { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Description of the service group
+        /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) list of IP address blocks with their prefix length
+        /// </summary>
         [Output("ipAddressBlockLists")]
         public Output<ImmutableArray<Outputs.AddressGroupIpAddressBlockList>> IpAddressBlockLists { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) Name of the service group
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
@@ -100,48 +111,73 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class AddressGroupArgs : Pulumi.ResourceArgs
+    public sealed class AddressGroupArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) Description of the service group
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         [Input("ipAddressBlockLists", required: true)]
         private InputList<Inputs.AddressGroupIpAddressBlockListArgs>? _ipAddressBlockLists;
+
+        /// <summary>
+        /// - (Required) list of IP address blocks with their prefix length
+        /// </summary>
         public InputList<Inputs.AddressGroupIpAddressBlockListArgs> IpAddressBlockLists
         {
             get => _ipAddressBlockLists ?? (_ipAddressBlockLists = new InputList<Inputs.AddressGroupIpAddressBlockListArgs>());
             set => _ipAddressBlockLists = value;
         }
 
+        /// <summary>
+        /// - (Required) Name of the service group
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         public AddressGroupArgs()
         {
         }
+        public static new AddressGroupArgs Empty => new AddressGroupArgs();
     }
 
-    public sealed class AddressGroupState : Pulumi.ResourceArgs
+    public sealed class AddressGroupState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (ReadOnly) Address Group string
+        /// </summary>
         [Input("addressGroupString")]
         public Input<string>? AddressGroupString { get; set; }
 
+        /// <summary>
+        /// - (Optional) Description of the service group
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         [Input("ipAddressBlockLists")]
         private InputList<Inputs.AddressGroupIpAddressBlockListGetArgs>? _ipAddressBlockLists;
+
+        /// <summary>
+        /// - (Required) list of IP address blocks with their prefix length
+        /// </summary>
         public InputList<Inputs.AddressGroupIpAddressBlockListGetArgs> IpAddressBlockLists
         {
             get => _ipAddressBlockLists ?? (_ipAddressBlockLists = new InputList<Inputs.AddressGroupIpAddressBlockListGetArgs>());
             set => _ipAddressBlockLists = value;
         }
 
+        /// <summary>
+        /// - (Required) Name of the service group
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         public AddressGroupState()
         {
         }
+        public static new AddressGroupState Empty => new AddressGroupState();
     }
 }

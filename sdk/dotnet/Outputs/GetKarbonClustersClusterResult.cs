@@ -15,12 +15,24 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetKarbonClustersClusterResult
     {
         public readonly string DeploymentType;
+        /// <summary>
+        /// - Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetKarbonClustersClusterEtcdNodePoolResult> EtcdNodePools;
         public readonly string KubeapiServerIpv4Address;
+        /// <summary>
+        /// - .
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetKarbonClustersClusterMasterNodePoolResult> MasterNodePools;
+        /// <summary>
+        /// - Unique name of the node pool.
+        /// </summary>
         public readonly string Name;
         public readonly string Status;
         public readonly string Uuid;
+        /// <summary>
+        /// - K8s version of the cluster.
+        /// </summary>
         public readonly string Version;
         public readonly ImmutableArray<Outputs.GetKarbonClustersClusterWorkerNodePoolResult> WorkerNodePools;
 

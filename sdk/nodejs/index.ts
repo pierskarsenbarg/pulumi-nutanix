@@ -5,86 +5,406 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 // Export members:
-export * from "./accessControlPolicy";
-export * from "./addressGroup";
-export * from "./categoryKey";
-export * from "./categoryValue";
-export * from "./floatingIp";
-export * from "./foundationCentralApiKeys";
-export * from "./foundationCentralImageCluster";
-export * from "./foundationImage";
-export * from "./foundationImageNodes";
-export * from "./foundationIpmiConfig";
-export * from "./getAccessControlPolicies";
-export * from "./getAccessControlPolicy";
-export * from "./getAddressGroup";
-export * from "./getAddressGroups";
-export * from "./getAssertHelper";
-export * from "./getCategoryKey";
-export * from "./getCluster";
-export * from "./getClusters";
-export * from "./getFloatingIp";
-export * from "./getFloatingIps";
-export * from "./getFoundationCentralApiKeys";
-export * from "./getFoundationCentralClusterDetails";
-export * from "./getFoundationCentralImagedClustersList";
-export * from "./getFoundationCentralImagedNodeDetails";
-export * from "./getFoundationCentralImagedNodesList";
-export * from "./getFoundationCentralListApiKeys";
-export * from "./getFoundationDiscoverNodes";
-export * from "./getFoundationHypervisorIsos";
-export * from "./getFoundationNodPackages";
-export * from "./getFoundationNodeNetworkDetails";
-export * from "./getHost";
-export * from "./getHosts";
-export * from "./getImage";
-export * from "./getKarbonCluster";
-export * from "./getKarbonClusterKubeConfig";
-export * from "./getKarbonClusterSsh";
-export * from "./getKarbonClusters";
-export * from "./getKarbonPrivateRegistries";
-export * from "./getKarbonPrivateRegistry";
-export * from "./getNetworkSecurityRule";
-export * from "./getPbr";
-export * from "./getPbrs";
-export * from "./getPermission";
-export * from "./getPermissions";
-export * from "./getProject";
-export * from "./getProjects";
-export * from "./getProtectionRule";
-export * from "./getProtectionRules";
-export * from "./getRecoveryPlan";
-export * from "./getRecoveryPlans";
-export * from "./getRole";
-export * from "./getRoles";
-export * from "./getServiceGroup";
-export * from "./getServiceGroups";
-export * from "./getStaticRoutes";
-export * from "./getSubnet";
-export * from "./getSubnets";
-export * from "./getUser";
-export * from "./getUserGroup";
-export * from "./getUserGroups";
-export * from "./getUsers";
-export * from "./getVirtualMachine";
-export * from "./getVpc";
-export * from "./getVpcs";
-export * from "./image";
-export * from "./karbonCluster";
-export * from "./karbonPrivateRegistry";
-export * from "./networkSecurityRule";
-export * from "./pbr";
-export * from "./project";
-export * from "./protectionRule";
-export * from "./provider";
-export * from "./recoveryPlan";
-export * from "./role";
-export * from "./serviceGroup";
-export * from "./staticRoutes";
-export * from "./subnet";
-export * from "./user";
-export * from "./virtualMachine";
-export * from "./vpc";
+export { AccessControlPolicyArgs, AccessControlPolicyState } from "./accessControlPolicy";
+export type AccessControlPolicy = import("./accessControlPolicy").AccessControlPolicy;
+export const AccessControlPolicy: typeof import("./accessControlPolicy").AccessControlPolicy = null as any;
+utilities.lazyLoad(exports, ["AccessControlPolicy"], () => require("./accessControlPolicy"));
+
+export { AddressGroupArgs, AddressGroupState } from "./addressGroup";
+export type AddressGroup = import("./addressGroup").AddressGroup;
+export const AddressGroup: typeof import("./addressGroup").AddressGroup = null as any;
+utilities.lazyLoad(exports, ["AddressGroup"], () => require("./addressGroup"));
+
+export { CategoryKeyArgs, CategoryKeyState } from "./categoryKey";
+export type CategoryKey = import("./categoryKey").CategoryKey;
+export const CategoryKey: typeof import("./categoryKey").CategoryKey = null as any;
+utilities.lazyLoad(exports, ["CategoryKey"], () => require("./categoryKey"));
+
+export { CategoryValueArgs, CategoryValueState } from "./categoryValue";
+export type CategoryValue = import("./categoryValue").CategoryValue;
+export const CategoryValue: typeof import("./categoryValue").CategoryValue = null as any;
+utilities.lazyLoad(exports, ["CategoryValue"], () => require("./categoryValue"));
+
+export { FloatingIpArgs, FloatingIpState } from "./floatingIp";
+export type FloatingIp = import("./floatingIp").FloatingIp;
+export const FloatingIp: typeof import("./floatingIp").FloatingIp = null as any;
+utilities.lazyLoad(exports, ["FloatingIp"], () => require("./floatingIp"));
+
+export { FoundationCentralApiKeysArgs, FoundationCentralApiKeysState } from "./foundationCentralApiKeys";
+export type FoundationCentralApiKeys = import("./foundationCentralApiKeys").FoundationCentralApiKeys;
+export const FoundationCentralApiKeys: typeof import("./foundationCentralApiKeys").FoundationCentralApiKeys = null as any;
+utilities.lazyLoad(exports, ["FoundationCentralApiKeys"], () => require("./foundationCentralApiKeys"));
+
+export { FoundationCentralImageClusterArgs, FoundationCentralImageClusterState } from "./foundationCentralImageCluster";
+export type FoundationCentralImageCluster = import("./foundationCentralImageCluster").FoundationCentralImageCluster;
+export const FoundationCentralImageCluster: typeof import("./foundationCentralImageCluster").FoundationCentralImageCluster = null as any;
+utilities.lazyLoad(exports, ["FoundationCentralImageCluster"], () => require("./foundationCentralImageCluster"));
+
+export { FoundationImageArgs, FoundationImageState } from "./foundationImage";
+export type FoundationImage = import("./foundationImage").FoundationImage;
+export const FoundationImage: typeof import("./foundationImage").FoundationImage = null as any;
+utilities.lazyLoad(exports, ["FoundationImage"], () => require("./foundationImage"));
+
+export { FoundationImageNodesArgs, FoundationImageNodesState } from "./foundationImageNodes";
+export type FoundationImageNodes = import("./foundationImageNodes").FoundationImageNodes;
+export const FoundationImageNodes: typeof import("./foundationImageNodes").FoundationImageNodes = null as any;
+utilities.lazyLoad(exports, ["FoundationImageNodes"], () => require("./foundationImageNodes"));
+
+export { FoundationIpmiConfigArgs, FoundationIpmiConfigState } from "./foundationIpmiConfig";
+export type FoundationIpmiConfig = import("./foundationIpmiConfig").FoundationIpmiConfig;
+export const FoundationIpmiConfig: typeof import("./foundationIpmiConfig").FoundationIpmiConfig = null as any;
+utilities.lazyLoad(exports, ["FoundationIpmiConfig"], () => require("./foundationIpmiConfig"));
+
+export { GetAccessControlPoliciesArgs, GetAccessControlPoliciesResult, GetAccessControlPoliciesOutputArgs } from "./getAccessControlPolicies";
+export const getAccessControlPolicies: typeof import("./getAccessControlPolicies").getAccessControlPolicies = null as any;
+export const getAccessControlPoliciesOutput: typeof import("./getAccessControlPolicies").getAccessControlPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getAccessControlPolicies","getAccessControlPoliciesOutput"], () => require("./getAccessControlPolicies"));
+
+export { GetAccessControlPolicyArgs, GetAccessControlPolicyResult, GetAccessControlPolicyOutputArgs } from "./getAccessControlPolicy";
+export const getAccessControlPolicy: typeof import("./getAccessControlPolicy").getAccessControlPolicy = null as any;
+export const getAccessControlPolicyOutput: typeof import("./getAccessControlPolicy").getAccessControlPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getAccessControlPolicy","getAccessControlPolicyOutput"], () => require("./getAccessControlPolicy"));
+
+export { GetAddressGroupArgs, GetAddressGroupResult, GetAddressGroupOutputArgs } from "./getAddressGroup";
+export const getAddressGroup: typeof import("./getAddressGroup").getAddressGroup = null as any;
+export const getAddressGroupOutput: typeof import("./getAddressGroup").getAddressGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getAddressGroup","getAddressGroupOutput"], () => require("./getAddressGroup"));
+
+export { GetAddressGroupsArgs, GetAddressGroupsResult, GetAddressGroupsOutputArgs } from "./getAddressGroups";
+export const getAddressGroups: typeof import("./getAddressGroups").getAddressGroups = null as any;
+export const getAddressGroupsOutput: typeof import("./getAddressGroups").getAddressGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getAddressGroups","getAddressGroupsOutput"], () => require("./getAddressGroups"));
+
+export { GetAssertHelperArgs, GetAssertHelperResult, GetAssertHelperOutputArgs } from "./getAssertHelper";
+export const getAssertHelper: typeof import("./getAssertHelper").getAssertHelper = null as any;
+export const getAssertHelperOutput: typeof import("./getAssertHelper").getAssertHelperOutput = null as any;
+utilities.lazyLoad(exports, ["getAssertHelper","getAssertHelperOutput"], () => require("./getAssertHelper"));
+
+export { GetCategoryKeyArgs, GetCategoryKeyResult, GetCategoryKeyOutputArgs } from "./getCategoryKey";
+export const getCategoryKey: typeof import("./getCategoryKey").getCategoryKey = null as any;
+export const getCategoryKeyOutput: typeof import("./getCategoryKey").getCategoryKeyOutput = null as any;
+utilities.lazyLoad(exports, ["getCategoryKey","getCategoryKeyOutput"], () => require("./getCategoryKey"));
+
+export { GetClusterArgs, GetClusterResult, GetClusterOutputArgs } from "./getCluster";
+export const getCluster: typeof import("./getCluster").getCluster = null as any;
+export const getClusterOutput: typeof import("./getCluster").getClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getCluster","getClusterOutput"], () => require("./getCluster"));
+
+export { GetClustersResult } from "./getClusters";
+export const getClusters: typeof import("./getClusters").getClusters = null as any;
+export const getClustersOutput: typeof import("./getClusters").getClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getClusters","getClustersOutput"], () => require("./getClusters"));
+
+export { GetFloatingIpArgs, GetFloatingIpResult, GetFloatingIpOutputArgs } from "./getFloatingIp";
+export const getFloatingIp: typeof import("./getFloatingIp").getFloatingIp = null as any;
+export const getFloatingIpOutput: typeof import("./getFloatingIp").getFloatingIpOutput = null as any;
+utilities.lazyLoad(exports, ["getFloatingIp","getFloatingIpOutput"], () => require("./getFloatingIp"));
+
+export { GetFloatingIpsArgs, GetFloatingIpsResult, GetFloatingIpsOutputArgs } from "./getFloatingIps";
+export const getFloatingIps: typeof import("./getFloatingIps").getFloatingIps = null as any;
+export const getFloatingIpsOutput: typeof import("./getFloatingIps").getFloatingIpsOutput = null as any;
+utilities.lazyLoad(exports, ["getFloatingIps","getFloatingIpsOutput"], () => require("./getFloatingIps"));
+
+export { GetFoundationCentralApiKeysArgs, GetFoundationCentralApiKeysResult, GetFoundationCentralApiKeysOutputArgs } from "./getFoundationCentralApiKeys";
+export const getFoundationCentralApiKeys: typeof import("./getFoundationCentralApiKeys").getFoundationCentralApiKeys = null as any;
+export const getFoundationCentralApiKeysOutput: typeof import("./getFoundationCentralApiKeys").getFoundationCentralApiKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getFoundationCentralApiKeys","getFoundationCentralApiKeysOutput"], () => require("./getFoundationCentralApiKeys"));
+
+export { GetFoundationCentralClusterDetailsArgs, GetFoundationCentralClusterDetailsResult, GetFoundationCentralClusterDetailsOutputArgs } from "./getFoundationCentralClusterDetails";
+export const getFoundationCentralClusterDetails: typeof import("./getFoundationCentralClusterDetails").getFoundationCentralClusterDetails = null as any;
+export const getFoundationCentralClusterDetailsOutput: typeof import("./getFoundationCentralClusterDetails").getFoundationCentralClusterDetailsOutput = null as any;
+utilities.lazyLoad(exports, ["getFoundationCentralClusterDetails","getFoundationCentralClusterDetailsOutput"], () => require("./getFoundationCentralClusterDetails"));
+
+export { GetFoundationCentralImagedClustersListArgs, GetFoundationCentralImagedClustersListResult, GetFoundationCentralImagedClustersListOutputArgs } from "./getFoundationCentralImagedClustersList";
+export const getFoundationCentralImagedClustersList: typeof import("./getFoundationCentralImagedClustersList").getFoundationCentralImagedClustersList = null as any;
+export const getFoundationCentralImagedClustersListOutput: typeof import("./getFoundationCentralImagedClustersList").getFoundationCentralImagedClustersListOutput = null as any;
+utilities.lazyLoad(exports, ["getFoundationCentralImagedClustersList","getFoundationCentralImagedClustersListOutput"], () => require("./getFoundationCentralImagedClustersList"));
+
+export { GetFoundationCentralImagedNodeDetailsArgs, GetFoundationCentralImagedNodeDetailsResult, GetFoundationCentralImagedNodeDetailsOutputArgs } from "./getFoundationCentralImagedNodeDetails";
+export const getFoundationCentralImagedNodeDetails: typeof import("./getFoundationCentralImagedNodeDetails").getFoundationCentralImagedNodeDetails = null as any;
+export const getFoundationCentralImagedNodeDetailsOutput: typeof import("./getFoundationCentralImagedNodeDetails").getFoundationCentralImagedNodeDetailsOutput = null as any;
+utilities.lazyLoad(exports, ["getFoundationCentralImagedNodeDetails","getFoundationCentralImagedNodeDetailsOutput"], () => require("./getFoundationCentralImagedNodeDetails"));
+
+export { GetFoundationCentralImagedNodesListArgs, GetFoundationCentralImagedNodesListResult, GetFoundationCentralImagedNodesListOutputArgs } from "./getFoundationCentralImagedNodesList";
+export const getFoundationCentralImagedNodesList: typeof import("./getFoundationCentralImagedNodesList").getFoundationCentralImagedNodesList = null as any;
+export const getFoundationCentralImagedNodesListOutput: typeof import("./getFoundationCentralImagedNodesList").getFoundationCentralImagedNodesListOutput = null as any;
+utilities.lazyLoad(exports, ["getFoundationCentralImagedNodesList","getFoundationCentralImagedNodesListOutput"], () => require("./getFoundationCentralImagedNodesList"));
+
+export { GetFoundationCentralListApiKeysArgs, GetFoundationCentralListApiKeysResult, GetFoundationCentralListApiKeysOutputArgs } from "./getFoundationCentralListApiKeys";
+export const getFoundationCentralListApiKeys: typeof import("./getFoundationCentralListApiKeys").getFoundationCentralListApiKeys = null as any;
+export const getFoundationCentralListApiKeysOutput: typeof import("./getFoundationCentralListApiKeys").getFoundationCentralListApiKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getFoundationCentralListApiKeys","getFoundationCentralListApiKeysOutput"], () => require("./getFoundationCentralListApiKeys"));
+
+export { GetFoundationDiscoverNodesResult } from "./getFoundationDiscoverNodes";
+export const getFoundationDiscoverNodes: typeof import("./getFoundationDiscoverNodes").getFoundationDiscoverNodes = null as any;
+export const getFoundationDiscoverNodesOutput: typeof import("./getFoundationDiscoverNodes").getFoundationDiscoverNodesOutput = null as any;
+utilities.lazyLoad(exports, ["getFoundationDiscoverNodes","getFoundationDiscoverNodesOutput"], () => require("./getFoundationDiscoverNodes"));
+
+export { GetFoundationHypervisorIsosResult } from "./getFoundationHypervisorIsos";
+export const getFoundationHypervisorIsos: typeof import("./getFoundationHypervisorIsos").getFoundationHypervisorIsos = null as any;
+export const getFoundationHypervisorIsosOutput: typeof import("./getFoundationHypervisorIsos").getFoundationHypervisorIsosOutput = null as any;
+utilities.lazyLoad(exports, ["getFoundationHypervisorIsos","getFoundationHypervisorIsosOutput"], () => require("./getFoundationHypervisorIsos"));
+
+export { GetFoundationNodPackagesResult } from "./getFoundationNodPackages";
+export const getFoundationNodPackages: typeof import("./getFoundationNodPackages").getFoundationNodPackages = null as any;
+export const getFoundationNodPackagesOutput: typeof import("./getFoundationNodPackages").getFoundationNodPackagesOutput = null as any;
+utilities.lazyLoad(exports, ["getFoundationNodPackages","getFoundationNodPackagesOutput"], () => require("./getFoundationNodPackages"));
+
+export { GetFoundationNodeNetworkDetailsArgs, GetFoundationNodeNetworkDetailsResult, GetFoundationNodeNetworkDetailsOutputArgs } from "./getFoundationNodeNetworkDetails";
+export const getFoundationNodeNetworkDetails: typeof import("./getFoundationNodeNetworkDetails").getFoundationNodeNetworkDetails = null as any;
+export const getFoundationNodeNetworkDetailsOutput: typeof import("./getFoundationNodeNetworkDetails").getFoundationNodeNetworkDetailsOutput = null as any;
+utilities.lazyLoad(exports, ["getFoundationNodeNetworkDetails","getFoundationNodeNetworkDetailsOutput"], () => require("./getFoundationNodeNetworkDetails"));
+
+export { GetHostArgs, GetHostResult, GetHostOutputArgs } from "./getHost";
+export const getHost: typeof import("./getHost").getHost = null as any;
+export const getHostOutput: typeof import("./getHost").getHostOutput = null as any;
+utilities.lazyLoad(exports, ["getHost","getHostOutput"], () => require("./getHost"));
+
+export { GetHostsResult } from "./getHosts";
+export const getHosts: typeof import("./getHosts").getHosts = null as any;
+export const getHostsOutput: typeof import("./getHosts").getHostsOutput = null as any;
+utilities.lazyLoad(exports, ["getHosts","getHostsOutput"], () => require("./getHosts"));
+
+export { GetImageArgs, GetImageResult, GetImageOutputArgs } from "./getImage";
+export const getImage: typeof import("./getImage").getImage = null as any;
+export const getImageOutput: typeof import("./getImage").getImageOutput = null as any;
+utilities.lazyLoad(exports, ["getImage","getImageOutput"], () => require("./getImage"));
+
+export { GetKarbonClusterArgs, GetKarbonClusterResult, GetKarbonClusterOutputArgs } from "./getKarbonCluster";
+export const getKarbonCluster: typeof import("./getKarbonCluster").getKarbonCluster = null as any;
+export const getKarbonClusterOutput: typeof import("./getKarbonCluster").getKarbonClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getKarbonCluster","getKarbonClusterOutput"], () => require("./getKarbonCluster"));
+
+export { GetKarbonClusterKubeConfigArgs, GetKarbonClusterKubeConfigResult, GetKarbonClusterKubeConfigOutputArgs } from "./getKarbonClusterKubeConfig";
+export const getKarbonClusterKubeConfig: typeof import("./getKarbonClusterKubeConfig").getKarbonClusterKubeConfig = null as any;
+export const getKarbonClusterKubeConfigOutput: typeof import("./getKarbonClusterKubeConfig").getKarbonClusterKubeConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getKarbonClusterKubeConfig","getKarbonClusterKubeConfigOutput"], () => require("./getKarbonClusterKubeConfig"));
+
+export { GetKarbonClusterSshArgs, GetKarbonClusterSshResult, GetKarbonClusterSshOutputArgs } from "./getKarbonClusterSsh";
+export const getKarbonClusterSsh: typeof import("./getKarbonClusterSsh").getKarbonClusterSsh = null as any;
+export const getKarbonClusterSshOutput: typeof import("./getKarbonClusterSsh").getKarbonClusterSshOutput = null as any;
+utilities.lazyLoad(exports, ["getKarbonClusterSsh","getKarbonClusterSshOutput"], () => require("./getKarbonClusterSsh"));
+
+export { GetKarbonClustersResult } from "./getKarbonClusters";
+export const getKarbonClusters: typeof import("./getKarbonClusters").getKarbonClusters = null as any;
+export const getKarbonClustersOutput: typeof import("./getKarbonClusters").getKarbonClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getKarbonClusters","getKarbonClustersOutput"], () => require("./getKarbonClusters"));
+
+export { GetKarbonPrivateRegistriesResult } from "./getKarbonPrivateRegistries";
+export const getKarbonPrivateRegistries: typeof import("./getKarbonPrivateRegistries").getKarbonPrivateRegistries = null as any;
+export const getKarbonPrivateRegistriesOutput: typeof import("./getKarbonPrivateRegistries").getKarbonPrivateRegistriesOutput = null as any;
+utilities.lazyLoad(exports, ["getKarbonPrivateRegistries","getKarbonPrivateRegistriesOutput"], () => require("./getKarbonPrivateRegistries"));
+
+export { GetKarbonPrivateRegistryArgs, GetKarbonPrivateRegistryResult, GetKarbonPrivateRegistryOutputArgs } from "./getKarbonPrivateRegistry";
+export const getKarbonPrivateRegistry: typeof import("./getKarbonPrivateRegistry").getKarbonPrivateRegistry = null as any;
+export const getKarbonPrivateRegistryOutput: typeof import("./getKarbonPrivateRegistry").getKarbonPrivateRegistryOutput = null as any;
+utilities.lazyLoad(exports, ["getKarbonPrivateRegistry","getKarbonPrivateRegistryOutput"], () => require("./getKarbonPrivateRegistry"));
+
+export { GetNetworkSecurityRuleArgs, GetNetworkSecurityRuleResult, GetNetworkSecurityRuleOutputArgs } from "./getNetworkSecurityRule";
+export const getNetworkSecurityRule: typeof import("./getNetworkSecurityRule").getNetworkSecurityRule = null as any;
+export const getNetworkSecurityRuleOutput: typeof import("./getNetworkSecurityRule").getNetworkSecurityRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkSecurityRule","getNetworkSecurityRuleOutput"], () => require("./getNetworkSecurityRule"));
+
+export { GetPbrArgs, GetPbrResult, GetPbrOutputArgs } from "./getPbr";
+export const getPbr: typeof import("./getPbr").getPbr = null as any;
+export const getPbrOutput: typeof import("./getPbr").getPbrOutput = null as any;
+utilities.lazyLoad(exports, ["getPbr","getPbrOutput"], () => require("./getPbr"));
+
+export { GetPbrsArgs, GetPbrsResult, GetPbrsOutputArgs } from "./getPbrs";
+export const getPbrs: typeof import("./getPbrs").getPbrs = null as any;
+export const getPbrsOutput: typeof import("./getPbrs").getPbrsOutput = null as any;
+utilities.lazyLoad(exports, ["getPbrs","getPbrsOutput"], () => require("./getPbrs"));
+
+export { GetPermissionArgs, GetPermissionResult, GetPermissionOutputArgs } from "./getPermission";
+export const getPermission: typeof import("./getPermission").getPermission = null as any;
+export const getPermissionOutput: typeof import("./getPermission").getPermissionOutput = null as any;
+utilities.lazyLoad(exports, ["getPermission","getPermissionOutput"], () => require("./getPermission"));
+
+export { GetPermissionsArgs, GetPermissionsResult, GetPermissionsOutputArgs } from "./getPermissions";
+export const getPermissions: typeof import("./getPermissions").getPermissions = null as any;
+export const getPermissionsOutput: typeof import("./getPermissions").getPermissionsOutput = null as any;
+utilities.lazyLoad(exports, ["getPermissions","getPermissionsOutput"], () => require("./getPermissions"));
+
+export { GetProjectArgs, GetProjectResult, GetProjectOutputArgs } from "./getProject";
+export const getProject: typeof import("./getProject").getProject = null as any;
+export const getProjectOutput: typeof import("./getProject").getProjectOutput = null as any;
+utilities.lazyLoad(exports, ["getProject","getProjectOutput"], () => require("./getProject"));
+
+export { GetProjectsResult } from "./getProjects";
+export const getProjects: typeof import("./getProjects").getProjects = null as any;
+export const getProjectsOutput: typeof import("./getProjects").getProjectsOutput = null as any;
+utilities.lazyLoad(exports, ["getProjects","getProjectsOutput"], () => require("./getProjects"));
+
+export { GetProtectionRuleArgs, GetProtectionRuleResult, GetProtectionRuleOutputArgs } from "./getProtectionRule";
+export const getProtectionRule: typeof import("./getProtectionRule").getProtectionRule = null as any;
+export const getProtectionRuleOutput: typeof import("./getProtectionRule").getProtectionRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getProtectionRule","getProtectionRuleOutput"], () => require("./getProtectionRule"));
+
+export { GetProtectionRulesResult } from "./getProtectionRules";
+export const getProtectionRules: typeof import("./getProtectionRules").getProtectionRules = null as any;
+export const getProtectionRulesOutput: typeof import("./getProtectionRules").getProtectionRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getProtectionRules","getProtectionRulesOutput"], () => require("./getProtectionRules"));
+
+export { GetRecoveryPlanArgs, GetRecoveryPlanResult, GetRecoveryPlanOutputArgs } from "./getRecoveryPlan";
+export const getRecoveryPlan: typeof import("./getRecoveryPlan").getRecoveryPlan = null as any;
+export const getRecoveryPlanOutput: typeof import("./getRecoveryPlan").getRecoveryPlanOutput = null as any;
+utilities.lazyLoad(exports, ["getRecoveryPlan","getRecoveryPlanOutput"], () => require("./getRecoveryPlan"));
+
+export { GetRecoveryPlansResult } from "./getRecoveryPlans";
+export const getRecoveryPlans: typeof import("./getRecoveryPlans").getRecoveryPlans = null as any;
+export const getRecoveryPlansOutput: typeof import("./getRecoveryPlans").getRecoveryPlansOutput = null as any;
+utilities.lazyLoad(exports, ["getRecoveryPlans","getRecoveryPlansOutput"], () => require("./getRecoveryPlans"));
+
+export { GetRoleArgs, GetRoleResult, GetRoleOutputArgs } from "./getRole";
+export const getRole: typeof import("./getRole").getRole = null as any;
+export const getRoleOutput: typeof import("./getRole").getRoleOutput = null as any;
+utilities.lazyLoad(exports, ["getRole","getRoleOutput"], () => require("./getRole"));
+
+export { GetRolesArgs, GetRolesResult, GetRolesOutputArgs } from "./getRoles";
+export const getRoles: typeof import("./getRoles").getRoles = null as any;
+export const getRolesOutput: typeof import("./getRoles").getRolesOutput = null as any;
+utilities.lazyLoad(exports, ["getRoles","getRolesOutput"], () => require("./getRoles"));
+
+export { GetServiceGroupArgs, GetServiceGroupResult, GetServiceGroupOutputArgs } from "./getServiceGroup";
+export const getServiceGroup: typeof import("./getServiceGroup").getServiceGroup = null as any;
+export const getServiceGroupOutput: typeof import("./getServiceGroup").getServiceGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getServiceGroup","getServiceGroupOutput"], () => require("./getServiceGroup"));
+
+export { GetServiceGroupsArgs, GetServiceGroupsResult, GetServiceGroupsOutputArgs } from "./getServiceGroups";
+export const getServiceGroups: typeof import("./getServiceGroups").getServiceGroups = null as any;
+export const getServiceGroupsOutput: typeof import("./getServiceGroups").getServiceGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getServiceGroups","getServiceGroupsOutput"], () => require("./getServiceGroups"));
+
+export { GetStaticRoutesArgs, GetStaticRoutesResult, GetStaticRoutesOutputArgs } from "./getStaticRoutes";
+export const getStaticRoutes: typeof import("./getStaticRoutes").getStaticRoutes = null as any;
+export const getStaticRoutesOutput: typeof import("./getStaticRoutes").getStaticRoutesOutput = null as any;
+utilities.lazyLoad(exports, ["getStaticRoutes","getStaticRoutesOutput"], () => require("./getStaticRoutes"));
+
+export { GetSubnetArgs, GetSubnetResult, GetSubnetOutputArgs } from "./getSubnet";
+export const getSubnet: typeof import("./getSubnet").getSubnet = null as any;
+export const getSubnetOutput: typeof import("./getSubnet").getSubnetOutput = null as any;
+utilities.lazyLoad(exports, ["getSubnet","getSubnetOutput"], () => require("./getSubnet"));
+
+export { GetSubnetsArgs, GetSubnetsResult, GetSubnetsOutputArgs } from "./getSubnets";
+export const getSubnets: typeof import("./getSubnets").getSubnets = null as any;
+export const getSubnetsOutput: typeof import("./getSubnets").getSubnetsOutput = null as any;
+utilities.lazyLoad(exports, ["getSubnets","getSubnetsOutput"], () => require("./getSubnets"));
+
+export { GetUserArgs, GetUserResult, GetUserOutputArgs } from "./getUser";
+export const getUser: typeof import("./getUser").getUser = null as any;
+export const getUserOutput: typeof import("./getUser").getUserOutput = null as any;
+utilities.lazyLoad(exports, ["getUser","getUserOutput"], () => require("./getUser"));
+
+export { GetUserGroupArgs, GetUserGroupResult, GetUserGroupOutputArgs } from "./getUserGroup";
+export const getUserGroup: typeof import("./getUserGroup").getUserGroup = null as any;
+export const getUserGroupOutput: typeof import("./getUserGroup").getUserGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getUserGroup","getUserGroupOutput"], () => require("./getUserGroup"));
+
+export { GetUserGroupsArgs, GetUserGroupsResult, GetUserGroupsOutputArgs } from "./getUserGroups";
+export const getUserGroups: typeof import("./getUserGroups").getUserGroups = null as any;
+export const getUserGroupsOutput: typeof import("./getUserGroups").getUserGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getUserGroups","getUserGroupsOutput"], () => require("./getUserGroups"));
+
+export { GetUsersArgs, GetUsersResult, GetUsersOutputArgs } from "./getUsers";
+export const getUsers: typeof import("./getUsers").getUsers = null as any;
+export const getUsersOutput: typeof import("./getUsers").getUsersOutput = null as any;
+utilities.lazyLoad(exports, ["getUsers","getUsersOutput"], () => require("./getUsers"));
+
+export { GetVirtualMachineArgs, GetVirtualMachineResult, GetVirtualMachineOutputArgs } from "./getVirtualMachine";
+export const getVirtualMachine: typeof import("./getVirtualMachine").getVirtualMachine = null as any;
+export const getVirtualMachineOutput: typeof import("./getVirtualMachine").getVirtualMachineOutput = null as any;
+utilities.lazyLoad(exports, ["getVirtualMachine","getVirtualMachineOutput"], () => require("./getVirtualMachine"));
+
+export { GetVpcArgs, GetVpcResult, GetVpcOutputArgs } from "./getVpc";
+export const getVpc: typeof import("./getVpc").getVpc = null as any;
+export const getVpcOutput: typeof import("./getVpc").getVpcOutput = null as any;
+utilities.lazyLoad(exports, ["getVpc","getVpcOutput"], () => require("./getVpc"));
+
+export { GetVpcsArgs, GetVpcsResult, GetVpcsOutputArgs } from "./getVpcs";
+export const getVpcs: typeof import("./getVpcs").getVpcs = null as any;
+export const getVpcsOutput: typeof import("./getVpcs").getVpcsOutput = null as any;
+utilities.lazyLoad(exports, ["getVpcs","getVpcsOutput"], () => require("./getVpcs"));
+
+export { ImageArgs, ImageState } from "./image";
+export type Image = import("./image").Image;
+export const Image: typeof import("./image").Image = null as any;
+utilities.lazyLoad(exports, ["Image"], () => require("./image"));
+
+export { KarbonClusterArgs, KarbonClusterState } from "./karbonCluster";
+export type KarbonCluster = import("./karbonCluster").KarbonCluster;
+export const KarbonCluster: typeof import("./karbonCluster").KarbonCluster = null as any;
+utilities.lazyLoad(exports, ["KarbonCluster"], () => require("./karbonCluster"));
+
+export { KarbonPrivateRegistryArgs, KarbonPrivateRegistryState } from "./karbonPrivateRegistry";
+export type KarbonPrivateRegistry = import("./karbonPrivateRegistry").KarbonPrivateRegistry;
+export const KarbonPrivateRegistry: typeof import("./karbonPrivateRegistry").KarbonPrivateRegistry = null as any;
+utilities.lazyLoad(exports, ["KarbonPrivateRegistry"], () => require("./karbonPrivateRegistry"));
+
+export { NetworkSecurityRuleArgs, NetworkSecurityRuleState } from "./networkSecurityRule";
+export type NetworkSecurityRule = import("./networkSecurityRule").NetworkSecurityRule;
+export const NetworkSecurityRule: typeof import("./networkSecurityRule").NetworkSecurityRule = null as any;
+utilities.lazyLoad(exports, ["NetworkSecurityRule"], () => require("./networkSecurityRule"));
+
+export { PbrArgs, PbrState } from "./pbr";
+export type Pbr = import("./pbr").Pbr;
+export const Pbr: typeof import("./pbr").Pbr = null as any;
+utilities.lazyLoad(exports, ["Pbr"], () => require("./pbr"));
+
+export { ProjectArgs, ProjectState } from "./project";
+export type Project = import("./project").Project;
+export const Project: typeof import("./project").Project = null as any;
+utilities.lazyLoad(exports, ["Project"], () => require("./project"));
+
+export { ProtectionRuleArgs, ProtectionRuleState } from "./protectionRule";
+export type ProtectionRule = import("./protectionRule").ProtectionRule;
+export const ProtectionRule: typeof import("./protectionRule").ProtectionRule = null as any;
+utilities.lazyLoad(exports, ["ProtectionRule"], () => require("./protectionRule"));
+
+export { ProviderArgs } from "./provider";
+export type Provider = import("./provider").Provider;
+export const Provider: typeof import("./provider").Provider = null as any;
+utilities.lazyLoad(exports, ["Provider"], () => require("./provider"));
+
+export { RecoveryPlanArgs, RecoveryPlanState } from "./recoveryPlan";
+export type RecoveryPlan = import("./recoveryPlan").RecoveryPlan;
+export const RecoveryPlan: typeof import("./recoveryPlan").RecoveryPlan = null as any;
+utilities.lazyLoad(exports, ["RecoveryPlan"], () => require("./recoveryPlan"));
+
+export { RoleArgs, RoleState } from "./role";
+export type Role = import("./role").Role;
+export const Role: typeof import("./role").Role = null as any;
+utilities.lazyLoad(exports, ["Role"], () => require("./role"));
+
+export { ServiceGroupArgs, ServiceGroupState } from "./serviceGroup";
+export type ServiceGroup = import("./serviceGroup").ServiceGroup;
+export const ServiceGroup: typeof import("./serviceGroup").ServiceGroup = null as any;
+utilities.lazyLoad(exports, ["ServiceGroup"], () => require("./serviceGroup"));
+
+export { StaticRoutesArgs, StaticRoutesState } from "./staticRoutes";
+export type StaticRoutes = import("./staticRoutes").StaticRoutes;
+export const StaticRoutes: typeof import("./staticRoutes").StaticRoutes = null as any;
+utilities.lazyLoad(exports, ["StaticRoutes"], () => require("./staticRoutes"));
+
+export { SubnetArgs, SubnetState } from "./subnet";
+export type Subnet = import("./subnet").Subnet;
+export const Subnet: typeof import("./subnet").Subnet = null as any;
+utilities.lazyLoad(exports, ["Subnet"], () => require("./subnet"));
+
+export { UserArgs, UserState } from "./user";
+export type User = import("./user").User;
+export const User: typeof import("./user").User = null as any;
+utilities.lazyLoad(exports, ["User"], () => require("./user"));
+
+export { VirtualMachineArgs, VirtualMachineState } from "./virtualMachine";
+export type VirtualMachine = import("./virtualMachine").VirtualMachine;
+export const VirtualMachine: typeof import("./virtualMachine").VirtualMachine = null as any;
+utilities.lazyLoad(exports, ["VirtualMachine"], () => require("./virtualMachine"));
+
+export { VpcArgs, VpcState } from "./vpc";
+export type Vpc = import("./vpc").Vpc;
+export const Vpc: typeof import("./vpc").Vpc = null as any;
+utilities.lazyLoad(exports, ["Vpc"], () => require("./vpc"));
+
 
 // Export sub-modules:
 import * as config from "./config";
@@ -94,33 +414,6 @@ export {
     config,
     types,
 };
-
-// Import resources to register:
-import { AccessControlPolicy } from "./accessControlPolicy";
-import { AddressGroup } from "./addressGroup";
-import { CategoryKey } from "./categoryKey";
-import { CategoryValue } from "./categoryValue";
-import { FloatingIp } from "./floatingIp";
-import { FoundationCentralApiKeys } from "./foundationCentralApiKeys";
-import { FoundationCentralImageCluster } from "./foundationCentralImageCluster";
-import { FoundationImage } from "./foundationImage";
-import { FoundationImageNodes } from "./foundationImageNodes";
-import { FoundationIpmiConfig } from "./foundationIpmiConfig";
-import { Image } from "./image";
-import { KarbonCluster } from "./karbonCluster";
-import { KarbonPrivateRegistry } from "./karbonPrivateRegistry";
-import { NetworkSecurityRule } from "./networkSecurityRule";
-import { Pbr } from "./pbr";
-import { Project } from "./project";
-import { ProtectionRule } from "./protectionRule";
-import { RecoveryPlan } from "./recoveryPlan";
-import { Role } from "./role";
-import { ServiceGroup } from "./serviceGroup";
-import { StaticRoutes } from "./staticRoutes";
-import { Subnet } from "./subnet";
-import { User } from "./user";
-import { VirtualMachine } from "./virtualMachine";
-import { Vpc } from "./vpc";
 
 const _module = {
     version: utilities.getVersion(),
@@ -206,9 +499,6 @@ pulumi.runtime.registerResourceModule("nutanix", "index/subnet", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/user", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/virtualMachine", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/vpc", _module)
-
-import { Provider } from "./provider";
-
 pulumi.runtime.registerResourcePackage("nutanix", {
     version: utilities.getVersion(),
     constructProvider: (name: string, type: string, urn: string): pulumi.ProviderResource => {

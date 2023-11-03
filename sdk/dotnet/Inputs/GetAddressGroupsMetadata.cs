@@ -11,28 +11,44 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetAddressGroupsMetadataArgs : Pulumi.InvokeArgs
+    public sealed class GetAddressGroupsMetadataArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// (Optional) Filter in FIQL Syntax
+        /// </summary>
         [Input("filter", required: true)]
         public string Filter { get; set; } = null!;
 
         [Input("kind", required: true)]
         public string Kind { get; set; } = null!;
 
+        /// <summary>
+        /// (Optional) Integer
+        /// </summary>
         [Input("length", required: true)]
         public int Length { get; set; }
 
+        /// <summary>
+        /// (Optional) Integer
+        /// </summary>
         [Input("offset", required: true)]
         public int Offset { get; set; }
 
+        /// <summary>
+        /// (Optional) attribute to sort
+        /// </summary>
         [Input("sortAttribute", required: true)]
         public string SortAttribute { get; set; } = null!;
 
+        /// <summary>
+        /// (Optional) order of sorting
+        /// </summary>
         [Input("sortOrder", required: true)]
         public string SortOrder { get; set; } = null!;
 
         public GetAddressGroupsMetadataArgs()
         {
         }
+        public static new GetAddressGroupsMetadataArgs Empty => new GetAddressGroupsMetadataArgs();
     }
 }

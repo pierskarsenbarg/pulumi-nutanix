@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class PbrProtocolParametersIcmpArgs : Pulumi.ResourceArgs
+    public sealed class PbrProtocolParametersIcmpArgs : global::Pulumi.ResourceArgs
     {
         [Input("icmpCode", required: true)]
         public Input<int> IcmpCode { get; set; } = null!;
@@ -22,5 +22,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public PbrProtocolParametersIcmpArgs()
         {
         }
+        public static new PbrProtocolParametersIcmpArgs Empty => new PbrProtocolParametersIcmpArgs();
     }
 }

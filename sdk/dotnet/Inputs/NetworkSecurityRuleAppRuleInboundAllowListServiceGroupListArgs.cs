@@ -11,19 +11,29 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class NetworkSecurityRuleAppRuleInboundAllowListServiceGroupListArgs : Pulumi.ResourceArgs
+    public sealed class NetworkSecurityRuleAppRuleInboundAllowListServiceGroupListArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - The kind name (Default value: project)(Required).
+        /// </summary>
         [Input("kind")]
         public Input<string>? Kind { get; set; }
 
+        /// <summary>
+        /// - (Required) The name for the network_security_rule.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - the UUID(Required).
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 
         public NetworkSecurityRuleAppRuleInboundAllowListServiceGroupListArgs()
         {
         }
+        public static new NetworkSecurityRuleAppRuleInboundAllowListServiceGroupListArgs Empty => new NetworkSecurityRuleAppRuleInboundAllowListServiceGroupListArgs();
     }
 }

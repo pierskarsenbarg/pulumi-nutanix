@@ -7,36 +7,14 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes Karbon private registry entry
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.LookupKarbonPrivateRegistry(ctx, &GetKarbonPrivateRegistryArgs{
-// 			ClusterId: "<YOUR-CLUSTER-ID>",
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
 func LookupKarbonPrivateRegistry(ctx *pulumi.Context, args *LookupKarbonPrivateRegistryArgs, opts ...pulumi.InvokeOption) (*LookupKarbonPrivateRegistryResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupKarbonPrivateRegistryResult
 	err := ctx.Invoke("nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry", args, &rv, opts...)
 	if err != nil {
@@ -47,19 +25,24 @@ func LookupKarbonPrivateRegistry(ctx *pulumi.Context, args *LookupKarbonPrivateR
 
 // A collection of arguments for invoking getKarbonPrivateRegistry.
 type LookupKarbonPrivateRegistryArgs struct {
-	PrivateRegistryId   *string `pulumi:"privateRegistryId"`
+	// Represents karbon private registry uuid
+	PrivateRegistryId *string `pulumi:"privateRegistryId"`
+	// Represents the name of karbon private registry
 	PrivateRegistryName *string `pulumi:"privateRegistryName"`
 }
 
 // A collection of values returned by getKarbonPrivateRegistry.
 type LookupKarbonPrivateRegistryResult struct {
+	// - Endpoint of the private in format `url:port`.
 	Endpoint string `pulumi:"endpoint"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                  string  `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// - Name of the private registry.
 	Name                string  `pulumi:"name"`
 	PrivateRegistryId   *string `pulumi:"privateRegistryId"`
 	PrivateRegistryName *string `pulumi:"privateRegistryName"`
-	Uuid                string  `pulumi:"uuid"`
+	// - UUID of the private registry.
+	Uuid string `pulumi:"uuid"`
 }
 
 func LookupKarbonPrivateRegistryOutput(ctx *pulumi.Context, args LookupKarbonPrivateRegistryOutputArgs, opts ...pulumi.InvokeOption) LookupKarbonPrivateRegistryResultOutput {
@@ -77,7 +60,9 @@ func LookupKarbonPrivateRegistryOutput(ctx *pulumi.Context, args LookupKarbonPri
 
 // A collection of arguments for invoking getKarbonPrivateRegistry.
 type LookupKarbonPrivateRegistryOutputArgs struct {
-	PrivateRegistryId   pulumi.StringPtrInput `pulumi:"privateRegistryId"`
+	// Represents karbon private registry uuid
+	PrivateRegistryId pulumi.StringPtrInput `pulumi:"privateRegistryId"`
+	// Represents the name of karbon private registry
 	PrivateRegistryName pulumi.StringPtrInput `pulumi:"privateRegistryName"`
 }
 
@@ -100,6 +85,13 @@ func (o LookupKarbonPrivateRegistryResultOutput) ToLookupKarbonPrivateRegistryRe
 	return o
 }
 
+func (o LookupKarbonPrivateRegistryResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupKarbonPrivateRegistryResult] {
+	return pulumix.Output[LookupKarbonPrivateRegistryResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// - Endpoint of the private in format `url:port`.
 func (o LookupKarbonPrivateRegistryResultOutput) Endpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKarbonPrivateRegistryResult) string { return v.Endpoint }).(pulumi.StringOutput)
 }
@@ -109,6 +101,7 @@ func (o LookupKarbonPrivateRegistryResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKarbonPrivateRegistryResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - Name of the private registry.
 func (o LookupKarbonPrivateRegistryResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKarbonPrivateRegistryResult) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -121,6 +114,7 @@ func (o LookupKarbonPrivateRegistryResultOutput) PrivateRegistryName() pulumi.St
 	return o.ApplyT(func(v LookupKarbonPrivateRegistryResult) *string { return v.PrivateRegistryName }).(pulumi.StringPtrOutput)
 }
 
+// - UUID of the private registry.
 func (o LookupKarbonPrivateRegistryResultOutput) Uuid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKarbonPrivateRegistryResult) string { return v.Uuid }).(pulumi.StringOutput)
 }

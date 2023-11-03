@@ -14,19 +14,61 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetFoundationNodeNetworkDetailsNodeResult
     {
+        /// <summary>
+        /// Gateway of CVM.
+        /// </summary>
         public readonly string CvmGateway;
+        /// <summary>
+        /// CVM IP address.
+        /// </summary>
         public readonly string CvmIp;
+        /// <summary>
+        /// Netmask of CVM.
+        /// </summary>
         public readonly string CvmNetmask;
+        /// <summary>
+        /// CVM vlan tag.
+        /// </summary>
         public readonly string CvmVlanId;
+        /// <summary>
+        /// Only exists when failed to fetch node_info, with the reason of failure. all other fields will be empty.
+        /// </summary>
         public readonly string Error;
+        /// <summary>
+        /// Gateway of the hypervisor.
+        /// </summary>
         public readonly string HypervisorGateway;
+        /// <summary>
+        /// Hypervisor hostname.
+        /// </summary>
         public readonly string HypervisorHostname;
+        /// <summary>
+        /// Hypervisor IP address.
+        /// </summary>
         public readonly string HypervisorIp;
+        /// <summary>
+        /// Netmask of the hypervisor.
+        /// </summary>
         public readonly string HypervisorNetmask;
+        /// <summary>
+        /// IPMI gateway.
+        /// </summary>
         public readonly string IpmiGateway;
+        /// <summary>
+        /// IPMI IP address.
+        /// </summary>
         public readonly string IpmiIp;
+        /// <summary>
+        /// IPMI netmask.
+        /// </summary>
         public readonly string IpmiNetmask;
+        /// <summary>
+        /// IPV6 address of the CVM.
+        /// </summary>
         public readonly string Ipv6Address;
+        /// <summary>
+        /// Node serial.
+        /// </summary>
         public readonly string NodeSerial;
 
         [OutputConstructor]

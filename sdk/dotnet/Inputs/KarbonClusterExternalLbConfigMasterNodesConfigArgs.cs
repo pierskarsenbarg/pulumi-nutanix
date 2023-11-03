@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class KarbonClusterExternalLbConfigMasterNodesConfigArgs : Pulumi.ResourceArgs
+    public sealed class KarbonClusterExternalLbConfigMasterNodesConfigArgs : global::Pulumi.ResourceArgs
     {
         [Input("ipv4Address", required: true)]
         public Input<string> Ipv4Address { get; set; } = null!;
@@ -22,5 +22,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public KarbonClusterExternalLbConfigMasterNodesConfigArgs()
         {
         }
+        public static new KarbonClusterExternalLbConfigMasterNodesConfigArgs Empty => new KarbonClusterExternalLbConfigMasterNodesConfigArgs();
     }
 }

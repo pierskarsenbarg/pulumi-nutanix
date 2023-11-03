@@ -14,29 +14,49 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetUserGroupsEntityResult
     {
+        /// <summary>
+        /// - List of ACP references. See #reference for more details.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUserGroupsEntityAccessControlPolicyReferenceListResult> AccessControlPolicyReferenceLists;
         /// <summary>
         /// The version of the API.
-        /// * `metadata`: - The user group kind metadata.
-        /// * `categories`: - The Categories for the user group.
-        /// * `owner_reference`: - The reference to a user.
-        /// * `project_reference`: - The reference to a project.
-        /// * `user_group_type`: - The type of the user group.
-        /// * `display_name`: - The display name of the user group.
-        /// * `directory_service_user_group`: - A Directory Service User Group.
-        /// * `project_reference_list`: - A list of projects the user is part of. See #reference for more details.
-        /// * `access_control_policy_reference_list`: - List of ACP references. See #reference for more details.
-        /// * `state`: - The state of the entity.
         /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// - The Categories for the user group.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUserGroupsEntityCategoryResult> Categories;
+        /// <summary>
+        /// - A Directory Service User Group.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUserGroupsEntityDirectoryServiceUserGroupResult> DirectoryServiceUserGroups;
+        /// <summary>
+        /// - The display name of the user group.
+        /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// - The user group kind metadata.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
+        /// <summary>
+        /// - The reference to a user.
+        /// </summary>
         public readonly ImmutableDictionary<string, string> OwnerReference;
+        /// <summary>
+        /// - The reference to a project.
+        /// </summary>
         public readonly ImmutableDictionary<string, string>? ProjectReference;
+        /// <summary>
+        /// - A list of projects the user is part of. See #reference for more details.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUserGroupsEntityProjectReferenceListResult> ProjectReferenceLists;
+        /// <summary>
+        /// - The state of the entity.
+        /// </summary>
         public readonly string State;
+        /// <summary>
+        /// - The type of the user group.
+        /// </summary>
         public readonly string UserGroupType;
 
         [OutputConstructor]

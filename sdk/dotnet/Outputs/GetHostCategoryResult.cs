@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetHostCategoryResult
     {
+        /// <summary>
+        /// - the key name.
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - value of the key.
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

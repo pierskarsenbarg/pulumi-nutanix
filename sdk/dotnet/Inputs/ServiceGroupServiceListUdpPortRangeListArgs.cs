@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class ServiceGroupServiceListUdpPortRangeListArgs : Pulumi.ResourceArgs
+    public sealed class ServiceGroupServiceListUdpPortRangeListArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// End Port (Int)
@@ -19,11 +19,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("endPort")]
         public Input<int>? EndPort { get; set; }
 
+        /// <summary>
+        /// - (Optional) Start Port (Int)
+        /// </summary>
         [Input("startPort")]
         public Input<int>? StartPort { get; set; }
 
         public ServiceGroupServiceListUdpPortRangeListArgs()
         {
         }
+        public static new ServiceGroupServiceListUdpPortRangeListArgs Empty => new ServiceGroupServiceListUdpPortRangeListArgs();
     }
 }

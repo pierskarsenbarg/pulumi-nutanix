@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes the SSH config from a Karbon Cluster
@@ -18,31 +20,33 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetKarbonClusterSsh(ctx, &GetKarbonClusterSshArgs{
-// 			KarbonClusterId: pulumi.StringRef("<YOUR-CLUSTER-ID>"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = nutanix.GetKarbonClusterSsh(ctx, &GetKarbonClusterSshArgs{
-// 			KarbonClusterName: pulumi.StringRef("<YOUR-CLUSTER-NAME>"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetKarbonClusterSsh(ctx, &nutanix.GetKarbonClusterSshArgs{
+//				KarbonClusterId: pulumi.StringRef("<YOUR-CLUSTER-ID>"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.GetKarbonClusterSsh(ctx, &nutanix.GetKarbonClusterSshArgs{
+//				KarbonClusterName: pulumi.StringRef("<YOUR-CLUSTER-NAME>"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetKarbonClusterSsh(ctx *pulumi.Context, args *GetKarbonClusterSshArgs, opts ...pulumi.InvokeOption) (*GetKarbonClusterSshResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetKarbonClusterSshResult
 	err := ctx.Invoke("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", args, &rv, opts...)
 	if err != nil {
@@ -53,20 +57,26 @@ func GetKarbonClusterSsh(ctx *pulumi.Context, args *GetKarbonClusterSshArgs, opt
 
 // A collection of arguments for invoking getKarbonClusterSsh.
 type GetKarbonClusterSshArgs struct {
-	KarbonClusterId   *string `pulumi:"karbonClusterId"`
+	// Represents karbon cluster uuid
+	KarbonClusterId *string `pulumi:"karbonClusterId"`
+	// Represents the name of karbon cluster
 	KarbonClusterName *string `pulumi:"karbonClusterName"`
 }
 
 // A collection of values returned by getKarbonClusterSsh.
 type GetKarbonClusterSshResult struct {
+	// Certificate of the user for SSH access.
 	Certificate string `pulumi:"certificate"`
-	ExpiryTime  string `pulumi:"expiryTime"`
+	// Timestamp of certificate expiry in the ISO 8601 format (YYYY-MM-DDThh:mm:ss.sssZ).
+	ExpiryTime string `pulumi:"expiryTime"`
 	// The provider-assigned unique ID for this managed resource.
 	Id                string  `pulumi:"id"`
 	KarbonClusterId   *string `pulumi:"karbonClusterId"`
 	KarbonClusterName *string `pulumi:"karbonClusterName"`
-	PrivateKey        string  `pulumi:"privateKey"`
-	Username          string  `pulumi:"username"`
+	// The private key of the user for SSH access.
+	PrivateKey string `pulumi:"privateKey"`
+	// The username for which credentials are returned.
+	Username string `pulumi:"username"`
 }
 
 func GetKarbonClusterSshOutput(ctx *pulumi.Context, args GetKarbonClusterSshOutputArgs, opts ...pulumi.InvokeOption) GetKarbonClusterSshResultOutput {
@@ -84,7 +94,9 @@ func GetKarbonClusterSshOutput(ctx *pulumi.Context, args GetKarbonClusterSshOutp
 
 // A collection of arguments for invoking getKarbonClusterSsh.
 type GetKarbonClusterSshOutputArgs struct {
-	KarbonClusterId   pulumi.StringPtrInput `pulumi:"karbonClusterId"`
+	// Represents karbon cluster uuid
+	KarbonClusterId pulumi.StringPtrInput `pulumi:"karbonClusterId"`
+	// Represents the name of karbon cluster
 	KarbonClusterName pulumi.StringPtrInput `pulumi:"karbonClusterName"`
 }
 
@@ -107,10 +119,18 @@ func (o GetKarbonClusterSshResultOutput) ToGetKarbonClusterSshResultOutputWithCo
 	return o
 }
 
+func (o GetKarbonClusterSshResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetKarbonClusterSshResult] {
+	return pulumix.Output[GetKarbonClusterSshResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// Certificate of the user for SSH access.
 func (o GetKarbonClusterSshResultOutput) Certificate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClusterSshResult) string { return v.Certificate }).(pulumi.StringOutput)
 }
 
+// Timestamp of certificate expiry in the ISO 8601 format (YYYY-MM-DDThh:mm:ss.sssZ).
 func (o GetKarbonClusterSshResultOutput) ExpiryTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClusterSshResult) string { return v.ExpiryTime }).(pulumi.StringOutput)
 }
@@ -128,10 +148,12 @@ func (o GetKarbonClusterSshResultOutput) KarbonClusterName() pulumi.StringPtrOut
 	return o.ApplyT(func(v GetKarbonClusterSshResult) *string { return v.KarbonClusterName }).(pulumi.StringPtrOutput)
 }
 
+// The private key of the user for SSH access.
 func (o GetKarbonClusterSshResultOutput) PrivateKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClusterSshResult) string { return v.PrivateKey }).(pulumi.StringOutput)
 }
 
+// The username for which credentials are returned.
 func (o GetKarbonClusterSshResultOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClusterSshResult) string { return v.Username }).(pulumi.StringOutput)
 }

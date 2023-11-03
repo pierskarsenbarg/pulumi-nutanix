@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class AccessControlPolicyCategory
     {
+        /// <summary>
+        /// - (Optional) Name of the Access Control Policy.
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// - value of the key.
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

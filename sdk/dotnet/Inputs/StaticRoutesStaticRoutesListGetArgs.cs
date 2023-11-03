@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class StaticRoutesStaticRoutesListGetArgs : Pulumi.ResourceArgs
+    public sealed class StaticRoutesStaticRoutesListGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Destination ip with prefix.
@@ -20,7 +20,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<string> Destination { get; set; } = null!;
 
         /// <summary>
-        /// Reference to a subnet.
+        /// Reference to a subnet. Supported with 2022.x .
         /// </summary>
         [Input("externalSubnetReferenceUuid")]
         public Input<string>? ExternalSubnetReferenceUuid { get; set; }
@@ -34,5 +34,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public StaticRoutesStaticRoutesListGetArgs()
         {
         }
+        public static new StaticRoutesStaticRoutesListGetArgs Empty => new StaticRoutesStaticRoutesListGetArgs();
     }
 }

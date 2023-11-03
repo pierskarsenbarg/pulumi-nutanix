@@ -13,7 +13,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const nosPackages = pulumi.output(nutanix.getFoundationNodPackages());
+ * const nosPackages = nutanix.getFoundationNodPackages({});
  * ```
  * ## Note
  *
@@ -22,11 +22,8 @@ import * as utilities from "./utilities";
  * See detailed information in [Nutanix Foundation Nos Packages](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzODg-get-list-of-aos-packages-available-in-foundation).
  */
 export function getFoundationNodPackages(opts?: pulumi.InvokeOptions): Promise<GetFoundationNodPackagesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationNodPackages:getFoundationNodPackages", {
     }, opts);
 }
@@ -35,9 +32,32 @@ export function getFoundationNodPackages(opts?: pulumi.InvokeOptions): Promise<G
  * A collection of values returned by getFoundationNodPackages.
  */
 export interface GetFoundationNodPackagesResult {
+    /**
+     * List of nos packages file names present in foundation vm
+     */
     readonly entities: string[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+}
+/**
+ * Describes a list of nos (aos) packages present in foundation vm
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const nosPackages = nutanix.getFoundationNodPackages({});
+ * ```
+ * ## Note
+ *
+ * * This data source only lists .tar file names.
+ *
+ * See detailed information in [Nutanix Foundation Nos Packages](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzODg-get-list-of-aos-packages-available-in-foundation).
+ */
+export function getFoundationNodPackagesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationNodPackagesResult> {
+    return pulumi.output(getFoundationNodPackages(opts))
 }

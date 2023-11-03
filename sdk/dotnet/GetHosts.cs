@@ -16,7 +16,13 @@ namespace PiersKarsenbarg.Nutanix
         /// Describes a list of hosts
         /// </summary>
         public static Task<GetHostsResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetHostsResult>("nutanix:index/getHosts:getHosts", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetHostsResult>("nutanix:index/getHosts:getHosts", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// Describes a list of hosts
+        /// </summary>
+        public static Output<GetHostsResult> Invoke(InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetHostsResult>("nutanix:index/getHosts:getHosts", InvokeArgs.Empty, options.WithDefaults());
     }
 
 
@@ -25,27 +31,11 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// The API version.
-        /// * `gpu_driver_version`: - Host GPU driver version.
-        /// * `failover_cluster`: - Hyper-V failover cluster.
-        /// * `ipmi`: - Host IPMI info.
-        /// * `cpu_model`: - Host CPU model.
-        /// * `host_nics_id_list`: - Host NICs.
-        /// * `num_cpu_sockets`: - Number of CPU sockets.
-        /// * `windows_domain`: - The name of the node to be renamed to during domain-join. If not given,a new name will be automatically assigned.
-        /// * `gpu_list`: - List of GPUs on the host.
-        /// * `serial_number`: - Node serial number.
-        /// * `cpu_capacity_hz`: - Host CPU capacity.
-        /// * `memory_capacity_mib`: - Host memory capacity in MiB.
-        /// * `host_disks_reference_list`: - The reference to a disk.
-        /// * `monitoring_state`: - Host monitoring status.
-        /// * `hypervisor`: - Host Hypervisor information.
-        /// * `host_type`: - Host type.
-        /// * `num_cpu_cores`: - Number of CPU cores on Host.
-        /// * `rackable_unit_reference`: - The reference to a rackable_unit.
-        /// * `controller_vm`: - Host controller vm information.
-        /// * `block`: - Host block config info.
         /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// List of Hosts
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetHostsEntityResult> Entities;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.

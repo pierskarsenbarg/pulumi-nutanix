@@ -14,8 +14,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetRecoveryPlansEntityResult
     {
+        /// <summary>
+        /// version of the API
+        /// </summary>
         public readonly string ApiVersion;
         public readonly ImmutableArray<Outputs.GetRecoveryPlansEntityCategoryResult> Categories;
+        /// <summary>
+        /// A description for recovery plan.
+        /// </summary>
         public readonly string Description;
         public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>

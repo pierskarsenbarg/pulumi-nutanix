@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,16 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const subnets = pulumi.output(nutanix.getSubnets());
+ * const subnets = nutanix.getSubnets({});
  * ```
  */
 export function getSubnets(args?: GetSubnetsArgs, opts?: pulumi.InvokeOptions): Promise<GetSubnetsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getSubnets:getSubnets", {
         "metadatas": args.metadatas,
     }, opts);
@@ -33,6 +31,9 @@ export function getSubnets(args?: GetSubnetsArgs, opts?: pulumi.InvokeOptions): 
  * A collection of arguments for invoking getSubnets.
  */
 export interface GetSubnetsArgs {
+    /**
+     * The subnet kind metadata.
+     */
     metadatas?: inputs.GetSubnetsMetadata[];
 }
 
@@ -40,22 +41,45 @@ export interface GetSubnetsArgs {
  * A collection of values returned by getSubnets.
  */
 export interface GetSubnetsResult {
+    /**
+     * version of the API
+     */
     readonly apiVersion: string;
+    /**
+     * List of Subnets
+     */
     readonly entities: outputs.GetSubnetsEntity[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * The subnet kind metadata.
+     */
     readonly metadatas: outputs.GetSubnetsMetadata[];
 }
-
+/**
+ * Describes a list of subnets
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const subnets = nutanix.getSubnets({});
+ * ```
+ */
 export function getSubnetsOutput(args?: GetSubnetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubnetsResult> {
-    return pulumi.output(args).apply(a => getSubnets(a, opts))
+    return pulumi.output(args).apply((a: any) => getSubnets(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getSubnets.
  */
 export interface GetSubnetsOutputArgs {
+    /**
+     * The subnet kind metadata.
+     */
     metadatas?: pulumi.Input<pulumi.Input<inputs.GetSubnetsMetadataArgs>[]>;
 }

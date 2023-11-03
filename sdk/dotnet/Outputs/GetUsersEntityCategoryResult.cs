@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetUsersEntityCategoryResult
     {
+        /// <summary>
+        /// - the name(Optional).
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - value of the key.
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

@@ -7,8 +7,10 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a resource to create a role based on the input parameters.
@@ -19,51 +21,60 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.NewRole(ctx, "test", &nutanix.RoleArgs{
-// 			Description: pulumi.String("DESCRIPTION"),
-// 			PermissionReferenceLists: RolePermissionReferenceListArray{
-// 				&RolePermissionReferenceListArgs{
-// 					Kind: pulumi.String("permission"),
-// 					Uuid: pulumi.String("ID OF PERMISSION"),
-// 				},
-// 				&RolePermissionReferenceListArgs{
-// 					Kind: pulumi.String("permission"),
-// 					Uuid: pulumi.String("ID OF PERMISSION"),
-// 				},
-// 				&RolePermissionReferenceListArgs{
-// 					Kind: pulumi.String("permission"),
-// 					Uuid: pulumi.String("ID OF PERMISSION"),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewRole(ctx, "test", &nutanix.RoleArgs{
+//				Description: pulumi.String("DESCRIPTION"),
+//				PermissionReferenceLists: nutanix.RolePermissionReferenceListArray{
+//					&nutanix.RolePermissionReferenceListArgs{
+//						Kind: pulumi.String("permission"),
+//						Uuid: pulumi.String("ID OF PERMISSION"),
+//					},
+//					&nutanix.RolePermissionReferenceListArgs{
+//						Kind: pulumi.String("permission"),
+//						Uuid: pulumi.String("ID OF PERMISSION"),
+//					},
+//					&nutanix.RolePermissionReferenceListArgs{
+//						Kind: pulumi.String("permission"),
+//						Uuid: pulumi.String("ID OF PERMISSION"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type Role struct {
 	pulumi.CustomResourceState
 
 	// The version of the API.
-	// * `state`: - The state of the role.
-	ApiVersion               pulumi.StringOutput                    `pulumi:"apiVersion"`
-	Categories               RoleCategoryArrayOutput                `pulumi:"categories"`
-	Description              pulumi.StringOutput                    `pulumi:"description"`
-	Metadata                 pulumi.StringMapOutput                 `pulumi:"metadata"`
-	Name                     pulumi.StringOutput                    `pulumi:"name"`
-	OwnerReference           RoleOwnerReferenceOutput               `pulumi:"ownerReference"`
+	ApiVersion pulumi.StringOutput `pulumi:"apiVersion"`
+	// - (Optional) Categories for the role.
+	Categories RoleCategoryArrayOutput `pulumi:"categories"`
+	// - (Optional) The description of the role.
+	Description pulumi.StringOutput `pulumi:"description"`
+	// - The role kind metadata.
+	Metadata pulumi.StringMapOutput `pulumi:"metadata"`
+	// - (Optional) Name of the role.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// - (Optional) The reference to a user.
+	OwnerReference RoleOwnerReferenceOutput `pulumi:"ownerReference"`
+	// - (Required) List of permission references.
 	PermissionReferenceLists RolePermissionReferenceListArrayOutput `pulumi:"permissionReferenceLists"`
-	ProjectReference         RoleProjectReferenceOutput             `pulumi:"projectReference"`
-	State                    pulumi.StringOutput                    `pulumi:"state"`
+	// - (Optional) The reference to a project.
+	ProjectReference RoleProjectReferenceOutput `pulumi:"projectReference"`
+	// - The state of the role.
+	State pulumi.StringOutput `pulumi:"state"`
 }
 
 // NewRole registers a new resource with the given unique name, arguments, and options.
@@ -76,7 +87,7 @@ func NewRole(ctx *pulumi.Context,
 	if args.PermissionReferenceLists == nil {
 		return nil, errors.New("invalid value for required argument 'PermissionReferenceLists'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Role
 	err := ctx.RegisterResource("nutanix:index/role:Role", name, args, &resource, opts...)
 	if err != nil {
@@ -100,30 +111,44 @@ func GetRole(ctx *pulumi.Context,
 // Input properties used for looking up and filtering Role resources.
 type roleState struct {
 	// The version of the API.
-	// * `state`: - The state of the role.
-	ApiVersion               *string                       `pulumi:"apiVersion"`
-	Categories               []RoleCategory                `pulumi:"categories"`
-	Description              *string                       `pulumi:"description"`
-	Metadata                 map[string]string             `pulumi:"metadata"`
-	Name                     *string                       `pulumi:"name"`
-	OwnerReference           *RoleOwnerReference           `pulumi:"ownerReference"`
+	ApiVersion *string `pulumi:"apiVersion"`
+	// - (Optional) Categories for the role.
+	Categories []RoleCategory `pulumi:"categories"`
+	// - (Optional) The description of the role.
+	Description *string `pulumi:"description"`
+	// - The role kind metadata.
+	Metadata map[string]string `pulumi:"metadata"`
+	// - (Optional) Name of the role.
+	Name *string `pulumi:"name"`
+	// - (Optional) The reference to a user.
+	OwnerReference *RoleOwnerReference `pulumi:"ownerReference"`
+	// - (Required) List of permission references.
 	PermissionReferenceLists []RolePermissionReferenceList `pulumi:"permissionReferenceLists"`
-	ProjectReference         *RoleProjectReference         `pulumi:"projectReference"`
-	State                    *string                       `pulumi:"state"`
+	// - (Optional) The reference to a project.
+	ProjectReference *RoleProjectReference `pulumi:"projectReference"`
+	// - The state of the role.
+	State *string `pulumi:"state"`
 }
 
 type RoleState struct {
 	// The version of the API.
-	// * `state`: - The state of the role.
-	ApiVersion               pulumi.StringPtrInput
-	Categories               RoleCategoryArrayInput
-	Description              pulumi.StringPtrInput
-	Metadata                 pulumi.StringMapInput
-	Name                     pulumi.StringPtrInput
-	OwnerReference           RoleOwnerReferencePtrInput
+	ApiVersion pulumi.StringPtrInput
+	// - (Optional) Categories for the role.
+	Categories RoleCategoryArrayInput
+	// - (Optional) The description of the role.
+	Description pulumi.StringPtrInput
+	// - The role kind metadata.
+	Metadata pulumi.StringMapInput
+	// - (Optional) Name of the role.
+	Name pulumi.StringPtrInput
+	// - (Optional) The reference to a user.
+	OwnerReference RoleOwnerReferencePtrInput
+	// - (Required) List of permission references.
 	PermissionReferenceLists RolePermissionReferenceListArrayInput
-	ProjectReference         RoleProjectReferencePtrInput
-	State                    pulumi.StringPtrInput
+	// - (Optional) The reference to a project.
+	ProjectReference RoleProjectReferencePtrInput
+	// - The state of the role.
+	State pulumi.StringPtrInput
 }
 
 func (RoleState) ElementType() reflect.Type {
@@ -131,22 +156,34 @@ func (RoleState) ElementType() reflect.Type {
 }
 
 type roleArgs struct {
-	Categories               []RoleCategory                `pulumi:"categories"`
-	Description              *string                       `pulumi:"description"`
-	Name                     *string                       `pulumi:"name"`
-	OwnerReference           *RoleOwnerReference           `pulumi:"ownerReference"`
+	// - (Optional) Categories for the role.
+	Categories []RoleCategory `pulumi:"categories"`
+	// - (Optional) The description of the role.
+	Description *string `pulumi:"description"`
+	// - (Optional) Name of the role.
+	Name *string `pulumi:"name"`
+	// - (Optional) The reference to a user.
+	OwnerReference *RoleOwnerReference `pulumi:"ownerReference"`
+	// - (Required) List of permission references.
 	PermissionReferenceLists []RolePermissionReferenceList `pulumi:"permissionReferenceLists"`
-	ProjectReference         *RoleProjectReference         `pulumi:"projectReference"`
+	// - (Optional) The reference to a project.
+	ProjectReference *RoleProjectReference `pulumi:"projectReference"`
 }
 
 // The set of arguments for constructing a Role resource.
 type RoleArgs struct {
-	Categories               RoleCategoryArrayInput
-	Description              pulumi.StringPtrInput
-	Name                     pulumi.StringPtrInput
-	OwnerReference           RoleOwnerReferencePtrInput
+	// - (Optional) Categories for the role.
+	Categories RoleCategoryArrayInput
+	// - (Optional) The description of the role.
+	Description pulumi.StringPtrInput
+	// - (Optional) Name of the role.
+	Name pulumi.StringPtrInput
+	// - (Optional) The reference to a user.
+	OwnerReference RoleOwnerReferencePtrInput
+	// - (Required) List of permission references.
 	PermissionReferenceLists RolePermissionReferenceListArrayInput
-	ProjectReference         RoleProjectReferencePtrInput
+	// - (Optional) The reference to a project.
+	ProjectReference RoleProjectReferencePtrInput
 }
 
 func (RoleArgs) ElementType() reflect.Type {
@@ -172,10 +209,16 @@ func (i *Role) ToRoleOutputWithContext(ctx context.Context) RoleOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RoleOutput)
 }
 
+func (i *Role) ToOutput(ctx context.Context) pulumix.Output[*Role] {
+	return pulumix.Output[*Role]{
+		OutputState: i.ToRoleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // RoleArrayInput is an input type that accepts RoleArray and RoleArrayOutput values.
 // You can construct a concrete instance of `RoleArrayInput` via:
 //
-//          RoleArray{ RoleArgs{...} }
+//	RoleArray{ RoleArgs{...} }
 type RoleArrayInput interface {
 	pulumi.Input
 
@@ -197,10 +240,16 @@ func (i RoleArray) ToRoleArrayOutputWithContext(ctx context.Context) RoleArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(RoleArrayOutput)
 }
 
+func (i RoleArray) ToOutput(ctx context.Context) pulumix.Output[[]*Role] {
+	return pulumix.Output[[]*Role]{
+		OutputState: i.ToRoleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // RoleMapInput is an input type that accepts RoleMap and RoleMapOutput values.
 // You can construct a concrete instance of `RoleMapInput` via:
 //
-//          RoleMap{ "key": RoleArgs{...} }
+//	RoleMap{ "key": RoleArgs{...} }
 type RoleMapInput interface {
 	pulumi.Input
 
@@ -222,6 +271,12 @@ func (i RoleMap) ToRoleMapOutputWithContext(ctx context.Context) RoleMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RoleMapOutput)
 }
 
+func (i RoleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Role] {
+	return pulumix.Output[map[string]*Role]{
+		OutputState: i.ToRoleMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type RoleOutput struct{ *pulumi.OutputState }
 
 func (RoleOutput) ElementType() reflect.Type {
@@ -236,40 +291,53 @@ func (o RoleOutput) ToRoleOutputWithContext(ctx context.Context) RoleOutput {
 	return o
 }
 
+func (o RoleOutput) ToOutput(ctx context.Context) pulumix.Output[*Role] {
+	return pulumix.Output[*Role]{
+		OutputState: o.OutputState,
+	}
+}
+
 // The version of the API.
-// * `state`: - The state of the role.
 func (o RoleOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Role) pulumi.StringOutput { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// - (Optional) Categories for the role.
 func (o RoleOutput) Categories() RoleCategoryArrayOutput {
 	return o.ApplyT(func(v *Role) RoleCategoryArrayOutput { return v.Categories }).(RoleCategoryArrayOutput)
 }
 
+// - (Optional) The description of the role.
 func (o RoleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Role) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
+// - The role kind metadata.
 func (o RoleOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Role) pulumi.StringMapOutput { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
+// - (Optional) Name of the role.
 func (o RoleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Role) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// - (Optional) The reference to a user.
 func (o RoleOutput) OwnerReference() RoleOwnerReferenceOutput {
 	return o.ApplyT(func(v *Role) RoleOwnerReferenceOutput { return v.OwnerReference }).(RoleOwnerReferenceOutput)
 }
 
+// - (Required) List of permission references.
 func (o RoleOutput) PermissionReferenceLists() RolePermissionReferenceListArrayOutput {
 	return o.ApplyT(func(v *Role) RolePermissionReferenceListArrayOutput { return v.PermissionReferenceLists }).(RolePermissionReferenceListArrayOutput)
 }
 
+// - (Optional) The reference to a project.
 func (o RoleOutput) ProjectReference() RoleProjectReferenceOutput {
 	return o.ApplyT(func(v *Role) RoleProjectReferenceOutput { return v.ProjectReference }).(RoleProjectReferenceOutput)
 }
 
+// - The state of the role.
 func (o RoleOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Role) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
@@ -286,6 +354,12 @@ func (o RoleArrayOutput) ToRoleArrayOutput() RoleArrayOutput {
 
 func (o RoleArrayOutput) ToRoleArrayOutputWithContext(ctx context.Context) RoleArrayOutput {
 	return o
+}
+
+func (o RoleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Role] {
+	return pulumix.Output[[]*Role]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o RoleArrayOutput) Index(i pulumi.IntInput) RoleOutput {
@@ -306,6 +380,12 @@ func (o RoleMapOutput) ToRoleMapOutput() RoleMapOutput {
 
 func (o RoleMapOutput) ToRoleMapOutputWithContext(ctx context.Context) RoleMapOutput {
 	return o
+}
+
+func (o RoleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Role] {
+	return pulumix.Output[map[string]*Role]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o RoleMapOutput) MapIndex(k pulumi.StringInput) RoleOutput {

@@ -11,21 +11,32 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class ServiceGroupServiceListArgs : Pulumi.ResourceArgs
+    public sealed class ServiceGroupServiceListArgs : global::Pulumi.ResourceArgs
     {
         [Input("icmpTypeCodeLists")]
         private InputList<Inputs.ServiceGroupServiceListIcmpTypeCodeListArgs>? _icmpTypeCodeLists;
+
+        /// <summary>
+        /// - (Optional) ICMP type code list
+        /// </summary>
         public InputList<Inputs.ServiceGroupServiceListIcmpTypeCodeListArgs> IcmpTypeCodeLists
         {
             get => _icmpTypeCodeLists ?? (_icmpTypeCodeLists = new InputList<Inputs.ServiceGroupServiceListIcmpTypeCodeListArgs>());
             set => _icmpTypeCodeLists = value;
         }
 
+        /// <summary>
+        /// - (Optional) The UserPrincipalName of the user from the directory service.
+        /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }
 
         [Input("tcpPortRangeLists")]
         private InputList<Inputs.ServiceGroupServiceListTcpPortRangeListArgs>? _tcpPortRangeLists;
+
+        /// <summary>
+        /// - (Optional) TCP Port range list
+        /// </summary>
         public InputList<Inputs.ServiceGroupServiceListTcpPortRangeListArgs> TcpPortRangeLists
         {
             get => _tcpPortRangeLists ?? (_tcpPortRangeLists = new InputList<Inputs.ServiceGroupServiceListTcpPortRangeListArgs>());
@@ -34,6 +45,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("udpPortRangeLists")]
         private InputList<Inputs.ServiceGroupServiceListUdpPortRangeListArgs>? _udpPortRangeLists;
+
+        /// <summary>
+        /// - (Optional) UDP port range list
+        /// </summary>
         public InputList<Inputs.ServiceGroupServiceListUdpPortRangeListArgs> UdpPortRangeLists
         {
             get => _udpPortRangeLists ?? (_udpPortRangeLists = new InputList<Inputs.ServiceGroupServiceListUdpPortRangeListArgs>());
@@ -43,5 +58,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public ServiceGroupServiceListArgs()
         {
         }
+        public static new ServiceGroupServiceListArgs Empty => new ServiceGroupServiceListArgs();
     }
 }

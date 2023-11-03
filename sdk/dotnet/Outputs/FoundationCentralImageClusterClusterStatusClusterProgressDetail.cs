@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class FoundationCentralImageClusterClusterStatusClusterProgressDetail
     {
+        /// <summary>
+        /// Name of the cluster.
+        /// </summary>
         public readonly string? ClusterName;
         public readonly ImmutableArray<string> MessageLists;
         public readonly double? PercentComplete;

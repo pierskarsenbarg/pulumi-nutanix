@@ -15,11 +15,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class FoundationImageNodesHypervisorIsoKvm
     {
         /// <summary>
-        /// :- (Required) Filename of hypervisor ISO.
+        /// - (Required) Filename of hypervisor ISO.
         /// </summary>
         public readonly string Checksum;
         /// <summary>
-        /// :- (Required) Checksum for ISO file.
+        /// - (Required) Checksum for ISO file.
         /// </summary>
         public readonly string Filename;
 

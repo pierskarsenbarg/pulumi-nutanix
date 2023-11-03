@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,15 +15,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const projects = pulumi.output(nutanix.getProjects());
+ * const projects = nutanix.getProjects({});
  * ```
  */
 export function getProjects(opts?: pulumi.InvokeOptions): Promise<GetProjectsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getProjects:getProjects", {
     }, opts);
 }
@@ -31,10 +29,31 @@ export function getProjects(opts?: pulumi.InvokeOptions): Promise<GetProjectsRes
  * A collection of values returned by getProjects.
  */
 export interface GetProjectsResult {
+    /**
+     * version of the API
+     */
     readonly apiVersion: string;
+    /**
+     * List of Projects
+     */
     readonly entities: outputs.GetProjectsEntity[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+}
+/**
+ * Describes Projects
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const projects = nutanix.getProjects({});
+ * ```
+ */
+export function getProjectsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetProjectsResult> {
+    return pulumi.output(getProjects(opts))
 }

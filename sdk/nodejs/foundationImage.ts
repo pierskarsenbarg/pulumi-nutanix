@@ -11,7 +11,7 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const nos_image = new nutanix.FoundationImage("nos-image", {
  *     filename: "nos_image.tar",
@@ -58,11 +58,29 @@ export class FoundationImage extends pulumi.CustomResource {
         return obj['__pulumiType'] === FoundationImage.__pulumiType;
     }
 
+    /**
+     * - (Required) Name of installer file to be kept in foundation vm.
+     */
     public readonly filename!: pulumi.Output<string>;
+    /**
+     * - If hypervisor ISO is in whitelist.
+     */
     public /*out*/ readonly inWhitelist!: pulumi.Output<boolean>;
+    /**
+     * - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
+     */
     public readonly installerType!: pulumi.Output<string>;
+    /**
+     * - md5sum of the ISO.
+     */
     public /*out*/ readonly md5sum!: pulumi.Output<string>;
+    /**
+     * - file location in foundation vm
+     */
     public /*out*/ readonly name!: pulumi.Output<string>;
+    /**
+     * - (Required) Complete path to the file in machine where the .tf  files runs.
+     */
     public readonly source!: pulumi.Output<string>;
 
     /**
@@ -111,11 +129,29 @@ export class FoundationImage extends pulumi.CustomResource {
  * Input properties used for looking up and filtering FoundationImage resources.
  */
 export interface FoundationImageState {
+    /**
+     * - (Required) Name of installer file to be kept in foundation vm.
+     */
     filename?: pulumi.Input<string>;
+    /**
+     * - If hypervisor ISO is in whitelist.
+     */
     inWhitelist?: pulumi.Input<boolean>;
+    /**
+     * - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
+     */
     installerType?: pulumi.Input<string>;
+    /**
+     * - md5sum of the ISO.
+     */
     md5sum?: pulumi.Input<string>;
+    /**
+     * - file location in foundation vm
+     */
     name?: pulumi.Input<string>;
+    /**
+     * - (Required) Complete path to the file in machine where the .tf  files runs.
+     */
     source?: pulumi.Input<string>;
 }
 
@@ -123,7 +159,16 @@ export interface FoundationImageState {
  * The set of arguments for constructing a FoundationImage resource.
  */
 export interface FoundationImageArgs {
+    /**
+     * - (Required) Name of installer file to be kept in foundation vm.
+     */
     filename: pulumi.Input<string>;
+    /**
+     * - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
+     */
     installerType: pulumi.Input<string>;
+    /**
+     * - (Required) Complete path to the file in machine where the .tf  files runs.
+     */
     source: pulumi.Input<string>;
 }

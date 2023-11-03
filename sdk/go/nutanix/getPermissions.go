@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve all the permissions.
@@ -18,23 +20,25 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetPermission(ctx, nil, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetPermission(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetPermissions(ctx *pulumi.Context, args *GetPermissionsArgs, opts ...pulumi.InvokeOption) (*GetPermissionsResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPermissionsResult
 	err := ctx.Invoke("nutanix:index/getPermissions:getPermissions", args, &rv, opts...)
 	if err != nil {
@@ -45,15 +49,19 @@ func GetPermissions(ctx *pulumi.Context, args *GetPermissionsArgs, opts ...pulum
 
 // A collection of arguments for invoking getPermissions.
 type GetPermissionsArgs struct {
+	// The permission kind metadata.
 	Metadatas []GetPermissionsMetadata `pulumi:"metadatas"`
 }
 
 // A collection of values returned by getPermissions.
 type GetPermissionsResult struct {
-	ApiVersion string                 `pulumi:"apiVersion"`
-	Entities   []GetPermissionsEntity `pulumi:"entities"`
+	// version of the API
+	ApiVersion string `pulumi:"apiVersion"`
+	// List of Permissions
+	Entities []GetPermissionsEntity `pulumi:"entities"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string                   `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// The permission kind metadata.
 	Metadatas []GetPermissionsMetadata `pulumi:"metadatas"`
 }
 
@@ -72,6 +80,7 @@ func GetPermissionsOutput(ctx *pulumi.Context, args GetPermissionsOutputArgs, op
 
 // A collection of arguments for invoking getPermissions.
 type GetPermissionsOutputArgs struct {
+	// The permission kind metadata.
 	Metadatas GetPermissionsMetadataArrayInput `pulumi:"metadatas"`
 }
 
@@ -94,10 +103,18 @@ func (o GetPermissionsResultOutput) ToGetPermissionsResultOutputWithContext(ctx 
 	return o
 }
 
+func (o GetPermissionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPermissionsResult] {
+	return pulumix.Output[GetPermissionsResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// version of the API
 func (o GetPermissionsResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPermissionsResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// List of Permissions
 func (o GetPermissionsResultOutput) Entities() GetPermissionsEntityArrayOutput {
 	return o.ApplyT(func(v GetPermissionsResult) []GetPermissionsEntity { return v.Entities }).(GetPermissionsEntityArrayOutput)
 }
@@ -107,6 +124,7 @@ func (o GetPermissionsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPermissionsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The permission kind metadata.
 func (o GetPermissionsResultOutput) Metadatas() GetPermissionsMetadataArrayOutput {
 	return o.ApplyT(func(v GetPermissionsResult) []GetPermissionsMetadata { return v.Metadatas }).(GetPermissionsMetadataArrayOutput)
 }

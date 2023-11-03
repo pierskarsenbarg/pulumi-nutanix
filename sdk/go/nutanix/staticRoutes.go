@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides Nutanix resource to create Floating IPs.
@@ -18,28 +20,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.NewStaticRoutes(ctx, "scn", &nutanix.StaticRoutesArgs{
-// 			StaticRoutesLists: StaticRoutesStaticRoutesListArray{
-// 				&StaticRoutesStaticRoutesListArgs{
-// 					Destination:                 pulumi.String("10.x.x.x/x"),
-// 					ExternalSubnetReferenceUuid: pulumi.String("{{ext_subnet_uuid}}"),
-// 				},
-// 			},
-// 			VpcUuid: pulumi.String("{{vpc_uuid}}"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewStaticRoutes(ctx, "scn", &nutanix.StaticRoutesArgs{
+//				StaticRoutesLists: nutanix.StaticRoutesStaticRoutesListArray{
+//					&nutanix.StaticRoutesStaticRoutesListArgs{
+//						Destination:                 pulumi.String("10.x.x.x/x"),
+//						ExternalSubnetReferenceUuid: pulumi.String("{{ext_subnet_uuid}}"),
+//					},
+//				},
+//				VpcUuid: pulumi.String("{{vpc_uuid}}"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## create one static route with default route for vpc name with external subnet
@@ -48,33 +52,35 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.NewStaticRoutes(ctx, "scn", &nutanix.StaticRoutesArgs{
-// 			DefaultRouteNexthops: StaticRoutesDefaultRouteNexthopArray{
-// 				&StaticRoutesDefaultRouteNexthopArgs{
-// 					ExternalSubnetReferenceUuid: pulumi.String("{{ext_subnet_uuid}}"),
-// 				},
-// 			},
-// 			StaticRoutesLists: StaticRoutesStaticRoutesListArray{
-// 				&StaticRoutesStaticRoutesListArgs{
-// 					Destination:                 pulumi.String("10.x.x.x/x"),
-// 					ExternalSubnetReferenceUuid: pulumi.String("{{ext_subnet_uuid}}"),
-// 				},
-// 			},
-// 			VpcName: pulumi.String("{{vpc_name}}"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewStaticRoutes(ctx, "scn", &nutanix.StaticRoutesArgs{
+//				DefaultRouteNexthops: nutanix.StaticRoutesDefaultRouteNexthopArray{
+//					&nutanix.StaticRoutesDefaultRouteNexthopArgs{
+//						ExternalSubnetReferenceUuid: pulumi.String("{{ext_subnet_uuid}}"),
+//					},
+//				},
+//				StaticRoutesLists: nutanix.StaticRoutesStaticRoutesListArray{
+//					&nutanix.StaticRoutesStaticRoutesListArgs{
+//						Destination:                 pulumi.String("10.x.x.x/x"),
+//						ExternalSubnetReferenceUuid: pulumi.String("{{ext_subnet_uuid}}"),
+//					},
+//				},
+//				VpcName: pulumi.String("{{vpc_name}}"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // #### Note: destination with 0.0.0.0/0 will be default route.
@@ -102,7 +108,7 @@ func NewStaticRoutes(ctx *pulumi.Context,
 		args = &StaticRoutesArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource StaticRoutes
 	err := ctx.RegisterResource("nutanix:index/staticRoutes:StaticRoutes", name, args, &resource, opts...)
 	if err != nil {
@@ -208,10 +214,16 @@ func (i *StaticRoutes) ToStaticRoutesOutputWithContext(ctx context.Context) Stat
 	return pulumi.ToOutputWithContext(ctx, i).(StaticRoutesOutput)
 }
 
+func (i *StaticRoutes) ToOutput(ctx context.Context) pulumix.Output[*StaticRoutes] {
+	return pulumix.Output[*StaticRoutes]{
+		OutputState: i.ToStaticRoutesOutputWithContext(ctx).OutputState,
+	}
+}
+
 // StaticRoutesArrayInput is an input type that accepts StaticRoutesArray and StaticRoutesArrayOutput values.
 // You can construct a concrete instance of `StaticRoutesArrayInput` via:
 //
-//          StaticRoutesArray{ StaticRoutesArgs{...} }
+//	StaticRoutesArray{ StaticRoutesArgs{...} }
 type StaticRoutesArrayInput interface {
 	pulumi.Input
 
@@ -233,10 +245,16 @@ func (i StaticRoutesArray) ToStaticRoutesArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(StaticRoutesArrayOutput)
 }
 
+func (i StaticRoutesArray) ToOutput(ctx context.Context) pulumix.Output[[]*StaticRoutes] {
+	return pulumix.Output[[]*StaticRoutes]{
+		OutputState: i.ToStaticRoutesArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // StaticRoutesMapInput is an input type that accepts StaticRoutesMap and StaticRoutesMapOutput values.
 // You can construct a concrete instance of `StaticRoutesMapInput` via:
 //
-//          StaticRoutesMap{ "key": StaticRoutesArgs{...} }
+//	StaticRoutesMap{ "key": StaticRoutesArgs{...} }
 type StaticRoutesMapInput interface {
 	pulumi.Input
 
@@ -258,6 +276,12 @@ func (i StaticRoutesMap) ToStaticRoutesMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(StaticRoutesMapOutput)
 }
 
+func (i StaticRoutesMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*StaticRoutes] {
+	return pulumix.Output[map[string]*StaticRoutes]{
+		OutputState: i.ToStaticRoutesMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type StaticRoutesOutput struct{ *pulumi.OutputState }
 
 func (StaticRoutesOutput) ElementType() reflect.Type {
@@ -270,6 +294,12 @@ func (o StaticRoutesOutput) ToStaticRoutesOutput() StaticRoutesOutput {
 
 func (o StaticRoutesOutput) ToStaticRoutesOutputWithContext(ctx context.Context) StaticRoutesOutput {
 	return o
+}
+
+func (o StaticRoutesOutput) ToOutput(ctx context.Context) pulumix.Output[*StaticRoutes] {
+	return pulumix.Output[*StaticRoutes]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The version of the API.
@@ -316,6 +346,12 @@ func (o StaticRoutesArrayOutput) ToStaticRoutesArrayOutputWithContext(ctx contex
 	return o
 }
 
+func (o StaticRoutesArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*StaticRoutes] {
+	return pulumix.Output[[]*StaticRoutes]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o StaticRoutesArrayOutput) Index(i pulumi.IntInput) StaticRoutesOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *StaticRoutes {
 		return vs[0].([]*StaticRoutes)[vs[1].(int)]
@@ -334,6 +370,12 @@ func (o StaticRoutesMapOutput) ToStaticRoutesMapOutput() StaticRoutesMapOutput {
 
 func (o StaticRoutesMapOutput) ToStaticRoutesMapOutputWithContext(ctx context.Context) StaticRoutesMapOutput {
 	return o
+}
+
+func (o StaticRoutesMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*StaticRoutes] {
+	return pulumix.Output[map[string]*StaticRoutes]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o StaticRoutesMapOutput) MapIndex(k pulumi.StringInput) StaticRoutesOutput {

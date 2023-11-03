@@ -20,70 +20,70 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var protectionRuleTest = new Nutanix.ProtectionRule("protectionRuleTest", new()
         ///     {
-        ///         var protectionRuleTest = new Nutanix.ProtectionRule("protectionRuleTest", new Nutanix.ProtectionRuleArgs
+        ///         Description = "test",
+        ///         OrderedAvailabilityZoneLists = new[]
         ///         {
-        ///             Description = "test",
-        ///             OrderedAvailabilityZoneLists = 
+        ///             new Nutanix.Inputs.ProtectionRuleOrderedAvailabilityZoneListArgs
         ///             {
-        ///                 new Nutanix.Inputs.ProtectionRuleOrderedAvailabilityZoneListArgs
-        ///                 {
-        ///                     AvailabilityZoneUrl = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
-        ///                 },
+        ///                 AvailabilityZoneUrl = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
         ///             },
-        ///             AvailabilityZoneConnectivityLists = 
+        ///         },
+        ///         AvailabilityZoneConnectivityLists = new[]
+        ///         {
+        ///             new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs
         ///             {
-        ///                 new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs
+        ///                 SnapshotScheduleLists = new[]
         ///                 {
-        ///                     SnapshotScheduleLists = 
+        ///                     new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs
         ///                     {
-        ///                         new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs
+        ///                         RecoveryPointObjectiveSecs = 3600,
+        ///                         SnapshotType = "CRASH_CONSISTENT",
+        ///                         LocalSnapshotRetentionPolicy = new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs
         ///                         {
-        ///                             RecoveryPointObjectiveSecs = 3600,
-        ///                             SnapshotType = "CRASH_CONSISTENT",
-        ///                             LocalSnapshotRetentionPolicy = new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs
-        ///                             {
-        ///                                 NumSnapshots = 1,
-        ///                             },
+        ///                             NumSnapshots = 1,
         ///                         },
         ///                     },
         ///                 },
         ///             },
-        ///             CategoryFilter = new Nutanix.Inputs.ProtectionRuleCategoryFilterArgs
+        ///         },
+        ///         CategoryFilter = new Nutanix.Inputs.ProtectionRuleCategoryFilterArgs
+        ///         {
+        ///             Params = new[]
         ///             {
-        ///                 Params = 
+        ///                 new Nutanix.Inputs.ProtectionRuleCategoryFilterParamArgs
         ///                 {
-        ///                     new Nutanix.Inputs.ProtectionRuleCategoryFilterParamArgs
+        ///                     Name = "Environment",
+        ///                     Values = new[]
         ///                     {
-        ///                         Name = "Environment",
-        ///                         Values = 
-        ///                         {
-        ///                             "Dev",
-        ///                         },
+        ///                         "Dev",
         ///                     },
         ///                 },
         ///             },
-        ///         });
-        ///         var test = Nutanix.GetProtectionRule.Invoke(new Nutanix.GetProtectionRuleInvokeArgs
-        ///         {
-        ///             ProtectionRuleId = protectionRuleTest.Id,
-        ///         });
-        ///     }
+        ///         },
+        ///     });
         /// 
-        /// }
+        ///     var test = Nutanix.GetProtectionRule.Invoke(new()
+        ///     {
+        ///         ProtectionRuleId = protectionRuleTest.Id,
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetProtectionRuleResult> InvokeAsync(GetProtectionRuleArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetProtectionRuleResult>("nutanix:index/getProtectionRule:getProtectionRule", args ?? new GetProtectionRuleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectionRuleResult>("nutanix:index/getProtectionRule:getProtectionRule", args ?? new GetProtectionRuleArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describe a Nutanix Protection Rule and its values (if it has them).
@@ -93,74 +93,74 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var protectionRuleTest = new Nutanix.ProtectionRule("protectionRuleTest", new()
         ///     {
-        ///         var protectionRuleTest = new Nutanix.ProtectionRule("protectionRuleTest", new Nutanix.ProtectionRuleArgs
+        ///         Description = "test",
+        ///         OrderedAvailabilityZoneLists = new[]
         ///         {
-        ///             Description = "test",
-        ///             OrderedAvailabilityZoneLists = 
+        ///             new Nutanix.Inputs.ProtectionRuleOrderedAvailabilityZoneListArgs
         ///             {
-        ///                 new Nutanix.Inputs.ProtectionRuleOrderedAvailabilityZoneListArgs
-        ///                 {
-        ///                     AvailabilityZoneUrl = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
-        ///                 },
+        ///                 AvailabilityZoneUrl = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
         ///             },
-        ///             AvailabilityZoneConnectivityLists = 
+        ///         },
+        ///         AvailabilityZoneConnectivityLists = new[]
+        ///         {
+        ///             new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs
         ///             {
-        ///                 new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs
+        ///                 SnapshotScheduleLists = new[]
         ///                 {
-        ///                     SnapshotScheduleLists = 
+        ///                     new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs
         ///                     {
-        ///                         new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs
+        ///                         RecoveryPointObjectiveSecs = 3600,
+        ///                         SnapshotType = "CRASH_CONSISTENT",
+        ///                         LocalSnapshotRetentionPolicy = new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs
         ///                         {
-        ///                             RecoveryPointObjectiveSecs = 3600,
-        ///                             SnapshotType = "CRASH_CONSISTENT",
-        ///                             LocalSnapshotRetentionPolicy = new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs
-        ///                             {
-        ///                                 NumSnapshots = 1,
-        ///                             },
+        ///                             NumSnapshots = 1,
         ///                         },
         ///                     },
         ///                 },
         ///             },
-        ///             CategoryFilter = new Nutanix.Inputs.ProtectionRuleCategoryFilterArgs
+        ///         },
+        ///         CategoryFilter = new Nutanix.Inputs.ProtectionRuleCategoryFilterArgs
+        ///         {
+        ///             Params = new[]
         ///             {
-        ///                 Params = 
+        ///                 new Nutanix.Inputs.ProtectionRuleCategoryFilterParamArgs
         ///                 {
-        ///                     new Nutanix.Inputs.ProtectionRuleCategoryFilterParamArgs
+        ///                     Name = "Environment",
+        ///                     Values = new[]
         ///                     {
-        ///                         Name = "Environment",
-        ///                         Values = 
-        ///                         {
-        ///                             "Dev",
-        ///                         },
+        ///                         "Dev",
         ///                     },
         ///                 },
         ///             },
-        ///         });
-        ///         var test = Nutanix.GetProtectionRule.Invoke(new Nutanix.GetProtectionRuleInvokeArgs
-        ///         {
-        ///             ProtectionRuleId = protectionRuleTest.Id,
-        ///         });
-        ///     }
+        ///         },
+        ///     });
         /// 
-        /// }
+        ///     var test = Nutanix.GetProtectionRule.Invoke(new()
+        ///     {
+        ///         ProtectionRuleId = protectionRuleTest.Id,
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetProtectionRuleResult> Invoke(GetProtectionRuleInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetProtectionRuleResult>("nutanix:index/getProtectionRule:getProtectionRule", args ?? new GetProtectionRuleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetProtectionRuleResult>("nutanix:index/getProtectionRule:getProtectionRule", args ?? new GetProtectionRuleInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetProtectionRuleArgs : Pulumi.InvokeArgs
+    public sealed class GetProtectionRuleArgs : global::Pulumi.InvokeArgs
     {
         [Input("categories")]
         private List<Inputs.GetProtectionRuleCategoryArgs>? _categories;
@@ -170,6 +170,9 @@ namespace PiersKarsenbarg.Nutanix
             set => _categories = value;
         }
 
+        /// <summary>
+        /// - (Required) The `id` of the protection rule.
+        /// </summary>
         [Input("protectionRuleId")]
         public string? ProtectionRuleId { get; set; }
 
@@ -179,9 +182,10 @@ namespace PiersKarsenbarg.Nutanix
         public GetProtectionRuleArgs()
         {
         }
+        public static new GetProtectionRuleArgs Empty => new GetProtectionRuleArgs();
     }
 
-    public sealed class GetProtectionRuleInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetProtectionRuleInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("categories")]
         private InputList<Inputs.GetProtectionRuleCategoryInputArgs>? _categories;
@@ -191,6 +195,9 @@ namespace PiersKarsenbarg.Nutanix
             set => _categories = value;
         }
 
+        /// <summary>
+        /// - (Required) The `id` of the protection rule.
+        /// </summary>
         [Input("protectionRuleId")]
         public Input<string>? ProtectionRuleId { get; set; }
 
@@ -200,6 +207,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetProtectionRuleInvokeArgs()
         {
         }
+        public static new GetProtectionRuleInvokeArgs Empty => new GetProtectionRuleInvokeArgs();
     }
 
 
@@ -230,6 +238,9 @@ namespace PiersKarsenbarg.Nutanix
         /// * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProtectionRuleCategoryFilterResult> CategoryFilters;
+        /// <summary>
+        /// A description for protection rule.
+        /// </summary>
         public readonly string Description;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.

@@ -13,14 +13,14 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetAssertHelper
     {
         public static Task<GetAssertHelperResult> InvokeAsync(GetAssertHelperArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAssertHelperResult>("nutanix:index/getAssertHelper:getAssertHelper", args ?? new GetAssertHelperArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAssertHelperResult>("nutanix:index/getAssertHelper:getAssertHelper", args ?? new GetAssertHelperArgs(), options.WithDefaults());
 
         public static Output<GetAssertHelperResult> Invoke(GetAssertHelperInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAssertHelperResult>("nutanix:index/getAssertHelper:getAssertHelper", args ?? new GetAssertHelperInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAssertHelperResult>("nutanix:index/getAssertHelper:getAssertHelper", args ?? new GetAssertHelperInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetAssertHelperArgs : Pulumi.InvokeArgs
+    public sealed class GetAssertHelperArgs : global::Pulumi.InvokeArgs
     {
         [Input("checks")]
         private List<Inputs.GetAssertHelperCheckArgs>? _checks;
@@ -33,9 +33,10 @@ namespace PiersKarsenbarg.Nutanix
         public GetAssertHelperArgs()
         {
         }
+        public static new GetAssertHelperArgs Empty => new GetAssertHelperArgs();
     }
 
-    public sealed class GetAssertHelperInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetAssertHelperInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("checks")]
         private InputList<Inputs.GetAssertHelperCheckInputArgs>? _checks;
@@ -48,6 +49,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetAssertHelperInvokeArgs()
         {
         }
+        public static new GetAssertHelperInvokeArgs Empty => new GetAssertHelperInvokeArgs();
     }
 
 

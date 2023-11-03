@@ -20,35 +20,35 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var user = new Nutanix.User("user", new()
         ///     {
-        ///         var user = new Nutanix.User("user", new Nutanix.UserArgs
+        ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
         ///         {
-        ///             DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
+        ///             DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
         ///             {
-        ///                 DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
-        ///                 {
-        ///                     Uuid = "&lt;directory-service-uuid&gt;",
-        ///                 },
-        ///                 UserPrincipalName = "test-user@ntnxlab.local",
+        ///                 Uuid = "&lt;directory-service-uuid&gt;",
         ///             },
-        ///         });
-        ///         var users = Output.Create(Nutanix.GetUser.InvokeAsync());
-        ///     }
+        ///             UserPrincipalName = "test-user@ntnxlab.local",
+        ///         },
+        ///     });
         /// 
-        /// }
+        ///     var users = Nutanix.GetUser.Invoke();
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetUsersResult> InvokeAsync(GetUsersArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetUsersResult>("nutanix:index/getUsers:getUsers", args ?? new GetUsersArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetUsersResult>("nutanix:index/getUsers:getUsers", args ?? new GetUsersArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a datasource to retrieve all the users.
@@ -58,42 +58,46 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var user = new Nutanix.User("user", new()
         ///     {
-        ///         var user = new Nutanix.User("user", new Nutanix.UserArgs
+        ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
         ///         {
-        ///             DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
+        ///             DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
         ///             {
-        ///                 DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
-        ///                 {
-        ///                     Uuid = "&lt;directory-service-uuid&gt;",
-        ///                 },
-        ///                 UserPrincipalName = "test-user@ntnxlab.local",
+        ///                 Uuid = "&lt;directory-service-uuid&gt;",
         ///             },
-        ///         });
-        ///         var users = Output.Create(Nutanix.GetUser.InvokeAsync());
-        ///     }
+        ///             UserPrincipalName = "test-user@ntnxlab.local",
+        ///         },
+        ///     });
         /// 
-        /// }
+        ///     var users = Nutanix.GetUser.Invoke();
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetUsersResult> Invoke(GetUsersInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetUsersResult>("nutanix:index/getUsers:getUsers", args ?? new GetUsersInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetUsersResult>("nutanix:index/getUsers:getUsers", args ?? new GetUsersInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetUsersArgs : Pulumi.InvokeArgs
+    public sealed class GetUsersArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private List<Inputs.GetUsersMetadataArgs>? _metadatas;
+
+        /// <summary>
+        /// - The user kind metadata.
+        /// </summary>
         public List<Inputs.GetUsersMetadataArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new List<Inputs.GetUsersMetadataArgs>());
@@ -103,12 +107,17 @@ namespace PiersKarsenbarg.Nutanix
         public GetUsersArgs()
         {
         }
+        public static new GetUsersArgs Empty => new GetUsersArgs();
     }
 
-    public sealed class GetUsersInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetUsersInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private InputList<Inputs.GetUsersMetadataInputArgs>? _metadatas;
+
+        /// <summary>
+        /// - The user kind metadata.
+        /// </summary>
         public InputList<Inputs.GetUsersMetadataInputArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new InputList<Inputs.GetUsersMetadataInputArgs>());
@@ -118,6 +127,7 @@ namespace PiersKarsenbarg.Nutanix
         public GetUsersInvokeArgs()
         {
         }
+        public static new GetUsersInvokeArgs Empty => new GetUsersInvokeArgs();
     }
 
 
@@ -126,24 +136,19 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// The version of the API.
-        /// * `state`: - The state of the entity.
-        /// * `name`: - The name of the user.
-        /// * `user_type`: - The name of the user.
-        /// * `display_name`: - The display name of the user (common name) provided by the directory service.
-        /// * `project_reference_list`: - A list of projects the user is part of. See #reference for more details.
-        /// * `access_control_policy_reference_list`: - List of ACP references. See #reference for more details.
-        /// * `directory_service_user`: - (Optional) The directory service user configuration. See below for more information.
-        /// * `identity_provider_user`: - (Optional) (Optional) The identity provider user configuration. See below for more information.
-        /// * `categories`: - (Optional) Categories for the user.
-        /// * `project_reference`: - (Optional) The reference to a project.
-        /// * `owner_reference`: - (Optional) The reference to a user.
         /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// List of Users
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUsersEntityResult> Entities;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - The user kind metadata.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUsersMetadataResult> Metadatas;
 
         [OutputConstructor]

@@ -16,68 +16,66 @@ namespace PiersKarsenbarg.Nutanix
     /// ## create one static route for vpc uuid with external subnet
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var scn = new Nutanix.StaticRoutes("scn", new()
     ///     {
-    ///         var scn = new Nutanix.StaticRoutes("scn", new Nutanix.StaticRoutesArgs
+    ///         StaticRoutesLists = new[]
     ///         {
-    ///             StaticRoutesLists = 
+    ///             new Nutanix.Inputs.StaticRoutesStaticRoutesListArgs
     ///             {
-    ///                 new Nutanix.Inputs.StaticRoutesStaticRoutesListArgs
-    ///                 {
-    ///                     Destination = "10.x.x.x/x",
-    ///                     ExternalSubnetReferenceUuid = "{{ext_subnet_uuid}}",
-    ///                 },
+    ///                 Destination = "10.x.x.x/x",
+    ///                 ExternalSubnetReferenceUuid = "{{ext_subnet_uuid}}",
     ///             },
-    ///             VpcUuid = "{{vpc_uuid}}",
-    ///         });
-    ///     }
+    ///         },
+    ///         VpcUuid = "{{vpc_uuid}}",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## create one static route with default route for vpc name with external subnet
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var scn = new Nutanix.StaticRoutes("scn", new()
     ///     {
-    ///         var scn = new Nutanix.StaticRoutes("scn", new Nutanix.StaticRoutesArgs
+    ///         DefaultRouteNexthops = new[]
     ///         {
-    ///             DefaultRouteNexthops = 
+    ///             new Nutanix.Inputs.StaticRoutesDefaultRouteNexthopArgs
     ///             {
-    ///                 new Nutanix.Inputs.StaticRoutesDefaultRouteNexthopArgs
-    ///                 {
-    ///                     ExternalSubnetReferenceUuid = "{{ext_subnet_uuid}}",
-    ///                 },
+    ///                 ExternalSubnetReferenceUuid = "{{ext_subnet_uuid}}",
     ///             },
-    ///             StaticRoutesLists = 
+    ///         },
+    ///         StaticRoutesLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.StaticRoutesStaticRoutesListArgs
     ///             {
-    ///                 new Nutanix.Inputs.StaticRoutesStaticRoutesListArgs
-    ///                 {
-    ///                     Destination = "10.x.x.x/x",
-    ///                     ExternalSubnetReferenceUuid = "{{ext_subnet_uuid}}",
-    ///                 },
+    ///                 Destination = "10.x.x.x/x",
+    ///                 ExternalSubnetReferenceUuid = "{{ext_subnet_uuid}}",
     ///             },
-    ///             VpcName = "{{vpc_name}}",
-    ///         });
-    ///     }
+    ///         },
+    ///         VpcName = "{{vpc_name}}",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// #### Note: destination with 0.0.0.0/0 will be default route.
     /// </summary>
     [NutanixResourceType("nutanix:index/staticRoutes:StaticRoutes")]
-    public partial class StaticRoutes : Pulumi.CustomResource
+    public partial class StaticRoutes : global::Pulumi.CustomResource
     {
         /// <summary>
         /// The version of the API.
@@ -160,7 +158,7 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class StaticRoutesArgs : Pulumi.ResourceArgs
+    public sealed class StaticRoutesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The version of the API.
@@ -207,9 +205,10 @@ namespace PiersKarsenbarg.Nutanix
         public StaticRoutesArgs()
         {
         }
+        public static new StaticRoutesArgs Empty => new StaticRoutesArgs();
     }
 
-    public sealed class StaticRoutesState : Pulumi.ResourceArgs
+    public sealed class StaticRoutesState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The version of the API.
@@ -268,5 +267,6 @@ namespace PiersKarsenbarg.Nutanix
         public StaticRoutesState()
         {
         }
+        public static new StaticRoutesState Empty => new StaticRoutesState();
     }
 }

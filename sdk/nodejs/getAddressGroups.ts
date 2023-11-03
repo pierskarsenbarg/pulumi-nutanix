@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,16 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const addrGroups = pulumi.output(nutanix.getAddressGroups());
+ * const addrGroups = nutanix.getAddressGroups({});
  * ```
  */
 export function getAddressGroups(args?: GetAddressGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetAddressGroupsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getAddressGroups:getAddressGroups", {
         "metadatas": args.metadatas,
     }, opts);
@@ -33,6 +31,9 @@ export function getAddressGroups(args?: GetAddressGroupsArgs, opts?: pulumi.Invo
  * A collection of arguments for invoking getAddressGroups.
  */
 export interface GetAddressGroupsArgs {
+    /**
+     * - (Optional) Use metadata to specify filters
+     */
     metadatas?: inputs.GetAddressGroupsMetadata[];
 }
 
@@ -40,21 +41,41 @@ export interface GetAddressGroupsArgs {
  * A collection of values returned by getAddressGroups.
  */
 export interface GetAddressGroupsResult {
+    /**
+     * - (ReadOnly) List of address groups
+     */
     readonly entities: outputs.GetAddressGroupsEntity[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - (Optional) Use metadata to specify filters
+     */
     readonly metadatas: outputs.GetAddressGroupsMetadata[];
 }
-
+/**
+ * Provides a datasource to retrieve list of address groups.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const addrGroups = nutanix.getAddressGroups({});
+ * ```
+ */
 export function getAddressGroupsOutput(args?: GetAddressGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressGroupsResult> {
-    return pulumi.output(args).apply(a => getAddressGroups(a, opts))
+    return pulumi.output(args).apply((a: any) => getAddressGroups(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getAddressGroups.
  */
 export interface GetAddressGroupsOutputArgs {
+    /**
+     * - (Optional) Use metadata to specify filters
+     */
     metadatas?: pulumi.Input<pulumi.Input<inputs.GetAddressGroupsMetadataArgs>[]>;
 }

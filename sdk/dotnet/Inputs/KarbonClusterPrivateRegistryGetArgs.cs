@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class KarbonClusterPrivateRegistryGetArgs : Pulumi.ResourceArgs
+    public sealed class KarbonClusterPrivateRegistryGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("registryName", required: true)]
         public Input<string> RegistryName { get; set; } = null!;
@@ -19,5 +19,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public KarbonClusterPrivateRegistryGetArgs()
         {
         }
+        public static new KarbonClusterPrivateRegistryGetArgs Empty => new KarbonClusterPrivateRegistryGetArgs();
     }
 }

@@ -4,35 +4,17 @@
 package nutanix
 
 import (
+	"context"
+	"reflect"
+
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes a List of Karbon private registry entry
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.GetKarbonPrivateRegistries(ctx, map[string]interface{}{
-// 			"clusterId": "<YOUR-CLUSTER-ID>",
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
 func GetKarbonPrivateRegistries(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetKarbonPrivateRegistriesResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetKarbonPrivateRegistriesResult
 	err := ctx.Invoke("nutanix:index/getKarbonPrivateRegistries:getKarbonPrivateRegistries", nil, &rv, opts...)
 	if err != nil {
@@ -46,4 +28,51 @@ type GetKarbonPrivateRegistriesResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id                string                                      `pulumi:"id"`
 	PrivateRegistries []GetKarbonPrivateRegistriesPrivateRegistry `pulumi:"privateRegistries"`
+}
+
+func GetKarbonPrivateRegistriesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetKarbonPrivateRegistriesResultOutput {
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetKarbonPrivateRegistriesResult, error) {
+		r, err := GetKarbonPrivateRegistries(ctx, opts...)
+		var s GetKarbonPrivateRegistriesResult
+		if r != nil {
+			s = *r
+		}
+		return s, err
+	}).(GetKarbonPrivateRegistriesResultOutput)
+}
+
+// A collection of values returned by getKarbonPrivateRegistries.
+type GetKarbonPrivateRegistriesResultOutput struct{ *pulumi.OutputState }
+
+func (GetKarbonPrivateRegistriesResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKarbonPrivateRegistriesResult)(nil)).Elem()
+}
+
+func (o GetKarbonPrivateRegistriesResultOutput) ToGetKarbonPrivateRegistriesResultOutput() GetKarbonPrivateRegistriesResultOutput {
+	return o
+}
+
+func (o GetKarbonPrivateRegistriesResultOutput) ToGetKarbonPrivateRegistriesResultOutputWithContext(ctx context.Context) GetKarbonPrivateRegistriesResultOutput {
+	return o
+}
+
+func (o GetKarbonPrivateRegistriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetKarbonPrivateRegistriesResult] {
+	return pulumix.Output[GetKarbonPrivateRegistriesResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// The provider-assigned unique ID for this managed resource.
+func (o GetKarbonPrivateRegistriesResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKarbonPrivateRegistriesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetKarbonPrivateRegistriesResultOutput) PrivateRegistries() GetKarbonPrivateRegistriesPrivateRegistryArrayOutput {
+	return o.ApplyT(func(v GetKarbonPrivateRegistriesResult) []GetKarbonPrivateRegistriesPrivateRegistry {
+		return v.PrivateRegistries
+	}).(GetKarbonPrivateRegistriesPrivateRegistryArrayOutput)
+}
+
+func init() {
+	pulumi.RegisterOutputType(GetKarbonPrivateRegistriesResultOutput{})
 }

@@ -11,10 +11,11 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class KarbonClusterCniConfigFlannelConfigGetArgs : Pulumi.ResourceArgs
+    public sealed class KarbonClusterCniConfigFlannelConfigGetArgs : global::Pulumi.ResourceArgs
     {
         public KarbonClusterCniConfigFlannelConfigGetArgs()
         {
         }
+        public static new KarbonClusterCniConfigFlannelConfigGetArgs Empty => new KarbonClusterCniConfigFlannelConfigGetArgs();
     }
 }

@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetSubnetAdditionalFilterResult
     {
+        /// <summary>
+        /// - the name(Optional).
+        /// </summary>
         public readonly string Name;
         public readonly ImmutableArray<string> Values;
 

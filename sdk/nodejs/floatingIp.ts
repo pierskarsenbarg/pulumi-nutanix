@@ -11,18 +11,16 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const fip1 = new nutanix.FloatingIp("fip1", {
- *     externalSubnetReferenceUuid: "{{ext_sub_uuid}}",
- * });
+ * const fip1 = new nutanix.FloatingIp("fip1", {externalSubnetReferenceUuid: "{{ext_sub_uuid}}"});
  * ```
  *
  * ## create Floating IP with vpc name with external subnet name
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const fip2 = new nutanix.FloatingIp("fip2", {
  *     externalSubnetReferenceName: "{{ext_sub_name}}",

@@ -17,31 +17,30 @@ namespace PiersKarsenbarg.Nutanix
     /// ### pbr creation with vpc name with any source or destination or protocol with permit action
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var pbr = new Nutanix.Pbr("pbr", new()
     ///     {
-    ///         var pbr = new Nutanix.Pbr("pbr", new Nutanix.PbrArgs
+    ///         Action = "PERMIT",
+    ///         Destination = new Nutanix.Inputs.PbrDestinationArgs
     ///         {
-    ///             Action = "PERMIT",
-    ///             Destination = new Nutanix.Inputs.PbrDestinationArgs
-    ///             {
-    ///                 AddressType = "ALL",
-    ///             },
-    ///             Priority = 123,
-    ///             ProtocolType = "ALL",
-    ///             Source = new Nutanix.Inputs.PbrSourceArgs
-    ///             {
-    ///                 AddressType = "ALL",
-    ///             },
-    ///             VpcName = "test123",
-    ///         });
-    ///     }
+    ///             AddressType = "ALL",
+    ///         },
+    ///         Priority = 123,
+    ///         ProtocolType = "ALL",
+    ///         Source = new Nutanix.Inputs.PbrSourceArgs
+    ///         {
+    ///             AddressType = "ALL",
+    ///         },
+    ///         VpcName = "test123",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// ## source
     /// 
@@ -79,7 +78,7 @@ namespace PiersKarsenbarg.Nutanix
     /// * `end_port` - (Required) end port number
     /// </summary>
     [NutanixResourceType("nutanix:index/pbr:Pbr")]
-    public partial class Pbr : Pulumi.CustomResource
+    public partial class Pbr : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Routing policy action. Must be one of {DENY, PERMIT, REROUTE} .
@@ -195,7 +194,7 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class PbrArgs : Pulumi.ResourceArgs
+    public sealed class PbrArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Routing policy action. Must be one of {DENY, PERMIT, REROUTE} .
@@ -269,9 +268,10 @@ namespace PiersKarsenbarg.Nutanix
         public PbrArgs()
         {
         }
+        public static new PbrArgs Empty => new PbrArgs();
     }
 
-    public sealed class PbrState : Pulumi.ResourceArgs
+    public sealed class PbrState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Routing policy action. Must be one of {DENY, PERMIT, REROUTE} .
@@ -357,5 +357,6 @@ namespace PiersKarsenbarg.Nutanix
         public PbrState()
         {
         }
+        public static new PbrState Empty => new PbrState();
     }
 }

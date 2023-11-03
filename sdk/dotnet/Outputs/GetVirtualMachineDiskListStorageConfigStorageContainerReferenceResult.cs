@@ -14,9 +14,18 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVirtualMachineDiskListStorageConfigStorageContainerReferenceResult
     {
+        /// <summary>
+        /// - The kind name (Default value: project).
+        /// </summary>
         public readonly string Kind;
+        /// <summary>
+        /// - the name.
+        /// </summary>
         public readonly string Name;
         public readonly string Url;
+        /// <summary>
+        /// - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
+        /// </summary>
         public readonly string Uuid;
 
         [OutputConstructor]

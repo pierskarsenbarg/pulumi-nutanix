@@ -14,11 +14,26 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetAddressGroupsMetadataResult
     {
+        /// <summary>
+        /// (Optional) Filter in FIQL Syntax
+        /// </summary>
         public readonly string Filter;
         public readonly string Kind;
+        /// <summary>
+        /// (Optional) Integer
+        /// </summary>
         public readonly int Length;
+        /// <summary>
+        /// (Optional) Integer
+        /// </summary>
         public readonly int Offset;
+        /// <summary>
+        /// (Optional) attribute to sort
+        /// </summary>
         public readonly string SortAttribute;
+        /// <summary>
+        /// (Optional) order of sorting
+        /// </summary>
         public readonly string SortOrder;
 
         [OutputConstructor]

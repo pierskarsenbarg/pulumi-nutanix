@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class FoundationCentralImageCluster extends pulumi.CustomResource {
@@ -33,27 +34,60 @@ export class FoundationCentralImageCluster extends pulumi.CustomResource {
         return obj['__pulumiType'] === FoundationCentralImageCluster.__pulumiType;
     }
 
+    /**
+     * Sha256sum of AOS package.
+     */
     public readonly aosPackageSha256sum!: pulumi.Output<string>;
+    /**
+     * URL to download AOS package. Required only if imaging is needed.
+     */
     public readonly aosPackageUrl!: pulumi.Output<string>;
     public /*out*/ readonly archived!: pulumi.Output<boolean>;
+    /**
+     * External management ip of the cluster.
+     */
     public readonly clusterExternalIp!: pulumi.Output<string>;
+    /**
+     * Name of the cluster.
+     */
     public readonly clusterName!: pulumi.Output<string>;
+    /**
+     * Number of nodes in the cluster.
+     */
     public readonly clusterSize!: pulumi.Output<number>;
     public readonly clusterStatus!: pulumi.Output<outputs.FoundationCentralImageClusterClusterStatus>;
+    /**
+     * Common network settings across the nodes in the cluster.
+     */
     public readonly commonNetworkSettings!: pulumi.Output<outputs.FoundationCentralImageClusterCommonNetworkSettings>;
     public /*out*/ readonly createdTimestamp!: pulumi.Output<string>;
     public /*out*/ readonly currentTime!: pulumi.Output<string>;
     public /*out*/ readonly destroyed!: pulumi.Output<boolean>;
     public /*out*/ readonly foundationInitConfigs!: pulumi.Output<outputs.FoundationCentralImageClusterFoundationInitConfig[]>;
     public /*out*/ readonly foundationInitNodeUuid!: pulumi.Output<string>;
+    /**
+     * Details of the hypervisor iso.
+     */
     public readonly hypervisorIsoDetails!: pulumi.Output<outputs.FoundationCentralImageClusterHypervisorIsoDetails>;
     public readonly imageClusterUuid!: pulumi.Output<string>;
+    /**
+     * Unique id of the cluster.
+     */
     public /*out*/ readonly imagedClusterUuid!: pulumi.Output<string>;
     public /*out*/ readonly imagedNodeUuidLists!: pulumi.Output<string[]>;
     public readonly nodeLists!: pulumi.Output<outputs.FoundationCentralImageClusterNodeList[]>;
+    /**
+     * Redundancy factor of the cluster.
+     */
     public readonly redundancyFactor!: pulumi.Output<number>;
     public readonly skipClusterCreation!: pulumi.Output<boolean | undefined>;
+    /**
+     * Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+     */
     public readonly storageNodeCount!: pulumi.Output<number>;
+    /**
+     * Timezone to be set on the cluster.
+     */
     public readonly timezone!: pulumi.Output<string>;
     public /*out*/ readonly workflowType!: pulumi.Output<string>;
 
@@ -128,27 +162,60 @@ export class FoundationCentralImageCluster extends pulumi.CustomResource {
  * Input properties used for looking up and filtering FoundationCentralImageCluster resources.
  */
 export interface FoundationCentralImageClusterState {
+    /**
+     * Sha256sum of AOS package.
+     */
     aosPackageSha256sum?: pulumi.Input<string>;
+    /**
+     * URL to download AOS package. Required only if imaging is needed.
+     */
     aosPackageUrl?: pulumi.Input<string>;
     archived?: pulumi.Input<boolean>;
+    /**
+     * External management ip of the cluster.
+     */
     clusterExternalIp?: pulumi.Input<string>;
+    /**
+     * Name of the cluster.
+     */
     clusterName?: pulumi.Input<string>;
+    /**
+     * Number of nodes in the cluster.
+     */
     clusterSize?: pulumi.Input<number>;
     clusterStatus?: pulumi.Input<inputs.FoundationCentralImageClusterClusterStatus>;
+    /**
+     * Common network settings across the nodes in the cluster.
+     */
     commonNetworkSettings?: pulumi.Input<inputs.FoundationCentralImageClusterCommonNetworkSettings>;
     createdTimestamp?: pulumi.Input<string>;
     currentTime?: pulumi.Input<string>;
     destroyed?: pulumi.Input<boolean>;
     foundationInitConfigs?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterFoundationInitConfig>[]>;
     foundationInitNodeUuid?: pulumi.Input<string>;
+    /**
+     * Details of the hypervisor iso.
+     */
     hypervisorIsoDetails?: pulumi.Input<inputs.FoundationCentralImageClusterHypervisorIsoDetails>;
     imageClusterUuid?: pulumi.Input<string>;
+    /**
+     * Unique id of the cluster.
+     */
     imagedClusterUuid?: pulumi.Input<string>;
     imagedNodeUuidLists?: pulumi.Input<pulumi.Input<string>[]>;
     nodeLists?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterNodeList>[]>;
+    /**
+     * Redundancy factor of the cluster.
+     */
     redundancyFactor?: pulumi.Input<number>;
     skipClusterCreation?: pulumi.Input<boolean>;
+    /**
+     * Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+     */
     storageNodeCount?: pulumi.Input<number>;
+    /**
+     * Timezone to be set on the cluster.
+     */
     timezone?: pulumi.Input<string>;
     workflowType?: pulumi.Input<string>;
 }
@@ -157,18 +224,48 @@ export interface FoundationCentralImageClusterState {
  * The set of arguments for constructing a FoundationCentralImageCluster resource.
  */
 export interface FoundationCentralImageClusterArgs {
+    /**
+     * Sha256sum of AOS package.
+     */
     aosPackageSha256sum?: pulumi.Input<string>;
+    /**
+     * URL to download AOS package. Required only if imaging is needed.
+     */
     aosPackageUrl?: pulumi.Input<string>;
+    /**
+     * External management ip of the cluster.
+     */
     clusterExternalIp?: pulumi.Input<string>;
+    /**
+     * Name of the cluster.
+     */
     clusterName?: pulumi.Input<string>;
+    /**
+     * Number of nodes in the cluster.
+     */
     clusterSize?: pulumi.Input<number>;
     clusterStatus?: pulumi.Input<inputs.FoundationCentralImageClusterClusterStatus>;
+    /**
+     * Common network settings across the nodes in the cluster.
+     */
     commonNetworkSettings?: pulumi.Input<inputs.FoundationCentralImageClusterCommonNetworkSettings>;
+    /**
+     * Details of the hypervisor iso.
+     */
     hypervisorIsoDetails?: pulumi.Input<inputs.FoundationCentralImageClusterHypervisorIsoDetails>;
     imageClusterUuid?: pulumi.Input<string>;
     nodeLists?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterNodeList>[]>;
+    /**
+     * Redundancy factor of the cluster.
+     */
     redundancyFactor?: pulumi.Input<number>;
     skipClusterCreation?: pulumi.Input<boolean>;
+    /**
+     * Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+     */
     storageNodeCount?: pulumi.Input<number>;
+    /**
+     * Timezone to be set on the cluster.
+     */
     timezone?: pulumi.Input<string>;
 }

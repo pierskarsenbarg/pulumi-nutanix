@@ -24,12 +24,18 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<string> LicenseLists;
         public readonly string MaxResolution;
         public readonly string Mode;
+        /// <summary>
+        /// - the key name.
+        /// </summary>
         public readonly string Name;
         public readonly int NumVgpusAllocated;
         public readonly int NumVirtualDisplayHeads;
         public readonly int NumaNode;
         public readonly string PciAddress;
         public readonly string Status;
+        /// <summary>
+        /// - image uuid.
+        /// </summary>
         public readonly string Uuid;
         public readonly string Vendor;
 

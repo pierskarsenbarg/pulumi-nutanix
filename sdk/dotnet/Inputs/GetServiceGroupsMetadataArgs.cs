@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetServiceGroupsMetadataInputArgs : Pulumi.ResourceArgs
+    public sealed class GetServiceGroupsMetadataInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("filter", required: true)]
         public Input<string> Filter { get; set; } = null!;
@@ -34,5 +34,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetServiceGroupsMetadataInputArgs()
         {
         }
+        public static new GetServiceGroupsMetadataInputArgs Empty => new GetServiceGroupsMetadataInputArgs();
     }
 }

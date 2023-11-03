@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetFoundationCentralListApiKeysMetadataInputArgs : Pulumi.ResourceArgs
+    public sealed class GetFoundationCentralListApiKeysMetadataInputArgs : global::Pulumi.ResourceArgs
     {
         [Input("length", required: true)]
         public Input<int> Length { get; set; } = null!;
@@ -25,5 +25,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetFoundationCentralListApiKeysMetadataInputArgs()
         {
         }
+        public static new GetFoundationCentralListApiKeysMetadataInputArgs Empty => new GetFoundationCentralListApiKeysMetadataInputArgs();
     }
 }

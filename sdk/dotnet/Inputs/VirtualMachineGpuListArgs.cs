@@ -11,33 +11,47 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class VirtualMachineGpuListArgs : Pulumi.ResourceArgs
+    public sealed class VirtualMachineGpuListArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Computed) The device ID of the GPU.
+        /// </summary>
         [Input("deviceId")]
         public Input<int>? DeviceId { get; set; }
 
         /// <summary>
         /// Fraction of the physical GPU assigned.
-        /// * `mode`: - (Optional) The mode of this GPU.
-        /// * `num_virtual_display_heads`: - (ReadOnly) Number of supported virtual display heads.
-        /// * `guest_driver_version`: - (ReadOnly) Last determined guest driver version.
-        /// * `device_id`: - (Computed) The device ID of the GPU.
         /// </summary>
         [Input("fraction")]
         public Input<int>? Fraction { get; set; }
 
+        /// <summary>
+        /// - (ReadOnly) GPU frame buffer size in MiB.
+        /// </summary>
         [Input("frameBufferSizeMib")]
         public Input<int>? FrameBufferSizeMib { get; set; }
 
+        /// <summary>
+        /// - (ReadOnly) Last determined guest driver version.
+        /// </summary>
         [Input("guestDriverVersion")]
         public Input<string>? GuestDriverVersion { get; set; }
 
+        /// <summary>
+        /// - (Optional) The mode of this GPU.
+        /// </summary>
         [Input("mode")]
         public Input<string>? Mode { get; set; }
 
+        /// <summary>
+        /// - (ReadOnly) Name of the GPU resource.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - (ReadOnly) Number of supported virtual display heads.
+        /// </summary>
         [Input("numVirtualDisplayHeads")]
         public Input<int>? NumVirtualDisplayHeads { get; set; }
 
@@ -47,14 +61,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("pciAddress")]
         public Input<string>? PciAddress { get; set; }
 
+        /// <summary>
+        /// - (ReadOnly) UUID of the GPU.
+        /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }
 
+        /// <summary>
+        /// - (Optional) The vendor of the GPU.
+        /// </summary>
         [Input("vendor")]
         public Input<string>? Vendor { get; set; }
 
         public VirtualMachineGpuListArgs()
         {
         }
+        public static new VirtualMachineGpuListArgs Empty => new VirtualMachineGpuListArgs();
     }
 }

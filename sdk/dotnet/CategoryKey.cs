@@ -16,24 +16,23 @@ namespace PiersKarsenbarg.Nutanix
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var test = new Nutanix.CategoryKey("test", new()
     ///     {
-    ///         var test = new Nutanix.CategoryKey("test", new Nutanix.CategoryKeyArgs
-    ///         {
-    ///             Description = "App Support Category Key",
-    ///         });
-    ///     }
+    ///         Description = "App Support Category Key",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/categoryKey:CategoryKey")]
-    public partial class CategoryKey : Pulumi.CustomResource
+    public partial class CategoryKey : global::Pulumi.CustomResource
     {
         /// <summary>
         /// (Optional) The version of the API.
@@ -41,12 +40,21 @@ namespace PiersKarsenbarg.Nutanix
         [Output("apiVersion")]
         public Output<string> ApiVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) A description for category key.
+        /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Required) The name for the category key.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// - Specifying whether its a system defined category.
+        /// </summary>
         [Output("systemDefined")]
         public Output<bool> SystemDefined { get; private set; } = null!;
 
@@ -95,20 +103,27 @@ namespace PiersKarsenbarg.Nutanix
         }
     }
 
-    public sealed class CategoryKeyArgs : Pulumi.ResourceArgs
+    public sealed class CategoryKeyArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Optional) A description for category key.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// - (Required) The name for the category key.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         public CategoryKeyArgs()
         {
         }
+        public static new CategoryKeyArgs Empty => new CategoryKeyArgs();
     }
 
-    public sealed class CategoryKeyState : Pulumi.ResourceArgs
+    public sealed class CategoryKeyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// (Optional) The version of the API.
@@ -116,17 +131,27 @@ namespace PiersKarsenbarg.Nutanix
         [Input("apiVersion")]
         public Input<string>? ApiVersion { get; set; }
 
+        /// <summary>
+        /// - (Optional) A description for category key.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// - (Required) The name for the category key.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - Specifying whether its a system defined category.
+        /// </summary>
         [Input("systemDefined")]
         public Input<bool>? SystemDefined { get; set; }
 
         public CategoryKeyState()
         {
         }
+        public static new CategoryKeyState Empty => new CategoryKeyState();
     }
 }

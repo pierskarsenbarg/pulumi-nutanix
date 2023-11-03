@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,21 +15,18 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const networkDetails = pulumi.output(nutanix.getFoundationNodeNetworkDetails({
+ * const networkDetails = nutanix.getFoundationNodeNetworkDetails({
  *     ipv6Addresses: [
  *         "<ipv6-address-1>",
  *         "<ipv6-address-2>",
  *     ],
  *     timeout: "30",
- * }));
+ * });
  * ```
  */
 export function getFoundationNodeNetworkDetails(args: GetFoundationNodeNetworkDetailsArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationNodeNetworkDetailsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", {
         "ipv6Addresses": args.ipv6Addresses,
         "timeout": args.timeout,
@@ -39,7 +37,13 @@ export function getFoundationNodeNetworkDetails(args: GetFoundationNodeNetworkDe
  * A collection of arguments for invoking getFoundationNodeNetworkDetails.
  */
 export interface GetFoundationNodeNetworkDetailsArgs {
+    /**
+     * list of ipv6 addresses
+     */
     ipv6Addresses: string[];
+    /**
+     * timeout in seconds
+     */
     timeout?: string;
 }
 
@@ -52,18 +56,44 @@ export interface GetFoundationNodeNetworkDetailsResult {
      */
     readonly id: string;
     readonly ipv6Addresses: string[];
+    /**
+     * nodes array.
+     */
     readonly nodes: outputs.GetFoundationNodeNetworkDetailsNode[];
     readonly timeout?: string;
 }
-
+/**
+ * Gets hypervisor, CVM & IPMI info of the discovered nodes using their ipv6 address.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const networkDetails = nutanix.getFoundationNodeNetworkDetails({
+ *     ipv6Addresses: [
+ *         "<ipv6-address-1>",
+ *         "<ipv6-address-2>",
+ *     ],
+ *     timeout: "30",
+ * });
+ * ```
+ */
 export function getFoundationNodeNetworkDetailsOutput(args: GetFoundationNodeNetworkDetailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationNodeNetworkDetailsResult> {
-    return pulumi.output(args).apply(a => getFoundationNodeNetworkDetails(a, opts))
+    return pulumi.output(args).apply((a: any) => getFoundationNodeNetworkDetails(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getFoundationNodeNetworkDetails.
  */
 export interface GetFoundationNodeNetworkDetailsOutputArgs {
+    /**
+     * list of ipv6 addresses
+     */
     ipv6Addresses: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * timeout in seconds
+     */
     timeout?: pulumi.Input<string>;
 }

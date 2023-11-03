@@ -2,15 +2,13 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getFoundationCentralClusterDetails(args: GetFoundationCentralClusterDetailsArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralClusterDetailsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", {
         "clusterExternalIp": args.clusterExternalIp,
         "clusterName": args.clusterName,
@@ -62,9 +60,8 @@ export interface GetFoundationCentralClusterDetailsResult {
     readonly storageNodeCount: number;
     readonly workflowType: string;
 }
-
 export function getFoundationCentralClusterDetailsOutput(args: GetFoundationCentralClusterDetailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralClusterDetailsResult> {
-    return pulumi.output(args).apply(a => getFoundationCentralClusterDetails(a, opts))
+    return pulumi.output(args).apply((a: any) => getFoundationCentralClusterDetails(a, opts))
 }
 
 /**

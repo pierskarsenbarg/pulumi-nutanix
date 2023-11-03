@@ -2,18 +2,16 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
  * Describes a Host
  */
 export function getHost(args: GetHostArgs, opts?: pulumi.InvokeOptions): Promise<GetHostResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getHost:getHost", {
         "categories": args.categories,
         "hostId": args.hostId,
@@ -24,7 +22,13 @@ export function getHost(args: GetHostArgs, opts?: pulumi.InvokeOptions): Promise
  * A collection of arguments for invoking getHost.
  */
 export interface GetHostArgs {
+    /**
+     * - Categories for the image.
+     */
     categories?: inputs.GetHostCategory[];
+    /**
+     * Represents hosts uuid
+     */
     hostId: string;
 }
 
@@ -34,67 +38,128 @@ export interface GetHostArgs {
 export interface GetHostResult {
     /**
      * The API version.
-     * * `gpuDriverVersion`: - Host GPU driver version.
-     * * `failoverCluster`: - Hyper-V failover cluster.
-     * * `ipmi`: - Host IPMI info.
-     * * `cpuModel`: - Host CPU model.
-     * * `hostNicsIdList`: - Host NICs.
-     * * `numCpuSockets`: - Number of CPU sockets.
-     * * `windowsDomain`: - The name of the node to be renamed to during domain-join. If not given,a new name will be automatically assigned.
-     * * `gpuList`: - List of GPUs on the host.
-     * * `serialNumber`: - Node serial number.
-     * * `cpuCapacityHz`: - Host CPU capacity.
-     * * `memoryCapacityMib`: - Host memory capacity in MiB.
-     * * `hostDisksReferenceList`: - The reference to a disk.
-     * * `monitoringState`: - Host monitoring status.
-     * * `hypervisor`: - Host Hypervisor information.
-     * * `hostType`: - Host type.
-     * * `numCpuCores`: - Number of CPU cores on Host.
-     * * `rackableUnitReference`: - The reference to a rackable_unit.
-     * * `controllerVm`: - Host controller vm information.
-     * * `block`: - Host block config info.
      */
     readonly apiVersion: string;
+    /**
+     * - Host block config info.
+     */
     readonly block: {[key: string]: string};
+    /**
+     * - Categories for the image.
+     */
     readonly categories: outputs.GetHostCategory[];
+    /**
+     * - Reference to a kind. Either one of (kind, uuid) or url needs to be specified.
+     */
     readonly clusterReference: {[key: string]: string};
+    /**
+     * - Host controller vm information.
+     */
     readonly controllerVm: {[key: string]: string};
+    /**
+     * - Host CPU capacity.
+     */
     readonly cpuCapacityHz: number;
+    /**
+     * - Host CPU model.
+     */
     readonly cpuModel: string;
+    /**
+     * - Hyper-V failover cluster.
+     */
     readonly failoverCluster: {[key: string]: string};
+    /**
+     * - Host GPU driver version.
+     */
     readonly gpuDriverVersion: string;
+    /**
+     * - List of GPUs on the host.
+     */
     readonly gpuLists: outputs.GetHostGpuList[];
+    /**
+     * - The reference to a disk.
+     */
     readonly hostDisksReferenceLists: outputs.GetHostHostDisksReferenceList[];
     readonly hostId: string;
+    /**
+     * - Host NICs.
+     */
     readonly hostNicsIdLists: string[];
+    /**
+     * - Host type.
+     */
     readonly hostType: string;
+    /**
+     * - Host Hypervisor information.
+     */
     readonly hypervisor: {[key: string]: string};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * - Host IPMI info.
+     */
     readonly ipmi: {[key: string]: string};
+    /**
+     * - Host memory capacity in MiB.
+     */
     readonly memoryCapacityMib: number;
     readonly metadata: {[key: string]: string};
+    /**
+     * - Host monitoring status.
+     */
     readonly monitoringState: string;
+    /**
+     * - the name.
+     */
     readonly name: string;
+    /**
+     * - Number of CPU cores on Host.
+     */
     readonly numCpuCores: number;
+    /**
+     * - Number of CPU sockets.
+     */
     readonly numCpuSockets: number;
+    /**
+     * - The reference to a user.
+     */
     readonly ownerReference: {[key: string]: string};
+    /**
+     * - The reference to a project.
+     */
     readonly projectReference: {[key: string]: string};
+    /**
+     * - The reference to a rackable_unit.
+     */
     readonly rackableUnitReference: {[key: string]: string};
+    /**
+     * - Node serial number.
+     */
     readonly serialNumber: string;
+    /**
+     * - The name of the node to be renamed to during domain-join. If not given,a new name will be automatically assigned.
+     */
     readonly windowsDomain: {[key: string]: string};
 }
-
+/**
+ * Describes a Host
+ */
 export function getHostOutput(args: GetHostOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHostResult> {
-    return pulumi.output(args).apply(a => getHost(a, opts))
+    return pulumi.output(args).apply((a: any) => getHost(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getHost.
  */
 export interface GetHostOutputArgs {
+    /**
+     * - Categories for the image.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.GetHostCategoryArgs>[]>;
+    /**
+     * Represents hosts uuid
+     */
     hostId: pulumi.Input<string>;
 }

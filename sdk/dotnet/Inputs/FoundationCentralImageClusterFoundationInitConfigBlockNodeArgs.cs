@@ -11,11 +11,17 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs : Pulumi.ResourceArgs
+    public sealed class FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// IP address to be set for the cvm on the node.
+        /// </summary>
         [Input("cvmIp")]
         public Input<string>? CvmIp { get; set; }
 
+        /// <summary>
+        /// Vlan tag of the cvm, if the cvm is on a vlan.
+        /// </summary>
         [Input("cvmVlanId")]
         public Input<int>? CvmVlanId { get; set; }
 
@@ -24,6 +30,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("hardwareAttributesOverride")]
         private InputMap<string>? _hardwareAttributesOverride;
+
+        /// <summary>
+        /// Hardware attributes override json for the node.
+        /// </summary>
         public InputMap<string> HardwareAttributesOverride
         {
             get => _hardwareAttributesOverride ?? (_hardwareAttributesOverride = new InputMap<string>());
@@ -33,15 +43,27 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("hypervisor")]
         public Input<string>? Hypervisor { get; set; }
 
+        /// <summary>
+        /// Name to be set for the hypervisor host.
+        /// </summary>
         [Input("hypervisorHostname")]
         public Input<string>? HypervisorHostname { get; set; }
 
+        /// <summary>
+        /// IP address to be set for the hypervisor on the node.
+        /// </summary>
         [Input("hypervisorIp")]
         public Input<string>? HypervisorIp { get; set; }
 
+        /// <summary>
+        /// True, if the node should be imaged, False, otherwise.
+        /// </summary>
         [Input("imageNow")]
         public Input<bool>? ImageNow { get; set; }
 
+        /// <summary>
+        /// IP address to be set for the ipmi of the node.
+        /// </summary>
         [Input("ipmiIp")]
         public Input<string>? IpmiIp { get; set; }
 
@@ -57,5 +79,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs()
         {
         }
+        public static new FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs Empty => new FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs();
     }
 }

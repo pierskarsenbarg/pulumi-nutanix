@@ -11,19 +11,29 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class AccessControlPolicyUserGroupReferenceListGetArgs : Pulumi.ResourceArgs
+    public sealed class AccessControlPolicyUserGroupReferenceListGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - The kind name (Default value: project)(Required).
+        /// </summary>
         [Input("kind")]
         public Input<string>? Kind { get; set; }
 
+        /// <summary>
+        /// - (Optional) Name of the Access Control Policy.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - the UUID(Required).
+        /// </summary>
         [Input("uuid", required: true)]
         public Input<string> Uuid { get; set; } = null!;
 
         public AccessControlPolicyUserGroupReferenceListGetArgs()
         {
         }
+        public static new AccessControlPolicyUserGroupReferenceListGetArgs Empty => new AccessControlPolicyUserGroupReferenceListGetArgs();
     }
 }

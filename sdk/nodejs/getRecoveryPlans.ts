@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
@@ -14,15 +15,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const recoveryPlans = pulumi.output(nutanix.getRecoveryPlans());
+ * const recoveryPlans = nutanix.getRecoveryPlans({});
  * ```
  */
 export function getRecoveryPlans(opts?: pulumi.InvokeOptions): Promise<GetRecoveryPlansResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getRecoveryPlans:getRecoveryPlans", {
     }, opts);
 }
@@ -31,10 +29,31 @@ export function getRecoveryPlans(opts?: pulumi.InvokeOptions): Promise<GetRecove
  * A collection of values returned by getRecoveryPlans.
  */
 export interface GetRecoveryPlansResult {
+    /**
+     * version of the API
+     */
     readonly apiVersion: string;
+    /**
+     * List of Recovery Plans
+     */
     readonly entities: outputs.GetRecoveryPlansEntity[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+}
+/**
+ * Describes Recovery Plans
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const recoveryPlans = nutanix.getRecoveryPlans({});
+ * ```
+ */
+export function getRecoveryPlansOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetRecoveryPlansResult> {
+    return pulumi.output(getRecoveryPlans(opts))
 }

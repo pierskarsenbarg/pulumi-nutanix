@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve a address group.
@@ -18,34 +20,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		testAddress, err := nutanix.NewAddressGroup(ctx, "testAddress", &nutanix.AddressGroupArgs{
-// 			Description: pulumi.String("test address groups resource"),
-// 			IpAddressBlockLists: AddressGroupIpAddressBlockListArray{
-// 				&AddressGroupIpAddressBlockListArgs{
-// 					Ip:           pulumi.String("10.0.0.0"),
-// 					PrefixLength: pulumi.Int(24),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_ = nutanix.LookupAddressGroupOutput(ctx, GetAddressGroupOutputArgs{
-// 			Uuid: testAddress.ID(),
-// 		}, nil)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			testAddress, err := nutanix.NewAddressGroup(ctx, "testAddress", &nutanix.AddressGroupArgs{
+//				Description: pulumi.String("test address groups resource"),
+//				IpAddressBlockLists: nutanix.AddressGroupIpAddressBlockListArray{
+//					&nutanix.AddressGroupIpAddressBlockListArgs{
+//						Ip:           pulumi.String("10.0.0.0"),
+//						PrefixLength: pulumi.Int(24),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_ = nutanix.LookupAddressGroupOutput(ctx, nutanix.GetAddressGroupOutputArgs{
+//				Uuid: testAddress.ID(),
+//			}, nil)
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupAddressGroup(ctx *pulumi.Context, args *LookupAddressGroupArgs, opts ...pulumi.InvokeOption) (*LookupAddressGroupResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAddressGroupResult
 	err := ctx.Invoke("nutanix:index/getAddressGroup:getAddressGroup", args, &rv, opts...)
 	if err != nil {
@@ -56,18 +60,24 @@ func LookupAddressGroup(ctx *pulumi.Context, args *LookupAddressGroupArgs, opts 
 
 // A collection of arguments for invoking getAddressGroup.
 type LookupAddressGroupArgs struct {
+	// - (Required) UUID of the address group
 	Uuid string `pulumi:"uuid"`
 }
 
 // A collection of values returned by getAddressGroup.
 type LookupAddressGroupResult struct {
+	// - (ReadOnly) Address Group string
 	AddressGroupString string `pulumi:"addressGroupString"`
-	Description        string `pulumi:"description"`
+	// - (ReadOnly) Description of the address group
+	Description string `pulumi:"description"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                  string                              `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// - (ReadOnly) list of IP address blocks with their prefix length
 	IpAddressBlockLists []GetAddressGroupIpAddressBlockList `pulumi:"ipAddressBlockLists"`
-	Name                string                              `pulumi:"name"`
-	Uuid                string                              `pulumi:"uuid"`
+	// - (ReadOnly) Name of the address group
+	Name string `pulumi:"name"`
+	// - (Required) UUID of the address group
+	Uuid string `pulumi:"uuid"`
 }
 
 func LookupAddressGroupOutput(ctx *pulumi.Context, args LookupAddressGroupOutputArgs, opts ...pulumi.InvokeOption) LookupAddressGroupResultOutput {
@@ -85,6 +95,7 @@ func LookupAddressGroupOutput(ctx *pulumi.Context, args LookupAddressGroupOutput
 
 // A collection of arguments for invoking getAddressGroup.
 type LookupAddressGroupOutputArgs struct {
+	// - (Required) UUID of the address group
 	Uuid pulumi.StringInput `pulumi:"uuid"`
 }
 
@@ -107,10 +118,18 @@ func (o LookupAddressGroupResultOutput) ToLookupAddressGroupResultOutputWithCont
 	return o
 }
 
+func (o LookupAddressGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAddressGroupResult] {
+	return pulumix.Output[LookupAddressGroupResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// - (ReadOnly) Address Group string
 func (o LookupAddressGroupResultOutput) AddressGroupString() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAddressGroupResult) string { return v.AddressGroupString }).(pulumi.StringOutput)
 }
 
+// - (ReadOnly) Description of the address group
 func (o LookupAddressGroupResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAddressGroupResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -120,14 +139,17 @@ func (o LookupAddressGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAddressGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - (ReadOnly) list of IP address blocks with their prefix length
 func (o LookupAddressGroupResultOutput) IpAddressBlockLists() GetAddressGroupIpAddressBlockListArrayOutput {
 	return o.ApplyT(func(v LookupAddressGroupResult) []GetAddressGroupIpAddressBlockList { return v.IpAddressBlockLists }).(GetAddressGroupIpAddressBlockListArrayOutput)
 }
 
+// - (ReadOnly) Name of the address group
 func (o LookupAddressGroupResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAddressGroupResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// - (Required) UUID of the address group
 func (o LookupAddressGroupResultOutput) Uuid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAddressGroupResult) string { return v.Uuid }).(pulumi.StringOutput)
 }

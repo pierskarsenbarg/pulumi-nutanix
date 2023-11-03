@@ -16,16 +16,40 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly ImmutableArray<Outputs.FoundationCentralImageClusterFoundationInitConfigBlock> Blocks;
         public readonly ImmutableArray<Outputs.FoundationCentralImageClusterFoundationInitConfigCluster> Clusters;
+        /// <summary>
+        /// Gateway of the cvm.
+        /// </summary>
         public readonly string? CvmGateway;
+        /// <summary>
+        /// Netmask of the cvm.
+        /// </summary>
         public readonly string? CvmNetmask;
         public readonly string? DnsServers;
+        /// <summary>
+        /// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+        /// </summary>
         public readonly string? HypervProductKey;
+        /// <summary>
+        /// SKU of hyperv to be installed if hypervisor_type is hyperv.
+        /// </summary>
         public readonly string? HypervSku;
+        /// <summary>
+        /// Gateway of the hypervisor.
+        /// </summary>
         public readonly string? HypervisorGateway;
         public readonly ImmutableDictionary<string, string>? HypervisorIsoUrl;
         public readonly ImmutableArray<Outputs.FoundationCentralImageClusterFoundationInitConfigHypervisorIso> HypervisorIsos;
+        /// <summary>
+        /// Netmask of the hypervisor.
+        /// </summary>
         public readonly string? HypervisorNetmask;
+        /// <summary>
+        /// Gateway of the ipmi.
+        /// </summary>
         public readonly string? IpmiGateway;
+        /// <summary>
+        /// Netmask of the ipmi.
+        /// </summary>
         public readonly string? IpmiNetmask;
         public readonly ImmutableArray<Outputs.FoundationCentralImageClusterFoundationInitConfigNosPackageUrl> NosPackageUrls;
 

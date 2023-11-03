@@ -15,6 +15,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetFloatingIpsMetadataResult
     {
         public readonly string Filter;
+        /// <summary>
+        /// - The kind name (Default value: project).
+        /// </summary>
         public readonly string Kind;
         public readonly int Length;
         public readonly int Offset;

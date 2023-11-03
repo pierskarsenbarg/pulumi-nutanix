@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class RecoveryPlanCategoryArgs : Pulumi.ResourceArgs
+    public sealed class RecoveryPlanCategoryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The name for the Recovery Plan.
@@ -28,5 +28,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public RecoveryPlanCategoryArgs()
         {
         }
+        public static new RecoveryPlanCategoryArgs Empty => new RecoveryPlanCategoryArgs();
     }
 }

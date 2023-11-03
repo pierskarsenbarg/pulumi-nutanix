@@ -15,15 +15,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class FoundationImageNodesEosMetadata
     {
         /// <summary>
-        /// : - arrya of account names
+        /// - arrya of account names
         /// </summary>
         public readonly ImmutableArray<string> AccountNames;
         /// <summary>
-        /// : - Id of the Eos config uploaded in foundation GUI.
+        /// - Id of the Eos config uploaded in foundation GUI.
         /// </summary>
         public readonly string? ConfigId;
         /// <summary>
-        /// : - Email address of the user who downloaded Eos config.
+        /// - Email address of the user who downloaded Eos config.
         /// </summary>
         public readonly string? Email;
 

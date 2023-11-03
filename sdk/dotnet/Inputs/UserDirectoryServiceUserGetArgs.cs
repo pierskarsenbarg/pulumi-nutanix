@@ -11,19 +11,26 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class UserDirectoryServiceUserGetArgs : Pulumi.ResourceArgs
+    public sealed class UserDirectoryServiceUserGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("defaultUserPrincipalName")]
         public Input<string>? DefaultUserPrincipalName { get; set; }
 
+        /// <summary>
+        /// - (Optional) The reference to a directory service. See #reference for to look the supported attributes.
+        /// </summary>
         [Input("directoryServiceReference", required: true)]
         public Input<Inputs.UserDirectoryServiceUserDirectoryServiceReferenceGetArgs> DirectoryServiceReference { get; set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The UserPrincipalName of the user from the directory service.
+        /// </summary>
         [Input("userPrincipalName")]
         public Input<string>? UserPrincipalName { get; set; }
 
         public UserDirectoryServiceUserGetArgs()
         {
         }
+        public static new UserDirectoryServiceUserGetArgs Empty => new UserDirectoryServiceUserGetArgs();
     }
 }

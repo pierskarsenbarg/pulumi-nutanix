@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class GetPermissionCategoryInputArgs : Pulumi.ResourceArgs
+    public sealed class GetPermissionCategoryInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// the name.
@@ -28,5 +28,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public GetPermissionCategoryInputArgs()
         {
         }
+        public static new GetPermissionCategoryInputArgs Empty => new GetPermissionCategoryInputArgs();
     }
 }

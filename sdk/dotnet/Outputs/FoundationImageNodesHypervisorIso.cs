@@ -15,19 +15,19 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class FoundationImageNodesHypervisorIso
     {
         /// <summary>
-        /// : - Details of hypervisor ISO of type esx.
+        /// - Details of hypervisor ISO of type esx.
         /// </summary>
         public readonly Outputs.FoundationImageNodesHypervisorIsoEsx? Esx;
         /// <summary>
-        /// : - Details of hypervisor ISO of type hyperv.
+        /// - Details of hypervisor ISO of type hyperv.
         /// </summary>
         public readonly Outputs.FoundationImageNodesHypervisorIsoHyperv? Hyperv;
         /// <summary>
-        /// : - Details of hypervisor ISO of type kvm.
+        /// - Details of hypervisor ISO of type kvm.
         /// </summary>
         public readonly Outputs.FoundationImageNodesHypervisorIsoKvm? Kvm;
         /// <summary>
-        /// : - Details of hypervisor ISO of type xen.
+        /// - Details of hypervisor ISO of type xen.
         /// </summary>
         public readonly Outputs.FoundationImageNodesHypervisorIsoXen? Xen;
 

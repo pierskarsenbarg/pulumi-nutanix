@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Nutanix network security rule resource to Create a network security rule.
@@ -21,188 +23,221 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.NewNetworkSecurityRule(ctx, "isolation", &nutanix.NetworkSecurityRuleArgs{
-// 			Description:         pulumi.String("Isolation Rule Example"),
-// 			IsolationRuleAction: pulumi.String("APPLY"),
-// 			IsolationRuleFirstEntityFilterKindLists: pulumi.StringArray{
-// 				pulumi.String("vm"),
-// 			},
-// 			IsolationRuleFirstEntityFilterParams: NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArray{
-// 				&NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs{
-// 					Name: pulumi.String("Environment"),
-// 					Values: pulumi.StringArray{
-// 						pulumi.String("Dev"),
-// 					},
-// 				},
-// 			},
-// 			IsolationRuleFirstEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
-// 			IsolationRuleSecondEntityFilterKindLists: pulumi.StringArray{
-// 				pulumi.String("vm"),
-// 			},
-// 			IsolationRuleSecondEntityFilterParams: NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArray{
-// 				&NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs{
-// 					Name: pulumi.String("Environment"),
-// 					Values: pulumi.StringArray{
-// 						pulumi.String("Production"),
-// 					},
-// 				},
-// 			},
-// 			IsolationRuleSecondEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewNetworkSecurityRule(ctx, "isolation", &nutanix.NetworkSecurityRuleArgs{
+//				Description:         pulumi.String("Isolation Rule Example"),
+//				IsolationRuleAction: pulumi.String("APPLY"),
+//				IsolationRuleFirstEntityFilterKindLists: pulumi.StringArray{
+//					pulumi.String("vm"),
+//				},
+//				IsolationRuleFirstEntityFilterParams: nutanix.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArray{
+//					&nutanix.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs{
+//						Name: pulumi.String("Environment"),
+//						Values: pulumi.StringArray{
+//							pulumi.String("Dev"),
+//						},
+//					},
+//				},
+//				IsolationRuleFirstEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
+//				IsolationRuleSecondEntityFilterKindLists: pulumi.StringArray{
+//					pulumi.String("vm"),
+//				},
+//				IsolationRuleSecondEntityFilterParams: nutanix.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArray{
+//					&nutanix.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs{
+//						Name: pulumi.String("Environment"),
+//						Values: pulumi.StringArray{
+//							pulumi.String("Production"),
+//						},
+//					},
+//				},
+//				IsolationRuleSecondEntityFilterType: pulumi.String("CATEGORIES_MATCH_ALL"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 // ### Usage with service and address groups
 // ```go
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		service1, err := nutanix.NewServiceGroup(ctx, "service1", &nutanix.ServiceGroupArgs{
-// 			Description: pulumi.String("test"),
-// 			ServiceLists: ServiceGroupServiceListArray{
-// 				&ServiceGroupServiceListArgs{
-// 					Protocol: pulumi.String("TCP"),
-// 					TcpPortRangeLists: ServiceGroupServiceListTcpPortRangeListArray{
-// 						&ServiceGroupServiceListTcpPortRangeListArgs{
-// 							StartPort: pulumi.Int(22),
-// 							EndPort:   pulumi.Int(22),
-// 						},
-// 						&ServiceGroupServiceListTcpPortRangeListArgs{
-// 							StartPort: pulumi.Int(2222),
-// 							EndPort:   pulumi.Int(2222),
-// 						},
-// 					},
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		address1, err := nutanix.NewAddressGroup(ctx, "address1", &nutanix.AddressGroupArgs{
-// 			Description: pulumi.String("test"),
-// 			IpAddressBlockLists: AddressGroupIpAddressBlockListArray{
-// 				&AddressGroupIpAddressBlockListArgs{
-// 					Ip:           pulumi.String("10.0.0.0"),
-// 					PrefixLength: pulumi.Int(24),
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = nutanix.NewCategoryValue(ctx, "ad-group-user-1", &nutanix.CategoryValueArgs{
-// 			Description: pulumi.String("group user category value"),
-// 			Value:       pulumi.String("AD"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = nutanix.NewNetworkSecurityRule(ctx, "vDI", &nutanix.NetworkSecurityRuleArgs{
-// 			AdRuleAction: pulumi.String("APPLY"),
-// 			Description:  pulumi.String("test"),
-// 			AdRuleInboundAllowLists: NetworkSecurityRuleAdRuleInboundAllowListArray{
-// 				&NetworkSecurityRuleAdRuleInboundAllowListArgs{
-// 					IpSubnet:              pulumi.String("10.0.0.0"),
-// 					IpSubnetPrefixLength:  pulumi.String("8"),
-// 					PeerSpecificationType: pulumi.String("IP_SUBNET"),
-// 					Protocol:              pulumi.String("ALL"),
-// 				},
-// 			},
-// 			AdRuleTargetGroupDefaultInternalPolicy: pulumi.String("DENY_ALL"),
-// 			AdRuleTargetGroupFilterKindLists: pulumi.StringArray{
-// 				pulumi.String("vm"),
-// 			},
-// 			AdRuleTargetGroupFilterParams: NetworkSecurityRuleAdRuleTargetGroupFilterParamArray{
-// 				&NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs{
-// 					Name: pulumi.String("AD"),
-// 					Values: pulumi.StringArray{
-// 						pulumi.String("AD"),
-// 					},
-// 				},
-// 			},
-// 			AdRuleTargetGroupFilterType:            pulumi.String("CATEGORIES_MATCH_ALL"),
-// 			AdRuleTargetGroupPeerSpecificationType: pulumi.String("FILTER"),
-// 			AdRuleOutboundAllowLists: NetworkSecurityRuleAdRuleOutboundAllowListArray{
-// 				&NetworkSecurityRuleAdRuleOutboundAllowListArgs{
-// 					PeerSpecificationType: pulumi.String("ALL"),
-// 					ServiceGroupLists: NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupListArray{
-// 						&NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupListArgs{
-// 							Kind: pulumi.String("service_group"),
-// 							Uuid: service1.ID(),
-// 						},
-// 					},
-// 					AddressGroupInclusionLists: NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionListArray{
-// 						&NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionListArgs{
-// 							Kind: pulumi.String("address_group"),
-// 							Uuid: address1.ID(),
-// 						},
-// 					},
-// 				},
-// 			},
-// 		}, pulumi.DependsOn([]pulumi.Resource{
-// 			ad_group_user_1,
-// 		}))
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			service1, err := nutanix.NewServiceGroup(ctx, "service1", &nutanix.ServiceGroupArgs{
+//				Description: pulumi.String("test"),
+//				ServiceLists: nutanix.ServiceGroupServiceListArray{
+//					&nutanix.ServiceGroupServiceListArgs{
+//						Protocol: pulumi.String("TCP"),
+//						TcpPortRangeLists: nutanix.ServiceGroupServiceListTcpPortRangeListArray{
+//							&nutanix.ServiceGroupServiceListTcpPortRangeListArgs{
+//								StartPort: pulumi.Int(22),
+//								EndPort:   pulumi.Int(22),
+//							},
+//							&nutanix.ServiceGroupServiceListTcpPortRangeListArgs{
+//								StartPort: pulumi.Int(2222),
+//								EndPort:   pulumi.Int(2222),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			address1, err := nutanix.NewAddressGroup(ctx, "address1", &nutanix.AddressGroupArgs{
+//				Description: pulumi.String("test"),
+//				IpAddressBlockLists: nutanix.AddressGroupIpAddressBlockListArray{
+//					&nutanix.AddressGroupIpAddressBlockListArgs{
+//						Ip:           pulumi.String("10.0.0.0"),
+//						PrefixLength: pulumi.Int(24),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.NewCategoryValue(ctx, "ad-group-user-1", &nutanix.CategoryValueArgs{
+//				Description: pulumi.String("group user category value"),
+//				Value:       pulumi.String("AD"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.NewNetworkSecurityRule(ctx, "vDI", &nutanix.NetworkSecurityRuleArgs{
+//				AdRuleAction: pulumi.String("APPLY"),
+//				Description:  pulumi.String("test"),
+//				AdRuleInboundAllowLists: nutanix.NetworkSecurityRuleAdRuleInboundAllowListArray{
+//					&nutanix.NetworkSecurityRuleAdRuleInboundAllowListArgs{
+//						IpSubnet:              pulumi.String("10.0.0.0"),
+//						IpSubnetPrefixLength:  pulumi.String("8"),
+//						PeerSpecificationType: pulumi.String("IP_SUBNET"),
+//						Protocol:              pulumi.String("ALL"),
+//					},
+//				},
+//				AdRuleTargetGroupDefaultInternalPolicy: pulumi.String("DENY_ALL"),
+//				AdRuleTargetGroupFilterKindLists: pulumi.StringArray{
+//					pulumi.String("vm"),
+//				},
+//				AdRuleTargetGroupFilterParams: nutanix.NetworkSecurityRuleAdRuleTargetGroupFilterParamArray{
+//					&nutanix.NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs{
+//						Name: pulumi.String("AD"),
+//						Values: pulumi.StringArray{
+//							pulumi.String("AD"),
+//						},
+//					},
+//				},
+//				AdRuleTargetGroupFilterType:            pulumi.String("CATEGORIES_MATCH_ALL"),
+//				AdRuleTargetGroupPeerSpecificationType: pulumi.String("FILTER"),
+//				AdRuleOutboundAllowLists: nutanix.NetworkSecurityRuleAdRuleOutboundAllowListArray{
+//					&nutanix.NetworkSecurityRuleAdRuleOutboundAllowListArgs{
+//						PeerSpecificationType: pulumi.String("ALL"),
+//						ServiceGroupLists: nutanix.NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupListArray{
+//							&nutanix.NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupListArgs{
+//								Kind: pulumi.String("service_group"),
+//								Uuid: service1.ID(),
+//							},
+//						},
+//						AddressGroupInclusionLists: nutanix.NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionListArray{
+//							&nutanix.NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionListArgs{
+//								Kind: pulumi.String("address_group"),
+//								Uuid: address1.ID(),
+//							},
+//						},
+//					},
+//				},
+//			}, pulumi.DependsOn([]pulumi.Resource{
+//				ad_group_user_1,
+//			}))
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type NetworkSecurityRule struct {
 	pulumi.CustomResourceState
 
-	AdRuleAction                           pulumi.StringOutput                                        `pulumi:"adRuleAction"`
-	AdRuleInboundAllowLists                NetworkSecurityRuleAdRuleInboundAllowListArrayOutput       `pulumi:"adRuleInboundAllowLists"`
-	AdRuleOutboundAllowLists               NetworkSecurityRuleAdRuleOutboundAllowListArrayOutput      `pulumi:"adRuleOutboundAllowLists"`
-	AdRuleTargetGroupDefaultInternalPolicy pulumi.StringPtrOutput                                     `pulumi:"adRuleTargetGroupDefaultInternalPolicy"`
-	AdRuleTargetGroupFilterKindLists       pulumi.StringArrayOutput                                   `pulumi:"adRuleTargetGroupFilterKindLists"`
-	AdRuleTargetGroupFilterParams          NetworkSecurityRuleAdRuleTargetGroupFilterParamArrayOutput `pulumi:"adRuleTargetGroupFilterParams"`
-	AdRuleTargetGroupFilterType            pulumi.StringOutput                                        `pulumi:"adRuleTargetGroupFilterType"`
-	AdRuleTargetGroupPeerSpecificationType pulumi.StringPtrOutput                                     `pulumi:"adRuleTargetGroupPeerSpecificationType"`
-	AllowIpv6Traffic                       pulumi.BoolOutput                                          `pulumi:"allowIpv6Traffic"`
+	// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
+	AdRuleAction pulumi.StringOutput `pulumi:"adRuleAction"`
+	// - (Optional) The set of categories that matching VMs need to have.
+	AdRuleInboundAllowLists NetworkSecurityRuleAdRuleInboundAllowListArrayOutput `pulumi:"adRuleInboundAllowLists"`
+	// - (Optional)
+	AdRuleOutboundAllowLists NetworkSecurityRuleAdRuleOutboundAllowListArrayOutput `pulumi:"adRuleOutboundAllowLists"`
+	// - (Optional) - Default policy for communication within target group.
+	AdRuleTargetGroupDefaultInternalPolicy pulumi.StringPtrOutput `pulumi:"adRuleTargetGroupDefaultInternalPolicy"`
+	// - (Optional) - List of kinds associated with this filter.
+	AdRuleTargetGroupFilterKindLists pulumi.StringArrayOutput `pulumi:"adRuleTargetGroupFilterKindLists"`
+	// - (Optional) - A list of category key and list of values.
+	AdRuleTargetGroupFilterParams NetworkSecurityRuleAdRuleTargetGroupFilterParamArrayOutput `pulumi:"adRuleTargetGroupFilterParams"`
+	// - (Optional) - The type of the filter being used.
+	AdRuleTargetGroupFilterType pulumi.StringOutput `pulumi:"adRuleTargetGroupFilterType"`
+	// - (Optional) - Way to identify the object for which rule is applied.
+	AdRuleTargetGroupPeerSpecificationType pulumi.StringPtrOutput `pulumi:"adRuleTargetGroupPeerSpecificationType"`
+	AllowIpv6Traffic                       pulumi.BoolOutput      `pulumi:"allowIpv6Traffic"`
 	// The version of the API.
-	ApiVersion                               pulumi.StringOutput                                                `pulumi:"apiVersion"`
-	AppRuleAction                            pulumi.StringOutput                                                `pulumi:"appRuleAction"`
-	AppRuleInboundAllowLists                 NetworkSecurityRuleAppRuleInboundAllowListArrayOutput              `pulumi:"appRuleInboundAllowLists"`
-	AppRuleOutboundAllowLists                NetworkSecurityRuleAppRuleOutboundAllowListArrayOutput             `pulumi:"appRuleOutboundAllowLists"`
-	AppRuleTargetGroupDefaultInternalPolicy  pulumi.StringPtrOutput                                             `pulumi:"appRuleTargetGroupDefaultInternalPolicy"`
-	AppRuleTargetGroupFilterKindLists        pulumi.StringArrayOutput                                           `pulumi:"appRuleTargetGroupFilterKindLists"`
-	AppRuleTargetGroupFilterParams           NetworkSecurityRuleAppRuleTargetGroupFilterParamArrayOutput        `pulumi:"appRuleTargetGroupFilterParams"`
-	AppRuleTargetGroupFilterType             pulumi.StringOutput                                                `pulumi:"appRuleTargetGroupFilterType"`
-	AppRuleTargetGroupPeerSpecificationType  pulumi.StringPtrOutput                                             `pulumi:"appRuleTargetGroupPeerSpecificationType"`
-	Categories                               NetworkSecurityRuleCategoryArrayOutput                             `pulumi:"categories"`
-	Description                              pulumi.StringOutput                                                `pulumi:"description"`
-	IsPolicyHitlogEnabled                    pulumi.BoolOutput                                                  `pulumi:"isPolicyHitlogEnabled"`
-	IsolationRuleAction                      pulumi.StringOutput                                                `pulumi:"isolationRuleAction"`
-	IsolationRuleFirstEntityFilterKindLists  pulumi.StringArrayOutput                                           `pulumi:"isolationRuleFirstEntityFilterKindLists"`
-	IsolationRuleFirstEntityFilterParams     NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArrayOutput  `pulumi:"isolationRuleFirstEntityFilterParams"`
-	IsolationRuleFirstEntityFilterType       pulumi.StringOutput                                                `pulumi:"isolationRuleFirstEntityFilterType"`
-	IsolationRuleSecondEntityFilterKindLists pulumi.StringArrayOutput                                           `pulumi:"isolationRuleSecondEntityFilterKindLists"`
-	IsolationRuleSecondEntityFilterParams    NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArrayOutput `pulumi:"isolationRuleSecondEntityFilterParams"`
-	IsolationRuleSecondEntityFilterType      pulumi.StringOutput                                                `pulumi:"isolationRuleSecondEntityFilterType"`
-	Metadata                                 pulumi.StringMapOutput                                             `pulumi:"metadata"`
-	Name                                     pulumi.StringOutput                                                `pulumi:"name"`
-	OwnerReference                           pulumi.StringMapOutput                                             `pulumi:"ownerReference"`
-	ProjectReference                         pulumi.StringMapOutput                                             `pulumi:"projectReference"`
+	ApiVersion pulumi.StringOutput `pulumi:"apiVersion"`
+	// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
+	AppRuleAction pulumi.StringOutput `pulumi:"appRuleAction"`
+	// - (Optional) The set of categories that matching VMs need to have.
+	AppRuleInboundAllowLists NetworkSecurityRuleAppRuleInboundAllowListArrayOutput `pulumi:"appRuleInboundAllowLists"`
+	// - (Optional)
+	AppRuleOutboundAllowLists NetworkSecurityRuleAppRuleOutboundAllowListArrayOutput `pulumi:"appRuleOutboundAllowLists"`
+	// - (Optional) - Default policy for communication within target group.
+	AppRuleTargetGroupDefaultInternalPolicy pulumi.StringPtrOutput `pulumi:"appRuleTargetGroupDefaultInternalPolicy"`
+	// - (Optional) - List of kinds associated with this filter.
+	AppRuleTargetGroupFilterKindLists pulumi.StringArrayOutput `pulumi:"appRuleTargetGroupFilterKindLists"`
+	// - (Optional) - A list of category key and list of values.
+	AppRuleTargetGroupFilterParams NetworkSecurityRuleAppRuleTargetGroupFilterParamArrayOutput `pulumi:"appRuleTargetGroupFilterParams"`
+	// - (Optional) - The type of the filter being used.
+	AppRuleTargetGroupFilterType pulumi.StringOutput `pulumi:"appRuleTargetGroupFilterType"`
+	// - (Optional) - Way to identify the object for which rule is applied.
+	AppRuleTargetGroupPeerSpecificationType pulumi.StringPtrOutput `pulumi:"appRuleTargetGroupPeerSpecificationType"`
+	// - (Optional) Categories for the network_security_rule.
+	Categories NetworkSecurityRuleCategoryArrayOutput `pulumi:"categories"`
+	// - (Optional) A description for network_security_rule.
+	Description           pulumi.StringOutput `pulumi:"description"`
+	IsPolicyHitlogEnabled pulumi.BoolOutput   `pulumi:"isPolicyHitlogEnabled"`
+	// - (Optional) - These rules are used for environmental isolation.
+	IsolationRuleAction pulumi.StringOutput `pulumi:"isolationRuleAction"`
+	// - (Optional) - List of kinds associated with this filter.
+	IsolationRuleFirstEntityFilterKindLists pulumi.StringArrayOutput `pulumi:"isolationRuleFirstEntityFilterKindLists"`
+	// - (Optional) - A list of category key and list of values.
+	IsolationRuleFirstEntityFilterParams NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArrayOutput `pulumi:"isolationRuleFirstEntityFilterParams"`
+	// - (Optional) - The type of the filter being used.
+	IsolationRuleFirstEntityFilterType pulumi.StringOutput `pulumi:"isolationRuleFirstEntityFilterType"`
+	// - (Optional) - List of kinds associated with this filter.
+	IsolationRuleSecondEntityFilterKindLists pulumi.StringArrayOutput `pulumi:"isolationRuleSecondEntityFilterKindLists"`
+	// - (Optional) - A list of category key and list of values.
+	IsolationRuleSecondEntityFilterParams NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArrayOutput `pulumi:"isolationRuleSecondEntityFilterParams"`
+	// - (Optional) - The type of the filter being used.
+	IsolationRuleSecondEntityFilterType pulumi.StringOutput `pulumi:"isolationRuleSecondEntityFilterType"`
+	// - The networkSecurityRule kind metadata.
+	Metadata pulumi.StringMapOutput `pulumi:"metadata"`
+	// - (Required) The name for the network_security_rule.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// - (Optional) The reference to a user.
+	OwnerReference pulumi.StringMapOutput `pulumi:"ownerReference"`
+	// - (Optional) The reference to a project.
+	ProjectReference pulumi.StringMapOutput `pulumi:"projectReference"`
 }
 
 // NewNetworkSecurityRule registers a new resource with the given unique name, arguments, and options.
@@ -212,7 +247,7 @@ func NewNetworkSecurityRule(ctx *pulumi.Context,
 		args = &NetworkSecurityRuleArgs{}
 	}
 
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource NetworkSecurityRule
 	err := ctx.RegisterResource("nutanix:index/networkSecurityRule:NetworkSecurityRule", name, args, &resource, opts...)
 	if err != nil {
@@ -235,75 +270,133 @@ func GetNetworkSecurityRule(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NetworkSecurityRule resources.
 type networkSecurityRuleState struct {
-	AdRuleAction                           *string                                           `pulumi:"adRuleAction"`
-	AdRuleInboundAllowLists                []NetworkSecurityRuleAdRuleInboundAllowList       `pulumi:"adRuleInboundAllowLists"`
-	AdRuleOutboundAllowLists               []NetworkSecurityRuleAdRuleOutboundAllowList      `pulumi:"adRuleOutboundAllowLists"`
-	AdRuleTargetGroupDefaultInternalPolicy *string                                           `pulumi:"adRuleTargetGroupDefaultInternalPolicy"`
-	AdRuleTargetGroupFilterKindLists       []string                                          `pulumi:"adRuleTargetGroupFilterKindLists"`
-	AdRuleTargetGroupFilterParams          []NetworkSecurityRuleAdRuleTargetGroupFilterParam `pulumi:"adRuleTargetGroupFilterParams"`
-	AdRuleTargetGroupFilterType            *string                                           `pulumi:"adRuleTargetGroupFilterType"`
-	AdRuleTargetGroupPeerSpecificationType *string                                           `pulumi:"adRuleTargetGroupPeerSpecificationType"`
-	AllowIpv6Traffic                       *bool                                             `pulumi:"allowIpv6Traffic"`
+	// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
+	AdRuleAction *string `pulumi:"adRuleAction"`
+	// - (Optional) The set of categories that matching VMs need to have.
+	AdRuleInboundAllowLists []NetworkSecurityRuleAdRuleInboundAllowList `pulumi:"adRuleInboundAllowLists"`
+	// - (Optional)
+	AdRuleOutboundAllowLists []NetworkSecurityRuleAdRuleOutboundAllowList `pulumi:"adRuleOutboundAllowLists"`
+	// - (Optional) - Default policy for communication within target group.
+	AdRuleTargetGroupDefaultInternalPolicy *string `pulumi:"adRuleTargetGroupDefaultInternalPolicy"`
+	// - (Optional) - List of kinds associated with this filter.
+	AdRuleTargetGroupFilterKindLists []string `pulumi:"adRuleTargetGroupFilterKindLists"`
+	// - (Optional) - A list of category key and list of values.
+	AdRuleTargetGroupFilterParams []NetworkSecurityRuleAdRuleTargetGroupFilterParam `pulumi:"adRuleTargetGroupFilterParams"`
+	// - (Optional) - The type of the filter being used.
+	AdRuleTargetGroupFilterType *string `pulumi:"adRuleTargetGroupFilterType"`
+	// - (Optional) - Way to identify the object for which rule is applied.
+	AdRuleTargetGroupPeerSpecificationType *string `pulumi:"adRuleTargetGroupPeerSpecificationType"`
+	AllowIpv6Traffic                       *bool   `pulumi:"allowIpv6Traffic"`
 	// The version of the API.
-	ApiVersion                               *string                                                   `pulumi:"apiVersion"`
-	AppRuleAction                            *string                                                   `pulumi:"appRuleAction"`
-	AppRuleInboundAllowLists                 []NetworkSecurityRuleAppRuleInboundAllowList              `pulumi:"appRuleInboundAllowLists"`
-	AppRuleOutboundAllowLists                []NetworkSecurityRuleAppRuleOutboundAllowList             `pulumi:"appRuleOutboundAllowLists"`
-	AppRuleTargetGroupDefaultInternalPolicy  *string                                                   `pulumi:"appRuleTargetGroupDefaultInternalPolicy"`
-	AppRuleTargetGroupFilterKindLists        []string                                                  `pulumi:"appRuleTargetGroupFilterKindLists"`
-	AppRuleTargetGroupFilterParams           []NetworkSecurityRuleAppRuleTargetGroupFilterParam        `pulumi:"appRuleTargetGroupFilterParams"`
-	AppRuleTargetGroupFilterType             *string                                                   `pulumi:"appRuleTargetGroupFilterType"`
-	AppRuleTargetGroupPeerSpecificationType  *string                                                   `pulumi:"appRuleTargetGroupPeerSpecificationType"`
-	Categories                               []NetworkSecurityRuleCategory                             `pulumi:"categories"`
-	Description                              *string                                                   `pulumi:"description"`
-	IsPolicyHitlogEnabled                    *bool                                                     `pulumi:"isPolicyHitlogEnabled"`
-	IsolationRuleAction                      *string                                                   `pulumi:"isolationRuleAction"`
-	IsolationRuleFirstEntityFilterKindLists  []string                                                  `pulumi:"isolationRuleFirstEntityFilterKindLists"`
-	IsolationRuleFirstEntityFilterParams     []NetworkSecurityRuleIsolationRuleFirstEntityFilterParam  `pulumi:"isolationRuleFirstEntityFilterParams"`
-	IsolationRuleFirstEntityFilterType       *string                                                   `pulumi:"isolationRuleFirstEntityFilterType"`
-	IsolationRuleSecondEntityFilterKindLists []string                                                  `pulumi:"isolationRuleSecondEntityFilterKindLists"`
-	IsolationRuleSecondEntityFilterParams    []NetworkSecurityRuleIsolationRuleSecondEntityFilterParam `pulumi:"isolationRuleSecondEntityFilterParams"`
-	IsolationRuleSecondEntityFilterType      *string                                                   `pulumi:"isolationRuleSecondEntityFilterType"`
-	Metadata                                 map[string]string                                         `pulumi:"metadata"`
-	Name                                     *string                                                   `pulumi:"name"`
-	OwnerReference                           map[string]string                                         `pulumi:"ownerReference"`
-	ProjectReference                         map[string]string                                         `pulumi:"projectReference"`
+	ApiVersion *string `pulumi:"apiVersion"`
+	// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
+	AppRuleAction *string `pulumi:"appRuleAction"`
+	// - (Optional) The set of categories that matching VMs need to have.
+	AppRuleInboundAllowLists []NetworkSecurityRuleAppRuleInboundAllowList `pulumi:"appRuleInboundAllowLists"`
+	// - (Optional)
+	AppRuleOutboundAllowLists []NetworkSecurityRuleAppRuleOutboundAllowList `pulumi:"appRuleOutboundAllowLists"`
+	// - (Optional) - Default policy for communication within target group.
+	AppRuleTargetGroupDefaultInternalPolicy *string `pulumi:"appRuleTargetGroupDefaultInternalPolicy"`
+	// - (Optional) - List of kinds associated with this filter.
+	AppRuleTargetGroupFilterKindLists []string `pulumi:"appRuleTargetGroupFilterKindLists"`
+	// - (Optional) - A list of category key and list of values.
+	AppRuleTargetGroupFilterParams []NetworkSecurityRuleAppRuleTargetGroupFilterParam `pulumi:"appRuleTargetGroupFilterParams"`
+	// - (Optional) - The type of the filter being used.
+	AppRuleTargetGroupFilterType *string `pulumi:"appRuleTargetGroupFilterType"`
+	// - (Optional) - Way to identify the object for which rule is applied.
+	AppRuleTargetGroupPeerSpecificationType *string `pulumi:"appRuleTargetGroupPeerSpecificationType"`
+	// - (Optional) Categories for the network_security_rule.
+	Categories []NetworkSecurityRuleCategory `pulumi:"categories"`
+	// - (Optional) A description for network_security_rule.
+	Description           *string `pulumi:"description"`
+	IsPolicyHitlogEnabled *bool   `pulumi:"isPolicyHitlogEnabled"`
+	// - (Optional) - These rules are used for environmental isolation.
+	IsolationRuleAction *string `pulumi:"isolationRuleAction"`
+	// - (Optional) - List of kinds associated with this filter.
+	IsolationRuleFirstEntityFilterKindLists []string `pulumi:"isolationRuleFirstEntityFilterKindLists"`
+	// - (Optional) - A list of category key and list of values.
+	IsolationRuleFirstEntityFilterParams []NetworkSecurityRuleIsolationRuleFirstEntityFilterParam `pulumi:"isolationRuleFirstEntityFilterParams"`
+	// - (Optional) - The type of the filter being used.
+	IsolationRuleFirstEntityFilterType *string `pulumi:"isolationRuleFirstEntityFilterType"`
+	// - (Optional) - List of kinds associated with this filter.
+	IsolationRuleSecondEntityFilterKindLists []string `pulumi:"isolationRuleSecondEntityFilterKindLists"`
+	// - (Optional) - A list of category key and list of values.
+	IsolationRuleSecondEntityFilterParams []NetworkSecurityRuleIsolationRuleSecondEntityFilterParam `pulumi:"isolationRuleSecondEntityFilterParams"`
+	// - (Optional) - The type of the filter being used.
+	IsolationRuleSecondEntityFilterType *string `pulumi:"isolationRuleSecondEntityFilterType"`
+	// - The networkSecurityRule kind metadata.
+	Metadata map[string]string `pulumi:"metadata"`
+	// - (Required) The name for the network_security_rule.
+	Name *string `pulumi:"name"`
+	// - (Optional) The reference to a user.
+	OwnerReference map[string]string `pulumi:"ownerReference"`
+	// - (Optional) The reference to a project.
+	ProjectReference map[string]string `pulumi:"projectReference"`
 }
 
 type NetworkSecurityRuleState struct {
-	AdRuleAction                           pulumi.StringPtrInput
-	AdRuleInboundAllowLists                NetworkSecurityRuleAdRuleInboundAllowListArrayInput
-	AdRuleOutboundAllowLists               NetworkSecurityRuleAdRuleOutboundAllowListArrayInput
+	// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
+	AdRuleAction pulumi.StringPtrInput
+	// - (Optional) The set of categories that matching VMs need to have.
+	AdRuleInboundAllowLists NetworkSecurityRuleAdRuleInboundAllowListArrayInput
+	// - (Optional)
+	AdRuleOutboundAllowLists NetworkSecurityRuleAdRuleOutboundAllowListArrayInput
+	// - (Optional) - Default policy for communication within target group.
 	AdRuleTargetGroupDefaultInternalPolicy pulumi.StringPtrInput
-	AdRuleTargetGroupFilterKindLists       pulumi.StringArrayInput
-	AdRuleTargetGroupFilterParams          NetworkSecurityRuleAdRuleTargetGroupFilterParamArrayInput
-	AdRuleTargetGroupFilterType            pulumi.StringPtrInput
+	// - (Optional) - List of kinds associated with this filter.
+	AdRuleTargetGroupFilterKindLists pulumi.StringArrayInput
+	// - (Optional) - A list of category key and list of values.
+	AdRuleTargetGroupFilterParams NetworkSecurityRuleAdRuleTargetGroupFilterParamArrayInput
+	// - (Optional) - The type of the filter being used.
+	AdRuleTargetGroupFilterType pulumi.StringPtrInput
+	// - (Optional) - Way to identify the object for which rule is applied.
 	AdRuleTargetGroupPeerSpecificationType pulumi.StringPtrInput
 	AllowIpv6Traffic                       pulumi.BoolPtrInput
 	// The version of the API.
-	ApiVersion                               pulumi.StringPtrInput
-	AppRuleAction                            pulumi.StringPtrInput
-	AppRuleInboundAllowLists                 NetworkSecurityRuleAppRuleInboundAllowListArrayInput
-	AppRuleOutboundAllowLists                NetworkSecurityRuleAppRuleOutboundAllowListArrayInput
-	AppRuleTargetGroupDefaultInternalPolicy  pulumi.StringPtrInput
-	AppRuleTargetGroupFilterKindLists        pulumi.StringArrayInput
-	AppRuleTargetGroupFilterParams           NetworkSecurityRuleAppRuleTargetGroupFilterParamArrayInput
-	AppRuleTargetGroupFilterType             pulumi.StringPtrInput
-	AppRuleTargetGroupPeerSpecificationType  pulumi.StringPtrInput
-	Categories                               NetworkSecurityRuleCategoryArrayInput
-	Description                              pulumi.StringPtrInput
-	IsPolicyHitlogEnabled                    pulumi.BoolPtrInput
-	IsolationRuleAction                      pulumi.StringPtrInput
-	IsolationRuleFirstEntityFilterKindLists  pulumi.StringArrayInput
-	IsolationRuleFirstEntityFilterParams     NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArrayInput
-	IsolationRuleFirstEntityFilterType       pulumi.StringPtrInput
+	ApiVersion pulumi.StringPtrInput
+	// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
+	AppRuleAction pulumi.StringPtrInput
+	// - (Optional) The set of categories that matching VMs need to have.
+	AppRuleInboundAllowLists NetworkSecurityRuleAppRuleInboundAllowListArrayInput
+	// - (Optional)
+	AppRuleOutboundAllowLists NetworkSecurityRuleAppRuleOutboundAllowListArrayInput
+	// - (Optional) - Default policy for communication within target group.
+	AppRuleTargetGroupDefaultInternalPolicy pulumi.StringPtrInput
+	// - (Optional) - List of kinds associated with this filter.
+	AppRuleTargetGroupFilterKindLists pulumi.StringArrayInput
+	// - (Optional) - A list of category key and list of values.
+	AppRuleTargetGroupFilterParams NetworkSecurityRuleAppRuleTargetGroupFilterParamArrayInput
+	// - (Optional) - The type of the filter being used.
+	AppRuleTargetGroupFilterType pulumi.StringPtrInput
+	// - (Optional) - Way to identify the object for which rule is applied.
+	AppRuleTargetGroupPeerSpecificationType pulumi.StringPtrInput
+	// - (Optional) Categories for the network_security_rule.
+	Categories NetworkSecurityRuleCategoryArrayInput
+	// - (Optional) A description for network_security_rule.
+	Description           pulumi.StringPtrInput
+	IsPolicyHitlogEnabled pulumi.BoolPtrInput
+	// - (Optional) - These rules are used for environmental isolation.
+	IsolationRuleAction pulumi.StringPtrInput
+	// - (Optional) - List of kinds associated with this filter.
+	IsolationRuleFirstEntityFilterKindLists pulumi.StringArrayInput
+	// - (Optional) - A list of category key and list of values.
+	IsolationRuleFirstEntityFilterParams NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArrayInput
+	// - (Optional) - The type of the filter being used.
+	IsolationRuleFirstEntityFilterType pulumi.StringPtrInput
+	// - (Optional) - List of kinds associated with this filter.
 	IsolationRuleSecondEntityFilterKindLists pulumi.StringArrayInput
-	IsolationRuleSecondEntityFilterParams    NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArrayInput
-	IsolationRuleSecondEntityFilterType      pulumi.StringPtrInput
-	Metadata                                 pulumi.StringMapInput
-	Name                                     pulumi.StringPtrInput
-	OwnerReference                           pulumi.StringMapInput
-	ProjectReference                         pulumi.StringMapInput
+	// - (Optional) - A list of category key and list of values.
+	IsolationRuleSecondEntityFilterParams NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArrayInput
+	// - (Optional) - The type of the filter being used.
+	IsolationRuleSecondEntityFilterType pulumi.StringPtrInput
+	// - The networkSecurityRule kind metadata.
+	Metadata pulumi.StringMapInput
+	// - (Required) The name for the network_security_rule.
+	Name pulumi.StringPtrInput
+	// - (Optional) The reference to a user.
+	OwnerReference pulumi.StringMapInput
+	// - (Optional) The reference to a project.
+	ProjectReference pulumi.StringMapInput
 }
 
 func (NetworkSecurityRuleState) ElementType() reflect.Type {
@@ -311,70 +404,126 @@ func (NetworkSecurityRuleState) ElementType() reflect.Type {
 }
 
 type networkSecurityRuleArgs struct {
-	AdRuleAction                             *string                                                   `pulumi:"adRuleAction"`
-	AdRuleInboundAllowLists                  []NetworkSecurityRuleAdRuleInboundAllowList               `pulumi:"adRuleInboundAllowLists"`
-	AdRuleOutboundAllowLists                 []NetworkSecurityRuleAdRuleOutboundAllowList              `pulumi:"adRuleOutboundAllowLists"`
-	AdRuleTargetGroupDefaultInternalPolicy   *string                                                   `pulumi:"adRuleTargetGroupDefaultInternalPolicy"`
-	AdRuleTargetGroupFilterKindLists         []string                                                  `pulumi:"adRuleTargetGroupFilterKindLists"`
-	AdRuleTargetGroupFilterParams            []NetworkSecurityRuleAdRuleTargetGroupFilterParam         `pulumi:"adRuleTargetGroupFilterParams"`
-	AdRuleTargetGroupFilterType              *string                                                   `pulumi:"adRuleTargetGroupFilterType"`
-	AdRuleTargetGroupPeerSpecificationType   *string                                                   `pulumi:"adRuleTargetGroupPeerSpecificationType"`
-	AllowIpv6Traffic                         *bool                                                     `pulumi:"allowIpv6Traffic"`
-	AppRuleAction                            *string                                                   `pulumi:"appRuleAction"`
-	AppRuleInboundAllowLists                 []NetworkSecurityRuleAppRuleInboundAllowList              `pulumi:"appRuleInboundAllowLists"`
-	AppRuleOutboundAllowLists                []NetworkSecurityRuleAppRuleOutboundAllowList             `pulumi:"appRuleOutboundAllowLists"`
-	AppRuleTargetGroupDefaultInternalPolicy  *string                                                   `pulumi:"appRuleTargetGroupDefaultInternalPolicy"`
-	AppRuleTargetGroupFilterKindLists        []string                                                  `pulumi:"appRuleTargetGroupFilterKindLists"`
-	AppRuleTargetGroupFilterParams           []NetworkSecurityRuleAppRuleTargetGroupFilterParam        `pulumi:"appRuleTargetGroupFilterParams"`
-	AppRuleTargetGroupFilterType             *string                                                   `pulumi:"appRuleTargetGroupFilterType"`
-	AppRuleTargetGroupPeerSpecificationType  *string                                                   `pulumi:"appRuleTargetGroupPeerSpecificationType"`
-	Categories                               []NetworkSecurityRuleCategory                             `pulumi:"categories"`
-	Description                              *string                                                   `pulumi:"description"`
-	IsPolicyHitlogEnabled                    *bool                                                     `pulumi:"isPolicyHitlogEnabled"`
-	IsolationRuleAction                      *string                                                   `pulumi:"isolationRuleAction"`
-	IsolationRuleFirstEntityFilterKindLists  []string                                                  `pulumi:"isolationRuleFirstEntityFilterKindLists"`
-	IsolationRuleFirstEntityFilterParams     []NetworkSecurityRuleIsolationRuleFirstEntityFilterParam  `pulumi:"isolationRuleFirstEntityFilterParams"`
-	IsolationRuleFirstEntityFilterType       *string                                                   `pulumi:"isolationRuleFirstEntityFilterType"`
-	IsolationRuleSecondEntityFilterKindLists []string                                                  `pulumi:"isolationRuleSecondEntityFilterKindLists"`
-	IsolationRuleSecondEntityFilterParams    []NetworkSecurityRuleIsolationRuleSecondEntityFilterParam `pulumi:"isolationRuleSecondEntityFilterParams"`
-	IsolationRuleSecondEntityFilterType      *string                                                   `pulumi:"isolationRuleSecondEntityFilterType"`
-	Name                                     *string                                                   `pulumi:"name"`
-	OwnerReference                           map[string]string                                         `pulumi:"ownerReference"`
-	ProjectReference                         map[string]string                                         `pulumi:"projectReference"`
+	// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
+	AdRuleAction *string `pulumi:"adRuleAction"`
+	// - (Optional) The set of categories that matching VMs need to have.
+	AdRuleInboundAllowLists []NetworkSecurityRuleAdRuleInboundAllowList `pulumi:"adRuleInboundAllowLists"`
+	// - (Optional)
+	AdRuleOutboundAllowLists []NetworkSecurityRuleAdRuleOutboundAllowList `pulumi:"adRuleOutboundAllowLists"`
+	// - (Optional) - Default policy for communication within target group.
+	AdRuleTargetGroupDefaultInternalPolicy *string `pulumi:"adRuleTargetGroupDefaultInternalPolicy"`
+	// - (Optional) - List of kinds associated with this filter.
+	AdRuleTargetGroupFilterKindLists []string `pulumi:"adRuleTargetGroupFilterKindLists"`
+	// - (Optional) - A list of category key and list of values.
+	AdRuleTargetGroupFilterParams []NetworkSecurityRuleAdRuleTargetGroupFilterParam `pulumi:"adRuleTargetGroupFilterParams"`
+	// - (Optional) - The type of the filter being used.
+	AdRuleTargetGroupFilterType *string `pulumi:"adRuleTargetGroupFilterType"`
+	// - (Optional) - Way to identify the object for which rule is applied.
+	AdRuleTargetGroupPeerSpecificationType *string `pulumi:"adRuleTargetGroupPeerSpecificationType"`
+	AllowIpv6Traffic                       *bool   `pulumi:"allowIpv6Traffic"`
+	// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
+	AppRuleAction *string `pulumi:"appRuleAction"`
+	// - (Optional) The set of categories that matching VMs need to have.
+	AppRuleInboundAllowLists []NetworkSecurityRuleAppRuleInboundAllowList `pulumi:"appRuleInboundAllowLists"`
+	// - (Optional)
+	AppRuleOutboundAllowLists []NetworkSecurityRuleAppRuleOutboundAllowList `pulumi:"appRuleOutboundAllowLists"`
+	// - (Optional) - Default policy for communication within target group.
+	AppRuleTargetGroupDefaultInternalPolicy *string `pulumi:"appRuleTargetGroupDefaultInternalPolicy"`
+	// - (Optional) - List of kinds associated with this filter.
+	AppRuleTargetGroupFilterKindLists []string `pulumi:"appRuleTargetGroupFilterKindLists"`
+	// - (Optional) - A list of category key and list of values.
+	AppRuleTargetGroupFilterParams []NetworkSecurityRuleAppRuleTargetGroupFilterParam `pulumi:"appRuleTargetGroupFilterParams"`
+	// - (Optional) - The type of the filter being used.
+	AppRuleTargetGroupFilterType *string `pulumi:"appRuleTargetGroupFilterType"`
+	// - (Optional) - Way to identify the object for which rule is applied.
+	AppRuleTargetGroupPeerSpecificationType *string `pulumi:"appRuleTargetGroupPeerSpecificationType"`
+	// - (Optional) Categories for the network_security_rule.
+	Categories []NetworkSecurityRuleCategory `pulumi:"categories"`
+	// - (Optional) A description for network_security_rule.
+	Description           *string `pulumi:"description"`
+	IsPolicyHitlogEnabled *bool   `pulumi:"isPolicyHitlogEnabled"`
+	// - (Optional) - These rules are used for environmental isolation.
+	IsolationRuleAction *string `pulumi:"isolationRuleAction"`
+	// - (Optional) - List of kinds associated with this filter.
+	IsolationRuleFirstEntityFilterKindLists []string `pulumi:"isolationRuleFirstEntityFilterKindLists"`
+	// - (Optional) - A list of category key and list of values.
+	IsolationRuleFirstEntityFilterParams []NetworkSecurityRuleIsolationRuleFirstEntityFilterParam `pulumi:"isolationRuleFirstEntityFilterParams"`
+	// - (Optional) - The type of the filter being used.
+	IsolationRuleFirstEntityFilterType *string `pulumi:"isolationRuleFirstEntityFilterType"`
+	// - (Optional) - List of kinds associated with this filter.
+	IsolationRuleSecondEntityFilterKindLists []string `pulumi:"isolationRuleSecondEntityFilterKindLists"`
+	// - (Optional) - A list of category key and list of values.
+	IsolationRuleSecondEntityFilterParams []NetworkSecurityRuleIsolationRuleSecondEntityFilterParam `pulumi:"isolationRuleSecondEntityFilterParams"`
+	// - (Optional) - The type of the filter being used.
+	IsolationRuleSecondEntityFilterType *string `pulumi:"isolationRuleSecondEntityFilterType"`
+	// - (Required) The name for the network_security_rule.
+	Name *string `pulumi:"name"`
+	// - (Optional) The reference to a user.
+	OwnerReference map[string]string `pulumi:"ownerReference"`
+	// - (Optional) The reference to a project.
+	ProjectReference map[string]string `pulumi:"projectReference"`
 }
 
 // The set of arguments for constructing a NetworkSecurityRule resource.
 type NetworkSecurityRuleArgs struct {
-	AdRuleAction                             pulumi.StringPtrInput
-	AdRuleInboundAllowLists                  NetworkSecurityRuleAdRuleInboundAllowListArrayInput
-	AdRuleOutboundAllowLists                 NetworkSecurityRuleAdRuleOutboundAllowListArrayInput
-	AdRuleTargetGroupDefaultInternalPolicy   pulumi.StringPtrInput
-	AdRuleTargetGroupFilterKindLists         pulumi.StringArrayInput
-	AdRuleTargetGroupFilterParams            NetworkSecurityRuleAdRuleTargetGroupFilterParamArrayInput
-	AdRuleTargetGroupFilterType              pulumi.StringPtrInput
-	AdRuleTargetGroupPeerSpecificationType   pulumi.StringPtrInput
-	AllowIpv6Traffic                         pulumi.BoolPtrInput
-	AppRuleAction                            pulumi.StringPtrInput
-	AppRuleInboundAllowLists                 NetworkSecurityRuleAppRuleInboundAllowListArrayInput
-	AppRuleOutboundAllowLists                NetworkSecurityRuleAppRuleOutboundAllowListArrayInput
-	AppRuleTargetGroupDefaultInternalPolicy  pulumi.StringPtrInput
-	AppRuleTargetGroupFilterKindLists        pulumi.StringArrayInput
-	AppRuleTargetGroupFilterParams           NetworkSecurityRuleAppRuleTargetGroupFilterParamArrayInput
-	AppRuleTargetGroupFilterType             pulumi.StringPtrInput
-	AppRuleTargetGroupPeerSpecificationType  pulumi.StringPtrInput
-	Categories                               NetworkSecurityRuleCategoryArrayInput
-	Description                              pulumi.StringPtrInput
-	IsPolicyHitlogEnabled                    pulumi.BoolPtrInput
-	IsolationRuleAction                      pulumi.StringPtrInput
-	IsolationRuleFirstEntityFilterKindLists  pulumi.StringArrayInput
-	IsolationRuleFirstEntityFilterParams     NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArrayInput
-	IsolationRuleFirstEntityFilterType       pulumi.StringPtrInput
+	// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
+	AdRuleAction pulumi.StringPtrInput
+	// - (Optional) The set of categories that matching VMs need to have.
+	AdRuleInboundAllowLists NetworkSecurityRuleAdRuleInboundAllowListArrayInput
+	// - (Optional)
+	AdRuleOutboundAllowLists NetworkSecurityRuleAdRuleOutboundAllowListArrayInput
+	// - (Optional) - Default policy for communication within target group.
+	AdRuleTargetGroupDefaultInternalPolicy pulumi.StringPtrInput
+	// - (Optional) - List of kinds associated with this filter.
+	AdRuleTargetGroupFilterKindLists pulumi.StringArrayInput
+	// - (Optional) - A list of category key and list of values.
+	AdRuleTargetGroupFilterParams NetworkSecurityRuleAdRuleTargetGroupFilterParamArrayInput
+	// - (Optional) - The type of the filter being used.
+	AdRuleTargetGroupFilterType pulumi.StringPtrInput
+	// - (Optional) - Way to identify the object for which rule is applied.
+	AdRuleTargetGroupPeerSpecificationType pulumi.StringPtrInput
+	AllowIpv6Traffic                       pulumi.BoolPtrInput
+	// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
+	AppRuleAction pulumi.StringPtrInput
+	// - (Optional) The set of categories that matching VMs need to have.
+	AppRuleInboundAllowLists NetworkSecurityRuleAppRuleInboundAllowListArrayInput
+	// - (Optional)
+	AppRuleOutboundAllowLists NetworkSecurityRuleAppRuleOutboundAllowListArrayInput
+	// - (Optional) - Default policy for communication within target group.
+	AppRuleTargetGroupDefaultInternalPolicy pulumi.StringPtrInput
+	// - (Optional) - List of kinds associated with this filter.
+	AppRuleTargetGroupFilterKindLists pulumi.StringArrayInput
+	// - (Optional) - A list of category key and list of values.
+	AppRuleTargetGroupFilterParams NetworkSecurityRuleAppRuleTargetGroupFilterParamArrayInput
+	// - (Optional) - The type of the filter being used.
+	AppRuleTargetGroupFilterType pulumi.StringPtrInput
+	// - (Optional) - Way to identify the object for which rule is applied.
+	AppRuleTargetGroupPeerSpecificationType pulumi.StringPtrInput
+	// - (Optional) Categories for the network_security_rule.
+	Categories NetworkSecurityRuleCategoryArrayInput
+	// - (Optional) A description for network_security_rule.
+	Description           pulumi.StringPtrInput
+	IsPolicyHitlogEnabled pulumi.BoolPtrInput
+	// - (Optional) - These rules are used for environmental isolation.
+	IsolationRuleAction pulumi.StringPtrInput
+	// - (Optional) - List of kinds associated with this filter.
+	IsolationRuleFirstEntityFilterKindLists pulumi.StringArrayInput
+	// - (Optional) - A list of category key and list of values.
+	IsolationRuleFirstEntityFilterParams NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArrayInput
+	// - (Optional) - The type of the filter being used.
+	IsolationRuleFirstEntityFilterType pulumi.StringPtrInput
+	// - (Optional) - List of kinds associated with this filter.
 	IsolationRuleSecondEntityFilterKindLists pulumi.StringArrayInput
-	IsolationRuleSecondEntityFilterParams    NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArrayInput
-	IsolationRuleSecondEntityFilterType      pulumi.StringPtrInput
-	Name                                     pulumi.StringPtrInput
-	OwnerReference                           pulumi.StringMapInput
-	ProjectReference                         pulumi.StringMapInput
+	// - (Optional) - A list of category key and list of values.
+	IsolationRuleSecondEntityFilterParams NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArrayInput
+	// - (Optional) - The type of the filter being used.
+	IsolationRuleSecondEntityFilterType pulumi.StringPtrInput
+	// - (Required) The name for the network_security_rule.
+	Name pulumi.StringPtrInput
+	// - (Optional) The reference to a user.
+	OwnerReference pulumi.StringMapInput
+	// - (Optional) The reference to a project.
+	ProjectReference pulumi.StringMapInput
 }
 
 func (NetworkSecurityRuleArgs) ElementType() reflect.Type {
@@ -400,10 +549,16 @@ func (i *NetworkSecurityRule) ToNetworkSecurityRuleOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSecurityRuleOutput)
 }
 
+func (i *NetworkSecurityRule) ToOutput(ctx context.Context) pulumix.Output[*NetworkSecurityRule] {
+	return pulumix.Output[*NetworkSecurityRule]{
+		OutputState: i.ToNetworkSecurityRuleOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NetworkSecurityRuleArrayInput is an input type that accepts NetworkSecurityRuleArray and NetworkSecurityRuleArrayOutput values.
 // You can construct a concrete instance of `NetworkSecurityRuleArrayInput` via:
 //
-//          NetworkSecurityRuleArray{ NetworkSecurityRuleArgs{...} }
+//	NetworkSecurityRuleArray{ NetworkSecurityRuleArgs{...} }
 type NetworkSecurityRuleArrayInput interface {
 	pulumi.Input
 
@@ -425,10 +580,16 @@ func (i NetworkSecurityRuleArray) ToNetworkSecurityRuleArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSecurityRuleArrayOutput)
 }
 
+func (i NetworkSecurityRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkSecurityRule] {
+	return pulumix.Output[[]*NetworkSecurityRule]{
+		OutputState: i.ToNetworkSecurityRuleArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // NetworkSecurityRuleMapInput is an input type that accepts NetworkSecurityRuleMap and NetworkSecurityRuleMapOutput values.
 // You can construct a concrete instance of `NetworkSecurityRuleMapInput` via:
 //
-//          NetworkSecurityRuleMap{ "key": NetworkSecurityRuleArgs{...} }
+//	NetworkSecurityRuleMap{ "key": NetworkSecurityRuleArgs{...} }
 type NetworkSecurityRuleMapInput interface {
 	pulumi.Input
 
@@ -450,6 +611,12 @@ func (i NetworkSecurityRuleMap) ToNetworkSecurityRuleMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkSecurityRuleMapOutput)
 }
 
+func (i NetworkSecurityRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkSecurityRule] {
+	return pulumix.Output[map[string]*NetworkSecurityRule]{
+		OutputState: i.ToNetworkSecurityRuleMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type NetworkSecurityRuleOutput struct{ *pulumi.OutputState }
 
 func (NetworkSecurityRuleOutput) ElementType() reflect.Type {
@@ -464,40 +631,54 @@ func (o NetworkSecurityRuleOutput) ToNetworkSecurityRuleOutputWithContext(ctx co
 	return o
 }
 
+func (o NetworkSecurityRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkSecurityRule] {
+	return pulumix.Output[*NetworkSecurityRule]{
+		OutputState: o.OutputState,
+	}
+}
+
+// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
 func (o NetworkSecurityRuleOutput) AdRuleAction() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringOutput { return v.AdRuleAction }).(pulumi.StringOutput)
 }
 
+// - (Optional) The set of categories that matching VMs need to have.
 func (o NetworkSecurityRuleOutput) AdRuleInboundAllowLists() NetworkSecurityRuleAdRuleInboundAllowListArrayOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) NetworkSecurityRuleAdRuleInboundAllowListArrayOutput {
 		return v.AdRuleInboundAllowLists
 	}).(NetworkSecurityRuleAdRuleInboundAllowListArrayOutput)
 }
 
+// - (Optional)
 func (o NetworkSecurityRuleOutput) AdRuleOutboundAllowLists() NetworkSecurityRuleAdRuleOutboundAllowListArrayOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) NetworkSecurityRuleAdRuleOutboundAllowListArrayOutput {
 		return v.AdRuleOutboundAllowLists
 	}).(NetworkSecurityRuleAdRuleOutboundAllowListArrayOutput)
 }
 
+// - (Optional) - Default policy for communication within target group.
 func (o NetworkSecurityRuleOutput) AdRuleTargetGroupDefaultInternalPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringPtrOutput { return v.AdRuleTargetGroupDefaultInternalPolicy }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) - List of kinds associated with this filter.
 func (o NetworkSecurityRuleOutput) AdRuleTargetGroupFilterKindLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringArrayOutput { return v.AdRuleTargetGroupFilterKindLists }).(pulumi.StringArrayOutput)
 }
 
+// - (Optional) - A list of category key and list of values.
 func (o NetworkSecurityRuleOutput) AdRuleTargetGroupFilterParams() NetworkSecurityRuleAdRuleTargetGroupFilterParamArrayOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) NetworkSecurityRuleAdRuleTargetGroupFilterParamArrayOutput {
 		return v.AdRuleTargetGroupFilterParams
 	}).(NetworkSecurityRuleAdRuleTargetGroupFilterParamArrayOutput)
 }
 
+// - (Optional) - The type of the filter being used.
 func (o NetworkSecurityRuleOutput) AdRuleTargetGroupFilterType() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringOutput { return v.AdRuleTargetGroupFilterType }).(pulumi.StringOutput)
 }
 
+// - (Optional) - Way to identify the object for which rule is applied.
 func (o NetworkSecurityRuleOutput) AdRuleTargetGroupPeerSpecificationType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringPtrOutput { return v.AdRuleTargetGroupPeerSpecificationType }).(pulumi.StringPtrOutput)
 }
@@ -511,48 +692,58 @@ func (o NetworkSecurityRuleOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringOutput { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
 func (o NetworkSecurityRuleOutput) AppRuleAction() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringOutput { return v.AppRuleAction }).(pulumi.StringOutput)
 }
 
+// - (Optional) The set of categories that matching VMs need to have.
 func (o NetworkSecurityRuleOutput) AppRuleInboundAllowLists() NetworkSecurityRuleAppRuleInboundAllowListArrayOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) NetworkSecurityRuleAppRuleInboundAllowListArrayOutput {
 		return v.AppRuleInboundAllowLists
 	}).(NetworkSecurityRuleAppRuleInboundAllowListArrayOutput)
 }
 
+// - (Optional)
 func (o NetworkSecurityRuleOutput) AppRuleOutboundAllowLists() NetworkSecurityRuleAppRuleOutboundAllowListArrayOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) NetworkSecurityRuleAppRuleOutboundAllowListArrayOutput {
 		return v.AppRuleOutboundAllowLists
 	}).(NetworkSecurityRuleAppRuleOutboundAllowListArrayOutput)
 }
 
+// - (Optional) - Default policy for communication within target group.
 func (o NetworkSecurityRuleOutput) AppRuleTargetGroupDefaultInternalPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringPtrOutput { return v.AppRuleTargetGroupDefaultInternalPolicy }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) - List of kinds associated with this filter.
 func (o NetworkSecurityRuleOutput) AppRuleTargetGroupFilterKindLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringArrayOutput { return v.AppRuleTargetGroupFilterKindLists }).(pulumi.StringArrayOutput)
 }
 
+// - (Optional) - A list of category key and list of values.
 func (o NetworkSecurityRuleOutput) AppRuleTargetGroupFilterParams() NetworkSecurityRuleAppRuleTargetGroupFilterParamArrayOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) NetworkSecurityRuleAppRuleTargetGroupFilterParamArrayOutput {
 		return v.AppRuleTargetGroupFilterParams
 	}).(NetworkSecurityRuleAppRuleTargetGroupFilterParamArrayOutput)
 }
 
+// - (Optional) - The type of the filter being used.
 func (o NetworkSecurityRuleOutput) AppRuleTargetGroupFilterType() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringOutput { return v.AppRuleTargetGroupFilterType }).(pulumi.StringOutput)
 }
 
+// - (Optional) - Way to identify the object for which rule is applied.
 func (o NetworkSecurityRuleOutput) AppRuleTargetGroupPeerSpecificationType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringPtrOutput { return v.AppRuleTargetGroupPeerSpecificationType }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Categories for the network_security_rule.
 func (o NetworkSecurityRuleOutput) Categories() NetworkSecurityRuleCategoryArrayOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) NetworkSecurityRuleCategoryArrayOutput { return v.Categories }).(NetworkSecurityRuleCategoryArrayOutput)
 }
 
+// - (Optional) A description for network_security_rule.
 func (o NetworkSecurityRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
@@ -561,54 +752,65 @@ func (o NetworkSecurityRuleOutput) IsPolicyHitlogEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.BoolOutput { return v.IsPolicyHitlogEnabled }).(pulumi.BoolOutput)
 }
 
+// - (Optional) - These rules are used for environmental isolation.
 func (o NetworkSecurityRuleOutput) IsolationRuleAction() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringOutput { return v.IsolationRuleAction }).(pulumi.StringOutput)
 }
 
+// - (Optional) - List of kinds associated with this filter.
 func (o NetworkSecurityRuleOutput) IsolationRuleFirstEntityFilterKindLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringArrayOutput {
 		return v.IsolationRuleFirstEntityFilterKindLists
 	}).(pulumi.StringArrayOutput)
 }
 
+// - (Optional) - A list of category key and list of values.
 func (o NetworkSecurityRuleOutput) IsolationRuleFirstEntityFilterParams() NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArrayOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArrayOutput {
 		return v.IsolationRuleFirstEntityFilterParams
 	}).(NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArrayOutput)
 }
 
+// - (Optional) - The type of the filter being used.
 func (o NetworkSecurityRuleOutput) IsolationRuleFirstEntityFilterType() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringOutput { return v.IsolationRuleFirstEntityFilterType }).(pulumi.StringOutput)
 }
 
+// - (Optional) - List of kinds associated with this filter.
 func (o NetworkSecurityRuleOutput) IsolationRuleSecondEntityFilterKindLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringArrayOutput {
 		return v.IsolationRuleSecondEntityFilterKindLists
 	}).(pulumi.StringArrayOutput)
 }
 
+// - (Optional) - A list of category key and list of values.
 func (o NetworkSecurityRuleOutput) IsolationRuleSecondEntityFilterParams() NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArrayOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArrayOutput {
 		return v.IsolationRuleSecondEntityFilterParams
 	}).(NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArrayOutput)
 }
 
+// - (Optional) - The type of the filter being used.
 func (o NetworkSecurityRuleOutput) IsolationRuleSecondEntityFilterType() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringOutput { return v.IsolationRuleSecondEntityFilterType }).(pulumi.StringOutput)
 }
 
+// - The networkSecurityRule kind metadata.
 func (o NetworkSecurityRuleOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringMapOutput { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
+// - (Required) The name for the network_security_rule.
 func (o NetworkSecurityRuleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// - (Optional) The reference to a user.
 func (o NetworkSecurityRuleOutput) OwnerReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringMapOutput { return v.OwnerReference }).(pulumi.StringMapOutput)
 }
 
+// - (Optional) The reference to a project.
 func (o NetworkSecurityRuleOutput) ProjectReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *NetworkSecurityRule) pulumi.StringMapOutput { return v.ProjectReference }).(pulumi.StringMapOutput)
 }
@@ -625,6 +827,12 @@ func (o NetworkSecurityRuleArrayOutput) ToNetworkSecurityRuleArrayOutput() Netwo
 
 func (o NetworkSecurityRuleArrayOutput) ToNetworkSecurityRuleArrayOutputWithContext(ctx context.Context) NetworkSecurityRuleArrayOutput {
 	return o
+}
+
+func (o NetworkSecurityRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkSecurityRule] {
+	return pulumix.Output[[]*NetworkSecurityRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NetworkSecurityRuleArrayOutput) Index(i pulumi.IntInput) NetworkSecurityRuleOutput {
@@ -645,6 +853,12 @@ func (o NetworkSecurityRuleMapOutput) ToNetworkSecurityRuleMapOutput() NetworkSe
 
 func (o NetworkSecurityRuleMapOutput) ToNetworkSecurityRuleMapOutputWithContext(ctx context.Context) NetworkSecurityRuleMapOutput {
 	return o
+}
+
+func (o NetworkSecurityRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkSecurityRule] {
+	return pulumix.Output[map[string]*NetworkSecurityRule]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o NetworkSecurityRuleMapOutput) MapIndex(k pulumi.StringInput) NetworkSecurityRuleOutput {

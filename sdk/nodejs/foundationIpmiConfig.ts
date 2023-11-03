@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export class FoundationIpmiConfig extends pulumi.CustomResource {
@@ -33,10 +34,25 @@ export class FoundationIpmiConfig extends pulumi.CustomResource {
         return obj['__pulumiType'] === FoundationIpmiConfig.__pulumiType;
     }
 
+    /**
+     * - (Required) List of blocks.
+     */
     public readonly blocks!: pulumi.Output<outputs.FoundationIpmiConfigBlock[]>;
+    /**
+     * - (Required) IPMI gateway.
+     */
     public readonly ipmiGateway!: pulumi.Output<string>;
+    /**
+     * - (Required) IPMI netmask.
+     */
     public readonly ipmiNetmask!: pulumi.Output<string>;
+    /**
+     * - (Required) IPMI password.
+     */
     public readonly ipmiPassword!: pulumi.Output<string>;
+    /**
+     * - (Required) IPMI username.
+     */
     public readonly ipmiUser!: pulumi.Output<string>;
 
     /**
@@ -89,10 +105,25 @@ export class FoundationIpmiConfig extends pulumi.CustomResource {
  * Input properties used for looking up and filtering FoundationIpmiConfig resources.
  */
 export interface FoundationIpmiConfigState {
+    /**
+     * - (Required) List of blocks.
+     */
     blocks?: pulumi.Input<pulumi.Input<inputs.FoundationIpmiConfigBlock>[]>;
+    /**
+     * - (Required) IPMI gateway.
+     */
     ipmiGateway?: pulumi.Input<string>;
+    /**
+     * - (Required) IPMI netmask.
+     */
     ipmiNetmask?: pulumi.Input<string>;
+    /**
+     * - (Required) IPMI password.
+     */
     ipmiPassword?: pulumi.Input<string>;
+    /**
+     * - (Required) IPMI username.
+     */
     ipmiUser?: pulumi.Input<string>;
 }
 
@@ -100,9 +131,24 @@ export interface FoundationIpmiConfigState {
  * The set of arguments for constructing a FoundationIpmiConfig resource.
  */
 export interface FoundationIpmiConfigArgs {
+    /**
+     * - (Required) List of blocks.
+     */
     blocks: pulumi.Input<pulumi.Input<inputs.FoundationIpmiConfigBlock>[]>;
+    /**
+     * - (Required) IPMI gateway.
+     */
     ipmiGateway: pulumi.Input<string>;
+    /**
+     * - (Required) IPMI netmask.
+     */
     ipmiNetmask: pulumi.Input<string>;
+    /**
+     * - (Required) IPMI password.
+     */
     ipmiPassword: pulumi.Input<string>;
+    /**
+     * - (Required) IPMI username.
+     */
     ipmiUser: pulumi.Input<string>;
 }

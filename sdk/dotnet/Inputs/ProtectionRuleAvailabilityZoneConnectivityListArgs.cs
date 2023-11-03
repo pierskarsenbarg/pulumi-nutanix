@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix.Inputs
 {
 
-    public sealed class ProtectionRuleAvailabilityZoneConnectivityListArgs : Pulumi.ResourceArgs
+    public sealed class ProtectionRuleAvailabilityZoneConnectivityListArgs : global::Pulumi.ResourceArgs
     {
         [Input("destinationAvailabilityZoneIndex")]
         public Input<int>? DestinationAvailabilityZoneIndex { get; set; }
@@ -30,5 +30,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public ProtectionRuleAvailabilityZoneConnectivityListArgs()
         {
         }
+        public static new ProtectionRuleAvailabilityZoneConnectivityListArgs Empty => new ProtectionRuleAvailabilityZoneConnectivityListArgs();
     }
 }

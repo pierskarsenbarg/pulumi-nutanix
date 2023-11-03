@@ -2,18 +2,16 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
  * Describes a Virtual Machine
  */
 export function getVirtualMachine(args: GetVirtualMachineArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualMachineResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getVirtualMachine:getVirtualMachine", {
         "bootDeviceDiskAddress": args.bootDeviceDiskAddress,
         "bootDeviceMacAddress": args.bootDeviceMacAddress,
@@ -26,9 +24,21 @@ export function getVirtualMachine(args: GetVirtualMachineArgs, opts?: pulumi.Inv
  * A collection of arguments for invoking getVirtualMachine.
  */
 export interface GetVirtualMachineArgs {
+    /**
+     * - Address of disk to boot from.
+     */
     bootDeviceDiskAddress?: {[key: string]: string};
+    /**
+     * - MAC address of nic to boot from.
+     */
     bootDeviceMacAddress?: string;
+    /**
+     * - Categories for the vm.
+     */
     categories?: inputs.GetVirtualMachineCategory[];
+    /**
+     * Represents virtual machine UUID
+     */
     vmId: string;
 }
 
@@ -38,110 +48,201 @@ export interface GetVirtualMachineArgs {
 export interface GetVirtualMachineResult {
     /**
      * The version of the API.
-     * * `description`: - A description for vm.
-     * * `numVnumaNodes`: - Number of vNUMA nodes. 0 means vNUMA is disabled.
-     * * `nicList`: - NICs attached to the VM.
-     * * `serialPortList`: - (Optional) Serial Ports configured on the VM.
-     * * `guestOsId`: - Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
-     * * `powerState`: - The current or desired power state of the VM. (Options : ON , OFF)
-     * * `nutanixGuestTools`: - Information regarding Nutanix Guest Tools.
-     * * `ngtCredentials`: - Credentials to login server.
      */
     readonly apiVersion: string;
+    /**
+     * - The reference to a availability_zone.
+     */
     readonly availabilityZoneReference: {[key: string]: string};
+    /**
+     * - Address of disk to boot from.
+     */
     readonly bootDeviceDiskAddress: {[key: string]: string};
+    /**
+     * - MAC address of nic to boot from.
+     */
     readonly bootDeviceMacAddress: string;
+    /**
+     * - Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
+     */
     readonly bootDeviceOrderLists: string[];
+    /**
+     * - Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like bootDevice and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
+     */
     readonly bootType: string;
+    /**
+     * - Categories for the vm.
+     */
     readonly categories: outputs.GetVirtualMachineCategory[];
+    /**
+     * - The name of the reference to the cluster.
+     */
     readonly clusterName: string;
     readonly clusterUuid: string;
+    /**
+     * - A description for vm.
+     */
     readonly description: string;
+    /**
+     * Disks attached to the VM.
+     */
     readonly diskLists: outputs.GetVirtualMachineDiskList[];
     readonly enableCpuPassthrough: boolean;
+    /**
+     * - Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
+     */
     readonly enableScriptExec: boolean;
+    /**
+     * - GPUs attached to the VM.
+     */
     readonly gpuLists: outputs.GetVirtualMachineGpuList[];
+    /**
+     * - Generic key value pair used for custom attributes in cloud init.
+     */
     readonly guestCustomizationCloudInitCustomKeyValues: {[key: string]: any};
     /**
      * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
-     * * `guestCustomizationIsOverridable`: - Flag to allow override of customization by deployer.
-     * * `guestCustomizationCloudInitCustomKeyValues`: - Generic key value pair used for custom attributes in cloud init.
-     * * `guestCustomizationSysprep`: - VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
-     * * `guestCustomizationSysrepCustomKeyValues`: - Generic key value pair used for custom attributes in sysrep.
-     * * `shouldFailOnScriptFailure`: -  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
-     * * `enableScriptExec`: - Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
-     * * `powerStateMechanism`: - Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
-     * * `vgaConsoleEnabled`: - Indicates whether VGA console should be enabled or not.
-     * * `diskList` Disks attached to the VM.
-     * * `metadata`: - The vm kind metadata.
-     * * `state`: - The state of the vm.
-     * * `ipAddress`: - An IP address.
-     * * `hostReference`: - Reference to a host.
-     * * `hypervisorType`: - The hypervisor type for the hypervisor the VM is hosted on.
      */
     readonly guestCustomizationCloudInitMetaData: string;
+    /**
+     * - The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
+     */
     readonly guestCustomizationCloudInitUserData: string;
+    /**
+     * - Flag to allow override of customization by deployer.
+     */
     readonly guestCustomizationIsOverridable: boolean;
+    /**
+     * - VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
+     */
     readonly guestCustomizationSysprep: {[key: string]: string};
     readonly guestCustomizationSysprepCustomKeyValues: {[key: string]: any};
+    /**
+     * - Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
+     */
     readonly guestOsId: string;
+    /**
+     * - VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+     */
     readonly hardwareClockTimezone: string;
+    /**
+     * - Reference to a host.
+     */
     readonly hostReference: {[key: string]: string};
+    /**
+     * - The hypervisor type for the hypervisor the VM is hosted on.
+     */
     readonly hypervisorType: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
     readonly isVcpuHardPinned: boolean;
+    /**
+     * - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+     */
     readonly machineType: string;
+    /**
+     * - Memory size in MiB.
+     */
     readonly memorySizeMib: number;
     readonly messageLists: outputs.GetVirtualMachineMessageList[];
+    /**
+     * - The vm kind metadata.
+     */
     readonly metadata: {[key: string]: string};
+    /**
+     * - the name.
+     */
     readonly name: string;
+    /**
+     * - Credentials to login server.
+     */
     readonly ngtCredentials: {[key: string]: any};
     /**
      * Application names that are enabled.
-     * * `numVcpusPerSocket`: - Number of vCPUs per socket.
-     * * `numSockets`: - Number of vCPU sockets.
-     * * `gpuList`: - GPUs attached to the VM.
-     * * `parentReferece`: - Reference to an entity that the VM cloned from.
-     * * `memorySizeMib`: - Memory size in MiB.
-     * * `bootDeviceOrderList`: - Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
-     * * `bootDeviceDiskAddress`: - Address of disk to boot from.
-     * * `bootDeviceMacAddress`: - MAC address of nic to boot from.
-     * * `bootType`: - Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like bootDevice and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
-     * * `machineType`: - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-     * * `hardwareClockTimezone`: - VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
-     * * `guestCustomizationCloudInitUserData`: - The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
      */
     readonly ngtEnabledCapabilityLists: string[];
+    /**
+     * - NICs attached to the VM.
+     */
     readonly nicLists: outputs.GetVirtualMachineNicList[];
+    /**
+     * - Number of vCPU sockets.
+     */
     readonly numSockets: number;
+    /**
+     * - Number of vCPUs per socket.
+     */
     readonly numVcpusPerSocket: number;
+    /**
+     * - Number of vNUMA nodes. 0 means vNUMA is disabled.
+     */
     readonly numVnumaNodes: number;
+    /**
+     * - Information regarding Nutanix Guest Tools.
+     */
     readonly nutanixGuestTools: {[key: string]: string};
+    /**
+     * - The reference to a user.
+     */
     readonly ownerReference: {[key: string]: string};
     readonly parentReference: {[key: string]: string};
+    /**
+     * - The current or desired power state of the VM. (Options : ON , OFF)
+     */
     readonly powerState: string;
+    /**
+     * - Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
+     */
     readonly powerStateMechanism: string;
+    /**
+     * - The reference to a project.
+     */
     readonly projectReference: {[key: string]: string};
+    /**
+     * - (Optional) Serial Ports configured on the VM.
+     */
     readonly serialPortLists: outputs.GetVirtualMachineSerialPortList[];
+    /**
+     * -  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
+     */
     readonly shouldFailOnScriptFailure: boolean;
+    /**
+     * - Nutanix Guest Tools is enabled or not.
+     */
     readonly state: string;
+    /**
+     * - Indicates whether VGA console should be enabled or not.
+     */
     readonly vgaConsoleEnabled: boolean;
     readonly vmId: string;
 }
-
+/**
+ * Describes a Virtual Machine
+ */
 export function getVirtualMachineOutput(args: GetVirtualMachineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualMachineResult> {
-    return pulumi.output(args).apply(a => getVirtualMachine(a, opts))
+    return pulumi.output(args).apply((a: any) => getVirtualMachine(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getVirtualMachine.
  */
 export interface GetVirtualMachineOutputArgs {
+    /**
+     * - Address of disk to boot from.
+     */
     bootDeviceDiskAddress?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - MAC address of nic to boot from.
+     */
     bootDeviceMacAddress?: pulumi.Input<string>;
+    /**
+     * - Categories for the vm.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.GetVirtualMachineCategoryArgs>[]>;
+    /**
+     * Represents virtual machine UUID
+     */
     vmId: pulumi.Input<string>;
 }

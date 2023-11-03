@@ -2,16 +2,14 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "./types";
+import * as inputs from "./types/input";
+import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getFoundationCentralImagedClustersList(args?: GetFoundationCentralImagedClustersListArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralImagedClustersListResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationCentralImagedClustersList:getFoundationCentralImagedClustersList", {
         "filters": args.filters,
         "length": args.length,
@@ -42,9 +40,8 @@ export interface GetFoundationCentralImagedClustersListResult {
     readonly metadatas: outputs.GetFoundationCentralImagedClustersListMetadata[];
     readonly offset?: number;
 }
-
 export function getFoundationCentralImagedClustersListOutput(args?: GetFoundationCentralImagedClustersListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralImagedClustersListResult> {
-    return pulumi.output(args).apply(a => getFoundationCentralImagedClustersList(a, opts))
+    return pulumi.output(args).apply((a: any) => getFoundationCentralImagedClustersList(a, opts))
 }
 
 /**

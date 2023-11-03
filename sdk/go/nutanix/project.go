@@ -7,8 +7,10 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pkg/errors"
+	"errors"
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Nutanix Project resource to Create a Project.
@@ -19,67 +21,69 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		subnet, err := nutanix.NewSubnet(ctx, "subnet", &nutanix.SubnetArgs{
-// 			ClusterUuid:      pulumi.String("<YOUR_CLUSTER_ID>"),
-// 			Description:      pulumi.String("Description of my unit test VLAN"),
-// 			VlanId:           pulumi.Int(31),
-// 			SubnetType:       pulumi.String("VLAN"),
-// 			SubnetIp:         pulumi.String("10.250.140.0"),
-// 			DefaultGatewayIp: pulumi.String("10.250.140.1"),
-// 			PrefixLength:     pulumi.Int(24),
-// 			DhcpOptions: pulumi.StringMap{
-// 				"boot_file_name":   pulumi.String("bootfile"),
-// 				"domain_name":      pulumi.String("nutanix"),
-// 				"tftp_server_name": pulumi.String("10.250.140.200"),
-// 			},
-// 			DhcpDomainNameServerLists: pulumi.StringArray{
-// 				pulumi.String("8.8.8.8"),
-// 				pulumi.String("4.2.2.2"),
-// 			},
-// 			DhcpDomainSearchLists: pulumi.StringArray{
-// 				pulumi.String("terraform.nutanix.com"),
-// 				pulumi.String("terraform.unit.test.com"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = nutanix.NewProject(ctx, "projectTest", &nutanix.ProjectArgs{
-// 			Description: pulumi.String("This is my project"),
-// 			Categories: ProjectCategoryArray{
-// 				&ProjectCategoryArgs{
-// 					Name:  pulumi.String("Environment"),
-// 					Value: pulumi.String("Staging"),
-// 				},
-// 			},
-// 			ResourceDomain: &ProjectResourceDomainArgs{
-// 				Resources: ProjectResourceDomainResourceArray{
-// 					&ProjectResourceDomainResourceArgs{
-// 						Limit:        pulumi.Int(4),
-// 						ResourceType: pulumi.String("STORAGE"),
-// 					},
-// 				},
-// 			},
-// 			DefaultSubnetReference: &ProjectDefaultSubnetReferenceArgs{
-// 				Uuid: subnet.Metadata.ApplyT(func(metadata map[string]string) (string, error) {
-// 					return metadata.Uuid, nil
-// 				}).(pulumi.StringOutput),
-// 			},
-// 			ApiVersion: pulumi.String("3.1"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			subnet, err := nutanix.NewSubnet(ctx, "subnet", &nutanix.SubnetArgs{
+//				ClusterUuid:      pulumi.String("<YOUR_CLUSTER_ID>"),
+//				Description:      pulumi.String("Description of my unit test VLAN"),
+//				VlanId:           pulumi.Int(31),
+//				SubnetType:       pulumi.String("VLAN"),
+//				SubnetIp:         pulumi.String("10.250.140.0"),
+//				DefaultGatewayIp: pulumi.String("10.250.140.1"),
+//				PrefixLength:     pulumi.Int(24),
+//				DhcpOptions: pulumi.StringMap{
+//					"boot_file_name":   pulumi.String("bootfile"),
+//					"domain_name":      pulumi.String("nutanix"),
+//					"tftp_server_name": pulumi.String("10.250.140.200"),
+//				},
+//				DhcpDomainNameServerLists: pulumi.StringArray{
+//					pulumi.String("8.8.8.8"),
+//					pulumi.String("4.2.2.2"),
+//				},
+//				DhcpDomainSearchLists: pulumi.StringArray{
+//					pulumi.String("terraform.nutanix.com"),
+//					pulumi.String("terraform.unit.test.com"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.NewProject(ctx, "projectTest", &nutanix.ProjectArgs{
+//				Description: pulumi.String("This is my project"),
+//				Categories: nutanix.ProjectCategoryArray{
+//					&nutanix.ProjectCategoryArgs{
+//						Name:  pulumi.String("Environment"),
+//						Value: pulumi.String("Staging"),
+//					},
+//				},
+//				ResourceDomain: &nutanix.ProjectResourceDomainArgs{
+//					Resources: nutanix.ProjectResourceDomainResourceArray{
+//						&nutanix.ProjectResourceDomainResourceArgs{
+//							Limit:        pulumi.Int(4),
+//							ResourceType: pulumi.String("STORAGE"),
+//						},
+//					},
+//				},
+//				DefaultSubnetReference: &nutanix.ProjectDefaultSubnetReferenceArgs{
+//					Uuid: subnet.Metadata.ApplyT(func(metadata map[string]string) (string, error) {
+//						return metadata.Uuid, nil
+//					}).(pulumi.StringOutput),
+//				},
+//				ApiVersion: pulumi.String("3.1"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 type Project struct {
 	pulumi.CustomResourceState
@@ -149,7 +153,7 @@ func NewProject(ctx *pulumi.Context,
 	if args.Description == nil {
 		return nil, errors.New("invalid value for required argument 'Description'")
 	}
-	opts = pkgResourceDefaultOpts(opts)
+	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Project
 	err := ctx.RegisterResource("nutanix:index/project:Project", name, args, &resource, opts...)
 	if err != nil {
@@ -405,10 +409,16 @@ func (i *Project) ToProjectOutputWithContext(ctx context.Context) ProjectOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(ProjectOutput)
 }
 
+func (i *Project) ToOutput(ctx context.Context) pulumix.Output[*Project] {
+	return pulumix.Output[*Project]{
+		OutputState: i.ToProjectOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ProjectArrayInput is an input type that accepts ProjectArray and ProjectArrayOutput values.
 // You can construct a concrete instance of `ProjectArrayInput` via:
 //
-//          ProjectArray{ ProjectArgs{...} }
+//	ProjectArray{ ProjectArgs{...} }
 type ProjectArrayInput interface {
 	pulumi.Input
 
@@ -430,10 +440,16 @@ func (i ProjectArray) ToProjectArrayOutputWithContext(ctx context.Context) Proje
 	return pulumi.ToOutputWithContext(ctx, i).(ProjectArrayOutput)
 }
 
+func (i ProjectArray) ToOutput(ctx context.Context) pulumix.Output[[]*Project] {
+	return pulumix.Output[[]*Project]{
+		OutputState: i.ToProjectArrayOutputWithContext(ctx).OutputState,
+	}
+}
+
 // ProjectMapInput is an input type that accepts ProjectMap and ProjectMapOutput values.
 // You can construct a concrete instance of `ProjectMapInput` via:
 //
-//          ProjectMap{ "key": ProjectArgs{...} }
+//	ProjectMap{ "key": ProjectArgs{...} }
 type ProjectMapInput interface {
 	pulumi.Input
 
@@ -455,6 +471,12 @@ func (i ProjectMap) ToProjectMapOutputWithContext(ctx context.Context) ProjectMa
 	return pulumi.ToOutputWithContext(ctx, i).(ProjectMapOutput)
 }
 
+func (i ProjectMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Project] {
+	return pulumix.Output[map[string]*Project]{
+		OutputState: i.ToProjectMapOutputWithContext(ctx).OutputState,
+	}
+}
+
 type ProjectOutput struct{ *pulumi.OutputState }
 
 func (ProjectOutput) ElementType() reflect.Type {
@@ -467,6 +489,12 @@ func (o ProjectOutput) ToProjectOutput() ProjectOutput {
 
 func (o ProjectOutput) ToProjectOutputWithContext(ctx context.Context) ProjectOutput {
 	return o
+}
+
+func (o ProjectOutput) ToOutput(ctx context.Context) pulumix.Output[*Project] {
+	return pulumix.Output[*Project]{
+		OutputState: o.OutputState,
+	}
 }
 
 // List of accounts associated with the project.
@@ -586,6 +614,12 @@ func (o ProjectArrayOutput) ToProjectArrayOutputWithContext(ctx context.Context)
 	return o
 }
 
+func (o ProjectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Project] {
+	return pulumix.Output[[]*Project]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o ProjectArrayOutput) Index(i pulumi.IntInput) ProjectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Project {
 		return vs[0].([]*Project)[vs[1].(int)]
@@ -604,6 +638,12 @@ func (o ProjectMapOutput) ToProjectMapOutput() ProjectMapOutput {
 
 func (o ProjectMapOutput) ToProjectMapOutputWithContext(ctx context.Context) ProjectMapOutput {
 	return o
+}
+
+func (o ProjectMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Project] {
+	return pulumix.Output[map[string]*Project]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o ProjectMapOutput) MapIndex(k pulumi.StringInput) ProjectOutput {

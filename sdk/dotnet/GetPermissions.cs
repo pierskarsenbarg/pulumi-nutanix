@@ -20,23 +20,22 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var permissions = Output.Create(Nutanix.GetPermission.InvokeAsync());
-        ///     }
+        ///     var permissions = Nutanix.GetPermission.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPermissionsResult> InvokeAsync(GetPermissionsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPermissionsResult>("nutanix:index/getPermissions:getPermissions", args ?? new GetPermissionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPermissionsResult>("nutanix:index/getPermissions:getPermissions", args ?? new GetPermissionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a datasource to retrieve all the permissions.
@@ -46,30 +45,33 @@ namespace PiersKarsenbarg.Nutanix
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
         /// using Pulumi;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
-        ///     {
-        ///         var permissions = Output.Create(Nutanix.GetPermission.InvokeAsync());
-        ///     }
+        ///     var permissions = Nutanix.GetPermission.Invoke();
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPermissionsResult> Invoke(GetPermissionsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPermissionsResult>("nutanix:index/getPermissions:getPermissions", args ?? new GetPermissionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPermissionsResult>("nutanix:index/getPermissions:getPermissions", args ?? new GetPermissionsInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GetPermissionsArgs : Pulumi.InvokeArgs
+    public sealed class GetPermissionsArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private List<Inputs.GetPermissionsMetadataArgs>? _metadatas;
+
+        /// <summary>
+        /// The permission kind metadata.
+        /// </summary>
         public List<Inputs.GetPermissionsMetadataArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new List<Inputs.GetPermissionsMetadataArgs>());
@@ -79,12 +81,17 @@ namespace PiersKarsenbarg.Nutanix
         public GetPermissionsArgs()
         {
         }
+        public static new GetPermissionsArgs Empty => new GetPermissionsArgs();
     }
 
-    public sealed class GetPermissionsInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetPermissionsInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("metadatas")]
         private InputList<Inputs.GetPermissionsMetadataInputArgs>? _metadatas;
+
+        /// <summary>
+        /// The permission kind metadata.
+        /// </summary>
         public InputList<Inputs.GetPermissionsMetadataInputArgs> Metadatas
         {
             get => _metadatas ?? (_metadatas = new InputList<Inputs.GetPermissionsMetadataInputArgs>());
@@ -94,18 +101,28 @@ namespace PiersKarsenbarg.Nutanix
         public GetPermissionsInvokeArgs()
         {
         }
+        public static new GetPermissionsInvokeArgs Empty => new GetPermissionsInvokeArgs();
     }
 
 
     [OutputType]
     public sealed class GetPermissionsResult
     {
+        /// <summary>
+        /// version of the API
+        /// </summary>
         public readonly string ApiVersion;
+        /// <summary>
+        /// List of Permissions
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetPermissionsEntityResult> Entities;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The permission kind metadata.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetPermissionsMetadataResult> Metadatas;
 
         [OutputConstructor]

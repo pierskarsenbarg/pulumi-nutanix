@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class ImageCategory
     {
+        /// <summary>
+        /// - (Required) The name for the image.
+        /// </summary>
         public readonly string? Name;
         public readonly string? Value;
 

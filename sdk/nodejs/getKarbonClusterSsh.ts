@@ -13,23 +13,18 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * // Get ssh credentials by cluster UUID
- * const sshbyid = pulumi.output(nutanix.getKarbonClusterSsh({
+ * const sshbyid = nutanix.getKarbonClusterSsh({
  *     karbonClusterId: "<YOUR-CLUSTER-ID>",
- * }));
- * // Get ssh credentials by cluster name
- * const sshbyname = pulumi.output(nutanix.getKarbonClusterSsh({
+ * });
+ * const sshbyname = nutanix.getKarbonClusterSsh({
  *     karbonClusterName: "<YOUR-CLUSTER-NAME>",
- * }));
+ * });
  * ```
  */
 export function getKarbonClusterSsh(args?: GetKarbonClusterSshArgs, opts?: pulumi.InvokeOptions): Promise<GetKarbonClusterSshResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", {
         "karbonClusterId": args.karbonClusterId,
         "karbonClusterName": args.karbonClusterName,
@@ -40,7 +35,13 @@ export function getKarbonClusterSsh(args?: GetKarbonClusterSshArgs, opts?: pulum
  * A collection of arguments for invoking getKarbonClusterSsh.
  */
 export interface GetKarbonClusterSshArgs {
+    /**
+     * Represents karbon cluster uuid
+     */
     karbonClusterId?: string;
+    /**
+     * Represents the name of karbon cluster
+     */
     karbonClusterName?: string;
 }
 
@@ -48,7 +49,13 @@ export interface GetKarbonClusterSshArgs {
  * A collection of values returned by getKarbonClusterSsh.
  */
 export interface GetKarbonClusterSshResult {
+    /**
+     * Certificate of the user for SSH access.
+     */
     readonly certificate: string;
+    /**
+     * Timestamp of certificate expiry in the ISO 8601 format (YYYY-MM-DDThh:mm:ss.sssZ).
+     */
     readonly expiryTime: string;
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -56,18 +63,46 @@ export interface GetKarbonClusterSshResult {
     readonly id: string;
     readonly karbonClusterId?: string;
     readonly karbonClusterName?: string;
+    /**
+     * The private key of the user for SSH access.
+     */
     readonly privateKey: string;
+    /**
+     * The username for which credentials are returned.
+     */
     readonly username: string;
 }
-
+/**
+ * Describes the SSH config from a Karbon Cluster
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const sshbyid = nutanix.getKarbonClusterSsh({
+ *     karbonClusterId: "<YOUR-CLUSTER-ID>",
+ * });
+ * const sshbyname = nutanix.getKarbonClusterSsh({
+ *     karbonClusterName: "<YOUR-CLUSTER-NAME>",
+ * });
+ * ```
+ */
 export function getKarbonClusterSshOutput(args?: GetKarbonClusterSshOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKarbonClusterSshResult> {
-    return pulumi.output(args).apply(a => getKarbonClusterSsh(a, opts))
+    return pulumi.output(args).apply((a: any) => getKarbonClusterSsh(a, opts))
 }
 
 /**
  * A collection of arguments for invoking getKarbonClusterSsh.
  */
 export interface GetKarbonClusterSshOutputArgs {
+    /**
+     * Represents karbon cluster uuid
+     */
     karbonClusterId?: pulumi.Input<string>;
+    /**
+     * Represents the name of karbon cluster
+     */
     karbonClusterName?: pulumi.Input<string>;
 }

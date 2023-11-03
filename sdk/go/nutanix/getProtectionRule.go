@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describe a Nutanix Protection Rule and its values (if it has them).
@@ -18,56 +20,58 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		protectionRuleTest, err := nutanix.NewProtectionRule(ctx, "protectionRuleTest", &nutanix.ProtectionRuleArgs{
-// 			Description: pulumi.String("test"),
-// 			OrderedAvailabilityZoneLists: ProtectionRuleOrderedAvailabilityZoneListArray{
-// 				&ProtectionRuleOrderedAvailabilityZoneListArgs{
-// 					AvailabilityZoneUrl: pulumi.String("ab788130-0820-4d07-a1b5-b0ba4d3a42asd"),
-// 				},
-// 			},
-// 			AvailabilityZoneConnectivityLists: ProtectionRuleAvailabilityZoneConnectivityListArray{
-// 				&ProtectionRuleAvailabilityZoneConnectivityListArgs{
-// 					SnapshotScheduleLists: ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArray{
-// 						&ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs{
-// 							RecoveryPointObjectiveSecs: pulumi.Int(3600),
-// 							SnapshotType:               pulumi.String("CRASH_CONSISTENT"),
-// 							LocalSnapshotRetentionPolicy: &ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs{
-// 								NumSnapshots: pulumi.Int(1),
-// 							},
-// 						},
-// 					},
-// 				},
-// 			},
-// 			CategoryFilter: &ProtectionRuleCategoryFilterArgs{
-// 				Params: ProtectionRuleCategoryFilterParamArray{
-// 					&ProtectionRuleCategoryFilterParamArgs{
-// 						Name: pulumi.String("Environment"),
-// 						Values: pulumi.StringArray{
-// 							pulumi.String("Dev"),
-// 						},
-// 					},
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_ = nutanix.LookupProtectionRuleOutput(ctx, GetProtectionRuleOutputArgs{
-// 			ProtectionRuleId: protectionRuleTest.ID(),
-// 		}, nil)
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			protectionRuleTest, err := nutanix.NewProtectionRule(ctx, "protectionRuleTest", &nutanix.ProtectionRuleArgs{
+//				Description: pulumi.String("test"),
+//				OrderedAvailabilityZoneLists: nutanix.ProtectionRuleOrderedAvailabilityZoneListArray{
+//					&nutanix.ProtectionRuleOrderedAvailabilityZoneListArgs{
+//						AvailabilityZoneUrl: pulumi.String("ab788130-0820-4d07-a1b5-b0ba4d3a42asd"),
+//					},
+//				},
+//				AvailabilityZoneConnectivityLists: nutanix.ProtectionRuleAvailabilityZoneConnectivityListArray{
+//					&nutanix.ProtectionRuleAvailabilityZoneConnectivityListArgs{
+//						SnapshotScheduleLists: nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArray{
+//							&nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs{
+//								RecoveryPointObjectiveSecs: pulumi.Int(3600),
+//								SnapshotType:               pulumi.String("CRASH_CONSISTENT"),
+//								LocalSnapshotRetentionPolicy: &nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs{
+//									NumSnapshots: pulumi.Int(1),
+//								},
+//							},
+//						},
+//					},
+//				},
+//				CategoryFilter: &nutanix.ProtectionRuleCategoryFilterArgs{
+//					Params: nutanix.ProtectionRuleCategoryFilterParamArray{
+//						&nutanix.ProtectionRuleCategoryFilterParamArgs{
+//							Name: pulumi.String("Environment"),
+//							Values: pulumi.StringArray{
+//								pulumi.String("Dev"),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_ = nutanix.LookupProtectionRuleOutput(ctx, nutanix.GetProtectionRuleOutputArgs{
+//				ProtectionRuleId: protectionRuleTest.ID(),
+//			}, nil)
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupProtectionRule(ctx *pulumi.Context, args *LookupProtectionRuleArgs, opts ...pulumi.InvokeOption) (*LookupProtectionRuleResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupProtectionRuleResult
 	err := ctx.Invoke("nutanix:index/getProtectionRule:getProtectionRule", args, &rv, opts...)
 	if err != nil {
@@ -78,9 +82,10 @@ func LookupProtectionRule(ctx *pulumi.Context, args *LookupProtectionRuleArgs, o
 
 // A collection of arguments for invoking getProtectionRule.
 type LookupProtectionRuleArgs struct {
-	Categories         []GetProtectionRuleCategory `pulumi:"categories"`
-	ProtectionRuleId   *string                     `pulumi:"protectionRuleId"`
-	ProtectionRuleName *string                     `pulumi:"protectionRuleName"`
+	Categories []GetProtectionRuleCategory `pulumi:"categories"`
+	// - (Required) The `id` of the protection rule.
+	ProtectionRuleId   *string `pulumi:"protectionRuleId"`
+	ProtectionRuleName *string `pulumi:"protectionRuleName"`
 }
 
 // A collection of values returned by getProtectionRule.
@@ -105,7 +110,8 @@ type LookupProtectionRuleResult struct {
 	// * `category_filter.0.kind_list` - (Optional/Computed) List of kinds associated with this filter.
 	// * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
 	CategoryFilters []GetProtectionRuleCategoryFilter `pulumi:"categoryFilters"`
-	Description     string                            `pulumi:"description"`
+	// A description for protection rule.
+	Description string `pulumi:"description"`
 	// The provider-assigned unique ID for this managed resource.
 	Id       string            `pulumi:"id"`
 	Metadata map[string]string `pulumi:"metadata"`
@@ -138,9 +144,10 @@ func LookupProtectionRuleOutput(ctx *pulumi.Context, args LookupProtectionRuleOu
 
 // A collection of arguments for invoking getProtectionRule.
 type LookupProtectionRuleOutputArgs struct {
-	Categories         GetProtectionRuleCategoryArrayInput `pulumi:"categories"`
-	ProtectionRuleId   pulumi.StringPtrInput               `pulumi:"protectionRuleId"`
-	ProtectionRuleName pulumi.StringPtrInput               `pulumi:"protectionRuleName"`
+	Categories GetProtectionRuleCategoryArrayInput `pulumi:"categories"`
+	// - (Required) The `id` of the protection rule.
+	ProtectionRuleId   pulumi.StringPtrInput `pulumi:"protectionRuleId"`
+	ProtectionRuleName pulumi.StringPtrInput `pulumi:"protectionRuleName"`
 }
 
 func (LookupProtectionRuleOutputArgs) ElementType() reflect.Type {
@@ -160,6 +167,12 @@ func (o LookupProtectionRuleResultOutput) ToLookupProtectionRuleResultOutput() L
 
 func (o LookupProtectionRuleResultOutput) ToLookupProtectionRuleResultOutputWithContext(ctx context.Context) LookupProtectionRuleResultOutput {
 	return o
+}
+
+func (o LookupProtectionRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupProtectionRuleResult] {
+	return pulumix.Output[LookupProtectionRuleResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupProtectionRuleResultOutput) ApiVersion() pulumi.StringOutput {
@@ -196,6 +209,7 @@ func (o LookupProtectionRuleResultOutput) CategoryFilters() GetProtectionRuleCat
 	return o.ApplyT(func(v LookupProtectionRuleResult) []GetProtectionRuleCategoryFilter { return v.CategoryFilters }).(GetProtectionRuleCategoryFilterArrayOutput)
 }
 
+// A description for protection rule.
 func (o LookupProtectionRuleResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProtectionRuleResult) string { return v.Description }).(pulumi.StringOutput)
 }

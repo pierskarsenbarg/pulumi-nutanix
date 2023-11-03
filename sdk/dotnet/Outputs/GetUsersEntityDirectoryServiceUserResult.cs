@@ -15,7 +15,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetUsersEntityDirectoryServiceUserResult
     {
         public readonly string DefaultUserPrincipalName;
+        /// <summary>
+        /// - (Optional) The reference to a directory service. See #reference for to look the supported attributes.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetUsersEntityDirectoryServiceUserDirectoryServiceReferenceResult> DirectoryServiceReferences;
+        /// <summary>
+        /// - (Optional) The UserPrincipalName of the user from the directory service.
+        /// </summary>
         public readonly string UserPrincipalName;
 
         [OutputConstructor]

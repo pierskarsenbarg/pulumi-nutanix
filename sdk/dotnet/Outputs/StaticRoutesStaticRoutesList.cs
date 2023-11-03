@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string Destination;
         /// <summary>
-        /// Reference to a subnet.
+        /// Reference to a subnet. Supported with 2022.x .
         /// </summary>
         public readonly string? ExternalSubnetReferenceUuid;
         /// <summary>

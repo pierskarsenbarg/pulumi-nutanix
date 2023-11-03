@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideCategories
     {
+        /// <summary>
+        /// - (Optional) Name of the Access Control Policy.
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// - value of the key.
+        /// </summary>
         public readonly ImmutableArray<string> Values;
 
         [OutputConstructor]

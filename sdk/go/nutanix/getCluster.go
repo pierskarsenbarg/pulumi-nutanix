@@ -7,12 +7,14 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes Clusters
 func GetCluster(ctx *pulumi.Context, args *GetClusterArgs, opts ...pulumi.InvokeOption) (*GetClusterResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetClusterResult
 	err := ctx.Invoke("nutanix:index/getCluster:getCluster", args, &rv, opts...)
 	if err != nil {
@@ -23,109 +25,114 @@ func GetCluster(ctx *pulumi.Context, args *GetClusterArgs, opts ...pulumi.Invoke
 
 // A collection of arguments for invoking getCluster.
 type GetClusterArgs struct {
+	// - Categories for the image.
 	Categories []GetClusterCategory `pulumi:"categories"`
-	ClusterId  *string              `pulumi:"clusterId"`
-	Name       *string              `pulumi:"name"`
+	// Represents clusters uuid
+	ClusterId *string `pulumi:"clusterId"`
+	// Represents the name of cluster
+	Name *string `pulumi:"name"`
 }
 
 // A collection of values returned by getCluster.
 type GetClusterResult struct {
+	// - Map of cluster efficiency which includes numbers of inefficient vms. The value is populated by analytics on PC. (Readonly)
 	AnalysisVmEfficiencyMap map[string]string `pulumi:"analysisVmEfficiencyMap"`
 	// The API version.
-	// * `description`: - A description for image.
-	// * `metadata`: - The image kind metadata.
-	// * `state`: - The state of the cluster entity.
-	// * `gpuDriverVersion`: - GPU driver version.
-	// * `clientAuth`: - Client authentication config.
-	// * `authorizedPiblicKeyList`: - List of valid ssh keys for the cluster.
-	// * `softwareMapNcc`: - Map of software on the cluster with software type as the key.
-	// * `softwareMapNos`: - Map of software on the cluster with software type as the key.
-	// * `encryptionStatus`: - Cluster encryption status.
-	// * `sslKeyType`: - SSL key type. Key types with RSA_2048, ECDSA_256 and ECDSA_384 are supported for key generation and importing.
-	// * `sslKeySigningInfo`: - Customer information used in Certificate Signing Request for creating digital certificates.
-	// * `sslKeyExpireDatetime`: - UTC date and time in RFC-3339 format when the key expires
-	// * `serviceList`: - Array of enabled cluster services. For example, a cluster can function as both AOS and cloud data gateway. - 'AOS': Regular Prism Element - 'PRISM_CENTRAL': Prism Central - 'CLOUD_DATA_GATEWAY': Cloud backup and DR gateway - 'AFS': Cluster for file server - 'WITNESS' : Witness cluster - 'XI_PORTAL': Xi cluster.
-	// * `supportedInformationVerbosity`: - Verbosity level settings for populating support information. - 'Nothing': Send nothing - 'Basic': Send basic information - skip core dump and hypervisor stats information - 'BasicPlusCoreDump': Send basic and core dump information - 'All': Send all information (Default value: BASIC_PLUS_CORE_DUMP)
-	// * `certificationSigningInfo`: - Customer information used in Certificate Signing Request for creating digital certificates.
-	// * `operationMode`: - Cluster operation mode. - 'NORMAL': Cluster is operating normally. - 'READ_ONLY': Cluster is operating in read only mode. - 'STAND_ALONE': Only one node is operational in the cluster. This is valid only for single node or two node clusters. - 'SWITCH_TO_TWO_NODE': Cluster is moving from single node to two node cluster. - 'OVERRIDE': Valid only for single node cluster. If the user wants to run vms on a single node cluster in read only mode, he can set the cluster peration mode to override. Writes will be allowed in override mode.
-	// * `caCertificateList`: - Zone name used in value of TZ environment variable.
-	// * `enabledFeatureList`: - Array of enabled features.
-	// * `isAvailable`: - Indicates if cluster is available to contact. (Readonly)
-	// * `build`: - Cluster build details.
-	// * `timezone`: - Zone name used in value of TZ environment variable.
-	// * `clusterArch`: - Cluster architecture. (Readonly, Options: Options : X86_64 , PPC64LE)
-	// * `managementServerList`: - List of cluster management servers. (Readonly)
-	// * `masqueradingPort`: - Port used together with masqueradingIp to connect to the cluster.
-	// * `masqueradingIp`: - The cluster NAT'd or proxy IP which maps to the cluster local IP.
-	// * `externalIp`: - The local IP of cluster visible externally.
-	// * `httpProxyList`: - List of proxies to connect to the service centers.
-	// * `smtpServerType`: - SMTP Server type.
-	// * `smtpServerEmailAddress`: - SMTP Server Email Address.
-	// * `smtpServerCredentials`: - SMTP Server Credentials.
-	// * `smtpServerProxyTypeList`: - SMTP Server Proxy Type List
-	// * `smtpServerAddress`: - SMTP Server Address.
-	// * `ntpServerIpList`: - The list of IP addresses or FQDNs of the NTP servers.
-	// * `externalSubnet`: - External subnet for cross server communication. The format is IP/netmask. (default 172.16.0.0/255.240.0.0)
-	// * `externalDataServicesIp`: - The cluster IP address that provides external entities access to various cluster data services.
-	// * `internalSubnet`: - The internal subnet is local to every server - its not visible outside.iSCSI requests generated internally within the appliance (by user VMs or VMFS) are sent to the internal subnet. The format is IP/netmask.
-	// * `domainServerNameserver`: -  The IP of the nameserver that can resolve the domain name. Must set when joining the domain.
-	// * `domainServerName`: - Joined domain name. In 'put' request, empty name will unjoin the cluster from current domain.
-	// * `domainServerCredentials`: - Cluster domain credentials.
-	// * `nfsSubnetWhitelist`: - Comma separated list of subnets (of the form 'a.b.c.d/l.m.n.o') that are allowed to send NFS requests to this container. If not specified, the global NFS whitelist will be looked up for access permission. The internal subnet is always automatically considered part of the whitelist, even if the field below does not explicitly specify it. Similarly, all the hypervisor IPs are considered part of the whitelist. Finally, to permit debugging, all of the SVMs local IPs are considered to be implicitly part of the whitelist.
-	// * `nameServerIpList`: - The list of IP addresses of the name servers.
-	// * `httpProxyWhitelist`: - HTTP proxy whitelist.
-	// * `analysisVmEfficiencyMap`: - Map of cluster efficiency which includes numbers of inefficient vms. The value is populated by analytics on PC. (Readonly)
 	ApiVersion               string                              `pulumi:"apiVersion"`
 	AuthorizedPublicKeyLists []GetClusterAuthorizedPublicKeyList `pulumi:"authorizedPublicKeyLists"`
-	Build                    map[string]string                   `pulumi:"build"`
-	CaCertificateLists       []GetClusterCaCertificateList       `pulumi:"caCertificateLists"`
-	Categories               []GetClusterCategory                `pulumi:"categories"`
-	CertificationSigningInfo map[string]string                   `pulumi:"certificationSigningInfo"`
-	ClientAuth               map[string]string                   `pulumi:"clientAuth"`
-	ClusterArch              string                              `pulumi:"clusterArch"`
-	ClusterId                string                              `pulumi:"clusterId"`
-	DomainServerCredentials  map[string]string                   `pulumi:"domainServerCredentials"`
-	DomainServerName         string                              `pulumi:"domainServerName"`
-	DomainServerNameserver   string                              `pulumi:"domainServerNameserver"`
-	EnabledFeatureLists      []string                            `pulumi:"enabledFeatureLists"`
-	EncryptionStatus         string                              `pulumi:"encryptionStatus"`
-	ExternalDataServicesIp   string                              `pulumi:"externalDataServicesIp"`
-	ExternalIp               string                              `pulumi:"externalIp"`
-	ExternalSubnet           string                              `pulumi:"externalSubnet"`
-	GpuDriverVersion         string                              `pulumi:"gpuDriverVersion"`
-	HttpProxyLists           []GetClusterHttpProxyList           `pulumi:"httpProxyLists"`
-	HttpProxyWhitelists      []GetClusterHttpProxyWhitelist      `pulumi:"httpProxyWhitelists"`
+	// - Cluster build details.
+	Build map[string]string `pulumi:"build"`
+	// - Zone name used in value of TZ environment variable.
+	CaCertificateLists []GetClusterCaCertificateList `pulumi:"caCertificateLists"`
+	// - Categories for the image.
+	Categories []GetClusterCategory `pulumi:"categories"`
+	// - Customer information used in Certificate Signing Request for creating digital certificates.
+	CertificationSigningInfo map[string]string `pulumi:"certificationSigningInfo"`
+	// - Client authentication config.
+	ClientAuth map[string]string `pulumi:"clientAuth"`
+	// - Cluster architecture. (Readonly, Options: Options : X86_64 , PPC64LE)
+	ClusterArch string `pulumi:"clusterArch"`
+	ClusterId   string `pulumi:"clusterId"`
+	// - Cluster domain credentials.
+	DomainServerCredentials map[string]string `pulumi:"domainServerCredentials"`
+	// - Joined domain name. In 'put' request, empty name will unjoin the cluster from current domain.
+	DomainServerName string `pulumi:"domainServerName"`
+	// -  The IP of the nameserver that can resolve the domain name. Must set when joining the domain.
+	DomainServerNameserver string `pulumi:"domainServerNameserver"`
+	// - Array of enabled features.
+	EnabledFeatureLists []string `pulumi:"enabledFeatureLists"`
+	// - Cluster encryption status.
+	EncryptionStatus string `pulumi:"encryptionStatus"`
+	// - The cluster IP address that provides external entities access to various cluster data services.
+	ExternalDataServicesIp string `pulumi:"externalDataServicesIp"`
+	// - The local IP of cluster visible externally.
+	ExternalIp string `pulumi:"externalIp"`
+	// - External subnet for cross server communication. The format is IP/netmask. (default 172.16.0.0/255.240.0.0)
+	ExternalSubnet string `pulumi:"externalSubnet"`
+	// - GPU driver version.
+	GpuDriverVersion string `pulumi:"gpuDriverVersion"`
+	// - List of proxies to connect to the service centers.
+	HttpProxyLists []GetClusterHttpProxyList `pulumi:"httpProxyLists"`
+	// - HTTP proxy whitelist.
+	HttpProxyWhitelists []GetClusterHttpProxyWhitelist `pulumi:"httpProxyWhitelists"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                            string                           `pulumi:"id"`
-	InternalSubnet                string                           `pulumi:"internalSubnet"`
-	IsAvailable                   bool                             `pulumi:"isAvailable"`
-	ManagementServerLists         []GetClusterManagementServerList `pulumi:"managementServerLists"`
-	MasqueradingIp                string                           `pulumi:"masqueradingIp"`
-	MasqueradingPort              int                              `pulumi:"masqueradingPort"`
-	Metadata                      map[string]string                `pulumi:"metadata"`
-	Name                          string                           `pulumi:"name"`
-	NameServerIpLists             []string                         `pulumi:"nameServerIpLists"`
-	NfsSubnetWhitelists           []string                         `pulumi:"nfsSubnetWhitelists"`
-	Nodes                         []GetClusterNode                 `pulumi:"nodes"`
-	NtpServerIpLists              []string                         `pulumi:"ntpServerIpLists"`
-	OperationMode                 string                           `pulumi:"operationMode"`
-	OwnerReference                map[string]string                `pulumi:"ownerReference"`
-	ProjectReference              map[string]string                `pulumi:"projectReference"`
-	ServiceLists                  []string                         `pulumi:"serviceLists"`
-	SmtpServerAddress             map[string]string                `pulumi:"smtpServerAddress"`
-	SmtpServerCredentials         map[string]string                `pulumi:"smtpServerCredentials"`
-	SmtpServerEmailAddress        string                           `pulumi:"smtpServerEmailAddress"`
-	SmtpServerProxyTypeLists      []string                         `pulumi:"smtpServerProxyTypeLists"`
-	SmtpServerType                string                           `pulumi:"smtpServerType"`
-	SoftwareMapNcc                map[string]interface{}           `pulumi:"softwareMapNcc"`
-	SoftwareMapNos                map[string]interface{}           `pulumi:"softwareMapNos"`
-	SslKeyExpireDatetime          string                           `pulumi:"sslKeyExpireDatetime"`
-	SslKeyName                    string                           `pulumi:"sslKeyName"`
-	SslKeySigningInfo             map[string]string                `pulumi:"sslKeySigningInfo"`
-	SslKeyType                    string                           `pulumi:"sslKeyType"`
-	State                         string                           `pulumi:"state"`
-	SupportedInformationVerbosity string                           `pulumi:"supportedInformationVerbosity"`
-	Timezone                      string                           `pulumi:"timezone"`
+	Id string `pulumi:"id"`
+	// - The internal subnet is local to every server - its not visible outside.iSCSI requests generated internally within the appliance (by user VMs or VMFS) are sent to the internal subnet. The format is IP/netmask.
+	InternalSubnet string `pulumi:"internalSubnet"`
+	// - Indicates if cluster is available to contact. (Readonly)
+	IsAvailable bool `pulumi:"isAvailable"`
+	// - List of cluster management servers. (Readonly)
+	ManagementServerLists []GetClusterManagementServerList `pulumi:"managementServerLists"`
+	// - The cluster NAT'd or proxy IP which maps to the cluster local IP.
+	MasqueradingIp string `pulumi:"masqueradingIp"`
+	// - Port used together with masqueradingIp to connect to the cluster.
+	MasqueradingPort int `pulumi:"masqueradingPort"`
+	// - The image kind metadata.
+	Metadata map[string]string `pulumi:"metadata"`
+	// - the name.
+	Name string `pulumi:"name"`
+	// - The list of IP addresses of the name servers.
+	NameServerIpLists []string `pulumi:"nameServerIpLists"`
+	// - Comma separated list of subnets (of the form 'a.b.c.d/l.m.n.o') that are allowed to send NFS requests to this container. If not specified, the global NFS whitelist will be looked up for access permission. The internal subnet is always automatically considered part of the whitelist, even if the field below does not explicitly specify it. Similarly, all the hypervisor IPs are considered part of the whitelist. Finally, to permit debugging, all of the SVMs local IPs are considered to be implicitly part of the whitelist.
+	NfsSubnetWhitelists []string         `pulumi:"nfsSubnetWhitelists"`
+	Nodes               []GetClusterNode `pulumi:"nodes"`
+	// - The list of IP addresses or FQDNs of the NTP servers.
+	NtpServerIpLists []string `pulumi:"ntpServerIpLists"`
+	// - Cluster operation mode. - 'NORMAL': Cluster is operating normally. - 'READ_ONLY': Cluster is operating in read only mode. - 'STAND_ALONE': Only one node is operational in the cluster. This is valid only for single node or two node clusters. - 'SWITCH_TO_TWO_NODE': Cluster is moving from single node to two node cluster. - 'OVERRIDE': Valid only for single node cluster. If the user wants to run vms on a single node cluster in read only mode, he can set the cluster peration mode to override. Writes will be allowed in override mode.
+	OperationMode string `pulumi:"operationMode"`
+	// - The reference to a user.
+	OwnerReference map[string]string `pulumi:"ownerReference"`
+	// - The reference to a project.
+	ProjectReference map[string]string `pulumi:"projectReference"`
+	// - Array of enabled cluster services. For example, a cluster can function as both AOS and cloud data gateway. - 'AOS': Regular Prism Element - 'PRISM_CENTRAL': Prism Central - 'CLOUD_DATA_GATEWAY': Cloud backup and DR gateway - 'AFS': Cluster for file server - 'WITNESS' : Witness cluster - 'XI_PORTAL': Xi cluster.
+	ServiceLists []string `pulumi:"serviceLists"`
+	// - SMTP Server Address.
+	SmtpServerAddress map[string]string `pulumi:"smtpServerAddress"`
+	// - SMTP Server Credentials.
+	SmtpServerCredentials map[string]string `pulumi:"smtpServerCredentials"`
+	// - SMTP Server Email Address.
+	SmtpServerEmailAddress string `pulumi:"smtpServerEmailAddress"`
+	// - SMTP Server Proxy Type List
+	SmtpServerProxyTypeLists []string `pulumi:"smtpServerProxyTypeLists"`
+	// - SMTP Server type.
+	SmtpServerType string `pulumi:"smtpServerType"`
+	// - Map of software on the cluster with software type as the key.
+	SoftwareMapNcc map[string]interface{} `pulumi:"softwareMapNcc"`
+	// - Map of software on the cluster with software type as the key.
+	SoftwareMapNos map[string]interface{} `pulumi:"softwareMapNos"`
+	// - UTC date and time in RFC-3339 format when the key expires
+	SslKeyExpireDatetime string `pulumi:"sslKeyExpireDatetime"`
+	SslKeyName           string `pulumi:"sslKeyName"`
+	// - Customer information used in Certificate Signing Request for creating digital certificates.
+	SslKeySigningInfo map[string]string `pulumi:"sslKeySigningInfo"`
+	// - SSL key type. Key types with RSA_2048, ECDSA_256 and ECDSA_384 are supported for key generation and importing.
+	SslKeyType string `pulumi:"sslKeyType"`
+	// - The state of the cluster entity.
+	State string `pulumi:"state"`
+	// - Verbosity level settings for populating support information. - 'Nothing': Send nothing - 'Basic': Send basic information - skip core dump and hypervisor stats information - 'BasicPlusCoreDump': Send basic and core dump information - 'All': Send all information (Default value: BASIC_PLUS_CORE_DUMP)
+	SupportedInformationVerbosity string `pulumi:"supportedInformationVerbosity"`
+	// - Zone name used in value of TZ environment variable.
+	Timezone string `pulumi:"timezone"`
 }
 
 func GetClusterOutput(ctx *pulumi.Context, args GetClusterOutputArgs, opts ...pulumi.InvokeOption) GetClusterResultOutput {
@@ -143,9 +150,12 @@ func GetClusterOutput(ctx *pulumi.Context, args GetClusterOutputArgs, opts ...pu
 
 // A collection of arguments for invoking getCluster.
 type GetClusterOutputArgs struct {
+	// - Categories for the image.
 	Categories GetClusterCategoryArrayInput `pulumi:"categories"`
-	ClusterId  pulumi.StringPtrInput        `pulumi:"clusterId"`
-	Name       pulumi.StringPtrInput        `pulumi:"name"`
+	// Represents clusters uuid
+	ClusterId pulumi.StringPtrInput `pulumi:"clusterId"`
+	// Represents the name of cluster
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (GetClusterOutputArgs) ElementType() reflect.Type {
@@ -167,54 +177,18 @@ func (o GetClusterResultOutput) ToGetClusterResultOutputWithContext(ctx context.
 	return o
 }
 
+func (o GetClusterResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetClusterResult] {
+	return pulumix.Output[GetClusterResult]{
+		OutputState: o.OutputState,
+	}
+}
+
+// - Map of cluster efficiency which includes numbers of inefficient vms. The value is populated by analytics on PC. (Readonly)
 func (o GetClusterResultOutput) AnalysisVmEfficiencyMap() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetClusterResult) map[string]string { return v.AnalysisVmEfficiencyMap }).(pulumi.StringMapOutput)
 }
 
 // The API version.
-// * `description`: - A description for image.
-// * `metadata`: - The image kind metadata.
-// * `state`: - The state of the cluster entity.
-// * `gpuDriverVersion`: - GPU driver version.
-// * `clientAuth`: - Client authentication config.
-// * `authorizedPiblicKeyList`: - List of valid ssh keys for the cluster.
-// * `softwareMapNcc`: - Map of software on the cluster with software type as the key.
-// * `softwareMapNos`: - Map of software on the cluster with software type as the key.
-// * `encryptionStatus`: - Cluster encryption status.
-// * `sslKeyType`: - SSL key type. Key types with RSA_2048, ECDSA_256 and ECDSA_384 are supported for key generation and importing.
-// * `sslKeySigningInfo`: - Customer information used in Certificate Signing Request for creating digital certificates.
-// * `sslKeyExpireDatetime`: - UTC date and time in RFC-3339 format when the key expires
-// * `serviceList`: - Array of enabled cluster services. For example, a cluster can function as both AOS and cloud data gateway. - 'AOS': Regular Prism Element - 'PRISM_CENTRAL': Prism Central - 'CLOUD_DATA_GATEWAY': Cloud backup and DR gateway - 'AFS': Cluster for file server - 'WITNESS' : Witness cluster - 'XI_PORTAL': Xi cluster.
-// * `supportedInformationVerbosity`: - Verbosity level settings for populating support information. - 'Nothing': Send nothing - 'Basic': Send basic information - skip core dump and hypervisor stats information - 'BasicPlusCoreDump': Send basic and core dump information - 'All': Send all information (Default value: BASIC_PLUS_CORE_DUMP)
-// * `certificationSigningInfo`: - Customer information used in Certificate Signing Request for creating digital certificates.
-// * `operationMode`: - Cluster operation mode. - 'NORMAL': Cluster is operating normally. - 'READ_ONLY': Cluster is operating in read only mode. - 'STAND_ALONE': Only one node is operational in the cluster. This is valid only for single node or two node clusters. - 'SWITCH_TO_TWO_NODE': Cluster is moving from single node to two node cluster. - 'OVERRIDE': Valid only for single node cluster. If the user wants to run vms on a single node cluster in read only mode, he can set the cluster peration mode to override. Writes will be allowed in override mode.
-// * `caCertificateList`: - Zone name used in value of TZ environment variable.
-// * `enabledFeatureList`: - Array of enabled features.
-// * `isAvailable`: - Indicates if cluster is available to contact. (Readonly)
-// * `build`: - Cluster build details.
-// * `timezone`: - Zone name used in value of TZ environment variable.
-// * `clusterArch`: - Cluster architecture. (Readonly, Options: Options : X86_64 , PPC64LE)
-// * `managementServerList`: - List of cluster management servers. (Readonly)
-// * `masqueradingPort`: - Port used together with masqueradingIp to connect to the cluster.
-// * `masqueradingIp`: - The cluster NAT'd or proxy IP which maps to the cluster local IP.
-// * `externalIp`: - The local IP of cluster visible externally.
-// * `httpProxyList`: - List of proxies to connect to the service centers.
-// * `smtpServerType`: - SMTP Server type.
-// * `smtpServerEmailAddress`: - SMTP Server Email Address.
-// * `smtpServerCredentials`: - SMTP Server Credentials.
-// * `smtpServerProxyTypeList`: - SMTP Server Proxy Type List
-// * `smtpServerAddress`: - SMTP Server Address.
-// * `ntpServerIpList`: - The list of IP addresses or FQDNs of the NTP servers.
-// * `externalSubnet`: - External subnet for cross server communication. The format is IP/netmask. (default 172.16.0.0/255.240.0.0)
-// * `externalDataServicesIp`: - The cluster IP address that provides external entities access to various cluster data services.
-// * `internalSubnet`: - The internal subnet is local to every server - its not visible outside.iSCSI requests generated internally within the appliance (by user VMs or VMFS) are sent to the internal subnet. The format is IP/netmask.
-// * `domainServerNameserver`: -  The IP of the nameserver that can resolve the domain name. Must set when joining the domain.
-// * `domainServerName`: - Joined domain name. In 'put' request, empty name will unjoin the cluster from current domain.
-// * `domainServerCredentials`: - Cluster domain credentials.
-// * `nfsSubnetWhitelist`: - Comma separated list of subnets (of the form 'a.b.c.d/l.m.n.o') that are allowed to send NFS requests to this container. If not specified, the global NFS whitelist will be looked up for access permission. The internal subnet is always automatically considered part of the whitelist, even if the field below does not explicitly specify it. Similarly, all the hypervisor IPs are considered part of the whitelist. Finally, to permit debugging, all of the SVMs local IPs are considered to be implicitly part of the whitelist.
-// * `nameServerIpList`: - The list of IP addresses of the name servers.
-// * `httpProxyWhitelist`: - HTTP proxy whitelist.
-// * `analysisVmEfficiencyMap`: - Map of cluster efficiency which includes numbers of inefficient vms. The value is populated by analytics on PC. (Readonly)
 func (o GetClusterResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
@@ -223,26 +197,32 @@ func (o GetClusterResultOutput) AuthorizedPublicKeyLists() GetClusterAuthorizedP
 	return o.ApplyT(func(v GetClusterResult) []GetClusterAuthorizedPublicKeyList { return v.AuthorizedPublicKeyLists }).(GetClusterAuthorizedPublicKeyListArrayOutput)
 }
 
+// - Cluster build details.
 func (o GetClusterResultOutput) Build() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetClusterResult) map[string]string { return v.Build }).(pulumi.StringMapOutput)
 }
 
+// - Zone name used in value of TZ environment variable.
 func (o GetClusterResultOutput) CaCertificateLists() GetClusterCaCertificateListArrayOutput {
 	return o.ApplyT(func(v GetClusterResult) []GetClusterCaCertificateList { return v.CaCertificateLists }).(GetClusterCaCertificateListArrayOutput)
 }
 
+// - Categories for the image.
 func (o GetClusterResultOutput) Categories() GetClusterCategoryArrayOutput {
 	return o.ApplyT(func(v GetClusterResult) []GetClusterCategory { return v.Categories }).(GetClusterCategoryArrayOutput)
 }
 
+// - Customer information used in Certificate Signing Request for creating digital certificates.
 func (o GetClusterResultOutput) CertificationSigningInfo() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetClusterResult) map[string]string { return v.CertificationSigningInfo }).(pulumi.StringMapOutput)
 }
 
+// - Client authentication config.
 func (o GetClusterResultOutput) ClientAuth() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetClusterResult) map[string]string { return v.ClientAuth }).(pulumi.StringMapOutput)
 }
 
+// - Cluster architecture. (Readonly, Options: Options : X86_64 , PPC64LE)
 func (o GetClusterResultOutput) ClusterArch() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.ClusterArch }).(pulumi.StringOutput)
 }
@@ -251,46 +231,57 @@ func (o GetClusterResultOutput) ClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
+// - Cluster domain credentials.
 func (o GetClusterResultOutput) DomainServerCredentials() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetClusterResult) map[string]string { return v.DomainServerCredentials }).(pulumi.StringMapOutput)
 }
 
+// - Joined domain name. In 'put' request, empty name will unjoin the cluster from current domain.
 func (o GetClusterResultOutput) DomainServerName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.DomainServerName }).(pulumi.StringOutput)
 }
 
+// -  The IP of the nameserver that can resolve the domain name. Must set when joining the domain.
 func (o GetClusterResultOutput) DomainServerNameserver() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.DomainServerNameserver }).(pulumi.StringOutput)
 }
 
+// - Array of enabled features.
 func (o GetClusterResultOutput) EnabledFeatureLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterResult) []string { return v.EnabledFeatureLists }).(pulumi.StringArrayOutput)
 }
 
+// - Cluster encryption status.
 func (o GetClusterResultOutput) EncryptionStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.EncryptionStatus }).(pulumi.StringOutput)
 }
 
+// - The cluster IP address that provides external entities access to various cluster data services.
 func (o GetClusterResultOutput) ExternalDataServicesIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.ExternalDataServicesIp }).(pulumi.StringOutput)
 }
 
+// - The local IP of cluster visible externally.
 func (o GetClusterResultOutput) ExternalIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.ExternalIp }).(pulumi.StringOutput)
 }
 
+// - External subnet for cross server communication. The format is IP/netmask. (default 172.16.0.0/255.240.0.0)
 func (o GetClusterResultOutput) ExternalSubnet() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.ExternalSubnet }).(pulumi.StringOutput)
 }
 
+// - GPU driver version.
 func (o GetClusterResultOutput) GpuDriverVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.GpuDriverVersion }).(pulumi.StringOutput)
 }
 
+// - List of proxies to connect to the service centers.
 func (o GetClusterResultOutput) HttpProxyLists() GetClusterHttpProxyListArrayOutput {
 	return o.ApplyT(func(v GetClusterResult) []GetClusterHttpProxyList { return v.HttpProxyLists }).(GetClusterHttpProxyListArrayOutput)
 }
 
+// - HTTP proxy whitelist.
 func (o GetClusterResultOutput) HttpProxyWhitelists() GetClusterHttpProxyWhitelistArrayOutput {
 	return o.ApplyT(func(v GetClusterResult) []GetClusterHttpProxyWhitelist { return v.HttpProxyWhitelists }).(GetClusterHttpProxyWhitelistArrayOutput)
 }
@@ -300,38 +291,47 @@ func (o GetClusterResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// - The internal subnet is local to every server - its not visible outside.iSCSI requests generated internally within the appliance (by user VMs or VMFS) are sent to the internal subnet. The format is IP/netmask.
 func (o GetClusterResultOutput) InternalSubnet() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.InternalSubnet }).(pulumi.StringOutput)
 }
 
+// - Indicates if cluster is available to contact. (Readonly)
 func (o GetClusterResultOutput) IsAvailable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetClusterResult) bool { return v.IsAvailable }).(pulumi.BoolOutput)
 }
 
+// - List of cluster management servers. (Readonly)
 func (o GetClusterResultOutput) ManagementServerLists() GetClusterManagementServerListArrayOutput {
 	return o.ApplyT(func(v GetClusterResult) []GetClusterManagementServerList { return v.ManagementServerLists }).(GetClusterManagementServerListArrayOutput)
 }
 
+// - The cluster NAT'd or proxy IP which maps to the cluster local IP.
 func (o GetClusterResultOutput) MasqueradingIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.MasqueradingIp }).(pulumi.StringOutput)
 }
 
+// - Port used together with masqueradingIp to connect to the cluster.
 func (o GetClusterResultOutput) MasqueradingPort() pulumi.IntOutput {
 	return o.ApplyT(func(v GetClusterResult) int { return v.MasqueradingPort }).(pulumi.IntOutput)
 }
 
+// - The image kind metadata.
 func (o GetClusterResultOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetClusterResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
+// - the name.
 func (o GetClusterResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// - The list of IP addresses of the name servers.
 func (o GetClusterResultOutput) NameServerIpLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterResult) []string { return v.NameServerIpLists }).(pulumi.StringArrayOutput)
 }
 
+// - Comma separated list of subnets (of the form 'a.b.c.d/l.m.n.o') that are allowed to send NFS requests to this container. If not specified, the global NFS whitelist will be looked up for access permission. The internal subnet is always automatically considered part of the whitelist, even if the field below does not explicitly specify it. Similarly, all the hypervisor IPs are considered part of the whitelist. Finally, to permit debugging, all of the SVMs local IPs are considered to be implicitly part of the whitelist.
 func (o GetClusterResultOutput) NfsSubnetWhitelists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterResult) []string { return v.NfsSubnetWhitelists }).(pulumi.StringArrayOutput)
 }
@@ -340,54 +340,67 @@ func (o GetClusterResultOutput) Nodes() GetClusterNodeArrayOutput {
 	return o.ApplyT(func(v GetClusterResult) []GetClusterNode { return v.Nodes }).(GetClusterNodeArrayOutput)
 }
 
+// - The list of IP addresses or FQDNs of the NTP servers.
 func (o GetClusterResultOutput) NtpServerIpLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterResult) []string { return v.NtpServerIpLists }).(pulumi.StringArrayOutput)
 }
 
+// - Cluster operation mode. - 'NORMAL': Cluster is operating normally. - 'READ_ONLY': Cluster is operating in read only mode. - 'STAND_ALONE': Only one node is operational in the cluster. This is valid only for single node or two node clusters. - 'SWITCH_TO_TWO_NODE': Cluster is moving from single node to two node cluster. - 'OVERRIDE': Valid only for single node cluster. If the user wants to run vms on a single node cluster in read only mode, he can set the cluster peration mode to override. Writes will be allowed in override mode.
 func (o GetClusterResultOutput) OperationMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.OperationMode }).(pulumi.StringOutput)
 }
 
+// - The reference to a user.
 func (o GetClusterResultOutput) OwnerReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetClusterResult) map[string]string { return v.OwnerReference }).(pulumi.StringMapOutput)
 }
 
+// - The reference to a project.
 func (o GetClusterResultOutput) ProjectReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetClusterResult) map[string]string { return v.ProjectReference }).(pulumi.StringMapOutput)
 }
 
+// - Array of enabled cluster services. For example, a cluster can function as both AOS and cloud data gateway. - 'AOS': Regular Prism Element - 'PRISM_CENTRAL': Prism Central - 'CLOUD_DATA_GATEWAY': Cloud backup and DR gateway - 'AFS': Cluster for file server - 'WITNESS' : Witness cluster - 'XI_PORTAL': Xi cluster.
 func (o GetClusterResultOutput) ServiceLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterResult) []string { return v.ServiceLists }).(pulumi.StringArrayOutput)
 }
 
+// - SMTP Server Address.
 func (o GetClusterResultOutput) SmtpServerAddress() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetClusterResult) map[string]string { return v.SmtpServerAddress }).(pulumi.StringMapOutput)
 }
 
+// - SMTP Server Credentials.
 func (o GetClusterResultOutput) SmtpServerCredentials() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetClusterResult) map[string]string { return v.SmtpServerCredentials }).(pulumi.StringMapOutput)
 }
 
+// - SMTP Server Email Address.
 func (o GetClusterResultOutput) SmtpServerEmailAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.SmtpServerEmailAddress }).(pulumi.StringOutput)
 }
 
+// - SMTP Server Proxy Type List
 func (o GetClusterResultOutput) SmtpServerProxyTypeLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetClusterResult) []string { return v.SmtpServerProxyTypeLists }).(pulumi.StringArrayOutput)
 }
 
+// - SMTP Server type.
 func (o GetClusterResultOutput) SmtpServerType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.SmtpServerType }).(pulumi.StringOutput)
 }
 
+// - Map of software on the cluster with software type as the key.
 func (o GetClusterResultOutput) SoftwareMapNcc() pulumi.MapOutput {
 	return o.ApplyT(func(v GetClusterResult) map[string]interface{} { return v.SoftwareMapNcc }).(pulumi.MapOutput)
 }
 
+// - Map of software on the cluster with software type as the key.
 func (o GetClusterResultOutput) SoftwareMapNos() pulumi.MapOutput {
 	return o.ApplyT(func(v GetClusterResult) map[string]interface{} { return v.SoftwareMapNos }).(pulumi.MapOutput)
 }
 
+// - UTC date and time in RFC-3339 format when the key expires
 func (o GetClusterResultOutput) SslKeyExpireDatetime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.SslKeyExpireDatetime }).(pulumi.StringOutput)
 }
@@ -396,22 +409,27 @@ func (o GetClusterResultOutput) SslKeyName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.SslKeyName }).(pulumi.StringOutput)
 }
 
+// - Customer information used in Certificate Signing Request for creating digital certificates.
 func (o GetClusterResultOutput) SslKeySigningInfo() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetClusterResult) map[string]string { return v.SslKeySigningInfo }).(pulumi.StringMapOutput)
 }
 
+// - SSL key type. Key types with RSA_2048, ECDSA_256 and ECDSA_384 are supported for key generation and importing.
 func (o GetClusterResultOutput) SslKeyType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.SslKeyType }).(pulumi.StringOutput)
 }
 
+// - The state of the cluster entity.
 func (o GetClusterResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.State }).(pulumi.StringOutput)
 }
 
+// - Verbosity level settings for populating support information. - 'Nothing': Send nothing - 'Basic': Send basic information - skip core dump and hypervisor stats information - 'BasicPlusCoreDump': Send basic and core dump information - 'All': Send all information (Default value: BASIC_PLUS_CORE_DUMP)
 func (o GetClusterResultOutput) SupportedInformationVerbosity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.SupportedInformationVerbosity }).(pulumi.StringOutput)
 }
 
+// - Zone name used in value of TZ environment variable.
 func (o GetClusterResultOutput) Timezone() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClusterResult) string { return v.Timezone }).(pulumi.StringOutput)
 }

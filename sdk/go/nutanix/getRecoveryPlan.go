@@ -7,59 +7,14 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describe a Nutanix Recovery Plan and its values (if it has them).
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-// 	"fmt"
-//
-// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi-nutanix/sdk/go/nutanix"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-// )
-//
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := nutanix.NewRecoveryPlan(ctx, "recoveryPlanTest", &nutanix.RecoveryPlanArgs{
-// 			Description: pulumi.String(fmt.Sprintf("%v%v", "%", "s")),
-// 			Parameters:  nil,
-// 			StageLists: RecoveryPlanStageListArray{
-// 				&RecoveryPlanStageListArgs{
-// 					DelayTimeSecs: pulumi.Int(0),
-// 					StageUuid:     pulumi.String("ab788130-0820-4d07-a1b5-b0ba4d3a42asd"),
-// 					StageWork: &RecoveryPlanStageListStageWorkArgs{
-// 						RecoverEntities: &RecoveryPlanStageListStageWorkRecoverEntitiesArgs{
-// 							EntityInfoList: []map[string]interface{}{
-// 								map[string]interface{}{
-// 									"categories": []map[string]interface{}{
-// 										map[string]interface{}{
-// 											"name":  "Environment",
-// 											"value": "Dev",
-// 										},
-// 									},
-// 								},
-// 							},
-// 						},
-// 					},
-// 				},
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
-// ```
 func LookupRecoveryPlan(ctx *pulumi.Context, args *LookupRecoveryPlanArgs, opts ...pulumi.InvokeOption) (*LookupRecoveryPlanResult, error) {
-	opts = pkgInvokeDefaultOpts(opts)
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupRecoveryPlanResult
 	err := ctx.Invoke("nutanix:index/getRecoveryPlan:getRecoveryPlan", args, &rv, opts...)
 	if err != nil {
@@ -70,16 +25,18 @@ func LookupRecoveryPlan(ctx *pulumi.Context, args *LookupRecoveryPlanArgs, opts 
 
 // A collection of arguments for invoking getRecoveryPlan.
 type LookupRecoveryPlanArgs struct {
-	Categories       []GetRecoveryPlanCategory `pulumi:"categories"`
-	RecoveryPlanId   *string                   `pulumi:"recoveryPlanId"`
-	RecoveryPlanName *string                   `pulumi:"recoveryPlanName"`
+	Categories []GetRecoveryPlanCategory `pulumi:"categories"`
+	// - (Required) The `id` of the Recovery Plan.
+	RecoveryPlanId   *string `pulumi:"recoveryPlanId"`
+	RecoveryPlanName *string `pulumi:"recoveryPlanName"`
 }
 
 // A collection of values returned by getRecoveryPlan.
 type LookupRecoveryPlanResult struct {
-	ApiVersion  string                    `pulumi:"apiVersion"`
-	Categories  []GetRecoveryPlanCategory `pulumi:"categories"`
-	Description string                    `pulumi:"description"`
+	ApiVersion string                    `pulumi:"apiVersion"`
+	Categories []GetRecoveryPlanCategory `pulumi:"categories"`
+	// A description for Recovery Plan.
+	Description string `pulumi:"description"`
 	// The provider-assigned unique ID for this managed resource.
 	Id       string            `pulumi:"id"`
 	Metadata map[string]string `pulumi:"metadata"`
@@ -182,9 +139,10 @@ func LookupRecoveryPlanOutput(ctx *pulumi.Context, args LookupRecoveryPlanOutput
 
 // A collection of arguments for invoking getRecoveryPlan.
 type LookupRecoveryPlanOutputArgs struct {
-	Categories       GetRecoveryPlanCategoryArrayInput `pulumi:"categories"`
-	RecoveryPlanId   pulumi.StringPtrInput             `pulumi:"recoveryPlanId"`
-	RecoveryPlanName pulumi.StringPtrInput             `pulumi:"recoveryPlanName"`
+	Categories GetRecoveryPlanCategoryArrayInput `pulumi:"categories"`
+	// - (Required) The `id` of the Recovery Plan.
+	RecoveryPlanId   pulumi.StringPtrInput `pulumi:"recoveryPlanId"`
+	RecoveryPlanName pulumi.StringPtrInput `pulumi:"recoveryPlanName"`
 }
 
 func (LookupRecoveryPlanOutputArgs) ElementType() reflect.Type {
@@ -206,6 +164,12 @@ func (o LookupRecoveryPlanResultOutput) ToLookupRecoveryPlanResultOutputWithCont
 	return o
 }
 
+func (o LookupRecoveryPlanResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRecoveryPlanResult] {
+	return pulumix.Output[LookupRecoveryPlanResult]{
+		OutputState: o.OutputState,
+	}
+}
+
 func (o LookupRecoveryPlanResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRecoveryPlanResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
@@ -214,6 +178,7 @@ func (o LookupRecoveryPlanResultOutput) Categories() GetRecoveryPlanCategoryArra
 	return o.ApplyT(func(v LookupRecoveryPlanResult) []GetRecoveryPlanCategory { return v.Categories }).(GetRecoveryPlanCategoryArrayOutput)
 }
 
+// A description for Recovery Plan.
 func (o LookupRecoveryPlanResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRecoveryPlanResult) string { return v.Description }).(pulumi.StringOutput)
 }
