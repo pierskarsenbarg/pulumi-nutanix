@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Pulumi</Authors>
-    <Company>Pulumi</Company>
+    <Authors>Piers Karsenbarg</Authors>
+    <Company>Piers Karsenbarg</Company>
     <Description>A Pulumi package for creating and managing nutanix cloud resources.</Description>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/pierskarsenbarg/pulumi-nutanix</PackageProjectUrl>
