@@ -1,20 +1,9 @@
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  # NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-  # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-  # NUGET_PUBLISH_KEY: ${{ secrets.NUGET_PUBLISH_KEY }}
   PROVIDER: nutanix
-  PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
-  PULUMI_API: https://api.pulumi.com
   PULUMI_GO_DEP_ROOT: ${{ github.workspace }}/..
   PULUMI_LOCAL_NUGET: ${{ github.workspace }}/nuget
-  PULUMI_TEST_OWNER: "lbrlabs"
-  # PYPI_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-  # PYPI_USERNAME: "__token__"
-  # SCW_ACCESS_KEY: ${{ secrets.SCW_ACCESS_KEY }}
-  # SCW_DEFAULT_PROJECT_ID: ${{ secrets.SCW_DEFAULT_PROJECT_ID }}
-  # SCW_SECRET_KEY: ${{ secrets.SCW_SECRET_KEY }}
-  # TRAVIS_OS_NAME: linux
+  PULUMI_TEST_OWNER: "pierskarsenbarg"
 jobs:
   build_sdk:
     name: build_sdk
@@ -40,22 +29,22 @@ jobs:
         with:
           repo: pulumi/pulumictl
       - name: Install Pulumi CLI
-        uses: pulumi/action-install-pulumi-cli@v2
+        uses: pulumi/actions@v4
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: ${{matrix.nodeversion}}
           registry-url: https://registry.npmjs.org
       - name: Setup DotNet
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{matrix.dotnetversion}}
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{matrix.pythonversion}}
       - name: Download provider + tfgen binaries
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: ${{ env.PROVIDER }}-provider.tar.gz
           path: ${{ github.workspace }}/bin
@@ -76,7 +65,7 @@ jobs:
           tar -zcf sdk/${{ matrix.language }}.tar.gz -C sdk/${{ matrix.language }}
           .
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.language  }}-sdk.tar.gz
           path: ${{ github.workspace}}/sdk/${{ matrix.language }}.tar.gz
@@ -119,7 +108,7 @@ jobs:
         with:
           repo: pulumi/pulumictl
       - name: Install Pulumi CLI
-        uses: pulumi/action-install-pulumi-cli@v2
+        uses: pulumi/actions@v4
       - if: github.event_name == 'pull_request'
         name: Install Schema Tools
         uses: jaxxstorm/action-install-gh-release@v1.10.0
@@ -135,7 +124,7 @@ jobs:
           echo 'EOF' >> $GITHUB_ENV
       - if: github.event_name == 'pull_request'
         name: Comment on PR with Details of Schema Check
-        uses: thollander/actions-comment-pull-request@1.0.1
+        uses: thollander/actions-comment-pull-request@v2.4.3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           message: |
@@ -148,7 +137,7 @@ jobs:
           }}/bin/ pulumi-resource-${{ env.PROVIDER }} pulumi-tfgen-${{ env.PROVIDER
           }}
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ env.PROVIDER }}-provider.tar.gz
           path: ${{ github.workspace }}/bin/provider.tar.gz
@@ -181,7 +170,7 @@ jobs:
   #     with:
   #       repo: pulumi/pulumictl
   #   - name: Install Pulumi CLI
-  #     uses: pulumi/action-install-pulumi-cli@v2
+  #     uses: pulumi/actions@v4
   #   - name: Set PreRelease Version
   #     run: echo "GORELEASER_CURRENT_TAG=v$(pulumictl get version --language generic)" >> $GITHUB_ENV
   #   - name: Run GoReleaser
@@ -225,36 +214,36 @@ jobs:
   #     with:
   #       repo: pulumi/pulumictl
   #   - name: Install Pulumi CLI
-  #     uses: pulumi/action-install-pulumi-cli@v2
+  #     uses: pulumi/actions@v4
   #   - name: Setup Node
   #     uses: actions/setup-node@v4
   #     with:
   #       node-version: ${{matrix.nodeversion}}
   #       registry-url: https://registry.npmjs.org
   #   - name: Setup DotNet
-  #     uses: actions/setup-dotnet@v1
+  #     uses: actions/setup-dotnet@v3
   #     with:
   #       dotnet-version: ${{matrix.dotnetversion}}
   #   - name: Setup Python
-  #     uses: actions/setup-python@v2
+  #     uses: actions/setup-python@v4
   #     with:
   #       python-version: ${{matrix.pythonversion}}
   #   - name: Download python SDK
-  #     uses: actions/download-artifact@v2
+  #     uses: actions/download-artifact@v3
   #     with:
   #       name: python-sdk.tar.gz
   #       path: ${{ github.workspace}}/sdk/
   #   - name: Uncompress python SDK
   #     run: tar -zxf ${{github.workspace}}/sdk/python.tar.gz -C ${{github.workspace}}/sdk/python
   #   - name: Download dotnet SDK
-  #     uses: actions/download-artifact@v2
+  #     uses: actions/download-artifact@v3
   #     with:
   #       name: dotnet-sdk.tar.gz
   #       path: ${{ github.workspace}}/sdk/
   #   - name: Uncompress dotnet SDK
   #     run: tar -zxf ${{github.workspace}}/sdk/dotnet.tar.gz -C ${{github.workspace}}/sdk/dotnet
   #   - name: Download nodejs SDK
-  #     uses: actions/download-artifact@v2
+  #     uses: actions/download-artifact@v3
   #     with:
   #       name: nodejs-sdk.tar.gz
   #       path: ${{ github.workspace}}/sdk/
@@ -300,22 +289,22 @@ jobs:
   #     with:
   #       repo: pulumi/pulumictl
   #   - name: Install Pulumi CLI
-  #     uses: pulumi/action-install-pulumi-cli@v2
+  #     uses: pulumi/actions@v4
   #   - name: Setup Node
   #     uses: actions/setup-node@v4
   #     with:
   #       node-version: ${{matrix.nodeversion}}
   #       registry-url: https://registry.npmjs.org
   #   - name: Setup DotNet
-  #     uses: actions/setup-dotnet@v1
+  #     uses: actions/setup-dotnet@v3
   #     with:
   #       dotnet-version: ${{matrix.dotnetversion}}
   #   - name: Setup Python
-  #     uses: actions/setup-python@v2
+  #     uses: actions/setup-python@v4
   #     with:
   #       python-version: ${{matrix.pythonversion}}
   #   - name: Download provider + tfgen binaries
-  #     uses: actions/download-artifact@v2
+  #     uses: actions/download-artifact@v3
   #     with:
   #       name: ${{ env.PROVIDER }}-provider.tar.gz
   #       path: ${{ github.workspace }}/bin
@@ -325,7 +314,7 @@ jobs:
   #       find ${{ github.workspace }} -name "pulumi-*-${{ env.PROVIDER }}" -print -exec chmod +x {} \;
   #   - run: dotnet nuget add source ${{ github.workspace }}/nuget
   #   - name: Download SDK
-  #     uses: actions/download-artifact@v2
+  #     uses: actions/download-artifact@v3
   #     with:
   #       name: ${{ matrix.language }}-sdk.tar.gz
   #       path: ${{ github.workspace}}/sdk/
