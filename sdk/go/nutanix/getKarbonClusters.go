@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes Karbon Clusters
@@ -78,12 +77,6 @@ func (o GetKarbonClustersResultOutput) ToGetKarbonClustersResultOutput() GetKarb
 
 func (o GetKarbonClustersResultOutput) ToGetKarbonClustersResultOutputWithContext(ctx context.Context) GetKarbonClustersResultOutput {
 	return o
-}
-
-func (o GetKarbonClustersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetKarbonClustersResult] {
-	return pulumix.Output[GetKarbonClustersResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKarbonClustersResultOutput) Clusters() GetKarbonClustersClusterArrayOutput {

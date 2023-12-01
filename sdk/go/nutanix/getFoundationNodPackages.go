@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes a list of nos (aos) packages present in foundation vm
@@ -84,12 +83,6 @@ func (o GetFoundationNodPackagesResultOutput) ToGetFoundationNodPackagesResultOu
 
 func (o GetFoundationNodPackagesResultOutput) ToGetFoundationNodPackagesResultOutputWithContext(ctx context.Context) GetFoundationNodPackagesResultOutput {
 	return o
-}
-
-func (o GetFoundationNodPackagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFoundationNodPackagesResult] {
-	return pulumix.Output[GetFoundationNodPackagesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of nos packages file names present in foundation vm

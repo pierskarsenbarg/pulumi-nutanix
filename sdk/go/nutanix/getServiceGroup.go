@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func LookupServiceGroup(ctx *pulumi.Context, args *LookupServiceGroupArgs, opts ...pulumi.InvokeOption) (*LookupServiceGroupResult, error) {
@@ -73,12 +72,6 @@ func (o LookupServiceGroupResultOutput) ToLookupServiceGroupResultOutput() Looku
 
 func (o LookupServiceGroupResultOutput) ToLookupServiceGroupResultOutputWithContext(ctx context.Context) LookupServiceGroupResultOutput {
 	return o
-}
-
-func (o LookupServiceGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupServiceGroupResult] {
-	return pulumix.Output[LookupServiceGroupResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupServiceGroupResultOutput) Description() pulumi.StringOutput {

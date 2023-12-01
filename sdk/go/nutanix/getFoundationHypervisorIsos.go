@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes a list of hypervisor isos image file details present in foundation vm
@@ -92,12 +91,6 @@ func (o GetFoundationHypervisorIsosResultOutput) ToGetFoundationHypervisorIsosRe
 
 func (o GetFoundationHypervisorIsosResultOutput) ToGetFoundationHypervisorIsosResultOutputWithContext(ctx context.Context) GetFoundationHypervisorIsosResultOutput {
 	return o
-}
-
-func (o GetFoundationHypervisorIsosResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFoundationHypervisorIsosResult] {
-	return pulumix.Output[GetFoundationHypervisorIsosResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of esx isos and theirdetails present in foundation vm

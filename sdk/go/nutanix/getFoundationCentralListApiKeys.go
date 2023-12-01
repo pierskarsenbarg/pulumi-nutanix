@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetFoundationCentralListApiKeys(ctx *pulumi.Context, args *GetFoundationCentralListApiKeysArgs, opts ...pulumi.InvokeOption) (*GetFoundationCentralListApiKeysResult, error) {
@@ -76,12 +75,6 @@ func (o GetFoundationCentralListApiKeysResultOutput) ToGetFoundationCentralListA
 
 func (o GetFoundationCentralListApiKeysResultOutput) ToGetFoundationCentralListApiKeysResultOutputWithContext(ctx context.Context) GetFoundationCentralListApiKeysResultOutput {
 	return o
-}
-
-func (o GetFoundationCentralListApiKeysResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFoundationCentralListApiKeysResult] {
-	return pulumix.Output[GetFoundationCentralListApiKeysResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFoundationCentralListApiKeysResultOutput) ApiKeys() GetFoundationCentralListApiKeysApiKeyArrayOutput {

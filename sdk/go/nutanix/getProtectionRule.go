@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describe a Nutanix Protection Rule and its values (if it has them).
@@ -167,12 +166,6 @@ func (o LookupProtectionRuleResultOutput) ToLookupProtectionRuleResultOutput() L
 
 func (o LookupProtectionRuleResultOutput) ToLookupProtectionRuleResultOutputWithContext(ctx context.Context) LookupProtectionRuleResultOutput {
 	return o
-}
-
-func (o LookupProtectionRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupProtectionRuleResult] {
-	return pulumix.Output[LookupProtectionRuleResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupProtectionRuleResultOutput) ApiVersion() pulumi.StringOutput {

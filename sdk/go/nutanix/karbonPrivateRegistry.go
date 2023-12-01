@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Nutanix Karbon Registry resource to Create a private registry entry in Karbon.
@@ -195,12 +194,6 @@ func (i *KarbonPrivateRegistry) ToKarbonPrivateRegistryOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(KarbonPrivateRegistryOutput)
 }
 
-func (i *KarbonPrivateRegistry) ToOutput(ctx context.Context) pulumix.Output[*KarbonPrivateRegistry] {
-	return pulumix.Output[*KarbonPrivateRegistry]{
-		OutputState: i.ToKarbonPrivateRegistryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // KarbonPrivateRegistryArrayInput is an input type that accepts KarbonPrivateRegistryArray and KarbonPrivateRegistryArrayOutput values.
 // You can construct a concrete instance of `KarbonPrivateRegistryArrayInput` via:
 //
@@ -224,12 +217,6 @@ func (i KarbonPrivateRegistryArray) ToKarbonPrivateRegistryArrayOutput() KarbonP
 
 func (i KarbonPrivateRegistryArray) ToKarbonPrivateRegistryArrayOutputWithContext(ctx context.Context) KarbonPrivateRegistryArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(KarbonPrivateRegistryArrayOutput)
-}
-
-func (i KarbonPrivateRegistryArray) ToOutput(ctx context.Context) pulumix.Output[[]*KarbonPrivateRegistry] {
-	return pulumix.Output[[]*KarbonPrivateRegistry]{
-		OutputState: i.ToKarbonPrivateRegistryArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // KarbonPrivateRegistryMapInput is an input type that accepts KarbonPrivateRegistryMap and KarbonPrivateRegistryMapOutput values.
@@ -257,12 +244,6 @@ func (i KarbonPrivateRegistryMap) ToKarbonPrivateRegistryMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(KarbonPrivateRegistryMapOutput)
 }
 
-func (i KarbonPrivateRegistryMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*KarbonPrivateRegistry] {
-	return pulumix.Output[map[string]*KarbonPrivateRegistry]{
-		OutputState: i.ToKarbonPrivateRegistryMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type KarbonPrivateRegistryOutput struct{ *pulumi.OutputState }
 
 func (KarbonPrivateRegistryOutput) ElementType() reflect.Type {
@@ -275,12 +256,6 @@ func (o KarbonPrivateRegistryOutput) ToKarbonPrivateRegistryOutput() KarbonPriva
 
 func (o KarbonPrivateRegistryOutput) ToKarbonPrivateRegistryOutputWithContext(ctx context.Context) KarbonPrivateRegistryOutput {
 	return o
-}
-
-func (o KarbonPrivateRegistryOutput) ToOutput(ctx context.Context) pulumix.Output[*KarbonPrivateRegistry] {
-	return pulumix.Output[*KarbonPrivateRegistry]{
-		OutputState: o.OutputState,
-	}
 }
 
 // - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
@@ -332,12 +307,6 @@ func (o KarbonPrivateRegistryArrayOutput) ToKarbonPrivateRegistryArrayOutputWith
 	return o
 }
 
-func (o KarbonPrivateRegistryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*KarbonPrivateRegistry] {
-	return pulumix.Output[[]*KarbonPrivateRegistry]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o KarbonPrivateRegistryArrayOutput) Index(i pulumi.IntInput) KarbonPrivateRegistryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *KarbonPrivateRegistry {
 		return vs[0].([]*KarbonPrivateRegistry)[vs[1].(int)]
@@ -356,12 +325,6 @@ func (o KarbonPrivateRegistryMapOutput) ToKarbonPrivateRegistryMapOutput() Karbo
 
 func (o KarbonPrivateRegistryMapOutput) ToKarbonPrivateRegistryMapOutputWithContext(ctx context.Context) KarbonPrivateRegistryMapOutput {
 	return o
-}
-
-func (o KarbonPrivateRegistryMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*KarbonPrivateRegistry] {
-	return pulumix.Output[map[string]*KarbonPrivateRegistry]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KarbonPrivateRegistryMapOutput) MapIndex(k pulumi.StringInput) KarbonPrivateRegistryOutput {

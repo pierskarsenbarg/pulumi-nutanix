@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describe a Nutanix Category Key and its values (if it has them).
@@ -80,12 +79,6 @@ func (o LookupCategoryKeyResultOutput) ToLookupCategoryKeyResultOutput() LookupC
 
 func (o LookupCategoryKeyResultOutput) ToLookupCategoryKeyResultOutputWithContext(ctx context.Context) LookupCategoryKeyResultOutput {
 	return o
-}
-
-func (o LookupCategoryKeyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCategoryKeyResult] {
-	return pulumix.Output[LookupCategoryKeyResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The version of the API.

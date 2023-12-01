@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes a list of subnets
@@ -101,12 +100,6 @@ func (o GetSubnetsResultOutput) ToGetSubnetsResultOutput() GetSubnetsResultOutpu
 
 func (o GetSubnetsResultOutput) ToGetSubnetsResultOutputWithContext(ctx context.Context) GetSubnetsResultOutput {
 	return o
-}
-
-func (o GetSubnetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubnetsResult] {
-	return pulumix.Output[GetSubnetsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // version of the API

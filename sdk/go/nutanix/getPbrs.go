@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve all the pbrs.
@@ -101,12 +100,6 @@ func (o GetPbrsResultOutput) ToGetPbrsResultOutput() GetPbrsResultOutput {
 
 func (o GetPbrsResultOutput) ToGetPbrsResultOutputWithContext(ctx context.Context) GetPbrsResultOutput {
 	return o
-}
-
-func (o GetPbrsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbrsResult] {
-	return pulumix.Output[GetPbrsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // version of the API

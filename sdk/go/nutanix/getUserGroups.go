@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve all the user groups.
@@ -98,12 +97,6 @@ func (o GetUserGroupsResultOutput) ToGetUserGroupsResultOutput() GetUserGroupsRe
 
 func (o GetUserGroupsResultOutput) ToGetUserGroupsResultOutputWithContext(ctx context.Context) GetUserGroupsResultOutput {
 	return o
-}
-
-func (o GetUserGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserGroupsResult] {
-	return pulumix.Output[GetUserGroupsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetUserGroupsResultOutput) ApiVersion() pulumi.StringOutput {

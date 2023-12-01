@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes Projects
@@ -81,12 +80,6 @@ func (o GetProjectsResultOutput) ToGetProjectsResultOutput() GetProjectsResultOu
 
 func (o GetProjectsResultOutput) ToGetProjectsResultOutputWithContext(ctx context.Context) GetProjectsResultOutput {
 	return o
-}
-
-func (o GetProjectsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProjectsResult] {
-	return pulumix.Output[GetProjectsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // version of the API

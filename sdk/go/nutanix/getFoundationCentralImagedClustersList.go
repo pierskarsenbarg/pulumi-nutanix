@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetFoundationCentralImagedClustersList(ctx *pulumi.Context, args *GetFoundationCentralImagedClustersListArgs, opts ...pulumi.InvokeOption) (*GetFoundationCentralImagedClustersListResult, error) {
@@ -77,12 +76,6 @@ func (o GetFoundationCentralImagedClustersListResultOutput) ToGetFoundationCentr
 
 func (o GetFoundationCentralImagedClustersListResultOutput) ToGetFoundationCentralImagedClustersListResultOutputWithContext(ctx context.Context) GetFoundationCentralImagedClustersListResultOutput {
 	return o
-}
-
-func (o GetFoundationCentralImagedClustersListResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFoundationCentralImagedClustersListResult] {
-	return pulumix.Output[GetFoundationCentralImagedClustersListResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFoundationCentralImagedClustersListResultOutput) Filters() GetFoundationCentralImagedClustersListFiltersPtrOutput {
