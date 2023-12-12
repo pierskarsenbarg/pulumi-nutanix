@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve list of address groups.
@@ -99,12 +98,6 @@ func (o GetAddressGroupsResultOutput) ToGetAddressGroupsResultOutput() GetAddres
 
 func (o GetAddressGroupsResultOutput) ToGetAddressGroupsResultOutputWithContext(ctx context.Context) GetAddressGroupsResultOutput {
 	return o
-}
-
-func (o GetAddressGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressGroupsResult] {
-	return pulumix.Output[GetAddressGroupsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // - (ReadOnly) List of address groups

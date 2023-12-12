@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a resource to create a service group based on the input parameters.
@@ -168,12 +167,6 @@ func (i *ServiceGroup) ToServiceGroupOutputWithContext(ctx context.Context) Serv
 	return pulumi.ToOutputWithContext(ctx, i).(ServiceGroupOutput)
 }
 
-func (i *ServiceGroup) ToOutput(ctx context.Context) pulumix.Output[*ServiceGroup] {
-	return pulumix.Output[*ServiceGroup]{
-		OutputState: i.ToServiceGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ServiceGroupArrayInput is an input type that accepts ServiceGroupArray and ServiceGroupArrayOutput values.
 // You can construct a concrete instance of `ServiceGroupArrayInput` via:
 //
@@ -197,12 +190,6 @@ func (i ServiceGroupArray) ToServiceGroupArrayOutput() ServiceGroupArrayOutput {
 
 func (i ServiceGroupArray) ToServiceGroupArrayOutputWithContext(ctx context.Context) ServiceGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ServiceGroupArrayOutput)
-}
-
-func (i ServiceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*ServiceGroup] {
-	return pulumix.Output[[]*ServiceGroup]{
-		OutputState: i.ToServiceGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ServiceGroupMapInput is an input type that accepts ServiceGroupMap and ServiceGroupMapOutput values.
@@ -230,12 +217,6 @@ func (i ServiceGroupMap) ToServiceGroupMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(ServiceGroupMapOutput)
 }
 
-func (i ServiceGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ServiceGroup] {
-	return pulumix.Output[map[string]*ServiceGroup]{
-		OutputState: i.ToServiceGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ServiceGroupOutput struct{ *pulumi.OutputState }
 
 func (ServiceGroupOutput) ElementType() reflect.Type {
@@ -248,12 +229,6 @@ func (o ServiceGroupOutput) ToServiceGroupOutput() ServiceGroupOutput {
 
 func (o ServiceGroupOutput) ToServiceGroupOutputWithContext(ctx context.Context) ServiceGroupOutput {
 	return o
-}
-
-func (o ServiceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*ServiceGroup] {
-	return pulumix.Output[*ServiceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // - (Optional) Description of the service group
@@ -290,12 +265,6 @@ func (o ServiceGroupArrayOutput) ToServiceGroupArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o ServiceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ServiceGroup] {
-	return pulumix.Output[[]*ServiceGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ServiceGroupArrayOutput) Index(i pulumi.IntInput) ServiceGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ServiceGroup {
 		return vs[0].([]*ServiceGroup)[vs[1].(int)]
@@ -314,12 +283,6 @@ func (o ServiceGroupMapOutput) ToServiceGroupMapOutput() ServiceGroupMapOutput {
 
 func (o ServiceGroupMapOutput) ToServiceGroupMapOutputWithContext(ctx context.Context) ServiceGroupMapOutput {
 	return o
-}
-
-func (o ServiceGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ServiceGroup] {
-	return pulumix.Output[map[string]*ServiceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ServiceGroupMapOutput) MapIndex(k pulumi.StringInput) ServiceGroupOutput {

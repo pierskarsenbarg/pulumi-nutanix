@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Uploads hypervisor or AOS image to foundation.
@@ -186,12 +185,6 @@ func (i *FoundationImage) ToFoundationImageOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationImageOutput)
 }
 
-func (i *FoundationImage) ToOutput(ctx context.Context) pulumix.Output[*FoundationImage] {
-	return pulumix.Output[*FoundationImage]{
-		OutputState: i.ToFoundationImageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FoundationImageArrayInput is an input type that accepts FoundationImageArray and FoundationImageArrayOutput values.
 // You can construct a concrete instance of `FoundationImageArrayInput` via:
 //
@@ -215,12 +208,6 @@ func (i FoundationImageArray) ToFoundationImageArrayOutput() FoundationImageArra
 
 func (i FoundationImageArray) ToFoundationImageArrayOutputWithContext(ctx context.Context) FoundationImageArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationImageArrayOutput)
-}
-
-func (i FoundationImageArray) ToOutput(ctx context.Context) pulumix.Output[[]*FoundationImage] {
-	return pulumix.Output[[]*FoundationImage]{
-		OutputState: i.ToFoundationImageArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FoundationImageMapInput is an input type that accepts FoundationImageMap and FoundationImageMapOutput values.
@@ -248,12 +235,6 @@ func (i FoundationImageMap) ToFoundationImageMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationImageMapOutput)
 }
 
-func (i FoundationImageMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FoundationImage] {
-	return pulumix.Output[map[string]*FoundationImage]{
-		OutputState: i.ToFoundationImageMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FoundationImageOutput struct{ *pulumi.OutputState }
 
 func (FoundationImageOutput) ElementType() reflect.Type {
@@ -266,12 +247,6 @@ func (o FoundationImageOutput) ToFoundationImageOutput() FoundationImageOutput {
 
 func (o FoundationImageOutput) ToFoundationImageOutputWithContext(ctx context.Context) FoundationImageOutput {
 	return o
-}
-
-func (o FoundationImageOutput) ToOutput(ctx context.Context) pulumix.Output[*FoundationImage] {
-	return pulumix.Output[*FoundationImage]{
-		OutputState: o.OutputState,
-	}
 }
 
 // - (Required) Name of installer file to be kept in foundation vm.
@@ -318,12 +293,6 @@ func (o FoundationImageArrayOutput) ToFoundationImageArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o FoundationImageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FoundationImage] {
-	return pulumix.Output[[]*FoundationImage]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o FoundationImageArrayOutput) Index(i pulumi.IntInput) FoundationImageOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *FoundationImage {
 		return vs[0].([]*FoundationImage)[vs[1].(int)]
@@ -342,12 +311,6 @@ func (o FoundationImageMapOutput) ToFoundationImageMapOutput() FoundationImageMa
 
 func (o FoundationImageMapOutput) ToFoundationImageMapOutputWithContext(ctx context.Context) FoundationImageMapOutput {
 	return o
-}
-
-func (o FoundationImageMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FoundationImage] {
-	return pulumix.Output[map[string]*FoundationImage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FoundationImageMapOutput) MapIndex(k pulumi.StringInput) FoundationImageOutput {

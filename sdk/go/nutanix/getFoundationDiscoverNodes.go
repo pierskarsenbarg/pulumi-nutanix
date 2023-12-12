@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Discovers and lists Nutanix-imaged nodes within an IPv6 network.
@@ -79,12 +78,6 @@ func (o GetFoundationDiscoverNodesResultOutput) ToGetFoundationDiscoverNodesResu
 
 func (o GetFoundationDiscoverNodesResultOutput) ToGetFoundationDiscoverNodesResultOutputWithContext(ctx context.Context) GetFoundationDiscoverNodesResultOutput {
 	return o
-}
-
-func (o GetFoundationDiscoverNodesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFoundationDiscoverNodesResult] {
-	return pulumix.Output[GetFoundationDiscoverNodesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of Nutanix-imaged nodes within an IPv6 network

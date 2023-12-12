@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describe a Nutanix Permission and its values (if it has them).
@@ -134,12 +133,6 @@ func (o GetPermissionResultOutput) ToGetPermissionResultOutput() GetPermissionRe
 
 func (o GetPermissionResultOutput) ToGetPermissionResultOutputWithContext(ctx context.Context) GetPermissionResultOutput {
 	return o
-}
-
-func (o GetPermissionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPermissionResult] {
-	return pulumix.Output[GetPermissionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPermissionResultOutput) ApiVersion() pulumi.StringOutput {

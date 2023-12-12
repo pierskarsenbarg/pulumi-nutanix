@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Nutanix Category key resource to Create a category key name.
@@ -145,12 +144,6 @@ func (i *CategoryKey) ToCategoryKeyOutputWithContext(ctx context.Context) Catego
 	return pulumi.ToOutputWithContext(ctx, i).(CategoryKeyOutput)
 }
 
-func (i *CategoryKey) ToOutput(ctx context.Context) pulumix.Output[*CategoryKey] {
-	return pulumix.Output[*CategoryKey]{
-		OutputState: i.ToCategoryKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CategoryKeyArrayInput is an input type that accepts CategoryKeyArray and CategoryKeyArrayOutput values.
 // You can construct a concrete instance of `CategoryKeyArrayInput` via:
 //
@@ -174,12 +167,6 @@ func (i CategoryKeyArray) ToCategoryKeyArrayOutput() CategoryKeyArrayOutput {
 
 func (i CategoryKeyArray) ToCategoryKeyArrayOutputWithContext(ctx context.Context) CategoryKeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CategoryKeyArrayOutput)
-}
-
-func (i CategoryKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*CategoryKey] {
-	return pulumix.Output[[]*CategoryKey]{
-		OutputState: i.ToCategoryKeyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CategoryKeyMapInput is an input type that accepts CategoryKeyMap and CategoryKeyMapOutput values.
@@ -207,12 +194,6 @@ func (i CategoryKeyMap) ToCategoryKeyMapOutputWithContext(ctx context.Context) C
 	return pulumi.ToOutputWithContext(ctx, i).(CategoryKeyMapOutput)
 }
 
-func (i CategoryKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CategoryKey] {
-	return pulumix.Output[map[string]*CategoryKey]{
-		OutputState: i.ToCategoryKeyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CategoryKeyOutput struct{ *pulumi.OutputState }
 
 func (CategoryKeyOutput) ElementType() reflect.Type {
@@ -225,12 +206,6 @@ func (o CategoryKeyOutput) ToCategoryKeyOutput() CategoryKeyOutput {
 
 func (o CategoryKeyOutput) ToCategoryKeyOutputWithContext(ctx context.Context) CategoryKeyOutput {
 	return o
-}
-
-func (o CategoryKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*CategoryKey] {
-	return pulumix.Output[*CategoryKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Optional) The version of the API.
@@ -267,12 +242,6 @@ func (o CategoryKeyArrayOutput) ToCategoryKeyArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o CategoryKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CategoryKey] {
-	return pulumix.Output[[]*CategoryKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CategoryKeyArrayOutput) Index(i pulumi.IntInput) CategoryKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CategoryKey {
 		return vs[0].([]*CategoryKey)[vs[1].(int)]
@@ -291,12 +260,6 @@ func (o CategoryKeyMapOutput) ToCategoryKeyMapOutput() CategoryKeyMapOutput {
 
 func (o CategoryKeyMapOutput) ToCategoryKeyMapOutputWithContext(ctx context.Context) CategoryKeyMapOutput {
 	return o
-}
-
-func (o CategoryKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CategoryKey] {
-	return pulumix.Output[map[string]*CategoryKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CategoryKeyMapOutput) MapIndex(k pulumi.StringInput) CategoryKeyOutput {

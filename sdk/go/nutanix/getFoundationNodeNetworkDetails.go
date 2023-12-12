@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Gets hypervisor, CVM & IPMI info of the discovered nodes using their ipv6 address.
@@ -109,12 +108,6 @@ func (o GetFoundationNodeNetworkDetailsResultOutput) ToGetFoundationNodeNetworkD
 
 func (o GetFoundationNodeNetworkDetailsResultOutput) ToGetFoundationNodeNetworkDetailsResultOutputWithContext(ctx context.Context) GetFoundationNodeNetworkDetailsResultOutput {
 	return o
-}
-
-func (o GetFoundationNodeNetworkDetailsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFoundationNodeNetworkDetailsResult] {
-	return pulumix.Output[GetFoundationNodeNetworkDetailsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

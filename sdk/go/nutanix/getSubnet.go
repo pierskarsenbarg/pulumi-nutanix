@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
@@ -135,12 +134,6 @@ func (o LookupSubnetResultOutput) ToLookupSubnetResultOutput() LookupSubnetResul
 
 func (o LookupSubnetResultOutput) ToLookupSubnetResultOutputWithContext(ctx context.Context) LookupSubnetResultOutput {
 	return o
-}
-
-func (o LookupSubnetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSubnetResult] {
-	return pulumix.Output[LookupSubnetResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // - Additional filters to narrow down list of subnets.

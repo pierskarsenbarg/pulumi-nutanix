@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Nutanix Recovery Plan resource to Create a Recovery Plan.
@@ -513,12 +512,6 @@ func (i *RecoveryPlan) ToRecoveryPlanOutputWithContext(ctx context.Context) Reco
 	return pulumi.ToOutputWithContext(ctx, i).(RecoveryPlanOutput)
 }
 
-func (i *RecoveryPlan) ToOutput(ctx context.Context) pulumix.Output[*RecoveryPlan] {
-	return pulumix.Output[*RecoveryPlan]{
-		OutputState: i.ToRecoveryPlanOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RecoveryPlanArrayInput is an input type that accepts RecoveryPlanArray and RecoveryPlanArrayOutput values.
 // You can construct a concrete instance of `RecoveryPlanArrayInput` via:
 //
@@ -542,12 +535,6 @@ func (i RecoveryPlanArray) ToRecoveryPlanArrayOutput() RecoveryPlanArrayOutput {
 
 func (i RecoveryPlanArray) ToRecoveryPlanArrayOutputWithContext(ctx context.Context) RecoveryPlanArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RecoveryPlanArrayOutput)
-}
-
-func (i RecoveryPlanArray) ToOutput(ctx context.Context) pulumix.Output[[]*RecoveryPlan] {
-	return pulumix.Output[[]*RecoveryPlan]{
-		OutputState: i.ToRecoveryPlanArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RecoveryPlanMapInput is an input type that accepts RecoveryPlanMap and RecoveryPlanMapOutput values.
@@ -575,12 +562,6 @@ func (i RecoveryPlanMap) ToRecoveryPlanMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(RecoveryPlanMapOutput)
 }
 
-func (i RecoveryPlanMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RecoveryPlan] {
-	return pulumix.Output[map[string]*RecoveryPlan]{
-		OutputState: i.ToRecoveryPlanMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RecoveryPlanOutput struct{ *pulumi.OutputState }
 
 func (RecoveryPlanOutput) ElementType() reflect.Type {
@@ -593,12 +574,6 @@ func (o RecoveryPlanOutput) ToRecoveryPlanOutput() RecoveryPlanOutput {
 
 func (o RecoveryPlanOutput) ToRecoveryPlanOutputWithContext(ctx context.Context) RecoveryPlanOutput {
 	return o
-}
-
-func (o RecoveryPlanOutput) ToOutput(ctx context.Context) pulumix.Output[*RecoveryPlan] {
-	return pulumix.Output[*RecoveryPlan]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RecoveryPlanOutput) ApiVersion() pulumi.StringOutput {
@@ -730,12 +705,6 @@ func (o RecoveryPlanArrayOutput) ToRecoveryPlanArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o RecoveryPlanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RecoveryPlan] {
-	return pulumix.Output[[]*RecoveryPlan]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o RecoveryPlanArrayOutput) Index(i pulumi.IntInput) RecoveryPlanOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *RecoveryPlan {
 		return vs[0].([]*RecoveryPlan)[vs[1].(int)]
@@ -754,12 +723,6 @@ func (o RecoveryPlanMapOutput) ToRecoveryPlanMapOutput() RecoveryPlanMapOutput {
 
 func (o RecoveryPlanMapOutput) ToRecoveryPlanMapOutputWithContext(ctx context.Context) RecoveryPlanMapOutput {
 	return o
-}
-
-func (o RecoveryPlanMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RecoveryPlan] {
-	return pulumix.Output[map[string]*RecoveryPlan]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RecoveryPlanMapOutput) MapIndex(k pulumi.StringInput) RecoveryPlanOutput {

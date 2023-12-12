@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetAssertHelper(ctx *pulumi.Context, args *GetAssertHelperArgs, opts ...pulumi.InvokeOption) (*GetAssertHelperResult, error) {
@@ -69,12 +68,6 @@ func (o GetAssertHelperResultOutput) ToGetAssertHelperResultOutput() GetAssertHe
 
 func (o GetAssertHelperResultOutput) ToGetAssertHelperResultOutputWithContext(ctx context.Context) GetAssertHelperResultOutput {
 	return o
-}
-
-func (o GetAssertHelperResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAssertHelperResult] {
-	return pulumix.Output[GetAssertHelperResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAssertHelperResultOutput) Checks() GetAssertHelperCheckArrayOutput {
