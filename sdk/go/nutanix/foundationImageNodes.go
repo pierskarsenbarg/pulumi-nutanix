@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type FoundationImageNodes struct {
@@ -468,12 +467,6 @@ func (i *FoundationImageNodes) ToFoundationImageNodesOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationImageNodesOutput)
 }
 
-func (i *FoundationImageNodes) ToOutput(ctx context.Context) pulumix.Output[*FoundationImageNodes] {
-	return pulumix.Output[*FoundationImageNodes]{
-		OutputState: i.ToFoundationImageNodesOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FoundationImageNodesArrayInput is an input type that accepts FoundationImageNodesArray and FoundationImageNodesArrayOutput values.
 // You can construct a concrete instance of `FoundationImageNodesArrayInput` via:
 //
@@ -497,12 +490,6 @@ func (i FoundationImageNodesArray) ToFoundationImageNodesArrayOutput() Foundatio
 
 func (i FoundationImageNodesArray) ToFoundationImageNodesArrayOutputWithContext(ctx context.Context) FoundationImageNodesArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationImageNodesArrayOutput)
-}
-
-func (i FoundationImageNodesArray) ToOutput(ctx context.Context) pulumix.Output[[]*FoundationImageNodes] {
-	return pulumix.Output[[]*FoundationImageNodes]{
-		OutputState: i.ToFoundationImageNodesArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FoundationImageNodesMapInput is an input type that accepts FoundationImageNodesMap and FoundationImageNodesMapOutput values.
@@ -530,12 +517,6 @@ func (i FoundationImageNodesMap) ToFoundationImageNodesMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationImageNodesMapOutput)
 }
 
-func (i FoundationImageNodesMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FoundationImageNodes] {
-	return pulumix.Output[map[string]*FoundationImageNodes]{
-		OutputState: i.ToFoundationImageNodesMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FoundationImageNodesOutput struct{ *pulumi.OutputState }
 
 func (FoundationImageNodesOutput) ElementType() reflect.Type {
@@ -548,12 +529,6 @@ func (o FoundationImageNodesOutput) ToFoundationImageNodesOutput() FoundationIma
 
 func (o FoundationImageNodesOutput) ToFoundationImageNodesOutputWithContext(ctx context.Context) FoundationImageNodesOutput {
 	return o
-}
-
-func (o FoundationImageNodesOutput) ToOutput(ctx context.Context) pulumix.Output[*FoundationImageNodes] {
-	return pulumix.Output[*FoundationImageNodes]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FoundationImageNodesOutput) Blocks() FoundationImageNodesBlockArrayOutput {
@@ -759,12 +734,6 @@ func (o FoundationImageNodesArrayOutput) ToFoundationImageNodesArrayOutputWithCo
 	return o
 }
 
-func (o FoundationImageNodesArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FoundationImageNodes] {
-	return pulumix.Output[[]*FoundationImageNodes]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o FoundationImageNodesArrayOutput) Index(i pulumi.IntInput) FoundationImageNodesOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *FoundationImageNodes {
 		return vs[0].([]*FoundationImageNodes)[vs[1].(int)]
@@ -783,12 +752,6 @@ func (o FoundationImageNodesMapOutput) ToFoundationImageNodesMapOutput() Foundat
 
 func (o FoundationImageNodesMapOutput) ToFoundationImageNodesMapOutputWithContext(ctx context.Context) FoundationImageNodesMapOutput {
 	return o
-}
-
-func (o FoundationImageNodesMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FoundationImageNodes] {
-	return pulumix.Output[map[string]*FoundationImageNodes]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FoundationImageNodesMapOutput) MapIndex(k pulumi.StringInput) FoundationImageNodesOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type FoundationIpmiConfig struct {
@@ -152,12 +151,6 @@ func (i *FoundationIpmiConfig) ToFoundationIpmiConfigOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationIpmiConfigOutput)
 }
 
-func (i *FoundationIpmiConfig) ToOutput(ctx context.Context) pulumix.Output[*FoundationIpmiConfig] {
-	return pulumix.Output[*FoundationIpmiConfig]{
-		OutputState: i.ToFoundationIpmiConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FoundationIpmiConfigArrayInput is an input type that accepts FoundationIpmiConfigArray and FoundationIpmiConfigArrayOutput values.
 // You can construct a concrete instance of `FoundationIpmiConfigArrayInput` via:
 //
@@ -181,12 +174,6 @@ func (i FoundationIpmiConfigArray) ToFoundationIpmiConfigArrayOutput() Foundatio
 
 func (i FoundationIpmiConfigArray) ToFoundationIpmiConfigArrayOutputWithContext(ctx context.Context) FoundationIpmiConfigArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationIpmiConfigArrayOutput)
-}
-
-func (i FoundationIpmiConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]*FoundationIpmiConfig] {
-	return pulumix.Output[[]*FoundationIpmiConfig]{
-		OutputState: i.ToFoundationIpmiConfigArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FoundationIpmiConfigMapInput is an input type that accepts FoundationIpmiConfigMap and FoundationIpmiConfigMapOutput values.
@@ -214,12 +201,6 @@ func (i FoundationIpmiConfigMap) ToFoundationIpmiConfigMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationIpmiConfigMapOutput)
 }
 
-func (i FoundationIpmiConfigMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FoundationIpmiConfig] {
-	return pulumix.Output[map[string]*FoundationIpmiConfig]{
-		OutputState: i.ToFoundationIpmiConfigMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FoundationIpmiConfigOutput struct{ *pulumi.OutputState }
 
 func (FoundationIpmiConfigOutput) ElementType() reflect.Type {
@@ -232,12 +213,6 @@ func (o FoundationIpmiConfigOutput) ToFoundationIpmiConfigOutput() FoundationIpm
 
 func (o FoundationIpmiConfigOutput) ToFoundationIpmiConfigOutputWithContext(ctx context.Context) FoundationIpmiConfigOutput {
 	return o
-}
-
-func (o FoundationIpmiConfigOutput) ToOutput(ctx context.Context) pulumix.Output[*FoundationIpmiConfig] {
-	return pulumix.Output[*FoundationIpmiConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // - (Required) List of blocks.
@@ -279,12 +254,6 @@ func (o FoundationIpmiConfigArrayOutput) ToFoundationIpmiConfigArrayOutputWithCo
 	return o
 }
 
-func (o FoundationIpmiConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FoundationIpmiConfig] {
-	return pulumix.Output[[]*FoundationIpmiConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o FoundationIpmiConfigArrayOutput) Index(i pulumi.IntInput) FoundationIpmiConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *FoundationIpmiConfig {
 		return vs[0].([]*FoundationIpmiConfig)[vs[1].(int)]
@@ -303,12 +272,6 @@ func (o FoundationIpmiConfigMapOutput) ToFoundationIpmiConfigMapOutput() Foundat
 
 func (o FoundationIpmiConfigMapOutput) ToFoundationIpmiConfigMapOutputWithContext(ctx context.Context) FoundationIpmiConfigMapOutput {
 	return o
-}
-
-func (o FoundationIpmiConfigMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FoundationIpmiConfig] {
-	return pulumix.Output[map[string]*FoundationIpmiConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FoundationIpmiConfigMapOutput) MapIndex(k pulumi.StringInput) FoundationIpmiConfigOutput {

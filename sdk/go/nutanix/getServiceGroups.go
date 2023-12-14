@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetServiceGroups(ctx *pulumi.Context, args *GetServiceGroupsArgs, opts ...pulumi.InvokeOption) (*GetServiceGroupsResult, error) {
@@ -70,12 +69,6 @@ func (o GetServiceGroupsResultOutput) ToGetServiceGroupsResultOutput() GetServic
 
 func (o GetServiceGroupsResultOutput) ToGetServiceGroupsResultOutputWithContext(ctx context.Context) GetServiceGroupsResultOutput {
 	return o
-}
-
-func (o GetServiceGroupsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceGroupsResult] {
-	return pulumix.Output[GetServiceGroupsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceGroupsResultOutput) Entities() GetServiceGroupsEntityArrayOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve all the floating IPs .
@@ -101,12 +100,6 @@ func (o GetFloatingIpsResultOutput) ToGetFloatingIpsResultOutput() GetFloatingIp
 
 func (o GetFloatingIpsResultOutput) ToGetFloatingIpsResultOutputWithContext(ctx context.Context) GetFloatingIpsResultOutput {
 	return o
-}
-
-func (o GetFloatingIpsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFloatingIpsResult] {
-	return pulumix.Output[GetFloatingIpsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // version of the API

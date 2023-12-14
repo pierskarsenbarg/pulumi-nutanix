@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes Karbon private registry entry
@@ -83,12 +82,6 @@ func (o LookupKarbonPrivateRegistryResultOutput) ToLookupKarbonPrivateRegistryRe
 
 func (o LookupKarbonPrivateRegistryResultOutput) ToLookupKarbonPrivateRegistryResultOutputWithContext(ctx context.Context) LookupKarbonPrivateRegistryResultOutput {
 	return o
-}
-
-func (o LookupKarbonPrivateRegistryResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupKarbonPrivateRegistryResult] {
-	return pulumix.Output[LookupKarbonPrivateRegistryResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // - Endpoint of the private in format `url:port`.

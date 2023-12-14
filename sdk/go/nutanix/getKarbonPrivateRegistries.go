@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes a List of Karbon private registry entry
@@ -54,12 +53,6 @@ func (o GetKarbonPrivateRegistriesResultOutput) ToGetKarbonPrivateRegistriesResu
 
 func (o GetKarbonPrivateRegistriesResultOutput) ToGetKarbonPrivateRegistriesResultOutputWithContext(ctx context.Context) GetKarbonPrivateRegistriesResultOutput {
 	return o
-}
-
-func (o GetKarbonPrivateRegistriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetKarbonPrivateRegistriesResult] {
-	return pulumix.Output[GetKarbonPrivateRegistriesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

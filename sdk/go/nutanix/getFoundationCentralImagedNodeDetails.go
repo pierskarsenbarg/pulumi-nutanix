@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Get the details of a single node given its UUID.
@@ -173,12 +172,6 @@ func (o GetFoundationCentralImagedNodeDetailsResultOutput) ToGetFoundationCentra
 
 func (o GetFoundationCentralImagedNodeDetailsResultOutput) ToGetFoundationCentralImagedNodeDetailsResultOutputWithContext(ctx context.Context) GetFoundationCentralImagedNodeDetailsResultOutput {
 	return o
-}
-
-func (o GetFoundationCentralImagedNodeDetailsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFoundationCentralImagedNodeDetailsResult] {
-	return pulumix.Output[GetFoundationCentralImagedNodeDetailsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // AOS version currently installed on the node.

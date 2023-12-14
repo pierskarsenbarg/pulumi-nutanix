@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes an Access Control Policy.
@@ -102,12 +101,6 @@ func (o LookupAccessControlPolicyResultOutput) ToLookupAccessControlPolicyResult
 
 func (o LookupAccessControlPolicyResultOutput) ToLookupAccessControlPolicyResultOutputWithContext(ctx context.Context) LookupAccessControlPolicyResultOutput {
 	return o
-}
-
-func (o LookupAccessControlPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupAccessControlPolicyResult] {
-	return pulumix.Output[LookupAccessControlPolicyResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupAccessControlPolicyResultOutput) AccessControlPolicyId() pulumi.StringPtrOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve PBR with pbrUuid .
@@ -80,12 +79,6 @@ func (o LookupPbrResultOutput) ToLookupPbrResultOutput() LookupPbrResultOutput {
 
 func (o LookupPbrResultOutput) ToLookupPbrResultOutputWithContext(ctx context.Context) LookupPbrResultOutput {
 	return o
-}
-
-func (o LookupPbrResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPbrResult] {
-	return pulumix.Output[LookupPbrResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The version of the API.

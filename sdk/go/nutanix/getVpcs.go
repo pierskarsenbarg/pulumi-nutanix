@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve all the vpcs.
@@ -101,12 +100,6 @@ func (o GetVpcsResultOutput) ToGetVpcsResultOutput() GetVpcsResultOutput {
 
 func (o GetVpcsResultOutput) ToGetVpcsResultOutputWithContext(ctx context.Context) GetVpcsResultOutput {
 	return o
-}
-
-func (o GetVpcsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVpcsResult] {
-	return pulumix.Output[GetVpcsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // version of the API

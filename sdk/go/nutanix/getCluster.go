@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes Clusters
@@ -175,12 +174,6 @@ func (o GetClusterResultOutput) ToGetClusterResultOutput() GetClusterResultOutpu
 
 func (o GetClusterResultOutput) ToGetClusterResultOutputWithContext(ctx context.Context) GetClusterResultOutput {
 	return o
-}
-
-func (o GetClusterResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetClusterResult] {
-	return pulumix.Output[GetClusterResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // - Map of cluster efficiency which includes numbers of inefficient vms. The value is populated by analytics on PC. (Readonly)

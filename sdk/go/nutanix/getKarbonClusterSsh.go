@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes the SSH config from a Karbon Cluster
@@ -117,12 +116,6 @@ func (o GetKarbonClusterSshResultOutput) ToGetKarbonClusterSshResultOutput() Get
 
 func (o GetKarbonClusterSshResultOutput) ToGetKarbonClusterSshResultOutputWithContext(ctx context.Context) GetKarbonClusterSshResultOutput {
 	return o
-}
-
-func (o GetKarbonClusterSshResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetKarbonClusterSshResult] {
-	return pulumix.Output[GetKarbonClusterSshResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Certificate of the user for SSH access.

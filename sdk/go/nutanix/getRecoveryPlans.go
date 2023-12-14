@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes Recovery Plans
@@ -81,12 +80,6 @@ func (o GetRecoveryPlansResultOutput) ToGetRecoveryPlansResultOutput() GetRecove
 
 func (o GetRecoveryPlansResultOutput) ToGetRecoveryPlansResultOutputWithContext(ctx context.Context) GetRecoveryPlansResultOutput {
 	return o
-}
-
-func (o GetRecoveryPlansResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecoveryPlansResult] {
-	return pulumix.Output[GetRecoveryPlansResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // version of the API

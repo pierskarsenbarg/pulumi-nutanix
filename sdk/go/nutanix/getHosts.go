@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes a list of hosts
@@ -57,12 +56,6 @@ func (o GetHostsResultOutput) ToGetHostsResultOutput() GetHostsResultOutput {
 
 func (o GetHostsResultOutput) ToGetHostsResultOutputWithContext(ctx context.Context) GetHostsResultOutput {
 	return o
-}
-
-func (o GetHostsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetHostsResult] {
-	return pulumix.Output[GetHostsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The API version.

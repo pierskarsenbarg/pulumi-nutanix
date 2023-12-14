@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes a list of access control policies.
@@ -101,12 +100,6 @@ func (o GetAccessControlPoliciesResultOutput) ToGetAccessControlPoliciesResultOu
 
 func (o GetAccessControlPoliciesResultOutput) ToGetAccessControlPoliciesResultOutputWithContext(ctx context.Context) GetAccessControlPoliciesResultOutput {
 	return o
-}
-
-func (o GetAccessControlPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAccessControlPoliciesResult] {
-	return pulumix.Output[GetAccessControlPoliciesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The version of the API.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a resource to create an access control policy based on the input parameters.
@@ -184,12 +183,6 @@ func (i *AccessControlPolicy) ToAccessControlPolicyOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(AccessControlPolicyOutput)
 }
 
-func (i *AccessControlPolicy) ToOutput(ctx context.Context) pulumix.Output[*AccessControlPolicy] {
-	return pulumix.Output[*AccessControlPolicy]{
-		OutputState: i.ToAccessControlPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AccessControlPolicyArrayInput is an input type that accepts AccessControlPolicyArray and AccessControlPolicyArrayOutput values.
 // You can construct a concrete instance of `AccessControlPolicyArrayInput` via:
 //
@@ -213,12 +206,6 @@ func (i AccessControlPolicyArray) ToAccessControlPolicyArrayOutput() AccessContr
 
 func (i AccessControlPolicyArray) ToAccessControlPolicyArrayOutputWithContext(ctx context.Context) AccessControlPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AccessControlPolicyArrayOutput)
-}
-
-func (i AccessControlPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*AccessControlPolicy] {
-	return pulumix.Output[[]*AccessControlPolicy]{
-		OutputState: i.ToAccessControlPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AccessControlPolicyMapInput is an input type that accepts AccessControlPolicyMap and AccessControlPolicyMapOutput values.
@@ -246,12 +233,6 @@ func (i AccessControlPolicyMap) ToAccessControlPolicyMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(AccessControlPolicyMapOutput)
 }
 
-func (i AccessControlPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AccessControlPolicy] {
-	return pulumix.Output[map[string]*AccessControlPolicy]{
-		OutputState: i.ToAccessControlPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AccessControlPolicyOutput struct{ *pulumi.OutputState }
 
 func (AccessControlPolicyOutput) ElementType() reflect.Type {
@@ -264,12 +245,6 @@ func (o AccessControlPolicyOutput) ToAccessControlPolicyOutput() AccessControlPo
 
 func (o AccessControlPolicyOutput) ToAccessControlPolicyOutputWithContext(ctx context.Context) AccessControlPolicyOutput {
 	return o
-}
-
-func (o AccessControlPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*AccessControlPolicy] {
-	return pulumix.Output[*AccessControlPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The version of the API.
@@ -346,12 +321,6 @@ func (o AccessControlPolicyArrayOutput) ToAccessControlPolicyArrayOutputWithCont
 	return o
 }
 
-func (o AccessControlPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AccessControlPolicy] {
-	return pulumix.Output[[]*AccessControlPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AccessControlPolicyArrayOutput) Index(i pulumi.IntInput) AccessControlPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AccessControlPolicy {
 		return vs[0].([]*AccessControlPolicy)[vs[1].(int)]
@@ -370,12 +339,6 @@ func (o AccessControlPolicyMapOutput) ToAccessControlPolicyMapOutput() AccessCon
 
 func (o AccessControlPolicyMapOutput) ToAccessControlPolicyMapOutputWithContext(ctx context.Context) AccessControlPolicyMapOutput {
 	return o
-}
-
-func (o AccessControlPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AccessControlPolicy] {
-	return pulumix.Output[map[string]*AccessControlPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AccessControlPolicyMapOutput) MapIndex(k pulumi.StringInput) AccessControlPolicyOutput {

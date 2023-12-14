@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a Nutanix Karbon Cluster resource to Create a k8s cluster.
@@ -300,12 +299,6 @@ func (i *KarbonCluster) ToKarbonClusterOutputWithContext(ctx context.Context) Ka
 	return pulumi.ToOutputWithContext(ctx, i).(KarbonClusterOutput)
 }
 
-func (i *KarbonCluster) ToOutput(ctx context.Context) pulumix.Output[*KarbonCluster] {
-	return pulumix.Output[*KarbonCluster]{
-		OutputState: i.ToKarbonClusterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // KarbonClusterArrayInput is an input type that accepts KarbonClusterArray and KarbonClusterArrayOutput values.
 // You can construct a concrete instance of `KarbonClusterArrayInput` via:
 //
@@ -329,12 +322,6 @@ func (i KarbonClusterArray) ToKarbonClusterArrayOutput() KarbonClusterArrayOutpu
 
 func (i KarbonClusterArray) ToKarbonClusterArrayOutputWithContext(ctx context.Context) KarbonClusterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(KarbonClusterArrayOutput)
-}
-
-func (i KarbonClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]*KarbonCluster] {
-	return pulumix.Output[[]*KarbonCluster]{
-		OutputState: i.ToKarbonClusterArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // KarbonClusterMapInput is an input type that accepts KarbonClusterMap and KarbonClusterMapOutput values.
@@ -362,12 +349,6 @@ func (i KarbonClusterMap) ToKarbonClusterMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(KarbonClusterMapOutput)
 }
 
-func (i KarbonClusterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*KarbonCluster] {
-	return pulumix.Output[map[string]*KarbonCluster]{
-		OutputState: i.ToKarbonClusterMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type KarbonClusterOutput struct{ *pulumi.OutputState }
 
 func (KarbonClusterOutput) ElementType() reflect.Type {
@@ -380,12 +361,6 @@ func (o KarbonClusterOutput) ToKarbonClusterOutput() KarbonClusterOutput {
 
 func (o KarbonClusterOutput) ToKarbonClusterOutputWithContext(ctx context.Context) KarbonClusterOutput {
 	return o
-}
-
-func (o KarbonClusterOutput) ToOutput(ctx context.Context) pulumix.Output[*KarbonCluster] {
-	return pulumix.Output[*KarbonCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 // - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
@@ -473,12 +448,6 @@ func (o KarbonClusterArrayOutput) ToKarbonClusterArrayOutputWithContext(ctx cont
 	return o
 }
 
-func (o KarbonClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*KarbonCluster] {
-	return pulumix.Output[[]*KarbonCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o KarbonClusterArrayOutput) Index(i pulumi.IntInput) KarbonClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *KarbonCluster {
 		return vs[0].([]*KarbonCluster)[vs[1].(int)]
@@ -497,12 +466,6 @@ func (o KarbonClusterMapOutput) ToKarbonClusterMapOutput() KarbonClusterMapOutpu
 
 func (o KarbonClusterMapOutput) ToKarbonClusterMapOutputWithContext(ctx context.Context) KarbonClusterMapOutput {
 	return o
-}
-
-func (o KarbonClusterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*KarbonCluster] {
-	return pulumix.Output[map[string]*KarbonCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o KarbonClusterMapOutput) MapIndex(k pulumi.StringInput) KarbonClusterOutput {

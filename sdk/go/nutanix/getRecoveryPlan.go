@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describe a Nutanix Recovery Plan and its values (if it has them).
@@ -162,12 +161,6 @@ func (o LookupRecoveryPlanResultOutput) ToLookupRecoveryPlanResultOutput() Looku
 
 func (o LookupRecoveryPlanResultOutput) ToLookupRecoveryPlanResultOutputWithContext(ctx context.Context) LookupRecoveryPlanResultOutput {
 	return o
-}
-
-func (o LookupRecoveryPlanResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRecoveryPlanResult] {
-	return pulumix.Output[LookupRecoveryPlanResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupRecoveryPlanResultOutput) ApiVersion() pulumi.StringOutput {

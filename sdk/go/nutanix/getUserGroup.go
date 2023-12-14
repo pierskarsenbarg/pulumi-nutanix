@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Provides a datasource to retrieve a user group based on the input parameters.
@@ -154,12 +153,6 @@ func (o GetUserGroupResultOutput) ToGetUserGroupResultOutput() GetUserGroupResul
 
 func (o GetUserGroupResultOutput) ToGetUserGroupResultOutputWithContext(ctx context.Context) GetUserGroupResultOutput {
 	return o
-}
-
-func (o GetUserGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserGroupResult] {
-	return pulumix.Output[GetUserGroupResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // - List of ACP references. See #reference for more details.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes Protection Rules
@@ -81,12 +80,6 @@ func (o GetProtectionRulesResultOutput) ToGetProtectionRulesResultOutput() GetPr
 
 func (o GetProtectionRulesResultOutput) ToGetProtectionRulesResultOutputWithContext(ctx context.Context) GetProtectionRulesResultOutput {
 	return o
-}
-
-func (o GetProtectionRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRulesResult] {
-	return pulumix.Output[GetProtectionRulesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // version of the API

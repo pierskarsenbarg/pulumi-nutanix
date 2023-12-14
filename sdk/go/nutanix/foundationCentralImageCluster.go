@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type FoundationCentralImageCluster struct {
@@ -236,12 +235,6 @@ func (i *FoundationCentralImageCluster) ToFoundationCentralImageClusterOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationCentralImageClusterOutput)
 }
 
-func (i *FoundationCentralImageCluster) ToOutput(ctx context.Context) pulumix.Output[*FoundationCentralImageCluster] {
-	return pulumix.Output[*FoundationCentralImageCluster]{
-		OutputState: i.ToFoundationCentralImageClusterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FoundationCentralImageClusterArrayInput is an input type that accepts FoundationCentralImageClusterArray and FoundationCentralImageClusterArrayOutput values.
 // You can construct a concrete instance of `FoundationCentralImageClusterArrayInput` via:
 //
@@ -265,12 +258,6 @@ func (i FoundationCentralImageClusterArray) ToFoundationCentralImageClusterArray
 
 func (i FoundationCentralImageClusterArray) ToFoundationCentralImageClusterArrayOutputWithContext(ctx context.Context) FoundationCentralImageClusterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationCentralImageClusterArrayOutput)
-}
-
-func (i FoundationCentralImageClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]*FoundationCentralImageCluster] {
-	return pulumix.Output[[]*FoundationCentralImageCluster]{
-		OutputState: i.ToFoundationCentralImageClusterArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FoundationCentralImageClusterMapInput is an input type that accepts FoundationCentralImageClusterMap and FoundationCentralImageClusterMapOutput values.
@@ -298,12 +285,6 @@ func (i FoundationCentralImageClusterMap) ToFoundationCentralImageClusterMapOutp
 	return pulumi.ToOutputWithContext(ctx, i).(FoundationCentralImageClusterMapOutput)
 }
 
-func (i FoundationCentralImageClusterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FoundationCentralImageCluster] {
-	return pulumix.Output[map[string]*FoundationCentralImageCluster]{
-		OutputState: i.ToFoundationCentralImageClusterMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FoundationCentralImageClusterOutput struct{ *pulumi.OutputState }
 
 func (FoundationCentralImageClusterOutput) ElementType() reflect.Type {
@@ -316,12 +297,6 @@ func (o FoundationCentralImageClusterOutput) ToFoundationCentralImageClusterOutp
 
 func (o FoundationCentralImageClusterOutput) ToFoundationCentralImageClusterOutputWithContext(ctx context.Context) FoundationCentralImageClusterOutput {
 	return o
-}
-
-func (o FoundationCentralImageClusterOutput) ToOutput(ctx context.Context) pulumix.Output[*FoundationCentralImageCluster] {
-	return pulumix.Output[*FoundationCentralImageCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Sha256sum of AOS package.
@@ -451,12 +426,6 @@ func (o FoundationCentralImageClusterArrayOutput) ToFoundationCentralImageCluste
 	return o
 }
 
-func (o FoundationCentralImageClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FoundationCentralImageCluster] {
-	return pulumix.Output[[]*FoundationCentralImageCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o FoundationCentralImageClusterArrayOutput) Index(i pulumi.IntInput) FoundationCentralImageClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *FoundationCentralImageCluster {
 		return vs[0].([]*FoundationCentralImageCluster)[vs[1].(int)]
@@ -475,12 +444,6 @@ func (o FoundationCentralImageClusterMapOutput) ToFoundationCentralImageClusterM
 
 func (o FoundationCentralImageClusterMapOutput) ToFoundationCentralImageClusterMapOutputWithContext(ctx context.Context) FoundationCentralImageClusterMapOutput {
 	return o
-}
-
-func (o FoundationCentralImageClusterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FoundationCentralImageCluster] {
-	return pulumix.Output[map[string]*FoundationCentralImageCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FoundationCentralImageClusterMapOutput) MapIndex(k pulumi.StringInput) FoundationCentralImageClusterOutput {

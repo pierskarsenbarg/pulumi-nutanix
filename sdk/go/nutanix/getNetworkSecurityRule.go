@@ -9,7 +9,6 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Describes a Network security rule
@@ -205,12 +204,6 @@ func (o LookupNetworkSecurityRuleResultOutput) ToLookupNetworkSecurityRuleResult
 
 func (o LookupNetworkSecurityRuleResultOutput) ToLookupNetworkSecurityRuleResultOutputWithContext(ctx context.Context) LookupNetworkSecurityRuleResultOutput {
 	return o
-}
-
-func (o LookupNetworkSecurityRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkSecurityRuleResult] {
-	return pulumix.Output[LookupNetworkSecurityRuleResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
