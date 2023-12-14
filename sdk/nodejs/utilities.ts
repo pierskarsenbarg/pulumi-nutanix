@@ -53,7 +53,7 @@ export function getVersion(): string {
 
 /** @internal */
 export function resourceOptsDefaults(): any {
-    return { version: getVersion(), pluginDownloadURL: "https://github.com/pierskarsenbarg/pulumi-nutanix/releases/download/${VERSION}" };
+    return { version: getVersion(), pluginDownloadURL: "github://api.github.com/pierskarsenbarg/pulumi-nutanix" };
 }
 
 /** @internal */

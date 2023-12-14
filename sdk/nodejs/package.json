@@ -25,6 +25,6 @@
     "pulumi": {
         "resource": true,
         "name": "nutanix",
-        "server": "https://github.com/pierskarsenbarg/pulumi-nutanix/releases/download/${VERSION}"
+        "server": "github://api.github.com/pierskarsenbarg/pulumi-nutanix"
     }
 }
