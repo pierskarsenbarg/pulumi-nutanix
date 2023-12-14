@@ -99,7 +99,7 @@ namespace PiersKarsenbarg.Nutanix
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
-                PluginDownloadURL = "https://github.com/pierskarsenbarg/pulumi-nutanix/releases/download/${VERSION}",
+                PluginDownloadURL = "github://api.github.com/pierskarsenbarg/pulumi-nutanix",
                 AdditionalSecretOutputs =
                 {
                     "password",

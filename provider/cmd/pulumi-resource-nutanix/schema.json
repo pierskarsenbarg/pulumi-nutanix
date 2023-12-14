@@ -12,7 +12,7 @@
     "attribution": "This Pulumi package is based on the [`nutanix` Terraform Provider](https://github.com/terraform-providers/terraform-provider-nutanix).",
     "repository": "https://github.com/pierskarsenbarg/pulumi-nutanix",
     "logoUrl": "https://raw.githubusercontent.com/pierskarsenbarg/pulumi-nutanix/main/docs/nutanix-logo.png",
-    "pluginDownloadURL": "https://github.com/pierskarsenbarg/pulumi-nutanix/releases/download/${VERSION}",
+    "pluginDownloadURL": "github://api.github.com/pierskarsenbarg/pulumi-nutanix",
     "publisher": "Piers Karsenbarg",
     "meta": {
         "moduleFormat": "(.*)(?:/[^/]*)"
