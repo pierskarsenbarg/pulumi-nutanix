@@ -226,8 +226,9 @@ func Provider() tfbridge.ProviderInfo {
 				"@pulumi/pulumi": "^3.0.0",
 			},
 			DevDependencies: map[string]string{
-				"@types/node": "^10.0.0", // so we can access strongly typed node definitions.
-				"@types/mime": "^2.0.0",
+				"@types/node":            "^10.0.0", // so we can access strongly typed node definitions.
+				"@types/mime":            "^2.0.0",
+				"@types/google-protobuf": "^3.15.12",
 			},
 			PackageName: "@pierskarsenbarg/nutanix",
 			// See the documentation for tfbridge.OverlayInfo for how to lay out this
