@@ -4,6 +4,11 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a resource to create a new API key for nodes registration with Foundation Central.
+ *
+ * ## Example Usage
+ */
 export class FoundationCentralApiKeys extends pulumi.CustomResource {
     /**
      * Get an existing FoundationCentralApiKeys resource's state with the given name, ID, and optional extra
@@ -32,10 +37,25 @@ export class FoundationCentralApiKeys extends pulumi.CustomResource {
         return obj['__pulumiType'] === FoundationCentralApiKeys.__pulumiType;
     }
 
+    /**
+     * - (Required) Alias for the api key to be created.
+     */
     public readonly alias!: pulumi.Output<string>;
+    /**
+     * Api key in string format.
+     */
     public /*out*/ readonly apiKey!: pulumi.Output<string>;
+    /**
+     * Time when the api key was created.
+     */
     public /*out*/ readonly createdTimestamp!: pulumi.Output<string>;
+    /**
+     * Current time of Foundation Central.
+     */
     public /*out*/ readonly currentTime!: pulumi.Output<string>;
+    /**
+     * UUID of the api key.
+     */
     public /*out*/ readonly keyUuid!: pulumi.Output<string>;
 
     /**
@@ -76,10 +96,25 @@ export class FoundationCentralApiKeys extends pulumi.CustomResource {
  * Input properties used for looking up and filtering FoundationCentralApiKeys resources.
  */
 export interface FoundationCentralApiKeysState {
+    /**
+     * - (Required) Alias for the api key to be created.
+     */
     alias?: pulumi.Input<string>;
+    /**
+     * Api key in string format.
+     */
     apiKey?: pulumi.Input<string>;
+    /**
+     * Time when the api key was created.
+     */
     createdTimestamp?: pulumi.Input<string>;
+    /**
+     * Current time of Foundation Central.
+     */
     currentTime?: pulumi.Input<string>;
+    /**
+     * UUID of the api key.
+     */
     keyUuid?: pulumi.Input<string>;
 }
 
@@ -87,5 +122,8 @@ export interface FoundationCentralApiKeysState {
  * The set of arguments for constructing a FoundationCentralApiKeys resource.
  */
 export interface FoundationCentralApiKeysArgs {
+    /**
+     * - (Required) Alias for the api key to be created.
+     */
     alias: pulumi.Input<string>;
 }

@@ -4,6 +4,20 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * Get an api key given its UUID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const apiKeysList = nutanix.getFoundationCentralApiKeys({
+ *     keyUuid: "<KEY_UUID>",
+ * });
+ * ```
+ */
 export function getFoundationCentralApiKeys(args: GetFoundationCentralApiKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralApiKeysResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -16,6 +30,9 @@ export function getFoundationCentralApiKeys(args: GetFoundationCentralApiKeysArg
  * A collection of arguments for invoking getFoundationCentralApiKeys.
  */
 export interface GetFoundationCentralApiKeysArgs {
+    /**
+     * UUID of the key which needs to be fetched.
+     */
     keyUuid: string;
 }
 
@@ -23,16 +40,45 @@ export interface GetFoundationCentralApiKeysArgs {
  * A collection of values returned by getFoundationCentralApiKeys.
  */
 export interface GetFoundationCentralApiKeysResult {
+    /**
+     * Alias of the api key.
+     */
     readonly alias: string;
+    /**
+     * Api key in string format.
+     */
     readonly apiKey: string;
+    /**
+     * Time when the api key was created.
+     */
     readonly createdTimestamp: string;
+    /**
+     * Current time of Foundation Central.
+     */
     readonly currentTime: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * UUID of the api key.
+     */
     readonly keyUuid: string;
 }
+/**
+ * Get an api key given its UUID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const apiKeysList = nutanix.getFoundationCentralApiKeys({
+ *     keyUuid: "<KEY_UUID>",
+ * });
+ * ```
+ */
 export function getFoundationCentralApiKeysOutput(args: GetFoundationCentralApiKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralApiKeysResult> {
     return pulumi.output(args).apply((a: any) => getFoundationCentralApiKeys(a, opts))
 }
@@ -41,5 +87,8 @@ export function getFoundationCentralApiKeysOutput(args: GetFoundationCentralApiK
  * A collection of arguments for invoking getFoundationCentralApiKeys.
  */
 export interface GetFoundationCentralApiKeysOutputArgs {
+    /**
+     * UUID of the key which needs to be fetched.
+     */
     keyUuid: pulumi.Input<string>;
 }

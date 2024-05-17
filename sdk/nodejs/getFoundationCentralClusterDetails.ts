@@ -6,6 +6,20 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Get a cluster details created using Foundation Central.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const imagedClusterDetails = nutanix.getFoundationCentralClusterDetails({
+ *     imagedClusterUuid: "<CLUSTER-UUID>",
+ * });
+ * ```
+ */
 export function getFoundationCentralClusterDetails(args: GetFoundationCentralClusterDetailsArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralClusterDetailsResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -25,13 +39,37 @@ export function getFoundationCentralClusterDetails(args: GetFoundationCentralClu
  * A collection of arguments for invoking getFoundationCentralClusterDetails.
  */
 export interface GetFoundationCentralClusterDetailsArgs {
+    /**
+     * External management ip of the cluster.
+     */
     clusterExternalIp?: string;
+    /**
+     * Cluster name.
+     */
     clusterName?: string;
+    /**
+     * Number of nodes in the cluster.
+     */
     clusterSize?: number;
+    /**
+     * Details of cluster creation process.
+     */
     clusterStatus?: inputs.GetFoundationCentralClusterDetailsClusterStatus;
+    /**
+     * Common network settings across the nodes in the cluster.
+     */
     commonNetworkSettings?: inputs.GetFoundationCentralClusterDetailsCommonNetworkSettings;
+    /**
+     * UUID of the cluster whose details need to be fetched.
+     */
     imagedClusterUuid: string;
+    /**
+     * Redundancy factor of the cluster.
+     */
     redundancyFactor?: number;
+    /**
+     * Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+     */
     storageNodeCount?: number;
 }
 
@@ -39,27 +77,89 @@ export interface GetFoundationCentralClusterDetailsArgs {
  * A collection of values returned by getFoundationCentralClusterDetails.
  */
 export interface GetFoundationCentralClusterDetailsResult {
+    /**
+     * True if the cluster creation request is archived, False otherwise
+     */
     readonly archived: boolean;
+    /**
+     * External management ip of the cluster.
+     */
     readonly clusterExternalIp: string;
+    /**
+     * Cluster name.
+     */
     readonly clusterName: string;
+    /**
+     * Number of nodes in the cluster.
+     */
     readonly clusterSize: number;
+    /**
+     * Details of cluster creation process.
+     */
     readonly clusterStatus: outputs.GetFoundationCentralClusterDetailsClusterStatus;
+    /**
+     * Common network settings across the nodes in the cluster.
+     */
     readonly commonNetworkSettings: outputs.GetFoundationCentralClusterDetailsCommonNetworkSettings;
+    /**
+     * Time when the cluster creation request was received in Foundation Central.
+     */
     readonly createdTimestamp: string;
+    /**
+     * Current time of Foundation Central.
+     */
     readonly currentTime: string;
+    /**
+     * True if the cluster is destroyed, False otherwise
+     */
     readonly destroyed: boolean;
+    /**
+     * Json config used by Foundation to create the cluster.
+     */
     readonly foundationInitConfigs: outputs.GetFoundationCentralClusterDetailsFoundationInitConfig[];
+    /**
+     * UUID of the first node coordinating cluster creation.
+     */
     readonly foundationInitNodeUuid: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * UUID of the cluster.
+     */
     readonly imagedClusterUuid: string;
+    /**
+     * List of UUIDs of imaged nodes.
+     */
     readonly imagedNodeUuidLists: string[];
+    /**
+     * Redundancy factor of the cluster.
+     */
     readonly redundancyFactor?: number;
+    /**
+     * Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+     */
     readonly storageNodeCount: number;
+    /**
+     * If imaging and cluster creation is coordinated by Foundation, value will be FOUNDATION_WF. If the nodes are in phoenix, value will be PHOENIX_WF.
+     */
     readonly workflowType: string;
 }
+/**
+ * Get a cluster details created using Foundation Central.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const imagedClusterDetails = nutanix.getFoundationCentralClusterDetails({
+ *     imagedClusterUuid: "<CLUSTER-UUID>",
+ * });
+ * ```
+ */
 export function getFoundationCentralClusterDetailsOutput(args: GetFoundationCentralClusterDetailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralClusterDetailsResult> {
     return pulumi.output(args).apply((a: any) => getFoundationCentralClusterDetails(a, opts))
 }
@@ -68,12 +168,36 @@ export function getFoundationCentralClusterDetailsOutput(args: GetFoundationCent
  * A collection of arguments for invoking getFoundationCentralClusterDetails.
  */
 export interface GetFoundationCentralClusterDetailsOutputArgs {
+    /**
+     * External management ip of the cluster.
+     */
     clusterExternalIp?: pulumi.Input<string>;
+    /**
+     * Cluster name.
+     */
     clusterName?: pulumi.Input<string>;
+    /**
+     * Number of nodes in the cluster.
+     */
     clusterSize?: pulumi.Input<number>;
+    /**
+     * Details of cluster creation process.
+     */
     clusterStatus?: pulumi.Input<inputs.GetFoundationCentralClusterDetailsClusterStatusArgs>;
+    /**
+     * Common network settings across the nodes in the cluster.
+     */
     commonNetworkSettings?: pulumi.Input<inputs.GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs>;
+    /**
+     * UUID of the cluster whose details need to be fetched.
+     */
     imagedClusterUuid: pulumi.Input<string>;
+    /**
+     * Redundancy factor of the cluster.
+     */
     redundancyFactor?: pulumi.Input<number>;
+    /**
+     * Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+     */
     storageNodeCount?: pulumi.Input<number>;
 }

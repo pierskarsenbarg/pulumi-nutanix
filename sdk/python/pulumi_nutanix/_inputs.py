@@ -11168,6 +11168,16 @@ class GetFoundationCentralClusterDetailsClusterStatusArgs:
                  imaging_stopped: bool,
                  intent_picked_up: bool,
                  node_progress_details: Sequence['GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs']):
+        """
+        :param float aggregate_percent_complete: Overall progress percentage including imaging and cluster creation.
+        :param bool cluster_creation_started: Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
+        :param Sequence['GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs'] cluster_progress_details: Denotes the progress status of cluster creation.
+        :param str current_foundation_ip: Current IP address of the coordinating foundation node.
+        :param str foundation_session_id: Foundation session id for cluster creation.
+        :param bool imaging_stopped: Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+        :param bool intent_picked_up: Denotes whether the remote nodes has picked up the cluster creation intent.
+        :param Sequence['GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs'] node_progress_details: List of progress details of each node.
+        """
         pulumi.set(__self__, "aggregate_percent_complete", aggregate_percent_complete)
         pulumi.set(__self__, "cluster_creation_started", cluster_creation_started)
         pulumi.set(__self__, "cluster_progress_details", cluster_progress_details)
@@ -11180,6 +11190,9 @@ class GetFoundationCentralClusterDetailsClusterStatusArgs:
     @property
     @pulumi.getter(name="aggregatePercentComplete")
     def aggregate_percent_complete(self) -> float:
+        """
+        Overall progress percentage including imaging and cluster creation.
+        """
         return pulumi.get(self, "aggregate_percent_complete")
 
     @aggregate_percent_complete.setter
@@ -11189,6 +11202,9 @@ class GetFoundationCentralClusterDetailsClusterStatusArgs:
     @property
     @pulumi.getter(name="clusterCreationStarted")
     def cluster_creation_started(self) -> bool:
+        """
+        Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
+        """
         return pulumi.get(self, "cluster_creation_started")
 
     @cluster_creation_started.setter
@@ -11198,6 +11214,9 @@ class GetFoundationCentralClusterDetailsClusterStatusArgs:
     @property
     @pulumi.getter(name="clusterProgressDetails")
     def cluster_progress_details(self) -> Sequence['GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs']:
+        """
+        Denotes the progress status of cluster creation.
+        """
         return pulumi.get(self, "cluster_progress_details")
 
     @cluster_progress_details.setter
@@ -11207,6 +11226,9 @@ class GetFoundationCentralClusterDetailsClusterStatusArgs:
     @property
     @pulumi.getter(name="currentFoundationIp")
     def current_foundation_ip(self) -> str:
+        """
+        Current IP address of the coordinating foundation node.
+        """
         return pulumi.get(self, "current_foundation_ip")
 
     @current_foundation_ip.setter
@@ -11216,6 +11238,9 @@ class GetFoundationCentralClusterDetailsClusterStatusArgs:
     @property
     @pulumi.getter(name="foundationSessionId")
     def foundation_session_id(self) -> str:
+        """
+        Foundation session id for cluster creation.
+        """
         return pulumi.get(self, "foundation_session_id")
 
     @foundation_session_id.setter
@@ -11225,6 +11250,9 @@ class GetFoundationCentralClusterDetailsClusterStatusArgs:
     @property
     @pulumi.getter(name="imagingStopped")
     def imaging_stopped(self) -> bool:
+        """
+        Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+        """
         return pulumi.get(self, "imaging_stopped")
 
     @imaging_stopped.setter
@@ -11234,6 +11262,9 @@ class GetFoundationCentralClusterDetailsClusterStatusArgs:
     @property
     @pulumi.getter(name="intentPickedUp")
     def intent_picked_up(self) -> bool:
+        """
+        Denotes whether the remote nodes has picked up the cluster creation intent.
+        """
         return pulumi.get(self, "intent_picked_up")
 
     @intent_picked_up.setter
@@ -11243,6 +11274,9 @@ class GetFoundationCentralClusterDetailsClusterStatusArgs:
     @property
     @pulumi.getter(name="nodeProgressDetails")
     def node_progress_details(self) -> Sequence['GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs']:
+        """
+        List of progress details of each node.
+        """
         return pulumi.get(self, "node_progress_details")
 
     @node_progress_details.setter
@@ -11257,6 +11291,12 @@ class GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs:
                  message_lists: Sequence[str],
                  percent_complete: float,
                  status: str):
+        """
+        :param str cluster_name: Cluster name.
+        :param Sequence[str] message_lists: List of messages for the client based on process state.
+        :param float percent_complete: Percent completion of cluster creation process.
+        :param str status: Current status of cluster creation process.
+        """
         pulumi.set(__self__, "cluster_name", cluster_name)
         pulumi.set(__self__, "message_lists", message_lists)
         pulumi.set(__self__, "percent_complete", percent_complete)
@@ -11265,6 +11305,9 @@ class GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs:
     @property
     @pulumi.getter(name="clusterName")
     def cluster_name(self) -> str:
+        """
+        Cluster name.
+        """
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
@@ -11274,6 +11317,9 @@ class GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs:
     @property
     @pulumi.getter(name="messageLists")
     def message_lists(self) -> Sequence[str]:
+        """
+        List of messages for the client based on process state.
+        """
         return pulumi.get(self, "message_lists")
 
     @message_lists.setter
@@ -11283,6 +11329,9 @@ class GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs:
     @property
     @pulumi.getter(name="percentComplete")
     def percent_complete(self) -> float:
+        """
+        Percent completion of cluster creation process.
+        """
         return pulumi.get(self, "percent_complete")
 
     @percent_complete.setter
@@ -11292,6 +11341,9 @@ class GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs:
     @property
     @pulumi.getter
     def status(self) -> str:
+        """
+        Current status of cluster creation process.
+        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -11308,6 +11360,14 @@ class GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs:
                  message_lists: Sequence[str],
                  percent_complete: float,
                  status: str):
+        """
+        :param str imaged_node_uuid: UUID of the node.
+        :param bool imaging_stopped: Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+        :param bool intent_picked_up: Denotes whether the remote nodes has picked up the cluster creation intent.
+        :param Sequence[str] message_lists: List of messages for the client based on process state.
+        :param float percent_complete: Percent completion of cluster creation process.
+        :param str status: Current status of cluster creation process.
+        """
         pulumi.set(__self__, "imaged_node_uuid", imaged_node_uuid)
         pulumi.set(__self__, "imaging_stopped", imaging_stopped)
         pulumi.set(__self__, "intent_picked_up", intent_picked_up)
@@ -11318,6 +11378,9 @@ class GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs:
     @property
     @pulumi.getter(name="imagedNodeUuid")
     def imaged_node_uuid(self) -> str:
+        """
+        UUID of the node.
+        """
         return pulumi.get(self, "imaged_node_uuid")
 
     @imaged_node_uuid.setter
@@ -11327,6 +11390,9 @@ class GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs:
     @property
     @pulumi.getter(name="imagingStopped")
     def imaging_stopped(self) -> bool:
+        """
+        Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+        """
         return pulumi.get(self, "imaging_stopped")
 
     @imaging_stopped.setter
@@ -11336,6 +11402,9 @@ class GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs:
     @property
     @pulumi.getter(name="intentPickedUp")
     def intent_picked_up(self) -> bool:
+        """
+        Denotes whether the remote nodes has picked up the cluster creation intent.
+        """
         return pulumi.get(self, "intent_picked_up")
 
     @intent_picked_up.setter
@@ -11345,6 +11414,9 @@ class GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs:
     @property
     @pulumi.getter(name="messageLists")
     def message_lists(self) -> Sequence[str]:
+        """
+        List of messages for the client based on process state.
+        """
         return pulumi.get(self, "message_lists")
 
     @message_lists.setter
@@ -11354,6 +11426,9 @@ class GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs:
     @property
     @pulumi.getter(name="percentComplete")
     def percent_complete(self) -> float:
+        """
+        Percent completion of cluster creation process.
+        """
         return pulumi.get(self, "percent_complete")
 
     @percent_complete.setter
@@ -11363,6 +11438,9 @@ class GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs:
     @property
     @pulumi.getter
     def status(self) -> str:
+        """
+        Current status of cluster creation process.
+        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -11377,6 +11455,12 @@ class GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs:
                  cvm_ntp_servers: Sequence[str],
                  hypervisor_dns_servers: Sequence[str],
                  hypervisor_ntp_servers: Sequence[str]):
+        """
+        :param Sequence[str] cvm_dns_servers: List of dns servers for the cvms in the cluster.
+        :param Sequence[str] cvm_ntp_servers: List of ntp servers for the cvms in the cluster.
+        :param Sequence[str] hypervisor_dns_servers: List of dns servers for the hypervisors in the cluster.
+        :param Sequence[str] hypervisor_ntp_servers: List of ntp servers for the hypervisors in the cluster.
+        """
         pulumi.set(__self__, "cvm_dns_servers", cvm_dns_servers)
         pulumi.set(__self__, "cvm_ntp_servers", cvm_ntp_servers)
         pulumi.set(__self__, "hypervisor_dns_servers", hypervisor_dns_servers)
@@ -11385,6 +11469,9 @@ class GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs:
     @property
     @pulumi.getter(name="cvmDnsServers")
     def cvm_dns_servers(self) -> Sequence[str]:
+        """
+        List of dns servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_dns_servers")
 
     @cvm_dns_servers.setter
@@ -11394,6 +11481,9 @@ class GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs:
     @property
     @pulumi.getter(name="cvmNtpServers")
     def cvm_ntp_servers(self) -> Sequence[str]:
+        """
+        List of ntp servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_ntp_servers")
 
     @cvm_ntp_servers.setter
@@ -11403,6 +11493,9 @@ class GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs:
     @property
     @pulumi.getter(name="hypervisorDnsServers")
     def hypervisor_dns_servers(self) -> Sequence[str]:
+        """
+        List of dns servers for the hypervisors in the cluster.
+        """
         return pulumi.get(self, "hypervisor_dns_servers")
 
     @hypervisor_dns_servers.setter
@@ -11412,6 +11505,9 @@ class GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs:
     @property
     @pulumi.getter(name="hypervisorNtpServers")
     def hypervisor_ntp_servers(self) -> Sequence[str]:
+        """
+        List of ntp servers for the hypervisors in the cluster.
+        """
         return pulumi.get(self, "hypervisor_ntp_servers")
 
     @hypervisor_ntp_servers.setter
@@ -11423,12 +11519,18 @@ class GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs:
 class GetFoundationCentralImagedClustersListFiltersArgs:
     def __init__(__self__, *,
                  archived: Optional[bool] = None):
+        """
+        :param bool archived: True if the cluster creation request is archived, False otherwise
+        """
         if archived is not None:
             pulumi.set(__self__, "archived", archived)
 
     @property
     @pulumi.getter
     def archived(self) -> Optional[bool]:
+        """
+        True if the cluster creation request is archived, False otherwise
+        """
         return pulumi.get(self, "archived")
 
     @archived.setter
@@ -11440,12 +11542,18 @@ class GetFoundationCentralImagedClustersListFiltersArgs:
 class GetFoundationCentralImagedNodesListFiltersArgs:
     def __init__(__self__, *,
                  node_state: Optional[str] = None):
+        """
+        :param str node_state: Specifies whether the node is discovering, available or unavailable for cluster creation.
+        """
         if node_state is not None:
             pulumi.set(__self__, "node_state", node_state)
 
     @property
     @pulumi.getter(name="nodeState")
     def node_state(self) -> Optional[str]:
+        """
+        Specifies whether the node is discovering, available or unavailable for cluster creation.
+        """
         return pulumi.get(self, "node_state")
 
     @node_state.setter
@@ -11459,6 +11567,11 @@ class GetFoundationCentralListApiKeysMetadataArgs:
                  length: int,
                  offset: int,
                  total_matches: int):
+        """
+        :param int length: The number of records retrieved.
+        :param int offset: Offset from the start of the object list.
+        :param int total_matches: Total matches found.
+        """
         pulumi.set(__self__, "length", length)
         pulumi.set(__self__, "offset", offset)
         pulumi.set(__self__, "total_matches", total_matches)
@@ -11466,6 +11579,9 @@ class GetFoundationCentralListApiKeysMetadataArgs:
     @property
     @pulumi.getter
     def length(self) -> int:
+        """
+        The number of records retrieved.
+        """
         return pulumi.get(self, "length")
 
     @length.setter
@@ -11475,6 +11591,9 @@ class GetFoundationCentralListApiKeysMetadataArgs:
     @property
     @pulumi.getter
     def offset(self) -> int:
+        """
+        Offset from the start of the object list.
+        """
         return pulumi.get(self, "offset")
 
     @offset.setter
@@ -11484,6 +11603,9 @@ class GetFoundationCentralListApiKeysMetadataArgs:
     @property
     @pulumi.getter(name="totalMatches")
     def total_matches(self) -> int:
+        """
+        Total matches found.
+        """
         return pulumi.get(self, "total_matches")
 
     @total_matches.setter

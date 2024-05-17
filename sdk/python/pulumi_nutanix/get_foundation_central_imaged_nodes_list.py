@@ -64,16 +64,25 @@ class GetFoundationCentralImagedNodesListResult:
     @property
     @pulumi.getter
     def length(self) -> Optional[int]:
+        """
+        The number of records retrieved.
+        """
         return pulumi.get(self, "length")
 
     @property
     @pulumi.getter
     def metadatas(self) -> Sequence['outputs.GetFoundationCentralImagedNodesListMetadataResult']:
+        """
+        List metadata output for all list apis.
+        """
         return pulumi.get(self, "metadatas")
 
     @property
     @pulumi.getter
     def offset(self) -> Optional[int]:
+        """
+        Offset from the start of the object list.
+        """
         return pulumi.get(self, "offset")
 
 
@@ -96,7 +105,20 @@ def get_foundation_central_imaged_nodes_list(filters: Optional[pulumi.InputType[
                                              offset: Optional[int] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFoundationCentralImagedNodesListResult:
     """
-    Use this data source to access information about an existing resource.
+    List all the nodes registered with Foundation Central
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    nodes_list = nutanix.get_foundation_central_imaged_nodes_list()
+    ```
+
+
+    :param int length: The number of records retrieved.
+    :param int offset: Offset from the start of the object list.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -120,6 +142,19 @@ def get_foundation_central_imaged_nodes_list_output(filters: Optional[pulumi.Inp
                                                     offset: Optional[pulumi.Input[Optional[int]]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationCentralImagedNodesListResult]:
     """
-    Use this data source to access information about an existing resource.
+    List all the nodes registered with Foundation Central
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    nodes_list = nutanix.get_foundation_central_imaged_nodes_list()
+    ```
+
+
+    :param int length: The number of records retrieved.
+    :param int offset: Offset from the start of the object list.
     """
     ...

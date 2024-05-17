@@ -13571,6 +13571,16 @@ class GetFoundationCentralClusterDetailsClusterStatusResult(dict):
                  imaging_stopped: bool,
                  intent_picked_up: bool,
                  node_progress_details: Sequence['outputs.GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailResult']):
+        """
+        :param float aggregate_percent_complete: Overall progress percentage including imaging and cluster creation.
+        :param bool cluster_creation_started: Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
+        :param Sequence['GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs'] cluster_progress_details: Denotes the progress status of cluster creation.
+        :param str current_foundation_ip: Current IP address of the coordinating foundation node.
+        :param str foundation_session_id: Foundation session id for cluster creation.
+        :param bool imaging_stopped: Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+        :param bool intent_picked_up: Denotes whether the remote nodes has picked up the cluster creation intent.
+        :param Sequence['GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs'] node_progress_details: List of progress details of each node.
+        """
         pulumi.set(__self__, "aggregate_percent_complete", aggregate_percent_complete)
         pulumi.set(__self__, "cluster_creation_started", cluster_creation_started)
         pulumi.set(__self__, "cluster_progress_details", cluster_progress_details)
@@ -13583,41 +13593,65 @@ class GetFoundationCentralClusterDetailsClusterStatusResult(dict):
     @property
     @pulumi.getter(name="aggregatePercentComplete")
     def aggregate_percent_complete(self) -> float:
+        """
+        Overall progress percentage including imaging and cluster creation.
+        """
         return pulumi.get(self, "aggregate_percent_complete")
 
     @property
     @pulumi.getter(name="clusterCreationStarted")
     def cluster_creation_started(self) -> bool:
+        """
+        Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
+        """
         return pulumi.get(self, "cluster_creation_started")
 
     @property
     @pulumi.getter(name="clusterProgressDetails")
     def cluster_progress_details(self) -> Sequence['outputs.GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailResult']:
+        """
+        Denotes the progress status of cluster creation.
+        """
         return pulumi.get(self, "cluster_progress_details")
 
     @property
     @pulumi.getter(name="currentFoundationIp")
     def current_foundation_ip(self) -> str:
+        """
+        Current IP address of the coordinating foundation node.
+        """
         return pulumi.get(self, "current_foundation_ip")
 
     @property
     @pulumi.getter(name="foundationSessionId")
     def foundation_session_id(self) -> str:
+        """
+        Foundation session id for cluster creation.
+        """
         return pulumi.get(self, "foundation_session_id")
 
     @property
     @pulumi.getter(name="imagingStopped")
     def imaging_stopped(self) -> bool:
+        """
+        Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+        """
         return pulumi.get(self, "imaging_stopped")
 
     @property
     @pulumi.getter(name="intentPickedUp")
     def intent_picked_up(self) -> bool:
+        """
+        Denotes whether the remote nodes has picked up the cluster creation intent.
+        """
         return pulumi.get(self, "intent_picked_up")
 
     @property
     @pulumi.getter(name="nodeProgressDetails")
     def node_progress_details(self) -> Sequence['outputs.GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailResult']:
+        """
+        List of progress details of each node.
+        """
         return pulumi.get(self, "node_progress_details")
 
 
@@ -13628,6 +13662,12 @@ class GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailResult
                  message_lists: Sequence[str],
                  percent_complete: float,
                  status: str):
+        """
+        :param str cluster_name: Cluster name.
+        :param Sequence[str] message_lists: List of messages for the client based on process state.
+        :param float percent_complete: Percent completion of cluster creation process.
+        :param str status: Current status of cluster creation process.
+        """
         pulumi.set(__self__, "cluster_name", cluster_name)
         pulumi.set(__self__, "message_lists", message_lists)
         pulumi.set(__self__, "percent_complete", percent_complete)
@@ -13636,21 +13676,33 @@ class GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailResult
     @property
     @pulumi.getter(name="clusterName")
     def cluster_name(self) -> str:
+        """
+        Cluster name.
+        """
         return pulumi.get(self, "cluster_name")
 
     @property
     @pulumi.getter(name="messageLists")
     def message_lists(self) -> Sequence[str]:
+        """
+        List of messages for the client based on process state.
+        """
         return pulumi.get(self, "message_lists")
 
     @property
     @pulumi.getter(name="percentComplete")
     def percent_complete(self) -> float:
+        """
+        Percent completion of cluster creation process.
+        """
         return pulumi.get(self, "percent_complete")
 
     @property
     @pulumi.getter
     def status(self) -> str:
+        """
+        Current status of cluster creation process.
+        """
         return pulumi.get(self, "status")
 
 
@@ -13663,6 +13715,14 @@ class GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailResult(di
                  message_lists: Sequence[str],
                  percent_complete: float,
                  status: str):
+        """
+        :param str imaged_node_uuid: UUID of the node.
+        :param bool imaging_stopped: Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+        :param bool intent_picked_up: Denotes whether the remote nodes has picked up the cluster creation intent.
+        :param Sequence[str] message_lists: List of messages for the client based on process state.
+        :param float percent_complete: Percent completion of cluster creation process.
+        :param str status: Current status of cluster creation process.
+        """
         pulumi.set(__self__, "imaged_node_uuid", imaged_node_uuid)
         pulumi.set(__self__, "imaging_stopped", imaging_stopped)
         pulumi.set(__self__, "intent_picked_up", intent_picked_up)
@@ -13673,31 +13733,49 @@ class GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailResult(di
     @property
     @pulumi.getter(name="imagedNodeUuid")
     def imaged_node_uuid(self) -> str:
+        """
+        UUID of the node.
+        """
         return pulumi.get(self, "imaged_node_uuid")
 
     @property
     @pulumi.getter(name="imagingStopped")
     def imaging_stopped(self) -> bool:
+        """
+        Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+        """
         return pulumi.get(self, "imaging_stopped")
 
     @property
     @pulumi.getter(name="intentPickedUp")
     def intent_picked_up(self) -> bool:
+        """
+        Denotes whether the remote nodes has picked up the cluster creation intent.
+        """
         return pulumi.get(self, "intent_picked_up")
 
     @property
     @pulumi.getter(name="messageLists")
     def message_lists(self) -> Sequence[str]:
+        """
+        List of messages for the client based on process state.
+        """
         return pulumi.get(self, "message_lists")
 
     @property
     @pulumi.getter(name="percentComplete")
     def percent_complete(self) -> float:
+        """
+        Percent completion of cluster creation process.
+        """
         return pulumi.get(self, "percent_complete")
 
     @property
     @pulumi.getter
     def status(self) -> str:
+        """
+        Current status of cluster creation process.
+        """
         return pulumi.get(self, "status")
 
 
@@ -13708,6 +13786,12 @@ class GetFoundationCentralClusterDetailsCommonNetworkSettingsResult(dict):
                  cvm_ntp_servers: Sequence[str],
                  hypervisor_dns_servers: Sequence[str],
                  hypervisor_ntp_servers: Sequence[str]):
+        """
+        :param Sequence[str] cvm_dns_servers: List of dns servers for the cvms in the cluster.
+        :param Sequence[str] cvm_ntp_servers: List of ntp servers for the cvms in the cluster.
+        :param Sequence[str] hypervisor_dns_servers: List of dns servers for the hypervisors in the cluster.
+        :param Sequence[str] hypervisor_ntp_servers: List of ntp servers for the hypervisors in the cluster.
+        """
         pulumi.set(__self__, "cvm_dns_servers", cvm_dns_servers)
         pulumi.set(__self__, "cvm_ntp_servers", cvm_ntp_servers)
         pulumi.set(__self__, "hypervisor_dns_servers", hypervisor_dns_servers)
@@ -13716,21 +13800,33 @@ class GetFoundationCentralClusterDetailsCommonNetworkSettingsResult(dict):
     @property
     @pulumi.getter(name="cvmDnsServers")
     def cvm_dns_servers(self) -> Sequence[str]:
+        """
+        List of dns servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_dns_servers")
 
     @property
     @pulumi.getter(name="cvmNtpServers")
     def cvm_ntp_servers(self) -> Sequence[str]:
+        """
+        List of ntp servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_ntp_servers")
 
     @property
     @pulumi.getter(name="hypervisorDnsServers")
     def hypervisor_dns_servers(self) -> Sequence[str]:
+        """
+        List of dns servers for the hypervisors in the cluster.
+        """
         return pulumi.get(self, "hypervisor_dns_servers")
 
     @property
     @pulumi.getter(name="hypervisorNtpServers")
     def hypervisor_ntp_servers(self) -> Sequence[str]:
+        """
+        List of ntp servers for the hypervisors in the cluster.
+        """
         return pulumi.get(self, "hypervisor_ntp_servers")
 
 
@@ -13957,6 +14053,13 @@ class GetFoundationCentralClusterDetailsFoundationInitConfigClusterResult(dict):
                  cvm_ntp_servers: str,
                  redundancy_factor: int,
                  timezone: str):
+        """
+        :param str cluster_external_ip: External management ip of the cluster.
+        :param str cluster_name: Cluster name.
+        :param str cvm_dns_servers: List of dns servers for the cvms in the cluster.
+        :param str cvm_ntp_servers: List of ntp servers for the cvms in the cluster.
+        :param int redundancy_factor: Redundancy factor of the cluster.
+        """
         pulumi.set(__self__, "cluster_external_ip", cluster_external_ip)
         pulumi.set(__self__, "cluster_init_now", cluster_init_now)
         pulumi.set(__self__, "cluster_init_successful", cluster_init_successful)
@@ -13970,6 +14073,9 @@ class GetFoundationCentralClusterDetailsFoundationInitConfigClusterResult(dict):
     @property
     @pulumi.getter(name="clusterExternalIp")
     def cluster_external_ip(self) -> str:
+        """
+        External management ip of the cluster.
+        """
         return pulumi.get(self, "cluster_external_ip")
 
     @property
@@ -13990,21 +14096,33 @@ class GetFoundationCentralClusterDetailsFoundationInitConfigClusterResult(dict):
     @property
     @pulumi.getter(name="clusterName")
     def cluster_name(self) -> str:
+        """
+        Cluster name.
+        """
         return pulumi.get(self, "cluster_name")
 
     @property
     @pulumi.getter(name="cvmDnsServers")
     def cvm_dns_servers(self) -> str:
+        """
+        List of dns servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_dns_servers")
 
     @property
     @pulumi.getter(name="cvmNtpServers")
     def cvm_ntp_servers(self) -> str:
+        """
+        List of ntp servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_ntp_servers")
 
     @property
     @pulumi.getter(name="redundancyFactor")
     def redundancy_factor(self) -> int:
+        """
+        Redundancy factor of the cluster.
+        """
         return pulumi.get(self, "redundancy_factor")
 
     @property
@@ -14062,12 +14180,18 @@ class GetFoundationCentralClusterDetailsFoundationInitConfigNosPackageUrlResult(
 class GetFoundationCentralImagedClustersListFiltersResult(dict):
     def __init__(__self__, *,
                  archived: Optional[bool] = None):
+        """
+        :param bool archived: True if the cluster creation request is archived, False otherwise
+        """
         if archived is not None:
             pulumi.set(__self__, "archived", archived)
 
     @property
     @pulumi.getter
     def archived(self) -> Optional[bool]:
+        """
+        True if the cluster creation request is archived, False otherwise
+        """
         return pulumi.get(self, "archived")
 
 
@@ -14090,6 +14214,24 @@ class GetFoundationCentralImagedClustersListImagedClusterResult(dict):
                  storage_node_count: int,
                  workflow_type: str,
                  redundancy_factor: Optional[int] = None):
+        """
+        :param bool archived: True if the cluster creation request is archived, False otherwise
+        :param str cluster_external_ip: External management ip of the cluster.
+        :param str cluster_name: Cluster name.
+        :param int cluster_size: Number of nodes in the cluster.
+        :param 'GetFoundationCentralImagedClustersListImagedClusterClusterStatusArgs' cluster_status: Details of cluster creation process.
+        :param 'GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettingsArgs' common_network_settings: Common network settings across the nodes in the cluster.
+        :param str created_timestamp: Time when the cluster creation request was received in Foundation Central.
+        :param str current_time: Current time of Foundation Central.
+        :param bool destroyed: True if the cluster is destroyed, False otherwise
+        :param Sequence['GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigArgs'] foundation_init_configs: Json config used by Foundation to create the cluster.
+        :param str foundation_init_node_uuid: UUID of the first node coordinating cluster creation.
+        :param str imaged_cluster_uuid: UUID of the cluster.
+        :param Sequence[str] imaged_node_uuid_lists: List of UUIDs of imaged nodes.
+        :param int storage_node_count: Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+        :param str workflow_type: If imaging and cluster creation is coordinated by Foundation, value will be FOUNDATION_WF. If the nodes are in phoenix, value will be PHOENIX_WF.
+        :param int redundancy_factor: Redundancy factor of the cluster.
+        """
         pulumi.set(__self__, "archived", archived)
         pulumi.set(__self__, "cluster_external_ip", cluster_external_ip)
         pulumi.set(__self__, "cluster_name", cluster_name)
@@ -14111,81 +14253,129 @@ class GetFoundationCentralImagedClustersListImagedClusterResult(dict):
     @property
     @pulumi.getter
     def archived(self) -> bool:
+        """
+        True if the cluster creation request is archived, False otherwise
+        """
         return pulumi.get(self, "archived")
 
     @property
     @pulumi.getter(name="clusterExternalIp")
     def cluster_external_ip(self) -> str:
+        """
+        External management ip of the cluster.
+        """
         return pulumi.get(self, "cluster_external_ip")
 
     @property
     @pulumi.getter(name="clusterName")
     def cluster_name(self) -> str:
+        """
+        Cluster name.
+        """
         return pulumi.get(self, "cluster_name")
 
     @property
     @pulumi.getter(name="clusterSize")
     def cluster_size(self) -> int:
+        """
+        Number of nodes in the cluster.
+        """
         return pulumi.get(self, "cluster_size")
 
     @property
     @pulumi.getter(name="clusterStatus")
     def cluster_status(self) -> 'outputs.GetFoundationCentralImagedClustersListImagedClusterClusterStatusResult':
+        """
+        Details of cluster creation process.
+        """
         return pulumi.get(self, "cluster_status")
 
     @property
     @pulumi.getter(name="commonNetworkSettings")
     def common_network_settings(self) -> 'outputs.GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettingsResult':
+        """
+        Common network settings across the nodes in the cluster.
+        """
         return pulumi.get(self, "common_network_settings")
 
     @property
     @pulumi.getter(name="createdTimestamp")
     def created_timestamp(self) -> str:
+        """
+        Time when the cluster creation request was received in Foundation Central.
+        """
         return pulumi.get(self, "created_timestamp")
 
     @property
     @pulumi.getter(name="currentTime")
     def current_time(self) -> str:
+        """
+        Current time of Foundation Central.
+        """
         return pulumi.get(self, "current_time")
 
     @property
     @pulumi.getter
     def destroyed(self) -> bool:
+        """
+        True if the cluster is destroyed, False otherwise
+        """
         return pulumi.get(self, "destroyed")
 
     @property
     @pulumi.getter(name="foundationInitConfigs")
     def foundation_init_configs(self) -> Sequence['outputs.GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigResult']:
+        """
+        Json config used by Foundation to create the cluster.
+        """
         return pulumi.get(self, "foundation_init_configs")
 
     @property
     @pulumi.getter(name="foundationInitNodeUuid")
     def foundation_init_node_uuid(self) -> str:
+        """
+        UUID of the first node coordinating cluster creation.
+        """
         return pulumi.get(self, "foundation_init_node_uuid")
 
     @property
     @pulumi.getter(name="imagedClusterUuid")
     def imaged_cluster_uuid(self) -> str:
+        """
+        UUID of the cluster.
+        """
         return pulumi.get(self, "imaged_cluster_uuid")
 
     @property
     @pulumi.getter(name="imagedNodeUuidLists")
     def imaged_node_uuid_lists(self) -> Sequence[str]:
+        """
+        List of UUIDs of imaged nodes.
+        """
         return pulumi.get(self, "imaged_node_uuid_lists")
 
     @property
     @pulumi.getter(name="storageNodeCount")
     def storage_node_count(self) -> int:
+        """
+        Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+        """
         return pulumi.get(self, "storage_node_count")
 
     @property
     @pulumi.getter(name="workflowType")
     def workflow_type(self) -> str:
+        """
+        If imaging and cluster creation is coordinated by Foundation, value will be FOUNDATION_WF. If the nodes are in phoenix, value will be PHOENIX_WF.
+        """
         return pulumi.get(self, "workflow_type")
 
     @property
     @pulumi.getter(name="redundancyFactor")
     def redundancy_factor(self) -> Optional[int]:
+        """
+        Redundancy factor of the cluster.
+        """
         return pulumi.get(self, "redundancy_factor")
 
 
@@ -14200,6 +14390,16 @@ class GetFoundationCentralImagedClustersListImagedClusterClusterStatusResult(dic
                  imaging_stopped: bool,
                  intent_picked_up: bool,
                  node_progress_details: Sequence['outputs.GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailResult']):
+        """
+        :param float aggregate_percent_complete: Overall progress percentage including imaging and cluster creation.
+        :param bool cluster_creation_started: Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
+        :param Sequence['GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetailArgs'] cluster_progress_details: Denotes the progress status of cluster creation.
+        :param str current_foundation_ip: Current IP address of the coordinating foundation node.
+        :param str foundation_session_id: Foundation session id for cluster creation.
+        :param bool imaging_stopped: Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+        :param bool intent_picked_up: Denotes whether the remote nodes has picked up the cluster creation intent.
+        :param Sequence['GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailArgs'] node_progress_details: List of progress details of each node.
+        """
         pulumi.set(__self__, "aggregate_percent_complete", aggregate_percent_complete)
         pulumi.set(__self__, "cluster_creation_started", cluster_creation_started)
         pulumi.set(__self__, "cluster_progress_details", cluster_progress_details)
@@ -14212,41 +14412,65 @@ class GetFoundationCentralImagedClustersListImagedClusterClusterStatusResult(dic
     @property
     @pulumi.getter(name="aggregatePercentComplete")
     def aggregate_percent_complete(self) -> float:
+        """
+        Overall progress percentage including imaging and cluster creation.
+        """
         return pulumi.get(self, "aggregate_percent_complete")
 
     @property
     @pulumi.getter(name="clusterCreationStarted")
     def cluster_creation_started(self) -> bool:
+        """
+        Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
+        """
         return pulumi.get(self, "cluster_creation_started")
 
     @property
     @pulumi.getter(name="clusterProgressDetails")
     def cluster_progress_details(self) -> Sequence['outputs.GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetailResult']:
+        """
+        Denotes the progress status of cluster creation.
+        """
         return pulumi.get(self, "cluster_progress_details")
 
     @property
     @pulumi.getter(name="currentFoundationIp")
     def current_foundation_ip(self) -> str:
+        """
+        Current IP address of the coordinating foundation node.
+        """
         return pulumi.get(self, "current_foundation_ip")
 
     @property
     @pulumi.getter(name="foundationSessionId")
     def foundation_session_id(self) -> str:
+        """
+        Foundation session id for cluster creation.
+        """
         return pulumi.get(self, "foundation_session_id")
 
     @property
     @pulumi.getter(name="imagingStopped")
     def imaging_stopped(self) -> bool:
+        """
+        Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+        """
         return pulumi.get(self, "imaging_stopped")
 
     @property
     @pulumi.getter(name="intentPickedUp")
     def intent_picked_up(self) -> bool:
+        """
+        Denotes whether the remote nodes has picked up the cluster creation intent.
+        """
         return pulumi.get(self, "intent_picked_up")
 
     @property
     @pulumi.getter(name="nodeProgressDetails")
     def node_progress_details(self) -> Sequence['outputs.GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailResult']:
+        """
+        List of progress details of each node.
+        """
         return pulumi.get(self, "node_progress_details")
 
 
@@ -14257,6 +14481,12 @@ class GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterPro
                  message_lists: Sequence[str],
                  percent_complete: float,
                  status: str):
+        """
+        :param str cluster_name: Cluster name.
+        :param Sequence[str] message_lists: List of messages for the client based on process state.
+        :param float percent_complete: Percent completion of cluster creation process.
+        :param str status: Current status of cluster creation process.
+        """
         pulumi.set(__self__, "cluster_name", cluster_name)
         pulumi.set(__self__, "message_lists", message_lists)
         pulumi.set(__self__, "percent_complete", percent_complete)
@@ -14265,21 +14495,33 @@ class GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterPro
     @property
     @pulumi.getter(name="clusterName")
     def cluster_name(self) -> str:
+        """
+        Cluster name.
+        """
         return pulumi.get(self, "cluster_name")
 
     @property
     @pulumi.getter(name="messageLists")
     def message_lists(self) -> Sequence[str]:
+        """
+        List of messages for the client based on process state.
+        """
         return pulumi.get(self, "message_lists")
 
     @property
     @pulumi.getter(name="percentComplete")
     def percent_complete(self) -> float:
+        """
+        Percent completion of cluster creation process.
+        """
         return pulumi.get(self, "percent_complete")
 
     @property
     @pulumi.getter
     def status(self) -> str:
+        """
+        Current status of cluster creation process.
+        """
         return pulumi.get(self, "status")
 
 
@@ -14292,6 +14534,14 @@ class GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgre
                  message_lists: Sequence[str],
                  percent_complete: float,
                  status: str):
+        """
+        :param str imaged_node_uuid: UUID of the node.
+        :param bool imaging_stopped: Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+        :param bool intent_picked_up: Denotes whether the remote nodes has picked up the cluster creation intent.
+        :param Sequence[str] message_lists: List of messages for the client based on process state.
+        :param float percent_complete: Percent completion of cluster creation process.
+        :param str status: Current status of cluster creation process.
+        """
         pulumi.set(__self__, "imaged_node_uuid", imaged_node_uuid)
         pulumi.set(__self__, "imaging_stopped", imaging_stopped)
         pulumi.set(__self__, "intent_picked_up", intent_picked_up)
@@ -14302,31 +14552,49 @@ class GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgre
     @property
     @pulumi.getter(name="imagedNodeUuid")
     def imaged_node_uuid(self) -> str:
+        """
+        UUID of the node.
+        """
         return pulumi.get(self, "imaged_node_uuid")
 
     @property
     @pulumi.getter(name="imagingStopped")
     def imaging_stopped(self) -> bool:
+        """
+        Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+        """
         return pulumi.get(self, "imaging_stopped")
 
     @property
     @pulumi.getter(name="intentPickedUp")
     def intent_picked_up(self) -> bool:
+        """
+        Denotes whether the remote nodes has picked up the cluster creation intent.
+        """
         return pulumi.get(self, "intent_picked_up")
 
     @property
     @pulumi.getter(name="messageLists")
     def message_lists(self) -> Sequence[str]:
+        """
+        List of messages for the client based on process state.
+        """
         return pulumi.get(self, "message_lists")
 
     @property
     @pulumi.getter(name="percentComplete")
     def percent_complete(self) -> float:
+        """
+        Percent completion of cluster creation process.
+        """
         return pulumi.get(self, "percent_complete")
 
     @property
     @pulumi.getter
     def status(self) -> str:
+        """
+        Current status of cluster creation process.
+        """
         return pulumi.get(self, "status")
 
 
@@ -14337,6 +14605,12 @@ class GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettingsRe
                  cvm_ntp_servers: Sequence[str],
                  hypervisor_dns_servers: Sequence[str],
                  hypervisor_ntp_servers: Sequence[str]):
+        """
+        :param Sequence[str] cvm_dns_servers: List of dns servers for the cvms in the cluster.
+        :param Sequence[str] cvm_ntp_servers: List of ntp servers for the cvms in the cluster.
+        :param Sequence[str] hypervisor_dns_servers: List of dns servers for the hypervisors in the cluster.
+        :param Sequence[str] hypervisor_ntp_servers: List of ntp servers for the hypervisors in the cluster.
+        """
         pulumi.set(__self__, "cvm_dns_servers", cvm_dns_servers)
         pulumi.set(__self__, "cvm_ntp_servers", cvm_ntp_servers)
         pulumi.set(__self__, "hypervisor_dns_servers", hypervisor_dns_servers)
@@ -14345,21 +14619,33 @@ class GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettingsRe
     @property
     @pulumi.getter(name="cvmDnsServers")
     def cvm_dns_servers(self) -> Sequence[str]:
+        """
+        List of dns servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_dns_servers")
 
     @property
     @pulumi.getter(name="cvmNtpServers")
     def cvm_ntp_servers(self) -> Sequence[str]:
+        """
+        List of ntp servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_ntp_servers")
 
     @property
     @pulumi.getter(name="hypervisorDnsServers")
     def hypervisor_dns_servers(self) -> Sequence[str]:
+        """
+        List of dns servers for the hypervisors in the cluster.
+        """
         return pulumi.get(self, "hypervisor_dns_servers")
 
     @property
     @pulumi.getter(name="hypervisorNtpServers")
     def hypervisor_ntp_servers(self) -> Sequence[str]:
+        """
+        List of ntp servers for the hypervisors in the cluster.
+        """
         return pulumi.get(self, "hypervisor_ntp_servers")
 
 
@@ -14586,6 +14872,13 @@ class GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigClu
                  cvm_ntp_servers: str,
                  redundancy_factor: int,
                  timezone: str):
+        """
+        :param str cluster_external_ip: External management ip of the cluster.
+        :param str cluster_name: Cluster name.
+        :param str cvm_dns_servers: List of dns servers for the cvms in the cluster.
+        :param str cvm_ntp_servers: List of ntp servers for the cvms in the cluster.
+        :param int redundancy_factor: Redundancy factor of the cluster.
+        """
         pulumi.set(__self__, "cluster_external_ip", cluster_external_ip)
         pulumi.set(__self__, "cluster_init_now", cluster_init_now)
         pulumi.set(__self__, "cluster_init_successful", cluster_init_successful)
@@ -14599,6 +14892,9 @@ class GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigClu
     @property
     @pulumi.getter(name="clusterExternalIp")
     def cluster_external_ip(self) -> str:
+        """
+        External management ip of the cluster.
+        """
         return pulumi.get(self, "cluster_external_ip")
 
     @property
@@ -14619,21 +14915,33 @@ class GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigClu
     @property
     @pulumi.getter(name="clusterName")
     def cluster_name(self) -> str:
+        """
+        Cluster name.
+        """
         return pulumi.get(self, "cluster_name")
 
     @property
     @pulumi.getter(name="cvmDnsServers")
     def cvm_dns_servers(self) -> str:
+        """
+        List of dns servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_dns_servers")
 
     @property
     @pulumi.getter(name="cvmNtpServers")
     def cvm_ntp_servers(self) -> str:
+        """
+        List of ntp servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_ntp_servers")
 
     @property
     @pulumi.getter(name="redundancyFactor")
     def redundancy_factor(self) -> int:
+        """
+        Redundancy factor of the cluster.
+        """
         return pulumi.get(self, "redundancy_factor")
 
     @property
@@ -14693,6 +15001,11 @@ class GetFoundationCentralImagedClustersListMetadataResult(dict):
                  length: int,
                  offset: int,
                  total_matches: int):
+        """
+        :param int length: The number of records retrieved.
+        :param int offset: Offset from the start of the object list.
+        :param int total_matches: Total matches found.
+        """
         pulumi.set(__self__, "length", length)
         pulumi.set(__self__, "offset", offset)
         pulumi.set(__self__, "total_matches", total_matches)
@@ -14700,16 +15013,25 @@ class GetFoundationCentralImagedClustersListMetadataResult(dict):
     @property
     @pulumi.getter
     def length(self) -> int:
+        """
+        The number of records retrieved.
+        """
         return pulumi.get(self, "length")
 
     @property
     @pulumi.getter
     def offset(self) -> int:
+        """
+        Offset from the start of the object list.
+        """
         return pulumi.get(self, "offset")
 
     @property
     @pulumi.getter(name="totalMatches")
     def total_matches(self) -> int:
+        """
+        Total matches found.
+        """
         return pulumi.get(self, "total_matches")
 
 
@@ -14717,12 +15039,18 @@ class GetFoundationCentralImagedClustersListMetadataResult(dict):
 class GetFoundationCentralImagedNodesListFiltersResult(dict):
     def __init__(__self__, *,
                  node_state: Optional[str] = None):
+        """
+        :param str node_state: Specifies whether the node is discovering, available or unavailable for cluster creation.
+        """
         if node_state is not None:
             pulumi.set(__self__, "node_state", node_state)
 
     @property
     @pulumi.getter(name="nodeState")
     def node_state(self) -> Optional[str]:
+        """
+        Specifies whether the node is discovering, available or unavailable for cluster creation.
+        """
         return pulumi.get(self, "node_state")
 
 
@@ -14764,6 +15092,42 @@ class GetFoundationCentralImagedNodesListImagedNodeResult(dict):
                  node_type: str,
                  object_version: int,
                  supported_features: Sequence[str]):
+        """
+        :param str aos_version: AOS version currently installed on the node.
+        :param str api_key_uuid: API key used to register the node.
+        :param bool available: Specifies whether the node is available for cluster creation.
+        :param str block_serial: Serial number of the block to which the node belongs.
+        :param str created_timestamp: Time when the node was discovered in Foundation Central.
+        :param str current_time: Current time of Foundation Central.
+        :param str cvm_gateway: gateway of the cvm.
+        :param str cvm_ip: IP address of the cvm.
+        :param str cvm_ipv6: IPv6 address of the cvm.
+        :param str cvm_netmask: netmask of the cvm.
+        :param bool cvm_up: Denotes whether the CVM is up or not on this node.
+        :param str cvm_uuid: Node UUID from the node's cvm.
+        :param int cvm_vlan_id: Vlan tag of the cvm, if the cvm is on a vlan.
+        :param str foundation_version: Foundation version installed on the node.
+        :param Mapping[str, Any] hardware_attributes: Hardware attributes json of the node.
+        :param str hypervisor_gateway: gateway of the hypervisor.
+        :param str hypervisor_hostname: Name of the hypervisor host.
+        :param str hypervisor_ip: IP address of the hypervisor.
+        :param str hypervisor_netmask: netmask of the hypervisor.
+        :param str hypervisor_type: Hypervisor type currently installed on the node. Must be one of {kvm, esx, hyperv}.
+        :param str hypervisor_version: Version of the hypervisor currently installed on the node.
+        :param str imaged_cluster_uuid: UUID of the cluster to which the node belongs, if any.
+        :param str imaged_node_uuid: UUID of the node.
+        :param str ipmi_gateway: gateway of the ipmi.
+        :param str ipmi_ip: IP address of the ipmi.
+        :param str ipmi_netmask: netmask of the ipmi.
+        :param str ipv6_interface: Name of the cvm interface having ipv6 address.
+        :param Sequence[str] latest_hb_ts_lists: List of timestamps when the node has sent heartbeats to Foundation Central.
+        :param str model: Model of the node.
+        :param str node_position: Position of the node in the block.
+        :param str node_serial: Serial number of the node.
+        :param str node_state: Specifies whether the node is discovering, available or unavailable for cluster creation.
+        :param str node_type: Specifies the type of node - on-prem, AWS, GCP etc.
+        :param int object_version: Version of the node used for CAS.
+        """
         pulumi.set(__self__, "aos_version", aos_version)
         pulumi.set(__self__, "api_key_uuid", api_key_uuid)
         pulumi.set(__self__, "available", available)
@@ -14803,171 +15167,273 @@ class GetFoundationCentralImagedNodesListImagedNodeResult(dict):
     @property
     @pulumi.getter(name="aosVersion")
     def aos_version(self) -> str:
+        """
+        AOS version currently installed on the node.
+        """
         return pulumi.get(self, "aos_version")
 
     @property
     @pulumi.getter(name="apiKeyUuid")
     def api_key_uuid(self) -> str:
+        """
+        API key used to register the node.
+        """
         return pulumi.get(self, "api_key_uuid")
 
     @property
     @pulumi.getter
     def available(self) -> bool:
+        """
+        Specifies whether the node is available for cluster creation.
+        """
         return pulumi.get(self, "available")
 
     @property
     @pulumi.getter(name="blockSerial")
     def block_serial(self) -> str:
+        """
+        Serial number of the block to which the node belongs.
+        """
         return pulumi.get(self, "block_serial")
 
     @property
     @pulumi.getter(name="createdTimestamp")
     def created_timestamp(self) -> str:
+        """
+        Time when the node was discovered in Foundation Central.
+        """
         return pulumi.get(self, "created_timestamp")
 
     @property
     @pulumi.getter(name="currentTime")
     def current_time(self) -> str:
+        """
+        Current time of Foundation Central.
+        """
         return pulumi.get(self, "current_time")
 
     @property
     @pulumi.getter(name="cvmGateway")
     def cvm_gateway(self) -> str:
+        """
+        gateway of the cvm.
+        """
         return pulumi.get(self, "cvm_gateway")
 
     @property
     @pulumi.getter(name="cvmIp")
     def cvm_ip(self) -> str:
+        """
+        IP address of the cvm.
+        """
         return pulumi.get(self, "cvm_ip")
 
     @property
     @pulumi.getter(name="cvmIpv6")
     def cvm_ipv6(self) -> str:
+        """
+        IPv6 address of the cvm.
+        """
         return pulumi.get(self, "cvm_ipv6")
 
     @property
     @pulumi.getter(name="cvmNetmask")
     def cvm_netmask(self) -> str:
+        """
+        netmask of the cvm.
+        """
         return pulumi.get(self, "cvm_netmask")
 
     @property
     @pulumi.getter(name="cvmUp")
     def cvm_up(self) -> bool:
+        """
+        Denotes whether the CVM is up or not on this node.
+        """
         return pulumi.get(self, "cvm_up")
 
     @property
     @pulumi.getter(name="cvmUuid")
     def cvm_uuid(self) -> str:
+        """
+        Node UUID from the node's cvm.
+        """
         return pulumi.get(self, "cvm_uuid")
 
     @property
     @pulumi.getter(name="cvmVlanId")
     def cvm_vlan_id(self) -> int:
+        """
+        Vlan tag of the cvm, if the cvm is on a vlan.
+        """
         return pulumi.get(self, "cvm_vlan_id")
 
     @property
     @pulumi.getter(name="foundationVersion")
     def foundation_version(self) -> str:
+        """
+        Foundation version installed on the node.
+        """
         return pulumi.get(self, "foundation_version")
 
     @property
     @pulumi.getter(name="hardwareAttributes")
     def hardware_attributes(self) -> Mapping[str, Any]:
+        """
+        Hardware attributes json of the node.
+        """
         return pulumi.get(self, "hardware_attributes")
 
     @property
     @pulumi.getter(name="hypervisorGateway")
     def hypervisor_gateway(self) -> str:
+        """
+        gateway of the hypervisor.
+        """
         return pulumi.get(self, "hypervisor_gateway")
 
     @property
     @pulumi.getter(name="hypervisorHostname")
     def hypervisor_hostname(self) -> str:
+        """
+        Name of the hypervisor host.
+        """
         return pulumi.get(self, "hypervisor_hostname")
 
     @property
     @pulumi.getter(name="hypervisorIp")
     def hypervisor_ip(self) -> str:
+        """
+        IP address of the hypervisor.
+        """
         return pulumi.get(self, "hypervisor_ip")
 
     @property
     @pulumi.getter(name="hypervisorNetmask")
     def hypervisor_netmask(self) -> str:
+        """
+        netmask of the hypervisor.
+        """
         return pulumi.get(self, "hypervisor_netmask")
 
     @property
     @pulumi.getter(name="hypervisorType")
     def hypervisor_type(self) -> str:
+        """
+        Hypervisor type currently installed on the node. Must be one of {kvm, esx, hyperv}.
+        """
         return pulumi.get(self, "hypervisor_type")
 
     @property
     @pulumi.getter(name="hypervisorVersion")
     def hypervisor_version(self) -> str:
+        """
+        Version of the hypervisor currently installed on the node.
+        """
         return pulumi.get(self, "hypervisor_version")
 
     @property
     @pulumi.getter(name="imagedClusterUuid")
     def imaged_cluster_uuid(self) -> str:
+        """
+        UUID of the cluster to which the node belongs, if any.
+        """
         return pulumi.get(self, "imaged_cluster_uuid")
 
     @property
     @pulumi.getter(name="imagedNodeUuid")
     def imaged_node_uuid(self) -> str:
+        """
+        UUID of the node.
+        """
         return pulumi.get(self, "imaged_node_uuid")
 
     @property
     @pulumi.getter(name="ipmiGateway")
     def ipmi_gateway(self) -> str:
+        """
+        gateway of the ipmi.
+        """
         return pulumi.get(self, "ipmi_gateway")
 
     @property
     @pulumi.getter(name="ipmiIp")
     def ipmi_ip(self) -> str:
+        """
+        IP address of the ipmi.
+        """
         return pulumi.get(self, "ipmi_ip")
 
     @property
     @pulumi.getter(name="ipmiNetmask")
     def ipmi_netmask(self) -> str:
+        """
+        netmask of the ipmi.
+        """
         return pulumi.get(self, "ipmi_netmask")
 
     @property
     @pulumi.getter(name="ipv6Interface")
     def ipv6_interface(self) -> str:
+        """
+        Name of the cvm interface having ipv6 address.
+        """
         return pulumi.get(self, "ipv6_interface")
 
     @property
     @pulumi.getter(name="latestHbTsLists")
     def latest_hb_ts_lists(self) -> Sequence[str]:
+        """
+        List of timestamps when the node has sent heartbeats to Foundation Central.
+        """
         return pulumi.get(self, "latest_hb_ts_lists")
 
     @property
     @pulumi.getter
     def model(self) -> str:
+        """
+        Model of the node.
+        """
         return pulumi.get(self, "model")
 
     @property
     @pulumi.getter(name="nodePosition")
     def node_position(self) -> str:
+        """
+        Position of the node in the block.
+        """
         return pulumi.get(self, "node_position")
 
     @property
     @pulumi.getter(name="nodeSerial")
     def node_serial(self) -> str:
+        """
+        Serial number of the node.
+        """
         return pulumi.get(self, "node_serial")
 
     @property
     @pulumi.getter(name="nodeState")
     def node_state(self) -> str:
+        """
+        Specifies whether the node is discovering, available or unavailable for cluster creation.
+        """
         return pulumi.get(self, "node_state")
 
     @property
     @pulumi.getter(name="nodeType")
     def node_type(self) -> str:
+        """
+        Specifies the type of node - on-prem, AWS, GCP etc.
+        """
         return pulumi.get(self, "node_type")
 
     @property
     @pulumi.getter(name="objectVersion")
     def object_version(self) -> int:
+        """
+        Version of the node used for CAS.
+        """
         return pulumi.get(self, "object_version")
 
     @property
@@ -14982,6 +15448,11 @@ class GetFoundationCentralImagedNodesListMetadataResult(dict):
                  length: int,
                  offset: int,
                  total_matches: int):
+        """
+        :param int length: The number of records retrieved.
+        :param int offset: Offset from the start of the object list.
+        :param int total_matches: Total matches found.
+        """
         pulumi.set(__self__, "length", length)
         pulumi.set(__self__, "offset", offset)
         pulumi.set(__self__, "total_matches", total_matches)
@@ -14989,16 +15460,25 @@ class GetFoundationCentralImagedNodesListMetadataResult(dict):
     @property
     @pulumi.getter
     def length(self) -> int:
+        """
+        The number of records retrieved.
+        """
         return pulumi.get(self, "length")
 
     @property
     @pulumi.getter
     def offset(self) -> int:
+        """
+        Offset from the start of the object list.
+        """
         return pulumi.get(self, "offset")
 
     @property
     @pulumi.getter(name="totalMatches")
     def total_matches(self) -> int:
+        """
+        Total matches found.
+        """
         return pulumi.get(self, "total_matches")
 
 
@@ -15010,6 +15490,13 @@ class GetFoundationCentralListApiKeysApiKeyResult(dict):
                  created_timestamp: str,
                  current_time: str,
                  key_uuid: str):
+        """
+        :param str alias: Alias of the api key.
+        :param str api_key: Api key in string format.
+        :param str created_timestamp: Time when the api key was created.
+        :param str current_time: Current time of Foundation Central.
+        :param str key_uuid: UUID of the api key.
+        """
         pulumi.set(__self__, "alias", alias)
         pulumi.set(__self__, "api_key", api_key)
         pulumi.set(__self__, "created_timestamp", created_timestamp)
@@ -15019,26 +15506,41 @@ class GetFoundationCentralListApiKeysApiKeyResult(dict):
     @property
     @pulumi.getter
     def alias(self) -> str:
+        """
+        Alias of the api key.
+        """
         return pulumi.get(self, "alias")
 
     @property
     @pulumi.getter(name="apiKey")
     def api_key(self) -> str:
+        """
+        Api key in string format.
+        """
         return pulumi.get(self, "api_key")
 
     @property
     @pulumi.getter(name="createdTimestamp")
     def created_timestamp(self) -> str:
+        """
+        Time when the api key was created.
+        """
         return pulumi.get(self, "created_timestamp")
 
     @property
     @pulumi.getter(name="currentTime")
     def current_time(self) -> str:
+        """
+        Current time of Foundation Central.
+        """
         return pulumi.get(self, "current_time")
 
     @property
     @pulumi.getter(name="keyUuid")
     def key_uuid(self) -> str:
+        """
+        UUID of the api key.
+        """
         return pulumi.get(self, "key_uuid")
 
 
@@ -15048,6 +15550,11 @@ class GetFoundationCentralListApiKeysMetadataResult(dict):
                  length: int,
                  offset: int,
                  total_matches: int):
+        """
+        :param int length: The number of records retrieved.
+        :param int offset: Offset from the start of the object list.
+        :param int total_matches: Total matches found.
+        """
         pulumi.set(__self__, "length", length)
         pulumi.set(__self__, "offset", offset)
         pulumi.set(__self__, "total_matches", total_matches)
@@ -15055,16 +15562,25 @@ class GetFoundationCentralListApiKeysMetadataResult(dict):
     @property
     @pulumi.getter
     def length(self) -> int:
+        """
+        The number of records retrieved.
+        """
         return pulumi.get(self, "length")
 
     @property
     @pulumi.getter
     def offset(self) -> int:
+        """
+        Offset from the start of the object list.
+        """
         return pulumi.get(self, "offset")
 
     @property
     @pulumi.getter(name="totalMatches")
     def total_matches(self) -> int:
+        """
+        Total matches found.
+        """
         return pulumi.get(self, "total_matches")
 
 

@@ -12,9 +12,45 @@ namespace PiersKarsenbarg.Nutanix
 {
     public static class GetFoundationCentralImagedNodesList
     {
+        /// <summary>
+        /// List all the nodes registered with Foundation Central
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var nodesList = Nutanix.GetFoundationCentralImagedNodesList.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Task<GetFoundationCentralImagedNodesListResult> InvokeAsync(GetFoundationCentralImagedNodesListArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralImagedNodesListResult>("nutanix:index/getFoundationCentralImagedNodesList:getFoundationCentralImagedNodesList", args ?? new GetFoundationCentralImagedNodesListArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// List all the nodes registered with Foundation Central
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var nodesList = Nutanix.GetFoundationCentralImagedNodesList.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Output<GetFoundationCentralImagedNodesListResult> Invoke(GetFoundationCentralImagedNodesListInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralImagedNodesListResult>("nutanix:index/getFoundationCentralImagedNodesList:getFoundationCentralImagedNodesList", args ?? new GetFoundationCentralImagedNodesListInvokeArgs(), options.WithDefaults());
     }
@@ -25,9 +61,15 @@ namespace PiersKarsenbarg.Nutanix
         [Input("filters")]
         public Inputs.GetFoundationCentralImagedNodesListFiltersArgs? Filters { get; set; }
 
+        /// <summary>
+        /// The number of records retrieved.
+        /// </summary>
         [Input("length")]
         public int? Length { get; set; }
 
+        /// <summary>
+        /// Offset from the start of the object list.
+        /// </summary>
         [Input("offset")]
         public int? Offset { get; set; }
 
@@ -42,9 +84,15 @@ namespace PiersKarsenbarg.Nutanix
         [Input("filters")]
         public Input<Inputs.GetFoundationCentralImagedNodesListFiltersInputArgs>? Filters { get; set; }
 
+        /// <summary>
+        /// The number of records retrieved.
+        /// </summary>
         [Input("length")]
         public Input<int>? Length { get; set; }
 
+        /// <summary>
+        /// Offset from the start of the object list.
+        /// </summary>
         [Input("offset")]
         public Input<int>? Offset { get; set; }
 
@@ -64,8 +112,17 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Id;
         public readonly ImmutableArray<Outputs.GetFoundationCentralImagedNodesListImagedNodeResult> ImagedNodes;
+        /// <summary>
+        /// The number of records retrieved.
+        /// </summary>
         public readonly int? Length;
+        /// <summary>
+        /// List metadata output for all list apis.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetFoundationCentralImagedNodesListMetadataResult> Metadatas;
+        /// <summary>
+        /// Offset from the start of the object list.
+        /// </summary>
         public readonly int? Offset;
 
         [OutputConstructor]

@@ -13,20 +13,33 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Cluster name.
+        /// </summary>
         [Input("clusterName", required: true)]
         public string ClusterName { get; set; } = null!;
 
         [Input("messageLists", required: true)]
         private List<string>? _messageLists;
+
+        /// <summary>
+        /// List of messages for the client based on process state.
+        /// </summary>
         public List<string> MessageLists
         {
             get => _messageLists ?? (_messageLists = new List<string>());
             set => _messageLists = value;
         }
 
+        /// <summary>
+        /// Percent completion of cluster creation process.
+        /// </summary>
         [Input("percentComplete", required: true)]
         public double PercentComplete { get; set; }
 
+        /// <summary>
+        /// Current status of cluster creation process.
+        /// </summary>
         [Input("status", required: true)]
         public string Status { get; set; } = null!;
 

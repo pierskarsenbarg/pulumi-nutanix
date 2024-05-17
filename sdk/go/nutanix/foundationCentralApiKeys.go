@@ -12,14 +12,22 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a resource to create a new API key for nodes registration with Foundation Central.
+//
+// ## Example Usage
 type FoundationCentralApiKeys struct {
 	pulumi.CustomResourceState
 
-	Alias            pulumi.StringOutput `pulumi:"alias"`
-	ApiKey           pulumi.StringOutput `pulumi:"apiKey"`
+	// - (Required) Alias for the api key to be created.
+	Alias pulumi.StringOutput `pulumi:"alias"`
+	// Api key in string format.
+	ApiKey pulumi.StringOutput `pulumi:"apiKey"`
+	// Time when the api key was created.
 	CreatedTimestamp pulumi.StringOutput `pulumi:"createdTimestamp"`
-	CurrentTime      pulumi.StringOutput `pulumi:"currentTime"`
-	KeyUuid          pulumi.StringOutput `pulumi:"keyUuid"`
+	// Current time of Foundation Central.
+	CurrentTime pulumi.StringOutput `pulumi:"currentTime"`
+	// UUID of the api key.
+	KeyUuid pulumi.StringOutput `pulumi:"keyUuid"`
 }
 
 // NewFoundationCentralApiKeys registers a new resource with the given unique name, arguments, and options.
@@ -55,19 +63,29 @@ func GetFoundationCentralApiKeys(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering FoundationCentralApiKeys resources.
 type foundationCentralApiKeysState struct {
-	Alias            *string `pulumi:"alias"`
-	ApiKey           *string `pulumi:"apiKey"`
+	// - (Required) Alias for the api key to be created.
+	Alias *string `pulumi:"alias"`
+	// Api key in string format.
+	ApiKey *string `pulumi:"apiKey"`
+	// Time when the api key was created.
 	CreatedTimestamp *string `pulumi:"createdTimestamp"`
-	CurrentTime      *string `pulumi:"currentTime"`
-	KeyUuid          *string `pulumi:"keyUuid"`
+	// Current time of Foundation Central.
+	CurrentTime *string `pulumi:"currentTime"`
+	// UUID of the api key.
+	KeyUuid *string `pulumi:"keyUuid"`
 }
 
 type FoundationCentralApiKeysState struct {
-	Alias            pulumi.StringPtrInput
-	ApiKey           pulumi.StringPtrInput
+	// - (Required) Alias for the api key to be created.
+	Alias pulumi.StringPtrInput
+	// Api key in string format.
+	ApiKey pulumi.StringPtrInput
+	// Time when the api key was created.
 	CreatedTimestamp pulumi.StringPtrInput
-	CurrentTime      pulumi.StringPtrInput
-	KeyUuid          pulumi.StringPtrInput
+	// Current time of Foundation Central.
+	CurrentTime pulumi.StringPtrInput
+	// UUID of the api key.
+	KeyUuid pulumi.StringPtrInput
 }
 
 func (FoundationCentralApiKeysState) ElementType() reflect.Type {
@@ -75,11 +93,13 @@ func (FoundationCentralApiKeysState) ElementType() reflect.Type {
 }
 
 type foundationCentralApiKeysArgs struct {
+	// - (Required) Alias for the api key to be created.
 	Alias string `pulumi:"alias"`
 }
 
 // The set of arguments for constructing a FoundationCentralApiKeys resource.
 type FoundationCentralApiKeysArgs struct {
+	// - (Required) Alias for the api key to be created.
 	Alias pulumi.StringInput
 }
 
@@ -170,22 +190,27 @@ func (o FoundationCentralApiKeysOutput) ToFoundationCentralApiKeysOutputWithCont
 	return o
 }
 
+// - (Required) Alias for the api key to be created.
 func (o FoundationCentralApiKeysOutput) Alias() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationCentralApiKeys) pulumi.StringOutput { return v.Alias }).(pulumi.StringOutput)
 }
 
+// Api key in string format.
 func (o FoundationCentralApiKeysOutput) ApiKey() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationCentralApiKeys) pulumi.StringOutput { return v.ApiKey }).(pulumi.StringOutput)
 }
 
+// Time when the api key was created.
 func (o FoundationCentralApiKeysOutput) CreatedTimestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationCentralApiKeys) pulumi.StringOutput { return v.CreatedTimestamp }).(pulumi.StringOutput)
 }
 
+// Current time of Foundation Central.
 func (o FoundationCentralApiKeysOutput) CurrentTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationCentralApiKeys) pulumi.StringOutput { return v.CurrentTime }).(pulumi.StringOutput)
 }
 
+// UUID of the api key.
 func (o FoundationCentralApiKeysOutput) KeyUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationCentralApiKeys) pulumi.StringOutput { return v.KeyUuid }).(pulumi.StringOutput)
 }

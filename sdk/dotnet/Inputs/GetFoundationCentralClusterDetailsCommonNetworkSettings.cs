@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("cvmDnsServers", required: true)]
         private List<string>? _cvmDnsServers;
+
+        /// <summary>
+        /// List of dns servers for the cvms in the cluster.
+        /// </summary>
         public List<string> CvmDnsServers
         {
             get => _cvmDnsServers ?? (_cvmDnsServers = new List<string>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("cvmNtpServers", required: true)]
         private List<string>? _cvmNtpServers;
+
+        /// <summary>
+        /// List of ntp servers for the cvms in the cluster.
+        /// </summary>
         public List<string> CvmNtpServers
         {
             get => _cvmNtpServers ?? (_cvmNtpServers = new List<string>());
@@ -31,6 +39,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("hypervisorDnsServers", required: true)]
         private List<string>? _hypervisorDnsServers;
+
+        /// <summary>
+        /// List of dns servers for the hypervisors in the cluster.
+        /// </summary>
         public List<string> HypervisorDnsServers
         {
             get => _hypervisorDnsServers ?? (_hypervisorDnsServers = new List<string>());
@@ -39,6 +51,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("hypervisorNtpServers", required: true)]
         private List<string>? _hypervisorNtpServers;
+
+        /// <summary>
+        /// List of ntp servers for the hypervisors in the cluster.
+        /// </summary>
         public List<string> HypervisorNtpServers
         {
             get => _hypervisorNtpServers ?? (_hypervisorNtpServers = new List<string>());

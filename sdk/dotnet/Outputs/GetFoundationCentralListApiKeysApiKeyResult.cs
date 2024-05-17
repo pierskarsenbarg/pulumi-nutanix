@@ -14,10 +14,25 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetFoundationCentralListApiKeysApiKeyResult
     {
+        /// <summary>
+        /// Alias of the api key.
+        /// </summary>
         public readonly string Alias;
+        /// <summary>
+        /// Api key in string format.
+        /// </summary>
         public readonly string ApiKey;
+        /// <summary>
+        /// Time when the api key was created.
+        /// </summary>
         public readonly string CreatedTimestamp;
+        /// <summary>
+        /// Current time of Foundation Central.
+        /// </summary>
         public readonly string CurrentTime;
+        /// <summary>
+        /// UUID of the api key.
+        /// </summary>
         public readonly string KeyUuid;
 
         [OutputConstructor]

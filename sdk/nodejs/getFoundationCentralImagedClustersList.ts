@@ -6,6 +6,18 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * List all the clusters created using Foundation Central.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const imagedClustersList = nutanix.getFoundationCentralImagedClustersList({});
+ * ```
+ */
 export function getFoundationCentralImagedClustersList(args?: GetFoundationCentralImagedClustersListArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralImagedClustersListResult> {
     args = args || {};
 
@@ -22,7 +34,13 @@ export function getFoundationCentralImagedClustersList(args?: GetFoundationCentr
  */
 export interface GetFoundationCentralImagedClustersListArgs {
     filters?: inputs.GetFoundationCentralImagedClustersListFilters;
+    /**
+     * The number of records retrieved.
+     */
     length?: number;
+    /**
+     * Offset from the start of the object list.
+     */
     offset?: number;
 }
 
@@ -36,10 +54,28 @@ export interface GetFoundationCentralImagedClustersListResult {
      */
     readonly id: string;
     readonly imagedClusters: outputs.GetFoundationCentralImagedClustersListImagedCluster[];
+    /**
+     * The number of records retrieved.
+     */
     readonly length?: number;
     readonly metadatas: outputs.GetFoundationCentralImagedClustersListMetadata[];
+    /**
+     * Offset from the start of the object list.
+     */
     readonly offset?: number;
 }
+/**
+ * List all the clusters created using Foundation Central.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const imagedClustersList = nutanix.getFoundationCentralImagedClustersList({});
+ * ```
+ */
 export function getFoundationCentralImagedClustersListOutput(args?: GetFoundationCentralImagedClustersListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralImagedClustersListResult> {
     return pulumi.output(args).apply((a: any) => getFoundationCentralImagedClustersList(a, opts))
 }
@@ -49,6 +85,12 @@ export function getFoundationCentralImagedClustersListOutput(args?: GetFoundatio
  */
 export interface GetFoundationCentralImagedClustersListOutputArgs {
     filters?: pulumi.Input<inputs.GetFoundationCentralImagedClustersListFiltersArgs>;
+    /**
+     * The number of records retrieved.
+     */
     length?: pulumi.Input<number>;
+    /**
+     * Offset from the start of the object list.
+     */
     offset?: pulumi.Input<number>;
 }

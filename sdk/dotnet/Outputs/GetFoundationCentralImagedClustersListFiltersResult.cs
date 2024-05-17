@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetFoundationCentralImagedClustersListFiltersResult
     {
+        /// <summary>
+        /// True if the cluster creation request is archived, False otherwise
+        /// </summary>
         public readonly bool? Archived;
 
         [OutputConstructor]

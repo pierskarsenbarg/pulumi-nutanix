@@ -14,9 +14,21 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetFoundationCentralClusterDetailsCommonNetworkSettingsResult
     {
+        /// <summary>
+        /// List of dns servers for the cvms in the cluster.
+        /// </summary>
         public readonly ImmutableArray<string> CvmDnsServers;
+        /// <summary>
+        /// List of ntp servers for the cvms in the cluster.
+        /// </summary>
         public readonly ImmutableArray<string> CvmNtpServers;
+        /// <summary>
+        /// List of dns servers for the hypervisors in the cluster.
+        /// </summary>
         public readonly ImmutableArray<string> HypervisorDnsServers;
+        /// <summary>
+        /// List of ntp servers for the hypervisors in the cluster.
+        /// </summary>
         public readonly ImmutableArray<string> HypervisorNtpServers;
 
         [OutputConstructor]

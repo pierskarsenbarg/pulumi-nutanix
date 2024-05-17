@@ -14,21 +14,69 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetFoundationCentralImagedClustersListImagedClusterResult
     {
+        /// <summary>
+        /// True if the cluster creation request is archived, False otherwise
+        /// </summary>
         public readonly bool Archived;
+        /// <summary>
+        /// External management ip of the cluster.
+        /// </summary>
         public readonly string ClusterExternalIp;
+        /// <summary>
+        /// Cluster name.
+        /// </summary>
         public readonly string ClusterName;
+        /// <summary>
+        /// Number of nodes in the cluster.
+        /// </summary>
         public readonly int ClusterSize;
+        /// <summary>
+        /// Details of cluster creation process.
+        /// </summary>
         public readonly Outputs.GetFoundationCentralImagedClustersListImagedClusterClusterStatusResult ClusterStatus;
+        /// <summary>
+        /// Common network settings across the nodes in the cluster.
+        /// </summary>
         public readonly Outputs.GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettingsResult CommonNetworkSettings;
+        /// <summary>
+        /// Time when the cluster creation request was received in Foundation Central.
+        /// </summary>
         public readonly string CreatedTimestamp;
+        /// <summary>
+        /// Current time of Foundation Central.
+        /// </summary>
         public readonly string CurrentTime;
+        /// <summary>
+        /// True if the cluster is destroyed, False otherwise
+        /// </summary>
         public readonly bool Destroyed;
+        /// <summary>
+        /// Json config used by Foundation to create the cluster.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigResult> FoundationInitConfigs;
+        /// <summary>
+        /// UUID of the first node coordinating cluster creation.
+        /// </summary>
         public readonly string FoundationInitNodeUuid;
+        /// <summary>
+        /// UUID of the cluster.
+        /// </summary>
         public readonly string ImagedClusterUuid;
+        /// <summary>
+        /// List of UUIDs of imaged nodes.
+        /// </summary>
         public readonly ImmutableArray<string> ImagedNodeUuidLists;
+        /// <summary>
+        /// Redundancy factor of the cluster.
+        /// </summary>
         public readonly int? RedundancyFactor;
+        /// <summary>
+        /// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+        /// </summary>
         public readonly int StorageNodeCount;
+        /// <summary>
+        /// If imaging and cluster creation is coordinated by Foundation, value will be FOUNDATION_WF. If the nodes are in phoenix, value will be PHOENIX_WF.
+        /// </summary>
         public readonly string WorkflowType;
 
         [OutputConstructor]

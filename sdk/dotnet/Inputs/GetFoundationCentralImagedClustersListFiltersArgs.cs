@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class GetFoundationCentralImagedClustersListFiltersInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// True if the cluster creation request is archived, False otherwise
+        /// </summary>
         [Input("archived")]
         public Input<bool>? Archived { get; set; }
 

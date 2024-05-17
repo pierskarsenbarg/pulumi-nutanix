@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetFoundationCentralImagedNodesListFiltersResult
     {
+        /// <summary>
+        /// Specifies whether the node is discovering, available or unavailable for cluster creation.
+        /// </summary>
         public readonly string? NodeState;
 
         [OutputConstructor]

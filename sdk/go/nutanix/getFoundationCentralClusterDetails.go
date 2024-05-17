@@ -11,6 +11,33 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Get a cluster details created using Foundation Central.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetFoundationCentralClusterDetails(ctx, &nutanix.GetFoundationCentralClusterDetailsArgs{
+//				ImagedClusterUuid: "<CLUSTER-UUID>",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetFoundationCentralClusterDetails(ctx *pulumi.Context, args *GetFoundationCentralClusterDetailsArgs, opts ...pulumi.InvokeOption) (*GetFoundationCentralClusterDetailsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFoundationCentralClusterDetailsResult
@@ -23,36 +50,60 @@ func GetFoundationCentralClusterDetails(ctx *pulumi.Context, args *GetFoundation
 
 // A collection of arguments for invoking getFoundationCentralClusterDetails.
 type GetFoundationCentralClusterDetailsArgs struct {
-	ClusterExternalIp     *string                                                  `pulumi:"clusterExternalIp"`
-	ClusterName           *string                                                  `pulumi:"clusterName"`
-	ClusterSize           *int                                                     `pulumi:"clusterSize"`
-	ClusterStatus         *GetFoundationCentralClusterDetailsClusterStatus         `pulumi:"clusterStatus"`
+	// External management ip of the cluster.
+	ClusterExternalIp *string `pulumi:"clusterExternalIp"`
+	// Cluster name.
+	ClusterName *string `pulumi:"clusterName"`
+	// Number of nodes in the cluster.
+	ClusterSize *int `pulumi:"clusterSize"`
+	// Details of cluster creation process.
+	ClusterStatus *GetFoundationCentralClusterDetailsClusterStatus `pulumi:"clusterStatus"`
+	// Common network settings across the nodes in the cluster.
 	CommonNetworkSettings *GetFoundationCentralClusterDetailsCommonNetworkSettings `pulumi:"commonNetworkSettings"`
-	ImagedClusterUuid     string                                                   `pulumi:"imagedClusterUuid"`
-	RedundancyFactor      *int                                                     `pulumi:"redundancyFactor"`
-	StorageNodeCount      *int                                                     `pulumi:"storageNodeCount"`
+	// UUID of the cluster whose details need to be fetched.
+	ImagedClusterUuid string `pulumi:"imagedClusterUuid"`
+	// Redundancy factor of the cluster.
+	RedundancyFactor *int `pulumi:"redundancyFactor"`
+	// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+	StorageNodeCount *int `pulumi:"storageNodeCount"`
 }
 
 // A collection of values returned by getFoundationCentralClusterDetails.
 type GetFoundationCentralClusterDetailsResult struct {
-	Archived               bool                                                     `pulumi:"archived"`
-	ClusterExternalIp      string                                                   `pulumi:"clusterExternalIp"`
-	ClusterName            string                                                   `pulumi:"clusterName"`
-	ClusterSize            int                                                      `pulumi:"clusterSize"`
-	ClusterStatus          GetFoundationCentralClusterDetailsClusterStatus          `pulumi:"clusterStatus"`
-	CommonNetworkSettings  GetFoundationCentralClusterDetailsCommonNetworkSettings  `pulumi:"commonNetworkSettings"`
-	CreatedTimestamp       string                                                   `pulumi:"createdTimestamp"`
-	CurrentTime            string                                                   `pulumi:"currentTime"`
-	Destroyed              bool                                                     `pulumi:"destroyed"`
-	FoundationInitConfigs  []GetFoundationCentralClusterDetailsFoundationInitConfig `pulumi:"foundationInitConfigs"`
-	FoundationInitNodeUuid string                                                   `pulumi:"foundationInitNodeUuid"`
+	// True if the cluster creation request is archived, False otherwise
+	Archived bool `pulumi:"archived"`
+	// External management ip of the cluster.
+	ClusterExternalIp string `pulumi:"clusterExternalIp"`
+	// Cluster name.
+	ClusterName string `pulumi:"clusterName"`
+	// Number of nodes in the cluster.
+	ClusterSize int `pulumi:"clusterSize"`
+	// Details of cluster creation process.
+	ClusterStatus GetFoundationCentralClusterDetailsClusterStatus `pulumi:"clusterStatus"`
+	// Common network settings across the nodes in the cluster.
+	CommonNetworkSettings GetFoundationCentralClusterDetailsCommonNetworkSettings `pulumi:"commonNetworkSettings"`
+	// Time when the cluster creation request was received in Foundation Central.
+	CreatedTimestamp string `pulumi:"createdTimestamp"`
+	// Current time of Foundation Central.
+	CurrentTime string `pulumi:"currentTime"`
+	// True if the cluster is destroyed, False otherwise
+	Destroyed bool `pulumi:"destroyed"`
+	// Json config used by Foundation to create the cluster.
+	FoundationInitConfigs []GetFoundationCentralClusterDetailsFoundationInitConfig `pulumi:"foundationInitConfigs"`
+	// UUID of the first node coordinating cluster creation.
+	FoundationInitNodeUuid string `pulumi:"foundationInitNodeUuid"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                  string   `pulumi:"id"`
-	ImagedClusterUuid   string   `pulumi:"imagedClusterUuid"`
+	Id string `pulumi:"id"`
+	// UUID of the cluster.
+	ImagedClusterUuid string `pulumi:"imagedClusterUuid"`
+	// List of UUIDs of imaged nodes.
 	ImagedNodeUuidLists []string `pulumi:"imagedNodeUuidLists"`
-	RedundancyFactor    *int     `pulumi:"redundancyFactor"`
-	StorageNodeCount    int      `pulumi:"storageNodeCount"`
-	WorkflowType        string   `pulumi:"workflowType"`
+	// Redundancy factor of the cluster.
+	RedundancyFactor *int `pulumi:"redundancyFactor"`
+	// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+	StorageNodeCount int `pulumi:"storageNodeCount"`
+	// If imaging and cluster creation is coordinated by Foundation, value will be FOUNDATION_WF. If the nodes are in phoenix, value will be PHOENIX_WF.
+	WorkflowType string `pulumi:"workflowType"`
 }
 
 func GetFoundationCentralClusterDetailsOutput(ctx *pulumi.Context, args GetFoundationCentralClusterDetailsOutputArgs, opts ...pulumi.InvokeOption) GetFoundationCentralClusterDetailsResultOutput {
@@ -70,14 +121,22 @@ func GetFoundationCentralClusterDetailsOutput(ctx *pulumi.Context, args GetFound
 
 // A collection of arguments for invoking getFoundationCentralClusterDetails.
 type GetFoundationCentralClusterDetailsOutputArgs struct {
-	ClusterExternalIp     pulumi.StringPtrInput                                           `pulumi:"clusterExternalIp"`
-	ClusterName           pulumi.StringPtrInput                                           `pulumi:"clusterName"`
-	ClusterSize           pulumi.IntPtrInput                                              `pulumi:"clusterSize"`
-	ClusterStatus         GetFoundationCentralClusterDetailsClusterStatusPtrInput         `pulumi:"clusterStatus"`
+	// External management ip of the cluster.
+	ClusterExternalIp pulumi.StringPtrInput `pulumi:"clusterExternalIp"`
+	// Cluster name.
+	ClusterName pulumi.StringPtrInput `pulumi:"clusterName"`
+	// Number of nodes in the cluster.
+	ClusterSize pulumi.IntPtrInput `pulumi:"clusterSize"`
+	// Details of cluster creation process.
+	ClusterStatus GetFoundationCentralClusterDetailsClusterStatusPtrInput `pulumi:"clusterStatus"`
+	// Common network settings across the nodes in the cluster.
 	CommonNetworkSettings GetFoundationCentralClusterDetailsCommonNetworkSettingsPtrInput `pulumi:"commonNetworkSettings"`
-	ImagedClusterUuid     pulumi.StringInput                                              `pulumi:"imagedClusterUuid"`
-	RedundancyFactor      pulumi.IntPtrInput                                              `pulumi:"redundancyFactor"`
-	StorageNodeCount      pulumi.IntPtrInput                                              `pulumi:"storageNodeCount"`
+	// UUID of the cluster whose details need to be fetched.
+	ImagedClusterUuid pulumi.StringInput `pulumi:"imagedClusterUuid"`
+	// Redundancy factor of the cluster.
+	RedundancyFactor pulumi.IntPtrInput `pulumi:"redundancyFactor"`
+	// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+	StorageNodeCount pulumi.IntPtrInput `pulumi:"storageNodeCount"`
 }
 
 func (GetFoundationCentralClusterDetailsOutputArgs) ElementType() reflect.Type {
@@ -99,52 +158,63 @@ func (o GetFoundationCentralClusterDetailsResultOutput) ToGetFoundationCentralCl
 	return o
 }
 
+// True if the cluster creation request is archived, False otherwise
 func (o GetFoundationCentralClusterDetailsResultOutput) Archived() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsResult) bool { return v.Archived }).(pulumi.BoolOutput)
 }
 
+// External management ip of the cluster.
 func (o GetFoundationCentralClusterDetailsResultOutput) ClusterExternalIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsResult) string { return v.ClusterExternalIp }).(pulumi.StringOutput)
 }
 
+// Cluster name.
 func (o GetFoundationCentralClusterDetailsResultOutput) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsResult) string { return v.ClusterName }).(pulumi.StringOutput)
 }
 
+// Number of nodes in the cluster.
 func (o GetFoundationCentralClusterDetailsResultOutput) ClusterSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsResult) int { return v.ClusterSize }).(pulumi.IntOutput)
 }
 
+// Details of cluster creation process.
 func (o GetFoundationCentralClusterDetailsResultOutput) ClusterStatus() GetFoundationCentralClusterDetailsClusterStatusOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsResult) GetFoundationCentralClusterDetailsClusterStatus {
 		return v.ClusterStatus
 	}).(GetFoundationCentralClusterDetailsClusterStatusOutput)
 }
 
+// Common network settings across the nodes in the cluster.
 func (o GetFoundationCentralClusterDetailsResultOutput) CommonNetworkSettings() GetFoundationCentralClusterDetailsCommonNetworkSettingsOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsResult) GetFoundationCentralClusterDetailsCommonNetworkSettings {
 		return v.CommonNetworkSettings
 	}).(GetFoundationCentralClusterDetailsCommonNetworkSettingsOutput)
 }
 
+// Time when the cluster creation request was received in Foundation Central.
 func (o GetFoundationCentralClusterDetailsResultOutput) CreatedTimestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsResult) string { return v.CreatedTimestamp }).(pulumi.StringOutput)
 }
 
+// Current time of Foundation Central.
 func (o GetFoundationCentralClusterDetailsResultOutput) CurrentTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsResult) string { return v.CurrentTime }).(pulumi.StringOutput)
 }
 
+// True if the cluster is destroyed, False otherwise
 func (o GetFoundationCentralClusterDetailsResultOutput) Destroyed() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsResult) bool { return v.Destroyed }).(pulumi.BoolOutput)
 }
 
+// Json config used by Foundation to create the cluster.
 func (o GetFoundationCentralClusterDetailsResultOutput) FoundationInitConfigs() GetFoundationCentralClusterDetailsFoundationInitConfigArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsResult) []GetFoundationCentralClusterDetailsFoundationInitConfig {
 		return v.FoundationInitConfigs
 	}).(GetFoundationCentralClusterDetailsFoundationInitConfigArrayOutput)
 }
 
+// UUID of the first node coordinating cluster creation.
 func (o GetFoundationCentralClusterDetailsResultOutput) FoundationInitNodeUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsResult) string { return v.FoundationInitNodeUuid }).(pulumi.StringOutput)
 }
@@ -154,22 +224,27 @@ func (o GetFoundationCentralClusterDetailsResultOutput) Id() pulumi.StringOutput
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// UUID of the cluster.
 func (o GetFoundationCentralClusterDetailsResultOutput) ImagedClusterUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsResult) string { return v.ImagedClusterUuid }).(pulumi.StringOutput)
 }
 
+// List of UUIDs of imaged nodes.
 func (o GetFoundationCentralClusterDetailsResultOutput) ImagedNodeUuidLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsResult) []string { return v.ImagedNodeUuidLists }).(pulumi.StringArrayOutput)
 }
 
+// Redundancy factor of the cluster.
 func (o GetFoundationCentralClusterDetailsResultOutput) RedundancyFactor() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsResult) *int { return v.RedundancyFactor }).(pulumi.IntPtrOutput)
 }
 
+// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
 func (o GetFoundationCentralClusterDetailsResultOutput) StorageNodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsResult) int { return v.StorageNodeCount }).(pulumi.IntOutput)
 }
 
+// If imaging and cluster creation is coordinated by Foundation, value will be FOUNDATION_WF. If the nodes are in phoenix, value will be PHOENIX_WF.
 func (o GetFoundationCentralClusterDetailsResultOutput) WorkflowType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsResult) string { return v.WorkflowType }).(pulumi.StringOutput)
 }

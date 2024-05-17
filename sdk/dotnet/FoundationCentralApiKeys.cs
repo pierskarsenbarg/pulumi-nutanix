@@ -10,21 +10,41 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Provides a resource to create a new API key for nodes registration with Foundation Central.
+    /// 
+    /// ## Example Usage
+    /// </summary>
     [NutanixResourceType("nutanix:index/foundationCentralApiKeys:FoundationCentralApiKeys")]
     public partial class FoundationCentralApiKeys : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// - (Required) Alias for the api key to be created.
+        /// </summary>
         [Output("alias")]
         public Output<string> Alias { get; private set; } = null!;
 
+        /// <summary>
+        /// Api key in string format.
+        /// </summary>
         [Output("apiKey")]
         public Output<string> ApiKey { get; private set; } = null!;
 
+        /// <summary>
+        /// Time when the api key was created.
+        /// </summary>
         [Output("createdTimestamp")]
         public Output<string> CreatedTimestamp { get; private set; } = null!;
 
+        /// <summary>
+        /// Current time of Foundation Central.
+        /// </summary>
         [Output("currentTime")]
         public Output<string> CurrentTime { get; private set; } = null!;
 
+        /// <summary>
+        /// UUID of the api key.
+        /// </summary>
         [Output("keyUuid")]
         public Output<string> KeyUuid { get; private set; } = null!;
 
@@ -75,6 +95,9 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class FoundationCentralApiKeysArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Required) Alias for the api key to be created.
+        /// </summary>
         [Input("alias", required: true)]
         public Input<string> Alias { get; set; } = null!;
 
@@ -86,18 +109,33 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class FoundationCentralApiKeysState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Required) Alias for the api key to be created.
+        /// </summary>
         [Input("alias")]
         public Input<string>? Alias { get; set; }
 
+        /// <summary>
+        /// Api key in string format.
+        /// </summary>
         [Input("apiKey")]
         public Input<string>? ApiKey { get; set; }
 
+        /// <summary>
+        /// Time when the api key was created.
+        /// </summary>
         [Input("createdTimestamp")]
         public Input<string>? CreatedTimestamp { get; set; }
 
+        /// <summary>
+        /// Current time of Foundation Central.
+        /// </summary>
         [Input("currentTime")]
         public Input<string>? CurrentTime { get; set; }
 
+        /// <summary>
+        /// UUID of the api key.
+        /// </summary>
         [Input("keyUuid")]
         public Input<string>? KeyUuid { get; set; }
 

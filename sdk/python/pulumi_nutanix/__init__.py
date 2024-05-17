@@ -33,13 +33,13 @@ from .get_foundation_central_imaged_nodes_list import *
 from .get_foundation_central_list_api_keys import *
 from .get_foundation_discover_nodes import *
 from .get_foundation_hypervisor_isos import *
-from .get_foundation_nod_packages import *
 from .get_foundation_node_network_details import *
+from .get_foundation_nos_packages import *
 from .get_host import *
 from .get_hosts import *
 from .get_image import *
 from .get_karbon_cluster import *
-from .get_karbon_cluster_kube_config import *
+from .get_karbon_cluster_kubeconfig import *
 from .get_karbon_cluster_ssh import *
 from .get_karbon_clusters import *
 from .get_karbon_private_registries import *

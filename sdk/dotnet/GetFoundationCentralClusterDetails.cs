@@ -12,9 +12,51 @@ namespace PiersKarsenbarg.Nutanix
 {
     public static class GetFoundationCentralClusterDetails
     {
+        /// <summary>
+        /// Get a cluster details created using Foundation Central.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var imagedClusterDetails = Nutanix.GetFoundationCentralClusterDetails.Invoke(new()
+        ///     {
+        ///         ImagedClusterUuid = "&lt;CLUSTER-UUID&gt;",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Task<GetFoundationCentralClusterDetailsResult> InvokeAsync(GetFoundationCentralClusterDetailsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralClusterDetailsResult>("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", args ?? new GetFoundationCentralClusterDetailsArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// Get a cluster details created using Foundation Central.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var imagedClusterDetails = Nutanix.GetFoundationCentralClusterDetails.Invoke(new()
+        ///     {
+        ///         ImagedClusterUuid = "&lt;CLUSTER-UUID&gt;",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Output<GetFoundationCentralClusterDetailsResult> Invoke(GetFoundationCentralClusterDetailsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralClusterDetailsResult>("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", args ?? new GetFoundationCentralClusterDetailsInvokeArgs(), options.WithDefaults());
     }
@@ -22,27 +64,51 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetFoundationCentralClusterDetailsArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// External management ip of the cluster.
+        /// </summary>
         [Input("clusterExternalIp")]
         public string? ClusterExternalIp { get; set; }
 
+        /// <summary>
+        /// Cluster name.
+        /// </summary>
         [Input("clusterName")]
         public string? ClusterName { get; set; }
 
+        /// <summary>
+        /// Number of nodes in the cluster.
+        /// </summary>
         [Input("clusterSize")]
         public int? ClusterSize { get; set; }
 
+        /// <summary>
+        /// Details of cluster creation process.
+        /// </summary>
         [Input("clusterStatus")]
         public Inputs.GetFoundationCentralClusterDetailsClusterStatusArgs? ClusterStatus { get; set; }
 
+        /// <summary>
+        /// Common network settings across the nodes in the cluster.
+        /// </summary>
         [Input("commonNetworkSettings")]
         public Inputs.GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs? CommonNetworkSettings { get; set; }
 
+        /// <summary>
+        /// UUID of the cluster whose details need to be fetched.
+        /// </summary>
         [Input("imagedClusterUuid", required: true)]
         public string ImagedClusterUuid { get; set; } = null!;
 
+        /// <summary>
+        /// Redundancy factor of the cluster.
+        /// </summary>
         [Input("redundancyFactor")]
         public int? RedundancyFactor { get; set; }
 
+        /// <summary>
+        /// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+        /// </summary>
         [Input("storageNodeCount")]
         public int? StorageNodeCount { get; set; }
 
@@ -54,27 +120,51 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetFoundationCentralClusterDetailsInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// External management ip of the cluster.
+        /// </summary>
         [Input("clusterExternalIp")]
         public Input<string>? ClusterExternalIp { get; set; }
 
+        /// <summary>
+        /// Cluster name.
+        /// </summary>
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }
 
+        /// <summary>
+        /// Number of nodes in the cluster.
+        /// </summary>
         [Input("clusterSize")]
         public Input<int>? ClusterSize { get; set; }
 
+        /// <summary>
+        /// Details of cluster creation process.
+        /// </summary>
         [Input("clusterStatus")]
         public Input<Inputs.GetFoundationCentralClusterDetailsClusterStatusInputArgs>? ClusterStatus { get; set; }
 
+        /// <summary>
+        /// Common network settings across the nodes in the cluster.
+        /// </summary>
         [Input("commonNetworkSettings")]
         public Input<Inputs.GetFoundationCentralClusterDetailsCommonNetworkSettingsInputArgs>? CommonNetworkSettings { get; set; }
 
+        /// <summary>
+        /// UUID of the cluster whose details need to be fetched.
+        /// </summary>
         [Input("imagedClusterUuid", required: true)]
         public Input<string> ImagedClusterUuid { get; set; } = null!;
 
+        /// <summary>
+        /// Redundancy factor of the cluster.
+        /// </summary>
         [Input("redundancyFactor")]
         public Input<int>? RedundancyFactor { get; set; }
 
+        /// <summary>
+        /// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+        /// </summary>
         [Input("storageNodeCount")]
         public Input<int>? StorageNodeCount { get; set; }
 
@@ -88,25 +178,73 @@ namespace PiersKarsenbarg.Nutanix
     [OutputType]
     public sealed class GetFoundationCentralClusterDetailsResult
     {
+        /// <summary>
+        /// True if the cluster creation request is archived, False otherwise
+        /// </summary>
         public readonly bool Archived;
+        /// <summary>
+        /// External management ip of the cluster.
+        /// </summary>
         public readonly string ClusterExternalIp;
+        /// <summary>
+        /// Cluster name.
+        /// </summary>
         public readonly string ClusterName;
+        /// <summary>
+        /// Number of nodes in the cluster.
+        /// </summary>
         public readonly int ClusterSize;
+        /// <summary>
+        /// Details of cluster creation process.
+        /// </summary>
         public readonly Outputs.GetFoundationCentralClusterDetailsClusterStatusResult ClusterStatus;
+        /// <summary>
+        /// Common network settings across the nodes in the cluster.
+        /// </summary>
         public readonly Outputs.GetFoundationCentralClusterDetailsCommonNetworkSettingsResult CommonNetworkSettings;
+        /// <summary>
+        /// Time when the cluster creation request was received in Foundation Central.
+        /// </summary>
         public readonly string CreatedTimestamp;
+        /// <summary>
+        /// Current time of Foundation Central.
+        /// </summary>
         public readonly string CurrentTime;
+        /// <summary>
+        /// True if the cluster is destroyed, False otherwise
+        /// </summary>
         public readonly bool Destroyed;
+        /// <summary>
+        /// Json config used by Foundation to create the cluster.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetFoundationCentralClusterDetailsFoundationInitConfigResult> FoundationInitConfigs;
+        /// <summary>
+        /// UUID of the first node coordinating cluster creation.
+        /// </summary>
         public readonly string FoundationInitNodeUuid;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// UUID of the cluster.
+        /// </summary>
         public readonly string ImagedClusterUuid;
+        /// <summary>
+        /// List of UUIDs of imaged nodes.
+        /// </summary>
         public readonly ImmutableArray<string> ImagedNodeUuidLists;
+        /// <summary>
+        /// Redundancy factor of the cluster.
+        /// </summary>
         public readonly int? RedundancyFactor;
+        /// <summary>
+        /// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+        /// </summary>
         public readonly int StorageNodeCount;
+        /// <summary>
+        /// If imaging and cluster creation is coordinated by Foundation, value will be FOUNDATION_WF. If the nodes are in phoenix, value will be PHOENIX_WF.
+        /// </summary>
         public readonly string WorkflowType;
 
         [OutputConstructor]

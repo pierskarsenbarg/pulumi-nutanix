@@ -17,12 +17,16 @@ class FoundationCentralApiKeysArgs:
                  alias: pulumi.Input[str]):
         """
         The set of arguments for constructing a FoundationCentralApiKeys resource.
+        :param pulumi.Input[str] alias: - (Required) Alias for the api key to be created.
         """
         pulumi.set(__self__, "alias", alias)
 
     @property
     @pulumi.getter
     def alias(self) -> pulumi.Input[str]:
+        """
+        - (Required) Alias for the api key to be created.
+        """
         return pulumi.get(self, "alias")
 
     @alias.setter
@@ -40,6 +44,11 @@ class _FoundationCentralApiKeysState:
                  key_uuid: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering FoundationCentralApiKeys resources.
+        :param pulumi.Input[str] alias: - (Required) Alias for the api key to be created.
+        :param pulumi.Input[str] api_key: Api key in string format.
+        :param pulumi.Input[str] created_timestamp: Time when the api key was created.
+        :param pulumi.Input[str] current_time: Current time of Foundation Central.
+        :param pulumi.Input[str] key_uuid: UUID of the api key.
         """
         if alias is not None:
             pulumi.set(__self__, "alias", alias)
@@ -55,6 +64,9 @@ class _FoundationCentralApiKeysState:
     @property
     @pulumi.getter
     def alias(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) Alias for the api key to be created.
+        """
         return pulumi.get(self, "alias")
 
     @alias.setter
@@ -64,6 +76,9 @@ class _FoundationCentralApiKeysState:
     @property
     @pulumi.getter(name="apiKey")
     def api_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        Api key in string format.
+        """
         return pulumi.get(self, "api_key")
 
     @api_key.setter
@@ -73,6 +88,9 @@ class _FoundationCentralApiKeysState:
     @property
     @pulumi.getter(name="createdTimestamp")
     def created_timestamp(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time when the api key was created.
+        """
         return pulumi.get(self, "created_timestamp")
 
     @created_timestamp.setter
@@ -82,6 +100,9 @@ class _FoundationCentralApiKeysState:
     @property
     @pulumi.getter(name="currentTime")
     def current_time(self) -> Optional[pulumi.Input[str]]:
+        """
+        Current time of Foundation Central.
+        """
         return pulumi.get(self, "current_time")
 
     @current_time.setter
@@ -91,6 +112,9 @@ class _FoundationCentralApiKeysState:
     @property
     @pulumi.getter(name="keyUuid")
     def key_uuid(self) -> Optional[pulumi.Input[str]]:
+        """
+        UUID of the api key.
+        """
         return pulumi.get(self, "key_uuid")
 
     @key_uuid.setter
@@ -106,9 +130,13 @@ class FoundationCentralApiKeys(pulumi.CustomResource):
                  alias: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Create a FoundationCentralApiKeys resource with the given unique name, props, and options.
+        Provides a resource to create a new API key for nodes registration with Foundation Central.
+
+        ## Example Usage
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] alias: - (Required) Alias for the api key to be created.
         """
         ...
     @overload
@@ -117,7 +145,10 @@ class FoundationCentralApiKeys(pulumi.CustomResource):
                  args: FoundationCentralApiKeysArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a FoundationCentralApiKeys resource with the given unique name, props, and options.
+        Provides a resource to create a new API key for nodes registration with Foundation Central.
+
+        ## Example Usage
+
         :param str resource_name: The name of the resource.
         :param FoundationCentralApiKeysArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -172,6 +203,11 @@ class FoundationCentralApiKeys(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] alias: - (Required) Alias for the api key to be created.
+        :param pulumi.Input[str] api_key: Api key in string format.
+        :param pulumi.Input[str] created_timestamp: Time when the api key was created.
+        :param pulumi.Input[str] current_time: Current time of Foundation Central.
+        :param pulumi.Input[str] key_uuid: UUID of the api key.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -187,25 +223,40 @@ class FoundationCentralApiKeys(pulumi.CustomResource):
     @property
     @pulumi.getter
     def alias(self) -> pulumi.Output[str]:
+        """
+        - (Required) Alias for the api key to be created.
+        """
         return pulumi.get(self, "alias")
 
     @property
     @pulumi.getter(name="apiKey")
     def api_key(self) -> pulumi.Output[str]:
+        """
+        Api key in string format.
+        """
         return pulumi.get(self, "api_key")
 
     @property
     @pulumi.getter(name="createdTimestamp")
     def created_timestamp(self) -> pulumi.Output[str]:
+        """
+        Time when the api key was created.
+        """
         return pulumi.get(self, "created_timestamp")
 
     @property
     @pulumi.getter(name="currentTime")
     def current_time(self) -> pulumi.Output[str]:
+        """
+        Current time of Foundation Central.
+        """
         return pulumi.get(self, "current_time")
 
     @property
     @pulumi.getter(name="keyUuid")
     def key_uuid(self) -> pulumi.Output[str]:
+        """
+        UUID of the api key.
+        """
         return pulumi.get(self, "key_uuid")
 

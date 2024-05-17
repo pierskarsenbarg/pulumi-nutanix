@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetFoundationCentralImagedNodesListMetadataResult
     {
+        /// <summary>
+        /// The number of records retrieved.
+        /// </summary>
         public readonly int Length;
+        /// <summary>
+        /// Offset from the start of the object list.
+        /// </summary>
         public readonly int Offset;
+        /// <summary>
+        /// Total matches found.
+        /// </summary>
         public readonly int TotalMatches;
 
         [OutputConstructor]

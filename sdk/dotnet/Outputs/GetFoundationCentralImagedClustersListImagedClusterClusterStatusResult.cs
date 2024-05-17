@@ -14,13 +14,37 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetFoundationCentralImagedClustersListImagedClusterClusterStatusResult
     {
+        /// <summary>
+        /// Overall progress percentage including imaging and cluster creation.
+        /// </summary>
         public readonly double AggregatePercentComplete;
+        /// <summary>
+        /// Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
+        /// </summary>
         public readonly bool ClusterCreationStarted;
+        /// <summary>
+        /// Denotes the progress status of cluster creation.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetailResult> ClusterProgressDetails;
+        /// <summary>
+        /// Current IP address of the coordinating foundation node.
+        /// </summary>
         public readonly string CurrentFoundationIp;
+        /// <summary>
+        /// Foundation session id for cluster creation.
+        /// </summary>
         public readonly string FoundationSessionId;
+        /// <summary>
+        /// Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+        /// </summary>
         public readonly bool ImagingStopped;
+        /// <summary>
+        /// Denotes whether the remote nodes has picked up the cluster creation intent.
+        /// </summary>
         public readonly bool IntentPickedUp;
+        /// <summary>
+        /// List of progress details of each node.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailResult> NodeProgressDetails;
 
         [OutputConstructor]

@@ -11,6 +11,31 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// List all the nodes registered with Foundation Central
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetFoundationCentralImagedNodesList(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetFoundationCentralImagedNodesList(ctx *pulumi.Context, args *GetFoundationCentralImagedNodesListArgs, opts ...pulumi.InvokeOption) (*GetFoundationCentralImagedNodesListResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFoundationCentralImagedNodesListResult
@@ -24,8 +49,10 @@ func GetFoundationCentralImagedNodesList(ctx *pulumi.Context, args *GetFoundatio
 // A collection of arguments for invoking getFoundationCentralImagedNodesList.
 type GetFoundationCentralImagedNodesListArgs struct {
 	Filters *GetFoundationCentralImagedNodesListFilters `pulumi:"filters"`
-	Length  *int                                        `pulumi:"length"`
-	Offset  *int                                        `pulumi:"offset"`
+	// The number of records retrieved.
+	Length *int `pulumi:"length"`
+	// Offset from the start of the object list.
+	Offset *int `pulumi:"offset"`
 }
 
 // A collection of values returned by getFoundationCentralImagedNodesList.
@@ -34,9 +61,12 @@ type GetFoundationCentralImagedNodesListResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id          string                                          `pulumi:"id"`
 	ImagedNodes []GetFoundationCentralImagedNodesListImagedNode `pulumi:"imagedNodes"`
-	Length      *int                                            `pulumi:"length"`
-	Metadatas   []GetFoundationCentralImagedNodesListMetadata   `pulumi:"metadatas"`
-	Offset      *int                                            `pulumi:"offset"`
+	// The number of records retrieved.
+	Length *int `pulumi:"length"`
+	// List metadata output for all list apis.
+	Metadatas []GetFoundationCentralImagedNodesListMetadata `pulumi:"metadatas"`
+	// Offset from the start of the object list.
+	Offset *int `pulumi:"offset"`
 }
 
 func GetFoundationCentralImagedNodesListOutput(ctx *pulumi.Context, args GetFoundationCentralImagedNodesListOutputArgs, opts ...pulumi.InvokeOption) GetFoundationCentralImagedNodesListResultOutput {
@@ -55,8 +85,10 @@ func GetFoundationCentralImagedNodesListOutput(ctx *pulumi.Context, args GetFoun
 // A collection of arguments for invoking getFoundationCentralImagedNodesList.
 type GetFoundationCentralImagedNodesListOutputArgs struct {
 	Filters GetFoundationCentralImagedNodesListFiltersPtrInput `pulumi:"filters"`
-	Length  pulumi.IntPtrInput                                 `pulumi:"length"`
-	Offset  pulumi.IntPtrInput                                 `pulumi:"offset"`
+	// The number of records retrieved.
+	Length pulumi.IntPtrInput `pulumi:"length"`
+	// Offset from the start of the object list.
+	Offset pulumi.IntPtrInput `pulumi:"offset"`
 }
 
 func (GetFoundationCentralImagedNodesListOutputArgs) ElementType() reflect.Type {
@@ -95,16 +127,19 @@ func (o GetFoundationCentralImagedNodesListResultOutput) ImagedNodes() GetFounda
 	}).(GetFoundationCentralImagedNodesListImagedNodeArrayOutput)
 }
 
+// The number of records retrieved.
 func (o GetFoundationCentralImagedNodesListResultOutput) Length() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListResult) *int { return v.Length }).(pulumi.IntPtrOutput)
 }
 
+// List metadata output for all list apis.
 func (o GetFoundationCentralImagedNodesListResultOutput) Metadatas() GetFoundationCentralImagedNodesListMetadataArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListResult) []GetFoundationCentralImagedNodesListMetadata {
 		return v.Metadatas
 	}).(GetFoundationCentralImagedNodesListMetadataArrayOutput)
 }
 
+// Offset from the start of the object list.
 func (o GetFoundationCentralImagedNodesListResultOutput) Offset() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListResult) *int { return v.Offset }).(pulumi.IntPtrOutput)
 }

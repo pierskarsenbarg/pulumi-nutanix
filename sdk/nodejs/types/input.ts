@@ -798,98 +798,260 @@ export interface GetFloatingIpsMetadataArgs {
 }
 
 export interface GetFoundationCentralClusterDetailsClusterStatus {
+    /**
+     * Overall progress percentage including imaging and cluster creation.
+     */
     aggregatePercentComplete?: number;
+    /**
+     * Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
+     */
     clusterCreationStarted?: boolean;
+    /**
+     * Denotes the progress status of cluster creation.
+     */
     clusterProgressDetails?: inputs.GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetail[];
+    /**
+     * Current IP address of the coordinating foundation node.
+     */
     currentFoundationIp?: string;
+    /**
+     * Foundation session id for cluster creation.
+     */
     foundationSessionId?: string;
+    /**
+     * Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+     */
     imagingStopped?: boolean;
+    /**
+     * Denotes whether the remote nodes has picked up the cluster creation intent.
+     */
     intentPickedUp?: boolean;
+    /**
+     * List of progress details of each node.
+     */
     nodeProgressDetails?: inputs.GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetail[];
 }
 
 export interface GetFoundationCentralClusterDetailsClusterStatusArgs {
+    /**
+     * Overall progress percentage including imaging and cluster creation.
+     */
     aggregatePercentComplete?: pulumi.Input<number>;
+    /**
+     * Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
+     */
     clusterCreationStarted?: pulumi.Input<boolean>;
+    /**
+     * Denotes the progress status of cluster creation.
+     */
     clusterProgressDetails?: pulumi.Input<pulumi.Input<inputs.GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs>[]>;
+    /**
+     * Current IP address of the coordinating foundation node.
+     */
     currentFoundationIp?: pulumi.Input<string>;
+    /**
+     * Foundation session id for cluster creation.
+     */
     foundationSessionId?: pulumi.Input<string>;
+    /**
+     * Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+     */
     imagingStopped?: pulumi.Input<boolean>;
+    /**
+     * Denotes whether the remote nodes has picked up the cluster creation intent.
+     */
     intentPickedUp?: pulumi.Input<boolean>;
+    /**
+     * List of progress details of each node.
+     */
     nodeProgressDetails?: pulumi.Input<pulumi.Input<inputs.GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs>[]>;
 }
 
 export interface GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetail {
+    /**
+     * Cluster name.
+     */
     clusterName?: string;
+    /**
+     * List of messages for the client based on process state.
+     */
     messageLists?: string[];
+    /**
+     * Percent completion of cluster creation process.
+     */
     percentComplete?: number;
+    /**
+     * Current status of cluster creation process.
+     */
     status?: string;
 }
 
 export interface GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs {
+    /**
+     * Cluster name.
+     */
     clusterName?: pulumi.Input<string>;
+    /**
+     * List of messages for the client based on process state.
+     */
     messageLists?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Percent completion of cluster creation process.
+     */
     percentComplete?: pulumi.Input<number>;
+    /**
+     * Current status of cluster creation process.
+     */
     status?: pulumi.Input<string>;
 }
 
 export interface GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetail {
+    /**
+     * UUID of the node.
+     */
     imagedNodeUuid?: string;
+    /**
+     * Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+     */
     imagingStopped?: boolean;
+    /**
+     * Denotes whether the remote nodes has picked up the cluster creation intent.
+     */
     intentPickedUp?: boolean;
+    /**
+     * List of messages for the client based on process state.
+     */
     messageLists?: string[];
+    /**
+     * Percent completion of cluster creation process.
+     */
     percentComplete?: number;
+    /**
+     * Current status of cluster creation process.
+     */
     status?: string;
 }
 
 export interface GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs {
+    /**
+     * UUID of the node.
+     */
     imagedNodeUuid?: pulumi.Input<string>;
+    /**
+     * Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+     */
     imagingStopped?: pulumi.Input<boolean>;
+    /**
+     * Denotes whether the remote nodes has picked up the cluster creation intent.
+     */
     intentPickedUp?: pulumi.Input<boolean>;
+    /**
+     * List of messages for the client based on process state.
+     */
     messageLists?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Percent completion of cluster creation process.
+     */
     percentComplete?: pulumi.Input<number>;
+    /**
+     * Current status of cluster creation process.
+     */
     status?: pulumi.Input<string>;
 }
 
 export interface GetFoundationCentralClusterDetailsCommonNetworkSettings {
+    /**
+     * List of dns servers for the cvms in the cluster.
+     */
     cvmDnsServers?: string[];
+    /**
+     * List of ntp servers for the cvms in the cluster.
+     */
     cvmNtpServers?: string[];
+    /**
+     * List of dns servers for the hypervisors in the cluster.
+     */
     hypervisorDnsServers?: string[];
+    /**
+     * List of ntp servers for the hypervisors in the cluster.
+     */
     hypervisorNtpServers?: string[];
 }
 
 export interface GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs {
+    /**
+     * List of dns servers for the cvms in the cluster.
+     */
     cvmDnsServers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * List of ntp servers for the cvms in the cluster.
+     */
     cvmNtpServers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * List of dns servers for the hypervisors in the cluster.
+     */
     hypervisorDnsServers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * List of ntp servers for the hypervisors in the cluster.
+     */
     hypervisorNtpServers?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface GetFoundationCentralImagedClustersListFilters {
+    /**
+     * True if the cluster creation request is archived, False otherwise
+     */
     archived?: boolean;
 }
 
 export interface GetFoundationCentralImagedClustersListFiltersArgs {
+    /**
+     * True if the cluster creation request is archived, False otherwise
+     */
     archived?: pulumi.Input<boolean>;
 }
 
 export interface GetFoundationCentralImagedNodesListFilters {
+    /**
+     * Specifies whether the node is discovering, available or unavailable for cluster creation.
+     */
     nodeState?: string;
 }
 
 export interface GetFoundationCentralImagedNodesListFiltersArgs {
+    /**
+     * Specifies whether the node is discovering, available or unavailable for cluster creation.
+     */
     nodeState?: pulumi.Input<string>;
 }
 
 export interface GetFoundationCentralListApiKeysMetadata {
+    /**
+     * The number of records retrieved.
+     */
     length?: number;
+    /**
+     * Offset from the start of the object list.
+     */
     offset?: number;
+    /**
+     * Total matches found.
+     */
     totalMatches?: number;
 }
 
 export interface GetFoundationCentralListApiKeysMetadataArgs {
+    /**
+     * The number of records retrieved.
+     */
     length?: pulumi.Input<number>;
+    /**
+     * Offset from the start of the object list.
+     */
     offset?: pulumi.Input<number>;
+    /**
+     * Total matches found.
+     */
     totalMatches?: pulumi.Input<number>;
 }
 

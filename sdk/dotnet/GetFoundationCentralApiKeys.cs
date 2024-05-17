@@ -12,9 +12,51 @@ namespace PiersKarsenbarg.Nutanix
 {
     public static class GetFoundationCentralApiKeys
     {
+        /// <summary>
+        /// Get an api key given its UUID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var apiKeysList = Nutanix.GetFoundationCentralApiKeys.Invoke(new()
+        ///     {
+        ///         KeyUuid = "&lt;KEY_UUID&gt;",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Task<GetFoundationCentralApiKeysResult> InvokeAsync(GetFoundationCentralApiKeysArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralApiKeysResult>("nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys", args ?? new GetFoundationCentralApiKeysArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// Get an api key given its UUID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var apiKeysList = Nutanix.GetFoundationCentralApiKeys.Invoke(new()
+        ///     {
+        ///         KeyUuid = "&lt;KEY_UUID&gt;",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Output<GetFoundationCentralApiKeysResult> Invoke(GetFoundationCentralApiKeysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralApiKeysResult>("nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys", args ?? new GetFoundationCentralApiKeysInvokeArgs(), options.WithDefaults());
     }
@@ -22,6 +64,9 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetFoundationCentralApiKeysArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// UUID of the key which needs to be fetched.
+        /// </summary>
         [Input("keyUuid", required: true)]
         public string KeyUuid { get; set; } = null!;
 
@@ -33,6 +78,9 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetFoundationCentralApiKeysInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// UUID of the key which needs to be fetched.
+        /// </summary>
         [Input("keyUuid", required: true)]
         public Input<string> KeyUuid { get; set; } = null!;
 
@@ -46,14 +94,29 @@ namespace PiersKarsenbarg.Nutanix
     [OutputType]
     public sealed class GetFoundationCentralApiKeysResult
     {
+        /// <summary>
+        /// Alias of the api key.
+        /// </summary>
         public readonly string Alias;
+        /// <summary>
+        /// Api key in string format.
+        /// </summary>
         public readonly string ApiKey;
+        /// <summary>
+        /// Time when the api key was created.
+        /// </summary>
         public readonly string CreatedTimestamp;
+        /// <summary>
+        /// Current time of Foundation Central.
+        /// </summary>
         public readonly string CurrentTime;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// UUID of the api key.
+        /// </summary>
         public readonly string KeyUuid;
 
         [OutputConstructor]

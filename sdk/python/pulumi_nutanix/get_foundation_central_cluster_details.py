@@ -79,56 +79,89 @@ class GetFoundationCentralClusterDetailsResult:
     @property
     @pulumi.getter
     def archived(self) -> bool:
+        """
+        True if the cluster creation request is archived, False otherwise
+        """
         return pulumi.get(self, "archived")
 
     @property
     @pulumi.getter(name="clusterExternalIp")
     def cluster_external_ip(self) -> str:
+        """
+        External management ip of the cluster.
+        """
         return pulumi.get(self, "cluster_external_ip")
 
     @property
     @pulumi.getter(name="clusterName")
     def cluster_name(self) -> str:
+        """
+        Cluster name.
+        """
         return pulumi.get(self, "cluster_name")
 
     @property
     @pulumi.getter(name="clusterSize")
     def cluster_size(self) -> int:
+        """
+        Number of nodes in the cluster.
+        """
         return pulumi.get(self, "cluster_size")
 
     @property
     @pulumi.getter(name="clusterStatus")
     def cluster_status(self) -> 'outputs.GetFoundationCentralClusterDetailsClusterStatusResult':
+        """
+        Details of cluster creation process.
+        """
         return pulumi.get(self, "cluster_status")
 
     @property
     @pulumi.getter(name="commonNetworkSettings")
     def common_network_settings(self) -> 'outputs.GetFoundationCentralClusterDetailsCommonNetworkSettingsResult':
+        """
+        Common network settings across the nodes in the cluster.
+        """
         return pulumi.get(self, "common_network_settings")
 
     @property
     @pulumi.getter(name="createdTimestamp")
     def created_timestamp(self) -> str:
+        """
+        Time when the cluster creation request was received in Foundation Central.
+        """
         return pulumi.get(self, "created_timestamp")
 
     @property
     @pulumi.getter(name="currentTime")
     def current_time(self) -> str:
+        """
+        Current time of Foundation Central.
+        """
         return pulumi.get(self, "current_time")
 
     @property
     @pulumi.getter
     def destroyed(self) -> bool:
+        """
+        True if the cluster is destroyed, False otherwise
+        """
         return pulumi.get(self, "destroyed")
 
     @property
     @pulumi.getter(name="foundationInitConfigs")
     def foundation_init_configs(self) -> Sequence['outputs.GetFoundationCentralClusterDetailsFoundationInitConfigResult']:
+        """
+        Json config used by Foundation to create the cluster.
+        """
         return pulumi.get(self, "foundation_init_configs")
 
     @property
     @pulumi.getter(name="foundationInitNodeUuid")
     def foundation_init_node_uuid(self) -> str:
+        """
+        UUID of the first node coordinating cluster creation.
+        """
         return pulumi.get(self, "foundation_init_node_uuid")
 
     @property
@@ -142,26 +175,41 @@ class GetFoundationCentralClusterDetailsResult:
     @property
     @pulumi.getter(name="imagedClusterUuid")
     def imaged_cluster_uuid(self) -> str:
+        """
+        UUID of the cluster.
+        """
         return pulumi.get(self, "imaged_cluster_uuid")
 
     @property
     @pulumi.getter(name="imagedNodeUuidLists")
     def imaged_node_uuid_lists(self) -> Sequence[str]:
+        """
+        List of UUIDs of imaged nodes.
+        """
         return pulumi.get(self, "imaged_node_uuid_lists")
 
     @property
     @pulumi.getter(name="redundancyFactor")
     def redundancy_factor(self) -> Optional[int]:
+        """
+        Redundancy factor of the cluster.
+        """
         return pulumi.get(self, "redundancy_factor")
 
     @property
     @pulumi.getter(name="storageNodeCount")
     def storage_node_count(self) -> int:
+        """
+        Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+        """
         return pulumi.get(self, "storage_node_count")
 
     @property
     @pulumi.getter(name="workflowType")
     def workflow_type(self) -> str:
+        """
+        If imaging and cluster creation is coordinated by Foundation, value will be FOUNDATION_WF. If the nodes are in phoenix, value will be PHOENIX_WF.
+        """
         return pulumi.get(self, "workflow_type")
 
 
@@ -200,7 +248,26 @@ def get_foundation_central_cluster_details(cluster_external_ip: Optional[str] = 
                                            storage_node_count: Optional[int] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFoundationCentralClusterDetailsResult:
     """
-    Use this data source to access information about an existing resource.
+    Get a cluster details created using Foundation Central.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    imaged_cluster_details = nutanix.get_foundation_central_cluster_details(imaged_cluster_uuid="<CLUSTER-UUID>")
+    ```
+
+
+    :param str cluster_external_ip: External management ip of the cluster.
+    :param str cluster_name: Cluster name.
+    :param int cluster_size: Number of nodes in the cluster.
+    :param pulumi.InputType['GetFoundationCentralClusterDetailsClusterStatusArgs'] cluster_status: Details of cluster creation process.
+    :param pulumi.InputType['GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs'] common_network_settings: Common network settings across the nodes in the cluster.
+    :param str imaged_cluster_uuid: UUID of the cluster whose details need to be fetched.
+    :param int redundancy_factor: Redundancy factor of the cluster.
+    :param int storage_node_count: Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
     """
     __args__ = dict()
     __args__['clusterExternalIp'] = cluster_external_ip
@@ -245,6 +312,25 @@ def get_foundation_central_cluster_details_output(cluster_external_ip: Optional[
                                                   storage_node_count: Optional[pulumi.Input[Optional[int]]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationCentralClusterDetailsResult]:
     """
-    Use this data source to access information about an existing resource.
+    Get a cluster details created using Foundation Central.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    imaged_cluster_details = nutanix.get_foundation_central_cluster_details(imaged_cluster_uuid="<CLUSTER-UUID>")
+    ```
+
+
+    :param str cluster_external_ip: External management ip of the cluster.
+    :param str cluster_name: Cluster name.
+    :param int cluster_size: Number of nodes in the cluster.
+    :param pulumi.InputType['GetFoundationCentralClusterDetailsClusterStatusArgs'] cluster_status: Details of cluster creation process.
+    :param pulumi.InputType['GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs'] common_network_settings: Common network settings across the nodes in the cluster.
+    :param str imaged_cluster_uuid: UUID of the cluster whose details need to be fetched.
+    :param int redundancy_factor: Redundancy factor of the cluster.
+    :param int storage_node_count: Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
     """
     ...

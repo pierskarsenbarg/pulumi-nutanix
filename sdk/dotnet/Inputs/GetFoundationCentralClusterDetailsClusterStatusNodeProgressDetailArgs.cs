@@ -13,26 +13,45 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// UUID of the node.
+        /// </summary>
         [Input("imagedNodeUuid", required: true)]
         public Input<string> ImagedNodeUuid { get; set; } = null!;
 
+        /// <summary>
+        /// Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+        /// </summary>
         [Input("imagingStopped", required: true)]
         public Input<bool> ImagingStopped { get; set; } = null!;
 
+        /// <summary>
+        /// Denotes whether the remote nodes has picked up the cluster creation intent.
+        /// </summary>
         [Input("intentPickedUp", required: true)]
         public Input<bool> IntentPickedUp { get; set; } = null!;
 
         [Input("messageLists", required: true)]
         private InputList<string>? _messageLists;
+
+        /// <summary>
+        /// List of messages for the client based on process state.
+        /// </summary>
         public InputList<string> MessageLists
         {
             get => _messageLists ?? (_messageLists = new InputList<string>());
             set => _messageLists = value;
         }
 
+        /// <summary>
+        /// Percent completion of cluster creation process.
+        /// </summary>
         [Input("percentComplete", required: true)]
         public Input<double> PercentComplete { get; set; } = null!;
 
+        /// <summary>
+        /// Current status of cluster creation process.
+        /// </summary>
         [Input("status", required: true)]
         public Input<string> Status { get; set; } = null!;
 
