@@ -84,45 +84,16 @@ export class Project extends pulumi.CustomResource {
         return obj['__pulumiType'] === Project.__pulumiType;
     }
 
-    /**
-     * List of accounts associated with the project.
-     * * `account_reference_list.#.kind` - (Optional) The kind name. Default value is `account`
-     * * `account_reference_list.#.uuid` - (Required) The UUID of an account.
-     * * `account_reference_list.#.name` - (Optional/Computed) The name of an account.
-     */
     public readonly accountReferenceLists!: pulumi.Output<outputs.ProjectAccountReferenceList[]>;
     public readonly apiVersion!: pulumi.Output<string>;
     public readonly categories!: pulumi.Output<outputs.ProjectCategory[]>;
-    /**
-     * Reference to a subnet.
-     * * `default_subnet_reference.kind` - (Optional) The kind name. Default value is `subnet`
-     * * `default_subnet_reference.uuid` - (Required) The UUID of a subnet.
-     * * `default_subnet_reference.name` - (Optional/Computed) The name of a subnet.
-     */
     public readonly defaultSubnetReference!: pulumi.Output<outputs.ProjectDefaultSubnetReference>;
     /**
      * A description for project.
      */
     public readonly description!: pulumi.Output<string>;
-    /**
-     * List of environments associated with the project.
-     * * `environment_reference_list.#.kind` - (Optional) The kind name. Default value is `environment`
-     * * `environment_reference_list.#.uuid` - (Required) The UUID of an environment.
-     * * `environment_reference_list.#.name` - (Optional/Computed) The name of an environment.
-     */
     public readonly environmentReferenceLists!: pulumi.Output<outputs.ProjectEnvironmentReferenceList[]>;
-    /**
-     * List of external networks associated with the project.
-     * * `external_network_list.#.uuid` - (Required) The UUID of a network.
-     * * `external_network_list.#.name` - (Optional/Computed) The name of a network.
-     */
     public readonly externalNetworkLists!: pulumi.Output<outputs.ProjectExternalNetworkList[]>;
-    /**
-     * List of directory service user groups. These groups are not managed by Nutanix.
-     * * `external_user_group_reference_list.#.kind` - (Optional) The kind name. Default value is `userGroup`
-     * * `external_user_group_reference_list.#.uuid` - (Required) The UUID of a userGroup
-     * * `external_user_group_reference_list.#.name` - (Optional/Computed) The name of a user_group
-     */
     public readonly externalUserGroupReferenceLists!: pulumi.Output<outputs.ProjectExternalUserGroupReferenceList[]>;
     public /*out*/ readonly isDefault!: pulumi.Output<boolean>;
     public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
@@ -132,27 +103,9 @@ export class Project extends pulumi.CustomResource {
     public readonly name!: pulumi.Output<string>;
     public readonly ownerReference!: pulumi.Output<{[key: string]: string}>;
     public readonly projectReference!: pulumi.Output<{[key: string]: string}>;
-    /**
-     * The status for a resource domain (limits and values)
-     * * `resource_domain.resources` - (Required) Array of the utilization/limit for resource types
-     * * `resource_domain.resources.#.limit` - (Required) The resource consumption limit (unspecified is unlimited)
-     * * `resource_domain.resources.#.resource_type` - (Required) The type of resource (for example storage, CPUs)
-     */
     public readonly resourceDomain!: pulumi.Output<outputs.ProjectResourceDomain | undefined>;
     public /*out*/ readonly state!: pulumi.Output<string>;
-    /**
-     * List of subnets for the project.
-     * * `subnet_reference_list.#.kind` - (Optional) The kind name. Default value is `subnet`
-     * * `subnet_reference_list.#.uuid` - (Required) The UUID of a subnet
-     * * `subnet_reference_list.#.name` - (Optional/Computed) The name of a subnet.
-     */
     public readonly subnetReferenceLists!: pulumi.Output<outputs.ProjectSubnetReferenceList[]>;
-    /**
-     * List of users in the project.
-     * * `user_reference_list.#.kind` - (Optional) The kind name. Default value is `user`
-     * * `user_reference_list.#.uuid` - (Required) The UUID of a user
-     * * `user_reference_list.#.name` - (Optional/Computed) The name of a user.
-     */
     public readonly userReferenceLists!: pulumi.Output<outputs.ProjectUserReferenceList[]>;
 
     /**
@@ -220,45 +173,16 @@ export class Project extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Project resources.
  */
 export interface ProjectState {
-    /**
-     * List of accounts associated with the project.
-     * * `account_reference_list.#.kind` - (Optional) The kind name. Default value is `account`
-     * * `account_reference_list.#.uuid` - (Required) The UUID of an account.
-     * * `account_reference_list.#.name` - (Optional/Computed) The name of an account.
-     */
     accountReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectAccountReferenceList>[]>;
     apiVersion?: pulumi.Input<string>;
     categories?: pulumi.Input<pulumi.Input<inputs.ProjectCategory>[]>;
-    /**
-     * Reference to a subnet.
-     * * `default_subnet_reference.kind` - (Optional) The kind name. Default value is `subnet`
-     * * `default_subnet_reference.uuid` - (Required) The UUID of a subnet.
-     * * `default_subnet_reference.name` - (Optional/Computed) The name of a subnet.
-     */
     defaultSubnetReference?: pulumi.Input<inputs.ProjectDefaultSubnetReference>;
     /**
      * A description for project.
      */
     description?: pulumi.Input<string>;
-    /**
-     * List of environments associated with the project.
-     * * `environment_reference_list.#.kind` - (Optional) The kind name. Default value is `environment`
-     * * `environment_reference_list.#.uuid` - (Required) The UUID of an environment.
-     * * `environment_reference_list.#.name` - (Optional/Computed) The name of an environment.
-     */
     environmentReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectEnvironmentReferenceList>[]>;
-    /**
-     * List of external networks associated with the project.
-     * * `external_network_list.#.uuid` - (Required) The UUID of a network.
-     * * `external_network_list.#.name` - (Optional/Computed) The name of a network.
-     */
     externalNetworkLists?: pulumi.Input<pulumi.Input<inputs.ProjectExternalNetworkList>[]>;
-    /**
-     * List of directory service user groups. These groups are not managed by Nutanix.
-     * * `external_user_group_reference_list.#.kind` - (Optional) The kind name. Default value is `userGroup`
-     * * `external_user_group_reference_list.#.uuid` - (Required) The UUID of a userGroup
-     * * `external_user_group_reference_list.#.name` - (Optional/Computed) The name of a user_group
-     */
     externalUserGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectExternalUserGroupReferenceList>[]>;
     isDefault?: pulumi.Input<boolean>;
     metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
@@ -268,27 +192,9 @@ export interface ProjectState {
     name?: pulumi.Input<string>;
     ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    /**
-     * The status for a resource domain (limits and values)
-     * * `resource_domain.resources` - (Required) Array of the utilization/limit for resource types
-     * * `resource_domain.resources.#.limit` - (Required) The resource consumption limit (unspecified is unlimited)
-     * * `resource_domain.resources.#.resource_type` - (Required) The type of resource (for example storage, CPUs)
-     */
     resourceDomain?: pulumi.Input<inputs.ProjectResourceDomain>;
     state?: pulumi.Input<string>;
-    /**
-     * List of subnets for the project.
-     * * `subnet_reference_list.#.kind` - (Optional) The kind name. Default value is `subnet`
-     * * `subnet_reference_list.#.uuid` - (Required) The UUID of a subnet
-     * * `subnet_reference_list.#.name` - (Optional/Computed) The name of a subnet.
-     */
     subnetReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectSubnetReferenceList>[]>;
-    /**
-     * List of users in the project.
-     * * `user_reference_list.#.kind` - (Optional) The kind name. Default value is `user`
-     * * `user_reference_list.#.uuid` - (Required) The UUID of a user
-     * * `user_reference_list.#.name` - (Optional/Computed) The name of a user.
-     */
     userReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectUserReferenceList>[]>;
 }
 
@@ -296,45 +202,16 @@ export interface ProjectState {
  * The set of arguments for constructing a Project resource.
  */
 export interface ProjectArgs {
-    /**
-     * List of accounts associated with the project.
-     * * `account_reference_list.#.kind` - (Optional) The kind name. Default value is `account`
-     * * `account_reference_list.#.uuid` - (Required) The UUID of an account.
-     * * `account_reference_list.#.name` - (Optional/Computed) The name of an account.
-     */
     accountReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectAccountReferenceList>[]>;
     apiVersion?: pulumi.Input<string>;
     categories?: pulumi.Input<pulumi.Input<inputs.ProjectCategory>[]>;
-    /**
-     * Reference to a subnet.
-     * * `default_subnet_reference.kind` - (Optional) The kind name. Default value is `subnet`
-     * * `default_subnet_reference.uuid` - (Required) The UUID of a subnet.
-     * * `default_subnet_reference.name` - (Optional/Computed) The name of a subnet.
-     */
     defaultSubnetReference: pulumi.Input<inputs.ProjectDefaultSubnetReference>;
     /**
      * A description for project.
      */
     description: pulumi.Input<string>;
-    /**
-     * List of environments associated with the project.
-     * * `environment_reference_list.#.kind` - (Optional) The kind name. Default value is `environment`
-     * * `environment_reference_list.#.uuid` - (Required) The UUID of an environment.
-     * * `environment_reference_list.#.name` - (Optional/Computed) The name of an environment.
-     */
     environmentReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectEnvironmentReferenceList>[]>;
-    /**
-     * List of external networks associated with the project.
-     * * `external_network_list.#.uuid` - (Required) The UUID of a network.
-     * * `external_network_list.#.name` - (Optional/Computed) The name of a network.
-     */
     externalNetworkLists?: pulumi.Input<pulumi.Input<inputs.ProjectExternalNetworkList>[]>;
-    /**
-     * List of directory service user groups. These groups are not managed by Nutanix.
-     * * `external_user_group_reference_list.#.kind` - (Optional) The kind name. Default value is `userGroup`
-     * * `external_user_group_reference_list.#.uuid` - (Required) The UUID of a userGroup
-     * * `external_user_group_reference_list.#.name` - (Optional/Computed) The name of a user_group
-     */
     externalUserGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectExternalUserGroupReferenceList>[]>;
     /**
      * The name for the project.
@@ -342,25 +219,7 @@ export interface ProjectArgs {
     name?: pulumi.Input<string>;
     ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     projectReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    /**
-     * The status for a resource domain (limits and values)
-     * * `resource_domain.resources` - (Required) Array of the utilization/limit for resource types
-     * * `resource_domain.resources.#.limit` - (Required) The resource consumption limit (unspecified is unlimited)
-     * * `resource_domain.resources.#.resource_type` - (Required) The type of resource (for example storage, CPUs)
-     */
     resourceDomain?: pulumi.Input<inputs.ProjectResourceDomain>;
-    /**
-     * List of subnets for the project.
-     * * `subnet_reference_list.#.kind` - (Optional) The kind name. Default value is `subnet`
-     * * `subnet_reference_list.#.uuid` - (Required) The UUID of a subnet
-     * * `subnet_reference_list.#.name` - (Optional/Computed) The name of a subnet.
-     */
     subnetReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectSubnetReferenceList>[]>;
-    /**
-     * List of users in the project.
-     * * `user_reference_list.#.kind` - (Optional) The kind name. Default value is `user`
-     * * `user_reference_list.#.uuid` - (Required) The UUID of a user
-     * * `user_reference_list.#.name` - (Optional/Computed) The name of a user.
-     */
     userReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectUserReferenceList>[]>;
 }

@@ -25,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string MaxResolution;
         public readonly string Mode;
         /// <summary>
-        /// - the key name.
+        /// - the name.
         /// </summary>
         public readonly string Name;
         public readonly int NumVgpusAllocated;
@@ -34,7 +34,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string PciAddress;
         public readonly string Status;
         /// <summary>
-        /// - image uuid.
+        /// - the uuid.
         /// </summary>
         public readonly string Uuid;
         public readonly string Vendor;

@@ -14,6 +14,7 @@ import (
 // Provides Nutanix resource to create VPC.
 //
 // ## Example Usage
+//
 // ### vpc creation with external subnet name
 //
 // ```go
@@ -56,6 +57,7 @@ import (
 //	}
 //
 // ```
+//
 // ### vpc creation with external subnet uuid
 //
 // ```go

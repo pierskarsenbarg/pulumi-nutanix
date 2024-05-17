@@ -15,37 +15,20 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Provides a datasource to retrieve all the users.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// ``` hcl
+        /// resource "nutanix_user" "user" {
+        /// 	directory_service_user {
+        /// 		user_principal_name = "test-user@ntnxlab.local"
+        /// 		directory_service_reference {
+        /// 		uuid = "&lt;directory-service-uuid&gt;"
+        /// 		}
+        /// 	}
+        /// }
         /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var user = new Nutanix.User("user", new()
-        ///     {
-        ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
-        ///         {
-        ///             DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
-        ///             {
-        ///                 Uuid = "&lt;directory-service-uuid&gt;",
-        ///             },
-        ///             UserPrincipalName = "test-user@ntnxlab.local",
-        ///         },
-        ///     });
-        /// 
-        ///     var users = Nutanix.GetUser.Invoke();
-        /// 
-        /// });
+        /// data "nutanix_user" "users" {}
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetUsersResult> InvokeAsync(GetUsersArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUsersResult>("nutanix:index/getUsers:getUsers", args ?? new GetUsersArgs(), options.WithDefaults());
@@ -53,37 +36,20 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Provides a datasource to retrieve all the users.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = PiersKarsenbarg.Nutanix;
-        /// using Nutanix = Pulumi.Nutanix;
+        /// ``` hcl
+        /// resource "nutanix_user" "user" {
+        /// 	directory_service_user {
+        /// 		user_principal_name = "test-user@ntnxlab.local"
+        /// 		directory_service_reference {
+        /// 		uuid = "&lt;directory-service-uuid&gt;"
+        /// 		}
+        /// 	}
+        /// }
         /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var user = new Nutanix.User("user", new()
-        ///     {
-        ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
-        ///         {
-        ///             DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
-        ///             {
-        ///                 Uuid = "&lt;directory-service-uuid&gt;",
-        ///             },
-        ///             UserPrincipalName = "test-user@ntnxlab.local",
-        ///         },
-        ///     });
-        /// 
-        ///     var users = Nutanix.GetUser.Invoke();
-        /// 
-        /// });
+        /// data "nutanix_user" "users" {}
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetUsersResult> Invoke(GetUsersInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUsersResult>("nutanix:index/getUsers:getUsers", args ?? new GetUsersInvokeArgs(), options.WithDefaults());

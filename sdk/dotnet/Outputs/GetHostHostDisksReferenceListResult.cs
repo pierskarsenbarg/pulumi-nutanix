@@ -19,11 +19,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string Kind;
         /// <summary>
-        /// - the key name.
+        /// - the name.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// - image uuid.
+        /// - the uuid.
         /// </summary>
         public readonly string Uuid;
 

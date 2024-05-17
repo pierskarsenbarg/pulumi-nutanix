@@ -68,6 +68,7 @@ def get_foundation_nod_packages(opts: Optional[pulumi.InvokeOptions] = None) -> 
 
     nos_packages = nutanix.get_foundation_nod_packages()
     ```
+
     ## Note
 
     * This data source only lists .tar file names.
@@ -96,6 +97,7 @@ def get_foundation_nod_packages_output(opts: Optional[pulumi.InvokeOptions] = No
 
     nos_packages = nutanix.get_foundation_nod_packages()
     ```
+
     ## Note
 
     * This data source only lists .tar file names.

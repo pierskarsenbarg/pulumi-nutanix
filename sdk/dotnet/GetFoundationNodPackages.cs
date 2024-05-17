@@ -15,9 +15,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes a list of nos (aos) packages present in foundation vm
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -31,8 +29,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// 
         /// ## Note
         /// 
         /// * This data source only lists .tar file names.
@@ -45,9 +42,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes a list of nos (aos) packages present in foundation vm
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -61,8 +56,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// 
         /// ## Note
         /// 
         /// * This data source only lists .tar file names.

@@ -14,10 +14,25 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetKarbonClusterEtcdNodePoolAhvConfigResult
     {
+        /// <summary>
+        /// - The number of VCPUs allocated for each VM on the PE cluster.
+        /// </summary>
         public readonly int Cpu;
+        /// <summary>
+        /// - Size of local storage for each VM on the PE cluster in MiB.
+        /// </summary>
         public readonly int DiskMib;
+        /// <summary>
+        /// - Memory allocated for each VM on the PE cluster in MiB.
+        /// </summary>
         public readonly int MemoryMib;
+        /// <summary>
+        /// - The UUID of the network for the VMs deployed with this resource configuration.
+        /// </summary>
         public readonly string NetworkUuid;
+        /// <summary>
+        /// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        /// </summary>
         public readonly string PrismElementClusterUuid;
 
         [OutputConstructor]

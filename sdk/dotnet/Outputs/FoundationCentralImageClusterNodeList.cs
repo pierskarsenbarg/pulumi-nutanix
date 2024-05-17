@@ -14,77 +14,23 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class FoundationCentralImageClusterNodeList
     {
-        /// <summary>
-        /// Gateway of the cvm.
-        /// </summary>
         public readonly string? CvmGateway;
-        /// <summary>
-        /// IP address to be set for the cvm on the node.
-        /// </summary>
         public readonly string? CvmIp;
-        /// <summary>
-        /// Netmask of the cvm.
-        /// </summary>
         public readonly string? CvmNetmask;
-        /// <summary>
-        /// Amount of memory to be assigned for the cvm.
-        /// </summary>
         public readonly int? CvmRamGb;
-        /// <summary>
-        /// Vlan tag of the cvm, if the cvm is on a vlan.
-        /// </summary>
         public readonly int? CvmVlanId;
-        /// <summary>
-        /// Hardware attributes override json for the node.
-        /// </summary>
         public readonly ImmutableDictionary<string, object>? HardwareAttributesOverride;
-        /// <summary>
-        /// Gateway of the hypervisor.
-        /// </summary>
         public readonly string? HypervisorGateway;
-        /// <summary>
-        /// Name to be set for the hypervisor host.
-        /// </summary>
         public readonly string? HypervisorHostname;
-        /// <summary>
-        /// IP address to be set for the hypervisor on the node.
-        /// </summary>
         public readonly string? HypervisorIp;
-        /// <summary>
-        /// Netmask of the hypervisor.
-        /// </summary>
         public readonly string? HypervisorNetmask;
-        /// <summary>
-        /// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-        /// </summary>
         public readonly string? HypervisorType;
-        /// <summary>
-        /// True, if the node should be imaged, False, otherwise.
-        /// </summary>
         public readonly bool? ImageNow;
-        /// <summary>
-        /// UUID of the node.
-        /// </summary>
         public readonly string? ImagedNodeUuid;
-        /// <summary>
-        /// Gateway of the ipmi.
-        /// </summary>
         public readonly string? IpmiGateway;
-        /// <summary>
-        /// IP address to be set for the ipmi of the node.
-        /// </summary>
         public readonly string? IpmiIp;
-        /// <summary>
-        /// Netmask of the ipmi.
-        /// </summary>
         public readonly string? IpmiNetmask;
-        /// <summary>
-        /// Passthrough RDMA nic to CVM if possible, default to false.
-        /// </summary>
         public readonly bool? RdmaPassthrough;
-        /// <summary>
-        /// Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
-        /// </summary>
         public readonly bool? UseExistingNetworkSettings;
 
         [OutputConstructor]

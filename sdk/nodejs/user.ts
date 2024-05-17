@@ -10,30 +10,6 @@ import * as utilities from "./utilities";
  * Provides a resource to create a user based on the input parameters.
  *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * const user = new nutanix.User("user", {directoryServiceUser: {
- *     directoryServiceReference: {
- *         uuid: "<directory-service-uuid>",
- *     },
- *     userPrincipalName: "test-user@ntnxlab.local",
- * }});
- * ```
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * const user = new nutanix.User("user", {identityProviderUser: {
- *     identityProviderReference: {
- *         uuid: "<identity-provider-uuid>",
- *     },
- *     username: "username",
- * }});
- * ```
  */
 export class User extends pulumi.CustomResource {
     /**

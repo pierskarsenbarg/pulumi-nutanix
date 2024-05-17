@@ -1047,6 +1047,7 @@ class NetworkSecurityRule(pulumi.CustomResource):
         > NOTE: The use of network_security_rule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
 
         ## Example Usage
+
         ### Isolation Rule Example
 
         ```python
@@ -1069,6 +1070,7 @@ class NetworkSecurityRule(pulumi.CustomResource):
             )],
             isolation_rule_second_entity_filter_type="CATEGORIES_MATCH_ALL")
         ```
+
         ### Usage with service and address groups
         ```python
         import pulumi
@@ -1172,6 +1174,7 @@ class NetworkSecurityRule(pulumi.CustomResource):
         > NOTE: The use of network_security_rule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
 
         ## Example Usage
+
         ### Isolation Rule Example
 
         ```python
@@ -1194,6 +1197,7 @@ class NetworkSecurityRule(pulumi.CustomResource):
             )],
             isolation_rule_second_entity_filter_type="CATEGORIES_MATCH_ALL")
         ```
+
         ### Usage with service and address groups
         ```python
         import pulumi

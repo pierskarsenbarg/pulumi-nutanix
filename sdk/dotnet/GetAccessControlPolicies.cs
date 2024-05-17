@@ -15,24 +15,11 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes a list of access control policies.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var test = Nutanix.GetAccessControlPolicies.Invoke();
-        /// 
-        /// });
+        /// ``` hcl
+        /// data "nutanix_access_control_policies" "test" {}
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetAccessControlPoliciesResult> InvokeAsync(GetAccessControlPoliciesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAccessControlPoliciesResult>("nutanix:index/getAccessControlPolicies:getAccessControlPolicies", args ?? new GetAccessControlPoliciesArgs(), options.WithDefaults());
@@ -40,24 +27,11 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes a list of access control policies.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var test = Nutanix.GetAccessControlPolicies.Invoke();
-        /// 
-        /// });
+        /// ``` hcl
+        /// data "nutanix_access_control_policies" "test" {}
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetAccessControlPoliciesResult> Invoke(GetAccessControlPoliciesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccessControlPoliciesResult>("nutanix:index/getAccessControlPolicies:getAccessControlPolicies", args ?? new GetAccessControlPoliciesInvokeArgs(), options.WithDefaults());

@@ -12,6 +12,7 @@ import * as utilities from "./utilities";
  * > NOTE: The use of networkSecurityRule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
  *
  * ## Example Usage
+ *
  * ### Isolation Rule Example
  *
  * ```typescript
@@ -35,6 +36,7 @@ import * as utilities from "./utilities";
  *     isolationRuleSecondEntityFilterType: "CATEGORIES_MATCH_ALL",
  * });
  * ```
+ *
  * ### Usage with service and address groups
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";

@@ -13,17 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class AddressGroupIpAddressBlockListArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// - (Required) IP of the address block
-        /// </summary>
         [Input("ip", required: true)]
         public Input<string> Ip { get; set; } = null!;
 
-        /// <summary>
-        /// - (Required) Prefix length of address block in int
-        /// 
-        /// See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/reference/prism_central/v3/api/address-groups/postaddressgroups).
-        /// </summary>
         [Input("prefixLength", required: true)]
         public Input<int> PrefixLength { get; set; } = null!;
 

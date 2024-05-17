@@ -122,9 +122,6 @@ export interface GetProjectResult {
     readonly categories: outputs.GetProjectCategory[];
     /**
      * Reference to a subnet.
-     * * `default_subnet_reference.kind` - The kind name. Default value is `subnet`
-     * * `default_subnet_reference.uuid` - The UUID of a subnet.
-     * * `default_subnet_reference.name` - The name of a subnet.
      */
     readonly defaultSubnetReference: {[key: string]: string};
     /**
@@ -167,11 +164,6 @@ export interface GetProjectResult {
     readonly projectReference: {[key: string]: string};
     /**
      * The status for a resource domain (limits and values)
-     * * `resource_domain.resources` Array of the utilization/limit for resource types
-     * * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
-     * * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
-     * * `resource_domain.resources.#.units` - The units of the resource type
-     * * `resource_domain.resources.#.value` - The amount of resource consumed
      */
     readonly resourceDomains: outputs.GetProjectResourceDomain[];
     readonly state: string;

@@ -33,7 +33,7 @@ import (
 //				return err
 //			}
 //			_, err = nutanix.NewVirtualMachine(ctx, "vm1", &nutanix.VirtualMachineArgs{
-//				ClusterUuid: *pulumi.String(clusters.Entities[0].Metadata.Uuid),
+//				ClusterUuid: pulumi.String(clusters.Entities[0].Metadata.Uuid),
 //				Categories: nutanix.VirtualMachineCategoryArray{
 //					&nutanix.VirtualMachineCategoryArgs{
 //						Name:  pulumi.String("Environment"),
@@ -52,6 +52,7 @@ import (
 //	}
 //
 // ```
+//
 // ### With Storage Config
 // ```go
 // package main
@@ -70,7 +71,7 @@ import (
 //				return err
 //			}
 //			_, err = nutanix.NewVirtualMachine(ctx, "vm", &nutanix.VirtualMachineArgs{
-//				ClusterUuid:       *pulumi.String(clusters.Entities[0].Metadata.Uuid),
+//				ClusterUuid:       pulumi.String(clusters.Entities[0].Metadata.Uuid),
 //				NumVcpusPerSocket: pulumi.Int(1),
 //				NumSockets:        pulumi.Int(1),
 //				MemorySizeMib:     pulumi.Int(186),
@@ -187,7 +188,7 @@ type VirtualMachine struct {
 	SerialPortLists VirtualMachineSerialPortListArrayOutput `pulumi:"serialPortLists"`
 	// - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
 	ShouldFailOnScriptFailure pulumi.BoolOutput `pulumi:"shouldFailOnScriptFailure"`
-	// - (Optional) Nutanix Guest Tools is enabled or not.
+	// - The state of the vm.
 	State pulumi.StringOutput `pulumi:"state"`
 	// - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
 	UseHotAdd pulumi.BoolPtrOutput `pulumi:"useHotAdd"`
@@ -315,7 +316,7 @@ type virtualMachineState struct {
 	SerialPortLists []VirtualMachineSerialPortList `pulumi:"serialPortLists"`
 	// - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
 	ShouldFailOnScriptFailure *bool `pulumi:"shouldFailOnScriptFailure"`
-	// - (Optional) Nutanix Guest Tools is enabled or not.
+	// - The state of the vm.
 	State *string `pulumi:"state"`
 	// - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
 	UseHotAdd *bool `pulumi:"useHotAdd"`
@@ -411,7 +412,7 @@ type VirtualMachineState struct {
 	SerialPortLists VirtualMachineSerialPortListArrayInput
 	// - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
 	ShouldFailOnScriptFailure pulumi.BoolPtrInput
-	// - (Optional) Nutanix Guest Tools is enabled or not.
+	// - The state of the vm.
 	State pulumi.StringPtrInput
 	// - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
 	UseHotAdd pulumi.BoolPtrInput
@@ -893,7 +894,7 @@ func (o VirtualMachineOutput) ShouldFailOnScriptFailure() pulumi.BoolOutput {
 	return o.ApplyT(func(v *VirtualMachine) pulumi.BoolOutput { return v.ShouldFailOnScriptFailure }).(pulumi.BoolOutput)
 }
 
-// - (Optional) Nutanix Guest Tools is enabled or not.
+// - The state of the vm.
 func (o VirtualMachineOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualMachine) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

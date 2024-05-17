@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetProtectionRulesEntityCategoryFilterResult
     {
+        /// <summary>
+        /// (Optional/Computed) List of kinds associated with this filter.
+        /// </summary>
         public readonly ImmutableArray<string> KindLists;
+        /// <summary>
+        /// (Optional/Computed) A list of category key and list of values.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetProtectionRulesEntityCategoryFilterParamResult> Params;
+        /// <summary>
+        /// (Optional/Computed) The type of the filter being used.
+        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

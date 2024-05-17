@@ -14,13 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class ServiceGroupServiceListTcpPortRangeList
     {
-        /// <summary>
-        /// End Port (Int)
-        /// </summary>
         public readonly int? EndPort;
-        /// <summary>
-        /// - (Optional) Start Port (Int)
-        /// </summary>
         public readonly int? StartPort;
 
         [OutputConstructor]

@@ -44,6 +44,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// 
     /// ### With Storage Config
     /// ```csharp
     /// using System.Collections.Generic;
@@ -351,7 +352,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<bool> ShouldFailOnScriptFailure { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional) Nutanix Guest Tools is enabled or not.
+        /// - The state of the vm.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -1134,7 +1135,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<bool>? ShouldFailOnScriptFailure { get; set; }
 
         /// <summary>
-        /// - (Optional) Nutanix Guest Tools is enabled or not.
+        /// - The state of the vm.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

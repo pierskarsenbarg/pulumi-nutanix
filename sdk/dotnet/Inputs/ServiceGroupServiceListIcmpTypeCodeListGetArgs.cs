@@ -13,15 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class ServiceGroupServiceListIcmpTypeCodeListGetArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// - (Optional) Code as text
-        /// </summary>
         [Input("code")]
         public Input<string>? Code { get; set; }
 
-        /// <summary>
-        /// - (Optional) Type as text
-        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 

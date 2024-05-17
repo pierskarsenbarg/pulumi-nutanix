@@ -14,30 +14,6 @@ namespace PiersKarsenbarg.Nutanix
     /// Provides a resource to create a address group based on the input parameters.
     /// 
     /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testAddress = new Nutanix.AddressGroup("testAddress", new()
-    ///     {
-    ///         Description = "test address groups resource",
-    ///         IpAddressBlockLists = new[]
-    ///         {
-    ///             new Nutanix.Inputs.AddressGroupIpAddressBlockListArgs
-    ///             {
-    ///                 Ip = "10.0.0.0",
-    ///                 PrefixLength = 24,
-    ///             },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/addressGroup:AddressGroup")]
     public partial class AddressGroup : global::Pulumi.CustomResource

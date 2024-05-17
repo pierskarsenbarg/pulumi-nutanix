@@ -16,6 +16,7 @@ import (
 // > NOTE: The use of networkSecurityRule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
 //
 // ## Example Usage
+//
 // ### Isolate Development VMs From Production VMs And Get Its Information)
 //
 // ```go

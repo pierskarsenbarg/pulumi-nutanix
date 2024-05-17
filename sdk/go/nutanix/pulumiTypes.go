@@ -120,10 +120,8 @@ func (o AccessControlPolicyCategoryArrayOutput) Index(i pulumi.IntInput) AccessC
 }
 
 type AccessControlPolicyContextFilterList struct {
-	// A list of Entity filter expressions.
 	EntityFilterExpressionLists []AccessControlPolicyContextFilterListEntityFilterExpressionList `pulumi:"entityFilterExpressionLists"`
-	// - (Optional) Filter the scope of an Access Control Policy.
-	ScopeFilterExpressionLists []AccessControlPolicyContextFilterListScopeFilterExpressionList `pulumi:"scopeFilterExpressionLists"`
+	ScopeFilterExpressionLists  []AccessControlPolicyContextFilterListScopeFilterExpressionList  `pulumi:"scopeFilterExpressionLists"`
 }
 
 // AccessControlPolicyContextFilterListInput is an input type that accepts AccessControlPolicyContextFilterListArgs and AccessControlPolicyContextFilterListOutput values.
@@ -138,10 +136,8 @@ type AccessControlPolicyContextFilterListInput interface {
 }
 
 type AccessControlPolicyContextFilterListArgs struct {
-	// A list of Entity filter expressions.
 	EntityFilterExpressionLists AccessControlPolicyContextFilterListEntityFilterExpressionListArrayInput `pulumi:"entityFilterExpressionLists"`
-	// - (Optional) Filter the scope of an Access Control Policy.
-	ScopeFilterExpressionLists AccessControlPolicyContextFilterListScopeFilterExpressionListArrayInput `pulumi:"scopeFilterExpressionLists"`
+	ScopeFilterExpressionLists  AccessControlPolicyContextFilterListScopeFilterExpressionListArrayInput  `pulumi:"scopeFilterExpressionLists"`
 }
 
 func (AccessControlPolicyContextFilterListArgs) ElementType() reflect.Type {
@@ -195,14 +191,12 @@ func (o AccessControlPolicyContextFilterListOutput) ToAccessControlPolicyContext
 	return o
 }
 
-// A list of Entity filter expressions.
 func (o AccessControlPolicyContextFilterListOutput) EntityFilterExpressionLists() AccessControlPolicyContextFilterListEntityFilterExpressionListArrayOutput {
 	return o.ApplyT(func(v AccessControlPolicyContextFilterList) []AccessControlPolicyContextFilterListEntityFilterExpressionList {
 		return v.EntityFilterExpressionLists
 	}).(AccessControlPolicyContextFilterListEntityFilterExpressionListArrayOutput)
 }
 
-// - (Optional) Filter the scope of an Access Control Policy.
 func (o AccessControlPolicyContextFilterListOutput) ScopeFilterExpressionLists() AccessControlPolicyContextFilterListScopeFilterExpressionListArrayOutput {
 	return o.ApplyT(func(v AccessControlPolicyContextFilterList) []AccessControlPolicyContextFilterListScopeFilterExpressionList {
 		return v.ScopeFilterExpressionLists
@@ -1518,12 +1512,8 @@ func (o AccessControlPolicyUserReferenceListArrayOutput) Index(i pulumi.IntInput
 }
 
 type AddressGroupIpAddressBlockList struct {
-	// - (Required) IP of the address block
-	Ip string `pulumi:"ip"`
-	// - (Required) Prefix length of address block in int
-	//
-	// See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/reference/prism_central/v3/api/address-groups/postaddressgroups).
-	PrefixLength int `pulumi:"prefixLength"`
+	Ip           string `pulumi:"ip"`
+	PrefixLength int    `pulumi:"prefixLength"`
 }
 
 // AddressGroupIpAddressBlockListInput is an input type that accepts AddressGroupIpAddressBlockListArgs and AddressGroupIpAddressBlockListOutput values.
@@ -1538,12 +1528,8 @@ type AddressGroupIpAddressBlockListInput interface {
 }
 
 type AddressGroupIpAddressBlockListArgs struct {
-	// - (Required) IP of the address block
-	Ip pulumi.StringInput `pulumi:"ip"`
-	// - (Required) Prefix length of address block in int
-	//
-	// See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/reference/prism_central/v3/api/address-groups/postaddressgroups).
-	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	Ip           pulumi.StringInput `pulumi:"ip"`
+	PrefixLength pulumi.IntInput    `pulumi:"prefixLength"`
 }
 
 func (AddressGroupIpAddressBlockListArgs) ElementType() reflect.Type {
@@ -1597,14 +1583,10 @@ func (o AddressGroupIpAddressBlockListOutput) ToAddressGroupIpAddressBlockListOu
 	return o
 }
 
-// - (Required) IP of the address block
 func (o AddressGroupIpAddressBlockListOutput) Ip() pulumi.StringOutput {
 	return o.ApplyT(func(v AddressGroupIpAddressBlockList) string { return v.Ip }).(pulumi.StringOutput)
 }
 
-// - (Required) Prefix length of address block in int
-//
-// See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/reference/prism_central/v3/api/address-groups/postaddressgroups).
 func (o AddressGroupIpAddressBlockListOutput) PrefixLength() pulumi.IntOutput {
 	return o.ApplyT(func(v AddressGroupIpAddressBlockList) int { return v.PrefixLength }).(pulumi.IntOutput)
 }
@@ -1991,7 +1973,6 @@ func (o FoundationCentralImageClusterClusterStatusClusterProgressDetailArrayOutp
 }
 
 type FoundationCentralImageClusterClusterStatusNodeProgressDetail struct {
-	// UUID of the node.
 	ImagedNodeUuid  *string  `pulumi:"imagedNodeUuid"`
 	ImagingStopped  *bool    `pulumi:"imagingStopped"`
 	IntentPickedUp  *bool    `pulumi:"intentPickedUp"`
@@ -2012,7 +1993,6 @@ type FoundationCentralImageClusterClusterStatusNodeProgressDetailInput interface
 }
 
 type FoundationCentralImageClusterClusterStatusNodeProgressDetailArgs struct {
-	// UUID of the node.
 	ImagedNodeUuid  pulumi.StringPtrInput   `pulumi:"imagedNodeUuid"`
 	ImagingStopped  pulumi.BoolPtrInput     `pulumi:"imagingStopped"`
 	IntentPickedUp  pulumi.BoolPtrInput     `pulumi:"intentPickedUp"`
@@ -2072,7 +2052,6 @@ func (o FoundationCentralImageClusterClusterStatusNodeProgressDetailOutput) ToFo
 	return o
 }
 
-// UUID of the node.
 func (o FoundationCentralImageClusterClusterStatusNodeProgressDetailOutput) ImagedNodeUuid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterClusterStatusNodeProgressDetail) *string { return v.ImagedNodeUuid }).(pulumi.StringPtrOutput)
 }
@@ -2120,13 +2099,9 @@ func (o FoundationCentralImageClusterClusterStatusNodeProgressDetailArrayOutput)
 }
 
 type FoundationCentralImageClusterCommonNetworkSettings struct {
-	// List of dns servers for the cvms in the cluster.
-	CvmDnsServers []string `pulumi:"cvmDnsServers"`
-	// List of ntp servers for the cvms in the cluster.
-	CvmNtpServers []string `pulumi:"cvmNtpServers"`
-	// List of dns servers for the hypervisors in the cluster.
+	CvmDnsServers        []string `pulumi:"cvmDnsServers"`
+	CvmNtpServers        []string `pulumi:"cvmNtpServers"`
 	HypervisorDnsServers []string `pulumi:"hypervisorDnsServers"`
-	// List of ntp servers for the hypervisors in the cluster.
 	HypervisorNtpServers []string `pulumi:"hypervisorNtpServers"`
 }
 
@@ -2142,13 +2117,9 @@ type FoundationCentralImageClusterCommonNetworkSettingsInput interface {
 }
 
 type FoundationCentralImageClusterCommonNetworkSettingsArgs struct {
-	// List of dns servers for the cvms in the cluster.
-	CvmDnsServers pulumi.StringArrayInput `pulumi:"cvmDnsServers"`
-	// List of ntp servers for the cvms in the cluster.
-	CvmNtpServers pulumi.StringArrayInput `pulumi:"cvmNtpServers"`
-	// List of dns servers for the hypervisors in the cluster.
+	CvmDnsServers        pulumi.StringArrayInput `pulumi:"cvmDnsServers"`
+	CvmNtpServers        pulumi.StringArrayInput `pulumi:"cvmNtpServers"`
 	HypervisorDnsServers pulumi.StringArrayInput `pulumi:"hypervisorDnsServers"`
-	// List of ntp servers for the hypervisors in the cluster.
 	HypervisorNtpServers pulumi.StringArrayInput `pulumi:"hypervisorNtpServers"`
 }
 
@@ -2229,22 +2200,18 @@ func (o FoundationCentralImageClusterCommonNetworkSettingsOutput) ToFoundationCe
 	}).(FoundationCentralImageClusterCommonNetworkSettingsPtrOutput)
 }
 
-// List of dns servers for the cvms in the cluster.
 func (o FoundationCentralImageClusterCommonNetworkSettingsOutput) CvmDnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterCommonNetworkSettings) []string { return v.CvmDnsServers }).(pulumi.StringArrayOutput)
 }
 
-// List of ntp servers for the cvms in the cluster.
 func (o FoundationCentralImageClusterCommonNetworkSettingsOutput) CvmNtpServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterCommonNetworkSettings) []string { return v.CvmNtpServers }).(pulumi.StringArrayOutput)
 }
 
-// List of dns servers for the hypervisors in the cluster.
 func (o FoundationCentralImageClusterCommonNetworkSettingsOutput) HypervisorDnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterCommonNetworkSettings) []string { return v.HypervisorDnsServers }).(pulumi.StringArrayOutput)
 }
 
-// List of ntp servers for the hypervisors in the cluster.
 func (o FoundationCentralImageClusterCommonNetworkSettingsOutput) HypervisorNtpServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterCommonNetworkSettings) []string { return v.HypervisorNtpServers }).(pulumi.StringArrayOutput)
 }
@@ -2273,7 +2240,6 @@ func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) Elem() Foun
 	}).(FoundationCentralImageClusterCommonNetworkSettingsOutput)
 }
 
-// List of dns servers for the cvms in the cluster.
 func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) CvmDnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterCommonNetworkSettings) []string {
 		if v == nil {
@@ -2283,7 +2249,6 @@ func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) CvmDnsServe
 	}).(pulumi.StringArrayOutput)
 }
 
-// List of ntp servers for the cvms in the cluster.
 func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) CvmNtpServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterCommonNetworkSettings) []string {
 		if v == nil {
@@ -2293,7 +2258,6 @@ func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) CvmNtpServe
 	}).(pulumi.StringArrayOutput)
 }
 
-// List of dns servers for the hypervisors in the cluster.
 func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) HypervisorDnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterCommonNetworkSettings) []string {
 		if v == nil {
@@ -2303,7 +2267,6 @@ func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) HypervisorD
 	}).(pulumi.StringArrayOutput)
 }
 
-// List of ntp servers for the hypervisors in the cluster.
 func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) HypervisorNtpServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterCommonNetworkSettings) []string {
 		if v == nil {
@@ -2314,28 +2277,20 @@ func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) HypervisorN
 }
 
 type FoundationCentralImageClusterFoundationInitConfig struct {
-	Blocks   []FoundationCentralImageClusterFoundationInitConfigBlock   `pulumi:"blocks"`
-	Clusters []FoundationCentralImageClusterFoundationInitConfigCluster `pulumi:"clusters"`
-	// Gateway of the cvm.
-	CvmGateway *string `pulumi:"cvmGateway"`
-	// Netmask of the cvm.
-	CvmNetmask *string `pulumi:"cvmNetmask"`
-	DnsServers *string `pulumi:"dnsServers"`
-	// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
-	HypervProductKey *string `pulumi:"hypervProductKey"`
-	// SKU of hyperv to be installed if hypervisorType is hyperv.
-	HypervSku *string `pulumi:"hypervSku"`
-	// Gateway of the hypervisor.
+	Blocks            []FoundationCentralImageClusterFoundationInitConfigBlock         `pulumi:"blocks"`
+	Clusters          []FoundationCentralImageClusterFoundationInitConfigCluster       `pulumi:"clusters"`
+	CvmGateway        *string                                                          `pulumi:"cvmGateway"`
+	CvmNetmask        *string                                                          `pulumi:"cvmNetmask"`
+	DnsServers        *string                                                          `pulumi:"dnsServers"`
+	HypervProductKey  *string                                                          `pulumi:"hypervProductKey"`
+	HypervSku         *string                                                          `pulumi:"hypervSku"`
 	HypervisorGateway *string                                                          `pulumi:"hypervisorGateway"`
 	HypervisorIsoUrl  map[string]string                                                `pulumi:"hypervisorIsoUrl"`
 	HypervisorIsos    []FoundationCentralImageClusterFoundationInitConfigHypervisorIso `pulumi:"hypervisorIsos"`
-	// Netmask of the hypervisor.
-	HypervisorNetmask *string `pulumi:"hypervisorNetmask"`
-	// Gateway of the ipmi.
-	IpmiGateway *string `pulumi:"ipmiGateway"`
-	// Netmask of the ipmi.
-	IpmiNetmask    *string                                                          `pulumi:"ipmiNetmask"`
-	NosPackageUrls []FoundationCentralImageClusterFoundationInitConfigNosPackageUrl `pulumi:"nosPackageUrls"`
+	HypervisorNetmask *string                                                          `pulumi:"hypervisorNetmask"`
+	IpmiGateway       *string                                                          `pulumi:"ipmiGateway"`
+	IpmiNetmask       *string                                                          `pulumi:"ipmiNetmask"`
+	NosPackageUrls    []FoundationCentralImageClusterFoundationInitConfigNosPackageUrl `pulumi:"nosPackageUrls"`
 }
 
 // FoundationCentralImageClusterFoundationInitConfigInput is an input type that accepts FoundationCentralImageClusterFoundationInitConfigArgs and FoundationCentralImageClusterFoundationInitConfigOutput values.
@@ -2350,28 +2305,20 @@ type FoundationCentralImageClusterFoundationInitConfigInput interface {
 }
 
 type FoundationCentralImageClusterFoundationInitConfigArgs struct {
-	Blocks   FoundationCentralImageClusterFoundationInitConfigBlockArrayInput   `pulumi:"blocks"`
-	Clusters FoundationCentralImageClusterFoundationInitConfigClusterArrayInput `pulumi:"clusters"`
-	// Gateway of the cvm.
-	CvmGateway pulumi.StringPtrInput `pulumi:"cvmGateway"`
-	// Netmask of the cvm.
-	CvmNetmask pulumi.StringPtrInput `pulumi:"cvmNetmask"`
-	DnsServers pulumi.StringPtrInput `pulumi:"dnsServers"`
-	// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
-	HypervProductKey pulumi.StringPtrInput `pulumi:"hypervProductKey"`
-	// SKU of hyperv to be installed if hypervisorType is hyperv.
-	HypervSku pulumi.StringPtrInput `pulumi:"hypervSku"`
-	// Gateway of the hypervisor.
+	Blocks            FoundationCentralImageClusterFoundationInitConfigBlockArrayInput         `pulumi:"blocks"`
+	Clusters          FoundationCentralImageClusterFoundationInitConfigClusterArrayInput       `pulumi:"clusters"`
+	CvmGateway        pulumi.StringPtrInput                                                    `pulumi:"cvmGateway"`
+	CvmNetmask        pulumi.StringPtrInput                                                    `pulumi:"cvmNetmask"`
+	DnsServers        pulumi.StringPtrInput                                                    `pulumi:"dnsServers"`
+	HypervProductKey  pulumi.StringPtrInput                                                    `pulumi:"hypervProductKey"`
+	HypervSku         pulumi.StringPtrInput                                                    `pulumi:"hypervSku"`
 	HypervisorGateway pulumi.StringPtrInput                                                    `pulumi:"hypervisorGateway"`
 	HypervisorIsoUrl  pulumi.StringMapInput                                                    `pulumi:"hypervisorIsoUrl"`
 	HypervisorIsos    FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArrayInput `pulumi:"hypervisorIsos"`
-	// Netmask of the hypervisor.
-	HypervisorNetmask pulumi.StringPtrInput `pulumi:"hypervisorNetmask"`
-	// Gateway of the ipmi.
-	IpmiGateway pulumi.StringPtrInput `pulumi:"ipmiGateway"`
-	// Netmask of the ipmi.
-	IpmiNetmask    pulumi.StringPtrInput                                                    `pulumi:"ipmiNetmask"`
-	NosPackageUrls FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArrayInput `pulumi:"nosPackageUrls"`
+	HypervisorNetmask pulumi.StringPtrInput                                                    `pulumi:"hypervisorNetmask"`
+	IpmiGateway       pulumi.StringPtrInput                                                    `pulumi:"ipmiGateway"`
+	IpmiNetmask       pulumi.StringPtrInput                                                    `pulumi:"ipmiNetmask"`
+	NosPackageUrls    FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArrayInput `pulumi:"nosPackageUrls"`
 }
 
 func (FoundationCentralImageClusterFoundationInitConfigArgs) ElementType() reflect.Type {
@@ -2437,12 +2384,10 @@ func (o FoundationCentralImageClusterFoundationInitConfigOutput) Clusters() Foun
 	}).(FoundationCentralImageClusterFoundationInitConfigClusterArrayOutput)
 }
 
-// Gateway of the cvm.
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) CvmGateway() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.CvmGateway }).(pulumi.StringPtrOutput)
 }
 
-// Netmask of the cvm.
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) CvmNetmask() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.CvmNetmask }).(pulumi.StringPtrOutput)
 }
@@ -2451,17 +2396,14 @@ func (o FoundationCentralImageClusterFoundationInitConfigOutput) DnsServers() pu
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.DnsServers }).(pulumi.StringPtrOutput)
 }
 
-// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) HypervProductKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.HypervProductKey }).(pulumi.StringPtrOutput)
 }
 
-// SKU of hyperv to be installed if hypervisorType is hyperv.
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) HypervSku() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.HypervSku }).(pulumi.StringPtrOutput)
 }
 
-// Gateway of the hypervisor.
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) HypervisorGateway() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.HypervisorGateway }).(pulumi.StringPtrOutput)
 }
@@ -2476,17 +2418,14 @@ func (o FoundationCentralImageClusterFoundationInitConfigOutput) HypervisorIsos(
 	}).(FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArrayOutput)
 }
 
-// Netmask of the hypervisor.
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) HypervisorNetmask() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.HypervisorNetmask }).(pulumi.StringPtrOutput)
 }
 
-// Gateway of the ipmi.
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) IpmiGateway() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.IpmiGateway }).(pulumi.StringPtrOutput)
 }
 
-// Netmask of the ipmi.
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) IpmiNetmask() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.IpmiNetmask }).(pulumi.StringPtrOutput)
 }
@@ -2620,25 +2559,18 @@ func (o FoundationCentralImageClusterFoundationInitConfigBlockArrayOutput) Index
 }
 
 type FoundationCentralImageClusterFoundationInitConfigBlockNode struct {
-	// IP address to be set for the cvm on the node.
-	CvmIp *string `pulumi:"cvmIp"`
-	// Vlan tag of the cvm, if the cvm is on a vlan.
-	CvmVlanId        *int    `pulumi:"cvmVlanId"`
-	FcImagedNodeUuid *string `pulumi:"fcImagedNodeUuid"`
-	// Hardware attributes override json for the node.
+	CvmIp                      *string           `pulumi:"cvmIp"`
+	CvmVlanId                  *int              `pulumi:"cvmVlanId"`
+	FcImagedNodeUuid           *string           `pulumi:"fcImagedNodeUuid"`
 	HardwareAttributesOverride map[string]string `pulumi:"hardwareAttributesOverride"`
 	Hypervisor                 *string           `pulumi:"hypervisor"`
-	// Name to be set for the hypervisor host.
-	HypervisorHostname *string `pulumi:"hypervisorHostname"`
-	// IP address to be set for the hypervisor on the node.
-	HypervisorIp *string `pulumi:"hypervisorIp"`
-	// True, if the node should be imaged, False, otherwise.
-	ImageNow *bool `pulumi:"imageNow"`
-	// IP address to be set for the ipmi of the node.
-	IpmiIp       *string `pulumi:"ipmiIp"`
-	Ipv6Address  *string `pulumi:"ipv6Address"`
-	NodePosition *string `pulumi:"nodePosition"`
-	NodeSerial   *string `pulumi:"nodeSerial"`
+	HypervisorHostname         *string           `pulumi:"hypervisorHostname"`
+	HypervisorIp               *string           `pulumi:"hypervisorIp"`
+	ImageNow                   *bool             `pulumi:"imageNow"`
+	IpmiIp                     *string           `pulumi:"ipmiIp"`
+	Ipv6Address                *string           `pulumi:"ipv6Address"`
+	NodePosition               *string           `pulumi:"nodePosition"`
+	NodeSerial                 *string           `pulumi:"nodeSerial"`
 }
 
 // FoundationCentralImageClusterFoundationInitConfigBlockNodeInput is an input type that accepts FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs and FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput values.
@@ -2653,25 +2585,18 @@ type FoundationCentralImageClusterFoundationInitConfigBlockNodeInput interface {
 }
 
 type FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs struct {
-	// IP address to be set for the cvm on the node.
-	CvmIp pulumi.StringPtrInput `pulumi:"cvmIp"`
-	// Vlan tag of the cvm, if the cvm is on a vlan.
-	CvmVlanId        pulumi.IntPtrInput    `pulumi:"cvmVlanId"`
-	FcImagedNodeUuid pulumi.StringPtrInput `pulumi:"fcImagedNodeUuid"`
-	// Hardware attributes override json for the node.
+	CvmIp                      pulumi.StringPtrInput `pulumi:"cvmIp"`
+	CvmVlanId                  pulumi.IntPtrInput    `pulumi:"cvmVlanId"`
+	FcImagedNodeUuid           pulumi.StringPtrInput `pulumi:"fcImagedNodeUuid"`
 	HardwareAttributesOverride pulumi.StringMapInput `pulumi:"hardwareAttributesOverride"`
 	Hypervisor                 pulumi.StringPtrInput `pulumi:"hypervisor"`
-	// Name to be set for the hypervisor host.
-	HypervisorHostname pulumi.StringPtrInput `pulumi:"hypervisorHostname"`
-	// IP address to be set for the hypervisor on the node.
-	HypervisorIp pulumi.StringPtrInput `pulumi:"hypervisorIp"`
-	// True, if the node should be imaged, False, otherwise.
-	ImageNow pulumi.BoolPtrInput `pulumi:"imageNow"`
-	// IP address to be set for the ipmi of the node.
-	IpmiIp       pulumi.StringPtrInput `pulumi:"ipmiIp"`
-	Ipv6Address  pulumi.StringPtrInput `pulumi:"ipv6Address"`
-	NodePosition pulumi.StringPtrInput `pulumi:"nodePosition"`
-	NodeSerial   pulumi.StringPtrInput `pulumi:"nodeSerial"`
+	HypervisorHostname         pulumi.StringPtrInput `pulumi:"hypervisorHostname"`
+	HypervisorIp               pulumi.StringPtrInput `pulumi:"hypervisorIp"`
+	ImageNow                   pulumi.BoolPtrInput   `pulumi:"imageNow"`
+	IpmiIp                     pulumi.StringPtrInput `pulumi:"ipmiIp"`
+	Ipv6Address                pulumi.StringPtrInput `pulumi:"ipv6Address"`
+	NodePosition               pulumi.StringPtrInput `pulumi:"nodePosition"`
+	NodeSerial                 pulumi.StringPtrInput `pulumi:"nodeSerial"`
 }
 
 func (FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs) ElementType() reflect.Type {
@@ -2725,12 +2650,10 @@ func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) ToFoun
 	return o
 }
 
-// IP address to be set for the cvm on the node.
 func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) CvmIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) *string { return v.CvmIp }).(pulumi.StringPtrOutput)
 }
 
-// Vlan tag of the cvm, if the cvm is on a vlan.
 func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) CvmVlanId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) *int { return v.CvmVlanId }).(pulumi.IntPtrOutput)
 }
@@ -2739,7 +2662,6 @@ func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) FcImag
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) *string { return v.FcImagedNodeUuid }).(pulumi.StringPtrOutput)
 }
 
-// Hardware attributes override json for the node.
 func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) HardwareAttributesOverride() pulumi.StringMapOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) map[string]string {
 		return v.HardwareAttributesOverride
@@ -2750,24 +2672,20 @@ func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) Hyperv
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) *string { return v.Hypervisor }).(pulumi.StringPtrOutput)
 }
 
-// Name to be set for the hypervisor host.
 func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) HypervisorHostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) *string {
 		return v.HypervisorHostname
 	}).(pulumi.StringPtrOutput)
 }
 
-// IP address to be set for the hypervisor on the node.
 func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) HypervisorIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) *string { return v.HypervisorIp }).(pulumi.StringPtrOutput)
 }
 
-// True, if the node should be imaged, False, otherwise.
 func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) ImageNow() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) *bool { return v.ImageNow }).(pulumi.BoolPtrOutput)
 }
 
-// IP address to be set for the ipmi of the node.
 func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) IpmiIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) *string { return v.IpmiIp }).(pulumi.StringPtrOutput)
 }
@@ -2811,10 +2729,8 @@ type FoundationCentralImageClusterFoundationInitConfigCluster struct {
 	ClusterInitSuccessful *bool    `pulumi:"clusterInitSuccessful"`
 	ClusterMembers        []string `pulumi:"clusterMembers"`
 	// Name of the cluster.
-	ClusterName *string `pulumi:"clusterName"`
-	// List of dns servers for the cvms in the cluster.
+	ClusterName   *string `pulumi:"clusterName"`
 	CvmDnsServers *string `pulumi:"cvmDnsServers"`
-	// List of ntp servers for the cvms in the cluster.
 	CvmNtpServers *string `pulumi:"cvmNtpServers"`
 	// Redundancy factor of the cluster.
 	RedundancyFactor *int `pulumi:"redundancyFactor"`
@@ -2840,10 +2756,8 @@ type FoundationCentralImageClusterFoundationInitConfigClusterArgs struct {
 	ClusterInitSuccessful pulumi.BoolPtrInput     `pulumi:"clusterInitSuccessful"`
 	ClusterMembers        pulumi.StringArrayInput `pulumi:"clusterMembers"`
 	// Name of the cluster.
-	ClusterName pulumi.StringPtrInput `pulumi:"clusterName"`
-	// List of dns servers for the cvms in the cluster.
+	ClusterName   pulumi.StringPtrInput `pulumi:"clusterName"`
 	CvmDnsServers pulumi.StringPtrInput `pulumi:"cvmDnsServers"`
-	// List of ntp servers for the cvms in the cluster.
 	CvmNtpServers pulumi.StringPtrInput `pulumi:"cvmNtpServers"`
 	// Redundancy factor of the cluster.
 	RedundancyFactor pulumi.IntPtrInput `pulumi:"redundancyFactor"`
@@ -2924,12 +2838,10 @@ func (o FoundationCentralImageClusterFoundationInitConfigClusterOutput) ClusterN
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigCluster) *string { return v.ClusterName }).(pulumi.StringPtrOutput)
 }
 
-// List of dns servers for the cvms in the cluster.
 func (o FoundationCentralImageClusterFoundationInitConfigClusterOutput) CvmDnsServers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigCluster) *string { return v.CvmDnsServers }).(pulumi.StringPtrOutput)
 }
 
-// List of ntp servers for the cvms in the cluster.
 func (o FoundationCentralImageClusterFoundationInitConfigClusterOutput) CvmNtpServers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigCluster) *string { return v.CvmNtpServers }).(pulumi.StringPtrOutput)
 }
@@ -2965,12 +2877,9 @@ func (o FoundationCentralImageClusterFoundationInitConfigClusterArrayOutput) Ind
 }
 
 type FoundationCentralImageClusterFoundationInitConfigHypervisorIso struct {
-	// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
 	HypervisorType *string `pulumi:"hypervisorType"`
-	// sha256sum of the hypervisor iso.
-	Sha256sum *string `pulumi:"sha256sum"`
-	// URL to download hypervisor iso. Required only if imaging is needed.
-	Url *string `pulumi:"url"`
+	Sha256sum      *string `pulumi:"sha256sum"`
+	Url            *string `pulumi:"url"`
 }
 
 // FoundationCentralImageClusterFoundationInitConfigHypervisorIsoInput is an input type that accepts FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs and FoundationCentralImageClusterFoundationInitConfigHypervisorIsoOutput values.
@@ -2985,12 +2894,9 @@ type FoundationCentralImageClusterFoundationInitConfigHypervisorIsoInput interfa
 }
 
 type FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs struct {
-	// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
 	HypervisorType pulumi.StringPtrInput `pulumi:"hypervisorType"`
-	// sha256sum of the hypervisor iso.
-	Sha256sum pulumi.StringPtrInput `pulumi:"sha256sum"`
-	// URL to download hypervisor iso. Required only if imaging is needed.
-	Url pulumi.StringPtrInput `pulumi:"url"`
+	Sha256sum      pulumi.StringPtrInput `pulumi:"sha256sum"`
+	Url            pulumi.StringPtrInput `pulumi:"url"`
 }
 
 func (FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs) ElementType() reflect.Type {
@@ -3044,19 +2950,16 @@ func (o FoundationCentralImageClusterFoundationInitConfigHypervisorIsoOutput) To
 	return o
 }
 
-// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
 func (o FoundationCentralImageClusterFoundationInitConfigHypervisorIsoOutput) HypervisorType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigHypervisorIso) *string {
 		return v.HypervisorType
 	}).(pulumi.StringPtrOutput)
 }
 
-// sha256sum of the hypervisor iso.
 func (o FoundationCentralImageClusterFoundationInitConfigHypervisorIsoOutput) Sha256sum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigHypervisorIso) *string { return v.Sha256sum }).(pulumi.StringPtrOutput)
 }
 
-// URL to download hypervisor iso. Required only if imaging is needed.
 func (o FoundationCentralImageClusterFoundationInitConfigHypervisorIsoOutput) Url() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigHypervisorIso) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
@@ -3082,10 +2985,8 @@ func (o FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArrayOutpu
 }
 
 type FoundationCentralImageClusterFoundationInitConfigNosPackageUrl struct {
-	// sha256sum of the hypervisor iso.
 	Sha256sum *string `pulumi:"sha256sum"`
-	// URL to download hypervisor iso. Required only if imaging is needed.
-	Url *string `pulumi:"url"`
+	Url       *string `pulumi:"url"`
 }
 
 // FoundationCentralImageClusterFoundationInitConfigNosPackageUrlInput is an input type that accepts FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs and FoundationCentralImageClusterFoundationInitConfigNosPackageUrlOutput values.
@@ -3100,10 +3001,8 @@ type FoundationCentralImageClusterFoundationInitConfigNosPackageUrlInput interfa
 }
 
 type FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs struct {
-	// sha256sum of the hypervisor iso.
 	Sha256sum pulumi.StringPtrInput `pulumi:"sha256sum"`
-	// URL to download hypervisor iso. Required only if imaging is needed.
-	Url pulumi.StringPtrInput `pulumi:"url"`
+	Url       pulumi.StringPtrInput `pulumi:"url"`
 }
 
 func (FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs) ElementType() reflect.Type {
@@ -3157,12 +3056,10 @@ func (o FoundationCentralImageClusterFoundationInitConfigNosPackageUrlOutput) To
 	return o
 }
 
-// sha256sum of the hypervisor iso.
 func (o FoundationCentralImageClusterFoundationInitConfigNosPackageUrlOutput) Sha256sum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigNosPackageUrl) *string { return v.Sha256sum }).(pulumi.StringPtrOutput)
 }
 
-// URL to download hypervisor iso. Required only if imaging is needed.
 func (o FoundationCentralImageClusterFoundationInitConfigNosPackageUrlOutput) Url() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigNosPackageUrl) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
@@ -3188,14 +3085,10 @@ func (o FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArrayOutpu
 }
 
 type FoundationCentralImageClusterHypervisorIsoDetails struct {
-	// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
 	HypervProductKey *string `pulumi:"hypervProductKey"`
-	// SKU of hyperv to be installed if hypervisorType is hyperv.
-	HypervSku *string `pulumi:"hypervSku"`
-	// sha256sum of the hypervisor iso.
-	Sha256sum *string `pulumi:"sha256sum"`
-	// URL to download hypervisor iso. Required only if imaging is needed.
-	Url *string `pulumi:"url"`
+	HypervSku        *string `pulumi:"hypervSku"`
+	Sha256sum        *string `pulumi:"sha256sum"`
+	Url              *string `pulumi:"url"`
 }
 
 // FoundationCentralImageClusterHypervisorIsoDetailsInput is an input type that accepts FoundationCentralImageClusterHypervisorIsoDetailsArgs and FoundationCentralImageClusterHypervisorIsoDetailsOutput values.
@@ -3210,14 +3103,10 @@ type FoundationCentralImageClusterHypervisorIsoDetailsInput interface {
 }
 
 type FoundationCentralImageClusterHypervisorIsoDetailsArgs struct {
-	// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
 	HypervProductKey pulumi.StringPtrInput `pulumi:"hypervProductKey"`
-	// SKU of hyperv to be installed if hypervisorType is hyperv.
-	HypervSku pulumi.StringPtrInput `pulumi:"hypervSku"`
-	// sha256sum of the hypervisor iso.
-	Sha256sum pulumi.StringPtrInput `pulumi:"sha256sum"`
-	// URL to download hypervisor iso. Required only if imaging is needed.
-	Url pulumi.StringPtrInput `pulumi:"url"`
+	HypervSku        pulumi.StringPtrInput `pulumi:"hypervSku"`
+	Sha256sum        pulumi.StringPtrInput `pulumi:"sha256sum"`
+	Url              pulumi.StringPtrInput `pulumi:"url"`
 }
 
 func (FoundationCentralImageClusterHypervisorIsoDetailsArgs) ElementType() reflect.Type {
@@ -3297,22 +3186,18 @@ func (o FoundationCentralImageClusterHypervisorIsoDetailsOutput) ToFoundationCen
 	}).(FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput)
 }
 
-// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
 func (o FoundationCentralImageClusterHypervisorIsoDetailsOutput) HypervProductKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterHypervisorIsoDetails) *string { return v.HypervProductKey }).(pulumi.StringPtrOutput)
 }
 
-// SKU of hyperv to be installed if hypervisorType is hyperv.
 func (o FoundationCentralImageClusterHypervisorIsoDetailsOutput) HypervSku() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterHypervisorIsoDetails) *string { return v.HypervSku }).(pulumi.StringPtrOutput)
 }
 
-// sha256sum of the hypervisor iso.
 func (o FoundationCentralImageClusterHypervisorIsoDetailsOutput) Sha256sum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterHypervisorIsoDetails) *string { return v.Sha256sum }).(pulumi.StringPtrOutput)
 }
 
-// URL to download hypervisor iso. Required only if imaging is needed.
 func (o FoundationCentralImageClusterHypervisorIsoDetailsOutput) Url() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterHypervisorIsoDetails) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
@@ -3341,7 +3226,6 @@ func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) Elem() Found
 	}).(FoundationCentralImageClusterHypervisorIsoDetailsOutput)
 }
 
-// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
 func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) HypervProductKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterHypervisorIsoDetails) *string {
 		if v == nil {
@@ -3351,7 +3235,6 @@ func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) HypervProduc
 	}).(pulumi.StringPtrOutput)
 }
 
-// SKU of hyperv to be installed if hypervisorType is hyperv.
 func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) HypervSku() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterHypervisorIsoDetails) *string {
 		if v == nil {
@@ -3361,7 +3244,6 @@ func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) HypervSku() 
 	}).(pulumi.StringPtrOutput)
 }
 
-// sha256sum of the hypervisor iso.
 func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) Sha256sum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterHypervisorIsoDetails) *string {
 		if v == nil {
@@ -3371,7 +3253,6 @@ func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) Sha256sum() 
 	}).(pulumi.StringPtrOutput)
 }
 
-// URL to download hypervisor iso. Required only if imaging is needed.
 func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) Url() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterHypervisorIsoDetails) *string {
 		if v == nil {
@@ -3382,42 +3263,24 @@ func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) Url() pulumi
 }
 
 type FoundationCentralImageClusterNodeList struct {
-	// Gateway of the cvm.
-	CvmGateway *string `pulumi:"cvmGateway"`
-	// IP address to be set for the cvm on the node.
-	CvmIp *string `pulumi:"cvmIp"`
-	// Netmask of the cvm.
-	CvmNetmask *string `pulumi:"cvmNetmask"`
-	// Amount of memory to be assigned for the cvm.
-	CvmRamGb *int `pulumi:"cvmRamGb"`
-	// Vlan tag of the cvm, if the cvm is on a vlan.
-	CvmVlanId *int `pulumi:"cvmVlanId"`
-	// Hardware attributes override json for the node.
+	CvmGateway                 *string                `pulumi:"cvmGateway"`
+	CvmIp                      *string                `pulumi:"cvmIp"`
+	CvmNetmask                 *string                `pulumi:"cvmNetmask"`
+	CvmRamGb                   *int                   `pulumi:"cvmRamGb"`
+	CvmVlanId                  *int                   `pulumi:"cvmVlanId"`
 	HardwareAttributesOverride map[string]interface{} `pulumi:"hardwareAttributesOverride"`
-	// Gateway of the hypervisor.
-	HypervisorGateway *string `pulumi:"hypervisorGateway"`
-	// Name to be set for the hypervisor host.
-	HypervisorHostname *string `pulumi:"hypervisorHostname"`
-	// IP address to be set for the hypervisor on the node.
-	HypervisorIp *string `pulumi:"hypervisorIp"`
-	// Netmask of the hypervisor.
-	HypervisorNetmask *string `pulumi:"hypervisorNetmask"`
-	// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-	HypervisorType *string `pulumi:"hypervisorType"`
-	// True, if the node should be imaged, False, otherwise.
-	ImageNow *bool `pulumi:"imageNow"`
-	// UUID of the node.
-	ImagedNodeUuid *string `pulumi:"imagedNodeUuid"`
-	// Gateway of the ipmi.
-	IpmiGateway *string `pulumi:"ipmiGateway"`
-	// IP address to be set for the ipmi of the node.
-	IpmiIp *string `pulumi:"ipmiIp"`
-	// Netmask of the ipmi.
-	IpmiNetmask *string `pulumi:"ipmiNetmask"`
-	// Passthrough RDMA nic to CVM if possible, default to false.
-	RdmaPassthrough *bool `pulumi:"rdmaPassthrough"`
-	// Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
-	UseExistingNetworkSettings *bool `pulumi:"useExistingNetworkSettings"`
+	HypervisorGateway          *string                `pulumi:"hypervisorGateway"`
+	HypervisorHostname         *string                `pulumi:"hypervisorHostname"`
+	HypervisorIp               *string                `pulumi:"hypervisorIp"`
+	HypervisorNetmask          *string                `pulumi:"hypervisorNetmask"`
+	HypervisorType             *string                `pulumi:"hypervisorType"`
+	ImageNow                   *bool                  `pulumi:"imageNow"`
+	ImagedNodeUuid             *string                `pulumi:"imagedNodeUuid"`
+	IpmiGateway                *string                `pulumi:"ipmiGateway"`
+	IpmiIp                     *string                `pulumi:"ipmiIp"`
+	IpmiNetmask                *string                `pulumi:"ipmiNetmask"`
+	RdmaPassthrough            *bool                  `pulumi:"rdmaPassthrough"`
+	UseExistingNetworkSettings *bool                  `pulumi:"useExistingNetworkSettings"`
 }
 
 // FoundationCentralImageClusterNodeListInput is an input type that accepts FoundationCentralImageClusterNodeListArgs and FoundationCentralImageClusterNodeListOutput values.
@@ -3432,42 +3295,24 @@ type FoundationCentralImageClusterNodeListInput interface {
 }
 
 type FoundationCentralImageClusterNodeListArgs struct {
-	// Gateway of the cvm.
-	CvmGateway pulumi.StringPtrInput `pulumi:"cvmGateway"`
-	// IP address to be set for the cvm on the node.
-	CvmIp pulumi.StringPtrInput `pulumi:"cvmIp"`
-	// Netmask of the cvm.
-	CvmNetmask pulumi.StringPtrInput `pulumi:"cvmNetmask"`
-	// Amount of memory to be assigned for the cvm.
-	CvmRamGb pulumi.IntPtrInput `pulumi:"cvmRamGb"`
-	// Vlan tag of the cvm, if the cvm is on a vlan.
-	CvmVlanId pulumi.IntPtrInput `pulumi:"cvmVlanId"`
-	// Hardware attributes override json for the node.
-	HardwareAttributesOverride pulumi.MapInput `pulumi:"hardwareAttributesOverride"`
-	// Gateway of the hypervisor.
-	HypervisorGateway pulumi.StringPtrInput `pulumi:"hypervisorGateway"`
-	// Name to be set for the hypervisor host.
-	HypervisorHostname pulumi.StringPtrInput `pulumi:"hypervisorHostname"`
-	// IP address to be set for the hypervisor on the node.
-	HypervisorIp pulumi.StringPtrInput `pulumi:"hypervisorIp"`
-	// Netmask of the hypervisor.
-	HypervisorNetmask pulumi.StringPtrInput `pulumi:"hypervisorNetmask"`
-	// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-	HypervisorType pulumi.StringPtrInput `pulumi:"hypervisorType"`
-	// True, if the node should be imaged, False, otherwise.
-	ImageNow pulumi.BoolPtrInput `pulumi:"imageNow"`
-	// UUID of the node.
-	ImagedNodeUuid pulumi.StringPtrInput `pulumi:"imagedNodeUuid"`
-	// Gateway of the ipmi.
-	IpmiGateway pulumi.StringPtrInput `pulumi:"ipmiGateway"`
-	// IP address to be set for the ipmi of the node.
-	IpmiIp pulumi.StringPtrInput `pulumi:"ipmiIp"`
-	// Netmask of the ipmi.
-	IpmiNetmask pulumi.StringPtrInput `pulumi:"ipmiNetmask"`
-	// Passthrough RDMA nic to CVM if possible, default to false.
-	RdmaPassthrough pulumi.BoolPtrInput `pulumi:"rdmaPassthrough"`
-	// Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
-	UseExistingNetworkSettings pulumi.BoolPtrInput `pulumi:"useExistingNetworkSettings"`
+	CvmGateway                 pulumi.StringPtrInput `pulumi:"cvmGateway"`
+	CvmIp                      pulumi.StringPtrInput `pulumi:"cvmIp"`
+	CvmNetmask                 pulumi.StringPtrInput `pulumi:"cvmNetmask"`
+	CvmRamGb                   pulumi.IntPtrInput    `pulumi:"cvmRamGb"`
+	CvmVlanId                  pulumi.IntPtrInput    `pulumi:"cvmVlanId"`
+	HardwareAttributesOverride pulumi.MapInput       `pulumi:"hardwareAttributesOverride"`
+	HypervisorGateway          pulumi.StringPtrInput `pulumi:"hypervisorGateway"`
+	HypervisorHostname         pulumi.StringPtrInput `pulumi:"hypervisorHostname"`
+	HypervisorIp               pulumi.StringPtrInput `pulumi:"hypervisorIp"`
+	HypervisorNetmask          pulumi.StringPtrInput `pulumi:"hypervisorNetmask"`
+	HypervisorType             pulumi.StringPtrInput `pulumi:"hypervisorType"`
+	ImageNow                   pulumi.BoolPtrInput   `pulumi:"imageNow"`
+	ImagedNodeUuid             pulumi.StringPtrInput `pulumi:"imagedNodeUuid"`
+	IpmiGateway                pulumi.StringPtrInput `pulumi:"ipmiGateway"`
+	IpmiIp                     pulumi.StringPtrInput `pulumi:"ipmiIp"`
+	IpmiNetmask                pulumi.StringPtrInput `pulumi:"ipmiNetmask"`
+	RdmaPassthrough            pulumi.BoolPtrInput   `pulumi:"rdmaPassthrough"`
+	UseExistingNetworkSettings pulumi.BoolPtrInput   `pulumi:"useExistingNetworkSettings"`
 }
 
 func (FoundationCentralImageClusterNodeListArgs) ElementType() reflect.Type {
@@ -3521,94 +3366,76 @@ func (o FoundationCentralImageClusterNodeListOutput) ToFoundationCentralImageClu
 	return o
 }
 
-// Gateway of the cvm.
 func (o FoundationCentralImageClusterNodeListOutput) CvmGateway() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.CvmGateway }).(pulumi.StringPtrOutput)
 }
 
-// IP address to be set for the cvm on the node.
 func (o FoundationCentralImageClusterNodeListOutput) CvmIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.CvmIp }).(pulumi.StringPtrOutput)
 }
 
-// Netmask of the cvm.
 func (o FoundationCentralImageClusterNodeListOutput) CvmNetmask() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.CvmNetmask }).(pulumi.StringPtrOutput)
 }
 
-// Amount of memory to be assigned for the cvm.
 func (o FoundationCentralImageClusterNodeListOutput) CvmRamGb() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *int { return v.CvmRamGb }).(pulumi.IntPtrOutput)
 }
 
-// Vlan tag of the cvm, if the cvm is on a vlan.
 func (o FoundationCentralImageClusterNodeListOutput) CvmVlanId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *int { return v.CvmVlanId }).(pulumi.IntPtrOutput)
 }
 
-// Hardware attributes override json for the node.
 func (o FoundationCentralImageClusterNodeListOutput) HardwareAttributesOverride() pulumi.MapOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) map[string]interface{} {
 		return v.HardwareAttributesOverride
 	}).(pulumi.MapOutput)
 }
 
-// Gateway of the hypervisor.
 func (o FoundationCentralImageClusterNodeListOutput) HypervisorGateway() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.HypervisorGateway }).(pulumi.StringPtrOutput)
 }
 
-// Name to be set for the hypervisor host.
 func (o FoundationCentralImageClusterNodeListOutput) HypervisorHostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.HypervisorHostname }).(pulumi.StringPtrOutput)
 }
 
-// IP address to be set for the hypervisor on the node.
 func (o FoundationCentralImageClusterNodeListOutput) HypervisorIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.HypervisorIp }).(pulumi.StringPtrOutput)
 }
 
-// Netmask of the hypervisor.
 func (o FoundationCentralImageClusterNodeListOutput) HypervisorNetmask() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.HypervisorNetmask }).(pulumi.StringPtrOutput)
 }
 
-// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
 func (o FoundationCentralImageClusterNodeListOutput) HypervisorType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.HypervisorType }).(pulumi.StringPtrOutput)
 }
 
-// True, if the node should be imaged, False, otherwise.
 func (o FoundationCentralImageClusterNodeListOutput) ImageNow() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *bool { return v.ImageNow }).(pulumi.BoolPtrOutput)
 }
 
-// UUID of the node.
 func (o FoundationCentralImageClusterNodeListOutput) ImagedNodeUuid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.ImagedNodeUuid }).(pulumi.StringPtrOutput)
 }
 
-// Gateway of the ipmi.
 func (o FoundationCentralImageClusterNodeListOutput) IpmiGateway() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.IpmiGateway }).(pulumi.StringPtrOutput)
 }
 
-// IP address to be set for the ipmi of the node.
 func (o FoundationCentralImageClusterNodeListOutput) IpmiIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.IpmiIp }).(pulumi.StringPtrOutput)
 }
 
-// Netmask of the ipmi.
 func (o FoundationCentralImageClusterNodeListOutput) IpmiNetmask() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.IpmiNetmask }).(pulumi.StringPtrOutput)
 }
 
-// Passthrough RDMA nic to CVM if possible, default to false.
 func (o FoundationCentralImageClusterNodeListOutput) RdmaPassthrough() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *bool { return v.RdmaPassthrough }).(pulumi.BoolPtrOutput)
 }
 
-// Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
 func (o FoundationCentralImageClusterNodeListOutput) UseExistingNetworkSettings() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *bool { return v.UseExistingNetworkSettings }).(pulumi.BoolPtrOutput)
 }
@@ -4318,7 +4145,6 @@ func (o FoundationImageNodesBlockNodeUcsmParamsPtrOutput) VlanName() pulumi.Stri
 }
 
 type FoundationImageNodesBlockNodeVswitch struct {
-	// - (Required if node is capable) dynamic if using LACP, static for LAG
 	BondMode     *string  `pulumi:"bondMode"`
 	Lacp         *string  `pulumi:"lacp"`
 	Mtu          *int     `pulumi:"mtu"`
@@ -4339,7 +4165,6 @@ type FoundationImageNodesBlockNodeVswitchInput interface {
 }
 
 type FoundationImageNodesBlockNodeVswitchArgs struct {
-	// - (Required if node is capable) dynamic if using LACP, static for LAG
 	BondMode     pulumi.StringPtrInput   `pulumi:"bondMode"`
 	Lacp         pulumi.StringPtrInput   `pulumi:"lacp"`
 	Mtu          pulumi.IntPtrInput      `pulumi:"mtu"`
@@ -4399,7 +4224,6 @@ func (o FoundationImageNodesBlockNodeVswitchOutput) ToFoundationImageNodesBlockN
 	return o
 }
 
-// - (Required if node is capable) dynamic if using LACP, static for LAG
 func (o FoundationImageNodesBlockNodeVswitchOutput) BondMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationImageNodesBlockNodeVswitch) *string { return v.BondMode }).(pulumi.StringPtrOutput)
 }
@@ -4659,7 +4483,6 @@ func (o FoundationImageNodesClusterArrayOutput) Index(i pulumi.IntInput) Foundat
 }
 
 type FoundationImageNodesClusterUrl struct {
-	// - (Required) Name of the cluster.
 	ClusterName *string `pulumi:"clusterName"`
 	ClusterUrl  *string `pulumi:"clusterUrl"`
 }
@@ -4676,7 +4499,6 @@ type FoundationImageNodesClusterUrlInput interface {
 }
 
 type FoundationImageNodesClusterUrlArgs struct {
-	// - (Required) Name of the cluster.
 	ClusterName pulumi.StringPtrInput `pulumi:"clusterName"`
 	ClusterUrl  pulumi.StringPtrInput `pulumi:"clusterUrl"`
 }
@@ -4732,7 +4554,6 @@ func (o FoundationImageNodesClusterUrlOutput) ToFoundationImageNodesClusterUrlOu
 	return o
 }
 
-// - (Required) Name of the cluster.
 func (o FoundationImageNodesClusterUrlOutput) ClusterName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationImageNodesClusterUrl) *string { return v.ClusterName }).(pulumi.StringPtrOutput)
 }
@@ -5443,9 +5264,7 @@ func (o FoundationImageNodesHypervisorIsoPtrOutput) Xen() FoundationImageNodesHy
 }
 
 type FoundationImageNodesHypervisorIsoEsx struct {
-	// - (Required) Filename of hypervisor ISO.
 	Checksum string `pulumi:"checksum"`
-	// - (Required) Checksum for ISO file.
 	Filename string `pulumi:"filename"`
 }
 
@@ -5461,9 +5280,7 @@ type FoundationImageNodesHypervisorIsoEsxInput interface {
 }
 
 type FoundationImageNodesHypervisorIsoEsxArgs struct {
-	// - (Required) Filename of hypervisor ISO.
 	Checksum pulumi.StringInput `pulumi:"checksum"`
-	// - (Required) Checksum for ISO file.
 	Filename pulumi.StringInput `pulumi:"filename"`
 }
 
@@ -5544,12 +5361,10 @@ func (o FoundationImageNodesHypervisorIsoEsxOutput) ToFoundationImageNodesHyperv
 	}).(FoundationImageNodesHypervisorIsoEsxPtrOutput)
 }
 
-// - (Required) Filename of hypervisor ISO.
 func (o FoundationImageNodesHypervisorIsoEsxOutput) Checksum() pulumi.StringOutput {
 	return o.ApplyT(func(v FoundationImageNodesHypervisorIsoEsx) string { return v.Checksum }).(pulumi.StringOutput)
 }
 
-// - (Required) Checksum for ISO file.
 func (o FoundationImageNodesHypervisorIsoEsxOutput) Filename() pulumi.StringOutput {
 	return o.ApplyT(func(v FoundationImageNodesHypervisorIsoEsx) string { return v.Filename }).(pulumi.StringOutput)
 }
@@ -5578,7 +5393,6 @@ func (o FoundationImageNodesHypervisorIsoEsxPtrOutput) Elem() FoundationImageNod
 	}).(FoundationImageNodesHypervisorIsoEsxOutput)
 }
 
-// - (Required) Filename of hypervisor ISO.
 func (o FoundationImageNodesHypervisorIsoEsxPtrOutput) Checksum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesHypervisorIsoEsx) *string {
 		if v == nil {
@@ -5588,7 +5402,6 @@ func (o FoundationImageNodesHypervisorIsoEsxPtrOutput) Checksum() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// - (Required) Checksum for ISO file.
 func (o FoundationImageNodesHypervisorIsoEsxPtrOutput) Filename() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesHypervisorIsoEsx) *string {
 		if v == nil {
@@ -5599,9 +5412,7 @@ func (o FoundationImageNodesHypervisorIsoEsxPtrOutput) Filename() pulumi.StringP
 }
 
 type FoundationImageNodesHypervisorIsoHyperv struct {
-	// - (Required) Filename of hypervisor ISO.
 	Checksum string `pulumi:"checksum"`
-	// - (Required) Checksum for ISO file.
 	Filename string `pulumi:"filename"`
 }
 
@@ -5617,9 +5428,7 @@ type FoundationImageNodesHypervisorIsoHypervInput interface {
 }
 
 type FoundationImageNodesHypervisorIsoHypervArgs struct {
-	// - (Required) Filename of hypervisor ISO.
 	Checksum pulumi.StringInput `pulumi:"checksum"`
-	// - (Required) Checksum for ISO file.
 	Filename pulumi.StringInput `pulumi:"filename"`
 }
 
@@ -5700,12 +5509,10 @@ func (o FoundationImageNodesHypervisorIsoHypervOutput) ToFoundationImageNodesHyp
 	}).(FoundationImageNodesHypervisorIsoHypervPtrOutput)
 }
 
-// - (Required) Filename of hypervisor ISO.
 func (o FoundationImageNodesHypervisorIsoHypervOutput) Checksum() pulumi.StringOutput {
 	return o.ApplyT(func(v FoundationImageNodesHypervisorIsoHyperv) string { return v.Checksum }).(pulumi.StringOutput)
 }
 
-// - (Required) Checksum for ISO file.
 func (o FoundationImageNodesHypervisorIsoHypervOutput) Filename() pulumi.StringOutput {
 	return o.ApplyT(func(v FoundationImageNodesHypervisorIsoHyperv) string { return v.Filename }).(pulumi.StringOutput)
 }
@@ -5734,7 +5541,6 @@ func (o FoundationImageNodesHypervisorIsoHypervPtrOutput) Elem() FoundationImage
 	}).(FoundationImageNodesHypervisorIsoHypervOutput)
 }
 
-// - (Required) Filename of hypervisor ISO.
 func (o FoundationImageNodesHypervisorIsoHypervPtrOutput) Checksum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesHypervisorIsoHyperv) *string {
 		if v == nil {
@@ -5744,7 +5550,6 @@ func (o FoundationImageNodesHypervisorIsoHypervPtrOutput) Checksum() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// - (Required) Checksum for ISO file.
 func (o FoundationImageNodesHypervisorIsoHypervPtrOutput) Filename() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesHypervisorIsoHyperv) *string {
 		if v == nil {
@@ -5755,9 +5560,7 @@ func (o FoundationImageNodesHypervisorIsoHypervPtrOutput) Filename() pulumi.Stri
 }
 
 type FoundationImageNodesHypervisorIsoKvm struct {
-	// - (Required) Filename of hypervisor ISO.
 	Checksum string `pulumi:"checksum"`
-	// - (Required) Checksum for ISO file.
 	Filename string `pulumi:"filename"`
 }
 
@@ -5773,9 +5576,7 @@ type FoundationImageNodesHypervisorIsoKvmInput interface {
 }
 
 type FoundationImageNodesHypervisorIsoKvmArgs struct {
-	// - (Required) Filename of hypervisor ISO.
 	Checksum pulumi.StringInput `pulumi:"checksum"`
-	// - (Required) Checksum for ISO file.
 	Filename pulumi.StringInput `pulumi:"filename"`
 }
 
@@ -5856,12 +5657,10 @@ func (o FoundationImageNodesHypervisorIsoKvmOutput) ToFoundationImageNodesHyperv
 	}).(FoundationImageNodesHypervisorIsoKvmPtrOutput)
 }
 
-// - (Required) Filename of hypervisor ISO.
 func (o FoundationImageNodesHypervisorIsoKvmOutput) Checksum() pulumi.StringOutput {
 	return o.ApplyT(func(v FoundationImageNodesHypervisorIsoKvm) string { return v.Checksum }).(pulumi.StringOutput)
 }
 
-// - (Required) Checksum for ISO file.
 func (o FoundationImageNodesHypervisorIsoKvmOutput) Filename() pulumi.StringOutput {
 	return o.ApplyT(func(v FoundationImageNodesHypervisorIsoKvm) string { return v.Filename }).(pulumi.StringOutput)
 }
@@ -5890,7 +5689,6 @@ func (o FoundationImageNodesHypervisorIsoKvmPtrOutput) Elem() FoundationImageNod
 	}).(FoundationImageNodesHypervisorIsoKvmOutput)
 }
 
-// - (Required) Filename of hypervisor ISO.
 func (o FoundationImageNodesHypervisorIsoKvmPtrOutput) Checksum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesHypervisorIsoKvm) *string {
 		if v == nil {
@@ -5900,7 +5698,6 @@ func (o FoundationImageNodesHypervisorIsoKvmPtrOutput) Checksum() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// - (Required) Checksum for ISO file.
 func (o FoundationImageNodesHypervisorIsoKvmPtrOutput) Filename() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesHypervisorIsoKvm) *string {
 		if v == nil {
@@ -5911,9 +5708,7 @@ func (o FoundationImageNodesHypervisorIsoKvmPtrOutput) Filename() pulumi.StringP
 }
 
 type FoundationImageNodesHypervisorIsoXen struct {
-	// - (Required) Filename of hypervisor ISO.
 	Checksum string `pulumi:"checksum"`
-	// - (Required) Checksum for ISO file.
 	Filename string `pulumi:"filename"`
 }
 
@@ -5929,9 +5724,7 @@ type FoundationImageNodesHypervisorIsoXenInput interface {
 }
 
 type FoundationImageNodesHypervisorIsoXenArgs struct {
-	// - (Required) Filename of hypervisor ISO.
 	Checksum pulumi.StringInput `pulumi:"checksum"`
-	// - (Required) Checksum for ISO file.
 	Filename pulumi.StringInput `pulumi:"filename"`
 }
 
@@ -6012,12 +5805,10 @@ func (o FoundationImageNodesHypervisorIsoXenOutput) ToFoundationImageNodesHyperv
 	}).(FoundationImageNodesHypervisorIsoXenPtrOutput)
 }
 
-// - (Required) Filename of hypervisor ISO.
 func (o FoundationImageNodesHypervisorIsoXenOutput) Checksum() pulumi.StringOutput {
 	return o.ApplyT(func(v FoundationImageNodesHypervisorIsoXen) string { return v.Checksum }).(pulumi.StringOutput)
 }
 
-// - (Required) Checksum for ISO file.
 func (o FoundationImageNodesHypervisorIsoXenOutput) Filename() pulumi.StringOutput {
 	return o.ApplyT(func(v FoundationImageNodesHypervisorIsoXen) string { return v.Filename }).(pulumi.StringOutput)
 }
@@ -6046,7 +5837,6 @@ func (o FoundationImageNodesHypervisorIsoXenPtrOutput) Elem() FoundationImageNod
 	}).(FoundationImageNodesHypervisorIsoXenOutput)
 }
 
-// - (Required) Filename of hypervisor ISO.
 func (o FoundationImageNodesHypervisorIsoXenPtrOutput) Checksum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesHypervisorIsoXen) *string {
 		if v == nil {
@@ -6056,7 +5846,6 @@ func (o FoundationImageNodesHypervisorIsoXenPtrOutput) Checksum() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// - (Required) Checksum for ISO file.
 func (o FoundationImageNodesHypervisorIsoXenPtrOutput) Filename() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesHypervisorIsoXen) *string {
 		if v == nil {
@@ -8273,7 +8062,7 @@ type KarbonClusterMasterNodePool struct {
 	// * `ahv_config.network_uuid`: - (Required) The UUID of the network for the VMs deployed with this resource configuration.
 	// * `ahv_config.prism_element_cluster_uuid`: - (Required) The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	AhvConfig *KarbonClusterMasterNodePoolAhvConfig `pulumi:"ahvConfig"`
-	// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+	// - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
 	Name *string `pulumi:"name"`
 	// - (Required) The version of the node OS image. **Note:** Updates to this attribute forces new resource creation.
 	NodeOsVersion string `pulumi:"nodeOsVersion"`
@@ -8304,7 +8093,7 @@ type KarbonClusterMasterNodePoolArgs struct {
 	// * `ahv_config.network_uuid`: - (Required) The UUID of the network for the VMs deployed with this resource configuration.
 	// * `ahv_config.prism_element_cluster_uuid`: - (Required) The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	AhvConfig KarbonClusterMasterNodePoolAhvConfigPtrInput `pulumi:"ahvConfig"`
-	// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+	// - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// - (Required) The version of the node OS image. **Note:** Updates to this attribute forces new resource creation.
 	NodeOsVersion pulumi.StringInput `pulumi:"nodeOsVersion"`
@@ -8403,7 +8192,7 @@ func (o KarbonClusterMasterNodePoolOutput) AhvConfig() KarbonClusterMasterNodePo
 	return o.ApplyT(func(v KarbonClusterMasterNodePool) *KarbonClusterMasterNodePoolAhvConfig { return v.AhvConfig }).(KarbonClusterMasterNodePoolAhvConfigPtrOutput)
 }
 
-// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+// - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
 func (o KarbonClusterMasterNodePoolOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KarbonClusterMasterNodePool) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -8464,7 +8253,7 @@ func (o KarbonClusterMasterNodePoolPtrOutput) AhvConfig() KarbonClusterMasterNod
 	}).(KarbonClusterMasterNodePoolAhvConfigPtrOutput)
 }
 
-// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+// - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
 func (o KarbonClusterMasterNodePoolPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KarbonClusterMasterNodePool) *string {
 		if v == nil {
@@ -9432,7 +9221,7 @@ type KarbonClusterWorkerNodePool struct {
 	// * `ahv_config.network_uuid`: - (Required) The UUID of the network for the VMs deployed with this resource configuration.
 	// * `ahv_config.prism_element_cluster_uuid`: - (Required) The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	AhvConfig *KarbonClusterWorkerNodePoolAhvConfig `pulumi:"ahvConfig"`
-	// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+	// - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
 	Name *string `pulumi:"name"`
 	// - (Required) The version of the node OS image. **Note:** Updates to this attribute forces new resource creation.
 	NodeOsVersion string `pulumi:"nodeOsVersion"`
@@ -9463,7 +9252,7 @@ type KarbonClusterWorkerNodePoolArgs struct {
 	// * `ahv_config.network_uuid`: - (Required) The UUID of the network for the VMs deployed with this resource configuration.
 	// * `ahv_config.prism_element_cluster_uuid`: - (Required) The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	AhvConfig KarbonClusterWorkerNodePoolAhvConfigPtrInput `pulumi:"ahvConfig"`
-	// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+	// - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// - (Required) The version of the node OS image. **Note:** Updates to this attribute forces new resource creation.
 	NodeOsVersion pulumi.StringInput `pulumi:"nodeOsVersion"`
@@ -9562,7 +9351,7 @@ func (o KarbonClusterWorkerNodePoolOutput) AhvConfig() KarbonClusterWorkerNodePo
 	return o.ApplyT(func(v KarbonClusterWorkerNodePool) *KarbonClusterWorkerNodePoolAhvConfig { return v.AhvConfig }).(KarbonClusterWorkerNodePoolAhvConfigPtrOutput)
 }
 
-// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+// - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
 func (o KarbonClusterWorkerNodePoolOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KarbonClusterWorkerNodePool) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -9623,7 +9412,7 @@ func (o KarbonClusterWorkerNodePoolPtrOutput) AhvConfig() KarbonClusterWorkerNod
 	}).(KarbonClusterWorkerNodePoolAhvConfigPtrOutput)
 }
 
-// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+// - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
 func (o KarbonClusterWorkerNodePoolPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KarbonClusterWorkerNodePool) *string {
 		if v == nil {
@@ -22582,9 +22371,7 @@ func (o ServiceGroupServiceListArrayOutput) Index(i pulumi.IntInput) ServiceGrou
 }
 
 type ServiceGroupServiceListIcmpTypeCodeList struct {
-	// - (Optional) Code as text
 	Code *string `pulumi:"code"`
-	// - (Optional) Type as text
 	Type *string `pulumi:"type"`
 }
 
@@ -22600,9 +22387,7 @@ type ServiceGroupServiceListIcmpTypeCodeListInput interface {
 }
 
 type ServiceGroupServiceListIcmpTypeCodeListArgs struct {
-	// - (Optional) Code as text
 	Code pulumi.StringPtrInput `pulumi:"code"`
-	// - (Optional) Type as text
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -22657,12 +22442,10 @@ func (o ServiceGroupServiceListIcmpTypeCodeListOutput) ToServiceGroupServiceList
 	return o
 }
 
-// - (Optional) Code as text
 func (o ServiceGroupServiceListIcmpTypeCodeListOutput) Code() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServiceGroupServiceListIcmpTypeCodeList) *string { return v.Code }).(pulumi.StringPtrOutput)
 }
 
-// - (Optional) Type as text
 func (o ServiceGroupServiceListIcmpTypeCodeListOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServiceGroupServiceListIcmpTypeCodeList) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -22688,9 +22471,7 @@ func (o ServiceGroupServiceListIcmpTypeCodeListArrayOutput) Index(i pulumi.IntIn
 }
 
 type ServiceGroupServiceListTcpPortRangeList struct {
-	// End Port (Int)
-	EndPort *int `pulumi:"endPort"`
-	// - (Optional) Start Port (Int)
+	EndPort   *int `pulumi:"endPort"`
 	StartPort *int `pulumi:"startPort"`
 }
 
@@ -22706,9 +22487,7 @@ type ServiceGroupServiceListTcpPortRangeListInput interface {
 }
 
 type ServiceGroupServiceListTcpPortRangeListArgs struct {
-	// End Port (Int)
-	EndPort pulumi.IntPtrInput `pulumi:"endPort"`
-	// - (Optional) Start Port (Int)
+	EndPort   pulumi.IntPtrInput `pulumi:"endPort"`
 	StartPort pulumi.IntPtrInput `pulumi:"startPort"`
 }
 
@@ -22763,12 +22542,10 @@ func (o ServiceGroupServiceListTcpPortRangeListOutput) ToServiceGroupServiceList
 	return o
 }
 
-// End Port (Int)
 func (o ServiceGroupServiceListTcpPortRangeListOutput) EndPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ServiceGroupServiceListTcpPortRangeList) *int { return v.EndPort }).(pulumi.IntPtrOutput)
 }
 
-// - (Optional) Start Port (Int)
 func (o ServiceGroupServiceListTcpPortRangeListOutput) StartPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ServiceGroupServiceListTcpPortRangeList) *int { return v.StartPort }).(pulumi.IntPtrOutput)
 }
@@ -22794,9 +22571,7 @@ func (o ServiceGroupServiceListTcpPortRangeListArrayOutput) Index(i pulumi.IntIn
 }
 
 type ServiceGroupServiceListUdpPortRangeList struct {
-	// End Port (Int)
-	EndPort *int `pulumi:"endPort"`
-	// - (Optional) Start Port (Int)
+	EndPort   *int `pulumi:"endPort"`
 	StartPort *int `pulumi:"startPort"`
 }
 
@@ -22812,9 +22587,7 @@ type ServiceGroupServiceListUdpPortRangeListInput interface {
 }
 
 type ServiceGroupServiceListUdpPortRangeListArgs struct {
-	// End Port (Int)
-	EndPort pulumi.IntPtrInput `pulumi:"endPort"`
-	// - (Optional) Start Port (Int)
+	EndPort   pulumi.IntPtrInput `pulumi:"endPort"`
 	StartPort pulumi.IntPtrInput `pulumi:"startPort"`
 }
 
@@ -22869,12 +22642,10 @@ func (o ServiceGroupServiceListUdpPortRangeListOutput) ToServiceGroupServiceList
 	return o
 }
 
-// End Port (Int)
 func (o ServiceGroupServiceListUdpPortRangeListOutput) EndPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ServiceGroupServiceListUdpPortRangeList) *int { return v.EndPort }).(pulumi.IntPtrOutput)
 }
 
-// - (Optional) Start Port (Int)
 func (o ServiceGroupServiceListUdpPortRangeListOutput) StartPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ServiceGroupServiceListUdpPortRangeList) *int { return v.StartPort }).(pulumi.IntPtrOutput)
 }
@@ -24830,7 +24601,7 @@ type VirtualMachineDiskListStorageConfigStorageContainerReference struct {
 	// - (Required) The name for the vm.
 	Name *string `pulumi:"name"`
 	Url  *string `pulumi:"url"`
-	// - (Optional) The device ID which is used to uniquely identify this particular disk.
+	// - the UUID(Required).
 	Uuid *string `pulumi:"uuid"`
 }
 
@@ -24851,7 +24622,7 @@ type VirtualMachineDiskListStorageConfigStorageContainerReferenceArgs struct {
 	// - (Required) The name for the vm.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	Url  pulumi.StringPtrInput `pulumi:"url"`
-	// - (Optional) The device ID which is used to uniquely identify this particular disk.
+	// - the UUID(Required).
 	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
 }
 
@@ -24920,7 +24691,7 @@ func (o VirtualMachineDiskListStorageConfigStorageContainerReferenceOutput) Url(
 	return o.ApplyT(func(v VirtualMachineDiskListStorageConfigStorageContainerReference) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
 
-// - (Optional) The device ID which is used to uniquely identify this particular disk.
+// - the UUID(Required).
 func (o VirtualMachineDiskListStorageConfigStorageContainerReferenceOutput) Uuid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineDiskListStorageConfigStorageContainerReference) *string { return v.Uuid }).(pulumi.StringPtrOutput)
 }
@@ -25126,8 +24897,7 @@ func (o VirtualMachineGpuListArrayOutput) Index(i pulumi.IntInput) VirtualMachin
 type VirtualMachineNicList struct {
 	// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
 	IpEndpointLists []VirtualMachineNicListIpEndpointList `pulumi:"ipEndpointLists"`
-	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
-	IsConnected *string `pulumi:"isConnected"`
+	IsConnected     *string                               `pulumi:"isConnected"`
 	// - The MAC address for the adapter.
 	MacAddress *string `pulumi:"macAddress"`
 	// - The model of this NIC. (Options : VIRTIO , E1000).
@@ -25162,8 +24932,7 @@ type VirtualMachineNicListInput interface {
 type VirtualMachineNicListArgs struct {
 	// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
 	IpEndpointLists VirtualMachineNicListIpEndpointListArrayInput `pulumi:"ipEndpointLists"`
-	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
-	IsConnected pulumi.StringPtrInput `pulumi:"isConnected"`
+	IsConnected     pulumi.StringPtrInput                         `pulumi:"isConnected"`
 	// - The MAC address for the adapter.
 	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
 	// - The model of this NIC. (Options : VIRTIO , E1000).
@@ -25240,7 +25009,6 @@ func (o VirtualMachineNicListOutput) IpEndpointLists() VirtualMachineNicListIpEn
 	return o.ApplyT(func(v VirtualMachineNicList) []VirtualMachineNicListIpEndpointList { return v.IpEndpointLists }).(VirtualMachineNicListIpEndpointListArrayOutput)
 }
 
-// - Indicates whether the serial port connection is connected or not (`true` or `false`).
 func (o VirtualMachineNicListOutput) IsConnected() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicList) *string { return v.IsConnected }).(pulumi.StringPtrOutput)
 }
@@ -25417,29 +25185,18 @@ func (o VirtualMachineNicListIpEndpointListArrayOutput) Index(i pulumi.IntInput)
 }
 
 type VirtualMachineNicListStatus struct {
-	// -  The Floating IP associated with the vnic. (Only in `nicListStatus`)
-	FloatingIp *string `pulumi:"floatingIp"`
-	// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
-	IpEndpointLists []VirtualMachineNicListStatusIpEndpointList `pulumi:"ipEndpointLists"`
-	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
-	IsConnected *string `pulumi:"isConnected"`
-	// - The MAC address for the adapter.
-	MacAddress *string `pulumi:"macAddress"`
-	// - The model of this NIC. (Options : VIRTIO , E1000).
-	Model *string `pulumi:"model"`
-	// - The reference to a network_function_chain.
-	NetworkFunctionChainReference map[string]string `pulumi:"networkFunctionChainReference"`
-	// - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
-	NetworkFunctionNicType *string `pulumi:"networkFunctionNicType"`
-	// - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
-	NicType *string `pulumi:"nicType"`
-	// - The number of tx/rx queue pairs for this NIC.
-	NumQueues *int `pulumi:"numQueues"`
-	// - The name of the subnet reference to.
-	SubnetName *string `pulumi:"subnetName"`
-	// - The reference to a subnet.
-	SubnetUuid *string `pulumi:"subnetUuid"`
-	// - (Optional) The device ID which is used to uniquely identify this particular disk.
+	FloatingIp                    *string                                     `pulumi:"floatingIp"`
+	IpEndpointLists               []VirtualMachineNicListStatusIpEndpointList `pulumi:"ipEndpointLists"`
+	IsConnected                   *string                                     `pulumi:"isConnected"`
+	MacAddress                    *string                                     `pulumi:"macAddress"`
+	Model                         *string                                     `pulumi:"model"`
+	NetworkFunctionChainReference map[string]string                           `pulumi:"networkFunctionChainReference"`
+	NetworkFunctionNicType        *string                                     `pulumi:"networkFunctionNicType"`
+	NicType                       *string                                     `pulumi:"nicType"`
+	NumQueues                     *int                                        `pulumi:"numQueues"`
+	SubnetName                    *string                                     `pulumi:"subnetName"`
+	SubnetUuid                    *string                                     `pulumi:"subnetUuid"`
+	// - the UUID(Required).
 	Uuid *string `pulumi:"uuid"`
 }
 
@@ -25455,29 +25212,18 @@ type VirtualMachineNicListStatusInput interface {
 }
 
 type VirtualMachineNicListStatusArgs struct {
-	// -  The Floating IP associated with the vnic. (Only in `nicListStatus`)
-	FloatingIp pulumi.StringPtrInput `pulumi:"floatingIp"`
-	// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
-	IpEndpointLists VirtualMachineNicListStatusIpEndpointListArrayInput `pulumi:"ipEndpointLists"`
-	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
-	IsConnected pulumi.StringPtrInput `pulumi:"isConnected"`
-	// - The MAC address for the adapter.
-	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
-	// - The model of this NIC. (Options : VIRTIO , E1000).
-	Model pulumi.StringPtrInput `pulumi:"model"`
-	// - The reference to a network_function_chain.
-	NetworkFunctionChainReference pulumi.StringMapInput `pulumi:"networkFunctionChainReference"`
-	// - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
-	NetworkFunctionNicType pulumi.StringPtrInput `pulumi:"networkFunctionNicType"`
-	// - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
-	NicType pulumi.StringPtrInput `pulumi:"nicType"`
-	// - The number of tx/rx queue pairs for this NIC.
-	NumQueues pulumi.IntPtrInput `pulumi:"numQueues"`
-	// - The name of the subnet reference to.
-	SubnetName pulumi.StringPtrInput `pulumi:"subnetName"`
-	// - The reference to a subnet.
-	SubnetUuid pulumi.StringPtrInput `pulumi:"subnetUuid"`
-	// - (Optional) The device ID which is used to uniquely identify this particular disk.
+	FloatingIp                    pulumi.StringPtrInput                               `pulumi:"floatingIp"`
+	IpEndpointLists               VirtualMachineNicListStatusIpEndpointListArrayInput `pulumi:"ipEndpointLists"`
+	IsConnected                   pulumi.StringPtrInput                               `pulumi:"isConnected"`
+	MacAddress                    pulumi.StringPtrInput                               `pulumi:"macAddress"`
+	Model                         pulumi.StringPtrInput                               `pulumi:"model"`
+	NetworkFunctionChainReference pulumi.StringMapInput                               `pulumi:"networkFunctionChainReference"`
+	NetworkFunctionNicType        pulumi.StringPtrInput                               `pulumi:"networkFunctionNicType"`
+	NicType                       pulumi.StringPtrInput                               `pulumi:"nicType"`
+	NumQueues                     pulumi.IntPtrInput                                  `pulumi:"numQueues"`
+	SubnetName                    pulumi.StringPtrInput                               `pulumi:"subnetName"`
+	SubnetUuid                    pulumi.StringPtrInput                               `pulumi:"subnetUuid"`
+	// - the UUID(Required).
 	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
 }
 
@@ -25532,64 +25278,53 @@ func (o VirtualMachineNicListStatusOutput) ToVirtualMachineNicListStatusOutputWi
 	return o
 }
 
-// -  The Floating IP associated with the vnic. (Only in `nicListStatus`)
 func (o VirtualMachineNicListStatusOutput) FloatingIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.FloatingIp }).(pulumi.StringPtrOutput)
 }
 
-// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
 func (o VirtualMachineNicListStatusOutput) IpEndpointLists() VirtualMachineNicListStatusIpEndpointListArrayOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) []VirtualMachineNicListStatusIpEndpointList {
 		return v.IpEndpointLists
 	}).(VirtualMachineNicListStatusIpEndpointListArrayOutput)
 }
 
-// - Indicates whether the serial port connection is connected or not (`true` or `false`).
 func (o VirtualMachineNicListStatusOutput) IsConnected() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.IsConnected }).(pulumi.StringPtrOutput)
 }
 
-// - The MAC address for the adapter.
 func (o VirtualMachineNicListStatusOutput) MacAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
 }
 
-// - The model of this NIC. (Options : VIRTIO , E1000).
 func (o VirtualMachineNicListStatusOutput) Model() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.Model }).(pulumi.StringPtrOutput)
 }
 
-// - The reference to a network_function_chain.
 func (o VirtualMachineNicListStatusOutput) NetworkFunctionChainReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) map[string]string { return v.NetworkFunctionChainReference }).(pulumi.StringMapOutput)
 }
 
-// - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
 func (o VirtualMachineNicListStatusOutput) NetworkFunctionNicType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.NetworkFunctionNicType }).(pulumi.StringPtrOutput)
 }
 
-// - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
 func (o VirtualMachineNicListStatusOutput) NicType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.NicType }).(pulumi.StringPtrOutput)
 }
 
-// - The number of tx/rx queue pairs for this NIC.
 func (o VirtualMachineNicListStatusOutput) NumQueues() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *int { return v.NumQueues }).(pulumi.IntPtrOutput)
 }
 
-// - The name of the subnet reference to.
 func (o VirtualMachineNicListStatusOutput) SubnetName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.SubnetName }).(pulumi.StringPtrOutput)
 }
 
-// - The reference to a subnet.
 func (o VirtualMachineNicListStatusOutput) SubnetUuid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.SubnetUuid }).(pulumi.StringPtrOutput)
 }
 
-// - (Optional) The device ID which is used to uniquely identify this particular disk.
+// - the UUID(Required).
 func (o VirtualMachineNicListStatusOutput) Uuid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.Uuid }).(pulumi.StringPtrOutput)
 }
@@ -30725,7 +30460,7 @@ type GetClustersEntity struct {
 	MasqueradingPort int `pulumi:"masqueradingPort"`
 	// - The image kind metadata.
 	Metadata map[string]string `pulumi:"metadata"`
-	// - the key name.
+	// -  The name for the image.
 	Name string `pulumi:"name"`
 	// - The list of IP addresses of the name servers.
 	NameServerIpLists []string `pulumi:"nameServerIpLists"`
@@ -30834,7 +30569,7 @@ type GetClustersEntityArgs struct {
 	MasqueradingPort pulumi.IntInput `pulumi:"masqueradingPort"`
 	// - The image kind metadata.
 	Metadata pulumi.StringMapInput `pulumi:"metadata"`
-	// - the key name.
+	// -  The name for the image.
 	Name pulumi.StringInput `pulumi:"name"`
 	// - The list of IP addresses of the name servers.
 	NameServerIpLists pulumi.StringArrayInput `pulumi:"nameServerIpLists"`
@@ -31062,7 +30797,7 @@ func (o GetClustersEntityOutput) Metadata() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetClustersEntity) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
-// - the key name.
+// -  The name for the image.
 func (o GetClustersEntityOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersEntity) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -31197,7 +30932,7 @@ func (o GetClustersEntityArrayOutput) Index(i pulumi.IntInput) GetClustersEntity
 
 type GetClustersEntityAuthorizedPublicKeyList struct {
 	Key string `pulumi:"key"`
-	// - the key name.
+	// -  The name for the image.
 	Name string `pulumi:"name"`
 }
 
@@ -31214,7 +30949,7 @@ type GetClustersEntityAuthorizedPublicKeyListInput interface {
 
 type GetClustersEntityAuthorizedPublicKeyListArgs struct {
 	Key pulumi.StringInput `pulumi:"key"`
-	// - the key name.
+	// -  The name for the image.
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -31273,7 +31008,7 @@ func (o GetClustersEntityAuthorizedPublicKeyListOutput) Key() pulumi.StringOutpu
 	return o.ApplyT(func(v GetClustersEntityAuthorizedPublicKeyList) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// - the key name.
+// -  The name for the image.
 func (o GetClustersEntityAuthorizedPublicKeyListOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersEntityAuthorizedPublicKeyList) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -38514,14 +38249,14 @@ type GetHostGpuList struct {
 	LicenseLists       []string          `pulumi:"licenseLists"`
 	MaxResolution      string            `pulumi:"maxResolution"`
 	Mode               string            `pulumi:"mode"`
-	// - the key name.
+	// - the name.
 	Name                   string `pulumi:"name"`
 	NumVgpusAllocated      int    `pulumi:"numVgpusAllocated"`
 	NumVirtualDisplayHeads int    `pulumi:"numVirtualDisplayHeads"`
 	NumaNode               int    `pulumi:"numaNode"`
 	PciAddress             string `pulumi:"pciAddress"`
 	Status                 string `pulumi:"status"`
-	// - image uuid.
+	// - the uuid.
 	Uuid   string `pulumi:"uuid"`
 	Vendor string `pulumi:"vendor"`
 }
@@ -38548,14 +38283,14 @@ type GetHostGpuListArgs struct {
 	LicenseLists       pulumi.StringArrayInput `pulumi:"licenseLists"`
 	MaxResolution      pulumi.StringInput      `pulumi:"maxResolution"`
 	Mode               pulumi.StringInput      `pulumi:"mode"`
-	// - the key name.
+	// - the name.
 	Name                   pulumi.StringInput `pulumi:"name"`
 	NumVgpusAllocated      pulumi.IntInput    `pulumi:"numVgpusAllocated"`
 	NumVirtualDisplayHeads pulumi.IntInput    `pulumi:"numVirtualDisplayHeads"`
 	NumaNode               pulumi.IntInput    `pulumi:"numaNode"`
 	PciAddress             pulumi.StringInput `pulumi:"pciAddress"`
 	Status                 pulumi.StringInput `pulumi:"status"`
-	// - image uuid.
+	// - the uuid.
 	Uuid   pulumi.StringInput `pulumi:"uuid"`
 	Vendor pulumi.StringInput `pulumi:"vendor"`
 }
@@ -38651,7 +38386,7 @@ func (o GetHostGpuListOutput) Mode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostGpuList) string { return v.Mode }).(pulumi.StringOutput)
 }
 
-// - the key name.
+// - the name.
 func (o GetHostGpuListOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostGpuList) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -38676,7 +38411,7 @@ func (o GetHostGpuListOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostGpuList) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// - image uuid.
+// - the uuid.
 func (o GetHostGpuListOutput) Uuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostGpuList) string { return v.Uuid }).(pulumi.StringOutput)
 }
@@ -38708,9 +38443,9 @@ func (o GetHostGpuListArrayOutput) Index(i pulumi.IntInput) GetHostGpuListOutput
 type GetHostHostDisksReferenceList struct {
 	// - The kind name (Default value: project).
 	Kind string `pulumi:"kind"`
-	// - the key name.
+	// - the name.
 	Name string `pulumi:"name"`
-	// - image uuid.
+	// - the uuid.
 	Uuid string `pulumi:"uuid"`
 }
 
@@ -38728,9 +38463,9 @@ type GetHostHostDisksReferenceListInput interface {
 type GetHostHostDisksReferenceListArgs struct {
 	// - The kind name (Default value: project).
 	Kind pulumi.StringInput `pulumi:"kind"`
-	// - the key name.
+	// - the name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// - image uuid.
+	// - the uuid.
 	Uuid pulumi.StringInput `pulumi:"uuid"`
 }
 
@@ -38790,12 +38525,12 @@ func (o GetHostHostDisksReferenceListOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostHostDisksReferenceList) string { return v.Kind }).(pulumi.StringOutput)
 }
 
-// - the key name.
+// - the name.
 func (o GetHostHostDisksReferenceListOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostHostDisksReferenceList) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// - image uuid.
+// - the uuid.
 func (o GetHostHostDisksReferenceListOutput) Uuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostHostDisksReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
 }
@@ -39897,19 +39632,12 @@ func (o GetImageCurrentClusterReferenceListArrayOutput) Index(i pulumi.IntInput)
 
 type GetKarbonClusterEtcdNodePool struct {
 	// - VM configuration in AHV.
-	// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-	// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-	// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-	// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-	// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	AhvConfigs []GetKarbonClusterEtcdNodePoolAhvConfig `pulumi:"ahvConfigs"`
 	// - Unique name of the node pool.
 	Name string `pulumi:"name"`
 	// - The version of the node OS image.
 	NodeOsVersion string `pulumi:"nodeOsVersion"`
 	// - List of the deployed nodes in the node pool.
-	// * `nodes.hostname`: - Hostname of the deployed node.
-	// * `nodes.ipv4_address`: - IP of the deployed node.
 	Nodes []GetKarbonClusterEtcdNodePoolNode `pulumi:"nodes"`
 	// - Number of nodes in the node pool.
 	NumInstances int `pulumi:"numInstances"`
@@ -39928,19 +39656,12 @@ type GetKarbonClusterEtcdNodePoolInput interface {
 
 type GetKarbonClusterEtcdNodePoolArgs struct {
 	// - VM configuration in AHV.
-	// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-	// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-	// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-	// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-	// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	AhvConfigs GetKarbonClusterEtcdNodePoolAhvConfigArrayInput `pulumi:"ahvConfigs"`
 	// - Unique name of the node pool.
 	Name pulumi.StringInput `pulumi:"name"`
 	// - The version of the node OS image.
 	NodeOsVersion pulumi.StringInput `pulumi:"nodeOsVersion"`
 	// - List of the deployed nodes in the node pool.
-	// * `nodes.hostname`: - Hostname of the deployed node.
-	// * `nodes.ipv4_address`: - IP of the deployed node.
 	Nodes GetKarbonClusterEtcdNodePoolNodeArrayInput `pulumi:"nodes"`
 	// - Number of nodes in the node pool.
 	NumInstances pulumi.IntInput `pulumi:"numInstances"`
@@ -39998,11 +39719,6 @@ func (o GetKarbonClusterEtcdNodePoolOutput) ToGetKarbonClusterEtcdNodePoolOutput
 }
 
 // - VM configuration in AHV.
-// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 func (o GetKarbonClusterEtcdNodePoolOutput) AhvConfigs() GetKarbonClusterEtcdNodePoolAhvConfigArrayOutput {
 	return o.ApplyT(func(v GetKarbonClusterEtcdNodePool) []GetKarbonClusterEtcdNodePoolAhvConfig { return v.AhvConfigs }).(GetKarbonClusterEtcdNodePoolAhvConfigArrayOutput)
 }
@@ -40018,8 +39734,6 @@ func (o GetKarbonClusterEtcdNodePoolOutput) NodeOsVersion() pulumi.StringOutput 
 }
 
 // - List of the deployed nodes in the node pool.
-// * `nodes.hostname`: - Hostname of the deployed node.
-// * `nodes.ipv4_address`: - IP of the deployed node.
 func (o GetKarbonClusterEtcdNodePoolOutput) Nodes() GetKarbonClusterEtcdNodePoolNodeArrayOutput {
 	return o.ApplyT(func(v GetKarbonClusterEtcdNodePool) []GetKarbonClusterEtcdNodePoolNode { return v.Nodes }).(GetKarbonClusterEtcdNodePoolNodeArrayOutput)
 }
@@ -40050,10 +39764,15 @@ func (o GetKarbonClusterEtcdNodePoolArrayOutput) Index(i pulumi.IntInput) GetKar
 }
 
 type GetKarbonClusterEtcdNodePoolAhvConfig struct {
-	Cpu                     int    `pulumi:"cpu"`
-	DiskMib                 int    `pulumi:"diskMib"`
-	MemoryMib               int    `pulumi:"memoryMib"`
-	NetworkUuid             string `pulumi:"networkUuid"`
+	// - The number of VCPUs allocated for each VM on the PE cluster.
+	Cpu int `pulumi:"cpu"`
+	// - Size of local storage for each VM on the PE cluster in MiB.
+	DiskMib int `pulumi:"diskMib"`
+	// - Memory allocated for each VM on the PE cluster in MiB.
+	MemoryMib int `pulumi:"memoryMib"`
+	// - The UUID of the network for the VMs deployed with this resource configuration.
+	NetworkUuid string `pulumi:"networkUuid"`
+	// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	PrismElementClusterUuid string `pulumi:"prismElementClusterUuid"`
 }
 
@@ -40069,10 +39788,15 @@ type GetKarbonClusterEtcdNodePoolAhvConfigInput interface {
 }
 
 type GetKarbonClusterEtcdNodePoolAhvConfigArgs struct {
-	Cpu                     pulumi.IntInput    `pulumi:"cpu"`
-	DiskMib                 pulumi.IntInput    `pulumi:"diskMib"`
-	MemoryMib               pulumi.IntInput    `pulumi:"memoryMib"`
-	NetworkUuid             pulumi.StringInput `pulumi:"networkUuid"`
+	// - The number of VCPUs allocated for each VM on the PE cluster.
+	Cpu pulumi.IntInput `pulumi:"cpu"`
+	// - Size of local storage for each VM on the PE cluster in MiB.
+	DiskMib pulumi.IntInput `pulumi:"diskMib"`
+	// - Memory allocated for each VM on the PE cluster in MiB.
+	MemoryMib pulumi.IntInput `pulumi:"memoryMib"`
+	// - The UUID of the network for the VMs deployed with this resource configuration.
+	NetworkUuid pulumi.StringInput `pulumi:"networkUuid"`
+	// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	PrismElementClusterUuid pulumi.StringInput `pulumi:"prismElementClusterUuid"`
 }
 
@@ -40127,22 +39851,27 @@ func (o GetKarbonClusterEtcdNodePoolAhvConfigOutput) ToGetKarbonClusterEtcdNodeP
 	return o
 }
 
+// - The number of VCPUs allocated for each VM on the PE cluster.
 func (o GetKarbonClusterEtcdNodePoolAhvConfigOutput) Cpu() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClusterEtcdNodePoolAhvConfig) int { return v.Cpu }).(pulumi.IntOutput)
 }
 
+// - Size of local storage for each VM on the PE cluster in MiB.
 func (o GetKarbonClusterEtcdNodePoolAhvConfigOutput) DiskMib() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClusterEtcdNodePoolAhvConfig) int { return v.DiskMib }).(pulumi.IntOutput)
 }
 
+// - Memory allocated for each VM on the PE cluster in MiB.
 func (o GetKarbonClusterEtcdNodePoolAhvConfigOutput) MemoryMib() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClusterEtcdNodePoolAhvConfig) int { return v.MemoryMib }).(pulumi.IntOutput)
 }
 
+// - The UUID of the network for the VMs deployed with this resource configuration.
 func (o GetKarbonClusterEtcdNodePoolAhvConfigOutput) NetworkUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClusterEtcdNodePoolAhvConfig) string { return v.NetworkUuid }).(pulumi.StringOutput)
 }
 
+// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 func (o GetKarbonClusterEtcdNodePoolAhvConfigOutput) PrismElementClusterUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClusterEtcdNodePoolAhvConfig) string { return v.PrismElementClusterUuid }).(pulumi.StringOutput)
 }
@@ -40168,7 +39897,9 @@ func (o GetKarbonClusterEtcdNodePoolAhvConfigArrayOutput) Index(i pulumi.IntInpu
 }
 
 type GetKarbonClusterEtcdNodePoolNode struct {
-	Hostname    string `pulumi:"hostname"`
+	// - Hostname of the deployed node.
+	Hostname string `pulumi:"hostname"`
+	// - IP of the deployed node.
 	Ipv4Address string `pulumi:"ipv4Address"`
 }
 
@@ -40184,7 +39915,9 @@ type GetKarbonClusterEtcdNodePoolNodeInput interface {
 }
 
 type GetKarbonClusterEtcdNodePoolNodeArgs struct {
-	Hostname    pulumi.StringInput `pulumi:"hostname"`
+	// - Hostname of the deployed node.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// - IP of the deployed node.
 	Ipv4Address pulumi.StringInput `pulumi:"ipv4Address"`
 }
 
@@ -40239,10 +39972,12 @@ func (o GetKarbonClusterEtcdNodePoolNodeOutput) ToGetKarbonClusterEtcdNodePoolNo
 	return o
 }
 
+// - Hostname of the deployed node.
 func (o GetKarbonClusterEtcdNodePoolNodeOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClusterEtcdNodePoolNode) string { return v.Hostname }).(pulumi.StringOutput)
 }
 
+// - IP of the deployed node.
 func (o GetKarbonClusterEtcdNodePoolNodeOutput) Ipv4Address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClusterEtcdNodePoolNode) string { return v.Ipv4Address }).(pulumi.StringOutput)
 }
@@ -40269,19 +40004,12 @@ func (o GetKarbonClusterEtcdNodePoolNodeArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetKarbonClusterMasterNodePool struct {
 	// - VM configuration in AHV.
-	// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-	// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-	// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-	// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-	// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	AhvConfigs []GetKarbonClusterMasterNodePoolAhvConfig `pulumi:"ahvConfigs"`
 	// - Unique name of the node pool.
 	Name string `pulumi:"name"`
 	// - The version of the node OS image.
 	NodeOsVersion string `pulumi:"nodeOsVersion"`
 	// - List of the deployed nodes in the node pool.
-	// * `nodes.hostname`: - Hostname of the deployed node.
-	// * `nodes.ipv4_address`: - IP of the deployed node.
 	Nodes []GetKarbonClusterMasterNodePoolNode `pulumi:"nodes"`
 	// - Number of nodes in the node pool.
 	NumInstances int `pulumi:"numInstances"`
@@ -40300,19 +40028,12 @@ type GetKarbonClusterMasterNodePoolInput interface {
 
 type GetKarbonClusterMasterNodePoolArgs struct {
 	// - VM configuration in AHV.
-	// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-	// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-	// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-	// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-	// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	AhvConfigs GetKarbonClusterMasterNodePoolAhvConfigArrayInput `pulumi:"ahvConfigs"`
 	// - Unique name of the node pool.
 	Name pulumi.StringInput `pulumi:"name"`
 	// - The version of the node OS image.
 	NodeOsVersion pulumi.StringInput `pulumi:"nodeOsVersion"`
 	// - List of the deployed nodes in the node pool.
-	// * `nodes.hostname`: - Hostname of the deployed node.
-	// * `nodes.ipv4_address`: - IP of the deployed node.
 	Nodes GetKarbonClusterMasterNodePoolNodeArrayInput `pulumi:"nodes"`
 	// - Number of nodes in the node pool.
 	NumInstances pulumi.IntInput `pulumi:"numInstances"`
@@ -40370,11 +40091,6 @@ func (o GetKarbonClusterMasterNodePoolOutput) ToGetKarbonClusterMasterNodePoolOu
 }
 
 // - VM configuration in AHV.
-// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 func (o GetKarbonClusterMasterNodePoolOutput) AhvConfigs() GetKarbonClusterMasterNodePoolAhvConfigArrayOutput {
 	return o.ApplyT(func(v GetKarbonClusterMasterNodePool) []GetKarbonClusterMasterNodePoolAhvConfig { return v.AhvConfigs }).(GetKarbonClusterMasterNodePoolAhvConfigArrayOutput)
 }
@@ -40390,8 +40106,6 @@ func (o GetKarbonClusterMasterNodePoolOutput) NodeOsVersion() pulumi.StringOutpu
 }
 
 // - List of the deployed nodes in the node pool.
-// * `nodes.hostname`: - Hostname of the deployed node.
-// * `nodes.ipv4_address`: - IP of the deployed node.
 func (o GetKarbonClusterMasterNodePoolOutput) Nodes() GetKarbonClusterMasterNodePoolNodeArrayOutput {
 	return o.ApplyT(func(v GetKarbonClusterMasterNodePool) []GetKarbonClusterMasterNodePoolNode { return v.Nodes }).(GetKarbonClusterMasterNodePoolNodeArrayOutput)
 }
@@ -40422,10 +40136,15 @@ func (o GetKarbonClusterMasterNodePoolArrayOutput) Index(i pulumi.IntInput) GetK
 }
 
 type GetKarbonClusterMasterNodePoolAhvConfig struct {
-	Cpu                     int    `pulumi:"cpu"`
-	DiskMib                 int    `pulumi:"diskMib"`
-	MemoryMib               int    `pulumi:"memoryMib"`
-	NetworkUuid             string `pulumi:"networkUuid"`
+	// - The number of VCPUs allocated for each VM on the PE cluster.
+	Cpu int `pulumi:"cpu"`
+	// - Size of local storage for each VM on the PE cluster in MiB.
+	DiskMib int `pulumi:"diskMib"`
+	// - Memory allocated for each VM on the PE cluster in MiB.
+	MemoryMib int `pulumi:"memoryMib"`
+	// - The UUID of the network for the VMs deployed with this resource configuration.
+	NetworkUuid string `pulumi:"networkUuid"`
+	// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	PrismElementClusterUuid string `pulumi:"prismElementClusterUuid"`
 }
 
@@ -40441,10 +40160,15 @@ type GetKarbonClusterMasterNodePoolAhvConfigInput interface {
 }
 
 type GetKarbonClusterMasterNodePoolAhvConfigArgs struct {
-	Cpu                     pulumi.IntInput    `pulumi:"cpu"`
-	DiskMib                 pulumi.IntInput    `pulumi:"diskMib"`
-	MemoryMib               pulumi.IntInput    `pulumi:"memoryMib"`
-	NetworkUuid             pulumi.StringInput `pulumi:"networkUuid"`
+	// - The number of VCPUs allocated for each VM on the PE cluster.
+	Cpu pulumi.IntInput `pulumi:"cpu"`
+	// - Size of local storage for each VM on the PE cluster in MiB.
+	DiskMib pulumi.IntInput `pulumi:"diskMib"`
+	// - Memory allocated for each VM on the PE cluster in MiB.
+	MemoryMib pulumi.IntInput `pulumi:"memoryMib"`
+	// - The UUID of the network for the VMs deployed with this resource configuration.
+	NetworkUuid pulumi.StringInput `pulumi:"networkUuid"`
+	// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	PrismElementClusterUuid pulumi.StringInput `pulumi:"prismElementClusterUuid"`
 }
 
@@ -40499,22 +40223,27 @@ func (o GetKarbonClusterMasterNodePoolAhvConfigOutput) ToGetKarbonClusterMasterN
 	return o
 }
 
+// - The number of VCPUs allocated for each VM on the PE cluster.
 func (o GetKarbonClusterMasterNodePoolAhvConfigOutput) Cpu() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClusterMasterNodePoolAhvConfig) int { return v.Cpu }).(pulumi.IntOutput)
 }
 
+// - Size of local storage for each VM on the PE cluster in MiB.
 func (o GetKarbonClusterMasterNodePoolAhvConfigOutput) DiskMib() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClusterMasterNodePoolAhvConfig) int { return v.DiskMib }).(pulumi.IntOutput)
 }
 
+// - Memory allocated for each VM on the PE cluster in MiB.
 func (o GetKarbonClusterMasterNodePoolAhvConfigOutput) MemoryMib() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClusterMasterNodePoolAhvConfig) int { return v.MemoryMib }).(pulumi.IntOutput)
 }
 
+// - The UUID of the network for the VMs deployed with this resource configuration.
 func (o GetKarbonClusterMasterNodePoolAhvConfigOutput) NetworkUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClusterMasterNodePoolAhvConfig) string { return v.NetworkUuid }).(pulumi.StringOutput)
 }
 
+// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 func (o GetKarbonClusterMasterNodePoolAhvConfigOutput) PrismElementClusterUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClusterMasterNodePoolAhvConfig) string { return v.PrismElementClusterUuid }).(pulumi.StringOutput)
 }
@@ -40540,7 +40269,9 @@ func (o GetKarbonClusterMasterNodePoolAhvConfigArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetKarbonClusterMasterNodePoolNode struct {
-	Hostname    string `pulumi:"hostname"`
+	// - Hostname of the deployed node.
+	Hostname string `pulumi:"hostname"`
+	// - IP of the deployed node.
 	Ipv4Address string `pulumi:"ipv4Address"`
 }
 
@@ -40556,7 +40287,9 @@ type GetKarbonClusterMasterNodePoolNodeInput interface {
 }
 
 type GetKarbonClusterMasterNodePoolNodeArgs struct {
-	Hostname    pulumi.StringInput `pulumi:"hostname"`
+	// - Hostname of the deployed node.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// - IP of the deployed node.
 	Ipv4Address pulumi.StringInput `pulumi:"ipv4Address"`
 }
 
@@ -40611,10 +40344,12 @@ func (o GetKarbonClusterMasterNodePoolNodeOutput) ToGetKarbonClusterMasterNodePo
 	return o
 }
 
+// - Hostname of the deployed node.
 func (o GetKarbonClusterMasterNodePoolNodeOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClusterMasterNodePoolNode) string { return v.Hostname }).(pulumi.StringOutput)
 }
 
+// - IP of the deployed node.
 func (o GetKarbonClusterMasterNodePoolNodeOutput) Ipv4Address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClusterMasterNodePoolNode) string { return v.Ipv4Address }).(pulumi.StringOutput)
 }
@@ -40641,19 +40376,12 @@ func (o GetKarbonClusterMasterNodePoolNodeArrayOutput) Index(i pulumi.IntInput) 
 
 type GetKarbonClusterWorkerNodePool struct {
 	// - VM configuration in AHV.
-	// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-	// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-	// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-	// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-	// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	AhvConfigs []GetKarbonClusterWorkerNodePoolAhvConfig `pulumi:"ahvConfigs"`
 	// - Unique name of the node pool.
 	Name string `pulumi:"name"`
 	// - The version of the node OS image.
 	NodeOsVersion string `pulumi:"nodeOsVersion"`
 	// - List of the deployed nodes in the node pool.
-	// * `nodes.hostname`: - Hostname of the deployed node.
-	// * `nodes.ipv4_address`: - IP of the deployed node.
 	Nodes []GetKarbonClusterWorkerNodePoolNode `pulumi:"nodes"`
 	// - Number of nodes in the node pool.
 	NumInstances int `pulumi:"numInstances"`
@@ -40672,19 +40400,12 @@ type GetKarbonClusterWorkerNodePoolInput interface {
 
 type GetKarbonClusterWorkerNodePoolArgs struct {
 	// - VM configuration in AHV.
-	// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-	// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-	// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-	// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-	// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	AhvConfigs GetKarbonClusterWorkerNodePoolAhvConfigArrayInput `pulumi:"ahvConfigs"`
 	// - Unique name of the node pool.
 	Name pulumi.StringInput `pulumi:"name"`
 	// - The version of the node OS image.
 	NodeOsVersion pulumi.StringInput `pulumi:"nodeOsVersion"`
 	// - List of the deployed nodes in the node pool.
-	// * `nodes.hostname`: - Hostname of the deployed node.
-	// * `nodes.ipv4_address`: - IP of the deployed node.
 	Nodes GetKarbonClusterWorkerNodePoolNodeArrayInput `pulumi:"nodes"`
 	// - Number of nodes in the node pool.
 	NumInstances pulumi.IntInput `pulumi:"numInstances"`
@@ -40742,11 +40463,6 @@ func (o GetKarbonClusterWorkerNodePoolOutput) ToGetKarbonClusterWorkerNodePoolOu
 }
 
 // - VM configuration in AHV.
-// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 func (o GetKarbonClusterWorkerNodePoolOutput) AhvConfigs() GetKarbonClusterWorkerNodePoolAhvConfigArrayOutput {
 	return o.ApplyT(func(v GetKarbonClusterWorkerNodePool) []GetKarbonClusterWorkerNodePoolAhvConfig { return v.AhvConfigs }).(GetKarbonClusterWorkerNodePoolAhvConfigArrayOutput)
 }
@@ -40762,8 +40478,6 @@ func (o GetKarbonClusterWorkerNodePoolOutput) NodeOsVersion() pulumi.StringOutpu
 }
 
 // - List of the deployed nodes in the node pool.
-// * `nodes.hostname`: - Hostname of the deployed node.
-// * `nodes.ipv4_address`: - IP of the deployed node.
 func (o GetKarbonClusterWorkerNodePoolOutput) Nodes() GetKarbonClusterWorkerNodePoolNodeArrayOutput {
 	return o.ApplyT(func(v GetKarbonClusterWorkerNodePool) []GetKarbonClusterWorkerNodePoolNode { return v.Nodes }).(GetKarbonClusterWorkerNodePoolNodeArrayOutput)
 }
@@ -40794,10 +40508,15 @@ func (o GetKarbonClusterWorkerNodePoolArrayOutput) Index(i pulumi.IntInput) GetK
 }
 
 type GetKarbonClusterWorkerNodePoolAhvConfig struct {
-	Cpu                     int    `pulumi:"cpu"`
-	DiskMib                 int    `pulumi:"diskMib"`
-	MemoryMib               int    `pulumi:"memoryMib"`
-	NetworkUuid             string `pulumi:"networkUuid"`
+	// - The number of VCPUs allocated for each VM on the PE cluster.
+	Cpu int `pulumi:"cpu"`
+	// - Size of local storage for each VM on the PE cluster in MiB.
+	DiskMib int `pulumi:"diskMib"`
+	// - Memory allocated for each VM on the PE cluster in MiB.
+	MemoryMib int `pulumi:"memoryMib"`
+	// - The UUID of the network for the VMs deployed with this resource configuration.
+	NetworkUuid string `pulumi:"networkUuid"`
+	// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	PrismElementClusterUuid string `pulumi:"prismElementClusterUuid"`
 }
 
@@ -40813,10 +40532,15 @@ type GetKarbonClusterWorkerNodePoolAhvConfigInput interface {
 }
 
 type GetKarbonClusterWorkerNodePoolAhvConfigArgs struct {
-	Cpu                     pulumi.IntInput    `pulumi:"cpu"`
-	DiskMib                 pulumi.IntInput    `pulumi:"diskMib"`
-	MemoryMib               pulumi.IntInput    `pulumi:"memoryMib"`
-	NetworkUuid             pulumi.StringInput `pulumi:"networkUuid"`
+	// - The number of VCPUs allocated for each VM on the PE cluster.
+	Cpu pulumi.IntInput `pulumi:"cpu"`
+	// - Size of local storage for each VM on the PE cluster in MiB.
+	DiskMib pulumi.IntInput `pulumi:"diskMib"`
+	// - Memory allocated for each VM on the PE cluster in MiB.
+	MemoryMib pulumi.IntInput `pulumi:"memoryMib"`
+	// - The UUID of the network for the VMs deployed with this resource configuration.
+	NetworkUuid pulumi.StringInput `pulumi:"networkUuid"`
+	// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	PrismElementClusterUuid pulumi.StringInput `pulumi:"prismElementClusterUuid"`
 }
 
@@ -40871,22 +40595,27 @@ func (o GetKarbonClusterWorkerNodePoolAhvConfigOutput) ToGetKarbonClusterWorkerN
 	return o
 }
 
+// - The number of VCPUs allocated for each VM on the PE cluster.
 func (o GetKarbonClusterWorkerNodePoolAhvConfigOutput) Cpu() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClusterWorkerNodePoolAhvConfig) int { return v.Cpu }).(pulumi.IntOutput)
 }
 
+// - Size of local storage for each VM on the PE cluster in MiB.
 func (o GetKarbonClusterWorkerNodePoolAhvConfigOutput) DiskMib() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClusterWorkerNodePoolAhvConfig) int { return v.DiskMib }).(pulumi.IntOutput)
 }
 
+// - Memory allocated for each VM on the PE cluster in MiB.
 func (o GetKarbonClusterWorkerNodePoolAhvConfigOutput) MemoryMib() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClusterWorkerNodePoolAhvConfig) int { return v.MemoryMib }).(pulumi.IntOutput)
 }
 
+// - The UUID of the network for the VMs deployed with this resource configuration.
 func (o GetKarbonClusterWorkerNodePoolAhvConfigOutput) NetworkUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClusterWorkerNodePoolAhvConfig) string { return v.NetworkUuid }).(pulumi.StringOutput)
 }
 
+// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 func (o GetKarbonClusterWorkerNodePoolAhvConfigOutput) PrismElementClusterUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClusterWorkerNodePoolAhvConfig) string { return v.PrismElementClusterUuid }).(pulumi.StringOutput)
 }
@@ -40912,7 +40641,9 @@ func (o GetKarbonClusterWorkerNodePoolAhvConfigArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetKarbonClusterWorkerNodePoolNode struct {
-	Hostname    string `pulumi:"hostname"`
+	// - Hostname of the deployed node.
+	Hostname string `pulumi:"hostname"`
+	// - IP of the deployed node.
 	Ipv4Address string `pulumi:"ipv4Address"`
 }
 
@@ -40928,7 +40659,9 @@ type GetKarbonClusterWorkerNodePoolNodeInput interface {
 }
 
 type GetKarbonClusterWorkerNodePoolNodeArgs struct {
-	Hostname    pulumi.StringInput `pulumi:"hostname"`
+	// - Hostname of the deployed node.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// - IP of the deployed node.
 	Ipv4Address pulumi.StringInput `pulumi:"ipv4Address"`
 }
 
@@ -40983,10 +40716,12 @@ func (o GetKarbonClusterWorkerNodePoolNodeOutput) ToGetKarbonClusterWorkerNodePo
 	return o
 }
 
+// - Hostname of the deployed node.
 func (o GetKarbonClusterWorkerNodePoolNodeOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClusterWorkerNodePoolNode) string { return v.Hostname }).(pulumi.StringOutput)
 }
 
+// - IP of the deployed node.
 func (o GetKarbonClusterWorkerNodePoolNodeOutput) Ipv4Address() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClusterWorkerNodePoolNode) string { return v.Ipv4Address }).(pulumi.StringOutput)
 }
@@ -41167,19 +40902,12 @@ func (o GetKarbonClustersClusterArrayOutput) Index(i pulumi.IntInput) GetKarbonC
 
 type GetKarbonClustersClusterEtcdNodePool struct {
 	// - .
-	// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-	// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-	// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-	// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-	// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	AhvConfigs []GetKarbonClustersClusterEtcdNodePoolAhvConfig `pulumi:"ahvConfigs"`
 	// - Unique name of the node pool.
 	Name string `pulumi:"name"`
 	// - The version of the node OS image.
-	NodeOsVersion string `pulumi:"nodeOsVersion"`
-	// * `nodes.hostname`
-	// * `nodes.ipv4_address`
-	Nodes []GetKarbonClustersClusterEtcdNodePoolNode `pulumi:"nodes"`
+	NodeOsVersion string                                     `pulumi:"nodeOsVersion"`
+	Nodes         []GetKarbonClustersClusterEtcdNodePoolNode `pulumi:"nodes"`
 	// - Number of nodes in the node pool.
 	NumInstances int `pulumi:"numInstances"`
 }
@@ -41197,19 +40925,12 @@ type GetKarbonClustersClusterEtcdNodePoolInput interface {
 
 type GetKarbonClustersClusterEtcdNodePoolArgs struct {
 	// - .
-	// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-	// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-	// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-	// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-	// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	AhvConfigs GetKarbonClustersClusterEtcdNodePoolAhvConfigArrayInput `pulumi:"ahvConfigs"`
 	// - Unique name of the node pool.
 	Name pulumi.StringInput `pulumi:"name"`
 	// - The version of the node OS image.
-	NodeOsVersion pulumi.StringInput `pulumi:"nodeOsVersion"`
-	// * `nodes.hostname`
-	// * `nodes.ipv4_address`
-	Nodes GetKarbonClustersClusterEtcdNodePoolNodeArrayInput `pulumi:"nodes"`
+	NodeOsVersion pulumi.StringInput                                 `pulumi:"nodeOsVersion"`
+	Nodes         GetKarbonClustersClusterEtcdNodePoolNodeArrayInput `pulumi:"nodes"`
 	// - Number of nodes in the node pool.
 	NumInstances pulumi.IntInput `pulumi:"numInstances"`
 }
@@ -41266,11 +40987,6 @@ func (o GetKarbonClustersClusterEtcdNodePoolOutput) ToGetKarbonClustersClusterEt
 }
 
 // - .
-// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 func (o GetKarbonClustersClusterEtcdNodePoolOutput) AhvConfigs() GetKarbonClustersClusterEtcdNodePoolAhvConfigArrayOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterEtcdNodePool) []GetKarbonClustersClusterEtcdNodePoolAhvConfig {
 		return v.AhvConfigs
@@ -41287,8 +41003,6 @@ func (o GetKarbonClustersClusterEtcdNodePoolOutput) NodeOsVersion() pulumi.Strin
 	return o.ApplyT(func(v GetKarbonClustersClusterEtcdNodePool) string { return v.NodeOsVersion }).(pulumi.StringOutput)
 }
 
-// * `nodes.hostname`
-// * `nodes.ipv4_address`
 func (o GetKarbonClustersClusterEtcdNodePoolOutput) Nodes() GetKarbonClustersClusterEtcdNodePoolNodeArrayOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterEtcdNodePool) []GetKarbonClustersClusterEtcdNodePoolNode {
 		return v.Nodes
@@ -41321,10 +41035,15 @@ func (o GetKarbonClustersClusterEtcdNodePoolArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetKarbonClustersClusterEtcdNodePoolAhvConfig struct {
-	Cpu                     int    `pulumi:"cpu"`
-	DiskMib                 int    `pulumi:"diskMib"`
-	MemoryMib               int    `pulumi:"memoryMib"`
-	NetworkUuid             string `pulumi:"networkUuid"`
+	// - The number of VCPUs allocated for each VM on the PE cluster.
+	Cpu int `pulumi:"cpu"`
+	// - Size of local storage for each VM on the PE cluster in MiB.
+	DiskMib int `pulumi:"diskMib"`
+	// - Memory allocated for each VM on the PE cluster in MiB.
+	MemoryMib int `pulumi:"memoryMib"`
+	// - The UUID of the network for the VMs deployed with this resource configuration.
+	NetworkUuid string `pulumi:"networkUuid"`
+	// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	PrismElementClusterUuid string `pulumi:"prismElementClusterUuid"`
 }
 
@@ -41340,10 +41059,15 @@ type GetKarbonClustersClusterEtcdNodePoolAhvConfigInput interface {
 }
 
 type GetKarbonClustersClusterEtcdNodePoolAhvConfigArgs struct {
-	Cpu                     pulumi.IntInput    `pulumi:"cpu"`
-	DiskMib                 pulumi.IntInput    `pulumi:"diskMib"`
-	MemoryMib               pulumi.IntInput    `pulumi:"memoryMib"`
-	NetworkUuid             pulumi.StringInput `pulumi:"networkUuid"`
+	// - The number of VCPUs allocated for each VM on the PE cluster.
+	Cpu pulumi.IntInput `pulumi:"cpu"`
+	// - Size of local storage for each VM on the PE cluster in MiB.
+	DiskMib pulumi.IntInput `pulumi:"diskMib"`
+	// - Memory allocated for each VM on the PE cluster in MiB.
+	MemoryMib pulumi.IntInput `pulumi:"memoryMib"`
+	// - The UUID of the network for the VMs deployed with this resource configuration.
+	NetworkUuid pulumi.StringInput `pulumi:"networkUuid"`
+	// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	PrismElementClusterUuid pulumi.StringInput `pulumi:"prismElementClusterUuid"`
 }
 
@@ -41398,22 +41122,27 @@ func (o GetKarbonClustersClusterEtcdNodePoolAhvConfigOutput) ToGetKarbonClusters
 	return o
 }
 
+// - The number of VCPUs allocated for each VM on the PE cluster.
 func (o GetKarbonClustersClusterEtcdNodePoolAhvConfigOutput) Cpu() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterEtcdNodePoolAhvConfig) int { return v.Cpu }).(pulumi.IntOutput)
 }
 
+// - Size of local storage for each VM on the PE cluster in MiB.
 func (o GetKarbonClustersClusterEtcdNodePoolAhvConfigOutput) DiskMib() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterEtcdNodePoolAhvConfig) int { return v.DiskMib }).(pulumi.IntOutput)
 }
 
+// - Memory allocated for each VM on the PE cluster in MiB.
 func (o GetKarbonClustersClusterEtcdNodePoolAhvConfigOutput) MemoryMib() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterEtcdNodePoolAhvConfig) int { return v.MemoryMib }).(pulumi.IntOutput)
 }
 
+// - The UUID of the network for the VMs deployed with this resource configuration.
 func (o GetKarbonClustersClusterEtcdNodePoolAhvConfigOutput) NetworkUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterEtcdNodePoolAhvConfig) string { return v.NetworkUuid }).(pulumi.StringOutput)
 }
 
+// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 func (o GetKarbonClustersClusterEtcdNodePoolAhvConfigOutput) PrismElementClusterUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterEtcdNodePoolAhvConfig) string { return v.PrismElementClusterUuid }).(pulumi.StringOutput)
 }
@@ -41540,19 +41269,12 @@ func (o GetKarbonClustersClusterEtcdNodePoolNodeArrayOutput) Index(i pulumi.IntI
 
 type GetKarbonClustersClusterMasterNodePool struct {
 	// - .
-	// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-	// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-	// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-	// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-	// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	AhvConfigs []GetKarbonClustersClusterMasterNodePoolAhvConfig `pulumi:"ahvConfigs"`
 	// - Unique name of the node pool.
 	Name string `pulumi:"name"`
 	// - The version of the node OS image.
-	NodeOsVersion string `pulumi:"nodeOsVersion"`
-	// * `nodes.hostname`
-	// * `nodes.ipv4_address`
-	Nodes []GetKarbonClustersClusterMasterNodePoolNode `pulumi:"nodes"`
+	NodeOsVersion string                                       `pulumi:"nodeOsVersion"`
+	Nodes         []GetKarbonClustersClusterMasterNodePoolNode `pulumi:"nodes"`
 	// - Number of nodes in the node pool.
 	NumInstances int `pulumi:"numInstances"`
 }
@@ -41570,19 +41292,12 @@ type GetKarbonClustersClusterMasterNodePoolInput interface {
 
 type GetKarbonClustersClusterMasterNodePoolArgs struct {
 	// - .
-	// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-	// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-	// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-	// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-	// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	AhvConfigs GetKarbonClustersClusterMasterNodePoolAhvConfigArrayInput `pulumi:"ahvConfigs"`
 	// - Unique name of the node pool.
 	Name pulumi.StringInput `pulumi:"name"`
 	// - The version of the node OS image.
-	NodeOsVersion pulumi.StringInput `pulumi:"nodeOsVersion"`
-	// * `nodes.hostname`
-	// * `nodes.ipv4_address`
-	Nodes GetKarbonClustersClusterMasterNodePoolNodeArrayInput `pulumi:"nodes"`
+	NodeOsVersion pulumi.StringInput                                   `pulumi:"nodeOsVersion"`
+	Nodes         GetKarbonClustersClusterMasterNodePoolNodeArrayInput `pulumi:"nodes"`
 	// - Number of nodes in the node pool.
 	NumInstances pulumi.IntInput `pulumi:"numInstances"`
 }
@@ -41639,11 +41354,6 @@ func (o GetKarbonClustersClusterMasterNodePoolOutput) ToGetKarbonClustersCluster
 }
 
 // - .
-// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 func (o GetKarbonClustersClusterMasterNodePoolOutput) AhvConfigs() GetKarbonClustersClusterMasterNodePoolAhvConfigArrayOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterMasterNodePool) []GetKarbonClustersClusterMasterNodePoolAhvConfig {
 		return v.AhvConfigs
@@ -41660,8 +41370,6 @@ func (o GetKarbonClustersClusterMasterNodePoolOutput) NodeOsVersion() pulumi.Str
 	return o.ApplyT(func(v GetKarbonClustersClusterMasterNodePool) string { return v.NodeOsVersion }).(pulumi.StringOutput)
 }
 
-// * `nodes.hostname`
-// * `nodes.ipv4_address`
 func (o GetKarbonClustersClusterMasterNodePoolOutput) Nodes() GetKarbonClustersClusterMasterNodePoolNodeArrayOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterMasterNodePool) []GetKarbonClustersClusterMasterNodePoolNode {
 		return v.Nodes
@@ -41694,10 +41402,15 @@ func (o GetKarbonClustersClusterMasterNodePoolArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetKarbonClustersClusterMasterNodePoolAhvConfig struct {
-	Cpu                     int    `pulumi:"cpu"`
-	DiskMib                 int    `pulumi:"diskMib"`
-	MemoryMib               int    `pulumi:"memoryMib"`
-	NetworkUuid             string `pulumi:"networkUuid"`
+	// - The number of VCPUs allocated for each VM on the PE cluster.
+	Cpu int `pulumi:"cpu"`
+	// - Size of local storage for each VM on the PE cluster in MiB.
+	DiskMib int `pulumi:"diskMib"`
+	// - Memory allocated for each VM on the PE cluster in MiB.
+	MemoryMib int `pulumi:"memoryMib"`
+	// - The UUID of the network for the VMs deployed with this resource configuration.
+	NetworkUuid string `pulumi:"networkUuid"`
+	// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	PrismElementClusterUuid string `pulumi:"prismElementClusterUuid"`
 }
 
@@ -41713,10 +41426,15 @@ type GetKarbonClustersClusterMasterNodePoolAhvConfigInput interface {
 }
 
 type GetKarbonClustersClusterMasterNodePoolAhvConfigArgs struct {
-	Cpu                     pulumi.IntInput    `pulumi:"cpu"`
-	DiskMib                 pulumi.IntInput    `pulumi:"diskMib"`
-	MemoryMib               pulumi.IntInput    `pulumi:"memoryMib"`
-	NetworkUuid             pulumi.StringInput `pulumi:"networkUuid"`
+	// - The number of VCPUs allocated for each VM on the PE cluster.
+	Cpu pulumi.IntInput `pulumi:"cpu"`
+	// - Size of local storage for each VM on the PE cluster in MiB.
+	DiskMib pulumi.IntInput `pulumi:"diskMib"`
+	// - Memory allocated for each VM on the PE cluster in MiB.
+	MemoryMib pulumi.IntInput `pulumi:"memoryMib"`
+	// - The UUID of the network for the VMs deployed with this resource configuration.
+	NetworkUuid pulumi.StringInput `pulumi:"networkUuid"`
+	// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	PrismElementClusterUuid pulumi.StringInput `pulumi:"prismElementClusterUuid"`
 }
 
@@ -41771,22 +41489,27 @@ func (o GetKarbonClustersClusterMasterNodePoolAhvConfigOutput) ToGetKarbonCluste
 	return o
 }
 
+// - The number of VCPUs allocated for each VM on the PE cluster.
 func (o GetKarbonClustersClusterMasterNodePoolAhvConfigOutput) Cpu() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterMasterNodePoolAhvConfig) int { return v.Cpu }).(pulumi.IntOutput)
 }
 
+// - Size of local storage for each VM on the PE cluster in MiB.
 func (o GetKarbonClustersClusterMasterNodePoolAhvConfigOutput) DiskMib() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterMasterNodePoolAhvConfig) int { return v.DiskMib }).(pulumi.IntOutput)
 }
 
+// - Memory allocated for each VM on the PE cluster in MiB.
 func (o GetKarbonClustersClusterMasterNodePoolAhvConfigOutput) MemoryMib() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterMasterNodePoolAhvConfig) int { return v.MemoryMib }).(pulumi.IntOutput)
 }
 
+// - The UUID of the network for the VMs deployed with this resource configuration.
 func (o GetKarbonClustersClusterMasterNodePoolAhvConfigOutput) NetworkUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterMasterNodePoolAhvConfig) string { return v.NetworkUuid }).(pulumi.StringOutput)
 }
 
+// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 func (o GetKarbonClustersClusterMasterNodePoolAhvConfigOutput) PrismElementClusterUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterMasterNodePoolAhvConfig) string { return v.PrismElementClusterUuid }).(pulumi.StringOutput)
 }
@@ -41913,19 +41636,12 @@ func (o GetKarbonClustersClusterMasterNodePoolNodeArrayOutput) Index(i pulumi.In
 
 type GetKarbonClustersClusterWorkerNodePool struct {
 	// - .
-	// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-	// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-	// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-	// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-	// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	AhvConfigs []GetKarbonClustersClusterWorkerNodePoolAhvConfig `pulumi:"ahvConfigs"`
 	// - Unique name of the node pool.
 	Name string `pulumi:"name"`
 	// - The version of the node OS image.
-	NodeOsVersion string `pulumi:"nodeOsVersion"`
-	// * `nodes.hostname`
-	// * `nodes.ipv4_address`
-	Nodes []GetKarbonClustersClusterWorkerNodePoolNode `pulumi:"nodes"`
+	NodeOsVersion string                                       `pulumi:"nodeOsVersion"`
+	Nodes         []GetKarbonClustersClusterWorkerNodePoolNode `pulumi:"nodes"`
 	// - Number of nodes in the node pool.
 	NumInstances int `pulumi:"numInstances"`
 }
@@ -41943,19 +41659,12 @@ type GetKarbonClustersClusterWorkerNodePoolInput interface {
 
 type GetKarbonClustersClusterWorkerNodePoolArgs struct {
 	// - .
-	// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-	// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-	// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-	// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-	// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	AhvConfigs GetKarbonClustersClusterWorkerNodePoolAhvConfigArrayInput `pulumi:"ahvConfigs"`
 	// - Unique name of the node pool.
 	Name pulumi.StringInput `pulumi:"name"`
 	// - The version of the node OS image.
-	NodeOsVersion pulumi.StringInput `pulumi:"nodeOsVersion"`
-	// * `nodes.hostname`
-	// * `nodes.ipv4_address`
-	Nodes GetKarbonClustersClusterWorkerNodePoolNodeArrayInput `pulumi:"nodes"`
+	NodeOsVersion pulumi.StringInput                                   `pulumi:"nodeOsVersion"`
+	Nodes         GetKarbonClustersClusterWorkerNodePoolNodeArrayInput `pulumi:"nodes"`
 	// - Number of nodes in the node pool.
 	NumInstances pulumi.IntInput `pulumi:"numInstances"`
 }
@@ -42012,11 +41721,6 @@ func (o GetKarbonClustersClusterWorkerNodePoolOutput) ToGetKarbonClustersCluster
 }
 
 // - .
-// * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-// * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-// * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-// * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-// * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 func (o GetKarbonClustersClusterWorkerNodePoolOutput) AhvConfigs() GetKarbonClustersClusterWorkerNodePoolAhvConfigArrayOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterWorkerNodePool) []GetKarbonClustersClusterWorkerNodePoolAhvConfig {
 		return v.AhvConfigs
@@ -42033,8 +41737,6 @@ func (o GetKarbonClustersClusterWorkerNodePoolOutput) NodeOsVersion() pulumi.Str
 	return o.ApplyT(func(v GetKarbonClustersClusterWorkerNodePool) string { return v.NodeOsVersion }).(pulumi.StringOutput)
 }
 
-// * `nodes.hostname`
-// * `nodes.ipv4_address`
 func (o GetKarbonClustersClusterWorkerNodePoolOutput) Nodes() GetKarbonClustersClusterWorkerNodePoolNodeArrayOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterWorkerNodePool) []GetKarbonClustersClusterWorkerNodePoolNode {
 		return v.Nodes
@@ -42067,10 +41769,15 @@ func (o GetKarbonClustersClusterWorkerNodePoolArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetKarbonClustersClusterWorkerNodePoolAhvConfig struct {
-	Cpu                     int    `pulumi:"cpu"`
-	DiskMib                 int    `pulumi:"diskMib"`
-	MemoryMib               int    `pulumi:"memoryMib"`
-	NetworkUuid             string `pulumi:"networkUuid"`
+	// - The number of VCPUs allocated for each VM on the PE cluster.
+	Cpu int `pulumi:"cpu"`
+	// - Size of local storage for each VM on the PE cluster in MiB.
+	DiskMib int `pulumi:"diskMib"`
+	// - Memory allocated for each VM on the PE cluster in MiB.
+	MemoryMib int `pulumi:"memoryMib"`
+	// - The UUID of the network for the VMs deployed with this resource configuration.
+	NetworkUuid string `pulumi:"networkUuid"`
+	// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	PrismElementClusterUuid string `pulumi:"prismElementClusterUuid"`
 }
 
@@ -42086,10 +41793,15 @@ type GetKarbonClustersClusterWorkerNodePoolAhvConfigInput interface {
 }
 
 type GetKarbonClustersClusterWorkerNodePoolAhvConfigArgs struct {
-	Cpu                     pulumi.IntInput    `pulumi:"cpu"`
-	DiskMib                 pulumi.IntInput    `pulumi:"diskMib"`
-	MemoryMib               pulumi.IntInput    `pulumi:"memoryMib"`
-	NetworkUuid             pulumi.StringInput `pulumi:"networkUuid"`
+	// - The number of VCPUs allocated for each VM on the PE cluster.
+	Cpu pulumi.IntInput `pulumi:"cpu"`
+	// - Size of local storage for each VM on the PE cluster in MiB.
+	DiskMib pulumi.IntInput `pulumi:"diskMib"`
+	// - Memory allocated for each VM on the PE cluster in MiB.
+	MemoryMib pulumi.IntInput `pulumi:"memoryMib"`
+	// - The UUID of the network for the VMs deployed with this resource configuration.
+	NetworkUuid pulumi.StringInput `pulumi:"networkUuid"`
+	// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 	PrismElementClusterUuid pulumi.StringInput `pulumi:"prismElementClusterUuid"`
 }
 
@@ -42144,22 +41856,27 @@ func (o GetKarbonClustersClusterWorkerNodePoolAhvConfigOutput) ToGetKarbonCluste
 	return o
 }
 
+// - The number of VCPUs allocated for each VM on the PE cluster.
 func (o GetKarbonClustersClusterWorkerNodePoolAhvConfigOutput) Cpu() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterWorkerNodePoolAhvConfig) int { return v.Cpu }).(pulumi.IntOutput)
 }
 
+// - Size of local storage for each VM on the PE cluster in MiB.
 func (o GetKarbonClustersClusterWorkerNodePoolAhvConfigOutput) DiskMib() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterWorkerNodePoolAhvConfig) int { return v.DiskMib }).(pulumi.IntOutput)
 }
 
+// - Memory allocated for each VM on the PE cluster in MiB.
 func (o GetKarbonClustersClusterWorkerNodePoolAhvConfigOutput) MemoryMib() pulumi.IntOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterWorkerNodePoolAhvConfig) int { return v.MemoryMib }).(pulumi.IntOutput)
 }
 
+// - The UUID of the network for the VMs deployed with this resource configuration.
 func (o GetKarbonClustersClusterWorkerNodePoolAhvConfigOutput) NetworkUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterWorkerNodePoolAhvConfig) string { return v.NetworkUuid }).(pulumi.StringOutput)
 }
 
+// - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
 func (o GetKarbonClustersClusterWorkerNodePoolAhvConfigOutput) PrismElementClusterUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKarbonClustersClusterWorkerNodePoolAhvConfig) string { return v.PrismElementClusterUuid }).(pulumi.StringOutput)
 }
@@ -55158,6 +54875,11 @@ func (o GetProjectExternalUserGroupReferenceListArrayOutput) Index(i pulumi.IntI
 }
 
 type GetProjectResourceDomain struct {
+	// Array of the utilization/limit for resource types
+	// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+	// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+	// * `resource_domain.resources.#.units` - The units of the resource type
+	// * `resource_domain.resources.#.value` - The amount of resource consumed
 	Resources []GetProjectResourceDomainResource `pulumi:"resources"`
 }
 
@@ -55173,6 +54895,11 @@ type GetProjectResourceDomainInput interface {
 }
 
 type GetProjectResourceDomainArgs struct {
+	// Array of the utilization/limit for resource types
+	// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+	// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+	// * `resource_domain.resources.#.units` - The units of the resource type
+	// * `resource_domain.resources.#.value` - The amount of resource consumed
 	Resources GetProjectResourceDomainResourceArrayInput `pulumi:"resources"`
 }
 
@@ -55227,6 +54954,11 @@ func (o GetProjectResourceDomainOutput) ToGetProjectResourceDomainOutputWithCont
 	return o
 }
 
+// Array of the utilization/limit for resource types
+// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+// * `resource_domain.resources.#.units` - The units of the resource type
+// * `resource_domain.resources.#.value` - The amount of resource consumed
 func (o GetProjectResourceDomainOutput) Resources() GetProjectResourceDomainResourceArrayOutput {
 	return o.ApplyT(func(v GetProjectResourceDomain) []GetProjectResourceDomainResource { return v.Resources }).(GetProjectResourceDomainResourceArrayOutput)
 }
@@ -55606,9 +55338,6 @@ type GetProjectsEntity struct {
 	ApiVersion string                      `pulumi:"apiVersion"`
 	Categories []GetProjectsEntityCategory `pulumi:"categories"`
 	// Reference to a subnet.
-	// * `default_subnet_reference.kind` - The kind name. Default value is `subnet`
-	// * `default_subnet_reference.uuid` - The UUID of a subnet.
-	// * `default_subnet_reference.name` - The name of a subnet.
 	DefaultSubnetReference map[string]string `pulumi:"defaultSubnetReference"`
 	// A description for project.
 	Description string `pulumi:"description"`
@@ -55633,11 +55362,6 @@ type GetProjectsEntity struct {
 	OwnerReference   map[string]string `pulumi:"ownerReference"`
 	ProjectReference map[string]string `pulumi:"projectReference"`
 	// The status for a resource domain (limits and values)
-	// * `resource_domain.resources` Array of the utilization/limit for resource types
-	// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
-	// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
-	// * `resource_domain.resources.#.units` - The units of the resource type
-	// * `resource_domain.resources.#.value` - The amount of resource consumed
 	ResourceDomains []GetProjectsEntityResourceDomain `pulumi:"resourceDomains"`
 	State           string                            `pulumi:"state"`
 	// List of subnets for the project.
@@ -55673,9 +55397,6 @@ type GetProjectsEntityArgs struct {
 	ApiVersion pulumi.StringInput                  `pulumi:"apiVersion"`
 	Categories GetProjectsEntityCategoryArrayInput `pulumi:"categories"`
 	// Reference to a subnet.
-	// * `default_subnet_reference.kind` - The kind name. Default value is `subnet`
-	// * `default_subnet_reference.uuid` - The UUID of a subnet.
-	// * `default_subnet_reference.name` - The name of a subnet.
 	DefaultSubnetReference pulumi.StringMapInput `pulumi:"defaultSubnetReference"`
 	// A description for project.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -55700,11 +55421,6 @@ type GetProjectsEntityArgs struct {
 	OwnerReference   pulumi.StringMapInput `pulumi:"ownerReference"`
 	ProjectReference pulumi.StringMapInput `pulumi:"projectReference"`
 	// The status for a resource domain (limits and values)
-	// * `resource_domain.resources` Array of the utilization/limit for resource types
-	// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
-	// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
-	// * `resource_domain.resources.#.units` - The units of the resource type
-	// * `resource_domain.resources.#.value` - The amount of resource consumed
 	ResourceDomains GetProjectsEntityResourceDomainArrayInput `pulumi:"resourceDomains"`
 	State           pulumi.StringInput                        `pulumi:"state"`
 	// List of subnets for the project.
@@ -55788,9 +55504,6 @@ func (o GetProjectsEntityOutput) Categories() GetProjectsEntityCategoryArrayOutp
 }
 
 // Reference to a subnet.
-// * `default_subnet_reference.kind` - The kind name. Default value is `subnet`
-// * `default_subnet_reference.uuid` - The UUID of a subnet.
-// * `default_subnet_reference.name` - The name of a subnet.
 func (o GetProjectsEntityOutput) DefaultSubnetReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetProjectsEntity) map[string]string { return v.DefaultSubnetReference }).(pulumi.StringMapOutput)
 }
@@ -55849,11 +55562,6 @@ func (o GetProjectsEntityOutput) ProjectReference() pulumi.StringMapOutput {
 }
 
 // The status for a resource domain (limits and values)
-// * `resource_domain.resources` Array of the utilization/limit for resource types
-// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
-// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
-// * `resource_domain.resources.#.units` - The units of the resource type
-// * `resource_domain.resources.#.value` - The amount of resource consumed
 func (o GetProjectsEntityOutput) ResourceDomains() GetProjectsEntityResourceDomainArrayOutput {
 	return o.ApplyT(func(v GetProjectsEntity) []GetProjectsEntityResourceDomain { return v.ResourceDomains }).(GetProjectsEntityResourceDomainArrayOutput)
 }
@@ -56456,6 +56164,11 @@ func (o GetProjectsEntityExternalUserGroupReferenceListArrayOutput) Index(i pulu
 }
 
 type GetProjectsEntityResourceDomain struct {
+	// Array of the utilization/limit for resource types
+	// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+	// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+	// * `resource_domain.resources.#.units` - The units of the resource type
+	// * `resource_domain.resources.#.value` - The amount of resource consumed
 	Resources []GetProjectsEntityResourceDomainResource `pulumi:"resources"`
 }
 
@@ -56471,6 +56184,11 @@ type GetProjectsEntityResourceDomainInput interface {
 }
 
 type GetProjectsEntityResourceDomainArgs struct {
+	// Array of the utilization/limit for resource types
+	// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+	// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+	// * `resource_domain.resources.#.units` - The units of the resource type
+	// * `resource_domain.resources.#.value` - The amount of resource consumed
 	Resources GetProjectsEntityResourceDomainResourceArrayInput `pulumi:"resources"`
 }
 
@@ -56525,6 +56243,11 @@ func (o GetProjectsEntityResourceDomainOutput) ToGetProjectsEntityResourceDomain
 	return o
 }
 
+// Array of the utilization/limit for resource types
+// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+// * `resource_domain.resources.#.units` - The units of the resource type
+// * `resource_domain.resources.#.value` - The amount of resource consumed
 func (o GetProjectsEntityResourceDomainOutput) Resources() GetProjectsEntityResourceDomainResourceArrayOutput {
 	return o.ApplyT(func(v GetProjectsEntityResourceDomain) []GetProjectsEntityResourceDomainResource { return v.Resources }).(GetProjectsEntityResourceDomainResourceArrayOutput)
 }
@@ -56895,9 +56618,20 @@ func (o GetProjectsEntityUserReferenceListArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetProtectionRuleAvailabilityZoneConnectivityList struct {
-	DestinationAvailabilityZoneIndex int                                                                     `pulumi:"destinationAvailabilityZoneIndex"`
-	SnapshotScheduleLists            []GetProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleList `pulumi:"snapshotScheduleLists"`
-	SourceAvailabilityZoneIndex      int                                                                     `pulumi:"sourceAvailabilityZoneIndex"`
+	// (Optional/Computed) Index of the availability zone.
+	DestinationAvailabilityZoneIndex int `pulumi:"destinationAvailabilityZoneIndex"`
+	// (Optional/Computed) Snapshot schedules for the pair of the availability zones.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+	SnapshotScheduleLists []GetProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleList `pulumi:"snapshotScheduleLists"`
+	// (Optional/Computed) Index of the availability zone.
+	SourceAvailabilityZoneIndex int `pulumi:"sourceAvailabilityZoneIndex"`
 }
 
 // GetProtectionRuleAvailabilityZoneConnectivityListInput is an input type that accepts GetProtectionRuleAvailabilityZoneConnectivityListArgs and GetProtectionRuleAvailabilityZoneConnectivityListOutput values.
@@ -56912,9 +56646,20 @@ type GetProtectionRuleAvailabilityZoneConnectivityListInput interface {
 }
 
 type GetProtectionRuleAvailabilityZoneConnectivityListArgs struct {
-	DestinationAvailabilityZoneIndex pulumi.IntInput                                                                 `pulumi:"destinationAvailabilityZoneIndex"`
-	SnapshotScheduleLists            GetProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArrayInput `pulumi:"snapshotScheduleLists"`
-	SourceAvailabilityZoneIndex      pulumi.IntInput                                                                 `pulumi:"sourceAvailabilityZoneIndex"`
+	// (Optional/Computed) Index of the availability zone.
+	DestinationAvailabilityZoneIndex pulumi.IntInput `pulumi:"destinationAvailabilityZoneIndex"`
+	// (Optional/Computed) Snapshot schedules for the pair of the availability zones.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+	SnapshotScheduleLists GetProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArrayInput `pulumi:"snapshotScheduleLists"`
+	// (Optional/Computed) Index of the availability zone.
+	SourceAvailabilityZoneIndex pulumi.IntInput `pulumi:"sourceAvailabilityZoneIndex"`
 }
 
 func (GetProtectionRuleAvailabilityZoneConnectivityListArgs) ElementType() reflect.Type {
@@ -56968,18 +56713,29 @@ func (o GetProtectionRuleAvailabilityZoneConnectivityListOutput) ToGetProtection
 	return o
 }
 
+// (Optional/Computed) Index of the availability zone.
 func (o GetProtectionRuleAvailabilityZoneConnectivityListOutput) DestinationAvailabilityZoneIndex() pulumi.IntOutput {
 	return o.ApplyT(func(v GetProtectionRuleAvailabilityZoneConnectivityList) int {
 		return v.DestinationAvailabilityZoneIndex
 	}).(pulumi.IntOutput)
 }
 
+// (Optional/Computed) Snapshot schedules for the pair of the availability zones.
+// * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
+// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
+// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
+// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
+// * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
+// * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
+// * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
 func (o GetProtectionRuleAvailabilityZoneConnectivityListOutput) SnapshotScheduleLists() GetProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArrayOutput {
 	return o.ApplyT(func(v GetProtectionRuleAvailabilityZoneConnectivityList) []GetProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleList {
 		return v.SnapshotScheduleLists
 	}).(GetProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArrayOutput)
 }
 
+// (Optional/Computed) Index of the availability zone.
 func (o GetProtectionRuleAvailabilityZoneConnectivityListOutput) SourceAvailabilityZoneIndex() pulumi.IntOutput {
 	return o.ApplyT(func(v GetProtectionRuleAvailabilityZoneConnectivityList) int { return v.SourceAvailabilityZoneIndex }).(pulumi.IntOutput)
 }
@@ -57463,9 +57219,12 @@ func (o GetProtectionRuleCategoryArrayOutput) Index(i pulumi.IntInput) GetProtec
 }
 
 type GetProtectionRuleCategoryFilter struct {
-	KindLists []string                               `pulumi:"kindLists"`
-	Params    []GetProtectionRuleCategoryFilterParam `pulumi:"params"`
-	Type      string                                 `pulumi:"type"`
+	// (Optional/Computed) List of kinds associated with this filter.
+	KindLists []string `pulumi:"kindLists"`
+	// (Optional/Computed) A list of category key and list of values.
+	Params []GetProtectionRuleCategoryFilterParam `pulumi:"params"`
+	// (Optional/Computed) The type of the filter being used.
+	Type string `pulumi:"type"`
 }
 
 // GetProtectionRuleCategoryFilterInput is an input type that accepts GetProtectionRuleCategoryFilterArgs and GetProtectionRuleCategoryFilterOutput values.
@@ -57480,9 +57239,12 @@ type GetProtectionRuleCategoryFilterInput interface {
 }
 
 type GetProtectionRuleCategoryFilterArgs struct {
-	KindLists pulumi.StringArrayInput                        `pulumi:"kindLists"`
-	Params    GetProtectionRuleCategoryFilterParamArrayInput `pulumi:"params"`
-	Type      pulumi.StringInput                             `pulumi:"type"`
+	// (Optional/Computed) List of kinds associated with this filter.
+	KindLists pulumi.StringArrayInput `pulumi:"kindLists"`
+	// (Optional/Computed) A list of category key and list of values.
+	Params GetProtectionRuleCategoryFilterParamArrayInput `pulumi:"params"`
+	// (Optional/Computed) The type of the filter being used.
+	Type pulumi.StringInput `pulumi:"type"`
 }
 
 func (GetProtectionRuleCategoryFilterArgs) ElementType() reflect.Type {
@@ -57536,14 +57298,17 @@ func (o GetProtectionRuleCategoryFilterOutput) ToGetProtectionRuleCategoryFilter
 	return o
 }
 
+// (Optional/Computed) List of kinds associated with this filter.
 func (o GetProtectionRuleCategoryFilterOutput) KindLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetProtectionRuleCategoryFilter) []string { return v.KindLists }).(pulumi.StringArrayOutput)
 }
 
+// (Optional/Computed) A list of category key and list of values.
 func (o GetProtectionRuleCategoryFilterOutput) Params() GetProtectionRuleCategoryFilterParamArrayOutput {
 	return o.ApplyT(func(v GetProtectionRuleCategoryFilter) []GetProtectionRuleCategoryFilterParam { return v.Params }).(GetProtectionRuleCategoryFilterParamArrayOutput)
 }
 
+// (Optional/Computed) The type of the filter being used.
 func (o GetProtectionRuleCategoryFilterOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProtectionRuleCategoryFilter) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -58005,23 +57770,9 @@ type GetProtectionRulesEntity struct {
 	// version of the API
 	ApiVersion string `pulumi:"apiVersion"`
 	// (Required) This encodes the datapipes between various availability zones and\nthe backup policy of the pipes.
-	// * `availability_zone_connectivity_list.destination_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-	// * `availability_zone_connectivity_list.source_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-	// * `availability_zone_connectivity_list.snapshot_schedule_list` - (Optional/Computed) Snapshot schedules for the pair of the availability zones.
-	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
-	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
-	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
-	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
-	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
-	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
-	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
 	AvailabilityZoneConnectivityLists []GetProtectionRulesEntityAvailabilityZoneConnectivityList `pulumi:"availabilityZoneConnectivityLists"`
 	Categories                        []GetProtectionRulesEntityCategory                         `pulumi:"categories"`
 	// (Optional/Computed)
-	// * `category_filter.0.type` - (Optional/Computed) The type of the filter being used.
-	// * `category_filter.0.kind_list` - (Optional/Computed) List of kinds associated with this filter.
-	// * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
 	CategoryFilters []GetProtectionRulesEntityCategoryFilter `pulumi:"categoryFilters"`
 	// A description for protection rule.
 	Description string            `pulumi:"description"`
@@ -58053,23 +57804,9 @@ type GetProtectionRulesEntityArgs struct {
 	// version of the API
 	ApiVersion pulumi.StringInput `pulumi:"apiVersion"`
 	// (Required) This encodes the datapipes between various availability zones and\nthe backup policy of the pipes.
-	// * `availability_zone_connectivity_list.destination_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-	// * `availability_zone_connectivity_list.source_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-	// * `availability_zone_connectivity_list.snapshot_schedule_list` - (Optional/Computed) Snapshot schedules for the pair of the availability zones.
-	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
-	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
-	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
-	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
-	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
-	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
-	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
 	AvailabilityZoneConnectivityLists GetProtectionRulesEntityAvailabilityZoneConnectivityListArrayInput `pulumi:"availabilityZoneConnectivityLists"`
 	Categories                        GetProtectionRulesEntityCategoryArrayInput                         `pulumi:"categories"`
 	// (Optional/Computed)
-	// * `category_filter.0.type` - (Optional/Computed) The type of the filter being used.
-	// * `category_filter.0.kind_list` - (Optional/Computed) List of kinds associated with this filter.
-	// * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
 	CategoryFilters GetProtectionRulesEntityCategoryFilterArrayInput `pulumi:"categoryFilters"`
 	// A description for protection rule.
 	Description pulumi.StringInput    `pulumi:"description"`
@@ -58143,17 +57880,6 @@ func (o GetProtectionRulesEntityOutput) ApiVersion() pulumi.StringOutput {
 }
 
 // (Required) This encodes the datapipes between various availability zones and\nthe backup policy of the pipes.
-// * `availability_zone_connectivity_list.destination_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-// * `availability_zone_connectivity_list.source_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-// * `availability_zone_connectivity_list.snapshot_schedule_list` - (Optional/Computed) Snapshot schedules for the pair of the availability zones.
-// * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
-// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
-// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
-// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
-// * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
-// * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
-// * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
 func (o GetProtectionRulesEntityOutput) AvailabilityZoneConnectivityLists() GetProtectionRulesEntityAvailabilityZoneConnectivityListArrayOutput {
 	return o.ApplyT(func(v GetProtectionRulesEntity) []GetProtectionRulesEntityAvailabilityZoneConnectivityList {
 		return v.AvailabilityZoneConnectivityLists
@@ -58165,9 +57891,6 @@ func (o GetProtectionRulesEntityOutput) Categories() GetProtectionRulesEntityCat
 }
 
 // (Optional/Computed)
-// * `category_filter.0.type` - (Optional/Computed) The type of the filter being used.
-// * `category_filter.0.kind_list` - (Optional/Computed) List of kinds associated with this filter.
-// * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
 func (o GetProtectionRulesEntityOutput) CategoryFilters() GetProtectionRulesEntityCategoryFilterArrayOutput {
 	return o.ApplyT(func(v GetProtectionRulesEntity) []GetProtectionRulesEntityCategoryFilter { return v.CategoryFilters }).(GetProtectionRulesEntityCategoryFilterArrayOutput)
 }
@@ -58234,9 +57957,20 @@ func (o GetProtectionRulesEntityArrayOutput) Index(i pulumi.IntInput) GetProtect
 }
 
 type GetProtectionRulesEntityAvailabilityZoneConnectivityList struct {
-	DestinationAvailabilityZoneIndex int                                                                            `pulumi:"destinationAvailabilityZoneIndex"`
-	SnapshotScheduleLists            []GetProtectionRulesEntityAvailabilityZoneConnectivityListSnapshotScheduleList `pulumi:"snapshotScheduleLists"`
-	SourceAvailabilityZoneIndex      int                                                                            `pulumi:"sourceAvailabilityZoneIndex"`
+	// (Optional/Computed) Index of the availability zone.
+	DestinationAvailabilityZoneIndex int `pulumi:"destinationAvailabilityZoneIndex"`
+	// (Optional/Computed) Snapshot schedules for the pair of the availability zones.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+	SnapshotScheduleLists []GetProtectionRulesEntityAvailabilityZoneConnectivityListSnapshotScheduleList `pulumi:"snapshotScheduleLists"`
+	// (Optional/Computed) Index of the availability zone.
+	SourceAvailabilityZoneIndex int `pulumi:"sourceAvailabilityZoneIndex"`
 }
 
 // GetProtectionRulesEntityAvailabilityZoneConnectivityListInput is an input type that accepts GetProtectionRulesEntityAvailabilityZoneConnectivityListArgs and GetProtectionRulesEntityAvailabilityZoneConnectivityListOutput values.
@@ -58251,9 +57985,20 @@ type GetProtectionRulesEntityAvailabilityZoneConnectivityListInput interface {
 }
 
 type GetProtectionRulesEntityAvailabilityZoneConnectivityListArgs struct {
-	DestinationAvailabilityZoneIndex pulumi.IntInput                                                                        `pulumi:"destinationAvailabilityZoneIndex"`
-	SnapshotScheduleLists            GetProtectionRulesEntityAvailabilityZoneConnectivityListSnapshotScheduleListArrayInput `pulumi:"snapshotScheduleLists"`
-	SourceAvailabilityZoneIndex      pulumi.IntInput                                                                        `pulumi:"sourceAvailabilityZoneIndex"`
+	// (Optional/Computed) Index of the availability zone.
+	DestinationAvailabilityZoneIndex pulumi.IntInput `pulumi:"destinationAvailabilityZoneIndex"`
+	// (Optional/Computed) Snapshot schedules for the pair of the availability zones.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
+	// * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+	SnapshotScheduleLists GetProtectionRulesEntityAvailabilityZoneConnectivityListSnapshotScheduleListArrayInput `pulumi:"snapshotScheduleLists"`
+	// (Optional/Computed) Index of the availability zone.
+	SourceAvailabilityZoneIndex pulumi.IntInput `pulumi:"sourceAvailabilityZoneIndex"`
 }
 
 func (GetProtectionRulesEntityAvailabilityZoneConnectivityListArgs) ElementType() reflect.Type {
@@ -58307,18 +58052,29 @@ func (o GetProtectionRulesEntityAvailabilityZoneConnectivityListOutput) ToGetPro
 	return o
 }
 
+// (Optional/Computed) Index of the availability zone.
 func (o GetProtectionRulesEntityAvailabilityZoneConnectivityListOutput) DestinationAvailabilityZoneIndex() pulumi.IntOutput {
 	return o.ApplyT(func(v GetProtectionRulesEntityAvailabilityZoneConnectivityList) int {
 		return v.DestinationAvailabilityZoneIndex
 	}).(pulumi.IntOutput)
 }
 
+// (Optional/Computed) Snapshot schedules for the pair of the availability zones.
+// * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
+// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
+// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
+// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
+// * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
+// * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
+// * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
 func (o GetProtectionRulesEntityAvailabilityZoneConnectivityListOutput) SnapshotScheduleLists() GetProtectionRulesEntityAvailabilityZoneConnectivityListSnapshotScheduleListArrayOutput {
 	return o.ApplyT(func(v GetProtectionRulesEntityAvailabilityZoneConnectivityList) []GetProtectionRulesEntityAvailabilityZoneConnectivityListSnapshotScheduleList {
 		return v.SnapshotScheduleLists
 	}).(GetProtectionRulesEntityAvailabilityZoneConnectivityListSnapshotScheduleListArrayOutput)
 }
 
+// (Optional/Computed) Index of the availability zone.
 func (o GetProtectionRulesEntityAvailabilityZoneConnectivityListOutput) SourceAvailabilityZoneIndex() pulumi.IntOutput {
 	return o.ApplyT(func(v GetProtectionRulesEntityAvailabilityZoneConnectivityList) int {
 		return v.SourceAvailabilityZoneIndex
@@ -58804,9 +58560,12 @@ func (o GetProtectionRulesEntityCategoryArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetProtectionRulesEntityCategoryFilter struct {
-	KindLists []string                                      `pulumi:"kindLists"`
-	Params    []GetProtectionRulesEntityCategoryFilterParam `pulumi:"params"`
-	Type      string                                        `pulumi:"type"`
+	// (Optional/Computed) List of kinds associated with this filter.
+	KindLists []string `pulumi:"kindLists"`
+	// (Optional/Computed) A list of category key and list of values.
+	Params []GetProtectionRulesEntityCategoryFilterParam `pulumi:"params"`
+	// (Optional/Computed) The type of the filter being used.
+	Type string `pulumi:"type"`
 }
 
 // GetProtectionRulesEntityCategoryFilterInput is an input type that accepts GetProtectionRulesEntityCategoryFilterArgs and GetProtectionRulesEntityCategoryFilterOutput values.
@@ -58821,9 +58580,12 @@ type GetProtectionRulesEntityCategoryFilterInput interface {
 }
 
 type GetProtectionRulesEntityCategoryFilterArgs struct {
-	KindLists pulumi.StringArrayInput                               `pulumi:"kindLists"`
-	Params    GetProtectionRulesEntityCategoryFilterParamArrayInput `pulumi:"params"`
-	Type      pulumi.StringInput                                    `pulumi:"type"`
+	// (Optional/Computed) List of kinds associated with this filter.
+	KindLists pulumi.StringArrayInput `pulumi:"kindLists"`
+	// (Optional/Computed) A list of category key and list of values.
+	Params GetProtectionRulesEntityCategoryFilterParamArrayInput `pulumi:"params"`
+	// (Optional/Computed) The type of the filter being used.
+	Type pulumi.StringInput `pulumi:"type"`
 }
 
 func (GetProtectionRulesEntityCategoryFilterArgs) ElementType() reflect.Type {
@@ -58877,16 +58639,19 @@ func (o GetProtectionRulesEntityCategoryFilterOutput) ToGetProtectionRulesEntity
 	return o
 }
 
+// (Optional/Computed) List of kinds associated with this filter.
 func (o GetProtectionRulesEntityCategoryFilterOutput) KindLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetProtectionRulesEntityCategoryFilter) []string { return v.KindLists }).(pulumi.StringArrayOutput)
 }
 
+// (Optional/Computed) A list of category key and list of values.
 func (o GetProtectionRulesEntityCategoryFilterOutput) Params() GetProtectionRulesEntityCategoryFilterParamArrayOutput {
 	return o.ApplyT(func(v GetProtectionRulesEntityCategoryFilter) []GetProtectionRulesEntityCategoryFilterParam {
 		return v.Params
 	}).(GetProtectionRulesEntityCategoryFilterParamArrayOutput)
 }
 
+// (Optional/Computed) The type of the filter being used.
 func (o GetProtectionRulesEntityCategoryFilterOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProtectionRulesEntityCategoryFilter) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -59566,8 +59331,70 @@ func (o GetRecoveryPlanOwnerReferenceArrayOutput) Index(i pulumi.IntInput) GetRe
 }
 
 type GetRecoveryPlanParameter struct {
+	// (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
+	// * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
 	FloatingIpAssignmentLists []GetRecoveryPlanParameterFloatingIpAssignmentList `pulumi:"floatingIpAssignmentLists"`
-	NetworkMappingLists       []GetRecoveryPlanParameterNetworkMappingList       `pulumi:"networkMappingLists"`
+	// (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
+	NetworkMappingLists []GetRecoveryPlanParameterNetworkMappingList `pulumi:"networkMappingLists"`
 }
 
 // GetRecoveryPlanParameterInput is an input type that accepts GetRecoveryPlanParameterArgs and GetRecoveryPlanParameterOutput values.
@@ -59582,8 +59409,70 @@ type GetRecoveryPlanParameterInput interface {
 }
 
 type GetRecoveryPlanParameterArgs struct {
+	// (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
+	// * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
 	FloatingIpAssignmentLists GetRecoveryPlanParameterFloatingIpAssignmentListArrayInput `pulumi:"floatingIpAssignmentLists"`
-	NetworkMappingLists       GetRecoveryPlanParameterNetworkMappingListArrayInput       `pulumi:"networkMappingLists"`
+	// (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
+	NetworkMappingLists GetRecoveryPlanParameterNetworkMappingListArrayInput `pulumi:"networkMappingLists"`
 }
 
 func (GetRecoveryPlanParameterArgs) ElementType() reflect.Type {
@@ -59637,12 +59526,74 @@ func (o GetRecoveryPlanParameterOutput) ToGetRecoveryPlanParameterOutputWithCont
 	return o
 }
 
+// (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
+// * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
 func (o GetRecoveryPlanParameterOutput) FloatingIpAssignmentLists() GetRecoveryPlanParameterFloatingIpAssignmentListArrayOutput {
 	return o.ApplyT(func(v GetRecoveryPlanParameter) []GetRecoveryPlanParameterFloatingIpAssignmentList {
 		return v.FloatingIpAssignmentLists
 	}).(GetRecoveryPlanParameterFloatingIpAssignmentListArrayOutput)
 }
 
+// (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
 func (o GetRecoveryPlanParameterOutput) NetworkMappingLists() GetRecoveryPlanParameterNetworkMappingListArrayOutput {
 	return o.ApplyT(func(v GetRecoveryPlanParameter) []GetRecoveryPlanParameterNetworkMappingList {
 		return v.NetworkMappingLists
@@ -62324,9 +62275,12 @@ func (o GetRecoveryPlanProjectReferenceArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetRecoveryPlanStageList struct {
-	DelayTimeSecs int                                 `pulumi:"delayTimeSecs"`
-	StageUuid     string                              `pulumi:"stageUuid"`
-	StageWorks    []GetRecoveryPlanStageListStageWork `pulumi:"stageWorks"`
+	// (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
+	DelayTimeSecs int `pulumi:"delayTimeSecs"`
+	// (Optional/Computed) UUID of stage.
+	StageUuid string `pulumi:"stageUuid"`
+	// (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
+	StageWorks []GetRecoveryPlanStageListStageWork `pulumi:"stageWorks"`
 }
 
 // GetRecoveryPlanStageListInput is an input type that accepts GetRecoveryPlanStageListArgs and GetRecoveryPlanStageListOutput values.
@@ -62341,9 +62295,12 @@ type GetRecoveryPlanStageListInput interface {
 }
 
 type GetRecoveryPlanStageListArgs struct {
-	DelayTimeSecs pulumi.IntInput                             `pulumi:"delayTimeSecs"`
-	StageUuid     pulumi.StringInput                          `pulumi:"stageUuid"`
-	StageWorks    GetRecoveryPlanStageListStageWorkArrayInput `pulumi:"stageWorks"`
+	// (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
+	DelayTimeSecs pulumi.IntInput `pulumi:"delayTimeSecs"`
+	// (Optional/Computed) UUID of stage.
+	StageUuid pulumi.StringInput `pulumi:"stageUuid"`
+	// (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
+	StageWorks GetRecoveryPlanStageListStageWorkArrayInput `pulumi:"stageWorks"`
 }
 
 func (GetRecoveryPlanStageListArgs) ElementType() reflect.Type {
@@ -62397,14 +62354,17 @@ func (o GetRecoveryPlanStageListOutput) ToGetRecoveryPlanStageListOutputWithCont
 	return o
 }
 
+// (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
 func (o GetRecoveryPlanStageListOutput) DelayTimeSecs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetRecoveryPlanStageList) int { return v.DelayTimeSecs }).(pulumi.IntOutput)
 }
 
+// (Optional/Computed) UUID of stage.
 func (o GetRecoveryPlanStageListOutput) StageUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecoveryPlanStageList) string { return v.StageUuid }).(pulumi.StringOutput)
 }
 
+// (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
 func (o GetRecoveryPlanStageListOutput) StageWorks() GetRecoveryPlanStageListStageWorkArrayOutput {
 	return o.ApplyT(func(v GetRecoveryPlanStageList) []GetRecoveryPlanStageListStageWork { return v.StageWorks }).(GetRecoveryPlanStageListStageWorkArrayOutput)
 }
@@ -62430,6 +62390,7 @@ func (o GetRecoveryPlanStageListArrayOutput) Index(i pulumi.IntInput) GetRecover
 }
 
 type GetRecoveryPlanStageListStageWork struct {
+	// (Optional/Computed) Information about entities to be recovered.
 	RecoverEntities []GetRecoveryPlanStageListStageWorkRecoverEntity `pulumi:"recoverEntities"`
 }
 
@@ -62445,6 +62406,7 @@ type GetRecoveryPlanStageListStageWorkInput interface {
 }
 
 type GetRecoveryPlanStageListStageWorkArgs struct {
+	// (Optional/Computed) Information about entities to be recovered.
 	RecoverEntities GetRecoveryPlanStageListStageWorkRecoverEntityArrayInput `pulumi:"recoverEntities"`
 }
 
@@ -62499,6 +62461,7 @@ func (o GetRecoveryPlanStageListStageWorkOutput) ToGetRecoveryPlanStageListStage
 	return o
 }
 
+// (Optional/Computed) Information about entities to be recovered.
 func (o GetRecoveryPlanStageListStageWorkOutput) RecoverEntities() GetRecoveryPlanStageListStageWorkRecoverEntityArrayOutput {
 	return o.ApplyT(func(v GetRecoveryPlanStageListStageWork) []GetRecoveryPlanStageListStageWorkRecoverEntity {
 		return v.RecoverEntities
@@ -62526,6 +62489,11 @@ func (o GetRecoveryPlanStageListStageWorkArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GetRecoveryPlanStageListStageWorkRecoverEntity struct {
+	// (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
+	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
+	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
+	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
+	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
 	EntityInfoLists []GetRecoveryPlanStageListStageWorkRecoverEntityEntityInfoList `pulumi:"entityInfoLists"`
 }
 
@@ -62541,6 +62509,11 @@ type GetRecoveryPlanStageListStageWorkRecoverEntityInput interface {
 }
 
 type GetRecoveryPlanStageListStageWorkRecoverEntityArgs struct {
+	// (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
+	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
+	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
+	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
+	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
 	EntityInfoLists GetRecoveryPlanStageListStageWorkRecoverEntityEntityInfoListArrayInput `pulumi:"entityInfoLists"`
 }
 
@@ -62595,6 +62568,11 @@ func (o GetRecoveryPlanStageListStageWorkRecoverEntityOutput) ToGetRecoveryPlanS
 	return o
 }
 
+// (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
+// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
+// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
+// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
+// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
 func (o GetRecoveryPlanStageListStageWorkRecoverEntityOutput) EntityInfoLists() GetRecoveryPlanStageListStageWorkRecoverEntityEntityInfoListArrayOutput {
 	return o.ApplyT(func(v GetRecoveryPlanStageListStageWorkRecoverEntity) []GetRecoveryPlanStageListStageWorkRecoverEntityEntityInfoList {
 		return v.EntityInfoLists
@@ -62970,80 +62948,9 @@ type GetRecoveryPlansEntity struct {
 	Name            string                                 `pulumi:"name"`
 	OwnerReferences []GetRecoveryPlansEntityOwnerReference `pulumi:"ownerReferences"`
 	// (Required) Parameters for the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list` - (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
-	// * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
-	// * `parameters.0.network_mapping_list` - (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
 	Parameters        []GetRecoveryPlansEntityParameter        `pulumi:"parameters"`
 	ProjectReferences []GetRecoveryPlansEntityProjectReference `pulumi:"projectReferences"`
 	// (Required) Input for the stages of the Recovery Plan. Each stage will perform a predefined type of task.
-	// * `stage_list.stage_uuid` - (Optional/Computed) UUID of stage.
-	// * `stage_list.delay_time_secs` - (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
-	// * `stage_list.stage_work` - (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
-	// * `stage_list.stage_work.0.recover_entities` - (Optional/Computed) Information about entities to be recovered.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list` - (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
 	StageLists []GetRecoveryPlansEntityStageList `pulumi:"stageLists"`
 	State      string                            `pulumi:"state"`
 }
@@ -63070,80 +62977,9 @@ type GetRecoveryPlansEntityArgs struct {
 	Name            pulumi.StringInput                             `pulumi:"name"`
 	OwnerReferences GetRecoveryPlansEntityOwnerReferenceArrayInput `pulumi:"ownerReferences"`
 	// (Required) Parameters for the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list` - (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
-	// * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
-	// * `parameters.0.network_mapping_list` - (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
 	Parameters        GetRecoveryPlansEntityParameterArrayInput        `pulumi:"parameters"`
 	ProjectReferences GetRecoveryPlansEntityProjectReferenceArrayInput `pulumi:"projectReferences"`
 	// (Required) Input for the stages of the Recovery Plan. Each stage will perform a predefined type of task.
-	// * `stage_list.stage_uuid` - (Optional/Computed) UUID of stage.
-	// * `stage_list.delay_time_secs` - (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
-	// * `stage_list.stage_work` - (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
-	// * `stage_list.stage_work.0.recover_entities` - (Optional/Computed) Information about entities to be recovered.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list` - (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
 	StageLists GetRecoveryPlansEntityStageListArrayInput `pulumi:"stageLists"`
 	State      pulumi.StringInput                        `pulumi:"state"`
 }
@@ -63227,68 +63063,6 @@ func (o GetRecoveryPlansEntityOutput) OwnerReferences() GetRecoveryPlansEntityOw
 }
 
 // (Required) Parameters for the Recovery Plan.
-// * `parameters.0.floating_ip_assignment_list` - (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
-// * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
-// * `parameters.0.network_mapping_list` - (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
 func (o GetRecoveryPlansEntityOutput) Parameters() GetRecoveryPlansEntityParameterArrayOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntity) []GetRecoveryPlansEntityParameter { return v.Parameters }).(GetRecoveryPlansEntityParameterArrayOutput)
 }
@@ -63298,15 +63072,6 @@ func (o GetRecoveryPlansEntityOutput) ProjectReferences() GetRecoveryPlansEntity
 }
 
 // (Required) Input for the stages of the Recovery Plan. Each stage will perform a predefined type of task.
-// * `stage_list.stage_uuid` - (Optional/Computed) UUID of stage.
-// * `stage_list.delay_time_secs` - (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
-// * `stage_list.stage_work` - (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
-// * `stage_list.stage_work.0.recover_entities` - (Optional/Computed) Information about entities to be recovered.
-// * `stage_list.stage_work.0.recover_entities.0.entity_info_list` - (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
-// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
-// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
-// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
-// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
 func (o GetRecoveryPlansEntityOutput) StageLists() GetRecoveryPlansEntityStageListArrayOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntity) []GetRecoveryPlansEntityStageList { return v.StageLists }).(GetRecoveryPlansEntityStageListArrayOutput)
 }

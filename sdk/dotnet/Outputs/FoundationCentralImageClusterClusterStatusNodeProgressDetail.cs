@@ -14,9 +14,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class FoundationCentralImageClusterClusterStatusNodeProgressDetail
     {
-        /// <summary>
-        /// UUID of the node.
-        /// </summary>
         public readonly string? ImagedNodeUuid;
         public readonly bool? ImagingStopped;
         public readonly bool? IntentPickedUp;

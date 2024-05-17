@@ -25,13 +25,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// Name of the cluster.
         /// </summary>
         public readonly string? ClusterName;
-        /// <summary>
-        /// List of dns servers for the cvms in the cluster.
-        /// </summary>
         public readonly string? CvmDnsServers;
-        /// <summary>
-        /// List of ntp servers for the cvms in the cluster.
-        /// </summary>
         public readonly string? CvmNtpServers;
         /// <summary>
         /// Redundancy factor of the cluster.

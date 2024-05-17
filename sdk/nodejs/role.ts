@@ -10,29 +10,6 @@ import * as utilities from "./utilities";
  * Provides a resource to create a role based on the input parameters.
  *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * const test = new nutanix.Role("test", {
- *     description: "DESCRIPTION",
- *     permissionReferenceLists: [
- *         {
- *             kind: "permission",
- *             uuid: "ID OF PERMISSION",
- *         },
- *         {
- *             kind: "permission",
- *             uuid: "ID OF PERMISSION",
- *         },
- *         {
- *             kind: "permission",
- *             uuid: "ID OF PERMISSION",
- *         },
- *     ],
- * });
- * ```
  */
 export class Role extends pulumi.CustomResource {
     /**

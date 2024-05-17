@@ -36,6 +36,7 @@ import (
 //	}
 //
 // ```
+//
 // ## Reference
 //
 // The `projectReference`, `ownerReference`, `availabilityZoneReference`, `clusterReference`, attributes supports the following:

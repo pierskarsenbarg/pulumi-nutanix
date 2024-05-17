@@ -269,6 +269,7 @@ class Vpc(pulumi.CustomResource):
         Provides Nutanix resource to create VPC.
 
         ## Example Usage
+
         ### vpc creation with external subnet name
 
         ```python
@@ -293,6 +294,7 @@ class Vpc(pulumi.CustomResource):
                 prefix_length=16,
             )])
         ```
+
         ### vpc creation with external subnet uuid
 
         ```python
@@ -335,6 +337,7 @@ class Vpc(pulumi.CustomResource):
         Provides Nutanix resource to create VPC.
 
         ## Example Usage
+
         ### vpc creation with external subnet name
 
         ```python
@@ -359,6 +362,7 @@ class Vpc(pulumi.CustomResource):
                 prefix_length=16,
             )])
         ```
+
         ### vpc creation with external subnet uuid
 
         ```python

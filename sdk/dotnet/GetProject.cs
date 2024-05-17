@@ -15,9 +15,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describe a Nutanix Project and its values (if it has them).
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -91,8 +89,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetProjectResult> InvokeAsync(GetProjectArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProjectResult>("nutanix:index/getProject:getProject", args ?? new GetProjectArgs(), options.WithDefaults());
@@ -100,9 +96,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describe a Nutanix Project and its values (if it has them).
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -176,8 +170,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetProjectResult> Invoke(GetProjectInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProjectResult>("nutanix:index/getProject:getProject", args ?? new GetProjectInvokeArgs(), options.WithDefaults());
@@ -339,9 +331,6 @@ namespace PiersKarsenbarg.Nutanix
         public readonly ImmutableArray<Outputs.GetProjectCategoryResult> Categories;
         /// <summary>
         /// Reference to a subnet.
-        /// * `default_subnet_reference.kind` - The kind name. Default value is `subnet`
-        /// * `default_subnet_reference.uuid` - The UUID of a subnet.
-        /// * `default_subnet_reference.name` - The name of a subnet.
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefaultSubnetReference;
         /// <summary>
@@ -384,11 +373,6 @@ namespace PiersKarsenbarg.Nutanix
         public readonly ImmutableDictionary<string, string> ProjectReference;
         /// <summary>
         /// The status for a resource domain (limits and values)
-        /// * `resource_domain.resources` Array of the utilization/limit for resource types
-        /// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
-        /// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
-        /// * `resource_domain.resources.#.units` - The units of the resource type
-        /// * `resource_domain.resources.#.value` - The amount of resource consumed
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectResourceDomainResult> ResourceDomains;
         public readonly string State;

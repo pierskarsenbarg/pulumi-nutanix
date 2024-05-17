@@ -17,13 +17,7 @@ export interface AccessControlPolicyCategory {
 }
 
 export interface AccessControlPolicyContextFilterList {
-    /**
-     * A list of Entity filter expressions.
-     */
     entityFilterExpressionLists: outputs.AccessControlPolicyContextFilterListEntityFilterExpressionList[];
-    /**
-     * - (Optional) Filter the scope of an Access Control Policy.
-     */
     scopeFilterExpressionLists: outputs.AccessControlPolicyContextFilterListScopeFilterExpressionList[];
 }
 
@@ -170,15 +164,7 @@ export interface AccessControlPolicyUserReferenceList {
 }
 
 export interface AddressGroupIpAddressBlockList {
-    /**
-     * - (Required) IP of the address block
-     */
     ip: string;
-    /**
-     * - (Required) Prefix length of address block in int
-     *
-     * See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/reference/prism_central/v3/api/address-groups/postaddressgroups).
-     */
     prefixLength: number;
 }
 
@@ -204,9 +190,6 @@ export interface FoundationCentralImageClusterClusterStatusClusterProgressDetail
 }
 
 export interface FoundationCentralImageClusterClusterStatusNodeProgressDetail {
-    /**
-     * UUID of the node.
-     */
     imagedNodeUuid: string;
     imagingStopped: boolean;
     intentPickedUp: boolean;
@@ -216,61 +199,25 @@ export interface FoundationCentralImageClusterClusterStatusNodeProgressDetail {
 }
 
 export interface FoundationCentralImageClusterCommonNetworkSettings {
-    /**
-     * List of dns servers for the cvms in the cluster.
-     */
     cvmDnsServers: string[];
-    /**
-     * List of ntp servers for the cvms in the cluster.
-     */
     cvmNtpServers: string[];
-    /**
-     * List of dns servers for the hypervisors in the cluster.
-     */
     hypervisorDnsServers: string[];
-    /**
-     * List of ntp servers for the hypervisors in the cluster.
-     */
     hypervisorNtpServers: string[];
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfig {
     blocks: outputs.FoundationCentralImageClusterFoundationInitConfigBlock[];
     clusters: outputs.FoundationCentralImageClusterFoundationInitConfigCluster[];
-    /**
-     * Gateway of the cvm.
-     */
     cvmGateway: string;
-    /**
-     * Netmask of the cvm.
-     */
     cvmNetmask: string;
     dnsServers: string;
-    /**
-     * Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
-     */
     hypervProductKey: string;
-    /**
-     * SKU of hyperv to be installed if hypervisorType is hyperv.
-     */
     hypervSku: string;
-    /**
-     * Gateway of the hypervisor.
-     */
     hypervisorGateway: string;
     hypervisorIsoUrl: {[key: string]: string};
     hypervisorIsos: outputs.FoundationCentralImageClusterFoundationInitConfigHypervisorIso[];
-    /**
-     * Netmask of the hypervisor.
-     */
     hypervisorNetmask: string;
-    /**
-     * Gateway of the ipmi.
-     */
     ipmiGateway: string;
-    /**
-     * Netmask of the ipmi.
-     */
     ipmiNetmask: string;
     nosPackageUrls: outputs.FoundationCentralImageClusterFoundationInitConfigNosPackageUrl[];
 }
@@ -281,35 +228,14 @@ export interface FoundationCentralImageClusterFoundationInitConfigBlock {
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigBlockNode {
-    /**
-     * IP address to be set for the cvm on the node.
-     */
     cvmIp: string;
-    /**
-     * Vlan tag of the cvm, if the cvm is on a vlan.
-     */
     cvmVlanId: number;
     fcImagedNodeUuid: string;
-    /**
-     * Hardware attributes override json for the node.
-     */
     hardwareAttributesOverride: {[key: string]: string};
     hypervisor: string;
-    /**
-     * Name to be set for the hypervisor host.
-     */
     hypervisorHostname: string;
-    /**
-     * IP address to be set for the hypervisor on the node.
-     */
     hypervisorIp: string;
-    /**
-     * True, if the node should be imaged, False, otherwise.
-     */
     imageNow: boolean;
-    /**
-     * IP address to be set for the ipmi of the node.
-     */
     ipmiIp: string;
     ipv6Address: string;
     nodePosition: string;
@@ -328,13 +254,7 @@ export interface FoundationCentralImageClusterFoundationInitConfigCluster {
      * Name of the cluster.
      */
     clusterName: string;
-    /**
-     * List of dns servers for the cvms in the cluster.
-     */
     cvmDnsServers: string;
-    /**
-     * List of ntp servers for the cvms in the cluster.
-     */
     cvmNtpServers: string;
     /**
      * Redundancy factor of the cluster.
@@ -347,122 +267,41 @@ export interface FoundationCentralImageClusterFoundationInitConfigCluster {
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigHypervisorIso {
-    /**
-     * Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-     */
     hypervisorType: string;
-    /**
-     * sha256sum of the hypervisor iso.
-     */
     sha256sum: string;
-    /**
-     * URL to download hypervisor iso. Required only if imaging is needed.
-     */
     url: string;
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigNosPackageUrl {
-    /**
-     * sha256sum of the hypervisor iso.
-     */
     sha256sum: string;
-    /**
-     * URL to download hypervisor iso. Required only if imaging is needed.
-     */
     url: string;
 }
 
 export interface FoundationCentralImageClusterHypervisorIsoDetails {
-    /**
-     * Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
-     */
     hypervProductKey: string;
-    /**
-     * SKU of hyperv to be installed if hypervisorType is hyperv.
-     */
     hypervSku: string;
-    /**
-     * sha256sum of the hypervisor iso.
-     */
     sha256sum: string;
-    /**
-     * URL to download hypervisor iso. Required only if imaging is needed.
-     */
     url?: string;
 }
 
 export interface FoundationCentralImageClusterNodeList {
-    /**
-     * Gateway of the cvm.
-     */
     cvmGateway: string;
-    /**
-     * IP address to be set for the cvm on the node.
-     */
     cvmIp: string;
-    /**
-     * Netmask of the cvm.
-     */
     cvmNetmask?: string;
-    /**
-     * Amount of memory to be assigned for the cvm.
-     */
     cvmRamGb?: number;
-    /**
-     * Vlan tag of the cvm, if the cvm is on a vlan.
-     */
     cvmVlanId: number;
-    /**
-     * Hardware attributes override json for the node.
-     */
     hardwareAttributesOverride: {[key: string]: any};
-    /**
-     * Gateway of the hypervisor.
-     */
     hypervisorGateway: string;
-    /**
-     * Name to be set for the hypervisor host.
-     */
     hypervisorHostname: string;
-    /**
-     * IP address to be set for the hypervisor on the node.
-     */
     hypervisorIp: string;
-    /**
-     * Netmask of the hypervisor.
-     */
     hypervisorNetmask: string;
-    /**
-     * Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-     */
     hypervisorType?: string;
-    /**
-     * True, if the node should be imaged, False, otherwise.
-     */
     imageNow: boolean;
-    /**
-     * UUID of the node.
-     */
     imagedNodeUuid: string;
-    /**
-     * Gateway of the ipmi.
-     */
     ipmiGateway: string;
-    /**
-     * IP address to be set for the ipmi of the node.
-     */
     ipmiIp: string;
-    /**
-     * Netmask of the ipmi.
-     */
     ipmiNetmask?: string;
-    /**
-     * Passthrough RDMA nic to CVM if possible, default to false.
-     */
     rdmaPassthrough?: boolean;
-    /**
-     * Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
-     */
     useExistingNetworkSettings?: boolean;
 }
 
@@ -617,9 +456,6 @@ export interface FoundationImageNodesBlockNodeUcsmParams {
 }
 
 export interface FoundationImageNodesBlockNodeVswitch {
-    /**
-     * - (Required if node is capable) dynamic if using LACP, static for LAG
-     */
     bondMode?: string;
     lacp?: string;
     mtu?: number;
@@ -688,9 +524,6 @@ export interface FoundationImageNodesCluster {
 }
 
 export interface FoundationImageNodesClusterUrl {
-    /**
-     * - (Required) Name of the cluster.
-     */
     clusterName: string;
     clusterUrl: string;
 }
@@ -748,46 +581,22 @@ export interface FoundationImageNodesHypervisorIso {
 }
 
 export interface FoundationImageNodesHypervisorIsoEsx {
-    /**
-     * - (Required) Filename of hypervisor ISO.
-     */
     checksum: string;
-    /**
-     * - (Required) Checksum for ISO file.
-     */
     filename: string;
 }
 
 export interface FoundationImageNodesHypervisorIsoHyperv {
-    /**
-     * - (Required) Filename of hypervisor ISO.
-     */
     checksum: string;
-    /**
-     * - (Required) Checksum for ISO file.
-     */
     filename: string;
 }
 
 export interface FoundationImageNodesHypervisorIsoKvm {
-    /**
-     * - (Required) Filename of hypervisor ISO.
-     */
     checksum: string;
-    /**
-     * - (Required) Checksum for ISO file.
-     */
     filename: string;
 }
 
 export interface FoundationImageNodesHypervisorIsoXen {
-    /**
-     * - (Required) Filename of hypervisor ISO.
-     */
     checksum: string;
-    /**
-     * - (Required) Checksum for ISO file.
-     */
     filename: string;
 }
 
@@ -1439,7 +1248,7 @@ export interface GetClustersEntity {
      */
     metadata: {[key: string]: string};
     /**
-     * - the key name.
+     * -  The name for the image.
      */
     name: string;
     /**
@@ -1529,7 +1338,7 @@ export interface GetClustersEntity {
 export interface GetClustersEntityAuthorizedPublicKeyList {
     key: string;
     /**
-     * - the key name.
+     * -  The name for the image.
      */
     name: string;
 }
@@ -2224,7 +2033,7 @@ export interface GetHostGpuList {
     maxResolution: string;
     mode: string;
     /**
-     * - the key name.
+     * - the name.
      */
     name: string;
     numVgpusAllocated: number;
@@ -2233,7 +2042,7 @@ export interface GetHostGpuList {
     pciAddress: string;
     status: string;
     /**
-     * - image uuid.
+     * - the uuid.
      */
     uuid: string;
     vendor: string;
@@ -2245,11 +2054,11 @@ export interface GetHostHostDisksReferenceList {
      */
     kind: string;
     /**
-     * - the key name.
+     * - the name.
      */
     name: string;
     /**
-     * - image uuid.
+     * - the uuid.
      */
     uuid: string;
 }
@@ -2452,11 +2261,6 @@ export interface GetImageCurrentClusterReferenceList {
 export interface GetKarbonClusterEtcdNodePool {
     /**
      * - VM configuration in AHV.
-     * * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-     * * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-     * * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-     * * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-     * * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
      */
     ahvConfigs: outputs.GetKarbonClusterEtcdNodePoolAhvConfig[];
     /**
@@ -2469,8 +2273,6 @@ export interface GetKarbonClusterEtcdNodePool {
     nodeOsVersion: string;
     /**
      * - List of the deployed nodes in the node pool.
-     * * `nodes.hostname`: - Hostname of the deployed node.
-     * * `nodes.ipv4_address`: - IP of the deployed node.
      */
     nodes: outputs.GetKarbonClusterEtcdNodePoolNode[];
     /**
@@ -2480,26 +2282,42 @@ export interface GetKarbonClusterEtcdNodePool {
 }
 
 export interface GetKarbonClusterEtcdNodePoolAhvConfig {
+    /**
+     * - The number of VCPUs allocated for each VM on the PE cluster.
+     */
     cpu: number;
+    /**
+     * - Size of local storage for each VM on the PE cluster in MiB.
+     */
     diskMib: number;
+    /**
+     * - Memory allocated for each VM on the PE cluster in MiB.
+     */
     memoryMib: number;
+    /**
+     * - The UUID of the network for the VMs deployed with this resource configuration.
+     */
     networkUuid: string;
+    /**
+     * - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     prismElementClusterUuid: string;
 }
 
 export interface GetKarbonClusterEtcdNodePoolNode {
+    /**
+     * - Hostname of the deployed node.
+     */
     hostname: string;
+    /**
+     * - IP of the deployed node.
+     */
     ipv4Address: string;
 }
 
 export interface GetKarbonClusterMasterNodePool {
     /**
      * - VM configuration in AHV.
-     * * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-     * * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-     * * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-     * * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-     * * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
      */
     ahvConfigs: outputs.GetKarbonClusterMasterNodePoolAhvConfig[];
     /**
@@ -2512,8 +2330,6 @@ export interface GetKarbonClusterMasterNodePool {
     nodeOsVersion: string;
     /**
      * - List of the deployed nodes in the node pool.
-     * * `nodes.hostname`: - Hostname of the deployed node.
-     * * `nodes.ipv4_address`: - IP of the deployed node.
      */
     nodes: outputs.GetKarbonClusterMasterNodePoolNode[];
     /**
@@ -2523,26 +2339,42 @@ export interface GetKarbonClusterMasterNodePool {
 }
 
 export interface GetKarbonClusterMasterNodePoolAhvConfig {
+    /**
+     * - The number of VCPUs allocated for each VM on the PE cluster.
+     */
     cpu: number;
+    /**
+     * - Size of local storage for each VM on the PE cluster in MiB.
+     */
     diskMib: number;
+    /**
+     * - Memory allocated for each VM on the PE cluster in MiB.
+     */
     memoryMib: number;
+    /**
+     * - The UUID of the network for the VMs deployed with this resource configuration.
+     */
     networkUuid: string;
+    /**
+     * - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     prismElementClusterUuid: string;
 }
 
 export interface GetKarbonClusterMasterNodePoolNode {
+    /**
+     * - Hostname of the deployed node.
+     */
     hostname: string;
+    /**
+     * - IP of the deployed node.
+     */
     ipv4Address: string;
 }
 
 export interface GetKarbonClusterWorkerNodePool {
     /**
      * - VM configuration in AHV.
-     * * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-     * * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-     * * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-     * * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-     * * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
      */
     ahvConfigs: outputs.GetKarbonClusterWorkerNodePoolAhvConfig[];
     /**
@@ -2555,8 +2387,6 @@ export interface GetKarbonClusterWorkerNodePool {
     nodeOsVersion: string;
     /**
      * - List of the deployed nodes in the node pool.
-     * * `nodes.hostname`: - Hostname of the deployed node.
-     * * `nodes.ipv4_address`: - IP of the deployed node.
      */
     nodes: outputs.GetKarbonClusterWorkerNodePoolNode[];
     /**
@@ -2566,15 +2396,36 @@ export interface GetKarbonClusterWorkerNodePool {
 }
 
 export interface GetKarbonClusterWorkerNodePoolAhvConfig {
+    /**
+     * - The number of VCPUs allocated for each VM on the PE cluster.
+     */
     cpu: number;
+    /**
+     * - Size of local storage for each VM on the PE cluster in MiB.
+     */
     diskMib: number;
+    /**
+     * - Memory allocated for each VM on the PE cluster in MiB.
+     */
     memoryMib: number;
+    /**
+     * - The UUID of the network for the VMs deployed with this resource configuration.
+     */
     networkUuid: string;
+    /**
+     * - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     prismElementClusterUuid: string;
 }
 
 export interface GetKarbonClusterWorkerNodePoolNode {
+    /**
+     * - Hostname of the deployed node.
+     */
     hostname: string;
+    /**
+     * - IP of the deployed node.
+     */
     ipv4Address: string;
 }
 
@@ -2605,11 +2456,6 @@ export interface GetKarbonClustersCluster {
 export interface GetKarbonClustersClusterEtcdNodePool {
     /**
      * - .
-     * * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-     * * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-     * * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-     * * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-     * * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
      */
     ahvConfigs: outputs.GetKarbonClustersClusterEtcdNodePoolAhvConfig[];
     /**
@@ -2620,10 +2466,6 @@ export interface GetKarbonClustersClusterEtcdNodePool {
      * - The version of the node OS image.
      */
     nodeOsVersion: string;
-    /**
-     * * `nodes.hostname`
-     * * `nodes.ipv4_address`
-     */
     nodes: outputs.GetKarbonClustersClusterEtcdNodePoolNode[];
     /**
      * - Number of nodes in the node pool.
@@ -2632,10 +2474,25 @@ export interface GetKarbonClustersClusterEtcdNodePool {
 }
 
 export interface GetKarbonClustersClusterEtcdNodePoolAhvConfig {
+    /**
+     * - The number of VCPUs allocated for each VM on the PE cluster.
+     */
     cpu: number;
+    /**
+     * - Size of local storage for each VM on the PE cluster in MiB.
+     */
     diskMib: number;
+    /**
+     * - Memory allocated for each VM on the PE cluster in MiB.
+     */
     memoryMib: number;
+    /**
+     * - The UUID of the network for the VMs deployed with this resource configuration.
+     */
     networkUuid: string;
+    /**
+     * - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     prismElementClusterUuid: string;
 }
 
@@ -2647,11 +2504,6 @@ export interface GetKarbonClustersClusterEtcdNodePoolNode {
 export interface GetKarbonClustersClusterMasterNodePool {
     /**
      * - .
-     * * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-     * * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-     * * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-     * * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-     * * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
      */
     ahvConfigs: outputs.GetKarbonClustersClusterMasterNodePoolAhvConfig[];
     /**
@@ -2662,10 +2514,6 @@ export interface GetKarbonClustersClusterMasterNodePool {
      * - The version of the node OS image.
      */
     nodeOsVersion: string;
-    /**
-     * * `nodes.hostname`
-     * * `nodes.ipv4_address`
-     */
     nodes: outputs.GetKarbonClustersClusterMasterNodePoolNode[];
     /**
      * - Number of nodes in the node pool.
@@ -2674,10 +2522,25 @@ export interface GetKarbonClustersClusterMasterNodePool {
 }
 
 export interface GetKarbonClustersClusterMasterNodePoolAhvConfig {
+    /**
+     * - The number of VCPUs allocated for each VM on the PE cluster.
+     */
     cpu: number;
+    /**
+     * - Size of local storage for each VM on the PE cluster in MiB.
+     */
     diskMib: number;
+    /**
+     * - Memory allocated for each VM on the PE cluster in MiB.
+     */
     memoryMib: number;
+    /**
+     * - The UUID of the network for the VMs deployed with this resource configuration.
+     */
     networkUuid: string;
+    /**
+     * - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     prismElementClusterUuid: string;
 }
 
@@ -2689,11 +2552,6 @@ export interface GetKarbonClustersClusterMasterNodePoolNode {
 export interface GetKarbonClustersClusterWorkerNodePool {
     /**
      * - .
-     * * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-     * * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-     * * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-     * * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-     * * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
      */
     ahvConfigs: outputs.GetKarbonClustersClusterWorkerNodePoolAhvConfig[];
     /**
@@ -2704,10 +2562,6 @@ export interface GetKarbonClustersClusterWorkerNodePool {
      * - The version of the node OS image.
      */
     nodeOsVersion: string;
-    /**
-     * * `nodes.hostname`
-     * * `nodes.ipv4_address`
-     */
     nodes: outputs.GetKarbonClustersClusterWorkerNodePoolNode[];
     /**
      * - Number of nodes in the node pool.
@@ -2716,10 +2570,25 @@ export interface GetKarbonClustersClusterWorkerNodePool {
 }
 
 export interface GetKarbonClustersClusterWorkerNodePoolAhvConfig {
+    /**
+     * - The number of VCPUs allocated for each VM on the PE cluster.
+     */
     cpu: number;
+    /**
+     * - Size of local storage for each VM on the PE cluster in MiB.
+     */
     diskMib: number;
+    /**
+     * - Memory allocated for each VM on the PE cluster in MiB.
+     */
     memoryMib: number;
+    /**
+     * - The UUID of the network for the VMs deployed with this resource configuration.
+     */
     networkUuid: string;
+    /**
+     * - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+     */
     prismElementClusterUuid: string;
 }
 
@@ -3913,6 +3782,13 @@ export interface GetProjectExternalUserGroupReferenceList {
 }
 
 export interface GetProjectResourceDomain {
+    /**
+     * Array of the utilization/limit for resource types
+     * * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+     * * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+     * * `resource_domain.resources.#.units` - The units of the resource type
+     * * `resource_domain.resources.#.value` - The amount of resource consumed
+     */
     resources: outputs.GetProjectResourceDomainResource[];
 }
 
@@ -3971,9 +3847,6 @@ export interface GetProjectsEntity {
     categories: outputs.GetProjectsEntityCategory[];
     /**
      * Reference to a subnet.
-     * * `default_subnet_reference.kind` - The kind name. Default value is `subnet`
-     * * `default_subnet_reference.uuid` - The UUID of a subnet.
-     * * `default_subnet_reference.name` - The name of a subnet.
      */
     defaultSubnetReference: {[key: string]: string};
     /**
@@ -4010,11 +3883,6 @@ export interface GetProjectsEntity {
     projectReference: {[key: string]: string};
     /**
      * The status for a resource domain (limits and values)
-     * * `resource_domain.resources` Array of the utilization/limit for resource types
-     * * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
-     * * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
-     * * `resource_domain.resources.#.units` - The units of the resource type
-     * * `resource_domain.resources.#.value` - The amount of resource consumed
      */
     resourceDomains: outputs.GetProjectsEntityResourceDomain[];
     state: string;
@@ -4102,6 +3970,13 @@ export interface GetProjectsEntityExternalUserGroupReferenceList {
 }
 
 export interface GetProjectsEntityResourceDomain {
+    /**
+     * Array of the utilization/limit for resource types
+     * * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+     * * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+     * * `resource_domain.resources.#.units` - The units of the resource type
+     * * `resource_domain.resources.#.value` - The amount of resource consumed
+     */
     resources: outputs.GetProjectsEntityResourceDomainResource[];
 }
 
@@ -4146,8 +4021,25 @@ export interface GetProjectsEntityUserReferenceList {
 }
 
 export interface GetProtectionRuleAvailabilityZoneConnectivityList {
+    /**
+     * (Optional/Computed) Index of the availability zone.
+     */
     destinationAvailabilityZoneIndex: number;
+    /**
+     * (Optional/Computed) Snapshot schedules for the pair of the availability zones.
+     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
+     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
+     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
+     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
+     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
+     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
+     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+     */
     snapshotScheduleLists: outputs.GetProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleList[];
+    /**
+     * (Optional/Computed) Index of the availability zone.
+     */
     sourceAvailabilityZoneIndex: number;
 }
 
@@ -4183,8 +4075,17 @@ export interface GetProtectionRuleCategory {
 }
 
 export interface GetProtectionRuleCategoryFilter {
+    /**
+     * (Optional/Computed) List of kinds associated with this filter.
+     */
     kindLists: string[];
+    /**
+     * (Optional/Computed) A list of category key and list of values.
+     */
     params: outputs.GetProtectionRuleCategoryFilterParam[];
+    /**
+     * (Optional/Computed) The type of the filter being used.
+     */
     type: string;
 }
 
@@ -4238,25 +4139,11 @@ export interface GetProtectionRulesEntity {
     apiVersion: string;
     /**
      * (Required) This encodes the datapipes between various availability zones and\nthe backup policy of the pipes.
-     * * `availability_zone_connectivity_list.destination_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-     * * `availability_zone_connectivity_list.source_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-     * * `availability_zone_connectivity_list.snapshot_schedule_list` - (Optional/Computed) Snapshot schedules for the pair of the availability zones.
-     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
-     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
-     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
-     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
-     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
-     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
-     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
      */
     availabilityZoneConnectivityLists: outputs.GetProtectionRulesEntityAvailabilityZoneConnectivityList[];
     categories: outputs.GetProtectionRulesEntityCategory[];
     /**
      * (Optional/Computed)
-     * * `category_filter.0.type` - (Optional/Computed) The type of the filter being used.
-     * * `category_filter.0.kind_list` - (Optional/Computed) List of kinds associated with this filter.
-     * * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
      */
     categoryFilters: outputs.GetProtectionRulesEntityCategoryFilter[];
     /**
@@ -4281,8 +4168,25 @@ export interface GetProtectionRulesEntity {
 }
 
 export interface GetProtectionRulesEntityAvailabilityZoneConnectivityList {
+    /**
+     * (Optional/Computed) Index of the availability zone.
+     */
     destinationAvailabilityZoneIndex: number;
+    /**
+     * (Optional/Computed) Snapshot schedules for the pair of the availability zones.
+     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
+     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
+     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
+     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
+     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
+     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
+     * * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+     */
     snapshotScheduleLists: outputs.GetProtectionRulesEntityAvailabilityZoneConnectivityListSnapshotScheduleList[];
+    /**
+     * (Optional/Computed) Index of the availability zone.
+     */
     sourceAvailabilityZoneIndex: number;
 }
 
@@ -4318,8 +4222,17 @@ export interface GetProtectionRulesEntityCategory {
 }
 
 export interface GetProtectionRulesEntityCategoryFilter {
+    /**
+     * (Optional/Computed) List of kinds associated with this filter.
+     */
     kindLists: string[];
+    /**
+     * (Optional/Computed) A list of category key and list of values.
+     */
     params: outputs.GetProtectionRulesEntityCategoryFilterParam[];
+    /**
+     * (Optional/Computed) The type of the filter being used.
+     */
     type: string;
 }
 
@@ -4393,7 +4306,73 @@ export interface GetRecoveryPlanOwnerReference {
 }
 
 export interface GetRecoveryPlanParameter {
+    /**
+     * (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
+     * * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
+     * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
+     * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+     * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+     * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+     * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+     * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+     * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+     * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
+     * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
+     * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
+     * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
+     * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
+     * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
+     * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
+     */
     floatingIpAssignmentLists: outputs.GetRecoveryPlanParameterFloatingIpAssignmentList[];
+    /**
+     * (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
+     * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
+     */
     networkMappingLists: outputs.GetRecoveryPlanParameterNetworkMappingList[];
 }
 
@@ -4629,16 +4608,35 @@ export interface GetRecoveryPlanProjectReference {
 }
 
 export interface GetRecoveryPlanStageList {
+    /**
+     * (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
+     */
     delayTimeSecs: number;
+    /**
+     * (Optional/Computed) UUID of stage.
+     */
     stageUuid: string;
+    /**
+     * (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
+     */
     stageWorks: outputs.GetRecoveryPlanStageListStageWork[];
 }
 
 export interface GetRecoveryPlanStageListStageWork {
+    /**
+     * (Optional/Computed) Information about entities to be recovered.
+     */
     recoverEntities: outputs.GetRecoveryPlanStageListStageWorkRecoverEntity[];
 }
 
 export interface GetRecoveryPlanStageListStageWorkRecoverEntity {
+    /**
+     * (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
+     * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
+     * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
+     * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
+     * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
+     */
     entityInfoLists: outputs.GetRecoveryPlanStageListStageWorkRecoverEntityEntityInfoList[];
 }
 
@@ -4684,7 +4682,45 @@ export interface GetRecoveryPlansEntity {
     ownerReferences: outputs.GetRecoveryPlansEntityOwnerReference[];
     /**
      * (Required) Parameters for the Recovery Plan.
-     * * `parameters.0.floating_ip_assignment_list` - (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
+     */
+    parameters: outputs.GetRecoveryPlansEntityParameter[];
+    projectReferences: outputs.GetRecoveryPlansEntityProjectReference[];
+    /**
+     * (Required) Input for the stages of the Recovery Plan. Each stage will perform a predefined type of task.
+     */
+    stageLists: outputs.GetRecoveryPlansEntityStageList[];
+    state: string;
+}
+
+export interface GetRecoveryPlansEntityCategory {
+    /**
+     * (Optional) the name.
+     */
+    name: string;
+    /**
+     * value of the key.
+     */
+    value: string;
+}
+
+export interface GetRecoveryPlansEntityOwnerReference {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind: string;
+    /**
+     * (Optional) the name.
+     */
+    name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
+export interface GetRecoveryPlansEntityParameter {
+    /**
+     * (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
      * * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
      * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
      * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
@@ -4700,7 +4736,10 @@ export interface GetRecoveryPlansEntity {
      * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
      * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
      * * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
-     * * `parameters.0.network_mapping_list` - (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
+     */
+    floatingIpAssignmentLists: outputs.GetRecoveryPlansEntityParameterFloatingIpAssignmentList[];
+    /**
+     * (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
@@ -4747,52 +4786,6 @@ export interface GetRecoveryPlansEntity {
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
      * * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
      */
-    parameters: outputs.GetRecoveryPlansEntityParameter[];
-    projectReferences: outputs.GetRecoveryPlansEntityProjectReference[];
-    /**
-     * (Required) Input for the stages of the Recovery Plan. Each stage will perform a predefined type of task.
-     * * `stage_list.stage_uuid` - (Optional/Computed) UUID of stage.
-     * * `stage_list.delay_time_secs` - (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
-     * * `stage_list.stage_work` - (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
-     * * `stage_list.stage_work.0.recover_entities` - (Optional/Computed) Information about entities to be recovered.
-     * * `stage_list.stage_work.0.recover_entities.0.entity_info_list` - (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
-     * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
-     * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
-     * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
-     * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
-     */
-    stageLists: outputs.GetRecoveryPlansEntityStageList[];
-    state: string;
-}
-
-export interface GetRecoveryPlansEntityCategory {
-    /**
-     * (Optional) the name.
-     */
-    name: string;
-    /**
-     * value of the key.
-     */
-    value: string;
-}
-
-export interface GetRecoveryPlansEntityOwnerReference {
-    /**
-     * (Required) The kind name (Default value: `project`).
-     */
-    kind: string;
-    /**
-     * (Optional) the name.
-     */
-    name: string;
-    /**
-     * (Required) the UUID.
-     */
-    uuid: string;
-}
-
-export interface GetRecoveryPlansEntityParameter {
-    floatingIpAssignmentLists: outputs.GetRecoveryPlansEntityParameterFloatingIpAssignmentList[];
     networkMappingLists: outputs.GetRecoveryPlansEntityParameterNetworkMappingList[];
 }
 
@@ -5028,16 +5021,35 @@ export interface GetRecoveryPlansEntityProjectReference {
 }
 
 export interface GetRecoveryPlansEntityStageList {
+    /**
+     * (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
+     */
     delayTimeSecs: number;
+    /**
+     * (Optional/Computed) UUID of stage.
+     */
     stageUuid: string;
+    /**
+     * (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
+     */
     stageWorks: outputs.GetRecoveryPlansEntityStageListStageWork[];
 }
 
 export interface GetRecoveryPlansEntityStageListStageWork {
+    /**
+     * (Optional/Computed) Information about entities to be recovered.
+     */
     recoverEntities: outputs.GetRecoveryPlansEntityStageListStageWorkRecoverEntity[];
 }
 
 export interface GetRecoveryPlansEntityStageListStageWorkRecoverEntity {
+    /**
+     * (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
+     * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
+     * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
+     * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
+     * * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
+     */
     entityInfoLists: outputs.GetRecoveryPlansEntityStageListStageWorkRecoverEntityEntityInfoList[];
 }
 
@@ -5205,6 +5217,9 @@ export interface GetServiceGroupsEntityAssociatedPoliciesList {
 
 export interface GetServiceGroupsEntityServiceGroup {
     description: string;
+    /**
+     * specifying whether it is a system defined service group
+     */
     isSystemDefined: boolean;
     name: string;
     serviceLists: outputs.GetServiceGroupsEntityServiceGroupServiceList[];
@@ -5829,17 +5844,8 @@ export interface GetUserGroupsEntity {
 }
 
 export interface GetUserGroupsEntityAccessControlPolicyReferenceList {
-    /**
-     * - The kind name. (Default depends on the resource you are referencing)
-     */
     kind: string;
-    /**
-     * - the key name.
-     */
     name: string;
-    /**
-     * - User group UUID.
-     */
     uuid: string;
 }
 
@@ -5872,35 +5878,27 @@ export interface GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceRef
      */
     kind: string;
     /**
-     * - the key name.
+     * - the name(Optional).
      */
     name: string;
     /**
-     * - User group UUID.
+     * - the UUID(Required).
+     *
+     * For `accessControlPolicyReferenceList` and `projectReferenceList` are the same as reference but used as list.
+     *
+     * See detailed information in [Nutanix Users](https://www.nutanix.dev/reference/prism_central/v3/api/user-groups/).
      */
     uuid: string;
 }
 
 export interface GetUserGroupsEntityProjectReferenceList {
-    /**
-     * - The kind name. (Default depends on the resource you are referencing)
-     */
     kind: string;
-    /**
-     * - the key name.
-     */
     name: string;
-    /**
-     * - User group UUID.
-     */
     uuid: string;
 }
 
 export interface GetUserGroupsMetadata {
     filter: string;
-    /**
-     * - The kind name. (Default depends on the resource you are referencing)
-     */
     kind: string;
     length: number;
     offset: number;
@@ -6753,7 +6751,7 @@ export interface KarbonClusterMasterNodePool {
      */
     ahvConfig?: outputs.KarbonClusterMasterNodePoolAhvConfig;
     /**
-     * - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+     * - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
      */
     name?: string;
     /**
@@ -6832,7 +6830,7 @@ export interface KarbonClusterWorkerNodePool {
      */
     ahvConfig?: outputs.KarbonClusterWorkerNodePoolAhvConfig;
     /**
-     * - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+     * - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
      */
     name?: string;
     /**
@@ -7826,35 +7824,17 @@ export interface ServiceGroupServiceList {
 }
 
 export interface ServiceGroupServiceListIcmpTypeCodeList {
-    /**
-     * - (Optional) Code as text
-     */
     code?: string;
-    /**
-     * - (Optional) Type as text
-     */
     type?: string;
 }
 
 export interface ServiceGroupServiceListTcpPortRangeList {
-    /**
-     * End Port (Int)
-     */
     endPort?: number;
-    /**
-     * - (Optional) Start Port (Int)
-     */
     startPort?: number;
 }
 
 export interface ServiceGroupServiceListUdpPortRangeList {
-    /**
-     * End Port (Int)
-     */
     endPort?: number;
-    /**
-     * - (Optional) Start Port (Int)
-     */
     startPort?: number;
 }
 
@@ -8063,7 +8043,7 @@ export interface VirtualMachineDiskListStorageConfigStorageContainerReference {
     name: string;
     url: string;
     /**
-     * - (Optional) The device ID which is used to uniquely identify this particular disk.
+     * - the UUID(Required).
      */
     uuid: string;
 }
@@ -8116,9 +8096,6 @@ export interface VirtualMachineNicList {
      * - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
      */
     ipEndpointLists: outputs.VirtualMachineNicListIpEndpointList[];
-    /**
-     * - Indicates whether the serial port connection is connected or not (`true` or `false`).
-     */
     isConnected?: string;
     /**
      * - The MAC address for the adapter.
@@ -8170,52 +8147,19 @@ export interface VirtualMachineNicListIpEndpointList {
 }
 
 export interface VirtualMachineNicListStatus {
-    /**
-     * -  The Floating IP associated with the vnic. (Only in `nicListStatus`)
-     */
     floatingIp: string;
-    /**
-     * - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
-     */
     ipEndpointLists: outputs.VirtualMachineNicListStatusIpEndpointList[];
-    /**
-     * - Indicates whether the serial port connection is connected or not (`true` or `false`).
-     */
     isConnected: string;
-    /**
-     * - The MAC address for the adapter.
-     */
     macAddress: string;
-    /**
-     * - The model of this NIC. (Options : VIRTIO , E1000).
-     */
     model: string;
-    /**
-     * - The reference to a network_function_chain.
-     */
     networkFunctionChainReference: {[key: string]: string};
-    /**
-     * - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
-     */
     networkFunctionNicType: string;
-    /**
-     * - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
-     */
     nicType: string;
-    /**
-     * - The number of tx/rx queue pairs for this NIC.
-     */
     numQueues: number;
-    /**
-     * - The name of the subnet reference to.
-     */
     subnetName: string;
-    /**
-     * - The reference to a subnet.
-     */
     subnetUuid: string;
     /**
-     * - (Optional) The device ID which is used to uniquely identify this particular disk.
+     * - the UUID(Required).
      */
     uuid: string;
 }

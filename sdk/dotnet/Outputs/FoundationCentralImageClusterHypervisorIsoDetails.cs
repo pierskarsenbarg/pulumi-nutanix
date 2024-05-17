@@ -14,21 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class FoundationCentralImageClusterHypervisorIsoDetails
     {
-        /// <summary>
-        /// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
-        /// </summary>
         public readonly string? HypervProductKey;
-        /// <summary>
-        /// SKU of hyperv to be installed if hypervisor_type is hyperv.
-        /// </summary>
         public readonly string? HypervSku;
-        /// <summary>
-        /// sha256sum of the hypervisor iso.
-        /// </summary>
         public readonly string? Sha256sum;
-        /// <summary>
-        /// URL to download hypervisor iso. Required only if imaging is needed.
-        /// </summary>
         public readonly string? Url;
 
         [OutputConstructor]

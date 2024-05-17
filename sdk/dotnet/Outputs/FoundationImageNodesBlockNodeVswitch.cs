@@ -14,9 +14,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class FoundationImageNodesBlockNodeVswitch
     {
-        /// <summary>
-        /// - (Required if node is capable) dynamic if using LACP, static for LAG
-        /// </summary>
         public readonly string? BondMode;
         public readonly string? Lacp;
         public readonly int? Mtu;

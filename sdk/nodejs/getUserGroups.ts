@@ -10,13 +10,6 @@ import * as utilities from "./utilities";
  * Provides a datasource to retrieve all the user groups.
  *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
- *
- * const usergroups = nutanix.getUserGroups({});
- * ```
  */
 export function getUserGroups(args?: GetUserGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetUserGroupsResult> {
     args = args || {};
@@ -53,13 +46,6 @@ export interface GetUserGroupsResult {
  * Provides a datasource to retrieve all the user groups.
  *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
- *
- * const usergroups = nutanix.getUserGroups({});
- * ```
  */
 export function getUserGroupsOutput(args?: GetUserGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserGroupsResult> {
     return pulumi.output(args).apply((a: any) => getUserGroups(a, opts))

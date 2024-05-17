@@ -116,7 +116,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
-        /// - the key name.
+        /// -  The name for the image.
         /// </summary>
         public readonly string Name;
         /// <summary>

@@ -29,7 +29,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<string>? Url { get; set; }
 
         /// <summary>
-        /// - (Optional) The device ID which is used to uniquely identify this particular disk.
+        /// - the UUID(Required).
         /// </summary>
         [Input("uuid")]
         public Input<string>? Uuid { get; set; }

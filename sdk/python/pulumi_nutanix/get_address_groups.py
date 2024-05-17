@@ -77,13 +77,6 @@ def get_address_groups(metadatas: Optional[Sequence[pulumi.InputType['GetAddress
 
     ## Example Usage
 
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    addr_groups = nutanix.get_address_groups()
-    ```
-
 
     :param Sequence[pulumi.InputType['GetAddressGroupsMetadataArgs']] metadatas: - (Optional) Use metadata to specify filters
     """
@@ -105,13 +98,6 @@ def get_address_groups_output(metadatas: Optional[pulumi.Input[Optional[Sequence
     Provides a datasource to retrieve list of address groups.
 
     ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    addr_groups = nutanix.get_address_groups()
-    ```
 
 
     :param Sequence[pulumi.InputType['GetAddressGroupsMetadataArgs']] metadatas: - (Optional) Use metadata to specify filters

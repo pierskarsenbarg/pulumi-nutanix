@@ -13,9 +13,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class FoundationCentralImageClusterClusterStatusNodeProgressDetailArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// UUID of the node.
-        /// </summary>
         [Input("imagedNodeUuid")]
         public Input<string>? ImagedNodeUuid { get; set; }
 

@@ -14,42 +14,6 @@ namespace PiersKarsenbarg.Nutanix
     /// Provides a resource to create a service group based on the input parameters.
     /// 
     /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var test = new Nutanix.ServiceGroup("test", new()
-    ///     {
-    ///         Description = "this is service group",
-    ///         ServiceLists = new[]
-    ///         {
-    ///             new Nutanix.Inputs.ServiceGroupServiceListArgs
-    ///             {
-    ///                 Protocol = "TCP",
-    ///                 TcpPortRangeLists = new[]
-    ///                 {
-    ///                     new Nutanix.Inputs.ServiceGroupServiceListTcpPortRangeListArgs
-    ///                     {
-    ///                         EndPort = 22,
-    ///                         StartPort = 22,
-    ///                     },
-    ///                     new Nutanix.Inputs.ServiceGroupServiceListTcpPortRangeListArgs
-    ///                     {
-    ///                         EndPort = 2222,
-    ///                         StartPort = 2222,
-    ///                     },
-    ///                 },
-    ///             },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/serviceGroup:ServiceGroup")]
     public partial class ServiceGroup : global::Pulumi.CustomResource

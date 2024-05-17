@@ -89,13 +89,6 @@ def get_access_control_policies(metadatas: Optional[Sequence[pulumi.InputType['G
 
     ## Example Usage
 
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    test = nutanix.get_access_control_policies()
-    ```
-
 
     :param Sequence[pulumi.InputType['GetAccessControlPoliciesMetadataArgs']] metadatas: - The Access Control Policy kind metadata.
     """
@@ -118,13 +111,6 @@ def get_access_control_policies_output(metadatas: Optional[pulumi.Input[Optional
     Describes a list of access control policies.
 
     ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    test = nutanix.get_access_control_policies()
-    ```
 
 
     :param Sequence[pulumi.InputType['GetAccessControlPoliciesMetadataArgs']] metadatas: - The Access Control Policy kind metadata.

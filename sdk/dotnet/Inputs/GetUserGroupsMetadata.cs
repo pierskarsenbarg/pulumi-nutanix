@@ -16,9 +16,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("filter", required: true)]
         public string Filter { get; set; } = null!;
 
-        /// <summary>
-        /// - The kind name. (Default depends on the resource you are referencing)
-        /// </summary>
         [Input("kind", required: true)]
         public string Kind { get; set; } = null!;
 

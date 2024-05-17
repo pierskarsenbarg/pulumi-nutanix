@@ -10,21 +10,6 @@ import * as utilities from "./utilities";
  * Provides a datasource to retrieve a user group based on the input parameters.
  *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
- *
- * const usergroup = nutanix.getUserGroup({
- *     userGroupId: "dd30a856-8e72-4158-b716-98455ceda220",
- * });
- * const usergroupbyname = nutanix.getUserGroup({
- *     userGroupName: "example-group-1",
- * });
- * const test = nutanix.getUserGroup({
- *     userGroupDistinguishedName: "cn=example-group-1,cn=users,dc=ntnxlab,dc=local",
- * });
- * ```
  */
 export function getUserGroup(args?: GetUserGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetUserGroupResult> {
     args = args || {};
@@ -130,21 +115,6 @@ export interface GetUserGroupResult {
  * Provides a datasource to retrieve a user group based on the input parameters.
  *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
- *
- * const usergroup = nutanix.getUserGroup({
- *     userGroupId: "dd30a856-8e72-4158-b716-98455ceda220",
- * });
- * const usergroupbyname = nutanix.getUserGroup({
- *     userGroupName: "example-group-1",
- * });
- * const test = nutanix.getUserGroup({
- *     userGroupDistinguishedName: "cn=example-group-1,cn=users,dc=ntnxlab,dc=local",
- * });
- * ```
  */
 export function getUserGroupOutput(args?: GetUserGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserGroupResult> {
     return pulumi.output(args).apply((a: any) => getUserGroup(a, opts))

@@ -15,9 +15,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes the SSH config from a Karbon Cluster
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -39,8 +37,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetKarbonClusterSshResult> InvokeAsync(GetKarbonClusterSshArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetKarbonClusterSshResult>("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", args ?? new GetKarbonClusterSshArgs(), options.WithDefaults());
@@ -48,9 +44,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes the SSH config from a Karbon Cluster
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -72,8 +66,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetKarbonClusterSshResult> Invoke(GetKarbonClusterSshInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetKarbonClusterSshResult>("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", args ?? new GetKarbonClusterSshInvokeArgs(), options.WithDefaults());

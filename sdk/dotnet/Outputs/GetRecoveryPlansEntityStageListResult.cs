@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetRecoveryPlansEntityStageListResult
     {
+        /// <summary>
+        /// (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
+        /// </summary>
         public readonly int DelayTimeSecs;
+        /// <summary>
+        /// (Optional/Computed) UUID of stage.
+        /// </summary>
         public readonly string StageUuid;
+        /// <summary>
+        /// (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetRecoveryPlansEntityStageListStageWorkResult> StageWorks;
 
         [OutputConstructor]

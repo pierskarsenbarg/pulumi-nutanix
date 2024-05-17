@@ -17,13 +17,7 @@ export interface AccessControlPolicyCategory {
 }
 
 export interface AccessControlPolicyContextFilterList {
-    /**
-     * A list of Entity filter expressions.
-     */
     entityFilterExpressionLists: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyContextFilterListEntityFilterExpressionList>[]>;
-    /**
-     * - (Optional) Filter the scope of an Access Control Policy.
-     */
     scopeFilterExpressionLists?: pulumi.Input<pulumi.Input<inputs.AccessControlPolicyContextFilterListScopeFilterExpressionList>[]>;
 }
 
@@ -170,15 +164,7 @@ export interface AccessControlPolicyUserReferenceList {
 }
 
 export interface AddressGroupIpAddressBlockList {
-    /**
-     * - (Required) IP of the address block
-     */
     ip: pulumi.Input<string>;
-    /**
-     * - (Required) Prefix length of address block in int
-     *
-     * See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/reference/prism_central/v3/api/address-groups/postaddressgroups).
-     */
     prefixLength: pulumi.Input<number>;
 }
 
@@ -204,9 +190,6 @@ export interface FoundationCentralImageClusterClusterStatusClusterProgressDetail
 }
 
 export interface FoundationCentralImageClusterClusterStatusNodeProgressDetail {
-    /**
-     * UUID of the node.
-     */
     imagedNodeUuid?: pulumi.Input<string>;
     imagingStopped?: pulumi.Input<boolean>;
     intentPickedUp?: pulumi.Input<boolean>;
@@ -216,61 +199,25 @@ export interface FoundationCentralImageClusterClusterStatusNodeProgressDetail {
 }
 
 export interface FoundationCentralImageClusterCommonNetworkSettings {
-    /**
-     * List of dns servers for the cvms in the cluster.
-     */
     cvmDnsServers?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * List of ntp servers for the cvms in the cluster.
-     */
     cvmNtpServers?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * List of dns servers for the hypervisors in the cluster.
-     */
     hypervisorDnsServers?: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * List of ntp servers for the hypervisors in the cluster.
-     */
     hypervisorNtpServers?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfig {
     blocks?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterFoundationInitConfigBlock>[]>;
     clusters?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterFoundationInitConfigCluster>[]>;
-    /**
-     * Gateway of the cvm.
-     */
     cvmGateway?: pulumi.Input<string>;
-    /**
-     * Netmask of the cvm.
-     */
     cvmNetmask?: pulumi.Input<string>;
     dnsServers?: pulumi.Input<string>;
-    /**
-     * Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
-     */
     hypervProductKey?: pulumi.Input<string>;
-    /**
-     * SKU of hyperv to be installed if hypervisorType is hyperv.
-     */
     hypervSku?: pulumi.Input<string>;
-    /**
-     * Gateway of the hypervisor.
-     */
     hypervisorGateway?: pulumi.Input<string>;
     hypervisorIsoUrl?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     hypervisorIsos?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterFoundationInitConfigHypervisorIso>[]>;
-    /**
-     * Netmask of the hypervisor.
-     */
     hypervisorNetmask?: pulumi.Input<string>;
-    /**
-     * Gateway of the ipmi.
-     */
     ipmiGateway?: pulumi.Input<string>;
-    /**
-     * Netmask of the ipmi.
-     */
     ipmiNetmask?: pulumi.Input<string>;
     nosPackageUrls?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterFoundationInitConfigNosPackageUrl>[]>;
 }
@@ -281,35 +228,14 @@ export interface FoundationCentralImageClusterFoundationInitConfigBlock {
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigBlockNode {
-    /**
-     * IP address to be set for the cvm on the node.
-     */
     cvmIp?: pulumi.Input<string>;
-    /**
-     * Vlan tag of the cvm, if the cvm is on a vlan.
-     */
     cvmVlanId?: pulumi.Input<number>;
     fcImagedNodeUuid?: pulumi.Input<string>;
-    /**
-     * Hardware attributes override json for the node.
-     */
     hardwareAttributesOverride?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     hypervisor?: pulumi.Input<string>;
-    /**
-     * Name to be set for the hypervisor host.
-     */
     hypervisorHostname?: pulumi.Input<string>;
-    /**
-     * IP address to be set for the hypervisor on the node.
-     */
     hypervisorIp?: pulumi.Input<string>;
-    /**
-     * True, if the node should be imaged, False, otherwise.
-     */
     imageNow?: pulumi.Input<boolean>;
-    /**
-     * IP address to be set for the ipmi of the node.
-     */
     ipmiIp?: pulumi.Input<string>;
     ipv6Address?: pulumi.Input<string>;
     nodePosition?: pulumi.Input<string>;
@@ -328,13 +254,7 @@ export interface FoundationCentralImageClusterFoundationInitConfigCluster {
      * Name of the cluster.
      */
     clusterName?: pulumi.Input<string>;
-    /**
-     * List of dns servers for the cvms in the cluster.
-     */
     cvmDnsServers?: pulumi.Input<string>;
-    /**
-     * List of ntp servers for the cvms in the cluster.
-     */
     cvmNtpServers?: pulumi.Input<string>;
     /**
      * Redundancy factor of the cluster.
@@ -347,122 +267,41 @@ export interface FoundationCentralImageClusterFoundationInitConfigCluster {
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigHypervisorIso {
-    /**
-     * Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-     */
     hypervisorType?: pulumi.Input<string>;
-    /**
-     * sha256sum of the hypervisor iso.
-     */
     sha256sum?: pulumi.Input<string>;
-    /**
-     * URL to download hypervisor iso. Required only if imaging is needed.
-     */
     url?: pulumi.Input<string>;
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigNosPackageUrl {
-    /**
-     * sha256sum of the hypervisor iso.
-     */
     sha256sum?: pulumi.Input<string>;
-    /**
-     * URL to download hypervisor iso. Required only if imaging is needed.
-     */
     url?: pulumi.Input<string>;
 }
 
 export interface FoundationCentralImageClusterHypervisorIsoDetails {
-    /**
-     * Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
-     */
     hypervProductKey?: pulumi.Input<string>;
-    /**
-     * SKU of hyperv to be installed if hypervisorType is hyperv.
-     */
     hypervSku?: pulumi.Input<string>;
-    /**
-     * sha256sum of the hypervisor iso.
-     */
     sha256sum?: pulumi.Input<string>;
-    /**
-     * URL to download hypervisor iso. Required only if imaging is needed.
-     */
     url?: pulumi.Input<string>;
 }
 
 export interface FoundationCentralImageClusterNodeList {
-    /**
-     * Gateway of the cvm.
-     */
     cvmGateway?: pulumi.Input<string>;
-    /**
-     * IP address to be set for the cvm on the node.
-     */
     cvmIp?: pulumi.Input<string>;
-    /**
-     * Netmask of the cvm.
-     */
     cvmNetmask?: pulumi.Input<string>;
-    /**
-     * Amount of memory to be assigned for the cvm.
-     */
     cvmRamGb?: pulumi.Input<number>;
-    /**
-     * Vlan tag of the cvm, if the cvm is on a vlan.
-     */
     cvmVlanId?: pulumi.Input<number>;
-    /**
-     * Hardware attributes override json for the node.
-     */
     hardwareAttributesOverride?: pulumi.Input<{[key: string]: any}>;
-    /**
-     * Gateway of the hypervisor.
-     */
     hypervisorGateway?: pulumi.Input<string>;
-    /**
-     * Name to be set for the hypervisor host.
-     */
     hypervisorHostname?: pulumi.Input<string>;
-    /**
-     * IP address to be set for the hypervisor on the node.
-     */
     hypervisorIp?: pulumi.Input<string>;
-    /**
-     * Netmask of the hypervisor.
-     */
     hypervisorNetmask?: pulumi.Input<string>;
-    /**
-     * Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-     */
     hypervisorType?: pulumi.Input<string>;
-    /**
-     * True, if the node should be imaged, False, otherwise.
-     */
     imageNow?: pulumi.Input<boolean>;
-    /**
-     * UUID of the node.
-     */
     imagedNodeUuid?: pulumi.Input<string>;
-    /**
-     * Gateway of the ipmi.
-     */
     ipmiGateway?: pulumi.Input<string>;
-    /**
-     * IP address to be set for the ipmi of the node.
-     */
     ipmiIp?: pulumi.Input<string>;
-    /**
-     * Netmask of the ipmi.
-     */
     ipmiNetmask?: pulumi.Input<string>;
-    /**
-     * Passthrough RDMA nic to CVM if possible, default to false.
-     */
     rdmaPassthrough?: pulumi.Input<boolean>;
-    /**
-     * Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
-     */
     useExistingNetworkSettings?: pulumi.Input<boolean>;
 }
 
@@ -617,9 +456,6 @@ export interface FoundationImageNodesBlockNodeUcsmParams {
 }
 
 export interface FoundationImageNodesBlockNodeVswitch {
-    /**
-     * - (Required if node is capable) dynamic if using LACP, static for LAG
-     */
     bondMode?: pulumi.Input<string>;
     lacp?: pulumi.Input<string>;
     mtu?: pulumi.Input<number>;
@@ -688,9 +524,6 @@ export interface FoundationImageNodesCluster {
 }
 
 export interface FoundationImageNodesClusterUrl {
-    /**
-     * - (Required) Name of the cluster.
-     */
     clusterName?: pulumi.Input<string>;
     clusterUrl?: pulumi.Input<string>;
 }
@@ -748,46 +581,22 @@ export interface FoundationImageNodesHypervisorIso {
 }
 
 export interface FoundationImageNodesHypervisorIsoEsx {
-    /**
-     * - (Required) Filename of hypervisor ISO.
-     */
     checksum: pulumi.Input<string>;
-    /**
-     * - (Required) Checksum for ISO file.
-     */
     filename: pulumi.Input<string>;
 }
 
 export interface FoundationImageNodesHypervisorIsoHyperv {
-    /**
-     * - (Required) Filename of hypervisor ISO.
-     */
     checksum: pulumi.Input<string>;
-    /**
-     * - (Required) Checksum for ISO file.
-     */
     filename: pulumi.Input<string>;
 }
 
 export interface FoundationImageNodesHypervisorIsoKvm {
-    /**
-     * - (Required) Filename of hypervisor ISO.
-     */
     checksum: pulumi.Input<string>;
-    /**
-     * - (Required) Checksum for ISO file.
-     */
     filename: pulumi.Input<string>;
 }
 
 export interface FoundationImageNodesHypervisorIsoXen {
-    /**
-     * - (Required) Filename of hypervisor ISO.
-     */
     checksum: pulumi.Input<string>;
-    /**
-     * - (Required) Checksum for ISO file.
-     */
     filename: pulumi.Input<string>;
 }
 
@@ -1544,9 +1353,6 @@ export interface GetUserGroupCategoryArgs {
 
 export interface GetUserGroupsMetadata {
     filter?: string;
-    /**
-     * - The kind name. (Default depends on the resource you are referencing)
-     */
     kind?: string;
     length?: number;
     offset?: number;
@@ -1556,9 +1362,6 @@ export interface GetUserGroupsMetadata {
 
 export interface GetUserGroupsMetadataArgs {
     filter?: pulumi.Input<string>;
-    /**
-     * - The kind name. (Default depends on the resource you are referencing)
-     */
     kind?: pulumi.Input<string>;
     length?: pulumi.Input<number>;
     offset?: pulumi.Input<number>;
@@ -1784,7 +1587,7 @@ export interface KarbonClusterMasterNodePool {
      */
     ahvConfig?: pulumi.Input<inputs.KarbonClusterMasterNodePoolAhvConfig>;
     /**
-     * - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+     * - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
      */
     name?: pulumi.Input<string>;
     /**
@@ -1863,7 +1666,7 @@ export interface KarbonClusterWorkerNodePool {
      */
     ahvConfig?: pulumi.Input<inputs.KarbonClusterWorkerNodePoolAhvConfig>;
     /**
-     * - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+     * - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
      */
     name?: pulumi.Input<string>;
     /**
@@ -2857,35 +2660,17 @@ export interface ServiceGroupServiceList {
 }
 
 export interface ServiceGroupServiceListIcmpTypeCodeList {
-    /**
-     * - (Optional) Code as text
-     */
     code?: pulumi.Input<string>;
-    /**
-     * - (Optional) Type as text
-     */
     type?: pulumi.Input<string>;
 }
 
 export interface ServiceGroupServiceListTcpPortRangeList {
-    /**
-     * End Port (Int)
-     */
     endPort?: pulumi.Input<number>;
-    /**
-     * - (Optional) Start Port (Int)
-     */
     startPort?: pulumi.Input<number>;
 }
 
 export interface ServiceGroupServiceListUdpPortRangeList {
-    /**
-     * End Port (Int)
-     */
     endPort?: pulumi.Input<number>;
-    /**
-     * - (Optional) Start Port (Int)
-     */
     startPort?: pulumi.Input<number>;
 }
 
@@ -3094,7 +2879,7 @@ export interface VirtualMachineDiskListStorageConfigStorageContainerReference {
     name?: pulumi.Input<string>;
     url?: pulumi.Input<string>;
     /**
-     * - (Optional) The device ID which is used to uniquely identify this particular disk.
+     * - the UUID(Required).
      */
     uuid?: pulumi.Input<string>;
 }
@@ -3147,9 +2932,6 @@ export interface VirtualMachineNicList {
      * - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
      */
     ipEndpointLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineNicListIpEndpointList>[]>;
-    /**
-     * - Indicates whether the serial port connection is connected or not (`true` or `false`).
-     */
     isConnected?: pulumi.Input<string>;
     /**
      * - The MAC address for the adapter.
@@ -3201,52 +2983,19 @@ export interface VirtualMachineNicListIpEndpointList {
 }
 
 export interface VirtualMachineNicListStatus {
-    /**
-     * -  The Floating IP associated with the vnic. (Only in `nicListStatus`)
-     */
     floatingIp?: pulumi.Input<string>;
-    /**
-     * - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
-     */
     ipEndpointLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineNicListStatusIpEndpointList>[]>;
-    /**
-     * - Indicates whether the serial port connection is connected or not (`true` or `false`).
-     */
     isConnected?: pulumi.Input<string>;
-    /**
-     * - The MAC address for the adapter.
-     */
     macAddress?: pulumi.Input<string>;
-    /**
-     * - The model of this NIC. (Options : VIRTIO , E1000).
-     */
     model?: pulumi.Input<string>;
-    /**
-     * - The reference to a network_function_chain.
-     */
     networkFunctionChainReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    /**
-     * - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
-     */
     networkFunctionNicType?: pulumi.Input<string>;
-    /**
-     * - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
-     */
     nicType?: pulumi.Input<string>;
-    /**
-     * - The number of tx/rx queue pairs for this NIC.
-     */
     numQueues?: pulumi.Input<number>;
-    /**
-     * - The name of the subnet reference to.
-     */
     subnetName?: pulumi.Input<string>;
-    /**
-     * - The reference to a subnet.
-     */
     subnetUuid?: pulumi.Input<string>;
     /**
-     * - (Optional) The device ID which is used to uniquely identify this particular disk.
+     * - the UUID(Required).
      */
     uuid?: pulumi.Input<string>;
 }

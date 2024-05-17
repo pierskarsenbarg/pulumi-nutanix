@@ -15,6 +15,7 @@ import * as utilities from "./utilities";
  *
  * const nosPackages = nutanix.getFoundationNodPackages({});
  * ```
+ *
  * ## Note
  *
  * * This data source only lists .tar file names.
@@ -52,6 +53,7 @@ export interface GetFoundationNodPackagesResult {
  *
  * const nosPackages = nutanix.getFoundationNodPackages({});
  * ```
+ *
  * ## Note
  *
  * * This data source only lists .tar file names.

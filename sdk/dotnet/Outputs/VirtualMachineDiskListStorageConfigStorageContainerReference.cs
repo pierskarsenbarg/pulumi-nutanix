@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string? Name;
         public readonly string? Url;
         /// <summary>
-        /// - (Optional) The device ID which is used to uniquely identify this particular disk.
+        /// - the UUID(Required).
         /// </summary>
         public readonly string? Uuid;
 

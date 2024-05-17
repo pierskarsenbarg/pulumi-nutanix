@@ -17,6 +17,7 @@ import * as utilities from "./utilities";
  *
  * const clusters = nutanix.getClusters({});
  * ```
+ *
  * ## Reference
  *
  * The `projectReference`, `ownerReference`, `availabilityZoneReference`, `clusterReference`, attributes supports the following:
@@ -69,6 +70,7 @@ export interface GetClustersResult {
  *
  * const clusters = nutanix.getClusters({});
  * ```
+ *
  * ## Reference
  *
  * The `projectReference`, `ownerReference`, `availabilityZoneReference`, `clusterReference`, attributes supports the following:

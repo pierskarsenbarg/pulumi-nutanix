@@ -80,13 +80,6 @@ def get_user_groups(metadatas: Optional[Sequence[pulumi.InputType['GetUserGroups
 
     ## Example Usage
 
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    usergroups = nutanix.get_user_groups()
-    ```
-
 
     :param Sequence[pulumi.InputType['GetUserGroupsMetadataArgs']] metadatas: - The user group kind metadata.
     """
@@ -109,13 +102,6 @@ def get_user_groups_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pu
     Provides a datasource to retrieve all the user groups.
 
     ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    usergroups = nutanix.get_user_groups()
-    ```
 
 
     :param Sequence[pulumi.InputType['GetUserGroupsMetadataArgs']] metadatas: - The user group kind metadata.

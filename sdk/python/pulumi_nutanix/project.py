@@ -32,39 +32,8 @@ class ProjectArgs:
                  user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]]] = None):
         """
         The set of arguments for constructing a Project resource.
-        :param pulumi.Input['ProjectDefaultSubnetReferenceArgs'] default_subnet_reference: Reference to a subnet.
-               * `default_subnet_reference.kind` - (Optional) The kind name. Default value is `subnet`
-               * `default_subnet_reference.uuid` - (Required) The UUID of a subnet.
-               * `default_subnet_reference.name` - (Optional/Computed) The name of a subnet.
         :param pulumi.Input[str] description: A description for project.
-        :param pulumi.Input[Sequence[pulumi.Input['ProjectAccountReferenceListArgs']]] account_reference_lists: List of accounts associated with the project.
-               * `account_reference_list.#.kind` - (Optional) The kind name. Default value is `account`
-               * `account_reference_list.#.uuid` - (Required) The UUID of an account.
-               * `account_reference_list.#.name` - (Optional/Computed) The name of an account.
-        :param pulumi.Input[Sequence[pulumi.Input['ProjectEnvironmentReferenceListArgs']]] environment_reference_lists: List of environments associated with the project.
-               * `environment_reference_list.#.kind` - (Optional) The kind name. Default value is `environment`
-               * `environment_reference_list.#.uuid` - (Required) The UUID of an environment.
-               * `environment_reference_list.#.name` - (Optional/Computed) The name of an environment.
-        :param pulumi.Input[Sequence[pulumi.Input['ProjectExternalNetworkListArgs']]] external_network_lists: List of external networks associated with the project.
-               * `external_network_list.#.uuid` - (Required) The UUID of a network.
-               * `external_network_list.#.name` - (Optional/Computed) The name of a network.
-        :param pulumi.Input[Sequence[pulumi.Input['ProjectExternalUserGroupReferenceListArgs']]] external_user_group_reference_lists: List of directory service user groups. These groups are not managed by Nutanix.
-               * `external_user_group_reference_list.#.kind` - (Optional) The kind name. Default value is `user_group`
-               * `external_user_group_reference_list.#.uuid` - (Required) The UUID of a user_group
-               * `external_user_group_reference_list.#.name` - (Optional/Computed) The name of a user_group
         :param pulumi.Input[str] name: The name for the project.
-        :param pulumi.Input['ProjectResourceDomainArgs'] resource_domain: The status for a resource domain (limits and values)
-               * `resource_domain.resources` - (Required) Array of the utilization/limit for resource types
-               * `resource_domain.resources.#.limit` - (Required) The resource consumption limit (unspecified is unlimited)
-               * `resource_domain.resources.#.resource_type` - (Required) The type of resource (for example storage, CPUs)
-        :param pulumi.Input[Sequence[pulumi.Input['ProjectSubnetReferenceListArgs']]] subnet_reference_lists: List of subnets for the project.
-               * `subnet_reference_list.#.kind` - (Optional) The kind name. Default value is `subnet`
-               * `subnet_reference_list.#.uuid` - (Required) The UUID of a subnet
-               * `subnet_reference_list.#.name` - (Optional/Computed) The name of a subnet.
-        :param pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]] user_reference_lists: List of users in the project.
-               * `user_reference_list.#.kind` - (Optional) The kind name. Default value is `user`
-               * `user_reference_list.#.uuid` - (Required) The UUID of a user
-               * `user_reference_list.#.name` - (Optional/Computed) The name of a user.
         """
         pulumi.set(__self__, "default_subnet_reference", default_subnet_reference)
         pulumi.set(__self__, "description", description)
@@ -96,12 +65,6 @@ class ProjectArgs:
     @property
     @pulumi.getter(name="defaultSubnetReference")
     def default_subnet_reference(self) -> pulumi.Input['ProjectDefaultSubnetReferenceArgs']:
-        """
-        Reference to a subnet.
-        * `default_subnet_reference.kind` - (Optional) The kind name. Default value is `subnet`
-        * `default_subnet_reference.uuid` - (Required) The UUID of a subnet.
-        * `default_subnet_reference.name` - (Optional/Computed) The name of a subnet.
-        """
         return pulumi.get(self, "default_subnet_reference")
 
     @default_subnet_reference.setter
@@ -123,12 +86,6 @@ class ProjectArgs:
     @property
     @pulumi.getter(name="accountReferenceLists")
     def account_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectAccountReferenceListArgs']]]]:
-        """
-        List of accounts associated with the project.
-        * `account_reference_list.#.kind` - (Optional) The kind name. Default value is `account`
-        * `account_reference_list.#.uuid` - (Required) The UUID of an account.
-        * `account_reference_list.#.name` - (Optional/Computed) The name of an account.
-        """
         return pulumi.get(self, "account_reference_lists")
 
     @account_reference_lists.setter
@@ -156,12 +113,6 @@ class ProjectArgs:
     @property
     @pulumi.getter(name="environmentReferenceLists")
     def environment_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectEnvironmentReferenceListArgs']]]]:
-        """
-        List of environments associated with the project.
-        * `environment_reference_list.#.kind` - (Optional) The kind name. Default value is `environment`
-        * `environment_reference_list.#.uuid` - (Required) The UUID of an environment.
-        * `environment_reference_list.#.name` - (Optional/Computed) The name of an environment.
-        """
         return pulumi.get(self, "environment_reference_lists")
 
     @environment_reference_lists.setter
@@ -171,11 +122,6 @@ class ProjectArgs:
     @property
     @pulumi.getter(name="externalNetworkLists")
     def external_network_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectExternalNetworkListArgs']]]]:
-        """
-        List of external networks associated with the project.
-        * `external_network_list.#.uuid` - (Required) The UUID of a network.
-        * `external_network_list.#.name` - (Optional/Computed) The name of a network.
-        """
         return pulumi.get(self, "external_network_lists")
 
     @external_network_lists.setter
@@ -185,12 +131,6 @@ class ProjectArgs:
     @property
     @pulumi.getter(name="externalUserGroupReferenceLists")
     def external_user_group_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectExternalUserGroupReferenceListArgs']]]]:
-        """
-        List of directory service user groups. These groups are not managed by Nutanix.
-        * `external_user_group_reference_list.#.kind` - (Optional) The kind name. Default value is `user_group`
-        * `external_user_group_reference_list.#.uuid` - (Required) The UUID of a user_group
-        * `external_user_group_reference_list.#.name` - (Optional/Computed) The name of a user_group
-        """
         return pulumi.get(self, "external_user_group_reference_lists")
 
     @external_user_group_reference_lists.setter
@@ -230,12 +170,6 @@ class ProjectArgs:
     @property
     @pulumi.getter(name="resourceDomain")
     def resource_domain(self) -> Optional[pulumi.Input['ProjectResourceDomainArgs']]:
-        """
-        The status for a resource domain (limits and values)
-        * `resource_domain.resources` - (Required) Array of the utilization/limit for resource types
-        * `resource_domain.resources.#.limit` - (Required) The resource consumption limit (unspecified is unlimited)
-        * `resource_domain.resources.#.resource_type` - (Required) The type of resource (for example storage, CPUs)
-        """
         return pulumi.get(self, "resource_domain")
 
     @resource_domain.setter
@@ -245,12 +179,6 @@ class ProjectArgs:
     @property
     @pulumi.getter(name="subnetReferenceLists")
     def subnet_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectSubnetReferenceListArgs']]]]:
-        """
-        List of subnets for the project.
-        * `subnet_reference_list.#.kind` - (Optional) The kind name. Default value is `subnet`
-        * `subnet_reference_list.#.uuid` - (Required) The UUID of a subnet
-        * `subnet_reference_list.#.name` - (Optional/Computed) The name of a subnet.
-        """
         return pulumi.get(self, "subnet_reference_lists")
 
     @subnet_reference_lists.setter
@@ -260,12 +188,6 @@ class ProjectArgs:
     @property
     @pulumi.getter(name="userReferenceLists")
     def user_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]]]:
-        """
-        List of users in the project.
-        * `user_reference_list.#.kind` - (Optional) The kind name. Default value is `user`
-        * `user_reference_list.#.uuid` - (Required) The UUID of a user
-        * `user_reference_list.#.name` - (Optional/Computed) The name of a user.
-        """
         return pulumi.get(self, "user_reference_lists")
 
     @user_reference_lists.setter
@@ -295,39 +217,8 @@ class _ProjectState:
                  user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]]] = None):
         """
         Input properties used for looking up and filtering Project resources.
-        :param pulumi.Input[Sequence[pulumi.Input['ProjectAccountReferenceListArgs']]] account_reference_lists: List of accounts associated with the project.
-               * `account_reference_list.#.kind` - (Optional) The kind name. Default value is `account`
-               * `account_reference_list.#.uuid` - (Required) The UUID of an account.
-               * `account_reference_list.#.name` - (Optional/Computed) The name of an account.
-        :param pulumi.Input['ProjectDefaultSubnetReferenceArgs'] default_subnet_reference: Reference to a subnet.
-               * `default_subnet_reference.kind` - (Optional) The kind name. Default value is `subnet`
-               * `default_subnet_reference.uuid` - (Required) The UUID of a subnet.
-               * `default_subnet_reference.name` - (Optional/Computed) The name of a subnet.
         :param pulumi.Input[str] description: A description for project.
-        :param pulumi.Input[Sequence[pulumi.Input['ProjectEnvironmentReferenceListArgs']]] environment_reference_lists: List of environments associated with the project.
-               * `environment_reference_list.#.kind` - (Optional) The kind name. Default value is `environment`
-               * `environment_reference_list.#.uuid` - (Required) The UUID of an environment.
-               * `environment_reference_list.#.name` - (Optional/Computed) The name of an environment.
-        :param pulumi.Input[Sequence[pulumi.Input['ProjectExternalNetworkListArgs']]] external_network_lists: List of external networks associated with the project.
-               * `external_network_list.#.uuid` - (Required) The UUID of a network.
-               * `external_network_list.#.name` - (Optional/Computed) The name of a network.
-        :param pulumi.Input[Sequence[pulumi.Input['ProjectExternalUserGroupReferenceListArgs']]] external_user_group_reference_lists: List of directory service user groups. These groups are not managed by Nutanix.
-               * `external_user_group_reference_list.#.kind` - (Optional) The kind name. Default value is `user_group`
-               * `external_user_group_reference_list.#.uuid` - (Required) The UUID of a user_group
-               * `external_user_group_reference_list.#.name` - (Optional/Computed) The name of a user_group
         :param pulumi.Input[str] name: The name for the project.
-        :param pulumi.Input['ProjectResourceDomainArgs'] resource_domain: The status for a resource domain (limits and values)
-               * `resource_domain.resources` - (Required) Array of the utilization/limit for resource types
-               * `resource_domain.resources.#.limit` - (Required) The resource consumption limit (unspecified is unlimited)
-               * `resource_domain.resources.#.resource_type` - (Required) The type of resource (for example storage, CPUs)
-        :param pulumi.Input[Sequence[pulumi.Input['ProjectSubnetReferenceListArgs']]] subnet_reference_lists: List of subnets for the project.
-               * `subnet_reference_list.#.kind` - (Optional) The kind name. Default value is `subnet`
-               * `subnet_reference_list.#.uuid` - (Required) The UUID of a subnet
-               * `subnet_reference_list.#.name` - (Optional/Computed) The name of a subnet.
-        :param pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]] user_reference_lists: List of users in the project.
-               * `user_reference_list.#.kind` - (Optional) The kind name. Default value is `user`
-               * `user_reference_list.#.uuid` - (Required) The UUID of a user
-               * `user_reference_list.#.name` - (Optional/Computed) The name of a user.
         """
         if account_reference_lists is not None:
             pulumi.set(__self__, "account_reference_lists", account_reference_lists)
@@ -367,12 +258,6 @@ class _ProjectState:
     @property
     @pulumi.getter(name="accountReferenceLists")
     def account_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectAccountReferenceListArgs']]]]:
-        """
-        List of accounts associated with the project.
-        * `account_reference_list.#.kind` - (Optional) The kind name. Default value is `account`
-        * `account_reference_list.#.uuid` - (Required) The UUID of an account.
-        * `account_reference_list.#.name` - (Optional/Computed) The name of an account.
-        """
         return pulumi.get(self, "account_reference_lists")
 
     @account_reference_lists.setter
@@ -400,12 +285,6 @@ class _ProjectState:
     @property
     @pulumi.getter(name="defaultSubnetReference")
     def default_subnet_reference(self) -> Optional[pulumi.Input['ProjectDefaultSubnetReferenceArgs']]:
-        """
-        Reference to a subnet.
-        * `default_subnet_reference.kind` - (Optional) The kind name. Default value is `subnet`
-        * `default_subnet_reference.uuid` - (Required) The UUID of a subnet.
-        * `default_subnet_reference.name` - (Optional/Computed) The name of a subnet.
-        """
         return pulumi.get(self, "default_subnet_reference")
 
     @default_subnet_reference.setter
@@ -427,12 +306,6 @@ class _ProjectState:
     @property
     @pulumi.getter(name="environmentReferenceLists")
     def environment_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectEnvironmentReferenceListArgs']]]]:
-        """
-        List of environments associated with the project.
-        * `environment_reference_list.#.kind` - (Optional) The kind name. Default value is `environment`
-        * `environment_reference_list.#.uuid` - (Required) The UUID of an environment.
-        * `environment_reference_list.#.name` - (Optional/Computed) The name of an environment.
-        """
         return pulumi.get(self, "environment_reference_lists")
 
     @environment_reference_lists.setter
@@ -442,11 +315,6 @@ class _ProjectState:
     @property
     @pulumi.getter(name="externalNetworkLists")
     def external_network_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectExternalNetworkListArgs']]]]:
-        """
-        List of external networks associated with the project.
-        * `external_network_list.#.uuid` - (Required) The UUID of a network.
-        * `external_network_list.#.name` - (Optional/Computed) The name of a network.
-        """
         return pulumi.get(self, "external_network_lists")
 
     @external_network_lists.setter
@@ -456,12 +324,6 @@ class _ProjectState:
     @property
     @pulumi.getter(name="externalUserGroupReferenceLists")
     def external_user_group_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectExternalUserGroupReferenceListArgs']]]]:
-        """
-        List of directory service user groups. These groups are not managed by Nutanix.
-        * `external_user_group_reference_list.#.kind` - (Optional) The kind name. Default value is `user_group`
-        * `external_user_group_reference_list.#.uuid` - (Required) The UUID of a user_group
-        * `external_user_group_reference_list.#.name` - (Optional/Computed) The name of a user_group
-        """
         return pulumi.get(self, "external_user_group_reference_lists")
 
     @external_user_group_reference_lists.setter
@@ -519,12 +381,6 @@ class _ProjectState:
     @property
     @pulumi.getter(name="resourceDomain")
     def resource_domain(self) -> Optional[pulumi.Input['ProjectResourceDomainArgs']]:
-        """
-        The status for a resource domain (limits and values)
-        * `resource_domain.resources` - (Required) Array of the utilization/limit for resource types
-        * `resource_domain.resources.#.limit` - (Required) The resource consumption limit (unspecified is unlimited)
-        * `resource_domain.resources.#.resource_type` - (Required) The type of resource (for example storage, CPUs)
-        """
         return pulumi.get(self, "resource_domain")
 
     @resource_domain.setter
@@ -543,12 +399,6 @@ class _ProjectState:
     @property
     @pulumi.getter(name="subnetReferenceLists")
     def subnet_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectSubnetReferenceListArgs']]]]:
-        """
-        List of subnets for the project.
-        * `subnet_reference_list.#.kind` - (Optional) The kind name. Default value is `subnet`
-        * `subnet_reference_list.#.uuid` - (Required) The UUID of a subnet
-        * `subnet_reference_list.#.name` - (Optional/Computed) The name of a subnet.
-        """
         return pulumi.get(self, "subnet_reference_lists")
 
     @subnet_reference_lists.setter
@@ -558,12 +408,6 @@ class _ProjectState:
     @property
     @pulumi.getter(name="userReferenceLists")
     def user_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]]]:
-        """
-        List of users in the project.
-        * `user_reference_list.#.kind` - (Optional) The kind name. Default value is `user`
-        * `user_reference_list.#.uuid` - (Required) The UUID of a user
-        * `user_reference_list.#.name` - (Optional/Computed) The name of a user.
-        """
         return pulumi.get(self, "user_reference_lists")
 
     @user_reference_lists.setter
@@ -641,39 +485,8 @@ class Project(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectAccountReferenceListArgs']]]] account_reference_lists: List of accounts associated with the project.
-               * `account_reference_list.#.kind` - (Optional) The kind name. Default value is `account`
-               * `account_reference_list.#.uuid` - (Required) The UUID of an account.
-               * `account_reference_list.#.name` - (Optional/Computed) The name of an account.
-        :param pulumi.Input[pulumi.InputType['ProjectDefaultSubnetReferenceArgs']] default_subnet_reference: Reference to a subnet.
-               * `default_subnet_reference.kind` - (Optional) The kind name. Default value is `subnet`
-               * `default_subnet_reference.uuid` - (Required) The UUID of a subnet.
-               * `default_subnet_reference.name` - (Optional/Computed) The name of a subnet.
         :param pulumi.Input[str] description: A description for project.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectEnvironmentReferenceListArgs']]]] environment_reference_lists: List of environments associated with the project.
-               * `environment_reference_list.#.kind` - (Optional) The kind name. Default value is `environment`
-               * `environment_reference_list.#.uuid` - (Required) The UUID of an environment.
-               * `environment_reference_list.#.name` - (Optional/Computed) The name of an environment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectExternalNetworkListArgs']]]] external_network_lists: List of external networks associated with the project.
-               * `external_network_list.#.uuid` - (Required) The UUID of a network.
-               * `external_network_list.#.name` - (Optional/Computed) The name of a network.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectExternalUserGroupReferenceListArgs']]]] external_user_group_reference_lists: List of directory service user groups. These groups are not managed by Nutanix.
-               * `external_user_group_reference_list.#.kind` - (Optional) The kind name. Default value is `user_group`
-               * `external_user_group_reference_list.#.uuid` - (Required) The UUID of a user_group
-               * `external_user_group_reference_list.#.name` - (Optional/Computed) The name of a user_group
         :param pulumi.Input[str] name: The name for the project.
-        :param pulumi.Input[pulumi.InputType['ProjectResourceDomainArgs']] resource_domain: The status for a resource domain (limits and values)
-               * `resource_domain.resources` - (Required) Array of the utilization/limit for resource types
-               * `resource_domain.resources.#.limit` - (Required) The resource consumption limit (unspecified is unlimited)
-               * `resource_domain.resources.#.resource_type` - (Required) The type of resource (for example storage, CPUs)
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectSubnetReferenceListArgs']]]] subnet_reference_lists: List of subnets for the project.
-               * `subnet_reference_list.#.kind` - (Optional) The kind name. Default value is `subnet`
-               * `subnet_reference_list.#.uuid` - (Required) The UUID of a subnet
-               * `subnet_reference_list.#.name` - (Optional/Computed) The name of a subnet.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserReferenceListArgs']]]] user_reference_lists: List of users in the project.
-               * `user_reference_list.#.kind` - (Optional) The kind name. Default value is `user`
-               * `user_reference_list.#.uuid` - (Required) The UUID of a user
-               * `user_reference_list.#.name` - (Optional/Computed) The name of a user.
         """
         ...
     @overload
@@ -822,39 +635,8 @@ class Project(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectAccountReferenceListArgs']]]] account_reference_lists: List of accounts associated with the project.
-               * `account_reference_list.#.kind` - (Optional) The kind name. Default value is `account`
-               * `account_reference_list.#.uuid` - (Required) The UUID of an account.
-               * `account_reference_list.#.name` - (Optional/Computed) The name of an account.
-        :param pulumi.Input[pulumi.InputType['ProjectDefaultSubnetReferenceArgs']] default_subnet_reference: Reference to a subnet.
-               * `default_subnet_reference.kind` - (Optional) The kind name. Default value is `subnet`
-               * `default_subnet_reference.uuid` - (Required) The UUID of a subnet.
-               * `default_subnet_reference.name` - (Optional/Computed) The name of a subnet.
         :param pulumi.Input[str] description: A description for project.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectEnvironmentReferenceListArgs']]]] environment_reference_lists: List of environments associated with the project.
-               * `environment_reference_list.#.kind` - (Optional) The kind name. Default value is `environment`
-               * `environment_reference_list.#.uuid` - (Required) The UUID of an environment.
-               * `environment_reference_list.#.name` - (Optional/Computed) The name of an environment.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectExternalNetworkListArgs']]]] external_network_lists: List of external networks associated with the project.
-               * `external_network_list.#.uuid` - (Required) The UUID of a network.
-               * `external_network_list.#.name` - (Optional/Computed) The name of a network.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectExternalUserGroupReferenceListArgs']]]] external_user_group_reference_lists: List of directory service user groups. These groups are not managed by Nutanix.
-               * `external_user_group_reference_list.#.kind` - (Optional) The kind name. Default value is `user_group`
-               * `external_user_group_reference_list.#.uuid` - (Required) The UUID of a user_group
-               * `external_user_group_reference_list.#.name` - (Optional/Computed) The name of a user_group
         :param pulumi.Input[str] name: The name for the project.
-        :param pulumi.Input[pulumi.InputType['ProjectResourceDomainArgs']] resource_domain: The status for a resource domain (limits and values)
-               * `resource_domain.resources` - (Required) Array of the utilization/limit for resource types
-               * `resource_domain.resources.#.limit` - (Required) The resource consumption limit (unspecified is unlimited)
-               * `resource_domain.resources.#.resource_type` - (Required) The type of resource (for example storage, CPUs)
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectSubnetReferenceListArgs']]]] subnet_reference_lists: List of subnets for the project.
-               * `subnet_reference_list.#.kind` - (Optional) The kind name. Default value is `subnet`
-               * `subnet_reference_list.#.uuid` - (Required) The UUID of a subnet
-               * `subnet_reference_list.#.name` - (Optional/Computed) The name of a subnet.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserReferenceListArgs']]]] user_reference_lists: List of users in the project.
-               * `user_reference_list.#.kind` - (Optional) The kind name. Default value is `user`
-               * `user_reference_list.#.uuid` - (Required) The UUID of a user
-               * `user_reference_list.#.name` - (Optional/Computed) The name of a user.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -882,12 +664,6 @@ class Project(pulumi.CustomResource):
     @property
     @pulumi.getter(name="accountReferenceLists")
     def account_reference_lists(self) -> pulumi.Output[Sequence['outputs.ProjectAccountReferenceList']]:
-        """
-        List of accounts associated with the project.
-        * `account_reference_list.#.kind` - (Optional) The kind name. Default value is `account`
-        * `account_reference_list.#.uuid` - (Required) The UUID of an account.
-        * `account_reference_list.#.name` - (Optional/Computed) The name of an account.
-        """
         return pulumi.get(self, "account_reference_lists")
 
     @property
@@ -903,12 +679,6 @@ class Project(pulumi.CustomResource):
     @property
     @pulumi.getter(name="defaultSubnetReference")
     def default_subnet_reference(self) -> pulumi.Output['outputs.ProjectDefaultSubnetReference']:
-        """
-        Reference to a subnet.
-        * `default_subnet_reference.kind` - (Optional) The kind name. Default value is `subnet`
-        * `default_subnet_reference.uuid` - (Required) The UUID of a subnet.
-        * `default_subnet_reference.name` - (Optional/Computed) The name of a subnet.
-        """
         return pulumi.get(self, "default_subnet_reference")
 
     @property
@@ -922,33 +692,16 @@ class Project(pulumi.CustomResource):
     @property
     @pulumi.getter(name="environmentReferenceLists")
     def environment_reference_lists(self) -> pulumi.Output[Sequence['outputs.ProjectEnvironmentReferenceList']]:
-        """
-        List of environments associated with the project.
-        * `environment_reference_list.#.kind` - (Optional) The kind name. Default value is `environment`
-        * `environment_reference_list.#.uuid` - (Required) The UUID of an environment.
-        * `environment_reference_list.#.name` - (Optional/Computed) The name of an environment.
-        """
         return pulumi.get(self, "environment_reference_lists")
 
     @property
     @pulumi.getter(name="externalNetworkLists")
     def external_network_lists(self) -> pulumi.Output[Sequence['outputs.ProjectExternalNetworkList']]:
-        """
-        List of external networks associated with the project.
-        * `external_network_list.#.uuid` - (Required) The UUID of a network.
-        * `external_network_list.#.name` - (Optional/Computed) The name of a network.
-        """
         return pulumi.get(self, "external_network_lists")
 
     @property
     @pulumi.getter(name="externalUserGroupReferenceLists")
     def external_user_group_reference_lists(self) -> pulumi.Output[Sequence['outputs.ProjectExternalUserGroupReferenceList']]:
-        """
-        List of directory service user groups. These groups are not managed by Nutanix.
-        * `external_user_group_reference_list.#.kind` - (Optional) The kind name. Default value is `user_group`
-        * `external_user_group_reference_list.#.uuid` - (Required) The UUID of a user_group
-        * `external_user_group_reference_list.#.name` - (Optional/Computed) The name of a user_group
-        """
         return pulumi.get(self, "external_user_group_reference_lists")
 
     @property
@@ -982,12 +735,6 @@ class Project(pulumi.CustomResource):
     @property
     @pulumi.getter(name="resourceDomain")
     def resource_domain(self) -> pulumi.Output[Optional['outputs.ProjectResourceDomain']]:
-        """
-        The status for a resource domain (limits and values)
-        * `resource_domain.resources` - (Required) Array of the utilization/limit for resource types
-        * `resource_domain.resources.#.limit` - (Required) The resource consumption limit (unspecified is unlimited)
-        * `resource_domain.resources.#.resource_type` - (Required) The type of resource (for example storage, CPUs)
-        """
         return pulumi.get(self, "resource_domain")
 
     @property
@@ -998,22 +745,10 @@ class Project(pulumi.CustomResource):
     @property
     @pulumi.getter(name="subnetReferenceLists")
     def subnet_reference_lists(self) -> pulumi.Output[Sequence['outputs.ProjectSubnetReferenceList']]:
-        """
-        List of subnets for the project.
-        * `subnet_reference_list.#.kind` - (Optional) The kind name. Default value is `subnet`
-        * `subnet_reference_list.#.uuid` - (Required) The UUID of a subnet
-        * `subnet_reference_list.#.name` - (Optional/Computed) The name of a subnet.
-        """
         return pulumi.get(self, "subnet_reference_lists")
 
     @property
     @pulumi.getter(name="userReferenceLists")
     def user_reference_lists(self) -> pulumi.Output[Sequence['outputs.ProjectUserReferenceList']]:
-        """
-        List of users in the project.
-        * `user_reference_list.#.kind` - (Optional) The kind name. Default value is `user`
-        * `user_reference_list.#.uuid` - (Required) The UUID of a user
-        * `user_reference_list.#.name` - (Optional/Computed) The name of a user.
-        """
         return pulumi.get(self, "user_reference_lists")
 

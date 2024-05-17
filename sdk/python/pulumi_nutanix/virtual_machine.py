@@ -743,7 +743,7 @@ class _VirtualMachineState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] project_reference: - (Optional) The reference to a project.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]] serial_port_lists: - (Optional) Serial Ports configured on the VM.
         :param pulumi.Input[bool] should_fail_on_script_failure: - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
-        :param pulumi.Input[str] state: - (Optional) Nutanix Guest Tools is enabled or not.
+        :param pulumi.Input[str] state: - The state of the vm.
         :param pulumi.Input[bool] use_hot_add: - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
         :param pulumi.Input[bool] vga_console_enabled: - (Optional) Indicates whether VGA console should be enabled or not.
         """
@@ -1379,7 +1379,7 @@ class _VirtualMachineState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Optional) Nutanix Guest Tools is enabled or not.
+        - The state of the vm.
         """
         return pulumi.get(self, "state")
 
@@ -1478,6 +1478,7 @@ class VirtualMachine(pulumi.CustomResource):
             num_sockets=1,
             memory_size_mib=2048)
         ```
+
         ### With Storage Config
         ```python
         import pulumi
@@ -1567,6 +1568,7 @@ class VirtualMachine(pulumi.CustomResource):
             num_sockets=1,
             memory_size_mib=2048)
         ```
+
         ### With Storage Config
         ```python
         import pulumi
@@ -1811,7 +1813,7 @@ class VirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] project_reference: - (Optional) The reference to a project.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualMachineSerialPortListArgs']]]] serial_port_lists: - (Optional) Serial Ports configured on the VM.
         :param pulumi.Input[bool] should_fail_on_script_failure: - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
-        :param pulumi.Input[str] state: - (Optional) Nutanix Guest Tools is enabled or not.
+        :param pulumi.Input[str] state: - The state of the vm.
         :param pulumi.Input[bool] use_hot_add: - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
         :param pulumi.Input[bool] vga_console_enabled: - (Optional) Indicates whether VGA console should be enabled or not.
         """
@@ -2224,7 +2226,7 @@ class VirtualMachine(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        - (Optional) Nutanix Guest Tools is enabled or not.
+        - The state of the vm.
         """
         return pulumi.get(self, "state")
 

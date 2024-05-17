@@ -13,9 +13,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class FoundationImageNodesClusterUrlArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// - (Required) Name of the cluster.
-        /// </summary>
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }
 

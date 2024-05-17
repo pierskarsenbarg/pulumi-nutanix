@@ -25,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<Inputs.KarbonClusterWorkerNodePoolAhvConfigArgs>? AhvConfig { get; set; }
 
         /// <summary>
-        /// - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+        /// - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

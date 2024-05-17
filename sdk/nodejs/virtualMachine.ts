@@ -28,6 +28,7 @@ import * as utilities from "./utilities";
  *     memorySizeMib: 2048,
  * });
  * ```
+ *
  * ### With Storage Config
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
@@ -253,7 +254,7 @@ export class VirtualMachine extends pulumi.CustomResource {
      */
     public readonly shouldFailOnScriptFailure!: pulumi.Output<boolean>;
     /**
-     * - (Optional) Nutanix Guest Tools is enabled or not.
+     * - The state of the vm.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -561,7 +562,7 @@ export interface VirtualMachineState {
      */
     shouldFailOnScriptFailure?: pulumi.Input<boolean>;
     /**
-     * - (Optional) Nutanix Guest Tools is enabled or not.
+     * - The state of the vm.
      */
     state?: pulumi.Input<string>;
     /**

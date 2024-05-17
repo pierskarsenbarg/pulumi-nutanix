@@ -81,6 +81,7 @@ def get_clusters(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClu
 
     clusters = nutanix.get_clusters()
     ```
+
     ## Reference
 
     The `project_reference`, `owner_reference`, `availability_zone_reference`, `cluster_reference`, attributes supports the following:
@@ -121,6 +122,7 @@ def get_clusters_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.O
 
     clusters = nutanix.get_clusters()
     ```
+
     ## Reference
 
     The `project_reference`, `owner_reference`, `availability_zone_reference`, `cluster_reference`, attributes supports the following:
