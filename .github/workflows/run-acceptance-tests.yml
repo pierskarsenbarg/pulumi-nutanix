@@ -80,7 +80,7 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-          - 8.0.5
+          - 8.0.300
         goversion:
           - 1.22.x
         language:
@@ -177,7 +177,7 @@ jobs:
       fail-fast: true
       matrix:
         dotnetversion:
-          - 8.0.5
+          - 8.0.300
         goversion:
           - 1.22.x
         nodeversion:
