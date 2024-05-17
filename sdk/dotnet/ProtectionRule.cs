@@ -76,31 +76,12 @@ namespace PiersKarsenbarg.Nutanix
         [Output("apiVersion")]
         public Output<string> ApiVersion { get; private set; } = null!;
 
-        /// <summary>
-        /// This encodes the datapipes between various availability zones and\nthe backup policy of the pipes.
-        /// * `availability_zone_connectivity_list.destination_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-        /// * `availability_zone_connectivity_list.source_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list` - (Optional/Computed) Snapshot schedules for the pair of the availability zones.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-        /// </summary>
         [Output("availabilityZoneConnectivityLists")]
         public Output<ImmutableArray<Outputs.ProtectionRuleAvailabilityZoneConnectivityList>> AvailabilityZoneConnectivityLists { get; private set; } = null!;
 
         [Output("categories")]
         public Output<ImmutableArray<Outputs.ProtectionRuleCategory>> Categories { get; private set; } = null!;
 
-        /// <summary>
-        /// * `category_filter.0.type` - (Optional/Computed) The type of the filter being used.
-        /// * `category_filter.0.kind_list` - (Optional/Computed) List of kinds associated with this filter.
-        /// * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
-        /// </summary>
         [Output("categoryFilter")]
         public Output<Outputs.ProtectionRuleCategoryFilter> CategoryFilter { get; private set; } = null!;
 
@@ -119,11 +100,6 @@ namespace PiersKarsenbarg.Nutanix
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
-        /// <summary>
-        /// A list of availability zones, each of which, receives a replica\nof the data for the entities protected by this protection rule.
-        /// * `ordered_availability_zone_list.#.cluster_uuid` - (Optional/Computed) UUID of specific cluster to which we will be replicating.
-        /// * `ordered_availability_zone_list.#.availability_zone_url` - (Optional/Computed) The FQDN or IP address of the availability zone.
-        /// </summary>
         [Output("orderedAvailabilityZoneLists")]
         public Output<ImmutableArray<Outputs.ProtectionRuleOrderedAvailabilityZoneList>> OrderedAvailabilityZoneLists { get; private set; } = null!;
 
@@ -188,21 +164,6 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("availabilityZoneConnectivityLists", required: true)]
         private InputList<Inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs>? _availabilityZoneConnectivityLists;
-
-        /// <summary>
-        /// This encodes the datapipes between various availability zones and\nthe backup policy of the pipes.
-        /// * `availability_zone_connectivity_list.destination_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-        /// * `availability_zone_connectivity_list.source_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list` - (Optional/Computed) Snapshot schedules for the pair of the availability zones.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-        /// </summary>
         public InputList<Inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs> AvailabilityZoneConnectivityLists
         {
             get => _availabilityZoneConnectivityLists ?? (_availabilityZoneConnectivityLists = new InputList<Inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs>());
@@ -217,11 +178,6 @@ namespace PiersKarsenbarg.Nutanix
             set => _categories = value;
         }
 
-        /// <summary>
-        /// * `category_filter.0.type` - (Optional/Computed) The type of the filter being used.
-        /// * `category_filter.0.kind_list` - (Optional/Computed) List of kinds associated with this filter.
-        /// * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
-        /// </summary>
         [Input("categoryFilter")]
         public Input<Inputs.ProtectionRuleCategoryFilterArgs>? CategoryFilter { get; set; }
 
@@ -239,12 +195,6 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("orderedAvailabilityZoneLists", required: true)]
         private InputList<Inputs.ProtectionRuleOrderedAvailabilityZoneListArgs>? _orderedAvailabilityZoneLists;
-
-        /// <summary>
-        /// A list of availability zones, each of which, receives a replica\nof the data for the entities protected by this protection rule.
-        /// * `ordered_availability_zone_list.#.cluster_uuid` - (Optional/Computed) UUID of specific cluster to which we will be replicating.
-        /// * `ordered_availability_zone_list.#.availability_zone_url` - (Optional/Computed) The FQDN or IP address of the availability zone.
-        /// </summary>
         public InputList<Inputs.ProtectionRuleOrderedAvailabilityZoneListArgs> OrderedAvailabilityZoneLists
         {
             get => _orderedAvailabilityZoneLists ?? (_orderedAvailabilityZoneLists = new InputList<Inputs.ProtectionRuleOrderedAvailabilityZoneListArgs>());
@@ -273,21 +223,6 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("availabilityZoneConnectivityLists")]
         private InputList<Inputs.ProtectionRuleAvailabilityZoneConnectivityListGetArgs>? _availabilityZoneConnectivityLists;
-
-        /// <summary>
-        /// This encodes the datapipes between various availability zones and\nthe backup policy of the pipes.
-        /// * `availability_zone_connectivity_list.destination_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-        /// * `availability_zone_connectivity_list.source_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list` - (Optional/Computed) Snapshot schedules for the pair of the availability zones.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
-        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-        /// </summary>
         public InputList<Inputs.ProtectionRuleAvailabilityZoneConnectivityListGetArgs> AvailabilityZoneConnectivityLists
         {
             get => _availabilityZoneConnectivityLists ?? (_availabilityZoneConnectivityLists = new InputList<Inputs.ProtectionRuleAvailabilityZoneConnectivityListGetArgs>());
@@ -302,11 +237,6 @@ namespace PiersKarsenbarg.Nutanix
             set => _categories = value;
         }
 
-        /// <summary>
-        /// * `category_filter.0.type` - (Optional/Computed) The type of the filter being used.
-        /// * `category_filter.0.kind_list` - (Optional/Computed) List of kinds associated with this filter.
-        /// * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
-        /// </summary>
         [Input("categoryFilter")]
         public Input<Inputs.ProtectionRuleCategoryFilterGetArgs>? CategoryFilter { get; set; }
 
@@ -332,12 +262,6 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("orderedAvailabilityZoneLists")]
         private InputList<Inputs.ProtectionRuleOrderedAvailabilityZoneListGetArgs>? _orderedAvailabilityZoneLists;
-
-        /// <summary>
-        /// A list of availability zones, each of which, receives a replica\nof the data for the entities protected by this protection rule.
-        /// * `ordered_availability_zone_list.#.cluster_uuid` - (Optional/Computed) UUID of specific cluster to which we will be replicating.
-        /// * `ordered_availability_zone_list.#.availability_zone_url` - (Optional/Computed) The FQDN or IP address of the availability zone.
-        /// </summary>
         public InputList<Inputs.ProtectionRuleOrderedAvailabilityZoneListGetArgs> OrderedAvailabilityZoneLists
         {
             get => _orderedAvailabilityZoneLists ?? (_orderedAvailabilityZoneLists = new InputList<Inputs.ProtectionRuleOrderedAvailabilityZoneListGetArgs>());

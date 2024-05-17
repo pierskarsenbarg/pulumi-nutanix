@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetKarbonClusterWorkerNodePoolNodeResult
     {
+        /// <summary>
+        /// - Hostname of the deployed node.
+        /// </summary>
         public readonly string Hostname;
+        /// <summary>
+        /// - IP of the deployed node.
+        /// </summary>
         public readonly string Ipv4Address;
 
         [OutputConstructor]

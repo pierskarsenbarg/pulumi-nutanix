@@ -13,27 +13,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class FoundationCentralImageClusterHypervisorIsoDetailsGetArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
-        /// </summary>
         [Input("hypervProductKey")]
         public Input<string>? HypervProductKey { get; set; }
 
-        /// <summary>
-        /// SKU of hyperv to be installed if hypervisor_type is hyperv.
-        /// </summary>
         [Input("hypervSku")]
         public Input<string>? HypervSku { get; set; }
 
-        /// <summary>
-        /// sha256sum of the hypervisor iso.
-        /// </summary>
         [Input("sha256sum")]
         public Input<string>? Sha256sum { get; set; }
 
-        /// <summary>
-        /// URL to download hypervisor iso. Required only if imaging is needed.
-        /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }
 

@@ -15,9 +15,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes Protection Rules
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -31,8 +29,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetProtectionRulesResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectionRulesResult>("nutanix:index/getProtectionRules:getProtectionRules", InvokeArgs.Empty, options.WithDefaults());
@@ -40,9 +36,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes Protection Rules
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -56,8 +50,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetProtectionRulesResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionRulesResult>("nutanix:index/getProtectionRules:getProtectionRules", InvokeArgs.Empty, options.WithDefaults());

@@ -14,12 +14,58 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Provides a datasource to retrieve a user based on the input parameters.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ``` hcl
+        /// resource "nutanix_user" "user" {
+        /// 	directory_service_user {
+        /// 		user_principal_name = "test-user@ntnxlab.local"
+        /// 		directory_service_reference {
+        /// 		uuid = "&lt;directory-service-uuid&gt;"
+        /// 		}
+        /// 	}
+        /// }
+        /// 
+        /// //Retrieve by UUID
+        /// data "nutanix_user" "user" {
+        /// 	uuid = nutanix_user.user.id
+        /// }
+        /// 
+        /// //Retrieve by Name
+        /// data "nutanix_user" "userbyname" {
+        /// 	name = nutanix_user.user.name
+        /// }
+        /// ```
         /// </summary>
         public static Task<GetUserResult> InvokeAsync(GetUserArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserResult>("nutanix:index/getUser:getUser", args ?? new GetUserArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides a datasource to retrieve a user based on the input parameters.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ``` hcl
+        /// resource "nutanix_user" "user" {
+        /// 	directory_service_user {
+        /// 		user_principal_name = "test-user@ntnxlab.local"
+        /// 		directory_service_reference {
+        /// 		uuid = "&lt;directory-service-uuid&gt;"
+        /// 		}
+        /// 	}
+        /// }
+        /// 
+        /// //Retrieve by UUID
+        /// data "nutanix_user" "user" {
+        /// 	uuid = nutanix_user.user.id
+        /// }
+        /// 
+        /// //Retrieve by Name
+        /// data "nutanix_user" "userbyname" {
+        /// 	name = nutanix_user.user.name
+        /// }
+        /// ```
         /// </summary>
         public static Output<GetUserResult> Invoke(GetUserInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserResult>("nutanix:index/getUser:getUser", args ?? new GetUserInvokeArgs(), options.WithDefaults());

@@ -12,6 +12,8 @@ import (
 )
 
 // Describes an Access Control Policy.
+//
+// ## Example Usage
 func LookupAccessControlPolicy(ctx *pulumi.Context, args *LookupAccessControlPolicyArgs, opts ...pulumi.InvokeOption) (*LookupAccessControlPolicyResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAccessControlPolicyResult

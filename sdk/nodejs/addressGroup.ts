@@ -10,19 +10,6 @@ import * as utilities from "./utilities";
  * Provides a resource to create a address group based on the input parameters.
  *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- *
- * const testAddress = new nutanix.AddressGroup("testAddress", {
- *     description: "test address groups resource",
- *     ipAddressBlockLists: [{
- *         ip: "10.0.0.0",
- *         prefixLength: 24,
- *     }],
- * });
- * ```
  */
 export class AddressGroup extends pulumi.CustomResource {
     /**

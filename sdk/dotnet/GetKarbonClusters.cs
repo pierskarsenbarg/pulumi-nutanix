@@ -15,9 +15,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes Karbon Clusters
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -31,8 +29,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetKarbonClustersResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetKarbonClustersResult>("nutanix:index/getKarbonClusters:getKarbonClusters", InvokeArgs.Empty, options.WithDefaults());
@@ -40,9 +36,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes Karbon Clusters
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -56,8 +50,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetKarbonClustersResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetKarbonClustersResult>("nutanix:index/getKarbonClusters:getKarbonClusters", InvokeArgs.Empty, options.WithDefaults());

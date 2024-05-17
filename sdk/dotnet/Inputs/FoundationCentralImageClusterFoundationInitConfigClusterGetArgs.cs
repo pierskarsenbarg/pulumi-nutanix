@@ -39,15 +39,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }
 
-        /// <summary>
-        /// List of dns servers for the cvms in the cluster.
-        /// </summary>
         [Input("cvmDnsServers")]
         public Input<string>? CvmDnsServers { get; set; }
 
-        /// <summary>
-        /// List of ntp servers for the cvms in the cluster.
-        /// </summary>
         [Input("cvmNtpServers")]
         public Input<string>? CvmNtpServers { get; set; }
 

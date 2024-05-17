@@ -27,24 +27,6 @@ class ProtectionRuleArgs:
                  start_time: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ProtectionRule resource.
-        :param pulumi.Input[Sequence[pulumi.Input['ProtectionRuleAvailabilityZoneConnectivityListArgs']]] availability_zone_connectivity_lists: This encodes the datapipes between various availability zones and\\nthe backup policy of the pipes.
-               * `availability_zone_connectivity_list.destination_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-               * `availability_zone_connectivity_list.source_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-               * `availability_zone_connectivity_list.snapshot_schedule_list` - (Optional/Computed) Snapshot schedules for the pair of the availability zones.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-        :param pulumi.Input[Sequence[pulumi.Input['ProtectionRuleOrderedAvailabilityZoneListArgs']]] ordered_availability_zone_lists: A list of availability zones, each of which, receives a replica\\nof the data for the entities protected by this protection rule.
-               * `ordered_availability_zone_list.#.cluster_uuid` - (Optional/Computed) UUID of specific cluster to which we will be replicating.
-               * `ordered_availability_zone_list.#.availability_zone_url` - (Optional/Computed) The FQDN or IP address of the availability zone.
-        :param pulumi.Input['ProtectionRuleCategoryFilterArgs'] category_filter: * `category_filter.0.type` - (Optional/Computed) The type of the filter being used.
-               * `category_filter.0.kind_list` - (Optional/Computed) List of kinds associated with this filter.
-               * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
         :param pulumi.Input[str] description: A description for protection rule.
         :param pulumi.Input[str] name: The name for the protection rule.
         """
@@ -68,20 +50,6 @@ class ProtectionRuleArgs:
     @property
     @pulumi.getter(name="availabilityZoneConnectivityLists")
     def availability_zone_connectivity_lists(self) -> pulumi.Input[Sequence[pulumi.Input['ProtectionRuleAvailabilityZoneConnectivityListArgs']]]:
-        """
-        This encodes the datapipes between various availability zones and\\nthe backup policy of the pipes.
-        * `availability_zone_connectivity_list.destination_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-        * `availability_zone_connectivity_list.source_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-        * `availability_zone_connectivity_list.snapshot_schedule_list` - (Optional/Computed) Snapshot schedules for the pair of the availability zones.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-        """
         return pulumi.get(self, "availability_zone_connectivity_lists")
 
     @availability_zone_connectivity_lists.setter
@@ -91,11 +59,6 @@ class ProtectionRuleArgs:
     @property
     @pulumi.getter(name="orderedAvailabilityZoneLists")
     def ordered_availability_zone_lists(self) -> pulumi.Input[Sequence[pulumi.Input['ProtectionRuleOrderedAvailabilityZoneListArgs']]]:
-        """
-        A list of availability zones, each of which, receives a replica\\nof the data for the entities protected by this protection rule.
-        * `ordered_availability_zone_list.#.cluster_uuid` - (Optional/Computed) UUID of specific cluster to which we will be replicating.
-        * `ordered_availability_zone_list.#.availability_zone_url` - (Optional/Computed) The FQDN or IP address of the availability zone.
-        """
         return pulumi.get(self, "ordered_availability_zone_lists")
 
     @ordered_availability_zone_lists.setter
@@ -114,11 +77,6 @@ class ProtectionRuleArgs:
     @property
     @pulumi.getter(name="categoryFilter")
     def category_filter(self) -> Optional[pulumi.Input['ProtectionRuleCategoryFilterArgs']]:
-        """
-        * `category_filter.0.type` - (Optional/Computed) The type of the filter being used.
-        * `category_filter.0.kind_list` - (Optional/Computed) List of kinds associated with this filter.
-        * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
-        """
         return pulumi.get(self, "category_filter")
 
     @category_filter.setter
@@ -194,26 +152,8 @@ class _ProtectionRuleState:
                  state: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering ProtectionRule resources.
-        :param pulumi.Input[Sequence[pulumi.Input['ProtectionRuleAvailabilityZoneConnectivityListArgs']]] availability_zone_connectivity_lists: This encodes the datapipes between various availability zones and\\nthe backup policy of the pipes.
-               * `availability_zone_connectivity_list.destination_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-               * `availability_zone_connectivity_list.source_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-               * `availability_zone_connectivity_list.snapshot_schedule_list` - (Optional/Computed) Snapshot schedules for the pair of the availability zones.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-        :param pulumi.Input['ProtectionRuleCategoryFilterArgs'] category_filter: * `category_filter.0.type` - (Optional/Computed) The type of the filter being used.
-               * `category_filter.0.kind_list` - (Optional/Computed) List of kinds associated with this filter.
-               * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
         :param pulumi.Input[str] description: A description for protection rule.
         :param pulumi.Input[str] name: The name for the protection rule.
-        :param pulumi.Input[Sequence[pulumi.Input['ProtectionRuleOrderedAvailabilityZoneListArgs']]] ordered_availability_zone_lists: A list of availability zones, each of which, receives a replica\\nof the data for the entities protected by this protection rule.
-               * `ordered_availability_zone_list.#.cluster_uuid` - (Optional/Computed) UUID of specific cluster to which we will be replicating.
-               * `ordered_availability_zone_list.#.availability_zone_url` - (Optional/Computed) The FQDN or IP address of the availability zone.
         """
         if api_version is not None:
             pulumi.set(__self__, "api_version", api_version)
@@ -252,20 +192,6 @@ class _ProtectionRuleState:
     @property
     @pulumi.getter(name="availabilityZoneConnectivityLists")
     def availability_zone_connectivity_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleAvailabilityZoneConnectivityListArgs']]]]:
-        """
-        This encodes the datapipes between various availability zones and\\nthe backup policy of the pipes.
-        * `availability_zone_connectivity_list.destination_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-        * `availability_zone_connectivity_list.source_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-        * `availability_zone_connectivity_list.snapshot_schedule_list` - (Optional/Computed) Snapshot schedules for the pair of the availability zones.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-        """
         return pulumi.get(self, "availability_zone_connectivity_lists")
 
     @availability_zone_connectivity_lists.setter
@@ -284,11 +210,6 @@ class _ProtectionRuleState:
     @property
     @pulumi.getter(name="categoryFilter")
     def category_filter(self) -> Optional[pulumi.Input['ProtectionRuleCategoryFilterArgs']]:
-        """
-        * `category_filter.0.type` - (Optional/Computed) The type of the filter being used.
-        * `category_filter.0.kind_list` - (Optional/Computed) List of kinds associated with this filter.
-        * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
-        """
         return pulumi.get(self, "category_filter")
 
     @category_filter.setter
@@ -331,11 +252,6 @@ class _ProtectionRuleState:
     @property
     @pulumi.getter(name="orderedAvailabilityZoneLists")
     def ordered_availability_zone_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleOrderedAvailabilityZoneListArgs']]]]:
-        """
-        A list of availability zones, each of which, receives a replica\\nof the data for the entities protected by this protection rule.
-        * `ordered_availability_zone_list.#.cluster_uuid` - (Optional/Computed) UUID of specific cluster to which we will be replicating.
-        * `ordered_availability_zone_list.#.availability_zone_url` - (Optional/Computed) The FQDN or IP address of the availability zone.
-        """
         return pulumi.get(self, "ordered_availability_zone_lists")
 
     @ordered_availability_zone_lists.setter
@@ -427,26 +343,8 @@ class ProtectionRule(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleAvailabilityZoneConnectivityListArgs']]]] availability_zone_connectivity_lists: This encodes the datapipes between various availability zones and\\nthe backup policy of the pipes.
-               * `availability_zone_connectivity_list.destination_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-               * `availability_zone_connectivity_list.source_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-               * `availability_zone_connectivity_list.snapshot_schedule_list` - (Optional/Computed) Snapshot schedules for the pair of the availability zones.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-        :param pulumi.Input[pulumi.InputType['ProtectionRuleCategoryFilterArgs']] category_filter: * `category_filter.0.type` - (Optional/Computed) The type of the filter being used.
-               * `category_filter.0.kind_list` - (Optional/Computed) List of kinds associated with this filter.
-               * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
         :param pulumi.Input[str] description: A description for protection rule.
         :param pulumi.Input[str] name: The name for the protection rule.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleOrderedAvailabilityZoneListArgs']]]] ordered_availability_zone_lists: A list of availability zones, each of which, receives a replica\\nof the data for the entities protected by this protection rule.
-               * `ordered_availability_zone_list.#.cluster_uuid` - (Optional/Computed) UUID of specific cluster to which we will be replicating.
-               * `ordered_availability_zone_list.#.availability_zone_url` - (Optional/Computed) The FQDN or IP address of the availability zone.
         """
         ...
     @overload
@@ -563,26 +461,8 @@ class ProtectionRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleAvailabilityZoneConnectivityListArgs']]]] availability_zone_connectivity_lists: This encodes the datapipes between various availability zones and\\nthe backup policy of the pipes.
-               * `availability_zone_connectivity_list.destination_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-               * `availability_zone_connectivity_list.source_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-               * `availability_zone_connectivity_list.snapshot_schedule_list` - (Optional/Computed) Snapshot schedules for the pair of the availability zones.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-        :param pulumi.Input[pulumi.InputType['ProtectionRuleCategoryFilterArgs']] category_filter: * `category_filter.0.type` - (Optional/Computed) The type of the filter being used.
-               * `category_filter.0.kind_list` - (Optional/Computed) List of kinds associated with this filter.
-               * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
         :param pulumi.Input[str] description: A description for protection rule.
         :param pulumi.Input[str] name: The name for the protection rule.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleOrderedAvailabilityZoneListArgs']]]] ordered_availability_zone_lists: A list of availability zones, each of which, receives a replica\\nof the data for the entities protected by this protection rule.
-               * `ordered_availability_zone_list.#.cluster_uuid` - (Optional/Computed) UUID of specific cluster to which we will be replicating.
-               * `ordered_availability_zone_list.#.availability_zone_url` - (Optional/Computed) The FQDN or IP address of the availability zone.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -610,20 +490,6 @@ class ProtectionRule(pulumi.CustomResource):
     @property
     @pulumi.getter(name="availabilityZoneConnectivityLists")
     def availability_zone_connectivity_lists(self) -> pulumi.Output[Sequence['outputs.ProtectionRuleAvailabilityZoneConnectivityList']]:
-        """
-        This encodes the datapipes between various availability zones and\\nthe backup policy of the pipes.
-        * `availability_zone_connectivity_list.destination_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-        * `availability_zone_connectivity_list.source_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-        * `availability_zone_connectivity_list.snapshot_schedule_list` - (Optional/Computed) Snapshot schedules for the pair of the availability zones.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-        """
         return pulumi.get(self, "availability_zone_connectivity_lists")
 
     @property
@@ -634,11 +500,6 @@ class ProtectionRule(pulumi.CustomResource):
     @property
     @pulumi.getter(name="categoryFilter")
     def category_filter(self) -> pulumi.Output['outputs.ProtectionRuleCategoryFilter']:
-        """
-        * `category_filter.0.type` - (Optional/Computed) The type of the filter being used.
-        * `category_filter.0.kind_list` - (Optional/Computed) List of kinds associated with this filter.
-        * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
-        """
         return pulumi.get(self, "category_filter")
 
     @property
@@ -665,11 +526,6 @@ class ProtectionRule(pulumi.CustomResource):
     @property
     @pulumi.getter(name="orderedAvailabilityZoneLists")
     def ordered_availability_zone_lists(self) -> pulumi.Output[Sequence['outputs.ProtectionRuleOrderedAvailabilityZoneList']]:
-        """
-        A list of availability zones, each of which, receives a replica\\nof the data for the entities protected by this protection rule.
-        * `ordered_availability_zone_list.#.cluster_uuid` - (Optional/Computed) UUID of specific cluster to which we will be replicating.
-        * `ordered_availability_zone_list.#.availability_zone_url` - (Optional/Computed) The FQDN or IP address of the availability zone.
-        """
         return pulumi.get(self, "ordered_availability_zone_lists")
 
     @property

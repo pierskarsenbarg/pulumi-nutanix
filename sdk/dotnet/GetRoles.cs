@@ -15,24 +15,11 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes a list of roles.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var test = Nutanix.GetRoles.Invoke();
-        /// 
-        /// });
+        /// ``` hcl
+        /// data "nutanix_roles" "test" {}
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetRolesResult> InvokeAsync(GetRolesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRolesResult>("nutanix:index/getRoles:getRoles", args ?? new GetRolesArgs(), options.WithDefaults());
@@ -40,24 +27,11 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Describes a list of roles.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var test = Nutanix.GetRoles.Invoke();
-        /// 
-        /// });
+        /// ``` hcl
+        /// data "nutanix_roles" "test" {}
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetRolesResult> Invoke(GetRolesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRolesResult>("nutanix:index/getRoles:getRoles", args ?? new GetRolesInvokeArgs(), options.WithDefaults());

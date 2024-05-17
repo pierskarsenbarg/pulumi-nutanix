@@ -10,13 +10,6 @@ import * as utilities from "./utilities";
  * Provides a datasource to retrieve list of address groups.
  *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
- *
- * const addrGroups = nutanix.getAddressGroups({});
- * ```
  */
 export function getAddressGroups(args?: GetAddressGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetAddressGroupsResult> {
     args = args || {};
@@ -58,13 +51,6 @@ export interface GetAddressGroupsResult {
  * Provides a datasource to retrieve list of address groups.
  *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
- *
- * const addrGroups = nutanix.getAddressGroups({});
- * ```
  */
 export function getAddressGroupsOutput(args?: GetAddressGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressGroupsResult> {
     return pulumi.output(args).apply((a: any) => getAddressGroups(a, opts))

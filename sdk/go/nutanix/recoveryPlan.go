@@ -22,85 +22,12 @@ type RecoveryPlan struct {
 	Description pulumi.StringOutput    `pulumi:"description"`
 	Metadata    pulumi.StringMapOutput `pulumi:"metadata"`
 	// The name for the Recovery Plan.
-	Name           pulumi.StringOutput              `pulumi:"name"`
-	OwnerReference RecoveryPlanOwnerReferenceOutput `pulumi:"ownerReference"`
-	// Parameters for the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list` - (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
-	// * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
-	// * `parameters.0.network_mapping_list` - (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
+	Name             pulumi.StringOutput                `pulumi:"name"`
+	OwnerReference   RecoveryPlanOwnerReferenceOutput   `pulumi:"ownerReference"`
 	Parameters       RecoveryPlanParametersOutput       `pulumi:"parameters"`
 	ProjectReference RecoveryPlanProjectReferenceOutput `pulumi:"projectReference"`
-	// Input for the stages of the Recovery Plan. Each stage will perform a predefined type of task.
-	// * `stage_list.stage_uuid` - (Optional/Computed) UUID of stage.
-	// * `stage_list.delay_time_secs` - (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
-	// * `stage_list.stage_work` - (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
-	// * `stage_list.stage_work.0.recover_entities` - (Optional/Computed) Information about entities to be recovered.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list` - (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
-	StageLists RecoveryPlanStageListArrayOutput `pulumi:"stageLists"`
-	State      pulumi.StringOutput              `pulumi:"state"`
+	StageLists       RecoveryPlanStageListArrayOutput   `pulumi:"stageLists"`
+	State            pulumi.StringOutput                `pulumi:"state"`
 }
 
 // NewRecoveryPlan registers a new resource with the given unique name, arguments, and options.
@@ -145,85 +72,12 @@ type recoveryPlanState struct {
 	Description *string           `pulumi:"description"`
 	Metadata    map[string]string `pulumi:"metadata"`
 	// The name for the Recovery Plan.
-	Name           *string                     `pulumi:"name"`
-	OwnerReference *RecoveryPlanOwnerReference `pulumi:"ownerReference"`
-	// Parameters for the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list` - (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
-	// * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
-	// * `parameters.0.network_mapping_list` - (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
+	Name             *string                       `pulumi:"name"`
+	OwnerReference   *RecoveryPlanOwnerReference   `pulumi:"ownerReference"`
 	Parameters       *RecoveryPlanParameters       `pulumi:"parameters"`
 	ProjectReference *RecoveryPlanProjectReference `pulumi:"projectReference"`
-	// Input for the stages of the Recovery Plan. Each stage will perform a predefined type of task.
-	// * `stage_list.stage_uuid` - (Optional/Computed) UUID of stage.
-	// * `stage_list.delay_time_secs` - (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
-	// * `stage_list.stage_work` - (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
-	// * `stage_list.stage_work.0.recover_entities` - (Optional/Computed) Information about entities to be recovered.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list` - (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
-	StageLists []RecoveryPlanStageList `pulumi:"stageLists"`
-	State      *string                 `pulumi:"state"`
+	StageLists       []RecoveryPlanStageList       `pulumi:"stageLists"`
+	State            *string                       `pulumi:"state"`
 }
 
 type RecoveryPlanState struct {
@@ -233,85 +87,12 @@ type RecoveryPlanState struct {
 	Description pulumi.StringPtrInput
 	Metadata    pulumi.StringMapInput
 	// The name for the Recovery Plan.
-	Name           pulumi.StringPtrInput
-	OwnerReference RecoveryPlanOwnerReferencePtrInput
-	// Parameters for the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list` - (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
-	// * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
-	// * `parameters.0.network_mapping_list` - (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
+	Name             pulumi.StringPtrInput
+	OwnerReference   RecoveryPlanOwnerReferencePtrInput
 	Parameters       RecoveryPlanParametersPtrInput
 	ProjectReference RecoveryPlanProjectReferencePtrInput
-	// Input for the stages of the Recovery Plan. Each stage will perform a predefined type of task.
-	// * `stage_list.stage_uuid` - (Optional/Computed) UUID of stage.
-	// * `stage_list.delay_time_secs` - (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
-	// * `stage_list.stage_work` - (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
-	// * `stage_list.stage_work.0.recover_entities` - (Optional/Computed) Information about entities to be recovered.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list` - (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
-	StageLists RecoveryPlanStageListArrayInput
-	State      pulumi.StringPtrInput
+	StageLists       RecoveryPlanStageListArrayInput
+	State            pulumi.StringPtrInput
 }
 
 func (RecoveryPlanState) ElementType() reflect.Type {
@@ -323,84 +104,11 @@ type recoveryPlanArgs struct {
 	// A description for Recovery Plan.
 	Description *string `pulumi:"description"`
 	// The name for the Recovery Plan.
-	Name           *string                     `pulumi:"name"`
-	OwnerReference *RecoveryPlanOwnerReference `pulumi:"ownerReference"`
-	// Parameters for the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list` - (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
-	// * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
-	// * `parameters.0.network_mapping_list` - (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
+	Name             *string                       `pulumi:"name"`
+	OwnerReference   *RecoveryPlanOwnerReference   `pulumi:"ownerReference"`
 	Parameters       RecoveryPlanParameters        `pulumi:"parameters"`
 	ProjectReference *RecoveryPlanProjectReference `pulumi:"projectReference"`
-	// Input for the stages of the Recovery Plan. Each stage will perform a predefined type of task.
-	// * `stage_list.stage_uuid` - (Optional/Computed) UUID of stage.
-	// * `stage_list.delay_time_secs` - (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
-	// * `stage_list.stage_work` - (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
-	// * `stage_list.stage_work.0.recover_entities` - (Optional/Computed) Information about entities to be recovered.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list` - (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
-	StageLists []RecoveryPlanStageList `pulumi:"stageLists"`
+	StageLists       []RecoveryPlanStageList       `pulumi:"stageLists"`
 }
 
 // The set of arguments for constructing a RecoveryPlan resource.
@@ -409,84 +117,11 @@ type RecoveryPlanArgs struct {
 	// A description for Recovery Plan.
 	Description pulumi.StringPtrInput
 	// The name for the Recovery Plan.
-	Name           pulumi.StringPtrInput
-	OwnerReference RecoveryPlanOwnerReferencePtrInput
-	// Parameters for the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list` - (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
-	// * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
-	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
-	// * `parameters.0.network_mapping_list` - (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
-	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
+	Name             pulumi.StringPtrInput
+	OwnerReference   RecoveryPlanOwnerReferencePtrInput
 	Parameters       RecoveryPlanParametersInput
 	ProjectReference RecoveryPlanProjectReferencePtrInput
-	// Input for the stages of the Recovery Plan. Each stage will perform a predefined type of task.
-	// * `stage_list.stage_uuid` - (Optional/Computed) UUID of stage.
-	// * `stage_list.delay_time_secs` - (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
-	// * `stage_list.stage_work` - (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
-	// * `stage_list.stage_work.0.recover_entities` - (Optional/Computed) Information about entities to be recovered.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list` - (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
-	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
-	StageLists RecoveryPlanStageListArrayInput
+	StageLists       RecoveryPlanStageListArrayInput
 }
 
 func (RecoveryPlanArgs) ElementType() reflect.Type {
@@ -602,69 +237,6 @@ func (o RecoveryPlanOutput) OwnerReference() RecoveryPlanOwnerReferenceOutput {
 	return o.ApplyT(func(v *RecoveryPlan) RecoveryPlanOwnerReferenceOutput { return v.OwnerReference }).(RecoveryPlanOwnerReferenceOutput)
 }
 
-// Parameters for the Recovery Plan.
-// * `parameters.0.floating_ip_assignment_list` - (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
-// * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
-// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
-// * `parameters.0.network_mapping_list` - (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
-// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
 func (o RecoveryPlanOutput) Parameters() RecoveryPlanParametersOutput {
 	return o.ApplyT(func(v *RecoveryPlan) RecoveryPlanParametersOutput { return v.Parameters }).(RecoveryPlanParametersOutput)
 }
@@ -673,16 +245,6 @@ func (o RecoveryPlanOutput) ProjectReference() RecoveryPlanProjectReferenceOutpu
 	return o.ApplyT(func(v *RecoveryPlan) RecoveryPlanProjectReferenceOutput { return v.ProjectReference }).(RecoveryPlanProjectReferenceOutput)
 }
 
-// Input for the stages of the Recovery Plan. Each stage will perform a predefined type of task.
-// * `stage_list.stage_uuid` - (Optional/Computed) UUID of stage.
-// * `stage_list.delay_time_secs` - (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
-// * `stage_list.stage_work` - (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
-// * `stage_list.stage_work.0.recover_entities` - (Optional/Computed) Information about entities to be recovered.
-// * `stage_list.stage_work.0.recover_entities.0.entity_info_list` - (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
-// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
-// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
-// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
-// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
 func (o RecoveryPlanOutput) StageLists() RecoveryPlanStageListArrayOutput {
 	return o.ApplyT(func(v *RecoveryPlan) RecoveryPlanStageListArrayOutput { return v.StageLists }).(RecoveryPlanStageListArrayOutput)
 }

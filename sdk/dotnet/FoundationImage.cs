@@ -39,6 +39,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// 
     /// ## lifecycle
     /// 
     /// * `Update` : - Resource will trigger new resource create call for any kind of update in resource config and delete existing image from foundation vm.

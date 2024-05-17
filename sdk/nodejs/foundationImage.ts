@@ -24,6 +24,7 @@ import * as utilities from "./utilities";
  *     source: "../../../files/VMware-Installer.x86_64.iso",
  * });
  * ```
+ *
  * ## lifecycle
  *
  * * `Update` : - Resource will trigger new resource create call for any kind of update in resource config and delete existing image from foundation vm.

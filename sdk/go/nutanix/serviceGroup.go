@@ -15,45 +15,6 @@ import (
 // Provides a resource to create a service group based on the input parameters.
 //
 // ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewServiceGroup(ctx, "test", &nutanix.ServiceGroupArgs{
-//				Description: pulumi.String("this is service group"),
-//				ServiceLists: nutanix.ServiceGroupServiceListArray{
-//					&nutanix.ServiceGroupServiceListArgs{
-//						Protocol: pulumi.String("TCP"),
-//						TcpPortRangeLists: nutanix.ServiceGroupServiceListTcpPortRangeListArray{
-//							&nutanix.ServiceGroupServiceListTcpPortRangeListArgs{
-//								EndPort:   pulumi.Int(22),
-//								StartPort: pulumi.Int(22),
-//							},
-//							&nutanix.ServiceGroupServiceListTcpPortRangeListArgs{
-//								EndPort:   pulumi.Int(2222),
-//								StartPort: pulumi.Int(2222),
-//							},
-//						},
-//					},
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type ServiceGroup struct {
 	pulumi.CustomResourceState
 

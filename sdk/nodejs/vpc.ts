@@ -10,6 +10,7 @@ import * as utilities from "./utilities";
  * Provides Nutanix resource to create VPC.
  *
  * ## Example Usage
+ *
  * ### vpc creation with external subnet name
  *
  * ```typescript
@@ -35,6 +36,7 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ *
  * ### vpc creation with external subnet uuid
  *
  * ```typescript

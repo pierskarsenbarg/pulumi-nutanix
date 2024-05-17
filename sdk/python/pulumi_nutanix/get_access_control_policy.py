@@ -212,6 +212,8 @@ def get_access_control_policy(access_control_policy_id: Optional[str] = None,
     """
     Describes an Access Control Policy.
 
+    ## Example Usage
+
 
     :param str access_control_policy_id: - (Required) The UUID of an access control policy.
     :param Sequence[pulumi.InputType['GetAccessControlPolicyCategoryArgs']] categories: - The category values represented as a dictionary of key > list of values.
@@ -248,6 +250,8 @@ def get_access_control_policy_output(access_control_policy_id: Optional[pulumi.I
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAccessControlPolicyResult]:
     """
     Describes an Access Control Policy.
+
+    ## Example Usage
 
 
     :param str access_control_policy_id: - (Required) The UUID of an access control policy.

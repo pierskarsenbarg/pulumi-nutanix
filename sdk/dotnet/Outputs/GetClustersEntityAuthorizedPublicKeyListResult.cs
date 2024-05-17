@@ -16,7 +16,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly string Key;
         /// <summary>
-        /// - the key name.
+        /// -  The name for the image.
         /// </summary>
         public readonly string Name;
 

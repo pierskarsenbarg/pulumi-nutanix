@@ -15,6 +15,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetServiceGroupsEntityServiceGroupResult
     {
         public readonly string Description;
+        /// <summary>
+        /// specifying whether it is a system defined service group
+        /// </summary>
         public readonly bool IsSystemDefined;
         public readonly string Name;
         public readonly ImmutableArray<Outputs.GetServiceGroupsEntityServiceGroupServiceListResult> ServiceLists;

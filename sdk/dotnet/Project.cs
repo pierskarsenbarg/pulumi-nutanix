@@ -85,12 +85,6 @@ namespace PiersKarsenbarg.Nutanix
     [NutanixResourceType("nutanix:index/project:Project")]
     public partial class Project : global::Pulumi.CustomResource
     {
-        /// <summary>
-        /// List of accounts associated with the project.
-        /// * `account_reference_list.#.kind` - (Optional) The kind name. Default value is `account`
-        /// * `account_reference_list.#.uuid` - (Required) The UUID of an account.
-        /// * `account_reference_list.#.name` - (Optional/Computed) The name of an account.
-        /// </summary>
         [Output("accountReferenceLists")]
         public Output<ImmutableArray<Outputs.ProjectAccountReferenceList>> AccountReferenceLists { get; private set; } = null!;
 
@@ -100,12 +94,6 @@ namespace PiersKarsenbarg.Nutanix
         [Output("categories")]
         public Output<ImmutableArray<Outputs.ProjectCategory>> Categories { get; private set; } = null!;
 
-        /// <summary>
-        /// Reference to a subnet.
-        /// * `default_subnet_reference.kind` - (Optional) The kind name. Default value is `subnet`
-        /// * `default_subnet_reference.uuid` - (Required) The UUID of a subnet.
-        /// * `default_subnet_reference.name` - (Optional/Computed) The name of a subnet.
-        /// </summary>
         [Output("defaultSubnetReference")]
         public Output<Outputs.ProjectDefaultSubnetReference> DefaultSubnetReference { get; private set; } = null!;
 
@@ -115,29 +103,12 @@ namespace PiersKarsenbarg.Nutanix
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
-        /// <summary>
-        /// List of environments associated with the project.
-        /// * `environment_reference_list.#.kind` - (Optional) The kind name. Default value is `environment`
-        /// * `environment_reference_list.#.uuid` - (Required) The UUID of an environment.
-        /// * `environment_reference_list.#.name` - (Optional/Computed) The name of an environment.
-        /// </summary>
         [Output("environmentReferenceLists")]
         public Output<ImmutableArray<Outputs.ProjectEnvironmentReferenceList>> EnvironmentReferenceLists { get; private set; } = null!;
 
-        /// <summary>
-        /// List of external networks associated with the project.
-        /// * `external_network_list.#.uuid` - (Required) The UUID of a network.
-        /// * `external_network_list.#.name` - (Optional/Computed) The name of a network.
-        /// </summary>
         [Output("externalNetworkLists")]
         public Output<ImmutableArray<Outputs.ProjectExternalNetworkList>> ExternalNetworkLists { get; private set; } = null!;
 
-        /// <summary>
-        /// List of directory service user groups. These groups are not managed by Nutanix.
-        /// * `external_user_group_reference_list.#.kind` - (Optional) The kind name. Default value is `user_group`
-        /// * `external_user_group_reference_list.#.uuid` - (Required) The UUID of a user_group
-        /// * `external_user_group_reference_list.#.name` - (Optional/Computed) The name of a user_group
-        /// </summary>
         [Output("externalUserGroupReferenceLists")]
         public Output<ImmutableArray<Outputs.ProjectExternalUserGroupReferenceList>> ExternalUserGroupReferenceLists { get; private set; } = null!;
 
@@ -159,33 +130,15 @@ namespace PiersKarsenbarg.Nutanix
         [Output("projectReference")]
         public Output<ImmutableDictionary<string, string>> ProjectReference { get; private set; } = null!;
 
-        /// <summary>
-        /// The status for a resource domain (limits and values)
-        /// * `resource_domain.resources` - (Required) Array of the utilization/limit for resource types
-        /// * `resource_domain.resources.#.limit` - (Required) The resource consumption limit (unspecified is unlimited)
-        /// * `resource_domain.resources.#.resource_type` - (Required) The type of resource (for example storage, CPUs)
-        /// </summary>
         [Output("resourceDomain")]
         public Output<Outputs.ProjectResourceDomain?> ResourceDomain { get; private set; } = null!;
 
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
-        /// <summary>
-        /// List of subnets for the project.
-        /// * `subnet_reference_list.#.kind` - (Optional) The kind name. Default value is `subnet`
-        /// * `subnet_reference_list.#.uuid` - (Required) The UUID of a subnet
-        /// * `subnet_reference_list.#.name` - (Optional/Computed) The name of a subnet.
-        /// </summary>
         [Output("subnetReferenceLists")]
         public Output<ImmutableArray<Outputs.ProjectSubnetReferenceList>> SubnetReferenceLists { get; private set; } = null!;
 
-        /// <summary>
-        /// List of users in the project.
-        /// * `user_reference_list.#.kind` - (Optional) The kind name. Default value is `user`
-        /// * `user_reference_list.#.uuid` - (Required) The UUID of a user
-        /// * `user_reference_list.#.name` - (Optional/Computed) The name of a user.
-        /// </summary>
         [Output("userReferenceLists")]
         public Output<ImmutableArray<Outputs.ProjectUserReferenceList>> UserReferenceLists { get; private set; } = null!;
 
@@ -238,13 +191,6 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("accountReferenceLists")]
         private InputList<Inputs.ProjectAccountReferenceListArgs>? _accountReferenceLists;
-
-        /// <summary>
-        /// List of accounts associated with the project.
-        /// * `account_reference_list.#.kind` - (Optional) The kind name. Default value is `account`
-        /// * `account_reference_list.#.uuid` - (Required) The UUID of an account.
-        /// * `account_reference_list.#.name` - (Optional/Computed) The name of an account.
-        /// </summary>
         public InputList<Inputs.ProjectAccountReferenceListArgs> AccountReferenceLists
         {
             get => _accountReferenceLists ?? (_accountReferenceLists = new InputList<Inputs.ProjectAccountReferenceListArgs>());
@@ -262,12 +208,6 @@ namespace PiersKarsenbarg.Nutanix
             set => _categories = value;
         }
 
-        /// <summary>
-        /// Reference to a subnet.
-        /// * `default_subnet_reference.kind` - (Optional) The kind name. Default value is `subnet`
-        /// * `default_subnet_reference.uuid` - (Required) The UUID of a subnet.
-        /// * `default_subnet_reference.name` - (Optional/Computed) The name of a subnet.
-        /// </summary>
         [Input("defaultSubnetReference", required: true)]
         public Input<Inputs.ProjectDefaultSubnetReferenceArgs> DefaultSubnetReference { get; set; } = null!;
 
@@ -279,13 +219,6 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("environmentReferenceLists")]
         private InputList<Inputs.ProjectEnvironmentReferenceListArgs>? _environmentReferenceLists;
-
-        /// <summary>
-        /// List of environments associated with the project.
-        /// * `environment_reference_list.#.kind` - (Optional) The kind name. Default value is `environment`
-        /// * `environment_reference_list.#.uuid` - (Required) The UUID of an environment.
-        /// * `environment_reference_list.#.name` - (Optional/Computed) The name of an environment.
-        /// </summary>
         public InputList<Inputs.ProjectEnvironmentReferenceListArgs> EnvironmentReferenceLists
         {
             get => _environmentReferenceLists ?? (_environmentReferenceLists = new InputList<Inputs.ProjectEnvironmentReferenceListArgs>());
@@ -294,12 +227,6 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("externalNetworkLists")]
         private InputList<Inputs.ProjectExternalNetworkListArgs>? _externalNetworkLists;
-
-        /// <summary>
-        /// List of external networks associated with the project.
-        /// * `external_network_list.#.uuid` - (Required) The UUID of a network.
-        /// * `external_network_list.#.name` - (Optional/Computed) The name of a network.
-        /// </summary>
         public InputList<Inputs.ProjectExternalNetworkListArgs> ExternalNetworkLists
         {
             get => _externalNetworkLists ?? (_externalNetworkLists = new InputList<Inputs.ProjectExternalNetworkListArgs>());
@@ -308,13 +235,6 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("externalUserGroupReferenceLists")]
         private InputList<Inputs.ProjectExternalUserGroupReferenceListArgs>? _externalUserGroupReferenceLists;
-
-        /// <summary>
-        /// List of directory service user groups. These groups are not managed by Nutanix.
-        /// * `external_user_group_reference_list.#.kind` - (Optional) The kind name. Default value is `user_group`
-        /// * `external_user_group_reference_list.#.uuid` - (Required) The UUID of a user_group
-        /// * `external_user_group_reference_list.#.name` - (Optional/Computed) The name of a user_group
-        /// </summary>
         public InputList<Inputs.ProjectExternalUserGroupReferenceListArgs> ExternalUserGroupReferenceLists
         {
             get => _externalUserGroupReferenceLists ?? (_externalUserGroupReferenceLists = new InputList<Inputs.ProjectExternalUserGroupReferenceListArgs>());
@@ -343,24 +263,11 @@ namespace PiersKarsenbarg.Nutanix
             set => _projectReference = value;
         }
 
-        /// <summary>
-        /// The status for a resource domain (limits and values)
-        /// * `resource_domain.resources` - (Required) Array of the utilization/limit for resource types
-        /// * `resource_domain.resources.#.limit` - (Required) The resource consumption limit (unspecified is unlimited)
-        /// * `resource_domain.resources.#.resource_type` - (Required) The type of resource (for example storage, CPUs)
-        /// </summary>
         [Input("resourceDomain")]
         public Input<Inputs.ProjectResourceDomainArgs>? ResourceDomain { get; set; }
 
         [Input("subnetReferenceLists")]
         private InputList<Inputs.ProjectSubnetReferenceListArgs>? _subnetReferenceLists;
-
-        /// <summary>
-        /// List of subnets for the project.
-        /// * `subnet_reference_list.#.kind` - (Optional) The kind name. Default value is `subnet`
-        /// * `subnet_reference_list.#.uuid` - (Required) The UUID of a subnet
-        /// * `subnet_reference_list.#.name` - (Optional/Computed) The name of a subnet.
-        /// </summary>
         public InputList<Inputs.ProjectSubnetReferenceListArgs> SubnetReferenceLists
         {
             get => _subnetReferenceLists ?? (_subnetReferenceLists = new InputList<Inputs.ProjectSubnetReferenceListArgs>());
@@ -369,13 +276,6 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("userReferenceLists")]
         private InputList<Inputs.ProjectUserReferenceListArgs>? _userReferenceLists;
-
-        /// <summary>
-        /// List of users in the project.
-        /// * `user_reference_list.#.kind` - (Optional) The kind name. Default value is `user`
-        /// * `user_reference_list.#.uuid` - (Required) The UUID of a user
-        /// * `user_reference_list.#.name` - (Optional/Computed) The name of a user.
-        /// </summary>
         public InputList<Inputs.ProjectUserReferenceListArgs> UserReferenceLists
         {
             get => _userReferenceLists ?? (_userReferenceLists = new InputList<Inputs.ProjectUserReferenceListArgs>());
@@ -392,13 +292,6 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("accountReferenceLists")]
         private InputList<Inputs.ProjectAccountReferenceListGetArgs>? _accountReferenceLists;
-
-        /// <summary>
-        /// List of accounts associated with the project.
-        /// * `account_reference_list.#.kind` - (Optional) The kind name. Default value is `account`
-        /// * `account_reference_list.#.uuid` - (Required) The UUID of an account.
-        /// * `account_reference_list.#.name` - (Optional/Computed) The name of an account.
-        /// </summary>
         public InputList<Inputs.ProjectAccountReferenceListGetArgs> AccountReferenceLists
         {
             get => _accountReferenceLists ?? (_accountReferenceLists = new InputList<Inputs.ProjectAccountReferenceListGetArgs>());
@@ -416,12 +309,6 @@ namespace PiersKarsenbarg.Nutanix
             set => _categories = value;
         }
 
-        /// <summary>
-        /// Reference to a subnet.
-        /// * `default_subnet_reference.kind` - (Optional) The kind name. Default value is `subnet`
-        /// * `default_subnet_reference.uuid` - (Required) The UUID of a subnet.
-        /// * `default_subnet_reference.name` - (Optional/Computed) The name of a subnet.
-        /// </summary>
         [Input("defaultSubnetReference")]
         public Input<Inputs.ProjectDefaultSubnetReferenceGetArgs>? DefaultSubnetReference { get; set; }
 
@@ -433,13 +320,6 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("environmentReferenceLists")]
         private InputList<Inputs.ProjectEnvironmentReferenceListGetArgs>? _environmentReferenceLists;
-
-        /// <summary>
-        /// List of environments associated with the project.
-        /// * `environment_reference_list.#.kind` - (Optional) The kind name. Default value is `environment`
-        /// * `environment_reference_list.#.uuid` - (Required) The UUID of an environment.
-        /// * `environment_reference_list.#.name` - (Optional/Computed) The name of an environment.
-        /// </summary>
         public InputList<Inputs.ProjectEnvironmentReferenceListGetArgs> EnvironmentReferenceLists
         {
             get => _environmentReferenceLists ?? (_environmentReferenceLists = new InputList<Inputs.ProjectEnvironmentReferenceListGetArgs>());
@@ -448,12 +328,6 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("externalNetworkLists")]
         private InputList<Inputs.ProjectExternalNetworkListGetArgs>? _externalNetworkLists;
-
-        /// <summary>
-        /// List of external networks associated with the project.
-        /// * `external_network_list.#.uuid` - (Required) The UUID of a network.
-        /// * `external_network_list.#.name` - (Optional/Computed) The name of a network.
-        /// </summary>
         public InputList<Inputs.ProjectExternalNetworkListGetArgs> ExternalNetworkLists
         {
             get => _externalNetworkLists ?? (_externalNetworkLists = new InputList<Inputs.ProjectExternalNetworkListGetArgs>());
@@ -462,13 +336,6 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("externalUserGroupReferenceLists")]
         private InputList<Inputs.ProjectExternalUserGroupReferenceListGetArgs>? _externalUserGroupReferenceLists;
-
-        /// <summary>
-        /// List of directory service user groups. These groups are not managed by Nutanix.
-        /// * `external_user_group_reference_list.#.kind` - (Optional) The kind name. Default value is `user_group`
-        /// * `external_user_group_reference_list.#.uuid` - (Required) The UUID of a user_group
-        /// * `external_user_group_reference_list.#.name` - (Optional/Computed) The name of a user_group
-        /// </summary>
         public InputList<Inputs.ProjectExternalUserGroupReferenceListGetArgs> ExternalUserGroupReferenceLists
         {
             get => _externalUserGroupReferenceLists ?? (_externalUserGroupReferenceLists = new InputList<Inputs.ProjectExternalUserGroupReferenceListGetArgs>());
@@ -508,12 +375,6 @@ namespace PiersKarsenbarg.Nutanix
             set => _projectReference = value;
         }
 
-        /// <summary>
-        /// The status for a resource domain (limits and values)
-        /// * `resource_domain.resources` - (Required) Array of the utilization/limit for resource types
-        /// * `resource_domain.resources.#.limit` - (Required) The resource consumption limit (unspecified is unlimited)
-        /// * `resource_domain.resources.#.resource_type` - (Required) The type of resource (for example storage, CPUs)
-        /// </summary>
         [Input("resourceDomain")]
         public Input<Inputs.ProjectResourceDomainGetArgs>? ResourceDomain { get; set; }
 
@@ -522,13 +383,6 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("subnetReferenceLists")]
         private InputList<Inputs.ProjectSubnetReferenceListGetArgs>? _subnetReferenceLists;
-
-        /// <summary>
-        /// List of subnets for the project.
-        /// * `subnet_reference_list.#.kind` - (Optional) The kind name. Default value is `subnet`
-        /// * `subnet_reference_list.#.uuid` - (Required) The UUID of a subnet
-        /// * `subnet_reference_list.#.name` - (Optional/Computed) The name of a subnet.
-        /// </summary>
         public InputList<Inputs.ProjectSubnetReferenceListGetArgs> SubnetReferenceLists
         {
             get => _subnetReferenceLists ?? (_subnetReferenceLists = new InputList<Inputs.ProjectSubnetReferenceListGetArgs>());
@@ -537,13 +391,6 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("userReferenceLists")]
         private InputList<Inputs.ProjectUserReferenceListGetArgs>? _userReferenceLists;
-
-        /// <summary>
-        /// List of users in the project.
-        /// * `user_reference_list.#.kind` - (Optional) The kind name. Default value is `user`
-        /// * `user_reference_list.#.uuid` - (Required) The UUID of a user
-        /// * `user_reference_list.#.name` - (Optional/Computed) The name of a user.
-        /// </summary>
         public InputList<Inputs.ProjectUserReferenceListGetArgs> UserReferenceLists
         {
             get => _userReferenceLists ?? (_userReferenceLists = new InputList<Inputs.ProjectUserReferenceListGetArgs>());

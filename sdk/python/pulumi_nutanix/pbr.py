@@ -422,6 +422,7 @@ class Pbr(pulumi.CustomResource):
         Provides Nutanix resource to create Policy Based Routing inside VPCs.
 
         ## Example Usage
+
         ### pbr creation with vpc name with any source or destination or protocol with permit action
 
         ```python
@@ -440,40 +441,6 @@ class Pbr(pulumi.CustomResource):
             ),
             vpc_name="test123")
         ```
-        ## source
-
-        source address of an IP packet. This could be either an ip prefix or an address_type .
-
-        * `address` - (Optional) address type of source. Should be one of {INTERNET, ALL}.
-        * `subnet_ip` - (Optional) IP subnet provided as an address.
-        * `prefix_length` - (Optional) prefix length of provided subnet.
-
-        ## destination
-
-        destination address of an IP packet. This could be either an ip prefix or an address_type .
-
-        * `address` - (Optional) address type of source. Should be one of {INTERNET, ALL}.
-        * `subnet_ip` - (Optional) IP subnet provided as an address.
-        * `prefix_length` - (Optional) prefix length of provided subnet.
-
-        ## protocol_parameters
-
-        Routing policy IP protocol parameters
-
-        * `tcp` - (Optional) TCP parameters in routing policy
-        * `udp` - (Optional) UDP parameters in routing policy
-        * `icmp` - (Optional) ICMP parameters in routing policy.
-        * `protocol_number` - (Optional) Protocol number in routing policy
-
-        ## tcp, udp
-
-        * `source_port_range` - (Required) Range of TCP/UDP ports.
-        * `destination_port_range` - (Required) Range of TCP/UDP ports.
-
-        ## source_port_range, destination_port_range
-
-        * `start_port` - (Required) start port number
-        * `end_port` - (Required) end port number
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -497,6 +464,7 @@ class Pbr(pulumi.CustomResource):
         Provides Nutanix resource to create Policy Based Routing inside VPCs.
 
         ## Example Usage
+
         ### pbr creation with vpc name with any source or destination or protocol with permit action
 
         ```python
@@ -515,40 +483,6 @@ class Pbr(pulumi.CustomResource):
             ),
             vpc_name="test123")
         ```
-        ## source
-
-        source address of an IP packet. This could be either an ip prefix or an address_type .
-
-        * `address` - (Optional) address type of source. Should be one of {INTERNET, ALL}.
-        * `subnet_ip` - (Optional) IP subnet provided as an address.
-        * `prefix_length` - (Optional) prefix length of provided subnet.
-
-        ## destination
-
-        destination address of an IP packet. This could be either an ip prefix or an address_type .
-
-        * `address` - (Optional) address type of source. Should be one of {INTERNET, ALL}.
-        * `subnet_ip` - (Optional) IP subnet provided as an address.
-        * `prefix_length` - (Optional) prefix length of provided subnet.
-
-        ## protocol_parameters
-
-        Routing policy IP protocol parameters
-
-        * `tcp` - (Optional) TCP parameters in routing policy
-        * `udp` - (Optional) UDP parameters in routing policy
-        * `icmp` - (Optional) ICMP parameters in routing policy.
-        * `protocol_number` - (Optional) Protocol number in routing policy
-
-        ## tcp, udp
-
-        * `source_port_range` - (Required) Range of TCP/UDP ports.
-        * `destination_port_range` - (Required) Range of TCP/UDP ports.
-
-        ## source_port_range, destination_port_range
-
-        * `start_port` - (Required) start port number
-        * `end_port` - (Required) end port number
 
         :param str resource_name: The name of the resource.
         :param PbrArgs args: The arguments to use to populate this resource's properties.

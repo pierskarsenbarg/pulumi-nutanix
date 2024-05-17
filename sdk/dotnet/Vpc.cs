@@ -14,6 +14,7 @@ namespace PiersKarsenbarg.Nutanix
     /// Provides Nutanix resource to create VPC.
     /// 
     /// ## Example Usage
+    /// 
     /// ### vpc creation with external subnet name
     /// 
     /// ```csharp
@@ -54,6 +55,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// 
     /// ### vpc creation with external subnet uuid
     /// 
     /// ```csharp

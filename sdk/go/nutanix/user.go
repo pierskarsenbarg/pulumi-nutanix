@@ -14,64 +14,6 @@ import (
 // Provides a resource to create a user based on the input parameters.
 //
 // ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewUser(ctx, "user", &nutanix.UserArgs{
-//				DirectoryServiceUser: &nutanix.UserDirectoryServiceUserArgs{
-//					DirectoryServiceReference: &nutanix.UserDirectoryServiceUserDirectoryServiceReferenceArgs{
-//						Uuid: pulumi.String("<directory-service-uuid>"),
-//					},
-//					UserPrincipalName: pulumi.String("test-user@ntnxlab.local"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewUser(ctx, "user", &nutanix.UserArgs{
-//				IdentityProviderUser: &nutanix.UserIdentityProviderUserArgs{
-//					IdentityProviderReference: &nutanix.UserIdentityProviderUserIdentityProviderReferenceArgs{
-//						Uuid: pulumi.String("<identity-provider-uuid>"),
-//					},
-//					Username: pulumi.String("username"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 type User struct {
 	pulumi.CustomResourceState
 

@@ -235,8 +235,70 @@ func (o GetRecoveryPlansEntityOwnerReferenceArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetRecoveryPlansEntityParameter struct {
+	// (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
+	// * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
 	FloatingIpAssignmentLists []GetRecoveryPlansEntityParameterFloatingIpAssignmentList `pulumi:"floatingIpAssignmentLists"`
-	NetworkMappingLists       []GetRecoveryPlansEntityParameterNetworkMappingList       `pulumi:"networkMappingLists"`
+	// (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
+	NetworkMappingLists []GetRecoveryPlansEntityParameterNetworkMappingList `pulumi:"networkMappingLists"`
 }
 
 // GetRecoveryPlansEntityParameterInput is an input type that accepts GetRecoveryPlansEntityParameterArgs and GetRecoveryPlansEntityParameterOutput values.
@@ -251,8 +313,70 @@ type GetRecoveryPlansEntityParameterInput interface {
 }
 
 type GetRecoveryPlansEntityParameterArgs struct {
+	// (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
+	// * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
+	// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
 	FloatingIpAssignmentLists GetRecoveryPlansEntityParameterFloatingIpAssignmentListArrayInput `pulumi:"floatingIpAssignmentLists"`
-	NetworkMappingLists       GetRecoveryPlansEntityParameterNetworkMappingListArrayInput       `pulumi:"networkMappingLists"`
+	// (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
+	// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
+	NetworkMappingLists GetRecoveryPlansEntityParameterNetworkMappingListArrayInput `pulumi:"networkMappingLists"`
 }
 
 func (GetRecoveryPlansEntityParameterArgs) ElementType() reflect.Type {
@@ -306,12 +430,74 @@ func (o GetRecoveryPlansEntityParameterOutput) ToGetRecoveryPlansEntityParameter
 	return o
 }
 
+// (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
+// * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
+// * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
 func (o GetRecoveryPlansEntityParameterOutput) FloatingIpAssignmentLists() GetRecoveryPlansEntityParameterFloatingIpAssignmentListArrayOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntityParameter) []GetRecoveryPlansEntityParameterFloatingIpAssignmentList {
 		return v.FloatingIpAssignmentLists
 	}).(GetRecoveryPlansEntityParameterFloatingIpAssignmentListArrayOutput)
 }
 
+// (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
+// * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
 func (o GetRecoveryPlansEntityParameterOutput) NetworkMappingLists() GetRecoveryPlansEntityParameterNetworkMappingListArrayOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntityParameter) []GetRecoveryPlansEntityParameterNetworkMappingList {
 		return v.NetworkMappingLists
@@ -2993,9 +3179,12 @@ func (o GetRecoveryPlansEntityProjectReferenceArrayOutput) Index(i pulumi.IntInp
 }
 
 type GetRecoveryPlansEntityStageList struct {
-	DelayTimeSecs int                                        `pulumi:"delayTimeSecs"`
-	StageUuid     string                                     `pulumi:"stageUuid"`
-	StageWorks    []GetRecoveryPlansEntityStageListStageWork `pulumi:"stageWorks"`
+	// (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
+	DelayTimeSecs int `pulumi:"delayTimeSecs"`
+	// (Optional/Computed) UUID of stage.
+	StageUuid string `pulumi:"stageUuid"`
+	// (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
+	StageWorks []GetRecoveryPlansEntityStageListStageWork `pulumi:"stageWorks"`
 }
 
 // GetRecoveryPlansEntityStageListInput is an input type that accepts GetRecoveryPlansEntityStageListArgs and GetRecoveryPlansEntityStageListOutput values.
@@ -3010,9 +3199,12 @@ type GetRecoveryPlansEntityStageListInput interface {
 }
 
 type GetRecoveryPlansEntityStageListArgs struct {
-	DelayTimeSecs pulumi.IntInput                                    `pulumi:"delayTimeSecs"`
-	StageUuid     pulumi.StringInput                                 `pulumi:"stageUuid"`
-	StageWorks    GetRecoveryPlansEntityStageListStageWorkArrayInput `pulumi:"stageWorks"`
+	// (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
+	DelayTimeSecs pulumi.IntInput `pulumi:"delayTimeSecs"`
+	// (Optional/Computed) UUID of stage.
+	StageUuid pulumi.StringInput `pulumi:"stageUuid"`
+	// (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
+	StageWorks GetRecoveryPlansEntityStageListStageWorkArrayInput `pulumi:"stageWorks"`
 }
 
 func (GetRecoveryPlansEntityStageListArgs) ElementType() reflect.Type {
@@ -3066,14 +3258,17 @@ func (o GetRecoveryPlansEntityStageListOutput) ToGetRecoveryPlansEntityStageList
 	return o
 }
 
+// (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
 func (o GetRecoveryPlansEntityStageListOutput) DelayTimeSecs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntityStageList) int { return v.DelayTimeSecs }).(pulumi.IntOutput)
 }
 
+// (Optional/Computed) UUID of stage.
 func (o GetRecoveryPlansEntityStageListOutput) StageUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntityStageList) string { return v.StageUuid }).(pulumi.StringOutput)
 }
 
+// (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
 func (o GetRecoveryPlansEntityStageListOutput) StageWorks() GetRecoveryPlansEntityStageListStageWorkArrayOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntityStageList) []GetRecoveryPlansEntityStageListStageWork {
 		return v.StageWorks
@@ -3101,6 +3296,7 @@ func (o GetRecoveryPlansEntityStageListArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetRecoveryPlansEntityStageListStageWork struct {
+	// (Optional/Computed) Information about entities to be recovered.
 	RecoverEntities []GetRecoveryPlansEntityStageListStageWorkRecoverEntity `pulumi:"recoverEntities"`
 }
 
@@ -3116,6 +3312,7 @@ type GetRecoveryPlansEntityStageListStageWorkInput interface {
 }
 
 type GetRecoveryPlansEntityStageListStageWorkArgs struct {
+	// (Optional/Computed) Information about entities to be recovered.
 	RecoverEntities GetRecoveryPlansEntityStageListStageWorkRecoverEntityArrayInput `pulumi:"recoverEntities"`
 }
 
@@ -3170,6 +3367,7 @@ func (o GetRecoveryPlansEntityStageListStageWorkOutput) ToGetRecoveryPlansEntity
 	return o
 }
 
+// (Optional/Computed) Information about entities to be recovered.
 func (o GetRecoveryPlansEntityStageListStageWorkOutput) RecoverEntities() GetRecoveryPlansEntityStageListStageWorkRecoverEntityArrayOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntityStageListStageWork) []GetRecoveryPlansEntityStageListStageWorkRecoverEntity {
 		return v.RecoverEntities
@@ -3197,6 +3395,11 @@ func (o GetRecoveryPlansEntityStageListStageWorkArrayOutput) Index(i pulumi.IntI
 }
 
 type GetRecoveryPlansEntityStageListStageWorkRecoverEntity struct {
+	// (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
+	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
+	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
+	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
+	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
 	EntityInfoLists []GetRecoveryPlansEntityStageListStageWorkRecoverEntityEntityInfoList `pulumi:"entityInfoLists"`
 }
 
@@ -3212,6 +3415,11 @@ type GetRecoveryPlansEntityStageListStageWorkRecoverEntityInput interface {
 }
 
 type GetRecoveryPlansEntityStageListStageWorkRecoverEntityArgs struct {
+	// (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
+	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
+	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
+	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
+	// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
 	EntityInfoLists GetRecoveryPlansEntityStageListStageWorkRecoverEntityEntityInfoListArrayInput `pulumi:"entityInfoLists"`
 }
 
@@ -3266,6 +3474,11 @@ func (o GetRecoveryPlansEntityStageListStageWorkRecoverEntityOutput) ToGetRecove
 	return o
 }
 
+// (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or anyEntityReference has to be provided.
+// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
+// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
+// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
+// * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
 func (o GetRecoveryPlansEntityStageListStageWorkRecoverEntityOutput) EntityInfoLists() GetRecoveryPlansEntityStageListStageWorkRecoverEntityEntityInfoListArrayOutput {
 	return o.ApplyT(func(v GetRecoveryPlansEntityStageListStageWorkRecoverEntity) []GetRecoveryPlansEntityStageListStageWorkRecoverEntityEntityInfoList {
 		return v.EntityInfoLists
@@ -5011,7 +5224,8 @@ func (o GetServiceGroupsEntityAssociatedPoliciesListArrayOutput) Index(i pulumi.
 }
 
 type GetServiceGroupsEntityServiceGroup struct {
-	Description     string                                          `pulumi:"description"`
+	Description string `pulumi:"description"`
+	// specifying whether it is a system defined service group
 	IsSystemDefined bool                                            `pulumi:"isSystemDefined"`
 	Name            string                                          `pulumi:"name"`
 	ServiceLists    []GetServiceGroupsEntityServiceGroupServiceList `pulumi:"serviceLists"`
@@ -5029,7 +5243,8 @@ type GetServiceGroupsEntityServiceGroupInput interface {
 }
 
 type GetServiceGroupsEntityServiceGroupArgs struct {
-	Description     pulumi.StringInput                                      `pulumi:"description"`
+	Description pulumi.StringInput `pulumi:"description"`
+	// specifying whether it is a system defined service group
 	IsSystemDefined pulumi.BoolInput                                        `pulumi:"isSystemDefined"`
 	Name            pulumi.StringInput                                      `pulumi:"name"`
 	ServiceLists    GetServiceGroupsEntityServiceGroupServiceListArrayInput `pulumi:"serviceLists"`
@@ -5090,6 +5305,7 @@ func (o GetServiceGroupsEntityServiceGroupOutput) Description() pulumi.StringOut
 	return o.ApplyT(func(v GetServiceGroupsEntityServiceGroup) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// specifying whether it is a system defined service group
 func (o GetServiceGroupsEntityServiceGroupOutput) IsSystemDefined() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetServiceGroupsEntityServiceGroup) bool { return v.IsSystemDefined }).(pulumi.BoolOutput)
 }
@@ -9852,11 +10068,8 @@ func (o GetUserGroupsEntityArrayOutput) Index(i pulumi.IntInput) GetUserGroupsEn
 }
 
 type GetUserGroupsEntityAccessControlPolicyReferenceList struct {
-	// - The kind name. (Default depends on the resource you are referencing)
 	Kind string `pulumi:"kind"`
-	// - the key name.
 	Name string `pulumi:"name"`
-	// - User group UUID.
 	Uuid string `pulumi:"uuid"`
 }
 
@@ -9872,11 +10085,8 @@ type GetUserGroupsEntityAccessControlPolicyReferenceListInput interface {
 }
 
 type GetUserGroupsEntityAccessControlPolicyReferenceListArgs struct {
-	// - The kind name. (Default depends on the resource you are referencing)
 	Kind pulumi.StringInput `pulumi:"kind"`
-	// - the key name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// - User group UUID.
 	Uuid pulumi.StringInput `pulumi:"uuid"`
 }
 
@@ -9931,17 +10141,14 @@ func (o GetUserGroupsEntityAccessControlPolicyReferenceListOutput) ToGetUserGrou
 	return o
 }
 
-// - The kind name. (Default depends on the resource you are referencing)
 func (o GetUserGroupsEntityAccessControlPolicyReferenceListOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupsEntityAccessControlPolicyReferenceList) string { return v.Kind }).(pulumi.StringOutput)
 }
 
-// - the key name.
 func (o GetUserGroupsEntityAccessControlPolicyReferenceListOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupsEntityAccessControlPolicyReferenceList) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// - User group UUID.
 func (o GetUserGroupsEntityAccessControlPolicyReferenceListOutput) Uuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupsEntityAccessControlPolicyReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
 }
@@ -10189,9 +10396,13 @@ func (o GetUserGroupsEntityDirectoryServiceUserGroupArrayOutput) Index(i pulumi.
 type GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReference struct {
 	// - The kind name. (Default depends on the resource you are referencing)
 	Kind string `pulumi:"kind"`
-	// - the key name.
+	// - the name(Optional).
 	Name string `pulumi:"name"`
-	// - User group UUID.
+	// - the UUID(Required).
+	//
+	// For `accessControlPolicyReferenceList` and `projectReferenceList` are the same as reference but used as list.
+	//
+	// See detailed information in [Nutanix Users](https://www.nutanix.dev/reference/prism_central/v3/api/user-groups/).
 	Uuid string `pulumi:"uuid"`
 }
 
@@ -10209,9 +10420,13 @@ type GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReferenceInput 
 type GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReferenceArgs struct {
 	// - The kind name. (Default depends on the resource you are referencing)
 	Kind pulumi.StringInput `pulumi:"kind"`
-	// - the key name.
+	// - the name(Optional).
 	Name pulumi.StringInput `pulumi:"name"`
-	// - User group UUID.
+	// - the UUID(Required).
+	//
+	// For `accessControlPolicyReferenceList` and `projectReferenceList` are the same as reference but used as list.
+	//
+	// See detailed information in [Nutanix Users](https://www.nutanix.dev/reference/prism_central/v3/api/user-groups/).
 	Uuid pulumi.StringInput `pulumi:"uuid"`
 }
 
@@ -10271,12 +10486,16 @@ func (o GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReferenceOut
 	return o.ApplyT(func(v GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReference) string { return v.Kind }).(pulumi.StringOutput)
 }
 
-// - the key name.
+// - the name(Optional).
 func (o GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReferenceOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReference) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// - User group UUID.
+// - the UUID(Required).
+//
+// For `accessControlPolicyReferenceList` and `projectReferenceList` are the same as reference but used as list.
+//
+// See detailed information in [Nutanix Users](https://www.nutanix.dev/reference/prism_central/v3/api/user-groups/).
 func (o GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReferenceOutput) Uuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReference) string { return v.Uuid }).(pulumi.StringOutput)
 }
@@ -10302,11 +10521,8 @@ func (o GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReferenceArr
 }
 
 type GetUserGroupsEntityProjectReferenceList struct {
-	// - The kind name. (Default depends on the resource you are referencing)
 	Kind string `pulumi:"kind"`
-	// - the key name.
 	Name string `pulumi:"name"`
-	// - User group UUID.
 	Uuid string `pulumi:"uuid"`
 }
 
@@ -10322,11 +10538,8 @@ type GetUserGroupsEntityProjectReferenceListInput interface {
 }
 
 type GetUserGroupsEntityProjectReferenceListArgs struct {
-	// - The kind name. (Default depends on the resource you are referencing)
 	Kind pulumi.StringInput `pulumi:"kind"`
-	// - the key name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// - User group UUID.
 	Uuid pulumi.StringInput `pulumi:"uuid"`
 }
 
@@ -10381,17 +10594,14 @@ func (o GetUserGroupsEntityProjectReferenceListOutput) ToGetUserGroupsEntityProj
 	return o
 }
 
-// - The kind name. (Default depends on the resource you are referencing)
 func (o GetUserGroupsEntityProjectReferenceListOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupsEntityProjectReferenceList) string { return v.Kind }).(pulumi.StringOutput)
 }
 
-// - the key name.
 func (o GetUserGroupsEntityProjectReferenceListOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupsEntityProjectReferenceList) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// - User group UUID.
 func (o GetUserGroupsEntityProjectReferenceListOutput) Uuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupsEntityProjectReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
 }
@@ -10417,8 +10627,7 @@ func (o GetUserGroupsEntityProjectReferenceListArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetUserGroupsMetadata struct {
-	Filter string `pulumi:"filter"`
-	// - The kind name. (Default depends on the resource you are referencing)
+	Filter        string `pulumi:"filter"`
 	Kind          string `pulumi:"kind"`
 	Length        int    `pulumi:"length"`
 	Offset        int    `pulumi:"offset"`
@@ -10438,8 +10647,7 @@ type GetUserGroupsMetadataInput interface {
 }
 
 type GetUserGroupsMetadataArgs struct {
-	Filter pulumi.StringInput `pulumi:"filter"`
-	// - The kind name. (Default depends on the resource you are referencing)
+	Filter        pulumi.StringInput `pulumi:"filter"`
 	Kind          pulumi.StringInput `pulumi:"kind"`
 	Length        pulumi.IntInput    `pulumi:"length"`
 	Offset        pulumi.IntInput    `pulumi:"offset"`
@@ -10502,7 +10710,6 @@ func (o GetUserGroupsMetadataOutput) Filter() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupsMetadata) string { return v.Filter }).(pulumi.StringOutput)
 }
 
-// - The kind name. (Default depends on the resource you are referencing)
 func (o GetUserGroupsMetadataOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v GetUserGroupsMetadata) string { return v.Kind }).(pulumi.StringOutput)
 }

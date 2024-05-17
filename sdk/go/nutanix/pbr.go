@@ -15,6 +15,7 @@ import (
 // Provides Nutanix resource to create Policy Based Routing inside VPCs.
 //
 // ## Example Usage
+//
 // ### pbr creation with vpc name with any source or destination or protocol with permit action
 //
 // ```go
@@ -49,40 +50,6 @@ import (
 //	}
 //
 // ```
-// ## source
-//
-// source address of an IP packet. This could be either an ip prefix or an addressType .
-//
-// * `address` - (Optional) address type of source. Should be one of {INTERNET, ALL}.
-// * `subnetIp` - (Optional) IP subnet provided as an address.
-// * `prefixLength` - (Optional) prefix length of provided subnet.
-//
-// ## destination
-//
-// destination address of an IP packet. This could be either an ip prefix or an addressType .
-//
-// * `address` - (Optional) address type of source. Should be one of {INTERNET, ALL}.
-// * `subnetIp` - (Optional) IP subnet provided as an address.
-// * `prefixLength` - (Optional) prefix length of provided subnet.
-//
-// ## protocolParameters
-//
-// # Routing policy IP protocol parameters
-//
-// * `tcp` - (Optional) TCP parameters in routing policy
-// * `udp` - (Optional) UDP parameters in routing policy
-// * `icmp` - (Optional) ICMP parameters in routing policy.
-// * `protocolNumber` - (Optional) Protocol number in routing policy
-//
-// ## tcp, udp
-//
-// * `sourcePortRange` - (Required) Range of TCP/UDP ports.
-// * `destinationPortRange` - (Required) Range of TCP/UDP ports.
-//
-// ## source_port_range, destinationPortRange
-//
-// * `startPort` - (Required) start port number
-// * `endPort` - (Required) end port number
 type Pbr struct {
 	pulumi.CustomResourceState
 

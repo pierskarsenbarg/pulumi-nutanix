@@ -19,11 +19,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string Kind;
         /// <summary>
-        /// - the key name.
+        /// - the name(Optional).
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// - User group UUID.
+        /// - the UUID(Required).
+        /// 
+        /// For `access_control_policy_reference_list` and `project_reference_list` are the same as reference but used as list.
+        /// 
+        /// See detailed information in [Nutanix Users](https://www.nutanix.dev/reference/prism_central/v3/api/user-groups/).
         /// </summary>
         public readonly string Uuid;
 

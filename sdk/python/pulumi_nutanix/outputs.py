@@ -706,10 +706,6 @@ class AccessControlPolicyContextFilterList(dict):
     def __init__(__self__, *,
                  entity_filter_expression_lists: Sequence['outputs.AccessControlPolicyContextFilterListEntityFilterExpressionList'],
                  scope_filter_expression_lists: Optional[Sequence['outputs.AccessControlPolicyContextFilterListScopeFilterExpressionList']] = None):
-        """
-        :param Sequence['AccessControlPolicyContextFilterListEntityFilterExpressionListArgs'] entity_filter_expression_lists: A list of Entity filter expressions.
-        :param Sequence['AccessControlPolicyContextFilterListScopeFilterExpressionListArgs'] scope_filter_expression_lists: - (Optional) Filter the scope of an Access Control Policy.
-        """
         pulumi.set(__self__, "entity_filter_expression_lists", entity_filter_expression_lists)
         if scope_filter_expression_lists is not None:
             pulumi.set(__self__, "scope_filter_expression_lists", scope_filter_expression_lists)
@@ -717,17 +713,11 @@ class AccessControlPolicyContextFilterList(dict):
     @property
     @pulumi.getter(name="entityFilterExpressionLists")
     def entity_filter_expression_lists(self) -> Sequence['outputs.AccessControlPolicyContextFilterListEntityFilterExpressionList']:
-        """
-        A list of Entity filter expressions.
-        """
         return pulumi.get(self, "entity_filter_expression_lists")
 
     @property
     @pulumi.getter(name="scopeFilterExpressionLists")
     def scope_filter_expression_lists(self) -> Optional[Sequence['outputs.AccessControlPolicyContextFilterListScopeFilterExpressionList']]:
-        """
-        - (Optional) Filter the scope of an Access Control Policy.
-        """
         return pulumi.get(self, "scope_filter_expression_lists")
 
 
@@ -1222,31 +1212,17 @@ class AddressGroupIpAddressBlockList(dict):
     def __init__(__self__, *,
                  ip: str,
                  prefix_length: int):
-        """
-        :param str ip: - (Required) IP of the address block
-        :param int prefix_length: - (Required) Prefix length of address block in int
-               
-               See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/reference/prism_central/v3/api/address-groups/postaddressgroups).
-        """
         pulumi.set(__self__, "ip", ip)
         pulumi.set(__self__, "prefix_length", prefix_length)
 
     @property
     @pulumi.getter
     def ip(self) -> str:
-        """
-        - (Required) IP of the address block
-        """
         return pulumi.get(self, "ip")
 
     @property
     @pulumi.getter(name="prefixLength")
     def prefix_length(self) -> int:
-        """
-        - (Required) Prefix length of address block in int
-
-        See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/reference/prism_central/v3/api/address-groups/postaddressgroups).
-        """
         return pulumi.get(self, "prefix_length")
 
 
@@ -1448,9 +1424,6 @@ class FoundationCentralImageClusterClusterStatusNodeProgressDetail(dict):
                  message_lists: Optional[Sequence[str]] = None,
                  percent_complete: Optional[float] = None,
                  status: Optional[str] = None):
-        """
-        :param str imaged_node_uuid: UUID of the node.
-        """
         if imaged_node_uuid is not None:
             pulumi.set(__self__, "imaged_node_uuid", imaged_node_uuid)
         if imaging_stopped is not None:
@@ -1467,9 +1440,6 @@ class FoundationCentralImageClusterClusterStatusNodeProgressDetail(dict):
     @property
     @pulumi.getter(name="imagedNodeUuid")
     def imaged_node_uuid(self) -> Optional[str]:
-        """
-        UUID of the node.
-        """
         return pulumi.get(self, "imaged_node_uuid")
 
     @property
@@ -1528,12 +1498,6 @@ class FoundationCentralImageClusterCommonNetworkSettings(dict):
                  cvm_ntp_servers: Optional[Sequence[str]] = None,
                  hypervisor_dns_servers: Optional[Sequence[str]] = None,
                  hypervisor_ntp_servers: Optional[Sequence[str]] = None):
-        """
-        :param Sequence[str] cvm_dns_servers: List of dns servers for the cvms in the cluster.
-        :param Sequence[str] cvm_ntp_servers: List of ntp servers for the cvms in the cluster.
-        :param Sequence[str] hypervisor_dns_servers: List of dns servers for the hypervisors in the cluster.
-        :param Sequence[str] hypervisor_ntp_servers: List of ntp servers for the hypervisors in the cluster.
-        """
         if cvm_dns_servers is not None:
             pulumi.set(__self__, "cvm_dns_servers", cvm_dns_servers)
         if cvm_ntp_servers is not None:
@@ -1546,33 +1510,21 @@ class FoundationCentralImageClusterCommonNetworkSettings(dict):
     @property
     @pulumi.getter(name="cvmDnsServers")
     def cvm_dns_servers(self) -> Optional[Sequence[str]]:
-        """
-        List of dns servers for the cvms in the cluster.
-        """
         return pulumi.get(self, "cvm_dns_servers")
 
     @property
     @pulumi.getter(name="cvmNtpServers")
     def cvm_ntp_servers(self) -> Optional[Sequence[str]]:
-        """
-        List of ntp servers for the cvms in the cluster.
-        """
         return pulumi.get(self, "cvm_ntp_servers")
 
     @property
     @pulumi.getter(name="hypervisorDnsServers")
     def hypervisor_dns_servers(self) -> Optional[Sequence[str]]:
-        """
-        List of dns servers for the hypervisors in the cluster.
-        """
         return pulumi.get(self, "hypervisor_dns_servers")
 
     @property
     @pulumi.getter(name="hypervisorNtpServers")
     def hypervisor_ntp_servers(self) -> Optional[Sequence[str]]:
-        """
-        List of ntp servers for the hypervisors in the cluster.
-        """
         return pulumi.get(self, "hypervisor_ntp_servers")
 
 
@@ -1632,16 +1584,6 @@ class FoundationCentralImageClusterFoundationInitConfig(dict):
                  ipmi_gateway: Optional[str] = None,
                  ipmi_netmask: Optional[str] = None,
                  nos_package_urls: Optional[Sequence['outputs.FoundationCentralImageClusterFoundationInitConfigNosPackageUrl']] = None):
-        """
-        :param str cvm_gateway: Gateway of the cvm.
-        :param str cvm_netmask: Netmask of the cvm.
-        :param str hyperv_product_key: Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
-        :param str hyperv_sku: SKU of hyperv to be installed if hypervisor_type is hyperv.
-        :param str hypervisor_gateway: Gateway of the hypervisor.
-        :param str hypervisor_netmask: Netmask of the hypervisor.
-        :param str ipmi_gateway: Gateway of the ipmi.
-        :param str ipmi_netmask: Netmask of the ipmi.
-        """
         if blocks is not None:
             pulumi.set(__self__, "blocks", blocks)
         if clusters is not None:
@@ -1684,17 +1626,11 @@ class FoundationCentralImageClusterFoundationInitConfig(dict):
     @property
     @pulumi.getter(name="cvmGateway")
     def cvm_gateway(self) -> Optional[str]:
-        """
-        Gateway of the cvm.
-        """
         return pulumi.get(self, "cvm_gateway")
 
     @property
     @pulumi.getter(name="cvmNetmask")
     def cvm_netmask(self) -> Optional[str]:
-        """
-        Netmask of the cvm.
-        """
         return pulumi.get(self, "cvm_netmask")
 
     @property
@@ -1705,25 +1641,16 @@ class FoundationCentralImageClusterFoundationInitConfig(dict):
     @property
     @pulumi.getter(name="hypervProductKey")
     def hyperv_product_key(self) -> Optional[str]:
-        """
-        Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
-        """
         return pulumi.get(self, "hyperv_product_key")
 
     @property
     @pulumi.getter(name="hypervSku")
     def hyperv_sku(self) -> Optional[str]:
-        """
-        SKU of hyperv to be installed if hypervisor_type is hyperv.
-        """
         return pulumi.get(self, "hyperv_sku")
 
     @property
     @pulumi.getter(name="hypervisorGateway")
     def hypervisor_gateway(self) -> Optional[str]:
-        """
-        Gateway of the hypervisor.
-        """
         return pulumi.get(self, "hypervisor_gateway")
 
     @property
@@ -1739,25 +1666,16 @@ class FoundationCentralImageClusterFoundationInitConfig(dict):
     @property
     @pulumi.getter(name="hypervisorNetmask")
     def hypervisor_netmask(self) -> Optional[str]:
-        """
-        Netmask of the hypervisor.
-        """
         return pulumi.get(self, "hypervisor_netmask")
 
     @property
     @pulumi.getter(name="ipmiGateway")
     def ipmi_gateway(self) -> Optional[str]:
-        """
-        Gateway of the ipmi.
-        """
         return pulumi.get(self, "ipmi_gateway")
 
     @property
     @pulumi.getter(name="ipmiNetmask")
     def ipmi_netmask(self) -> Optional[str]:
-        """
-        Netmask of the ipmi.
-        """
         return pulumi.get(self, "ipmi_netmask")
 
     @property
@@ -1856,15 +1774,6 @@ class FoundationCentralImageClusterFoundationInitConfigBlockNode(dict):
                  ipv6_address: Optional[str] = None,
                  node_position: Optional[str] = None,
                  node_serial: Optional[str] = None):
-        """
-        :param str cvm_ip: IP address to be set for the cvm on the node.
-        :param int cvm_vlan_id: Vlan tag of the cvm, if the cvm is on a vlan.
-        :param Mapping[str, str] hardware_attributes_override: Hardware attributes override json for the node.
-        :param str hypervisor_hostname: Name to be set for the hypervisor host.
-        :param str hypervisor_ip: IP address to be set for the hypervisor on the node.
-        :param bool image_now: True, if the node should be imaged, False, otherwise.
-        :param str ipmi_ip: IP address to be set for the ipmi of the node.
-        """
         if cvm_ip is not None:
             pulumi.set(__self__, "cvm_ip", cvm_ip)
         if cvm_vlan_id is not None:
@@ -1893,17 +1802,11 @@ class FoundationCentralImageClusterFoundationInitConfigBlockNode(dict):
     @property
     @pulumi.getter(name="cvmIp")
     def cvm_ip(self) -> Optional[str]:
-        """
-        IP address to be set for the cvm on the node.
-        """
         return pulumi.get(self, "cvm_ip")
 
     @property
     @pulumi.getter(name="cvmVlanId")
     def cvm_vlan_id(self) -> Optional[int]:
-        """
-        Vlan tag of the cvm, if the cvm is on a vlan.
-        """
         return pulumi.get(self, "cvm_vlan_id")
 
     @property
@@ -1914,9 +1817,6 @@ class FoundationCentralImageClusterFoundationInitConfigBlockNode(dict):
     @property
     @pulumi.getter(name="hardwareAttributesOverride")
     def hardware_attributes_override(self) -> Optional[Mapping[str, str]]:
-        """
-        Hardware attributes override json for the node.
-        """
         return pulumi.get(self, "hardware_attributes_override")
 
     @property
@@ -1927,33 +1827,21 @@ class FoundationCentralImageClusterFoundationInitConfigBlockNode(dict):
     @property
     @pulumi.getter(name="hypervisorHostname")
     def hypervisor_hostname(self) -> Optional[str]:
-        """
-        Name to be set for the hypervisor host.
-        """
         return pulumi.get(self, "hypervisor_hostname")
 
     @property
     @pulumi.getter(name="hypervisorIp")
     def hypervisor_ip(self) -> Optional[str]:
-        """
-        IP address to be set for the hypervisor on the node.
-        """
         return pulumi.get(self, "hypervisor_ip")
 
     @property
     @pulumi.getter(name="imageNow")
     def image_now(self) -> Optional[bool]:
-        """
-        True, if the node should be imaged, False, otherwise.
-        """
         return pulumi.get(self, "image_now")
 
     @property
     @pulumi.getter(name="ipmiIp")
     def ipmi_ip(self) -> Optional[str]:
-        """
-        IP address to be set for the ipmi of the node.
-        """
         return pulumi.get(self, "ipmi_ip")
 
     @property
@@ -2018,8 +1906,6 @@ class FoundationCentralImageClusterFoundationInitConfigCluster(dict):
         """
         :param str cluster_external_ip: External management ip of the cluster.
         :param str cluster_name: Name of the cluster.
-        :param str cvm_dns_servers: List of dns servers for the cvms in the cluster.
-        :param str cvm_ntp_servers: List of ntp servers for the cvms in the cluster.
         :param int redundancy_factor: Redundancy factor of the cluster.
         :param str timezone: Timezone to be set on the cluster.
         """
@@ -2076,17 +1962,11 @@ class FoundationCentralImageClusterFoundationInitConfigCluster(dict):
     @property
     @pulumi.getter(name="cvmDnsServers")
     def cvm_dns_servers(self) -> Optional[str]:
-        """
-        List of dns servers for the cvms in the cluster.
-        """
         return pulumi.get(self, "cvm_dns_servers")
 
     @property
     @pulumi.getter(name="cvmNtpServers")
     def cvm_ntp_servers(self) -> Optional[str]:
-        """
-        List of ntp servers for the cvms in the cluster.
-        """
         return pulumi.get(self, "cvm_ntp_servers")
 
     @property
@@ -2129,11 +2009,6 @@ class FoundationCentralImageClusterFoundationInitConfigHypervisorIso(dict):
                  hypervisor_type: Optional[str] = None,
                  sha256sum: Optional[str] = None,
                  url: Optional[str] = None):
-        """
-        :param str hypervisor_type: Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-        :param str sha256sum: sha256sum of the hypervisor iso.
-        :param str url: URL to download hypervisor iso. Required only if imaging is needed.
-        """
         if hypervisor_type is not None:
             pulumi.set(__self__, "hypervisor_type", hypervisor_type)
         if sha256sum is not None:
@@ -2144,25 +2019,16 @@ class FoundationCentralImageClusterFoundationInitConfigHypervisorIso(dict):
     @property
     @pulumi.getter(name="hypervisorType")
     def hypervisor_type(self) -> Optional[str]:
-        """
-        Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-        """
         return pulumi.get(self, "hypervisor_type")
 
     @property
     @pulumi.getter
     def sha256sum(self) -> Optional[str]:
-        """
-        sha256sum of the hypervisor iso.
-        """
         return pulumi.get(self, "sha256sum")
 
     @property
     @pulumi.getter
     def url(self) -> Optional[str]:
-        """
-        URL to download hypervisor iso. Required only if imaging is needed.
-        """
         return pulumi.get(self, "url")
 
 
@@ -2171,10 +2037,6 @@ class FoundationCentralImageClusterFoundationInitConfigNosPackageUrl(dict):
     def __init__(__self__, *,
                  sha256sum: Optional[str] = None,
                  url: Optional[str] = None):
-        """
-        :param str sha256sum: sha256sum of the hypervisor iso.
-        :param str url: URL to download hypervisor iso. Required only if imaging is needed.
-        """
         if sha256sum is not None:
             pulumi.set(__self__, "sha256sum", sha256sum)
         if url is not None:
@@ -2183,17 +2045,11 @@ class FoundationCentralImageClusterFoundationInitConfigNosPackageUrl(dict):
     @property
     @pulumi.getter
     def sha256sum(self) -> Optional[str]:
-        """
-        sha256sum of the hypervisor iso.
-        """
         return pulumi.get(self, "sha256sum")
 
     @property
     @pulumi.getter
     def url(self) -> Optional[str]:
-        """
-        URL to download hypervisor iso. Required only if imaging is needed.
-        """
         return pulumi.get(self, "url")
 
 
@@ -2223,12 +2079,6 @@ class FoundationCentralImageClusterHypervisorIsoDetails(dict):
                  hyperv_sku: Optional[str] = None,
                  sha256sum: Optional[str] = None,
                  url: Optional[str] = None):
-        """
-        :param str hyperv_product_key: Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
-        :param str hyperv_sku: SKU of hyperv to be installed if hypervisor_type is hyperv.
-        :param str sha256sum: sha256sum of the hypervisor iso.
-        :param str url: URL to download hypervisor iso. Required only if imaging is needed.
-        """
         if hyperv_product_key is not None:
             pulumi.set(__self__, "hyperv_product_key", hyperv_product_key)
         if hyperv_sku is not None:
@@ -2241,33 +2091,21 @@ class FoundationCentralImageClusterHypervisorIsoDetails(dict):
     @property
     @pulumi.getter(name="hypervProductKey")
     def hyperv_product_key(self) -> Optional[str]:
-        """
-        Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
-        """
         return pulumi.get(self, "hyperv_product_key")
 
     @property
     @pulumi.getter(name="hypervSku")
     def hyperv_sku(self) -> Optional[str]:
-        """
-        SKU of hyperv to be installed if hypervisor_type is hyperv.
-        """
         return pulumi.get(self, "hyperv_sku")
 
     @property
     @pulumi.getter
     def sha256sum(self) -> Optional[str]:
-        """
-        sha256sum of the hypervisor iso.
-        """
         return pulumi.get(self, "sha256sum")
 
     @property
     @pulumi.getter
     def url(self) -> Optional[str]:
-        """
-        URL to download hypervisor iso. Required only if imaging is needed.
-        """
         return pulumi.get(self, "url")
 
 
@@ -2343,26 +2181,6 @@ class FoundationCentralImageClusterNodeList(dict):
                  ipmi_netmask: Optional[str] = None,
                  rdma_passthrough: Optional[bool] = None,
                  use_existing_network_settings: Optional[bool] = None):
-        """
-        :param str cvm_gateway: Gateway of the cvm.
-        :param str cvm_ip: IP address to be set for the cvm on the node.
-        :param str cvm_netmask: Netmask of the cvm.
-        :param int cvm_ram_gb: Amount of memory to be assigned for the cvm.
-        :param int cvm_vlan_id: Vlan tag of the cvm, if the cvm is on a vlan.
-        :param Mapping[str, Any] hardware_attributes_override: Hardware attributes override json for the node.
-        :param str hypervisor_gateway: Gateway of the hypervisor.
-        :param str hypervisor_hostname: Name to be set for the hypervisor host.
-        :param str hypervisor_ip: IP address to be set for the hypervisor on the node.
-        :param str hypervisor_netmask: Netmask of the hypervisor.
-        :param str hypervisor_type: Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-        :param bool image_now: True, if the node should be imaged, False, otherwise.
-        :param str imaged_node_uuid: UUID of the node.
-        :param str ipmi_gateway: Gateway of the ipmi.
-        :param str ipmi_ip: IP address to be set for the ipmi of the node.
-        :param str ipmi_netmask: Netmask of the ipmi.
-        :param bool rdma_passthrough: Passthrough RDMA nic to CVM if possible, default to false.
-        :param bool use_existing_network_settings: Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
-        """
         if cvm_gateway is not None:
             pulumi.set(__self__, "cvm_gateway", cvm_gateway)
         if cvm_ip is not None:
@@ -2403,145 +2221,91 @@ class FoundationCentralImageClusterNodeList(dict):
     @property
     @pulumi.getter(name="cvmGateway")
     def cvm_gateway(self) -> Optional[str]:
-        """
-        Gateway of the cvm.
-        """
         return pulumi.get(self, "cvm_gateway")
 
     @property
     @pulumi.getter(name="cvmIp")
     def cvm_ip(self) -> Optional[str]:
-        """
-        IP address to be set for the cvm on the node.
-        """
         return pulumi.get(self, "cvm_ip")
 
     @property
     @pulumi.getter(name="cvmNetmask")
     def cvm_netmask(self) -> Optional[str]:
-        """
-        Netmask of the cvm.
-        """
         return pulumi.get(self, "cvm_netmask")
 
     @property
     @pulumi.getter(name="cvmRamGb")
     def cvm_ram_gb(self) -> Optional[int]:
-        """
-        Amount of memory to be assigned for the cvm.
-        """
         return pulumi.get(self, "cvm_ram_gb")
 
     @property
     @pulumi.getter(name="cvmVlanId")
     def cvm_vlan_id(self) -> Optional[int]:
-        """
-        Vlan tag of the cvm, if the cvm is on a vlan.
-        """
         return pulumi.get(self, "cvm_vlan_id")
 
     @property
     @pulumi.getter(name="hardwareAttributesOverride")
     def hardware_attributes_override(self) -> Optional[Mapping[str, Any]]:
-        """
-        Hardware attributes override json for the node.
-        """
         return pulumi.get(self, "hardware_attributes_override")
 
     @property
     @pulumi.getter(name="hypervisorGateway")
     def hypervisor_gateway(self) -> Optional[str]:
-        """
-        Gateway of the hypervisor.
-        """
         return pulumi.get(self, "hypervisor_gateway")
 
     @property
     @pulumi.getter(name="hypervisorHostname")
     def hypervisor_hostname(self) -> Optional[str]:
-        """
-        Name to be set for the hypervisor host.
-        """
         return pulumi.get(self, "hypervisor_hostname")
 
     @property
     @pulumi.getter(name="hypervisorIp")
     def hypervisor_ip(self) -> Optional[str]:
-        """
-        IP address to be set for the hypervisor on the node.
-        """
         return pulumi.get(self, "hypervisor_ip")
 
     @property
     @pulumi.getter(name="hypervisorNetmask")
     def hypervisor_netmask(self) -> Optional[str]:
-        """
-        Netmask of the hypervisor.
-        """
         return pulumi.get(self, "hypervisor_netmask")
 
     @property
     @pulumi.getter(name="hypervisorType")
     def hypervisor_type(self) -> Optional[str]:
-        """
-        Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-        """
         return pulumi.get(self, "hypervisor_type")
 
     @property
     @pulumi.getter(name="imageNow")
     def image_now(self) -> Optional[bool]:
-        """
-        True, if the node should be imaged, False, otherwise.
-        """
         return pulumi.get(self, "image_now")
 
     @property
     @pulumi.getter(name="imagedNodeUuid")
     def imaged_node_uuid(self) -> Optional[str]:
-        """
-        UUID of the node.
-        """
         return pulumi.get(self, "imaged_node_uuid")
 
     @property
     @pulumi.getter(name="ipmiGateway")
     def ipmi_gateway(self) -> Optional[str]:
-        """
-        Gateway of the ipmi.
-        """
         return pulumi.get(self, "ipmi_gateway")
 
     @property
     @pulumi.getter(name="ipmiIp")
     def ipmi_ip(self) -> Optional[str]:
-        """
-        IP address to be set for the ipmi of the node.
-        """
         return pulumi.get(self, "ipmi_ip")
 
     @property
     @pulumi.getter(name="ipmiNetmask")
     def ipmi_netmask(self) -> Optional[str]:
-        """
-        Netmask of the ipmi.
-        """
         return pulumi.get(self, "ipmi_netmask")
 
     @property
     @pulumi.getter(name="rdmaPassthrough")
     def rdma_passthrough(self) -> Optional[bool]:
-        """
-        Passthrough RDMA nic to CVM if possible, default to false.
-        """
         return pulumi.get(self, "rdma_passthrough")
 
     @property
     @pulumi.getter(name="useExistingNetworkSettings")
     def use_existing_network_settings(self) -> Optional[bool]:
-        """
-        Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
-        """
         return pulumi.get(self, "use_existing_network_settings")
 
 
@@ -3173,9 +2937,6 @@ class FoundationImageNodesBlockNodeVswitch(dict):
                  name: Optional[str] = None,
                  other_configs: Optional[Sequence[str]] = None,
                  uplinks: Optional[Sequence[str]] = None):
-        """
-        :param str bond_mode: - (Required if node is capable) dynamic if using LACP, static for LAG
-        """
         if bond_mode is not None:
             pulumi.set(__self__, "bond_mode", bond_mode)
         if lacp is not None:
@@ -3192,9 +2953,6 @@ class FoundationImageNodesBlockNodeVswitch(dict):
     @property
     @pulumi.getter(name="bondMode")
     def bond_mode(self) -> Optional[str]:
-        """
-        - (Required if node is capable) dynamic if using LACP, static for LAG
-        """
         return pulumi.get(self, "bond_mode")
 
     @property
@@ -3462,9 +3220,6 @@ class FoundationImageNodesClusterUrl(dict):
     def __init__(__self__, *,
                  cluster_name: Optional[str] = None,
                  cluster_url: Optional[str] = None):
-        """
-        :param str cluster_name: - (Required) Name of the cluster.
-        """
         if cluster_name is not None:
             pulumi.set(__self__, "cluster_name", cluster_name)
         if cluster_url is not None:
@@ -3473,9 +3228,6 @@ class FoundationImageNodesClusterUrl(dict):
     @property
     @pulumi.getter(name="clusterName")
     def cluster_name(self) -> Optional[str]:
-        """
-        - (Required) Name of the cluster.
-        """
         return pulumi.get(self, "cluster_name")
 
     @property
@@ -3696,27 +3448,17 @@ class FoundationImageNodesHypervisorIsoEsx(dict):
     def __init__(__self__, *,
                  checksum: str,
                  filename: str):
-        """
-        :param str checksum: - (Required) Filename of hypervisor ISO.
-        :param str filename: - (Required) Checksum for ISO file.
-        """
         pulumi.set(__self__, "checksum", checksum)
         pulumi.set(__self__, "filename", filename)
 
     @property
     @pulumi.getter
     def checksum(self) -> str:
-        """
-        - (Required) Filename of hypervisor ISO.
-        """
         return pulumi.get(self, "checksum")
 
     @property
     @pulumi.getter
     def filename(self) -> str:
-        """
-        - (Required) Checksum for ISO file.
-        """
         return pulumi.get(self, "filename")
 
 
@@ -3725,27 +3467,17 @@ class FoundationImageNodesHypervisorIsoHyperv(dict):
     def __init__(__self__, *,
                  checksum: str,
                  filename: str):
-        """
-        :param str checksum: - (Required) Filename of hypervisor ISO.
-        :param str filename: - (Required) Checksum for ISO file.
-        """
         pulumi.set(__self__, "checksum", checksum)
         pulumi.set(__self__, "filename", filename)
 
     @property
     @pulumi.getter
     def checksum(self) -> str:
-        """
-        - (Required) Filename of hypervisor ISO.
-        """
         return pulumi.get(self, "checksum")
 
     @property
     @pulumi.getter
     def filename(self) -> str:
-        """
-        - (Required) Checksum for ISO file.
-        """
         return pulumi.get(self, "filename")
 
 
@@ -3754,27 +3486,17 @@ class FoundationImageNodesHypervisorIsoKvm(dict):
     def __init__(__self__, *,
                  checksum: str,
                  filename: str):
-        """
-        :param str checksum: - (Required) Filename of hypervisor ISO.
-        :param str filename: - (Required) Checksum for ISO file.
-        """
         pulumi.set(__self__, "checksum", checksum)
         pulumi.set(__self__, "filename", filename)
 
     @property
     @pulumi.getter
     def checksum(self) -> str:
-        """
-        - (Required) Filename of hypervisor ISO.
-        """
         return pulumi.get(self, "checksum")
 
     @property
     @pulumi.getter
     def filename(self) -> str:
-        """
-        - (Required) Checksum for ISO file.
-        """
         return pulumi.get(self, "filename")
 
 
@@ -3783,27 +3505,17 @@ class FoundationImageNodesHypervisorIsoXen(dict):
     def __init__(__self__, *,
                  checksum: str,
                  filename: str):
-        """
-        :param str checksum: - (Required) Filename of hypervisor ISO.
-        :param str filename: - (Required) Checksum for ISO file.
-        """
         pulumi.set(__self__, "checksum", checksum)
         pulumi.set(__self__, "filename", filename)
 
     @property
     @pulumi.getter
     def checksum(self) -> str:
-        """
-        - (Required) Filename of hypervisor ISO.
-        """
         return pulumi.get(self, "checksum")
 
     @property
     @pulumi.getter
     def filename(self) -> str:
-        """
-        - (Required) Checksum for ISO file.
-        """
         return pulumi.get(self, "filename")
 
 
@@ -4607,7 +4319,7 @@ class KarbonClusterMasterNodePool(dict):
                * `ahv_config.memory_mib`: - (Optional) Memory allocated for each VM on the PE cluster in MiB.
                * `ahv_config.network_uuid`: - (Required) The UUID of the network for the VMs deployed with this resource configuration.
                * `ahv_config.prism_element_cluster_uuid`: - (Required) The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
-        :param str name: - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+        :param str name: - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
         :param Sequence['KarbonClusterMasterNodePoolNodeArgs'] nodes: - List of the deployed nodes in the node pool.
                * `nodes.hostname`: - Hostname of the deployed node.
                * `nodes.ipv4_address`: - IP of the deployed node.
@@ -4654,7 +4366,7 @@ class KarbonClusterMasterNodePool(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+        - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
         """
         return pulumi.get(self, "name")
 
@@ -4991,7 +4703,7 @@ class KarbonClusterWorkerNodePool(dict):
                * `ahv_config.memory_mib`: - (Optional) Memory allocated for each VM on the PE cluster in MiB.
                * `ahv_config.network_uuid`: - (Required) The UUID of the network for the VMs deployed with this resource configuration.
                * `ahv_config.prism_element_cluster_uuid`: - (Required) The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
-        :param str name: - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+        :param str name: - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
         :param Sequence['KarbonClusterWorkerNodePoolNodeArgs'] nodes: - List of the deployed nodes in the node pool.
                * `nodes.hostname`: - Hostname of the deployed node.
                * `nodes.ipv4_address`: - IP of the deployed node.
@@ -5038,7 +4750,7 @@ class KarbonClusterWorkerNodePool(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
+        - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
         """
         return pulumi.get(self, "name")
 
@@ -9702,10 +9414,6 @@ class ServiceGroupServiceListIcmpTypeCodeList(dict):
     def __init__(__self__, *,
                  code: Optional[str] = None,
                  type: Optional[str] = None):
-        """
-        :param str code: - (Optional) Code as text
-        :param str type: - (Optional) Type as text
-        """
         if code is not None:
             pulumi.set(__self__, "code", code)
         if type is not None:
@@ -9714,17 +9422,11 @@ class ServiceGroupServiceListIcmpTypeCodeList(dict):
     @property
     @pulumi.getter
     def code(self) -> Optional[str]:
-        """
-        - (Optional) Code as text
-        """
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
-        """
-        - (Optional) Type as text
-        """
         return pulumi.get(self, "type")
 
 
@@ -9752,10 +9454,6 @@ class ServiceGroupServiceListTcpPortRangeList(dict):
     def __init__(__self__, *,
                  end_port: Optional[int] = None,
                  start_port: Optional[int] = None):
-        """
-        :param int end_port: End Port (Int)
-        :param int start_port: - (Optional) Start Port (Int)
-        """
         if end_port is not None:
             pulumi.set(__self__, "end_port", end_port)
         if start_port is not None:
@@ -9764,17 +9462,11 @@ class ServiceGroupServiceListTcpPortRangeList(dict):
     @property
     @pulumi.getter(name="endPort")
     def end_port(self) -> Optional[int]:
-        """
-        End Port (Int)
-        """
         return pulumi.get(self, "end_port")
 
     @property
     @pulumi.getter(name="startPort")
     def start_port(self) -> Optional[int]:
-        """
-        - (Optional) Start Port (Int)
-        """
         return pulumi.get(self, "start_port")
 
 
@@ -9802,10 +9494,6 @@ class ServiceGroupServiceListUdpPortRangeList(dict):
     def __init__(__self__, *,
                  end_port: Optional[int] = None,
                  start_port: Optional[int] = None):
-        """
-        :param int end_port: End Port (Int)
-        :param int start_port: - (Optional) Start Port (Int)
-        """
         if end_port is not None:
             pulumi.set(__self__, "end_port", end_port)
         if start_port is not None:
@@ -9814,17 +9502,11 @@ class ServiceGroupServiceListUdpPortRangeList(dict):
     @property
     @pulumi.getter(name="endPort")
     def end_port(self) -> Optional[int]:
-        """
-        End Port (Int)
-        """
         return pulumi.get(self, "end_port")
 
     @property
     @pulumi.getter(name="startPort")
     def start_port(self) -> Optional[int]:
-        """
-        - (Optional) Start Port (Int)
-        """
         return pulumi.get(self, "start_port")
 
 
@@ -10530,7 +10212,7 @@ class VirtualMachineDiskListStorageConfigStorageContainerReference(dict):
         """
         :param str kind: - The kind name (Default value: project)(Required).
         :param str name: - (Required) The name for the vm.
-        :param str uuid: - (Optional) The device ID which is used to uniquely identify this particular disk.
+        :param str uuid: - the UUID(Required).
         """
         if kind is not None:
             pulumi.set(__self__, "kind", kind)
@@ -10566,7 +10248,7 @@ class VirtualMachineDiskListStorageConfigStorageContainerReference(dict):
     @pulumi.getter
     def uuid(self) -> Optional[str]:
         """
-        - (Optional) The device ID which is used to uniquely identify this particular disk.
+        - the UUID(Required).
         """
         return pulumi.get(self, "uuid")
 
@@ -10772,7 +10454,6 @@ class VirtualMachineNicList(dict):
                  uuid: Optional[str] = None):
         """
         :param Sequence['VirtualMachineNicListIpEndpointListArgs'] ip_endpoint_lists: - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
-        :param str is_connected: - Indicates whether the serial port connection is connected or not (`true` or `false`).
         :param str mac_address: - The MAC address for the adapter.
         :param str model: - The model of this NIC. (Options : VIRTIO , E1000).
         :param Mapping[str, str] network_function_chain_reference: - The reference to a network_function_chain.
@@ -10817,9 +10498,6 @@ class VirtualMachineNicList(dict):
     @property
     @pulumi.getter(name="isConnected")
     def is_connected(self) -> Optional[str]:
-        """
-        - Indicates whether the serial port connection is connected or not (`true` or `false`).
-        """
         return pulumi.get(self, "is_connected")
 
     @property
@@ -10977,18 +10655,7 @@ class VirtualMachineNicListStatus(dict):
                  subnet_uuid: Optional[str] = None,
                  uuid: Optional[str] = None):
         """
-        :param str floating_ip: -  The Floating IP associated with the vnic. (Only in `nic_list_status`)
-        :param Sequence['VirtualMachineNicListStatusIpEndpointListArgs'] ip_endpoint_lists: - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
-        :param str is_connected: - Indicates whether the serial port connection is connected or not (`true` or `false`).
-        :param str mac_address: - The MAC address for the adapter.
-        :param str model: - The model of this NIC. (Options : VIRTIO , E1000).
-        :param Mapping[str, str] network_function_chain_reference: - The reference to a network_function_chain.
-        :param str network_function_nic_type: - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
-        :param str nic_type: - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
-        :param int num_queues: - The number of tx/rx queue pairs for this NIC.
-        :param str subnet_name: - The name of the subnet reference to.
-        :param str subnet_uuid: - The reference to a subnet.
-        :param str uuid: - (Optional) The device ID which is used to uniquely identify this particular disk.
+        :param str uuid: - the UUID(Required).
         """
         if floating_ip is not None:
             pulumi.set(__self__, "floating_ip", floating_ip)
@@ -11018,96 +10685,63 @@ class VirtualMachineNicListStatus(dict):
     @property
     @pulumi.getter(name="floatingIp")
     def floating_ip(self) -> Optional[str]:
-        """
-        -  The Floating IP associated with the vnic. (Only in `nic_list_status`)
-        """
         return pulumi.get(self, "floating_ip")
 
     @property
     @pulumi.getter(name="ipEndpointLists")
     def ip_endpoint_lists(self) -> Optional[Sequence['outputs.VirtualMachineNicListStatusIpEndpointList']]:
-        """
-        - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
-        """
         return pulumi.get(self, "ip_endpoint_lists")
 
     @property
     @pulumi.getter(name="isConnected")
     def is_connected(self) -> Optional[str]:
-        """
-        - Indicates whether the serial port connection is connected or not (`true` or `false`).
-        """
         return pulumi.get(self, "is_connected")
 
     @property
     @pulumi.getter(name="macAddress")
     def mac_address(self) -> Optional[str]:
-        """
-        - The MAC address for the adapter.
-        """
         return pulumi.get(self, "mac_address")
 
     @property
     @pulumi.getter
     def model(self) -> Optional[str]:
-        """
-        - The model of this NIC. (Options : VIRTIO , E1000).
-        """
         return pulumi.get(self, "model")
 
     @property
     @pulumi.getter(name="networkFunctionChainReference")
     def network_function_chain_reference(self) -> Optional[Mapping[str, str]]:
-        """
-        - The reference to a network_function_chain.
-        """
         return pulumi.get(self, "network_function_chain_reference")
 
     @property
     @pulumi.getter(name="networkFunctionNicType")
     def network_function_nic_type(self) -> Optional[str]:
-        """
-        - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
-        """
         return pulumi.get(self, "network_function_nic_type")
 
     @property
     @pulumi.getter(name="nicType")
     def nic_type(self) -> Optional[str]:
-        """
-        - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
-        """
         return pulumi.get(self, "nic_type")
 
     @property
     @pulumi.getter(name="numQueues")
     def num_queues(self) -> Optional[int]:
-        """
-        - The number of tx/rx queue pairs for this NIC.
-        """
         return pulumi.get(self, "num_queues")
 
     @property
     @pulumi.getter(name="subnetName")
     def subnet_name(self) -> Optional[str]:
-        """
-        - The name of the subnet reference to.
-        """
         return pulumi.get(self, "subnet_name")
 
     @property
     @pulumi.getter(name="subnetUuid")
     def subnet_uuid(self) -> Optional[str]:
-        """
-        - The reference to a subnet.
-        """
         return pulumi.get(self, "subnet_uuid")
 
     @property
     @pulumi.getter
     def uuid(self) -> Optional[str]:
         """
-        - (Optional) The device ID which is used to uniquely identify this particular disk.
+        - the UUID(Required).
         """
         return pulumi.get(self, "uuid")
 
@@ -12849,7 +12483,7 @@ class GetClustersEntityResult(dict):
         :param str masquerading_ip: - The cluster NAT'd or proxy IP which maps to the cluster local IP.
         :param int masquerading_port: - Port used together with masquerading_ip to connect to the cluster.
         :param Mapping[str, str] metadata: - The image kind metadata.
-        :param str name: - the key name.
+        :param str name: -  The name for the image.
         :param Sequence[str] name_server_ip_lists: - The list of IP addresses of the name servers.
         :param Sequence[str] nfs_subnet_whitelists: - Comma separated list of subnets (of the form 'a.b.c.d/l.m.n.o') that are allowed to send NFS requests to this container. If not specified, the global NFS whitelist will be looked up for access permission. The internal subnet is always automatically considered part of the whitelist, even if the field below does not explicitly specify it. Similarly, all the hypervisor IPs are considered part of the whitelist. Finally, to permit debugging, all of the SVMs local IPs are considered to be implicitly part of the whitelist.
         :param Sequence[str] ntp_server_ip_lists: - The list of IP addresses or FQDNs of the NTP servers.
@@ -13130,7 +12764,7 @@ class GetClustersEntityResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        - the key name.
+        -  The name for the image.
         """
         return pulumi.get(self, "name")
 
@@ -13311,7 +12945,7 @@ class GetClustersEntityAuthorizedPublicKeyListResult(dict):
                  key: str,
                  name: str):
         """
-        :param str name: - the key name.
+        :param str name: -  The name for the image.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "name", name)
@@ -13325,7 +12959,7 @@ class GetClustersEntityAuthorizedPublicKeyListResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        - the key name.
+        -  The name for the image.
         """
         return pulumi.get(self, "name")
 
@@ -16003,8 +15637,8 @@ class GetHostGpuListResult(dict):
                  uuid: str,
                  vendor: str):
         """
-        :param str name: - the key name.
-        :param str uuid: - image uuid.
+        :param str name: - the name.
+        :param str uuid: - the uuid.
         """
         pulumi.set(__self__, "assignable", assignable)
         pulumi.set(__self__, "consumer_reference", consumer_reference)
@@ -16079,7 +15713,7 @@ class GetHostGpuListResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        - the key name.
+        - the name.
         """
         return pulumi.get(self, "name")
 
@@ -16112,7 +15746,7 @@ class GetHostGpuListResult(dict):
     @pulumi.getter
     def uuid(self) -> str:
         """
-        - image uuid.
+        - the uuid.
         """
         return pulumi.get(self, "uuid")
 
@@ -16130,8 +15764,8 @@ class GetHostHostDisksReferenceListResult(dict):
                  uuid: str):
         """
         :param str kind: - The kind name (Default value: project).
-        :param str name: - the key name.
-        :param str uuid: - image uuid.
+        :param str name: - the name.
+        :param str uuid: - the uuid.
         """
         pulumi.set(__self__, "kind", kind)
         pulumi.set(__self__, "name", name)
@@ -16149,7 +15783,7 @@ class GetHostHostDisksReferenceListResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        - the key name.
+        - the name.
         """
         return pulumi.get(self, "name")
 
@@ -16157,7 +15791,7 @@ class GetHostHostDisksReferenceListResult(dict):
     @pulumi.getter
     def uuid(self) -> str:
         """
-        - image uuid.
+        - the uuid.
         """
         return pulumi.get(self, "uuid")
 
@@ -16776,16 +16410,9 @@ class GetKarbonClusterEtcdNodePoolResult(dict):
                  num_instances: int):
         """
         :param Sequence['GetKarbonClusterEtcdNodePoolAhvConfigArgs'] ahv_configs: - VM configuration in AHV.
-               * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-               * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-               * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-               * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-               * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
         :param str name: - Unique name of the node pool.
         :param str node_os_version: - The version of the node OS image.
         :param Sequence['GetKarbonClusterEtcdNodePoolNodeArgs'] nodes: - List of the deployed nodes in the node pool.
-               * `nodes.hostname`: - Hostname of the deployed node.
-               * `nodes.ipv4_address`: - IP of the deployed node.
         :param int num_instances: - Number of nodes in the node pool.
         """
         pulumi.set(__self__, "ahv_configs", ahv_configs)
@@ -16799,11 +16426,6 @@ class GetKarbonClusterEtcdNodePoolResult(dict):
     def ahv_configs(self) -> Sequence['outputs.GetKarbonClusterEtcdNodePoolAhvConfigResult']:
         """
         - VM configuration in AHV.
-        * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-        * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-        * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-        * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-        * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
         """
         return pulumi.get(self, "ahv_configs")
 
@@ -16828,8 +16450,6 @@ class GetKarbonClusterEtcdNodePoolResult(dict):
     def nodes(self) -> Sequence['outputs.GetKarbonClusterEtcdNodePoolNodeResult']:
         """
         - List of the deployed nodes in the node pool.
-        * `nodes.hostname`: - Hostname of the deployed node.
-        * `nodes.ipv4_address`: - IP of the deployed node.
         """
         return pulumi.get(self, "nodes")
 
@@ -16850,6 +16470,13 @@ class GetKarbonClusterEtcdNodePoolAhvConfigResult(dict):
                  memory_mib: int,
                  network_uuid: str,
                  prism_element_cluster_uuid: str):
+        """
+        :param int cpu: - The number of VCPUs allocated for each VM on the PE cluster.
+        :param int disk_mib: - Size of local storage for each VM on the PE cluster in MiB.
+        :param int memory_mib: - Memory allocated for each VM on the PE cluster in MiB.
+        :param str network_uuid: - The UUID of the network for the VMs deployed with this resource configuration.
+        :param str prism_element_cluster_uuid: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        """
         pulumi.set(__self__, "cpu", cpu)
         pulumi.set(__self__, "disk_mib", disk_mib)
         pulumi.set(__self__, "memory_mib", memory_mib)
@@ -16859,26 +16486,41 @@ class GetKarbonClusterEtcdNodePoolAhvConfigResult(dict):
     @property
     @pulumi.getter
     def cpu(self) -> int:
+        """
+        - The number of VCPUs allocated for each VM on the PE cluster.
+        """
         return pulumi.get(self, "cpu")
 
     @property
     @pulumi.getter(name="diskMib")
     def disk_mib(self) -> int:
+        """
+        - Size of local storage for each VM on the PE cluster in MiB.
+        """
         return pulumi.get(self, "disk_mib")
 
     @property
     @pulumi.getter(name="memoryMib")
     def memory_mib(self) -> int:
+        """
+        - Memory allocated for each VM on the PE cluster in MiB.
+        """
         return pulumi.get(self, "memory_mib")
 
     @property
     @pulumi.getter(name="networkUuid")
     def network_uuid(self) -> str:
+        """
+        - The UUID of the network for the VMs deployed with this resource configuration.
+        """
         return pulumi.get(self, "network_uuid")
 
     @property
     @pulumi.getter(name="prismElementClusterUuid")
     def prism_element_cluster_uuid(self) -> str:
+        """
+        - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        """
         return pulumi.get(self, "prism_element_cluster_uuid")
 
 
@@ -16887,17 +16529,27 @@ class GetKarbonClusterEtcdNodePoolNodeResult(dict):
     def __init__(__self__, *,
                  hostname: str,
                  ipv4_address: str):
+        """
+        :param str hostname: - Hostname of the deployed node.
+        :param str ipv4_address: - IP of the deployed node.
+        """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ipv4_address", ipv4_address)
 
     @property
     @pulumi.getter
     def hostname(self) -> str:
+        """
+        - Hostname of the deployed node.
+        """
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter(name="ipv4Address")
     def ipv4_address(self) -> str:
+        """
+        - IP of the deployed node.
+        """
         return pulumi.get(self, "ipv4_address")
 
 
@@ -16911,16 +16563,9 @@ class GetKarbonClusterMasterNodePoolResult(dict):
                  num_instances: int):
         """
         :param Sequence['GetKarbonClusterMasterNodePoolAhvConfigArgs'] ahv_configs: - VM configuration in AHV.
-               * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-               * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-               * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-               * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-               * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
         :param str name: - Unique name of the node pool.
         :param str node_os_version: - The version of the node OS image.
         :param Sequence['GetKarbonClusterMasterNodePoolNodeArgs'] nodes: - List of the deployed nodes in the node pool.
-               * `nodes.hostname`: - Hostname of the deployed node.
-               * `nodes.ipv4_address`: - IP of the deployed node.
         :param int num_instances: - Number of nodes in the node pool.
         """
         pulumi.set(__self__, "ahv_configs", ahv_configs)
@@ -16934,11 +16579,6 @@ class GetKarbonClusterMasterNodePoolResult(dict):
     def ahv_configs(self) -> Sequence['outputs.GetKarbonClusterMasterNodePoolAhvConfigResult']:
         """
         - VM configuration in AHV.
-        * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-        * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-        * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-        * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-        * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
         """
         return pulumi.get(self, "ahv_configs")
 
@@ -16963,8 +16603,6 @@ class GetKarbonClusterMasterNodePoolResult(dict):
     def nodes(self) -> Sequence['outputs.GetKarbonClusterMasterNodePoolNodeResult']:
         """
         - List of the deployed nodes in the node pool.
-        * `nodes.hostname`: - Hostname of the deployed node.
-        * `nodes.ipv4_address`: - IP of the deployed node.
         """
         return pulumi.get(self, "nodes")
 
@@ -16985,6 +16623,13 @@ class GetKarbonClusterMasterNodePoolAhvConfigResult(dict):
                  memory_mib: int,
                  network_uuid: str,
                  prism_element_cluster_uuid: str):
+        """
+        :param int cpu: - The number of VCPUs allocated for each VM on the PE cluster.
+        :param int disk_mib: - Size of local storage for each VM on the PE cluster in MiB.
+        :param int memory_mib: - Memory allocated for each VM on the PE cluster in MiB.
+        :param str network_uuid: - The UUID of the network for the VMs deployed with this resource configuration.
+        :param str prism_element_cluster_uuid: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        """
         pulumi.set(__self__, "cpu", cpu)
         pulumi.set(__self__, "disk_mib", disk_mib)
         pulumi.set(__self__, "memory_mib", memory_mib)
@@ -16994,26 +16639,41 @@ class GetKarbonClusterMasterNodePoolAhvConfigResult(dict):
     @property
     @pulumi.getter
     def cpu(self) -> int:
+        """
+        - The number of VCPUs allocated for each VM on the PE cluster.
+        """
         return pulumi.get(self, "cpu")
 
     @property
     @pulumi.getter(name="diskMib")
     def disk_mib(self) -> int:
+        """
+        - Size of local storage for each VM on the PE cluster in MiB.
+        """
         return pulumi.get(self, "disk_mib")
 
     @property
     @pulumi.getter(name="memoryMib")
     def memory_mib(self) -> int:
+        """
+        - Memory allocated for each VM on the PE cluster in MiB.
+        """
         return pulumi.get(self, "memory_mib")
 
     @property
     @pulumi.getter(name="networkUuid")
     def network_uuid(self) -> str:
+        """
+        - The UUID of the network for the VMs deployed with this resource configuration.
+        """
         return pulumi.get(self, "network_uuid")
 
     @property
     @pulumi.getter(name="prismElementClusterUuid")
     def prism_element_cluster_uuid(self) -> str:
+        """
+        - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        """
         return pulumi.get(self, "prism_element_cluster_uuid")
 
 
@@ -17022,17 +16682,27 @@ class GetKarbonClusterMasterNodePoolNodeResult(dict):
     def __init__(__self__, *,
                  hostname: str,
                  ipv4_address: str):
+        """
+        :param str hostname: - Hostname of the deployed node.
+        :param str ipv4_address: - IP of the deployed node.
+        """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ipv4_address", ipv4_address)
 
     @property
     @pulumi.getter
     def hostname(self) -> str:
+        """
+        - Hostname of the deployed node.
+        """
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter(name="ipv4Address")
     def ipv4_address(self) -> str:
+        """
+        - IP of the deployed node.
+        """
         return pulumi.get(self, "ipv4_address")
 
 
@@ -17046,16 +16716,9 @@ class GetKarbonClusterWorkerNodePoolResult(dict):
                  num_instances: int):
         """
         :param Sequence['GetKarbonClusterWorkerNodePoolAhvConfigArgs'] ahv_configs: - VM configuration in AHV.
-               * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-               * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-               * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-               * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-               * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
         :param str name: - Unique name of the node pool.
         :param str node_os_version: - The version of the node OS image.
         :param Sequence['GetKarbonClusterWorkerNodePoolNodeArgs'] nodes: - List of the deployed nodes in the node pool.
-               * `nodes.hostname`: - Hostname of the deployed node.
-               * `nodes.ipv4_address`: - IP of the deployed node.
         :param int num_instances: - Number of nodes in the node pool.
         """
         pulumi.set(__self__, "ahv_configs", ahv_configs)
@@ -17069,11 +16732,6 @@ class GetKarbonClusterWorkerNodePoolResult(dict):
     def ahv_configs(self) -> Sequence['outputs.GetKarbonClusterWorkerNodePoolAhvConfigResult']:
         """
         - VM configuration in AHV.
-        * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-        * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-        * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-        * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-        * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
         """
         return pulumi.get(self, "ahv_configs")
 
@@ -17098,8 +16756,6 @@ class GetKarbonClusterWorkerNodePoolResult(dict):
     def nodes(self) -> Sequence['outputs.GetKarbonClusterWorkerNodePoolNodeResult']:
         """
         - List of the deployed nodes in the node pool.
-        * `nodes.hostname`: - Hostname of the deployed node.
-        * `nodes.ipv4_address`: - IP of the deployed node.
         """
         return pulumi.get(self, "nodes")
 
@@ -17120,6 +16776,13 @@ class GetKarbonClusterWorkerNodePoolAhvConfigResult(dict):
                  memory_mib: int,
                  network_uuid: str,
                  prism_element_cluster_uuid: str):
+        """
+        :param int cpu: - The number of VCPUs allocated for each VM on the PE cluster.
+        :param int disk_mib: - Size of local storage for each VM on the PE cluster in MiB.
+        :param int memory_mib: - Memory allocated for each VM on the PE cluster in MiB.
+        :param str network_uuid: - The UUID of the network for the VMs deployed with this resource configuration.
+        :param str prism_element_cluster_uuid: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        """
         pulumi.set(__self__, "cpu", cpu)
         pulumi.set(__self__, "disk_mib", disk_mib)
         pulumi.set(__self__, "memory_mib", memory_mib)
@@ -17129,26 +16792,41 @@ class GetKarbonClusterWorkerNodePoolAhvConfigResult(dict):
     @property
     @pulumi.getter
     def cpu(self) -> int:
+        """
+        - The number of VCPUs allocated for each VM on the PE cluster.
+        """
         return pulumi.get(self, "cpu")
 
     @property
     @pulumi.getter(name="diskMib")
     def disk_mib(self) -> int:
+        """
+        - Size of local storage for each VM on the PE cluster in MiB.
+        """
         return pulumi.get(self, "disk_mib")
 
     @property
     @pulumi.getter(name="memoryMib")
     def memory_mib(self) -> int:
+        """
+        - Memory allocated for each VM on the PE cluster in MiB.
+        """
         return pulumi.get(self, "memory_mib")
 
     @property
     @pulumi.getter(name="networkUuid")
     def network_uuid(self) -> str:
+        """
+        - The UUID of the network for the VMs deployed with this resource configuration.
+        """
         return pulumi.get(self, "network_uuid")
 
     @property
     @pulumi.getter(name="prismElementClusterUuid")
     def prism_element_cluster_uuid(self) -> str:
+        """
+        - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        """
         return pulumi.get(self, "prism_element_cluster_uuid")
 
 
@@ -17157,17 +16835,27 @@ class GetKarbonClusterWorkerNodePoolNodeResult(dict):
     def __init__(__self__, *,
                  hostname: str,
                  ipv4_address: str):
+        """
+        :param str hostname: - Hostname of the deployed node.
+        :param str ipv4_address: - IP of the deployed node.
+        """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ipv4_address", ipv4_address)
 
     @property
     @pulumi.getter
     def hostname(self) -> str:
+        """
+        - Hostname of the deployed node.
+        """
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter(name="ipv4Address")
     def ipv4_address(self) -> str:
+        """
+        - IP of the deployed node.
+        """
         return pulumi.get(self, "ipv4_address")
 
 
@@ -17267,15 +16955,8 @@ class GetKarbonClustersClusterEtcdNodePoolResult(dict):
                  num_instances: int):
         """
         :param Sequence['GetKarbonClustersClusterEtcdNodePoolAhvConfigArgs'] ahv_configs: - .
-               * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-               * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-               * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-               * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-               * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
         :param str name: - Unique name of the node pool.
         :param str node_os_version: - The version of the node OS image.
-        :param Sequence['GetKarbonClustersClusterEtcdNodePoolNodeArgs'] nodes: * `nodes.hostname`
-               * `nodes.ipv4_address`
         :param int num_instances: - Number of nodes in the node pool.
         """
         pulumi.set(__self__, "ahv_configs", ahv_configs)
@@ -17289,11 +16970,6 @@ class GetKarbonClustersClusterEtcdNodePoolResult(dict):
     def ahv_configs(self) -> Sequence['outputs.GetKarbonClustersClusterEtcdNodePoolAhvConfigResult']:
         """
         - .
-        * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-        * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-        * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-        * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-        * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
         """
         return pulumi.get(self, "ahv_configs")
 
@@ -17316,10 +16992,6 @@ class GetKarbonClustersClusterEtcdNodePoolResult(dict):
     @property
     @pulumi.getter
     def nodes(self) -> Sequence['outputs.GetKarbonClustersClusterEtcdNodePoolNodeResult']:
-        """
-        * `nodes.hostname`
-        * `nodes.ipv4_address`
-        """
         return pulumi.get(self, "nodes")
 
     @property
@@ -17339,6 +17011,13 @@ class GetKarbonClustersClusterEtcdNodePoolAhvConfigResult(dict):
                  memory_mib: int,
                  network_uuid: str,
                  prism_element_cluster_uuid: str):
+        """
+        :param int cpu: - The number of VCPUs allocated for each VM on the PE cluster.
+        :param int disk_mib: - Size of local storage for each VM on the PE cluster in MiB.
+        :param int memory_mib: - Memory allocated for each VM on the PE cluster in MiB.
+        :param str network_uuid: - The UUID of the network for the VMs deployed with this resource configuration.
+        :param str prism_element_cluster_uuid: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        """
         pulumi.set(__self__, "cpu", cpu)
         pulumi.set(__self__, "disk_mib", disk_mib)
         pulumi.set(__self__, "memory_mib", memory_mib)
@@ -17348,26 +17027,41 @@ class GetKarbonClustersClusterEtcdNodePoolAhvConfigResult(dict):
     @property
     @pulumi.getter
     def cpu(self) -> int:
+        """
+        - The number of VCPUs allocated for each VM on the PE cluster.
+        """
         return pulumi.get(self, "cpu")
 
     @property
     @pulumi.getter(name="diskMib")
     def disk_mib(self) -> int:
+        """
+        - Size of local storage for each VM on the PE cluster in MiB.
+        """
         return pulumi.get(self, "disk_mib")
 
     @property
     @pulumi.getter(name="memoryMib")
     def memory_mib(self) -> int:
+        """
+        - Memory allocated for each VM on the PE cluster in MiB.
+        """
         return pulumi.get(self, "memory_mib")
 
     @property
     @pulumi.getter(name="networkUuid")
     def network_uuid(self) -> str:
+        """
+        - The UUID of the network for the VMs deployed with this resource configuration.
+        """
         return pulumi.get(self, "network_uuid")
 
     @property
     @pulumi.getter(name="prismElementClusterUuid")
     def prism_element_cluster_uuid(self) -> str:
+        """
+        - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        """
         return pulumi.get(self, "prism_element_cluster_uuid")
 
 
@@ -17400,15 +17094,8 @@ class GetKarbonClustersClusterMasterNodePoolResult(dict):
                  num_instances: int):
         """
         :param Sequence['GetKarbonClustersClusterMasterNodePoolAhvConfigArgs'] ahv_configs: - .
-               * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-               * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-               * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-               * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-               * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
         :param str name: - Unique name of the node pool.
         :param str node_os_version: - The version of the node OS image.
-        :param Sequence['GetKarbonClustersClusterMasterNodePoolNodeArgs'] nodes: * `nodes.hostname`
-               * `nodes.ipv4_address`
         :param int num_instances: - Number of nodes in the node pool.
         """
         pulumi.set(__self__, "ahv_configs", ahv_configs)
@@ -17422,11 +17109,6 @@ class GetKarbonClustersClusterMasterNodePoolResult(dict):
     def ahv_configs(self) -> Sequence['outputs.GetKarbonClustersClusterMasterNodePoolAhvConfigResult']:
         """
         - .
-        * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-        * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-        * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-        * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-        * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
         """
         return pulumi.get(self, "ahv_configs")
 
@@ -17449,10 +17131,6 @@ class GetKarbonClustersClusterMasterNodePoolResult(dict):
     @property
     @pulumi.getter
     def nodes(self) -> Sequence['outputs.GetKarbonClustersClusterMasterNodePoolNodeResult']:
-        """
-        * `nodes.hostname`
-        * `nodes.ipv4_address`
-        """
         return pulumi.get(self, "nodes")
 
     @property
@@ -17472,6 +17150,13 @@ class GetKarbonClustersClusterMasterNodePoolAhvConfigResult(dict):
                  memory_mib: int,
                  network_uuid: str,
                  prism_element_cluster_uuid: str):
+        """
+        :param int cpu: - The number of VCPUs allocated for each VM on the PE cluster.
+        :param int disk_mib: - Size of local storage for each VM on the PE cluster in MiB.
+        :param int memory_mib: - Memory allocated for each VM on the PE cluster in MiB.
+        :param str network_uuid: - The UUID of the network for the VMs deployed with this resource configuration.
+        :param str prism_element_cluster_uuid: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        """
         pulumi.set(__self__, "cpu", cpu)
         pulumi.set(__self__, "disk_mib", disk_mib)
         pulumi.set(__self__, "memory_mib", memory_mib)
@@ -17481,26 +17166,41 @@ class GetKarbonClustersClusterMasterNodePoolAhvConfigResult(dict):
     @property
     @pulumi.getter
     def cpu(self) -> int:
+        """
+        - The number of VCPUs allocated for each VM on the PE cluster.
+        """
         return pulumi.get(self, "cpu")
 
     @property
     @pulumi.getter(name="diskMib")
     def disk_mib(self) -> int:
+        """
+        - Size of local storage for each VM on the PE cluster in MiB.
+        """
         return pulumi.get(self, "disk_mib")
 
     @property
     @pulumi.getter(name="memoryMib")
     def memory_mib(self) -> int:
+        """
+        - Memory allocated for each VM on the PE cluster in MiB.
+        """
         return pulumi.get(self, "memory_mib")
 
     @property
     @pulumi.getter(name="networkUuid")
     def network_uuid(self) -> str:
+        """
+        - The UUID of the network for the VMs deployed with this resource configuration.
+        """
         return pulumi.get(self, "network_uuid")
 
     @property
     @pulumi.getter(name="prismElementClusterUuid")
     def prism_element_cluster_uuid(self) -> str:
+        """
+        - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        """
         return pulumi.get(self, "prism_element_cluster_uuid")
 
 
@@ -17533,15 +17233,8 @@ class GetKarbonClustersClusterWorkerNodePoolResult(dict):
                  num_instances: int):
         """
         :param Sequence['GetKarbonClustersClusterWorkerNodePoolAhvConfigArgs'] ahv_configs: - .
-               * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-               * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-               * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-               * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-               * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
         :param str name: - Unique name of the node pool.
         :param str node_os_version: - The version of the node OS image.
-        :param Sequence['GetKarbonClustersClusterWorkerNodePoolNodeArgs'] nodes: * `nodes.hostname`
-               * `nodes.ipv4_address`
         :param int num_instances: - Number of nodes in the node pool.
         """
         pulumi.set(__self__, "ahv_configs", ahv_configs)
@@ -17555,11 +17248,6 @@ class GetKarbonClustersClusterWorkerNodePoolResult(dict):
     def ahv_configs(self) -> Sequence['outputs.GetKarbonClustersClusterWorkerNodePoolAhvConfigResult']:
         """
         - .
-        * `ahv_config.cpu`: - The number of VCPUs allocated for each VM on the PE cluster.
-        * `ahv_config.disk_mib`: - Size of local storage for each VM on the PE cluster in MiB.
-        * `ahv_config.memory_mib`: - Memory allocated for each VM on the PE cluster in MiB.
-        * `ahv_config.network_uuid`: - The UUID of the network for the VMs deployed with this resource configuration.
-        * `ahv_config.prism_element_cluster_uuid`: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
         """
         return pulumi.get(self, "ahv_configs")
 
@@ -17582,10 +17270,6 @@ class GetKarbonClustersClusterWorkerNodePoolResult(dict):
     @property
     @pulumi.getter
     def nodes(self) -> Sequence['outputs.GetKarbonClustersClusterWorkerNodePoolNodeResult']:
-        """
-        * `nodes.hostname`
-        * `nodes.ipv4_address`
-        """
         return pulumi.get(self, "nodes")
 
     @property
@@ -17605,6 +17289,13 @@ class GetKarbonClustersClusterWorkerNodePoolAhvConfigResult(dict):
                  memory_mib: int,
                  network_uuid: str,
                  prism_element_cluster_uuid: str):
+        """
+        :param int cpu: - The number of VCPUs allocated for each VM on the PE cluster.
+        :param int disk_mib: - Size of local storage for each VM on the PE cluster in MiB.
+        :param int memory_mib: - Memory allocated for each VM on the PE cluster in MiB.
+        :param str network_uuid: - The UUID of the network for the VMs deployed with this resource configuration.
+        :param str prism_element_cluster_uuid: - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        """
         pulumi.set(__self__, "cpu", cpu)
         pulumi.set(__self__, "disk_mib", disk_mib)
         pulumi.set(__self__, "memory_mib", memory_mib)
@@ -17614,26 +17305,41 @@ class GetKarbonClustersClusterWorkerNodePoolAhvConfigResult(dict):
     @property
     @pulumi.getter
     def cpu(self) -> int:
+        """
+        - The number of VCPUs allocated for each VM on the PE cluster.
+        """
         return pulumi.get(self, "cpu")
 
     @property
     @pulumi.getter(name="diskMib")
     def disk_mib(self) -> int:
+        """
+        - Size of local storage for each VM on the PE cluster in MiB.
+        """
         return pulumi.get(self, "disk_mib")
 
     @property
     @pulumi.getter(name="memoryMib")
     def memory_mib(self) -> int:
+        """
+        - Memory allocated for each VM on the PE cluster in MiB.
+        """
         return pulumi.get(self, "memory_mib")
 
     @property
     @pulumi.getter(name="networkUuid")
     def network_uuid(self) -> str:
+        """
+        - The UUID of the network for the VMs deployed with this resource configuration.
+        """
         return pulumi.get(self, "network_uuid")
 
     @property
     @pulumi.getter(name="prismElementClusterUuid")
     def prism_element_cluster_uuid(self) -> str:
+        """
+        - The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        """
         return pulumi.get(self, "prism_element_cluster_uuid")
 
 
@@ -21587,11 +21293,25 @@ class GetProjectExternalUserGroupReferenceListResult(dict):
 class GetProjectResourceDomainResult(dict):
     def __init__(__self__, *,
                  resources: Sequence['outputs.GetProjectResourceDomainResourceResult']):
+        """
+        :param Sequence['GetProjectResourceDomainResourceArgs'] resources: Array of the utilization/limit for resource types
+               * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+               * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+               * `resource_domain.resources.#.units` - The units of the resource type
+               * `resource_domain.resources.#.value` - The amount of resource consumed
+        """
         pulumi.set(__self__, "resources", resources)
 
     @property
     @pulumi.getter
     def resources(self) -> Sequence['outputs.GetProjectResourceDomainResourceResult']:
+        """
+        Array of the utilization/limit for resource types
+        * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+        * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+        * `resource_domain.resources.#.units` - The units of the resource type
+        * `resource_domain.resources.#.value` - The amount of resource consumed
+        """
         return pulumi.get(self, "resources")
 
 
@@ -21741,9 +21461,6 @@ class GetProjectsEntityResult(dict):
                * `account_reference_list.#.name` - The name of an account.
         :param str api_version: version of the API
         :param Mapping[str, str] default_subnet_reference: Reference to a subnet.
-               * `default_subnet_reference.kind` - The kind name. Default value is `subnet`
-               * `default_subnet_reference.uuid` - The UUID of a subnet.
-               * `default_subnet_reference.name` - The name of a subnet.
         :param str description: A description for project.
         :param Sequence['GetProjectsEntityEnvironmentReferenceListArgs'] environment_reference_lists: List of environments associated with the project.
                * `environment_reference_list.#.kind` - The kind name. Default value is `environment`
@@ -21758,11 +21475,6 @@ class GetProjectsEntityResult(dict):
                * `external_user_group_reference_list.#.name` - The name of a user_group
         :param str name: (Optional) the name.
         :param Sequence['GetProjectsEntityResourceDomainArgs'] resource_domains: The status for a resource domain (limits and values)
-               * `resource_domain.resources` Array of the utilization/limit for resource types
-               * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
-               * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
-               * `resource_domain.resources.#.units` - The units of the resource type
-               * `resource_domain.resources.#.value` - The amount of resource consumed
         :param Sequence['GetProjectsEntitySubnetReferenceListArgs'] subnet_reference_lists: List of subnets for the project.
                * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
                * `subnet_reference_list.#.uuid` - The UUID of a subnet
@@ -21819,9 +21531,6 @@ class GetProjectsEntityResult(dict):
     def default_subnet_reference(self) -> Mapping[str, str]:
         """
         Reference to a subnet.
-        * `default_subnet_reference.kind` - The kind name. Default value is `subnet`
-        * `default_subnet_reference.uuid` - The UUID of a subnet.
-        * `default_subnet_reference.name` - The name of a subnet.
         """
         return pulumi.get(self, "default_subnet_reference")
 
@@ -21898,11 +21607,6 @@ class GetProjectsEntityResult(dict):
     def resource_domains(self) -> Sequence['outputs.GetProjectsEntityResourceDomainResult']:
         """
         The status for a resource domain (limits and values)
-        * `resource_domain.resources` Array of the utilization/limit for resource types
-        * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
-        * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
-        * `resource_domain.resources.#.units` - The units of the resource type
-        * `resource_domain.resources.#.value` - The amount of resource consumed
         """
         return pulumi.get(self, "resource_domains")
 
@@ -22116,11 +21820,25 @@ class GetProjectsEntityExternalUserGroupReferenceListResult(dict):
 class GetProjectsEntityResourceDomainResult(dict):
     def __init__(__self__, *,
                  resources: Sequence['outputs.GetProjectsEntityResourceDomainResourceResult']):
+        """
+        :param Sequence['GetProjectsEntityResourceDomainResourceArgs'] resources: Array of the utilization/limit for resource types
+               * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+               * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+               * `resource_domain.resources.#.units` - The units of the resource type
+               * `resource_domain.resources.#.value` - The amount of resource consumed
+        """
         pulumi.set(__self__, "resources", resources)
 
     @property
     @pulumi.getter
     def resources(self) -> Sequence['outputs.GetProjectsEntityResourceDomainResourceResult']:
+        """
+        Array of the utilization/limit for resource types
+        * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+        * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+        * `resource_domain.resources.#.units` - The units of the resource type
+        * `resource_domain.resources.#.value` - The amount of resource consumed
+        """
         return pulumi.get(self, "resources")
 
 
@@ -22249,6 +21967,19 @@ class GetProtectionRuleAvailabilityZoneConnectivityListResult(dict):
                  destination_availability_zone_index: int,
                  snapshot_schedule_lists: Sequence['outputs.GetProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListResult'],
                  source_availability_zone_index: int):
+        """
+        :param int destination_availability_zone_index: (Optional/Computed) Index of the availability zone.
+        :param Sequence['GetProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs'] snapshot_schedule_lists: (Optional/Computed) Snapshot schedules for the pair of the availability zones.
+               * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
+               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
+               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
+               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
+               * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
+               * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
+               * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+        :param int source_availability_zone_index: (Optional/Computed) Index of the availability zone.
+        """
         pulumi.set(__self__, "destination_availability_zone_index", destination_availability_zone_index)
         pulumi.set(__self__, "snapshot_schedule_lists", snapshot_schedule_lists)
         pulumi.set(__self__, "source_availability_zone_index", source_availability_zone_index)
@@ -22256,16 +21987,33 @@ class GetProtectionRuleAvailabilityZoneConnectivityListResult(dict):
     @property
     @pulumi.getter(name="destinationAvailabilityZoneIndex")
     def destination_availability_zone_index(self) -> int:
+        """
+        (Optional/Computed) Index of the availability zone.
+        """
         return pulumi.get(self, "destination_availability_zone_index")
 
     @property
     @pulumi.getter(name="snapshotScheduleLists")
     def snapshot_schedule_lists(self) -> Sequence['outputs.GetProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListResult']:
+        """
+        (Optional/Computed) Snapshot schedules for the pair of the availability zones.
+        * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
+        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
+        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
+        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
+        * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
+        * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
+        * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+        """
         return pulumi.get(self, "snapshot_schedule_lists")
 
     @property
     @pulumi.getter(name="sourceAvailabilityZoneIndex")
     def source_availability_zone_index(self) -> int:
+        """
+        (Optional/Computed) Index of the availability zone.
+        """
         return pulumi.get(self, "source_availability_zone_index")
 
 
@@ -22396,6 +22144,11 @@ class GetProtectionRuleCategoryFilterResult(dict):
                  kind_lists: Sequence[str],
                  params: Sequence['outputs.GetProtectionRuleCategoryFilterParamResult'],
                  type: str):
+        """
+        :param Sequence[str] kind_lists: (Optional/Computed) List of kinds associated with this filter.
+        :param Sequence['GetProtectionRuleCategoryFilterParamArgs'] params: (Optional/Computed) A list of category key and list of values.
+        :param str type: (Optional/Computed) The type of the filter being used.
+        """
         pulumi.set(__self__, "kind_lists", kind_lists)
         pulumi.set(__self__, "params", params)
         pulumi.set(__self__, "type", type)
@@ -22403,16 +22156,25 @@ class GetProtectionRuleCategoryFilterResult(dict):
     @property
     @pulumi.getter(name="kindLists")
     def kind_lists(self) -> Sequence[str]:
+        """
+        (Optional/Computed) List of kinds associated with this filter.
+        """
         return pulumi.get(self, "kind_lists")
 
     @property
     @pulumi.getter
     def params(self) -> Sequence['outputs.GetProtectionRuleCategoryFilterParamResult']:
+        """
+        (Optional/Computed) A list of category key and list of values.
+        """
         return pulumi.get(self, "params")
 
     @property
     @pulumi.getter
     def type(self) -> str:
+        """
+        (Optional/Computed) The type of the filter being used.
+        """
         return pulumi.get(self, "type")
 
 
@@ -22558,21 +22320,7 @@ class GetProtectionRulesEntityResult(dict):
         """
         :param str api_version: version of the API
         :param Sequence['GetProtectionRulesEntityAvailabilityZoneConnectivityListArgs'] availability_zone_connectivity_lists: (Required) This encodes the datapipes between various availability zones and\\nthe backup policy of the pipes.
-               * `availability_zone_connectivity_list.destination_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-               * `availability_zone_connectivity_list.source_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-               * `availability_zone_connectivity_list.snapshot_schedule_list` - (Optional/Computed) Snapshot schedules for the pair of the availability zones.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
-               * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
         :param Sequence['GetProtectionRulesEntityCategoryFilterArgs'] category_filters: (Optional/Computed)
-               * `category_filter.0.type` - (Optional/Computed) The type of the filter being used.
-               * `category_filter.0.kind_list` - (Optional/Computed) List of kinds associated with this filter.
-               * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
         :param str description: A description for protection rule.
         :param str name: (Optional) the name.
         :param Sequence['GetProtectionRulesEntityOrderedAvailabilityZoneListArgs'] ordered_availability_zone_lists: (Required) A list of availability zones, each of which, receives a replica\\nof the data for the entities protected by this protection rule.
@@ -22605,17 +22353,6 @@ class GetProtectionRulesEntityResult(dict):
     def availability_zone_connectivity_lists(self) -> Sequence['outputs.GetProtectionRulesEntityAvailabilityZoneConnectivityListResult']:
         """
         (Required) This encodes the datapipes between various availability zones and\\nthe backup policy of the pipes.
-        * `availability_zone_connectivity_list.destination_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-        * `availability_zone_connectivity_list.source_availability_zone_index` - (Optional/Computed) Index of the availability zone.
-        * `availability_zone_connectivity_list.snapshot_schedule_list` - (Optional/Computed) Snapshot schedules for the pair of the availability zones.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
-        * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
         """
         return pulumi.get(self, "availability_zone_connectivity_lists")
 
@@ -22629,9 +22366,6 @@ class GetProtectionRulesEntityResult(dict):
     def category_filters(self) -> Sequence['outputs.GetProtectionRulesEntityCategoryFilterResult']:
         """
         (Optional/Computed)
-        * `category_filter.0.type` - (Optional/Computed) The type of the filter being used.
-        * `category_filter.0.kind_list` - (Optional/Computed) List of kinds associated with this filter.
-        * `category_filter.0.params` - (Optional/Computed) A list of category key and list of values.
         """
         return pulumi.get(self, "category_filters")
 
@@ -22693,6 +22427,19 @@ class GetProtectionRulesEntityAvailabilityZoneConnectivityListResult(dict):
                  destination_availability_zone_index: int,
                  snapshot_schedule_lists: Sequence['outputs.GetProtectionRulesEntityAvailabilityZoneConnectivityListSnapshotScheduleListResult'],
                  source_availability_zone_index: int):
+        """
+        :param int destination_availability_zone_index: (Optional/Computed) Index of the availability zone.
+        :param Sequence['GetProtectionRulesEntityAvailabilityZoneConnectivityListSnapshotScheduleListArgs'] snapshot_schedule_lists: (Optional/Computed) Snapshot schedules for the pair of the availability zones.
+               * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
+               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
+               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
+               * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
+               * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
+               * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
+               * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+        :param int source_availability_zone_index: (Optional/Computed) Index of the availability zone.
+        """
         pulumi.set(__self__, "destination_availability_zone_index", destination_availability_zone_index)
         pulumi.set(__self__, "snapshot_schedule_lists", snapshot_schedule_lists)
         pulumi.set(__self__, "source_availability_zone_index", source_availability_zone_index)
@@ -22700,16 +22447,33 @@ class GetProtectionRulesEntityAvailabilityZoneConnectivityListResult(dict):
     @property
     @pulumi.getter(name="destinationAvailabilityZoneIndex")
     def destination_availability_zone_index(self) -> int:
+        """
+        (Optional/Computed) Index of the availability zone.
+        """
         return pulumi.get(self, "destination_availability_zone_index")
 
     @property
     @pulumi.getter(name="snapshotScheduleLists")
     def snapshot_schedule_lists(self) -> Sequence['outputs.GetProtectionRulesEntityAvailabilityZoneConnectivityListSnapshotScheduleListResult']:
+        """
+        (Optional/Computed) Snapshot schedules for the pair of the availability zones.
+        * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
+        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
+        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
+        * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
+        * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
+        * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
+        * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+        """
         return pulumi.get(self, "snapshot_schedule_lists")
 
     @property
     @pulumi.getter(name="sourceAvailabilityZoneIndex")
     def source_availability_zone_index(self) -> int:
+        """
+        (Optional/Computed) Index of the availability zone.
+        """
         return pulumi.get(self, "source_availability_zone_index")
 
 
@@ -22840,6 +22604,11 @@ class GetProtectionRulesEntityCategoryFilterResult(dict):
                  kind_lists: Sequence[str],
                  params: Sequence['outputs.GetProtectionRulesEntityCategoryFilterParamResult'],
                  type: str):
+        """
+        :param Sequence[str] kind_lists: (Optional/Computed) List of kinds associated with this filter.
+        :param Sequence['GetProtectionRulesEntityCategoryFilterParamArgs'] params: (Optional/Computed) A list of category key and list of values.
+        :param str type: (Optional/Computed) The type of the filter being used.
+        """
         pulumi.set(__self__, "kind_lists", kind_lists)
         pulumi.set(__self__, "params", params)
         pulumi.set(__self__, "type", type)
@@ -22847,16 +22616,25 @@ class GetProtectionRulesEntityCategoryFilterResult(dict):
     @property
     @pulumi.getter(name="kindLists")
     def kind_lists(self) -> Sequence[str]:
+        """
+        (Optional/Computed) List of kinds associated with this filter.
+        """
         return pulumi.get(self, "kind_lists")
 
     @property
     @pulumi.getter
     def params(self) -> Sequence['outputs.GetProtectionRulesEntityCategoryFilterParamResult']:
+        """
+        (Optional/Computed) A list of category key and list of values.
+        """
         return pulumi.get(self, "params")
 
     @property
     @pulumi.getter
     def type(self) -> str:
+        """
+        (Optional/Computed) The type of the filter being used.
+        """
         return pulumi.get(self, "type")
 
 
@@ -23058,17 +22836,147 @@ class GetRecoveryPlanParameterResult(dict):
     def __init__(__self__, *,
                  floating_ip_assignment_lists: Sequence['outputs.GetRecoveryPlanParameterFloatingIpAssignmentListResult'],
                  network_mapping_lists: Sequence['outputs.GetRecoveryPlanParameterNetworkMappingListResult']):
+        """
+        :param Sequence['GetRecoveryPlanParameterFloatingIpAssignmentListArgs'] floating_ip_assignment_lists: (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
+               * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
+        :param Sequence['GetRecoveryPlanParameterNetworkMappingListArgs'] network_mapping_lists: (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
+        """
         pulumi.set(__self__, "floating_ip_assignment_lists", floating_ip_assignment_lists)
         pulumi.set(__self__, "network_mapping_lists", network_mapping_lists)
 
     @property
     @pulumi.getter(name="floatingIpAssignmentLists")
     def floating_ip_assignment_lists(self) -> Sequence['outputs.GetRecoveryPlanParameterFloatingIpAssignmentListResult']:
+        """
+        (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
+        * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
+        """
         return pulumi.get(self, "floating_ip_assignment_lists")
 
     @property
     @pulumi.getter(name="networkMappingLists")
     def network_mapping_lists(self) -> Sequence['outputs.GetRecoveryPlanParameterNetworkMappingListResult']:
+        """
+        (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
+        """
         return pulumi.get(self, "network_mapping_lists")
 
 
@@ -23825,6 +23733,11 @@ class GetRecoveryPlanStageListResult(dict):
                  delay_time_secs: int,
                  stage_uuid: str,
                  stage_works: Sequence['outputs.GetRecoveryPlanStageListStageWorkResult']):
+        """
+        :param int delay_time_secs: (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
+        :param str stage_uuid: (Optional/Computed) UUID of stage.
+        :param Sequence['GetRecoveryPlanStageListStageWorkArgs'] stage_works: (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
+        """
         pulumi.set(__self__, "delay_time_secs", delay_time_secs)
         pulumi.set(__self__, "stage_uuid", stage_uuid)
         pulumi.set(__self__, "stage_works", stage_works)
@@ -23832,16 +23745,25 @@ class GetRecoveryPlanStageListResult(dict):
     @property
     @pulumi.getter(name="delayTimeSecs")
     def delay_time_secs(self) -> int:
+        """
+        (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
+        """
         return pulumi.get(self, "delay_time_secs")
 
     @property
     @pulumi.getter(name="stageUuid")
     def stage_uuid(self) -> str:
+        """
+        (Optional/Computed) UUID of stage.
+        """
         return pulumi.get(self, "stage_uuid")
 
     @property
     @pulumi.getter(name="stageWorks")
     def stage_works(self) -> Sequence['outputs.GetRecoveryPlanStageListStageWorkResult']:
+        """
+        (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
+        """
         return pulumi.get(self, "stage_works")
 
 
@@ -23849,11 +23771,17 @@ class GetRecoveryPlanStageListResult(dict):
 class GetRecoveryPlanStageListStageWorkResult(dict):
     def __init__(__self__, *,
                  recover_entities: Sequence['outputs.GetRecoveryPlanStageListStageWorkRecoverEntityResult']):
+        """
+        :param Sequence['GetRecoveryPlanStageListStageWorkRecoverEntityArgs'] recover_entities: (Optional/Computed) Information about entities to be recovered.
+        """
         pulumi.set(__self__, "recover_entities", recover_entities)
 
     @property
     @pulumi.getter(name="recoverEntities")
     def recover_entities(self) -> Sequence['outputs.GetRecoveryPlanStageListStageWorkRecoverEntityResult']:
+        """
+        (Optional/Computed) Information about entities to be recovered.
+        """
         return pulumi.get(self, "recover_entities")
 
 
@@ -23861,11 +23789,25 @@ class GetRecoveryPlanStageListStageWorkResult(dict):
 class GetRecoveryPlanStageListStageWorkRecoverEntityResult(dict):
     def __init__(__self__, *,
                  entity_info_lists: Sequence['outputs.GetRecoveryPlanStageListStageWorkRecoverEntityEntityInfoListResult']):
+        """
+        :param Sequence['GetRecoveryPlanStageListStageWorkRecoverEntityEntityInfoListArgs'] entity_info_lists: (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or any_entity_reference has to be provided.
+               * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
+               * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
+               * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
+               * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
+        """
         pulumi.set(__self__, "entity_info_lists", entity_info_lists)
 
     @property
     @pulumi.getter(name="entityInfoLists")
     def entity_info_lists(self) -> Sequence['outputs.GetRecoveryPlanStageListStageWorkRecoverEntityEntityInfoListResult']:
+        """
+        (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or any_entity_reference has to be provided.
+        * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
+        * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
+        * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
+        * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
+        """
         return pulumi.get(self, "entity_info_lists")
 
 
@@ -23975,78 +23917,7 @@ class GetRecoveryPlansEntityResult(dict):
         :param str description: A description for recovery plan.
         :param str name: (Optional) the name.
         :param Sequence['GetRecoveryPlansEntityParameterArgs'] parameters: (Required) Parameters for the Recovery Plan.
-               * `parameters.0.floating_ip_assignment_list` - (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
-               * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
-               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
-               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
-               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
-               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
-               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
-               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
-               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
-               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
-               * `parameters.0.network_mapping_list` - (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
-               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
         :param Sequence['GetRecoveryPlansEntityStageListArgs'] stage_lists: (Required) Input for the stages of the Recovery Plan. Each stage will perform a predefined type of task.
-               * `stage_list.stage_uuid` - (Optional/Computed) UUID of stage.
-               * `stage_list.delay_time_secs` - (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
-               * `stage_list.stage_work` - (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
-               * `stage_list.stage_work.0.recover_entities` - (Optional/Computed) Information about entities to be recovered.
-               * `stage_list.stage_work.0.recover_entities.0.entity_info_list` - (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or any_entity_reference has to be provided.
-               * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
-               * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
-               * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
-               * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
         """
         pulumi.set(__self__, "api_version", api_version)
         pulumi.set(__self__, "categories", categories)
@@ -24103,68 +23974,6 @@ class GetRecoveryPlansEntityResult(dict):
     def parameters(self) -> Sequence['outputs.GetRecoveryPlansEntityParameterResult']:
         """
         (Required) Parameters for the Recovery Plan.
-        * `parameters.0.floating_ip_assignment_list` - (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
-        * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
-        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
-        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
-        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
-        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
-        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
-        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
-        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
-        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
-        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
-        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
-        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
-        * `parameters.0.network_mapping_list` - (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
-        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
         """
         return pulumi.get(self, "parameters")
 
@@ -24178,15 +23987,6 @@ class GetRecoveryPlansEntityResult(dict):
     def stage_lists(self) -> Sequence['outputs.GetRecoveryPlansEntityStageListResult']:
         """
         (Required) Input for the stages of the Recovery Plan. Each stage will perform a predefined type of task.
-        * `stage_list.stage_uuid` - (Optional/Computed) UUID of stage.
-        * `stage_list.delay_time_secs` - (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
-        * `stage_list.stage_work` - (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
-        * `stage_list.stage_work.0.recover_entities` - (Optional/Computed) Information about entities to be recovered.
-        * `stage_list.stage_work.0.recover_entities.0.entity_info_list` - (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or any_entity_reference has to be provided.
-        * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
-        * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
-        * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
-        * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
         """
         return pulumi.get(self, "stage_lists")
 
@@ -24270,17 +24070,147 @@ class GetRecoveryPlansEntityParameterResult(dict):
     def __init__(__self__, *,
                  floating_ip_assignment_lists: Sequence['outputs.GetRecoveryPlansEntityParameterFloatingIpAssignmentListResult'],
                  network_mapping_lists: Sequence['outputs.GetRecoveryPlansEntityParameterNetworkMappingListResult']):
+        """
+        :param Sequence['GetRecoveryPlansEntityParameterFloatingIpAssignmentListArgs'] floating_ip_assignment_lists: (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
+               * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
+               * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
+        :param Sequence['GetRecoveryPlansEntityParameterNetworkMappingListArgs'] network_mapping_lists: (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
+               * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
+        """
         pulumi.set(__self__, "floating_ip_assignment_lists", floating_ip_assignment_lists)
         pulumi.set(__self__, "network_mapping_lists", network_mapping_lists)
 
     @property
     @pulumi.getter(name="floatingIpAssignmentLists")
     def floating_ip_assignment_lists(self) -> Sequence['outputs.GetRecoveryPlansEntityParameterFloatingIpAssignmentListResult']:
+        """
+        (Optional/Computed) Floating IP assignment for VMs upon recovery in an Availability Zone. This is applicable only for the public cloud Availability Zones.
+        * `parameters.0.floating_ip_assignment_list.#.availability_zone_url` - (Required) URL of the Availability Zone.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list` - (Required) IP assignment for VMs upon recovery in the specified Availability Zone.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.test_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config` - (Optional/Computed) Configuration for assigning floating IP to a VM on the execution of the Recovery Plan.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.ip` - (Optional/Computed) IP to be assigned to VM, in case of failover.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.recovery_floating_ip_config.should_allocate_dynamically` - (Optional/Computed) Whether to allocate the floating IPs for the VMs dynamically.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference` - (Required) Reference to a vm.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.kind` - (Required) The kind name.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.uuid` - (Required) The uuid.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_reference.name` - (Optional/Computed) The name.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information` - (Required) Information about vnic to which floating IP has to be assigned.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.ip` - (Optional/Computed) IP address associated with vnic for which floating IP has to be assigned on failover.
+        * `parameters.0.floating_ip_assignment_list.#.vm_ip_assignment_list.#.vm_nic_information.uuid` - (Required) Uuid of the vnic of the VM to which floating IP has to be assigned.
+        """
         return pulumi.get(self, "floating_ip_assignment_lists")
 
     @property
     @pulumi.getter(name="networkMappingLists")
     def network_mapping_lists(self) -> Sequence['outputs.GetRecoveryPlansEntityParameterNetworkMappingListResult']:
+        """
+        (Required) Network mappings to be used for the Recovery Plan. This will be represented by array of network mappings across the Availability Zones.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list` - (Required) Mapping of networks across the Availability Zones.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.availability_zone_url` - (Optional/Computed) URL of the Availability Zone.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.use_vpc_reference` - (Optional/Computed) The reference to a VPC.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference` - (Optional/Computed) The reference to a VPC.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.kind` - (Optional/Computed) The kind name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.uuid` - (Optional/Computed) The uuid.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.vpc_reference.name` - (Optional/Computed) The name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_network.0.name` - (Required) Name of the network.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network` - (Optional/Computed) Network configuration to be used for performing network mapping and IP preservation/mapping on Recovery Plan execution.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference` - (Optional/Computed) The reference to a virtual_network.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.kind` - (Optional/Computed) The kind name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.uuid` - (Optional/Computed) The uuid.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.virtual_network_reference.name` - (Optional/Computed) The name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list` - (Optional/Computed) List of subnets for the network.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.gateway_ip` - (Required) Gateway IP address for the subnet.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.external_connectivity_state` - (Optional/Computed) External connectivity state of the subnet. This is applicable only for the subnet to be created in public cloud Availability Zone.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.subnet_list.#.prefix_length` - (Required) Prefix length for the subnet.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_network.0.name` - (Required) Name of the network.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the recovery network for migrate/ failover action on the Recovery Plan.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.recovery_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list` - (Optional/Computed) Static IP configuration for the VMs to be applied post recovery in the test network for test failover action on the Recovery Plan.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference` - (Optional/Computed) The reference to a vm.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.kind` - (Optional/Computed) The kind name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.uuid` - (Optional/Computed) The uuid.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.vm_reference.name` - (Optional/Computed) The name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list` - (Optional/Computed) List of IP configurations for a VM.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.ip_config_list.#.ip_address` - (Required) IP address.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list` - (Optional/Computed) The clusters where the recovery and test networks reside. This is required to specify network mapping across clusters for a Recovery Plan created to handle failover within the same Availability Zone.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.kind` - (Optional/Computed) The kind name.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.cluster_reference_list.0.uuid` - (Optional/Computed) The uuid.
+        * `parameters.0.network_mapping_list.#.availability_zone_network_mapping_list.#.test_ip_assignment_list.0.name` - (Optional/Computed) The name.
+        """
         return pulumi.get(self, "network_mapping_lists")
 
 
@@ -25037,6 +24967,11 @@ class GetRecoveryPlansEntityStageListResult(dict):
                  delay_time_secs: int,
                  stage_uuid: str,
                  stage_works: Sequence['outputs.GetRecoveryPlansEntityStageListStageWorkResult']):
+        """
+        :param int delay_time_secs: (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
+        :param str stage_uuid: (Optional/Computed) UUID of stage.
+        :param Sequence['GetRecoveryPlansEntityStageListStageWorkArgs'] stage_works: (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
+        """
         pulumi.set(__self__, "delay_time_secs", delay_time_secs)
         pulumi.set(__self__, "stage_uuid", stage_uuid)
         pulumi.set(__self__, "stage_works", stage_works)
@@ -25044,16 +24979,25 @@ class GetRecoveryPlansEntityStageListResult(dict):
     @property
     @pulumi.getter(name="delayTimeSecs")
     def delay_time_secs(self) -> int:
+        """
+        (Optional/Computed) Amount of time in seconds to delay the execution of next stage after execution of current stage.
+        """
         return pulumi.get(self, "delay_time_secs")
 
     @property
     @pulumi.getter(name="stageUuid")
     def stage_uuid(self) -> str:
+        """
+        (Optional/Computed) UUID of stage.
+        """
         return pulumi.get(self, "stage_uuid")
 
     @property
     @pulumi.getter(name="stageWorks")
     def stage_works(self) -> Sequence['outputs.GetRecoveryPlansEntityStageListStageWorkResult']:
+        """
+        (Required) A stage specifies the work to be performed when the Recovery Plan is executed.
+        """
         return pulumi.get(self, "stage_works")
 
 
@@ -25061,11 +25005,17 @@ class GetRecoveryPlansEntityStageListResult(dict):
 class GetRecoveryPlansEntityStageListStageWorkResult(dict):
     def __init__(__self__, *,
                  recover_entities: Sequence['outputs.GetRecoveryPlansEntityStageListStageWorkRecoverEntityResult']):
+        """
+        :param Sequence['GetRecoveryPlansEntityStageListStageWorkRecoverEntityArgs'] recover_entities: (Optional/Computed) Information about entities to be recovered.
+        """
         pulumi.set(__self__, "recover_entities", recover_entities)
 
     @property
     @pulumi.getter(name="recoverEntities")
     def recover_entities(self) -> Sequence['outputs.GetRecoveryPlansEntityStageListStageWorkRecoverEntityResult']:
+        """
+        (Optional/Computed) Information about entities to be recovered.
+        """
         return pulumi.get(self, "recover_entities")
 
 
@@ -25073,11 +25023,25 @@ class GetRecoveryPlansEntityStageListStageWorkResult(dict):
 class GetRecoveryPlansEntityStageListStageWorkRecoverEntityResult(dict):
     def __init__(__self__, *,
                  entity_info_lists: Sequence['outputs.GetRecoveryPlansEntityStageListStageWorkRecoverEntityEntityInfoListResult']):
+        """
+        :param Sequence['GetRecoveryPlansEntityStageListStageWorkRecoverEntityEntityInfoListArgs'] entity_info_lists: (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or any_entity_reference has to be provided.
+               * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
+               * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
+               * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
+               * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
+        """
         pulumi.set(__self__, "entity_info_lists", entity_info_lists)
 
     @property
     @pulumi.getter(name="entityInfoLists")
     def entity_info_lists(self) -> Sequence['outputs.GetRecoveryPlansEntityStageListStageWorkRecoverEntityEntityInfoListResult']:
+        """
+        (Optional/Computed) Information about entities to be recovered as part of this stage. For VM, entity information will include set of scripts to be executed after recovery of VM. Only one of categories or any_entity_reference has to be provided.
+        * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_kind` - (Optional/Computed) Reference to a kind.
+        * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_uuid` - (Optional/Computed) Reference to a uuid.
+        * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.any_entity_reference_name` - (Optional/Computed) Reference to a name.
+        * `stage_list.stage_work.0.recover_entities.0.entity_info_list.#.categories` - (Optional/Computed)  Categories for filtering entities.
+        """
         return pulumi.get(self, "entity_info_lists")
 
 
@@ -25622,6 +25586,9 @@ class GetServiceGroupsEntityServiceGroupResult(dict):
                  is_system_defined: bool,
                  name: str,
                  service_lists: Sequence['outputs.GetServiceGroupsEntityServiceGroupServiceListResult']):
+        """
+        :param bool is_system_defined: specifying whether it is a system defined service group
+        """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "is_system_defined", is_system_defined)
         pulumi.set(__self__, "name", name)
@@ -25635,6 +25602,9 @@ class GetServiceGroupsEntityServiceGroupResult(dict):
     @property
     @pulumi.getter(name="isSystemDefined")
     def is_system_defined(self) -> bool:
+        """
+        specifying whether it is a system defined service group
+        """
         return pulumi.get(self, "is_system_defined")
 
     @property
@@ -27478,11 +27448,6 @@ class GetUserGroupsEntityAccessControlPolicyReferenceListResult(dict):
                  kind: str,
                  name: str,
                  uuid: str):
-        """
-        :param str kind: - The kind name. (Default depends on the resource you are referencing)
-        :param str name: - the key name.
-        :param str uuid: - User group UUID.
-        """
         pulumi.set(__self__, "kind", kind)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "uuid", uuid)
@@ -27490,25 +27455,16 @@ class GetUserGroupsEntityAccessControlPolicyReferenceListResult(dict):
     @property
     @pulumi.getter
     def kind(self) -> str:
-        """
-        - The kind name. (Default depends on the resource you are referencing)
-        """
         return pulumi.get(self, "kind")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        - the key name.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def uuid(self) -> str:
-        """
-        - User group UUID.
-        """
         return pulumi.get(self, "uuid")
 
 
@@ -27585,8 +27541,12 @@ class GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReferenceResul
                  uuid: str):
         """
         :param str kind: - The kind name. (Default depends on the resource you are referencing)
-        :param str name: - the key name.
-        :param str uuid: - User group UUID.
+        :param str name: - the name(Optional).
+        :param str uuid: - the UUID(Required).
+               
+               For `access_control_policy_reference_list` and `project_reference_list` are the same as reference but used as list.
+               
+               See detailed information in [Nutanix Users](https://www.nutanix.dev/reference/prism_central/v3/api/user-groups/).
         """
         pulumi.set(__self__, "kind", kind)
         pulumi.set(__self__, "name", name)
@@ -27604,7 +27564,7 @@ class GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReferenceResul
     @pulumi.getter
     def name(self) -> str:
         """
-        - the key name.
+        - the name(Optional).
         """
         return pulumi.get(self, "name")
 
@@ -27612,7 +27572,11 @@ class GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceReferenceResul
     @pulumi.getter
     def uuid(self) -> str:
         """
-        - User group UUID.
+        - the UUID(Required).
+
+        For `access_control_policy_reference_list` and `project_reference_list` are the same as reference but used as list.
+
+        See detailed information in [Nutanix Users](https://www.nutanix.dev/reference/prism_central/v3/api/user-groups/).
         """
         return pulumi.get(self, "uuid")
 
@@ -27623,11 +27587,6 @@ class GetUserGroupsEntityProjectReferenceListResult(dict):
                  kind: str,
                  name: str,
                  uuid: str):
-        """
-        :param str kind: - The kind name. (Default depends on the resource you are referencing)
-        :param str name: - the key name.
-        :param str uuid: - User group UUID.
-        """
         pulumi.set(__self__, "kind", kind)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "uuid", uuid)
@@ -27635,25 +27594,16 @@ class GetUserGroupsEntityProjectReferenceListResult(dict):
     @property
     @pulumi.getter
     def kind(self) -> str:
-        """
-        - The kind name. (Default depends on the resource you are referencing)
-        """
         return pulumi.get(self, "kind")
 
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        - the key name.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
     def uuid(self) -> str:
-        """
-        - User group UUID.
-        """
         return pulumi.get(self, "uuid")
 
 
@@ -27666,9 +27616,6 @@ class GetUserGroupsMetadataResult(dict):
                  offset: int,
                  sort_attribute: str,
                  sort_order: str):
-        """
-        :param str kind: - The kind name. (Default depends on the resource you are referencing)
-        """
         pulumi.set(__self__, "filter", filter)
         pulumi.set(__self__, "kind", kind)
         pulumi.set(__self__, "length", length)
@@ -27684,9 +27631,6 @@ class GetUserGroupsMetadataResult(dict):
     @property
     @pulumi.getter
     def kind(self) -> str:
-        """
-        - The kind name. (Default depends on the resource you are referencing)
-        """
         return pulumi.get(self, "kind")
 
     @property

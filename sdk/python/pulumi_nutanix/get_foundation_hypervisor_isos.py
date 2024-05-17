@@ -117,6 +117,7 @@ def get_foundation_hypervisor_isos(opts: Optional[pulumi.InvokeOptions] = None) 
 
     hypervisor_isos = nutanix.get_foundation_hypervisor_isos()
     ```
+
     ## Note
 
     * This data source only lists .iso files details.
@@ -149,6 +150,7 @@ def get_foundation_hypervisor_isos_output(opts: Optional[pulumi.InvokeOptions] =
 
     hypervisor_isos = nutanix.get_foundation_hypervisor_isos()
     ```
+
     ## Note
 
     * This data source only lists .iso files details.

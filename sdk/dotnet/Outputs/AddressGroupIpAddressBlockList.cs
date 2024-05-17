@@ -14,15 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class AddressGroupIpAddressBlockList
     {
-        /// <summary>
-        /// - (Required) IP of the address block
-        /// </summary>
         public readonly string Ip;
-        /// <summary>
-        /// - (Required) Prefix length of address block in int
-        /// 
-        /// See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/reference/prism_central/v3/api/address-groups/postaddressgroups).
-        /// </summary>
         public readonly int PrefixLength;
 
         [OutputConstructor]

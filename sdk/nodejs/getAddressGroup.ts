@@ -10,23 +10,6 @@ import * as utilities from "./utilities";
  * Provides a datasource to retrieve a address group.
  *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- * import * as nutanix from "@pulumi/nutanix";
- *
- * const testAddress = new nutanix.AddressGroup("testAddress", {
- *     description: "test address groups resource",
- *     ipAddressBlockLists: [{
- *         ip: "10.0.0.0",
- *         prefixLength: 24,
- *     }],
- * });
- * const addrGroup = nutanix.getAddressGroupOutput({
- *     uuid: testAddress.id,
- * });
- * ```
  */
 export function getAddressGroup(args: GetAddressGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetAddressGroupResult> {
 
@@ -79,23 +62,6 @@ export interface GetAddressGroupResult {
  * Provides a datasource to retrieve a address group.
  *
  * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
- * import * as nutanix from "@pulumi/nutanix";
- *
- * const testAddress = new nutanix.AddressGroup("testAddress", {
- *     description: "test address groups resource",
- *     ipAddressBlockLists: [{
- *         ip: "10.0.0.0",
- *         prefixLength: 24,
- *     }],
- * });
- * const addrGroup = nutanix.getAddressGroupOutput({
- *     uuid: testAddress.id,
- * });
- * ```
  */
 export function getAddressGroupOutput(args: GetAddressGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressGroupResult> {
     return pulumi.output(args).apply((a: any) => getAddressGroup(a, opts))

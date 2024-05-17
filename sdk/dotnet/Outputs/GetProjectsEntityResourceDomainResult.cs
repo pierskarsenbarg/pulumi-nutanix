@@ -14,6 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetProjectsEntityResourceDomainResult
     {
+        /// <summary>
+        /// Array of the utilization/limit for resource types
+        /// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
+        /// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
+        /// * `resource_domain.resources.#.units` - The units of the resource type
+        /// * `resource_domain.resources.#.value` - The amount of resource consumed
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectsEntityResourceDomainResourceResult> Resources;
 
         [OutputConstructor]

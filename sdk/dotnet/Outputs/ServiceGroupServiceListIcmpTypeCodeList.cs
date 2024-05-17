@@ -14,13 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class ServiceGroupServiceListIcmpTypeCodeList
     {
-        /// <summary>
-        /// - (Optional) Code as text
-        /// </summary>
         public readonly string? Code;
-        /// <summary>
-        /// - (Optional) Type as text
-        /// </summary>
         public readonly string? Type;
 
         [OutputConstructor]

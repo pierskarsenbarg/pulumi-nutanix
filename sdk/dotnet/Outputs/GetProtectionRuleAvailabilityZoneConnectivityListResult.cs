@@ -14,8 +14,25 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetProtectionRuleAvailabilityZoneConnectivityListResult
     {
+        /// <summary>
+        /// (Optional/Computed) Index of the availability zone.
+        /// </summary>
         public readonly int DestinationAvailabilityZoneIndex;
+        /// <summary>
+        /// (Optional/Computed) Snapshot schedules for the pair of the availability zones.
+        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.recovery_point_objective_secs` - (Required) "A recovery point objective (RPO) is the maximum acceptable amount of data loss.
+        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.num_snapshots` - (Optional/Computed) Number of snapshots need to be retained.
+        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_multiple` - (Optional/Computed) Multiplier to 'snapshot_interval_type'.
+        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.local_snapshot_retention_policy.0.rollup_retention_policy_snapshot_interval_type` - (Optional/Computed)
+        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.auto_suspend_timeout_secs` - (Optional/Computed) Auto suspend timeout in case of connection failure between the sites.
+        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.snapshot_type` - (Optional/Computed) Crash consistent or Application Consistent snapshot.
+        /// * `availability_zone_connectivity_list.snapshot_schedule_list.#.remote_snapshot_retention_policy` - (Optional/Computed) This describes the snapshot retention policy for this availability zone.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListResult> SnapshotScheduleLists;
+        /// <summary>
+        /// (Optional/Computed) Index of the availability zone.
+        /// </summary>
         public readonly int SourceAvailabilityZoneIndex;
 
         [OutputConstructor]

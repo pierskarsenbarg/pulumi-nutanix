@@ -17,6 +17,7 @@ import * as utilities from "./utilities";
  *
  * const hypervisorIsos = nutanix.getFoundationHypervisorIsos({});
  * ```
+ *
  * ## Note
  *
  * * This data source only lists .iso files details.
@@ -70,6 +71,7 @@ export interface GetFoundationHypervisorIsosResult {
  *
  * const hypervisorIsos = nutanix.getFoundationHypervisorIsos({});
  * ```
+ *
  * ## Note
  *
  * * This data source only lists .iso files details.

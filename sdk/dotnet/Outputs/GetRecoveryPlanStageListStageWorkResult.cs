@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetRecoveryPlanStageListStageWorkResult
     {
+        /// <summary>
+        /// (Optional/Computed) Information about entities to be recovered.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetRecoveryPlanStageListStageWorkRecoverEntityResult> RecoverEntities;
 
         [OutputConstructor]

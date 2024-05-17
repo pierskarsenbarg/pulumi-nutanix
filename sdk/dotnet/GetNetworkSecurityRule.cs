@@ -17,9 +17,8 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// &gt; NOTE: The use of network_security_rule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
+        /// 
         /// ### Isolate Development VMs From Production VMs And Get Its Information)
         /// 
         /// ```csharp
@@ -76,8 +75,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetNetworkSecurityRuleResult> InvokeAsync(GetNetworkSecurityRuleArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkSecurityRuleResult>("nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule", args ?? new GetNetworkSecurityRuleArgs(), options.WithDefaults());
@@ -87,9 +84,8 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// &gt; NOTE: The use of network_security_rule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
+        /// 
         /// ### Isolate Development VMs From Production VMs And Get Its Information)
         /// 
         /// ```csharp
@@ -146,8 +142,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetNetworkSecurityRuleResult> Invoke(GetNetworkSecurityRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityRuleResult>("nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule", args ?? new GetNetworkSecurityRuleInvokeArgs(), options.WithDefaults());

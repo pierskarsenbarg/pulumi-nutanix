@@ -15,9 +15,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Gets hypervisor, CVM &amp; IPMI info of the discovered nodes using their ipv6 address.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -39,8 +37,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetFoundationNodeNetworkDetailsResult> InvokeAsync(GetFoundationNodeNetworkDetailsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationNodeNetworkDetailsResult>("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", args ?? new GetFoundationNodeNetworkDetailsArgs(), options.WithDefaults());
@@ -48,9 +44,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Gets hypervisor, CVM &amp; IPMI info of the discovered nodes using their ipv6 address.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -72,8 +66,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetFoundationNodeNetworkDetailsResult> Invoke(GetFoundationNodeNetworkDetailsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationNodeNetworkDetailsResult>("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", args ?? new GetFoundationNodeNetworkDetailsInvokeArgs(), options.WithDefaults());

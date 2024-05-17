@@ -15,9 +15,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetUserGroupsMetadataResult
     {
         public readonly string Filter;
-        /// <summary>
-        /// - The kind name. (Default depends on the resource you are referencing)
-        /// </summary>
         public readonly string Kind;
         public readonly int Length;
         public readonly int Offset;

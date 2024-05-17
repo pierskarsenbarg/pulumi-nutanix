@@ -15,9 +15,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Get the details of a single node given its UUID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -34,8 +32,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetFoundationCentralImagedNodeDetailsResult> InvokeAsync(GetFoundationCentralImagedNodeDetailsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralImagedNodeDetailsResult>("nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails", args ?? new GetFoundationCentralImagedNodeDetailsArgs(), options.WithDefaults());
@@ -43,9 +39,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Get the details of a single node given its UUID.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
         /// ```csharp
         /// using System.Collections.Generic;
@@ -62,8 +56,6 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetFoundationCentralImagedNodeDetailsResult> Invoke(GetFoundationCentralImagedNodeDetailsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralImagedNodeDetailsResult>("nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails", args ?? new GetFoundationCentralImagedNodeDetailsInvokeArgs(), options.WithDefaults());

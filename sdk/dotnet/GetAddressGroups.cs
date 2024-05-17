@@ -15,24 +15,11 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Provides a datasource to retrieve list of address groups.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var addrGroups = Nutanix.GetAddressGroups.Invoke();
-        /// 
-        /// });
+        /// ``` hcl
+        ///   data "nutanix_address_groups" "addr_groups" {}
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetAddressGroupsResult> InvokeAsync(GetAddressGroupsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAddressGroupsResult>("nutanix:index/getAddressGroups:getAddressGroups", args ?? new GetAddressGroupsArgs(), options.WithDefaults());
@@ -40,24 +27,11 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Provides a datasource to retrieve list of address groups.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var addrGroups = Nutanix.GetAddressGroups.Invoke();
-        /// 
-        /// });
+        /// ``` hcl
+        ///   data "nutanix_address_groups" "addr_groups" {}
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetAddressGroupsResult> Invoke(GetAddressGroupsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAddressGroupsResult>("nutanix:index/getAddressGroups:getAddressGroups", args ?? new GetAddressGroupsInvokeArgs(), options.WithDefaults());

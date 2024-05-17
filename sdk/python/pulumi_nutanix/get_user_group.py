@@ -217,15 +217,6 @@ def get_user_group(categories: Optional[Sequence[pulumi.InputType['GetUserGroupC
 
     ## Example Usage
 
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    usergroup = nutanix.get_user_group(user_group_id="dd30a856-8e72-4158-b716-98455ceda220")
-    usergroupbyname = nutanix.get_user_group(user_group_name="example-group-1")
-    test = nutanix.get_user_group(user_group_distinguished_name="cn=example-group-1,cn=users,dc=ntnxlab,dc=local")
-    ```
-
 
     :param Sequence[pulumi.InputType['GetUserGroupCategoryArgs']] categories: - The Distinguished Categories for the user group.
     :param Mapping[str, str] owner_reference: - The reference to a user.
@@ -274,15 +265,6 @@ def get_user_group_output(categories: Optional[pulumi.Input[Optional[Sequence[pu
     Provides a datasource to retrieve a user group based on the input parameters.
 
     ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    usergroup = nutanix.get_user_group(user_group_id="dd30a856-8e72-4158-b716-98455ceda220")
-    usergroupbyname = nutanix.get_user_group(user_group_name="example-group-1")
-    test = nutanix.get_user_group(user_group_distinguished_name="cn=example-group-1,cn=users,dc=ntnxlab,dc=local")
-    ```
 
 
     :param Sequence[pulumi.InputType['GetUserGroupCategoryArgs']] categories: - The Distinguished Categories for the user group.

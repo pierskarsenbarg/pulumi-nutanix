@@ -14,35 +14,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class FoundationCentralImageClusterFoundationInitConfigBlockNode
     {
-        /// <summary>
-        /// IP address to be set for the cvm on the node.
-        /// </summary>
         public readonly string? CvmIp;
-        /// <summary>
-        /// Vlan tag of the cvm, if the cvm is on a vlan.
-        /// </summary>
         public readonly int? CvmVlanId;
         public readonly string? FcImagedNodeUuid;
-        /// <summary>
-        /// Hardware attributes override json for the node.
-        /// </summary>
         public readonly ImmutableDictionary<string, string>? HardwareAttributesOverride;
         public readonly string? Hypervisor;
-        /// <summary>
-        /// Name to be set for the hypervisor host.
-        /// </summary>
         public readonly string? HypervisorHostname;
-        /// <summary>
-        /// IP address to be set for the hypervisor on the node.
-        /// </summary>
         public readonly string? HypervisorIp;
-        /// <summary>
-        /// True, if the node should be imaged, False, otherwise.
-        /// </summary>
         public readonly bool? ImageNow;
-        /// <summary>
-        /// IP address to be set for the ipmi of the node.
-        /// </summary>
         public readonly string? IpmiIp;
         public readonly string? Ipv6Address;
         public readonly string? NodePosition;

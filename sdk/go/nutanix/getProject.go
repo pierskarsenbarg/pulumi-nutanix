@@ -129,9 +129,6 @@ type LookupProjectResult struct {
 	ApiVersion            string                           `pulumi:"apiVersion"`
 	Categories            []GetProjectCategory             `pulumi:"categories"`
 	// Reference to a subnet.
-	// * `default_subnet_reference.kind` - The kind name. Default value is `subnet`
-	// * `default_subnet_reference.uuid` - The UUID of a subnet.
-	// * `default_subnet_reference.name` - The name of a subnet.
 	DefaultSubnetReference map[string]string `pulumi:"defaultSubnetReference"`
 	// A description for project.
 	Description string `pulumi:"description"`
@@ -160,11 +157,6 @@ type LookupProjectResult struct {
 	ProjectName      *string           `pulumi:"projectName"`
 	ProjectReference map[string]string `pulumi:"projectReference"`
 	// The status for a resource domain (limits and values)
-	// * `resource_domain.resources` Array of the utilization/limit for resource types
-	// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
-	// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
-	// * `resource_domain.resources.#.units` - The units of the resource type
-	// * `resource_domain.resources.#.value` - The amount of resource consumed
 	ResourceDomains []GetProjectResourceDomain `pulumi:"resourceDomains"`
 	State           string                     `pulumi:"state"`
 	// List of subnets for the project.
@@ -251,9 +243,6 @@ func (o LookupProjectResultOutput) Categories() GetProjectCategoryArrayOutput {
 }
 
 // Reference to a subnet.
-// * `default_subnet_reference.kind` - The kind name. Default value is `subnet`
-// * `default_subnet_reference.uuid` - The UUID of a subnet.
-// * `default_subnet_reference.name` - The name of a subnet.
 func (o LookupProjectResultOutput) DefaultSubnetReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupProjectResult) map[string]string { return v.DefaultSubnetReference }).(pulumi.StringMapOutput)
 }
@@ -323,11 +312,6 @@ func (o LookupProjectResultOutput) ProjectReference() pulumi.StringMapOutput {
 }
 
 // The status for a resource domain (limits and values)
-// * `resource_domain.resources` Array of the utilization/limit for resource types
-// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
-// * `resource_domain.resources.#.resource_type` The type of resource (for example storage, CPUs)
-// * `resource_domain.resources.#.units` - The units of the resource type
-// * `resource_domain.resources.#.value` - The amount of resource consumed
 func (o LookupProjectResultOutput) ResourceDomains() GetProjectResourceDomainArrayOutput {
 	return o.ApplyT(func(v LookupProjectResult) []GetProjectResourceDomain { return v.ResourceDomains }).(GetProjectResourceDomainArrayOutput)
 }
