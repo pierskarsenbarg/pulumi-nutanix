@@ -20,6 +20,7 @@ import (
 
 	"github.com/pierskarsenbarg/pulumi-nutanix/provider/pkg/version"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
+	tfbridgetokens "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/tokens"
 	shim "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
@@ -101,10 +102,15 @@ func Provider() tfbridge.ProviderInfo {
 			"nutanix_foundation_central_api_keys": {
 				Tok: tfbridge.MakeResource(mainPkg, mainMod, "FoundationCentralApiKeys"),
 				Docs: &tfbridge.DocInfo{
-					Markdown: []byte(" "), // no upstream docs
+					Source: "foundation_central_api_key.html.markdown",
 				},
 			},
-			"nutanix_foundation_central_image_cluster": {Tok: tfbridge.MakeResource(mainPkg, mainMod, "FoundationCentralImageCluster")},
+			"nutanix_foundation_central_image_cluster": {
+				Tok: tfbridge.MakeResource(mainPkg, mainMod, "FoundationCentralImageCluster"),
+				Docs: &tfbridge.DocInfo{
+					Source: "foundation_central_image_cluster.html.markdown",
+				},
+			},
 			"nutanix_foundation_image":                 {Tok: tfbridge.MakeResource(mainPkg, mainMod, "FoundationImage")},
 			"nutanix_foundation_image_nodes":           {Tok: tfbridge.MakeResource(mainPkg, mainMod, "FoundationImageNodes")},
 			"nutanix_foundation_ipmi_config":           {Tok: tfbridge.MakeResource(mainPkg, mainMod, "FoundationIpmiConfig")},
@@ -143,32 +149,32 @@ func Provider() tfbridge.ProviderInfo {
 			"nutanix_foundation_central_api_keys": {
 				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationCentralApiKeys"),
 				Docs: &tfbridge.DocInfo{
-					Markdown: []byte(" "), // no upstream docs
+					Source: "foundation_central_get_api_key.html.markdown",
 				},
 			},
 			"nutanix_foundation_central_cluster_details": {
 				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationCentralClusterDetails"),
 				Docs: &tfbridge.DocInfo{
-					Markdown: []byte(" "), // no upstream docs
+					Source: "foundation_central_imaged_cluster_details.html.markdown",
 				},
 			},
 			"nutanix_foundation_central_imaged_clusters_list": {
 				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationCentralImagedClustersList"),
 				Docs: &tfbridge.DocInfo{
-					Markdown: []byte(" "), // no upstream docs
+					Source: "foundation_central_list_all_imaged_clusters.html.markdown",
 				},
 			},
-			"nutanix_foundation_central_imaged_node_details": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationCentralImagedNodeDetails")},
+			// "nutanix_foundation_central_imaged_node_details": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationCentralImagedNodeDetails")},
 			"nutanix_foundation_central_imaged_nodes_list": {
 				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationCentralImagedNodesList"),
 				Docs: &tfbridge.DocInfo{
-					Markdown: []byte(" "), // no upstream docs
+					Source: "foundation_central_list_all_imaged_nodes.html.markdown",
 				},
 			},
 			"nutanix_foundation_central_list_api_keys": {
 				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationCentralListApiKeys"),
 				Docs: &tfbridge.DocInfo{
-					Markdown: []byte(" "), // no upstream docs
+					Source: "foundation_central_list_all_api_keys.html.markdown",
 				},
 			},
 			"nutanix_foundation_discover_nodes":       {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationDiscoverNodes")},
@@ -234,7 +240,7 @@ func Provider() tfbridge.ProviderInfo {
 			// See the documentation for tfbridge.OverlayInfo for how to lay out this
 			// section, or refer to the AWS provider. Delete this section if there are
 			// no overlay files.
-			//Overlay: &tfbridge.OverlayInfo{},
+			// Overlay: &tfbridge.OverlayInfo{},
 		},
 		Python: &tfbridge.PythonInfo{
 			// List any Python dependencies and their version ranges
@@ -258,6 +264,9 @@ func Provider() tfbridge.ProviderInfo {
 			},
 		},
 	}
+
+	prov.MustComputeTokens(tfbridgetokens.SingleModule("nutanix_", mainMod,
+		tfbridgetokens.MakeStandard(mainPkg)))
 
 	prov.SetAutonaming(255, "-")
 

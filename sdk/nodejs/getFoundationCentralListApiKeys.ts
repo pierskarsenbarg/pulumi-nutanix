@@ -6,6 +6,18 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * List all the api keys created in Foundation Central.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const apiKeysList = nutanix.getFoundationCentralListApiKeys({});
+ * ```
+ */
 export function getFoundationCentralListApiKeys(args?: GetFoundationCentralListApiKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralListApiKeysResult> {
     args = args || {};
 
@@ -21,8 +33,17 @@ export function getFoundationCentralListApiKeys(args?: GetFoundationCentralListA
  * A collection of arguments for invoking getFoundationCentralListApiKeys.
  */
 export interface GetFoundationCentralListApiKeysArgs {
+    /**
+     * The number of records retrieved.
+     */
     length?: number;
+    /**
+     * List metadata output for all list apis.
+     */
     metadata?: inputs.GetFoundationCentralListApiKeysMetadata;
+    /**
+     * Offset from the start of the object list.
+     */
     offset?: number;
 }
 
@@ -35,10 +56,31 @@ export interface GetFoundationCentralListApiKeysResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * The number of records retrieved.
+     */
     readonly length?: number;
+    /**
+     * List metadata output for all list apis.
+     */
     readonly metadata?: outputs.GetFoundationCentralListApiKeysMetadata;
+    /**
+     * Offset from the start of the object list.
+     */
     readonly offset?: number;
 }
+/**
+ * List all the api keys created in Foundation Central.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const apiKeysList = nutanix.getFoundationCentralListApiKeys({});
+ * ```
+ */
 export function getFoundationCentralListApiKeysOutput(args?: GetFoundationCentralListApiKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralListApiKeysResult> {
     return pulumi.output(args).apply((a: any) => getFoundationCentralListApiKeys(a, opts))
 }
@@ -47,7 +89,16 @@ export function getFoundationCentralListApiKeysOutput(args?: GetFoundationCentra
  * A collection of arguments for invoking getFoundationCentralListApiKeys.
  */
 export interface GetFoundationCentralListApiKeysOutputArgs {
+    /**
+     * The number of records retrieved.
+     */
     length?: pulumi.Input<number>;
+    /**
+     * List metadata output for all list apis.
+     */
     metadata?: pulumi.Input<inputs.GetFoundationCentralListApiKeysMetadataArgs>;
+    /**
+     * Offset from the start of the object list.
+     */
     offset?: pulumi.Input<number>;
 }

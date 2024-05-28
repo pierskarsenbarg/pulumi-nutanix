@@ -14,9 +14,21 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetailResult
     {
+        /// <summary>
+        /// Cluster name.
+        /// </summary>
         public readonly string ClusterName;
+        /// <summary>
+        /// List of messages for the client based on process state.
+        /// </summary>
         public readonly ImmutableArray<string> MessageLists;
+        /// <summary>
+        /// Percent completion of cluster creation process.
+        /// </summary>
         public readonly double PercentComplete;
+        /// <summary>
+        /// Current status of cluster creation process.
+        /// </summary>
         public readonly string Status;
 
         [OutputConstructor]

@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class GetFoundationCentralImagedNodesListFiltersArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Specifies whether the node is discovering, available or unavailable for cluster creation.
+        /// </summary>
         [Input("nodeState")]
         public string? NodeState { get; set; }
 

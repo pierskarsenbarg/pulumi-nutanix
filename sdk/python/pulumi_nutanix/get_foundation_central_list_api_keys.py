@@ -56,16 +56,25 @@ class GetFoundationCentralListApiKeysResult:
     @property
     @pulumi.getter
     def length(self) -> Optional[int]:
+        """
+        The number of records retrieved.
+        """
         return pulumi.get(self, "length")
 
     @property
     @pulumi.getter
     def metadata(self) -> Optional['outputs.GetFoundationCentralListApiKeysMetadataResult']:
+        """
+        List metadata output for all list apis.
+        """
         return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter
     def offset(self) -> Optional[int]:
+        """
+        Offset from the start of the object list.
+        """
         return pulumi.get(self, "offset")
 
 
@@ -87,7 +96,21 @@ def get_foundation_central_list_api_keys(length: Optional[int] = None,
                                          offset: Optional[int] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFoundationCentralListApiKeysResult:
     """
-    Use this data source to access information about an existing resource.
+    List all the api keys created in Foundation Central.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    api_keys_list = nutanix.get_foundation_central_list_api_keys()
+    ```
+
+
+    :param int length: The number of records retrieved.
+    :param pulumi.InputType['GetFoundationCentralListApiKeysMetadataArgs'] metadata: List metadata output for all list apis.
+    :param int offset: Offset from the start of the object list.
     """
     __args__ = dict()
     __args__['length'] = length
@@ -110,6 +133,20 @@ def get_foundation_central_list_api_keys_output(length: Optional[pulumi.Input[Op
                                                 offset: Optional[pulumi.Input[Optional[int]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationCentralListApiKeysResult]:
     """
-    Use this data source to access information about an existing resource.
+    List all the api keys created in Foundation Central.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    api_keys_list = nutanix.get_foundation_central_list_api_keys()
+    ```
+
+
+    :param int length: The number of records retrieved.
+    :param pulumi.InputType['GetFoundationCentralListApiKeysMetadataArgs'] metadata: List metadata output for all list apis.
+    :param int offset: Offset from the start of the object list.
     """
     ...

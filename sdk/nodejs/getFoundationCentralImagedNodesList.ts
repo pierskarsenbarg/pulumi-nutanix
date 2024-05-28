@@ -6,6 +6,18 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * List all the nodes registered with Foundation Central
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const nodesList = nutanix.getFoundationCentralImagedNodesList({});
+ * ```
+ */
 export function getFoundationCentralImagedNodesList(args?: GetFoundationCentralImagedNodesListArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralImagedNodesListResult> {
     args = args || {};
 
@@ -22,7 +34,13 @@ export function getFoundationCentralImagedNodesList(args?: GetFoundationCentralI
  */
 export interface GetFoundationCentralImagedNodesListArgs {
     filters?: inputs.GetFoundationCentralImagedNodesListFilters;
+    /**
+     * The number of records retrieved.
+     */
     length?: number;
+    /**
+     * Offset from the start of the object list.
+     */
     offset?: number;
 }
 
@@ -36,10 +54,31 @@ export interface GetFoundationCentralImagedNodesListResult {
      */
     readonly id: string;
     readonly imagedNodes: outputs.GetFoundationCentralImagedNodesListImagedNode[];
+    /**
+     * The number of records retrieved.
+     */
     readonly length?: number;
+    /**
+     * List metadata output for all list apis.
+     */
     readonly metadatas: outputs.GetFoundationCentralImagedNodesListMetadata[];
+    /**
+     * Offset from the start of the object list.
+     */
     readonly offset?: number;
 }
+/**
+ * List all the nodes registered with Foundation Central
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const nodesList = nutanix.getFoundationCentralImagedNodesList({});
+ * ```
+ */
 export function getFoundationCentralImagedNodesListOutput(args?: GetFoundationCentralImagedNodesListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralImagedNodesListResult> {
     return pulumi.output(args).apply((a: any) => getFoundationCentralImagedNodesList(a, opts))
 }
@@ -49,6 +88,12 @@ export function getFoundationCentralImagedNodesListOutput(args?: GetFoundationCe
  */
 export interface GetFoundationCentralImagedNodesListOutputArgs {
     filters?: pulumi.Input<inputs.GetFoundationCentralImagedNodesListFiltersArgs>;
+    /**
+     * The number of records retrieved.
+     */
     length?: pulumi.Input<number>;
+    /**
+     * Offset from the start of the object list.
+     */
     offset?: pulumi.Input<number>;
 }

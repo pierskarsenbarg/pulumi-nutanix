@@ -12,9 +12,45 @@ namespace PiersKarsenbarg.Nutanix
 {
     public static class GetFoundationCentralListApiKeys
     {
+        /// <summary>
+        /// List all the api keys created in Foundation Central.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var apiKeysList = Nutanix.GetFoundationCentralListApiKeys.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Task<GetFoundationCentralListApiKeysResult> InvokeAsync(GetFoundationCentralListApiKeysArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFoundationCentralListApiKeysResult>("nutanix:index/getFoundationCentralListApiKeys:getFoundationCentralListApiKeys", args ?? new GetFoundationCentralListApiKeysArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// List all the api keys created in Foundation Central.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var apiKeysList = Nutanix.GetFoundationCentralListApiKeys.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Output<GetFoundationCentralListApiKeysResult> Invoke(GetFoundationCentralListApiKeysInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralListApiKeysResult>("nutanix:index/getFoundationCentralListApiKeys:getFoundationCentralListApiKeys", args ?? new GetFoundationCentralListApiKeysInvokeArgs(), options.WithDefaults());
     }
@@ -22,12 +58,21 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetFoundationCentralListApiKeysArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The number of records retrieved.
+        /// </summary>
         [Input("length")]
         public int? Length { get; set; }
 
+        /// <summary>
+        /// List metadata output for all list apis.
+        /// </summary>
         [Input("metadata")]
         public Inputs.GetFoundationCentralListApiKeysMetadataArgs? Metadata { get; set; }
 
+        /// <summary>
+        /// Offset from the start of the object list.
+        /// </summary>
         [Input("offset")]
         public int? Offset { get; set; }
 
@@ -39,12 +84,21 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class GetFoundationCentralListApiKeysInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The number of records retrieved.
+        /// </summary>
         [Input("length")]
         public Input<int>? Length { get; set; }
 
+        /// <summary>
+        /// List metadata output for all list apis.
+        /// </summary>
         [Input("metadata")]
         public Input<Inputs.GetFoundationCentralListApiKeysMetadataInputArgs>? Metadata { get; set; }
 
+        /// <summary>
+        /// Offset from the start of the object list.
+        /// </summary>
         [Input("offset")]
         public Input<int>? Offset { get; set; }
 
@@ -63,8 +117,17 @@ namespace PiersKarsenbarg.Nutanix
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The number of records retrieved.
+        /// </summary>
         public readonly int? Length;
+        /// <summary>
+        /// List metadata output for all list apis.
+        /// </summary>
         public readonly Outputs.GetFoundationCentralListApiKeysMetadataResult? Metadata;
+        /// <summary>
+        /// Offset from the start of the object list.
+        /// </summary>
         public readonly int? Offset;
 
         [OutputConstructor]

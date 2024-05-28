@@ -33022,14 +33022,22 @@ func (o GetFloatingIpsMetadataArrayOutput) Index(i pulumi.IntInput) GetFloatingI
 }
 
 type GetFoundationCentralClusterDetailsClusterStatus struct {
-	AggregatePercentComplete float64                                                                `pulumi:"aggregatePercentComplete"`
-	ClusterCreationStarted   bool                                                                   `pulumi:"clusterCreationStarted"`
-	ClusterProgressDetails   []GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetail `pulumi:"clusterProgressDetails"`
-	CurrentFoundationIp      string                                                                 `pulumi:"currentFoundationIp"`
-	FoundationSessionId      string                                                                 `pulumi:"foundationSessionId"`
-	ImagingStopped           bool                                                                   `pulumi:"imagingStopped"`
-	IntentPickedUp           bool                                                                   `pulumi:"intentPickedUp"`
-	NodeProgressDetails      []GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetail    `pulumi:"nodeProgressDetails"`
+	// Overall progress percentage including imaging and cluster creation.
+	AggregatePercentComplete float64 `pulumi:"aggregatePercentComplete"`
+	// Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
+	ClusterCreationStarted bool `pulumi:"clusterCreationStarted"`
+	// Denotes the progress status of cluster creation.
+	ClusterProgressDetails []GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetail `pulumi:"clusterProgressDetails"`
+	// Current IP address of the coordinating foundation node.
+	CurrentFoundationIp string `pulumi:"currentFoundationIp"`
+	// Foundation session id for cluster creation.
+	FoundationSessionId string `pulumi:"foundationSessionId"`
+	// Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+	ImagingStopped bool `pulumi:"imagingStopped"`
+	// Denotes whether the remote nodes has picked up the cluster creation intent.
+	IntentPickedUp bool `pulumi:"intentPickedUp"`
+	// List of progress details of each node.
+	NodeProgressDetails []GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetail `pulumi:"nodeProgressDetails"`
 }
 
 // GetFoundationCentralClusterDetailsClusterStatusInput is an input type that accepts GetFoundationCentralClusterDetailsClusterStatusArgs and GetFoundationCentralClusterDetailsClusterStatusOutput values.
@@ -33044,14 +33052,22 @@ type GetFoundationCentralClusterDetailsClusterStatusInput interface {
 }
 
 type GetFoundationCentralClusterDetailsClusterStatusArgs struct {
-	AggregatePercentComplete pulumi.Float64Input                                                            `pulumi:"aggregatePercentComplete"`
-	ClusterCreationStarted   pulumi.BoolInput                                                               `pulumi:"clusterCreationStarted"`
-	ClusterProgressDetails   GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArrayInput `pulumi:"clusterProgressDetails"`
-	CurrentFoundationIp      pulumi.StringInput                                                             `pulumi:"currentFoundationIp"`
-	FoundationSessionId      pulumi.StringInput                                                             `pulumi:"foundationSessionId"`
-	ImagingStopped           pulumi.BoolInput                                                               `pulumi:"imagingStopped"`
-	IntentPickedUp           pulumi.BoolInput                                                               `pulumi:"intentPickedUp"`
-	NodeProgressDetails      GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArrayInput    `pulumi:"nodeProgressDetails"`
+	// Overall progress percentage including imaging and cluster creation.
+	AggregatePercentComplete pulumi.Float64Input `pulumi:"aggregatePercentComplete"`
+	// Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
+	ClusterCreationStarted pulumi.BoolInput `pulumi:"clusterCreationStarted"`
+	// Denotes the progress status of cluster creation.
+	ClusterProgressDetails GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArrayInput `pulumi:"clusterProgressDetails"`
+	// Current IP address of the coordinating foundation node.
+	CurrentFoundationIp pulumi.StringInput `pulumi:"currentFoundationIp"`
+	// Foundation session id for cluster creation.
+	FoundationSessionId pulumi.StringInput `pulumi:"foundationSessionId"`
+	// Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+	ImagingStopped pulumi.BoolInput `pulumi:"imagingStopped"`
+	// Denotes whether the remote nodes has picked up the cluster creation intent.
+	IntentPickedUp pulumi.BoolInput `pulumi:"intentPickedUp"`
+	// List of progress details of each node.
+	NodeProgressDetails GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArrayInput `pulumi:"nodeProgressDetails"`
 }
 
 func (GetFoundationCentralClusterDetailsClusterStatusArgs) ElementType() reflect.Type {
@@ -33131,36 +33147,44 @@ func (o GetFoundationCentralClusterDetailsClusterStatusOutput) ToGetFoundationCe
 	}).(GetFoundationCentralClusterDetailsClusterStatusPtrOutput)
 }
 
+// Overall progress percentage including imaging and cluster creation.
 func (o GetFoundationCentralClusterDetailsClusterStatusOutput) AggregatePercentComplete() pulumi.Float64Output {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatus) float64 { return v.AggregatePercentComplete }).(pulumi.Float64Output)
 }
 
+// Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
 func (o GetFoundationCentralClusterDetailsClusterStatusOutput) ClusterCreationStarted() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatus) bool { return v.ClusterCreationStarted }).(pulumi.BoolOutput)
 }
 
+// Denotes the progress status of cluster creation.
 func (o GetFoundationCentralClusterDetailsClusterStatusOutput) ClusterProgressDetails() GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatus) []GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetail {
 		return v.ClusterProgressDetails
 	}).(GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArrayOutput)
 }
 
+// Current IP address of the coordinating foundation node.
 func (o GetFoundationCentralClusterDetailsClusterStatusOutput) CurrentFoundationIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatus) string { return v.CurrentFoundationIp }).(pulumi.StringOutput)
 }
 
+// Foundation session id for cluster creation.
 func (o GetFoundationCentralClusterDetailsClusterStatusOutput) FoundationSessionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatus) string { return v.FoundationSessionId }).(pulumi.StringOutput)
 }
 
+// Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
 func (o GetFoundationCentralClusterDetailsClusterStatusOutput) ImagingStopped() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatus) bool { return v.ImagingStopped }).(pulumi.BoolOutput)
 }
 
+// Denotes whether the remote nodes has picked up the cluster creation intent.
 func (o GetFoundationCentralClusterDetailsClusterStatusOutput) IntentPickedUp() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatus) bool { return v.IntentPickedUp }).(pulumi.BoolOutput)
 }
 
+// List of progress details of each node.
 func (o GetFoundationCentralClusterDetailsClusterStatusOutput) NodeProgressDetails() GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatus) []GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetail {
 		return v.NodeProgressDetails
@@ -33191,6 +33215,7 @@ func (o GetFoundationCentralClusterDetailsClusterStatusPtrOutput) Elem() GetFoun
 	}).(GetFoundationCentralClusterDetailsClusterStatusOutput)
 }
 
+// Overall progress percentage including imaging and cluster creation.
 func (o GetFoundationCentralClusterDetailsClusterStatusPtrOutput) AggregatePercentComplete() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *GetFoundationCentralClusterDetailsClusterStatus) *float64 {
 		if v == nil {
@@ -33200,6 +33225,7 @@ func (o GetFoundationCentralClusterDetailsClusterStatusPtrOutput) AggregatePerce
 	}).(pulumi.Float64PtrOutput)
 }
 
+// Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
 func (o GetFoundationCentralClusterDetailsClusterStatusPtrOutput) ClusterCreationStarted() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GetFoundationCentralClusterDetailsClusterStatus) *bool {
 		if v == nil {
@@ -33209,6 +33235,7 @@ func (o GetFoundationCentralClusterDetailsClusterStatusPtrOutput) ClusterCreatio
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Denotes the progress status of cluster creation.
 func (o GetFoundationCentralClusterDetailsClusterStatusPtrOutput) ClusterProgressDetails() GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArrayOutput {
 	return o.ApplyT(func(v *GetFoundationCentralClusterDetailsClusterStatus) []GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetail {
 		if v == nil {
@@ -33218,6 +33245,7 @@ func (o GetFoundationCentralClusterDetailsClusterStatusPtrOutput) ClusterProgres
 	}).(GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArrayOutput)
 }
 
+// Current IP address of the coordinating foundation node.
 func (o GetFoundationCentralClusterDetailsClusterStatusPtrOutput) CurrentFoundationIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GetFoundationCentralClusterDetailsClusterStatus) *string {
 		if v == nil {
@@ -33227,6 +33255,7 @@ func (o GetFoundationCentralClusterDetailsClusterStatusPtrOutput) CurrentFoundat
 	}).(pulumi.StringPtrOutput)
 }
 
+// Foundation session id for cluster creation.
 func (o GetFoundationCentralClusterDetailsClusterStatusPtrOutput) FoundationSessionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GetFoundationCentralClusterDetailsClusterStatus) *string {
 		if v == nil {
@@ -33236,6 +33265,7 @@ func (o GetFoundationCentralClusterDetailsClusterStatusPtrOutput) FoundationSess
 	}).(pulumi.StringPtrOutput)
 }
 
+// Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
 func (o GetFoundationCentralClusterDetailsClusterStatusPtrOutput) ImagingStopped() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GetFoundationCentralClusterDetailsClusterStatus) *bool {
 		if v == nil {
@@ -33245,6 +33275,7 @@ func (o GetFoundationCentralClusterDetailsClusterStatusPtrOutput) ImagingStopped
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Denotes whether the remote nodes has picked up the cluster creation intent.
 func (o GetFoundationCentralClusterDetailsClusterStatusPtrOutput) IntentPickedUp() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GetFoundationCentralClusterDetailsClusterStatus) *bool {
 		if v == nil {
@@ -33254,6 +33285,7 @@ func (o GetFoundationCentralClusterDetailsClusterStatusPtrOutput) IntentPickedUp
 	}).(pulumi.BoolPtrOutput)
 }
 
+// List of progress details of each node.
 func (o GetFoundationCentralClusterDetailsClusterStatusPtrOutput) NodeProgressDetails() GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArrayOutput {
 	return o.ApplyT(func(v *GetFoundationCentralClusterDetailsClusterStatus) []GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetail {
 		if v == nil {
@@ -33264,10 +33296,14 @@ func (o GetFoundationCentralClusterDetailsClusterStatusPtrOutput) NodeProgressDe
 }
 
 type GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetail struct {
-	ClusterName     string   `pulumi:"clusterName"`
-	MessageLists    []string `pulumi:"messageLists"`
-	PercentComplete float64  `pulumi:"percentComplete"`
-	Status          string   `pulumi:"status"`
+	// Cluster name.
+	ClusterName string `pulumi:"clusterName"`
+	// List of messages for the client based on process state.
+	MessageLists []string `pulumi:"messageLists"`
+	// Percent completion of cluster creation process.
+	PercentComplete float64 `pulumi:"percentComplete"`
+	// Current status of cluster creation process.
+	Status string `pulumi:"status"`
 }
 
 // GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailInput is an input type that accepts GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs and GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailOutput values.
@@ -33282,10 +33318,14 @@ type GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailInput i
 }
 
 type GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs struct {
-	ClusterName     pulumi.StringInput      `pulumi:"clusterName"`
-	MessageLists    pulumi.StringArrayInput `pulumi:"messageLists"`
-	PercentComplete pulumi.Float64Input     `pulumi:"percentComplete"`
-	Status          pulumi.StringInput      `pulumi:"status"`
+	// Cluster name.
+	ClusterName pulumi.StringInput `pulumi:"clusterName"`
+	// List of messages for the client based on process state.
+	MessageLists pulumi.StringArrayInput `pulumi:"messageLists"`
+	// Percent completion of cluster creation process.
+	PercentComplete pulumi.Float64Input `pulumi:"percentComplete"`
+	// Current status of cluster creation process.
+	Status pulumi.StringInput `pulumi:"status"`
 }
 
 func (GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs) ElementType() reflect.Type {
@@ -33339,24 +33379,28 @@ func (o GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailOutp
 	return o
 }
 
+// Cluster name.
 func (o GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailOutput) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetail) string {
 		return v.ClusterName
 	}).(pulumi.StringOutput)
 }
 
+// List of messages for the client based on process state.
 func (o GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailOutput) MessageLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetail) []string {
 		return v.MessageLists
 	}).(pulumi.StringArrayOutput)
 }
 
+// Percent completion of cluster creation process.
 func (o GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailOutput) PercentComplete() pulumi.Float64Output {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetail) float64 {
 		return v.PercentComplete
 	}).(pulumi.Float64Output)
 }
 
+// Current status of cluster creation process.
 func (o GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetail) string { return v.Status }).(pulumi.StringOutput)
 }
@@ -33382,12 +33426,18 @@ func (o GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArra
 }
 
 type GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetail struct {
-	ImagedNodeUuid  string   `pulumi:"imagedNodeUuid"`
-	ImagingStopped  bool     `pulumi:"imagingStopped"`
-	IntentPickedUp  bool     `pulumi:"intentPickedUp"`
-	MessageLists    []string `pulumi:"messageLists"`
-	PercentComplete float64  `pulumi:"percentComplete"`
-	Status          string   `pulumi:"status"`
+	// UUID of the node.
+	ImagedNodeUuid string `pulumi:"imagedNodeUuid"`
+	// Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+	ImagingStopped bool `pulumi:"imagingStopped"`
+	// Denotes whether the remote nodes has picked up the cluster creation intent.
+	IntentPickedUp bool `pulumi:"intentPickedUp"`
+	// List of messages for the client based on process state.
+	MessageLists []string `pulumi:"messageLists"`
+	// Percent completion of cluster creation process.
+	PercentComplete float64 `pulumi:"percentComplete"`
+	// Current status of cluster creation process.
+	Status string `pulumi:"status"`
 }
 
 // GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailInput is an input type that accepts GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs and GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailOutput values.
@@ -33402,12 +33452,18 @@ type GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailInput inte
 }
 
 type GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs struct {
-	ImagedNodeUuid  pulumi.StringInput      `pulumi:"imagedNodeUuid"`
-	ImagingStopped  pulumi.BoolInput        `pulumi:"imagingStopped"`
-	IntentPickedUp  pulumi.BoolInput        `pulumi:"intentPickedUp"`
-	MessageLists    pulumi.StringArrayInput `pulumi:"messageLists"`
-	PercentComplete pulumi.Float64Input     `pulumi:"percentComplete"`
-	Status          pulumi.StringInput      `pulumi:"status"`
+	// UUID of the node.
+	ImagedNodeUuid pulumi.StringInput `pulumi:"imagedNodeUuid"`
+	// Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+	ImagingStopped pulumi.BoolInput `pulumi:"imagingStopped"`
+	// Denotes whether the remote nodes has picked up the cluster creation intent.
+	IntentPickedUp pulumi.BoolInput `pulumi:"intentPickedUp"`
+	// List of messages for the client based on process state.
+	MessageLists pulumi.StringArrayInput `pulumi:"messageLists"`
+	// Percent completion of cluster creation process.
+	PercentComplete pulumi.Float64Input `pulumi:"percentComplete"`
+	// Current status of cluster creation process.
+	Status pulumi.StringInput `pulumi:"status"`
 }
 
 func (GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs) ElementType() reflect.Type {
@@ -33461,36 +33517,42 @@ func (o GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailOutput)
 	return o
 }
 
+// UUID of the node.
 func (o GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailOutput) ImagedNodeUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetail) string {
 		return v.ImagedNodeUuid
 	}).(pulumi.StringOutput)
 }
 
+// Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
 func (o GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailOutput) ImagingStopped() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetail) bool {
 		return v.ImagingStopped
 	}).(pulumi.BoolOutput)
 }
 
+// Denotes whether the remote nodes has picked up the cluster creation intent.
 func (o GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailOutput) IntentPickedUp() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetail) bool {
 		return v.IntentPickedUp
 	}).(pulumi.BoolOutput)
 }
 
+// List of messages for the client based on process state.
 func (o GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailOutput) MessageLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetail) []string {
 		return v.MessageLists
 	}).(pulumi.StringArrayOutput)
 }
 
+// Percent completion of cluster creation process.
 func (o GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailOutput) PercentComplete() pulumi.Float64Output {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetail) float64 {
 		return v.PercentComplete
 	}).(pulumi.Float64Output)
 }
 
+// Current status of cluster creation process.
 func (o GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetail) string { return v.Status }).(pulumi.StringOutput)
 }
@@ -33516,9 +33578,13 @@ func (o GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArrayOu
 }
 
 type GetFoundationCentralClusterDetailsCommonNetworkSettings struct {
-	CvmDnsServers        []string `pulumi:"cvmDnsServers"`
-	CvmNtpServers        []string `pulumi:"cvmNtpServers"`
+	// List of dns servers for the cvms in the cluster.
+	CvmDnsServers []string `pulumi:"cvmDnsServers"`
+	// List of ntp servers for the cvms in the cluster.
+	CvmNtpServers []string `pulumi:"cvmNtpServers"`
+	// List of dns servers for the hypervisors in the cluster.
 	HypervisorDnsServers []string `pulumi:"hypervisorDnsServers"`
+	// List of ntp servers for the hypervisors in the cluster.
 	HypervisorNtpServers []string `pulumi:"hypervisorNtpServers"`
 }
 
@@ -33534,9 +33600,13 @@ type GetFoundationCentralClusterDetailsCommonNetworkSettingsInput interface {
 }
 
 type GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs struct {
-	CvmDnsServers        pulumi.StringArrayInput `pulumi:"cvmDnsServers"`
-	CvmNtpServers        pulumi.StringArrayInput `pulumi:"cvmNtpServers"`
+	// List of dns servers for the cvms in the cluster.
+	CvmDnsServers pulumi.StringArrayInput `pulumi:"cvmDnsServers"`
+	// List of ntp servers for the cvms in the cluster.
+	CvmNtpServers pulumi.StringArrayInput `pulumi:"cvmNtpServers"`
+	// List of dns servers for the hypervisors in the cluster.
 	HypervisorDnsServers pulumi.StringArrayInput `pulumi:"hypervisorDnsServers"`
+	// List of ntp servers for the hypervisors in the cluster.
 	HypervisorNtpServers pulumi.StringArrayInput `pulumi:"hypervisorNtpServers"`
 }
 
@@ -33617,20 +33687,24 @@ func (o GetFoundationCentralClusterDetailsCommonNetworkSettingsOutput) ToGetFoun
 	}).(GetFoundationCentralClusterDetailsCommonNetworkSettingsPtrOutput)
 }
 
+// List of dns servers for the cvms in the cluster.
 func (o GetFoundationCentralClusterDetailsCommonNetworkSettingsOutput) CvmDnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsCommonNetworkSettings) []string { return v.CvmDnsServers }).(pulumi.StringArrayOutput)
 }
 
+// List of ntp servers for the cvms in the cluster.
 func (o GetFoundationCentralClusterDetailsCommonNetworkSettingsOutput) CvmNtpServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsCommonNetworkSettings) []string { return v.CvmNtpServers }).(pulumi.StringArrayOutput)
 }
 
+// List of dns servers for the hypervisors in the cluster.
 func (o GetFoundationCentralClusterDetailsCommonNetworkSettingsOutput) HypervisorDnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsCommonNetworkSettings) []string {
 		return v.HypervisorDnsServers
 	}).(pulumi.StringArrayOutput)
 }
 
+// List of ntp servers for the hypervisors in the cluster.
 func (o GetFoundationCentralClusterDetailsCommonNetworkSettingsOutput) HypervisorNtpServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsCommonNetworkSettings) []string {
 		return v.HypervisorNtpServers
@@ -33661,6 +33735,7 @@ func (o GetFoundationCentralClusterDetailsCommonNetworkSettingsPtrOutput) Elem()
 	}).(GetFoundationCentralClusterDetailsCommonNetworkSettingsOutput)
 }
 
+// List of dns servers for the cvms in the cluster.
 func (o GetFoundationCentralClusterDetailsCommonNetworkSettingsPtrOutput) CvmDnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *GetFoundationCentralClusterDetailsCommonNetworkSettings) []string {
 		if v == nil {
@@ -33670,6 +33745,7 @@ func (o GetFoundationCentralClusterDetailsCommonNetworkSettingsPtrOutput) CvmDns
 	}).(pulumi.StringArrayOutput)
 }
 
+// List of ntp servers for the cvms in the cluster.
 func (o GetFoundationCentralClusterDetailsCommonNetworkSettingsPtrOutput) CvmNtpServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *GetFoundationCentralClusterDetailsCommonNetworkSettings) []string {
 		if v == nil {
@@ -33679,6 +33755,7 @@ func (o GetFoundationCentralClusterDetailsCommonNetworkSettingsPtrOutput) CvmNtp
 	}).(pulumi.StringArrayOutput)
 }
 
+// List of dns servers for the hypervisors in the cluster.
 func (o GetFoundationCentralClusterDetailsCommonNetworkSettingsPtrOutput) HypervisorDnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *GetFoundationCentralClusterDetailsCommonNetworkSettings) []string {
 		if v == nil {
@@ -33688,6 +33765,7 @@ func (o GetFoundationCentralClusterDetailsCommonNetworkSettingsPtrOutput) Hyperv
 	}).(pulumi.StringArrayOutput)
 }
 
+// List of ntp servers for the hypervisors in the cluster.
 func (o GetFoundationCentralClusterDetailsCommonNetworkSettingsPtrOutput) HypervisorNtpServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *GetFoundationCentralClusterDetailsCommonNetworkSettings) []string {
 		if v == nil {
@@ -34148,15 +34226,20 @@ func (o GetFoundationCentralClusterDetailsFoundationInitConfigBlockNodeArrayOutp
 }
 
 type GetFoundationCentralClusterDetailsFoundationInitConfigCluster struct {
+	// External management ip of the cluster.
 	ClusterExternalIp     string   `pulumi:"clusterExternalIp"`
 	ClusterInitNow        bool     `pulumi:"clusterInitNow"`
 	ClusterInitSuccessful bool     `pulumi:"clusterInitSuccessful"`
 	ClusterMembers        []string `pulumi:"clusterMembers"`
-	ClusterName           string   `pulumi:"clusterName"`
-	CvmDnsServers         string   `pulumi:"cvmDnsServers"`
-	CvmNtpServers         string   `pulumi:"cvmNtpServers"`
-	RedundancyFactor      int      `pulumi:"redundancyFactor"`
-	Timezone              string   `pulumi:"timezone"`
+	// Cluster name.
+	ClusterName string `pulumi:"clusterName"`
+	// List of dns servers for the cvms in the cluster.
+	CvmDnsServers string `pulumi:"cvmDnsServers"`
+	// List of ntp servers for the cvms in the cluster.
+	CvmNtpServers string `pulumi:"cvmNtpServers"`
+	// Redundancy factor of the cluster.
+	RedundancyFactor int    `pulumi:"redundancyFactor"`
+	Timezone         string `pulumi:"timezone"`
 }
 
 // GetFoundationCentralClusterDetailsFoundationInitConfigClusterInput is an input type that accepts GetFoundationCentralClusterDetailsFoundationInitConfigClusterArgs and GetFoundationCentralClusterDetailsFoundationInitConfigClusterOutput values.
@@ -34171,15 +34254,20 @@ type GetFoundationCentralClusterDetailsFoundationInitConfigClusterInput interfac
 }
 
 type GetFoundationCentralClusterDetailsFoundationInitConfigClusterArgs struct {
+	// External management ip of the cluster.
 	ClusterExternalIp     pulumi.StringInput      `pulumi:"clusterExternalIp"`
 	ClusterInitNow        pulumi.BoolInput        `pulumi:"clusterInitNow"`
 	ClusterInitSuccessful pulumi.BoolInput        `pulumi:"clusterInitSuccessful"`
 	ClusterMembers        pulumi.StringArrayInput `pulumi:"clusterMembers"`
-	ClusterName           pulumi.StringInput      `pulumi:"clusterName"`
-	CvmDnsServers         pulumi.StringInput      `pulumi:"cvmDnsServers"`
-	CvmNtpServers         pulumi.StringInput      `pulumi:"cvmNtpServers"`
-	RedundancyFactor      pulumi.IntInput         `pulumi:"redundancyFactor"`
-	Timezone              pulumi.StringInput      `pulumi:"timezone"`
+	// Cluster name.
+	ClusterName pulumi.StringInput `pulumi:"clusterName"`
+	// List of dns servers for the cvms in the cluster.
+	CvmDnsServers pulumi.StringInput `pulumi:"cvmDnsServers"`
+	// List of ntp servers for the cvms in the cluster.
+	CvmNtpServers pulumi.StringInput `pulumi:"cvmNtpServers"`
+	// Redundancy factor of the cluster.
+	RedundancyFactor pulumi.IntInput    `pulumi:"redundancyFactor"`
+	Timezone         pulumi.StringInput `pulumi:"timezone"`
 }
 
 func (GetFoundationCentralClusterDetailsFoundationInitConfigClusterArgs) ElementType() reflect.Type {
@@ -34233,6 +34321,7 @@ func (o GetFoundationCentralClusterDetailsFoundationInitConfigClusterOutput) ToG
 	return o
 }
 
+// External management ip of the cluster.
 func (o GetFoundationCentralClusterDetailsFoundationInitConfigClusterOutput) ClusterExternalIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsFoundationInitConfigCluster) string {
 		return v.ClusterExternalIp
@@ -34255,18 +34344,22 @@ func (o GetFoundationCentralClusterDetailsFoundationInitConfigClusterOutput) Clu
 	}).(pulumi.StringArrayOutput)
 }
 
+// Cluster name.
 func (o GetFoundationCentralClusterDetailsFoundationInitConfigClusterOutput) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsFoundationInitConfigCluster) string { return v.ClusterName }).(pulumi.StringOutput)
 }
 
+// List of dns servers for the cvms in the cluster.
 func (o GetFoundationCentralClusterDetailsFoundationInitConfigClusterOutput) CvmDnsServers() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsFoundationInitConfigCluster) string { return v.CvmDnsServers }).(pulumi.StringOutput)
 }
 
+// List of ntp servers for the cvms in the cluster.
 func (o GetFoundationCentralClusterDetailsFoundationInitConfigClusterOutput) CvmNtpServers() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsFoundationInitConfigCluster) string { return v.CvmNtpServers }).(pulumi.StringOutput)
 }
 
+// Redundancy factor of the cluster.
 func (o GetFoundationCentralClusterDetailsFoundationInitConfigClusterOutput) RedundancyFactor() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralClusterDetailsFoundationInitConfigCluster) int { return v.RedundancyFactor }).(pulumi.IntOutput)
 }
@@ -34504,6 +34597,7 @@ func (o GetFoundationCentralClusterDetailsFoundationInitConfigNosPackageUrlArray
 }
 
 type GetFoundationCentralImagedClustersListFilters struct {
+	// True if the cluster creation request is archived, False otherwise
 	Archived *bool `pulumi:"archived"`
 }
 
@@ -34519,6 +34613,7 @@ type GetFoundationCentralImagedClustersListFiltersInput interface {
 }
 
 type GetFoundationCentralImagedClustersListFiltersArgs struct {
+	// True if the cluster creation request is archived, False otherwise
 	Archived pulumi.BoolPtrInput `pulumi:"archived"`
 }
 
@@ -34599,6 +34694,7 @@ func (o GetFoundationCentralImagedClustersListFiltersOutput) ToGetFoundationCent
 	}).(GetFoundationCentralImagedClustersListFiltersPtrOutput)
 }
 
+// True if the cluster creation request is archived, False otherwise
 func (o GetFoundationCentralImagedClustersListFiltersOutput) Archived() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListFilters) *bool { return v.Archived }).(pulumi.BoolPtrOutput)
 }
@@ -34627,6 +34723,7 @@ func (o GetFoundationCentralImagedClustersListFiltersPtrOutput) Elem() GetFounda
 	}).(GetFoundationCentralImagedClustersListFiltersOutput)
 }
 
+// True if the cluster creation request is archived, False otherwise
 func (o GetFoundationCentralImagedClustersListFiltersPtrOutput) Archived() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *GetFoundationCentralImagedClustersListFilters) *bool {
 		if v == nil {
@@ -34637,22 +34734,38 @@ func (o GetFoundationCentralImagedClustersListFiltersPtrOutput) Archived() pulum
 }
 
 type GetFoundationCentralImagedClustersListImagedCluster struct {
-	Archived               bool                                                                      `pulumi:"archived"`
-	ClusterExternalIp      string                                                                    `pulumi:"clusterExternalIp"`
-	ClusterName            string                                                                    `pulumi:"clusterName"`
-	ClusterSize            int                                                                       `pulumi:"clusterSize"`
-	ClusterStatus          GetFoundationCentralImagedClustersListImagedClusterClusterStatus          `pulumi:"clusterStatus"`
-	CommonNetworkSettings  GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettings  `pulumi:"commonNetworkSettings"`
-	CreatedTimestamp       string                                                                    `pulumi:"createdTimestamp"`
-	CurrentTime            string                                                                    `pulumi:"currentTime"`
-	Destroyed              bool                                                                      `pulumi:"destroyed"`
-	FoundationInitConfigs  []GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfig `pulumi:"foundationInitConfigs"`
-	FoundationInitNodeUuid string                                                                    `pulumi:"foundationInitNodeUuid"`
-	ImagedClusterUuid      string                                                                    `pulumi:"imagedClusterUuid"`
-	ImagedNodeUuidLists    []string                                                                  `pulumi:"imagedNodeUuidLists"`
-	RedundancyFactor       *int                                                                      `pulumi:"redundancyFactor"`
-	StorageNodeCount       int                                                                       `pulumi:"storageNodeCount"`
-	WorkflowType           string                                                                    `pulumi:"workflowType"`
+	// True if the cluster creation request is archived, False otherwise
+	Archived bool `pulumi:"archived"`
+	// External management ip of the cluster.
+	ClusterExternalIp string `pulumi:"clusterExternalIp"`
+	// Cluster name.
+	ClusterName string `pulumi:"clusterName"`
+	// Number of nodes in the cluster.
+	ClusterSize int `pulumi:"clusterSize"`
+	// Details of cluster creation process.
+	ClusterStatus GetFoundationCentralImagedClustersListImagedClusterClusterStatus `pulumi:"clusterStatus"`
+	// Common network settings across the nodes in the cluster.
+	CommonNetworkSettings GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettings `pulumi:"commonNetworkSettings"`
+	// Time when the cluster creation request was received in Foundation Central.
+	CreatedTimestamp string `pulumi:"createdTimestamp"`
+	// Current time of Foundation Central.
+	CurrentTime string `pulumi:"currentTime"`
+	// True if the cluster is destroyed, False otherwise
+	Destroyed bool `pulumi:"destroyed"`
+	// Json config used by Foundation to create the cluster.
+	FoundationInitConfigs []GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfig `pulumi:"foundationInitConfigs"`
+	// UUID of the first node coordinating cluster creation.
+	FoundationInitNodeUuid string `pulumi:"foundationInitNodeUuid"`
+	// UUID of the cluster.
+	ImagedClusterUuid string `pulumi:"imagedClusterUuid"`
+	// List of UUIDs of imaged nodes.
+	ImagedNodeUuidLists []string `pulumi:"imagedNodeUuidLists"`
+	// Redundancy factor of the cluster.
+	RedundancyFactor *int `pulumi:"redundancyFactor"`
+	// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+	StorageNodeCount int `pulumi:"storageNodeCount"`
+	// If imaging and cluster creation is coordinated by Foundation, value will be FOUNDATION_WF. If the nodes are in phoenix, value will be PHOENIX_WF.
+	WorkflowType string `pulumi:"workflowType"`
 }
 
 // GetFoundationCentralImagedClustersListImagedClusterInput is an input type that accepts GetFoundationCentralImagedClustersListImagedClusterArgs and GetFoundationCentralImagedClustersListImagedClusterOutput values.
@@ -34667,22 +34780,38 @@ type GetFoundationCentralImagedClustersListImagedClusterInput interface {
 }
 
 type GetFoundationCentralImagedClustersListImagedClusterArgs struct {
-	Archived               pulumi.BoolInput                                                                  `pulumi:"archived"`
-	ClusterExternalIp      pulumi.StringInput                                                                `pulumi:"clusterExternalIp"`
-	ClusterName            pulumi.StringInput                                                                `pulumi:"clusterName"`
-	ClusterSize            pulumi.IntInput                                                                   `pulumi:"clusterSize"`
-	ClusterStatus          GetFoundationCentralImagedClustersListImagedClusterClusterStatusInput             `pulumi:"clusterStatus"`
-	CommonNetworkSettings  GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettingsInput     `pulumi:"commonNetworkSettings"`
-	CreatedTimestamp       pulumi.StringInput                                                                `pulumi:"createdTimestamp"`
-	CurrentTime            pulumi.StringInput                                                                `pulumi:"currentTime"`
-	Destroyed              pulumi.BoolInput                                                                  `pulumi:"destroyed"`
-	FoundationInitConfigs  GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigArrayInput `pulumi:"foundationInitConfigs"`
-	FoundationInitNodeUuid pulumi.StringInput                                                                `pulumi:"foundationInitNodeUuid"`
-	ImagedClusterUuid      pulumi.StringInput                                                                `pulumi:"imagedClusterUuid"`
-	ImagedNodeUuidLists    pulumi.StringArrayInput                                                           `pulumi:"imagedNodeUuidLists"`
-	RedundancyFactor       pulumi.IntPtrInput                                                                `pulumi:"redundancyFactor"`
-	StorageNodeCount       pulumi.IntInput                                                                   `pulumi:"storageNodeCount"`
-	WorkflowType           pulumi.StringInput                                                                `pulumi:"workflowType"`
+	// True if the cluster creation request is archived, False otherwise
+	Archived pulumi.BoolInput `pulumi:"archived"`
+	// External management ip of the cluster.
+	ClusterExternalIp pulumi.StringInput `pulumi:"clusterExternalIp"`
+	// Cluster name.
+	ClusterName pulumi.StringInput `pulumi:"clusterName"`
+	// Number of nodes in the cluster.
+	ClusterSize pulumi.IntInput `pulumi:"clusterSize"`
+	// Details of cluster creation process.
+	ClusterStatus GetFoundationCentralImagedClustersListImagedClusterClusterStatusInput `pulumi:"clusterStatus"`
+	// Common network settings across the nodes in the cluster.
+	CommonNetworkSettings GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettingsInput `pulumi:"commonNetworkSettings"`
+	// Time when the cluster creation request was received in Foundation Central.
+	CreatedTimestamp pulumi.StringInput `pulumi:"createdTimestamp"`
+	// Current time of Foundation Central.
+	CurrentTime pulumi.StringInput `pulumi:"currentTime"`
+	// True if the cluster is destroyed, False otherwise
+	Destroyed pulumi.BoolInput `pulumi:"destroyed"`
+	// Json config used by Foundation to create the cluster.
+	FoundationInitConfigs GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigArrayInput `pulumi:"foundationInitConfigs"`
+	// UUID of the first node coordinating cluster creation.
+	FoundationInitNodeUuid pulumi.StringInput `pulumi:"foundationInitNodeUuid"`
+	// UUID of the cluster.
+	ImagedClusterUuid pulumi.StringInput `pulumi:"imagedClusterUuid"`
+	// List of UUIDs of imaged nodes.
+	ImagedNodeUuidLists pulumi.StringArrayInput `pulumi:"imagedNodeUuidLists"`
+	// Redundancy factor of the cluster.
+	RedundancyFactor pulumi.IntPtrInput `pulumi:"redundancyFactor"`
+	// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+	StorageNodeCount pulumi.IntInput `pulumi:"storageNodeCount"`
+	// If imaging and cluster creation is coordinated by Foundation, value will be FOUNDATION_WF. If the nodes are in phoenix, value will be PHOENIX_WF.
+	WorkflowType pulumi.StringInput `pulumi:"workflowType"`
 }
 
 func (GetFoundationCentralImagedClustersListImagedClusterArgs) ElementType() reflect.Type {
@@ -34736,72 +34865,88 @@ func (o GetFoundationCentralImagedClustersListImagedClusterOutput) ToGetFoundati
 	return o
 }
 
+// True if the cluster creation request is archived, False otherwise
 func (o GetFoundationCentralImagedClustersListImagedClusterOutput) Archived() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedCluster) bool { return v.Archived }).(pulumi.BoolOutput)
 }
 
+// External management ip of the cluster.
 func (o GetFoundationCentralImagedClustersListImagedClusterOutput) ClusterExternalIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedCluster) string { return v.ClusterExternalIp }).(pulumi.StringOutput)
 }
 
+// Cluster name.
 func (o GetFoundationCentralImagedClustersListImagedClusterOutput) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedCluster) string { return v.ClusterName }).(pulumi.StringOutput)
 }
 
+// Number of nodes in the cluster.
 func (o GetFoundationCentralImagedClustersListImagedClusterOutput) ClusterSize() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedCluster) int { return v.ClusterSize }).(pulumi.IntOutput)
 }
 
+// Details of cluster creation process.
 func (o GetFoundationCentralImagedClustersListImagedClusterOutput) ClusterStatus() GetFoundationCentralImagedClustersListImagedClusterClusterStatusOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedCluster) GetFoundationCentralImagedClustersListImagedClusterClusterStatus {
 		return v.ClusterStatus
 	}).(GetFoundationCentralImagedClustersListImagedClusterClusterStatusOutput)
 }
 
+// Common network settings across the nodes in the cluster.
 func (o GetFoundationCentralImagedClustersListImagedClusterOutput) CommonNetworkSettings() GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettingsOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedCluster) GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettings {
 		return v.CommonNetworkSettings
 	}).(GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettingsOutput)
 }
 
+// Time when the cluster creation request was received in Foundation Central.
 func (o GetFoundationCentralImagedClustersListImagedClusterOutput) CreatedTimestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedCluster) string { return v.CreatedTimestamp }).(pulumi.StringOutput)
 }
 
+// Current time of Foundation Central.
 func (o GetFoundationCentralImagedClustersListImagedClusterOutput) CurrentTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedCluster) string { return v.CurrentTime }).(pulumi.StringOutput)
 }
 
+// True if the cluster is destroyed, False otherwise
 func (o GetFoundationCentralImagedClustersListImagedClusterOutput) Destroyed() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedCluster) bool { return v.Destroyed }).(pulumi.BoolOutput)
 }
 
+// Json config used by Foundation to create the cluster.
 func (o GetFoundationCentralImagedClustersListImagedClusterOutput) FoundationInitConfigs() GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedCluster) []GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfig {
 		return v.FoundationInitConfigs
 	}).(GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigArrayOutput)
 }
 
+// UUID of the first node coordinating cluster creation.
 func (o GetFoundationCentralImagedClustersListImagedClusterOutput) FoundationInitNodeUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedCluster) string { return v.FoundationInitNodeUuid }).(pulumi.StringOutput)
 }
 
+// UUID of the cluster.
 func (o GetFoundationCentralImagedClustersListImagedClusterOutput) ImagedClusterUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedCluster) string { return v.ImagedClusterUuid }).(pulumi.StringOutput)
 }
 
+// List of UUIDs of imaged nodes.
 func (o GetFoundationCentralImagedClustersListImagedClusterOutput) ImagedNodeUuidLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedCluster) []string { return v.ImagedNodeUuidLists }).(pulumi.StringArrayOutput)
 }
 
+// Redundancy factor of the cluster.
 func (o GetFoundationCentralImagedClustersListImagedClusterOutput) RedundancyFactor() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedCluster) *int { return v.RedundancyFactor }).(pulumi.IntPtrOutput)
 }
 
+// Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
 func (o GetFoundationCentralImagedClustersListImagedClusterOutput) StorageNodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedCluster) int { return v.StorageNodeCount }).(pulumi.IntOutput)
 }
 
+// If imaging and cluster creation is coordinated by Foundation, value will be FOUNDATION_WF. If the nodes are in phoenix, value will be PHOENIX_WF.
 func (o GetFoundationCentralImagedClustersListImagedClusterOutput) WorkflowType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedCluster) string { return v.WorkflowType }).(pulumi.StringOutput)
 }
@@ -34827,14 +34972,22 @@ func (o GetFoundationCentralImagedClustersListImagedClusterArrayOutput) Index(i 
 }
 
 type GetFoundationCentralImagedClustersListImagedClusterClusterStatus struct {
-	AggregatePercentComplete float64                                                                                 `pulumi:"aggregatePercentComplete"`
-	ClusterCreationStarted   bool                                                                                    `pulumi:"clusterCreationStarted"`
-	ClusterProgressDetails   []GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetail `pulumi:"clusterProgressDetails"`
-	CurrentFoundationIp      string                                                                                  `pulumi:"currentFoundationIp"`
-	FoundationSessionId      string                                                                                  `pulumi:"foundationSessionId"`
-	ImagingStopped           bool                                                                                    `pulumi:"imagingStopped"`
-	IntentPickedUp           bool                                                                                    `pulumi:"intentPickedUp"`
-	NodeProgressDetails      []GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetail    `pulumi:"nodeProgressDetails"`
+	// Overall progress percentage including imaging and cluster creation.
+	AggregatePercentComplete float64 `pulumi:"aggregatePercentComplete"`
+	// Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
+	ClusterCreationStarted bool `pulumi:"clusterCreationStarted"`
+	// Denotes the progress status of cluster creation.
+	ClusterProgressDetails []GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetail `pulumi:"clusterProgressDetails"`
+	// Current IP address of the coordinating foundation node.
+	CurrentFoundationIp string `pulumi:"currentFoundationIp"`
+	// Foundation session id for cluster creation.
+	FoundationSessionId string `pulumi:"foundationSessionId"`
+	// Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+	ImagingStopped bool `pulumi:"imagingStopped"`
+	// Denotes whether the remote nodes has picked up the cluster creation intent.
+	IntentPickedUp bool `pulumi:"intentPickedUp"`
+	// List of progress details of each node.
+	NodeProgressDetails []GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetail `pulumi:"nodeProgressDetails"`
 }
 
 // GetFoundationCentralImagedClustersListImagedClusterClusterStatusInput is an input type that accepts GetFoundationCentralImagedClustersListImagedClusterClusterStatusArgs and GetFoundationCentralImagedClustersListImagedClusterClusterStatusOutput values.
@@ -34849,14 +35002,22 @@ type GetFoundationCentralImagedClustersListImagedClusterClusterStatusInput inter
 }
 
 type GetFoundationCentralImagedClustersListImagedClusterClusterStatusArgs struct {
-	AggregatePercentComplete pulumi.Float64Input                                                                             `pulumi:"aggregatePercentComplete"`
-	ClusterCreationStarted   pulumi.BoolInput                                                                                `pulumi:"clusterCreationStarted"`
-	ClusterProgressDetails   GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetailArrayInput `pulumi:"clusterProgressDetails"`
-	CurrentFoundationIp      pulumi.StringInput                                                                              `pulumi:"currentFoundationIp"`
-	FoundationSessionId      pulumi.StringInput                                                                              `pulumi:"foundationSessionId"`
-	ImagingStopped           pulumi.BoolInput                                                                                `pulumi:"imagingStopped"`
-	IntentPickedUp           pulumi.BoolInput                                                                                `pulumi:"intentPickedUp"`
-	NodeProgressDetails      GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailArrayInput    `pulumi:"nodeProgressDetails"`
+	// Overall progress percentage including imaging and cluster creation.
+	AggregatePercentComplete pulumi.Float64Input `pulumi:"aggregatePercentComplete"`
+	// Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
+	ClusterCreationStarted pulumi.BoolInput `pulumi:"clusterCreationStarted"`
+	// Denotes the progress status of cluster creation.
+	ClusterProgressDetails GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetailArrayInput `pulumi:"clusterProgressDetails"`
+	// Current IP address of the coordinating foundation node.
+	CurrentFoundationIp pulumi.StringInput `pulumi:"currentFoundationIp"`
+	// Foundation session id for cluster creation.
+	FoundationSessionId pulumi.StringInput `pulumi:"foundationSessionId"`
+	// Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+	ImagingStopped pulumi.BoolInput `pulumi:"imagingStopped"`
+	// Denotes whether the remote nodes has picked up the cluster creation intent.
+	IntentPickedUp pulumi.BoolInput `pulumi:"intentPickedUp"`
+	// List of progress details of each node.
+	NodeProgressDetails GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailArrayInput `pulumi:"nodeProgressDetails"`
 }
 
 func (GetFoundationCentralImagedClustersListImagedClusterClusterStatusArgs) ElementType() reflect.Type {
@@ -34885,44 +35046,52 @@ func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusOutput) 
 	return o
 }
 
+// Overall progress percentage including imaging and cluster creation.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusOutput) AggregatePercentComplete() pulumi.Float64Output {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatus) float64 {
 		return v.AggregatePercentComplete
 	}).(pulumi.Float64Output)
 }
 
+// Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusOutput) ClusterCreationStarted() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatus) bool {
 		return v.ClusterCreationStarted
 	}).(pulumi.BoolOutput)
 }
 
+// Denotes the progress status of cluster creation.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusOutput) ClusterProgressDetails() GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetailArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatus) []GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetail {
 		return v.ClusterProgressDetails
 	}).(GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetailArrayOutput)
 }
 
+// Current IP address of the coordinating foundation node.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusOutput) CurrentFoundationIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatus) string {
 		return v.CurrentFoundationIp
 	}).(pulumi.StringOutput)
 }
 
+// Foundation session id for cluster creation.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusOutput) FoundationSessionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatus) string {
 		return v.FoundationSessionId
 	}).(pulumi.StringOutput)
 }
 
+// Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusOutput) ImagingStopped() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatus) bool { return v.ImagingStopped }).(pulumi.BoolOutput)
 }
 
+// Denotes whether the remote nodes has picked up the cluster creation intent.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusOutput) IntentPickedUp() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatus) bool { return v.IntentPickedUp }).(pulumi.BoolOutput)
 }
 
+// List of progress details of each node.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusOutput) NodeProgressDetails() GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatus) []GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetail {
 		return v.NodeProgressDetails
@@ -34930,10 +35099,14 @@ func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusOutput) 
 }
 
 type GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetail struct {
-	ClusterName     string   `pulumi:"clusterName"`
-	MessageLists    []string `pulumi:"messageLists"`
-	PercentComplete float64  `pulumi:"percentComplete"`
-	Status          string   `pulumi:"status"`
+	// Cluster name.
+	ClusterName string `pulumi:"clusterName"`
+	// List of messages for the client based on process state.
+	MessageLists []string `pulumi:"messageLists"`
+	// Percent completion of cluster creation process.
+	PercentComplete float64 `pulumi:"percentComplete"`
+	// Current status of cluster creation process.
+	Status string `pulumi:"status"`
 }
 
 // GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetailInput is an input type that accepts GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetailArgs and GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetailOutput values.
@@ -34948,10 +35121,14 @@ type GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProg
 }
 
 type GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetailArgs struct {
-	ClusterName     pulumi.StringInput      `pulumi:"clusterName"`
-	MessageLists    pulumi.StringArrayInput `pulumi:"messageLists"`
-	PercentComplete pulumi.Float64Input     `pulumi:"percentComplete"`
-	Status          pulumi.StringInput      `pulumi:"status"`
+	// Cluster name.
+	ClusterName pulumi.StringInput `pulumi:"clusterName"`
+	// List of messages for the client based on process state.
+	MessageLists pulumi.StringArrayInput `pulumi:"messageLists"`
+	// Percent completion of cluster creation process.
+	PercentComplete pulumi.Float64Input `pulumi:"percentComplete"`
+	// Current status of cluster creation process.
+	Status pulumi.StringInput `pulumi:"status"`
 }
 
 func (GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetailArgs) ElementType() reflect.Type {
@@ -35005,24 +35182,28 @@ func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterP
 	return o
 }
 
+// Cluster name.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetailOutput) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetail) string {
 		return v.ClusterName
 	}).(pulumi.StringOutput)
 }
 
+// List of messages for the client based on process state.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetailOutput) MessageLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetail) []string {
 		return v.MessageLists
 	}).(pulumi.StringArrayOutput)
 }
 
+// Percent completion of cluster creation process.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetailOutput) PercentComplete() pulumi.Float64Output {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetail) float64 {
 		return v.PercentComplete
 	}).(pulumi.Float64Output)
 }
 
+// Current status of cluster creation process.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetailOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetail) string {
 		return v.Status
@@ -35050,12 +35231,18 @@ func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterP
 }
 
 type GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetail struct {
-	ImagedNodeUuid  string   `pulumi:"imagedNodeUuid"`
-	ImagingStopped  bool     `pulumi:"imagingStopped"`
-	IntentPickedUp  bool     `pulumi:"intentPickedUp"`
-	MessageLists    []string `pulumi:"messageLists"`
-	PercentComplete float64  `pulumi:"percentComplete"`
-	Status          string   `pulumi:"status"`
+	// UUID of the node.
+	ImagedNodeUuid string `pulumi:"imagedNodeUuid"`
+	// Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+	ImagingStopped bool `pulumi:"imagingStopped"`
+	// Denotes whether the remote nodes has picked up the cluster creation intent.
+	IntentPickedUp bool `pulumi:"intentPickedUp"`
+	// List of messages for the client based on process state.
+	MessageLists []string `pulumi:"messageLists"`
+	// Percent completion of cluster creation process.
+	PercentComplete float64 `pulumi:"percentComplete"`
+	// Current status of cluster creation process.
+	Status string `pulumi:"status"`
 }
 
 // GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailInput is an input type that accepts GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailArgs and GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailOutput values.
@@ -35070,12 +35257,18 @@ type GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgres
 }
 
 type GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailArgs struct {
-	ImagedNodeUuid  pulumi.StringInput      `pulumi:"imagedNodeUuid"`
-	ImagingStopped  pulumi.BoolInput        `pulumi:"imagingStopped"`
-	IntentPickedUp  pulumi.BoolInput        `pulumi:"intentPickedUp"`
-	MessageLists    pulumi.StringArrayInput `pulumi:"messageLists"`
-	PercentComplete pulumi.Float64Input     `pulumi:"percentComplete"`
-	Status          pulumi.StringInput      `pulumi:"status"`
+	// UUID of the node.
+	ImagedNodeUuid pulumi.StringInput `pulumi:"imagedNodeUuid"`
+	// Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+	ImagingStopped pulumi.BoolInput `pulumi:"imagingStopped"`
+	// Denotes whether the remote nodes has picked up the cluster creation intent.
+	IntentPickedUp pulumi.BoolInput `pulumi:"intentPickedUp"`
+	// List of messages for the client based on process state.
+	MessageLists pulumi.StringArrayInput `pulumi:"messageLists"`
+	// Percent completion of cluster creation process.
+	PercentComplete pulumi.Float64Input `pulumi:"percentComplete"`
+	// Current status of cluster creation process.
+	Status pulumi.StringInput `pulumi:"status"`
 }
 
 func (GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailArgs) ElementType() reflect.Type {
@@ -35129,36 +35322,42 @@ func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProg
 	return o
 }
 
+// UUID of the node.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailOutput) ImagedNodeUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetail) string {
 		return v.ImagedNodeUuid
 	}).(pulumi.StringOutput)
 }
 
+// Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailOutput) ImagingStopped() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetail) bool {
 		return v.ImagingStopped
 	}).(pulumi.BoolOutput)
 }
 
+// Denotes whether the remote nodes has picked up the cluster creation intent.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailOutput) IntentPickedUp() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetail) bool {
 		return v.IntentPickedUp
 	}).(pulumi.BoolOutput)
 }
 
+// List of messages for the client based on process state.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailOutput) MessageLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetail) []string {
 		return v.MessageLists
 	}).(pulumi.StringArrayOutput)
 }
 
+// Percent completion of cluster creation process.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailOutput) PercentComplete() pulumi.Float64Output {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetail) float64 {
 		return v.PercentComplete
 	}).(pulumi.Float64Output)
 }
 
+// Current status of cluster creation process.
 func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetailOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetail) string {
 		return v.Status
@@ -35186,9 +35385,13 @@ func (o GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProg
 }
 
 type GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettings struct {
-	CvmDnsServers        []string `pulumi:"cvmDnsServers"`
-	CvmNtpServers        []string `pulumi:"cvmNtpServers"`
+	// List of dns servers for the cvms in the cluster.
+	CvmDnsServers []string `pulumi:"cvmDnsServers"`
+	// List of ntp servers for the cvms in the cluster.
+	CvmNtpServers []string `pulumi:"cvmNtpServers"`
+	// List of dns servers for the hypervisors in the cluster.
 	HypervisorDnsServers []string `pulumi:"hypervisorDnsServers"`
+	// List of ntp servers for the hypervisors in the cluster.
 	HypervisorNtpServers []string `pulumi:"hypervisorNtpServers"`
 }
 
@@ -35204,9 +35407,13 @@ type GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettingsInp
 }
 
 type GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettingsArgs struct {
-	CvmDnsServers        pulumi.StringArrayInput `pulumi:"cvmDnsServers"`
-	CvmNtpServers        pulumi.StringArrayInput `pulumi:"cvmNtpServers"`
+	// List of dns servers for the cvms in the cluster.
+	CvmDnsServers pulumi.StringArrayInput `pulumi:"cvmDnsServers"`
+	// List of ntp servers for the cvms in the cluster.
+	CvmNtpServers pulumi.StringArrayInput `pulumi:"cvmNtpServers"`
+	// List of dns servers for the hypervisors in the cluster.
 	HypervisorDnsServers pulumi.StringArrayInput `pulumi:"hypervisorDnsServers"`
+	// List of ntp servers for the hypervisors in the cluster.
 	HypervisorNtpServers pulumi.StringArrayInput `pulumi:"hypervisorNtpServers"`
 }
 
@@ -35236,24 +35443,28 @@ func (o GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettings
 	return o
 }
 
+// List of dns servers for the cvms in the cluster.
 func (o GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettingsOutput) CvmDnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettings) []string {
 		return v.CvmDnsServers
 	}).(pulumi.StringArrayOutput)
 }
 
+// List of ntp servers for the cvms in the cluster.
 func (o GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettingsOutput) CvmNtpServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettings) []string {
 		return v.CvmNtpServers
 	}).(pulumi.StringArrayOutput)
 }
 
+// List of dns servers for the hypervisors in the cluster.
 func (o GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettingsOutput) HypervisorDnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettings) []string {
 		return v.HypervisorDnsServers
 	}).(pulumi.StringArrayOutput)
 }
 
+// List of ntp servers for the hypervisors in the cluster.
 func (o GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettingsOutput) HypervisorNtpServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettings) []string {
 		return v.HypervisorNtpServers
@@ -35749,15 +35960,20 @@ func (o GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigB
 }
 
 type GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigCluster struct {
+	// External management ip of the cluster.
 	ClusterExternalIp     string   `pulumi:"clusterExternalIp"`
 	ClusterInitNow        bool     `pulumi:"clusterInitNow"`
 	ClusterInitSuccessful bool     `pulumi:"clusterInitSuccessful"`
 	ClusterMembers        []string `pulumi:"clusterMembers"`
-	ClusterName           string   `pulumi:"clusterName"`
-	CvmDnsServers         string   `pulumi:"cvmDnsServers"`
-	CvmNtpServers         string   `pulumi:"cvmNtpServers"`
-	RedundancyFactor      int      `pulumi:"redundancyFactor"`
-	Timezone              string   `pulumi:"timezone"`
+	// Cluster name.
+	ClusterName string `pulumi:"clusterName"`
+	// List of dns servers for the cvms in the cluster.
+	CvmDnsServers string `pulumi:"cvmDnsServers"`
+	// List of ntp servers for the cvms in the cluster.
+	CvmNtpServers string `pulumi:"cvmNtpServers"`
+	// Redundancy factor of the cluster.
+	RedundancyFactor int    `pulumi:"redundancyFactor"`
+	Timezone         string `pulumi:"timezone"`
 }
 
 // GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigClusterInput is an input type that accepts GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigClusterArgs and GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigClusterOutput values.
@@ -35772,15 +35988,20 @@ type GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigClus
 }
 
 type GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigClusterArgs struct {
+	// External management ip of the cluster.
 	ClusterExternalIp     pulumi.StringInput      `pulumi:"clusterExternalIp"`
 	ClusterInitNow        pulumi.BoolInput        `pulumi:"clusterInitNow"`
 	ClusterInitSuccessful pulumi.BoolInput        `pulumi:"clusterInitSuccessful"`
 	ClusterMembers        pulumi.StringArrayInput `pulumi:"clusterMembers"`
-	ClusterName           pulumi.StringInput      `pulumi:"clusterName"`
-	CvmDnsServers         pulumi.StringInput      `pulumi:"cvmDnsServers"`
-	CvmNtpServers         pulumi.StringInput      `pulumi:"cvmNtpServers"`
-	RedundancyFactor      pulumi.IntInput         `pulumi:"redundancyFactor"`
-	Timezone              pulumi.StringInput      `pulumi:"timezone"`
+	// Cluster name.
+	ClusterName pulumi.StringInput `pulumi:"clusterName"`
+	// List of dns servers for the cvms in the cluster.
+	CvmDnsServers pulumi.StringInput `pulumi:"cvmDnsServers"`
+	// List of ntp servers for the cvms in the cluster.
+	CvmNtpServers pulumi.StringInput `pulumi:"cvmNtpServers"`
+	// Redundancy factor of the cluster.
+	RedundancyFactor pulumi.IntInput    `pulumi:"redundancyFactor"`
+	Timezone         pulumi.StringInput `pulumi:"timezone"`
 }
 
 func (GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigClusterArgs) ElementType() reflect.Type {
@@ -35834,6 +36055,7 @@ func (o GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigC
 	return o
 }
 
+// External management ip of the cluster.
 func (o GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigClusterOutput) ClusterExternalIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigCluster) string {
 		return v.ClusterExternalIp
@@ -35858,24 +36080,28 @@ func (o GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigC
 	}).(pulumi.StringArrayOutput)
 }
 
+// Cluster name.
 func (o GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigClusterOutput) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigCluster) string {
 		return v.ClusterName
 	}).(pulumi.StringOutput)
 }
 
+// List of dns servers for the cvms in the cluster.
 func (o GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigClusterOutput) CvmDnsServers() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigCluster) string {
 		return v.CvmDnsServers
 	}).(pulumi.StringOutput)
 }
 
+// List of ntp servers for the cvms in the cluster.
 func (o GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigClusterOutput) CvmNtpServers() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigCluster) string {
 		return v.CvmNtpServers
 	}).(pulumi.StringOutput)
 }
 
+// Redundancy factor of the cluster.
 func (o GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigClusterOutput) RedundancyFactor() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigCluster) int {
 		return v.RedundancyFactor
@@ -36125,8 +36351,11 @@ func (o GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigN
 }
 
 type GetFoundationCentralImagedClustersListMetadata struct {
-	Length       int `pulumi:"length"`
-	Offset       int `pulumi:"offset"`
+	// The number of records retrieved.
+	Length int `pulumi:"length"`
+	// Offset from the start of the object list.
+	Offset int `pulumi:"offset"`
+	// Total matches found.
 	TotalMatches int `pulumi:"totalMatches"`
 }
 
@@ -36142,8 +36371,11 @@ type GetFoundationCentralImagedClustersListMetadataInput interface {
 }
 
 type GetFoundationCentralImagedClustersListMetadataArgs struct {
-	Length       pulumi.IntInput `pulumi:"length"`
-	Offset       pulumi.IntInput `pulumi:"offset"`
+	// The number of records retrieved.
+	Length pulumi.IntInput `pulumi:"length"`
+	// Offset from the start of the object list.
+	Offset pulumi.IntInput `pulumi:"offset"`
+	// Total matches found.
 	TotalMatches pulumi.IntInput `pulumi:"totalMatches"`
 }
 
@@ -36198,14 +36430,17 @@ func (o GetFoundationCentralImagedClustersListMetadataOutput) ToGetFoundationCen
 	return o
 }
 
+// The number of records retrieved.
 func (o GetFoundationCentralImagedClustersListMetadataOutput) Length() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListMetadata) int { return v.Length }).(pulumi.IntOutput)
 }
 
+// Offset from the start of the object list.
 func (o GetFoundationCentralImagedClustersListMetadataOutput) Offset() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListMetadata) int { return v.Offset }).(pulumi.IntOutput)
 }
 
+// Total matches found.
 func (o GetFoundationCentralImagedClustersListMetadataOutput) TotalMatches() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedClustersListMetadata) int { return v.TotalMatches }).(pulumi.IntOutput)
 }
@@ -36231,6 +36466,7 @@ func (o GetFoundationCentralImagedClustersListMetadataArrayOutput) Index(i pulum
 }
 
 type GetFoundationCentralImagedNodesListFilters struct {
+	// Specifies whether the node is discovering, available or unavailable for cluster creation.
 	NodeState *string `pulumi:"nodeState"`
 }
 
@@ -36246,6 +36482,7 @@ type GetFoundationCentralImagedNodesListFiltersInput interface {
 }
 
 type GetFoundationCentralImagedNodesListFiltersArgs struct {
+	// Specifies whether the node is discovering, available or unavailable for cluster creation.
 	NodeState pulumi.StringPtrInput `pulumi:"nodeState"`
 }
 
@@ -36326,6 +36563,7 @@ func (o GetFoundationCentralImagedNodesListFiltersOutput) ToGetFoundationCentral
 	}).(GetFoundationCentralImagedNodesListFiltersPtrOutput)
 }
 
+// Specifies whether the node is discovering, available or unavailable for cluster creation.
 func (o GetFoundationCentralImagedNodesListFiltersOutput) NodeState() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListFilters) *string { return v.NodeState }).(pulumi.StringPtrOutput)
 }
@@ -36354,6 +36592,7 @@ func (o GetFoundationCentralImagedNodesListFiltersPtrOutput) Elem() GetFoundatio
 	}).(GetFoundationCentralImagedNodesListFiltersOutput)
 }
 
+// Specifies whether the node is discovering, available or unavailable for cluster creation.
 func (o GetFoundationCentralImagedNodesListFiltersPtrOutput) NodeState() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *GetFoundationCentralImagedNodesListFilters) *string {
 		if v == nil {
@@ -36364,41 +36603,75 @@ func (o GetFoundationCentralImagedNodesListFiltersPtrOutput) NodeState() pulumi.
 }
 
 type GetFoundationCentralImagedNodesListImagedNode struct {
-	AosVersion         string                 `pulumi:"aosVersion"`
-	ApiKeyUuid         string                 `pulumi:"apiKeyUuid"`
-	Available          bool                   `pulumi:"available"`
-	BlockSerial        string                 `pulumi:"blockSerial"`
-	CreatedTimestamp   string                 `pulumi:"createdTimestamp"`
-	CurrentTime        string                 `pulumi:"currentTime"`
-	CvmGateway         string                 `pulumi:"cvmGateway"`
-	CvmIp              string                 `pulumi:"cvmIp"`
-	CvmIpv6            string                 `pulumi:"cvmIpv6"`
-	CvmNetmask         string                 `pulumi:"cvmNetmask"`
-	CvmUp              bool                   `pulumi:"cvmUp"`
-	CvmUuid            string                 `pulumi:"cvmUuid"`
-	CvmVlanId          int                    `pulumi:"cvmVlanId"`
-	FoundationVersion  string                 `pulumi:"foundationVersion"`
+	// AOS version currently installed on the node.
+	AosVersion string `pulumi:"aosVersion"`
+	// API key used to register the node.
+	ApiKeyUuid string `pulumi:"apiKeyUuid"`
+	// Specifies whether the node is available for cluster creation.
+	Available bool `pulumi:"available"`
+	// Serial number of the block to which the node belongs.
+	BlockSerial string `pulumi:"blockSerial"`
+	// Time when the node was discovered in Foundation Central.
+	CreatedTimestamp string `pulumi:"createdTimestamp"`
+	// Current time of Foundation Central.
+	CurrentTime string `pulumi:"currentTime"`
+	// gateway of the cvm.
+	CvmGateway string `pulumi:"cvmGateway"`
+	// IP address of the cvm.
+	CvmIp string `pulumi:"cvmIp"`
+	// IPv6 address of the cvm.
+	CvmIpv6 string `pulumi:"cvmIpv6"`
+	// netmask of the cvm.
+	CvmNetmask string `pulumi:"cvmNetmask"`
+	// Denotes whether the CVM is up or not on this node.
+	CvmUp bool `pulumi:"cvmUp"`
+	// Node UUID from the node's cvm.
+	CvmUuid string `pulumi:"cvmUuid"`
+	// Vlan tag of the cvm, if the cvm is on a vlan.
+	CvmVlanId int `pulumi:"cvmVlanId"`
+	// Foundation version installed on the node.
+	FoundationVersion string `pulumi:"foundationVersion"`
+	// Hardware attributes json of the node.
 	HardwareAttributes map[string]interface{} `pulumi:"hardwareAttributes"`
-	HypervisorGateway  string                 `pulumi:"hypervisorGateway"`
-	HypervisorHostname string                 `pulumi:"hypervisorHostname"`
-	HypervisorIp       string                 `pulumi:"hypervisorIp"`
-	HypervisorNetmask  string                 `pulumi:"hypervisorNetmask"`
-	HypervisorType     string                 `pulumi:"hypervisorType"`
-	HypervisorVersion  string                 `pulumi:"hypervisorVersion"`
-	ImagedClusterUuid  string                 `pulumi:"imagedClusterUuid"`
-	ImagedNodeUuid     string                 `pulumi:"imagedNodeUuid"`
-	IpmiGateway        string                 `pulumi:"ipmiGateway"`
-	IpmiIp             string                 `pulumi:"ipmiIp"`
-	IpmiNetmask        string                 `pulumi:"ipmiNetmask"`
-	Ipv6Interface      string                 `pulumi:"ipv6Interface"`
-	LatestHbTsLists    []string               `pulumi:"latestHbTsLists"`
-	Model              string                 `pulumi:"model"`
-	NodePosition       string                 `pulumi:"nodePosition"`
-	NodeSerial         string                 `pulumi:"nodeSerial"`
-	NodeState          string                 `pulumi:"nodeState"`
-	NodeType           string                 `pulumi:"nodeType"`
-	ObjectVersion      int                    `pulumi:"objectVersion"`
-	SupportedFeatures  []string               `pulumi:"supportedFeatures"`
+	// gateway of the hypervisor.
+	HypervisorGateway string `pulumi:"hypervisorGateway"`
+	// Name of the hypervisor host.
+	HypervisorHostname string `pulumi:"hypervisorHostname"`
+	// IP address of the hypervisor.
+	HypervisorIp string `pulumi:"hypervisorIp"`
+	// netmask of the hypervisor.
+	HypervisorNetmask string `pulumi:"hypervisorNetmask"`
+	// Hypervisor type currently installed on the node. Must be one of {kvm, esx, hyperv}.
+	HypervisorType string `pulumi:"hypervisorType"`
+	// Version of the hypervisor currently installed on the node.
+	HypervisorVersion string `pulumi:"hypervisorVersion"`
+	// UUID of the cluster to which the node belongs, if any.
+	ImagedClusterUuid string `pulumi:"imagedClusterUuid"`
+	// UUID of the node.
+	ImagedNodeUuid string `pulumi:"imagedNodeUuid"`
+	// gateway of the ipmi.
+	IpmiGateway string `pulumi:"ipmiGateway"`
+	// IP address of the ipmi.
+	IpmiIp string `pulumi:"ipmiIp"`
+	// netmask of the ipmi.
+	IpmiNetmask string `pulumi:"ipmiNetmask"`
+	// Name of the cvm interface having ipv6 address.
+	Ipv6Interface string `pulumi:"ipv6Interface"`
+	// List of timestamps when the node has sent heartbeats to Foundation Central.
+	LatestHbTsLists []string `pulumi:"latestHbTsLists"`
+	// Model of the node.
+	Model string `pulumi:"model"`
+	// Position of the node in the block.
+	NodePosition string `pulumi:"nodePosition"`
+	// Serial number of the node.
+	NodeSerial string `pulumi:"nodeSerial"`
+	// Specifies whether the node is discovering, available or unavailable for cluster creation.
+	NodeState string `pulumi:"nodeState"`
+	// Specifies the type of node - on-prem, AWS, GCP etc.
+	NodeType string `pulumi:"nodeType"`
+	// Version of the node used for CAS.
+	ObjectVersion     int      `pulumi:"objectVersion"`
+	SupportedFeatures []string `pulumi:"supportedFeatures"`
 }
 
 // GetFoundationCentralImagedNodesListImagedNodeInput is an input type that accepts GetFoundationCentralImagedNodesListImagedNodeArgs and GetFoundationCentralImagedNodesListImagedNodeOutput values.
@@ -36413,41 +36686,75 @@ type GetFoundationCentralImagedNodesListImagedNodeInput interface {
 }
 
 type GetFoundationCentralImagedNodesListImagedNodeArgs struct {
-	AosVersion         pulumi.StringInput      `pulumi:"aosVersion"`
-	ApiKeyUuid         pulumi.StringInput      `pulumi:"apiKeyUuid"`
-	Available          pulumi.BoolInput        `pulumi:"available"`
-	BlockSerial        pulumi.StringInput      `pulumi:"blockSerial"`
-	CreatedTimestamp   pulumi.StringInput      `pulumi:"createdTimestamp"`
-	CurrentTime        pulumi.StringInput      `pulumi:"currentTime"`
-	CvmGateway         pulumi.StringInput      `pulumi:"cvmGateway"`
-	CvmIp              pulumi.StringInput      `pulumi:"cvmIp"`
-	CvmIpv6            pulumi.StringInput      `pulumi:"cvmIpv6"`
-	CvmNetmask         pulumi.StringInput      `pulumi:"cvmNetmask"`
-	CvmUp              pulumi.BoolInput        `pulumi:"cvmUp"`
-	CvmUuid            pulumi.StringInput      `pulumi:"cvmUuid"`
-	CvmVlanId          pulumi.IntInput         `pulumi:"cvmVlanId"`
-	FoundationVersion  pulumi.StringInput      `pulumi:"foundationVersion"`
-	HardwareAttributes pulumi.MapInput         `pulumi:"hardwareAttributes"`
-	HypervisorGateway  pulumi.StringInput      `pulumi:"hypervisorGateway"`
-	HypervisorHostname pulumi.StringInput      `pulumi:"hypervisorHostname"`
-	HypervisorIp       pulumi.StringInput      `pulumi:"hypervisorIp"`
-	HypervisorNetmask  pulumi.StringInput      `pulumi:"hypervisorNetmask"`
-	HypervisorType     pulumi.StringInput      `pulumi:"hypervisorType"`
-	HypervisorVersion  pulumi.StringInput      `pulumi:"hypervisorVersion"`
-	ImagedClusterUuid  pulumi.StringInput      `pulumi:"imagedClusterUuid"`
-	ImagedNodeUuid     pulumi.StringInput      `pulumi:"imagedNodeUuid"`
-	IpmiGateway        pulumi.StringInput      `pulumi:"ipmiGateway"`
-	IpmiIp             pulumi.StringInput      `pulumi:"ipmiIp"`
-	IpmiNetmask        pulumi.StringInput      `pulumi:"ipmiNetmask"`
-	Ipv6Interface      pulumi.StringInput      `pulumi:"ipv6Interface"`
-	LatestHbTsLists    pulumi.StringArrayInput `pulumi:"latestHbTsLists"`
-	Model              pulumi.StringInput      `pulumi:"model"`
-	NodePosition       pulumi.StringInput      `pulumi:"nodePosition"`
-	NodeSerial         pulumi.StringInput      `pulumi:"nodeSerial"`
-	NodeState          pulumi.StringInput      `pulumi:"nodeState"`
-	NodeType           pulumi.StringInput      `pulumi:"nodeType"`
-	ObjectVersion      pulumi.IntInput         `pulumi:"objectVersion"`
-	SupportedFeatures  pulumi.StringArrayInput `pulumi:"supportedFeatures"`
+	// AOS version currently installed on the node.
+	AosVersion pulumi.StringInput `pulumi:"aosVersion"`
+	// API key used to register the node.
+	ApiKeyUuid pulumi.StringInput `pulumi:"apiKeyUuid"`
+	// Specifies whether the node is available for cluster creation.
+	Available pulumi.BoolInput `pulumi:"available"`
+	// Serial number of the block to which the node belongs.
+	BlockSerial pulumi.StringInput `pulumi:"blockSerial"`
+	// Time when the node was discovered in Foundation Central.
+	CreatedTimestamp pulumi.StringInput `pulumi:"createdTimestamp"`
+	// Current time of Foundation Central.
+	CurrentTime pulumi.StringInput `pulumi:"currentTime"`
+	// gateway of the cvm.
+	CvmGateway pulumi.StringInput `pulumi:"cvmGateway"`
+	// IP address of the cvm.
+	CvmIp pulumi.StringInput `pulumi:"cvmIp"`
+	// IPv6 address of the cvm.
+	CvmIpv6 pulumi.StringInput `pulumi:"cvmIpv6"`
+	// netmask of the cvm.
+	CvmNetmask pulumi.StringInput `pulumi:"cvmNetmask"`
+	// Denotes whether the CVM is up or not on this node.
+	CvmUp pulumi.BoolInput `pulumi:"cvmUp"`
+	// Node UUID from the node's cvm.
+	CvmUuid pulumi.StringInput `pulumi:"cvmUuid"`
+	// Vlan tag of the cvm, if the cvm is on a vlan.
+	CvmVlanId pulumi.IntInput `pulumi:"cvmVlanId"`
+	// Foundation version installed on the node.
+	FoundationVersion pulumi.StringInput `pulumi:"foundationVersion"`
+	// Hardware attributes json of the node.
+	HardwareAttributes pulumi.MapInput `pulumi:"hardwareAttributes"`
+	// gateway of the hypervisor.
+	HypervisorGateway pulumi.StringInput `pulumi:"hypervisorGateway"`
+	// Name of the hypervisor host.
+	HypervisorHostname pulumi.StringInput `pulumi:"hypervisorHostname"`
+	// IP address of the hypervisor.
+	HypervisorIp pulumi.StringInput `pulumi:"hypervisorIp"`
+	// netmask of the hypervisor.
+	HypervisorNetmask pulumi.StringInput `pulumi:"hypervisorNetmask"`
+	// Hypervisor type currently installed on the node. Must be one of {kvm, esx, hyperv}.
+	HypervisorType pulumi.StringInput `pulumi:"hypervisorType"`
+	// Version of the hypervisor currently installed on the node.
+	HypervisorVersion pulumi.StringInput `pulumi:"hypervisorVersion"`
+	// UUID of the cluster to which the node belongs, if any.
+	ImagedClusterUuid pulumi.StringInput `pulumi:"imagedClusterUuid"`
+	// UUID of the node.
+	ImagedNodeUuid pulumi.StringInput `pulumi:"imagedNodeUuid"`
+	// gateway of the ipmi.
+	IpmiGateway pulumi.StringInput `pulumi:"ipmiGateway"`
+	// IP address of the ipmi.
+	IpmiIp pulumi.StringInput `pulumi:"ipmiIp"`
+	// netmask of the ipmi.
+	IpmiNetmask pulumi.StringInput `pulumi:"ipmiNetmask"`
+	// Name of the cvm interface having ipv6 address.
+	Ipv6Interface pulumi.StringInput `pulumi:"ipv6Interface"`
+	// List of timestamps when the node has sent heartbeats to Foundation Central.
+	LatestHbTsLists pulumi.StringArrayInput `pulumi:"latestHbTsLists"`
+	// Model of the node.
+	Model pulumi.StringInput `pulumi:"model"`
+	// Position of the node in the block.
+	NodePosition pulumi.StringInput `pulumi:"nodePosition"`
+	// Serial number of the node.
+	NodeSerial pulumi.StringInput `pulumi:"nodeSerial"`
+	// Specifies whether the node is discovering, available or unavailable for cluster creation.
+	NodeState pulumi.StringInput `pulumi:"nodeState"`
+	// Specifies the type of node - on-prem, AWS, GCP etc.
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+	// Version of the node used for CAS.
+	ObjectVersion     pulumi.IntInput         `pulumi:"objectVersion"`
+	SupportedFeatures pulumi.StringArrayInput `pulumi:"supportedFeatures"`
 }
 
 func (GetFoundationCentralImagedNodesListImagedNodeArgs) ElementType() reflect.Type {
@@ -36501,140 +36808,174 @@ func (o GetFoundationCentralImagedNodesListImagedNodeOutput) ToGetFoundationCent
 	return o
 }
 
+// AOS version currently installed on the node.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) AosVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.AosVersion }).(pulumi.StringOutput)
 }
 
+// API key used to register the node.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) ApiKeyUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.ApiKeyUuid }).(pulumi.StringOutput)
 }
 
+// Specifies whether the node is available for cluster creation.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) Available() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) bool { return v.Available }).(pulumi.BoolOutput)
 }
 
+// Serial number of the block to which the node belongs.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) BlockSerial() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.BlockSerial }).(pulumi.StringOutput)
 }
 
+// Time when the node was discovered in Foundation Central.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) CreatedTimestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.CreatedTimestamp }).(pulumi.StringOutput)
 }
 
+// Current time of Foundation Central.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) CurrentTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.CurrentTime }).(pulumi.StringOutput)
 }
 
+// gateway of the cvm.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) CvmGateway() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.CvmGateway }).(pulumi.StringOutput)
 }
 
+// IP address of the cvm.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) CvmIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.CvmIp }).(pulumi.StringOutput)
 }
 
+// IPv6 address of the cvm.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) CvmIpv6() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.CvmIpv6 }).(pulumi.StringOutput)
 }
 
+// netmask of the cvm.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) CvmNetmask() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.CvmNetmask }).(pulumi.StringOutput)
 }
 
+// Denotes whether the CVM is up or not on this node.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) CvmUp() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) bool { return v.CvmUp }).(pulumi.BoolOutput)
 }
 
+// Node UUID from the node's cvm.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) CvmUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.CvmUuid }).(pulumi.StringOutput)
 }
 
+// Vlan tag of the cvm, if the cvm is on a vlan.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) CvmVlanId() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) int { return v.CvmVlanId }).(pulumi.IntOutput)
 }
 
+// Foundation version installed on the node.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) FoundationVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.FoundationVersion }).(pulumi.StringOutput)
 }
 
+// Hardware attributes json of the node.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) HardwareAttributes() pulumi.MapOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) map[string]interface{} {
 		return v.HardwareAttributes
 	}).(pulumi.MapOutput)
 }
 
+// gateway of the hypervisor.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) HypervisorGateway() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.HypervisorGateway }).(pulumi.StringOutput)
 }
 
+// Name of the hypervisor host.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) HypervisorHostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.HypervisorHostname }).(pulumi.StringOutput)
 }
 
+// IP address of the hypervisor.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) HypervisorIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.HypervisorIp }).(pulumi.StringOutput)
 }
 
+// netmask of the hypervisor.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) HypervisorNetmask() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.HypervisorNetmask }).(pulumi.StringOutput)
 }
 
+// Hypervisor type currently installed on the node. Must be one of {kvm, esx, hyperv}.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) HypervisorType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.HypervisorType }).(pulumi.StringOutput)
 }
 
+// Version of the hypervisor currently installed on the node.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) HypervisorVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.HypervisorVersion }).(pulumi.StringOutput)
 }
 
+// UUID of the cluster to which the node belongs, if any.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) ImagedClusterUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.ImagedClusterUuid }).(pulumi.StringOutput)
 }
 
+// UUID of the node.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) ImagedNodeUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.ImagedNodeUuid }).(pulumi.StringOutput)
 }
 
+// gateway of the ipmi.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) IpmiGateway() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.IpmiGateway }).(pulumi.StringOutput)
 }
 
+// IP address of the ipmi.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) IpmiIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.IpmiIp }).(pulumi.StringOutput)
 }
 
+// netmask of the ipmi.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) IpmiNetmask() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.IpmiNetmask }).(pulumi.StringOutput)
 }
 
+// Name of the cvm interface having ipv6 address.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) Ipv6Interface() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.Ipv6Interface }).(pulumi.StringOutput)
 }
 
+// List of timestamps when the node has sent heartbeats to Foundation Central.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) LatestHbTsLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) []string { return v.LatestHbTsLists }).(pulumi.StringArrayOutput)
 }
 
+// Model of the node.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) Model() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.Model }).(pulumi.StringOutput)
 }
 
+// Position of the node in the block.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) NodePosition() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.NodePosition }).(pulumi.StringOutput)
 }
 
+// Serial number of the node.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) NodeSerial() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.NodeSerial }).(pulumi.StringOutput)
 }
 
+// Specifies whether the node is discovering, available or unavailable for cluster creation.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) NodeState() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.NodeState }).(pulumi.StringOutput)
 }
 
+// Specifies the type of node - on-prem, AWS, GCP etc.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) NodeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) string { return v.NodeType }).(pulumi.StringOutput)
 }
 
+// Version of the node used for CAS.
 func (o GetFoundationCentralImagedNodesListImagedNodeOutput) ObjectVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) int { return v.ObjectVersion }).(pulumi.IntOutput)
 }
@@ -36664,8 +37005,11 @@ func (o GetFoundationCentralImagedNodesListImagedNodeArrayOutput) Index(i pulumi
 }
 
 type GetFoundationCentralImagedNodesListMetadata struct {
-	Length       int `pulumi:"length"`
-	Offset       int `pulumi:"offset"`
+	// The number of records retrieved.
+	Length int `pulumi:"length"`
+	// Offset from the start of the object list.
+	Offset int `pulumi:"offset"`
+	// Total matches found.
 	TotalMatches int `pulumi:"totalMatches"`
 }
 
@@ -36681,8 +37025,11 @@ type GetFoundationCentralImagedNodesListMetadataInput interface {
 }
 
 type GetFoundationCentralImagedNodesListMetadataArgs struct {
-	Length       pulumi.IntInput `pulumi:"length"`
-	Offset       pulumi.IntInput `pulumi:"offset"`
+	// The number of records retrieved.
+	Length pulumi.IntInput `pulumi:"length"`
+	// Offset from the start of the object list.
+	Offset pulumi.IntInput `pulumi:"offset"`
+	// Total matches found.
 	TotalMatches pulumi.IntInput `pulumi:"totalMatches"`
 }
 
@@ -36737,14 +37084,17 @@ func (o GetFoundationCentralImagedNodesListMetadataOutput) ToGetFoundationCentra
 	return o
 }
 
+// The number of records retrieved.
 func (o GetFoundationCentralImagedNodesListMetadataOutput) Length() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListMetadata) int { return v.Length }).(pulumi.IntOutput)
 }
 
+// Offset from the start of the object list.
 func (o GetFoundationCentralImagedNodesListMetadataOutput) Offset() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListMetadata) int { return v.Offset }).(pulumi.IntOutput)
 }
 
+// Total matches found.
 func (o GetFoundationCentralImagedNodesListMetadataOutput) TotalMatches() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralImagedNodesListMetadata) int { return v.TotalMatches }).(pulumi.IntOutput)
 }
@@ -36770,11 +37120,16 @@ func (o GetFoundationCentralImagedNodesListMetadataArrayOutput) Index(i pulumi.I
 }
 
 type GetFoundationCentralListApiKeysApiKey struct {
-	Alias            string `pulumi:"alias"`
-	ApiKey           string `pulumi:"apiKey"`
+	// Alias of the api key.
+	Alias string `pulumi:"alias"`
+	// Api key in string format.
+	ApiKey string `pulumi:"apiKey"`
+	// Time when the api key was created.
 	CreatedTimestamp string `pulumi:"createdTimestamp"`
-	CurrentTime      string `pulumi:"currentTime"`
-	KeyUuid          string `pulumi:"keyUuid"`
+	// Current time of Foundation Central.
+	CurrentTime string `pulumi:"currentTime"`
+	// UUID of the api key.
+	KeyUuid string `pulumi:"keyUuid"`
 }
 
 // GetFoundationCentralListApiKeysApiKeyInput is an input type that accepts GetFoundationCentralListApiKeysApiKeyArgs and GetFoundationCentralListApiKeysApiKeyOutput values.
@@ -36789,11 +37144,16 @@ type GetFoundationCentralListApiKeysApiKeyInput interface {
 }
 
 type GetFoundationCentralListApiKeysApiKeyArgs struct {
-	Alias            pulumi.StringInput `pulumi:"alias"`
-	ApiKey           pulumi.StringInput `pulumi:"apiKey"`
+	// Alias of the api key.
+	Alias pulumi.StringInput `pulumi:"alias"`
+	// Api key in string format.
+	ApiKey pulumi.StringInput `pulumi:"apiKey"`
+	// Time when the api key was created.
 	CreatedTimestamp pulumi.StringInput `pulumi:"createdTimestamp"`
-	CurrentTime      pulumi.StringInput `pulumi:"currentTime"`
-	KeyUuid          pulumi.StringInput `pulumi:"keyUuid"`
+	// Current time of Foundation Central.
+	CurrentTime pulumi.StringInput `pulumi:"currentTime"`
+	// UUID of the api key.
+	KeyUuid pulumi.StringInput `pulumi:"keyUuid"`
 }
 
 func (GetFoundationCentralListApiKeysApiKeyArgs) ElementType() reflect.Type {
@@ -36847,22 +37207,27 @@ func (o GetFoundationCentralListApiKeysApiKeyOutput) ToGetFoundationCentralListA
 	return o
 }
 
+// Alias of the api key.
 func (o GetFoundationCentralListApiKeysApiKeyOutput) Alias() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralListApiKeysApiKey) string { return v.Alias }).(pulumi.StringOutput)
 }
 
+// Api key in string format.
 func (o GetFoundationCentralListApiKeysApiKeyOutput) ApiKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralListApiKeysApiKey) string { return v.ApiKey }).(pulumi.StringOutput)
 }
 
+// Time when the api key was created.
 func (o GetFoundationCentralListApiKeysApiKeyOutput) CreatedTimestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralListApiKeysApiKey) string { return v.CreatedTimestamp }).(pulumi.StringOutput)
 }
 
+// Current time of Foundation Central.
 func (o GetFoundationCentralListApiKeysApiKeyOutput) CurrentTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralListApiKeysApiKey) string { return v.CurrentTime }).(pulumi.StringOutput)
 }
 
+// UUID of the api key.
 func (o GetFoundationCentralListApiKeysApiKeyOutput) KeyUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralListApiKeysApiKey) string { return v.KeyUuid }).(pulumi.StringOutput)
 }
@@ -36888,8 +37253,11 @@ func (o GetFoundationCentralListApiKeysApiKeyArrayOutput) Index(i pulumi.IntInpu
 }
 
 type GetFoundationCentralListApiKeysMetadata struct {
-	Length       int `pulumi:"length"`
-	Offset       int `pulumi:"offset"`
+	// The number of records retrieved.
+	Length int `pulumi:"length"`
+	// Offset from the start of the object list.
+	Offset int `pulumi:"offset"`
+	// Total matches found.
 	TotalMatches int `pulumi:"totalMatches"`
 }
 
@@ -36905,8 +37273,11 @@ type GetFoundationCentralListApiKeysMetadataInput interface {
 }
 
 type GetFoundationCentralListApiKeysMetadataArgs struct {
-	Length       pulumi.IntInput `pulumi:"length"`
-	Offset       pulumi.IntInput `pulumi:"offset"`
+	// The number of records retrieved.
+	Length pulumi.IntInput `pulumi:"length"`
+	// Offset from the start of the object list.
+	Offset pulumi.IntInput `pulumi:"offset"`
+	// Total matches found.
 	TotalMatches pulumi.IntInput `pulumi:"totalMatches"`
 }
 
@@ -36987,14 +37358,17 @@ func (o GetFoundationCentralListApiKeysMetadataOutput) ToGetFoundationCentralLis
 	}).(GetFoundationCentralListApiKeysMetadataPtrOutput)
 }
 
+// The number of records retrieved.
 func (o GetFoundationCentralListApiKeysMetadataOutput) Length() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralListApiKeysMetadata) int { return v.Length }).(pulumi.IntOutput)
 }
 
+// Offset from the start of the object list.
 func (o GetFoundationCentralListApiKeysMetadataOutput) Offset() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralListApiKeysMetadata) int { return v.Offset }).(pulumi.IntOutput)
 }
 
+// Total matches found.
 func (o GetFoundationCentralListApiKeysMetadataOutput) TotalMatches() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFoundationCentralListApiKeysMetadata) int { return v.TotalMatches }).(pulumi.IntOutput)
 }
@@ -37023,6 +37397,7 @@ func (o GetFoundationCentralListApiKeysMetadataPtrOutput) Elem() GetFoundationCe
 	}).(GetFoundationCentralListApiKeysMetadataOutput)
 }
 
+// The number of records retrieved.
 func (o GetFoundationCentralListApiKeysMetadataPtrOutput) Length() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GetFoundationCentralListApiKeysMetadata) *int {
 		if v == nil {
@@ -37032,6 +37407,7 @@ func (o GetFoundationCentralListApiKeysMetadataPtrOutput) Length() pulumi.IntPtr
 	}).(pulumi.IntPtrOutput)
 }
 
+// Offset from the start of the object list.
 func (o GetFoundationCentralListApiKeysMetadataPtrOutput) Offset() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GetFoundationCentralListApiKeysMetadata) *int {
 		if v == nil {
@@ -37041,6 +37417,7 @@ func (o GetFoundationCentralListApiKeysMetadataPtrOutput) Offset() pulumi.IntPtr
 	}).(pulumi.IntPtrOutput)
 }
 
+// Total matches found.
 func (o GetFoundationCentralListApiKeysMetadataPtrOutput) TotalMatches() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *GetFoundationCentralListApiKeysMetadata) *int {
 		if v == nil {

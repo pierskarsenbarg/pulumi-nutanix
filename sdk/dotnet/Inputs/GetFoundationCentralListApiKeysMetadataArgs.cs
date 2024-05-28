@@ -13,12 +13,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class GetFoundationCentralListApiKeysMetadataInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The number of records retrieved.
+        /// </summary>
         [Input("length", required: true)]
         public Input<int> Length { get; set; } = null!;
 
+        /// <summary>
+        /// Offset from the start of the object list.
+        /// </summary>
         [Input("offset", required: true)]
         public Input<int> Offset { get; set; } = null!;
 
+        /// <summary>
+        /// Total matches found.
+        /// </summary>
         [Input("totalMatches", required: true)]
         public Input<int> TotalMatches { get; set; } = null!;
 

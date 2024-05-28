@@ -44,21 +44,33 @@ class GetFoundationCentralApiKeysResult:
     @property
     @pulumi.getter
     def alias(self) -> str:
+        """
+        Alias of the api key.
+        """
         return pulumi.get(self, "alias")
 
     @property
     @pulumi.getter(name="apiKey")
     def api_key(self) -> str:
+        """
+        Api key in string format.
+        """
         return pulumi.get(self, "api_key")
 
     @property
     @pulumi.getter(name="createdTimestamp")
     def created_timestamp(self) -> str:
+        """
+        Time when the api key was created.
+        """
         return pulumi.get(self, "created_timestamp")
 
     @property
     @pulumi.getter(name="currentTime")
     def current_time(self) -> str:
+        """
+        Current time of Foundation Central.
+        """
         return pulumi.get(self, "current_time")
 
     @property
@@ -72,6 +84,9 @@ class GetFoundationCentralApiKeysResult:
     @property
     @pulumi.getter(name="keyUuid")
     def key_uuid(self) -> str:
+        """
+        UUID of the api key.
+        """
         return pulumi.get(self, "key_uuid")
 
 
@@ -92,7 +107,19 @@ class AwaitableGetFoundationCentralApiKeysResult(GetFoundationCentralApiKeysResu
 def get_foundation_central_api_keys(key_uuid: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFoundationCentralApiKeysResult:
     """
-    Use this data source to access information about an existing resource.
+    Get an api key given its UUID.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    api_keys_list = nutanix.get_foundation_central_api_keys(key_uuid="<KEY_UUID>")
+    ```
+
+
+    :param str key_uuid: UUID of the key which needs to be fetched.
     """
     __args__ = dict()
     __args__['keyUuid'] = key_uuid
@@ -112,6 +139,18 @@ def get_foundation_central_api_keys(key_uuid: Optional[str] = None,
 def get_foundation_central_api_keys_output(key_uuid: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationCentralApiKeysResult]:
     """
-    Use this data source to access information about an existing resource.
+    Get an api key given its UUID.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    api_keys_list = nutanix.get_foundation_central_api_keys(key_uuid="<KEY_UUID>")
+    ```
+
+
+    :param str key_uuid: UUID of the key which needs to be fetched.
     """
     ...

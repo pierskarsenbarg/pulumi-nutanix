@@ -13,34 +13,60 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class GetFoundationCentralClusterDetailsClusterStatusArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Overall progress percentage including imaging and cluster creation.
+        /// </summary>
         [Input("aggregatePercentComplete", required: true)]
         public double AggregatePercentComplete { get; set; }
 
+        /// <summary>
+        /// Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
+        /// </summary>
         [Input("clusterCreationStarted", required: true)]
         public bool ClusterCreationStarted { get; set; }
 
         [Input("clusterProgressDetails", required: true)]
         private List<Inputs.GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs>? _clusterProgressDetails;
+
+        /// <summary>
+        /// Denotes the progress status of cluster creation.
+        /// </summary>
         public List<Inputs.GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs> ClusterProgressDetails
         {
             get => _clusterProgressDetails ?? (_clusterProgressDetails = new List<Inputs.GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs>());
             set => _clusterProgressDetails = value;
         }
 
+        /// <summary>
+        /// Current IP address of the coordinating foundation node.
+        /// </summary>
         [Input("currentFoundationIp", required: true)]
         public string CurrentFoundationIp { get; set; } = null!;
 
+        /// <summary>
+        /// Foundation session id for cluster creation.
+        /// </summary>
         [Input("foundationSessionId", required: true)]
         public string FoundationSessionId { get; set; } = null!;
 
+        /// <summary>
+        /// Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+        /// </summary>
         [Input("imagingStopped", required: true)]
         public bool ImagingStopped { get; set; }
 
+        /// <summary>
+        /// Denotes whether the remote nodes has picked up the cluster creation intent.
+        /// </summary>
         [Input("intentPickedUp", required: true)]
         public bool IntentPickedUp { get; set; }
 
         [Input("nodeProgressDetails", required: true)]
         private List<Inputs.GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs>? _nodeProgressDetails;
+
+        /// <summary>
+        /// List of progress details of each node.
+        /// </summary>
         public List<Inputs.GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs> NodeProgressDetails
         {
             get => _nodeProgressDetails ?? (_nodeProgressDetails = new List<Inputs.GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs>());

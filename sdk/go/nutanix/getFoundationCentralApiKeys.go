@@ -11,6 +11,33 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Get an api key given its UUID.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.LookupFoundationCentralApiKeys(ctx, &nutanix.LookupFoundationCentralApiKeysArgs{
+//				KeyUuid: "<KEY_UUID>",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupFoundationCentralApiKeys(ctx *pulumi.Context, args *LookupFoundationCentralApiKeysArgs, opts ...pulumi.InvokeOption) (*LookupFoundationCentralApiKeysResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupFoundationCentralApiKeysResult
@@ -23,17 +50,23 @@ func LookupFoundationCentralApiKeys(ctx *pulumi.Context, args *LookupFoundationC
 
 // A collection of arguments for invoking getFoundationCentralApiKeys.
 type LookupFoundationCentralApiKeysArgs struct {
+	// UUID of the key which needs to be fetched.
 	KeyUuid string `pulumi:"keyUuid"`
 }
 
 // A collection of values returned by getFoundationCentralApiKeys.
 type LookupFoundationCentralApiKeysResult struct {
-	Alias            string `pulumi:"alias"`
-	ApiKey           string `pulumi:"apiKey"`
+	// Alias of the api key.
+	Alias string `pulumi:"alias"`
+	// Api key in string format.
+	ApiKey string `pulumi:"apiKey"`
+	// Time when the api key was created.
 	CreatedTimestamp string `pulumi:"createdTimestamp"`
-	CurrentTime      string `pulumi:"currentTime"`
+	// Current time of Foundation Central.
+	CurrentTime string `pulumi:"currentTime"`
 	// The provider-assigned unique ID for this managed resource.
-	Id      string `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// UUID of the api key.
 	KeyUuid string `pulumi:"keyUuid"`
 }
 
@@ -52,6 +85,7 @@ func LookupFoundationCentralApiKeysOutput(ctx *pulumi.Context, args LookupFounda
 
 // A collection of arguments for invoking getFoundationCentralApiKeys.
 type LookupFoundationCentralApiKeysOutputArgs struct {
+	// UUID of the key which needs to be fetched.
 	KeyUuid pulumi.StringInput `pulumi:"keyUuid"`
 }
 
@@ -74,18 +108,22 @@ func (o LookupFoundationCentralApiKeysResultOutput) ToLookupFoundationCentralApi
 	return o
 }
 
+// Alias of the api key.
 func (o LookupFoundationCentralApiKeysResultOutput) Alias() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFoundationCentralApiKeysResult) string { return v.Alias }).(pulumi.StringOutput)
 }
 
+// Api key in string format.
 func (o LookupFoundationCentralApiKeysResultOutput) ApiKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFoundationCentralApiKeysResult) string { return v.ApiKey }).(pulumi.StringOutput)
 }
 
+// Time when the api key was created.
 func (o LookupFoundationCentralApiKeysResultOutput) CreatedTimestamp() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFoundationCentralApiKeysResult) string { return v.CreatedTimestamp }).(pulumi.StringOutput)
 }
 
+// Current time of Foundation Central.
 func (o LookupFoundationCentralApiKeysResultOutput) CurrentTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFoundationCentralApiKeysResult) string { return v.CurrentTime }).(pulumi.StringOutput)
 }
@@ -95,6 +133,7 @@ func (o LookupFoundationCentralApiKeysResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFoundationCentralApiKeysResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// UUID of the api key.
 func (o LookupFoundationCentralApiKeysResultOutput) KeyUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFoundationCentralApiKeysResult) string { return v.KeyUuid }).(pulumi.StringOutput)
 }

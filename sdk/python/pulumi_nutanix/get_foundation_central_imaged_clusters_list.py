@@ -64,6 +64,9 @@ class GetFoundationCentralImagedClustersListResult:
     @property
     @pulumi.getter
     def length(self) -> Optional[int]:
+        """
+        The number of records retrieved.
+        """
         return pulumi.get(self, "length")
 
     @property
@@ -74,6 +77,9 @@ class GetFoundationCentralImagedClustersListResult:
     @property
     @pulumi.getter
     def offset(self) -> Optional[int]:
+        """
+        Offset from the start of the object list.
+        """
         return pulumi.get(self, "offset")
 
 
@@ -96,7 +102,20 @@ def get_foundation_central_imaged_clusters_list(filters: Optional[pulumi.InputTy
                                                 offset: Optional[int] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFoundationCentralImagedClustersListResult:
     """
-    Use this data source to access information about an existing resource.
+    List all the clusters created using Foundation Central.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    imaged_clusters_list = nutanix.get_foundation_central_imaged_clusters_list()
+    ```
+
+
+    :param int length: The number of records retrieved.
+    :param int offset: Offset from the start of the object list.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -120,6 +139,19 @@ def get_foundation_central_imaged_clusters_list_output(filters: Optional[pulumi.
                                                        offset: Optional[pulumi.Input[Optional[int]]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationCentralImagedClustersListResult]:
     """
-    Use this data source to access information about an existing resource.
+    List all the clusters created using Foundation Central.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    imaged_clusters_list = nutanix.get_foundation_central_imaged_clusters_list()
+    ```
+
+
+    :param int length: The number of records retrieved.
+    :param int offset: Offset from the start of the object list.
     """
     ...

@@ -1540,36 +1540,102 @@ export interface GetFloatingIpsMetadata {
 }
 
 export interface GetFoundationCentralClusterDetailsClusterStatus {
+    /**
+     * Overall progress percentage including imaging and cluster creation.
+     */
     aggregatePercentComplete: number;
+    /**
+     * Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
+     */
     clusterCreationStarted: boolean;
+    /**
+     * Denotes the progress status of cluster creation.
+     */
     clusterProgressDetails: outputs.GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetail[];
+    /**
+     * Current IP address of the coordinating foundation node.
+     */
     currentFoundationIp: string;
+    /**
+     * Foundation session id for cluster creation.
+     */
     foundationSessionId: string;
+    /**
+     * Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+     */
     imagingStopped: boolean;
+    /**
+     * Denotes whether the remote nodes has picked up the cluster creation intent.
+     */
     intentPickedUp: boolean;
+    /**
+     * List of progress details of each node.
+     */
     nodeProgressDetails: outputs.GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetail[];
 }
 
 export interface GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetail {
+    /**
+     * Cluster name.
+     */
     clusterName: string;
+    /**
+     * List of messages for the client based on process state.
+     */
     messageLists: string[];
+    /**
+     * Percent completion of cluster creation process.
+     */
     percentComplete: number;
+    /**
+     * Current status of cluster creation process.
+     */
     status: string;
 }
 
 export interface GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetail {
+    /**
+     * UUID of the node.
+     */
     imagedNodeUuid: string;
+    /**
+     * Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+     */
     imagingStopped: boolean;
+    /**
+     * Denotes whether the remote nodes has picked up the cluster creation intent.
+     */
     intentPickedUp: boolean;
+    /**
+     * List of messages for the client based on process state.
+     */
     messageLists: string[];
+    /**
+     * Percent completion of cluster creation process.
+     */
     percentComplete: number;
+    /**
+     * Current status of cluster creation process.
+     */
     status: string;
 }
 
 export interface GetFoundationCentralClusterDetailsCommonNetworkSettings {
+    /**
+     * List of dns servers for the cvms in the cluster.
+     */
     cvmDnsServers: string[];
+    /**
+     * List of ntp servers for the cvms in the cluster.
+     */
     cvmNtpServers: string[];
+    /**
+     * List of dns servers for the hypervisors in the cluster.
+     */
     hypervisorDnsServers: string[];
+    /**
+     * List of ntp servers for the hypervisors in the cluster.
+     */
     hypervisorNtpServers: string[];
 }
 
@@ -1611,13 +1677,28 @@ export interface GetFoundationCentralClusterDetailsFoundationInitConfigBlockNode
 }
 
 export interface GetFoundationCentralClusterDetailsFoundationInitConfigCluster {
+    /**
+     * External management ip of the cluster.
+     */
     clusterExternalIp: string;
     clusterInitNow: boolean;
     clusterInitSuccessful: boolean;
     clusterMembers: string[];
+    /**
+     * Cluster name.
+     */
     clusterName: string;
+    /**
+     * List of dns servers for the cvms in the cluster.
+     */
     cvmDnsServers: string;
+    /**
+     * List of ntp servers for the cvms in the cluster.
+     */
     cvmNtpServers: string;
+    /**
+     * Redundancy factor of the cluster.
+     */
     redundancyFactor: number;
     timezone: string;
 }
@@ -1634,59 +1715,176 @@ export interface GetFoundationCentralClusterDetailsFoundationInitConfigNosPackag
 }
 
 export interface GetFoundationCentralImagedClustersListFilters {
+    /**
+     * True if the cluster creation request is archived, False otherwise
+     */
     archived?: boolean;
 }
 
 export interface GetFoundationCentralImagedClustersListImagedCluster {
+    /**
+     * True if the cluster creation request is archived, False otherwise
+     */
     archived: boolean;
+    /**
+     * External management ip of the cluster.
+     */
     clusterExternalIp: string;
+    /**
+     * Cluster name.
+     */
     clusterName: string;
+    /**
+     * Number of nodes in the cluster.
+     */
     clusterSize: number;
+    /**
+     * Details of cluster creation process.
+     */
     clusterStatus: outputs.GetFoundationCentralImagedClustersListImagedClusterClusterStatus;
+    /**
+     * Common network settings across the nodes in the cluster.
+     */
     commonNetworkSettings: outputs.GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettings;
+    /**
+     * Time when the cluster creation request was received in Foundation Central.
+     */
     createdTimestamp: string;
+    /**
+     * Current time of Foundation Central.
+     */
     currentTime: string;
+    /**
+     * True if the cluster is destroyed, False otherwise
+     */
     destroyed: boolean;
+    /**
+     * Json config used by Foundation to create the cluster.
+     */
     foundationInitConfigs: outputs.GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfig[];
+    /**
+     * UUID of the first node coordinating cluster creation.
+     */
     foundationInitNodeUuid: string;
+    /**
+     * UUID of the cluster.
+     */
     imagedClusterUuid: string;
+    /**
+     * List of UUIDs of imaged nodes.
+     */
     imagedNodeUuidLists: string[];
+    /**
+     * Redundancy factor of the cluster.
+     */
     redundancyFactor?: number;
+    /**
+     * Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
+     */
     storageNodeCount: number;
+    /**
+     * If imaging and cluster creation is coordinated by Foundation, value will be FOUNDATION_WF. If the nodes are in phoenix, value will be PHOENIX_WF.
+     */
     workflowType: string;
 }
 
 export interface GetFoundationCentralImagedClustersListImagedClusterClusterStatus {
+    /**
+     * Overall progress percentage including imaging and cluster creation.
+     */
     aggregatePercentComplete: number;
+    /**
+     * Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
+     */
     clusterCreationStarted: boolean;
+    /**
+     * Denotes the progress status of cluster creation.
+     */
     clusterProgressDetails: outputs.GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetail[];
+    /**
+     * Current IP address of the coordinating foundation node.
+     */
     currentFoundationIp: string;
+    /**
+     * Foundation session id for cluster creation.
+     */
     foundationSessionId: string;
+    /**
+     * Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+     */
     imagingStopped: boolean;
+    /**
+     * Denotes whether the remote nodes has picked up the cluster creation intent.
+     */
     intentPickedUp: boolean;
+    /**
+     * List of progress details of each node.
+     */
     nodeProgressDetails: outputs.GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetail[];
 }
 
 export interface GetFoundationCentralImagedClustersListImagedClusterClusterStatusClusterProgressDetail {
+    /**
+     * Cluster name.
+     */
     clusterName: string;
+    /**
+     * List of messages for the client based on process state.
+     */
     messageLists: string[];
+    /**
+     * Percent completion of cluster creation process.
+     */
     percentComplete: number;
+    /**
+     * Current status of cluster creation process.
+     */
     status: string;
 }
 
 export interface GetFoundationCentralImagedClustersListImagedClusterClusterStatusNodeProgressDetail {
+    /**
+     * UUID of the node.
+     */
     imagedNodeUuid: string;
+    /**
+     * Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+     */
     imagingStopped: boolean;
+    /**
+     * Denotes whether the remote nodes has picked up the cluster creation intent.
+     */
     intentPickedUp: boolean;
+    /**
+     * List of messages for the client based on process state.
+     */
     messageLists: string[];
+    /**
+     * Percent completion of cluster creation process.
+     */
     percentComplete: number;
+    /**
+     * Current status of cluster creation process.
+     */
     status: string;
 }
 
 export interface GetFoundationCentralImagedClustersListImagedClusterCommonNetworkSettings {
+    /**
+     * List of dns servers for the cvms in the cluster.
+     */
     cvmDnsServers: string[];
+    /**
+     * List of ntp servers for the cvms in the cluster.
+     */
     cvmNtpServers: string[];
+    /**
+     * List of dns servers for the hypervisors in the cluster.
+     */
     hypervisorDnsServers: string[];
+    /**
+     * List of ntp servers for the hypervisors in the cluster.
+     */
     hypervisorNtpServers: string[];
 }
 
@@ -1728,13 +1926,28 @@ export interface GetFoundationCentralImagedClustersListImagedClusterFoundationIn
 }
 
 export interface GetFoundationCentralImagedClustersListImagedClusterFoundationInitConfigCluster {
+    /**
+     * External management ip of the cluster.
+     */
     clusterExternalIp: string;
     clusterInitNow: boolean;
     clusterInitSuccessful: boolean;
     clusterMembers: string[];
+    /**
+     * Cluster name.
+     */
     clusterName: string;
+    /**
+     * List of dns servers for the cvms in the cluster.
+     */
     cvmDnsServers: string;
+    /**
+     * List of ntp servers for the cvms in the cluster.
+     */
     cvmNtpServers: string;
+    /**
+     * Redundancy factor of the cluster.
+     */
     redundancyFactor: number;
     timezone: string;
 }
@@ -1751,70 +1964,217 @@ export interface GetFoundationCentralImagedClustersListImagedClusterFoundationIn
 }
 
 export interface GetFoundationCentralImagedClustersListMetadata {
+    /**
+     * The number of records retrieved.
+     */
     length: number;
+    /**
+     * Offset from the start of the object list.
+     */
     offset: number;
+    /**
+     * Total matches found.
+     */
     totalMatches: number;
 }
 
 export interface GetFoundationCentralImagedNodesListFilters {
+    /**
+     * Specifies whether the node is discovering, available or unavailable for cluster creation.
+     */
     nodeState?: string;
 }
 
 export interface GetFoundationCentralImagedNodesListImagedNode {
+    /**
+     * AOS version currently installed on the node.
+     */
     aosVersion: string;
+    /**
+     * API key used to register the node.
+     */
     apiKeyUuid: string;
+    /**
+     * Specifies whether the node is available for cluster creation.
+     */
     available: boolean;
+    /**
+     * Serial number of the block to which the node belongs.
+     */
     blockSerial: string;
+    /**
+     * Time when the node was discovered in Foundation Central.
+     */
     createdTimestamp: string;
+    /**
+     * Current time of Foundation Central.
+     */
     currentTime: string;
+    /**
+     * gateway of the cvm.
+     */
     cvmGateway: string;
+    /**
+     * IP address of the cvm.
+     */
     cvmIp: string;
+    /**
+     * IPv6 address of the cvm.
+     */
     cvmIpv6: string;
+    /**
+     * netmask of the cvm.
+     */
     cvmNetmask: string;
+    /**
+     * Denotes whether the CVM is up or not on this node.
+     */
     cvmUp: boolean;
+    /**
+     * Node UUID from the node's cvm.
+     */
     cvmUuid: string;
+    /**
+     * Vlan tag of the cvm, if the cvm is on a vlan.
+     */
     cvmVlanId: number;
+    /**
+     * Foundation version installed on the node.
+     */
     foundationVersion: string;
+    /**
+     * Hardware attributes json of the node.
+     */
     hardwareAttributes: {[key: string]: any};
+    /**
+     * gateway of the hypervisor.
+     */
     hypervisorGateway: string;
+    /**
+     * Name of the hypervisor host.
+     */
     hypervisorHostname: string;
+    /**
+     * IP address of the hypervisor.
+     */
     hypervisorIp: string;
+    /**
+     * netmask of the hypervisor.
+     */
     hypervisorNetmask: string;
+    /**
+     * Hypervisor type currently installed on the node. Must be one of {kvm, esx, hyperv}.
+     */
     hypervisorType: string;
+    /**
+     * Version of the hypervisor currently installed on the node.
+     */
     hypervisorVersion: string;
+    /**
+     * UUID of the cluster to which the node belongs, if any.
+     */
     imagedClusterUuid: string;
+    /**
+     * UUID of the node.
+     */
     imagedNodeUuid: string;
+    /**
+     * gateway of the ipmi.
+     */
     ipmiGateway: string;
+    /**
+     * IP address of the ipmi.
+     */
     ipmiIp: string;
+    /**
+     * netmask of the ipmi.
+     */
     ipmiNetmask: string;
+    /**
+     * Name of the cvm interface having ipv6 address.
+     */
     ipv6Interface: string;
+    /**
+     * List of timestamps when the node has sent heartbeats to Foundation Central.
+     */
     latestHbTsLists: string[];
+    /**
+     * Model of the node.
+     */
     model: string;
+    /**
+     * Position of the node in the block.
+     */
     nodePosition: string;
+    /**
+     * Serial number of the node.
+     */
     nodeSerial: string;
+    /**
+     * Specifies whether the node is discovering, available or unavailable for cluster creation.
+     */
     nodeState: string;
+    /**
+     * Specifies the type of node - on-prem, AWS, GCP etc.
+     */
     nodeType: string;
+    /**
+     * Version of the node used for CAS.
+     */
     objectVersion: number;
     supportedFeatures: string[];
 }
 
 export interface GetFoundationCentralImagedNodesListMetadata {
+    /**
+     * The number of records retrieved.
+     */
     length: number;
+    /**
+     * Offset from the start of the object list.
+     */
     offset: number;
+    /**
+     * Total matches found.
+     */
     totalMatches: number;
 }
 
 export interface GetFoundationCentralListApiKeysApiKey {
+    /**
+     * Alias of the api key.
+     */
     alias: string;
+    /**
+     * Api key in string format.
+     */
     apiKey: string;
+    /**
+     * Time when the api key was created.
+     */
     createdTimestamp: string;
+    /**
+     * Current time of Foundation Central.
+     */
     currentTime: string;
+    /**
+     * UUID of the api key.
+     */
     keyUuid: string;
 }
 
 export interface GetFoundationCentralListApiKeysMetadata {
+    /**
+     * The number of records retrieved.
+     */
     length: number;
+    /**
+     * Offset from the start of the object list.
+     */
     offset: number;
+    /**
+     * Total matches found.
+     */
     totalMatches: number;
 }
 

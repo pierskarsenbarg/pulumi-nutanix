@@ -11,6 +11,31 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// List all the api keys created in Foundation Central.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetFoundationCentralListApiKeys(ctx, nil, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetFoundationCentralListApiKeys(ctx *pulumi.Context, args *GetFoundationCentralListApiKeysArgs, opts ...pulumi.InvokeOption) (*GetFoundationCentralListApiKeysResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFoundationCentralListApiKeysResult
@@ -23,19 +48,25 @@ func GetFoundationCentralListApiKeys(ctx *pulumi.Context, args *GetFoundationCen
 
 // A collection of arguments for invoking getFoundationCentralListApiKeys.
 type GetFoundationCentralListApiKeysArgs struct {
-	Length   *int                                     `pulumi:"length"`
+	// The number of records retrieved.
+	Length *int `pulumi:"length"`
+	// List metadata output for all list apis.
 	Metadata *GetFoundationCentralListApiKeysMetadata `pulumi:"metadata"`
-	Offset   *int                                     `pulumi:"offset"`
+	// Offset from the start of the object list.
+	Offset *int `pulumi:"offset"`
 }
 
 // A collection of values returned by getFoundationCentralListApiKeys.
 type GetFoundationCentralListApiKeysResult struct {
 	ApiKeys []GetFoundationCentralListApiKeysApiKey `pulumi:"apiKeys"`
 	// The provider-assigned unique ID for this managed resource.
-	Id       string                                   `pulumi:"id"`
-	Length   *int                                     `pulumi:"length"`
+	Id string `pulumi:"id"`
+	// The number of records retrieved.
+	Length *int `pulumi:"length"`
+	// List metadata output for all list apis.
 	Metadata *GetFoundationCentralListApiKeysMetadata `pulumi:"metadata"`
-	Offset   *int                                     `pulumi:"offset"`
+	// Offset from the start of the object list.
+	Offset *int `pulumi:"offset"`
 }
 
 func GetFoundationCentralListApiKeysOutput(ctx *pulumi.Context, args GetFoundationCentralListApiKeysOutputArgs, opts ...pulumi.InvokeOption) GetFoundationCentralListApiKeysResultOutput {
@@ -53,9 +84,12 @@ func GetFoundationCentralListApiKeysOutput(ctx *pulumi.Context, args GetFoundati
 
 // A collection of arguments for invoking getFoundationCentralListApiKeys.
 type GetFoundationCentralListApiKeysOutputArgs struct {
-	Length   pulumi.IntPtrInput                              `pulumi:"length"`
+	// The number of records retrieved.
+	Length pulumi.IntPtrInput `pulumi:"length"`
+	// List metadata output for all list apis.
 	Metadata GetFoundationCentralListApiKeysMetadataPtrInput `pulumi:"metadata"`
-	Offset   pulumi.IntPtrInput                              `pulumi:"offset"`
+	// Offset from the start of the object list.
+	Offset pulumi.IntPtrInput `pulumi:"offset"`
 }
 
 func (GetFoundationCentralListApiKeysOutputArgs) ElementType() reflect.Type {
@@ -88,16 +122,19 @@ func (o GetFoundationCentralListApiKeysResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFoundationCentralListApiKeysResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The number of records retrieved.
 func (o GetFoundationCentralListApiKeysResultOutput) Length() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetFoundationCentralListApiKeysResult) *int { return v.Length }).(pulumi.IntPtrOutput)
 }
 
+// List metadata output for all list apis.
 func (o GetFoundationCentralListApiKeysResultOutput) Metadata() GetFoundationCentralListApiKeysMetadataPtrOutput {
 	return o.ApplyT(func(v GetFoundationCentralListApiKeysResult) *GetFoundationCentralListApiKeysMetadata {
 		return v.Metadata
 	}).(GetFoundationCentralListApiKeysMetadataPtrOutput)
 }
 
+// Offset from the start of the object list.
 func (o GetFoundationCentralListApiKeysResultOutput) Offset() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetFoundationCentralListApiKeysResult) *int { return v.Offset }).(pulumi.IntPtrOutput)
 }
