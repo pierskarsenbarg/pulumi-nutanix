@@ -78,6 +78,9 @@ export function getProject(args?: GetProjectArgs, opts?: pulumi.InvokeOptions): 
  * A collection of arguments for invoking getProject.
  */
 export interface GetProjectArgs {
+    /**
+     * - (Optional) The category values represented as a dictionary of key > list of values.
+     */
     categories?: inputs.GetProjectCategory[];
     /**
      * List of directory service user groups. These groups are not managed by Nutanix.
@@ -99,10 +102,7 @@ export interface GetProjectArgs {
      */
     subnetReferenceLists?: inputs.GetProjectSubnetReferenceList[];
     /**
-     * List of users in the project.
-     * * `user_reference_list.#.kind` - The kind name. Default value is `user`
-     * * `user_reference_list.#.uuid` - The UUID of a user
-     * * `user_reference_list.#.name` - The name of a user.
+     * List of Reference of users.
      */
     userReferenceLists?: inputs.GetProjectUserReferenceList[];
 }
@@ -118,14 +118,29 @@ export interface GetProjectResult {
      * * `account_reference_list.#.name` - The name of an account.
      */
     readonly accountReferenceLists: outputs.GetProjectAccountReferenceList[];
+    readonly acps: outputs.GetProjectAcp[];
     readonly apiVersion: string;
+    /**
+     * - (Optional) The category values represented as a dictionary of key > list of values.
+     */
     readonly categories: outputs.GetProjectCategory[];
+    /**
+     * (Optional/Computed) List of clusters associated with the project..
+     * * `cluster_reference_list.#.kind` - (Optional) The kind name. Default value is `cluster`
+     * * `cluster_reference_list.#.uuid` - (Required) The UUID of a cluster
+     * * `cluster_reference_list.#.name` - (Optional/Computed) The name of a cluster.
+     */
+    readonly clusterReferenceLists: outputs.GetProjectClusterReferenceList[];
+    /**
+     * (Optional/Computed) Reference to a environment.
+     */
+    readonly defaultEnvironmentReferences: outputs.GetProjectDefaultEnvironmentReference[];
     /**
      * Reference to a subnet.
      */
     readonly defaultSubnetReference: {[key: string]: string};
     /**
-     * A description for project.
+     * Description of ACP
      */
     readonly description: string;
     /**
@@ -175,12 +190,23 @@ export interface GetProjectResult {
      */
     readonly subnetReferenceLists: outputs.GetProjectSubnetReferenceList[];
     /**
-     * List of users in the project.
-     * * `user_reference_list.#.kind` - The kind name. Default value is `user`
-     * * `user_reference_list.#.uuid` - The UUID of a user
-     * * `user_reference_list.#.name` - The name of a user.
+     * (Optional/Computed) List of tunnels associated with the project.
+     * * `tunnel_reference_list.#.kind` - (Optional) The kind name. Default value is `tunnel`
+     * * `tunnel_reference_list.#.uuid` - (Required) The UUID of a tunnel
+     * * `tunnel_reference_list.#.name` - (Optional/Computed) The name of a tunnel.
+     */
+    readonly tunnelReferenceLists: outputs.GetProjectTunnelReferenceList[];
+    /**
+     * List of Reference of users.
      */
     readonly userReferenceLists: outputs.GetProjectUserReferenceList[];
+    /**
+     * (Optional/Computed) List of VPCs associated with the project..
+     * * `vpc_reference_list.#.kind` - (Optional) The kind name. Default value is `vpc`
+     * * `vpc_reference_list.#.uuid` - (Required) The UUID of a vpc
+     * * `vpc_reference_list.#.name` - (Optional/Computed) The name of a vpc.
+     */
+    readonly vpcReferenceLists: outputs.GetProjectVpcReferenceList[];
 }
 /**
  * Describe a Nutanix Project and its values (if it has them).
@@ -244,6 +270,9 @@ export function getProjectOutput(args?: GetProjectOutputArgs, opts?: pulumi.Invo
  * A collection of arguments for invoking getProject.
  */
 export interface GetProjectOutputArgs {
+    /**
+     * - (Optional) The category values represented as a dictionary of key > list of values.
+     */
     categories?: pulumi.Input<pulumi.Input<inputs.GetProjectCategoryArgs>[]>;
     /**
      * List of directory service user groups. These groups are not managed by Nutanix.
@@ -265,10 +294,7 @@ export interface GetProjectOutputArgs {
      */
     subnetReferenceLists?: pulumi.Input<pulumi.Input<inputs.GetProjectSubnetReferenceListArgs>[]>;
     /**
-     * List of users in the project.
-     * * `user_reference_list.#.kind` - The kind name. Default value is `user`
-     * * `user_reference_list.#.uuid` - The UUID of a user
-     * * `user_reference_list.#.name` - The name of a user.
+     * List of Reference of users.
      */
     userReferenceLists?: pulumi.Input<pulumi.Input<inputs.GetProjectUserReferenceListArgs>[]>;
 }

@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Provides Nutanix resource to create Floating IPs.
+ * Provides Nutanix resource to create Static Routes within VPCs.
  *
  * ## create one static route for vpc uuid with external subnet
  *

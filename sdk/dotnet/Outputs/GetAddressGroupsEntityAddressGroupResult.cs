@@ -21,7 +21,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// - (ReadOnly) Description of the address group
         /// </summary>
-        public readonly string? Description;
+        public readonly string Description;
         /// <summary>
         /// - (ReadOnly) list of IP address blocks with their prefix length
         /// </summary>
@@ -35,7 +35,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         private GetAddressGroupsEntityAddressGroupResult(
             string addressGroupString,
 
-            string? description,
+            string description,
 
             ImmutableArray<Outputs.GetAddressGroupsEntityAddressGroupIpAddressBlockListResult> ipAddressBlockLists,
 

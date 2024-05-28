@@ -47,6 +47,54 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &KarbonCluster{}
 	case "nutanix:index/karbonPrivateRegistry:KarbonPrivateRegistry":
 		r = &KarbonPrivateRegistry{}
+	case "nutanix:index/karbonWorkerNodepool:KarbonWorkerNodepool":
+		r = &KarbonWorkerNodepool{}
+	case "nutanix:index/ndbAuthorizeDbserver:NdbAuthorizeDbserver":
+		r = &NdbAuthorizeDbserver{}
+	case "nutanix:index/ndbClone:NdbClone":
+		r = &NdbClone{}
+	case "nutanix:index/ndbCloneRefresh:NdbCloneRefresh":
+		r = &NdbCloneRefresh{}
+	case "nutanix:index/ndbCluster:NdbCluster":
+		r = &NdbCluster{}
+	case "nutanix:index/ndbDatabase:NdbDatabase":
+		r = &NdbDatabase{}
+	case "nutanix:index/ndbDatabaseRestore:NdbDatabaseRestore":
+		r = &NdbDatabaseRestore{}
+	case "nutanix:index/ndbDatabaseScale:NdbDatabaseScale":
+		r = &NdbDatabaseScale{}
+	case "nutanix:index/ndbDatabaseSnapshot:NdbDatabaseSnapshot":
+		r = &NdbDatabaseSnapshot{}
+	case "nutanix:index/ndbDbserverVm:NdbDbserverVm":
+		r = &NdbDbserverVm{}
+	case "nutanix:index/ndbLinkedDatabases:NdbLinkedDatabases":
+		r = &NdbLinkedDatabases{}
+	case "nutanix:index/ndbLogCatchups:NdbLogCatchups":
+		r = &NdbLogCatchups{}
+	case "nutanix:index/ndbMaintenanceTask:NdbMaintenanceTask":
+		r = &NdbMaintenanceTask{}
+	case "nutanix:index/ndbMaintenanceWindow:NdbMaintenanceWindow":
+		r = &NdbMaintenanceWindow{}
+	case "nutanix:index/ndbNetwork:NdbNetwork":
+		r = &NdbNetwork{}
+	case "nutanix:index/ndbProfile:NdbProfile":
+		r = &NdbProfile{}
+	case "nutanix:index/ndbRegisterDatabase:NdbRegisterDatabase":
+		r = &NdbRegisterDatabase{}
+	case "nutanix:index/ndbRegisterDbserver:NdbRegisterDbserver":
+		r = &NdbRegisterDbserver{}
+	case "nutanix:index/ndbScaleDatabase:NdbScaleDatabase":
+		r = &NdbScaleDatabase{}
+	case "nutanix:index/ndbSla:NdbSla":
+		r = &NdbSla{}
+	case "nutanix:index/ndbSoftwareVersionProfile:NdbSoftwareVersionProfile":
+		r = &NdbSoftwareVersionProfile{}
+	case "nutanix:index/ndbStretchedVlan:NdbStretchedVlan":
+		r = &NdbStretchedVlan{}
+	case "nutanix:index/ndbTag:NdbTag":
+		r = &NdbTag{}
+	case "nutanix:index/ndbTmsCluster:NdbTmsCluster":
+		r = &NdbTmsCluster{}
 	case "nutanix:index/networkSecurityRule:NetworkSecurityRule":
 		r = &NetworkSecurityRule{}
 	case "nutanix:index/pbr:Pbr":
@@ -67,6 +115,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Subnet{}
 	case "nutanix:index/user:User":
 		r = &User{}
+	case "nutanix:index/userGroups:UserGroups":
+		r = &UserGroups{}
 	case "nutanix:index/virtualMachine:VirtualMachine":
 		r = &VirtualMachine{}
 	case "nutanix:index/vpc:Vpc":
@@ -169,6 +219,126 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/karbonWorkerNodepool",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbAuthorizeDbserver",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbClone",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbCloneRefresh",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbCluster",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbDatabase",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbDatabaseRestore",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbDatabaseScale",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbDatabaseSnapshot",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbDbserverVm",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbLinkedDatabases",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbLogCatchups",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbMaintenanceTask",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbMaintenanceWindow",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbNetwork",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbProfile",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbRegisterDatabase",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbRegisterDbserver",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbScaleDatabase",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbSla",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbSoftwareVersionProfile",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbStretchedVlan",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbTag",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ndbTmsCluster",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/networkSecurityRule",
 		&module{version},
 	)
@@ -215,6 +385,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/user",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/userGroups",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

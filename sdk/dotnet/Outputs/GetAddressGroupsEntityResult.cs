@@ -22,15 +22,22 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// List of associated policies to address group
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAddressGroupsEntityAssociatedPoliciesListResult> AssociatedPoliciesLists;
+        /// <summary>
+        /// - (ReadOnly) UUID of associated policy
+        /// </summary>
+        public readonly string Uuid;
 
         [OutputConstructor]
         private GetAddressGroupsEntityResult(
             ImmutableArray<Outputs.GetAddressGroupsEntityAddressGroupResult> addressGroups,
 
-            ImmutableArray<Outputs.GetAddressGroupsEntityAssociatedPoliciesListResult> associatedPoliciesLists)
+            ImmutableArray<Outputs.GetAddressGroupsEntityAssociatedPoliciesListResult> associatedPoliciesLists,
+
+            string uuid)
         {
             AddressGroups = addressGroups;
             AssociatedPoliciesLists = associatedPoliciesLists;
+            Uuid = uuid;
         }
     }
 }

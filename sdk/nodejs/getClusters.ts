@@ -33,7 +33,7 @@ import * as utilities from "./utilities";
  * * `productName`: - Name of the producer/distribution of the image. For example windows or red hat.
  * * `productVersion`: - Version string for the disk image.
  *
- * See detailed information in [Nutanix Image](https://nutanix.github.io/Automation/experimental/swagger-redoc-sandbox/#tag/clusters/paths/~1clusters~1multicluster_config/post).
+ * See detailed information in [Nutanix Clusters](https://www.nutanix.dev/api_references/prism-central-v3/#/d93c30e04327e-get-a-list-of-existing-clusters).
  */
 export function getClusters(opts?: pulumi.InvokeOptions): Promise<GetClustersResult> {
 
@@ -86,7 +86,7 @@ export interface GetClustersResult {
  * * `productName`: - Name of the producer/distribution of the image. For example windows or red hat.
  * * `productVersion`: - Version string for the disk image.
  *
- * See detailed information in [Nutanix Image](https://nutanix.github.io/Automation/experimental/swagger-redoc-sandbox/#tag/clusters/paths/~1clusters~1multicluster_config/post).
+ * See detailed information in [Nutanix Clusters](https://www.nutanix.dev/api_references/prism-central-v3/#/d93c30e04327e-get-a-list-of-existing-clusters).
  */
 export function getClustersOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetClustersResult> {
     return pulumi.output(getClusters(opts))

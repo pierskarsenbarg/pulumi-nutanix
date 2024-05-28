@@ -200,6 +200,126 @@ export const getKarbonPrivateRegistry: typeof import("./getKarbonPrivateRegistry
 export const getKarbonPrivateRegistryOutput: typeof import("./getKarbonPrivateRegistry").getKarbonPrivateRegistryOutput = null as any;
 utilities.lazyLoad(exports, ["getKarbonPrivateRegistry","getKarbonPrivateRegistryOutput"], () => require("./getKarbonPrivateRegistry"));
 
+export { GetNdbCloneArgs, GetNdbCloneResult, GetNdbCloneOutputArgs } from "./getNdbClone";
+export const getNdbClone: typeof import("./getNdbClone").getNdbClone = null as any;
+export const getNdbCloneOutput: typeof import("./getNdbClone").getNdbCloneOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbClone","getNdbCloneOutput"], () => require("./getNdbClone"));
+
+export { GetNdbClonesArgs, GetNdbClonesResult, GetNdbClonesOutputArgs } from "./getNdbClones";
+export const getNdbClones: typeof import("./getNdbClones").getNdbClones = null as any;
+export const getNdbClonesOutput: typeof import("./getNdbClones").getNdbClonesOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbClones","getNdbClonesOutput"], () => require("./getNdbClones"));
+
+export { GetNdbClusterArgs, GetNdbClusterResult, GetNdbClusterOutputArgs } from "./getNdbCluster";
+export const getNdbCluster: typeof import("./getNdbCluster").getNdbCluster = null as any;
+export const getNdbClusterOutput: typeof import("./getNdbCluster").getNdbClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbCluster","getNdbClusterOutput"], () => require("./getNdbCluster"));
+
+export { GetNdbClustersResult } from "./getNdbClusters";
+export const getNdbClusters: typeof import("./getNdbClusters").getNdbClusters = null as any;
+export const getNdbClustersOutput: typeof import("./getNdbClusters").getNdbClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbClusters","getNdbClustersOutput"], () => require("./getNdbClusters"));
+
+export { GetNdbDatabaseArgs, GetNdbDatabaseResult, GetNdbDatabaseOutputArgs } from "./getNdbDatabase";
+export const getNdbDatabase: typeof import("./getNdbDatabase").getNdbDatabase = null as any;
+export const getNdbDatabaseOutput: typeof import("./getNdbDatabase").getNdbDatabaseOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbDatabase","getNdbDatabaseOutput"], () => require("./getNdbDatabase"));
+
+export { GetNdbDatabasesArgs, GetNdbDatabasesResult, GetNdbDatabasesOutputArgs } from "./getNdbDatabases";
+export const getNdbDatabases: typeof import("./getNdbDatabases").getNdbDatabases = null as any;
+export const getNdbDatabasesOutput: typeof import("./getNdbDatabases").getNdbDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbDatabases","getNdbDatabasesOutput"], () => require("./getNdbDatabases"));
+
+export { GetNdbDbserverArgs, GetNdbDbserverResult, GetNdbDbserverOutputArgs } from "./getNdbDbserver";
+export const getNdbDbserver: typeof import("./getNdbDbserver").getNdbDbserver = null as any;
+export const getNdbDbserverOutput: typeof import("./getNdbDbserver").getNdbDbserverOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbDbserver","getNdbDbserverOutput"], () => require("./getNdbDbserver"));
+
+export { GetNdbDbserversResult } from "./getNdbDbservers";
+export const getNdbDbservers: typeof import("./getNdbDbservers").getNdbDbservers = null as any;
+export const getNdbDbserversOutput: typeof import("./getNdbDbservers").getNdbDbserversOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbDbservers","getNdbDbserversOutput"], () => require("./getNdbDbservers"));
+
+export { GetNdbMaintenanceWindowArgs, GetNdbMaintenanceWindowResult, GetNdbMaintenanceWindowOutputArgs } from "./getNdbMaintenanceWindow";
+export const getNdbMaintenanceWindow: typeof import("./getNdbMaintenanceWindow").getNdbMaintenanceWindow = null as any;
+export const getNdbMaintenanceWindowOutput: typeof import("./getNdbMaintenanceWindow").getNdbMaintenanceWindowOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbMaintenanceWindow","getNdbMaintenanceWindowOutput"], () => require("./getNdbMaintenanceWindow"));
+
+export { GetNdbMaintenanceWindowsResult } from "./getNdbMaintenanceWindows";
+export const getNdbMaintenanceWindows: typeof import("./getNdbMaintenanceWindows").getNdbMaintenanceWindows = null as any;
+export const getNdbMaintenanceWindowsOutput: typeof import("./getNdbMaintenanceWindows").getNdbMaintenanceWindowsOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbMaintenanceWindows","getNdbMaintenanceWindowsOutput"], () => require("./getNdbMaintenanceWindows"));
+
+export { GetNdbNetworkArgs, GetNdbNetworkResult, GetNdbNetworkOutputArgs } from "./getNdbNetwork";
+export const getNdbNetwork: typeof import("./getNdbNetwork").getNdbNetwork = null as any;
+export const getNdbNetworkOutput: typeof import("./getNdbNetwork").getNdbNetworkOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbNetwork","getNdbNetworkOutput"], () => require("./getNdbNetwork"));
+
+export { GetNdbNetworkAvailableIpsArgs, GetNdbNetworkAvailableIpsResult, GetNdbNetworkAvailableIpsOutputArgs } from "./getNdbNetworkAvailableIps";
+export const getNdbNetworkAvailableIps: typeof import("./getNdbNetworkAvailableIps").getNdbNetworkAvailableIps = null as any;
+export const getNdbNetworkAvailableIpsOutput: typeof import("./getNdbNetworkAvailableIps").getNdbNetworkAvailableIpsOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbNetworkAvailableIps","getNdbNetworkAvailableIpsOutput"], () => require("./getNdbNetworkAvailableIps"));
+
+export { GetNdbNetworksResult } from "./getNdbNetworks";
+export const getNdbNetworks: typeof import("./getNdbNetworks").getNdbNetworks = null as any;
+export const getNdbNetworksOutput: typeof import("./getNdbNetworks").getNdbNetworksOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbNetworks","getNdbNetworksOutput"], () => require("./getNdbNetworks"));
+
+export { GetNdbProfileArgs, GetNdbProfileResult, GetNdbProfileOutputArgs } from "./getNdbProfile";
+export const getNdbProfile: typeof import("./getNdbProfile").getNdbProfile = null as any;
+export const getNdbProfileOutput: typeof import("./getNdbProfile").getNdbProfileOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbProfile","getNdbProfileOutput"], () => require("./getNdbProfile"));
+
+export { GetNdbProfilesArgs, GetNdbProfilesResult, GetNdbProfilesOutputArgs } from "./getNdbProfiles";
+export const getNdbProfiles: typeof import("./getNdbProfiles").getNdbProfiles = null as any;
+export const getNdbProfilesOutput: typeof import("./getNdbProfiles").getNdbProfilesOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbProfiles","getNdbProfilesOutput"], () => require("./getNdbProfiles"));
+
+export { GetNdbSlaArgs, GetNdbSlaResult, GetNdbSlaOutputArgs } from "./getNdbSla";
+export const getNdbSla: typeof import("./getNdbSla").getNdbSla = null as any;
+export const getNdbSlaOutput: typeof import("./getNdbSla").getNdbSlaOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbSla","getNdbSlaOutput"], () => require("./getNdbSla"));
+
+export { GetNdbSlasResult } from "./getNdbSlas";
+export const getNdbSlas: typeof import("./getNdbSlas").getNdbSlas = null as any;
+export const getNdbSlasOutput: typeof import("./getNdbSlas").getNdbSlasOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbSlas","getNdbSlasOutput"], () => require("./getNdbSlas"));
+
+export { GetNdbSnapshotArgs, GetNdbSnapshotResult, GetNdbSnapshotOutputArgs } from "./getNdbSnapshot";
+export const getNdbSnapshot: typeof import("./getNdbSnapshot").getNdbSnapshot = null as any;
+export const getNdbSnapshotOutput: typeof import("./getNdbSnapshot").getNdbSnapshotOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbSnapshot","getNdbSnapshotOutput"], () => require("./getNdbSnapshot"));
+
+export { GetNdbSnapshotsArgs, GetNdbSnapshotsResult, GetNdbSnapshotsOutputArgs } from "./getNdbSnapshots";
+export const getNdbSnapshots: typeof import("./getNdbSnapshots").getNdbSnapshots = null as any;
+export const getNdbSnapshotsOutput: typeof import("./getNdbSnapshots").getNdbSnapshotsOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbSnapshots","getNdbSnapshotsOutput"], () => require("./getNdbSnapshots"));
+
+export { GetNdbTagArgs, GetNdbTagResult, GetNdbTagOutputArgs } from "./getNdbTag";
+export const getNdbTag: typeof import("./getNdbTag").getNdbTag = null as any;
+export const getNdbTagOutput: typeof import("./getNdbTag").getNdbTagOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbTag","getNdbTagOutput"], () => require("./getNdbTag"));
+
+export { GetNdbTagsArgs, GetNdbTagsResult, GetNdbTagsOutputArgs } from "./getNdbTags";
+export const getNdbTags: typeof import("./getNdbTags").getNdbTags = null as any;
+export const getNdbTagsOutput: typeof import("./getNdbTags").getNdbTagsOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbTags","getNdbTagsOutput"], () => require("./getNdbTags"));
+
+export { GetNdbTimeMachineArgs, GetNdbTimeMachineResult, GetNdbTimeMachineOutputArgs } from "./getNdbTimeMachine";
+export const getNdbTimeMachine: typeof import("./getNdbTimeMachine").getNdbTimeMachine = null as any;
+export const getNdbTimeMachineOutput: typeof import("./getNdbTimeMachine").getNdbTimeMachineOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbTimeMachine","getNdbTimeMachineOutput"], () => require("./getNdbTimeMachine"));
+
+export { GetNdbTimeMachinesResult } from "./getNdbTimeMachines";
+export const getNdbTimeMachines: typeof import("./getNdbTimeMachines").getNdbTimeMachines = null as any;
+export const getNdbTimeMachinesOutput: typeof import("./getNdbTimeMachines").getNdbTimeMachinesOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbTimeMachines","getNdbTimeMachinesOutput"], () => require("./getNdbTimeMachines"));
+
+export { GetNdbTmsCapabilityArgs, GetNdbTmsCapabilityResult, GetNdbTmsCapabilityOutputArgs } from "./getNdbTmsCapability";
+export const getNdbTmsCapability: typeof import("./getNdbTmsCapability").getNdbTmsCapability = null as any;
+export const getNdbTmsCapabilityOutput: typeof import("./getNdbTmsCapability").getNdbTmsCapabilityOutput = null as any;
+utilities.lazyLoad(exports, ["getNdbTmsCapability","getNdbTmsCapabilityOutput"], () => require("./getNdbTmsCapability"));
+
 export { GetNetworkSecurityRuleArgs, GetNetworkSecurityRuleResult, GetNetworkSecurityRuleOutputArgs } from "./getNetworkSecurityRule";
 export const getNetworkSecurityRule: typeof import("./getNetworkSecurityRule").getNetworkSecurityRule = null as any;
 export const getNetworkSecurityRuleOutput: typeof import("./getNetworkSecurityRule").getNetworkSecurityRuleOutput = null as any;
@@ -340,6 +460,126 @@ export type KarbonPrivateRegistry = import("./karbonPrivateRegistry").KarbonPriv
 export const KarbonPrivateRegistry: typeof import("./karbonPrivateRegistry").KarbonPrivateRegistry = null as any;
 utilities.lazyLoad(exports, ["KarbonPrivateRegistry"], () => require("./karbonPrivateRegistry"));
 
+export { KarbonWorkerNodepoolArgs, KarbonWorkerNodepoolState } from "./karbonWorkerNodepool";
+export type KarbonWorkerNodepool = import("./karbonWorkerNodepool").KarbonWorkerNodepool;
+export const KarbonWorkerNodepool: typeof import("./karbonWorkerNodepool").KarbonWorkerNodepool = null as any;
+utilities.lazyLoad(exports, ["KarbonWorkerNodepool"], () => require("./karbonWorkerNodepool"));
+
+export { NdbAuthorizeDbserverArgs, NdbAuthorizeDbserverState } from "./ndbAuthorizeDbserver";
+export type NdbAuthorizeDbserver = import("./ndbAuthorizeDbserver").NdbAuthorizeDbserver;
+export const NdbAuthorizeDbserver: typeof import("./ndbAuthorizeDbserver").NdbAuthorizeDbserver = null as any;
+utilities.lazyLoad(exports, ["NdbAuthorizeDbserver"], () => require("./ndbAuthorizeDbserver"));
+
+export { NdbCloneArgs, NdbCloneState } from "./ndbClone";
+export type NdbClone = import("./ndbClone").NdbClone;
+export const NdbClone: typeof import("./ndbClone").NdbClone = null as any;
+utilities.lazyLoad(exports, ["NdbClone"], () => require("./ndbClone"));
+
+export { NdbCloneRefreshArgs, NdbCloneRefreshState } from "./ndbCloneRefresh";
+export type NdbCloneRefresh = import("./ndbCloneRefresh").NdbCloneRefresh;
+export const NdbCloneRefresh: typeof import("./ndbCloneRefresh").NdbCloneRefresh = null as any;
+utilities.lazyLoad(exports, ["NdbCloneRefresh"], () => require("./ndbCloneRefresh"));
+
+export { NdbClusterArgs, NdbClusterState } from "./ndbCluster";
+export type NdbCluster = import("./ndbCluster").NdbCluster;
+export const NdbCluster: typeof import("./ndbCluster").NdbCluster = null as any;
+utilities.lazyLoad(exports, ["NdbCluster"], () => require("./ndbCluster"));
+
+export { NdbDatabaseArgs, NdbDatabaseState } from "./ndbDatabase";
+export type NdbDatabase = import("./ndbDatabase").NdbDatabase;
+export const NdbDatabase: typeof import("./ndbDatabase").NdbDatabase = null as any;
+utilities.lazyLoad(exports, ["NdbDatabase"], () => require("./ndbDatabase"));
+
+export { NdbDatabaseRestoreArgs, NdbDatabaseRestoreState } from "./ndbDatabaseRestore";
+export type NdbDatabaseRestore = import("./ndbDatabaseRestore").NdbDatabaseRestore;
+export const NdbDatabaseRestore: typeof import("./ndbDatabaseRestore").NdbDatabaseRestore = null as any;
+utilities.lazyLoad(exports, ["NdbDatabaseRestore"], () => require("./ndbDatabaseRestore"));
+
+export { NdbDatabaseScaleArgs, NdbDatabaseScaleState } from "./ndbDatabaseScale";
+export type NdbDatabaseScale = import("./ndbDatabaseScale").NdbDatabaseScale;
+export const NdbDatabaseScale: typeof import("./ndbDatabaseScale").NdbDatabaseScale = null as any;
+utilities.lazyLoad(exports, ["NdbDatabaseScale"], () => require("./ndbDatabaseScale"));
+
+export { NdbDatabaseSnapshotArgs, NdbDatabaseSnapshotState } from "./ndbDatabaseSnapshot";
+export type NdbDatabaseSnapshot = import("./ndbDatabaseSnapshot").NdbDatabaseSnapshot;
+export const NdbDatabaseSnapshot: typeof import("./ndbDatabaseSnapshot").NdbDatabaseSnapshot = null as any;
+utilities.lazyLoad(exports, ["NdbDatabaseSnapshot"], () => require("./ndbDatabaseSnapshot"));
+
+export { NdbDbserverVmArgs, NdbDbserverVmState } from "./ndbDbserverVm";
+export type NdbDbserverVm = import("./ndbDbserverVm").NdbDbserverVm;
+export const NdbDbserverVm: typeof import("./ndbDbserverVm").NdbDbserverVm = null as any;
+utilities.lazyLoad(exports, ["NdbDbserverVm"], () => require("./ndbDbserverVm"));
+
+export { NdbLinkedDatabasesArgs, NdbLinkedDatabasesState } from "./ndbLinkedDatabases";
+export type NdbLinkedDatabases = import("./ndbLinkedDatabases").NdbLinkedDatabases;
+export const NdbLinkedDatabases: typeof import("./ndbLinkedDatabases").NdbLinkedDatabases = null as any;
+utilities.lazyLoad(exports, ["NdbLinkedDatabases"], () => require("./ndbLinkedDatabases"));
+
+export { NdbLogCatchupsArgs, NdbLogCatchupsState } from "./ndbLogCatchups";
+export type NdbLogCatchups = import("./ndbLogCatchups").NdbLogCatchups;
+export const NdbLogCatchups: typeof import("./ndbLogCatchups").NdbLogCatchups = null as any;
+utilities.lazyLoad(exports, ["NdbLogCatchups"], () => require("./ndbLogCatchups"));
+
+export { NdbMaintenanceTaskArgs, NdbMaintenanceTaskState } from "./ndbMaintenanceTask";
+export type NdbMaintenanceTask = import("./ndbMaintenanceTask").NdbMaintenanceTask;
+export const NdbMaintenanceTask: typeof import("./ndbMaintenanceTask").NdbMaintenanceTask = null as any;
+utilities.lazyLoad(exports, ["NdbMaintenanceTask"], () => require("./ndbMaintenanceTask"));
+
+export { NdbMaintenanceWindowArgs, NdbMaintenanceWindowState } from "./ndbMaintenanceWindow";
+export type NdbMaintenanceWindow = import("./ndbMaintenanceWindow").NdbMaintenanceWindow;
+export const NdbMaintenanceWindow: typeof import("./ndbMaintenanceWindow").NdbMaintenanceWindow = null as any;
+utilities.lazyLoad(exports, ["NdbMaintenanceWindow"], () => require("./ndbMaintenanceWindow"));
+
+export { NdbNetworkArgs, NdbNetworkState } from "./ndbNetwork";
+export type NdbNetwork = import("./ndbNetwork").NdbNetwork;
+export const NdbNetwork: typeof import("./ndbNetwork").NdbNetwork = null as any;
+utilities.lazyLoad(exports, ["NdbNetwork"], () => require("./ndbNetwork"));
+
+export { NdbProfileArgs, NdbProfileState } from "./ndbProfile";
+export type NdbProfile = import("./ndbProfile").NdbProfile;
+export const NdbProfile: typeof import("./ndbProfile").NdbProfile = null as any;
+utilities.lazyLoad(exports, ["NdbProfile"], () => require("./ndbProfile"));
+
+export { NdbRegisterDatabaseArgs, NdbRegisterDatabaseState } from "./ndbRegisterDatabase";
+export type NdbRegisterDatabase = import("./ndbRegisterDatabase").NdbRegisterDatabase;
+export const NdbRegisterDatabase: typeof import("./ndbRegisterDatabase").NdbRegisterDatabase = null as any;
+utilities.lazyLoad(exports, ["NdbRegisterDatabase"], () => require("./ndbRegisterDatabase"));
+
+export { NdbRegisterDbserverArgs, NdbRegisterDbserverState } from "./ndbRegisterDbserver";
+export type NdbRegisterDbserver = import("./ndbRegisterDbserver").NdbRegisterDbserver;
+export const NdbRegisterDbserver: typeof import("./ndbRegisterDbserver").NdbRegisterDbserver = null as any;
+utilities.lazyLoad(exports, ["NdbRegisterDbserver"], () => require("./ndbRegisterDbserver"));
+
+export { NdbScaleDatabaseArgs, NdbScaleDatabaseState } from "./ndbScaleDatabase";
+export type NdbScaleDatabase = import("./ndbScaleDatabase").NdbScaleDatabase;
+export const NdbScaleDatabase: typeof import("./ndbScaleDatabase").NdbScaleDatabase = null as any;
+utilities.lazyLoad(exports, ["NdbScaleDatabase"], () => require("./ndbScaleDatabase"));
+
+export { NdbSlaArgs, NdbSlaState } from "./ndbSla";
+export type NdbSla = import("./ndbSla").NdbSla;
+export const NdbSla: typeof import("./ndbSla").NdbSla = null as any;
+utilities.lazyLoad(exports, ["NdbSla"], () => require("./ndbSla"));
+
+export { NdbSoftwareVersionProfileArgs, NdbSoftwareVersionProfileState } from "./ndbSoftwareVersionProfile";
+export type NdbSoftwareVersionProfile = import("./ndbSoftwareVersionProfile").NdbSoftwareVersionProfile;
+export const NdbSoftwareVersionProfile: typeof import("./ndbSoftwareVersionProfile").NdbSoftwareVersionProfile = null as any;
+utilities.lazyLoad(exports, ["NdbSoftwareVersionProfile"], () => require("./ndbSoftwareVersionProfile"));
+
+export { NdbStretchedVlanArgs, NdbStretchedVlanState } from "./ndbStretchedVlan";
+export type NdbStretchedVlan = import("./ndbStretchedVlan").NdbStretchedVlan;
+export const NdbStretchedVlan: typeof import("./ndbStretchedVlan").NdbStretchedVlan = null as any;
+utilities.lazyLoad(exports, ["NdbStretchedVlan"], () => require("./ndbStretchedVlan"));
+
+export { NdbTagArgs, NdbTagState } from "./ndbTag";
+export type NdbTag = import("./ndbTag").NdbTag;
+export const NdbTag: typeof import("./ndbTag").NdbTag = null as any;
+utilities.lazyLoad(exports, ["NdbTag"], () => require("./ndbTag"));
+
+export { NdbTmsClusterArgs, NdbTmsClusterState } from "./ndbTmsCluster";
+export type NdbTmsCluster = import("./ndbTmsCluster").NdbTmsCluster;
+export const NdbTmsCluster: typeof import("./ndbTmsCluster").NdbTmsCluster = null as any;
+utilities.lazyLoad(exports, ["NdbTmsCluster"], () => require("./ndbTmsCluster"));
+
 export { NetworkSecurityRuleArgs, NetworkSecurityRuleState } from "./networkSecurityRule";
 export type NetworkSecurityRule = import("./networkSecurityRule").NetworkSecurityRule;
 export const NetworkSecurityRule: typeof import("./networkSecurityRule").NetworkSecurityRule = null as any;
@@ -395,6 +635,11 @@ export type User = import("./user").User;
 export const User: typeof import("./user").User = null as any;
 utilities.lazyLoad(exports, ["User"], () => require("./user"));
 
+export { UserGroupsArgs, UserGroupsState } from "./userGroups";
+export type UserGroups = import("./userGroups").UserGroups;
+export const UserGroups: typeof import("./userGroups").UserGroups = null as any;
+utilities.lazyLoad(exports, ["UserGroups"], () => require("./userGroups"));
+
 export { VirtualMachineArgs, VirtualMachineState } from "./virtualMachine";
 export type VirtualMachine = import("./virtualMachine").VirtualMachine;
 export const VirtualMachine: typeof import("./virtualMachine").VirtualMachine = null as any;
@@ -445,6 +690,54 @@ const _module = {
                 return new KarbonCluster(name, <any>undefined, { urn })
             case "nutanix:index/karbonPrivateRegistry:KarbonPrivateRegistry":
                 return new KarbonPrivateRegistry(name, <any>undefined, { urn })
+            case "nutanix:index/karbonWorkerNodepool:KarbonWorkerNodepool":
+                return new KarbonWorkerNodepool(name, <any>undefined, { urn })
+            case "nutanix:index/ndbAuthorizeDbserver:NdbAuthorizeDbserver":
+                return new NdbAuthorizeDbserver(name, <any>undefined, { urn })
+            case "nutanix:index/ndbClone:NdbClone":
+                return new NdbClone(name, <any>undefined, { urn })
+            case "nutanix:index/ndbCloneRefresh:NdbCloneRefresh":
+                return new NdbCloneRefresh(name, <any>undefined, { urn })
+            case "nutanix:index/ndbCluster:NdbCluster":
+                return new NdbCluster(name, <any>undefined, { urn })
+            case "nutanix:index/ndbDatabase:NdbDatabase":
+                return new NdbDatabase(name, <any>undefined, { urn })
+            case "nutanix:index/ndbDatabaseRestore:NdbDatabaseRestore":
+                return new NdbDatabaseRestore(name, <any>undefined, { urn })
+            case "nutanix:index/ndbDatabaseScale:NdbDatabaseScale":
+                return new NdbDatabaseScale(name, <any>undefined, { urn })
+            case "nutanix:index/ndbDatabaseSnapshot:NdbDatabaseSnapshot":
+                return new NdbDatabaseSnapshot(name, <any>undefined, { urn })
+            case "nutanix:index/ndbDbserverVm:NdbDbserverVm":
+                return new NdbDbserverVm(name, <any>undefined, { urn })
+            case "nutanix:index/ndbLinkedDatabases:NdbLinkedDatabases":
+                return new NdbLinkedDatabases(name, <any>undefined, { urn })
+            case "nutanix:index/ndbLogCatchups:NdbLogCatchups":
+                return new NdbLogCatchups(name, <any>undefined, { urn })
+            case "nutanix:index/ndbMaintenanceTask:NdbMaintenanceTask":
+                return new NdbMaintenanceTask(name, <any>undefined, { urn })
+            case "nutanix:index/ndbMaintenanceWindow:NdbMaintenanceWindow":
+                return new NdbMaintenanceWindow(name, <any>undefined, { urn })
+            case "nutanix:index/ndbNetwork:NdbNetwork":
+                return new NdbNetwork(name, <any>undefined, { urn })
+            case "nutanix:index/ndbProfile:NdbProfile":
+                return new NdbProfile(name, <any>undefined, { urn })
+            case "nutanix:index/ndbRegisterDatabase:NdbRegisterDatabase":
+                return new NdbRegisterDatabase(name, <any>undefined, { urn })
+            case "nutanix:index/ndbRegisterDbserver:NdbRegisterDbserver":
+                return new NdbRegisterDbserver(name, <any>undefined, { urn })
+            case "nutanix:index/ndbScaleDatabase:NdbScaleDatabase":
+                return new NdbScaleDatabase(name, <any>undefined, { urn })
+            case "nutanix:index/ndbSla:NdbSla":
+                return new NdbSla(name, <any>undefined, { urn })
+            case "nutanix:index/ndbSoftwareVersionProfile:NdbSoftwareVersionProfile":
+                return new NdbSoftwareVersionProfile(name, <any>undefined, { urn })
+            case "nutanix:index/ndbStretchedVlan:NdbStretchedVlan":
+                return new NdbStretchedVlan(name, <any>undefined, { urn })
+            case "nutanix:index/ndbTag:NdbTag":
+                return new NdbTag(name, <any>undefined, { urn })
+            case "nutanix:index/ndbTmsCluster:NdbTmsCluster":
+                return new NdbTmsCluster(name, <any>undefined, { urn })
             case "nutanix:index/networkSecurityRule:NetworkSecurityRule":
                 return new NetworkSecurityRule(name, <any>undefined, { urn })
             case "nutanix:index/pbr:Pbr":
@@ -465,6 +758,8 @@ const _module = {
                 return new Subnet(name, <any>undefined, { urn })
             case "nutanix:index/user:User":
                 return new User(name, <any>undefined, { urn })
+            case "nutanix:index/userGroups:UserGroups":
+                return new UserGroups(name, <any>undefined, { urn })
             case "nutanix:index/virtualMachine:VirtualMachine":
                 return new VirtualMachine(name, <any>undefined, { urn })
             case "nutanix:index/vpc:Vpc":
@@ -487,6 +782,30 @@ pulumi.runtime.registerResourceModule("nutanix", "index/foundationIpmiConfig", _
 pulumi.runtime.registerResourceModule("nutanix", "index/image", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/karbonCluster", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/karbonPrivateRegistry", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/karbonWorkerNodepool", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbAuthorizeDbserver", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbClone", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbCloneRefresh", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbCluster", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbDatabase", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbDatabaseRestore", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbDatabaseScale", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbDatabaseSnapshot", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbDbserverVm", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbLinkedDatabases", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbLogCatchups", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbMaintenanceTask", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbMaintenanceWindow", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbNetwork", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbProfile", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbRegisterDatabase", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbRegisterDbserver", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbScaleDatabase", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbSla", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbSoftwareVersionProfile", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbStretchedVlan", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbTag", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/ndbTmsCluster", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/networkSecurityRule", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/pbr", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/project", _module)
@@ -497,6 +816,7 @@ pulumi.runtime.registerResourceModule("nutanix", "index/serviceGroup", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/staticRoutes", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/subnet", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/user", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/userGroups", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/virtualMachine", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/vpc", _module)
 pulumi.runtime.registerResourcePackage("nutanix", {

@@ -70,6 +70,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// - If it is a single node cluster.
         /// </summary>
         public readonly bool? SingleNodeCluster;
+        /// <summary>
+        /// - Set timezone for every CVM
+        /// </summary>
+        public readonly string? Timezone;
 
         [OutputConstructor]
         private FoundationImageNodesCluster(
@@ -99,7 +103,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             int redundancyFactor,
 
-            bool? singleNodeCluster)
+            bool? singleNodeCluster,
+
+            string? timezone)
         {
             BackplaneNetmask = backplaneNetmask;
             BackplaneSubnet = backplaneSubnet;
@@ -115,6 +121,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             HypervisorNtpServers = hypervisorNtpServers;
             RedundancyFactor = redundancyFactor;
             SingleNodeCluster = singleNodeCluster;
+            Timezone = timezone;
         }
     }
 }

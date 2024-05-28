@@ -50,7 +50,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         },
     ///     });
     /// 
-    ///     var projectTest = new Nutanix.Project("projectTest", new()
+    ///     var projectTestProject = new Nutanix.Project("projectTestProject", new()
     ///     {
     ///         Description = "This is my project",
     ///         Categories = new[]
@@ -79,6 +79,130 @@ namespace PiersKarsenbarg.Nutanix
     ///         ApiVersion = "3.1",
     ///     });
     /// 
+    ///     // set use_project_internal flag to create project with acps
+    ///     var projectTestIndex_projectProject = new Nutanix.Project("projectTestIndex/projectProject", new()
+    ///     {
+    ///         Description = "This is my project",
+    ///         ClusterUuid = "&lt;YOUR_CLUSTER_ID&gt;",
+    ///         UseProjectInternal = true,
+    ///         DefaultSubnetReference = new Nutanix.Inputs.ProjectDefaultSubnetReferenceArgs
+    ///         {
+    ///             Uuid = subnet.Metadata.Apply(metadata =&gt; metadata.Uuid),
+    ///         },
+    ///         UserReferenceLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ProjectUserReferenceListArgs
+    ///             {
+    ///                 Name = "{{user_name}}",
+    ///                 Kind = "user",
+    ///                 Uuid = "{{user_uuid}}",
+    ///             },
+    ///         },
+    ///         SubnetReferenceLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ProjectSubnetReferenceListArgs
+    ///             {
+    ///                 Uuid = resource.Nutanix_subnet.Sub.Id,
+    ///             },
+    ///         },
+    ///         Acps = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ProjectAcpArgs
+    ///             {
+    ///                 Name = "{{acp_name}}",
+    ///                 RoleReference = new Nutanix.Inputs.ProjectAcpRoleReferenceArgs
+    ///                 {
+    ///                     Kind = "role",
+    ///                     Uuid = "{{role_uuid}}",
+    ///                     Name = "Developer",
+    ///                 },
+    ///                 UserReferenceLists = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ProjectAcpUserReferenceListArgs
+    ///                     {
+    ///                         Name = "{{user_name}}",
+    ///                         Kind = "user",
+    ///                         Uuid = "{{user_uuid}}",
+    ///                     },
+    ///                 },
+    ///                 Description = "{{description}}",
+    ///             },
+    ///         },
+    ///         ApiVersion = "3.1",
+    ///     });
+    /// 
+    ///     //# Create a project with user which not added in the PC
+    ///     var projectTestNutanixIndex_projectProject = new Nutanix.Project("projectTestNutanixIndex/projectProject", new()
+    ///     {
+    ///         Description = "This is my project",
+    ///         ClusterUuid = "&lt;YOUR_CLUSTER_ID&gt;",
+    ///         UseProjectInternal = true,
+    ///         DefaultSubnetReference = new Nutanix.Inputs.ProjectDefaultSubnetReferenceArgs
+    ///         {
+    ///             Uuid = subnet.Metadata.Apply(metadata =&gt; metadata.Uuid),
+    ///         },
+    ///         UserReferenceLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ProjectUserReferenceListArgs
+    ///             {
+    ///                 Name = "{{user_name}}",
+    ///                 Kind = "user",
+    ///                 Uuid = "{{user_uuid}}",
+    ///             },
+    ///         },
+    ///         SubnetReferenceLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ProjectSubnetReferenceListArgs
+    ///             {
+    ///                 Uuid = resource.Nutanix_subnet.Sub.Id,
+    ///             },
+    ///         },
+    ///         Acps = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ProjectAcpArgs
+    ///             {
+    ///                 Name = "{{acp_name}}",
+    ///                 RoleReference = new Nutanix.Inputs.ProjectAcpRoleReferenceArgs
+    ///                 {
+    ///                     Kind = "role",
+    ///                     Uuid = "{{role_uuid}}",
+    ///                     Name = "Developer",
+    ///                 },
+    ///                 UserReferenceLists = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ProjectAcpUserReferenceListArgs
+    ///                     {
+    ///                         Name = "{{user_name}}",
+    ///                         Kind = "user",
+    ///                         Uuid = "{{user_uuid}}",
+    ///                     },
+    ///                 },
+    ///                 Description = "{{description}}",
+    ///             },
+    ///         },
+    ///         UserLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ProjectUserListArgs
+    ///             {
+    ///                 Metadata = 
+    ///                 {
+    ///                     { "kind", "user" },
+    ///                     { "uuid", "{{ UUID of the USER }}" },
+    ///                 },
+    ///                 DirectoryServiceUser = new Nutanix.Inputs.ProjectUserListDirectoryServiceUserArgs
+    ///                 {
+    ///                     UserPrincipalName = "{{ Name of user }}",
+    ///                     DirectoryServiceReference = new Nutanix.Inputs.ProjectUserListDirectoryServiceUserDirectoryServiceReferenceArgs
+    ///                     {
+    ///                         Uuid = "{{ DIRECTORY SERVICE UUID }}",
+    ///                         Kind = "directory_service",
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         ApiVersion = "3.1",
+    ///     });
+    /// 
     /// });
     /// ```
     /// </summary>
@@ -88,11 +212,29 @@ namespace PiersKarsenbarg.Nutanix
         [Output("accountReferenceLists")]
         public Output<ImmutableArray<Outputs.ProjectAccountReferenceList>> AccountReferenceLists { get; private set; } = null!;
 
+        [Output("acps")]
+        public Output<ImmutableArray<Outputs.ProjectAcp>> Acps { get; private set; } = null!;
+
         [Output("apiVersion")]
         public Output<string> ApiVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The category values represented as a dictionary of key &gt; list of values.
+        /// </summary>
         [Output("categories")]
         public Output<ImmutableArray<Outputs.ProjectCategory>> Categories { get; private set; } = null!;
+
+        [Output("clusterReferenceLists")]
+        public Output<ImmutableArray<Outputs.ProjectClusterReferenceList>> ClusterReferenceLists { get; private set; } = null!;
+
+        /// <summary>
+        /// The UUID of cluster. (Required when using project_internal flag).
+        /// </summary>
+        [Output("clusterUuid")]
+        public Output<string?> ClusterUuid { get; private set; } = null!;
+
+        [Output("defaultEnvironmentReference")]
+        public Output<Outputs.ProjectDefaultEnvironmentReference> DefaultEnvironmentReference { get; private set; } = null!;
 
         [Output("defaultSubnetReference")]
         public Output<Outputs.ProjectDefaultSubnetReference> DefaultSubnetReference { get; private set; } = null!;
@@ -102,6 +244,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
+
+        /// <summary>
+        /// flag to allow collaboration of projects. (Use with project_internal flag)
+        /// </summary>
+        [Output("enableCollab")]
+        public Output<bool?> EnableCollab { get; private set; } = null!;
 
         [Output("environmentReferenceLists")]
         public Output<ImmutableArray<Outputs.ProjectEnvironmentReferenceList>> EnvironmentReferenceLists { get; private set; } = null!;
@@ -139,8 +287,29 @@ namespace PiersKarsenbarg.Nutanix
         [Output("subnetReferenceLists")]
         public Output<ImmutableArray<Outputs.ProjectSubnetReferenceList>> SubnetReferenceLists { get; private set; } = null!;
 
+        [Output("tunnelReferenceLists")]
+        public Output<ImmutableArray<Outputs.ProjectTunnelReferenceList>> TunnelReferenceLists { get; private set; } = null!;
+
+        /// <summary>
+        /// flag to use project internal for user role mapping
+        /// </summary>
+        [Output("useProjectInternal")]
+        public Output<bool?> UseProjectInternal { get; private set; } = null!;
+
+        [Output("userGroupLists")]
+        public Output<ImmutableArray<Outputs.ProjectUserGroupList>> UserGroupLists { get; private set; } = null!;
+
+        [Output("userLists")]
+        public Output<ImmutableArray<Outputs.ProjectUserList>> UserLists { get; private set; } = null!;
+
+        /// <summary>
+        /// List of Reference of users.
+        /// </summary>
         [Output("userReferenceLists")]
         public Output<ImmutableArray<Outputs.ProjectUserReferenceList>> UserReferenceLists { get; private set; } = null!;
+
+        [Output("vpcReferenceLists")]
+        public Output<ImmutableArray<Outputs.ProjectVpcReferenceList>> VpcReferenceLists { get; private set; } = null!;
 
 
         /// <summary>
@@ -197,16 +366,45 @@ namespace PiersKarsenbarg.Nutanix
             set => _accountReferenceLists = value;
         }
 
+        [Input("acps")]
+        private InputList<Inputs.ProjectAcpArgs>? _acps;
+        public InputList<Inputs.ProjectAcpArgs> Acps
+        {
+            get => _acps ?? (_acps = new InputList<Inputs.ProjectAcpArgs>());
+            set => _acps = value;
+        }
+
         [Input("apiVersion")]
         public Input<string>? ApiVersion { get; set; }
 
         [Input("categories")]
         private InputList<Inputs.ProjectCategoryArgs>? _categories;
+
+        /// <summary>
+        /// - (Optional) The category values represented as a dictionary of key &gt; list of values.
+        /// </summary>
         public InputList<Inputs.ProjectCategoryArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.ProjectCategoryArgs>());
             set => _categories = value;
         }
+
+        [Input("clusterReferenceLists")]
+        private InputList<Inputs.ProjectClusterReferenceListArgs>? _clusterReferenceLists;
+        public InputList<Inputs.ProjectClusterReferenceListArgs> ClusterReferenceLists
+        {
+            get => _clusterReferenceLists ?? (_clusterReferenceLists = new InputList<Inputs.ProjectClusterReferenceListArgs>());
+            set => _clusterReferenceLists = value;
+        }
+
+        /// <summary>
+        /// The UUID of cluster. (Required when using project_internal flag).
+        /// </summary>
+        [Input("clusterUuid")]
+        public Input<string>? ClusterUuid { get; set; }
+
+        [Input("defaultEnvironmentReference")]
+        public Input<Inputs.ProjectDefaultEnvironmentReferenceArgs>? DefaultEnvironmentReference { get; set; }
 
         [Input("defaultSubnetReference", required: true)]
         public Input<Inputs.ProjectDefaultSubnetReferenceArgs> DefaultSubnetReference { get; set; } = null!;
@@ -216,6 +414,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("description", required: true)]
         public Input<string> Description { get; set; } = null!;
+
+        /// <summary>
+        /// flag to allow collaboration of projects. (Use with project_internal flag)
+        /// </summary>
+        [Input("enableCollab")]
+        public Input<bool>? EnableCollab { get; set; }
 
         [Input("environmentReferenceLists")]
         private InputList<Inputs.ProjectEnvironmentReferenceListArgs>? _environmentReferenceLists;
@@ -274,12 +478,54 @@ namespace PiersKarsenbarg.Nutanix
             set => _subnetReferenceLists = value;
         }
 
+        [Input("tunnelReferenceLists")]
+        private InputList<Inputs.ProjectTunnelReferenceListArgs>? _tunnelReferenceLists;
+        public InputList<Inputs.ProjectTunnelReferenceListArgs> TunnelReferenceLists
+        {
+            get => _tunnelReferenceLists ?? (_tunnelReferenceLists = new InputList<Inputs.ProjectTunnelReferenceListArgs>());
+            set => _tunnelReferenceLists = value;
+        }
+
+        /// <summary>
+        /// flag to use project internal for user role mapping
+        /// </summary>
+        [Input("useProjectInternal")]
+        public Input<bool>? UseProjectInternal { get; set; }
+
+        [Input("userGroupLists")]
+        private InputList<Inputs.ProjectUserGroupListArgs>? _userGroupLists;
+        public InputList<Inputs.ProjectUserGroupListArgs> UserGroupLists
+        {
+            get => _userGroupLists ?? (_userGroupLists = new InputList<Inputs.ProjectUserGroupListArgs>());
+            set => _userGroupLists = value;
+        }
+
+        [Input("userLists")]
+        private InputList<Inputs.ProjectUserListArgs>? _userLists;
+        public InputList<Inputs.ProjectUserListArgs> UserLists
+        {
+            get => _userLists ?? (_userLists = new InputList<Inputs.ProjectUserListArgs>());
+            set => _userLists = value;
+        }
+
         [Input("userReferenceLists")]
         private InputList<Inputs.ProjectUserReferenceListArgs>? _userReferenceLists;
+
+        /// <summary>
+        /// List of Reference of users.
+        /// </summary>
         public InputList<Inputs.ProjectUserReferenceListArgs> UserReferenceLists
         {
             get => _userReferenceLists ?? (_userReferenceLists = new InputList<Inputs.ProjectUserReferenceListArgs>());
             set => _userReferenceLists = value;
+        }
+
+        [Input("vpcReferenceLists")]
+        private InputList<Inputs.ProjectVpcReferenceListArgs>? _vpcReferenceLists;
+        public InputList<Inputs.ProjectVpcReferenceListArgs> VpcReferenceLists
+        {
+            get => _vpcReferenceLists ?? (_vpcReferenceLists = new InputList<Inputs.ProjectVpcReferenceListArgs>());
+            set => _vpcReferenceLists = value;
         }
 
         public ProjectArgs()
@@ -298,16 +544,45 @@ namespace PiersKarsenbarg.Nutanix
             set => _accountReferenceLists = value;
         }
 
+        [Input("acps")]
+        private InputList<Inputs.ProjectAcpGetArgs>? _acps;
+        public InputList<Inputs.ProjectAcpGetArgs> Acps
+        {
+            get => _acps ?? (_acps = new InputList<Inputs.ProjectAcpGetArgs>());
+            set => _acps = value;
+        }
+
         [Input("apiVersion")]
         public Input<string>? ApiVersion { get; set; }
 
         [Input("categories")]
         private InputList<Inputs.ProjectCategoryGetArgs>? _categories;
+
+        /// <summary>
+        /// - (Optional) The category values represented as a dictionary of key &gt; list of values.
+        /// </summary>
         public InputList<Inputs.ProjectCategoryGetArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.ProjectCategoryGetArgs>());
             set => _categories = value;
         }
+
+        [Input("clusterReferenceLists")]
+        private InputList<Inputs.ProjectClusterReferenceListGetArgs>? _clusterReferenceLists;
+        public InputList<Inputs.ProjectClusterReferenceListGetArgs> ClusterReferenceLists
+        {
+            get => _clusterReferenceLists ?? (_clusterReferenceLists = new InputList<Inputs.ProjectClusterReferenceListGetArgs>());
+            set => _clusterReferenceLists = value;
+        }
+
+        /// <summary>
+        /// The UUID of cluster. (Required when using project_internal flag).
+        /// </summary>
+        [Input("clusterUuid")]
+        public Input<string>? ClusterUuid { get; set; }
+
+        [Input("defaultEnvironmentReference")]
+        public Input<Inputs.ProjectDefaultEnvironmentReferenceGetArgs>? DefaultEnvironmentReference { get; set; }
 
         [Input("defaultSubnetReference")]
         public Input<Inputs.ProjectDefaultSubnetReferenceGetArgs>? DefaultSubnetReference { get; set; }
@@ -317,6 +592,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
+
+        /// <summary>
+        /// flag to allow collaboration of projects. (Use with project_internal flag)
+        /// </summary>
+        [Input("enableCollab")]
+        public Input<bool>? EnableCollab { get; set; }
 
         [Input("environmentReferenceLists")]
         private InputList<Inputs.ProjectEnvironmentReferenceListGetArgs>? _environmentReferenceLists;
@@ -389,12 +670,54 @@ namespace PiersKarsenbarg.Nutanix
             set => _subnetReferenceLists = value;
         }
 
+        [Input("tunnelReferenceLists")]
+        private InputList<Inputs.ProjectTunnelReferenceListGetArgs>? _tunnelReferenceLists;
+        public InputList<Inputs.ProjectTunnelReferenceListGetArgs> TunnelReferenceLists
+        {
+            get => _tunnelReferenceLists ?? (_tunnelReferenceLists = new InputList<Inputs.ProjectTunnelReferenceListGetArgs>());
+            set => _tunnelReferenceLists = value;
+        }
+
+        /// <summary>
+        /// flag to use project internal for user role mapping
+        /// </summary>
+        [Input("useProjectInternal")]
+        public Input<bool>? UseProjectInternal { get; set; }
+
+        [Input("userGroupLists")]
+        private InputList<Inputs.ProjectUserGroupListGetArgs>? _userGroupLists;
+        public InputList<Inputs.ProjectUserGroupListGetArgs> UserGroupLists
+        {
+            get => _userGroupLists ?? (_userGroupLists = new InputList<Inputs.ProjectUserGroupListGetArgs>());
+            set => _userGroupLists = value;
+        }
+
+        [Input("userLists")]
+        private InputList<Inputs.ProjectUserListGetArgs>? _userLists;
+        public InputList<Inputs.ProjectUserListGetArgs> UserLists
+        {
+            get => _userLists ?? (_userLists = new InputList<Inputs.ProjectUserListGetArgs>());
+            set => _userLists = value;
+        }
+
         [Input("userReferenceLists")]
         private InputList<Inputs.ProjectUserReferenceListGetArgs>? _userReferenceLists;
+
+        /// <summary>
+        /// List of Reference of users.
+        /// </summary>
         public InputList<Inputs.ProjectUserReferenceListGetArgs> UserReferenceLists
         {
             get => _userReferenceLists ?? (_userReferenceLists = new InputList<Inputs.ProjectUserReferenceListGetArgs>());
             set => _userReferenceLists = value;
+        }
+
+        [Input("vpcReferenceLists")]
+        private InputList<Inputs.ProjectVpcReferenceListGetArgs>? _vpcReferenceLists;
+        public InputList<Inputs.ProjectVpcReferenceListGetArgs> VpcReferenceLists
+        {
+            get => _vpcReferenceLists ?? (_vpcReferenceLists = new InputList<Inputs.ProjectVpcReferenceListGetArgs>());
+            set => _vpcReferenceLists = value;
         }
 
         public ProjectState()

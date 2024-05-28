@@ -116,6 +116,9 @@ export interface GetVirtualMachineResult {
      * - VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
      */
     readonly guestCustomizationSysprep: {[key: string]: string};
+    /**
+     * - Generic key value pair used for custom attributes in sysprep.
+     */
     readonly guestCustomizationSysprepCustomKeyValues: {[key: string]: any};
     /**
      * - Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.

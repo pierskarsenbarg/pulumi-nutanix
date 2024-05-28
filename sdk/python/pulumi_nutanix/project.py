@@ -19,8 +19,13 @@ class ProjectArgs:
                  default_subnet_reference: pulumi.Input['ProjectDefaultSubnetReferenceArgs'],
                  description: pulumi.Input[str],
                  account_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectAccountReferenceListArgs']]]] = None,
+                 acps: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectAcpArgs']]]] = None,
                  api_version: Optional[pulumi.Input[str]] = None,
                  categories: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectCategoryArgs']]]] = None,
+                 cluster_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectClusterReferenceListArgs']]]] = None,
+                 cluster_uuid: Optional[pulumi.Input[str]] = None,
+                 default_environment_reference: Optional[pulumi.Input['ProjectDefaultEnvironmentReferenceArgs']] = None,
+                 enable_collab: Optional[pulumi.Input[bool]] = None,
                  environment_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectEnvironmentReferenceListArgs']]]] = None,
                  external_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectExternalNetworkListArgs']]]] = None,
                  external_user_group_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectExternalUserGroupReferenceListArgs']]]] = None,
@@ -29,20 +34,40 @@ class ProjectArgs:
                  project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  resource_domain: Optional[pulumi.Input['ProjectResourceDomainArgs']] = None,
                  subnet_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectSubnetReferenceListArgs']]]] = None,
-                 user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]]] = None):
+                 tunnel_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectTunnelReferenceListArgs']]]] = None,
+                 use_project_internal: Optional[pulumi.Input[bool]] = None,
+                 user_group_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserGroupListArgs']]]] = None,
+                 user_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserListArgs']]]] = None,
+                 user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]]] = None,
+                 vpc_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectVpcReferenceListArgs']]]] = None):
         """
         The set of arguments for constructing a Project resource.
         :param pulumi.Input[str] description: A description for project.
+        :param pulumi.Input[Sequence[pulumi.Input['ProjectCategoryArgs']]] categories: - (Optional) The category values represented as a dictionary of key > list of values.
+        :param pulumi.Input[str] cluster_uuid: The UUID of cluster. (Required when using project_internal flag).
+        :param pulumi.Input[bool] enable_collab: flag to allow collaboration of projects. (Use with project_internal flag)
         :param pulumi.Input[str] name: The name for the project.
+        :param pulumi.Input[bool] use_project_internal: flag to use project internal for user role mapping
+        :param pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]] user_reference_lists: List of Reference of users.
         """
         pulumi.set(__self__, "default_subnet_reference", default_subnet_reference)
         pulumi.set(__self__, "description", description)
         if account_reference_lists is not None:
             pulumi.set(__self__, "account_reference_lists", account_reference_lists)
+        if acps is not None:
+            pulumi.set(__self__, "acps", acps)
         if api_version is not None:
             pulumi.set(__self__, "api_version", api_version)
         if categories is not None:
             pulumi.set(__self__, "categories", categories)
+        if cluster_reference_lists is not None:
+            pulumi.set(__self__, "cluster_reference_lists", cluster_reference_lists)
+        if cluster_uuid is not None:
+            pulumi.set(__self__, "cluster_uuid", cluster_uuid)
+        if default_environment_reference is not None:
+            pulumi.set(__self__, "default_environment_reference", default_environment_reference)
+        if enable_collab is not None:
+            pulumi.set(__self__, "enable_collab", enable_collab)
         if environment_reference_lists is not None:
             pulumi.set(__self__, "environment_reference_lists", environment_reference_lists)
         if external_network_lists is not None:
@@ -59,8 +84,18 @@ class ProjectArgs:
             pulumi.set(__self__, "resource_domain", resource_domain)
         if subnet_reference_lists is not None:
             pulumi.set(__self__, "subnet_reference_lists", subnet_reference_lists)
+        if tunnel_reference_lists is not None:
+            pulumi.set(__self__, "tunnel_reference_lists", tunnel_reference_lists)
+        if use_project_internal is not None:
+            pulumi.set(__self__, "use_project_internal", use_project_internal)
+        if user_group_lists is not None:
+            pulumi.set(__self__, "user_group_lists", user_group_lists)
+        if user_lists is not None:
+            pulumi.set(__self__, "user_lists", user_lists)
         if user_reference_lists is not None:
             pulumi.set(__self__, "user_reference_lists", user_reference_lists)
+        if vpc_reference_lists is not None:
+            pulumi.set(__self__, "vpc_reference_lists", vpc_reference_lists)
 
     @property
     @pulumi.getter(name="defaultSubnetReference")
@@ -93,6 +128,15 @@ class ProjectArgs:
         pulumi.set(self, "account_reference_lists", value)
 
     @property
+    @pulumi.getter
+    def acps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectAcpArgs']]]]:
+        return pulumi.get(self, "acps")
+
+    @acps.setter
+    def acps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectAcpArgs']]]]):
+        pulumi.set(self, "acps", value)
+
+    @property
     @pulumi.getter(name="apiVersion")
     def api_version(self) -> Optional[pulumi.Input[str]]:
         return pulumi.get(self, "api_version")
@@ -104,11 +148,56 @@ class ProjectArgs:
     @property
     @pulumi.getter
     def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectCategoryArgs']]]]:
+        """
+        - (Optional) The category values represented as a dictionary of key > list of values.
+        """
         return pulumi.get(self, "categories")
 
     @categories.setter
     def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
+
+    @property
+    @pulumi.getter(name="clusterReferenceLists")
+    def cluster_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectClusterReferenceListArgs']]]]:
+        return pulumi.get(self, "cluster_reference_lists")
+
+    @cluster_reference_lists.setter
+    def cluster_reference_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectClusterReferenceListArgs']]]]):
+        pulumi.set(self, "cluster_reference_lists", value)
+
+    @property
+    @pulumi.getter(name="clusterUuid")
+    def cluster_uuid(self) -> Optional[pulumi.Input[str]]:
+        """
+        The UUID of cluster. (Required when using project_internal flag).
+        """
+        return pulumi.get(self, "cluster_uuid")
+
+    @cluster_uuid.setter
+    def cluster_uuid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_uuid", value)
+
+    @property
+    @pulumi.getter(name="defaultEnvironmentReference")
+    def default_environment_reference(self) -> Optional[pulumi.Input['ProjectDefaultEnvironmentReferenceArgs']]:
+        return pulumi.get(self, "default_environment_reference")
+
+    @default_environment_reference.setter
+    def default_environment_reference(self, value: Optional[pulumi.Input['ProjectDefaultEnvironmentReferenceArgs']]):
+        pulumi.set(self, "default_environment_reference", value)
+
+    @property
+    @pulumi.getter(name="enableCollab")
+    def enable_collab(self) -> Optional[pulumi.Input[bool]]:
+        """
+        flag to allow collaboration of projects. (Use with project_internal flag)
+        """
+        return pulumi.get(self, "enable_collab")
+
+    @enable_collab.setter
+    def enable_collab(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_collab", value)
 
     @property
     @pulumi.getter(name="environmentReferenceLists")
@@ -186,23 +275,79 @@ class ProjectArgs:
         pulumi.set(self, "subnet_reference_lists", value)
 
     @property
+    @pulumi.getter(name="tunnelReferenceLists")
+    def tunnel_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectTunnelReferenceListArgs']]]]:
+        return pulumi.get(self, "tunnel_reference_lists")
+
+    @tunnel_reference_lists.setter
+    def tunnel_reference_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectTunnelReferenceListArgs']]]]):
+        pulumi.set(self, "tunnel_reference_lists", value)
+
+    @property
+    @pulumi.getter(name="useProjectInternal")
+    def use_project_internal(self) -> Optional[pulumi.Input[bool]]:
+        """
+        flag to use project internal for user role mapping
+        """
+        return pulumi.get(self, "use_project_internal")
+
+    @use_project_internal.setter
+    def use_project_internal(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "use_project_internal", value)
+
+    @property
+    @pulumi.getter(name="userGroupLists")
+    def user_group_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserGroupListArgs']]]]:
+        return pulumi.get(self, "user_group_lists")
+
+    @user_group_lists.setter
+    def user_group_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserGroupListArgs']]]]):
+        pulumi.set(self, "user_group_lists", value)
+
+    @property
+    @pulumi.getter(name="userLists")
+    def user_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserListArgs']]]]:
+        return pulumi.get(self, "user_lists")
+
+    @user_lists.setter
+    def user_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserListArgs']]]]):
+        pulumi.set(self, "user_lists", value)
+
+    @property
     @pulumi.getter(name="userReferenceLists")
     def user_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]]]:
+        """
+        List of Reference of users.
+        """
         return pulumi.get(self, "user_reference_lists")
 
     @user_reference_lists.setter
     def user_reference_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]]]):
         pulumi.set(self, "user_reference_lists", value)
 
+    @property
+    @pulumi.getter(name="vpcReferenceLists")
+    def vpc_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectVpcReferenceListArgs']]]]:
+        return pulumi.get(self, "vpc_reference_lists")
+
+    @vpc_reference_lists.setter
+    def vpc_reference_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectVpcReferenceListArgs']]]]):
+        pulumi.set(self, "vpc_reference_lists", value)
+
 
 @pulumi.input_type
 class _ProjectState:
     def __init__(__self__, *,
                  account_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectAccountReferenceListArgs']]]] = None,
+                 acps: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectAcpArgs']]]] = None,
                  api_version: Optional[pulumi.Input[str]] = None,
                  categories: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectCategoryArgs']]]] = None,
+                 cluster_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectClusterReferenceListArgs']]]] = None,
+                 cluster_uuid: Optional[pulumi.Input[str]] = None,
+                 default_environment_reference: Optional[pulumi.Input['ProjectDefaultEnvironmentReferenceArgs']] = None,
                  default_subnet_reference: Optional[pulumi.Input['ProjectDefaultSubnetReferenceArgs']] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 enable_collab: Optional[pulumi.Input[bool]] = None,
                  environment_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectEnvironmentReferenceListArgs']]]] = None,
                  external_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectExternalNetworkListArgs']]]] = None,
                  external_user_group_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectExternalUserGroupReferenceListArgs']]]] = None,
@@ -214,22 +359,42 @@ class _ProjectState:
                  resource_domain: Optional[pulumi.Input['ProjectResourceDomainArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectSubnetReferenceListArgs']]]] = None,
-                 user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]]] = None):
+                 tunnel_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectTunnelReferenceListArgs']]]] = None,
+                 use_project_internal: Optional[pulumi.Input[bool]] = None,
+                 user_group_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserGroupListArgs']]]] = None,
+                 user_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserListArgs']]]] = None,
+                 user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]]] = None,
+                 vpc_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectVpcReferenceListArgs']]]] = None):
         """
         Input properties used for looking up and filtering Project resources.
+        :param pulumi.Input[Sequence[pulumi.Input['ProjectCategoryArgs']]] categories: - (Optional) The category values represented as a dictionary of key > list of values.
+        :param pulumi.Input[str] cluster_uuid: The UUID of cluster. (Required when using project_internal flag).
         :param pulumi.Input[str] description: A description for project.
+        :param pulumi.Input[bool] enable_collab: flag to allow collaboration of projects. (Use with project_internal flag)
         :param pulumi.Input[str] name: The name for the project.
+        :param pulumi.Input[bool] use_project_internal: flag to use project internal for user role mapping
+        :param pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]] user_reference_lists: List of Reference of users.
         """
         if account_reference_lists is not None:
             pulumi.set(__self__, "account_reference_lists", account_reference_lists)
+        if acps is not None:
+            pulumi.set(__self__, "acps", acps)
         if api_version is not None:
             pulumi.set(__self__, "api_version", api_version)
         if categories is not None:
             pulumi.set(__self__, "categories", categories)
+        if cluster_reference_lists is not None:
+            pulumi.set(__self__, "cluster_reference_lists", cluster_reference_lists)
+        if cluster_uuid is not None:
+            pulumi.set(__self__, "cluster_uuid", cluster_uuid)
+        if default_environment_reference is not None:
+            pulumi.set(__self__, "default_environment_reference", default_environment_reference)
         if default_subnet_reference is not None:
             pulumi.set(__self__, "default_subnet_reference", default_subnet_reference)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if enable_collab is not None:
+            pulumi.set(__self__, "enable_collab", enable_collab)
         if environment_reference_lists is not None:
             pulumi.set(__self__, "environment_reference_lists", environment_reference_lists)
         if external_network_lists is not None:
@@ -252,8 +417,18 @@ class _ProjectState:
             pulumi.set(__self__, "state", state)
         if subnet_reference_lists is not None:
             pulumi.set(__self__, "subnet_reference_lists", subnet_reference_lists)
+        if tunnel_reference_lists is not None:
+            pulumi.set(__self__, "tunnel_reference_lists", tunnel_reference_lists)
+        if use_project_internal is not None:
+            pulumi.set(__self__, "use_project_internal", use_project_internal)
+        if user_group_lists is not None:
+            pulumi.set(__self__, "user_group_lists", user_group_lists)
+        if user_lists is not None:
+            pulumi.set(__self__, "user_lists", user_lists)
         if user_reference_lists is not None:
             pulumi.set(__self__, "user_reference_lists", user_reference_lists)
+        if vpc_reference_lists is not None:
+            pulumi.set(__self__, "vpc_reference_lists", vpc_reference_lists)
 
     @property
     @pulumi.getter(name="accountReferenceLists")
@@ -263,6 +438,15 @@ class _ProjectState:
     @account_reference_lists.setter
     def account_reference_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectAccountReferenceListArgs']]]]):
         pulumi.set(self, "account_reference_lists", value)
+
+    @property
+    @pulumi.getter
+    def acps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectAcpArgs']]]]:
+        return pulumi.get(self, "acps")
+
+    @acps.setter
+    def acps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectAcpArgs']]]]):
+        pulumi.set(self, "acps", value)
 
     @property
     @pulumi.getter(name="apiVersion")
@@ -276,11 +460,44 @@ class _ProjectState:
     @property
     @pulumi.getter
     def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectCategoryArgs']]]]:
+        """
+        - (Optional) The category values represented as a dictionary of key > list of values.
+        """
         return pulumi.get(self, "categories")
 
     @categories.setter
     def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
+
+    @property
+    @pulumi.getter(name="clusterReferenceLists")
+    def cluster_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectClusterReferenceListArgs']]]]:
+        return pulumi.get(self, "cluster_reference_lists")
+
+    @cluster_reference_lists.setter
+    def cluster_reference_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectClusterReferenceListArgs']]]]):
+        pulumi.set(self, "cluster_reference_lists", value)
+
+    @property
+    @pulumi.getter(name="clusterUuid")
+    def cluster_uuid(self) -> Optional[pulumi.Input[str]]:
+        """
+        The UUID of cluster. (Required when using project_internal flag).
+        """
+        return pulumi.get(self, "cluster_uuid")
+
+    @cluster_uuid.setter
+    def cluster_uuid(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_uuid", value)
+
+    @property
+    @pulumi.getter(name="defaultEnvironmentReference")
+    def default_environment_reference(self) -> Optional[pulumi.Input['ProjectDefaultEnvironmentReferenceArgs']]:
+        return pulumi.get(self, "default_environment_reference")
+
+    @default_environment_reference.setter
+    def default_environment_reference(self, value: Optional[pulumi.Input['ProjectDefaultEnvironmentReferenceArgs']]):
+        pulumi.set(self, "default_environment_reference", value)
 
     @property
     @pulumi.getter(name="defaultSubnetReference")
@@ -302,6 +519,18 @@ class _ProjectState:
     @description.setter
     def description(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "description", value)
+
+    @property
+    @pulumi.getter(name="enableCollab")
+    def enable_collab(self) -> Optional[pulumi.Input[bool]]:
+        """
+        flag to allow collaboration of projects. (Use with project_internal flag)
+        """
+        return pulumi.get(self, "enable_collab")
+
+    @enable_collab.setter
+    def enable_collab(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "enable_collab", value)
 
     @property
     @pulumi.getter(name="environmentReferenceLists")
@@ -406,13 +635,64 @@ class _ProjectState:
         pulumi.set(self, "subnet_reference_lists", value)
 
     @property
+    @pulumi.getter(name="tunnelReferenceLists")
+    def tunnel_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectTunnelReferenceListArgs']]]]:
+        return pulumi.get(self, "tunnel_reference_lists")
+
+    @tunnel_reference_lists.setter
+    def tunnel_reference_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectTunnelReferenceListArgs']]]]):
+        pulumi.set(self, "tunnel_reference_lists", value)
+
+    @property
+    @pulumi.getter(name="useProjectInternal")
+    def use_project_internal(self) -> Optional[pulumi.Input[bool]]:
+        """
+        flag to use project internal for user role mapping
+        """
+        return pulumi.get(self, "use_project_internal")
+
+    @use_project_internal.setter
+    def use_project_internal(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "use_project_internal", value)
+
+    @property
+    @pulumi.getter(name="userGroupLists")
+    def user_group_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserGroupListArgs']]]]:
+        return pulumi.get(self, "user_group_lists")
+
+    @user_group_lists.setter
+    def user_group_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserGroupListArgs']]]]):
+        pulumi.set(self, "user_group_lists", value)
+
+    @property
+    @pulumi.getter(name="userLists")
+    def user_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserListArgs']]]]:
+        return pulumi.get(self, "user_lists")
+
+    @user_lists.setter
+    def user_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserListArgs']]]]):
+        pulumi.set(self, "user_lists", value)
+
+    @property
     @pulumi.getter(name="userReferenceLists")
     def user_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]]]:
+        """
+        List of Reference of users.
+        """
         return pulumi.get(self, "user_reference_lists")
 
     @user_reference_lists.setter
     def user_reference_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]]]):
         pulumi.set(self, "user_reference_lists", value)
+
+    @property
+    @pulumi.getter(name="vpcReferenceLists")
+    def vpc_reference_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectVpcReferenceListArgs']]]]:
+        return pulumi.get(self, "vpc_reference_lists")
+
+    @vpc_reference_lists.setter
+    def vpc_reference_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectVpcReferenceListArgs']]]]):
+        pulumi.set(self, "vpc_reference_lists", value)
 
 
 class Project(pulumi.CustomResource):
@@ -421,10 +701,15 @@ class Project(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  account_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectAccountReferenceListArgs']]]]] = None,
+                 acps: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectAcpArgs']]]]] = None,
                  api_version: Optional[pulumi.Input[str]] = None,
                  categories: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectCategoryArgs']]]]] = None,
+                 cluster_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectClusterReferenceListArgs']]]]] = None,
+                 cluster_uuid: Optional[pulumi.Input[str]] = None,
+                 default_environment_reference: Optional[pulumi.Input[pulumi.InputType['ProjectDefaultEnvironmentReferenceArgs']]] = None,
                  default_subnet_reference: Optional[pulumi.Input[pulumi.InputType['ProjectDefaultSubnetReferenceArgs']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 enable_collab: Optional[pulumi.Input[bool]] = None,
                  environment_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectEnvironmentReferenceListArgs']]]]] = None,
                  external_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectExternalNetworkListArgs']]]]] = None,
                  external_user_group_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectExternalUserGroupReferenceListArgs']]]]] = None,
@@ -433,7 +718,12 @@ class Project(pulumi.CustomResource):
                  project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  resource_domain: Optional[pulumi.Input[pulumi.InputType['ProjectResourceDomainArgs']]] = None,
                  subnet_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectSubnetReferenceListArgs']]]]] = None,
+                 tunnel_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectTunnelReferenceListArgs']]]]] = None,
+                 use_project_internal: Optional[pulumi.Input[bool]] = None,
+                 user_group_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserGroupListArgs']]]]] = None,
+                 user_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserListArgs']]]]] = None,
                  user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserReferenceListArgs']]]]] = None,
+                 vpc_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectVpcReferenceListArgs']]]]] = None,
                  __props__=None):
         """
         Provides a Nutanix Project resource to Create a Project.
@@ -465,7 +755,7 @@ class Project(pulumi.CustomResource):
                 "terraform.nutanix.com",
                 "terraform.unit.test.com",
             ])
-        project_test = nutanix.Project("projectTest",
+        project_test_project = nutanix.Project("projectTestProject",
             description="This is my project",
             categories=[nutanix.ProjectCategoryArgs(
                 name="Environment",
@@ -481,12 +771,92 @@ class Project(pulumi.CustomResource):
                 uuid=subnet.metadata["uuid"],
             ),
             api_version="3.1")
+        # set use_project_internal flag to create project with acps
+        project_test_index_project_project = nutanix.Project("projectTestIndex/projectProject",
+            description="This is my project",
+            cluster_uuid="<YOUR_CLUSTER_ID>",
+            use_project_internal=True,
+            default_subnet_reference=nutanix.ProjectDefaultSubnetReferenceArgs(
+                uuid=subnet.metadata["uuid"],
+            ),
+            user_reference_lists=[nutanix.ProjectUserReferenceListArgs(
+                name="{{user_name}}",
+                kind="user",
+                uuid="{{user_uuid}}",
+            )],
+            subnet_reference_lists=[nutanix.ProjectSubnetReferenceListArgs(
+                uuid=resource["nutanix_subnet"]["sub"]["id"],
+            )],
+            acps=[nutanix.ProjectAcpArgs(
+                name="{{acp_name}}",
+                role_reference=nutanix.ProjectAcpRoleReferenceArgs(
+                    kind="role",
+                    uuid="{{role_uuid}}",
+                    name="Developer",
+                ),
+                user_reference_lists=[nutanix.ProjectAcpUserReferenceListArgs(
+                    name="{{user_name}}",
+                    kind="user",
+                    uuid="{{user_uuid}}",
+                )],
+                description="{{description}}",
+            )],
+            api_version="3.1")
+        ## Create a project with user which not added in the PC
+        project_test_nutanix_index_project_project = nutanix.Project("projectTestNutanixIndex/projectProject",
+            description="This is my project",
+            cluster_uuid="<YOUR_CLUSTER_ID>",
+            use_project_internal=True,
+            default_subnet_reference=nutanix.ProjectDefaultSubnetReferenceArgs(
+                uuid=subnet.metadata["uuid"],
+            ),
+            user_reference_lists=[nutanix.ProjectUserReferenceListArgs(
+                name="{{user_name}}",
+                kind="user",
+                uuid="{{user_uuid}}",
+            )],
+            subnet_reference_lists=[nutanix.ProjectSubnetReferenceListArgs(
+                uuid=resource["nutanix_subnet"]["sub"]["id"],
+            )],
+            acps=[nutanix.ProjectAcpArgs(
+                name="{{acp_name}}",
+                role_reference=nutanix.ProjectAcpRoleReferenceArgs(
+                    kind="role",
+                    uuid="{{role_uuid}}",
+                    name="Developer",
+                ),
+                user_reference_lists=[nutanix.ProjectAcpUserReferenceListArgs(
+                    name="{{user_name}}",
+                    kind="user",
+                    uuid="{{user_uuid}}",
+                )],
+                description="{{description}}",
+            )],
+            user_lists=[nutanix.ProjectUserListArgs(
+                metadata={
+                    "kind": "user",
+                    "uuid": "{{ UUID of the USER }}",
+                },
+                directory_service_user=nutanix.ProjectUserListDirectoryServiceUserArgs(
+                    user_principal_name="{{ Name of user }}",
+                    directory_service_reference=nutanix.ProjectUserListDirectoryServiceUserDirectoryServiceReferenceArgs(
+                        uuid="{{ DIRECTORY SERVICE UUID }}",
+                        kind="directory_service",
+                    ),
+                ),
+            )],
+            api_version="3.1")
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectCategoryArgs']]]] categories: - (Optional) The category values represented as a dictionary of key > list of values.
+        :param pulumi.Input[str] cluster_uuid: The UUID of cluster. (Required when using project_internal flag).
         :param pulumi.Input[str] description: A description for project.
+        :param pulumi.Input[bool] enable_collab: flag to allow collaboration of projects. (Use with project_internal flag)
         :param pulumi.Input[str] name: The name for the project.
+        :param pulumi.Input[bool] use_project_internal: flag to use project internal for user role mapping
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserReferenceListArgs']]]] user_reference_lists: List of Reference of users.
         """
         ...
     @overload
@@ -524,7 +894,7 @@ class Project(pulumi.CustomResource):
                 "terraform.nutanix.com",
                 "terraform.unit.test.com",
             ])
-        project_test = nutanix.Project("projectTest",
+        project_test_project = nutanix.Project("projectTestProject",
             description="This is my project",
             categories=[nutanix.ProjectCategoryArgs(
                 name="Environment",
@@ -539,6 +909,81 @@ class Project(pulumi.CustomResource):
             default_subnet_reference=nutanix.ProjectDefaultSubnetReferenceArgs(
                 uuid=subnet.metadata["uuid"],
             ),
+            api_version="3.1")
+        # set use_project_internal flag to create project with acps
+        project_test_index_project_project = nutanix.Project("projectTestIndex/projectProject",
+            description="This is my project",
+            cluster_uuid="<YOUR_CLUSTER_ID>",
+            use_project_internal=True,
+            default_subnet_reference=nutanix.ProjectDefaultSubnetReferenceArgs(
+                uuid=subnet.metadata["uuid"],
+            ),
+            user_reference_lists=[nutanix.ProjectUserReferenceListArgs(
+                name="{{user_name}}",
+                kind="user",
+                uuid="{{user_uuid}}",
+            )],
+            subnet_reference_lists=[nutanix.ProjectSubnetReferenceListArgs(
+                uuid=resource["nutanix_subnet"]["sub"]["id"],
+            )],
+            acps=[nutanix.ProjectAcpArgs(
+                name="{{acp_name}}",
+                role_reference=nutanix.ProjectAcpRoleReferenceArgs(
+                    kind="role",
+                    uuid="{{role_uuid}}",
+                    name="Developer",
+                ),
+                user_reference_lists=[nutanix.ProjectAcpUserReferenceListArgs(
+                    name="{{user_name}}",
+                    kind="user",
+                    uuid="{{user_uuid}}",
+                )],
+                description="{{description}}",
+            )],
+            api_version="3.1")
+        ## Create a project with user which not added in the PC
+        project_test_nutanix_index_project_project = nutanix.Project("projectTestNutanixIndex/projectProject",
+            description="This is my project",
+            cluster_uuid="<YOUR_CLUSTER_ID>",
+            use_project_internal=True,
+            default_subnet_reference=nutanix.ProjectDefaultSubnetReferenceArgs(
+                uuid=subnet.metadata["uuid"],
+            ),
+            user_reference_lists=[nutanix.ProjectUserReferenceListArgs(
+                name="{{user_name}}",
+                kind="user",
+                uuid="{{user_uuid}}",
+            )],
+            subnet_reference_lists=[nutanix.ProjectSubnetReferenceListArgs(
+                uuid=resource["nutanix_subnet"]["sub"]["id"],
+            )],
+            acps=[nutanix.ProjectAcpArgs(
+                name="{{acp_name}}",
+                role_reference=nutanix.ProjectAcpRoleReferenceArgs(
+                    kind="role",
+                    uuid="{{role_uuid}}",
+                    name="Developer",
+                ),
+                user_reference_lists=[nutanix.ProjectAcpUserReferenceListArgs(
+                    name="{{user_name}}",
+                    kind="user",
+                    uuid="{{user_uuid}}",
+                )],
+                description="{{description}}",
+            )],
+            user_lists=[nutanix.ProjectUserListArgs(
+                metadata={
+                    "kind": "user",
+                    "uuid": "{{ UUID of the USER }}",
+                },
+                directory_service_user=nutanix.ProjectUserListDirectoryServiceUserArgs(
+                    user_principal_name="{{ Name of user }}",
+                    directory_service_reference=nutanix.ProjectUserListDirectoryServiceUserDirectoryServiceReferenceArgs(
+                        uuid="{{ DIRECTORY SERVICE UUID }}",
+                        kind="directory_service",
+                    ),
+                ),
+            )],
             api_version="3.1")
         ```
 
@@ -558,10 +1003,15 @@ class Project(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  account_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectAccountReferenceListArgs']]]]] = None,
+                 acps: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectAcpArgs']]]]] = None,
                  api_version: Optional[pulumi.Input[str]] = None,
                  categories: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectCategoryArgs']]]]] = None,
+                 cluster_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectClusterReferenceListArgs']]]]] = None,
+                 cluster_uuid: Optional[pulumi.Input[str]] = None,
+                 default_environment_reference: Optional[pulumi.Input[pulumi.InputType['ProjectDefaultEnvironmentReferenceArgs']]] = None,
                  default_subnet_reference: Optional[pulumi.Input[pulumi.InputType['ProjectDefaultSubnetReferenceArgs']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
+                 enable_collab: Optional[pulumi.Input[bool]] = None,
                  environment_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectEnvironmentReferenceListArgs']]]]] = None,
                  external_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectExternalNetworkListArgs']]]]] = None,
                  external_user_group_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectExternalUserGroupReferenceListArgs']]]]] = None,
@@ -570,7 +1020,12 @@ class Project(pulumi.CustomResource):
                  project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  resource_domain: Optional[pulumi.Input[pulumi.InputType['ProjectResourceDomainArgs']]] = None,
                  subnet_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectSubnetReferenceListArgs']]]]] = None,
+                 tunnel_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectTunnelReferenceListArgs']]]]] = None,
+                 use_project_internal: Optional[pulumi.Input[bool]] = None,
+                 user_group_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserGroupListArgs']]]]] = None,
+                 user_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserListArgs']]]]] = None,
                  user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserReferenceListArgs']]]]] = None,
+                 vpc_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectVpcReferenceListArgs']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -581,14 +1036,19 @@ class Project(pulumi.CustomResource):
             __props__ = ProjectArgs.__new__(ProjectArgs)
 
             __props__.__dict__["account_reference_lists"] = account_reference_lists
+            __props__.__dict__["acps"] = acps
             __props__.__dict__["api_version"] = api_version
             __props__.__dict__["categories"] = categories
+            __props__.__dict__["cluster_reference_lists"] = cluster_reference_lists
+            __props__.__dict__["cluster_uuid"] = cluster_uuid
+            __props__.__dict__["default_environment_reference"] = default_environment_reference
             if default_subnet_reference is None and not opts.urn:
                 raise TypeError("Missing required property 'default_subnet_reference'")
             __props__.__dict__["default_subnet_reference"] = default_subnet_reference
             if description is None and not opts.urn:
                 raise TypeError("Missing required property 'description'")
             __props__.__dict__["description"] = description
+            __props__.__dict__["enable_collab"] = enable_collab
             __props__.__dict__["environment_reference_lists"] = environment_reference_lists
             __props__.__dict__["external_network_lists"] = external_network_lists
             __props__.__dict__["external_user_group_reference_lists"] = external_user_group_reference_lists
@@ -597,7 +1057,12 @@ class Project(pulumi.CustomResource):
             __props__.__dict__["project_reference"] = project_reference
             __props__.__dict__["resource_domain"] = resource_domain
             __props__.__dict__["subnet_reference_lists"] = subnet_reference_lists
+            __props__.__dict__["tunnel_reference_lists"] = tunnel_reference_lists
+            __props__.__dict__["use_project_internal"] = use_project_internal
+            __props__.__dict__["user_group_lists"] = user_group_lists
+            __props__.__dict__["user_lists"] = user_lists
             __props__.__dict__["user_reference_lists"] = user_reference_lists
+            __props__.__dict__["vpc_reference_lists"] = vpc_reference_lists
             __props__.__dict__["is_default"] = None
             __props__.__dict__["metadata"] = None
             __props__.__dict__["state"] = None
@@ -612,10 +1077,15 @@ class Project(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             account_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectAccountReferenceListArgs']]]]] = None,
+            acps: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectAcpArgs']]]]] = None,
             api_version: Optional[pulumi.Input[str]] = None,
             categories: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectCategoryArgs']]]]] = None,
+            cluster_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectClusterReferenceListArgs']]]]] = None,
+            cluster_uuid: Optional[pulumi.Input[str]] = None,
+            default_environment_reference: Optional[pulumi.Input[pulumi.InputType['ProjectDefaultEnvironmentReferenceArgs']]] = None,
             default_subnet_reference: Optional[pulumi.Input[pulumi.InputType['ProjectDefaultSubnetReferenceArgs']]] = None,
             description: Optional[pulumi.Input[str]] = None,
+            enable_collab: Optional[pulumi.Input[bool]] = None,
             environment_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectEnvironmentReferenceListArgs']]]]] = None,
             external_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectExternalNetworkListArgs']]]]] = None,
             external_user_group_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectExternalUserGroupReferenceListArgs']]]]] = None,
@@ -627,7 +1097,12 @@ class Project(pulumi.CustomResource):
             resource_domain: Optional[pulumi.Input[pulumi.InputType['ProjectResourceDomainArgs']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectSubnetReferenceListArgs']]]]] = None,
-            user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserReferenceListArgs']]]]] = None) -> 'Project':
+            tunnel_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectTunnelReferenceListArgs']]]]] = None,
+            use_project_internal: Optional[pulumi.Input[bool]] = None,
+            user_group_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserGroupListArgs']]]]] = None,
+            user_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserListArgs']]]]] = None,
+            user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserReferenceListArgs']]]]] = None,
+            vpc_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectVpcReferenceListArgs']]]]] = None) -> 'Project':
         """
         Get an existing Project resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -635,18 +1110,28 @@ class Project(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectCategoryArgs']]]] categories: - (Optional) The category values represented as a dictionary of key > list of values.
+        :param pulumi.Input[str] cluster_uuid: The UUID of cluster. (Required when using project_internal flag).
         :param pulumi.Input[str] description: A description for project.
+        :param pulumi.Input[bool] enable_collab: flag to allow collaboration of projects. (Use with project_internal flag)
         :param pulumi.Input[str] name: The name for the project.
+        :param pulumi.Input[bool] use_project_internal: flag to use project internal for user role mapping
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserReferenceListArgs']]]] user_reference_lists: List of Reference of users.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _ProjectState.__new__(_ProjectState)
 
         __props__.__dict__["account_reference_lists"] = account_reference_lists
+        __props__.__dict__["acps"] = acps
         __props__.__dict__["api_version"] = api_version
         __props__.__dict__["categories"] = categories
+        __props__.__dict__["cluster_reference_lists"] = cluster_reference_lists
+        __props__.__dict__["cluster_uuid"] = cluster_uuid
+        __props__.__dict__["default_environment_reference"] = default_environment_reference
         __props__.__dict__["default_subnet_reference"] = default_subnet_reference
         __props__.__dict__["description"] = description
+        __props__.__dict__["enable_collab"] = enable_collab
         __props__.__dict__["environment_reference_lists"] = environment_reference_lists
         __props__.__dict__["external_network_lists"] = external_network_lists
         __props__.__dict__["external_user_group_reference_lists"] = external_user_group_reference_lists
@@ -658,13 +1143,23 @@ class Project(pulumi.CustomResource):
         __props__.__dict__["resource_domain"] = resource_domain
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_reference_lists"] = subnet_reference_lists
+        __props__.__dict__["tunnel_reference_lists"] = tunnel_reference_lists
+        __props__.__dict__["use_project_internal"] = use_project_internal
+        __props__.__dict__["user_group_lists"] = user_group_lists
+        __props__.__dict__["user_lists"] = user_lists
         __props__.__dict__["user_reference_lists"] = user_reference_lists
+        __props__.__dict__["vpc_reference_lists"] = vpc_reference_lists
         return Project(resource_name, opts=opts, __props__=__props__)
 
     @property
     @pulumi.getter(name="accountReferenceLists")
     def account_reference_lists(self) -> pulumi.Output[Sequence['outputs.ProjectAccountReferenceList']]:
         return pulumi.get(self, "account_reference_lists")
+
+    @property
+    @pulumi.getter
+    def acps(self) -> pulumi.Output[Optional[Sequence['outputs.ProjectAcp']]]:
+        return pulumi.get(self, "acps")
 
     @property
     @pulumi.getter(name="apiVersion")
@@ -674,7 +1169,28 @@ class Project(pulumi.CustomResource):
     @property
     @pulumi.getter
     def categories(self) -> pulumi.Output[Sequence['outputs.ProjectCategory']]:
+        """
+        - (Optional) The category values represented as a dictionary of key > list of values.
+        """
         return pulumi.get(self, "categories")
+
+    @property
+    @pulumi.getter(name="clusterReferenceLists")
+    def cluster_reference_lists(self) -> pulumi.Output[Sequence['outputs.ProjectClusterReferenceList']]:
+        return pulumi.get(self, "cluster_reference_lists")
+
+    @property
+    @pulumi.getter(name="clusterUuid")
+    def cluster_uuid(self) -> pulumi.Output[Optional[str]]:
+        """
+        The UUID of cluster. (Required when using project_internal flag).
+        """
+        return pulumi.get(self, "cluster_uuid")
+
+    @property
+    @pulumi.getter(name="defaultEnvironmentReference")
+    def default_environment_reference(self) -> pulumi.Output['outputs.ProjectDefaultEnvironmentReference']:
+        return pulumi.get(self, "default_environment_reference")
 
     @property
     @pulumi.getter(name="defaultSubnetReference")
@@ -688,6 +1204,14 @@ class Project(pulumi.CustomResource):
         A description for project.
         """
         return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="enableCollab")
+    def enable_collab(self) -> pulumi.Output[Optional[bool]]:
+        """
+        flag to allow collaboration of projects. (Use with project_internal flag)
+        """
+        return pulumi.get(self, "enable_collab")
 
     @property
     @pulumi.getter(name="environmentReferenceLists")
@@ -748,7 +1272,38 @@ class Project(pulumi.CustomResource):
         return pulumi.get(self, "subnet_reference_lists")
 
     @property
+    @pulumi.getter(name="tunnelReferenceLists")
+    def tunnel_reference_lists(self) -> pulumi.Output[Sequence['outputs.ProjectTunnelReferenceList']]:
+        return pulumi.get(self, "tunnel_reference_lists")
+
+    @property
+    @pulumi.getter(name="useProjectInternal")
+    def use_project_internal(self) -> pulumi.Output[Optional[bool]]:
+        """
+        flag to use project internal for user role mapping
+        """
+        return pulumi.get(self, "use_project_internal")
+
+    @property
+    @pulumi.getter(name="userGroupLists")
+    def user_group_lists(self) -> pulumi.Output[Optional[Sequence['outputs.ProjectUserGroupList']]]:
+        return pulumi.get(self, "user_group_lists")
+
+    @property
+    @pulumi.getter(name="userLists")
+    def user_lists(self) -> pulumi.Output[Optional[Sequence['outputs.ProjectUserList']]]:
+        return pulumi.get(self, "user_lists")
+
+    @property
     @pulumi.getter(name="userReferenceLists")
     def user_reference_lists(self) -> pulumi.Output[Sequence['outputs.ProjectUserReferenceList']]:
+        """
+        List of Reference of users.
+        """
         return pulumi.get(self, "user_reference_lists")
+
+    @property
+    @pulumi.getter(name="vpcReferenceLists")
+    def vpc_reference_lists(self) -> pulumi.Output[Sequence['outputs.ProjectVpcReferenceList']]:
+        return pulumi.get(self, "vpc_reference_lists")
 

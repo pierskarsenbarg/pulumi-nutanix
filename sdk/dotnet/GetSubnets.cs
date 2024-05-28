@@ -27,6 +27,17 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var subnets = Nutanix.GetSubnets.Invoke();
         /// 
+        ///     var test = Nutanix.GetSubnets.Invoke(new()
+        ///     {
+        ///         Metadatas = new[]
+        ///         {
+        ///             new Nutanix.Inputs.GetSubnetsMetadataInputArgs
+        ///             {
+        ///                 Filter = "name==vlan0_test_2",
+        ///             },
+        ///         },
+        ///     });
+        /// 
         /// });
         /// ```
         /// </summary>
@@ -47,6 +58,17 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     var subnets = Nutanix.GetSubnets.Invoke();
+        /// 
+        ///     var test = Nutanix.GetSubnets.Invoke(new()
+        ///     {
+        ///         Metadatas = new[]
+        ///         {
+        ///             new Nutanix.Inputs.GetSubnetsMetadataInputArgs
+        ///             {
+        ///                 Filter = "name==vlan0_test_2",
+        ///             },
+        ///         },
+        ///     });
         /// 
         /// });
         /// ```

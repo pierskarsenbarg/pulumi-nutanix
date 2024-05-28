@@ -14,22 +14,21 @@ __all__ = ['KarbonPrivateRegistryArgs', 'KarbonPrivateRegistry']
 @pulumi.input_type
 class KarbonPrivateRegistryArgs:
     def __init__(__self__, *,
-                 port: pulumi.Input[int],
                  url: pulumi.Input[str],
                  cert: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  password: Optional[pulumi.Input[str]] = None,
+                 port: Optional[pulumi.Input[int]] = None,
                  username: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a KarbonPrivateRegistry resource.
-        :param pulumi.Input[int] port: - (Optional) Port of the private registry.
         :param pulumi.Input[str] url: - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.
         :param pulumi.Input[str] cert: - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
         :param pulumi.Input[str] name: - (Required) Name of the private registry configuration. **Note:** Updates to this attribute forces new resource creation.
         :param pulumi.Input[str] password: - (Optional) Password for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
+        :param pulumi.Input[int] port: - (Optional) Port of the private registry.
         :param pulumi.Input[str] username: - (Optional) Username for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
         """
-        pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "url", url)
         if cert is not None:
             pulumi.set(__self__, "cert", cert)
@@ -37,20 +36,10 @@ class KarbonPrivateRegistryArgs:
             pulumi.set(__self__, "name", name)
         if password is not None:
             pulumi.set(__self__, "password", password)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
         if username is not None:
             pulumi.set(__self__, "username", username)
-
-    @property
-    @pulumi.getter
-    def port(self) -> pulumi.Input[int]:
-        """
-        - (Optional) Port of the private registry.
-        """
-        return pulumi.get(self, "port")
-
-    @port.setter
-    def port(self, value: pulumi.Input[int]):
-        pulumi.set(self, "port", value)
 
     @property
     @pulumi.getter
@@ -99,6 +88,18 @@ class KarbonPrivateRegistryArgs:
     @password.setter
     def password(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        - (Optional) Port of the private registry.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
 
     @property
     @pulumi.getter
@@ -319,8 +320,6 @@ class KarbonPrivateRegistry(pulumi.CustomResource):
             __props__.__dict__["cert"] = cert
             __props__.__dict__["name"] = name
             __props__.__dict__["password"] = None if password is None else pulumi.Output.secret(password)
-            if port is None and not opts.urn:
-                raise TypeError("Missing required property 'port'")
             __props__.__dict__["port"] = port
             if url is None and not opts.urn:
                 raise TypeError("Missing required property 'url'")
@@ -408,7 +407,7 @@ class KarbonPrivateRegistry(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def port(self) -> pulumi.Output[int]:
+    def port(self) -> pulumi.Output[Optional[int]]:
         """
         - (Optional) Port of the private registry.
         """

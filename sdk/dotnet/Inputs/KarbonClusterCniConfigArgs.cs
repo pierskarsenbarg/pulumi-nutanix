@@ -17,10 +17,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// - (Optional) Configuration of the calico CNI provider.
         /// * `calico_config.ip_pool_config`: - (Optional) List of IP pools to be configured/managed by calico.
         /// * `calico_config.ip_pool_config.cidr`: - (Optional) IP range to use for this pool, it should fall within pod cidr.
-        /// 
-        /// **Note:** Updates to this attribute forces new resource creation.
-        /// 
-        /// See detailed information in [Nutanix Karbon Cluster](https://www.nutanix.dev/reference/karbon/api-reference/cluster/).
         /// </summary>
         [Input("calicoConfig")]
         public Input<Inputs.KarbonClusterCniConfigCalicoConfigArgs>? CalicoConfig { get; set; }

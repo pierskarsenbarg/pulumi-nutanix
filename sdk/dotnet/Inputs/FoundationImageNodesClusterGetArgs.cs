@@ -103,6 +103,12 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("singleNodeCluster")]
         public Input<bool>? SingleNodeCluster { get; set; }
 
+        /// <summary>
+        /// - Set timezone for every CVM
+        /// </summary>
+        [Input("timezone")]
+        public Input<string>? Timezone { get; set; }
+
         public FoundationImageNodesClusterGetArgs()
         {
         }

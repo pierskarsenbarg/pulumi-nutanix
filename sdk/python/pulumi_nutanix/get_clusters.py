@@ -97,7 +97,7 @@ def get_clusters(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClu
     * `product_name`: - Name of the producer/distribution of the image. For example windows or red hat.
     * `product_version`: - Version string for the disk image.
 
-    See detailed information in [Nutanix Image](https://nutanix.github.io/Automation/experimental/swagger-redoc-sandbox/#tag/clusters/paths/~1clusters~1multicluster_config/post).
+    See detailed information in [Nutanix Clusters](https://www.nutanix.dev/api_references/prism-central-v3/#/d93c30e04327e-get-a-list-of-existing-clusters).
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -138,6 +138,6 @@ def get_clusters_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.O
     * `product_name`: - Name of the producer/distribution of the image. For example windows or red hat.
     * `product_version`: - Version string for the disk image.
 
-    See detailed information in [Nutanix Image](https://nutanix.github.io/Automation/experimental/swagger-redoc-sandbox/#tag/clusters/paths/~1clusters~1multicluster_config/post).
+    See detailed information in [Nutanix Clusters](https://www.nutanix.dev/api_references/prism-central-v3/#/d93c30e04327e-get-a-list-of-existing-clusters).
     """
     ...

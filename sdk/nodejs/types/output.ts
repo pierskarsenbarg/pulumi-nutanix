@@ -521,6 +521,10 @@ export interface FoundationImageNodesCluster {
      * - If it is a single node cluster.
      */
     singleNodeCluster?: boolean;
+    /**
+     * - Set timezone for every CVM
+     */
+    timezone?: string;
 }
 
 export interface FoundationImageNodesClusterUrl {
@@ -1024,6 +1028,10 @@ export interface GetAddressGroupsEntity {
      * List of associated policies to address group
      */
     associatedPoliciesLists: outputs.GetAddressGroupsEntityAssociatedPoliciesList[];
+    /**
+     * - (ReadOnly) UUID of associated policy
+     */
+    uuid: string;
 }
 
 export interface GetAddressGroupsEntityAddressGroup {
@@ -1034,7 +1042,7 @@ export interface GetAddressGroupsEntityAddressGroup {
     /**
      * - (ReadOnly) Description of the address group
      */
-    description?: string;
+    description: string;
     /**
      * - (ReadOnly) list of IP address blocks with their prefix length
      */
@@ -2972,6 +2980,4334 @@ export interface GetKarbonPrivateRegistriesPrivateRegistry {
     uuid: string;
 }
 
+export interface GetNdbCloneDatabaseNode {
+    accessLevel: {[key: string]: string};
+    databaseId: string;
+    /**
+     * database status
+     */
+    databaseStatus: string;
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    dbserver: {[key: string]: string};
+    dbserverId: string;
+    /**
+     * cloned description
+     */
+    description: string;
+    /**
+     * cloned id
+     */
+    id: string;
+    /**
+     * cloned info
+     */
+    infos: outputs.GetNdbCloneDatabaseNodeInfo[];
+    /**
+     * cloned name
+     */
+    name: string;
+    primary: boolean;
+    /**
+     * properties of clone
+     */
+    properties: outputs.GetNdbCloneDatabaseNodeProperty[];
+    protectionDomainId: string;
+    protectionDomains: outputs.GetNdbCloneDatabaseNodeProtectionDomain[];
+    softwareInstallationId: string;
+    /**
+     * status of clone
+     */
+    status: string;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
+    tags: outputs.GetNdbCloneDatabaseNodeTag[];
+}
+
+export interface GetNdbCloneDatabaseNodeInfo {
+    /**
+     * cloned info
+     */
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbCloneDatabaseNodeProperty {
+    /**
+     * cloned description
+     */
+    description: string;
+    /**
+     * cloned name
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbCloneDatabaseNodeProtectionDomain {
+    assocEntities: string[];
+    cloudId: string;
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    /**
+     * cloned description
+     */
+    description: string;
+    eraCreated: boolean;
+    /**
+     * cloned id
+     */
+    id: string;
+    /**
+     * cloned name
+     */
+    name: string;
+    ownerId: string;
+    primaryHost: string;
+    /**
+     * properties of clone
+     */
+    properties: outputs.GetNdbCloneDatabaseNodeProtectionDomainProperty[];
+    /**
+     * status of clone
+     */
+    status: string;
+    /**
+     * type
+     */
+    type: string;
+}
+
+export interface GetNdbCloneDatabaseNodeProtectionDomainProperty {
+    /**
+     * cloned description
+     */
+    description: string;
+    /**
+     * cloned name
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbCloneDatabaseNodeTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbCloneFilter {
+    /**
+     * Get entity(s) if it satisfies query criteria irrespective of status (retrieve even deleted). Default is false
+     */
+    anyStatus?: string;
+    /**
+     * Load entities with complete details. Default is false
+     */
+    detailed?: string;
+    /**
+     * Load cluster info. Default is false
+     */
+    loadDbserverCluster?: string;
+    /**
+     * Default is UTC
+     */
+    timezone?: string;
+}
+
+export interface GetNdbCloneInfo {
+    bpgConfigs: outputs.GetNdbCloneInfoBpgConfig[];
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbCloneInfoBpgConfig {
+    bpgDbParams: outputs.GetNdbCloneInfoBpgConfigBpgDbParam[];
+    storages: outputs.GetNdbCloneInfoBpgConfigStorage[];
+    vmProperties: outputs.GetNdbCloneInfoBpgConfigVmProperty[];
+}
+
+export interface GetNdbCloneInfoBpgConfigBpgDbParam {
+    effectiveCacheSize: string;
+    maintenanceWorkMem: string;
+    maxParallelWorkersPerGather: string;
+    maxWorkerProcesses: string;
+    sharedBuffers: string;
+    workMem: string;
+}
+
+export interface GetNdbCloneInfoBpgConfigStorage {
+    archiveStorages: outputs.GetNdbCloneInfoBpgConfigStorageArchiveStorage[];
+    dataDisks: outputs.GetNdbCloneInfoBpgConfigStorageDataDisk[];
+    logDisks: outputs.GetNdbCloneInfoBpgConfigStorageLogDisk[];
+}
+
+export interface GetNdbCloneInfoBpgConfigStorageArchiveStorage {
+    size: number;
+}
+
+export interface GetNdbCloneInfoBpgConfigStorageDataDisk {
+    count: number;
+}
+
+export interface GetNdbCloneInfoBpgConfigStorageLogDisk {
+    count: number;
+    size: number;
+}
+
+export interface GetNdbCloneInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio: number;
+    dirtyExpireCentisecs: number;
+    dirtyRatio: number;
+    dirtyWritebackCentisecs: number;
+    nrHugepages: number;
+    overcommitMemory: number;
+    swappiness: number;
+}
+
+export interface GetNdbCloneLcmConfig {
+    expiryDetails: outputs.GetNdbCloneLcmConfigExpiryDetail[];
+    postDeleteCommands: outputs.GetNdbCloneLcmConfigPostDeleteCommand[];
+    preDeleteCommands: outputs.GetNdbCloneLcmConfigPreDeleteCommand[];
+    refreshDetails: outputs.GetNdbCloneLcmConfigRefreshDetail[];
+}
+
+export interface GetNdbCloneLcmConfigExpiryDetail {
+    deleteDatabase: boolean;
+    deleteTimeMachine: boolean;
+    deleteVm: boolean;
+    effectiveTimestamp: string;
+    expireInDays: number;
+    expiryDateTimezone: string;
+    expiryTimestamp: string;
+    remindBeforeInDays: number;
+    userCreated: boolean;
+}
+
+export interface GetNdbCloneLcmConfigPostDeleteCommand {
+    command: string;
+}
+
+export interface GetNdbCloneLcmConfigPreDeleteCommand {
+    command: string;
+}
+
+export interface GetNdbCloneLcmConfigRefreshDetail {
+    lastRefreshDate: string;
+    nextRefreshDate: string;
+    refreshDateTimezone: string;
+    refreshInDays: number;
+    refreshInHours: number;
+    refreshInMonths: number;
+    refreshTime: string;
+}
+
+export interface GetNdbCloneLinkedDatabase {
+    /**
+     * database name
+     */
+    databaseName: string;
+    /**
+     * database status
+     */
+    databaseStatus: string;
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    /**
+     * cloned description
+     */
+    description: string;
+    /**
+     * cloned id
+     */
+    id: string;
+    /**
+     * cloned info
+     */
+    infos: outputs.GetNdbCloneLinkedDatabaseInfo[];
+    /**
+     * Metric of clone
+     */
+    metric: {[key: string]: string};
+    /**
+     * cloned name
+     */
+    name: string;
+    /**
+     * parent database id
+     */
+    parentDatabaseId: string;
+    parentLinkedDatabaseId: string;
+    snapshotId: string;
+    /**
+     * status of clone
+     */
+    status: string;
+    timezone: string;
+}
+
+export interface GetNdbCloneLinkedDatabaseInfo {
+    /**
+     * cloned info
+     */
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbCloneProperty {
+    /**
+     * cloned description
+     */
+    description: string;
+    /**
+     * cloned name
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbCloneTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbCloneTimeMachine {
+    accessLevel: string;
+    /**
+     * clone or not
+     */
+    clone: boolean;
+    clones: string;
+    /**
+     * clustered or not
+     */
+    clustered: boolean;
+    database: string;
+    databaseId: string;
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    /**
+     * cloned description
+     */
+    description: string;
+    eaStatus: string;
+    /**
+     * cloned id
+     */
+    id: string;
+    /**
+     * Metric of clone
+     */
+    metric: string;
+    /**
+     * cloned name
+     */
+    name: string;
+    /**
+     * properties of clone
+     */
+    properties: outputs.GetNdbCloneTimeMachineProperty[];
+    scheduleId: string;
+    schedules: outputs.GetNdbCloneTimeMachineSchedule[];
+    scope: string;
+    slaId: string;
+    slaUpdateInProgress: boolean;
+    slaUpdateMetadata: string;
+    slas: outputs.GetNdbCloneTimeMachineSla[];
+    sourceNxClusters: string[];
+    /**
+     * status of clone
+     */
+    status: string;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
+    tags: outputs.GetNdbCloneTimeMachineTag[];
+    /**
+     * type
+     */
+    type: string;
+}
+
+export interface GetNdbCloneTimeMachineProperty {
+    /**
+     * cloned description
+     */
+    description: string;
+    /**
+     * cloned name
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbCloneTimeMachineSchedule {
+    continuousSchedules: outputs.GetNdbCloneTimeMachineScheduleContinuousSchedule[];
+    dailySchedules: outputs.GetNdbCloneTimeMachineScheduleDailySchedule[];
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    /**
+     * cloned description
+     */
+    description: string;
+    globalPolicy: boolean;
+    /**
+     * cloned id
+     */
+    id: string;
+    monthlySchedules: outputs.GetNdbCloneTimeMachineScheduleMonthlySchedule[];
+    /**
+     * cloned name
+     */
+    name: string;
+    ownerId: string;
+    quartelySchedules: outputs.GetNdbCloneTimeMachineScheduleQuartelySchedule[];
+    referenceCount: number;
+    snapshotTimeOfDays: outputs.GetNdbCloneTimeMachineScheduleSnapshotTimeOfDay[];
+    startTime: string;
+    systemPolicy: boolean;
+    /**
+     * time zone
+     */
+    timeZone: string;
+    uniqueName: string;
+    weeklySchedules: outputs.GetNdbCloneTimeMachineScheduleWeeklySchedule[];
+    yearlySchedules: outputs.GetNdbCloneTimeMachineScheduleYearlySchedule[];
+}
+
+export interface GetNdbCloneTimeMachineScheduleContinuousSchedule {
+    enabled: boolean;
+    logBackupInterval: number;
+    snapshotsPerDay: number;
+}
+
+export interface GetNdbCloneTimeMachineScheduleDailySchedule {
+    enabled: boolean;
+}
+
+export interface GetNdbCloneTimeMachineScheduleMonthlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+}
+
+export interface GetNdbCloneTimeMachineScheduleQuartelySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    startMonth: string;
+    startMonthValue: string;
+}
+
+export interface GetNdbCloneTimeMachineScheduleSnapshotTimeOfDay {
+    extra: boolean;
+    hours: number;
+    minutes: number;
+    seconds: number;
+}
+
+export interface GetNdbCloneTimeMachineScheduleWeeklySchedule {
+    dayOfWeek: string;
+    dayOfWeekValue: string;
+    enabled: boolean;
+}
+
+export interface GetNdbCloneTimeMachineScheduleYearlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    month: string;
+    monthValue: string;
+}
+
+export interface GetNdbCloneTimeMachineSla {
+    continuousRetention: number;
+    currentActiveFrequency: string;
+    dailyRetention: number;
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    /**
+     * cloned description
+     */
+    description: string;
+    /**
+     * cloned id
+     */
+    id: string;
+    monthlyRetention: number;
+    /**
+     * cloned name
+     */
+    name: string;
+    ownerId: string;
+    pitrEnabled: boolean;
+    quarterlyRetention: number;
+    referenceCount: number;
+    systemSla: boolean;
+    uniqueName: string;
+    weeklyRetention: number;
+    yearlyRetention: number;
+}
+
+export interface GetNdbCloneTimeMachineTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbClonesClone {
+    /**
+     * clone or not
+     */
+    clone: boolean;
+    /**
+     * clustered or not
+     */
+    clustered: boolean;
+    /**
+     * database cluster type
+     */
+    databaseClusterType: string;
+    /**
+     * database name
+     */
+    databaseName: string;
+    /**
+     * database nodes associated with database instance
+     */
+    databaseNodes: outputs.GetNdbClonesCloneDatabaseNode[];
+    /**
+     * database status
+     */
+    databaseStatus: string;
+    /**
+     * database for a cloned instance
+     */
+    databases: {[key: string]: string};
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    /**
+     * dbserver logical cluster
+     */
+    dbserverLogicalCluster: {[key: string]: string};
+    /**
+     * dbserver logical cluster id
+     */
+    dbserverLogicalClusterId: string;
+    /**
+     * cloned description
+     */
+    description: string;
+    /**
+     * cloned id
+     */
+    id: string;
+    /**
+     * cloned info
+     */
+    infos: outputs.GetNdbClonesCloneInfo[];
+    /**
+     * LCM Config
+     */
+    lcmConfigs: outputs.GetNdbClonesCloneLcmConfig[];
+    /**
+     * linked databases within database instance
+     */
+    linkedDatabases: outputs.GetNdbClonesCloneLinkedDatabase[];
+    /**
+     * Metric of clone
+     */
+    metric: {[key: string]: string};
+    /**
+     * cloned name
+     */
+    name: string;
+    /**
+     * parent database id
+     */
+    parentDatabaseId: string;
+    /**
+     * parent source database id
+     */
+    parentSourceDatabaseId: string;
+    /**
+     * parent time machine id
+     */
+    parentTimeMachineId: string;
+    /**
+     * properties of clone
+     */
+    properties: outputs.GetNdbClonesCloneProperty[];
+    /**
+     * status of clone
+     */
+    status: string;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
+    tags: outputs.GetNdbClonesCloneTag[];
+    /**
+     * time machine id
+     */
+    timeMachineId: string;
+    /**
+     * Time machine info
+     */
+    timeMachines: outputs.GetNdbClonesCloneTimeMachine[];
+    /**
+     * time zone
+     */
+    timeZone: string;
+    /**
+     * type
+     */
+    type: string;
+}
+
+export interface GetNdbClonesCloneDatabaseNode {
+    accessLevel: {[key: string]: string};
+    databaseId: string;
+    /**
+     * database status
+     */
+    databaseStatus: string;
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    dbserver: {[key: string]: string};
+    dbserverId: string;
+    /**
+     * cloned description
+     */
+    description: string;
+    /**
+     * cloned id
+     */
+    id: string;
+    /**
+     * cloned info
+     */
+    infos: outputs.GetNdbClonesCloneDatabaseNodeInfo[];
+    /**
+     * cloned name
+     */
+    name: string;
+    primary: boolean;
+    /**
+     * properties of clone
+     */
+    properties: outputs.GetNdbClonesCloneDatabaseNodeProperty[];
+    protectionDomainId: string;
+    protectionDomains: outputs.GetNdbClonesCloneDatabaseNodeProtectionDomain[];
+    softwareInstallationId: string;
+    /**
+     * status of clone
+     */
+    status: string;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
+    tags: outputs.GetNdbClonesCloneDatabaseNodeTag[];
+}
+
+export interface GetNdbClonesCloneDatabaseNodeInfo {
+    /**
+     * cloned info
+     */
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbClonesCloneDatabaseNodeProperty {
+    /**
+     * cloned description
+     */
+    description: string;
+    /**
+     * cloned name
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbClonesCloneDatabaseNodeProtectionDomain {
+    assocEntities: string[];
+    cloudId: string;
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    /**
+     * cloned description
+     */
+    description: string;
+    eraCreated: boolean;
+    /**
+     * cloned id
+     */
+    id: string;
+    /**
+     * cloned name
+     */
+    name: string;
+    ownerId: string;
+    primaryHost: string;
+    /**
+     * properties of clone
+     */
+    properties: outputs.GetNdbClonesCloneDatabaseNodeProtectionDomainProperty[];
+    /**
+     * status of clone
+     */
+    status: string;
+    /**
+     * type
+     */
+    type: string;
+}
+
+export interface GetNdbClonesCloneDatabaseNodeProtectionDomainProperty {
+    /**
+     * cloned description
+     */
+    description: string;
+    /**
+     * cloned name
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbClonesCloneDatabaseNodeTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbClonesCloneInfo {
+    bpgConfigs: outputs.GetNdbClonesCloneInfoBpgConfig[];
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbClonesCloneInfoBpgConfig {
+    bpgDbParams: outputs.GetNdbClonesCloneInfoBpgConfigBpgDbParam[];
+    storages: outputs.GetNdbClonesCloneInfoBpgConfigStorage[];
+    vmProperties: outputs.GetNdbClonesCloneInfoBpgConfigVmProperty[];
+}
+
+export interface GetNdbClonesCloneInfoBpgConfigBpgDbParam {
+    effectiveCacheSize: string;
+    maintenanceWorkMem: string;
+    maxParallelWorkersPerGather: string;
+    maxWorkerProcesses: string;
+    sharedBuffers: string;
+    workMem: string;
+}
+
+export interface GetNdbClonesCloneInfoBpgConfigStorage {
+    archiveStorages: outputs.GetNdbClonesCloneInfoBpgConfigStorageArchiveStorage[];
+    dataDisks: outputs.GetNdbClonesCloneInfoBpgConfigStorageDataDisk[];
+    logDisks: outputs.GetNdbClonesCloneInfoBpgConfigStorageLogDisk[];
+}
+
+export interface GetNdbClonesCloneInfoBpgConfigStorageArchiveStorage {
+    size: number;
+}
+
+export interface GetNdbClonesCloneInfoBpgConfigStorageDataDisk {
+    count: number;
+}
+
+export interface GetNdbClonesCloneInfoBpgConfigStorageLogDisk {
+    count: number;
+    size: number;
+}
+
+export interface GetNdbClonesCloneInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio: number;
+    dirtyExpireCentisecs: number;
+    dirtyRatio: number;
+    dirtyWritebackCentisecs: number;
+    nrHugepages: number;
+    overcommitMemory: number;
+    swappiness: number;
+}
+
+export interface GetNdbClonesCloneLcmConfig {
+    expiryDetails: outputs.GetNdbClonesCloneLcmConfigExpiryDetail[];
+    postDeleteCommands: outputs.GetNdbClonesCloneLcmConfigPostDeleteCommand[];
+    preDeleteCommands: outputs.GetNdbClonesCloneLcmConfigPreDeleteCommand[];
+    refreshDetails: outputs.GetNdbClonesCloneLcmConfigRefreshDetail[];
+}
+
+export interface GetNdbClonesCloneLcmConfigExpiryDetail {
+    deleteDatabase: boolean;
+    deleteTimeMachine: boolean;
+    deleteVm: boolean;
+    effectiveTimestamp: string;
+    expireInDays: number;
+    expiryDateTimezone: string;
+    expiryTimestamp: string;
+    remindBeforeInDays: number;
+    userCreated: boolean;
+}
+
+export interface GetNdbClonesCloneLcmConfigPostDeleteCommand {
+    command: string;
+}
+
+export interface GetNdbClonesCloneLcmConfigPreDeleteCommand {
+    command: string;
+}
+
+export interface GetNdbClonesCloneLcmConfigRefreshDetail {
+    lastRefreshDate: string;
+    nextRefreshDate: string;
+    refreshDateTimezone: string;
+    refreshInDays: number;
+    refreshInHours: number;
+    refreshInMonths: number;
+    refreshTime: string;
+}
+
+export interface GetNdbClonesCloneLinkedDatabase {
+    /**
+     * database name
+     */
+    databaseName: string;
+    /**
+     * database status
+     */
+    databaseStatus: string;
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    /**
+     * cloned description
+     */
+    description: string;
+    /**
+     * cloned id
+     */
+    id: string;
+    /**
+     * cloned info
+     */
+    infos: outputs.GetNdbClonesCloneLinkedDatabaseInfo[];
+    /**
+     * Metric of clone
+     */
+    metric: {[key: string]: string};
+    /**
+     * cloned name
+     */
+    name: string;
+    /**
+     * parent database id
+     */
+    parentDatabaseId: string;
+    parentLinkedDatabaseId: string;
+    snapshotId: string;
+    /**
+     * status of clone
+     */
+    status: string;
+    timezone: string;
+}
+
+export interface GetNdbClonesCloneLinkedDatabaseInfo {
+    /**
+     * cloned info
+     */
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbClonesCloneProperty {
+    /**
+     * cloned description
+     */
+    description: string;
+    /**
+     * cloned name
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbClonesCloneTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbClonesCloneTimeMachine {
+    accessLevel: string;
+    /**
+     * clone or not
+     */
+    clone: boolean;
+    /**
+     * List of clones based on filters
+     */
+    clones: string;
+    /**
+     * clustered or not
+     */
+    clustered: boolean;
+    database: string;
+    databaseId: string;
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    /**
+     * cloned description
+     */
+    description: string;
+    eaStatus: string;
+    /**
+     * cloned id
+     */
+    id: string;
+    /**
+     * Metric of clone
+     */
+    metric: string;
+    /**
+     * cloned name
+     */
+    name: string;
+    /**
+     * properties of clone
+     */
+    properties: outputs.GetNdbClonesCloneTimeMachineProperty[];
+    scheduleId: string;
+    schedules: outputs.GetNdbClonesCloneTimeMachineSchedule[];
+    scope: string;
+    slaId: string;
+    slaUpdateInProgress: boolean;
+    slaUpdateMetadata: string;
+    slas: outputs.GetNdbClonesCloneTimeMachineSla[];
+    sourceNxClusters: string[];
+    /**
+     * status of clone
+     */
+    status: string;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
+    tags: outputs.GetNdbClonesCloneTimeMachineTag[];
+    /**
+     * type
+     */
+    type: string;
+}
+
+export interface GetNdbClonesCloneTimeMachineProperty {
+    /**
+     * cloned description
+     */
+    description: string;
+    /**
+     * cloned name
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbClonesCloneTimeMachineSchedule {
+    continuousSchedules: outputs.GetNdbClonesCloneTimeMachineScheduleContinuousSchedule[];
+    dailySchedules: outputs.GetNdbClonesCloneTimeMachineScheduleDailySchedule[];
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    /**
+     * cloned description
+     */
+    description: string;
+    globalPolicy: boolean;
+    /**
+     * cloned id
+     */
+    id: string;
+    monthlySchedules: outputs.GetNdbClonesCloneTimeMachineScheduleMonthlySchedule[];
+    /**
+     * cloned name
+     */
+    name: string;
+    ownerId: string;
+    quartelySchedules: outputs.GetNdbClonesCloneTimeMachineScheduleQuartelySchedule[];
+    referenceCount: number;
+    snapshotTimeOfDays: outputs.GetNdbClonesCloneTimeMachineScheduleSnapshotTimeOfDay[];
+    startTime: string;
+    systemPolicy: boolean;
+    /**
+     * time zone
+     */
+    timeZone: string;
+    uniqueName: string;
+    weeklySchedules: outputs.GetNdbClonesCloneTimeMachineScheduleWeeklySchedule[];
+    yearlySchedules: outputs.GetNdbClonesCloneTimeMachineScheduleYearlySchedule[];
+}
+
+export interface GetNdbClonesCloneTimeMachineScheduleContinuousSchedule {
+    enabled: boolean;
+    logBackupInterval: number;
+    snapshotsPerDay: number;
+}
+
+export interface GetNdbClonesCloneTimeMachineScheduleDailySchedule {
+    enabled: boolean;
+}
+
+export interface GetNdbClonesCloneTimeMachineScheduleMonthlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+}
+
+export interface GetNdbClonesCloneTimeMachineScheduleQuartelySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    startMonth: string;
+    startMonthValue: string;
+}
+
+export interface GetNdbClonesCloneTimeMachineScheduleSnapshotTimeOfDay {
+    extra: boolean;
+    hours: number;
+    minutes: number;
+    seconds: number;
+}
+
+export interface GetNdbClonesCloneTimeMachineScheduleWeeklySchedule {
+    dayOfWeek: string;
+    dayOfWeekValue: string;
+    enabled: boolean;
+}
+
+export interface GetNdbClonesCloneTimeMachineScheduleYearlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    month: string;
+    monthValue: string;
+}
+
+export interface GetNdbClonesCloneTimeMachineSla {
+    continuousRetention: number;
+    currentActiveFrequency: string;
+    dailyRetention: number;
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    /**
+     * cloned description
+     */
+    description: string;
+    /**
+     * cloned id
+     */
+    id: string;
+    monthlyRetention: number;
+    /**
+     * cloned name
+     */
+    name: string;
+    ownerId: string;
+    pitrEnabled: boolean;
+    quarterlyRetention: number;
+    referenceCount: number;
+    systemSla: boolean;
+    uniqueName: string;
+    weeklyRetention: number;
+    yearlyRetention: number;
+}
+
+export interface GetNdbClonesCloneTimeMachineTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbClonesFilter {
+    /**
+     * Get entity(s) if it satisfies query criteria irrespective of status (retrieve even deleted). Default is false
+     */
+    anyStatus?: string;
+    /**
+     * Load entities with complete details. Default is false
+     */
+    detailed?: string;
+    /**
+     * Load cluster info. Default is false
+     */
+    loadDbserverCluster?: string;
+    /**
+     * Sorted by dbserver cluster. Default is false
+     */
+    orderByDbserverCluster?: string;
+    /**
+     * Sorted by dbserver logical cluster.  Default is false
+     */
+    orderByDbserverLogicalCluster?: string;
+    /**
+     * Default is UTC
+     */
+    timezone?: string;
+}
+
+export interface GetNdbClusterEntityCount {
+    dbServers: number;
+    engineCounts: outputs.GetNdbClusterEntityCountEngineCount[];
+}
+
+export interface GetNdbClusterEntityCountEngineCount {
+    mariadbDatabases: outputs.GetNdbClusterEntityCountEngineCountMariadbDatabase[];
+    mongodbDatabases: outputs.GetNdbClusterEntityCountEngineCountMongodbDatabase[];
+    mysqlDatabases: outputs.GetNdbClusterEntityCountEngineCountMysqlDatabase[];
+    oracleDatabases: outputs.GetNdbClusterEntityCountEngineCountOracleDatabase[];
+    postgresDatabases: outputs.GetNdbClusterEntityCountEngineCountPostgresDatabase[];
+    saphanaDatabases: outputs.GetNdbClusterEntityCountEngineCountSaphanaDatabase[];
+    sqlserverDatabases: outputs.GetNdbClusterEntityCountEngineCountSqlserverDatabase[];
+}
+
+export interface GetNdbClusterEntityCountEngineCountMariadbDatabase {
+    profiles: outputs.GetNdbClusterEntityCountEngineCountMariadbDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface GetNdbClusterEntityCountEngineCountMariadbDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface GetNdbClusterEntityCountEngineCountMongodbDatabase {
+    profiles: outputs.GetNdbClusterEntityCountEngineCountMongodbDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface GetNdbClusterEntityCountEngineCountMongodbDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface GetNdbClusterEntityCountEngineCountMysqlDatabase {
+    profiles: outputs.GetNdbClusterEntityCountEngineCountMysqlDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface GetNdbClusterEntityCountEngineCountMysqlDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface GetNdbClusterEntityCountEngineCountOracleDatabase {
+    profiles: outputs.GetNdbClusterEntityCountEngineCountOracleDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface GetNdbClusterEntityCountEngineCountOracleDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface GetNdbClusterEntityCountEngineCountPostgresDatabase {
+    profiles: outputs.GetNdbClusterEntityCountEngineCountPostgresDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface GetNdbClusterEntityCountEngineCountPostgresDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface GetNdbClusterEntityCountEngineCountSaphanaDatabase {
+    profiles: outputs.GetNdbClusterEntityCountEngineCountSaphanaDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface GetNdbClusterEntityCountEngineCountSaphanaDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface GetNdbClusterEntityCountEngineCountSqlserverDatabase {
+    profiles: outputs.GetNdbClusterEntityCountEngineCountSqlserverDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface GetNdbClusterEntityCountEngineCountSqlserverDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface GetNdbClusterProperty {
+    /**
+     * - description
+     */
+    description: string;
+    /**
+     * - name of cluster
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbClusterResourceConfig {
+    memoryThresholdPercentage: number;
+    storageThresholdPercentage: number;
+}
+
+export interface GetNdbClustersCluster {
+    cloudInfo: string;
+    cloudType: string;
+    dateCreated: string;
+    dateModified: string;
+    description: string;
+    entityCounts: outputs.GetNdbClustersClusterEntityCount[];
+    fqdns: string;
+    healthy: boolean;
+    hypervisorType: string;
+    hypervisorVersion: string;
+    id: string;
+    ipAddresses: string[];
+    managementServerInfo: string;
+    name: string;
+    nxClusterUuid: string;
+    ownerId: string;
+    password: string;
+    properties: outputs.GetNdbClustersClusterProperty[];
+    referenceCount: number;
+    resourceConfigs: outputs.GetNdbClustersClusterResourceConfig[];
+    status: string;
+    uniqueName: string;
+    username: string;
+    version: string;
+}
+
+export interface GetNdbClustersClusterEntityCount {
+    dbServers: number;
+    engineCounts: outputs.GetNdbClustersClusterEntityCountEngineCount[];
+}
+
+export interface GetNdbClustersClusterEntityCountEngineCount {
+    mariadbDatabases: outputs.GetNdbClustersClusterEntityCountEngineCountMariadbDatabase[];
+    mongodbDatabases: outputs.GetNdbClustersClusterEntityCountEngineCountMongodbDatabase[];
+    mysqlDatabases: outputs.GetNdbClustersClusterEntityCountEngineCountMysqlDatabase[];
+    oracleDatabases: outputs.GetNdbClustersClusterEntityCountEngineCountOracleDatabase[];
+    postgresDatabases: outputs.GetNdbClustersClusterEntityCountEngineCountPostgresDatabase[];
+    saphanaDatabases: outputs.GetNdbClustersClusterEntityCountEngineCountSaphanaDatabase[];
+    sqlserverDatabases: outputs.GetNdbClustersClusterEntityCountEngineCountSqlserverDatabase[];
+}
+
+export interface GetNdbClustersClusterEntityCountEngineCountMariadbDatabase {
+    profiles: outputs.GetNdbClustersClusterEntityCountEngineCountMariadbDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface GetNdbClustersClusterEntityCountEngineCountMariadbDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface GetNdbClustersClusterEntityCountEngineCountMongodbDatabase {
+    profiles: outputs.GetNdbClustersClusterEntityCountEngineCountMongodbDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface GetNdbClustersClusterEntityCountEngineCountMongodbDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface GetNdbClustersClusterEntityCountEngineCountMysqlDatabase {
+    profiles: outputs.GetNdbClustersClusterEntityCountEngineCountMysqlDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface GetNdbClustersClusterEntityCountEngineCountMysqlDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface GetNdbClustersClusterEntityCountEngineCountOracleDatabase {
+    profiles: outputs.GetNdbClustersClusterEntityCountEngineCountOracleDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface GetNdbClustersClusterEntityCountEngineCountOracleDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface GetNdbClustersClusterEntityCountEngineCountPostgresDatabase {
+    profiles: outputs.GetNdbClustersClusterEntityCountEngineCountPostgresDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface GetNdbClustersClusterEntityCountEngineCountPostgresDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface GetNdbClustersClusterEntityCountEngineCountSaphanaDatabase {
+    profiles: outputs.GetNdbClustersClusterEntityCountEngineCountSaphanaDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface GetNdbClustersClusterEntityCountEngineCountSaphanaDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface GetNdbClustersClusterEntityCountEngineCountSqlserverDatabase {
+    profiles: outputs.GetNdbClustersClusterEntityCountEngineCountSqlserverDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface GetNdbClustersClusterEntityCountEngineCountSqlserverDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface GetNdbClustersClusterProperty {
+    description: string;
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbClustersClusterResourceConfig {
+    memoryThresholdPercentage: number;
+    storageThresholdPercentage: number;
+}
+
+export interface GetNdbDatabaseDatabaseNode {
+    accessLevel: {[key: string]: string};
+    /**
+     * ID of database instance
+     */
+    databaseId: string;
+    databaseStatus: string;
+    /**
+     * - creation date
+     */
+    dateCreated: string;
+    /**
+     * - date modified
+     */
+    dateModified: string;
+    dbserver: {[key: string]: string};
+    dbserverId: string;
+    /**
+     * - description
+     */
+    description: string;
+    /**
+     * - id of database instance
+     */
+    id: string;
+    /**
+     * - info regarding disks, vm, storage, etc.
+     */
+    infos: outputs.GetNdbDatabaseDatabaseNodeInfo[];
+    /**
+     * - name of database instance
+     */
+    name: string;
+    primary: boolean;
+    /**
+     * - properties
+     */
+    properties: outputs.GetNdbDatabaseDatabaseNodeProperty[];
+    protectionDomainId: string;
+    protectionDomains: outputs.GetNdbDatabaseDatabaseNodeProtectionDomain[];
+    softwareInstallationId: string;
+    /**
+     * - status of database instance
+     */
+    status: string;
+    /**
+     * - tags attached
+     */
+    tags: outputs.GetNdbDatabaseDatabaseNodeTag[];
+}
+
+export interface GetNdbDatabaseDatabaseNodeInfo {
+    /**
+     * - info regarding disks, vm, storage, etc.
+     */
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbDatabaseDatabaseNodeProperty {
+    /**
+     * - description
+     */
+    description: string;
+    /**
+     * - name of database instance
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbDatabaseDatabaseNodeProtectionDomain {
+    assocEntities: string[];
+    cloudId: string;
+    /**
+     * - creation date
+     */
+    dateCreated: string;
+    /**
+     * - date modified
+     */
+    dateModified: string;
+    /**
+     * - description
+     */
+    description: string;
+    eraCreated: boolean;
+    /**
+     * - id of database instance
+     */
+    id: string;
+    /**
+     * - name of database instance
+     */
+    name: string;
+    ownerId: string;
+    primaryHost: string;
+    /**
+     * - properties
+     */
+    properties: outputs.GetNdbDatabaseDatabaseNodeProtectionDomainProperty[];
+    /**
+     * - status of database instance
+     */
+    status: string;
+    /**
+     * - database engine type
+     */
+    type: string;
+}
+
+export interface GetNdbDatabaseDatabaseNodeProtectionDomainProperty {
+    /**
+     * - description
+     */
+    description: string;
+    /**
+     * - name of database instance
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbDatabaseDatabaseNodeTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbDatabaseInfo {
+    bpgConfigs: outputs.GetNdbDatabaseInfoBpgConfig[];
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbDatabaseInfoBpgConfig {
+    bpgDbParams: outputs.GetNdbDatabaseInfoBpgConfigBpgDbParam[];
+    storages: outputs.GetNdbDatabaseInfoBpgConfigStorage[];
+    vmProperties: outputs.GetNdbDatabaseInfoBpgConfigVmProperty[];
+}
+
+export interface GetNdbDatabaseInfoBpgConfigBpgDbParam {
+    effectiveCacheSize: string;
+    maintenanceWorkMem: string;
+    maxParallelWorkersPerGather: string;
+    maxWorkerProcesses: string;
+    sharedBuffers: string;
+    workMem: string;
+}
+
+export interface GetNdbDatabaseInfoBpgConfigStorage {
+    archiveStorages: outputs.GetNdbDatabaseInfoBpgConfigStorageArchiveStorage[];
+    dataDisks: outputs.GetNdbDatabaseInfoBpgConfigStorageDataDisk[];
+    logDisks: outputs.GetNdbDatabaseInfoBpgConfigStorageLogDisk[];
+}
+
+export interface GetNdbDatabaseInfoBpgConfigStorageArchiveStorage {
+    size: number;
+}
+
+export interface GetNdbDatabaseInfoBpgConfigStorageDataDisk {
+    count: number;
+}
+
+export interface GetNdbDatabaseInfoBpgConfigStorageLogDisk {
+    count: number;
+    size: number;
+}
+
+export interface GetNdbDatabaseInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio: number;
+    dirtyExpireCentisecs: number;
+    dirtyRatio: number;
+    dirtyWritebackCentisecs: number;
+    nrHugepages: number;
+    overcommitMemory: number;
+    swappiness: number;
+}
+
+export interface GetNdbDatabaseLcmConfig {
+    expiryDetails: outputs.GetNdbDatabaseLcmConfigExpiryDetail[];
+    postDeleteCommands: outputs.GetNdbDatabaseLcmConfigPostDeleteCommand[];
+    preDeleteCommands: outputs.GetNdbDatabaseLcmConfigPreDeleteCommand[];
+    refreshDetails: outputs.GetNdbDatabaseLcmConfigRefreshDetail[];
+}
+
+export interface GetNdbDatabaseLcmConfigExpiryDetail {
+    deleteDatabase: boolean;
+    deleteTimeMachine: boolean;
+    deleteVm: boolean;
+    effectiveTimestamp: string;
+    expireInDays: number;
+    expiryDateTimezone: string;
+    expiryTimestamp: string;
+    remindBeforeInDays: number;
+    userCreated: boolean;
+}
+
+export interface GetNdbDatabaseLcmConfigPostDeleteCommand {
+    command: string;
+}
+
+export interface GetNdbDatabaseLcmConfigPreDeleteCommand {
+    command: string;
+}
+
+export interface GetNdbDatabaseLcmConfigRefreshDetail {
+    lastRefreshDate: string;
+    nextRefreshDate: string;
+    refreshDateTimezone: string;
+    refreshInDays: number;
+    refreshInHours: number;
+    refreshInMonths: number;
+    refreshTime: string;
+}
+
+export interface GetNdbDatabaseLinkedDatabase {
+    /**
+     * - database instance name
+     */
+    databaseName: string;
+    databaseStatus: string;
+    /**
+     * - creation date
+     */
+    dateCreated: string;
+    /**
+     * - date modified
+     */
+    dateModified: string;
+    /**
+     * - description
+     */
+    description: string;
+    /**
+     * - id of database instance
+     */
+    id: string;
+    /**
+     * - info regarding disks, vm, storage, etc.
+     */
+    infos: outputs.GetNdbDatabaseLinkedDatabaseInfo[];
+    /**
+     * - metrics
+     */
+    metric: {[key: string]: string};
+    /**
+     * - name of database instance
+     */
+    name: string;
+    /**
+     * - parent database ID
+     */
+    parentDatabaseId: string;
+    parentLinkedDatabaseId: string;
+    snapshotId: string;
+    /**
+     * - status of database instance
+     */
+    status: string;
+    timezone: string;
+}
+
+export interface GetNdbDatabaseLinkedDatabaseInfo {
+    /**
+     * - info regarding disks, vm, storage, etc.
+     */
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbDatabaseProperty {
+    /**
+     * - description
+     */
+    description: string;
+    /**
+     * - name of database instance
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbDatabaseTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbDatabaseTimeMachine {
+    accessLevel: string;
+    /**
+     * - if cloned
+     */
+    clone: boolean;
+    clones: string;
+    /**
+     * - if clustered or not
+     */
+    clustered: boolean;
+    database: string;
+    /**
+     * ID of database instance
+     */
+    databaseId: string;
+    /**
+     * - creation date
+     */
+    dateCreated: string;
+    /**
+     * - date modified
+     */
+    dateModified: string;
+    /**
+     * - description
+     */
+    description: string;
+    eaStatus: string;
+    /**
+     * - id of database instance
+     */
+    id: string;
+    /**
+     * - metrics
+     */
+    metric: string;
+    /**
+     * - name of database instance
+     */
+    name: string;
+    /**
+     * - properties
+     */
+    properties: outputs.GetNdbDatabaseTimeMachineProperty[];
+    scheduleId: string;
+    schedules: outputs.GetNdbDatabaseTimeMachineSchedule[];
+    scope: string;
+    slaId: string;
+    slaUpdateInProgress: boolean;
+    slaUpdateMetadata: string;
+    slas: outputs.GetNdbDatabaseTimeMachineSla[];
+    sourceNxClusters: string[];
+    /**
+     * - status of database instance
+     */
+    status: string;
+    /**
+     * - tags attached
+     */
+    tags: outputs.GetNdbDatabaseTimeMachineTag[];
+    /**
+     * - database engine type
+     */
+    type: string;
+}
+
+export interface GetNdbDatabaseTimeMachineProperty {
+    /**
+     * - description
+     */
+    description: string;
+    /**
+     * - name of database instance
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbDatabaseTimeMachineSchedule {
+    continuousSchedules: outputs.GetNdbDatabaseTimeMachineScheduleContinuousSchedule[];
+    dailySchedules: outputs.GetNdbDatabaseTimeMachineScheduleDailySchedule[];
+    /**
+     * - creation date
+     */
+    dateCreated: string;
+    /**
+     * - date modified
+     */
+    dateModified: string;
+    /**
+     * - description
+     */
+    description: string;
+    globalPolicy: boolean;
+    /**
+     * - id of database instance
+     */
+    id: string;
+    monthlySchedules: outputs.GetNdbDatabaseTimeMachineScheduleMonthlySchedule[];
+    /**
+     * - name of database instance
+     */
+    name: string;
+    ownerId: string;
+    quartelySchedules: outputs.GetNdbDatabaseTimeMachineScheduleQuartelySchedule[];
+    referenceCount: number;
+    snapshotTimeOfDays: outputs.GetNdbDatabaseTimeMachineScheduleSnapshotTimeOfDay[];
+    startTime: string;
+    systemPolicy: boolean;
+    /**
+     * - timezone
+     */
+    timeZone: string;
+    uniqueName: string;
+    weeklySchedules: outputs.GetNdbDatabaseTimeMachineScheduleWeeklySchedule[];
+    yearlySchedules: outputs.GetNdbDatabaseTimeMachineScheduleYearlySchedule[];
+}
+
+export interface GetNdbDatabaseTimeMachineScheduleContinuousSchedule {
+    enabled: boolean;
+    logBackupInterval: number;
+    snapshotsPerDay: number;
+}
+
+export interface GetNdbDatabaseTimeMachineScheduleDailySchedule {
+    enabled: boolean;
+}
+
+export interface GetNdbDatabaseTimeMachineScheduleMonthlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+}
+
+export interface GetNdbDatabaseTimeMachineScheduleQuartelySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    startMonth: string;
+    startMonthValue: string;
+}
+
+export interface GetNdbDatabaseTimeMachineScheduleSnapshotTimeOfDay {
+    extra: boolean;
+    hours: number;
+    minutes: number;
+    seconds: number;
+}
+
+export interface GetNdbDatabaseTimeMachineScheduleWeeklySchedule {
+    dayOfWeek: string;
+    dayOfWeekValue: string;
+    enabled: boolean;
+}
+
+export interface GetNdbDatabaseTimeMachineScheduleYearlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    month: string;
+    monthValue: string;
+}
+
+export interface GetNdbDatabaseTimeMachineSla {
+    continuousRetention: number;
+    currentActiveFrequency: string;
+    dailyRetention: number;
+    /**
+     * - creation date
+     */
+    dateCreated: string;
+    /**
+     * - date modified
+     */
+    dateModified: string;
+    /**
+     * - description
+     */
+    description: string;
+    /**
+     * - id of database instance
+     */
+    id: string;
+    monthlyRetention: number;
+    /**
+     * - name of database instance
+     */
+    name: string;
+    ownerId: string;
+    pitrEnabled: boolean;
+    quarterlyRetention: number;
+    referenceCount: number;
+    systemSla: boolean;
+    uniqueName: string;
+    weeklyRetention: number;
+    yearlyRetention: number;
+}
+
+export interface GetNdbDatabaseTimeMachineTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstance {
+    clone: boolean;
+    clustered: boolean;
+    databaseClusterType: string;
+    databaseName: string;
+    databaseNodes: outputs.GetNdbDatabasesDatabaseInstanceDatabaseNode[];
+    databases: {[key: string]: string};
+    dateCreated: string;
+    dateModified: string;
+    dbserverLogicalCluster: {[key: string]: string};
+    dbserverLogicalClusterId: string;
+    description: string;
+    id: string;
+    infos: outputs.GetNdbDatabasesDatabaseInstanceInfo[];
+    lcmConfigs: outputs.GetNdbDatabasesDatabaseInstanceLcmConfig[];
+    linkedDatabases: outputs.GetNdbDatabasesDatabaseInstanceLinkedDatabase[];
+    metadatas: outputs.GetNdbDatabasesDatabaseInstanceMetadata[];
+    metric: {[key: string]: string};
+    name: string;
+    parentDatabaseId: string;
+    /**
+     * List of all the properties
+     */
+    properties: outputs.GetNdbDatabasesDatabaseInstanceProperty[];
+    status: string;
+    tags: outputs.GetNdbDatabasesDatabaseInstanceTag[];
+    timeMachineId: string;
+    timeMachines: outputs.GetNdbDatabasesDatabaseInstanceTimeMachine[];
+    timeZone: string;
+    type: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceDatabaseNode {
+    accessLevel: {[key: string]: string};
+    databaseId: string;
+    databaseStatus: string;
+    dateCreated: string;
+    dateModified: string;
+    dbserver: {[key: string]: string};
+    dbserverId: string;
+    description: string;
+    id: string;
+    infos: outputs.GetNdbDatabasesDatabaseInstanceDatabaseNodeInfo[];
+    name: string;
+    primary: boolean;
+    /**
+     * List of all the properties
+     */
+    properties: outputs.GetNdbDatabasesDatabaseInstanceDatabaseNodeProperty[];
+    protectionDomainId: string;
+    protectionDomains: outputs.GetNdbDatabasesDatabaseInstanceDatabaseNodeProtectionDomain[];
+    softwareInstallationId: string;
+    status: string;
+    tags: outputs.GetNdbDatabasesDatabaseInstanceDatabaseNodeTag[];
+}
+
+export interface GetNdbDatabasesDatabaseInstanceDatabaseNodeInfo {
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbDatabasesDatabaseInstanceDatabaseNodeProperty {
+    description: string;
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceDatabaseNodeProtectionDomain {
+    assocEntities: string[];
+    cloudId: string;
+    dateCreated: string;
+    dateModified: string;
+    description: string;
+    eraCreated: boolean;
+    id: string;
+    name: string;
+    ownerId: string;
+    primaryHost: string;
+    /**
+     * List of all the properties
+     */
+    properties: outputs.GetNdbDatabasesDatabaseInstanceDatabaseNodeProtectionDomainProperty[];
+    status: string;
+    type: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceDatabaseNodeProtectionDomainProperty {
+    description: string;
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceDatabaseNodeTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceInfo {
+    bpgConfigs: outputs.GetNdbDatabasesDatabaseInstanceInfoBpgConfig[];
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbDatabasesDatabaseInstanceInfoBpgConfig {
+    bpgDbParams: outputs.GetNdbDatabasesDatabaseInstanceInfoBpgConfigBpgDbParam[];
+    storages: outputs.GetNdbDatabasesDatabaseInstanceInfoBpgConfigStorage[];
+    vmProperties: outputs.GetNdbDatabasesDatabaseInstanceInfoBpgConfigVmProperty[];
+}
+
+export interface GetNdbDatabasesDatabaseInstanceInfoBpgConfigBpgDbParam {
+    effectiveCacheSize: string;
+    maintenanceWorkMem: string;
+    maxParallelWorkersPerGather: string;
+    maxWorkerProcesses: string;
+    sharedBuffers: string;
+    workMem: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceInfoBpgConfigStorage {
+    archiveStorages: outputs.GetNdbDatabasesDatabaseInstanceInfoBpgConfigStorageArchiveStorage[];
+    dataDisks: outputs.GetNdbDatabasesDatabaseInstanceInfoBpgConfigStorageDataDisk[];
+    logDisks: outputs.GetNdbDatabasesDatabaseInstanceInfoBpgConfigStorageLogDisk[];
+}
+
+export interface GetNdbDatabasesDatabaseInstanceInfoBpgConfigStorageArchiveStorage {
+    size: number;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceInfoBpgConfigStorageDataDisk {
+    count: number;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceInfoBpgConfigStorageLogDisk {
+    count: number;
+    size: number;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio: number;
+    dirtyExpireCentisecs: number;
+    dirtyRatio: number;
+    dirtyWritebackCentisecs: number;
+    nrHugepages: number;
+    overcommitMemory: number;
+    swappiness: number;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceLcmConfig {
+    expiryDetails: outputs.GetNdbDatabasesDatabaseInstanceLcmConfigExpiryDetail[];
+    postDeleteCommands: outputs.GetNdbDatabasesDatabaseInstanceLcmConfigPostDeleteCommand[];
+    preDeleteCommands: outputs.GetNdbDatabasesDatabaseInstanceLcmConfigPreDeleteCommand[];
+    refreshDetails: outputs.GetNdbDatabasesDatabaseInstanceLcmConfigRefreshDetail[];
+}
+
+export interface GetNdbDatabasesDatabaseInstanceLcmConfigExpiryDetail {
+    deleteDatabase: boolean;
+    deleteTimeMachine: boolean;
+    deleteVm: boolean;
+    effectiveTimestamp: string;
+    expireInDays: number;
+    expiryDateTimezone: string;
+    expiryTimestamp: string;
+    remindBeforeInDays: number;
+    userCreated: boolean;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceLcmConfigPostDeleteCommand {
+    command: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceLcmConfigPreDeleteCommand {
+    command: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceLcmConfigRefreshDetail {
+    lastRefreshDate: string;
+    nextRefreshDate: string;
+    refreshDateTimezone: string;
+    refreshInDays: number;
+    refreshInHours: number;
+    refreshInMonths: number;
+    refreshTime: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceLinkedDatabase {
+    databaseName: string;
+    databaseStatus: string;
+    dateCreated: string;
+    dateModified: string;
+    description: string;
+    id: string;
+    infos: outputs.GetNdbDatabasesDatabaseInstanceLinkedDatabaseInfo[];
+    metric: {[key: string]: string};
+    name: string;
+    parentDatabaseId: string;
+    parentLinkedDatabaseId: string;
+    snapshotId: string;
+    status: string;
+    timezone: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceLinkedDatabaseInfo {
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbDatabasesDatabaseInstanceMetadata {
+    baseSizeComputed: boolean;
+    capabilityResetTime: string;
+    createdDbservers: string[];
+    deregisterInfos: outputs.GetNdbDatabasesDatabaseInstanceMetadataDeregisterInfo[];
+    deregisteredWithDeleteTimeMachine: boolean;
+    info: {[key: string]: string};
+    lastLogCatchupForRestoreOperationId: string;
+    lastRefreshTimestamp: string;
+    lastRequestedRefreshTimestamp: string;
+    logCatchupForRestoreDispatched: boolean;
+    originalDatabaseName: string;
+    pitrBased: boolean;
+    provisionOperationId: string;
+    refreshBlockerInfo: string;
+    registeredDbservers: string[];
+    secureInfo: {[key: string]: string};
+    sourceSnapshotId: string;
+    stateBeforeRefresh: string;
+    stateBeforeRestore: string;
+    stateBeforeScaling: string;
+    tmActivateOperationId: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceMetadataDeregisterInfo {
+    message: string;
+    operations: string[];
+}
+
+export interface GetNdbDatabasesDatabaseInstanceProperty {
+    description: string;
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceTimeMachine {
+    accessLevel: string;
+    clone: boolean;
+    clones: string;
+    clustered: boolean;
+    database: string;
+    databaseId: string;
+    dateCreated: string;
+    dateModified: string;
+    description: string;
+    eaStatus: string;
+    id: string;
+    metric: string;
+    name: string;
+    /**
+     * List of all the properties
+     */
+    properties: outputs.GetNdbDatabasesDatabaseInstanceTimeMachineProperty[];
+    scheduleId: string;
+    schedules: outputs.GetNdbDatabasesDatabaseInstanceTimeMachineSchedule[];
+    scope: string;
+    slaId: string;
+    slaUpdateInProgress: boolean;
+    slaUpdateMetadata: string;
+    slas: outputs.GetNdbDatabasesDatabaseInstanceTimeMachineSla[];
+    sourceNxClusters: string[];
+    status: string;
+    tags: outputs.GetNdbDatabasesDatabaseInstanceTimeMachineTag[];
+    type: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceTimeMachineProperty {
+    description: string;
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceTimeMachineSchedule {
+    continuousSchedules: outputs.GetNdbDatabasesDatabaseInstanceTimeMachineScheduleContinuousSchedule[];
+    dailySchedules: outputs.GetNdbDatabasesDatabaseInstanceTimeMachineScheduleDailySchedule[];
+    dateCreated: string;
+    dateModified: string;
+    description: string;
+    globalPolicy: boolean;
+    id: string;
+    monthlySchedules: outputs.GetNdbDatabasesDatabaseInstanceTimeMachineScheduleMonthlySchedule[];
+    name: string;
+    ownerId: string;
+    quartelySchedules: outputs.GetNdbDatabasesDatabaseInstanceTimeMachineScheduleQuartelySchedule[];
+    referenceCount: number;
+    snapshotTimeOfDays: outputs.GetNdbDatabasesDatabaseInstanceTimeMachineScheduleSnapshotTimeOfDay[];
+    startTime: string;
+    systemPolicy: boolean;
+    timeZone: string;
+    uniqueName: string;
+    weeklySchedules: outputs.GetNdbDatabasesDatabaseInstanceTimeMachineScheduleWeeklySchedule[];
+    yearlySchedules: outputs.GetNdbDatabasesDatabaseInstanceTimeMachineScheduleYearlySchedule[];
+}
+
+export interface GetNdbDatabasesDatabaseInstanceTimeMachineScheduleContinuousSchedule {
+    enabled: boolean;
+    logBackupInterval: number;
+    snapshotsPerDay: number;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceTimeMachineScheduleDailySchedule {
+    enabled: boolean;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceTimeMachineScheduleMonthlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceTimeMachineScheduleQuartelySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    startMonth: string;
+    startMonthValue: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceTimeMachineScheduleSnapshotTimeOfDay {
+    extra: boolean;
+    hours: number;
+    minutes: number;
+    seconds: number;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceTimeMachineScheduleWeeklySchedule {
+    dayOfWeek: string;
+    dayOfWeekValue: string;
+    enabled: boolean;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceTimeMachineScheduleYearlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    month: string;
+    monthValue: string;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceTimeMachineSla {
+    continuousRetention: number;
+    currentActiveFrequency: string;
+    dailyRetention: number;
+    dateCreated: string;
+    dateModified: string;
+    description: string;
+    id: string;
+    monthlyRetention: number;
+    name: string;
+    ownerId: string;
+    pitrEnabled: boolean;
+    quarterlyRetention: number;
+    referenceCount: number;
+    systemSla: boolean;
+    uniqueName: string;
+    weeklyRetention: number;
+    yearlyRetention: number;
+}
+
+export interface GetNdbDatabasesDatabaseInstanceTimeMachineTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbDbserverProperty {
+    /**
+     * name of database server vm
+     */
+    name: string;
+    value: string;
+}
+
+export interface GetNdbDbserverTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbDbserverVmInfo {
+    deregisterInfos: outputs.GetNdbDbserverVmInfoDeregisterInfo[];
+    distribution: {[key: string]: string};
+    infos: outputs.GetNdbDbserverVmInfoInfo[];
+    networkInfos: outputs.GetNdbDbserverVmInfoNetworkInfo[];
+    osType: string;
+    osVersion: string;
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbDbserverVmInfoDeregisterInfo {
+    message: string;
+    operations: string[];
+}
+
+export interface GetNdbDbserverVmInfoInfo {
+    bpgConfigs: outputs.GetNdbDbserverVmInfoInfoBpgConfig[];
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbDbserverVmInfoInfoBpgConfig {
+    bpgDbParams: outputs.GetNdbDbserverVmInfoInfoBpgConfigBpgDbParam[];
+    storages: outputs.GetNdbDbserverVmInfoInfoBpgConfigStorage[];
+    vmProperties: outputs.GetNdbDbserverVmInfoInfoBpgConfigVmProperty[];
+}
+
+export interface GetNdbDbserverVmInfoInfoBpgConfigBpgDbParam {
+    effectiveCacheSize: string;
+    maintenanceWorkMem: string;
+    maxParallelWorkersPerGather: string;
+    maxWorkerProcesses: string;
+    sharedBuffers: string;
+    workMem: string;
+}
+
+export interface GetNdbDbserverVmInfoInfoBpgConfigStorage {
+    archiveStorages: outputs.GetNdbDbserverVmInfoInfoBpgConfigStorageArchiveStorage[];
+    dataDisks: outputs.GetNdbDbserverVmInfoInfoBpgConfigStorageDataDisk[];
+    logDisks: outputs.GetNdbDbserverVmInfoInfoBpgConfigStorageLogDisk[];
+}
+
+export interface GetNdbDbserverVmInfoInfoBpgConfigStorageArchiveStorage {
+    size: number;
+}
+
+export interface GetNdbDbserverVmInfoInfoBpgConfigStorageDataDisk {
+    count: number;
+}
+
+export interface GetNdbDbserverVmInfoInfoBpgConfigStorageLogDisk {
+    count: number;
+    size: number;
+}
+
+export interface GetNdbDbserverVmInfoInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio: number;
+    dirtyExpireCentisecs: number;
+    dirtyRatio: number;
+    dirtyWritebackCentisecs: number;
+    nrHugepages: number;
+    overcommitMemory: number;
+    swappiness: number;
+}
+
+export interface GetNdbDbserverVmInfoNetworkInfo {
+    accessInfos: outputs.GetNdbDbserverVmInfoNetworkInfoAccessInfo[];
+    defaultGatewayDevice: boolean;
+    deviceName: string;
+    eraConfigured: boolean;
+    flags: string;
+    gateway: string;
+    hostname: string;
+    /**
+     * IP addresses of the dbserver vm
+     */
+    ipAddresses: string[];
+    macAddress: string;
+    mtu: string;
+    subnetMask: string;
+    vlanName: string;
+    vlanType: string;
+    vlanUuid: string;
+}
+
+export interface GetNdbDbserverVmInfoNetworkInfoAccessInfo {
+    accessType: string;
+    destinationSubnet: string;
+}
+
+export interface GetNdbDbserversDbserver {
+    /**
+     * access key id of dbserver vm
+     */
+    accessKeyId: string;
+    /**
+     * access level
+     */
+    accessLevel: string;
+    /**
+     * associated time machines ids
+     */
+    associatedTimeMachineIds: string[];
+    /**
+     * client id
+     */
+    clientId: string;
+    /**
+     * clustered or not
+     */
+    clustered: boolean;
+    /**
+     * database type
+     */
+    databaseType: string;
+    /**
+     * date created of db server vm
+     */
+    dateCreated: string;
+    /**
+     * date modified of db server vm
+     */
+    dateModified: string;
+    /**
+     * dbserver invalid ea state
+     */
+    dbserverInvalidEaState: boolean;
+    /**
+     * description of db server vm
+     */
+    description: string;
+    /**
+     * era drive id
+     */
+    eraDriveId: string;
+    /**
+     * era version
+     */
+    eraVersion: string;
+    fqdns: string;
+    id: string;
+    /**
+     * IP addresses of the dbserver vm
+     */
+    ipAddresses: string[];
+    /**
+     * is server down or not
+     */
+    isServerDriven: boolean;
+    /**
+     * Mac addresses of dbserver vm
+     */
+    macAddresses: string[];
+    /**
+     * name of dbserver vm
+     */
+    name: string;
+    /**
+     * properties of db server vm
+     */
+    properties: outputs.GetNdbDbserversDbserverProperty[];
+    /**
+     * protection domain id
+     */
+    protectionDomainId: string;
+    /**
+     * query count
+     */
+    queryCount: number;
+    /**
+     * Status of Dbserver . Active or not.
+     */
+    status: string;
+    /**
+     * tags for db server vm
+     */
+    tags: outputs.GetNdbDbserversDbserverTag[];
+    /**
+     * Type of entity. i.e. Dbserver
+     */
+    type: string;
+    /**
+     * valid diagnostic bundle state
+     */
+    validDiagnosticBundleState: boolean;
+    /**
+     * clusetr uuid for dbserver vm
+     */
+    vmClusterUuid: string;
+    /**
+     * info of dbserver vm
+     */
+    vmInfos: outputs.GetNdbDbserversDbserverVmInfo[];
+    /**
+     * timezone of dbserver vm
+     */
+    vmTimezone: string;
+    /**
+     * window db server
+     */
+    windowsDbServer: boolean;
+    /**
+     * working directory of db server vm
+     */
+    workingDirectory: string;
+}
+
+export interface GetNdbDbserversDbserverProperty {
+    /**
+     * name of dbserver vm
+     */
+    name: string;
+    value: string;
+}
+
+export interface GetNdbDbserversDbserverTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbDbserversDbserverVmInfo {
+    deregisterInfos: outputs.GetNdbDbserversDbserverVmInfoDeregisterInfo[];
+    distribution: {[key: string]: string};
+    infos: outputs.GetNdbDbserversDbserverVmInfoInfo[];
+    networkInfos: outputs.GetNdbDbserversDbserverVmInfoNetworkInfo[];
+    osType: string;
+    osVersion: string;
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbDbserversDbserverVmInfoDeregisterInfo {
+    message: string;
+    operations: string[];
+}
+
+export interface GetNdbDbserversDbserverVmInfoInfo {
+    bpgConfigs: outputs.GetNdbDbserversDbserverVmInfoInfoBpgConfig[];
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbDbserversDbserverVmInfoInfoBpgConfig {
+    bpgDbParams: outputs.GetNdbDbserversDbserverVmInfoInfoBpgConfigBpgDbParam[];
+    storages: outputs.GetNdbDbserversDbserverVmInfoInfoBpgConfigStorage[];
+    vmProperties: outputs.GetNdbDbserversDbserverVmInfoInfoBpgConfigVmProperty[];
+}
+
+export interface GetNdbDbserversDbserverVmInfoInfoBpgConfigBpgDbParam {
+    effectiveCacheSize: string;
+    maintenanceWorkMem: string;
+    maxParallelWorkersPerGather: string;
+    maxWorkerProcesses: string;
+    sharedBuffers: string;
+    workMem: string;
+}
+
+export interface GetNdbDbserversDbserverVmInfoInfoBpgConfigStorage {
+    archiveStorages: outputs.GetNdbDbserversDbserverVmInfoInfoBpgConfigStorageArchiveStorage[];
+    dataDisks: outputs.GetNdbDbserversDbserverVmInfoInfoBpgConfigStorageDataDisk[];
+    logDisks: outputs.GetNdbDbserversDbserverVmInfoInfoBpgConfigStorageLogDisk[];
+}
+
+export interface GetNdbDbserversDbserverVmInfoInfoBpgConfigStorageArchiveStorage {
+    size: number;
+}
+
+export interface GetNdbDbserversDbserverVmInfoInfoBpgConfigStorageDataDisk {
+    count: number;
+}
+
+export interface GetNdbDbserversDbserverVmInfoInfoBpgConfigStorageLogDisk {
+    count: number;
+    size: number;
+}
+
+export interface GetNdbDbserversDbserverVmInfoInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio: number;
+    dirtyExpireCentisecs: number;
+    dirtyRatio: number;
+    dirtyWritebackCentisecs: number;
+    nrHugepages: number;
+    overcommitMemory: number;
+    swappiness: number;
+}
+
+export interface GetNdbDbserversDbserverVmInfoNetworkInfo {
+    accessInfos: outputs.GetNdbDbserversDbserverVmInfoNetworkInfoAccessInfo[];
+    defaultGatewayDevice: boolean;
+    deviceName: string;
+    eraConfigured: boolean;
+    flags: string;
+    gateway: string;
+    hostname: string;
+    /**
+     * IP addresses of the dbserver vm
+     */
+    ipAddresses: string[];
+    macAddress: string;
+    mtu: string;
+    subnetMask: string;
+    vlanName: string;
+    vlanType: string;
+    vlanUuid: string;
+}
+
+export interface GetNdbDbserversDbserverVmInfoNetworkInfoAccessInfo {
+    accessType: string;
+    destinationSubnet: string;
+}
+
+export interface GetNdbMaintenanceWindowEntityTaskAssoc {
+    /**
+     * access level
+     */
+    accessLevel: string;
+    /**
+     * created date of maintenance window
+     */
+    dateCreated: string;
+    /**
+     * modified date of maintenance window
+     */
+    dateModified: string;
+    /**
+     * description of maintenance window
+     */
+    description: string;
+    entity: string;
+    entityId: string;
+    entityType: string;
+    /**
+     * Maintenance window id.
+     */
+    id: string;
+    maintenanceWindowId: string;
+    maintenanceWindowOwnerId: string;
+    /**
+     * name of maintenance window
+     */
+    name: string;
+    /**
+     * owner id of maintenance window
+     */
+    ownerId: string;
+    payloads: outputs.GetNdbMaintenanceWindowEntityTaskAssocPayload[];
+    /**
+     * properties of maintenance window
+     */
+    properties: outputs.GetNdbMaintenanceWindowEntityTaskAssocProperty[];
+    /**
+     * status of maintennace window
+     */
+    status: string;
+    /**
+     * tags of maintenance window
+     */
+    tags: outputs.GetNdbMaintenanceWindowEntityTaskAssocTag[];
+    taskType: string;
+}
+
+export interface GetNdbMaintenanceWindowEntityTaskAssocPayload {
+    prePostCommands: outputs.GetNdbMaintenanceWindowEntityTaskAssocPayloadPrePostCommand[];
+}
+
+export interface GetNdbMaintenanceWindowEntityTaskAssocPayloadPrePostCommand {
+    postCommand: string;
+    preCommand: string;
+}
+
+export interface GetNdbMaintenanceWindowEntityTaskAssocProperty {
+    /**
+     * name of maintenance window
+     */
+    name: string;
+    value: string;
+}
+
+export interface GetNdbMaintenanceWindowEntityTaskAssocTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbMaintenanceWindowProperty {
+    /**
+     * name of maintenance window
+     */
+    name: string;
+    value: string;
+}
+
+export interface GetNdbMaintenanceWindowSchedule {
+    dayOfWeek: string;
+    duration: number;
+    hour: number;
+    minute: number;
+    recurrence: string;
+    startTime?: string;
+    threshold: string;
+    /**
+     * timezone
+     */
+    timezone: string;
+    weekOfMonth: number;
+}
+
+export interface GetNdbMaintenanceWindowTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbMaintenanceWindowsMaintenanceWindow {
+    /**
+     * access level
+     */
+    accessLevel: string;
+    /**
+     * created date of maintenance window
+     */
+    dateCreated: string;
+    /**
+     * modified date of maintenance window
+     */
+    dateModified: string;
+    /**
+     * description of maintenance window
+     */
+    description: string;
+    /**
+     * entity task association for maintenance window
+     */
+    entityTaskAssocs: outputs.GetNdbMaintenanceWindowsMaintenanceWindowEntityTaskAssoc[];
+    id: string;
+    /**
+     * name of maintenance window
+     */
+    name: string;
+    /**
+     * next run time for maintenance window to trigger
+     */
+    nextRunTime: string;
+    /**
+     * owner id of maintenance window
+     */
+    ownerId: string;
+    /**
+     * properties of maintenance window
+     */
+    properties: outputs.GetNdbMaintenanceWindowsMaintenanceWindowProperty[];
+    /**
+     * schedule of maintenance window
+     */
+    schedules: outputs.GetNdbMaintenanceWindowsMaintenanceWindowSchedule[];
+    /**
+     * status of maintennace window
+     */
+    status: string;
+    /**
+     * tags of maintenance window
+     */
+    tags: outputs.GetNdbMaintenanceWindowsMaintenanceWindowTag[];
+    /**
+     * timezone
+     */
+    timezone: string;
+}
+
+export interface GetNdbMaintenanceWindowsMaintenanceWindowEntityTaskAssoc {
+    /**
+     * access level
+     */
+    accessLevel: string;
+    /**
+     * created date of maintenance window
+     */
+    dateCreated: string;
+    /**
+     * modified date of maintenance window
+     */
+    dateModified: string;
+    /**
+     * description of maintenance window
+     */
+    description: string;
+    entity: string;
+    entityId: string;
+    entityType: string;
+    id: string;
+    maintenanceWindowId: string;
+    maintenanceWindowOwnerId: string;
+    /**
+     * name of maintenance window
+     */
+    name: string;
+    /**
+     * owner id of maintenance window
+     */
+    ownerId: string;
+    payloads: outputs.GetNdbMaintenanceWindowsMaintenanceWindowEntityTaskAssocPayload[];
+    /**
+     * properties of maintenance window
+     */
+    properties: outputs.GetNdbMaintenanceWindowsMaintenanceWindowEntityTaskAssocProperty[];
+    /**
+     * status of maintennace window
+     */
+    status: string;
+    /**
+     * tags of maintenance window
+     */
+    tags: outputs.GetNdbMaintenanceWindowsMaintenanceWindowEntityTaskAssocTag[];
+    taskType: string;
+}
+
+export interface GetNdbMaintenanceWindowsMaintenanceWindowEntityTaskAssocPayload {
+    prePostCommands: outputs.GetNdbMaintenanceWindowsMaintenanceWindowEntityTaskAssocPayloadPrePostCommand[];
+}
+
+export interface GetNdbMaintenanceWindowsMaintenanceWindowEntityTaskAssocPayloadPrePostCommand {
+    postCommand: string;
+    preCommand: string;
+}
+
+export interface GetNdbMaintenanceWindowsMaintenanceWindowEntityTaskAssocProperty {
+    /**
+     * name of maintenance window
+     */
+    name: string;
+    value: string;
+}
+
+export interface GetNdbMaintenanceWindowsMaintenanceWindowEntityTaskAssocTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbMaintenanceWindowsMaintenanceWindowProperty {
+    /**
+     * name of maintenance window
+     */
+    name: string;
+    value: string;
+}
+
+export interface GetNdbMaintenanceWindowsMaintenanceWindowSchedule {
+    dayOfWeek: string;
+    duration: number;
+    hour: number;
+    minute: number;
+    recurrence: string;
+    startTime?: string;
+    threshold: string;
+    /**
+     * timezone
+     */
+    timezone: string;
+    weekOfMonth: number;
+}
+
+export interface GetNdbMaintenanceWindowsMaintenanceWindowTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbNetworkAvailableIpsAvailableIp {
+    /**
+     * cluster id
+     */
+    clusterId: string;
+    /**
+     * cluster name
+     */
+    clusterName: string;
+    /**
+     * network profile id
+     */
+    id: string;
+    /**
+     * list of available ips in network
+     */
+    ipAddresses: string[];
+    /**
+     * managed by ndb or not
+     */
+    managed: boolean;
+    /**
+     * Network Name
+     */
+    name: string;
+    /**
+     * property name of vlan
+     */
+    propertyName: string;
+    /**
+     * type of network
+     */
+    type: string;
+}
+
+export interface GetNdbNetworkIpAddress {
+    /**
+     * dbserver id
+     */
+    dbserverId: string;
+    /**
+     * dbserver name
+     */
+    dbserverName: string;
+    /**
+     * ip of pool
+     */
+    ip: string;
+    /**
+     * ip status
+     */
+    status: string;
+}
+
+export interface GetNdbNetworkIpPool {
+    /**
+     * address of ips ranges
+     */
+    addresses: outputs.GetNdbNetworkIpPoolAddress[];
+    /**
+     * end ip
+     */
+    endIp: string;
+    /**
+     * start ip
+     */
+    startIp: string;
+}
+
+export interface GetNdbNetworkIpPoolAddress {
+    /**
+     * ip of pool
+     */
+    ip: string;
+    /**
+     * ip status
+     */
+    status: string;
+}
+
+export interface GetNdbNetworkPropertiesMap {
+    /**
+     * gateway of vlan
+     */
+    vlanGateway: string;
+    /**
+     * primary dns of vlan
+     */
+    vlanPrimaryDns: string;
+    /**
+     * secondary dns of vlan
+     */
+    vlanSecondaryDns: string;
+    /**
+     * subnet mask of vlan
+     */
+    vlanSubnetMask: string;
+}
+
+export interface GetNdbNetworkProperty {
+    /**
+     * name of network
+     */
+    name: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbNetworksNetwork {
+    /**
+     * cluster id where network is present
+     */
+    clusterId: string;
+    /**
+     * network id
+     */
+    id: string;
+    /**
+     * IP addresses of network
+     */
+    ipAddresses: outputs.GetNdbNetworksNetworkIpAddress[];
+    /**
+     * IP Pools of network
+     */
+    ipPools: outputs.GetNdbNetworksNetworkIpPool[];
+    /**
+     * network managed by NDB or not
+     */
+    managed: boolean;
+    /**
+     * network name
+     */
+    name: string;
+    /**
+     * properties of network
+     */
+    properties: outputs.GetNdbNetworksNetworkProperty[];
+    /**
+     * properties map of network
+     */
+    propertiesMaps: outputs.GetNdbNetworksNetworkPropertiesMap[];
+    /**
+     * stretched vlan id
+     */
+    stretchedVlanId: string;
+    /**
+     * type of network
+     */
+    type: string;
+}
+
+export interface GetNdbNetworksNetworkIpAddress {
+    /**
+     * dbserver id
+     */
+    dbserverId: string;
+    /**
+     * dbserver name
+     */
+    dbserverName: string;
+    /**
+     * ip of pool
+     */
+    ip: string;
+    /**
+     * ip status
+     */
+    status: string;
+}
+
+export interface GetNdbNetworksNetworkIpPool {
+    /**
+     * address of ips ranges
+     */
+    addresses: outputs.GetNdbNetworksNetworkIpPoolAddress[];
+    /**
+     * end ip
+     */
+    endIp: string;
+    /**
+     * start ip
+     */
+    startIp: string;
+}
+
+export interface GetNdbNetworksNetworkIpPoolAddress {
+    /**
+     * ip of pool
+     */
+    ip: string;
+    /**
+     * ip status
+     */
+    status: string;
+}
+
+export interface GetNdbNetworksNetworkPropertiesMap {
+    /**
+     * gateway of vlan
+     */
+    vlanGateway: string;
+    /**
+     * primary dns of vlan
+     */
+    vlanPrimaryDns: string;
+    /**
+     * secondary dns of vlan
+     */
+    vlanSecondaryDns: string;
+    /**
+     * subnet mask of vlan
+     */
+    vlanSubnetMask: string;
+}
+
+export interface GetNdbNetworksNetworkProperty {
+    /**
+     * network name
+     */
+    name: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbProfileClusterAvailability {
+    dateCreated: string;
+    dateModified: string;
+    /**
+     * - era cluster ID
+     */
+    nxClusterId: string;
+    ownerId: string;
+    /**
+     * Profile ID for query
+     */
+    profileId: string;
+    /**
+     * - status of profile
+     */
+    status: string;
+}
+
+export interface GetNdbProfileVersion {
+    /**
+     * - database version
+     */
+    dbVersion: string;
+    deprecated: boolean;
+    /**
+     * - description of profile
+     */
+    description: string;
+    /**
+     * - database engine type
+     */
+    engineType: string;
+    /**
+     * - id of profile
+     */
+    id: string;
+    /**
+     * - profile name
+     */
+    name: string;
+    /**
+     * - owner name
+     */
+    owner: string;
+    /**
+     * Profile ID for query
+     */
+    profileId: string;
+    properties: outputs.GetNdbProfileVersionProperty[];
+    propertiesMap: {[key: string]: string};
+    published: boolean;
+    /**
+     * - status of profile
+     */
+    status: string;
+    /**
+     * - if system profile or not
+     */
+    systemProfile: boolean;
+    /**
+     * - topology
+     */
+    topology: string;
+    type: string;
+    version: string;
+    versionClusterAssociations: outputs.GetNdbProfileVersionVersionClusterAssociation[];
+}
+
+export interface GetNdbProfileVersionProperty {
+    /**
+     * - profile name
+     */
+    name: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbProfileVersionVersionClusterAssociation {
+    dateCreated: string;
+    dateModified: string;
+    /**
+     * - era cluster ID
+     */
+    nxClusterId: string;
+    optimizedForProvisioning: boolean;
+    ownerId: string;
+    profileVersionId: string;
+    properties: outputs.GetNdbProfileVersionVersionClusterAssociationProperty[];
+    /**
+     * - status of profile
+     */
+    status: string;
+}
+
+export interface GetNdbProfileVersionVersionClusterAssociationProperty {
+    /**
+     * - profile name
+     */
+    name: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbProfilesProfile {
+    assocDatabases: string[];
+    assocDbServers: string[];
+    clusterAvailabilities: outputs.GetNdbProfilesProfileClusterAvailability[];
+    dbVersion: string;
+    description: string;
+    engineType: string;
+    id: string;
+    latestVersion: string;
+    latestVersionId: string;
+    name: string;
+    nxClusterId: string;
+    owner: string;
+    status: string;
+    systemProfile: boolean;
+    topology: string;
+    type: string;
+    versions: outputs.GetNdbProfilesProfileVersion[];
+}
+
+export interface GetNdbProfilesProfileClusterAvailability {
+    dateCreated: string;
+    dateModified: string;
+    nxClusterId: string;
+    ownerId: string;
+    profileId: string;
+    status: string;
+}
+
+export interface GetNdbProfilesProfileVersion {
+    dbVersion: string;
+    deprecated: boolean;
+    description: string;
+    engineType: string;
+    id: string;
+    name: string;
+    owner: string;
+    profileId: string;
+    properties: outputs.GetNdbProfilesProfileVersionProperty[];
+    propertiesMap: {[key: string]: string};
+    published: boolean;
+    status: string;
+    systemProfile: boolean;
+    topology: string;
+    type: string;
+    version: string;
+    versionClusterAssociations: outputs.GetNdbProfilesProfileVersionVersionClusterAssociation[];
+}
+
+export interface GetNdbProfilesProfileVersionProperty {
+    name: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbProfilesProfileVersionVersionClusterAssociation {
+    dateCreated: string;
+    dateModified: string;
+    nxClusterId: string;
+    optimizedForProvisioning: boolean;
+    ownerId: string;
+    profileVersionId: string;
+    properties: outputs.GetNdbProfilesProfileVersionVersionClusterAssociationProperty[];
+    status: string;
+}
+
+export interface GetNdbProfilesProfileVersionVersionClusterAssociationProperty {
+    name: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbSlasSla {
+    /**
+     * - continuous retention of logs limit
+     */
+    continuousRetention: number;
+    /**
+     * - Current active frequency
+     */
+    currentActiveFrequency: string;
+    /**
+     * - Daily snapshots retention limit
+     */
+    dailyRetention: number;
+    /**
+     * - creation date
+     */
+    dateCreated: string;
+    /**
+     * - last modified
+     */
+    dateModified: string;
+    /**
+     * - description of sla
+     */
+    description: string;
+    /**
+     * - ID of sla
+     */
+    id: string;
+    /**
+     * - Monthly snapshots retention limit
+     */
+    monthlyRetention: number;
+    /**
+     * - sla name
+     */
+    name: string;
+    /**
+     * - owner ID
+     */
+    ownerId: string;
+    /**
+     * - If point in time recovery enabled
+     */
+    pitrEnabled: boolean;
+    /**
+     * - Daily snapshots retention limit
+     */
+    quartelyRetention: number;
+    /**
+     * - Reference count
+     */
+    referenceCount: number;
+    /**
+     * - if system sla
+     */
+    systemSla: boolean;
+    /**
+     * - unique name
+     */
+    uniqueName: string;
+    /**
+     * - weeky snapshots retention limit
+     */
+    weeklyRetention: number;
+    /**
+     * - Yearly snapshots retention limit
+     */
+    yearlyRetention: number;
+}
+
+export interface GetNdbSnapshotFilter {
+    /**
+     * load child snapshots. Default is false
+     */
+    loadReplicatedChildSnapshots?: string;
+    /**
+     * Default is UTC
+     */
+    timezone?: string;
+}
+
+export interface GetNdbSnapshotLcmConfig {
+    expiryDetails: outputs.GetNdbSnapshotLcmConfigExpiryDetail[];
+    postDeleteCommands: outputs.GetNdbSnapshotLcmConfigPostDeleteCommand[];
+    preDeleteCommands: outputs.GetNdbSnapshotLcmConfigPreDeleteCommand[];
+    refreshDetails: outputs.GetNdbSnapshotLcmConfigRefreshDetail[];
+}
+
+export interface GetNdbSnapshotLcmConfigExpiryDetail {
+    deleteDatabase: boolean;
+    deleteTimeMachine: boolean;
+    deleteVm: boolean;
+    effectiveTimestamp: string;
+    expireInDays: number;
+    expiryDateTimezone: string;
+    expiryTimestamp: string;
+    remindBeforeInDays: number;
+    userCreated: boolean;
+}
+
+export interface GetNdbSnapshotLcmConfigPostDeleteCommand {
+    command: string;
+}
+
+export interface GetNdbSnapshotLcmConfigPreDeleteCommand {
+    command: string;
+}
+
+export interface GetNdbSnapshotLcmConfigRefreshDetail {
+    lastRefreshDate: string;
+    nextRefreshDate: string;
+    refreshDateTimezone: string;
+    refreshInDays: number;
+    refreshInHours: number;
+    refreshInMonths: number;
+    refreshTime: string;
+}
+
+export interface GetNdbSnapshotProperty {
+    /**
+     * description of snapshot
+     */
+    description: string;
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbSnapshotTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbSnapshotsFilter {
+    /**
+     * Fetches all the snapshots for a given time machine
+     */
+    timeMachineId?: string;
+}
+
+export interface GetNdbSnapshotsSnapshot {
+    appInfoVersion: string;
+    applicableTypes: string[];
+    databaseNodeId: string;
+    databaseSnapshot: boolean;
+    dateCreated: string;
+    dateModified: string;
+    dbserverId: string;
+    dbserverIp: string;
+    dbserverName: string;
+    dbserverStorageMetadataVersion: number;
+    description: string;
+    fromTimestamp: string;
+    id: string;
+    lcmConfigs: outputs.GetNdbSnapshotsSnapshotLcmConfig[];
+    name: string;
+    nxClusterId: string;
+    parentSnapshot: boolean;
+    parentSnapshotId: string;
+    processed: boolean;
+    /**
+     * List of all the properties
+     */
+    properties: outputs.GetNdbSnapshotsSnapshotProperty[];
+    protectionDomainId: string;
+    replicatedSnapshots: string[];
+    santized: boolean;
+    santizedFromSnapshotId: string;
+    santizedSnapshots: string;
+    snapshotFamily: string;
+    snapshotSize: number;
+    snapshotTimestamp: string;
+    snapshotTimestampDate: number;
+    snapshotUuid: string;
+    softwareDatabaseSnapshot: boolean;
+    softwareSnapshot: string;
+    softwareSnapshotId: string;
+    status: string;
+    tags: outputs.GetNdbSnapshotsSnapshotTag[];
+    timeMachineId: string;
+    timezone: string;
+    toTimestamp: string;
+    type: string;
+}
+
+export interface GetNdbSnapshotsSnapshotLcmConfig {
+    expiryDetails: outputs.GetNdbSnapshotsSnapshotLcmConfigExpiryDetail[];
+    postDeleteCommands: outputs.GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand[];
+    preDeleteCommands: outputs.GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand[];
+    refreshDetails: outputs.GetNdbSnapshotsSnapshotLcmConfigRefreshDetail[];
+}
+
+export interface GetNdbSnapshotsSnapshotLcmConfigExpiryDetail {
+    deleteDatabase: boolean;
+    deleteTimeMachine: boolean;
+    deleteVm: boolean;
+    effectiveTimestamp: string;
+    expireInDays: number;
+    expiryDateTimezone: string;
+    expiryTimestamp: string;
+    remindBeforeInDays: number;
+    userCreated: boolean;
+}
+
+export interface GetNdbSnapshotsSnapshotLcmConfigPostDeleteCommand {
+    command: string;
+}
+
+export interface GetNdbSnapshotsSnapshotLcmConfigPreDeleteCommand {
+    command: string;
+}
+
+export interface GetNdbSnapshotsSnapshotLcmConfigRefreshDetail {
+    lastRefreshDate: string;
+    nextRefreshDate: string;
+    refreshDateTimezone: string;
+    refreshInDays: number;
+    refreshInHours: number;
+    refreshInMonths: number;
+    refreshTime: string;
+}
+
+export interface GetNdbSnapshotsSnapshotProperty {
+    description: string;
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbSnapshotsSnapshotTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbTagsTag {
+    /**
+     * date created of the tag
+     */
+    dateCreated: string;
+    /**
+     * modified date of tha tag
+     */
+    dateModified: string;
+    /**
+     * description for the tag
+     */
+    description: string;
+    /**
+     * entity for the tag to be associated with.
+     */
+    entityType: string;
+    id: string;
+    /**
+     * name for the tag
+     */
+    name: string;
+    /**
+     * owner id of the tag
+     */
+    owner: string;
+    /**
+     * tag value for entities.
+     */
+    required: boolean;
+    /**
+     * Status of the tag
+     */
+    status: string;
+    /**
+     * value for the tag
+     */
+    values: number;
+}
+
+export interface GetNdbTimeMachineProperty {
+    /**
+     * time machine description
+     */
+    description: string;
+    /**
+     * time machine name
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbTimeMachineSchedule {
+    continuousSchedules: outputs.GetNdbTimeMachineScheduleContinuousSchedule[];
+    dailySchedules: outputs.GetNdbTimeMachineScheduleDailySchedule[];
+    /**
+     * date created
+     */
+    dateCreated: string;
+    /**
+     * date modified
+     */
+    dateModified: string;
+    /**
+     * time machine description
+     */
+    description: string;
+    globalPolicy: boolean;
+    /**
+     * time machine id
+     */
+    id: string;
+    monthlySchedules: outputs.GetNdbTimeMachineScheduleMonthlySchedule[];
+    /**
+     * time machine name
+     */
+    name: string;
+    ownerId: string;
+    quartelySchedules: outputs.GetNdbTimeMachineScheduleQuartelySchedule[];
+    referenceCount: number;
+    snapshotTimeOfDays: outputs.GetNdbTimeMachineScheduleSnapshotTimeOfDay[];
+    startTime: string;
+    systemPolicy: boolean;
+    timeZone: string;
+    uniqueName: string;
+    weeklySchedules: outputs.GetNdbTimeMachineScheduleWeeklySchedule[];
+    yearlySchedules: outputs.GetNdbTimeMachineScheduleYearlySchedule[];
+}
+
+export interface GetNdbTimeMachineScheduleContinuousSchedule {
+    enabled: boolean;
+    logBackupInterval: number;
+    snapshotsPerDay: number;
+}
+
+export interface GetNdbTimeMachineScheduleDailySchedule {
+    enabled: boolean;
+}
+
+export interface GetNdbTimeMachineScheduleMonthlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+}
+
+export interface GetNdbTimeMachineScheduleQuartelySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    startMonth: string;
+    startMonthValue: string;
+}
+
+export interface GetNdbTimeMachineScheduleSnapshotTimeOfDay {
+    extra: boolean;
+    hours: number;
+    minutes: number;
+    seconds: number;
+}
+
+export interface GetNdbTimeMachineScheduleWeeklySchedule {
+    dayOfWeek: string;
+    dayOfWeekValue: string;
+    enabled: boolean;
+}
+
+export interface GetNdbTimeMachineScheduleYearlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    month: string;
+    monthValue: string;
+}
+
+export interface GetNdbTimeMachineSla {
+    continuousRetention: number;
+    currentActiveFrequency: string;
+    dailyRetention: number;
+    /**
+     * date created
+     */
+    dateCreated: string;
+    /**
+     * date modified
+     */
+    dateModified: string;
+    /**
+     * time machine description
+     */
+    description: string;
+    /**
+     * time machine id
+     */
+    id: string;
+    monthlyRetention: number;
+    /**
+     * time machine name
+     */
+    name: string;
+    ownerId: string;
+    pitrEnabled: boolean;
+    quarterlyRetention: number;
+    referenceCount: number;
+    systemSla: boolean;
+    uniqueName: string;
+    weeklyRetention: number;
+    yearlyRetention: number;
+}
+
+export interface GetNdbTimeMachineTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbTimeMachinesTimeMachine {
+    accessLevel: string;
+    clone: boolean;
+    clones: string;
+    clustered: boolean;
+    database: string;
+    databaseId: string;
+    dateCreated: string;
+    dateModified: string;
+    description: string;
+    eaStatus: string;
+    id: string;
+    metric: string;
+    name: string;
+    /**
+     * List of all the properties
+     */
+    properties: outputs.GetNdbTimeMachinesTimeMachineProperty[];
+    scheduleId: string;
+    schedules: outputs.GetNdbTimeMachinesTimeMachineSchedule[];
+    scope: string;
+    slaId: string;
+    slaUpdateInProgress: boolean;
+    slaUpdateMetadata: string;
+    slas: outputs.GetNdbTimeMachinesTimeMachineSla[];
+    sourceNxClusters: string[];
+    status: string;
+    tags: outputs.GetNdbTimeMachinesTimeMachineTag[];
+    type: string;
+}
+
+export interface GetNdbTimeMachinesTimeMachineProperty {
+    description: string;
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbTimeMachinesTimeMachineSchedule {
+    continuousSchedules: outputs.GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule[];
+    dailySchedules: outputs.GetNdbTimeMachinesTimeMachineScheduleDailySchedule[];
+    dateCreated: string;
+    dateModified: string;
+    description: string;
+    globalPolicy: boolean;
+    id: string;
+    monthlySchedules: outputs.GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule[];
+    name: string;
+    ownerId: string;
+    quartelySchedules: outputs.GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule[];
+    referenceCount: number;
+    snapshotTimeOfDays: outputs.GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay[];
+    startTime: string;
+    systemPolicy: boolean;
+    timeZone: string;
+    uniqueName: string;
+    weeklySchedules: outputs.GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule[];
+    yearlySchedules: outputs.GetNdbTimeMachinesTimeMachineScheduleYearlySchedule[];
+}
+
+export interface GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule {
+    enabled: boolean;
+    logBackupInterval: number;
+    snapshotsPerDay: number;
+}
+
+export interface GetNdbTimeMachinesTimeMachineScheduleDailySchedule {
+    enabled: boolean;
+}
+
+export interface GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+}
+
+export interface GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    startMonth: string;
+    startMonthValue: string;
+}
+
+export interface GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay {
+    extra: boolean;
+    hours: number;
+    minutes: number;
+    seconds: number;
+}
+
+export interface GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule {
+    dayOfWeek: string;
+    dayOfWeekValue: string;
+    enabled: boolean;
+}
+
+export interface GetNdbTimeMachinesTimeMachineScheduleYearlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    month: string;
+    monthValue: string;
+}
+
+export interface GetNdbTimeMachinesTimeMachineSla {
+    continuousRetention: number;
+    currentActiveFrequency: string;
+    dailyRetention: number;
+    dateCreated: string;
+    dateModified: string;
+    description: string;
+    id: string;
+    monthlyRetention: number;
+    name: string;
+    ownerId: string;
+    pitrEnabled: boolean;
+    quarterlyRetention: number;
+    referenceCount: number;
+    systemSla: boolean;
+    uniqueName: string;
+    weeklyRetention: number;
+    yearlyRetention: number;
+}
+
+export interface GetNdbTimeMachinesTimeMachineTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbTmsCapabilityCapability {
+    continuousRegions: outputs.GetNdbTmsCapabilityCapabilityContinuousRegion[];
+    databaseIds: string[];
+    databasesContinuousRegion: string;
+    from: string;
+    mode: string;
+    snapshots: outputs.GetNdbTmsCapabilityCapabilitySnapshot[];
+    timeUnit: string;
+    timeUnitNumber: string;
+    to: string;
+}
+
+export interface GetNdbTmsCapabilityCapabilityContinuousRegion {
+    dbLogs: outputs.GetNdbTmsCapabilityCapabilityContinuousRegionDbLog[];
+    fromTime: string;
+    message: string;
+    partialRanges: boolean;
+    processedRanges: outputs.GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange[];
+    snapshotIds: string[];
+    snapshots: string;
+    subRange: boolean;
+    timeRangeAndDatabases: string;
+    timezone: string;
+    toTime: string;
+    unknownTimeRanges: string;
+    unprocessedRanges: outputs.GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRange[];
+}
+
+export interface GetNdbTmsCapabilityCapabilityContinuousRegionDbLog {
+    databaseId: string;
+    databaseNodeId: string;
+    dateCreated: string;
+    dateModified: string;
+    eraLogDriveId: string;
+    fromTime: string;
+    id: string;
+    infos: outputs.GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo[];
+    logCopyOperationId: string;
+    message: string;
+    metadatas: outputs.GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata[];
+    name: string;
+    ownerId: string;
+    size: number;
+    status: string;
+    toTime: string;
+    unprocessed: boolean;
+}
+
+export interface GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfo {
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+    unknownTimeRange: boolean;
+}
+
+export interface GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadata {
+    createdDirectly: boolean;
+    curationRetryCount: number;
+    deregisterInfos: outputs.GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo[];
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+    updatedDirectly: boolean;
+}
+
+export interface GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo {
+    message: string;
+    operations: string[];
+}
+
+export interface GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange {
+    first: string;
+    second: string;
+}
+
+export interface GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRange {
+    first: string;
+    second: string;
+}
+
+export interface GetNdbTmsCapabilityCapabilitySnapshot {
+    appInfoVersion: string;
+    applicableTypes: string[];
+    databaseNodeId: string;
+    databaseSnapshot: boolean;
+    dateCreated: string;
+    dateModified: string;
+    dbserverId: string;
+    dbserverIp: string;
+    dbserverName: string;
+    dbserverStorageMetadataVersion: number;
+    description: string;
+    fromTimestamp: string;
+    id: string;
+    lcmConfigs: outputs.GetNdbTmsCapabilityCapabilitySnapshotLcmConfig[];
+    metadatas: outputs.GetNdbTmsCapabilityCapabilitySnapshotMetadata[];
+    name: string;
+    nxClusterId: string;
+    ownerId: string;
+    parentSnapshot: boolean;
+    parentSnapshotId: string;
+    processed: boolean;
+    /**
+     * List of all the properties
+     */
+    properties: outputs.GetNdbTmsCapabilityCapabilitySnapshotProperty[];
+    protectionDomainId: string;
+    replicatedSnapshots: string[];
+    santized: boolean;
+    santizedFromSnapshotId: string;
+    santizedSnapshots: string;
+    snapshotFamily: string;
+    snapshotSize: number;
+    snapshotTimestamp: string;
+    snapshotTimestampDate: number;
+    snapshotUuid: string;
+    softwareDatabaseSnapshot: boolean;
+    softwareSnapshot: string;
+    softwareSnapshotId: string;
+    status: string;
+    tags: outputs.GetNdbTmsCapabilityCapabilitySnapshotTag[];
+    timeMachineId: string;
+    timezone: string;
+    toTimestamp: string;
+    type: string;
+}
+
+export interface GetNdbTmsCapabilityCapabilitySnapshotLcmConfig {
+    expiryDetails: outputs.GetNdbTmsCapabilityCapabilitySnapshotLcmConfigExpiryDetail[];
+    postDeleteCommands: outputs.GetNdbTmsCapabilityCapabilitySnapshotLcmConfigPostDeleteCommand[];
+    preDeleteCommands: outputs.GetNdbTmsCapabilityCapabilitySnapshotLcmConfigPreDeleteCommand[];
+    refreshDetails: outputs.GetNdbTmsCapabilityCapabilitySnapshotLcmConfigRefreshDetail[];
+}
+
+export interface GetNdbTmsCapabilityCapabilitySnapshotLcmConfigExpiryDetail {
+    deleteDatabase: boolean;
+    deleteTimeMachine: boolean;
+    deleteVm: boolean;
+    effectiveTimestamp: string;
+    expireInDays: number;
+    expiryDateTimezone: string;
+    expiryTimestamp: string;
+    remindBeforeInDays: number;
+    userCreated: boolean;
+}
+
+export interface GetNdbTmsCapabilityCapabilitySnapshotLcmConfigPostDeleteCommand {
+    command: string;
+}
+
+export interface GetNdbTmsCapabilityCapabilitySnapshotLcmConfigPreDeleteCommand {
+    command: string;
+}
+
+export interface GetNdbTmsCapabilityCapabilitySnapshotLcmConfigRefreshDetail {
+    lastRefreshDate: string;
+    nextRefreshDate: string;
+    refreshDateTimezone: string;
+    refreshInDays: number;
+    refreshInHours: number;
+    refreshInMonths: number;
+    refreshTime: string;
+}
+
+export interface GetNdbTmsCapabilityCapabilitySnapshotMetadata {
+    async: boolean;
+    curationRetryCount: number;
+    deregisterInfo: {[key: string]: string};
+    fromTimestamp: string;
+    infos: outputs.GetNdbTmsCapabilityCapabilitySnapshotMetadataInfo[];
+    lastReplicationRetyrSourceSnapshotId: string;
+    operationsUsingSnapshots: string[];
+    replicationRetryCount: number;
+    secureInfo: {[key: string]: string};
+    standBy: boolean;
+    toTimestamp: string;
+}
+
+export interface GetNdbTmsCapabilityCapabilitySnapshotMetadataInfo {
+    bpgConfigs: outputs.GetNdbTmsCapabilityCapabilitySnapshotMetadataInfoBpgConfig[];
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbTmsCapabilityCapabilitySnapshotMetadataInfoBpgConfig {
+    bpgDbParams: outputs.GetNdbTmsCapabilityCapabilitySnapshotMetadataInfoBpgConfigBpgDbParam[];
+    storages: outputs.GetNdbTmsCapabilityCapabilitySnapshotMetadataInfoBpgConfigStorage[];
+    vmProperties: outputs.GetNdbTmsCapabilityCapabilitySnapshotMetadataInfoBpgConfigVmProperty[];
+}
+
+export interface GetNdbTmsCapabilityCapabilitySnapshotMetadataInfoBpgConfigBpgDbParam {
+    effectiveCacheSize: string;
+    maintenanceWorkMem: string;
+    maxParallelWorkersPerGather: string;
+    maxWorkerProcesses: string;
+    sharedBuffers: string;
+    workMem: string;
+}
+
+export interface GetNdbTmsCapabilityCapabilitySnapshotMetadataInfoBpgConfigStorage {
+    archiveStorages: outputs.GetNdbTmsCapabilityCapabilitySnapshotMetadataInfoBpgConfigStorageArchiveStorage[];
+    dataDisks: outputs.GetNdbTmsCapabilityCapabilitySnapshotMetadataInfoBpgConfigStorageDataDisk[];
+    logDisks: outputs.GetNdbTmsCapabilityCapabilitySnapshotMetadataInfoBpgConfigStorageLogDisk[];
+}
+
+export interface GetNdbTmsCapabilityCapabilitySnapshotMetadataInfoBpgConfigStorageArchiveStorage {
+    size: number;
+}
+
+export interface GetNdbTmsCapabilityCapabilitySnapshotMetadataInfoBpgConfigStorageDataDisk {
+    count: number;
+}
+
+export interface GetNdbTmsCapabilityCapabilitySnapshotMetadataInfoBpgConfigStorageLogDisk {
+    count: number;
+    size: number;
+}
+
+export interface GetNdbTmsCapabilityCapabilitySnapshotMetadataInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio: number;
+    dirtyExpireCentisecs: number;
+    dirtyRatio: number;
+    dirtyWritebackCentisecs: number;
+    nrHugepages: number;
+    overcommitMemory: number;
+    swappiness: number;
+}
+
+export interface GetNdbTmsCapabilityCapabilitySnapshotProperty {
+    description: string;
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbTmsCapabilityCapabilitySnapshotTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbTmsCapabilityLastContinuousSnapshot {
+    appInfoVersion: string;
+    applicableTypes: string[];
+    databaseNodeId: string;
+    databaseSnapshot: boolean;
+    dateCreated: string;
+    dateModified: string;
+    dbserverId: string;
+    dbserverIp: string;
+    dbserverName: string;
+    dbserverStorageMetadataVersion: number;
+    description: string;
+    fromTimestamp: string;
+    id: string;
+    lcmConfigs: outputs.GetNdbTmsCapabilityLastContinuousSnapshotLcmConfig[];
+    metadatas: outputs.GetNdbTmsCapabilityLastContinuousSnapshotMetadata[];
+    name: string;
+    nxClusterId: string;
+    ownerId: string;
+    parentSnapshot: boolean;
+    parentSnapshotId: string;
+    processed: boolean;
+    /**
+     * List of all the properties
+     */
+    properties: outputs.GetNdbTmsCapabilityLastContinuousSnapshotProperty[];
+    protectionDomainId: string;
+    replicatedSnapshots: string[];
+    santized: boolean;
+    santizedFromSnapshotId: string;
+    santizedSnapshots: string;
+    snapshotFamily: string;
+    snapshotSize: number;
+    snapshotTimestamp: string;
+    snapshotTimestampDate: number;
+    snapshotUuid: string;
+    softwareDatabaseSnapshot: boolean;
+    softwareSnapshot: string;
+    softwareSnapshotId: string;
+    status: string;
+    tags: outputs.GetNdbTmsCapabilityLastContinuousSnapshotTag[];
+    timeMachineId: string;
+    timezone: string;
+    toTimestamp: string;
+    type: string;
+}
+
+export interface GetNdbTmsCapabilityLastContinuousSnapshotLcmConfig {
+    expiryDetails: outputs.GetNdbTmsCapabilityLastContinuousSnapshotLcmConfigExpiryDetail[];
+    postDeleteCommands: outputs.GetNdbTmsCapabilityLastContinuousSnapshotLcmConfigPostDeleteCommand[];
+    preDeleteCommands: outputs.GetNdbTmsCapabilityLastContinuousSnapshotLcmConfigPreDeleteCommand[];
+    refreshDetails: outputs.GetNdbTmsCapabilityLastContinuousSnapshotLcmConfigRefreshDetail[];
+}
+
+export interface GetNdbTmsCapabilityLastContinuousSnapshotLcmConfigExpiryDetail {
+    deleteDatabase: boolean;
+    deleteTimeMachine: boolean;
+    deleteVm: boolean;
+    effectiveTimestamp: string;
+    expireInDays: number;
+    expiryDateTimezone: string;
+    expiryTimestamp: string;
+    remindBeforeInDays: number;
+    userCreated: boolean;
+}
+
+export interface GetNdbTmsCapabilityLastContinuousSnapshotLcmConfigPostDeleteCommand {
+    command: string;
+}
+
+export interface GetNdbTmsCapabilityLastContinuousSnapshotLcmConfigPreDeleteCommand {
+    command: string;
+}
+
+export interface GetNdbTmsCapabilityLastContinuousSnapshotLcmConfigRefreshDetail {
+    lastRefreshDate: string;
+    nextRefreshDate: string;
+    refreshDateTimezone: string;
+    refreshInDays: number;
+    refreshInHours: number;
+    refreshInMonths: number;
+    refreshTime: string;
+}
+
+export interface GetNdbTmsCapabilityLastContinuousSnapshotMetadata {
+    async: boolean;
+    curationRetryCount: number;
+    deregisterInfo: {[key: string]: string};
+    fromTimestamp: string;
+    infos: outputs.GetNdbTmsCapabilityLastContinuousSnapshotMetadataInfo[];
+    lastReplicationRetrySourceSnapshotId: string;
+    lastReplicationRetryTimestamp: string;
+    operationsUsingSnapshots: string[];
+    replicationRetryCount: number;
+    secureInfo: {[key: string]: string};
+    standBy: boolean;
+    toTimestamp: string;
+}
+
+export interface GetNdbTmsCapabilityLastContinuousSnapshotMetadataInfo {
+    bpgConfigs: outputs.GetNdbTmsCapabilityLastContinuousSnapshotMetadataInfoBpgConfig[];
+    secureInfo: {[key: string]: string};
+}
+
+export interface GetNdbTmsCapabilityLastContinuousSnapshotMetadataInfoBpgConfig {
+    bpgDbParams: outputs.GetNdbTmsCapabilityLastContinuousSnapshotMetadataInfoBpgConfigBpgDbParam[];
+    storages: outputs.GetNdbTmsCapabilityLastContinuousSnapshotMetadataInfoBpgConfigStorage[];
+    vmProperties: outputs.GetNdbTmsCapabilityLastContinuousSnapshotMetadataInfoBpgConfigVmProperty[];
+}
+
+export interface GetNdbTmsCapabilityLastContinuousSnapshotMetadataInfoBpgConfigBpgDbParam {
+    effectiveCacheSize: string;
+    maintenanceWorkMem: string;
+    maxParallelWorkersPerGather: string;
+    maxWorkerProcesses: string;
+    sharedBuffers: string;
+    workMem: string;
+}
+
+export interface GetNdbTmsCapabilityLastContinuousSnapshotMetadataInfoBpgConfigStorage {
+    archiveStorages: outputs.GetNdbTmsCapabilityLastContinuousSnapshotMetadataInfoBpgConfigStorageArchiveStorage[];
+    dataDisks: outputs.GetNdbTmsCapabilityLastContinuousSnapshotMetadataInfoBpgConfigStorageDataDisk[];
+    logDisks: outputs.GetNdbTmsCapabilityLastContinuousSnapshotMetadataInfoBpgConfigStorageLogDisk[];
+}
+
+export interface GetNdbTmsCapabilityLastContinuousSnapshotMetadataInfoBpgConfigStorageArchiveStorage {
+    size: number;
+}
+
+export interface GetNdbTmsCapabilityLastContinuousSnapshotMetadataInfoBpgConfigStorageDataDisk {
+    count: number;
+}
+
+export interface GetNdbTmsCapabilityLastContinuousSnapshotMetadataInfoBpgConfigStorageLogDisk {
+    count: number;
+    size: number;
+}
+
+export interface GetNdbTmsCapabilityLastContinuousSnapshotMetadataInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio: number;
+    dirtyExpireCentisecs: number;
+    dirtyRatio: number;
+    dirtyWritebackCentisecs: number;
+    nrHugepages: number;
+    overcommitMemory: number;
+    swappiness: number;
+}
+
+export interface GetNdbTmsCapabilityLastContinuousSnapshotProperty {
+    description: string;
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface GetNdbTmsCapabilityLastContinuousSnapshotTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface GetNdbTmsCapabilityLastDbLog {
+    databaseId: string;
+    databaseNodeId: string;
+    dateCreated: string;
+    dateModified: string;
+    eraLogDriveId: string;
+    fromTime: string;
+    id: string;
+    logCopyOperationId: string;
+    message: string;
+    metadatas: outputs.GetNdbTmsCapabilityLastDbLogMetadata[];
+    name: string;
+    ownerId: string;
+    size: number;
+    status: string;
+    toTime: string;
+    unprocessed: boolean;
+}
+
+export interface GetNdbTmsCapabilityLastDbLogMetadata {
+    createdDirectly: boolean;
+    curationRetryCount: number;
+    deregisterInfos: outputs.GetNdbTmsCapabilityLastDbLogMetadataDeregisterInfo[];
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+    updatedDirectly: boolean;
+}
+
+export interface GetNdbTmsCapabilityLastDbLogMetadataDeregisterInfo {
+    message: string;
+    operations: string[];
+}
+
 export interface GetNetworkSecurityRuleAdRuleInboundAllowList {
     addressGroupInclusionLists: outputs.GetNetworkSecurityRuleAdRuleInboundAllowListAddressGroupInclusionList[];
     expirationTime: string;
@@ -4089,6 +8425,172 @@ export interface GetProjectAccountReferenceList {
     uuid: string;
 }
 
+export interface GetProjectAcp {
+    /**
+     * The list of context filters. These are OR filters. The scope-expression-list defines the context, and the filter works in conjunction with the entity-expression-list.
+     */
+    contextFilterLists: outputs.GetProjectAcpContextFilterList[];
+    /**
+     * Description of ACP
+     */
+    description: string;
+    metadata: {[key: string]: string};
+    /**
+     * the name.
+     */
+    name: string;
+    /**
+     * Reference to role.
+     */
+    roleReferences: outputs.GetProjectAcpRoleReference[];
+    /**
+     * List of Reference of users groups.
+     */
+    userGroupReferenceLists: outputs.GetProjectAcpUserGroupReferenceList[];
+    /**
+     * List of Reference of users.
+     */
+    userReferenceLists: outputs.GetProjectAcpUserReferenceList[];
+}
+
+export interface GetProjectAcpContextFilterList {
+    /**
+     * (Required) A list of Entity filter expressions.
+     */
+    entityFilterExpressionLists: outputs.GetProjectAcpContextFilterListEntityFilterExpressionList[];
+    /**
+     * - (Optional) Filter the scope of an Access Control Policy.
+     */
+    scopeFilterExpressionLists?: outputs.GetProjectAcpContextFilterListScopeFilterExpressionList[];
+}
+
+export interface GetProjectAcpContextFilterListEntityFilterExpressionList {
+    /**
+     * - (Optional)  The LHS of the filter expression - the entity type.
+     */
+    leftHandSideEntityType: string;
+    /**
+     * - (Required) The operator in the filter expression.
+     */
+    operator: string;
+    /**
+     * - (Required) The right hand side (RHS) of an scope expression.
+     */
+    rightHandSides: outputs.GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSide[];
+}
+
+export interface GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSide {
+    /**
+     * - (Optional) The category values represented as a dictionary of key > list of values.
+     */
+    categories: outputs.GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategory[];
+    /**
+     * - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+     */
+    collection: string;
+    /**
+     * - (Optional) The explicit list of UUIDs for the given kind.
+     */
+    uuidLists: string[];
+}
+
+export interface GetProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategory {
+    /**
+     * the name.
+     */
+    name: string;
+    /**
+     * value of the key.
+     */
+    values: string[];
+}
+
+export interface GetProjectAcpContextFilterListScopeFilterExpressionList {
+    /**
+     * - (Optional)  The LHS of the filter expression - the scope type.
+     */
+    leftHandSide: string;
+    /**
+     * - (Required) The operator in the filter expression.
+     */
+    operator: string;
+    /**
+     * - (Required) The right hand side (RHS) of an scope expression.
+     */
+    rightHandSides: outputs.GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSide[];
+}
+
+export interface GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSide {
+    /**
+     * - (Optional) The category values represented as a dictionary of key > list of values.
+     */
+    categories: outputs.GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategory[];
+    /**
+     * - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+     */
+    collection: string;
+    /**
+     * - (Optional) The explicit list of UUIDs for the given kind.
+     */
+    uuidLists: string[];
+}
+
+export interface GetProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategory {
+    /**
+     * the name.
+     */
+    name: string;
+    /**
+     * value of the key.
+     */
+    values: string[];
+}
+
+export interface GetProjectAcpRoleReference {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind: string;
+    /**
+     * the name.
+     */
+    name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
+export interface GetProjectAcpUserGroupReferenceList {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind: string;
+    /**
+     * the name.
+     */
+    name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
+export interface GetProjectAcpUserReferenceList {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind: string;
+    /**
+     * the name.
+     */
+    name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
 export interface GetProjectCategory {
     /**
      * the name.
@@ -4098,6 +8600,36 @@ export interface GetProjectCategory {
      * value of the key.
      */
     value: string;
+}
+
+export interface GetProjectClusterReferenceList {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind: string;
+    /**
+     * the name.
+     */
+    name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
+export interface GetProjectDefaultEnvironmentReference {
+    /**
+     * (Optional) The kind name. Default value is `environment`
+     */
+    kind: string;
+    /**
+     * (Optional/Computed) The name of a environment.
+     */
+    name: string;
+    /**
+     * (Required) The UUID of a environment
+     */
+    uuid: string;
 }
 
 export interface GetProjectEnvironmentReferenceList {
@@ -4177,7 +8709,37 @@ export interface GetProjectSubnetReferenceList {
     uuid: string;
 }
 
+export interface GetProjectTunnelReferenceList {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind: string;
+    /**
+     * the name.
+     */
+    name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
 export interface GetProjectUserReferenceList {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind: string;
+    /**
+     * the name.
+     */
+    name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
+export interface GetProjectVpcReferenceList {
     /**
      * (Required) The kind name (Default value: `project`).
      */
@@ -6246,7 +10808,7 @@ export interface GetUserGroupsEntityDirectoryServiceUserGroupDirectoryServiceRef
      *
      * For `accessControlPolicyReferenceList` and `projectReferenceList` are the same as reference but used as list.
      *
-     * See detailed information in [Nutanix Users](https://www.nutanix.dev/reference/prism_central/v3/api/user-groups/).
+     * See detailed information in [Nutanix Users](https://www.nutanix.dev/api_references/prism-central-v3/#/6016c890e9122-get-a-list-of-existing-user-groups).
      */
     uuid: string;
 }
@@ -6498,7 +11060,7 @@ export interface GetVirtualMachineDiskList {
     diskSizeMib: number;
     storageConfigs: outputs.GetVirtualMachineDiskListStorageConfig[];
     /**
-     * - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
+     * - the UUID.
      */
     uuid: string;
     /**
@@ -6544,7 +11106,7 @@ export interface GetVirtualMachineDiskListStorageConfigStorageContainerReference
     name: string;
     url: string;
     /**
-     * - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
+     * - the UUID.
      */
     uuid: string;
 }
@@ -6583,7 +11145,7 @@ export interface GetVirtualMachineGpuList {
      */
     pciAddress: string;
     /**
-     * - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
+     * - the UUID.
      */
     uuid: string;
     /**
@@ -6645,7 +11207,7 @@ export interface GetVirtualMachineNicList {
      */
     subnetUuid: string;
     /**
-     * - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
+     * - the UUID.
      */
     uuid: string;
 }
@@ -7013,10 +11575,6 @@ export interface KarbonClusterCniConfig {
      * - (Optional) Configuration of the calico CNI provider.
      * * `calico_config.ip_pool_config`: - (Optional) List of IP pools to be configured/managed by calico.
      * * `calico_config.ip_pool_config.cidr`: - (Optional) IP range to use for this pool, it should fall within pod cidr.
-     *
-     * **Note:** Updates to this attribute forces new resource creation.
-     *
-     * See detailed information in [Nutanix Karbon Cluster](https://www.nutanix.dev/reference/karbon/api-reference/cluster/).
      */
     calicoConfig?: outputs.KarbonClusterCniConfigCalicoConfig;
     /**
@@ -7221,6 +11779,3987 @@ export interface KarbonClusterWorkerNodePoolAhvConfig {
 export interface KarbonClusterWorkerNodePoolNode {
     hostname: string;
     ipv4Address: string;
+}
+
+export interface KarbonWorkerNodepoolAhvConfig {
+    cpu?: number;
+    diskMib?: number;
+    iscsiNetworkUuid: string;
+    memoryMib?: number;
+    networkUuid: string;
+    prismElementClusterUuid: string;
+}
+
+export interface KarbonWorkerNodepoolNode {
+    hostname: string;
+    ipv4Address: string;
+}
+
+export interface NdbCloneActionargument {
+    /**
+     * - (Required) name of argument
+     */
+    name: string;
+    /**
+     * - (Required) value for argument
+     */
+    value: string;
+}
+
+export interface NdbCloneDatabaseNode {
+    accessLevel: {[key: string]: string};
+    databaseId: string;
+    databaseStatus: string;
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    dbserver: {[key: string]: string};
+    /**
+     * Specify if you want to create a database server. This value can be set to true or false as required.
+     */
+    dbserverId: string;
+    /**
+     * database instance description
+     */
+    description: string;
+    id: string;
+    /**
+     * info of clone
+     */
+    infos: outputs.NdbCloneDatabaseNodeInfo[];
+    /**
+     * database instance name
+     */
+    name: string;
+    primary: boolean;
+    /**
+     * List of all the properties
+     */
+    properties: outputs.NdbCloneDatabaseNodeProperty[];
+    protectionDomainId: string;
+    protectionDomains: outputs.NdbCloneDatabaseNodeProtectionDomain[];
+    softwareInstallationId: string;
+    /**
+     * status of clone
+     */
+    status: string;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
+    tags: outputs.NdbCloneDatabaseNodeTag[];
+}
+
+export interface NdbCloneDatabaseNodeInfo {
+    /**
+     * info of clone
+     */
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbCloneDatabaseNodeProperty {
+    /**
+     * database instance description
+     */
+    description: string;
+    /**
+     * database instance name
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbCloneDatabaseNodeProtectionDomain {
+    assocEntities: string[];
+    cloudId: string;
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    /**
+     * database instance description
+     */
+    description: string;
+    eraCreated: boolean;
+    id: string;
+    /**
+     * database instance name
+     */
+    name: string;
+    ownerId: string;
+    primaryHost: string;
+    /**
+     * List of all the properties
+     */
+    properties: outputs.NdbCloneDatabaseNodeProtectionDomainProperty[];
+    /**
+     * status of clone
+     */
+    status: string;
+    /**
+     * type of clone
+     */
+    type: string;
+}
+
+export interface NdbCloneDatabaseNodeProtectionDomainProperty {
+    /**
+     * database instance description
+     */
+    description: string;
+    /**
+     * database instance name
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbCloneDatabaseNodeTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbCloneInfo {
+    bpgConfigs: outputs.NdbCloneInfoBpgConfig[];
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbCloneInfoBpgConfig {
+    bpgDbParams: outputs.NdbCloneInfoBpgConfigBpgDbParam[];
+    storages: outputs.NdbCloneInfoBpgConfigStorage[];
+    vmProperties: outputs.NdbCloneInfoBpgConfigVmProperty[];
+}
+
+export interface NdbCloneInfoBpgConfigBpgDbParam {
+    effectiveCacheSize: string;
+    maintenanceWorkMem: string;
+    maxParallelWorkersPerGather: string;
+    maxWorkerProcesses: string;
+    sharedBuffers: string;
+    workMem: string;
+}
+
+export interface NdbCloneInfoBpgConfigStorage {
+    archiveStorages: outputs.NdbCloneInfoBpgConfigStorageArchiveStorage[];
+    dataDisks: outputs.NdbCloneInfoBpgConfigStorageDataDisk[];
+    logDisks: outputs.NdbCloneInfoBpgConfigStorageLogDisk[];
+}
+
+export interface NdbCloneInfoBpgConfigStorageArchiveStorage {
+    size: number;
+}
+
+export interface NdbCloneInfoBpgConfigStorageDataDisk {
+    count: number;
+}
+
+export interface NdbCloneInfoBpgConfigStorageLogDisk {
+    count: number;
+    size: number;
+}
+
+export interface NdbCloneInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio: number;
+    dirtyExpireCentisecs: number;
+    dirtyRatio: number;
+    dirtyWritebackCentisecs: number;
+    nrHugepages: number;
+    overcommitMemory: number;
+    swappiness: number;
+}
+
+export interface NdbCloneLcmConfig {
+    databaseLcmConfigs?: outputs.NdbCloneLcmConfigDatabaseLcmConfig[];
+}
+
+export interface NdbCloneLcmConfigDatabaseLcmConfig {
+    expiryDetails?: outputs.NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail[];
+    refreshDetails?: outputs.NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail[];
+}
+
+export interface NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail {
+    deleteDatabase?: boolean;
+    expireInDays?: number;
+    expiryDateTimezone: string;
+}
+
+export interface NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail {
+    refreshDateTimezone?: string;
+    refreshInDays?: number;
+    refreshTime?: string;
+}
+
+export interface NdbCloneLinkedDatabase {
+    /**
+     * database name
+     */
+    databaseName: string;
+    databaseStatus: string;
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    /**
+     * database instance description
+     */
+    description: string;
+    id: string;
+    /**
+     * info of clone
+     */
+    infos: outputs.NdbCloneLinkedDatabaseInfo[];
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
+    metric: {[key: string]: string};
+    /**
+     * database instance name
+     */
+    name: string;
+    parentDatabaseId: string;
+    parentLinkedDatabaseId: string;
+    /**
+     * snapshot id from where clone is created
+     */
+    snapshotId: string;
+    /**
+     * status of clone
+     */
+    status: string;
+    timezone: string;
+}
+
+export interface NdbCloneLinkedDatabaseInfo {
+    /**
+     * info of clone
+     */
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbCloneNode {
+    /**
+     * specify compute profile id
+     */
+    computeProfileId?: string;
+    /**
+     * dberver id
+     */
+    dbserverId?: string;
+    /**
+     * specify network profile id
+     */
+    networkProfileId?: string;
+    /**
+     * dbserver time zone
+     */
+    newDbServerTimeZone?: string;
+    /**
+     * cluster id
+     */
+    nxClusterId?: string;
+    /**
+     * properties of vm
+     */
+    properties?: outputs.NdbCloneNodeProperty[];
+    /**
+     * name for the database server VM.
+     */
+    vmName?: string;
+}
+
+export interface NdbCloneNodeProperty {
+    /**
+     * database instance name
+     */
+    name?: string;
+    value?: string;
+}
+
+export interface NdbClonePostgresqlInfo {
+    /**
+     * password of the postgres superuser.
+     */
+    dbPassword: string;
+    /**
+     * description for the dbserver.
+     */
+    dbserverDescription?: string;
+    /**
+     * OS command that you want to run after the instance is created.
+     */
+    postCloneCmd?: string;
+    /**
+     * OS command that you want to run before the instance is created.
+     */
+    preCloneCmd?: string;
+    /**
+     * name for the database server VM.
+     */
+    vmName: string;
+}
+
+export interface NdbCloneProperty {
+    /**
+     * database instance name
+     */
+    name: string;
+    value: string;
+}
+
+export interface NdbCloneTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbCloneTimeMachine {
+    accessLevel: string;
+    /**
+     * cloned or not
+     */
+    clone: boolean;
+    clones: string;
+    /**
+     * clone will be clustered or not
+     */
+    clustered: boolean;
+    database: string;
+    databaseId: string;
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    /**
+     * database instance description
+     */
+    description: string;
+    eaStatus: string;
+    id: string;
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
+    metric: string;
+    /**
+     * database instance name
+     */
+    name: string;
+    /**
+     * List of all the properties
+     */
+    properties: outputs.NdbCloneTimeMachineProperty[];
+    scheduleId: string;
+    schedules: outputs.NdbCloneTimeMachineSchedule[];
+    scope: string;
+    slaId: string;
+    slaUpdateInProgress: boolean;
+    slaUpdateMetadata: string;
+    slas: outputs.NdbCloneTimeMachineSla[];
+    sourceNxClusters: string[];
+    /**
+     * status of clone
+     */
+    status: string;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
+    tags: outputs.NdbCloneTimeMachineTag[];
+    /**
+     * type of clone
+     */
+    type: string;
+}
+
+export interface NdbCloneTimeMachineProperty {
+    /**
+     * database instance description
+     */
+    description: string;
+    /**
+     * database instance name
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbCloneTimeMachineSchedule {
+    continuousSchedules: outputs.NdbCloneTimeMachineScheduleContinuousSchedule[];
+    dailySchedules: outputs.NdbCloneTimeMachineScheduleDailySchedule[];
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    /**
+     * database instance description
+     */
+    description: string;
+    globalPolicy: boolean;
+    id: string;
+    monthlySchedules: outputs.NdbCloneTimeMachineScheduleMonthlySchedule[];
+    /**
+     * database instance name
+     */
+    name: string;
+    ownerId: string;
+    quartelySchedules: outputs.NdbCloneTimeMachineScheduleQuartelySchedule[];
+    referenceCount: number;
+    snapshotTimeOfDays: outputs.NdbCloneTimeMachineScheduleSnapshotTimeOfDay[];
+    startTime: string;
+    systemPolicy: boolean;
+    /**
+     * timezone
+     */
+    timeZone: string;
+    uniqueName: string;
+    weeklySchedules: outputs.NdbCloneTimeMachineScheduleWeeklySchedule[];
+    yearlySchedules: outputs.NdbCloneTimeMachineScheduleYearlySchedule[];
+}
+
+export interface NdbCloneTimeMachineScheduleContinuousSchedule {
+    enabled: boolean;
+    logBackupInterval: number;
+    snapshotsPerDay: number;
+}
+
+export interface NdbCloneTimeMachineScheduleDailySchedule {
+    enabled: boolean;
+}
+
+export interface NdbCloneTimeMachineScheduleMonthlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+}
+
+export interface NdbCloneTimeMachineScheduleQuartelySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    startMonth: string;
+    startMonthValue: string;
+}
+
+export interface NdbCloneTimeMachineScheduleSnapshotTimeOfDay {
+    extra: boolean;
+    hours: number;
+    minutes: number;
+    seconds: number;
+}
+
+export interface NdbCloneTimeMachineScheduleWeeklySchedule {
+    dayOfWeek: string;
+    dayOfWeekValue: string;
+    enabled: boolean;
+}
+
+export interface NdbCloneTimeMachineScheduleYearlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    month: string;
+    monthValue: string;
+}
+
+export interface NdbCloneTimeMachineSla {
+    continuousRetention: number;
+    currentActiveFrequency: string;
+    dailyRetention: number;
+    /**
+     * date created for clone
+     */
+    dateCreated: string;
+    /**
+     * last modified date for clone
+     */
+    dateModified: string;
+    /**
+     * database instance description
+     */
+    description: string;
+    id: string;
+    monthlyRetention: number;
+    /**
+     * database instance name
+     */
+    name: string;
+    ownerId: string;
+    pitrEnabled: boolean;
+    quarterlyRetention: number;
+    referenceCount: number;
+    systemSla: boolean;
+    uniqueName: string;
+    weeklyRetention: number;
+    yearlyRetention: number;
+}
+
+export interface NdbCloneTimeMachineTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbClusterAgentNetworkInfo {
+    /**
+     * string of DNS servers(comma separted).
+     */
+    dns?: string;
+    /**
+     * string of NTP servers(comma separted).
+     */
+    ntp?: string;
+}
+
+export interface NdbClusterEntityCount {
+    dbServers: number;
+    engineCounts: outputs.NdbClusterEntityCountEngineCount[];
+}
+
+export interface NdbClusterEntityCountEngineCount {
+    mariadbDatabases: outputs.NdbClusterEntityCountEngineCountMariadbDatabase[];
+    mongodbDatabases: outputs.NdbClusterEntityCountEngineCountMongodbDatabase[];
+    mysqlDatabases: outputs.NdbClusterEntityCountEngineCountMysqlDatabase[];
+    oracleDatabases: outputs.NdbClusterEntityCountEngineCountOracleDatabase[];
+    postgresDatabases: outputs.NdbClusterEntityCountEngineCountPostgresDatabase[];
+    saphanaDatabases: outputs.NdbClusterEntityCountEngineCountSaphanaDatabase[];
+    sqlserverDatabases: outputs.NdbClusterEntityCountEngineCountSqlserverDatabase[];
+}
+
+export interface NdbClusterEntityCountEngineCountMariadbDatabase {
+    profiles: outputs.NdbClusterEntityCountEngineCountMariadbDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface NdbClusterEntityCountEngineCountMariadbDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface NdbClusterEntityCountEngineCountMongodbDatabase {
+    profiles: outputs.NdbClusterEntityCountEngineCountMongodbDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface NdbClusterEntityCountEngineCountMongodbDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface NdbClusterEntityCountEngineCountMysqlDatabase {
+    profiles: outputs.NdbClusterEntityCountEngineCountMysqlDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface NdbClusterEntityCountEngineCountMysqlDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface NdbClusterEntityCountEngineCountOracleDatabase {
+    profiles: outputs.NdbClusterEntityCountEngineCountOracleDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface NdbClusterEntityCountEngineCountOracleDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface NdbClusterEntityCountEngineCountPostgresDatabase {
+    profiles: outputs.NdbClusterEntityCountEngineCountPostgresDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface NdbClusterEntityCountEngineCountPostgresDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface NdbClusterEntityCountEngineCountSaphanaDatabase {
+    profiles: outputs.NdbClusterEntityCountEngineCountSaphanaDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface NdbClusterEntityCountEngineCountSaphanaDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface NdbClusterEntityCountEngineCountSqlserverDatabase {
+    profiles: outputs.NdbClusterEntityCountEngineCountSqlserverDatabaseProfile[];
+    timeMachines: number;
+}
+
+export interface NdbClusterEntityCountEngineCountSqlserverDatabaseProfile {
+    compute: number;
+    databaseParameter: number;
+    network: number;
+    software: number;
+    storage: number;
+    windowsDomain: number;
+}
+
+export interface NdbClusterNetworksInfo {
+    /**
+     * VLAN access types for which you want to configure network segmentation. Supports [PRISM, DSIP, DBSERVER ]. 
+     * Prism Element: Select this VLAN access type to configure a VLAN that the NDB agent VM can use to communicate with Prism.
+     * Prism iSCSI Data Service. Select this VLAN access type to configure a VLAN that the agent VM can use to make connection requests to the iSCSI data services IP.
+     * DBServer Access from NDB server. Select this VLAN access type to configure a VLAN that is used for communications between the NDB agent VM and the database server VM on the newly registered NDB server cluster.
+     */
+    accessTypes?: string[];
+    /**
+     * network segmentation to segment the network traffic
+     */
+    networkInfos?: outputs.NdbClusterNetworksInfoNetworkInfo[];
+    /**
+     * type of vlan. Supported [DHCP, Static, IPAM]
+     */
+    type?: string;
+}
+
+export interface NdbClusterNetworksInfoNetworkInfo {
+    /**
+     * gateway of agent network
+     */
+    gateway?: string;
+    /**
+     * static ip of agent network
+     */
+    staticIp?: string;
+    /**
+     * subnet mask of agent network
+     */
+    subnetMask?: string;
+    /**
+     * vlan name
+     */
+    vlanName?: string;
+}
+
+export interface NdbClusterProperty {
+    /**
+     * description of cluster
+     */
+    description: string;
+    /**
+     * name of the cluster to be registered
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbClusterResourceConfig {
+    memoryThresholdPercentage: number;
+    storageThresholdPercentage: number;
+}
+
+export interface NdbDatabaseActionargument {
+    /**
+     * - (Required) name of argument
+     */
+    name: string;
+    /**
+     * - (Required) value for argument
+     */
+    value: string;
+}
+
+export interface NdbDatabaseClusterInfo {
+    clusterIpInfos: outputs.NdbDatabaseClusterInfoClusterIpInfo[];
+}
+
+export interface NdbDatabaseClusterInfoClusterIpInfo {
+    ipInfos?: outputs.NdbDatabaseClusterInfoClusterIpInfoIpInfo[];
+    nxClusterId: string;
+}
+
+export interface NdbDatabaseClusterInfoClusterIpInfoIpInfo {
+    ipAddresses?: string[];
+    ipType?: string;
+}
+
+export interface NdbDatabaseDatabaseNode {
+    accessLevel: {[key: string]: string};
+    databaseId: string;
+    databaseStatus: string;
+    dateCreated: string;
+    dateModified: string;
+    dbserver: {[key: string]: string};
+    dbserverId: string;
+    /**
+     * - (Optional) The description
+     */
+    description: string;
+    id: string;
+    infos: outputs.NdbDatabaseDatabaseNodeInfo[];
+    /**
+     * - (Required) Name of the instance.
+     */
+    name: string;
+    primary: boolean;
+    /**
+     * List of all the properties
+     */
+    properties: outputs.NdbDatabaseDatabaseNodeProperty[];
+    protectionDomainId: string;
+    protectionDomains: outputs.NdbDatabaseDatabaseNodeProtectionDomain[];
+    softwareInstallationId: string;
+    status: string;
+    tags: outputs.NdbDatabaseDatabaseNodeTag[];
+}
+
+export interface NdbDatabaseDatabaseNodeInfo {
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbDatabaseDatabaseNodeProperty {
+    /**
+     * - (Optional) The description
+     */
+    description: string;
+    /**
+     * - (Required) Name of the instance.
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbDatabaseDatabaseNodeProtectionDomain {
+    assocEntities: string[];
+    cloudId: string;
+    dateCreated: string;
+    dateModified: string;
+    /**
+     * - (Optional) The description
+     */
+    description: string;
+    eraCreated: boolean;
+    id: string;
+    /**
+     * - (Required) Name of the instance.
+     */
+    name: string;
+    ownerId: string;
+    primaryHost: string;
+    /**
+     * List of all the properties
+     */
+    properties: outputs.NdbDatabaseDatabaseNodeProtectionDomainProperty[];
+    status: string;
+    type: string;
+}
+
+export interface NdbDatabaseDatabaseNodeProtectionDomainProperty {
+    /**
+     * - (Optional) The description
+     */
+    description: string;
+    /**
+     * - (Required) Name of the instance.
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbDatabaseDatabaseNodeTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbDatabaseInfo {
+    bpgConfigs: outputs.NdbDatabaseInfoBpgConfig[];
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbDatabaseInfoBpgConfig {
+    bpgDbParams: outputs.NdbDatabaseInfoBpgConfigBpgDbParam[];
+    storages: outputs.NdbDatabaseInfoBpgConfigStorage[];
+    vmProperties: outputs.NdbDatabaseInfoBpgConfigVmProperty[];
+}
+
+export interface NdbDatabaseInfoBpgConfigBpgDbParam {
+    effectiveCacheSize: string;
+    maintenanceWorkMem: string;
+    maxParallelWorkersPerGather: string;
+    maxWorkerProcesses: string;
+    sharedBuffers: string;
+    workMem: string;
+}
+
+export interface NdbDatabaseInfoBpgConfigStorage {
+    archiveStorages: outputs.NdbDatabaseInfoBpgConfigStorageArchiveStorage[];
+    dataDisks: outputs.NdbDatabaseInfoBpgConfigStorageDataDisk[];
+    logDisks: outputs.NdbDatabaseInfoBpgConfigStorageLogDisk[];
+}
+
+export interface NdbDatabaseInfoBpgConfigStorageArchiveStorage {
+    size: number;
+}
+
+export interface NdbDatabaseInfoBpgConfigStorageDataDisk {
+    count: number;
+}
+
+export interface NdbDatabaseInfoBpgConfigStorageLogDisk {
+    count: number;
+    size: number;
+}
+
+export interface NdbDatabaseInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio: number;
+    dirtyExpireCentisecs: number;
+    dirtyRatio: number;
+    dirtyWritebackCentisecs: number;
+    nrHugepages: number;
+    overcommitMemory: number;
+    swappiness: number;
+}
+
+export interface NdbDatabaseLcmConfig {
+    expiryDetails: outputs.NdbDatabaseLcmConfigExpiryDetail[];
+    postDeleteCommands: outputs.NdbDatabaseLcmConfigPostDeleteCommand[];
+    preDeleteCommands: outputs.NdbDatabaseLcmConfigPreDeleteCommand[];
+    refreshDetails: outputs.NdbDatabaseLcmConfigRefreshDetail[];
+}
+
+export interface NdbDatabaseLcmConfigExpiryDetail {
+    deleteDatabase: boolean;
+    /**
+     * - (Optional) Delete the database's Time Machine (snapshots/logs) from the NDB. Default value is true
+     */
+    deleteTimeMachine: boolean;
+    deleteVm: boolean;
+    effectiveTimestamp: string;
+    expireInDays: number;
+    expiryDateTimezone: string;
+    expiryTimestamp: string;
+    remindBeforeInDays: number;
+    userCreated: boolean;
+}
+
+export interface NdbDatabaseLcmConfigPostDeleteCommand {
+    command: string;
+}
+
+export interface NdbDatabaseLcmConfigPreDeleteCommand {
+    command: string;
+}
+
+export interface NdbDatabaseLcmConfigRefreshDetail {
+    lastRefreshDate: string;
+    nextRefreshDate: string;
+    refreshDateTimezone: string;
+    refreshInDays: number;
+    refreshInHours: number;
+    refreshInMonths: number;
+    refreshTime: string;
+}
+
+export interface NdbDatabaseLinkedDatabase {
+    databaseName: string;
+    databaseStatus: string;
+    dateCreated: string;
+    dateModified: string;
+    /**
+     * - (Optional) The description
+     */
+    description: string;
+    id: string;
+    infos: outputs.NdbDatabaseLinkedDatabaseInfo[];
+    metric: {[key: string]: string};
+    /**
+     * - (Required) Name of the instance.
+     */
+    name: string;
+    parentDatabaseId: string;
+    parentLinkedDatabaseId: string;
+    snapshotId: string;
+    status: string;
+    timezone: string;
+}
+
+export interface NdbDatabaseLinkedDatabaseInfo {
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbDatabaseMaintenanceTasks {
+    maintenanceWindowId?: string;
+    tasks?: outputs.NdbDatabaseMaintenanceTasksTask[];
+}
+
+export interface NdbDatabaseMaintenanceTasksTask {
+    postCommand?: string;
+    preCommand?: string;
+    taskType?: string;
+}
+
+export interface NdbDatabaseNode {
+    /**
+     * - (Optional) compute profile id
+     */
+    computeprofileid?: string;
+    /**
+     * - (Optional) Database server ID required for existing VM
+     */
+    dbserverid?: string;
+    /**
+     * - (Optional) IP infos for custom network profile.
+     */
+    ipInfos?: outputs.NdbDatabaseNodeIpInfo[];
+    /**
+     * - (Required) network profile ID
+     */
+    networkprofileid?: string;
+    /**
+     * - (Optional) cluster id.
+     */
+    nxClusterId?: string;
+    /**
+     * - (Optional) list of additional properties
+     */
+    properties?: outputs.NdbDatabaseNodeProperty[];
+    /**
+     * - (Required) name of vm
+     */
+    vmname: string;
+}
+
+export interface NdbDatabaseNodeIpInfo {
+    ipAddresses?: string[];
+    ipType?: string;
+}
+
+export interface NdbDatabaseNodeProperty {
+    /**
+     * - (Required) Name of the instance.
+     */
+    name: string;
+    value: string;
+}
+
+export interface NdbDatabasePostgresqlInfo {
+    /**
+     * - (Optional) allocate huge page. Default: false
+     */
+    allocatePgHugepage?: boolean;
+    /**
+     * - (Optional) auth methods. Default: md5
+     */
+    authMethod?: string;
+    /**
+     * - (Optional) enable auto tuning of staging drive. Default: false
+     */
+    autoTuneStagingDrive?: boolean;
+    /**
+     * - (Optional) if clustered database. Default: false
+     */
+    clusterDatabase?: boolean;
+    /**
+     * - (Required) name of initial database to be created
+     */
+    databaseNames: string;
+    /**
+     * - (Required) initial database size
+     */
+    databaseSize: string;
+    /**
+     * - (Required) database instance password
+     */
+    dbPassword: string;
+    /**
+     * - (Optional) High Availability instance
+     */
+    haInstance?: outputs.NdbDatabasePostgresqlInfoHaInstance;
+    /**
+     * - (Required) listener port for database instance
+     */
+    listenerPort: string;
+    /**
+     * - (Optional) post instance create script
+     */
+    postCreateScript?: string;
+    /**
+     * - (Optional) pre instance create script
+     */
+    preCreateScript?: string;
+}
+
+export interface NdbDatabasePostgresqlInfoHaInstance {
+    /**
+     * - (Optional) archive wal expire days. Default is set to -1
+     */
+    archiveWalExpireDays?: number;
+    /**
+     * - (Optional) backup policy for instance. Default is "primaryOnly"
+     */
+    backupPolicy?: string;
+    clusterDescription?: string;
+    /**
+     * - (Required) cluster name
+     */
+    clusterName: string;
+    /**
+     * - (Optional) HA proxy node. Default is set to false
+     */
+    deployHaproxy?: boolean;
+    /**
+     * - (Optional) enable peer auth . Default is set to false.
+     */
+    enablePeerAuth?: boolean;
+    /**
+     * - (Optional) enable synchronous mode. Default is set to true
+     */
+    enableSynchronousMode?: boolean;
+    /**
+     * - (Optional) failover mode of nodes.
+     */
+    failoverMode?: string;
+    /**
+     * - (Optional) node type of instance. Default is set to database
+     */
+    nodeType?: string;
+    /**
+     * - (Required) patroni cluster name
+     */
+    patroniClusterName: string;
+    /**
+     * - (Optional) provisional virtual ip. Default is set to true
+     */
+    provisionVirtualIp?: boolean;
+    /**
+     * -  (Required) proxy read port
+     */
+    proxyReadPort: string;
+    /**
+     * - (Required) proxy write port
+     */
+    proxyWritePort: string;
+}
+
+export interface NdbDatabaseProperty {
+    /**
+     * - (Required) Name of the instance.
+     */
+    name: string;
+    value: string;
+}
+
+export interface NdbDatabaseRestoreDatabaseNode {
+    accessLevel: {[key: string]: string};
+    /**
+     * database id
+     */
+    databaseId: string;
+    databaseStatus: string;
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    dbserver: {[key: string]: string};
+    dbserverId: string;
+    /**
+     * description of database instance
+     */
+    description: string;
+    id: string;
+    /**
+     * info of instance
+     */
+    infos: outputs.NdbDatabaseRestoreDatabaseNodeInfo[];
+    /**
+     * Name of database instance
+     */
+    name: string;
+    primary: boolean;
+    /**
+     * properties of database created
+     */
+    properties: outputs.NdbDatabaseRestoreDatabaseNodeProperty[];
+    protectionDomainId: string;
+    protectionDomains: outputs.NdbDatabaseRestoreDatabaseNodeProtectionDomain[];
+    softwareInstallationId: string;
+    /**
+     * status of instance
+     */
+    status: string;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
+    tags: outputs.NdbDatabaseRestoreDatabaseNodeTag[];
+}
+
+export interface NdbDatabaseRestoreDatabaseNodeInfo {
+    /**
+     * info of instance
+     */
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbDatabaseRestoreDatabaseNodeProperty {
+    /**
+     * description of database instance
+     */
+    description: string;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbDatabaseRestoreDatabaseNodeProtectionDomain {
+    assocEntities: string[];
+    cloudId: string;
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    /**
+     * description of database instance
+     */
+    description: string;
+    eraCreated: boolean;
+    id: string;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    ownerId: string;
+    primaryHost: string;
+    /**
+     * properties of database created
+     */
+    properties: outputs.NdbDatabaseRestoreDatabaseNodeProtectionDomainProperty[];
+    /**
+     * status of instance
+     */
+    status: string;
+    /**
+     * type of database
+     */
+    type: string;
+}
+
+export interface NdbDatabaseRestoreDatabaseNodeProtectionDomainProperty {
+    /**
+     * description of database instance
+     */
+    description: string;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbDatabaseRestoreDatabaseNodeTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbDatabaseRestoreInfo {
+    bpgConfigs: outputs.NdbDatabaseRestoreInfoBpgConfig[];
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbDatabaseRestoreInfoBpgConfig {
+    bpgDbParams: outputs.NdbDatabaseRestoreInfoBpgConfigBpgDbParam[];
+    storages: outputs.NdbDatabaseRestoreInfoBpgConfigStorage[];
+    vmProperties: outputs.NdbDatabaseRestoreInfoBpgConfigVmProperty[];
+}
+
+export interface NdbDatabaseRestoreInfoBpgConfigBpgDbParam {
+    effectiveCacheSize: string;
+    maintenanceWorkMem: string;
+    maxParallelWorkersPerGather: string;
+    maxWorkerProcesses: string;
+    sharedBuffers: string;
+    workMem: string;
+}
+
+export interface NdbDatabaseRestoreInfoBpgConfigStorage {
+    archiveStorages: outputs.NdbDatabaseRestoreInfoBpgConfigStorageArchiveStorage[];
+    dataDisks: outputs.NdbDatabaseRestoreInfoBpgConfigStorageDataDisk[];
+    logDisks: outputs.NdbDatabaseRestoreInfoBpgConfigStorageLogDisk[];
+}
+
+export interface NdbDatabaseRestoreInfoBpgConfigStorageArchiveStorage {
+    size: number;
+}
+
+export interface NdbDatabaseRestoreInfoBpgConfigStorageDataDisk {
+    count: number;
+}
+
+export interface NdbDatabaseRestoreInfoBpgConfigStorageLogDisk {
+    count: number;
+    size: number;
+}
+
+export interface NdbDatabaseRestoreInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio: number;
+    dirtyExpireCentisecs: number;
+    dirtyRatio: number;
+    dirtyWritebackCentisecs: number;
+    nrHugepages: number;
+    overcommitMemory: number;
+    swappiness: number;
+}
+
+export interface NdbDatabaseRestoreLcmConfig {
+    expiryDetails: outputs.NdbDatabaseRestoreLcmConfigExpiryDetail[];
+    postDeleteCommands: outputs.NdbDatabaseRestoreLcmConfigPostDeleteCommand[];
+    preDeleteCommands: outputs.NdbDatabaseRestoreLcmConfigPreDeleteCommand[];
+    refreshDetails: outputs.NdbDatabaseRestoreLcmConfigRefreshDetail[];
+}
+
+export interface NdbDatabaseRestoreLcmConfigExpiryDetail {
+    deleteDatabase: boolean;
+    deleteTimeMachine: boolean;
+    deleteVm: boolean;
+    effectiveTimestamp: string;
+    expireInDays: number;
+    expiryDateTimezone: string;
+    expiryTimestamp: string;
+    remindBeforeInDays: number;
+    userCreated: boolean;
+}
+
+export interface NdbDatabaseRestoreLcmConfigPostDeleteCommand {
+    command: string;
+}
+
+export interface NdbDatabaseRestoreLcmConfigPreDeleteCommand {
+    command: string;
+}
+
+export interface NdbDatabaseRestoreLcmConfigRefreshDetail {
+    lastRefreshDate: string;
+    nextRefreshDate: string;
+    refreshDateTimezone: string;
+    refreshInDays: number;
+    refreshInHours: number;
+    refreshInMonths: number;
+    refreshTime: string;
+}
+
+export interface NdbDatabaseRestoreLinkedDatabase {
+    /**
+     * name of database
+     */
+    databaseName: string;
+    databaseStatus: string;
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    /**
+     * description of database instance
+     */
+    description: string;
+    id: string;
+    /**
+     * info of instance
+     */
+    infos: outputs.NdbDatabaseRestoreLinkedDatabaseInfo[];
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
+    metric: {[key: string]: string};
+    /**
+     * Name of database instance
+     */
+    name: string;
+    /**
+     * parent database id
+     */
+    parentDatabaseId: string;
+    parentLinkedDatabaseId: string;
+    /**
+     * snapshot id from you want to use for restoring the instance
+     */
+    snapshotId: string;
+    /**
+     * status of instance
+     */
+    status: string;
+    timezone: string;
+}
+
+export interface NdbDatabaseRestoreLinkedDatabaseInfo {
+    /**
+     * info of instance
+     */
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbDatabaseRestoreProperty {
+    /**
+     * Name of database instance
+     */
+    name: string;
+    value: string;
+}
+
+export interface NdbDatabaseRestoreTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbDatabaseRestoreTimeMachine {
+    accessLevel: string;
+    /**
+     * whether instance is cloned or not
+     */
+    clone: boolean;
+    clones: string;
+    clustered: boolean;
+    database: string;
+    /**
+     * database id
+     */
+    databaseId: string;
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    /**
+     * description of database instance
+     */
+    description: string;
+    eaStatus: string;
+    id: string;
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
+    metric: string;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    /**
+     * properties of database created
+     */
+    properties: outputs.NdbDatabaseRestoreTimeMachineProperty[];
+    scheduleId: string;
+    schedules: outputs.NdbDatabaseRestoreTimeMachineSchedule[];
+    scope: string;
+    slaId: string;
+    slaUpdateInProgress: boolean;
+    slaUpdateMetadata: string;
+    slas: outputs.NdbDatabaseRestoreTimeMachineSla[];
+    sourceNxClusters: string[];
+    /**
+     * status of instance
+     */
+    status: string;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
+    tags: outputs.NdbDatabaseRestoreTimeMachineTag[];
+    /**
+     * type of database
+     */
+    type: string;
+}
+
+export interface NdbDatabaseRestoreTimeMachineProperty {
+    /**
+     * description of database instance
+     */
+    description: string;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbDatabaseRestoreTimeMachineSchedule {
+    continuousSchedules: outputs.NdbDatabaseRestoreTimeMachineScheduleContinuousSchedule[];
+    dailySchedules: outputs.NdbDatabaseRestoreTimeMachineScheduleDailySchedule[];
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    /**
+     * description of database instance
+     */
+    description: string;
+    globalPolicy: boolean;
+    id: string;
+    monthlySchedules: outputs.NdbDatabaseRestoreTimeMachineScheduleMonthlySchedule[];
+    /**
+     * Name of database instance
+     */
+    name: string;
+    ownerId: string;
+    quartelySchedules: outputs.NdbDatabaseRestoreTimeMachineScheduleQuartelySchedule[];
+    referenceCount: number;
+    snapshotTimeOfDays: outputs.NdbDatabaseRestoreTimeMachineScheduleSnapshotTimeOfDay[];
+    startTime: string;
+    systemPolicy: boolean;
+    /**
+     * timezone on which instance is created xw
+     */
+    timeZone: string;
+    uniqueName: string;
+    weeklySchedules: outputs.NdbDatabaseRestoreTimeMachineScheduleWeeklySchedule[];
+    yearlySchedules: outputs.NdbDatabaseRestoreTimeMachineScheduleYearlySchedule[];
+}
+
+export interface NdbDatabaseRestoreTimeMachineScheduleContinuousSchedule {
+    enabled: boolean;
+    logBackupInterval: number;
+    snapshotsPerDay: number;
+}
+
+export interface NdbDatabaseRestoreTimeMachineScheduleDailySchedule {
+    enabled: boolean;
+}
+
+export interface NdbDatabaseRestoreTimeMachineScheduleMonthlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+}
+
+export interface NdbDatabaseRestoreTimeMachineScheduleQuartelySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    startMonth: string;
+    startMonthValue: string;
+}
+
+export interface NdbDatabaseRestoreTimeMachineScheduleSnapshotTimeOfDay {
+    extra: boolean;
+    hours: number;
+    minutes: number;
+    seconds: number;
+}
+
+export interface NdbDatabaseRestoreTimeMachineScheduleWeeklySchedule {
+    dayOfWeek: string;
+    dayOfWeekValue: string;
+    enabled: boolean;
+}
+
+export interface NdbDatabaseRestoreTimeMachineScheduleYearlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    month: string;
+    monthValue: string;
+}
+
+export interface NdbDatabaseRestoreTimeMachineSla {
+    continuousRetention: number;
+    currentActiveFrequency: string;
+    dailyRetention: number;
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    /**
+     * description of database instance
+     */
+    description: string;
+    id: string;
+    monthlyRetention: number;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    ownerId: string;
+    pitrEnabled: boolean;
+    quarterlyRetention: number;
+    referenceCount: number;
+    systemSla: boolean;
+    uniqueName: string;
+    weeklyRetention: number;
+    yearlyRetention: number;
+}
+
+export interface NdbDatabaseRestoreTimeMachineTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbDatabaseScaleDatabaseNode {
+    accessLevel: {[key: string]: string};
+    databaseId: string;
+    databaseStatus: string;
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    dbserver: {[key: string]: string};
+    dbserverId: string;
+    /**
+     * description of database instance
+     */
+    description: string;
+    id: string;
+    /**
+     * info of instance
+     */
+    infos: outputs.NdbDatabaseScaleDatabaseNodeInfo[];
+    /**
+     * Name of database instance
+     */
+    name: string;
+    primary: boolean;
+    /**
+     * properties of database created
+     */
+    properties: outputs.NdbDatabaseScaleDatabaseNodeProperty[];
+    protectionDomainId: string;
+    protectionDomains: outputs.NdbDatabaseScaleDatabaseNodeProtectionDomain[];
+    softwareInstallationId: string;
+    /**
+     * status of instance
+     */
+    status: string;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
+    tags: outputs.NdbDatabaseScaleDatabaseNodeTag[];
+}
+
+export interface NdbDatabaseScaleDatabaseNodeInfo {
+    /**
+     * info of instance
+     */
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbDatabaseScaleDatabaseNodeProperty {
+    /**
+     * description of database instance
+     */
+    description: string;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbDatabaseScaleDatabaseNodeProtectionDomain {
+    assocEntities: string[];
+    cloudId: string;
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    /**
+     * description of database instance
+     */
+    description: string;
+    eraCreated: boolean;
+    id: string;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    ownerId: string;
+    primaryHost: string;
+    /**
+     * properties of database created
+     */
+    properties: outputs.NdbDatabaseScaleDatabaseNodeProtectionDomainProperty[];
+    /**
+     * status of instance
+     */
+    status: string;
+    /**
+     * type of database
+     */
+    type: string;
+}
+
+export interface NdbDatabaseScaleDatabaseNodeProtectionDomainProperty {
+    /**
+     * description of database instance
+     */
+    description: string;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbDatabaseScaleDatabaseNodeTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbDatabaseScaleInfo {
+    bpgConfigs: outputs.NdbDatabaseScaleInfoBpgConfig[];
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbDatabaseScaleInfoBpgConfig {
+    bpgDbParams: outputs.NdbDatabaseScaleInfoBpgConfigBpgDbParam[];
+    storages: outputs.NdbDatabaseScaleInfoBpgConfigStorage[];
+    vmProperties: outputs.NdbDatabaseScaleInfoBpgConfigVmProperty[];
+}
+
+export interface NdbDatabaseScaleInfoBpgConfigBpgDbParam {
+    effectiveCacheSize: string;
+    maintenanceWorkMem: string;
+    maxParallelWorkersPerGather: string;
+    maxWorkerProcesses: string;
+    sharedBuffers: string;
+    workMem: string;
+}
+
+export interface NdbDatabaseScaleInfoBpgConfigStorage {
+    archiveStorages: outputs.NdbDatabaseScaleInfoBpgConfigStorageArchiveStorage[];
+    dataDisks: outputs.NdbDatabaseScaleInfoBpgConfigStorageDataDisk[];
+    logDisks: outputs.NdbDatabaseScaleInfoBpgConfigStorageLogDisk[];
+}
+
+export interface NdbDatabaseScaleInfoBpgConfigStorageArchiveStorage {
+    size: number;
+}
+
+export interface NdbDatabaseScaleInfoBpgConfigStorageDataDisk {
+    count: number;
+}
+
+export interface NdbDatabaseScaleInfoBpgConfigStorageLogDisk {
+    count: number;
+    size: number;
+}
+
+export interface NdbDatabaseScaleInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio: number;
+    dirtyExpireCentisecs: number;
+    dirtyRatio: number;
+    dirtyWritebackCentisecs: number;
+    nrHugepages: number;
+    overcommitMemory: number;
+    swappiness: number;
+}
+
+export interface NdbDatabaseScaleLcmConfig {
+    expiryDetails: outputs.NdbDatabaseScaleLcmConfigExpiryDetail[];
+    postDeleteCommands: outputs.NdbDatabaseScaleLcmConfigPostDeleteCommand[];
+    preDeleteCommands: outputs.NdbDatabaseScaleLcmConfigPreDeleteCommand[];
+    refreshDetails: outputs.NdbDatabaseScaleLcmConfigRefreshDetail[];
+}
+
+export interface NdbDatabaseScaleLcmConfigExpiryDetail {
+    deleteDatabase: boolean;
+    deleteTimeMachine: boolean;
+    deleteVm: boolean;
+    effectiveTimestamp: string;
+    expireInDays: number;
+    expiryDateTimezone: string;
+    expiryTimestamp: string;
+    remindBeforeInDays: number;
+    userCreated: boolean;
+}
+
+export interface NdbDatabaseScaleLcmConfigPostDeleteCommand {
+    command: string;
+}
+
+export interface NdbDatabaseScaleLcmConfigPreDeleteCommand {
+    command: string;
+}
+
+export interface NdbDatabaseScaleLcmConfigRefreshDetail {
+    lastRefreshDate: string;
+    nextRefreshDate: string;
+    refreshDateTimezone: string;
+    refreshInDays: number;
+    refreshInHours: number;
+    refreshInMonths: number;
+    refreshTime: string;
+}
+
+export interface NdbDatabaseScaleLinkedDatabase {
+    /**
+     * name of database
+     */
+    databaseName: string;
+    databaseStatus: string;
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    /**
+     * description of database instance
+     */
+    description: string;
+    id: string;
+    /**
+     * info of instance
+     */
+    infos: outputs.NdbDatabaseScaleLinkedDatabaseInfo[];
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
+    metric: {[key: string]: string};
+    /**
+     * Name of database instance
+     */
+    name: string;
+    /**
+     * parent database id
+     */
+    parentDatabaseId: string;
+    parentLinkedDatabaseId: string;
+    snapshotId: string;
+    /**
+     * status of instance
+     */
+    status: string;
+    timezone: string;
+}
+
+export interface NdbDatabaseScaleLinkedDatabaseInfo {
+    /**
+     * info of instance
+     */
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbDatabaseScaleProperty {
+    /**
+     * Name of database instance
+     */
+    name: string;
+    value: string;
+}
+
+export interface NdbDatabaseScaleTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbDatabaseScaleTimeMachine {
+    accessLevel: string;
+    /**
+     * whether instance is cloned or not
+     */
+    clone: boolean;
+    clones: string;
+    clustered: boolean;
+    database: string;
+    databaseId: string;
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    /**
+     * description of database instance
+     */
+    description: string;
+    eaStatus: string;
+    id: string;
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
+    metric: string;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    /**
+     * properties of database created
+     */
+    properties: outputs.NdbDatabaseScaleTimeMachineProperty[];
+    scheduleId: string;
+    schedules: outputs.NdbDatabaseScaleTimeMachineSchedule[];
+    scope: string;
+    slaId: string;
+    slaUpdateInProgress: boolean;
+    slaUpdateMetadata: string;
+    slas: outputs.NdbDatabaseScaleTimeMachineSla[];
+    sourceNxClusters: string[];
+    /**
+     * status of instance
+     */
+    status: string;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
+    tags: outputs.NdbDatabaseScaleTimeMachineTag[];
+    /**
+     * type of database
+     */
+    type: string;
+}
+
+export interface NdbDatabaseScaleTimeMachineProperty {
+    /**
+     * description of database instance
+     */
+    description: string;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbDatabaseScaleTimeMachineSchedule {
+    continuousSchedules: outputs.NdbDatabaseScaleTimeMachineScheduleContinuousSchedule[];
+    dailySchedules: outputs.NdbDatabaseScaleTimeMachineScheduleDailySchedule[];
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    /**
+     * description of database instance
+     */
+    description: string;
+    globalPolicy: boolean;
+    id: string;
+    monthlySchedules: outputs.NdbDatabaseScaleTimeMachineScheduleMonthlySchedule[];
+    /**
+     * Name of database instance
+     */
+    name: string;
+    ownerId: string;
+    quartelySchedules: outputs.NdbDatabaseScaleTimeMachineScheduleQuartelySchedule[];
+    referenceCount: number;
+    snapshotTimeOfDays: outputs.NdbDatabaseScaleTimeMachineScheduleSnapshotTimeOfDay[];
+    startTime: string;
+    systemPolicy: boolean;
+    /**
+     * timezone on which instance is created xw
+     */
+    timeZone: string;
+    uniqueName: string;
+    weeklySchedules: outputs.NdbDatabaseScaleTimeMachineScheduleWeeklySchedule[];
+    yearlySchedules: outputs.NdbDatabaseScaleTimeMachineScheduleYearlySchedule[];
+}
+
+export interface NdbDatabaseScaleTimeMachineScheduleContinuousSchedule {
+    enabled: boolean;
+    logBackupInterval: number;
+    snapshotsPerDay: number;
+}
+
+export interface NdbDatabaseScaleTimeMachineScheduleDailySchedule {
+    enabled: boolean;
+}
+
+export interface NdbDatabaseScaleTimeMachineScheduleMonthlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+}
+
+export interface NdbDatabaseScaleTimeMachineScheduleQuartelySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    startMonth: string;
+    startMonthValue: string;
+}
+
+export interface NdbDatabaseScaleTimeMachineScheduleSnapshotTimeOfDay {
+    extra: boolean;
+    hours: number;
+    minutes: number;
+    seconds: number;
+}
+
+export interface NdbDatabaseScaleTimeMachineScheduleWeeklySchedule {
+    dayOfWeek: string;
+    dayOfWeekValue: string;
+    enabled: boolean;
+}
+
+export interface NdbDatabaseScaleTimeMachineScheduleYearlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    month: string;
+    monthValue: string;
+}
+
+export interface NdbDatabaseScaleTimeMachineSla {
+    continuousRetention: number;
+    currentActiveFrequency: string;
+    dailyRetention: number;
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    /**
+     * description of database instance
+     */
+    description: string;
+    id: string;
+    monthlyRetention: number;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    ownerId: string;
+    pitrEnabled: boolean;
+    quarterlyRetention: number;
+    referenceCount: number;
+    systemSla: boolean;
+    uniqueName: string;
+    weeklyRetention: number;
+    yearlyRetention: number;
+}
+
+export interface NdbDatabaseScaleTimeMachineTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbDatabaseSnapshotLcmConfig {
+    expiryDetails: outputs.NdbDatabaseSnapshotLcmConfigExpiryDetail[];
+    postDeleteCommands: outputs.NdbDatabaseSnapshotLcmConfigPostDeleteCommand[];
+    preDeleteCommands: outputs.NdbDatabaseSnapshotLcmConfigPreDeleteCommand[];
+    refreshDetails: outputs.NdbDatabaseSnapshotLcmConfigRefreshDetail[];
+}
+
+export interface NdbDatabaseSnapshotLcmConfigExpiryDetail {
+    deleteDatabase: boolean;
+    deleteTimeMachine: boolean;
+    deleteVm: boolean;
+    effectiveTimestamp: string;
+    expireInDays: number;
+    /**
+     * Default is set to Asia/Calcutta
+     */
+    expiryDateTimezone: string;
+    expiryTimestamp: string;
+    remindBeforeInDays: number;
+    userCreated: boolean;
+}
+
+export interface NdbDatabaseSnapshotLcmConfigPostDeleteCommand {
+    command: string;
+}
+
+export interface NdbDatabaseSnapshotLcmConfigPreDeleteCommand {
+    command: string;
+}
+
+export interface NdbDatabaseSnapshotLcmConfigRefreshDetail {
+    lastRefreshDate: string;
+    nextRefreshDate: string;
+    refreshDateTimezone: string;
+    refreshInDays: number;
+    refreshInHours: number;
+    refreshInMonths: number;
+    refreshTime: string;
+}
+
+export interface NdbDatabaseSnapshotProperty {
+    /**
+     * description of snapshot
+     */
+    description: string;
+    /**
+     * Snapshot name. Default value is era_manual_snapshot.
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbDatabaseSnapshotTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbDatabaseTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbDatabaseTimeMachine {
+    accessLevel: string;
+    clone: boolean;
+    clones: string;
+    /**
+     * - (Optional) If clustered database. Default: false
+     */
+    clustered: boolean;
+    database: string;
+    databaseId: string;
+    dateCreated: string;
+    dateModified: string;
+    /**
+     * - (Optional) The description
+     */
+    description: string;
+    eaStatus: string;
+    id: string;
+    metric: string;
+    /**
+     * - (Required) Name of the instance.
+     */
+    name: string;
+    /**
+     * List of all the properties
+     */
+    properties: outputs.NdbDatabaseTimeMachineProperty[];
+    scheduleId: string;
+    schedules: outputs.NdbDatabaseTimeMachineSchedule[];
+    scope: string;
+    slaId: string;
+    slaUpdateInProgress: boolean;
+    slaUpdateMetadata: string;
+    slas: outputs.NdbDatabaseTimeMachineSla[];
+    sourceNxClusters: string[];
+    status: string;
+    tags: outputs.NdbDatabaseTimeMachineTag[];
+    type: string;
+}
+
+export interface NdbDatabaseTimeMachineProperty {
+    /**
+     * - (Optional) The description
+     */
+    description: string;
+    /**
+     * - (Required) Name of the instance.
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbDatabaseTimeMachineSchedule {
+    continuousSchedules: outputs.NdbDatabaseTimeMachineScheduleContinuousSchedule[];
+    dailySchedules: outputs.NdbDatabaseTimeMachineScheduleDailySchedule[];
+    dateCreated: string;
+    dateModified: string;
+    /**
+     * - (Optional) The description
+     */
+    description: string;
+    globalPolicy: boolean;
+    id: string;
+    monthlySchedules: outputs.NdbDatabaseTimeMachineScheduleMonthlySchedule[];
+    /**
+     * - (Required) Name of the instance.
+     */
+    name: string;
+    ownerId: string;
+    quartelySchedules: outputs.NdbDatabaseTimeMachineScheduleQuartelySchedule[];
+    referenceCount: number;
+    snapshotTimeOfDays: outputs.NdbDatabaseTimeMachineScheduleSnapshotTimeOfDay[];
+    startTime: string;
+    systemPolicy: boolean;
+    timeZone: string;
+    uniqueName: string;
+    weeklySchedules: outputs.NdbDatabaseTimeMachineScheduleWeeklySchedule[];
+    yearlySchedules: outputs.NdbDatabaseTimeMachineScheduleYearlySchedule[];
+}
+
+export interface NdbDatabaseTimeMachineScheduleContinuousSchedule {
+    enabled: boolean;
+    logBackupInterval: number;
+    snapshotsPerDay: number;
+}
+
+export interface NdbDatabaseTimeMachineScheduleDailySchedule {
+    enabled: boolean;
+}
+
+export interface NdbDatabaseTimeMachineScheduleMonthlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+}
+
+export interface NdbDatabaseTimeMachineScheduleQuartelySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    startMonth: string;
+    startMonthValue: string;
+}
+
+export interface NdbDatabaseTimeMachineScheduleSnapshotTimeOfDay {
+    extra: boolean;
+    hours: number;
+    minutes: number;
+    seconds: number;
+}
+
+export interface NdbDatabaseTimeMachineScheduleWeeklySchedule {
+    dayOfWeek: string;
+    dayOfWeekValue: string;
+    enabled: boolean;
+}
+
+export interface NdbDatabaseTimeMachineScheduleYearlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    month: string;
+    monthValue: string;
+}
+
+export interface NdbDatabaseTimeMachineSla {
+    continuousRetention: number;
+    currentActiveFrequency: string;
+    dailyRetention: number;
+    dateCreated: string;
+    dateModified: string;
+    /**
+     * - (Optional) The description
+     */
+    description: string;
+    id: string;
+    monthlyRetention: number;
+    /**
+     * - (Required) Name of the instance.
+     */
+    name: string;
+    ownerId: string;
+    pitrEnabled: boolean;
+    quarterlyRetention: number;
+    referenceCount: number;
+    systemSla: boolean;
+    uniqueName: string;
+    weeklyRetention: number;
+    yearlyRetention: number;
+}
+
+export interface NdbDatabaseTimeMachineTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbDatabaseTimemachineinfo {
+    /**
+     * - (Optional) enable auto tune log drive. Default: true
+     */
+    autotunelogdrive?: boolean;
+    /**
+     * - (Optional) description of time machine
+     */
+    description?: string;
+    /**
+     * - (Required) name of time machine
+     */
+    name: string;
+    /**
+     * - (Optional) schedule for snapshots
+     */
+    schedule: outputs.NdbDatabaseTimemachineinfoSchedule;
+    /**
+     * -  (optional) SLA details for HA instance
+     */
+    slaDetails?: outputs.NdbDatabaseTimemachineinfoSlaDetail[];
+    /**
+     * - (Optional) SLA ID for single instance
+     */
+    slaid?: string;
+    /**
+     * - (Optional) tags
+     */
+    tags: outputs.NdbDatabaseTimemachineinfoTag[];
+}
+
+export interface NdbDatabaseTimemachineinfoSchedule {
+    /**
+     * - (Optional) snapshot freq and log config
+     */
+    continuousschedule?: outputs.NdbDatabaseTimemachineinfoScheduleContinuousschedule;
+    /**
+     * - (Optional) monthly snapshot config
+     */
+    monthlyschedule?: outputs.NdbDatabaseTimemachineinfoScheduleMonthlyschedule;
+    /**
+     * - (Optional) quaterly snapshot config
+     */
+    quartelyschedule?: outputs.NdbDatabaseTimemachineinfoScheduleQuartelyschedule;
+    /**
+     * - (Optional) daily snapshot config
+     */
+    snapshottimeofday?: outputs.NdbDatabaseTimemachineinfoScheduleSnapshottimeofday;
+    /**
+     * - (Optional) weekly snapshot config
+     */
+    weeklyschedule?: outputs.NdbDatabaseTimemachineinfoScheduleWeeklyschedule;
+    /**
+     * - (Optional) yearly snapshot config
+     */
+    yearlyschedule?: outputs.NdbDatabaseTimemachineinfoScheduleYearlyschedule;
+}
+
+export interface NdbDatabaseTimemachineinfoScheduleContinuousschedule {
+    /**
+     * - (Required) to enable
+     */
+    enabled: boolean;
+    /**
+     * - (Required) log catchup interval for database
+     */
+    logbackupinterval: number;
+    /**
+     * - (Required) num of snapshots per day
+     */
+    snapshotsperday: number;
+}
+
+export interface NdbDatabaseTimemachineinfoScheduleMonthlyschedule {
+    /**
+     * - (Required) day of month to take snapshot
+     */
+    dayofmonth: number;
+    /**
+     * - (Required) to enable
+     */
+    enabled: boolean;
+}
+
+export interface NdbDatabaseTimemachineinfoScheduleQuartelyschedule {
+    /**
+     * - (Required) month's day for snapshot
+     */
+    dayofmonth: number;
+    /**
+     * - (Required) to enable
+     */
+    enabled: boolean;
+    /**
+     * - (Required) quarter start month
+     */
+    startmonth: string;
+}
+
+export interface NdbDatabaseTimemachineinfoScheduleSnapshottimeofday {
+    /**
+     * - (Required) hours
+     */
+    hours: number;
+    /**
+     * - (Required) minutes
+     */
+    minutes: number;
+    /**
+     * - (Required) seconds
+     */
+    seconds: number;
+}
+
+export interface NdbDatabaseTimemachineinfoScheduleWeeklyschedule {
+    /**
+     * - (Required) day of week to take snaphsot. Eg. "WEDNESDAY"
+     */
+    dayofweek: string;
+    /**
+     * - (Required) to enable
+     */
+    enabled: boolean;
+}
+
+export interface NdbDatabaseTimemachineinfoScheduleYearlyschedule {
+    /**
+     * - (Required) day of month to take snapshot
+     */
+    dayofmonth: number;
+    /**
+     * - (Required) to enable
+     */
+    enabled: boolean;
+    /**
+     * - (Required) month for snapshot
+     */
+    month: string;
+}
+
+export interface NdbDatabaseTimemachineinfoSlaDetail {
+    /**
+     * - (Required) primary sla details
+     * * `primary_sla.sla_id` :- (Required) sla id
+     * * `primary_sla.nx_cluster_ids` -: (Optioanl) cluster ids
+     */
+    primarySlas?: outputs.NdbDatabaseTimemachineinfoSlaDetailPrimarySla[];
+}
+
+export interface NdbDatabaseTimemachineinfoSlaDetailPrimarySla {
+    nxClusterIds?: string[];
+    /**
+     * description of SLA ID.
+     */
+    slaId: string;
+}
+
+export interface NdbDatabaseTimemachineinfoTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbDbserverVmCredential {
+    label?: string;
+    password: string;
+    username: string;
+}
+
+export interface NdbDbserverVmMaintenanceTasks {
+    maintenanceWindowId?: string;
+    tasks?: outputs.NdbDbserverVmMaintenanceTasksTask[];
+}
+
+export interface NdbDbserverVmMaintenanceTasksTask {
+    postCommand?: string;
+    preCommand?: string;
+    taskType?: string;
+}
+
+export interface NdbDbserverVmPostgresDatabase {
+    clientPublicKey?: string;
+    vmName: string;
+}
+
+export interface NdbDbserverVmProperty {
+    name: string;
+    value: string;
+}
+
+export interface NdbDbserverVmTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbLinkedDatabasesInfo {
+    infos: outputs.NdbLinkedDatabasesInfoInfo[];
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbLinkedDatabasesInfoInfo {
+    createdBy: string;
+}
+
+export interface NdbMaintenanceTaskEntityTaskAssociation {
+    /**
+     * access level of tasks
+     */
+    accessLevel: string;
+    /**
+     * created date of task
+     */
+    dateCreated: string;
+    /**
+     * modified date of task
+     */
+    dateModified: string;
+    /**
+     * description of maintenance window
+     */
+    description: string;
+    entity: string;
+    /**
+     * entity id
+     */
+    entityId: string;
+    /**
+     * type of the entity. i.e. DBSERVER
+     */
+    entityType: string;
+    /**
+     * id of maintenance window
+     */
+    id: string;
+    /**
+     * maintenance window id which has to be associated
+     */
+    maintenanceWindowId: string;
+    /**
+     * maintenance window owner id
+     */
+    maintenanceWindowOwnerId: string;
+    /**
+     * name of of maintenance window
+     */
+    name: string;
+    /**
+     * owner id of task
+     */
+    ownerId: string;
+    /**
+     * list of pre post commands of OS or DB task
+     */
+    payloads: outputs.NdbMaintenanceTaskEntityTaskAssociationPayload[];
+    /**
+     * properties of task
+     */
+    properties: outputs.NdbMaintenanceTaskEntityTaskAssociationProperty[];
+    /**
+     * status of task
+     */
+    status: string;
+    /**
+     * tags of task
+     */
+    tags: outputs.NdbMaintenanceTaskEntityTaskAssociationTag[];
+    /**
+     * type of the task. OS or DB
+     */
+    taskType: string;
+}
+
+export interface NdbMaintenanceTaskEntityTaskAssociationPayload {
+    /**
+     * Pre Post command of Task
+     */
+    prePostCommands: outputs.NdbMaintenanceTaskEntityTaskAssociationPayloadPrePostCommand[];
+}
+
+export interface NdbMaintenanceTaskEntityTaskAssociationPayloadPrePostCommand {
+    /**
+     * post command of task
+     */
+    postCommand: string;
+    /**
+     * pre command of task
+     */
+    preCommand: string;
+}
+
+export interface NdbMaintenanceTaskEntityTaskAssociationProperty {
+    /**
+     * name of of maintenance window
+     */
+    name: string;
+    value: string;
+}
+
+export interface NdbMaintenanceTaskEntityTaskAssociationTag {
+    /**
+     * entity id
+     */
+    entityId: string;
+    /**
+     * type of the entity. i.e. DBSERVER
+     */
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbMaintenanceTaskTask {
+    /**
+     * command that you want to run after patching the OS/DB
+     */
+    postCommand?: string;
+    /**
+     * command that you want to run before patching the OS/DB
+     */
+    preCommand?: string;
+    /**
+     * type of task. Supports [ "OS_PATCHING", "DB_PATCHING" ]
+     */
+    taskType?: string;
+}
+
+export interface NdbMaintenanceWindowEntityTaskAssoc {
+    /**
+     * access level
+     */
+    accessLevel: string;
+    /**
+     * created date of maintenance window
+     */
+    dateCreated: string;
+    /**
+     * modified date of maintenance window
+     */
+    dateModified: string;
+    /**
+     * Description for maintenance window
+     */
+    description: string;
+    entity: string;
+    entityId: string;
+    entityType: string;
+    id: string;
+    maintenanceWindowId: string;
+    maintenanceWindowOwnerId: string;
+    /**
+     * Name for the maintenance window.
+     */
+    name: string;
+    /**
+     * owner id of maintenance window
+     */
+    ownerId: string;
+    payloads: outputs.NdbMaintenanceWindowEntityTaskAssocPayload[];
+    /**
+     * properties of maintenance window
+     */
+    properties: outputs.NdbMaintenanceWindowEntityTaskAssocProperty[];
+    /**
+     * status of maintennace window
+     */
+    status: string;
+    /**
+     * tags of maintenance window
+     */
+    tags: outputs.NdbMaintenanceWindowEntityTaskAssocTag[];
+    taskType: string;
+}
+
+export interface NdbMaintenanceWindowEntityTaskAssocPayload {
+    prePostCommands: outputs.NdbMaintenanceWindowEntityTaskAssocPayloadPrePostCommand[];
+}
+
+export interface NdbMaintenanceWindowEntityTaskAssocPayloadPrePostCommand {
+    postCommand: string;
+    preCommand: string;
+}
+
+export interface NdbMaintenanceWindowEntityTaskAssocProperty {
+    /**
+     * Name for the maintenance window.
+     */
+    name: string;
+    value: string;
+}
+
+export interface NdbMaintenanceWindowEntityTaskAssocTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbMaintenanceWindowProperty {
+    /**
+     * Name for the maintenance window.
+     */
+    name: string;
+    value: string;
+}
+
+export interface NdbMaintenanceWindowSchedule {
+    /**
+     * Day of the week to trigger maintenance window. Supports [ MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
+     */
+    dayOfWeek: string;
+    /**
+     * duration in hours. Default is 2
+     */
+    duration: number;
+    hour: number;
+    minute: number;
+    /**
+     * Supported values [ MONTHLY, WEEKLY ]
+     */
+    recurrence: string;
+    /**
+     * start time for maintenance window to trigger
+     */
+    startTime?: string;
+    threshold: string;
+    /**
+     * timezone . Default is Asia/Calcutta .
+     */
+    timezone: string;
+    /**
+     * week of the month. Supports [1, 2, 3, 4] .
+     */
+    weekOfMonth: number;
+}
+
+export interface NdbMaintenanceWindowTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbNetworkIpPool {
+    addresses: outputs.NdbNetworkIpPoolAddress[];
+    /**
+     * ending IP address range for new database servers
+     */
+    endIp: string;
+    id: string;
+    modifiedBy: string;
+    /**
+     * starting IP address range for new database servers
+     */
+    startIp: string;
+}
+
+export interface NdbNetworkIpPoolAddress {
+    ip: string;
+    status: string;
+}
+
+export interface NdbNetworkPropertiesMap {
+    vlanGateway: string;
+    vlanPrimaryDns: string;
+    vlanSecondaryDns: string;
+    vlanSubnetMask: string;
+}
+
+export interface NdbNetworkProperty {
+    /**
+     * Name of the vlan to be attached in NDB
+     */
+    name: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbProfileClusterAvailability {
+    dateCreated: string;
+    dateModified: string;
+    nxClusterId: string;
+    ownerId: string;
+    profileId: string;
+    status: string;
+}
+
+export interface NdbProfileComputeProfile {
+    corePerCpu?: string;
+    cpus?: string;
+    memorySize?: string;
+}
+
+export interface NdbProfileDatabaseParameterProfile {
+    postgresDatabases?: outputs.NdbProfileDatabaseParameterProfilePostgresDatabase[];
+}
+
+export interface NdbProfileDatabaseParameterProfilePostgresDatabase {
+    autovacuum?: string;
+    autovacuumFreezeMaxAge?: string;
+    autovacuumMaxWorkers?: string;
+    autovacuumVacuumCostDelay?: string;
+    autovacuumVacuumScaleFactor?: string;
+    autovacuumVacuumThreshold?: string;
+    autovacuumWorkMem?: string;
+    checkpointCompletionTarget?: string;
+    checkpointTimeout?: string;
+    effectiveIoConcurrency?: string;
+    maxConnections?: string;
+    maxLocksPerTransaction?: string;
+    maxPreparedTransactions?: string;
+    maxReplicationSlots?: string;
+    maxWalSenders?: string;
+    maxWalSize?: string;
+    maxWorkerProcesses?: string;
+    minWalSize?: string;
+    randomPageCost?: string;
+    synchronousCommit?: string;
+    timezone?: string;
+    walBuffers?: string;
+    walKeepSegments?: string;
+}
+
+export interface NdbProfileNetworkProfile {
+    postgresDatabases?: outputs.NdbProfileNetworkProfilePostgresDatabase[];
+    topology: string;
+    versionClusterAssociations?: outputs.NdbProfileNetworkProfileVersionClusterAssociation[];
+}
+
+export interface NdbProfileNetworkProfilePostgresDatabase {
+    haInstances?: outputs.NdbProfileNetworkProfilePostgresDatabaseHaInstance[];
+    singleInstances?: outputs.NdbProfileNetworkProfilePostgresDatabaseSingleInstance[];
+}
+
+export interface NdbProfileNetworkProfilePostgresDatabaseHaInstance {
+    clusterIds?: string[];
+    clusterNames?: string[];
+    numOfClusters?: string;
+    vlanNames?: string[];
+}
+
+export interface NdbProfileNetworkProfilePostgresDatabaseSingleInstance {
+    enableIpAddressSelection?: string;
+    vlanName?: string;
+}
+
+export interface NdbProfileNetworkProfileVersionClusterAssociation {
+    nxClusterId: string;
+}
+
+export interface NdbProfileSoftwareProfile {
+    availableClusterIds?: string[];
+    postgresDatabases?: outputs.NdbProfileSoftwareProfilePostgresDatabase[];
+    topology: string;
+}
+
+export interface NdbProfileSoftwareProfilePostgresDatabase {
+    baseProfileVersionDescription?: string;
+    baseProfileVersionName?: string;
+    dbSoftwareNotes?: string;
+    osNotes?: string;
+    sourceDbserverId?: string;
+}
+
+export interface NdbProfileVersion {
+    dbVersion: string;
+    deprecated: boolean;
+    description: string;
+    engineType: string;
+    id: string;
+    name: string;
+    owner: string;
+    profileId: string;
+    properties: outputs.NdbProfileVersionProperty[];
+    propertiesMap: {[key: string]: string};
+    published: boolean;
+    status: string;
+    systemProfile: boolean;
+    topology: string;
+    type: string;
+    version: string;
+    versionClusterAssociations: outputs.NdbProfileVersionVersionClusterAssociation[];
+}
+
+export interface NdbProfileVersionProperty {
+    name: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbProfileVersionVersionClusterAssociation {
+    dateCreated: string;
+    dateModified: string;
+    nxClusterId: string;
+    optimizedForProvisioning: boolean;
+    ownerId: string;
+    profileVersionId: string;
+    properties: outputs.NdbProfileVersionVersionClusterAssociationProperty[];
+    status: string;
+}
+
+export interface NdbProfileVersionVersionClusterAssociationProperty {
+    name: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbRegisterDatabaseActionargument {
+    /**
+     * - (Required) name of argument
+     */
+    name: string;
+    /**
+     * - (Required) value for argument
+     */
+    value: string;
+}
+
+export interface NdbRegisterDatabaseDatabaseNode {
+    accessLevel: {[key: string]: string};
+    databaseId: string;
+    /**
+     * status of database
+     */
+    databaseStatus: string;
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    dbserver: {[key: string]: string};
+    dbserverId: string;
+    /**
+     * description
+     */
+    description: string;
+    id: string;
+    /**
+     * info of instance
+     */
+    infos: outputs.NdbRegisterDatabaseDatabaseNodeInfo[];
+    /**
+     * Name of database instance
+     */
+    name: string;
+    primary: boolean;
+    /**
+     * properties of database created
+     */
+    properties: outputs.NdbRegisterDatabaseDatabaseNodeProperty[];
+    protectionDomainId: string;
+    protectionDomains: outputs.NdbRegisterDatabaseDatabaseNodeProtectionDomain[];
+    softwareInstallationId: string;
+    /**
+     * status of instance
+     */
+    status: string;
+    /**
+     * tags
+     */
+    tags: outputs.NdbRegisterDatabaseDatabaseNodeTag[];
+}
+
+export interface NdbRegisterDatabaseDatabaseNodeInfo {
+    /**
+     * info of instance
+     */
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbRegisterDatabaseDatabaseNodeProperty {
+    /**
+     * description
+     */
+    description: string;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbRegisterDatabaseDatabaseNodeProtectionDomain {
+    assocEntities: string[];
+    cloudId: string;
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    /**
+     * description
+     */
+    description: string;
+    eraCreated: boolean;
+    id: string;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    ownerId: string;
+    primaryHost: string;
+    /**
+     * properties of database created
+     */
+    properties: outputs.NdbRegisterDatabaseDatabaseNodeProtectionDomainProperty[];
+    /**
+     * status of instance
+     */
+    status: string;
+    /**
+     * type of database
+     */
+    type: string;
+}
+
+export interface NdbRegisterDatabaseDatabaseNodeProtectionDomainProperty {
+    /**
+     * description
+     */
+    description: string;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbRegisterDatabaseDatabaseNodeTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbRegisterDatabaseInfo {
+    bpgConfigs: outputs.NdbRegisterDatabaseInfoBpgConfig[];
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbRegisterDatabaseInfoBpgConfig {
+    bpgDbParams: outputs.NdbRegisterDatabaseInfoBpgConfigBpgDbParam[];
+    storages: outputs.NdbRegisterDatabaseInfoBpgConfigStorage[];
+    vmProperties: outputs.NdbRegisterDatabaseInfoBpgConfigVmProperty[];
+}
+
+export interface NdbRegisterDatabaseInfoBpgConfigBpgDbParam {
+    effectiveCacheSize: string;
+    maintenanceWorkMem: string;
+    maxParallelWorkersPerGather: string;
+    maxWorkerProcesses: string;
+    sharedBuffers: string;
+    workMem: string;
+}
+
+export interface NdbRegisterDatabaseInfoBpgConfigStorage {
+    archiveStorages: outputs.NdbRegisterDatabaseInfoBpgConfigStorageArchiveStorage[];
+    dataDisks: outputs.NdbRegisterDatabaseInfoBpgConfigStorageDataDisk[];
+    logDisks: outputs.NdbRegisterDatabaseInfoBpgConfigStorageLogDisk[];
+}
+
+export interface NdbRegisterDatabaseInfoBpgConfigStorageArchiveStorage {
+    size: number;
+}
+
+export interface NdbRegisterDatabaseInfoBpgConfigStorageDataDisk {
+    count: number;
+}
+
+export interface NdbRegisterDatabaseInfoBpgConfigStorageLogDisk {
+    count: number;
+    size: number;
+}
+
+export interface NdbRegisterDatabaseInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio: number;
+    dirtyExpireCentisecs: number;
+    dirtyRatio: number;
+    dirtyWritebackCentisecs: number;
+    nrHugepages: number;
+    overcommitMemory: number;
+    swappiness: number;
+}
+
+export interface NdbRegisterDatabaseLcmConfig {
+    expiryDetails: outputs.NdbRegisterDatabaseLcmConfigExpiryDetail[];
+    postDeleteCommands: outputs.NdbRegisterDatabaseLcmConfigPostDeleteCommand[];
+    preDeleteCommands: outputs.NdbRegisterDatabaseLcmConfigPreDeleteCommand[];
+    refreshDetails: outputs.NdbRegisterDatabaseLcmConfigRefreshDetail[];
+}
+
+export interface NdbRegisterDatabaseLcmConfigExpiryDetail {
+    deleteDatabase: boolean;
+    /**
+     * - (Optional) Delete the database's Time Machine (snapshots/logs) from the NDB. Default value is true
+     */
+    deleteTimeMachine: boolean;
+    deleteVm: boolean;
+    effectiveTimestamp: string;
+    expireInDays: number;
+    expiryDateTimezone: string;
+    expiryTimestamp: string;
+    remindBeforeInDays: number;
+    userCreated: boolean;
+}
+
+export interface NdbRegisterDatabaseLcmConfigPostDeleteCommand {
+    command: string;
+}
+
+export interface NdbRegisterDatabaseLcmConfigPreDeleteCommand {
+    command: string;
+}
+
+export interface NdbRegisterDatabaseLcmConfigRefreshDetail {
+    lastRefreshDate: string;
+    nextRefreshDate: string;
+    refreshDateTimezone: string;
+    refreshInDays: number;
+    refreshInHours: number;
+    refreshInMonths: number;
+    refreshTime: string;
+}
+
+export interface NdbRegisterDatabaseLinkedDatabase {
+    /**
+     * name of database
+     */
+    databaseName: string;
+    /**
+     * status of database
+     */
+    databaseStatus: string;
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    /**
+     * description
+     */
+    description: string;
+    id: string;
+    /**
+     * info of instance
+     */
+    infos: outputs.NdbRegisterDatabaseLinkedDatabaseInfo[];
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
+    metric: {[key: string]: string};
+    /**
+     * Name of database instance
+     */
+    name: string;
+    /**
+     * parent database id
+     */
+    parentDatabaseId: string;
+    parentLinkedDatabaseId: string;
+    snapshotId: string;
+    /**
+     * status of instance
+     */
+    status: string;
+    timezone: string;
+}
+
+export interface NdbRegisterDatabaseLinkedDatabaseInfo {
+    /**
+     * info of instance
+     */
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbRegisterDatabasePostgressInfo {
+    /**
+     * allow multiple databases. Default is true
+     */
+    allowMultipleDatabases?: boolean;
+    /**
+     * backup policy of database. Default is prefer_secondary.
+     */
+    backupPolicy?: string;
+    /**
+     * name of the database server VM on which the instance you want to register is running.
+     */
+    dbName: string;
+    /**
+     * database password
+     */
+    dbPassword: string;
+    /**
+     * username of the NDB drive user account that has sudo access.
+     */
+    dbUser?: string;
+    /**
+     * listner port of database
+     */
+    listenerPort: string;
+    /**
+     * path to the PostgreSQL home directory in which the PostgreSQL software is installed.
+     */
+    postgresSoftwareHome: string;
+    /**
+     * path to the directory in which the PostgreSQL software is installed.
+     */
+    softwareHome?: string;
+    /**
+     * switch log of database. Default is true
+     */
+    switchLog?: boolean;
+    /**
+     * VM IP of the database server VM on which the instance you want to register is running.
+     */
+    vmIp?: string;
+}
+
+export interface NdbRegisterDatabaseProperty {
+    /**
+     * Name of database instance
+     */
+    name: string;
+    value: string;
+}
+
+export interface NdbRegisterDatabaseTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbRegisterDatabaseTimeMachine {
+    accessLevel: string;
+    /**
+     * whether instance is cloned or not
+     */
+    clone: boolean;
+    clones: string;
+    /**
+     * clustered or not. Default is false
+     */
+    clustered: boolean;
+    database: string;
+    databaseId: string;
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    /**
+     * description
+     */
+    description: string;
+    eaStatus: string;
+    id: string;
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
+    metric: string;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    /**
+     * properties of database created
+     */
+    properties: outputs.NdbRegisterDatabaseTimeMachineProperty[];
+    scheduleId: string;
+    schedules: outputs.NdbRegisterDatabaseTimeMachineSchedule[];
+    scope: string;
+    slaId: string;
+    slaUpdateInProgress: boolean;
+    slaUpdateMetadata: string;
+    slas: outputs.NdbRegisterDatabaseTimeMachineSla[];
+    sourceNxClusters: string[];
+    /**
+     * status of instance
+     */
+    status: string;
+    /**
+     * tags
+     */
+    tags: outputs.NdbRegisterDatabaseTimeMachineTag[];
+    /**
+     * type of database
+     */
+    type: string;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfo {
+    /**
+     * - (Optional) enable auto tune log drive. Default: true
+     */
+    autotunelogdrive?: boolean;
+    /**
+     * - (Optional) description of time machine
+     */
+    description?: string;
+    /**
+     * - (Required) name of time machine
+     */
+    name: string;
+    /**
+     * - (Optional) schedule for snapshots
+     */
+    schedule: outputs.NdbRegisterDatabaseTimeMachineInfoSchedule;
+    /**
+     * -  (optional) SLA details for HA instance
+     */
+    slaDetails?: outputs.NdbRegisterDatabaseTimeMachineInfoSlaDetail[];
+    /**
+     * - (Optional) SLA ID for single instance
+     */
+    slaid?: string;
+    /**
+     * - (Optional) tags
+     */
+    tags: outputs.NdbRegisterDatabaseTimeMachineInfoTag[];
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoSchedule {
+    /**
+     * - (Optional) snapshot freq and log config
+     */
+    continuousschedule?: outputs.NdbRegisterDatabaseTimeMachineInfoScheduleContinuousschedule;
+    /**
+     * - (Optional) monthly snapshot config
+     */
+    monthlyschedule?: outputs.NdbRegisterDatabaseTimeMachineInfoScheduleMonthlyschedule;
+    /**
+     * - (Optional) quaterly snapshot config
+     */
+    quartelyschedule?: outputs.NdbRegisterDatabaseTimeMachineInfoScheduleQuartelyschedule;
+    /**
+     * - (Optional) daily snapshot config
+     */
+    snapshottimeofday?: outputs.NdbRegisterDatabaseTimeMachineInfoScheduleSnapshottimeofday;
+    /**
+     * - (Optional) weekly snapshot config
+     */
+    weeklyschedule?: outputs.NdbRegisterDatabaseTimeMachineInfoScheduleWeeklyschedule;
+    /**
+     * - (Optional) yearly snapshot config
+     */
+    yearlyschedule?: outputs.NdbRegisterDatabaseTimeMachineInfoScheduleYearlyschedule;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoScheduleContinuousschedule {
+    enabled: boolean;
+    logbackupinterval: number;
+    snapshotsperday: number;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoScheduleMonthlyschedule {
+    dayofmonth: number;
+    enabled: boolean;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoScheduleQuartelyschedule {
+    dayofmonth: number;
+    enabled: boolean;
+    startmonth: string;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoScheduleSnapshottimeofday {
+    hours: number;
+    minutes: number;
+    seconds: number;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoScheduleWeeklyschedule {
+    dayofweek: string;
+    enabled: boolean;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoScheduleYearlyschedule {
+    dayofmonth: number;
+    enabled: boolean;
+    month: string;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoSlaDetail {
+    /**
+     * - (Required) primary sla details
+     * * `primary_sla.sla_id` :- (Required) sla id
+     * * `primary_sla.nx_cluster_ids` -: (Optioanl) cluster ids
+     */
+    primarySlas?: outputs.NdbRegisterDatabaseTimeMachineInfoSlaDetailPrimarySla[];
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoSlaDetailPrimarySla {
+    nxClusterIds?: string[];
+    /**
+     * description of SLA ID.
+     */
+    slaId: string;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbRegisterDatabaseTimeMachineProperty {
+    /**
+     * description
+     */
+    description: string;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbRegisterDatabaseTimeMachineSchedule {
+    continuousSchedules: outputs.NdbRegisterDatabaseTimeMachineScheduleContinuousSchedule[];
+    dailySchedules: outputs.NdbRegisterDatabaseTimeMachineScheduleDailySchedule[];
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    /**
+     * description
+     */
+    description: string;
+    globalPolicy: boolean;
+    id: string;
+    monthlySchedules: outputs.NdbRegisterDatabaseTimeMachineScheduleMonthlySchedule[];
+    /**
+     * Name of database instance
+     */
+    name: string;
+    ownerId: string;
+    quartelySchedules: outputs.NdbRegisterDatabaseTimeMachineScheduleQuartelySchedule[];
+    referenceCount: number;
+    snapshotTimeOfDays: outputs.NdbRegisterDatabaseTimeMachineScheduleSnapshotTimeOfDay[];
+    startTime: string;
+    systemPolicy: boolean;
+    /**
+     * timezone on which instance is created xw
+     */
+    timeZone: string;
+    uniqueName: string;
+    weeklySchedules: outputs.NdbRegisterDatabaseTimeMachineScheduleWeeklySchedule[];
+    yearlySchedules: outputs.NdbRegisterDatabaseTimeMachineScheduleYearlySchedule[];
+}
+
+export interface NdbRegisterDatabaseTimeMachineScheduleContinuousSchedule {
+    enabled: boolean;
+    logBackupInterval: number;
+    snapshotsPerDay: number;
+}
+
+export interface NdbRegisterDatabaseTimeMachineScheduleDailySchedule {
+    enabled: boolean;
+}
+
+export interface NdbRegisterDatabaseTimeMachineScheduleMonthlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+}
+
+export interface NdbRegisterDatabaseTimeMachineScheduleQuartelySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    startMonth: string;
+    startMonthValue: string;
+}
+
+export interface NdbRegisterDatabaseTimeMachineScheduleSnapshotTimeOfDay {
+    extra: boolean;
+    hours: number;
+    minutes: number;
+    seconds: number;
+}
+
+export interface NdbRegisterDatabaseTimeMachineScheduleWeeklySchedule {
+    dayOfWeek: string;
+    dayOfWeekValue: string;
+    enabled: boolean;
+}
+
+export interface NdbRegisterDatabaseTimeMachineScheduleYearlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    month: string;
+    monthValue: string;
+}
+
+export interface NdbRegisterDatabaseTimeMachineSla {
+    continuousRetention: number;
+    currentActiveFrequency: string;
+    dailyRetention: number;
+    /**
+     * date created for db instance
+     */
+    dateCreated: string;
+    /**
+     * date modified for instance
+     */
+    dateModified: string;
+    /**
+     * description
+     */
+    description: string;
+    id: string;
+    monthlyRetention: number;
+    /**
+     * Name of database instance
+     */
+    name: string;
+    ownerId: string;
+    pitrEnabled: boolean;
+    quarterlyRetention: number;
+    referenceCount: number;
+    systemSla: boolean;
+    uniqueName: string;
+    weeklyRetention: number;
+    yearlyRetention: number;
+}
+
+export interface NdbRegisterDatabaseTimeMachineTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbRegisterDbserverCredential {
+    label?: string;
+    password: string;
+    username: string;
+}
+
+export interface NdbRegisterDbserverPostgresDatabase {
+    listenerPort?: string;
+    postgresSoftwareHome?: string;
+}
+
+export interface NdbRegisterDbserverProperty {
+    name: string;
+    value: string;
+}
+
+export interface NdbRegisterDbserverTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbScaleDatabaseDatabaseNode {
+    accessLevel: {[key: string]: string};
+    databaseId: string;
+    databaseStatus: string;
+    dateCreated: string;
+    dateModified: string;
+    dbserver: {[key: string]: string};
+    dbserverId: string;
+    description: string;
+    id: string;
+    infos: outputs.NdbScaleDatabaseDatabaseNodeInfo[];
+    name: string;
+    primary: boolean;
+    /**
+     * List of all the properties
+     */
+    properties: outputs.NdbScaleDatabaseDatabaseNodeProperty[];
+    protectionDomainId: string;
+    protectionDomains: outputs.NdbScaleDatabaseDatabaseNodeProtectionDomain[];
+    softwareInstallationId: string;
+    status: string;
+    tags: outputs.NdbScaleDatabaseDatabaseNodeTag[];
+}
+
+export interface NdbScaleDatabaseDatabaseNodeInfo {
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbScaleDatabaseDatabaseNodeProperty {
+    description: string;
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbScaleDatabaseDatabaseNodeProtectionDomain {
+    assocEntities: string[];
+    cloudId: string;
+    dateCreated: string;
+    dateModified: string;
+    description: string;
+    eraCreated: boolean;
+    id: string;
+    name: string;
+    ownerId: string;
+    primaryHost: string;
+    /**
+     * List of all the properties
+     */
+    properties: outputs.NdbScaleDatabaseDatabaseNodeProtectionDomainProperty[];
+    status: string;
+    type: string;
+}
+
+export interface NdbScaleDatabaseDatabaseNodeProtectionDomainProperty {
+    description: string;
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbScaleDatabaseDatabaseNodeTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbScaleDatabaseInfo {
+    bpgConfigs: outputs.NdbScaleDatabaseInfoBpgConfig[];
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbScaleDatabaseInfoBpgConfig {
+    bpgDbParams: outputs.NdbScaleDatabaseInfoBpgConfigBpgDbParam[];
+    storages: outputs.NdbScaleDatabaseInfoBpgConfigStorage[];
+    vmProperties: outputs.NdbScaleDatabaseInfoBpgConfigVmProperty[];
+}
+
+export interface NdbScaleDatabaseInfoBpgConfigBpgDbParam {
+    effectiveCacheSize: string;
+    maintenanceWorkMem: string;
+    maxParallelWorkersPerGather: string;
+    maxWorkerProcesses: string;
+    sharedBuffers: string;
+    workMem: string;
+}
+
+export interface NdbScaleDatabaseInfoBpgConfigStorage {
+    archiveStorages: outputs.NdbScaleDatabaseInfoBpgConfigStorageArchiveStorage[];
+    dataDisks: outputs.NdbScaleDatabaseInfoBpgConfigStorageDataDisk[];
+    logDisks: outputs.NdbScaleDatabaseInfoBpgConfigStorageLogDisk[];
+}
+
+export interface NdbScaleDatabaseInfoBpgConfigStorageArchiveStorage {
+    size: number;
+}
+
+export interface NdbScaleDatabaseInfoBpgConfigStorageDataDisk {
+    count: number;
+}
+
+export interface NdbScaleDatabaseInfoBpgConfigStorageLogDisk {
+    count: number;
+    size: number;
+}
+
+export interface NdbScaleDatabaseInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio: number;
+    dirtyExpireCentisecs: number;
+    dirtyRatio: number;
+    dirtyWritebackCentisecs: number;
+    nrHugepages: number;
+    overcommitMemory: number;
+    swappiness: number;
+}
+
+export interface NdbScaleDatabaseLcmConfig {
+    expiryDetails: outputs.NdbScaleDatabaseLcmConfigExpiryDetail[];
+    postDeleteCommands: outputs.NdbScaleDatabaseLcmConfigPostDeleteCommand[];
+    preDeleteCommands: outputs.NdbScaleDatabaseLcmConfigPreDeleteCommand[];
+    refreshDetails: outputs.NdbScaleDatabaseLcmConfigRefreshDetail[];
+}
+
+export interface NdbScaleDatabaseLcmConfigExpiryDetail {
+    deleteDatabase: boolean;
+    deleteTimeMachine: boolean;
+    deleteVm: boolean;
+    effectiveTimestamp: string;
+    expireInDays: number;
+    expiryDateTimezone: string;
+    expiryTimestamp: string;
+    remindBeforeInDays: number;
+    userCreated: boolean;
+}
+
+export interface NdbScaleDatabaseLcmConfigPostDeleteCommand {
+    command: string;
+}
+
+export interface NdbScaleDatabaseLcmConfigPreDeleteCommand {
+    command: string;
+}
+
+export interface NdbScaleDatabaseLcmConfigRefreshDetail {
+    lastRefreshDate: string;
+    nextRefreshDate: string;
+    refreshDateTimezone: string;
+    refreshInDays: number;
+    refreshInHours: number;
+    refreshInMonths: number;
+    refreshTime: string;
+}
+
+export interface NdbScaleDatabaseLinkedDatabase {
+    databaseName: string;
+    databaseStatus: string;
+    dateCreated: string;
+    dateModified: string;
+    description: string;
+    id: string;
+    infos: outputs.NdbScaleDatabaseLinkedDatabaseInfo[];
+    metric: {[key: string]: string};
+    name: string;
+    parentDatabaseId: string;
+    parentLinkedDatabaseId: string;
+    snapshotId: string;
+    status: string;
+    timezone: string;
+}
+
+export interface NdbScaleDatabaseLinkedDatabaseInfo {
+    info: {[key: string]: string};
+    secureInfo: {[key: string]: string};
+}
+
+export interface NdbScaleDatabaseProperty {
+    name: string;
+    value: string;
+}
+
+export interface NdbScaleDatabaseTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbScaleDatabaseTimeMachine {
+    accessLevel: string;
+    clone: boolean;
+    clones: string;
+    clustered: boolean;
+    database: string;
+    databaseId: string;
+    dateCreated: string;
+    dateModified: string;
+    description: string;
+    eaStatus: string;
+    id: string;
+    metric: string;
+    name: string;
+    /**
+     * List of all the properties
+     */
+    properties: outputs.NdbScaleDatabaseTimeMachineProperty[];
+    scheduleId: string;
+    schedules: outputs.NdbScaleDatabaseTimeMachineSchedule[];
+    scope: string;
+    slaId: string;
+    slaUpdateInProgress: boolean;
+    slaUpdateMetadata: string;
+    slas: outputs.NdbScaleDatabaseTimeMachineSla[];
+    sourceNxClusters: string[];
+    status: string;
+    tags: outputs.NdbScaleDatabaseTimeMachineTag[];
+    type: string;
+}
+
+export interface NdbScaleDatabaseTimeMachineProperty {
+    description: string;
+    name: string;
+    refId: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbScaleDatabaseTimeMachineSchedule {
+    continuousSchedules: outputs.NdbScaleDatabaseTimeMachineScheduleContinuousSchedule[];
+    dailySchedules: outputs.NdbScaleDatabaseTimeMachineScheduleDailySchedule[];
+    dateCreated: string;
+    dateModified: string;
+    description: string;
+    globalPolicy: boolean;
+    id: string;
+    monthlySchedules: outputs.NdbScaleDatabaseTimeMachineScheduleMonthlySchedule[];
+    name: string;
+    ownerId: string;
+    quartelySchedules: outputs.NdbScaleDatabaseTimeMachineScheduleQuartelySchedule[];
+    referenceCount: number;
+    snapshotTimeOfDays: outputs.NdbScaleDatabaseTimeMachineScheduleSnapshotTimeOfDay[];
+    startTime: string;
+    systemPolicy: boolean;
+    timeZone: string;
+    uniqueName: string;
+    weeklySchedules: outputs.NdbScaleDatabaseTimeMachineScheduleWeeklySchedule[];
+    yearlySchedules: outputs.NdbScaleDatabaseTimeMachineScheduleYearlySchedule[];
+}
+
+export interface NdbScaleDatabaseTimeMachineScheduleContinuousSchedule {
+    enabled: boolean;
+    logBackupInterval: number;
+    snapshotsPerDay: number;
+}
+
+export interface NdbScaleDatabaseTimeMachineScheduleDailySchedule {
+    enabled: boolean;
+}
+
+export interface NdbScaleDatabaseTimeMachineScheduleMonthlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+}
+
+export interface NdbScaleDatabaseTimeMachineScheduleQuartelySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    startMonth: string;
+    startMonthValue: string;
+}
+
+export interface NdbScaleDatabaseTimeMachineScheduleSnapshotTimeOfDay {
+    extra: boolean;
+    hours: number;
+    minutes: number;
+    seconds: number;
+}
+
+export interface NdbScaleDatabaseTimeMachineScheduleWeeklySchedule {
+    dayOfWeek: string;
+    dayOfWeekValue: string;
+    enabled: boolean;
+}
+
+export interface NdbScaleDatabaseTimeMachineScheduleYearlySchedule {
+    dayOfMonth: number;
+    enabled: boolean;
+    month: string;
+    monthValue: string;
+}
+
+export interface NdbScaleDatabaseTimeMachineSla {
+    continuousRetention: number;
+    currentActiveFrequency: string;
+    dailyRetention: number;
+    dateCreated: string;
+    dateModified: string;
+    description: string;
+    id: string;
+    monthlyRetention: number;
+    name: string;
+    ownerId: string;
+    pitrEnabled: boolean;
+    quarterlyRetention: number;
+    referenceCount: number;
+    systemSla: boolean;
+    uniqueName: string;
+    weeklyRetention: number;
+    yearlyRetention: number;
+}
+
+export interface NdbScaleDatabaseTimeMachineTag {
+    entityId: string;
+    entityType: string;
+    tagId: string;
+    tagName: string;
+    value: string;
+}
+
+export interface NdbSoftwareVersionProfilePostgresDatabase {
+    dbSoftwareNotes?: string;
+    osNotes?: string;
+    sourceDbserverId?: string;
+}
+
+export interface NdbSoftwareVersionProfileProperty {
+    name: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbSoftwareVersionProfileVersionClusterAssociation {
+    dateCreated: string;
+    dateModified: string;
+    nxClusterId: string;
+    optimizedForProvisioning: boolean;
+    ownerId: string;
+    profileVersionId: string;
+    properties: outputs.NdbSoftwareVersionProfileVersionClusterAssociationProperty[];
+    status: string;
+}
+
+export interface NdbSoftwareVersionProfileVersionClusterAssociationProperty {
+    name: string;
+    secure: boolean;
+    value: string;
+}
+
+export interface NdbStretchedVlanMetadata {
+    gateway: string;
+    subnetMask: string;
+}
+
+export interface NdbStretchedVlanVlansList {
+    clusterId: string;
+    id: string;
+    managed: boolean;
+    name: string;
+    properties: outputs.NdbStretchedVlanVlansListProperty[];
+    propertiesMaps: outputs.NdbStretchedVlanVlansListPropertiesMap[];
+    stretchedVlanId: string;
+    type: string;
+}
+
+export interface NdbStretchedVlanVlansListPropertiesMap {
+    vlanGateway: string;
+    vlanPrimaryDns: string;
+    vlanSecondaryDns: string;
+    vlanSubnetMask: string;
+}
+
+export interface NdbStretchedVlanVlansListProperty {
+    name: string;
+    secure: boolean;
+    value: string;
 }
 
 export interface NetworkSecurityRuleAdRuleInboundAllowList {
@@ -7612,6 +16151,172 @@ export interface ProjectAccountReferenceList {
     uuid: string;
 }
 
+export interface ProjectAcp {
+    /**
+     * The list of context filters. These are OR filters. The scope-expression-list defines the context, and the filter works in conjunction with the entity-expression-list.
+     */
+    contextFilterLists: outputs.ProjectAcpContextFilterList[];
+    /**
+     * A description for project.
+     */
+    description?: string;
+    metadata: {[key: string]: string};
+    /**
+     * The name for the project.
+     */
+    name: string;
+    /**
+     * Reference to role.
+     */
+    roleReference: outputs.ProjectAcpRoleReference;
+    /**
+     * List of Reference of users groups.
+     */
+    userGroupReferenceLists?: outputs.ProjectAcpUserGroupReferenceList[];
+    /**
+     * List of Reference of users.
+     */
+    userReferenceLists?: outputs.ProjectAcpUserReferenceList[];
+}
+
+export interface ProjectAcpContextFilterList {
+    /**
+     * (Required) A list of Entity filter expressions.
+     */
+    entityFilterExpressionLists: outputs.ProjectAcpContextFilterListEntityFilterExpressionList[];
+    /**
+     * - (Optional) Filter the scope of an Access Control Policy.
+     */
+    scopeFilterExpressionLists?: outputs.ProjectAcpContextFilterListScopeFilterExpressionList[];
+}
+
+export interface ProjectAcpContextFilterListEntityFilterExpressionList {
+    /**
+     * - (Optional)  The LHS of the filter expression - the entity type.
+     */
+    leftHandSideEntityType: string;
+    /**
+     * - (Required) The operator in the filter expression.
+     */
+    operator: string;
+    /**
+     * - (Required) The right hand side (RHS) of an scope expression.
+     */
+    rightHandSide: outputs.ProjectAcpContextFilterListEntityFilterExpressionListRightHandSide;
+}
+
+export interface ProjectAcpContextFilterListEntityFilterExpressionListRightHandSide {
+    /**
+     * - (Optional) The category values represented as a dictionary of key > list of values.
+     */
+    categories: outputs.ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories;
+    /**
+     * - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+     */
+    collection: string;
+    /**
+     * - (Optional) The explicit list of UUIDs for the given kind.
+     */
+    uuidLists: string[];
+}
+
+export interface ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories {
+    /**
+     * The name for the project.
+     */
+    name: string;
+    /**
+     * value of the key.
+     */
+    values: string[];
+}
+
+export interface ProjectAcpContextFilterListScopeFilterExpressionList {
+    /**
+     * - (Optional)  The LHS of the filter expression - the scope type.
+     */
+    leftHandSide: string;
+    /**
+     * - (Required) The operator in the filter expression.
+     */
+    operator: string;
+    /**
+     * - (Required) The right hand side (RHS) of an scope expression.
+     */
+    rightHandSide: outputs.ProjectAcpContextFilterListScopeFilterExpressionListRightHandSide;
+}
+
+export interface ProjectAcpContextFilterListScopeFilterExpressionListRightHandSide {
+    /**
+     * - (Optional) The category values represented as a dictionary of key > list of values.
+     */
+    categories: outputs.ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories;
+    /**
+     * - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+     */
+    collection: string;
+    /**
+     * - (Optional) The explicit list of UUIDs for the given kind.
+     */
+    uuidLists: string[];
+}
+
+export interface ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories {
+    /**
+     * The name for the project.
+     */
+    name: string;
+    /**
+     * value of the key.
+     */
+    values: string[];
+}
+
+export interface ProjectAcpRoleReference {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind: string;
+    /**
+     * The name for the project.
+     */
+    name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
+export interface ProjectAcpUserGroupReferenceList {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: string;
+    /**
+     * The name for the project.
+     */
+    name?: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
+export interface ProjectAcpUserReferenceList {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: string;
+    /**
+     * The name for the project.
+     */
+    name?: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
 export interface ProjectCategory {
     /**
      * The name for the project.
@@ -7621,6 +16326,36 @@ export interface ProjectCategory {
      * value of the key.
      */
     value: string;
+}
+
+export interface ProjectClusterReferenceList {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: string;
+    /**
+     * The name for the project.
+     */
+    name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
+export interface ProjectDefaultEnvironmentReference {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: string;
+    /**
+     * The name for the project.
+     */
+    name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
 }
 
 export interface ProjectDefaultSubnetReference {
@@ -7708,7 +16443,107 @@ export interface ProjectSubnetReferenceList {
     uuid: string;
 }
 
+export interface ProjectTunnelReferenceList {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: string;
+    /**
+     * The name for the project.
+     */
+    name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
+export interface ProjectUserGroupList {
+    directoryServiceOus?: outputs.ProjectUserGroupListDirectoryServiceOus[];
+    directoryServiceUserGroups?: outputs.ProjectUserGroupListDirectoryServiceUserGroup[];
+    metadata?: {[key: string]: string};
+    samlUserGroups?: outputs.ProjectUserGroupListSamlUserGroup[];
+}
+
+export interface ProjectUserGroupListDirectoryServiceOus {
+    distinguishedName: string;
+}
+
+export interface ProjectUserGroupListDirectoryServiceUserGroup {
+    distinguishedName: string;
+}
+
+export interface ProjectUserGroupListSamlUserGroup {
+    idpUuid: string;
+    /**
+     * The name for the project.
+     */
+    name: string;
+}
+
+export interface ProjectUserList {
+    directoryServiceUser: outputs.ProjectUserListDirectoryServiceUser;
+    identityProviderUser: outputs.ProjectUserListIdentityProviderUser;
+    metadata?: {[key: string]: string};
+}
+
+export interface ProjectUserListDirectoryServiceUser {
+    defaultUserPrincipalName: string;
+    directoryServiceReference: outputs.ProjectUserListDirectoryServiceUserDirectoryServiceReference;
+    userPrincipalName: string;
+}
+
+export interface ProjectUserListDirectoryServiceUserDirectoryServiceReference {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: string;
+    /**
+     * The name for the project.
+     */
+    name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
+export interface ProjectUserListIdentityProviderUser {
+    identityProviderReference: outputs.ProjectUserListIdentityProviderUserIdentityProviderReference;
+    username: string;
+}
+
+export interface ProjectUserListIdentityProviderUserIdentityProviderReference {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: string;
+    /**
+     * The name for the project.
+     */
+    name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
 export interface ProjectUserReferenceList {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: string;
+    /**
+     * The name for the project.
+     */
+    name: string;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: string;
+}
+
+export interface ProjectVpcReferenceList {
     /**
      * (Required) The kind name (Default value: `project`).
      */
@@ -8285,6 +17120,36 @@ export interface UserDirectoryServiceUserDirectoryServiceReference {
     uuid: string;
 }
 
+export interface UserGroupsCategory {
+    /**
+     * - subnet name.
+     */
+    name: string;
+    value: string;
+}
+
+export interface UserGroupsDirectoryServiceOus {
+    distinguishedName: string;
+}
+
+export interface UserGroupsDirectoryServiceUserGroup {
+    /**
+     * - (Required) The Distinguished name for the user group.
+     */
+    distinguishedName: string;
+}
+
+export interface UserGroupsSamlUserGroup {
+    /**
+     * - (Required) The UUID of the Identity Provider that the group belongs to.
+     */
+    idpUuid: string;
+    /**
+     * - (Required) The name of the SAML group which the IDP provides.
+     */
+    name: string;
+}
+
 export interface UserIdentityProviderUser {
     /**
      * - (Optional) The reference to a identity provider. See #reference for to look the supported attributes.
@@ -8340,6 +17205,8 @@ export interface VirtualMachineCategory {
 export interface VirtualMachineDiskList {
     /**
      * Reference to a data source.
+     *
+     * The diskSize (the disk sizeMib and the diskSizeBytes attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk sizeMib or diskSizeBytes when you set dataSourceReference but, you can update the diskSize after creation (second apply).
      */
     dataSourceReference: {[key: string]: string};
     /**
@@ -8359,11 +17226,6 @@ export interface VirtualMachineDiskList {
      * - (Optional) The device ID which is used to uniquely identify this particular disk.
      */
     uuid: string;
-    /**
-     * Reference to a volume group.
-     *
-     * The diskSize (the disk sizeMib and the diskSizeBytes attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk sizeMib or diskSizeBytes when you set dataSourceReference but, you can update the diskSize after creation (second apply).
-     */
     volumeGroupReference: {[key: string]: string};
 }
 

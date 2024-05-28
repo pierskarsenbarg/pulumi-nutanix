@@ -86,6 +86,18 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// Nutanix Virtual machines can be imported using the `UUID` eg,
+    /// 
+    /// `
+    /// 
+    /// ```sh
+    /// $ pulumi import nutanix:index/virtualMachine:VirtualMachine vm01 0F75E6A7-55FB-44D9-A50D-14AD72E2CF7C
+    /// ```
+    /// 
+    /// `
     /// </summary>
     [NutanixResourceType("nutanix:index/virtualMachine:VirtualMachine")]
     public partial class VirtualMachine : global::Pulumi.CustomResource
@@ -207,6 +219,9 @@ namespace PiersKarsenbarg.Nutanix
         [Output("guestCustomizationSysprep")]
         public Output<ImmutableDictionary<string, string>> GuestCustomizationSysprep { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Generic key value pair used for custom attributes in sysprep.
+        /// </summary>
         [Output("guestCustomizationSysprepCustomKeyValues")]
         public Output<ImmutableDictionary<string, object>> GuestCustomizationSysprepCustomKeyValues { get; private set; } = null!;
 
@@ -247,7 +262,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> MachineType { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional) Memory size in MiB.
+        /// - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
         /// </summary>
         [Output("memorySizeMib")]
         public Output<int> MemorySizeMib { get; private set; } = null!;
@@ -318,6 +333,9 @@ namespace PiersKarsenbarg.Nutanix
         [Output("ownerReference")]
         public Output<ImmutableDictionary<string, string>> OwnerReference { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Reference to an entity that the VM cloned from.
+        /// </summary>
         [Output("parentReference")]
         public Output<ImmutableDictionary<string, string>> ParentReference { get; private set; } = null!;
 
@@ -571,6 +589,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("guestCustomizationSysprepCustomKeyValues")]
         private InputMap<object>? _guestCustomizationSysprepCustomKeyValues;
+
+        /// <summary>
+        /// - (Optional) Generic key value pair used for custom attributes in sysprep.
+        /// </summary>
         public InputMap<object> GuestCustomizationSysprepCustomKeyValues
         {
             get => _guestCustomizationSysprepCustomKeyValues ?? (_guestCustomizationSysprepCustomKeyValues = new InputMap<object>());
@@ -602,7 +624,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? MachineType { get; set; }
 
         /// <summary>
-        /// - (Optional) Memory size in MiB.
+        /// - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
         /// </summary>
         [Input("memorySizeMib")]
         public Input<int>? MemorySizeMib { get; set; }
@@ -693,6 +715,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("parentReference")]
         private InputMap<string>? _parentReference;
+
+        /// <summary>
+        /// - (Optional) Reference to an entity that the VM cloned from.
+        /// </summary>
         public InputMap<string> ParentReference
         {
             get => _parentReference ?? (_parentReference = new InputMap<string>());
@@ -922,6 +948,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("guestCustomizationSysprepCustomKeyValues")]
         private InputMap<object>? _guestCustomizationSysprepCustomKeyValues;
+
+        /// <summary>
+        /// - (Optional) Generic key value pair used for custom attributes in sysprep.
+        /// </summary>
         public InputMap<object> GuestCustomizationSysprepCustomKeyValues
         {
             get => _guestCustomizationSysprepCustomKeyValues ?? (_guestCustomizationSysprepCustomKeyValues = new InputMap<object>());
@@ -971,7 +1001,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? MachineType { get; set; }
 
         /// <summary>
-        /// - (Optional) Memory size in MiB.
+        /// - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
         /// </summary>
         [Input("memorySizeMib")]
         public Input<int>? MemorySizeMib { get; set; }
@@ -1086,6 +1116,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("parentReference")]
         private InputMap<string>? _parentReference;
+
+        /// <summary>
+        /// - (Optional) Reference to an entity that the VM cloned from.
+        /// </summary>
         public InputMap<string> ParentReference
         {
             get => _parentReference ?? (_parentReference = new InputMap<string>());

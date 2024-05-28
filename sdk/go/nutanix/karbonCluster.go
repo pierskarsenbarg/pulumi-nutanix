@@ -83,6 +83,71 @@ import (
 //	}
 //
 // ```
+//
+// ### resource to create karbon cluster with timeouts
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewKarbonCluster(ctx, "exampleCluster", &nutanix.KarbonClusterArgs{
+//				CniConfig: &nutanix.KarbonClusterCniConfigArgs{
+//					NodeCidrMaskSize: pulumi.Int(24),
+//					PodIpv4Cidr:      pulumi.String("172.20.0.0/16"),
+//					ServiceIpv4Cidr:  pulumi.String("172.19.0.0/16"),
+//				},
+//				EtcdNodePool: &nutanix.KarbonClusterEtcdNodePoolArgs{
+//					AhvConfig: &nutanix.KarbonClusterEtcdNodePoolAhvConfigArgs{
+//						NetworkUuid:             pulumi.String("my_subnet_id"),
+//						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
+//					},
+//					NodeOsVersion: pulumi.String("ntnx-1.0"),
+//					NumInstances:  pulumi.Int(1),
+//				},
+//				MasterNodePool: &nutanix.KarbonClusterMasterNodePoolArgs{
+//					AhvConfig: &nutanix.KarbonClusterMasterNodePoolAhvConfigArgs{
+//						NetworkUuid:             pulumi.String("my_subnet_id"),
+//						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
+//					},
+//					NodeOsVersion: pulumi.String("ntnx-1.0"),
+//					NumInstances:  pulumi.Int(1),
+//				},
+//				StorageClassConfig: &nutanix.KarbonClusterStorageClassConfigArgs{
+//					ReclaimPolicy: pulumi.String("Delete"),
+//					VolumesConfig: &nutanix.KarbonClusterStorageClassConfigVolumesConfigArgs{
+//						FileSystem:              pulumi.String("ext4"),
+//						FlashMode:               pulumi.Bool(false),
+//						Password:                pulumi.String("my_pe_pw"),
+//						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
+//						StorageContainer:        pulumi.String("my_storage_container_name"),
+//						Username:                pulumi.String("my_pe_username"),
+//					},
+//				},
+//				Version: pulumi.String("1.18.15-1"),
+//				WorkerNodePool: &nutanix.KarbonClusterWorkerNodePoolArgs{
+//					AhvConfig: &nutanix.KarbonClusterWorkerNodePoolAhvConfigArgs{
+//						NetworkUuid:             pulumi.String("my_subnet_id"),
+//						PrismElementClusterUuid: pulumi.String("my_pe_cluster_uuid"),
+//					},
+//					NodeOsVersion: pulumi.String("ntnx-1.0"),
+//					NumInstances:  pulumi.Int(1),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type KarbonCluster struct {
 	pulumi.CustomResourceState
 
@@ -110,6 +175,8 @@ type KarbonCluster struct {
 	// - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
 	Version pulumi.StringOutput `pulumi:"version"`
 	// - (Optional) Maximum wait time for the Karbon cluster to provision.
+	//
+	// Deprecated: use timeouts instead
 	WaitTimeoutMinutes pulumi.IntPtrOutput               `pulumi:"waitTimeoutMinutes"`
 	WorkerNodePool     KarbonClusterWorkerNodePoolOutput `pulumi:"workerNodePool"`
 }
@@ -186,6 +253,8 @@ type karbonClusterState struct {
 	// - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
 	Version *string `pulumi:"version"`
 	// - (Optional) Maximum wait time for the Karbon cluster to provision.
+	//
+	// Deprecated: use timeouts instead
 	WaitTimeoutMinutes *int                         `pulumi:"waitTimeoutMinutes"`
 	WorkerNodePool     *KarbonClusterWorkerNodePool `pulumi:"workerNodePool"`
 }
@@ -215,6 +284,8 @@ type KarbonClusterState struct {
 	// - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
 	Version pulumi.StringPtrInput
 	// - (Optional) Maximum wait time for the Karbon cluster to provision.
+	//
+	// Deprecated: use timeouts instead
 	WaitTimeoutMinutes pulumi.IntPtrInput
 	WorkerNodePool     KarbonClusterWorkerNodePoolPtrInput
 }
@@ -245,6 +316,8 @@ type karbonClusterArgs struct {
 	// - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
 	Version string `pulumi:"version"`
 	// - (Optional) Maximum wait time for the Karbon cluster to provision.
+	//
+	// Deprecated: use timeouts instead
 	WaitTimeoutMinutes *int                        `pulumi:"waitTimeoutMinutes"`
 	WorkerNodePool     KarbonClusterWorkerNodePool `pulumi:"workerNodePool"`
 }
@@ -272,6 +345,8 @@ type KarbonClusterArgs struct {
 	// - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
 	Version pulumi.StringInput
 	// - (Optional) Maximum wait time for the Karbon cluster to provision.
+	//
+	// Deprecated: use timeouts instead
 	WaitTimeoutMinutes pulumi.IntPtrInput
 	WorkerNodePool     KarbonClusterWorkerNodePoolInput
 }
@@ -426,6 +501,8 @@ func (o KarbonClusterOutput) Version() pulumi.StringOutput {
 }
 
 // - (Optional) Maximum wait time for the Karbon cluster to provision.
+//
+// Deprecated: use timeouts instead
 func (o KarbonClusterOutput) WaitTimeoutMinutes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *KarbonCluster) pulumi.IntPtrOutput { return v.WaitTimeoutMinutes }).(pulumi.IntPtrOutput)
 }

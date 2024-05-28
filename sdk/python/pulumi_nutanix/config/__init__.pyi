@@ -31,6 +31,15 @@ insecure: Optional[bool]
 Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is `false`
 """
 
+ndbEndpoint: Optional[str]
+"""
+endpoint for Era VM (era ip)
+"""
+
+ndbPassword: Optional[str]
+
+ndbUsername: Optional[str]
+
 password: Optional[str]
 """
 Password for provided user name.

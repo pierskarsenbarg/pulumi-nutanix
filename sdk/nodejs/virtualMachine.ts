@@ -53,6 +53,18 @@ import * as utilities from "./utilities";
  *     }],
  * });
  * ```
+ *
+ * ## Import
+ *
+ * Nutanix Virtual machines can be imported using the `UUID` eg,
+ *
+ * `
+ *
+ * ```sh
+ * $ pulumi import nutanix:index/virtualMachine:VirtualMachine vm01 0F75E6A7-55FB-44D9-A50D-14AD72E2CF7C
+ * ```
+ *
+ * `
  */
 export class VirtualMachine extends pulumi.CustomResource {
     /**
@@ -159,6 +171,9 @@ export class VirtualMachine extends pulumi.CustomResource {
      * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
      */
     public readonly guestCustomizationSysprep!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - (Optional) Generic key value pair used for custom attributes in sysprep.
+     */
     public readonly guestCustomizationSysprepCustomKeyValues!: pulumi.Output<{[key: string]: any}>;
     /**
      * - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
@@ -185,7 +200,7 @@ export class VirtualMachine extends pulumi.CustomResource {
      */
     public readonly machineType!: pulumi.Output<string>;
     /**
-     * - (Optional) Memory size in MiB.
+     * - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
      */
     public readonly memorySizeMib!: pulumi.Output<number>;
     /**
@@ -232,6 +247,9 @@ export class VirtualMachine extends pulumi.CustomResource {
      * - (Optional) The reference to a user.
      */
     public readonly ownerReference!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * - (Optional) Reference to an entity that the VM cloned from.
+     */
     public readonly parentReference!: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
@@ -467,6 +485,9 @@ export interface VirtualMachineState {
      * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
      */
     guestCustomizationSysprep?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) Generic key value pair used for custom attributes in sysprep.
+     */
     guestCustomizationSysprepCustomKeyValues?: pulumi.Input<{[key: string]: any}>;
     /**
      * - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
@@ -493,7 +514,7 @@ export interface VirtualMachineState {
      */
     machineType?: pulumi.Input<string>;
     /**
-     * - (Optional) Memory size in MiB.
+     * - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
      */
     memorySizeMib?: pulumi.Input<number>;
     /**
@@ -540,6 +561,9 @@ export interface VirtualMachineState {
      * - (Optional) The reference to a user.
      */
     ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) Reference to an entity that the VM cloned from.
+     */
     parentReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
@@ -648,6 +672,9 @@ export interface VirtualMachineArgs {
      * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
      */
     guestCustomizationSysprep?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) Generic key value pair used for custom attributes in sysprep.
+     */
     guestCustomizationSysprepCustomKeyValues?: pulumi.Input<{[key: string]: any}>;
     /**
      * - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
@@ -666,7 +693,7 @@ export interface VirtualMachineArgs {
      */
     machineType?: pulumi.Input<string>;
     /**
-     * - (Optional) Memory size in MiB.
+     * - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
      */
     memorySizeMib?: pulumi.Input<number>;
     /**
@@ -705,6 +732,9 @@ export interface VirtualMachineArgs {
      * - (Optional) The reference to a user.
      */
     ownerReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) Reference to an entity that the VM cloned from.
+     */
     parentReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).

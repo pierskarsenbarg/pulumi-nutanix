@@ -63,6 +63,56 @@ import * as utilities from "./utilities";
  *     },
  * });
  * ```
+ *
+ * ### resource to create karbon cluster with timeouts
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const exampleCluster = new nutanix.KarbonCluster("exampleCluster", {
+ *     cniConfig: {
+ *         nodeCidrMaskSize: 24,
+ *         podIpv4Cidr: "172.20.0.0/16",
+ *         serviceIpv4Cidr: "172.19.0.0/16",
+ *     },
+ *     etcdNodePool: {
+ *         ahvConfig: {
+ *             networkUuid: "my_subnet_id",
+ *             prismElementClusterUuid: "my_pe_cluster_uuid",
+ *         },
+ *         nodeOsVersion: "ntnx-1.0",
+ *         numInstances: 1,
+ *     },
+ *     masterNodePool: {
+ *         ahvConfig: {
+ *             networkUuid: "my_subnet_id",
+ *             prismElementClusterUuid: "my_pe_cluster_uuid",
+ *         },
+ *         nodeOsVersion: "ntnx-1.0",
+ *         numInstances: 1,
+ *     },
+ *     storageClassConfig: {
+ *         reclaimPolicy: "Delete",
+ *         volumesConfig: {
+ *             fileSystem: "ext4",
+ *             flashMode: false,
+ *             password: "my_pe_pw",
+ *             prismElementClusterUuid: "my_pe_cluster_uuid",
+ *             storageContainer: "my_storage_container_name",
+ *             username: "my_pe_username",
+ *         },
+ *     },
+ *     version: "1.18.15-1",
+ *     workerNodePool: {
+ *         ahvConfig: {
+ *             networkUuid: "my_subnet_id",
+ *             prismElementClusterUuid: "my_pe_cluster_uuid",
+ *         },
+ *         nodeOsVersion: "ntnx-1.0",
+ *         numInstances: 1,
+ *     },
+ * });
+ * ```
  */
 export class KarbonCluster extends pulumi.CustomResource {
     /**
@@ -137,6 +187,8 @@ export class KarbonCluster extends pulumi.CustomResource {
     public readonly version!: pulumi.Output<string>;
     /**
      * - (Optional) Maximum wait time for the Karbon cluster to provision.
+     *
+     * @deprecated use timeouts instead
      */
     public readonly waitTimeoutMinutes!: pulumi.Output<number | undefined>;
     public readonly workerNodePool!: pulumi.Output<outputs.KarbonClusterWorkerNodePool>;
@@ -259,6 +311,8 @@ export interface KarbonClusterState {
     version?: pulumi.Input<string>;
     /**
      * - (Optional) Maximum wait time for the Karbon cluster to provision.
+     *
+     * @deprecated use timeouts instead
      */
     waitTimeoutMinutes?: pulumi.Input<number>;
     workerNodePool?: pulumi.Input<inputs.KarbonClusterWorkerNodePool>;
@@ -310,6 +364,8 @@ export interface KarbonClusterArgs {
     version: pulumi.Input<string>;
     /**
      * - (Optional) Maximum wait time for the Karbon cluster to provision.
+     *
+     * @deprecated use timeouts instead
      */
     waitTimeoutMinutes?: pulumi.Input<number>;
     workerNodePool: pulumi.Input<inputs.KarbonClusterWorkerNodePool>;

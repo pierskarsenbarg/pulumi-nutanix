@@ -2660,8 +2660,8 @@ github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e/go.mod h1:zD1mROLA
 github.com/nightlyone/lockfile v1.0.0 h1:RHep2cFKK4PonZJDdEl4GmkabuhbsRMgk/k3uAmxBiA=
 github.com/nightlyone/lockfile v1.0.0/go.mod h1:rywoIealpdNse2r832aiD9jRk8ErCatROs6LzC841CI=
 github.com/nsf/jsondiff v0.0.0-20200515183724-f29ed568f4ce/go.mod h1:uFMI8w+ref4v2r9jz+c9i1IfIttS/OkmLfrk1jne5hs=
-github.com/nutanix/terraform-provider-nutanix v1.6.1 h1:3r3OddobrWD7iGODzugFFHRaMEYPElgtAIPFfVuStHk=
-github.com/nutanix/terraform-provider-nutanix v1.6.1/go.mod h1:aHh0xzGWEyelgZvmt54nXghgwQdxQS795wzC88zE1SM=
+github.com/nutanix/terraform-provider-nutanix v1.9.5 h1:/Ht5TBzivoTfwosW6H1G5FMObtLLW/Yy9i0cHSKFOKk=
+github.com/nutanix/terraform-provider-nutanix v1.9.5/go.mod h1:xl2FgHIAKMTrU66ujzAAeu/SnzBt2sEXXH/tFhKwGo8=
 github.com/nxadm/tail v1.4.4/go.mod h1:kenIhsEOeOJmVchQTgglprH7qJGnHDVpk1VPCcaMI8A=
 github.com/nxadm/tail v1.4.8/go.mod h1:+ncqLTQzXmGhMZNUePPaPqPvBxHAIsmXswZKocGu+AU=
 github.com/oklog/oklog v0.3.2/go.mod h1:FCV+B7mhrz4o+ueLpx+KqkyXRGMWOYEvfiXtdGtbWGs=

@@ -57,11 +57,14 @@ namespace PiersKarsenbarg.Nutanix
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional). List of Domain Name Server addresses .
+        /// </summary>
         [Output("dhcpDomainNameServerLists")]
         public Output<ImmutableArray<string>> DhcpDomainNameServerLists { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional).
+        /// - (Optional).The DNS domain search list .
         /// </summary>
         [Output("dhcpDomainSearchLists")]
         public Output<ImmutableArray<string>> DhcpDomainSearchLists { get; private set; } = null!;
@@ -84,12 +87,21 @@ namespace PiersKarsenbarg.Nutanix
         [Output("dhcpServerAddressPort")]
         public Output<int> DhcpServerAddressPort { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+        /// </summary>
         [Output("enableNat")]
         public Output<bool> EnableNat { get; private set; } = null!;
 
+        /// <summary>
+        /// -(Optional) Range of IPs.
+        /// </summary>
         [Output("ipConfigPoolListRanges")]
         public Output<ImmutableArray<string>> IpConfigPoolListRanges { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Whether the subnet is external subnet or not.
+        /// </summary>
         [Output("isExternal")]
         public Output<bool> IsExternal { get; private set; } = null!;
 
@@ -142,17 +154,20 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> SubnetIp { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional).
+        /// - (Optional). Valid Types are ["VLAN", "OVERLAY"]
         /// </summary>
         [Output("subnetType")]
         public Output<string> SubnetType { get; private set; } = null!;
 
         /// <summary>
-        /// - (Optional).
+        /// - (Optional). For VLAN subnet.
         /// </summary>
         [Output("vlanId")]
         public Output<int> VlanId { get; private set; } = null!;
 
+        /// <summary>
+        /// VPC reference uuid
+        /// </summary>
         [Output("vpcReferenceUuid")]
         public Output<string> VpcReferenceUuid { get; private set; } = null!;
 
@@ -253,6 +268,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("dhcpDomainNameServerLists")]
         private InputList<string>? _dhcpDomainNameServerLists;
+
+        /// <summary>
+        /// - (Optional). List of Domain Name Server addresses .
+        /// </summary>
         public InputList<string> DhcpDomainNameServerLists
         {
             get => _dhcpDomainNameServerLists ?? (_dhcpDomainNameServerLists = new InputList<string>());
@@ -263,7 +282,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _dhcpDomainSearchLists;
 
         /// <summary>
-        /// - (Optional).
+        /// - (Optional).The DNS domain search list .
         /// </summary>
         public InputList<string> DhcpDomainSearchLists
         {
@@ -301,17 +320,27 @@ namespace PiersKarsenbarg.Nutanix
         [Input("dhcpServerAddressPort")]
         public Input<int>? DhcpServerAddressPort { get; set; }
 
+        /// <summary>
+        /// - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+        /// </summary>
         [Input("enableNat")]
         public Input<bool>? EnableNat { get; set; }
 
         [Input("ipConfigPoolListRanges")]
         private InputList<string>? _ipConfigPoolListRanges;
+
+        /// <summary>
+        /// -(Optional) Range of IPs.
+        /// </summary>
         public InputList<string> IpConfigPoolListRanges
         {
             get => _ipConfigPoolListRanges ?? (_ipConfigPoolListRanges = new InputList<string>());
             set => _ipConfigPoolListRanges = value;
         }
 
+        /// <summary>
+        /// - (Optional) Whether the subnet is external subnet or not.
+        /// </summary>
         [Input("isExternal")]
         public Input<bool>? IsExternal { get; set; }
 
@@ -370,17 +399,20 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? SubnetIp { get; set; }
 
         /// <summary>
-        /// - (Optional).
+        /// - (Optional). Valid Types are ["VLAN", "OVERLAY"]
         /// </summary>
         [Input("subnetType", required: true)]
         public Input<string> SubnetType { get; set; } = null!;
 
         /// <summary>
-        /// - (Optional).
+        /// - (Optional). For VLAN subnet.
         /// </summary>
         [Input("vlanId")]
         public Input<int>? VlanId { get; set; }
 
+        /// <summary>
+        /// VPC reference uuid
+        /// </summary>
         [Input("vpcReferenceUuid")]
         public Input<string>? VpcReferenceUuid { get; set; }
 
@@ -451,6 +483,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("dhcpDomainNameServerLists")]
         private InputList<string>? _dhcpDomainNameServerLists;
+
+        /// <summary>
+        /// - (Optional). List of Domain Name Server addresses .
+        /// </summary>
         public InputList<string> DhcpDomainNameServerLists
         {
             get => _dhcpDomainNameServerLists ?? (_dhcpDomainNameServerLists = new InputList<string>());
@@ -461,7 +497,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<string>? _dhcpDomainSearchLists;
 
         /// <summary>
-        /// - (Optional).
+        /// - (Optional).The DNS domain search list .
         /// </summary>
         public InputList<string> DhcpDomainSearchLists
         {
@@ -499,17 +535,27 @@ namespace PiersKarsenbarg.Nutanix
         [Input("dhcpServerAddressPort")]
         public Input<int>? DhcpServerAddressPort { get; set; }
 
+        /// <summary>
+        /// - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+        /// </summary>
         [Input("enableNat")]
         public Input<bool>? EnableNat { get; set; }
 
         [Input("ipConfigPoolListRanges")]
         private InputList<string>? _ipConfigPoolListRanges;
+
+        /// <summary>
+        /// -(Optional) Range of IPs.
+        /// </summary>
         public InputList<string> IpConfigPoolListRanges
         {
             get => _ipConfigPoolListRanges ?? (_ipConfigPoolListRanges = new InputList<string>());
             set => _ipConfigPoolListRanges = value;
         }
 
+        /// <summary>
+        /// - (Optional) Whether the subnet is external subnet or not.
+        /// </summary>
         [Input("isExternal")]
         public Input<bool>? IsExternal { get; set; }
 
@@ -586,17 +632,20 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? SubnetIp { get; set; }
 
         /// <summary>
-        /// - (Optional).
+        /// - (Optional). Valid Types are ["VLAN", "OVERLAY"]
         /// </summary>
         [Input("subnetType")]
         public Input<string>? SubnetType { get; set; }
 
         /// <summary>
-        /// - (Optional).
+        /// - (Optional). For VLAN subnet.
         /// </summary>
         [Input("vlanId")]
         public Input<int>? VlanId { get; set; }
 
+        /// <summary>
+        /// VPC reference uuid
+        /// </summary>
         [Input("vpcReferenceUuid")]
         public Input<string>? VpcReferenceUuid { get; set; }
 

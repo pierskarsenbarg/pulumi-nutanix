@@ -16,6 +16,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         /// <summary>
         /// Reference to a data source.
+        /// 
+        /// The disk_size (the disk size_mib and the disk_size_bytes attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk size_mib or disk_size_bytes when you set data_source_reference but, you can update the disk_size after creation (second apply).
         /// </summary>
         public readonly ImmutableDictionary<string, string>? DataSourceReference;
         /// <summary>
@@ -35,11 +37,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// - (Optional) The device ID which is used to uniquely identify this particular disk.
         /// </summary>
         public readonly string? Uuid;
-        /// <summary>
-        /// Reference to a volume group.
-        /// 
-        /// The disk_size (the disk size_mib and the disk_size_bytes attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk size_mib or disk_size_bytes when you set data_source_reference but, you can update the disk_size after creation (second apply).
-        /// </summary>
         public readonly ImmutableDictionary<string, string>? VolumeGroupReference;
 
         [OutputConstructor]
