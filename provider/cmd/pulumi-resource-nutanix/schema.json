@@ -60294,30 +60294,6 @@
                 ]
             }
         },
-        "nutanix:index/getFoundationNodPackages:getFoundationNodPackages": {
-            "description": "Describes a list of nos (aos) packages present in foundation vm\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as nutanix from \"@pulumi/nutanix\";\n\nconst nosPackages = nutanix.getFoundationNodPackages({});\n```\n```python\nimport pulumi\nimport pulumi_nutanix as nutanix\n\nnos_packages = nutanix.get_foundation_nod_packages()\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Nutanix = Pulumi.Nutanix;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var nosPackages = Nutanix.GetFoundationNodPackages.Invoke();\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := nutanix.GetFoundationNodPackages(ctx, nil, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.nutanix.NutanixFunctions;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var nosPackages = NutanixFunctions.getFoundationNodPackages();\n\n    }\n}\n```\n```yaml\nvariables:\n  nosPackages:\n    fn::invoke:\n      Function: nutanix:getFoundationNodPackages\n      Arguments: {}\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Note\n\n* This data source only lists .tar file names.\n\nSee detailed information in [Nutanix Foundation Nos Packages](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzODg-get-list-of-aos-packages-available-in-foundation).\n",
-            "outputs": {
-                "description": "A collection of values returned by getFoundationNodPackages.\n",
-                "properties": {
-                    "entities": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "description": "List of nos packages file names present in foundation vm\n"
-                    },
-                    "id": {
-                        "type": "string",
-                        "description": "The provider-assigned unique ID for this managed resource.\n"
-                    }
-                },
-                "type": "object",
-                "required": [
-                    "entities",
-                    "id"
-                ]
-            }
-        },
         "nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails": {
             "description": "Gets hypervisor, CVM \u0026 IPMI info of the discovered nodes using their ipv6 address.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as nutanix from \"@pulumi/nutanix\";\n\nconst networkDetails = nutanix.getFoundationNodeNetworkDetails({\n    ipv6Addresses: [\n        \"\u003cipv6-address-1\u003e\",\n        \"\u003cipv6-address-2\u003e\",\n    ],\n    timeout: \"30\",\n});\n```\n```python\nimport pulumi\nimport pulumi_nutanix as nutanix\n\nnetwork_details = nutanix.get_foundation_node_network_details(ipv6_addresses=[\n        \"\u003cipv6-address-1\u003e\",\n        \"\u003cipv6-address-2\u003e\",\n    ],\n    timeout=\"30\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Nutanix = Pulumi.Nutanix;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var networkDetails = Nutanix.GetFoundationNodeNetworkDetails.Invoke(new()\n    {\n        Ipv6Addresses = new[]\n        {\n            \"\u003cipv6-address-1\u003e\",\n            \"\u003cipv6-address-2\u003e\",\n        },\n        Timeout = \"30\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := nutanix.GetFoundationNodeNetworkDetails(ctx, \u0026nutanix.GetFoundationNodeNetworkDetailsArgs{\n\t\t\tIpv6Addresses: []string{\n\t\t\t\t\"\u003cipv6-address-1\u003e\",\n\t\t\t\t\"\u003cipv6-address-2\u003e\",\n\t\t\t},\n\t\t\tTimeout: pulumi.StringRef(\"30\"),\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.nutanix.NutanixFunctions;\nimport com.pulumi.nutanix.inputs.GetFoundationNodeNetworkDetailsArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var networkDetails = NutanixFunctions.getFoundationNodeNetworkDetails(GetFoundationNodeNetworkDetailsArgs.builder()\n            .ipv6Addresses(            \n                \"\u003cipv6-address-1\u003e\",\n                \"\u003cipv6-address-2\u003e\")\n            .timeout(\"30\")\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  networkDetails:\n    fn::invoke:\n      Function: nutanix:getFoundationNodeNetworkDetails\n      Arguments:\n        ipv6Addresses:\n          - \u003cipv6-address-1\u003e\n          - \u003cipv6-address-2\u003e\n        timeout: '30'\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
             "inputs": {
@@ -60368,6 +60344,30 @@
                 "required": [
                     "ipv6Addresses",
                     "nodes",
+                    "id"
+                ]
+            }
+        },
+        "nutanix:index/getFoundationNosPackages:getFoundationNosPackages": {
+            "description": "Describes a list of nos (aos) packages present in foundation vm\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as nutanix from \"@pulumi/nutanix\";\n\nconst nosPackages = nutanix.getFoundationNosPackages({});\n```\n```python\nimport pulumi\nimport pulumi_nutanix as nutanix\n\nnos_packages = nutanix.get_foundation_nos_packages()\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Nutanix = Pulumi.Nutanix;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var nosPackages = Nutanix.GetFoundationNosPackages.Invoke();\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := nutanix.GetFoundationNosPackages(ctx, nil, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.nutanix.NutanixFunctions;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var nosPackages = NutanixFunctions.getFoundationNosPackages();\n\n    }\n}\n```\n```yaml\nvariables:\n  nosPackages:\n    fn::invoke:\n      Function: nutanix:getFoundationNosPackages\n      Arguments: {}\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Note\n\n* This data source only lists .tar file names.\n\nSee detailed information in [Nutanix Foundation Nos Packages](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzODg-get-list-of-aos-packages-available-in-foundation).\n",
+            "outputs": {
+                "description": "A collection of values returned by getFoundationNosPackages.\n",
+                "properties": {
+                    "entities": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of nos packages file names present in foundation vm\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The provider-assigned unique ID for this managed resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "entities",
                     "id"
                 ]
             }
@@ -60868,10 +60868,10 @@
                 ]
             }
         },
-        "nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig": {
-            "description": "Describes the SSH config from a Karbon Cluster\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as nutanix from \"@pulumi/nutanix\";\n\nconst configbyid = nutanix.getKarbonClusterKubeConfig({\n    karbonClusterId: \"\u003cYOUR-CLUSTER-ID\u003e\",\n});\nconst configbyname = nutanix.getKarbonClusterKubeConfig({\n    karbonClusterName: \"\u003cYOUR-CLUSTER-NAME\u003e\",\n});\n```\n```python\nimport pulumi\nimport pulumi_nutanix as nutanix\n\nconfigbyid = nutanix.get_karbon_cluster_kube_config(karbon_cluster_id=\"\u003cYOUR-CLUSTER-ID\u003e\")\nconfigbyname = nutanix.get_karbon_cluster_kube_config(karbon_cluster_name=\"\u003cYOUR-CLUSTER-NAME\u003e\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Nutanix = Pulumi.Nutanix;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var configbyid = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()\n    {\n        KarbonClusterId = \"\u003cYOUR-CLUSTER-ID\u003e\",\n    });\n\n    var configbyname = Nutanix.GetKarbonClusterKubeConfig.Invoke(new()\n    {\n        KarbonClusterName = \"\u003cYOUR-CLUSTER-NAME\u003e\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := nutanix.GetKarbonClusterKubeConfig(ctx, \u0026nutanix.GetKarbonClusterKubeConfigArgs{\n\t\t\tKarbonClusterId: pulumi.StringRef(\"\u003cYOUR-CLUSTER-ID\u003e\"),\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = nutanix.GetKarbonClusterKubeConfig(ctx, \u0026nutanix.GetKarbonClusterKubeConfigArgs{\n\t\t\tKarbonClusterName: pulumi.StringRef(\"\u003cYOUR-CLUSTER-NAME\u003e\"),\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.nutanix.NutanixFunctions;\nimport com.pulumi.nutanix.inputs.GetKarbonClusterKubeConfigArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var configbyid = NutanixFunctions.getKarbonClusterKubeConfig(GetKarbonClusterKubeConfigArgs.builder()\n            .karbonClusterId(\"\u003cYOUR-CLUSTER-ID\u003e\")\n            .build());\n\n        final var configbyname = NutanixFunctions.getKarbonClusterKubeConfig(GetKarbonClusterKubeConfigArgs.builder()\n            .karbonClusterName(\"\u003cYOUR-CLUSTER-NAME\u003e\")\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  configbyid:\n    fn::invoke:\n      Function: nutanix:getKarbonClusterKubeConfig\n      Arguments:\n        karbonClusterId: \u003cYOUR-CLUSTER-ID\u003e\n  configbyname:\n    fn::invoke:\n      Function: nutanix:getKarbonClusterKubeConfig\n      Arguments:\n        karbonClusterName: \u003cYOUR-CLUSTER-NAME\u003e\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+        "nutanix:index/getKarbonClusterKubeconfig:getKarbonClusterKubeconfig": {
+            "description": "Describes the SSH config from a Karbon Cluster\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as nutanix from \"@pulumi/nutanix\";\n\nconst configbyid = nutanix.getKarbonClusterKubeconfig({\n    karbonClusterId: \"\u003cYOUR-CLUSTER-ID\u003e\",\n});\nconst configbyname = nutanix.getKarbonClusterKubeconfig({\n    karbonClusterName: \"\u003cYOUR-CLUSTER-NAME\u003e\",\n});\n```\n```python\nimport pulumi\nimport pulumi_nutanix as nutanix\n\nconfigbyid = nutanix.get_karbon_cluster_kubeconfig(karbon_cluster_id=\"\u003cYOUR-CLUSTER-ID\u003e\")\nconfigbyname = nutanix.get_karbon_cluster_kubeconfig(karbon_cluster_name=\"\u003cYOUR-CLUSTER-NAME\u003e\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Nutanix = Pulumi.Nutanix;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var configbyid = Nutanix.GetKarbonClusterKubeconfig.Invoke(new()\n    {\n        KarbonClusterId = \"\u003cYOUR-CLUSTER-ID\u003e\",\n    });\n\n    var configbyname = Nutanix.GetKarbonClusterKubeconfig.Invoke(new()\n    {\n        KarbonClusterName = \"\u003cYOUR-CLUSTER-NAME\u003e\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := nutanix.GetKarbonClusterKubeconfig(ctx, \u0026nutanix.GetKarbonClusterKubeconfigArgs{\n\t\t\tKarbonClusterId: pulumi.StringRef(\"\u003cYOUR-CLUSTER-ID\u003e\"),\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = nutanix.GetKarbonClusterKubeconfig(ctx, \u0026nutanix.GetKarbonClusterKubeconfigArgs{\n\t\t\tKarbonClusterName: pulumi.StringRef(\"\u003cYOUR-CLUSTER-NAME\u003e\"),\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.nutanix.NutanixFunctions;\nimport com.pulumi.nutanix.inputs.GetKarbonClusterKubeconfigArgs;\nimport java.util.List;\nimport java.util.ArrayList;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var configbyid = NutanixFunctions.getKarbonClusterKubeconfig(GetKarbonClusterKubeconfigArgs.builder()\n            .karbonClusterId(\"\u003cYOUR-CLUSTER-ID\u003e\")\n            .build());\n\n        final var configbyname = NutanixFunctions.getKarbonClusterKubeconfig(GetKarbonClusterKubeconfigArgs.builder()\n            .karbonClusterName(\"\u003cYOUR-CLUSTER-NAME\u003e\")\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  configbyid:\n    fn::invoke:\n      Function: nutanix:getKarbonClusterKubeconfig\n      Arguments:\n        karbonClusterId: \u003cYOUR-CLUSTER-ID\u003e\n  configbyname:\n    fn::invoke:\n      Function: nutanix:getKarbonClusterKubeconfig\n      Arguments:\n        karbonClusterName: \u003cYOUR-CLUSTER-NAME\u003e\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
             "inputs": {
-                "description": "A collection of arguments for invoking getKarbonClusterKubeConfig.\n",
+                "description": "A collection of arguments for invoking getKarbonClusterKubeconfig.\n",
                 "properties": {
                     "karbonClusterId": {
                         "type": "string",
@@ -60885,7 +60885,7 @@
                 "type": "object"
             },
             "outputs": {
-                "description": "A collection of values returned by getKarbonClusterKubeConfig.\n",
+                "description": "A collection of values returned by getKarbonClusterKubeconfig.\n",
                 "properties": {
                     "accessToken": {
                         "type": "string",
