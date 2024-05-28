@@ -14,6 +14,42 @@ import (
 // Provides a datasource to retrieve a user group based on the input parameters.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetUserGroup(ctx, &nutanix.GetUserGroupArgs{
+//				UserGroupId: pulumi.StringRef("dd30a856-8e72-4158-b716-98455ceda220"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.GetUserGroup(ctx, &nutanix.GetUserGroupArgs{
+//				UserGroupName: pulumi.StringRef("example-group-1"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.GetUserGroup(ctx, &nutanix.GetUserGroupArgs{
+//				UserGroupDistinguishedName: pulumi.StringRef("cn=example-group-1,cn=users,dc=ntnxlab,dc=local"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetUserGroup(ctx *pulumi.Context, args *GetUserGroupArgs, opts ...pulumi.InvokeOption) (*GetUserGroupResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUserGroupResult

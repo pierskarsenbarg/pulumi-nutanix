@@ -13,7 +13,67 @@ import * as utilities from "./utilities";
  *
  * ### NDB database resource with new database server VM
  *
- * ### NDB database resource to provision HA instance with new database server VM
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const dbp = new nutanix.NdbDatabase("dbp", {
+ *     databasetype: "postgres_database",
+ *     description: "add description",
+ *     softwareprofileid: "{{ software_profile_id }}",
+ *     softwareprofileversionid: "{{ software_profile_version_id }}",
+ *     computeprofileid: "{{ compute_profile_id }}",
+ *     networkprofileid: "{{ network_profile_id }}",
+ *     dbparameterprofileid: "{{ db_parameter_profile_id }}",
+ *     postgresqlInfo: {
+ *         listenerPort: "{{ listner_port }}",
+ *         databaseSize: "{{ 200 }}",
+ *         dbPassword: "password",
+ *         databaseNames: "testdb1",
+ *     },
+ *     nxclusterid: local.clusters.EraCluster.id,
+ *     sshpublickey: "{{ ssh-public-key }}",
+ *     nodes: [{
+ *         vmname: "test-era-vm1",
+ *         networkprofileid: "<network-profile-uuid>",
+ *     }],
+ *     timemachineinfo: {
+ *         name: "test-pg-inst",
+ *         description: "description of time machine",
+ *         slaid: "{{ sla_id }}",
+ *         schedule: {
+ *             snapshottimeofday: {
+ *                 hours: 16,
+ *                 minutes: 0,
+ *                 seconds: 0,
+ *             },
+ *             continuousschedule: {
+ *                 enabled: true,
+ *                 logbackupinterval: 30,
+ *                 snapshotsperday: 1,
+ *             },
+ *             weeklyschedule: {
+ *                 enabled: true,
+ *                 dayofweek: "WEDNESDAY",
+ *             },
+ *             monthlyschedule: {
+ *                 enabled: true,
+ *                 dayofmonth: 27,
+ *             },
+ *             quartelyschedule: {
+ *                 enabled: true,
+ *                 startmonth: "JANUARY",
+ *                 dayofmonth: 27,
+ *             },
+ *             yearlyschedule: {
+ *                 enabled: false,
+ *                 dayofmonth: 31,
+ *                 month: "DECEMBER",
+ *             },
+ *         },
+ *     },
+ * });
+ * ```
  *
  * ### NDB database resource with registered database server VM
  *

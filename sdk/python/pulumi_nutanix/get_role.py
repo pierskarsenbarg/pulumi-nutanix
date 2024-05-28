@@ -179,8 +179,6 @@ def get_role(categories: Optional[Sequence[pulumi.InputType['GetRoleCategoryArgs
     """
     Describes a Role.
 
-    ## Example Usage
-
 
     :param Sequence[pulumi.InputType['GetRoleCategoryArgs']] categories: - Categories for the Role.
     :param str role_id: - (Optional) The UUID of a Role.
@@ -215,8 +213,6 @@ def get_role_output(categories: Optional[pulumi.Input[Optional[Sequence[pulumi.I
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRoleResult]:
     """
     Describes a Role.
-
-    ## Example Usage
 
 
     :param Sequence[pulumi.InputType['GetRoleCategoryArgs']] categories: - Categories for the Role.

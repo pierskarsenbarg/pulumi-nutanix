@@ -154,6 +154,18 @@ class AddressGroup(pulumi.CustomResource):
 
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        test_address = nutanix.AddressGroup("testAddress",
+            description="test address groups resource",
+            ip_address_block_lists=[nutanix.AddressGroupIpAddressBlockListArgs(
+                ip="10.0.0.0",
+                prefix_length=24,
+            )])
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: - (Optional) Description of the service group
@@ -170,6 +182,18 @@ class AddressGroup(pulumi.CustomResource):
         Provides a resource to create a address group based on the input parameters.
 
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        test_address = nutanix.AddressGroup("testAddress",
+            description="test address groups resource",
+            ip_address_block_lists=[nutanix.AddressGroupIpAddressBlockListArgs(
+                ip="10.0.0.0",
+                prefix_length=24,
+            )])
+        ```
 
         :param str resource_name: The name of the resource.
         :param AddressGroupArgs args: The arguments to use to populate this resource's properties.

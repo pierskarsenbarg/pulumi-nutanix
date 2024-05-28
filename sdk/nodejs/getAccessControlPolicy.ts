@@ -8,8 +8,6 @@ import * as utilities from "./utilities";
 
 /**
  * Describes an Access Control Policy.
- *
- * ## Example Usage
  */
 export function getAccessControlPolicy(args?: GetAccessControlPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessControlPolicyResult> {
     args = args || {};
@@ -95,8 +93,6 @@ export interface GetAccessControlPolicyResult {
 }
 /**
  * Describes an Access Control Policy.
- *
- * ## Example Usage
  */
 export function getAccessControlPolicyOutput(args?: GetAccessControlPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessControlPolicyResult> {
     return pulumi.output(args).apply((a: any) => getAccessControlPolicy(a, opts))

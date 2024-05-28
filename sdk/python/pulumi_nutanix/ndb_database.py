@@ -1265,7 +1265,66 @@ class NdbDatabase(pulumi.CustomResource):
 
         ### NDB database resource with new database server VM
 
-        ### NDB database resource to provision HA instance with new database server VM
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        dbp = nutanix.NdbDatabase("dbp",
+            databasetype="postgres_database",
+            description="add description",
+            softwareprofileid="{{ software_profile_id }}",
+            softwareprofileversionid="{{ software_profile_version_id }}",
+            computeprofileid="{{ compute_profile_id }}",
+            networkprofileid="{{ network_profile_id }}",
+            dbparameterprofileid="{{ db_parameter_profile_id }}",
+            postgresql_info=nutanix.NdbDatabasePostgresqlInfoArgs(
+                listener_port="{{ listner_port }}",
+                database_size="{{ 200 }}",
+                db_password="password",
+                database_names="testdb1",
+            ),
+            nxclusterid=local["clusters"]["EraCluster"]["id"],
+            sshpublickey="{{ ssh-public-key }}",
+            nodes=[nutanix.NdbDatabaseNodeArgs(
+                vmname="test-era-vm1",
+                networkprofileid="<network-profile-uuid>",
+            )],
+            timemachineinfo=nutanix.NdbDatabaseTimemachineinfoArgs(
+                name="test-pg-inst",
+                description="description of time machine",
+                slaid="{{ sla_id }}",
+                schedule=nutanix.NdbDatabaseTimemachineinfoScheduleArgs(
+                    snapshottimeofday=nutanix.NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgs(
+                        hours=16,
+                        minutes=0,
+                        seconds=0,
+                    ),
+                    continuousschedule=nutanix.NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgs(
+                        enabled=True,
+                        logbackupinterval=30,
+                        snapshotsperday=1,
+                    ),
+                    weeklyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgs(
+                        enabled=True,
+                        dayofweek="WEDNESDAY",
+                    ),
+                    monthlyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgs(
+                        enabled=True,
+                        dayofmonth=27,
+                    ),
+                    quartelyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgs(
+                        enabled=True,
+                        startmonth="JANUARY",
+                        dayofmonth=27,
+                    ),
+                    yearlyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgs(
+                        enabled=False,
+                        dayofmonth=31,
+                        month="DECEMBER",
+                    ),
+                ),
+            ))
+        ```
 
         ### NDB database resource with registered database server VM
 
@@ -1378,7 +1437,66 @@ class NdbDatabase(pulumi.CustomResource):
 
         ### NDB database resource with new database server VM
 
-        ### NDB database resource to provision HA instance with new database server VM
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        dbp = nutanix.NdbDatabase("dbp",
+            databasetype="postgres_database",
+            description="add description",
+            softwareprofileid="{{ software_profile_id }}",
+            softwareprofileversionid="{{ software_profile_version_id }}",
+            computeprofileid="{{ compute_profile_id }}",
+            networkprofileid="{{ network_profile_id }}",
+            dbparameterprofileid="{{ db_parameter_profile_id }}",
+            postgresql_info=nutanix.NdbDatabasePostgresqlInfoArgs(
+                listener_port="{{ listner_port }}",
+                database_size="{{ 200 }}",
+                db_password="password",
+                database_names="testdb1",
+            ),
+            nxclusterid=local["clusters"]["EraCluster"]["id"],
+            sshpublickey="{{ ssh-public-key }}",
+            nodes=[nutanix.NdbDatabaseNodeArgs(
+                vmname="test-era-vm1",
+                networkprofileid="<network-profile-uuid>",
+            )],
+            timemachineinfo=nutanix.NdbDatabaseTimemachineinfoArgs(
+                name="test-pg-inst",
+                description="description of time machine",
+                slaid="{{ sla_id }}",
+                schedule=nutanix.NdbDatabaseTimemachineinfoScheduleArgs(
+                    snapshottimeofday=nutanix.NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgs(
+                        hours=16,
+                        minutes=0,
+                        seconds=0,
+                    ),
+                    continuousschedule=nutanix.NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgs(
+                        enabled=True,
+                        logbackupinterval=30,
+                        snapshotsperday=1,
+                    ),
+                    weeklyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgs(
+                        enabled=True,
+                        dayofweek="WEDNESDAY",
+                    ),
+                    monthlyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgs(
+                        enabled=True,
+                        dayofmonth=27,
+                    ),
+                    quartelyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgs(
+                        enabled=True,
+                        startmonth="JANUARY",
+                        dayofmonth=27,
+                    ),
+                    yearlyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgs(
+                        enabled=False,
+                        dayofmonth=31,
+                        month="DECEMBER",
+                    ),
+                ),
+            ))
+        ```
 
         ### NDB database resource with registered database server VM
 

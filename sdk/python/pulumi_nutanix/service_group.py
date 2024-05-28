@@ -154,6 +154,27 @@ class ServiceGroup(pulumi.CustomResource):
 
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        test = nutanix.ServiceGroup("test",
+            description="this is service group",
+            service_lists=[nutanix.ServiceGroupServiceListArgs(
+                protocol="TCP",
+                tcp_port_range_lists=[
+                    nutanix.ServiceGroupServiceListTcpPortRangeListArgs(
+                        end_port=22,
+                        start_port=22,
+                    ),
+                    nutanix.ServiceGroupServiceListTcpPortRangeListArgs(
+                        end_port=2222,
+                        start_port=2222,
+                    ),
+                ],
+            )])
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: - (Optional) Description of the service group
@@ -170,6 +191,27 @@ class ServiceGroup(pulumi.CustomResource):
         Provides a resource to create a service group based on the input parameters.
 
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        test = nutanix.ServiceGroup("test",
+            description="this is service group",
+            service_lists=[nutanix.ServiceGroupServiceListArgs(
+                protocol="TCP",
+                tcp_port_range_lists=[
+                    nutanix.ServiceGroupServiceListTcpPortRangeListArgs(
+                        end_port=22,
+                        start_port=22,
+                    ),
+                    nutanix.ServiceGroupServiceListTcpPortRangeListArgs(
+                        end_port=2222,
+                        start_port=2222,
+                    ),
+                ],
+            )])
+        ```
 
         :param str resource_name: The name of the resource.
         :param ServiceGroupArgs args: The arguments to use to populate this resource's properties.

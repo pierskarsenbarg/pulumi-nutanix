@@ -856,8 +856,6 @@ class Subnet(pulumi.CustomResource):
         """
         Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
 
-        ## Example Usage
-
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] availability_zone_reference: - (Optional) The reference to a availability_zone.
@@ -892,8 +890,6 @@ class Subnet(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
-
-        ## Example Usage
 
         :param str resource_name: The name of the resource.
         :param SubnetArgs args: The arguments to use to populate this resource's properties.

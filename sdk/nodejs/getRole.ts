@@ -8,8 +8,6 @@ import * as utilities from "./utilities";
 
 /**
  * Describes a Role.
- *
- * ## Example Usage
  */
 export function getRole(args?: GetRoleArgs, opts?: pulumi.InvokeOptions): Promise<GetRoleResult> {
     args = args || {};
@@ -89,8 +87,6 @@ export interface GetRoleResult {
 }
 /**
  * Describes a Role.
- *
- * ## Example Usage
  */
 export function getRoleOutput(args?: GetRoleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRoleResult> {
     return pulumi.output(args).apply((a: any) => getRole(a, opts))

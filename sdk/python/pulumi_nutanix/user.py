@@ -333,6 +333,30 @@ class User(pulumi.CustomResource):
 
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        user = nutanix.User("user", directory_service_user=nutanix.UserDirectoryServiceUserArgs(
+            directory_service_reference=nutanix.UserDirectoryServiceUserDirectoryServiceReferenceArgs(
+                uuid="<directory-service-uuid>",
+            ),
+            user_principal_name="test-user@ntnxlab.local",
+        ))
+        ```
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        user = nutanix.User("user", identity_provider_user=nutanix.UserIdentityProviderUserArgs(
+            identity_provider_reference=nutanix.UserIdentityProviderUserIdentityProviderReferenceArgs(
+                uuid="<identity-provider-uuid>",
+            ),
+            username="username",
+        ))
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UserCategoryArgs']]]] categories: - (Optional) Categories for the Access Control Policy.
@@ -351,6 +375,30 @@ class User(pulumi.CustomResource):
         Provides a resource to create a user based on the input parameters.
 
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        user = nutanix.User("user", directory_service_user=nutanix.UserDirectoryServiceUserArgs(
+            directory_service_reference=nutanix.UserDirectoryServiceUserDirectoryServiceReferenceArgs(
+                uuid="<directory-service-uuid>",
+            ),
+            user_principal_name="test-user@ntnxlab.local",
+        ))
+        ```
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        user = nutanix.User("user", identity_provider_user=nutanix.UserIdentityProviderUserArgs(
+            identity_provider_reference=nutanix.UserIdentityProviderUserIdentityProviderReferenceArgs(
+                uuid="<identity-provider-uuid>",
+            ),
+            username="username",
+        ))
+        ```
 
         :param str resource_name: The name of the resource.
         :param UserArgs args: The arguments to use to populate this resource's properties.

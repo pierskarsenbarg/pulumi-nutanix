@@ -17,20 +17,34 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
-        /// ``` hcl
-        /// resource "nutanix_address_group" "test_address" {
-        ///   			name = "test"
-        ///   			description = "test address groups resource"
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
         /// 
-        ///   			ip_address_block_list {
-        ///     			ip = "10.0.0.0"
-        ///     			prefix_length = 24
-        ///   			}
-        /// 		}
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAddress = new Nutanix.AddressGroup("testAddress", new()
+        ///     {
+        ///         Description = "test address groups resource",
+        ///         IpAddressBlockLists = new[]
+        ///         {
+        ///             new Nutanix.Inputs.AddressGroupIpAddressBlockListArgs
+        ///             {
+        ///                 Ip = "10.0.0.0",
+        ///                 PrefixLength = 24,
+        ///             },
+        ///         },
+        ///     });
         /// 
-        ///   data "nutanix_address_group" "addr_group" {
-        ///     uuid = nutanix_address_group.test_address.id
-        ///   }
+        ///     var addrGroup = Nutanix.GetAddressGroup.Invoke(new()
+        ///     {
+        ///         Uuid = testAddress.Id,
+        ///     });
+        /// 
+        /// });
         /// ```
         /// </summary>
         public static Task<GetAddressGroupResult> InvokeAsync(GetAddressGroupArgs args, InvokeOptions? options = null)
@@ -41,20 +55,34 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
-        /// ``` hcl
-        /// resource "nutanix_address_group" "test_address" {
-        ///   			name = "test"
-        ///   			description = "test address groups resource"
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
         /// 
-        ///   			ip_address_block_list {
-        ///     			ip = "10.0.0.0"
-        ///     			prefix_length = 24
-        ///   			}
-        /// 		}
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAddress = new Nutanix.AddressGroup("testAddress", new()
+        ///     {
+        ///         Description = "test address groups resource",
+        ///         IpAddressBlockLists = new[]
+        ///         {
+        ///             new Nutanix.Inputs.AddressGroupIpAddressBlockListArgs
+        ///             {
+        ///                 Ip = "10.0.0.0",
+        ///                 PrefixLength = 24,
+        ///             },
+        ///         },
+        ///     });
         /// 
-        ///   data "nutanix_address_group" "addr_group" {
-        ///     uuid = nutanix_address_group.test_address.id
-        ///   }
+        ///     var addrGroup = Nutanix.GetAddressGroup.Invoke(new()
+        ///     {
+        ///         Uuid = testAddress.Id,
+        ///     });
+        /// 
+        /// });
         /// ```
         /// </summary>
         public static Output<GetAddressGroupResult> Invoke(GetAddressGroupInvokeArgs args, InvokeOptions? options = null)

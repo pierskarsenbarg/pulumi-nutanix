@@ -12,8 +12,6 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides a resource to create an access control policy based on the input parameters.
-    /// 
-    /// ## Example Usage
     /// </summary>
     [NutanixResourceType("nutanix:index/accessControlPolicy:AccessControlPolicy")]
     public partial class AccessControlPolicy : global::Pulumi.CustomResource

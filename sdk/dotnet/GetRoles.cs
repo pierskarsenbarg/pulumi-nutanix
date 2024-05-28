@@ -17,8 +17,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
-        /// ``` hcl
-        /// data "nutanix_roles" "test" {}
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var test = Nutanix.GetRoles.Invoke();
+        /// 
+        /// });
         /// ```
         /// </summary>
         public static Task<GetRolesResult> InvokeAsync(GetRolesArgs? args = null, InvokeOptions? options = null)
@@ -29,8 +38,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
-        /// ``` hcl
-        /// data "nutanix_roles" "test" {}
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var test = Nutanix.GetRoles.Invoke();
+        /// 
+        /// });
         /// ```
         /// </summary>
         public static Output<GetRolesResult> Invoke(GetRolesInvokeArgs? args = null, InvokeOptions? options = null)

@@ -17,17 +17,30 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
-        /// ``` hcl
-        /// resource "nutanix_user" "user" {
-        /// 	directory_service_user {
-        /// 		user_principal_name = "test-user@ntnxlab.local"
-        /// 		directory_service_reference {
-        /// 		uuid = "&lt;directory-service-uuid&gt;"
-        /// 		}
-        /// 	}
-        /// }
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// data "nutanix_user" "users" {}
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var user = new Nutanix.User("user", new()
+        ///     {
+        ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
+        ///         {
+        ///             DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
+        ///             {
+        ///                 Uuid = "&lt;directory-service-uuid&gt;",
+        ///             },
+        ///             UserPrincipalName = "test-user@ntnxlab.local",
+        ///         },
+        ///     });
+        /// 
+        ///     var users = Nutanix.GetUser.Invoke();
+        /// 
+        /// });
         /// ```
         /// </summary>
         public static Task<GetUsersResult> InvokeAsync(GetUsersArgs? args = null, InvokeOptions? options = null)
@@ -38,17 +51,30 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
-        /// ``` hcl
-        /// resource "nutanix_user" "user" {
-        /// 	directory_service_user {
-        /// 		user_principal_name = "test-user@ntnxlab.local"
-        /// 		directory_service_reference {
-        /// 		uuid = "&lt;directory-service-uuid&gt;"
-        /// 		}
-        /// 	}
-        /// }
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// data "nutanix_user" "users" {}
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var user = new Nutanix.User("user", new()
+        ///     {
+        ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
+        ///         {
+        ///             DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
+        ///             {
+        ///                 Uuid = "&lt;directory-service-uuid&gt;",
+        ///             },
+        ///             UserPrincipalName = "test-user@ntnxlab.local",
+        ///         },
+        ///     });
+        /// 
+        ///     var users = Nutanix.GetUser.Invoke();
+        /// 
+        /// });
         /// ```
         /// </summary>
         public static Output<GetUsersResult> Invoke(GetUsersInvokeArgs? args = null, InvokeOptions? options = null)

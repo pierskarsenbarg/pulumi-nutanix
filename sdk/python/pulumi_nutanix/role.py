@@ -285,6 +285,28 @@ class Role(pulumi.CustomResource):
 
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        test = nutanix.Role("test",
+            description="DESCRIPTION",
+            permission_reference_lists=[
+                nutanix.RolePermissionReferenceListArgs(
+                    kind="permission",
+                    uuid="ID OF PERMISSION",
+                ),
+                nutanix.RolePermissionReferenceListArgs(
+                    kind="permission",
+                    uuid="ID OF PERMISSION",
+                ),
+                nutanix.RolePermissionReferenceListArgs(
+                    kind="permission",
+                    uuid="ID OF PERMISSION",
+                ),
+            ])
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['RoleCategoryArgs']]]] categories: - (Optional) Categories for the role.
@@ -304,6 +326,28 @@ class Role(pulumi.CustomResource):
         Provides a resource to create a role based on the input parameters.
 
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        test = nutanix.Role("test",
+            description="DESCRIPTION",
+            permission_reference_lists=[
+                nutanix.RolePermissionReferenceListArgs(
+                    kind="permission",
+                    uuid="ID OF PERMISSION",
+                ),
+                nutanix.RolePermissionReferenceListArgs(
+                    kind="permission",
+                    uuid="ID OF PERMISSION",
+                ),
+                nutanix.RolePermissionReferenceListArgs(
+                    kind="permission",
+                    uuid="ID OF PERMISSION",
+                ),
+            ])
+        ```
 
         :param str resource_name: The name of the resource.
         :param RoleArgs args: The arguments to use to populate this resource's properties.

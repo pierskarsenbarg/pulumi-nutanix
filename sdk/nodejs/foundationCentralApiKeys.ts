@@ -8,6 +8,13 @@ import * as utilities from "./utilities";
  * Provides a resource to create a new API key for nodes registration with Foundation Central.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const newApiKey = new nutanix.FoundationCentralApiKeys("newApiKey", {alias: "<NAME-FOR-API-KEY>"});
+ * ```
  */
 export class FoundationCentralApiKeys extends pulumi.CustomResource {
     /**

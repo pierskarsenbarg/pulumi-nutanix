@@ -14,6 +14,22 @@ namespace PiersKarsenbarg.Nutanix
     /// Provides a resource to create a new API key for nodes registration with Foundation Central.
     /// 
     /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var newApiKey = new Nutanix.FoundationCentralApiKeys("newApiKey", new()
+    ///     {
+    ///         Alias = "&lt;NAME-FOR-API-KEY&gt;",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/foundationCentralApiKeys:FoundationCentralApiKeys")]
     public partial class FoundationCentralApiKeys : global::Pulumi.CustomResource

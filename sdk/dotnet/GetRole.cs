@@ -14,44 +14,12 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Describes a Role.
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ``` hcl
-        /// resource "nutanix_role" "test" {
-        /// 	name        = "NAME"
-        /// 	description = "DESCRIPTION"
-        /// 	permission_reference_list {
-        /// 		kind = "permission"
-        /// 		uuid = "ID OF PERMISSION"
-        /// 	}
-        /// }
-        /// data "nutanix_role" "test" {
-        /// 	role_id = nutanix_role.test.id
-        /// }
-        /// ```
         /// </summary>
         public static Task<GetRoleResult> InvokeAsync(GetRoleArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRoleResult>("nutanix:index/getRole:getRole", args ?? new GetRoleArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes a Role.
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ``` hcl
-        /// resource "nutanix_role" "test" {
-        /// 	name        = "NAME"
-        /// 	description = "DESCRIPTION"
-        /// 	permission_reference_list {
-        /// 		kind = "permission"
-        /// 		uuid = "ID OF PERMISSION"
-        /// 	}
-        /// }
-        /// data "nutanix_role" "test" {
-        /// 	role_id = nutanix_role.test.id
-        /// }
-        /// ```
         /// </summary>
         public static Output<GetRoleResult> Invoke(GetRoleInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRoleResult>("nutanix:index/getRole:getRole", args ?? new GetRoleInvokeArgs(), options.WithDefaults());

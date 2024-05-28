@@ -17,7 +17,84 @@ import (
 //
 // ### NDB database resource with new database server VM
 //
-// ### NDB database resource to provision HA instance with new database server VM
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewNdbDatabase(ctx, "dbp", &nutanix.NdbDatabaseArgs{
+//				Databasetype:             pulumi.String("postgres_database"),
+//				Description:              pulumi.String("add description"),
+//				Softwareprofileid:        pulumi.String("{{ software_profile_id }}"),
+//				Softwareprofileversionid: pulumi.String("{{ software_profile_version_id }}"),
+//				Computeprofileid:         pulumi.String("{{ compute_profile_id }}"),
+//				Networkprofileid:         pulumi.String("{{ network_profile_id }}"),
+//				Dbparameterprofileid:     pulumi.String("{{ db_parameter_profile_id }}"),
+//				PostgresqlInfo: &nutanix.NdbDatabasePostgresqlInfoArgs{
+//					ListenerPort:  pulumi.String("{{ listner_port }}"),
+//					DatabaseSize:  pulumi.String("{{ 200 }}"),
+//					DbPassword:    pulumi.String("password"),
+//					DatabaseNames: pulumi.String("testdb1"),
+//				},
+//				Nxclusterid:  pulumi.Any(local.Clusters.EraCluster.Id),
+//				Sshpublickey: pulumi.String("{{ ssh-public-key }}"),
+//				Nodes: nutanix.NdbDatabaseNodeArray{
+//					&nutanix.NdbDatabaseNodeArgs{
+//						Vmname:           pulumi.String("test-era-vm1"),
+//						Networkprofileid: pulumi.String("<network-profile-uuid>"),
+//					},
+//				},
+//				Timemachineinfo: &nutanix.NdbDatabaseTimemachineinfoArgs{
+//					Name:        pulumi.String("test-pg-inst"),
+//					Description: pulumi.String("description of time machine"),
+//					Slaid:       pulumi.String("{{ sla_id }}"),
+//					Schedule: &nutanix.NdbDatabaseTimemachineinfoScheduleArgs{
+//						Snapshottimeofday: &nutanix.NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgs{
+//							Hours:   pulumi.Int(16),
+//							Minutes: pulumi.Int(0),
+//							Seconds: pulumi.Int(0),
+//						},
+//						Continuousschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgs{
+//							Enabled:           pulumi.Bool(true),
+//							Logbackupinterval: pulumi.Int(30),
+//							Snapshotsperday:   pulumi.Int(1),
+//						},
+//						Weeklyschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgs{
+//							Enabled:   pulumi.Bool(true),
+//							Dayofweek: pulumi.String("WEDNESDAY"),
+//						},
+//						Monthlyschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgs{
+//							Enabled:    pulumi.Bool(true),
+//							Dayofmonth: pulumi.Int(27),
+//						},
+//						Quartelyschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgs{
+//							Enabled:    pulumi.Bool(true),
+//							Startmonth: pulumi.String("JANUARY"),
+//							Dayofmonth: pulumi.Int(27),
+//						},
+//						Yearlyschedule: &nutanix.NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgs{
+//							Enabled:    pulumi.Bool(false),
+//							Dayofmonth: pulumi.Int(31),
+//							Month:      pulumi.String("DECEMBER"),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 //
 // ### NDB database resource with registered database server VM
 //
