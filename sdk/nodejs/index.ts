@@ -145,15 +145,15 @@ export const getFoundationHypervisorIsos: typeof import("./getFoundationHypervis
 export const getFoundationHypervisorIsosOutput: typeof import("./getFoundationHypervisorIsos").getFoundationHypervisorIsosOutput = null as any;
 utilities.lazyLoad(exports, ["getFoundationHypervisorIsos","getFoundationHypervisorIsosOutput"], () => require("./getFoundationHypervisorIsos"));
 
+export { GetFoundationNodPackagesResult } from "./getFoundationNodPackages";
+export const getFoundationNodPackages: typeof import("./getFoundationNodPackages").getFoundationNodPackages = null as any;
+export const getFoundationNodPackagesOutput: typeof import("./getFoundationNodPackages").getFoundationNodPackagesOutput = null as any;
+utilities.lazyLoad(exports, ["getFoundationNodPackages","getFoundationNodPackagesOutput"], () => require("./getFoundationNodPackages"));
+
 export { GetFoundationNodeNetworkDetailsArgs, GetFoundationNodeNetworkDetailsResult, GetFoundationNodeNetworkDetailsOutputArgs } from "./getFoundationNodeNetworkDetails";
 export const getFoundationNodeNetworkDetails: typeof import("./getFoundationNodeNetworkDetails").getFoundationNodeNetworkDetails = null as any;
 export const getFoundationNodeNetworkDetailsOutput: typeof import("./getFoundationNodeNetworkDetails").getFoundationNodeNetworkDetailsOutput = null as any;
 utilities.lazyLoad(exports, ["getFoundationNodeNetworkDetails","getFoundationNodeNetworkDetailsOutput"], () => require("./getFoundationNodeNetworkDetails"));
-
-export { GetFoundationNosPackagesResult } from "./getFoundationNosPackages";
-export const getFoundationNosPackages: typeof import("./getFoundationNosPackages").getFoundationNosPackages = null as any;
-export const getFoundationNosPackagesOutput: typeof import("./getFoundationNosPackages").getFoundationNosPackagesOutput = null as any;
-utilities.lazyLoad(exports, ["getFoundationNosPackages","getFoundationNosPackagesOutput"], () => require("./getFoundationNosPackages"));
 
 export { GetHostArgs, GetHostResult, GetHostOutputArgs } from "./getHost";
 export const getHost: typeof import("./getHost").getHost = null as any;
@@ -175,10 +175,10 @@ export const getKarbonCluster: typeof import("./getKarbonCluster").getKarbonClus
 export const getKarbonClusterOutput: typeof import("./getKarbonCluster").getKarbonClusterOutput = null as any;
 utilities.lazyLoad(exports, ["getKarbonCluster","getKarbonClusterOutput"], () => require("./getKarbonCluster"));
 
-export { GetKarbonClusterKubeconfigArgs, GetKarbonClusterKubeconfigResult, GetKarbonClusterKubeconfigOutputArgs } from "./getKarbonClusterKubeconfig";
-export const getKarbonClusterKubeconfig: typeof import("./getKarbonClusterKubeconfig").getKarbonClusterKubeconfig = null as any;
-export const getKarbonClusterKubeconfigOutput: typeof import("./getKarbonClusterKubeconfig").getKarbonClusterKubeconfigOutput = null as any;
-utilities.lazyLoad(exports, ["getKarbonClusterKubeconfig","getKarbonClusterKubeconfigOutput"], () => require("./getKarbonClusterKubeconfig"));
+export { GetKarbonClusterKubeConfigArgs, GetKarbonClusterKubeConfigResult, GetKarbonClusterKubeConfigOutputArgs } from "./getKarbonClusterKubeConfig";
+export const getKarbonClusterKubeConfig: typeof import("./getKarbonClusterKubeConfig").getKarbonClusterKubeConfig = null as any;
+export const getKarbonClusterKubeConfigOutput: typeof import("./getKarbonClusterKubeConfig").getKarbonClusterKubeConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getKarbonClusterKubeConfig","getKarbonClusterKubeConfigOutput"], () => require("./getKarbonClusterKubeConfig"));
 
 export { GetKarbonClusterSshArgs, GetKarbonClusterSshResult, GetKarbonClusterSshOutputArgs } from "./getKarbonClusterSsh";
 export const getKarbonClusterSsh: typeof import("./getKarbonClusterSsh").getKarbonClusterSsh = null as any;
