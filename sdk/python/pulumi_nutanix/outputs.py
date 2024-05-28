@@ -28467,6 +28467,7 @@ class GetVirtualMachineGpuListResult(dict):
         :param str pci_address: GPU {segment:bus:device:function} (sbdf) address if assigned.
         :param str uuid: - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
         :param str vendor: - The vendor of the GPU.
+               * `UUID`: - UUID of the GPU.
         """
         pulumi.set(__self__, "device_id", device_id)
         pulumi.set(__self__, "fraction", fraction)
@@ -28556,6 +28557,7 @@ class GetVirtualMachineGpuListResult(dict):
     def vendor(self) -> str:
         """
         - The vendor of the GPU.
+        * `UUID`: - UUID of the GPU.
         """
         return pulumi.get(self, "vendor")
 

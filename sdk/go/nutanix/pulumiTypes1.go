@@ -12831,6 +12831,7 @@ type GetVirtualMachineGpuList struct {
 	// - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
 	Uuid string `pulumi:"uuid"`
 	// - The vendor of the GPU.
+	// * `UUID`: - UUID of the GPU.
 	Vendor string `pulumi:"vendor"`
 }
 
@@ -12865,6 +12866,7 @@ type GetVirtualMachineGpuListArgs struct {
 	// - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
 	Uuid pulumi.StringInput `pulumi:"uuid"`
 	// - The vendor of the GPU.
+	// * `UUID`: - UUID of the GPU.
 	Vendor pulumi.StringInput `pulumi:"vendor"`
 }
 
@@ -12965,6 +12967,7 @@ func (o GetVirtualMachineGpuListOutput) Uuid() pulumi.StringOutput {
 }
 
 // - The vendor of the GPU.
+// * `UUID`: - UUID of the GPU.
 func (o GetVirtualMachineGpuListOutput) Vendor() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualMachineGpuList) string { return v.Vendor }).(pulumi.StringOutput)
 }

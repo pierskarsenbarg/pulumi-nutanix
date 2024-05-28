@@ -6228,6 +6228,7 @@ export interface GetVirtualMachineGpuList {
     uuid: string;
     /**
      * - The vendor of the GPU.
+     * * `UUID`: - UUID of the GPU.
      */
     vendor: string;
 }
