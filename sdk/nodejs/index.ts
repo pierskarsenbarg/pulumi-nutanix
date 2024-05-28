@@ -145,15 +145,15 @@ export const getFoundationHypervisorIsos: typeof import("./getFoundationHypervis
 export const getFoundationHypervisorIsosOutput: typeof import("./getFoundationHypervisorIsos").getFoundationHypervisorIsosOutput = null as any;
 utilities.lazyLoad(exports, ["getFoundationHypervisorIsos","getFoundationHypervisorIsosOutput"], () => require("./getFoundationHypervisorIsos"));
 
-export { GetFoundationNodPackagesResult } from "./getFoundationNodPackages";
-export const getFoundationNodPackages: typeof import("./getFoundationNodPackages").getFoundationNodPackages = null as any;
-export const getFoundationNodPackagesOutput: typeof import("./getFoundationNodPackages").getFoundationNodPackagesOutput = null as any;
-utilities.lazyLoad(exports, ["getFoundationNodPackages","getFoundationNodPackagesOutput"], () => require("./getFoundationNodPackages"));
-
 export { GetFoundationNodeNetworkDetailsArgs, GetFoundationNodeNetworkDetailsResult, GetFoundationNodeNetworkDetailsOutputArgs } from "./getFoundationNodeNetworkDetails";
 export const getFoundationNodeNetworkDetails: typeof import("./getFoundationNodeNetworkDetails").getFoundationNodeNetworkDetails = null as any;
 export const getFoundationNodeNetworkDetailsOutput: typeof import("./getFoundationNodeNetworkDetails").getFoundationNodeNetworkDetailsOutput = null as any;
 utilities.lazyLoad(exports, ["getFoundationNodeNetworkDetails","getFoundationNodeNetworkDetailsOutput"], () => require("./getFoundationNodeNetworkDetails"));
+
+export { GetFoundationNosPackagesResult } from "./getFoundationNosPackages";
+export const getFoundationNosPackages: typeof import("./getFoundationNosPackages").getFoundationNosPackages = null as any;
+export const getFoundationNosPackagesOutput: typeof import("./getFoundationNosPackages").getFoundationNosPackagesOutput = null as any;
+utilities.lazyLoad(exports, ["getFoundationNosPackages","getFoundationNosPackagesOutput"], () => require("./getFoundationNosPackages"));
 
 export { GetHostArgs, GetHostResult, GetHostOutputArgs } from "./getHost";
 export const getHost: typeof import("./getHost").getHost = null as any;

@@ -10,16 +10,16 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = [
-    'GetFoundationNodPackagesResult',
-    'AwaitableGetFoundationNodPackagesResult',
-    'get_foundation_nod_packages',
-    'get_foundation_nod_packages_output',
+    'GetFoundationNosPackagesResult',
+    'AwaitableGetFoundationNosPackagesResult',
+    'get_foundation_nos_packages',
+    'get_foundation_nos_packages_output',
 ]
 
 @pulumi.output_type
-class GetFoundationNodPackagesResult:
+class GetFoundationNosPackagesResult:
     """
-    A collection of values returned by getFoundationNodPackages.
+    A collection of values returned by getFoundationNosPackages.
     """
     def __init__(__self__, entities=None, id=None):
         if entities and not isinstance(entities, list):
@@ -46,17 +46,17 @@ class GetFoundationNodPackagesResult:
         return pulumi.get(self, "id")
 
 
-class AwaitableGetFoundationNodPackagesResult(GetFoundationNodPackagesResult):
+class AwaitableGetFoundationNosPackagesResult(GetFoundationNosPackagesResult):
     # pylint: disable=using-constant-test
     def __await__(self):
         if False:
             yield self
-        return GetFoundationNodPackagesResult(
+        return GetFoundationNosPackagesResult(
             entities=self.entities,
             id=self.id)
 
 
-def get_foundation_nod_packages(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFoundationNodPackagesResult:
+def get_foundation_nos_packages(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFoundationNosPackagesResult:
     """
     Describes a list of nos (aos) packages present in foundation vm
 
@@ -66,7 +66,7 @@ def get_foundation_nod_packages(opts: Optional[pulumi.InvokeOptions] = None) -> 
     import pulumi
     import pulumi_nutanix as nutanix
 
-    nos_packages = nutanix.get_foundation_nod_packages()
+    nos_packages = nutanix.get_foundation_nos_packages()
     ```
 
     ## Note
@@ -77,15 +77,15 @@ def get_foundation_nod_packages(opts: Optional[pulumi.InvokeOptions] = None) -> 
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
-    __ret__ = pulumi.runtime.invoke('nutanix:index/getFoundationNodPackages:getFoundationNodPackages', __args__, opts=opts, typ=GetFoundationNodPackagesResult).value
+    __ret__ = pulumi.runtime.invoke('nutanix:index/getFoundationNosPackages:getFoundationNosPackages', __args__, opts=opts, typ=GetFoundationNosPackagesResult).value
 
-    return AwaitableGetFoundationNodPackagesResult(
+    return AwaitableGetFoundationNosPackagesResult(
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'))
 
 
-@_utilities.lift_output_func(get_foundation_nod_packages)
-def get_foundation_nod_packages_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationNodPackagesResult]:
+@_utilities.lift_output_func(get_foundation_nos_packages)
+def get_foundation_nos_packages_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationNosPackagesResult]:
     """
     Describes a list of nos (aos) packages present in foundation vm
 
@@ -95,7 +95,7 @@ def get_foundation_nod_packages_output(opts: Optional[pulumi.InvokeOptions] = No
     import pulumi
     import pulumi_nutanix as nutanix
 
-    nos_packages = nutanix.get_foundation_nod_packages()
+    nos_packages = nutanix.get_foundation_nos_packages()
     ```
 
     ## Note
