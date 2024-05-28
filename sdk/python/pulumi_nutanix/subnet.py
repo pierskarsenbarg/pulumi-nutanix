@@ -41,23 +41,28 @@ class SubnetArgs:
                  vswitch_name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Subnet resource.
-        :param pulumi.Input[str] subnet_type: - (Optional).
+        :param pulumi.Input[str] subnet_type: - (Optional). Valid Types are ["VLAN", "OVERLAY"]
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] availability_zone_reference: - (Optional) The reference to a availability_zone.
         :param pulumi.Input[Sequence[pulumi.Input['SubnetCategoryArgs']]] categories: - (Optional) The categories of the resource.
         :param pulumi.Input[str] cluster_uuid: - (Required) The UUID of the cluster.
         :param pulumi.Input[str] default_gateway_ip: - (Optional) Default gateway IP address.
         :param pulumi.Input[str] description: - (Optional) A description for subnet.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dhcp_domain_search_lists: - (Optional).
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] dhcp_domain_name_server_lists: - (Optional). List of Domain Name Server addresses .
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] dhcp_domain_search_lists: - (Optional).The DNS domain search list .
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dhcp_options: - (Optional) Spec for defining DHCP options.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dhcp_server_address: - (Optional) Host address.
         :param pulumi.Input[int] dhcp_server_address_port: - (Optional) Port Number.
+        :param pulumi.Input[bool] enable_nat: - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_config_pool_list_ranges: -(Optional) Range of IPs.
+        :param pulumi.Input[bool] is_external: - (Optional) Whether the subnet is external subnet or not.
         :param pulumi.Input[str] name: - (Optional) Subnet name (Readonly).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] network_function_chain_reference: - (Optional) The reference to a network_function_chain.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] owner_reference: - (Optional) The reference to a user.
         :param pulumi.Input[int] prefix_length: - (Optional).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] project_reference: - (Optional) The reference to a project.
         :param pulumi.Input[str] subnet_ip: - (Optional) Subnet IP address.
-        :param pulumi.Input[int] vlan_id: - (Optional).
+        :param pulumi.Input[int] vlan_id: - (Optional). For VLAN subnet.
+        :param pulumi.Input[str] vpc_reference_uuid: VPC reference uuid
         :param pulumi.Input[str] vswitch_name: - (Optional).
         """
         pulumi.set(__self__, "subnet_type", subnet_type)
@@ -110,7 +115,7 @@ class SubnetArgs:
     @pulumi.getter(name="subnetType")
     def subnet_type(self) -> pulumi.Input[str]:
         """
-        - (Optional).
+        - (Optional). Valid Types are ["VLAN", "OVERLAY"]
         """
         return pulumi.get(self, "subnet_type")
 
@@ -181,6 +186,9 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="dhcpDomainNameServerLists")
     def dhcp_domain_name_server_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        - (Optional). List of Domain Name Server addresses .
+        """
         return pulumi.get(self, "dhcp_domain_name_server_lists")
 
     @dhcp_domain_name_server_lists.setter
@@ -191,7 +199,7 @@ class SubnetArgs:
     @pulumi.getter(name="dhcpDomainSearchLists")
     def dhcp_domain_search_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        - (Optional).
+        - (Optional).The DNS domain search list .
         """
         return pulumi.get(self, "dhcp_domain_search_lists")
 
@@ -238,6 +246,9 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="enableNat")
     def enable_nat(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+        """
         return pulumi.get(self, "enable_nat")
 
     @enable_nat.setter
@@ -247,6 +258,9 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="ipConfigPoolListRanges")
     def ip_config_pool_list_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        -(Optional) Range of IPs.
+        """
         return pulumi.get(self, "ip_config_pool_list_ranges")
 
     @ip_config_pool_list_ranges.setter
@@ -256,6 +270,9 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="isExternal")
     def is_external(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Whether the subnet is external subnet or not.
+        """
         return pulumi.get(self, "is_external")
 
     @is_external.setter
@@ -338,7 +355,7 @@ class SubnetArgs:
     @pulumi.getter(name="vlanId")
     def vlan_id(self) -> Optional[pulumi.Input[int]]:
         """
-        - (Optional).
+        - (Optional). For VLAN subnet.
         """
         return pulumi.get(self, "vlan_id")
 
@@ -349,6 +366,9 @@ class SubnetArgs:
     @property
     @pulumi.getter(name="vpcReferenceUuid")
     def vpc_reference_uuid(self) -> Optional[pulumi.Input[str]]:
+        """
+        VPC reference uuid
+        """
         return pulumi.get(self, "vpc_reference_uuid")
 
     @vpc_reference_uuid.setter
@@ -406,10 +426,14 @@ class _SubnetState:
         :param pulumi.Input[str] cluster_uuid: - (Required) The UUID of the cluster.
         :param pulumi.Input[str] default_gateway_ip: - (Optional) Default gateway IP address.
         :param pulumi.Input[str] description: - (Optional) A description for subnet.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dhcp_domain_search_lists: - (Optional).
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] dhcp_domain_name_server_lists: - (Optional). List of Domain Name Server addresses .
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] dhcp_domain_search_lists: - (Optional).The DNS domain search list .
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dhcp_options: - (Optional) Spec for defining DHCP options.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dhcp_server_address: - (Optional) Host address.
         :param pulumi.Input[int] dhcp_server_address_port: - (Optional) Port Number.
+        :param pulumi.Input[bool] enable_nat: - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_config_pool_list_ranges: -(Optional) Range of IPs.
+        :param pulumi.Input[bool] is_external: - (Optional) Whether the subnet is external subnet or not.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: - (Required) The subnet kind metadata.
         :param pulumi.Input[str] name: - (Optional) Subnet name (Readonly).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] network_function_chain_reference: - (Optional) The reference to a network_function_chain.
@@ -418,8 +442,9 @@ class _SubnetState:
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] project_reference: - (Optional) The reference to a project.
         :param pulumi.Input[str] state: - The state of the subnet.
         :param pulumi.Input[str] subnet_ip: - (Optional) Subnet IP address.
-        :param pulumi.Input[str] subnet_type: - (Optional).
-        :param pulumi.Input[int] vlan_id: - (Optional).
+        :param pulumi.Input[str] subnet_type: - (Optional). Valid Types are ["VLAN", "OVERLAY"]
+        :param pulumi.Input[int] vlan_id: - (Optional). For VLAN subnet.
+        :param pulumi.Input[str] vpc_reference_uuid: VPC reference uuid
         :param pulumi.Input[str] vswitch_name: - (Optional).
         """
         if api_version is not None:
@@ -561,6 +586,9 @@ class _SubnetState:
     @property
     @pulumi.getter(name="dhcpDomainNameServerLists")
     def dhcp_domain_name_server_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        - (Optional). List of Domain Name Server addresses .
+        """
         return pulumi.get(self, "dhcp_domain_name_server_lists")
 
     @dhcp_domain_name_server_lists.setter
@@ -571,7 +599,7 @@ class _SubnetState:
     @pulumi.getter(name="dhcpDomainSearchLists")
     def dhcp_domain_search_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        - (Optional).
+        - (Optional).The DNS domain search list .
         """
         return pulumi.get(self, "dhcp_domain_search_lists")
 
@@ -618,6 +646,9 @@ class _SubnetState:
     @property
     @pulumi.getter(name="enableNat")
     def enable_nat(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+        """
         return pulumi.get(self, "enable_nat")
 
     @enable_nat.setter
@@ -627,6 +658,9 @@ class _SubnetState:
     @property
     @pulumi.getter(name="ipConfigPoolListRanges")
     def ip_config_pool_list_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        -(Optional) Range of IPs.
+        """
         return pulumi.get(self, "ip_config_pool_list_ranges")
 
     @ip_config_pool_list_ranges.setter
@@ -636,6 +670,9 @@ class _SubnetState:
     @property
     @pulumi.getter(name="isExternal")
     def is_external(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Whether the subnet is external subnet or not.
+        """
         return pulumi.get(self, "is_external")
 
     @is_external.setter
@@ -742,7 +779,7 @@ class _SubnetState:
     @pulumi.getter(name="subnetType")
     def subnet_type(self) -> Optional[pulumi.Input[str]]:
         """
-        - (Optional).
+        - (Optional). Valid Types are ["VLAN", "OVERLAY"]
         """
         return pulumi.get(self, "subnet_type")
 
@@ -754,7 +791,7 @@ class _SubnetState:
     @pulumi.getter(name="vlanId")
     def vlan_id(self) -> Optional[pulumi.Input[int]]:
         """
-        - (Optional).
+        - (Optional). For VLAN subnet.
         """
         return pulumi.get(self, "vlan_id")
 
@@ -765,6 +802,9 @@ class _SubnetState:
     @property
     @pulumi.getter(name="vpcReferenceUuid")
     def vpc_reference_uuid(self) -> Optional[pulumi.Input[str]]:
+        """
+        VPC reference uuid
+        """
         return pulumi.get(self, "vpc_reference_uuid")
 
     @vpc_reference_uuid.setter
@@ -825,18 +865,23 @@ class Subnet(pulumi.CustomResource):
         :param pulumi.Input[str] cluster_uuid: - (Required) The UUID of the cluster.
         :param pulumi.Input[str] default_gateway_ip: - (Optional) Default gateway IP address.
         :param pulumi.Input[str] description: - (Optional) A description for subnet.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dhcp_domain_search_lists: - (Optional).
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] dhcp_domain_name_server_lists: - (Optional). List of Domain Name Server addresses .
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] dhcp_domain_search_lists: - (Optional).The DNS domain search list .
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dhcp_options: - (Optional) Spec for defining DHCP options.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dhcp_server_address: - (Optional) Host address.
         :param pulumi.Input[int] dhcp_server_address_port: - (Optional) Port Number.
+        :param pulumi.Input[bool] enable_nat: - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_config_pool_list_ranges: -(Optional) Range of IPs.
+        :param pulumi.Input[bool] is_external: - (Optional) Whether the subnet is external subnet or not.
         :param pulumi.Input[str] name: - (Optional) Subnet name (Readonly).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] network_function_chain_reference: - (Optional) The reference to a network_function_chain.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] owner_reference: - (Optional) The reference to a user.
         :param pulumi.Input[int] prefix_length: - (Optional).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] project_reference: - (Optional) The reference to a project.
         :param pulumi.Input[str] subnet_ip: - (Optional) Subnet IP address.
-        :param pulumi.Input[str] subnet_type: - (Optional).
-        :param pulumi.Input[int] vlan_id: - (Optional).
+        :param pulumi.Input[str] subnet_type: - (Optional). Valid Types are ["VLAN", "OVERLAY"]
+        :param pulumi.Input[int] vlan_id: - (Optional). For VLAN subnet.
+        :param pulumi.Input[str] vpc_reference_uuid: VPC reference uuid
         :param pulumi.Input[str] vswitch_name: - (Optional).
         """
         ...
@@ -976,10 +1021,14 @@ class Subnet(pulumi.CustomResource):
         :param pulumi.Input[str] cluster_uuid: - (Required) The UUID of the cluster.
         :param pulumi.Input[str] default_gateway_ip: - (Optional) Default gateway IP address.
         :param pulumi.Input[str] description: - (Optional) A description for subnet.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] dhcp_domain_search_lists: - (Optional).
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] dhcp_domain_name_server_lists: - (Optional). List of Domain Name Server addresses .
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] dhcp_domain_search_lists: - (Optional).The DNS domain search list .
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dhcp_options: - (Optional) Spec for defining DHCP options.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dhcp_server_address: - (Optional) Host address.
         :param pulumi.Input[int] dhcp_server_address_port: - (Optional) Port Number.
+        :param pulumi.Input[bool] enable_nat: - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_config_pool_list_ranges: -(Optional) Range of IPs.
+        :param pulumi.Input[bool] is_external: - (Optional) Whether the subnet is external subnet or not.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: - (Required) The subnet kind metadata.
         :param pulumi.Input[str] name: - (Optional) Subnet name (Readonly).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] network_function_chain_reference: - (Optional) The reference to a network_function_chain.
@@ -988,8 +1037,9 @@ class Subnet(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] project_reference: - (Optional) The reference to a project.
         :param pulumi.Input[str] state: - The state of the subnet.
         :param pulumi.Input[str] subnet_ip: - (Optional) Subnet IP address.
-        :param pulumi.Input[str] subnet_type: - (Optional).
-        :param pulumi.Input[int] vlan_id: - (Optional).
+        :param pulumi.Input[str] subnet_type: - (Optional). Valid Types are ["VLAN", "OVERLAY"]
+        :param pulumi.Input[int] vlan_id: - (Optional). For VLAN subnet.
+        :param pulumi.Input[str] vpc_reference_uuid: VPC reference uuid
         :param pulumi.Input[str] vswitch_name: - (Optional).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -1081,13 +1131,16 @@ class Subnet(pulumi.CustomResource):
     @property
     @pulumi.getter(name="dhcpDomainNameServerLists")
     def dhcp_domain_name_server_lists(self) -> pulumi.Output[Sequence[str]]:
+        """
+        - (Optional). List of Domain Name Server addresses .
+        """
         return pulumi.get(self, "dhcp_domain_name_server_lists")
 
     @property
     @pulumi.getter(name="dhcpDomainSearchLists")
     def dhcp_domain_search_lists(self) -> pulumi.Output[Sequence[str]]:
         """
-        - (Optional).
+        - (Optional).The DNS domain search list .
         """
         return pulumi.get(self, "dhcp_domain_search_lists")
 
@@ -1118,16 +1171,25 @@ class Subnet(pulumi.CustomResource):
     @property
     @pulumi.getter(name="enableNat")
     def enable_nat(self) -> pulumi.Output[bool]:
+        """
+        - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+        """
         return pulumi.get(self, "enable_nat")
 
     @property
     @pulumi.getter(name="ipConfigPoolListRanges")
     def ip_config_pool_list_ranges(self) -> pulumi.Output[Sequence[str]]:
+        """
+        -(Optional) Range of IPs.
+        """
         return pulumi.get(self, "ip_config_pool_list_ranges")
 
     @property
     @pulumi.getter(name="isExternal")
     def is_external(self) -> pulumi.Output[bool]:
+        """
+        - (Optional) Whether the subnet is external subnet or not.
+        """
         return pulumi.get(self, "is_external")
 
     @property
@@ -1198,7 +1260,7 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="subnetType")
     def subnet_type(self) -> pulumi.Output[str]:
         """
-        - (Optional).
+        - (Optional). Valid Types are ["VLAN", "OVERLAY"]
         """
         return pulumi.get(self, "subnet_type")
 
@@ -1206,13 +1268,16 @@ class Subnet(pulumi.CustomResource):
     @pulumi.getter(name="vlanId")
     def vlan_id(self) -> pulumi.Output[int]:
         """
-        - (Optional).
+        - (Optional). For VLAN subnet.
         """
         return pulumi.get(self, "vlan_id")
 
     @property
     @pulumi.getter(name="vpcReferenceUuid")
     def vpc_reference_uuid(self) -> pulumi.Output[str]:
+        """
+        VPC reference uuid
+        """
         return pulumi.get(self, "vpc_reference_uuid")
 
     @property

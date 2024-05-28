@@ -24,7 +24,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string Name;
         public readonly string Url;
         /// <summary>
-        /// - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
+        /// - the UUID.
         /// </summary>
         public readonly string Uuid;
 

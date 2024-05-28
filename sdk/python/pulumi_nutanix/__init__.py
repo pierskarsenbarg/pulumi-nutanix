@@ -44,6 +44,30 @@ from .get_karbon_cluster_ssh import *
 from .get_karbon_clusters import *
 from .get_karbon_private_registries import *
 from .get_karbon_private_registry import *
+from .get_ndb_clone import *
+from .get_ndb_clones import *
+from .get_ndb_cluster import *
+from .get_ndb_clusters import *
+from .get_ndb_database import *
+from .get_ndb_databases import *
+from .get_ndb_dbserver import *
+from .get_ndb_dbservers import *
+from .get_ndb_maintenance_window import *
+from .get_ndb_maintenance_windows import *
+from .get_ndb_network import *
+from .get_ndb_network_available_ips import *
+from .get_ndb_networks import *
+from .get_ndb_profile import *
+from .get_ndb_profiles import *
+from .get_ndb_sla import *
+from .get_ndb_slas import *
+from .get_ndb_snapshot import *
+from .get_ndb_snapshots import *
+from .get_ndb_tag import *
+from .get_ndb_tags import *
+from .get_ndb_time_machine import *
+from .get_ndb_time_machines import *
+from .get_ndb_tms_capability import *
 from .get_network_security_rule import *
 from .get_pbr import *
 from .get_pbrs import *
@@ -72,6 +96,30 @@ from .get_vpcs import *
 from .image import *
 from .karbon_cluster import *
 from .karbon_private_registry import *
+from .karbon_worker_nodepool import *
+from .ndb_authorize_dbserver import *
+from .ndb_clone import *
+from .ndb_clone_refresh import *
+from .ndb_cluster import *
+from .ndb_database import *
+from .ndb_database_restore import *
+from .ndb_database_scale import *
+from .ndb_database_snapshot import *
+from .ndb_dbserver_vm import *
+from .ndb_linked_databases import *
+from .ndb_log_catchups import *
+from .ndb_maintenance_task import *
+from .ndb_maintenance_window import *
+from .ndb_network import *
+from .ndb_profile import *
+from .ndb_register_database import *
+from .ndb_register_dbserver import *
+from .ndb_scale_database import *
+from .ndb_sla import *
+from .ndb_software_version_profile import *
+from .ndb_stretched_vlan import *
+from .ndb_tag import *
+from .ndb_tms_cluster import *
 from .network_security_rule import *
 from .pbr import *
 from .project import *
@@ -83,6 +131,7 @@ from .service_group import *
 from .static_routes import *
 from .subnet import *
 from .user import *
+from .user_groups import *
 from .virtual_machine import *
 from .vpc import *
 from ._inputs import *
@@ -204,6 +253,198 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/karbonWorkerNodepool",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/karbonWorkerNodepool:KarbonWorkerNodepool": "KarbonWorkerNodepool"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbAuthorizeDbserver",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbAuthorizeDbserver:NdbAuthorizeDbserver": "NdbAuthorizeDbserver"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbClone",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbClone:NdbClone": "NdbClone"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbCloneRefresh",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbCloneRefresh:NdbCloneRefresh": "NdbCloneRefresh"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbCluster",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbCluster:NdbCluster": "NdbCluster"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbDatabase",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbDatabase:NdbDatabase": "NdbDatabase"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbDatabaseRestore",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbDatabaseRestore:NdbDatabaseRestore": "NdbDatabaseRestore"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbDatabaseScale",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbDatabaseScale:NdbDatabaseScale": "NdbDatabaseScale"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbDatabaseSnapshot",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbDatabaseSnapshot:NdbDatabaseSnapshot": "NdbDatabaseSnapshot"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbDbserverVm",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbDbserverVm:NdbDbserverVm": "NdbDbserverVm"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbLinkedDatabases",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbLinkedDatabases:NdbLinkedDatabases": "NdbLinkedDatabases"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbLogCatchups",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbLogCatchups:NdbLogCatchups": "NdbLogCatchups"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbMaintenanceTask",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbMaintenanceTask:NdbMaintenanceTask": "NdbMaintenanceTask"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbMaintenanceWindow",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbMaintenanceWindow:NdbMaintenanceWindow": "NdbMaintenanceWindow"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbNetwork",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbNetwork:NdbNetwork": "NdbNetwork"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbProfile",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbProfile:NdbProfile": "NdbProfile"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbRegisterDatabase",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbRegisterDatabase:NdbRegisterDatabase": "NdbRegisterDatabase"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbRegisterDbserver",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbRegisterDbserver:NdbRegisterDbserver": "NdbRegisterDbserver"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbScaleDatabase",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbScaleDatabase:NdbScaleDatabase": "NdbScaleDatabase"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbSla",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbSla:NdbSla": "NdbSla"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbSoftwareVersionProfile",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbSoftwareVersionProfile:NdbSoftwareVersionProfile": "NdbSoftwareVersionProfile"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbStretchedVlan",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbStretchedVlan:NdbStretchedVlan": "NdbStretchedVlan"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbTag",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbTag:NdbTag": "NdbTag"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ndbTmsCluster",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ndbTmsCluster:NdbTmsCluster": "NdbTmsCluster"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/networkSecurityRule",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -280,6 +521,14 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/user:User": "User"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/userGroups",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/userGroups:UserGroups": "UserGroups"
   }
  },
  {

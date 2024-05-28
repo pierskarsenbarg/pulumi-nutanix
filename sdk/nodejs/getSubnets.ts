@@ -16,6 +16,11 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const subnets = nutanix.getSubnets({});
+ * const test = nutanix.getSubnets({
+ *     metadatas: [{
+ *         filter: "name==vlan0_test_2",
+ *     }],
+ * });
  * ```
  */
 export function getSubnets(args?: GetSubnetsArgs, opts?: pulumi.InvokeOptions): Promise<GetSubnetsResult> {
@@ -68,6 +73,11 @@ export interface GetSubnetsResult {
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const subnets = nutanix.getSubnets({});
+ * const test = nutanix.getSubnets({
+ *     metadatas: [{
+ *         filter: "name==vlan0_test_2",
+ *     }],
+ * });
  * ```
  */
 export function getSubnetsOutput(args?: GetSubnetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubnetsResult> {

@@ -33,6 +33,17 @@ func GetInsecure(ctx *pulumi.Context) bool {
 	return config.GetBool(ctx, "nutanix:insecure")
 }
 
+// endpoint for Era VM (era ip)
+func GetNdbEndpoint(ctx *pulumi.Context) string {
+	return config.Get(ctx, "nutanix:ndbEndpoint")
+}
+func GetNdbPassword(ctx *pulumi.Context) string {
+	return config.Get(ctx, "nutanix:ndbPassword")
+}
+func GetNdbUsername(ctx *pulumi.Context) string {
+	return config.Get(ctx, "nutanix:ndbUsername")
+}
+
 // Password for provided user name.
 func GetPassword(ctx *pulumi.Context) string {
 	return config.Get(ctx, "nutanix:password")

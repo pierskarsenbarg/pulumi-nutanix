@@ -53,7 +53,7 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			_, err = nutanix.NewProject(ctx, "projectTest", &nutanix.ProjectArgs{
+//			_, err = nutanix.NewProject(ctx, "projectTestProject", &nutanix.ProjectArgs{
 //				Description: pulumi.String("This is my project"),
 //				Categories: nutanix.ProjectCategoryArray{
 //					&nutanix.ProjectCategoryArgs{
@@ -79,6 +79,109 @@ import (
 //			if err != nil {
 //				return err
 //			}
+//			_, err = nutanix.NewProject(ctx, "projectTestIndex/projectProject", &nutanix.ProjectArgs{
+//				Description:        pulumi.String("This is my project"),
+//				ClusterUuid:        pulumi.String("<YOUR_CLUSTER_ID>"),
+//				UseProjectInternal: pulumi.Bool(true),
+//				DefaultSubnetReference: &nutanix.ProjectDefaultSubnetReferenceArgs{
+//					Uuid: subnet.Metadata.ApplyT(func(metadata map[string]string) (string, error) {
+//						return metadata.Uuid, nil
+//					}).(pulumi.StringOutput),
+//				},
+//				UserReferenceLists: nutanix.ProjectUserReferenceListArray{
+//					&nutanix.ProjectUserReferenceListArgs{
+//						Name: pulumi.String("{{user_name}}"),
+//						Kind: pulumi.String("user"),
+//						Uuid: pulumi.String("{{user_uuid}}"),
+//					},
+//				},
+//				SubnetReferenceLists: nutanix.ProjectSubnetReferenceListArray{
+//					&nutanix.ProjectSubnetReferenceListArgs{
+//						Uuid: pulumi.Any(resource.Nutanix_subnet.Sub.Id),
+//					},
+//				},
+//				Acps: nutanix.ProjectAcpArray{
+//					&nutanix.ProjectAcpArgs{
+//						Name: pulumi.String("{{acp_name}}"),
+//						RoleReference: &nutanix.ProjectAcpRoleReferenceArgs{
+//							Kind: pulumi.String("role"),
+//							Uuid: pulumi.String("{{role_uuid}}"),
+//							Name: pulumi.String("Developer"),
+//						},
+//						UserReferenceLists: nutanix.ProjectAcpUserReferenceListArray{
+//							&nutanix.ProjectAcpUserReferenceListArgs{
+//								Name: pulumi.String("{{user_name}}"),
+//								Kind: pulumi.String("user"),
+//								Uuid: pulumi.String("{{user_uuid}}"),
+//							},
+//						},
+//						Description: pulumi.String("{{description}}"),
+//					},
+//				},
+//				ApiVersion: pulumi.String("3.1"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.NewProject(ctx, "projectTestNutanixIndex/projectProject", &nutanix.ProjectArgs{
+//				Description:        pulumi.String("This is my project"),
+//				ClusterUuid:        pulumi.String("<YOUR_CLUSTER_ID>"),
+//				UseProjectInternal: pulumi.Bool(true),
+//				DefaultSubnetReference: &nutanix.ProjectDefaultSubnetReferenceArgs{
+//					Uuid: subnet.Metadata.ApplyT(func(metadata map[string]string) (string, error) {
+//						return metadata.Uuid, nil
+//					}).(pulumi.StringOutput),
+//				},
+//				UserReferenceLists: nutanix.ProjectUserReferenceListArray{
+//					&nutanix.ProjectUserReferenceListArgs{
+//						Name: pulumi.String("{{user_name}}"),
+//						Kind: pulumi.String("user"),
+//						Uuid: pulumi.String("{{user_uuid}}"),
+//					},
+//				},
+//				SubnetReferenceLists: nutanix.ProjectSubnetReferenceListArray{
+//					&nutanix.ProjectSubnetReferenceListArgs{
+//						Uuid: pulumi.Any(resource.Nutanix_subnet.Sub.Id),
+//					},
+//				},
+//				Acps: nutanix.ProjectAcpArray{
+//					&nutanix.ProjectAcpArgs{
+//						Name: pulumi.String("{{acp_name}}"),
+//						RoleReference: &nutanix.ProjectAcpRoleReferenceArgs{
+//							Kind: pulumi.String("role"),
+//							Uuid: pulumi.String("{{role_uuid}}"),
+//							Name: pulumi.String("Developer"),
+//						},
+//						UserReferenceLists: nutanix.ProjectAcpUserReferenceListArray{
+//							&nutanix.ProjectAcpUserReferenceListArgs{
+//								Name: pulumi.String("{{user_name}}"),
+//								Kind: pulumi.String("user"),
+//								Uuid: pulumi.String("{{user_uuid}}"),
+//							},
+//						},
+//						Description: pulumi.String("{{description}}"),
+//					},
+//				},
+//				UserLists: nutanix.ProjectUserListArray{
+//					&nutanix.ProjectUserListArgs{
+//						Metadata: pulumi.StringMap{
+//							"kind": pulumi.String("user"),
+//							"uuid": pulumi.String("{{ UUID of the USER }}"),
+//						},
+//						DirectoryServiceUser: &nutanix.ProjectUserListDirectoryServiceUserArgs{
+//							UserPrincipalName: pulumi.String("{{ Name of user }}"),
+//							DirectoryServiceReference: &nutanix.ProjectUserListDirectoryServiceUserDirectoryServiceReferenceArgs{
+//								Uuid: pulumi.String("{{ DIRECTORY SERVICE UUID }}"),
+//								Kind: pulumi.String("directory_service"),
+//							},
+//						},
+//					},
+//				},
+//				ApiVersion: pulumi.String("3.1"),
+//			})
+//			if err != nil {
+//				return err
+//			}
 //			return nil
 //		})
 //	}
@@ -87,12 +190,20 @@ import (
 type Project struct {
 	pulumi.CustomResourceState
 
-	AccountReferenceLists  ProjectAccountReferenceListArrayOutput `pulumi:"accountReferenceLists"`
-	ApiVersion             pulumi.StringOutput                    `pulumi:"apiVersion"`
-	Categories             ProjectCategoryArrayOutput             `pulumi:"categories"`
-	DefaultSubnetReference ProjectDefaultSubnetReferenceOutput    `pulumi:"defaultSubnetReference"`
+	AccountReferenceLists ProjectAccountReferenceListArrayOutput `pulumi:"accountReferenceLists"`
+	Acps                  ProjectAcpArrayOutput                  `pulumi:"acps"`
+	ApiVersion            pulumi.StringOutput                    `pulumi:"apiVersion"`
+	// - (Optional) The category values represented as a dictionary of key > list of values.
+	Categories            ProjectCategoryArrayOutput             `pulumi:"categories"`
+	ClusterReferenceLists ProjectClusterReferenceListArrayOutput `pulumi:"clusterReferenceLists"`
+	// The UUID of cluster. (Required when using projectInternal flag).
+	ClusterUuid                 pulumi.StringPtrOutput                   `pulumi:"clusterUuid"`
+	DefaultEnvironmentReference ProjectDefaultEnvironmentReferenceOutput `pulumi:"defaultEnvironmentReference"`
+	DefaultSubnetReference      ProjectDefaultSubnetReferenceOutput      `pulumi:"defaultSubnetReference"`
 	// A description for project.
-	Description                     pulumi.StringOutput                              `pulumi:"description"`
+	Description pulumi.StringOutput `pulumi:"description"`
+	// flag to allow collaboration of projects. (Use with projectInternal flag)
+	EnableCollab                    pulumi.BoolPtrOutput                             `pulumi:"enableCollab"`
 	EnvironmentReferenceLists       ProjectEnvironmentReferenceListArrayOutput       `pulumi:"environmentReferenceLists"`
 	ExternalNetworkLists            ProjectExternalNetworkListArrayOutput            `pulumi:"externalNetworkLists"`
 	ExternalUserGroupReferenceLists ProjectExternalUserGroupReferenceListArrayOutput `pulumi:"externalUserGroupReferenceLists"`
@@ -105,7 +216,14 @@ type Project struct {
 	ResourceDomain       ProjectResourceDomainPtrOutput        `pulumi:"resourceDomain"`
 	State                pulumi.StringOutput                   `pulumi:"state"`
 	SubnetReferenceLists ProjectSubnetReferenceListArrayOutput `pulumi:"subnetReferenceLists"`
-	UserReferenceLists   ProjectUserReferenceListArrayOutput   `pulumi:"userReferenceLists"`
+	TunnelReferenceLists ProjectTunnelReferenceListArrayOutput `pulumi:"tunnelReferenceLists"`
+	// flag to use project internal for user role mapping
+	UseProjectInternal pulumi.BoolPtrOutput            `pulumi:"useProjectInternal"`
+	UserGroupLists     ProjectUserGroupListArrayOutput `pulumi:"userGroupLists"`
+	UserLists          ProjectUserListArrayOutput      `pulumi:"userLists"`
+	// List of Reference of users.
+	UserReferenceLists ProjectUserReferenceListArrayOutput `pulumi:"userReferenceLists"`
+	VpcReferenceLists  ProjectVpcReferenceListArrayOutput  `pulumi:"vpcReferenceLists"`
 }
 
 // NewProject registers a new resource with the given unique name, arguments, and options.
@@ -144,12 +262,20 @@ func GetProject(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Project resources.
 type projectState struct {
-	AccountReferenceLists  []ProjectAccountReferenceList  `pulumi:"accountReferenceLists"`
-	ApiVersion             *string                        `pulumi:"apiVersion"`
-	Categories             []ProjectCategory              `pulumi:"categories"`
-	DefaultSubnetReference *ProjectDefaultSubnetReference `pulumi:"defaultSubnetReference"`
+	AccountReferenceLists []ProjectAccountReferenceList `pulumi:"accountReferenceLists"`
+	Acps                  []ProjectAcp                  `pulumi:"acps"`
+	ApiVersion            *string                       `pulumi:"apiVersion"`
+	// - (Optional) The category values represented as a dictionary of key > list of values.
+	Categories            []ProjectCategory             `pulumi:"categories"`
+	ClusterReferenceLists []ProjectClusterReferenceList `pulumi:"clusterReferenceLists"`
+	// The UUID of cluster. (Required when using projectInternal flag).
+	ClusterUuid                 *string                             `pulumi:"clusterUuid"`
+	DefaultEnvironmentReference *ProjectDefaultEnvironmentReference `pulumi:"defaultEnvironmentReference"`
+	DefaultSubnetReference      *ProjectDefaultSubnetReference      `pulumi:"defaultSubnetReference"`
 	// A description for project.
-	Description                     *string                                 `pulumi:"description"`
+	Description *string `pulumi:"description"`
+	// flag to allow collaboration of projects. (Use with projectInternal flag)
+	EnableCollab                    *bool                                   `pulumi:"enableCollab"`
 	EnvironmentReferenceLists       []ProjectEnvironmentReferenceList       `pulumi:"environmentReferenceLists"`
 	ExternalNetworkLists            []ProjectExternalNetworkList            `pulumi:"externalNetworkLists"`
 	ExternalUserGroupReferenceLists []ProjectExternalUserGroupReferenceList `pulumi:"externalUserGroupReferenceLists"`
@@ -162,16 +288,31 @@ type projectState struct {
 	ResourceDomain       *ProjectResourceDomain       `pulumi:"resourceDomain"`
 	State                *string                      `pulumi:"state"`
 	SubnetReferenceLists []ProjectSubnetReferenceList `pulumi:"subnetReferenceLists"`
-	UserReferenceLists   []ProjectUserReferenceList   `pulumi:"userReferenceLists"`
+	TunnelReferenceLists []ProjectTunnelReferenceList `pulumi:"tunnelReferenceLists"`
+	// flag to use project internal for user role mapping
+	UseProjectInternal *bool                  `pulumi:"useProjectInternal"`
+	UserGroupLists     []ProjectUserGroupList `pulumi:"userGroupLists"`
+	UserLists          []ProjectUserList      `pulumi:"userLists"`
+	// List of Reference of users.
+	UserReferenceLists []ProjectUserReferenceList `pulumi:"userReferenceLists"`
+	VpcReferenceLists  []ProjectVpcReferenceList  `pulumi:"vpcReferenceLists"`
 }
 
 type ProjectState struct {
-	AccountReferenceLists  ProjectAccountReferenceListArrayInput
-	ApiVersion             pulumi.StringPtrInput
-	Categories             ProjectCategoryArrayInput
-	DefaultSubnetReference ProjectDefaultSubnetReferencePtrInput
+	AccountReferenceLists ProjectAccountReferenceListArrayInput
+	Acps                  ProjectAcpArrayInput
+	ApiVersion            pulumi.StringPtrInput
+	// - (Optional) The category values represented as a dictionary of key > list of values.
+	Categories            ProjectCategoryArrayInput
+	ClusterReferenceLists ProjectClusterReferenceListArrayInput
+	// The UUID of cluster. (Required when using projectInternal flag).
+	ClusterUuid                 pulumi.StringPtrInput
+	DefaultEnvironmentReference ProjectDefaultEnvironmentReferencePtrInput
+	DefaultSubnetReference      ProjectDefaultSubnetReferencePtrInput
 	// A description for project.
-	Description                     pulumi.StringPtrInput
+	Description pulumi.StringPtrInput
+	// flag to allow collaboration of projects. (Use with projectInternal flag)
+	EnableCollab                    pulumi.BoolPtrInput
 	EnvironmentReferenceLists       ProjectEnvironmentReferenceListArrayInput
 	ExternalNetworkLists            ProjectExternalNetworkListArrayInput
 	ExternalUserGroupReferenceLists ProjectExternalUserGroupReferenceListArrayInput
@@ -184,7 +325,14 @@ type ProjectState struct {
 	ResourceDomain       ProjectResourceDomainPtrInput
 	State                pulumi.StringPtrInput
 	SubnetReferenceLists ProjectSubnetReferenceListArrayInput
-	UserReferenceLists   ProjectUserReferenceListArrayInput
+	TunnelReferenceLists ProjectTunnelReferenceListArrayInput
+	// flag to use project internal for user role mapping
+	UseProjectInternal pulumi.BoolPtrInput
+	UserGroupLists     ProjectUserGroupListArrayInput
+	UserLists          ProjectUserListArrayInput
+	// List of Reference of users.
+	UserReferenceLists ProjectUserReferenceListArrayInput
+	VpcReferenceLists  ProjectVpcReferenceListArrayInput
 }
 
 func (ProjectState) ElementType() reflect.Type {
@@ -192,12 +340,20 @@ func (ProjectState) ElementType() reflect.Type {
 }
 
 type projectArgs struct {
-	AccountReferenceLists  []ProjectAccountReferenceList `pulumi:"accountReferenceLists"`
-	ApiVersion             *string                       `pulumi:"apiVersion"`
-	Categories             []ProjectCategory             `pulumi:"categories"`
-	DefaultSubnetReference ProjectDefaultSubnetReference `pulumi:"defaultSubnetReference"`
+	AccountReferenceLists []ProjectAccountReferenceList `pulumi:"accountReferenceLists"`
+	Acps                  []ProjectAcp                  `pulumi:"acps"`
+	ApiVersion            *string                       `pulumi:"apiVersion"`
+	// - (Optional) The category values represented as a dictionary of key > list of values.
+	Categories            []ProjectCategory             `pulumi:"categories"`
+	ClusterReferenceLists []ProjectClusterReferenceList `pulumi:"clusterReferenceLists"`
+	// The UUID of cluster. (Required when using projectInternal flag).
+	ClusterUuid                 *string                             `pulumi:"clusterUuid"`
+	DefaultEnvironmentReference *ProjectDefaultEnvironmentReference `pulumi:"defaultEnvironmentReference"`
+	DefaultSubnetReference      ProjectDefaultSubnetReference       `pulumi:"defaultSubnetReference"`
 	// A description for project.
-	Description                     string                                  `pulumi:"description"`
+	Description string `pulumi:"description"`
+	// flag to allow collaboration of projects. (Use with projectInternal flag)
+	EnableCollab                    *bool                                   `pulumi:"enableCollab"`
 	EnvironmentReferenceLists       []ProjectEnvironmentReferenceList       `pulumi:"environmentReferenceLists"`
 	ExternalNetworkLists            []ProjectExternalNetworkList            `pulumi:"externalNetworkLists"`
 	ExternalUserGroupReferenceLists []ProjectExternalUserGroupReferenceList `pulumi:"externalUserGroupReferenceLists"`
@@ -207,17 +363,32 @@ type projectArgs struct {
 	ProjectReference     map[string]string            `pulumi:"projectReference"`
 	ResourceDomain       *ProjectResourceDomain       `pulumi:"resourceDomain"`
 	SubnetReferenceLists []ProjectSubnetReferenceList `pulumi:"subnetReferenceLists"`
-	UserReferenceLists   []ProjectUserReferenceList   `pulumi:"userReferenceLists"`
+	TunnelReferenceLists []ProjectTunnelReferenceList `pulumi:"tunnelReferenceLists"`
+	// flag to use project internal for user role mapping
+	UseProjectInternal *bool                  `pulumi:"useProjectInternal"`
+	UserGroupLists     []ProjectUserGroupList `pulumi:"userGroupLists"`
+	UserLists          []ProjectUserList      `pulumi:"userLists"`
+	// List of Reference of users.
+	UserReferenceLists []ProjectUserReferenceList `pulumi:"userReferenceLists"`
+	VpcReferenceLists  []ProjectVpcReferenceList  `pulumi:"vpcReferenceLists"`
 }
 
 // The set of arguments for constructing a Project resource.
 type ProjectArgs struct {
-	AccountReferenceLists  ProjectAccountReferenceListArrayInput
-	ApiVersion             pulumi.StringPtrInput
-	Categories             ProjectCategoryArrayInput
-	DefaultSubnetReference ProjectDefaultSubnetReferenceInput
+	AccountReferenceLists ProjectAccountReferenceListArrayInput
+	Acps                  ProjectAcpArrayInput
+	ApiVersion            pulumi.StringPtrInput
+	// - (Optional) The category values represented as a dictionary of key > list of values.
+	Categories            ProjectCategoryArrayInput
+	ClusterReferenceLists ProjectClusterReferenceListArrayInput
+	// The UUID of cluster. (Required when using projectInternal flag).
+	ClusterUuid                 pulumi.StringPtrInput
+	DefaultEnvironmentReference ProjectDefaultEnvironmentReferencePtrInput
+	DefaultSubnetReference      ProjectDefaultSubnetReferenceInput
 	// A description for project.
-	Description                     pulumi.StringInput
+	Description pulumi.StringInput
+	// flag to allow collaboration of projects. (Use with projectInternal flag)
+	EnableCollab                    pulumi.BoolPtrInput
 	EnvironmentReferenceLists       ProjectEnvironmentReferenceListArrayInput
 	ExternalNetworkLists            ProjectExternalNetworkListArrayInput
 	ExternalUserGroupReferenceLists ProjectExternalUserGroupReferenceListArrayInput
@@ -227,7 +398,14 @@ type ProjectArgs struct {
 	ProjectReference     pulumi.StringMapInput
 	ResourceDomain       ProjectResourceDomainPtrInput
 	SubnetReferenceLists ProjectSubnetReferenceListArrayInput
-	UserReferenceLists   ProjectUserReferenceListArrayInput
+	TunnelReferenceLists ProjectTunnelReferenceListArrayInput
+	// flag to use project internal for user role mapping
+	UseProjectInternal pulumi.BoolPtrInput
+	UserGroupLists     ProjectUserGroupListArrayInput
+	UserLists          ProjectUserListArrayInput
+	// List of Reference of users.
+	UserReferenceLists ProjectUserReferenceListArrayInput
+	VpcReferenceLists  ProjectVpcReferenceListArrayInput
 }
 
 func (ProjectArgs) ElementType() reflect.Type {
@@ -321,12 +499,30 @@ func (o ProjectOutput) AccountReferenceLists() ProjectAccountReferenceListArrayO
 	return o.ApplyT(func(v *Project) ProjectAccountReferenceListArrayOutput { return v.AccountReferenceLists }).(ProjectAccountReferenceListArrayOutput)
 }
 
+func (o ProjectOutput) Acps() ProjectAcpArrayOutput {
+	return o.ApplyT(func(v *Project) ProjectAcpArrayOutput { return v.Acps }).(ProjectAcpArrayOutput)
+}
+
 func (o ProjectOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// - (Optional) The category values represented as a dictionary of key > list of values.
 func (o ProjectOutput) Categories() ProjectCategoryArrayOutput {
 	return o.ApplyT(func(v *Project) ProjectCategoryArrayOutput { return v.Categories }).(ProjectCategoryArrayOutput)
+}
+
+func (o ProjectOutput) ClusterReferenceLists() ProjectClusterReferenceListArrayOutput {
+	return o.ApplyT(func(v *Project) ProjectClusterReferenceListArrayOutput { return v.ClusterReferenceLists }).(ProjectClusterReferenceListArrayOutput)
+}
+
+// The UUID of cluster. (Required when using projectInternal flag).
+func (o ProjectOutput) ClusterUuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Project) pulumi.StringPtrOutput { return v.ClusterUuid }).(pulumi.StringPtrOutput)
+}
+
+func (o ProjectOutput) DefaultEnvironmentReference() ProjectDefaultEnvironmentReferenceOutput {
+	return o.ApplyT(func(v *Project) ProjectDefaultEnvironmentReferenceOutput { return v.DefaultEnvironmentReference }).(ProjectDefaultEnvironmentReferenceOutput)
 }
 
 func (o ProjectOutput) DefaultSubnetReference() ProjectDefaultSubnetReferenceOutput {
@@ -336,6 +532,11 @@ func (o ProjectOutput) DefaultSubnetReference() ProjectDefaultSubnetReferenceOut
 // A description for project.
 func (o ProjectOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+}
+
+// flag to allow collaboration of projects. (Use with projectInternal flag)
+func (o ProjectOutput) EnableCollab() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Project) pulumi.BoolPtrOutput { return v.EnableCollab }).(pulumi.BoolPtrOutput)
 }
 
 func (o ProjectOutput) EnvironmentReferenceLists() ProjectEnvironmentReferenceListArrayOutput {
@@ -385,8 +586,30 @@ func (o ProjectOutput) SubnetReferenceLists() ProjectSubnetReferenceListArrayOut
 	return o.ApplyT(func(v *Project) ProjectSubnetReferenceListArrayOutput { return v.SubnetReferenceLists }).(ProjectSubnetReferenceListArrayOutput)
 }
 
+func (o ProjectOutput) TunnelReferenceLists() ProjectTunnelReferenceListArrayOutput {
+	return o.ApplyT(func(v *Project) ProjectTunnelReferenceListArrayOutput { return v.TunnelReferenceLists }).(ProjectTunnelReferenceListArrayOutput)
+}
+
+// flag to use project internal for user role mapping
+func (o ProjectOutput) UseProjectInternal() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Project) pulumi.BoolPtrOutput { return v.UseProjectInternal }).(pulumi.BoolPtrOutput)
+}
+
+func (o ProjectOutput) UserGroupLists() ProjectUserGroupListArrayOutput {
+	return o.ApplyT(func(v *Project) ProjectUserGroupListArrayOutput { return v.UserGroupLists }).(ProjectUserGroupListArrayOutput)
+}
+
+func (o ProjectOutput) UserLists() ProjectUserListArrayOutput {
+	return o.ApplyT(func(v *Project) ProjectUserListArrayOutput { return v.UserLists }).(ProjectUserListArrayOutput)
+}
+
+// List of Reference of users.
 func (o ProjectOutput) UserReferenceLists() ProjectUserReferenceListArrayOutput {
 	return o.ApplyT(func(v *Project) ProjectUserReferenceListArrayOutput { return v.UserReferenceLists }).(ProjectUserReferenceListArrayOutput)
+}
+
+func (o ProjectOutput) VpcReferenceLists() ProjectVpcReferenceListArrayOutput {
+	return o.ApplyT(func(v *Project) ProjectVpcReferenceListArrayOutput { return v.VpcReferenceLists }).(ProjectVpcReferenceListArrayOutput)
 }
 
 type ProjectArrayOutput struct{ *pulumi.OutputState }

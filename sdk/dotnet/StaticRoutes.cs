@@ -11,7 +11,7 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
-    /// Provides Nutanix resource to create Floating IPs.
+    /// Provides Nutanix resource to create Static Routes within VPCs.
     /// 
     /// ## create one static route for vpc uuid with external subnet
     /// 

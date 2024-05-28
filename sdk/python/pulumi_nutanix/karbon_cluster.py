@@ -59,6 +59,9 @@ class KarbonClusterArgs:
         if single_master_config is not None:
             pulumi.set(__self__, "single_master_config", single_master_config)
         if wait_timeout_minutes is not None:
+            warnings.warn("""use timeouts instead""", DeprecationWarning)
+            pulumi.log.warn("""wait_timeout_minutes is deprecated: use timeouts instead""")
+        if wait_timeout_minutes is not None:
             pulumi.set(__self__, "wait_timeout_minutes", wait_timeout_minutes)
 
     @property
@@ -196,6 +199,9 @@ class KarbonClusterArgs:
         """
         - (Optional) Maximum wait time for the Karbon cluster to provision.
         """
+        warnings.warn("""use timeouts instead""", DeprecationWarning)
+        pulumi.log.warn("""wait_timeout_minutes is deprecated: use timeouts instead""")
+
         return pulumi.get(self, "wait_timeout_minutes")
 
     @wait_timeout_minutes.setter
@@ -261,6 +267,9 @@ class _KarbonClusterState:
             pulumi.set(__self__, "storage_class_config", storage_class_config)
         if version is not None:
             pulumi.set(__self__, "version", version)
+        if wait_timeout_minutes is not None:
+            warnings.warn("""use timeouts instead""", DeprecationWarning)
+            pulumi.log.warn("""wait_timeout_minutes is deprecated: use timeouts instead""")
         if wait_timeout_minutes is not None:
             pulumi.set(__self__, "wait_timeout_minutes", wait_timeout_minutes)
         if worker_node_pool is not None:
@@ -419,6 +428,9 @@ class _KarbonClusterState:
         """
         - (Optional) Maximum wait time for the Karbon cluster to provision.
         """
+        warnings.warn("""use timeouts instead""", DeprecationWarning)
+        pulumi.log.warn("""wait_timeout_minutes is deprecated: use timeouts instead""")
+
         return pulumi.get(self, "wait_timeout_minutes")
 
     @wait_timeout_minutes.setter
@@ -510,6 +522,55 @@ class KarbonCluster(pulumi.CustomResource):
             ))
         ```
 
+        ### resource to create karbon cluster with timeouts
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        example_cluster = nutanix.KarbonCluster("exampleCluster",
+            cni_config=nutanix.KarbonClusterCniConfigArgs(
+                node_cidr_mask_size=24,
+                pod_ipv4_cidr="172.20.0.0/16",
+                service_ipv4_cidr="172.19.0.0/16",
+            ),
+            etcd_node_pool=nutanix.KarbonClusterEtcdNodePoolArgs(
+                ahv_config=nutanix.KarbonClusterEtcdNodePoolAhvConfigArgs(
+                    network_uuid="my_subnet_id",
+                    prism_element_cluster_uuid="my_pe_cluster_uuid",
+                ),
+                node_os_version="ntnx-1.0",
+                num_instances=1,
+            ),
+            master_node_pool=nutanix.KarbonClusterMasterNodePoolArgs(
+                ahv_config=nutanix.KarbonClusterMasterNodePoolAhvConfigArgs(
+                    network_uuid="my_subnet_id",
+                    prism_element_cluster_uuid="my_pe_cluster_uuid",
+                ),
+                node_os_version="ntnx-1.0",
+                num_instances=1,
+            ),
+            storage_class_config=nutanix.KarbonClusterStorageClassConfigArgs(
+                reclaim_policy="Delete",
+                volumes_config=nutanix.KarbonClusterStorageClassConfigVolumesConfigArgs(
+                    file_system="ext4",
+                    flash_mode=False,
+                    password="my_pe_pw",
+                    prism_element_cluster_uuid="my_pe_cluster_uuid",
+                    storage_container="my_storage_container_name",
+                    username="my_pe_username",
+                ),
+            ),
+            version="1.18.15-1",
+            worker_node_pool=nutanix.KarbonClusterWorkerNodePoolArgs(
+                ahv_config=nutanix.KarbonClusterWorkerNodePoolAhvConfigArgs(
+                    network_uuid="my_subnet_id",
+                    prism_element_cluster_uuid="my_pe_cluster_uuid",
+                ),
+                node_os_version="ntnx-1.0",
+                num_instances=1,
+            ))
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['KarbonClusterActivePassiveConfigArgs']] active_passive_config: - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
@@ -539,6 +600,55 @@ class KarbonCluster(pulumi.CustomResource):
 
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        example_cluster = nutanix.KarbonCluster("exampleCluster",
+            cni_config=nutanix.KarbonClusterCniConfigArgs(
+                node_cidr_mask_size=24,
+                pod_ipv4_cidr="172.20.0.0/16",
+                service_ipv4_cidr="172.19.0.0/16",
+            ),
+            etcd_node_pool=nutanix.KarbonClusterEtcdNodePoolArgs(
+                ahv_config=nutanix.KarbonClusterEtcdNodePoolAhvConfigArgs(
+                    network_uuid="my_subnet_id",
+                    prism_element_cluster_uuid="my_pe_cluster_uuid",
+                ),
+                node_os_version="ntnx-1.0",
+                num_instances=1,
+            ),
+            master_node_pool=nutanix.KarbonClusterMasterNodePoolArgs(
+                ahv_config=nutanix.KarbonClusterMasterNodePoolAhvConfigArgs(
+                    network_uuid="my_subnet_id",
+                    prism_element_cluster_uuid="my_pe_cluster_uuid",
+                ),
+                node_os_version="ntnx-1.0",
+                num_instances=1,
+            ),
+            storage_class_config=nutanix.KarbonClusterStorageClassConfigArgs(
+                reclaim_policy="Delete",
+                volumes_config=nutanix.KarbonClusterStorageClassConfigVolumesConfigArgs(
+                    file_system="ext4",
+                    flash_mode=False,
+                    password="my_pe_pw",
+                    prism_element_cluster_uuid="my_pe_cluster_uuid",
+                    storage_container="my_storage_container_name",
+                    username="my_pe_username",
+                ),
+            ),
+            version="1.18.15-1",
+            worker_node_pool=nutanix.KarbonClusterWorkerNodePoolArgs(
+                ahv_config=nutanix.KarbonClusterWorkerNodePoolAhvConfigArgs(
+                    network_uuid="my_subnet_id",
+                    prism_element_cluster_uuid="my_pe_cluster_uuid",
+                ),
+                node_os_version="ntnx-1.0",
+                num_instances=1,
+            ))
+        ```
+
+        ### resource to create karbon cluster with timeouts
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
@@ -816,6 +926,9 @@ class KarbonCluster(pulumi.CustomResource):
         """
         - (Optional) Maximum wait time for the Karbon cluster to provision.
         """
+        warnings.warn("""use timeouts instead""", DeprecationWarning)
+        pulumi.log.warn("""wait_timeout_minutes is deprecated: use timeouts instead""")
+
         return pulumi.get(self, "wait_timeout_minutes")
 
     @property

@@ -318,6 +318,9 @@ class GetVirtualMachineResult:
     @property
     @pulumi.getter(name="guestCustomizationSysprepCustomKeyValues")
     def guest_customization_sysprep_custom_key_values(self) -> Mapping[str, Any]:
+        """
+        - Generic key value pair used for custom attributes in sysprep.
+        """
         return pulumi.get(self, "guest_customization_sysprep_custom_key_values")
 
     @property

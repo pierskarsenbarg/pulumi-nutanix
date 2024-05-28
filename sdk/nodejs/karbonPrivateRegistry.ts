@@ -65,7 +65,7 @@ export class KarbonPrivateRegistry extends pulumi.CustomResource {
     /**
      * - (Optional) Port of the private registry.
      */
-    public readonly port!: pulumi.Output<number>;
+    public readonly port!: pulumi.Output<number | undefined>;
     /**
      * - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.
      */
@@ -97,9 +97,6 @@ export class KarbonPrivateRegistry extends pulumi.CustomResource {
             resourceInputs["username"] = state ? state.username : undefined;
         } else {
             const args = argsOrState as KarbonPrivateRegistryArgs | undefined;
-            if ((!args || args.port === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'port'");
-            }
             if ((!args || args.url === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
@@ -171,7 +168,7 @@ export interface KarbonPrivateRegistryArgs {
     /**
      * - (Optional) Port of the private registry.
      */
-    port: pulumi.Input<number>;
+    port?: pulumi.Input<number>;
     /**
      * - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.
      */

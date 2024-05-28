@@ -40,6 +40,18 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string?> FoundationPort { get; private set; } = null!;
 
         /// <summary>
+        /// endpoint for Era VM (era ip)
+        /// </summary>
+        [Output("ndbEndpoint")]
+        public Output<string?> NdbEndpoint { get; private set; } = null!;
+
+        [Output("ndbPassword")]
+        public Output<string?> NdbPassword { get; private set; } = null!;
+
+        [Output("ndbUsername")]
+        public Output<string?> NdbUsername { get; private set; } = null!;
+
+        /// <summary>
         /// Password for provided user name.
         /// </summary>
         [Output("password")]
@@ -114,6 +126,18 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("insecure", json: true)]
         public Input<bool>? Insecure { get; set; }
+
+        /// <summary>
+        /// endpoint for Era VM (era ip)
+        /// </summary>
+        [Input("ndbEndpoint")]
+        public Input<string>? NdbEndpoint { get; set; }
+
+        [Input("ndbPassword")]
+        public Input<string>? NdbPassword { get; set; }
+
+        [Input("ndbUsername")]
+        public Input<string>? NdbUsername { get; set; }
 
         /// <summary>
         /// Password for provided user name.

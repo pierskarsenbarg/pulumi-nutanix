@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Provides Nutanix resource to create Floating IPs.
+// Provides Nutanix resource to create Static Routes within VPCs.
 //
 // ## create one static route for vpc uuid with external subnet
 //

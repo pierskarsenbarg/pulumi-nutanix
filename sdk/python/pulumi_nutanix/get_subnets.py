@@ -94,6 +94,9 @@ def get_subnets(metadatas: Optional[Sequence[pulumi.InputType['GetSubnetsMetadat
     import pulumi_nutanix as nutanix
 
     subnets = nutanix.get_subnets()
+    test = nutanix.get_subnets(metadatas=[nutanix.GetSubnetsMetadataArgs(
+        filter="name==vlan0_test_2",
+    )])
     ```
 
 
@@ -124,6 +127,9 @@ def get_subnets_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi
     import pulumi_nutanix as nutanix
 
     subnets = nutanix.get_subnets()
+    test = nutanix.get_subnets(metadatas=[nutanix.GetSubnetsMetadataArgs(
+        filter="name==vlan0_test_2",
+    )])
     ```
 
 

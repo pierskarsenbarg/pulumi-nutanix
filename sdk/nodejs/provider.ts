@@ -40,6 +40,12 @@ export class Provider extends pulumi.ProviderResource {
      */
     public readonly foundationPort!: pulumi.Output<string | undefined>;
     /**
+     * endpoint for Era VM (era ip)
+     */
+    public readonly ndbEndpoint!: pulumi.Output<string | undefined>;
+    public readonly ndbPassword!: pulumi.Output<string | undefined>;
+    public readonly ndbUsername!: pulumi.Output<string | undefined>;
+    /**
      * Password for provided user name.
      */
     public readonly password!: pulumi.Output<string | undefined>;
@@ -68,6 +74,9 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["foundationEndpoint"] = args ? args.foundationEndpoint : undefined;
             resourceInputs["foundationPort"] = args ? args.foundationPort : undefined;
             resourceInputs["insecure"] = pulumi.output(args ? args.insecure : undefined).apply(JSON.stringify);
+            resourceInputs["ndbEndpoint"] = args ? args.ndbEndpoint : undefined;
+            resourceInputs["ndbPassword"] = args ? args.ndbPassword : undefined;
+            resourceInputs["ndbUsername"] = args ? args.ndbUsername : undefined;
             resourceInputs["password"] = args ? args.password : undefined;
             resourceInputs["port"] = args ? args.port : undefined;
             resourceInputs["proxyUrl"] = args ? args.proxyUrl : undefined;
@@ -102,6 +111,12 @@ export interface ProviderArgs {
      * Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is `false`
      */
     insecure?: pulumi.Input<boolean>;
+    /**
+     * endpoint for Era VM (era ip)
+     */
+    ndbEndpoint?: pulumi.Input<string>;
+    ndbPassword?: pulumi.Input<string>;
+    ndbUsername?: pulumi.Input<string>;
     /**
      * Password for provided user name.
      */

@@ -217,7 +217,7 @@ class StaticRoutes(pulumi.CustomResource):
                  vpc_uuid: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Provides Nutanix resource to create Floating IPs.
+        Provides Nutanix resource to create Static Routes within VPCs.
 
         ## create one static route for vpc uuid with external subnet
 
@@ -267,7 +267,7 @@ class StaticRoutes(pulumi.CustomResource):
                  args: Optional[StaticRoutesArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Provides Nutanix resource to create Floating IPs.
+        Provides Nutanix resource to create Static Routes within VPCs.
 
         ## create one static route for vpc uuid with external subnet
 

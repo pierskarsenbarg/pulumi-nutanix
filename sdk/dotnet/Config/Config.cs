@@ -74,6 +74,30 @@ namespace PiersKarsenbarg.Nutanix
             set => _insecure.Set(value);
         }
 
+        private static readonly __Value<string?> _ndbEndpoint = new __Value<string?>(() => __config.Get("ndbEndpoint"));
+        /// <summary>
+        /// endpoint for Era VM (era ip)
+        /// </summary>
+        public static string? NdbEndpoint
+        {
+            get => _ndbEndpoint.Get();
+            set => _ndbEndpoint.Set(value);
+        }
+
+        private static readonly __Value<string?> _ndbPassword = new __Value<string?>(() => __config.Get("ndbPassword"));
+        public static string? NdbPassword
+        {
+            get => _ndbPassword.Get();
+            set => _ndbPassword.Set(value);
+        }
+
+        private static readonly __Value<string?> _ndbUsername = new __Value<string?>(() => __config.Get("ndbUsername"));
+        public static string? NdbUsername
+        {
+            get => _ndbUsername.Get();
+            set => _ndbUsername.Set(value);
+        }
+
         private static readonly __Value<string?> _password = new __Value<string?>(() => __config.Get("password"));
         /// <summary>
         /// Password for provided user name.

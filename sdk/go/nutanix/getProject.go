@@ -98,6 +98,7 @@ func LookupProject(ctx *pulumi.Context, args *LookupProjectArgs, opts ...pulumi.
 
 // A collection of arguments for invoking getProject.
 type LookupProjectArgs struct {
+	// - (Optional) The category values represented as a dictionary of key > list of values.
 	Categories []GetProjectCategory `pulumi:"categories"`
 	// List of directory service user groups. These groups are not managed by Nutanix.
 	// * `external_user_group_reference_list.#.kind` - The kind name. Default value is `userGroup`
@@ -112,10 +113,7 @@ type LookupProjectArgs struct {
 	// * `subnet_reference_list.#.uuid` - The UUID of a subnet
 	// * `subnet_reference_list.#.name` - The name of a subnet.
 	SubnetReferenceLists []GetProjectSubnetReferenceList `pulumi:"subnetReferenceLists"`
-	// List of users in the project.
-	// * `user_reference_list.#.kind` - The kind name. Default value is `user`
-	// * `user_reference_list.#.uuid` - The UUID of a user
-	// * `user_reference_list.#.name` - The name of a user.
+	// List of Reference of users.
 	UserReferenceLists []GetProjectUserReferenceList `pulumi:"userReferenceLists"`
 }
 
@@ -126,11 +124,20 @@ type LookupProjectResult struct {
 	// * `account_reference_list.#.uuid` - The UUID of an account.
 	// * `account_reference_list.#.name` - The name of an account.
 	AccountReferenceLists []GetProjectAccountReferenceList `pulumi:"accountReferenceLists"`
+	Acps                  []GetProjectAcp                  `pulumi:"acps"`
 	ApiVersion            string                           `pulumi:"apiVersion"`
-	Categories            []GetProjectCategory             `pulumi:"categories"`
+	// - (Optional) The category values represented as a dictionary of key > list of values.
+	Categories []GetProjectCategory `pulumi:"categories"`
+	// (Optional/Computed) List of clusters associated with the project..
+	// * `cluster_reference_list.#.kind` - (Optional) The kind name. Default value is `cluster`
+	// * `cluster_reference_list.#.uuid` - (Required) The UUID of a cluster
+	// * `cluster_reference_list.#.name` - (Optional/Computed) The name of a cluster.
+	ClusterReferenceLists []GetProjectClusterReferenceList `pulumi:"clusterReferenceLists"`
+	// (Optional/Computed) Reference to a environment.
+	DefaultEnvironmentReferences []GetProjectDefaultEnvironmentReference `pulumi:"defaultEnvironmentReferences"`
 	// Reference to a subnet.
 	DefaultSubnetReference map[string]string `pulumi:"defaultSubnetReference"`
-	// A description for project.
+	// Description of ACP
 	Description string `pulumi:"description"`
 	// List of environments associated with the project.
 	// * `environment_reference_list.#.kind` - The kind name. Default value is `environment`
@@ -164,11 +171,18 @@ type LookupProjectResult struct {
 	// * `subnet_reference_list.#.uuid` - The UUID of a subnet
 	// * `subnet_reference_list.#.name` - The name of a subnet.
 	SubnetReferenceLists []GetProjectSubnetReferenceList `pulumi:"subnetReferenceLists"`
-	// List of users in the project.
-	// * `user_reference_list.#.kind` - The kind name. Default value is `user`
-	// * `user_reference_list.#.uuid` - The UUID of a user
-	// * `user_reference_list.#.name` - The name of a user.
+	// (Optional/Computed) List of tunnels associated with the project.
+	// * `tunnel_reference_list.#.kind` - (Optional) The kind name. Default value is `tunnel`
+	// * `tunnel_reference_list.#.uuid` - (Required) The UUID of a tunnel
+	// * `tunnel_reference_list.#.name` - (Optional/Computed) The name of a tunnel.
+	TunnelReferenceLists []GetProjectTunnelReferenceList `pulumi:"tunnelReferenceLists"`
+	// List of Reference of users.
 	UserReferenceLists []GetProjectUserReferenceList `pulumi:"userReferenceLists"`
+	// (Optional/Computed) List of VPCs associated with the project..
+	// * `vpc_reference_list.#.kind` - (Optional) The kind name. Default value is `vpc`
+	// * `vpc_reference_list.#.uuid` - (Required) The UUID of a vpc
+	// * `vpc_reference_list.#.name` - (Optional/Computed) The name of a vpc.
+	VpcReferenceLists []GetProjectVpcReferenceList `pulumi:"vpcReferenceLists"`
 }
 
 func LookupProjectOutput(ctx *pulumi.Context, args LookupProjectOutputArgs, opts ...pulumi.InvokeOption) LookupProjectResultOutput {
@@ -186,6 +200,7 @@ func LookupProjectOutput(ctx *pulumi.Context, args LookupProjectOutputArgs, opts
 
 // A collection of arguments for invoking getProject.
 type LookupProjectOutputArgs struct {
+	// - (Optional) The category values represented as a dictionary of key > list of values.
 	Categories GetProjectCategoryArrayInput `pulumi:"categories"`
 	// List of directory service user groups. These groups are not managed by Nutanix.
 	// * `external_user_group_reference_list.#.kind` - The kind name. Default value is `userGroup`
@@ -200,10 +215,7 @@ type LookupProjectOutputArgs struct {
 	// * `subnet_reference_list.#.uuid` - The UUID of a subnet
 	// * `subnet_reference_list.#.name` - The name of a subnet.
 	SubnetReferenceLists GetProjectSubnetReferenceListArrayInput `pulumi:"subnetReferenceLists"`
-	// List of users in the project.
-	// * `user_reference_list.#.kind` - The kind name. Default value is `user`
-	// * `user_reference_list.#.uuid` - The UUID of a user
-	// * `user_reference_list.#.name` - The name of a user.
+	// List of Reference of users.
 	UserReferenceLists GetProjectUserReferenceListArrayInput `pulumi:"userReferenceLists"`
 }
 
@@ -234,12 +246,32 @@ func (o LookupProjectResultOutput) AccountReferenceLists() GetProjectAccountRefe
 	return o.ApplyT(func(v LookupProjectResult) []GetProjectAccountReferenceList { return v.AccountReferenceLists }).(GetProjectAccountReferenceListArrayOutput)
 }
 
+func (o LookupProjectResultOutput) Acps() GetProjectAcpArrayOutput {
+	return o.ApplyT(func(v LookupProjectResult) []GetProjectAcp { return v.Acps }).(GetProjectAcpArrayOutput)
+}
+
 func (o LookupProjectResultOutput) ApiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
+// - (Optional) The category values represented as a dictionary of key > list of values.
 func (o LookupProjectResultOutput) Categories() GetProjectCategoryArrayOutput {
 	return o.ApplyT(func(v LookupProjectResult) []GetProjectCategory { return v.Categories }).(GetProjectCategoryArrayOutput)
+}
+
+// (Optional/Computed) List of clusters associated with the project..
+// * `cluster_reference_list.#.kind` - (Optional) The kind name. Default value is `cluster`
+// * `cluster_reference_list.#.uuid` - (Required) The UUID of a cluster
+// * `cluster_reference_list.#.name` - (Optional/Computed) The name of a cluster.
+func (o LookupProjectResultOutput) ClusterReferenceLists() GetProjectClusterReferenceListArrayOutput {
+	return o.ApplyT(func(v LookupProjectResult) []GetProjectClusterReferenceList { return v.ClusterReferenceLists }).(GetProjectClusterReferenceListArrayOutput)
+}
+
+// (Optional/Computed) Reference to a environment.
+func (o LookupProjectResultOutput) DefaultEnvironmentReferences() GetProjectDefaultEnvironmentReferenceArrayOutput {
+	return o.ApplyT(func(v LookupProjectResult) []GetProjectDefaultEnvironmentReference {
+		return v.DefaultEnvironmentReferences
+	}).(GetProjectDefaultEnvironmentReferenceArrayOutput)
 }
 
 // Reference to a subnet.
@@ -247,7 +279,7 @@ func (o LookupProjectResultOutput) DefaultSubnetReference() pulumi.StringMapOutp
 	return o.ApplyT(func(v LookupProjectResult) map[string]string { return v.DefaultSubnetReference }).(pulumi.StringMapOutput)
 }
 
-// A description for project.
+// Description of ACP
 func (o LookupProjectResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -328,12 +360,25 @@ func (o LookupProjectResultOutput) SubnetReferenceLists() GetProjectSubnetRefere
 	return o.ApplyT(func(v LookupProjectResult) []GetProjectSubnetReferenceList { return v.SubnetReferenceLists }).(GetProjectSubnetReferenceListArrayOutput)
 }
 
-// List of users in the project.
-// * `user_reference_list.#.kind` - The kind name. Default value is `user`
-// * `user_reference_list.#.uuid` - The UUID of a user
-// * `user_reference_list.#.name` - The name of a user.
+// (Optional/Computed) List of tunnels associated with the project.
+// * `tunnel_reference_list.#.kind` - (Optional) The kind name. Default value is `tunnel`
+// * `tunnel_reference_list.#.uuid` - (Required) The UUID of a tunnel
+// * `tunnel_reference_list.#.name` - (Optional/Computed) The name of a tunnel.
+func (o LookupProjectResultOutput) TunnelReferenceLists() GetProjectTunnelReferenceListArrayOutput {
+	return o.ApplyT(func(v LookupProjectResult) []GetProjectTunnelReferenceList { return v.TunnelReferenceLists }).(GetProjectTunnelReferenceListArrayOutput)
+}
+
+// List of Reference of users.
 func (o LookupProjectResultOutput) UserReferenceLists() GetProjectUserReferenceListArrayOutput {
 	return o.ApplyT(func(v LookupProjectResult) []GetProjectUserReferenceList { return v.UserReferenceLists }).(GetProjectUserReferenceListArrayOutput)
+}
+
+// (Optional/Computed) List of VPCs associated with the project..
+// * `vpc_reference_list.#.kind` - (Optional) The kind name. Default value is `vpc`
+// * `vpc_reference_list.#.uuid` - (Required) The UUID of a vpc
+// * `vpc_reference_list.#.name` - (Optional/Computed) The name of a vpc.
+func (o LookupProjectResultOutput) VpcReferenceLists() GetProjectVpcReferenceListArrayOutput {
+	return o.ApplyT(func(v LookupProjectResult) []GetProjectVpcReferenceList { return v.VpcReferenceLists }).(GetProjectVpcReferenceListArrayOutput)
 }
 
 func init() {

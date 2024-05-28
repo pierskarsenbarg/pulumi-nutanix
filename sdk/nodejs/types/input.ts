@@ -521,6 +521,10 @@ export interface FoundationImageNodesCluster {
      * - If it is a single node cluster.
      */
     singleNodeCluster?: pulumi.Input<boolean>;
+    /**
+     * - Set timezone for every CVM
+     */
+    timezone?: pulumi.Input<string>;
 }
 
 export interface FoundationImageNodesClusterUrl {
@@ -1093,6 +1097,230 @@ export interface GetImageCategoryArgs {
     value?: pulumi.Input<string>;
 }
 
+export interface GetNdbCloneFilter {
+    /**
+     * Get entity(s) if it satisfies query criteria irrespective of status (retrieve even deleted). Default is false
+     */
+    anyStatus?: string;
+    /**
+     * Load entities with complete details. Default is false
+     */
+    detailed?: string;
+    /**
+     * Load cluster info. Default is false
+     */
+    loadDbserverCluster?: string;
+    /**
+     * Default is UTC
+     */
+    timezone?: string;
+}
+
+export interface GetNdbCloneFilterArgs {
+    /**
+     * Get entity(s) if it satisfies query criteria irrespective of status (retrieve even deleted). Default is false
+     */
+    anyStatus?: pulumi.Input<string>;
+    /**
+     * Load entities with complete details. Default is false
+     */
+    detailed?: pulumi.Input<string>;
+    /**
+     * Load cluster info. Default is false
+     */
+    loadDbserverCluster?: pulumi.Input<string>;
+    /**
+     * Default is UTC
+     */
+    timezone?: pulumi.Input<string>;
+}
+
+export interface GetNdbCloneTag {
+    entityId?: string;
+    entityType?: string;
+    tagId?: string;
+    tagName?: string;
+    value?: string;
+}
+
+export interface GetNdbCloneTagArgs {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface GetNdbClonesFilter {
+    /**
+     * Get entity(s) if it satisfies query criteria irrespective of status (retrieve even deleted). Default is false
+     */
+    anyStatus?: string;
+    /**
+     * Load entities with complete details. Default is false
+     */
+    detailed?: string;
+    /**
+     * Load cluster info. Default is false
+     */
+    loadDbserverCluster?: string;
+    /**
+     * Sorted by dbserver cluster. Default is false
+     */
+    orderByDbserverCluster?: string;
+    /**
+     * Sorted by dbserver logical cluster.  Default is false
+     */
+    orderByDbserverLogicalCluster?: string;
+    /**
+     * Default is UTC
+     */
+    timezone?: string;
+}
+
+export interface GetNdbClonesFilterArgs {
+    /**
+     * Get entity(s) if it satisfies query criteria irrespective of status (retrieve even deleted). Default is false
+     */
+    anyStatus?: pulumi.Input<string>;
+    /**
+     * Load entities with complete details. Default is false
+     */
+    detailed?: pulumi.Input<string>;
+    /**
+     * Load cluster info. Default is false
+     */
+    loadDbserverCluster?: pulumi.Input<string>;
+    /**
+     * Sorted by dbserver cluster. Default is false
+     */
+    orderByDbserverCluster?: pulumi.Input<string>;
+    /**
+     * Sorted by dbserver logical cluster.  Default is false
+     */
+    orderByDbserverLogicalCluster?: pulumi.Input<string>;
+    /**
+     * Default is UTC
+     */
+    timezone?: pulumi.Input<string>;
+}
+
+export interface GetNdbDatabaseTag {
+    entityId?: string;
+    entityType?: string;
+    tagId?: string;
+    tagName?: string;
+    value?: string;
+}
+
+export interface GetNdbDatabaseTagArgs {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface GetNdbDbserverTag {
+    entityId?: string;
+    entityType?: string;
+    tagId?: string;
+    tagName?: string;
+    value?: string;
+}
+
+export interface GetNdbDbserverTagArgs {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface GetNdbMaintenanceWindowTag {
+    entityId?: string;
+    entityType?: string;
+    tagId?: string;
+    tagName?: string;
+    value?: string;
+}
+
+export interface GetNdbMaintenanceWindowTagArgs {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface GetNdbSnapshotFilter {
+    /**
+     * load child snapshots. Default is false
+     */
+    loadReplicatedChildSnapshots?: string;
+    /**
+     * Default is UTC
+     */
+    timezone?: string;
+}
+
+export interface GetNdbSnapshotFilterArgs {
+    /**
+     * load child snapshots. Default is false
+     */
+    loadReplicatedChildSnapshots?: pulumi.Input<string>;
+    /**
+     * Default is UTC
+     */
+    timezone?: pulumi.Input<string>;
+}
+
+export interface GetNdbSnapshotTag {
+    entityId?: string;
+    entityType?: string;
+    tagId?: string;
+    tagName?: string;
+    value?: string;
+}
+
+export interface GetNdbSnapshotTagArgs {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface GetNdbSnapshotsFilter {
+    /**
+     * Fetches all the snapshots for a given time machine
+     */
+    timeMachineId?: string;
+}
+
+export interface GetNdbSnapshotsFilterArgs {
+    /**
+     * Fetches all the snapshots for a given time machine
+     */
+    timeMachineId?: pulumi.Input<string>;
+}
+
+export interface GetNdbTimeMachineTag {
+    entityId?: string;
+    entityType?: string;
+    tagId?: string;
+    tagName?: string;
+    value?: string;
+}
+
+export interface GetNdbTimeMachineTagArgs {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
 export interface GetNetworkSecurityRuleCategory {
     /**
      * - the name.
@@ -1650,10 +1878,6 @@ export interface KarbonClusterCniConfig {
      * - (Optional) Configuration of the calico CNI provider.
      * * `calico_config.ip_pool_config`: - (Optional) List of IP pools to be configured/managed by calico.
      * * `calico_config.ip_pool_config.cidr`: - (Optional) IP range to use for this pool, it should fall within pod cidr.
-     *
-     * **Note:** Updates to this attribute forces new resource creation.
-     *
-     * See detailed information in [Nutanix Karbon Cluster](https://www.nutanix.dev/reference/karbon/api-reference/cluster/).
      */
     calicoConfig?: pulumi.Input<inputs.KarbonClusterCniConfigCalicoConfig>;
     /**
@@ -1858,6 +2082,3987 @@ export interface KarbonClusterWorkerNodePoolAhvConfig {
 export interface KarbonClusterWorkerNodePoolNode {
     hostname?: pulumi.Input<string>;
     ipv4Address?: pulumi.Input<string>;
+}
+
+export interface KarbonWorkerNodepoolAhvConfig {
+    cpu?: pulumi.Input<number>;
+    diskMib?: pulumi.Input<number>;
+    iscsiNetworkUuid?: pulumi.Input<string>;
+    memoryMib?: pulumi.Input<number>;
+    networkUuid: pulumi.Input<string>;
+    prismElementClusterUuid?: pulumi.Input<string>;
+}
+
+export interface KarbonWorkerNodepoolNode {
+    hostname?: pulumi.Input<string>;
+    ipv4Address?: pulumi.Input<string>;
+}
+
+export interface NdbCloneActionargument {
+    /**
+     * - (Required) name of argument
+     */
+    name: pulumi.Input<string>;
+    /**
+     * - (Required) value for argument
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface NdbCloneDatabaseNode {
+    accessLevel?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    databaseId?: pulumi.Input<string>;
+    databaseStatus?: pulumi.Input<string>;
+    /**
+     * date created for clone
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * last modified date for clone
+     */
+    dateModified?: pulumi.Input<string>;
+    dbserver?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Specify if you want to create a database server. This value can be set to true or false as required.
+     */
+    dbserverId?: pulumi.Input<string>;
+    /**
+     * database instance description
+     */
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    /**
+     * info of clone
+     */
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbCloneDatabaseNodeInfo>[]>;
+    /**
+     * database instance name
+     */
+    name?: pulumi.Input<string>;
+    primary?: pulumi.Input<boolean>;
+    /**
+     * List of all the properties
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbCloneDatabaseNodeProperty>[]>;
+    protectionDomainId?: pulumi.Input<string>;
+    protectionDomains?: pulumi.Input<pulumi.Input<inputs.NdbCloneDatabaseNodeProtectionDomain>[]>;
+    softwareInstallationId?: pulumi.Input<string>;
+    /**
+     * status of clone
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbCloneDatabaseNodeTag>[]>;
+}
+
+export interface NdbCloneDatabaseNodeInfo {
+    /**
+     * info of clone
+     */
+    info?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbCloneDatabaseNodeProperty {
+    /**
+     * database instance description
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * database instance name
+     */
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbCloneDatabaseNodeProtectionDomain {
+    assocEntities?: pulumi.Input<pulumi.Input<string>[]>;
+    cloudId?: pulumi.Input<string>;
+    /**
+     * date created for clone
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * last modified date for clone
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * database instance description
+     */
+    description?: pulumi.Input<string>;
+    eraCreated?: pulumi.Input<boolean>;
+    id?: pulumi.Input<string>;
+    /**
+     * database instance name
+     */
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    primaryHost?: pulumi.Input<string>;
+    /**
+     * List of all the properties
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbCloneDatabaseNodeProtectionDomainProperty>[]>;
+    /**
+     * status of clone
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * type of clone
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface NdbCloneDatabaseNodeProtectionDomainProperty {
+    /**
+     * database instance description
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * database instance name
+     */
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbCloneDatabaseNodeTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbCloneInfo {
+    bpgConfigs?: pulumi.Input<pulumi.Input<inputs.NdbCloneInfoBpgConfig>[]>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbCloneInfoBpgConfig {
+    bpgDbParams?: pulumi.Input<pulumi.Input<inputs.NdbCloneInfoBpgConfigBpgDbParam>[]>;
+    storages?: pulumi.Input<pulumi.Input<inputs.NdbCloneInfoBpgConfigStorage>[]>;
+    vmProperties?: pulumi.Input<pulumi.Input<inputs.NdbCloneInfoBpgConfigVmProperty>[]>;
+}
+
+export interface NdbCloneInfoBpgConfigBpgDbParam {
+    effectiveCacheSize?: pulumi.Input<string>;
+    maintenanceWorkMem?: pulumi.Input<string>;
+    maxParallelWorkersPerGather?: pulumi.Input<string>;
+    maxWorkerProcesses?: pulumi.Input<string>;
+    sharedBuffers?: pulumi.Input<string>;
+    workMem?: pulumi.Input<string>;
+}
+
+export interface NdbCloneInfoBpgConfigStorage {
+    archiveStorages?: pulumi.Input<pulumi.Input<inputs.NdbCloneInfoBpgConfigStorageArchiveStorage>[]>;
+    dataDisks?: pulumi.Input<pulumi.Input<inputs.NdbCloneInfoBpgConfigStorageDataDisk>[]>;
+    logDisks?: pulumi.Input<pulumi.Input<inputs.NdbCloneInfoBpgConfigStorageLogDisk>[]>;
+}
+
+export interface NdbCloneInfoBpgConfigStorageArchiveStorage {
+    size?: pulumi.Input<number>;
+}
+
+export interface NdbCloneInfoBpgConfigStorageDataDisk {
+    count?: pulumi.Input<number>;
+}
+
+export interface NdbCloneInfoBpgConfigStorageLogDisk {
+    count?: pulumi.Input<number>;
+    size?: pulumi.Input<number>;
+}
+
+export interface NdbCloneInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio?: pulumi.Input<number>;
+    dirtyExpireCentisecs?: pulumi.Input<number>;
+    dirtyRatio?: pulumi.Input<number>;
+    dirtyWritebackCentisecs?: pulumi.Input<number>;
+    nrHugepages?: pulumi.Input<number>;
+    overcommitMemory?: pulumi.Input<number>;
+    swappiness?: pulumi.Input<number>;
+}
+
+export interface NdbCloneLcmConfig {
+    databaseLcmConfigs?: pulumi.Input<pulumi.Input<inputs.NdbCloneLcmConfigDatabaseLcmConfig>[]>;
+}
+
+export interface NdbCloneLcmConfigDatabaseLcmConfig {
+    expiryDetails?: pulumi.Input<pulumi.Input<inputs.NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail>[]>;
+    refreshDetails?: pulumi.Input<pulumi.Input<inputs.NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail>[]>;
+}
+
+export interface NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail {
+    deleteDatabase?: pulumi.Input<boolean>;
+    expireInDays?: pulumi.Input<number>;
+    expiryDateTimezone: pulumi.Input<string>;
+}
+
+export interface NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail {
+    refreshDateTimezone?: pulumi.Input<string>;
+    refreshInDays?: pulumi.Input<number>;
+    refreshTime?: pulumi.Input<string>;
+}
+
+export interface NdbCloneLinkedDatabase {
+    /**
+     * database name
+     */
+    databaseName?: pulumi.Input<string>;
+    databaseStatus?: pulumi.Input<string>;
+    /**
+     * date created for clone
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * last modified date for clone
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * database instance description
+     */
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    /**
+     * info of clone
+     */
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbCloneLinkedDatabaseInfo>[]>;
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
+    metric?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * database instance name
+     */
+    name?: pulumi.Input<string>;
+    parentDatabaseId?: pulumi.Input<string>;
+    parentLinkedDatabaseId?: pulumi.Input<string>;
+    /**
+     * snapshot id from where clone is created
+     */
+    snapshotId?: pulumi.Input<string>;
+    /**
+     * status of clone
+     */
+    status?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string>;
+}
+
+export interface NdbCloneLinkedDatabaseInfo {
+    /**
+     * info of clone
+     */
+    info?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbCloneNode {
+    /**
+     * specify compute profile id
+     */
+    computeProfileId?: pulumi.Input<string>;
+    /**
+     * dberver id
+     */
+    dbserverId?: pulumi.Input<string>;
+    /**
+     * specify network profile id
+     */
+    networkProfileId?: pulumi.Input<string>;
+    /**
+     * dbserver time zone
+     */
+    newDbServerTimeZone?: pulumi.Input<string>;
+    /**
+     * cluster id
+     */
+    nxClusterId?: pulumi.Input<string>;
+    /**
+     * properties of vm
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbCloneNodeProperty>[]>;
+    /**
+     * name for the database server VM.
+     */
+    vmName?: pulumi.Input<string>;
+}
+
+export interface NdbCloneNodeProperty {
+    /**
+     * database instance name
+     */
+    name?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbClonePostgresqlInfo {
+    /**
+     * password of the postgres superuser.
+     */
+    dbPassword: pulumi.Input<string>;
+    /**
+     * description for the dbserver.
+     */
+    dbserverDescription?: pulumi.Input<string>;
+    /**
+     * OS command that you want to run after the instance is created.
+     */
+    postCloneCmd?: pulumi.Input<string>;
+    /**
+     * OS command that you want to run before the instance is created.
+     */
+    preCloneCmd?: pulumi.Input<string>;
+    /**
+     * name for the database server VM.
+     */
+    vmName: pulumi.Input<string>;
+}
+
+export interface NdbCloneProperty {
+    /**
+     * database instance name
+     */
+    name?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbCloneTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbCloneTimeMachine {
+    accessLevel?: pulumi.Input<string>;
+    /**
+     * cloned or not
+     */
+    clone?: pulumi.Input<boolean>;
+    clones?: pulumi.Input<string>;
+    /**
+     * clone will be clustered or not
+     */
+    clustered?: pulumi.Input<boolean>;
+    database?: pulumi.Input<string>;
+    databaseId?: pulumi.Input<string>;
+    /**
+     * date created for clone
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * last modified date for clone
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * database instance description
+     */
+    description?: pulumi.Input<string>;
+    eaStatus?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
+    metric?: pulumi.Input<string>;
+    /**
+     * database instance name
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * List of all the properties
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbCloneTimeMachineProperty>[]>;
+    scheduleId?: pulumi.Input<string>;
+    schedules?: pulumi.Input<pulumi.Input<inputs.NdbCloneTimeMachineSchedule>[]>;
+    scope?: pulumi.Input<string>;
+    slaId?: pulumi.Input<string>;
+    slaUpdateInProgress?: pulumi.Input<boolean>;
+    slaUpdateMetadata?: pulumi.Input<string>;
+    slas?: pulumi.Input<pulumi.Input<inputs.NdbCloneTimeMachineSla>[]>;
+    sourceNxClusters?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * status of clone
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbCloneTimeMachineTag>[]>;
+    /**
+     * type of clone
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface NdbCloneTimeMachineProperty {
+    /**
+     * database instance description
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * database instance name
+     */
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbCloneTimeMachineSchedule {
+    continuousSchedules?: pulumi.Input<pulumi.Input<inputs.NdbCloneTimeMachineScheduleContinuousSchedule>[]>;
+    dailySchedules?: pulumi.Input<pulumi.Input<inputs.NdbCloneTimeMachineScheduleDailySchedule>[]>;
+    /**
+     * date created for clone
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * last modified date for clone
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * database instance description
+     */
+    description?: pulumi.Input<string>;
+    globalPolicy?: pulumi.Input<boolean>;
+    id?: pulumi.Input<string>;
+    monthlySchedules?: pulumi.Input<pulumi.Input<inputs.NdbCloneTimeMachineScheduleMonthlySchedule>[]>;
+    /**
+     * database instance name
+     */
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    quartelySchedules?: pulumi.Input<pulumi.Input<inputs.NdbCloneTimeMachineScheduleQuartelySchedule>[]>;
+    referenceCount?: pulumi.Input<number>;
+    snapshotTimeOfDays?: pulumi.Input<pulumi.Input<inputs.NdbCloneTimeMachineScheduleSnapshotTimeOfDay>[]>;
+    startTime?: pulumi.Input<string>;
+    systemPolicy?: pulumi.Input<boolean>;
+    /**
+     * timezone
+     */
+    timeZone?: pulumi.Input<string>;
+    uniqueName?: pulumi.Input<string>;
+    weeklySchedules?: pulumi.Input<pulumi.Input<inputs.NdbCloneTimeMachineScheduleWeeklySchedule>[]>;
+    yearlySchedules?: pulumi.Input<pulumi.Input<inputs.NdbCloneTimeMachineScheduleYearlySchedule>[]>;
+}
+
+export interface NdbCloneTimeMachineScheduleContinuousSchedule {
+    enabled?: pulumi.Input<boolean>;
+    logBackupInterval?: pulumi.Input<number>;
+    snapshotsPerDay?: pulumi.Input<number>;
+}
+
+export interface NdbCloneTimeMachineScheduleDailySchedule {
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbCloneTimeMachineScheduleMonthlySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbCloneTimeMachineScheduleQuartelySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+    startMonth?: pulumi.Input<string>;
+    startMonthValue?: pulumi.Input<string>;
+}
+
+export interface NdbCloneTimeMachineScheduleSnapshotTimeOfDay {
+    extra?: pulumi.Input<boolean>;
+    hours?: pulumi.Input<number>;
+    minutes?: pulumi.Input<number>;
+    seconds?: pulumi.Input<number>;
+}
+
+export interface NdbCloneTimeMachineScheduleWeeklySchedule {
+    dayOfWeek?: pulumi.Input<string>;
+    dayOfWeekValue?: pulumi.Input<string>;
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbCloneTimeMachineScheduleYearlySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+    month?: pulumi.Input<string>;
+    monthValue?: pulumi.Input<string>;
+}
+
+export interface NdbCloneTimeMachineSla {
+    continuousRetention?: pulumi.Input<number>;
+    currentActiveFrequency?: pulumi.Input<string>;
+    dailyRetention?: pulumi.Input<number>;
+    /**
+     * date created for clone
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * last modified date for clone
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * database instance description
+     */
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    monthlyRetention?: pulumi.Input<number>;
+    /**
+     * database instance name
+     */
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    pitrEnabled?: pulumi.Input<boolean>;
+    quarterlyRetention?: pulumi.Input<number>;
+    referenceCount?: pulumi.Input<number>;
+    systemSla?: pulumi.Input<boolean>;
+    uniqueName?: pulumi.Input<string>;
+    weeklyRetention?: pulumi.Input<number>;
+    yearlyRetention?: pulumi.Input<number>;
+}
+
+export interface NdbCloneTimeMachineTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbClusterAgentNetworkInfo {
+    /**
+     * string of DNS servers(comma separted).
+     */
+    dns?: pulumi.Input<string>;
+    /**
+     * string of NTP servers(comma separted).
+     */
+    ntp?: pulumi.Input<string>;
+}
+
+export interface NdbClusterEntityCount {
+    dbServers?: pulumi.Input<number>;
+    engineCounts?: pulumi.Input<pulumi.Input<inputs.NdbClusterEntityCountEngineCount>[]>;
+}
+
+export interface NdbClusterEntityCountEngineCount {
+    mariadbDatabases?: pulumi.Input<pulumi.Input<inputs.NdbClusterEntityCountEngineCountMariadbDatabase>[]>;
+    mongodbDatabases?: pulumi.Input<pulumi.Input<inputs.NdbClusterEntityCountEngineCountMongodbDatabase>[]>;
+    mysqlDatabases?: pulumi.Input<pulumi.Input<inputs.NdbClusterEntityCountEngineCountMysqlDatabase>[]>;
+    oracleDatabases?: pulumi.Input<pulumi.Input<inputs.NdbClusterEntityCountEngineCountOracleDatabase>[]>;
+    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbClusterEntityCountEngineCountPostgresDatabase>[]>;
+    saphanaDatabases?: pulumi.Input<pulumi.Input<inputs.NdbClusterEntityCountEngineCountSaphanaDatabase>[]>;
+    sqlserverDatabases?: pulumi.Input<pulumi.Input<inputs.NdbClusterEntityCountEngineCountSqlserverDatabase>[]>;
+}
+
+export interface NdbClusterEntityCountEngineCountMariadbDatabase {
+    profiles?: pulumi.Input<pulumi.Input<inputs.NdbClusterEntityCountEngineCountMariadbDatabaseProfile>[]>;
+    timeMachines?: pulumi.Input<number>;
+}
+
+export interface NdbClusterEntityCountEngineCountMariadbDatabaseProfile {
+    compute?: pulumi.Input<number>;
+    databaseParameter?: pulumi.Input<number>;
+    network?: pulumi.Input<number>;
+    software?: pulumi.Input<number>;
+    storage?: pulumi.Input<number>;
+    windowsDomain?: pulumi.Input<number>;
+}
+
+export interface NdbClusterEntityCountEngineCountMongodbDatabase {
+    profiles?: pulumi.Input<pulumi.Input<inputs.NdbClusterEntityCountEngineCountMongodbDatabaseProfile>[]>;
+    timeMachines?: pulumi.Input<number>;
+}
+
+export interface NdbClusterEntityCountEngineCountMongodbDatabaseProfile {
+    compute?: pulumi.Input<number>;
+    databaseParameter?: pulumi.Input<number>;
+    network?: pulumi.Input<number>;
+    software?: pulumi.Input<number>;
+    storage?: pulumi.Input<number>;
+    windowsDomain?: pulumi.Input<number>;
+}
+
+export interface NdbClusterEntityCountEngineCountMysqlDatabase {
+    profiles?: pulumi.Input<pulumi.Input<inputs.NdbClusterEntityCountEngineCountMysqlDatabaseProfile>[]>;
+    timeMachines?: pulumi.Input<number>;
+}
+
+export interface NdbClusterEntityCountEngineCountMysqlDatabaseProfile {
+    compute?: pulumi.Input<number>;
+    databaseParameter?: pulumi.Input<number>;
+    network?: pulumi.Input<number>;
+    software?: pulumi.Input<number>;
+    storage?: pulumi.Input<number>;
+    windowsDomain?: pulumi.Input<number>;
+}
+
+export interface NdbClusterEntityCountEngineCountOracleDatabase {
+    profiles?: pulumi.Input<pulumi.Input<inputs.NdbClusterEntityCountEngineCountOracleDatabaseProfile>[]>;
+    timeMachines?: pulumi.Input<number>;
+}
+
+export interface NdbClusterEntityCountEngineCountOracleDatabaseProfile {
+    compute?: pulumi.Input<number>;
+    databaseParameter?: pulumi.Input<number>;
+    network?: pulumi.Input<number>;
+    software?: pulumi.Input<number>;
+    storage?: pulumi.Input<number>;
+    windowsDomain?: pulumi.Input<number>;
+}
+
+export interface NdbClusterEntityCountEngineCountPostgresDatabase {
+    profiles?: pulumi.Input<pulumi.Input<inputs.NdbClusterEntityCountEngineCountPostgresDatabaseProfile>[]>;
+    timeMachines?: pulumi.Input<number>;
+}
+
+export interface NdbClusterEntityCountEngineCountPostgresDatabaseProfile {
+    compute?: pulumi.Input<number>;
+    databaseParameter?: pulumi.Input<number>;
+    network?: pulumi.Input<number>;
+    software?: pulumi.Input<number>;
+    storage?: pulumi.Input<number>;
+    windowsDomain?: pulumi.Input<number>;
+}
+
+export interface NdbClusterEntityCountEngineCountSaphanaDatabase {
+    profiles?: pulumi.Input<pulumi.Input<inputs.NdbClusterEntityCountEngineCountSaphanaDatabaseProfile>[]>;
+    timeMachines?: pulumi.Input<number>;
+}
+
+export interface NdbClusterEntityCountEngineCountSaphanaDatabaseProfile {
+    compute?: pulumi.Input<number>;
+    databaseParameter?: pulumi.Input<number>;
+    network?: pulumi.Input<number>;
+    software?: pulumi.Input<number>;
+    storage?: pulumi.Input<number>;
+    windowsDomain?: pulumi.Input<number>;
+}
+
+export interface NdbClusterEntityCountEngineCountSqlserverDatabase {
+    profiles?: pulumi.Input<pulumi.Input<inputs.NdbClusterEntityCountEngineCountSqlserverDatabaseProfile>[]>;
+    timeMachines?: pulumi.Input<number>;
+}
+
+export interface NdbClusterEntityCountEngineCountSqlserverDatabaseProfile {
+    compute?: pulumi.Input<number>;
+    databaseParameter?: pulumi.Input<number>;
+    network?: pulumi.Input<number>;
+    software?: pulumi.Input<number>;
+    storage?: pulumi.Input<number>;
+    windowsDomain?: pulumi.Input<number>;
+}
+
+export interface NdbClusterNetworksInfo {
+    /**
+     * VLAN access types for which you want to configure network segmentation. Supports [PRISM, DSIP, DBSERVER ]. 
+     * Prism Element: Select this VLAN access type to configure a VLAN that the NDB agent VM can use to communicate with Prism.
+     * Prism iSCSI Data Service. Select this VLAN access type to configure a VLAN that the agent VM can use to make connection requests to the iSCSI data services IP.
+     * DBServer Access from NDB server. Select this VLAN access type to configure a VLAN that is used for communications between the NDB agent VM and the database server VM on the newly registered NDB server cluster.
+     */
+    accessTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * network segmentation to segment the network traffic
+     */
+    networkInfos?: pulumi.Input<pulumi.Input<inputs.NdbClusterNetworksInfoNetworkInfo>[]>;
+    /**
+     * type of vlan. Supported [DHCP, Static, IPAM]
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface NdbClusterNetworksInfoNetworkInfo {
+    /**
+     * gateway of agent network
+     */
+    gateway?: pulumi.Input<string>;
+    /**
+     * static ip of agent network
+     */
+    staticIp?: pulumi.Input<string>;
+    /**
+     * subnet mask of agent network
+     */
+    subnetMask?: pulumi.Input<string>;
+    /**
+     * vlan name
+     */
+    vlanName?: pulumi.Input<string>;
+}
+
+export interface NdbClusterProperty {
+    /**
+     * description of cluster
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * name of the cluster to be registered
+     */
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbClusterResourceConfig {
+    memoryThresholdPercentage?: pulumi.Input<number>;
+    storageThresholdPercentage?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseActionargument {
+    /**
+     * - (Required) name of argument
+     */
+    name: pulumi.Input<string>;
+    /**
+     * - (Required) value for argument
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseClusterInfo {
+    clusterIpInfos: pulumi.Input<pulumi.Input<inputs.NdbDatabaseClusterInfoClusterIpInfo>[]>;
+}
+
+export interface NdbDatabaseClusterInfoClusterIpInfo {
+    ipInfos?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseClusterInfoClusterIpInfoIpInfo>[]>;
+    nxClusterId: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseClusterInfoClusterIpInfoIpInfo {
+    ipAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+    ipType?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseDatabaseNode {
+    accessLevel?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    databaseId?: pulumi.Input<string>;
+    databaseStatus?: pulumi.Input<string>;
+    dateCreated?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string>;
+    dbserver?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    dbserverId?: pulumi.Input<string>;
+    /**
+     * - (Optional) The description
+     */
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseDatabaseNodeInfo>[]>;
+    /**
+     * - (Required) Name of the instance.
+     */
+    name?: pulumi.Input<string>;
+    primary?: pulumi.Input<boolean>;
+    /**
+     * List of all the properties
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseDatabaseNodeProperty>[]>;
+    protectionDomainId?: pulumi.Input<string>;
+    protectionDomains?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseDatabaseNodeProtectionDomain>[]>;
+    softwareInstallationId?: pulumi.Input<string>;
+    status?: pulumi.Input<string>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseDatabaseNodeTag>[]>;
+}
+
+export interface NdbDatabaseDatabaseNodeInfo {
+    info?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbDatabaseDatabaseNodeProperty {
+    /**
+     * - (Optional) The description
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * - (Required) Name of the instance.
+     */
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseDatabaseNodeProtectionDomain {
+    assocEntities?: pulumi.Input<pulumi.Input<string>[]>;
+    cloudId?: pulumi.Input<string>;
+    dateCreated?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string>;
+    /**
+     * - (Optional) The description
+     */
+    description?: pulumi.Input<string>;
+    eraCreated?: pulumi.Input<boolean>;
+    id?: pulumi.Input<string>;
+    /**
+     * - (Required) Name of the instance.
+     */
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    primaryHost?: pulumi.Input<string>;
+    /**
+     * List of all the properties
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseDatabaseNodeProtectionDomainProperty>[]>;
+    status?: pulumi.Input<string>;
+    type?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseDatabaseNodeProtectionDomainProperty {
+    /**
+     * - (Optional) The description
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * - (Required) Name of the instance.
+     */
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseDatabaseNodeTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseInfo {
+    bpgConfigs?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseInfoBpgConfig>[]>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbDatabaseInfoBpgConfig {
+    bpgDbParams?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseInfoBpgConfigBpgDbParam>[]>;
+    storages?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseInfoBpgConfigStorage>[]>;
+    vmProperties?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseInfoBpgConfigVmProperty>[]>;
+}
+
+export interface NdbDatabaseInfoBpgConfigBpgDbParam {
+    effectiveCacheSize?: pulumi.Input<string>;
+    maintenanceWorkMem?: pulumi.Input<string>;
+    maxParallelWorkersPerGather?: pulumi.Input<string>;
+    maxWorkerProcesses?: pulumi.Input<string>;
+    sharedBuffers?: pulumi.Input<string>;
+    workMem?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseInfoBpgConfigStorage {
+    archiveStorages?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseInfoBpgConfigStorageArchiveStorage>[]>;
+    dataDisks?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseInfoBpgConfigStorageDataDisk>[]>;
+    logDisks?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseInfoBpgConfigStorageLogDisk>[]>;
+}
+
+export interface NdbDatabaseInfoBpgConfigStorageArchiveStorage {
+    size?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseInfoBpgConfigStorageDataDisk {
+    count?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseInfoBpgConfigStorageLogDisk {
+    count?: pulumi.Input<number>;
+    size?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio?: pulumi.Input<number>;
+    dirtyExpireCentisecs?: pulumi.Input<number>;
+    dirtyRatio?: pulumi.Input<number>;
+    dirtyWritebackCentisecs?: pulumi.Input<number>;
+    nrHugepages?: pulumi.Input<number>;
+    overcommitMemory?: pulumi.Input<number>;
+    swappiness?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseLcmConfig {
+    expiryDetails?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseLcmConfigExpiryDetail>[]>;
+    postDeleteCommands?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseLcmConfigPostDeleteCommand>[]>;
+    preDeleteCommands?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseLcmConfigPreDeleteCommand>[]>;
+    refreshDetails?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseLcmConfigRefreshDetail>[]>;
+}
+
+export interface NdbDatabaseLcmConfigExpiryDetail {
+    deleteDatabase?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Delete the database's Time Machine (snapshots/logs) from the NDB. Default value is true
+     */
+    deleteTimeMachine?: pulumi.Input<boolean>;
+    deleteVm?: pulumi.Input<boolean>;
+    effectiveTimestamp?: pulumi.Input<string>;
+    expireInDays?: pulumi.Input<number>;
+    expiryDateTimezone?: pulumi.Input<string>;
+    expiryTimestamp?: pulumi.Input<string>;
+    remindBeforeInDays?: pulumi.Input<number>;
+    userCreated?: pulumi.Input<boolean>;
+}
+
+export interface NdbDatabaseLcmConfigPostDeleteCommand {
+    command?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseLcmConfigPreDeleteCommand {
+    command?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseLcmConfigRefreshDetail {
+    lastRefreshDate?: pulumi.Input<string>;
+    nextRefreshDate?: pulumi.Input<string>;
+    refreshDateTimezone?: pulumi.Input<string>;
+    refreshInDays?: pulumi.Input<number>;
+    refreshInHours?: pulumi.Input<number>;
+    refreshInMonths?: pulumi.Input<number>;
+    refreshTime?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseLinkedDatabase {
+    databaseName?: pulumi.Input<string>;
+    databaseStatus?: pulumi.Input<string>;
+    dateCreated?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string>;
+    /**
+     * - (Optional) The description
+     */
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseLinkedDatabaseInfo>[]>;
+    metric?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Required) Name of the instance.
+     */
+    name?: pulumi.Input<string>;
+    parentDatabaseId?: pulumi.Input<string>;
+    parentLinkedDatabaseId?: pulumi.Input<string>;
+    snapshotId?: pulumi.Input<string>;
+    status?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseLinkedDatabaseInfo {
+    info?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbDatabaseMaintenanceTasks {
+    maintenanceWindowId?: pulumi.Input<string>;
+    tasks?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseMaintenanceTasksTask>[]>;
+}
+
+export interface NdbDatabaseMaintenanceTasksTask {
+    postCommand?: pulumi.Input<string>;
+    preCommand?: pulumi.Input<string>;
+    taskType?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseNode {
+    /**
+     * - (Optional) compute profile id
+     */
+    computeprofileid?: pulumi.Input<string>;
+    /**
+     * - (Optional) Database server ID required for existing VM
+     */
+    dbserverid?: pulumi.Input<string>;
+    /**
+     * - (Optional) IP infos for custom network profile.
+     */
+    ipInfos?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseNodeIpInfo>[]>;
+    /**
+     * - (Required) network profile ID
+     */
+    networkprofileid?: pulumi.Input<string>;
+    /**
+     * - (Optional) cluster id.
+     */
+    nxClusterId?: pulumi.Input<string>;
+    /**
+     * - (Optional) list of additional properties
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseNodeProperty>[]>;
+    /**
+     * - (Required) name of vm
+     */
+    vmname: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseNodeIpInfo {
+    ipAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+    ipType?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseNodeProperty {
+    /**
+     * - (Required) Name of the instance.
+     */
+    name: pulumi.Input<string>;
+    value: pulumi.Input<string>;
+}
+
+export interface NdbDatabasePostgresqlInfo {
+    /**
+     * - (Optional) allocate huge page. Default: false
+     */
+    allocatePgHugepage?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) auth methods. Default: md5
+     */
+    authMethod?: pulumi.Input<string>;
+    /**
+     * - (Optional) enable auto tuning of staging drive. Default: false
+     */
+    autoTuneStagingDrive?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) if clustered database. Default: false
+     */
+    clusterDatabase?: pulumi.Input<boolean>;
+    /**
+     * - (Required) name of initial database to be created
+     */
+    databaseNames: pulumi.Input<string>;
+    /**
+     * - (Required) initial database size
+     */
+    databaseSize: pulumi.Input<string>;
+    /**
+     * - (Required) database instance password
+     */
+    dbPassword: pulumi.Input<string>;
+    /**
+     * - (Optional) High Availability instance
+     */
+    haInstance?: pulumi.Input<inputs.NdbDatabasePostgresqlInfoHaInstance>;
+    /**
+     * - (Required) listener port for database instance
+     */
+    listenerPort: pulumi.Input<string>;
+    /**
+     * - (Optional) post instance create script
+     */
+    postCreateScript?: pulumi.Input<string>;
+    /**
+     * - (Optional) pre instance create script
+     */
+    preCreateScript?: pulumi.Input<string>;
+}
+
+export interface NdbDatabasePostgresqlInfoHaInstance {
+    /**
+     * - (Optional) archive wal expire days. Default is set to -1
+     */
+    archiveWalExpireDays?: pulumi.Input<number>;
+    /**
+     * - (Optional) backup policy for instance. Default is "primaryOnly"
+     */
+    backupPolicy?: pulumi.Input<string>;
+    clusterDescription?: pulumi.Input<string>;
+    /**
+     * - (Required) cluster name
+     */
+    clusterName: pulumi.Input<string>;
+    /**
+     * - (Optional) HA proxy node. Default is set to false
+     */
+    deployHaproxy?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) enable peer auth . Default is set to false.
+     */
+    enablePeerAuth?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) enable synchronous mode. Default is set to true
+     */
+    enableSynchronousMode?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) failover mode of nodes.
+     */
+    failoverMode?: pulumi.Input<string>;
+    /**
+     * - (Optional) node type of instance. Default is set to database
+     */
+    nodeType?: pulumi.Input<string>;
+    /**
+     * - (Required) patroni cluster name
+     */
+    patroniClusterName: pulumi.Input<string>;
+    /**
+     * - (Optional) provisional virtual ip. Default is set to true
+     */
+    provisionVirtualIp?: pulumi.Input<boolean>;
+    /**
+     * -  (Required) proxy read port
+     */
+    proxyReadPort: pulumi.Input<string>;
+    /**
+     * - (Required) proxy write port
+     */
+    proxyWritePort: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseProperty {
+    /**
+     * - (Required) Name of the instance.
+     */
+    name?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseRestoreDatabaseNode {
+    accessLevel?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * database id
+     */
+    databaseId?: pulumi.Input<string>;
+    databaseStatus?: pulumi.Input<string>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    dbserver?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    dbserverId?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    /**
+     * info of instance
+     */
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreDatabaseNodeInfo>[]>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    primary?: pulumi.Input<boolean>;
+    /**
+     * properties of database created
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreDatabaseNodeProperty>[]>;
+    protectionDomainId?: pulumi.Input<string>;
+    protectionDomains?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreDatabaseNodeProtectionDomain>[]>;
+    softwareInstallationId?: pulumi.Input<string>;
+    /**
+     * status of instance
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreDatabaseNodeTag>[]>;
+}
+
+export interface NdbDatabaseRestoreDatabaseNodeInfo {
+    /**
+     * info of instance
+     */
+    info?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbDatabaseRestoreDatabaseNodeProperty {
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseRestoreDatabaseNodeProtectionDomain {
+    assocEntities?: pulumi.Input<pulumi.Input<string>[]>;
+    cloudId?: pulumi.Input<string>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    eraCreated?: pulumi.Input<boolean>;
+    id?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    primaryHost?: pulumi.Input<string>;
+    /**
+     * properties of database created
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreDatabaseNodeProtectionDomainProperty>[]>;
+    /**
+     * status of instance
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * type of database
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseRestoreDatabaseNodeProtectionDomainProperty {
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseRestoreDatabaseNodeTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseRestoreInfo {
+    bpgConfigs?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreInfoBpgConfig>[]>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbDatabaseRestoreInfoBpgConfig {
+    bpgDbParams?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreInfoBpgConfigBpgDbParam>[]>;
+    storages?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreInfoBpgConfigStorage>[]>;
+    vmProperties?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreInfoBpgConfigVmProperty>[]>;
+}
+
+export interface NdbDatabaseRestoreInfoBpgConfigBpgDbParam {
+    effectiveCacheSize?: pulumi.Input<string>;
+    maintenanceWorkMem?: pulumi.Input<string>;
+    maxParallelWorkersPerGather?: pulumi.Input<string>;
+    maxWorkerProcesses?: pulumi.Input<string>;
+    sharedBuffers?: pulumi.Input<string>;
+    workMem?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseRestoreInfoBpgConfigStorage {
+    archiveStorages?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreInfoBpgConfigStorageArchiveStorage>[]>;
+    dataDisks?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreInfoBpgConfigStorageDataDisk>[]>;
+    logDisks?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreInfoBpgConfigStorageLogDisk>[]>;
+}
+
+export interface NdbDatabaseRestoreInfoBpgConfigStorageArchiveStorage {
+    size?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseRestoreInfoBpgConfigStorageDataDisk {
+    count?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseRestoreInfoBpgConfigStorageLogDisk {
+    count?: pulumi.Input<number>;
+    size?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseRestoreInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio?: pulumi.Input<number>;
+    dirtyExpireCentisecs?: pulumi.Input<number>;
+    dirtyRatio?: pulumi.Input<number>;
+    dirtyWritebackCentisecs?: pulumi.Input<number>;
+    nrHugepages?: pulumi.Input<number>;
+    overcommitMemory?: pulumi.Input<number>;
+    swappiness?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseRestoreLcmConfig {
+    expiryDetails?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreLcmConfigExpiryDetail>[]>;
+    postDeleteCommands?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreLcmConfigPostDeleteCommand>[]>;
+    preDeleteCommands?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreLcmConfigPreDeleteCommand>[]>;
+    refreshDetails?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreLcmConfigRefreshDetail>[]>;
+}
+
+export interface NdbDatabaseRestoreLcmConfigExpiryDetail {
+    deleteDatabase?: pulumi.Input<boolean>;
+    deleteTimeMachine?: pulumi.Input<boolean>;
+    deleteVm?: pulumi.Input<boolean>;
+    effectiveTimestamp?: pulumi.Input<string>;
+    expireInDays?: pulumi.Input<number>;
+    expiryDateTimezone?: pulumi.Input<string>;
+    expiryTimestamp?: pulumi.Input<string>;
+    remindBeforeInDays?: pulumi.Input<number>;
+    userCreated?: pulumi.Input<boolean>;
+}
+
+export interface NdbDatabaseRestoreLcmConfigPostDeleteCommand {
+    command?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseRestoreLcmConfigPreDeleteCommand {
+    command?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseRestoreLcmConfigRefreshDetail {
+    lastRefreshDate?: pulumi.Input<string>;
+    nextRefreshDate?: pulumi.Input<string>;
+    refreshDateTimezone?: pulumi.Input<string>;
+    refreshInDays?: pulumi.Input<number>;
+    refreshInHours?: pulumi.Input<number>;
+    refreshInMonths?: pulumi.Input<number>;
+    refreshTime?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseRestoreLinkedDatabase {
+    /**
+     * name of database
+     */
+    databaseName?: pulumi.Input<string>;
+    databaseStatus?: pulumi.Input<string>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    /**
+     * info of instance
+     */
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreLinkedDatabaseInfo>[]>;
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
+    metric?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * parent database id
+     */
+    parentDatabaseId?: pulumi.Input<string>;
+    parentLinkedDatabaseId?: pulumi.Input<string>;
+    /**
+     * snapshot id from you want to use for restoring the instance
+     */
+    snapshotId?: pulumi.Input<string>;
+    /**
+     * status of instance
+     */
+    status?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseRestoreLinkedDatabaseInfo {
+    /**
+     * info of instance
+     */
+    info?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbDatabaseRestoreProperty {
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseRestoreTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseRestoreTimeMachine {
+    accessLevel?: pulumi.Input<string>;
+    /**
+     * whether instance is cloned or not
+     */
+    clone?: pulumi.Input<boolean>;
+    clones?: pulumi.Input<string>;
+    clustered?: pulumi.Input<boolean>;
+    database?: pulumi.Input<string>;
+    /**
+     * database id
+     */
+    databaseId?: pulumi.Input<string>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    eaStatus?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
+    metric?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * properties of database created
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTimeMachineProperty>[]>;
+    scheduleId?: pulumi.Input<string>;
+    schedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTimeMachineSchedule>[]>;
+    scope?: pulumi.Input<string>;
+    slaId?: pulumi.Input<string>;
+    slaUpdateInProgress?: pulumi.Input<boolean>;
+    slaUpdateMetadata?: pulumi.Input<string>;
+    slas?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTimeMachineSla>[]>;
+    sourceNxClusters?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * status of instance
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTimeMachineTag>[]>;
+    /**
+     * type of database
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseRestoreTimeMachineProperty {
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseRestoreTimeMachineSchedule {
+    continuousSchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTimeMachineScheduleContinuousSchedule>[]>;
+    dailySchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTimeMachineScheduleDailySchedule>[]>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    globalPolicy?: pulumi.Input<boolean>;
+    id?: pulumi.Input<string>;
+    monthlySchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTimeMachineScheduleMonthlySchedule>[]>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    quartelySchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTimeMachineScheduleQuartelySchedule>[]>;
+    referenceCount?: pulumi.Input<number>;
+    snapshotTimeOfDays?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTimeMachineScheduleSnapshotTimeOfDay>[]>;
+    startTime?: pulumi.Input<string>;
+    systemPolicy?: pulumi.Input<boolean>;
+    /**
+     * timezone on which instance is created xw
+     */
+    timeZone?: pulumi.Input<string>;
+    uniqueName?: pulumi.Input<string>;
+    weeklySchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTimeMachineScheduleWeeklySchedule>[]>;
+    yearlySchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseRestoreTimeMachineScheduleYearlySchedule>[]>;
+}
+
+export interface NdbDatabaseRestoreTimeMachineScheduleContinuousSchedule {
+    enabled?: pulumi.Input<boolean>;
+    logBackupInterval?: pulumi.Input<number>;
+    snapshotsPerDay?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseRestoreTimeMachineScheduleDailySchedule {
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbDatabaseRestoreTimeMachineScheduleMonthlySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbDatabaseRestoreTimeMachineScheduleQuartelySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+    startMonth?: pulumi.Input<string>;
+    startMonthValue?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseRestoreTimeMachineScheduleSnapshotTimeOfDay {
+    extra?: pulumi.Input<boolean>;
+    hours?: pulumi.Input<number>;
+    minutes?: pulumi.Input<number>;
+    seconds?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseRestoreTimeMachineScheduleWeeklySchedule {
+    dayOfWeek?: pulumi.Input<string>;
+    dayOfWeekValue?: pulumi.Input<string>;
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbDatabaseRestoreTimeMachineScheduleYearlySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+    month?: pulumi.Input<string>;
+    monthValue?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseRestoreTimeMachineSla {
+    continuousRetention?: pulumi.Input<number>;
+    currentActiveFrequency?: pulumi.Input<string>;
+    dailyRetention?: pulumi.Input<number>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    monthlyRetention?: pulumi.Input<number>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    pitrEnabled?: pulumi.Input<boolean>;
+    quarterlyRetention?: pulumi.Input<number>;
+    referenceCount?: pulumi.Input<number>;
+    systemSla?: pulumi.Input<boolean>;
+    uniqueName?: pulumi.Input<string>;
+    weeklyRetention?: pulumi.Input<number>;
+    yearlyRetention?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseRestoreTimeMachineTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseScaleDatabaseNode {
+    accessLevel?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    databaseId?: pulumi.Input<string>;
+    databaseStatus?: pulumi.Input<string>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    dbserver?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    dbserverId?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    /**
+     * info of instance
+     */
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleDatabaseNodeInfo>[]>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    primary?: pulumi.Input<boolean>;
+    /**
+     * properties of database created
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleDatabaseNodeProperty>[]>;
+    protectionDomainId?: pulumi.Input<string>;
+    protectionDomains?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleDatabaseNodeProtectionDomain>[]>;
+    softwareInstallationId?: pulumi.Input<string>;
+    /**
+     * status of instance
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleDatabaseNodeTag>[]>;
+}
+
+export interface NdbDatabaseScaleDatabaseNodeInfo {
+    /**
+     * info of instance
+     */
+    info?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbDatabaseScaleDatabaseNodeProperty {
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseScaleDatabaseNodeProtectionDomain {
+    assocEntities?: pulumi.Input<pulumi.Input<string>[]>;
+    cloudId?: pulumi.Input<string>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    eraCreated?: pulumi.Input<boolean>;
+    id?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    primaryHost?: pulumi.Input<string>;
+    /**
+     * properties of database created
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleDatabaseNodeProtectionDomainProperty>[]>;
+    /**
+     * status of instance
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * type of database
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseScaleDatabaseNodeProtectionDomainProperty {
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseScaleDatabaseNodeTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseScaleInfo {
+    bpgConfigs?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleInfoBpgConfig>[]>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbDatabaseScaleInfoBpgConfig {
+    bpgDbParams?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleInfoBpgConfigBpgDbParam>[]>;
+    storages?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleInfoBpgConfigStorage>[]>;
+    vmProperties?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleInfoBpgConfigVmProperty>[]>;
+}
+
+export interface NdbDatabaseScaleInfoBpgConfigBpgDbParam {
+    effectiveCacheSize?: pulumi.Input<string>;
+    maintenanceWorkMem?: pulumi.Input<string>;
+    maxParallelWorkersPerGather?: pulumi.Input<string>;
+    maxWorkerProcesses?: pulumi.Input<string>;
+    sharedBuffers?: pulumi.Input<string>;
+    workMem?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseScaleInfoBpgConfigStorage {
+    archiveStorages?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleInfoBpgConfigStorageArchiveStorage>[]>;
+    dataDisks?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleInfoBpgConfigStorageDataDisk>[]>;
+    logDisks?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleInfoBpgConfigStorageLogDisk>[]>;
+}
+
+export interface NdbDatabaseScaleInfoBpgConfigStorageArchiveStorage {
+    size?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseScaleInfoBpgConfigStorageDataDisk {
+    count?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseScaleInfoBpgConfigStorageLogDisk {
+    count?: pulumi.Input<number>;
+    size?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseScaleInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio?: pulumi.Input<number>;
+    dirtyExpireCentisecs?: pulumi.Input<number>;
+    dirtyRatio?: pulumi.Input<number>;
+    dirtyWritebackCentisecs?: pulumi.Input<number>;
+    nrHugepages?: pulumi.Input<number>;
+    overcommitMemory?: pulumi.Input<number>;
+    swappiness?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseScaleLcmConfig {
+    expiryDetails?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleLcmConfigExpiryDetail>[]>;
+    postDeleteCommands?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleLcmConfigPostDeleteCommand>[]>;
+    preDeleteCommands?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleLcmConfigPreDeleteCommand>[]>;
+    refreshDetails?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleLcmConfigRefreshDetail>[]>;
+}
+
+export interface NdbDatabaseScaleLcmConfigExpiryDetail {
+    deleteDatabase?: pulumi.Input<boolean>;
+    deleteTimeMachine?: pulumi.Input<boolean>;
+    deleteVm?: pulumi.Input<boolean>;
+    effectiveTimestamp?: pulumi.Input<string>;
+    expireInDays?: pulumi.Input<number>;
+    expiryDateTimezone?: pulumi.Input<string>;
+    expiryTimestamp?: pulumi.Input<string>;
+    remindBeforeInDays?: pulumi.Input<number>;
+    userCreated?: pulumi.Input<boolean>;
+}
+
+export interface NdbDatabaseScaleLcmConfigPostDeleteCommand {
+    command?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseScaleLcmConfigPreDeleteCommand {
+    command?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseScaleLcmConfigRefreshDetail {
+    lastRefreshDate?: pulumi.Input<string>;
+    nextRefreshDate?: pulumi.Input<string>;
+    refreshDateTimezone?: pulumi.Input<string>;
+    refreshInDays?: pulumi.Input<number>;
+    refreshInHours?: pulumi.Input<number>;
+    refreshInMonths?: pulumi.Input<number>;
+    refreshTime?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseScaleLinkedDatabase {
+    /**
+     * name of database
+     */
+    databaseName?: pulumi.Input<string>;
+    databaseStatus?: pulumi.Input<string>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    /**
+     * info of instance
+     */
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleLinkedDatabaseInfo>[]>;
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
+    metric?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * parent database id
+     */
+    parentDatabaseId?: pulumi.Input<string>;
+    parentLinkedDatabaseId?: pulumi.Input<string>;
+    snapshotId?: pulumi.Input<string>;
+    /**
+     * status of instance
+     */
+    status?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseScaleLinkedDatabaseInfo {
+    /**
+     * info of instance
+     */
+    info?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbDatabaseScaleProperty {
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseScaleTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseScaleTimeMachine {
+    accessLevel?: pulumi.Input<string>;
+    /**
+     * whether instance is cloned or not
+     */
+    clone?: pulumi.Input<boolean>;
+    clones?: pulumi.Input<string>;
+    clustered?: pulumi.Input<boolean>;
+    database?: pulumi.Input<string>;
+    databaseId?: pulumi.Input<string>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    eaStatus?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
+    metric?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * properties of database created
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleTimeMachineProperty>[]>;
+    scheduleId?: pulumi.Input<string>;
+    schedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleTimeMachineSchedule>[]>;
+    scope?: pulumi.Input<string>;
+    slaId?: pulumi.Input<string>;
+    slaUpdateInProgress?: pulumi.Input<boolean>;
+    slaUpdateMetadata?: pulumi.Input<string>;
+    slas?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleTimeMachineSla>[]>;
+    sourceNxClusters?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * status of instance
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleTimeMachineTag>[]>;
+    /**
+     * type of database
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseScaleTimeMachineProperty {
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseScaleTimeMachineSchedule {
+    continuousSchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleTimeMachineScheduleContinuousSchedule>[]>;
+    dailySchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleTimeMachineScheduleDailySchedule>[]>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    globalPolicy?: pulumi.Input<boolean>;
+    id?: pulumi.Input<string>;
+    monthlySchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleTimeMachineScheduleMonthlySchedule>[]>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    quartelySchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleTimeMachineScheduleQuartelySchedule>[]>;
+    referenceCount?: pulumi.Input<number>;
+    snapshotTimeOfDays?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleTimeMachineScheduleSnapshotTimeOfDay>[]>;
+    startTime?: pulumi.Input<string>;
+    systemPolicy?: pulumi.Input<boolean>;
+    /**
+     * timezone on which instance is created xw
+     */
+    timeZone?: pulumi.Input<string>;
+    uniqueName?: pulumi.Input<string>;
+    weeklySchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleTimeMachineScheduleWeeklySchedule>[]>;
+    yearlySchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseScaleTimeMachineScheduleYearlySchedule>[]>;
+}
+
+export interface NdbDatabaseScaleTimeMachineScheduleContinuousSchedule {
+    enabled?: pulumi.Input<boolean>;
+    logBackupInterval?: pulumi.Input<number>;
+    snapshotsPerDay?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseScaleTimeMachineScheduleDailySchedule {
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbDatabaseScaleTimeMachineScheduleMonthlySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbDatabaseScaleTimeMachineScheduleQuartelySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+    startMonth?: pulumi.Input<string>;
+    startMonthValue?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseScaleTimeMachineScheduleSnapshotTimeOfDay {
+    extra?: pulumi.Input<boolean>;
+    hours?: pulumi.Input<number>;
+    minutes?: pulumi.Input<number>;
+    seconds?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseScaleTimeMachineScheduleWeeklySchedule {
+    dayOfWeek?: pulumi.Input<string>;
+    dayOfWeekValue?: pulumi.Input<string>;
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbDatabaseScaleTimeMachineScheduleYearlySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+    month?: pulumi.Input<string>;
+    monthValue?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseScaleTimeMachineSla {
+    continuousRetention?: pulumi.Input<number>;
+    currentActiveFrequency?: pulumi.Input<string>;
+    dailyRetention?: pulumi.Input<number>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    monthlyRetention?: pulumi.Input<number>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    pitrEnabled?: pulumi.Input<boolean>;
+    quarterlyRetention?: pulumi.Input<number>;
+    referenceCount?: pulumi.Input<number>;
+    systemSla?: pulumi.Input<boolean>;
+    uniqueName?: pulumi.Input<string>;
+    weeklyRetention?: pulumi.Input<number>;
+    yearlyRetention?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseScaleTimeMachineTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseSnapshotLcmConfig {
+    expiryDetails?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseSnapshotLcmConfigExpiryDetail>[]>;
+    postDeleteCommands?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseSnapshotLcmConfigPostDeleteCommand>[]>;
+    preDeleteCommands?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseSnapshotLcmConfigPreDeleteCommand>[]>;
+    refreshDetails?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseSnapshotLcmConfigRefreshDetail>[]>;
+}
+
+export interface NdbDatabaseSnapshotLcmConfigExpiryDetail {
+    deleteDatabase?: pulumi.Input<boolean>;
+    deleteTimeMachine?: pulumi.Input<boolean>;
+    deleteVm?: pulumi.Input<boolean>;
+    effectiveTimestamp?: pulumi.Input<string>;
+    expireInDays?: pulumi.Input<number>;
+    /**
+     * Default is set to Asia/Calcutta
+     */
+    expiryDateTimezone?: pulumi.Input<string>;
+    expiryTimestamp?: pulumi.Input<string>;
+    remindBeforeInDays?: pulumi.Input<number>;
+    userCreated?: pulumi.Input<boolean>;
+}
+
+export interface NdbDatabaseSnapshotLcmConfigPostDeleteCommand {
+    command?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseSnapshotLcmConfigPreDeleteCommand {
+    command?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseSnapshotLcmConfigRefreshDetail {
+    lastRefreshDate?: pulumi.Input<string>;
+    nextRefreshDate?: pulumi.Input<string>;
+    refreshDateTimezone?: pulumi.Input<string>;
+    refreshInDays?: pulumi.Input<number>;
+    refreshInHours?: pulumi.Input<number>;
+    refreshInMonths?: pulumi.Input<number>;
+    refreshTime?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseSnapshotProperty {
+    /**
+     * description of snapshot
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * Snapshot name. Default value is era_manual_snapshot.
+     */
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseSnapshotTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseTimeMachine {
+    accessLevel?: pulumi.Input<string>;
+    clone?: pulumi.Input<boolean>;
+    clones?: pulumi.Input<string>;
+    /**
+     * - (Optional) If clustered database. Default: false
+     */
+    clustered?: pulumi.Input<boolean>;
+    database?: pulumi.Input<string>;
+    databaseId?: pulumi.Input<string>;
+    dateCreated?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string>;
+    /**
+     * - (Optional) The description
+     */
+    description?: pulumi.Input<string>;
+    eaStatus?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    metric?: pulumi.Input<string>;
+    /**
+     * - (Required) Name of the instance.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * List of all the properties
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseTimeMachineProperty>[]>;
+    scheduleId?: pulumi.Input<string>;
+    schedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseTimeMachineSchedule>[]>;
+    scope?: pulumi.Input<string>;
+    slaId?: pulumi.Input<string>;
+    slaUpdateInProgress?: pulumi.Input<boolean>;
+    slaUpdateMetadata?: pulumi.Input<string>;
+    slas?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseTimeMachineSla>[]>;
+    sourceNxClusters?: pulumi.Input<pulumi.Input<string>[]>;
+    status?: pulumi.Input<string>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseTimeMachineTag>[]>;
+    type?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseTimeMachineProperty {
+    /**
+     * - (Optional) The description
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * - (Required) Name of the instance.
+     */
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseTimeMachineSchedule {
+    continuousSchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseTimeMachineScheduleContinuousSchedule>[]>;
+    dailySchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseTimeMachineScheduleDailySchedule>[]>;
+    dateCreated?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string>;
+    /**
+     * - (Optional) The description
+     */
+    description?: pulumi.Input<string>;
+    globalPolicy?: pulumi.Input<boolean>;
+    id?: pulumi.Input<string>;
+    monthlySchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseTimeMachineScheduleMonthlySchedule>[]>;
+    /**
+     * - (Required) Name of the instance.
+     */
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    quartelySchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseTimeMachineScheduleQuartelySchedule>[]>;
+    referenceCount?: pulumi.Input<number>;
+    snapshotTimeOfDays?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseTimeMachineScheduleSnapshotTimeOfDay>[]>;
+    startTime?: pulumi.Input<string>;
+    systemPolicy?: pulumi.Input<boolean>;
+    timeZone?: pulumi.Input<string>;
+    uniqueName?: pulumi.Input<string>;
+    weeklySchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseTimeMachineScheduleWeeklySchedule>[]>;
+    yearlySchedules?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseTimeMachineScheduleYearlySchedule>[]>;
+}
+
+export interface NdbDatabaseTimeMachineScheduleContinuousSchedule {
+    enabled?: pulumi.Input<boolean>;
+    logBackupInterval?: pulumi.Input<number>;
+    snapshotsPerDay?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseTimeMachineScheduleDailySchedule {
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbDatabaseTimeMachineScheduleMonthlySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbDatabaseTimeMachineScheduleQuartelySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+    startMonth?: pulumi.Input<string>;
+    startMonthValue?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseTimeMachineScheduleSnapshotTimeOfDay {
+    extra?: pulumi.Input<boolean>;
+    hours?: pulumi.Input<number>;
+    minutes?: pulumi.Input<number>;
+    seconds?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseTimeMachineScheduleWeeklySchedule {
+    dayOfWeek?: pulumi.Input<string>;
+    dayOfWeekValue?: pulumi.Input<string>;
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbDatabaseTimeMachineScheduleYearlySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+    month?: pulumi.Input<string>;
+    monthValue?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseTimeMachineSla {
+    continuousRetention?: pulumi.Input<number>;
+    currentActiveFrequency?: pulumi.Input<string>;
+    dailyRetention?: pulumi.Input<number>;
+    dateCreated?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string>;
+    /**
+     * - (Optional) The description
+     */
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    monthlyRetention?: pulumi.Input<number>;
+    /**
+     * - (Required) Name of the instance.
+     */
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    pitrEnabled?: pulumi.Input<boolean>;
+    quarterlyRetention?: pulumi.Input<number>;
+    referenceCount?: pulumi.Input<number>;
+    systemSla?: pulumi.Input<boolean>;
+    uniqueName?: pulumi.Input<string>;
+    weeklyRetention?: pulumi.Input<number>;
+    yearlyRetention?: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseTimeMachineTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseTimemachineinfo {
+    /**
+     * - (Optional) enable auto tune log drive. Default: true
+     */
+    autotunelogdrive?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) description of time machine
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * - (Required) name of time machine
+     */
+    name: pulumi.Input<string>;
+    /**
+     * - (Optional) schedule for snapshots
+     */
+    schedule: pulumi.Input<inputs.NdbDatabaseTimemachineinfoSchedule>;
+    /**
+     * -  (optional) SLA details for HA instance
+     */
+    slaDetails?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseTimemachineinfoSlaDetail>[]>;
+    /**
+     * - (Optional) SLA ID for single instance
+     */
+    slaid?: pulumi.Input<string>;
+    /**
+     * - (Optional) tags
+     */
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseTimemachineinfoTag>[]>;
+}
+
+export interface NdbDatabaseTimemachineinfoSchedule {
+    /**
+     * - (Optional) snapshot freq and log config
+     */
+    continuousschedule?: pulumi.Input<inputs.NdbDatabaseTimemachineinfoScheduleContinuousschedule>;
+    /**
+     * - (Optional) monthly snapshot config
+     */
+    monthlyschedule?: pulumi.Input<inputs.NdbDatabaseTimemachineinfoScheduleMonthlyschedule>;
+    /**
+     * - (Optional) quaterly snapshot config
+     */
+    quartelyschedule?: pulumi.Input<inputs.NdbDatabaseTimemachineinfoScheduleQuartelyschedule>;
+    /**
+     * - (Optional) daily snapshot config
+     */
+    snapshottimeofday?: pulumi.Input<inputs.NdbDatabaseTimemachineinfoScheduleSnapshottimeofday>;
+    /**
+     * - (Optional) weekly snapshot config
+     */
+    weeklyschedule?: pulumi.Input<inputs.NdbDatabaseTimemachineinfoScheduleWeeklyschedule>;
+    /**
+     * - (Optional) yearly snapshot config
+     */
+    yearlyschedule?: pulumi.Input<inputs.NdbDatabaseTimemachineinfoScheduleYearlyschedule>;
+}
+
+export interface NdbDatabaseTimemachineinfoScheduleContinuousschedule {
+    /**
+     * - (Required) to enable
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * - (Required) log catchup interval for database
+     */
+    logbackupinterval: pulumi.Input<number>;
+    /**
+     * - (Required) num of snapshots per day
+     */
+    snapshotsperday: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseTimemachineinfoScheduleMonthlyschedule {
+    /**
+     * - (Required) day of month to take snapshot
+     */
+    dayofmonth: pulumi.Input<number>;
+    /**
+     * - (Required) to enable
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface NdbDatabaseTimemachineinfoScheduleQuartelyschedule {
+    /**
+     * - (Required) month's day for snapshot
+     */
+    dayofmonth: pulumi.Input<number>;
+    /**
+     * - (Required) to enable
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * - (Required) quarter start month
+     */
+    startmonth: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseTimemachineinfoScheduleSnapshottimeofday {
+    /**
+     * - (Required) hours
+     */
+    hours: pulumi.Input<number>;
+    /**
+     * - (Required) minutes
+     */
+    minutes: pulumi.Input<number>;
+    /**
+     * - (Required) seconds
+     */
+    seconds: pulumi.Input<number>;
+}
+
+export interface NdbDatabaseTimemachineinfoScheduleWeeklyschedule {
+    /**
+     * - (Required) day of week to take snaphsot. Eg. "WEDNESDAY"
+     */
+    dayofweek: pulumi.Input<string>;
+    /**
+     * - (Required) to enable
+     */
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface NdbDatabaseTimemachineinfoScheduleYearlyschedule {
+    /**
+     * - (Required) day of month to take snapshot
+     */
+    dayofmonth: pulumi.Input<number>;
+    /**
+     * - (Required) to enable
+     */
+    enabled: pulumi.Input<boolean>;
+    /**
+     * - (Required) month for snapshot
+     */
+    month: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseTimemachineinfoSlaDetail {
+    /**
+     * - (Required) primary sla details
+     * * `primary_sla.sla_id` :- (Required) sla id
+     * * `primary_sla.nx_cluster_ids` -: (Optioanl) cluster ids
+     */
+    primarySlas?: pulumi.Input<pulumi.Input<inputs.NdbDatabaseTimemachineinfoSlaDetailPrimarySla>[]>;
+}
+
+export interface NdbDatabaseTimemachineinfoSlaDetailPrimarySla {
+    nxClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * description of SLA ID.
+     */
+    slaId: pulumi.Input<string>;
+}
+
+export interface NdbDatabaseTimemachineinfoTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDbserverVmCredential {
+    label?: pulumi.Input<string>;
+    password: pulumi.Input<string>;
+    username: pulumi.Input<string>;
+}
+
+export interface NdbDbserverVmMaintenanceTasks {
+    maintenanceWindowId?: pulumi.Input<string>;
+    tasks?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmMaintenanceTasksTask>[]>;
+}
+
+export interface NdbDbserverVmMaintenanceTasksTask {
+    postCommand?: pulumi.Input<string>;
+    preCommand?: pulumi.Input<string>;
+    taskType?: pulumi.Input<string>;
+}
+
+export interface NdbDbserverVmPostgresDatabase {
+    clientPublicKey?: pulumi.Input<string>;
+    vmName: pulumi.Input<string>;
+}
+
+export interface NdbDbserverVmProperty {
+    name?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbDbserverVmTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbLinkedDatabasesInfo {
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbLinkedDatabasesInfoInfo>[]>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbLinkedDatabasesInfoInfo {
+    createdBy?: pulumi.Input<string>;
+}
+
+export interface NdbMaintenanceTaskEntityTaskAssociation {
+    /**
+     * access level of tasks
+     */
+    accessLevel?: pulumi.Input<string>;
+    /**
+     * created date of task
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * modified date of task
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * description of maintenance window
+     */
+    description?: pulumi.Input<string>;
+    entity?: pulumi.Input<string>;
+    /**
+     * entity id
+     */
+    entityId?: pulumi.Input<string>;
+    /**
+     * type of the entity. i.e. DBSERVER
+     */
+    entityType?: pulumi.Input<string>;
+    /**
+     * id of maintenance window
+     */
+    id?: pulumi.Input<string>;
+    /**
+     * maintenance window id which has to be associated
+     */
+    maintenanceWindowId?: pulumi.Input<string>;
+    /**
+     * maintenance window owner id
+     */
+    maintenanceWindowOwnerId?: pulumi.Input<string>;
+    /**
+     * name of of maintenance window
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * owner id of task
+     */
+    ownerId?: pulumi.Input<string>;
+    /**
+     * list of pre post commands of OS or DB task
+     */
+    payloads?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceTaskEntityTaskAssociationPayload>[]>;
+    /**
+     * properties of task
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceTaskEntityTaskAssociationProperty>[]>;
+    /**
+     * status of task
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * tags of task
+     */
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceTaskEntityTaskAssociationTag>[]>;
+    /**
+     * type of the task. OS or DB
+     */
+    taskType?: pulumi.Input<string>;
+}
+
+export interface NdbMaintenanceTaskEntityTaskAssociationPayload {
+    /**
+     * Pre Post command of Task
+     */
+    prePostCommands?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceTaskEntityTaskAssociationPayloadPrePostCommand>[]>;
+}
+
+export interface NdbMaintenanceTaskEntityTaskAssociationPayloadPrePostCommand {
+    /**
+     * post command of task
+     */
+    postCommand?: pulumi.Input<string>;
+    /**
+     * pre command of task
+     */
+    preCommand?: pulumi.Input<string>;
+}
+
+export interface NdbMaintenanceTaskEntityTaskAssociationProperty {
+    /**
+     * name of of maintenance window
+     */
+    name?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbMaintenanceTaskEntityTaskAssociationTag {
+    /**
+     * entity id
+     */
+    entityId?: pulumi.Input<string>;
+    /**
+     * type of the entity. i.e. DBSERVER
+     */
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbMaintenanceTaskTask {
+    /**
+     * command that you want to run after patching the OS/DB
+     */
+    postCommand?: pulumi.Input<string>;
+    /**
+     * command that you want to run before patching the OS/DB
+     */
+    preCommand?: pulumi.Input<string>;
+    /**
+     * type of task. Supports [ "OS_PATCHING", "DB_PATCHING" ]
+     */
+    taskType?: pulumi.Input<string>;
+}
+
+export interface NdbMaintenanceWindowEntityTaskAssoc {
+    /**
+     * access level
+     */
+    accessLevel?: pulumi.Input<string>;
+    /**
+     * created date of maintenance window
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * modified date of maintenance window
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * Description for maintenance window
+     */
+    description?: pulumi.Input<string>;
+    entity?: pulumi.Input<string>;
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    maintenanceWindowId?: pulumi.Input<string>;
+    maintenanceWindowOwnerId?: pulumi.Input<string>;
+    /**
+     * Name for the maintenance window.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * owner id of maintenance window
+     */
+    ownerId?: pulumi.Input<string>;
+    payloads?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceWindowEntityTaskAssocPayload>[]>;
+    /**
+     * properties of maintenance window
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceWindowEntityTaskAssocProperty>[]>;
+    /**
+     * status of maintennace window
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * tags of maintenance window
+     */
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceWindowEntityTaskAssocTag>[]>;
+    taskType?: pulumi.Input<string>;
+}
+
+export interface NdbMaintenanceWindowEntityTaskAssocPayload {
+    prePostCommands?: pulumi.Input<pulumi.Input<inputs.NdbMaintenanceWindowEntityTaskAssocPayloadPrePostCommand>[]>;
+}
+
+export interface NdbMaintenanceWindowEntityTaskAssocPayloadPrePostCommand {
+    postCommand?: pulumi.Input<string>;
+    preCommand?: pulumi.Input<string>;
+}
+
+export interface NdbMaintenanceWindowEntityTaskAssocProperty {
+    /**
+     * Name for the maintenance window.
+     */
+    name?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbMaintenanceWindowEntityTaskAssocTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbMaintenanceWindowProperty {
+    /**
+     * Name for the maintenance window.
+     */
+    name?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbMaintenanceWindowSchedule {
+    /**
+     * Day of the week to trigger maintenance window. Supports [ MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
+     */
+    dayOfWeek?: pulumi.Input<string>;
+    /**
+     * duration in hours. Default is 2
+     */
+    duration?: pulumi.Input<number>;
+    hour?: pulumi.Input<number>;
+    minute?: pulumi.Input<number>;
+    /**
+     * Supported values [ MONTHLY, WEEKLY ]
+     */
+    recurrence?: pulumi.Input<string>;
+    /**
+     * start time for maintenance window to trigger
+     */
+    startTime?: pulumi.Input<string>;
+    threshold?: pulumi.Input<string>;
+    /**
+     * timezone . Default is Asia/Calcutta .
+     */
+    timezone?: pulumi.Input<string>;
+    /**
+     * week of the month. Supports [1, 2, 3, 4] .
+     */
+    weekOfMonth?: pulumi.Input<number>;
+}
+
+export interface NdbMaintenanceWindowTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbNetworkIpPool {
+    addresses?: pulumi.Input<pulumi.Input<inputs.NdbNetworkIpPoolAddress>[]>;
+    /**
+     * ending IP address range for new database servers
+     */
+    endIp?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    modifiedBy?: pulumi.Input<string>;
+    /**
+     * starting IP address range for new database servers
+     */
+    startIp?: pulumi.Input<string>;
+}
+
+export interface NdbNetworkIpPoolAddress {
+    ip?: pulumi.Input<string>;
+    status?: pulumi.Input<string>;
+}
+
+export interface NdbNetworkPropertiesMap {
+    vlanGateway?: pulumi.Input<string>;
+    vlanPrimaryDns?: pulumi.Input<string>;
+    vlanSecondaryDns?: pulumi.Input<string>;
+    vlanSubnetMask?: pulumi.Input<string>;
+}
+
+export interface NdbNetworkProperty {
+    /**
+     * Name of the vlan to be attached in NDB
+     */
+    name?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbProfileClusterAvailability {
+    dateCreated?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string>;
+    nxClusterId?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    profileId?: pulumi.Input<string>;
+    status?: pulumi.Input<string>;
+}
+
+export interface NdbProfileComputeProfile {
+    corePerCpu?: pulumi.Input<string>;
+    cpus?: pulumi.Input<string>;
+    memorySize?: pulumi.Input<string>;
+}
+
+export interface NdbProfileDatabaseParameterProfile {
+    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbProfileDatabaseParameterProfilePostgresDatabase>[]>;
+}
+
+export interface NdbProfileDatabaseParameterProfilePostgresDatabase {
+    autovacuum?: pulumi.Input<string>;
+    autovacuumFreezeMaxAge?: pulumi.Input<string>;
+    autovacuumMaxWorkers?: pulumi.Input<string>;
+    autovacuumVacuumCostDelay?: pulumi.Input<string>;
+    autovacuumVacuumScaleFactor?: pulumi.Input<string>;
+    autovacuumVacuumThreshold?: pulumi.Input<string>;
+    autovacuumWorkMem?: pulumi.Input<string>;
+    checkpointCompletionTarget?: pulumi.Input<string>;
+    checkpointTimeout?: pulumi.Input<string>;
+    effectiveIoConcurrency?: pulumi.Input<string>;
+    maxConnections?: pulumi.Input<string>;
+    maxLocksPerTransaction?: pulumi.Input<string>;
+    maxPreparedTransactions?: pulumi.Input<string>;
+    maxReplicationSlots?: pulumi.Input<string>;
+    maxWalSenders?: pulumi.Input<string>;
+    maxWalSize?: pulumi.Input<string>;
+    maxWorkerProcesses?: pulumi.Input<string>;
+    minWalSize?: pulumi.Input<string>;
+    randomPageCost?: pulumi.Input<string>;
+    synchronousCommit?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string>;
+    walBuffers?: pulumi.Input<string>;
+    walKeepSegments?: pulumi.Input<string>;
+}
+
+export interface NdbProfileNetworkProfile {
+    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbProfileNetworkProfilePostgresDatabase>[]>;
+    topology: pulumi.Input<string>;
+    versionClusterAssociations?: pulumi.Input<pulumi.Input<inputs.NdbProfileNetworkProfileVersionClusterAssociation>[]>;
+}
+
+export interface NdbProfileNetworkProfilePostgresDatabase {
+    haInstances?: pulumi.Input<pulumi.Input<inputs.NdbProfileNetworkProfilePostgresDatabaseHaInstance>[]>;
+    singleInstances?: pulumi.Input<pulumi.Input<inputs.NdbProfileNetworkProfilePostgresDatabaseSingleInstance>[]>;
+}
+
+export interface NdbProfileNetworkProfilePostgresDatabaseHaInstance {
+    clusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    clusterNames?: pulumi.Input<pulumi.Input<string>[]>;
+    numOfClusters?: pulumi.Input<string>;
+    vlanNames?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface NdbProfileNetworkProfilePostgresDatabaseSingleInstance {
+    enableIpAddressSelection?: pulumi.Input<string>;
+    vlanName?: pulumi.Input<string>;
+}
+
+export interface NdbProfileNetworkProfileVersionClusterAssociation {
+    nxClusterId: pulumi.Input<string>;
+}
+
+export interface NdbProfileSoftwareProfile {
+    availableClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbProfileSoftwareProfilePostgresDatabase>[]>;
+    topology: pulumi.Input<string>;
+}
+
+export interface NdbProfileSoftwareProfilePostgresDatabase {
+    baseProfileVersionDescription?: pulumi.Input<string>;
+    baseProfileVersionName?: pulumi.Input<string>;
+    dbSoftwareNotes?: pulumi.Input<string>;
+    osNotes?: pulumi.Input<string>;
+    sourceDbserverId?: pulumi.Input<string>;
+}
+
+export interface NdbProfileVersion {
+    dbVersion?: pulumi.Input<string>;
+    deprecated?: pulumi.Input<boolean>;
+    description?: pulumi.Input<string>;
+    engineType?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
+    owner?: pulumi.Input<string>;
+    profileId?: pulumi.Input<string>;
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbProfileVersionProperty>[]>;
+    propertiesMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    published?: pulumi.Input<boolean>;
+    status?: pulumi.Input<string>;
+    systemProfile?: pulumi.Input<boolean>;
+    topology?: pulumi.Input<string>;
+    type?: pulumi.Input<string>;
+    version?: pulumi.Input<string>;
+    versionClusterAssociations?: pulumi.Input<pulumi.Input<inputs.NdbProfileVersionVersionClusterAssociation>[]>;
+}
+
+export interface NdbProfileVersionProperty {
+    name?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbProfileVersionVersionClusterAssociation {
+    dateCreated?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string>;
+    nxClusterId?: pulumi.Input<string>;
+    optimizedForProvisioning?: pulumi.Input<boolean>;
+    ownerId?: pulumi.Input<string>;
+    profileVersionId?: pulumi.Input<string>;
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbProfileVersionVersionClusterAssociationProperty>[]>;
+    status?: pulumi.Input<string>;
+}
+
+export interface NdbProfileVersionVersionClusterAssociationProperty {
+    name?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseActionargument {
+    /**
+     * - (Required) name of argument
+     */
+    name: pulumi.Input<string>;
+    /**
+     * - (Required) value for argument
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseDatabaseNode {
+    accessLevel?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    databaseId?: pulumi.Input<string>;
+    /**
+     * status of database
+     */
+    databaseStatus?: pulumi.Input<string>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    dbserver?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    dbserverId?: pulumi.Input<string>;
+    /**
+     * description
+     */
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    /**
+     * info of instance
+     */
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseDatabaseNodeInfo>[]>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    primary?: pulumi.Input<boolean>;
+    /**
+     * properties of database created
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseDatabaseNodeProperty>[]>;
+    protectionDomainId?: pulumi.Input<string>;
+    protectionDomains?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseDatabaseNodeProtectionDomain>[]>;
+    softwareInstallationId?: pulumi.Input<string>;
+    /**
+     * status of instance
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * tags
+     */
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseDatabaseNodeTag>[]>;
+}
+
+export interface NdbRegisterDatabaseDatabaseNodeInfo {
+    /**
+     * info of instance
+     */
+    info?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbRegisterDatabaseDatabaseNodeProperty {
+    /**
+     * description
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseDatabaseNodeProtectionDomain {
+    assocEntities?: pulumi.Input<pulumi.Input<string>[]>;
+    cloudId?: pulumi.Input<string>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * description
+     */
+    description?: pulumi.Input<string>;
+    eraCreated?: pulumi.Input<boolean>;
+    id?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    primaryHost?: pulumi.Input<string>;
+    /**
+     * properties of database created
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseDatabaseNodeProtectionDomainProperty>[]>;
+    /**
+     * status of instance
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * type of database
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseDatabaseNodeProtectionDomainProperty {
+    /**
+     * description
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseDatabaseNodeTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseInfo {
+    bpgConfigs?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseInfoBpgConfig>[]>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbRegisterDatabaseInfoBpgConfig {
+    bpgDbParams?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseInfoBpgConfigBpgDbParam>[]>;
+    storages?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseInfoBpgConfigStorage>[]>;
+    vmProperties?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseInfoBpgConfigVmProperty>[]>;
+}
+
+export interface NdbRegisterDatabaseInfoBpgConfigBpgDbParam {
+    effectiveCacheSize?: pulumi.Input<string>;
+    maintenanceWorkMem?: pulumi.Input<string>;
+    maxParallelWorkersPerGather?: pulumi.Input<string>;
+    maxWorkerProcesses?: pulumi.Input<string>;
+    sharedBuffers?: pulumi.Input<string>;
+    workMem?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseInfoBpgConfigStorage {
+    archiveStorages?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseInfoBpgConfigStorageArchiveStorage>[]>;
+    dataDisks?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseInfoBpgConfigStorageDataDisk>[]>;
+    logDisks?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseInfoBpgConfigStorageLogDisk>[]>;
+}
+
+export interface NdbRegisterDatabaseInfoBpgConfigStorageArchiveStorage {
+    size?: pulumi.Input<number>;
+}
+
+export interface NdbRegisterDatabaseInfoBpgConfigStorageDataDisk {
+    count?: pulumi.Input<number>;
+}
+
+export interface NdbRegisterDatabaseInfoBpgConfigStorageLogDisk {
+    count?: pulumi.Input<number>;
+    size?: pulumi.Input<number>;
+}
+
+export interface NdbRegisterDatabaseInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio?: pulumi.Input<number>;
+    dirtyExpireCentisecs?: pulumi.Input<number>;
+    dirtyRatio?: pulumi.Input<number>;
+    dirtyWritebackCentisecs?: pulumi.Input<number>;
+    nrHugepages?: pulumi.Input<number>;
+    overcommitMemory?: pulumi.Input<number>;
+    swappiness?: pulumi.Input<number>;
+}
+
+export interface NdbRegisterDatabaseLcmConfig {
+    expiryDetails?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseLcmConfigExpiryDetail>[]>;
+    postDeleteCommands?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseLcmConfigPostDeleteCommand>[]>;
+    preDeleteCommands?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseLcmConfigPreDeleteCommand>[]>;
+    refreshDetails?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseLcmConfigRefreshDetail>[]>;
+}
+
+export interface NdbRegisterDatabaseLcmConfigExpiryDetail {
+    deleteDatabase?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Delete the database's Time Machine (snapshots/logs) from the NDB. Default value is true
+     */
+    deleteTimeMachine?: pulumi.Input<boolean>;
+    deleteVm?: pulumi.Input<boolean>;
+    effectiveTimestamp?: pulumi.Input<string>;
+    expireInDays?: pulumi.Input<number>;
+    expiryDateTimezone?: pulumi.Input<string>;
+    expiryTimestamp?: pulumi.Input<string>;
+    remindBeforeInDays?: pulumi.Input<number>;
+    userCreated?: pulumi.Input<boolean>;
+}
+
+export interface NdbRegisterDatabaseLcmConfigPostDeleteCommand {
+    command?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseLcmConfigPreDeleteCommand {
+    command?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseLcmConfigRefreshDetail {
+    lastRefreshDate?: pulumi.Input<string>;
+    nextRefreshDate?: pulumi.Input<string>;
+    refreshDateTimezone?: pulumi.Input<string>;
+    refreshInDays?: pulumi.Input<number>;
+    refreshInHours?: pulumi.Input<number>;
+    refreshInMonths?: pulumi.Input<number>;
+    refreshTime?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseLinkedDatabase {
+    /**
+     * name of database
+     */
+    databaseName?: pulumi.Input<string>;
+    /**
+     * status of database
+     */
+    databaseStatus?: pulumi.Input<string>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * description
+     */
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    /**
+     * info of instance
+     */
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseLinkedDatabaseInfo>[]>;
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
+    metric?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * parent database id
+     */
+    parentDatabaseId?: pulumi.Input<string>;
+    parentLinkedDatabaseId?: pulumi.Input<string>;
+    snapshotId?: pulumi.Input<string>;
+    /**
+     * status of instance
+     */
+    status?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseLinkedDatabaseInfo {
+    /**
+     * info of instance
+     */
+    info?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbRegisterDatabasePostgressInfo {
+    /**
+     * allow multiple databases. Default is true
+     */
+    allowMultipleDatabases?: pulumi.Input<boolean>;
+    /**
+     * backup policy of database. Default is prefer_secondary.
+     */
+    backupPolicy?: pulumi.Input<string>;
+    /**
+     * name of the database server VM on which the instance you want to register is running.
+     */
+    dbName: pulumi.Input<string>;
+    /**
+     * database password
+     */
+    dbPassword: pulumi.Input<string>;
+    /**
+     * username of the NDB drive user account that has sudo access.
+     */
+    dbUser?: pulumi.Input<string>;
+    /**
+     * listner port of database
+     */
+    listenerPort: pulumi.Input<string>;
+    /**
+     * path to the PostgreSQL home directory in which the PostgreSQL software is installed.
+     */
+    postgresSoftwareHome: pulumi.Input<string>;
+    /**
+     * path to the directory in which the PostgreSQL software is installed.
+     */
+    softwareHome?: pulumi.Input<string>;
+    /**
+     * switch log of database. Default is true
+     */
+    switchLog?: pulumi.Input<boolean>;
+    /**
+     * VM IP of the database server VM on which the instance you want to register is running.
+     */
+    vmIp?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseProperty {
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseTimeMachine {
+    accessLevel?: pulumi.Input<string>;
+    /**
+     * whether instance is cloned or not
+     */
+    clone?: pulumi.Input<boolean>;
+    clones?: pulumi.Input<string>;
+    /**
+     * clustered or not. Default is false
+     */
+    clustered?: pulumi.Input<boolean>;
+    database?: pulumi.Input<string>;
+    databaseId?: pulumi.Input<string>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * description
+     */
+    description?: pulumi.Input<string>;
+    eaStatus?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
+    metric?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * properties of database created
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineProperty>[]>;
+    scheduleId?: pulumi.Input<string>;
+    schedules?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineSchedule>[]>;
+    scope?: pulumi.Input<string>;
+    slaId?: pulumi.Input<string>;
+    slaUpdateInProgress?: pulumi.Input<boolean>;
+    slaUpdateMetadata?: pulumi.Input<string>;
+    slas?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineSla>[]>;
+    sourceNxClusters?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * status of instance
+     */
+    status?: pulumi.Input<string>;
+    /**
+     * tags
+     */
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineTag>[]>;
+    /**
+     * type of database
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfo {
+    /**
+     * - (Optional) enable auto tune log drive. Default: true
+     */
+    autotunelogdrive?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) description of time machine
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * - (Required) name of time machine
+     */
+    name: pulumi.Input<string>;
+    /**
+     * - (Optional) schedule for snapshots
+     */
+    schedule: pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineInfoSchedule>;
+    /**
+     * -  (optional) SLA details for HA instance
+     */
+    slaDetails?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineInfoSlaDetail>[]>;
+    /**
+     * - (Optional) SLA ID for single instance
+     */
+    slaid?: pulumi.Input<string>;
+    /**
+     * - (Optional) tags
+     */
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineInfoTag>[]>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoSchedule {
+    /**
+     * - (Optional) snapshot freq and log config
+     */
+    continuousschedule?: pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineInfoScheduleContinuousschedule>;
+    /**
+     * - (Optional) monthly snapshot config
+     */
+    monthlyschedule?: pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineInfoScheduleMonthlyschedule>;
+    /**
+     * - (Optional) quaterly snapshot config
+     */
+    quartelyschedule?: pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineInfoScheduleQuartelyschedule>;
+    /**
+     * - (Optional) daily snapshot config
+     */
+    snapshottimeofday?: pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineInfoScheduleSnapshottimeofday>;
+    /**
+     * - (Optional) weekly snapshot config
+     */
+    weeklyschedule?: pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineInfoScheduleWeeklyschedule>;
+    /**
+     * - (Optional) yearly snapshot config
+     */
+    yearlyschedule?: pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineInfoScheduleYearlyschedule>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoScheduleContinuousschedule {
+    enabled: pulumi.Input<boolean>;
+    logbackupinterval: pulumi.Input<number>;
+    snapshotsperday: pulumi.Input<number>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoScheduleMonthlyschedule {
+    dayofmonth: pulumi.Input<number>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoScheduleQuartelyschedule {
+    dayofmonth: pulumi.Input<number>;
+    enabled: pulumi.Input<boolean>;
+    startmonth: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoScheduleSnapshottimeofday {
+    hours: pulumi.Input<number>;
+    minutes: pulumi.Input<number>;
+    seconds: pulumi.Input<number>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoScheduleWeeklyschedule {
+    dayofweek: pulumi.Input<string>;
+    enabled: pulumi.Input<boolean>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoScheduleYearlyschedule {
+    dayofmonth: pulumi.Input<number>;
+    enabled: pulumi.Input<boolean>;
+    month: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoSlaDetail {
+    /**
+     * - (Required) primary sla details
+     * * `primary_sla.sla_id` :- (Required) sla id
+     * * `primary_sla.nx_cluster_ids` -: (Optioanl) cluster ids
+     */
+    primarySlas?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineInfoSlaDetailPrimarySla>[]>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoSlaDetailPrimarySla {
+    nxClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * description of SLA ID.
+     */
+    slaId: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineInfoTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineProperty {
+    /**
+     * description
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineSchedule {
+    continuousSchedules?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineScheduleContinuousSchedule>[]>;
+    dailySchedules?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineScheduleDailySchedule>[]>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * description
+     */
+    description?: pulumi.Input<string>;
+    globalPolicy?: pulumi.Input<boolean>;
+    id?: pulumi.Input<string>;
+    monthlySchedules?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineScheduleMonthlySchedule>[]>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    quartelySchedules?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineScheduleQuartelySchedule>[]>;
+    referenceCount?: pulumi.Input<number>;
+    snapshotTimeOfDays?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineScheduleSnapshotTimeOfDay>[]>;
+    startTime?: pulumi.Input<string>;
+    systemPolicy?: pulumi.Input<boolean>;
+    /**
+     * timezone on which instance is created xw
+     */
+    timeZone?: pulumi.Input<string>;
+    uniqueName?: pulumi.Input<string>;
+    weeklySchedules?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineScheduleWeeklySchedule>[]>;
+    yearlySchedules?: pulumi.Input<pulumi.Input<inputs.NdbRegisterDatabaseTimeMachineScheduleYearlySchedule>[]>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineScheduleContinuousSchedule {
+    enabled?: pulumi.Input<boolean>;
+    logBackupInterval?: pulumi.Input<number>;
+    snapshotsPerDay?: pulumi.Input<number>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineScheduleDailySchedule {
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineScheduleMonthlySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineScheduleQuartelySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+    startMonth?: pulumi.Input<string>;
+    startMonthValue?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineScheduleSnapshotTimeOfDay {
+    extra?: pulumi.Input<boolean>;
+    hours?: pulumi.Input<number>;
+    minutes?: pulumi.Input<number>;
+    seconds?: pulumi.Input<number>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineScheduleWeeklySchedule {
+    dayOfWeek?: pulumi.Input<string>;
+    dayOfWeekValue?: pulumi.Input<string>;
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineScheduleYearlySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+    month?: pulumi.Input<string>;
+    monthValue?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineSla {
+    continuousRetention?: pulumi.Input<number>;
+    currentActiveFrequency?: pulumi.Input<string>;
+    dailyRetention?: pulumi.Input<number>;
+    /**
+     * date created for db instance
+     */
+    dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
+    dateModified?: pulumi.Input<string>;
+    /**
+     * description
+     */
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    monthlyRetention?: pulumi.Input<number>;
+    /**
+     * Name of database instance
+     */
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    pitrEnabled?: pulumi.Input<boolean>;
+    quarterlyRetention?: pulumi.Input<number>;
+    referenceCount?: pulumi.Input<number>;
+    systemSla?: pulumi.Input<boolean>;
+    uniqueName?: pulumi.Input<string>;
+    weeklyRetention?: pulumi.Input<number>;
+    yearlyRetention?: pulumi.Input<number>;
+}
+
+export interface NdbRegisterDatabaseTimeMachineTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDbserverCredential {
+    label?: pulumi.Input<string>;
+    password: pulumi.Input<string>;
+    username: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDbserverPostgresDatabase {
+    listenerPort?: pulumi.Input<string>;
+    postgresSoftwareHome?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDbserverProperty {
+    name?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbRegisterDbserverTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbScaleDatabaseDatabaseNode {
+    accessLevel?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    databaseId?: pulumi.Input<string>;
+    databaseStatus?: pulumi.Input<string>;
+    dateCreated?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string>;
+    dbserver?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    dbserverId?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseDatabaseNodeInfo>[]>;
+    name?: pulumi.Input<string>;
+    primary?: pulumi.Input<boolean>;
+    /**
+     * List of all the properties
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseDatabaseNodeProperty>[]>;
+    protectionDomainId?: pulumi.Input<string>;
+    protectionDomains?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseDatabaseNodeProtectionDomain>[]>;
+    softwareInstallationId?: pulumi.Input<string>;
+    status?: pulumi.Input<string>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseDatabaseNodeTag>[]>;
+}
+
+export interface NdbScaleDatabaseDatabaseNodeInfo {
+    info?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbScaleDatabaseDatabaseNodeProperty {
+    description?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbScaleDatabaseDatabaseNodeProtectionDomain {
+    assocEntities?: pulumi.Input<pulumi.Input<string>[]>;
+    cloudId?: pulumi.Input<string>;
+    dateCreated?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
+    eraCreated?: pulumi.Input<boolean>;
+    id?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    primaryHost?: pulumi.Input<string>;
+    /**
+     * List of all the properties
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseDatabaseNodeProtectionDomainProperty>[]>;
+    status?: pulumi.Input<string>;
+    type?: pulumi.Input<string>;
+}
+
+export interface NdbScaleDatabaseDatabaseNodeProtectionDomainProperty {
+    description?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbScaleDatabaseDatabaseNodeTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbScaleDatabaseInfo {
+    bpgConfigs?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseInfoBpgConfig>[]>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbScaleDatabaseInfoBpgConfig {
+    bpgDbParams?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseInfoBpgConfigBpgDbParam>[]>;
+    storages?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseInfoBpgConfigStorage>[]>;
+    vmProperties?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseInfoBpgConfigVmProperty>[]>;
+}
+
+export interface NdbScaleDatabaseInfoBpgConfigBpgDbParam {
+    effectiveCacheSize?: pulumi.Input<string>;
+    maintenanceWorkMem?: pulumi.Input<string>;
+    maxParallelWorkersPerGather?: pulumi.Input<string>;
+    maxWorkerProcesses?: pulumi.Input<string>;
+    sharedBuffers?: pulumi.Input<string>;
+    workMem?: pulumi.Input<string>;
+}
+
+export interface NdbScaleDatabaseInfoBpgConfigStorage {
+    archiveStorages?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseInfoBpgConfigStorageArchiveStorage>[]>;
+    dataDisks?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseInfoBpgConfigStorageDataDisk>[]>;
+    logDisks?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseInfoBpgConfigStorageLogDisk>[]>;
+}
+
+export interface NdbScaleDatabaseInfoBpgConfigStorageArchiveStorage {
+    size?: pulumi.Input<number>;
+}
+
+export interface NdbScaleDatabaseInfoBpgConfigStorageDataDisk {
+    count?: pulumi.Input<number>;
+}
+
+export interface NdbScaleDatabaseInfoBpgConfigStorageLogDisk {
+    count?: pulumi.Input<number>;
+    size?: pulumi.Input<number>;
+}
+
+export interface NdbScaleDatabaseInfoBpgConfigVmProperty {
+    dirtyBackgroundRatio?: pulumi.Input<number>;
+    dirtyExpireCentisecs?: pulumi.Input<number>;
+    dirtyRatio?: pulumi.Input<number>;
+    dirtyWritebackCentisecs?: pulumi.Input<number>;
+    nrHugepages?: pulumi.Input<number>;
+    overcommitMemory?: pulumi.Input<number>;
+    swappiness?: pulumi.Input<number>;
+}
+
+export interface NdbScaleDatabaseLcmConfig {
+    expiryDetails?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseLcmConfigExpiryDetail>[]>;
+    postDeleteCommands?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseLcmConfigPostDeleteCommand>[]>;
+    preDeleteCommands?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseLcmConfigPreDeleteCommand>[]>;
+    refreshDetails?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseLcmConfigRefreshDetail>[]>;
+}
+
+export interface NdbScaleDatabaseLcmConfigExpiryDetail {
+    deleteDatabase?: pulumi.Input<boolean>;
+    deleteTimeMachine?: pulumi.Input<boolean>;
+    deleteVm?: pulumi.Input<boolean>;
+    effectiveTimestamp?: pulumi.Input<string>;
+    expireInDays?: pulumi.Input<number>;
+    expiryDateTimezone?: pulumi.Input<string>;
+    expiryTimestamp?: pulumi.Input<string>;
+    remindBeforeInDays?: pulumi.Input<number>;
+    userCreated?: pulumi.Input<boolean>;
+}
+
+export interface NdbScaleDatabaseLcmConfigPostDeleteCommand {
+    command?: pulumi.Input<string>;
+}
+
+export interface NdbScaleDatabaseLcmConfigPreDeleteCommand {
+    command?: pulumi.Input<string>;
+}
+
+export interface NdbScaleDatabaseLcmConfigRefreshDetail {
+    lastRefreshDate?: pulumi.Input<string>;
+    nextRefreshDate?: pulumi.Input<string>;
+    refreshDateTimezone?: pulumi.Input<string>;
+    refreshInDays?: pulumi.Input<number>;
+    refreshInHours?: pulumi.Input<number>;
+    refreshInMonths?: pulumi.Input<number>;
+    refreshTime?: pulumi.Input<string>;
+}
+
+export interface NdbScaleDatabaseLinkedDatabase {
+    databaseName?: pulumi.Input<string>;
+    databaseStatus?: pulumi.Input<string>;
+    dateCreated?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    infos?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseLinkedDatabaseInfo>[]>;
+    metric?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    name?: pulumi.Input<string>;
+    parentDatabaseId?: pulumi.Input<string>;
+    parentLinkedDatabaseId?: pulumi.Input<string>;
+    snapshotId?: pulumi.Input<string>;
+    status?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string>;
+}
+
+export interface NdbScaleDatabaseLinkedDatabaseInfo {
+    info?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface NdbScaleDatabaseProperty {
+    name?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbScaleDatabaseTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbScaleDatabaseTimeMachine {
+    accessLevel?: pulumi.Input<string>;
+    clone?: pulumi.Input<boolean>;
+    clones?: pulumi.Input<string>;
+    clustered?: pulumi.Input<boolean>;
+    database?: pulumi.Input<string>;
+    databaseId?: pulumi.Input<string>;
+    dateCreated?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
+    eaStatus?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    metric?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
+    /**
+     * List of all the properties
+     */
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineProperty>[]>;
+    scheduleId?: pulumi.Input<string>;
+    schedules?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineSchedule>[]>;
+    scope?: pulumi.Input<string>;
+    slaId?: pulumi.Input<string>;
+    slaUpdateInProgress?: pulumi.Input<boolean>;
+    slaUpdateMetadata?: pulumi.Input<string>;
+    slas?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineSla>[]>;
+    sourceNxClusters?: pulumi.Input<pulumi.Input<string>[]>;
+    status?: pulumi.Input<string>;
+    tags?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineTag>[]>;
+    type?: pulumi.Input<string>;
+}
+
+export interface NdbScaleDatabaseTimeMachineProperty {
+    description?: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
+    refId?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbScaleDatabaseTimeMachineSchedule {
+    continuousSchedules?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineScheduleContinuousSchedule>[]>;
+    dailySchedules?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineScheduleDailySchedule>[]>;
+    dateCreated?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
+    globalPolicy?: pulumi.Input<boolean>;
+    id?: pulumi.Input<string>;
+    monthlySchedules?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineScheduleMonthlySchedule>[]>;
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    quartelySchedules?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineScheduleQuartelySchedule>[]>;
+    referenceCount?: pulumi.Input<number>;
+    snapshotTimeOfDays?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineScheduleSnapshotTimeOfDay>[]>;
+    startTime?: pulumi.Input<string>;
+    systemPolicy?: pulumi.Input<boolean>;
+    timeZone?: pulumi.Input<string>;
+    uniqueName?: pulumi.Input<string>;
+    weeklySchedules?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineScheduleWeeklySchedule>[]>;
+    yearlySchedules?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineScheduleYearlySchedule>[]>;
+}
+
+export interface NdbScaleDatabaseTimeMachineScheduleContinuousSchedule {
+    enabled?: pulumi.Input<boolean>;
+    logBackupInterval?: pulumi.Input<number>;
+    snapshotsPerDay?: pulumi.Input<number>;
+}
+
+export interface NdbScaleDatabaseTimeMachineScheduleDailySchedule {
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbScaleDatabaseTimeMachineScheduleMonthlySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbScaleDatabaseTimeMachineScheduleQuartelySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+    startMonth?: pulumi.Input<string>;
+    startMonthValue?: pulumi.Input<string>;
+}
+
+export interface NdbScaleDatabaseTimeMachineScheduleSnapshotTimeOfDay {
+    extra?: pulumi.Input<boolean>;
+    hours?: pulumi.Input<number>;
+    minutes?: pulumi.Input<number>;
+    seconds?: pulumi.Input<number>;
+}
+
+export interface NdbScaleDatabaseTimeMachineScheduleWeeklySchedule {
+    dayOfWeek?: pulumi.Input<string>;
+    dayOfWeekValue?: pulumi.Input<string>;
+    enabled?: pulumi.Input<boolean>;
+}
+
+export interface NdbScaleDatabaseTimeMachineScheduleYearlySchedule {
+    dayOfMonth?: pulumi.Input<number>;
+    enabled?: pulumi.Input<boolean>;
+    month?: pulumi.Input<string>;
+    monthValue?: pulumi.Input<string>;
+}
+
+export interface NdbScaleDatabaseTimeMachineSla {
+    continuousRetention?: pulumi.Input<number>;
+    currentActiveFrequency?: pulumi.Input<string>;
+    dailyRetention?: pulumi.Input<number>;
+    dateCreated?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string>;
+    description?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    monthlyRetention?: pulumi.Input<number>;
+    name?: pulumi.Input<string>;
+    ownerId?: pulumi.Input<string>;
+    pitrEnabled?: pulumi.Input<boolean>;
+    quarterlyRetention?: pulumi.Input<number>;
+    referenceCount?: pulumi.Input<number>;
+    systemSla?: pulumi.Input<boolean>;
+    uniqueName?: pulumi.Input<string>;
+    weeklyRetention?: pulumi.Input<number>;
+    yearlyRetention?: pulumi.Input<number>;
+}
+
+export interface NdbScaleDatabaseTimeMachineTag {
+    entityId?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string>;
+    tagId?: pulumi.Input<string>;
+    tagName?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbSoftwareVersionProfilePostgresDatabase {
+    dbSoftwareNotes?: pulumi.Input<string>;
+    osNotes?: pulumi.Input<string>;
+    sourceDbserverId?: pulumi.Input<string>;
+}
+
+export interface NdbSoftwareVersionProfileProperty {
+    name?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbSoftwareVersionProfileVersionClusterAssociation {
+    dateCreated?: pulumi.Input<string>;
+    dateModified?: pulumi.Input<string>;
+    nxClusterId?: pulumi.Input<string>;
+    optimizedForProvisioning?: pulumi.Input<boolean>;
+    ownerId?: pulumi.Input<string>;
+    profileVersionId?: pulumi.Input<string>;
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfileVersionClusterAssociationProperty>[]>;
+    status?: pulumi.Input<string>;
+}
+
+export interface NdbSoftwareVersionProfileVersionClusterAssociationProperty {
+    name?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
+}
+
+export interface NdbStretchedVlanMetadata {
+    gateway?: pulumi.Input<string>;
+    subnetMask?: pulumi.Input<string>;
+}
+
+export interface NdbStretchedVlanVlansList {
+    clusterId?: pulumi.Input<string>;
+    id?: pulumi.Input<string>;
+    managed?: pulumi.Input<boolean>;
+    name?: pulumi.Input<string>;
+    properties?: pulumi.Input<pulumi.Input<inputs.NdbStretchedVlanVlansListProperty>[]>;
+    propertiesMaps?: pulumi.Input<pulumi.Input<inputs.NdbStretchedVlanVlansListPropertiesMap>[]>;
+    stretchedVlanId?: pulumi.Input<string>;
+    type?: pulumi.Input<string>;
+}
+
+export interface NdbStretchedVlanVlansListPropertiesMap {
+    vlanGateway?: pulumi.Input<string>;
+    vlanPrimaryDns?: pulumi.Input<string>;
+    vlanSecondaryDns?: pulumi.Input<string>;
+    vlanSubnetMask?: pulumi.Input<string>;
+}
+
+export interface NdbStretchedVlanVlansListProperty {
+    name?: pulumi.Input<string>;
+    secure?: pulumi.Input<boolean>;
+    value?: pulumi.Input<string>;
 }
 
 export interface NetworkSecurityRuleAdRuleInboundAllowList {
@@ -2249,6 +6454,172 @@ export interface ProjectAccountReferenceList {
     uuid: pulumi.Input<string>;
 }
 
+export interface ProjectAcp {
+    /**
+     * The list of context filters. These are OR filters. The scope-expression-list defines the context, and the filter works in conjunction with the entity-expression-list.
+     */
+    contextFilterLists?: pulumi.Input<pulumi.Input<inputs.ProjectAcpContextFilterList>[]>;
+    /**
+     * A description for project.
+     */
+    description?: pulumi.Input<string>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * The name for the project.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * Reference to role.
+     */
+    roleReference: pulumi.Input<inputs.ProjectAcpRoleReference>;
+    /**
+     * List of Reference of users groups.
+     */
+    userGroupReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectAcpUserGroupReferenceList>[]>;
+    /**
+     * List of Reference of users.
+     */
+    userReferenceLists?: pulumi.Input<pulumi.Input<inputs.ProjectAcpUserReferenceList>[]>;
+}
+
+export interface ProjectAcpContextFilterList {
+    /**
+     * (Required) A list of Entity filter expressions.
+     */
+    entityFilterExpressionLists: pulumi.Input<pulumi.Input<inputs.ProjectAcpContextFilterListEntityFilterExpressionList>[]>;
+    /**
+     * - (Optional) Filter the scope of an Access Control Policy.
+     */
+    scopeFilterExpressionLists?: pulumi.Input<pulumi.Input<inputs.ProjectAcpContextFilterListScopeFilterExpressionList>[]>;
+}
+
+export interface ProjectAcpContextFilterListEntityFilterExpressionList {
+    /**
+     * - (Optional)  The LHS of the filter expression - the entity type.
+     */
+    leftHandSideEntityType?: pulumi.Input<string>;
+    /**
+     * - (Required) The operator in the filter expression.
+     */
+    operator: pulumi.Input<string>;
+    /**
+     * - (Required) The right hand side (RHS) of an scope expression.
+     */
+    rightHandSide: pulumi.Input<inputs.ProjectAcpContextFilterListEntityFilterExpressionListRightHandSide>;
+}
+
+export interface ProjectAcpContextFilterListEntityFilterExpressionListRightHandSide {
+    /**
+     * - (Optional) The category values represented as a dictionary of key > list of values.
+     */
+    categories?: pulumi.Input<inputs.ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories>;
+    /**
+     * - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+     */
+    collection?: pulumi.Input<string>;
+    /**
+     * - (Optional) The explicit list of UUIDs for the given kind.
+     */
+    uuidLists?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategories {
+    /**
+     * The name for the project.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * value of the key.
+     */
+    values?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface ProjectAcpContextFilterListScopeFilterExpressionList {
+    /**
+     * - (Optional)  The LHS of the filter expression - the scope type.
+     */
+    leftHandSide: pulumi.Input<string>;
+    /**
+     * - (Required) The operator in the filter expression.
+     */
+    operator: pulumi.Input<string>;
+    /**
+     * - (Required) The right hand side (RHS) of an scope expression.
+     */
+    rightHandSide: pulumi.Input<inputs.ProjectAcpContextFilterListScopeFilterExpressionListRightHandSide>;
+}
+
+export interface ProjectAcpContextFilterListScopeFilterExpressionListRightHandSide {
+    /**
+     * - (Optional) The category values represented as a dictionary of key > list of values.
+     */
+    categories?: pulumi.Input<inputs.ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories>;
+    /**
+     * - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+     */
+    collection?: pulumi.Input<string>;
+    /**
+     * - (Optional) The explicit list of UUIDs for the given kind.
+     */
+    uuidLists?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategories {
+    /**
+     * The name for the project.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * value of the key.
+     */
+    values?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface ProjectAcpRoleReference {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind: pulumi.Input<string>;
+    /**
+     * The name for the project.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: pulumi.Input<string>;
+}
+
+export interface ProjectAcpUserGroupReferenceList {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: pulumi.Input<string>;
+    /**
+     * The name for the project.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: pulumi.Input<string>;
+}
+
+export interface ProjectAcpUserReferenceList {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: pulumi.Input<string>;
+    /**
+     * The name for the project.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: pulumi.Input<string>;
+}
+
 export interface ProjectCategory {
     /**
      * The name for the project.
@@ -2258,6 +6629,36 @@ export interface ProjectCategory {
      * value of the key.
      */
     value?: pulumi.Input<string>;
+}
+
+export interface ProjectClusterReferenceList {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: pulumi.Input<string>;
+    /**
+     * The name for the project.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: pulumi.Input<string>;
+}
+
+export interface ProjectDefaultEnvironmentReference {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: pulumi.Input<string>;
+    /**
+     * The name for the project.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: pulumi.Input<string>;
 }
 
 export interface ProjectDefaultSubnetReference {
@@ -2345,7 +6746,107 @@ export interface ProjectSubnetReferenceList {
     uuid: pulumi.Input<string>;
 }
 
+export interface ProjectTunnelReferenceList {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: pulumi.Input<string>;
+    /**
+     * The name for the project.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: pulumi.Input<string>;
+}
+
+export interface ProjectUserGroupList {
+    directoryServiceOus?: pulumi.Input<pulumi.Input<inputs.ProjectUserGroupListDirectoryServiceOus>[]>;
+    directoryServiceUserGroups?: pulumi.Input<pulumi.Input<inputs.ProjectUserGroupListDirectoryServiceUserGroup>[]>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    samlUserGroups?: pulumi.Input<pulumi.Input<inputs.ProjectUserGroupListSamlUserGroup>[]>;
+}
+
+export interface ProjectUserGroupListDirectoryServiceOus {
+    distinguishedName: pulumi.Input<string>;
+}
+
+export interface ProjectUserGroupListDirectoryServiceUserGroup {
+    distinguishedName: pulumi.Input<string>;
+}
+
+export interface ProjectUserGroupListSamlUserGroup {
+    idpUuid: pulumi.Input<string>;
+    /**
+     * The name for the project.
+     */
+    name: pulumi.Input<string>;
+}
+
+export interface ProjectUserList {
+    directoryServiceUser?: pulumi.Input<inputs.ProjectUserListDirectoryServiceUser>;
+    identityProviderUser?: pulumi.Input<inputs.ProjectUserListIdentityProviderUser>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface ProjectUserListDirectoryServiceUser {
+    defaultUserPrincipalName?: pulumi.Input<string>;
+    directoryServiceReference: pulumi.Input<inputs.ProjectUserListDirectoryServiceUserDirectoryServiceReference>;
+    userPrincipalName?: pulumi.Input<string>;
+}
+
+export interface ProjectUserListDirectoryServiceUserDirectoryServiceReference {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: pulumi.Input<string>;
+    /**
+     * The name for the project.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: pulumi.Input<string>;
+}
+
+export interface ProjectUserListIdentityProviderUser {
+    identityProviderReference: pulumi.Input<inputs.ProjectUserListIdentityProviderUserIdentityProviderReference>;
+    username?: pulumi.Input<string>;
+}
+
+export interface ProjectUserListIdentityProviderUserIdentityProviderReference {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: pulumi.Input<string>;
+    /**
+     * The name for the project.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: pulumi.Input<string>;
+}
+
 export interface ProjectUserReferenceList {
+    /**
+     * (Required) The kind name (Default value: `project`).
+     */
+    kind?: pulumi.Input<string>;
+    /**
+     * The name for the project.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * (Required) the UUID.
+     */
+    uuid: pulumi.Input<string>;
+}
+
+export interface ProjectVpcReferenceList {
     /**
      * (Required) The kind name (Default value: `project`).
      */
@@ -2922,6 +7423,36 @@ export interface UserDirectoryServiceUserDirectoryServiceReference {
     uuid: pulumi.Input<string>;
 }
 
+export interface UserGroupsCategory {
+    /**
+     * - subnet name.
+     */
+    name?: pulumi.Input<string>;
+    value?: pulumi.Input<string>;
+}
+
+export interface UserGroupsDirectoryServiceOus {
+    distinguishedName: pulumi.Input<string>;
+}
+
+export interface UserGroupsDirectoryServiceUserGroup {
+    /**
+     * - (Required) The Distinguished name for the user group.
+     */
+    distinguishedName: pulumi.Input<string>;
+}
+
+export interface UserGroupsSamlUserGroup {
+    /**
+     * - (Required) The UUID of the Identity Provider that the group belongs to.
+     */
+    idpUuid: pulumi.Input<string>;
+    /**
+     * - (Required) The name of the SAML group which the IDP provides.
+     */
+    name: pulumi.Input<string>;
+}
+
 export interface UserIdentityProviderUser {
     /**
      * - (Optional) The reference to a identity provider. See #reference for to look the supported attributes.
@@ -2977,6 +7508,8 @@ export interface VirtualMachineCategory {
 export interface VirtualMachineDiskList {
     /**
      * Reference to a data source.
+     *
+     * The diskSize (the disk sizeMib and the diskSizeBytes attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk sizeMib or diskSizeBytes when you set dataSourceReference but, you can update the diskSize after creation (second apply).
      */
     dataSourceReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -2996,11 +7529,6 @@ export interface VirtualMachineDiskList {
      * - (Optional) The device ID which is used to uniquely identify this particular disk.
      */
     uuid?: pulumi.Input<string>;
-    /**
-     * Reference to a volume group.
-     *
-     * The diskSize (the disk sizeMib and the diskSizeBytes attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk sizeMib or diskSizeBytes when you set dataSourceReference but, you can update the diskSize after creation (second apply).
-     */
     volumeGroupReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }
 

@@ -54,6 +54,33 @@ Object.defineProperty(exports, "insecure", {
 });
 
 /**
+ * endpoint for Era VM (era ip)
+ */
+export declare const ndbEndpoint: string | undefined;
+Object.defineProperty(exports, "ndbEndpoint", {
+    get() {
+        return __config.get("ndbEndpoint");
+    },
+    enumerable: true,
+});
+
+export declare const ndbPassword: string | undefined;
+Object.defineProperty(exports, "ndbPassword", {
+    get() {
+        return __config.get("ndbPassword");
+    },
+    enumerable: true,
+});
+
+export declare const ndbUsername: string | undefined;
+Object.defineProperty(exports, "ndbUsername", {
+    get() {
+        return __config.get("ndbUsername");
+    },
+    enumerable: true,
+});
+
+/**
  * Password for provided user name.
  */
 export declare const password: string | undefined;

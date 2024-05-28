@@ -23,16 +23,25 @@ class GetProjectResult:
     """
     A collection of values returned by getProject.
     """
-    def __init__(__self__, account_reference_lists=None, api_version=None, categories=None, default_subnet_reference=None, description=None, environment_reference_lists=None, external_network_lists=None, external_user_group_reference_lists=None, id=None, is_default=None, metadata=None, name=None, owner_reference=None, project_id=None, project_name=None, project_reference=None, resource_domains=None, state=None, subnet_reference_lists=None, user_reference_lists=None):
+    def __init__(__self__, account_reference_lists=None, acps=None, api_version=None, categories=None, cluster_reference_lists=None, default_environment_references=None, default_subnet_reference=None, description=None, environment_reference_lists=None, external_network_lists=None, external_user_group_reference_lists=None, id=None, is_default=None, metadata=None, name=None, owner_reference=None, project_id=None, project_name=None, project_reference=None, resource_domains=None, state=None, subnet_reference_lists=None, tunnel_reference_lists=None, user_reference_lists=None, vpc_reference_lists=None):
         if account_reference_lists and not isinstance(account_reference_lists, list):
             raise TypeError("Expected argument 'account_reference_lists' to be a list")
         pulumi.set(__self__, "account_reference_lists", account_reference_lists)
+        if acps and not isinstance(acps, list):
+            raise TypeError("Expected argument 'acps' to be a list")
+        pulumi.set(__self__, "acps", acps)
         if api_version and not isinstance(api_version, str):
             raise TypeError("Expected argument 'api_version' to be a str")
         pulumi.set(__self__, "api_version", api_version)
         if categories and not isinstance(categories, list):
             raise TypeError("Expected argument 'categories' to be a list")
         pulumi.set(__self__, "categories", categories)
+        if cluster_reference_lists and not isinstance(cluster_reference_lists, list):
+            raise TypeError("Expected argument 'cluster_reference_lists' to be a list")
+        pulumi.set(__self__, "cluster_reference_lists", cluster_reference_lists)
+        if default_environment_references and not isinstance(default_environment_references, list):
+            raise TypeError("Expected argument 'default_environment_references' to be a list")
+        pulumi.set(__self__, "default_environment_references", default_environment_references)
         if default_subnet_reference and not isinstance(default_subnet_reference, dict):
             raise TypeError("Expected argument 'default_subnet_reference' to be a dict")
         pulumi.set(__self__, "default_subnet_reference", default_subnet_reference)
@@ -81,9 +90,15 @@ class GetProjectResult:
         if subnet_reference_lists and not isinstance(subnet_reference_lists, list):
             raise TypeError("Expected argument 'subnet_reference_lists' to be a list")
         pulumi.set(__self__, "subnet_reference_lists", subnet_reference_lists)
+        if tunnel_reference_lists and not isinstance(tunnel_reference_lists, list):
+            raise TypeError("Expected argument 'tunnel_reference_lists' to be a list")
+        pulumi.set(__self__, "tunnel_reference_lists", tunnel_reference_lists)
         if user_reference_lists and not isinstance(user_reference_lists, list):
             raise TypeError("Expected argument 'user_reference_lists' to be a list")
         pulumi.set(__self__, "user_reference_lists", user_reference_lists)
+        if vpc_reference_lists and not isinstance(vpc_reference_lists, list):
+            raise TypeError("Expected argument 'vpc_reference_lists' to be a list")
+        pulumi.set(__self__, "vpc_reference_lists", vpc_reference_lists)
 
     @property
     @pulumi.getter(name="accountReferenceLists")
@@ -97,6 +112,11 @@ class GetProjectResult:
         return pulumi.get(self, "account_reference_lists")
 
     @property
+    @pulumi.getter
+    def acps(self) -> Sequence['outputs.GetProjectAcpResult']:
+        return pulumi.get(self, "acps")
+
+    @property
     @pulumi.getter(name="apiVersion")
     def api_version(self) -> str:
         return pulumi.get(self, "api_version")
@@ -104,7 +124,29 @@ class GetProjectResult:
     @property
     @pulumi.getter
     def categories(self) -> Sequence['outputs.GetProjectCategoryResult']:
+        """
+        - (Optional) The category values represented as a dictionary of key > list of values.
+        """
         return pulumi.get(self, "categories")
+
+    @property
+    @pulumi.getter(name="clusterReferenceLists")
+    def cluster_reference_lists(self) -> Sequence['outputs.GetProjectClusterReferenceListResult']:
+        """
+        (Optional/Computed) List of clusters associated with the project..
+        * `cluster_reference_list.#.kind` - (Optional) The kind name. Default value is `cluster`
+        * `cluster_reference_list.#.uuid` - (Required) The UUID of a cluster
+        * `cluster_reference_list.#.name` - (Optional/Computed) The name of a cluster.
+        """
+        return pulumi.get(self, "cluster_reference_lists")
+
+    @property
+    @pulumi.getter(name="defaultEnvironmentReferences")
+    def default_environment_references(self) -> Sequence['outputs.GetProjectDefaultEnvironmentReferenceResult']:
+        """
+        (Optional/Computed) Reference to a environment.
+        """
+        return pulumi.get(self, "default_environment_references")
 
     @property
     @pulumi.getter(name="defaultSubnetReference")
@@ -118,7 +160,7 @@ class GetProjectResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        A description for project.
+        Description of ACP
         """
         return pulumi.get(self, "description")
 
@@ -225,15 +267,34 @@ class GetProjectResult:
         return pulumi.get(self, "subnet_reference_lists")
 
     @property
+    @pulumi.getter(name="tunnelReferenceLists")
+    def tunnel_reference_lists(self) -> Sequence['outputs.GetProjectTunnelReferenceListResult']:
+        """
+        (Optional/Computed) List of tunnels associated with the project.
+        * `tunnel_reference_list.#.kind` - (Optional) The kind name. Default value is `tunnel`
+        * `tunnel_reference_list.#.uuid` - (Required) The UUID of a tunnel
+        * `tunnel_reference_list.#.name` - (Optional/Computed) The name of a tunnel.
+        """
+        return pulumi.get(self, "tunnel_reference_lists")
+
+    @property
     @pulumi.getter(name="userReferenceLists")
     def user_reference_lists(self) -> Sequence['outputs.GetProjectUserReferenceListResult']:
         """
-        List of users in the project.
-        * `user_reference_list.#.kind` - The kind name. Default value is `user`
-        * `user_reference_list.#.uuid` - The UUID of a user
-        * `user_reference_list.#.name` - The name of a user.
+        List of Reference of users.
         """
         return pulumi.get(self, "user_reference_lists")
+
+    @property
+    @pulumi.getter(name="vpcReferenceLists")
+    def vpc_reference_lists(self) -> Sequence['outputs.GetProjectVpcReferenceListResult']:
+        """
+        (Optional/Computed) List of VPCs associated with the project..
+        * `vpc_reference_list.#.kind` - (Optional) The kind name. Default value is `vpc`
+        * `vpc_reference_list.#.uuid` - (Required) The UUID of a vpc
+        * `vpc_reference_list.#.name` - (Optional/Computed) The name of a vpc.
+        """
+        return pulumi.get(self, "vpc_reference_lists")
 
 
 class AwaitableGetProjectResult(GetProjectResult):
@@ -243,8 +304,11 @@ class AwaitableGetProjectResult(GetProjectResult):
             yield self
         return GetProjectResult(
             account_reference_lists=self.account_reference_lists,
+            acps=self.acps,
             api_version=self.api_version,
             categories=self.categories,
+            cluster_reference_lists=self.cluster_reference_lists,
+            default_environment_references=self.default_environment_references,
             default_subnet_reference=self.default_subnet_reference,
             description=self.description,
             environment_reference_lists=self.environment_reference_lists,
@@ -261,7 +325,9 @@ class AwaitableGetProjectResult(GetProjectResult):
             resource_domains=self.resource_domains,
             state=self.state,
             subnet_reference_lists=self.subnet_reference_lists,
-            user_reference_lists=self.user_reference_lists)
+            tunnel_reference_lists=self.tunnel_reference_lists,
+            user_reference_lists=self.user_reference_lists,
+            vpc_reference_lists=self.vpc_reference_lists)
 
 
 def get_project(categories: Optional[Sequence[pulumi.InputType['GetProjectCategoryArgs']]] = None,
@@ -321,6 +387,7 @@ def get_project(categories: Optional[Sequence[pulumi.InputType['GetProjectCatego
     ```
 
 
+    :param Sequence[pulumi.InputType['GetProjectCategoryArgs']] categories: - (Optional) The category values represented as a dictionary of key > list of values.
     :param Sequence[pulumi.InputType['GetProjectExternalUserGroupReferenceListArgs']] external_user_group_reference_lists: List of directory service user groups. These groups are not managed by Nutanix.
            * `external_user_group_reference_list.#.kind` - The kind name. Default value is `user_group`
            * `external_user_group_reference_list.#.uuid` - The UUID of a user_group
@@ -330,10 +397,7 @@ def get_project(categories: Optional[Sequence[pulumi.InputType['GetProjectCatego
            * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
            * `subnet_reference_list.#.uuid` - The UUID of a subnet
            * `subnet_reference_list.#.name` - The name of a subnet.
-    :param Sequence[pulumi.InputType['GetProjectUserReferenceListArgs']] user_reference_lists: List of users in the project.
-           * `user_reference_list.#.kind` - The kind name. Default value is `user`
-           * `user_reference_list.#.uuid` - The UUID of a user
-           * `user_reference_list.#.name` - The name of a user.
+    :param Sequence[pulumi.InputType['GetProjectUserReferenceListArgs']] user_reference_lists: List of Reference of users.
     """
     __args__ = dict()
     __args__['categories'] = categories
@@ -347,8 +411,11 @@ def get_project(categories: Optional[Sequence[pulumi.InputType['GetProjectCatego
 
     return AwaitableGetProjectResult(
         account_reference_lists=pulumi.get(__ret__, 'account_reference_lists'),
+        acps=pulumi.get(__ret__, 'acps'),
         api_version=pulumi.get(__ret__, 'api_version'),
         categories=pulumi.get(__ret__, 'categories'),
+        cluster_reference_lists=pulumi.get(__ret__, 'cluster_reference_lists'),
+        default_environment_references=pulumi.get(__ret__, 'default_environment_references'),
         default_subnet_reference=pulumi.get(__ret__, 'default_subnet_reference'),
         description=pulumi.get(__ret__, 'description'),
         environment_reference_lists=pulumi.get(__ret__, 'environment_reference_lists'),
@@ -365,7 +432,9 @@ def get_project(categories: Optional[Sequence[pulumi.InputType['GetProjectCatego
         resource_domains=pulumi.get(__ret__, 'resource_domains'),
         state=pulumi.get(__ret__, 'state'),
         subnet_reference_lists=pulumi.get(__ret__, 'subnet_reference_lists'),
-        user_reference_lists=pulumi.get(__ret__, 'user_reference_lists'))
+        tunnel_reference_lists=pulumi.get(__ret__, 'tunnel_reference_lists'),
+        user_reference_lists=pulumi.get(__ret__, 'user_reference_lists'),
+        vpc_reference_lists=pulumi.get(__ret__, 'vpc_reference_lists'))
 
 
 @_utilities.lift_output_func(get_project)
@@ -426,6 +495,7 @@ def get_project_output(categories: Optional[pulumi.Input[Optional[Sequence[pulum
     ```
 
 
+    :param Sequence[pulumi.InputType['GetProjectCategoryArgs']] categories: - (Optional) The category values represented as a dictionary of key > list of values.
     :param Sequence[pulumi.InputType['GetProjectExternalUserGroupReferenceListArgs']] external_user_group_reference_lists: List of directory service user groups. These groups are not managed by Nutanix.
            * `external_user_group_reference_list.#.kind` - The kind name. Default value is `user_group`
            * `external_user_group_reference_list.#.uuid` - The UUID of a user_group
@@ -435,9 +505,6 @@ def get_project_output(categories: Optional[pulumi.Input[Optional[Sequence[pulum
            * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
            * `subnet_reference_list.#.uuid` - The UUID of a subnet
            * `subnet_reference_list.#.name` - The name of a subnet.
-    :param Sequence[pulumi.InputType['GetProjectUserReferenceListArgs']] user_reference_lists: List of users in the project.
-           * `user_reference_list.#.kind` - The kind name. Default value is `user`
-           * `user_reference_list.#.uuid` - The UUID of a user
-           * `user_reference_list.#.name` - The name of a user.
+    :param Sequence[pulumi.InputType['GetProjectUserReferenceListArgs']] user_reference_lists: List of Reference of users.
     """
     ...
