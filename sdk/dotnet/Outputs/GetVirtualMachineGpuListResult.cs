@@ -52,6 +52,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string Uuid;
         /// <summary>
         /// - The vendor of the GPU.
+        /// * `UUID`: - UUID of the GPU.
         /// </summary>
         public readonly string Vendor;
 
