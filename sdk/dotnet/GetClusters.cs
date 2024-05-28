@@ -45,7 +45,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * `product_name`: - Name of the producer/distribution of the image. For example windows or red hat.
         /// * `product_version`: - Version string for the disk image.
         /// 
-        /// See detailed information in [Nutanix Image](https://nutanix.github.io/Automation/experimental/swagger-redoc-sandbox/#tag/clusters/paths/~1clusters~1multicluster_config/post).
+        /// See detailed information in [Nutanix Clusters](https://www.nutanix.dev/api_references/prism-central-v3/#/d93c30e04327e-get-a-list-of-existing-clusters).
         /// </summary>
         public static Task<GetClustersResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetClustersResult>("nutanix:index/getClusters:getClusters", InvokeArgs.Empty, options.WithDefaults());
@@ -83,7 +83,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * `product_name`: - Name of the producer/distribution of the image. For example windows or red hat.
         /// * `product_version`: - Version string for the disk image.
         /// 
-        /// See detailed information in [Nutanix Image](https://nutanix.github.io/Automation/experimental/swagger-redoc-sandbox/#tag/clusters/paths/~1clusters~1multicluster_config/post).
+        /// See detailed information in [Nutanix Clusters](https://www.nutanix.dev/api_references/prism-central-v3/#/d93c30e04327e-get-a-list-of-existing-clusters).
         /// </summary>
         public static Output<GetClustersResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetClustersResult>("nutanix:index/getClusters:getClusters", InvokeArgs.Empty, options.WithDefaults());

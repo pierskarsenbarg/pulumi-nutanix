@@ -30,19 +30,23 @@ type Subnet struct {
 	// - (Optional) Default gateway IP address.
 	DefaultGatewayIp pulumi.StringOutput `pulumi:"defaultGatewayIp"`
 	// - (Optional) A description for subnet.
-	Description               pulumi.StringOutput      `pulumi:"description"`
+	Description pulumi.StringOutput `pulumi:"description"`
+	// - (Optional). List of Domain Name Server addresses .
 	DhcpDomainNameServerLists pulumi.StringArrayOutput `pulumi:"dhcpDomainNameServerLists"`
-	// - (Optional).
+	// - (Optional).The DNS domain search list .
 	DhcpDomainSearchLists pulumi.StringArrayOutput `pulumi:"dhcpDomainSearchLists"`
 	// - (Optional) Spec for defining DHCP options.
 	DhcpOptions pulumi.StringMapOutput `pulumi:"dhcpOptions"`
 	// - (Optional) Host address.
 	DhcpServerAddress pulumi.StringMapOutput `pulumi:"dhcpServerAddress"`
 	// - (Optional) Port Number.
-	DhcpServerAddressPort  pulumi.IntOutput         `pulumi:"dhcpServerAddressPort"`
-	EnableNat              pulumi.BoolOutput        `pulumi:"enableNat"`
+	DhcpServerAddressPort pulumi.IntOutput `pulumi:"dhcpServerAddressPort"`
+	// - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+	EnableNat pulumi.BoolOutput `pulumi:"enableNat"`
+	// -(Optional) Range of IPs.
 	IpConfigPoolListRanges pulumi.StringArrayOutput `pulumi:"ipConfigPoolListRanges"`
-	IsExternal             pulumi.BoolOutput        `pulumi:"isExternal"`
+	// - (Optional) Whether the subnet is external subnet or not.
+	IsExternal pulumi.BoolOutput `pulumi:"isExternal"`
 	// - (Required) The subnet kind metadata.
 	Metadata pulumi.StringMapOutput `pulumi:"metadata"`
 	// - (Optional) Subnet name (Readonly).
@@ -59,10 +63,11 @@ type Subnet struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// - (Optional) Subnet IP address.
 	SubnetIp pulumi.StringOutput `pulumi:"subnetIp"`
-	// - (Optional).
+	// - (Optional). Valid Types are ["VLAN", "OVERLAY"]
 	SubnetType pulumi.StringOutput `pulumi:"subnetType"`
-	// - (Optional).
-	VlanId           pulumi.IntOutput    `pulumi:"vlanId"`
+	// - (Optional). For VLAN subnet.
+	VlanId pulumi.IntOutput `pulumi:"vlanId"`
+	// VPC reference uuid
 	VpcReferenceUuid pulumi.StringOutput `pulumi:"vpcReferenceUuid"`
 	// - (Optional).
 	VswitchName pulumi.StringOutput `pulumi:"vswitchName"`
@@ -113,19 +118,23 @@ type subnetState struct {
 	// - (Optional) Default gateway IP address.
 	DefaultGatewayIp *string `pulumi:"defaultGatewayIp"`
 	// - (Optional) A description for subnet.
-	Description               *string  `pulumi:"description"`
+	Description *string `pulumi:"description"`
+	// - (Optional). List of Domain Name Server addresses .
 	DhcpDomainNameServerLists []string `pulumi:"dhcpDomainNameServerLists"`
-	// - (Optional).
+	// - (Optional).The DNS domain search list .
 	DhcpDomainSearchLists []string `pulumi:"dhcpDomainSearchLists"`
 	// - (Optional) Spec for defining DHCP options.
 	DhcpOptions map[string]string `pulumi:"dhcpOptions"`
 	// - (Optional) Host address.
 	DhcpServerAddress map[string]string `pulumi:"dhcpServerAddress"`
 	// - (Optional) Port Number.
-	DhcpServerAddressPort  *int     `pulumi:"dhcpServerAddressPort"`
-	EnableNat              *bool    `pulumi:"enableNat"`
+	DhcpServerAddressPort *int `pulumi:"dhcpServerAddressPort"`
+	// - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+	EnableNat *bool `pulumi:"enableNat"`
+	// -(Optional) Range of IPs.
 	IpConfigPoolListRanges []string `pulumi:"ipConfigPoolListRanges"`
-	IsExternal             *bool    `pulumi:"isExternal"`
+	// - (Optional) Whether the subnet is external subnet or not.
+	IsExternal *bool `pulumi:"isExternal"`
 	// - (Required) The subnet kind metadata.
 	Metadata map[string]string `pulumi:"metadata"`
 	// - (Optional) Subnet name (Readonly).
@@ -142,10 +151,11 @@ type subnetState struct {
 	State *string `pulumi:"state"`
 	// - (Optional) Subnet IP address.
 	SubnetIp *string `pulumi:"subnetIp"`
-	// - (Optional).
+	// - (Optional). Valid Types are ["VLAN", "OVERLAY"]
 	SubnetType *string `pulumi:"subnetType"`
-	// - (Optional).
-	VlanId           *int    `pulumi:"vlanId"`
+	// - (Optional). For VLAN subnet.
+	VlanId *int `pulumi:"vlanId"`
+	// VPC reference uuid
 	VpcReferenceUuid *string `pulumi:"vpcReferenceUuid"`
 	// - (Optional).
 	VswitchName *string `pulumi:"vswitchName"`
@@ -164,19 +174,23 @@ type SubnetState struct {
 	// - (Optional) Default gateway IP address.
 	DefaultGatewayIp pulumi.StringPtrInput
 	// - (Optional) A description for subnet.
-	Description               pulumi.StringPtrInput
+	Description pulumi.StringPtrInput
+	// - (Optional). List of Domain Name Server addresses .
 	DhcpDomainNameServerLists pulumi.StringArrayInput
-	// - (Optional).
+	// - (Optional).The DNS domain search list .
 	DhcpDomainSearchLists pulumi.StringArrayInput
 	// - (Optional) Spec for defining DHCP options.
 	DhcpOptions pulumi.StringMapInput
 	// - (Optional) Host address.
 	DhcpServerAddress pulumi.StringMapInput
 	// - (Optional) Port Number.
-	DhcpServerAddressPort  pulumi.IntPtrInput
-	EnableNat              pulumi.BoolPtrInput
+	DhcpServerAddressPort pulumi.IntPtrInput
+	// - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+	EnableNat pulumi.BoolPtrInput
+	// -(Optional) Range of IPs.
 	IpConfigPoolListRanges pulumi.StringArrayInput
-	IsExternal             pulumi.BoolPtrInput
+	// - (Optional) Whether the subnet is external subnet or not.
+	IsExternal pulumi.BoolPtrInput
 	// - (Required) The subnet kind metadata.
 	Metadata pulumi.StringMapInput
 	// - (Optional) Subnet name (Readonly).
@@ -193,10 +207,11 @@ type SubnetState struct {
 	State pulumi.StringPtrInput
 	// - (Optional) Subnet IP address.
 	SubnetIp pulumi.StringPtrInput
-	// - (Optional).
+	// - (Optional). Valid Types are ["VLAN", "OVERLAY"]
 	SubnetType pulumi.StringPtrInput
-	// - (Optional).
-	VlanId           pulumi.IntPtrInput
+	// - (Optional). For VLAN subnet.
+	VlanId pulumi.IntPtrInput
+	// VPC reference uuid
 	VpcReferenceUuid pulumi.StringPtrInput
 	// - (Optional).
 	VswitchName pulumi.StringPtrInput
@@ -216,19 +231,23 @@ type subnetArgs struct {
 	// - (Optional) Default gateway IP address.
 	DefaultGatewayIp *string `pulumi:"defaultGatewayIp"`
 	// - (Optional) A description for subnet.
-	Description               *string  `pulumi:"description"`
+	Description *string `pulumi:"description"`
+	// - (Optional). List of Domain Name Server addresses .
 	DhcpDomainNameServerLists []string `pulumi:"dhcpDomainNameServerLists"`
-	// - (Optional).
+	// - (Optional).The DNS domain search list .
 	DhcpDomainSearchLists []string `pulumi:"dhcpDomainSearchLists"`
 	// - (Optional) Spec for defining DHCP options.
 	DhcpOptions map[string]string `pulumi:"dhcpOptions"`
 	// - (Optional) Host address.
 	DhcpServerAddress map[string]string `pulumi:"dhcpServerAddress"`
 	// - (Optional) Port Number.
-	DhcpServerAddressPort  *int     `pulumi:"dhcpServerAddressPort"`
-	EnableNat              *bool    `pulumi:"enableNat"`
+	DhcpServerAddressPort *int `pulumi:"dhcpServerAddressPort"`
+	// - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+	EnableNat *bool `pulumi:"enableNat"`
+	// -(Optional) Range of IPs.
 	IpConfigPoolListRanges []string `pulumi:"ipConfigPoolListRanges"`
-	IsExternal             *bool    `pulumi:"isExternal"`
+	// - (Optional) Whether the subnet is external subnet or not.
+	IsExternal *bool `pulumi:"isExternal"`
 	// - (Optional) Subnet name (Readonly).
 	Name *string `pulumi:"name"`
 	// - (Optional) The reference to a network_function_chain.
@@ -241,10 +260,11 @@ type subnetArgs struct {
 	ProjectReference map[string]string `pulumi:"projectReference"`
 	// - (Optional) Subnet IP address.
 	SubnetIp *string `pulumi:"subnetIp"`
-	// - (Optional).
+	// - (Optional). Valid Types are ["VLAN", "OVERLAY"]
 	SubnetType string `pulumi:"subnetType"`
-	// - (Optional).
-	VlanId           *int    `pulumi:"vlanId"`
+	// - (Optional). For VLAN subnet.
+	VlanId *int `pulumi:"vlanId"`
+	// VPC reference uuid
 	VpcReferenceUuid *string `pulumi:"vpcReferenceUuid"`
 	// - (Optional).
 	VswitchName *string `pulumi:"vswitchName"`
@@ -261,19 +281,23 @@ type SubnetArgs struct {
 	// - (Optional) Default gateway IP address.
 	DefaultGatewayIp pulumi.StringPtrInput
 	// - (Optional) A description for subnet.
-	Description               pulumi.StringPtrInput
+	Description pulumi.StringPtrInput
+	// - (Optional). List of Domain Name Server addresses .
 	DhcpDomainNameServerLists pulumi.StringArrayInput
-	// - (Optional).
+	// - (Optional).The DNS domain search list .
 	DhcpDomainSearchLists pulumi.StringArrayInput
 	// - (Optional) Spec for defining DHCP options.
 	DhcpOptions pulumi.StringMapInput
 	// - (Optional) Host address.
 	DhcpServerAddress pulumi.StringMapInput
 	// - (Optional) Port Number.
-	DhcpServerAddressPort  pulumi.IntPtrInput
-	EnableNat              pulumi.BoolPtrInput
+	DhcpServerAddressPort pulumi.IntPtrInput
+	// - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+	EnableNat pulumi.BoolPtrInput
+	// -(Optional) Range of IPs.
 	IpConfigPoolListRanges pulumi.StringArrayInput
-	IsExternal             pulumi.BoolPtrInput
+	// - (Optional) Whether the subnet is external subnet or not.
+	IsExternal pulumi.BoolPtrInput
 	// - (Optional) Subnet name (Readonly).
 	Name pulumi.StringPtrInput
 	// - (Optional) The reference to a network_function_chain.
@@ -286,10 +310,11 @@ type SubnetArgs struct {
 	ProjectReference pulumi.StringMapInput
 	// - (Optional) Subnet IP address.
 	SubnetIp pulumi.StringPtrInput
-	// - (Optional).
+	// - (Optional). Valid Types are ["VLAN", "OVERLAY"]
 	SubnetType pulumi.StringInput
-	// - (Optional).
-	VlanId           pulumi.IntPtrInput
+	// - (Optional). For VLAN subnet.
+	VlanId pulumi.IntPtrInput
+	// VPC reference uuid
 	VpcReferenceUuid pulumi.StringPtrInput
 	// - (Optional).
 	VswitchName pulumi.StringPtrInput
@@ -416,11 +441,12 @@ func (o SubnetOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
+// - (Optional). List of Domain Name Server addresses .
 func (o SubnetOutput) DhcpDomainNameServerLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringArrayOutput { return v.DhcpDomainNameServerLists }).(pulumi.StringArrayOutput)
 }
 
-// - (Optional).
+// - (Optional).The DNS domain search list .
 func (o SubnetOutput) DhcpDomainSearchLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringArrayOutput { return v.DhcpDomainSearchLists }).(pulumi.StringArrayOutput)
 }
@@ -440,14 +466,17 @@ func (o SubnetOutput) DhcpServerAddressPort() pulumi.IntOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.IntOutput { return v.DhcpServerAddressPort }).(pulumi.IntOutput)
 }
 
+// - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
 func (o SubnetOutput) EnableNat() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.BoolOutput { return v.EnableNat }).(pulumi.BoolOutput)
 }
 
+// -(Optional) Range of IPs.
 func (o SubnetOutput) IpConfigPoolListRanges() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringArrayOutput { return v.IpConfigPoolListRanges }).(pulumi.StringArrayOutput)
 }
 
+// - (Optional) Whether the subnet is external subnet or not.
 func (o SubnetOutput) IsExternal() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.BoolOutput { return v.IsExternal }).(pulumi.BoolOutput)
 }
@@ -492,16 +521,17 @@ func (o SubnetOutput) SubnetIp() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringOutput { return v.SubnetIp }).(pulumi.StringOutput)
 }
 
-// - (Optional).
+// - (Optional). Valid Types are ["VLAN", "OVERLAY"]
 func (o SubnetOutput) SubnetType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringOutput { return v.SubnetType }).(pulumi.StringOutput)
 }
 
-// - (Optional).
+// - (Optional). For VLAN subnet.
 func (o SubnetOutput) VlanId() pulumi.IntOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.IntOutput { return v.VlanId }).(pulumi.IntOutput)
 }
 
+// VPC reference uuid
 func (o SubnetOutput) VpcReferenceUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subnet) pulumi.StringOutput { return v.VpcReferenceUuid }).(pulumi.StringOutput)
 }

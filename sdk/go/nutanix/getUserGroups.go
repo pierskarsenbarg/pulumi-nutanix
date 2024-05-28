@@ -14,9 +14,9 @@ import (
 // Provides a datasource to retrieve all the user groups.
 //
 // ## Example Usage
-func GetUserGroups(ctx *pulumi.Context, args *GetUserGroupsArgs, opts ...pulumi.InvokeOption) (*GetUserGroupsResult, error) {
+func LookupUserGroups(ctx *pulumi.Context, args *LookupUserGroupsArgs, opts ...pulumi.InvokeOption) (*LookupUserGroupsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetUserGroupsResult
+	var rv LookupUserGroupsResult
 	err := ctx.Invoke("nutanix:index/getUserGroups:getUserGroups", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -25,13 +25,13 @@ func GetUserGroups(ctx *pulumi.Context, args *GetUserGroupsArgs, opts ...pulumi.
 }
 
 // A collection of arguments for invoking getUserGroups.
-type GetUserGroupsArgs struct {
+type LookupUserGroupsArgs struct {
 	// - The user group kind metadata.
 	Metadatas []GetUserGroupsMetadata `pulumi:"metadatas"`
 }
 
 // A collection of values returned by getUserGroups.
-type GetUserGroupsResult struct {
+type LookupUserGroupsResult struct {
 	ApiVersion string                `pulumi:"apiVersion"`
 	Entities   []GetUserGroupsEntity `pulumi:"entities"`
 	// The provider-assigned unique ID for this managed resource.
@@ -39,61 +39,61 @@ type GetUserGroupsResult struct {
 	Metadatas []GetUserGroupsMetadata `pulumi:"metadatas"`
 }
 
-func GetUserGroupsOutput(ctx *pulumi.Context, args GetUserGroupsOutputArgs, opts ...pulumi.InvokeOption) GetUserGroupsResultOutput {
+func LookupUserGroupsOutput(ctx *pulumi.Context, args LookupUserGroupsOutputArgs, opts ...pulumi.InvokeOption) LookupUserGroupsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetUserGroupsResult, error) {
-			args := v.(GetUserGroupsArgs)
-			r, err := GetUserGroups(ctx, &args, opts...)
-			var s GetUserGroupsResult
+		ApplyT(func(v interface{}) (LookupUserGroupsResult, error) {
+			args := v.(LookupUserGroupsArgs)
+			r, err := LookupUserGroups(ctx, &args, opts...)
+			var s LookupUserGroupsResult
 			if r != nil {
 				s = *r
 			}
 			return s, err
-		}).(GetUserGroupsResultOutput)
+		}).(LookupUserGroupsResultOutput)
 }
 
 // A collection of arguments for invoking getUserGroups.
-type GetUserGroupsOutputArgs struct {
+type LookupUserGroupsOutputArgs struct {
 	// - The user group kind metadata.
 	Metadatas GetUserGroupsMetadataArrayInput `pulumi:"metadatas"`
 }
 
-func (GetUserGroupsOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetUserGroupsArgs)(nil)).Elem()
+func (LookupUserGroupsOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupUserGroupsArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getUserGroups.
-type GetUserGroupsResultOutput struct{ *pulumi.OutputState }
+type LookupUserGroupsResultOutput struct{ *pulumi.OutputState }
 
-func (GetUserGroupsResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetUserGroupsResult)(nil)).Elem()
+func (LookupUserGroupsResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupUserGroupsResult)(nil)).Elem()
 }
 
-func (o GetUserGroupsResultOutput) ToGetUserGroupsResultOutput() GetUserGroupsResultOutput {
+func (o LookupUserGroupsResultOutput) ToLookupUserGroupsResultOutput() LookupUserGroupsResultOutput {
 	return o
 }
 
-func (o GetUserGroupsResultOutput) ToGetUserGroupsResultOutputWithContext(ctx context.Context) GetUserGroupsResultOutput {
+func (o LookupUserGroupsResultOutput) ToLookupUserGroupsResultOutputWithContext(ctx context.Context) LookupUserGroupsResultOutput {
 	return o
 }
 
-func (o GetUserGroupsResultOutput) ApiVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUserGroupsResult) string { return v.ApiVersion }).(pulumi.StringOutput)
+func (o LookupUserGroupsResultOutput) ApiVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupUserGroupsResult) string { return v.ApiVersion }).(pulumi.StringOutput)
 }
 
-func (o GetUserGroupsResultOutput) Entities() GetUserGroupsEntityArrayOutput {
-	return o.ApplyT(func(v GetUserGroupsResult) []GetUserGroupsEntity { return v.Entities }).(GetUserGroupsEntityArrayOutput)
+func (o LookupUserGroupsResultOutput) Entities() GetUserGroupsEntityArrayOutput {
+	return o.ApplyT(func(v LookupUserGroupsResult) []GetUserGroupsEntity { return v.Entities }).(GetUserGroupsEntityArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetUserGroupsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetUserGroupsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupUserGroupsResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupUserGroupsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-func (o GetUserGroupsResultOutput) Metadatas() GetUserGroupsMetadataArrayOutput {
-	return o.ApplyT(func(v GetUserGroupsResult) []GetUserGroupsMetadata { return v.Metadatas }).(GetUserGroupsMetadataArrayOutput)
+func (o LookupUserGroupsResultOutput) Metadatas() GetUserGroupsMetadataArrayOutput {
+	return o.ApplyT(func(v LookupUserGroupsResult) []GetUserGroupsMetadata { return v.Metadatas }).(GetUserGroupsMetadataArrayOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetUserGroupsResultOutput{})
+	pulumi.RegisterOutputType(LookupUserGroupsResultOutput{})
 }

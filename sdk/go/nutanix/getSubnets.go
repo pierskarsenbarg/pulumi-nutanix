@@ -31,6 +31,16 @@ import (
 //			if err != nil {
 //				return err
 //			}
+//			_, err = nutanix.GetSubnets(ctx, &nutanix.GetSubnetsArgs{
+//				Metadatas: []nutanix.GetSubnetsMetadata{
+//					{
+//						Filter: "name==vlan0_test_2",
+//					},
+//				},
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
 //			return nil
 //		})
 //	}

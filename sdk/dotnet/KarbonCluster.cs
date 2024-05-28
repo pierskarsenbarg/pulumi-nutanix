@@ -83,6 +83,72 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// });
     /// ```
+    /// 
+    /// ### resource to create karbon cluster with timeouts
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var exampleCluster = new Nutanix.KarbonCluster("exampleCluster", new()
+    ///     {
+    ///         CniConfig = new Nutanix.Inputs.KarbonClusterCniConfigArgs
+    ///         {
+    ///             NodeCidrMaskSize = 24,
+    ///             PodIpv4Cidr = "172.20.0.0/16",
+    ///             ServiceIpv4Cidr = "172.19.0.0/16",
+    ///         },
+    ///         EtcdNodePool = new Nutanix.Inputs.KarbonClusterEtcdNodePoolArgs
+    ///         {
+    ///             AhvConfig = new Nutanix.Inputs.KarbonClusterEtcdNodePoolAhvConfigArgs
+    ///             {
+    ///                 NetworkUuid = "my_subnet_id",
+    ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
+    ///             },
+    ///             NodeOsVersion = "ntnx-1.0",
+    ///             NumInstances = 1,
+    ///         },
+    ///         MasterNodePool = new Nutanix.Inputs.KarbonClusterMasterNodePoolArgs
+    ///         {
+    ///             AhvConfig = new Nutanix.Inputs.KarbonClusterMasterNodePoolAhvConfigArgs
+    ///             {
+    ///                 NetworkUuid = "my_subnet_id",
+    ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
+    ///             },
+    ///             NodeOsVersion = "ntnx-1.0",
+    ///             NumInstances = 1,
+    ///         },
+    ///         StorageClassConfig = new Nutanix.Inputs.KarbonClusterStorageClassConfigArgs
+    ///         {
+    ///             ReclaimPolicy = "Delete",
+    ///             VolumesConfig = new Nutanix.Inputs.KarbonClusterStorageClassConfigVolumesConfigArgs
+    ///             {
+    ///                 FileSystem = "ext4",
+    ///                 FlashMode = false,
+    ///                 Password = "my_pe_pw",
+    ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
+    ///                 StorageContainer = "my_storage_container_name",
+    ///                 Username = "my_pe_username",
+    ///             },
+    ///         },
+    ///         Version = "1.18.15-1",
+    ///         WorkerNodePool = new Nutanix.Inputs.KarbonClusterWorkerNodePoolArgs
+    ///         {
+    ///             AhvConfig = new Nutanix.Inputs.KarbonClusterWorkerNodePoolAhvConfigArgs
+    ///             {
+    ///                 NetworkUuid = "my_subnet_id",
+    ///                 PrismElementClusterUuid = "my_pe_cluster_uuid",
+    ///             },
+    ///             NodeOsVersion = "ntnx-1.0",
+    ///             NumInstances = 1,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/karbonCluster:KarbonCluster")]
     public partial class KarbonCluster : global::Pulumi.CustomResource

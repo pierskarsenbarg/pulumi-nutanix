@@ -18,6 +18,9 @@ class ProviderArgs:
                  foundation_endpoint: Optional[pulumi.Input[str]] = None,
                  foundation_port: Optional[pulumi.Input[str]] = None,
                  insecure: Optional[pulumi.Input[bool]] = None,
+                 ndb_endpoint: Optional[pulumi.Input[str]] = None,
+                 ndb_password: Optional[pulumi.Input[str]] = None,
+                 ndb_username: Optional[pulumi.Input[str]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[str]] = None,
                  proxy_url: Optional[pulumi.Input[str]] = None,
@@ -32,6 +35,7 @@ class ProviderArgs:
         :param pulumi.Input[str] foundation_endpoint: endpoint for foundation VM (eg. Foundation VM IP)
         :param pulumi.Input[str] foundation_port: Port for foundation VM
         :param pulumi.Input[bool] insecure: Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is `false`
+        :param pulumi.Input[str] ndb_endpoint: endpoint for Era VM (era ip)
         :param pulumi.Input[str] password: Password for provided user name.
         :param pulumi.Input[str] port: Port for Nutanix Prism.
         :param pulumi.Input[bool] session_auth: Use session authentification instead of basic auth for each request
@@ -46,6 +50,12 @@ class ProviderArgs:
             pulumi.set(__self__, "foundation_port", foundation_port)
         if insecure is not None:
             pulumi.set(__self__, "insecure", insecure)
+        if ndb_endpoint is not None:
+            pulumi.set(__self__, "ndb_endpoint", ndb_endpoint)
+        if ndb_password is not None:
+            pulumi.set(__self__, "ndb_password", ndb_password)
+        if ndb_username is not None:
+            pulumi.set(__self__, "ndb_username", ndb_username)
         if password is not None:
             pulumi.set(__self__, "password", password)
         if port is not None:
@@ -108,6 +118,36 @@ class ProviderArgs:
     @insecure.setter
     def insecure(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "insecure", value)
+
+    @property
+    @pulumi.getter(name="ndbEndpoint")
+    def ndb_endpoint(self) -> Optional[pulumi.Input[str]]:
+        """
+        endpoint for Era VM (era ip)
+        """
+        return pulumi.get(self, "ndb_endpoint")
+
+    @ndb_endpoint.setter
+    def ndb_endpoint(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ndb_endpoint", value)
+
+    @property
+    @pulumi.getter(name="ndbPassword")
+    def ndb_password(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ndb_password")
+
+    @ndb_password.setter
+    def ndb_password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ndb_password", value)
+
+    @property
+    @pulumi.getter(name="ndbUsername")
+    def ndb_username(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "ndb_username")
+
+    @ndb_username.setter
+    def ndb_username(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ndb_username", value)
 
     @property
     @pulumi.getter
@@ -188,6 +228,9 @@ class Provider(pulumi.ProviderResource):
                  foundation_endpoint: Optional[pulumi.Input[str]] = None,
                  foundation_port: Optional[pulumi.Input[str]] = None,
                  insecure: Optional[pulumi.Input[bool]] = None,
+                 ndb_endpoint: Optional[pulumi.Input[str]] = None,
+                 ndb_password: Optional[pulumi.Input[str]] = None,
+                 ndb_username: Optional[pulumi.Input[str]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[str]] = None,
                  proxy_url: Optional[pulumi.Input[str]] = None,
@@ -209,6 +252,7 @@ class Provider(pulumi.ProviderResource):
         :param pulumi.Input[str] foundation_endpoint: endpoint for foundation VM (eg. Foundation VM IP)
         :param pulumi.Input[str] foundation_port: Port for foundation VM
         :param pulumi.Input[bool] insecure: Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is `false`
+        :param pulumi.Input[str] ndb_endpoint: endpoint for Era VM (era ip)
         :param pulumi.Input[str] password: Password for provided user name.
         :param pulumi.Input[str] port: Port for Nutanix Prism.
         :param pulumi.Input[bool] session_auth: Use session authentification instead of basic auth for each request
@@ -246,6 +290,9 @@ class Provider(pulumi.ProviderResource):
                  foundation_endpoint: Optional[pulumi.Input[str]] = None,
                  foundation_port: Optional[pulumi.Input[str]] = None,
                  insecure: Optional[pulumi.Input[bool]] = None,
+                 ndb_endpoint: Optional[pulumi.Input[str]] = None,
+                 ndb_password: Optional[pulumi.Input[str]] = None,
+                 ndb_username: Optional[pulumi.Input[str]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[str]] = None,
                  proxy_url: Optional[pulumi.Input[str]] = None,
@@ -265,6 +312,9 @@ class Provider(pulumi.ProviderResource):
             __props__.__dict__["foundation_endpoint"] = foundation_endpoint
             __props__.__dict__["foundation_port"] = foundation_port
             __props__.__dict__["insecure"] = pulumi.Output.from_input(insecure).apply(pulumi.runtime.to_json) if insecure is not None else None
+            __props__.__dict__["ndb_endpoint"] = ndb_endpoint
+            __props__.__dict__["ndb_password"] = ndb_password
+            __props__.__dict__["ndb_username"] = ndb_username
             __props__.__dict__["password"] = password
             __props__.__dict__["port"] = port
             __props__.__dict__["proxy_url"] = proxy_url
@@ -302,6 +352,24 @@ class Provider(pulumi.ProviderResource):
         Port for foundation VM
         """
         return pulumi.get(self, "foundation_port")
+
+    @property
+    @pulumi.getter(name="ndbEndpoint")
+    def ndb_endpoint(self) -> pulumi.Output[Optional[str]]:
+        """
+        endpoint for Era VM (era ip)
+        """
+        return pulumi.get(self, "ndb_endpoint")
+
+    @property
+    @pulumi.getter(name="ndbPassword")
+    def ndb_password(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "ndb_password")
+
+    @property
+    @pulumi.getter(name="ndbUsername")
+    def ndb_username(self) -> pulumi.Output[Optional[str]]:
+        return pulumi.get(self, "ndb_username")
 
     @property
     @pulumi.getter

@@ -26,6 +26,10 @@ type Provider struct {
 	FoundationEndpoint pulumi.StringPtrOutput `pulumi:"foundationEndpoint"`
 	// Port for foundation VM
 	FoundationPort pulumi.StringPtrOutput `pulumi:"foundationPort"`
+	// endpoint for Era VM (era ip)
+	NdbEndpoint pulumi.StringPtrOutput `pulumi:"ndbEndpoint"`
+	NdbPassword pulumi.StringPtrOutput `pulumi:"ndbPassword"`
+	NdbUsername pulumi.StringPtrOutput `pulumi:"ndbUsername"`
 	// Password for provided user name.
 	Password pulumi.StringPtrOutput `pulumi:"password"`
 	// Port for Nutanix Prism.
@@ -62,6 +66,10 @@ type providerArgs struct {
 	FoundationPort *string `pulumi:"foundationPort"`
 	// Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is `false`
 	Insecure *bool `pulumi:"insecure"`
+	// endpoint for Era VM (era ip)
+	NdbEndpoint *string `pulumi:"ndbEndpoint"`
+	NdbPassword *string `pulumi:"ndbPassword"`
+	NdbUsername *string `pulumi:"ndbUsername"`
 	// Password for provided user name.
 	Password *string `pulumi:"password"`
 	// Port for Nutanix Prism.
@@ -87,6 +95,10 @@ type ProviderArgs struct {
 	FoundationPort pulumi.StringPtrInput
 	// Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is `false`
 	Insecure pulumi.BoolPtrInput
+	// endpoint for Era VM (era ip)
+	NdbEndpoint pulumi.StringPtrInput
+	NdbPassword pulumi.StringPtrInput
+	NdbUsername pulumi.StringPtrInput
 	// Password for provided user name.
 	Password pulumi.StringPtrInput
 	// Port for Nutanix Prism.
@@ -152,6 +164,19 @@ func (o ProviderOutput) FoundationEndpoint() pulumi.StringPtrOutput {
 // Port for foundation VM
 func (o ProviderOutput) FoundationPort() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.FoundationPort }).(pulumi.StringPtrOutput)
+}
+
+// endpoint for Era VM (era ip)
+func (o ProviderOutput) NdbEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.NdbEndpoint }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderOutput) NdbPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.NdbPassword }).(pulumi.StringPtrOutput)
+}
+
+func (o ProviderOutput) NdbUsername() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.NdbUsername }).(pulumi.StringPtrOutput)
 }
 
 // Password for provided user name.

@@ -180,6 +180,10 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("categories")]
         private List<Inputs.GetProjectCategoryArgs>? _categories;
+
+        /// <summary>
+        /// - (Optional) The category values represented as a dictionary of key &gt; list of values.
+        /// </summary>
         public List<Inputs.GetProjectCategoryArgs> Categories
         {
             get => _categories ?? (_categories = new List<Inputs.GetProjectCategoryArgs>());
@@ -229,10 +233,7 @@ namespace PiersKarsenbarg.Nutanix
         private List<Inputs.GetProjectUserReferenceListArgs>? _userReferenceLists;
 
         /// <summary>
-        /// List of users in the project.
-        /// * `user_reference_list.#.kind` - The kind name. Default value is `user`
-        /// * `user_reference_list.#.uuid` - The UUID of a user
-        /// * `user_reference_list.#.name` - The name of a user.
+        /// List of Reference of users.
         /// </summary>
         public List<Inputs.GetProjectUserReferenceListArgs> UserReferenceLists
         {
@@ -250,6 +251,10 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("categories")]
         private InputList<Inputs.GetProjectCategoryInputArgs>? _categories;
+
+        /// <summary>
+        /// - (Optional) The category values represented as a dictionary of key &gt; list of values.
+        /// </summary>
         public InputList<Inputs.GetProjectCategoryInputArgs> Categories
         {
             get => _categories ?? (_categories = new InputList<Inputs.GetProjectCategoryInputArgs>());
@@ -299,10 +304,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<Inputs.GetProjectUserReferenceListInputArgs>? _userReferenceLists;
 
         /// <summary>
-        /// List of users in the project.
-        /// * `user_reference_list.#.kind` - The kind name. Default value is `user`
-        /// * `user_reference_list.#.uuid` - The UUID of a user
-        /// * `user_reference_list.#.name` - The name of a user.
+        /// List of Reference of users.
         /// </summary>
         public InputList<Inputs.GetProjectUserReferenceListInputArgs> UserReferenceLists
         {
@@ -327,14 +329,29 @@ namespace PiersKarsenbarg.Nutanix
         /// * `account_reference_list.#.name` - The name of an account.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectAccountReferenceListResult> AccountReferenceLists;
+        public readonly ImmutableArray<Outputs.GetProjectAcpResult> Acps;
         public readonly string ApiVersion;
+        /// <summary>
+        /// - (Optional) The category values represented as a dictionary of key &gt; list of values.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectCategoryResult> Categories;
+        /// <summary>
+        /// (Optional/Computed) List of clusters associated with the project..
+        /// * `cluster_reference_list.#.kind` - (Optional) The kind name. Default value is `cluster`
+        /// * `cluster_reference_list.#.uuid` - (Required) The UUID of a cluster
+        /// * `cluster_reference_list.#.name` - (Optional/Computed) The name of a cluster.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetProjectClusterReferenceListResult> ClusterReferenceLists;
+        /// <summary>
+        /// (Optional/Computed) Reference to a environment.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetProjectDefaultEnvironmentReferenceResult> DefaultEnvironmentReferences;
         /// <summary>
         /// Reference to a subnet.
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefaultSubnetReference;
         /// <summary>
-        /// A description for project.
+        /// Description of ACP
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -384,20 +401,37 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectSubnetReferenceListResult> SubnetReferenceLists;
         /// <summary>
-        /// List of users in the project.
-        /// * `user_reference_list.#.kind` - The kind name. Default value is `user`
-        /// * `user_reference_list.#.uuid` - The UUID of a user
-        /// * `user_reference_list.#.name` - The name of a user.
+        /// (Optional/Computed) List of tunnels associated with the project.
+        /// * `tunnel_reference_list.#.kind` - (Optional) The kind name. Default value is `tunnel`
+        /// * `tunnel_reference_list.#.uuid` - (Required) The UUID of a tunnel
+        /// * `tunnel_reference_list.#.name` - (Optional/Computed) The name of a tunnel.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetProjectTunnelReferenceListResult> TunnelReferenceLists;
+        /// <summary>
+        /// List of Reference of users.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectUserReferenceListResult> UserReferenceLists;
+        /// <summary>
+        /// (Optional/Computed) List of VPCs associated with the project..
+        /// * `vpc_reference_list.#.kind` - (Optional) The kind name. Default value is `vpc`
+        /// * `vpc_reference_list.#.uuid` - (Required) The UUID of a vpc
+        /// * `vpc_reference_list.#.name` - (Optional/Computed) The name of a vpc.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetProjectVpcReferenceListResult> VpcReferenceLists;
 
         [OutputConstructor]
         private GetProjectResult(
             ImmutableArray<Outputs.GetProjectAccountReferenceListResult> accountReferenceLists,
 
+            ImmutableArray<Outputs.GetProjectAcpResult> acps,
+
             string apiVersion,
 
             ImmutableArray<Outputs.GetProjectCategoryResult> categories,
+
+            ImmutableArray<Outputs.GetProjectClusterReferenceListResult> clusterReferenceLists,
+
+            ImmutableArray<Outputs.GetProjectDefaultEnvironmentReferenceResult> defaultEnvironmentReferences,
 
             ImmutableDictionary<string, string> defaultSubnetReference,
 
@@ -431,11 +465,18 @@ namespace PiersKarsenbarg.Nutanix
 
             ImmutableArray<Outputs.GetProjectSubnetReferenceListResult> subnetReferenceLists,
 
-            ImmutableArray<Outputs.GetProjectUserReferenceListResult> userReferenceLists)
+            ImmutableArray<Outputs.GetProjectTunnelReferenceListResult> tunnelReferenceLists,
+
+            ImmutableArray<Outputs.GetProjectUserReferenceListResult> userReferenceLists,
+
+            ImmutableArray<Outputs.GetProjectVpcReferenceListResult> vpcReferenceLists)
         {
             AccountReferenceLists = accountReferenceLists;
+            Acps = acps;
             ApiVersion = apiVersion;
             Categories = categories;
+            ClusterReferenceLists = clusterReferenceLists;
+            DefaultEnvironmentReferences = defaultEnvironmentReferences;
             DefaultSubnetReference = defaultSubnetReference;
             Description = description;
             EnvironmentReferenceLists = environmentReferenceLists;
@@ -452,7 +493,9 @@ namespace PiersKarsenbarg.Nutanix
             ResourceDomains = resourceDomains;
             State = state;
             SubnetReferenceLists = subnetReferenceLists;
+            TunnelReferenceLists = tunnelReferenceLists;
             UserReferenceLists = userReferenceLists;
+            VpcReferenceLists = vpcReferenceLists;
         }
     }
 }

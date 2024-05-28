@@ -75,11 +75,12 @@ class VirtualMachineArgs:
         :param pulumi.Input[str] guest_customization_cloud_init_user_data: - (Optional) The contents of the user_data configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         :param pulumi.Input[bool] guest_customization_is_overridable: - (Optional) Flag to allow override of customization by deployer.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] guest_customization_sysprep: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloud_init should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
+        :param pulumi.Input[Mapping[str, Any]] guest_customization_sysprep_custom_key_values: - (Optional) Generic key value pair used for custom attributes in sysprep.
         :param pulumi.Input[str] guest_os_id: - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
         :param pulumi.Input[str] hardware_clock_timezone: - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
         :param pulumi.Input[bool] is_vcpu_hard_pinned: - (Optional) Add true to enable CPU pinning.
         :param pulumi.Input[str] machine_type: - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-        :param pulumi.Input[int] memory_size_mib: - (Optional) Memory size in MiB.
+        :param pulumi.Input[int] memory_size_mib: - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
         :param pulumi.Input[str] name: - (Required) The name for the vm.
         :param pulumi.Input[Mapping[str, Any]] ngt_credentials: - (Ooptional) Credentials to login server.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ngt_enabled_capability_lists: Application names that are enabled.
@@ -89,6 +90,7 @@ class VirtualMachineArgs:
         :param pulumi.Input[int] num_vnuma_nodes: - (Optional) Number of vNUMA nodes. 0 means vNUMA is disabled.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] nutanix_guest_tools: - (Optional) Information regarding Nutanix Guest Tools.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] owner_reference: - (Optional) The reference to a user.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] parent_reference: - (Optional) Reference to an entity that the VM cloned from.
         :param pulumi.Input[str] power_state_mechanism: - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \\"OFF\\" state. Power state mechanism (ACPI/GUEST/HARD).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] project_reference: - (Optional) The reference to a project.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]] serial_port_lists: - (Optional) Serial Ports configured on the VM.
@@ -392,6 +394,9 @@ class VirtualMachineArgs:
     @property
     @pulumi.getter(name="guestCustomizationSysprepCustomKeyValues")
     def guest_customization_sysprep_custom_key_values(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        - (Optional) Generic key value pair used for custom attributes in sysprep.
+        """
         return pulumi.get(self, "guest_customization_sysprep_custom_key_values")
 
     @guest_customization_sysprep_custom_key_values.setter
@@ -450,7 +455,7 @@ class VirtualMachineArgs:
     @pulumi.getter(name="memorySizeMib")
     def memory_size_mib(self) -> Optional[pulumi.Input[int]]:
         """
-        - (Optional) Memory size in MiB.
+        - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
         """
         return pulumi.get(self, "memory_size_mib")
 
@@ -569,6 +574,9 @@ class VirtualMachineArgs:
     @property
     @pulumi.getter(name="parentReference")
     def parent_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        - (Optional) Reference to an entity that the VM cloned from.
+        """
         return pulumi.get(self, "parent_reference")
 
     @parent_reference.setter
@@ -720,13 +728,14 @@ class _VirtualMachineState:
         :param pulumi.Input[str] guest_customization_cloud_init_user_data: - (Optional) The contents of the user_data configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         :param pulumi.Input[bool] guest_customization_is_overridable: - (Optional) Flag to allow override of customization by deployer.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] guest_customization_sysprep: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloud_init should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
+        :param pulumi.Input[Mapping[str, Any]] guest_customization_sysprep_custom_key_values: - (Optional) Generic key value pair used for custom attributes in sysprep.
         :param pulumi.Input[str] guest_os_id: - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
         :param pulumi.Input[str] hardware_clock_timezone: - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] host_reference: - Reference to a host.
         :param pulumi.Input[str] hypervisor_type: - The hypervisor type for the hypervisor the VM is hosted on.
         :param pulumi.Input[bool] is_vcpu_hard_pinned: - (Optional) Add true to enable CPU pinning.
         :param pulumi.Input[str] machine_type: - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-        :param pulumi.Input[int] memory_size_mib: - (Optional) Memory size in MiB.
+        :param pulumi.Input[int] memory_size_mib: - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: - The vm kind metadata.
         :param pulumi.Input[str] name: - (Required) The name for the vm.
         :param pulumi.Input[Mapping[str, Any]] ngt_credentials: - (Ooptional) Credentials to login server.
@@ -738,6 +747,7 @@ class _VirtualMachineState:
         :param pulumi.Input[int] num_vnuma_nodes: - (Optional) Number of vNUMA nodes. 0 means vNUMA is disabled.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] nutanix_guest_tools: - (Optional) Information regarding Nutanix Guest Tools.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] owner_reference: - (Optional) The reference to a user.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] parent_reference: - (Optional) Reference to an entity that the VM cloned from.
         :param pulumi.Input[str] power_state: - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
         :param pulumi.Input[str] power_state_mechanism: - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \\"OFF\\" state. Power state mechanism (ACPI/GUEST/HARD).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] project_reference: - (Optional) The reference to a project.
@@ -1084,6 +1094,9 @@ class _VirtualMachineState:
     @property
     @pulumi.getter(name="guestCustomizationSysprepCustomKeyValues")
     def guest_customization_sysprep_custom_key_values(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        - (Optional) Generic key value pair used for custom attributes in sysprep.
+        """
         return pulumi.get(self, "guest_customization_sysprep_custom_key_values")
 
     @guest_customization_sysprep_custom_key_values.setter
@@ -1166,7 +1179,7 @@ class _VirtualMachineState:
     @pulumi.getter(name="memorySizeMib")
     def memory_size_mib(self) -> Optional[pulumi.Input[int]]:
         """
-        - (Optional) Memory size in MiB.
+        - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
         """
         return pulumi.get(self, "memory_size_mib")
 
@@ -1309,6 +1322,9 @@ class _VirtualMachineState:
     @property
     @pulumi.getter(name="parentReference")
     def parent_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        - (Optional) Reference to an entity that the VM cloned from.
+        """
         return pulumi.get(self, "parent_reference")
 
     @parent_reference.setter
@@ -1502,6 +1518,18 @@ class VirtualMachine(pulumi.CustomResource):
             )])
         ```
 
+        ## Import
+
+        Nutanix Virtual machines can be imported using the `UUID` eg,
+
+        `
+
+        ```sh
+        $ pulumi import nutanix:index/virtualMachine:VirtualMachine vm01 0F75E6A7-55FB-44D9-A50D-14AD72E2CF7C
+        ```
+
+        `
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] availability_zone_reference: - (Optional) The reference to a availability_zone.
@@ -1521,11 +1549,12 @@ class VirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[str] guest_customization_cloud_init_user_data: - (Optional) The contents of the user_data configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         :param pulumi.Input[bool] guest_customization_is_overridable: - (Optional) Flag to allow override of customization by deployer.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] guest_customization_sysprep: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloud_init should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
+        :param pulumi.Input[Mapping[str, Any]] guest_customization_sysprep_custom_key_values: - (Optional) Generic key value pair used for custom attributes in sysprep.
         :param pulumi.Input[str] guest_os_id: - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
         :param pulumi.Input[str] hardware_clock_timezone: - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
         :param pulumi.Input[bool] is_vcpu_hard_pinned: - (Optional) Add true to enable CPU pinning.
         :param pulumi.Input[str] machine_type: - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-        :param pulumi.Input[int] memory_size_mib: - (Optional) Memory size in MiB.
+        :param pulumi.Input[int] memory_size_mib: - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
         :param pulumi.Input[str] name: - (Required) The name for the vm.
         :param pulumi.Input[Mapping[str, Any]] ngt_credentials: - (Ooptional) Credentials to login server.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ngt_enabled_capability_lists: Application names that are enabled.
@@ -1535,6 +1564,7 @@ class VirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[int] num_vnuma_nodes: - (Optional) Number of vNUMA nodes. 0 means vNUMA is disabled.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] nutanix_guest_tools: - (Optional) Information regarding Nutanix Guest Tools.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] owner_reference: - (Optional) The reference to a user.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] parent_reference: - (Optional) Reference to an entity that the VM cloned from.
         :param pulumi.Input[str] power_state_mechanism: - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \\"OFF\\" state. Power state mechanism (ACPI/GUEST/HARD).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] project_reference: - (Optional) The reference to a project.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VirtualMachineSerialPortListArgs']]]] serial_port_lists: - (Optional) Serial Ports configured on the VM.
@@ -1591,6 +1621,18 @@ class VirtualMachine(pulumi.CustomResource):
                 ),
             )])
         ```
+
+        ## Import
+
+        Nutanix Virtual machines can be imported using the `UUID` eg,
+
+        `
+
+        ```sh
+        $ pulumi import nutanix:index/virtualMachine:VirtualMachine vm01 0F75E6A7-55FB-44D9-A50D-14AD72E2CF7C
+        ```
+
+        `
 
         :param str resource_name: The name of the resource.
         :param VirtualMachineArgs args: The arguments to use to populate this resource's properties.
@@ -1790,13 +1832,14 @@ class VirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[str] guest_customization_cloud_init_user_data: - (Optional) The contents of the user_data configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
         :param pulumi.Input[bool] guest_customization_is_overridable: - (Optional) Flag to allow override of customization by deployer.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] guest_customization_sysprep: - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloud_init should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \\"override_script\\" is set to \\"True\\" then the deployer can upload their own custom script.
+        :param pulumi.Input[Mapping[str, Any]] guest_customization_sysprep_custom_key_values: - (Optional) Generic key value pair used for custom attributes in sysprep.
         :param pulumi.Input[str] guest_os_id: - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
         :param pulumi.Input[str] hardware_clock_timezone: - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] host_reference: - Reference to a host.
         :param pulumi.Input[str] hypervisor_type: - The hypervisor type for the hypervisor the VM is hosted on.
         :param pulumi.Input[bool] is_vcpu_hard_pinned: - (Optional) Add true to enable CPU pinning.
         :param pulumi.Input[str] machine_type: - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-        :param pulumi.Input[int] memory_size_mib: - (Optional) Memory size in MiB.
+        :param pulumi.Input[int] memory_size_mib: - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: - The vm kind metadata.
         :param pulumi.Input[str] name: - (Required) The name for the vm.
         :param pulumi.Input[Mapping[str, Any]] ngt_credentials: - (Ooptional) Credentials to login server.
@@ -1808,6 +1851,7 @@ class VirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[int] num_vnuma_nodes: - (Optional) Number of vNUMA nodes. 0 means vNUMA is disabled.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] nutanix_guest_tools: - (Optional) Information regarding Nutanix Guest Tools.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] owner_reference: - (Optional) The reference to a user.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] parent_reference: - (Optional) Reference to an entity that the VM cloned from.
         :param pulumi.Input[str] power_state: - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
         :param pulumi.Input[str] power_state_mechanism: - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \\"OFF\\" state. Power state mechanism (ACPI/GUEST/HARD).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] project_reference: - (Optional) The reference to a project.
@@ -2031,6 +2075,9 @@ class VirtualMachine(pulumi.CustomResource):
     @property
     @pulumi.getter(name="guestCustomizationSysprepCustomKeyValues")
     def guest_customization_sysprep_custom_key_values(self) -> pulumi.Output[Mapping[str, Any]]:
+        """
+        - (Optional) Generic key value pair used for custom attributes in sysprep.
+        """
         return pulumi.get(self, "guest_customization_sysprep_custom_key_values")
 
     @property
@@ -2085,7 +2132,7 @@ class VirtualMachine(pulumi.CustomResource):
     @pulumi.getter(name="memorySizeMib")
     def memory_size_mib(self) -> pulumi.Output[int]:
         """
-        - (Optional) Memory size in MiB.
+        - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
         """
         return pulumi.get(self, "memory_size_mib")
 
@@ -2180,6 +2227,9 @@ class VirtualMachine(pulumi.CustomResource):
     @property
     @pulumi.getter(name="parentReference")
     def parent_reference(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        - (Optional) Reference to an entity that the VM cloned from.
+        """
         return pulumi.get(self, "parent_reference")
 
     @property

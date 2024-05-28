@@ -62,7 +62,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - (Optional) Port of the private registry.
         /// </summary>
         [Output("port")]
-        public Output<int> Port { get; private set; } = null!;
+        public Output<int?> Port { get; private set; } = null!;
 
         /// <summary>
         /// - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.
@@ -158,8 +158,8 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - (Optional) Port of the private registry.
         /// </summary>
-        [Input("port", required: true)]
-        public Input<int> Port { get; set; } = null!;
+        [Input("port")]
+        public Input<int>? Port { get; set; }
 
         /// <summary>
         /// - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.

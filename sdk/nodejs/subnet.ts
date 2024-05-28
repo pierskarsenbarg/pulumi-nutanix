@@ -64,9 +64,12 @@ export class Subnet extends pulumi.CustomResource {
      * - (Optional) A description for subnet.
      */
     public readonly description!: pulumi.Output<string>;
+    /**
+     * - (Optional). List of Domain Name Server addresses .
+     */
     public readonly dhcpDomainNameServerLists!: pulumi.Output<string[]>;
     /**
-     * - (Optional).
+     * - (Optional).The DNS domain search list .
      */
     public readonly dhcpDomainSearchLists!: pulumi.Output<string[]>;
     /**
@@ -81,8 +84,17 @@ export class Subnet extends pulumi.CustomResource {
      * - (Optional) Port Number.
      */
     public readonly dhcpServerAddressPort!: pulumi.Output<number>;
+    /**
+     * - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+     */
     public readonly enableNat!: pulumi.Output<boolean>;
+    /**
+     * -(Optional) Range of IPs.
+     */
     public readonly ipConfigPoolListRanges!: pulumi.Output<string[]>;
+    /**
+     * - (Optional) Whether the subnet is external subnet or not.
+     */
     public readonly isExternal!: pulumi.Output<boolean>;
     /**
      * - (Required) The subnet kind metadata.
@@ -117,13 +129,16 @@ export class Subnet extends pulumi.CustomResource {
      */
     public readonly subnetIp!: pulumi.Output<string>;
     /**
-     * - (Optional).
+     * - (Optional). Valid Types are ["VLAN", "OVERLAY"]
      */
     public readonly subnetType!: pulumi.Output<string>;
     /**
-     * - (Optional).
+     * - (Optional). For VLAN subnet.
      */
     public readonly vlanId!: pulumi.Output<number>;
+    /**
+     * VPC reference uuid
+     */
     public readonly vpcReferenceUuid!: pulumi.Output<string>;
     /**
      * - (Optional).
@@ -237,9 +252,12 @@ export interface SubnetState {
      * - (Optional) A description for subnet.
      */
     description?: pulumi.Input<string>;
+    /**
+     * - (Optional). List of Domain Name Server addresses .
+     */
     dhcpDomainNameServerLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * - (Optional).
+     * - (Optional).The DNS domain search list .
      */
     dhcpDomainSearchLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -254,8 +272,17 @@ export interface SubnetState {
      * - (Optional) Port Number.
      */
     dhcpServerAddressPort?: pulumi.Input<number>;
+    /**
+     * - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+     */
     enableNat?: pulumi.Input<boolean>;
+    /**
+     * -(Optional) Range of IPs.
+     */
     ipConfigPoolListRanges?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * - (Optional) Whether the subnet is external subnet or not.
+     */
     isExternal?: pulumi.Input<boolean>;
     /**
      * - (Required) The subnet kind metadata.
@@ -290,13 +317,16 @@ export interface SubnetState {
      */
     subnetIp?: pulumi.Input<string>;
     /**
-     * - (Optional).
+     * - (Optional). Valid Types are ["VLAN", "OVERLAY"]
      */
     subnetType?: pulumi.Input<string>;
     /**
-     * - (Optional).
+     * - (Optional). For VLAN subnet.
      */
     vlanId?: pulumi.Input<number>;
+    /**
+     * VPC reference uuid
+     */
     vpcReferenceUuid?: pulumi.Input<string>;
     /**
      * - (Optional).
@@ -328,9 +358,12 @@ export interface SubnetArgs {
      * - (Optional) A description for subnet.
      */
     description?: pulumi.Input<string>;
+    /**
+     * - (Optional). List of Domain Name Server addresses .
+     */
     dhcpDomainNameServerLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * - (Optional).
+     * - (Optional).The DNS domain search list .
      */
     dhcpDomainSearchLists?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -345,8 +378,17 @@ export interface SubnetArgs {
      * - (Optional) Port Number.
      */
     dhcpServerAddressPort?: pulumi.Input<number>;
+    /**
+     * - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
+     */
     enableNat?: pulumi.Input<boolean>;
+    /**
+     * -(Optional) Range of IPs.
+     */
     ipConfigPoolListRanges?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * - (Optional) Whether the subnet is external subnet or not.
+     */
     isExternal?: pulumi.Input<boolean>;
     /**
      * - (Optional) Subnet name (Readonly).
@@ -373,13 +415,16 @@ export interface SubnetArgs {
      */
     subnetIp?: pulumi.Input<string>;
     /**
-     * - (Optional).
+     * - (Optional). Valid Types are ["VLAN", "OVERLAY"]
      */
     subnetType: pulumi.Input<string>;
     /**
-     * - (Optional).
+     * - (Optional). For VLAN subnet.
      */
     vlanId?: pulumi.Input<number>;
+    /**
+     * VPC reference uuid
+     */
     vpcReferenceUuid?: pulumi.Input<string>;
     /**
      * - (Optional).

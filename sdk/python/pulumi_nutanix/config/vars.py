@@ -46,6 +46,21 @@ class _ExportableConfig(types.ModuleType):
         return __config__.get_bool('insecure')
 
     @property
+    def ndb_endpoint(self) -> Optional[str]:
+        """
+        endpoint for Era VM (era ip)
+        """
+        return __config__.get('ndbEndpoint')
+
+    @property
+    def ndb_password(self) -> Optional[str]:
+        return __config__.get('ndbPassword')
+
+    @property
+    def ndb_username(self) -> Optional[str]:
+        return __config__.get('ndbUsername')
+
+    @property
     def password(self) -> Optional[str]:
         """
         Password for provided user name.

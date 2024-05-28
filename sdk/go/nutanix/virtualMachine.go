@@ -98,6 +98,18 @@ import (
 //	}
 //
 // ```
+//
+// ## Import
+//
+// Nutanix Virtual machines can be imported using the `UUID` eg,
+//
+// `
+//
+// ```sh
+// $ pulumi import nutanix:index/virtualMachine:VirtualMachine vm01 0F75E6A7-55FB-44D9-A50D-14AD72E2CF7C
+// ```
+//
+// `
 type VirtualMachine struct {
 	pulumi.CustomResourceState
 
@@ -139,8 +151,9 @@ type VirtualMachine struct {
 	// - (Optional) Flag to allow override of customization by deployer.
 	GuestCustomizationIsOverridable pulumi.BoolOutput `pulumi:"guestCustomizationIsOverridable"`
 	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
-	GuestCustomizationSysprep                pulumi.StringMapOutput `pulumi:"guestCustomizationSysprep"`
-	GuestCustomizationSysprepCustomKeyValues pulumi.MapOutput       `pulumi:"guestCustomizationSysprepCustomKeyValues"`
+	GuestCustomizationSysprep pulumi.StringMapOutput `pulumi:"guestCustomizationSysprep"`
+	// - (Optional) Generic key value pair used for custom attributes in sysprep.
+	GuestCustomizationSysprepCustomKeyValues pulumi.MapOutput `pulumi:"guestCustomizationSysprepCustomKeyValues"`
 	// - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
 	GuestOsId pulumi.StringOutput `pulumi:"guestOsId"`
 	// - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
@@ -153,7 +166,7 @@ type VirtualMachine struct {
 	IsVcpuHardPinned pulumi.BoolPtrOutput `pulumi:"isVcpuHardPinned"`
 	// - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
 	MachineType pulumi.StringOutput `pulumi:"machineType"`
-	// - (Optional) Memory size in MiB.
+	// - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
 	MemorySizeMib pulumi.IntOutput `pulumi:"memorySizeMib"`
 	// - The vm kind metadata.
 	Metadata pulumi.StringMapOutput `pulumi:"metadata"`
@@ -176,7 +189,8 @@ type VirtualMachine struct {
 	// - (Optional) Information regarding Nutanix Guest Tools.
 	NutanixGuestTools pulumi.StringMapOutput `pulumi:"nutanixGuestTools"`
 	// - (Optional) The reference to a user.
-	OwnerReference  pulumi.StringMapOutput `pulumi:"ownerReference"`
+	OwnerReference pulumi.StringMapOutput `pulumi:"ownerReference"`
+	// - (Optional) Reference to an entity that the VM cloned from.
 	ParentReference pulumi.StringMapOutput `pulumi:"parentReference"`
 	// - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
 	PowerState pulumi.StringOutput `pulumi:"powerState"`
@@ -267,7 +281,8 @@ type virtualMachineState struct {
 	// - (Optional) Flag to allow override of customization by deployer.
 	GuestCustomizationIsOverridable *bool `pulumi:"guestCustomizationIsOverridable"`
 	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
-	GuestCustomizationSysprep                map[string]string      `pulumi:"guestCustomizationSysprep"`
+	GuestCustomizationSysprep map[string]string `pulumi:"guestCustomizationSysprep"`
+	// - (Optional) Generic key value pair used for custom attributes in sysprep.
 	GuestCustomizationSysprepCustomKeyValues map[string]interface{} `pulumi:"guestCustomizationSysprepCustomKeyValues"`
 	// - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
 	GuestOsId *string `pulumi:"guestOsId"`
@@ -281,7 +296,7 @@ type virtualMachineState struct {
 	IsVcpuHardPinned *bool `pulumi:"isVcpuHardPinned"`
 	// - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
 	MachineType *string `pulumi:"machineType"`
-	// - (Optional) Memory size in MiB.
+	// - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
 	MemorySizeMib *int `pulumi:"memorySizeMib"`
 	// - The vm kind metadata.
 	Metadata map[string]string `pulumi:"metadata"`
@@ -304,7 +319,8 @@ type virtualMachineState struct {
 	// - (Optional) Information regarding Nutanix Guest Tools.
 	NutanixGuestTools map[string]string `pulumi:"nutanixGuestTools"`
 	// - (Optional) The reference to a user.
-	OwnerReference  map[string]string `pulumi:"ownerReference"`
+	OwnerReference map[string]string `pulumi:"ownerReference"`
+	// - (Optional) Reference to an entity that the VM cloned from.
 	ParentReference map[string]string `pulumi:"parentReference"`
 	// - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
 	PowerState *string `pulumi:"powerState"`
@@ -363,7 +379,8 @@ type VirtualMachineState struct {
 	// - (Optional) Flag to allow override of customization by deployer.
 	GuestCustomizationIsOverridable pulumi.BoolPtrInput
 	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
-	GuestCustomizationSysprep                pulumi.StringMapInput
+	GuestCustomizationSysprep pulumi.StringMapInput
+	// - (Optional) Generic key value pair used for custom attributes in sysprep.
 	GuestCustomizationSysprepCustomKeyValues pulumi.MapInput
 	// - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
 	GuestOsId pulumi.StringPtrInput
@@ -377,7 +394,7 @@ type VirtualMachineState struct {
 	IsVcpuHardPinned pulumi.BoolPtrInput
 	// - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
 	MachineType pulumi.StringPtrInput
-	// - (Optional) Memory size in MiB.
+	// - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
 	MemorySizeMib pulumi.IntPtrInput
 	// - The vm kind metadata.
 	Metadata pulumi.StringMapInput
@@ -400,7 +417,8 @@ type VirtualMachineState struct {
 	// - (Optional) Information regarding Nutanix Guest Tools.
 	NutanixGuestTools pulumi.StringMapInput
 	// - (Optional) The reference to a user.
-	OwnerReference  pulumi.StringMapInput
+	OwnerReference pulumi.StringMapInput
+	// - (Optional) Reference to an entity that the VM cloned from.
 	ParentReference pulumi.StringMapInput
 	// - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
 	PowerState pulumi.StringPtrInput
@@ -459,7 +477,8 @@ type virtualMachineArgs struct {
 	// - (Optional) Flag to allow override of customization by deployer.
 	GuestCustomizationIsOverridable *bool `pulumi:"guestCustomizationIsOverridable"`
 	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
-	GuestCustomizationSysprep                map[string]string      `pulumi:"guestCustomizationSysprep"`
+	GuestCustomizationSysprep map[string]string `pulumi:"guestCustomizationSysprep"`
+	// - (Optional) Generic key value pair used for custom attributes in sysprep.
 	GuestCustomizationSysprepCustomKeyValues map[string]interface{} `pulumi:"guestCustomizationSysprepCustomKeyValues"`
 	// - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
 	GuestOsId *string `pulumi:"guestOsId"`
@@ -469,7 +488,7 @@ type virtualMachineArgs struct {
 	IsVcpuHardPinned *bool `pulumi:"isVcpuHardPinned"`
 	// - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
 	MachineType *string `pulumi:"machineType"`
-	// - (Optional) Memory size in MiB.
+	// - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
 	MemorySizeMib *int `pulumi:"memorySizeMib"`
 	// - (Required) The name for the vm.
 	Name *string `pulumi:"name"`
@@ -488,7 +507,8 @@ type virtualMachineArgs struct {
 	// - (Optional) Information regarding Nutanix Guest Tools.
 	NutanixGuestTools map[string]string `pulumi:"nutanixGuestTools"`
 	// - (Optional) The reference to a user.
-	OwnerReference  map[string]string `pulumi:"ownerReference"`
+	OwnerReference map[string]string `pulumi:"ownerReference"`
+	// - (Optional) Reference to an entity that the VM cloned from.
 	ParentReference map[string]string `pulumi:"parentReference"`
 	// - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
 	PowerStateMechanism *string `pulumi:"powerStateMechanism"`
@@ -540,7 +560,8 @@ type VirtualMachineArgs struct {
 	// - (Optional) Flag to allow override of customization by deployer.
 	GuestCustomizationIsOverridable pulumi.BoolPtrInput
 	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
-	GuestCustomizationSysprep                pulumi.StringMapInput
+	GuestCustomizationSysprep pulumi.StringMapInput
+	// - (Optional) Generic key value pair used for custom attributes in sysprep.
 	GuestCustomizationSysprepCustomKeyValues pulumi.MapInput
 	// - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
 	GuestOsId pulumi.StringPtrInput
@@ -550,7 +571,7 @@ type VirtualMachineArgs struct {
 	IsVcpuHardPinned pulumi.BoolPtrInput
 	// - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
 	MachineType pulumi.StringPtrInput
-	// - (Optional) Memory size in MiB.
+	// - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
 	MemorySizeMib pulumi.IntPtrInput
 	// - (Required) The name for the vm.
 	Name pulumi.StringPtrInput
@@ -569,7 +590,8 @@ type VirtualMachineArgs struct {
 	// - (Optional) Information regarding Nutanix Guest Tools.
 	NutanixGuestTools pulumi.StringMapInput
 	// - (Optional) The reference to a user.
-	OwnerReference  pulumi.StringMapInput
+	OwnerReference pulumi.StringMapInput
+	// - (Optional) Reference to an entity that the VM cloned from.
 	ParentReference pulumi.StringMapInput
 	// - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
 	PowerStateMechanism pulumi.StringPtrInput
@@ -771,6 +793,7 @@ func (o VirtualMachineOutput) GuestCustomizationSysprep() pulumi.StringMapOutput
 	return o.ApplyT(func(v *VirtualMachine) pulumi.StringMapOutput { return v.GuestCustomizationSysprep }).(pulumi.StringMapOutput)
 }
 
+// - (Optional) Generic key value pair used for custom attributes in sysprep.
 func (o VirtualMachineOutput) GuestCustomizationSysprepCustomKeyValues() pulumi.MapOutput {
 	return o.ApplyT(func(v *VirtualMachine) pulumi.MapOutput { return v.GuestCustomizationSysprepCustomKeyValues }).(pulumi.MapOutput)
 }
@@ -805,7 +828,7 @@ func (o VirtualMachineOutput) MachineType() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualMachine) pulumi.StringOutput { return v.MachineType }).(pulumi.StringOutput)
 }
 
-// - (Optional) Memory size in MiB.
+// - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
 func (o VirtualMachineOutput) MemorySizeMib() pulumi.IntOutput {
 	return o.ApplyT(func(v *VirtualMachine) pulumi.IntOutput { return v.MemorySizeMib }).(pulumi.IntOutput)
 }
@@ -865,6 +888,7 @@ func (o VirtualMachineOutput) OwnerReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *VirtualMachine) pulumi.StringMapOutput { return v.OwnerReference }).(pulumi.StringMapOutput)
 }
 
+// - (Optional) Reference to an entity that the VM cloned from.
 func (o VirtualMachineOutput) ParentReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *VirtualMachine) pulumi.StringMapOutput { return v.ParentReference }).(pulumi.StringMapOutput)
 }
