@@ -13,20 +13,36 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class NdbStretchedVlanVlansListArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// cluster id where network is present
+        /// </summary>
         [Input("clusterId")]
         public Input<string>? ClusterId { get; set; }
 
+        /// <summary>
+        /// network id
+        /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
+        /// <summary>
+        /// network managed by NDB or not
+        /// </summary>
         [Input("managed")]
         public Input<bool>? Managed { get; set; }
 
+        /// <summary>
+        /// name for the stretched VLAN
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("properties")]
         private InputList<Inputs.NdbStretchedVlanVlansListPropertyArgs>? _properties;
+
+        /// <summary>
+        /// properties of network
+        /// </summary>
         public InputList<Inputs.NdbStretchedVlanVlansListPropertyArgs> Properties
         {
             get => _properties ?? (_properties = new InputList<Inputs.NdbStretchedVlanVlansListPropertyArgs>());
@@ -35,15 +51,25 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("propertiesMaps")]
         private InputList<Inputs.NdbStretchedVlanVlansListPropertiesMapArgs>? _propertiesMaps;
+
+        /// <summary>
+        /// properties map of network
+        /// </summary>
         public InputList<Inputs.NdbStretchedVlanVlansListPropertiesMapArgs> PropertiesMaps
         {
             get => _propertiesMaps ?? (_propertiesMaps = new InputList<Inputs.NdbStretchedVlanVlansListPropertiesMapArgs>());
             set => _propertiesMaps = value;
         }
 
+        /// <summary>
+        /// stretched vlan id
+        /// </summary>
         [Input("stretchedVlanId")]
         public Input<string>? StretchedVlanId { get; set; }
 
+        /// <summary>
+        /// type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
+        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 

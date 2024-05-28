@@ -10,48 +10,113 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Provides a resource to manage time machine data availability across all the registered Nutanix clusters in NDB.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var cls = new Nutanix.NdbTmsCluster("cls", new()
+    ///     {
+    ///         NxClusterId = "{{ cluster_id }}",
+    ///         SlaId = "{{ sla_id }}",
+    ///         TimeMachineId = "{{ tms_id }}",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [NutanixResourceType("nutanix:index/ndbTmsCluster:NdbTmsCluster")]
     public partial class NdbTmsCluster : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// created date of time machine associated with cluster
+        /// </summary>
         [Output("dateCreated")]
         public Output<string> DateCreated { get; private set; } = null!;
 
+        /// <summary>
+        /// modified date of time machine associated with cluster
+        /// </summary>
         [Output("dateModified")]
         public Output<string> DateModified { get; private set; } = null!;
 
+        /// <summary>
+        /// description of nutanix cluster associated with time machine
+        /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
+        /// <summary>
+        /// log drive id
+        /// </summary>
         [Output("logDriveId")]
         public Output<string> LogDriveId { get; private set; } = null!;
 
+        /// <summary>
+        /// log drive status of time machine
+        /// </summary>
         [Output("logDriveStatus")]
         public Output<string> LogDriveStatus { get; private set; } = null!;
 
+        /// <summary>
+        /// Nutanix cluster id on the associated registered clusters.
+        /// </summary>
         [Output("nxClusterId")]
         public Output<string> NxClusterId { get; private set; } = null!;
 
+        /// <summary>
+        /// owner id
+        /// </summary>
         [Output("ownerId")]
         public Output<string> OwnerId { get; private set; } = null!;
 
+        /// <summary>
+        /// schedule id of the data associated with time machine
+        /// </summary>
         [Output("scheduleId")]
         public Output<string> ScheduleId { get; private set; } = null!;
 
+        /// <summary>
+        /// SLA id for the associated cluster.
+        /// </summary>
         [Output("slaId")]
         public Output<string> SlaId { get; private set; } = null!;
 
+        /// <summary>
+        /// source is present or not
+        /// </summary>
         [Output("source")]
         public Output<bool> Source { get; private set; } = null!;
 
+        /// <summary>
+        /// source clusters in time machines
+        /// </summary>
         [Output("sourceClusters")]
         public Output<ImmutableArray<string>> SourceClusters { get; private set; } = null!;
 
+        /// <summary>
+        /// status of the cluster associated with time machine
+        /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
+        /// <summary>
+        /// time machine id
+        /// </summary>
         [Output("timeMachineId")]
         public Output<string> TimeMachineId { get; private set; } = null!;
 
+        /// <summary>
+        /// Default value is "OTHER"
+        /// </summary>
         [Output("type")]
         public Output<string?> Type { get; private set; } = null!;
 
@@ -102,15 +167,27 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class NdbTmsClusterArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Nutanix cluster id on the associated registered clusters.
+        /// </summary>
         [Input("nxClusterId", required: true)]
         public Input<string> NxClusterId { get; set; } = null!;
 
+        /// <summary>
+        /// SLA id for the associated cluster.
+        /// </summary>
         [Input("slaId", required: true)]
         public Input<string> SlaId { get; set; } = null!;
 
+        /// <summary>
+        /// time machine id
+        /// </summary>
         [Input("timeMachineId", required: true)]
         public Input<string> TimeMachineId { get; set; } = null!;
 
+        /// <summary>
+        /// Default value is "OTHER"
+        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
@@ -122,50 +199,93 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class NdbTmsClusterState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// created date of time machine associated with cluster
+        /// </summary>
         [Input("dateCreated")]
         public Input<string>? DateCreated { get; set; }
 
+        /// <summary>
+        /// modified date of time machine associated with cluster
+        /// </summary>
         [Input("dateModified")]
         public Input<string>? DateModified { get; set; }
 
+        /// <summary>
+        /// description of nutanix cluster associated with time machine
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// log drive id
+        /// </summary>
         [Input("logDriveId")]
         public Input<string>? LogDriveId { get; set; }
 
+        /// <summary>
+        /// log drive status of time machine
+        /// </summary>
         [Input("logDriveStatus")]
         public Input<string>? LogDriveStatus { get; set; }
 
+        /// <summary>
+        /// Nutanix cluster id on the associated registered clusters.
+        /// </summary>
         [Input("nxClusterId")]
         public Input<string>? NxClusterId { get; set; }
 
+        /// <summary>
+        /// owner id
+        /// </summary>
         [Input("ownerId")]
         public Input<string>? OwnerId { get; set; }
 
+        /// <summary>
+        /// schedule id of the data associated with time machine
+        /// </summary>
         [Input("scheduleId")]
         public Input<string>? ScheduleId { get; set; }
 
+        /// <summary>
+        /// SLA id for the associated cluster.
+        /// </summary>
         [Input("slaId")]
         public Input<string>? SlaId { get; set; }
 
+        /// <summary>
+        /// source is present or not
+        /// </summary>
         [Input("source")]
         public Input<bool>? Source { get; set; }
 
         [Input("sourceClusters")]
         private InputList<string>? _sourceClusters;
+
+        /// <summary>
+        /// source clusters in time machines
+        /// </summary>
         public InputList<string> SourceClusters
         {
             get => _sourceClusters ?? (_sourceClusters = new InputList<string>());
             set => _sourceClusters = value;
         }
 
+        /// <summary>
+        /// status of the cluster associated with time machine
+        /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
+        /// <summary>
+        /// time machine id
+        /// </summary>
         [Input("timeMachineId")]
         public Input<string>? TimeMachineId { get; set; }
 
+        /// <summary>
+        /// Default value is "OTHER"
+        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 

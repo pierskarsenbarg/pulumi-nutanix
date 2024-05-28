@@ -6,6 +6,47 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a resource to add/remove worker nodepool in an existing Nutanix Kubernetes Engine (NKE).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const kworkerNp = new nutanix.KarbonWorkerNodepool("kworkerNp", {
+ *     ahvConfig: {
+ *         cpu: 4,
+ *         diskMib: 122880,
+ *         memoryMib: 8192,
+ *         networkUuid: "61213511-6383-4a38-9ac8-4a552c0e5865",
+ *     },
+ *     clusterName: "karbon",
+ *     numInstances: 1,
+ * });
+ * ```
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const kworkerNp = new nutanix.KarbonWorkerNodepool("kworkerNp", {
+ *     ahvConfig: {
+ *         cpu: 4,
+ *         diskMib: 122880,
+ *         memoryMib: 8192,
+ *         networkUuid: "61213511-6383-4a38-9ac8-4a552c0e5865",
+ *     },
+ *     clusterName: "karbon",
+ *     labels: {
+ *         k1: "v1",
+ *         k2: "v2",
+ *     },
+ *     numInstances: 1,
+ * });
+ * ```
+ */
 export class KarbonWorkerNodepool extends pulumi.CustomResource {
     /**
      * Get an existing KarbonWorkerNodepool resource's state with the given name, ID, and optional extra
@@ -34,12 +75,33 @@ export class KarbonWorkerNodepool extends pulumi.CustomResource {
         return obj['__pulumiType'] === KarbonWorkerNodepool.__pulumiType;
     }
 
+    /**
+     * VM configuration in AHV.
+     */
     public readonly ahvConfig!: pulumi.Output<outputs.KarbonWorkerNodepoolAhvConfig>;
+    /**
+     * Kubernetes cluster name
+     */
     public readonly clusterName!: pulumi.Output<string>;
+    /**
+     * labels of node
+     */
     public readonly labels!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * unique worker nodepool name
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * The version of the node OS image
+     */
     public readonly nodeOsVersion!: pulumi.Output<string>;
+    /**
+     * List of node details of pool.
+     */
     public /*out*/ readonly nodes!: pulumi.Output<outputs.KarbonWorkerNodepoolNode[]>;
+    /**
+     * number of node instances
+     */
     public readonly numInstances!: pulumi.Output<number>;
 
     /**
@@ -87,12 +149,33 @@ export class KarbonWorkerNodepool extends pulumi.CustomResource {
  * Input properties used for looking up and filtering KarbonWorkerNodepool resources.
  */
 export interface KarbonWorkerNodepoolState {
+    /**
+     * VM configuration in AHV.
+     */
     ahvConfig?: pulumi.Input<inputs.KarbonWorkerNodepoolAhvConfig>;
+    /**
+     * Kubernetes cluster name
+     */
     clusterName?: pulumi.Input<string>;
+    /**
+     * labels of node
+     */
     labels?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * unique worker nodepool name
+     */
     name?: pulumi.Input<string>;
+    /**
+     * The version of the node OS image
+     */
     nodeOsVersion?: pulumi.Input<string>;
+    /**
+     * List of node details of pool.
+     */
     nodes?: pulumi.Input<pulumi.Input<inputs.KarbonWorkerNodepoolNode>[]>;
+    /**
+     * number of node instances
+     */
     numInstances?: pulumi.Input<number>;
 }
 
@@ -100,10 +183,28 @@ export interface KarbonWorkerNodepoolState {
  * The set of arguments for constructing a KarbonWorkerNodepool resource.
  */
 export interface KarbonWorkerNodepoolArgs {
+    /**
+     * VM configuration in AHV.
+     */
     ahvConfig?: pulumi.Input<inputs.KarbonWorkerNodepoolAhvConfig>;
+    /**
+     * Kubernetes cluster name
+     */
     clusterName: pulumi.Input<string>;
+    /**
+     * labels of node
+     */
     labels?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * unique worker nodepool name
+     */
     name?: pulumi.Input<string>;
+    /**
+     * The version of the node OS image
+     */
     nodeOsVersion?: pulumi.Input<string>;
+    /**
+     * number of node instances
+     */
     numInstances: pulumi.Input<number>;
 }

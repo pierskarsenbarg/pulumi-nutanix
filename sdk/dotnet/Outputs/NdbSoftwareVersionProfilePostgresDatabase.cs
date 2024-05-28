@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbSoftwareVersionProfilePostgresDatabase
     {
+        /// <summary>
+        /// db software notes
+        /// </summary>
         public readonly string? DbSoftwareNotes;
+        /// <summary>
+        /// os notes for software profile
+        /// </summary>
         public readonly string? OsNotes;
+        /// <summary>
+        /// source dbserver id
+        /// </summary>
         public readonly string? SourceDbserverId;
 
         [OutputConstructor]

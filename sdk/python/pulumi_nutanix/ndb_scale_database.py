@@ -25,6 +25,13 @@ class NdbScaleDatabaseArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTagArgs']]]] = None):
         """
         The set of arguments for constructing a NdbScaleDatabase resource.
+        :param pulumi.Input[str] application_type: type of instance. eg: postgres_database
+        :param pulumi.Input[int] data_storage_size: data area (in GiB) to be added to the existing database.
+        :param pulumi.Input[str] database_uuid: Database id
+        :param pulumi.Input[str] post_script_cmd: post script command
+        :param pulumi.Input[str] pre_script_cmd: pre script command
+        :param pulumi.Input[int] scale_count: scale count helps to scale the same instance with same config
+        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTagArgs']]] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
         """
         pulumi.set(__self__, "application_type", application_type)
         pulumi.set(__self__, "data_storage_size", data_storage_size)
@@ -41,6 +48,9 @@ class NdbScaleDatabaseArgs:
     @property
     @pulumi.getter(name="applicationType")
     def application_type(self) -> pulumi.Input[str]:
+        """
+        type of instance. eg: postgres_database
+        """
         return pulumi.get(self, "application_type")
 
     @application_type.setter
@@ -50,6 +60,9 @@ class NdbScaleDatabaseArgs:
     @property
     @pulumi.getter(name="dataStorageSize")
     def data_storage_size(self) -> pulumi.Input[int]:
+        """
+        data area (in GiB) to be added to the existing database.
+        """
         return pulumi.get(self, "data_storage_size")
 
     @data_storage_size.setter
@@ -59,6 +72,9 @@ class NdbScaleDatabaseArgs:
     @property
     @pulumi.getter(name="databaseUuid")
     def database_uuid(self) -> pulumi.Input[str]:
+        """
+        Database id
+        """
         return pulumi.get(self, "database_uuid")
 
     @database_uuid.setter
@@ -68,6 +84,9 @@ class NdbScaleDatabaseArgs:
     @property
     @pulumi.getter(name="postScriptCmd")
     def post_script_cmd(self) -> Optional[pulumi.Input[str]]:
+        """
+        post script command
+        """
         return pulumi.get(self, "post_script_cmd")
 
     @post_script_cmd.setter
@@ -77,6 +96,9 @@ class NdbScaleDatabaseArgs:
     @property
     @pulumi.getter(name="preScriptCmd")
     def pre_script_cmd(self) -> Optional[pulumi.Input[str]]:
+        """
+        pre script command
+        """
         return pulumi.get(self, "pre_script_cmd")
 
     @pre_script_cmd.setter
@@ -86,6 +108,9 @@ class NdbScaleDatabaseArgs:
     @property
     @pulumi.getter(name="scaleCount")
     def scale_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        scale count helps to scale the same instance with same config
+        """
         return pulumi.get(self, "scale_count")
 
     @scale_count.setter
@@ -95,6 +120,9 @@ class NdbScaleDatabaseArgs:
     @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTagArgs']]]]:
+        """
+        allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        """
         return pulumi.get(self, "tags")
 
     @tags.setter
@@ -138,7 +166,35 @@ class _NdbScaleDatabaseState:
                  type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NdbScaleDatabase resources.
-        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabasePropertyArgs']]] properties: List of all the properties
+        :param pulumi.Input[str] application_type: type of instance. eg: postgres_database
+        :param pulumi.Input[bool] clone: whether instance is cloned or not
+        :param pulumi.Input[int] data_storage_size: data area (in GiB) to be added to the existing database.
+        :param pulumi.Input[str] database_cluster_type: database cluster type
+        :param pulumi.Input[str] database_name: name of database
+        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeArgs']]] database_nodes: database nodes associated with database instance
+        :param pulumi.Input[str] database_uuid: Database id
+        :param pulumi.Input[str] databasetype: type of database
+        :param pulumi.Input[str] date_created: date created for db instance
+        :param pulumi.Input[str] date_modified: date modified for instance
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dbserver_logical_cluster: dbserver logical cluster
+        :param pulumi.Input[str] dbserver_logical_cluster_id: dbserver logical cluster id
+        :param pulumi.Input[str] description: description of database instance
+        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseInfoArgs']]] infos: info of instance
+        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLcmConfigArgs']]] lcm_configs: LCM config of instance
+        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLinkedDatabaseArgs']]] linked_databases: linked databases within database instance
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metric: Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        :param pulumi.Input[str] name: Name of database instance
+        :param pulumi.Input[str] parent_database_id: parent database id
+        :param pulumi.Input[str] post_script_cmd: post script command
+        :param pulumi.Input[str] pre_script_cmd: pre script command
+        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabasePropertyArgs']]] properties: properties of database created
+        :param pulumi.Input[int] scale_count: scale count helps to scale the same instance with same config
+        :param pulumi.Input[str] status: status of instance
+        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTagArgs']]] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        :param pulumi.Input[str] time_machine_id: time machine id of instance
+        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineArgs']]] time_machines: Time Machine details of instance
+        :param pulumi.Input[str] time_zone: timezone on which instance is created xw
+        :param pulumi.Input[str] type: type of database
         """
         if application_type is not None:
             pulumi.set(__self__, "application_type", application_type)
@@ -206,6 +262,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="applicationType")
     def application_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        type of instance. eg: postgres_database
+        """
         return pulumi.get(self, "application_type")
 
     @application_type.setter
@@ -215,6 +274,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter
     def clone(self) -> Optional[pulumi.Input[bool]]:
+        """
+        whether instance is cloned or not
+        """
         return pulumi.get(self, "clone")
 
     @clone.setter
@@ -224,6 +286,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="dataStorageSize")
     def data_storage_size(self) -> Optional[pulumi.Input[int]]:
+        """
+        data area (in GiB) to be added to the existing database.
+        """
         return pulumi.get(self, "data_storage_size")
 
     @data_storage_size.setter
@@ -233,6 +298,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="databaseClusterType")
     def database_cluster_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        database cluster type
+        """
         return pulumi.get(self, "database_cluster_type")
 
     @database_cluster_type.setter
@@ -251,6 +319,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="databaseName")
     def database_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        name of database
+        """
         return pulumi.get(self, "database_name")
 
     @database_name.setter
@@ -260,6 +331,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="databaseNodes")
     def database_nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeArgs']]]]:
+        """
+        database nodes associated with database instance
+        """
         return pulumi.get(self, "database_nodes")
 
     @database_nodes.setter
@@ -269,6 +343,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="databaseUuid")
     def database_uuid(self) -> Optional[pulumi.Input[str]]:
+        """
+        Database id
+        """
         return pulumi.get(self, "database_uuid")
 
     @database_uuid.setter
@@ -278,6 +355,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter
     def databasetype(self) -> Optional[pulumi.Input[str]]:
+        """
+        type of database
+        """
         return pulumi.get(self, "databasetype")
 
     @databasetype.setter
@@ -287,6 +367,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="dateCreated")
     def date_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        date created for db instance
+        """
         return pulumi.get(self, "date_created")
 
     @date_created.setter
@@ -296,6 +379,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="dateModified")
     def date_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        date modified for instance
+        """
         return pulumi.get(self, "date_modified")
 
     @date_modified.setter
@@ -305,6 +391,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="dbserverLogicalCluster")
     def dbserver_logical_cluster(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        dbserver logical cluster
+        """
         return pulumi.get(self, "dbserver_logical_cluster")
 
     @dbserver_logical_cluster.setter
@@ -314,6 +403,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="dbserverLogicalClusterId")
     def dbserver_logical_cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        dbserver logical cluster id
+        """
         return pulumi.get(self, "dbserver_logical_cluster_id")
 
     @dbserver_logical_cluster_id.setter
@@ -323,6 +415,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        description of database instance
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -332,6 +427,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter
     def infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseInfoArgs']]]]:
+        """
+        info of instance
+        """
         return pulumi.get(self, "infos")
 
     @infos.setter
@@ -341,6 +439,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="lcmConfigs")
     def lcm_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLcmConfigArgs']]]]:
+        """
+        LCM config of instance
+        """
         return pulumi.get(self, "lcm_configs")
 
     @lcm_configs.setter
@@ -350,6 +451,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="linkedDatabases")
     def linked_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLinkedDatabaseArgs']]]]:
+        """
+        linked databases within database instance
+        """
         return pulumi.get(self, "linked_databases")
 
     @linked_databases.setter
@@ -359,6 +463,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter
     def metric(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        """
         return pulumi.get(self, "metric")
 
     @metric.setter
@@ -368,6 +475,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of database instance
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -377,6 +487,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="parentDatabaseId")
     def parent_database_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        parent database id
+        """
         return pulumi.get(self, "parent_database_id")
 
     @parent_database_id.setter
@@ -395,6 +508,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="postScriptCmd")
     def post_script_cmd(self) -> Optional[pulumi.Input[str]]:
+        """
+        post script command
+        """
         return pulumi.get(self, "post_script_cmd")
 
     @post_script_cmd.setter
@@ -404,6 +520,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="preScriptCmd")
     def pre_script_cmd(self) -> Optional[pulumi.Input[str]]:
+        """
+        pre script command
+        """
         return pulumi.get(self, "pre_script_cmd")
 
     @pre_script_cmd.setter
@@ -414,7 +533,7 @@ class _NdbScaleDatabaseState:
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabasePropertyArgs']]]]:
         """
-        List of all the properties
+        properties of database created
         """
         return pulumi.get(self, "properties")
 
@@ -425,6 +544,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="scaleCount")
     def scale_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        scale count helps to scale the same instance with same config
+        """
         return pulumi.get(self, "scale_count")
 
     @scale_count.setter
@@ -434,6 +556,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        status of instance
+        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -443,6 +568,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTagArgs']]]]:
+        """
+        allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        """
         return pulumi.get(self, "tags")
 
     @tags.setter
@@ -452,6 +580,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="timeMachineId")
     def time_machine_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        time machine id of instance
+        """
         return pulumi.get(self, "time_machine_id")
 
     @time_machine_id.setter
@@ -461,6 +592,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="timeMachines")
     def time_machines(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineArgs']]]]:
+        """
+        Time Machine details of instance
+        """
         return pulumi.get(self, "time_machines")
 
     @time_machines.setter
@@ -470,6 +604,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[str]]:
+        """
+        timezone on which instance is created xw
+        """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
@@ -479,6 +616,9 @@ class _NdbScaleDatabaseState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        type of database
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -500,9 +640,29 @@ class NdbScaleDatabase(pulumi.CustomResource):
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbScaleDatabaseTagArgs']]]]] = None,
                  __props__=None):
         """
-        Create a NdbScaleDatabase resource with the given unique name, props, and options.
+        Provides a resource to scale the database instance based on the input parameters.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        scale = nutanix.NdbDatabaseScale("scale",
+            application_type="{{ Application Type }}",
+            data_storage_size=1,
+            database_uuid="{{ database_id }}")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] application_type: type of instance. eg: postgres_database
+        :param pulumi.Input[int] data_storage_size: data area (in GiB) to be added to the existing database.
+        :param pulumi.Input[str] database_uuid: Database id
+        :param pulumi.Input[str] post_script_cmd: post script command
+        :param pulumi.Input[str] pre_script_cmd: pre script command
+        :param pulumi.Input[int] scale_count: scale count helps to scale the same instance with same config
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbScaleDatabaseTagArgs']]]] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
         """
         ...
     @overload
@@ -511,7 +671,20 @@ class NdbScaleDatabase(pulumi.CustomResource):
                  args: NdbScaleDatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a NdbScaleDatabase resource with the given unique name, props, and options.
+        Provides a resource to scale the database instance based on the input parameters.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        scale = nutanix.NdbDatabaseScale("scale",
+            application_type="{{ Application Type }}",
+            data_storage_size=1,
+            database_uuid="{{ database_id }}")
+        ```
+
         :param str resource_name: The name of the resource.
         :param NdbScaleDatabaseArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -628,7 +801,35 @@ class NdbScaleDatabase(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbScaleDatabasePropertyArgs']]]] properties: List of all the properties
+        :param pulumi.Input[str] application_type: type of instance. eg: postgres_database
+        :param pulumi.Input[bool] clone: whether instance is cloned or not
+        :param pulumi.Input[int] data_storage_size: data area (in GiB) to be added to the existing database.
+        :param pulumi.Input[str] database_cluster_type: database cluster type
+        :param pulumi.Input[str] database_name: name of database
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbScaleDatabaseDatabaseNodeArgs']]]] database_nodes: database nodes associated with database instance
+        :param pulumi.Input[str] database_uuid: Database id
+        :param pulumi.Input[str] databasetype: type of database
+        :param pulumi.Input[str] date_created: date created for db instance
+        :param pulumi.Input[str] date_modified: date modified for instance
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dbserver_logical_cluster: dbserver logical cluster
+        :param pulumi.Input[str] dbserver_logical_cluster_id: dbserver logical cluster id
+        :param pulumi.Input[str] description: description of database instance
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbScaleDatabaseInfoArgs']]]] infos: info of instance
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbScaleDatabaseLcmConfigArgs']]]] lcm_configs: LCM config of instance
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbScaleDatabaseLinkedDatabaseArgs']]]] linked_databases: linked databases within database instance
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metric: Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        :param pulumi.Input[str] name: Name of database instance
+        :param pulumi.Input[str] parent_database_id: parent database id
+        :param pulumi.Input[str] post_script_cmd: post script command
+        :param pulumi.Input[str] pre_script_cmd: pre script command
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbScaleDatabasePropertyArgs']]]] properties: properties of database created
+        :param pulumi.Input[int] scale_count: scale count helps to scale the same instance with same config
+        :param pulumi.Input[str] status: status of instance
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbScaleDatabaseTagArgs']]]] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        :param pulumi.Input[str] time_machine_id: time machine id of instance
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbScaleDatabaseTimeMachineArgs']]]] time_machines: Time Machine details of instance
+        :param pulumi.Input[str] time_zone: timezone on which instance is created xw
+        :param pulumi.Input[str] type: type of database
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -670,21 +871,33 @@ class NdbScaleDatabase(pulumi.CustomResource):
     @property
     @pulumi.getter(name="applicationType")
     def application_type(self) -> pulumi.Output[str]:
+        """
+        type of instance. eg: postgres_database
+        """
         return pulumi.get(self, "application_type")
 
     @property
     @pulumi.getter
     def clone(self) -> pulumi.Output[bool]:
+        """
+        whether instance is cloned or not
+        """
         return pulumi.get(self, "clone")
 
     @property
     @pulumi.getter(name="dataStorageSize")
     def data_storage_size(self) -> pulumi.Output[int]:
+        """
+        data area (in GiB) to be added to the existing database.
+        """
         return pulumi.get(self, "data_storage_size")
 
     @property
     @pulumi.getter(name="databaseClusterType")
     def database_cluster_type(self) -> pulumi.Output[str]:
+        """
+        database cluster type
+        """
         return pulumi.get(self, "database_cluster_type")
 
     @property
@@ -695,76 +908,121 @@ class NdbScaleDatabase(pulumi.CustomResource):
     @property
     @pulumi.getter(name="databaseName")
     def database_name(self) -> pulumi.Output[str]:
+        """
+        name of database
+        """
         return pulumi.get(self, "database_name")
 
     @property
     @pulumi.getter(name="databaseNodes")
     def database_nodes(self) -> pulumi.Output[Sequence['outputs.NdbScaleDatabaseDatabaseNode']]:
+        """
+        database nodes associated with database instance
+        """
         return pulumi.get(self, "database_nodes")
 
     @property
     @pulumi.getter(name="databaseUuid")
     def database_uuid(self) -> pulumi.Output[str]:
+        """
+        Database id
+        """
         return pulumi.get(self, "database_uuid")
 
     @property
     @pulumi.getter
     def databasetype(self) -> pulumi.Output[str]:
+        """
+        type of database
+        """
         return pulumi.get(self, "databasetype")
 
     @property
     @pulumi.getter(name="dateCreated")
     def date_created(self) -> pulumi.Output[str]:
+        """
+        date created for db instance
+        """
         return pulumi.get(self, "date_created")
 
     @property
     @pulumi.getter(name="dateModified")
     def date_modified(self) -> pulumi.Output[str]:
+        """
+        date modified for instance
+        """
         return pulumi.get(self, "date_modified")
 
     @property
     @pulumi.getter(name="dbserverLogicalCluster")
     def dbserver_logical_cluster(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        dbserver logical cluster
+        """
         return pulumi.get(self, "dbserver_logical_cluster")
 
     @property
     @pulumi.getter(name="dbserverLogicalClusterId")
     def dbserver_logical_cluster_id(self) -> pulumi.Output[str]:
+        """
+        dbserver logical cluster id
+        """
         return pulumi.get(self, "dbserver_logical_cluster_id")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
+        """
+        description of database instance
+        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def infos(self) -> pulumi.Output[Sequence['outputs.NdbScaleDatabaseInfo']]:
+        """
+        info of instance
+        """
         return pulumi.get(self, "infos")
 
     @property
     @pulumi.getter(name="lcmConfigs")
     def lcm_configs(self) -> pulumi.Output[Sequence['outputs.NdbScaleDatabaseLcmConfig']]:
+        """
+        LCM config of instance
+        """
         return pulumi.get(self, "lcm_configs")
 
     @property
     @pulumi.getter(name="linkedDatabases")
     def linked_databases(self) -> pulumi.Output[Sequence['outputs.NdbScaleDatabaseLinkedDatabase']]:
+        """
+        linked databases within database instance
+        """
         return pulumi.get(self, "linked_databases")
 
     @property
     @pulumi.getter
     def metric(self) -> pulumi.Output[Mapping[str, str]]:
+        """
+        Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        """
         return pulumi.get(self, "metric")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
+        """
+        Name of database instance
+        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="parentDatabaseId")
     def parent_database_id(self) -> pulumi.Output[str]:
+        """
+        parent database id
+        """
         return pulumi.get(self, "parent_database_id")
 
     @property
@@ -775,53 +1033,80 @@ class NdbScaleDatabase(pulumi.CustomResource):
     @property
     @pulumi.getter(name="postScriptCmd")
     def post_script_cmd(self) -> pulumi.Output[Optional[str]]:
+        """
+        post script command
+        """
         return pulumi.get(self, "post_script_cmd")
 
     @property
     @pulumi.getter(name="preScriptCmd")
     def pre_script_cmd(self) -> pulumi.Output[Optional[str]]:
+        """
+        pre script command
+        """
         return pulumi.get(self, "pre_script_cmd")
 
     @property
     @pulumi.getter
     def properties(self) -> pulumi.Output[Sequence['outputs.NdbScaleDatabaseProperty']]:
         """
-        List of all the properties
+        properties of database created
         """
         return pulumi.get(self, "properties")
 
     @property
     @pulumi.getter(name="scaleCount")
     def scale_count(self) -> pulumi.Output[Optional[int]]:
+        """
+        scale count helps to scale the same instance with same config
+        """
         return pulumi.get(self, "scale_count")
 
     @property
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
+        """
+        status of instance
+        """
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
     def tags(self) -> pulumi.Output[Sequence['outputs.NdbScaleDatabaseTag']]:
+        """
+        allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        """
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="timeMachineId")
     def time_machine_id(self) -> pulumi.Output[str]:
+        """
+        time machine id of instance
+        """
         return pulumi.get(self, "time_machine_id")
 
     @property
     @pulumi.getter(name="timeMachines")
     def time_machines(self) -> pulumi.Output[Sequence['outputs.NdbScaleDatabaseTimeMachine']]:
+        """
+        Time Machine details of instance
+        """
         return pulumi.get(self, "time_machines")
 
     @property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> pulumi.Output[str]:
+        """
+        timezone on which instance is created xw
+        """
         return pulumi.get(self, "time_zone")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[str]:
+        """
+        type of database
+        """
         return pulumi.get(self, "type")
 

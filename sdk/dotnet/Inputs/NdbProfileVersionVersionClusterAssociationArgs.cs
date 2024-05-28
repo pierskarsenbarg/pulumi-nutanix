@@ -19,6 +19,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("dateModified")]
         public Input<string>? DateModified { get; set; }
 
+        /// <summary>
+        /// cluster on which profile created
+        /// </summary>
         [Input("nxClusterId")]
         public Input<string>? NxClusterId { get; set; }
 
@@ -39,6 +42,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _properties = value;
         }
 
+        /// <summary>
+        /// status of profile
+        /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 

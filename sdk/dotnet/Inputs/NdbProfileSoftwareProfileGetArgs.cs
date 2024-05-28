@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("availableClusterIds")]
         private InputList<string>? _availableClusterIds;
+
+        /// <summary>
+        /// specify Nutanix clusters where this profile is available.
+        /// </summary>
         public InputList<string> AvailableClusterIds
         {
             get => _availableClusterIds ?? (_availableClusterIds = new InputList<string>());
@@ -23,12 +27,24 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("postgresDatabases")]
         private InputList<Inputs.NdbProfileSoftwareProfilePostgresDatabaseGetArgs>? _postgresDatabases;
+
+        /// <summary>
+        /// Software profile info about postgres database.
+        /// * `postgres_database.source_dbserver_id`: source dbserver id where postgress software will be installed.
+        /// * `postgres_database.base_profile_version_name`: name for the software profile version.
+        /// * `postgres_database.base_profile_version_description`: description for the software profile version.
+        /// * `postgres_database.os_notes`: a note to provide additional information about the operating system
+        /// * `postgres_database.db_software_notes`: a note to provide additional information about the database software.
+        /// </summary>
         public InputList<Inputs.NdbProfileSoftwareProfilePostgresDatabaseGetArgs> PostgresDatabases
         {
             get => _postgresDatabases ?? (_postgresDatabases = new InputList<Inputs.NdbProfileSoftwareProfilePostgresDatabaseGetArgs>());
             set => _postgresDatabases = value;
         }
 
+        /// <summary>
+        /// Topology of software profile. Allowed values are "cluster" and "single"
+        /// </summary>
         [Input("topology", required: true)]
         public Input<string> Topology { get; set; } = null!;
 

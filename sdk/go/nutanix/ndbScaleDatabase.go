@@ -12,41 +12,98 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a resource to scale the database instance based on the input parameters.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewNdbDatabaseScale(ctx, "scale", &nutanix.NdbDatabaseScaleArgs{
+//				ApplicationType: pulumi.String("{{ Application Type }}"),
+//				DataStorageSize: pulumi.Int(1),
+//				DatabaseUuid:    pulumi.String("{{ database_id }}"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type NdbScaleDatabase struct {
 	pulumi.CustomResourceState
 
-	ApplicationType          pulumi.StringOutput                       `pulumi:"applicationType"`
-	Clone                    pulumi.BoolOutput                         `pulumi:"clone"`
-	DataStorageSize          pulumi.IntOutput                          `pulumi:"dataStorageSize"`
-	DatabaseClusterType      pulumi.StringOutput                       `pulumi:"databaseClusterType"`
-	DatabaseInstanceId       pulumi.StringOutput                       `pulumi:"databaseInstanceId"`
-	DatabaseName             pulumi.StringOutput                       `pulumi:"databaseName"`
-	DatabaseNodes            NdbScaleDatabaseDatabaseNodeArrayOutput   `pulumi:"databaseNodes"`
-	DatabaseUuid             pulumi.StringOutput                       `pulumi:"databaseUuid"`
-	Databasetype             pulumi.StringOutput                       `pulumi:"databasetype"`
-	DateCreated              pulumi.StringOutput                       `pulumi:"dateCreated"`
-	DateModified             pulumi.StringOutput                       `pulumi:"dateModified"`
-	DbserverLogicalCluster   pulumi.StringMapOutput                    `pulumi:"dbserverLogicalCluster"`
-	DbserverLogicalClusterId pulumi.StringOutput                       `pulumi:"dbserverLogicalClusterId"`
-	Description              pulumi.StringOutput                       `pulumi:"description"`
-	Infos                    NdbScaleDatabaseInfoArrayOutput           `pulumi:"infos"`
-	LcmConfigs               NdbScaleDatabaseLcmConfigArrayOutput      `pulumi:"lcmConfigs"`
-	LinkedDatabases          NdbScaleDatabaseLinkedDatabaseArrayOutput `pulumi:"linkedDatabases"`
-	Metric                   pulumi.StringMapOutput                    `pulumi:"metric"`
-	Name                     pulumi.StringOutput                       `pulumi:"name"`
-	ParentDatabaseId         pulumi.StringOutput                       `pulumi:"parentDatabaseId"`
-	ParentSourceDatabaseId   pulumi.StringOutput                       `pulumi:"parentSourceDatabaseId"`
-	PostScriptCmd            pulumi.StringPtrOutput                    `pulumi:"postScriptCmd"`
-	PreScriptCmd             pulumi.StringPtrOutput                    `pulumi:"preScriptCmd"`
-	// List of all the properties
-	Properties    NdbScaleDatabasePropertyArrayOutput    `pulumi:"properties"`
-	ScaleCount    pulumi.IntPtrOutput                    `pulumi:"scaleCount"`
-	Status        pulumi.StringOutput                    `pulumi:"status"`
-	Tags          NdbScaleDatabaseTagArrayOutput         `pulumi:"tags"`
-	TimeMachineId pulumi.StringOutput                    `pulumi:"timeMachineId"`
-	TimeMachines  NdbScaleDatabaseTimeMachineArrayOutput `pulumi:"timeMachines"`
-	TimeZone      pulumi.StringOutput                    `pulumi:"timeZone"`
-	Type          pulumi.StringOutput                    `pulumi:"type"`
+	// type of instance. eg: postgres_database
+	ApplicationType pulumi.StringOutput `pulumi:"applicationType"`
+	// whether instance is cloned or not
+	Clone pulumi.BoolOutput `pulumi:"clone"`
+	// data area (in GiB) to be added to the existing database.
+	DataStorageSize pulumi.IntOutput `pulumi:"dataStorageSize"`
+	// database cluster type
+	DatabaseClusterType pulumi.StringOutput `pulumi:"databaseClusterType"`
+	DatabaseInstanceId  pulumi.StringOutput `pulumi:"databaseInstanceId"`
+	// name of database
+	DatabaseName pulumi.StringOutput `pulumi:"databaseName"`
+	// database nodes associated with database instance
+	DatabaseNodes NdbScaleDatabaseDatabaseNodeArrayOutput `pulumi:"databaseNodes"`
+	// Database id
+	DatabaseUuid pulumi.StringOutput `pulumi:"databaseUuid"`
+	// type of database
+	Databasetype pulumi.StringOutput `pulumi:"databasetype"`
+	// date created for db instance
+	DateCreated pulumi.StringOutput `pulumi:"dateCreated"`
+	// date modified for instance
+	DateModified pulumi.StringOutput `pulumi:"dateModified"`
+	// dbserver logical cluster
+	DbserverLogicalCluster pulumi.StringMapOutput `pulumi:"dbserverLogicalCluster"`
+	// dbserver logical cluster id
+	DbserverLogicalClusterId pulumi.StringOutput `pulumi:"dbserverLogicalClusterId"`
+	// description of database instance
+	Description pulumi.StringOutput `pulumi:"description"`
+	// info of instance
+	Infos NdbScaleDatabaseInfoArrayOutput `pulumi:"infos"`
+	// LCM config of instance
+	LcmConfigs NdbScaleDatabaseLcmConfigArrayOutput `pulumi:"lcmConfigs"`
+	// linked databases within database instance
+	LinkedDatabases NdbScaleDatabaseLinkedDatabaseArrayOutput `pulumi:"linkedDatabases"`
+	// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+	Metric pulumi.StringMapOutput `pulumi:"metric"`
+	// Name of database instance
+	Name pulumi.StringOutput `pulumi:"name"`
+	// parent database id
+	ParentDatabaseId       pulumi.StringOutput `pulumi:"parentDatabaseId"`
+	ParentSourceDatabaseId pulumi.StringOutput `pulumi:"parentSourceDatabaseId"`
+	// post script command
+	PostScriptCmd pulumi.StringPtrOutput `pulumi:"postScriptCmd"`
+	// pre script command
+	PreScriptCmd pulumi.StringPtrOutput `pulumi:"preScriptCmd"`
+	// properties of database created
+	Properties NdbScaleDatabasePropertyArrayOutput `pulumi:"properties"`
+	// scale count helps to scale the same instance with same config
+	ScaleCount pulumi.IntPtrOutput `pulumi:"scaleCount"`
+	// status of instance
+	Status pulumi.StringOutput `pulumi:"status"`
+	// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+	Tags NdbScaleDatabaseTagArrayOutput `pulumi:"tags"`
+	// time machine id of instance
+	TimeMachineId pulumi.StringOutput `pulumi:"timeMachineId"`
+	// Time Machine details of instance
+	TimeMachines NdbScaleDatabaseTimeMachineArrayOutput `pulumi:"timeMachines"`
+	// timezone on which instance is created xw
+	TimeZone pulumi.StringOutput `pulumi:"timeZone"`
+	// type of database
+	Type pulumi.StringOutput `pulumi:"type"`
 }
 
 // NewNdbScaleDatabase registers a new resource with the given unique name, arguments, and options.
@@ -88,73 +145,129 @@ func GetNdbScaleDatabase(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NdbScaleDatabase resources.
 type ndbScaleDatabaseState struct {
-	ApplicationType          *string                          `pulumi:"applicationType"`
-	Clone                    *bool                            `pulumi:"clone"`
-	DataStorageSize          *int                             `pulumi:"dataStorageSize"`
-	DatabaseClusterType      *string                          `pulumi:"databaseClusterType"`
-	DatabaseInstanceId       *string                          `pulumi:"databaseInstanceId"`
-	DatabaseName             *string                          `pulumi:"databaseName"`
-	DatabaseNodes            []NdbScaleDatabaseDatabaseNode   `pulumi:"databaseNodes"`
-	DatabaseUuid             *string                          `pulumi:"databaseUuid"`
-	Databasetype             *string                          `pulumi:"databasetype"`
-	DateCreated              *string                          `pulumi:"dateCreated"`
-	DateModified             *string                          `pulumi:"dateModified"`
-	DbserverLogicalCluster   map[string]string                `pulumi:"dbserverLogicalCluster"`
-	DbserverLogicalClusterId *string                          `pulumi:"dbserverLogicalClusterId"`
-	Description              *string                          `pulumi:"description"`
-	Infos                    []NdbScaleDatabaseInfo           `pulumi:"infos"`
-	LcmConfigs               []NdbScaleDatabaseLcmConfig      `pulumi:"lcmConfigs"`
-	LinkedDatabases          []NdbScaleDatabaseLinkedDatabase `pulumi:"linkedDatabases"`
-	Metric                   map[string]string                `pulumi:"metric"`
-	Name                     *string                          `pulumi:"name"`
-	ParentDatabaseId         *string                          `pulumi:"parentDatabaseId"`
-	ParentSourceDatabaseId   *string                          `pulumi:"parentSourceDatabaseId"`
-	PostScriptCmd            *string                          `pulumi:"postScriptCmd"`
-	PreScriptCmd             *string                          `pulumi:"preScriptCmd"`
-	// List of all the properties
-	Properties    []NdbScaleDatabaseProperty    `pulumi:"properties"`
-	ScaleCount    *int                          `pulumi:"scaleCount"`
-	Status        *string                       `pulumi:"status"`
-	Tags          []NdbScaleDatabaseTag         `pulumi:"tags"`
-	TimeMachineId *string                       `pulumi:"timeMachineId"`
-	TimeMachines  []NdbScaleDatabaseTimeMachine `pulumi:"timeMachines"`
-	TimeZone      *string                       `pulumi:"timeZone"`
-	Type          *string                       `pulumi:"type"`
+	// type of instance. eg: postgres_database
+	ApplicationType *string `pulumi:"applicationType"`
+	// whether instance is cloned or not
+	Clone *bool `pulumi:"clone"`
+	// data area (in GiB) to be added to the existing database.
+	DataStorageSize *int `pulumi:"dataStorageSize"`
+	// database cluster type
+	DatabaseClusterType *string `pulumi:"databaseClusterType"`
+	DatabaseInstanceId  *string `pulumi:"databaseInstanceId"`
+	// name of database
+	DatabaseName *string `pulumi:"databaseName"`
+	// database nodes associated with database instance
+	DatabaseNodes []NdbScaleDatabaseDatabaseNode `pulumi:"databaseNodes"`
+	// Database id
+	DatabaseUuid *string `pulumi:"databaseUuid"`
+	// type of database
+	Databasetype *string `pulumi:"databasetype"`
+	// date created for db instance
+	DateCreated *string `pulumi:"dateCreated"`
+	// date modified for instance
+	DateModified *string `pulumi:"dateModified"`
+	// dbserver logical cluster
+	DbserverLogicalCluster map[string]string `pulumi:"dbserverLogicalCluster"`
+	// dbserver logical cluster id
+	DbserverLogicalClusterId *string `pulumi:"dbserverLogicalClusterId"`
+	// description of database instance
+	Description *string `pulumi:"description"`
+	// info of instance
+	Infos []NdbScaleDatabaseInfo `pulumi:"infos"`
+	// LCM config of instance
+	LcmConfigs []NdbScaleDatabaseLcmConfig `pulumi:"lcmConfigs"`
+	// linked databases within database instance
+	LinkedDatabases []NdbScaleDatabaseLinkedDatabase `pulumi:"linkedDatabases"`
+	// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+	Metric map[string]string `pulumi:"metric"`
+	// Name of database instance
+	Name *string `pulumi:"name"`
+	// parent database id
+	ParentDatabaseId       *string `pulumi:"parentDatabaseId"`
+	ParentSourceDatabaseId *string `pulumi:"parentSourceDatabaseId"`
+	// post script command
+	PostScriptCmd *string `pulumi:"postScriptCmd"`
+	// pre script command
+	PreScriptCmd *string `pulumi:"preScriptCmd"`
+	// properties of database created
+	Properties []NdbScaleDatabaseProperty `pulumi:"properties"`
+	// scale count helps to scale the same instance with same config
+	ScaleCount *int `pulumi:"scaleCount"`
+	// status of instance
+	Status *string `pulumi:"status"`
+	// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+	Tags []NdbScaleDatabaseTag `pulumi:"tags"`
+	// time machine id of instance
+	TimeMachineId *string `pulumi:"timeMachineId"`
+	// Time Machine details of instance
+	TimeMachines []NdbScaleDatabaseTimeMachine `pulumi:"timeMachines"`
+	// timezone on which instance is created xw
+	TimeZone *string `pulumi:"timeZone"`
+	// type of database
+	Type *string `pulumi:"type"`
 }
 
 type NdbScaleDatabaseState struct {
-	ApplicationType          pulumi.StringPtrInput
-	Clone                    pulumi.BoolPtrInput
-	DataStorageSize          pulumi.IntPtrInput
-	DatabaseClusterType      pulumi.StringPtrInput
-	DatabaseInstanceId       pulumi.StringPtrInput
-	DatabaseName             pulumi.StringPtrInput
-	DatabaseNodes            NdbScaleDatabaseDatabaseNodeArrayInput
-	DatabaseUuid             pulumi.StringPtrInput
-	Databasetype             pulumi.StringPtrInput
-	DateCreated              pulumi.StringPtrInput
-	DateModified             pulumi.StringPtrInput
-	DbserverLogicalCluster   pulumi.StringMapInput
+	// type of instance. eg: postgres_database
+	ApplicationType pulumi.StringPtrInput
+	// whether instance is cloned or not
+	Clone pulumi.BoolPtrInput
+	// data area (in GiB) to be added to the existing database.
+	DataStorageSize pulumi.IntPtrInput
+	// database cluster type
+	DatabaseClusterType pulumi.StringPtrInput
+	DatabaseInstanceId  pulumi.StringPtrInput
+	// name of database
+	DatabaseName pulumi.StringPtrInput
+	// database nodes associated with database instance
+	DatabaseNodes NdbScaleDatabaseDatabaseNodeArrayInput
+	// Database id
+	DatabaseUuid pulumi.StringPtrInput
+	// type of database
+	Databasetype pulumi.StringPtrInput
+	// date created for db instance
+	DateCreated pulumi.StringPtrInput
+	// date modified for instance
+	DateModified pulumi.StringPtrInput
+	// dbserver logical cluster
+	DbserverLogicalCluster pulumi.StringMapInput
+	// dbserver logical cluster id
 	DbserverLogicalClusterId pulumi.StringPtrInput
-	Description              pulumi.StringPtrInput
-	Infos                    NdbScaleDatabaseInfoArrayInput
-	LcmConfigs               NdbScaleDatabaseLcmConfigArrayInput
-	LinkedDatabases          NdbScaleDatabaseLinkedDatabaseArrayInput
-	Metric                   pulumi.StringMapInput
-	Name                     pulumi.StringPtrInput
-	ParentDatabaseId         pulumi.StringPtrInput
-	ParentSourceDatabaseId   pulumi.StringPtrInput
-	PostScriptCmd            pulumi.StringPtrInput
-	PreScriptCmd             pulumi.StringPtrInput
-	// List of all the properties
-	Properties    NdbScaleDatabasePropertyArrayInput
-	ScaleCount    pulumi.IntPtrInput
-	Status        pulumi.StringPtrInput
-	Tags          NdbScaleDatabaseTagArrayInput
+	// description of database instance
+	Description pulumi.StringPtrInput
+	// info of instance
+	Infos NdbScaleDatabaseInfoArrayInput
+	// LCM config of instance
+	LcmConfigs NdbScaleDatabaseLcmConfigArrayInput
+	// linked databases within database instance
+	LinkedDatabases NdbScaleDatabaseLinkedDatabaseArrayInput
+	// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+	Metric pulumi.StringMapInput
+	// Name of database instance
+	Name pulumi.StringPtrInput
+	// parent database id
+	ParentDatabaseId       pulumi.StringPtrInput
+	ParentSourceDatabaseId pulumi.StringPtrInput
+	// post script command
+	PostScriptCmd pulumi.StringPtrInput
+	// pre script command
+	PreScriptCmd pulumi.StringPtrInput
+	// properties of database created
+	Properties NdbScaleDatabasePropertyArrayInput
+	// scale count helps to scale the same instance with same config
+	ScaleCount pulumi.IntPtrInput
+	// status of instance
+	Status pulumi.StringPtrInput
+	// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+	Tags NdbScaleDatabaseTagArrayInput
+	// time machine id of instance
 	TimeMachineId pulumi.StringPtrInput
-	TimeMachines  NdbScaleDatabaseTimeMachineArrayInput
-	TimeZone      pulumi.StringPtrInput
-	Type          pulumi.StringPtrInput
+	// Time Machine details of instance
+	TimeMachines NdbScaleDatabaseTimeMachineArrayInput
+	// timezone on which instance is created xw
+	TimeZone pulumi.StringPtrInput
+	// type of database
+	Type pulumi.StringPtrInput
 }
 
 func (NdbScaleDatabaseState) ElementType() reflect.Type {
@@ -162,24 +275,38 @@ func (NdbScaleDatabaseState) ElementType() reflect.Type {
 }
 
 type ndbScaleDatabaseArgs struct {
-	ApplicationType string                `pulumi:"applicationType"`
-	DataStorageSize int                   `pulumi:"dataStorageSize"`
-	DatabaseUuid    string                `pulumi:"databaseUuid"`
-	PostScriptCmd   *string               `pulumi:"postScriptCmd"`
-	PreScriptCmd    *string               `pulumi:"preScriptCmd"`
-	ScaleCount      *int                  `pulumi:"scaleCount"`
-	Tags            []NdbScaleDatabaseTag `pulumi:"tags"`
+	// type of instance. eg: postgres_database
+	ApplicationType string `pulumi:"applicationType"`
+	// data area (in GiB) to be added to the existing database.
+	DataStorageSize int `pulumi:"dataStorageSize"`
+	// Database id
+	DatabaseUuid string `pulumi:"databaseUuid"`
+	// post script command
+	PostScriptCmd *string `pulumi:"postScriptCmd"`
+	// pre script command
+	PreScriptCmd *string `pulumi:"preScriptCmd"`
+	// scale count helps to scale the same instance with same config
+	ScaleCount *int `pulumi:"scaleCount"`
+	// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+	Tags []NdbScaleDatabaseTag `pulumi:"tags"`
 }
 
 // The set of arguments for constructing a NdbScaleDatabase resource.
 type NdbScaleDatabaseArgs struct {
+	// type of instance. eg: postgres_database
 	ApplicationType pulumi.StringInput
+	// data area (in GiB) to be added to the existing database.
 	DataStorageSize pulumi.IntInput
-	DatabaseUuid    pulumi.StringInput
-	PostScriptCmd   pulumi.StringPtrInput
-	PreScriptCmd    pulumi.StringPtrInput
-	ScaleCount      pulumi.IntPtrInput
-	Tags            NdbScaleDatabaseTagArrayInput
+	// Database id
+	DatabaseUuid pulumi.StringInput
+	// post script command
+	PostScriptCmd pulumi.StringPtrInput
+	// pre script command
+	PreScriptCmd pulumi.StringPtrInput
+	// scale count helps to scale the same instance with same config
+	ScaleCount pulumi.IntPtrInput
+	// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+	Tags NdbScaleDatabaseTagArrayInput
 }
 
 func (NdbScaleDatabaseArgs) ElementType() reflect.Type {
@@ -269,18 +396,22 @@ func (o NdbScaleDatabaseOutput) ToNdbScaleDatabaseOutputWithContext(ctx context.
 	return o
 }
 
+// type of instance. eg: postgres_database
 func (o NdbScaleDatabaseOutput) ApplicationType() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringOutput { return v.ApplicationType }).(pulumi.StringOutput)
 }
 
+// whether instance is cloned or not
 func (o NdbScaleDatabaseOutput) Clone() pulumi.BoolOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.BoolOutput { return v.Clone }).(pulumi.BoolOutput)
 }
 
+// data area (in GiB) to be added to the existing database.
 func (o NdbScaleDatabaseOutput) DataStorageSize() pulumi.IntOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.IntOutput { return v.DataStorageSize }).(pulumi.IntOutput)
 }
 
+// database cluster type
 func (o NdbScaleDatabaseOutput) DatabaseClusterType() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringOutput { return v.DatabaseClusterType }).(pulumi.StringOutput)
 }
@@ -289,62 +420,77 @@ func (o NdbScaleDatabaseOutput) DatabaseInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringOutput { return v.DatabaseInstanceId }).(pulumi.StringOutput)
 }
 
+// name of database
 func (o NdbScaleDatabaseOutput) DatabaseName() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringOutput { return v.DatabaseName }).(pulumi.StringOutput)
 }
 
+// database nodes associated with database instance
 func (o NdbScaleDatabaseOutput) DatabaseNodes() NdbScaleDatabaseDatabaseNodeArrayOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) NdbScaleDatabaseDatabaseNodeArrayOutput { return v.DatabaseNodes }).(NdbScaleDatabaseDatabaseNodeArrayOutput)
 }
 
+// Database id
 func (o NdbScaleDatabaseOutput) DatabaseUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringOutput { return v.DatabaseUuid }).(pulumi.StringOutput)
 }
 
+// type of database
 func (o NdbScaleDatabaseOutput) Databasetype() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringOutput { return v.Databasetype }).(pulumi.StringOutput)
 }
 
+// date created for db instance
 func (o NdbScaleDatabaseOutput) DateCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringOutput { return v.DateCreated }).(pulumi.StringOutput)
 }
 
+// date modified for instance
 func (o NdbScaleDatabaseOutput) DateModified() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringOutput { return v.DateModified }).(pulumi.StringOutput)
 }
 
+// dbserver logical cluster
 func (o NdbScaleDatabaseOutput) DbserverLogicalCluster() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringMapOutput { return v.DbserverLogicalCluster }).(pulumi.StringMapOutput)
 }
 
+// dbserver logical cluster id
 func (o NdbScaleDatabaseOutput) DbserverLogicalClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringOutput { return v.DbserverLogicalClusterId }).(pulumi.StringOutput)
 }
 
+// description of database instance
 func (o NdbScaleDatabaseOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
+// info of instance
 func (o NdbScaleDatabaseOutput) Infos() NdbScaleDatabaseInfoArrayOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) NdbScaleDatabaseInfoArrayOutput { return v.Infos }).(NdbScaleDatabaseInfoArrayOutput)
 }
 
+// LCM config of instance
 func (o NdbScaleDatabaseOutput) LcmConfigs() NdbScaleDatabaseLcmConfigArrayOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) NdbScaleDatabaseLcmConfigArrayOutput { return v.LcmConfigs }).(NdbScaleDatabaseLcmConfigArrayOutput)
 }
 
+// linked databases within database instance
 func (o NdbScaleDatabaseOutput) LinkedDatabases() NdbScaleDatabaseLinkedDatabaseArrayOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) NdbScaleDatabaseLinkedDatabaseArrayOutput { return v.LinkedDatabases }).(NdbScaleDatabaseLinkedDatabaseArrayOutput)
 }
 
+// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
 func (o NdbScaleDatabaseOutput) Metric() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringMapOutput { return v.Metric }).(pulumi.StringMapOutput)
 }
 
+// Name of database instance
 func (o NdbScaleDatabaseOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// parent database id
 func (o NdbScaleDatabaseOutput) ParentDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringOutput { return v.ParentDatabaseId }).(pulumi.StringOutput)
 }
@@ -353,43 +499,52 @@ func (o NdbScaleDatabaseOutput) ParentSourceDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringOutput { return v.ParentSourceDatabaseId }).(pulumi.StringOutput)
 }
 
+// post script command
 func (o NdbScaleDatabaseOutput) PostScriptCmd() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringPtrOutput { return v.PostScriptCmd }).(pulumi.StringPtrOutput)
 }
 
+// pre script command
 func (o NdbScaleDatabaseOutput) PreScriptCmd() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringPtrOutput { return v.PreScriptCmd }).(pulumi.StringPtrOutput)
 }
 
-// List of all the properties
+// properties of database created
 func (o NdbScaleDatabaseOutput) Properties() NdbScaleDatabasePropertyArrayOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) NdbScaleDatabasePropertyArrayOutput { return v.Properties }).(NdbScaleDatabasePropertyArrayOutput)
 }
 
+// scale count helps to scale the same instance with same config
 func (o NdbScaleDatabaseOutput) ScaleCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.IntPtrOutput { return v.ScaleCount }).(pulumi.IntPtrOutput)
 }
 
+// status of instance
 func (o NdbScaleDatabaseOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
+// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
 func (o NdbScaleDatabaseOutput) Tags() NdbScaleDatabaseTagArrayOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) NdbScaleDatabaseTagArrayOutput { return v.Tags }).(NdbScaleDatabaseTagArrayOutput)
 }
 
+// time machine id of instance
 func (o NdbScaleDatabaseOutput) TimeMachineId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringOutput { return v.TimeMachineId }).(pulumi.StringOutput)
 }
 
+// Time Machine details of instance
 func (o NdbScaleDatabaseOutput) TimeMachines() NdbScaleDatabaseTimeMachineArrayOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) NdbScaleDatabaseTimeMachineArrayOutput { return v.TimeMachines }).(NdbScaleDatabaseTimeMachineArrayOutput)
 }
 
+// timezone on which instance is created xw
 func (o NdbScaleDatabaseOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringOutput { return v.TimeZone }).(pulumi.StringOutput)
 }
 
+// type of database
 func (o NdbScaleDatabaseOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbScaleDatabase) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

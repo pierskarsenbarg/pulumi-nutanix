@@ -14,8 +14,28 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbProfileNetworkProfile
     {
+        /// <summary>
+        /// Postgres Info to create network profile
+        /// 
+        /// * `postgres_database.single_instance`: (Optional) Info for postgres database to create single instance network profile.
+        /// * `postgres_database.single_instance.vlan_name`: (Required) specify the VLAN to provide the IP address used to connect the database from the public network.
+        /// * `postgres_database.single_instance.enable_ip_address_selection`: (Optional) If Advanced Network Segmentation is enabled, then this vLAN needs to be a static vLAN and needs to be true.
+        /// 
+        /// * `postgres_database.ha_instance`: (Optional) Info for craeting Network profile for HA instance
+        /// * `postgres_database.ha_instance.vlan_name`: (Required) specify the VLANs for network
+        /// * `postgres_database.ha_instance.cluster_name`: (Required) specify the cluster name associated with given VLANs
+        /// * `postgres_database.ha_instance.cluster_id`: (Optional) specify the cluster ids associated with given VLANs
+        /// * `postgres_database.ha_instance.num_of_clusters`: (Required) number of cluster attached to network profile
+        /// </summary>
         public readonly ImmutableArray<Outputs.NdbProfileNetworkProfilePostgresDatabase> PostgresDatabases;
+        /// <summary>
+        /// Topology supported for network profile. Allowed values are "cluster" and "single"
+        /// </summary>
         public readonly string Topology;
+        /// <summary>
+        /// cluster associated with VLAN. this is used with Single instance for postgres database.
+        /// * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
+        /// </summary>
         public readonly ImmutableArray<Outputs.NdbProfileNetworkProfileVersionClusterAssociation> VersionClusterAssociations;
 
         [OutputConstructor]

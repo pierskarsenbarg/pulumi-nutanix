@@ -9741,11 +9741,17 @@ func (o KarbonClusterWorkerNodePoolNodeArrayOutput) Index(i pulumi.IntInput) Kar
 }
 
 type KarbonWorkerNodepoolAhvConfig struct {
-	Cpu                     *int    `pulumi:"cpu"`
-	DiskMib                 *int    `pulumi:"diskMib"`
-	IscsiNetworkUuid        *string `pulumi:"iscsiNetworkUuid"`
-	MemoryMib               *int    `pulumi:"memoryMib"`
-	NetworkUuid             string  `pulumi:"networkUuid"`
+	// - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+	Cpu *int `pulumi:"cpu"`
+	// - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+	DiskMib *int `pulumi:"diskMib"`
+	// VM network UUID for isolating iscsi data traffic.
+	IscsiNetworkUuid *string `pulumi:"iscsiNetworkUuid"`
+	// - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+	MemoryMib *int `pulumi:"memoryMib"`
+	// - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+	NetworkUuid string `pulumi:"networkUuid"`
+	// - (Optional) The unique universal identifier (UUID) of the Prism Element
 	PrismElementClusterUuid *string `pulumi:"prismElementClusterUuid"`
 }
 
@@ -9761,11 +9767,17 @@ type KarbonWorkerNodepoolAhvConfigInput interface {
 }
 
 type KarbonWorkerNodepoolAhvConfigArgs struct {
-	Cpu                     pulumi.IntPtrInput    `pulumi:"cpu"`
-	DiskMib                 pulumi.IntPtrInput    `pulumi:"diskMib"`
-	IscsiNetworkUuid        pulumi.StringPtrInput `pulumi:"iscsiNetworkUuid"`
-	MemoryMib               pulumi.IntPtrInput    `pulumi:"memoryMib"`
-	NetworkUuid             pulumi.StringInput    `pulumi:"networkUuid"`
+	// - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+	Cpu pulumi.IntPtrInput `pulumi:"cpu"`
+	// - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+	DiskMib pulumi.IntPtrInput `pulumi:"diskMib"`
+	// VM network UUID for isolating iscsi data traffic.
+	IscsiNetworkUuid pulumi.StringPtrInput `pulumi:"iscsiNetworkUuid"`
+	// - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+	MemoryMib pulumi.IntPtrInput `pulumi:"memoryMib"`
+	// - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+	NetworkUuid pulumi.StringInput `pulumi:"networkUuid"`
+	// - (Optional) The unique universal identifier (UUID) of the Prism Element
 	PrismElementClusterUuid pulumi.StringPtrInput `pulumi:"prismElementClusterUuid"`
 }
 
@@ -9846,26 +9858,32 @@ func (o KarbonWorkerNodepoolAhvConfigOutput) ToKarbonWorkerNodepoolAhvConfigPtrO
 	}).(KarbonWorkerNodepoolAhvConfigPtrOutput)
 }
 
+// - (Required) The number of VCPUs allocated for each VM on the PE cluster.
 func (o KarbonWorkerNodepoolAhvConfigOutput) Cpu() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v KarbonWorkerNodepoolAhvConfig) *int { return v.Cpu }).(pulumi.IntPtrOutput)
 }
 
+// - (Optional) Size of local storage for each VM on the PE cluster in MiB.
 func (o KarbonWorkerNodepoolAhvConfigOutput) DiskMib() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v KarbonWorkerNodepoolAhvConfig) *int { return v.DiskMib }).(pulumi.IntPtrOutput)
 }
 
+// VM network UUID for isolating iscsi data traffic.
 func (o KarbonWorkerNodepoolAhvConfigOutput) IscsiNetworkUuid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KarbonWorkerNodepoolAhvConfig) *string { return v.IscsiNetworkUuid }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Memory allocated for each VM on the PE cluster in MiB.
 func (o KarbonWorkerNodepoolAhvConfigOutput) MemoryMib() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v KarbonWorkerNodepoolAhvConfig) *int { return v.MemoryMib }).(pulumi.IntPtrOutput)
 }
 
+// - (Required) The UUID of the network for the VMs deployed with this resource configuration.
 func (o KarbonWorkerNodepoolAhvConfigOutput) NetworkUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v KarbonWorkerNodepoolAhvConfig) string { return v.NetworkUuid }).(pulumi.StringOutput)
 }
 
+// - (Optional) The unique universal identifier (UUID) of the Prism Element
 func (o KarbonWorkerNodepoolAhvConfigOutput) PrismElementClusterUuid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KarbonWorkerNodepoolAhvConfig) *string { return v.PrismElementClusterUuid }).(pulumi.StringPtrOutput)
 }
@@ -9894,6 +9912,7 @@ func (o KarbonWorkerNodepoolAhvConfigPtrOutput) Elem() KarbonWorkerNodepoolAhvCo
 	}).(KarbonWorkerNodepoolAhvConfigOutput)
 }
 
+// - (Required) The number of VCPUs allocated for each VM on the PE cluster.
 func (o KarbonWorkerNodepoolAhvConfigPtrOutput) Cpu() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *KarbonWorkerNodepoolAhvConfig) *int {
 		if v == nil {
@@ -9903,6 +9922,7 @@ func (o KarbonWorkerNodepoolAhvConfigPtrOutput) Cpu() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
+// - (Optional) Size of local storage for each VM on the PE cluster in MiB.
 func (o KarbonWorkerNodepoolAhvConfigPtrOutput) DiskMib() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *KarbonWorkerNodepoolAhvConfig) *int {
 		if v == nil {
@@ -9912,6 +9932,7 @@ func (o KarbonWorkerNodepoolAhvConfigPtrOutput) DiskMib() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
+// VM network UUID for isolating iscsi data traffic.
 func (o KarbonWorkerNodepoolAhvConfigPtrOutput) IscsiNetworkUuid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KarbonWorkerNodepoolAhvConfig) *string {
 		if v == nil {
@@ -9921,6 +9942,7 @@ func (o KarbonWorkerNodepoolAhvConfigPtrOutput) IscsiNetworkUuid() pulumi.String
 	}).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Memory allocated for each VM on the PE cluster in MiB.
 func (o KarbonWorkerNodepoolAhvConfigPtrOutput) MemoryMib() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *KarbonWorkerNodepoolAhvConfig) *int {
 		if v == nil {
@@ -9930,6 +9952,7 @@ func (o KarbonWorkerNodepoolAhvConfigPtrOutput) MemoryMib() pulumi.IntPtrOutput 
 	}).(pulumi.IntPtrOutput)
 }
 
+// - (Required) The UUID of the network for the VMs deployed with this resource configuration.
 func (o KarbonWorkerNodepoolAhvConfigPtrOutput) NetworkUuid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KarbonWorkerNodepoolAhvConfig) *string {
 		if v == nil {
@@ -9939,6 +9962,7 @@ func (o KarbonWorkerNodepoolAhvConfigPtrOutput) NetworkUuid() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) The unique universal identifier (UUID) of the Prism Element
 func (o KarbonWorkerNodepoolAhvConfigPtrOutput) PrismElementClusterUuid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KarbonWorkerNodepoolAhvConfig) *string {
 		if v == nil {
@@ -9949,7 +9973,9 @@ func (o KarbonWorkerNodepoolAhvConfigPtrOutput) PrismElementClusterUuid() pulumi
 }
 
 type KarbonWorkerNodepoolNode struct {
-	Hostname    *string `pulumi:"hostname"`
+	// hostname of node
+	Hostname *string `pulumi:"hostname"`
+	// ipv4 address of node
 	Ipv4Address *string `pulumi:"ipv4Address"`
 }
 
@@ -9965,7 +9991,9 @@ type KarbonWorkerNodepoolNodeInput interface {
 }
 
 type KarbonWorkerNodepoolNodeArgs struct {
-	Hostname    pulumi.StringPtrInput `pulumi:"hostname"`
+	// hostname of node
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
+	// ipv4 address of node
 	Ipv4Address pulumi.StringPtrInput `pulumi:"ipv4Address"`
 }
 
@@ -10020,10 +10048,12 @@ func (o KarbonWorkerNodepoolNodeOutput) ToKarbonWorkerNodepoolNodeOutputWithCont
 	return o
 }
 
+// hostname of node
 func (o KarbonWorkerNodepoolNodeOutput) Hostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KarbonWorkerNodepoolNode) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
+// ipv4 address of node
 func (o KarbonWorkerNodepoolNodeOutput) Ipv4Address() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v KarbonWorkerNodepoolNode) *string { return v.Ipv4Address }).(pulumi.StringPtrOutput)
 }
@@ -35259,8 +35289,13 @@ func (o NdbDbserverVmCredentialArrayOutput) Index(i pulumi.IntInput) NdbDbserver
 }
 
 type NdbDbserverVmMaintenanceTasks struct {
-	MaintenanceWindowId *string                             `pulumi:"maintenanceWindowId"`
-	Tasks               []NdbDbserverVmMaintenanceTasksTask `pulumi:"tasks"`
+	// Associate an existing maintenance window id. NDB starts OS patching or database patching as per the schedule defined in the maintenance window.
+	MaintenanceWindowId *string `pulumi:"maintenanceWindowId"`
+	// Tasks for the maintenance.
+	// * `tasks.task_type`: use this option if you want NDB to perform database patching or OS patching automatically. Supports [ OS_PATCHING, DB_PATCHING ].
+	// * `tasks.pre_command`: add pre (operating system and database patching) commands.
+	// * `tasks.post_command`:add post (operating system and database patching) commands.
+	Tasks []NdbDbserverVmMaintenanceTasksTask `pulumi:"tasks"`
 }
 
 // NdbDbserverVmMaintenanceTasksInput is an input type that accepts NdbDbserverVmMaintenanceTasksArgs and NdbDbserverVmMaintenanceTasksOutput values.
@@ -35275,8 +35310,13 @@ type NdbDbserverVmMaintenanceTasksInput interface {
 }
 
 type NdbDbserverVmMaintenanceTasksArgs struct {
-	MaintenanceWindowId pulumi.StringPtrInput                       `pulumi:"maintenanceWindowId"`
-	Tasks               NdbDbserverVmMaintenanceTasksTaskArrayInput `pulumi:"tasks"`
+	// Associate an existing maintenance window id. NDB starts OS patching or database patching as per the schedule defined in the maintenance window.
+	MaintenanceWindowId pulumi.StringPtrInput `pulumi:"maintenanceWindowId"`
+	// Tasks for the maintenance.
+	// * `tasks.task_type`: use this option if you want NDB to perform database patching or OS patching automatically. Supports [ OS_PATCHING, DB_PATCHING ].
+	// * `tasks.pre_command`: add pre (operating system and database patching) commands.
+	// * `tasks.post_command`:add post (operating system and database patching) commands.
+	Tasks NdbDbserverVmMaintenanceTasksTaskArrayInput `pulumi:"tasks"`
 }
 
 func (NdbDbserverVmMaintenanceTasksArgs) ElementType() reflect.Type {
@@ -35356,10 +35396,15 @@ func (o NdbDbserverVmMaintenanceTasksOutput) ToNdbDbserverVmMaintenanceTasksPtrO
 	}).(NdbDbserverVmMaintenanceTasksPtrOutput)
 }
 
+// Associate an existing maintenance window id. NDB starts OS patching or database patching as per the schedule defined in the maintenance window.
 func (o NdbDbserverVmMaintenanceTasksOutput) MaintenanceWindowId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDbserverVmMaintenanceTasks) *string { return v.MaintenanceWindowId }).(pulumi.StringPtrOutput)
 }
 
+// Tasks for the maintenance.
+// * `tasks.task_type`: use this option if you want NDB to perform database patching or OS patching automatically. Supports [ OS_PATCHING, DB_PATCHING ].
+// * `tasks.pre_command`: add pre (operating system and database patching) commands.
+// * `tasks.post_command`:add post (operating system and database patching) commands.
 func (o NdbDbserverVmMaintenanceTasksOutput) Tasks() NdbDbserverVmMaintenanceTasksTaskArrayOutput {
 	return o.ApplyT(func(v NdbDbserverVmMaintenanceTasks) []NdbDbserverVmMaintenanceTasksTask { return v.Tasks }).(NdbDbserverVmMaintenanceTasksTaskArrayOutput)
 }
@@ -35388,6 +35433,7 @@ func (o NdbDbserverVmMaintenanceTasksPtrOutput) Elem() NdbDbserverVmMaintenanceT
 	}).(NdbDbserverVmMaintenanceTasksOutput)
 }
 
+// Associate an existing maintenance window id. NDB starts OS patching or database patching as per the schedule defined in the maintenance window.
 func (o NdbDbserverVmMaintenanceTasksPtrOutput) MaintenanceWindowId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbDbserverVmMaintenanceTasks) *string {
 		if v == nil {
@@ -35397,6 +35443,10 @@ func (o NdbDbserverVmMaintenanceTasksPtrOutput) MaintenanceWindowId() pulumi.Str
 	}).(pulumi.StringPtrOutput)
 }
 
+// Tasks for the maintenance.
+// * `tasks.task_type`: use this option if you want NDB to perform database patching or OS patching automatically. Supports [ OS_PATCHING, DB_PATCHING ].
+// * `tasks.pre_command`: add pre (operating system and database patching) commands.
+// * `tasks.post_command`:add post (operating system and database patching) commands.
 func (o NdbDbserverVmMaintenanceTasksPtrOutput) Tasks() NdbDbserverVmMaintenanceTasksTaskArrayOutput {
 	return o.ApplyT(func(v *NdbDbserverVmMaintenanceTasks) []NdbDbserverVmMaintenanceTasksTask {
 		if v == nil {
@@ -35513,8 +35563,10 @@ func (o NdbDbserverVmMaintenanceTasksTaskArrayOutput) Index(i pulumi.IntInput) N
 }
 
 type NdbDbserverVmPostgresDatabase struct {
+	// use SSH public keys to access the database server VM.
 	ClientPublicKey *string `pulumi:"clientPublicKey"`
-	VmName          string  `pulumi:"vmName"`
+	// name for the database server VM.
+	VmName string `pulumi:"vmName"`
 }
 
 // NdbDbserverVmPostgresDatabaseInput is an input type that accepts NdbDbserverVmPostgresDatabaseArgs and NdbDbserverVmPostgresDatabaseOutput values.
@@ -35529,8 +35581,10 @@ type NdbDbserverVmPostgresDatabaseInput interface {
 }
 
 type NdbDbserverVmPostgresDatabaseArgs struct {
+	// use SSH public keys to access the database server VM.
 	ClientPublicKey pulumi.StringPtrInput `pulumi:"clientPublicKey"`
-	VmName          pulumi.StringInput    `pulumi:"vmName"`
+	// name for the database server VM.
+	VmName pulumi.StringInput `pulumi:"vmName"`
 }
 
 func (NdbDbserverVmPostgresDatabaseArgs) ElementType() reflect.Type {
@@ -35584,10 +35638,12 @@ func (o NdbDbserverVmPostgresDatabaseOutput) ToNdbDbserverVmPostgresDatabaseOutp
 	return o
 }
 
+// use SSH public keys to access the database server VM.
 func (o NdbDbserverVmPostgresDatabaseOutput) ClientPublicKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDbserverVmPostgresDatabase) *string { return v.ClientPublicKey }).(pulumi.StringPtrOutput)
 }
 
+// name for the database server VM.
 func (o NdbDbserverVmPostgresDatabaseOutput) VmName() pulumi.StringOutput {
 	return o.ApplyT(func(v NdbDbserverVmPostgresDatabase) string { return v.VmName }).(pulumi.StringOutput)
 }
@@ -38282,10 +38338,12 @@ func (o NdbNetworkPropertyArrayOutput) Index(i pulumi.IntInput) NdbNetworkProper
 type NdbProfileClusterAvailability struct {
 	DateCreated  *string `pulumi:"dateCreated"`
 	DateModified *string `pulumi:"dateModified"`
-	NxClusterId  *string `pulumi:"nxClusterId"`
-	OwnerId      *string `pulumi:"ownerId"`
-	ProfileId    *string `pulumi:"profileId"`
-	Status       *string `pulumi:"status"`
+	// cluster on which profile created
+	NxClusterId *string `pulumi:"nxClusterId"`
+	OwnerId     *string `pulumi:"ownerId"`
+	ProfileId   *string `pulumi:"profileId"`
+	// status of profile
+	Status *string `pulumi:"status"`
 }
 
 // NdbProfileClusterAvailabilityInput is an input type that accepts NdbProfileClusterAvailabilityArgs and NdbProfileClusterAvailabilityOutput values.
@@ -38302,10 +38360,12 @@ type NdbProfileClusterAvailabilityInput interface {
 type NdbProfileClusterAvailabilityArgs struct {
 	DateCreated  pulumi.StringPtrInput `pulumi:"dateCreated"`
 	DateModified pulumi.StringPtrInput `pulumi:"dateModified"`
-	NxClusterId  pulumi.StringPtrInput `pulumi:"nxClusterId"`
-	OwnerId      pulumi.StringPtrInput `pulumi:"ownerId"`
-	ProfileId    pulumi.StringPtrInput `pulumi:"profileId"`
-	Status       pulumi.StringPtrInput `pulumi:"status"`
+	// cluster on which profile created
+	NxClusterId pulumi.StringPtrInput `pulumi:"nxClusterId"`
+	OwnerId     pulumi.StringPtrInput `pulumi:"ownerId"`
+	ProfileId   pulumi.StringPtrInput `pulumi:"profileId"`
+	// status of profile
+	Status pulumi.StringPtrInput `pulumi:"status"`
 }
 
 func (NdbProfileClusterAvailabilityArgs) ElementType() reflect.Type {
@@ -38367,6 +38427,7 @@ func (o NdbProfileClusterAvailabilityOutput) DateModified() pulumi.StringPtrOutp
 	return o.ApplyT(func(v NdbProfileClusterAvailability) *string { return v.DateModified }).(pulumi.StringPtrOutput)
 }
 
+// cluster on which profile created
 func (o NdbProfileClusterAvailabilityOutput) NxClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbProfileClusterAvailability) *string { return v.NxClusterId }).(pulumi.StringPtrOutput)
 }
@@ -38379,6 +38440,7 @@ func (o NdbProfileClusterAvailabilityOutput) ProfileId() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v NdbProfileClusterAvailability) *string { return v.ProfileId }).(pulumi.StringPtrOutput)
 }
 
+// status of profile
 func (o NdbProfileClusterAvailabilityOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbProfileClusterAvailability) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
@@ -38404,8 +38466,11 @@ func (o NdbProfileClusterAvailabilityArrayOutput) Index(i pulumi.IntInput) NdbPr
 }
 
 type NdbProfileComputeProfile struct {
+	// number of cores per vCPU for the database server VM.
 	CorePerCpu *string `pulumi:"corePerCpu"`
-	Cpus       *string `pulumi:"cpus"`
+	// number of vCPUs for the database server VM.
+	Cpus *string `pulumi:"cpus"`
+	// amount of memory for the database server VM.
 	MemorySize *string `pulumi:"memorySize"`
 }
 
@@ -38421,8 +38486,11 @@ type NdbProfileComputeProfileInput interface {
 }
 
 type NdbProfileComputeProfileArgs struct {
+	// number of cores per vCPU for the database server VM.
 	CorePerCpu pulumi.StringPtrInput `pulumi:"corePerCpu"`
-	Cpus       pulumi.StringPtrInput `pulumi:"cpus"`
+	// number of vCPUs for the database server VM.
+	Cpus pulumi.StringPtrInput `pulumi:"cpus"`
+	// amount of memory for the database server VM.
 	MemorySize pulumi.StringPtrInput `pulumi:"memorySize"`
 }
 
@@ -38477,14 +38545,17 @@ func (o NdbProfileComputeProfileOutput) ToNdbProfileComputeProfileOutputWithCont
 	return o
 }
 
+// number of cores per vCPU for the database server VM.
 func (o NdbProfileComputeProfileOutput) CorePerCpu() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbProfileComputeProfile) *string { return v.CorePerCpu }).(pulumi.StringPtrOutput)
 }
 
+// number of vCPUs for the database server VM.
 func (o NdbProfileComputeProfileOutput) Cpus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbProfileComputeProfile) *string { return v.Cpus }).(pulumi.StringPtrOutput)
 }
 
+// amount of memory for the database server VM.
 func (o NdbProfileComputeProfileOutput) MemorySize() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbProfileComputeProfile) *string { return v.MemorySize }).(pulumi.StringPtrOutput)
 }
@@ -38510,6 +38581,32 @@ func (o NdbProfileComputeProfileArrayOutput) Index(i pulumi.IntInput) NdbProfile
 }
 
 type NdbProfileDatabaseParameterProfile struct {
+	// Database parameters suuported for postgress.
+	// * `postgres_database.max_connections`: (Optional) Determines the maximum number of concurrent connections to the database server. The default is set to 100
+	// * `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero. walLevel must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
+	// * `postgres_database.effective_io_concurrency`: (Optional) Sets the number of concurrent disk I/O operations that PostgreSQL expects can be executed simultaneously. Raising this value will increase the number of I/O operations that any individual PostgreSQL session attempts to initiate in parallel.
+	// * `postgres_database.timezone`: (Optional) Sets the time zone for displaying and interpreting time stamps. Defult is UTC .
+	// * `postgres_database.max_prepared_transactions`: (Optional) Sets the maximum number of transactions that can be in the prepared state simultaneously. Setting this parameter to zero (which is the default) disables the prepared-transaction feature.
+	// * `postgres_database.max_locks_per_transaction`: (Optional) This parameter controls the average number of object locks allocated for each transaction; individual transactions can lock more objects as long as the locks of all transactions fit in the lock table. Default is 64.
+	// * `postgres_database.max_wal_senders`: (Optional) Specifies the maximum number of concurrent connections from standby servers or streaming base backup clients (i.e., the maximum number of simultaneously running WAL sender processes). The default is 10.
+	// * `postgres_database.max_worker_processes`: (Optional) Sets the maximum number of background processes that the system can support. The default is 8.
+	// * `postgres_database.min_wal_size`: (Optional) As long as WAL disk usage stays below this setting, old WAL files are always recycled for future use at a checkpoint, rather than removed. This can be used to ensure that enough WAL space is reserved to handle spikes in WAL usage, for example when running large batch jobs. The default is 80 MB.
+	// * `postgres_database.max_wal_size`: (Optional) Maximum size to let the WAL grow to between automatic WAL checkpoints. The default is 1 GB
+	// * `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
+	// * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however, trackCounts must also be enabled for autovacuum to work.
+	// * `postgres_database.checkpoint_completion_target`: (Optional)
+	//   Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
+	// * `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
+	// * `postgres_database.autovacuum_vacuum_threshold`: (Optional) Min number of row updates before vacuum. Minimum number of tuple updates or deletes prior to vacuum. Take value in KB. Default is 50 .
+	// * `postgres_database.autovacuum_vacuum_scale_factor`: (Optional) Number of tuple updates or deletes prior to vacuum as a fraction of reltuples. Default is 0.2
+	// * `postgres_database.autovacuum_work_mem`: (Optional) Sets the maximum memory to be used by each autovacuum worker process. Unit is in KB. Default is -1
+	// * `postgres_database.autovacuum_max_workers`: (Optional) Sets the maximum number of simultaneously running autovacuum worker processes. Default is 3
+	// * `postgres_database.autovacuum_vacuum_cost_delay`: (Optional) Vacuum cost delay in milliseconds, for autovacuum. Specifies the cost delay value that will be used in automatic VACUUM operation. Default is 2ms
+	// * `postgres_database.wal_buffers`: (Optional)
+	//   Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
+	// * `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
+	// * `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
+	// * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the pgWal directory. Default is 700 .
 	PostgresDatabases []NdbProfileDatabaseParameterProfilePostgresDatabase `pulumi:"postgresDatabases"`
 }
 
@@ -38525,6 +38622,32 @@ type NdbProfileDatabaseParameterProfileInput interface {
 }
 
 type NdbProfileDatabaseParameterProfileArgs struct {
+	// Database parameters suuported for postgress.
+	// * `postgres_database.max_connections`: (Optional) Determines the maximum number of concurrent connections to the database server. The default is set to 100
+	// * `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero. walLevel must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
+	// * `postgres_database.effective_io_concurrency`: (Optional) Sets the number of concurrent disk I/O operations that PostgreSQL expects can be executed simultaneously. Raising this value will increase the number of I/O operations that any individual PostgreSQL session attempts to initiate in parallel.
+	// * `postgres_database.timezone`: (Optional) Sets the time zone for displaying and interpreting time stamps. Defult is UTC .
+	// * `postgres_database.max_prepared_transactions`: (Optional) Sets the maximum number of transactions that can be in the prepared state simultaneously. Setting this parameter to zero (which is the default) disables the prepared-transaction feature.
+	// * `postgres_database.max_locks_per_transaction`: (Optional) This parameter controls the average number of object locks allocated for each transaction; individual transactions can lock more objects as long as the locks of all transactions fit in the lock table. Default is 64.
+	// * `postgres_database.max_wal_senders`: (Optional) Specifies the maximum number of concurrent connections from standby servers or streaming base backup clients (i.e., the maximum number of simultaneously running WAL sender processes). The default is 10.
+	// * `postgres_database.max_worker_processes`: (Optional) Sets the maximum number of background processes that the system can support. The default is 8.
+	// * `postgres_database.min_wal_size`: (Optional) As long as WAL disk usage stays below this setting, old WAL files are always recycled for future use at a checkpoint, rather than removed. This can be used to ensure that enough WAL space is reserved to handle spikes in WAL usage, for example when running large batch jobs. The default is 80 MB.
+	// * `postgres_database.max_wal_size`: (Optional) Maximum size to let the WAL grow to between automatic WAL checkpoints. The default is 1 GB
+	// * `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
+	// * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however, trackCounts must also be enabled for autovacuum to work.
+	// * `postgres_database.checkpoint_completion_target`: (Optional)
+	//   Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
+	// * `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
+	// * `postgres_database.autovacuum_vacuum_threshold`: (Optional) Min number of row updates before vacuum. Minimum number of tuple updates or deletes prior to vacuum. Take value in KB. Default is 50 .
+	// * `postgres_database.autovacuum_vacuum_scale_factor`: (Optional) Number of tuple updates or deletes prior to vacuum as a fraction of reltuples. Default is 0.2
+	// * `postgres_database.autovacuum_work_mem`: (Optional) Sets the maximum memory to be used by each autovacuum worker process. Unit is in KB. Default is -1
+	// * `postgres_database.autovacuum_max_workers`: (Optional) Sets the maximum number of simultaneously running autovacuum worker processes. Default is 3
+	// * `postgres_database.autovacuum_vacuum_cost_delay`: (Optional) Vacuum cost delay in milliseconds, for autovacuum. Specifies the cost delay value that will be used in automatic VACUUM operation. Default is 2ms
+	// * `postgres_database.wal_buffers`: (Optional)
+	//   Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
+	// * `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
+	// * `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
+	// * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the pgWal directory. Default is 700 .
 	PostgresDatabases NdbProfileDatabaseParameterProfilePostgresDatabaseArrayInput `pulumi:"postgresDatabases"`
 }
 
@@ -38579,6 +38702,32 @@ func (o NdbProfileDatabaseParameterProfileOutput) ToNdbProfileDatabaseParameterP
 	return o
 }
 
+// Database parameters suuported for postgress.
+//   - `postgres_database.max_connections`: (Optional) Determines the maximum number of concurrent connections to the database server. The default is set to 100
+//   - `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero. walLevel must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
+//   - `postgres_database.effective_io_concurrency`: (Optional) Sets the number of concurrent disk I/O operations that PostgreSQL expects can be executed simultaneously. Raising this value will increase the number of I/O operations that any individual PostgreSQL session attempts to initiate in parallel.
+//   - `postgres_database.timezone`: (Optional) Sets the time zone for displaying and interpreting time stamps. Defult is UTC .
+//   - `postgres_database.max_prepared_transactions`: (Optional) Sets the maximum number of transactions that can be in the prepared state simultaneously. Setting this parameter to zero (which is the default) disables the prepared-transaction feature.
+//   - `postgres_database.max_locks_per_transaction`: (Optional) This parameter controls the average number of object locks allocated for each transaction; individual transactions can lock more objects as long as the locks of all transactions fit in the lock table. Default is 64.
+//   - `postgres_database.max_wal_senders`: (Optional) Specifies the maximum number of concurrent connections from standby servers or streaming base backup clients (i.e., the maximum number of simultaneously running WAL sender processes). The default is 10.
+//   - `postgres_database.max_worker_processes`: (Optional) Sets the maximum number of background processes that the system can support. The default is 8.
+//   - `postgres_database.min_wal_size`: (Optional) As long as WAL disk usage stays below this setting, old WAL files are always recycled for future use at a checkpoint, rather than removed. This can be used to ensure that enough WAL space is reserved to handle spikes in WAL usage, for example when running large batch jobs. The default is 80 MB.
+//   - `postgres_database.max_wal_size`: (Optional) Maximum size to let the WAL grow to between automatic WAL checkpoints. The default is 1 GB
+//   - `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
+//   - `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however, trackCounts must also be enabled for autovacuum to work.
+//   - `postgres_database.checkpoint_completion_target`: (Optional)
+//     Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
+//   - `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
+//   - `postgres_database.autovacuum_vacuum_threshold`: (Optional) Min number of row updates before vacuum. Minimum number of tuple updates or deletes prior to vacuum. Take value in KB. Default is 50 .
+//   - `postgres_database.autovacuum_vacuum_scale_factor`: (Optional) Number of tuple updates or deletes prior to vacuum as a fraction of reltuples. Default is 0.2
+//   - `postgres_database.autovacuum_work_mem`: (Optional) Sets the maximum memory to be used by each autovacuum worker process. Unit is in KB. Default is -1
+//   - `postgres_database.autovacuum_max_workers`: (Optional) Sets the maximum number of simultaneously running autovacuum worker processes. Default is 3
+//   - `postgres_database.autovacuum_vacuum_cost_delay`: (Optional) Vacuum cost delay in milliseconds, for autovacuum. Specifies the cost delay value that will be used in automatic VACUUM operation. Default is 2ms
+//   - `postgres_database.wal_buffers`: (Optional)
+//     Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
+//   - `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
+//   - `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
+//   - `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the pgWal directory. Default is 700 .
 func (o NdbProfileDatabaseParameterProfileOutput) PostgresDatabases() NdbProfileDatabaseParameterProfilePostgresDatabaseArrayOutput {
 	return o.ApplyT(func(v NdbProfileDatabaseParameterProfile) []NdbProfileDatabaseParameterProfilePostgresDatabase {
 		return v.PostgresDatabases
@@ -38836,8 +38985,22 @@ func (o NdbProfileDatabaseParameterProfilePostgresDatabaseArrayOutput) Index(i p
 }
 
 type NdbProfileNetworkProfile struct {
-	PostgresDatabases          []NdbProfileNetworkProfilePostgresDatabase          `pulumi:"postgresDatabases"`
-	Topology                   string                                              `pulumi:"topology"`
+	// Postgres Info to create network profile
+	//
+	// * `postgres_database.single_instance`: (Optional) Info for postgres database to create single instance network profile.
+	// * `postgres_database.single_instance.vlan_name`: (Required) specify the VLAN to provide the IP address used to connect the database from the public network.
+	// * `postgres_database.single_instance.enable_ip_address_selection`: (Optional) If Advanced Network Segmentation is enabled, then this vLAN needs to be a static vLAN and needs to be true.
+	//
+	// * `postgres_database.ha_instance`: (Optional) Info for craeting Network profile for HA instance
+	// * `postgres_database.ha_instance.vlan_name`: (Required) specify the VLANs for network
+	// * `postgres_database.ha_instance.cluster_name`: (Required) specify the cluster name associated with given VLANs
+	// * `postgres_database.ha_instance.cluster_id`: (Optional) specify the cluster ids associated with given VLANs
+	// * `postgres_database.ha_instance.num_of_clusters`: (Required) number of cluster attached to network profile
+	PostgresDatabases []NdbProfileNetworkProfilePostgresDatabase `pulumi:"postgresDatabases"`
+	// Topology supported for network profile. Allowed values are "cluster" and "single"
+	Topology string `pulumi:"topology"`
+	// cluster associated with VLAN. this is used with Single instance for postgres database.
+	// * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
 	VersionClusterAssociations []NdbProfileNetworkProfileVersionClusterAssociation `pulumi:"versionClusterAssociations"`
 }
 
@@ -38853,8 +39016,22 @@ type NdbProfileNetworkProfileInput interface {
 }
 
 type NdbProfileNetworkProfileArgs struct {
-	PostgresDatabases          NdbProfileNetworkProfilePostgresDatabaseArrayInput          `pulumi:"postgresDatabases"`
-	Topology                   pulumi.StringInput                                          `pulumi:"topology"`
+	// Postgres Info to create network profile
+	//
+	// * `postgres_database.single_instance`: (Optional) Info for postgres database to create single instance network profile.
+	// * `postgres_database.single_instance.vlan_name`: (Required) specify the VLAN to provide the IP address used to connect the database from the public network.
+	// * `postgres_database.single_instance.enable_ip_address_selection`: (Optional) If Advanced Network Segmentation is enabled, then this vLAN needs to be a static vLAN and needs to be true.
+	//
+	// * `postgres_database.ha_instance`: (Optional) Info for craeting Network profile for HA instance
+	// * `postgres_database.ha_instance.vlan_name`: (Required) specify the VLANs for network
+	// * `postgres_database.ha_instance.cluster_name`: (Required) specify the cluster name associated with given VLANs
+	// * `postgres_database.ha_instance.cluster_id`: (Optional) specify the cluster ids associated with given VLANs
+	// * `postgres_database.ha_instance.num_of_clusters`: (Required) number of cluster attached to network profile
+	PostgresDatabases NdbProfileNetworkProfilePostgresDatabaseArrayInput `pulumi:"postgresDatabases"`
+	// Topology supported for network profile. Allowed values are "cluster" and "single"
+	Topology pulumi.StringInput `pulumi:"topology"`
+	// cluster associated with VLAN. this is used with Single instance for postgres database.
+	// * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
 	VersionClusterAssociations NdbProfileNetworkProfileVersionClusterAssociationArrayInput `pulumi:"versionClusterAssociations"`
 }
 
@@ -38909,16 +39086,30 @@ func (o NdbProfileNetworkProfileOutput) ToNdbProfileNetworkProfileOutputWithCont
 	return o
 }
 
+// Postgres Info to create network profile
+//
+// * `postgres_database.single_instance`: (Optional) Info for postgres database to create single instance network profile.
+// * `postgres_database.single_instance.vlan_name`: (Required) specify the VLAN to provide the IP address used to connect the database from the public network.
+// * `postgres_database.single_instance.enable_ip_address_selection`: (Optional) If Advanced Network Segmentation is enabled, then this vLAN needs to be a static vLAN and needs to be true.
+//
+// * `postgres_database.ha_instance`: (Optional) Info for craeting Network profile for HA instance
+// * `postgres_database.ha_instance.vlan_name`: (Required) specify the VLANs for network
+// * `postgres_database.ha_instance.cluster_name`: (Required) specify the cluster name associated with given VLANs
+// * `postgres_database.ha_instance.cluster_id`: (Optional) specify the cluster ids associated with given VLANs
+// * `postgres_database.ha_instance.num_of_clusters`: (Required) number of cluster attached to network profile
 func (o NdbProfileNetworkProfileOutput) PostgresDatabases() NdbProfileNetworkProfilePostgresDatabaseArrayOutput {
 	return o.ApplyT(func(v NdbProfileNetworkProfile) []NdbProfileNetworkProfilePostgresDatabase {
 		return v.PostgresDatabases
 	}).(NdbProfileNetworkProfilePostgresDatabaseArrayOutput)
 }
 
+// Topology supported for network profile. Allowed values are "cluster" and "single"
 func (o NdbProfileNetworkProfileOutput) Topology() pulumi.StringOutput {
 	return o.ApplyT(func(v NdbProfileNetworkProfile) string { return v.Topology }).(pulumi.StringOutput)
 }
 
+// cluster associated with VLAN. this is used with Single instance for postgres database.
+// * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
 func (o NdbProfileNetworkProfileOutput) VersionClusterAssociations() NdbProfileNetworkProfileVersionClusterAssociationArrayOutput {
 	return o.ApplyT(func(v NdbProfileNetworkProfile) []NdbProfileNetworkProfileVersionClusterAssociation {
 		return v.VersionClusterAssociations
@@ -39264,6 +39455,7 @@ func (o NdbProfileNetworkProfilePostgresDatabaseSingleInstanceArrayOutput) Index
 }
 
 type NdbProfileNetworkProfileVersionClusterAssociation struct {
+	// cluster on which profile created
 	NxClusterId string `pulumi:"nxClusterId"`
 }
 
@@ -39279,6 +39471,7 @@ type NdbProfileNetworkProfileVersionClusterAssociationInput interface {
 }
 
 type NdbProfileNetworkProfileVersionClusterAssociationArgs struct {
+	// cluster on which profile created
 	NxClusterId pulumi.StringInput `pulumi:"nxClusterId"`
 }
 
@@ -39333,6 +39526,7 @@ func (o NdbProfileNetworkProfileVersionClusterAssociationOutput) ToNdbProfileNet
 	return o
 }
 
+// cluster on which profile created
 func (o NdbProfileNetworkProfileVersionClusterAssociationOutput) NxClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v NdbProfileNetworkProfileVersionClusterAssociation) string { return v.NxClusterId }).(pulumi.StringOutput)
 }
@@ -39358,9 +39552,17 @@ func (o NdbProfileNetworkProfileVersionClusterAssociationArrayOutput) Index(i pu
 }
 
 type NdbProfileSoftwareProfile struct {
-	AvailableClusterIds []string                                    `pulumi:"availableClusterIds"`
-	PostgresDatabases   []NdbProfileSoftwareProfilePostgresDatabase `pulumi:"postgresDatabases"`
-	Topology            string                                      `pulumi:"topology"`
+	// specify Nutanix clusters where this profile is available.
+	AvailableClusterIds []string `pulumi:"availableClusterIds"`
+	// Software profile info about postgres database.
+	// * `postgres_database.source_dbserver_id`: source dbserver id where postgress software will be installed.
+	// * `postgres_database.base_profile_version_name`: name for the software profile version.
+	// * `postgres_database.base_profile_version_description`: description for the software profile version.
+	// * `postgres_database.os_notes`: a note to provide additional information about the operating system
+	// * `postgres_database.db_software_notes`: a note to provide additional information about the database software.
+	PostgresDatabases []NdbProfileSoftwareProfilePostgresDatabase `pulumi:"postgresDatabases"`
+	// Topology of software profile. Allowed values are "cluster" and "single"
+	Topology string `pulumi:"topology"`
 }
 
 // NdbProfileSoftwareProfileInput is an input type that accepts NdbProfileSoftwareProfileArgs and NdbProfileSoftwareProfileOutput values.
@@ -39375,9 +39577,17 @@ type NdbProfileSoftwareProfileInput interface {
 }
 
 type NdbProfileSoftwareProfileArgs struct {
-	AvailableClusterIds pulumi.StringArrayInput                             `pulumi:"availableClusterIds"`
-	PostgresDatabases   NdbProfileSoftwareProfilePostgresDatabaseArrayInput `pulumi:"postgresDatabases"`
-	Topology            pulumi.StringInput                                  `pulumi:"topology"`
+	// specify Nutanix clusters where this profile is available.
+	AvailableClusterIds pulumi.StringArrayInput `pulumi:"availableClusterIds"`
+	// Software profile info about postgres database.
+	// * `postgres_database.source_dbserver_id`: source dbserver id where postgress software will be installed.
+	// * `postgres_database.base_profile_version_name`: name for the software profile version.
+	// * `postgres_database.base_profile_version_description`: description for the software profile version.
+	// * `postgres_database.os_notes`: a note to provide additional information about the operating system
+	// * `postgres_database.db_software_notes`: a note to provide additional information about the database software.
+	PostgresDatabases NdbProfileSoftwareProfilePostgresDatabaseArrayInput `pulumi:"postgresDatabases"`
+	// Topology of software profile. Allowed values are "cluster" and "single"
+	Topology pulumi.StringInput `pulumi:"topology"`
 }
 
 func (NdbProfileSoftwareProfileArgs) ElementType() reflect.Type {
@@ -39457,16 +39667,24 @@ func (o NdbProfileSoftwareProfileOutput) ToNdbProfileSoftwareProfilePtrOutputWit
 	}).(NdbProfileSoftwareProfilePtrOutput)
 }
 
+// specify Nutanix clusters where this profile is available.
 func (o NdbProfileSoftwareProfileOutput) AvailableClusterIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NdbProfileSoftwareProfile) []string { return v.AvailableClusterIds }).(pulumi.StringArrayOutput)
 }
 
+// Software profile info about postgres database.
+// * `postgres_database.source_dbserver_id`: source dbserver id where postgress software will be installed.
+// * `postgres_database.base_profile_version_name`: name for the software profile version.
+// * `postgres_database.base_profile_version_description`: description for the software profile version.
+// * `postgres_database.os_notes`: a note to provide additional information about the operating system
+// * `postgres_database.db_software_notes`: a note to provide additional information about the database software.
 func (o NdbProfileSoftwareProfileOutput) PostgresDatabases() NdbProfileSoftwareProfilePostgresDatabaseArrayOutput {
 	return o.ApplyT(func(v NdbProfileSoftwareProfile) []NdbProfileSoftwareProfilePostgresDatabase {
 		return v.PostgresDatabases
 	}).(NdbProfileSoftwareProfilePostgresDatabaseArrayOutput)
 }
 
+// Topology of software profile. Allowed values are "cluster" and "single"
 func (o NdbProfileSoftwareProfileOutput) Topology() pulumi.StringOutput {
 	return o.ApplyT(func(v NdbProfileSoftwareProfile) string { return v.Topology }).(pulumi.StringOutput)
 }
@@ -39495,6 +39713,7 @@ func (o NdbProfileSoftwareProfilePtrOutput) Elem() NdbProfileSoftwareProfileOutp
 	}).(NdbProfileSoftwareProfileOutput)
 }
 
+// specify Nutanix clusters where this profile is available.
 func (o NdbProfileSoftwareProfilePtrOutput) AvailableClusterIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NdbProfileSoftwareProfile) []string {
 		if v == nil {
@@ -39504,6 +39723,12 @@ func (o NdbProfileSoftwareProfilePtrOutput) AvailableClusterIds() pulumi.StringA
 	}).(pulumi.StringArrayOutput)
 }
 
+// Software profile info about postgres database.
+// * `postgres_database.source_dbserver_id`: source dbserver id where postgress software will be installed.
+// * `postgres_database.base_profile_version_name`: name for the software profile version.
+// * `postgres_database.base_profile_version_description`: description for the software profile version.
+// * `postgres_database.os_notes`: a note to provide additional information about the operating system
+// * `postgres_database.db_software_notes`: a note to provide additional information about the database software.
 func (o NdbProfileSoftwareProfilePtrOutput) PostgresDatabases() NdbProfileSoftwareProfilePostgresDatabaseArrayOutput {
 	return o.ApplyT(func(v *NdbProfileSoftwareProfile) []NdbProfileSoftwareProfilePostgresDatabase {
 		if v == nil {
@@ -39513,6 +39738,7 @@ func (o NdbProfileSoftwareProfilePtrOutput) PostgresDatabases() NdbProfileSoftwa
 	}).(NdbProfileSoftwareProfilePostgresDatabaseArrayOutput)
 }
 
+// Topology of software profile. Allowed values are "cluster" and "single"
 func (o NdbProfileSoftwareProfilePtrOutput) Topology() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbProfileSoftwareProfile) *string {
 		if v == nil {
@@ -39641,17 +39867,23 @@ func (o NdbProfileSoftwareProfilePostgresDatabaseArrayOutput) Index(i pulumi.Int
 }
 
 type NdbProfileVersion struct {
-	DbVersion                  *string                                      `pulumi:"dbVersion"`
-	Deprecated                 *bool                                        `pulumi:"deprecated"`
-	Description                *string                                      `pulumi:"description"`
-	EngineType                 *string                                      `pulumi:"engineType"`
-	Id                         *string                                      `pulumi:"id"`
-	Name                       *string                                      `pulumi:"name"`
-	Owner                      *string                                      `pulumi:"owner"`
-	ProfileId                  *string                                      `pulumi:"profileId"`
-	Properties                 []NdbProfileVersionProperty                  `pulumi:"properties"`
-	PropertiesMap              map[string]string                            `pulumi:"propertiesMap"`
-	Published                  *bool                                        `pulumi:"published"`
+	DbVersion  *string `pulumi:"dbVersion"`
+	Deprecated *bool   `pulumi:"deprecated"`
+	// Description of profile
+	Description *string `pulumi:"description"`
+	// Engine Type of database
+	EngineType *string `pulumi:"engineType"`
+	Id         *string `pulumi:"id"`
+	// Name of profile
+	Name *string `pulumi:"name"`
+	// owner  of profile
+	Owner         *string                     `pulumi:"owner"`
+	ProfileId     *string                     `pulumi:"profileId"`
+	Properties    []NdbProfileVersionProperty `pulumi:"properties"`
+	PropertiesMap map[string]string           `pulumi:"propertiesMap"`
+	// Publish for all users
+	Published *bool `pulumi:"published"`
+	// status of profile
 	Status                     *string                                      `pulumi:"status"`
 	SystemProfile              *bool                                        `pulumi:"systemProfile"`
 	Topology                   *string                                      `pulumi:"topology"`
@@ -39672,17 +39904,23 @@ type NdbProfileVersionInput interface {
 }
 
 type NdbProfileVersionArgs struct {
-	DbVersion                  pulumi.StringPtrInput                                `pulumi:"dbVersion"`
-	Deprecated                 pulumi.BoolPtrInput                                  `pulumi:"deprecated"`
-	Description                pulumi.StringPtrInput                                `pulumi:"description"`
-	EngineType                 pulumi.StringPtrInput                                `pulumi:"engineType"`
-	Id                         pulumi.StringPtrInput                                `pulumi:"id"`
-	Name                       pulumi.StringPtrInput                                `pulumi:"name"`
-	Owner                      pulumi.StringPtrInput                                `pulumi:"owner"`
-	ProfileId                  pulumi.StringPtrInput                                `pulumi:"profileId"`
-	Properties                 NdbProfileVersionPropertyArrayInput                  `pulumi:"properties"`
-	PropertiesMap              pulumi.StringMapInput                                `pulumi:"propertiesMap"`
-	Published                  pulumi.BoolPtrInput                                  `pulumi:"published"`
+	DbVersion  pulumi.StringPtrInput `pulumi:"dbVersion"`
+	Deprecated pulumi.BoolPtrInput   `pulumi:"deprecated"`
+	// Description of profile
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Engine Type of database
+	EngineType pulumi.StringPtrInput `pulumi:"engineType"`
+	Id         pulumi.StringPtrInput `pulumi:"id"`
+	// Name of profile
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// owner  of profile
+	Owner         pulumi.StringPtrInput               `pulumi:"owner"`
+	ProfileId     pulumi.StringPtrInput               `pulumi:"profileId"`
+	Properties    NdbProfileVersionPropertyArrayInput `pulumi:"properties"`
+	PropertiesMap pulumi.StringMapInput               `pulumi:"propertiesMap"`
+	// Publish for all users
+	Published pulumi.BoolPtrInput `pulumi:"published"`
+	// status of profile
 	Status                     pulumi.StringPtrInput                                `pulumi:"status"`
 	SystemProfile              pulumi.BoolPtrInput                                  `pulumi:"systemProfile"`
 	Topology                   pulumi.StringPtrInput                                `pulumi:"topology"`
@@ -39750,10 +39988,12 @@ func (o NdbProfileVersionOutput) Deprecated() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NdbProfileVersion) *bool { return v.Deprecated }).(pulumi.BoolPtrOutput)
 }
 
+// Description of profile
 func (o NdbProfileVersionOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbProfileVersion) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+// Engine Type of database
 func (o NdbProfileVersionOutput) EngineType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbProfileVersion) *string { return v.EngineType }).(pulumi.StringPtrOutput)
 }
@@ -39762,10 +40002,12 @@ func (o NdbProfileVersionOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbProfileVersion) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
+// Name of profile
 func (o NdbProfileVersionOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbProfileVersion) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// owner  of profile
 func (o NdbProfileVersionOutput) Owner() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbProfileVersion) *string { return v.Owner }).(pulumi.StringPtrOutput)
 }
@@ -39782,10 +40024,12 @@ func (o NdbProfileVersionOutput) PropertiesMap() pulumi.StringMapOutput {
 	return o.ApplyT(func(v NdbProfileVersion) map[string]string { return v.PropertiesMap }).(pulumi.StringMapOutput)
 }
 
+// Publish for all users
 func (o NdbProfileVersionOutput) Published() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NdbProfileVersion) *bool { return v.Published }).(pulumi.BoolPtrOutput)
 }
 
+// status of profile
 func (o NdbProfileVersionOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbProfileVersion) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
@@ -39833,6 +40077,7 @@ func (o NdbProfileVersionArrayOutput) Index(i pulumi.IntInput) NdbProfileVersion
 }
 
 type NdbProfileVersionProperty struct {
+	// Name of profile
 	Name   *string `pulumi:"name"`
 	Secure *bool   `pulumi:"secure"`
 	Value  *string `pulumi:"value"`
@@ -39850,6 +40095,7 @@ type NdbProfileVersionPropertyInput interface {
 }
 
 type NdbProfileVersionPropertyArgs struct {
+	// Name of profile
 	Name   pulumi.StringPtrInput `pulumi:"name"`
 	Secure pulumi.BoolPtrInput   `pulumi:"secure"`
 	Value  pulumi.StringPtrInput `pulumi:"value"`
@@ -39906,6 +40152,7 @@ func (o NdbProfileVersionPropertyOutput) ToNdbProfileVersionPropertyOutputWithCo
 	return o
 }
 
+// Name of profile
 func (o NdbProfileVersionPropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbProfileVersionProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -39939,14 +40186,16 @@ func (o NdbProfileVersionPropertyArrayOutput) Index(i pulumi.IntInput) NdbProfil
 }
 
 type NdbProfileVersionVersionClusterAssociation struct {
-	DateCreated              *string                                              `pulumi:"dateCreated"`
-	DateModified             *string                                              `pulumi:"dateModified"`
+	DateCreated  *string `pulumi:"dateCreated"`
+	DateModified *string `pulumi:"dateModified"`
+	// cluster on which profile created
 	NxClusterId              *string                                              `pulumi:"nxClusterId"`
 	OptimizedForProvisioning *bool                                                `pulumi:"optimizedForProvisioning"`
 	OwnerId                  *string                                              `pulumi:"ownerId"`
 	ProfileVersionId         *string                                              `pulumi:"profileVersionId"`
 	Properties               []NdbProfileVersionVersionClusterAssociationProperty `pulumi:"properties"`
-	Status                   *string                                              `pulumi:"status"`
+	// status of profile
+	Status *string `pulumi:"status"`
 }
 
 // NdbProfileVersionVersionClusterAssociationInput is an input type that accepts NdbProfileVersionVersionClusterAssociationArgs and NdbProfileVersionVersionClusterAssociationOutput values.
@@ -39961,14 +40210,16 @@ type NdbProfileVersionVersionClusterAssociationInput interface {
 }
 
 type NdbProfileVersionVersionClusterAssociationArgs struct {
-	DateCreated              pulumi.StringPtrInput                                        `pulumi:"dateCreated"`
-	DateModified             pulumi.StringPtrInput                                        `pulumi:"dateModified"`
+	DateCreated  pulumi.StringPtrInput `pulumi:"dateCreated"`
+	DateModified pulumi.StringPtrInput `pulumi:"dateModified"`
+	// cluster on which profile created
 	NxClusterId              pulumi.StringPtrInput                                        `pulumi:"nxClusterId"`
 	OptimizedForProvisioning pulumi.BoolPtrInput                                          `pulumi:"optimizedForProvisioning"`
 	OwnerId                  pulumi.StringPtrInput                                        `pulumi:"ownerId"`
 	ProfileVersionId         pulumi.StringPtrInput                                        `pulumi:"profileVersionId"`
 	Properties               NdbProfileVersionVersionClusterAssociationPropertyArrayInput `pulumi:"properties"`
-	Status                   pulumi.StringPtrInput                                        `pulumi:"status"`
+	// status of profile
+	Status pulumi.StringPtrInput `pulumi:"status"`
 }
 
 func (NdbProfileVersionVersionClusterAssociationArgs) ElementType() reflect.Type {
@@ -40030,6 +40281,7 @@ func (o NdbProfileVersionVersionClusterAssociationOutput) DateModified() pulumi.
 	return o.ApplyT(func(v NdbProfileVersionVersionClusterAssociation) *string { return v.DateModified }).(pulumi.StringPtrOutput)
 }
 
+// cluster on which profile created
 func (o NdbProfileVersionVersionClusterAssociationOutput) NxClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbProfileVersionVersionClusterAssociation) *string { return v.NxClusterId }).(pulumi.StringPtrOutput)
 }
@@ -40052,6 +40304,7 @@ func (o NdbProfileVersionVersionClusterAssociationOutput) Properties() NdbProfil
 	}).(NdbProfileVersionVersionClusterAssociationPropertyArrayOutput)
 }
 
+// status of profile
 func (o NdbProfileVersionVersionClusterAssociationOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbProfileVersionVersionClusterAssociation) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
@@ -40077,6 +40330,7 @@ func (o NdbProfileVersionVersionClusterAssociationArrayOutput) Index(i pulumi.In
 }
 
 type NdbProfileVersionVersionClusterAssociationProperty struct {
+	// Name of profile
 	Name   *string `pulumi:"name"`
 	Secure *bool   `pulumi:"secure"`
 	Value  *string `pulumi:"value"`
@@ -40094,6 +40348,7 @@ type NdbProfileVersionVersionClusterAssociationPropertyInput interface {
 }
 
 type NdbProfileVersionVersionClusterAssociationPropertyArgs struct {
+	// Name of profile
 	Name   pulumi.StringPtrInput `pulumi:"name"`
 	Secure pulumi.BoolPtrInput   `pulumi:"secure"`
 	Value  pulumi.StringPtrInput `pulumi:"value"`
@@ -40150,6 +40405,7 @@ func (o NdbProfileVersionVersionClusterAssociationPropertyOutput) ToNdbProfileVe
 	return o
 }
 
+// Name of profile
 func (o NdbProfileVersionVersionClusterAssociationPropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbProfileVersionVersionClusterAssociationProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -46784,9 +47040,11 @@ func (o NdbRegisterDatabaseTimeMachineTagArrayOutput) Index(i pulumi.IntInput) N
 }
 
 type NdbRegisterDbserverCredential struct {
-	Label    *string `pulumi:"label"`
-	Password string  `pulumi:"password"`
-	Username string  `pulumi:"username"`
+	Label *string `pulumi:"label"`
+	// password of the NDB drive user account. Conflicts with ssh_key.
+	Password string `pulumi:"password"`
+	// username of the NDB drive user account that has sudo access
+	Username string `pulumi:"username"`
 }
 
 // NdbRegisterDbserverCredentialInput is an input type that accepts NdbRegisterDbserverCredentialArgs and NdbRegisterDbserverCredentialOutput values.
@@ -46801,9 +47059,11 @@ type NdbRegisterDbserverCredentialInput interface {
 }
 
 type NdbRegisterDbserverCredentialArgs struct {
-	Label    pulumi.StringPtrInput `pulumi:"label"`
-	Password pulumi.StringInput    `pulumi:"password"`
-	Username pulumi.StringInput    `pulumi:"username"`
+	Label pulumi.StringPtrInput `pulumi:"label"`
+	// password of the NDB drive user account. Conflicts with ssh_key.
+	Password pulumi.StringInput `pulumi:"password"`
+	// username of the NDB drive user account that has sudo access
+	Username pulumi.StringInput `pulumi:"username"`
 }
 
 func (NdbRegisterDbserverCredentialArgs) ElementType() reflect.Type {
@@ -46861,10 +47121,12 @@ func (o NdbRegisterDbserverCredentialOutput) Label() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbRegisterDbserverCredential) *string { return v.Label }).(pulumi.StringPtrOutput)
 }
 
+// password of the NDB drive user account. Conflicts with ssh_key.
 func (o NdbRegisterDbserverCredentialOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v NdbRegisterDbserverCredential) string { return v.Password }).(pulumi.StringOutput)
 }
 
+// username of the NDB drive user account that has sudo access
 func (o NdbRegisterDbserverCredentialOutput) Username() pulumi.StringOutput {
 	return o.ApplyT(func(v NdbRegisterDbserverCredential) string { return v.Username }).(pulumi.StringOutput)
 }
@@ -46890,7 +47152,9 @@ func (o NdbRegisterDbserverCredentialArrayOutput) Index(i pulumi.IntInput) NdbRe
 }
 
 type NdbRegisterDbserverPostgresDatabase struct {
-	ListenerPort         *string `pulumi:"listenerPort"`
+	// listener port of db server
+	ListenerPort *string `pulumi:"listenerPort"`
+	// path to the PostgreSQL home directory in which the PostgreSQL software is installed
 	PostgresSoftwareHome *string `pulumi:"postgresSoftwareHome"`
 }
 
@@ -46906,7 +47170,9 @@ type NdbRegisterDbserverPostgresDatabaseInput interface {
 }
 
 type NdbRegisterDbserverPostgresDatabaseArgs struct {
-	ListenerPort         pulumi.StringPtrInput `pulumi:"listenerPort"`
+	// listener port of db server
+	ListenerPort pulumi.StringPtrInput `pulumi:"listenerPort"`
+	// path to the PostgreSQL home directory in which the PostgreSQL software is installed
 	PostgresSoftwareHome pulumi.StringPtrInput `pulumi:"postgresSoftwareHome"`
 }
 
@@ -46961,10 +47227,12 @@ func (o NdbRegisterDbserverPostgresDatabaseOutput) ToNdbRegisterDbserverPostgres
 	return o
 }
 
+// listener port of db server
 func (o NdbRegisterDbserverPostgresDatabaseOutput) ListenerPort() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbRegisterDbserverPostgresDatabase) *string { return v.ListenerPort }).(pulumi.StringPtrOutput)
 }
 
+// path to the PostgreSQL home directory in which the PostgreSQL software is installed
 func (o NdbRegisterDbserverPostgresDatabaseOutput) PostgresSoftwareHome() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbRegisterDbserverPostgresDatabase) *string { return v.PostgresSoftwareHome }).(pulumi.StringPtrOutput)
 }
@@ -46990,6 +47258,7 @@ func (o NdbRegisterDbserverPostgresDatabaseArrayOutput) Index(i pulumi.IntInput)
 }
 
 type NdbRegisterDbserverProperty struct {
+	// Name of db server vm. Should be used in Update Method only.
 	Name  *string `pulumi:"name"`
 	Value *string `pulumi:"value"`
 }
@@ -47006,6 +47275,7 @@ type NdbRegisterDbserverPropertyInput interface {
 }
 
 type NdbRegisterDbserverPropertyArgs struct {
+	// Name of db server vm. Should be used in Update Method only.
 	Name  pulumi.StringPtrInput `pulumi:"name"`
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
@@ -47061,6 +47331,7 @@ func (o NdbRegisterDbserverPropertyOutput) ToNdbRegisterDbserverPropertyOutputWi
 	return o
 }
 
+// Name of db server vm. Should be used in Update Method only.
 func (o NdbRegisterDbserverPropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbRegisterDbserverProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -47208,25 +47479,32 @@ func (o NdbRegisterDbserverTagArrayOutput) Index(i pulumi.IntInput) NdbRegisterD
 }
 
 type NdbScaleDatabaseDatabaseNode struct {
-	AccessLevel    map[string]string                  `pulumi:"accessLevel"`
-	DatabaseId     *string                            `pulumi:"databaseId"`
-	DatabaseStatus *string                            `pulumi:"databaseStatus"`
-	DateCreated    *string                            `pulumi:"dateCreated"`
-	DateModified   *string                            `pulumi:"dateModified"`
-	Dbserver       map[string]string                  `pulumi:"dbserver"`
-	DbserverId     *string                            `pulumi:"dbserverId"`
-	Description    *string                            `pulumi:"description"`
-	Id             *string                            `pulumi:"id"`
-	Infos          []NdbScaleDatabaseDatabaseNodeInfo `pulumi:"infos"`
-	Name           *string                            `pulumi:"name"`
-	Primary        *bool                              `pulumi:"primary"`
-	// List of all the properties
+	AccessLevel    map[string]string `pulumi:"accessLevel"`
+	DatabaseId     *string           `pulumi:"databaseId"`
+	DatabaseStatus *string           `pulumi:"databaseStatus"`
+	// date created for db instance
+	DateCreated *string `pulumi:"dateCreated"`
+	// date modified for instance
+	DateModified *string           `pulumi:"dateModified"`
+	Dbserver     map[string]string `pulumi:"dbserver"`
+	DbserverId   *string           `pulumi:"dbserverId"`
+	// description of database instance
+	Description *string `pulumi:"description"`
+	Id          *string `pulumi:"id"`
+	// info of instance
+	Infos []NdbScaleDatabaseDatabaseNodeInfo `pulumi:"infos"`
+	// Name of database instance
+	Name    *string `pulumi:"name"`
+	Primary *bool   `pulumi:"primary"`
+	// properties of database created
 	Properties             []NdbScaleDatabaseDatabaseNodeProperty         `pulumi:"properties"`
 	ProtectionDomainId     *string                                        `pulumi:"protectionDomainId"`
 	ProtectionDomains      []NdbScaleDatabaseDatabaseNodeProtectionDomain `pulumi:"protectionDomains"`
 	SoftwareInstallationId *string                                        `pulumi:"softwareInstallationId"`
-	Status                 *string                                        `pulumi:"status"`
-	Tags                   []NdbScaleDatabaseDatabaseNodeTag              `pulumi:"tags"`
+	// status of instance
+	Status *string `pulumi:"status"`
+	// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+	Tags []NdbScaleDatabaseDatabaseNodeTag `pulumi:"tags"`
 }
 
 // NdbScaleDatabaseDatabaseNodeInput is an input type that accepts NdbScaleDatabaseDatabaseNodeArgs and NdbScaleDatabaseDatabaseNodeOutput values.
@@ -47241,25 +47519,32 @@ type NdbScaleDatabaseDatabaseNodeInput interface {
 }
 
 type NdbScaleDatabaseDatabaseNodeArgs struct {
-	AccessLevel    pulumi.StringMapInput                      `pulumi:"accessLevel"`
-	DatabaseId     pulumi.StringPtrInput                      `pulumi:"databaseId"`
-	DatabaseStatus pulumi.StringPtrInput                      `pulumi:"databaseStatus"`
-	DateCreated    pulumi.StringPtrInput                      `pulumi:"dateCreated"`
-	DateModified   pulumi.StringPtrInput                      `pulumi:"dateModified"`
-	Dbserver       pulumi.StringMapInput                      `pulumi:"dbserver"`
-	DbserverId     pulumi.StringPtrInput                      `pulumi:"dbserverId"`
-	Description    pulumi.StringPtrInput                      `pulumi:"description"`
-	Id             pulumi.StringPtrInput                      `pulumi:"id"`
-	Infos          NdbScaleDatabaseDatabaseNodeInfoArrayInput `pulumi:"infos"`
-	Name           pulumi.StringPtrInput                      `pulumi:"name"`
-	Primary        pulumi.BoolPtrInput                        `pulumi:"primary"`
-	// List of all the properties
+	AccessLevel    pulumi.StringMapInput `pulumi:"accessLevel"`
+	DatabaseId     pulumi.StringPtrInput `pulumi:"databaseId"`
+	DatabaseStatus pulumi.StringPtrInput `pulumi:"databaseStatus"`
+	// date created for db instance
+	DateCreated pulumi.StringPtrInput `pulumi:"dateCreated"`
+	// date modified for instance
+	DateModified pulumi.StringPtrInput `pulumi:"dateModified"`
+	Dbserver     pulumi.StringMapInput `pulumi:"dbserver"`
+	DbserverId   pulumi.StringPtrInput `pulumi:"dbserverId"`
+	// description of database instance
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	Id          pulumi.StringPtrInput `pulumi:"id"`
+	// info of instance
+	Infos NdbScaleDatabaseDatabaseNodeInfoArrayInput `pulumi:"infos"`
+	// Name of database instance
+	Name    pulumi.StringPtrInput `pulumi:"name"`
+	Primary pulumi.BoolPtrInput   `pulumi:"primary"`
+	// properties of database created
 	Properties             NdbScaleDatabaseDatabaseNodePropertyArrayInput         `pulumi:"properties"`
 	ProtectionDomainId     pulumi.StringPtrInput                                  `pulumi:"protectionDomainId"`
 	ProtectionDomains      NdbScaleDatabaseDatabaseNodeProtectionDomainArrayInput `pulumi:"protectionDomains"`
 	SoftwareInstallationId pulumi.StringPtrInput                                  `pulumi:"softwareInstallationId"`
-	Status                 pulumi.StringPtrInput                                  `pulumi:"status"`
-	Tags                   NdbScaleDatabaseDatabaseNodeTagArrayInput              `pulumi:"tags"`
+	// status of instance
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+	Tags NdbScaleDatabaseDatabaseNodeTagArrayInput `pulumi:"tags"`
 }
 
 func (NdbScaleDatabaseDatabaseNodeArgs) ElementType() reflect.Type {
@@ -47325,10 +47610,12 @@ func (o NdbScaleDatabaseDatabaseNodeOutput) DatabaseStatus() pulumi.StringPtrOut
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNode) *string { return v.DatabaseStatus }).(pulumi.StringPtrOutput)
 }
 
+// date created for db instance
 func (o NdbScaleDatabaseDatabaseNodeOutput) DateCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNode) *string { return v.DateCreated }).(pulumi.StringPtrOutput)
 }
 
+// date modified for instance
 func (o NdbScaleDatabaseDatabaseNodeOutput) DateModified() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNode) *string { return v.DateModified }).(pulumi.StringPtrOutput)
 }
@@ -47341,6 +47628,7 @@ func (o NdbScaleDatabaseDatabaseNodeOutput) DbserverId() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNode) *string { return v.DbserverId }).(pulumi.StringPtrOutput)
 }
 
+// description of database instance
 func (o NdbScaleDatabaseDatabaseNodeOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNode) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -47349,10 +47637,12 @@ func (o NdbScaleDatabaseDatabaseNodeOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNode) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
+// info of instance
 func (o NdbScaleDatabaseDatabaseNodeOutput) Infos() NdbScaleDatabaseDatabaseNodeInfoArrayOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNode) []NdbScaleDatabaseDatabaseNodeInfo { return v.Infos }).(NdbScaleDatabaseDatabaseNodeInfoArrayOutput)
 }
 
+// Name of database instance
 func (o NdbScaleDatabaseDatabaseNodeOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNode) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -47361,7 +47651,7 @@ func (o NdbScaleDatabaseDatabaseNodeOutput) Primary() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNode) *bool { return v.Primary }).(pulumi.BoolPtrOutput)
 }
 
-// List of all the properties
+// properties of database created
 func (o NdbScaleDatabaseDatabaseNodeOutput) Properties() NdbScaleDatabaseDatabaseNodePropertyArrayOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNode) []NdbScaleDatabaseDatabaseNodeProperty { return v.Properties }).(NdbScaleDatabaseDatabaseNodePropertyArrayOutput)
 }
@@ -47380,10 +47670,12 @@ func (o NdbScaleDatabaseDatabaseNodeOutput) SoftwareInstallationId() pulumi.Stri
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNode) *string { return v.SoftwareInstallationId }).(pulumi.StringPtrOutput)
 }
 
+// status of instance
 func (o NdbScaleDatabaseDatabaseNodeOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNode) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
+// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
 func (o NdbScaleDatabaseDatabaseNodeOutput) Tags() NdbScaleDatabaseDatabaseNodeTagArrayOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNode) []NdbScaleDatabaseDatabaseNodeTag { return v.Tags }).(NdbScaleDatabaseDatabaseNodeTagArrayOutput)
 }
@@ -47409,6 +47701,7 @@ func (o NdbScaleDatabaseDatabaseNodeArrayOutput) Index(i pulumi.IntInput) NdbSca
 }
 
 type NdbScaleDatabaseDatabaseNodeInfo struct {
+	// info of instance
 	Info       map[string]string `pulumi:"info"`
 	SecureInfo map[string]string `pulumi:"secureInfo"`
 }
@@ -47425,6 +47718,7 @@ type NdbScaleDatabaseDatabaseNodeInfoInput interface {
 }
 
 type NdbScaleDatabaseDatabaseNodeInfoArgs struct {
+	// info of instance
 	Info       pulumi.StringMapInput `pulumi:"info"`
 	SecureInfo pulumi.StringMapInput `pulumi:"secureInfo"`
 }
@@ -47480,6 +47774,7 @@ func (o NdbScaleDatabaseDatabaseNodeInfoOutput) ToNdbScaleDatabaseDatabaseNodeIn
 	return o
 }
 
+// info of instance
 func (o NdbScaleDatabaseDatabaseNodeInfoOutput) Info() pulumi.StringMapOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNodeInfo) map[string]string { return v.Info }).(pulumi.StringMapOutput)
 }
@@ -47509,11 +47804,13 @@ func (o NdbScaleDatabaseDatabaseNodeInfoArrayOutput) Index(i pulumi.IntInput) Nd
 }
 
 type NdbScaleDatabaseDatabaseNodeProperty struct {
+	// description of database instance
 	Description *string `pulumi:"description"`
-	Name        *string `pulumi:"name"`
-	RefId       *string `pulumi:"refId"`
-	Secure      *bool   `pulumi:"secure"`
-	Value       *string `pulumi:"value"`
+	// Name of database instance
+	Name   *string `pulumi:"name"`
+	RefId  *string `pulumi:"refId"`
+	Secure *bool   `pulumi:"secure"`
+	Value  *string `pulumi:"value"`
 }
 
 // NdbScaleDatabaseDatabaseNodePropertyInput is an input type that accepts NdbScaleDatabaseDatabaseNodePropertyArgs and NdbScaleDatabaseDatabaseNodePropertyOutput values.
@@ -47528,11 +47825,13 @@ type NdbScaleDatabaseDatabaseNodePropertyInput interface {
 }
 
 type NdbScaleDatabaseDatabaseNodePropertyArgs struct {
+	// description of database instance
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	Name        pulumi.StringPtrInput `pulumi:"name"`
-	RefId       pulumi.StringPtrInput `pulumi:"refId"`
-	Secure      pulumi.BoolPtrInput   `pulumi:"secure"`
-	Value       pulumi.StringPtrInput `pulumi:"value"`
+	// Name of database instance
+	Name   pulumi.StringPtrInput `pulumi:"name"`
+	RefId  pulumi.StringPtrInput `pulumi:"refId"`
+	Secure pulumi.BoolPtrInput   `pulumi:"secure"`
+	Value  pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbScaleDatabaseDatabaseNodePropertyArgs) ElementType() reflect.Type {
@@ -47586,10 +47885,12 @@ func (o NdbScaleDatabaseDatabaseNodePropertyOutput) ToNdbScaleDatabaseDatabaseNo
 	return o
 }
 
+// description of database instance
 func (o NdbScaleDatabaseDatabaseNodePropertyOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNodeProperty) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+// Name of database instance
 func (o NdbScaleDatabaseDatabaseNodePropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNodeProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -47629,18 +47930,24 @@ func (o NdbScaleDatabaseDatabaseNodePropertyArrayOutput) Index(i pulumi.IntInput
 type NdbScaleDatabaseDatabaseNodeProtectionDomain struct {
 	AssocEntities []string `pulumi:"assocEntities"`
 	CloudId       *string  `pulumi:"cloudId"`
-	DateCreated   *string  `pulumi:"dateCreated"`
-	DateModified  *string  `pulumi:"dateModified"`
-	Description   *string  `pulumi:"description"`
-	EraCreated    *bool    `pulumi:"eraCreated"`
-	Id            *string  `pulumi:"id"`
-	Name          *string  `pulumi:"name"`
-	OwnerId       *string  `pulumi:"ownerId"`
-	PrimaryHost   *string  `pulumi:"primaryHost"`
-	// List of all the properties
+	// date created for db instance
+	DateCreated *string `pulumi:"dateCreated"`
+	// date modified for instance
+	DateModified *string `pulumi:"dateModified"`
+	// description of database instance
+	Description *string `pulumi:"description"`
+	EraCreated  *bool   `pulumi:"eraCreated"`
+	Id          *string `pulumi:"id"`
+	// Name of database instance
+	Name        *string `pulumi:"name"`
+	OwnerId     *string `pulumi:"ownerId"`
+	PrimaryHost *string `pulumi:"primaryHost"`
+	// properties of database created
 	Properties []NdbScaleDatabaseDatabaseNodeProtectionDomainProperty `pulumi:"properties"`
-	Status     *string                                                `pulumi:"status"`
-	Type       *string                                                `pulumi:"type"`
+	// status of instance
+	Status *string `pulumi:"status"`
+	// type of database
+	Type *string `pulumi:"type"`
 }
 
 // NdbScaleDatabaseDatabaseNodeProtectionDomainInput is an input type that accepts NdbScaleDatabaseDatabaseNodeProtectionDomainArgs and NdbScaleDatabaseDatabaseNodeProtectionDomainOutput values.
@@ -47657,18 +47964,24 @@ type NdbScaleDatabaseDatabaseNodeProtectionDomainInput interface {
 type NdbScaleDatabaseDatabaseNodeProtectionDomainArgs struct {
 	AssocEntities pulumi.StringArrayInput `pulumi:"assocEntities"`
 	CloudId       pulumi.StringPtrInput   `pulumi:"cloudId"`
-	DateCreated   pulumi.StringPtrInput   `pulumi:"dateCreated"`
-	DateModified  pulumi.StringPtrInput   `pulumi:"dateModified"`
-	Description   pulumi.StringPtrInput   `pulumi:"description"`
-	EraCreated    pulumi.BoolPtrInput     `pulumi:"eraCreated"`
-	Id            pulumi.StringPtrInput   `pulumi:"id"`
-	Name          pulumi.StringPtrInput   `pulumi:"name"`
-	OwnerId       pulumi.StringPtrInput   `pulumi:"ownerId"`
-	PrimaryHost   pulumi.StringPtrInput   `pulumi:"primaryHost"`
-	// List of all the properties
+	// date created for db instance
+	DateCreated pulumi.StringPtrInput `pulumi:"dateCreated"`
+	// date modified for instance
+	DateModified pulumi.StringPtrInput `pulumi:"dateModified"`
+	// description of database instance
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	EraCreated  pulumi.BoolPtrInput   `pulumi:"eraCreated"`
+	Id          pulumi.StringPtrInput `pulumi:"id"`
+	// Name of database instance
+	Name        pulumi.StringPtrInput `pulumi:"name"`
+	OwnerId     pulumi.StringPtrInput `pulumi:"ownerId"`
+	PrimaryHost pulumi.StringPtrInput `pulumi:"primaryHost"`
+	// properties of database created
 	Properties NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArrayInput `pulumi:"properties"`
-	Status     pulumi.StringPtrInput                                          `pulumi:"status"`
-	Type       pulumi.StringPtrInput                                          `pulumi:"type"`
+	// status of instance
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// type of database
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (NdbScaleDatabaseDatabaseNodeProtectionDomainArgs) ElementType() reflect.Type {
@@ -47730,14 +48043,17 @@ func (o NdbScaleDatabaseDatabaseNodeProtectionDomainOutput) CloudId() pulumi.Str
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNodeProtectionDomain) *string { return v.CloudId }).(pulumi.StringPtrOutput)
 }
 
+// date created for db instance
 func (o NdbScaleDatabaseDatabaseNodeProtectionDomainOutput) DateCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNodeProtectionDomain) *string { return v.DateCreated }).(pulumi.StringPtrOutput)
 }
 
+// date modified for instance
 func (o NdbScaleDatabaseDatabaseNodeProtectionDomainOutput) DateModified() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNodeProtectionDomain) *string { return v.DateModified }).(pulumi.StringPtrOutput)
 }
 
+// description of database instance
 func (o NdbScaleDatabaseDatabaseNodeProtectionDomainOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNodeProtectionDomain) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -47750,6 +48066,7 @@ func (o NdbScaleDatabaseDatabaseNodeProtectionDomainOutput) Id() pulumi.StringPt
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNodeProtectionDomain) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
+// Name of database instance
 func (o NdbScaleDatabaseDatabaseNodeProtectionDomainOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNodeProtectionDomain) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -47762,17 +48079,19 @@ func (o NdbScaleDatabaseDatabaseNodeProtectionDomainOutput) PrimaryHost() pulumi
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNodeProtectionDomain) *string { return v.PrimaryHost }).(pulumi.StringPtrOutput)
 }
 
-// List of all the properties
+// properties of database created
 func (o NdbScaleDatabaseDatabaseNodeProtectionDomainOutput) Properties() NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArrayOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNodeProtectionDomain) []NdbScaleDatabaseDatabaseNodeProtectionDomainProperty {
 		return v.Properties
 	}).(NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArrayOutput)
 }
 
+// status of instance
 func (o NdbScaleDatabaseDatabaseNodeProtectionDomainOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNodeProtectionDomain) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
+// type of database
 func (o NdbScaleDatabaseDatabaseNodeProtectionDomainOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNodeProtectionDomain) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -47798,11 +48117,13 @@ func (o NdbScaleDatabaseDatabaseNodeProtectionDomainArrayOutput) Index(i pulumi.
 }
 
 type NdbScaleDatabaseDatabaseNodeProtectionDomainProperty struct {
+	// description of database instance
 	Description *string `pulumi:"description"`
-	Name        *string `pulumi:"name"`
-	RefId       *string `pulumi:"refId"`
-	Secure      *bool   `pulumi:"secure"`
-	Value       *string `pulumi:"value"`
+	// Name of database instance
+	Name   *string `pulumi:"name"`
+	RefId  *string `pulumi:"refId"`
+	Secure *bool   `pulumi:"secure"`
+	Value  *string `pulumi:"value"`
 }
 
 // NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyInput is an input type that accepts NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArgs and NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyOutput values.
@@ -47817,11 +48138,13 @@ type NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyInput interface {
 }
 
 type NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArgs struct {
+	// description of database instance
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	Name        pulumi.StringPtrInput `pulumi:"name"`
-	RefId       pulumi.StringPtrInput `pulumi:"refId"`
-	Secure      pulumi.BoolPtrInput   `pulumi:"secure"`
-	Value       pulumi.StringPtrInput `pulumi:"value"`
+	// Name of database instance
+	Name   pulumi.StringPtrInput `pulumi:"name"`
+	RefId  pulumi.StringPtrInput `pulumi:"refId"`
+	Secure pulumi.BoolPtrInput   `pulumi:"secure"`
+	Value  pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArgs) ElementType() reflect.Type {
@@ -47875,10 +48198,12 @@ func (o NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyOutput) ToNdbScaleDa
 	return o
 }
 
+// description of database instance
 func (o NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNodeProtectionDomainProperty) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+// Name of database instance
 func (o NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseDatabaseNodeProtectionDomainProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -49470,20 +49795,29 @@ func (o NdbScaleDatabaseLcmConfigRefreshDetailArrayOutput) Index(i pulumi.IntInp
 }
 
 type NdbScaleDatabaseLinkedDatabase struct {
-	DatabaseName           *string                              `pulumi:"databaseName"`
-	DatabaseStatus         *string                              `pulumi:"databaseStatus"`
-	DateCreated            *string                              `pulumi:"dateCreated"`
-	DateModified           *string                              `pulumi:"dateModified"`
-	Description            *string                              `pulumi:"description"`
-	Id                     *string                              `pulumi:"id"`
-	Infos                  []NdbScaleDatabaseLinkedDatabaseInfo `pulumi:"infos"`
-	Metric                 map[string]string                    `pulumi:"metric"`
-	Name                   *string                              `pulumi:"name"`
-	ParentDatabaseId       *string                              `pulumi:"parentDatabaseId"`
-	ParentLinkedDatabaseId *string                              `pulumi:"parentLinkedDatabaseId"`
-	SnapshotId             *string                              `pulumi:"snapshotId"`
-	Status                 *string                              `pulumi:"status"`
-	Timezone               *string                              `pulumi:"timezone"`
+	// name of database
+	DatabaseName   *string `pulumi:"databaseName"`
+	DatabaseStatus *string `pulumi:"databaseStatus"`
+	// date created for db instance
+	DateCreated *string `pulumi:"dateCreated"`
+	// date modified for instance
+	DateModified *string `pulumi:"dateModified"`
+	// description of database instance
+	Description *string `pulumi:"description"`
+	Id          *string `pulumi:"id"`
+	// info of instance
+	Infos []NdbScaleDatabaseLinkedDatabaseInfo `pulumi:"infos"`
+	// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+	Metric map[string]string `pulumi:"metric"`
+	// Name of database instance
+	Name *string `pulumi:"name"`
+	// parent database id
+	ParentDatabaseId       *string `pulumi:"parentDatabaseId"`
+	ParentLinkedDatabaseId *string `pulumi:"parentLinkedDatabaseId"`
+	SnapshotId             *string `pulumi:"snapshotId"`
+	// status of instance
+	Status   *string `pulumi:"status"`
+	Timezone *string `pulumi:"timezone"`
 }
 
 // NdbScaleDatabaseLinkedDatabaseInput is an input type that accepts NdbScaleDatabaseLinkedDatabaseArgs and NdbScaleDatabaseLinkedDatabaseOutput values.
@@ -49498,20 +49832,29 @@ type NdbScaleDatabaseLinkedDatabaseInput interface {
 }
 
 type NdbScaleDatabaseLinkedDatabaseArgs struct {
-	DatabaseName           pulumi.StringPtrInput                        `pulumi:"databaseName"`
-	DatabaseStatus         pulumi.StringPtrInput                        `pulumi:"databaseStatus"`
-	DateCreated            pulumi.StringPtrInput                        `pulumi:"dateCreated"`
-	DateModified           pulumi.StringPtrInput                        `pulumi:"dateModified"`
-	Description            pulumi.StringPtrInput                        `pulumi:"description"`
-	Id                     pulumi.StringPtrInput                        `pulumi:"id"`
-	Infos                  NdbScaleDatabaseLinkedDatabaseInfoArrayInput `pulumi:"infos"`
-	Metric                 pulumi.StringMapInput                        `pulumi:"metric"`
-	Name                   pulumi.StringPtrInput                        `pulumi:"name"`
-	ParentDatabaseId       pulumi.StringPtrInput                        `pulumi:"parentDatabaseId"`
-	ParentLinkedDatabaseId pulumi.StringPtrInput                        `pulumi:"parentLinkedDatabaseId"`
-	SnapshotId             pulumi.StringPtrInput                        `pulumi:"snapshotId"`
-	Status                 pulumi.StringPtrInput                        `pulumi:"status"`
-	Timezone               pulumi.StringPtrInput                        `pulumi:"timezone"`
+	// name of database
+	DatabaseName   pulumi.StringPtrInput `pulumi:"databaseName"`
+	DatabaseStatus pulumi.StringPtrInput `pulumi:"databaseStatus"`
+	// date created for db instance
+	DateCreated pulumi.StringPtrInput `pulumi:"dateCreated"`
+	// date modified for instance
+	DateModified pulumi.StringPtrInput `pulumi:"dateModified"`
+	// description of database instance
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	Id          pulumi.StringPtrInput `pulumi:"id"`
+	// info of instance
+	Infos NdbScaleDatabaseLinkedDatabaseInfoArrayInput `pulumi:"infos"`
+	// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+	Metric pulumi.StringMapInput `pulumi:"metric"`
+	// Name of database instance
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// parent database id
+	ParentDatabaseId       pulumi.StringPtrInput `pulumi:"parentDatabaseId"`
+	ParentLinkedDatabaseId pulumi.StringPtrInput `pulumi:"parentLinkedDatabaseId"`
+	SnapshotId             pulumi.StringPtrInput `pulumi:"snapshotId"`
+	// status of instance
+	Status   pulumi.StringPtrInput `pulumi:"status"`
+	Timezone pulumi.StringPtrInput `pulumi:"timezone"`
 }
 
 func (NdbScaleDatabaseLinkedDatabaseArgs) ElementType() reflect.Type {
@@ -49565,6 +49908,7 @@ func (o NdbScaleDatabaseLinkedDatabaseOutput) ToNdbScaleDatabaseLinkedDatabaseOu
 	return o
 }
 
+// name of database
 func (o NdbScaleDatabaseLinkedDatabaseOutput) DatabaseName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseLinkedDatabase) *string { return v.DatabaseName }).(pulumi.StringPtrOutput)
 }
@@ -49573,14 +49917,17 @@ func (o NdbScaleDatabaseLinkedDatabaseOutput) DatabaseStatus() pulumi.StringPtrO
 	return o.ApplyT(func(v NdbScaleDatabaseLinkedDatabase) *string { return v.DatabaseStatus }).(pulumi.StringPtrOutput)
 }
 
+// date created for db instance
 func (o NdbScaleDatabaseLinkedDatabaseOutput) DateCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseLinkedDatabase) *string { return v.DateCreated }).(pulumi.StringPtrOutput)
 }
 
+// date modified for instance
 func (o NdbScaleDatabaseLinkedDatabaseOutput) DateModified() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseLinkedDatabase) *string { return v.DateModified }).(pulumi.StringPtrOutput)
 }
 
+// description of database instance
 func (o NdbScaleDatabaseLinkedDatabaseOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseLinkedDatabase) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -49589,18 +49936,22 @@ func (o NdbScaleDatabaseLinkedDatabaseOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseLinkedDatabase) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
+// info of instance
 func (o NdbScaleDatabaseLinkedDatabaseOutput) Infos() NdbScaleDatabaseLinkedDatabaseInfoArrayOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseLinkedDatabase) []NdbScaleDatabaseLinkedDatabaseInfo { return v.Infos }).(NdbScaleDatabaseLinkedDatabaseInfoArrayOutput)
 }
 
+// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
 func (o NdbScaleDatabaseLinkedDatabaseOutput) Metric() pulumi.StringMapOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseLinkedDatabase) map[string]string { return v.Metric }).(pulumi.StringMapOutput)
 }
 
+// Name of database instance
 func (o NdbScaleDatabaseLinkedDatabaseOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseLinkedDatabase) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// parent database id
 func (o NdbScaleDatabaseLinkedDatabaseOutput) ParentDatabaseId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseLinkedDatabase) *string { return v.ParentDatabaseId }).(pulumi.StringPtrOutput)
 }
@@ -49613,6 +49964,7 @@ func (o NdbScaleDatabaseLinkedDatabaseOutput) SnapshotId() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v NdbScaleDatabaseLinkedDatabase) *string { return v.SnapshotId }).(pulumi.StringPtrOutput)
 }
 
+// status of instance
 func (o NdbScaleDatabaseLinkedDatabaseOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseLinkedDatabase) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
@@ -49642,6 +49994,7 @@ func (o NdbScaleDatabaseLinkedDatabaseArrayOutput) Index(i pulumi.IntInput) NdbS
 }
 
 type NdbScaleDatabaseLinkedDatabaseInfo struct {
+	// info of instance
 	Info       map[string]string `pulumi:"info"`
 	SecureInfo map[string]string `pulumi:"secureInfo"`
 }
@@ -49658,6 +50011,7 @@ type NdbScaleDatabaseLinkedDatabaseInfoInput interface {
 }
 
 type NdbScaleDatabaseLinkedDatabaseInfoArgs struct {
+	// info of instance
 	Info       pulumi.StringMapInput `pulumi:"info"`
 	SecureInfo pulumi.StringMapInput `pulumi:"secureInfo"`
 }
@@ -49713,6 +50067,7 @@ func (o NdbScaleDatabaseLinkedDatabaseInfoOutput) ToNdbScaleDatabaseLinkedDataba
 	return o
 }
 
+// info of instance
 func (o NdbScaleDatabaseLinkedDatabaseInfoOutput) Info() pulumi.StringMapOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseLinkedDatabaseInfo) map[string]string { return v.Info }).(pulumi.StringMapOutput)
 }
@@ -49742,6 +50097,7 @@ func (o NdbScaleDatabaseLinkedDatabaseInfoArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type NdbScaleDatabaseProperty struct {
+	// Name of database instance
 	Name  *string `pulumi:"name"`
 	Value *string `pulumi:"value"`
 }
@@ -49758,6 +50114,7 @@ type NdbScaleDatabasePropertyInput interface {
 }
 
 type NdbScaleDatabasePropertyArgs struct {
+	// Name of database instance
 	Name  pulumi.StringPtrInput `pulumi:"name"`
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
@@ -49813,6 +50170,7 @@ func (o NdbScaleDatabasePropertyOutput) ToNdbScaleDatabasePropertyOutputWithCont
 	return o
 }
 
+// Name of database instance
 func (o NdbScaleDatabasePropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -49960,20 +50318,26 @@ func (o NdbScaleDatabaseTagArrayOutput) Index(i pulumi.IntInput) NdbScaleDatabas
 }
 
 type NdbScaleDatabaseTimeMachine struct {
-	AccessLevel  *string `pulumi:"accessLevel"`
-	Clone        *bool   `pulumi:"clone"`
-	Clones       *string `pulumi:"clones"`
-	Clustered    *bool   `pulumi:"clustered"`
-	Database     *string `pulumi:"database"`
-	DatabaseId   *string `pulumi:"databaseId"`
-	DateCreated  *string `pulumi:"dateCreated"`
+	AccessLevel *string `pulumi:"accessLevel"`
+	// whether instance is cloned or not
+	Clone      *bool   `pulumi:"clone"`
+	Clones     *string `pulumi:"clones"`
+	Clustered  *bool   `pulumi:"clustered"`
+	Database   *string `pulumi:"database"`
+	DatabaseId *string `pulumi:"databaseId"`
+	// date created for db instance
+	DateCreated *string `pulumi:"dateCreated"`
+	// date modified for instance
 	DateModified *string `pulumi:"dateModified"`
-	Description  *string `pulumi:"description"`
-	EaStatus     *string `pulumi:"eaStatus"`
-	Id           *string `pulumi:"id"`
-	Metric       *string `pulumi:"metric"`
-	Name         *string `pulumi:"name"`
-	// List of all the properties
+	// description of database instance
+	Description *string `pulumi:"description"`
+	EaStatus    *string `pulumi:"eaStatus"`
+	Id          *string `pulumi:"id"`
+	// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+	Metric *string `pulumi:"metric"`
+	// Name of database instance
+	Name *string `pulumi:"name"`
+	// properties of database created
 	Properties          []NdbScaleDatabaseTimeMachineProperty `pulumi:"properties"`
 	ScheduleId          *string                               `pulumi:"scheduleId"`
 	Schedules           []NdbScaleDatabaseTimeMachineSchedule `pulumi:"schedules"`
@@ -49983,9 +50347,12 @@ type NdbScaleDatabaseTimeMachine struct {
 	SlaUpdateMetadata   *string                               `pulumi:"slaUpdateMetadata"`
 	Slas                []NdbScaleDatabaseTimeMachineSla      `pulumi:"slas"`
 	SourceNxClusters    []string                              `pulumi:"sourceNxClusters"`
-	Status              *string                               `pulumi:"status"`
-	Tags                []NdbScaleDatabaseTimeMachineTag      `pulumi:"tags"`
-	Type                *string                               `pulumi:"type"`
+	// status of instance
+	Status *string `pulumi:"status"`
+	// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+	Tags []NdbScaleDatabaseTimeMachineTag `pulumi:"tags"`
+	// type of database
+	Type *string `pulumi:"type"`
 }
 
 // NdbScaleDatabaseTimeMachineInput is an input type that accepts NdbScaleDatabaseTimeMachineArgs and NdbScaleDatabaseTimeMachineOutput values.
@@ -50000,20 +50367,26 @@ type NdbScaleDatabaseTimeMachineInput interface {
 }
 
 type NdbScaleDatabaseTimeMachineArgs struct {
-	AccessLevel  pulumi.StringPtrInput `pulumi:"accessLevel"`
-	Clone        pulumi.BoolPtrInput   `pulumi:"clone"`
-	Clones       pulumi.StringPtrInput `pulumi:"clones"`
-	Clustered    pulumi.BoolPtrInput   `pulumi:"clustered"`
-	Database     pulumi.StringPtrInput `pulumi:"database"`
-	DatabaseId   pulumi.StringPtrInput `pulumi:"databaseId"`
-	DateCreated  pulumi.StringPtrInput `pulumi:"dateCreated"`
+	AccessLevel pulumi.StringPtrInput `pulumi:"accessLevel"`
+	// whether instance is cloned or not
+	Clone      pulumi.BoolPtrInput   `pulumi:"clone"`
+	Clones     pulumi.StringPtrInput `pulumi:"clones"`
+	Clustered  pulumi.BoolPtrInput   `pulumi:"clustered"`
+	Database   pulumi.StringPtrInput `pulumi:"database"`
+	DatabaseId pulumi.StringPtrInput `pulumi:"databaseId"`
+	// date created for db instance
+	DateCreated pulumi.StringPtrInput `pulumi:"dateCreated"`
+	// date modified for instance
 	DateModified pulumi.StringPtrInput `pulumi:"dateModified"`
-	Description  pulumi.StringPtrInput `pulumi:"description"`
-	EaStatus     pulumi.StringPtrInput `pulumi:"eaStatus"`
-	Id           pulumi.StringPtrInput `pulumi:"id"`
-	Metric       pulumi.StringPtrInput `pulumi:"metric"`
-	Name         pulumi.StringPtrInput `pulumi:"name"`
-	// List of all the properties
+	// description of database instance
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	EaStatus    pulumi.StringPtrInput `pulumi:"eaStatus"`
+	Id          pulumi.StringPtrInput `pulumi:"id"`
+	// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+	Metric pulumi.StringPtrInput `pulumi:"metric"`
+	// Name of database instance
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// properties of database created
 	Properties          NdbScaleDatabaseTimeMachinePropertyArrayInput `pulumi:"properties"`
 	ScheduleId          pulumi.StringPtrInput                         `pulumi:"scheduleId"`
 	Schedules           NdbScaleDatabaseTimeMachineScheduleArrayInput `pulumi:"schedules"`
@@ -50023,9 +50396,12 @@ type NdbScaleDatabaseTimeMachineArgs struct {
 	SlaUpdateMetadata   pulumi.StringPtrInput                         `pulumi:"slaUpdateMetadata"`
 	Slas                NdbScaleDatabaseTimeMachineSlaArrayInput      `pulumi:"slas"`
 	SourceNxClusters    pulumi.StringArrayInput                       `pulumi:"sourceNxClusters"`
-	Status              pulumi.StringPtrInput                         `pulumi:"status"`
-	Tags                NdbScaleDatabaseTimeMachineTagArrayInput      `pulumi:"tags"`
-	Type                pulumi.StringPtrInput                         `pulumi:"type"`
+	// status of instance
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+	Tags NdbScaleDatabaseTimeMachineTagArrayInput `pulumi:"tags"`
+	// type of database
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (NdbScaleDatabaseTimeMachineArgs) ElementType() reflect.Type {
@@ -50083,6 +50459,7 @@ func (o NdbScaleDatabaseTimeMachineOutput) AccessLevel() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachine) *string { return v.AccessLevel }).(pulumi.StringPtrOutput)
 }
 
+// whether instance is cloned or not
 func (o NdbScaleDatabaseTimeMachineOutput) Clone() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachine) *bool { return v.Clone }).(pulumi.BoolPtrOutput)
 }
@@ -50103,14 +50480,17 @@ func (o NdbScaleDatabaseTimeMachineOutput) DatabaseId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachine) *string { return v.DatabaseId }).(pulumi.StringPtrOutput)
 }
 
+// date created for db instance
 func (o NdbScaleDatabaseTimeMachineOutput) DateCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachine) *string { return v.DateCreated }).(pulumi.StringPtrOutput)
 }
 
+// date modified for instance
 func (o NdbScaleDatabaseTimeMachineOutput) DateModified() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachine) *string { return v.DateModified }).(pulumi.StringPtrOutput)
 }
 
+// description of database instance
 func (o NdbScaleDatabaseTimeMachineOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachine) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -50123,15 +50503,17 @@ func (o NdbScaleDatabaseTimeMachineOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachine) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
+// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
 func (o NdbScaleDatabaseTimeMachineOutput) Metric() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachine) *string { return v.Metric }).(pulumi.StringPtrOutput)
 }
 
+// Name of database instance
 func (o NdbScaleDatabaseTimeMachineOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachine) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// List of all the properties
+// properties of database created
 func (o NdbScaleDatabaseTimeMachineOutput) Properties() NdbScaleDatabaseTimeMachinePropertyArrayOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachine) []NdbScaleDatabaseTimeMachineProperty { return v.Properties }).(NdbScaleDatabaseTimeMachinePropertyArrayOutput)
 }
@@ -50168,14 +50550,17 @@ func (o NdbScaleDatabaseTimeMachineOutput) SourceNxClusters() pulumi.StringArray
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachine) []string { return v.SourceNxClusters }).(pulumi.StringArrayOutput)
 }
 
+// status of instance
 func (o NdbScaleDatabaseTimeMachineOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachine) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
+// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
 func (o NdbScaleDatabaseTimeMachineOutput) Tags() NdbScaleDatabaseTimeMachineTagArrayOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachine) []NdbScaleDatabaseTimeMachineTag { return v.Tags }).(NdbScaleDatabaseTimeMachineTagArrayOutput)
 }
 
+// type of database
 func (o NdbScaleDatabaseTimeMachineOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachine) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -50201,11 +50586,13 @@ func (o NdbScaleDatabaseTimeMachineArrayOutput) Index(i pulumi.IntInput) NdbScal
 }
 
 type NdbScaleDatabaseTimeMachineProperty struct {
+	// description of database instance
 	Description *string `pulumi:"description"`
-	Name        *string `pulumi:"name"`
-	RefId       *string `pulumi:"refId"`
-	Secure      *bool   `pulumi:"secure"`
-	Value       *string `pulumi:"value"`
+	// Name of database instance
+	Name   *string `pulumi:"name"`
+	RefId  *string `pulumi:"refId"`
+	Secure *bool   `pulumi:"secure"`
+	Value  *string `pulumi:"value"`
 }
 
 // NdbScaleDatabaseTimeMachinePropertyInput is an input type that accepts NdbScaleDatabaseTimeMachinePropertyArgs and NdbScaleDatabaseTimeMachinePropertyOutput values.
@@ -50220,11 +50607,13 @@ type NdbScaleDatabaseTimeMachinePropertyInput interface {
 }
 
 type NdbScaleDatabaseTimeMachinePropertyArgs struct {
+	// description of database instance
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	Name        pulumi.StringPtrInput `pulumi:"name"`
-	RefId       pulumi.StringPtrInput `pulumi:"refId"`
-	Secure      pulumi.BoolPtrInput   `pulumi:"secure"`
-	Value       pulumi.StringPtrInput `pulumi:"value"`
+	// Name of database instance
+	Name   pulumi.StringPtrInput `pulumi:"name"`
+	RefId  pulumi.StringPtrInput `pulumi:"refId"`
+	Secure pulumi.BoolPtrInput   `pulumi:"secure"`
+	Value  pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbScaleDatabaseTimeMachinePropertyArgs) ElementType() reflect.Type {
@@ -50278,10 +50667,12 @@ func (o NdbScaleDatabaseTimeMachinePropertyOutput) ToNdbScaleDatabaseTimeMachine
 	return o
 }
 
+// description of database instance
 func (o NdbScaleDatabaseTimeMachinePropertyOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachineProperty) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+// Name of database instance
 func (o NdbScaleDatabaseTimeMachinePropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachineProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -50321,23 +50712,28 @@ func (o NdbScaleDatabaseTimeMachinePropertyArrayOutput) Index(i pulumi.IntInput)
 type NdbScaleDatabaseTimeMachineSchedule struct {
 	ContinuousSchedules []NdbScaleDatabaseTimeMachineScheduleContinuousSchedule `pulumi:"continuousSchedules"`
 	DailySchedules      []NdbScaleDatabaseTimeMachineScheduleDailySchedule      `pulumi:"dailySchedules"`
-	DateCreated         *string                                                 `pulumi:"dateCreated"`
-	DateModified        *string                                                 `pulumi:"dateModified"`
-	Description         *string                                                 `pulumi:"description"`
-	GlobalPolicy        *bool                                                   `pulumi:"globalPolicy"`
-	Id                  *string                                                 `pulumi:"id"`
-	MonthlySchedules    []NdbScaleDatabaseTimeMachineScheduleMonthlySchedule    `pulumi:"monthlySchedules"`
-	Name                *string                                                 `pulumi:"name"`
-	OwnerId             *string                                                 `pulumi:"ownerId"`
-	QuartelySchedules   []NdbScaleDatabaseTimeMachineScheduleQuartelySchedule   `pulumi:"quartelySchedules"`
-	ReferenceCount      *int                                                    `pulumi:"referenceCount"`
-	SnapshotTimeOfDays  []NdbScaleDatabaseTimeMachineScheduleSnapshotTimeOfDay  `pulumi:"snapshotTimeOfDays"`
-	StartTime           *string                                                 `pulumi:"startTime"`
-	SystemPolicy        *bool                                                   `pulumi:"systemPolicy"`
-	TimeZone            *string                                                 `pulumi:"timeZone"`
-	UniqueName          *string                                                 `pulumi:"uniqueName"`
-	WeeklySchedules     []NdbScaleDatabaseTimeMachineScheduleWeeklySchedule     `pulumi:"weeklySchedules"`
-	YearlySchedules     []NdbScaleDatabaseTimeMachineScheduleYearlySchedule     `pulumi:"yearlySchedules"`
+	// date created for db instance
+	DateCreated *string `pulumi:"dateCreated"`
+	// date modified for instance
+	DateModified *string `pulumi:"dateModified"`
+	// description of database instance
+	Description      *string                                              `pulumi:"description"`
+	GlobalPolicy     *bool                                                `pulumi:"globalPolicy"`
+	Id               *string                                              `pulumi:"id"`
+	MonthlySchedules []NdbScaleDatabaseTimeMachineScheduleMonthlySchedule `pulumi:"monthlySchedules"`
+	// Name of database instance
+	Name               *string                                                `pulumi:"name"`
+	OwnerId            *string                                                `pulumi:"ownerId"`
+	QuartelySchedules  []NdbScaleDatabaseTimeMachineScheduleQuartelySchedule  `pulumi:"quartelySchedules"`
+	ReferenceCount     *int                                                   `pulumi:"referenceCount"`
+	SnapshotTimeOfDays []NdbScaleDatabaseTimeMachineScheduleSnapshotTimeOfDay `pulumi:"snapshotTimeOfDays"`
+	StartTime          *string                                                `pulumi:"startTime"`
+	SystemPolicy       *bool                                                  `pulumi:"systemPolicy"`
+	// timezone on which instance is created xw
+	TimeZone        *string                                             `pulumi:"timeZone"`
+	UniqueName      *string                                             `pulumi:"uniqueName"`
+	WeeklySchedules []NdbScaleDatabaseTimeMachineScheduleWeeklySchedule `pulumi:"weeklySchedules"`
+	YearlySchedules []NdbScaleDatabaseTimeMachineScheduleYearlySchedule `pulumi:"yearlySchedules"`
 }
 
 // NdbScaleDatabaseTimeMachineScheduleInput is an input type that accepts NdbScaleDatabaseTimeMachineScheduleArgs and NdbScaleDatabaseTimeMachineScheduleOutput values.
@@ -50354,23 +50750,28 @@ type NdbScaleDatabaseTimeMachineScheduleInput interface {
 type NdbScaleDatabaseTimeMachineScheduleArgs struct {
 	ContinuousSchedules NdbScaleDatabaseTimeMachineScheduleContinuousScheduleArrayInput `pulumi:"continuousSchedules"`
 	DailySchedules      NdbScaleDatabaseTimeMachineScheduleDailyScheduleArrayInput      `pulumi:"dailySchedules"`
-	DateCreated         pulumi.StringPtrInput                                           `pulumi:"dateCreated"`
-	DateModified        pulumi.StringPtrInput                                           `pulumi:"dateModified"`
-	Description         pulumi.StringPtrInput                                           `pulumi:"description"`
-	GlobalPolicy        pulumi.BoolPtrInput                                             `pulumi:"globalPolicy"`
-	Id                  pulumi.StringPtrInput                                           `pulumi:"id"`
-	MonthlySchedules    NdbScaleDatabaseTimeMachineScheduleMonthlyScheduleArrayInput    `pulumi:"monthlySchedules"`
-	Name                pulumi.StringPtrInput                                           `pulumi:"name"`
-	OwnerId             pulumi.StringPtrInput                                           `pulumi:"ownerId"`
-	QuartelySchedules   NdbScaleDatabaseTimeMachineScheduleQuartelyScheduleArrayInput   `pulumi:"quartelySchedules"`
-	ReferenceCount      pulumi.IntPtrInput                                              `pulumi:"referenceCount"`
-	SnapshotTimeOfDays  NdbScaleDatabaseTimeMachineScheduleSnapshotTimeOfDayArrayInput  `pulumi:"snapshotTimeOfDays"`
-	StartTime           pulumi.StringPtrInput                                           `pulumi:"startTime"`
-	SystemPolicy        pulumi.BoolPtrInput                                             `pulumi:"systemPolicy"`
-	TimeZone            pulumi.StringPtrInput                                           `pulumi:"timeZone"`
-	UniqueName          pulumi.StringPtrInput                                           `pulumi:"uniqueName"`
-	WeeklySchedules     NdbScaleDatabaseTimeMachineScheduleWeeklyScheduleArrayInput     `pulumi:"weeklySchedules"`
-	YearlySchedules     NdbScaleDatabaseTimeMachineScheduleYearlyScheduleArrayInput     `pulumi:"yearlySchedules"`
+	// date created for db instance
+	DateCreated pulumi.StringPtrInput `pulumi:"dateCreated"`
+	// date modified for instance
+	DateModified pulumi.StringPtrInput `pulumi:"dateModified"`
+	// description of database instance
+	Description      pulumi.StringPtrInput                                        `pulumi:"description"`
+	GlobalPolicy     pulumi.BoolPtrInput                                          `pulumi:"globalPolicy"`
+	Id               pulumi.StringPtrInput                                        `pulumi:"id"`
+	MonthlySchedules NdbScaleDatabaseTimeMachineScheduleMonthlyScheduleArrayInput `pulumi:"monthlySchedules"`
+	// Name of database instance
+	Name               pulumi.StringPtrInput                                          `pulumi:"name"`
+	OwnerId            pulumi.StringPtrInput                                          `pulumi:"ownerId"`
+	QuartelySchedules  NdbScaleDatabaseTimeMachineScheduleQuartelyScheduleArrayInput  `pulumi:"quartelySchedules"`
+	ReferenceCount     pulumi.IntPtrInput                                             `pulumi:"referenceCount"`
+	SnapshotTimeOfDays NdbScaleDatabaseTimeMachineScheduleSnapshotTimeOfDayArrayInput `pulumi:"snapshotTimeOfDays"`
+	StartTime          pulumi.StringPtrInput                                          `pulumi:"startTime"`
+	SystemPolicy       pulumi.BoolPtrInput                                            `pulumi:"systemPolicy"`
+	// timezone on which instance is created xw
+	TimeZone        pulumi.StringPtrInput                                       `pulumi:"timeZone"`
+	UniqueName      pulumi.StringPtrInput                                       `pulumi:"uniqueName"`
+	WeeklySchedules NdbScaleDatabaseTimeMachineScheduleWeeklyScheduleArrayInput `pulumi:"weeklySchedules"`
+	YearlySchedules NdbScaleDatabaseTimeMachineScheduleYearlyScheduleArrayInput `pulumi:"yearlySchedules"`
 }
 
 func (NdbScaleDatabaseTimeMachineScheduleArgs) ElementType() reflect.Type {
@@ -50436,14 +50837,17 @@ func (o NdbScaleDatabaseTimeMachineScheduleOutput) DailySchedules() NdbScaleData
 	}).(NdbScaleDatabaseTimeMachineScheduleDailyScheduleArrayOutput)
 }
 
+// date created for db instance
 func (o NdbScaleDatabaseTimeMachineScheduleOutput) DateCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachineSchedule) *string { return v.DateCreated }).(pulumi.StringPtrOutput)
 }
 
+// date modified for instance
 func (o NdbScaleDatabaseTimeMachineScheduleOutput) DateModified() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachineSchedule) *string { return v.DateModified }).(pulumi.StringPtrOutput)
 }
 
+// description of database instance
 func (o NdbScaleDatabaseTimeMachineScheduleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachineSchedule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -50462,6 +50866,7 @@ func (o NdbScaleDatabaseTimeMachineScheduleOutput) MonthlySchedules() NdbScaleDa
 	}).(NdbScaleDatabaseTimeMachineScheduleMonthlyScheduleArrayOutput)
 }
 
+// Name of database instance
 func (o NdbScaleDatabaseTimeMachineScheduleOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachineSchedule) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -50494,6 +50899,7 @@ func (o NdbScaleDatabaseTimeMachineScheduleOutput) SystemPolicy() pulumi.BoolPtr
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachineSchedule) *bool { return v.SystemPolicy }).(pulumi.BoolPtrOutput)
 }
 
+// timezone on which instance is created xw
 func (o NdbScaleDatabaseTimeMachineScheduleOutput) TimeZone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachineSchedule) *string { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
@@ -51280,20 +51686,24 @@ type NdbScaleDatabaseTimeMachineSla struct {
 	ContinuousRetention    *int    `pulumi:"continuousRetention"`
 	CurrentActiveFrequency *string `pulumi:"currentActiveFrequency"`
 	DailyRetention         *int    `pulumi:"dailyRetention"`
-	DateCreated            *string `pulumi:"dateCreated"`
-	DateModified           *string `pulumi:"dateModified"`
-	Description            *string `pulumi:"description"`
-	Id                     *string `pulumi:"id"`
-	MonthlyRetention       *int    `pulumi:"monthlyRetention"`
-	Name                   *string `pulumi:"name"`
-	OwnerId                *string `pulumi:"ownerId"`
-	PitrEnabled            *bool   `pulumi:"pitrEnabled"`
-	QuarterlyRetention     *int    `pulumi:"quarterlyRetention"`
-	ReferenceCount         *int    `pulumi:"referenceCount"`
-	SystemSla              *bool   `pulumi:"systemSla"`
-	UniqueName             *string `pulumi:"uniqueName"`
-	WeeklyRetention        *int    `pulumi:"weeklyRetention"`
-	YearlyRetention        *int    `pulumi:"yearlyRetention"`
+	// date created for db instance
+	DateCreated *string `pulumi:"dateCreated"`
+	// date modified for instance
+	DateModified *string `pulumi:"dateModified"`
+	// description of database instance
+	Description      *string `pulumi:"description"`
+	Id               *string `pulumi:"id"`
+	MonthlyRetention *int    `pulumi:"monthlyRetention"`
+	// Name of database instance
+	Name               *string `pulumi:"name"`
+	OwnerId            *string `pulumi:"ownerId"`
+	PitrEnabled        *bool   `pulumi:"pitrEnabled"`
+	QuarterlyRetention *int    `pulumi:"quarterlyRetention"`
+	ReferenceCount     *int    `pulumi:"referenceCount"`
+	SystemSla          *bool   `pulumi:"systemSla"`
+	UniqueName         *string `pulumi:"uniqueName"`
+	WeeklyRetention    *int    `pulumi:"weeklyRetention"`
+	YearlyRetention    *int    `pulumi:"yearlyRetention"`
 }
 
 // NdbScaleDatabaseTimeMachineSlaInput is an input type that accepts NdbScaleDatabaseTimeMachineSlaArgs and NdbScaleDatabaseTimeMachineSlaOutput values.
@@ -51311,20 +51721,24 @@ type NdbScaleDatabaseTimeMachineSlaArgs struct {
 	ContinuousRetention    pulumi.IntPtrInput    `pulumi:"continuousRetention"`
 	CurrentActiveFrequency pulumi.StringPtrInput `pulumi:"currentActiveFrequency"`
 	DailyRetention         pulumi.IntPtrInput    `pulumi:"dailyRetention"`
-	DateCreated            pulumi.StringPtrInput `pulumi:"dateCreated"`
-	DateModified           pulumi.StringPtrInput `pulumi:"dateModified"`
-	Description            pulumi.StringPtrInput `pulumi:"description"`
-	Id                     pulumi.StringPtrInput `pulumi:"id"`
-	MonthlyRetention       pulumi.IntPtrInput    `pulumi:"monthlyRetention"`
-	Name                   pulumi.StringPtrInput `pulumi:"name"`
-	OwnerId                pulumi.StringPtrInput `pulumi:"ownerId"`
-	PitrEnabled            pulumi.BoolPtrInput   `pulumi:"pitrEnabled"`
-	QuarterlyRetention     pulumi.IntPtrInput    `pulumi:"quarterlyRetention"`
-	ReferenceCount         pulumi.IntPtrInput    `pulumi:"referenceCount"`
-	SystemSla              pulumi.BoolPtrInput   `pulumi:"systemSla"`
-	UniqueName             pulumi.StringPtrInput `pulumi:"uniqueName"`
-	WeeklyRetention        pulumi.IntPtrInput    `pulumi:"weeklyRetention"`
-	YearlyRetention        pulumi.IntPtrInput    `pulumi:"yearlyRetention"`
+	// date created for db instance
+	DateCreated pulumi.StringPtrInput `pulumi:"dateCreated"`
+	// date modified for instance
+	DateModified pulumi.StringPtrInput `pulumi:"dateModified"`
+	// description of database instance
+	Description      pulumi.StringPtrInput `pulumi:"description"`
+	Id               pulumi.StringPtrInput `pulumi:"id"`
+	MonthlyRetention pulumi.IntPtrInput    `pulumi:"monthlyRetention"`
+	// Name of database instance
+	Name               pulumi.StringPtrInput `pulumi:"name"`
+	OwnerId            pulumi.StringPtrInput `pulumi:"ownerId"`
+	PitrEnabled        pulumi.BoolPtrInput   `pulumi:"pitrEnabled"`
+	QuarterlyRetention pulumi.IntPtrInput    `pulumi:"quarterlyRetention"`
+	ReferenceCount     pulumi.IntPtrInput    `pulumi:"referenceCount"`
+	SystemSla          pulumi.BoolPtrInput   `pulumi:"systemSla"`
+	UniqueName         pulumi.StringPtrInput `pulumi:"uniqueName"`
+	WeeklyRetention    pulumi.IntPtrInput    `pulumi:"weeklyRetention"`
+	YearlyRetention    pulumi.IntPtrInput    `pulumi:"yearlyRetention"`
 }
 
 func (NdbScaleDatabaseTimeMachineSlaArgs) ElementType() reflect.Type {
@@ -51390,14 +51804,17 @@ func (o NdbScaleDatabaseTimeMachineSlaOutput) DailyRetention() pulumi.IntPtrOutp
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachineSla) *int { return v.DailyRetention }).(pulumi.IntPtrOutput)
 }
 
+// date created for db instance
 func (o NdbScaleDatabaseTimeMachineSlaOutput) DateCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachineSla) *string { return v.DateCreated }).(pulumi.StringPtrOutput)
 }
 
+// date modified for instance
 func (o NdbScaleDatabaseTimeMachineSlaOutput) DateModified() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachineSla) *string { return v.DateModified }).(pulumi.StringPtrOutput)
 }
 
+// description of database instance
 func (o NdbScaleDatabaseTimeMachineSlaOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachineSla) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -51410,6 +51827,7 @@ func (o NdbScaleDatabaseTimeMachineSlaOutput) MonthlyRetention() pulumi.IntPtrOu
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachineSla) *int { return v.MonthlyRetention }).(pulumi.IntPtrOutput)
 }
 
+// Name of database instance
 func (o NdbScaleDatabaseTimeMachineSlaOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbScaleDatabaseTimeMachineSla) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -51585,8 +52003,11 @@ func (o NdbScaleDatabaseTimeMachineTagArrayOutput) Index(i pulumi.IntInput) NdbS
 }
 
 type NdbSoftwareVersionProfilePostgresDatabase struct {
-	DbSoftwareNotes  *string `pulumi:"dbSoftwareNotes"`
-	OsNotes          *string `pulumi:"osNotes"`
+	// db software notes
+	DbSoftwareNotes *string `pulumi:"dbSoftwareNotes"`
+	// os notes for software profile
+	OsNotes *string `pulumi:"osNotes"`
+	// source dbserver id
 	SourceDbserverId *string `pulumi:"sourceDbserverId"`
 }
 
@@ -51602,8 +52023,11 @@ type NdbSoftwareVersionProfilePostgresDatabaseInput interface {
 }
 
 type NdbSoftwareVersionProfilePostgresDatabaseArgs struct {
-	DbSoftwareNotes  pulumi.StringPtrInput `pulumi:"dbSoftwareNotes"`
-	OsNotes          pulumi.StringPtrInput `pulumi:"osNotes"`
+	// db software notes
+	DbSoftwareNotes pulumi.StringPtrInput `pulumi:"dbSoftwareNotes"`
+	// os notes for software profile
+	OsNotes pulumi.StringPtrInput `pulumi:"osNotes"`
+	// source dbserver id
 	SourceDbserverId pulumi.StringPtrInput `pulumi:"sourceDbserverId"`
 }
 
@@ -51658,14 +52082,17 @@ func (o NdbSoftwareVersionProfilePostgresDatabaseOutput) ToNdbSoftwareVersionPro
 	return o
 }
 
+// db software notes
 func (o NdbSoftwareVersionProfilePostgresDatabaseOutput) DbSoftwareNotes() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbSoftwareVersionProfilePostgresDatabase) *string { return v.DbSoftwareNotes }).(pulumi.StringPtrOutput)
 }
 
+// os notes for software profile
 func (o NdbSoftwareVersionProfilePostgresDatabaseOutput) OsNotes() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbSoftwareVersionProfilePostgresDatabase) *string { return v.OsNotes }).(pulumi.StringPtrOutput)
 }
 
+// source dbserver id
 func (o NdbSoftwareVersionProfilePostgresDatabaseOutput) SourceDbserverId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbSoftwareVersionProfilePostgresDatabase) *string { return v.SourceDbserverId }).(pulumi.StringPtrOutput)
 }
@@ -51691,9 +52118,12 @@ func (o NdbSoftwareVersionProfilePostgresDatabaseArrayOutput) Index(i pulumi.Int
 }
 
 type NdbSoftwareVersionProfileProperty struct {
-	Name   *string `pulumi:"name"`
-	Secure *bool   `pulumi:"secure"`
-	Value  *string `pulumi:"value"`
+	// Name of profile
+	Name *string `pulumi:"name"`
+	// secure or not
+	Secure *bool `pulumi:"secure"`
+	// value of property
+	Value *string `pulumi:"value"`
 }
 
 // NdbSoftwareVersionProfilePropertyInput is an input type that accepts NdbSoftwareVersionProfilePropertyArgs and NdbSoftwareVersionProfilePropertyOutput values.
@@ -51708,9 +52138,12 @@ type NdbSoftwareVersionProfilePropertyInput interface {
 }
 
 type NdbSoftwareVersionProfilePropertyArgs struct {
-	Name   pulumi.StringPtrInput `pulumi:"name"`
-	Secure pulumi.BoolPtrInput   `pulumi:"secure"`
-	Value  pulumi.StringPtrInput `pulumi:"value"`
+	// Name of profile
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// secure or not
+	Secure pulumi.BoolPtrInput `pulumi:"secure"`
+	// value of property
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbSoftwareVersionProfilePropertyArgs) ElementType() reflect.Type {
@@ -51764,14 +52197,17 @@ func (o NdbSoftwareVersionProfilePropertyOutput) ToNdbSoftwareVersionProfileProp
 	return o
 }
 
+// Name of profile
 func (o NdbSoftwareVersionProfilePropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbSoftwareVersionProfileProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// secure or not
 func (o NdbSoftwareVersionProfilePropertyOutput) Secure() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NdbSoftwareVersionProfileProperty) *bool { return v.Secure }).(pulumi.BoolPtrOutput)
 }
 
+// value of property
 func (o NdbSoftwareVersionProfilePropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbSoftwareVersionProfileProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -51797,14 +52233,22 @@ func (o NdbSoftwareVersionProfilePropertyArrayOutput) Index(i pulumi.IntInput) N
 }
 
 type NdbSoftwareVersionProfileVersionClusterAssociation struct {
-	DateCreated              *string                                                      `pulumi:"dateCreated"`
-	DateModified             *string                                                      `pulumi:"dateModified"`
-	NxClusterId              *string                                                      `pulumi:"nxClusterId"`
-	OptimizedForProvisioning *bool                                                        `pulumi:"optimizedForProvisioning"`
-	OwnerId                  *string                                                      `pulumi:"ownerId"`
-	ProfileVersionId         *string                                                      `pulumi:"profileVersionId"`
-	Properties               []NdbSoftwareVersionProfileVersionClusterAssociationProperty `pulumi:"properties"`
-	Status                   *string                                                      `pulumi:"status"`
+	// date created of profile
+	DateCreated *string `pulumi:"dateCreated"`
+	// date modified of profile
+	DateModified *string `pulumi:"dateModified"`
+	// nutanix cluster id
+	NxClusterId *string `pulumi:"nxClusterId"`
+	// version optimized for provisioning
+	OptimizedForProvisioning *bool `pulumi:"optimizedForProvisioning"`
+	// owner id
+	OwnerId *string `pulumi:"ownerId"`
+	// profile version id
+	ProfileVersionId *string `pulumi:"profileVersionId"`
+	// properties of software profile
+	Properties []NdbSoftwareVersionProfileVersionClusterAssociationProperty `pulumi:"properties"`
+	// status of profile. Allowed Values are "deprecated", "published", "unpublished"
+	Status *string `pulumi:"status"`
 }
 
 // NdbSoftwareVersionProfileVersionClusterAssociationInput is an input type that accepts NdbSoftwareVersionProfileVersionClusterAssociationArgs and NdbSoftwareVersionProfileVersionClusterAssociationOutput values.
@@ -51819,14 +52263,22 @@ type NdbSoftwareVersionProfileVersionClusterAssociationInput interface {
 }
 
 type NdbSoftwareVersionProfileVersionClusterAssociationArgs struct {
-	DateCreated              pulumi.StringPtrInput                                                `pulumi:"dateCreated"`
-	DateModified             pulumi.StringPtrInput                                                `pulumi:"dateModified"`
-	NxClusterId              pulumi.StringPtrInput                                                `pulumi:"nxClusterId"`
-	OptimizedForProvisioning pulumi.BoolPtrInput                                                  `pulumi:"optimizedForProvisioning"`
-	OwnerId                  pulumi.StringPtrInput                                                `pulumi:"ownerId"`
-	ProfileVersionId         pulumi.StringPtrInput                                                `pulumi:"profileVersionId"`
-	Properties               NdbSoftwareVersionProfileVersionClusterAssociationPropertyArrayInput `pulumi:"properties"`
-	Status                   pulumi.StringPtrInput                                                `pulumi:"status"`
+	// date created of profile
+	DateCreated pulumi.StringPtrInput `pulumi:"dateCreated"`
+	// date modified of profile
+	DateModified pulumi.StringPtrInput `pulumi:"dateModified"`
+	// nutanix cluster id
+	NxClusterId pulumi.StringPtrInput `pulumi:"nxClusterId"`
+	// version optimized for provisioning
+	OptimizedForProvisioning pulumi.BoolPtrInput `pulumi:"optimizedForProvisioning"`
+	// owner id
+	OwnerId pulumi.StringPtrInput `pulumi:"ownerId"`
+	// profile version id
+	ProfileVersionId pulumi.StringPtrInput `pulumi:"profileVersionId"`
+	// properties of software profile
+	Properties NdbSoftwareVersionProfileVersionClusterAssociationPropertyArrayInput `pulumi:"properties"`
+	// status of profile. Allowed Values are "deprecated", "published", "unpublished"
+	Status pulumi.StringPtrInput `pulumi:"status"`
 }
 
 func (NdbSoftwareVersionProfileVersionClusterAssociationArgs) ElementType() reflect.Type {
@@ -51880,36 +52332,44 @@ func (o NdbSoftwareVersionProfileVersionClusterAssociationOutput) ToNdbSoftwareV
 	return o
 }
 
+// date created of profile
 func (o NdbSoftwareVersionProfileVersionClusterAssociationOutput) DateCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbSoftwareVersionProfileVersionClusterAssociation) *string { return v.DateCreated }).(pulumi.StringPtrOutput)
 }
 
+// date modified of profile
 func (o NdbSoftwareVersionProfileVersionClusterAssociationOutput) DateModified() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbSoftwareVersionProfileVersionClusterAssociation) *string { return v.DateModified }).(pulumi.StringPtrOutput)
 }
 
+// nutanix cluster id
 func (o NdbSoftwareVersionProfileVersionClusterAssociationOutput) NxClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbSoftwareVersionProfileVersionClusterAssociation) *string { return v.NxClusterId }).(pulumi.StringPtrOutput)
 }
 
+// version optimized for provisioning
 func (o NdbSoftwareVersionProfileVersionClusterAssociationOutput) OptimizedForProvisioning() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NdbSoftwareVersionProfileVersionClusterAssociation) *bool { return v.OptimizedForProvisioning }).(pulumi.BoolPtrOutput)
 }
 
+// owner id
 func (o NdbSoftwareVersionProfileVersionClusterAssociationOutput) OwnerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbSoftwareVersionProfileVersionClusterAssociation) *string { return v.OwnerId }).(pulumi.StringPtrOutput)
 }
 
+// profile version id
 func (o NdbSoftwareVersionProfileVersionClusterAssociationOutput) ProfileVersionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbSoftwareVersionProfileVersionClusterAssociation) *string { return v.ProfileVersionId }).(pulumi.StringPtrOutput)
 }
 
+// properties of software profile
 func (o NdbSoftwareVersionProfileVersionClusterAssociationOutput) Properties() NdbSoftwareVersionProfileVersionClusterAssociationPropertyArrayOutput {
 	return o.ApplyT(func(v NdbSoftwareVersionProfileVersionClusterAssociation) []NdbSoftwareVersionProfileVersionClusterAssociationProperty {
 		return v.Properties
 	}).(NdbSoftwareVersionProfileVersionClusterAssociationPropertyArrayOutput)
 }
 
+// status of profile. Allowed Values are "deprecated", "published", "unpublished"
 func (o NdbSoftwareVersionProfileVersionClusterAssociationOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbSoftwareVersionProfileVersionClusterAssociation) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
@@ -51935,9 +52395,12 @@ func (o NdbSoftwareVersionProfileVersionClusterAssociationArrayOutput) Index(i p
 }
 
 type NdbSoftwareVersionProfileVersionClusterAssociationProperty struct {
-	Name   *string `pulumi:"name"`
-	Secure *bool   `pulumi:"secure"`
-	Value  *string `pulumi:"value"`
+	// Name of profile
+	Name *string `pulumi:"name"`
+	// secure or not
+	Secure *bool `pulumi:"secure"`
+	// value of property
+	Value *string `pulumi:"value"`
 }
 
 // NdbSoftwareVersionProfileVersionClusterAssociationPropertyInput is an input type that accepts NdbSoftwareVersionProfileVersionClusterAssociationPropertyArgs and NdbSoftwareVersionProfileVersionClusterAssociationPropertyOutput values.
@@ -51952,9 +52415,12 @@ type NdbSoftwareVersionProfileVersionClusterAssociationPropertyInput interface {
 }
 
 type NdbSoftwareVersionProfileVersionClusterAssociationPropertyArgs struct {
-	Name   pulumi.StringPtrInput `pulumi:"name"`
-	Secure pulumi.BoolPtrInput   `pulumi:"secure"`
-	Value  pulumi.StringPtrInput `pulumi:"value"`
+	// Name of profile
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// secure or not
+	Secure pulumi.BoolPtrInput `pulumi:"secure"`
+	// value of property
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbSoftwareVersionProfileVersionClusterAssociationPropertyArgs) ElementType() reflect.Type {
@@ -52008,14 +52474,17 @@ func (o NdbSoftwareVersionProfileVersionClusterAssociationPropertyOutput) ToNdbS
 	return o
 }
 
+// Name of profile
 func (o NdbSoftwareVersionProfileVersionClusterAssociationPropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbSoftwareVersionProfileVersionClusterAssociationProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// secure or not
 func (o NdbSoftwareVersionProfileVersionClusterAssociationPropertyOutput) Secure() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NdbSoftwareVersionProfileVersionClusterAssociationProperty) *bool { return v.Secure }).(pulumi.BoolPtrOutput)
 }
 
+// value of property
 func (o NdbSoftwareVersionProfileVersionClusterAssociationPropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbSoftwareVersionProfileVersionClusterAssociationProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -52189,14 +52658,22 @@ func (o NdbStretchedVlanMetadataPtrOutput) SubnetMask() pulumi.StringPtrOutput {
 }
 
 type NdbStretchedVlanVlansList struct {
-	ClusterId       *string                                  `pulumi:"clusterId"`
-	Id              *string                                  `pulumi:"id"`
-	Managed         *bool                                    `pulumi:"managed"`
-	Name            *string                                  `pulumi:"name"`
-	Properties      []NdbStretchedVlanVlansListProperty      `pulumi:"properties"`
-	PropertiesMaps  []NdbStretchedVlanVlansListPropertiesMap `pulumi:"propertiesMaps"`
-	StretchedVlanId *string                                  `pulumi:"stretchedVlanId"`
-	Type            *string                                  `pulumi:"type"`
+	// cluster id where network is present
+	ClusterId *string `pulumi:"clusterId"`
+	// network id
+	Id *string `pulumi:"id"`
+	// network managed by NDB or not
+	Managed *bool `pulumi:"managed"`
+	// name for the stretched VLAN
+	Name *string `pulumi:"name"`
+	// properties of network
+	Properties []NdbStretchedVlanVlansListProperty `pulumi:"properties"`
+	// properties map of network
+	PropertiesMaps []NdbStretchedVlanVlansListPropertiesMap `pulumi:"propertiesMaps"`
+	// stretched vlan id
+	StretchedVlanId *string `pulumi:"stretchedVlanId"`
+	// type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
+	Type *string `pulumi:"type"`
 }
 
 // NdbStretchedVlanVlansListInput is an input type that accepts NdbStretchedVlanVlansListArgs and NdbStretchedVlanVlansListOutput values.
@@ -52211,14 +52688,22 @@ type NdbStretchedVlanVlansListInput interface {
 }
 
 type NdbStretchedVlanVlansListArgs struct {
-	ClusterId       pulumi.StringPtrInput                            `pulumi:"clusterId"`
-	Id              pulumi.StringPtrInput                            `pulumi:"id"`
-	Managed         pulumi.BoolPtrInput                              `pulumi:"managed"`
-	Name            pulumi.StringPtrInput                            `pulumi:"name"`
-	Properties      NdbStretchedVlanVlansListPropertyArrayInput      `pulumi:"properties"`
-	PropertiesMaps  NdbStretchedVlanVlansListPropertiesMapArrayInput `pulumi:"propertiesMaps"`
-	StretchedVlanId pulumi.StringPtrInput                            `pulumi:"stretchedVlanId"`
-	Type            pulumi.StringPtrInput                            `pulumi:"type"`
+	// cluster id where network is present
+	ClusterId pulumi.StringPtrInput `pulumi:"clusterId"`
+	// network id
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// network managed by NDB or not
+	Managed pulumi.BoolPtrInput `pulumi:"managed"`
+	// name for the stretched VLAN
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// properties of network
+	Properties NdbStretchedVlanVlansListPropertyArrayInput `pulumi:"properties"`
+	// properties map of network
+	PropertiesMaps NdbStretchedVlanVlansListPropertiesMapArrayInput `pulumi:"propertiesMaps"`
+	// stretched vlan id
+	StretchedVlanId pulumi.StringPtrInput `pulumi:"stretchedVlanId"`
+	// type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (NdbStretchedVlanVlansListArgs) ElementType() reflect.Type {
@@ -52272,34 +52757,42 @@ func (o NdbStretchedVlanVlansListOutput) ToNdbStretchedVlanVlansListOutputWithCo
 	return o
 }
 
+// cluster id where network is present
 func (o NdbStretchedVlanVlansListOutput) ClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbStretchedVlanVlansList) *string { return v.ClusterId }).(pulumi.StringPtrOutput)
 }
 
+// network id
 func (o NdbStretchedVlanVlansListOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbStretchedVlanVlansList) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
+// network managed by NDB or not
 func (o NdbStretchedVlanVlansListOutput) Managed() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NdbStretchedVlanVlansList) *bool { return v.Managed }).(pulumi.BoolPtrOutput)
 }
 
+// name for the stretched VLAN
 func (o NdbStretchedVlanVlansListOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbStretchedVlanVlansList) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// properties of network
 func (o NdbStretchedVlanVlansListOutput) Properties() NdbStretchedVlanVlansListPropertyArrayOutput {
 	return o.ApplyT(func(v NdbStretchedVlanVlansList) []NdbStretchedVlanVlansListProperty { return v.Properties }).(NdbStretchedVlanVlansListPropertyArrayOutput)
 }
 
+// properties map of network
 func (o NdbStretchedVlanVlansListOutput) PropertiesMaps() NdbStretchedVlanVlansListPropertiesMapArrayOutput {
 	return o.ApplyT(func(v NdbStretchedVlanVlansList) []NdbStretchedVlanVlansListPropertiesMap { return v.PropertiesMaps }).(NdbStretchedVlanVlansListPropertiesMapArrayOutput)
 }
 
+// stretched vlan id
 func (o NdbStretchedVlanVlansListOutput) StretchedVlanId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbStretchedVlanVlansList) *string { return v.StretchedVlanId }).(pulumi.StringPtrOutput)
 }
 
+// type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
 func (o NdbStretchedVlanVlansListOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbStretchedVlanVlansList) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -52325,10 +52818,14 @@ func (o NdbStretchedVlanVlansListArrayOutput) Index(i pulumi.IntInput) NdbStretc
 }
 
 type NdbStretchedVlanVlansListPropertiesMap struct {
-	VlanGateway      *string `pulumi:"vlanGateway"`
-	VlanPrimaryDns   *string `pulumi:"vlanPrimaryDns"`
+	// gateway of vlan
+	VlanGateway *string `pulumi:"vlanGateway"`
+	// primary dns of vlan
+	VlanPrimaryDns *string `pulumi:"vlanPrimaryDns"`
+	// secondary dns of vlan
 	VlanSecondaryDns *string `pulumi:"vlanSecondaryDns"`
-	VlanSubnetMask   *string `pulumi:"vlanSubnetMask"`
+	// subnet mask of vlan
+	VlanSubnetMask *string `pulumi:"vlanSubnetMask"`
 }
 
 // NdbStretchedVlanVlansListPropertiesMapInput is an input type that accepts NdbStretchedVlanVlansListPropertiesMap and NdbStretchedVlanVlansListPropertiesMapOutput values.
@@ -52343,10 +52840,14 @@ type NdbStretchedVlanVlansListPropertiesMapInput interface {
 }
 
 type NdbStretchedVlanVlansListPropertiesMapArgs struct {
-	VlanGateway      pulumi.StringPtrInput `pulumi:"vlanGateway"`
-	VlanPrimaryDns   pulumi.StringPtrInput `pulumi:"vlanPrimaryDns"`
+	// gateway of vlan
+	VlanGateway pulumi.StringPtrInput `pulumi:"vlanGateway"`
+	// primary dns of vlan
+	VlanPrimaryDns pulumi.StringPtrInput `pulumi:"vlanPrimaryDns"`
+	// secondary dns of vlan
 	VlanSecondaryDns pulumi.StringPtrInput `pulumi:"vlanSecondaryDns"`
-	VlanSubnetMask   pulumi.StringPtrInput `pulumi:"vlanSubnetMask"`
+	// subnet mask of vlan
+	VlanSubnetMask pulumi.StringPtrInput `pulumi:"vlanSubnetMask"`
 }
 
 func (NdbStretchedVlanVlansListPropertiesMapArgs) ElementType() reflect.Type {
@@ -52400,18 +52901,22 @@ func (o NdbStretchedVlanVlansListPropertiesMapOutput) ToNdbStretchedVlanVlansLis
 	return o
 }
 
+// gateway of vlan
 func (o NdbStretchedVlanVlansListPropertiesMapOutput) VlanGateway() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbStretchedVlanVlansListPropertiesMap) *string { return v.VlanGateway }).(pulumi.StringPtrOutput)
 }
 
+// primary dns of vlan
 func (o NdbStretchedVlanVlansListPropertiesMapOutput) VlanPrimaryDns() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbStretchedVlanVlansListPropertiesMap) *string { return v.VlanPrimaryDns }).(pulumi.StringPtrOutput)
 }
 
+// secondary dns of vlan
 func (o NdbStretchedVlanVlansListPropertiesMapOutput) VlanSecondaryDns() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbStretchedVlanVlansListPropertiesMap) *string { return v.VlanSecondaryDns }).(pulumi.StringPtrOutput)
 }
 
+// subnet mask of vlan
 func (o NdbStretchedVlanVlansListPropertiesMapOutput) VlanSubnetMask() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbStretchedVlanVlansListPropertiesMap) *string { return v.VlanSubnetMask }).(pulumi.StringPtrOutput)
 }
@@ -52437,6 +52942,7 @@ func (o NdbStretchedVlanVlansListPropertiesMapArrayOutput) Index(i pulumi.IntInp
 }
 
 type NdbStretchedVlanVlansListProperty struct {
+	// name for the stretched VLAN
 	Name   *string `pulumi:"name"`
 	Secure *bool   `pulumi:"secure"`
 	Value  *string `pulumi:"value"`
@@ -52454,6 +52960,7 @@ type NdbStretchedVlanVlansListPropertyInput interface {
 }
 
 type NdbStretchedVlanVlansListPropertyArgs struct {
+	// name for the stretched VLAN
 	Name   pulumi.StringPtrInput `pulumi:"name"`
 	Secure pulumi.BoolPtrInput   `pulumi:"secure"`
 	Value  pulumi.StringPtrInput `pulumi:"value"`
@@ -52510,6 +53017,7 @@ func (o NdbStretchedVlanVlansListPropertyOutput) ToNdbStretchedVlanVlansListProp
 	return o
 }
 
+// name for the stretched VLAN
 func (o NdbStretchedVlanVlansListPropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbStretchedVlanVlansListProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }

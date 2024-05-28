@@ -6,6 +6,9 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a resource to create profiles (Software, Network, Database Parameter, Compute) based on the input parameters.
+ */
 export class NdbProfile extends pulumi.CustomResource {
     /**
      * Get an existing NdbProfile resource's state with the given name, ID, and optional extra
@@ -34,22 +37,73 @@ export class NdbProfile extends pulumi.CustomResource {
         return obj['__pulumiType'] === NdbProfile.__pulumiType;
     }
 
+    /**
+     * associated databases of profiles
+     */
     public /*out*/ readonly assocDatabases!: pulumi.Output<string[]>;
+    /**
+     * associated database servers for associated profiles
+     */
     public /*out*/ readonly assocDbServers!: pulumi.Output<string[]>;
+    /**
+     * cluster availability of profile
+     */
     public /*out*/ readonly clusterAvailabilities!: pulumi.Output<outputs.NdbProfileClusterAvailability[]>;
+    /**
+     * Compute Profile
+     */
     public readonly computeProfiles!: pulumi.Output<outputs.NdbProfileComputeProfile[] | undefined>;
+    /**
+     * Database Parameter Profile
+     */
     public readonly databaseParameterProfiles!: pulumi.Output<outputs.NdbProfileDatabaseParameterProfile[] | undefined>;
+    /**
+     * Description of profile
+     */
     public readonly description!: pulumi.Output<string | undefined>;
+    /**
+     * Engine Type of database
+     */
     public readonly engineType!: pulumi.Output<string>;
+    /**
+     * latest version of profile
+     */
     public /*out*/ readonly latestVersion!: pulumi.Output<string>;
+    /**
+     * latest version id of profile
+     */
     public /*out*/ readonly latestVersionId!: pulumi.Output<string>;
+    /**
+     * Name of profile
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * Network Profile
+     */
     public readonly networkProfiles!: pulumi.Output<outputs.NdbProfileNetworkProfile[] | undefined>;
+    /**
+     * cluster on which profile created
+     */
     public /*out*/ readonly nxClusterId!: pulumi.Output<string>;
+    /**
+     * owner  of profile
+     */
     public /*out*/ readonly owner!: pulumi.Output<string>;
+    /**
+     * Publish for all users
+     */
     public readonly published!: pulumi.Output<boolean | undefined>;
+    /**
+     * Software Profile
+     */
     public readonly softwareProfile!: pulumi.Output<outputs.NdbProfileSoftwareProfile | undefined>;
+    /**
+     * status of profile
+     */
     public /*out*/ readonly status!: pulumi.Output<string>;
+    /**
+     * versions of associated profiles
+     */
     public /*out*/ readonly versions!: pulumi.Output<outputs.NdbProfileVersion[]>;
 
     /**
@@ -111,22 +165,73 @@ export class NdbProfile extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NdbProfile resources.
  */
 export interface NdbProfileState {
+    /**
+     * associated databases of profiles
+     */
     assocDatabases?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * associated database servers for associated profiles
+     */
     assocDbServers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * cluster availability of profile
+     */
     clusterAvailabilities?: pulumi.Input<pulumi.Input<inputs.NdbProfileClusterAvailability>[]>;
+    /**
+     * Compute Profile
+     */
     computeProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileComputeProfile>[]>;
+    /**
+     * Database Parameter Profile
+     */
     databaseParameterProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileDatabaseParameterProfile>[]>;
+    /**
+     * Description of profile
+     */
     description?: pulumi.Input<string>;
+    /**
+     * Engine Type of database
+     */
     engineType?: pulumi.Input<string>;
+    /**
+     * latest version of profile
+     */
     latestVersion?: pulumi.Input<string>;
+    /**
+     * latest version id of profile
+     */
     latestVersionId?: pulumi.Input<string>;
+    /**
+     * Name of profile
+     */
     name?: pulumi.Input<string>;
+    /**
+     * Network Profile
+     */
     networkProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileNetworkProfile>[]>;
+    /**
+     * cluster on which profile created
+     */
     nxClusterId?: pulumi.Input<string>;
+    /**
+     * owner  of profile
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * Publish for all users
+     */
     published?: pulumi.Input<boolean>;
+    /**
+     * Software Profile
+     */
     softwareProfile?: pulumi.Input<inputs.NdbProfileSoftwareProfile>;
+    /**
+     * status of profile
+     */
     status?: pulumi.Input<string>;
+    /**
+     * versions of associated profiles
+     */
     versions?: pulumi.Input<pulumi.Input<inputs.NdbProfileVersion>[]>;
 }
 
@@ -134,12 +239,36 @@ export interface NdbProfileState {
  * The set of arguments for constructing a NdbProfile resource.
  */
 export interface NdbProfileArgs {
+    /**
+     * Compute Profile
+     */
     computeProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileComputeProfile>[]>;
+    /**
+     * Database Parameter Profile
+     */
     databaseParameterProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileDatabaseParameterProfile>[]>;
+    /**
+     * Description of profile
+     */
     description?: pulumi.Input<string>;
+    /**
+     * Engine Type of database
+     */
     engineType?: pulumi.Input<string>;
+    /**
+     * Name of profile
+     */
     name?: pulumi.Input<string>;
+    /**
+     * Network Profile
+     */
     networkProfiles?: pulumi.Input<pulumi.Input<inputs.NdbProfileNetworkProfile>[]>;
+    /**
+     * Publish for all users
+     */
     published?: pulumi.Input<boolean>;
+    /**
+     * Software Profile
+     */
     softwareProfile?: pulumi.Input<inputs.NdbProfileSoftwareProfile>;
 }

@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class KarbonWorkerNodepoolNode
     {
+        /// <summary>
+        /// hostname of node
+        /// </summary>
         public readonly string? Hostname;
+        /// <summary>
+        /// ipv4 address of node
+        /// </summary>
         public readonly string? Ipv4Address;
 
         [OutputConstructor]

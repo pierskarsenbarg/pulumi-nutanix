@@ -13,12 +13,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class NdbProfileComputeProfileArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// number of cores per vCPU for the database server VM.
+        /// </summary>
         [Input("corePerCpu")]
         public Input<string>? CorePerCpu { get; set; }
 
+        /// <summary>
+        /// number of vCPUs for the database server VM.
+        /// </summary>
         [Input("cpus")]
         public Input<string>? Cpus { get; set; }
 
+        /// <summary>
+        /// amount of memory for the database server VM.
+        /// </summary>
         [Input("memorySize")]
         public Input<string>? MemorySize { get; set; }
 

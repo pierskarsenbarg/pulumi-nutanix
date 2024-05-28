@@ -6,6 +6,22 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a resource to scale the database instance based on the input parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const scale = new nutanix.NdbDatabaseScale("scale", {
+ *     applicationType: "{{ Application Type }}",
+ *     dataStorageSize: 1,
+ *     databaseUuid: "{{ database_id }}",
+ * });
+ * ```
+ */
 export class NdbScaleDatabase extends pulumi.CustomResource {
     /**
      * Get an existing NdbScaleDatabase resource's state with the given name, ID, and optional extra
@@ -34,39 +50,123 @@ export class NdbScaleDatabase extends pulumi.CustomResource {
         return obj['__pulumiType'] === NdbScaleDatabase.__pulumiType;
     }
 
+    /**
+     * type of instance. eg: postgres_database
+     */
     public readonly applicationType!: pulumi.Output<string>;
+    /**
+     * whether instance is cloned or not
+     */
     public /*out*/ readonly clone!: pulumi.Output<boolean>;
+    /**
+     * data area (in GiB) to be added to the existing database.
+     */
     public readonly dataStorageSize!: pulumi.Output<number>;
+    /**
+     * database cluster type
+     */
     public /*out*/ readonly databaseClusterType!: pulumi.Output<string>;
     public /*out*/ readonly databaseInstanceId!: pulumi.Output<string>;
+    /**
+     * name of database
+     */
     public /*out*/ readonly databaseName!: pulumi.Output<string>;
+    /**
+     * database nodes associated with database instance
+     */
     public /*out*/ readonly databaseNodes!: pulumi.Output<outputs.NdbScaleDatabaseDatabaseNode[]>;
+    /**
+     * Database id
+     */
     public readonly databaseUuid!: pulumi.Output<string>;
+    /**
+     * type of database
+     */
     public /*out*/ readonly databasetype!: pulumi.Output<string>;
+    /**
+     * date created for db instance
+     */
     public /*out*/ readonly dateCreated!: pulumi.Output<string>;
+    /**
+     * date modified for instance
+     */
     public /*out*/ readonly dateModified!: pulumi.Output<string>;
+    /**
+     * dbserver logical cluster
+     */
     public /*out*/ readonly dbserverLogicalCluster!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * dbserver logical cluster id
+     */
     public /*out*/ readonly dbserverLogicalClusterId!: pulumi.Output<string>;
+    /**
+     * description of database instance
+     */
     public /*out*/ readonly description!: pulumi.Output<string>;
+    /**
+     * info of instance
+     */
     public /*out*/ readonly infos!: pulumi.Output<outputs.NdbScaleDatabaseInfo[]>;
+    /**
+     * LCM config of instance
+     */
     public /*out*/ readonly lcmConfigs!: pulumi.Output<outputs.NdbScaleDatabaseLcmConfig[]>;
+    /**
+     * linked databases within database instance
+     */
     public /*out*/ readonly linkedDatabases!: pulumi.Output<outputs.NdbScaleDatabaseLinkedDatabase[]>;
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
     public /*out*/ readonly metric!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * Name of database instance
+     */
     public /*out*/ readonly name!: pulumi.Output<string>;
+    /**
+     * parent database id
+     */
     public /*out*/ readonly parentDatabaseId!: pulumi.Output<string>;
     public /*out*/ readonly parentSourceDatabaseId!: pulumi.Output<string>;
+    /**
+     * post script command
+     */
     public readonly postScriptCmd!: pulumi.Output<string | undefined>;
+    /**
+     * pre script command
+     */
     public readonly preScriptCmd!: pulumi.Output<string | undefined>;
     /**
-     * List of all the properties
+     * properties of database created
      */
     public /*out*/ readonly properties!: pulumi.Output<outputs.NdbScaleDatabaseProperty[]>;
+    /**
+     * scale count helps to scale the same instance with same config
+     */
     public readonly scaleCount!: pulumi.Output<number | undefined>;
+    /**
+     * status of instance
+     */
     public /*out*/ readonly status!: pulumi.Output<string>;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
     public readonly tags!: pulumi.Output<outputs.NdbScaleDatabaseTag[]>;
+    /**
+     * time machine id of instance
+     */
     public /*out*/ readonly timeMachineId!: pulumi.Output<string>;
+    /**
+     * Time Machine details of instance
+     */
     public /*out*/ readonly timeMachines!: pulumi.Output<outputs.NdbScaleDatabaseTimeMachine[]>;
+    /**
+     * timezone on which instance is created xw
+     */
     public /*out*/ readonly timeZone!: pulumi.Output<string>;
+    /**
+     * type of database
+     */
     public /*out*/ readonly type!: pulumi.Output<string>;
 
     /**
@@ -165,39 +265,123 @@ export class NdbScaleDatabase extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NdbScaleDatabase resources.
  */
 export interface NdbScaleDatabaseState {
+    /**
+     * type of instance. eg: postgres_database
+     */
     applicationType?: pulumi.Input<string>;
+    /**
+     * whether instance is cloned or not
+     */
     clone?: pulumi.Input<boolean>;
+    /**
+     * data area (in GiB) to be added to the existing database.
+     */
     dataStorageSize?: pulumi.Input<number>;
+    /**
+     * database cluster type
+     */
     databaseClusterType?: pulumi.Input<string>;
     databaseInstanceId?: pulumi.Input<string>;
+    /**
+     * name of database
+     */
     databaseName?: pulumi.Input<string>;
+    /**
+     * database nodes associated with database instance
+     */
     databaseNodes?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseDatabaseNode>[]>;
+    /**
+     * Database id
+     */
     databaseUuid?: pulumi.Input<string>;
+    /**
+     * type of database
+     */
     databasetype?: pulumi.Input<string>;
+    /**
+     * date created for db instance
+     */
     dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
     dateModified?: pulumi.Input<string>;
+    /**
+     * dbserver logical cluster
+     */
     dbserverLogicalCluster?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * dbserver logical cluster id
+     */
     dbserverLogicalClusterId?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
     description?: pulumi.Input<string>;
+    /**
+     * info of instance
+     */
     infos?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseInfo>[]>;
+    /**
+     * LCM config of instance
+     */
     lcmConfigs?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseLcmConfig>[]>;
+    /**
+     * linked databases within database instance
+     */
     linkedDatabases?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseLinkedDatabase>[]>;
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
     metric?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Name of database instance
+     */
     name?: pulumi.Input<string>;
+    /**
+     * parent database id
+     */
     parentDatabaseId?: pulumi.Input<string>;
     parentSourceDatabaseId?: pulumi.Input<string>;
+    /**
+     * post script command
+     */
     postScriptCmd?: pulumi.Input<string>;
+    /**
+     * pre script command
+     */
     preScriptCmd?: pulumi.Input<string>;
     /**
-     * List of all the properties
+     * properties of database created
      */
     properties?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseProperty>[]>;
+    /**
+     * scale count helps to scale the same instance with same config
+     */
     scaleCount?: pulumi.Input<number>;
+    /**
+     * status of instance
+     */
     status?: pulumi.Input<string>;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
     tags?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTag>[]>;
+    /**
+     * time machine id of instance
+     */
     timeMachineId?: pulumi.Input<string>;
+    /**
+     * Time Machine details of instance
+     */
     timeMachines?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachine>[]>;
+    /**
+     * timezone on which instance is created xw
+     */
     timeZone?: pulumi.Input<string>;
+    /**
+     * type of database
+     */
     type?: pulumi.Input<string>;
 }
 
@@ -205,11 +389,32 @@ export interface NdbScaleDatabaseState {
  * The set of arguments for constructing a NdbScaleDatabase resource.
  */
 export interface NdbScaleDatabaseArgs {
+    /**
+     * type of instance. eg: postgres_database
+     */
     applicationType: pulumi.Input<string>;
+    /**
+     * data area (in GiB) to be added to the existing database.
+     */
     dataStorageSize: pulumi.Input<number>;
+    /**
+     * Database id
+     */
     databaseUuid: pulumi.Input<string>;
+    /**
+     * post script command
+     */
     postScriptCmd?: pulumi.Input<string>;
+    /**
+     * pre script command
+     */
     preScriptCmd?: pulumi.Input<string>;
+    /**
+     * scale count helps to scale the same instance with same config
+     */
     scaleCount?: pulumi.Input<number>;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
     tags?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTag>[]>;
 }

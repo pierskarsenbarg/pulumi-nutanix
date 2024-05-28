@@ -16,12 +16,24 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly ImmutableArray<Outputs.NdbScaleDatabaseTimeMachineScheduleContinuousSchedule> ContinuousSchedules;
         public readonly ImmutableArray<Outputs.NdbScaleDatabaseTimeMachineScheduleDailySchedule> DailySchedules;
+        /// <summary>
+        /// date created for db instance
+        /// </summary>
         public readonly string? DateCreated;
+        /// <summary>
+        /// date modified for instance
+        /// </summary>
         public readonly string? DateModified;
+        /// <summary>
+        /// description of database instance
+        /// </summary>
         public readonly string? Description;
         public readonly bool? GlobalPolicy;
         public readonly string? Id;
         public readonly ImmutableArray<Outputs.NdbScaleDatabaseTimeMachineScheduleMonthlySchedule> MonthlySchedules;
+        /// <summary>
+        /// Name of database instance
+        /// </summary>
         public readonly string? Name;
         public readonly string? OwnerId;
         public readonly ImmutableArray<Outputs.NdbScaleDatabaseTimeMachineScheduleQuartelySchedule> QuartelySchedules;
@@ -29,6 +41,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.NdbScaleDatabaseTimeMachineScheduleSnapshotTimeOfDay> SnapshotTimeOfDays;
         public readonly string? StartTime;
         public readonly bool? SystemPolicy;
+        /// <summary>
+        /// timezone on which instance is created xw
+        /// </summary>
         public readonly string? TimeZone;
         public readonly string? UniqueName;
         public readonly ImmutableArray<Outputs.NdbScaleDatabaseTimeMachineScheduleWeeklySchedule> WeeklySchedules;

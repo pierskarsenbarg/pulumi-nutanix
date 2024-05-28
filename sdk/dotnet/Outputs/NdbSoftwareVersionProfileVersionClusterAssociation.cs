@@ -14,13 +14,37 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbSoftwareVersionProfileVersionClusterAssociation
     {
+        /// <summary>
+        /// date created of profile
+        /// </summary>
         public readonly string? DateCreated;
+        /// <summary>
+        /// date modified of profile
+        /// </summary>
         public readonly string? DateModified;
+        /// <summary>
+        /// nutanix cluster id
+        /// </summary>
         public readonly string? NxClusterId;
+        /// <summary>
+        /// version optimized for provisioning
+        /// </summary>
         public readonly bool? OptimizedForProvisioning;
+        /// <summary>
+        /// owner id
+        /// </summary>
         public readonly string? OwnerId;
+        /// <summary>
+        /// profile version id
+        /// </summary>
         public readonly string? ProfileVersionId;
+        /// <summary>
+        /// properties of software profile
+        /// </summary>
         public readonly ImmutableArray<Outputs.NdbSoftwareVersionProfileVersionClusterAssociationProperty> Properties;
+        /// <summary>
+        /// status of profile. Allowed Values are "deprecated", "published", "unpublished"
+        /// </summary>
         public readonly string? Status;
 
         [OutputConstructor]

@@ -15,20 +15,38 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class NdbScaleDatabaseTimeMachine
     {
         public readonly string? AccessLevel;
+        /// <summary>
+        /// whether instance is cloned or not
+        /// </summary>
         public readonly bool? Clone;
         public readonly string? Clones;
         public readonly bool? Clustered;
         public readonly string? Database;
         public readonly string? DatabaseId;
+        /// <summary>
+        /// date created for db instance
+        /// </summary>
         public readonly string? DateCreated;
+        /// <summary>
+        /// date modified for instance
+        /// </summary>
         public readonly string? DateModified;
+        /// <summary>
+        /// description of database instance
+        /// </summary>
         public readonly string? Description;
         public readonly string? EaStatus;
         public readonly string? Id;
+        /// <summary>
+        /// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        /// </summary>
         public readonly string? Metric;
+        /// <summary>
+        /// Name of database instance
+        /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// List of all the properties
+        /// properties of database created
         /// </summary>
         public readonly ImmutableArray<Outputs.NdbScaleDatabaseTimeMachineProperty> Properties;
         public readonly string? ScheduleId;
@@ -39,8 +57,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string? SlaUpdateMetadata;
         public readonly ImmutableArray<Outputs.NdbScaleDatabaseTimeMachineSla> Slas;
         public readonly ImmutableArray<string> SourceNxClusters;
+        /// <summary>
+        /// status of instance
+        /// </summary>
         public readonly string? Status;
+        /// <summary>
+        /// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        /// </summary>
         public readonly ImmutableArray<Outputs.NdbScaleDatabaseTimeMachineTag> Tags;
+        /// <summary>
+        /// type of database
+        /// </summary>
         public readonly string? Type;
 
         [OutputConstructor]

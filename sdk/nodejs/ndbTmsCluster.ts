@@ -4,6 +4,22 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a resource to manage time machine data availability across all the registered Nutanix clusters in NDB.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const cls = new nutanix.NdbTmsCluster("cls", {
+ *     nxClusterId: "{{ cluster_id }}",
+ *     slaId: "{{ sla_id }}",
+ *     timeMachineId: "{{ tms_id }}",
+ * });
+ * ```
+ */
 export class NdbTmsCluster extends pulumi.CustomResource {
     /**
      * Get an existing NdbTmsCluster resource's state with the given name, ID, and optional extra
@@ -32,19 +48,61 @@ export class NdbTmsCluster extends pulumi.CustomResource {
         return obj['__pulumiType'] === NdbTmsCluster.__pulumiType;
     }
 
+    /**
+     * created date of time machine associated with cluster
+     */
     public /*out*/ readonly dateCreated!: pulumi.Output<string>;
+    /**
+     * modified date of time machine associated with cluster
+     */
     public /*out*/ readonly dateModified!: pulumi.Output<string>;
+    /**
+     * description of nutanix cluster associated with time machine
+     */
     public /*out*/ readonly description!: pulumi.Output<string>;
+    /**
+     * log drive id
+     */
     public /*out*/ readonly logDriveId!: pulumi.Output<string>;
+    /**
+     * log drive status of time machine
+     */
     public /*out*/ readonly logDriveStatus!: pulumi.Output<string>;
+    /**
+     * Nutanix cluster id on the associated registered clusters.
+     */
     public readonly nxClusterId!: pulumi.Output<string>;
+    /**
+     * owner id
+     */
     public /*out*/ readonly ownerId!: pulumi.Output<string>;
+    /**
+     * schedule id of the data associated with time machine
+     */
     public /*out*/ readonly scheduleId!: pulumi.Output<string>;
+    /**
+     * SLA id for the associated cluster.
+     */
     public readonly slaId!: pulumi.Output<string>;
+    /**
+     * source is present or not
+     */
     public /*out*/ readonly source!: pulumi.Output<boolean>;
+    /**
+     * source clusters in time machines
+     */
     public /*out*/ readonly sourceClusters!: pulumi.Output<string[]>;
+    /**
+     * status of the cluster associated with time machine
+     */
     public /*out*/ readonly status!: pulumi.Output<string>;
+    /**
+     * time machine id
+     */
     public readonly timeMachineId!: pulumi.Output<string>;
+    /**
+     * Default value is "OTHER"
+     */
     public readonly type!: pulumi.Output<string | undefined>;
 
     /**
@@ -109,19 +167,61 @@ export class NdbTmsCluster extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NdbTmsCluster resources.
  */
 export interface NdbTmsClusterState {
+    /**
+     * created date of time machine associated with cluster
+     */
     dateCreated?: pulumi.Input<string>;
+    /**
+     * modified date of time machine associated with cluster
+     */
     dateModified?: pulumi.Input<string>;
+    /**
+     * description of nutanix cluster associated with time machine
+     */
     description?: pulumi.Input<string>;
+    /**
+     * log drive id
+     */
     logDriveId?: pulumi.Input<string>;
+    /**
+     * log drive status of time machine
+     */
     logDriveStatus?: pulumi.Input<string>;
+    /**
+     * Nutanix cluster id on the associated registered clusters.
+     */
     nxClusterId?: pulumi.Input<string>;
+    /**
+     * owner id
+     */
     ownerId?: pulumi.Input<string>;
+    /**
+     * schedule id of the data associated with time machine
+     */
     scheduleId?: pulumi.Input<string>;
+    /**
+     * SLA id for the associated cluster.
+     */
     slaId?: pulumi.Input<string>;
+    /**
+     * source is present or not
+     */
     source?: pulumi.Input<boolean>;
+    /**
+     * source clusters in time machines
+     */
     sourceClusters?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * status of the cluster associated with time machine
+     */
     status?: pulumi.Input<string>;
+    /**
+     * time machine id
+     */
     timeMachineId?: pulumi.Input<string>;
+    /**
+     * Default value is "OTHER"
+     */
     type?: pulumi.Input<string>;
 }
 
@@ -129,8 +229,20 @@ export interface NdbTmsClusterState {
  * The set of arguments for constructing a NdbTmsCluster resource.
  */
 export interface NdbTmsClusterArgs {
+    /**
+     * Nutanix cluster id on the associated registered clusters.
+     */
     nxClusterId: pulumi.Input<string>;
+    /**
+     * SLA id for the associated cluster.
+     */
     slaId: pulumi.Input<string>;
+    /**
+     * time machine id
+     */
     timeMachineId: pulumi.Input<string>;
+    /**
+     * Default value is "OTHER"
+     */
     type?: pulumi.Input<string>;
 }

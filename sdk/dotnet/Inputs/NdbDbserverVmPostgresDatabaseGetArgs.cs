@@ -13,9 +13,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class NdbDbserverVmPostgresDatabaseGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// use SSH public keys to access the database server VM.
+        /// </summary>
         [Input("clientPublicKey")]
         public Input<string>? ClientPublicKey { get; set; }
 
+        /// <summary>
+        /// name for the database server VM.
+        /// </summary>
         [Input("vmName", required: true)]
         public Input<string> VmName { get; set; } = null!;
 

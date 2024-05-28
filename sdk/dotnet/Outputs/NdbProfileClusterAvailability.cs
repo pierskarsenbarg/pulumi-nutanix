@@ -16,9 +16,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly string? DateCreated;
         public readonly string? DateModified;
+        /// <summary>
+        /// cluster on which profile created
+        /// </summary>
         public readonly string? NxClusterId;
         public readonly string? OwnerId;
         public readonly string? ProfileId;
+        /// <summary>
+        /// status of profile
+        /// </summary>
         public readonly string? Status;
 
         [OutputConstructor]

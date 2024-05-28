@@ -14,7 +14,16 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbDbserverVmMaintenanceTasks
     {
+        /// <summary>
+        /// Associate an existing maintenance window id. NDB starts OS patching or database patching as per the schedule defined in the maintenance window.
+        /// </summary>
         public readonly string? MaintenanceWindowId;
+        /// <summary>
+        /// Tasks for the maintenance.
+        /// * `tasks.task_type`: use this option if you want NDB to perform database patching or OS patching automatically. Supports [ OS_PATCHING, DB_PATCHING ].
+        /// * `tasks.pre_command`: add pre (operating system and database patching) commands.
+        /// * `tasks.post_command`:add post (operating system and database patching) commands.
+        /// </summary>
         public readonly ImmutableArray<Outputs.NdbDbserverVmMaintenanceTasksTask> Tasks;
 
         [OutputConstructor]

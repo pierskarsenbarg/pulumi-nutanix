@@ -14,11 +14,29 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class KarbonWorkerNodepoolAhvConfig
     {
+        /// <summary>
+        /// - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+        /// </summary>
         public readonly int? Cpu;
+        /// <summary>
+        /// - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+        /// </summary>
         public readonly int? DiskMib;
+        /// <summary>
+        /// VM network UUID for isolating iscsi data traffic.
+        /// </summary>
         public readonly string? IscsiNetworkUuid;
+        /// <summary>
+        /// - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+        /// </summary>
         public readonly int? MemoryMib;
+        /// <summary>
+        /// - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+        /// </summary>
         public readonly string NetworkUuid;
+        /// <summary>
+        /// - (Optional) The unique universal identifier (UUID) of the Prism Element
+        /// </summary>
         public readonly string? PrismElementClusterUuid;
 
         [OutputConstructor]

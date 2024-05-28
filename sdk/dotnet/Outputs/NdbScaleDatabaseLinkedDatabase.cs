@@ -14,18 +14,45 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbScaleDatabaseLinkedDatabase
     {
+        /// <summary>
+        /// name of database
+        /// </summary>
         public readonly string? DatabaseName;
         public readonly string? DatabaseStatus;
+        /// <summary>
+        /// date created for db instance
+        /// </summary>
         public readonly string? DateCreated;
+        /// <summary>
+        /// date modified for instance
+        /// </summary>
         public readonly string? DateModified;
+        /// <summary>
+        /// description of database instance
+        /// </summary>
         public readonly string? Description;
         public readonly string? Id;
+        /// <summary>
+        /// info of instance
+        /// </summary>
         public readonly ImmutableArray<Outputs.NdbScaleDatabaseLinkedDatabaseInfo> Infos;
+        /// <summary>
+        /// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        /// </summary>
         public readonly ImmutableDictionary<string, string>? Metric;
+        /// <summary>
+        /// Name of database instance
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// parent database id
+        /// </summary>
         public readonly string? ParentDatabaseId;
         public readonly string? ParentLinkedDatabaseId;
         public readonly string? SnapshotId;
+        /// <summary>
+        /// status of instance
+        /// </summary>
         public readonly string? Status;
         public readonly string? Timezone;
 

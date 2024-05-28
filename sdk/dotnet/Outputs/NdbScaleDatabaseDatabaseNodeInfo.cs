@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbScaleDatabaseDatabaseNodeInfo
     {
+        /// <summary>
+        /// info of instance
+        /// </summary>
         public readonly ImmutableDictionary<string, string>? Info;
         public readonly ImmutableDictionary<string, string>? SecureInfo;
 

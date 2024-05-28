@@ -12,23 +12,66 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a resource to manage time machine data availability across all the registered Nutanix clusters in NDB.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewNdbTmsCluster(ctx, "cls", &nutanix.NdbTmsClusterArgs{
+//				NxClusterId:   pulumi.String("{{ cluster_id }}"),
+//				SlaId:         pulumi.String("{{ sla_id }}"),
+//				TimeMachineId: pulumi.String("{{ tms_id }}"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type NdbTmsCluster struct {
 	pulumi.CustomResourceState
 
-	DateCreated    pulumi.StringOutput      `pulumi:"dateCreated"`
-	DateModified   pulumi.StringOutput      `pulumi:"dateModified"`
-	Description    pulumi.StringOutput      `pulumi:"description"`
-	LogDriveId     pulumi.StringOutput      `pulumi:"logDriveId"`
-	LogDriveStatus pulumi.StringOutput      `pulumi:"logDriveStatus"`
-	NxClusterId    pulumi.StringOutput      `pulumi:"nxClusterId"`
-	OwnerId        pulumi.StringOutput      `pulumi:"ownerId"`
-	ScheduleId     pulumi.StringOutput      `pulumi:"scheduleId"`
-	SlaId          pulumi.StringOutput      `pulumi:"slaId"`
-	Source         pulumi.BoolOutput        `pulumi:"source"`
+	// created date of time machine associated with cluster
+	DateCreated pulumi.StringOutput `pulumi:"dateCreated"`
+	// modified date of time machine associated with cluster
+	DateModified pulumi.StringOutput `pulumi:"dateModified"`
+	// description of nutanix cluster associated with time machine
+	Description pulumi.StringOutput `pulumi:"description"`
+	// log drive id
+	LogDriveId pulumi.StringOutput `pulumi:"logDriveId"`
+	// log drive status of time machine
+	LogDriveStatus pulumi.StringOutput `pulumi:"logDriveStatus"`
+	// Nutanix cluster id on the associated registered clusters.
+	NxClusterId pulumi.StringOutput `pulumi:"nxClusterId"`
+	// owner id
+	OwnerId pulumi.StringOutput `pulumi:"ownerId"`
+	// schedule id of the data associated with time machine
+	ScheduleId pulumi.StringOutput `pulumi:"scheduleId"`
+	// SLA id for the associated cluster.
+	SlaId pulumi.StringOutput `pulumi:"slaId"`
+	// source is present or not
+	Source pulumi.BoolOutput `pulumi:"source"`
+	// source clusters in time machines
 	SourceClusters pulumi.StringArrayOutput `pulumi:"sourceClusters"`
-	Status         pulumi.StringOutput      `pulumi:"status"`
-	TimeMachineId  pulumi.StringOutput      `pulumi:"timeMachineId"`
-	Type           pulumi.StringPtrOutput   `pulumi:"type"`
+	// status of the cluster associated with time machine
+	Status pulumi.StringOutput `pulumi:"status"`
+	// time machine id
+	TimeMachineId pulumi.StringOutput `pulumi:"timeMachineId"`
+	// Default value is "OTHER"
+	Type pulumi.StringPtrOutput `pulumi:"type"`
 }
 
 // NewNdbTmsCluster registers a new resource with the given unique name, arguments, and options.
@@ -70,37 +113,65 @@ func GetNdbTmsCluster(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NdbTmsCluster resources.
 type ndbTmsClusterState struct {
-	DateCreated    *string  `pulumi:"dateCreated"`
-	DateModified   *string  `pulumi:"dateModified"`
-	Description    *string  `pulumi:"description"`
-	LogDriveId     *string  `pulumi:"logDriveId"`
-	LogDriveStatus *string  `pulumi:"logDriveStatus"`
-	NxClusterId    *string  `pulumi:"nxClusterId"`
-	OwnerId        *string  `pulumi:"ownerId"`
-	ScheduleId     *string  `pulumi:"scheduleId"`
-	SlaId          *string  `pulumi:"slaId"`
-	Source         *bool    `pulumi:"source"`
+	// created date of time machine associated with cluster
+	DateCreated *string `pulumi:"dateCreated"`
+	// modified date of time machine associated with cluster
+	DateModified *string `pulumi:"dateModified"`
+	// description of nutanix cluster associated with time machine
+	Description *string `pulumi:"description"`
+	// log drive id
+	LogDriveId *string `pulumi:"logDriveId"`
+	// log drive status of time machine
+	LogDriveStatus *string `pulumi:"logDriveStatus"`
+	// Nutanix cluster id on the associated registered clusters.
+	NxClusterId *string `pulumi:"nxClusterId"`
+	// owner id
+	OwnerId *string `pulumi:"ownerId"`
+	// schedule id of the data associated with time machine
+	ScheduleId *string `pulumi:"scheduleId"`
+	// SLA id for the associated cluster.
+	SlaId *string `pulumi:"slaId"`
+	// source is present or not
+	Source *bool `pulumi:"source"`
+	// source clusters in time machines
 	SourceClusters []string `pulumi:"sourceClusters"`
-	Status         *string  `pulumi:"status"`
-	TimeMachineId  *string  `pulumi:"timeMachineId"`
-	Type           *string  `pulumi:"type"`
+	// status of the cluster associated with time machine
+	Status *string `pulumi:"status"`
+	// time machine id
+	TimeMachineId *string `pulumi:"timeMachineId"`
+	// Default value is "OTHER"
+	Type *string `pulumi:"type"`
 }
 
 type NdbTmsClusterState struct {
-	DateCreated    pulumi.StringPtrInput
-	DateModified   pulumi.StringPtrInput
-	Description    pulumi.StringPtrInput
-	LogDriveId     pulumi.StringPtrInput
+	// created date of time machine associated with cluster
+	DateCreated pulumi.StringPtrInput
+	// modified date of time machine associated with cluster
+	DateModified pulumi.StringPtrInput
+	// description of nutanix cluster associated with time machine
+	Description pulumi.StringPtrInput
+	// log drive id
+	LogDriveId pulumi.StringPtrInput
+	// log drive status of time machine
 	LogDriveStatus pulumi.StringPtrInput
-	NxClusterId    pulumi.StringPtrInput
-	OwnerId        pulumi.StringPtrInput
-	ScheduleId     pulumi.StringPtrInput
-	SlaId          pulumi.StringPtrInput
-	Source         pulumi.BoolPtrInput
+	// Nutanix cluster id on the associated registered clusters.
+	NxClusterId pulumi.StringPtrInput
+	// owner id
+	OwnerId pulumi.StringPtrInput
+	// schedule id of the data associated with time machine
+	ScheduleId pulumi.StringPtrInput
+	// SLA id for the associated cluster.
+	SlaId pulumi.StringPtrInput
+	// source is present or not
+	Source pulumi.BoolPtrInput
+	// source clusters in time machines
 	SourceClusters pulumi.StringArrayInput
-	Status         pulumi.StringPtrInput
-	TimeMachineId  pulumi.StringPtrInput
-	Type           pulumi.StringPtrInput
+	// status of the cluster associated with time machine
+	Status pulumi.StringPtrInput
+	// time machine id
+	TimeMachineId pulumi.StringPtrInput
+	// Default value is "OTHER"
+	Type pulumi.StringPtrInput
 }
 
 func (NdbTmsClusterState) ElementType() reflect.Type {
@@ -108,18 +179,26 @@ func (NdbTmsClusterState) ElementType() reflect.Type {
 }
 
 type ndbTmsClusterArgs struct {
-	NxClusterId   string  `pulumi:"nxClusterId"`
-	SlaId         string  `pulumi:"slaId"`
-	TimeMachineId string  `pulumi:"timeMachineId"`
-	Type          *string `pulumi:"type"`
+	// Nutanix cluster id on the associated registered clusters.
+	NxClusterId string `pulumi:"nxClusterId"`
+	// SLA id for the associated cluster.
+	SlaId string `pulumi:"slaId"`
+	// time machine id
+	TimeMachineId string `pulumi:"timeMachineId"`
+	// Default value is "OTHER"
+	Type *string `pulumi:"type"`
 }
 
 // The set of arguments for constructing a NdbTmsCluster resource.
 type NdbTmsClusterArgs struct {
-	NxClusterId   pulumi.StringInput
-	SlaId         pulumi.StringInput
+	// Nutanix cluster id on the associated registered clusters.
+	NxClusterId pulumi.StringInput
+	// SLA id for the associated cluster.
+	SlaId pulumi.StringInput
+	// time machine id
 	TimeMachineId pulumi.StringInput
-	Type          pulumi.StringPtrInput
+	// Default value is "OTHER"
+	Type pulumi.StringPtrInput
 }
 
 func (NdbTmsClusterArgs) ElementType() reflect.Type {
@@ -209,58 +288,72 @@ func (o NdbTmsClusterOutput) ToNdbTmsClusterOutputWithContext(ctx context.Contex
 	return o
 }
 
+// created date of time machine associated with cluster
 func (o NdbTmsClusterOutput) DateCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbTmsCluster) pulumi.StringOutput { return v.DateCreated }).(pulumi.StringOutput)
 }
 
+// modified date of time machine associated with cluster
 func (o NdbTmsClusterOutput) DateModified() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbTmsCluster) pulumi.StringOutput { return v.DateModified }).(pulumi.StringOutput)
 }
 
+// description of nutanix cluster associated with time machine
 func (o NdbTmsClusterOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbTmsCluster) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
+// log drive id
 func (o NdbTmsClusterOutput) LogDriveId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbTmsCluster) pulumi.StringOutput { return v.LogDriveId }).(pulumi.StringOutput)
 }
 
+// log drive status of time machine
 func (o NdbTmsClusterOutput) LogDriveStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbTmsCluster) pulumi.StringOutput { return v.LogDriveStatus }).(pulumi.StringOutput)
 }
 
+// Nutanix cluster id on the associated registered clusters.
 func (o NdbTmsClusterOutput) NxClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbTmsCluster) pulumi.StringOutput { return v.NxClusterId }).(pulumi.StringOutput)
 }
 
+// owner id
 func (o NdbTmsClusterOutput) OwnerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbTmsCluster) pulumi.StringOutput { return v.OwnerId }).(pulumi.StringOutput)
 }
 
+// schedule id of the data associated with time machine
 func (o NdbTmsClusterOutput) ScheduleId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbTmsCluster) pulumi.StringOutput { return v.ScheduleId }).(pulumi.StringOutput)
 }
 
+// SLA id for the associated cluster.
 func (o NdbTmsClusterOutput) SlaId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbTmsCluster) pulumi.StringOutput { return v.SlaId }).(pulumi.StringOutput)
 }
 
+// source is present or not
 func (o NdbTmsClusterOutput) Source() pulumi.BoolOutput {
 	return o.ApplyT(func(v *NdbTmsCluster) pulumi.BoolOutput { return v.Source }).(pulumi.BoolOutput)
 }
 
+// source clusters in time machines
 func (o NdbTmsClusterOutput) SourceClusters() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NdbTmsCluster) pulumi.StringArrayOutput { return v.SourceClusters }).(pulumi.StringArrayOutput)
 }
 
+// status of the cluster associated with time machine
 func (o NdbTmsClusterOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbTmsCluster) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
+// time machine id
 func (o NdbTmsClusterOutput) TimeMachineId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbTmsCluster) pulumi.StringOutput { return v.TimeMachineId }).(pulumi.StringOutput)
 }
 
+// Default value is "OTHER"
 func (o NdbTmsClusterOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbTmsCluster) pulumi.StringPtrOutput { return v.Type }).(pulumi.StringPtrOutput)
 }

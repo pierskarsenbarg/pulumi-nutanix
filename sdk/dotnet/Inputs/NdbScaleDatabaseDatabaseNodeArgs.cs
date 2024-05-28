@@ -27,9 +27,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("databaseStatus")]
         public Input<string>? DatabaseStatus { get; set; }
 
+        /// <summary>
+        /// date created for db instance
+        /// </summary>
         [Input("dateCreated")]
         public Input<string>? DateCreated { get; set; }
 
+        /// <summary>
+        /// date modified for instance
+        /// </summary>
         [Input("dateModified")]
         public Input<string>? DateModified { get; set; }
 
@@ -44,6 +50,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("dbserverId")]
         public Input<string>? DbserverId { get; set; }
 
+        /// <summary>
+        /// description of database instance
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
@@ -52,12 +61,19 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("infos")]
         private InputList<Inputs.NdbScaleDatabaseDatabaseNodeInfoArgs>? _infos;
+
+        /// <summary>
+        /// info of instance
+        /// </summary>
         public InputList<Inputs.NdbScaleDatabaseDatabaseNodeInfoArgs> Infos
         {
             get => _infos ?? (_infos = new InputList<Inputs.NdbScaleDatabaseDatabaseNodeInfoArgs>());
             set => _infos = value;
         }
 
+        /// <summary>
+        /// Name of database instance
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
@@ -68,7 +84,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<Inputs.NdbScaleDatabaseDatabaseNodePropertyArgs>? _properties;
 
         /// <summary>
-        /// List of all the properties
+        /// properties of database created
         /// </summary>
         public InputList<Inputs.NdbScaleDatabaseDatabaseNodePropertyArgs> Properties
         {
@@ -90,11 +106,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("softwareInstallationId")]
         public Input<string>? SoftwareInstallationId { get; set; }
 
+        /// <summary>
+        /// status of instance
+        /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         [Input("tags")]
         private InputList<Inputs.NdbScaleDatabaseDatabaseNodeTagArgs>? _tags;
+
+        /// <summary>
+        /// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        /// </summary>
         public InputList<Inputs.NdbScaleDatabaseDatabaseNodeTagArgs> Tags
         {
             get => _tags ?? (_tags = new InputList<Inputs.NdbScaleDatabaseDatabaseNodeTagArgs>());

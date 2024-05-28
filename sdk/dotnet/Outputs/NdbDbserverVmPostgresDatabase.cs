@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbDbserverVmPostgresDatabase
     {
+        /// <summary>
+        /// use SSH public keys to access the database server VM.
+        /// </summary>
         public readonly string? ClientPublicKey;
+        /// <summary>
+        /// name for the database server VM.
+        /// </summary>
         public readonly string VmName;
 
         [OutputConstructor]

@@ -10,27 +10,106 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Provides a resource to add/remove worker nodepool in an existing Nutanix Kubernetes Engine (NKE).
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var kworkerNp = new Nutanix.KarbonWorkerNodepool("kworkerNp", new()
+    ///     {
+    ///         AhvConfig = new Nutanix.Inputs.KarbonWorkerNodepoolAhvConfigArgs
+    ///         {
+    ///             Cpu = 4,
+    ///             DiskMib = 122880,
+    ///             MemoryMib = 8192,
+    ///             NetworkUuid = "61213511-6383-4a38-9ac8-4a552c0e5865",
+    ///         },
+    ///         ClusterName = "karbon",
+    ///         NumInstances = 1,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var kworkerNp = new Nutanix.KarbonWorkerNodepool("kworkerNp", new()
+    ///     {
+    ///         AhvConfig = new Nutanix.Inputs.KarbonWorkerNodepoolAhvConfigArgs
+    ///         {
+    ///             Cpu = 4,
+    ///             DiskMib = 122880,
+    ///             MemoryMib = 8192,
+    ///             NetworkUuid = "61213511-6383-4a38-9ac8-4a552c0e5865",
+    ///         },
+    ///         ClusterName = "karbon",
+    ///         Labels = 
+    ///         {
+    ///             { "k1", "v1" },
+    ///             { "k2", "v2" },
+    ///         },
+    ///         NumInstances = 1,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [NutanixResourceType("nutanix:index/karbonWorkerNodepool:KarbonWorkerNodepool")]
     public partial class KarbonWorkerNodepool : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// VM configuration in AHV.
+        /// </summary>
         [Output("ahvConfig")]
         public Output<Outputs.KarbonWorkerNodepoolAhvConfig> AhvConfig { get; private set; } = null!;
 
+        /// <summary>
+        /// Kubernetes cluster name
+        /// </summary>
         [Output("clusterName")]
         public Output<string> ClusterName { get; private set; } = null!;
 
+        /// <summary>
+        /// labels of node
+        /// </summary>
         [Output("labels")]
         public Output<ImmutableDictionary<string, object>> Labels { get; private set; } = null!;
 
+        /// <summary>
+        /// unique worker nodepool name
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// The version of the node OS image
+        /// </summary>
         [Output("nodeOsVersion")]
         public Output<string> NodeOsVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// List of node details of pool.
+        /// </summary>
         [Output("nodes")]
         public Output<ImmutableArray<Outputs.KarbonWorkerNodepoolNode>> Nodes { get; private set; } = null!;
 
+        /// <summary>
+        /// number of node instances
+        /// </summary>
         [Output("numInstances")]
         public Output<int> NumInstances { get; private set; } = null!;
 
@@ -81,26 +160,45 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class KarbonWorkerNodepoolArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// VM configuration in AHV.
+        /// </summary>
         [Input("ahvConfig")]
         public Input<Inputs.KarbonWorkerNodepoolAhvConfigArgs>? AhvConfig { get; set; }
 
+        /// <summary>
+        /// Kubernetes cluster name
+        /// </summary>
         [Input("clusterName", required: true)]
         public Input<string> ClusterName { get; set; } = null!;
 
         [Input("labels")]
         private InputMap<object>? _labels;
+
+        /// <summary>
+        /// labels of node
+        /// </summary>
         public InputMap<object> Labels
         {
             get => _labels ?? (_labels = new InputMap<object>());
             set => _labels = value;
         }
 
+        /// <summary>
+        /// unique worker nodepool name
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// The version of the node OS image
+        /// </summary>
         [Input("nodeOsVersion")]
         public Input<string>? NodeOsVersion { get; set; }
 
+        /// <summary>
+        /// number of node instances
+        /// </summary>
         [Input("numInstances", required: true)]
         public Input<int> NumInstances { get; set; } = null!;
 
@@ -112,34 +210,57 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class KarbonWorkerNodepoolState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// VM configuration in AHV.
+        /// </summary>
         [Input("ahvConfig")]
         public Input<Inputs.KarbonWorkerNodepoolAhvConfigGetArgs>? AhvConfig { get; set; }
 
+        /// <summary>
+        /// Kubernetes cluster name
+        /// </summary>
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }
 
         [Input("labels")]
         private InputMap<object>? _labels;
+
+        /// <summary>
+        /// labels of node
+        /// </summary>
         public InputMap<object> Labels
         {
             get => _labels ?? (_labels = new InputMap<object>());
             set => _labels = value;
         }
 
+        /// <summary>
+        /// unique worker nodepool name
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// The version of the node OS image
+        /// </summary>
         [Input("nodeOsVersion")]
         public Input<string>? NodeOsVersion { get; set; }
 
         [Input("nodes")]
         private InputList<Inputs.KarbonWorkerNodepoolNodeGetArgs>? _nodes;
+
+        /// <summary>
+        /// List of node details of pool.
+        /// </summary>
         public InputList<Inputs.KarbonWorkerNodepoolNodeGetArgs> Nodes
         {
             get => _nodes ?? (_nodes = new InputList<Inputs.KarbonWorkerNodepoolNodeGetArgs>());
             set => _nodes = value;
         }
 
+        /// <summary>
+        /// number of node instances
+        /// </summary>
         [Input("numInstances")]
         public Input<int>? NumInstances { get; set; }
 

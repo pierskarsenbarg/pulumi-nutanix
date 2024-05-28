@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbRegisterDbserverPostgresDatabase
     {
+        /// <summary>
+        /// listener port of db server
+        /// </summary>
         public readonly string? ListenerPort;
+        /// <summary>
+        /// path to the PostgreSQL home directory in which the PostgreSQL software is installed
+        /// </summary>
         public readonly string? PostgresSoftwareHome;
 
         [OutputConstructor]

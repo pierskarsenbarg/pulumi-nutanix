@@ -14,8 +14,22 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbProfileSoftwareProfile
     {
+        /// <summary>
+        /// specify Nutanix clusters where this profile is available.
+        /// </summary>
         public readonly ImmutableArray<string> AvailableClusterIds;
+        /// <summary>
+        /// Software profile info about postgres database.
+        /// * `postgres_database.source_dbserver_id`: source dbserver id where postgress software will be installed.
+        /// * `postgres_database.base_profile_version_name`: name for the software profile version.
+        /// * `postgres_database.base_profile_version_description`: description for the software profile version.
+        /// * `postgres_database.os_notes`: a note to provide additional information about the operating system
+        /// * `postgres_database.db_software_notes`: a note to provide additional information about the database software.
+        /// </summary>
         public readonly ImmutableArray<Outputs.NdbProfileSoftwareProfilePostgresDatabase> PostgresDatabases;
+        /// <summary>
+        /// Topology of software profile. Allowed values are "cluster" and "single"
+        /// </summary>
         public readonly string Topology;
 
         [OutputConstructor]

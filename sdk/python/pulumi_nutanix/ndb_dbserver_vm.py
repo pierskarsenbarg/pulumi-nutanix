@@ -39,6 +39,22 @@ class NdbDbserverVmArgs:
                  vm_password: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NdbDbserverVm resource.
+        :param pulumi.Input[str] compute_profile_id: Compute profile id.
+        :param pulumi.Input[str] database_type: database type. Valid values: postgres_database
+        :param pulumi.Input[str] network_profile_id: Network profile id.
+        :param pulumi.Input[bool] delete: - (Optional) Delete the VM and associated storage. Default value is true
+        :param pulumi.Input[bool] delete_vgs: - (Optional) Delete volume grous. Default value is true
+        :param pulumi.Input[bool] delete_vm_snapshots: - (Optional) Delete the vm snapshots. Default is true
+        :param pulumi.Input[str] description: Type a description for the database server VM.
+        :param pulumi.Input['NdbDbserverVmMaintenanceTasksArgs'] maintenance_tasks: maintenance window configured to enable automated patching.
+        :param pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmPostgresDatabaseArgs']]] postgres_databases: Postgres database server vm
+        :param pulumi.Input[bool] remove: - (Optional) Unregister the database from NDB. Default value is false
+        :param pulumi.Input[str] snapshot_id: Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+        :param pulumi.Input[bool] soft_remove: - (Optional) Soft remove. Default will be false
+        :param pulumi.Input[str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        :param pulumi.Input[str] software_profile_version_id: SOftware Profile Version Id.
+        :param pulumi.Input[str] time_machine_id: Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+        :param pulumi.Input[str] vm_password: password of the NDB drive user account.
         """
         pulumi.set(__self__, "compute_profile_id", compute_profile_id)
         pulumi.set(__self__, "database_type", database_type)
@@ -82,6 +98,9 @@ class NdbDbserverVmArgs:
     @property
     @pulumi.getter(name="computeProfileId")
     def compute_profile_id(self) -> pulumi.Input[str]:
+        """
+        Compute profile id.
+        """
         return pulumi.get(self, "compute_profile_id")
 
     @compute_profile_id.setter
@@ -91,6 +110,9 @@ class NdbDbserverVmArgs:
     @property
     @pulumi.getter(name="databaseType")
     def database_type(self) -> pulumi.Input[str]:
+        """
+        database type. Valid values: postgres_database
+        """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
@@ -100,6 +122,9 @@ class NdbDbserverVmArgs:
     @property
     @pulumi.getter(name="networkProfileId")
     def network_profile_id(self) -> pulumi.Input[str]:
+        """
+        Network profile id.
+        """
         return pulumi.get(self, "network_profile_id")
 
     @network_profile_id.setter
@@ -127,6 +152,9 @@ class NdbDbserverVmArgs:
     @property
     @pulumi.getter
     def delete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Delete the VM and associated storage. Default value is true
+        """
         return pulumi.get(self, "delete")
 
     @delete.setter
@@ -136,6 +164,9 @@ class NdbDbserverVmArgs:
     @property
     @pulumi.getter(name="deleteVgs")
     def delete_vgs(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Delete volume grous. Default value is true
+        """
         return pulumi.get(self, "delete_vgs")
 
     @delete_vgs.setter
@@ -145,6 +176,9 @@ class NdbDbserverVmArgs:
     @property
     @pulumi.getter(name="deleteVmSnapshots")
     def delete_vm_snapshots(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Delete the vm snapshots. Default is true
+        """
         return pulumi.get(self, "delete_vm_snapshots")
 
     @delete_vm_snapshots.setter
@@ -154,6 +188,9 @@ class NdbDbserverVmArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type a description for the database server VM.
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -172,6 +209,9 @@ class NdbDbserverVmArgs:
     @property
     @pulumi.getter(name="maintenanceTasks")
     def maintenance_tasks(self) -> Optional[pulumi.Input['NdbDbserverVmMaintenanceTasksArgs']]:
+        """
+        maintenance window configured to enable automated patching.
+        """
         return pulumi.get(self, "maintenance_tasks")
 
     @maintenance_tasks.setter
@@ -181,6 +221,9 @@ class NdbDbserverVmArgs:
     @property
     @pulumi.getter(name="postgresDatabases")
     def postgres_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmPostgresDatabaseArgs']]]]:
+        """
+        Postgres database server vm
+        """
         return pulumi.get(self, "postgres_databases")
 
     @postgres_databases.setter
@@ -190,6 +233,9 @@ class NdbDbserverVmArgs:
     @property
     @pulumi.getter
     def remove(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Unregister the database from NDB. Default value is false
+        """
         return pulumi.get(self, "remove")
 
     @remove.setter
@@ -199,6 +245,9 @@ class NdbDbserverVmArgs:
     @property
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+        """
         return pulumi.get(self, "snapshot_id")
 
     @snapshot_id.setter
@@ -208,6 +257,9 @@ class NdbDbserverVmArgs:
     @property
     @pulumi.getter(name="softRemove")
     def soft_remove(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Soft remove. Default will be false
+        """
         return pulumi.get(self, "soft_remove")
 
     @soft_remove.setter
@@ -217,6 +269,9 @@ class NdbDbserverVmArgs:
     @property
     @pulumi.getter(name="softwareProfileId")
     def software_profile_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        """
         return pulumi.get(self, "software_profile_id")
 
     @software_profile_id.setter
@@ -226,6 +281,9 @@ class NdbDbserverVmArgs:
     @property
     @pulumi.getter(name="softwareProfileVersionId")
     def software_profile_version_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        SOftware Profile Version Id.
+        """
         return pulumi.get(self, "software_profile_version_id")
 
     @software_profile_version_id.setter
@@ -244,6 +302,9 @@ class NdbDbserverVmArgs:
     @property
     @pulumi.getter(name="timeMachineId")
     def time_machine_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+        """
         return pulumi.get(self, "time_machine_id")
 
     @time_machine_id.setter
@@ -262,6 +323,9 @@ class NdbDbserverVmArgs:
     @property
     @pulumi.getter(name="vmPassword")
     def vm_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        password of the NDB drive user account.
+        """
         return pulumi.get(self, "vm_password")
 
     @vm_password.setter
@@ -309,7 +373,23 @@ class _NdbDbserverVmState:
                  vm_timezone: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NdbDbserverVm resources.
+        :param pulumi.Input[str] compute_profile_id: Compute profile id.
+        :param pulumi.Input[str] database_type: database type. Valid values: postgres_database
+        :param pulumi.Input[bool] delete: - (Optional) Delete the VM and associated storage. Default value is true
+        :param pulumi.Input[bool] delete_vgs: - (Optional) Delete volume grous. Default value is true
+        :param pulumi.Input[bool] delete_vm_snapshots: - (Optional) Delete the vm snapshots. Default is true
+        :param pulumi.Input[str] description: Type a description for the database server VM.
+        :param pulumi.Input['NdbDbserverVmMaintenanceTasksArgs'] maintenance_tasks: maintenance window configured to enable automated patching.
+        :param pulumi.Input[str] network_profile_id: Network profile id.
+        :param pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmPostgresDatabaseArgs']]] postgres_databases: Postgres database server vm
         :param pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmPropertyArgs']]] properties: List of all the properties
+        :param pulumi.Input[bool] remove: - (Optional) Unregister the database from NDB. Default value is false
+        :param pulumi.Input[str] snapshot_id: Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+        :param pulumi.Input[bool] soft_remove: - (Optional) Soft remove. Default will be false
+        :param pulumi.Input[str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        :param pulumi.Input[str] software_profile_version_id: SOftware Profile Version Id.
+        :param pulumi.Input[str] time_machine_id: Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+        :param pulumi.Input[str] vm_password: password of the NDB drive user account.
         """
         if client_id is not None:
             pulumi.set(__self__, "client_id", client_id)
@@ -394,6 +474,9 @@ class _NdbDbserverVmState:
     @property
     @pulumi.getter(name="computeProfileId")
     def compute_profile_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Compute profile id.
+        """
         return pulumi.get(self, "compute_profile_id")
 
     @compute_profile_id.setter
@@ -412,6 +495,9 @@ class _NdbDbserverVmState:
     @property
     @pulumi.getter(name="databaseType")
     def database_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        database type. Valid values: postgres_database
+        """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
@@ -430,6 +516,9 @@ class _NdbDbserverVmState:
     @property
     @pulumi.getter
     def delete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Delete the VM and associated storage. Default value is true
+        """
         return pulumi.get(self, "delete")
 
     @delete.setter
@@ -439,6 +528,9 @@ class _NdbDbserverVmState:
     @property
     @pulumi.getter(name="deleteVgs")
     def delete_vgs(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Delete volume grous. Default value is true
+        """
         return pulumi.get(self, "delete_vgs")
 
     @delete_vgs.setter
@@ -448,6 +540,9 @@ class _NdbDbserverVmState:
     @property
     @pulumi.getter(name="deleteVmSnapshots")
     def delete_vm_snapshots(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Delete the vm snapshots. Default is true
+        """
         return pulumi.get(self, "delete_vm_snapshots")
 
     @delete_vm_snapshots.setter
@@ -457,6 +552,9 @@ class _NdbDbserverVmState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type a description for the database server VM.
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -520,6 +618,9 @@ class _NdbDbserverVmState:
     @property
     @pulumi.getter(name="maintenanceTasks")
     def maintenance_tasks(self) -> Optional[pulumi.Input['NdbDbserverVmMaintenanceTasksArgs']]:
+        """
+        maintenance window configured to enable automated patching.
+        """
         return pulumi.get(self, "maintenance_tasks")
 
     @maintenance_tasks.setter
@@ -538,6 +639,9 @@ class _NdbDbserverVmState:
     @property
     @pulumi.getter(name="networkProfileId")
     def network_profile_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Network profile id.
+        """
         return pulumi.get(self, "network_profile_id")
 
     @network_profile_id.setter
@@ -556,6 +660,9 @@ class _NdbDbserverVmState:
     @property
     @pulumi.getter(name="postgresDatabases")
     def postgres_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmPostgresDatabaseArgs']]]]:
+        """
+        Postgres database server vm
+        """
         return pulumi.get(self, "postgres_databases")
 
     @postgres_databases.setter
@@ -577,6 +684,9 @@ class _NdbDbserverVmState:
     @property
     @pulumi.getter
     def remove(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Unregister the database from NDB. Default value is false
+        """
         return pulumi.get(self, "remove")
 
     @remove.setter
@@ -586,6 +696,9 @@ class _NdbDbserverVmState:
     @property
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+        """
         return pulumi.get(self, "snapshot_id")
 
     @snapshot_id.setter
@@ -595,6 +708,9 @@ class _NdbDbserverVmState:
     @property
     @pulumi.getter(name="softRemove")
     def soft_remove(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Soft remove. Default will be false
+        """
         return pulumi.get(self, "soft_remove")
 
     @soft_remove.setter
@@ -604,6 +720,9 @@ class _NdbDbserverVmState:
     @property
     @pulumi.getter(name="softwareProfileId")
     def software_profile_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        """
         return pulumi.get(self, "software_profile_id")
 
     @software_profile_id.setter
@@ -613,6 +732,9 @@ class _NdbDbserverVmState:
     @property
     @pulumi.getter(name="softwareProfileVersionId")
     def software_profile_version_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        SOftware Profile Version Id.
+        """
         return pulumi.get(self, "software_profile_version_id")
 
     @software_profile_version_id.setter
@@ -640,6 +762,9 @@ class _NdbDbserverVmState:
     @property
     @pulumi.getter(name="timeMachineId")
     def time_machine_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+        """
         return pulumi.get(self, "time_machine_id")
 
     @time_machine_id.setter
@@ -685,6 +810,9 @@ class _NdbDbserverVmState:
     @property
     @pulumi.getter(name="vmPassword")
     def vm_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        password of the NDB drive user account.
+        """
         return pulumi.get(self, "vm_password")
 
     @vm_password.setter
@@ -729,9 +857,28 @@ class NdbDbserverVm(pulumi.CustomResource):
                  vm_password: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Create a NdbDbserverVm resource with the given unique name, props, and options.
+        Provides a resource to create database server VMs based on the input parameters. For 1.8.0 release, only postgress database type is qualified and officially supported.
+
+        ## Example Usage
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] compute_profile_id: Compute profile id.
+        :param pulumi.Input[str] database_type: database type. Valid values: postgres_database
+        :param pulumi.Input[bool] delete: - (Optional) Delete the VM and associated storage. Default value is true
+        :param pulumi.Input[bool] delete_vgs: - (Optional) Delete volume grous. Default value is true
+        :param pulumi.Input[bool] delete_vm_snapshots: - (Optional) Delete the vm snapshots. Default is true
+        :param pulumi.Input[str] description: Type a description for the database server VM.
+        :param pulumi.Input[pulumi.InputType['NdbDbserverVmMaintenanceTasksArgs']] maintenance_tasks: maintenance window configured to enable automated patching.
+        :param pulumi.Input[str] network_profile_id: Network profile id.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDbserverVmPostgresDatabaseArgs']]]] postgres_databases: Postgres database server vm
+        :param pulumi.Input[bool] remove: - (Optional) Unregister the database from NDB. Default value is false
+        :param pulumi.Input[str] snapshot_id: Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+        :param pulumi.Input[bool] soft_remove: - (Optional) Soft remove. Default will be false
+        :param pulumi.Input[str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        :param pulumi.Input[str] software_profile_version_id: SOftware Profile Version Id.
+        :param pulumi.Input[str] time_machine_id: Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+        :param pulumi.Input[str] vm_password: password of the NDB drive user account.
         """
         ...
     @overload
@@ -740,7 +887,10 @@ class NdbDbserverVm(pulumi.CustomResource):
                  args: NdbDbserverVmArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a NdbDbserverVm resource with the given unique name, props, and options.
+        Provides a resource to create database server VMs based on the input parameters. For 1.8.0 release, only postgress database type is qualified and officially supported.
+
+        ## Example Usage
+
         :param str resource_name: The name of the resource.
         :param NdbDbserverVmArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -883,7 +1033,23 @@ class NdbDbserverVm(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] compute_profile_id: Compute profile id.
+        :param pulumi.Input[str] database_type: database type. Valid values: postgres_database
+        :param pulumi.Input[bool] delete: - (Optional) Delete the VM and associated storage. Default value is true
+        :param pulumi.Input[bool] delete_vgs: - (Optional) Delete volume grous. Default value is true
+        :param pulumi.Input[bool] delete_vm_snapshots: - (Optional) Delete the vm snapshots. Default is true
+        :param pulumi.Input[str] description: Type a description for the database server VM.
+        :param pulumi.Input[pulumi.InputType['NdbDbserverVmMaintenanceTasksArgs']] maintenance_tasks: maintenance window configured to enable automated patching.
+        :param pulumi.Input[str] network_profile_id: Network profile id.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDbserverVmPostgresDatabaseArgs']]]] postgres_databases: Postgres database server vm
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDbserverVmPropertyArgs']]]] properties: List of all the properties
+        :param pulumi.Input[bool] remove: - (Optional) Unregister the database from NDB. Default value is false
+        :param pulumi.Input[str] snapshot_id: Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+        :param pulumi.Input[bool] soft_remove: - (Optional) Soft remove. Default will be false
+        :param pulumi.Input[str] software_profile_id: software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        :param pulumi.Input[str] software_profile_version_id: SOftware Profile Version Id.
+        :param pulumi.Input[str] time_machine_id: Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+        :param pulumi.Input[str] vm_password: password of the NDB drive user account.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -934,6 +1100,9 @@ class NdbDbserverVm(pulumi.CustomResource):
     @property
     @pulumi.getter(name="computeProfileId")
     def compute_profile_id(self) -> pulumi.Output[str]:
+        """
+        Compute profile id.
+        """
         return pulumi.get(self, "compute_profile_id")
 
     @property
@@ -944,6 +1113,9 @@ class NdbDbserverVm(pulumi.CustomResource):
     @property
     @pulumi.getter(name="databaseType")
     def database_type(self) -> pulumi.Output[str]:
+        """
+        database type. Valid values: postgres_database
+        """
         return pulumi.get(self, "database_type")
 
     @property
@@ -954,21 +1126,33 @@ class NdbDbserverVm(pulumi.CustomResource):
     @property
     @pulumi.getter
     def delete(self) -> pulumi.Output[Optional[bool]]:
+        """
+        - (Optional) Delete the VM and associated storage. Default value is true
+        """
         return pulumi.get(self, "delete")
 
     @property
     @pulumi.getter(name="deleteVgs")
     def delete_vgs(self) -> pulumi.Output[Optional[bool]]:
+        """
+        - (Optional) Delete volume grous. Default value is true
+        """
         return pulumi.get(self, "delete_vgs")
 
     @property
     @pulumi.getter(name="deleteVmSnapshots")
     def delete_vm_snapshots(self) -> pulumi.Output[Optional[bool]]:
+        """
+        - (Optional) Delete the vm snapshots. Default is true
+        """
         return pulumi.get(self, "delete_vm_snapshots")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
+        """
+        Type a description for the database server VM.
+        """
         return pulumi.get(self, "description")
 
     @property
@@ -1004,6 +1188,9 @@ class NdbDbserverVm(pulumi.CustomResource):
     @property
     @pulumi.getter(name="maintenanceTasks")
     def maintenance_tasks(self) -> pulumi.Output[Optional['outputs.NdbDbserverVmMaintenanceTasks']]:
+        """
+        maintenance window configured to enable automated patching.
+        """
         return pulumi.get(self, "maintenance_tasks")
 
     @property
@@ -1014,6 +1201,9 @@ class NdbDbserverVm(pulumi.CustomResource):
     @property
     @pulumi.getter(name="networkProfileId")
     def network_profile_id(self) -> pulumi.Output[str]:
+        """
+        Network profile id.
+        """
         return pulumi.get(self, "network_profile_id")
 
     @property
@@ -1024,6 +1214,9 @@ class NdbDbserverVm(pulumi.CustomResource):
     @property
     @pulumi.getter(name="postgresDatabases")
     def postgres_databases(self) -> pulumi.Output[Optional[Sequence['outputs.NdbDbserverVmPostgresDatabase']]]:
+        """
+        Postgres database server vm
+        """
         return pulumi.get(self, "postgres_databases")
 
     @property
@@ -1037,26 +1230,41 @@ class NdbDbserverVm(pulumi.CustomResource):
     @property
     @pulumi.getter
     def remove(self) -> pulumi.Output[Optional[bool]]:
+        """
+        - (Optional) Unregister the database from NDB. Default value is false
+        """
         return pulumi.get(self, "remove")
 
     @property
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+        """
         return pulumi.get(self, "snapshot_id")
 
     @property
     @pulumi.getter(name="softRemove")
     def soft_remove(self) -> pulumi.Output[Optional[bool]]:
+        """
+        - (Optional) Soft remove. Default will be false
+        """
         return pulumi.get(self, "soft_remove")
 
     @property
     @pulumi.getter(name="softwareProfileId")
     def software_profile_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        """
         return pulumi.get(self, "software_profile_id")
 
     @property
     @pulumi.getter(name="softwareProfileVersionId")
     def software_profile_version_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        SOftware Profile Version Id.
+        """
         return pulumi.get(self, "software_profile_version_id")
 
     @property
@@ -1072,6 +1280,9 @@ class NdbDbserverVm(pulumi.CustomResource):
     @property
     @pulumi.getter(name="timeMachineId")
     def time_machine_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+        """
         return pulumi.get(self, "time_machine_id")
 
     @property
@@ -1097,6 +1308,9 @@ class NdbDbserverVm(pulumi.CustomResource):
     @property
     @pulumi.getter(name="vmPassword")
     def vm_password(self) -> pulumi.Output[Optional[str]]:
+        """
+        password of the NDB drive user account.
+        """
         return pulumi.get(self, "vm_password")
 
     @property

@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbScaleDatabaseDatabaseNodeProperty
     {
+        /// <summary>
+        /// description of database instance
+        /// </summary>
         public readonly string? Description;
+        /// <summary>
+        /// Name of database instance
+        /// </summary>
         public readonly string? Name;
         public readonly string? RefId;
         public readonly bool? Secure;

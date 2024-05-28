@@ -13,9 +13,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class NdbRegisterDbserverPostgresDatabaseArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// listener port of db server
+        /// </summary>
         [Input("listenerPort")]
         public Input<string>? ListenerPort { get; set; }
 
+        /// <summary>
+        /// path to the PostgreSQL home directory in which the PostgreSQL software is installed
+        /// </summary>
         [Input("postgresSoftwareHome")]
         public Input<string>? PostgresSoftwareHome { get; set; }
 

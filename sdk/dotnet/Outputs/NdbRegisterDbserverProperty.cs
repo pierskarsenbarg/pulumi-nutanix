@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbRegisterDbserverProperty
     {
+        /// <summary>
+        /// Name of db server vm. Should be used in Update Method only.
+        /// </summary>
         public readonly string? Name;
         public readonly string? Value;
 

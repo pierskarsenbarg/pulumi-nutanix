@@ -17,23 +17,44 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableDictionary<string, string>? AccessLevel;
         public readonly string? DatabaseId;
         public readonly string? DatabaseStatus;
+        /// <summary>
+        /// date created for db instance
+        /// </summary>
         public readonly string? DateCreated;
+        /// <summary>
+        /// date modified for instance
+        /// </summary>
         public readonly string? DateModified;
         public readonly ImmutableDictionary<string, string>? Dbserver;
         public readonly string? DbserverId;
+        /// <summary>
+        /// description of database instance
+        /// </summary>
         public readonly string? Description;
         public readonly string? Id;
+        /// <summary>
+        /// info of instance
+        /// </summary>
         public readonly ImmutableArray<Outputs.NdbScaleDatabaseDatabaseNodeInfo> Infos;
+        /// <summary>
+        /// Name of database instance
+        /// </summary>
         public readonly string? Name;
         public readonly bool? Primary;
         /// <summary>
-        /// List of all the properties
+        /// properties of database created
         /// </summary>
         public readonly ImmutableArray<Outputs.NdbScaleDatabaseDatabaseNodeProperty> Properties;
         public readonly string? ProtectionDomainId;
         public readonly ImmutableArray<Outputs.NdbScaleDatabaseDatabaseNodeProtectionDomain> ProtectionDomains;
         public readonly string? SoftwareInstallationId;
+        /// <summary>
+        /// status of instance
+        /// </summary>
         public readonly string? Status;
+        /// <summary>
+        /// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        /// </summary>
         public readonly ImmutableArray<Outputs.NdbScaleDatabaseDatabaseNodeTag> Tags;
 
         [OutputConstructor]

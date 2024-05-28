@@ -17,11 +17,23 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly int? ContinuousRetention;
         public readonly string? CurrentActiveFrequency;
         public readonly int? DailyRetention;
+        /// <summary>
+        /// date created for db instance
+        /// </summary>
         public readonly string? DateCreated;
+        /// <summary>
+        /// date modified for instance
+        /// </summary>
         public readonly string? DateModified;
+        /// <summary>
+        /// description of database instance
+        /// </summary>
         public readonly string? Description;
         public readonly string? Id;
         public readonly int? MonthlyRetention;
+        /// <summary>
+        /// Name of database instance
+        /// </summary>
         public readonly string? Name;
         public readonly string? OwnerId;
         public readonly bool? PitrEnabled;

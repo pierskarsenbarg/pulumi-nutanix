@@ -6,6 +6,11 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a resource to create database server VMs based on the input parameters. For 1.8.0 release, only postgress database type is qualified and officially supported.
+ *
+ * ## Example Usage
+ */
 export class NdbDbserverVm extends pulumi.CustomResource {
     /**
      * Get an existing NdbDbserverVm resource's state with the given name, ID, and optional extra
@@ -35,13 +40,31 @@ export class NdbDbserverVm extends pulumi.CustomResource {
     }
 
     public /*out*/ readonly clientId!: pulumi.Output<string>;
+    /**
+     * Compute profile id.
+     */
     public readonly computeProfileId!: pulumi.Output<string>;
     public readonly credentials!: pulumi.Output<outputs.NdbDbserverVmCredential[] | undefined>;
+    /**
+     * database type. Valid values: postgres_database
+     */
     public readonly databaseType!: pulumi.Output<string>;
     public /*out*/ readonly dbserverClusterId!: pulumi.Output<string>;
+    /**
+     * - (Optional) Delete the VM and associated storage. Default value is true
+     */
     public readonly delete!: pulumi.Output<boolean | undefined>;
+    /**
+     * - (Optional) Delete volume grous. Default value is true
+     */
     public readonly deleteVgs!: pulumi.Output<boolean | undefined>;
+    /**
+     * - (Optional) Delete the vm snapshots. Default is true
+     */
     public readonly deleteVmSnapshots!: pulumi.Output<boolean | undefined>;
+    /**
+     * Type a description for the database server VM.
+     */
     public readonly description!: pulumi.Output<string>;
     public /*out*/ readonly eraDriveId!: pulumi.Output<string>;
     public /*out*/ readonly eraVersion!: pulumi.Output<string>;
@@ -49,27 +72,57 @@ export class NdbDbserverVm extends pulumi.CustomResource {
     public /*out*/ readonly ipAddresses!: pulumi.Output<string[]>;
     public readonly latestSnapshot!: pulumi.Output<boolean | undefined>;
     public /*out*/ readonly macAddresses!: pulumi.Output<string[]>;
+    /**
+     * maintenance window configured to enable automated patching.
+     */
     public readonly maintenanceTasks!: pulumi.Output<outputs.NdbDbserverVmMaintenanceTasks | undefined>;
     public /*out*/ readonly name!: pulumi.Output<string>;
+    /**
+     * Network profile id.
+     */
     public readonly networkProfileId!: pulumi.Output<string>;
     public readonly nxClusterId!: pulumi.Output<string>;
+    /**
+     * Postgres database server vm
+     */
     public readonly postgresDatabases!: pulumi.Output<outputs.NdbDbserverVmPostgresDatabase[] | undefined>;
     /**
      * List of all the properties
      */
     public /*out*/ readonly properties!: pulumi.Output<outputs.NdbDbserverVmProperty[]>;
+    /**
+     * - (Optional) Unregister the database from NDB. Default value is false
+     */
     public readonly remove!: pulumi.Output<boolean | undefined>;
+    /**
+     * Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+     */
     public readonly snapshotId!: pulumi.Output<string | undefined>;
+    /**
+     * - (Optional) Soft remove. Default will be false
+     */
     public readonly softRemove!: pulumi.Output<boolean | undefined>;
+    /**
+     * software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with timeMachineId .
+     */
     public readonly softwareProfileId!: pulumi.Output<string | undefined>;
+    /**
+     * SOftware Profile Version Id.
+     */
     public readonly softwareProfileVersionId!: pulumi.Output<string | undefined>;
     public /*out*/ readonly status!: pulumi.Output<string>;
     public readonly tags!: pulumi.Output<outputs.NdbDbserverVmTag[]>;
+    /**
+     * Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+     */
     public readonly timeMachineId!: pulumi.Output<string | undefined>;
     public readonly timezone!: pulumi.Output<string | undefined>;
     public /*out*/ readonly type!: pulumi.Output<string>;
     public /*out*/ readonly vmClusterName!: pulumi.Output<string>;
     public /*out*/ readonly vmClusterUuid!: pulumi.Output<string>;
+    /**
+     * password of the NDB drive user account.
+     */
     public readonly vmPassword!: pulumi.Output<string | undefined>;
     public /*out*/ readonly vmTimezone!: pulumi.Output<string>;
 
@@ -183,13 +236,31 @@ export class NdbDbserverVm extends pulumi.CustomResource {
  */
 export interface NdbDbserverVmState {
     clientId?: pulumi.Input<string>;
+    /**
+     * Compute profile id.
+     */
     computeProfileId?: pulumi.Input<string>;
     credentials?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmCredential>[]>;
+    /**
+     * database type. Valid values: postgres_database
+     */
     databaseType?: pulumi.Input<string>;
     dbserverClusterId?: pulumi.Input<string>;
+    /**
+     * - (Optional) Delete the VM and associated storage. Default value is true
+     */
     delete?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Delete volume grous. Default value is true
+     */
     deleteVgs?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Delete the vm snapshots. Default is true
+     */
     deleteVmSnapshots?: pulumi.Input<boolean>;
+    /**
+     * Type a description for the database server VM.
+     */
     description?: pulumi.Input<string>;
     eraDriveId?: pulumi.Input<string>;
     eraVersion?: pulumi.Input<string>;
@@ -197,27 +268,57 @@ export interface NdbDbserverVmState {
     ipAddresses?: pulumi.Input<pulumi.Input<string>[]>;
     latestSnapshot?: pulumi.Input<boolean>;
     macAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * maintenance window configured to enable automated patching.
+     */
     maintenanceTasks?: pulumi.Input<inputs.NdbDbserverVmMaintenanceTasks>;
     name?: pulumi.Input<string>;
+    /**
+     * Network profile id.
+     */
     networkProfileId?: pulumi.Input<string>;
     nxClusterId?: pulumi.Input<string>;
+    /**
+     * Postgres database server vm
+     */
     postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmPostgresDatabase>[]>;
     /**
      * List of all the properties
      */
     properties?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmProperty>[]>;
+    /**
+     * - (Optional) Unregister the database from NDB. Default value is false
+     */
     remove?: pulumi.Input<boolean>;
+    /**
+     * Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+     */
     snapshotId?: pulumi.Input<string>;
+    /**
+     * - (Optional) Soft remove. Default will be false
+     */
     softRemove?: pulumi.Input<boolean>;
+    /**
+     * software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with timeMachineId .
+     */
     softwareProfileId?: pulumi.Input<string>;
+    /**
+     * SOftware Profile Version Id.
+     */
     softwareProfileVersionId?: pulumi.Input<string>;
     status?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmTag>[]>;
+    /**
+     * Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+     */
     timeMachineId?: pulumi.Input<string>;
     timezone?: pulumi.Input<string>;
     type?: pulumi.Input<string>;
     vmClusterName?: pulumi.Input<string>;
     vmClusterUuid?: pulumi.Input<string>;
+    /**
+     * password of the NDB drive user account.
+     */
     vmPassword?: pulumi.Input<string>;
     vmTimezone?: pulumi.Input<string>;
 }
@@ -226,25 +327,73 @@ export interface NdbDbserverVmState {
  * The set of arguments for constructing a NdbDbserverVm resource.
  */
 export interface NdbDbserverVmArgs {
+    /**
+     * Compute profile id.
+     */
     computeProfileId: pulumi.Input<string>;
     credentials?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmCredential>[]>;
+    /**
+     * database type. Valid values: postgres_database
+     */
     databaseType: pulumi.Input<string>;
+    /**
+     * - (Optional) Delete the VM and associated storage. Default value is true
+     */
     delete?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Delete volume grous. Default value is true
+     */
     deleteVgs?: pulumi.Input<boolean>;
+    /**
+     * - (Optional) Delete the vm snapshots. Default is true
+     */
     deleteVmSnapshots?: pulumi.Input<boolean>;
+    /**
+     * Type a description for the database server VM.
+     */
     description?: pulumi.Input<string>;
     latestSnapshot?: pulumi.Input<boolean>;
+    /**
+     * maintenance window configured to enable automated patching.
+     */
     maintenanceTasks?: pulumi.Input<inputs.NdbDbserverVmMaintenanceTasks>;
+    /**
+     * Network profile id.
+     */
     networkProfileId: pulumi.Input<string>;
     nxClusterId: pulumi.Input<string>;
+    /**
+     * Postgres database server vm
+     */
     postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmPostgresDatabase>[]>;
+    /**
+     * - (Optional) Unregister the database from NDB. Default value is false
+     */
     remove?: pulumi.Input<boolean>;
+    /**
+     * Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+     */
     snapshotId?: pulumi.Input<string>;
+    /**
+     * - (Optional) Soft remove. Default will be false
+     */
     softRemove?: pulumi.Input<boolean>;
+    /**
+     * software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with timeMachineId .
+     */
     softwareProfileId?: pulumi.Input<string>;
+    /**
+     * SOftware Profile Version Id.
+     */
     softwareProfileVersionId?: pulumi.Input<string>;
     tags?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmTag>[]>;
+    /**
+     * Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+     */
     timeMachineId?: pulumi.Input<string>;
     timezone?: pulumi.Input<string>;
+    /**
+     * password of the NDB drive user account.
+     */
     vmPassword?: pulumi.Input<string>;
 }

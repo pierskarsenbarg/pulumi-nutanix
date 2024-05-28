@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("info")]
         private InputMap<string>? _info;
+
+        /// <summary>
+        /// info of instance
+        /// </summary>
         public InputMap<string> Info
         {
             get => _info ?? (_info = new InputMap<string>());

@@ -16,9 +16,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("label")]
         public Input<string>? Label { get; set; }
 
+        /// <summary>
+        /// password of the NDB drive user account. Conflicts with ssh_key.
+        /// </summary>
         [Input("password", required: true)]
         public Input<string> Password { get; set; } = null!;
 
+        /// <summary>
+        /// username of the NDB drive user account that has sudo access
+        /// </summary>
         [Input("username", required: true)]
         public Input<string> Username { get; set; } = null!;
 

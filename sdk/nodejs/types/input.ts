@@ -2085,16 +2085,40 @@ export interface KarbonClusterWorkerNodePoolNode {
 }
 
 export interface KarbonWorkerNodepoolAhvConfig {
+    /**
+     * - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+     */
     cpu?: pulumi.Input<number>;
+    /**
+     * - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+     */
     diskMib?: pulumi.Input<number>;
+    /**
+     * VM network UUID for isolating iscsi data traffic.
+     */
     iscsiNetworkUuid?: pulumi.Input<string>;
+    /**
+     * - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+     */
     memoryMib?: pulumi.Input<number>;
+    /**
+     * - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+     */
     networkUuid: pulumi.Input<string>;
+    /**
+     * - (Optional) The unique universal identifier (UUID) of the Prism Element
+     */
     prismElementClusterUuid?: pulumi.Input<string>;
 }
 
 export interface KarbonWorkerNodepoolNode {
+    /**
+     * hostname of node
+     */
     hostname?: pulumi.Input<string>;
+    /**
+     * ipv4 address of node
+     */
     ipv4Address?: pulumi.Input<string>;
 }
 
@@ -4563,7 +4587,16 @@ export interface NdbDbserverVmCredential {
 }
 
 export interface NdbDbserverVmMaintenanceTasks {
+    /**
+     * Associate an existing maintenance window id. NDB starts OS patching or database patching as per the schedule defined in the maintenance window.
+     */
     maintenanceWindowId?: pulumi.Input<string>;
+    /**
+     * Tasks for the maintenance.
+     * * `tasks.task_type`: use this option if you want NDB to perform database patching or OS patching automatically. Supports [ OS_PATCHING, DB_PATCHING ].
+     * * `tasks.pre_command`: add pre (operating system and database patching) commands.
+     * * `tasks.post_command`:add post (operating system and database patching) commands.
+     */
     tasks?: pulumi.Input<pulumi.Input<inputs.NdbDbserverVmMaintenanceTasksTask>[]>;
 }
 
@@ -4574,7 +4607,13 @@ export interface NdbDbserverVmMaintenanceTasksTask {
 }
 
 export interface NdbDbserverVmPostgresDatabase {
+    /**
+     * use SSH public keys to access the database server VM.
+     */
     clientPublicKey?: pulumi.Input<string>;
+    /**
+     * name for the database server VM.
+     */
     vmName: pulumi.Input<string>;
 }
 
@@ -4879,19 +4918,62 @@ export interface NdbNetworkProperty {
 export interface NdbProfileClusterAvailability {
     dateCreated?: pulumi.Input<string>;
     dateModified?: pulumi.Input<string>;
+    /**
+     * cluster on which profile created
+     */
     nxClusterId?: pulumi.Input<string>;
     ownerId?: pulumi.Input<string>;
     profileId?: pulumi.Input<string>;
+    /**
+     * status of profile
+     */
     status?: pulumi.Input<string>;
 }
 
 export interface NdbProfileComputeProfile {
+    /**
+     * number of cores per vCPU for the database server VM.
+     */
     corePerCpu?: pulumi.Input<string>;
+    /**
+     * number of vCPUs for the database server VM.
+     */
     cpus?: pulumi.Input<string>;
+    /**
+     * amount of memory for the database server VM.
+     */
     memorySize?: pulumi.Input<string>;
 }
 
 export interface NdbProfileDatabaseParameterProfile {
+    /**
+     * Database parameters suuported for postgress.
+     * * `postgres_database.max_connections`: (Optional) Determines the maximum number of concurrent connections to the database server. The default is set to 100
+     * * `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero. walLevel must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
+     * * `postgres_database.effective_io_concurrency`: (Optional) Sets the number of concurrent disk I/O operations that PostgreSQL expects can be executed simultaneously. Raising this value will increase the number of I/O operations that any individual PostgreSQL session attempts to initiate in parallel.
+     * * `postgres_database.timezone`: (Optional) Sets the time zone for displaying and interpreting time stamps. Defult is UTC .
+     * * `postgres_database.max_prepared_transactions`: (Optional) Sets the maximum number of transactions that can be in the prepared state simultaneously. Setting this parameter to zero (which is the default) disables the prepared-transaction feature.
+     * * `postgres_database.max_locks_per_transaction`: (Optional) This parameter controls the average number of object locks allocated for each transaction; individual transactions can lock more objects as long as the locks of all transactions fit in the lock table. Default is 64.
+     * * `postgres_database.max_wal_senders`: (Optional) Specifies the maximum number of concurrent connections from standby servers or streaming base backup clients (i.e., the maximum number of simultaneously running WAL sender processes). The default is 10.
+     * * `postgres_database.max_worker_processes`: (Optional) Sets the maximum number of background processes that the system can support. The default is 8.
+     * * `postgres_database.min_wal_size`: (Optional) As long as WAL disk usage stays below this setting, old WAL files are always recycled for future use at a checkpoint, rather than removed. This can be used to ensure that enough WAL space is reserved to handle spikes in WAL usage, for example when running large batch jobs. The default is 80 MB.
+     * * `postgres_database.max_wal_size`: (Optional) Maximum size to let the WAL grow to between automatic WAL checkpoints. The default is 1 GB
+     * * `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
+     * * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however, trackCounts must also be enabled for autovacuum to work.
+     * * `postgres_database.checkpoint_completion_target`: (Optional)
+     * Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
+     * * `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
+     * * `postgres_database.autovacuum_vacuum_threshold`: (Optional) Min number of row updates before vacuum. Minimum number of tuple updates or deletes prior to vacuum. Take value in KB. Default is 50 .
+     * * `postgres_database.autovacuum_vacuum_scale_factor`: (Optional) Number of tuple updates or deletes prior to vacuum as a fraction of reltuples. Default is 0.2
+     * * `postgres_database.autovacuum_work_mem`: (Optional) Sets the maximum memory to be used by each autovacuum worker process. Unit is in KB. Default is -1
+     * * `postgres_database.autovacuum_max_workers`: (Optional) Sets the maximum number of simultaneously running autovacuum worker processes. Default is 3
+     * * `postgres_database.autovacuum_vacuum_cost_delay`: (Optional) Vacuum cost delay in milliseconds, for autovacuum. Specifies the cost delay value that will be used in automatic VACUUM operation. Default is 2ms
+     * * `postgres_database.wal_buffers`: (Optional)
+     * Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
+     * * `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
+     * * `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
+     * * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the pgWal directory. Default is 700 .
+     */
     postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbProfileDatabaseParameterProfilePostgresDatabase>[]>;
 }
 
@@ -4922,8 +5004,28 @@ export interface NdbProfileDatabaseParameterProfilePostgresDatabase {
 }
 
 export interface NdbProfileNetworkProfile {
+    /**
+     * Postgres Info to create network profile
+     *
+     * * `postgres_database.single_instance`: (Optional) Info for postgres database to create single instance network profile.
+     * * `postgres_database.single_instance.vlan_name`: (Required) specify the VLAN to provide the IP address used to connect the database from the public network.
+     * * `postgres_database.single_instance.enable_ip_address_selection`: (Optional) If Advanced Network Segmentation is enabled, then this vLAN needs to be a static vLAN and needs to be true.
+     *
+     * * `postgres_database.ha_instance`: (Optional) Info for craeting Network profile for HA instance
+     * * `postgres_database.ha_instance.vlan_name`: (Required) specify the VLANs for network
+     * * `postgres_database.ha_instance.cluster_name`: (Required) specify the cluster name associated with given VLANs
+     * * `postgres_database.ha_instance.cluster_id`: (Optional) specify the cluster ids associated with given VLANs
+     * * `postgres_database.ha_instance.num_of_clusters`: (Required) number of cluster attached to network profile
+     */
     postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbProfileNetworkProfilePostgresDatabase>[]>;
+    /**
+     * Topology supported for network profile. Allowed values are "cluster" and "single"
+     */
     topology: pulumi.Input<string>;
+    /**
+     * cluster associated with VLAN. this is used with Single instance for postgres database.
+     * * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
+     */
     versionClusterAssociations?: pulumi.Input<pulumi.Input<inputs.NdbProfileNetworkProfileVersionClusterAssociation>[]>;
 }
 
@@ -4945,12 +5047,29 @@ export interface NdbProfileNetworkProfilePostgresDatabaseSingleInstance {
 }
 
 export interface NdbProfileNetworkProfileVersionClusterAssociation {
+    /**
+     * cluster on which profile created
+     */
     nxClusterId: pulumi.Input<string>;
 }
 
 export interface NdbProfileSoftwareProfile {
+    /**
+     * specify Nutanix clusters where this profile is available.
+     */
     availableClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Software profile info about postgres database.
+     * * `postgres_database.source_dbserver_id`: source dbserver id where postgress software will be installed.
+     * * `postgres_database.base_profile_version_name`: name for the software profile version.
+     * * `postgres_database.base_profile_version_description`: description for the software profile version.
+     * * `postgres_database.os_notes`: a note to provide additional information about the operating system
+     * * `postgres_database.db_software_notes`: a note to provide additional information about the database software.
+     */
     postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbProfileSoftwareProfilePostgresDatabase>[]>;
+    /**
+     * Topology of software profile. Allowed values are "cluster" and "single"
+     */
     topology: pulumi.Input<string>;
 }
 
@@ -4965,15 +5084,33 @@ export interface NdbProfileSoftwareProfilePostgresDatabase {
 export interface NdbProfileVersion {
     dbVersion?: pulumi.Input<string>;
     deprecated?: pulumi.Input<boolean>;
+    /**
+     * Description of profile
+     */
     description?: pulumi.Input<string>;
+    /**
+     * Engine Type of database
+     */
     engineType?: pulumi.Input<string>;
     id?: pulumi.Input<string>;
+    /**
+     * Name of profile
+     */
     name?: pulumi.Input<string>;
+    /**
+     * owner  of profile
+     */
     owner?: pulumi.Input<string>;
     profileId?: pulumi.Input<string>;
     properties?: pulumi.Input<pulumi.Input<inputs.NdbProfileVersionProperty>[]>;
     propertiesMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Publish for all users
+     */
     published?: pulumi.Input<boolean>;
+    /**
+     * status of profile
+     */
     status?: pulumi.Input<string>;
     systemProfile?: pulumi.Input<boolean>;
     topology?: pulumi.Input<string>;
@@ -4983,6 +5120,9 @@ export interface NdbProfileVersion {
 }
 
 export interface NdbProfileVersionProperty {
+    /**
+     * Name of profile
+     */
     name?: pulumi.Input<string>;
     secure?: pulumi.Input<boolean>;
     value?: pulumi.Input<string>;
@@ -4991,15 +5131,24 @@ export interface NdbProfileVersionProperty {
 export interface NdbProfileVersionVersionClusterAssociation {
     dateCreated?: pulumi.Input<string>;
     dateModified?: pulumi.Input<string>;
+    /**
+     * cluster on which profile created
+     */
     nxClusterId?: pulumi.Input<string>;
     optimizedForProvisioning?: pulumi.Input<boolean>;
     ownerId?: pulumi.Input<string>;
     profileVersionId?: pulumi.Input<string>;
     properties?: pulumi.Input<pulumi.Input<inputs.NdbProfileVersionVersionClusterAssociationProperty>[]>;
+    /**
+     * status of profile
+     */
     status?: pulumi.Input<string>;
 }
 
 export interface NdbProfileVersionVersionClusterAssociationProperty {
+    /**
+     * Name of profile
+     */
     name?: pulumi.Input<string>;
     secure?: pulumi.Input<boolean>;
     value?: pulumi.Input<string>;
@@ -5661,16 +5810,31 @@ export interface NdbRegisterDatabaseTimeMachineTag {
 
 export interface NdbRegisterDbserverCredential {
     label?: pulumi.Input<string>;
+    /**
+     * password of the NDB drive user account. Conflicts with ssh_key.
+     */
     password: pulumi.Input<string>;
+    /**
+     * username of the NDB drive user account that has sudo access
+     */
     username: pulumi.Input<string>;
 }
 
 export interface NdbRegisterDbserverPostgresDatabase {
+    /**
+     * listener port of db server
+     */
     listenerPort?: pulumi.Input<string>;
+    /**
+     * path to the PostgreSQL home directory in which the PostgreSQL software is installed
+     */
     postgresSoftwareHome?: pulumi.Input<string>;
 }
 
 export interface NdbRegisterDbserverProperty {
+    /**
+     * Name of db server vm. Should be used in Update Method only.
+     */
     name?: pulumi.Input<string>;
     value?: pulumi.Input<string>;
 }
@@ -5687,33 +5851,63 @@ export interface NdbScaleDatabaseDatabaseNode {
     accessLevel?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     databaseId?: pulumi.Input<string>;
     databaseStatus?: pulumi.Input<string>;
+    /**
+     * date created for db instance
+     */
     dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
     dateModified?: pulumi.Input<string>;
     dbserver?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     dbserverId?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
     description?: pulumi.Input<string>;
     id?: pulumi.Input<string>;
+    /**
+     * info of instance
+     */
     infos?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseDatabaseNodeInfo>[]>;
+    /**
+     * Name of database instance
+     */
     name?: pulumi.Input<string>;
     primary?: pulumi.Input<boolean>;
     /**
-     * List of all the properties
+     * properties of database created
      */
     properties?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseDatabaseNodeProperty>[]>;
     protectionDomainId?: pulumi.Input<string>;
     protectionDomains?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseDatabaseNodeProtectionDomain>[]>;
     softwareInstallationId?: pulumi.Input<string>;
+    /**
+     * status of instance
+     */
     status?: pulumi.Input<string>;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
     tags?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseDatabaseNodeTag>[]>;
 }
 
 export interface NdbScaleDatabaseDatabaseNodeInfo {
+    /**
+     * info of instance
+     */
     info?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }
 
 export interface NdbScaleDatabaseDatabaseNodeProperty {
+    /**
+     * description of database instance
+     */
     description?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
     name?: pulumi.Input<string>;
     refId?: pulumi.Input<string>;
     secure?: pulumi.Input<boolean>;
@@ -5723,24 +5917,48 @@ export interface NdbScaleDatabaseDatabaseNodeProperty {
 export interface NdbScaleDatabaseDatabaseNodeProtectionDomain {
     assocEntities?: pulumi.Input<pulumi.Input<string>[]>;
     cloudId?: pulumi.Input<string>;
+    /**
+     * date created for db instance
+     */
     dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
     dateModified?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
     description?: pulumi.Input<string>;
     eraCreated?: pulumi.Input<boolean>;
     id?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
     name?: pulumi.Input<string>;
     ownerId?: pulumi.Input<string>;
     primaryHost?: pulumi.Input<string>;
     /**
-     * List of all the properties
+     * properties of database created
      */
     properties?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseDatabaseNodeProtectionDomainProperty>[]>;
+    /**
+     * status of instance
+     */
     status?: pulumi.Input<string>;
+    /**
+     * type of database
+     */
     type?: pulumi.Input<string>;
 }
 
 export interface NdbScaleDatabaseDatabaseNodeProtectionDomainProperty {
+    /**
+     * description of database instance
+     */
     description?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
     name?: pulumi.Input<string>;
     refId?: pulumi.Input<string>;
     secure?: pulumi.Input<boolean>;
@@ -5842,28 +6060,61 @@ export interface NdbScaleDatabaseLcmConfigRefreshDetail {
 }
 
 export interface NdbScaleDatabaseLinkedDatabase {
+    /**
+     * name of database
+     */
     databaseName?: pulumi.Input<string>;
     databaseStatus?: pulumi.Input<string>;
+    /**
+     * date created for db instance
+     */
     dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
     dateModified?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
     description?: pulumi.Input<string>;
     id?: pulumi.Input<string>;
+    /**
+     * info of instance
+     */
     infos?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseLinkedDatabaseInfo>[]>;
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
     metric?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Name of database instance
+     */
     name?: pulumi.Input<string>;
+    /**
+     * parent database id
+     */
     parentDatabaseId?: pulumi.Input<string>;
     parentLinkedDatabaseId?: pulumi.Input<string>;
     snapshotId?: pulumi.Input<string>;
+    /**
+     * status of instance
+     */
     status?: pulumi.Input<string>;
     timezone?: pulumi.Input<string>;
 }
 
 export interface NdbScaleDatabaseLinkedDatabaseInfo {
+    /**
+     * info of instance
+     */
     info?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     secureInfo?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }
 
 export interface NdbScaleDatabaseProperty {
+    /**
+     * Name of database instance
+     */
     name?: pulumi.Input<string>;
     value?: pulumi.Input<string>;
 }
@@ -5878,20 +6129,38 @@ export interface NdbScaleDatabaseTag {
 
 export interface NdbScaleDatabaseTimeMachine {
     accessLevel?: pulumi.Input<string>;
+    /**
+     * whether instance is cloned or not
+     */
     clone?: pulumi.Input<boolean>;
     clones?: pulumi.Input<string>;
     clustered?: pulumi.Input<boolean>;
     database?: pulumi.Input<string>;
     databaseId?: pulumi.Input<string>;
+    /**
+     * date created for db instance
+     */
     dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
     dateModified?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
     description?: pulumi.Input<string>;
     eaStatus?: pulumi.Input<string>;
     id?: pulumi.Input<string>;
+    /**
+     * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+     */
     metric?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
     name?: pulumi.Input<string>;
     /**
-     * List of all the properties
+     * properties of database created
      */
     properties?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineProperty>[]>;
     scheduleId?: pulumi.Input<string>;
@@ -5902,13 +6171,28 @@ export interface NdbScaleDatabaseTimeMachine {
     slaUpdateMetadata?: pulumi.Input<string>;
     slas?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineSla>[]>;
     sourceNxClusters?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * status of instance
+     */
     status?: pulumi.Input<string>;
+    /**
+     * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+     */
     tags?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineTag>[]>;
+    /**
+     * type of database
+     */
     type?: pulumi.Input<string>;
 }
 
 export interface NdbScaleDatabaseTimeMachineProperty {
+    /**
+     * description of database instance
+     */
     description?: pulumi.Input<string>;
+    /**
+     * Name of database instance
+     */
     name?: pulumi.Input<string>;
     refId?: pulumi.Input<string>;
     secure?: pulumi.Input<boolean>;
@@ -5918,12 +6202,24 @@ export interface NdbScaleDatabaseTimeMachineProperty {
 export interface NdbScaleDatabaseTimeMachineSchedule {
     continuousSchedules?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineScheduleContinuousSchedule>[]>;
     dailySchedules?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineScheduleDailySchedule>[]>;
+    /**
+     * date created for db instance
+     */
     dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
     dateModified?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
     description?: pulumi.Input<string>;
     globalPolicy?: pulumi.Input<boolean>;
     id?: pulumi.Input<string>;
     monthlySchedules?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineScheduleMonthlySchedule>[]>;
+    /**
+     * Name of database instance
+     */
     name?: pulumi.Input<string>;
     ownerId?: pulumi.Input<string>;
     quartelySchedules?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineScheduleQuartelySchedule>[]>;
@@ -5931,6 +6227,9 @@ export interface NdbScaleDatabaseTimeMachineSchedule {
     snapshotTimeOfDays?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineScheduleSnapshotTimeOfDay>[]>;
     startTime?: pulumi.Input<string>;
     systemPolicy?: pulumi.Input<boolean>;
+    /**
+     * timezone on which instance is created xw
+     */
     timeZone?: pulumi.Input<string>;
     uniqueName?: pulumi.Input<string>;
     weeklySchedules?: pulumi.Input<pulumi.Input<inputs.NdbScaleDatabaseTimeMachineScheduleWeeklySchedule>[]>;
@@ -5983,11 +6282,23 @@ export interface NdbScaleDatabaseTimeMachineSla {
     continuousRetention?: pulumi.Input<number>;
     currentActiveFrequency?: pulumi.Input<string>;
     dailyRetention?: pulumi.Input<number>;
+    /**
+     * date created for db instance
+     */
     dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified for instance
+     */
     dateModified?: pulumi.Input<string>;
+    /**
+     * description of database instance
+     */
     description?: pulumi.Input<string>;
     id?: pulumi.Input<string>;
     monthlyRetention?: pulumi.Input<number>;
+    /**
+     * Name of database instance
+     */
     name?: pulumi.Input<string>;
     ownerId?: pulumi.Input<string>;
     pitrEnabled?: pulumi.Input<boolean>;
@@ -6008,31 +6319,82 @@ export interface NdbScaleDatabaseTimeMachineTag {
 }
 
 export interface NdbSoftwareVersionProfilePostgresDatabase {
+    /**
+     * db software notes
+     */
     dbSoftwareNotes?: pulumi.Input<string>;
+    /**
+     * os notes for software profile
+     */
     osNotes?: pulumi.Input<string>;
+    /**
+     * source dbserver id
+     */
     sourceDbserverId?: pulumi.Input<string>;
 }
 
 export interface NdbSoftwareVersionProfileProperty {
+    /**
+     * Name of profile
+     */
     name?: pulumi.Input<string>;
+    /**
+     * secure or not
+     */
     secure?: pulumi.Input<boolean>;
+    /**
+     * value of property
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface NdbSoftwareVersionProfileVersionClusterAssociation {
+    /**
+     * date created of profile
+     */
     dateCreated?: pulumi.Input<string>;
+    /**
+     * date modified of profile
+     */
     dateModified?: pulumi.Input<string>;
+    /**
+     * nutanix cluster id
+     */
     nxClusterId?: pulumi.Input<string>;
+    /**
+     * version optimized for provisioning
+     */
     optimizedForProvisioning?: pulumi.Input<boolean>;
+    /**
+     * owner id
+     */
     ownerId?: pulumi.Input<string>;
+    /**
+     * profile version id
+     */
     profileVersionId?: pulumi.Input<string>;
+    /**
+     * properties of software profile
+     */
     properties?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfileVersionClusterAssociationProperty>[]>;
+    /**
+     * status of profile. Allowed Values are "deprecated", "published", "unpublished"
+     */
     status?: pulumi.Input<string>;
 }
 
 export interface NdbSoftwareVersionProfileVersionClusterAssociationProperty {
+    /**
+     * Name of profile
+     */
     name?: pulumi.Input<string>;
+    /**
+     * secure or not
+     */
     secure?: pulumi.Input<boolean>;
+    /**
+     * value of property
+     */
     value?: pulumi.Input<string>;
 }
 
@@ -6042,24 +6404,63 @@ export interface NdbStretchedVlanMetadata {
 }
 
 export interface NdbStretchedVlanVlansList {
+    /**
+     * cluster id where network is present
+     */
     clusterId?: pulumi.Input<string>;
+    /**
+     * network id
+     */
     id?: pulumi.Input<string>;
+    /**
+     * network managed by NDB or not
+     */
     managed?: pulumi.Input<boolean>;
+    /**
+     * name for the stretched VLAN
+     */
     name?: pulumi.Input<string>;
+    /**
+     * properties of network
+     */
     properties?: pulumi.Input<pulumi.Input<inputs.NdbStretchedVlanVlansListProperty>[]>;
+    /**
+     * properties map of network
+     */
     propertiesMaps?: pulumi.Input<pulumi.Input<inputs.NdbStretchedVlanVlansListPropertiesMap>[]>;
+    /**
+     * stretched vlan id
+     */
     stretchedVlanId?: pulumi.Input<string>;
+    /**
+     * type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
+     */
     type?: pulumi.Input<string>;
 }
 
 export interface NdbStretchedVlanVlansListPropertiesMap {
+    /**
+     * gateway of vlan
+     */
     vlanGateway?: pulumi.Input<string>;
+    /**
+     * primary dns of vlan
+     */
     vlanPrimaryDns?: pulumi.Input<string>;
+    /**
+     * secondary dns of vlan
+     */
     vlanSecondaryDns?: pulumi.Input<string>;
+    /**
+     * subnet mask of vlan
+     */
     vlanSubnetMask?: pulumi.Input<string>;
 }
 
 export interface NdbStretchedVlanVlansListProperty {
+    /**
+     * name for the stretched VLAN
+     */
     name?: pulumi.Input<string>;
     secure?: pulumi.Input<boolean>;
     value?: pulumi.Input<string>;

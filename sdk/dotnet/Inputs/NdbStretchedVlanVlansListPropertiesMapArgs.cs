@@ -13,15 +13,27 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class NdbStretchedVlanVlansListPropertiesMapArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// gateway of vlan
+        /// </summary>
         [Input("vlanGateway")]
         public Input<string>? VlanGateway { get; set; }
 
+        /// <summary>
+        /// primary dns of vlan
+        /// </summary>
         [Input("vlanPrimaryDns")]
         public Input<string>? VlanPrimaryDns { get; set; }
 
+        /// <summary>
+        /// secondary dns of vlan
+        /// </summary>
         [Input("vlanSecondaryDns")]
         public Input<string>? VlanSecondaryDns { get; set; }
 
+        /// <summary>
+        /// subnet mask of vlan
+        /// </summary>
         [Input("vlanSubnetMask")]
         public Input<string>? VlanSubnetMask { get; set; }
 

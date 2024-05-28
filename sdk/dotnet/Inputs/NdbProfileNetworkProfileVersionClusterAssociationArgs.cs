@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class NdbProfileNetworkProfileVersionClusterAssociationArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// cluster on which profile created
+        /// </summary>
         [Input("nxClusterId", required: true)]
         public Input<string> NxClusterId { get; set; } = null!;
 

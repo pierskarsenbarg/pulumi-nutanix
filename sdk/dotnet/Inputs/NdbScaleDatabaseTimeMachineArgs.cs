@@ -16,6 +16,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("accessLevel")]
         public Input<string>? AccessLevel { get; set; }
 
+        /// <summary>
+        /// whether instance is cloned or not
+        /// </summary>
         [Input("clone")]
         public Input<bool>? Clone { get; set; }
 
@@ -31,12 +34,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("databaseId")]
         public Input<string>? DatabaseId { get; set; }
 
+        /// <summary>
+        /// date created for db instance
+        /// </summary>
         [Input("dateCreated")]
         public Input<string>? DateCreated { get; set; }
 
+        /// <summary>
+        /// date modified for instance
+        /// </summary>
         [Input("dateModified")]
         public Input<string>? DateModified { get; set; }
 
+        /// <summary>
+        /// description of database instance
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
@@ -46,9 +58,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("id")]
         public Input<string>? Id { get; set; }
 
+        /// <summary>
+        /// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        /// </summary>
         [Input("metric")]
         public Input<string>? Metric { get; set; }
 
+        /// <summary>
+        /// Name of database instance
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
@@ -56,7 +74,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<Inputs.NdbScaleDatabaseTimeMachinePropertyArgs>? _properties;
 
         /// <summary>
-        /// List of all the properties
+        /// properties of database created
         /// </summary>
         public InputList<Inputs.NdbScaleDatabaseTimeMachinePropertyArgs> Properties
         {
@@ -103,17 +121,27 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _sourceNxClusters = value;
         }
 
+        /// <summary>
+        /// status of instance
+        /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         [Input("tags")]
         private InputList<Inputs.NdbScaleDatabaseTimeMachineTagArgs>? _tags;
+
+        /// <summary>
+        /// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        /// </summary>
         public InputList<Inputs.NdbScaleDatabaseTimeMachineTagArgs> Tags
         {
             get => _tags ?? (_tags = new InputList<Inputs.NdbScaleDatabaseTimeMachineTagArgs>());
             set => _tags = value;
         }
 
+        /// <summary>
+        /// type of database
+        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 

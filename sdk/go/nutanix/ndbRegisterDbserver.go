@@ -12,44 +12,62 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a resource to register database server VMs based on the input parameters. For 1.8.0 release, only postgress database type is qualified and officially supported.
 type NdbRegisterDbserver struct {
 	pulumi.CustomResourceState
 
-	ClientId          pulumi.StringOutput                            `pulumi:"clientId"`
-	Credentials       NdbRegisterDbserverCredentialArrayOutput       `pulumi:"credentials"`
-	DatabaseType      pulumi.StringOutput                            `pulumi:"databaseType"`
-	DbserverClusterId pulumi.StringOutput                            `pulumi:"dbserverClusterId"`
-	Delete            pulumi.BoolPtrOutput                           `pulumi:"delete"`
-	DeleteVgs         pulumi.BoolPtrOutput                           `pulumi:"deleteVgs"`
-	DeleteVmSnapshots pulumi.BoolPtrOutput                           `pulumi:"deleteVmSnapshots"`
-	Description       pulumi.StringOutput                            `pulumi:"description"`
-	EraCreated        pulumi.BoolOutput                              `pulumi:"eraCreated"`
-	EraDriveId        pulumi.StringOutput                            `pulumi:"eraDriveId"`
-	EraVersion        pulumi.StringOutput                            `pulumi:"eraVersion"`
-	ForcedInstall     pulumi.BoolPtrOutput                           `pulumi:"forcedInstall"`
-	Fqdns             pulumi.StringOutput                            `pulumi:"fqdns"`
-	Internal          pulumi.BoolOutput                              `pulumi:"internal"`
-	IpAddresses       pulumi.StringArrayOutput                       `pulumi:"ipAddresses"`
-	MacAddresses      pulumi.StringArrayOutput                       `pulumi:"macAddresses"`
-	Name              pulumi.StringOutput                            `pulumi:"name"`
-	NxclusterId       pulumi.StringPtrOutput                         `pulumi:"nxclusterId"`
-	Password          pulumi.StringPtrOutput                         `pulumi:"password"`
+	ClientId    pulumi.StringOutput                      `pulumi:"clientId"`
+	Credentials NdbRegisterDbserverCredentialArrayOutput `pulumi:"credentials"`
+	// database type i.e. postgres_database
+	DatabaseType      pulumi.StringOutput `pulumi:"databaseType"`
+	DbserverClusterId pulumi.StringOutput `pulumi:"dbserverClusterId"`
+	// - (Optional) Delete the VM and associated storage. Default value is false
+	Delete pulumi.BoolPtrOutput `pulumi:"delete"`
+	// - (Optional) Delete volume grous. Default value is true
+	DeleteVgs pulumi.BoolPtrOutput `pulumi:"deleteVgs"`
+	// - (Optional) Delete the vm snapshots. Default is true
+	DeleteVmSnapshots pulumi.BoolPtrOutput `pulumi:"deleteVmSnapshots"`
+	// description of db server vm. Should be used in update Method only .
+	Description pulumi.StringOutput `pulumi:"description"`
+	EraCreated  pulumi.BoolOutput   `pulumi:"eraCreated"`
+	EraDriveId  pulumi.StringOutput `pulumi:"eraDriveId"`
+	EraVersion  pulumi.StringOutput `pulumi:"eraVersion"`
+	// forced install the packages. Default is true
+	ForcedInstall pulumi.BoolPtrOutput     `pulumi:"forcedInstall"`
+	Fqdns         pulumi.StringOutput      `pulumi:"fqdns"`
+	Internal      pulumi.BoolOutput        `pulumi:"internal"`
+	IpAddresses   pulumi.StringArrayOutput `pulumi:"ipAddresses"`
+	MacAddresses  pulumi.StringArrayOutput `pulumi:"macAddresses"`
+	// Name of db server vm. Should be used in Update Method only.
+	Name pulumi.StringOutput `pulumi:"name"`
+	// cluster on which you want to register the database server VM.
+	NxclusterId pulumi.StringPtrOutput `pulumi:"nxclusterId"`
+	// password of the NDB drive user account. Conflicts with ssh_key.
+	Password pulumi.StringPtrOutput `pulumi:"password"`
+	// postgres info for dbserver
 	PostgresDatabases NdbRegisterDbserverPostgresDatabaseArrayOutput `pulumi:"postgresDatabases"`
 	// List of all the properties
-	Properties                     NdbRegisterDbserverPropertyArrayOutput `pulumi:"properties"`
-	Remove                         pulumi.BoolPtrOutput                   `pulumi:"remove"`
-	SoftRemove                     pulumi.BoolPtrOutput                   `pulumi:"softRemove"`
-	SshKey                         pulumi.StringPtrOutput                 `pulumi:"sshKey"`
-	Status                         pulumi.StringOutput                    `pulumi:"status"`
-	Tags                           NdbRegisterDbserverTagArrayOutput      `pulumi:"tags"`
-	Type                           pulumi.StringOutput                    `pulumi:"type"`
-	UpdateNameDescriptionInCluster pulumi.BoolPtrOutput                   `pulumi:"updateNameDescriptionInCluster"`
-	Username                       pulumi.StringPtrOutput                 `pulumi:"username"`
-	VmClusterName                  pulumi.StringOutput                    `pulumi:"vmClusterName"`
-	VmClusterUuid                  pulumi.StringOutput                    `pulumi:"vmClusterUuid"`
-	VmIp                           pulumi.StringOutput                    `pulumi:"vmIp"`
-	VmTimezone                     pulumi.StringOutput                    `pulumi:"vmTimezone"`
-	WorkingDirectory               pulumi.StringPtrOutput                 `pulumi:"workingDirectory"`
+	Properties NdbRegisterDbserverPropertyArrayOutput `pulumi:"properties"`
+	// - (Optional) Unregister the database from NDB. Default value is true
+	Remove pulumi.BoolPtrOutput `pulumi:"remove"`
+	// - (Optional) Soft remove. Default will be false
+	SoftRemove pulumi.BoolPtrOutput `pulumi:"softRemove"`
+	// the private key. Conflicts with password.
+	SshKey pulumi.StringPtrOutput            `pulumi:"sshKey"`
+	Status pulumi.StringOutput               `pulumi:"status"`
+	Tags   NdbRegisterDbserverTagArrayOutput `pulumi:"tags"`
+	Type   pulumi.StringOutput               `pulumi:"type"`
+	// Updates the name and description in cluster. Should be used in Update Method only.
+	UpdateNameDescriptionInCluster pulumi.BoolPtrOutput `pulumi:"updateNameDescriptionInCluster"`
+	// username of the NDB drive user account that has sudo access
+	Username      pulumi.StringPtrOutput `pulumi:"username"`
+	VmClusterName pulumi.StringOutput    `pulumi:"vmClusterName"`
+	VmClusterUuid pulumi.StringOutput    `pulumi:"vmClusterUuid"`
+	// IP address of the database server VM
+	VmIp       pulumi.StringOutput `pulumi:"vmIp"`
+	VmTimezone pulumi.StringOutput `pulumi:"vmTimezone"`
+	// working directory of postgres. Default is "/tmp"
+	WorkingDirectory pulumi.StringPtrOutput `pulumi:"workingDirectory"`
 }
 
 // NewNdbRegisterDbserver registers a new resource with the given unique name, arguments, and options.
@@ -99,79 +117,113 @@ func GetNdbRegisterDbserver(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NdbRegisterDbserver resources.
 type ndbRegisterDbserverState struct {
-	ClientId          *string                               `pulumi:"clientId"`
-	Credentials       []NdbRegisterDbserverCredential       `pulumi:"credentials"`
-	DatabaseType      *string                               `pulumi:"databaseType"`
-	DbserverClusterId *string                               `pulumi:"dbserverClusterId"`
-	Delete            *bool                                 `pulumi:"delete"`
-	DeleteVgs         *bool                                 `pulumi:"deleteVgs"`
-	DeleteVmSnapshots *bool                                 `pulumi:"deleteVmSnapshots"`
-	Description       *string                               `pulumi:"description"`
-	EraCreated        *bool                                 `pulumi:"eraCreated"`
-	EraDriveId        *string                               `pulumi:"eraDriveId"`
-	EraVersion        *string                               `pulumi:"eraVersion"`
-	ForcedInstall     *bool                                 `pulumi:"forcedInstall"`
-	Fqdns             *string                               `pulumi:"fqdns"`
-	Internal          *bool                                 `pulumi:"internal"`
-	IpAddresses       []string                              `pulumi:"ipAddresses"`
-	MacAddresses      []string                              `pulumi:"macAddresses"`
-	Name              *string                               `pulumi:"name"`
-	NxclusterId       *string                               `pulumi:"nxclusterId"`
-	Password          *string                               `pulumi:"password"`
+	ClientId    *string                         `pulumi:"clientId"`
+	Credentials []NdbRegisterDbserverCredential `pulumi:"credentials"`
+	// database type i.e. postgres_database
+	DatabaseType      *string `pulumi:"databaseType"`
+	DbserverClusterId *string `pulumi:"dbserverClusterId"`
+	// - (Optional) Delete the VM and associated storage. Default value is false
+	Delete *bool `pulumi:"delete"`
+	// - (Optional) Delete volume grous. Default value is true
+	DeleteVgs *bool `pulumi:"deleteVgs"`
+	// - (Optional) Delete the vm snapshots. Default is true
+	DeleteVmSnapshots *bool `pulumi:"deleteVmSnapshots"`
+	// description of db server vm. Should be used in update Method only .
+	Description *string `pulumi:"description"`
+	EraCreated  *bool   `pulumi:"eraCreated"`
+	EraDriveId  *string `pulumi:"eraDriveId"`
+	EraVersion  *string `pulumi:"eraVersion"`
+	// forced install the packages. Default is true
+	ForcedInstall *bool    `pulumi:"forcedInstall"`
+	Fqdns         *string  `pulumi:"fqdns"`
+	Internal      *bool    `pulumi:"internal"`
+	IpAddresses   []string `pulumi:"ipAddresses"`
+	MacAddresses  []string `pulumi:"macAddresses"`
+	// Name of db server vm. Should be used in Update Method only.
+	Name *string `pulumi:"name"`
+	// cluster on which you want to register the database server VM.
+	NxclusterId *string `pulumi:"nxclusterId"`
+	// password of the NDB drive user account. Conflicts with ssh_key.
+	Password *string `pulumi:"password"`
+	// postgres info for dbserver
 	PostgresDatabases []NdbRegisterDbserverPostgresDatabase `pulumi:"postgresDatabases"`
 	// List of all the properties
-	Properties                     []NdbRegisterDbserverProperty `pulumi:"properties"`
-	Remove                         *bool                         `pulumi:"remove"`
-	SoftRemove                     *bool                         `pulumi:"softRemove"`
-	SshKey                         *string                       `pulumi:"sshKey"`
-	Status                         *string                       `pulumi:"status"`
-	Tags                           []NdbRegisterDbserverTag      `pulumi:"tags"`
-	Type                           *string                       `pulumi:"type"`
-	UpdateNameDescriptionInCluster *bool                         `pulumi:"updateNameDescriptionInCluster"`
-	Username                       *string                       `pulumi:"username"`
-	VmClusterName                  *string                       `pulumi:"vmClusterName"`
-	VmClusterUuid                  *string                       `pulumi:"vmClusterUuid"`
-	VmIp                           *string                       `pulumi:"vmIp"`
-	VmTimezone                     *string                       `pulumi:"vmTimezone"`
-	WorkingDirectory               *string                       `pulumi:"workingDirectory"`
+	Properties []NdbRegisterDbserverProperty `pulumi:"properties"`
+	// - (Optional) Unregister the database from NDB. Default value is true
+	Remove *bool `pulumi:"remove"`
+	// - (Optional) Soft remove. Default will be false
+	SoftRemove *bool `pulumi:"softRemove"`
+	// the private key. Conflicts with password.
+	SshKey *string                  `pulumi:"sshKey"`
+	Status *string                  `pulumi:"status"`
+	Tags   []NdbRegisterDbserverTag `pulumi:"tags"`
+	Type   *string                  `pulumi:"type"`
+	// Updates the name and description in cluster. Should be used in Update Method only.
+	UpdateNameDescriptionInCluster *bool `pulumi:"updateNameDescriptionInCluster"`
+	// username of the NDB drive user account that has sudo access
+	Username      *string `pulumi:"username"`
+	VmClusterName *string `pulumi:"vmClusterName"`
+	VmClusterUuid *string `pulumi:"vmClusterUuid"`
+	// IP address of the database server VM
+	VmIp       *string `pulumi:"vmIp"`
+	VmTimezone *string `pulumi:"vmTimezone"`
+	// working directory of postgres. Default is "/tmp"
+	WorkingDirectory *string `pulumi:"workingDirectory"`
 }
 
 type NdbRegisterDbserverState struct {
-	ClientId          pulumi.StringPtrInput
-	Credentials       NdbRegisterDbserverCredentialArrayInput
+	ClientId    pulumi.StringPtrInput
+	Credentials NdbRegisterDbserverCredentialArrayInput
+	// database type i.e. postgres_database
 	DatabaseType      pulumi.StringPtrInput
 	DbserverClusterId pulumi.StringPtrInput
-	Delete            pulumi.BoolPtrInput
-	DeleteVgs         pulumi.BoolPtrInput
+	// - (Optional) Delete the VM and associated storage. Default value is false
+	Delete pulumi.BoolPtrInput
+	// - (Optional) Delete volume grous. Default value is true
+	DeleteVgs pulumi.BoolPtrInput
+	// - (Optional) Delete the vm snapshots. Default is true
 	DeleteVmSnapshots pulumi.BoolPtrInput
-	Description       pulumi.StringPtrInput
-	EraCreated        pulumi.BoolPtrInput
-	EraDriveId        pulumi.StringPtrInput
-	EraVersion        pulumi.StringPtrInput
-	ForcedInstall     pulumi.BoolPtrInput
-	Fqdns             pulumi.StringPtrInput
-	Internal          pulumi.BoolPtrInput
-	IpAddresses       pulumi.StringArrayInput
-	MacAddresses      pulumi.StringArrayInput
-	Name              pulumi.StringPtrInput
-	NxclusterId       pulumi.StringPtrInput
-	Password          pulumi.StringPtrInput
+	// description of db server vm. Should be used in update Method only .
+	Description pulumi.StringPtrInput
+	EraCreated  pulumi.BoolPtrInput
+	EraDriveId  pulumi.StringPtrInput
+	EraVersion  pulumi.StringPtrInput
+	// forced install the packages. Default is true
+	ForcedInstall pulumi.BoolPtrInput
+	Fqdns         pulumi.StringPtrInput
+	Internal      pulumi.BoolPtrInput
+	IpAddresses   pulumi.StringArrayInput
+	MacAddresses  pulumi.StringArrayInput
+	// Name of db server vm. Should be used in Update Method only.
+	Name pulumi.StringPtrInput
+	// cluster on which you want to register the database server VM.
+	NxclusterId pulumi.StringPtrInput
+	// password of the NDB drive user account. Conflicts with ssh_key.
+	Password pulumi.StringPtrInput
+	// postgres info for dbserver
 	PostgresDatabases NdbRegisterDbserverPostgresDatabaseArrayInput
 	// List of all the properties
-	Properties                     NdbRegisterDbserverPropertyArrayInput
-	Remove                         pulumi.BoolPtrInput
-	SoftRemove                     pulumi.BoolPtrInput
-	SshKey                         pulumi.StringPtrInput
-	Status                         pulumi.StringPtrInput
-	Tags                           NdbRegisterDbserverTagArrayInput
-	Type                           pulumi.StringPtrInput
+	Properties NdbRegisterDbserverPropertyArrayInput
+	// - (Optional) Unregister the database from NDB. Default value is true
+	Remove pulumi.BoolPtrInput
+	// - (Optional) Soft remove. Default will be false
+	SoftRemove pulumi.BoolPtrInput
+	// the private key. Conflicts with password.
+	SshKey pulumi.StringPtrInput
+	Status pulumi.StringPtrInput
+	Tags   NdbRegisterDbserverTagArrayInput
+	Type   pulumi.StringPtrInput
+	// Updates the name and description in cluster. Should be used in Update Method only.
 	UpdateNameDescriptionInCluster pulumi.BoolPtrInput
-	Username                       pulumi.StringPtrInput
-	VmClusterName                  pulumi.StringPtrInput
-	VmClusterUuid                  pulumi.StringPtrInput
-	VmIp                           pulumi.StringPtrInput
-	VmTimezone                     pulumi.StringPtrInput
-	WorkingDirectory               pulumi.StringPtrInput
+	// username of the NDB drive user account that has sudo access
+	Username      pulumi.StringPtrInput
+	VmClusterName pulumi.StringPtrInput
+	VmClusterUuid pulumi.StringPtrInput
+	// IP address of the database server VM
+	VmIp       pulumi.StringPtrInput
+	VmTimezone pulumi.StringPtrInput
+	// working directory of postgres. Default is "/tmp"
+	WorkingDirectory pulumi.StringPtrInput
 }
 
 func (NdbRegisterDbserverState) ElementType() reflect.Type {
@@ -179,48 +231,82 @@ func (NdbRegisterDbserverState) ElementType() reflect.Type {
 }
 
 type ndbRegisterDbserverArgs struct {
-	Credentials                    []NdbRegisterDbserverCredential       `pulumi:"credentials"`
-	DatabaseType                   string                                `pulumi:"databaseType"`
-	Delete                         *bool                                 `pulumi:"delete"`
-	DeleteVgs                      *bool                                 `pulumi:"deleteVgs"`
-	DeleteVmSnapshots              *bool                                 `pulumi:"deleteVmSnapshots"`
-	Description                    *string                               `pulumi:"description"`
-	ForcedInstall                  *bool                                 `pulumi:"forcedInstall"`
-	Name                           *string                               `pulumi:"name"`
-	NxclusterId                    *string                               `pulumi:"nxclusterId"`
-	Password                       *string                               `pulumi:"password"`
-	PostgresDatabases              []NdbRegisterDbserverPostgresDatabase `pulumi:"postgresDatabases"`
-	Remove                         *bool                                 `pulumi:"remove"`
-	SoftRemove                     *bool                                 `pulumi:"softRemove"`
-	SshKey                         *string                               `pulumi:"sshKey"`
-	Tags                           []NdbRegisterDbserverTag              `pulumi:"tags"`
-	UpdateNameDescriptionInCluster *bool                                 `pulumi:"updateNameDescriptionInCluster"`
-	Username                       *string                               `pulumi:"username"`
-	VmIp                           string                                `pulumi:"vmIp"`
-	WorkingDirectory               *string                               `pulumi:"workingDirectory"`
+	Credentials []NdbRegisterDbserverCredential `pulumi:"credentials"`
+	// database type i.e. postgres_database
+	DatabaseType string `pulumi:"databaseType"`
+	// - (Optional) Delete the VM and associated storage. Default value is false
+	Delete *bool `pulumi:"delete"`
+	// - (Optional) Delete volume grous. Default value is true
+	DeleteVgs *bool `pulumi:"deleteVgs"`
+	// - (Optional) Delete the vm snapshots. Default is true
+	DeleteVmSnapshots *bool `pulumi:"deleteVmSnapshots"`
+	// description of db server vm. Should be used in update Method only .
+	Description *string `pulumi:"description"`
+	// forced install the packages. Default is true
+	ForcedInstall *bool `pulumi:"forcedInstall"`
+	// Name of db server vm. Should be used in Update Method only.
+	Name *string `pulumi:"name"`
+	// cluster on which you want to register the database server VM.
+	NxclusterId *string `pulumi:"nxclusterId"`
+	// password of the NDB drive user account. Conflicts with ssh_key.
+	Password *string `pulumi:"password"`
+	// postgres info for dbserver
+	PostgresDatabases []NdbRegisterDbserverPostgresDatabase `pulumi:"postgresDatabases"`
+	// - (Optional) Unregister the database from NDB. Default value is true
+	Remove *bool `pulumi:"remove"`
+	// - (Optional) Soft remove. Default will be false
+	SoftRemove *bool `pulumi:"softRemove"`
+	// the private key. Conflicts with password.
+	SshKey *string                  `pulumi:"sshKey"`
+	Tags   []NdbRegisterDbserverTag `pulumi:"tags"`
+	// Updates the name and description in cluster. Should be used in Update Method only.
+	UpdateNameDescriptionInCluster *bool `pulumi:"updateNameDescriptionInCluster"`
+	// username of the NDB drive user account that has sudo access
+	Username *string `pulumi:"username"`
+	// IP address of the database server VM
+	VmIp string `pulumi:"vmIp"`
+	// working directory of postgres. Default is "/tmp"
+	WorkingDirectory *string `pulumi:"workingDirectory"`
 }
 
 // The set of arguments for constructing a NdbRegisterDbserver resource.
 type NdbRegisterDbserverArgs struct {
-	Credentials                    NdbRegisterDbserverCredentialArrayInput
-	DatabaseType                   pulumi.StringInput
-	Delete                         pulumi.BoolPtrInput
-	DeleteVgs                      pulumi.BoolPtrInput
-	DeleteVmSnapshots              pulumi.BoolPtrInput
-	Description                    pulumi.StringPtrInput
-	ForcedInstall                  pulumi.BoolPtrInput
-	Name                           pulumi.StringPtrInput
-	NxclusterId                    pulumi.StringPtrInput
-	Password                       pulumi.StringPtrInput
-	PostgresDatabases              NdbRegisterDbserverPostgresDatabaseArrayInput
-	Remove                         pulumi.BoolPtrInput
-	SoftRemove                     pulumi.BoolPtrInput
-	SshKey                         pulumi.StringPtrInput
-	Tags                           NdbRegisterDbserverTagArrayInput
+	Credentials NdbRegisterDbserverCredentialArrayInput
+	// database type i.e. postgres_database
+	DatabaseType pulumi.StringInput
+	// - (Optional) Delete the VM and associated storage. Default value is false
+	Delete pulumi.BoolPtrInput
+	// - (Optional) Delete volume grous. Default value is true
+	DeleteVgs pulumi.BoolPtrInput
+	// - (Optional) Delete the vm snapshots. Default is true
+	DeleteVmSnapshots pulumi.BoolPtrInput
+	// description of db server vm. Should be used in update Method only .
+	Description pulumi.StringPtrInput
+	// forced install the packages. Default is true
+	ForcedInstall pulumi.BoolPtrInput
+	// Name of db server vm. Should be used in Update Method only.
+	Name pulumi.StringPtrInput
+	// cluster on which you want to register the database server VM.
+	NxclusterId pulumi.StringPtrInput
+	// password of the NDB drive user account. Conflicts with ssh_key.
+	Password pulumi.StringPtrInput
+	// postgres info for dbserver
+	PostgresDatabases NdbRegisterDbserverPostgresDatabaseArrayInput
+	// - (Optional) Unregister the database from NDB. Default value is true
+	Remove pulumi.BoolPtrInput
+	// - (Optional) Soft remove. Default will be false
+	SoftRemove pulumi.BoolPtrInput
+	// the private key. Conflicts with password.
+	SshKey pulumi.StringPtrInput
+	Tags   NdbRegisterDbserverTagArrayInput
+	// Updates the name and description in cluster. Should be used in Update Method only.
 	UpdateNameDescriptionInCluster pulumi.BoolPtrInput
-	Username                       pulumi.StringPtrInput
-	VmIp                           pulumi.StringInput
-	WorkingDirectory               pulumi.StringPtrInput
+	// username of the NDB drive user account that has sudo access
+	Username pulumi.StringPtrInput
+	// IP address of the database server VM
+	VmIp pulumi.StringInput
+	// working directory of postgres. Default is "/tmp"
+	WorkingDirectory pulumi.StringPtrInput
 }
 
 func (NdbRegisterDbserverArgs) ElementType() reflect.Type {
@@ -318,6 +404,7 @@ func (o NdbRegisterDbserverOutput) Credentials() NdbRegisterDbserverCredentialAr
 	return o.ApplyT(func(v *NdbRegisterDbserver) NdbRegisterDbserverCredentialArrayOutput { return v.Credentials }).(NdbRegisterDbserverCredentialArrayOutput)
 }
 
+// database type i.e. postgres_database
 func (o NdbRegisterDbserverOutput) DatabaseType() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.StringOutput { return v.DatabaseType }).(pulumi.StringOutput)
 }
@@ -326,18 +413,22 @@ func (o NdbRegisterDbserverOutput) DbserverClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.StringOutput { return v.DbserverClusterId }).(pulumi.StringOutput)
 }
 
+// - (Optional) Delete the VM and associated storage. Default value is false
 func (o NdbRegisterDbserverOutput) Delete() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.BoolPtrOutput { return v.Delete }).(pulumi.BoolPtrOutput)
 }
 
+// - (Optional) Delete volume grous. Default value is true
 func (o NdbRegisterDbserverOutput) DeleteVgs() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.BoolPtrOutput { return v.DeleteVgs }).(pulumi.BoolPtrOutput)
 }
 
+// - (Optional) Delete the vm snapshots. Default is true
 func (o NdbRegisterDbserverOutput) DeleteVmSnapshots() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.BoolPtrOutput { return v.DeleteVmSnapshots }).(pulumi.BoolPtrOutput)
 }
 
+// description of db server vm. Should be used in update Method only .
 func (o NdbRegisterDbserverOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
@@ -354,6 +445,7 @@ func (o NdbRegisterDbserverOutput) EraVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.StringOutput { return v.EraVersion }).(pulumi.StringOutput)
 }
 
+// forced install the packages. Default is true
 func (o NdbRegisterDbserverOutput) ForcedInstall() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.BoolPtrOutput { return v.ForcedInstall }).(pulumi.BoolPtrOutput)
 }
@@ -374,18 +466,22 @@ func (o NdbRegisterDbserverOutput) MacAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.StringArrayOutput { return v.MacAddresses }).(pulumi.StringArrayOutput)
 }
 
+// Name of db server vm. Should be used in Update Method only.
 func (o NdbRegisterDbserverOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// cluster on which you want to register the database server VM.
 func (o NdbRegisterDbserverOutput) NxclusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.StringPtrOutput { return v.NxclusterId }).(pulumi.StringPtrOutput)
 }
 
+// password of the NDB drive user account. Conflicts with ssh_key.
 func (o NdbRegisterDbserverOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
 }
 
+// postgres info for dbserver
 func (o NdbRegisterDbserverOutput) PostgresDatabases() NdbRegisterDbserverPostgresDatabaseArrayOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) NdbRegisterDbserverPostgresDatabaseArrayOutput {
 		return v.PostgresDatabases
@@ -397,14 +493,17 @@ func (o NdbRegisterDbserverOutput) Properties() NdbRegisterDbserverPropertyArray
 	return o.ApplyT(func(v *NdbRegisterDbserver) NdbRegisterDbserverPropertyArrayOutput { return v.Properties }).(NdbRegisterDbserverPropertyArrayOutput)
 }
 
+// - (Optional) Unregister the database from NDB. Default value is true
 func (o NdbRegisterDbserverOutput) Remove() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.BoolPtrOutput { return v.Remove }).(pulumi.BoolPtrOutput)
 }
 
+// - (Optional) Soft remove. Default will be false
 func (o NdbRegisterDbserverOutput) SoftRemove() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.BoolPtrOutput { return v.SoftRemove }).(pulumi.BoolPtrOutput)
 }
 
+// the private key. Conflicts with password.
 func (o NdbRegisterDbserverOutput) SshKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.StringPtrOutput { return v.SshKey }).(pulumi.StringPtrOutput)
 }
@@ -421,10 +520,12 @@ func (o NdbRegisterDbserverOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
+// Updates the name and description in cluster. Should be used in Update Method only.
 func (o NdbRegisterDbserverOutput) UpdateNameDescriptionInCluster() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.BoolPtrOutput { return v.UpdateNameDescriptionInCluster }).(pulumi.BoolPtrOutput)
 }
 
+// username of the NDB drive user account that has sudo access
 func (o NdbRegisterDbserverOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.StringPtrOutput { return v.Username }).(pulumi.StringPtrOutput)
 }
@@ -437,6 +538,7 @@ func (o NdbRegisterDbserverOutput) VmClusterUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.StringOutput { return v.VmClusterUuid }).(pulumi.StringOutput)
 }
 
+// IP address of the database server VM
 func (o NdbRegisterDbserverOutput) VmIp() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.StringOutput { return v.VmIp }).(pulumi.StringOutput)
 }
@@ -445,6 +547,7 @@ func (o NdbRegisterDbserverOutput) VmTimezone() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.StringOutput { return v.VmTimezone }).(pulumi.StringOutput)
 }
 
+// working directory of postgres. Default is "/tmp"
 func (o NdbRegisterDbserverOutput) WorkingDirectory() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbRegisterDbserver) pulumi.StringPtrOutput { return v.WorkingDirectory }).(pulumi.StringPtrOutput)
 }

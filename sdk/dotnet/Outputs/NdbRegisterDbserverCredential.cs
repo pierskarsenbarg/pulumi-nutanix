@@ -15,7 +15,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class NdbRegisterDbserverCredential
     {
         public readonly string? Label;
+        /// <summary>
+        /// password of the NDB drive user account. Conflicts with ssh_key.
+        /// </summary>
         public readonly string Password;
+        /// <summary>
+        /// username of the NDB drive user account that has sudo access
+        /// </summary>
         public readonly string Username;
 
         [OutputConstructor]
