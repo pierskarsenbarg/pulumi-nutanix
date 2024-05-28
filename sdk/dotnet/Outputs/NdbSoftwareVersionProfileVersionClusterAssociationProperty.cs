@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbSoftwareVersionProfileVersionClusterAssociationProperty
     {
+        /// <summary>
+        /// Name of profile
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// secure or not
+        /// </summary>
         public readonly bool? Secure;
+        /// <summary>
+        /// value of property
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

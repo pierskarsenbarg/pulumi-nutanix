@@ -16,19 +16,37 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly ImmutableArray<string> AssocEntities;
         public readonly string? CloudId;
+        /// <summary>
+        /// date created for db instance
+        /// </summary>
         public readonly string? DateCreated;
+        /// <summary>
+        /// date modified for instance
+        /// </summary>
         public readonly string? DateModified;
+        /// <summary>
+        /// description of database instance
+        /// </summary>
         public readonly string? Description;
         public readonly bool? EraCreated;
         public readonly string? Id;
+        /// <summary>
+        /// Name of database instance
+        /// </summary>
         public readonly string? Name;
         public readonly string? OwnerId;
         public readonly string? PrimaryHost;
         /// <summary>
-        /// List of all the properties
+        /// properties of database created
         /// </summary>
         public readonly ImmutableArray<Outputs.NdbScaleDatabaseDatabaseNodeProtectionDomainProperty> Properties;
+        /// <summary>
+        /// status of instance
+        /// </summary>
         public readonly string? Status;
+        /// <summary>
+        /// type of database
+        /// </summary>
         public readonly string? Type;
 
         [OutputConstructor]

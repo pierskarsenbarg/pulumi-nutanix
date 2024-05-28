@@ -10,24 +10,100 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Provides a resource to create stretched vlans based on the input parameters.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ### resource to add stretched vlan in NDB
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var name = new Nutanix.NdbStretchedVlan("name", new()
+    ///     {
+    ///         Description = "vlan desc updated",
+    ///         Type = "Static",
+    ///         VlanIds = new[]
+    ///         {
+    ///             "{{ vlan_id_1 }}",
+    ///             "{{ vlan_id_2 }}",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ### resource to update the strteched vlan with new gateway and subnet mask
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var name = new Nutanix.NdbStretchedVlan("name", new()
+    ///     {
+    ///         Description = "vlan desc updated",
+    ///         Metadata = new Nutanix.Inputs.NdbStretchedVlanMetadataArgs
+    ///         {
+    ///             Gateway = "{{ gateway of vlans }}",
+    ///             SubnetMask = "{{ subnet mask of vlans }}",
+    ///         },
+    ///         Type = "Static",
+    ///         VlanIds = new[]
+    ///         {
+    ///             "{{ vlan_id_1 }}",
+    ///             "{{ vlan_id_2 }}",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [NutanixResourceType("nutanix:index/ndbStretchedVlan:NdbStretchedVlan")]
     public partial class NdbStretchedVlan : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// Description of stretched vlan
+        /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
+        /// <summary>
+        /// Update the stretched VLAN Gateway and Subnet Mask IP address
+        /// * `metadata.gateway`: Update the gateway of stretched vlan
+        /// * `metadata.subnet_mask`: Update the subnet_mask of stretched vlan
+        /// </summary>
         [Output("metadata")]
         public Output<Outputs.NdbStretchedVlanMetadata> Metadata { get; private set; } = null!;
 
+        /// <summary>
+        /// name for the stretched VLAN
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
+        /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
+        /// <summary>
+        /// list of vlan ids to be added in NDB
+        /// </summary>
         [Output("vlanIds")]
         public Output<ImmutableArray<string>> VlanIds { get; private set; } = null!;
 
+        /// <summary>
+        /// properties of vlans
+        /// </summary>
         [Output("vlansLists")]
         public Output<ImmutableArray<Outputs.NdbStretchedVlanVlansList>> VlansLists { get; private set; } = null!;
 
@@ -78,20 +154,38 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class NdbStretchedVlanArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Description of stretched vlan
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// Update the stretched VLAN Gateway and Subnet Mask IP address
+        /// * `metadata.gateway`: Update the gateway of stretched vlan
+        /// * `metadata.subnet_mask`: Update the subnet_mask of stretched vlan
+        /// </summary>
         [Input("metadata")]
         public Input<Inputs.NdbStretchedVlanMetadataArgs>? Metadata { get; set; }
 
+        /// <summary>
+        /// name for the stretched VLAN
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
+        /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
         [Input("vlanIds", required: true)]
         private InputList<string>? _vlanIds;
+
+        /// <summary>
+        /// list of vlan ids to be added in NDB
+        /// </summary>
         public InputList<string> VlanIds
         {
             get => _vlanIds ?? (_vlanIds = new InputList<string>());
@@ -106,20 +200,38 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class NdbStretchedVlanState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Description of stretched vlan
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// Update the stretched VLAN Gateway and Subnet Mask IP address
+        /// * `metadata.gateway`: Update the gateway of stretched vlan
+        /// * `metadata.subnet_mask`: Update the subnet_mask of stretched vlan
+        /// </summary>
         [Input("metadata")]
         public Input<Inputs.NdbStretchedVlanMetadataGetArgs>? Metadata { get; set; }
 
+        /// <summary>
+        /// name for the stretched VLAN
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
+        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
         [Input("vlanIds")]
         private InputList<string>? _vlanIds;
+
+        /// <summary>
+        /// list of vlan ids to be added in NDB
+        /// </summary>
         public InputList<string> VlanIds
         {
             get => _vlanIds ?? (_vlanIds = new InputList<string>());
@@ -128,6 +240,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("vlansLists")]
         private InputList<Inputs.NdbStretchedVlanVlansListGetArgs>? _vlansLists;
+
+        /// <summary>
+        /// properties of vlans
+        /// </summary>
         public InputList<Inputs.NdbStretchedVlanVlansListGetArgs> VlansLists
         {
             get => _vlansLists ?? (_vlansLists = new InputList<Inputs.NdbStretchedVlanVlansListGetArgs>());

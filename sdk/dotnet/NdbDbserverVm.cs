@@ -10,33 +10,56 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Provides a resource to create database server VMs based on the input parameters. For 1.8.0 release, only postgress database type is qualified and officially supported.
+    /// 
+    /// ## Example Usage
+    /// </summary>
     [NutanixResourceType("nutanix:index/ndbDbserverVm:NdbDbserverVm")]
     public partial class NdbDbserverVm : global::Pulumi.CustomResource
     {
         [Output("clientId")]
         public Output<string> ClientId { get; private set; } = null!;
 
+        /// <summary>
+        /// Compute profile id.
+        /// </summary>
         [Output("computeProfileId")]
         public Output<string> ComputeProfileId { get; private set; } = null!;
 
         [Output("credentials")]
         public Output<ImmutableArray<Outputs.NdbDbserverVmCredential>> Credentials { get; private set; } = null!;
 
+        /// <summary>
+        /// database type. Valid values: postgres_database
+        /// </summary>
         [Output("databaseType")]
         public Output<string> DatabaseType { get; private set; } = null!;
 
         [Output("dbserverClusterId")]
         public Output<string> DbserverClusterId { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Delete the VM and associated storage. Default value is true
+        /// </summary>
         [Output("delete")]
         public Output<bool?> Delete { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Delete volume grous. Default value is true
+        /// </summary>
         [Output("deleteVgs")]
         public Output<bool?> DeleteVgs { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Delete the vm snapshots. Default is true
+        /// </summary>
         [Output("deleteVmSnapshots")]
         public Output<bool?> DeleteVmSnapshots { get; private set; } = null!;
 
+        /// <summary>
+        /// Type a description for the database server VM.
+        /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
@@ -58,18 +81,27 @@ namespace PiersKarsenbarg.Nutanix
         [Output("macAddresses")]
         public Output<ImmutableArray<string>> MacAddresses { get; private set; } = null!;
 
+        /// <summary>
+        /// maintenance window configured to enable automated patching.
+        /// </summary>
         [Output("maintenanceTasks")]
         public Output<Outputs.NdbDbserverVmMaintenanceTasks?> MaintenanceTasks { get; private set; } = null!;
 
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// Network profile id.
+        /// </summary>
         [Output("networkProfileId")]
         public Output<string> NetworkProfileId { get; private set; } = null!;
 
         [Output("nxClusterId")]
         public Output<string> NxClusterId { get; private set; } = null!;
 
+        /// <summary>
+        /// Postgres database server vm
+        /// </summary>
         [Output("postgresDatabases")]
         public Output<ImmutableArray<Outputs.NdbDbserverVmPostgresDatabase>> PostgresDatabases { get; private set; } = null!;
 
@@ -79,18 +111,33 @@ namespace PiersKarsenbarg.Nutanix
         [Output("properties")]
         public Output<ImmutableArray<Outputs.NdbDbserverVmProperty>> Properties { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Unregister the database from NDB. Default value is false
+        /// </summary>
         [Output("remove")]
         public Output<bool?> Remove { get; private set; } = null!;
 
+        /// <summary>
+        /// Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+        /// </summary>
         [Output("snapshotId")]
         public Output<string?> SnapshotId { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Soft remove. Default will be false
+        /// </summary>
         [Output("softRemove")]
         public Output<bool?> SoftRemove { get; private set; } = null!;
 
+        /// <summary>
+        /// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        /// </summary>
         [Output("softwareProfileId")]
         public Output<string?> SoftwareProfileId { get; private set; } = null!;
 
+        /// <summary>
+        /// SOftware Profile Version Id.
+        /// </summary>
         [Output("softwareProfileVersionId")]
         public Output<string?> SoftwareProfileVersionId { get; private set; } = null!;
 
@@ -100,6 +147,9 @@ namespace PiersKarsenbarg.Nutanix
         [Output("tags")]
         public Output<ImmutableArray<Outputs.NdbDbserverVmTag>> Tags { get; private set; } = null!;
 
+        /// <summary>
+        /// Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+        /// </summary>
         [Output("timeMachineId")]
         public Output<string?> TimeMachineId { get; private set; } = null!;
 
@@ -115,6 +165,9 @@ namespace PiersKarsenbarg.Nutanix
         [Output("vmClusterUuid")]
         public Output<string> VmClusterUuid { get; private set; } = null!;
 
+        /// <summary>
+        /// password of the NDB drive user account.
+        /// </summary>
         [Output("vmPassword")]
         public Output<string?> VmPassword { get; private set; } = null!;
 
@@ -172,6 +225,9 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class NdbDbserverVmArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Compute profile id.
+        /// </summary>
         [Input("computeProfileId", required: true)]
         public Input<string> ComputeProfileId { get; set; } = null!;
 
@@ -183,27 +239,48 @@ namespace PiersKarsenbarg.Nutanix
             set => _credentials = value;
         }
 
+        /// <summary>
+        /// database type. Valid values: postgres_database
+        /// </summary>
         [Input("databaseType", required: true)]
         public Input<string> DatabaseType { get; set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Delete the VM and associated storage. Default value is true
+        /// </summary>
         [Input("delete")]
         public Input<bool>? Delete { get; set; }
 
+        /// <summary>
+        /// - (Optional) Delete volume grous. Default value is true
+        /// </summary>
         [Input("deleteVgs")]
         public Input<bool>? DeleteVgs { get; set; }
 
+        /// <summary>
+        /// - (Optional) Delete the vm snapshots. Default is true
+        /// </summary>
         [Input("deleteVmSnapshots")]
         public Input<bool>? DeleteVmSnapshots { get; set; }
 
+        /// <summary>
+        /// Type a description for the database server VM.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         [Input("latestSnapshot")]
         public Input<bool>? LatestSnapshot { get; set; }
 
+        /// <summary>
+        /// maintenance window configured to enable automated patching.
+        /// </summary>
         [Input("maintenanceTasks")]
         public Input<Inputs.NdbDbserverVmMaintenanceTasksArgs>? MaintenanceTasks { get; set; }
 
+        /// <summary>
+        /// Network profile id.
+        /// </summary>
         [Input("networkProfileId", required: true)]
         public Input<string> NetworkProfileId { get; set; } = null!;
 
@@ -212,24 +289,43 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("postgresDatabases")]
         private InputList<Inputs.NdbDbserverVmPostgresDatabaseArgs>? _postgresDatabases;
+
+        /// <summary>
+        /// Postgres database server vm
+        /// </summary>
         public InputList<Inputs.NdbDbserverVmPostgresDatabaseArgs> PostgresDatabases
         {
             get => _postgresDatabases ?? (_postgresDatabases = new InputList<Inputs.NdbDbserverVmPostgresDatabaseArgs>());
             set => _postgresDatabases = value;
         }
 
+        /// <summary>
+        /// - (Optional) Unregister the database from NDB. Default value is false
+        /// </summary>
         [Input("remove")]
         public Input<bool>? Remove { get; set; }
 
+        /// <summary>
+        /// Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+        /// </summary>
         [Input("snapshotId")]
         public Input<string>? SnapshotId { get; set; }
 
+        /// <summary>
+        /// - (Optional) Soft remove. Default will be false
+        /// </summary>
         [Input("softRemove")]
         public Input<bool>? SoftRemove { get; set; }
 
+        /// <summary>
+        /// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        /// </summary>
         [Input("softwareProfileId")]
         public Input<string>? SoftwareProfileId { get; set; }
 
+        /// <summary>
+        /// SOftware Profile Version Id.
+        /// </summary>
         [Input("softwareProfileVersionId")]
         public Input<string>? SoftwareProfileVersionId { get; set; }
 
@@ -241,6 +337,9 @@ namespace PiersKarsenbarg.Nutanix
             set => _tags = value;
         }
 
+        /// <summary>
+        /// Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+        /// </summary>
         [Input("timeMachineId")]
         public Input<string>? TimeMachineId { get; set; }
 
@@ -249,6 +348,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("vmPassword")]
         private Input<string>? _vmPassword;
+
+        /// <summary>
+        /// password of the NDB drive user account.
+        /// </summary>
         public Input<string>? VmPassword
         {
             get => _vmPassword;
@@ -270,6 +373,9 @@ namespace PiersKarsenbarg.Nutanix
         [Input("clientId")]
         public Input<string>? ClientId { get; set; }
 
+        /// <summary>
+        /// Compute profile id.
+        /// </summary>
         [Input("computeProfileId")]
         public Input<string>? ComputeProfileId { get; set; }
 
@@ -281,21 +387,36 @@ namespace PiersKarsenbarg.Nutanix
             set => _credentials = value;
         }
 
+        /// <summary>
+        /// database type. Valid values: postgres_database
+        /// </summary>
         [Input("databaseType")]
         public Input<string>? DatabaseType { get; set; }
 
         [Input("dbserverClusterId")]
         public Input<string>? DbserverClusterId { get; set; }
 
+        /// <summary>
+        /// - (Optional) Delete the VM and associated storage. Default value is true
+        /// </summary>
         [Input("delete")]
         public Input<bool>? Delete { get; set; }
 
+        /// <summary>
+        /// - (Optional) Delete volume grous. Default value is true
+        /// </summary>
         [Input("deleteVgs")]
         public Input<bool>? DeleteVgs { get; set; }
 
+        /// <summary>
+        /// - (Optional) Delete the vm snapshots. Default is true
+        /// </summary>
         [Input("deleteVmSnapshots")]
         public Input<bool>? DeleteVmSnapshots { get; set; }
 
+        /// <summary>
+        /// Type a description for the database server VM.
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
@@ -327,12 +448,18 @@ namespace PiersKarsenbarg.Nutanix
             set => _macAddresses = value;
         }
 
+        /// <summary>
+        /// maintenance window configured to enable automated patching.
+        /// </summary>
         [Input("maintenanceTasks")]
         public Input<Inputs.NdbDbserverVmMaintenanceTasksGetArgs>? MaintenanceTasks { get; set; }
 
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// Network profile id.
+        /// </summary>
         [Input("networkProfileId")]
         public Input<string>? NetworkProfileId { get; set; }
 
@@ -341,6 +468,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("postgresDatabases")]
         private InputList<Inputs.NdbDbserverVmPostgresDatabaseGetArgs>? _postgresDatabases;
+
+        /// <summary>
+        /// Postgres database server vm
+        /// </summary>
         public InputList<Inputs.NdbDbserverVmPostgresDatabaseGetArgs> PostgresDatabases
         {
             get => _postgresDatabases ?? (_postgresDatabases = new InputList<Inputs.NdbDbserverVmPostgresDatabaseGetArgs>());
@@ -359,18 +490,33 @@ namespace PiersKarsenbarg.Nutanix
             set => _properties = value;
         }
 
+        /// <summary>
+        /// - (Optional) Unregister the database from NDB. Default value is false
+        /// </summary>
         [Input("remove")]
         public Input<bool>? Remove { get; set; }
 
+        /// <summary>
+        /// Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+        /// </summary>
         [Input("snapshotId")]
         public Input<string>? SnapshotId { get; set; }
 
+        /// <summary>
+        /// - (Optional) Soft remove. Default will be false
+        /// </summary>
         [Input("softRemove")]
         public Input<bool>? SoftRemove { get; set; }
 
+        /// <summary>
+        /// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with time_machine_id .
+        /// </summary>
         [Input("softwareProfileId")]
         public Input<string>? SoftwareProfileId { get; set; }
 
+        /// <summary>
+        /// SOftware Profile Version Id.
+        /// </summary>
         [Input("softwareProfileVersionId")]
         public Input<string>? SoftwareProfileVersionId { get; set; }
 
@@ -385,6 +531,9 @@ namespace PiersKarsenbarg.Nutanix
             set => _tags = value;
         }
 
+        /// <summary>
+        /// Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+        /// </summary>
         [Input("timeMachineId")]
         public Input<string>? TimeMachineId { get; set; }
 
@@ -402,6 +551,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("vmPassword")]
         private Input<string>? _vmPassword;
+
+        /// <summary>
+        /// password of the NDB drive user account.
+        /// </summary>
         public Input<string>? VmPassword
         {
             get => _vmPassword;

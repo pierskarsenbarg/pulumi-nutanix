@@ -20,6 +20,10 @@ class NdbTmsClusterArgs:
                  type: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NdbTmsCluster resource.
+        :param pulumi.Input[str] nx_cluster_id: Nutanix cluster id on the associated registered clusters.
+        :param pulumi.Input[str] sla_id: SLA id for the associated cluster.
+        :param pulumi.Input[str] time_machine_id: time machine id
+        :param pulumi.Input[str] type: Default value is "OTHER"
         """
         pulumi.set(__self__, "nx_cluster_id", nx_cluster_id)
         pulumi.set(__self__, "sla_id", sla_id)
@@ -30,6 +34,9 @@ class NdbTmsClusterArgs:
     @property
     @pulumi.getter(name="nxClusterId")
     def nx_cluster_id(self) -> pulumi.Input[str]:
+        """
+        Nutanix cluster id on the associated registered clusters.
+        """
         return pulumi.get(self, "nx_cluster_id")
 
     @nx_cluster_id.setter
@@ -39,6 +46,9 @@ class NdbTmsClusterArgs:
     @property
     @pulumi.getter(name="slaId")
     def sla_id(self) -> pulumi.Input[str]:
+        """
+        SLA id for the associated cluster.
+        """
         return pulumi.get(self, "sla_id")
 
     @sla_id.setter
@@ -48,6 +58,9 @@ class NdbTmsClusterArgs:
     @property
     @pulumi.getter(name="timeMachineId")
     def time_machine_id(self) -> pulumi.Input[str]:
+        """
+        time machine id
+        """
         return pulumi.get(self, "time_machine_id")
 
     @time_machine_id.setter
@@ -57,6 +70,9 @@ class NdbTmsClusterArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Default value is "OTHER"
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -83,6 +99,20 @@ class _NdbTmsClusterState:
                  type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NdbTmsCluster resources.
+        :param pulumi.Input[str] date_created: created date of time machine associated with cluster
+        :param pulumi.Input[str] date_modified: modified date of time machine associated with cluster
+        :param pulumi.Input[str] description: description of nutanix cluster associated with time machine
+        :param pulumi.Input[str] log_drive_id: log drive id
+        :param pulumi.Input[str] log_drive_status: log drive status of time machine
+        :param pulumi.Input[str] nx_cluster_id: Nutanix cluster id on the associated registered clusters.
+        :param pulumi.Input[str] owner_id: owner id
+        :param pulumi.Input[str] schedule_id: schedule id of the data associated with time machine
+        :param pulumi.Input[str] sla_id: SLA id for the associated cluster.
+        :param pulumi.Input[bool] source: source is present or not
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] source_clusters: source clusters in time machines
+        :param pulumi.Input[str] status: status of the cluster associated with time machine
+        :param pulumi.Input[str] time_machine_id: time machine id
+        :param pulumi.Input[str] type: Default value is "OTHER"
         """
         if date_created is not None:
             pulumi.set(__self__, "date_created", date_created)
@@ -116,6 +146,9 @@ class _NdbTmsClusterState:
     @property
     @pulumi.getter(name="dateCreated")
     def date_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        created date of time machine associated with cluster
+        """
         return pulumi.get(self, "date_created")
 
     @date_created.setter
@@ -125,6 +158,9 @@ class _NdbTmsClusterState:
     @property
     @pulumi.getter(name="dateModified")
     def date_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        modified date of time machine associated with cluster
+        """
         return pulumi.get(self, "date_modified")
 
     @date_modified.setter
@@ -134,6 +170,9 @@ class _NdbTmsClusterState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        description of nutanix cluster associated with time machine
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -143,6 +182,9 @@ class _NdbTmsClusterState:
     @property
     @pulumi.getter(name="logDriveId")
     def log_drive_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        log drive id
+        """
         return pulumi.get(self, "log_drive_id")
 
     @log_drive_id.setter
@@ -152,6 +194,9 @@ class _NdbTmsClusterState:
     @property
     @pulumi.getter(name="logDriveStatus")
     def log_drive_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        log drive status of time machine
+        """
         return pulumi.get(self, "log_drive_status")
 
     @log_drive_status.setter
@@ -161,6 +206,9 @@ class _NdbTmsClusterState:
     @property
     @pulumi.getter(name="nxClusterId")
     def nx_cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Nutanix cluster id on the associated registered clusters.
+        """
         return pulumi.get(self, "nx_cluster_id")
 
     @nx_cluster_id.setter
@@ -170,6 +218,9 @@ class _NdbTmsClusterState:
     @property
     @pulumi.getter(name="ownerId")
     def owner_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        owner id
+        """
         return pulumi.get(self, "owner_id")
 
     @owner_id.setter
@@ -179,6 +230,9 @@ class _NdbTmsClusterState:
     @property
     @pulumi.getter(name="scheduleId")
     def schedule_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        schedule id of the data associated with time machine
+        """
         return pulumi.get(self, "schedule_id")
 
     @schedule_id.setter
@@ -188,6 +242,9 @@ class _NdbTmsClusterState:
     @property
     @pulumi.getter(name="slaId")
     def sla_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        SLA id for the associated cluster.
+        """
         return pulumi.get(self, "sla_id")
 
     @sla_id.setter
@@ -197,6 +254,9 @@ class _NdbTmsClusterState:
     @property
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input[bool]]:
+        """
+        source is present or not
+        """
         return pulumi.get(self, "source")
 
     @source.setter
@@ -206,6 +266,9 @@ class _NdbTmsClusterState:
     @property
     @pulumi.getter(name="sourceClusters")
     def source_clusters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        source clusters in time machines
+        """
         return pulumi.get(self, "source_clusters")
 
     @source_clusters.setter
@@ -215,6 +278,9 @@ class _NdbTmsClusterState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        status of the cluster associated with time machine
+        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -224,6 +290,9 @@ class _NdbTmsClusterState:
     @property
     @pulumi.getter(name="timeMachineId")
     def time_machine_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        time machine id
+        """
         return pulumi.get(self, "time_machine_id")
 
     @time_machine_id.setter
@@ -233,6 +302,9 @@ class _NdbTmsClusterState:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Default value is "OTHER"
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -251,9 +323,26 @@ class NdbTmsCluster(pulumi.CustomResource):
                  type: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Create a NdbTmsCluster resource with the given unique name, props, and options.
+        Provides a resource to manage time machine data availability across all the registered Nutanix clusters in NDB.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        cls = nutanix.NdbTmsCluster("cls",
+            nx_cluster_id="{{ cluster_id }}",
+            sla_id="{{ sla_id }}",
+            time_machine_id="{{ tms_id }}")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] nx_cluster_id: Nutanix cluster id on the associated registered clusters.
+        :param pulumi.Input[str] sla_id: SLA id for the associated cluster.
+        :param pulumi.Input[str] time_machine_id: time machine id
+        :param pulumi.Input[str] type: Default value is "OTHER"
         """
         ...
     @overload
@@ -262,7 +351,20 @@ class NdbTmsCluster(pulumi.CustomResource):
                  args: NdbTmsClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a NdbTmsCluster resource with the given unique name, props, and options.
+        Provides a resource to manage time machine data availability across all the registered Nutanix clusters in NDB.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        cls = nutanix.NdbTmsCluster("cls",
+            nx_cluster_id="{{ cluster_id }}",
+            sla_id="{{ sla_id }}",
+            time_machine_id="{{ tms_id }}")
+        ```
+
         :param str resource_name: The name of the resource.
         :param NdbTmsClusterArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -342,6 +444,20 @@ class NdbTmsCluster(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] date_created: created date of time machine associated with cluster
+        :param pulumi.Input[str] date_modified: modified date of time machine associated with cluster
+        :param pulumi.Input[str] description: description of nutanix cluster associated with time machine
+        :param pulumi.Input[str] log_drive_id: log drive id
+        :param pulumi.Input[str] log_drive_status: log drive status of time machine
+        :param pulumi.Input[str] nx_cluster_id: Nutanix cluster id on the associated registered clusters.
+        :param pulumi.Input[str] owner_id: owner id
+        :param pulumi.Input[str] schedule_id: schedule id of the data associated with time machine
+        :param pulumi.Input[str] sla_id: SLA id for the associated cluster.
+        :param pulumi.Input[bool] source: source is present or not
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] source_clusters: source clusters in time machines
+        :param pulumi.Input[str] status: status of the cluster associated with time machine
+        :param pulumi.Input[str] time_machine_id: time machine id
+        :param pulumi.Input[str] type: Default value is "OTHER"
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -366,70 +482,112 @@ class NdbTmsCluster(pulumi.CustomResource):
     @property
     @pulumi.getter(name="dateCreated")
     def date_created(self) -> pulumi.Output[str]:
+        """
+        created date of time machine associated with cluster
+        """
         return pulumi.get(self, "date_created")
 
     @property
     @pulumi.getter(name="dateModified")
     def date_modified(self) -> pulumi.Output[str]:
+        """
+        modified date of time machine associated with cluster
+        """
         return pulumi.get(self, "date_modified")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
+        """
+        description of nutanix cluster associated with time machine
+        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="logDriveId")
     def log_drive_id(self) -> pulumi.Output[str]:
+        """
+        log drive id
+        """
         return pulumi.get(self, "log_drive_id")
 
     @property
     @pulumi.getter(name="logDriveStatus")
     def log_drive_status(self) -> pulumi.Output[str]:
+        """
+        log drive status of time machine
+        """
         return pulumi.get(self, "log_drive_status")
 
     @property
     @pulumi.getter(name="nxClusterId")
     def nx_cluster_id(self) -> pulumi.Output[str]:
+        """
+        Nutanix cluster id on the associated registered clusters.
+        """
         return pulumi.get(self, "nx_cluster_id")
 
     @property
     @pulumi.getter(name="ownerId")
     def owner_id(self) -> pulumi.Output[str]:
+        """
+        owner id
+        """
         return pulumi.get(self, "owner_id")
 
     @property
     @pulumi.getter(name="scheduleId")
     def schedule_id(self) -> pulumi.Output[str]:
+        """
+        schedule id of the data associated with time machine
+        """
         return pulumi.get(self, "schedule_id")
 
     @property
     @pulumi.getter(name="slaId")
     def sla_id(self) -> pulumi.Output[str]:
+        """
+        SLA id for the associated cluster.
+        """
         return pulumi.get(self, "sla_id")
 
     @property
     @pulumi.getter
     def source(self) -> pulumi.Output[bool]:
+        """
+        source is present or not
+        """
         return pulumi.get(self, "source")
 
     @property
     @pulumi.getter(name="sourceClusters")
     def source_clusters(self) -> pulumi.Output[Sequence[str]]:
+        """
+        source clusters in time machines
+        """
         return pulumi.get(self, "source_clusters")
 
     @property
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
+        """
+        status of the cluster associated with time machine
+        """
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="timeMachineId")
     def time_machine_id(self) -> pulumi.Output[str]:
+        """
+        time machine id
+        """
         return pulumi.get(self, "time_machine_id")
 
     @property
     @pulumi.getter
     def type(self) -> pulumi.Output[Optional[str]]:
+        """
+        Default value is "OTHER"
+        """
         return pulumi.get(self, "type")
 

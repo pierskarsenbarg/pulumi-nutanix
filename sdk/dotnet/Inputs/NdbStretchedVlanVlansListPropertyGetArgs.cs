@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class NdbStretchedVlanVlansListPropertyGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// name for the stretched VLAN
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

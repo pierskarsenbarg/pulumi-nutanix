@@ -19,18 +19,30 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("deprecated")]
         public Input<bool>? Deprecated { get; set; }
 
+        /// <summary>
+        /// Description of profile
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// Engine Type of database
+        /// </summary>
         [Input("engineType")]
         public Input<string>? EngineType { get; set; }
 
         [Input("id")]
         public Input<string>? Id { get; set; }
 
+        /// <summary>
+        /// Name of profile
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// owner  of profile
+        /// </summary>
         [Input("owner")]
         public Input<string>? Owner { get; set; }
 
@@ -53,9 +65,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _propertiesMap = value;
         }
 
+        /// <summary>
+        /// Publish for all users
+        /// </summary>
         [Input("published")]
         public Input<bool>? Published { get; set; }
 
+        /// <summary>
+        /// status of profile
+        /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 

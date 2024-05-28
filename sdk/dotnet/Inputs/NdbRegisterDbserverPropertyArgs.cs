@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class NdbRegisterDbserverPropertyArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Name of db server vm. Should be used in Update Method only.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

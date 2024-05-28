@@ -13,18 +13,30 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class NdbScaleDatabaseLinkedDatabaseGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// name of database
+        /// </summary>
         [Input("databaseName")]
         public Input<string>? DatabaseName { get; set; }
 
         [Input("databaseStatus")]
         public Input<string>? DatabaseStatus { get; set; }
 
+        /// <summary>
+        /// date created for db instance
+        /// </summary>
         [Input("dateCreated")]
         public Input<string>? DateCreated { get; set; }
 
+        /// <summary>
+        /// date modified for instance
+        /// </summary>
         [Input("dateModified")]
         public Input<string>? DateModified { get; set; }
 
+        /// <summary>
+        /// description of database instance
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
@@ -33,6 +45,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("infos")]
         private InputList<Inputs.NdbScaleDatabaseLinkedDatabaseInfoGetArgs>? _infos;
+
+        /// <summary>
+        /// info of instance
+        /// </summary>
         public InputList<Inputs.NdbScaleDatabaseLinkedDatabaseInfoGetArgs> Infos
         {
             get => _infos ?? (_infos = new InputList<Inputs.NdbScaleDatabaseLinkedDatabaseInfoGetArgs>());
@@ -41,15 +57,25 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("metric")]
         private InputMap<string>? _metric;
+
+        /// <summary>
+        /// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        /// </summary>
         public InputMap<string> Metric
         {
             get => _metric ?? (_metric = new InputMap<string>());
             set => _metric = value;
         }
 
+        /// <summary>
+        /// Name of database instance
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// parent database id
+        /// </summary>
         [Input("parentDatabaseId")]
         public Input<string>? ParentDatabaseId { get; set; }
 
@@ -59,6 +85,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("snapshotId")]
         public Input<string>? SnapshotId { get; set; }
 
+        /// <summary>
+        /// status of instance
+        /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 

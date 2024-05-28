@@ -11,26 +11,44 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a resource to create profiles (Software, Network, Database Parameter, Compute) based on the input parameters.
 type NdbProfile struct {
 	pulumi.CustomResourceState
 
-	AssocDatabases            pulumi.StringArrayOutput                      `pulumi:"assocDatabases"`
-	AssocDbServers            pulumi.StringArrayOutput                      `pulumi:"assocDbServers"`
-	ClusterAvailabilities     NdbProfileClusterAvailabilityArrayOutput      `pulumi:"clusterAvailabilities"`
-	ComputeProfiles           NdbProfileComputeProfileArrayOutput           `pulumi:"computeProfiles"`
+	// associated databases of profiles
+	AssocDatabases pulumi.StringArrayOutput `pulumi:"assocDatabases"`
+	// associated database servers for associated profiles
+	AssocDbServers pulumi.StringArrayOutput `pulumi:"assocDbServers"`
+	// cluster availability of profile
+	ClusterAvailabilities NdbProfileClusterAvailabilityArrayOutput `pulumi:"clusterAvailabilities"`
+	// Compute Profile
+	ComputeProfiles NdbProfileComputeProfileArrayOutput `pulumi:"computeProfiles"`
+	// Database Parameter Profile
 	DatabaseParameterProfiles NdbProfileDatabaseParameterProfileArrayOutput `pulumi:"databaseParameterProfiles"`
-	Description               pulumi.StringPtrOutput                        `pulumi:"description"`
-	EngineType                pulumi.StringOutput                           `pulumi:"engineType"`
-	LatestVersion             pulumi.StringOutput                           `pulumi:"latestVersion"`
-	LatestVersionId           pulumi.StringOutput                           `pulumi:"latestVersionId"`
-	Name                      pulumi.StringOutput                           `pulumi:"name"`
-	NetworkProfiles           NdbProfileNetworkProfileArrayOutput           `pulumi:"networkProfiles"`
-	NxClusterId               pulumi.StringOutput                           `pulumi:"nxClusterId"`
-	Owner                     pulumi.StringOutput                           `pulumi:"owner"`
-	Published                 pulumi.BoolPtrOutput                          `pulumi:"published"`
-	SoftwareProfile           NdbProfileSoftwareProfilePtrOutput            `pulumi:"softwareProfile"`
-	Status                    pulumi.StringOutput                           `pulumi:"status"`
-	Versions                  NdbProfileVersionArrayOutput                  `pulumi:"versions"`
+	// Description of profile
+	Description pulumi.StringPtrOutput `pulumi:"description"`
+	// Engine Type of database
+	EngineType pulumi.StringOutput `pulumi:"engineType"`
+	// latest version of profile
+	LatestVersion pulumi.StringOutput `pulumi:"latestVersion"`
+	// latest version id of profile
+	LatestVersionId pulumi.StringOutput `pulumi:"latestVersionId"`
+	// Name of profile
+	Name pulumi.StringOutput `pulumi:"name"`
+	// Network Profile
+	NetworkProfiles NdbProfileNetworkProfileArrayOutput `pulumi:"networkProfiles"`
+	// cluster on which profile created
+	NxClusterId pulumi.StringOutput `pulumi:"nxClusterId"`
+	// owner  of profile
+	Owner pulumi.StringOutput `pulumi:"owner"`
+	// Publish for all users
+	Published pulumi.BoolPtrOutput `pulumi:"published"`
+	// Software Profile
+	SoftwareProfile NdbProfileSoftwareProfilePtrOutput `pulumi:"softwareProfile"`
+	// status of profile
+	Status pulumi.StringOutput `pulumi:"status"`
+	// versions of associated profiles
+	Versions NdbProfileVersionArrayOutput `pulumi:"versions"`
 }
 
 // NewNdbProfile registers a new resource with the given unique name, arguments, and options.
@@ -63,43 +81,77 @@ func GetNdbProfile(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NdbProfile resources.
 type ndbProfileState struct {
-	AssocDatabases            []string                             `pulumi:"assocDatabases"`
-	AssocDbServers            []string                             `pulumi:"assocDbServers"`
-	ClusterAvailabilities     []NdbProfileClusterAvailability      `pulumi:"clusterAvailabilities"`
-	ComputeProfiles           []NdbProfileComputeProfile           `pulumi:"computeProfiles"`
+	// associated databases of profiles
+	AssocDatabases []string `pulumi:"assocDatabases"`
+	// associated database servers for associated profiles
+	AssocDbServers []string `pulumi:"assocDbServers"`
+	// cluster availability of profile
+	ClusterAvailabilities []NdbProfileClusterAvailability `pulumi:"clusterAvailabilities"`
+	// Compute Profile
+	ComputeProfiles []NdbProfileComputeProfile `pulumi:"computeProfiles"`
+	// Database Parameter Profile
 	DatabaseParameterProfiles []NdbProfileDatabaseParameterProfile `pulumi:"databaseParameterProfiles"`
-	Description               *string                              `pulumi:"description"`
-	EngineType                *string                              `pulumi:"engineType"`
-	LatestVersion             *string                              `pulumi:"latestVersion"`
-	LatestVersionId           *string                              `pulumi:"latestVersionId"`
-	Name                      *string                              `pulumi:"name"`
-	NetworkProfiles           []NdbProfileNetworkProfile           `pulumi:"networkProfiles"`
-	NxClusterId               *string                              `pulumi:"nxClusterId"`
-	Owner                     *string                              `pulumi:"owner"`
-	Published                 *bool                                `pulumi:"published"`
-	SoftwareProfile           *NdbProfileSoftwareProfile           `pulumi:"softwareProfile"`
-	Status                    *string                              `pulumi:"status"`
-	Versions                  []NdbProfileVersion                  `pulumi:"versions"`
+	// Description of profile
+	Description *string `pulumi:"description"`
+	// Engine Type of database
+	EngineType *string `pulumi:"engineType"`
+	// latest version of profile
+	LatestVersion *string `pulumi:"latestVersion"`
+	// latest version id of profile
+	LatestVersionId *string `pulumi:"latestVersionId"`
+	// Name of profile
+	Name *string `pulumi:"name"`
+	// Network Profile
+	NetworkProfiles []NdbProfileNetworkProfile `pulumi:"networkProfiles"`
+	// cluster on which profile created
+	NxClusterId *string `pulumi:"nxClusterId"`
+	// owner  of profile
+	Owner *string `pulumi:"owner"`
+	// Publish for all users
+	Published *bool `pulumi:"published"`
+	// Software Profile
+	SoftwareProfile *NdbProfileSoftwareProfile `pulumi:"softwareProfile"`
+	// status of profile
+	Status *string `pulumi:"status"`
+	// versions of associated profiles
+	Versions []NdbProfileVersion `pulumi:"versions"`
 }
 
 type NdbProfileState struct {
-	AssocDatabases            pulumi.StringArrayInput
-	AssocDbServers            pulumi.StringArrayInput
-	ClusterAvailabilities     NdbProfileClusterAvailabilityArrayInput
-	ComputeProfiles           NdbProfileComputeProfileArrayInput
+	// associated databases of profiles
+	AssocDatabases pulumi.StringArrayInput
+	// associated database servers for associated profiles
+	AssocDbServers pulumi.StringArrayInput
+	// cluster availability of profile
+	ClusterAvailabilities NdbProfileClusterAvailabilityArrayInput
+	// Compute Profile
+	ComputeProfiles NdbProfileComputeProfileArrayInput
+	// Database Parameter Profile
 	DatabaseParameterProfiles NdbProfileDatabaseParameterProfileArrayInput
-	Description               pulumi.StringPtrInput
-	EngineType                pulumi.StringPtrInput
-	LatestVersion             pulumi.StringPtrInput
-	LatestVersionId           pulumi.StringPtrInput
-	Name                      pulumi.StringPtrInput
-	NetworkProfiles           NdbProfileNetworkProfileArrayInput
-	NxClusterId               pulumi.StringPtrInput
-	Owner                     pulumi.StringPtrInput
-	Published                 pulumi.BoolPtrInput
-	SoftwareProfile           NdbProfileSoftwareProfilePtrInput
-	Status                    pulumi.StringPtrInput
-	Versions                  NdbProfileVersionArrayInput
+	// Description of profile
+	Description pulumi.StringPtrInput
+	// Engine Type of database
+	EngineType pulumi.StringPtrInput
+	// latest version of profile
+	LatestVersion pulumi.StringPtrInput
+	// latest version id of profile
+	LatestVersionId pulumi.StringPtrInput
+	// Name of profile
+	Name pulumi.StringPtrInput
+	// Network Profile
+	NetworkProfiles NdbProfileNetworkProfileArrayInput
+	// cluster on which profile created
+	NxClusterId pulumi.StringPtrInput
+	// owner  of profile
+	Owner pulumi.StringPtrInput
+	// Publish for all users
+	Published pulumi.BoolPtrInput
+	// Software Profile
+	SoftwareProfile NdbProfileSoftwareProfilePtrInput
+	// status of profile
+	Status pulumi.StringPtrInput
+	// versions of associated profiles
+	Versions NdbProfileVersionArrayInput
 }
 
 func (NdbProfileState) ElementType() reflect.Type {
@@ -107,26 +159,42 @@ func (NdbProfileState) ElementType() reflect.Type {
 }
 
 type ndbProfileArgs struct {
-	ComputeProfiles           []NdbProfileComputeProfile           `pulumi:"computeProfiles"`
+	// Compute Profile
+	ComputeProfiles []NdbProfileComputeProfile `pulumi:"computeProfiles"`
+	// Database Parameter Profile
 	DatabaseParameterProfiles []NdbProfileDatabaseParameterProfile `pulumi:"databaseParameterProfiles"`
-	Description               *string                              `pulumi:"description"`
-	EngineType                *string                              `pulumi:"engineType"`
-	Name                      *string                              `pulumi:"name"`
-	NetworkProfiles           []NdbProfileNetworkProfile           `pulumi:"networkProfiles"`
-	Published                 *bool                                `pulumi:"published"`
-	SoftwareProfile           *NdbProfileSoftwareProfile           `pulumi:"softwareProfile"`
+	// Description of profile
+	Description *string `pulumi:"description"`
+	// Engine Type of database
+	EngineType *string `pulumi:"engineType"`
+	// Name of profile
+	Name *string `pulumi:"name"`
+	// Network Profile
+	NetworkProfiles []NdbProfileNetworkProfile `pulumi:"networkProfiles"`
+	// Publish for all users
+	Published *bool `pulumi:"published"`
+	// Software Profile
+	SoftwareProfile *NdbProfileSoftwareProfile `pulumi:"softwareProfile"`
 }
 
 // The set of arguments for constructing a NdbProfile resource.
 type NdbProfileArgs struct {
-	ComputeProfiles           NdbProfileComputeProfileArrayInput
+	// Compute Profile
+	ComputeProfiles NdbProfileComputeProfileArrayInput
+	// Database Parameter Profile
 	DatabaseParameterProfiles NdbProfileDatabaseParameterProfileArrayInput
-	Description               pulumi.StringPtrInput
-	EngineType                pulumi.StringPtrInput
-	Name                      pulumi.StringPtrInput
-	NetworkProfiles           NdbProfileNetworkProfileArrayInput
-	Published                 pulumi.BoolPtrInput
-	SoftwareProfile           NdbProfileSoftwareProfilePtrInput
+	// Description of profile
+	Description pulumi.StringPtrInput
+	// Engine Type of database
+	EngineType pulumi.StringPtrInput
+	// Name of profile
+	Name pulumi.StringPtrInput
+	// Network Profile
+	NetworkProfiles NdbProfileNetworkProfileArrayInput
+	// Publish for all users
+	Published pulumi.BoolPtrInput
+	// Software Profile
+	SoftwareProfile NdbProfileSoftwareProfilePtrInput
 }
 
 func (NdbProfileArgs) ElementType() reflect.Type {
@@ -216,70 +284,87 @@ func (o NdbProfileOutput) ToNdbProfileOutputWithContext(ctx context.Context) Ndb
 	return o
 }
 
+// associated databases of profiles
 func (o NdbProfileOutput) AssocDatabases() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NdbProfile) pulumi.StringArrayOutput { return v.AssocDatabases }).(pulumi.StringArrayOutput)
 }
 
+// associated database servers for associated profiles
 func (o NdbProfileOutput) AssocDbServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NdbProfile) pulumi.StringArrayOutput { return v.AssocDbServers }).(pulumi.StringArrayOutput)
 }
 
+// cluster availability of profile
 func (o NdbProfileOutput) ClusterAvailabilities() NdbProfileClusterAvailabilityArrayOutput {
 	return o.ApplyT(func(v *NdbProfile) NdbProfileClusterAvailabilityArrayOutput { return v.ClusterAvailabilities }).(NdbProfileClusterAvailabilityArrayOutput)
 }
 
+// Compute Profile
 func (o NdbProfileOutput) ComputeProfiles() NdbProfileComputeProfileArrayOutput {
 	return o.ApplyT(func(v *NdbProfile) NdbProfileComputeProfileArrayOutput { return v.ComputeProfiles }).(NdbProfileComputeProfileArrayOutput)
 }
 
+// Database Parameter Profile
 func (o NdbProfileOutput) DatabaseParameterProfiles() NdbProfileDatabaseParameterProfileArrayOutput {
 	return o.ApplyT(func(v *NdbProfile) NdbProfileDatabaseParameterProfileArrayOutput { return v.DatabaseParameterProfiles }).(NdbProfileDatabaseParameterProfileArrayOutput)
 }
 
+// Description of profile
 func (o NdbProfileOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbProfile) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+// Engine Type of database
 func (o NdbProfileOutput) EngineType() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbProfile) pulumi.StringOutput { return v.EngineType }).(pulumi.StringOutput)
 }
 
+// latest version of profile
 func (o NdbProfileOutput) LatestVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbProfile) pulumi.StringOutput { return v.LatestVersion }).(pulumi.StringOutput)
 }
 
+// latest version id of profile
 func (o NdbProfileOutput) LatestVersionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbProfile) pulumi.StringOutput { return v.LatestVersionId }).(pulumi.StringOutput)
 }
 
+// Name of profile
 func (o NdbProfileOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbProfile) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// Network Profile
 func (o NdbProfileOutput) NetworkProfiles() NdbProfileNetworkProfileArrayOutput {
 	return o.ApplyT(func(v *NdbProfile) NdbProfileNetworkProfileArrayOutput { return v.NetworkProfiles }).(NdbProfileNetworkProfileArrayOutput)
 }
 
+// cluster on which profile created
 func (o NdbProfileOutput) NxClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbProfile) pulumi.StringOutput { return v.NxClusterId }).(pulumi.StringOutput)
 }
 
+// owner  of profile
 func (o NdbProfileOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbProfile) pulumi.StringOutput { return v.Owner }).(pulumi.StringOutput)
 }
 
+// Publish for all users
 func (o NdbProfileOutput) Published() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NdbProfile) pulumi.BoolPtrOutput { return v.Published }).(pulumi.BoolPtrOutput)
 }
 
+// Software Profile
 func (o NdbProfileOutput) SoftwareProfile() NdbProfileSoftwareProfilePtrOutput {
 	return o.ApplyT(func(v *NdbProfile) NdbProfileSoftwareProfilePtrOutput { return v.SoftwareProfile }).(NdbProfileSoftwareProfilePtrOutput)
 }
 
+// status of profile
 func (o NdbProfileOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbProfile) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
+// versions of associated profiles
 func (o NdbProfileOutput) Versions() NdbProfileVersionArrayOutput {
 	return o.ApplyT(func(v *NdbProfile) NdbProfileVersionArrayOutput { return v.Versions }).(NdbProfileVersionArrayOutput)
 }

@@ -6,6 +6,27 @@ import * as inputs from "./types/input";
 import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
+/**
+ * Provides a resource to create software profile versions based on the input parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const name = new nutanix.NdbSoftwareVersionProfile("name", {
+ *     engineType: "postgres_database",
+ *     profileId: resource.nutanix_ndb_profile.name12.id,
+ *     description: "made  by tf",
+ *     postgresDatabases: [{
+ *         sourceDbserverId: "{{ DB_Server_ID }}",
+ *     }],
+ *     availableClusterIds: ["{{ cluster_ids }}"],
+ *     status: "published",
+ * });
+ * ```
+ */
 export class NdbSoftwareVersionProfile extends pulumi.CustomResource {
     /**
      * Get an existing NdbSoftwareVersionProfile resource's state with the given name, ID, and optional extra
@@ -34,22 +55,73 @@ export class NdbSoftwareVersionProfile extends pulumi.CustomResource {
         return obj['__pulumiType'] === NdbSoftwareVersionProfile.__pulumiType;
     }
 
+    /**
+     * available cluster ids
+     */
     public readonly availableClusterIds!: pulumi.Output<string[] | undefined>;
+    /**
+     * Db version of software profile
+     */
     public /*out*/ readonly dbVersion!: pulumi.Output<string>;
+    /**
+     * deprecated or not
+     */
     public /*out*/ readonly deprecated!: pulumi.Output<boolean>;
+    /**
+     * description of profile
+     */
     public readonly description!: pulumi.Output<string | undefined>;
+    /**
+     * engine type of profile
+     */
     public readonly engineType!: pulumi.Output<string>;
+    /**
+     * Name of profile
+     */
     public readonly name!: pulumi.Output<string>;
+    /**
+     * owner  of profile
+     */
     public /*out*/ readonly owner!: pulumi.Output<string>;
+    /**
+     * postgres database info
+     */
     public readonly postgresDatabases!: pulumi.Output<outputs.NdbSoftwareVersionProfilePostgresDatabase[] | undefined>;
+    /**
+     * profile id
+     */
     public readonly profileId!: pulumi.Output<string>;
+    /**
+     * properties of software profile
+     */
     public /*out*/ readonly properties!: pulumi.Output<outputs.NdbSoftwareVersionProfileProperty[]>;
+    /**
+     * properties map of profile
+     */
     public /*out*/ readonly propertiesMap!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * Published or not
+     */
     public /*out*/ readonly published!: pulumi.Output<boolean>;
+    /**
+     * status of profile. Allowed Values are "deprecated", "published", "unpublished"
+     */
     public readonly status!: pulumi.Output<string | undefined>;
+    /**
+     * system profile or not.
+     */
     public /*out*/ readonly systemProfile!: pulumi.Output<boolean>;
+    /**
+     * topology of software profile
+     */
     public /*out*/ readonly topology!: pulumi.Output<string>;
+    /**
+     * Version of software profile
+     */
     public /*out*/ readonly version!: pulumi.Output<string>;
+    /**
+     * version cluster association
+     */
     public /*out*/ readonly versionClusterAssociations!: pulumi.Output<outputs.NdbSoftwareVersionProfileVersionClusterAssociation[]>;
 
     /**
@@ -117,22 +189,73 @@ export class NdbSoftwareVersionProfile extends pulumi.CustomResource {
  * Input properties used for looking up and filtering NdbSoftwareVersionProfile resources.
  */
 export interface NdbSoftwareVersionProfileState {
+    /**
+     * available cluster ids
+     */
     availableClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * Db version of software profile
+     */
     dbVersion?: pulumi.Input<string>;
+    /**
+     * deprecated or not
+     */
     deprecated?: pulumi.Input<boolean>;
+    /**
+     * description of profile
+     */
     description?: pulumi.Input<string>;
+    /**
+     * engine type of profile
+     */
     engineType?: pulumi.Input<string>;
+    /**
+     * Name of profile
+     */
     name?: pulumi.Input<string>;
+    /**
+     * owner  of profile
+     */
     owner?: pulumi.Input<string>;
+    /**
+     * postgres database info
+     */
     postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfilePostgresDatabase>[]>;
+    /**
+     * profile id
+     */
     profileId?: pulumi.Input<string>;
+    /**
+     * properties of software profile
+     */
     properties?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfileProperty>[]>;
+    /**
+     * properties map of profile
+     */
     propertiesMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Published or not
+     */
     published?: pulumi.Input<boolean>;
+    /**
+     * status of profile. Allowed Values are "deprecated", "published", "unpublished"
+     */
     status?: pulumi.Input<string>;
+    /**
+     * system profile or not.
+     */
     systemProfile?: pulumi.Input<boolean>;
+    /**
+     * topology of software profile
+     */
     topology?: pulumi.Input<string>;
+    /**
+     * Version of software profile
+     */
     version?: pulumi.Input<string>;
+    /**
+     * version cluster association
+     */
     versionClusterAssociations?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfileVersionClusterAssociation>[]>;
 }
 
@@ -140,11 +263,32 @@ export interface NdbSoftwareVersionProfileState {
  * The set of arguments for constructing a NdbSoftwareVersionProfile resource.
  */
 export interface NdbSoftwareVersionProfileArgs {
+    /**
+     * available cluster ids
+     */
     availableClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * description of profile
+     */
     description?: pulumi.Input<string>;
+    /**
+     * engine type of profile
+     */
     engineType: pulumi.Input<string>;
+    /**
+     * Name of profile
+     */
     name?: pulumi.Input<string>;
+    /**
+     * postgres database info
+     */
     postgresDatabases?: pulumi.Input<pulumi.Input<inputs.NdbSoftwareVersionProfilePostgresDatabase>[]>;
+    /**
+     * profile id
+     */
     profileId: pulumi.Input<string>;
+    /**
+     * status of profile. Allowed Values are "deprecated", "published", "unpublished"
+     */
     status?: pulumi.Input<string>;
 }

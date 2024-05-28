@@ -12,45 +12,64 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a resource to create database server VMs based on the input parameters. For 1.8.0 release, only postgress database type is qualified and officially supported.
+//
+// ## Example Usage
 type NdbDbserverVm struct {
 	pulumi.CustomResourceState
 
-	ClientId          pulumi.StringOutput                      `pulumi:"clientId"`
-	ComputeProfileId  pulumi.StringOutput                      `pulumi:"computeProfileId"`
-	Credentials       NdbDbserverVmCredentialArrayOutput       `pulumi:"credentials"`
-	DatabaseType      pulumi.StringOutput                      `pulumi:"databaseType"`
-	DbserverClusterId pulumi.StringOutput                      `pulumi:"dbserverClusterId"`
-	Delete            pulumi.BoolPtrOutput                     `pulumi:"delete"`
-	DeleteVgs         pulumi.BoolPtrOutput                     `pulumi:"deleteVgs"`
-	DeleteVmSnapshots pulumi.BoolPtrOutput                     `pulumi:"deleteVmSnapshots"`
-	Description       pulumi.StringOutput                      `pulumi:"description"`
-	EraDriveId        pulumi.StringOutput                      `pulumi:"eraDriveId"`
-	EraVersion        pulumi.StringOutput                      `pulumi:"eraVersion"`
-	Fqdns             pulumi.StringOutput                      `pulumi:"fqdns"`
-	IpAddresses       pulumi.StringArrayOutput                 `pulumi:"ipAddresses"`
-	LatestSnapshot    pulumi.BoolPtrOutput                     `pulumi:"latestSnapshot"`
-	MacAddresses      pulumi.StringArrayOutput                 `pulumi:"macAddresses"`
-	MaintenanceTasks  NdbDbserverVmMaintenanceTasksPtrOutput   `pulumi:"maintenanceTasks"`
-	Name              pulumi.StringOutput                      `pulumi:"name"`
-	NetworkProfileId  pulumi.StringOutput                      `pulumi:"networkProfileId"`
-	NxClusterId       pulumi.StringOutput                      `pulumi:"nxClusterId"`
+	ClientId pulumi.StringOutput `pulumi:"clientId"`
+	// Compute profile id.
+	ComputeProfileId pulumi.StringOutput                `pulumi:"computeProfileId"`
+	Credentials      NdbDbserverVmCredentialArrayOutput `pulumi:"credentials"`
+	// database type. Valid values: postgres_database
+	DatabaseType      pulumi.StringOutput `pulumi:"databaseType"`
+	DbserverClusterId pulumi.StringOutput `pulumi:"dbserverClusterId"`
+	// - (Optional) Delete the VM and associated storage. Default value is true
+	Delete pulumi.BoolPtrOutput `pulumi:"delete"`
+	// - (Optional) Delete volume grous. Default value is true
+	DeleteVgs pulumi.BoolPtrOutput `pulumi:"deleteVgs"`
+	// - (Optional) Delete the vm snapshots. Default is true
+	DeleteVmSnapshots pulumi.BoolPtrOutput `pulumi:"deleteVmSnapshots"`
+	// Type a description for the database server VM.
+	Description    pulumi.StringOutput      `pulumi:"description"`
+	EraDriveId     pulumi.StringOutput      `pulumi:"eraDriveId"`
+	EraVersion     pulumi.StringOutput      `pulumi:"eraVersion"`
+	Fqdns          pulumi.StringOutput      `pulumi:"fqdns"`
+	IpAddresses    pulumi.StringArrayOutput `pulumi:"ipAddresses"`
+	LatestSnapshot pulumi.BoolPtrOutput     `pulumi:"latestSnapshot"`
+	MacAddresses   pulumi.StringArrayOutput `pulumi:"macAddresses"`
+	// maintenance window configured to enable automated patching.
+	MaintenanceTasks NdbDbserverVmMaintenanceTasksPtrOutput `pulumi:"maintenanceTasks"`
+	Name             pulumi.StringOutput                    `pulumi:"name"`
+	// Network profile id.
+	NetworkProfileId pulumi.StringOutput `pulumi:"networkProfileId"`
+	NxClusterId      pulumi.StringOutput `pulumi:"nxClusterId"`
+	// Postgres database server vm
 	PostgresDatabases NdbDbserverVmPostgresDatabaseArrayOutput `pulumi:"postgresDatabases"`
 	// List of all the properties
-	Properties               NdbDbserverVmPropertyArrayOutput `pulumi:"properties"`
-	Remove                   pulumi.BoolPtrOutput             `pulumi:"remove"`
-	SnapshotId               pulumi.StringPtrOutput           `pulumi:"snapshotId"`
-	SoftRemove               pulumi.BoolPtrOutput             `pulumi:"softRemove"`
-	SoftwareProfileId        pulumi.StringPtrOutput           `pulumi:"softwareProfileId"`
-	SoftwareProfileVersionId pulumi.StringPtrOutput           `pulumi:"softwareProfileVersionId"`
-	Status                   pulumi.StringOutput              `pulumi:"status"`
-	Tags                     NdbDbserverVmTagArrayOutput      `pulumi:"tags"`
-	TimeMachineId            pulumi.StringPtrOutput           `pulumi:"timeMachineId"`
-	Timezone                 pulumi.StringPtrOutput           `pulumi:"timezone"`
-	Type                     pulumi.StringOutput              `pulumi:"type"`
-	VmClusterName            pulumi.StringOutput              `pulumi:"vmClusterName"`
-	VmClusterUuid            pulumi.StringOutput              `pulumi:"vmClusterUuid"`
-	VmPassword               pulumi.StringPtrOutput           `pulumi:"vmPassword"`
-	VmTimezone               pulumi.StringOutput              `pulumi:"vmTimezone"`
+	Properties NdbDbserverVmPropertyArrayOutput `pulumi:"properties"`
+	// - (Optional) Unregister the database from NDB. Default value is false
+	Remove pulumi.BoolPtrOutput `pulumi:"remove"`
+	// Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+	SnapshotId pulumi.StringPtrOutput `pulumi:"snapshotId"`
+	// - (Optional) Soft remove. Default will be false
+	SoftRemove pulumi.BoolPtrOutput `pulumi:"softRemove"`
+	// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with timeMachineId .
+	SoftwareProfileId pulumi.StringPtrOutput `pulumi:"softwareProfileId"`
+	// SOftware Profile Version Id.
+	SoftwareProfileVersionId pulumi.StringPtrOutput      `pulumi:"softwareProfileVersionId"`
+	Status                   pulumi.StringOutput         `pulumi:"status"`
+	Tags                     NdbDbserverVmTagArrayOutput `pulumi:"tags"`
+	// Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+	TimeMachineId pulumi.StringPtrOutput `pulumi:"timeMachineId"`
+	Timezone      pulumi.StringPtrOutput `pulumi:"timezone"`
+	Type          pulumi.StringOutput    `pulumi:"type"`
+	VmClusterName pulumi.StringOutput    `pulumi:"vmClusterName"`
+	VmClusterUuid pulumi.StringOutput    `pulumi:"vmClusterUuid"`
+	// password of the NDB drive user account.
+	VmPassword pulumi.StringPtrOutput `pulumi:"vmPassword"`
+	VmTimezone pulumi.StringOutput    `pulumi:"vmTimezone"`
 }
 
 // NewNdbDbserverVm registers a new resource with the given unique name, arguments, and options.
@@ -102,81 +121,113 @@ func GetNdbDbserverVm(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NdbDbserverVm resources.
 type ndbDbserverVmState struct {
-	ClientId          *string                         `pulumi:"clientId"`
-	ComputeProfileId  *string                         `pulumi:"computeProfileId"`
-	Credentials       []NdbDbserverVmCredential       `pulumi:"credentials"`
-	DatabaseType      *string                         `pulumi:"databaseType"`
-	DbserverClusterId *string                         `pulumi:"dbserverClusterId"`
-	Delete            *bool                           `pulumi:"delete"`
-	DeleteVgs         *bool                           `pulumi:"deleteVgs"`
-	DeleteVmSnapshots *bool                           `pulumi:"deleteVmSnapshots"`
-	Description       *string                         `pulumi:"description"`
-	EraDriveId        *string                         `pulumi:"eraDriveId"`
-	EraVersion        *string                         `pulumi:"eraVersion"`
-	Fqdns             *string                         `pulumi:"fqdns"`
-	IpAddresses       []string                        `pulumi:"ipAddresses"`
-	LatestSnapshot    *bool                           `pulumi:"latestSnapshot"`
-	MacAddresses      []string                        `pulumi:"macAddresses"`
-	MaintenanceTasks  *NdbDbserverVmMaintenanceTasks  `pulumi:"maintenanceTasks"`
-	Name              *string                         `pulumi:"name"`
-	NetworkProfileId  *string                         `pulumi:"networkProfileId"`
-	NxClusterId       *string                         `pulumi:"nxClusterId"`
+	ClientId *string `pulumi:"clientId"`
+	// Compute profile id.
+	ComputeProfileId *string                   `pulumi:"computeProfileId"`
+	Credentials      []NdbDbserverVmCredential `pulumi:"credentials"`
+	// database type. Valid values: postgres_database
+	DatabaseType      *string `pulumi:"databaseType"`
+	DbserverClusterId *string `pulumi:"dbserverClusterId"`
+	// - (Optional) Delete the VM and associated storage. Default value is true
+	Delete *bool `pulumi:"delete"`
+	// - (Optional) Delete volume grous. Default value is true
+	DeleteVgs *bool `pulumi:"deleteVgs"`
+	// - (Optional) Delete the vm snapshots. Default is true
+	DeleteVmSnapshots *bool `pulumi:"deleteVmSnapshots"`
+	// Type a description for the database server VM.
+	Description    *string  `pulumi:"description"`
+	EraDriveId     *string  `pulumi:"eraDriveId"`
+	EraVersion     *string  `pulumi:"eraVersion"`
+	Fqdns          *string  `pulumi:"fqdns"`
+	IpAddresses    []string `pulumi:"ipAddresses"`
+	LatestSnapshot *bool    `pulumi:"latestSnapshot"`
+	MacAddresses   []string `pulumi:"macAddresses"`
+	// maintenance window configured to enable automated patching.
+	MaintenanceTasks *NdbDbserverVmMaintenanceTasks `pulumi:"maintenanceTasks"`
+	Name             *string                        `pulumi:"name"`
+	// Network profile id.
+	NetworkProfileId *string `pulumi:"networkProfileId"`
+	NxClusterId      *string `pulumi:"nxClusterId"`
+	// Postgres database server vm
 	PostgresDatabases []NdbDbserverVmPostgresDatabase `pulumi:"postgresDatabases"`
 	// List of all the properties
-	Properties               []NdbDbserverVmProperty `pulumi:"properties"`
-	Remove                   *bool                   `pulumi:"remove"`
-	SnapshotId               *string                 `pulumi:"snapshotId"`
-	SoftRemove               *bool                   `pulumi:"softRemove"`
-	SoftwareProfileId        *string                 `pulumi:"softwareProfileId"`
-	SoftwareProfileVersionId *string                 `pulumi:"softwareProfileVersionId"`
-	Status                   *string                 `pulumi:"status"`
-	Tags                     []NdbDbserverVmTag      `pulumi:"tags"`
-	TimeMachineId            *string                 `pulumi:"timeMachineId"`
-	Timezone                 *string                 `pulumi:"timezone"`
-	Type                     *string                 `pulumi:"type"`
-	VmClusterName            *string                 `pulumi:"vmClusterName"`
-	VmClusterUuid            *string                 `pulumi:"vmClusterUuid"`
-	VmPassword               *string                 `pulumi:"vmPassword"`
-	VmTimezone               *string                 `pulumi:"vmTimezone"`
+	Properties []NdbDbserverVmProperty `pulumi:"properties"`
+	// - (Optional) Unregister the database from NDB. Default value is false
+	Remove *bool `pulumi:"remove"`
+	// Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+	SnapshotId *string `pulumi:"snapshotId"`
+	// - (Optional) Soft remove. Default will be false
+	SoftRemove *bool `pulumi:"softRemove"`
+	// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with timeMachineId .
+	SoftwareProfileId *string `pulumi:"softwareProfileId"`
+	// SOftware Profile Version Id.
+	SoftwareProfileVersionId *string            `pulumi:"softwareProfileVersionId"`
+	Status                   *string            `pulumi:"status"`
+	Tags                     []NdbDbserverVmTag `pulumi:"tags"`
+	// Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+	TimeMachineId *string `pulumi:"timeMachineId"`
+	Timezone      *string `pulumi:"timezone"`
+	Type          *string `pulumi:"type"`
+	VmClusterName *string `pulumi:"vmClusterName"`
+	VmClusterUuid *string `pulumi:"vmClusterUuid"`
+	// password of the NDB drive user account.
+	VmPassword *string `pulumi:"vmPassword"`
+	VmTimezone *string `pulumi:"vmTimezone"`
 }
 
 type NdbDbserverVmState struct {
-	ClientId          pulumi.StringPtrInput
-	ComputeProfileId  pulumi.StringPtrInput
-	Credentials       NdbDbserverVmCredentialArrayInput
+	ClientId pulumi.StringPtrInput
+	// Compute profile id.
+	ComputeProfileId pulumi.StringPtrInput
+	Credentials      NdbDbserverVmCredentialArrayInput
+	// database type. Valid values: postgres_database
 	DatabaseType      pulumi.StringPtrInput
 	DbserverClusterId pulumi.StringPtrInput
-	Delete            pulumi.BoolPtrInput
-	DeleteVgs         pulumi.BoolPtrInput
+	// - (Optional) Delete the VM and associated storage. Default value is true
+	Delete pulumi.BoolPtrInput
+	// - (Optional) Delete volume grous. Default value is true
+	DeleteVgs pulumi.BoolPtrInput
+	// - (Optional) Delete the vm snapshots. Default is true
 	DeleteVmSnapshots pulumi.BoolPtrInput
-	Description       pulumi.StringPtrInput
-	EraDriveId        pulumi.StringPtrInput
-	EraVersion        pulumi.StringPtrInput
-	Fqdns             pulumi.StringPtrInput
-	IpAddresses       pulumi.StringArrayInput
-	LatestSnapshot    pulumi.BoolPtrInput
-	MacAddresses      pulumi.StringArrayInput
-	MaintenanceTasks  NdbDbserverVmMaintenanceTasksPtrInput
-	Name              pulumi.StringPtrInput
-	NetworkProfileId  pulumi.StringPtrInput
-	NxClusterId       pulumi.StringPtrInput
+	// Type a description for the database server VM.
+	Description    pulumi.StringPtrInput
+	EraDriveId     pulumi.StringPtrInput
+	EraVersion     pulumi.StringPtrInput
+	Fqdns          pulumi.StringPtrInput
+	IpAddresses    pulumi.StringArrayInput
+	LatestSnapshot pulumi.BoolPtrInput
+	MacAddresses   pulumi.StringArrayInput
+	// maintenance window configured to enable automated patching.
+	MaintenanceTasks NdbDbserverVmMaintenanceTasksPtrInput
+	Name             pulumi.StringPtrInput
+	// Network profile id.
+	NetworkProfileId pulumi.StringPtrInput
+	NxClusterId      pulumi.StringPtrInput
+	// Postgres database server vm
 	PostgresDatabases NdbDbserverVmPostgresDatabaseArrayInput
 	// List of all the properties
-	Properties               NdbDbserverVmPropertyArrayInput
-	Remove                   pulumi.BoolPtrInput
-	SnapshotId               pulumi.StringPtrInput
-	SoftRemove               pulumi.BoolPtrInput
-	SoftwareProfileId        pulumi.StringPtrInput
+	Properties NdbDbserverVmPropertyArrayInput
+	// - (Optional) Unregister the database from NDB. Default value is false
+	Remove pulumi.BoolPtrInput
+	// Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+	SnapshotId pulumi.StringPtrInput
+	// - (Optional) Soft remove. Default will be false
+	SoftRemove pulumi.BoolPtrInput
+	// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with timeMachineId .
+	SoftwareProfileId pulumi.StringPtrInput
+	// SOftware Profile Version Id.
 	SoftwareProfileVersionId pulumi.StringPtrInput
 	Status                   pulumi.StringPtrInput
 	Tags                     NdbDbserverVmTagArrayInput
-	TimeMachineId            pulumi.StringPtrInput
-	Timezone                 pulumi.StringPtrInput
-	Type                     pulumi.StringPtrInput
-	VmClusterName            pulumi.StringPtrInput
-	VmClusterUuid            pulumi.StringPtrInput
-	VmPassword               pulumi.StringPtrInput
-	VmTimezone               pulumi.StringPtrInput
+	// Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+	TimeMachineId pulumi.StringPtrInput
+	Timezone      pulumi.StringPtrInput
+	Type          pulumi.StringPtrInput
+	VmClusterName pulumi.StringPtrInput
+	VmClusterUuid pulumi.StringPtrInput
+	// password of the NDB drive user account.
+	VmPassword pulumi.StringPtrInput
+	VmTimezone pulumi.StringPtrInput
 }
 
 func (NdbDbserverVmState) ElementType() reflect.Type {
@@ -184,52 +235,84 @@ func (NdbDbserverVmState) ElementType() reflect.Type {
 }
 
 type ndbDbserverVmArgs struct {
-	ComputeProfileId         string                          `pulumi:"computeProfileId"`
-	Credentials              []NdbDbserverVmCredential       `pulumi:"credentials"`
-	DatabaseType             string                          `pulumi:"databaseType"`
-	Delete                   *bool                           `pulumi:"delete"`
-	DeleteVgs                *bool                           `pulumi:"deleteVgs"`
-	DeleteVmSnapshots        *bool                           `pulumi:"deleteVmSnapshots"`
-	Description              *string                         `pulumi:"description"`
-	LatestSnapshot           *bool                           `pulumi:"latestSnapshot"`
-	MaintenanceTasks         *NdbDbserverVmMaintenanceTasks  `pulumi:"maintenanceTasks"`
-	NetworkProfileId         string                          `pulumi:"networkProfileId"`
-	NxClusterId              string                          `pulumi:"nxClusterId"`
-	PostgresDatabases        []NdbDbserverVmPostgresDatabase `pulumi:"postgresDatabases"`
-	Remove                   *bool                           `pulumi:"remove"`
-	SnapshotId               *string                         `pulumi:"snapshotId"`
-	SoftRemove               *bool                           `pulumi:"softRemove"`
-	SoftwareProfileId        *string                         `pulumi:"softwareProfileId"`
-	SoftwareProfileVersionId *string                         `pulumi:"softwareProfileVersionId"`
-	Tags                     []NdbDbserverVmTag              `pulumi:"tags"`
-	TimeMachineId            *string                         `pulumi:"timeMachineId"`
-	Timezone                 *string                         `pulumi:"timezone"`
-	VmPassword               *string                         `pulumi:"vmPassword"`
+	// Compute profile id.
+	ComputeProfileId string                    `pulumi:"computeProfileId"`
+	Credentials      []NdbDbserverVmCredential `pulumi:"credentials"`
+	// database type. Valid values: postgres_database
+	DatabaseType string `pulumi:"databaseType"`
+	// - (Optional) Delete the VM and associated storage. Default value is true
+	Delete *bool `pulumi:"delete"`
+	// - (Optional) Delete volume grous. Default value is true
+	DeleteVgs *bool `pulumi:"deleteVgs"`
+	// - (Optional) Delete the vm snapshots. Default is true
+	DeleteVmSnapshots *bool `pulumi:"deleteVmSnapshots"`
+	// Type a description for the database server VM.
+	Description    *string `pulumi:"description"`
+	LatestSnapshot *bool   `pulumi:"latestSnapshot"`
+	// maintenance window configured to enable automated patching.
+	MaintenanceTasks *NdbDbserverVmMaintenanceTasks `pulumi:"maintenanceTasks"`
+	// Network profile id.
+	NetworkProfileId string `pulumi:"networkProfileId"`
+	NxClusterId      string `pulumi:"nxClusterId"`
+	// Postgres database server vm
+	PostgresDatabases []NdbDbserverVmPostgresDatabase `pulumi:"postgresDatabases"`
+	// - (Optional) Unregister the database from NDB. Default value is false
+	Remove *bool `pulumi:"remove"`
+	// Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+	SnapshotId *string `pulumi:"snapshotId"`
+	// - (Optional) Soft remove. Default will be false
+	SoftRemove *bool `pulumi:"softRemove"`
+	// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with timeMachineId .
+	SoftwareProfileId *string `pulumi:"softwareProfileId"`
+	// SOftware Profile Version Id.
+	SoftwareProfileVersionId *string            `pulumi:"softwareProfileVersionId"`
+	Tags                     []NdbDbserverVmTag `pulumi:"tags"`
+	// Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+	TimeMachineId *string `pulumi:"timeMachineId"`
+	Timezone      *string `pulumi:"timezone"`
+	// password of the NDB drive user account.
+	VmPassword *string `pulumi:"vmPassword"`
 }
 
 // The set of arguments for constructing a NdbDbserverVm resource.
 type NdbDbserverVmArgs struct {
-	ComputeProfileId         pulumi.StringInput
-	Credentials              NdbDbserverVmCredentialArrayInput
-	DatabaseType             pulumi.StringInput
-	Delete                   pulumi.BoolPtrInput
-	DeleteVgs                pulumi.BoolPtrInput
-	DeleteVmSnapshots        pulumi.BoolPtrInput
-	Description              pulumi.StringPtrInput
-	LatestSnapshot           pulumi.BoolPtrInput
-	MaintenanceTasks         NdbDbserverVmMaintenanceTasksPtrInput
-	NetworkProfileId         pulumi.StringInput
-	NxClusterId              pulumi.StringInput
-	PostgresDatabases        NdbDbserverVmPostgresDatabaseArrayInput
-	Remove                   pulumi.BoolPtrInput
-	SnapshotId               pulumi.StringPtrInput
-	SoftRemove               pulumi.BoolPtrInput
-	SoftwareProfileId        pulumi.StringPtrInput
+	// Compute profile id.
+	ComputeProfileId pulumi.StringInput
+	Credentials      NdbDbserverVmCredentialArrayInput
+	// database type. Valid values: postgres_database
+	DatabaseType pulumi.StringInput
+	// - (Optional) Delete the VM and associated storage. Default value is true
+	Delete pulumi.BoolPtrInput
+	// - (Optional) Delete volume grous. Default value is true
+	DeleteVgs pulumi.BoolPtrInput
+	// - (Optional) Delete the vm snapshots. Default is true
+	DeleteVmSnapshots pulumi.BoolPtrInput
+	// Type a description for the database server VM.
+	Description    pulumi.StringPtrInput
+	LatestSnapshot pulumi.BoolPtrInput
+	// maintenance window configured to enable automated patching.
+	MaintenanceTasks NdbDbserverVmMaintenanceTasksPtrInput
+	// Network profile id.
+	NetworkProfileId pulumi.StringInput
+	NxClusterId      pulumi.StringInput
+	// Postgres database server vm
+	PostgresDatabases NdbDbserverVmPostgresDatabaseArrayInput
+	// - (Optional) Unregister the database from NDB. Default value is false
+	Remove pulumi.BoolPtrInput
+	// Snapshot id. If not given, it will use latest snapshot to provision db server vm.
+	SnapshotId pulumi.StringPtrInput
+	// - (Optional) Soft remove. Default will be false
+	SoftRemove pulumi.BoolPtrInput
+	// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with timeMachineId .
+	SoftwareProfileId pulumi.StringPtrInput
+	// SOftware Profile Version Id.
 	SoftwareProfileVersionId pulumi.StringPtrInput
 	Tags                     NdbDbserverVmTagArrayInput
-	TimeMachineId            pulumi.StringPtrInput
-	Timezone                 pulumi.StringPtrInput
-	VmPassword               pulumi.StringPtrInput
+	// Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
+	TimeMachineId pulumi.StringPtrInput
+	Timezone      pulumi.StringPtrInput
+	// password of the NDB drive user account.
+	VmPassword pulumi.StringPtrInput
 }
 
 func (NdbDbserverVmArgs) ElementType() reflect.Type {
@@ -323,6 +406,7 @@ func (o NdbDbserverVmOutput) ClientId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.StringOutput { return v.ClientId }).(pulumi.StringOutput)
 }
 
+// Compute profile id.
 func (o NdbDbserverVmOutput) ComputeProfileId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.StringOutput { return v.ComputeProfileId }).(pulumi.StringOutput)
 }
@@ -331,6 +415,7 @@ func (o NdbDbserverVmOutput) Credentials() NdbDbserverVmCredentialArrayOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) NdbDbserverVmCredentialArrayOutput { return v.Credentials }).(NdbDbserverVmCredentialArrayOutput)
 }
 
+// database type. Valid values: postgres_database
 func (o NdbDbserverVmOutput) DatabaseType() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.StringOutput { return v.DatabaseType }).(pulumi.StringOutput)
 }
@@ -339,18 +424,22 @@ func (o NdbDbserverVmOutput) DbserverClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.StringOutput { return v.DbserverClusterId }).(pulumi.StringOutput)
 }
 
+// - (Optional) Delete the VM and associated storage. Default value is true
 func (o NdbDbserverVmOutput) Delete() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.BoolPtrOutput { return v.Delete }).(pulumi.BoolPtrOutput)
 }
 
+// - (Optional) Delete volume grous. Default value is true
 func (o NdbDbserverVmOutput) DeleteVgs() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.BoolPtrOutput { return v.DeleteVgs }).(pulumi.BoolPtrOutput)
 }
 
+// - (Optional) Delete the vm snapshots. Default is true
 func (o NdbDbserverVmOutput) DeleteVmSnapshots() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.BoolPtrOutput { return v.DeleteVmSnapshots }).(pulumi.BoolPtrOutput)
 }
 
+// Type a description for the database server VM.
 func (o NdbDbserverVmOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
@@ -379,6 +468,7 @@ func (o NdbDbserverVmOutput) MacAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.StringArrayOutput { return v.MacAddresses }).(pulumi.StringArrayOutput)
 }
 
+// maintenance window configured to enable automated patching.
 func (o NdbDbserverVmOutput) MaintenanceTasks() NdbDbserverVmMaintenanceTasksPtrOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) NdbDbserverVmMaintenanceTasksPtrOutput { return v.MaintenanceTasks }).(NdbDbserverVmMaintenanceTasksPtrOutput)
 }
@@ -387,6 +477,7 @@ func (o NdbDbserverVmOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// Network profile id.
 func (o NdbDbserverVmOutput) NetworkProfileId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.StringOutput { return v.NetworkProfileId }).(pulumi.StringOutput)
 }
@@ -395,6 +486,7 @@ func (o NdbDbserverVmOutput) NxClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.StringOutput { return v.NxClusterId }).(pulumi.StringOutput)
 }
 
+// Postgres database server vm
 func (o NdbDbserverVmOutput) PostgresDatabases() NdbDbserverVmPostgresDatabaseArrayOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) NdbDbserverVmPostgresDatabaseArrayOutput { return v.PostgresDatabases }).(NdbDbserverVmPostgresDatabaseArrayOutput)
 }
@@ -404,22 +496,27 @@ func (o NdbDbserverVmOutput) Properties() NdbDbserverVmPropertyArrayOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) NdbDbserverVmPropertyArrayOutput { return v.Properties }).(NdbDbserverVmPropertyArrayOutput)
 }
 
+// - (Optional) Unregister the database from NDB. Default value is false
 func (o NdbDbserverVmOutput) Remove() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.BoolPtrOutput { return v.Remove }).(pulumi.BoolPtrOutput)
 }
 
+// Snapshot id. If not given, it will use latest snapshot to provision db server vm.
 func (o NdbDbserverVmOutput) SnapshotId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.StringPtrOutput { return v.SnapshotId }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Soft remove. Default will be false
 func (o NdbDbserverVmOutput) SoftRemove() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.BoolPtrOutput { return v.SoftRemove }).(pulumi.BoolPtrOutput)
 }
 
+// software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with timeMachineId .
 func (o NdbDbserverVmOutput) SoftwareProfileId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.StringPtrOutput { return v.SoftwareProfileId }).(pulumi.StringPtrOutput)
 }
 
+// SOftware Profile Version Id.
 func (o NdbDbserverVmOutput) SoftwareProfileVersionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.StringPtrOutput { return v.SoftwareProfileVersionId }).(pulumi.StringPtrOutput)
 }
@@ -432,6 +529,7 @@ func (o NdbDbserverVmOutput) Tags() NdbDbserverVmTagArrayOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) NdbDbserverVmTagArrayOutput { return v.Tags }).(NdbDbserverVmTagArrayOutput)
 }
 
+// Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
 func (o NdbDbserverVmOutput) TimeMachineId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.StringPtrOutput { return v.TimeMachineId }).(pulumi.StringPtrOutput)
 }
@@ -452,6 +550,7 @@ func (o NdbDbserverVmOutput) VmClusterUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.StringOutput { return v.VmClusterUuid }).(pulumi.StringOutput)
 }
 
+// password of the NDB drive user account.
 func (o NdbDbserverVmOutput) VmPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbDbserverVm) pulumi.StringPtrOutput { return v.VmPassword }).(pulumi.StringPtrOutput)
 }

@@ -16,15 +16,33 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly string? DbVersion;
         public readonly bool? Deprecated;
+        /// <summary>
+        /// Description of profile
+        /// </summary>
         public readonly string? Description;
+        /// <summary>
+        /// Engine Type of database
+        /// </summary>
         public readonly string? EngineType;
         public readonly string? Id;
+        /// <summary>
+        /// Name of profile
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// owner  of profile
+        /// </summary>
         public readonly string? Owner;
         public readonly string? ProfileId;
         public readonly ImmutableArray<Outputs.NdbProfileVersionProperty> Properties;
         public readonly ImmutableDictionary<string, string>? PropertiesMap;
+        /// <summary>
+        /// Publish for all users
+        /// </summary>
         public readonly bool? Published;
+        /// <summary>
+        /// status of profile
+        /// </summary>
         public readonly string? Status;
         public readonly bool? SystemProfile;
         public readonly string? Topology;

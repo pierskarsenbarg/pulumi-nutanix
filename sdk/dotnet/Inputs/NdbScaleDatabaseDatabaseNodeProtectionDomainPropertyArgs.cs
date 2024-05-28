@@ -13,9 +13,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// description of database instance
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// Name of database instance
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

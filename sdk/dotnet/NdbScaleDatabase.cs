@@ -10,102 +10,209 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Provides a resource to scale the database instance based on the input parameters.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var scale = new Nutanix.NdbDatabaseScale("scale", new()
+    ///     {
+    ///         ApplicationType = "{{ Application Type }}",
+    ///         DataStorageSize = 1,
+    ///         DatabaseUuid = "{{ database_id }}",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [NutanixResourceType("nutanix:index/ndbScaleDatabase:NdbScaleDatabase")]
     public partial class NdbScaleDatabase : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// type of instance. eg: postgres_database
+        /// </summary>
         [Output("applicationType")]
         public Output<string> ApplicationType { get; private set; } = null!;
 
+        /// <summary>
+        /// whether instance is cloned or not
+        /// </summary>
         [Output("clone")]
         public Output<bool> Clone { get; private set; } = null!;
 
+        /// <summary>
+        /// data area (in GiB) to be added to the existing database.
+        /// </summary>
         [Output("dataStorageSize")]
         public Output<int> DataStorageSize { get; private set; } = null!;
 
+        /// <summary>
+        /// database cluster type
+        /// </summary>
         [Output("databaseClusterType")]
         public Output<string> DatabaseClusterType { get; private set; } = null!;
 
         [Output("databaseInstanceId")]
         public Output<string> DatabaseInstanceId { get; private set; } = null!;
 
+        /// <summary>
+        /// name of database
+        /// </summary>
         [Output("databaseName")]
         public Output<string> DatabaseName { get; private set; } = null!;
 
+        /// <summary>
+        /// database nodes associated with database instance
+        /// </summary>
         [Output("databaseNodes")]
         public Output<ImmutableArray<Outputs.NdbScaleDatabaseDatabaseNode>> DatabaseNodes { get; private set; } = null!;
 
+        /// <summary>
+        /// Database id
+        /// </summary>
         [Output("databaseUuid")]
         public Output<string> DatabaseUuid { get; private set; } = null!;
 
+        /// <summary>
+        /// type of database
+        /// </summary>
         [Output("databasetype")]
         public Output<string> Databasetype { get; private set; } = null!;
 
+        /// <summary>
+        /// date created for db instance
+        /// </summary>
         [Output("dateCreated")]
         public Output<string> DateCreated { get; private set; } = null!;
 
+        /// <summary>
+        /// date modified for instance
+        /// </summary>
         [Output("dateModified")]
         public Output<string> DateModified { get; private set; } = null!;
 
+        /// <summary>
+        /// dbserver logical cluster
+        /// </summary>
         [Output("dbserverLogicalCluster")]
         public Output<ImmutableDictionary<string, string>> DbserverLogicalCluster { get; private set; } = null!;
 
+        /// <summary>
+        /// dbserver logical cluster id
+        /// </summary>
         [Output("dbserverLogicalClusterId")]
         public Output<string> DbserverLogicalClusterId { get; private set; } = null!;
 
+        /// <summary>
+        /// description of database instance
+        /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
+        /// <summary>
+        /// info of instance
+        /// </summary>
         [Output("infos")]
         public Output<ImmutableArray<Outputs.NdbScaleDatabaseInfo>> Infos { get; private set; } = null!;
 
+        /// <summary>
+        /// LCM config of instance
+        /// </summary>
         [Output("lcmConfigs")]
         public Output<ImmutableArray<Outputs.NdbScaleDatabaseLcmConfig>> LcmConfigs { get; private set; } = null!;
 
+        /// <summary>
+        /// linked databases within database instance
+        /// </summary>
         [Output("linkedDatabases")]
         public Output<ImmutableArray<Outputs.NdbScaleDatabaseLinkedDatabase>> LinkedDatabases { get; private set; } = null!;
 
+        /// <summary>
+        /// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        /// </summary>
         [Output("metric")]
         public Output<ImmutableDictionary<string, string>> Metric { get; private set; } = null!;
 
+        /// <summary>
+        /// Name of database instance
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// parent database id
+        /// </summary>
         [Output("parentDatabaseId")]
         public Output<string> ParentDatabaseId { get; private set; } = null!;
 
         [Output("parentSourceDatabaseId")]
         public Output<string> ParentSourceDatabaseId { get; private set; } = null!;
 
+        /// <summary>
+        /// post script command
+        /// </summary>
         [Output("postScriptCmd")]
         public Output<string?> PostScriptCmd { get; private set; } = null!;
 
+        /// <summary>
+        /// pre script command
+        /// </summary>
         [Output("preScriptCmd")]
         public Output<string?> PreScriptCmd { get; private set; } = null!;
 
         /// <summary>
-        /// List of all the properties
+        /// properties of database created
         /// </summary>
         [Output("properties")]
         public Output<ImmutableArray<Outputs.NdbScaleDatabaseProperty>> Properties { get; private set; } = null!;
 
+        /// <summary>
+        /// scale count helps to scale the same instance with same config
+        /// </summary>
         [Output("scaleCount")]
         public Output<int?> ScaleCount { get; private set; } = null!;
 
+        /// <summary>
+        /// status of instance
+        /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
+        /// <summary>
+        /// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        /// </summary>
         [Output("tags")]
         public Output<ImmutableArray<Outputs.NdbScaleDatabaseTag>> Tags { get; private set; } = null!;
 
+        /// <summary>
+        /// time machine id of instance
+        /// </summary>
         [Output("timeMachineId")]
         public Output<string> TimeMachineId { get; private set; } = null!;
 
+        /// <summary>
+        /// Time Machine details of instance
+        /// </summary>
         [Output("timeMachines")]
         public Output<ImmutableArray<Outputs.NdbScaleDatabaseTimeMachine>> TimeMachines { get; private set; } = null!;
 
+        /// <summary>
+        /// timezone on which instance is created xw
+        /// </summary>
         [Output("timeZone")]
         public Output<string> TimeZone { get; private set; } = null!;
 
+        /// <summary>
+        /// type of database
+        /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
@@ -156,26 +263,48 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class NdbScaleDatabaseArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// type of instance. eg: postgres_database
+        /// </summary>
         [Input("applicationType", required: true)]
         public Input<string> ApplicationType { get; set; } = null!;
 
+        /// <summary>
+        /// data area (in GiB) to be added to the existing database.
+        /// </summary>
         [Input("dataStorageSize", required: true)]
         public Input<int> DataStorageSize { get; set; } = null!;
 
+        /// <summary>
+        /// Database id
+        /// </summary>
         [Input("databaseUuid", required: true)]
         public Input<string> DatabaseUuid { get; set; } = null!;
 
+        /// <summary>
+        /// post script command
+        /// </summary>
         [Input("postScriptCmd")]
         public Input<string>? PostScriptCmd { get; set; }
 
+        /// <summary>
+        /// pre script command
+        /// </summary>
         [Input("preScriptCmd")]
         public Input<string>? PreScriptCmd { get; set; }
 
+        /// <summary>
+        /// scale count helps to scale the same instance with same config
+        /// </summary>
         [Input("scaleCount")]
         public Input<int>? ScaleCount { get; set; }
 
         [Input("tags")]
         private InputList<Inputs.NdbScaleDatabaseTagArgs>? _tags;
+
+        /// <summary>
+        /// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        /// </summary>
         public InputList<Inputs.NdbScaleDatabaseTagArgs> Tags
         {
             get => _tags ?? (_tags = new InputList<Inputs.NdbScaleDatabaseTagArgs>());
@@ -190,60 +319,105 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class NdbScaleDatabaseState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// type of instance. eg: postgres_database
+        /// </summary>
         [Input("applicationType")]
         public Input<string>? ApplicationType { get; set; }
 
+        /// <summary>
+        /// whether instance is cloned or not
+        /// </summary>
         [Input("clone")]
         public Input<bool>? Clone { get; set; }
 
+        /// <summary>
+        /// data area (in GiB) to be added to the existing database.
+        /// </summary>
         [Input("dataStorageSize")]
         public Input<int>? DataStorageSize { get; set; }
 
+        /// <summary>
+        /// database cluster type
+        /// </summary>
         [Input("databaseClusterType")]
         public Input<string>? DatabaseClusterType { get; set; }
 
         [Input("databaseInstanceId")]
         public Input<string>? DatabaseInstanceId { get; set; }
 
+        /// <summary>
+        /// name of database
+        /// </summary>
         [Input("databaseName")]
         public Input<string>? DatabaseName { get; set; }
 
         [Input("databaseNodes")]
         private InputList<Inputs.NdbScaleDatabaseDatabaseNodeGetArgs>? _databaseNodes;
+
+        /// <summary>
+        /// database nodes associated with database instance
+        /// </summary>
         public InputList<Inputs.NdbScaleDatabaseDatabaseNodeGetArgs> DatabaseNodes
         {
             get => _databaseNodes ?? (_databaseNodes = new InputList<Inputs.NdbScaleDatabaseDatabaseNodeGetArgs>());
             set => _databaseNodes = value;
         }
 
+        /// <summary>
+        /// Database id
+        /// </summary>
         [Input("databaseUuid")]
         public Input<string>? DatabaseUuid { get; set; }
 
+        /// <summary>
+        /// type of database
+        /// </summary>
         [Input("databasetype")]
         public Input<string>? Databasetype { get; set; }
 
+        /// <summary>
+        /// date created for db instance
+        /// </summary>
         [Input("dateCreated")]
         public Input<string>? DateCreated { get; set; }
 
+        /// <summary>
+        /// date modified for instance
+        /// </summary>
         [Input("dateModified")]
         public Input<string>? DateModified { get; set; }
 
         [Input("dbserverLogicalCluster")]
         private InputMap<string>? _dbserverLogicalCluster;
+
+        /// <summary>
+        /// dbserver logical cluster
+        /// </summary>
         public InputMap<string> DbserverLogicalCluster
         {
             get => _dbserverLogicalCluster ?? (_dbserverLogicalCluster = new InputMap<string>());
             set => _dbserverLogicalCluster = value;
         }
 
+        /// <summary>
+        /// dbserver logical cluster id
+        /// </summary>
         [Input("dbserverLogicalClusterId")]
         public Input<string>? DbserverLogicalClusterId { get; set; }
 
+        /// <summary>
+        /// description of database instance
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         [Input("infos")]
         private InputList<Inputs.NdbScaleDatabaseInfoGetArgs>? _infos;
+
+        /// <summary>
+        /// info of instance
+        /// </summary>
         public InputList<Inputs.NdbScaleDatabaseInfoGetArgs> Infos
         {
             get => _infos ?? (_infos = new InputList<Inputs.NdbScaleDatabaseInfoGetArgs>());
@@ -252,6 +426,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("lcmConfigs")]
         private InputList<Inputs.NdbScaleDatabaseLcmConfigGetArgs>? _lcmConfigs;
+
+        /// <summary>
+        /// LCM config of instance
+        /// </summary>
         public InputList<Inputs.NdbScaleDatabaseLcmConfigGetArgs> LcmConfigs
         {
             get => _lcmConfigs ?? (_lcmConfigs = new InputList<Inputs.NdbScaleDatabaseLcmConfigGetArgs>());
@@ -260,6 +438,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("linkedDatabases")]
         private InputList<Inputs.NdbScaleDatabaseLinkedDatabaseGetArgs>? _linkedDatabases;
+
+        /// <summary>
+        /// linked databases within database instance
+        /// </summary>
         public InputList<Inputs.NdbScaleDatabaseLinkedDatabaseGetArgs> LinkedDatabases
         {
             get => _linkedDatabases ?? (_linkedDatabases = new InputList<Inputs.NdbScaleDatabaseLinkedDatabaseGetArgs>());
@@ -268,24 +450,40 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("metric")]
         private InputMap<string>? _metric;
+
+        /// <summary>
+        /// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        /// </summary>
         public InputMap<string> Metric
         {
             get => _metric ?? (_metric = new InputMap<string>());
             set => _metric = value;
         }
 
+        /// <summary>
+        /// Name of database instance
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// parent database id
+        /// </summary>
         [Input("parentDatabaseId")]
         public Input<string>? ParentDatabaseId { get; set; }
 
         [Input("parentSourceDatabaseId")]
         public Input<string>? ParentSourceDatabaseId { get; set; }
 
+        /// <summary>
+        /// post script command
+        /// </summary>
         [Input("postScriptCmd")]
         public Input<string>? PostScriptCmd { get; set; }
 
+        /// <summary>
+        /// pre script command
+        /// </summary>
         [Input("preScriptCmd")]
         public Input<string>? PreScriptCmd { get; set; }
 
@@ -293,7 +491,7 @@ namespace PiersKarsenbarg.Nutanix
         private InputList<Inputs.NdbScaleDatabasePropertyGetArgs>? _properties;
 
         /// <summary>
-        /// List of all the properties
+        /// properties of database created
         /// </summary>
         public InputList<Inputs.NdbScaleDatabasePropertyGetArgs> Properties
         {
@@ -301,34 +499,57 @@ namespace PiersKarsenbarg.Nutanix
             set => _properties = value;
         }
 
+        /// <summary>
+        /// scale count helps to scale the same instance with same config
+        /// </summary>
         [Input("scaleCount")]
         public Input<int>? ScaleCount { get; set; }
 
+        /// <summary>
+        /// status of instance
+        /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         [Input("tags")]
         private InputList<Inputs.NdbScaleDatabaseTagGetArgs>? _tags;
+
+        /// <summary>
+        /// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        /// </summary>
         public InputList<Inputs.NdbScaleDatabaseTagGetArgs> Tags
         {
             get => _tags ?? (_tags = new InputList<Inputs.NdbScaleDatabaseTagGetArgs>());
             set => _tags = value;
         }
 
+        /// <summary>
+        /// time machine id of instance
+        /// </summary>
         [Input("timeMachineId")]
         public Input<string>? TimeMachineId { get; set; }
 
         [Input("timeMachines")]
         private InputList<Inputs.NdbScaleDatabaseTimeMachineGetArgs>? _timeMachines;
+
+        /// <summary>
+        /// Time Machine details of instance
+        /// </summary>
         public InputList<Inputs.NdbScaleDatabaseTimeMachineGetArgs> TimeMachines
         {
             get => _timeMachines ?? (_timeMachines = new InputList<Inputs.NdbScaleDatabaseTimeMachineGetArgs>());
             set => _timeMachines = value;
         }
 
+        /// <summary>
+        /// timezone on which instance is created xw
+        /// </summary>
         [Input("timeZone")]
         public Input<string>? TimeZone { get; set; }
 
+        /// <summary>
+        /// type of database
+        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 

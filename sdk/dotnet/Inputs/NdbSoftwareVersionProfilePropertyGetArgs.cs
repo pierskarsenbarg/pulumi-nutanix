@@ -13,12 +13,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class NdbSoftwareVersionProfilePropertyGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Name of profile
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// secure or not
+        /// </summary>
         [Input("secure")]
         public Input<bool>? Secure { get; set; }
 
+        /// <summary>
+        /// value of property
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

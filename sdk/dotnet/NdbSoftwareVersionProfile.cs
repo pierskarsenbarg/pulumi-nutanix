@@ -10,57 +10,143 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Provides a resource to create software profile versions based on the input parameters.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var name = new Nutanix.NdbSoftwareVersionProfile("name", new()
+    ///     {
+    ///         EngineType = "postgres_database",
+    ///         ProfileId = resource.Nutanix_ndb_profile.Name12.Id,
+    ///         Description = "made  by tf",
+    ///         PostgresDatabases = new[]
+    ///         {
+    ///             new Nutanix.Inputs.NdbSoftwareVersionProfilePostgresDatabaseArgs
+    ///             {
+    ///                 SourceDbserverId = "{{ DB_Server_ID }}",
+    ///             },
+    ///         },
+    ///         AvailableClusterIds = new[]
+    ///         {
+    ///             "{{ cluster_ids }}",
+    ///         },
+    ///         Status = "published",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// </summary>
     [NutanixResourceType("nutanix:index/ndbSoftwareVersionProfile:NdbSoftwareVersionProfile")]
     public partial class NdbSoftwareVersionProfile : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// available cluster ids
+        /// </summary>
         [Output("availableClusterIds")]
         public Output<ImmutableArray<string>> AvailableClusterIds { get; private set; } = null!;
 
+        /// <summary>
+        /// Db version of software profile
+        /// </summary>
         [Output("dbVersion")]
         public Output<string> DbVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// deprecated or not
+        /// </summary>
         [Output("deprecated")]
         public Output<bool> Deprecated { get; private set; } = null!;
 
+        /// <summary>
+        /// description of profile
+        /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
+        /// <summary>
+        /// engine type of profile
+        /// </summary>
         [Output("engineType")]
         public Output<string> EngineType { get; private set; } = null!;
 
+        /// <summary>
+        /// Name of profile
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// owner  of profile
+        /// </summary>
         [Output("owner")]
         public Output<string> Owner { get; private set; } = null!;
 
+        /// <summary>
+        /// postgres database info
+        /// </summary>
         [Output("postgresDatabases")]
         public Output<ImmutableArray<Outputs.NdbSoftwareVersionProfilePostgresDatabase>> PostgresDatabases { get; private set; } = null!;
 
+        /// <summary>
+        /// profile id
+        /// </summary>
         [Output("profileId")]
         public Output<string> ProfileId { get; private set; } = null!;
 
+        /// <summary>
+        /// properties of software profile
+        /// </summary>
         [Output("properties")]
         public Output<ImmutableArray<Outputs.NdbSoftwareVersionProfileProperty>> Properties { get; private set; } = null!;
 
+        /// <summary>
+        /// properties map of profile
+        /// </summary>
         [Output("propertiesMap")]
         public Output<ImmutableDictionary<string, string>> PropertiesMap { get; private set; } = null!;
 
+        /// <summary>
+        /// Published or not
+        /// </summary>
         [Output("published")]
         public Output<bool> Published { get; private set; } = null!;
 
+        /// <summary>
+        /// status of profile. Allowed Values are "deprecated", "published", "unpublished"
+        /// </summary>
         [Output("status")]
         public Output<string?> Status { get; private set; } = null!;
 
+        /// <summary>
+        /// system profile or not.
+        /// </summary>
         [Output("systemProfile")]
         public Output<bool> SystemProfile { get; private set; } = null!;
 
+        /// <summary>
+        /// topology of software profile
+        /// </summary>
         [Output("topology")]
         public Output<string> Topology { get; private set; } = null!;
 
+        /// <summary>
+        /// Version of software profile
+        /// </summary>
         [Output("version")]
         public Output<string> Version { get; private set; } = null!;
 
+        /// <summary>
+        /// version cluster association
+        /// </summary>
         [Output("versionClusterAssociations")]
         public Output<ImmutableArray<Outputs.NdbSoftwareVersionProfileVersionClusterAssociation>> VersionClusterAssociations { get; private set; } = null!;
 
@@ -113,32 +199,55 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("availableClusterIds")]
         private InputList<string>? _availableClusterIds;
+
+        /// <summary>
+        /// available cluster ids
+        /// </summary>
         public InputList<string> AvailableClusterIds
         {
             get => _availableClusterIds ?? (_availableClusterIds = new InputList<string>());
             set => _availableClusterIds = value;
         }
 
+        /// <summary>
+        /// description of profile
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// engine type of profile
+        /// </summary>
         [Input("engineType", required: true)]
         public Input<string> EngineType { get; set; } = null!;
 
+        /// <summary>
+        /// Name of profile
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("postgresDatabases")]
         private InputList<Inputs.NdbSoftwareVersionProfilePostgresDatabaseArgs>? _postgresDatabases;
+
+        /// <summary>
+        /// postgres database info
+        /// </summary>
         public InputList<Inputs.NdbSoftwareVersionProfilePostgresDatabaseArgs> PostgresDatabases
         {
             get => _postgresDatabases ?? (_postgresDatabases = new InputList<Inputs.NdbSoftwareVersionProfilePostgresDatabaseArgs>());
             set => _postgresDatabases = value;
         }
 
+        /// <summary>
+        /// profile id
+        /// </summary>
         [Input("profileId", required: true)]
         public Input<string> ProfileId { get; set; } = null!;
 
+        /// <summary>
+        /// status of profile. Allowed Values are "deprecated", "published", "unpublished"
+        /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
@@ -152,43 +261,76 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("availableClusterIds")]
         private InputList<string>? _availableClusterIds;
+
+        /// <summary>
+        /// available cluster ids
+        /// </summary>
         public InputList<string> AvailableClusterIds
         {
             get => _availableClusterIds ?? (_availableClusterIds = new InputList<string>());
             set => _availableClusterIds = value;
         }
 
+        /// <summary>
+        /// Db version of software profile
+        /// </summary>
         [Input("dbVersion")]
         public Input<string>? DbVersion { get; set; }
 
+        /// <summary>
+        /// deprecated or not
+        /// </summary>
         [Input("deprecated")]
         public Input<bool>? Deprecated { get; set; }
 
+        /// <summary>
+        /// description of profile
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// engine type of profile
+        /// </summary>
         [Input("engineType")]
         public Input<string>? EngineType { get; set; }
 
+        /// <summary>
+        /// Name of profile
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// owner  of profile
+        /// </summary>
         [Input("owner")]
         public Input<string>? Owner { get; set; }
 
         [Input("postgresDatabases")]
         private InputList<Inputs.NdbSoftwareVersionProfilePostgresDatabaseGetArgs>? _postgresDatabases;
+
+        /// <summary>
+        /// postgres database info
+        /// </summary>
         public InputList<Inputs.NdbSoftwareVersionProfilePostgresDatabaseGetArgs> PostgresDatabases
         {
             get => _postgresDatabases ?? (_postgresDatabases = new InputList<Inputs.NdbSoftwareVersionProfilePostgresDatabaseGetArgs>());
             set => _postgresDatabases = value;
         }
 
+        /// <summary>
+        /// profile id
+        /// </summary>
         [Input("profileId")]
         public Input<string>? ProfileId { get; set; }
 
         [Input("properties")]
         private InputList<Inputs.NdbSoftwareVersionProfilePropertyGetArgs>? _properties;
+
+        /// <summary>
+        /// properties of software profile
+        /// </summary>
         public InputList<Inputs.NdbSoftwareVersionProfilePropertyGetArgs> Properties
         {
             get => _properties ?? (_properties = new InputList<Inputs.NdbSoftwareVersionProfilePropertyGetArgs>());
@@ -197,29 +339,52 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("propertiesMap")]
         private InputMap<string>? _propertiesMap;
+
+        /// <summary>
+        /// properties map of profile
+        /// </summary>
         public InputMap<string> PropertiesMap
         {
             get => _propertiesMap ?? (_propertiesMap = new InputMap<string>());
             set => _propertiesMap = value;
         }
 
+        /// <summary>
+        /// Published or not
+        /// </summary>
         [Input("published")]
         public Input<bool>? Published { get; set; }
 
+        /// <summary>
+        /// status of profile. Allowed Values are "deprecated", "published", "unpublished"
+        /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
+        /// <summary>
+        /// system profile or not.
+        /// </summary>
         [Input("systemProfile")]
         public Input<bool>? SystemProfile { get; set; }
 
+        /// <summary>
+        /// topology of software profile
+        /// </summary>
         [Input("topology")]
         public Input<string>? Topology { get; set; }
 
+        /// <summary>
+        /// Version of software profile
+        /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }
 
         [Input("versionClusterAssociations")]
         private InputList<Inputs.NdbSoftwareVersionProfileVersionClusterAssociationGetArgs>? _versionClusterAssociations;
+
+        /// <summary>
+        /// version cluster association
+        /// </summary>
         public InputList<Inputs.NdbSoftwareVersionProfileVersionClusterAssociationGetArgs> VersionClusterAssociations
         {
             get => _versionClusterAssociations ?? (_versionClusterAssociations = new InputList<Inputs.NdbSoftwareVersionProfileVersionClusterAssociationGetArgs>());

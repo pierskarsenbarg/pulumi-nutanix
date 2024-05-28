@@ -14,13 +14,37 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbStretchedVlanVlansList
     {
+        /// <summary>
+        /// cluster id where network is present
+        /// </summary>
         public readonly string? ClusterId;
+        /// <summary>
+        /// network id
+        /// </summary>
         public readonly string? Id;
+        /// <summary>
+        /// network managed by NDB or not
+        /// </summary>
         public readonly bool? Managed;
+        /// <summary>
+        /// name for the stretched VLAN
+        /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// properties of network
+        /// </summary>
         public readonly ImmutableArray<Outputs.NdbStretchedVlanVlansListProperty> Properties;
+        /// <summary>
+        /// properties map of network
+        /// </summary>
         public readonly ImmutableArray<Outputs.NdbStretchedVlanVlansListPropertiesMap> PropertiesMaps;
+        /// <summary>
+        /// stretched vlan id
+        /// </summary>
         public readonly string? StretchedVlanId;
+        /// <summary>
+        /// type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
+        /// </summary>
         public readonly string? Type;
 
         [OutputConstructor]

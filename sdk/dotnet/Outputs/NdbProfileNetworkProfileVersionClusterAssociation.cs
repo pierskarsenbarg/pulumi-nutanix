@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbProfileNetworkProfileVersionClusterAssociation
     {
+        /// <summary>
+        /// cluster on which profile created
+        /// </summary>
         public readonly string NxClusterId;
 
         [OutputConstructor]

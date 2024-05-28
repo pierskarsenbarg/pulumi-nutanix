@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbProfileComputeProfile
     {
+        /// <summary>
+        /// number of cores per vCPU for the database server VM.
+        /// </summary>
         public readonly string? CorePerCpu;
+        /// <summary>
+        /// number of vCPUs for the database server VM.
+        /// </summary>
         public readonly string? Cpus;
+        /// <summary>
+        /// amount of memory for the database server VM.
+        /// </summary>
         public readonly string? MemorySize;
 
         [OutputConstructor]

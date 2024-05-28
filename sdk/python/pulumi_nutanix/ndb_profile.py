@@ -26,6 +26,14 @@ class NdbProfileArgs:
                  software_profile: Optional[pulumi.Input['NdbProfileSoftwareProfileArgs']] = None):
         """
         The set of arguments for constructing a NdbProfile resource.
+        :param pulumi.Input[Sequence[pulumi.Input['NdbProfileComputeProfileArgs']]] compute_profiles: Compute Profile
+        :param pulumi.Input[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfileArgs']]] database_parameter_profiles: Database Parameter Profile
+        :param pulumi.Input[str] description: Description of profile
+        :param pulumi.Input[str] engine_type: Engine Type of database
+        :param pulumi.Input[str] name: Name of profile
+        :param pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfileArgs']]] network_profiles: Network Profile
+        :param pulumi.Input[bool] published: Publish for all users
+        :param pulumi.Input['NdbProfileSoftwareProfileArgs'] software_profile: Software Profile
         """
         if compute_profiles is not None:
             pulumi.set(__self__, "compute_profiles", compute_profiles)
@@ -47,6 +55,9 @@ class NdbProfileArgs:
     @property
     @pulumi.getter(name="computeProfiles")
     def compute_profiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileComputeProfileArgs']]]]:
+        """
+        Compute Profile
+        """
         return pulumi.get(self, "compute_profiles")
 
     @compute_profiles.setter
@@ -56,6 +67,9 @@ class NdbProfileArgs:
     @property
     @pulumi.getter(name="databaseParameterProfiles")
     def database_parameter_profiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfileArgs']]]]:
+        """
+        Database Parameter Profile
+        """
         return pulumi.get(self, "database_parameter_profiles")
 
     @database_parameter_profiles.setter
@@ -65,6 +79,9 @@ class NdbProfileArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        Description of profile
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -74,6 +91,9 @@ class NdbProfileArgs:
     @property
     @pulumi.getter(name="engineType")
     def engine_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Engine Type of database
+        """
         return pulumi.get(self, "engine_type")
 
     @engine_type.setter
@@ -83,6 +103,9 @@ class NdbProfileArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of profile
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -92,6 +115,9 @@ class NdbProfileArgs:
     @property
     @pulumi.getter(name="networkProfiles")
     def network_profiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfileArgs']]]]:
+        """
+        Network Profile
+        """
         return pulumi.get(self, "network_profiles")
 
     @network_profiles.setter
@@ -101,6 +127,9 @@ class NdbProfileArgs:
     @property
     @pulumi.getter
     def published(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Publish for all users
+        """
         return pulumi.get(self, "published")
 
     @published.setter
@@ -110,6 +139,9 @@ class NdbProfileArgs:
     @property
     @pulumi.getter(name="softwareProfile")
     def software_profile(self) -> Optional[pulumi.Input['NdbProfileSoftwareProfileArgs']]:
+        """
+        Software Profile
+        """
         return pulumi.get(self, "software_profile")
 
     @software_profile.setter
@@ -139,6 +171,23 @@ class _NdbProfileState:
                  versions: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileVersionArgs']]]] = None):
         """
         Input properties used for looking up and filtering NdbProfile resources.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] assoc_databases: associated databases of profiles
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] assoc_db_servers: associated database servers for associated profiles
+        :param pulumi.Input[Sequence[pulumi.Input['NdbProfileClusterAvailabilityArgs']]] cluster_availabilities: cluster availability of profile
+        :param pulumi.Input[Sequence[pulumi.Input['NdbProfileComputeProfileArgs']]] compute_profiles: Compute Profile
+        :param pulumi.Input[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfileArgs']]] database_parameter_profiles: Database Parameter Profile
+        :param pulumi.Input[str] description: Description of profile
+        :param pulumi.Input[str] engine_type: Engine Type of database
+        :param pulumi.Input[str] latest_version: latest version of profile
+        :param pulumi.Input[str] latest_version_id: latest version id of profile
+        :param pulumi.Input[str] name: Name of profile
+        :param pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfileArgs']]] network_profiles: Network Profile
+        :param pulumi.Input[str] nx_cluster_id: cluster on which profile created
+        :param pulumi.Input[str] owner: owner  of profile
+        :param pulumi.Input[bool] published: Publish for all users
+        :param pulumi.Input['NdbProfileSoftwareProfileArgs'] software_profile: Software Profile
+        :param pulumi.Input[str] status: status of profile
+        :param pulumi.Input[Sequence[pulumi.Input['NdbProfileVersionArgs']]] versions: versions of associated profiles
         """
         if assoc_databases is not None:
             pulumi.set(__self__, "assoc_databases", assoc_databases)
@@ -178,6 +227,9 @@ class _NdbProfileState:
     @property
     @pulumi.getter(name="assocDatabases")
     def assoc_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        associated databases of profiles
+        """
         return pulumi.get(self, "assoc_databases")
 
     @assoc_databases.setter
@@ -187,6 +239,9 @@ class _NdbProfileState:
     @property
     @pulumi.getter(name="assocDbServers")
     def assoc_db_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        associated database servers for associated profiles
+        """
         return pulumi.get(self, "assoc_db_servers")
 
     @assoc_db_servers.setter
@@ -196,6 +251,9 @@ class _NdbProfileState:
     @property
     @pulumi.getter(name="clusterAvailabilities")
     def cluster_availabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileClusterAvailabilityArgs']]]]:
+        """
+        cluster availability of profile
+        """
         return pulumi.get(self, "cluster_availabilities")
 
     @cluster_availabilities.setter
@@ -205,6 +263,9 @@ class _NdbProfileState:
     @property
     @pulumi.getter(name="computeProfiles")
     def compute_profiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileComputeProfileArgs']]]]:
+        """
+        Compute Profile
+        """
         return pulumi.get(self, "compute_profiles")
 
     @compute_profiles.setter
@@ -214,6 +275,9 @@ class _NdbProfileState:
     @property
     @pulumi.getter(name="databaseParameterProfiles")
     def database_parameter_profiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfileArgs']]]]:
+        """
+        Database Parameter Profile
+        """
         return pulumi.get(self, "database_parameter_profiles")
 
     @database_parameter_profiles.setter
@@ -223,6 +287,9 @@ class _NdbProfileState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        Description of profile
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -232,6 +299,9 @@ class _NdbProfileState:
     @property
     @pulumi.getter(name="engineType")
     def engine_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Engine Type of database
+        """
         return pulumi.get(self, "engine_type")
 
     @engine_type.setter
@@ -241,6 +311,9 @@ class _NdbProfileState:
     @property
     @pulumi.getter(name="latestVersion")
     def latest_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        latest version of profile
+        """
         return pulumi.get(self, "latest_version")
 
     @latest_version.setter
@@ -250,6 +323,9 @@ class _NdbProfileState:
     @property
     @pulumi.getter(name="latestVersionId")
     def latest_version_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        latest version id of profile
+        """
         return pulumi.get(self, "latest_version_id")
 
     @latest_version_id.setter
@@ -259,6 +335,9 @@ class _NdbProfileState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of profile
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -268,6 +347,9 @@ class _NdbProfileState:
     @property
     @pulumi.getter(name="networkProfiles")
     def network_profiles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfileArgs']]]]:
+        """
+        Network Profile
+        """
         return pulumi.get(self, "network_profiles")
 
     @network_profiles.setter
@@ -277,6 +359,9 @@ class _NdbProfileState:
     @property
     @pulumi.getter(name="nxClusterId")
     def nx_cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        cluster on which profile created
+        """
         return pulumi.get(self, "nx_cluster_id")
 
     @nx_cluster_id.setter
@@ -286,6 +371,9 @@ class _NdbProfileState:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        owner  of profile
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -295,6 +383,9 @@ class _NdbProfileState:
     @property
     @pulumi.getter
     def published(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Publish for all users
+        """
         return pulumi.get(self, "published")
 
     @published.setter
@@ -304,6 +395,9 @@ class _NdbProfileState:
     @property
     @pulumi.getter(name="softwareProfile")
     def software_profile(self) -> Optional[pulumi.Input['NdbProfileSoftwareProfileArgs']]:
+        """
+        Software Profile
+        """
         return pulumi.get(self, "software_profile")
 
     @software_profile.setter
@@ -313,6 +407,9 @@ class _NdbProfileState:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        status of profile
+        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -322,6 +419,9 @@ class _NdbProfileState:
     @property
     @pulumi.getter
     def versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileVersionArgs']]]]:
+        """
+        versions of associated profiles
+        """
         return pulumi.get(self, "versions")
 
     @versions.setter
@@ -344,9 +444,18 @@ class NdbProfile(pulumi.CustomResource):
                  software_profile: Optional[pulumi.Input[pulumi.InputType['NdbProfileSoftwareProfileArgs']]] = None,
                  __props__=None):
         """
-        Create a NdbProfile resource with the given unique name, props, and options.
+        Provides a resource to create profiles (Software, Network, Database Parameter, Compute) based on the input parameters.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbProfileComputeProfileArgs']]]] compute_profiles: Compute Profile
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbProfileDatabaseParameterProfileArgs']]]] database_parameter_profiles: Database Parameter Profile
+        :param pulumi.Input[str] description: Description of profile
+        :param pulumi.Input[str] engine_type: Engine Type of database
+        :param pulumi.Input[str] name: Name of profile
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbProfileNetworkProfileArgs']]]] network_profiles: Network Profile
+        :param pulumi.Input[bool] published: Publish for all users
+        :param pulumi.Input[pulumi.InputType['NdbProfileSoftwareProfileArgs']] software_profile: Software Profile
         """
         ...
     @overload
@@ -355,7 +464,8 @@ class NdbProfile(pulumi.CustomResource):
                  args: Optional[NdbProfileArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a NdbProfile resource with the given unique name, props, and options.
+        Provides a resource to create profiles (Software, Network, Database Parameter, Compute) based on the input parameters.
+
         :param str resource_name: The name of the resource.
         :param NdbProfileArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -439,6 +549,23 @@ class NdbProfile(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] assoc_databases: associated databases of profiles
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] assoc_db_servers: associated database servers for associated profiles
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbProfileClusterAvailabilityArgs']]]] cluster_availabilities: cluster availability of profile
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbProfileComputeProfileArgs']]]] compute_profiles: Compute Profile
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbProfileDatabaseParameterProfileArgs']]]] database_parameter_profiles: Database Parameter Profile
+        :param pulumi.Input[str] description: Description of profile
+        :param pulumi.Input[str] engine_type: Engine Type of database
+        :param pulumi.Input[str] latest_version: latest version of profile
+        :param pulumi.Input[str] latest_version_id: latest version id of profile
+        :param pulumi.Input[str] name: Name of profile
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbProfileNetworkProfileArgs']]]] network_profiles: Network Profile
+        :param pulumi.Input[str] nx_cluster_id: cluster on which profile created
+        :param pulumi.Input[str] owner: owner  of profile
+        :param pulumi.Input[bool] published: Publish for all users
+        :param pulumi.Input[pulumi.InputType['NdbProfileSoftwareProfileArgs']] software_profile: Software Profile
+        :param pulumi.Input[str] status: status of profile
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbProfileVersionArgs']]]] versions: versions of associated profiles
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -466,85 +593,136 @@ class NdbProfile(pulumi.CustomResource):
     @property
     @pulumi.getter(name="assocDatabases")
     def assoc_databases(self) -> pulumi.Output[Sequence[str]]:
+        """
+        associated databases of profiles
+        """
         return pulumi.get(self, "assoc_databases")
 
     @property
     @pulumi.getter(name="assocDbServers")
     def assoc_db_servers(self) -> pulumi.Output[Sequence[str]]:
+        """
+        associated database servers for associated profiles
+        """
         return pulumi.get(self, "assoc_db_servers")
 
     @property
     @pulumi.getter(name="clusterAvailabilities")
     def cluster_availabilities(self) -> pulumi.Output[Sequence['outputs.NdbProfileClusterAvailability']]:
+        """
+        cluster availability of profile
+        """
         return pulumi.get(self, "cluster_availabilities")
 
     @property
     @pulumi.getter(name="computeProfiles")
     def compute_profiles(self) -> pulumi.Output[Optional[Sequence['outputs.NdbProfileComputeProfile']]]:
+        """
+        Compute Profile
+        """
         return pulumi.get(self, "compute_profiles")
 
     @property
     @pulumi.getter(name="databaseParameterProfiles")
     def database_parameter_profiles(self) -> pulumi.Output[Optional[Sequence['outputs.NdbProfileDatabaseParameterProfile']]]:
+        """
+        Database Parameter Profile
+        """
         return pulumi.get(self, "database_parameter_profiles")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[str]]:
+        """
+        Description of profile
+        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="engineType")
     def engine_type(self) -> pulumi.Output[str]:
+        """
+        Engine Type of database
+        """
         return pulumi.get(self, "engine_type")
 
     @property
     @pulumi.getter(name="latestVersion")
     def latest_version(self) -> pulumi.Output[str]:
+        """
+        latest version of profile
+        """
         return pulumi.get(self, "latest_version")
 
     @property
     @pulumi.getter(name="latestVersionId")
     def latest_version_id(self) -> pulumi.Output[str]:
+        """
+        latest version id of profile
+        """
         return pulumi.get(self, "latest_version_id")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
+        """
+        Name of profile
+        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="networkProfiles")
     def network_profiles(self) -> pulumi.Output[Optional[Sequence['outputs.NdbProfileNetworkProfile']]]:
+        """
+        Network Profile
+        """
         return pulumi.get(self, "network_profiles")
 
     @property
     @pulumi.getter(name="nxClusterId")
     def nx_cluster_id(self) -> pulumi.Output[str]:
+        """
+        cluster on which profile created
+        """
         return pulumi.get(self, "nx_cluster_id")
 
     @property
     @pulumi.getter
     def owner(self) -> pulumi.Output[str]:
+        """
+        owner  of profile
+        """
         return pulumi.get(self, "owner")
 
     @property
     @pulumi.getter
     def published(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Publish for all users
+        """
         return pulumi.get(self, "published")
 
     @property
     @pulumi.getter(name="softwareProfile")
     def software_profile(self) -> pulumi.Output[Optional['outputs.NdbProfileSoftwareProfile']]:
+        """
+        Software Profile
+        """
         return pulumi.get(self, "software_profile")
 
     @property
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
+        """
+        status of profile
+        """
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
     def versions(self) -> pulumi.Output[Sequence['outputs.NdbProfileVersion']]:
+        """
+        versions of associated profiles
+        """
         return pulumi.get(self, "versions")
 

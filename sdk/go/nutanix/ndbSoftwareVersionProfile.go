@@ -12,25 +12,80 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a resource to create software profile versions based on the input parameters.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewNdbSoftwareVersionProfile(ctx, "name", &nutanix.NdbSoftwareVersionProfileArgs{
+//				EngineType:  pulumi.String("postgres_database"),
+//				ProfileId:   pulumi.Any(resource.Nutanix_ndb_profile.Name12.Id),
+//				Description: pulumi.String("made  by tf"),
+//				PostgresDatabases: nutanix.NdbSoftwareVersionProfilePostgresDatabaseArray{
+//					&nutanix.NdbSoftwareVersionProfilePostgresDatabaseArgs{
+//						SourceDbserverId: pulumi.String("{{ DB_Server_ID }}"),
+//					},
+//				},
+//				AvailableClusterIds: pulumi.StringArray{
+//					pulumi.String("{{ cluster_ids }}"),
+//				},
+//				Status: pulumi.String("published"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type NdbSoftwareVersionProfile struct {
 	pulumi.CustomResourceState
 
-	AvailableClusterIds        pulumi.StringArrayOutput                                      `pulumi:"availableClusterIds"`
-	DbVersion                  pulumi.StringOutput                                           `pulumi:"dbVersion"`
-	Deprecated                 pulumi.BoolOutput                                             `pulumi:"deprecated"`
-	Description                pulumi.StringPtrOutput                                        `pulumi:"description"`
-	EngineType                 pulumi.StringOutput                                           `pulumi:"engineType"`
-	Name                       pulumi.StringOutput                                           `pulumi:"name"`
-	Owner                      pulumi.StringOutput                                           `pulumi:"owner"`
-	PostgresDatabases          NdbSoftwareVersionProfilePostgresDatabaseArrayOutput          `pulumi:"postgresDatabases"`
-	ProfileId                  pulumi.StringOutput                                           `pulumi:"profileId"`
-	Properties                 NdbSoftwareVersionProfilePropertyArrayOutput                  `pulumi:"properties"`
-	PropertiesMap              pulumi.StringMapOutput                                        `pulumi:"propertiesMap"`
-	Published                  pulumi.BoolOutput                                             `pulumi:"published"`
-	Status                     pulumi.StringPtrOutput                                        `pulumi:"status"`
-	SystemProfile              pulumi.BoolOutput                                             `pulumi:"systemProfile"`
-	Topology                   pulumi.StringOutput                                           `pulumi:"topology"`
-	Version                    pulumi.StringOutput                                           `pulumi:"version"`
+	// available cluster ids
+	AvailableClusterIds pulumi.StringArrayOutput `pulumi:"availableClusterIds"`
+	// Db version of software profile
+	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
+	// deprecated or not
+	Deprecated pulumi.BoolOutput `pulumi:"deprecated"`
+	// description of profile
+	Description pulumi.StringPtrOutput `pulumi:"description"`
+	// engine type of profile
+	EngineType pulumi.StringOutput `pulumi:"engineType"`
+	// Name of profile
+	Name pulumi.StringOutput `pulumi:"name"`
+	// owner  of profile
+	Owner pulumi.StringOutput `pulumi:"owner"`
+	// postgres database info
+	PostgresDatabases NdbSoftwareVersionProfilePostgresDatabaseArrayOutput `pulumi:"postgresDatabases"`
+	// profile id
+	ProfileId pulumi.StringOutput `pulumi:"profileId"`
+	// properties of software profile
+	Properties NdbSoftwareVersionProfilePropertyArrayOutput `pulumi:"properties"`
+	// properties map of profile
+	PropertiesMap pulumi.StringMapOutput `pulumi:"propertiesMap"`
+	// Published or not
+	Published pulumi.BoolOutput `pulumi:"published"`
+	// status of profile. Allowed Values are "deprecated", "published", "unpublished"
+	Status pulumi.StringPtrOutput `pulumi:"status"`
+	// system profile or not.
+	SystemProfile pulumi.BoolOutput `pulumi:"systemProfile"`
+	// topology of software profile
+	Topology pulumi.StringOutput `pulumi:"topology"`
+	// Version of software profile
+	Version pulumi.StringOutput `pulumi:"version"`
+	// version cluster association
 	VersionClusterAssociations NdbSoftwareVersionProfileVersionClusterAssociationArrayOutput `pulumi:"versionClusterAssociations"`
 }
 
@@ -70,42 +125,76 @@ func GetNdbSoftwareVersionProfile(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NdbSoftwareVersionProfile resources.
 type ndbSoftwareVersionProfileState struct {
-	AvailableClusterIds        []string                                             `pulumi:"availableClusterIds"`
-	DbVersion                  *string                                              `pulumi:"dbVersion"`
-	Deprecated                 *bool                                                `pulumi:"deprecated"`
-	Description                *string                                              `pulumi:"description"`
-	EngineType                 *string                                              `pulumi:"engineType"`
-	Name                       *string                                              `pulumi:"name"`
-	Owner                      *string                                              `pulumi:"owner"`
-	PostgresDatabases          []NdbSoftwareVersionProfilePostgresDatabase          `pulumi:"postgresDatabases"`
-	ProfileId                  *string                                              `pulumi:"profileId"`
-	Properties                 []NdbSoftwareVersionProfileProperty                  `pulumi:"properties"`
-	PropertiesMap              map[string]string                                    `pulumi:"propertiesMap"`
-	Published                  *bool                                                `pulumi:"published"`
-	Status                     *string                                              `pulumi:"status"`
-	SystemProfile              *bool                                                `pulumi:"systemProfile"`
-	Topology                   *string                                              `pulumi:"topology"`
-	Version                    *string                                              `pulumi:"version"`
+	// available cluster ids
+	AvailableClusterIds []string `pulumi:"availableClusterIds"`
+	// Db version of software profile
+	DbVersion *string `pulumi:"dbVersion"`
+	// deprecated or not
+	Deprecated *bool `pulumi:"deprecated"`
+	// description of profile
+	Description *string `pulumi:"description"`
+	// engine type of profile
+	EngineType *string `pulumi:"engineType"`
+	// Name of profile
+	Name *string `pulumi:"name"`
+	// owner  of profile
+	Owner *string `pulumi:"owner"`
+	// postgres database info
+	PostgresDatabases []NdbSoftwareVersionProfilePostgresDatabase `pulumi:"postgresDatabases"`
+	// profile id
+	ProfileId *string `pulumi:"profileId"`
+	// properties of software profile
+	Properties []NdbSoftwareVersionProfileProperty `pulumi:"properties"`
+	// properties map of profile
+	PropertiesMap map[string]string `pulumi:"propertiesMap"`
+	// Published or not
+	Published *bool `pulumi:"published"`
+	// status of profile. Allowed Values are "deprecated", "published", "unpublished"
+	Status *string `pulumi:"status"`
+	// system profile or not.
+	SystemProfile *bool `pulumi:"systemProfile"`
+	// topology of software profile
+	Topology *string `pulumi:"topology"`
+	// Version of software profile
+	Version *string `pulumi:"version"`
+	// version cluster association
 	VersionClusterAssociations []NdbSoftwareVersionProfileVersionClusterAssociation `pulumi:"versionClusterAssociations"`
 }
 
 type NdbSoftwareVersionProfileState struct {
-	AvailableClusterIds        pulumi.StringArrayInput
-	DbVersion                  pulumi.StringPtrInput
-	Deprecated                 pulumi.BoolPtrInput
-	Description                pulumi.StringPtrInput
-	EngineType                 pulumi.StringPtrInput
-	Name                       pulumi.StringPtrInput
-	Owner                      pulumi.StringPtrInput
-	PostgresDatabases          NdbSoftwareVersionProfilePostgresDatabaseArrayInput
-	ProfileId                  pulumi.StringPtrInput
-	Properties                 NdbSoftwareVersionProfilePropertyArrayInput
-	PropertiesMap              pulumi.StringMapInput
-	Published                  pulumi.BoolPtrInput
-	Status                     pulumi.StringPtrInput
-	SystemProfile              pulumi.BoolPtrInput
-	Topology                   pulumi.StringPtrInput
-	Version                    pulumi.StringPtrInput
+	// available cluster ids
+	AvailableClusterIds pulumi.StringArrayInput
+	// Db version of software profile
+	DbVersion pulumi.StringPtrInput
+	// deprecated or not
+	Deprecated pulumi.BoolPtrInput
+	// description of profile
+	Description pulumi.StringPtrInput
+	// engine type of profile
+	EngineType pulumi.StringPtrInput
+	// Name of profile
+	Name pulumi.StringPtrInput
+	// owner  of profile
+	Owner pulumi.StringPtrInput
+	// postgres database info
+	PostgresDatabases NdbSoftwareVersionProfilePostgresDatabaseArrayInput
+	// profile id
+	ProfileId pulumi.StringPtrInput
+	// properties of software profile
+	Properties NdbSoftwareVersionProfilePropertyArrayInput
+	// properties map of profile
+	PropertiesMap pulumi.StringMapInput
+	// Published or not
+	Published pulumi.BoolPtrInput
+	// status of profile. Allowed Values are "deprecated", "published", "unpublished"
+	Status pulumi.StringPtrInput
+	// system profile or not.
+	SystemProfile pulumi.BoolPtrInput
+	// topology of software profile
+	Topology pulumi.StringPtrInput
+	// Version of software profile
+	Version pulumi.StringPtrInput
+	// version cluster association
 	VersionClusterAssociations NdbSoftwareVersionProfileVersionClusterAssociationArrayInput
 }
 
@@ -114,24 +203,38 @@ func (NdbSoftwareVersionProfileState) ElementType() reflect.Type {
 }
 
 type ndbSoftwareVersionProfileArgs struct {
-	AvailableClusterIds []string                                    `pulumi:"availableClusterIds"`
-	Description         *string                                     `pulumi:"description"`
-	EngineType          string                                      `pulumi:"engineType"`
-	Name                *string                                     `pulumi:"name"`
-	PostgresDatabases   []NdbSoftwareVersionProfilePostgresDatabase `pulumi:"postgresDatabases"`
-	ProfileId           string                                      `pulumi:"profileId"`
-	Status              *string                                     `pulumi:"status"`
+	// available cluster ids
+	AvailableClusterIds []string `pulumi:"availableClusterIds"`
+	// description of profile
+	Description *string `pulumi:"description"`
+	// engine type of profile
+	EngineType string `pulumi:"engineType"`
+	// Name of profile
+	Name *string `pulumi:"name"`
+	// postgres database info
+	PostgresDatabases []NdbSoftwareVersionProfilePostgresDatabase `pulumi:"postgresDatabases"`
+	// profile id
+	ProfileId string `pulumi:"profileId"`
+	// status of profile. Allowed Values are "deprecated", "published", "unpublished"
+	Status *string `pulumi:"status"`
 }
 
 // The set of arguments for constructing a NdbSoftwareVersionProfile resource.
 type NdbSoftwareVersionProfileArgs struct {
+	// available cluster ids
 	AvailableClusterIds pulumi.StringArrayInput
-	Description         pulumi.StringPtrInput
-	EngineType          pulumi.StringInput
-	Name                pulumi.StringPtrInput
-	PostgresDatabases   NdbSoftwareVersionProfilePostgresDatabaseArrayInput
-	ProfileId           pulumi.StringInput
-	Status              pulumi.StringPtrInput
+	// description of profile
+	Description pulumi.StringPtrInput
+	// engine type of profile
+	EngineType pulumi.StringInput
+	// Name of profile
+	Name pulumi.StringPtrInput
+	// postgres database info
+	PostgresDatabases NdbSoftwareVersionProfilePostgresDatabaseArrayInput
+	// profile id
+	ProfileId pulumi.StringInput
+	// status of profile. Allowed Values are "deprecated", "published", "unpublished"
+	Status pulumi.StringPtrInput
 }
 
 func (NdbSoftwareVersionProfileArgs) ElementType() reflect.Type {
@@ -221,72 +324,89 @@ func (o NdbSoftwareVersionProfileOutput) ToNdbSoftwareVersionProfileOutputWithCo
 	return o
 }
 
+// available cluster ids
 func (o NdbSoftwareVersionProfileOutput) AvailableClusterIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NdbSoftwareVersionProfile) pulumi.StringArrayOutput { return v.AvailableClusterIds }).(pulumi.StringArrayOutput)
 }
 
+// Db version of software profile
 func (o NdbSoftwareVersionProfileOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbSoftwareVersionProfile) pulumi.StringOutput { return v.DbVersion }).(pulumi.StringOutput)
 }
 
+// deprecated or not
 func (o NdbSoftwareVersionProfileOutput) Deprecated() pulumi.BoolOutput {
 	return o.ApplyT(func(v *NdbSoftwareVersionProfile) pulumi.BoolOutput { return v.Deprecated }).(pulumi.BoolOutput)
 }
 
+// description of profile
 func (o NdbSoftwareVersionProfileOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbSoftwareVersionProfile) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+// engine type of profile
 func (o NdbSoftwareVersionProfileOutput) EngineType() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbSoftwareVersionProfile) pulumi.StringOutput { return v.EngineType }).(pulumi.StringOutput)
 }
 
+// Name of profile
 func (o NdbSoftwareVersionProfileOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbSoftwareVersionProfile) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// owner  of profile
 func (o NdbSoftwareVersionProfileOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbSoftwareVersionProfile) pulumi.StringOutput { return v.Owner }).(pulumi.StringOutput)
 }
 
+// postgres database info
 func (o NdbSoftwareVersionProfileOutput) PostgresDatabases() NdbSoftwareVersionProfilePostgresDatabaseArrayOutput {
 	return o.ApplyT(func(v *NdbSoftwareVersionProfile) NdbSoftwareVersionProfilePostgresDatabaseArrayOutput {
 		return v.PostgresDatabases
 	}).(NdbSoftwareVersionProfilePostgresDatabaseArrayOutput)
 }
 
+// profile id
 func (o NdbSoftwareVersionProfileOutput) ProfileId() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbSoftwareVersionProfile) pulumi.StringOutput { return v.ProfileId }).(pulumi.StringOutput)
 }
 
+// properties of software profile
 func (o NdbSoftwareVersionProfileOutput) Properties() NdbSoftwareVersionProfilePropertyArrayOutput {
 	return o.ApplyT(func(v *NdbSoftwareVersionProfile) NdbSoftwareVersionProfilePropertyArrayOutput { return v.Properties }).(NdbSoftwareVersionProfilePropertyArrayOutput)
 }
 
+// properties map of profile
 func (o NdbSoftwareVersionProfileOutput) PropertiesMap() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *NdbSoftwareVersionProfile) pulumi.StringMapOutput { return v.PropertiesMap }).(pulumi.StringMapOutput)
 }
 
+// Published or not
 func (o NdbSoftwareVersionProfileOutput) Published() pulumi.BoolOutput {
 	return o.ApplyT(func(v *NdbSoftwareVersionProfile) pulumi.BoolOutput { return v.Published }).(pulumi.BoolOutput)
 }
 
+// status of profile. Allowed Values are "deprecated", "published", "unpublished"
 func (o NdbSoftwareVersionProfileOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbSoftwareVersionProfile) pulumi.StringPtrOutput { return v.Status }).(pulumi.StringPtrOutput)
 }
 
+// system profile or not.
 func (o NdbSoftwareVersionProfileOutput) SystemProfile() pulumi.BoolOutput {
 	return o.ApplyT(func(v *NdbSoftwareVersionProfile) pulumi.BoolOutput { return v.SystemProfile }).(pulumi.BoolOutput)
 }
 
+// topology of software profile
 func (o NdbSoftwareVersionProfileOutput) Topology() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbSoftwareVersionProfile) pulumi.StringOutput { return v.Topology }).(pulumi.StringOutput)
 }
 
+// Version of software profile
 func (o NdbSoftwareVersionProfileOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbSoftwareVersionProfile) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
 }
 
+// version cluster association
 func (o NdbSoftwareVersionProfileOutput) VersionClusterAssociations() NdbSoftwareVersionProfileVersionClusterAssociationArrayOutput {
 	return o.ApplyT(func(v *NdbSoftwareVersionProfile) NdbSoftwareVersionProfileVersionClusterAssociationArrayOutput {
 		return v.VersionClusterAssociations

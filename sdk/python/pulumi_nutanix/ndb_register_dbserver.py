@@ -37,6 +37,23 @@ class NdbRegisterDbserverArgs:
                  working_directory: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a NdbRegisterDbserver resource.
+        :param pulumi.Input[str] database_type: database type i.e. postgres_database
+        :param pulumi.Input[str] vm_ip: IP address of the database server VM
+        :param pulumi.Input[bool] delete: - (Optional) Delete the VM and associated storage. Default value is false
+        :param pulumi.Input[bool] delete_vgs: - (Optional) Delete volume grous. Default value is true
+        :param pulumi.Input[bool] delete_vm_snapshots: - (Optional) Delete the vm snapshots. Default is true
+        :param pulumi.Input[str] description: description of db server vm. Should be used in update Method only .
+        :param pulumi.Input[bool] forced_install: forced install the packages. Default is true
+        :param pulumi.Input[str] name: Name of db server vm. Should be used in Update Method only.
+        :param pulumi.Input[str] nxcluster_id: cluster on which you want to register the database server VM.
+        :param pulumi.Input[str] password: password of the NDB drive user account. Conflicts with ssh_key.
+        :param pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverPostgresDatabaseArgs']]] postgres_databases: postgres info for dbserver
+        :param pulumi.Input[bool] remove: - (Optional) Unregister the database from NDB. Default value is true
+        :param pulumi.Input[bool] soft_remove: - (Optional) Soft remove. Default will be false
+        :param pulumi.Input[str] ssh_key: the private key. Conflicts with password.
+        :param pulumi.Input[bool] update_name_description_in_cluster: Updates the name and description in cluster. Should be used in Update Method only.
+        :param pulumi.Input[str] username: username of the NDB drive user account that has sudo access
+        :param pulumi.Input[str] working_directory: working directory of postgres. Default is "/tmp"
         """
         pulumi.set(__self__, "database_type", database_type)
         pulumi.set(__self__, "vm_ip", vm_ip)
@@ -78,6 +95,9 @@ class NdbRegisterDbserverArgs:
     @property
     @pulumi.getter(name="databaseType")
     def database_type(self) -> pulumi.Input[str]:
+        """
+        database type i.e. postgres_database
+        """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
@@ -87,6 +107,9 @@ class NdbRegisterDbserverArgs:
     @property
     @pulumi.getter(name="vmIp")
     def vm_ip(self) -> pulumi.Input[str]:
+        """
+        IP address of the database server VM
+        """
         return pulumi.get(self, "vm_ip")
 
     @vm_ip.setter
@@ -105,6 +128,9 @@ class NdbRegisterDbserverArgs:
     @property
     @pulumi.getter
     def delete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Delete the VM and associated storage. Default value is false
+        """
         return pulumi.get(self, "delete")
 
     @delete.setter
@@ -114,6 +140,9 @@ class NdbRegisterDbserverArgs:
     @property
     @pulumi.getter(name="deleteVgs")
     def delete_vgs(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Delete volume grous. Default value is true
+        """
         return pulumi.get(self, "delete_vgs")
 
     @delete_vgs.setter
@@ -123,6 +152,9 @@ class NdbRegisterDbserverArgs:
     @property
     @pulumi.getter(name="deleteVmSnapshots")
     def delete_vm_snapshots(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Delete the vm snapshots. Default is true
+        """
         return pulumi.get(self, "delete_vm_snapshots")
 
     @delete_vm_snapshots.setter
@@ -132,6 +164,9 @@ class NdbRegisterDbserverArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        description of db server vm. Should be used in update Method only .
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -141,6 +176,9 @@ class NdbRegisterDbserverArgs:
     @property
     @pulumi.getter(name="forcedInstall")
     def forced_install(self) -> Optional[pulumi.Input[bool]]:
+        """
+        forced install the packages. Default is true
+        """
         return pulumi.get(self, "forced_install")
 
     @forced_install.setter
@@ -150,6 +188,9 @@ class NdbRegisterDbserverArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of db server vm. Should be used in Update Method only.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -159,6 +200,9 @@ class NdbRegisterDbserverArgs:
     @property
     @pulumi.getter(name="nxclusterId")
     def nxcluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        cluster on which you want to register the database server VM.
+        """
         return pulumi.get(self, "nxcluster_id")
 
     @nxcluster_id.setter
@@ -168,6 +212,9 @@ class NdbRegisterDbserverArgs:
     @property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
+        """
+        password of the NDB drive user account. Conflicts with ssh_key.
+        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -177,6 +224,9 @@ class NdbRegisterDbserverArgs:
     @property
     @pulumi.getter(name="postgresDatabases")
     def postgres_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverPostgresDatabaseArgs']]]]:
+        """
+        postgres info for dbserver
+        """
         return pulumi.get(self, "postgres_databases")
 
     @postgres_databases.setter
@@ -186,6 +236,9 @@ class NdbRegisterDbserverArgs:
     @property
     @pulumi.getter
     def remove(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Unregister the database from NDB. Default value is true
+        """
         return pulumi.get(self, "remove")
 
     @remove.setter
@@ -195,6 +248,9 @@ class NdbRegisterDbserverArgs:
     @property
     @pulumi.getter(name="softRemove")
     def soft_remove(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Soft remove. Default will be false
+        """
         return pulumi.get(self, "soft_remove")
 
     @soft_remove.setter
@@ -204,6 +260,9 @@ class NdbRegisterDbserverArgs:
     @property
     @pulumi.getter(name="sshKey")
     def ssh_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        the private key. Conflicts with password.
+        """
         return pulumi.get(self, "ssh_key")
 
     @ssh_key.setter
@@ -222,6 +281,9 @@ class NdbRegisterDbserverArgs:
     @property
     @pulumi.getter(name="updateNameDescriptionInCluster")
     def update_name_description_in_cluster(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Updates the name and description in cluster. Should be used in Update Method only.
+        """
         return pulumi.get(self, "update_name_description_in_cluster")
 
     @update_name_description_in_cluster.setter
@@ -231,6 +293,9 @@ class NdbRegisterDbserverArgs:
     @property
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[str]]:
+        """
+        username of the NDB drive user account that has sudo access
+        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -240,6 +305,9 @@ class NdbRegisterDbserverArgs:
     @property
     @pulumi.getter(name="workingDirectory")
     def working_directory(self) -> Optional[pulumi.Input[str]]:
+        """
+        working directory of postgres. Default is "/tmp"
+        """
         return pulumi.get(self, "working_directory")
 
     @working_directory.setter
@@ -286,7 +354,24 @@ class _NdbRegisterDbserverState:
                  working_directory: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering NdbRegisterDbserver resources.
+        :param pulumi.Input[str] database_type: database type i.e. postgres_database
+        :param pulumi.Input[bool] delete: - (Optional) Delete the VM and associated storage. Default value is false
+        :param pulumi.Input[bool] delete_vgs: - (Optional) Delete volume grous. Default value is true
+        :param pulumi.Input[bool] delete_vm_snapshots: - (Optional) Delete the vm snapshots. Default is true
+        :param pulumi.Input[str] description: description of db server vm. Should be used in update Method only .
+        :param pulumi.Input[bool] forced_install: forced install the packages. Default is true
+        :param pulumi.Input[str] name: Name of db server vm. Should be used in Update Method only.
+        :param pulumi.Input[str] nxcluster_id: cluster on which you want to register the database server VM.
+        :param pulumi.Input[str] password: password of the NDB drive user account. Conflicts with ssh_key.
+        :param pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverPostgresDatabaseArgs']]] postgres_databases: postgres info for dbserver
         :param pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverPropertyArgs']]] properties: List of all the properties
+        :param pulumi.Input[bool] remove: - (Optional) Unregister the database from NDB. Default value is true
+        :param pulumi.Input[bool] soft_remove: - (Optional) Soft remove. Default will be false
+        :param pulumi.Input[str] ssh_key: the private key. Conflicts with password.
+        :param pulumi.Input[bool] update_name_description_in_cluster: Updates the name and description in cluster. Should be used in Update Method only.
+        :param pulumi.Input[str] username: username of the NDB drive user account that has sudo access
+        :param pulumi.Input[str] vm_ip: IP address of the database server VM
+        :param pulumi.Input[str] working_directory: working directory of postgres. Default is "/tmp"
         """
         if client_id is not None:
             pulumi.set(__self__, "client_id", client_id)
@@ -378,6 +463,9 @@ class _NdbRegisterDbserverState:
     @property
     @pulumi.getter(name="databaseType")
     def database_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        database type i.e. postgres_database
+        """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
@@ -396,6 +484,9 @@ class _NdbRegisterDbserverState:
     @property
     @pulumi.getter
     def delete(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Delete the VM and associated storage. Default value is false
+        """
         return pulumi.get(self, "delete")
 
     @delete.setter
@@ -405,6 +496,9 @@ class _NdbRegisterDbserverState:
     @property
     @pulumi.getter(name="deleteVgs")
     def delete_vgs(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Delete volume grous. Default value is true
+        """
         return pulumi.get(self, "delete_vgs")
 
     @delete_vgs.setter
@@ -414,6 +508,9 @@ class _NdbRegisterDbserverState:
     @property
     @pulumi.getter(name="deleteVmSnapshots")
     def delete_vm_snapshots(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Delete the vm snapshots. Default is true
+        """
         return pulumi.get(self, "delete_vm_snapshots")
 
     @delete_vm_snapshots.setter
@@ -423,6 +520,9 @@ class _NdbRegisterDbserverState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        description of db server vm. Should be used in update Method only .
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -459,6 +559,9 @@ class _NdbRegisterDbserverState:
     @property
     @pulumi.getter(name="forcedInstall")
     def forced_install(self) -> Optional[pulumi.Input[bool]]:
+        """
+        forced install the packages. Default is true
+        """
         return pulumi.get(self, "forced_install")
 
     @forced_install.setter
@@ -504,6 +607,9 @@ class _NdbRegisterDbserverState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of db server vm. Should be used in Update Method only.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -513,6 +619,9 @@ class _NdbRegisterDbserverState:
     @property
     @pulumi.getter(name="nxclusterId")
     def nxcluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        cluster on which you want to register the database server VM.
+        """
         return pulumi.get(self, "nxcluster_id")
 
     @nxcluster_id.setter
@@ -522,6 +631,9 @@ class _NdbRegisterDbserverState:
     @property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
+        """
+        password of the NDB drive user account. Conflicts with ssh_key.
+        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -531,6 +643,9 @@ class _NdbRegisterDbserverState:
     @property
     @pulumi.getter(name="postgresDatabases")
     def postgres_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDbserverPostgresDatabaseArgs']]]]:
+        """
+        postgres info for dbserver
+        """
         return pulumi.get(self, "postgres_databases")
 
     @postgres_databases.setter
@@ -552,6 +667,9 @@ class _NdbRegisterDbserverState:
     @property
     @pulumi.getter
     def remove(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Unregister the database from NDB. Default value is true
+        """
         return pulumi.get(self, "remove")
 
     @remove.setter
@@ -561,6 +679,9 @@ class _NdbRegisterDbserverState:
     @property
     @pulumi.getter(name="softRemove")
     def soft_remove(self) -> Optional[pulumi.Input[bool]]:
+        """
+        - (Optional) Soft remove. Default will be false
+        """
         return pulumi.get(self, "soft_remove")
 
     @soft_remove.setter
@@ -570,6 +691,9 @@ class _NdbRegisterDbserverState:
     @property
     @pulumi.getter(name="sshKey")
     def ssh_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        the private key. Conflicts with password.
+        """
         return pulumi.get(self, "ssh_key")
 
     @ssh_key.setter
@@ -606,6 +730,9 @@ class _NdbRegisterDbserverState:
     @property
     @pulumi.getter(name="updateNameDescriptionInCluster")
     def update_name_description_in_cluster(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Updates the name and description in cluster. Should be used in Update Method only.
+        """
         return pulumi.get(self, "update_name_description_in_cluster")
 
     @update_name_description_in_cluster.setter
@@ -615,6 +742,9 @@ class _NdbRegisterDbserverState:
     @property
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[str]]:
+        """
+        username of the NDB drive user account that has sudo access
+        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -642,6 +772,9 @@ class _NdbRegisterDbserverState:
     @property
     @pulumi.getter(name="vmIp")
     def vm_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        IP address of the database server VM
+        """
         return pulumi.get(self, "vm_ip")
 
     @vm_ip.setter
@@ -660,6 +793,9 @@ class _NdbRegisterDbserverState:
     @property
     @pulumi.getter(name="workingDirectory")
     def working_directory(self) -> Optional[pulumi.Input[str]]:
+        """
+        working directory of postgres. Default is "/tmp"
+        """
         return pulumi.get(self, "working_directory")
 
     @working_directory.setter
@@ -693,9 +829,27 @@ class NdbRegisterDbserver(pulumi.CustomResource):
                  working_directory: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        Create a NdbRegisterDbserver resource with the given unique name, props, and options.
+        Provides a resource to register database server VMs based on the input parameters. For 1.8.0 release, only postgress database type is qualified and officially supported.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] database_type: database type i.e. postgres_database
+        :param pulumi.Input[bool] delete: - (Optional) Delete the VM and associated storage. Default value is false
+        :param pulumi.Input[bool] delete_vgs: - (Optional) Delete volume grous. Default value is true
+        :param pulumi.Input[bool] delete_vm_snapshots: - (Optional) Delete the vm snapshots. Default is true
+        :param pulumi.Input[str] description: description of db server vm. Should be used in update Method only .
+        :param pulumi.Input[bool] forced_install: forced install the packages. Default is true
+        :param pulumi.Input[str] name: Name of db server vm. Should be used in Update Method only.
+        :param pulumi.Input[str] nxcluster_id: cluster on which you want to register the database server VM.
+        :param pulumi.Input[str] password: password of the NDB drive user account. Conflicts with ssh_key.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbRegisterDbserverPostgresDatabaseArgs']]]] postgres_databases: postgres info for dbserver
+        :param pulumi.Input[bool] remove: - (Optional) Unregister the database from NDB. Default value is true
+        :param pulumi.Input[bool] soft_remove: - (Optional) Soft remove. Default will be false
+        :param pulumi.Input[str] ssh_key: the private key. Conflicts with password.
+        :param pulumi.Input[bool] update_name_description_in_cluster: Updates the name and description in cluster. Should be used in Update Method only.
+        :param pulumi.Input[str] username: username of the NDB drive user account that has sudo access
+        :param pulumi.Input[str] vm_ip: IP address of the database server VM
+        :param pulumi.Input[str] working_directory: working directory of postgres. Default is "/tmp"
         """
         ...
     @overload
@@ -704,7 +858,8 @@ class NdbRegisterDbserver(pulumi.CustomResource):
                  args: NdbRegisterDbserverArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a NdbRegisterDbserver resource with the given unique name, props, and options.
+        Provides a resource to register database server VMs based on the input parameters. For 1.8.0 release, only postgress database type is qualified and officially supported.
+
         :param str resource_name: The name of the resource.
         :param NdbRegisterDbserverArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -839,7 +994,24 @@ class NdbRegisterDbserver(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] database_type: database type i.e. postgres_database
+        :param pulumi.Input[bool] delete: - (Optional) Delete the VM and associated storage. Default value is false
+        :param pulumi.Input[bool] delete_vgs: - (Optional) Delete volume grous. Default value is true
+        :param pulumi.Input[bool] delete_vm_snapshots: - (Optional) Delete the vm snapshots. Default is true
+        :param pulumi.Input[str] description: description of db server vm. Should be used in update Method only .
+        :param pulumi.Input[bool] forced_install: forced install the packages. Default is true
+        :param pulumi.Input[str] name: Name of db server vm. Should be used in Update Method only.
+        :param pulumi.Input[str] nxcluster_id: cluster on which you want to register the database server VM.
+        :param pulumi.Input[str] password: password of the NDB drive user account. Conflicts with ssh_key.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbRegisterDbserverPostgresDatabaseArgs']]]] postgres_databases: postgres info for dbserver
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbRegisterDbserverPropertyArgs']]]] properties: List of all the properties
+        :param pulumi.Input[bool] remove: - (Optional) Unregister the database from NDB. Default value is true
+        :param pulumi.Input[bool] soft_remove: - (Optional) Soft remove. Default will be false
+        :param pulumi.Input[str] ssh_key: the private key. Conflicts with password.
+        :param pulumi.Input[bool] update_name_description_in_cluster: Updates the name and description in cluster. Should be used in Update Method only.
+        :param pulumi.Input[str] username: username of the NDB drive user account that has sudo access
+        :param pulumi.Input[str] vm_ip: IP address of the database server VM
+        :param pulumi.Input[str] working_directory: working directory of postgres. Default is "/tmp"
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -894,6 +1066,9 @@ class NdbRegisterDbserver(pulumi.CustomResource):
     @property
     @pulumi.getter(name="databaseType")
     def database_type(self) -> pulumi.Output[str]:
+        """
+        database type i.e. postgres_database
+        """
         return pulumi.get(self, "database_type")
 
     @property
@@ -904,21 +1079,33 @@ class NdbRegisterDbserver(pulumi.CustomResource):
     @property
     @pulumi.getter
     def delete(self) -> pulumi.Output[Optional[bool]]:
+        """
+        - (Optional) Delete the VM and associated storage. Default value is false
+        """
         return pulumi.get(self, "delete")
 
     @property
     @pulumi.getter(name="deleteVgs")
     def delete_vgs(self) -> pulumi.Output[Optional[bool]]:
+        """
+        - (Optional) Delete volume grous. Default value is true
+        """
         return pulumi.get(self, "delete_vgs")
 
     @property
     @pulumi.getter(name="deleteVmSnapshots")
     def delete_vm_snapshots(self) -> pulumi.Output[Optional[bool]]:
+        """
+        - (Optional) Delete the vm snapshots. Default is true
+        """
         return pulumi.get(self, "delete_vm_snapshots")
 
     @property
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
+        """
+        description of db server vm. Should be used in update Method only .
+        """
         return pulumi.get(self, "description")
 
     @property
@@ -939,6 +1126,9 @@ class NdbRegisterDbserver(pulumi.CustomResource):
     @property
     @pulumi.getter(name="forcedInstall")
     def forced_install(self) -> pulumi.Output[Optional[bool]]:
+        """
+        forced install the packages. Default is true
+        """
         return pulumi.get(self, "forced_install")
 
     @property
@@ -964,21 +1154,33 @@ class NdbRegisterDbserver(pulumi.CustomResource):
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
+        """
+        Name of db server vm. Should be used in Update Method only.
+        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="nxclusterId")
     def nxcluster_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        cluster on which you want to register the database server VM.
+        """
         return pulumi.get(self, "nxcluster_id")
 
     @property
     @pulumi.getter
     def password(self) -> pulumi.Output[Optional[str]]:
+        """
+        password of the NDB drive user account. Conflicts with ssh_key.
+        """
         return pulumi.get(self, "password")
 
     @property
     @pulumi.getter(name="postgresDatabases")
     def postgres_databases(self) -> pulumi.Output[Optional[Sequence['outputs.NdbRegisterDbserverPostgresDatabase']]]:
+        """
+        postgres info for dbserver
+        """
         return pulumi.get(self, "postgres_databases")
 
     @property
@@ -992,16 +1194,25 @@ class NdbRegisterDbserver(pulumi.CustomResource):
     @property
     @pulumi.getter
     def remove(self) -> pulumi.Output[Optional[bool]]:
+        """
+        - (Optional) Unregister the database from NDB. Default value is true
+        """
         return pulumi.get(self, "remove")
 
     @property
     @pulumi.getter(name="softRemove")
     def soft_remove(self) -> pulumi.Output[Optional[bool]]:
+        """
+        - (Optional) Soft remove. Default will be false
+        """
         return pulumi.get(self, "soft_remove")
 
     @property
     @pulumi.getter(name="sshKey")
     def ssh_key(self) -> pulumi.Output[Optional[str]]:
+        """
+        the private key. Conflicts with password.
+        """
         return pulumi.get(self, "ssh_key")
 
     @property
@@ -1022,11 +1233,17 @@ class NdbRegisterDbserver(pulumi.CustomResource):
     @property
     @pulumi.getter(name="updateNameDescriptionInCluster")
     def update_name_description_in_cluster(self) -> pulumi.Output[Optional[bool]]:
+        """
+        Updates the name and description in cluster. Should be used in Update Method only.
+        """
         return pulumi.get(self, "update_name_description_in_cluster")
 
     @property
     @pulumi.getter
     def username(self) -> pulumi.Output[Optional[str]]:
+        """
+        username of the NDB drive user account that has sudo access
+        """
         return pulumi.get(self, "username")
 
     @property
@@ -1042,6 +1259,9 @@ class NdbRegisterDbserver(pulumi.CustomResource):
     @property
     @pulumi.getter(name="vmIp")
     def vm_ip(self) -> pulumi.Output[str]:
+        """
+        IP address of the database server VM
+        """
         return pulumi.get(self, "vm_ip")
 
     @property
@@ -1052,5 +1272,8 @@ class NdbRegisterDbserver(pulumi.CustomResource):
     @property
     @pulumi.getter(name="workingDirectory")
     def working_directory(self) -> pulumi.Output[Optional[str]]:
+        """
+        working directory of postgres. Default is "/tmp"
+        """
         return pulumi.get(self, "working_directory")
 

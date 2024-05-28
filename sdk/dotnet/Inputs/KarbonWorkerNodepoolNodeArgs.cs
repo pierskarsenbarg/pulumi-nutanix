@@ -13,9 +13,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class KarbonWorkerNodepoolNodeArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// hostname of node
+        /// </summary>
         [Input("hostname")]
         public Input<string>? Hostname { get; set; }
 
+        /// <summary>
+        /// ipv4 address of node
+        /// </summary>
         [Input("ipv4Address")]
         public Input<string>? Ipv4Address { get; set; }
 

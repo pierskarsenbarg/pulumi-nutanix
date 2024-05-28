@@ -13,12 +13,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class NdbSoftwareVersionProfilePostgresDatabaseGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// db software notes
+        /// </summary>
         [Input("dbSoftwareNotes")]
         public Input<string>? DbSoftwareNotes { get; set; }
 
+        /// <summary>
+        /// os notes for software profile
+        /// </summary>
         [Input("osNotes")]
         public Input<string>? OsNotes { get; set; }
 
+        /// <summary>
+        /// source dbserver id
+        /// </summary>
         [Input("sourceDbserverId")]
         public Input<string>? SourceDbserverId { get; set; }
 

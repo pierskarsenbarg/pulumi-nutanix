@@ -15,17 +15,39 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("postgresDatabases")]
         private InputList<Inputs.NdbProfileNetworkProfilePostgresDatabaseGetArgs>? _postgresDatabases;
+
+        /// <summary>
+        /// Postgres Info to create network profile
+        /// 
+        /// * `postgres_database.single_instance`: (Optional) Info for postgres database to create single instance network profile.
+        /// * `postgres_database.single_instance.vlan_name`: (Required) specify the VLAN to provide the IP address used to connect the database from the public network.
+        /// * `postgres_database.single_instance.enable_ip_address_selection`: (Optional) If Advanced Network Segmentation is enabled, then this vLAN needs to be a static vLAN and needs to be true.
+        /// 
+        /// * `postgres_database.ha_instance`: (Optional) Info for craeting Network profile for HA instance
+        /// * `postgres_database.ha_instance.vlan_name`: (Required) specify the VLANs for network
+        /// * `postgres_database.ha_instance.cluster_name`: (Required) specify the cluster name associated with given VLANs
+        /// * `postgres_database.ha_instance.cluster_id`: (Optional) specify the cluster ids associated with given VLANs
+        /// * `postgres_database.ha_instance.num_of_clusters`: (Required) number of cluster attached to network profile
+        /// </summary>
         public InputList<Inputs.NdbProfileNetworkProfilePostgresDatabaseGetArgs> PostgresDatabases
         {
             get => _postgresDatabases ?? (_postgresDatabases = new InputList<Inputs.NdbProfileNetworkProfilePostgresDatabaseGetArgs>());
             set => _postgresDatabases = value;
         }
 
+        /// <summary>
+        /// Topology supported for network profile. Allowed values are "cluster" and "single"
+        /// </summary>
         [Input("topology", required: true)]
         public Input<string> Topology { get; set; } = null!;
 
         [Input("versionClusterAssociations")]
         private InputList<Inputs.NdbProfileNetworkProfileVersionClusterAssociationGetArgs>? _versionClusterAssociations;
+
+        /// <summary>
+        /// cluster associated with VLAN. this is used with Single instance for postgres database.
+        /// * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
+        /// </summary>
         public InputList<Inputs.NdbProfileNetworkProfileVersionClusterAssociationGetArgs> VersionClusterAssociations
         {
             get => _versionClusterAssociations ?? (_versionClusterAssociations = new InputList<Inputs.NdbProfileNetworkProfileVersionClusterAssociationGetArgs>());

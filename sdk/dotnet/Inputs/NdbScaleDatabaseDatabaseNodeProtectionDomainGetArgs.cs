@@ -24,12 +24,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("cloudId")]
         public Input<string>? CloudId { get; set; }
 
+        /// <summary>
+        /// date created for db instance
+        /// </summary>
         [Input("dateCreated")]
         public Input<string>? DateCreated { get; set; }
 
+        /// <summary>
+        /// date modified for instance
+        /// </summary>
         [Input("dateModified")]
         public Input<string>? DateModified { get; set; }
 
+        /// <summary>
+        /// description of database instance
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
@@ -39,6 +48,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("id")]
         public Input<string>? Id { get; set; }
 
+        /// <summary>
+        /// Name of database instance
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
@@ -52,7 +64,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<Inputs.NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyGetArgs>? _properties;
 
         /// <summary>
-        /// List of all the properties
+        /// properties of database created
         /// </summary>
         public InputList<Inputs.NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyGetArgs> Properties
         {
@@ -60,9 +72,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _properties = value;
         }
 
+        /// <summary>
+        /// status of instance
+        /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
+        /// <summary>
+        /// type of database
+        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 

@@ -12,15 +12,90 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a resource to create stretched vlans based on the input parameters.
+//
+// ## Example Usage
+//
+// ### resource to add stretched vlan in NDB
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewNdbStretchedVlan(ctx, "name", &nutanix.NdbStretchedVlanArgs{
+//				Description: pulumi.String("vlan desc updated"),
+//				Type:        pulumi.String("Static"),
+//				VlanIds: pulumi.StringArray{
+//					pulumi.String("{{ vlan_id_1 }}"),
+//					pulumi.String("{{ vlan_id_2 }}"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ### resource to update the strteched vlan with new gateway and subnet mask
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewNdbStretchedVlan(ctx, "name", &nutanix.NdbStretchedVlanArgs{
+//				Description: pulumi.String("vlan desc updated"),
+//				Metadata: &nutanix.NdbStretchedVlanMetadataArgs{
+//					Gateway:    pulumi.String("{{ gateway of vlans }}"),
+//					SubnetMask: pulumi.String("{{ subnet mask of vlans }}"),
+//				},
+//				Type: pulumi.String("Static"),
+//				VlanIds: pulumi.StringArray{
+//					pulumi.String("{{ vlan_id_1 }}"),
+//					pulumi.String("{{ vlan_id_2 }}"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type NdbStretchedVlan struct {
 	pulumi.CustomResourceState
 
-	Description pulumi.StringPtrOutput               `pulumi:"description"`
-	Metadata    NdbStretchedVlanMetadataOutput       `pulumi:"metadata"`
-	Name        pulumi.StringOutput                  `pulumi:"name"`
-	Type        pulumi.StringOutput                  `pulumi:"type"`
-	VlanIds     pulumi.StringArrayOutput             `pulumi:"vlanIds"`
-	VlansLists  NdbStretchedVlanVlansListArrayOutput `pulumi:"vlansLists"`
+	// Description of stretched vlan
+	Description pulumi.StringPtrOutput `pulumi:"description"`
+	// Update the stretched VLAN Gateway and Subnet Mask IP address
+	// * `metadata.gateway`: Update the gateway of stretched vlan
+	// * `metadata.subnet_mask`: Update the subnetMask of stretched vlan
+	Metadata NdbStretchedVlanMetadataOutput `pulumi:"metadata"`
+	// name for the stretched VLAN
+	Name pulumi.StringOutput `pulumi:"name"`
+	// type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
+	Type pulumi.StringOutput `pulumi:"type"`
+	// list of vlan ids to be added in NDB
+	VlanIds pulumi.StringArrayOutput `pulumi:"vlanIds"`
+	// properties of vlans
+	VlansLists NdbStretchedVlanVlansListArrayOutput `pulumi:"vlansLists"`
 }
 
 // NewNdbStretchedVlan registers a new resource with the given unique name, arguments, and options.
@@ -59,21 +134,37 @@ func GetNdbStretchedVlan(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering NdbStretchedVlan resources.
 type ndbStretchedVlanState struct {
-	Description *string                     `pulumi:"description"`
-	Metadata    *NdbStretchedVlanMetadata   `pulumi:"metadata"`
-	Name        *string                     `pulumi:"name"`
-	Type        *string                     `pulumi:"type"`
-	VlanIds     []string                    `pulumi:"vlanIds"`
-	VlansLists  []NdbStretchedVlanVlansList `pulumi:"vlansLists"`
+	// Description of stretched vlan
+	Description *string `pulumi:"description"`
+	// Update the stretched VLAN Gateway and Subnet Mask IP address
+	// * `metadata.gateway`: Update the gateway of stretched vlan
+	// * `metadata.subnet_mask`: Update the subnetMask of stretched vlan
+	Metadata *NdbStretchedVlanMetadata `pulumi:"metadata"`
+	// name for the stretched VLAN
+	Name *string `pulumi:"name"`
+	// type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
+	Type *string `pulumi:"type"`
+	// list of vlan ids to be added in NDB
+	VlanIds []string `pulumi:"vlanIds"`
+	// properties of vlans
+	VlansLists []NdbStretchedVlanVlansList `pulumi:"vlansLists"`
 }
 
 type NdbStretchedVlanState struct {
+	// Description of stretched vlan
 	Description pulumi.StringPtrInput
-	Metadata    NdbStretchedVlanMetadataPtrInput
-	Name        pulumi.StringPtrInput
-	Type        pulumi.StringPtrInput
-	VlanIds     pulumi.StringArrayInput
-	VlansLists  NdbStretchedVlanVlansListArrayInput
+	// Update the stretched VLAN Gateway and Subnet Mask IP address
+	// * `metadata.gateway`: Update the gateway of stretched vlan
+	// * `metadata.subnet_mask`: Update the subnetMask of stretched vlan
+	Metadata NdbStretchedVlanMetadataPtrInput
+	// name for the stretched VLAN
+	Name pulumi.StringPtrInput
+	// type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
+	Type pulumi.StringPtrInput
+	// list of vlan ids to be added in NDB
+	VlanIds pulumi.StringArrayInput
+	// properties of vlans
+	VlansLists NdbStretchedVlanVlansListArrayInput
 }
 
 func (NdbStretchedVlanState) ElementType() reflect.Type {
@@ -81,20 +172,34 @@ func (NdbStretchedVlanState) ElementType() reflect.Type {
 }
 
 type ndbStretchedVlanArgs struct {
-	Description *string                   `pulumi:"description"`
-	Metadata    *NdbStretchedVlanMetadata `pulumi:"metadata"`
-	Name        *string                   `pulumi:"name"`
-	Type        string                    `pulumi:"type"`
-	VlanIds     []string                  `pulumi:"vlanIds"`
+	// Description of stretched vlan
+	Description *string `pulumi:"description"`
+	// Update the stretched VLAN Gateway and Subnet Mask IP address
+	// * `metadata.gateway`: Update the gateway of stretched vlan
+	// * `metadata.subnet_mask`: Update the subnetMask of stretched vlan
+	Metadata *NdbStretchedVlanMetadata `pulumi:"metadata"`
+	// name for the stretched VLAN
+	Name *string `pulumi:"name"`
+	// type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
+	Type string `pulumi:"type"`
+	// list of vlan ids to be added in NDB
+	VlanIds []string `pulumi:"vlanIds"`
 }
 
 // The set of arguments for constructing a NdbStretchedVlan resource.
 type NdbStretchedVlanArgs struct {
+	// Description of stretched vlan
 	Description pulumi.StringPtrInput
-	Metadata    NdbStretchedVlanMetadataPtrInput
-	Name        pulumi.StringPtrInput
-	Type        pulumi.StringInput
-	VlanIds     pulumi.StringArrayInput
+	// Update the stretched VLAN Gateway and Subnet Mask IP address
+	// * `metadata.gateway`: Update the gateway of stretched vlan
+	// * `metadata.subnet_mask`: Update the subnetMask of stretched vlan
+	Metadata NdbStretchedVlanMetadataPtrInput
+	// name for the stretched VLAN
+	Name pulumi.StringPtrInput
+	// type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
+	Type pulumi.StringInput
+	// list of vlan ids to be added in NDB
+	VlanIds pulumi.StringArrayInput
 }
 
 func (NdbStretchedVlanArgs) ElementType() reflect.Type {
@@ -184,26 +289,34 @@ func (o NdbStretchedVlanOutput) ToNdbStretchedVlanOutputWithContext(ctx context.
 	return o
 }
 
+// Description of stretched vlan
 func (o NdbStretchedVlanOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NdbStretchedVlan) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
+// Update the stretched VLAN Gateway and Subnet Mask IP address
+// * `metadata.gateway`: Update the gateway of stretched vlan
+// * `metadata.subnet_mask`: Update the subnetMask of stretched vlan
 func (o NdbStretchedVlanOutput) Metadata() NdbStretchedVlanMetadataOutput {
 	return o.ApplyT(func(v *NdbStretchedVlan) NdbStretchedVlanMetadataOutput { return v.Metadata }).(NdbStretchedVlanMetadataOutput)
 }
 
+// name for the stretched VLAN
 func (o NdbStretchedVlanOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbStretchedVlan) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
 func (o NdbStretchedVlanOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *NdbStretchedVlan) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }
 
+// list of vlan ids to be added in NDB
 func (o NdbStretchedVlanOutput) VlanIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NdbStretchedVlan) pulumi.StringArrayOutput { return v.VlanIds }).(pulumi.StringArrayOutput)
 }
 
+// properties of vlans
 func (o NdbStretchedVlanOutput) VlansLists() NdbStretchedVlanVlansListArrayOutput {
 	return o.ApplyT(func(v *NdbStretchedVlan) NdbStretchedVlanVlansListArrayOutput { return v.VlansLists }).(NdbStretchedVlanVlansListArrayOutput)
 }

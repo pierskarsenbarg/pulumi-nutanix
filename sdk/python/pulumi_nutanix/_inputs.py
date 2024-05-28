@@ -4877,6 +4877,14 @@ class KarbonWorkerNodepoolAhvConfigArgs:
                  iscsi_network_uuid: Optional[pulumi.Input[str]] = None,
                  memory_mib: Optional[pulumi.Input[int]] = None,
                  prism_element_cluster_uuid: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] network_uuid: - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+        :param pulumi.Input[int] cpu: - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+        :param pulumi.Input[int] disk_mib: - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+        :param pulumi.Input[str] iscsi_network_uuid: VM network UUID for isolating iscsi data traffic.
+        :param pulumi.Input[int] memory_mib: - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+        :param pulumi.Input[str] prism_element_cluster_uuid: - (Optional) The unique universal identifier (UUID) of the Prism Element
+        """
         pulumi.set(__self__, "network_uuid", network_uuid)
         if cpu is not None:
             pulumi.set(__self__, "cpu", cpu)
@@ -4892,6 +4900,9 @@ class KarbonWorkerNodepoolAhvConfigArgs:
     @property
     @pulumi.getter(name="networkUuid")
     def network_uuid(self) -> pulumi.Input[str]:
+        """
+        - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+        """
         return pulumi.get(self, "network_uuid")
 
     @network_uuid.setter
@@ -4901,6 +4912,9 @@ class KarbonWorkerNodepoolAhvConfigArgs:
     @property
     @pulumi.getter
     def cpu(self) -> Optional[pulumi.Input[int]]:
+        """
+        - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+        """
         return pulumi.get(self, "cpu")
 
     @cpu.setter
@@ -4910,6 +4924,9 @@ class KarbonWorkerNodepoolAhvConfigArgs:
     @property
     @pulumi.getter(name="diskMib")
     def disk_mib(self) -> Optional[pulumi.Input[int]]:
+        """
+        - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+        """
         return pulumi.get(self, "disk_mib")
 
     @disk_mib.setter
@@ -4919,6 +4936,9 @@ class KarbonWorkerNodepoolAhvConfigArgs:
     @property
     @pulumi.getter(name="iscsiNetworkUuid")
     def iscsi_network_uuid(self) -> Optional[pulumi.Input[str]]:
+        """
+        VM network UUID for isolating iscsi data traffic.
+        """
         return pulumi.get(self, "iscsi_network_uuid")
 
     @iscsi_network_uuid.setter
@@ -4928,6 +4948,9 @@ class KarbonWorkerNodepoolAhvConfigArgs:
     @property
     @pulumi.getter(name="memoryMib")
     def memory_mib(self) -> Optional[pulumi.Input[int]]:
+        """
+        - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+        """
         return pulumi.get(self, "memory_mib")
 
     @memory_mib.setter
@@ -4937,6 +4960,9 @@ class KarbonWorkerNodepoolAhvConfigArgs:
     @property
     @pulumi.getter(name="prismElementClusterUuid")
     def prism_element_cluster_uuid(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Optional) The unique universal identifier (UUID) of the Prism Element
+        """
         return pulumi.get(self, "prism_element_cluster_uuid")
 
     @prism_element_cluster_uuid.setter
@@ -4949,6 +4975,10 @@ class KarbonWorkerNodepoolNodeArgs:
     def __init__(__self__, *,
                  hostname: Optional[pulumi.Input[str]] = None,
                  ipv4_address: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] hostname: hostname of node
+        :param pulumi.Input[str] ipv4_address: ipv4 address of node
+        """
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
         if ipv4_address is not None:
@@ -4957,6 +4987,9 @@ class KarbonWorkerNodepoolNodeArgs:
     @property
     @pulumi.getter
     def hostname(self) -> Optional[pulumi.Input[str]]:
+        """
+        hostname of node
+        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -4966,6 +4999,9 @@ class KarbonWorkerNodepoolNodeArgs:
     @property
     @pulumi.getter(name="ipv4Address")
     def ipv4_address(self) -> Optional[pulumi.Input[str]]:
+        """
+        ipv4 address of node
+        """
         return pulumi.get(self, "ipv4_address")
 
     @ipv4_address.setter
@@ -19689,6 +19725,13 @@ class NdbDbserverVmMaintenanceTasksArgs:
     def __init__(__self__, *,
                  maintenance_window_id: Optional[pulumi.Input[str]] = None,
                  tasks: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmMaintenanceTasksTaskArgs']]]] = None):
+        """
+        :param pulumi.Input[str] maintenance_window_id: Associate an existing maintenance window id. NDB starts OS patching or database patching as per the schedule defined in the maintenance window.
+        :param pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmMaintenanceTasksTaskArgs']]] tasks: Tasks for the maintenance.
+               * `tasks.task_type`: use this option if you want NDB to perform database patching or OS patching automatically. Supports [ OS_PATCHING, DB_PATCHING ].
+               * `tasks.pre_command`: add pre (operating system and database patching) commands.
+               * `tasks.post_command`:add post (operating system and database patching) commands.
+        """
         if maintenance_window_id is not None:
             pulumi.set(__self__, "maintenance_window_id", maintenance_window_id)
         if tasks is not None:
@@ -19697,6 +19740,9 @@ class NdbDbserverVmMaintenanceTasksArgs:
     @property
     @pulumi.getter(name="maintenanceWindowId")
     def maintenance_window_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        Associate an existing maintenance window id. NDB starts OS patching or database patching as per the schedule defined in the maintenance window.
+        """
         return pulumi.get(self, "maintenance_window_id")
 
     @maintenance_window_id.setter
@@ -19706,6 +19752,12 @@ class NdbDbserverVmMaintenanceTasksArgs:
     @property
     @pulumi.getter
     def tasks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmMaintenanceTasksTaskArgs']]]]:
+        """
+        Tasks for the maintenance.
+        * `tasks.task_type`: use this option if you want NDB to perform database patching or OS patching automatically. Supports [ OS_PATCHING, DB_PATCHING ].
+        * `tasks.pre_command`: add pre (operating system and database patching) commands.
+        * `tasks.post_command`:add post (operating system and database patching) commands.
+        """
         return pulumi.get(self, "tasks")
 
     @tasks.setter
@@ -19759,6 +19811,10 @@ class NdbDbserverVmPostgresDatabaseArgs:
     def __init__(__self__, *,
                  vm_name: pulumi.Input[str],
                  client_public_key: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] vm_name: name for the database server VM.
+        :param pulumi.Input[str] client_public_key: use SSH public keys to access the database server VM.
+        """
         pulumi.set(__self__, "vm_name", vm_name)
         if client_public_key is not None:
             pulumi.set(__self__, "client_public_key", client_public_key)
@@ -19766,6 +19822,9 @@ class NdbDbserverVmPostgresDatabaseArgs:
     @property
     @pulumi.getter(name="vmName")
     def vm_name(self) -> pulumi.Input[str]:
+        """
+        name for the database server VM.
+        """
         return pulumi.get(self, "vm_name")
 
     @vm_name.setter
@@ -19775,6 +19834,9 @@ class NdbDbserverVmPostgresDatabaseArgs:
     @property
     @pulumi.getter(name="clientPublicKey")
     def client_public_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        use SSH public keys to access the database server VM.
+        """
         return pulumi.get(self, "client_public_key")
 
     @client_public_key.setter
@@ -21269,6 +21331,10 @@ class NdbProfileClusterAvailabilityArgs:
                  owner_id: Optional[pulumi.Input[str]] = None,
                  profile_id: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] nx_cluster_id: cluster on which profile created
+        :param pulumi.Input[str] status: status of profile
+        """
         if date_created is not None:
             pulumi.set(__self__, "date_created", date_created)
         if date_modified is not None:
@@ -21303,6 +21369,9 @@ class NdbProfileClusterAvailabilityArgs:
     @property
     @pulumi.getter(name="nxClusterId")
     def nx_cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        cluster on which profile created
+        """
         return pulumi.get(self, "nx_cluster_id")
 
     @nx_cluster_id.setter
@@ -21330,6 +21399,9 @@ class NdbProfileClusterAvailabilityArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        status of profile
+        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -21343,6 +21415,11 @@ class NdbProfileComputeProfileArgs:
                  core_per_cpu: Optional[pulumi.Input[str]] = None,
                  cpus: Optional[pulumi.Input[str]] = None,
                  memory_size: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] core_per_cpu: number of cores per vCPU for the database server VM.
+        :param pulumi.Input[str] cpus: number of vCPUs for the database server VM.
+        :param pulumi.Input[str] memory_size: amount of memory for the database server VM.
+        """
         if core_per_cpu is not None:
             pulumi.set(__self__, "core_per_cpu", core_per_cpu)
         if cpus is not None:
@@ -21353,6 +21430,9 @@ class NdbProfileComputeProfileArgs:
     @property
     @pulumi.getter(name="corePerCpu")
     def core_per_cpu(self) -> Optional[pulumi.Input[str]]:
+        """
+        number of cores per vCPU for the database server VM.
+        """
         return pulumi.get(self, "core_per_cpu")
 
     @core_per_cpu.setter
@@ -21362,6 +21442,9 @@ class NdbProfileComputeProfileArgs:
     @property
     @pulumi.getter
     def cpus(self) -> Optional[pulumi.Input[str]]:
+        """
+        number of vCPUs for the database server VM.
+        """
         return pulumi.get(self, "cpus")
 
     @cpus.setter
@@ -21371,6 +21454,9 @@ class NdbProfileComputeProfileArgs:
     @property
     @pulumi.getter(name="memorySize")
     def memory_size(self) -> Optional[pulumi.Input[str]]:
+        """
+        amount of memory for the database server VM.
+        """
         return pulumi.get(self, "memory_size")
 
     @memory_size.setter
@@ -21382,12 +21468,68 @@ class NdbProfileComputeProfileArgs:
 class NdbProfileDatabaseParameterProfileArgs:
     def __init__(__self__, *,
                  postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfilePostgresDatabaseArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfilePostgresDatabaseArgs']]] postgres_databases: Database parameters suuported for postgress.
+               * `postgres_database.max_connections`: (Optional) Determines the maximum number of concurrent connections to the database server. The default is set to 100
+               * `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero. wal_level must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
+               * `postgres_database.effective_io_concurrency`: (Optional) Sets the number of concurrent disk I/O operations that PostgreSQL expects can be executed simultaneously. Raising this value will increase the number of I/O operations that any individual PostgreSQL session attempts to initiate in parallel.
+               * `postgres_database.timezone`: (Optional) Sets the time zone for displaying and interpreting time stamps. Defult is UTC .
+               * `postgres_database.max_prepared_transactions`: (Optional) Sets the maximum number of transactions that can be in the prepared state simultaneously. Setting this parameter to zero (which is the default) disables the prepared-transaction feature.
+               * `postgres_database.max_locks_per_transaction`: (Optional) This parameter controls the average number of object locks allocated for each transaction; individual transactions can lock more objects as long as the locks of all transactions fit in the lock table. Default is 64.
+               * `postgres_database.max_wal_senders`: (Optional) Specifies the maximum number of concurrent connections from standby servers or streaming base backup clients (i.e., the maximum number of simultaneously running WAL sender processes). The default is 10.
+               * `postgres_database.max_worker_processes`: (Optional) Sets the maximum number of background processes that the system can support. The default is 8.
+               * `postgres_database.min_wal_size`: (Optional) As long as WAL disk usage stays below this setting, old WAL files are always recycled for future use at a checkpoint, rather than removed. This can be used to ensure that enough WAL space is reserved to handle spikes in WAL usage, for example when running large batch jobs. The default is 80 MB.
+               * `postgres_database.max_wal_size`: (Optional) Maximum size to let the WAL grow to between automatic WAL checkpoints. The default is 1 GB
+               * `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
+               * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however, track_counts must also be enabled for autovacuum to work.
+               * `postgres_database.checkpoint_completion_target`: (Optional)
+               Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
+               * `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
+               * `postgres_database.autovacuum_vacuum_threshold`: (Optional) Min number of row updates before vacuum. Minimum number of tuple updates or deletes prior to vacuum. Take value in KB. Default is 50 .
+               * `postgres_database.autovacuum_vacuum_scale_factor`: (Optional) Number of tuple updates or deletes prior to vacuum as a fraction of reltuples. Default is 0.2
+               * `postgres_database.autovacuum_work_mem`: (Optional) Sets the maximum memory to be used by each autovacuum worker process. Unit is in KB. Default is -1
+               * `postgres_database.autovacuum_max_workers`: (Optional) Sets the maximum number of simultaneously running autovacuum worker processes. Default is 3
+               * `postgres_database.autovacuum_vacuum_cost_delay`: (Optional) Vacuum cost delay in milliseconds, for autovacuum. Specifies the cost delay value that will be used in automatic VACUUM operation. Default is 2ms
+               * `postgres_database.wal_buffers`: (Optional)
+               Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
+               * `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
+               * `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
+               * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the pg_wal directory. Default is 700 .
+        """
         if postgres_databases is not None:
             pulumi.set(__self__, "postgres_databases", postgres_databases)
 
     @property
     @pulumi.getter(name="postgresDatabases")
     def postgres_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfilePostgresDatabaseArgs']]]]:
+        """
+        Database parameters suuported for postgress.
+        * `postgres_database.max_connections`: (Optional) Determines the maximum number of concurrent connections to the database server. The default is set to 100
+        * `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero. wal_level must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
+        * `postgres_database.effective_io_concurrency`: (Optional) Sets the number of concurrent disk I/O operations that PostgreSQL expects can be executed simultaneously. Raising this value will increase the number of I/O operations that any individual PostgreSQL session attempts to initiate in parallel.
+        * `postgres_database.timezone`: (Optional) Sets the time zone for displaying and interpreting time stamps. Defult is UTC .
+        * `postgres_database.max_prepared_transactions`: (Optional) Sets the maximum number of transactions that can be in the prepared state simultaneously. Setting this parameter to zero (which is the default) disables the prepared-transaction feature.
+        * `postgres_database.max_locks_per_transaction`: (Optional) This parameter controls the average number of object locks allocated for each transaction; individual transactions can lock more objects as long as the locks of all transactions fit in the lock table. Default is 64.
+        * `postgres_database.max_wal_senders`: (Optional) Specifies the maximum number of concurrent connections from standby servers or streaming base backup clients (i.e., the maximum number of simultaneously running WAL sender processes). The default is 10.
+        * `postgres_database.max_worker_processes`: (Optional) Sets the maximum number of background processes that the system can support. The default is 8.
+        * `postgres_database.min_wal_size`: (Optional) As long as WAL disk usage stays below this setting, old WAL files are always recycled for future use at a checkpoint, rather than removed. This can be used to ensure that enough WAL space is reserved to handle spikes in WAL usage, for example when running large batch jobs. The default is 80 MB.
+        * `postgres_database.max_wal_size`: (Optional) Maximum size to let the WAL grow to between automatic WAL checkpoints. The default is 1 GB
+        * `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
+        * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however, track_counts must also be enabled for autovacuum to work.
+        * `postgres_database.checkpoint_completion_target`: (Optional)
+        Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
+        * `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
+        * `postgres_database.autovacuum_vacuum_threshold`: (Optional) Min number of row updates before vacuum. Minimum number of tuple updates or deletes prior to vacuum. Take value in KB. Default is 50 .
+        * `postgres_database.autovacuum_vacuum_scale_factor`: (Optional) Number of tuple updates or deletes prior to vacuum as a fraction of reltuples. Default is 0.2
+        * `postgres_database.autovacuum_work_mem`: (Optional) Sets the maximum memory to be used by each autovacuum worker process. Unit is in KB. Default is -1
+        * `postgres_database.autovacuum_max_workers`: (Optional) Sets the maximum number of simultaneously running autovacuum worker processes. Default is 3
+        * `postgres_database.autovacuum_vacuum_cost_delay`: (Optional) Vacuum cost delay in milliseconds, for autovacuum. Specifies the cost delay value that will be used in automatic VACUUM operation. Default is 2ms
+        * `postgres_database.wal_buffers`: (Optional)
+        Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
+        * `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
+        * `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
+        * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the pg_wal directory. Default is 700 .
+        """
         return pulumi.get(self, "postgres_databases")
 
     @postgres_databases.setter
@@ -21682,6 +21824,22 @@ class NdbProfileNetworkProfileArgs:
                  topology: pulumi.Input[str],
                  postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfilePostgresDatabaseArgs']]]] = None,
                  version_cluster_associations: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfileVersionClusterAssociationArgs']]]] = None):
+        """
+        :param pulumi.Input[str] topology: Topology supported for network profile. Allowed values are "cluster" and "single"
+        :param pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfilePostgresDatabaseArgs']]] postgres_databases: Postgres Info to create network profile
+               
+               * `postgres_database.single_instance`: (Optional) Info for postgres database to create single instance network profile.
+               * `postgres_database.single_instance.vlan_name`: (Required) specify the VLAN to provide the IP address used to connect the database from the public network.
+               * `postgres_database.single_instance.enable_ip_address_selection`: (Optional) If Advanced Network Segmentation is enabled, then this vLAN needs to be a static vLAN and needs to be true.
+               
+               * `postgres_database.ha_instance`: (Optional) Info for craeting Network profile for HA instance
+               * `postgres_database.ha_instance.vlan_name`: (Required) specify the VLANs for network
+               * `postgres_database.ha_instance.cluster_name`: (Required) specify the cluster name associated with given VLANs
+               * `postgres_database.ha_instance.cluster_id`: (Optional) specify the cluster ids associated with given VLANs
+               * `postgres_database.ha_instance.num_of_clusters`: (Required) number of cluster attached to network profile
+        :param pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfileVersionClusterAssociationArgs']]] version_cluster_associations: cluster associated with VLAN. this is used with Single instance for postgres database.
+               * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
+        """
         pulumi.set(__self__, "topology", topology)
         if postgres_databases is not None:
             pulumi.set(__self__, "postgres_databases", postgres_databases)
@@ -21691,6 +21849,9 @@ class NdbProfileNetworkProfileArgs:
     @property
     @pulumi.getter
     def topology(self) -> pulumi.Input[str]:
+        """
+        Topology supported for network profile. Allowed values are "cluster" and "single"
+        """
         return pulumi.get(self, "topology")
 
     @topology.setter
@@ -21700,6 +21861,19 @@ class NdbProfileNetworkProfileArgs:
     @property
     @pulumi.getter(name="postgresDatabases")
     def postgres_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfilePostgresDatabaseArgs']]]]:
+        """
+        Postgres Info to create network profile
+
+        * `postgres_database.single_instance`: (Optional) Info for postgres database to create single instance network profile.
+        * `postgres_database.single_instance.vlan_name`: (Required) specify the VLAN to provide the IP address used to connect the database from the public network.
+        * `postgres_database.single_instance.enable_ip_address_selection`: (Optional) If Advanced Network Segmentation is enabled, then this vLAN needs to be a static vLAN and needs to be true.
+
+        * `postgres_database.ha_instance`: (Optional) Info for craeting Network profile for HA instance
+        * `postgres_database.ha_instance.vlan_name`: (Required) specify the VLANs for network
+        * `postgres_database.ha_instance.cluster_name`: (Required) specify the cluster name associated with given VLANs
+        * `postgres_database.ha_instance.cluster_id`: (Optional) specify the cluster ids associated with given VLANs
+        * `postgres_database.ha_instance.num_of_clusters`: (Required) number of cluster attached to network profile
+        """
         return pulumi.get(self, "postgres_databases")
 
     @postgres_databases.setter
@@ -21709,6 +21883,10 @@ class NdbProfileNetworkProfileArgs:
     @property
     @pulumi.getter(name="versionClusterAssociations")
     def version_cluster_associations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfileVersionClusterAssociationArgs']]]]:
+        """
+        cluster associated with VLAN. this is used with Single instance for postgres database.
+        * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
+        """
         return pulumi.get(self, "version_cluster_associations")
 
     @version_cluster_associations.setter
@@ -21831,11 +22009,17 @@ class NdbProfileNetworkProfilePostgresDatabaseSingleInstanceArgs:
 class NdbProfileNetworkProfileVersionClusterAssociationArgs:
     def __init__(__self__, *,
                  nx_cluster_id: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] nx_cluster_id: cluster on which profile created
+        """
         pulumi.set(__self__, "nx_cluster_id", nx_cluster_id)
 
     @property
     @pulumi.getter(name="nxClusterId")
     def nx_cluster_id(self) -> pulumi.Input[str]:
+        """
+        cluster on which profile created
+        """
         return pulumi.get(self, "nx_cluster_id")
 
     @nx_cluster_id.setter
@@ -21849,6 +22033,16 @@ class NdbProfileSoftwareProfileArgs:
                  topology: pulumi.Input[str],
                  available_cluster_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileSoftwareProfilePostgresDatabaseArgs']]]] = None):
+        """
+        :param pulumi.Input[str] topology: Topology of software profile. Allowed values are "cluster" and "single"
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] available_cluster_ids: specify Nutanix clusters where this profile is available.
+        :param pulumi.Input[Sequence[pulumi.Input['NdbProfileSoftwareProfilePostgresDatabaseArgs']]] postgres_databases: Software profile info about postgres database.
+               * `postgres_database.source_dbserver_id`: source dbserver id where postgress software will be installed.
+               * `postgres_database.base_profile_version_name`: name for the software profile version.
+               * `postgres_database.base_profile_version_description`: description for the software profile version.
+               * `postgres_database.os_notes`: a note to provide additional information about the operating system
+               * `postgres_database.db_software_notes`: a note to provide additional information about the database software.
+        """
         pulumi.set(__self__, "topology", topology)
         if available_cluster_ids is not None:
             pulumi.set(__self__, "available_cluster_ids", available_cluster_ids)
@@ -21858,6 +22052,9 @@ class NdbProfileSoftwareProfileArgs:
     @property
     @pulumi.getter
     def topology(self) -> pulumi.Input[str]:
+        """
+        Topology of software profile. Allowed values are "cluster" and "single"
+        """
         return pulumi.get(self, "topology")
 
     @topology.setter
@@ -21867,6 +22064,9 @@ class NdbProfileSoftwareProfileArgs:
     @property
     @pulumi.getter(name="availableClusterIds")
     def available_cluster_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        specify Nutanix clusters where this profile is available.
+        """
         return pulumi.get(self, "available_cluster_ids")
 
     @available_cluster_ids.setter
@@ -21876,6 +22076,14 @@ class NdbProfileSoftwareProfileArgs:
     @property
     @pulumi.getter(name="postgresDatabases")
     def postgres_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileSoftwareProfilePostgresDatabaseArgs']]]]:
+        """
+        Software profile info about postgres database.
+        * `postgres_database.source_dbserver_id`: source dbserver id where postgress software will be installed.
+        * `postgres_database.base_profile_version_name`: name for the software profile version.
+        * `postgres_database.base_profile_version_description`: description for the software profile version.
+        * `postgres_database.os_notes`: a note to provide additional information about the operating system
+        * `postgres_database.db_software_notes`: a note to provide additional information about the database software.
+        """
         return pulumi.get(self, "postgres_databases")
 
     @postgres_databases.setter
@@ -21968,6 +22176,14 @@ class NdbProfileVersionArgs:
                  type: Optional[pulumi.Input[str]] = None,
                  version: Optional[pulumi.Input[str]] = None,
                  version_cluster_associations: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileVersionVersionClusterAssociationArgs']]]] = None):
+        """
+        :param pulumi.Input[str] description: Description of profile
+        :param pulumi.Input[str] engine_type: Engine Type of database
+        :param pulumi.Input[str] name: Name of profile
+        :param pulumi.Input[str] owner: owner  of profile
+        :param pulumi.Input[bool] published: Publish for all users
+        :param pulumi.Input[str] status: status of profile
+        """
         if db_version is not None:
             pulumi.set(__self__, "db_version", db_version)
         if deprecated is not None:
@@ -22024,6 +22240,9 @@ class NdbProfileVersionArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        Description of profile
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -22033,6 +22252,9 @@ class NdbProfileVersionArgs:
     @property
     @pulumi.getter(name="engineType")
     def engine_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Engine Type of database
+        """
         return pulumi.get(self, "engine_type")
 
     @engine_type.setter
@@ -22051,6 +22273,9 @@ class NdbProfileVersionArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of profile
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -22060,6 +22285,9 @@ class NdbProfileVersionArgs:
     @property
     @pulumi.getter
     def owner(self) -> Optional[pulumi.Input[str]]:
+        """
+        owner  of profile
+        """
         return pulumi.get(self, "owner")
 
     @owner.setter
@@ -22096,6 +22324,9 @@ class NdbProfileVersionArgs:
     @property
     @pulumi.getter
     def published(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Publish for all users
+        """
         return pulumi.get(self, "published")
 
     @published.setter
@@ -22105,6 +22336,9 @@ class NdbProfileVersionArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        status of profile
+        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -22163,6 +22397,9 @@ class NdbProfileVersionPropertyArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  secure: Optional[pulumi.Input[bool]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: Name of profile
+        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if secure is not None:
@@ -22173,6 +22410,9 @@ class NdbProfileVersionPropertyArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of profile
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -22209,6 +22449,10 @@ class NdbProfileVersionVersionClusterAssociationArgs:
                  profile_version_id: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileVersionVersionClusterAssociationPropertyArgs']]]] = None,
                  status: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] nx_cluster_id: cluster on which profile created
+        :param pulumi.Input[str] status: status of profile
+        """
         if date_created is not None:
             pulumi.set(__self__, "date_created", date_created)
         if date_modified is not None:
@@ -22247,6 +22491,9 @@ class NdbProfileVersionVersionClusterAssociationArgs:
     @property
     @pulumi.getter(name="nxClusterId")
     def nx_cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        cluster on which profile created
+        """
         return pulumi.get(self, "nx_cluster_id")
 
     @nx_cluster_id.setter
@@ -22292,6 +22539,9 @@ class NdbProfileVersionVersionClusterAssociationArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        status of profile
+        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -22305,6 +22555,9 @@ class NdbProfileVersionVersionClusterAssociationPropertyArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  secure: Optional[pulumi.Input[bool]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: Name of profile
+        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if secure is not None:
@@ -22315,6 +22568,9 @@ class NdbProfileVersionVersionClusterAssociationPropertyArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of profile
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -26043,6 +26299,10 @@ class NdbRegisterDbserverCredentialArgs:
                  password: pulumi.Input[str],
                  username: pulumi.Input[str],
                  label: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] password: password of the NDB drive user account. Conflicts with ssh_key.
+        :param pulumi.Input[str] username: username of the NDB drive user account that has sudo access
+        """
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "username", username)
         if label is not None:
@@ -26051,6 +26311,9 @@ class NdbRegisterDbserverCredentialArgs:
     @property
     @pulumi.getter
     def password(self) -> pulumi.Input[str]:
+        """
+        password of the NDB drive user account. Conflicts with ssh_key.
+        """
         return pulumi.get(self, "password")
 
     @password.setter
@@ -26060,6 +26323,9 @@ class NdbRegisterDbserverCredentialArgs:
     @property
     @pulumi.getter
     def username(self) -> pulumi.Input[str]:
+        """
+        username of the NDB drive user account that has sudo access
+        """
         return pulumi.get(self, "username")
 
     @username.setter
@@ -26081,6 +26347,10 @@ class NdbRegisterDbserverPostgresDatabaseArgs:
     def __init__(__self__, *,
                  listener_port: Optional[pulumi.Input[str]] = None,
                  postgres_software_home: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] listener_port: listener port of db server
+        :param pulumi.Input[str] postgres_software_home: path to the PostgreSQL home directory in which the PostgreSQL software is installed
+        """
         if listener_port is not None:
             pulumi.set(__self__, "listener_port", listener_port)
         if postgres_software_home is not None:
@@ -26089,6 +26359,9 @@ class NdbRegisterDbserverPostgresDatabaseArgs:
     @property
     @pulumi.getter(name="listenerPort")
     def listener_port(self) -> Optional[pulumi.Input[str]]:
+        """
+        listener port of db server
+        """
         return pulumi.get(self, "listener_port")
 
     @listener_port.setter
@@ -26098,6 +26371,9 @@ class NdbRegisterDbserverPostgresDatabaseArgs:
     @property
     @pulumi.getter(name="postgresSoftwareHome")
     def postgres_software_home(self) -> Optional[pulumi.Input[str]]:
+        """
+        path to the PostgreSQL home directory in which the PostgreSQL software is installed
+        """
         return pulumi.get(self, "postgres_software_home")
 
     @postgres_software_home.setter
@@ -26110,6 +26386,9 @@ class NdbRegisterDbserverPropertyArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: Name of db server vm. Should be used in Update Method only.
+        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -26118,6 +26397,9 @@ class NdbRegisterDbserverPropertyArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of db server vm. Should be used in Update Method only.
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -26221,7 +26503,14 @@ class NdbScaleDatabaseDatabaseNodeArgs:
                  status: Optional[pulumi.Input[str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeTagArgs']]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodePropertyArgs']]] properties: List of all the properties
+        :param pulumi.Input[str] date_created: date created for db instance
+        :param pulumi.Input[str] date_modified: date modified for instance
+        :param pulumi.Input[str] description: description of database instance
+        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeInfoArgs']]] infos: info of instance
+        :param pulumi.Input[str] name: Name of database instance
+        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodePropertyArgs']]] properties: properties of database created
+        :param pulumi.Input[str] status: status of instance
+        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeTagArgs']]] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
         """
         if access_level is not None:
             pulumi.set(__self__, "access_level", access_level)
@@ -26290,6 +26579,9 @@ class NdbScaleDatabaseDatabaseNodeArgs:
     @property
     @pulumi.getter(name="dateCreated")
     def date_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        date created for db instance
+        """
         return pulumi.get(self, "date_created")
 
     @date_created.setter
@@ -26299,6 +26591,9 @@ class NdbScaleDatabaseDatabaseNodeArgs:
     @property
     @pulumi.getter(name="dateModified")
     def date_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        date modified for instance
+        """
         return pulumi.get(self, "date_modified")
 
     @date_modified.setter
@@ -26326,6 +26621,9 @@ class NdbScaleDatabaseDatabaseNodeArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        description of database instance
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -26344,6 +26642,9 @@ class NdbScaleDatabaseDatabaseNodeArgs:
     @property
     @pulumi.getter
     def infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeInfoArgs']]]]:
+        """
+        info of instance
+        """
         return pulumi.get(self, "infos")
 
     @infos.setter
@@ -26353,6 +26654,9 @@ class NdbScaleDatabaseDatabaseNodeArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of database instance
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -26372,7 +26676,7 @@ class NdbScaleDatabaseDatabaseNodeArgs:
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodePropertyArgs']]]]:
         """
-        List of all the properties
+        properties of database created
         """
         return pulumi.get(self, "properties")
 
@@ -26410,6 +26714,9 @@ class NdbScaleDatabaseDatabaseNodeArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        status of instance
+        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -26419,6 +26726,9 @@ class NdbScaleDatabaseDatabaseNodeArgs:
     @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeTagArgs']]]]:
+        """
+        allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        """
         return pulumi.get(self, "tags")
 
     @tags.setter
@@ -26431,6 +26741,9 @@ class NdbScaleDatabaseDatabaseNodeInfoArgs:
     def __init__(__self__, *,
                  info: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  secure_info: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] info: info of instance
+        """
         if info is not None:
             pulumi.set(__self__, "info", info)
         if secure_info is not None:
@@ -26439,6 +26752,9 @@ class NdbScaleDatabaseDatabaseNodeInfoArgs:
     @property
     @pulumi.getter
     def info(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        info of instance
+        """
         return pulumi.get(self, "info")
 
     @info.setter
@@ -26463,6 +26779,10 @@ class NdbScaleDatabaseDatabaseNodePropertyArgs:
                  ref_id: Optional[pulumi.Input[str]] = None,
                  secure: Optional[pulumi.Input[bool]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: description of database instance
+        :param pulumi.Input[str] name: Name of database instance
+        """
         if description is not None:
             pulumi.set(__self__, "description", description)
         if name is not None:
@@ -26477,6 +26797,9 @@ class NdbScaleDatabaseDatabaseNodePropertyArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        description of database instance
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -26486,6 +26809,9 @@ class NdbScaleDatabaseDatabaseNodePropertyArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of database instance
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -26537,7 +26863,13 @@ class NdbScaleDatabaseDatabaseNodeProtectionDomainArgs:
                  status: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArgs']]] properties: List of all the properties
+        :param pulumi.Input[str] date_created: date created for db instance
+        :param pulumi.Input[str] date_modified: date modified for instance
+        :param pulumi.Input[str] description: description of database instance
+        :param pulumi.Input[str] name: Name of database instance
+        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArgs']]] properties: properties of database created
+        :param pulumi.Input[str] status: status of instance
+        :param pulumi.Input[str] type: type of database
         """
         if assoc_entities is not None:
             pulumi.set(__self__, "assoc_entities", assoc_entities)
@@ -26587,6 +26919,9 @@ class NdbScaleDatabaseDatabaseNodeProtectionDomainArgs:
     @property
     @pulumi.getter(name="dateCreated")
     def date_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        date created for db instance
+        """
         return pulumi.get(self, "date_created")
 
     @date_created.setter
@@ -26596,6 +26931,9 @@ class NdbScaleDatabaseDatabaseNodeProtectionDomainArgs:
     @property
     @pulumi.getter(name="dateModified")
     def date_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        date modified for instance
+        """
         return pulumi.get(self, "date_modified")
 
     @date_modified.setter
@@ -26605,6 +26943,9 @@ class NdbScaleDatabaseDatabaseNodeProtectionDomainArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        description of database instance
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -26632,6 +26973,9 @@ class NdbScaleDatabaseDatabaseNodeProtectionDomainArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of database instance
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -26660,7 +27004,7 @@ class NdbScaleDatabaseDatabaseNodeProtectionDomainArgs:
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArgs']]]]:
         """
-        List of all the properties
+        properties of database created
         """
         return pulumi.get(self, "properties")
 
@@ -26671,6 +27015,9 @@ class NdbScaleDatabaseDatabaseNodeProtectionDomainArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        status of instance
+        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -26680,6 +27027,9 @@ class NdbScaleDatabaseDatabaseNodeProtectionDomainArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        type of database
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -26695,6 +27045,10 @@ class NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArgs:
                  ref_id: Optional[pulumi.Input[str]] = None,
                  secure: Optional[pulumi.Input[bool]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: description of database instance
+        :param pulumi.Input[str] name: Name of database instance
+        """
         if description is not None:
             pulumi.set(__self__, "description", description)
         if name is not None:
@@ -26709,6 +27063,9 @@ class NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        description of database instance
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -26718,6 +27075,9 @@ class NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of database instance
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -27463,6 +27823,17 @@ class NdbScaleDatabaseLinkedDatabaseArgs:
                  snapshot_id: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  timezone: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] database_name: name of database
+        :param pulumi.Input[str] date_created: date created for db instance
+        :param pulumi.Input[str] date_modified: date modified for instance
+        :param pulumi.Input[str] description: description of database instance
+        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLinkedDatabaseInfoArgs']]] infos: info of instance
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metric: Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        :param pulumi.Input[str] name: Name of database instance
+        :param pulumi.Input[str] parent_database_id: parent database id
+        :param pulumi.Input[str] status: status of instance
+        """
         if database_name is not None:
             pulumi.set(__self__, "database_name", database_name)
         if database_status is not None:
@@ -27495,6 +27866,9 @@ class NdbScaleDatabaseLinkedDatabaseArgs:
     @property
     @pulumi.getter(name="databaseName")
     def database_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        name of database
+        """
         return pulumi.get(self, "database_name")
 
     @database_name.setter
@@ -27513,6 +27887,9 @@ class NdbScaleDatabaseLinkedDatabaseArgs:
     @property
     @pulumi.getter(name="dateCreated")
     def date_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        date created for db instance
+        """
         return pulumi.get(self, "date_created")
 
     @date_created.setter
@@ -27522,6 +27899,9 @@ class NdbScaleDatabaseLinkedDatabaseArgs:
     @property
     @pulumi.getter(name="dateModified")
     def date_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        date modified for instance
+        """
         return pulumi.get(self, "date_modified")
 
     @date_modified.setter
@@ -27531,6 +27911,9 @@ class NdbScaleDatabaseLinkedDatabaseArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        description of database instance
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -27549,6 +27932,9 @@ class NdbScaleDatabaseLinkedDatabaseArgs:
     @property
     @pulumi.getter
     def infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLinkedDatabaseInfoArgs']]]]:
+        """
+        info of instance
+        """
         return pulumi.get(self, "infos")
 
     @infos.setter
@@ -27558,6 +27944,9 @@ class NdbScaleDatabaseLinkedDatabaseArgs:
     @property
     @pulumi.getter
     def metric(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        """
         return pulumi.get(self, "metric")
 
     @metric.setter
@@ -27567,6 +27956,9 @@ class NdbScaleDatabaseLinkedDatabaseArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of database instance
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -27576,6 +27968,9 @@ class NdbScaleDatabaseLinkedDatabaseArgs:
     @property
     @pulumi.getter(name="parentDatabaseId")
     def parent_database_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        parent database id
+        """
         return pulumi.get(self, "parent_database_id")
 
     @parent_database_id.setter
@@ -27603,6 +27998,9 @@ class NdbScaleDatabaseLinkedDatabaseArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        status of instance
+        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -27624,6 +28022,9 @@ class NdbScaleDatabaseLinkedDatabaseInfoArgs:
     def __init__(__self__, *,
                  info: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  secure_info: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] info: info of instance
+        """
         if info is not None:
             pulumi.set(__self__, "info", info)
         if secure_info is not None:
@@ -27632,6 +28033,9 @@ class NdbScaleDatabaseLinkedDatabaseInfoArgs:
     @property
     @pulumi.getter
     def info(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        info of instance
+        """
         return pulumi.get(self, "info")
 
     @info.setter
@@ -27653,6 +28057,9 @@ class NdbScaleDatabasePropertyArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: Name of database instance
+        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -27661,6 +28068,9 @@ class NdbScaleDatabasePropertyArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of database instance
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -27771,7 +28181,16 @@ class NdbScaleDatabaseTimeMachineArgs:
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineTagArgs']]]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachinePropertyArgs']]] properties: List of all the properties
+        :param pulumi.Input[bool] clone: whether instance is cloned or not
+        :param pulumi.Input[str] date_created: date created for db instance
+        :param pulumi.Input[str] date_modified: date modified for instance
+        :param pulumi.Input[str] description: description of database instance
+        :param pulumi.Input[str] metric: Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        :param pulumi.Input[str] name: Name of database instance
+        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachinePropertyArgs']]] properties: properties of database created
+        :param pulumi.Input[str] status: status of instance
+        :param pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineTagArgs']]] tags: allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        :param pulumi.Input[str] type: type of database
         """
         if access_level is not None:
             pulumi.set(__self__, "access_level", access_level)
@@ -27836,6 +28255,9 @@ class NdbScaleDatabaseTimeMachineArgs:
     @property
     @pulumi.getter
     def clone(self) -> Optional[pulumi.Input[bool]]:
+        """
+        whether instance is cloned or not
+        """
         return pulumi.get(self, "clone")
 
     @clone.setter
@@ -27881,6 +28303,9 @@ class NdbScaleDatabaseTimeMachineArgs:
     @property
     @pulumi.getter(name="dateCreated")
     def date_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        date created for db instance
+        """
         return pulumi.get(self, "date_created")
 
     @date_created.setter
@@ -27890,6 +28315,9 @@ class NdbScaleDatabaseTimeMachineArgs:
     @property
     @pulumi.getter(name="dateModified")
     def date_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        date modified for instance
+        """
         return pulumi.get(self, "date_modified")
 
     @date_modified.setter
@@ -27899,6 +28327,9 @@ class NdbScaleDatabaseTimeMachineArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        description of database instance
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -27926,6 +28357,9 @@ class NdbScaleDatabaseTimeMachineArgs:
     @property
     @pulumi.getter
     def metric(self) -> Optional[pulumi.Input[str]]:
+        """
+        Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        """
         return pulumi.get(self, "metric")
 
     @metric.setter
@@ -27935,6 +28369,9 @@ class NdbScaleDatabaseTimeMachineArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of database instance
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -27945,7 +28382,7 @@ class NdbScaleDatabaseTimeMachineArgs:
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachinePropertyArgs']]]]:
         """
-        List of all the properties
+        properties of database created
         """
         return pulumi.get(self, "properties")
 
@@ -28028,6 +28465,9 @@ class NdbScaleDatabaseTimeMachineArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        status of instance
+        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -28037,6 +28477,9 @@ class NdbScaleDatabaseTimeMachineArgs:
     @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineTagArgs']]]]:
+        """
+        allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        """
         return pulumi.get(self, "tags")
 
     @tags.setter
@@ -28046,6 +28489,9 @@ class NdbScaleDatabaseTimeMachineArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        type of database
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -28061,6 +28507,10 @@ class NdbScaleDatabaseTimeMachinePropertyArgs:
                  ref_id: Optional[pulumi.Input[str]] = None,
                  secure: Optional[pulumi.Input[bool]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] description: description of database instance
+        :param pulumi.Input[str] name: Name of database instance
+        """
         if description is not None:
             pulumi.set(__self__, "description", description)
         if name is not None:
@@ -28075,6 +28525,9 @@ class NdbScaleDatabaseTimeMachinePropertyArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        description of database instance
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -28084,6 +28537,9 @@ class NdbScaleDatabaseTimeMachinePropertyArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of database instance
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -28140,6 +28596,13 @@ class NdbScaleDatabaseTimeMachineScheduleArgs:
                  unique_name: Optional[pulumi.Input[str]] = None,
                  weekly_schedules: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineScheduleWeeklyScheduleArgs']]]] = None,
                  yearly_schedules: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineScheduleYearlyScheduleArgs']]]] = None):
+        """
+        :param pulumi.Input[str] date_created: date created for db instance
+        :param pulumi.Input[str] date_modified: date modified for instance
+        :param pulumi.Input[str] description: description of database instance
+        :param pulumi.Input[str] name: Name of database instance
+        :param pulumi.Input[str] time_zone: timezone on which instance is created xw
+        """
         if continuous_schedules is not None:
             pulumi.set(__self__, "continuous_schedules", continuous_schedules)
         if daily_schedules is not None:
@@ -28200,6 +28663,9 @@ class NdbScaleDatabaseTimeMachineScheduleArgs:
     @property
     @pulumi.getter(name="dateCreated")
     def date_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        date created for db instance
+        """
         return pulumi.get(self, "date_created")
 
     @date_created.setter
@@ -28209,6 +28675,9 @@ class NdbScaleDatabaseTimeMachineScheduleArgs:
     @property
     @pulumi.getter(name="dateModified")
     def date_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        date modified for instance
+        """
         return pulumi.get(self, "date_modified")
 
     @date_modified.setter
@@ -28218,6 +28687,9 @@ class NdbScaleDatabaseTimeMachineScheduleArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        description of database instance
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -28254,6 +28726,9 @@ class NdbScaleDatabaseTimeMachineScheduleArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of database instance
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -28317,6 +28792,9 @@ class NdbScaleDatabaseTimeMachineScheduleArgs:
     @property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[str]]:
+        """
+        timezone on which instance is created xw
+        """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
@@ -28658,6 +29136,12 @@ class NdbScaleDatabaseTimeMachineSlaArgs:
                  unique_name: Optional[pulumi.Input[str]] = None,
                  weekly_retention: Optional[pulumi.Input[int]] = None,
                  yearly_retention: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] date_created: date created for db instance
+        :param pulumi.Input[str] date_modified: date modified for instance
+        :param pulumi.Input[str] description: description of database instance
+        :param pulumi.Input[str] name: Name of database instance
+        """
         if continuous_retention is not None:
             pulumi.set(__self__, "continuous_retention", continuous_retention)
         if current_active_frequency is not None:
@@ -28723,6 +29207,9 @@ class NdbScaleDatabaseTimeMachineSlaArgs:
     @property
     @pulumi.getter(name="dateCreated")
     def date_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        date created for db instance
+        """
         return pulumi.get(self, "date_created")
 
     @date_created.setter
@@ -28732,6 +29219,9 @@ class NdbScaleDatabaseTimeMachineSlaArgs:
     @property
     @pulumi.getter(name="dateModified")
     def date_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        date modified for instance
+        """
         return pulumi.get(self, "date_modified")
 
     @date_modified.setter
@@ -28741,6 +29231,9 @@ class NdbScaleDatabaseTimeMachineSlaArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
+        """
+        description of database instance
+        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -28768,6 +29261,9 @@ class NdbScaleDatabaseTimeMachineSlaArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of database instance
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -28918,6 +29414,11 @@ class NdbSoftwareVersionProfilePostgresDatabaseArgs:
                  db_software_notes: Optional[pulumi.Input[str]] = None,
                  os_notes: Optional[pulumi.Input[str]] = None,
                  source_dbserver_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] db_software_notes: db software notes
+        :param pulumi.Input[str] os_notes: os notes for software profile
+        :param pulumi.Input[str] source_dbserver_id: source dbserver id
+        """
         if db_software_notes is not None:
             pulumi.set(__self__, "db_software_notes", db_software_notes)
         if os_notes is not None:
@@ -28928,6 +29429,9 @@ class NdbSoftwareVersionProfilePostgresDatabaseArgs:
     @property
     @pulumi.getter(name="dbSoftwareNotes")
     def db_software_notes(self) -> Optional[pulumi.Input[str]]:
+        """
+        db software notes
+        """
         return pulumi.get(self, "db_software_notes")
 
     @db_software_notes.setter
@@ -28937,6 +29441,9 @@ class NdbSoftwareVersionProfilePostgresDatabaseArgs:
     @property
     @pulumi.getter(name="osNotes")
     def os_notes(self) -> Optional[pulumi.Input[str]]:
+        """
+        os notes for software profile
+        """
         return pulumi.get(self, "os_notes")
 
     @os_notes.setter
@@ -28946,6 +29453,9 @@ class NdbSoftwareVersionProfilePostgresDatabaseArgs:
     @property
     @pulumi.getter(name="sourceDbserverId")
     def source_dbserver_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        source dbserver id
+        """
         return pulumi.get(self, "source_dbserver_id")
 
     @source_dbserver_id.setter
@@ -28959,6 +29469,11 @@ class NdbSoftwareVersionProfilePropertyArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  secure: Optional[pulumi.Input[bool]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: Name of profile
+        :param pulumi.Input[bool] secure: secure or not
+        :param pulumi.Input[str] value: value of property
+        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if secure is not None:
@@ -28969,6 +29484,9 @@ class NdbSoftwareVersionProfilePropertyArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of profile
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -28978,6 +29496,9 @@ class NdbSoftwareVersionProfilePropertyArgs:
     @property
     @pulumi.getter
     def secure(self) -> Optional[pulumi.Input[bool]]:
+        """
+        secure or not
+        """
         return pulumi.get(self, "secure")
 
     @secure.setter
@@ -28987,6 +29508,9 @@ class NdbSoftwareVersionProfilePropertyArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        value of property
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -29005,6 +29529,16 @@ class NdbSoftwareVersionProfileVersionClusterAssociationArgs:
                  profile_version_id: Optional[pulumi.Input[str]] = None,
                  properties: Optional[pulumi.Input[Sequence[pulumi.Input['NdbSoftwareVersionProfileVersionClusterAssociationPropertyArgs']]]] = None,
                  status: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] date_created: date created of profile
+        :param pulumi.Input[str] date_modified: date modified of profile
+        :param pulumi.Input[str] nx_cluster_id: nutanix cluster id
+        :param pulumi.Input[bool] optimized_for_provisioning: version optimized for provisioning
+        :param pulumi.Input[str] owner_id: owner id
+        :param pulumi.Input[str] profile_version_id: profile version id
+        :param pulumi.Input[Sequence[pulumi.Input['NdbSoftwareVersionProfileVersionClusterAssociationPropertyArgs']]] properties: properties of software profile
+        :param pulumi.Input[str] status: status of profile. Allowed Values are "deprecated", "published", "unpublished"
+        """
         if date_created is not None:
             pulumi.set(__self__, "date_created", date_created)
         if date_modified is not None:
@@ -29025,6 +29559,9 @@ class NdbSoftwareVersionProfileVersionClusterAssociationArgs:
     @property
     @pulumi.getter(name="dateCreated")
     def date_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        date created of profile
+        """
         return pulumi.get(self, "date_created")
 
     @date_created.setter
@@ -29034,6 +29571,9 @@ class NdbSoftwareVersionProfileVersionClusterAssociationArgs:
     @property
     @pulumi.getter(name="dateModified")
     def date_modified(self) -> Optional[pulumi.Input[str]]:
+        """
+        date modified of profile
+        """
         return pulumi.get(self, "date_modified")
 
     @date_modified.setter
@@ -29043,6 +29583,9 @@ class NdbSoftwareVersionProfileVersionClusterAssociationArgs:
     @property
     @pulumi.getter(name="nxClusterId")
     def nx_cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        nutanix cluster id
+        """
         return pulumi.get(self, "nx_cluster_id")
 
     @nx_cluster_id.setter
@@ -29052,6 +29595,9 @@ class NdbSoftwareVersionProfileVersionClusterAssociationArgs:
     @property
     @pulumi.getter(name="optimizedForProvisioning")
     def optimized_for_provisioning(self) -> Optional[pulumi.Input[bool]]:
+        """
+        version optimized for provisioning
+        """
         return pulumi.get(self, "optimized_for_provisioning")
 
     @optimized_for_provisioning.setter
@@ -29061,6 +29607,9 @@ class NdbSoftwareVersionProfileVersionClusterAssociationArgs:
     @property
     @pulumi.getter(name="ownerId")
     def owner_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        owner id
+        """
         return pulumi.get(self, "owner_id")
 
     @owner_id.setter
@@ -29070,6 +29619,9 @@ class NdbSoftwareVersionProfileVersionClusterAssociationArgs:
     @property
     @pulumi.getter(name="profileVersionId")
     def profile_version_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        profile version id
+        """
         return pulumi.get(self, "profile_version_id")
 
     @profile_version_id.setter
@@ -29079,6 +29631,9 @@ class NdbSoftwareVersionProfileVersionClusterAssociationArgs:
     @property
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbSoftwareVersionProfileVersionClusterAssociationPropertyArgs']]]]:
+        """
+        properties of software profile
+        """
         return pulumi.get(self, "properties")
 
     @properties.setter
@@ -29088,6 +29643,9 @@ class NdbSoftwareVersionProfileVersionClusterAssociationArgs:
     @property
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
+        """
+        status of profile. Allowed Values are "deprecated", "published", "unpublished"
+        """
         return pulumi.get(self, "status")
 
     @status.setter
@@ -29101,6 +29659,11 @@ class NdbSoftwareVersionProfileVersionClusterAssociationPropertyArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  secure: Optional[pulumi.Input[bool]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: Name of profile
+        :param pulumi.Input[bool] secure: secure or not
+        :param pulumi.Input[str] value: value of property
+        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if secure is not None:
@@ -29111,6 +29674,9 @@ class NdbSoftwareVersionProfileVersionClusterAssociationPropertyArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of profile
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -29120,6 +29686,9 @@ class NdbSoftwareVersionProfileVersionClusterAssociationPropertyArgs:
     @property
     @pulumi.getter
     def secure(self) -> Optional[pulumi.Input[bool]]:
+        """
+        secure or not
+        """
         return pulumi.get(self, "secure")
 
     @secure.setter
@@ -29129,6 +29698,9 @@ class NdbSoftwareVersionProfileVersionClusterAssociationPropertyArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        value of property
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -29176,6 +29748,16 @@ class NdbStretchedVlanVlansListArgs:
                  properties_maps: Optional[pulumi.Input[Sequence[pulumi.Input['NdbStretchedVlanVlansListPropertiesMapArgs']]]] = None,
                  stretched_vlan_id: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] cluster_id: cluster id where network is present
+        :param pulumi.Input[str] id: network id
+        :param pulumi.Input[bool] managed: network managed by NDB or not
+        :param pulumi.Input[str] name: name for the stretched VLAN
+        :param pulumi.Input[Sequence[pulumi.Input['NdbStretchedVlanVlansListPropertyArgs']]] properties: properties of network
+        :param pulumi.Input[Sequence[pulumi.Input['NdbStretchedVlanVlansListPropertiesMapArgs']]] properties_maps: properties map of network
+        :param pulumi.Input[str] stretched_vlan_id: stretched vlan id
+        :param pulumi.Input[str] type: type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
+        """
         if cluster_id is not None:
             pulumi.set(__self__, "cluster_id", cluster_id)
         if id is not None:
@@ -29196,6 +29778,9 @@ class NdbStretchedVlanVlansListArgs:
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        cluster id where network is present
+        """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
@@ -29205,6 +29790,9 @@ class NdbStretchedVlanVlansListArgs:
     @property
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        network id
+        """
         return pulumi.get(self, "id")
 
     @id.setter
@@ -29214,6 +29802,9 @@ class NdbStretchedVlanVlansListArgs:
     @property
     @pulumi.getter
     def managed(self) -> Optional[pulumi.Input[bool]]:
+        """
+        network managed by NDB or not
+        """
         return pulumi.get(self, "managed")
 
     @managed.setter
@@ -29223,6 +29814,9 @@ class NdbStretchedVlanVlansListArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        name for the stretched VLAN
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -29232,6 +29826,9 @@ class NdbStretchedVlanVlansListArgs:
     @property
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbStretchedVlanVlansListPropertyArgs']]]]:
+        """
+        properties of network
+        """
         return pulumi.get(self, "properties")
 
     @properties.setter
@@ -29241,6 +29838,9 @@ class NdbStretchedVlanVlansListArgs:
     @property
     @pulumi.getter(name="propertiesMaps")
     def properties_maps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbStretchedVlanVlansListPropertiesMapArgs']]]]:
+        """
+        properties map of network
+        """
         return pulumi.get(self, "properties_maps")
 
     @properties_maps.setter
@@ -29250,6 +29850,9 @@ class NdbStretchedVlanVlansListArgs:
     @property
     @pulumi.getter(name="stretchedVlanId")
     def stretched_vlan_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        stretched vlan id
+        """
         return pulumi.get(self, "stretched_vlan_id")
 
     @stretched_vlan_id.setter
@@ -29259,6 +29862,9 @@ class NdbStretchedVlanVlansListArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -29273,6 +29879,12 @@ class NdbStretchedVlanVlansListPropertiesMapArgs:
                  vlan_primary_dns: Optional[pulumi.Input[str]] = None,
                  vlan_secondary_dns: Optional[pulumi.Input[str]] = None,
                  vlan_subnet_mask: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] vlan_gateway: gateway of vlan
+        :param pulumi.Input[str] vlan_primary_dns: primary dns of vlan
+        :param pulumi.Input[str] vlan_secondary_dns: secondary dns of vlan
+        :param pulumi.Input[str] vlan_subnet_mask: subnet mask of vlan
+        """
         if vlan_gateway is not None:
             pulumi.set(__self__, "vlan_gateway", vlan_gateway)
         if vlan_primary_dns is not None:
@@ -29285,6 +29897,9 @@ class NdbStretchedVlanVlansListPropertiesMapArgs:
     @property
     @pulumi.getter(name="vlanGateway")
     def vlan_gateway(self) -> Optional[pulumi.Input[str]]:
+        """
+        gateway of vlan
+        """
         return pulumi.get(self, "vlan_gateway")
 
     @vlan_gateway.setter
@@ -29294,6 +29909,9 @@ class NdbStretchedVlanVlansListPropertiesMapArgs:
     @property
     @pulumi.getter(name="vlanPrimaryDns")
     def vlan_primary_dns(self) -> Optional[pulumi.Input[str]]:
+        """
+        primary dns of vlan
+        """
         return pulumi.get(self, "vlan_primary_dns")
 
     @vlan_primary_dns.setter
@@ -29303,6 +29921,9 @@ class NdbStretchedVlanVlansListPropertiesMapArgs:
     @property
     @pulumi.getter(name="vlanSecondaryDns")
     def vlan_secondary_dns(self) -> Optional[pulumi.Input[str]]:
+        """
+        secondary dns of vlan
+        """
         return pulumi.get(self, "vlan_secondary_dns")
 
     @vlan_secondary_dns.setter
@@ -29312,6 +29933,9 @@ class NdbStretchedVlanVlansListPropertiesMapArgs:
     @property
     @pulumi.getter(name="vlanSubnetMask")
     def vlan_subnet_mask(self) -> Optional[pulumi.Input[str]]:
+        """
+        subnet mask of vlan
+        """
         return pulumi.get(self, "vlan_subnet_mask")
 
     @vlan_subnet_mask.setter
@@ -29325,6 +29949,9 @@ class NdbStretchedVlanVlansListPropertyArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  secure: Optional[pulumi.Input[bool]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: name for the stretched VLAN
+        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if secure is not None:
@@ -29335,6 +29962,9 @@ class NdbStretchedVlanVlansListPropertyArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        name for the stretched VLAN
+        """
         return pulumi.get(self, "name")
 
     @name.setter

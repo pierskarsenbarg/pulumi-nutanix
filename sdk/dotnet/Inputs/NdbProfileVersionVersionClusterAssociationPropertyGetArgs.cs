@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class NdbProfileVersionVersionClusterAssociationPropertyGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Name of profile
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

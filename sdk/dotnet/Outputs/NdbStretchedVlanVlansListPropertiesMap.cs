@@ -14,9 +14,21 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbStretchedVlanVlansListPropertiesMap
     {
+        /// <summary>
+        /// gateway of vlan
+        /// </summary>
         public readonly string? VlanGateway;
+        /// <summary>
+        /// primary dns of vlan
+        /// </summary>
         public readonly string? VlanPrimaryDns;
+        /// <summary>
+        /// secondary dns of vlan
+        /// </summary>
         public readonly string? VlanSecondaryDns;
+        /// <summary>
+        /// subnet mask of vlan
+        /// </summary>
         public readonly string? VlanSubnetMask;
 
         [OutputConstructor]

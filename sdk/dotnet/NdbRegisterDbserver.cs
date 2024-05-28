@@ -10,6 +10,9 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Provides a resource to register database server VMs based on the input parameters. For 1.8.0 release, only postgress database type is qualified and officially supported.
+    /// </summary>
     [NutanixResourceType("nutanix:index/ndbRegisterDbserver:NdbRegisterDbserver")]
     public partial class NdbRegisterDbserver : global::Pulumi.CustomResource
     {
@@ -19,21 +22,36 @@ namespace PiersKarsenbarg.Nutanix
         [Output("credentials")]
         public Output<ImmutableArray<Outputs.NdbRegisterDbserverCredential>> Credentials { get; private set; } = null!;
 
+        /// <summary>
+        /// database type i.e. postgres_database
+        /// </summary>
         [Output("databaseType")]
         public Output<string> DatabaseType { get; private set; } = null!;
 
         [Output("dbserverClusterId")]
         public Output<string> DbserverClusterId { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Delete the VM and associated storage. Default value is false
+        /// </summary>
         [Output("delete")]
         public Output<bool?> Delete { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Delete volume grous. Default value is true
+        /// </summary>
         [Output("deleteVgs")]
         public Output<bool?> DeleteVgs { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Delete the vm snapshots. Default is true
+        /// </summary>
         [Output("deleteVmSnapshots")]
         public Output<bool?> DeleteVmSnapshots { get; private set; } = null!;
 
+        /// <summary>
+        /// description of db server vm. Should be used in update Method only .
+        /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
@@ -46,6 +64,9 @@ namespace PiersKarsenbarg.Nutanix
         [Output("eraVersion")]
         public Output<string> EraVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// forced install the packages. Default is true
+        /// </summary>
         [Output("forcedInstall")]
         public Output<bool?> ForcedInstall { get; private set; } = null!;
 
@@ -61,15 +82,27 @@ namespace PiersKarsenbarg.Nutanix
         [Output("macAddresses")]
         public Output<ImmutableArray<string>> MacAddresses { get; private set; } = null!;
 
+        /// <summary>
+        /// Name of db server vm. Should be used in Update Method only.
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// cluster on which you want to register the database server VM.
+        /// </summary>
         [Output("nxclusterId")]
         public Output<string?> NxclusterId { get; private set; } = null!;
 
+        /// <summary>
+        /// password of the NDB drive user account. Conflicts with ssh_key.
+        /// </summary>
         [Output("password")]
         public Output<string?> Password { get; private set; } = null!;
 
+        /// <summary>
+        /// postgres info for dbserver
+        /// </summary>
         [Output("postgresDatabases")]
         public Output<ImmutableArray<Outputs.NdbRegisterDbserverPostgresDatabase>> PostgresDatabases { get; private set; } = null!;
 
@@ -79,12 +112,21 @@ namespace PiersKarsenbarg.Nutanix
         [Output("properties")]
         public Output<ImmutableArray<Outputs.NdbRegisterDbserverProperty>> Properties { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Unregister the database from NDB. Default value is true
+        /// </summary>
         [Output("remove")]
         public Output<bool?> Remove { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Soft remove. Default will be false
+        /// </summary>
         [Output("softRemove")]
         public Output<bool?> SoftRemove { get; private set; } = null!;
 
+        /// <summary>
+        /// the private key. Conflicts with password.
+        /// </summary>
         [Output("sshKey")]
         public Output<string?> SshKey { get; private set; } = null!;
 
@@ -97,9 +139,15 @@ namespace PiersKarsenbarg.Nutanix
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
 
+        /// <summary>
+        /// Updates the name and description in cluster. Should be used in Update Method only.
+        /// </summary>
         [Output("updateNameDescriptionInCluster")]
         public Output<bool?> UpdateNameDescriptionInCluster { get; private set; } = null!;
 
+        /// <summary>
+        /// username of the NDB drive user account that has sudo access
+        /// </summary>
         [Output("username")]
         public Output<string?> Username { get; private set; } = null!;
 
@@ -109,12 +157,18 @@ namespace PiersKarsenbarg.Nutanix
         [Output("vmClusterUuid")]
         public Output<string> VmClusterUuid { get; private set; } = null!;
 
+        /// <summary>
+        /// IP address of the database server VM
+        /// </summary>
         [Output("vmIp")]
         public Output<string> VmIp { get; private set; } = null!;
 
         [Output("vmTimezone")]
         public Output<string> VmTimezone { get; private set; } = null!;
 
+        /// <summary>
+        /// working directory of postgres. Default is "/tmp"
+        /// </summary>
         [Output("workingDirectory")]
         public Output<string?> WorkingDirectory { get; private set; } = null!;
 
@@ -178,32 +232,60 @@ namespace PiersKarsenbarg.Nutanix
             set => _credentials = value;
         }
 
+        /// <summary>
+        /// database type i.e. postgres_database
+        /// </summary>
         [Input("databaseType", required: true)]
         public Input<string> DatabaseType { get; set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Delete the VM and associated storage. Default value is false
+        /// </summary>
         [Input("delete")]
         public Input<bool>? Delete { get; set; }
 
+        /// <summary>
+        /// - (Optional) Delete volume grous. Default value is true
+        /// </summary>
         [Input("deleteVgs")]
         public Input<bool>? DeleteVgs { get; set; }
 
+        /// <summary>
+        /// - (Optional) Delete the vm snapshots. Default is true
+        /// </summary>
         [Input("deleteVmSnapshots")]
         public Input<bool>? DeleteVmSnapshots { get; set; }
 
+        /// <summary>
+        /// description of db server vm. Should be used in update Method only .
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// forced install the packages. Default is true
+        /// </summary>
         [Input("forcedInstall")]
         public Input<bool>? ForcedInstall { get; set; }
 
+        /// <summary>
+        /// Name of db server vm. Should be used in Update Method only.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// cluster on which you want to register the database server VM.
+        /// </summary>
         [Input("nxclusterId")]
         public Input<string>? NxclusterId { get; set; }
 
         [Input("password")]
         private Input<string>? _password;
+
+        /// <summary>
+        /// password of the NDB drive user account. Conflicts with ssh_key.
+        /// </summary>
         public Input<string>? Password
         {
             get => _password;
@@ -216,20 +298,34 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("postgresDatabases")]
         private InputList<Inputs.NdbRegisterDbserverPostgresDatabaseArgs>? _postgresDatabases;
+
+        /// <summary>
+        /// postgres info for dbserver
+        /// </summary>
         public InputList<Inputs.NdbRegisterDbserverPostgresDatabaseArgs> PostgresDatabases
         {
             get => _postgresDatabases ?? (_postgresDatabases = new InputList<Inputs.NdbRegisterDbserverPostgresDatabaseArgs>());
             set => _postgresDatabases = value;
         }
 
+        /// <summary>
+        /// - (Optional) Unregister the database from NDB. Default value is true
+        /// </summary>
         [Input("remove")]
         public Input<bool>? Remove { get; set; }
 
+        /// <summary>
+        /// - (Optional) Soft remove. Default will be false
+        /// </summary>
         [Input("softRemove")]
         public Input<bool>? SoftRemove { get; set; }
 
         [Input("sshKey")]
         private Input<string>? _sshKey;
+
+        /// <summary>
+        /// the private key. Conflicts with password.
+        /// </summary>
         public Input<string>? SshKey
         {
             get => _sshKey;
@@ -248,15 +344,27 @@ namespace PiersKarsenbarg.Nutanix
             set => _tags = value;
         }
 
+        /// <summary>
+        /// Updates the name and description in cluster. Should be used in Update Method only.
+        /// </summary>
         [Input("updateNameDescriptionInCluster")]
         public Input<bool>? UpdateNameDescriptionInCluster { get; set; }
 
+        /// <summary>
+        /// username of the NDB drive user account that has sudo access
+        /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }
 
+        /// <summary>
+        /// IP address of the database server VM
+        /// </summary>
         [Input("vmIp", required: true)]
         public Input<string> VmIp { get; set; } = null!;
 
+        /// <summary>
+        /// working directory of postgres. Default is "/tmp"
+        /// </summary>
         [Input("workingDirectory")]
         public Input<string>? WorkingDirectory { get; set; }
 
@@ -279,21 +387,36 @@ namespace PiersKarsenbarg.Nutanix
             set => _credentials = value;
         }
 
+        /// <summary>
+        /// database type i.e. postgres_database
+        /// </summary>
         [Input("databaseType")]
         public Input<string>? DatabaseType { get; set; }
 
         [Input("dbserverClusterId")]
         public Input<string>? DbserverClusterId { get; set; }
 
+        /// <summary>
+        /// - (Optional) Delete the VM and associated storage. Default value is false
+        /// </summary>
         [Input("delete")]
         public Input<bool>? Delete { get; set; }
 
+        /// <summary>
+        /// - (Optional) Delete volume grous. Default value is true
+        /// </summary>
         [Input("deleteVgs")]
         public Input<bool>? DeleteVgs { get; set; }
 
+        /// <summary>
+        /// - (Optional) Delete the vm snapshots. Default is true
+        /// </summary>
         [Input("deleteVmSnapshots")]
         public Input<bool>? DeleteVmSnapshots { get; set; }
 
+        /// <summary>
+        /// description of db server vm. Should be used in update Method only .
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
@@ -306,6 +429,9 @@ namespace PiersKarsenbarg.Nutanix
         [Input("eraVersion")]
         public Input<string>? EraVersion { get; set; }
 
+        /// <summary>
+        /// forced install the packages. Default is true
+        /// </summary>
         [Input("forcedInstall")]
         public Input<bool>? ForcedInstall { get; set; }
 
@@ -331,14 +457,24 @@ namespace PiersKarsenbarg.Nutanix
             set => _macAddresses = value;
         }
 
+        /// <summary>
+        /// Name of db server vm. Should be used in Update Method only.
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// cluster on which you want to register the database server VM.
+        /// </summary>
         [Input("nxclusterId")]
         public Input<string>? NxclusterId { get; set; }
 
         [Input("password")]
         private Input<string>? _password;
+
+        /// <summary>
+        /// password of the NDB drive user account. Conflicts with ssh_key.
+        /// </summary>
         public Input<string>? Password
         {
             get => _password;
@@ -351,6 +487,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("postgresDatabases")]
         private InputList<Inputs.NdbRegisterDbserverPostgresDatabaseGetArgs>? _postgresDatabases;
+
+        /// <summary>
+        /// postgres info for dbserver
+        /// </summary>
         public InputList<Inputs.NdbRegisterDbserverPostgresDatabaseGetArgs> PostgresDatabases
         {
             get => _postgresDatabases ?? (_postgresDatabases = new InputList<Inputs.NdbRegisterDbserverPostgresDatabaseGetArgs>());
@@ -369,14 +509,24 @@ namespace PiersKarsenbarg.Nutanix
             set => _properties = value;
         }
 
+        /// <summary>
+        /// - (Optional) Unregister the database from NDB. Default value is true
+        /// </summary>
         [Input("remove")]
         public Input<bool>? Remove { get; set; }
 
+        /// <summary>
+        /// - (Optional) Soft remove. Default will be false
+        /// </summary>
         [Input("softRemove")]
         public Input<bool>? SoftRemove { get; set; }
 
         [Input("sshKey")]
         private Input<string>? _sshKey;
+
+        /// <summary>
+        /// the private key. Conflicts with password.
+        /// </summary>
         public Input<string>? SshKey
         {
             get => _sshKey;
@@ -401,9 +551,15 @@ namespace PiersKarsenbarg.Nutanix
         [Input("type")]
         public Input<string>? Type { get; set; }
 
+        /// <summary>
+        /// Updates the name and description in cluster. Should be used in Update Method only.
+        /// </summary>
         [Input("updateNameDescriptionInCluster")]
         public Input<bool>? UpdateNameDescriptionInCluster { get; set; }
 
+        /// <summary>
+        /// username of the NDB drive user account that has sudo access
+        /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }
 
@@ -413,12 +569,18 @@ namespace PiersKarsenbarg.Nutanix
         [Input("vmClusterUuid")]
         public Input<string>? VmClusterUuid { get; set; }
 
+        /// <summary>
+        /// IP address of the database server VM
+        /// </summary>
         [Input("vmIp")]
         public Input<string>? VmIp { get; set; }
 
         [Input("vmTimezone")]
         public Input<string>? VmTimezone { get; set; }
 
+        /// <summary>
+        /// working directory of postgres. Default is "/tmp"
+        /// </summary>
         [Input("workingDirectory")]
         public Input<string>? WorkingDirectory { get; set; }
 

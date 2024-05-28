@@ -13,32 +13,57 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class NdbSoftwareVersionProfileVersionClusterAssociationGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// date created of profile
+        /// </summary>
         [Input("dateCreated")]
         public Input<string>? DateCreated { get; set; }
 
+        /// <summary>
+        /// date modified of profile
+        /// </summary>
         [Input("dateModified")]
         public Input<string>? DateModified { get; set; }
 
+        /// <summary>
+        /// nutanix cluster id
+        /// </summary>
         [Input("nxClusterId")]
         public Input<string>? NxClusterId { get; set; }
 
+        /// <summary>
+        /// version optimized for provisioning
+        /// </summary>
         [Input("optimizedForProvisioning")]
         public Input<bool>? OptimizedForProvisioning { get; set; }
 
+        /// <summary>
+        /// owner id
+        /// </summary>
         [Input("ownerId")]
         public Input<string>? OwnerId { get; set; }
 
+        /// <summary>
+        /// profile version id
+        /// </summary>
         [Input("profileVersionId")]
         public Input<string>? ProfileVersionId { get; set; }
 
         [Input("properties")]
         private InputList<Inputs.NdbSoftwareVersionProfileVersionClusterAssociationPropertyGetArgs>? _properties;
+
+        /// <summary>
+        /// properties of software profile
+        /// </summary>
         public InputList<Inputs.NdbSoftwareVersionProfileVersionClusterAssociationPropertyGetArgs> Properties
         {
             get => _properties ?? (_properties = new InputList<Inputs.NdbSoftwareVersionProfileVersionClusterAssociationPropertyGetArgs>());
             set => _properties = value;
         }
 
+        /// <summary>
+        /// status of profile. Allowed Values are "deprecated", "published", "unpublished"
+        /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 

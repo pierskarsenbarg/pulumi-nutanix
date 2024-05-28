@@ -10,57 +10,111 @@ using Pulumi;
 
 namespace PiersKarsenbarg.Nutanix
 {
+    /// <summary>
+    /// Provides a resource to create profiles (Software, Network, Database Parameter, Compute) based on the input parameters.
+    /// </summary>
     [NutanixResourceType("nutanix:index/ndbProfile:NdbProfile")]
     public partial class NdbProfile : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// associated databases of profiles
+        /// </summary>
         [Output("assocDatabases")]
         public Output<ImmutableArray<string>> AssocDatabases { get; private set; } = null!;
 
+        /// <summary>
+        /// associated database servers for associated profiles
+        /// </summary>
         [Output("assocDbServers")]
         public Output<ImmutableArray<string>> AssocDbServers { get; private set; } = null!;
 
+        /// <summary>
+        /// cluster availability of profile
+        /// </summary>
         [Output("clusterAvailabilities")]
         public Output<ImmutableArray<Outputs.NdbProfileClusterAvailability>> ClusterAvailabilities { get; private set; } = null!;
 
+        /// <summary>
+        /// Compute Profile
+        /// </summary>
         [Output("computeProfiles")]
         public Output<ImmutableArray<Outputs.NdbProfileComputeProfile>> ComputeProfiles { get; private set; } = null!;
 
+        /// <summary>
+        /// Database Parameter Profile
+        /// </summary>
         [Output("databaseParameterProfiles")]
         public Output<ImmutableArray<Outputs.NdbProfileDatabaseParameterProfile>> DatabaseParameterProfiles { get; private set; } = null!;
 
+        /// <summary>
+        /// Description of profile
+        /// </summary>
         [Output("description")]
         public Output<string?> Description { get; private set; } = null!;
 
+        /// <summary>
+        /// Engine Type of database
+        /// </summary>
         [Output("engineType")]
         public Output<string> EngineType { get; private set; } = null!;
 
+        /// <summary>
+        /// latest version of profile
+        /// </summary>
         [Output("latestVersion")]
         public Output<string> LatestVersion { get; private set; } = null!;
 
+        /// <summary>
+        /// latest version id of profile
+        /// </summary>
         [Output("latestVersionId")]
         public Output<string> LatestVersionId { get; private set; } = null!;
 
+        /// <summary>
+        /// Name of profile
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// Network Profile
+        /// </summary>
         [Output("networkProfiles")]
         public Output<ImmutableArray<Outputs.NdbProfileNetworkProfile>> NetworkProfiles { get; private set; } = null!;
 
+        /// <summary>
+        /// cluster on which profile created
+        /// </summary>
         [Output("nxClusterId")]
         public Output<string> NxClusterId { get; private set; } = null!;
 
+        /// <summary>
+        /// owner  of profile
+        /// </summary>
         [Output("owner")]
         public Output<string> Owner { get; private set; } = null!;
 
+        /// <summary>
+        /// Publish for all users
+        /// </summary>
         [Output("published")]
         public Output<bool?> Published { get; private set; } = null!;
 
+        /// <summary>
+        /// Software Profile
+        /// </summary>
         [Output("softwareProfile")]
         public Output<Outputs.NdbProfileSoftwareProfile?> SoftwareProfile { get; private set; } = null!;
 
+        /// <summary>
+        /// status of profile
+        /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
 
+        /// <summary>
+        /// versions of associated profiles
+        /// </summary>
         [Output("versions")]
         public Output<ImmutableArray<Outputs.NdbProfileVersion>> Versions { get; private set; } = null!;
 
@@ -113,6 +167,10 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("computeProfiles")]
         private InputList<Inputs.NdbProfileComputeProfileArgs>? _computeProfiles;
+
+        /// <summary>
+        /// Compute Profile
+        /// </summary>
         public InputList<Inputs.NdbProfileComputeProfileArgs> ComputeProfiles
         {
             get => _computeProfiles ?? (_computeProfiles = new InputList<Inputs.NdbProfileComputeProfileArgs>());
@@ -121,32 +179,55 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("databaseParameterProfiles")]
         private InputList<Inputs.NdbProfileDatabaseParameterProfileArgs>? _databaseParameterProfiles;
+
+        /// <summary>
+        /// Database Parameter Profile
+        /// </summary>
         public InputList<Inputs.NdbProfileDatabaseParameterProfileArgs> DatabaseParameterProfiles
         {
             get => _databaseParameterProfiles ?? (_databaseParameterProfiles = new InputList<Inputs.NdbProfileDatabaseParameterProfileArgs>());
             set => _databaseParameterProfiles = value;
         }
 
+        /// <summary>
+        /// Description of profile
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// Engine Type of database
+        /// </summary>
         [Input("engineType")]
         public Input<string>? EngineType { get; set; }
 
+        /// <summary>
+        /// Name of profile
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("networkProfiles")]
         private InputList<Inputs.NdbProfileNetworkProfileArgs>? _networkProfiles;
+
+        /// <summary>
+        /// Network Profile
+        /// </summary>
         public InputList<Inputs.NdbProfileNetworkProfileArgs> NetworkProfiles
         {
             get => _networkProfiles ?? (_networkProfiles = new InputList<Inputs.NdbProfileNetworkProfileArgs>());
             set => _networkProfiles = value;
         }
 
+        /// <summary>
+        /// Publish for all users
+        /// </summary>
         [Input("published")]
         public Input<bool>? Published { get; set; }
 
+        /// <summary>
+        /// Software Profile
+        /// </summary>
         [Input("softwareProfile")]
         public Input<Inputs.NdbProfileSoftwareProfileArgs>? SoftwareProfile { get; set; }
 
@@ -160,6 +241,10 @@ namespace PiersKarsenbarg.Nutanix
     {
         [Input("assocDatabases")]
         private InputList<string>? _assocDatabases;
+
+        /// <summary>
+        /// associated databases of profiles
+        /// </summary>
         public InputList<string> AssocDatabases
         {
             get => _assocDatabases ?? (_assocDatabases = new InputList<string>());
@@ -168,6 +253,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("assocDbServers")]
         private InputList<string>? _assocDbServers;
+
+        /// <summary>
+        /// associated database servers for associated profiles
+        /// </summary>
         public InputList<string> AssocDbServers
         {
             get => _assocDbServers ?? (_assocDbServers = new InputList<string>());
@@ -176,6 +265,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("clusterAvailabilities")]
         private InputList<Inputs.NdbProfileClusterAvailabilityGetArgs>? _clusterAvailabilities;
+
+        /// <summary>
+        /// cluster availability of profile
+        /// </summary>
         public InputList<Inputs.NdbProfileClusterAvailabilityGetArgs> ClusterAvailabilities
         {
             get => _clusterAvailabilities ?? (_clusterAvailabilities = new InputList<Inputs.NdbProfileClusterAvailabilityGetArgs>());
@@ -184,6 +277,10 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("computeProfiles")]
         private InputList<Inputs.NdbProfileComputeProfileGetArgs>? _computeProfiles;
+
+        /// <summary>
+        /// Compute Profile
+        /// </summary>
         public InputList<Inputs.NdbProfileComputeProfileGetArgs> ComputeProfiles
         {
             get => _computeProfiles ?? (_computeProfiles = new InputList<Inputs.NdbProfileComputeProfileGetArgs>());
@@ -192,52 +289,94 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("databaseParameterProfiles")]
         private InputList<Inputs.NdbProfileDatabaseParameterProfileGetArgs>? _databaseParameterProfiles;
+
+        /// <summary>
+        /// Database Parameter Profile
+        /// </summary>
         public InputList<Inputs.NdbProfileDatabaseParameterProfileGetArgs> DatabaseParameterProfiles
         {
             get => _databaseParameterProfiles ?? (_databaseParameterProfiles = new InputList<Inputs.NdbProfileDatabaseParameterProfileGetArgs>());
             set => _databaseParameterProfiles = value;
         }
 
+        /// <summary>
+        /// Description of profile
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
+        /// <summary>
+        /// Engine Type of database
+        /// </summary>
         [Input("engineType")]
         public Input<string>? EngineType { get; set; }
 
+        /// <summary>
+        /// latest version of profile
+        /// </summary>
         [Input("latestVersion")]
         public Input<string>? LatestVersion { get; set; }
 
+        /// <summary>
+        /// latest version id of profile
+        /// </summary>
         [Input("latestVersionId")]
         public Input<string>? LatestVersionId { get; set; }
 
+        /// <summary>
+        /// Name of profile
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         [Input("networkProfiles")]
         private InputList<Inputs.NdbProfileNetworkProfileGetArgs>? _networkProfiles;
+
+        /// <summary>
+        /// Network Profile
+        /// </summary>
         public InputList<Inputs.NdbProfileNetworkProfileGetArgs> NetworkProfiles
         {
             get => _networkProfiles ?? (_networkProfiles = new InputList<Inputs.NdbProfileNetworkProfileGetArgs>());
             set => _networkProfiles = value;
         }
 
+        /// <summary>
+        /// cluster on which profile created
+        /// </summary>
         [Input("nxClusterId")]
         public Input<string>? NxClusterId { get; set; }
 
+        /// <summary>
+        /// owner  of profile
+        /// </summary>
         [Input("owner")]
         public Input<string>? Owner { get; set; }
 
+        /// <summary>
+        /// Publish for all users
+        /// </summary>
         [Input("published")]
         public Input<bool>? Published { get; set; }
 
+        /// <summary>
+        /// Software Profile
+        /// </summary>
         [Input("softwareProfile")]
         public Input<Inputs.NdbProfileSoftwareProfileGetArgs>? SoftwareProfile { get; set; }
 
+        /// <summary>
+        /// status of profile
+        /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         [Input("versions")]
         private InputList<Inputs.NdbProfileVersionGetArgs>? _versions;
+
+        /// <summary>
+        /// versions of associated profiles
+        /// </summary>
         public InputList<Inputs.NdbProfileVersionGetArgs> Versions
         {
             get => _versions ?? (_versions = new InputList<Inputs.NdbProfileVersionGetArgs>());

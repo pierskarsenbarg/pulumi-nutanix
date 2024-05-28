@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbStretchedVlanVlansListProperty
     {
+        /// <summary>
+        /// name for the stretched VLAN
+        /// </summary>
         public readonly string? Name;
         public readonly bool? Secure;
         public readonly string? Value;

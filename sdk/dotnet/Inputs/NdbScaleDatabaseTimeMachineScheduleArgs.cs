@@ -29,12 +29,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _dailySchedules = value;
         }
 
+        /// <summary>
+        /// date created for db instance
+        /// </summary>
         [Input("dateCreated")]
         public Input<string>? DateCreated { get; set; }
 
+        /// <summary>
+        /// date modified for instance
+        /// </summary>
         [Input("dateModified")]
         public Input<string>? DateModified { get; set; }
 
+        /// <summary>
+        /// description of database instance
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
@@ -52,6 +61,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _monthlySchedules = value;
         }
 
+        /// <summary>
+        /// Name of database instance
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
@@ -83,6 +95,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("systemPolicy")]
         public Input<bool>? SystemPolicy { get; set; }
 
+        /// <summary>
+        /// timezone on which instance is created xw
+        /// </summary>
         [Input("timeZone")]
         public Input<string>? TimeZone { get; set; }
 

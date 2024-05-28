@@ -12,16 +12,92 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// Provides a resource to add/remove worker nodepool in an existing Nutanix Kubernetes Engine (NKE).
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewKarbonWorkerNodepool(ctx, "kworkerNp", &nutanix.KarbonWorkerNodepoolArgs{
+//				AhvConfig: &nutanix.KarbonWorkerNodepoolAhvConfigArgs{
+//					Cpu:         pulumi.Int(4),
+//					DiskMib:     pulumi.Int(122880),
+//					MemoryMib:   pulumi.Int(8192),
+//					NetworkUuid: pulumi.String("61213511-6383-4a38-9ac8-4a552c0e5865"),
+//				},
+//				ClusterName:  pulumi.String("karbon"),
+//				NumInstances: pulumi.Int(1),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewKarbonWorkerNodepool(ctx, "kworkerNp", &nutanix.KarbonWorkerNodepoolArgs{
+//				AhvConfig: &nutanix.KarbonWorkerNodepoolAhvConfigArgs{
+//					Cpu:         pulumi.Int(4),
+//					DiskMib:     pulumi.Int(122880),
+//					MemoryMib:   pulumi.Int(8192),
+//					NetworkUuid: pulumi.String("61213511-6383-4a38-9ac8-4a552c0e5865"),
+//				},
+//				ClusterName: pulumi.String("karbon"),
+//				Labels: pulumi.Map{
+//					"k1": pulumi.Any("v1"),
+//					"k2": pulumi.Any("v2"),
+//				},
+//				NumInstances: pulumi.Int(1),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type KarbonWorkerNodepool struct {
 	pulumi.CustomResourceState
 
-	AhvConfig     KarbonWorkerNodepoolAhvConfigOutput `pulumi:"ahvConfig"`
-	ClusterName   pulumi.StringOutput                 `pulumi:"clusterName"`
-	Labels        pulumi.MapOutput                    `pulumi:"labels"`
-	Name          pulumi.StringOutput                 `pulumi:"name"`
-	NodeOsVersion pulumi.StringOutput                 `pulumi:"nodeOsVersion"`
-	Nodes         KarbonWorkerNodepoolNodeArrayOutput `pulumi:"nodes"`
-	NumInstances  pulumi.IntOutput                    `pulumi:"numInstances"`
+	// VM configuration in AHV.
+	AhvConfig KarbonWorkerNodepoolAhvConfigOutput `pulumi:"ahvConfig"`
+	// Kubernetes cluster name
+	ClusterName pulumi.StringOutput `pulumi:"clusterName"`
+	// labels of node
+	Labels pulumi.MapOutput `pulumi:"labels"`
+	// unique worker nodepool name
+	Name pulumi.StringOutput `pulumi:"name"`
+	// The version of the node OS image
+	NodeOsVersion pulumi.StringOutput `pulumi:"nodeOsVersion"`
+	// List of node details of pool.
+	Nodes KarbonWorkerNodepoolNodeArrayOutput `pulumi:"nodes"`
+	// number of node instances
+	NumInstances pulumi.IntOutput `pulumi:"numInstances"`
 }
 
 // NewKarbonWorkerNodepool registers a new resource with the given unique name, arguments, and options.
@@ -60,23 +136,37 @@ func GetKarbonWorkerNodepool(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering KarbonWorkerNodepool resources.
 type karbonWorkerNodepoolState struct {
-	AhvConfig     *KarbonWorkerNodepoolAhvConfig `pulumi:"ahvConfig"`
-	ClusterName   *string                        `pulumi:"clusterName"`
-	Labels        map[string]interface{}         `pulumi:"labels"`
-	Name          *string                        `pulumi:"name"`
-	NodeOsVersion *string                        `pulumi:"nodeOsVersion"`
-	Nodes         []KarbonWorkerNodepoolNode     `pulumi:"nodes"`
-	NumInstances  *int                           `pulumi:"numInstances"`
+	// VM configuration in AHV.
+	AhvConfig *KarbonWorkerNodepoolAhvConfig `pulumi:"ahvConfig"`
+	// Kubernetes cluster name
+	ClusterName *string `pulumi:"clusterName"`
+	// labels of node
+	Labels map[string]interface{} `pulumi:"labels"`
+	// unique worker nodepool name
+	Name *string `pulumi:"name"`
+	// The version of the node OS image
+	NodeOsVersion *string `pulumi:"nodeOsVersion"`
+	// List of node details of pool.
+	Nodes []KarbonWorkerNodepoolNode `pulumi:"nodes"`
+	// number of node instances
+	NumInstances *int `pulumi:"numInstances"`
 }
 
 type KarbonWorkerNodepoolState struct {
-	AhvConfig     KarbonWorkerNodepoolAhvConfigPtrInput
-	ClusterName   pulumi.StringPtrInput
-	Labels        pulumi.MapInput
-	Name          pulumi.StringPtrInput
+	// VM configuration in AHV.
+	AhvConfig KarbonWorkerNodepoolAhvConfigPtrInput
+	// Kubernetes cluster name
+	ClusterName pulumi.StringPtrInput
+	// labels of node
+	Labels pulumi.MapInput
+	// unique worker nodepool name
+	Name pulumi.StringPtrInput
+	// The version of the node OS image
 	NodeOsVersion pulumi.StringPtrInput
-	Nodes         KarbonWorkerNodepoolNodeArrayInput
-	NumInstances  pulumi.IntPtrInput
+	// List of node details of pool.
+	Nodes KarbonWorkerNodepoolNodeArrayInput
+	// number of node instances
+	NumInstances pulumi.IntPtrInput
 }
 
 func (KarbonWorkerNodepoolState) ElementType() reflect.Type {
@@ -84,22 +174,34 @@ func (KarbonWorkerNodepoolState) ElementType() reflect.Type {
 }
 
 type karbonWorkerNodepoolArgs struct {
-	AhvConfig     *KarbonWorkerNodepoolAhvConfig `pulumi:"ahvConfig"`
-	ClusterName   string                         `pulumi:"clusterName"`
-	Labels        map[string]interface{}         `pulumi:"labels"`
-	Name          *string                        `pulumi:"name"`
-	NodeOsVersion *string                        `pulumi:"nodeOsVersion"`
-	NumInstances  int                            `pulumi:"numInstances"`
+	// VM configuration in AHV.
+	AhvConfig *KarbonWorkerNodepoolAhvConfig `pulumi:"ahvConfig"`
+	// Kubernetes cluster name
+	ClusterName string `pulumi:"clusterName"`
+	// labels of node
+	Labels map[string]interface{} `pulumi:"labels"`
+	// unique worker nodepool name
+	Name *string `pulumi:"name"`
+	// The version of the node OS image
+	NodeOsVersion *string `pulumi:"nodeOsVersion"`
+	// number of node instances
+	NumInstances int `pulumi:"numInstances"`
 }
 
 // The set of arguments for constructing a KarbonWorkerNodepool resource.
 type KarbonWorkerNodepoolArgs struct {
-	AhvConfig     KarbonWorkerNodepoolAhvConfigPtrInput
-	ClusterName   pulumi.StringInput
-	Labels        pulumi.MapInput
-	Name          pulumi.StringPtrInput
+	// VM configuration in AHV.
+	AhvConfig KarbonWorkerNodepoolAhvConfigPtrInput
+	// Kubernetes cluster name
+	ClusterName pulumi.StringInput
+	// labels of node
+	Labels pulumi.MapInput
+	// unique worker nodepool name
+	Name pulumi.StringPtrInput
+	// The version of the node OS image
 	NodeOsVersion pulumi.StringPtrInput
-	NumInstances  pulumi.IntInput
+	// number of node instances
+	NumInstances pulumi.IntInput
 }
 
 func (KarbonWorkerNodepoolArgs) ElementType() reflect.Type {
@@ -189,30 +291,37 @@ func (o KarbonWorkerNodepoolOutput) ToKarbonWorkerNodepoolOutputWithContext(ctx 
 	return o
 }
 
+// VM configuration in AHV.
 func (o KarbonWorkerNodepoolOutput) AhvConfig() KarbonWorkerNodepoolAhvConfigOutput {
 	return o.ApplyT(func(v *KarbonWorkerNodepool) KarbonWorkerNodepoolAhvConfigOutput { return v.AhvConfig }).(KarbonWorkerNodepoolAhvConfigOutput)
 }
 
+// Kubernetes cluster name
 func (o KarbonWorkerNodepoolOutput) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v *KarbonWorkerNodepool) pulumi.StringOutput { return v.ClusterName }).(pulumi.StringOutput)
 }
 
+// labels of node
 func (o KarbonWorkerNodepoolOutput) Labels() pulumi.MapOutput {
 	return o.ApplyT(func(v *KarbonWorkerNodepool) pulumi.MapOutput { return v.Labels }).(pulumi.MapOutput)
 }
 
+// unique worker nodepool name
 func (o KarbonWorkerNodepoolOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *KarbonWorkerNodepool) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// The version of the node OS image
 func (o KarbonWorkerNodepoolOutput) NodeOsVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *KarbonWorkerNodepool) pulumi.StringOutput { return v.NodeOsVersion }).(pulumi.StringOutput)
 }
 
+// List of node details of pool.
 func (o KarbonWorkerNodepoolOutput) Nodes() KarbonWorkerNodepoolNodeArrayOutput {
 	return o.ApplyT(func(v *KarbonWorkerNodepool) KarbonWorkerNodepoolNodeArrayOutput { return v.Nodes }).(KarbonWorkerNodepoolNodeArrayOutput)
 }
 
+// number of node instances
 func (o KarbonWorkerNodepoolOutput) NumInstances() pulumi.IntOutput {
 	return o.ApplyT(func(v *KarbonWorkerNodepool) pulumi.IntOutput { return v.NumInstances }).(pulumi.IntOutput)
 }

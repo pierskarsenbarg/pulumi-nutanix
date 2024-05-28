@@ -13,21 +13,39 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class KarbonWorkerNodepoolAhvConfigGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+        /// </summary>
         [Input("cpu")]
         public Input<int>? Cpu { get; set; }
 
+        /// <summary>
+        /// - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+        /// </summary>
         [Input("diskMib")]
         public Input<int>? DiskMib { get; set; }
 
+        /// <summary>
+        /// VM network UUID for isolating iscsi data traffic.
+        /// </summary>
         [Input("iscsiNetworkUuid")]
         public Input<string>? IscsiNetworkUuid { get; set; }
 
+        /// <summary>
+        /// - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+        /// </summary>
         [Input("memoryMib")]
         public Input<int>? MemoryMib { get; set; }
 
+        /// <summary>
+        /// - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+        /// </summary>
         [Input("networkUuid", required: true)]
         public Input<string> NetworkUuid { get; set; } = null!;
 
+        /// <summary>
+        /// - (Optional) The unique universal identifier (UUID) of the Prism Element
+        /// </summary>
         [Input("prismElementClusterUuid")]
         public Input<string>? PrismElementClusterUuid { get; set; }
 

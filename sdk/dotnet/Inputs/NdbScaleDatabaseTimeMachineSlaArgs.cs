@@ -22,12 +22,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("dailyRetention")]
         public Input<int>? DailyRetention { get; set; }
 
+        /// <summary>
+        /// date created for db instance
+        /// </summary>
         [Input("dateCreated")]
         public Input<string>? DateCreated { get; set; }
 
+        /// <summary>
+        /// date modified for instance
+        /// </summary>
         [Input("dateModified")]
         public Input<string>? DateModified { get; set; }
 
+        /// <summary>
+        /// description of database instance
+        /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
@@ -37,6 +46,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("monthlyRetention")]
         public Input<int>? MonthlyRetention { get; set; }
 
+        /// <summary>
+        /// Name of database instance
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
