@@ -132,7 +132,6 @@ func Provider() tfbridge.ProviderInfo {
 					Source: "foundation_central_list_all_imaged_clusters.html.markdown",
 				},
 			},
-			// "nutanix_foundation_central_imaged_node_details": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationCentralImagedNodeDetails")},
 			"nutanix_foundation_central_imaged_nodes_list": {
 				Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getFoundationCentralImagedNodesList"),
 				Docs: &tfbridge.DocInfo{
@@ -157,6 +156,7 @@ func Provider() tfbridge.ProviderInfo {
 					Markdown: []byte(" "), // no upstream docs
 				},
 			},
+			"nutanix_karbon_cluster_kubeconfig":       {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getKarbonClusterKubeConfig")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
 			// List any npm dependencies and their versions
