@@ -13,28 +13,28 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const configbyid = nutanix.getKarbonClusterKubeConfig({
+ * const configbyid = nutanix.getKarbonClusterKubeconfig({
  *     karbonClusterId: "<YOUR-CLUSTER-ID>",
  * });
- * const configbyname = nutanix.getKarbonClusterKubeConfig({
+ * const configbyname = nutanix.getKarbonClusterKubeconfig({
  *     karbonClusterName: "<YOUR-CLUSTER-NAME>",
  * });
  * ```
  */
-export function getKarbonClusterKubeConfig(args?: GetKarbonClusterKubeConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetKarbonClusterKubeConfigResult> {
+export function getKarbonClusterKubeconfig(args?: GetKarbonClusterKubeconfigArgs, opts?: pulumi.InvokeOptions): Promise<GetKarbonClusterKubeconfigResult> {
     args = args || {};
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
-    return pulumi.runtime.invoke("nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig", {
+    return pulumi.runtime.invoke("nutanix:index/getKarbonClusterKubeconfig:getKarbonClusterKubeconfig", {
         "karbonClusterId": args.karbonClusterId,
         "karbonClusterName": args.karbonClusterName,
     }, opts);
 }
 
 /**
- * A collection of arguments for invoking getKarbonClusterKubeConfig.
+ * A collection of arguments for invoking getKarbonClusterKubeconfig.
  */
-export interface GetKarbonClusterKubeConfigArgs {
+export interface GetKarbonClusterKubeconfigArgs {
     /**
      * Represents karbon cluster uuid
      */
@@ -46,9 +46,9 @@ export interface GetKarbonClusterKubeConfigArgs {
 }
 
 /**
- * A collection of values returned by getKarbonClusterKubeConfig.
+ * A collection of values returned by getKarbonClusterKubeconfig.
  */
-export interface GetKarbonClusterKubeConfigResult {
+export interface GetKarbonClusterKubeconfigResult {
     readonly accessToken: string;
     readonly clusterCaCertificate: string;
     readonly clusterUrl: string;
@@ -69,22 +69,22 @@ export interface GetKarbonClusterKubeConfigResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const configbyid = nutanix.getKarbonClusterKubeConfig({
+ * const configbyid = nutanix.getKarbonClusterKubeconfig({
  *     karbonClusterId: "<YOUR-CLUSTER-ID>",
  * });
- * const configbyname = nutanix.getKarbonClusterKubeConfig({
+ * const configbyname = nutanix.getKarbonClusterKubeconfig({
  *     karbonClusterName: "<YOUR-CLUSTER-NAME>",
  * });
  * ```
  */
-export function getKarbonClusterKubeConfigOutput(args?: GetKarbonClusterKubeConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKarbonClusterKubeConfigResult> {
-    return pulumi.output(args).apply((a: any) => getKarbonClusterKubeConfig(a, opts))
+export function getKarbonClusterKubeconfigOutput(args?: GetKarbonClusterKubeconfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKarbonClusterKubeconfigResult> {
+    return pulumi.output(args).apply((a: any) => getKarbonClusterKubeconfig(a, opts))
 }
 
 /**
- * A collection of arguments for invoking getKarbonClusterKubeConfig.
+ * A collection of arguments for invoking getKarbonClusterKubeconfig.
  */
-export interface GetKarbonClusterKubeConfigOutputArgs {
+export interface GetKarbonClusterKubeconfigOutputArgs {
     /**
      * Represents karbon cluster uuid
      */

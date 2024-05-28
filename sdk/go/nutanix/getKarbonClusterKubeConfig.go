@@ -27,13 +27,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.GetKarbonClusterKubeConfig(ctx, &nutanix.GetKarbonClusterKubeConfigArgs{
+//			_, err := nutanix.GetKarbonClusterKubeconfig(ctx, &nutanix.GetKarbonClusterKubeconfigArgs{
 //				KarbonClusterId: pulumi.StringRef("<YOUR-CLUSTER-ID>"),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			_, err = nutanix.GetKarbonClusterKubeConfig(ctx, &nutanix.GetKarbonClusterKubeConfigArgs{
+//			_, err = nutanix.GetKarbonClusterKubeconfig(ctx, &nutanix.GetKarbonClusterKubeconfigArgs{
 //				KarbonClusterName: pulumi.StringRef("<YOUR-CLUSTER-NAME>"),
 //			}, nil)
 //			if err != nil {
@@ -44,26 +44,26 @@ import (
 //	}
 //
 // ```
-func GetKarbonClusterKubeConfig(ctx *pulumi.Context, args *GetKarbonClusterKubeConfigArgs, opts ...pulumi.InvokeOption) (*GetKarbonClusterKubeConfigResult, error) {
+func GetKarbonClusterKubeconfig(ctx *pulumi.Context, args *GetKarbonClusterKubeconfigArgs, opts ...pulumi.InvokeOption) (*GetKarbonClusterKubeconfigResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetKarbonClusterKubeConfigResult
-	err := ctx.Invoke("nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig", args, &rv, opts...)
+	var rv GetKarbonClusterKubeconfigResult
+	err := ctx.Invoke("nutanix:index/getKarbonClusterKubeconfig:getKarbonClusterKubeconfig", args, &rv, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return &rv, nil
 }
 
-// A collection of arguments for invoking getKarbonClusterKubeConfig.
-type GetKarbonClusterKubeConfigArgs struct {
+// A collection of arguments for invoking getKarbonClusterKubeconfig.
+type GetKarbonClusterKubeconfigArgs struct {
 	// Represents karbon cluster uuid
 	KarbonClusterId *string `pulumi:"karbonClusterId"`
 	// Represents the name of karbon cluster
 	KarbonClusterName *string `pulumi:"karbonClusterName"`
 }
 
-// A collection of values returned by getKarbonClusterKubeConfig.
-type GetKarbonClusterKubeConfigResult struct {
+// A collection of values returned by getKarbonClusterKubeconfig.
+type GetKarbonClusterKubeconfigResult struct {
 	AccessToken          string `pulumi:"accessToken"`
 	ClusterCaCertificate string `pulumi:"clusterCaCertificate"`
 	ClusterUrl           string `pulumi:"clusterUrl"`
@@ -74,75 +74,75 @@ type GetKarbonClusterKubeConfigResult struct {
 	Name              string  `pulumi:"name"`
 }
 
-func GetKarbonClusterKubeConfigOutput(ctx *pulumi.Context, args GetKarbonClusterKubeConfigOutputArgs, opts ...pulumi.InvokeOption) GetKarbonClusterKubeConfigResultOutput {
+func GetKarbonClusterKubeconfigOutput(ctx *pulumi.Context, args GetKarbonClusterKubeconfigOutputArgs, opts ...pulumi.InvokeOption) GetKarbonClusterKubeconfigResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetKarbonClusterKubeConfigResult, error) {
-			args := v.(GetKarbonClusterKubeConfigArgs)
-			r, err := GetKarbonClusterKubeConfig(ctx, &args, opts...)
-			var s GetKarbonClusterKubeConfigResult
+		ApplyT(func(v interface{}) (GetKarbonClusterKubeconfigResult, error) {
+			args := v.(GetKarbonClusterKubeconfigArgs)
+			r, err := GetKarbonClusterKubeconfig(ctx, &args, opts...)
+			var s GetKarbonClusterKubeconfigResult
 			if r != nil {
 				s = *r
 			}
 			return s, err
-		}).(GetKarbonClusterKubeConfigResultOutput)
+		}).(GetKarbonClusterKubeconfigResultOutput)
 }
 
-// A collection of arguments for invoking getKarbonClusterKubeConfig.
-type GetKarbonClusterKubeConfigOutputArgs struct {
+// A collection of arguments for invoking getKarbonClusterKubeconfig.
+type GetKarbonClusterKubeconfigOutputArgs struct {
 	// Represents karbon cluster uuid
 	KarbonClusterId pulumi.StringPtrInput `pulumi:"karbonClusterId"`
 	// Represents the name of karbon cluster
 	KarbonClusterName pulumi.StringPtrInput `pulumi:"karbonClusterName"`
 }
 
-func (GetKarbonClusterKubeConfigOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetKarbonClusterKubeConfigArgs)(nil)).Elem()
+func (GetKarbonClusterKubeconfigOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKarbonClusterKubeconfigArgs)(nil)).Elem()
 }
 
-// A collection of values returned by getKarbonClusterKubeConfig.
-type GetKarbonClusterKubeConfigResultOutput struct{ *pulumi.OutputState }
+// A collection of values returned by getKarbonClusterKubeconfig.
+type GetKarbonClusterKubeconfigResultOutput struct{ *pulumi.OutputState }
 
-func (GetKarbonClusterKubeConfigResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetKarbonClusterKubeConfigResult)(nil)).Elem()
+func (GetKarbonClusterKubeconfigResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKarbonClusterKubeconfigResult)(nil)).Elem()
 }
 
-func (o GetKarbonClusterKubeConfigResultOutput) ToGetKarbonClusterKubeConfigResultOutput() GetKarbonClusterKubeConfigResultOutput {
+func (o GetKarbonClusterKubeconfigResultOutput) ToGetKarbonClusterKubeconfigResultOutput() GetKarbonClusterKubeconfigResultOutput {
 	return o
 }
 
-func (o GetKarbonClusterKubeConfigResultOutput) ToGetKarbonClusterKubeConfigResultOutputWithContext(ctx context.Context) GetKarbonClusterKubeConfigResultOutput {
+func (o GetKarbonClusterKubeconfigResultOutput) ToGetKarbonClusterKubeconfigResultOutputWithContext(ctx context.Context) GetKarbonClusterKubeconfigResultOutput {
 	return o
 }
 
-func (o GetKarbonClusterKubeConfigResultOutput) AccessToken() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKarbonClusterKubeConfigResult) string { return v.AccessToken }).(pulumi.StringOutput)
+func (o GetKarbonClusterKubeconfigResultOutput) AccessToken() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKarbonClusterKubeconfigResult) string { return v.AccessToken }).(pulumi.StringOutput)
 }
 
-func (o GetKarbonClusterKubeConfigResultOutput) ClusterCaCertificate() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKarbonClusterKubeConfigResult) string { return v.ClusterCaCertificate }).(pulumi.StringOutput)
+func (o GetKarbonClusterKubeconfigResultOutput) ClusterCaCertificate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKarbonClusterKubeconfigResult) string { return v.ClusterCaCertificate }).(pulumi.StringOutput)
 }
 
-func (o GetKarbonClusterKubeConfigResultOutput) ClusterUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKarbonClusterKubeConfigResult) string { return v.ClusterUrl }).(pulumi.StringOutput)
+func (o GetKarbonClusterKubeconfigResultOutput) ClusterUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKarbonClusterKubeconfigResult) string { return v.ClusterUrl }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetKarbonClusterKubeConfigResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKarbonClusterKubeConfigResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetKarbonClusterKubeconfigResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKarbonClusterKubeconfigResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-func (o GetKarbonClusterKubeConfigResultOutput) KarbonClusterId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetKarbonClusterKubeConfigResult) *string { return v.KarbonClusterId }).(pulumi.StringPtrOutput)
+func (o GetKarbonClusterKubeconfigResultOutput) KarbonClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetKarbonClusterKubeconfigResult) *string { return v.KarbonClusterId }).(pulumi.StringPtrOutput)
 }
 
-func (o GetKarbonClusterKubeConfigResultOutput) KarbonClusterName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetKarbonClusterKubeConfigResult) *string { return v.KarbonClusterName }).(pulumi.StringPtrOutput)
+func (o GetKarbonClusterKubeconfigResultOutput) KarbonClusterName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetKarbonClusterKubeconfigResult) *string { return v.KarbonClusterName }).(pulumi.StringPtrOutput)
 }
 
-func (o GetKarbonClusterKubeConfigResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetKarbonClusterKubeConfigResult) string { return v.Name }).(pulumi.StringOutput)
+func (o GetKarbonClusterKubeconfigResultOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKarbonClusterKubeconfigResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetKarbonClusterKubeConfigResultOutput{})
+	pulumi.RegisterOutputType(GetKarbonClusterKubeconfigResultOutput{})
 }
