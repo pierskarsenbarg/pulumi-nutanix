@@ -49,7 +49,7 @@
         "getHosts.ts",
         "getImage.ts",
         "getKarbonCluster.ts",
-        "getKarbonClusterKubeconfig.ts",
+        "getKarbonClusterKubeConfig.ts",
         "getKarbonClusterSsh.ts",
         "getKarbonClusters.ts",
         "getKarbonPrivateRegistries.ts",

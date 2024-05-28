@@ -175,10 +175,10 @@ export const getKarbonCluster: typeof import("./getKarbonCluster").getKarbonClus
 export const getKarbonClusterOutput: typeof import("./getKarbonCluster").getKarbonClusterOutput = null as any;
 utilities.lazyLoad(exports, ["getKarbonCluster","getKarbonClusterOutput"], () => require("./getKarbonCluster"));
 
-export { GetKarbonClusterKubeconfigArgs, GetKarbonClusterKubeconfigResult, GetKarbonClusterKubeconfigOutputArgs } from "./getKarbonClusterKubeconfig";
-export const getKarbonClusterKubeconfig: typeof import("./getKarbonClusterKubeconfig").getKarbonClusterKubeconfig = null as any;
-export const getKarbonClusterKubeconfigOutput: typeof import("./getKarbonClusterKubeconfig").getKarbonClusterKubeconfigOutput = null as any;
-utilities.lazyLoad(exports, ["getKarbonClusterKubeconfig","getKarbonClusterKubeconfigOutput"], () => require("./getKarbonClusterKubeconfig"));
+export { GetKarbonClusterKubeConfigArgs, GetKarbonClusterKubeConfigResult, GetKarbonClusterKubeConfigOutputArgs } from "./getKarbonClusterKubeConfig";
+export const getKarbonClusterKubeConfig: typeof import("./getKarbonClusterKubeConfig").getKarbonClusterKubeConfig = null as any;
+export const getKarbonClusterKubeConfigOutput: typeof import("./getKarbonClusterKubeConfig").getKarbonClusterKubeConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getKarbonClusterKubeConfig","getKarbonClusterKubeConfigOutput"], () => require("./getKarbonClusterKubeConfig"));
 
 export { GetKarbonClusterSshArgs, GetKarbonClusterSshResult, GetKarbonClusterSshOutputArgs } from "./getKarbonClusterSsh";
 export const getKarbonClusterSsh: typeof import("./getKarbonClusterSsh").getKarbonClusterSsh = null as any;
