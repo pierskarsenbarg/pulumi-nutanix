@@ -89,6 +89,19 @@ def get_users(metadatas: Optional[Sequence[pulumi.InputType['GetUsersMetadataArg
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    user = nutanix.User("user", directory_service_user=nutanix.UserDirectoryServiceUserArgs(
+        directory_service_reference=nutanix.UserDirectoryServiceUserDirectoryServiceReferenceArgs(
+            uuid="<directory-service-uuid>",
+        ),
+        user_principal_name="test-user@ntnxlab.local",
+    ))
+    users = nutanix.get_user()
+    ```
+
 
     :param Sequence[pulumi.InputType['GetUsersMetadataArgs']] metadatas: - The user kind metadata.
     """
@@ -111,6 +124,19 @@ def get_users_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi.I
     Provides a datasource to retrieve all the users.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    user = nutanix.User("user", directory_service_user=nutanix.UserDirectoryServiceUserArgs(
+        directory_service_reference=nutanix.UserDirectoryServiceUserDirectoryServiceReferenceArgs(
+            uuid="<directory-service-uuid>",
+        ),
+        user_principal_name="test-user@ntnxlab.local",
+    ))
+    users = nutanix.get_user()
+    ```
 
 
     :param Sequence[pulumi.InputType['GetUsersMetadataArgs']] metadatas: - The user kind metadata.

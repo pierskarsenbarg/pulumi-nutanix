@@ -17,22 +17,30 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
-        /// ``` hcl
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// //Retrieve by UUID
-        /// data "nutanix_user_group" "usergroup" {
-        /// 	user_group_id = "dd30a856-8e72-4158-b716-98455ceda220"
-        /// }
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var usergroup = Nutanix.GetUserGroup.Invoke(new()
+        ///     {
+        ///         UserGroupId = "dd30a856-8e72-4158-b716-98455ceda220",
+        ///     });
         /// 
-        /// //Retrieve by Name
-        /// data "nutanix_user_group" "usergroupbyname" {
-        /// 	user_group_name = "example-group-1"
-        /// }
+        ///     var usergroupbyname = Nutanix.GetUserGroup.Invoke(new()
+        ///     {
+        ///         UserGroupName = "example-group-1",
+        ///     });
         /// 
-        /// //Retrieve by Distinguished Name
-        /// data "nutanix_user_group" "test" {
-        /// 	user_group_distinguished_name = "cn=example-group-1,cn=users,dc=ntnxlab,dc=local"
-        /// }
+        ///     var test = Nutanix.GetUserGroup.Invoke(new()
+        ///     {
+        ///         UserGroupDistinguishedName = "cn=example-group-1,cn=users,dc=ntnxlab,dc=local",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// </summary>
         public static Task<GetUserGroupResult> InvokeAsync(GetUserGroupArgs? args = null, InvokeOptions? options = null)
@@ -43,22 +51,30 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
-        /// ``` hcl
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
         /// 
-        /// //Retrieve by UUID
-        /// data "nutanix_user_group" "usergroup" {
-        /// 	user_group_id = "dd30a856-8e72-4158-b716-98455ceda220"
-        /// }
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var usergroup = Nutanix.GetUserGroup.Invoke(new()
+        ///     {
+        ///         UserGroupId = "dd30a856-8e72-4158-b716-98455ceda220",
+        ///     });
         /// 
-        /// //Retrieve by Name
-        /// data "nutanix_user_group" "usergroupbyname" {
-        /// 	user_group_name = "example-group-1"
-        /// }
+        ///     var usergroupbyname = Nutanix.GetUserGroup.Invoke(new()
+        ///     {
+        ///         UserGroupName = "example-group-1",
+        ///     });
         /// 
-        /// //Retrieve by Distinguished Name
-        /// data "nutanix_user_group" "test" {
-        /// 	user_group_distinguished_name = "cn=example-group-1,cn=users,dc=ntnxlab,dc=local"
-        /// }
+        ///     var test = Nutanix.GetUserGroup.Invoke(new()
+        ///     {
+        ///         UserGroupDistinguishedName = "cn=example-group-1,cn=users,dc=ntnxlab,dc=local",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// </summary>
         public static Output<GetUserGroupResult> Invoke(GetUserGroupInvokeArgs? args = null, InvokeOptions? options = null)

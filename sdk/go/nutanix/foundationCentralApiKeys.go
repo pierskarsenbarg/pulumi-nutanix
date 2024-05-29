@@ -15,6 +15,30 @@ import (
 // Provides a resource to create a new API key for nodes registration with Foundation Central.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewFoundationCentralApiKeys(ctx, "newApiKey", &nutanix.FoundationCentralApiKeysArgs{
+//				Alias: pulumi.String("<NAME-FOR-API-KEY>"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type FoundationCentralApiKeys struct {
 	pulumi.CustomResourceState
 

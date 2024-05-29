@@ -10,6 +10,20 @@ import * as utilities from "./utilities";
  * Provides a datasource to retrieve all the users.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const user = new nutanix.User("user", {directoryServiceUser: {
+ *     directoryServiceReference: {
+ *         uuid: "<directory-service-uuid>",
+ *     },
+ *     userPrincipalName: "test-user@ntnxlab.local",
+ * }});
+ * const users = nutanix.getUser({});
+ * ```
  */
 export function getUsers(args?: GetUsersArgs, opts?: pulumi.InvokeOptions): Promise<GetUsersResult> {
     args = args || {};
@@ -55,6 +69,20 @@ export interface GetUsersResult {
  * Provides a datasource to retrieve all the users.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const user = new nutanix.User("user", {directoryServiceUser: {
+ *     directoryServiceReference: {
+ *         uuid: "<directory-service-uuid>",
+ *     },
+ *     userPrincipalName: "test-user@ntnxlab.local",
+ * }});
+ * const users = nutanix.getUser({});
+ * ```
  */
 export function getUsersOutput(args?: GetUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsersResult> {
     return pulumi.output(args).apply((a: any) => getUsers(a, opts))

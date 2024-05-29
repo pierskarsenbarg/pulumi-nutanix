@@ -89,6 +89,13 @@ def get_roles(metadatas: Optional[Sequence[pulumi.InputType['GetRolesMetadataArg
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    test = nutanix.get_roles()
+    ```
+
 
     :param Sequence[pulumi.InputType['GetRolesMetadataArgs']] metadatas: - The role kind metadata.
     """
@@ -111,6 +118,13 @@ def get_roles_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi.I
     Describes a list of roles.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    test = nutanix.get_roles()
+    ```
 
 
     :param Sequence[pulumi.InputType['GetRolesMetadataArgs']] metadatas: - The role kind metadata.

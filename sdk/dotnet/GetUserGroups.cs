@@ -17,8 +17,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
-        /// ``` hcl
-        /// data "nutanix_user_groups" "usergroups" {}
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var usergroups = Nutanix.GetUserGroups.Invoke();
+        /// 
+        /// });
         /// ```
         /// </summary>
         public static Task<GetUserGroupsResult> InvokeAsync(GetUserGroupsArgs? args = null, InvokeOptions? options = null)
@@ -29,8 +38,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
-        /// ``` hcl
-        /// data "nutanix_user_groups" "usergroups" {}
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var usergroups = Nutanix.GetUserGroups.Invoke();
+        /// 
+        /// });
         /// ```
         /// </summary>
         public static Output<GetUserGroupsResult> Invoke(GetUserGroupsInvokeArgs? args = null, InvokeOptions? options = null)

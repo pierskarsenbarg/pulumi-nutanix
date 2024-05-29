@@ -14,6 +14,39 @@ import (
 // Provides a datasource to retrieve a address group.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			testAddress, err := nutanix.NewAddressGroup(ctx, "testAddress", &nutanix.AddressGroupArgs{
+//				Description: pulumi.String("test address groups resource"),
+//				IpAddressBlockLists: nutanix.AddressGroupIpAddressBlockListArray{
+//					&nutanix.AddressGroupIpAddressBlockListArgs{
+//						Ip:           pulumi.String("10.0.0.0"),
+//						PrefixLength: pulumi.Int(24),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_ = nutanix.LookupAddressGroupOutput(ctx, nutanix.GetAddressGroupOutputArgs{
+//				Uuid: testAddress.ID(),
+//			}, nil)
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupAddressGroup(ctx *pulumi.Context, args *LookupAddressGroupArgs, opts ...pulumi.InvokeOption) (*LookupAddressGroupResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAddressGroupResult

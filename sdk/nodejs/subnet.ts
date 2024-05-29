@@ -8,8 +8,6 @@ import * as utilities from "./utilities";
 
 /**
  * Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
- *
- * ## Example Usage
  */
 export class Subnet extends pulumi.CustomResource {
     /**

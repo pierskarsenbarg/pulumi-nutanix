@@ -217,8 +217,6 @@ def get_user(categories: Optional[Sequence[pulumi.InputType['GetUserCategoryArgs
     """
     Provides a datasource to retrieve a user based on the input parameters.
 
-    ## Example Usage
-
 
     :param Sequence[pulumi.InputType['GetUserCategoryArgs']] categories: - (Optional) Categories for the Access Control Policy.
     :param Mapping[str, str] owner_reference: - (Optional) The reference to a user.
@@ -260,8 +258,6 @@ def get_user_output(categories: Optional[pulumi.Input[Optional[Sequence[pulumi.I
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserResult]:
     """
     Provides a datasource to retrieve a user based on the input parameters.
-
-    ## Example Usage
 
 
     :param Sequence[pulumi.InputType['GetUserCategoryArgs']] categories: - (Optional) Categories for the Access Control Policy.

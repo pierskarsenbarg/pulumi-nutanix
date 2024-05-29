@@ -10,6 +10,25 @@ import * as utilities from "./utilities";
  * Provides a resource to add a User group to the system..
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const userGrp = new nutanix.UserGroups("userGrp", {directoryServiceUserGroups: [{
+ *     distinguishedName: "<distinguished name for the user group>",
+ * }]});
+ * ```
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const userGrp = new nutanix.UserGroups("userGrp", {samlUserGroups: [{
+ *     idpUuid: "<idp uuid of the group>",
+ *     name: "<name of saml group>",
+ * }]});
+ * ```
  */
 export class UserGroups extends pulumi.CustomResource {
     /**

@@ -17,8 +17,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
-        /// ``` hcl
-        ///   data "nutanix_address_groups" "addr_groups" {}
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var addrGroups = Nutanix.GetAddressGroups.Invoke();
+        /// 
+        /// });
         /// ```
         /// </summary>
         public static Task<GetAddressGroupsResult> InvokeAsync(GetAddressGroupsArgs? args = null, InvokeOptions? options = null)
@@ -29,8 +38,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
-        /// ``` hcl
-        ///   data "nutanix_address_groups" "addr_groups" {}
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var addrGroups = Nutanix.GetAddressGroups.Invoke();
+        /// 
+        /// });
         /// ```
         /// </summary>
         public static Output<GetAddressGroupsResult> Invoke(GetAddressGroupsInvokeArgs? args = null, InvokeOptions? options = null)

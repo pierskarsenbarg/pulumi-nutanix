@@ -8,8 +8,6 @@ import * as utilities from "./utilities";
 
 /**
  * Provides a datasource to retrieve a user based on the input parameters.
- *
- * ## Example Usage
  */
 export function getUser(args?: GetUserArgs, opts?: pulumi.InvokeOptions): Promise<GetUserResult> {
     args = args || {};
@@ -105,8 +103,6 @@ export interface GetUserResult {
 }
 /**
  * Provides a datasource to retrieve a user based on the input parameters.
- *
- * ## Example Usage
  */
 export function getUserOutput(args?: GetUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserResult> {
     return pulumi.output(args).apply((a: any) => getUser(a, opts))

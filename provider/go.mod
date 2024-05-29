@@ -4,7 +4,7 @@ go 1.22
 
 replace (
 	github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20240229143312-4f60ee4e2975
-	github.com/terraform-providers/terraform-provider-nutanix => github.com/nutanix/terraform-provider-nutanix v1.9.5
+	github.com/terraform-providers/terraform-provider-nutanix => github.com/pierskarsenbarg/terraform-provider-nutanix v1.6.2-0.20240528163917-bf1aea8fe346
 )
 
 require (

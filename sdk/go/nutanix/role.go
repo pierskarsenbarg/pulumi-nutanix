@@ -15,6 +15,44 @@ import (
 // Provides a resource to create a role based on the input parameters.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewRole(ctx, "test", &nutanix.RoleArgs{
+//				Description: pulumi.String("DESCRIPTION"),
+//				PermissionReferenceLists: nutanix.RolePermissionReferenceListArray{
+//					&nutanix.RolePermissionReferenceListArgs{
+//						Kind: pulumi.String("permission"),
+//						Uuid: pulumi.String("ID OF PERMISSION"),
+//					},
+//					&nutanix.RolePermissionReferenceListArgs{
+//						Kind: pulumi.String("permission"),
+//						Uuid: pulumi.String("ID OF PERMISSION"),
+//					},
+//					&nutanix.RolePermissionReferenceListArgs{
+//						Kind: pulumi.String("permission"),
+//						Uuid: pulumi.String("ID OF PERMISSION"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type Role struct {
 	pulumi.CustomResourceState
 

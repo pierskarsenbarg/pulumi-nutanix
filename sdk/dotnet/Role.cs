@@ -14,6 +14,40 @@ namespace PiersKarsenbarg.Nutanix
     /// Provides a resource to create a role based on the input parameters.
     /// 
     /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var test = new Nutanix.Role("test", new()
+    ///     {
+    ///         Description = "DESCRIPTION",
+    ///         PermissionReferenceLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.RolePermissionReferenceListArgs
+    ///             {
+    ///                 Kind = "permission",
+    ///                 Uuid = "ID OF PERMISSION",
+    ///             },
+    ///             new Nutanix.Inputs.RolePermissionReferenceListArgs
+    ///             {
+    ///                 Kind = "permission",
+    ///                 Uuid = "ID OF PERMISSION",
+    ///             },
+    ///             new Nutanix.Inputs.RolePermissionReferenceListArgs
+    ///             {
+    ///                 Kind = "permission",
+    ///                 Uuid = "ID OF PERMISSION",
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/role:Role")]
     public partial class Role : global::Pulumi.CustomResource

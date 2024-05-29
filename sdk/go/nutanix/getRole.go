@@ -12,8 +12,6 @@ import (
 )
 
 // Describes a Role.
-//
-// ## Example Usage
 func LookupRole(ctx *pulumi.Context, args *LookupRoleArgs, opts ...pulumi.InvokeOption) (*LookupRoleResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupRoleResult

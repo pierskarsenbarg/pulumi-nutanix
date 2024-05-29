@@ -12,8 +12,6 @@ import (
 )
 
 // Provides a datasource to retrieve a user based on the input parameters.
-//
-// ## Example Usage
 func LookupUser(ctx *pulumi.Context, args *LookupUserArgs, opts ...pulumi.InvokeOption) (*LookupUserResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupUserResult

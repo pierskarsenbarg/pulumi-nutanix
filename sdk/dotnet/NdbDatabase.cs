@@ -17,7 +17,87 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ### NDB database resource with new database server VM
     /// 
-    /// ### NDB database resource to provision HA instance with new database server VM
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var dbp = new Nutanix.NdbDatabase("dbp", new()
+    ///     {
+    ///         Databasetype = "postgres_database",
+    ///         Description = "add description",
+    ///         Softwareprofileid = "{{ software_profile_id }}",
+    ///         Softwareprofileversionid = "{{ software_profile_version_id }}",
+    ///         Computeprofileid = "{{ compute_profile_id }}",
+    ///         Networkprofileid = "{{ network_profile_id }}",
+    ///         Dbparameterprofileid = "{{ db_parameter_profile_id }}",
+    ///         PostgresqlInfo = new Nutanix.Inputs.NdbDatabasePostgresqlInfoArgs
+    ///         {
+    ///             ListenerPort = "{{ listner_port }}",
+    ///             DatabaseSize = "{{ 200 }}",
+    ///             DbPassword = "password",
+    ///             DatabaseNames = "testdb1",
+    ///         },
+    ///         Nxclusterid = local.Clusters.EraCluster.Id,
+    ///         Sshpublickey = "{{ ssh-public-key }}",
+    ///         Nodes = new[]
+    ///         {
+    ///             new Nutanix.Inputs.NdbDatabaseNodeArgs
+    ///             {
+    ///                 Vmname = "test-era-vm1",
+    ///                 Networkprofileid = "&lt;network-profile-uuid&gt;",
+    ///             },
+    ///         },
+    ///         Timemachineinfo = new Nutanix.Inputs.NdbDatabaseTimemachineinfoArgs
+    ///         {
+    ///             Name = "test-pg-inst",
+    ///             Description = "description of time machine",
+    ///             Slaid = "{{ sla_id }}",
+    ///             Schedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleArgs
+    ///             {
+    ///                 Snapshottimeofday = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgs
+    ///                 {
+    ///                     Hours = 16,
+    ///                     Minutes = 0,
+    ///                     Seconds = 0,
+    ///                 },
+    ///                 Continuousschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     Logbackupinterval = 30,
+    ///                     Snapshotsperday = 1,
+    ///                 },
+    ///                 Weeklyschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     Dayofweek = "WEDNESDAY",
+    ///                 },
+    ///                 Monthlyschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     Dayofmonth = 27,
+    ///                 },
+    ///                 Quartelyschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgs
+    ///                 {
+    ///                     Enabled = true,
+    ///                     Startmonth = "JANUARY",
+    ///                     Dayofmonth = 27,
+    ///                 },
+    ///                 Yearlyschedule = new Nutanix.Inputs.NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgs
+    ///                 {
+    ///                     Enabled = false,
+    ///                     Dayofmonth = 31,
+    ///                     Month = "DECEMBER",
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// 
     /// ### NDB database resource with registered database server VM
     /// 

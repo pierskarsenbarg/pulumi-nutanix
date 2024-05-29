@@ -14,6 +14,51 @@ namespace PiersKarsenbarg.Nutanix
     /// Provides a resource to add a User group to the system..
     /// 
     /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var userGrp = new Nutanix.UserGroups("userGrp", new()
+    ///     {
+    ///         DirectoryServiceUserGroups = new[]
+    ///         {
+    ///             new Nutanix.Inputs.UserGroupsDirectoryServiceUserGroupArgs
+    ///             {
+    ///                 DistinguishedName = "&lt;distinguished name for the user group&gt;",
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var userGrp = new Nutanix.UserGroups("userGrp", new()
+    ///     {
+    ///         SamlUserGroups = new[]
+    ///         {
+    ///             new Nutanix.Inputs.UserGroupsSamlUserGroupArgs
+    ///             {
+    ///                 IdpUuid = "&lt;idp uuid of the group&gt;",
+    ///                 Name = "&lt;name of saml group&gt;",
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/userGroups:UserGroups")]
     public partial class UserGroups : global::Pulumi.CustomResource

@@ -14,46 +14,12 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Describes an Access Control Policy.
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ``` hcl
-        /// resource "nutanix_access_control_policy" "test" {
-        /// 	name        = "NAME OF ACCESS CONTROL POLICY"
-        /// 	description = "DESCRIPTION OF THE ACCESS CONTROL POLICY"
-        /// 	role_reference {
-        /// 		kind = "role"
-        /// 		uuid = "UUID of role"
-        /// 	}
-        /// }
-        /// data "nutanix_access_control_policy" "test" {
-        ///     access_control_policy_id = nutanix_access_control_policy.test.id
-        /// }
-        /// 
-        /// ```
         /// </summary>
         public static Task<GetAccessControlPolicyResult> InvokeAsync(GetAccessControlPolicyArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAccessControlPolicyResult>("nutanix:index/getAccessControlPolicy:getAccessControlPolicy", args ?? new GetAccessControlPolicyArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes an Access Control Policy.
-        /// 
-        /// ## Example Usage
-        /// 
-        /// ``` hcl
-        /// resource "nutanix_access_control_policy" "test" {
-        /// 	name        = "NAME OF ACCESS CONTROL POLICY"
-        /// 	description = "DESCRIPTION OF THE ACCESS CONTROL POLICY"
-        /// 	role_reference {
-        /// 		kind = "role"
-        /// 		uuid = "UUID of role"
-        /// 	}
-        /// }
-        /// data "nutanix_access_control_policy" "test" {
-        ///     access_control_policy_id = nutanix_access_control_policy.test.id
-        /// }
-        /// 
-        /// ```
         /// </summary>
         public static Output<GetAccessControlPolicyResult> Invoke(GetAccessControlPolicyInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccessControlPolicyResult>("nutanix:index/getAccessControlPolicy:getAccessControlPolicy", args ?? new GetAccessControlPolicyInvokeArgs(), options.WithDefaults());

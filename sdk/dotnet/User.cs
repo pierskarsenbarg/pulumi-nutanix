@@ -14,6 +14,52 @@ namespace PiersKarsenbarg.Nutanix
     /// Provides a resource to create a user based on the input parameters.
     /// 
     /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var user = new Nutanix.User("user", new()
+    ///     {
+    ///         DirectoryServiceUser = new Nutanix.Inputs.UserDirectoryServiceUserArgs
+    ///         {
+    ///             DirectoryServiceReference = new Nutanix.Inputs.UserDirectoryServiceUserDirectoryServiceReferenceArgs
+    ///             {
+    ///                 Uuid = "&lt;directory-service-uuid&gt;",
+    ///             },
+    ///             UserPrincipalName = "test-user@ntnxlab.local",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var user = new Nutanix.User("user", new()
+    ///     {
+    ///         IdentityProviderUser = new Nutanix.Inputs.UserIdentityProviderUserArgs
+    ///         {
+    ///             IdentityProviderReference = new Nutanix.Inputs.UserIdentityProviderUserIdentityProviderReferenceArgs
+    ///             {
+    ///                 Uuid = "&lt;identity-provider-uuid&gt;",
+    ///             },
+    ///             Username = "username",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/user:User")]
     public partial class User : global::Pulumi.CustomResource

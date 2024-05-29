@@ -112,6 +112,19 @@ def get_address_group(uuid: Optional[str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    test_address = nutanix.AddressGroup("testAddress",
+        description="test address groups resource",
+        ip_address_block_lists=[nutanix.AddressGroupIpAddressBlockListArgs(
+            ip="10.0.0.0",
+            prefix_length=24,
+        )])
+    addr_group = nutanix.get_address_group_output(uuid=test_address.id)
+    ```
+
 
     :param str uuid: - (Required) UUID of the address group
     """
@@ -136,6 +149,19 @@ def get_address_group_output(uuid: Optional[pulumi.Input[str]] = None,
     Provides a datasource to retrieve a address group.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    test_address = nutanix.AddressGroup("testAddress",
+        description="test address groups resource",
+        ip_address_block_lists=[nutanix.AddressGroupIpAddressBlockListArgs(
+            ip="10.0.0.0",
+            prefix_length=24,
+        )])
+    addr_group = nutanix.get_address_group_output(uuid=test_address.id)
+    ```
 
 
     :param str uuid: - (Required) UUID of the address group

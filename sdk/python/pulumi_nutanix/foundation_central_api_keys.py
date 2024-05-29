@@ -134,6 +134,13 @@ class FoundationCentralApiKeys(pulumi.CustomResource):
 
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        new_api_key = nutanix.FoundationCentralApiKeys("newApiKey", alias="<NAME-FOR-API-KEY>")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] alias: - (Required) Alias for the api key to be created.
@@ -148,6 +155,13 @@ class FoundationCentralApiKeys(pulumi.CustomResource):
         Provides a resource to create a new API key for nodes registration with Foundation Central.
 
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        new_api_key = nutanix.FoundationCentralApiKeys("newApiKey", alias="<NAME-FOR-API-KEY>")
+        ```
 
         :param str resource_name: The name of the resource.
         :param FoundationCentralApiKeysArgs args: The arguments to use to populate this resource's properties.
