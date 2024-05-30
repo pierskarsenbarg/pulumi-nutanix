@@ -15,10 +15,10 @@ The Pulumi Nutanix provider is available as a package from the following reposit
 
 ### Provider Binary
 
-The Scaleway provider binary is a third party binary. It can be installed using the `pulumi plugin` command.
+The Nutanix provider binary is a third party binary. It can be installed using the `pulumi plugin` command.
 
 ```bash
-pulumi plugin install resource scaleway <version> --server github://api.github.com/pulumiverse
+pulumi plugin install resource nutanix <version> --server github://api.github.com/pulumiverse
 ```
 
 Replace the version string with your desired version.
