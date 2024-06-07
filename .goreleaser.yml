@@ -23,8 +23,9 @@ builds:
       - -X github.com/pierskarsenbarg/pulumi-nutanix/provider/pkg/version.Version={{.Tag}}
     main: ./cmd/pulumi-resource-nutanix/
 changelog:
-  skip: true
+  disable: true
 release:
   prerelease: auto
 snapshot:
   name_template: "{{ .Tag }}-SNAPSHOT"
+version: 2
