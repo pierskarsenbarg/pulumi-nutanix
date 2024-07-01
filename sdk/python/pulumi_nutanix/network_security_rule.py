@@ -1128,7 +1128,7 @@ class NetworkSecurityRule(pulumi.CustomResource):
                     uuid=address1.id,
                 )],
             )],
-            opts=pulumi.ResourceOptions(depends_on=[ad_group_user_1]))
+            opts = pulumi.ResourceOptions(depends_on=[ad_group_user_1]))
         ```
 
         :param str resource_name: The name of the resource.
@@ -1255,7 +1255,7 @@ class NetworkSecurityRule(pulumi.CustomResource):
                     uuid=address1.id,
                 )],
             )],
-            opts=pulumi.ResourceOptions(depends_on=[ad_group_user_1]))
+            opts = pulumi.ResourceOptions(depends_on=[ad_group_user_1]))
         ```
 
         :param str resource_name: The name of the resource.
