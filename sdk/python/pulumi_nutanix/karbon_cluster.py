@@ -195,13 +195,11 @@ class KarbonClusterArgs:
 
     @property
     @pulumi.getter(name="waitTimeoutMinutes")
+    @_utilities.deprecated("""use timeouts instead""")
     def wait_timeout_minutes(self) -> Optional[pulumi.Input[int]]:
         """
         - (Optional) Maximum wait time for the Karbon cluster to provision.
         """
-        warnings.warn("""use timeouts instead""", DeprecationWarning)
-        pulumi.log.warn("""wait_timeout_minutes is deprecated: use timeouts instead""")
-
         return pulumi.get(self, "wait_timeout_minutes")
 
     @wait_timeout_minutes.setter
@@ -424,13 +422,11 @@ class _KarbonClusterState:
 
     @property
     @pulumi.getter(name="waitTimeoutMinutes")
+    @_utilities.deprecated("""use timeouts instead""")
     def wait_timeout_minutes(self) -> Optional[pulumi.Input[int]]:
         """
         - (Optional) Maximum wait time for the Karbon cluster to provision.
         """
-        warnings.warn("""use timeouts instead""", DeprecationWarning)
-        pulumi.log.warn("""wait_timeout_minutes is deprecated: use timeouts instead""")
-
         return pulumi.get(self, "wait_timeout_minutes")
 
     @wait_timeout_minutes.setter
@@ -922,13 +918,11 @@ class KarbonCluster(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="waitTimeoutMinutes")
+    @_utilities.deprecated("""use timeouts instead""")
     def wait_timeout_minutes(self) -> pulumi.Output[Optional[int]]:
         """
         - (Optional) Maximum wait time for the Karbon cluster to provision.
         """
-        warnings.warn("""use timeouts instead""", DeprecationWarning)
-        pulumi.log.warn("""wait_timeout_minutes is deprecated: use timeouts instead""")
-
         return pulumi.get(self, "wait_timeout_minutes")
 
     @property
