@@ -14,33 +14,108 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetNdbTimeMachinesTimeMachineResult
     {
+        /// <summary>
+        /// access level to time machines
+        /// </summary>
         public readonly string AccessLevel;
+        /// <summary>
+        /// clone time machine or not
+        /// </summary>
         public readonly bool Clone;
+        /// <summary>
+        /// clone info
+        /// </summary>
         public readonly string Clones;
+        /// <summary>
+        /// clustered or not
+        /// </summary>
         public readonly bool Clustered;
+        /// <summary>
+        /// database info
+        /// </summary>
         public readonly string Database;
+        /// <summary>
+        /// database id
+        /// </summary>
         public readonly string DatabaseId;
+        /// <summary>
+        /// date created
+        /// </summary>
         public readonly string DateCreated;
+        /// <summary>
+        /// date modified
+        /// </summary>
         public readonly string DateModified;
+        /// <summary>
+        /// time machine description
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// ea status of time machine
+        /// </summary>
         public readonly string EaStatus;
+        /// <summary>
+        /// time machine id
+        /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Metric info
+        /// </summary>
         public readonly string Metric;
+        /// <summary>
+        /// time machine name
+        /// </summary>
         public readonly string Name;
         /// <summary>
         /// List of all the properties
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNdbTimeMachinesTimeMachinePropertyResult> Properties;
+        /// <summary>
+        /// schedule id
+        /// </summary>
         public readonly string ScheduleId;
+        /// <summary>
+        /// schedule info
+        /// 
+        /// 
+        /// See detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetNdbTimeMachinesTimeMachineScheduleResult> Schedules;
+        /// <summary>
+        /// scope
+        /// </summary>
         public readonly string Scope;
+        /// <summary>
+        /// sla id
+        /// </summary>
         public readonly string SlaId;
+        /// <summary>
+        /// sla update in progress
+        /// </summary>
         public readonly bool SlaUpdateInProgress;
+        /// <summary>
+        /// sla update metadata
+        /// </summary>
         public readonly string SlaUpdateMetadata;
+        /// <summary>
+        /// sla info
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetNdbTimeMachinesTimeMachineSlaResult> Slas;
+        /// <summary>
+        /// source clusters
+        /// </summary>
         public readonly ImmutableArray<string> SourceNxClusters;
+        /// <summary>
+        /// status of time machine
+        /// </summary>
         public readonly string Status;
+        /// <summary>
+        /// tags
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetNdbTimeMachinesTimeMachineTagResult> Tags;
+        /// <summary>
+        /// type of time machine
+        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

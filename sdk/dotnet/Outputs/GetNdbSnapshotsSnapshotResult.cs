@@ -52,6 +52,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string SoftwareSnapshotId;
         public readonly string Status;
         public readonly ImmutableArray<Outputs.GetNdbSnapshotsSnapshotTagResult> Tags;
+        /// <summary>
+        /// Fetches all the snapshots for a given time machine
+        /// </summary>
         public readonly string TimeMachineId;
         public readonly string Timezone;
         public readonly string ToTimestamp;

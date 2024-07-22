@@ -120,8 +120,10 @@ func (o AccessControlPolicyCategoryArrayOutput) Index(i pulumi.IntInput) AccessC
 }
 
 type AccessControlPolicyContextFilterList struct {
+	// A list of Entity filter expressions.
 	EntityFilterExpressionLists []AccessControlPolicyContextFilterListEntityFilterExpressionList `pulumi:"entityFilterExpressionLists"`
-	ScopeFilterExpressionLists  []AccessControlPolicyContextFilterListScopeFilterExpressionList  `pulumi:"scopeFilterExpressionLists"`
+	// - (Optional) Filter the scope of an Access Control Policy.
+	ScopeFilterExpressionLists []AccessControlPolicyContextFilterListScopeFilterExpressionList `pulumi:"scopeFilterExpressionLists"`
 }
 
 // AccessControlPolicyContextFilterListInput is an input type that accepts AccessControlPolicyContextFilterListArgs and AccessControlPolicyContextFilterListOutput values.
@@ -136,8 +138,10 @@ type AccessControlPolicyContextFilterListInput interface {
 }
 
 type AccessControlPolicyContextFilterListArgs struct {
+	// A list of Entity filter expressions.
 	EntityFilterExpressionLists AccessControlPolicyContextFilterListEntityFilterExpressionListArrayInput `pulumi:"entityFilterExpressionLists"`
-	ScopeFilterExpressionLists  AccessControlPolicyContextFilterListScopeFilterExpressionListArrayInput  `pulumi:"scopeFilterExpressionLists"`
+	// - (Optional) Filter the scope of an Access Control Policy.
+	ScopeFilterExpressionLists AccessControlPolicyContextFilterListScopeFilterExpressionListArrayInput `pulumi:"scopeFilterExpressionLists"`
 }
 
 func (AccessControlPolicyContextFilterListArgs) ElementType() reflect.Type {
@@ -191,12 +195,14 @@ func (o AccessControlPolicyContextFilterListOutput) ToAccessControlPolicyContext
 	return o
 }
 
+// A list of Entity filter expressions.
 func (o AccessControlPolicyContextFilterListOutput) EntityFilterExpressionLists() AccessControlPolicyContextFilterListEntityFilterExpressionListArrayOutput {
 	return o.ApplyT(func(v AccessControlPolicyContextFilterList) []AccessControlPolicyContextFilterListEntityFilterExpressionList {
 		return v.EntityFilterExpressionLists
 	}).(AccessControlPolicyContextFilterListEntityFilterExpressionListArrayOutput)
 }
 
+// - (Optional) Filter the scope of an Access Control Policy.
 func (o AccessControlPolicyContextFilterListOutput) ScopeFilterExpressionLists() AccessControlPolicyContextFilterListScopeFilterExpressionListArrayOutput {
 	return o.ApplyT(func(v AccessControlPolicyContextFilterList) []AccessControlPolicyContextFilterListScopeFilterExpressionList {
 		return v.ScopeFilterExpressionLists
@@ -1512,8 +1518,12 @@ func (o AccessControlPolicyUserReferenceListArrayOutput) Index(i pulumi.IntInput
 }
 
 type AddressGroupIpAddressBlockList struct {
-	Ip           string `pulumi:"ip"`
-	PrefixLength int    `pulumi:"prefixLength"`
+	// - (Required) IP of the address block
+	Ip string `pulumi:"ip"`
+	// - (Required) Prefix length of address block in int
+	//
+	// See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/api_references/prism-central-v3/#/5ccef53a546a4-create-a-new-address-group).
+	PrefixLength int `pulumi:"prefixLength"`
 }
 
 // AddressGroupIpAddressBlockListInput is an input type that accepts AddressGroupIpAddressBlockListArgs and AddressGroupIpAddressBlockListOutput values.
@@ -1528,8 +1538,12 @@ type AddressGroupIpAddressBlockListInput interface {
 }
 
 type AddressGroupIpAddressBlockListArgs struct {
-	Ip           pulumi.StringInput `pulumi:"ip"`
-	PrefixLength pulumi.IntInput    `pulumi:"prefixLength"`
+	// - (Required) IP of the address block
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// - (Required) Prefix length of address block in int
+	//
+	// See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/api_references/prism-central-v3/#/5ccef53a546a4-create-a-new-address-group).
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
 }
 
 func (AddressGroupIpAddressBlockListArgs) ElementType() reflect.Type {
@@ -1583,10 +1597,14 @@ func (o AddressGroupIpAddressBlockListOutput) ToAddressGroupIpAddressBlockListOu
 	return o
 }
 
+// - (Required) IP of the address block
 func (o AddressGroupIpAddressBlockListOutput) Ip() pulumi.StringOutput {
 	return o.ApplyT(func(v AddressGroupIpAddressBlockList) string { return v.Ip }).(pulumi.StringOutput)
 }
 
+// - (Required) Prefix length of address block in int
+//
+// See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/api_references/prism-central-v3/#/5ccef53a546a4-create-a-new-address-group).
 func (o AddressGroupIpAddressBlockListOutput) PrefixLength() pulumi.IntOutput {
 	return o.ApplyT(func(v AddressGroupIpAddressBlockList) int { return v.PrefixLength }).(pulumi.IntOutput)
 }
@@ -1973,6 +1991,7 @@ func (o FoundationCentralImageClusterClusterStatusClusterProgressDetailArrayOutp
 }
 
 type FoundationCentralImageClusterClusterStatusNodeProgressDetail struct {
+	// UUID of the node.
 	ImagedNodeUuid  *string  `pulumi:"imagedNodeUuid"`
 	ImagingStopped  *bool    `pulumi:"imagingStopped"`
 	IntentPickedUp  *bool    `pulumi:"intentPickedUp"`
@@ -1993,6 +2012,7 @@ type FoundationCentralImageClusterClusterStatusNodeProgressDetailInput interface
 }
 
 type FoundationCentralImageClusterClusterStatusNodeProgressDetailArgs struct {
+	// UUID of the node.
 	ImagedNodeUuid  pulumi.StringPtrInput   `pulumi:"imagedNodeUuid"`
 	ImagingStopped  pulumi.BoolPtrInput     `pulumi:"imagingStopped"`
 	IntentPickedUp  pulumi.BoolPtrInput     `pulumi:"intentPickedUp"`
@@ -2052,6 +2072,7 @@ func (o FoundationCentralImageClusterClusterStatusNodeProgressDetailOutput) ToFo
 	return o
 }
 
+// UUID of the node.
 func (o FoundationCentralImageClusterClusterStatusNodeProgressDetailOutput) ImagedNodeUuid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterClusterStatusNodeProgressDetail) *string { return v.ImagedNodeUuid }).(pulumi.StringPtrOutput)
 }
@@ -2099,9 +2120,13 @@ func (o FoundationCentralImageClusterClusterStatusNodeProgressDetailArrayOutput)
 }
 
 type FoundationCentralImageClusterCommonNetworkSettings struct {
-	CvmDnsServers        []string `pulumi:"cvmDnsServers"`
-	CvmNtpServers        []string `pulumi:"cvmNtpServers"`
+	// List of dns servers for the cvms in the cluster.
+	CvmDnsServers []string `pulumi:"cvmDnsServers"`
+	// List of ntp servers for the cvms in the cluster.
+	CvmNtpServers []string `pulumi:"cvmNtpServers"`
+	// List of dns servers for the hypervisors in the cluster.
 	HypervisorDnsServers []string `pulumi:"hypervisorDnsServers"`
+	// List of ntp servers for the hypervisors in the cluster.
 	HypervisorNtpServers []string `pulumi:"hypervisorNtpServers"`
 }
 
@@ -2117,9 +2142,13 @@ type FoundationCentralImageClusterCommonNetworkSettingsInput interface {
 }
 
 type FoundationCentralImageClusterCommonNetworkSettingsArgs struct {
-	CvmDnsServers        pulumi.StringArrayInput `pulumi:"cvmDnsServers"`
-	CvmNtpServers        pulumi.StringArrayInput `pulumi:"cvmNtpServers"`
+	// List of dns servers for the cvms in the cluster.
+	CvmDnsServers pulumi.StringArrayInput `pulumi:"cvmDnsServers"`
+	// List of ntp servers for the cvms in the cluster.
+	CvmNtpServers pulumi.StringArrayInput `pulumi:"cvmNtpServers"`
+	// List of dns servers for the hypervisors in the cluster.
 	HypervisorDnsServers pulumi.StringArrayInput `pulumi:"hypervisorDnsServers"`
+	// List of ntp servers for the hypervisors in the cluster.
 	HypervisorNtpServers pulumi.StringArrayInput `pulumi:"hypervisorNtpServers"`
 }
 
@@ -2200,18 +2229,22 @@ func (o FoundationCentralImageClusterCommonNetworkSettingsOutput) ToFoundationCe
 	}).(FoundationCentralImageClusterCommonNetworkSettingsPtrOutput)
 }
 
+// List of dns servers for the cvms in the cluster.
 func (o FoundationCentralImageClusterCommonNetworkSettingsOutput) CvmDnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterCommonNetworkSettings) []string { return v.CvmDnsServers }).(pulumi.StringArrayOutput)
 }
 
+// List of ntp servers for the cvms in the cluster.
 func (o FoundationCentralImageClusterCommonNetworkSettingsOutput) CvmNtpServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterCommonNetworkSettings) []string { return v.CvmNtpServers }).(pulumi.StringArrayOutput)
 }
 
+// List of dns servers for the hypervisors in the cluster.
 func (o FoundationCentralImageClusterCommonNetworkSettingsOutput) HypervisorDnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterCommonNetworkSettings) []string { return v.HypervisorDnsServers }).(pulumi.StringArrayOutput)
 }
 
+// List of ntp servers for the hypervisors in the cluster.
 func (o FoundationCentralImageClusterCommonNetworkSettingsOutput) HypervisorNtpServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterCommonNetworkSettings) []string { return v.HypervisorNtpServers }).(pulumi.StringArrayOutput)
 }
@@ -2240,6 +2273,7 @@ func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) Elem() Foun
 	}).(FoundationCentralImageClusterCommonNetworkSettingsOutput)
 }
 
+// List of dns servers for the cvms in the cluster.
 func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) CvmDnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterCommonNetworkSettings) []string {
 		if v == nil {
@@ -2249,6 +2283,7 @@ func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) CvmDnsServe
 	}).(pulumi.StringArrayOutput)
 }
 
+// List of ntp servers for the cvms in the cluster.
 func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) CvmNtpServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterCommonNetworkSettings) []string {
 		if v == nil {
@@ -2258,6 +2293,7 @@ func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) CvmNtpServe
 	}).(pulumi.StringArrayOutput)
 }
 
+// List of dns servers for the hypervisors in the cluster.
 func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) HypervisorDnsServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterCommonNetworkSettings) []string {
 		if v == nil {
@@ -2267,6 +2303,7 @@ func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) HypervisorD
 	}).(pulumi.StringArrayOutput)
 }
 
+// List of ntp servers for the hypervisors in the cluster.
 func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) HypervisorNtpServers() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterCommonNetworkSettings) []string {
 		if v == nil {
@@ -2277,20 +2314,28 @@ func (o FoundationCentralImageClusterCommonNetworkSettingsPtrOutput) HypervisorN
 }
 
 type FoundationCentralImageClusterFoundationInitConfig struct {
-	Blocks            []FoundationCentralImageClusterFoundationInitConfigBlock         `pulumi:"blocks"`
-	Clusters          []FoundationCentralImageClusterFoundationInitConfigCluster       `pulumi:"clusters"`
-	CvmGateway        *string                                                          `pulumi:"cvmGateway"`
-	CvmNetmask        *string                                                          `pulumi:"cvmNetmask"`
-	DnsServers        *string                                                          `pulumi:"dnsServers"`
-	HypervProductKey  *string                                                          `pulumi:"hypervProductKey"`
-	HypervSku         *string                                                          `pulumi:"hypervSku"`
+	Blocks   []FoundationCentralImageClusterFoundationInitConfigBlock   `pulumi:"blocks"`
+	Clusters []FoundationCentralImageClusterFoundationInitConfigCluster `pulumi:"clusters"`
+	// Gateway of the cvm.
+	CvmGateway *string `pulumi:"cvmGateway"`
+	// Netmask of the cvm.
+	CvmNetmask *string `pulumi:"cvmNetmask"`
+	DnsServers *string `pulumi:"dnsServers"`
+	// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+	HypervProductKey *string `pulumi:"hypervProductKey"`
+	// SKU of hyperv to be installed if hypervisorType is hyperv.
+	HypervSku *string `pulumi:"hypervSku"`
+	// Gateway of the hypervisor.
 	HypervisorGateway *string                                                          `pulumi:"hypervisorGateway"`
 	HypervisorIsoUrl  map[string]string                                                `pulumi:"hypervisorIsoUrl"`
 	HypervisorIsos    []FoundationCentralImageClusterFoundationInitConfigHypervisorIso `pulumi:"hypervisorIsos"`
-	HypervisorNetmask *string                                                          `pulumi:"hypervisorNetmask"`
-	IpmiGateway       *string                                                          `pulumi:"ipmiGateway"`
-	IpmiNetmask       *string                                                          `pulumi:"ipmiNetmask"`
-	NosPackageUrls    []FoundationCentralImageClusterFoundationInitConfigNosPackageUrl `pulumi:"nosPackageUrls"`
+	// Netmask of the hypervisor.
+	HypervisorNetmask *string `pulumi:"hypervisorNetmask"`
+	// Gateway of the ipmi.
+	IpmiGateway *string `pulumi:"ipmiGateway"`
+	// Netmask of the ipmi.
+	IpmiNetmask    *string                                                          `pulumi:"ipmiNetmask"`
+	NosPackageUrls []FoundationCentralImageClusterFoundationInitConfigNosPackageUrl `pulumi:"nosPackageUrls"`
 }
 
 // FoundationCentralImageClusterFoundationInitConfigInput is an input type that accepts FoundationCentralImageClusterFoundationInitConfigArgs and FoundationCentralImageClusterFoundationInitConfigOutput values.
@@ -2305,20 +2350,28 @@ type FoundationCentralImageClusterFoundationInitConfigInput interface {
 }
 
 type FoundationCentralImageClusterFoundationInitConfigArgs struct {
-	Blocks            FoundationCentralImageClusterFoundationInitConfigBlockArrayInput         `pulumi:"blocks"`
-	Clusters          FoundationCentralImageClusterFoundationInitConfigClusterArrayInput       `pulumi:"clusters"`
-	CvmGateway        pulumi.StringPtrInput                                                    `pulumi:"cvmGateway"`
-	CvmNetmask        pulumi.StringPtrInput                                                    `pulumi:"cvmNetmask"`
-	DnsServers        pulumi.StringPtrInput                                                    `pulumi:"dnsServers"`
-	HypervProductKey  pulumi.StringPtrInput                                                    `pulumi:"hypervProductKey"`
-	HypervSku         pulumi.StringPtrInput                                                    `pulumi:"hypervSku"`
+	Blocks   FoundationCentralImageClusterFoundationInitConfigBlockArrayInput   `pulumi:"blocks"`
+	Clusters FoundationCentralImageClusterFoundationInitConfigClusterArrayInput `pulumi:"clusters"`
+	// Gateway of the cvm.
+	CvmGateway pulumi.StringPtrInput `pulumi:"cvmGateway"`
+	// Netmask of the cvm.
+	CvmNetmask pulumi.StringPtrInput `pulumi:"cvmNetmask"`
+	DnsServers pulumi.StringPtrInput `pulumi:"dnsServers"`
+	// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+	HypervProductKey pulumi.StringPtrInput `pulumi:"hypervProductKey"`
+	// SKU of hyperv to be installed if hypervisorType is hyperv.
+	HypervSku pulumi.StringPtrInput `pulumi:"hypervSku"`
+	// Gateway of the hypervisor.
 	HypervisorGateway pulumi.StringPtrInput                                                    `pulumi:"hypervisorGateway"`
 	HypervisorIsoUrl  pulumi.StringMapInput                                                    `pulumi:"hypervisorIsoUrl"`
 	HypervisorIsos    FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArrayInput `pulumi:"hypervisorIsos"`
-	HypervisorNetmask pulumi.StringPtrInput                                                    `pulumi:"hypervisorNetmask"`
-	IpmiGateway       pulumi.StringPtrInput                                                    `pulumi:"ipmiGateway"`
-	IpmiNetmask       pulumi.StringPtrInput                                                    `pulumi:"ipmiNetmask"`
-	NosPackageUrls    FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArrayInput `pulumi:"nosPackageUrls"`
+	// Netmask of the hypervisor.
+	HypervisorNetmask pulumi.StringPtrInput `pulumi:"hypervisorNetmask"`
+	// Gateway of the ipmi.
+	IpmiGateway pulumi.StringPtrInput `pulumi:"ipmiGateway"`
+	// Netmask of the ipmi.
+	IpmiNetmask    pulumi.StringPtrInput                                                    `pulumi:"ipmiNetmask"`
+	NosPackageUrls FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArrayInput `pulumi:"nosPackageUrls"`
 }
 
 func (FoundationCentralImageClusterFoundationInitConfigArgs) ElementType() reflect.Type {
@@ -2384,10 +2437,12 @@ func (o FoundationCentralImageClusterFoundationInitConfigOutput) Clusters() Foun
 	}).(FoundationCentralImageClusterFoundationInitConfigClusterArrayOutput)
 }
 
+// Gateway of the cvm.
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) CvmGateway() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.CvmGateway }).(pulumi.StringPtrOutput)
 }
 
+// Netmask of the cvm.
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) CvmNetmask() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.CvmNetmask }).(pulumi.StringPtrOutput)
 }
@@ -2396,14 +2451,17 @@ func (o FoundationCentralImageClusterFoundationInitConfigOutput) DnsServers() pu
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.DnsServers }).(pulumi.StringPtrOutput)
 }
 
+// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) HypervProductKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.HypervProductKey }).(pulumi.StringPtrOutput)
 }
 
+// SKU of hyperv to be installed if hypervisorType is hyperv.
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) HypervSku() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.HypervSku }).(pulumi.StringPtrOutput)
 }
 
+// Gateway of the hypervisor.
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) HypervisorGateway() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.HypervisorGateway }).(pulumi.StringPtrOutput)
 }
@@ -2418,14 +2476,17 @@ func (o FoundationCentralImageClusterFoundationInitConfigOutput) HypervisorIsos(
 	}).(FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArrayOutput)
 }
 
+// Netmask of the hypervisor.
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) HypervisorNetmask() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.HypervisorNetmask }).(pulumi.StringPtrOutput)
 }
 
+// Gateway of the ipmi.
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) IpmiGateway() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.IpmiGateway }).(pulumi.StringPtrOutput)
 }
 
+// Netmask of the ipmi.
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) IpmiNetmask() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) *string { return v.IpmiNetmask }).(pulumi.StringPtrOutput)
 }
@@ -2559,18 +2620,25 @@ func (o FoundationCentralImageClusterFoundationInitConfigBlockArrayOutput) Index
 }
 
 type FoundationCentralImageClusterFoundationInitConfigBlockNode struct {
-	CvmIp                      *string           `pulumi:"cvmIp"`
-	CvmVlanId                  *int              `pulumi:"cvmVlanId"`
-	FcImagedNodeUuid           *string           `pulumi:"fcImagedNodeUuid"`
+	// IP address to be set for the cvm on the node.
+	CvmIp *string `pulumi:"cvmIp"`
+	// Vlan tag of the cvm, if the cvm is on a vlan.
+	CvmVlanId        *int    `pulumi:"cvmVlanId"`
+	FcImagedNodeUuid *string `pulumi:"fcImagedNodeUuid"`
+	// Hardware attributes override json for the node.
 	HardwareAttributesOverride map[string]string `pulumi:"hardwareAttributesOverride"`
 	Hypervisor                 *string           `pulumi:"hypervisor"`
-	HypervisorHostname         *string           `pulumi:"hypervisorHostname"`
-	HypervisorIp               *string           `pulumi:"hypervisorIp"`
-	ImageNow                   *bool             `pulumi:"imageNow"`
-	IpmiIp                     *string           `pulumi:"ipmiIp"`
-	Ipv6Address                *string           `pulumi:"ipv6Address"`
-	NodePosition               *string           `pulumi:"nodePosition"`
-	NodeSerial                 *string           `pulumi:"nodeSerial"`
+	// Name to be set for the hypervisor host.
+	HypervisorHostname *string `pulumi:"hypervisorHostname"`
+	// IP address to be set for the hypervisor on the node.
+	HypervisorIp *string `pulumi:"hypervisorIp"`
+	// True, if the node should be imaged, False, otherwise.
+	ImageNow *bool `pulumi:"imageNow"`
+	// IP address to be set for the ipmi of the node.
+	IpmiIp       *string `pulumi:"ipmiIp"`
+	Ipv6Address  *string `pulumi:"ipv6Address"`
+	NodePosition *string `pulumi:"nodePosition"`
+	NodeSerial   *string `pulumi:"nodeSerial"`
 }
 
 // FoundationCentralImageClusterFoundationInitConfigBlockNodeInput is an input type that accepts FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs and FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput values.
@@ -2585,18 +2653,25 @@ type FoundationCentralImageClusterFoundationInitConfigBlockNodeInput interface {
 }
 
 type FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs struct {
-	CvmIp                      pulumi.StringPtrInput `pulumi:"cvmIp"`
-	CvmVlanId                  pulumi.IntPtrInput    `pulumi:"cvmVlanId"`
-	FcImagedNodeUuid           pulumi.StringPtrInput `pulumi:"fcImagedNodeUuid"`
+	// IP address to be set for the cvm on the node.
+	CvmIp pulumi.StringPtrInput `pulumi:"cvmIp"`
+	// Vlan tag of the cvm, if the cvm is on a vlan.
+	CvmVlanId        pulumi.IntPtrInput    `pulumi:"cvmVlanId"`
+	FcImagedNodeUuid pulumi.StringPtrInput `pulumi:"fcImagedNodeUuid"`
+	// Hardware attributes override json for the node.
 	HardwareAttributesOverride pulumi.StringMapInput `pulumi:"hardwareAttributesOverride"`
 	Hypervisor                 pulumi.StringPtrInput `pulumi:"hypervisor"`
-	HypervisorHostname         pulumi.StringPtrInput `pulumi:"hypervisorHostname"`
-	HypervisorIp               pulumi.StringPtrInput `pulumi:"hypervisorIp"`
-	ImageNow                   pulumi.BoolPtrInput   `pulumi:"imageNow"`
-	IpmiIp                     pulumi.StringPtrInput `pulumi:"ipmiIp"`
-	Ipv6Address                pulumi.StringPtrInput `pulumi:"ipv6Address"`
-	NodePosition               pulumi.StringPtrInput `pulumi:"nodePosition"`
-	NodeSerial                 pulumi.StringPtrInput `pulumi:"nodeSerial"`
+	// Name to be set for the hypervisor host.
+	HypervisorHostname pulumi.StringPtrInput `pulumi:"hypervisorHostname"`
+	// IP address to be set for the hypervisor on the node.
+	HypervisorIp pulumi.StringPtrInput `pulumi:"hypervisorIp"`
+	// True, if the node should be imaged, False, otherwise.
+	ImageNow pulumi.BoolPtrInput `pulumi:"imageNow"`
+	// IP address to be set for the ipmi of the node.
+	IpmiIp       pulumi.StringPtrInput `pulumi:"ipmiIp"`
+	Ipv6Address  pulumi.StringPtrInput `pulumi:"ipv6Address"`
+	NodePosition pulumi.StringPtrInput `pulumi:"nodePosition"`
+	NodeSerial   pulumi.StringPtrInput `pulumi:"nodeSerial"`
 }
 
 func (FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs) ElementType() reflect.Type {
@@ -2650,10 +2725,12 @@ func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) ToFoun
 	return o
 }
 
+// IP address to be set for the cvm on the node.
 func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) CvmIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) *string { return v.CvmIp }).(pulumi.StringPtrOutput)
 }
 
+// Vlan tag of the cvm, if the cvm is on a vlan.
 func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) CvmVlanId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) *int { return v.CvmVlanId }).(pulumi.IntPtrOutput)
 }
@@ -2662,6 +2739,7 @@ func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) FcImag
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) *string { return v.FcImagedNodeUuid }).(pulumi.StringPtrOutput)
 }
 
+// Hardware attributes override json for the node.
 func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) HardwareAttributesOverride() pulumi.StringMapOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) map[string]string {
 		return v.HardwareAttributesOverride
@@ -2672,20 +2750,24 @@ func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) Hyperv
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) *string { return v.Hypervisor }).(pulumi.StringPtrOutput)
 }
 
+// Name to be set for the hypervisor host.
 func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) HypervisorHostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) *string {
 		return v.HypervisorHostname
 	}).(pulumi.StringPtrOutput)
 }
 
+// IP address to be set for the hypervisor on the node.
 func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) HypervisorIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) *string { return v.HypervisorIp }).(pulumi.StringPtrOutput)
 }
 
+// True, if the node should be imaged, False, otherwise.
 func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) ImageNow() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) *bool { return v.ImageNow }).(pulumi.BoolPtrOutput)
 }
 
+// IP address to be set for the ipmi of the node.
 func (o FoundationCentralImageClusterFoundationInitConfigBlockNodeOutput) IpmiIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigBlockNode) *string { return v.IpmiIp }).(pulumi.StringPtrOutput)
 }
@@ -2729,8 +2811,10 @@ type FoundationCentralImageClusterFoundationInitConfigCluster struct {
 	ClusterInitSuccessful *bool    `pulumi:"clusterInitSuccessful"`
 	ClusterMembers        []string `pulumi:"clusterMembers"`
 	// Name of the cluster.
-	ClusterName   *string `pulumi:"clusterName"`
+	ClusterName *string `pulumi:"clusterName"`
+	// List of dns servers for the cvms in the cluster.
 	CvmDnsServers *string `pulumi:"cvmDnsServers"`
+	// List of ntp servers for the cvms in the cluster.
 	CvmNtpServers *string `pulumi:"cvmNtpServers"`
 	// Redundancy factor of the cluster.
 	RedundancyFactor *int `pulumi:"redundancyFactor"`
@@ -2756,8 +2840,10 @@ type FoundationCentralImageClusterFoundationInitConfigClusterArgs struct {
 	ClusterInitSuccessful pulumi.BoolPtrInput     `pulumi:"clusterInitSuccessful"`
 	ClusterMembers        pulumi.StringArrayInput `pulumi:"clusterMembers"`
 	// Name of the cluster.
-	ClusterName   pulumi.StringPtrInput `pulumi:"clusterName"`
+	ClusterName pulumi.StringPtrInput `pulumi:"clusterName"`
+	// List of dns servers for the cvms in the cluster.
 	CvmDnsServers pulumi.StringPtrInput `pulumi:"cvmDnsServers"`
+	// List of ntp servers for the cvms in the cluster.
 	CvmNtpServers pulumi.StringPtrInput `pulumi:"cvmNtpServers"`
 	// Redundancy factor of the cluster.
 	RedundancyFactor pulumi.IntPtrInput `pulumi:"redundancyFactor"`
@@ -2838,10 +2924,12 @@ func (o FoundationCentralImageClusterFoundationInitConfigClusterOutput) ClusterN
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigCluster) *string { return v.ClusterName }).(pulumi.StringPtrOutput)
 }
 
+// List of dns servers for the cvms in the cluster.
 func (o FoundationCentralImageClusterFoundationInitConfigClusterOutput) CvmDnsServers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigCluster) *string { return v.CvmDnsServers }).(pulumi.StringPtrOutput)
 }
 
+// List of ntp servers for the cvms in the cluster.
 func (o FoundationCentralImageClusterFoundationInitConfigClusterOutput) CvmNtpServers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigCluster) *string { return v.CvmNtpServers }).(pulumi.StringPtrOutput)
 }
@@ -2877,9 +2965,12 @@ func (o FoundationCentralImageClusterFoundationInitConfigClusterArrayOutput) Ind
 }
 
 type FoundationCentralImageClusterFoundationInitConfigHypervisorIso struct {
+	// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
 	HypervisorType *string `pulumi:"hypervisorType"`
-	Sha256sum      *string `pulumi:"sha256sum"`
-	Url            *string `pulumi:"url"`
+	// sha256sum of the hypervisor iso.
+	Sha256sum *string `pulumi:"sha256sum"`
+	// URL to download hypervisor iso. Required only if imaging is needed.
+	Url *string `pulumi:"url"`
 }
 
 // FoundationCentralImageClusterFoundationInitConfigHypervisorIsoInput is an input type that accepts FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs and FoundationCentralImageClusterFoundationInitConfigHypervisorIsoOutput values.
@@ -2894,9 +2985,12 @@ type FoundationCentralImageClusterFoundationInitConfigHypervisorIsoInput interfa
 }
 
 type FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs struct {
+	// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
 	HypervisorType pulumi.StringPtrInput `pulumi:"hypervisorType"`
-	Sha256sum      pulumi.StringPtrInput `pulumi:"sha256sum"`
-	Url            pulumi.StringPtrInput `pulumi:"url"`
+	// sha256sum of the hypervisor iso.
+	Sha256sum pulumi.StringPtrInput `pulumi:"sha256sum"`
+	// URL to download hypervisor iso. Required only if imaging is needed.
+	Url pulumi.StringPtrInput `pulumi:"url"`
 }
 
 func (FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs) ElementType() reflect.Type {
@@ -2950,16 +3044,19 @@ func (o FoundationCentralImageClusterFoundationInitConfigHypervisorIsoOutput) To
 	return o
 }
 
+// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
 func (o FoundationCentralImageClusterFoundationInitConfigHypervisorIsoOutput) HypervisorType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigHypervisorIso) *string {
 		return v.HypervisorType
 	}).(pulumi.StringPtrOutput)
 }
 
+// sha256sum of the hypervisor iso.
 func (o FoundationCentralImageClusterFoundationInitConfigHypervisorIsoOutput) Sha256sum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigHypervisorIso) *string { return v.Sha256sum }).(pulumi.StringPtrOutput)
 }
 
+// URL to download hypervisor iso. Required only if imaging is needed.
 func (o FoundationCentralImageClusterFoundationInitConfigHypervisorIsoOutput) Url() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigHypervisorIso) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
@@ -2985,8 +3082,10 @@ func (o FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArrayOutpu
 }
 
 type FoundationCentralImageClusterFoundationInitConfigNosPackageUrl struct {
+	// sha256sum of the hypervisor iso.
 	Sha256sum *string `pulumi:"sha256sum"`
-	Url       *string `pulumi:"url"`
+	// URL to download hypervisor iso. Required only if imaging is needed.
+	Url *string `pulumi:"url"`
 }
 
 // FoundationCentralImageClusterFoundationInitConfigNosPackageUrlInput is an input type that accepts FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs and FoundationCentralImageClusterFoundationInitConfigNosPackageUrlOutput values.
@@ -3001,8 +3100,10 @@ type FoundationCentralImageClusterFoundationInitConfigNosPackageUrlInput interfa
 }
 
 type FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs struct {
+	// sha256sum of the hypervisor iso.
 	Sha256sum pulumi.StringPtrInput `pulumi:"sha256sum"`
-	Url       pulumi.StringPtrInput `pulumi:"url"`
+	// URL to download hypervisor iso. Required only if imaging is needed.
+	Url pulumi.StringPtrInput `pulumi:"url"`
 }
 
 func (FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs) ElementType() reflect.Type {
@@ -3056,10 +3157,12 @@ func (o FoundationCentralImageClusterFoundationInitConfigNosPackageUrlOutput) To
 	return o
 }
 
+// sha256sum of the hypervisor iso.
 func (o FoundationCentralImageClusterFoundationInitConfigNosPackageUrlOutput) Sha256sum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigNosPackageUrl) *string { return v.Sha256sum }).(pulumi.StringPtrOutput)
 }
 
+// URL to download hypervisor iso. Required only if imaging is needed.
 func (o FoundationCentralImageClusterFoundationInitConfigNosPackageUrlOutput) Url() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigNosPackageUrl) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
@@ -3085,10 +3188,14 @@ func (o FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArrayOutpu
 }
 
 type FoundationCentralImageClusterHypervisorIsoDetails struct {
+	// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
 	HypervProductKey *string `pulumi:"hypervProductKey"`
-	HypervSku        *string `pulumi:"hypervSku"`
-	Sha256sum        *string `pulumi:"sha256sum"`
-	Url              *string `pulumi:"url"`
+	// SKU of hyperv to be installed if hypervisorType is hyperv.
+	HypervSku *string `pulumi:"hypervSku"`
+	// sha256sum of the hypervisor iso.
+	Sha256sum *string `pulumi:"sha256sum"`
+	// URL to download hypervisor iso. Required only if imaging is needed.
+	Url *string `pulumi:"url"`
 }
 
 // FoundationCentralImageClusterHypervisorIsoDetailsInput is an input type that accepts FoundationCentralImageClusterHypervisorIsoDetailsArgs and FoundationCentralImageClusterHypervisorIsoDetailsOutput values.
@@ -3103,10 +3210,14 @@ type FoundationCentralImageClusterHypervisorIsoDetailsInput interface {
 }
 
 type FoundationCentralImageClusterHypervisorIsoDetailsArgs struct {
+	// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
 	HypervProductKey pulumi.StringPtrInput `pulumi:"hypervProductKey"`
-	HypervSku        pulumi.StringPtrInput `pulumi:"hypervSku"`
-	Sha256sum        pulumi.StringPtrInput `pulumi:"sha256sum"`
-	Url              pulumi.StringPtrInput `pulumi:"url"`
+	// SKU of hyperv to be installed if hypervisorType is hyperv.
+	HypervSku pulumi.StringPtrInput `pulumi:"hypervSku"`
+	// sha256sum of the hypervisor iso.
+	Sha256sum pulumi.StringPtrInput `pulumi:"sha256sum"`
+	// URL to download hypervisor iso. Required only if imaging is needed.
+	Url pulumi.StringPtrInput `pulumi:"url"`
 }
 
 func (FoundationCentralImageClusterHypervisorIsoDetailsArgs) ElementType() reflect.Type {
@@ -3186,18 +3297,22 @@ func (o FoundationCentralImageClusterHypervisorIsoDetailsOutput) ToFoundationCen
 	}).(FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput)
 }
 
+// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
 func (o FoundationCentralImageClusterHypervisorIsoDetailsOutput) HypervProductKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterHypervisorIsoDetails) *string { return v.HypervProductKey }).(pulumi.StringPtrOutput)
 }
 
+// SKU of hyperv to be installed if hypervisorType is hyperv.
 func (o FoundationCentralImageClusterHypervisorIsoDetailsOutput) HypervSku() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterHypervisorIsoDetails) *string { return v.HypervSku }).(pulumi.StringPtrOutput)
 }
 
+// sha256sum of the hypervisor iso.
 func (o FoundationCentralImageClusterHypervisorIsoDetailsOutput) Sha256sum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterHypervisorIsoDetails) *string { return v.Sha256sum }).(pulumi.StringPtrOutput)
 }
 
+// URL to download hypervisor iso. Required only if imaging is needed.
 func (o FoundationCentralImageClusterHypervisorIsoDetailsOutput) Url() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterHypervisorIsoDetails) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
@@ -3226,6 +3341,7 @@ func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) Elem() Found
 	}).(FoundationCentralImageClusterHypervisorIsoDetailsOutput)
 }
 
+// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
 func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) HypervProductKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterHypervisorIsoDetails) *string {
 		if v == nil {
@@ -3235,6 +3351,7 @@ func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) HypervProduc
 	}).(pulumi.StringPtrOutput)
 }
 
+// SKU of hyperv to be installed if hypervisorType is hyperv.
 func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) HypervSku() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterHypervisorIsoDetails) *string {
 		if v == nil {
@@ -3244,6 +3361,7 @@ func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) HypervSku() 
 	}).(pulumi.StringPtrOutput)
 }
 
+// sha256sum of the hypervisor iso.
 func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) Sha256sum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterHypervisorIsoDetails) *string {
 		if v == nil {
@@ -3253,6 +3371,7 @@ func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) Sha256sum() 
 	}).(pulumi.StringPtrOutput)
 }
 
+// URL to download hypervisor iso. Required only if imaging is needed.
 func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) Url() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationCentralImageClusterHypervisorIsoDetails) *string {
 		if v == nil {
@@ -3263,24 +3382,42 @@ func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) Url() pulumi
 }
 
 type FoundationCentralImageClusterNodeList struct {
-	CvmGateway                 *string                `pulumi:"cvmGateway"`
-	CvmIp                      *string                `pulumi:"cvmIp"`
-	CvmNetmask                 *string                `pulumi:"cvmNetmask"`
-	CvmRamGb                   *int                   `pulumi:"cvmRamGb"`
-	CvmVlanId                  *int                   `pulumi:"cvmVlanId"`
+	// Gateway of the cvm.
+	CvmGateway *string `pulumi:"cvmGateway"`
+	// IP address to be set for the cvm on the node.
+	CvmIp *string `pulumi:"cvmIp"`
+	// Netmask of the cvm.
+	CvmNetmask *string `pulumi:"cvmNetmask"`
+	// Amount of memory to be assigned for the cvm.
+	CvmRamGb *int `pulumi:"cvmRamGb"`
+	// Vlan tag of the cvm, if the cvm is on a vlan.
+	CvmVlanId *int `pulumi:"cvmVlanId"`
+	// Hardware attributes override json for the node.
 	HardwareAttributesOverride map[string]interface{} `pulumi:"hardwareAttributesOverride"`
-	HypervisorGateway          *string                `pulumi:"hypervisorGateway"`
-	HypervisorHostname         *string                `pulumi:"hypervisorHostname"`
-	HypervisorIp               *string                `pulumi:"hypervisorIp"`
-	HypervisorNetmask          *string                `pulumi:"hypervisorNetmask"`
-	HypervisorType             *string                `pulumi:"hypervisorType"`
-	ImageNow                   *bool                  `pulumi:"imageNow"`
-	ImagedNodeUuid             *string                `pulumi:"imagedNodeUuid"`
-	IpmiGateway                *string                `pulumi:"ipmiGateway"`
-	IpmiIp                     *string                `pulumi:"ipmiIp"`
-	IpmiNetmask                *string                `pulumi:"ipmiNetmask"`
-	RdmaPassthrough            *bool                  `pulumi:"rdmaPassthrough"`
-	UseExistingNetworkSettings *bool                  `pulumi:"useExistingNetworkSettings"`
+	// Gateway of the hypervisor.
+	HypervisorGateway *string `pulumi:"hypervisorGateway"`
+	// Name to be set for the hypervisor host.
+	HypervisorHostname *string `pulumi:"hypervisorHostname"`
+	// IP address to be set for the hypervisor on the node.
+	HypervisorIp *string `pulumi:"hypervisorIp"`
+	// Netmask of the hypervisor.
+	HypervisorNetmask *string `pulumi:"hypervisorNetmask"`
+	// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+	HypervisorType *string `pulumi:"hypervisorType"`
+	// True, if the node should be imaged, False, otherwise.
+	ImageNow *bool `pulumi:"imageNow"`
+	// UUID of the node.
+	ImagedNodeUuid *string `pulumi:"imagedNodeUuid"`
+	// Gateway of the ipmi.
+	IpmiGateway *string `pulumi:"ipmiGateway"`
+	// IP address to be set for the ipmi of the node.
+	IpmiIp *string `pulumi:"ipmiIp"`
+	// Netmask of the ipmi.
+	IpmiNetmask *string `pulumi:"ipmiNetmask"`
+	// Passthrough RDMA nic to CVM if possible, default to false.
+	RdmaPassthrough *bool `pulumi:"rdmaPassthrough"`
+	// Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
+	UseExistingNetworkSettings *bool `pulumi:"useExistingNetworkSettings"`
 }
 
 // FoundationCentralImageClusterNodeListInput is an input type that accepts FoundationCentralImageClusterNodeListArgs and FoundationCentralImageClusterNodeListOutput values.
@@ -3295,24 +3432,42 @@ type FoundationCentralImageClusterNodeListInput interface {
 }
 
 type FoundationCentralImageClusterNodeListArgs struct {
-	CvmGateway                 pulumi.StringPtrInput `pulumi:"cvmGateway"`
-	CvmIp                      pulumi.StringPtrInput `pulumi:"cvmIp"`
-	CvmNetmask                 pulumi.StringPtrInput `pulumi:"cvmNetmask"`
-	CvmRamGb                   pulumi.IntPtrInput    `pulumi:"cvmRamGb"`
-	CvmVlanId                  pulumi.IntPtrInput    `pulumi:"cvmVlanId"`
-	HardwareAttributesOverride pulumi.MapInput       `pulumi:"hardwareAttributesOverride"`
-	HypervisorGateway          pulumi.StringPtrInput `pulumi:"hypervisorGateway"`
-	HypervisorHostname         pulumi.StringPtrInput `pulumi:"hypervisorHostname"`
-	HypervisorIp               pulumi.StringPtrInput `pulumi:"hypervisorIp"`
-	HypervisorNetmask          pulumi.StringPtrInput `pulumi:"hypervisorNetmask"`
-	HypervisorType             pulumi.StringPtrInput `pulumi:"hypervisorType"`
-	ImageNow                   pulumi.BoolPtrInput   `pulumi:"imageNow"`
-	ImagedNodeUuid             pulumi.StringPtrInput `pulumi:"imagedNodeUuid"`
-	IpmiGateway                pulumi.StringPtrInput `pulumi:"ipmiGateway"`
-	IpmiIp                     pulumi.StringPtrInput `pulumi:"ipmiIp"`
-	IpmiNetmask                pulumi.StringPtrInput `pulumi:"ipmiNetmask"`
-	RdmaPassthrough            pulumi.BoolPtrInput   `pulumi:"rdmaPassthrough"`
-	UseExistingNetworkSettings pulumi.BoolPtrInput   `pulumi:"useExistingNetworkSettings"`
+	// Gateway of the cvm.
+	CvmGateway pulumi.StringPtrInput `pulumi:"cvmGateway"`
+	// IP address to be set for the cvm on the node.
+	CvmIp pulumi.StringPtrInput `pulumi:"cvmIp"`
+	// Netmask of the cvm.
+	CvmNetmask pulumi.StringPtrInput `pulumi:"cvmNetmask"`
+	// Amount of memory to be assigned for the cvm.
+	CvmRamGb pulumi.IntPtrInput `pulumi:"cvmRamGb"`
+	// Vlan tag of the cvm, if the cvm is on a vlan.
+	CvmVlanId pulumi.IntPtrInput `pulumi:"cvmVlanId"`
+	// Hardware attributes override json for the node.
+	HardwareAttributesOverride pulumi.MapInput `pulumi:"hardwareAttributesOverride"`
+	// Gateway of the hypervisor.
+	HypervisorGateway pulumi.StringPtrInput `pulumi:"hypervisorGateway"`
+	// Name to be set for the hypervisor host.
+	HypervisorHostname pulumi.StringPtrInput `pulumi:"hypervisorHostname"`
+	// IP address to be set for the hypervisor on the node.
+	HypervisorIp pulumi.StringPtrInput `pulumi:"hypervisorIp"`
+	// Netmask of the hypervisor.
+	HypervisorNetmask pulumi.StringPtrInput `pulumi:"hypervisorNetmask"`
+	// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+	HypervisorType pulumi.StringPtrInput `pulumi:"hypervisorType"`
+	// True, if the node should be imaged, False, otherwise.
+	ImageNow pulumi.BoolPtrInput `pulumi:"imageNow"`
+	// UUID of the node.
+	ImagedNodeUuid pulumi.StringPtrInput `pulumi:"imagedNodeUuid"`
+	// Gateway of the ipmi.
+	IpmiGateway pulumi.StringPtrInput `pulumi:"ipmiGateway"`
+	// IP address to be set for the ipmi of the node.
+	IpmiIp pulumi.StringPtrInput `pulumi:"ipmiIp"`
+	// Netmask of the ipmi.
+	IpmiNetmask pulumi.StringPtrInput `pulumi:"ipmiNetmask"`
+	// Passthrough RDMA nic to CVM if possible, default to false.
+	RdmaPassthrough pulumi.BoolPtrInput `pulumi:"rdmaPassthrough"`
+	// Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
+	UseExistingNetworkSettings pulumi.BoolPtrInput `pulumi:"useExistingNetworkSettings"`
 }
 
 func (FoundationCentralImageClusterNodeListArgs) ElementType() reflect.Type {
@@ -3366,76 +3521,94 @@ func (o FoundationCentralImageClusterNodeListOutput) ToFoundationCentralImageClu
 	return o
 }
 
+// Gateway of the cvm.
 func (o FoundationCentralImageClusterNodeListOutput) CvmGateway() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.CvmGateway }).(pulumi.StringPtrOutput)
 }
 
+// IP address to be set for the cvm on the node.
 func (o FoundationCentralImageClusterNodeListOutput) CvmIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.CvmIp }).(pulumi.StringPtrOutput)
 }
 
+// Netmask of the cvm.
 func (o FoundationCentralImageClusterNodeListOutput) CvmNetmask() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.CvmNetmask }).(pulumi.StringPtrOutput)
 }
 
+// Amount of memory to be assigned for the cvm.
 func (o FoundationCentralImageClusterNodeListOutput) CvmRamGb() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *int { return v.CvmRamGb }).(pulumi.IntPtrOutput)
 }
 
+// Vlan tag of the cvm, if the cvm is on a vlan.
 func (o FoundationCentralImageClusterNodeListOutput) CvmVlanId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *int { return v.CvmVlanId }).(pulumi.IntPtrOutput)
 }
 
+// Hardware attributes override json for the node.
 func (o FoundationCentralImageClusterNodeListOutput) HardwareAttributesOverride() pulumi.MapOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) map[string]interface{} {
 		return v.HardwareAttributesOverride
 	}).(pulumi.MapOutput)
 }
 
+// Gateway of the hypervisor.
 func (o FoundationCentralImageClusterNodeListOutput) HypervisorGateway() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.HypervisorGateway }).(pulumi.StringPtrOutput)
 }
 
+// Name to be set for the hypervisor host.
 func (o FoundationCentralImageClusterNodeListOutput) HypervisorHostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.HypervisorHostname }).(pulumi.StringPtrOutput)
 }
 
+// IP address to be set for the hypervisor on the node.
 func (o FoundationCentralImageClusterNodeListOutput) HypervisorIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.HypervisorIp }).(pulumi.StringPtrOutput)
 }
 
+// Netmask of the hypervisor.
 func (o FoundationCentralImageClusterNodeListOutput) HypervisorNetmask() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.HypervisorNetmask }).(pulumi.StringPtrOutput)
 }
 
+// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
 func (o FoundationCentralImageClusterNodeListOutput) HypervisorType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.HypervisorType }).(pulumi.StringPtrOutput)
 }
 
+// True, if the node should be imaged, False, otherwise.
 func (o FoundationCentralImageClusterNodeListOutput) ImageNow() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *bool { return v.ImageNow }).(pulumi.BoolPtrOutput)
 }
 
+// UUID of the node.
 func (o FoundationCentralImageClusterNodeListOutput) ImagedNodeUuid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.ImagedNodeUuid }).(pulumi.StringPtrOutput)
 }
 
+// Gateway of the ipmi.
 func (o FoundationCentralImageClusterNodeListOutput) IpmiGateway() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.IpmiGateway }).(pulumi.StringPtrOutput)
 }
 
+// IP address to be set for the ipmi of the node.
 func (o FoundationCentralImageClusterNodeListOutput) IpmiIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.IpmiIp }).(pulumi.StringPtrOutput)
 }
 
+// Netmask of the ipmi.
 func (o FoundationCentralImageClusterNodeListOutput) IpmiNetmask() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.IpmiNetmask }).(pulumi.StringPtrOutput)
 }
 
+// Passthrough RDMA nic to CVM if possible, default to false.
 func (o FoundationCentralImageClusterNodeListOutput) RdmaPassthrough() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *bool { return v.RdmaPassthrough }).(pulumi.BoolPtrOutput)
 }
 
+// Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
 func (o FoundationCentralImageClusterNodeListOutput) UseExistingNetworkSettings() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *bool { return v.UseExistingNetworkSettings }).(pulumi.BoolPtrOutput)
 }
@@ -4145,6 +4318,7 @@ func (o FoundationImageNodesBlockNodeUcsmParamsPtrOutput) VlanName() pulumi.Stri
 }
 
 type FoundationImageNodesBlockNodeVswitch struct {
+	// - (Required if node is capable) dynamic if using LACP, static for LAG
 	BondMode     *string  `pulumi:"bondMode"`
 	Lacp         *string  `pulumi:"lacp"`
 	Mtu          *int     `pulumi:"mtu"`
@@ -4165,6 +4339,7 @@ type FoundationImageNodesBlockNodeVswitchInput interface {
 }
 
 type FoundationImageNodesBlockNodeVswitchArgs struct {
+	// - (Required if node is capable) dynamic if using LACP, static for LAG
 	BondMode     pulumi.StringPtrInput   `pulumi:"bondMode"`
 	Lacp         pulumi.StringPtrInput   `pulumi:"lacp"`
 	Mtu          pulumi.IntPtrInput      `pulumi:"mtu"`
@@ -4224,6 +4399,7 @@ func (o FoundationImageNodesBlockNodeVswitchOutput) ToFoundationImageNodesBlockN
 	return o
 }
 
+// - (Required if node is capable) dynamic if using LACP, static for LAG
 func (o FoundationImageNodesBlockNodeVswitchOutput) BondMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationImageNodesBlockNodeVswitch) *string { return v.BondMode }).(pulumi.StringPtrOutput)
 }
@@ -4492,6 +4668,7 @@ func (o FoundationImageNodesClusterArrayOutput) Index(i pulumi.IntInput) Foundat
 }
 
 type FoundationImageNodesClusterUrl struct {
+	// - (Required) Name of the cluster.
 	ClusterName *string `pulumi:"clusterName"`
 	ClusterUrl  *string `pulumi:"clusterUrl"`
 }
@@ -4508,6 +4685,7 @@ type FoundationImageNodesClusterUrlInput interface {
 }
 
 type FoundationImageNodesClusterUrlArgs struct {
+	// - (Required) Name of the cluster.
 	ClusterName pulumi.StringPtrInput `pulumi:"clusterName"`
 	ClusterUrl  pulumi.StringPtrInput `pulumi:"clusterUrl"`
 }
@@ -4563,6 +4741,7 @@ func (o FoundationImageNodesClusterUrlOutput) ToFoundationImageNodesClusterUrlOu
 	return o
 }
 
+// - (Required) Name of the cluster.
 func (o FoundationImageNodesClusterUrlOutput) ClusterName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationImageNodesClusterUrl) *string { return v.ClusterName }).(pulumi.StringPtrOutput)
 }
@@ -5273,7 +5452,9 @@ func (o FoundationImageNodesHypervisorIsoPtrOutput) Xen() FoundationImageNodesHy
 }
 
 type FoundationImageNodesHypervisorIsoEsx struct {
+	// - (Required) Filename of hypervisor ISO.
 	Checksum string `pulumi:"checksum"`
+	// - (Required) Checksum for ISO file.
 	Filename string `pulumi:"filename"`
 }
 
@@ -5289,7 +5470,9 @@ type FoundationImageNodesHypervisorIsoEsxInput interface {
 }
 
 type FoundationImageNodesHypervisorIsoEsxArgs struct {
+	// - (Required) Filename of hypervisor ISO.
 	Checksum pulumi.StringInput `pulumi:"checksum"`
+	// - (Required) Checksum for ISO file.
 	Filename pulumi.StringInput `pulumi:"filename"`
 }
 
@@ -5370,10 +5553,12 @@ func (o FoundationImageNodesHypervisorIsoEsxOutput) ToFoundationImageNodesHyperv
 	}).(FoundationImageNodesHypervisorIsoEsxPtrOutput)
 }
 
+// - (Required) Filename of hypervisor ISO.
 func (o FoundationImageNodesHypervisorIsoEsxOutput) Checksum() pulumi.StringOutput {
 	return o.ApplyT(func(v FoundationImageNodesHypervisorIsoEsx) string { return v.Checksum }).(pulumi.StringOutput)
 }
 
+// - (Required) Checksum for ISO file.
 func (o FoundationImageNodesHypervisorIsoEsxOutput) Filename() pulumi.StringOutput {
 	return o.ApplyT(func(v FoundationImageNodesHypervisorIsoEsx) string { return v.Filename }).(pulumi.StringOutput)
 }
@@ -5402,6 +5587,7 @@ func (o FoundationImageNodesHypervisorIsoEsxPtrOutput) Elem() FoundationImageNod
 	}).(FoundationImageNodesHypervisorIsoEsxOutput)
 }
 
+// - (Required) Filename of hypervisor ISO.
 func (o FoundationImageNodesHypervisorIsoEsxPtrOutput) Checksum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesHypervisorIsoEsx) *string {
 		if v == nil {
@@ -5411,6 +5597,7 @@ func (o FoundationImageNodesHypervisorIsoEsxPtrOutput) Checksum() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
+// - (Required) Checksum for ISO file.
 func (o FoundationImageNodesHypervisorIsoEsxPtrOutput) Filename() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesHypervisorIsoEsx) *string {
 		if v == nil {
@@ -5421,7 +5608,9 @@ func (o FoundationImageNodesHypervisorIsoEsxPtrOutput) Filename() pulumi.StringP
 }
 
 type FoundationImageNodesHypervisorIsoHyperv struct {
+	// - (Required) Filename of hypervisor ISO.
 	Checksum string `pulumi:"checksum"`
+	// - (Required) Checksum for ISO file.
 	Filename string `pulumi:"filename"`
 }
 
@@ -5437,7 +5626,9 @@ type FoundationImageNodesHypervisorIsoHypervInput interface {
 }
 
 type FoundationImageNodesHypervisorIsoHypervArgs struct {
+	// - (Required) Filename of hypervisor ISO.
 	Checksum pulumi.StringInput `pulumi:"checksum"`
+	// - (Required) Checksum for ISO file.
 	Filename pulumi.StringInput `pulumi:"filename"`
 }
 
@@ -5518,10 +5709,12 @@ func (o FoundationImageNodesHypervisorIsoHypervOutput) ToFoundationImageNodesHyp
 	}).(FoundationImageNodesHypervisorIsoHypervPtrOutput)
 }
 
+// - (Required) Filename of hypervisor ISO.
 func (o FoundationImageNodesHypervisorIsoHypervOutput) Checksum() pulumi.StringOutput {
 	return o.ApplyT(func(v FoundationImageNodesHypervisorIsoHyperv) string { return v.Checksum }).(pulumi.StringOutput)
 }
 
+// - (Required) Checksum for ISO file.
 func (o FoundationImageNodesHypervisorIsoHypervOutput) Filename() pulumi.StringOutput {
 	return o.ApplyT(func(v FoundationImageNodesHypervisorIsoHyperv) string { return v.Filename }).(pulumi.StringOutput)
 }
@@ -5550,6 +5743,7 @@ func (o FoundationImageNodesHypervisorIsoHypervPtrOutput) Elem() FoundationImage
 	}).(FoundationImageNodesHypervisorIsoHypervOutput)
 }
 
+// - (Required) Filename of hypervisor ISO.
 func (o FoundationImageNodesHypervisorIsoHypervPtrOutput) Checksum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesHypervisorIsoHyperv) *string {
 		if v == nil {
@@ -5559,6 +5753,7 @@ func (o FoundationImageNodesHypervisorIsoHypervPtrOutput) Checksum() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
+// - (Required) Checksum for ISO file.
 func (o FoundationImageNodesHypervisorIsoHypervPtrOutput) Filename() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesHypervisorIsoHyperv) *string {
 		if v == nil {
@@ -5569,7 +5764,9 @@ func (o FoundationImageNodesHypervisorIsoHypervPtrOutput) Filename() pulumi.Stri
 }
 
 type FoundationImageNodesHypervisorIsoKvm struct {
+	// - (Required) Filename of hypervisor ISO.
 	Checksum string `pulumi:"checksum"`
+	// - (Required) Checksum for ISO file.
 	Filename string `pulumi:"filename"`
 }
 
@@ -5585,7 +5782,9 @@ type FoundationImageNodesHypervisorIsoKvmInput interface {
 }
 
 type FoundationImageNodesHypervisorIsoKvmArgs struct {
+	// - (Required) Filename of hypervisor ISO.
 	Checksum pulumi.StringInput `pulumi:"checksum"`
+	// - (Required) Checksum for ISO file.
 	Filename pulumi.StringInput `pulumi:"filename"`
 }
 
@@ -5666,10 +5865,12 @@ func (o FoundationImageNodesHypervisorIsoKvmOutput) ToFoundationImageNodesHyperv
 	}).(FoundationImageNodesHypervisorIsoKvmPtrOutput)
 }
 
+// - (Required) Filename of hypervisor ISO.
 func (o FoundationImageNodesHypervisorIsoKvmOutput) Checksum() pulumi.StringOutput {
 	return o.ApplyT(func(v FoundationImageNodesHypervisorIsoKvm) string { return v.Checksum }).(pulumi.StringOutput)
 }
 
+// - (Required) Checksum for ISO file.
 func (o FoundationImageNodesHypervisorIsoKvmOutput) Filename() pulumi.StringOutput {
 	return o.ApplyT(func(v FoundationImageNodesHypervisorIsoKvm) string { return v.Filename }).(pulumi.StringOutput)
 }
@@ -5698,6 +5899,7 @@ func (o FoundationImageNodesHypervisorIsoKvmPtrOutput) Elem() FoundationImageNod
 	}).(FoundationImageNodesHypervisorIsoKvmOutput)
 }
 
+// - (Required) Filename of hypervisor ISO.
 func (o FoundationImageNodesHypervisorIsoKvmPtrOutput) Checksum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesHypervisorIsoKvm) *string {
 		if v == nil {
@@ -5707,6 +5909,7 @@ func (o FoundationImageNodesHypervisorIsoKvmPtrOutput) Checksum() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
+// - (Required) Checksum for ISO file.
 func (o FoundationImageNodesHypervisorIsoKvmPtrOutput) Filename() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesHypervisorIsoKvm) *string {
 		if v == nil {
@@ -5717,7 +5920,9 @@ func (o FoundationImageNodesHypervisorIsoKvmPtrOutput) Filename() pulumi.StringP
 }
 
 type FoundationImageNodesHypervisorIsoXen struct {
+	// - (Required) Filename of hypervisor ISO.
 	Checksum string `pulumi:"checksum"`
+	// - (Required) Checksum for ISO file.
 	Filename string `pulumi:"filename"`
 }
 
@@ -5733,7 +5938,9 @@ type FoundationImageNodesHypervisorIsoXenInput interface {
 }
 
 type FoundationImageNodesHypervisorIsoXenArgs struct {
+	// - (Required) Filename of hypervisor ISO.
 	Checksum pulumi.StringInput `pulumi:"checksum"`
+	// - (Required) Checksum for ISO file.
 	Filename pulumi.StringInput `pulumi:"filename"`
 }
 
@@ -5814,10 +6021,12 @@ func (o FoundationImageNodesHypervisorIsoXenOutput) ToFoundationImageNodesHyperv
 	}).(FoundationImageNodesHypervisorIsoXenPtrOutput)
 }
 
+// - (Required) Filename of hypervisor ISO.
 func (o FoundationImageNodesHypervisorIsoXenOutput) Checksum() pulumi.StringOutput {
 	return o.ApplyT(func(v FoundationImageNodesHypervisorIsoXen) string { return v.Checksum }).(pulumi.StringOutput)
 }
 
+// - (Required) Checksum for ISO file.
 func (o FoundationImageNodesHypervisorIsoXenOutput) Filename() pulumi.StringOutput {
 	return o.ApplyT(func(v FoundationImageNodesHypervisorIsoXen) string { return v.Filename }).(pulumi.StringOutput)
 }
@@ -5846,6 +6055,7 @@ func (o FoundationImageNodesHypervisorIsoXenPtrOutput) Elem() FoundationImageNod
 	}).(FoundationImageNodesHypervisorIsoXenOutput)
 }
 
+// - (Required) Filename of hypervisor ISO.
 func (o FoundationImageNodesHypervisorIsoXenPtrOutput) Checksum() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesHypervisorIsoXen) *string {
 		if v == nil {
@@ -5855,6 +6065,7 @@ func (o FoundationImageNodesHypervisorIsoXenPtrOutput) Checksum() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
+// - (Required) Checksum for ISO file.
 func (o FoundationImageNodesHypervisorIsoXenPtrOutput) Filename() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesHypervisorIsoXen) *string {
 		if v == nil {
@@ -10517,7 +10728,8 @@ type NdbCloneDatabaseNodeProperty struct {
 	Name   *string `pulumi:"name"`
 	RefId  *string `pulumi:"refId"`
 	Secure *bool   `pulumi:"secure"`
-	Value  *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbCloneDatabaseNodePropertyInput is an input type that accepts NdbCloneDatabaseNodePropertyArgs and NdbCloneDatabaseNodePropertyOutput values.
@@ -10538,7 +10750,8 @@ type NdbCloneDatabaseNodePropertyArgs struct {
 	Name   pulumi.StringPtrInput `pulumi:"name"`
 	RefId  pulumi.StringPtrInput `pulumi:"refId"`
 	Secure pulumi.BoolPtrInput   `pulumi:"secure"`
-	Value  pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbCloneDatabaseNodePropertyArgs) ElementType() reflect.Type {
@@ -10610,6 +10823,7 @@ func (o NdbCloneDatabaseNodePropertyOutput) Secure() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NdbCloneDatabaseNodeProperty) *bool { return v.Secure }).(pulumi.BoolPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbCloneDatabaseNodePropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbCloneDatabaseNodeProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -10830,7 +11044,8 @@ type NdbCloneDatabaseNodeProtectionDomainProperty struct {
 	Name   *string `pulumi:"name"`
 	RefId  *string `pulumi:"refId"`
 	Secure *bool   `pulumi:"secure"`
-	Value  *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbCloneDatabaseNodeProtectionDomainPropertyInput is an input type that accepts NdbCloneDatabaseNodeProtectionDomainPropertyArgs and NdbCloneDatabaseNodeProtectionDomainPropertyOutput values.
@@ -10851,7 +11066,8 @@ type NdbCloneDatabaseNodeProtectionDomainPropertyArgs struct {
 	Name   pulumi.StringPtrInput `pulumi:"name"`
 	RefId  pulumi.StringPtrInput `pulumi:"refId"`
 	Secure pulumi.BoolPtrInput   `pulumi:"secure"`
-	Value  pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbCloneDatabaseNodeProtectionDomainPropertyArgs) ElementType() reflect.Type {
@@ -10923,6 +11139,7 @@ func (o NdbCloneDatabaseNodeProtectionDomainPropertyOutput) Secure() pulumi.Bool
 	return o.ApplyT(func(v NdbCloneDatabaseNodeProtectionDomainProperty) *bool { return v.Secure }).(pulumi.BoolPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbCloneDatabaseNodeProtectionDomainPropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbCloneDatabaseNodeProtectionDomainProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -10952,7 +11169,8 @@ type NdbCloneDatabaseNodeTag struct {
 	EntityType *string `pulumi:"entityType"`
 	TagId      *string `pulumi:"tagId"`
 	TagName    *string `pulumi:"tagName"`
-	Value      *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbCloneDatabaseNodeTagInput is an input type that accepts NdbCloneDatabaseNodeTagArgs and NdbCloneDatabaseNodeTagOutput values.
@@ -10971,7 +11189,8 @@ type NdbCloneDatabaseNodeTagArgs struct {
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
 	TagId      pulumi.StringPtrInput `pulumi:"tagId"`
 	TagName    pulumi.StringPtrInput `pulumi:"tagName"`
-	Value      pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbCloneDatabaseNodeTagArgs) ElementType() reflect.Type {
@@ -11041,6 +11260,7 @@ func (o NdbCloneDatabaseNodeTagOutput) TagName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbCloneDatabaseNodeTag) *string { return v.TagName }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbCloneDatabaseNodeTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbCloneDatabaseNodeTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -12786,7 +13006,8 @@ func (o NdbCloneNodeArrayOutput) Index(i pulumi.IntInput) NdbCloneNodeOutput {
 
 type NdbCloneNodeProperty struct {
 	// database instance name
-	Name  *string `pulumi:"name"`
+	Name *string `pulumi:"name"`
+	// - (Required) value for argument
 	Value *string `pulumi:"value"`
 }
 
@@ -12803,7 +13024,8 @@ type NdbCloneNodePropertyInput interface {
 
 type NdbCloneNodePropertyArgs struct {
 	// database instance name
-	Name  pulumi.StringPtrInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// - (Required) value for argument
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -12863,6 +13085,7 @@ func (o NdbCloneNodePropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbCloneNodeProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbCloneNodePropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbCloneNodeProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -13022,7 +13245,8 @@ func (o NdbClonePostgresqlInfoArrayOutput) Index(i pulumi.IntInput) NdbClonePost
 
 type NdbCloneProperty struct {
 	// database instance name
-	Name  *string `pulumi:"name"`
+	Name *string `pulumi:"name"`
+	// - (Required) value for argument
 	Value *string `pulumi:"value"`
 }
 
@@ -13039,7 +13263,8 @@ type NdbClonePropertyInput interface {
 
 type NdbClonePropertyArgs struct {
 	// database instance name
-	Name  pulumi.StringPtrInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// - (Required) value for argument
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -13099,6 +13324,7 @@ func (o NdbClonePropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbCloneProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbClonePropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbCloneProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -13128,7 +13354,8 @@ type NdbCloneTag struct {
 	EntityType *string `pulumi:"entityType"`
 	TagId      *string `pulumi:"tagId"`
 	TagName    *string `pulumi:"tagName"`
-	Value      *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbCloneTagInput is an input type that accepts NdbCloneTagArgs and NdbCloneTagOutput values.
@@ -13147,7 +13374,8 @@ type NdbCloneTagArgs struct {
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
 	TagId      pulumi.StringPtrInput `pulumi:"tagId"`
 	TagName    pulumi.StringPtrInput `pulumi:"tagName"`
-	Value      pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbCloneTagArgs) ElementType() reflect.Type {
@@ -13217,6 +13445,7 @@ func (o NdbCloneTagOutput) TagName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbCloneTag) *string { return v.TagName }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbCloneTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbCloneTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -13519,7 +13748,8 @@ type NdbCloneTimeMachineProperty struct {
 	Name   *string `pulumi:"name"`
 	RefId  *string `pulumi:"refId"`
 	Secure *bool   `pulumi:"secure"`
-	Value  *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbCloneTimeMachinePropertyInput is an input type that accepts NdbCloneTimeMachinePropertyArgs and NdbCloneTimeMachinePropertyOutput values.
@@ -13540,7 +13770,8 @@ type NdbCloneTimeMachinePropertyArgs struct {
 	Name   pulumi.StringPtrInput `pulumi:"name"`
 	RefId  pulumi.StringPtrInput `pulumi:"refId"`
 	Secure pulumi.BoolPtrInput   `pulumi:"secure"`
-	Value  pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbCloneTimeMachinePropertyArgs) ElementType() reflect.Type {
@@ -13612,6 +13843,7 @@ func (o NdbCloneTimeMachinePropertyOutput) Secure() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NdbCloneTimeMachineProperty) *bool { return v.Secure }).(pulumi.BoolPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbCloneTimeMachinePropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbCloneTimeMachineProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -14816,7 +15048,8 @@ type NdbCloneTimeMachineTag struct {
 	EntityType *string `pulumi:"entityType"`
 	TagId      *string `pulumi:"tagId"`
 	TagName    *string `pulumi:"tagName"`
-	Value      *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbCloneTimeMachineTagInput is an input type that accepts NdbCloneTimeMachineTagArgs and NdbCloneTimeMachineTagOutput values.
@@ -14835,7 +15068,8 @@ type NdbCloneTimeMachineTagArgs struct {
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
 	TagId      pulumi.StringPtrInput `pulumi:"tagId"`
 	TagName    pulumi.StringPtrInput `pulumi:"tagName"`
-	Value      pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbCloneTimeMachineTagArgs) ElementType() reflect.Type {
@@ -14905,6 +15139,7 @@ func (o NdbCloneTimeMachineTagOutput) TagName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbCloneTimeMachineTag) *string { return v.TagName }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbCloneTimeMachineTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbCloneTimeMachineTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -17534,8 +17769,10 @@ func (o NdbDatabaseClusterInfoArrayOutput) Index(i pulumi.IntInput) NdbDatabaseC
 }
 
 type NdbDatabaseClusterInfoClusterIpInfo struct {
-	IpInfos     []NdbDatabaseClusterInfoClusterIpInfoIpInfo `pulumi:"ipInfos"`
-	NxClusterId string                                      `pulumi:"nxClusterId"`
+	// - (Optional) IP infos for custom network profile.
+	IpInfos []NdbDatabaseClusterInfoClusterIpInfoIpInfo `pulumi:"ipInfos"`
+	// - (Optional) cluster id.
+	NxClusterId string `pulumi:"nxClusterId"`
 }
 
 // NdbDatabaseClusterInfoClusterIpInfoInput is an input type that accepts NdbDatabaseClusterInfoClusterIpInfoArgs and NdbDatabaseClusterInfoClusterIpInfoOutput values.
@@ -17550,8 +17787,10 @@ type NdbDatabaseClusterInfoClusterIpInfoInput interface {
 }
 
 type NdbDatabaseClusterInfoClusterIpInfoArgs struct {
-	IpInfos     NdbDatabaseClusterInfoClusterIpInfoIpInfoArrayInput `pulumi:"ipInfos"`
-	NxClusterId pulumi.StringInput                                  `pulumi:"nxClusterId"`
+	// - (Optional) IP infos for custom network profile.
+	IpInfos NdbDatabaseClusterInfoClusterIpInfoIpInfoArrayInput `pulumi:"ipInfos"`
+	// - (Optional) cluster id.
+	NxClusterId pulumi.StringInput `pulumi:"nxClusterId"`
 }
 
 func (NdbDatabaseClusterInfoClusterIpInfoArgs) ElementType() reflect.Type {
@@ -17605,12 +17844,14 @@ func (o NdbDatabaseClusterInfoClusterIpInfoOutput) ToNdbDatabaseClusterInfoClust
 	return o
 }
 
+// - (Optional) IP infos for custom network profile.
 func (o NdbDatabaseClusterInfoClusterIpInfoOutput) IpInfos() NdbDatabaseClusterInfoClusterIpInfoIpInfoArrayOutput {
 	return o.ApplyT(func(v NdbDatabaseClusterInfoClusterIpInfo) []NdbDatabaseClusterInfoClusterIpInfoIpInfo {
 		return v.IpInfos
 	}).(NdbDatabaseClusterInfoClusterIpInfoIpInfoArrayOutput)
 }
 
+// - (Optional) cluster id.
 func (o NdbDatabaseClusterInfoClusterIpInfoOutput) NxClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v NdbDatabaseClusterInfoClusterIpInfo) string { return v.NxClusterId }).(pulumi.StringOutput)
 }
@@ -17756,7 +17997,8 @@ type NdbDatabaseDatabaseNode struct {
 	ProtectionDomains      []NdbDatabaseDatabaseNodeProtectionDomain `pulumi:"protectionDomains"`
 	SoftwareInstallationId *string                                   `pulumi:"softwareInstallationId"`
 	Status                 *string                                   `pulumi:"status"`
-	Tags                   []NdbDatabaseDatabaseNodeTag              `pulumi:"tags"`
+	// - (Optional) tags
+	Tags []NdbDatabaseDatabaseNodeTag `pulumi:"tags"`
 }
 
 // NdbDatabaseDatabaseNodeInput is an input type that accepts NdbDatabaseDatabaseNodeArgs and NdbDatabaseDatabaseNodeOutput values.
@@ -17791,7 +18033,8 @@ type NdbDatabaseDatabaseNodeArgs struct {
 	ProtectionDomains      NdbDatabaseDatabaseNodeProtectionDomainArrayInput `pulumi:"protectionDomains"`
 	SoftwareInstallationId pulumi.StringPtrInput                             `pulumi:"softwareInstallationId"`
 	Status                 pulumi.StringPtrInput                             `pulumi:"status"`
-	Tags                   NdbDatabaseDatabaseNodeTagArrayInput              `pulumi:"tags"`
+	// - (Optional) tags
+	Tags NdbDatabaseDatabaseNodeTagArrayInput `pulumi:"tags"`
 }
 
 func (NdbDatabaseDatabaseNodeArgs) ElementType() reflect.Type {
@@ -17916,6 +18159,7 @@ func (o NdbDatabaseDatabaseNodeOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseDatabaseNode) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) tags
 func (o NdbDatabaseDatabaseNodeOutput) Tags() NdbDatabaseDatabaseNodeTagArrayOutput {
 	return o.ApplyT(func(v NdbDatabaseDatabaseNode) []NdbDatabaseDatabaseNodeTag { return v.Tags }).(NdbDatabaseDatabaseNodeTagArrayOutput)
 }
@@ -18047,7 +18291,8 @@ type NdbDatabaseDatabaseNodeProperty struct {
 	Name   *string `pulumi:"name"`
 	RefId  *string `pulumi:"refId"`
 	Secure *bool   `pulumi:"secure"`
-	Value  *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbDatabaseDatabaseNodePropertyInput is an input type that accepts NdbDatabaseDatabaseNodePropertyArgs and NdbDatabaseDatabaseNodePropertyOutput values.
@@ -18068,7 +18313,8 @@ type NdbDatabaseDatabaseNodePropertyArgs struct {
 	Name   pulumi.StringPtrInput `pulumi:"name"`
 	RefId  pulumi.StringPtrInput `pulumi:"refId"`
 	Secure pulumi.BoolPtrInput   `pulumi:"secure"`
-	Value  pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbDatabaseDatabaseNodePropertyArgs) ElementType() reflect.Type {
@@ -18140,6 +18386,7 @@ func (o NdbDatabaseDatabaseNodePropertyOutput) Secure() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseDatabaseNodeProperty) *bool { return v.Secure }).(pulumi.BoolPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbDatabaseDatabaseNodePropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseDatabaseNodeProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -18348,7 +18595,8 @@ type NdbDatabaseDatabaseNodeProtectionDomainProperty struct {
 	Name   *string `pulumi:"name"`
 	RefId  *string `pulumi:"refId"`
 	Secure *bool   `pulumi:"secure"`
-	Value  *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbDatabaseDatabaseNodeProtectionDomainPropertyInput is an input type that accepts NdbDatabaseDatabaseNodeProtectionDomainPropertyArgs and NdbDatabaseDatabaseNodeProtectionDomainPropertyOutput values.
@@ -18369,7 +18617,8 @@ type NdbDatabaseDatabaseNodeProtectionDomainPropertyArgs struct {
 	Name   pulumi.StringPtrInput `pulumi:"name"`
 	RefId  pulumi.StringPtrInput `pulumi:"refId"`
 	Secure pulumi.BoolPtrInput   `pulumi:"secure"`
-	Value  pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbDatabaseDatabaseNodeProtectionDomainPropertyArgs) ElementType() reflect.Type {
@@ -18441,6 +18690,7 @@ func (o NdbDatabaseDatabaseNodeProtectionDomainPropertyOutput) Secure() pulumi.B
 	return o.ApplyT(func(v NdbDatabaseDatabaseNodeProtectionDomainProperty) *bool { return v.Secure }).(pulumi.BoolPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbDatabaseDatabaseNodeProtectionDomainPropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseDatabaseNodeProtectionDomainProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -18470,7 +18720,8 @@ type NdbDatabaseDatabaseNodeTag struct {
 	EntityType *string `pulumi:"entityType"`
 	TagId      *string `pulumi:"tagId"`
 	TagName    *string `pulumi:"tagName"`
-	Value      *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbDatabaseDatabaseNodeTagInput is an input type that accepts NdbDatabaseDatabaseNodeTagArgs and NdbDatabaseDatabaseNodeTagOutput values.
@@ -18489,7 +18740,8 @@ type NdbDatabaseDatabaseNodeTagArgs struct {
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
 	TagId      pulumi.StringPtrInput `pulumi:"tagId"`
 	TagName    pulumi.StringPtrInput `pulumi:"tagName"`
-	Value      pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbDatabaseDatabaseNodeTagArgs) ElementType() reflect.Type {
@@ -18559,6 +18811,7 @@ func (o NdbDatabaseDatabaseNodeTagOutput) TagName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseDatabaseNodeTag) *string { return v.TagName }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbDatabaseDatabaseNodeTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseDatabaseNodeTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -20799,7 +21052,8 @@ func (o NdbDatabaseNodeIpInfoArrayOutput) Index(i pulumi.IntInput) NdbDatabaseNo
 
 type NdbDatabaseNodeProperty struct {
 	// - (Required) Name of the instance.
-	Name  string `pulumi:"name"`
+	Name string `pulumi:"name"`
+	// - (Required) value for argument
 	Value string `pulumi:"value"`
 }
 
@@ -20816,7 +21070,8 @@ type NdbDatabaseNodePropertyInput interface {
 
 type NdbDatabaseNodePropertyArgs struct {
 	// - (Required) Name of the instance.
-	Name  pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringInput `pulumi:"name"`
+	// - (Required) value for argument
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -20876,6 +21131,7 @@ func (o NdbDatabaseNodePropertyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v NdbDatabaseNodeProperty) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// - (Required) value for argument
 func (o NdbDatabaseNodePropertyOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v NdbDatabaseNodeProperty) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -21590,7 +21846,8 @@ func (o NdbDatabasePostgresqlInfoHaInstancePtrOutput) ProxyWritePort() pulumi.St
 
 type NdbDatabaseProperty struct {
 	// - (Required) Name of the instance.
-	Name  *string `pulumi:"name"`
+	Name *string `pulumi:"name"`
+	// - (Required) value for argument
 	Value *string `pulumi:"value"`
 }
 
@@ -21607,7 +21864,8 @@ type NdbDatabasePropertyInput interface {
 
 type NdbDatabasePropertyArgs struct {
 	// - (Required) Name of the instance.
-	Name  pulumi.StringPtrInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// - (Required) value for argument
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -21667,6 +21925,7 @@ func (o NdbDatabasePropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbDatabasePropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -31584,7 +31843,8 @@ type NdbDatabaseTag struct {
 	EntityType *string `pulumi:"entityType"`
 	TagId      *string `pulumi:"tagId"`
 	TagName    *string `pulumi:"tagName"`
-	Value      *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbDatabaseTagInput is an input type that accepts NdbDatabaseTagArgs and NdbDatabaseTagOutput values.
@@ -31603,7 +31863,8 @@ type NdbDatabaseTagArgs struct {
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
 	TagId      pulumi.StringPtrInput `pulumi:"tagId"`
 	TagName    pulumi.StringPtrInput `pulumi:"tagName"`
-	Value      pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbDatabaseTagArgs) ElementType() reflect.Type {
@@ -31673,6 +31934,7 @@ func (o NdbDatabaseTagOutput) TagName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseTag) *string { return v.TagName }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbDatabaseTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -31715,8 +31977,9 @@ type NdbDatabaseTimeMachine struct {
 	// - (Required) Name of the instance.
 	Name *string `pulumi:"name"`
 	// List of all the properties
-	Properties          []NdbDatabaseTimeMachineProperty `pulumi:"properties"`
-	ScheduleId          *string                          `pulumi:"scheduleId"`
+	Properties []NdbDatabaseTimeMachineProperty `pulumi:"properties"`
+	ScheduleId *string                          `pulumi:"scheduleId"`
+	// - (Optional) schedule for snapshots
 	Schedules           []NdbDatabaseTimeMachineSchedule `pulumi:"schedules"`
 	Scope               *string                          `pulumi:"scope"`
 	SlaId               *string                          `pulumi:"slaId"`
@@ -31725,8 +31988,9 @@ type NdbDatabaseTimeMachine struct {
 	Slas                []NdbDatabaseTimeMachineSla      `pulumi:"slas"`
 	SourceNxClusters    []string                         `pulumi:"sourceNxClusters"`
 	Status              *string                          `pulumi:"status"`
-	Tags                []NdbDatabaseTimeMachineTag      `pulumi:"tags"`
-	Type                *string                          `pulumi:"type"`
+	// - (Optional) tags
+	Tags []NdbDatabaseTimeMachineTag `pulumi:"tags"`
+	Type *string                     `pulumi:"type"`
 }
 
 // NdbDatabaseTimeMachineInput is an input type that accepts NdbDatabaseTimeMachineArgs and NdbDatabaseTimeMachineOutput values.
@@ -31758,8 +32022,9 @@ type NdbDatabaseTimeMachineArgs struct {
 	// - (Required) Name of the instance.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// List of all the properties
-	Properties          NdbDatabaseTimeMachinePropertyArrayInput `pulumi:"properties"`
-	ScheduleId          pulumi.StringPtrInput                    `pulumi:"scheduleId"`
+	Properties NdbDatabaseTimeMachinePropertyArrayInput `pulumi:"properties"`
+	ScheduleId pulumi.StringPtrInput                    `pulumi:"scheduleId"`
+	// - (Optional) schedule for snapshots
 	Schedules           NdbDatabaseTimeMachineScheduleArrayInput `pulumi:"schedules"`
 	Scope               pulumi.StringPtrInput                    `pulumi:"scope"`
 	SlaId               pulumi.StringPtrInput                    `pulumi:"slaId"`
@@ -31768,8 +32033,9 @@ type NdbDatabaseTimeMachineArgs struct {
 	Slas                NdbDatabaseTimeMachineSlaArrayInput      `pulumi:"slas"`
 	SourceNxClusters    pulumi.StringArrayInput                  `pulumi:"sourceNxClusters"`
 	Status              pulumi.StringPtrInput                    `pulumi:"status"`
-	Tags                NdbDatabaseTimeMachineTagArrayInput      `pulumi:"tags"`
-	Type                pulumi.StringPtrInput                    `pulumi:"type"`
+	// - (Optional) tags
+	Tags NdbDatabaseTimeMachineTagArrayInput `pulumi:"tags"`
+	Type pulumi.StringPtrInput               `pulumi:"type"`
 }
 
 func (NdbDatabaseTimeMachineArgs) ElementType() reflect.Type {
@@ -31887,6 +32153,7 @@ func (o NdbDatabaseTimeMachineOutput) ScheduleId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseTimeMachine) *string { return v.ScheduleId }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) schedule for snapshots
 func (o NdbDatabaseTimeMachineOutput) Schedules() NdbDatabaseTimeMachineScheduleArrayOutput {
 	return o.ApplyT(func(v NdbDatabaseTimeMachine) []NdbDatabaseTimeMachineSchedule { return v.Schedules }).(NdbDatabaseTimeMachineScheduleArrayOutput)
 }
@@ -31919,6 +32186,7 @@ func (o NdbDatabaseTimeMachineOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseTimeMachine) *string { return v.Status }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) tags
 func (o NdbDatabaseTimeMachineOutput) Tags() NdbDatabaseTimeMachineTagArrayOutput {
 	return o.ApplyT(func(v NdbDatabaseTimeMachine) []NdbDatabaseTimeMachineTag { return v.Tags }).(NdbDatabaseTimeMachineTagArrayOutput)
 }
@@ -31954,7 +32222,8 @@ type NdbDatabaseTimeMachineProperty struct {
 	Name   *string `pulumi:"name"`
 	RefId  *string `pulumi:"refId"`
 	Secure *bool   `pulumi:"secure"`
-	Value  *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbDatabaseTimeMachinePropertyInput is an input type that accepts NdbDatabaseTimeMachinePropertyArgs and NdbDatabaseTimeMachinePropertyOutput values.
@@ -31975,7 +32244,8 @@ type NdbDatabaseTimeMachinePropertyArgs struct {
 	Name   pulumi.StringPtrInput `pulumi:"name"`
 	RefId  pulumi.StringPtrInput `pulumi:"refId"`
 	Secure pulumi.BoolPtrInput   `pulumi:"secure"`
-	Value  pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbDatabaseTimeMachinePropertyArgs) ElementType() reflect.Type {
@@ -32047,6 +32317,7 @@ func (o NdbDatabaseTimeMachinePropertyOutput) Secure() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseTimeMachineProperty) *bool { return v.Secure }).(pulumi.BoolPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbDatabaseTimeMachinePropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseTimeMachineProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -32706,10 +32977,13 @@ func (o NdbDatabaseTimeMachineScheduleQuartelyScheduleArrayOutput) Index(i pulum
 }
 
 type NdbDatabaseTimeMachineScheduleSnapshotTimeOfDay struct {
-	Extra   *bool `pulumi:"extra"`
-	Hours   *int  `pulumi:"hours"`
-	Minutes *int  `pulumi:"minutes"`
-	Seconds *int  `pulumi:"seconds"`
+	Extra *bool `pulumi:"extra"`
+	// - (Required) hours
+	Hours *int `pulumi:"hours"`
+	// - (Required) minutes
+	Minutes *int `pulumi:"minutes"`
+	// - (Required) seconds
+	Seconds *int `pulumi:"seconds"`
 }
 
 // NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayInput is an input type that accepts NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayArgs and NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayOutput values.
@@ -32724,10 +32998,13 @@ type NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayInput interface {
 }
 
 type NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayArgs struct {
-	Extra   pulumi.BoolPtrInput `pulumi:"extra"`
-	Hours   pulumi.IntPtrInput  `pulumi:"hours"`
-	Minutes pulumi.IntPtrInput  `pulumi:"minutes"`
-	Seconds pulumi.IntPtrInput  `pulumi:"seconds"`
+	Extra pulumi.BoolPtrInput `pulumi:"extra"`
+	// - (Required) hours
+	Hours pulumi.IntPtrInput `pulumi:"hours"`
+	// - (Required) minutes
+	Minutes pulumi.IntPtrInput `pulumi:"minutes"`
+	// - (Required) seconds
+	Seconds pulumi.IntPtrInput `pulumi:"seconds"`
 }
 
 func (NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayArgs) ElementType() reflect.Type {
@@ -32785,14 +33062,17 @@ func (o NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayOutput) Extra() pulumi.Bo
 	return o.ApplyT(func(v NdbDatabaseTimeMachineScheduleSnapshotTimeOfDay) *bool { return v.Extra }).(pulumi.BoolPtrOutput)
 }
 
+// - (Required) hours
 func (o NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayOutput) Hours() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseTimeMachineScheduleSnapshotTimeOfDay) *int { return v.Hours }).(pulumi.IntPtrOutput)
 }
 
+// - (Required) minutes
 func (o NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayOutput) Minutes() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseTimeMachineScheduleSnapshotTimeOfDay) *int { return v.Minutes }).(pulumi.IntPtrOutput)
 }
 
+// - (Required) seconds
 func (o NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayOutput) Seconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseTimeMachineScheduleSnapshotTimeOfDay) *int { return v.Seconds }).(pulumi.IntPtrOutput)
 }
@@ -32924,8 +33204,9 @@ func (o NdbDatabaseTimeMachineScheduleWeeklyScheduleArrayOutput) Index(i pulumi.
 }
 
 type NdbDatabaseTimeMachineScheduleYearlySchedule struct {
-	DayOfMonth *int    `pulumi:"dayOfMonth"`
-	Enabled    *bool   `pulumi:"enabled"`
+	DayOfMonth *int  `pulumi:"dayOfMonth"`
+	Enabled    *bool `pulumi:"enabled"`
+	// - (Required) month for snapshot
 	Month      *string `pulumi:"month"`
 	MonthValue *string `pulumi:"monthValue"`
 }
@@ -32942,8 +33223,9 @@ type NdbDatabaseTimeMachineScheduleYearlyScheduleInput interface {
 }
 
 type NdbDatabaseTimeMachineScheduleYearlyScheduleArgs struct {
-	DayOfMonth pulumi.IntPtrInput    `pulumi:"dayOfMonth"`
-	Enabled    pulumi.BoolPtrInput   `pulumi:"enabled"`
+	DayOfMonth pulumi.IntPtrInput  `pulumi:"dayOfMonth"`
+	Enabled    pulumi.BoolPtrInput `pulumi:"enabled"`
+	// - (Required) month for snapshot
 	Month      pulumi.StringPtrInput `pulumi:"month"`
 	MonthValue pulumi.StringPtrInput `pulumi:"monthValue"`
 }
@@ -33007,6 +33289,7 @@ func (o NdbDatabaseTimeMachineScheduleYearlyScheduleOutput) Enabled() pulumi.Boo
 	return o.ApplyT(func(v NdbDatabaseTimeMachineScheduleYearlySchedule) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
+// - (Required) month for snapshot
 func (o NdbDatabaseTimeMachineScheduleYearlyScheduleOutput) Month() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseTimeMachineScheduleYearlySchedule) *string { return v.Month }).(pulumi.StringPtrOutput)
 }
@@ -33236,7 +33519,8 @@ type NdbDatabaseTimeMachineTag struct {
 	EntityType *string `pulumi:"entityType"`
 	TagId      *string `pulumi:"tagId"`
 	TagName    *string `pulumi:"tagName"`
-	Value      *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbDatabaseTimeMachineTagInput is an input type that accepts NdbDatabaseTimeMachineTagArgs and NdbDatabaseTimeMachineTagOutput values.
@@ -33255,7 +33539,8 @@ type NdbDatabaseTimeMachineTagArgs struct {
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
 	TagId      pulumi.StringPtrInput `pulumi:"tagId"`
 	TagName    pulumi.StringPtrInput `pulumi:"tagName"`
-	Value      pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbDatabaseTimeMachineTagArgs) ElementType() reflect.Type {
@@ -33325,6 +33610,7 @@ func (o NdbDatabaseTimeMachineTagOutput) TagName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseTimeMachineTag) *string { return v.TagName }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbDatabaseTimeMachineTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseTimeMachineTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -35069,7 +35355,8 @@ type NdbDatabaseTimemachineinfoTag struct {
 	EntityType *string `pulumi:"entityType"`
 	TagId      *string `pulumi:"tagId"`
 	TagName    *string `pulumi:"tagName"`
-	Value      *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbDatabaseTimemachineinfoTagInput is an input type that accepts NdbDatabaseTimemachineinfoTagArgs and NdbDatabaseTimemachineinfoTagOutput values.
@@ -35088,7 +35375,8 @@ type NdbDatabaseTimemachineinfoTagArgs struct {
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
 	TagId      pulumi.StringPtrInput `pulumi:"tagId"`
 	TagName    pulumi.StringPtrInput `pulumi:"tagName"`
-	Value      pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbDatabaseTimemachineinfoTagArgs) ElementType() reflect.Type {
@@ -35158,6 +35446,7 @@ func (o NdbDatabaseTimemachineinfoTagOutput) TagName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseTimemachineinfoTag) *string { return v.TagName }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbDatabaseTimemachineinfoTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDatabaseTimemachineinfoTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -35669,6 +35958,7 @@ func (o NdbDbserverVmPostgresDatabaseArrayOutput) Index(i pulumi.IntInput) NdbDb
 }
 
 type NdbDbserverVmProperty struct {
+	// name of the dbserver vm
 	Name  *string `pulumi:"name"`
 	Value *string `pulumi:"value"`
 }
@@ -35685,6 +35975,7 @@ type NdbDbserverVmPropertyInput interface {
 }
 
 type NdbDbserverVmPropertyArgs struct {
+	// name of the dbserver vm
 	Name  pulumi.StringPtrInput `pulumi:"name"`
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
@@ -35740,6 +36031,7 @@ func (o NdbDbserverVmPropertyOutput) ToNdbDbserverVmPropertyOutputWithContext(ct
 	return o
 }
 
+// name of the dbserver vm
 func (o NdbDbserverVmPropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbDbserverVmProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -39884,11 +40176,13 @@ type NdbProfileVersion struct {
 	// Publish for all users
 	Published *bool `pulumi:"published"`
 	// status of profile
-	Status                     *string                                      `pulumi:"status"`
-	SystemProfile              *bool                                        `pulumi:"systemProfile"`
-	Topology                   *string                                      `pulumi:"topology"`
-	Type                       *string                                      `pulumi:"type"`
-	Version                    *string                                      `pulumi:"version"`
+	Status        *string `pulumi:"status"`
+	SystemProfile *bool   `pulumi:"systemProfile"`
+	Topology      *string `pulumi:"topology"`
+	Type          *string `pulumi:"type"`
+	Version       *string `pulumi:"version"`
+	// cluster associated with VLAN. this is used with Single instance for postgres database.
+	// * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
 	VersionClusterAssociations []NdbProfileVersionVersionClusterAssociation `pulumi:"versionClusterAssociations"`
 }
 
@@ -39921,11 +40215,13 @@ type NdbProfileVersionArgs struct {
 	// Publish for all users
 	Published pulumi.BoolPtrInput `pulumi:"published"`
 	// status of profile
-	Status                     pulumi.StringPtrInput                                `pulumi:"status"`
-	SystemProfile              pulumi.BoolPtrInput                                  `pulumi:"systemProfile"`
-	Topology                   pulumi.StringPtrInput                                `pulumi:"topology"`
-	Type                       pulumi.StringPtrInput                                `pulumi:"type"`
-	Version                    pulumi.StringPtrInput                                `pulumi:"version"`
+	Status        pulumi.StringPtrInput `pulumi:"status"`
+	SystemProfile pulumi.BoolPtrInput   `pulumi:"systemProfile"`
+	Topology      pulumi.StringPtrInput `pulumi:"topology"`
+	Type          pulumi.StringPtrInput `pulumi:"type"`
+	Version       pulumi.StringPtrInput `pulumi:"version"`
+	// cluster associated with VLAN. this is used with Single instance for postgres database.
+	// * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
 	VersionClusterAssociations NdbProfileVersionVersionClusterAssociationArrayInput `pulumi:"versionClusterAssociations"`
 }
 
@@ -40050,6 +40346,8 @@ func (o NdbProfileVersionOutput) Version() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbProfileVersion) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
+// cluster associated with VLAN. this is used with Single instance for postgres database.
+// * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
 func (o NdbProfileVersionOutput) VersionClusterAssociations() NdbProfileVersionVersionClusterAssociationArrayOutput {
 	return o.ApplyT(func(v NdbProfileVersion) []NdbProfileVersionVersionClusterAssociation {
 		return v.VersionClusterAssociations
@@ -40879,7 +41177,8 @@ type NdbRegisterDatabaseDatabaseNodeProperty struct {
 	Name   *string `pulumi:"name"`
 	RefId  *string `pulumi:"refId"`
 	Secure *bool   `pulumi:"secure"`
-	Value  *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbRegisterDatabaseDatabaseNodePropertyInput is an input type that accepts NdbRegisterDatabaseDatabaseNodePropertyArgs and NdbRegisterDatabaseDatabaseNodePropertyOutput values.
@@ -40900,7 +41199,8 @@ type NdbRegisterDatabaseDatabaseNodePropertyArgs struct {
 	Name   pulumi.StringPtrInput `pulumi:"name"`
 	RefId  pulumi.StringPtrInput `pulumi:"refId"`
 	Secure pulumi.BoolPtrInput   `pulumi:"secure"`
-	Value  pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbRegisterDatabaseDatabaseNodePropertyArgs) ElementType() reflect.Type {
@@ -40972,6 +41272,7 @@ func (o NdbRegisterDatabaseDatabaseNodePropertyOutput) Secure() pulumi.BoolPtrOu
 	return o.ApplyT(func(v NdbRegisterDatabaseDatabaseNodeProperty) *bool { return v.Secure }).(pulumi.BoolPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbRegisterDatabaseDatabaseNodePropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbRegisterDatabaseDatabaseNodeProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -41192,7 +41493,8 @@ type NdbRegisterDatabaseDatabaseNodeProtectionDomainProperty struct {
 	Name   *string `pulumi:"name"`
 	RefId  *string `pulumi:"refId"`
 	Secure *bool   `pulumi:"secure"`
-	Value  *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbRegisterDatabaseDatabaseNodeProtectionDomainPropertyInput is an input type that accepts NdbRegisterDatabaseDatabaseNodeProtectionDomainPropertyArgs and NdbRegisterDatabaseDatabaseNodeProtectionDomainPropertyOutput values.
@@ -41213,7 +41515,8 @@ type NdbRegisterDatabaseDatabaseNodeProtectionDomainPropertyArgs struct {
 	Name   pulumi.StringPtrInput `pulumi:"name"`
 	RefId  pulumi.StringPtrInput `pulumi:"refId"`
 	Secure pulumi.BoolPtrInput   `pulumi:"secure"`
-	Value  pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbRegisterDatabaseDatabaseNodeProtectionDomainPropertyArgs) ElementType() reflect.Type {
@@ -41285,6 +41588,7 @@ func (o NdbRegisterDatabaseDatabaseNodeProtectionDomainPropertyOutput) Secure() 
 	return o.ApplyT(func(v NdbRegisterDatabaseDatabaseNodeProtectionDomainProperty) *bool { return v.Secure }).(pulumi.BoolPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbRegisterDatabaseDatabaseNodeProtectionDomainPropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbRegisterDatabaseDatabaseNodeProtectionDomainProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -41314,7 +41618,8 @@ type NdbRegisterDatabaseDatabaseNodeTag struct {
 	EntityType *string `pulumi:"entityType"`
 	TagId      *string `pulumi:"tagId"`
 	TagName    *string `pulumi:"tagName"`
-	Value      *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbRegisterDatabaseDatabaseNodeTagInput is an input type that accepts NdbRegisterDatabaseDatabaseNodeTagArgs and NdbRegisterDatabaseDatabaseNodeTagOutput values.
@@ -41333,7 +41638,8 @@ type NdbRegisterDatabaseDatabaseNodeTagArgs struct {
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
 	TagId      pulumi.StringPtrInput `pulumi:"tagId"`
 	TagName    pulumi.StringPtrInput `pulumi:"tagName"`
-	Value      pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbRegisterDatabaseDatabaseNodeTagArgs) ElementType() reflect.Type {
@@ -41403,6 +41709,7 @@ func (o NdbRegisterDatabaseDatabaseNodeTagOutput) TagName() pulumi.StringPtrOutp
 	return o.ApplyT(func(v NdbRegisterDatabaseDatabaseNodeTag) *string { return v.TagName }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbRegisterDatabaseDatabaseNodeTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbRegisterDatabaseDatabaseNodeTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -43359,7 +43666,8 @@ func (o NdbRegisterDatabasePostgressInfoArrayOutput) Index(i pulumi.IntInput) Nd
 
 type NdbRegisterDatabaseProperty struct {
 	// Name of database instance
-	Name  *string `pulumi:"name"`
+	Name *string `pulumi:"name"`
+	// - (Required) value for argument
 	Value *string `pulumi:"value"`
 }
 
@@ -43376,7 +43684,8 @@ type NdbRegisterDatabasePropertyInput interface {
 
 type NdbRegisterDatabasePropertyArgs struct {
 	// Name of database instance
-	Name  pulumi.StringPtrInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// - (Required) value for argument
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -43436,6 +43745,7 @@ func (o NdbRegisterDatabasePropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbRegisterDatabaseProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbRegisterDatabasePropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbRegisterDatabaseProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -43465,7 +43775,8 @@ type NdbRegisterDatabaseTag struct {
 	EntityType *string `pulumi:"entityType"`
 	TagId      *string `pulumi:"tagId"`
 	TagName    *string `pulumi:"tagName"`
-	Value      *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbRegisterDatabaseTagInput is an input type that accepts NdbRegisterDatabaseTagArgs and NdbRegisterDatabaseTagOutput values.
@@ -43484,7 +43795,8 @@ type NdbRegisterDatabaseTagArgs struct {
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
 	TagId      pulumi.StringPtrInput `pulumi:"tagId"`
 	TagName    pulumi.StringPtrInput `pulumi:"tagName"`
-	Value      pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbRegisterDatabaseTagArgs) ElementType() reflect.Type {
@@ -43554,6 +43866,7 @@ func (o NdbRegisterDatabaseTagOutput) TagName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbRegisterDatabaseTag) *string { return v.TagName }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbRegisterDatabaseTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbRegisterDatabaseTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -43600,8 +43913,9 @@ type NdbRegisterDatabaseTimeMachine struct {
 	// Name of database instance
 	Name *string `pulumi:"name"`
 	// properties of database created
-	Properties          []NdbRegisterDatabaseTimeMachineProperty `pulumi:"properties"`
-	ScheduleId          *string                                  `pulumi:"scheduleId"`
+	Properties []NdbRegisterDatabaseTimeMachineProperty `pulumi:"properties"`
+	ScheduleId *string                                  `pulumi:"scheduleId"`
+	// - (Optional) schedule for snapshots
 	Schedules           []NdbRegisterDatabaseTimeMachineSchedule `pulumi:"schedules"`
 	Scope               *string                                  `pulumi:"scope"`
 	SlaId               *string                                  `pulumi:"slaId"`
@@ -43650,8 +43964,9 @@ type NdbRegisterDatabaseTimeMachineArgs struct {
 	// Name of database instance
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// properties of database created
-	Properties          NdbRegisterDatabaseTimeMachinePropertyArrayInput `pulumi:"properties"`
-	ScheduleId          pulumi.StringPtrInput                            `pulumi:"scheduleId"`
+	Properties NdbRegisterDatabaseTimeMachinePropertyArrayInput `pulumi:"properties"`
+	ScheduleId pulumi.StringPtrInput                            `pulumi:"scheduleId"`
+	// - (Optional) schedule for snapshots
 	Schedules           NdbRegisterDatabaseTimeMachineScheduleArrayInput `pulumi:"schedules"`
 	Scope               pulumi.StringPtrInput                            `pulumi:"scope"`
 	SlaId               pulumi.StringPtrInput                            `pulumi:"slaId"`
@@ -43786,6 +44101,7 @@ func (o NdbRegisterDatabaseTimeMachineOutput) ScheduleId() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v NdbRegisterDatabaseTimeMachine) *string { return v.ScheduleId }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) schedule for snapshots
 func (o NdbRegisterDatabaseTimeMachineOutput) Schedules() NdbRegisterDatabaseTimeMachineScheduleArrayOutput {
 	return o.ApplyT(func(v NdbRegisterDatabaseTimeMachine) []NdbRegisterDatabaseTimeMachineSchedule { return v.Schedules }).(NdbRegisterDatabaseTimeMachineScheduleArrayOutput)
 }
@@ -45509,7 +45825,8 @@ type NdbRegisterDatabaseTimeMachineInfoTag struct {
 	EntityType *string `pulumi:"entityType"`
 	TagId      *string `pulumi:"tagId"`
 	TagName    *string `pulumi:"tagName"`
-	Value      *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbRegisterDatabaseTimeMachineInfoTagInput is an input type that accepts NdbRegisterDatabaseTimeMachineInfoTagArgs and NdbRegisterDatabaseTimeMachineInfoTagOutput values.
@@ -45528,7 +45845,8 @@ type NdbRegisterDatabaseTimeMachineInfoTagArgs struct {
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
 	TagId      pulumi.StringPtrInput `pulumi:"tagId"`
 	TagName    pulumi.StringPtrInput `pulumi:"tagName"`
-	Value      pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbRegisterDatabaseTimeMachineInfoTagArgs) ElementType() reflect.Type {
@@ -45598,6 +45916,7 @@ func (o NdbRegisterDatabaseTimeMachineInfoTagOutput) TagName() pulumi.StringPtrO
 	return o.ApplyT(func(v NdbRegisterDatabaseTimeMachineInfoTag) *string { return v.TagName }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbRegisterDatabaseTimeMachineInfoTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbRegisterDatabaseTimeMachineInfoTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -45629,7 +45948,8 @@ type NdbRegisterDatabaseTimeMachineProperty struct {
 	Name   *string `pulumi:"name"`
 	RefId  *string `pulumi:"refId"`
 	Secure *bool   `pulumi:"secure"`
-	Value  *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbRegisterDatabaseTimeMachinePropertyInput is an input type that accepts NdbRegisterDatabaseTimeMachinePropertyArgs and NdbRegisterDatabaseTimeMachinePropertyOutput values.
@@ -45650,7 +45970,8 @@ type NdbRegisterDatabaseTimeMachinePropertyArgs struct {
 	Name   pulumi.StringPtrInput `pulumi:"name"`
 	RefId  pulumi.StringPtrInput `pulumi:"refId"`
 	Secure pulumi.BoolPtrInput   `pulumi:"secure"`
-	Value  pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbRegisterDatabaseTimeMachinePropertyArgs) ElementType() reflect.Type {
@@ -45722,6 +46043,7 @@ func (o NdbRegisterDatabaseTimeMachinePropertyOutput) Secure() pulumi.BoolPtrOut
 	return o.ApplyT(func(v NdbRegisterDatabaseTimeMachineProperty) *bool { return v.Secure }).(pulumi.BoolPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbRegisterDatabaseTimeMachinePropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbRegisterDatabaseTimeMachineProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -46926,7 +47248,8 @@ type NdbRegisterDatabaseTimeMachineTag struct {
 	EntityType *string `pulumi:"entityType"`
 	TagId      *string `pulumi:"tagId"`
 	TagName    *string `pulumi:"tagName"`
-	Value      *string `pulumi:"value"`
+	// - (Required) value for argument
+	Value *string `pulumi:"value"`
 }
 
 // NdbRegisterDatabaseTimeMachineTagInput is an input type that accepts NdbRegisterDatabaseTimeMachineTagArgs and NdbRegisterDatabaseTimeMachineTagOutput values.
@@ -46945,7 +47268,8 @@ type NdbRegisterDatabaseTimeMachineTagArgs struct {
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
 	TagId      pulumi.StringPtrInput `pulumi:"tagId"`
 	TagName    pulumi.StringPtrInput `pulumi:"tagName"`
-	Value      pulumi.StringPtrInput `pulumi:"value"`
+	// - (Required) value for argument
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (NdbRegisterDatabaseTimeMachineTagArgs) ElementType() reflect.Type {
@@ -47015,6 +47339,7 @@ func (o NdbRegisterDatabaseTimeMachineTagOutput) TagName() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v NdbRegisterDatabaseTimeMachineTag) *string { return v.TagName }).(pulumi.StringPtrOutput)
 }
 
+// - (Required) value for argument
 func (o NdbRegisterDatabaseTimeMachineTagOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NdbRegisterDatabaseTimeMachineTag) *string { return v.Value }).(pulumi.StringPtrOutput)
 }

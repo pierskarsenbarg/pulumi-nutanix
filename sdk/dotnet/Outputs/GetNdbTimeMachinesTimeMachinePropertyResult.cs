@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetNdbTimeMachinesTimeMachinePropertyResult
     {
+        /// <summary>
+        /// time machine description
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// time machine name
+        /// </summary>
         public readonly string Name;
         public readonly string RefId;
         public readonly bool Secure;

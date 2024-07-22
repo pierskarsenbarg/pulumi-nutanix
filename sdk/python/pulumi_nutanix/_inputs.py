@@ -656,6 +656,10 @@ class AccessControlPolicyContextFilterListArgs:
     def __init__(__self__, *,
                  entity_filter_expression_lists: pulumi.Input[Sequence[pulumi.Input['AccessControlPolicyContextFilterListEntityFilterExpressionListArgs']]],
                  scope_filter_expression_lists: Optional[pulumi.Input[Sequence[pulumi.Input['AccessControlPolicyContextFilterListScopeFilterExpressionListArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['AccessControlPolicyContextFilterListEntityFilterExpressionListArgs']]] entity_filter_expression_lists: A list of Entity filter expressions.
+        :param pulumi.Input[Sequence[pulumi.Input['AccessControlPolicyContextFilterListScopeFilterExpressionListArgs']]] scope_filter_expression_lists: - (Optional) Filter the scope of an Access Control Policy.
+        """
         pulumi.set(__self__, "entity_filter_expression_lists", entity_filter_expression_lists)
         if scope_filter_expression_lists is not None:
             pulumi.set(__self__, "scope_filter_expression_lists", scope_filter_expression_lists)
@@ -663,6 +667,9 @@ class AccessControlPolicyContextFilterListArgs:
     @property
     @pulumi.getter(name="entityFilterExpressionLists")
     def entity_filter_expression_lists(self) -> pulumi.Input[Sequence[pulumi.Input['AccessControlPolicyContextFilterListEntityFilterExpressionListArgs']]]:
+        """
+        A list of Entity filter expressions.
+        """
         return pulumi.get(self, "entity_filter_expression_lists")
 
     @entity_filter_expression_lists.setter
@@ -672,6 +679,9 @@ class AccessControlPolicyContextFilterListArgs:
     @property
     @pulumi.getter(name="scopeFilterExpressionLists")
     def scope_filter_expression_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AccessControlPolicyContextFilterListScopeFilterExpressionListArgs']]]]:
+        """
+        - (Optional) Filter the scope of an Access Control Policy.
+        """
         return pulumi.get(self, "scope_filter_expression_lists")
 
     @scope_filter_expression_lists.setter
@@ -1193,12 +1203,21 @@ class AddressGroupIpAddressBlockListArgs:
     def __init__(__self__, *,
                  ip: pulumi.Input[str],
                  prefix_length: pulumi.Input[int]):
+        """
+        :param pulumi.Input[str] ip: - (Required) IP of the address block
+        :param pulumi.Input[int] prefix_length: - (Required) Prefix length of address block in int
+               
+               See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/api_references/prism-central-v3/#/5ccef53a546a4-create-a-new-address-group).
+        """
         pulumi.set(__self__, "ip", ip)
         pulumi.set(__self__, "prefix_length", prefix_length)
 
     @property
     @pulumi.getter
     def ip(self) -> pulumi.Input[str]:
+        """
+        - (Required) IP of the address block
+        """
         return pulumi.get(self, "ip")
 
     @ip.setter
@@ -1208,6 +1227,11 @@ class AddressGroupIpAddressBlockListArgs:
     @property
     @pulumi.getter(name="prefixLength")
     def prefix_length(self) -> pulumi.Input[int]:
+        """
+        - (Required) Prefix length of address block in int
+
+        See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/api_references/prism-central-v3/#/5ccef53a546a4-create-a-new-address-group).
+        """
         return pulumi.get(self, "prefix_length")
 
     @prefix_length.setter
@@ -1384,6 +1408,9 @@ class FoundationCentralImageClusterClusterStatusNodeProgressDetailArgs:
                  message_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  percent_complete: Optional[pulumi.Input[float]] = None,
                  status: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] imaged_node_uuid: UUID of the node.
+        """
         if imaged_node_uuid is not None:
             pulumi.set(__self__, "imaged_node_uuid", imaged_node_uuid)
         if imaging_stopped is not None:
@@ -1400,6 +1427,9 @@ class FoundationCentralImageClusterClusterStatusNodeProgressDetailArgs:
     @property
     @pulumi.getter(name="imagedNodeUuid")
     def imaged_node_uuid(self) -> Optional[pulumi.Input[str]]:
+        """
+        UUID of the node.
+        """
         return pulumi.get(self, "imaged_node_uuid")
 
     @imaged_node_uuid.setter
@@ -1459,6 +1489,12 @@ class FoundationCentralImageClusterCommonNetworkSettingsArgs:
                  cvm_ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  hypervisor_dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  hypervisor_ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] cvm_dns_servers: List of dns servers for the cvms in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] cvm_ntp_servers: List of ntp servers for the cvms in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hypervisor_dns_servers: List of dns servers for the hypervisors in the cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] hypervisor_ntp_servers: List of ntp servers for the hypervisors in the cluster.
+        """
         if cvm_dns_servers is not None:
             pulumi.set(__self__, "cvm_dns_servers", cvm_dns_servers)
         if cvm_ntp_servers is not None:
@@ -1471,6 +1507,9 @@ class FoundationCentralImageClusterCommonNetworkSettingsArgs:
     @property
     @pulumi.getter(name="cvmDnsServers")
     def cvm_dns_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of dns servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_dns_servers")
 
     @cvm_dns_servers.setter
@@ -1480,6 +1519,9 @@ class FoundationCentralImageClusterCommonNetworkSettingsArgs:
     @property
     @pulumi.getter(name="cvmNtpServers")
     def cvm_ntp_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of ntp servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_ntp_servers")
 
     @cvm_ntp_servers.setter
@@ -1489,6 +1531,9 @@ class FoundationCentralImageClusterCommonNetworkSettingsArgs:
     @property
     @pulumi.getter(name="hypervisorDnsServers")
     def hypervisor_dns_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of dns servers for the hypervisors in the cluster.
+        """
         return pulumi.get(self, "hypervisor_dns_servers")
 
     @hypervisor_dns_servers.setter
@@ -1498,6 +1543,9 @@ class FoundationCentralImageClusterCommonNetworkSettingsArgs:
     @property
     @pulumi.getter(name="hypervisorNtpServers")
     def hypervisor_ntp_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of ntp servers for the hypervisors in the cluster.
+        """
         return pulumi.get(self, "hypervisor_ntp_servers")
 
     @hypervisor_ntp_servers.setter
@@ -1522,6 +1570,16 @@ class FoundationCentralImageClusterFoundationInitConfigArgs:
                  ipmi_gateway: Optional[pulumi.Input[str]] = None,
                  ipmi_netmask: Optional[pulumi.Input[str]] = None,
                  nos_package_urls: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs']]]] = None):
+        """
+        :param pulumi.Input[str] cvm_gateway: Gateway of the cvm.
+        :param pulumi.Input[str] cvm_netmask: Netmask of the cvm.
+        :param pulumi.Input[str] hyperv_product_key: Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+        :param pulumi.Input[str] hyperv_sku: SKU of hyperv to be installed if hypervisor_type is hyperv.
+        :param pulumi.Input[str] hypervisor_gateway: Gateway of the hypervisor.
+        :param pulumi.Input[str] hypervisor_netmask: Netmask of the hypervisor.
+        :param pulumi.Input[str] ipmi_gateway: Gateway of the ipmi.
+        :param pulumi.Input[str] ipmi_netmask: Netmask of the ipmi.
+        """
         if blocks is not None:
             pulumi.set(__self__, "blocks", blocks)
         if clusters is not None:
@@ -1572,6 +1630,9 @@ class FoundationCentralImageClusterFoundationInitConfigArgs:
     @property
     @pulumi.getter(name="cvmGateway")
     def cvm_gateway(self) -> Optional[pulumi.Input[str]]:
+        """
+        Gateway of the cvm.
+        """
         return pulumi.get(self, "cvm_gateway")
 
     @cvm_gateway.setter
@@ -1581,6 +1642,9 @@ class FoundationCentralImageClusterFoundationInitConfigArgs:
     @property
     @pulumi.getter(name="cvmNetmask")
     def cvm_netmask(self) -> Optional[pulumi.Input[str]]:
+        """
+        Netmask of the cvm.
+        """
         return pulumi.get(self, "cvm_netmask")
 
     @cvm_netmask.setter
@@ -1599,6 +1663,9 @@ class FoundationCentralImageClusterFoundationInitConfigArgs:
     @property
     @pulumi.getter(name="hypervProductKey")
     def hyperv_product_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+        """
         return pulumi.get(self, "hyperv_product_key")
 
     @hyperv_product_key.setter
@@ -1608,6 +1675,9 @@ class FoundationCentralImageClusterFoundationInitConfigArgs:
     @property
     @pulumi.getter(name="hypervSku")
     def hyperv_sku(self) -> Optional[pulumi.Input[str]]:
+        """
+        SKU of hyperv to be installed if hypervisor_type is hyperv.
+        """
         return pulumi.get(self, "hyperv_sku")
 
     @hyperv_sku.setter
@@ -1617,6 +1687,9 @@ class FoundationCentralImageClusterFoundationInitConfigArgs:
     @property
     @pulumi.getter(name="hypervisorGateway")
     def hypervisor_gateway(self) -> Optional[pulumi.Input[str]]:
+        """
+        Gateway of the hypervisor.
+        """
         return pulumi.get(self, "hypervisor_gateway")
 
     @hypervisor_gateway.setter
@@ -1644,6 +1717,9 @@ class FoundationCentralImageClusterFoundationInitConfigArgs:
     @property
     @pulumi.getter(name="hypervisorNetmask")
     def hypervisor_netmask(self) -> Optional[pulumi.Input[str]]:
+        """
+        Netmask of the hypervisor.
+        """
         return pulumi.get(self, "hypervisor_netmask")
 
     @hypervisor_netmask.setter
@@ -1653,6 +1729,9 @@ class FoundationCentralImageClusterFoundationInitConfigArgs:
     @property
     @pulumi.getter(name="ipmiGateway")
     def ipmi_gateway(self) -> Optional[pulumi.Input[str]]:
+        """
+        Gateway of the ipmi.
+        """
         return pulumi.get(self, "ipmi_gateway")
 
     @ipmi_gateway.setter
@@ -1662,6 +1741,9 @@ class FoundationCentralImageClusterFoundationInitConfigArgs:
     @property
     @pulumi.getter(name="ipmiNetmask")
     def ipmi_netmask(self) -> Optional[pulumi.Input[str]]:
+        """
+        Netmask of the ipmi.
+        """
         return pulumi.get(self, "ipmi_netmask")
 
     @ipmi_netmask.setter
@@ -1722,6 +1804,15 @@ class FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs:
                  ipv6_address: Optional[pulumi.Input[str]] = None,
                  node_position: Optional[pulumi.Input[str]] = None,
                  node_serial: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] cvm_ip: IP address to be set for the cvm on the node.
+        :param pulumi.Input[int] cvm_vlan_id: Vlan tag of the cvm, if the cvm is on a vlan.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] hardware_attributes_override: Hardware attributes override json for the node.
+        :param pulumi.Input[str] hypervisor_hostname: Name to be set for the hypervisor host.
+        :param pulumi.Input[str] hypervisor_ip: IP address to be set for the hypervisor on the node.
+        :param pulumi.Input[bool] image_now: True, if the node should be imaged, False, otherwise.
+        :param pulumi.Input[str] ipmi_ip: IP address to be set for the ipmi of the node.
+        """
         if cvm_ip is not None:
             pulumi.set(__self__, "cvm_ip", cvm_ip)
         if cvm_vlan_id is not None:
@@ -1750,6 +1841,9 @@ class FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs:
     @property
     @pulumi.getter(name="cvmIp")
     def cvm_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        IP address to be set for the cvm on the node.
+        """
         return pulumi.get(self, "cvm_ip")
 
     @cvm_ip.setter
@@ -1759,6 +1853,9 @@ class FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs:
     @property
     @pulumi.getter(name="cvmVlanId")
     def cvm_vlan_id(self) -> Optional[pulumi.Input[int]]:
+        """
+        Vlan tag of the cvm, if the cvm is on a vlan.
+        """
         return pulumi.get(self, "cvm_vlan_id")
 
     @cvm_vlan_id.setter
@@ -1777,6 +1874,9 @@ class FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs:
     @property
     @pulumi.getter(name="hardwareAttributesOverride")
     def hardware_attributes_override(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        Hardware attributes override json for the node.
+        """
         return pulumi.get(self, "hardware_attributes_override")
 
     @hardware_attributes_override.setter
@@ -1795,6 +1895,9 @@ class FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs:
     @property
     @pulumi.getter(name="hypervisorHostname")
     def hypervisor_hostname(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name to be set for the hypervisor host.
+        """
         return pulumi.get(self, "hypervisor_hostname")
 
     @hypervisor_hostname.setter
@@ -1804,6 +1907,9 @@ class FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs:
     @property
     @pulumi.getter(name="hypervisorIp")
     def hypervisor_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        IP address to be set for the hypervisor on the node.
+        """
         return pulumi.get(self, "hypervisor_ip")
 
     @hypervisor_ip.setter
@@ -1813,6 +1919,9 @@ class FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs:
     @property
     @pulumi.getter(name="imageNow")
     def image_now(self) -> Optional[pulumi.Input[bool]]:
+        """
+        True, if the node should be imaged, False, otherwise.
+        """
         return pulumi.get(self, "image_now")
 
     @image_now.setter
@@ -1822,6 +1931,9 @@ class FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs:
     @property
     @pulumi.getter(name="ipmiIp")
     def ipmi_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        IP address to be set for the ipmi of the node.
+        """
         return pulumi.get(self, "ipmi_ip")
 
     @ipmi_ip.setter
@@ -1871,6 +1983,8 @@ class FoundationCentralImageClusterFoundationInitConfigClusterArgs:
         """
         :param pulumi.Input[str] cluster_external_ip: External management ip of the cluster.
         :param pulumi.Input[str] cluster_name: Name of the cluster.
+        :param pulumi.Input[str] cvm_dns_servers: List of dns servers for the cvms in the cluster.
+        :param pulumi.Input[str] cvm_ntp_servers: List of ntp servers for the cvms in the cluster.
         :param pulumi.Input[int] redundancy_factor: Redundancy factor of the cluster.
         :param pulumi.Input[str] timezone: Timezone to be set on the cluster.
         """
@@ -1947,6 +2061,9 @@ class FoundationCentralImageClusterFoundationInitConfigClusterArgs:
     @property
     @pulumi.getter(name="cvmDnsServers")
     def cvm_dns_servers(self) -> Optional[pulumi.Input[str]]:
+        """
+        List of dns servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_dns_servers")
 
     @cvm_dns_servers.setter
@@ -1956,6 +2073,9 @@ class FoundationCentralImageClusterFoundationInitConfigClusterArgs:
     @property
     @pulumi.getter(name="cvmNtpServers")
     def cvm_ntp_servers(self) -> Optional[pulumi.Input[str]]:
+        """
+        List of ntp servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_ntp_servers")
 
     @cvm_ntp_servers.setter
@@ -1993,6 +2113,11 @@ class FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs:
                  hypervisor_type: Optional[pulumi.Input[str]] = None,
                  sha256sum: Optional[pulumi.Input[str]] = None,
                  url: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] hypervisor_type: Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+        :param pulumi.Input[str] sha256sum: sha256sum of the hypervisor iso.
+        :param pulumi.Input[str] url: URL to download hypervisor iso. Required only if imaging is needed.
+        """
         if hypervisor_type is not None:
             pulumi.set(__self__, "hypervisor_type", hypervisor_type)
         if sha256sum is not None:
@@ -2003,6 +2128,9 @@ class FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs:
     @property
     @pulumi.getter(name="hypervisorType")
     def hypervisor_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+        """
         return pulumi.get(self, "hypervisor_type")
 
     @hypervisor_type.setter
@@ -2012,6 +2140,9 @@ class FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs:
     @property
     @pulumi.getter
     def sha256sum(self) -> Optional[pulumi.Input[str]]:
+        """
+        sha256sum of the hypervisor iso.
+        """
         return pulumi.get(self, "sha256sum")
 
     @sha256sum.setter
@@ -2021,6 +2152,9 @@ class FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs:
     @property
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[str]]:
+        """
+        URL to download hypervisor iso. Required only if imaging is needed.
+        """
         return pulumi.get(self, "url")
 
     @url.setter
@@ -2033,6 +2167,10 @@ class FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs:
     def __init__(__self__, *,
                  sha256sum: Optional[pulumi.Input[str]] = None,
                  url: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] sha256sum: sha256sum of the hypervisor iso.
+        :param pulumi.Input[str] url: URL to download hypervisor iso. Required only if imaging is needed.
+        """
         if sha256sum is not None:
             pulumi.set(__self__, "sha256sum", sha256sum)
         if url is not None:
@@ -2041,6 +2179,9 @@ class FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs:
     @property
     @pulumi.getter
     def sha256sum(self) -> Optional[pulumi.Input[str]]:
+        """
+        sha256sum of the hypervisor iso.
+        """
         return pulumi.get(self, "sha256sum")
 
     @sha256sum.setter
@@ -2050,6 +2191,9 @@ class FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs:
     @property
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[str]]:
+        """
+        URL to download hypervisor iso. Required only if imaging is needed.
+        """
         return pulumi.get(self, "url")
 
     @url.setter
@@ -2064,6 +2208,12 @@ class FoundationCentralImageClusterHypervisorIsoDetailsArgs:
                  hyperv_sku: Optional[pulumi.Input[str]] = None,
                  sha256sum: Optional[pulumi.Input[str]] = None,
                  url: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] hyperv_product_key: Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+        :param pulumi.Input[str] hyperv_sku: SKU of hyperv to be installed if hypervisor_type is hyperv.
+        :param pulumi.Input[str] sha256sum: sha256sum of the hypervisor iso.
+        :param pulumi.Input[str] url: URL to download hypervisor iso. Required only if imaging is needed.
+        """
         if hyperv_product_key is not None:
             pulumi.set(__self__, "hyperv_product_key", hyperv_product_key)
         if hyperv_sku is not None:
@@ -2076,6 +2226,9 @@ class FoundationCentralImageClusterHypervisorIsoDetailsArgs:
     @property
     @pulumi.getter(name="hypervProductKey")
     def hyperv_product_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+        """
         return pulumi.get(self, "hyperv_product_key")
 
     @hyperv_product_key.setter
@@ -2085,6 +2238,9 @@ class FoundationCentralImageClusterHypervisorIsoDetailsArgs:
     @property
     @pulumi.getter(name="hypervSku")
     def hyperv_sku(self) -> Optional[pulumi.Input[str]]:
+        """
+        SKU of hyperv to be installed if hypervisor_type is hyperv.
+        """
         return pulumi.get(self, "hyperv_sku")
 
     @hyperv_sku.setter
@@ -2094,6 +2250,9 @@ class FoundationCentralImageClusterHypervisorIsoDetailsArgs:
     @property
     @pulumi.getter
     def sha256sum(self) -> Optional[pulumi.Input[str]]:
+        """
+        sha256sum of the hypervisor iso.
+        """
         return pulumi.get(self, "sha256sum")
 
     @sha256sum.setter
@@ -2103,6 +2262,9 @@ class FoundationCentralImageClusterHypervisorIsoDetailsArgs:
     @property
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[str]]:
+        """
+        URL to download hypervisor iso. Required only if imaging is needed.
+        """
         return pulumi.get(self, "url")
 
     @url.setter
@@ -2131,6 +2293,26 @@ class FoundationCentralImageClusterNodeListArgs:
                  ipmi_netmask: Optional[pulumi.Input[str]] = None,
                  rdma_passthrough: Optional[pulumi.Input[bool]] = None,
                  use_existing_network_settings: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] cvm_gateway: Gateway of the cvm.
+        :param pulumi.Input[str] cvm_ip: IP address to be set for the cvm on the node.
+        :param pulumi.Input[str] cvm_netmask: Netmask of the cvm.
+        :param pulumi.Input[int] cvm_ram_gb: Amount of memory to be assigned for the cvm.
+        :param pulumi.Input[int] cvm_vlan_id: Vlan tag of the cvm, if the cvm is on a vlan.
+        :param pulumi.Input[Mapping[str, Any]] hardware_attributes_override: Hardware attributes override json for the node.
+        :param pulumi.Input[str] hypervisor_gateway: Gateway of the hypervisor.
+        :param pulumi.Input[str] hypervisor_hostname: Name to be set for the hypervisor host.
+        :param pulumi.Input[str] hypervisor_ip: IP address to be set for the hypervisor on the node.
+        :param pulumi.Input[str] hypervisor_netmask: Netmask of the hypervisor.
+        :param pulumi.Input[str] hypervisor_type: Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+        :param pulumi.Input[bool] image_now: True, if the node should be imaged, False, otherwise.
+        :param pulumi.Input[str] imaged_node_uuid: UUID of the node.
+        :param pulumi.Input[str] ipmi_gateway: Gateway of the ipmi.
+        :param pulumi.Input[str] ipmi_ip: IP address to be set for the ipmi of the node.
+        :param pulumi.Input[str] ipmi_netmask: Netmask of the ipmi.
+        :param pulumi.Input[bool] rdma_passthrough: Passthrough RDMA nic to CVM if possible, default to false.
+        :param pulumi.Input[bool] use_existing_network_settings: Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
+        """
         if cvm_gateway is not None:
             pulumi.set(__self__, "cvm_gateway", cvm_gateway)
         if cvm_ip is not None:
@@ -2171,6 +2353,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="cvmGateway")
     def cvm_gateway(self) -> Optional[pulumi.Input[str]]:
+        """
+        Gateway of the cvm.
+        """
         return pulumi.get(self, "cvm_gateway")
 
     @cvm_gateway.setter
@@ -2180,6 +2365,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="cvmIp")
     def cvm_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        IP address to be set for the cvm on the node.
+        """
         return pulumi.get(self, "cvm_ip")
 
     @cvm_ip.setter
@@ -2189,6 +2377,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="cvmNetmask")
     def cvm_netmask(self) -> Optional[pulumi.Input[str]]:
+        """
+        Netmask of the cvm.
+        """
         return pulumi.get(self, "cvm_netmask")
 
     @cvm_netmask.setter
@@ -2198,6 +2389,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="cvmRamGb")
     def cvm_ram_gb(self) -> Optional[pulumi.Input[int]]:
+        """
+        Amount of memory to be assigned for the cvm.
+        """
         return pulumi.get(self, "cvm_ram_gb")
 
     @cvm_ram_gb.setter
@@ -2207,6 +2401,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="cvmVlanId")
     def cvm_vlan_id(self) -> Optional[pulumi.Input[int]]:
+        """
+        Vlan tag of the cvm, if the cvm is on a vlan.
+        """
         return pulumi.get(self, "cvm_vlan_id")
 
     @cvm_vlan_id.setter
@@ -2216,6 +2413,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="hardwareAttributesOverride")
     def hardware_attributes_override(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Hardware attributes override json for the node.
+        """
         return pulumi.get(self, "hardware_attributes_override")
 
     @hardware_attributes_override.setter
@@ -2225,6 +2425,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="hypervisorGateway")
     def hypervisor_gateway(self) -> Optional[pulumi.Input[str]]:
+        """
+        Gateway of the hypervisor.
+        """
         return pulumi.get(self, "hypervisor_gateway")
 
     @hypervisor_gateway.setter
@@ -2234,6 +2437,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="hypervisorHostname")
     def hypervisor_hostname(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name to be set for the hypervisor host.
+        """
         return pulumi.get(self, "hypervisor_hostname")
 
     @hypervisor_hostname.setter
@@ -2243,6 +2449,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="hypervisorIp")
     def hypervisor_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        IP address to be set for the hypervisor on the node.
+        """
         return pulumi.get(self, "hypervisor_ip")
 
     @hypervisor_ip.setter
@@ -2252,6 +2461,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="hypervisorNetmask")
     def hypervisor_netmask(self) -> Optional[pulumi.Input[str]]:
+        """
+        Netmask of the hypervisor.
+        """
         return pulumi.get(self, "hypervisor_netmask")
 
     @hypervisor_netmask.setter
@@ -2261,6 +2473,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="hypervisorType")
     def hypervisor_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+        """
         return pulumi.get(self, "hypervisor_type")
 
     @hypervisor_type.setter
@@ -2270,6 +2485,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="imageNow")
     def image_now(self) -> Optional[pulumi.Input[bool]]:
+        """
+        True, if the node should be imaged, False, otherwise.
+        """
         return pulumi.get(self, "image_now")
 
     @image_now.setter
@@ -2279,6 +2497,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="imagedNodeUuid")
     def imaged_node_uuid(self) -> Optional[pulumi.Input[str]]:
+        """
+        UUID of the node.
+        """
         return pulumi.get(self, "imaged_node_uuid")
 
     @imaged_node_uuid.setter
@@ -2288,6 +2509,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="ipmiGateway")
     def ipmi_gateway(self) -> Optional[pulumi.Input[str]]:
+        """
+        Gateway of the ipmi.
+        """
         return pulumi.get(self, "ipmi_gateway")
 
     @ipmi_gateway.setter
@@ -2297,6 +2521,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="ipmiIp")
     def ipmi_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        IP address to be set for the ipmi of the node.
+        """
         return pulumi.get(self, "ipmi_ip")
 
     @ipmi_ip.setter
@@ -2306,6 +2533,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="ipmiNetmask")
     def ipmi_netmask(self) -> Optional[pulumi.Input[str]]:
+        """
+        Netmask of the ipmi.
+        """
         return pulumi.get(self, "ipmi_netmask")
 
     @ipmi_netmask.setter
@@ -2315,6 +2545,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="rdmaPassthrough")
     def rdma_passthrough(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Passthrough RDMA nic to CVM if possible, default to false.
+        """
         return pulumi.get(self, "rdma_passthrough")
 
     @rdma_passthrough.setter
@@ -2324,6 +2557,9 @@ class FoundationCentralImageClusterNodeListArgs:
     @property
     @pulumi.getter(name="useExistingNetworkSettings")
     def use_existing_network_settings(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
+        """
         return pulumi.get(self, "use_existing_network_settings")
 
     @use_existing_network_settings.setter
@@ -2983,6 +3219,9 @@ class FoundationImageNodesBlockNodeVswitchArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  other_configs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  uplinks: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] bond_mode: - (Required if node is capable) dynamic if using LACP, static for LAG
+        """
         if bond_mode is not None:
             pulumi.set(__self__, "bond_mode", bond_mode)
         if lacp is not None:
@@ -2999,6 +3238,9 @@ class FoundationImageNodesBlockNodeVswitchArgs:
     @property
     @pulumi.getter(name="bondMode")
     def bond_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required if node is capable) dynamic if using LACP, static for LAG
+        """
         return pulumi.get(self, "bond_mode")
 
     @bond_mode.setter
@@ -3300,6 +3542,9 @@ class FoundationImageNodesClusterUrlArgs:
     def __init__(__self__, *,
                  cluster_name: Optional[pulumi.Input[str]] = None,
                  cluster_url: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] cluster_name: - (Required) Name of the cluster.
+        """
         if cluster_name is not None:
             pulumi.set(__self__, "cluster_name", cluster_name)
         if cluster_url is not None:
@@ -3308,6 +3553,9 @@ class FoundationImageNodesClusterUrlArgs:
     @property
     @pulumi.getter(name="clusterName")
     def cluster_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) Name of the cluster.
+        """
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
@@ -3523,12 +3771,19 @@ class FoundationImageNodesHypervisorIsoEsxArgs:
     def __init__(__self__, *,
                  checksum: pulumi.Input[str],
                  filename: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] checksum: - (Required) Filename of hypervisor ISO.
+        :param pulumi.Input[str] filename: - (Required) Checksum for ISO file.
+        """
         pulumi.set(__self__, "checksum", checksum)
         pulumi.set(__self__, "filename", filename)
 
     @property
     @pulumi.getter
     def checksum(self) -> pulumi.Input[str]:
+        """
+        - (Required) Filename of hypervisor ISO.
+        """
         return pulumi.get(self, "checksum")
 
     @checksum.setter
@@ -3538,6 +3793,9 @@ class FoundationImageNodesHypervisorIsoEsxArgs:
     @property
     @pulumi.getter
     def filename(self) -> pulumi.Input[str]:
+        """
+        - (Required) Checksum for ISO file.
+        """
         return pulumi.get(self, "filename")
 
     @filename.setter
@@ -3550,12 +3808,19 @@ class FoundationImageNodesHypervisorIsoHypervArgs:
     def __init__(__self__, *,
                  checksum: pulumi.Input[str],
                  filename: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] checksum: - (Required) Filename of hypervisor ISO.
+        :param pulumi.Input[str] filename: - (Required) Checksum for ISO file.
+        """
         pulumi.set(__self__, "checksum", checksum)
         pulumi.set(__self__, "filename", filename)
 
     @property
     @pulumi.getter
     def checksum(self) -> pulumi.Input[str]:
+        """
+        - (Required) Filename of hypervisor ISO.
+        """
         return pulumi.get(self, "checksum")
 
     @checksum.setter
@@ -3565,6 +3830,9 @@ class FoundationImageNodesHypervisorIsoHypervArgs:
     @property
     @pulumi.getter
     def filename(self) -> pulumi.Input[str]:
+        """
+        - (Required) Checksum for ISO file.
+        """
         return pulumi.get(self, "filename")
 
     @filename.setter
@@ -3577,12 +3845,19 @@ class FoundationImageNodesHypervisorIsoKvmArgs:
     def __init__(__self__, *,
                  checksum: pulumi.Input[str],
                  filename: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] checksum: - (Required) Filename of hypervisor ISO.
+        :param pulumi.Input[str] filename: - (Required) Checksum for ISO file.
+        """
         pulumi.set(__self__, "checksum", checksum)
         pulumi.set(__self__, "filename", filename)
 
     @property
     @pulumi.getter
     def checksum(self) -> pulumi.Input[str]:
+        """
+        - (Required) Filename of hypervisor ISO.
+        """
         return pulumi.get(self, "checksum")
 
     @checksum.setter
@@ -3592,6 +3867,9 @@ class FoundationImageNodesHypervisorIsoKvmArgs:
     @property
     @pulumi.getter
     def filename(self) -> pulumi.Input[str]:
+        """
+        - (Required) Checksum for ISO file.
+        """
         return pulumi.get(self, "filename")
 
     @filename.setter
@@ -3604,12 +3882,19 @@ class FoundationImageNodesHypervisorIsoXenArgs:
     def __init__(__self__, *,
                  checksum: pulumi.Input[str],
                  filename: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] checksum: - (Required) Filename of hypervisor ISO.
+        :param pulumi.Input[str] filename: - (Required) Checksum for ISO file.
+        """
         pulumi.set(__self__, "checksum", checksum)
         pulumi.set(__self__, "filename", filename)
 
     @property
     @pulumi.getter
     def checksum(self) -> pulumi.Input[str]:
+        """
+        - (Required) Filename of hypervisor ISO.
+        """
         return pulumi.get(self, "checksum")
 
     @checksum.setter
@@ -3619,6 +3904,9 @@ class FoundationImageNodesHypervisorIsoXenArgs:
     @property
     @pulumi.getter
     def filename(self) -> pulumi.Input[str]:
+        """
+        - (Required) Checksum for ISO file.
+        """
         return pulumi.get(self, "filename")
 
     @filename.setter
@@ -5351,6 +5639,7 @@ class NdbCloneDatabaseNodePropertyArgs:
         """
         :param pulumi.Input[str] description: database instance description
         :param pulumi.Input[str] name: database instance name
+        :param pulumi.Input[str] value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -5408,6 +5697,9 @@ class NdbCloneDatabaseNodePropertyArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -5617,6 +5909,7 @@ class NdbCloneDatabaseNodeProtectionDomainPropertyArgs:
         """
         :param pulumi.Input[str] description: database instance description
         :param pulumi.Input[str] name: database instance name
+        :param pulumi.Input[str] value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -5674,6 +5967,9 @@ class NdbCloneDatabaseNodeProtectionDomainPropertyArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -5689,6 +5985,9 @@ class NdbCloneDatabaseNodeTagArgs:
                  tag_id: Optional[pulumi.Input[str]] = None,
                  tag_name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -5739,6 +6038,9 @@ class NdbCloneDatabaseNodeTagArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -6585,6 +6887,7 @@ class NdbCloneNodePropertyArgs:
                  value: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] name: database instance name
+        :param pulumi.Input[str] value: - (Required) value for argument
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -6606,6 +6909,9 @@ class NdbCloneNodePropertyArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -6705,6 +7011,7 @@ class NdbClonePropertyArgs:
                  value: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] name: database instance name
+        :param pulumi.Input[str] value: - (Required) value for argument
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -6726,6 +7033,9 @@ class NdbClonePropertyArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -6741,6 +7051,9 @@ class NdbCloneTagArgs:
                  tag_id: Optional[pulumi.Input[str]] = None,
                  tag_name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -6791,6 +7104,9 @@ class NdbCloneTagArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -7160,6 +7476,7 @@ class NdbCloneTimeMachinePropertyArgs:
         """
         :param pulumi.Input[str] description: database instance description
         :param pulumi.Input[str] name: database instance name
+        :param pulumi.Input[str] value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -7217,6 +7534,9 @@ class NdbCloneTimeMachinePropertyArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -8001,6 +8321,9 @@ class NdbCloneTimeMachineTagArgs:
                  tag_id: Optional[pulumi.Input[str]] = None,
                  tag_name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -8051,6 +8374,9 @@ class NdbCloneTimeMachineTagArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -9251,6 +9577,10 @@ class NdbDatabaseClusterInfoClusterIpInfoArgs:
     def __init__(__self__, *,
                  nx_cluster_id: pulumi.Input[str],
                  ip_infos: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseClusterInfoClusterIpInfoIpInfoArgs']]]] = None):
+        """
+        :param pulumi.Input[str] nx_cluster_id: - (Optional) cluster id.
+        :param pulumi.Input[Sequence[pulumi.Input['NdbDatabaseClusterInfoClusterIpInfoIpInfoArgs']]] ip_infos: - (Optional) IP infos for custom network profile.
+        """
         pulumi.set(__self__, "nx_cluster_id", nx_cluster_id)
         if ip_infos is not None:
             pulumi.set(__self__, "ip_infos", ip_infos)
@@ -9258,6 +9588,9 @@ class NdbDatabaseClusterInfoClusterIpInfoArgs:
     @property
     @pulumi.getter(name="nxClusterId")
     def nx_cluster_id(self) -> pulumi.Input[str]:
+        """
+        - (Optional) cluster id.
+        """
         return pulumi.get(self, "nx_cluster_id")
 
     @nx_cluster_id.setter
@@ -9267,6 +9600,9 @@ class NdbDatabaseClusterInfoClusterIpInfoArgs:
     @property
     @pulumi.getter(name="ipInfos")
     def ip_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseClusterInfoClusterIpInfoIpInfoArgs']]]]:
+        """
+        - (Optional) IP infos for custom network profile.
+        """
         return pulumi.get(self, "ip_infos")
 
     @ip_infos.setter
@@ -9328,6 +9664,7 @@ class NdbDatabaseDatabaseNodeArgs:
         :param pulumi.Input[str] description: - (Optional) The description
         :param pulumi.Input[str] name: - (Required) Name of the instance.
         :param pulumi.Input[Sequence[pulumi.Input['NdbDatabaseDatabaseNodePropertyArgs']]] properties: List of all the properties
+        :param pulumi.Input[Sequence[pulumi.Input['NdbDatabaseDatabaseNodeTagArgs']]] tags: - (Optional) tags
         """
         if access_level is not None:
             pulumi.set(__self__, "access_level", access_level)
@@ -9531,6 +9868,9 @@ class NdbDatabaseDatabaseNodeArgs:
     @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseDatabaseNodeTagArgs']]]]:
+        """
+        - (Optional) tags
+        """
         return pulumi.get(self, "tags")
 
     @tags.setter
@@ -9578,6 +9918,7 @@ class NdbDatabaseDatabaseNodePropertyArgs:
         """
         :param pulumi.Input[str] description: - (Optional) The description
         :param pulumi.Input[str] name: - (Required) Name of the instance.
+        :param pulumi.Input[str] value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -9635,6 +9976,9 @@ class NdbDatabaseDatabaseNodePropertyArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -9828,6 +10172,7 @@ class NdbDatabaseDatabaseNodeProtectionDomainPropertyArgs:
         """
         :param pulumi.Input[str] description: - (Optional) The description
         :param pulumi.Input[str] name: - (Required) Name of the instance.
+        :param pulumi.Input[str] value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -9885,6 +10230,9 @@ class NdbDatabaseDatabaseNodeProtectionDomainPropertyArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -9900,6 +10248,9 @@ class NdbDatabaseDatabaseNodeTagArgs:
                  tag_id: Optional[pulumi.Input[str]] = None,
                  tag_name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -9950,6 +10301,9 @@ class NdbDatabaseDatabaseNodeTagArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -11028,6 +11382,7 @@ class NdbDatabaseNodePropertyArgs:
                  value: pulumi.Input[str]):
         """
         :param pulumi.Input[str] name: - (Required) Name of the instance.
+        :param pulumi.Input[str] value: - (Required) value for argument
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
@@ -11047,6 +11402,9 @@ class NdbDatabaseNodePropertyArgs:
     @property
     @pulumi.getter
     def value(self) -> pulumi.Input[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -11447,6 +11805,7 @@ class NdbDatabasePropertyArgs:
                  value: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] name: - (Required) Name of the instance.
+        :param pulumi.Input[str] value: - (Required) value for argument
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -11468,6 +11827,9 @@ class NdbDatabasePropertyArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -17784,6 +18146,9 @@ class NdbDatabaseTagArgs:
                  tag_id: Optional[pulumi.Input[str]] = None,
                  tag_name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -17834,6 +18199,9 @@ class NdbDatabaseTagArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -17874,6 +18242,8 @@ class NdbDatabaseTimeMachineArgs:
         :param pulumi.Input[str] description: - (Optional) The description
         :param pulumi.Input[str] name: - (Required) Name of the instance.
         :param pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimeMachinePropertyArgs']]] properties: List of all the properties
+        :param pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimeMachineScheduleArgs']]] schedules: - (Optional) schedule for snapshots
+        :param pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimeMachineTagArgs']]] tags: - (Optional) tags
         """
         if access_level is not None:
             pulumi.set(__self__, "access_level", access_level)
@@ -18076,6 +18446,9 @@ class NdbDatabaseTimeMachineArgs:
     @property
     @pulumi.getter
     def schedules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimeMachineScheduleArgs']]]]:
+        """
+        - (Optional) schedule for snapshots
+        """
         return pulumi.get(self, "schedules")
 
     @schedules.setter
@@ -18148,6 +18521,9 @@ class NdbDatabaseTimeMachineArgs:
     @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimeMachineTagArgs']]]]:
+        """
+        - (Optional) tags
+        """
         return pulumi.get(self, "tags")
 
     @tags.setter
@@ -18175,6 +18551,7 @@ class NdbDatabaseTimeMachinePropertyArgs:
         """
         :param pulumi.Input[str] description: - (Optional) The description
         :param pulumi.Input[str] name: - (Required) Name of the instance.
+        :param pulumi.Input[str] value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -18232,6 +18609,9 @@ class NdbDatabaseTimeMachinePropertyArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -18629,6 +19009,11 @@ class NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayArgs:
                  hours: Optional[pulumi.Input[int]] = None,
                  minutes: Optional[pulumi.Input[int]] = None,
                  seconds: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] hours: - (Required) hours
+        :param pulumi.Input[int] minutes: - (Required) minutes
+        :param pulumi.Input[int] seconds: - (Required) seconds
+        """
         if extra is not None:
             pulumi.set(__self__, "extra", extra)
         if hours is not None:
@@ -18650,6 +19035,9 @@ class NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayArgs:
     @property
     @pulumi.getter
     def hours(self) -> Optional[pulumi.Input[int]]:
+        """
+        - (Required) hours
+        """
         return pulumi.get(self, "hours")
 
     @hours.setter
@@ -18659,6 +19047,9 @@ class NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayArgs:
     @property
     @pulumi.getter
     def minutes(self) -> Optional[pulumi.Input[int]]:
+        """
+        - (Required) minutes
+        """
         return pulumi.get(self, "minutes")
 
     @minutes.setter
@@ -18668,6 +19059,9 @@ class NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayArgs:
     @property
     @pulumi.getter
     def seconds(self) -> Optional[pulumi.Input[int]]:
+        """
+        - (Required) seconds
+        """
         return pulumi.get(self, "seconds")
 
     @seconds.setter
@@ -18723,6 +19117,9 @@ class NdbDatabaseTimeMachineScheduleYearlyScheduleArgs:
                  enabled: Optional[pulumi.Input[bool]] = None,
                  month: Optional[pulumi.Input[str]] = None,
                  month_value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] month: - (Required) month for snapshot
+        """
         if day_of_month is not None:
             pulumi.set(__self__, "day_of_month", day_of_month)
         if enabled is not None:
@@ -18753,6 +19150,9 @@ class NdbDatabaseTimeMachineScheduleYearlyScheduleArgs:
     @property
     @pulumi.getter
     def month(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) month for snapshot
+        """
         return pulumi.get(self, "month")
 
     @month.setter
@@ -18996,6 +19396,9 @@ class NdbDatabaseTimeMachineTagArgs:
                  tag_id: Optional[pulumi.Input[str]] = None,
                  tag_name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -19046,6 +19449,9 @@ class NdbDatabaseTimeMachineTagArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -19624,6 +20030,9 @@ class NdbDatabaseTimemachineinfoTagArgs:
                  tag_id: Optional[pulumi.Input[str]] = None,
                  tag_name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -19674,6 +20083,9 @@ class NdbDatabaseTimemachineinfoTagArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -19849,6 +20261,9 @@ class NdbDbserverVmPropertyArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: name of the dbserver vm
+        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -19857,6 +20272,9 @@ class NdbDbserverVmPropertyArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        name of the dbserver vm
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -22183,6 +22601,8 @@ class NdbProfileVersionArgs:
         :param pulumi.Input[str] owner: owner  of profile
         :param pulumi.Input[bool] published: Publish for all users
         :param pulumi.Input[str] status: status of profile
+        :param pulumi.Input[Sequence[pulumi.Input['NdbProfileVersionVersionClusterAssociationArgs']]] version_cluster_associations: cluster associated with VLAN. this is used with Single instance for postgres database.
+               * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
         """
         if db_version is not None:
             pulumi.set(__self__, "db_version", db_version)
@@ -22384,6 +22804,10 @@ class NdbProfileVersionArgs:
     @property
     @pulumi.getter(name="versionClusterAssociations")
     def version_cluster_associations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileVersionVersionClusterAssociationArgs']]]]:
+        """
+        cluster associated with VLAN. this is used with Single instance for postgres database.
+        * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
+        """
         return pulumi.get(self, "version_cluster_associations")
 
     @version_cluster_associations.setter
@@ -22938,6 +23362,7 @@ class NdbRegisterDatabaseDatabaseNodePropertyArgs:
         """
         :param pulumi.Input[str] description: description
         :param pulumi.Input[str] name: Name of database instance
+        :param pulumi.Input[str] value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -22995,6 +23420,9 @@ class NdbRegisterDatabaseDatabaseNodePropertyArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -23204,6 +23632,7 @@ class NdbRegisterDatabaseDatabaseNodeProtectionDomainPropertyArgs:
         """
         :param pulumi.Input[str] description: description
         :param pulumi.Input[str] name: Name of database instance
+        :param pulumi.Input[str] value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -23261,6 +23690,9 @@ class NdbRegisterDatabaseDatabaseNodeProtectionDomainPropertyArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -23276,6 +23708,9 @@ class NdbRegisterDatabaseDatabaseNodeTagArgs:
                  tag_id: Optional[pulumi.Input[str]] = None,
                  tag_name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -23326,6 +23761,9 @@ class NdbRegisterDatabaseDatabaseNodeTagArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -24388,6 +24826,7 @@ class NdbRegisterDatabasePropertyArgs:
                  value: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] name: Name of database instance
+        :param pulumi.Input[str] value: - (Required) value for argument
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -24409,6 +24848,9 @@ class NdbRegisterDatabasePropertyArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -24424,6 +24866,9 @@ class NdbRegisterDatabaseTagArgs:
                  tag_id: Optional[pulumi.Input[str]] = None,
                  tag_name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -24474,6 +24919,9 @@ class NdbRegisterDatabaseTagArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -24518,6 +24966,7 @@ class NdbRegisterDatabaseTimeMachineArgs:
         :param pulumi.Input[str] metric: Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
         :param pulumi.Input[str] name: Name of database instance
         :param pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachinePropertyArgs']]] properties: properties of database created
+        :param pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineScheduleArgs']]] schedules: - (Optional) schedule for snapshots
         :param pulumi.Input[str] status: status of instance
         :param pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineTagArgs']]] tags: tags
         :param pulumi.Input[str] type: type of database
@@ -24735,6 +25184,9 @@ class NdbRegisterDatabaseTimeMachineArgs:
     @property
     @pulumi.getter
     def schedules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineScheduleArgs']]]]:
+        """
+        - (Optional) schedule for snapshots
+        """
         return pulumi.get(self, "schedules")
 
     @schedules.setter
@@ -25327,6 +25779,9 @@ class NdbRegisterDatabaseTimeMachineInfoTagArgs:
                  tag_id: Optional[pulumi.Input[str]] = None,
                  tag_name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -25377,6 +25832,9 @@ class NdbRegisterDatabaseTimeMachineInfoTagArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -25395,6 +25853,7 @@ class NdbRegisterDatabaseTimeMachinePropertyArgs:
         """
         :param pulumi.Input[str] description: description
         :param pulumi.Input[str] name: Name of database instance
+        :param pulumi.Input[str] value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -25452,6 +25911,9 @@ class NdbRegisterDatabaseTimeMachinePropertyArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -26236,6 +26698,9 @@ class NdbRegisterDatabaseTimeMachineTagArgs:
                  tag_id: Optional[pulumi.Input[str]] = None,
                  tag_name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -26286,6 +26751,9 @@ class NdbRegisterDatabaseTimeMachineTagArgs:
     @property
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
     @value.setter
@@ -35854,6 +36322,10 @@ class ServiceGroupServiceListIcmpTypeCodeListArgs:
     def __init__(__self__, *,
                  code: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] code: - (Optional) Code as text
+        :param pulumi.Input[str] type: - (Optional) Type as text
+        """
         if code is not None:
             pulumi.set(__self__, "code", code)
         if type is not None:
@@ -35862,6 +36334,9 @@ class ServiceGroupServiceListIcmpTypeCodeListArgs:
     @property
     @pulumi.getter
     def code(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Optional) Code as text
+        """
         return pulumi.get(self, "code")
 
     @code.setter
@@ -35871,6 +36346,9 @@ class ServiceGroupServiceListIcmpTypeCodeListArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
+        """
+        - (Optional) Type as text
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -36289,11 +36767,17 @@ class UserGroupsCategoryArgs:
 class UserGroupsDirectoryServiceOusArgs:
     def __init__(__self__, *,
                  distinguished_name: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] distinguished_name: - (Required) The Distinguished name for the user group.
+        """
         pulumi.set(__self__, "distinguished_name", distinguished_name)
 
     @property
     @pulumi.getter(name="distinguishedName")
     def distinguished_name(self) -> pulumi.Input[str]:
+        """
+        - (Required) The Distinguished name for the user group.
+        """
         return pulumi.get(self, "distinguished_name")
 
     @distinguished_name.setter
@@ -36997,6 +37481,7 @@ class VirtualMachineNicListArgs:
                  uuid: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineNicListIpEndpointListArgs']]] ip_endpoint_lists: - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+        :param pulumi.Input[str] is_connected: - Indicates whether the serial port connection is connected or not (`true` or `false`).
         :param pulumi.Input[str] mac_address: - The MAC address for the adapter.
         :param pulumi.Input[str] model: - The model of this NIC. (Options : VIRTIO , E1000).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] network_function_chain_reference: - The reference to a network_function_chain.
@@ -37045,6 +37530,9 @@ class VirtualMachineNicListArgs:
     @property
     @pulumi.getter(name="isConnected")
     def is_connected(self) -> Optional[pulumi.Input[str]]:
+        """
+        - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        """
         return pulumi.get(self, "is_connected")
 
     @is_connected.setter
@@ -37215,6 +37703,17 @@ class VirtualMachineNicListStatusArgs:
                  subnet_uuid: Optional[pulumi.Input[str]] = None,
                  uuid: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] floating_ip: -  The Floating IP associated with the vnic. (Only in `nic_list_status`)
+        :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineNicListStatusIpEndpointListArgs']]] ip_endpoint_lists: - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+        :param pulumi.Input[str] is_connected: - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        :param pulumi.Input[str] mac_address: - The MAC address for the adapter.
+        :param pulumi.Input[str] model: - The model of this NIC. (Options : VIRTIO , E1000).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] network_function_chain_reference: - The reference to a network_function_chain.
+        :param pulumi.Input[str] network_function_nic_type: - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
+        :param pulumi.Input[str] nic_type: - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
+        :param pulumi.Input[int] num_queues: - The number of tx/rx queue pairs for this NIC.
+        :param pulumi.Input[str] subnet_name: - The name of the subnet reference to.
+        :param pulumi.Input[str] subnet_uuid: - The reference to a subnet.
         :param pulumi.Input[str] uuid: - the UUID(Required).
         """
         if floating_ip is not None:
@@ -37245,6 +37744,9 @@ class VirtualMachineNicListStatusArgs:
     @property
     @pulumi.getter(name="floatingIp")
     def floating_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        -  The Floating IP associated with the vnic. (Only in `nic_list_status`)
+        """
         return pulumi.get(self, "floating_ip")
 
     @floating_ip.setter
@@ -37254,6 +37756,9 @@ class VirtualMachineNicListStatusArgs:
     @property
     @pulumi.getter(name="ipEndpointLists")
     def ip_endpoint_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineNicListStatusIpEndpointListArgs']]]]:
+        """
+        - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+        """
         return pulumi.get(self, "ip_endpoint_lists")
 
     @ip_endpoint_lists.setter
@@ -37263,6 +37768,9 @@ class VirtualMachineNicListStatusArgs:
     @property
     @pulumi.getter(name="isConnected")
     def is_connected(self) -> Optional[pulumi.Input[str]]:
+        """
+        - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        """
         return pulumi.get(self, "is_connected")
 
     @is_connected.setter
@@ -37272,6 +37780,9 @@ class VirtualMachineNicListStatusArgs:
     @property
     @pulumi.getter(name="macAddress")
     def mac_address(self) -> Optional[pulumi.Input[str]]:
+        """
+        - The MAC address for the adapter.
+        """
         return pulumi.get(self, "mac_address")
 
     @mac_address.setter
@@ -37281,6 +37792,9 @@ class VirtualMachineNicListStatusArgs:
     @property
     @pulumi.getter
     def model(self) -> Optional[pulumi.Input[str]]:
+        """
+        - The model of this NIC. (Options : VIRTIO , E1000).
+        """
         return pulumi.get(self, "model")
 
     @model.setter
@@ -37290,6 +37804,9 @@ class VirtualMachineNicListStatusArgs:
     @property
     @pulumi.getter(name="networkFunctionChainReference")
     def network_function_chain_reference(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
+        """
+        - The reference to a network_function_chain.
+        """
         return pulumi.get(self, "network_function_chain_reference")
 
     @network_function_chain_reference.setter
@@ -37299,6 +37816,9 @@ class VirtualMachineNicListStatusArgs:
     @property
     @pulumi.getter(name="networkFunctionNicType")
     def network_function_nic_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
+        """
         return pulumi.get(self, "network_function_nic_type")
 
     @network_function_nic_type.setter
@@ -37308,6 +37828,9 @@ class VirtualMachineNicListStatusArgs:
     @property
     @pulumi.getter(name="nicType")
     def nic_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
+        """
         return pulumi.get(self, "nic_type")
 
     @nic_type.setter
@@ -37317,6 +37840,9 @@ class VirtualMachineNicListStatusArgs:
     @property
     @pulumi.getter(name="numQueues")
     def num_queues(self) -> Optional[pulumi.Input[int]]:
+        """
+        - The number of tx/rx queue pairs for this NIC.
+        """
         return pulumi.get(self, "num_queues")
 
     @num_queues.setter
@@ -37326,6 +37852,9 @@ class VirtualMachineNicListStatusArgs:
     @property
     @pulumi.getter(name="subnetName")
     def subnet_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        - The name of the subnet reference to.
+        """
         return pulumi.get(self, "subnet_name")
 
     @subnet_name.setter
@@ -37335,6 +37864,9 @@ class VirtualMachineNicListStatusArgs:
     @property
     @pulumi.getter(name="subnetUuid")
     def subnet_uuid(self) -> Optional[pulumi.Input[str]]:
+        """
+        - The reference to a subnet.
+        """
         return pulumi.get(self, "subnet_uuid")
 
     @subnet_uuid.setter

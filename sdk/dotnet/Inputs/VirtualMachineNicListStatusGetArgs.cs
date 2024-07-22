@@ -13,46 +13,81 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class VirtualMachineNicListStatusGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// -  The Floating IP associated with the vnic. (Only in `nic_list_status`)
+        /// </summary>
         [Input("floatingIp")]
         public Input<string>? FloatingIp { get; set; }
 
         [Input("ipEndpointLists")]
         private InputList<Inputs.VirtualMachineNicListStatusIpEndpointListGetArgs>? _ipEndpointLists;
+
+        /// <summary>
+        /// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+        /// </summary>
         public InputList<Inputs.VirtualMachineNicListStatusIpEndpointListGetArgs> IpEndpointLists
         {
             get => _ipEndpointLists ?? (_ipEndpointLists = new InputList<Inputs.VirtualMachineNicListStatusIpEndpointListGetArgs>());
             set => _ipEndpointLists = value;
         }
 
+        /// <summary>
+        /// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        /// </summary>
         [Input("isConnected")]
         public Input<string>? IsConnected { get; set; }
 
+        /// <summary>
+        /// - The MAC address for the adapter.
+        /// </summary>
         [Input("macAddress")]
         public Input<string>? MacAddress { get; set; }
 
+        /// <summary>
+        /// - The model of this NIC. (Options : VIRTIO , E1000).
+        /// </summary>
         [Input("model")]
         public Input<string>? Model { get; set; }
 
         [Input("networkFunctionChainReference")]
         private InputMap<string>? _networkFunctionChainReference;
+
+        /// <summary>
+        /// - The reference to a network_function_chain.
+        /// </summary>
         public InputMap<string> NetworkFunctionChainReference
         {
             get => _networkFunctionChainReference ?? (_networkFunctionChainReference = new InputMap<string>());
             set => _networkFunctionChainReference = value;
         }
 
+        /// <summary>
+        /// - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
+        /// </summary>
         [Input("networkFunctionNicType")]
         public Input<string>? NetworkFunctionNicType { get; set; }
 
+        /// <summary>
+        /// - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
+        /// </summary>
         [Input("nicType")]
         public Input<string>? NicType { get; set; }
 
+        /// <summary>
+        /// - The number of tx/rx queue pairs for this NIC.
+        /// </summary>
         [Input("numQueues")]
         public Input<int>? NumQueues { get; set; }
 
+        /// <summary>
+        /// - The name of the subnet reference to.
+        /// </summary>
         [Input("subnetName")]
         public Input<string>? SubnetName { get; set; }
 
+        /// <summary>
+        /// - The reference to a subnet.
+        /// </summary>
         [Input("subnetUuid")]
         public Input<string>? SubnetUuid { get; set; }
 

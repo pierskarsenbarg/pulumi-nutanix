@@ -101,6 +101,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("tags")]
         private InputList<Inputs.NdbDatabaseDatabaseNodeTagGetArgs>? _tags;
+
+        /// <summary>
+        /// - (Optional) tags
+        /// </summary>
         public InputList<Inputs.NdbDatabaseDatabaseNodeTagGetArgs> Tags
         {
             get => _tags ?? (_tags = new InputList<Inputs.NdbDatabaseDatabaseNodeTagGetArgs>());

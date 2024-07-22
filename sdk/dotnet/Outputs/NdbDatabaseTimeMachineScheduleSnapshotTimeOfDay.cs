@@ -15,8 +15,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class NdbDatabaseTimeMachineScheduleSnapshotTimeOfDay
     {
         public readonly bool? Extra;
+        /// <summary>
+        /// - (Required) hours
+        /// </summary>
         public readonly int? Hours;
+        /// <summary>
+        /// - (Required) minutes
+        /// </summary>
         public readonly int? Minutes;
+        /// <summary>
+        /// - (Required) seconds
+        /// </summary>
         public readonly int? Seconds;
 
         [OutputConstructor]

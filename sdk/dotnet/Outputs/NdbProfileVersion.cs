@@ -48,6 +48,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string? Topology;
         public readonly string? Type;
         public readonly string? Version;
+        /// <summary>
+        /// cluster associated with VLAN. this is used with Single instance for postgres database.
+        /// * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
+        /// </summary>
         public readonly ImmutableArray<Outputs.NdbProfileVersionVersionClusterAssociation> VersionClusterAssociations;
 
         [OutputConstructor]

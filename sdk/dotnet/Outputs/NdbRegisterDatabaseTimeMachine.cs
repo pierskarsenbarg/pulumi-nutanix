@@ -53,6 +53,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.NdbRegisterDatabaseTimeMachineProperty> Properties;
         public readonly string? ScheduleId;
+        /// <summary>
+        /// - (Optional) schedule for snapshots
+        /// </summary>
         public readonly ImmutableArray<Outputs.NdbRegisterDatabaseTimeMachineSchedule> Schedules;
         public readonly string? Scope;
         public readonly string? SlaId;

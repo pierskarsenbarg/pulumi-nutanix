@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class AccessControlPolicyContextFilterList
     {
+        /// <summary>
+        /// A list of Entity filter expressions.
+        /// </summary>
         public readonly ImmutableArray<Outputs.AccessControlPolicyContextFilterListEntityFilterExpressionList> EntityFilterExpressionLists;
+        /// <summary>
+        /// - (Optional) Filter the scope of an Access Control Policy.
+        /// </summary>
         public readonly ImmutableArray<Outputs.AccessControlPolicyContextFilterListScopeFilterExpressionList> ScopeFilterExpressionLists;
 
         [OutputConstructor]

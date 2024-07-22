@@ -31,6 +31,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("secure")]
         public Input<bool>? Secure { get; set; }
 
+        /// <summary>
+        /// - (Required) value for argument
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

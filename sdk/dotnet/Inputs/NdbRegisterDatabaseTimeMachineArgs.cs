@@ -90,6 +90,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("schedules")]
         private InputList<Inputs.NdbRegisterDatabaseTimeMachineScheduleArgs>? _schedules;
+
+        /// <summary>
+        /// - (Optional) schedule for snapshots
+        /// </summary>
         public InputList<Inputs.NdbRegisterDatabaseTimeMachineScheduleArgs> Schedules
         {
             get => _schedules ?? (_schedules = new InputList<Inputs.NdbRegisterDatabaseTimeMachineScheduleArgs>());

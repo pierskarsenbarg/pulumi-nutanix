@@ -19,6 +19,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - (Required) value for argument
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

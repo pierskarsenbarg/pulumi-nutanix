@@ -41,6 +41,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.NdbDatabaseTimeMachineProperty> Properties;
         public readonly string? ScheduleId;
+        /// <summary>
+        /// - (Optional) schedule for snapshots
+        /// </summary>
         public readonly ImmutableArray<Outputs.NdbDatabaseTimeMachineSchedule> Schedules;
         public readonly string? Scope;
         public readonly string? SlaId;
@@ -49,6 +52,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.NdbDatabaseTimeMachineSla> Slas;
         public readonly ImmutableArray<string> SourceNxClusters;
         public readonly string? Status;
+        /// <summary>
+        /// - (Optional) tags
+        /// </summary>
         public readonly ImmutableArray<Outputs.NdbDatabaseTimeMachineTag> Tags;
         public readonly string? Type;
 

@@ -15,12 +15,19 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("ipInfos")]
         private InputList<Inputs.NdbDatabaseClusterInfoClusterIpInfoIpInfoGetArgs>? _ipInfos;
+
+        /// <summary>
+        /// - (Optional) IP infos for custom network profile.
+        /// </summary>
         public InputList<Inputs.NdbDatabaseClusterInfoClusterIpInfoIpInfoGetArgs> IpInfos
         {
             get => _ipInfos ?? (_ipInfos = new InputList<Inputs.NdbDatabaseClusterInfoClusterIpInfoIpInfoGetArgs>());
             set => _ipInfos = value;
         }
 
+        /// <summary>
+        /// - (Optional) cluster id.
+        /// </summary>
         [Input("nxClusterId", required: true)]
         public Input<string> NxClusterId { get; set; } = null!;
 

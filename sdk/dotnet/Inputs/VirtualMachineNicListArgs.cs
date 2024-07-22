@@ -25,6 +25,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _ipEndpointLists = value;
         }
 
+        /// <summary>
+        /// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        /// </summary>
         [Input("isConnected")]
         public Input<string>? IsConnected { get; set; }
 

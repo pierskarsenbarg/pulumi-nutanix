@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbDbserverVmProperty
     {
+        /// <summary>
+        /// name of the dbserver vm
+        /// </summary>
         public readonly string? Name;
         public readonly string? Value;
 

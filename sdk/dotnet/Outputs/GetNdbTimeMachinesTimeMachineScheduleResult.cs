@@ -16,12 +16,27 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly ImmutableArray<Outputs.GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleResult> ContinuousSchedules;
         public readonly ImmutableArray<Outputs.GetNdbTimeMachinesTimeMachineScheduleDailyScheduleResult> DailySchedules;
+        /// <summary>
+        /// date created
+        /// </summary>
         public readonly string DateCreated;
+        /// <summary>
+        /// date modified
+        /// </summary>
         public readonly string DateModified;
+        /// <summary>
+        /// time machine description
+        /// </summary>
         public readonly string Description;
         public readonly bool GlobalPolicy;
+        /// <summary>
+        /// time machine id
+        /// </summary>
         public readonly string Id;
         public readonly ImmutableArray<Outputs.GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleResult> MonthlySchedules;
+        /// <summary>
+        /// time machine name
+        /// </summary>
         public readonly string Name;
         public readonly string OwnerId;
         public readonly ImmutableArray<Outputs.GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleResult> QuartelySchedules;

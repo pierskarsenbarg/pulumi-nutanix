@@ -25,6 +25,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("tagName")]
         public Input<string>? TagName { get; set; }
 
+        /// <summary>
+        /// - (Required) value for argument
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

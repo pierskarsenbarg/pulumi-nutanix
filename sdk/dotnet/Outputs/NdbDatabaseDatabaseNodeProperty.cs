@@ -24,6 +24,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string? Name;
         public readonly string? RefId;
         public readonly bool? Secure;
+        /// <summary>
+        /// - (Required) value for argument
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class FoundationImageNodesClusterUrl
     {
+        /// <summary>
+        /// - (Required) Name of the cluster.
+        /// </summary>
         public readonly string? ClusterName;
         public readonly string? ClusterUrl;
 

@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class NdbDbserverVmPropertyGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// name of the dbserver vm
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 

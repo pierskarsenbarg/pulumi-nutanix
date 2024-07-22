@@ -17,11 +17,26 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly int ContinuousRetention;
         public readonly string CurrentActiveFrequency;
         public readonly int DailyRetention;
+        /// <summary>
+        /// date created
+        /// </summary>
         public readonly string DateCreated;
+        /// <summary>
+        /// date modified
+        /// </summary>
         public readonly string DateModified;
+        /// <summary>
+        /// time machine description
+        /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// time machine id
+        /// </summary>
         public readonly string Id;
         public readonly int MonthlyRetention;
+        /// <summary>
+        /// time machine name
+        /// </summary>
         public readonly string Name;
         public readonly string OwnerId;
         public readonly bool PitrEnabled;

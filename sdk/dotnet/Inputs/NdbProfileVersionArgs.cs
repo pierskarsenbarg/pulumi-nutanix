@@ -91,6 +91,11 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("versionClusterAssociations")]
         private InputList<Inputs.NdbProfileVersionVersionClusterAssociationArgs>? _versionClusterAssociations;
+
+        /// <summary>
+        /// cluster associated with VLAN. this is used with Single instance for postgres database.
+        /// * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
+        /// </summary>
         public InputList<Inputs.NdbProfileVersionVersionClusterAssociationArgs> VersionClusterAssociations
         {
             get => _versionClusterAssociations ?? (_versionClusterAssociations = new InputList<Inputs.NdbProfileVersionVersionClusterAssociationArgs>());

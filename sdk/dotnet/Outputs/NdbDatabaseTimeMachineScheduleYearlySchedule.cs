@@ -16,6 +16,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly int? DayOfMonth;
         public readonly bool? Enabled;
+        /// <summary>
+        /// - (Required) month for snapshot
+        /// </summary>
         public readonly string? Month;
         public readonly string? MonthValue;
 
