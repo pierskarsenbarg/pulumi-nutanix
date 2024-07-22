@@ -19,6 +19,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
+        /// <summary>
+        /// - (Required) month for snapshot
+        /// </summary>
         [Input("month")]
         public Input<string>? Month { get; set; }
 

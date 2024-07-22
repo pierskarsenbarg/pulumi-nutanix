@@ -18,6 +18,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// - (Required) Name of the instance.
         /// </summary>
         public readonly string? Name;
+        /// <summary>
+        /// - (Required) value for argument
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

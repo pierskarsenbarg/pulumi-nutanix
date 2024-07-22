@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class UserGroupsDirectoryServiceOus
     {
+        /// <summary>
+        /// - (Required) The Distinguished name for the user group.
+        /// </summary>
         public readonly string DistinguishedName;
 
         [OutputConstructor]

@@ -19,6 +19,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// - (Required) value for argument
+        /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;
 

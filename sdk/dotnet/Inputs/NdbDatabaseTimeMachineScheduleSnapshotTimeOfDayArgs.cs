@@ -16,12 +16,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("extra")]
         public Input<bool>? Extra { get; set; }
 
+        /// <summary>
+        /// - (Required) hours
+        /// </summary>
         [Input("hours")]
         public Input<int>? Hours { get; set; }
 
+        /// <summary>
+        /// - (Required) minutes
+        /// </summary>
         [Input("minutes")]
         public Input<int>? Minutes { get; set; }
 
+        /// <summary>
+        /// - (Required) seconds
+        /// </summary>
         [Input("seconds")]
         public Input<int>? Seconds { get; set; }
 

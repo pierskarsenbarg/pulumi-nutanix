@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class UserGroupsDirectoryServiceOusArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - (Required) The Distinguished name for the user group.
+        /// </summary>
         [Input("distinguishedName", required: true)]
         public Input<string> DistinguishedName { get; set; } = null!;
 

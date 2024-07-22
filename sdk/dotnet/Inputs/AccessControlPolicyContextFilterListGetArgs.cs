@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("entityFilterExpressionLists", required: true)]
         private InputList<Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListGetArgs>? _entityFilterExpressionLists;
+
+        /// <summary>
+        /// A list of Entity filter expressions.
+        /// </summary>
         public InputList<Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListGetArgs> EntityFilterExpressionLists
         {
             get => _entityFilterExpressionLists ?? (_entityFilterExpressionLists = new InputList<Inputs.AccessControlPolicyContextFilterListEntityFilterExpressionListGetArgs>());
@@ -23,6 +27,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("scopeFilterExpressionLists")]
         private InputList<Inputs.AccessControlPolicyContextFilterListScopeFilterExpressionListGetArgs>? _scopeFilterExpressionLists;
+
+        /// <summary>
+        /// - (Optional) Filter the scope of an Access Control Policy.
+        /// </summary>
         public InputList<Inputs.AccessControlPolicyContextFilterListScopeFilterExpressionListGetArgs> ScopeFilterExpressionLists
         {
             get => _scopeFilterExpressionLists ?? (_scopeFilterExpressionLists = new InputList<Inputs.AccessControlPolicyContextFilterListScopeFilterExpressionListGetArgs>());

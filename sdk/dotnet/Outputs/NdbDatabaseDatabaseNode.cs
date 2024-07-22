@@ -40,6 +40,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.NdbDatabaseDatabaseNodeProtectionDomain> ProtectionDomains;
         public readonly string? SoftwareInstallationId;
         public readonly string? Status;
+        /// <summary>
+        /// - (Optional) tags
+        /// </summary>
         public readonly ImmutableArray<Outputs.NdbDatabaseDatabaseNodeTag> Tags;
 
         [OutputConstructor]

@@ -60,6 +60,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// status of clone
         /// </summary>
         public readonly string Status;
+        /// <summary>
+        /// Default is UTC
+        /// </summary>
         public readonly string Timezone;
 
         [OutputConstructor]

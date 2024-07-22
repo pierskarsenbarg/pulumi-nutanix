@@ -18,6 +18,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
         /// </summary>
         public readonly ImmutableArray<Outputs.VirtualMachineNicListIpEndpointList> IpEndpointLists;
+        /// <summary>
+        /// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        /// </summary>
         public readonly string? IsConnected;
         /// <summary>
         /// - The MAC address for the adapter.

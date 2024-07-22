@@ -1419,6 +1419,10 @@ class AccessControlPolicyContextFilterList(dict):
     def __init__(__self__, *,
                  entity_filter_expression_lists: Sequence['outputs.AccessControlPolicyContextFilterListEntityFilterExpressionList'],
                  scope_filter_expression_lists: Optional[Sequence['outputs.AccessControlPolicyContextFilterListScopeFilterExpressionList']] = None):
+        """
+        :param Sequence['AccessControlPolicyContextFilterListEntityFilterExpressionListArgs'] entity_filter_expression_lists: A list of Entity filter expressions.
+        :param Sequence['AccessControlPolicyContextFilterListScopeFilterExpressionListArgs'] scope_filter_expression_lists: - (Optional) Filter the scope of an Access Control Policy.
+        """
         pulumi.set(__self__, "entity_filter_expression_lists", entity_filter_expression_lists)
         if scope_filter_expression_lists is not None:
             pulumi.set(__self__, "scope_filter_expression_lists", scope_filter_expression_lists)
@@ -1426,11 +1430,17 @@ class AccessControlPolicyContextFilterList(dict):
     @property
     @pulumi.getter(name="entityFilterExpressionLists")
     def entity_filter_expression_lists(self) -> Sequence['outputs.AccessControlPolicyContextFilterListEntityFilterExpressionList']:
+        """
+        A list of Entity filter expressions.
+        """
         return pulumi.get(self, "entity_filter_expression_lists")
 
     @property
     @pulumi.getter(name="scopeFilterExpressionLists")
     def scope_filter_expression_lists(self) -> Optional[Sequence['outputs.AccessControlPolicyContextFilterListScopeFilterExpressionList']]:
+        """
+        - (Optional) Filter the scope of an Access Control Policy.
+        """
         return pulumi.get(self, "scope_filter_expression_lists")
 
 
@@ -1925,17 +1935,31 @@ class AddressGroupIpAddressBlockList(dict):
     def __init__(__self__, *,
                  ip: str,
                  prefix_length: int):
+        """
+        :param str ip: - (Required) IP of the address block
+        :param int prefix_length: - (Required) Prefix length of address block in int
+               
+               See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/api_references/prism-central-v3/#/5ccef53a546a4-create-a-new-address-group).
+        """
         pulumi.set(__self__, "ip", ip)
         pulumi.set(__self__, "prefix_length", prefix_length)
 
     @property
     @pulumi.getter
     def ip(self) -> str:
+        """
+        - (Required) IP of the address block
+        """
         return pulumi.get(self, "ip")
 
     @property
     @pulumi.getter(name="prefixLength")
     def prefix_length(self) -> int:
+        """
+        - (Required) Prefix length of address block in int
+
+        See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/api_references/prism-central-v3/#/5ccef53a546a4-create-a-new-address-group).
+        """
         return pulumi.get(self, "prefix_length")
 
 
@@ -2137,6 +2161,9 @@ class FoundationCentralImageClusterClusterStatusNodeProgressDetail(dict):
                  message_lists: Optional[Sequence[str]] = None,
                  percent_complete: Optional[float] = None,
                  status: Optional[str] = None):
+        """
+        :param str imaged_node_uuid: UUID of the node.
+        """
         if imaged_node_uuid is not None:
             pulumi.set(__self__, "imaged_node_uuid", imaged_node_uuid)
         if imaging_stopped is not None:
@@ -2153,6 +2180,9 @@ class FoundationCentralImageClusterClusterStatusNodeProgressDetail(dict):
     @property
     @pulumi.getter(name="imagedNodeUuid")
     def imaged_node_uuid(self) -> Optional[str]:
+        """
+        UUID of the node.
+        """
         return pulumi.get(self, "imaged_node_uuid")
 
     @property
@@ -2211,6 +2241,12 @@ class FoundationCentralImageClusterCommonNetworkSettings(dict):
                  cvm_ntp_servers: Optional[Sequence[str]] = None,
                  hypervisor_dns_servers: Optional[Sequence[str]] = None,
                  hypervisor_ntp_servers: Optional[Sequence[str]] = None):
+        """
+        :param Sequence[str] cvm_dns_servers: List of dns servers for the cvms in the cluster.
+        :param Sequence[str] cvm_ntp_servers: List of ntp servers for the cvms in the cluster.
+        :param Sequence[str] hypervisor_dns_servers: List of dns servers for the hypervisors in the cluster.
+        :param Sequence[str] hypervisor_ntp_servers: List of ntp servers for the hypervisors in the cluster.
+        """
         if cvm_dns_servers is not None:
             pulumi.set(__self__, "cvm_dns_servers", cvm_dns_servers)
         if cvm_ntp_servers is not None:
@@ -2223,21 +2259,33 @@ class FoundationCentralImageClusterCommonNetworkSettings(dict):
     @property
     @pulumi.getter(name="cvmDnsServers")
     def cvm_dns_servers(self) -> Optional[Sequence[str]]:
+        """
+        List of dns servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_dns_servers")
 
     @property
     @pulumi.getter(name="cvmNtpServers")
     def cvm_ntp_servers(self) -> Optional[Sequence[str]]:
+        """
+        List of ntp servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_ntp_servers")
 
     @property
     @pulumi.getter(name="hypervisorDnsServers")
     def hypervisor_dns_servers(self) -> Optional[Sequence[str]]:
+        """
+        List of dns servers for the hypervisors in the cluster.
+        """
         return pulumi.get(self, "hypervisor_dns_servers")
 
     @property
     @pulumi.getter(name="hypervisorNtpServers")
     def hypervisor_ntp_servers(self) -> Optional[Sequence[str]]:
+        """
+        List of ntp servers for the hypervisors in the cluster.
+        """
         return pulumi.get(self, "hypervisor_ntp_servers")
 
 
@@ -2297,6 +2345,16 @@ class FoundationCentralImageClusterFoundationInitConfig(dict):
                  ipmi_gateway: Optional[str] = None,
                  ipmi_netmask: Optional[str] = None,
                  nos_package_urls: Optional[Sequence['outputs.FoundationCentralImageClusterFoundationInitConfigNosPackageUrl']] = None):
+        """
+        :param str cvm_gateway: Gateway of the cvm.
+        :param str cvm_netmask: Netmask of the cvm.
+        :param str hyperv_product_key: Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+        :param str hyperv_sku: SKU of hyperv to be installed if hypervisor_type is hyperv.
+        :param str hypervisor_gateway: Gateway of the hypervisor.
+        :param str hypervisor_netmask: Netmask of the hypervisor.
+        :param str ipmi_gateway: Gateway of the ipmi.
+        :param str ipmi_netmask: Netmask of the ipmi.
+        """
         if blocks is not None:
             pulumi.set(__self__, "blocks", blocks)
         if clusters is not None:
@@ -2339,11 +2397,17 @@ class FoundationCentralImageClusterFoundationInitConfig(dict):
     @property
     @pulumi.getter(name="cvmGateway")
     def cvm_gateway(self) -> Optional[str]:
+        """
+        Gateway of the cvm.
+        """
         return pulumi.get(self, "cvm_gateway")
 
     @property
     @pulumi.getter(name="cvmNetmask")
     def cvm_netmask(self) -> Optional[str]:
+        """
+        Netmask of the cvm.
+        """
         return pulumi.get(self, "cvm_netmask")
 
     @property
@@ -2354,16 +2418,25 @@ class FoundationCentralImageClusterFoundationInitConfig(dict):
     @property
     @pulumi.getter(name="hypervProductKey")
     def hyperv_product_key(self) -> Optional[str]:
+        """
+        Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+        """
         return pulumi.get(self, "hyperv_product_key")
 
     @property
     @pulumi.getter(name="hypervSku")
     def hyperv_sku(self) -> Optional[str]:
+        """
+        SKU of hyperv to be installed if hypervisor_type is hyperv.
+        """
         return pulumi.get(self, "hyperv_sku")
 
     @property
     @pulumi.getter(name="hypervisorGateway")
     def hypervisor_gateway(self) -> Optional[str]:
+        """
+        Gateway of the hypervisor.
+        """
         return pulumi.get(self, "hypervisor_gateway")
 
     @property
@@ -2379,16 +2452,25 @@ class FoundationCentralImageClusterFoundationInitConfig(dict):
     @property
     @pulumi.getter(name="hypervisorNetmask")
     def hypervisor_netmask(self) -> Optional[str]:
+        """
+        Netmask of the hypervisor.
+        """
         return pulumi.get(self, "hypervisor_netmask")
 
     @property
     @pulumi.getter(name="ipmiGateway")
     def ipmi_gateway(self) -> Optional[str]:
+        """
+        Gateway of the ipmi.
+        """
         return pulumi.get(self, "ipmi_gateway")
 
     @property
     @pulumi.getter(name="ipmiNetmask")
     def ipmi_netmask(self) -> Optional[str]:
+        """
+        Netmask of the ipmi.
+        """
         return pulumi.get(self, "ipmi_netmask")
 
     @property
@@ -2487,6 +2569,15 @@ class FoundationCentralImageClusterFoundationInitConfigBlockNode(dict):
                  ipv6_address: Optional[str] = None,
                  node_position: Optional[str] = None,
                  node_serial: Optional[str] = None):
+        """
+        :param str cvm_ip: IP address to be set for the cvm on the node.
+        :param int cvm_vlan_id: Vlan tag of the cvm, if the cvm is on a vlan.
+        :param Mapping[str, str] hardware_attributes_override: Hardware attributes override json for the node.
+        :param str hypervisor_hostname: Name to be set for the hypervisor host.
+        :param str hypervisor_ip: IP address to be set for the hypervisor on the node.
+        :param bool image_now: True, if the node should be imaged, False, otherwise.
+        :param str ipmi_ip: IP address to be set for the ipmi of the node.
+        """
         if cvm_ip is not None:
             pulumi.set(__self__, "cvm_ip", cvm_ip)
         if cvm_vlan_id is not None:
@@ -2515,11 +2606,17 @@ class FoundationCentralImageClusterFoundationInitConfigBlockNode(dict):
     @property
     @pulumi.getter(name="cvmIp")
     def cvm_ip(self) -> Optional[str]:
+        """
+        IP address to be set for the cvm on the node.
+        """
         return pulumi.get(self, "cvm_ip")
 
     @property
     @pulumi.getter(name="cvmVlanId")
     def cvm_vlan_id(self) -> Optional[int]:
+        """
+        Vlan tag of the cvm, if the cvm is on a vlan.
+        """
         return pulumi.get(self, "cvm_vlan_id")
 
     @property
@@ -2530,6 +2627,9 @@ class FoundationCentralImageClusterFoundationInitConfigBlockNode(dict):
     @property
     @pulumi.getter(name="hardwareAttributesOverride")
     def hardware_attributes_override(self) -> Optional[Mapping[str, str]]:
+        """
+        Hardware attributes override json for the node.
+        """
         return pulumi.get(self, "hardware_attributes_override")
 
     @property
@@ -2540,21 +2640,33 @@ class FoundationCentralImageClusterFoundationInitConfigBlockNode(dict):
     @property
     @pulumi.getter(name="hypervisorHostname")
     def hypervisor_hostname(self) -> Optional[str]:
+        """
+        Name to be set for the hypervisor host.
+        """
         return pulumi.get(self, "hypervisor_hostname")
 
     @property
     @pulumi.getter(name="hypervisorIp")
     def hypervisor_ip(self) -> Optional[str]:
+        """
+        IP address to be set for the hypervisor on the node.
+        """
         return pulumi.get(self, "hypervisor_ip")
 
     @property
     @pulumi.getter(name="imageNow")
     def image_now(self) -> Optional[bool]:
+        """
+        True, if the node should be imaged, False, otherwise.
+        """
         return pulumi.get(self, "image_now")
 
     @property
     @pulumi.getter(name="ipmiIp")
     def ipmi_ip(self) -> Optional[str]:
+        """
+        IP address to be set for the ipmi of the node.
+        """
         return pulumi.get(self, "ipmi_ip")
 
     @property
@@ -2619,6 +2731,8 @@ class FoundationCentralImageClusterFoundationInitConfigCluster(dict):
         """
         :param str cluster_external_ip: External management ip of the cluster.
         :param str cluster_name: Name of the cluster.
+        :param str cvm_dns_servers: List of dns servers for the cvms in the cluster.
+        :param str cvm_ntp_servers: List of ntp servers for the cvms in the cluster.
         :param int redundancy_factor: Redundancy factor of the cluster.
         :param str timezone: Timezone to be set on the cluster.
         """
@@ -2675,11 +2789,17 @@ class FoundationCentralImageClusterFoundationInitConfigCluster(dict):
     @property
     @pulumi.getter(name="cvmDnsServers")
     def cvm_dns_servers(self) -> Optional[str]:
+        """
+        List of dns servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_dns_servers")
 
     @property
     @pulumi.getter(name="cvmNtpServers")
     def cvm_ntp_servers(self) -> Optional[str]:
+        """
+        List of ntp servers for the cvms in the cluster.
+        """
         return pulumi.get(self, "cvm_ntp_servers")
 
     @property
@@ -2722,6 +2842,11 @@ class FoundationCentralImageClusterFoundationInitConfigHypervisorIso(dict):
                  hypervisor_type: Optional[str] = None,
                  sha256sum: Optional[str] = None,
                  url: Optional[str] = None):
+        """
+        :param str hypervisor_type: Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+        :param str sha256sum: sha256sum of the hypervisor iso.
+        :param str url: URL to download hypervisor iso. Required only if imaging is needed.
+        """
         if hypervisor_type is not None:
             pulumi.set(__self__, "hypervisor_type", hypervisor_type)
         if sha256sum is not None:
@@ -2732,16 +2857,25 @@ class FoundationCentralImageClusterFoundationInitConfigHypervisorIso(dict):
     @property
     @pulumi.getter(name="hypervisorType")
     def hypervisor_type(self) -> Optional[str]:
+        """
+        Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+        """
         return pulumi.get(self, "hypervisor_type")
 
     @property
     @pulumi.getter
     def sha256sum(self) -> Optional[str]:
+        """
+        sha256sum of the hypervisor iso.
+        """
         return pulumi.get(self, "sha256sum")
 
     @property
     @pulumi.getter
     def url(self) -> Optional[str]:
+        """
+        URL to download hypervisor iso. Required only if imaging is needed.
+        """
         return pulumi.get(self, "url")
 
 
@@ -2750,6 +2884,10 @@ class FoundationCentralImageClusterFoundationInitConfigNosPackageUrl(dict):
     def __init__(__self__, *,
                  sha256sum: Optional[str] = None,
                  url: Optional[str] = None):
+        """
+        :param str sha256sum: sha256sum of the hypervisor iso.
+        :param str url: URL to download hypervisor iso. Required only if imaging is needed.
+        """
         if sha256sum is not None:
             pulumi.set(__self__, "sha256sum", sha256sum)
         if url is not None:
@@ -2758,11 +2896,17 @@ class FoundationCentralImageClusterFoundationInitConfigNosPackageUrl(dict):
     @property
     @pulumi.getter
     def sha256sum(self) -> Optional[str]:
+        """
+        sha256sum of the hypervisor iso.
+        """
         return pulumi.get(self, "sha256sum")
 
     @property
     @pulumi.getter
     def url(self) -> Optional[str]:
+        """
+        URL to download hypervisor iso. Required only if imaging is needed.
+        """
         return pulumi.get(self, "url")
 
 
@@ -2792,6 +2936,12 @@ class FoundationCentralImageClusterHypervisorIsoDetails(dict):
                  hyperv_sku: Optional[str] = None,
                  sha256sum: Optional[str] = None,
                  url: Optional[str] = None):
+        """
+        :param str hyperv_product_key: Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+        :param str hyperv_sku: SKU of hyperv to be installed if hypervisor_type is hyperv.
+        :param str sha256sum: sha256sum of the hypervisor iso.
+        :param str url: URL to download hypervisor iso. Required only if imaging is needed.
+        """
         if hyperv_product_key is not None:
             pulumi.set(__self__, "hyperv_product_key", hyperv_product_key)
         if hyperv_sku is not None:
@@ -2804,21 +2954,33 @@ class FoundationCentralImageClusterHypervisorIsoDetails(dict):
     @property
     @pulumi.getter(name="hypervProductKey")
     def hyperv_product_key(self) -> Optional[str]:
+        """
+        Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+        """
         return pulumi.get(self, "hyperv_product_key")
 
     @property
     @pulumi.getter(name="hypervSku")
     def hyperv_sku(self) -> Optional[str]:
+        """
+        SKU of hyperv to be installed if hypervisor_type is hyperv.
+        """
         return pulumi.get(self, "hyperv_sku")
 
     @property
     @pulumi.getter
     def sha256sum(self) -> Optional[str]:
+        """
+        sha256sum of the hypervisor iso.
+        """
         return pulumi.get(self, "sha256sum")
 
     @property
     @pulumi.getter
     def url(self) -> Optional[str]:
+        """
+        URL to download hypervisor iso. Required only if imaging is needed.
+        """
         return pulumi.get(self, "url")
 
 
@@ -2894,6 +3056,26 @@ class FoundationCentralImageClusterNodeList(dict):
                  ipmi_netmask: Optional[str] = None,
                  rdma_passthrough: Optional[bool] = None,
                  use_existing_network_settings: Optional[bool] = None):
+        """
+        :param str cvm_gateway: Gateway of the cvm.
+        :param str cvm_ip: IP address to be set for the cvm on the node.
+        :param str cvm_netmask: Netmask of the cvm.
+        :param int cvm_ram_gb: Amount of memory to be assigned for the cvm.
+        :param int cvm_vlan_id: Vlan tag of the cvm, if the cvm is on a vlan.
+        :param Mapping[str, Any] hardware_attributes_override: Hardware attributes override json for the node.
+        :param str hypervisor_gateway: Gateway of the hypervisor.
+        :param str hypervisor_hostname: Name to be set for the hypervisor host.
+        :param str hypervisor_ip: IP address to be set for the hypervisor on the node.
+        :param str hypervisor_netmask: Netmask of the hypervisor.
+        :param str hypervisor_type: Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+        :param bool image_now: True, if the node should be imaged, False, otherwise.
+        :param str imaged_node_uuid: UUID of the node.
+        :param str ipmi_gateway: Gateway of the ipmi.
+        :param str ipmi_ip: IP address to be set for the ipmi of the node.
+        :param str ipmi_netmask: Netmask of the ipmi.
+        :param bool rdma_passthrough: Passthrough RDMA nic to CVM if possible, default to false.
+        :param bool use_existing_network_settings: Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
+        """
         if cvm_gateway is not None:
             pulumi.set(__self__, "cvm_gateway", cvm_gateway)
         if cvm_ip is not None:
@@ -2934,91 +3116,145 @@ class FoundationCentralImageClusterNodeList(dict):
     @property
     @pulumi.getter(name="cvmGateway")
     def cvm_gateway(self) -> Optional[str]:
+        """
+        Gateway of the cvm.
+        """
         return pulumi.get(self, "cvm_gateway")
 
     @property
     @pulumi.getter(name="cvmIp")
     def cvm_ip(self) -> Optional[str]:
+        """
+        IP address to be set for the cvm on the node.
+        """
         return pulumi.get(self, "cvm_ip")
 
     @property
     @pulumi.getter(name="cvmNetmask")
     def cvm_netmask(self) -> Optional[str]:
+        """
+        Netmask of the cvm.
+        """
         return pulumi.get(self, "cvm_netmask")
 
     @property
     @pulumi.getter(name="cvmRamGb")
     def cvm_ram_gb(self) -> Optional[int]:
+        """
+        Amount of memory to be assigned for the cvm.
+        """
         return pulumi.get(self, "cvm_ram_gb")
 
     @property
     @pulumi.getter(name="cvmVlanId")
     def cvm_vlan_id(self) -> Optional[int]:
+        """
+        Vlan tag of the cvm, if the cvm is on a vlan.
+        """
         return pulumi.get(self, "cvm_vlan_id")
 
     @property
     @pulumi.getter(name="hardwareAttributesOverride")
     def hardware_attributes_override(self) -> Optional[Mapping[str, Any]]:
+        """
+        Hardware attributes override json for the node.
+        """
         return pulumi.get(self, "hardware_attributes_override")
 
     @property
     @pulumi.getter(name="hypervisorGateway")
     def hypervisor_gateway(self) -> Optional[str]:
+        """
+        Gateway of the hypervisor.
+        """
         return pulumi.get(self, "hypervisor_gateway")
 
     @property
     @pulumi.getter(name="hypervisorHostname")
     def hypervisor_hostname(self) -> Optional[str]:
+        """
+        Name to be set for the hypervisor host.
+        """
         return pulumi.get(self, "hypervisor_hostname")
 
     @property
     @pulumi.getter(name="hypervisorIp")
     def hypervisor_ip(self) -> Optional[str]:
+        """
+        IP address to be set for the hypervisor on the node.
+        """
         return pulumi.get(self, "hypervisor_ip")
 
     @property
     @pulumi.getter(name="hypervisorNetmask")
     def hypervisor_netmask(self) -> Optional[str]:
+        """
+        Netmask of the hypervisor.
+        """
         return pulumi.get(self, "hypervisor_netmask")
 
     @property
     @pulumi.getter(name="hypervisorType")
     def hypervisor_type(self) -> Optional[str]:
+        """
+        Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+        """
         return pulumi.get(self, "hypervisor_type")
 
     @property
     @pulumi.getter(name="imageNow")
     def image_now(self) -> Optional[bool]:
+        """
+        True, if the node should be imaged, False, otherwise.
+        """
         return pulumi.get(self, "image_now")
 
     @property
     @pulumi.getter(name="imagedNodeUuid")
     def imaged_node_uuid(self) -> Optional[str]:
+        """
+        UUID of the node.
+        """
         return pulumi.get(self, "imaged_node_uuid")
 
     @property
     @pulumi.getter(name="ipmiGateway")
     def ipmi_gateway(self) -> Optional[str]:
+        """
+        Gateway of the ipmi.
+        """
         return pulumi.get(self, "ipmi_gateway")
 
     @property
     @pulumi.getter(name="ipmiIp")
     def ipmi_ip(self) -> Optional[str]:
+        """
+        IP address to be set for the ipmi of the node.
+        """
         return pulumi.get(self, "ipmi_ip")
 
     @property
     @pulumi.getter(name="ipmiNetmask")
     def ipmi_netmask(self) -> Optional[str]:
+        """
+        Netmask of the ipmi.
+        """
         return pulumi.get(self, "ipmi_netmask")
 
     @property
     @pulumi.getter(name="rdmaPassthrough")
     def rdma_passthrough(self) -> Optional[bool]:
+        """
+        Passthrough RDMA nic to CVM if possible, default to false.
+        """
         return pulumi.get(self, "rdma_passthrough")
 
     @property
     @pulumi.getter(name="useExistingNetworkSettings")
     def use_existing_network_settings(self) -> Optional[bool]:
+        """
+        Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
+        """
         return pulumi.get(self, "use_existing_network_settings")
 
 
@@ -3650,6 +3886,9 @@ class FoundationImageNodesBlockNodeVswitch(dict):
                  name: Optional[str] = None,
                  other_configs: Optional[Sequence[str]] = None,
                  uplinks: Optional[Sequence[str]] = None):
+        """
+        :param str bond_mode: - (Required if node is capable) dynamic if using LACP, static for LAG
+        """
         if bond_mode is not None:
             pulumi.set(__self__, "bond_mode", bond_mode)
         if lacp is not None:
@@ -3666,6 +3905,9 @@ class FoundationImageNodesBlockNodeVswitch(dict):
     @property
     @pulumi.getter(name="bondMode")
     def bond_mode(self) -> Optional[str]:
+        """
+        - (Required if node is capable) dynamic if using LACP, static for LAG
+        """
         return pulumi.get(self, "bond_mode")
 
     @property
@@ -3945,6 +4187,9 @@ class FoundationImageNodesClusterUrl(dict):
     def __init__(__self__, *,
                  cluster_name: Optional[str] = None,
                  cluster_url: Optional[str] = None):
+        """
+        :param str cluster_name: - (Required) Name of the cluster.
+        """
         if cluster_name is not None:
             pulumi.set(__self__, "cluster_name", cluster_name)
         if cluster_url is not None:
@@ -3953,6 +4198,9 @@ class FoundationImageNodesClusterUrl(dict):
     @property
     @pulumi.getter(name="clusterName")
     def cluster_name(self) -> Optional[str]:
+        """
+        - (Required) Name of the cluster.
+        """
         return pulumi.get(self, "cluster_name")
 
     @property
@@ -4173,17 +4421,27 @@ class FoundationImageNodesHypervisorIsoEsx(dict):
     def __init__(__self__, *,
                  checksum: str,
                  filename: str):
+        """
+        :param str checksum: - (Required) Filename of hypervisor ISO.
+        :param str filename: - (Required) Checksum for ISO file.
+        """
         pulumi.set(__self__, "checksum", checksum)
         pulumi.set(__self__, "filename", filename)
 
     @property
     @pulumi.getter
     def checksum(self) -> str:
+        """
+        - (Required) Filename of hypervisor ISO.
+        """
         return pulumi.get(self, "checksum")
 
     @property
     @pulumi.getter
     def filename(self) -> str:
+        """
+        - (Required) Checksum for ISO file.
+        """
         return pulumi.get(self, "filename")
 
 
@@ -4192,17 +4450,27 @@ class FoundationImageNodesHypervisorIsoHyperv(dict):
     def __init__(__self__, *,
                  checksum: str,
                  filename: str):
+        """
+        :param str checksum: - (Required) Filename of hypervisor ISO.
+        :param str filename: - (Required) Checksum for ISO file.
+        """
         pulumi.set(__self__, "checksum", checksum)
         pulumi.set(__self__, "filename", filename)
 
     @property
     @pulumi.getter
     def checksum(self) -> str:
+        """
+        - (Required) Filename of hypervisor ISO.
+        """
         return pulumi.get(self, "checksum")
 
     @property
     @pulumi.getter
     def filename(self) -> str:
+        """
+        - (Required) Checksum for ISO file.
+        """
         return pulumi.get(self, "filename")
 
 
@@ -4211,17 +4479,27 @@ class FoundationImageNodesHypervisorIsoKvm(dict):
     def __init__(__self__, *,
                  checksum: str,
                  filename: str):
+        """
+        :param str checksum: - (Required) Filename of hypervisor ISO.
+        :param str filename: - (Required) Checksum for ISO file.
+        """
         pulumi.set(__self__, "checksum", checksum)
         pulumi.set(__self__, "filename", filename)
 
     @property
     @pulumi.getter
     def checksum(self) -> str:
+        """
+        - (Required) Filename of hypervisor ISO.
+        """
         return pulumi.get(self, "checksum")
 
     @property
     @pulumi.getter
     def filename(self) -> str:
+        """
+        - (Required) Checksum for ISO file.
+        """
         return pulumi.get(self, "filename")
 
 
@@ -4230,17 +4508,27 @@ class FoundationImageNodesHypervisorIsoXen(dict):
     def __init__(__self__, *,
                  checksum: str,
                  filename: str):
+        """
+        :param str checksum: - (Required) Filename of hypervisor ISO.
+        :param str filename: - (Required) Checksum for ISO file.
+        """
         pulumi.set(__self__, "checksum", checksum)
         pulumi.set(__self__, "filename", filename)
 
     @property
     @pulumi.getter
     def checksum(self) -> str:
+        """
+        - (Required) Filename of hypervisor ISO.
+        """
         return pulumi.get(self, "checksum")
 
     @property
     @pulumi.getter
     def filename(self) -> str:
+        """
+        - (Required) Checksum for ISO file.
+        """
         return pulumi.get(self, "filename")
 
 
@@ -6058,6 +6346,7 @@ class NdbCloneDatabaseNodeProperty(dict):
         """
         :param str description: database instance description
         :param str name: database instance name
+        :param str value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -6099,6 +6388,9 @@ class NdbCloneDatabaseNodeProperty(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -6298,6 +6590,7 @@ class NdbCloneDatabaseNodeProtectionDomainProperty(dict):
         """
         :param str description: database instance description
         :param str name: database instance name
+        :param str value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -6339,6 +6632,9 @@ class NdbCloneDatabaseNodeProtectionDomainProperty(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -6373,6 +6669,9 @@ class NdbCloneDatabaseNodeTag(dict):
                  tag_id: Optional[str] = None,
                  tag_name: Optional[str] = None,
                  value: Optional[str] = None):
+        """
+        :param str value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -6407,6 +6706,9 @@ class NdbCloneDatabaseNodeTag(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -7285,6 +7587,7 @@ class NdbCloneNodeProperty(dict):
                  value: Optional[str] = None):
         """
         :param str name: database instance name
+        :param str value: - (Required) value for argument
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -7302,6 +7605,9 @@ class NdbCloneNodeProperty(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -7402,6 +7708,7 @@ class NdbCloneProperty(dict):
                  value: Optional[str] = None):
         """
         :param str name: database instance name
+        :param str value: - (Required) value for argument
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -7419,6 +7726,9 @@ class NdbCloneProperty(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -7453,6 +7763,9 @@ class NdbCloneTag(dict):
                  tag_id: Optional[str] = None,
                  tag_name: Optional[str] = None,
                  value: Optional[str] = None):
+        """
+        :param str value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -7487,6 +7800,9 @@ class NdbCloneTag(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -7804,6 +8120,7 @@ class NdbCloneTimeMachineProperty(dict):
         """
         :param str description: database instance description
         :param str name: database instance name
+        :param str value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -7845,6 +8162,9 @@ class NdbCloneTimeMachineProperty(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -8605,6 +8925,9 @@ class NdbCloneTimeMachineTag(dict):
                  tag_id: Optional[str] = None,
                  tag_name: Optional[str] = None,
                  value: Optional[str] = None):
+        """
+        :param str value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -8639,6 +8962,9 @@ class NdbCloneTimeMachineTag(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -9911,6 +10237,10 @@ class NdbDatabaseClusterInfoClusterIpInfo(dict):
     def __init__(__self__, *,
                  nx_cluster_id: str,
                  ip_infos: Optional[Sequence['outputs.NdbDatabaseClusterInfoClusterIpInfoIpInfo']] = None):
+        """
+        :param str nx_cluster_id: - (Optional) cluster id.
+        :param Sequence['NdbDatabaseClusterInfoClusterIpInfoIpInfoArgs'] ip_infos: - (Optional) IP infos for custom network profile.
+        """
         pulumi.set(__self__, "nx_cluster_id", nx_cluster_id)
         if ip_infos is not None:
             pulumi.set(__self__, "ip_infos", ip_infos)
@@ -9918,11 +10248,17 @@ class NdbDatabaseClusterInfoClusterIpInfo(dict):
     @property
     @pulumi.getter(name="nxClusterId")
     def nx_cluster_id(self) -> str:
+        """
+        - (Optional) cluster id.
+        """
         return pulumi.get(self, "nx_cluster_id")
 
     @property
     @pulumi.getter(name="ipInfos")
     def ip_infos(self) -> Optional[Sequence['outputs.NdbDatabaseClusterInfoClusterIpInfoIpInfo']]:
+        """
+        - (Optional) IP infos for custom network profile.
+        """
         return pulumi.get(self, "ip_infos")
 
 
@@ -10024,6 +10360,7 @@ class NdbDatabaseDatabaseNode(dict):
         :param str description: - (Optional) The description
         :param str name: - (Required) Name of the instance.
         :param Sequence['NdbDatabaseDatabaseNodePropertyArgs'] properties: List of all the properties
+        :param Sequence['NdbDatabaseDatabaseNodeTagArgs'] tags: - (Optional) tags
         """
         if access_level is not None:
             pulumi.set(__self__, "access_level", access_level)
@@ -10159,6 +10496,9 @@ class NdbDatabaseDatabaseNode(dict):
     @property
     @pulumi.getter
     def tags(self) -> Optional[Sequence['outputs.NdbDatabaseDatabaseNodeTag']]:
+        """
+        - (Optional) tags
+        """
         return pulumi.get(self, "tags")
 
 
@@ -10228,6 +10568,7 @@ class NdbDatabaseDatabaseNodeProperty(dict):
         """
         :param str description: - (Optional) The description
         :param str name: - (Required) Name of the instance.
+        :param str value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -10269,6 +10610,9 @@ class NdbDatabaseDatabaseNodeProperty(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -10452,6 +10796,7 @@ class NdbDatabaseDatabaseNodeProtectionDomainProperty(dict):
         """
         :param str description: - (Optional) The description
         :param str name: - (Required) Name of the instance.
+        :param str value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -10493,6 +10838,9 @@ class NdbDatabaseDatabaseNodeProtectionDomainProperty(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -10527,6 +10875,9 @@ class NdbDatabaseDatabaseNodeTag(dict):
                  tag_id: Optional[str] = None,
                  tag_name: Optional[str] = None,
                  value: Optional[str] = None):
+        """
+        :param str value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -10561,6 +10912,9 @@ class NdbDatabaseDatabaseNodeTag(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -11647,6 +12001,7 @@ class NdbDatabaseNodeProperty(dict):
                  value: str):
         """
         :param str name: - (Required) Name of the instance.
+        :param str value: - (Required) value for argument
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
@@ -11662,6 +12017,9 @@ class NdbDatabaseNodeProperty(dict):
     @property
     @pulumi.getter
     def value(self) -> str:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -12040,6 +12398,7 @@ class NdbDatabaseProperty(dict):
                  value: Optional[str] = None):
         """
         :param str name: - (Required) Name of the instance.
+        :param str value: - (Required) value for argument
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -12057,6 +12416,9 @@ class NdbDatabaseProperty(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -18035,6 +18397,9 @@ class NdbDatabaseTag(dict):
                  tag_id: Optional[str] = None,
                  tag_name: Optional[str] = None,
                  value: Optional[str] = None):
+        """
+        :param str value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -18069,6 +18434,9 @@ class NdbDatabaseTag(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -18140,6 +18508,8 @@ class NdbDatabaseTimeMachine(dict):
         :param str description: - (Optional) The description
         :param str name: - (Required) Name of the instance.
         :param Sequence['NdbDatabaseTimeMachinePropertyArgs'] properties: List of all the properties
+        :param Sequence['NdbDatabaseTimeMachineScheduleArgs'] schedules: - (Optional) schedule for snapshots
+        :param Sequence['NdbDatabaseTimeMachineTagArgs'] tags: - (Optional) tags
         """
         if access_level is not None:
             pulumi.set(__self__, "access_level", access_level)
@@ -18282,6 +18652,9 @@ class NdbDatabaseTimeMachine(dict):
     @property
     @pulumi.getter
     def schedules(self) -> Optional[Sequence['outputs.NdbDatabaseTimeMachineSchedule']]:
+        """
+        - (Optional) schedule for snapshots
+        """
         return pulumi.get(self, "schedules")
 
     @property
@@ -18322,6 +18695,9 @@ class NdbDatabaseTimeMachine(dict):
     @property
     @pulumi.getter
     def tags(self) -> Optional[Sequence['outputs.NdbDatabaseTimeMachineTag']]:
+        """
+        - (Optional) tags
+        """
         return pulumi.get(self, "tags")
 
     @property
@@ -18358,6 +18734,7 @@ class NdbDatabaseTimeMachineProperty(dict):
         """
         :param str description: - (Optional) The description
         :param str name: - (Required) Name of the instance.
+        :param str value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -18399,6 +18776,9 @@ class NdbDatabaseTimeMachineProperty(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -18780,6 +19160,11 @@ class NdbDatabaseTimeMachineScheduleSnapshotTimeOfDay(dict):
                  hours: Optional[int] = None,
                  minutes: Optional[int] = None,
                  seconds: Optional[int] = None):
+        """
+        :param int hours: - (Required) hours
+        :param int minutes: - (Required) minutes
+        :param int seconds: - (Required) seconds
+        """
         if extra is not None:
             pulumi.set(__self__, "extra", extra)
         if hours is not None:
@@ -18797,16 +19182,25 @@ class NdbDatabaseTimeMachineScheduleSnapshotTimeOfDay(dict):
     @property
     @pulumi.getter
     def hours(self) -> Optional[int]:
+        """
+        - (Required) hours
+        """
         return pulumi.get(self, "hours")
 
     @property
     @pulumi.getter
     def minutes(self) -> Optional[int]:
+        """
+        - (Required) minutes
+        """
         return pulumi.get(self, "minutes")
 
     @property
     @pulumi.getter
     def seconds(self) -> Optional[int]:
+        """
+        - (Required) seconds
+        """
         return pulumi.get(self, "seconds")
 
 
@@ -18884,6 +19278,9 @@ class NdbDatabaseTimeMachineScheduleYearlySchedule(dict):
                  enabled: Optional[bool] = None,
                  month: Optional[str] = None,
                  month_value: Optional[str] = None):
+        """
+        :param str month: - (Required) month for snapshot
+        """
         if day_of_month is not None:
             pulumi.set(__self__, "day_of_month", day_of_month)
         if enabled is not None:
@@ -18906,6 +19303,9 @@ class NdbDatabaseTimeMachineScheduleYearlySchedule(dict):
     @property
     @pulumi.getter
     def month(self) -> Optional[str]:
+        """
+        - (Required) month for snapshot
+        """
         return pulumi.get(self, "month")
 
     @property
@@ -19139,6 +19539,9 @@ class NdbDatabaseTimeMachineTag(dict):
                  tag_id: Optional[str] = None,
                  tag_name: Optional[str] = None,
                  value: Optional[str] = None):
+        """
+        :param str value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -19173,6 +19576,9 @@ class NdbDatabaseTimeMachineTag(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -19695,6 +20101,9 @@ class NdbDatabaseTimemachineinfoTag(dict):
                  tag_id: Optional[str] = None,
                  tag_name: Optional[str] = None,
                  value: Optional[str] = None):
+        """
+        :param str value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -19729,6 +20138,9 @@ class NdbDatabaseTimemachineinfoTag(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -19917,6 +20329,9 @@ class NdbDbserverVmProperty(dict):
     def __init__(__self__, *,
                  name: Optional[str] = None,
                  value: Optional[str] = None):
+        """
+        :param str name: name of the dbserver vm
+        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -19925,6 +20340,9 @@ class NdbDbserverVmProperty(dict):
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
+        """
+        name of the dbserver vm
+        """
         return pulumi.get(self, "name")
 
     @property
@@ -22287,6 +22705,8 @@ class NdbProfileVersion(dict):
         :param str owner: owner  of profile
         :param bool published: Publish for all users
         :param str status: status of profile
+        :param Sequence['NdbProfileVersionVersionClusterAssociationArgs'] version_cluster_associations: cluster associated with VLAN. this is used with Single instance for postgres database.
+               * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
         """
         if db_version is not None:
             pulumi.set(__self__, "db_version", db_version)
@@ -22424,6 +22844,10 @@ class NdbProfileVersion(dict):
     @property
     @pulumi.getter(name="versionClusterAssociations")
     def version_cluster_associations(self) -> Optional[Sequence['outputs.NdbProfileVersionVersionClusterAssociation']]:
+        """
+        cluster associated with VLAN. this is used with Single instance for postgres database.
+        * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
+        """
         return pulumi.get(self, "version_cluster_associations")
 
 
@@ -22924,6 +23348,7 @@ class NdbRegisterDatabaseDatabaseNodeProperty(dict):
         """
         :param str description: description
         :param str name: Name of database instance
+        :param str value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -22965,6 +23390,9 @@ class NdbRegisterDatabaseDatabaseNodeProperty(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -23164,6 +23592,7 @@ class NdbRegisterDatabaseDatabaseNodeProtectionDomainProperty(dict):
         """
         :param str description: description
         :param str name: Name of database instance
+        :param str value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -23205,6 +23634,9 @@ class NdbRegisterDatabaseDatabaseNodeProtectionDomainProperty(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -23239,6 +23671,9 @@ class NdbRegisterDatabaseDatabaseNodeTag(dict):
                  tag_id: Optional[str] = None,
                  tag_name: Optional[str] = None,
                  value: Optional[str] = None):
+        """
+        :param str value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -23273,6 +23708,9 @@ class NdbRegisterDatabaseDatabaseNodeTag(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -24318,6 +24756,7 @@ class NdbRegisterDatabaseProperty(dict):
                  value: Optional[str] = None):
         """
         :param str name: Name of database instance
+        :param str value: - (Required) value for argument
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -24335,6 +24774,9 @@ class NdbRegisterDatabaseProperty(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -24369,6 +24811,9 @@ class NdbRegisterDatabaseTag(dict):
                  tag_id: Optional[str] = None,
                  tag_name: Optional[str] = None,
                  value: Optional[str] = None):
+        """
+        :param str value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -24403,6 +24848,9 @@ class NdbRegisterDatabaseTag(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -24478,6 +24926,7 @@ class NdbRegisterDatabaseTimeMachine(dict):
         :param str metric: Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
         :param str name: Name of database instance
         :param Sequence['NdbRegisterDatabaseTimeMachinePropertyArgs'] properties: properties of database created
+        :param Sequence['NdbRegisterDatabaseTimeMachineScheduleArgs'] schedules: - (Optional) schedule for snapshots
         :param str status: status of instance
         :param Sequence['NdbRegisterDatabaseTimeMachineTagArgs'] tags: tags
         :param str type: type of database
@@ -24635,6 +25084,9 @@ class NdbRegisterDatabaseTimeMachine(dict):
     @property
     @pulumi.getter
     def schedules(self) -> Optional[Sequence['outputs.NdbRegisterDatabaseTimeMachineSchedule']]:
+        """
+        - (Optional) schedule for snapshots
+        """
         return pulumi.get(self, "schedules")
 
     @property
@@ -25135,6 +25587,9 @@ class NdbRegisterDatabaseTimeMachineInfoTag(dict):
                  tag_id: Optional[str] = None,
                  tag_name: Optional[str] = None,
                  value: Optional[str] = None):
+        """
+        :param str value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -25169,6 +25624,9 @@ class NdbRegisterDatabaseTimeMachineInfoTag(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -25200,6 +25658,7 @@ class NdbRegisterDatabaseTimeMachineProperty(dict):
         """
         :param str description: description
         :param str name: Name of database instance
+        :param str value: - (Required) value for argument
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -25241,6 +25700,9 @@ class NdbRegisterDatabaseTimeMachineProperty(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -26001,6 +26463,9 @@ class NdbRegisterDatabaseTimeMachineTag(dict):
                  tag_id: Optional[str] = None,
                  tag_name: Optional[str] = None,
                  value: Optional[str] = None):
+        """
+        :param str value: - (Required) value for argument
+        """
         if entity_id is not None:
             pulumi.set(__self__, "entity_id", entity_id)
         if entity_type is not None:
@@ -26035,6 +26500,9 @@ class NdbRegisterDatabaseTimeMachineTag(dict):
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
+        """
+        - (Required) value for argument
+        """
         return pulumi.get(self, "value")
 
 
@@ -35198,6 +35666,10 @@ class ServiceGroupServiceListIcmpTypeCodeList(dict):
     def __init__(__self__, *,
                  code: Optional[str] = None,
                  type: Optional[str] = None):
+        """
+        :param str code: - (Optional) Code as text
+        :param str type: - (Optional) Type as text
+        """
         if code is not None:
             pulumi.set(__self__, "code", code)
         if type is not None:
@@ -35206,11 +35678,17 @@ class ServiceGroupServiceListIcmpTypeCodeList(dict):
     @property
     @pulumi.getter
     def code(self) -> Optional[str]:
+        """
+        - (Optional) Code as text
+        """
         return pulumi.get(self, "code")
 
     @property
     @pulumi.getter
     def type(self) -> Optional[str]:
+        """
+        - (Optional) Type as text
+        """
         return pulumi.get(self, "type")
 
 
@@ -35645,11 +36123,17 @@ class UserGroupsDirectoryServiceOus(dict):
 
     def __init__(__self__, *,
                  distinguished_name: str):
+        """
+        :param str distinguished_name: - (Required) The Distinguished name for the user group.
+        """
         pulumi.set(__self__, "distinguished_name", distinguished_name)
 
     @property
     @pulumi.getter(name="distinguishedName")
     def distinguished_name(self) -> str:
+        """
+        - (Required) The Distinguished name for the user group.
+        """
         return pulumi.get(self, "distinguished_name")
 
 
@@ -36371,6 +36855,7 @@ class VirtualMachineNicList(dict):
                  uuid: Optional[str] = None):
         """
         :param Sequence['VirtualMachineNicListIpEndpointListArgs'] ip_endpoint_lists: - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+        :param str is_connected: - Indicates whether the serial port connection is connected or not (`true` or `false`).
         :param str mac_address: - The MAC address for the adapter.
         :param str model: - The model of this NIC. (Options : VIRTIO , E1000).
         :param Mapping[str, str] network_function_chain_reference: - The reference to a network_function_chain.
@@ -36415,6 +36900,9 @@ class VirtualMachineNicList(dict):
     @property
     @pulumi.getter(name="isConnected")
     def is_connected(self) -> Optional[str]:
+        """
+        - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        """
         return pulumi.get(self, "is_connected")
 
     @property
@@ -36572,6 +37060,17 @@ class VirtualMachineNicListStatus(dict):
                  subnet_uuid: Optional[str] = None,
                  uuid: Optional[str] = None):
         """
+        :param str floating_ip: -  The Floating IP associated with the vnic. (Only in `nic_list_status`)
+        :param Sequence['VirtualMachineNicListStatusIpEndpointListArgs'] ip_endpoint_lists: - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+        :param str is_connected: - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        :param str mac_address: - The MAC address for the adapter.
+        :param str model: - The model of this NIC. (Options : VIRTIO , E1000).
+        :param Mapping[str, str] network_function_chain_reference: - The reference to a network_function_chain.
+        :param str network_function_nic_type: - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
+        :param str nic_type: - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
+        :param int num_queues: - The number of tx/rx queue pairs for this NIC.
+        :param str subnet_name: - The name of the subnet reference to.
+        :param str subnet_uuid: - The reference to a subnet.
         :param str uuid: - the UUID(Required).
         """
         if floating_ip is not None:
@@ -36602,56 +37101,89 @@ class VirtualMachineNicListStatus(dict):
     @property
     @pulumi.getter(name="floatingIp")
     def floating_ip(self) -> Optional[str]:
+        """
+        -  The Floating IP associated with the vnic. (Only in `nic_list_status`)
+        """
         return pulumi.get(self, "floating_ip")
 
     @property
     @pulumi.getter(name="ipEndpointLists")
     def ip_endpoint_lists(self) -> Optional[Sequence['outputs.VirtualMachineNicListStatusIpEndpointList']]:
+        """
+        - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+        """
         return pulumi.get(self, "ip_endpoint_lists")
 
     @property
     @pulumi.getter(name="isConnected")
     def is_connected(self) -> Optional[str]:
+        """
+        - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        """
         return pulumi.get(self, "is_connected")
 
     @property
     @pulumi.getter(name="macAddress")
     def mac_address(self) -> Optional[str]:
+        """
+        - The MAC address for the adapter.
+        """
         return pulumi.get(self, "mac_address")
 
     @property
     @pulumi.getter
     def model(self) -> Optional[str]:
+        """
+        - The model of this NIC. (Options : VIRTIO , E1000).
+        """
         return pulumi.get(self, "model")
 
     @property
     @pulumi.getter(name="networkFunctionChainReference")
     def network_function_chain_reference(self) -> Optional[Mapping[str, str]]:
+        """
+        - The reference to a network_function_chain.
+        """
         return pulumi.get(self, "network_function_chain_reference")
 
     @property
     @pulumi.getter(name="networkFunctionNicType")
     def network_function_nic_type(self) -> Optional[str]:
+        """
+        - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
+        """
         return pulumi.get(self, "network_function_nic_type")
 
     @property
     @pulumi.getter(name="nicType")
     def nic_type(self) -> Optional[str]:
+        """
+        - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
+        """
         return pulumi.get(self, "nic_type")
 
     @property
     @pulumi.getter(name="numQueues")
     def num_queues(self) -> Optional[int]:
+        """
+        - The number of tx/rx queue pairs for this NIC.
+        """
         return pulumi.get(self, "num_queues")
 
     @property
     @pulumi.getter(name="subnetName")
     def subnet_name(self) -> Optional[str]:
+        """
+        - The name of the subnet reference to.
+        """
         return pulumi.get(self, "subnet_name")
 
     @property
     @pulumi.getter(name="subnetUuid")
     def subnet_uuid(self) -> Optional[str]:
+        """
+        - The reference to a subnet.
+        """
         return pulumi.get(self, "subnet_uuid")
 
     @property
@@ -44791,6 +45323,7 @@ class GetNdbCloneLinkedDatabaseResult(dict):
         :param str name: cloned name
         :param str parent_database_id: parent database id
         :param str status: status of clone
+        :param str timezone: Default is UTC
         """
         pulumi.set(__self__, "database_name", database_name)
         pulumi.set(__self__, "database_status", database_status)
@@ -44908,6 +45441,9 @@ class GetNdbCloneLinkedDatabaseResult(dict):
     @property
     @pulumi.getter
     def timezone(self) -> str:
+        """
+        Default is UTC
+        """
         return pulumi.get(self, "timezone")
 
 
@@ -47044,6 +47580,7 @@ class GetNdbClonesCloneLinkedDatabaseResult(dict):
         :param str name: cloned name
         :param str parent_database_id: parent database id
         :param str status: status of clone
+        :param str timezone: Default is UTC
         """
         pulumi.set(__self__, "database_name", database_name)
         pulumi.set(__self__, "database_status", database_status)
@@ -47161,6 +47698,9 @@ class GetNdbClonesCloneLinkedDatabaseResult(dict):
     @property
     @pulumi.getter
     def timezone(self) -> str:
+        """
+        Default is UTC
+        """
         return pulumi.get(self, "timezone")
 
 
@@ -57720,6 +58260,7 @@ class GetNdbSnapshotsSnapshotResult(dict):
                  type: str):
         """
         :param Sequence['GetNdbSnapshotsSnapshotPropertyArgs'] properties: List of all the properties
+        :param str time_machine_id: Fetches all the snapshots for a given time machine
         """
         pulumi.set(__self__, "app_info_version", app_info_version)
         pulumi.set(__self__, "applicable_types", applicable_types)
@@ -57942,6 +58483,9 @@ class GetNdbSnapshotsSnapshotResult(dict):
     @property
     @pulumi.getter(name="timeMachineId")
     def time_machine_id(self) -> str:
+        """
+        Fetches all the snapshots for a given time machine
+        """
         return pulumi.get(self, "time_machine_id")
 
     @property
@@ -58939,7 +59483,34 @@ class GetNdbTimeMachinesTimeMachineResult(dict):
                  tags: Sequence['outputs.GetNdbTimeMachinesTimeMachineTagResult'],
                  type: str):
         """
+        :param str access_level: access level to time machines
+        :param bool clone: clone time machine or not
+        :param str clones: clone info
+        :param bool clustered: clustered or not
+        :param str database: database info
+        :param str database_id: database id
+        :param str date_created: date created
+        :param str date_modified: date modified
+        :param str description: time machine description
+        :param str ea_status: ea status of time machine
+        :param str id: time machine id
+        :param str metric: Metric info
+        :param str name: time machine name
         :param Sequence['GetNdbTimeMachinesTimeMachinePropertyArgs'] properties: List of all the properties
+        :param str schedule_id: schedule id
+        :param Sequence['GetNdbTimeMachinesTimeMachineScheduleArgs'] schedules: schedule info
+               
+               
+               See detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).
+        :param str scope: scope
+        :param str sla_id: sla id
+        :param bool sla_update_in_progress: sla update in progress
+        :param str sla_update_metadata: sla update metadata
+        :param Sequence['GetNdbTimeMachinesTimeMachineSlaArgs'] slas: sla info
+        :param Sequence[str] source_nx_clusters: source clusters
+        :param str status: status of time machine
+        :param Sequence['GetNdbTimeMachinesTimeMachineTagArgs'] tags: tags
+        :param str type: type of time machine
         """
         pulumi.set(__self__, "access_level", access_level)
         pulumi.set(__self__, "clone", clone)
@@ -58970,66 +59541,105 @@ class GetNdbTimeMachinesTimeMachineResult(dict):
     @property
     @pulumi.getter(name="accessLevel")
     def access_level(self) -> str:
+        """
+        access level to time machines
+        """
         return pulumi.get(self, "access_level")
 
     @property
     @pulumi.getter
     def clone(self) -> bool:
+        """
+        clone time machine or not
+        """
         return pulumi.get(self, "clone")
 
     @property
     @pulumi.getter
     def clones(self) -> str:
+        """
+        clone info
+        """
         return pulumi.get(self, "clones")
 
     @property
     @pulumi.getter
     def clustered(self) -> bool:
+        """
+        clustered or not
+        """
         return pulumi.get(self, "clustered")
 
     @property
     @pulumi.getter
     def database(self) -> str:
+        """
+        database info
+        """
         return pulumi.get(self, "database")
 
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> str:
+        """
+        database id
+        """
         return pulumi.get(self, "database_id")
 
     @property
     @pulumi.getter(name="dateCreated")
     def date_created(self) -> str:
+        """
+        date created
+        """
         return pulumi.get(self, "date_created")
 
     @property
     @pulumi.getter(name="dateModified")
     def date_modified(self) -> str:
+        """
+        date modified
+        """
         return pulumi.get(self, "date_modified")
 
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        time machine description
+        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="eaStatus")
     def ea_status(self) -> str:
+        """
+        ea status of time machine
+        """
         return pulumi.get(self, "ea_status")
 
     @property
     @pulumi.getter
     def id(self) -> str:
+        """
+        time machine id
+        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def metric(self) -> str:
+        """
+        Metric info
+        """
         return pulumi.get(self, "metric")
 
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        time machine name
+        """
         return pulumi.get(self, "name")
 
     @property
@@ -59043,56 +59653,92 @@ class GetNdbTimeMachinesTimeMachineResult(dict):
     @property
     @pulumi.getter(name="scheduleId")
     def schedule_id(self) -> str:
+        """
+        schedule id
+        """
         return pulumi.get(self, "schedule_id")
 
     @property
     @pulumi.getter
     def schedules(self) -> Sequence['outputs.GetNdbTimeMachinesTimeMachineScheduleResult']:
+        """
+        schedule info
+
+
+        See detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).
+        """
         return pulumi.get(self, "schedules")
 
     @property
     @pulumi.getter
     def scope(self) -> str:
+        """
+        scope
+        """
         return pulumi.get(self, "scope")
 
     @property
     @pulumi.getter(name="slaId")
     def sla_id(self) -> str:
+        """
+        sla id
+        """
         return pulumi.get(self, "sla_id")
 
     @property
     @pulumi.getter(name="slaUpdateInProgress")
     def sla_update_in_progress(self) -> bool:
+        """
+        sla update in progress
+        """
         return pulumi.get(self, "sla_update_in_progress")
 
     @property
     @pulumi.getter(name="slaUpdateMetadata")
     def sla_update_metadata(self) -> str:
+        """
+        sla update metadata
+        """
         return pulumi.get(self, "sla_update_metadata")
 
     @property
     @pulumi.getter
     def slas(self) -> Sequence['outputs.GetNdbTimeMachinesTimeMachineSlaResult']:
+        """
+        sla info
+        """
         return pulumi.get(self, "slas")
 
     @property
     @pulumi.getter(name="sourceNxClusters")
     def source_nx_clusters(self) -> Sequence[str]:
+        """
+        source clusters
+        """
         return pulumi.get(self, "source_nx_clusters")
 
     @property
     @pulumi.getter
     def status(self) -> str:
+        """
+        status of time machine
+        """
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetNdbTimeMachinesTimeMachineTagResult']:
+        """
+        tags
+        """
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter
     def type(self) -> str:
+        """
+        type of time machine
+        """
         return pulumi.get(self, "type")
 
 
@@ -59104,6 +59750,10 @@ class GetNdbTimeMachinesTimeMachinePropertyResult(dict):
                  ref_id: str,
                  secure: bool,
                  value: str):
+        """
+        :param str description: time machine description
+        :param str name: time machine name
+        """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "ref_id", ref_id)
@@ -59113,11 +59763,17 @@ class GetNdbTimeMachinesTimeMachinePropertyResult(dict):
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        time machine description
+        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        time machine name
+        """
         return pulumi.get(self, "name")
 
     @property
@@ -59158,6 +59814,13 @@ class GetNdbTimeMachinesTimeMachineScheduleResult(dict):
                  unique_name: str,
                  weekly_schedules: Sequence['outputs.GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleResult'],
                  yearly_schedules: Sequence['outputs.GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleResult']):
+        """
+        :param str date_created: date created
+        :param str date_modified: date modified
+        :param str description: time machine description
+        :param str id: time machine id
+        :param str name: time machine name
+        """
         pulumi.set(__self__, "continuous_schedules", continuous_schedules)
         pulumi.set(__self__, "daily_schedules", daily_schedules)
         pulumi.set(__self__, "date_created", date_created)
@@ -59191,16 +59854,25 @@ class GetNdbTimeMachinesTimeMachineScheduleResult(dict):
     @property
     @pulumi.getter(name="dateCreated")
     def date_created(self) -> str:
+        """
+        date created
+        """
         return pulumi.get(self, "date_created")
 
     @property
     @pulumi.getter(name="dateModified")
     def date_modified(self) -> str:
+        """
+        date modified
+        """
         return pulumi.get(self, "date_modified")
 
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        time machine description
+        """
         return pulumi.get(self, "description")
 
     @property
@@ -59211,6 +59883,9 @@ class GetNdbTimeMachinesTimeMachineScheduleResult(dict):
     @property
     @pulumi.getter
     def id(self) -> str:
+        """
+        time machine id
+        """
         return pulumi.get(self, "id")
 
     @property
@@ -59221,6 +59896,9 @@ class GetNdbTimeMachinesTimeMachineScheduleResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        time machine name
+        """
         return pulumi.get(self, "name")
 
     @property
@@ -59476,6 +60154,13 @@ class GetNdbTimeMachinesTimeMachineSlaResult(dict):
                  unique_name: str,
                  weekly_retention: int,
                  yearly_retention: int):
+        """
+        :param str date_created: date created
+        :param str date_modified: date modified
+        :param str description: time machine description
+        :param str id: time machine id
+        :param str name: time machine name
+        """
         pulumi.set(__self__, "continuous_retention", continuous_retention)
         pulumi.set(__self__, "current_active_frequency", current_active_frequency)
         pulumi.set(__self__, "daily_retention", daily_retention)
@@ -59512,21 +60197,33 @@ class GetNdbTimeMachinesTimeMachineSlaResult(dict):
     @property
     @pulumi.getter(name="dateCreated")
     def date_created(self) -> str:
+        """
+        date created
+        """
         return pulumi.get(self, "date_created")
 
     @property
     @pulumi.getter(name="dateModified")
     def date_modified(self) -> str:
+        """
+        date modified
+        """
         return pulumi.get(self, "date_modified")
 
     @property
     @pulumi.getter
     def description(self) -> str:
+        """
+        time machine description
+        """
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter
     def id(self) -> str:
+        """
+        time machine id
+        """
         return pulumi.get(self, "id")
 
     @property
@@ -59537,6 +60234,9 @@ class GetNdbTimeMachinesTimeMachineSlaResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        time machine name
+        """
         return pulumi.get(self, "name")
 
     @property

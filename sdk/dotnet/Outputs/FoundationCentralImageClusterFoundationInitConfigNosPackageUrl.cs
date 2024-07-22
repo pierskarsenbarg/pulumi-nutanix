@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class FoundationCentralImageClusterFoundationInitConfigNosPackageUrl
     {
+        /// <summary>
+        /// sha256sum of the hypervisor iso.
+        /// </summary>
         public readonly string? Sha256sum;
+        /// <summary>
+        /// URL to download hypervisor iso. Required only if imaging is needed.
+        /// </summary>
         public readonly string? Url;
 
         [OutputConstructor]

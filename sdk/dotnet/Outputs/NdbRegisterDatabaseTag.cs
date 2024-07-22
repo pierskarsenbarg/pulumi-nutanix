@@ -18,6 +18,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string? EntityType;
         public readonly string? TagId;
         public readonly string? TagName;
+        /// <summary>
+        /// - (Required) value for argument
+        /// </summary>
         public readonly string? Value;
 
         [OutputConstructor]

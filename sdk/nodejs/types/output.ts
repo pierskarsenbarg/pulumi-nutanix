@@ -17,7 +17,13 @@ export interface AccessControlPolicyCategory {
 }
 
 export interface AccessControlPolicyContextFilterList {
+    /**
+     * A list of Entity filter expressions.
+     */
     entityFilterExpressionLists: outputs.AccessControlPolicyContextFilterListEntityFilterExpressionList[];
+    /**
+     * - (Optional) Filter the scope of an Access Control Policy.
+     */
     scopeFilterExpressionLists: outputs.AccessControlPolicyContextFilterListScopeFilterExpressionList[];
 }
 
@@ -164,7 +170,15 @@ export interface AccessControlPolicyUserReferenceList {
 }
 
 export interface AddressGroupIpAddressBlockList {
+    /**
+     * - (Required) IP of the address block
+     */
     ip: string;
+    /**
+     * - (Required) Prefix length of address block in int
+     *
+     * See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/api_references/prism-central-v3/#/5ccef53a546a4-create-a-new-address-group).
+     */
     prefixLength: number;
 }
 
@@ -190,6 +204,9 @@ export interface FoundationCentralImageClusterClusterStatusClusterProgressDetail
 }
 
 export interface FoundationCentralImageClusterClusterStatusNodeProgressDetail {
+    /**
+     * UUID of the node.
+     */
     imagedNodeUuid: string;
     imagingStopped: boolean;
     intentPickedUp: boolean;
@@ -199,25 +216,61 @@ export interface FoundationCentralImageClusterClusterStatusNodeProgressDetail {
 }
 
 export interface FoundationCentralImageClusterCommonNetworkSettings {
+    /**
+     * List of dns servers for the cvms in the cluster.
+     */
     cvmDnsServers: string[];
+    /**
+     * List of ntp servers for the cvms in the cluster.
+     */
     cvmNtpServers: string[];
+    /**
+     * List of dns servers for the hypervisors in the cluster.
+     */
     hypervisorDnsServers: string[];
+    /**
+     * List of ntp servers for the hypervisors in the cluster.
+     */
     hypervisorNtpServers: string[];
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfig {
     blocks: outputs.FoundationCentralImageClusterFoundationInitConfigBlock[];
     clusters: outputs.FoundationCentralImageClusterFoundationInitConfigCluster[];
+    /**
+     * Gateway of the cvm.
+     */
     cvmGateway: string;
+    /**
+     * Netmask of the cvm.
+     */
     cvmNetmask: string;
     dnsServers: string;
+    /**
+     * Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+     */
     hypervProductKey: string;
+    /**
+     * SKU of hyperv to be installed if hypervisorType is hyperv.
+     */
     hypervSku: string;
+    /**
+     * Gateway of the hypervisor.
+     */
     hypervisorGateway: string;
     hypervisorIsoUrl: {[key: string]: string};
     hypervisorIsos: outputs.FoundationCentralImageClusterFoundationInitConfigHypervisorIso[];
+    /**
+     * Netmask of the hypervisor.
+     */
     hypervisorNetmask: string;
+    /**
+     * Gateway of the ipmi.
+     */
     ipmiGateway: string;
+    /**
+     * Netmask of the ipmi.
+     */
     ipmiNetmask: string;
     nosPackageUrls: outputs.FoundationCentralImageClusterFoundationInitConfigNosPackageUrl[];
 }
@@ -228,14 +281,35 @@ export interface FoundationCentralImageClusterFoundationInitConfigBlock {
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigBlockNode {
+    /**
+     * IP address to be set for the cvm on the node.
+     */
     cvmIp: string;
+    /**
+     * Vlan tag of the cvm, if the cvm is on a vlan.
+     */
     cvmVlanId: number;
     fcImagedNodeUuid: string;
+    /**
+     * Hardware attributes override json for the node.
+     */
     hardwareAttributesOverride: {[key: string]: string};
     hypervisor: string;
+    /**
+     * Name to be set for the hypervisor host.
+     */
     hypervisorHostname: string;
+    /**
+     * IP address to be set for the hypervisor on the node.
+     */
     hypervisorIp: string;
+    /**
+     * True, if the node should be imaged, False, otherwise.
+     */
     imageNow: boolean;
+    /**
+     * IP address to be set for the ipmi of the node.
+     */
     ipmiIp: string;
     ipv6Address: string;
     nodePosition: string;
@@ -254,7 +328,13 @@ export interface FoundationCentralImageClusterFoundationInitConfigCluster {
      * Name of the cluster.
      */
     clusterName: string;
+    /**
+     * List of dns servers for the cvms in the cluster.
+     */
     cvmDnsServers: string;
+    /**
+     * List of ntp servers for the cvms in the cluster.
+     */
     cvmNtpServers: string;
     /**
      * Redundancy factor of the cluster.
@@ -267,41 +347,122 @@ export interface FoundationCentralImageClusterFoundationInitConfigCluster {
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigHypervisorIso {
+    /**
+     * Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+     */
     hypervisorType: string;
+    /**
+     * sha256sum of the hypervisor iso.
+     */
     sha256sum: string;
+    /**
+     * URL to download hypervisor iso. Required only if imaging is needed.
+     */
     url: string;
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigNosPackageUrl {
+    /**
+     * sha256sum of the hypervisor iso.
+     */
     sha256sum: string;
+    /**
+     * URL to download hypervisor iso. Required only if imaging is needed.
+     */
     url: string;
 }
 
 export interface FoundationCentralImageClusterHypervisorIsoDetails {
+    /**
+     * Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+     */
     hypervProductKey: string;
+    /**
+     * SKU of hyperv to be installed if hypervisorType is hyperv.
+     */
     hypervSku: string;
+    /**
+     * sha256sum of the hypervisor iso.
+     */
     sha256sum: string;
+    /**
+     * URL to download hypervisor iso. Required only if imaging is needed.
+     */
     url?: string;
 }
 
 export interface FoundationCentralImageClusterNodeList {
+    /**
+     * Gateway of the cvm.
+     */
     cvmGateway: string;
+    /**
+     * IP address to be set for the cvm on the node.
+     */
     cvmIp: string;
+    /**
+     * Netmask of the cvm.
+     */
     cvmNetmask?: string;
+    /**
+     * Amount of memory to be assigned for the cvm.
+     */
     cvmRamGb?: number;
+    /**
+     * Vlan tag of the cvm, if the cvm is on a vlan.
+     */
     cvmVlanId: number;
+    /**
+     * Hardware attributes override json for the node.
+     */
     hardwareAttributesOverride: {[key: string]: any};
+    /**
+     * Gateway of the hypervisor.
+     */
     hypervisorGateway: string;
+    /**
+     * Name to be set for the hypervisor host.
+     */
     hypervisorHostname: string;
+    /**
+     * IP address to be set for the hypervisor on the node.
+     */
     hypervisorIp: string;
+    /**
+     * Netmask of the hypervisor.
+     */
     hypervisorNetmask: string;
+    /**
+     * Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+     */
     hypervisorType?: string;
+    /**
+     * True, if the node should be imaged, False, otherwise.
+     */
     imageNow: boolean;
+    /**
+     * UUID of the node.
+     */
     imagedNodeUuid: string;
+    /**
+     * Gateway of the ipmi.
+     */
     ipmiGateway: string;
+    /**
+     * IP address to be set for the ipmi of the node.
+     */
     ipmiIp: string;
+    /**
+     * Netmask of the ipmi.
+     */
     ipmiNetmask?: string;
+    /**
+     * Passthrough RDMA nic to CVM if possible, default to false.
+     */
     rdmaPassthrough?: boolean;
+    /**
+     * Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
+     */
     useExistingNetworkSettings?: boolean;
 }
 
@@ -456,6 +617,9 @@ export interface FoundationImageNodesBlockNodeUcsmParams {
 }
 
 export interface FoundationImageNodesBlockNodeVswitch {
+    /**
+     * - (Required if node is capable) dynamic if using LACP, static for LAG
+     */
     bondMode?: string;
     lacp?: string;
     mtu?: number;
@@ -528,6 +692,9 @@ export interface FoundationImageNodesCluster {
 }
 
 export interface FoundationImageNodesClusterUrl {
+    /**
+     * - (Required) Name of the cluster.
+     */
     clusterName: string;
     clusterUrl: string;
 }
@@ -585,22 +752,46 @@ export interface FoundationImageNodesHypervisorIso {
 }
 
 export interface FoundationImageNodesHypervisorIsoEsx {
+    /**
+     * - (Required) Filename of hypervisor ISO.
+     */
     checksum: string;
+    /**
+     * - (Required) Checksum for ISO file.
+     */
     filename: string;
 }
 
 export interface FoundationImageNodesHypervisorIsoHyperv {
+    /**
+     * - (Required) Filename of hypervisor ISO.
+     */
     checksum: string;
+    /**
+     * - (Required) Checksum for ISO file.
+     */
     filename: string;
 }
 
 export interface FoundationImageNodesHypervisorIsoKvm {
+    /**
+     * - (Required) Filename of hypervisor ISO.
+     */
     checksum: string;
+    /**
+     * - (Required) Checksum for ISO file.
+     */
     filename: string;
 }
 
 export interface FoundationImageNodesHypervisorIsoXen {
+    /**
+     * - (Required) Filename of hypervisor ISO.
+     */
     checksum: string;
+    /**
+     * - (Required) Checksum for ISO file.
+     */
     filename: string;
 }
 
@@ -3267,6 +3458,9 @@ export interface GetNdbCloneLinkedDatabase {
      * status of clone
      */
     status: string;
+    /**
+     * Default is UTC
+     */
     timezone: string;
 }
 
@@ -3886,6 +4080,9 @@ export interface GetNdbClonesCloneLinkedDatabase {
      * status of clone
      */
     status: string;
+    /**
+     * Default is UTC
+     */
     timezone: string;
 }
 
@@ -6504,6 +6701,9 @@ export interface GetNdbSnapshotsSnapshot {
     softwareSnapshotId: string;
     status: string;
     tags: outputs.GetNdbSnapshotsSnapshotTag[];
+    /**
+     * Fetches all the snapshots for a given time machine
+     */
     timeMachineId: string;
     timezone: string;
     toTimestamp: string;
@@ -6740,38 +6940,119 @@ export interface GetNdbTimeMachineTag {
 }
 
 export interface GetNdbTimeMachinesTimeMachine {
+    /**
+     * access level to time machines
+     */
     accessLevel: string;
+    /**
+     * clone time machine or not
+     */
     clone: boolean;
+    /**
+     * clone info
+     */
     clones: string;
+    /**
+     * clustered or not
+     */
     clustered: boolean;
+    /**
+     * database info
+     */
     database: string;
+    /**
+     * database id
+     */
     databaseId: string;
+    /**
+     * date created
+     */
     dateCreated: string;
+    /**
+     * date modified
+     */
     dateModified: string;
+    /**
+     * time machine description
+     */
     description: string;
+    /**
+     * ea status of time machine
+     */
     eaStatus: string;
+    /**
+     * time machine id
+     */
     id: string;
+    /**
+     * Metric info
+     */
     metric: string;
+    /**
+     * time machine name
+     */
     name: string;
     /**
      * List of all the properties
      */
     properties: outputs.GetNdbTimeMachinesTimeMachineProperty[];
+    /**
+     * schedule id
+     */
     scheduleId: string;
+    /**
+     * schedule info
+     *
+     *
+     * See detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).
+     */
     schedules: outputs.GetNdbTimeMachinesTimeMachineSchedule[];
+    /**
+     * scope
+     */
     scope: string;
+    /**
+     * sla id
+     */
     slaId: string;
+    /**
+     * sla update in progress
+     */
     slaUpdateInProgress: boolean;
+    /**
+     * sla update metadata
+     */
     slaUpdateMetadata: string;
+    /**
+     * sla info
+     */
     slas: outputs.GetNdbTimeMachinesTimeMachineSla[];
+    /**
+     * source clusters
+     */
     sourceNxClusters: string[];
+    /**
+     * status of time machine
+     */
     status: string;
+    /**
+     * tags
+     */
     tags: outputs.GetNdbTimeMachinesTimeMachineTag[];
+    /**
+     * type of time machine
+     */
     type: string;
 }
 
 export interface GetNdbTimeMachinesTimeMachineProperty {
+    /**
+     * time machine description
+     */
     description: string;
+    /**
+     * time machine name
+     */
     name: string;
     refId: string;
     secure: boolean;
@@ -6781,12 +7062,27 @@ export interface GetNdbTimeMachinesTimeMachineProperty {
 export interface GetNdbTimeMachinesTimeMachineSchedule {
     continuousSchedules: outputs.GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule[];
     dailySchedules: outputs.GetNdbTimeMachinesTimeMachineScheduleDailySchedule[];
+    /**
+     * date created
+     */
     dateCreated: string;
+    /**
+     * date modified
+     */
     dateModified: string;
+    /**
+     * time machine description
+     */
     description: string;
     globalPolicy: boolean;
+    /**
+     * time machine id
+     */
     id: string;
     monthlySchedules: outputs.GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule[];
+    /**
+     * time machine name
+     */
     name: string;
     ownerId: string;
     quartelySchedules: outputs.GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule[];
@@ -6846,11 +7142,26 @@ export interface GetNdbTimeMachinesTimeMachineSla {
     continuousRetention: number;
     currentActiveFrequency: string;
     dailyRetention: number;
+    /**
+     * date created
+     */
     dateCreated: string;
+    /**
+     * date modified
+     */
     dateModified: string;
+    /**
+     * time machine description
+     */
     description: string;
+    /**
+     * time machine id
+     */
     id: string;
     monthlyRetention: number;
+    /**
+     * time machine name
+     */
     name: string;
     ownerId: string;
     pitrEnabled: boolean;
@@ -11897,6 +12208,9 @@ export interface NdbCloneDatabaseNodeProperty {
     name: string;
     refId: string;
     secure: boolean;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -11948,6 +12262,9 @@ export interface NdbCloneDatabaseNodeProtectionDomainProperty {
     name: string;
     refId: string;
     secure: boolean;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -11956,6 +12273,9 @@ export interface NdbCloneDatabaseNodeTag {
     entityType: string;
     tagId: string;
     tagName: string;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -12117,6 +12437,9 @@ export interface NdbCloneNodeProperty {
      * database instance name
      */
     name?: string;
+    /**
+     * - (Required) value for argument
+     */
     value?: string;
 }
 
@@ -12148,6 +12471,9 @@ export interface NdbCloneProperty {
      * database instance name
      */
     name: string;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -12156,6 +12482,9 @@ export interface NdbCloneTag {
     entityType: string;
     tagId: string;
     tagName: string;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -12231,6 +12560,9 @@ export interface NdbCloneTimeMachineProperty {
     name: string;
     refId: string;
     secure: boolean;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -12350,6 +12682,9 @@ export interface NdbCloneTimeMachineTag {
     entityType: string;
     tagId: string;
     tagName: string;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -12549,7 +12884,13 @@ export interface NdbDatabaseClusterInfo {
 }
 
 export interface NdbDatabaseClusterInfoClusterIpInfo {
+    /**
+     * - (Optional) IP infos for custom network profile.
+     */
     ipInfos?: outputs.NdbDatabaseClusterInfoClusterIpInfoIpInfo[];
+    /**
+     * - (Optional) cluster id.
+     */
     nxClusterId: string;
 }
 
@@ -12585,6 +12926,9 @@ export interface NdbDatabaseDatabaseNode {
     protectionDomains: outputs.NdbDatabaseDatabaseNodeProtectionDomain[];
     softwareInstallationId: string;
     status: string;
+    /**
+     * - (Optional) tags
+     */
     tags: outputs.NdbDatabaseDatabaseNodeTag[];
 }
 
@@ -12604,6 +12948,9 @@ export interface NdbDatabaseDatabaseNodeProperty {
     name: string;
     refId: string;
     secure: boolean;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -12643,6 +12990,9 @@ export interface NdbDatabaseDatabaseNodeProtectionDomainProperty {
     name: string;
     refId: string;
     secure: boolean;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -12651,6 +13001,9 @@ export interface NdbDatabaseDatabaseNodeTag {
     entityType: string;
     tagId: string;
     tagName: string;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -12823,6 +13176,9 @@ export interface NdbDatabaseNodeProperty {
      * - (Required) Name of the instance.
      */
     name: string;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -12930,6 +13286,9 @@ export interface NdbDatabaseProperty {
      * - (Required) Name of the instance.
      */
     name: string;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -13951,6 +14310,9 @@ export interface NdbDatabaseTag {
     entityType: string;
     tagId: string;
     tagName: string;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -13982,6 +14344,9 @@ export interface NdbDatabaseTimeMachine {
      */
     properties: outputs.NdbDatabaseTimeMachineProperty[];
     scheduleId: string;
+    /**
+     * - (Optional) schedule for snapshots
+     */
     schedules: outputs.NdbDatabaseTimeMachineSchedule[];
     scope: string;
     slaId: string;
@@ -13990,6 +14355,9 @@ export interface NdbDatabaseTimeMachine {
     slas: outputs.NdbDatabaseTimeMachineSla[];
     sourceNxClusters: string[];
     status: string;
+    /**
+     * - (Optional) tags
+     */
     tags: outputs.NdbDatabaseTimeMachineTag[];
     type: string;
 }
@@ -14005,6 +14373,9 @@ export interface NdbDatabaseTimeMachineProperty {
     name: string;
     refId: string;
     secure: boolean;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -14060,8 +14431,17 @@ export interface NdbDatabaseTimeMachineScheduleQuartelySchedule {
 
 export interface NdbDatabaseTimeMachineScheduleSnapshotTimeOfDay {
     extra: boolean;
+    /**
+     * - (Required) hours
+     */
     hours: number;
+    /**
+     * - (Required) minutes
+     */
     minutes: number;
+    /**
+     * - (Required) seconds
+     */
     seconds: number;
 }
 
@@ -14074,6 +14454,9 @@ export interface NdbDatabaseTimeMachineScheduleWeeklySchedule {
 export interface NdbDatabaseTimeMachineScheduleYearlySchedule {
     dayOfMonth: number;
     enabled: boolean;
+    /**
+     * - (Required) month for snapshot
+     */
     month: string;
     monthValue: string;
 }
@@ -14109,6 +14492,9 @@ export interface NdbDatabaseTimeMachineTag {
     entityType: string;
     tagId: string;
     tagName: string;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -14274,6 +14660,9 @@ export interface NdbDatabaseTimemachineinfoTag {
     entityType: string;
     tagId: string;
     tagName: string;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -14315,6 +14704,9 @@ export interface NdbDbserverVmPostgresDatabase {
 }
 
 export interface NdbDbserverVmProperty {
+    /**
+     * name of the dbserver vm
+     */
     name: string;
     value: string;
 }
@@ -14813,6 +15205,10 @@ export interface NdbProfileVersion {
     topology: string;
     type: string;
     version: string;
+    /**
+     * cluster associated with VLAN. this is used with Single instance for postgres database.
+     * * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
+     */
     versionClusterAssociations: outputs.NdbProfileVersionVersionClusterAssociation[];
 }
 
@@ -14929,6 +15325,9 @@ export interface NdbRegisterDatabaseDatabaseNodeProperty {
     name: string;
     refId: string;
     secure: boolean;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -14980,6 +15379,9 @@ export interface NdbRegisterDatabaseDatabaseNodeProtectionDomainProperty {
     name: string;
     refId: string;
     secure: boolean;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -14988,6 +15390,9 @@ export interface NdbRegisterDatabaseDatabaseNodeTag {
     entityType: string;
     tagId: string;
     tagName: string;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -15183,6 +15588,9 @@ export interface NdbRegisterDatabaseProperty {
      * Name of database instance
      */
     name: string;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -15191,6 +15599,9 @@ export interface NdbRegisterDatabaseTag {
     entityType: string;
     tagId: string;
     tagName: string;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -15234,6 +15645,9 @@ export interface NdbRegisterDatabaseTimeMachine {
      */
     properties: outputs.NdbRegisterDatabaseTimeMachineProperty[];
     scheduleId: string;
+    /**
+     * - (Optional) schedule for snapshots
+     */
     schedules: outputs.NdbRegisterDatabaseTimeMachineSchedule[];
     scope: string;
     slaId: string;
@@ -15369,6 +15783,9 @@ export interface NdbRegisterDatabaseTimeMachineInfoTag {
     entityType: string;
     tagId: string;
     tagName: string;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -15383,6 +15800,9 @@ export interface NdbRegisterDatabaseTimeMachineProperty {
     name: string;
     refId: string;
     secure: boolean;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -15502,6 +15922,9 @@ export interface NdbRegisterDatabaseTimeMachineTag {
     entityType: string;
     tagId: string;
     tagName: string;
+    /**
+     * - (Required) value for argument
+     */
     value: string;
 }
 
@@ -17421,7 +17844,13 @@ export interface ServiceGroupServiceList {
 }
 
 export interface ServiceGroupServiceListIcmpTypeCodeList {
+    /**
+     * - (Optional) Code as text
+     */
     code?: string;
+    /**
+     * - (Optional) Type as text
+     */
     type?: string;
 }
 
@@ -17530,6 +17959,9 @@ export interface UserGroupsCategory {
 }
 
 export interface UserGroupsDirectoryServiceOus {
+    /**
+     * - (Required) The Distinguished name for the user group.
+     */
     distinguishedName: string;
 }
 
@@ -17720,6 +18152,9 @@ export interface VirtualMachineNicList {
      * - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
      */
     ipEndpointLists: outputs.VirtualMachineNicListIpEndpointList[];
+    /**
+     * - Indicates whether the serial port connection is connected or not (`true` or `false`).
+     */
     isConnected?: string;
     /**
      * - The MAC address for the adapter.
@@ -17771,16 +18206,49 @@ export interface VirtualMachineNicListIpEndpointList {
 }
 
 export interface VirtualMachineNicListStatus {
+    /**
+     * -  The Floating IP associated with the vnic. (Only in `nicListStatus`)
+     */
     floatingIp: string;
+    /**
+     * - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+     */
     ipEndpointLists: outputs.VirtualMachineNicListStatusIpEndpointList[];
+    /**
+     * - Indicates whether the serial port connection is connected or not (`true` or `false`).
+     */
     isConnected: string;
+    /**
+     * - The MAC address for the adapter.
+     */
     macAddress: string;
+    /**
+     * - The model of this NIC. (Options : VIRTIO , E1000).
+     */
     model: string;
+    /**
+     * - The reference to a network_function_chain.
+     */
     networkFunctionChainReference: {[key: string]: string};
+    /**
+     * - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
+     */
     networkFunctionNicType: string;
+    /**
+     * - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
+     */
     nicType: string;
+    /**
+     * - The number of tx/rx queue pairs for this NIC.
+     */
     numQueues: number;
+    /**
+     * - The name of the subnet reference to.
+     */
     subnetName: string;
+    /**
+     * - The reference to a subnet.
+     */
     subnetUuid: string;
     /**
      * - the UUID(Required).

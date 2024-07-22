@@ -78,6 +78,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("schedules")]
         private InputList<Inputs.NdbDatabaseTimeMachineScheduleArgs>? _schedules;
+
+        /// <summary>
+        /// - (Optional) schedule for snapshots
+        /// </summary>
         public InputList<Inputs.NdbDatabaseTimeMachineScheduleArgs> Schedules
         {
             get => _schedules ?? (_schedules = new InputList<Inputs.NdbDatabaseTimeMachineScheduleArgs>());
@@ -117,6 +121,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("tags")]
         private InputList<Inputs.NdbDatabaseTimeMachineTagArgs>? _tags;
+
+        /// <summary>
+        /// - (Optional) tags
+        /// </summary>
         public InputList<Inputs.NdbDatabaseTimeMachineTagArgs> Tags
         {
             get => _tags ?? (_tags = new InputList<Inputs.NdbDatabaseTimeMachineTagArgs>());

@@ -135,13 +135,15 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/types/nutanix:index/AccessControlPolicyContextFilterListEntityFilterExpressionList:AccessControlPolicyContextFilterListEntityFilterExpressionList"
-                    }
+                    },
+                    "description": "A list of Entity filter expressions.\n"
                 },
                 "scopeFilterExpressionLists": {
                     "type": "array",
                     "items": {
                         "$ref": "#/types/nutanix:index/AccessControlPolicyContextFilterListScopeFilterExpressionList:AccessControlPolicyContextFilterListScopeFilterExpressionList"
-                    }
+                    },
+                    "description": "- (Optional) Filter the scope of an Access Control Policy.\n"
                 }
             },
             "type": "object",
@@ -423,10 +425,12 @@
         "nutanix:index/AddressGroupIpAddressBlockList:AddressGroupIpAddressBlockList": {
             "properties": {
                 "ip": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) IP of the address block\n"
                 },
                 "prefixLength": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description": "- (Required) Prefix length of address block in int\n\nSee detailed information in [Nutanix Address Groups](https://www.nutanix.dev/api_references/prism-central-v3/#/5ccef53a546a4-create-a-new-address-group).\n"
                 }
             },
             "type": "object",
@@ -518,7 +522,8 @@
         "nutanix:index/FoundationCentralImageClusterClusterStatusNodeProgressDetail:FoundationCentralImageClusterClusterStatusNodeProgressDetail": {
             "properties": {
                 "imagedNodeUuid": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "UUID of the node.\n"
                 },
                 "imagingStopped": {
                     "type": "boolean"
@@ -559,25 +564,29 @@
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of dns servers for the cvms in the cluster.\n"
                 },
                 "cvmNtpServers": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of ntp servers for the cvms in the cluster.\n"
                 },
                 "hypervisorDnsServers": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of dns servers for the hypervisors in the cluster.\n"
                 },
                 "hypervisorNtpServers": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "List of ntp servers for the hypervisors in the cluster.\n"
                 }
             },
             "type": "object",
@@ -607,22 +616,27 @@
                     }
                 },
                 "cvmGateway": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Gateway of the cvm.\n"
                 },
                 "cvmNetmask": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Netmask of the cvm.\n"
                 },
                 "dnsServers": {
                     "type": "string"
                 },
                 "hypervProductKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).\n"
                 },
                 "hypervSku": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "SKU of hyperv to be installed if hypervisor_type is hyperv.\n"
                 },
                 "hypervisorGateway": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Gateway of the hypervisor.\n"
                 },
                 "hypervisorIsoUrl": {
                     "type": "object",
@@ -637,13 +651,16 @@
                     }
                 },
                 "hypervisorNetmask": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Netmask of the hypervisor.\n"
                 },
                 "ipmiGateway": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Gateway of the ipmi.\n"
                 },
                 "ipmiNetmask": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Netmask of the ipmi.\n"
                 },
                 "nosPackageUrls": {
                     "type": "array",
@@ -699,10 +716,12 @@
         "nutanix:index/FoundationCentralImageClusterFoundationInitConfigBlockNode:FoundationCentralImageClusterFoundationInitConfigBlockNode": {
             "properties": {
                 "cvmIp": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "IP address to be set for the cvm on the node.\n"
                 },
                 "cvmVlanId": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description": "Vlan tag of the cvm, if the cvm is on a vlan.\n"
                 },
                 "fcImagedNodeUuid": {
                     "type": "string"
@@ -711,22 +730,27 @@
                     "type": "object",
                     "additionalProperties": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Hardware attributes override json for the node.\n"
                 },
                 "hypervisor": {
                     "type": "string"
                 },
                 "hypervisorHostname": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name to be set for the hypervisor host.\n"
                 },
                 "hypervisorIp": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "IP address to be set for the hypervisor on the node.\n"
                 },
                 "imageNow": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "True, if the node should be imaged, False, otherwise.\n"
                 },
                 "ipmiIp": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "IP address to be set for the ipmi of the node.\n"
                 },
                 "ipv6Address": {
                     "type": "string"
@@ -781,10 +805,12 @@
                     "description": "Name of the cluster.\n"
                 },
                 "cvmDnsServers": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "List of dns servers for the cvms in the cluster.\n"
                 },
                 "cvmNtpServers": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "List of ntp servers for the cvms in the cluster.\n"
                 },
                 "redundancyFactor": {
                     "type": "integer",
@@ -815,13 +841,16 @@
         "nutanix:index/FoundationCentralImageClusterFoundationInitConfigHypervisorIso:FoundationCentralImageClusterFoundationInitConfigHypervisorIso": {
             "properties": {
                 "hypervisorType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.\n"
                 },
                 "sha256sum": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "sha256sum of the hypervisor iso.\n"
                 },
                 "url": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "URL to download hypervisor iso. Required only if imaging is needed.\n"
                 }
             },
             "type": "object",
@@ -838,10 +867,12 @@
         "nutanix:index/FoundationCentralImageClusterFoundationInitConfigNosPackageUrl:FoundationCentralImageClusterFoundationInitConfigNosPackageUrl": {
             "properties": {
                 "sha256sum": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "sha256sum of the hypervisor iso.\n"
                 },
                 "url": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "URL to download hypervisor iso. Required only if imaging is needed.\n"
                 }
             },
             "type": "object",
@@ -857,16 +888,20 @@
         "nutanix:index/FoundationCentralImageClusterHypervisorIsoDetails:FoundationCentralImageClusterHypervisorIsoDetails": {
             "properties": {
                 "hypervProductKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).\n"
                 },
                 "hypervSku": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "SKU of hyperv to be installed if hypervisor_type is hyperv.\n"
                 },
                 "sha256sum": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "sha256sum of the hypervisor iso.\n"
                 },
                 "url": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "URL to download hypervisor iso. Required only if imaging is needed.\n"
                 }
             },
             "type": "object",
@@ -883,61 +918,79 @@
         "nutanix:index/FoundationCentralImageClusterNodeList:FoundationCentralImageClusterNodeList": {
             "properties": {
                 "cvmGateway": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Gateway of the cvm.\n"
                 },
                 "cvmIp": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "IP address to be set for the cvm on the node.\n"
                 },
                 "cvmNetmask": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Netmask of the cvm.\n"
                 },
                 "cvmRamGb": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description": "Amount of memory to be assigned for the cvm.\n"
                 },
                 "cvmVlanId": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description": "Vlan tag of the cvm, if the cvm is on a vlan.\n"
                 },
                 "hardwareAttributesOverride": {
                     "type": "object",
                     "additionalProperties": {
                         "$ref": "pulumi.json#/Any"
-                    }
+                    },
+                    "description": "Hardware attributes override json for the node.\n"
                 },
                 "hypervisorGateway": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Gateway of the hypervisor.\n"
                 },
                 "hypervisorHostname": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name to be set for the hypervisor host.\n"
                 },
                 "hypervisorIp": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "IP address to be set for the hypervisor on the node.\n"
                 },
                 "hypervisorNetmask": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Netmask of the hypervisor.\n"
                 },
                 "hypervisorType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.\n"
                 },
                 "imageNow": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "True, if the node should be imaged, False, otherwise.\n"
                 },
                 "imagedNodeUuid": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "UUID of the node.\n"
                 },
                 "ipmiGateway": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Gateway of the ipmi.\n"
                 },
                 "ipmiIp": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "IP address to be set for the ipmi of the node.\n"
                 },
                 "ipmiNetmask": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Netmask of the ipmi.\n"
                 },
                 "rdmaPassthrough": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Passthrough RDMA nic to CVM if possible, default to false.\n"
                 },
                 "useExistingNetworkSettings": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.\n"
                 }
             },
             "type": "object",
@@ -1189,6 +1242,7 @@
             "properties": {
                 "bondMode": {
                     "type": "string",
+                    "description": "- (Required if node is capable) dynamic if using LACP, static for LAG\n",
                     "willReplaceOnChanges": true
                 },
                 "lacp": {
@@ -1311,7 +1365,8 @@
         "nutanix:index/FoundationImageNodesClusterUrl:FoundationImageNodesClusterUrl": {
             "properties": {
                 "clusterName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) Name of the cluster.\n"
                 },
                 "clusterUrl": {
                     "type": "string"
@@ -1414,10 +1469,12 @@
             "properties": {
                 "checksum": {
                     "type": "string",
+                    "description": "- (Required) Filename of hypervisor ISO.\n",
                     "willReplaceOnChanges": true
                 },
                 "filename": {
                     "type": "string",
+                    "description": "- (Required) Checksum for ISO file.\n",
                     "willReplaceOnChanges": true
                 }
             },
@@ -1431,10 +1488,12 @@
             "properties": {
                 "checksum": {
                     "type": "string",
+                    "description": "- (Required) Filename of hypervisor ISO.\n",
                     "willReplaceOnChanges": true
                 },
                 "filename": {
                     "type": "string",
+                    "description": "- (Required) Checksum for ISO file.\n",
                     "willReplaceOnChanges": true
                 }
             },
@@ -1448,10 +1507,12 @@
             "properties": {
                 "checksum": {
                     "type": "string",
+                    "description": "- (Required) Filename of hypervisor ISO.\n",
                     "willReplaceOnChanges": true
                 },
                 "filename": {
                     "type": "string",
+                    "description": "- (Required) Checksum for ISO file.\n",
                     "willReplaceOnChanges": true
                 }
             },
@@ -1465,10 +1526,12 @@
             "properties": {
                 "checksum": {
                     "type": "string",
+                    "description": "- (Required) Filename of hypervisor ISO.\n",
                     "willReplaceOnChanges": true
                 },
                 "filename": {
                     "type": "string",
+                    "description": "- (Required) Checksum for ISO file.\n",
                     "willReplaceOnChanges": true
                 }
             },
@@ -2286,7 +2349,8 @@
                     "type": "boolean"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -2395,7 +2459,8 @@
                     "type": "boolean"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -2426,7 +2491,8 @@
                     "type": "string"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -2864,7 +2930,8 @@
                     "description": "database instance name\n"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object"
@@ -2906,7 +2973,8 @@
                     "description": "database instance name\n"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -2934,7 +3002,8 @@
                     "type": "string"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -3104,7 +3173,8 @@
                     "type": "boolean"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -3492,7 +3562,8 @@
                     "type": "string"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -4135,10 +4206,12 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/types/nutanix:index/NdbDatabaseClusterInfoClusterIpInfoIpInfo:NdbDatabaseClusterInfoClusterIpInfoIpInfo"
-                    }
+                    },
+                    "description": "- (Optional) IP infos for custom network profile.\n"
                 },
                 "nxClusterId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Optional) cluster id.\n"
                 }
             },
             "type": "object",
@@ -4235,7 +4308,8 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/types/nutanix:index/NdbDatabaseDatabaseNodeTag:NdbDatabaseDatabaseNodeTag"
-                    }
+                    },
+                    "description": "- (Optional) tags\n"
                 }
             },
             "type": "object",
@@ -4306,7 +4380,8 @@
                     "type": "boolean"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -4411,7 +4486,8 @@
                     "type": "boolean"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -4442,7 +4518,8 @@
                     "type": "string"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -5017,7 +5094,8 @@
                     "description": "- (Required) Name of the instance.\n"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -5151,7 +5229,8 @@
                     "description": "- (Required) Name of the instance.\n"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -8184,7 +8263,8 @@
                     "type": "string"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -8258,7 +8338,8 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/types/nutanix:index/NdbDatabaseTimeMachineSchedule:NdbDatabaseTimeMachineSchedule"
-                    }
+                    },
+                    "description": "- (Optional) schedule for snapshots\n"
                 },
                 "scope": {
                     "type": "string"
@@ -8291,7 +8372,8 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/types/nutanix:index/NdbDatabaseTimeMachineTag:NdbDatabaseTimeMachineTag"
-                    }
+                    },
+                    "description": "- (Optional) tags\n"
                 },
                 "type": {
                     "type": "string"
@@ -8347,7 +8429,8 @@
                     "type": "boolean"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -8563,13 +8646,16 @@
                     "type": "boolean"
                 },
                 "hours": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description": "- (Required) hours\n"
                 },
                 "minutes": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description": "- (Required) minutes\n"
                 },
                 "seconds": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description": "- (Required) seconds\n"
                 }
             },
             "type": "object",
@@ -8616,7 +8702,8 @@
                     "type": "boolean"
                 },
                 "month": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) month for snapshot\n"
                 },
                 "monthValue": {
                     "type": "string"
@@ -8730,7 +8817,8 @@
                     "type": "string"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -8994,7 +9082,8 @@
                     "type": "string"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -9077,7 +9166,8 @@
         "nutanix:index/NdbDbserverVmProperty:NdbDbserverVmProperty": {
             "properties": {
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "name of the dbserver vm\n"
                 },
                 "value": {
                     "type": "string"
@@ -10116,7 +10206,8 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/types/nutanix:index/NdbProfileVersionVersionClusterAssociation:NdbProfileVersionVersionClusterAssociation"
-                    }
+                    },
+                    "description": "cluster associated with VLAN. this is used with Single instance for postgres database.\n* `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.\n"
                 }
             },
             "type": "object",
@@ -10410,7 +10501,8 @@
                     "type": "boolean"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -10519,7 +10611,8 @@
                     "type": "boolean"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -10550,7 +10643,8 @@
                     "type": "string"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -11102,7 +11196,8 @@
                     "description": "Name of database instance\n"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -11130,7 +11225,8 @@
                     "type": "string"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -11208,7 +11304,8 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/types/nutanix:index/NdbRegisterDatabaseTimeMachineSchedule:NdbRegisterDatabaseTimeMachineSchedule"
-                    }
+                    },
+                    "description": "- (Optional) schedule for snapshots\n"
                 },
                 "scope": {
                     "type": "string"
@@ -11515,7 +11612,8 @@
                     "type": "string"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -11548,7 +11646,8 @@
                     "type": "boolean"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -11936,7 +12035,8 @@
                     "type": "string"
                 },
                 "value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Required) value for argument\n"
                 }
             },
             "type": "object",
@@ -16844,10 +16944,12 @@
         "nutanix:index/ServiceGroupServiceListIcmpTypeCodeList:ServiceGroupServiceListIcmpTypeCodeList": {
             "properties": {
                 "code": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Optional) Code as text\n"
                 },
                 "type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- (Optional) Type as text\n"
                 }
             },
             "type": "object"
@@ -17051,6 +17153,7 @@
             "properties": {
                 "distinguishedName": {
                     "type": "string",
+                    "description": "- (Required) The Distinguished name for the user group.\n",
                     "willReplaceOnChanges": true
                 }
             },
@@ -17385,7 +17488,8 @@
                     "description": "- IP endpoints for the adapter. Currently, IPv4 addresses are supported.\n"
                 },
                 "isConnected": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- Indicates whether the serial port connection is connected or not (`true` or `false`).\n"
                 },
                 "macAddress": {
                     "type": "string",
@@ -17468,43 +17572,54 @@
         "nutanix:index/VirtualMachineNicListStatus:VirtualMachineNicListStatus": {
             "properties": {
                 "floatingIp": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "-  The Floating IP associated with the vnic. (Only in `nic_list_status`)\n"
                 },
                 "ipEndpointLists": {
                     "type": "array",
                     "items": {
                         "$ref": "#/types/nutanix:index/VirtualMachineNicListStatusIpEndpointList:VirtualMachineNicListStatusIpEndpointList"
-                    }
+                    },
+                    "description": "- IP endpoints for the adapter. Currently, IPv4 addresses are supported.\n"
                 },
                 "isConnected": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- Indicates whether the serial port connection is connected or not (`true` or `false`).\n"
                 },
                 "macAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- The MAC address for the adapter.\n"
                 },
                 "model": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- The model of this NIC. (Options : VIRTIO , E1000).\n"
                 },
                 "networkFunctionChainReference": {
                     "type": "object",
                     "additionalProperties": {
                         "type": "string"
-                    }
+                    },
+                    "description": "- The reference to a network_function_chain.\n"
                 },
                 "networkFunctionNicType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).\n"
                 },
                 "nicType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).\n"
                 },
                 "numQueues": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description": "- The number of tx/rx queue pairs for this NIC.\n"
                 },
                 "subnetName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- The name of the subnet reference to.\n"
                 },
                 "subnetUuid": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "- The reference to a subnet.\n"
                 },
                 "uuid": {
                     "type": "string",
@@ -23317,7 +23432,8 @@
                     "description": "status of clone\n"
                 },
                 "timezone": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Default is UTC\n"
                 }
             },
             "type": "object",
@@ -24947,7 +25063,8 @@
                     "description": "status of clone\n"
                 },
                 "timezone": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Default is UTC\n"
                 }
             },
             "type": "object",
@@ -33184,7 +33301,8 @@
                     }
                 },
                 "timeMachineId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Fetches all the snapshots for a given time machine\n"
                 },
                 "timezone": {
                     "type": "string"
@@ -33965,43 +34083,56 @@
         "nutanix:index/getNdbTimeMachinesTimeMachine:getNdbTimeMachinesTimeMachine": {
             "properties": {
                 "accessLevel": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "access level to time machines\n"
                 },
                 "clone": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "clone time machine or not\n"
                 },
                 "clones": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "clone info\n"
                 },
                 "clustered": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "clustered or not\n"
                 },
                 "database": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "database info\n"
                 },
                 "databaseId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "database id\n"
                 },
                 "dateCreated": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "date created\n"
                 },
                 "dateModified": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "date modified\n"
                 },
                 "description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "time machine description\n"
                 },
                 "eaStatus": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "ea status of time machine\n"
                 },
                 "id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "time machine id\n"
                 },
                 "metric": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Metric info\n"
                 },
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "time machine name\n"
                 },
                 "properties": {
                     "type": "array",
@@ -34011,49 +34142,60 @@
                     "description": "List of all the properties\n"
                 },
                 "scheduleId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "schedule id\n"
                 },
                 "schedules": {
                     "type": "array",
                     "items": {
                         "$ref": "#/types/nutanix:index/getNdbTimeMachinesTimeMachineSchedule:getNdbTimeMachinesTimeMachineSchedule"
-                    }
+                    },
+                    "description": "schedule info\n\n\nSee detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).\n"
                 },
                 "scope": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "scope\n"
                 },
                 "slaId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "sla id\n"
                 },
                 "slaUpdateInProgress": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "sla update in progress\n"
                 },
                 "slaUpdateMetadata": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "sla update metadata\n"
                 },
                 "slas": {
                     "type": "array",
                     "items": {
                         "$ref": "#/types/nutanix:index/getNdbTimeMachinesTimeMachineSla:getNdbTimeMachinesTimeMachineSla"
-                    }
+                    },
+                    "description": "sla info\n"
                 },
                 "sourceNxClusters": {
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "source clusters\n"
                 },
                 "status": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "status of time machine\n"
                 },
                 "tags": {
                     "type": "array",
                     "items": {
                         "$ref": "#/types/nutanix:index/getNdbTimeMachinesTimeMachineTag:getNdbTimeMachinesTimeMachineTag"
-                    }
+                    },
+                    "description": "tags\n"
                 },
                 "type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "type of time machine\n"
                 }
             },
             "type": "object",
@@ -34093,10 +34235,12 @@
         "nutanix:index/getNdbTimeMachinesTimeMachineProperty:getNdbTimeMachinesTimeMachineProperty": {
             "properties": {
                 "description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "time machine description\n"
                 },
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "time machine name\n"
                 },
                 "refId": {
                     "type": "string"
@@ -34137,19 +34281,23 @@
                     }
                 },
                 "dateCreated": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "date created\n"
                 },
                 "dateModified": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "date modified\n"
                 },
                 "description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "time machine description\n"
                 },
                 "globalPolicy": {
                     "type": "boolean"
                 },
                 "id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "time machine id\n"
                 },
                 "monthlySchedules": {
                     "type": "array",
@@ -34158,7 +34306,8 @@
                     }
                 },
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "time machine name\n"
                 },
                 "ownerId": {
                     "type": "string"
@@ -34411,22 +34560,27 @@
                     "type": "integer"
                 },
                 "dateCreated": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "date created\n"
                 },
                 "dateModified": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "date modified\n"
                 },
                 "description": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "time machine description\n"
                 },
                 "id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "time machine id\n"
                 },
                 "monthlyRetention": {
                     "type": "integer"
                 },
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "time machine name\n"
                 },
                 "ownerId": {
                     "type": "string"

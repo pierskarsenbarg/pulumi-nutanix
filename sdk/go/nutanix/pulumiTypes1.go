@@ -2833,7 +2833,9 @@ func (o ServiceGroupServiceListArrayOutput) Index(i pulumi.IntInput) ServiceGrou
 }
 
 type ServiceGroupServiceListIcmpTypeCodeList struct {
+	// - (Optional) Code as text
 	Code *string `pulumi:"code"`
+	// - (Optional) Type as text
 	Type *string `pulumi:"type"`
 }
 
@@ -2849,7 +2851,9 @@ type ServiceGroupServiceListIcmpTypeCodeListInput interface {
 }
 
 type ServiceGroupServiceListIcmpTypeCodeListArgs struct {
+	// - (Optional) Code as text
 	Code pulumi.StringPtrInput `pulumi:"code"`
+	// - (Optional) Type as text
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -2904,10 +2908,12 @@ func (o ServiceGroupServiceListIcmpTypeCodeListOutput) ToServiceGroupServiceList
 	return o
 }
 
+// - (Optional) Code as text
 func (o ServiceGroupServiceListIcmpTypeCodeListOutput) Code() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServiceGroupServiceListIcmpTypeCodeList) *string { return v.Code }).(pulumi.StringPtrOutput)
 }
 
+// - (Optional) Type as text
 func (o ServiceGroupServiceListIcmpTypeCodeListOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ServiceGroupServiceListIcmpTypeCodeList) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -4123,6 +4129,7 @@ func (o UserGroupsCategoryArrayOutput) Index(i pulumi.IntInput) UserGroupsCatego
 }
 
 type UserGroupsDirectoryServiceOus struct {
+	// - (Required) The Distinguished name for the user group.
 	DistinguishedName string `pulumi:"distinguishedName"`
 }
 
@@ -4138,6 +4145,7 @@ type UserGroupsDirectoryServiceOusInput interface {
 }
 
 type UserGroupsDirectoryServiceOusArgs struct {
+	// - (Required) The Distinguished name for the user group.
 	DistinguishedName pulumi.StringInput `pulumi:"distinguishedName"`
 }
 
@@ -4192,6 +4200,7 @@ func (o UserGroupsDirectoryServiceOusOutput) ToUserGroupsDirectoryServiceOusOutp
 	return o
 }
 
+// - (Required) The Distinguished name for the user group.
 func (o UserGroupsDirectoryServiceOusOutput) DistinguishedName() pulumi.StringOutput {
 	return o.ApplyT(func(v UserGroupsDirectoryServiceOus) string { return v.DistinguishedName }).(pulumi.StringOutput)
 }
@@ -5756,7 +5765,8 @@ func (o VirtualMachineGpuListArrayOutput) Index(i pulumi.IntInput) VirtualMachin
 type VirtualMachineNicList struct {
 	// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
 	IpEndpointLists []VirtualMachineNicListIpEndpointList `pulumi:"ipEndpointLists"`
-	IsConnected     *string                               `pulumi:"isConnected"`
+	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+	IsConnected *string `pulumi:"isConnected"`
 	// - The MAC address for the adapter.
 	MacAddress *string `pulumi:"macAddress"`
 	// - The model of this NIC. (Options : VIRTIO , E1000).
@@ -5791,7 +5801,8 @@ type VirtualMachineNicListInput interface {
 type VirtualMachineNicListArgs struct {
 	// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
 	IpEndpointLists VirtualMachineNicListIpEndpointListArrayInput `pulumi:"ipEndpointLists"`
-	IsConnected     pulumi.StringPtrInput                         `pulumi:"isConnected"`
+	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+	IsConnected pulumi.StringPtrInput `pulumi:"isConnected"`
 	// - The MAC address for the adapter.
 	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
 	// - The model of this NIC. (Options : VIRTIO , E1000).
@@ -5868,6 +5879,7 @@ func (o VirtualMachineNicListOutput) IpEndpointLists() VirtualMachineNicListIpEn
 	return o.ApplyT(func(v VirtualMachineNicList) []VirtualMachineNicListIpEndpointList { return v.IpEndpointLists }).(VirtualMachineNicListIpEndpointListArrayOutput)
 }
 
+// - Indicates whether the serial port connection is connected or not (`true` or `false`).
 func (o VirtualMachineNicListOutput) IsConnected() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicList) *string { return v.IsConnected }).(pulumi.StringPtrOutput)
 }
@@ -6044,17 +6056,28 @@ func (o VirtualMachineNicListIpEndpointListArrayOutput) Index(i pulumi.IntInput)
 }
 
 type VirtualMachineNicListStatus struct {
-	FloatingIp                    *string                                     `pulumi:"floatingIp"`
-	IpEndpointLists               []VirtualMachineNicListStatusIpEndpointList `pulumi:"ipEndpointLists"`
-	IsConnected                   *string                                     `pulumi:"isConnected"`
-	MacAddress                    *string                                     `pulumi:"macAddress"`
-	Model                         *string                                     `pulumi:"model"`
-	NetworkFunctionChainReference map[string]string                           `pulumi:"networkFunctionChainReference"`
-	NetworkFunctionNicType        *string                                     `pulumi:"networkFunctionNicType"`
-	NicType                       *string                                     `pulumi:"nicType"`
-	NumQueues                     *int                                        `pulumi:"numQueues"`
-	SubnetName                    *string                                     `pulumi:"subnetName"`
-	SubnetUuid                    *string                                     `pulumi:"subnetUuid"`
+	// -  The Floating IP associated with the vnic. (Only in `nicListStatus`)
+	FloatingIp *string `pulumi:"floatingIp"`
+	// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+	IpEndpointLists []VirtualMachineNicListStatusIpEndpointList `pulumi:"ipEndpointLists"`
+	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+	IsConnected *string `pulumi:"isConnected"`
+	// - The MAC address for the adapter.
+	MacAddress *string `pulumi:"macAddress"`
+	// - The model of this NIC. (Options : VIRTIO , E1000).
+	Model *string `pulumi:"model"`
+	// - The reference to a network_function_chain.
+	NetworkFunctionChainReference map[string]string `pulumi:"networkFunctionChainReference"`
+	// - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
+	NetworkFunctionNicType *string `pulumi:"networkFunctionNicType"`
+	// - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
+	NicType *string `pulumi:"nicType"`
+	// - The number of tx/rx queue pairs for this NIC.
+	NumQueues *int `pulumi:"numQueues"`
+	// - The name of the subnet reference to.
+	SubnetName *string `pulumi:"subnetName"`
+	// - The reference to a subnet.
+	SubnetUuid *string `pulumi:"subnetUuid"`
 	// - the UUID(Required).
 	Uuid *string `pulumi:"uuid"`
 }
@@ -6071,17 +6094,28 @@ type VirtualMachineNicListStatusInput interface {
 }
 
 type VirtualMachineNicListStatusArgs struct {
-	FloatingIp                    pulumi.StringPtrInput                               `pulumi:"floatingIp"`
-	IpEndpointLists               VirtualMachineNicListStatusIpEndpointListArrayInput `pulumi:"ipEndpointLists"`
-	IsConnected                   pulumi.StringPtrInput                               `pulumi:"isConnected"`
-	MacAddress                    pulumi.StringPtrInput                               `pulumi:"macAddress"`
-	Model                         pulumi.StringPtrInput                               `pulumi:"model"`
-	NetworkFunctionChainReference pulumi.StringMapInput                               `pulumi:"networkFunctionChainReference"`
-	NetworkFunctionNicType        pulumi.StringPtrInput                               `pulumi:"networkFunctionNicType"`
-	NicType                       pulumi.StringPtrInput                               `pulumi:"nicType"`
-	NumQueues                     pulumi.IntPtrInput                                  `pulumi:"numQueues"`
-	SubnetName                    pulumi.StringPtrInput                               `pulumi:"subnetName"`
-	SubnetUuid                    pulumi.StringPtrInput                               `pulumi:"subnetUuid"`
+	// -  The Floating IP associated with the vnic. (Only in `nicListStatus`)
+	FloatingIp pulumi.StringPtrInput `pulumi:"floatingIp"`
+	// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+	IpEndpointLists VirtualMachineNicListStatusIpEndpointListArrayInput `pulumi:"ipEndpointLists"`
+	// - Indicates whether the serial port connection is connected or not (`true` or `false`).
+	IsConnected pulumi.StringPtrInput `pulumi:"isConnected"`
+	// - The MAC address for the adapter.
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
+	// - The model of this NIC. (Options : VIRTIO , E1000).
+	Model pulumi.StringPtrInput `pulumi:"model"`
+	// - The reference to a network_function_chain.
+	NetworkFunctionChainReference pulumi.StringMapInput `pulumi:"networkFunctionChainReference"`
+	// - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
+	NetworkFunctionNicType pulumi.StringPtrInput `pulumi:"networkFunctionNicType"`
+	// - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
+	NicType pulumi.StringPtrInput `pulumi:"nicType"`
+	// - The number of tx/rx queue pairs for this NIC.
+	NumQueues pulumi.IntPtrInput `pulumi:"numQueues"`
+	// - The name of the subnet reference to.
+	SubnetName pulumi.StringPtrInput `pulumi:"subnetName"`
+	// - The reference to a subnet.
+	SubnetUuid pulumi.StringPtrInput `pulumi:"subnetUuid"`
 	// - the UUID(Required).
 	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
 }
@@ -6137,48 +6171,59 @@ func (o VirtualMachineNicListStatusOutput) ToVirtualMachineNicListStatusOutputWi
 	return o
 }
 
+// -  The Floating IP associated with the vnic. (Only in `nicListStatus`)
 func (o VirtualMachineNicListStatusOutput) FloatingIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.FloatingIp }).(pulumi.StringPtrOutput)
 }
 
+// - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
 func (o VirtualMachineNicListStatusOutput) IpEndpointLists() VirtualMachineNicListStatusIpEndpointListArrayOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) []VirtualMachineNicListStatusIpEndpointList {
 		return v.IpEndpointLists
 	}).(VirtualMachineNicListStatusIpEndpointListArrayOutput)
 }
 
+// - Indicates whether the serial port connection is connected or not (`true` or `false`).
 func (o VirtualMachineNicListStatusOutput) IsConnected() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.IsConnected }).(pulumi.StringPtrOutput)
 }
 
+// - The MAC address for the adapter.
 func (o VirtualMachineNicListStatusOutput) MacAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
 }
 
+// - The model of this NIC. (Options : VIRTIO , E1000).
 func (o VirtualMachineNicListStatusOutput) Model() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.Model }).(pulumi.StringPtrOutput)
 }
 
+// - The reference to a network_function_chain.
 func (o VirtualMachineNicListStatusOutput) NetworkFunctionChainReference() pulumi.StringMapOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) map[string]string { return v.NetworkFunctionChainReference }).(pulumi.StringMapOutput)
 }
 
+// - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
 func (o VirtualMachineNicListStatusOutput) NetworkFunctionNicType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.NetworkFunctionNicType }).(pulumi.StringPtrOutput)
 }
 
+// - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
 func (o VirtualMachineNicListStatusOutput) NicType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.NicType }).(pulumi.StringPtrOutput)
 }
 
+// - The number of tx/rx queue pairs for this NIC.
 func (o VirtualMachineNicListStatusOutput) NumQueues() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *int { return v.NumQueues }).(pulumi.IntPtrOutput)
 }
 
+// - The name of the subnet reference to.
 func (o VirtualMachineNicListStatusOutput) SubnetName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.SubnetName }).(pulumi.StringPtrOutput)
 }
 
+// - The reference to a subnet.
 func (o VirtualMachineNicListStatusOutput) SubnetUuid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualMachineNicListStatus) *string { return v.SubnetUuid }).(pulumi.StringPtrOutput)
 }
@@ -25824,7 +25869,8 @@ type GetNdbCloneLinkedDatabase struct {
 	ParentLinkedDatabaseId string `pulumi:"parentLinkedDatabaseId"`
 	SnapshotId             string `pulumi:"snapshotId"`
 	// status of clone
-	Status   string `pulumi:"status"`
+	Status string `pulumi:"status"`
+	// Default is UTC
 	Timezone string `pulumi:"timezone"`
 }
 
@@ -25863,7 +25909,8 @@ type GetNdbCloneLinkedDatabaseArgs struct {
 	ParentLinkedDatabaseId pulumi.StringInput `pulumi:"parentLinkedDatabaseId"`
 	SnapshotId             pulumi.StringInput `pulumi:"snapshotId"`
 	// status of clone
-	Status   pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringInput `pulumi:"status"`
+	// Default is UTC
 	Timezone pulumi.StringInput `pulumi:"timezone"`
 }
 
@@ -25981,6 +26028,7 @@ func (o GetNdbCloneLinkedDatabaseOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbCloneLinkedDatabase) string { return v.Status }).(pulumi.StringOutput)
 }
 
+// Default is UTC
 func (o GetNdbCloneLinkedDatabaseOutput) Timezone() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbCloneLinkedDatabase) string { return v.Timezone }).(pulumi.StringOutput)
 }
@@ -30740,7 +30788,8 @@ type GetNdbClonesCloneLinkedDatabase struct {
 	ParentLinkedDatabaseId string `pulumi:"parentLinkedDatabaseId"`
 	SnapshotId             string `pulumi:"snapshotId"`
 	// status of clone
-	Status   string `pulumi:"status"`
+	Status string `pulumi:"status"`
+	// Default is UTC
 	Timezone string `pulumi:"timezone"`
 }
 
@@ -30779,7 +30828,8 @@ type GetNdbClonesCloneLinkedDatabaseArgs struct {
 	ParentLinkedDatabaseId pulumi.StringInput `pulumi:"parentLinkedDatabaseId"`
 	SnapshotId             pulumi.StringInput `pulumi:"snapshotId"`
 	// status of clone
-	Status   pulumi.StringInput `pulumi:"status"`
+	Status pulumi.StringInput `pulumi:"status"`
+	// Default is UTC
 	Timezone pulumi.StringInput `pulumi:"timezone"`
 }
 
@@ -30897,6 +30947,7 @@ func (o GetNdbClonesCloneLinkedDatabaseOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbClonesCloneLinkedDatabase) string { return v.Status }).(pulumi.StringOutput)
 }
 
+// Default is UTC
 func (o GetNdbClonesCloneLinkedDatabaseOutput) Timezone() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbClonesCloneLinkedDatabase) string { return v.Timezone }).(pulumi.StringOutput)
 }
@@ -57181,10 +57232,11 @@ type GetNdbSnapshotsSnapshot struct {
 	SoftwareSnapshotId       string                            `pulumi:"softwareSnapshotId"`
 	Status                   string                            `pulumi:"status"`
 	Tags                     []GetNdbSnapshotsSnapshotTag      `pulumi:"tags"`
-	TimeMachineId            string                            `pulumi:"timeMachineId"`
-	Timezone                 string                            `pulumi:"timezone"`
-	ToTimestamp              string                            `pulumi:"toTimestamp"`
-	Type                     string                            `pulumi:"type"`
+	// Fetches all the snapshots for a given time machine
+	TimeMachineId string `pulumi:"timeMachineId"`
+	Timezone      string `pulumi:"timezone"`
+	ToTimestamp   string `pulumi:"toTimestamp"`
+	Type          string `pulumi:"type"`
 }
 
 // GetNdbSnapshotsSnapshotInput is an input type that accepts GetNdbSnapshotsSnapshotArgs and GetNdbSnapshotsSnapshotOutput values.
@@ -57235,10 +57287,11 @@ type GetNdbSnapshotsSnapshotArgs struct {
 	SoftwareSnapshotId       pulumi.StringInput                        `pulumi:"softwareSnapshotId"`
 	Status                   pulumi.StringInput                        `pulumi:"status"`
 	Tags                     GetNdbSnapshotsSnapshotTagArrayInput      `pulumi:"tags"`
-	TimeMachineId            pulumi.StringInput                        `pulumi:"timeMachineId"`
-	Timezone                 pulumi.StringInput                        `pulumi:"timezone"`
-	ToTimestamp              pulumi.StringInput                        `pulumi:"toTimestamp"`
-	Type                     pulumi.StringInput                        `pulumi:"type"`
+	// Fetches all the snapshots for a given time machine
+	TimeMachineId pulumi.StringInput `pulumi:"timeMachineId"`
+	Timezone      pulumi.StringInput `pulumi:"timezone"`
+	ToTimestamp   pulumi.StringInput `pulumi:"toTimestamp"`
+	Type          pulumi.StringInput `pulumi:"type"`
 }
 
 func (GetNdbSnapshotsSnapshotArgs) ElementType() reflect.Type {
@@ -57433,6 +57486,7 @@ func (o GetNdbSnapshotsSnapshotOutput) Tags() GetNdbSnapshotsSnapshotTagArrayOut
 	return o.ApplyT(func(v GetNdbSnapshotsSnapshot) []GetNdbSnapshotsSnapshotTag { return v.Tags }).(GetNdbSnapshotsSnapshotTagArrayOutput)
 }
 
+// Fetches all the snapshots for a given time machine
 func (o GetNdbSnapshotsSnapshotOutput) TimeMachineId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbSnapshotsSnapshot) string { return v.TimeMachineId }).(pulumi.StringOutput)
 }
@@ -59875,32 +59929,58 @@ func (o GetNdbTimeMachineTagArrayOutput) Index(i pulumi.IntInput) GetNdbTimeMach
 }
 
 type GetNdbTimeMachinesTimeMachine struct {
-	AccessLevel  string `pulumi:"accessLevel"`
-	Clone        bool   `pulumi:"clone"`
-	Clones       string `pulumi:"clones"`
-	Clustered    bool   `pulumi:"clustered"`
-	Database     string `pulumi:"database"`
-	DatabaseId   string `pulumi:"databaseId"`
-	DateCreated  string `pulumi:"dateCreated"`
+	// access level to time machines
+	AccessLevel string `pulumi:"accessLevel"`
+	// clone time machine or not
+	Clone bool `pulumi:"clone"`
+	// clone info
+	Clones string `pulumi:"clones"`
+	// clustered or not
+	Clustered bool `pulumi:"clustered"`
+	// database info
+	Database string `pulumi:"database"`
+	// database id
+	DatabaseId string `pulumi:"databaseId"`
+	// date created
+	DateCreated string `pulumi:"dateCreated"`
+	// date modified
 	DateModified string `pulumi:"dateModified"`
-	Description  string `pulumi:"description"`
-	EaStatus     string `pulumi:"eaStatus"`
-	Id           string `pulumi:"id"`
-	Metric       string `pulumi:"metric"`
-	Name         string `pulumi:"name"`
+	// time machine description
+	Description string `pulumi:"description"`
+	// ea status of time machine
+	EaStatus string `pulumi:"eaStatus"`
+	// time machine id
+	Id string `pulumi:"id"`
+	// Metric info
+	Metric string `pulumi:"metric"`
+	// time machine name
+	Name string `pulumi:"name"`
 	// List of all the properties
-	Properties          []GetNdbTimeMachinesTimeMachineProperty `pulumi:"properties"`
-	ScheduleId          string                                  `pulumi:"scheduleId"`
-	Schedules           []GetNdbTimeMachinesTimeMachineSchedule `pulumi:"schedules"`
-	Scope               string                                  `pulumi:"scope"`
-	SlaId               string                                  `pulumi:"slaId"`
-	SlaUpdateInProgress bool                                    `pulumi:"slaUpdateInProgress"`
-	SlaUpdateMetadata   string                                  `pulumi:"slaUpdateMetadata"`
-	Slas                []GetNdbTimeMachinesTimeMachineSla      `pulumi:"slas"`
-	SourceNxClusters    []string                                `pulumi:"sourceNxClusters"`
-	Status              string                                  `pulumi:"status"`
-	Tags                []GetNdbTimeMachinesTimeMachineTag      `pulumi:"tags"`
-	Type                string                                  `pulumi:"type"`
+	Properties []GetNdbTimeMachinesTimeMachineProperty `pulumi:"properties"`
+	// schedule id
+	ScheduleId string `pulumi:"scheduleId"`
+	// schedule info
+	//
+	// See detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).
+	Schedules []GetNdbTimeMachinesTimeMachineSchedule `pulumi:"schedules"`
+	// scope
+	Scope string `pulumi:"scope"`
+	// sla id
+	SlaId string `pulumi:"slaId"`
+	// sla update in progress
+	SlaUpdateInProgress bool `pulumi:"slaUpdateInProgress"`
+	// sla update metadata
+	SlaUpdateMetadata string `pulumi:"slaUpdateMetadata"`
+	// sla info
+	Slas []GetNdbTimeMachinesTimeMachineSla `pulumi:"slas"`
+	// source clusters
+	SourceNxClusters []string `pulumi:"sourceNxClusters"`
+	// status of time machine
+	Status string `pulumi:"status"`
+	// tags
+	Tags []GetNdbTimeMachinesTimeMachineTag `pulumi:"tags"`
+	// type of time machine
+	Type string `pulumi:"type"`
 }
 
 // GetNdbTimeMachinesTimeMachineInput is an input type that accepts GetNdbTimeMachinesTimeMachineArgs and GetNdbTimeMachinesTimeMachineOutput values.
@@ -59915,32 +59995,58 @@ type GetNdbTimeMachinesTimeMachineInput interface {
 }
 
 type GetNdbTimeMachinesTimeMachineArgs struct {
-	AccessLevel  pulumi.StringInput `pulumi:"accessLevel"`
-	Clone        pulumi.BoolInput   `pulumi:"clone"`
-	Clones       pulumi.StringInput `pulumi:"clones"`
-	Clustered    pulumi.BoolInput   `pulumi:"clustered"`
-	Database     pulumi.StringInput `pulumi:"database"`
-	DatabaseId   pulumi.StringInput `pulumi:"databaseId"`
-	DateCreated  pulumi.StringInput `pulumi:"dateCreated"`
+	// access level to time machines
+	AccessLevel pulumi.StringInput `pulumi:"accessLevel"`
+	// clone time machine or not
+	Clone pulumi.BoolInput `pulumi:"clone"`
+	// clone info
+	Clones pulumi.StringInput `pulumi:"clones"`
+	// clustered or not
+	Clustered pulumi.BoolInput `pulumi:"clustered"`
+	// database info
+	Database pulumi.StringInput `pulumi:"database"`
+	// database id
+	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
+	// date created
+	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
+	// date modified
 	DateModified pulumi.StringInput `pulumi:"dateModified"`
-	Description  pulumi.StringInput `pulumi:"description"`
-	EaStatus     pulumi.StringInput `pulumi:"eaStatus"`
-	Id           pulumi.StringInput `pulumi:"id"`
-	Metric       pulumi.StringInput `pulumi:"metric"`
-	Name         pulumi.StringInput `pulumi:"name"`
+	// time machine description
+	Description pulumi.StringInput `pulumi:"description"`
+	// ea status of time machine
+	EaStatus pulumi.StringInput `pulumi:"eaStatus"`
+	// time machine id
+	Id pulumi.StringInput `pulumi:"id"`
+	// Metric info
+	Metric pulumi.StringInput `pulumi:"metric"`
+	// time machine name
+	Name pulumi.StringInput `pulumi:"name"`
 	// List of all the properties
-	Properties          GetNdbTimeMachinesTimeMachinePropertyArrayInput `pulumi:"properties"`
-	ScheduleId          pulumi.StringInput                              `pulumi:"scheduleId"`
-	Schedules           GetNdbTimeMachinesTimeMachineScheduleArrayInput `pulumi:"schedules"`
-	Scope               pulumi.StringInput                              `pulumi:"scope"`
-	SlaId               pulumi.StringInput                              `pulumi:"slaId"`
-	SlaUpdateInProgress pulumi.BoolInput                                `pulumi:"slaUpdateInProgress"`
-	SlaUpdateMetadata   pulumi.StringInput                              `pulumi:"slaUpdateMetadata"`
-	Slas                GetNdbTimeMachinesTimeMachineSlaArrayInput      `pulumi:"slas"`
-	SourceNxClusters    pulumi.StringArrayInput                         `pulumi:"sourceNxClusters"`
-	Status              pulumi.StringInput                              `pulumi:"status"`
-	Tags                GetNdbTimeMachinesTimeMachineTagArrayInput      `pulumi:"tags"`
-	Type                pulumi.StringInput                              `pulumi:"type"`
+	Properties GetNdbTimeMachinesTimeMachinePropertyArrayInput `pulumi:"properties"`
+	// schedule id
+	ScheduleId pulumi.StringInput `pulumi:"scheduleId"`
+	// schedule info
+	//
+	// See detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).
+	Schedules GetNdbTimeMachinesTimeMachineScheduleArrayInput `pulumi:"schedules"`
+	// scope
+	Scope pulumi.StringInput `pulumi:"scope"`
+	// sla id
+	SlaId pulumi.StringInput `pulumi:"slaId"`
+	// sla update in progress
+	SlaUpdateInProgress pulumi.BoolInput `pulumi:"slaUpdateInProgress"`
+	// sla update metadata
+	SlaUpdateMetadata pulumi.StringInput `pulumi:"slaUpdateMetadata"`
+	// sla info
+	Slas GetNdbTimeMachinesTimeMachineSlaArrayInput `pulumi:"slas"`
+	// source clusters
+	SourceNxClusters pulumi.StringArrayInput `pulumi:"sourceNxClusters"`
+	// status of time machine
+	Status pulumi.StringInput `pulumi:"status"`
+	// tags
+	Tags GetNdbTimeMachinesTimeMachineTagArrayInput `pulumi:"tags"`
+	// type of time machine
+	Type pulumi.StringInput `pulumi:"type"`
 }
 
 func (GetNdbTimeMachinesTimeMachineArgs) ElementType() reflect.Type {
@@ -59994,54 +60100,67 @@ func (o GetNdbTimeMachinesTimeMachineOutput) ToGetNdbTimeMachinesTimeMachineOutp
 	return o
 }
 
+// access level to time machines
 func (o GetNdbTimeMachinesTimeMachineOutput) AccessLevel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.AccessLevel }).(pulumi.StringOutput)
 }
 
+// clone time machine or not
 func (o GetNdbTimeMachinesTimeMachineOutput) Clone() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) bool { return v.Clone }).(pulumi.BoolOutput)
 }
 
+// clone info
 func (o GetNdbTimeMachinesTimeMachineOutput) Clones() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Clones }).(pulumi.StringOutput)
 }
 
+// clustered or not
 func (o GetNdbTimeMachinesTimeMachineOutput) Clustered() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) bool { return v.Clustered }).(pulumi.BoolOutput)
 }
 
+// database info
 func (o GetNdbTimeMachinesTimeMachineOutput) Database() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Database }).(pulumi.StringOutput)
 }
 
+// database id
 func (o GetNdbTimeMachinesTimeMachineOutput) DatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.DatabaseId }).(pulumi.StringOutput)
 }
 
+// date created
 func (o GetNdbTimeMachinesTimeMachineOutput) DateCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.DateCreated }).(pulumi.StringOutput)
 }
 
+// date modified
 func (o GetNdbTimeMachinesTimeMachineOutput) DateModified() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.DateModified }).(pulumi.StringOutput)
 }
 
+// time machine description
 func (o GetNdbTimeMachinesTimeMachineOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// ea status of time machine
 func (o GetNdbTimeMachinesTimeMachineOutput) EaStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.EaStatus }).(pulumi.StringOutput)
 }
 
+// time machine id
 func (o GetNdbTimeMachinesTimeMachineOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Metric info
 func (o GetNdbTimeMachinesTimeMachineOutput) Metric() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Metric }).(pulumi.StringOutput)
 }
 
+// time machine name
 func (o GetNdbTimeMachinesTimeMachineOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -60051,46 +60170,59 @@ func (o GetNdbTimeMachinesTimeMachineOutput) Properties() GetNdbTimeMachinesTime
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) []GetNdbTimeMachinesTimeMachineProperty { return v.Properties }).(GetNdbTimeMachinesTimeMachinePropertyArrayOutput)
 }
 
+// schedule id
 func (o GetNdbTimeMachinesTimeMachineOutput) ScheduleId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.ScheduleId }).(pulumi.StringOutput)
 }
 
+// schedule info
+//
+// See detailed information in [NDB Time Machines](https://www.nutanix.dev/api_references/ndb/#/e68ba687086ed-get-list-of-all-time-machines).
 func (o GetNdbTimeMachinesTimeMachineOutput) Schedules() GetNdbTimeMachinesTimeMachineScheduleArrayOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) []GetNdbTimeMachinesTimeMachineSchedule { return v.Schedules }).(GetNdbTimeMachinesTimeMachineScheduleArrayOutput)
 }
 
+// scope
 func (o GetNdbTimeMachinesTimeMachineOutput) Scope() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Scope }).(pulumi.StringOutput)
 }
 
+// sla id
 func (o GetNdbTimeMachinesTimeMachineOutput) SlaId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.SlaId }).(pulumi.StringOutput)
 }
 
+// sla update in progress
 func (o GetNdbTimeMachinesTimeMachineOutput) SlaUpdateInProgress() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) bool { return v.SlaUpdateInProgress }).(pulumi.BoolOutput)
 }
 
+// sla update metadata
 func (o GetNdbTimeMachinesTimeMachineOutput) SlaUpdateMetadata() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.SlaUpdateMetadata }).(pulumi.StringOutput)
 }
 
+// sla info
 func (o GetNdbTimeMachinesTimeMachineOutput) Slas() GetNdbTimeMachinesTimeMachineSlaArrayOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) []GetNdbTimeMachinesTimeMachineSla { return v.Slas }).(GetNdbTimeMachinesTimeMachineSlaArrayOutput)
 }
 
+// source clusters
 func (o GetNdbTimeMachinesTimeMachineOutput) SourceNxClusters() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) []string { return v.SourceNxClusters }).(pulumi.StringArrayOutput)
 }
 
+// status of time machine
 func (o GetNdbTimeMachinesTimeMachineOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Status }).(pulumi.StringOutput)
 }
 
+// tags
 func (o GetNdbTimeMachinesTimeMachineOutput) Tags() GetNdbTimeMachinesTimeMachineTagArrayOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) []GetNdbTimeMachinesTimeMachineTag { return v.Tags }).(GetNdbTimeMachinesTimeMachineTagArrayOutput)
 }
 
+// type of time machine
 func (o GetNdbTimeMachinesTimeMachineOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachine) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -60116,11 +60248,13 @@ func (o GetNdbTimeMachinesTimeMachineArrayOutput) Index(i pulumi.IntInput) GetNd
 }
 
 type GetNdbTimeMachinesTimeMachineProperty struct {
+	// time machine description
 	Description string `pulumi:"description"`
-	Name        string `pulumi:"name"`
-	RefId       string `pulumi:"refId"`
-	Secure      bool   `pulumi:"secure"`
-	Value       string `pulumi:"value"`
+	// time machine name
+	Name   string `pulumi:"name"`
+	RefId  string `pulumi:"refId"`
+	Secure bool   `pulumi:"secure"`
+	Value  string `pulumi:"value"`
 }
 
 // GetNdbTimeMachinesTimeMachinePropertyInput is an input type that accepts GetNdbTimeMachinesTimeMachinePropertyArgs and GetNdbTimeMachinesTimeMachinePropertyOutput values.
@@ -60135,11 +60269,13 @@ type GetNdbTimeMachinesTimeMachinePropertyInput interface {
 }
 
 type GetNdbTimeMachinesTimeMachinePropertyArgs struct {
+	// time machine description
 	Description pulumi.StringInput `pulumi:"description"`
-	Name        pulumi.StringInput `pulumi:"name"`
-	RefId       pulumi.StringInput `pulumi:"refId"`
-	Secure      pulumi.BoolInput   `pulumi:"secure"`
-	Value       pulumi.StringInput `pulumi:"value"`
+	// time machine name
+	Name   pulumi.StringInput `pulumi:"name"`
+	RefId  pulumi.StringInput `pulumi:"refId"`
+	Secure pulumi.BoolInput   `pulumi:"secure"`
+	Value  pulumi.StringInput `pulumi:"value"`
 }
 
 func (GetNdbTimeMachinesTimeMachinePropertyArgs) ElementType() reflect.Type {
@@ -60193,10 +60329,12 @@ func (o GetNdbTimeMachinesTimeMachinePropertyOutput) ToGetNdbTimeMachinesTimeMac
 	return o
 }
 
+// time machine description
 func (o GetNdbTimeMachinesTimeMachinePropertyOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineProperty) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// time machine name
 func (o GetNdbTimeMachinesTimeMachinePropertyOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineProperty) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -60236,23 +60374,28 @@ func (o GetNdbTimeMachinesTimeMachinePropertyArrayOutput) Index(i pulumi.IntInpu
 type GetNdbTimeMachinesTimeMachineSchedule struct {
 	ContinuousSchedules []GetNdbTimeMachinesTimeMachineScheduleContinuousSchedule `pulumi:"continuousSchedules"`
 	DailySchedules      []GetNdbTimeMachinesTimeMachineScheduleDailySchedule      `pulumi:"dailySchedules"`
-	DateCreated         string                                                    `pulumi:"dateCreated"`
-	DateModified        string                                                    `pulumi:"dateModified"`
-	Description         string                                                    `pulumi:"description"`
-	GlobalPolicy        bool                                                      `pulumi:"globalPolicy"`
-	Id                  string                                                    `pulumi:"id"`
-	MonthlySchedules    []GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule    `pulumi:"monthlySchedules"`
-	Name                string                                                    `pulumi:"name"`
-	OwnerId             string                                                    `pulumi:"ownerId"`
-	QuartelySchedules   []GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule   `pulumi:"quartelySchedules"`
-	ReferenceCount      int                                                       `pulumi:"referenceCount"`
-	SnapshotTimeOfDays  []GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay  `pulumi:"snapshotTimeOfDays"`
-	StartTime           string                                                    `pulumi:"startTime"`
-	SystemPolicy        bool                                                      `pulumi:"systemPolicy"`
-	TimeZone            string                                                    `pulumi:"timeZone"`
-	UniqueName          string                                                    `pulumi:"uniqueName"`
-	WeeklySchedules     []GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule     `pulumi:"weeklySchedules"`
-	YearlySchedules     []GetNdbTimeMachinesTimeMachineScheduleYearlySchedule     `pulumi:"yearlySchedules"`
+	// date created
+	DateCreated string `pulumi:"dateCreated"`
+	// date modified
+	DateModified string `pulumi:"dateModified"`
+	// time machine description
+	Description  string `pulumi:"description"`
+	GlobalPolicy bool   `pulumi:"globalPolicy"`
+	// time machine id
+	Id               string                                                 `pulumi:"id"`
+	MonthlySchedules []GetNdbTimeMachinesTimeMachineScheduleMonthlySchedule `pulumi:"monthlySchedules"`
+	// time machine name
+	Name               string                                                   `pulumi:"name"`
+	OwnerId            string                                                   `pulumi:"ownerId"`
+	QuartelySchedules  []GetNdbTimeMachinesTimeMachineScheduleQuartelySchedule  `pulumi:"quartelySchedules"`
+	ReferenceCount     int                                                      `pulumi:"referenceCount"`
+	SnapshotTimeOfDays []GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDay `pulumi:"snapshotTimeOfDays"`
+	StartTime          string                                                   `pulumi:"startTime"`
+	SystemPolicy       bool                                                     `pulumi:"systemPolicy"`
+	TimeZone           string                                                   `pulumi:"timeZone"`
+	UniqueName         string                                                   `pulumi:"uniqueName"`
+	WeeklySchedules    []GetNdbTimeMachinesTimeMachineScheduleWeeklySchedule    `pulumi:"weeklySchedules"`
+	YearlySchedules    []GetNdbTimeMachinesTimeMachineScheduleYearlySchedule    `pulumi:"yearlySchedules"`
 }
 
 // GetNdbTimeMachinesTimeMachineScheduleInput is an input type that accepts GetNdbTimeMachinesTimeMachineScheduleArgs and GetNdbTimeMachinesTimeMachineScheduleOutput values.
@@ -60269,23 +60412,28 @@ type GetNdbTimeMachinesTimeMachineScheduleInput interface {
 type GetNdbTimeMachinesTimeMachineScheduleArgs struct {
 	ContinuousSchedules GetNdbTimeMachinesTimeMachineScheduleContinuousScheduleArrayInput `pulumi:"continuousSchedules"`
 	DailySchedules      GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayInput      `pulumi:"dailySchedules"`
-	DateCreated         pulumi.StringInput                                                `pulumi:"dateCreated"`
-	DateModified        pulumi.StringInput                                                `pulumi:"dateModified"`
-	Description         pulumi.StringInput                                                `pulumi:"description"`
-	GlobalPolicy        pulumi.BoolInput                                                  `pulumi:"globalPolicy"`
-	Id                  pulumi.StringInput                                                `pulumi:"id"`
-	MonthlySchedules    GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayInput    `pulumi:"monthlySchedules"`
-	Name                pulumi.StringInput                                                `pulumi:"name"`
-	OwnerId             pulumi.StringInput                                                `pulumi:"ownerId"`
-	QuartelySchedules   GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayInput   `pulumi:"quartelySchedules"`
-	ReferenceCount      pulumi.IntInput                                                   `pulumi:"referenceCount"`
-	SnapshotTimeOfDays  GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayInput  `pulumi:"snapshotTimeOfDays"`
-	StartTime           pulumi.StringInput                                                `pulumi:"startTime"`
-	SystemPolicy        pulumi.BoolInput                                                  `pulumi:"systemPolicy"`
-	TimeZone            pulumi.StringInput                                                `pulumi:"timeZone"`
-	UniqueName          pulumi.StringInput                                                `pulumi:"uniqueName"`
-	WeeklySchedules     GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayInput     `pulumi:"weeklySchedules"`
-	YearlySchedules     GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayInput     `pulumi:"yearlySchedules"`
+	// date created
+	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
+	// date modified
+	DateModified pulumi.StringInput `pulumi:"dateModified"`
+	// time machine description
+	Description  pulumi.StringInput `pulumi:"description"`
+	GlobalPolicy pulumi.BoolInput   `pulumi:"globalPolicy"`
+	// time machine id
+	Id               pulumi.StringInput                                             `pulumi:"id"`
+	MonthlySchedules GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayInput `pulumi:"monthlySchedules"`
+	// time machine name
+	Name               pulumi.StringInput                                               `pulumi:"name"`
+	OwnerId            pulumi.StringInput                                               `pulumi:"ownerId"`
+	QuartelySchedules  GetNdbTimeMachinesTimeMachineScheduleQuartelyScheduleArrayInput  `pulumi:"quartelySchedules"`
+	ReferenceCount     pulumi.IntInput                                                  `pulumi:"referenceCount"`
+	SnapshotTimeOfDays GetNdbTimeMachinesTimeMachineScheduleSnapshotTimeOfDayArrayInput `pulumi:"snapshotTimeOfDays"`
+	StartTime          pulumi.StringInput                                               `pulumi:"startTime"`
+	SystemPolicy       pulumi.BoolInput                                                 `pulumi:"systemPolicy"`
+	TimeZone           pulumi.StringInput                                               `pulumi:"timeZone"`
+	UniqueName         pulumi.StringInput                                               `pulumi:"uniqueName"`
+	WeeklySchedules    GetNdbTimeMachinesTimeMachineScheduleWeeklyScheduleArrayInput    `pulumi:"weeklySchedules"`
+	YearlySchedules    GetNdbTimeMachinesTimeMachineScheduleYearlyScheduleArrayInput    `pulumi:"yearlySchedules"`
 }
 
 func (GetNdbTimeMachinesTimeMachineScheduleArgs) ElementType() reflect.Type {
@@ -60351,14 +60499,17 @@ func (o GetNdbTimeMachinesTimeMachineScheduleOutput) DailySchedules() GetNdbTime
 	}).(GetNdbTimeMachinesTimeMachineScheduleDailyScheduleArrayOutput)
 }
 
+// date created
 func (o GetNdbTimeMachinesTimeMachineScheduleOutput) DateCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.DateCreated }).(pulumi.StringOutput)
 }
 
+// date modified
 func (o GetNdbTimeMachinesTimeMachineScheduleOutput) DateModified() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.DateModified }).(pulumi.StringOutput)
 }
 
+// time machine description
 func (o GetNdbTimeMachinesTimeMachineScheduleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -60367,6 +60518,7 @@ func (o GetNdbTimeMachinesTimeMachineScheduleOutput) GlobalPolicy() pulumi.BoolO
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) bool { return v.GlobalPolicy }).(pulumi.BoolOutput)
 }
 
+// time machine id
 func (o GetNdbTimeMachinesTimeMachineScheduleOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -60377,6 +60529,7 @@ func (o GetNdbTimeMachinesTimeMachineScheduleOutput) MonthlySchedules() GetNdbTi
 	}).(GetNdbTimeMachinesTimeMachineScheduleMonthlyScheduleArrayOutput)
 }
 
+// time machine name
 func (o GetNdbTimeMachinesTimeMachineScheduleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSchedule) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -61195,20 +61348,25 @@ type GetNdbTimeMachinesTimeMachineSla struct {
 	ContinuousRetention    int    `pulumi:"continuousRetention"`
 	CurrentActiveFrequency string `pulumi:"currentActiveFrequency"`
 	DailyRetention         int    `pulumi:"dailyRetention"`
-	DateCreated            string `pulumi:"dateCreated"`
-	DateModified           string `pulumi:"dateModified"`
-	Description            string `pulumi:"description"`
-	Id                     string `pulumi:"id"`
-	MonthlyRetention       int    `pulumi:"monthlyRetention"`
-	Name                   string `pulumi:"name"`
-	OwnerId                string `pulumi:"ownerId"`
-	PitrEnabled            bool   `pulumi:"pitrEnabled"`
-	QuarterlyRetention     int    `pulumi:"quarterlyRetention"`
-	ReferenceCount         int    `pulumi:"referenceCount"`
-	SystemSla              bool   `pulumi:"systemSla"`
-	UniqueName             string `pulumi:"uniqueName"`
-	WeeklyRetention        int    `pulumi:"weeklyRetention"`
-	YearlyRetention        int    `pulumi:"yearlyRetention"`
+	// date created
+	DateCreated string `pulumi:"dateCreated"`
+	// date modified
+	DateModified string `pulumi:"dateModified"`
+	// time machine description
+	Description string `pulumi:"description"`
+	// time machine id
+	Id               string `pulumi:"id"`
+	MonthlyRetention int    `pulumi:"monthlyRetention"`
+	// time machine name
+	Name               string `pulumi:"name"`
+	OwnerId            string `pulumi:"ownerId"`
+	PitrEnabled        bool   `pulumi:"pitrEnabled"`
+	QuarterlyRetention int    `pulumi:"quarterlyRetention"`
+	ReferenceCount     int    `pulumi:"referenceCount"`
+	SystemSla          bool   `pulumi:"systemSla"`
+	UniqueName         string `pulumi:"uniqueName"`
+	WeeklyRetention    int    `pulumi:"weeklyRetention"`
+	YearlyRetention    int    `pulumi:"yearlyRetention"`
 }
 
 // GetNdbTimeMachinesTimeMachineSlaInput is an input type that accepts GetNdbTimeMachinesTimeMachineSlaArgs and GetNdbTimeMachinesTimeMachineSlaOutput values.
@@ -61226,20 +61384,25 @@ type GetNdbTimeMachinesTimeMachineSlaArgs struct {
 	ContinuousRetention    pulumi.IntInput    `pulumi:"continuousRetention"`
 	CurrentActiveFrequency pulumi.StringInput `pulumi:"currentActiveFrequency"`
 	DailyRetention         pulumi.IntInput    `pulumi:"dailyRetention"`
-	DateCreated            pulumi.StringInput `pulumi:"dateCreated"`
-	DateModified           pulumi.StringInput `pulumi:"dateModified"`
-	Description            pulumi.StringInput `pulumi:"description"`
-	Id                     pulumi.StringInput `pulumi:"id"`
-	MonthlyRetention       pulumi.IntInput    `pulumi:"monthlyRetention"`
-	Name                   pulumi.StringInput `pulumi:"name"`
-	OwnerId                pulumi.StringInput `pulumi:"ownerId"`
-	PitrEnabled            pulumi.BoolInput   `pulumi:"pitrEnabled"`
-	QuarterlyRetention     pulumi.IntInput    `pulumi:"quarterlyRetention"`
-	ReferenceCount         pulumi.IntInput    `pulumi:"referenceCount"`
-	SystemSla              pulumi.BoolInput   `pulumi:"systemSla"`
-	UniqueName             pulumi.StringInput `pulumi:"uniqueName"`
-	WeeklyRetention        pulumi.IntInput    `pulumi:"weeklyRetention"`
-	YearlyRetention        pulumi.IntInput    `pulumi:"yearlyRetention"`
+	// date created
+	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
+	// date modified
+	DateModified pulumi.StringInput `pulumi:"dateModified"`
+	// time machine description
+	Description pulumi.StringInput `pulumi:"description"`
+	// time machine id
+	Id               pulumi.StringInput `pulumi:"id"`
+	MonthlyRetention pulumi.IntInput    `pulumi:"monthlyRetention"`
+	// time machine name
+	Name               pulumi.StringInput `pulumi:"name"`
+	OwnerId            pulumi.StringInput `pulumi:"ownerId"`
+	PitrEnabled        pulumi.BoolInput   `pulumi:"pitrEnabled"`
+	QuarterlyRetention pulumi.IntInput    `pulumi:"quarterlyRetention"`
+	ReferenceCount     pulumi.IntInput    `pulumi:"referenceCount"`
+	SystemSla          pulumi.BoolInput   `pulumi:"systemSla"`
+	UniqueName         pulumi.StringInput `pulumi:"uniqueName"`
+	WeeklyRetention    pulumi.IntInput    `pulumi:"weeklyRetention"`
+	YearlyRetention    pulumi.IntInput    `pulumi:"yearlyRetention"`
 }
 
 func (GetNdbTimeMachinesTimeMachineSlaArgs) ElementType() reflect.Type {
@@ -61305,18 +61468,22 @@ func (o GetNdbTimeMachinesTimeMachineSlaOutput) DailyRetention() pulumi.IntOutpu
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) int { return v.DailyRetention }).(pulumi.IntOutput)
 }
 
+// date created
 func (o GetNdbTimeMachinesTimeMachineSlaOutput) DateCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.DateCreated }).(pulumi.StringOutput)
 }
 
+// date modified
 func (o GetNdbTimeMachinesTimeMachineSlaOutput) DateModified() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.DateModified }).(pulumi.StringOutput)
 }
 
+// time machine description
 func (o GetNdbTimeMachinesTimeMachineSlaOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// time machine id
 func (o GetNdbTimeMachinesTimeMachineSlaOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -61325,6 +61492,7 @@ func (o GetNdbTimeMachinesTimeMachineSlaOutput) MonthlyRetention() pulumi.IntOut
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) int { return v.MonthlyRetention }).(pulumi.IntOutput)
 }
 
+// time machine name
 func (o GetNdbTimeMachinesTimeMachineSlaOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNdbTimeMachinesTimeMachineSla) string { return v.Name }).(pulumi.StringOutput)
 }

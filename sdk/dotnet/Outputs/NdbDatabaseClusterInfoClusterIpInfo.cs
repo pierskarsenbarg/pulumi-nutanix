@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NdbDatabaseClusterInfoClusterIpInfo
     {
+        /// <summary>
+        /// - (Optional) IP infos for custom network profile.
+        /// </summary>
         public readonly ImmutableArray<Outputs.NdbDatabaseClusterInfoClusterIpInfoIpInfo> IpInfos;
+        /// <summary>
+        /// - (Optional) cluster id.
+        /// </summary>
         public readonly string NxClusterId;
 
         [OutputConstructor]
