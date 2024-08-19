@@ -189,7 +189,7 @@ class AwaitableGetProtectionRuleResult(GetProtectionRuleResult):
             state=self.state)
 
 
-def get_protection_rule(categories: Optional[Sequence[pulumi.InputType['GetProtectionRuleCategoryArgs']]] = None,
+def get_protection_rule(categories: Optional[Sequence[Union['GetProtectionRuleCategoryArgs', 'GetProtectionRuleCategoryArgsDict']]] = None,
                         protection_rule_id: Optional[str] = None,
                         protection_rule_name: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProtectionRuleResult:
@@ -204,24 +204,24 @@ def get_protection_rule(categories: Optional[Sequence[pulumi.InputType['GetProte
 
     protection_rule_test = nutanix.ProtectionRule("protectionRuleTest",
         description="test",
-        ordered_availability_zone_lists=[nutanix.ProtectionRuleOrderedAvailabilityZoneListArgs(
-            availability_zone_url="ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
-        )],
-        availability_zone_connectivity_lists=[nutanix.ProtectionRuleAvailabilityZoneConnectivityListArgs(
-            snapshot_schedule_lists=[nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs(
-                recovery_point_objective_secs=3600,
-                snapshot_type="CRASH_CONSISTENT",
-                local_snapshot_retention_policy=nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs(
-                    num_snapshots=1,
-                ),
-            )],
-        )],
-        category_filter=nutanix.ProtectionRuleCategoryFilterArgs(
-            params=[nutanix.ProtectionRuleCategoryFilterParamArgs(
-                name="Environment",
-                values=["Dev"],
-            )],
-        ))
+        ordered_availability_zone_lists=[{
+            "availability_zone_url": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        }],
+        availability_zone_connectivity_lists=[{
+            "snapshot_schedule_lists": [{
+                "recovery_point_objective_secs": 3600,
+                "snapshot_type": "CRASH_CONSISTENT",
+                "local_snapshot_retention_policy": {
+                    "num_snapshots": 1,
+                },
+            }],
+        }],
+        category_filter={
+            "params": [{
+                "name": "Environment",
+                "values": ["Dev"],
+            }],
+        })
     test = nutanix.get_protection_rule_output(protection_rule_id=protection_rule_test.id)
     ```
 
@@ -254,7 +254,7 @@ def get_protection_rule(categories: Optional[Sequence[pulumi.InputType['GetProte
 
 
 @_utilities.lift_output_func(get_protection_rule)
-def get_protection_rule_output(categories: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetProtectionRuleCategoryArgs']]]]] = None,
+def get_protection_rule_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectionRuleCategoryArgs', 'GetProtectionRuleCategoryArgsDict']]]]] = None,
                                protection_rule_id: Optional[pulumi.Input[Optional[str]]] = None,
                                protection_rule_name: Optional[pulumi.Input[Optional[str]]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectionRuleResult]:
@@ -269,24 +269,24 @@ def get_protection_rule_output(categories: Optional[pulumi.Input[Optional[Sequen
 
     protection_rule_test = nutanix.ProtectionRule("protectionRuleTest",
         description="test",
-        ordered_availability_zone_lists=[nutanix.ProtectionRuleOrderedAvailabilityZoneListArgs(
-            availability_zone_url="ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
-        )],
-        availability_zone_connectivity_lists=[nutanix.ProtectionRuleAvailabilityZoneConnectivityListArgs(
-            snapshot_schedule_lists=[nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs(
-                recovery_point_objective_secs=3600,
-                snapshot_type="CRASH_CONSISTENT",
-                local_snapshot_retention_policy=nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs(
-                    num_snapshots=1,
-                ),
-            )],
-        )],
-        category_filter=nutanix.ProtectionRuleCategoryFilterArgs(
-            params=[nutanix.ProtectionRuleCategoryFilterParamArgs(
-                name="Environment",
-                values=["Dev"],
-            )],
-        ))
+        ordered_availability_zone_lists=[{
+            "availability_zone_url": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        }],
+        availability_zone_connectivity_lists=[{
+            "snapshot_schedule_lists": [{
+                "recovery_point_objective_secs": 3600,
+                "snapshot_type": "CRASH_CONSISTENT",
+                "local_snapshot_retention_policy": {
+                    "num_snapshots": 1,
+                },
+            }],
+        }],
+        category_filter={
+            "params": [{
+                "name": "Environment",
+                "values": ["Dev"],
+            }],
+        })
     test = nutanix.get_protection_rule_output(protection_rule_id=protection_rule_test.id)
     ```
 

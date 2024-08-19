@@ -241,8 +241,8 @@ class AwaitableGetFoundationCentralClusterDetailsResult(GetFoundationCentralClus
 def get_foundation_central_cluster_details(cluster_external_ip: Optional[str] = None,
                                            cluster_name: Optional[str] = None,
                                            cluster_size: Optional[int] = None,
-                                           cluster_status: Optional[pulumi.InputType['GetFoundationCentralClusterDetailsClusterStatusArgs']] = None,
-                                           common_network_settings: Optional[pulumi.InputType['GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs']] = None,
+                                           cluster_status: Optional[Union['GetFoundationCentralClusterDetailsClusterStatusArgs', 'GetFoundationCentralClusterDetailsClusterStatusArgsDict']] = None,
+                                           common_network_settings: Optional[Union['GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs', 'GetFoundationCentralClusterDetailsCommonNetworkSettingsArgsDict']] = None,
                                            imaged_cluster_uuid: Optional[str] = None,
                                            redundancy_factor: Optional[int] = None,
                                            storage_node_count: Optional[int] = None,
@@ -263,8 +263,8 @@ def get_foundation_central_cluster_details(cluster_external_ip: Optional[str] = 
     :param str cluster_external_ip: External management ip of the cluster.
     :param str cluster_name: Cluster name.
     :param int cluster_size: Number of nodes in the cluster.
-    :param pulumi.InputType['GetFoundationCentralClusterDetailsClusterStatusArgs'] cluster_status: Details of cluster creation process.
-    :param pulumi.InputType['GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs'] common_network_settings: Common network settings across the nodes in the cluster.
+    :param Union['GetFoundationCentralClusterDetailsClusterStatusArgs', 'GetFoundationCentralClusterDetailsClusterStatusArgsDict'] cluster_status: Details of cluster creation process.
+    :param Union['GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs', 'GetFoundationCentralClusterDetailsCommonNetworkSettingsArgsDict'] common_network_settings: Common network settings across the nodes in the cluster.
     :param str imaged_cluster_uuid: UUID of the cluster whose details need to be fetched.
     :param int redundancy_factor: Redundancy factor of the cluster.
     :param int storage_node_count: Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
@@ -305,8 +305,8 @@ def get_foundation_central_cluster_details(cluster_external_ip: Optional[str] = 
 def get_foundation_central_cluster_details_output(cluster_external_ip: Optional[pulumi.Input[Optional[str]]] = None,
                                                   cluster_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                   cluster_size: Optional[pulumi.Input[Optional[int]]] = None,
-                                                  cluster_status: Optional[pulumi.Input[Optional[pulumi.InputType['GetFoundationCentralClusterDetailsClusterStatusArgs']]]] = None,
-                                                  common_network_settings: Optional[pulumi.Input[Optional[pulumi.InputType['GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs']]]] = None,
+                                                  cluster_status: Optional[pulumi.Input[Optional[Union['GetFoundationCentralClusterDetailsClusterStatusArgs', 'GetFoundationCentralClusterDetailsClusterStatusArgsDict']]]] = None,
+                                                  common_network_settings: Optional[pulumi.Input[Optional[Union['GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs', 'GetFoundationCentralClusterDetailsCommonNetworkSettingsArgsDict']]]] = None,
                                                   imaged_cluster_uuid: Optional[pulumi.Input[str]] = None,
                                                   redundancy_factor: Optional[pulumi.Input[Optional[int]]] = None,
                                                   storage_node_count: Optional[pulumi.Input[Optional[int]]] = None,
@@ -327,8 +327,8 @@ def get_foundation_central_cluster_details_output(cluster_external_ip: Optional[
     :param str cluster_external_ip: External management ip of the cluster.
     :param str cluster_name: Cluster name.
     :param int cluster_size: Number of nodes in the cluster.
-    :param pulumi.InputType['GetFoundationCentralClusterDetailsClusterStatusArgs'] cluster_status: Details of cluster creation process.
-    :param pulumi.InputType['GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs'] common_network_settings: Common network settings across the nodes in the cluster.
+    :param Union['GetFoundationCentralClusterDetailsClusterStatusArgs', 'GetFoundationCentralClusterDetailsClusterStatusArgsDict'] cluster_status: Details of cluster creation process.
+    :param Union['GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs', 'GetFoundationCentralClusterDetailsCommonNetworkSettingsArgsDict'] common_network_settings: Common network settings across the nodes in the cluster.
     :param str imaged_cluster_uuid: UUID of the cluster whose details need to be fetched.
     :param int redundancy_factor: Redundancy factor of the cluster.
     :param int storage_node_count: Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.

@@ -507,7 +507,7 @@ class GetClusterResult:
 
     @property
     @pulumi.getter(name="softwareMapNcc")
-    def software_map_ncc(self) -> Mapping[str, Any]:
+    def software_map_ncc(self) -> Mapping[str, str]:
         """
         - Map of software on the cluster with software type as the key.
         """
@@ -515,7 +515,7 @@ class GetClusterResult:
 
     @property
     @pulumi.getter(name="softwareMapNos")
-    def software_map_nos(self) -> Mapping[str, Any]:
+    def software_map_nos(self) -> Mapping[str, str]:
         """
         - Map of software on the cluster with software type as the key.
         """
@@ -634,7 +634,7 @@ class AwaitableGetClusterResult(GetClusterResult):
             timezone=self.timezone)
 
 
-def get_cluster(categories: Optional[Sequence[pulumi.InputType['GetClusterCategoryArgs']]] = None,
+def get_cluster(categories: Optional[Sequence[Union['GetClusterCategoryArgs', 'GetClusterCategoryArgsDict']]] = None,
                 cluster_id: Optional[str] = None,
                 name: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClusterResult:
@@ -642,7 +642,7 @@ def get_cluster(categories: Optional[Sequence[pulumi.InputType['GetClusterCatego
     Describes Clusters
 
 
-    :param Sequence[pulumi.InputType['GetClusterCategoryArgs']] categories: - Categories for the image.
+    :param Sequence[Union['GetClusterCategoryArgs', 'GetClusterCategoryArgsDict']] categories: - Categories for the image.
     :param str cluster_id: Represents clusters uuid
     :param str name: Represents the name of cluster
     """
@@ -708,7 +708,7 @@ def get_cluster(categories: Optional[Sequence[pulumi.InputType['GetClusterCatego
 
 
 @_utilities.lift_output_func(get_cluster)
-def get_cluster_output(categories: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetClusterCategoryArgs']]]]] = None,
+def get_cluster_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetClusterCategoryArgs', 'GetClusterCategoryArgsDict']]]]] = None,
                        cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                        name: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterResult]:
@@ -716,7 +716,7 @@ def get_cluster_output(categories: Optional[pulumi.Input[Optional[Sequence[pulum
     Describes Clusters
 
 
-    :param Sequence[pulumi.InputType['GetClusterCategoryArgs']] categories: - Categories for the image.
+    :param Sequence[Union['GetClusterCategoryArgs', 'GetClusterCategoryArgsDict']] categories: - Categories for the image.
     :param str cluster_id: Represents clusters uuid
     :param str name: Represents the name of cluster
     """

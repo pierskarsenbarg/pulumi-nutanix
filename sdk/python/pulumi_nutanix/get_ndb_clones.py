@@ -67,7 +67,7 @@ class AwaitableGetNdbClonesResult(GetNdbClonesResult):
             id=self.id)
 
 
-def get_ndb_clones(filters: Optional[Sequence[pulumi.InputType['GetNdbClonesFilterArgs']]] = None,
+def get_ndb_clones(filters: Optional[Sequence[Union['GetNdbClonesFilterArgs', 'GetNdbClonesFilterArgsDict']]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNdbClonesResult:
     """
     List all the clone present in Nutanix Database Service
@@ -78,13 +78,13 @@ def get_ndb_clones(filters: Optional[Sequence[pulumi.InputType['GetNdbClonesFilt
     import pulumi
     import pulumi_nutanix as nutanix
 
-    clones = nutanix.get_ndb_clones(filters=[nutanix.GetNdbClonesFilterArgs(
-        detailed="true",
-    )])
+    clones = nutanix.get_ndb_clones(filters=[{
+        "detailed": "true",
+    }])
     ```
 
 
-    :param Sequence[pulumi.InputType['GetNdbClonesFilterArgs']] filters: Fetches the clone info based on given params
+    :param Sequence[Union['GetNdbClonesFilterArgs', 'GetNdbClonesFilterArgsDict']] filters: Fetches the clone info based on given params
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -98,7 +98,7 @@ def get_ndb_clones(filters: Optional[Sequence[pulumi.InputType['GetNdbClonesFilt
 
 
 @_utilities.lift_output_func(get_ndb_clones)
-def get_ndb_clones_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNdbClonesFilterArgs']]]]] = None,
+def get_ndb_clones_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbClonesFilterArgs', 'GetNdbClonesFilterArgsDict']]]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbClonesResult]:
     """
     List all the clone present in Nutanix Database Service
@@ -109,12 +109,12 @@ def get_ndb_clones_output(filters: Optional[pulumi.Input[Optional[Sequence[pulum
     import pulumi
     import pulumi_nutanix as nutanix
 
-    clones = nutanix.get_ndb_clones(filters=[nutanix.GetNdbClonesFilterArgs(
-        detailed="true",
-    )])
+    clones = nutanix.get_ndb_clones(filters=[{
+        "detailed": "true",
+    }])
     ```
 
 
-    :param Sequence[pulumi.InputType['GetNdbClonesFilterArgs']] filters: Fetches the clone info based on given params
+    :param Sequence[Union['GetNdbClonesFilterArgs', 'GetNdbClonesFilterArgsDict']] filters: Fetches the clone info based on given params
     """
     ...

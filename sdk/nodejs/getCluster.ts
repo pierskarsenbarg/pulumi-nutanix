@@ -204,11 +204,11 @@ export interface GetClusterResult {
     /**
      * - Map of software on the cluster with software type as the key.
      */
-    readonly softwareMapNcc: {[key: string]: any};
+    readonly softwareMapNcc: {[key: string]: string};
     /**
      * - Map of software on the cluster with software type as the key.
      */
-    readonly softwareMapNos: {[key: string]: any};
+    readonly softwareMapNos: {[key: string]: string};
     /**
      * - UTC date and time in RFC-3339 format when the key expires
      */

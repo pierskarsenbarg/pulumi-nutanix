@@ -211,8 +211,8 @@ class StaticRoutes(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  api_version: Optional[pulumi.Input[str]] = None,
-                 default_route_nexthops: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StaticRoutesDefaultRouteNexthopArgs']]]]] = None,
-                 static_routes_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StaticRoutesStaticRoutesListArgs']]]]] = None,
+                 default_route_nexthops: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesDefaultRouteNexthopArgs', 'StaticRoutesDefaultRouteNexthopArgsDict']]]]] = None,
+                 static_routes_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesStaticRoutesListArgs', 'StaticRoutesStaticRoutesListArgsDict']]]]] = None,
                  vpc_name: Optional[pulumi.Input[str]] = None,
                  vpc_uuid: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -226,10 +226,10 @@ class StaticRoutes(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         scn = nutanix.StaticRoutes("scn",
-            static_routes_lists=[nutanix.StaticRoutesStaticRoutesListArgs(
-                destination="10.x.x.x/x",
-                external_subnet_reference_uuid="{{ext_subnet_uuid}}",
-            )],
+            static_routes_lists=[{
+                "destination": "10.x.x.x/x",
+                "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
+            }],
             vpc_uuid="{{vpc_uuid}}")
         ```
 
@@ -240,13 +240,13 @@ class StaticRoutes(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         scn = nutanix.StaticRoutes("scn",
-            default_route_nexthops=[nutanix.StaticRoutesDefaultRouteNexthopArgs(
-                external_subnet_reference_uuid="{{ext_subnet_uuid}}",
-            )],
-            static_routes_lists=[nutanix.StaticRoutesStaticRoutesListArgs(
-                destination="10.x.x.x/x",
-                external_subnet_reference_uuid="{{ext_subnet_uuid}}",
-            )],
+            default_route_nexthops=[{
+                "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
+            }],
+            static_routes_lists=[{
+                "destination": "10.x.x.x/x",
+                "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
+            }],
             vpc_name="{{vpc_name}}")
         ```
 
@@ -255,8 +255,8 @@ class StaticRoutes(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] api_version: The version of the API.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StaticRoutesDefaultRouteNexthopArgs']]]] default_route_nexthops: Default Route
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StaticRoutesStaticRoutesListArgs']]]] static_routes_lists: Static Routes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesDefaultRouteNexthopArgs', 'StaticRoutesDefaultRouteNexthopArgsDict']]]] default_route_nexthops: Default Route
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesStaticRoutesListArgs', 'StaticRoutesStaticRoutesListArgsDict']]]] static_routes_lists: Static Routes.
         :param pulumi.Input[str] vpc_name: vpc Name. Should not be used with vpc_uuid.
         :param pulumi.Input[str] vpc_uuid: Reference to a VPC UUID. Should not be used with vpc_name.
         """
@@ -276,10 +276,10 @@ class StaticRoutes(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         scn = nutanix.StaticRoutes("scn",
-            static_routes_lists=[nutanix.StaticRoutesStaticRoutesListArgs(
-                destination="10.x.x.x/x",
-                external_subnet_reference_uuid="{{ext_subnet_uuid}}",
-            )],
+            static_routes_lists=[{
+                "destination": "10.x.x.x/x",
+                "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
+            }],
             vpc_uuid="{{vpc_uuid}}")
         ```
 
@@ -290,13 +290,13 @@ class StaticRoutes(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         scn = nutanix.StaticRoutes("scn",
-            default_route_nexthops=[nutanix.StaticRoutesDefaultRouteNexthopArgs(
-                external_subnet_reference_uuid="{{ext_subnet_uuid}}",
-            )],
-            static_routes_lists=[nutanix.StaticRoutesStaticRoutesListArgs(
-                destination="10.x.x.x/x",
-                external_subnet_reference_uuid="{{ext_subnet_uuid}}",
-            )],
+            default_route_nexthops=[{
+                "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
+            }],
+            static_routes_lists=[{
+                "destination": "10.x.x.x/x",
+                "external_subnet_reference_uuid": "{{ext_subnet_uuid}}",
+            }],
             vpc_name="{{vpc_name}}")
         ```
 
@@ -318,8 +318,8 @@ class StaticRoutes(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  api_version: Optional[pulumi.Input[str]] = None,
-                 default_route_nexthops: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StaticRoutesDefaultRouteNexthopArgs']]]]] = None,
-                 static_routes_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StaticRoutesStaticRoutesListArgs']]]]] = None,
+                 default_route_nexthops: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesDefaultRouteNexthopArgs', 'StaticRoutesDefaultRouteNexthopArgsDict']]]]] = None,
+                 static_routes_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesStaticRoutesListArgs', 'StaticRoutesStaticRoutesListArgsDict']]]]] = None,
                  vpc_name: Optional[pulumi.Input[str]] = None,
                  vpc_uuid: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -348,9 +348,9 @@ class StaticRoutes(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             api_version: Optional[pulumi.Input[str]] = None,
-            default_route_nexthops: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StaticRoutesDefaultRouteNexthopArgs']]]]] = None,
+            default_route_nexthops: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesDefaultRouteNexthopArgs', 'StaticRoutesDefaultRouteNexthopArgsDict']]]]] = None,
             metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-            static_routes_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StaticRoutesStaticRoutesListArgs']]]]] = None,
+            static_routes_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesStaticRoutesListArgs', 'StaticRoutesStaticRoutesListArgsDict']]]]] = None,
             vpc_name: Optional[pulumi.Input[str]] = None,
             vpc_uuid: Optional[pulumi.Input[str]] = None) -> 'StaticRoutes':
         """
@@ -361,9 +361,9 @@ class StaticRoutes(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] api_version: The version of the API.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StaticRoutesDefaultRouteNexthopArgs']]]] default_route_nexthops: Default Route
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesDefaultRouteNexthopArgs', 'StaticRoutesDefaultRouteNexthopArgsDict']]]] default_route_nexthops: Default Route
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: The vpc_route_table kind metadata.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['StaticRoutesStaticRoutesListArgs']]]] static_routes_lists: Static Routes.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['StaticRoutesStaticRoutesListArgs', 'StaticRoutesStaticRoutesListArgsDict']]]] static_routes_lists: Static Routes.
         :param pulumi.Input[str] vpc_name: vpc Name. Should not be used with vpc_uuid.
         :param pulumi.Input[str] vpc_uuid: Reference to a VPC UUID. Should not be used with vpc_name.
         """

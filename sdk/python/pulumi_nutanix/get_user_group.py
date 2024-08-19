@@ -205,7 +205,7 @@ class AwaitableGetUserGroupResult(GetUserGroupResult):
             user_group_type=self.user_group_type)
 
 
-def get_user_group(categories: Optional[Sequence[pulumi.InputType['GetUserGroupCategoryArgs']]] = None,
+def get_user_group(categories: Optional[Sequence[Union['GetUserGroupCategoryArgs', 'GetUserGroupCategoryArgsDict']]] = None,
                    owner_reference: Optional[Mapping[str, str]] = None,
                    project_reference: Optional[Mapping[str, str]] = None,
                    user_group_distinguished_name: Optional[str] = None,
@@ -227,7 +227,7 @@ def get_user_group(categories: Optional[Sequence[pulumi.InputType['GetUserGroupC
     ```
 
 
-    :param Sequence[pulumi.InputType['GetUserGroupCategoryArgs']] categories: - The Distinguished Categories for the user group.
+    :param Sequence[Union['GetUserGroupCategoryArgs', 'GetUserGroupCategoryArgsDict']] categories: - The Distinguished Categories for the user group.
     :param Mapping[str, str] owner_reference: - The reference to a user.
     :param Mapping[str, str] project_reference: - The Distinguished The reference to a project.
     :param str user_group_distinguished_name: The distinguished name for the user group
@@ -263,7 +263,7 @@ def get_user_group(categories: Optional[Sequence[pulumi.InputType['GetUserGroupC
 
 
 @_utilities.lift_output_func(get_user_group)
-def get_user_group_output(categories: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetUserGroupCategoryArgs']]]]] = None,
+def get_user_group_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetUserGroupCategoryArgs', 'GetUserGroupCategoryArgsDict']]]]] = None,
                           owner_reference: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
                           project_reference: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
                           user_group_distinguished_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -285,7 +285,7 @@ def get_user_group_output(categories: Optional[pulumi.Input[Optional[Sequence[pu
     ```
 
 
-    :param Sequence[pulumi.InputType['GetUserGroupCategoryArgs']] categories: - The Distinguished Categories for the user group.
+    :param Sequence[Union['GetUserGroupCategoryArgs', 'GetUserGroupCategoryArgsDict']] categories: - The Distinguished Categories for the user group.
     :param Mapping[str, str] owner_reference: - The reference to a user.
     :param Mapping[str, str] project_reference: - The Distinguished The reference to a project.
     :param str user_group_distinguished_name: The distinguished name for the user group

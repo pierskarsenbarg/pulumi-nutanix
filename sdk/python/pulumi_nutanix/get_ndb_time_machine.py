@@ -382,7 +382,7 @@ class AwaitableGetNdbTimeMachineResult(GetNdbTimeMachineResult):
             type=self.type)
 
 
-def get_ndb_time_machine(tags: Optional[Sequence[pulumi.InputType['GetNdbTimeMachineTagArgs']]] = None,
+def get_ndb_time_machine(tags: Optional[Sequence[Union['GetNdbTimeMachineTagArgs', 'GetNdbTimeMachineTagArgsDict']]] = None,
                          time_machine_id: Optional[str] = None,
                          time_machine_name: Optional[str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNdbTimeMachineResult:
@@ -390,7 +390,7 @@ def get_ndb_time_machine(tags: Optional[Sequence[pulumi.InputType['GetNdbTimeMac
     Describes a time machine present in Nutanix Database Service
 
 
-    :param Sequence[pulumi.InputType['GetNdbTimeMachineTagArgs']] tags: tags
+    :param Sequence[Union['GetNdbTimeMachineTagArgs', 'GetNdbTimeMachineTagArgsDict']] tags: tags
     :param str time_machine_id: time machine id
     :param str time_machine_name: time machine name
     """
@@ -435,7 +435,7 @@ def get_ndb_time_machine(tags: Optional[Sequence[pulumi.InputType['GetNdbTimeMac
 
 
 @_utilities.lift_output_func(get_ndb_time_machine)
-def get_ndb_time_machine_output(tags: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNdbTimeMachineTagArgs']]]]] = None,
+def get_ndb_time_machine_output(tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbTimeMachineTagArgs', 'GetNdbTimeMachineTagArgsDict']]]]] = None,
                                 time_machine_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 time_machine_name: Optional[pulumi.Input[Optional[str]]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbTimeMachineResult]:
@@ -443,7 +443,7 @@ def get_ndb_time_machine_output(tags: Optional[pulumi.Input[Optional[Sequence[pu
     Describes a time machine present in Nutanix Database Service
 
 
-    :param Sequence[pulumi.InputType['GetNdbTimeMachineTagArgs']] tags: tags
+    :param Sequence[Union['GetNdbTimeMachineTagArgs', 'GetNdbTimeMachineTagArgsDict']] tags: tags
     :param str time_machine_id: time machine id
     :param str time_machine_name: time machine name
     """

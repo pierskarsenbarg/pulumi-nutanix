@@ -109,7 +109,7 @@ export interface GetFoundationCentralImagedNodeDetailsResult {
     /**
      * Hardware attributes json of the node.
      */
-    readonly hardwareAttributes: {[key: string]: any};
+    readonly hardwareAttributes: {[key: string]: string};
     /**
      * gateway of the hypervisor.
      */

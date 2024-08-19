@@ -511,7 +511,7 @@ class AwaitableGetNetworkSecurityRuleResult(GetNetworkSecurityRuleResult):
             quarantine_rule_target_group_peer_specification_type=self.quarantine_rule_target_group_peer_specification_type)
 
 
-def get_network_security_rule(categories: Optional[Sequence[pulumi.InputType['GetNetworkSecurityRuleCategoryArgs']]] = None,
+def get_network_security_rule(categories: Optional[Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict']]] = None,
                               network_security_rule_id: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkSecurityRuleResult:
     """
@@ -531,22 +531,22 @@ def get_network_security_rule(categories: Optional[Sequence[pulumi.InputType['Ge
         description="Isolation Rule Example",
         isolation_rule_action="APPLY",
         isolation_rule_first_entity_filter_kind_lists=["vm"],
-        isolation_rule_first_entity_filter_params=[nutanix.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs(
-            name="Environment",
-            values=["Dev"],
-        )],
+        isolation_rule_first_entity_filter_params=[{
+            "name": "Environment",
+            "values": ["Dev"],
+        }],
         isolation_rule_first_entity_filter_type="CATEGORIES_MATCH_ALL",
         isolation_rule_second_entity_filter_kind_lists=["vm"],
-        isolation_rule_second_entity_filter_params=[nutanix.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs(
-            name="Environment",
-            values=["Production"],
-        )],
+        isolation_rule_second_entity_filter_params=[{
+            "name": "Environment",
+            "values": ["Production"],
+        }],
         isolation_rule_second_entity_filter_type="CATEGORIES_MATCH_ALL")
     test = nutanix.get_network_security_rule_output(network_security_rule_id=isolation.id)
     ```
 
 
-    :param Sequence[pulumi.InputType['GetNetworkSecurityRuleCategoryArgs']] categories: Categories for the network_security_rule.
+    :param Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict']] categories: Categories for the network_security_rule.
     :param str network_security_rule_id: Represents network security rule UUID
     """
     __args__ = dict()
@@ -601,7 +601,7 @@ def get_network_security_rule(categories: Optional[Sequence[pulumi.InputType['Ge
 
 
 @_utilities.lift_output_func(get_network_security_rule)
-def get_network_security_rule_output(categories: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNetworkSecurityRuleCategoryArgs']]]]] = None,
+def get_network_security_rule_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict']]]]] = None,
                                      network_security_rule_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkSecurityRuleResult]:
     """
@@ -621,22 +621,22 @@ def get_network_security_rule_output(categories: Optional[pulumi.Input[Optional[
         description="Isolation Rule Example",
         isolation_rule_action="APPLY",
         isolation_rule_first_entity_filter_kind_lists=["vm"],
-        isolation_rule_first_entity_filter_params=[nutanix.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs(
-            name="Environment",
-            values=["Dev"],
-        )],
+        isolation_rule_first_entity_filter_params=[{
+            "name": "Environment",
+            "values": ["Dev"],
+        }],
         isolation_rule_first_entity_filter_type="CATEGORIES_MATCH_ALL",
         isolation_rule_second_entity_filter_kind_lists=["vm"],
-        isolation_rule_second_entity_filter_params=[nutanix.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs(
-            name="Environment",
-            values=["Production"],
-        )],
+        isolation_rule_second_entity_filter_params=[{
+            "name": "Environment",
+            "values": ["Production"],
+        }],
         isolation_rule_second_entity_filter_type="CATEGORIES_MATCH_ALL")
     test = nutanix.get_network_security_rule_output(network_security_rule_id=isolation.id)
     ```
 
 
-    :param Sequence[pulumi.InputType['GetNetworkSecurityRuleCategoryArgs']] categories: Categories for the network_security_rule.
+    :param Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict']] categories: Categories for the network_security_rule.
     :param str network_security_rule_id: Represents network security rule UUID
     """
     ...

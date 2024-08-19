@@ -82,7 +82,7 @@ class AwaitableGetSubnetsResult(GetSubnetsResult):
             metadatas=self.metadatas)
 
 
-def get_subnets(metadatas: Optional[Sequence[pulumi.InputType['GetSubnetsMetadataArgs']]] = None,
+def get_subnets(metadatas: Optional[Sequence[Union['GetSubnetsMetadataArgs', 'GetSubnetsMetadataArgsDict']]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubnetsResult:
     """
     Describes a list of subnets
@@ -94,13 +94,13 @@ def get_subnets(metadatas: Optional[Sequence[pulumi.InputType['GetSubnetsMetadat
     import pulumi_nutanix as nutanix
 
     subnets = nutanix.get_subnets()
-    test = nutanix.get_subnets(metadatas=[nutanix.GetSubnetsMetadataArgs(
-        filter="name==vlan0_test_2",
-    )])
+    test = nutanix.get_subnets(metadatas=[{
+        "filter": "name==vlan0_test_2",
+    }])
     ```
 
 
-    :param Sequence[pulumi.InputType['GetSubnetsMetadataArgs']] metadatas: The subnet kind metadata.
+    :param Sequence[Union['GetSubnetsMetadataArgs', 'GetSubnetsMetadataArgsDict']] metadatas: The subnet kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
@@ -115,7 +115,7 @@ def get_subnets(metadatas: Optional[Sequence[pulumi.InputType['GetSubnetsMetadat
 
 
 @_utilities.lift_output_func(get_subnets)
-def get_subnets_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSubnetsMetadataArgs']]]]] = None,
+def get_subnets_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetSubnetsMetadataArgs', 'GetSubnetsMetadataArgsDict']]]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubnetsResult]:
     """
     Describes a list of subnets
@@ -127,12 +127,12 @@ def get_subnets_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi
     import pulumi_nutanix as nutanix
 
     subnets = nutanix.get_subnets()
-    test = nutanix.get_subnets(metadatas=[nutanix.GetSubnetsMetadataArgs(
-        filter="name==vlan0_test_2",
-    )])
+    test = nutanix.get_subnets(metadatas=[{
+        "filter": "name==vlan0_test_2",
+    }])
     ```
 
 
-    :param Sequence[pulumi.InputType['GetSubnetsMetadataArgs']] metadatas: The subnet kind metadata.
+    :param Sequence[Union['GetSubnetsMetadataArgs', 'GetSubnetsMetadataArgsDict']] metadatas: The subnet kind metadata.
     """
     ...

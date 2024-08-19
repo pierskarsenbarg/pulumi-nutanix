@@ -82,7 +82,7 @@ class AwaitableGetPbrsResult(GetPbrsResult):
             metadatas=self.metadatas)
 
 
-def get_pbrs(metadatas: Optional[Sequence[pulumi.InputType['GetPbrsMetadataArgs']]] = None,
+def get_pbrs(metadatas: Optional[Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsMetadataArgsDict']]] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPbrsResult:
     """
     Provides a datasource to retrieve all the pbrs.
@@ -97,7 +97,7 @@ def get_pbrs(metadatas: Optional[Sequence[pulumi.InputType['GetPbrsMetadataArgs'
     ```
 
 
-    :param Sequence[pulumi.InputType['GetPbrsMetadataArgs']] metadatas: - The routing policies kind metadata.
+    :param Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsMetadataArgsDict']] metadatas: - The routing policies kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
@@ -112,7 +112,7 @@ def get_pbrs(metadatas: Optional[Sequence[pulumi.InputType['GetPbrsMetadataArgs'
 
 
 @_utilities.lift_output_func(get_pbrs)
-def get_pbrs_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPbrsMetadataArgs']]]]] = None,
+def get_pbrs_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsMetadataArgsDict']]]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPbrsResult]:
     """
     Provides a datasource to retrieve all the pbrs.
@@ -127,6 +127,6 @@ def get_pbrs_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi.In
     ```
 
 
-    :param Sequence[pulumi.InputType['GetPbrsMetadataArgs']] metadatas: - The routing policies kind metadata.
+    :param Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsMetadataArgsDict']] metadatas: - The routing policies kind metadata.
     """
     ...

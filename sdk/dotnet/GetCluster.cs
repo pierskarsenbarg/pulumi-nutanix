@@ -256,11 +256,11 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - Map of software on the cluster with software type as the key.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SoftwareMapNcc;
+        public readonly ImmutableDictionary<string, string> SoftwareMapNcc;
         /// <summary>
         /// - Map of software on the cluster with software type as the key.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SoftwareMapNos;
+        public readonly ImmutableDictionary<string, string> SoftwareMapNos;
         /// <summary>
         /// - UTC date and time in RFC-3339 format when the key expires
         /// </summary>
@@ -373,9 +373,9 @@ namespace PiersKarsenbarg.Nutanix
 
             string smtpServerType,
 
-            ImmutableDictionary<string, object> softwareMapNcc,
+            ImmutableDictionary<string, string> softwareMapNcc,
 
-            ImmutableDictionary<string, object> softwareMapNos,
+            ImmutableDictionary<string, string> softwareMapNos,
 
             string sslKeyExpireDatetime,
 

@@ -70,7 +70,7 @@ class AwaitableGetAddressGroupsResult(GetAddressGroupsResult):
             metadatas=self.metadatas)
 
 
-def get_address_groups(metadatas: Optional[Sequence[pulumi.InputType['GetAddressGroupsMetadataArgs']]] = None,
+def get_address_groups(metadatas: Optional[Sequence[Union['GetAddressGroupsMetadataArgs', 'GetAddressGroupsMetadataArgsDict']]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAddressGroupsResult:
     """
     Provides a datasource to retrieve list of address groups.
@@ -85,7 +85,7 @@ def get_address_groups(metadatas: Optional[Sequence[pulumi.InputType['GetAddress
     ```
 
 
-    :param Sequence[pulumi.InputType['GetAddressGroupsMetadataArgs']] metadatas: - (Optional) Use metadata to specify filters
+    :param Sequence[Union['GetAddressGroupsMetadataArgs', 'GetAddressGroupsMetadataArgsDict']] metadatas: - (Optional) Use metadata to specify filters
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
@@ -99,7 +99,7 @@ def get_address_groups(metadatas: Optional[Sequence[pulumi.InputType['GetAddress
 
 
 @_utilities.lift_output_func(get_address_groups)
-def get_address_groups_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAddressGroupsMetadataArgs']]]]] = None,
+def get_address_groups_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetAddressGroupsMetadataArgs', 'GetAddressGroupsMetadataArgsDict']]]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddressGroupsResult]:
     """
     Provides a datasource to retrieve list of address groups.
@@ -114,6 +114,6 @@ def get_address_groups_output(metadatas: Optional[pulumi.Input[Optional[Sequence
     ```
 
 
-    :param Sequence[pulumi.InputType['GetAddressGroupsMetadataArgs']] metadatas: - (Optional) Use metadata to specify filters
+    :param Sequence[Union['GetAddressGroupsMetadataArgs', 'GetAddressGroupsMetadataArgsDict']] metadatas: - (Optional) Use metadata to specify filters
     """
     ...

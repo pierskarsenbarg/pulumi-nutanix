@@ -9,30 +9,34 @@ import * as utilities from "./utilities";
 /**
  * Provides a resource to perform the clone of database instance based on the input parameters.
  *
- * ## resource for cloning using Point in time given time machine name
+ * ## Example Usage
  *
- *     resource "nutanix.NdbClone" "name" {
- *         timeMachineName = "test-pg-inst"
- *         name = "test-inst-tf-check"
- *         nxClusterId = "{{ nx_Cluster_id }}"
- *         sshPublicKey = "{{ sshkey }}"
- *         user_pitr_timestamp=  "{{ pointInTime }}"
- *         timeZone = "Asia/Calcutta"
- *         createDbserver = true
- *         computeProfileId = "{{ computeProfileId }}"
- *         networkProfileId ="{{ networkProfileId }}"
- *         databaseParameterProfileId =  "{{ databseProfileId }}"
- *         nodes{
- *             vm_name= "testVmClone"
- *             computeProfileId = "{{ computeProfileId }}"
- *             networkProfileId ="{{ networkProfileId }}"
- *             nxClusterId = "{{ nx_Cluster_id }}"
- *         }
- *         postgresql_info{
- *             vm_name="testVmClone"
- *             db_password= "pass"
- *         }
- *     }
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const name = new nutanix.NdbClone("name", {
+ *     computeProfileId: "{{ compute_profile_id }}",
+ *     createDbserver: true,
+ *     databaseParameterProfileId: "{{ databse_profile_id }}",
+ *     networkProfileId: "{{ network_profile_id }}",
+ *     nodes: [{
+ *         computeProfileId: "{{ compute_profile_id }}",
+ *         networkProfileId: "{{ network_profile_id }}",
+ *         nxClusterId: "{{ nx_Cluster_id }}",
+ *         vmName: "test_vm_clone",
+ *     }],
+ *     nxClusterId: "{{ nx_Cluster_id }}",
+ *     postgresqlInfos: [{
+ *         dbPassword: "pass",
+ *         vmName: "test_vm_clone",
+ *     }],
+ *     sshPublicKey: "{{ sshkey }}",
+ *     timeMachineName: "test-pg-inst",
+ *     timeZone: "Asia/Calcutta",
+ *     userPitrTimestamp: "{{ point_in_time }}",
+ * });
+ * ```
  */
 export class NdbClone extends pulumi.CustomResource {
     /**

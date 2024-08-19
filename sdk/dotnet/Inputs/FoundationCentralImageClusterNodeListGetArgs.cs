@@ -44,14 +44,14 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<int>? CvmVlanId { get; set; }
 
         [Input("hardwareAttributesOverride")]
-        private InputMap<object>? _hardwareAttributesOverride;
+        private InputMap<string>? _hardwareAttributesOverride;
 
         /// <summary>
         /// Hardware attributes override json for the node.
         /// </summary>
-        public InputMap<object> HardwareAttributesOverride
+        public InputMap<string> HardwareAttributesOverride
         {
-            get => _hardwareAttributesOverride ?? (_hardwareAttributesOverride = new InputMap<object>());
+            get => _hardwareAttributesOverride ?? (_hardwareAttributesOverride = new InputMap<string>());
             set => _hardwareAttributesOverride = value;
         }
 

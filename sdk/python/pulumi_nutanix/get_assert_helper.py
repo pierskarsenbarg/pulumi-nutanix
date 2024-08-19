@@ -55,7 +55,7 @@ class AwaitableGetAssertHelperResult(GetAssertHelperResult):
             id=self.id)
 
 
-def get_assert_helper(checks: Optional[Sequence[pulumi.InputType['GetAssertHelperCheckArgs']]] = None,
+def get_assert_helper(checks: Optional[Sequence[Union['GetAssertHelperCheckArgs', 'GetAssertHelperCheckArgsDict']]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAssertHelperResult:
     """
     Use this data source to access information about an existing resource.
@@ -71,7 +71,7 @@ def get_assert_helper(checks: Optional[Sequence[pulumi.InputType['GetAssertHelpe
 
 
 @_utilities.lift_output_func(get_assert_helper)
-def get_assert_helper_output(checks: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAssertHelperCheckArgs']]]]] = None,
+def get_assert_helper_output(checks: Optional[pulumi.Input[Optional[Sequence[Union['GetAssertHelperCheckArgs', 'GetAssertHelperCheckArgsDict']]]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAssertHelperResult]:
     """
     Use this data source to access information about an existing resource.

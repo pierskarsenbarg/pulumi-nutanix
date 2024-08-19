@@ -118,10 +118,10 @@ def get_address_group(uuid: Optional[str] = None,
 
     test_address = nutanix.AddressGroup("testAddress",
         description="test address groups resource",
-        ip_address_block_lists=[nutanix.AddressGroupIpAddressBlockListArgs(
-            ip="10.0.0.0",
-            prefix_length=24,
-        )])
+        ip_address_block_lists=[{
+            "ip": "10.0.0.0",
+            "prefix_length": 24,
+        }])
     addr_group = nutanix.get_address_group_output(uuid=test_address.id)
     ```
 
@@ -156,10 +156,10 @@ def get_address_group_output(uuid: Optional[pulumi.Input[str]] = None,
 
     test_address = nutanix.AddressGroup("testAddress",
         description="test address groups resource",
-        ip_address_block_lists=[nutanix.AddressGroupIpAddressBlockListArgs(
-            ip="10.0.0.0",
-            prefix_length=24,
-        )])
+        ip_address_block_lists=[{
+            "ip": "10.0.0.0",
+            "prefix_length": 24,
+        }])
     addr_group = nutanix.get_address_group_output(uuid=test_address.id)
     ```
 

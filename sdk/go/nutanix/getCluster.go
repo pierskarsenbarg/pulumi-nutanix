@@ -116,9 +116,9 @@ type GetClusterResult struct {
 	// - SMTP Server type.
 	SmtpServerType string `pulumi:"smtpServerType"`
 	// - Map of software on the cluster with software type as the key.
-	SoftwareMapNcc map[string]interface{} `pulumi:"softwareMapNcc"`
+	SoftwareMapNcc map[string]string `pulumi:"softwareMapNcc"`
 	// - Map of software on the cluster with software type as the key.
-	SoftwareMapNos map[string]interface{} `pulumi:"softwareMapNos"`
+	SoftwareMapNos map[string]string `pulumi:"softwareMapNos"`
 	// - UTC date and time in RFC-3339 format when the key expires
 	SslKeyExpireDatetime string `pulumi:"sslKeyExpireDatetime"`
 	SslKeyName           string `pulumi:"sslKeyName"`
@@ -384,13 +384,13 @@ func (o GetClusterResultOutput) SmtpServerType() pulumi.StringOutput {
 }
 
 // - Map of software on the cluster with software type as the key.
-func (o GetClusterResultOutput) SoftwareMapNcc() pulumi.MapOutput {
-	return o.ApplyT(func(v GetClusterResult) map[string]interface{} { return v.SoftwareMapNcc }).(pulumi.MapOutput)
+func (o GetClusterResultOutput) SoftwareMapNcc() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClusterResult) map[string]string { return v.SoftwareMapNcc }).(pulumi.StringMapOutput)
 }
 
 // - Map of software on the cluster with software type as the key.
-func (o GetClusterResultOutput) SoftwareMapNos() pulumi.MapOutput {
-	return o.ApplyT(func(v GetClusterResult) map[string]interface{} { return v.SoftwareMapNos }).(pulumi.MapOutput)
+func (o GetClusterResultOutput) SoftwareMapNos() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClusterResult) map[string]string { return v.SoftwareMapNos }).(pulumi.StringMapOutput)
 }
 
 // - UTC date and time in RFC-3339 format when the key expires

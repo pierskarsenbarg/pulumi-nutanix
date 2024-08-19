@@ -2280,7 +2280,7 @@ class FoundationCentralImageClusterNodeListArgs:
                  cvm_netmask: Optional[pulumi.Input[str]] = None,
                  cvm_ram_gb: Optional[pulumi.Input[int]] = None,
                  cvm_vlan_id: Optional[pulumi.Input[int]] = None,
-                 hardware_attributes_override: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 hardware_attributes_override: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  hypervisor_gateway: Optional[pulumi.Input[str]] = None,
                  hypervisor_hostname: Optional[pulumi.Input[str]] = None,
                  hypervisor_ip: Optional[pulumi.Input[str]] = None,
@@ -2299,7 +2299,7 @@ class FoundationCentralImageClusterNodeListArgs:
         :param pulumi.Input[str] cvm_netmask: Netmask of the cvm.
         :param pulumi.Input[int] cvm_ram_gb: Amount of memory to be assigned for the cvm.
         :param pulumi.Input[int] cvm_vlan_id: Vlan tag of the cvm, if the cvm is on a vlan.
-        :param pulumi.Input[Mapping[str, Any]] hardware_attributes_override: Hardware attributes override json for the node.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] hardware_attributes_override: Hardware attributes override json for the node.
         :param pulumi.Input[str] hypervisor_gateway: Gateway of the hypervisor.
         :param pulumi.Input[str] hypervisor_hostname: Name to be set for the hypervisor host.
         :param pulumi.Input[str] hypervisor_ip: IP address to be set for the hypervisor on the node.
@@ -2412,14 +2412,14 @@ class FoundationCentralImageClusterNodeListArgs:
 
     @property
     @pulumi.getter(name="hardwareAttributesOverride")
-    def hardware_attributes_override(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def hardware_attributes_override(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Hardware attributes override json for the node.
         """
         return pulumi.get(self, "hardware_attributes_override")
 
     @hardware_attributes_override.setter
-    def hardware_attributes_override(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def hardware_attributes_override(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "hardware_attributes_override", value)
 
     @property

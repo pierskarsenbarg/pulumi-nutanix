@@ -700,13 +700,13 @@ class NdbCluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agent_network_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbClusterAgentNetworkInfoArgs']]]]] = None,
+                 agent_network_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterAgentNetworkInfoArgs', 'NdbClusterAgentNetworkInfoArgsDict']]]]] = None,
                  agent_vm_prefix: Optional[pulumi.Input[str]] = None,
                  cluster_ip: Optional[pulumi.Input[str]] = None,
                  cluster_type: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 networks_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbClusterNetworksInfoArgs']]]]] = None,
+                 networks_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterNetworksInfoArgs', 'NdbClusterNetworksInfoArgsDict']]]]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
@@ -719,11 +719,11 @@ class NdbCluster(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbClusterAgentNetworkInfoArgs']]]] agent_network_infos: agent network info to register cluster
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterAgentNetworkInfoArgs', 'NdbClusterAgentNetworkInfoArgsDict']]]] agent_network_infos: agent network info to register cluster
         :param pulumi.Input[str] cluster_ip: Prism Element IP address
         :param pulumi.Input[str] description: description of cluster
         :param pulumi.Input[str] name: name of the cluster to be registered
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbClusterNetworksInfoArgs']]]] networks_infos: network segmentation to segment the network traffic of the agent VM.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterNetworksInfoArgs', 'NdbClusterNetworksInfoArgsDict']]]] networks_infos: network segmentation to segment the network traffic of the agent VM.
         :param pulumi.Input[str] password: Prism Element password
         :param pulumi.Input[str] storage_container: select a storage container which is used for performing database operations in the cluster
         :param pulumi.Input[str] username: username of the Prism Element administrator
@@ -753,13 +753,13 @@ class NdbCluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agent_network_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbClusterAgentNetworkInfoArgs']]]]] = None,
+                 agent_network_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterAgentNetworkInfoArgs', 'NdbClusterAgentNetworkInfoArgsDict']]]]] = None,
                  agent_vm_prefix: Optional[pulumi.Input[str]] = None,
                  cluster_ip: Optional[pulumi.Input[str]] = None,
                  cluster_type: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 networks_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbClusterNetworksInfoArgs']]]]] = None,
+                 networks_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterNetworksInfoArgs', 'NdbClusterNetworksInfoArgsDict']]]]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
@@ -830,7 +830,7 @@ class NdbCluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            agent_network_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbClusterAgentNetworkInfoArgs']]]]] = None,
+            agent_network_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterAgentNetworkInfoArgs', 'NdbClusterAgentNetworkInfoArgsDict']]]]] = None,
             agent_vm_prefix: Optional[pulumi.Input[str]] = None,
             cloud_info: Optional[pulumi.Input[str]] = None,
             cloud_type: Optional[pulumi.Input[str]] = None,
@@ -839,7 +839,7 @@ class NdbCluster(pulumi.CustomResource):
             date_created: Optional[pulumi.Input[str]] = None,
             date_modified: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
-            entity_counts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbClusterEntityCountArgs']]]]] = None,
+            entity_counts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterEntityCountArgs', 'NdbClusterEntityCountArgsDict']]]]] = None,
             fqdns: Optional[pulumi.Input[str]] = None,
             healthy: Optional[pulumi.Input[bool]] = None,
             hypervisor_type: Optional[pulumi.Input[str]] = None,
@@ -847,15 +847,15 @@ class NdbCluster(pulumi.CustomResource):
             ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             management_server_info: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            networks_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbClusterNetworksInfoArgs']]]]] = None,
+            networks_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterNetworksInfoArgs', 'NdbClusterNetworksInfoArgsDict']]]]] = None,
             nx_cluster_uuid: Optional[pulumi.Input[str]] = None,
             owner_id: Optional[pulumi.Input[str]] = None,
             password: Optional[pulumi.Input[str]] = None,
             port: Optional[pulumi.Input[int]] = None,
-            properties: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbClusterPropertyArgs']]]]] = None,
+            properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterPropertyArgs', 'NdbClusterPropertyArgsDict']]]]] = None,
             protocol: Optional[pulumi.Input[str]] = None,
             reference_count: Optional[pulumi.Input[int]] = None,
-            resource_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbClusterResourceConfigArgs']]]]] = None,
+            resource_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterResourceConfigArgs', 'NdbClusterResourceConfigArgsDict']]]]] = None,
             status: Optional[pulumi.Input[str]] = None,
             storage_container: Optional[pulumi.Input[str]] = None,
             unique_name: Optional[pulumi.Input[str]] = None,
@@ -868,14 +868,14 @@ class NdbCluster(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbClusterAgentNetworkInfoArgs']]]] agent_network_infos: agent network info to register cluster
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterAgentNetworkInfoArgs', 'NdbClusterAgentNetworkInfoArgsDict']]]] agent_network_infos: agent network info to register cluster
         :param pulumi.Input[str] cloud_info: - cloud info
         :param pulumi.Input[str] cloud_type: - cloud type
         :param pulumi.Input[str] cluster_ip: Prism Element IP address
         :param pulumi.Input[str] date_created: - creation date
         :param pulumi.Input[str] date_modified: - date modified
         :param pulumi.Input[str] description: description of cluster
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbClusterEntityCountArgs']]]] entity_counts: - no. of entities related
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterEntityCountArgs', 'NdbClusterEntityCountArgsDict']]]] entity_counts: - no. of entities related
         :param pulumi.Input[str] fqdns: - fqdn
         :param pulumi.Input[bool] healthy: - if healthy status
         :param pulumi.Input[str] hypervisor_type: - hypervisor type
@@ -883,13 +883,13 @@ class NdbCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_addresses: - IP address
         :param pulumi.Input[str] management_server_info: - NA
         :param pulumi.Input[str] name: name of the cluster to be registered
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbClusterNetworksInfoArgs']]]] networks_infos: network segmentation to segment the network traffic of the agent VM.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterNetworksInfoArgs', 'NdbClusterNetworksInfoArgsDict']]]] networks_infos: network segmentation to segment the network traffic of the agent VM.
         :param pulumi.Input[str] nx_cluster_uuid: - nutanix cluster uuid
         :param pulumi.Input[str] owner_id: - owner UUID
         :param pulumi.Input[str] password: Prism Element password
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbClusterPropertyArgs']]]] properties: - list of properties
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterPropertyArgs', 'NdbClusterPropertyArgsDict']]]] properties: - list of properties
         :param pulumi.Input[int] reference_count: - NA
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbClusterResourceConfigArgs']]]] resource_configs: - resource related consumption info
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbClusterResourceConfigArgs', 'NdbClusterResourceConfigArgsDict']]]] resource_configs: - resource related consumption info
         :param pulumi.Input[str] status: - current status
         :param pulumi.Input[str] storage_container: select a storage container which is used for performing database operations in the cluster
         :param pulumi.Input[str] unique_name: - unique name of cluster

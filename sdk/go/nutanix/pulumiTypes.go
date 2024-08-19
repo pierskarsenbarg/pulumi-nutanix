@@ -3393,7 +3393,7 @@ type FoundationCentralImageClusterNodeList struct {
 	// Vlan tag of the cvm, if the cvm is on a vlan.
 	CvmVlanId *int `pulumi:"cvmVlanId"`
 	// Hardware attributes override json for the node.
-	HardwareAttributesOverride map[string]interface{} `pulumi:"hardwareAttributesOverride"`
+	HardwareAttributesOverride map[string]string `pulumi:"hardwareAttributesOverride"`
 	// Gateway of the hypervisor.
 	HypervisorGateway *string `pulumi:"hypervisorGateway"`
 	// Name to be set for the hypervisor host.
@@ -3443,7 +3443,7 @@ type FoundationCentralImageClusterNodeListArgs struct {
 	// Vlan tag of the cvm, if the cvm is on a vlan.
 	CvmVlanId pulumi.IntPtrInput `pulumi:"cvmVlanId"`
 	// Hardware attributes override json for the node.
-	HardwareAttributesOverride pulumi.MapInput `pulumi:"hardwareAttributesOverride"`
+	HardwareAttributesOverride pulumi.StringMapInput `pulumi:"hardwareAttributesOverride"`
 	// Gateway of the hypervisor.
 	HypervisorGateway pulumi.StringPtrInput `pulumi:"hypervisorGateway"`
 	// Name to be set for the hypervisor host.
@@ -3547,10 +3547,8 @@ func (o FoundationCentralImageClusterNodeListOutput) CvmVlanId() pulumi.IntPtrOu
 }
 
 // Hardware attributes override json for the node.
-func (o FoundationCentralImageClusterNodeListOutput) HardwareAttributesOverride() pulumi.MapOutput {
-	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) map[string]interface{} {
-		return v.HardwareAttributesOverride
-	}).(pulumi.MapOutput)
+func (o FoundationCentralImageClusterNodeListOutput) HardwareAttributesOverride() pulumi.StringMapOutput {
+	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) map[string]string { return v.HardwareAttributesOverride }).(pulumi.StringMapOutput)
 }
 
 // Gateway of the hypervisor.

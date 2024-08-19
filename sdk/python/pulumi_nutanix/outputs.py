@@ -3043,7 +3043,7 @@ class FoundationCentralImageClusterNodeList(dict):
                  cvm_netmask: Optional[str] = None,
                  cvm_ram_gb: Optional[int] = None,
                  cvm_vlan_id: Optional[int] = None,
-                 hardware_attributes_override: Optional[Mapping[str, Any]] = None,
+                 hardware_attributes_override: Optional[Mapping[str, str]] = None,
                  hypervisor_gateway: Optional[str] = None,
                  hypervisor_hostname: Optional[str] = None,
                  hypervisor_ip: Optional[str] = None,
@@ -3062,7 +3062,7 @@ class FoundationCentralImageClusterNodeList(dict):
         :param str cvm_netmask: Netmask of the cvm.
         :param int cvm_ram_gb: Amount of memory to be assigned for the cvm.
         :param int cvm_vlan_id: Vlan tag of the cvm, if the cvm is on a vlan.
-        :param Mapping[str, Any] hardware_attributes_override: Hardware attributes override json for the node.
+        :param Mapping[str, str] hardware_attributes_override: Hardware attributes override json for the node.
         :param str hypervisor_gateway: Gateway of the hypervisor.
         :param str hypervisor_hostname: Name to be set for the hypervisor host.
         :param str hypervisor_ip: IP address to be set for the hypervisor on the node.
@@ -3155,7 +3155,7 @@ class FoundationCentralImageClusterNodeList(dict):
 
     @property
     @pulumi.getter(name="hardwareAttributesOverride")
-    def hardware_attributes_override(self) -> Optional[Mapping[str, Any]]:
+    def hardware_attributes_override(self) -> Optional[Mapping[str, str]]:
         """
         Hardware attributes override json for the node.
         """
@@ -38907,8 +38907,8 @@ class GetClustersEntityResult(dict):
                  smtp_server_email_address: str,
                  smtp_server_proxy_type_lists: Sequence[str],
                  smtp_server_type: str,
-                 software_map_ncc: Mapping[str, Any],
-                 software_map_nos: Mapping[str, Any],
+                 software_map_ncc: Mapping[str, str],
+                 software_map_nos: Mapping[str, str],
                  ssl_key_expire_datetime: str,
                  ssl_key_name: str,
                  ssl_key_signing_info: Mapping[str, str],
@@ -38955,8 +38955,8 @@ class GetClustersEntityResult(dict):
         :param str smtp_server_email_address: - SMTP Server Email Address.
         :param Sequence[str] smtp_server_proxy_type_lists: - SMTP Server Proxy Type List
         :param str smtp_server_type: - SMTP Server type.
-        :param Mapping[str, Any] software_map_ncc: - Map of software on the cluster with software type as the key.
-        :param Mapping[str, Any] software_map_nos: - Map of software on the cluster with software type as the key.
+        :param Mapping[str, str] software_map_ncc: - Map of software on the cluster with software type as the key.
+        :param Mapping[str, str] software_map_nos: - Map of software on the cluster with software type as the key.
         :param str ssl_key_expire_datetime: - UTC date and time in RFC-3339 format when the key expires
         :param Mapping[str, str] ssl_key_signing_info: - Customer information used in Certificate Signing Request for creating digital certificates.
         :param str ssl_key_type: - SSL key type. Key types with RSA_2048, ECDSA_256 and ECDSA_384 are supported for key generation and importing.
@@ -39330,7 +39330,7 @@ class GetClustersEntityResult(dict):
 
     @property
     @pulumi.getter(name="softwareMapNcc")
-    def software_map_ncc(self) -> Mapping[str, Any]:
+    def software_map_ncc(self) -> Mapping[str, str]:
         """
         - Map of software on the cluster with software type as the key.
         """
@@ -39338,7 +39338,7 @@ class GetClustersEntityResult(dict):
 
     @property
     @pulumi.getter(name="softwareMapNos")
-    def software_map_nos(self) -> Mapping[str, Any]:
+    def software_map_nos(self) -> Mapping[str, str]:
         """
         - Map of software on the cluster with software type as the key.
         """
@@ -41530,7 +41530,7 @@ class GetFoundationCentralImagedNodesListImagedNodeResult(dict):
                  cvm_uuid: str,
                  cvm_vlan_id: int,
                  foundation_version: str,
-                 hardware_attributes: Mapping[str, Any],
+                 hardware_attributes: Mapping[str, str],
                  hypervisor_gateway: str,
                  hypervisor_hostname: str,
                  hypervisor_ip: str,
@@ -41566,7 +41566,7 @@ class GetFoundationCentralImagedNodesListImagedNodeResult(dict):
         :param str cvm_uuid: Node UUID from the node's cvm.
         :param int cvm_vlan_id: Vlan tag of the cvm, if the cvm is on a vlan.
         :param str foundation_version: Foundation version installed on the node.
-        :param Mapping[str, Any] hardware_attributes: Hardware attributes json of the node.
+        :param Mapping[str, str] hardware_attributes: Hardware attributes json of the node.
         :param str hypervisor_gateway: gateway of the hypervisor.
         :param str hypervisor_hostname: Name of the hypervisor host.
         :param str hypervisor_ip: IP address of the hypervisor.
@@ -41737,7 +41737,7 @@ class GetFoundationCentralImagedNodesListImagedNodeResult(dict):
 
     @property
     @pulumi.getter(name="hardwareAttributes")
-    def hardware_attributes(self) -> Mapping[str, Any]:
+    def hardware_attributes(self) -> Mapping[str, str]:
         """
         Hardware attributes json of the node.
         """
@@ -72382,7 +72382,7 @@ class GetSubnetCategoryResult(dict):
 @pulumi.output_type
 class GetSubnetMessageListResult(dict):
     def __init__(__self__, *,
-                 details: Mapping[str, Any],
+                 details: Mapping[str, str],
                  message: str,
                  reason: str):
         pulumi.set(__self__, "details", details)
@@ -72391,7 +72391,7 @@ class GetSubnetMessageListResult(dict):
 
     @property
     @pulumi.getter
-    def details(self) -> Mapping[str, Any]:
+    def details(self) -> Mapping[str, str]:
         return pulumi.get(self, "details")
 
     @property
@@ -72749,7 +72749,7 @@ class GetSubnetsEntityCategoryResult(dict):
 @pulumi.output_type
 class GetSubnetsEntityMessageListResult(dict):
     def __init__(__self__, *,
-                 details: Mapping[str, Any],
+                 details: Mapping[str, str],
                  message: str,
                  reason: str):
         pulumi.set(__self__, "details", details)
@@ -72758,7 +72758,7 @@ class GetSubnetsEntityMessageListResult(dict):
 
     @property
     @pulumi.getter
-    def details(self) -> Mapping[str, Any]:
+    def details(self) -> Mapping[str, str]:
         return pulumi.get(self, "details")
 
     @property
@@ -74407,7 +74407,7 @@ class GetVirtualMachineGpuListResult(dict):
 @pulumi.output_type
 class GetVirtualMachineMessageListResult(dict):
     def __init__(__self__, *,
-                 details: Mapping[str, Any],
+                 details: Mapping[str, str],
                  message: str,
                  reason: str):
         pulumi.set(__self__, "details", details)
@@ -74416,7 +74416,7 @@ class GetVirtualMachineMessageListResult(dict):
 
     @property
     @pulumi.getter
-    def details(self) -> Mapping[str, Any]:
+    def details(self) -> Mapping[str, str]:
         return pulumi.get(self, "details")
 
     @property

@@ -322,9 +322,9 @@ class User(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UserCategoryArgs']]]]] = None,
-                 directory_service_user: Optional[pulumi.Input[pulumi.InputType['UserDirectoryServiceUserArgs']]] = None,
-                 identity_provider_user: Optional[pulumi.Input[pulumi.InputType['UserIdentityProviderUserArgs']]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserCategoryArgs', 'UserCategoryArgsDict']]]]] = None,
+                 directory_service_user: Optional[pulumi.Input[Union['UserDirectoryServiceUserArgs', 'UserDirectoryServiceUserArgsDict']]] = None,
+                 identity_provider_user: Optional[pulumi.Input[Union['UserIdentityProviderUserArgs', 'UserIdentityProviderUserArgsDict']]] = None,
                  owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  __props__=None):
@@ -337,31 +337,31 @@ class User(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        user = nutanix.User("user", directory_service_user=nutanix.UserDirectoryServiceUserArgs(
-            directory_service_reference=nutanix.UserDirectoryServiceUserDirectoryServiceReferenceArgs(
-                uuid="<directory-service-uuid>",
-            ),
-            user_principal_name="test-user@ntnxlab.local",
-        ))
+        user = nutanix.User("user", directory_service_user={
+            "directory_service_reference": {
+                "uuid": "<directory-service-uuid>",
+            },
+            "user_principal_name": "test-user@ntnxlab.local",
+        })
         ```
 
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
 
-        user = nutanix.User("user", identity_provider_user=nutanix.UserIdentityProviderUserArgs(
-            identity_provider_reference=nutanix.UserIdentityProviderUserIdentityProviderReferenceArgs(
-                uuid="<identity-provider-uuid>",
-            ),
-            username="username",
-        ))
+        user = nutanix.User("user", identity_provider_user={
+            "identity_provider_reference": {
+                "uuid": "<identity-provider-uuid>",
+            },
+            "username": "username",
+        })
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UserCategoryArgs']]]] categories: - (Optional) Categories for the Access Control Policy.
-        :param pulumi.Input[pulumi.InputType['UserDirectoryServiceUserArgs']] directory_service_user: - (Optional) The directory service user configuration. See below for more information.
-        :param pulumi.Input[pulumi.InputType['UserIdentityProviderUserArgs']] identity_provider_user: - (Optional) (Optional) The identity provider user configuration. See below for more information.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UserCategoryArgs', 'UserCategoryArgsDict']]]] categories: - (Optional) Categories for the Access Control Policy.
+        :param pulumi.Input[Union['UserDirectoryServiceUserArgs', 'UserDirectoryServiceUserArgsDict']] directory_service_user: - (Optional) The directory service user configuration. See below for more information.
+        :param pulumi.Input[Union['UserIdentityProviderUserArgs', 'UserIdentityProviderUserArgsDict']] identity_provider_user: - (Optional) (Optional) The identity provider user configuration. See below for more information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] owner_reference: - (Optional) The reference to a user.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] project_reference: - (Optional) The reference to a project.
         """
@@ -380,24 +380,24 @@ class User(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        user = nutanix.User("user", directory_service_user=nutanix.UserDirectoryServiceUserArgs(
-            directory_service_reference=nutanix.UserDirectoryServiceUserDirectoryServiceReferenceArgs(
-                uuid="<directory-service-uuid>",
-            ),
-            user_principal_name="test-user@ntnxlab.local",
-        ))
+        user = nutanix.User("user", directory_service_user={
+            "directory_service_reference": {
+                "uuid": "<directory-service-uuid>",
+            },
+            "user_principal_name": "test-user@ntnxlab.local",
+        })
         ```
 
         ```python
         import pulumi
         import pulumi_nutanix as nutanix
 
-        user = nutanix.User("user", identity_provider_user=nutanix.UserIdentityProviderUserArgs(
-            identity_provider_reference=nutanix.UserIdentityProviderUserIdentityProviderReferenceArgs(
-                uuid="<identity-provider-uuid>",
-            ),
-            username="username",
-        ))
+        user = nutanix.User("user", identity_provider_user={
+            "identity_provider_reference": {
+                "uuid": "<identity-provider-uuid>",
+            },
+            "username": "username",
+        })
         ```
 
         :param str resource_name: The name of the resource.
@@ -415,9 +415,9 @@ class User(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UserCategoryArgs']]]]] = None,
-                 directory_service_user: Optional[pulumi.Input[pulumi.InputType['UserDirectoryServiceUserArgs']]] = None,
-                 identity_provider_user: Optional[pulumi.Input[pulumi.InputType['UserIdentityProviderUserArgs']]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserCategoryArgs', 'UserCategoryArgsDict']]]]] = None,
+                 directory_service_user: Optional[pulumi.Input[Union['UserDirectoryServiceUserArgs', 'UserDirectoryServiceUserArgsDict']]] = None,
+                 identity_provider_user: Optional[pulumi.Input[Union['UserIdentityProviderUserArgs', 'UserIdentityProviderUserArgsDict']]] = None,
                  owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  __props__=None):
@@ -452,17 +452,17 @@ class User(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_control_policy_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UserAccessControlPolicyReferenceListArgs']]]]] = None,
+            access_control_policy_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserAccessControlPolicyReferenceListArgs', 'UserAccessControlPolicyReferenceListArgsDict']]]]] = None,
             api_version: Optional[pulumi.Input[str]] = None,
-            categories: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UserCategoryArgs']]]]] = None,
-            directory_service_user: Optional[pulumi.Input[pulumi.InputType['UserDirectoryServiceUserArgs']]] = None,
+            categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserCategoryArgs', 'UserCategoryArgsDict']]]]] = None,
+            directory_service_user: Optional[pulumi.Input[Union['UserDirectoryServiceUserArgs', 'UserDirectoryServiceUserArgsDict']]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            identity_provider_user: Optional[pulumi.Input[pulumi.InputType['UserIdentityProviderUserArgs']]] = None,
+            identity_provider_user: Optional[pulumi.Input[Union['UserIdentityProviderUserArgs', 'UserIdentityProviderUserArgsDict']]] = None,
             metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-            project_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UserProjectReferenceListArgs']]]]] = None,
+            project_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UserProjectReferenceListArgs', 'UserProjectReferenceListArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             user_type: Optional[pulumi.Input[str]] = None) -> 'User':
         """
@@ -472,17 +472,17 @@ class User(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UserAccessControlPolicyReferenceListArgs']]]] access_control_policy_reference_lists: - List of ACP references. See #reference for more details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UserAccessControlPolicyReferenceListArgs', 'UserAccessControlPolicyReferenceListArgsDict']]]] access_control_policy_reference_lists: - List of ACP references. See #reference for more details.
         :param pulumi.Input[str] api_version: The version of the API.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UserCategoryArgs']]]] categories: - (Optional) Categories for the Access Control Policy.
-        :param pulumi.Input[pulumi.InputType['UserDirectoryServiceUserArgs']] directory_service_user: - (Optional) The directory service user configuration. See below for more information.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UserCategoryArgs', 'UserCategoryArgsDict']]]] categories: - (Optional) Categories for the Access Control Policy.
+        :param pulumi.Input[Union['UserDirectoryServiceUserArgs', 'UserDirectoryServiceUserArgsDict']] directory_service_user: - (Optional) The directory service user configuration. See below for more information.
         :param pulumi.Input[str] display_name: - The display name of the user (common name) provided by the directory service.
-        :param pulumi.Input[pulumi.InputType['UserIdentityProviderUserArgs']] identity_provider_user: - (Optional) (Optional) The identity provider user configuration. See below for more information.
+        :param pulumi.Input[Union['UserIdentityProviderUserArgs', 'UserIdentityProviderUserArgsDict']] identity_provider_user: - (Optional) (Optional) The identity provider user configuration. See below for more information.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: - The vm kind metadata.
         :param pulumi.Input[str] name: - the name(Optional).
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] owner_reference: - (Optional) The reference to a user.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] project_reference: - (Optional) The reference to a project.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UserProjectReferenceListArgs']]]] project_reference_lists: - A list of projects the user is part of. See #reference for more details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UserProjectReferenceListArgs', 'UserProjectReferenceListArgsDict']]]] project_reference_lists: - A list of projects the user is part of. See #reference for more details.
         :param pulumi.Input[str] state: - The state of the entity.
         :param pulumi.Input[str] user_type: - The name of the user.
         """

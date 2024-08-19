@@ -14,30 +14,53 @@ import (
 
 // Provides a resource to perform the clone of database instance based on the input parameters.
 //
-// ## resource for cloning using Point in time given time machine name
+// ## Example Usage
 //
-//	resource "NdbClone" "name" {
-//	    timeMachineName = "test-pg-inst"
-//	    name = "test-inst-tf-check"
-//	    nxClusterId = "{{ nx_Cluster_id }}"
-//	    sshPublicKey = "{{ sshkey }}"
-//	    user_pitr_timestamp=  "{{ pointInTime }}"
-//	    timeZone = "Asia/Calcutta"
-//	    createDbserver = true
-//	    computeProfileId = "{{ computeProfileId }}"
-//	    networkProfileId ="{{ networkProfileId }}"
-//	    databaseParameterProfileId =  "{{ databseProfileId }}"
-//	    nodes{
-//	        vm_name= "testVmClone"
-//	        computeProfileId = "{{ computeProfileId }}"
-//	        networkProfileId ="{{ networkProfileId }}"
-//	        nxClusterId = "{{ nx_Cluster_id }}"
-//	    }
-//	    postgresql_info{
-//	        vm_name="testVmClone"
-//	        db_password= "pass"
-//	    }
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewNdbClone(ctx, "name", &nutanix.NdbCloneArgs{
+//				ComputeProfileId:           pulumi.String("{{ compute_profile_id }}"),
+//				CreateDbserver:             pulumi.Bool(true),
+//				DatabaseParameterProfileId: pulumi.String("{{ databse_profile_id }}"),
+//				NetworkProfileId:           pulumi.String("{{ network_profile_id }}"),
+//				Nodes: nutanix.NdbCloneNodeArray{
+//					&nutanix.NdbCloneNodeArgs{
+//						ComputeProfileId: pulumi.String("{{ compute_profile_id }}"),
+//						NetworkProfileId: pulumi.String("{{ network_profile_id }}"),
+//						NxClusterId:      pulumi.String("{{ nx_Cluster_id }}"),
+//						VmName:           pulumi.String("test_vm_clone"),
+//					},
+//				},
+//				NxClusterId: pulumi.String("{{ nx_Cluster_id }}"),
+//				PostgresqlInfos: nutanix.NdbClonePostgresqlInfoArray{
+//					&nutanix.NdbClonePostgresqlInfoArgs{
+//						DbPassword: pulumi.String("pass"),
+//						VmName:     pulumi.String("test_vm_clone"),
+//					},
+//				},
+//				SshPublicKey:      pulumi.String("{{ sshkey }}"),
+//				TimeMachineName:   pulumi.String("test-pg-inst"),
+//				TimeZone:          pulumi.String("Asia/Calcutta"),
+//				UserPitrTimestamp: pulumi.String("{{ point_in_time }}"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
 //	}
+//
+// ```
 type NdbClone struct {
 	pulumi.CustomResourceState
 

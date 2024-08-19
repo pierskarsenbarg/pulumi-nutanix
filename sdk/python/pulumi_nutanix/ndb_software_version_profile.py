@@ -420,7 +420,7 @@ class NdbSoftwareVersionProfile(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  engine_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbSoftwareVersionProfilePostgresDatabaseArgs']]]]] = None,
+                 postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfilePostgresDatabaseArgs', 'NdbSoftwareVersionProfilePostgresDatabaseArgsDict']]]]] = None,
                  profile_id: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -437,9 +437,9 @@ class NdbSoftwareVersionProfile(pulumi.CustomResource):
             engine_type="postgres_database",
             profile_id=resource["nutanix_ndb_profile"]["name12"]["id"],
             description="made  by tf",
-            postgres_databases=[nutanix.NdbSoftwareVersionProfilePostgresDatabaseArgs(
-                source_dbserver_id="{{ DB_Server_ID }}",
-            )],
+            postgres_databases=[{
+                "source_dbserver_id": "{{ DB_Server_ID }}",
+            }],
             available_cluster_ids=["{{ cluster_ids }}"],
             status="published")
         ```
@@ -450,7 +450,7 @@ class NdbSoftwareVersionProfile(pulumi.CustomResource):
         :param pulumi.Input[str] description: description of profile
         :param pulumi.Input[str] engine_type: engine type of profile
         :param pulumi.Input[str] name: Name of profile
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbSoftwareVersionProfilePostgresDatabaseArgs']]]] postgres_databases: postgres database info
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfilePostgresDatabaseArgs', 'NdbSoftwareVersionProfilePostgresDatabaseArgsDict']]]] postgres_databases: postgres database info
         :param pulumi.Input[str] profile_id: profile id
         :param pulumi.Input[str] status: status of profile. Allowed Values are "deprecated", "published", "unpublished"
         """
@@ -473,9 +473,9 @@ class NdbSoftwareVersionProfile(pulumi.CustomResource):
             engine_type="postgres_database",
             profile_id=resource["nutanix_ndb_profile"]["name12"]["id"],
             description="made  by tf",
-            postgres_databases=[nutanix.NdbSoftwareVersionProfilePostgresDatabaseArgs(
-                source_dbserver_id="{{ DB_Server_ID }}",
-            )],
+            postgres_databases=[{
+                "source_dbserver_id": "{{ DB_Server_ID }}",
+            }],
             available_cluster_ids=["{{ cluster_ids }}"],
             status="published")
         ```
@@ -499,7 +499,7 @@ class NdbSoftwareVersionProfile(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  engine_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbSoftwareVersionProfilePostgresDatabaseArgs']]]]] = None,
+                 postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfilePostgresDatabaseArgs', 'NdbSoftwareVersionProfilePostgresDatabaseArgsDict']]]]] = None,
                  profile_id: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -549,16 +549,16 @@ class NdbSoftwareVersionProfile(pulumi.CustomResource):
             engine_type: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             owner: Optional[pulumi.Input[str]] = None,
-            postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbSoftwareVersionProfilePostgresDatabaseArgs']]]]] = None,
+            postgres_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfilePostgresDatabaseArgs', 'NdbSoftwareVersionProfilePostgresDatabaseArgsDict']]]]] = None,
             profile_id: Optional[pulumi.Input[str]] = None,
-            properties: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbSoftwareVersionProfilePropertyArgs']]]]] = None,
+            properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfilePropertyArgs', 'NdbSoftwareVersionProfilePropertyArgsDict']]]]] = None,
             properties_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             published: Optional[pulumi.Input[bool]] = None,
             status: Optional[pulumi.Input[str]] = None,
             system_profile: Optional[pulumi.Input[bool]] = None,
             topology: Optional[pulumi.Input[str]] = None,
             version: Optional[pulumi.Input[str]] = None,
-            version_cluster_associations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbSoftwareVersionProfileVersionClusterAssociationArgs']]]]] = None) -> 'NdbSoftwareVersionProfile':
+            version_cluster_associations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfileVersionClusterAssociationArgs', 'NdbSoftwareVersionProfileVersionClusterAssociationArgsDict']]]]] = None) -> 'NdbSoftwareVersionProfile':
         """
         Get an existing NdbSoftwareVersionProfile resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -573,16 +573,16 @@ class NdbSoftwareVersionProfile(pulumi.CustomResource):
         :param pulumi.Input[str] engine_type: engine type of profile
         :param pulumi.Input[str] name: Name of profile
         :param pulumi.Input[str] owner: owner  of profile
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbSoftwareVersionProfilePostgresDatabaseArgs']]]] postgres_databases: postgres database info
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfilePostgresDatabaseArgs', 'NdbSoftwareVersionProfilePostgresDatabaseArgsDict']]]] postgres_databases: postgres database info
         :param pulumi.Input[str] profile_id: profile id
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbSoftwareVersionProfilePropertyArgs']]]] properties: properties of software profile
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfilePropertyArgs', 'NdbSoftwareVersionProfilePropertyArgsDict']]]] properties: properties of software profile
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] properties_map: properties map of profile
         :param pulumi.Input[bool] published: Published or not
         :param pulumi.Input[str] status: status of profile. Allowed Values are "deprecated", "published", "unpublished"
         :param pulumi.Input[bool] system_profile: system profile or not.
         :param pulumi.Input[str] topology: topology of software profile
         :param pulumi.Input[str] version: Version of software profile
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbSoftwareVersionProfileVersionClusterAssociationArgs']]]] version_cluster_associations: version cluster association
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbSoftwareVersionProfileVersionClusterAssociationArgs', 'NdbSoftwareVersionProfileVersionClusterAssociationArgsDict']]]] version_cluster_associations: version cluster association
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

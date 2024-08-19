@@ -242,7 +242,7 @@ class GetFoundationCentralImagedNodeDetailsResult:
 
     @property
     @pulumi.getter(name="hardwareAttributes")
-    def hardware_attributes(self) -> Mapping[str, Any]:
+    def hardware_attributes(self) -> Mapping[str, str]:
         """
         Hardware attributes json of the node.
         """

@@ -180,7 +180,7 @@ class NdbMaintenanceTask(pulumi.CustomResource):
                  dbserver_clusters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  dbserver_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  maintenance_window_id: Optional[pulumi.Input[str]] = None,
-                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbMaintenanceTaskTaskArgs']]]]] = None,
+                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict']]]]] = None,
                  __props__=None):
         """
         Provides a resource to associate a maintenance window with database server VM based on the input parameters.
@@ -195,9 +195,9 @@ class NdbMaintenanceTask(pulumi.CustomResource):
         name = nutanix.NdbMaintenanceTask("name",
             dbserver_ids=["{{ dbserver_vm_id }}"],
             maintenance_window_id="{{ maintenance_window_id }}",
-            tasks=[nutanix.NdbMaintenanceTaskTaskArgs(
-                task_type="OS_PATCHING",
-            )])
+            tasks=[{
+                "task_type": "OS_PATCHING",
+            }])
         ```
 
         ### resource to associated maintenance window with DB_PATCHING
@@ -208,9 +208,9 @@ class NdbMaintenanceTask(pulumi.CustomResource):
         name = nutanix.NdbMaintenanceTask("name",
             dbserver_ids=["{{ dbserver_vm_id }}"],
             maintenance_window_id="{{ maintenance_window_id }}",
-            tasks=[nutanix.NdbMaintenanceTaskTaskArgs(
-                task_type="DB_PATCHING",
-            )])
+            tasks=[{
+                "task_type": "DB_PATCHING",
+            }])
         ```
 
         ### resource to associated maintenance window with pre and post command on each task
@@ -222,16 +222,16 @@ class NdbMaintenanceTask(pulumi.CustomResource):
             dbserver_ids=["{{ dbserver_vm_id }}"],
             maintenance_window_id="{{ maintenance_window_id }}",
             tasks=[
-                nutanix.NdbMaintenanceTaskTaskArgs(
-                    post_command="{{ post_command for db patching }}",
-                    pre_command="{{ pre_command for db patching }}",
-                    task_type="DB_PATCHING",
-                ),
-                nutanix.NdbMaintenanceTaskTaskArgs(
-                    post_command="{{ post_command for os patching }}",
-                    pre_command="{{ pre_command for os patching}}",
-                    task_type="OS_PATCHING",
-                ),
+                {
+                    "post_command": "{{ post_command for db patching }}",
+                    "pre_command": "{{ pre_command for db patching }}",
+                    "task_type": "DB_PATCHING",
+                },
+                {
+                    "post_command": "{{ post_command for os patching }}",
+                    "pre_command": "{{ pre_command for os patching}}",
+                    "task_type": "OS_PATCHING",
+                },
             ])
         ```
 
@@ -240,7 +240,7 @@ class NdbMaintenanceTask(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dbserver_clusters: dbserver cluster ids. Conflicts with "dbserver_id"
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dbserver_ids: dbserver vm id. Conflicts with "dbserver_cluster"
         :param pulumi.Input[str] maintenance_window_id: maintenance window id which has to be associated
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbMaintenanceTaskTaskArgs']]]] tasks: task input for Operating System Patching or Database Patching or both
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict']]]] tasks: task input for Operating System Patching or Database Patching or both
         """
         ...
     @overload
@@ -261,9 +261,9 @@ class NdbMaintenanceTask(pulumi.CustomResource):
         name = nutanix.NdbMaintenanceTask("name",
             dbserver_ids=["{{ dbserver_vm_id }}"],
             maintenance_window_id="{{ maintenance_window_id }}",
-            tasks=[nutanix.NdbMaintenanceTaskTaskArgs(
-                task_type="OS_PATCHING",
-            )])
+            tasks=[{
+                "task_type": "OS_PATCHING",
+            }])
         ```
 
         ### resource to associated maintenance window with DB_PATCHING
@@ -274,9 +274,9 @@ class NdbMaintenanceTask(pulumi.CustomResource):
         name = nutanix.NdbMaintenanceTask("name",
             dbserver_ids=["{{ dbserver_vm_id }}"],
             maintenance_window_id="{{ maintenance_window_id }}",
-            tasks=[nutanix.NdbMaintenanceTaskTaskArgs(
-                task_type="DB_PATCHING",
-            )])
+            tasks=[{
+                "task_type": "DB_PATCHING",
+            }])
         ```
 
         ### resource to associated maintenance window with pre and post command on each task
@@ -288,16 +288,16 @@ class NdbMaintenanceTask(pulumi.CustomResource):
             dbserver_ids=["{{ dbserver_vm_id }}"],
             maintenance_window_id="{{ maintenance_window_id }}",
             tasks=[
-                nutanix.NdbMaintenanceTaskTaskArgs(
-                    post_command="{{ post_command for db patching }}",
-                    pre_command="{{ pre_command for db patching }}",
-                    task_type="DB_PATCHING",
-                ),
-                nutanix.NdbMaintenanceTaskTaskArgs(
-                    post_command="{{ post_command for os patching }}",
-                    pre_command="{{ pre_command for os patching}}",
-                    task_type="OS_PATCHING",
-                ),
+                {
+                    "post_command": "{{ post_command for db patching }}",
+                    "pre_command": "{{ pre_command for db patching }}",
+                    "task_type": "DB_PATCHING",
+                },
+                {
+                    "post_command": "{{ post_command for os patching }}",
+                    "pre_command": "{{ pre_command for os patching}}",
+                    "task_type": "OS_PATCHING",
+                },
             ])
         ```
 
@@ -319,7 +319,7 @@ class NdbMaintenanceTask(pulumi.CustomResource):
                  dbserver_clusters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  dbserver_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  maintenance_window_id: Optional[pulumi.Input[str]] = None,
-                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbMaintenanceTaskTaskArgs']]]]] = None,
+                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -348,9 +348,9 @@ class NdbMaintenanceTask(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             dbserver_clusters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             dbserver_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            entity_task_associations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbMaintenanceTaskEntityTaskAssociationArgs']]]]] = None,
+            entity_task_associations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceTaskEntityTaskAssociationArgs', 'NdbMaintenanceTaskEntityTaskAssociationArgsDict']]]]] = None,
             maintenance_window_id: Optional[pulumi.Input[str]] = None,
-            tasks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbMaintenanceTaskTaskArgs']]]]] = None) -> 'NdbMaintenanceTask':
+            tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict']]]]] = None) -> 'NdbMaintenanceTask':
         """
         Get an existing NdbMaintenanceTask resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -360,9 +360,9 @@ class NdbMaintenanceTask(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dbserver_clusters: dbserver cluster ids. Conflicts with "dbserver_id"
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dbserver_ids: dbserver vm id. Conflicts with "dbserver_cluster"
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbMaintenanceTaskEntityTaskAssociationArgs']]]] entity_task_associations: Entity Task Association  List.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceTaskEntityTaskAssociationArgs', 'NdbMaintenanceTaskEntityTaskAssociationArgsDict']]]] entity_task_associations: Entity Task Association  List.
         :param pulumi.Input[str] maintenance_window_id: maintenance window id which has to be associated
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbMaintenanceTaskTaskArgs']]]] tasks: task input for Operating System Patching or Database Patching or both
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbMaintenanceTaskTaskArgs', 'NdbMaintenanceTaskTaskArgsDict']]]] tasks: task input for Operating System Patching or Database Patching or both
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

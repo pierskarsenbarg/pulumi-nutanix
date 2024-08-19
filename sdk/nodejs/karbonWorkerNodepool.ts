@@ -86,7 +86,7 @@ export class KarbonWorkerNodepool extends pulumi.CustomResource {
     /**
      * labels of node
      */
-    public readonly labels!: pulumi.Output<{[key: string]: any}>;
+    public readonly labels!: pulumi.Output<{[key: string]: string}>;
     /**
      * unique worker nodepool name
      */
@@ -160,7 +160,7 @@ export interface KarbonWorkerNodepoolState {
     /**
      * labels of node
      */
-    labels?: pulumi.Input<{[key: string]: any}>;
+    labels?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * unique worker nodepool name
      */
@@ -194,7 +194,7 @@ export interface KarbonWorkerNodepoolArgs {
     /**
      * labels of node
      */
-    labels?: pulumi.Input<{[key: string]: any}>;
+    labels?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * unique worker nodepool name
      */

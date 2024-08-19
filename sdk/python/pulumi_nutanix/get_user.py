@@ -208,7 +208,7 @@ class AwaitableGetUserResult(GetUserResult):
             user_type=self.user_type)
 
 
-def get_user(categories: Optional[Sequence[pulumi.InputType['GetUserCategoryArgs']]] = None,
+def get_user(categories: Optional[Sequence[Union['GetUserCategoryArgs', 'GetUserCategoryArgsDict']]] = None,
              owner_reference: Optional[Mapping[str, str]] = None,
              project_reference: Optional[Mapping[str, str]] = None,
              user_id: Optional[str] = None,
@@ -218,7 +218,7 @@ def get_user(categories: Optional[Sequence[pulumi.InputType['GetUserCategoryArgs
     Provides a datasource to retrieve a user based on the input parameters.
 
 
-    :param Sequence[pulumi.InputType['GetUserCategoryArgs']] categories: - (Optional) Categories for the Access Control Policy.
+    :param Sequence[Union['GetUserCategoryArgs', 'GetUserCategoryArgsDict']] categories: - (Optional) Categories for the Access Control Policy.
     :param Mapping[str, str] owner_reference: - (Optional) The reference to a user.
     :param Mapping[str, str] project_reference: - (Optional) The reference to a project.
     """
@@ -250,7 +250,7 @@ def get_user(categories: Optional[Sequence[pulumi.InputType['GetUserCategoryArgs
 
 
 @_utilities.lift_output_func(get_user)
-def get_user_output(categories: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetUserCategoryArgs']]]]] = None,
+def get_user_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetUserCategoryArgs', 'GetUserCategoryArgsDict']]]]] = None,
                     owner_reference: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
                     project_reference: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
                     user_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -260,7 +260,7 @@ def get_user_output(categories: Optional[pulumi.Input[Optional[Sequence[pulumi.I
     Provides a datasource to retrieve a user based on the input parameters.
 
 
-    :param Sequence[pulumi.InputType['GetUserCategoryArgs']] categories: - (Optional) Categories for the Access Control Policy.
+    :param Sequence[Union['GetUserCategoryArgs', 'GetUserCategoryArgsDict']] categories: - (Optional) Categories for the Access Control Policy.
     :param Mapping[str, str] owner_reference: - (Optional) The reference to a user.
     :param Mapping[str, str] project_reference: - (Optional) The reference to a project.
     """

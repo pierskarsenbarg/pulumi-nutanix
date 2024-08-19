@@ -82,7 +82,7 @@ class AwaitableGetVpcsResult(GetVpcsResult):
             metadatas=self.metadatas)
 
 
-def get_vpcs(metadatas: Optional[Sequence[pulumi.InputType['GetVpcsMetadataArgs']]] = None,
+def get_vpcs(metadatas: Optional[Sequence[Union['GetVpcsMetadataArgs', 'GetVpcsMetadataArgsDict']]] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVpcsResult:
     """
     Provides a datasource to retrieve all the vpcs.
@@ -97,7 +97,7 @@ def get_vpcs(metadatas: Optional[Sequence[pulumi.InputType['GetVpcsMetadataArgs'
     ```
 
 
-    :param Sequence[pulumi.InputType['GetVpcsMetadataArgs']] metadatas: - The vpc kind metadata.
+    :param Sequence[Union['GetVpcsMetadataArgs', 'GetVpcsMetadataArgsDict']] metadatas: - The vpc kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
@@ -112,7 +112,7 @@ def get_vpcs(metadatas: Optional[Sequence[pulumi.InputType['GetVpcsMetadataArgs'
 
 
 @_utilities.lift_output_func(get_vpcs)
-def get_vpcs_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVpcsMetadataArgs']]]]] = None,
+def get_vpcs_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetVpcsMetadataArgs', 'GetVpcsMetadataArgsDict']]]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVpcsResult]:
     """
     Provides a datasource to retrieve all the vpcs.
@@ -127,6 +127,6 @@ def get_vpcs_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi.In
     ```
 
 
-    :param Sequence[pulumi.InputType['GetVpcsMetadataArgs']] metadatas: - The vpc kind metadata.
+    :param Sequence[Union['GetVpcsMetadataArgs', 'GetVpcsMetadataArgsDict']] metadatas: - The vpc kind metadata.
     """
     ...

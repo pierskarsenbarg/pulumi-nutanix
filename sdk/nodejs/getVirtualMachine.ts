@@ -99,7 +99,7 @@ export interface GetVirtualMachineResult {
     /**
      * - Generic key value pair used for custom attributes in cloud init.
      */
-    readonly guestCustomizationCloudInitCustomKeyValues: {[key: string]: any};
+    readonly guestCustomizationCloudInitCustomKeyValues: {[key: string]: string};
     /**
      * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
      */
@@ -119,7 +119,7 @@ export interface GetVirtualMachineResult {
     /**
      * - Generic key value pair used for custom attributes in sysprep.
      */
-    readonly guestCustomizationSysprepCustomKeyValues: {[key: string]: any};
+    readonly guestCustomizationSysprepCustomKeyValues: {[key: string]: string};
     /**
      * - Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
      */
@@ -161,7 +161,7 @@ export interface GetVirtualMachineResult {
     /**
      * - Credentials to login server.
      */
-    readonly ngtCredentials: {[key: string]: any};
+    readonly ngtCredentials: {[key: string]: string};
     /**
      * Application names that are enabled.
      */

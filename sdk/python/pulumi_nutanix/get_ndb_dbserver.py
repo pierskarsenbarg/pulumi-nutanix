@@ -435,7 +435,7 @@ def get_ndb_dbserver(dbserver_cluster_id: Optional[str] = None,
                      ip: Optional[str] = None,
                      name: Optional[str] = None,
                      nx_cluster_id: Optional[str] = None,
-                     tags: Optional[Sequence[pulumi.InputType['GetNdbDbserverTagArgs']]] = None,
+                     tags: Optional[Sequence[Union['GetNdbDbserverTagArgs', 'GetNdbDbserverTagArgsDict']]] = None,
                      vm_cluster_id: Optional[str] = None,
                      vm_cluster_name: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNdbDbserverResult:
@@ -455,7 +455,7 @@ def get_ndb_dbserver(dbserver_cluster_id: Optional[str] = None,
     :param str id: id of database server vm
     :param str ip: ip of database server vm
     :param str name: name of database server vm
-    :param Sequence[pulumi.InputType['GetNdbDbserverTagArgs']] tags: tags for db server vm
+    :param Sequence[Union['GetNdbDbserverTagArgs', 'GetNdbDbserverTagArgsDict']] tags: tags for db server vm
     :param str vm_cluster_id: vm cluster id of database server
     :param str vm_cluster_name: vm cluster name of database server
     """
@@ -515,7 +515,7 @@ def get_ndb_dbserver_output(dbserver_cluster_id: Optional[pulumi.Input[Optional[
                             ip: Optional[pulumi.Input[Optional[str]]] = None,
                             name: Optional[pulumi.Input[Optional[str]]] = None,
                             nx_cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
-                            tags: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNdbDbserverTagArgs']]]]] = None,
+                            tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbDbserverTagArgs', 'GetNdbDbserverTagArgsDict']]]]] = None,
                             vm_cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                             vm_cluster_name: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbDbserverResult]:
@@ -535,7 +535,7 @@ def get_ndb_dbserver_output(dbserver_cluster_id: Optional[pulumi.Input[Optional[
     :param str id: id of database server vm
     :param str ip: ip of database server vm
     :param str name: name of database server vm
-    :param Sequence[pulumi.InputType['GetNdbDbserverTagArgs']] tags: tags for db server vm
+    :param Sequence[Union['GetNdbDbserverTagArgs', 'GetNdbDbserverTagArgsDict']] tags: tags for db server vm
     :param str vm_cluster_id: vm cluster id of database server
     :param str vm_cluster_name: vm cluster name of database server
     """

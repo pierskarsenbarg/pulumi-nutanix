@@ -14,13 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetSubnetsEntityMessageListResult
     {
-        public readonly ImmutableDictionary<string, object> Details;
+        public readonly ImmutableDictionary<string, string> Details;
         public readonly string Message;
         public readonly string Reason;
 
         [OutputConstructor]
         private GetSubnetsEntityMessageListResult(
-            ImmutableDictionary<string, object> details,
+            ImmutableDictionary<string, string> details,
 
             string message,
 

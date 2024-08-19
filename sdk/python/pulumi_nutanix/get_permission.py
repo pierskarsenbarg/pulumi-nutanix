@@ -193,7 +193,7 @@ class AwaitableGetPermissionResult(GetPermissionResult):
             state=self.state)
 
 
-def get_permission(categories: Optional[Sequence[pulumi.InputType['GetPermissionCategoryArgs']]] = None,
+def get_permission(categories: Optional[Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict']]] = None,
                    permission_id: Optional[str] = None,
                    permission_name: Optional[str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPermissionResult:
@@ -211,7 +211,7 @@ def get_permission(categories: Optional[Sequence[pulumi.InputType['GetPermission
     ```
 
 
-    :param Sequence[pulumi.InputType['GetPermissionCategoryArgs']] categories: The categories for this resource.
+    :param Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict']] categories: The categories for this resource.
     :param str permission_id: The `id` of the permission.
     :param str permission_name: The `name` of the permission.
     """
@@ -240,7 +240,7 @@ def get_permission(categories: Optional[Sequence[pulumi.InputType['GetPermission
 
 
 @_utilities.lift_output_func(get_permission)
-def get_permission_output(categories: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPermissionCategoryArgs']]]]] = None,
+def get_permission_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict']]]]] = None,
                           permission_id: Optional[pulumi.Input[Optional[str]]] = None,
                           permission_name: Optional[pulumi.Input[Optional[str]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPermissionResult]:
@@ -258,7 +258,7 @@ def get_permission_output(categories: Optional[pulumi.Input[Optional[Sequence[pu
     ```
 
 
-    :param Sequence[pulumi.InputType['GetPermissionCategoryArgs']] categories: The categories for this resource.
+    :param Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict']] categories: The categories for this resource.
     :param str permission_id: The `id` of the permission.
     :param str permission_name: The `name` of the permission.
     """

@@ -82,7 +82,7 @@ class AwaitableGetPermissionsResult(GetPermissionsResult):
             metadatas=self.metadatas)
 
 
-def get_permissions(metadatas: Optional[Sequence[pulumi.InputType['GetPermissionsMetadataArgs']]] = None,
+def get_permissions(metadatas: Optional[Sequence[Union['GetPermissionsMetadataArgs', 'GetPermissionsMetadataArgsDict']]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPermissionsResult:
     """
     Provides a datasource to retrieve all the permissions.
@@ -97,7 +97,7 @@ def get_permissions(metadatas: Optional[Sequence[pulumi.InputType['GetPermission
     ```
 
 
-    :param Sequence[pulumi.InputType['GetPermissionsMetadataArgs']] metadatas: The permission kind metadata.
+    :param Sequence[Union['GetPermissionsMetadataArgs', 'GetPermissionsMetadataArgsDict']] metadatas: The permission kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
@@ -112,7 +112,7 @@ def get_permissions(metadatas: Optional[Sequence[pulumi.InputType['GetPermission
 
 
 @_utilities.lift_output_func(get_permissions)
-def get_permissions_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetPermissionsMetadataArgs']]]]] = None,
+def get_permissions_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetPermissionsMetadataArgs', 'GetPermissionsMetadataArgsDict']]]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPermissionsResult]:
     """
     Provides a datasource to retrieve all the permissions.
@@ -127,6 +127,6 @@ def get_permissions_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pu
     ```
 
 
-    :param Sequence[pulumi.InputType['GetPermissionsMetadataArgs']] metadatas: The permission kind metadata.
+    :param Sequence[Union['GetPermissionsMetadataArgs', 'GetPermissionsMetadataArgsDict']] metadatas: The permission kind metadata.
     """
     ...

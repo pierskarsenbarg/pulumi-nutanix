@@ -100,7 +100,7 @@ class AwaitableGetFoundationCentralImagedNodesListResult(GetFoundationCentralIma
             offset=self.offset)
 
 
-def get_foundation_central_imaged_nodes_list(filters: Optional[pulumi.InputType['GetFoundationCentralImagedNodesListFiltersArgs']] = None,
+def get_foundation_central_imaged_nodes_list(filters: Optional[Union['GetFoundationCentralImagedNodesListFiltersArgs', 'GetFoundationCentralImagedNodesListFiltersArgsDict']] = None,
                                              length: Optional[int] = None,
                                              offset: Optional[int] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFoundationCentralImagedNodesListResult:
@@ -137,7 +137,7 @@ def get_foundation_central_imaged_nodes_list(filters: Optional[pulumi.InputType[
 
 
 @_utilities.lift_output_func(get_foundation_central_imaged_nodes_list)
-def get_foundation_central_imaged_nodes_list_output(filters: Optional[pulumi.Input[Optional[pulumi.InputType['GetFoundationCentralImagedNodesListFiltersArgs']]]] = None,
+def get_foundation_central_imaged_nodes_list_output(filters: Optional[pulumi.Input[Optional[Union['GetFoundationCentralImagedNodesListFiltersArgs', 'GetFoundationCentralImagedNodesListFiltersArgsDict']]]] = None,
                                                     length: Optional[pulumi.Input[Optional[int]]] = None,
                                                     offset: Optional[pulumi.Input[Optional[int]]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationCentralImagedNodesListResult]:

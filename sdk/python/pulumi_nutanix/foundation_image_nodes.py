@@ -1192,18 +1192,18 @@ class FoundationImageNodes(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 blocks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FoundationImageNodesBlockArgs']]]]] = None,
-                 clusters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FoundationImageNodesClusterArgs']]]]] = None,
+                 blocks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesBlockArgs', 'FoundationImageNodesBlockArgsDict']]]]] = None,
+                 clusters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesClusterArgs', 'FoundationImageNodesClusterArgsDict']]]]] = None,
                  cvm_gateway: Optional[pulumi.Input[str]] = None,
                  cvm_netmask: Optional[pulumi.Input[str]] = None,
-                 eos_metadata: Optional[pulumi.Input[pulumi.InputType['FoundationImageNodesEosMetadataArgs']]] = None,
-                 fc_settings: Optional[pulumi.Input[pulumi.InputType['FoundationImageNodesFcSettingsArgs']]] = None,
+                 eos_metadata: Optional[pulumi.Input[Union['FoundationImageNodesEosMetadataArgs', 'FoundationImageNodesEosMetadataArgsDict']]] = None,
+                 fc_settings: Optional[pulumi.Input[Union['FoundationImageNodesFcSettingsArgs', 'FoundationImageNodesFcSettingsArgsDict']]] = None,
                  hyperv_external_vnic: Optional[pulumi.Input[str]] = None,
                  hyperv_external_vswitch: Optional[pulumi.Input[str]] = None,
                  hyperv_product_key: Optional[pulumi.Input[str]] = None,
                  hyperv_sku: Optional[pulumi.Input[bool]] = None,
                  hypervisor_gateway: Optional[pulumi.Input[str]] = None,
-                 hypervisor_iso: Optional[pulumi.Input[pulumi.InputType['FoundationImageNodesHypervisorIsoArgs']]] = None,
+                 hypervisor_iso: Optional[pulumi.Input[Union['FoundationImageNodesHypervisorIsoArgs', 'FoundationImageNodesHypervisorIsoArgsDict']]] = None,
                  hypervisor_nameserver: Optional[pulumi.Input[str]] = None,
                  hypervisor_netmask: Optional[pulumi.Input[str]] = None,
                  hypervisor_password: Optional[pulumi.Input[str]] = None,
@@ -1216,7 +1216,7 @@ class FoundationImageNodes(pulumi.CustomResource):
                  nos_package: Optional[pulumi.Input[str]] = None,
                  skip_hypervisor: Optional[pulumi.Input[bool]] = None,
                  svm_rescue_args: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tests: Optional[pulumi.Input[pulumi.InputType['FoundationImageNodesTestsArgs']]] = None,
+                 tests: Optional[pulumi.Input[Union['FoundationImageNodesTestsArgs', 'FoundationImageNodesTestsArgsDict']]] = None,
                  ucsm_ip: Optional[pulumi.Input[str]] = None,
                  ucsm_password: Optional[pulumi.Input[str]] = None,
                  ucsm_user: Optional[pulumi.Input[str]] = None,
@@ -1235,14 +1235,14 @@ class FoundationImageNodes(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] cvm_gateway: - (Required) CVM gateway.
         :param pulumi.Input[str] cvm_netmask: - (Required) CVM netmask.
-        :param pulumi.Input[pulumi.InputType['FoundationImageNodesEosMetadataArgs']] eos_metadata: - Contains user data from Eos portal.
-        :param pulumi.Input[pulumi.InputType['FoundationImageNodesFcSettingsArgs']] fc_settings: - Foundation Central specific settings.
+        :param pulumi.Input[Union['FoundationImageNodesEosMetadataArgs', 'FoundationImageNodesEosMetadataArgsDict']] eos_metadata: - Contains user data from Eos portal.
+        :param pulumi.Input[Union['FoundationImageNodesFcSettingsArgs', 'FoundationImageNodesFcSettingsArgsDict']] fc_settings: - Foundation Central specific settings.
         :param pulumi.Input[str] hyperv_external_vnic: - Hyperv External virtual network adapter name.
         :param pulumi.Input[str] hyperv_external_vswitch: - Hyperv External vswitch name.
         :param pulumi.Input[str] hyperv_product_key: - Hyperv product key.
         :param pulumi.Input[bool] hyperv_sku: - Hyperv SKU.
         :param pulumi.Input[str] hypervisor_gateway: - (Required) Hypervisor gateway.
-        :param pulumi.Input[pulumi.InputType['FoundationImageNodesHypervisorIsoArgs']] hypervisor_iso: - Hypervisor ISO.
+        :param pulumi.Input[Union['FoundationImageNodesHypervisorIsoArgs', 'FoundationImageNodesHypervisorIsoArgsDict']] hypervisor_iso: - Hypervisor ISO.
         :param pulumi.Input[str] hypervisor_netmask: - (Required) Hypervisor netmask.
         :param pulumi.Input[str] hypervisor_password: - Hypervisor password.
         :param pulumi.Input[str] install_script: - install script.
@@ -1254,7 +1254,7 @@ class FoundationImageNodes(pulumi.CustomResource):
         :param pulumi.Input[str] nos_package: - (Required) NOS package.
         :param pulumi.Input[bool] skip_hypervisor: - If hypervisor installation should be skipped.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] svm_rescue_args: - Arguments to be passed to svm_rescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
-        :param pulumi.Input[pulumi.InputType['FoundationImageNodesTestsArgs']] tests: - Types of tests to be performed.
+        :param pulumi.Input[Union['FoundationImageNodesTestsArgs', 'FoundationImageNodesTestsArgsDict']] tests: - Types of tests to be performed.
         :param pulumi.Input[str] ucsm_ip: - UCSM IP address.
         :param pulumi.Input[str] ucsm_password: - UCSM password.
         :param pulumi.Input[str] ucsm_user: - UCSM username.
@@ -1290,18 +1290,18 @@ class FoundationImageNodes(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 blocks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FoundationImageNodesBlockArgs']]]]] = None,
-                 clusters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FoundationImageNodesClusterArgs']]]]] = None,
+                 blocks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesBlockArgs', 'FoundationImageNodesBlockArgsDict']]]]] = None,
+                 clusters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesClusterArgs', 'FoundationImageNodesClusterArgsDict']]]]] = None,
                  cvm_gateway: Optional[pulumi.Input[str]] = None,
                  cvm_netmask: Optional[pulumi.Input[str]] = None,
-                 eos_metadata: Optional[pulumi.Input[pulumi.InputType['FoundationImageNodesEosMetadataArgs']]] = None,
-                 fc_settings: Optional[pulumi.Input[pulumi.InputType['FoundationImageNodesFcSettingsArgs']]] = None,
+                 eos_metadata: Optional[pulumi.Input[Union['FoundationImageNodesEosMetadataArgs', 'FoundationImageNodesEosMetadataArgsDict']]] = None,
+                 fc_settings: Optional[pulumi.Input[Union['FoundationImageNodesFcSettingsArgs', 'FoundationImageNodesFcSettingsArgsDict']]] = None,
                  hyperv_external_vnic: Optional[pulumi.Input[str]] = None,
                  hyperv_external_vswitch: Optional[pulumi.Input[str]] = None,
                  hyperv_product_key: Optional[pulumi.Input[str]] = None,
                  hyperv_sku: Optional[pulumi.Input[bool]] = None,
                  hypervisor_gateway: Optional[pulumi.Input[str]] = None,
-                 hypervisor_iso: Optional[pulumi.Input[pulumi.InputType['FoundationImageNodesHypervisorIsoArgs']]] = None,
+                 hypervisor_iso: Optional[pulumi.Input[Union['FoundationImageNodesHypervisorIsoArgs', 'FoundationImageNodesHypervisorIsoArgsDict']]] = None,
                  hypervisor_nameserver: Optional[pulumi.Input[str]] = None,
                  hypervisor_netmask: Optional[pulumi.Input[str]] = None,
                  hypervisor_password: Optional[pulumi.Input[str]] = None,
@@ -1314,7 +1314,7 @@ class FoundationImageNodes(pulumi.CustomResource):
                  nos_package: Optional[pulumi.Input[str]] = None,
                  skip_hypervisor: Optional[pulumi.Input[bool]] = None,
                  svm_rescue_args: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 tests: Optional[pulumi.Input[pulumi.InputType['FoundationImageNodesTestsArgs']]] = None,
+                 tests: Optional[pulumi.Input[Union['FoundationImageNodesTestsArgs', 'FoundationImageNodesTestsArgsDict']]] = None,
                  ucsm_ip: Optional[pulumi.Input[str]] = None,
                  ucsm_password: Optional[pulumi.Input[str]] = None,
                  ucsm_user: Optional[pulumi.Input[str]] = None,
@@ -1395,19 +1395,19 @@ class FoundationImageNodes(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            blocks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FoundationImageNodesBlockArgs']]]]] = None,
-            cluster_urls: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FoundationImageNodesClusterUrlArgs']]]]] = None,
-            clusters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FoundationImageNodesClusterArgs']]]]] = None,
+            blocks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesBlockArgs', 'FoundationImageNodesBlockArgsDict']]]]] = None,
+            cluster_urls: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesClusterUrlArgs', 'FoundationImageNodesClusterUrlArgsDict']]]]] = None,
+            clusters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesClusterArgs', 'FoundationImageNodesClusterArgsDict']]]]] = None,
             cvm_gateway: Optional[pulumi.Input[str]] = None,
             cvm_netmask: Optional[pulumi.Input[str]] = None,
-            eos_metadata: Optional[pulumi.Input[pulumi.InputType['FoundationImageNodesEosMetadataArgs']]] = None,
-            fc_settings: Optional[pulumi.Input[pulumi.InputType['FoundationImageNodesFcSettingsArgs']]] = None,
+            eos_metadata: Optional[pulumi.Input[Union['FoundationImageNodesEosMetadataArgs', 'FoundationImageNodesEosMetadataArgsDict']]] = None,
+            fc_settings: Optional[pulumi.Input[Union['FoundationImageNodesFcSettingsArgs', 'FoundationImageNodesFcSettingsArgsDict']]] = None,
             hyperv_external_vnic: Optional[pulumi.Input[str]] = None,
             hyperv_external_vswitch: Optional[pulumi.Input[str]] = None,
             hyperv_product_key: Optional[pulumi.Input[str]] = None,
             hyperv_sku: Optional[pulumi.Input[bool]] = None,
             hypervisor_gateway: Optional[pulumi.Input[str]] = None,
-            hypervisor_iso: Optional[pulumi.Input[pulumi.InputType['FoundationImageNodesHypervisorIsoArgs']]] = None,
+            hypervisor_iso: Optional[pulumi.Input[Union['FoundationImageNodesHypervisorIsoArgs', 'FoundationImageNodesHypervisorIsoArgsDict']]] = None,
             hypervisor_nameserver: Optional[pulumi.Input[str]] = None,
             hypervisor_netmask: Optional[pulumi.Input[str]] = None,
             hypervisor_password: Optional[pulumi.Input[str]] = None,
@@ -1421,7 +1421,7 @@ class FoundationImageNodes(pulumi.CustomResource):
             session_id: Optional[pulumi.Input[str]] = None,
             skip_hypervisor: Optional[pulumi.Input[bool]] = None,
             svm_rescue_args: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            tests: Optional[pulumi.Input[pulumi.InputType['FoundationImageNodesTestsArgs']]] = None,
+            tests: Optional[pulumi.Input[Union['FoundationImageNodesTestsArgs', 'FoundationImageNodesTestsArgsDict']]] = None,
             ucsm_ip: Optional[pulumi.Input[str]] = None,
             ucsm_password: Optional[pulumi.Input[str]] = None,
             ucsm_user: Optional[pulumi.Input[str]] = None,
@@ -1440,19 +1440,19 @@ class FoundationImageNodes(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FoundationImageNodesClusterUrlArgs']]]] cluster_urls: - list containing cluster name and cluster urls for created clusters in current session
+        :param pulumi.Input[Sequence[pulumi.Input[Union['FoundationImageNodesClusterUrlArgs', 'FoundationImageNodesClusterUrlArgsDict']]]] cluster_urls: - list containing cluster name and cluster urls for created clusters in current session
                * `cluster_urls.#.cluster_name` :- cluster_name
                * `cluster_urls.#.cluster_url` :- url to access the cluster login
         :param pulumi.Input[str] cvm_gateway: - (Required) CVM gateway.
         :param pulumi.Input[str] cvm_netmask: - (Required) CVM netmask.
-        :param pulumi.Input[pulumi.InputType['FoundationImageNodesEosMetadataArgs']] eos_metadata: - Contains user data from Eos portal.
-        :param pulumi.Input[pulumi.InputType['FoundationImageNodesFcSettingsArgs']] fc_settings: - Foundation Central specific settings.
+        :param pulumi.Input[Union['FoundationImageNodesEosMetadataArgs', 'FoundationImageNodesEosMetadataArgsDict']] eos_metadata: - Contains user data from Eos portal.
+        :param pulumi.Input[Union['FoundationImageNodesFcSettingsArgs', 'FoundationImageNodesFcSettingsArgsDict']] fc_settings: - Foundation Central specific settings.
         :param pulumi.Input[str] hyperv_external_vnic: - Hyperv External virtual network adapter name.
         :param pulumi.Input[str] hyperv_external_vswitch: - Hyperv External vswitch name.
         :param pulumi.Input[str] hyperv_product_key: - Hyperv product key.
         :param pulumi.Input[bool] hyperv_sku: - Hyperv SKU.
         :param pulumi.Input[str] hypervisor_gateway: - (Required) Hypervisor gateway.
-        :param pulumi.Input[pulumi.InputType['FoundationImageNodesHypervisorIsoArgs']] hypervisor_iso: - Hypervisor ISO.
+        :param pulumi.Input[Union['FoundationImageNodesHypervisorIsoArgs', 'FoundationImageNodesHypervisorIsoArgsDict']] hypervisor_iso: - Hypervisor ISO.
         :param pulumi.Input[str] hypervisor_netmask: - (Required) Hypervisor netmask.
         :param pulumi.Input[str] hypervisor_password: - Hypervisor password.
         :param pulumi.Input[str] install_script: - install script.
@@ -1465,7 +1465,7 @@ class FoundationImageNodes(pulumi.CustomResource):
         :param pulumi.Input[str] session_id: - session_id of the imaging session
         :param pulumi.Input[bool] skip_hypervisor: - If hypervisor installation should be skipped.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] svm_rescue_args: - Arguments to be passed to svm_rescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
-        :param pulumi.Input[pulumi.InputType['FoundationImageNodesTestsArgs']] tests: - Types of tests to be performed.
+        :param pulumi.Input[Union['FoundationImageNodesTestsArgs', 'FoundationImageNodesTestsArgsDict']] tests: - Types of tests to be performed.
         :param pulumi.Input[str] ucsm_ip: - UCSM IP address.
         :param pulumi.Input[str] ucsm_password: - UCSM password.
         :param pulumi.Input[str] ucsm_user: - UCSM username.

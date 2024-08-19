@@ -82,7 +82,7 @@ class AwaitableGetUsersResult(GetUsersResult):
             metadatas=self.metadatas)
 
 
-def get_users(metadatas: Optional[Sequence[pulumi.InputType['GetUsersMetadataArgs']]] = None,
+def get_users(metadatas: Optional[Sequence[Union['GetUsersMetadataArgs', 'GetUsersMetadataArgsDict']]] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUsersResult:
     """
     Provides a datasource to retrieve all the users.
@@ -93,17 +93,17 @@ def get_users(metadatas: Optional[Sequence[pulumi.InputType['GetUsersMetadataArg
     import pulumi
     import pulumi_nutanix as nutanix
 
-    user = nutanix.User("user", directory_service_user=nutanix.UserDirectoryServiceUserArgs(
-        directory_service_reference=nutanix.UserDirectoryServiceUserDirectoryServiceReferenceArgs(
-            uuid="<directory-service-uuid>",
-        ),
-        user_principal_name="test-user@ntnxlab.local",
-    ))
+    user = nutanix.User("user", directory_service_user={
+        "directory_service_reference": {
+            "uuid": "<directory-service-uuid>",
+        },
+        "user_principal_name": "test-user@ntnxlab.local",
+    })
     users = nutanix.get_user()
     ```
 
 
-    :param Sequence[pulumi.InputType['GetUsersMetadataArgs']] metadatas: - The user kind metadata.
+    :param Sequence[Union['GetUsersMetadataArgs', 'GetUsersMetadataArgsDict']] metadatas: - The user kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
@@ -118,7 +118,7 @@ def get_users(metadatas: Optional[Sequence[pulumi.InputType['GetUsersMetadataArg
 
 
 @_utilities.lift_output_func(get_users)
-def get_users_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetUsersMetadataArgs']]]]] = None,
+def get_users_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetUsersMetadataArgs', 'GetUsersMetadataArgsDict']]]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUsersResult]:
     """
     Provides a datasource to retrieve all the users.
@@ -129,16 +129,16 @@ def get_users_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi.I
     import pulumi
     import pulumi_nutanix as nutanix
 
-    user = nutanix.User("user", directory_service_user=nutanix.UserDirectoryServiceUserArgs(
-        directory_service_reference=nutanix.UserDirectoryServiceUserDirectoryServiceReferenceArgs(
-            uuid="<directory-service-uuid>",
-        ),
-        user_principal_name="test-user@ntnxlab.local",
-    ))
+    user = nutanix.User("user", directory_service_user={
+        "directory_service_reference": {
+            "uuid": "<directory-service-uuid>",
+        },
+        "user_principal_name": "test-user@ntnxlab.local",
+    })
     users = nutanix.get_user()
     ```
 
 
-    :param Sequence[pulumi.InputType['GetUsersMetadataArgs']] metadatas: - The user kind metadata.
+    :param Sequence[Union['GetUsersMetadataArgs', 'GetUsersMetadataArgsDict']] metadatas: - The user kind metadata.
     """
     ...

@@ -67,9 +67,9 @@ import (
 //					NetworkUuid: pulumi.String("61213511-6383-4a38-9ac8-4a552c0e5865"),
 //				},
 //				ClusterName: pulumi.String("karbon"),
-//				Labels: pulumi.Map{
-//					"k1": pulumi.Any("v1"),
-//					"k2": pulumi.Any("v2"),
+//				Labels: pulumi.StringMap{
+//					"k1": pulumi.String("v1"),
+//					"k2": pulumi.String("v2"),
 //				},
 //				NumInstances: pulumi.Int(1),
 //			})
@@ -89,7 +89,7 @@ type KarbonWorkerNodepool struct {
 	// Kubernetes cluster name
 	ClusterName pulumi.StringOutput `pulumi:"clusterName"`
 	// labels of node
-	Labels pulumi.MapOutput `pulumi:"labels"`
+	Labels pulumi.StringMapOutput `pulumi:"labels"`
 	// unique worker nodepool name
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The version of the node OS image
@@ -141,7 +141,7 @@ type karbonWorkerNodepoolState struct {
 	// Kubernetes cluster name
 	ClusterName *string `pulumi:"clusterName"`
 	// labels of node
-	Labels map[string]interface{} `pulumi:"labels"`
+	Labels map[string]string `pulumi:"labels"`
 	// unique worker nodepool name
 	Name *string `pulumi:"name"`
 	// The version of the node OS image
@@ -158,7 +158,7 @@ type KarbonWorkerNodepoolState struct {
 	// Kubernetes cluster name
 	ClusterName pulumi.StringPtrInput
 	// labels of node
-	Labels pulumi.MapInput
+	Labels pulumi.StringMapInput
 	// unique worker nodepool name
 	Name pulumi.StringPtrInput
 	// The version of the node OS image
@@ -179,7 +179,7 @@ type karbonWorkerNodepoolArgs struct {
 	// Kubernetes cluster name
 	ClusterName string `pulumi:"clusterName"`
 	// labels of node
-	Labels map[string]interface{} `pulumi:"labels"`
+	Labels map[string]string `pulumi:"labels"`
 	// unique worker nodepool name
 	Name *string `pulumi:"name"`
 	// The version of the node OS image
@@ -195,7 +195,7 @@ type KarbonWorkerNodepoolArgs struct {
 	// Kubernetes cluster name
 	ClusterName pulumi.StringInput
 	// labels of node
-	Labels pulumi.MapInput
+	Labels pulumi.StringMapInput
 	// unique worker nodepool name
 	Name pulumi.StringPtrInput
 	// The version of the node OS image
@@ -302,8 +302,8 @@ func (o KarbonWorkerNodepoolOutput) ClusterName() pulumi.StringOutput {
 }
 
 // labels of node
-func (o KarbonWorkerNodepoolOutput) Labels() pulumi.MapOutput {
-	return o.ApplyT(func(v *KarbonWorkerNodepool) pulumi.MapOutput { return v.Labels }).(pulumi.MapOutput)
+func (o KarbonWorkerNodepoolOutput) Labels() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *KarbonWorkerNodepool) pulumi.StringMapOutput { return v.Labels }).(pulumi.StringMapOutput)
 }
 
 // unique worker nodepool name

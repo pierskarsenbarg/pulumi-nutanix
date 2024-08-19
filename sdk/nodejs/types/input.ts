@@ -415,7 +415,7 @@ export interface FoundationCentralImageClusterNodeList {
     /**
      * Hardware attributes override json for the node.
      */
-    hardwareAttributesOverride?: pulumi.Input<{[key: string]: any}>;
+    hardwareAttributesOverride?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Gateway of the hypervisor.
      */

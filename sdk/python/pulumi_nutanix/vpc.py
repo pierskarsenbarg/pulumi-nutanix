@@ -259,10 +259,10 @@ class Vpc(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  api_version: Optional[pulumi.Input[str]] = None,
-                 common_domain_name_server_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VpcCommonDomainNameServerIpListArgs']]]]] = None,
+                 common_domain_name_server_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcCommonDomainNameServerIpListArgs', 'VpcCommonDomainNameServerIpListArgsDict']]]]] = None,
                  external_subnet_reference_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  external_subnet_reference_uuids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 externally_routable_prefix_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VpcExternallyRoutablePrefixListArgs']]]]] = None,
+                 externally_routable_prefix_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcExternallyRoutablePrefixListArgs', 'VpcExternallyRoutablePrefixListArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -278,21 +278,21 @@ class Vpc(pulumi.CustomResource):
 
         vpc = nutanix.Vpc("vpc",
             common_domain_name_server_ip_lists=[
-                nutanix.VpcCommonDomainNameServerIpListArgs(
-                    ip="8.8.8.8",
-                ),
-                nutanix.VpcCommonDomainNameServerIpListArgs(
-                    ip="8.8.8.9",
-                ),
+                {
+                    "ip": "8.8.8.8",
+                },
+                {
+                    "ip": "8.8.8.9",
+                },
             ],
             external_subnet_reference_names=[
                 "test-Ext1",
                 "test-ext2",
             ],
-            externally_routable_prefix_lists=[nutanix.VpcExternallyRoutablePrefixListArgs(
-                ip="192.43.0.0",
-                prefix_length=16,
-            )])
+            externally_routable_prefix_lists=[{
+                "ip": "192.43.0.0",
+                "prefix_length": 16,
+            }])
         ```
 
         ### vpc creation with external subnet uuid
@@ -302,29 +302,29 @@ class Vpc(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         vpc = nutanix.Vpc("vpc",
-            common_domain_name_server_ip_lists=[nutanix.VpcCommonDomainNameServerIpListArgs(
-                ip="8.8.8.8",
-            )],
+            common_domain_name_server_ip_lists=[{
+                "ip": "8.8.8.8",
+            }],
             external_subnet_reference_uuids=["<subnet_uuid>"],
             externally_routable_prefix_lists=[
-                nutanix.VpcExternallyRoutablePrefixListArgs(
-                    ip="192.43.0.0",
-                    prefix_length=16,
-                ),
-                nutanix.VpcExternallyRoutablePrefixListArgs(
-                    ip="192.42.0.0",
-                    prefix_length=16,
-                ),
+                {
+                    "ip": "192.43.0.0",
+                    "prefix_length": 16,
+                },
+                {
+                    "ip": "192.42.0.0",
+                    "prefix_length": 16,
+                },
             ])
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] api_version: The version of the API.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VpcCommonDomainNameServerIpListArgs']]]] common_domain_name_server_ip_lists: List of domain name server IPs.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VpcCommonDomainNameServerIpListArgs', 'VpcCommonDomainNameServerIpListArgsDict']]]] common_domain_name_server_ip_lists: List of domain name server IPs.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] external_subnet_reference_names: List of external subnets name attached to this VPC. Should not be used with external_subnet_reference_uuid.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] external_subnet_reference_uuids: List of external subnets uuid attached to this VPC. Should not be used with external_subnet_reference_name.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VpcExternallyRoutablePrefixListArgs']]]] externally_routable_prefix_lists: List Externally Routable IP Addresses. Required when external subnet with NoNAT is used.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VpcExternallyRoutablePrefixListArgs', 'VpcExternallyRoutablePrefixListArgsDict']]]] externally_routable_prefix_lists: List Externally Routable IP Addresses. Required when external subnet with NoNAT is used.
         :param pulumi.Input[str] name: The name for the VPC.
         """
         ...
@@ -346,21 +346,21 @@ class Vpc(pulumi.CustomResource):
 
         vpc = nutanix.Vpc("vpc",
             common_domain_name_server_ip_lists=[
-                nutanix.VpcCommonDomainNameServerIpListArgs(
-                    ip="8.8.8.8",
-                ),
-                nutanix.VpcCommonDomainNameServerIpListArgs(
-                    ip="8.8.8.9",
-                ),
+                {
+                    "ip": "8.8.8.8",
+                },
+                {
+                    "ip": "8.8.8.9",
+                },
             ],
             external_subnet_reference_names=[
                 "test-Ext1",
                 "test-ext2",
             ],
-            externally_routable_prefix_lists=[nutanix.VpcExternallyRoutablePrefixListArgs(
-                ip="192.43.0.0",
-                prefix_length=16,
-            )])
+            externally_routable_prefix_lists=[{
+                "ip": "192.43.0.0",
+                "prefix_length": 16,
+            }])
         ```
 
         ### vpc creation with external subnet uuid
@@ -370,19 +370,19 @@ class Vpc(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         vpc = nutanix.Vpc("vpc",
-            common_domain_name_server_ip_lists=[nutanix.VpcCommonDomainNameServerIpListArgs(
-                ip="8.8.8.8",
-            )],
+            common_domain_name_server_ip_lists=[{
+                "ip": "8.8.8.8",
+            }],
             external_subnet_reference_uuids=["<subnet_uuid>"],
             externally_routable_prefix_lists=[
-                nutanix.VpcExternallyRoutablePrefixListArgs(
-                    ip="192.43.0.0",
-                    prefix_length=16,
-                ),
-                nutanix.VpcExternallyRoutablePrefixListArgs(
-                    ip="192.42.0.0",
-                    prefix_length=16,
-                ),
+                {
+                    "ip": "192.43.0.0",
+                    "prefix_length": 16,
+                },
+                {
+                    "ip": "192.42.0.0",
+                    "prefix_length": 16,
+                },
             ])
         ```
 
@@ -402,10 +402,10 @@ class Vpc(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  api_version: Optional[pulumi.Input[str]] = None,
-                 common_domain_name_server_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VpcCommonDomainNameServerIpListArgs']]]]] = None,
+                 common_domain_name_server_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcCommonDomainNameServerIpListArgs', 'VpcCommonDomainNameServerIpListArgsDict']]]]] = None,
                  external_subnet_reference_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  external_subnet_reference_uuids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 externally_routable_prefix_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VpcExternallyRoutablePrefixListArgs']]]]] = None,
+                 externally_routable_prefix_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcExternallyRoutablePrefixListArgs', 'VpcExternallyRoutablePrefixListArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -435,11 +435,11 @@ class Vpc(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             api_version: Optional[pulumi.Input[str]] = None,
-            common_domain_name_server_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VpcCommonDomainNameServerIpListArgs']]]]] = None,
-            external_subnet_list_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VpcExternalSubnetListStatusArgs']]]]] = None,
+            common_domain_name_server_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcCommonDomainNameServerIpListArgs', 'VpcCommonDomainNameServerIpListArgsDict']]]]] = None,
+            external_subnet_list_statuses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcExternalSubnetListStatusArgs', 'VpcExternalSubnetListStatusArgsDict']]]]] = None,
             external_subnet_reference_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             external_subnet_reference_uuids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            externally_routable_prefix_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VpcExternallyRoutablePrefixListArgs']]]]] = None,
+            externally_routable_prefix_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VpcExternallyRoutablePrefixListArgs', 'VpcExternallyRoutablePrefixListArgsDict']]]]] = None,
             metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             name: Optional[pulumi.Input[str]] = None) -> 'Vpc':
         """
@@ -450,11 +450,11 @@ class Vpc(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] api_version: The version of the API.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VpcCommonDomainNameServerIpListArgs']]]] common_domain_name_server_ip_lists: List of domain name server IPs.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VpcExternalSubnetListStatusArgs']]]] external_subnet_list_statuses: Status of List of external subnets attached to this VPC
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VpcCommonDomainNameServerIpListArgs', 'VpcCommonDomainNameServerIpListArgsDict']]]] common_domain_name_server_ip_lists: List of domain name server IPs.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VpcExternalSubnetListStatusArgs', 'VpcExternalSubnetListStatusArgsDict']]]] external_subnet_list_statuses: Status of List of external subnets attached to this VPC
         :param pulumi.Input[Sequence[pulumi.Input[str]]] external_subnet_reference_names: List of external subnets name attached to this VPC. Should not be used with external_subnet_reference_uuid.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] external_subnet_reference_uuids: List of external subnets uuid attached to this VPC. Should not be used with external_subnet_reference_name.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['VpcExternallyRoutablePrefixListArgs']]]] externally_routable_prefix_lists: List Externally Routable IP Addresses. Required when external subnet with NoNAT is used.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['VpcExternallyRoutablePrefixListArgs', 'VpcExternallyRoutablePrefixListArgsDict']]]] externally_routable_prefix_lists: List Externally Routable IP Addresses. Required when external subnet with NoNAT is used.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: The vpc kind metadata.
         :param pulumi.Input[str] name: The name for the VPC.
         """

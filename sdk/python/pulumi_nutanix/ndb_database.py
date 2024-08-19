@@ -1226,9 +1226,9 @@ class NdbDatabase(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actionarguments: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseActionargumentArgs']]]]] = None,
+                 actionarguments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseActionargumentArgs', 'NdbDatabaseActionargumentArgsDict']]]]] = None,
                  autotunestagingdrive: Optional[pulumi.Input[bool]] = None,
-                 cluster_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseClusterInfoArgs']]]]] = None,
+                 cluster_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseClusterInfoArgs', 'NdbDatabaseClusterInfoArgsDict']]]]] = None,
                  clustered: Optional[pulumi.Input[bool]] = None,
                  computeprofileid: Optional[pulumi.Input[str]] = None,
                  createdbserver: Optional[pulumi.Input[bool]] = None,
@@ -1241,21 +1241,21 @@ class NdbDatabase(pulumi.CustomResource):
                  delete_time_machine: Optional[pulumi.Input[bool]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  forced: Optional[pulumi.Input[bool]] = None,
-                 maintenance_tasks: Optional[pulumi.Input[pulumi.InputType['NdbDatabaseMaintenanceTasksArgs']]] = None,
+                 maintenance_tasks: Optional[pulumi.Input[Union['NdbDatabaseMaintenanceTasksArgs', 'NdbDatabaseMaintenanceTasksArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  networkprofileid: Optional[pulumi.Input[str]] = None,
                  newdbservertimezone: Optional[pulumi.Input[str]] = None,
                  nodecount: Optional[pulumi.Input[int]] = None,
-                 nodes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseNodeArgs']]]]] = None,
+                 nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseNodeArgs', 'NdbDatabaseNodeArgsDict']]]]] = None,
                  nxclusterid: Optional[pulumi.Input[str]] = None,
-                 postgresql_info: Optional[pulumi.Input[pulumi.InputType['NdbDatabasePostgresqlInfoArgs']]] = None,
+                 postgresql_info: Optional[pulumi.Input[Union['NdbDatabasePostgresqlInfoArgs', 'NdbDatabasePostgresqlInfoArgsDict']]] = None,
                  remove: Optional[pulumi.Input[bool]] = None,
                  soft_remove: Optional[pulumi.Input[bool]] = None,
                  softwareprofileid: Optional[pulumi.Input[str]] = None,
                  softwareprofileversionid: Optional[pulumi.Input[str]] = None,
                  sshpublickey: Optional[pulumi.Input[str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseTagArgs']]]]] = None,
-                 timemachineinfo: Optional[pulumi.Input[pulumi.InputType['NdbDatabaseTimemachineinfoArgs']]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseTagArgs', 'NdbDatabaseTagArgsDict']]]]] = None,
+                 timemachineinfo: Optional[pulumi.Input[Union['NdbDatabaseTimemachineinfoArgs', 'NdbDatabaseTimemachineinfoArgsDict']]] = None,
                  vm_password: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -1277,53 +1277,53 @@ class NdbDatabase(pulumi.CustomResource):
             computeprofileid="{{ compute_profile_id }}",
             networkprofileid="{{ network_profile_id }}",
             dbparameterprofileid="{{ db_parameter_profile_id }}",
-            postgresql_info=nutanix.NdbDatabasePostgresqlInfoArgs(
-                listener_port="{{ listner_port }}",
-                database_size="{{ 200 }}",
-                db_password="password",
-                database_names="testdb1",
-            ),
+            postgresql_info={
+                "listener_port": "{{ listner_port }}",
+                "database_size": "{{ 200 }}",
+                "db_password": "password",
+                "database_names": "testdb1",
+            },
             nxclusterid=local["clusters"]["EraCluster"]["id"],
             sshpublickey="{{ ssh-public-key }}",
-            nodes=[nutanix.NdbDatabaseNodeArgs(
-                vmname="test-era-vm1",
-                networkprofileid="<network-profile-uuid>",
-            )],
-            timemachineinfo=nutanix.NdbDatabaseTimemachineinfoArgs(
-                name="test-pg-inst",
-                description="description of time machine",
-                slaid="{{ sla_id }}",
-                schedule=nutanix.NdbDatabaseTimemachineinfoScheduleArgs(
-                    snapshottimeofday=nutanix.NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgs(
-                        hours=16,
-                        minutes=0,
-                        seconds=0,
-                    ),
-                    continuousschedule=nutanix.NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgs(
-                        enabled=True,
-                        logbackupinterval=30,
-                        snapshotsperday=1,
-                    ),
-                    weeklyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgs(
-                        enabled=True,
-                        dayofweek="WEDNESDAY",
-                    ),
-                    monthlyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgs(
-                        enabled=True,
-                        dayofmonth=27,
-                    ),
-                    quartelyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgs(
-                        enabled=True,
-                        startmonth="JANUARY",
-                        dayofmonth=27,
-                    ),
-                    yearlyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgs(
-                        enabled=False,
-                        dayofmonth=31,
-                        month="DECEMBER",
-                    ),
-                ),
-            ))
+            nodes=[{
+                "vmname": "test-era-vm1",
+                "networkprofileid": "<network-profile-uuid>",
+            }],
+            timemachineinfo={
+                "name": "test-pg-inst",
+                "description": "description of time machine",
+                "slaid": "{{ sla_id }}",
+                "schedule": {
+                    "snapshottimeofday": {
+                        "hours": 16,
+                        "minutes": 0,
+                        "seconds": 0,
+                    },
+                    "continuousschedule": {
+                        "enabled": True,
+                        "logbackupinterval": 30,
+                        "snapshotsperday": 1,
+                    },
+                    "weeklyschedule": {
+                        "enabled": True,
+                        "dayofweek": "WEDNESDAY",
+                    },
+                    "monthlyschedule": {
+                        "enabled": True,
+                        "dayofmonth": 27,
+                    },
+                    "quartelyschedule": {
+                        "enabled": True,
+                        "startmonth": "JANUARY",
+                        "dayofmonth": 27,
+                    },
+                    "yearlyschedule": {
+                        "enabled": False,
+                        "dayofmonth": 31,
+                        "month": "DECEMBER",
+                    },
+                },
+            })
         ```
 
         ### NDB database resource with registered database server VM
@@ -1333,59 +1333,59 @@ class NdbDatabase(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         dbp = nutanix.NdbDatabase("dbp",
-            actionarguments=[nutanix.NdbDatabaseActionargumentArgs(
-                name="host_ip",
-                value="{{ hostIP }}",
-            )],
+            actionarguments=[{
+                "name": "host_ip",
+                "value": "{{ hostIP }}",
+            }],
             createdbserver=False,
             databasetype="postgres_database",
             dbparameterprofileid="{{ db_parameter_profile_id }}",
             dbserver_id="{{ dbserver_id }}",
             description="add description",
-            nodes=[nutanix.NdbDatabaseNodeArgs(
-                dbserverid="{{ dbserver_id }}",
-            )],
-            postgresql_info=nutanix.NdbDatabasePostgresqlInfoArgs(
-                database_names="testdb1",
-                database_size="{{ 200 }}",
-                db_password="password",
-                listener_port="{{ listner_port }}",
-            ),
-            timemachineinfo=nutanix.NdbDatabaseTimemachineinfoArgs(
-                description="description of time machine",
-                name="test-pg-inst",
-                schedule=nutanix.NdbDatabaseTimemachineinfoScheduleArgs(
-                    continuousschedule=nutanix.NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgs(
-                        enabled=True,
-                        logbackupinterval=30,
-                        snapshotsperday=1,
-                    ),
-                    monthlyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgs(
-                        dayofmonth=27,
-                        enabled=True,
-                    ),
-                    quartelyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgs(
-                        dayofmonth=27,
-                        enabled=True,
-                        startmonth="JANUARY",
-                    ),
-                    snapshottimeofday=nutanix.NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgs(
-                        hours=16,
-                        minutes=0,
-                        seconds=0,
-                    ),
-                    weeklyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgs(
-                        dayofweek="WEDNESDAY",
-                        enabled=True,
-                    ),
-                    yearlyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgs(
-                        dayofmonth=31,
-                        enabled=False,
-                        month="DECEMBER",
-                    ),
-                ),
-                slaid="{{ sla_id }}",
-            ))
+            nodes=[{
+                "dbserverid": "{{ dbserver_id }}",
+            }],
+            postgresql_info={
+                "database_names": "testdb1",
+                "database_size": "{{ 200 }}",
+                "db_password": "password",
+                "listener_port": "{{ listner_port }}",
+            },
+            timemachineinfo={
+                "description": "description of time machine",
+                "name": "test-pg-inst",
+                "schedule": {
+                    "continuousschedule": {
+                        "enabled": True,
+                        "logbackupinterval": 30,
+                        "snapshotsperday": 1,
+                    },
+                    "monthlyschedule": {
+                        "dayofmonth": 27,
+                        "enabled": True,
+                    },
+                    "quartelyschedule": {
+                        "dayofmonth": 27,
+                        "enabled": True,
+                        "startmonth": "JANUARY",
+                    },
+                    "snapshottimeofday": {
+                        "hours": 16,
+                        "minutes": 0,
+                        "seconds": 0,
+                    },
+                    "weeklyschedule": {
+                        "dayofweek": "WEDNESDAY",
+                        "enabled": True,
+                    },
+                    "yearlyschedule": {
+                        "dayofmonth": 31,
+                        "enabled": False,
+                        "month": "DECEMBER",
+                    },
+                },
+                "slaid": "{{ sla_id }}",
+            })
         ```
 
         ## lifecycle
@@ -1396,7 +1396,7 @@ class NdbDatabase(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseActionargumentArgs']]]] actionarguments: - (Optional) action arguments for database. For postgress, you can use postgresql_info
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseActionargumentArgs', 'NdbDatabaseActionargumentArgsDict']]]] actionarguments: - (Optional) action arguments for database. For postgress, you can use postgresql_info
         :param pulumi.Input[bool] autotunestagingdrive: - (Optional) Enable auto tuning of staging drive. Default: true
         :param pulumi.Input[bool] clustered: - (Optional) If clustered database. Default: false
         :param pulumi.Input[str] computeprofileid: - (Optional) ID of compute profile
@@ -1413,15 +1413,15 @@ class NdbDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] networkprofileid: - (Optional) ID of network profile
         :param pulumi.Input[str] newdbservertimezone: - (Optional) Timezone of new DB server VM
         :param pulumi.Input[int] nodecount: - (Optional) No. of nodes/db server vms. Default: 1
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseNodeArgs']]]] nodes: - (Optional) nodes info
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseNodeArgs', 'NdbDatabaseNodeArgsDict']]]] nodes: - (Optional) nodes info
         :param pulumi.Input[str] nxclusterid: - (Optional) Cluster ID for DB server VM
-        :param pulumi.Input[pulumi.InputType['NdbDatabasePostgresqlInfoArgs']] postgresql_info: - (Optional) action arguments for postgress type database.
+        :param pulumi.Input[Union['NdbDatabasePostgresqlInfoArgs', 'NdbDatabasePostgresqlInfoArgsDict']] postgresql_info: - (Optional) action arguments for postgress type database.
         :param pulumi.Input[bool] remove: - (Optional) Unregister the database from NDB. Default value is true
         :param pulumi.Input[bool] soft_remove: - (Optional) Soft remove. Default will be false
         :param pulumi.Input[str] softwareprofileid: - (Optional) ID of software profile
         :param pulumi.Input[str] softwareprofileversionid: - (Optional) ID of version in software profile
         :param pulumi.Input[str] sshpublickey: - (Optional) public key for ssh access to DB server VM
-        :param pulumi.Input[pulumi.InputType['NdbDatabaseTimemachineinfoArgs']] timemachineinfo: - (Optional) time machine config
+        :param pulumi.Input[Union['NdbDatabaseTimemachineinfoArgs', 'NdbDatabaseTimemachineinfoArgsDict']] timemachineinfo: - (Optional) time machine config
         :param pulumi.Input[str] vm_password: - (Optional) password for DB server VM and era drive user
         """
         ...
@@ -1449,53 +1449,53 @@ class NdbDatabase(pulumi.CustomResource):
             computeprofileid="{{ compute_profile_id }}",
             networkprofileid="{{ network_profile_id }}",
             dbparameterprofileid="{{ db_parameter_profile_id }}",
-            postgresql_info=nutanix.NdbDatabasePostgresqlInfoArgs(
-                listener_port="{{ listner_port }}",
-                database_size="{{ 200 }}",
-                db_password="password",
-                database_names="testdb1",
-            ),
+            postgresql_info={
+                "listener_port": "{{ listner_port }}",
+                "database_size": "{{ 200 }}",
+                "db_password": "password",
+                "database_names": "testdb1",
+            },
             nxclusterid=local["clusters"]["EraCluster"]["id"],
             sshpublickey="{{ ssh-public-key }}",
-            nodes=[nutanix.NdbDatabaseNodeArgs(
-                vmname="test-era-vm1",
-                networkprofileid="<network-profile-uuid>",
-            )],
-            timemachineinfo=nutanix.NdbDatabaseTimemachineinfoArgs(
-                name="test-pg-inst",
-                description="description of time machine",
-                slaid="{{ sla_id }}",
-                schedule=nutanix.NdbDatabaseTimemachineinfoScheduleArgs(
-                    snapshottimeofday=nutanix.NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgs(
-                        hours=16,
-                        minutes=0,
-                        seconds=0,
-                    ),
-                    continuousschedule=nutanix.NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgs(
-                        enabled=True,
-                        logbackupinterval=30,
-                        snapshotsperday=1,
-                    ),
-                    weeklyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgs(
-                        enabled=True,
-                        dayofweek="WEDNESDAY",
-                    ),
-                    monthlyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgs(
-                        enabled=True,
-                        dayofmonth=27,
-                    ),
-                    quartelyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgs(
-                        enabled=True,
-                        startmonth="JANUARY",
-                        dayofmonth=27,
-                    ),
-                    yearlyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgs(
-                        enabled=False,
-                        dayofmonth=31,
-                        month="DECEMBER",
-                    ),
-                ),
-            ))
+            nodes=[{
+                "vmname": "test-era-vm1",
+                "networkprofileid": "<network-profile-uuid>",
+            }],
+            timemachineinfo={
+                "name": "test-pg-inst",
+                "description": "description of time machine",
+                "slaid": "{{ sla_id }}",
+                "schedule": {
+                    "snapshottimeofday": {
+                        "hours": 16,
+                        "minutes": 0,
+                        "seconds": 0,
+                    },
+                    "continuousschedule": {
+                        "enabled": True,
+                        "logbackupinterval": 30,
+                        "snapshotsperday": 1,
+                    },
+                    "weeklyschedule": {
+                        "enabled": True,
+                        "dayofweek": "WEDNESDAY",
+                    },
+                    "monthlyschedule": {
+                        "enabled": True,
+                        "dayofmonth": 27,
+                    },
+                    "quartelyschedule": {
+                        "enabled": True,
+                        "startmonth": "JANUARY",
+                        "dayofmonth": 27,
+                    },
+                    "yearlyschedule": {
+                        "enabled": False,
+                        "dayofmonth": 31,
+                        "month": "DECEMBER",
+                    },
+                },
+            })
         ```
 
         ### NDB database resource with registered database server VM
@@ -1505,59 +1505,59 @@ class NdbDatabase(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         dbp = nutanix.NdbDatabase("dbp",
-            actionarguments=[nutanix.NdbDatabaseActionargumentArgs(
-                name="host_ip",
-                value="{{ hostIP }}",
-            )],
+            actionarguments=[{
+                "name": "host_ip",
+                "value": "{{ hostIP }}",
+            }],
             createdbserver=False,
             databasetype="postgres_database",
             dbparameterprofileid="{{ db_parameter_profile_id }}",
             dbserver_id="{{ dbserver_id }}",
             description="add description",
-            nodes=[nutanix.NdbDatabaseNodeArgs(
-                dbserverid="{{ dbserver_id }}",
-            )],
-            postgresql_info=nutanix.NdbDatabasePostgresqlInfoArgs(
-                database_names="testdb1",
-                database_size="{{ 200 }}",
-                db_password="password",
-                listener_port="{{ listner_port }}",
-            ),
-            timemachineinfo=nutanix.NdbDatabaseTimemachineinfoArgs(
-                description="description of time machine",
-                name="test-pg-inst",
-                schedule=nutanix.NdbDatabaseTimemachineinfoScheduleArgs(
-                    continuousschedule=nutanix.NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgs(
-                        enabled=True,
-                        logbackupinterval=30,
-                        snapshotsperday=1,
-                    ),
-                    monthlyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgs(
-                        dayofmonth=27,
-                        enabled=True,
-                    ),
-                    quartelyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgs(
-                        dayofmonth=27,
-                        enabled=True,
-                        startmonth="JANUARY",
-                    ),
-                    snapshottimeofday=nutanix.NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgs(
-                        hours=16,
-                        minutes=0,
-                        seconds=0,
-                    ),
-                    weeklyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgs(
-                        dayofweek="WEDNESDAY",
-                        enabled=True,
-                    ),
-                    yearlyschedule=nutanix.NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgs(
-                        dayofmonth=31,
-                        enabled=False,
-                        month="DECEMBER",
-                    ),
-                ),
-                slaid="{{ sla_id }}",
-            ))
+            nodes=[{
+                "dbserverid": "{{ dbserver_id }}",
+            }],
+            postgresql_info={
+                "database_names": "testdb1",
+                "database_size": "{{ 200 }}",
+                "db_password": "password",
+                "listener_port": "{{ listner_port }}",
+            },
+            timemachineinfo={
+                "description": "description of time machine",
+                "name": "test-pg-inst",
+                "schedule": {
+                    "continuousschedule": {
+                        "enabled": True,
+                        "logbackupinterval": 30,
+                        "snapshotsperday": 1,
+                    },
+                    "monthlyschedule": {
+                        "dayofmonth": 27,
+                        "enabled": True,
+                    },
+                    "quartelyschedule": {
+                        "dayofmonth": 27,
+                        "enabled": True,
+                        "startmonth": "JANUARY",
+                    },
+                    "snapshottimeofday": {
+                        "hours": 16,
+                        "minutes": 0,
+                        "seconds": 0,
+                    },
+                    "weeklyschedule": {
+                        "dayofweek": "WEDNESDAY",
+                        "enabled": True,
+                    },
+                    "yearlyschedule": {
+                        "dayofmonth": 31,
+                        "enabled": False,
+                        "month": "DECEMBER",
+                    },
+                },
+                "slaid": "{{ sla_id }}",
+            })
         ```
 
         ## lifecycle
@@ -1581,9 +1581,9 @@ class NdbDatabase(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 actionarguments: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseActionargumentArgs']]]]] = None,
+                 actionarguments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseActionargumentArgs', 'NdbDatabaseActionargumentArgsDict']]]]] = None,
                  autotunestagingdrive: Optional[pulumi.Input[bool]] = None,
-                 cluster_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseClusterInfoArgs']]]]] = None,
+                 cluster_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseClusterInfoArgs', 'NdbDatabaseClusterInfoArgsDict']]]]] = None,
                  clustered: Optional[pulumi.Input[bool]] = None,
                  computeprofileid: Optional[pulumi.Input[str]] = None,
                  createdbserver: Optional[pulumi.Input[bool]] = None,
@@ -1596,21 +1596,21 @@ class NdbDatabase(pulumi.CustomResource):
                  delete_time_machine: Optional[pulumi.Input[bool]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  forced: Optional[pulumi.Input[bool]] = None,
-                 maintenance_tasks: Optional[pulumi.Input[pulumi.InputType['NdbDatabaseMaintenanceTasksArgs']]] = None,
+                 maintenance_tasks: Optional[pulumi.Input[Union['NdbDatabaseMaintenanceTasksArgs', 'NdbDatabaseMaintenanceTasksArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  networkprofileid: Optional[pulumi.Input[str]] = None,
                  newdbservertimezone: Optional[pulumi.Input[str]] = None,
                  nodecount: Optional[pulumi.Input[int]] = None,
-                 nodes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseNodeArgs']]]]] = None,
+                 nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseNodeArgs', 'NdbDatabaseNodeArgsDict']]]]] = None,
                  nxclusterid: Optional[pulumi.Input[str]] = None,
-                 postgresql_info: Optional[pulumi.Input[pulumi.InputType['NdbDatabasePostgresqlInfoArgs']]] = None,
+                 postgresql_info: Optional[pulumi.Input[Union['NdbDatabasePostgresqlInfoArgs', 'NdbDatabasePostgresqlInfoArgsDict']]] = None,
                  remove: Optional[pulumi.Input[bool]] = None,
                  soft_remove: Optional[pulumi.Input[bool]] = None,
                  softwareprofileid: Optional[pulumi.Input[str]] = None,
                  softwareprofileversionid: Optional[pulumi.Input[str]] = None,
                  sshpublickey: Optional[pulumi.Input[str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseTagArgs']]]]] = None,
-                 timemachineinfo: Optional[pulumi.Input[pulumi.InputType['NdbDatabaseTimemachineinfoArgs']]] = None,
+                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseTagArgs', 'NdbDatabaseTagArgsDict']]]]] = None,
+                 timemachineinfo: Optional[pulumi.Input[Union['NdbDatabaseTimemachineinfoArgs', 'NdbDatabaseTimemachineinfoArgsDict']]] = None,
                  vm_password: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1683,17 +1683,17 @@ class NdbDatabase(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actionarguments: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseActionargumentArgs']]]]] = None,
+            actionarguments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseActionargumentArgs', 'NdbDatabaseActionargumentArgsDict']]]]] = None,
             autotunestagingdrive: Optional[pulumi.Input[bool]] = None,
             clone: Optional[pulumi.Input[bool]] = None,
-            cluster_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseClusterInfoArgs']]]]] = None,
+            cluster_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseClusterInfoArgs', 'NdbDatabaseClusterInfoArgsDict']]]]] = None,
             clustered: Optional[pulumi.Input[bool]] = None,
             computeprofileid: Optional[pulumi.Input[str]] = None,
             createdbserver: Optional[pulumi.Input[bool]] = None,
             database_cluster_type: Optional[pulumi.Input[str]] = None,
             database_instance_id: Optional[pulumi.Input[str]] = None,
             database_name: Optional[pulumi.Input[str]] = None,
-            database_nodes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseDatabaseNodeArgs']]]]] = None,
+            database_nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseDatabaseNodeArgs', 'NdbDatabaseDatabaseNodeArgsDict']]]]] = None,
             databasetype: Optional[pulumi.Input[str]] = None,
             date_created: Optional[pulumi.Input[str]] = None,
             date_modified: Optional[pulumi.Input[str]] = None,
@@ -1706,31 +1706,31 @@ class NdbDatabase(pulumi.CustomResource):
             delete_time_machine: Optional[pulumi.Input[bool]] = None,
             description: Optional[pulumi.Input[str]] = None,
             forced: Optional[pulumi.Input[bool]] = None,
-            infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseInfoArgs']]]]] = None,
-            lcm_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseLcmConfigArgs']]]]] = None,
-            linked_databases: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseLinkedDatabaseArgs']]]]] = None,
-            maintenance_tasks: Optional[pulumi.Input[pulumi.InputType['NdbDatabaseMaintenanceTasksArgs']]] = None,
+            infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseInfoArgs', 'NdbDatabaseInfoArgsDict']]]]] = None,
+            lcm_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseLcmConfigArgs', 'NdbDatabaseLcmConfigArgsDict']]]]] = None,
+            linked_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseLinkedDatabaseArgs', 'NdbDatabaseLinkedDatabaseArgsDict']]]]] = None,
+            maintenance_tasks: Optional[pulumi.Input[Union['NdbDatabaseMaintenanceTasksArgs', 'NdbDatabaseMaintenanceTasksArgsDict']]] = None,
             metric: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             networkprofileid: Optional[pulumi.Input[str]] = None,
             newdbservertimezone: Optional[pulumi.Input[str]] = None,
             nodecount: Optional[pulumi.Input[int]] = None,
-            nodes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseNodeArgs']]]]] = None,
+            nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseNodeArgs', 'NdbDatabaseNodeArgsDict']]]]] = None,
             nxclusterid: Optional[pulumi.Input[str]] = None,
             parent_database_id: Optional[pulumi.Input[str]] = None,
-            postgresql_info: Optional[pulumi.Input[pulumi.InputType['NdbDatabasePostgresqlInfoArgs']]] = None,
-            properties: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabasePropertyArgs']]]]] = None,
+            postgresql_info: Optional[pulumi.Input[Union['NdbDatabasePostgresqlInfoArgs', 'NdbDatabasePostgresqlInfoArgsDict']]] = None,
+            properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabasePropertyArgs', 'NdbDatabasePropertyArgsDict']]]]] = None,
             remove: Optional[pulumi.Input[bool]] = None,
             soft_remove: Optional[pulumi.Input[bool]] = None,
             softwareprofileid: Optional[pulumi.Input[str]] = None,
             softwareprofileversionid: Optional[pulumi.Input[str]] = None,
             sshpublickey: Optional[pulumi.Input[str]] = None,
             status: Optional[pulumi.Input[str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseTagArgs']]]]] = None,
+            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseTagArgs', 'NdbDatabaseTagArgsDict']]]]] = None,
             time_machine_id: Optional[pulumi.Input[str]] = None,
-            time_machines: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseTimeMachineArgs']]]]] = None,
+            time_machines: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseTimeMachineArgs', 'NdbDatabaseTimeMachineArgsDict']]]]] = None,
             time_zone: Optional[pulumi.Input[str]] = None,
-            timemachineinfo: Optional[pulumi.Input[pulumi.InputType['NdbDatabaseTimemachineinfoArgs']]] = None,
+            timemachineinfo: Optional[pulumi.Input[Union['NdbDatabaseTimemachineinfoArgs', 'NdbDatabaseTimemachineinfoArgsDict']]] = None,
             type: Optional[pulumi.Input[str]] = None,
             vm_password: Optional[pulumi.Input[str]] = None) -> 'NdbDatabase':
         """
@@ -1740,7 +1740,7 @@ class NdbDatabase(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseActionargumentArgs']]]] actionarguments: - (Optional) action arguments for database. For postgress, you can use postgresql_info
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseActionargumentArgs', 'NdbDatabaseActionargumentArgsDict']]]] actionarguments: - (Optional) action arguments for database. For postgress, you can use postgresql_info
         :param pulumi.Input[bool] autotunestagingdrive: - (Optional) Enable auto tuning of staging drive. Default: true
         :param pulumi.Input[bool] clustered: - (Optional) If clustered database. Default: false
         :param pulumi.Input[str] computeprofileid: - (Optional) ID of compute profile
@@ -1757,16 +1757,16 @@ class NdbDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] networkprofileid: - (Optional) ID of network profile
         :param pulumi.Input[str] newdbservertimezone: - (Optional) Timezone of new DB server VM
         :param pulumi.Input[int] nodecount: - (Optional) No. of nodes/db server vms. Default: 1
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabaseNodeArgs']]]] nodes: - (Optional) nodes info
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabaseNodeArgs', 'NdbDatabaseNodeArgsDict']]]] nodes: - (Optional) nodes info
         :param pulumi.Input[str] nxclusterid: - (Optional) Cluster ID for DB server VM
-        :param pulumi.Input[pulumi.InputType['NdbDatabasePostgresqlInfoArgs']] postgresql_info: - (Optional) action arguments for postgress type database.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbDatabasePropertyArgs']]]] properties: List of all the properties
+        :param pulumi.Input[Union['NdbDatabasePostgresqlInfoArgs', 'NdbDatabasePostgresqlInfoArgsDict']] postgresql_info: - (Optional) action arguments for postgress type database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NdbDatabasePropertyArgs', 'NdbDatabasePropertyArgsDict']]]] properties: List of all the properties
         :param pulumi.Input[bool] remove: - (Optional) Unregister the database from NDB. Default value is true
         :param pulumi.Input[bool] soft_remove: - (Optional) Soft remove. Default will be false
         :param pulumi.Input[str] softwareprofileid: - (Optional) ID of software profile
         :param pulumi.Input[str] softwareprofileversionid: - (Optional) ID of version in software profile
         :param pulumi.Input[str] sshpublickey: - (Optional) public key for ssh access to DB server VM
-        :param pulumi.Input[pulumi.InputType['NdbDatabaseTimemachineinfoArgs']] timemachineinfo: - (Optional) time machine config
+        :param pulumi.Input[Union['NdbDatabaseTimemachineinfoArgs', 'NdbDatabaseTimemachineinfoArgsDict']] timemachineinfo: - (Optional) time machine config
         :param pulumi.Input[str] vm_password: - (Optional) password for DB server VM and era drive user
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
