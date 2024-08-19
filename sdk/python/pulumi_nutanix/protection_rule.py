@@ -300,14 +300,14 @@ class ProtectionRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_zone_connectivity_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleAvailabilityZoneConnectivityListArgs']]]]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleCategoryArgs']]]]] = None,
-                 category_filter: Optional[pulumi.Input[pulumi.InputType['ProtectionRuleCategoryFilterArgs']]] = None,
+                 availability_zone_connectivity_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleAvailabilityZoneConnectivityListArgs', 'ProtectionRuleAvailabilityZoneConnectivityListArgsDict']]]]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleCategoryArgs', 'ProtectionRuleCategoryArgsDict']]]]] = None,
+                 category_filter: Optional[pulumi.Input[Union['ProtectionRuleCategoryFilterArgs', 'ProtectionRuleCategoryFilterArgsDict']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 ordered_availability_zone_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleOrderedAvailabilityZoneListArgs']]]]] = None,
-                 owner_reference: Optional[pulumi.Input[pulumi.InputType['ProtectionRuleOwnerReferenceArgs']]] = None,
-                 project_reference: Optional[pulumi.Input[pulumi.InputType['ProtectionRuleProjectReferenceArgs']]] = None,
+                 ordered_availability_zone_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleOrderedAvailabilityZoneListArgs', 'ProtectionRuleOrderedAvailabilityZoneListArgsDict']]]]] = None,
+                 owner_reference: Optional[pulumi.Input[Union['ProtectionRuleOwnerReferenceArgs', 'ProtectionRuleOwnerReferenceArgsDict']]] = None,
+                 project_reference: Optional[pulumi.Input[Union['ProtectionRuleProjectReferenceArgs', 'ProtectionRuleProjectReferenceArgsDict']]] = None,
                  start_time: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -320,25 +320,25 @@ class ProtectionRule(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         protection_rule_test = nutanix.ProtectionRule("protectionRuleTest",
-            availability_zone_connectivity_lists=[nutanix.ProtectionRuleAvailabilityZoneConnectivityListArgs(
-                snapshot_schedule_lists=[nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs(
-                    local_snapshot_retention_policy=nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs(
-                        num_snapshots=1,
-                    ),
-                    recovery_point_objective_secs=3600,
-                    snapshot_type="CRASH_CONSISTENT",
-                )],
-            )],
-            category_filter=nutanix.ProtectionRuleCategoryFilterArgs(
-                params=[nutanix.ProtectionRuleCategoryFilterParamArgs(
-                    name="Environment",
-                    values=["Dev"],
-                )],
-            ),
+            availability_zone_connectivity_lists=[{
+                "snapshot_schedule_lists": [{
+                    "local_snapshot_retention_policy": {
+                        "num_snapshots": 1,
+                    },
+                    "recovery_point_objective_secs": 3600,
+                    "snapshot_type": "CRASH_CONSISTENT",
+                }],
+            }],
+            category_filter={
+                "params": [{
+                    "name": "Environment",
+                    "values": ["Dev"],
+                }],
+            },
             description="test",
-            ordered_availability_zone_lists=[nutanix.ProtectionRuleOrderedAvailabilityZoneListArgs(
-                availability_zone_url="ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
-            )])
+            ordered_availability_zone_lists=[{
+                "availability_zone_url": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+            }])
         ```
 
         :param str resource_name: The name of the resource.
@@ -362,25 +362,25 @@ class ProtectionRule(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         protection_rule_test = nutanix.ProtectionRule("protectionRuleTest",
-            availability_zone_connectivity_lists=[nutanix.ProtectionRuleAvailabilityZoneConnectivityListArgs(
-                snapshot_schedule_lists=[nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs(
-                    local_snapshot_retention_policy=nutanix.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs(
-                        num_snapshots=1,
-                    ),
-                    recovery_point_objective_secs=3600,
-                    snapshot_type="CRASH_CONSISTENT",
-                )],
-            )],
-            category_filter=nutanix.ProtectionRuleCategoryFilterArgs(
-                params=[nutanix.ProtectionRuleCategoryFilterParamArgs(
-                    name="Environment",
-                    values=["Dev"],
-                )],
-            ),
+            availability_zone_connectivity_lists=[{
+                "snapshot_schedule_lists": [{
+                    "local_snapshot_retention_policy": {
+                        "num_snapshots": 1,
+                    },
+                    "recovery_point_objective_secs": 3600,
+                    "snapshot_type": "CRASH_CONSISTENT",
+                }],
+            }],
+            category_filter={
+                "params": [{
+                    "name": "Environment",
+                    "values": ["Dev"],
+                }],
+            },
             description="test",
-            ordered_availability_zone_lists=[nutanix.ProtectionRuleOrderedAvailabilityZoneListArgs(
-                availability_zone_url="ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
-            )])
+            ordered_availability_zone_lists=[{
+                "availability_zone_url": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+            }])
         ```
 
         :param str resource_name: The name of the resource.
@@ -398,14 +398,14 @@ class ProtectionRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_zone_connectivity_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleAvailabilityZoneConnectivityListArgs']]]]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleCategoryArgs']]]]] = None,
-                 category_filter: Optional[pulumi.Input[pulumi.InputType['ProtectionRuleCategoryFilterArgs']]] = None,
+                 availability_zone_connectivity_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleAvailabilityZoneConnectivityListArgs', 'ProtectionRuleAvailabilityZoneConnectivityListArgsDict']]]]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleCategoryArgs', 'ProtectionRuleCategoryArgsDict']]]]] = None,
+                 category_filter: Optional[pulumi.Input[Union['ProtectionRuleCategoryFilterArgs', 'ProtectionRuleCategoryFilterArgsDict']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 ordered_availability_zone_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleOrderedAvailabilityZoneListArgs']]]]] = None,
-                 owner_reference: Optional[pulumi.Input[pulumi.InputType['ProtectionRuleOwnerReferenceArgs']]] = None,
-                 project_reference: Optional[pulumi.Input[pulumi.InputType['ProtectionRuleProjectReferenceArgs']]] = None,
+                 ordered_availability_zone_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleOrderedAvailabilityZoneListArgs', 'ProtectionRuleOrderedAvailabilityZoneListArgsDict']]]]] = None,
+                 owner_reference: Optional[pulumi.Input[Union['ProtectionRuleOwnerReferenceArgs', 'ProtectionRuleOwnerReferenceArgsDict']]] = None,
+                 project_reference: Optional[pulumi.Input[Union['ProtectionRuleProjectReferenceArgs', 'ProtectionRuleProjectReferenceArgsDict']]] = None,
                  start_time: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -443,15 +443,15 @@ class ProtectionRule(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             api_version: Optional[pulumi.Input[str]] = None,
-            availability_zone_connectivity_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleAvailabilityZoneConnectivityListArgs']]]]] = None,
-            categories: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleCategoryArgs']]]]] = None,
-            category_filter: Optional[pulumi.Input[pulumi.InputType['ProtectionRuleCategoryFilterArgs']]] = None,
+            availability_zone_connectivity_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleAvailabilityZoneConnectivityListArgs', 'ProtectionRuleAvailabilityZoneConnectivityListArgsDict']]]]] = None,
+            categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleCategoryArgs', 'ProtectionRuleCategoryArgsDict']]]]] = None,
+            category_filter: Optional[pulumi.Input[Union['ProtectionRuleCategoryFilterArgs', 'ProtectionRuleCategoryFilterArgsDict']]] = None,
             description: Optional[pulumi.Input[str]] = None,
             metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            ordered_availability_zone_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProtectionRuleOrderedAvailabilityZoneListArgs']]]]] = None,
-            owner_reference: Optional[pulumi.Input[pulumi.InputType['ProtectionRuleOwnerReferenceArgs']]] = None,
-            project_reference: Optional[pulumi.Input[pulumi.InputType['ProtectionRuleProjectReferenceArgs']]] = None,
+            ordered_availability_zone_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleOrderedAvailabilityZoneListArgs', 'ProtectionRuleOrderedAvailabilityZoneListArgsDict']]]]] = None,
+            owner_reference: Optional[pulumi.Input[Union['ProtectionRuleOwnerReferenceArgs', 'ProtectionRuleOwnerReferenceArgsDict']]] = None,
+            project_reference: Optional[pulumi.Input[Union['ProtectionRuleProjectReferenceArgs', 'ProtectionRuleProjectReferenceArgsDict']]] = None,
             start_time: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None) -> 'ProtectionRule':
         """

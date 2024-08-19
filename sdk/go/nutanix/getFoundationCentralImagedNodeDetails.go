@@ -89,7 +89,7 @@ type GetFoundationCentralImagedNodeDetailsResult struct {
 	// Foundation version installed on the node.
 	FoundationVersion string `pulumi:"foundationVersion"`
 	// Hardware attributes json of the node.
-	HardwareAttributes map[string]interface{} `pulumi:"hardwareAttributes"`
+	HardwareAttributes map[string]string `pulumi:"hardwareAttributes"`
 	// gateway of the hypervisor.
 	HypervisorGateway string `pulumi:"hypervisorGateway"`
 	// Name of the hypervisor host.
@@ -245,10 +245,8 @@ func (o GetFoundationCentralImagedNodeDetailsResultOutput) FoundationVersion() p
 }
 
 // Hardware attributes json of the node.
-func (o GetFoundationCentralImagedNodeDetailsResultOutput) HardwareAttributes() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) map[string]interface{} {
-		return v.HardwareAttributes
-	}).(pulumi.MapOutput)
+func (o GetFoundationCentralImagedNodeDetailsResultOutput) HardwareAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFoundationCentralImagedNodeDetailsResult) map[string]string { return v.HardwareAttributes }).(pulumi.StringMapOutput)
 }
 
 // gateway of the hypervisor.

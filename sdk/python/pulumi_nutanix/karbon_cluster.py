@@ -448,18 +448,18 @@ class KarbonCluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active_passive_config: Optional[pulumi.Input[pulumi.InputType['KarbonClusterActivePassiveConfigArgs']]] = None,
-                 cni_config: Optional[pulumi.Input[pulumi.InputType['KarbonClusterCniConfigArgs']]] = None,
-                 etcd_node_pool: Optional[pulumi.Input[pulumi.InputType['KarbonClusterEtcdNodePoolArgs']]] = None,
-                 external_lb_config: Optional[pulumi.Input[pulumi.InputType['KarbonClusterExternalLbConfigArgs']]] = None,
-                 master_node_pool: Optional[pulumi.Input[pulumi.InputType['KarbonClusterMasterNodePoolArgs']]] = None,
+                 active_passive_config: Optional[pulumi.Input[Union['KarbonClusterActivePassiveConfigArgs', 'KarbonClusterActivePassiveConfigArgsDict']]] = None,
+                 cni_config: Optional[pulumi.Input[Union['KarbonClusterCniConfigArgs', 'KarbonClusterCniConfigArgsDict']]] = None,
+                 etcd_node_pool: Optional[pulumi.Input[Union['KarbonClusterEtcdNodePoolArgs', 'KarbonClusterEtcdNodePoolArgsDict']]] = None,
+                 external_lb_config: Optional[pulumi.Input[Union['KarbonClusterExternalLbConfigArgs', 'KarbonClusterExternalLbConfigArgsDict']]] = None,
+                 master_node_pool: Optional[pulumi.Input[Union['KarbonClusterMasterNodePoolArgs', 'KarbonClusterMasterNodePoolArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 private_registries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KarbonClusterPrivateRegistryArgs']]]]] = None,
-                 single_master_config: Optional[pulumi.Input[pulumi.InputType['KarbonClusterSingleMasterConfigArgs']]] = None,
-                 storage_class_config: Optional[pulumi.Input[pulumi.InputType['KarbonClusterStorageClassConfigArgs']]] = None,
+                 private_registries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KarbonClusterPrivateRegistryArgs', 'KarbonClusterPrivateRegistryArgsDict']]]]] = None,
+                 single_master_config: Optional[pulumi.Input[Union['KarbonClusterSingleMasterConfigArgs', 'KarbonClusterSingleMasterConfigArgsDict']]] = None,
+                 storage_class_config: Optional[pulumi.Input[Union['KarbonClusterStorageClassConfigArgs', 'KarbonClusterStorageClassConfigArgsDict']]] = None,
                  version: Optional[pulumi.Input[str]] = None,
                  wait_timeout_minutes: Optional[pulumi.Input[int]] = None,
-                 worker_node_pool: Optional[pulumi.Input[pulumi.InputType['KarbonClusterWorkerNodePoolArgs']]] = None,
+                 worker_node_pool: Optional[pulumi.Input[Union['KarbonClusterWorkerNodePoolArgs', 'KarbonClusterWorkerNodePoolArgsDict']]] = None,
                  __props__=None):
         """
         Provides a Nutanix Karbon Cluster resource to Create a k8s cluster.
@@ -475,47 +475,47 @@ class KarbonCluster(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         example_cluster = nutanix.KarbonCluster("exampleCluster",
-            cni_config=nutanix.KarbonClusterCniConfigArgs(
-                node_cidr_mask_size=24,
-                pod_ipv4_cidr="172.20.0.0/16",
-                service_ipv4_cidr="172.19.0.0/16",
-            ),
-            etcd_node_pool=nutanix.KarbonClusterEtcdNodePoolArgs(
-                ahv_config=nutanix.KarbonClusterEtcdNodePoolAhvConfigArgs(
-                    network_uuid="my_subnet_id",
-                    prism_element_cluster_uuid="my_pe_cluster_uuid",
-                ),
-                node_os_version="ntnx-1.0",
-                num_instances=1,
-            ),
-            master_node_pool=nutanix.KarbonClusterMasterNodePoolArgs(
-                ahv_config=nutanix.KarbonClusterMasterNodePoolAhvConfigArgs(
-                    network_uuid="my_subnet_id",
-                    prism_element_cluster_uuid="my_pe_cluster_uuid",
-                ),
-                node_os_version="ntnx-1.0",
-                num_instances=1,
-            ),
-            storage_class_config=nutanix.KarbonClusterStorageClassConfigArgs(
-                reclaim_policy="Delete",
-                volumes_config=nutanix.KarbonClusterStorageClassConfigVolumesConfigArgs(
-                    file_system="ext4",
-                    flash_mode=False,
-                    password="my_pe_pw",
-                    prism_element_cluster_uuid="my_pe_cluster_uuid",
-                    storage_container="my_storage_container_name",
-                    username="my_pe_username",
-                ),
-            ),
+            cni_config={
+                "node_cidr_mask_size": 24,
+                "pod_ipv4_cidr": "172.20.0.0/16",
+                "service_ipv4_cidr": "172.19.0.0/16",
+            },
+            etcd_node_pool={
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
+            },
+            master_node_pool={
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
+            },
+            storage_class_config={
+                "reclaim_policy": "Delete",
+                "volumes_config": {
+                    "file_system": "ext4",
+                    "flash_mode": False,
+                    "password": "my_pe_pw",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                    "storage_container": "my_storage_container_name",
+                    "username": "my_pe_username",
+                },
+            },
             version="1.18.15-1",
-            worker_node_pool=nutanix.KarbonClusterWorkerNodePoolArgs(
-                ahv_config=nutanix.KarbonClusterWorkerNodePoolAhvConfigArgs(
-                    network_uuid="my_subnet_id",
-                    prism_element_cluster_uuid="my_pe_cluster_uuid",
-                ),
-                node_os_version="ntnx-1.0",
-                num_instances=1,
-            ))
+            worker_node_pool={
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
+            })
         ```
 
         ### resource to create karbon cluster with timeouts
@@ -524,60 +524,60 @@ class KarbonCluster(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         example_cluster = nutanix.KarbonCluster("exampleCluster",
-            cni_config=nutanix.KarbonClusterCniConfigArgs(
-                node_cidr_mask_size=24,
-                pod_ipv4_cidr="172.20.0.0/16",
-                service_ipv4_cidr="172.19.0.0/16",
-            ),
-            etcd_node_pool=nutanix.KarbonClusterEtcdNodePoolArgs(
-                ahv_config=nutanix.KarbonClusterEtcdNodePoolAhvConfigArgs(
-                    network_uuid="my_subnet_id",
-                    prism_element_cluster_uuid="my_pe_cluster_uuid",
-                ),
-                node_os_version="ntnx-1.0",
-                num_instances=1,
-            ),
-            master_node_pool=nutanix.KarbonClusterMasterNodePoolArgs(
-                ahv_config=nutanix.KarbonClusterMasterNodePoolAhvConfigArgs(
-                    network_uuid="my_subnet_id",
-                    prism_element_cluster_uuid="my_pe_cluster_uuid",
-                ),
-                node_os_version="ntnx-1.0",
-                num_instances=1,
-            ),
-            storage_class_config=nutanix.KarbonClusterStorageClassConfigArgs(
-                reclaim_policy="Delete",
-                volumes_config=nutanix.KarbonClusterStorageClassConfigVolumesConfigArgs(
-                    file_system="ext4",
-                    flash_mode=False,
-                    password="my_pe_pw",
-                    prism_element_cluster_uuid="my_pe_cluster_uuid",
-                    storage_container="my_storage_container_name",
-                    username="my_pe_username",
-                ),
-            ),
+            cni_config={
+                "node_cidr_mask_size": 24,
+                "pod_ipv4_cidr": "172.20.0.0/16",
+                "service_ipv4_cidr": "172.19.0.0/16",
+            },
+            etcd_node_pool={
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
+            },
+            master_node_pool={
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
+            },
+            storage_class_config={
+                "reclaim_policy": "Delete",
+                "volumes_config": {
+                    "file_system": "ext4",
+                    "flash_mode": False,
+                    "password": "my_pe_pw",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                    "storage_container": "my_storage_container_name",
+                    "username": "my_pe_username",
+                },
+            },
             version="1.18.15-1",
-            worker_node_pool=nutanix.KarbonClusterWorkerNodePoolArgs(
-                ahv_config=nutanix.KarbonClusterWorkerNodePoolAhvConfigArgs(
-                    network_uuid="my_subnet_id",
-                    prism_element_cluster_uuid="my_pe_cluster_uuid",
-                ),
-                node_os_version="ntnx-1.0",
-                num_instances=1,
-            ))
+            worker_node_pool={
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
+            })
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['KarbonClusterActivePassiveConfigArgs']] active_passive_config: - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
-        :param pulumi.Input[pulumi.InputType['KarbonClusterCniConfigArgs']] cni_config: - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
-        :param pulumi.Input[pulumi.InputType['KarbonClusterEtcdNodePoolArgs']] etcd_node_pool: - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
-        :param pulumi.Input[pulumi.InputType['KarbonClusterExternalLbConfigArgs']] external_lb_config: - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
-        :param pulumi.Input[pulumi.InputType['KarbonClusterMasterNodePoolArgs']] master_node_pool: - (Required) Configuration of the master node pools.
+        :param pulumi.Input[Union['KarbonClusterActivePassiveConfigArgs', 'KarbonClusterActivePassiveConfigArgsDict']] active_passive_config: - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
+        :param pulumi.Input[Union['KarbonClusterCniConfigArgs', 'KarbonClusterCniConfigArgsDict']] cni_config: - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
+        :param pulumi.Input[Union['KarbonClusterEtcdNodePoolArgs', 'KarbonClusterEtcdNodePoolArgsDict']] etcd_node_pool: - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
+        :param pulumi.Input[Union['KarbonClusterExternalLbConfigArgs', 'KarbonClusterExternalLbConfigArgsDict']] external_lb_config: - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
+        :param pulumi.Input[Union['KarbonClusterMasterNodePoolArgs', 'KarbonClusterMasterNodePoolArgsDict']] master_node_pool: - (Required) Configuration of the master node pools.
         :param pulumi.Input[str] name: - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KarbonClusterPrivateRegistryArgs']]]] private_registries: - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
-        :param pulumi.Input[pulumi.InputType['KarbonClusterSingleMasterConfigArgs']] single_master_config: - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
-        :param pulumi.Input[pulumi.InputType['KarbonClusterStorageClassConfigArgs']] storage_class_config: - (Required) Storage class configuration attribute for defining the persistent volume attributes. **Note:** Updates to this attribute forces new resource creation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['KarbonClusterPrivateRegistryArgs', 'KarbonClusterPrivateRegistryArgsDict']]]] private_registries: - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
+        :param pulumi.Input[Union['KarbonClusterSingleMasterConfigArgs', 'KarbonClusterSingleMasterConfigArgsDict']] single_master_config: - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
+        :param pulumi.Input[Union['KarbonClusterStorageClassConfigArgs', 'KarbonClusterStorageClassConfigArgsDict']] storage_class_config: - (Required) Storage class configuration attribute for defining the persistent volume attributes. **Note:** Updates to this attribute forces new resource creation.
         :param pulumi.Input[str] version: - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
         :param pulumi.Input[int] wait_timeout_minutes: - (Optional) Maximum wait time for the Karbon cluster to provision.
         """
@@ -601,47 +601,47 @@ class KarbonCluster(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         example_cluster = nutanix.KarbonCluster("exampleCluster",
-            cni_config=nutanix.KarbonClusterCniConfigArgs(
-                node_cidr_mask_size=24,
-                pod_ipv4_cidr="172.20.0.0/16",
-                service_ipv4_cidr="172.19.0.0/16",
-            ),
-            etcd_node_pool=nutanix.KarbonClusterEtcdNodePoolArgs(
-                ahv_config=nutanix.KarbonClusterEtcdNodePoolAhvConfigArgs(
-                    network_uuid="my_subnet_id",
-                    prism_element_cluster_uuid="my_pe_cluster_uuid",
-                ),
-                node_os_version="ntnx-1.0",
-                num_instances=1,
-            ),
-            master_node_pool=nutanix.KarbonClusterMasterNodePoolArgs(
-                ahv_config=nutanix.KarbonClusterMasterNodePoolAhvConfigArgs(
-                    network_uuid="my_subnet_id",
-                    prism_element_cluster_uuid="my_pe_cluster_uuid",
-                ),
-                node_os_version="ntnx-1.0",
-                num_instances=1,
-            ),
-            storage_class_config=nutanix.KarbonClusterStorageClassConfigArgs(
-                reclaim_policy="Delete",
-                volumes_config=nutanix.KarbonClusterStorageClassConfigVolumesConfigArgs(
-                    file_system="ext4",
-                    flash_mode=False,
-                    password="my_pe_pw",
-                    prism_element_cluster_uuid="my_pe_cluster_uuid",
-                    storage_container="my_storage_container_name",
-                    username="my_pe_username",
-                ),
-            ),
+            cni_config={
+                "node_cidr_mask_size": 24,
+                "pod_ipv4_cidr": "172.20.0.0/16",
+                "service_ipv4_cidr": "172.19.0.0/16",
+            },
+            etcd_node_pool={
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
+            },
+            master_node_pool={
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
+            },
+            storage_class_config={
+                "reclaim_policy": "Delete",
+                "volumes_config": {
+                    "file_system": "ext4",
+                    "flash_mode": False,
+                    "password": "my_pe_pw",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                    "storage_container": "my_storage_container_name",
+                    "username": "my_pe_username",
+                },
+            },
             version="1.18.15-1",
-            worker_node_pool=nutanix.KarbonClusterWorkerNodePoolArgs(
-                ahv_config=nutanix.KarbonClusterWorkerNodePoolAhvConfigArgs(
-                    network_uuid="my_subnet_id",
-                    prism_element_cluster_uuid="my_pe_cluster_uuid",
-                ),
-                node_os_version="ntnx-1.0",
-                num_instances=1,
-            ))
+            worker_node_pool={
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
+            })
         ```
 
         ### resource to create karbon cluster with timeouts
@@ -650,47 +650,47 @@ class KarbonCluster(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         example_cluster = nutanix.KarbonCluster("exampleCluster",
-            cni_config=nutanix.KarbonClusterCniConfigArgs(
-                node_cidr_mask_size=24,
-                pod_ipv4_cidr="172.20.0.0/16",
-                service_ipv4_cidr="172.19.0.0/16",
-            ),
-            etcd_node_pool=nutanix.KarbonClusterEtcdNodePoolArgs(
-                ahv_config=nutanix.KarbonClusterEtcdNodePoolAhvConfigArgs(
-                    network_uuid="my_subnet_id",
-                    prism_element_cluster_uuid="my_pe_cluster_uuid",
-                ),
-                node_os_version="ntnx-1.0",
-                num_instances=1,
-            ),
-            master_node_pool=nutanix.KarbonClusterMasterNodePoolArgs(
-                ahv_config=nutanix.KarbonClusterMasterNodePoolAhvConfigArgs(
-                    network_uuid="my_subnet_id",
-                    prism_element_cluster_uuid="my_pe_cluster_uuid",
-                ),
-                node_os_version="ntnx-1.0",
-                num_instances=1,
-            ),
-            storage_class_config=nutanix.KarbonClusterStorageClassConfigArgs(
-                reclaim_policy="Delete",
-                volumes_config=nutanix.KarbonClusterStorageClassConfigVolumesConfigArgs(
-                    file_system="ext4",
-                    flash_mode=False,
-                    password="my_pe_pw",
-                    prism_element_cluster_uuid="my_pe_cluster_uuid",
-                    storage_container="my_storage_container_name",
-                    username="my_pe_username",
-                ),
-            ),
+            cni_config={
+                "node_cidr_mask_size": 24,
+                "pod_ipv4_cidr": "172.20.0.0/16",
+                "service_ipv4_cidr": "172.19.0.0/16",
+            },
+            etcd_node_pool={
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
+            },
+            master_node_pool={
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
+            },
+            storage_class_config={
+                "reclaim_policy": "Delete",
+                "volumes_config": {
+                    "file_system": "ext4",
+                    "flash_mode": False,
+                    "password": "my_pe_pw",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                    "storage_container": "my_storage_container_name",
+                    "username": "my_pe_username",
+                },
+            },
             version="1.18.15-1",
-            worker_node_pool=nutanix.KarbonClusterWorkerNodePoolArgs(
-                ahv_config=nutanix.KarbonClusterWorkerNodePoolAhvConfigArgs(
-                    network_uuid="my_subnet_id",
-                    prism_element_cluster_uuid="my_pe_cluster_uuid",
-                ),
-                node_os_version="ntnx-1.0",
-                num_instances=1,
-            ))
+            worker_node_pool={
+                "ahv_config": {
+                    "network_uuid": "my_subnet_id",
+                    "prism_element_cluster_uuid": "my_pe_cluster_uuid",
+                },
+                "node_os_version": "ntnx-1.0",
+                "num_instances": 1,
+            })
         ```
 
         :param str resource_name: The name of the resource.
@@ -708,18 +708,18 @@ class KarbonCluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active_passive_config: Optional[pulumi.Input[pulumi.InputType['KarbonClusterActivePassiveConfigArgs']]] = None,
-                 cni_config: Optional[pulumi.Input[pulumi.InputType['KarbonClusterCniConfigArgs']]] = None,
-                 etcd_node_pool: Optional[pulumi.Input[pulumi.InputType['KarbonClusterEtcdNodePoolArgs']]] = None,
-                 external_lb_config: Optional[pulumi.Input[pulumi.InputType['KarbonClusterExternalLbConfigArgs']]] = None,
-                 master_node_pool: Optional[pulumi.Input[pulumi.InputType['KarbonClusterMasterNodePoolArgs']]] = None,
+                 active_passive_config: Optional[pulumi.Input[Union['KarbonClusterActivePassiveConfigArgs', 'KarbonClusterActivePassiveConfigArgsDict']]] = None,
+                 cni_config: Optional[pulumi.Input[Union['KarbonClusterCniConfigArgs', 'KarbonClusterCniConfigArgsDict']]] = None,
+                 etcd_node_pool: Optional[pulumi.Input[Union['KarbonClusterEtcdNodePoolArgs', 'KarbonClusterEtcdNodePoolArgsDict']]] = None,
+                 external_lb_config: Optional[pulumi.Input[Union['KarbonClusterExternalLbConfigArgs', 'KarbonClusterExternalLbConfigArgsDict']]] = None,
+                 master_node_pool: Optional[pulumi.Input[Union['KarbonClusterMasterNodePoolArgs', 'KarbonClusterMasterNodePoolArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 private_registries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KarbonClusterPrivateRegistryArgs']]]]] = None,
-                 single_master_config: Optional[pulumi.Input[pulumi.InputType['KarbonClusterSingleMasterConfigArgs']]] = None,
-                 storage_class_config: Optional[pulumi.Input[pulumi.InputType['KarbonClusterStorageClassConfigArgs']]] = None,
+                 private_registries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KarbonClusterPrivateRegistryArgs', 'KarbonClusterPrivateRegistryArgsDict']]]]] = None,
+                 single_master_config: Optional[pulumi.Input[Union['KarbonClusterSingleMasterConfigArgs', 'KarbonClusterSingleMasterConfigArgsDict']]] = None,
+                 storage_class_config: Optional[pulumi.Input[Union['KarbonClusterStorageClassConfigArgs', 'KarbonClusterStorageClassConfigArgsDict']]] = None,
                  version: Optional[pulumi.Input[str]] = None,
                  wait_timeout_minutes: Optional[pulumi.Input[int]] = None,
-                 worker_node_pool: Optional[pulumi.Input[pulumi.InputType['KarbonClusterWorkerNodePoolArgs']]] = None,
+                 worker_node_pool: Optional[pulumi.Input[Union['KarbonClusterWorkerNodePoolArgs', 'KarbonClusterWorkerNodePoolArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -766,21 +766,21 @@ class KarbonCluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            active_passive_config: Optional[pulumi.Input[pulumi.InputType['KarbonClusterActivePassiveConfigArgs']]] = None,
-            cni_config: Optional[pulumi.Input[pulumi.InputType['KarbonClusterCniConfigArgs']]] = None,
+            active_passive_config: Optional[pulumi.Input[Union['KarbonClusterActivePassiveConfigArgs', 'KarbonClusterActivePassiveConfigArgsDict']]] = None,
+            cni_config: Optional[pulumi.Input[Union['KarbonClusterCniConfigArgs', 'KarbonClusterCniConfigArgsDict']]] = None,
             deployment_type: Optional[pulumi.Input[str]] = None,
-            etcd_node_pool: Optional[pulumi.Input[pulumi.InputType['KarbonClusterEtcdNodePoolArgs']]] = None,
-            external_lb_config: Optional[pulumi.Input[pulumi.InputType['KarbonClusterExternalLbConfigArgs']]] = None,
+            etcd_node_pool: Optional[pulumi.Input[Union['KarbonClusterEtcdNodePoolArgs', 'KarbonClusterEtcdNodePoolArgsDict']]] = None,
+            external_lb_config: Optional[pulumi.Input[Union['KarbonClusterExternalLbConfigArgs', 'KarbonClusterExternalLbConfigArgsDict']]] = None,
             kubeapi_server_ipv4_address: Optional[pulumi.Input[str]] = None,
-            master_node_pool: Optional[pulumi.Input[pulumi.InputType['KarbonClusterMasterNodePoolArgs']]] = None,
+            master_node_pool: Optional[pulumi.Input[Union['KarbonClusterMasterNodePoolArgs', 'KarbonClusterMasterNodePoolArgsDict']]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            private_registries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KarbonClusterPrivateRegistryArgs']]]]] = None,
-            single_master_config: Optional[pulumi.Input[pulumi.InputType['KarbonClusterSingleMasterConfigArgs']]] = None,
+            private_registries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KarbonClusterPrivateRegistryArgs', 'KarbonClusterPrivateRegistryArgsDict']]]]] = None,
+            single_master_config: Optional[pulumi.Input[Union['KarbonClusterSingleMasterConfigArgs', 'KarbonClusterSingleMasterConfigArgsDict']]] = None,
             status: Optional[pulumi.Input[str]] = None,
-            storage_class_config: Optional[pulumi.Input[pulumi.InputType['KarbonClusterStorageClassConfigArgs']]] = None,
+            storage_class_config: Optional[pulumi.Input[Union['KarbonClusterStorageClassConfigArgs', 'KarbonClusterStorageClassConfigArgsDict']]] = None,
             version: Optional[pulumi.Input[str]] = None,
             wait_timeout_minutes: Optional[pulumi.Input[int]] = None,
-            worker_node_pool: Optional[pulumi.Input[pulumi.InputType['KarbonClusterWorkerNodePoolArgs']]] = None) -> 'KarbonCluster':
+            worker_node_pool: Optional[pulumi.Input[Union['KarbonClusterWorkerNodePoolArgs', 'KarbonClusterWorkerNodePoolArgsDict']]] = None) -> 'KarbonCluster':
         """
         Get an existing KarbonCluster resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -788,15 +788,15 @@ class KarbonCluster(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[pulumi.InputType['KarbonClusterActivePassiveConfigArgs']] active_passive_config: - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
-        :param pulumi.Input[pulumi.InputType['KarbonClusterCniConfigArgs']] cni_config: - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
-        :param pulumi.Input[pulumi.InputType['KarbonClusterEtcdNodePoolArgs']] etcd_node_pool: - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
-        :param pulumi.Input[pulumi.InputType['KarbonClusterExternalLbConfigArgs']] external_lb_config: - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
-        :param pulumi.Input[pulumi.InputType['KarbonClusterMasterNodePoolArgs']] master_node_pool: - (Required) Configuration of the master node pools.
+        :param pulumi.Input[Union['KarbonClusterActivePassiveConfigArgs', 'KarbonClusterActivePassiveConfigArgsDict']] active_passive_config: - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
+        :param pulumi.Input[Union['KarbonClusterCniConfigArgs', 'KarbonClusterCniConfigArgsDict']] cni_config: - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
+        :param pulumi.Input[Union['KarbonClusterEtcdNodePoolArgs', 'KarbonClusterEtcdNodePoolArgsDict']] etcd_node_pool: - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
+        :param pulumi.Input[Union['KarbonClusterExternalLbConfigArgs', 'KarbonClusterExternalLbConfigArgsDict']] external_lb_config: - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
+        :param pulumi.Input[Union['KarbonClusterMasterNodePoolArgs', 'KarbonClusterMasterNodePoolArgsDict']] master_node_pool: - (Required) Configuration of the master node pools.
         :param pulumi.Input[str] name: - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KarbonClusterPrivateRegistryArgs']]]] private_registries: - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
-        :param pulumi.Input[pulumi.InputType['KarbonClusterSingleMasterConfigArgs']] single_master_config: - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
-        :param pulumi.Input[pulumi.InputType['KarbonClusterStorageClassConfigArgs']] storage_class_config: - (Required) Storage class configuration attribute for defining the persistent volume attributes. **Note:** Updates to this attribute forces new resource creation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['KarbonClusterPrivateRegistryArgs', 'KarbonClusterPrivateRegistryArgsDict']]]] private_registries: - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
+        :param pulumi.Input[Union['KarbonClusterSingleMasterConfigArgs', 'KarbonClusterSingleMasterConfigArgsDict']] single_master_config: - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
+        :param pulumi.Input[Union['KarbonClusterStorageClassConfigArgs', 'KarbonClusterStorageClassConfigArgsDict']] storage_class_config: - (Required) Storage class configuration attribute for defining the persistent volume attributes. **Note:** Updates to this attribute forces new resource creation.
         :param pulumi.Input[str] version: - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
         :param pulumi.Input[int] wait_timeout_minutes: - (Optional) Maximum wait time for the Karbon cluster to provision.
         """

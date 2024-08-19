@@ -330,12 +330,12 @@ class AwaitableGetProjectResult(GetProjectResult):
             vpc_reference_lists=self.vpc_reference_lists)
 
 
-def get_project(categories: Optional[Sequence[pulumi.InputType['GetProjectCategoryArgs']]] = None,
-                external_user_group_reference_lists: Optional[Sequence[pulumi.InputType['GetProjectExternalUserGroupReferenceListArgs']]] = None,
+def get_project(categories: Optional[Sequence[Union['GetProjectCategoryArgs', 'GetProjectCategoryArgsDict']]] = None,
+                external_user_group_reference_lists: Optional[Sequence[Union['GetProjectExternalUserGroupReferenceListArgs', 'GetProjectExternalUserGroupReferenceListArgsDict']]] = None,
                 project_id: Optional[str] = None,
                 project_name: Optional[str] = None,
-                subnet_reference_lists: Optional[Sequence[pulumi.InputType['GetProjectSubnetReferenceListArgs']]] = None,
-                user_reference_lists: Optional[Sequence[pulumi.InputType['GetProjectUserReferenceListArgs']]] = None,
+                subnet_reference_lists: Optional[Sequence[Union['GetProjectSubnetReferenceListArgs', 'GetProjectSubnetReferenceListArgsDict']]] = None,
+                user_reference_lists: Optional[Sequence[Union['GetProjectUserReferenceListArgs', 'GetProjectUserReferenceListArgsDict']]] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetProjectResult:
     """
     Describe a Nutanix Project and its values (if it has them).
@@ -369,35 +369,35 @@ def get_project(categories: Optional[Sequence[pulumi.InputType['GetProjectCatego
         ])
     project_test = nutanix.Project("projectTest",
         description="This is my project",
-        categories=[nutanix.ProjectCategoryArgs(
-            name="Environment",
-            value="Staging",
-        )],
-        resource_domain=nutanix.ProjectResourceDomainArgs(
-            resources=[nutanix.ProjectResourceDomainResourceArgs(
-                limit=4,
-                resource_type="STORAGE",
-            )],
-        ),
-        default_subnet_reference=nutanix.ProjectDefaultSubnetReferenceArgs(
-            uuid=subnet.metadata["uuid"],
-        ),
+        categories=[{
+            "name": "Environment",
+            "value": "Staging",
+        }],
+        resource_domain={
+            "resources": [{
+                "limit": 4,
+                "resource_type": "STORAGE",
+            }],
+        },
+        default_subnet_reference={
+            "uuid": subnet.metadata["uuid"],
+        },
         api_version="3.1")
     test = nutanix.get_project_output(project_id=project_test.id)
     ```
 
 
-    :param Sequence[pulumi.InputType['GetProjectCategoryArgs']] categories: - (Optional) The category values represented as a dictionary of key > list of values.
-    :param Sequence[pulumi.InputType['GetProjectExternalUserGroupReferenceListArgs']] external_user_group_reference_lists: List of directory service user groups. These groups are not managed by Nutanix.
+    :param Sequence[Union['GetProjectCategoryArgs', 'GetProjectCategoryArgsDict']] categories: - (Optional) The category values represented as a dictionary of key > list of values.
+    :param Sequence[Union['GetProjectExternalUserGroupReferenceListArgs', 'GetProjectExternalUserGroupReferenceListArgsDict']] external_user_group_reference_lists: List of directory service user groups. These groups are not managed by Nutanix.
            * `external_user_group_reference_list.#.kind` - The kind name. Default value is `user_group`
            * `external_user_group_reference_list.#.uuid` - The UUID of a user_group
            * `external_user_group_reference_list.#.name` - The name of a user_group
     :param str project_id: - (Required) The `id` of the project.
-    :param Sequence[pulumi.InputType['GetProjectSubnetReferenceListArgs']] subnet_reference_lists: List of subnets for the project.
+    :param Sequence[Union['GetProjectSubnetReferenceListArgs', 'GetProjectSubnetReferenceListArgsDict']] subnet_reference_lists: List of subnets for the project.
            * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
            * `subnet_reference_list.#.uuid` - The UUID of a subnet
            * `subnet_reference_list.#.name` - The name of a subnet.
-    :param Sequence[pulumi.InputType['GetProjectUserReferenceListArgs']] user_reference_lists: List of Reference of users.
+    :param Sequence[Union['GetProjectUserReferenceListArgs', 'GetProjectUserReferenceListArgsDict']] user_reference_lists: List of Reference of users.
     """
     __args__ = dict()
     __args__['categories'] = categories
@@ -438,12 +438,12 @@ def get_project(categories: Optional[Sequence[pulumi.InputType['GetProjectCatego
 
 
 @_utilities.lift_output_func(get_project)
-def get_project_output(categories: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetProjectCategoryArgs']]]]] = None,
-                       external_user_group_reference_lists: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetProjectExternalUserGroupReferenceListArgs']]]]] = None,
+def get_project_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetProjectCategoryArgs', 'GetProjectCategoryArgsDict']]]]] = None,
+                       external_user_group_reference_lists: Optional[pulumi.Input[Optional[Sequence[Union['GetProjectExternalUserGroupReferenceListArgs', 'GetProjectExternalUserGroupReferenceListArgsDict']]]]] = None,
                        project_id: Optional[pulumi.Input[Optional[str]]] = None,
                        project_name: Optional[pulumi.Input[Optional[str]]] = None,
-                       subnet_reference_lists: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetProjectSubnetReferenceListArgs']]]]] = None,
-                       user_reference_lists: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetProjectUserReferenceListArgs']]]]] = None,
+                       subnet_reference_lists: Optional[pulumi.Input[Optional[Sequence[Union['GetProjectSubnetReferenceListArgs', 'GetProjectSubnetReferenceListArgsDict']]]]] = None,
+                       user_reference_lists: Optional[pulumi.Input[Optional[Sequence[Union['GetProjectUserReferenceListArgs', 'GetProjectUserReferenceListArgsDict']]]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProjectResult]:
     """
     Describe a Nutanix Project and its values (if it has them).
@@ -477,34 +477,34 @@ def get_project_output(categories: Optional[pulumi.Input[Optional[Sequence[pulum
         ])
     project_test = nutanix.Project("projectTest",
         description="This is my project",
-        categories=[nutanix.ProjectCategoryArgs(
-            name="Environment",
-            value="Staging",
-        )],
-        resource_domain=nutanix.ProjectResourceDomainArgs(
-            resources=[nutanix.ProjectResourceDomainResourceArgs(
-                limit=4,
-                resource_type="STORAGE",
-            )],
-        ),
-        default_subnet_reference=nutanix.ProjectDefaultSubnetReferenceArgs(
-            uuid=subnet.metadata["uuid"],
-        ),
+        categories=[{
+            "name": "Environment",
+            "value": "Staging",
+        }],
+        resource_domain={
+            "resources": [{
+                "limit": 4,
+                "resource_type": "STORAGE",
+            }],
+        },
+        default_subnet_reference={
+            "uuid": subnet.metadata["uuid"],
+        },
         api_version="3.1")
     test = nutanix.get_project_output(project_id=project_test.id)
     ```
 
 
-    :param Sequence[pulumi.InputType['GetProjectCategoryArgs']] categories: - (Optional) The category values represented as a dictionary of key > list of values.
-    :param Sequence[pulumi.InputType['GetProjectExternalUserGroupReferenceListArgs']] external_user_group_reference_lists: List of directory service user groups. These groups are not managed by Nutanix.
+    :param Sequence[Union['GetProjectCategoryArgs', 'GetProjectCategoryArgsDict']] categories: - (Optional) The category values represented as a dictionary of key > list of values.
+    :param Sequence[Union['GetProjectExternalUserGroupReferenceListArgs', 'GetProjectExternalUserGroupReferenceListArgsDict']] external_user_group_reference_lists: List of directory service user groups. These groups are not managed by Nutanix.
            * `external_user_group_reference_list.#.kind` - The kind name. Default value is `user_group`
            * `external_user_group_reference_list.#.uuid` - The UUID of a user_group
            * `external_user_group_reference_list.#.name` - The name of a user_group
     :param str project_id: - (Required) The `id` of the project.
-    :param Sequence[pulumi.InputType['GetProjectSubnetReferenceListArgs']] subnet_reference_lists: List of subnets for the project.
+    :param Sequence[Union['GetProjectSubnetReferenceListArgs', 'GetProjectSubnetReferenceListArgsDict']] subnet_reference_lists: List of subnets for the project.
            * `subnet_reference_list.#.kind` - The kind name. Default value is `subnet`
            * `subnet_reference_list.#.uuid` - The UUID of a subnet
            * `subnet_reference_list.#.name` - The name of a subnet.
-    :param Sequence[pulumi.InputType['GetProjectUserReferenceListArgs']] user_reference_lists: List of Reference of users.
+    :param Sequence[Union['GetProjectUserReferenceListArgs', 'GetProjectUserReferenceListArgsDict']] user_reference_lists: List of Reference of users.
     """
     ...

@@ -73,7 +73,7 @@ class AwaitableGetUserGroupsResult(GetUserGroupsResult):
             metadatas=self.metadatas)
 
 
-def get_user_groups(metadatas: Optional[Sequence[pulumi.InputType['GetUserGroupsMetadataArgs']]] = None,
+def get_user_groups(metadatas: Optional[Sequence[Union['GetUserGroupsMetadataArgs', 'GetUserGroupsMetadataArgsDict']]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetUserGroupsResult:
     """
     Provides a datasource to retrieve all the user groups.
@@ -88,7 +88,7 @@ def get_user_groups(metadatas: Optional[Sequence[pulumi.InputType['GetUserGroups
     ```
 
 
-    :param Sequence[pulumi.InputType['GetUserGroupsMetadataArgs']] metadatas: - The user group kind metadata.
+    :param Sequence[Union['GetUserGroupsMetadataArgs', 'GetUserGroupsMetadataArgsDict']] metadatas: - The user group kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
@@ -103,7 +103,7 @@ def get_user_groups(metadatas: Optional[Sequence[pulumi.InputType['GetUserGroups
 
 
 @_utilities.lift_output_func(get_user_groups)
-def get_user_groups_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetUserGroupsMetadataArgs']]]]] = None,
+def get_user_groups_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetUserGroupsMetadataArgs', 'GetUserGroupsMetadataArgsDict']]]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserGroupsResult]:
     """
     Provides a datasource to retrieve all the user groups.
@@ -118,6 +118,6 @@ def get_user_groups_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pu
     ```
 
 
-    :param Sequence[pulumi.InputType['GetUserGroupsMetadataArgs']] metadatas: - The user group kind metadata.
+    :param Sequence[Union['GetUserGroupsMetadataArgs', 'GetUserGroupsMetadataArgsDict']] metadatas: - The user group kind metadata.
     """
     ...

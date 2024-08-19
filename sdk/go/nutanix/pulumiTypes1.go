@@ -11401,9 +11401,9 @@ type GetClustersEntity struct {
 	// - SMTP Server type.
 	SmtpServerType string `pulumi:"smtpServerType"`
 	// - Map of software on the cluster with software type as the key.
-	SoftwareMapNcc map[string]interface{} `pulumi:"softwareMapNcc"`
+	SoftwareMapNcc map[string]string `pulumi:"softwareMapNcc"`
 	// - Map of software on the cluster with software type as the key.
-	SoftwareMapNos map[string]interface{} `pulumi:"softwareMapNos"`
+	SoftwareMapNos map[string]string `pulumi:"softwareMapNos"`
 	// - UTC date and time in RFC-3339 format when the key expires
 	SslKeyExpireDatetime string `pulumi:"sslKeyExpireDatetime"`
 	SslKeyName           string `pulumi:"sslKeyName"`
@@ -11510,9 +11510,9 @@ type GetClustersEntityArgs struct {
 	// - SMTP Server type.
 	SmtpServerType pulumi.StringInput `pulumi:"smtpServerType"`
 	// - Map of software on the cluster with software type as the key.
-	SoftwareMapNcc pulumi.MapInput `pulumi:"softwareMapNcc"`
+	SoftwareMapNcc pulumi.StringMapInput `pulumi:"softwareMapNcc"`
 	// - Map of software on the cluster with software type as the key.
-	SoftwareMapNos pulumi.MapInput `pulumi:"softwareMapNos"`
+	SoftwareMapNos pulumi.StringMapInput `pulumi:"softwareMapNos"`
 	// - UTC date and time in RFC-3339 format when the key expires
 	SslKeyExpireDatetime pulumi.StringInput `pulumi:"sslKeyExpireDatetime"`
 	SslKeyName           pulumi.StringInput `pulumi:"sslKeyName"`
@@ -11780,13 +11780,13 @@ func (o GetClustersEntityOutput) SmtpServerType() pulumi.StringOutput {
 }
 
 // - Map of software on the cluster with software type as the key.
-func (o GetClustersEntityOutput) SoftwareMapNcc() pulumi.MapOutput {
-	return o.ApplyT(func(v GetClustersEntity) map[string]interface{} { return v.SoftwareMapNcc }).(pulumi.MapOutput)
+func (o GetClustersEntityOutput) SoftwareMapNcc() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClustersEntity) map[string]string { return v.SoftwareMapNcc }).(pulumi.StringMapOutput)
 }
 
 // - Map of software on the cluster with software type as the key.
-func (o GetClustersEntityOutput) SoftwareMapNos() pulumi.MapOutput {
-	return o.ApplyT(func(v GetClustersEntity) map[string]interface{} { return v.SoftwareMapNos }).(pulumi.MapOutput)
+func (o GetClustersEntityOutput) SoftwareMapNos() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClustersEntity) map[string]string { return v.SoftwareMapNos }).(pulumi.StringMapOutput)
 }
 
 // - UTC date and time in RFC-3339 format when the key expires
@@ -17545,7 +17545,7 @@ type GetFoundationCentralImagedNodesListImagedNode struct {
 	// Foundation version installed on the node.
 	FoundationVersion string `pulumi:"foundationVersion"`
 	// Hardware attributes json of the node.
-	HardwareAttributes map[string]interface{} `pulumi:"hardwareAttributes"`
+	HardwareAttributes map[string]string `pulumi:"hardwareAttributes"`
 	// gateway of the hypervisor.
 	HypervisorGateway string `pulumi:"hypervisorGateway"`
 	// Name of the hypervisor host.
@@ -17628,7 +17628,7 @@ type GetFoundationCentralImagedNodesListImagedNodeArgs struct {
 	// Foundation version installed on the node.
 	FoundationVersion pulumi.StringInput `pulumi:"foundationVersion"`
 	// Hardware attributes json of the node.
-	HardwareAttributes pulumi.MapInput `pulumi:"hardwareAttributes"`
+	HardwareAttributes pulumi.StringMapInput `pulumi:"hardwareAttributes"`
 	// gateway of the hypervisor.
 	HypervisorGateway pulumi.StringInput `pulumi:"hypervisorGateway"`
 	// Name of the hypervisor host.
@@ -17792,10 +17792,8 @@ func (o GetFoundationCentralImagedNodesListImagedNodeOutput) FoundationVersion()
 }
 
 // Hardware attributes json of the node.
-func (o GetFoundationCentralImagedNodesListImagedNodeOutput) HardwareAttributes() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) map[string]interface{} {
-		return v.HardwareAttributes
-	}).(pulumi.MapOutput)
+func (o GetFoundationCentralImagedNodesListImagedNodeOutput) HardwareAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFoundationCentralImagedNodesListImagedNode) map[string]string { return v.HardwareAttributes }).(pulumi.StringMapOutput)
 }
 
 // gateway of the hypervisor.

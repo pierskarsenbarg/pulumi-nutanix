@@ -407,14 +407,14 @@ class Pbr(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: Optional[pulumi.Input[str]] = None,
                  api_version: Optional[pulumi.Input[str]] = None,
-                 destination: Optional[pulumi.Input[pulumi.InputType['PbrDestinationArgs']]] = None,
+                 destination: Optional[pulumi.Input[Union['PbrDestinationArgs', 'PbrDestinationArgsDict']]] = None,
                  is_bidirectional: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  priority: Optional[pulumi.Input[int]] = None,
-                 protocol_parameters: Optional[pulumi.Input[pulumi.InputType['PbrProtocolParametersArgs']]] = None,
+                 protocol_parameters: Optional[pulumi.Input[Union['PbrProtocolParametersArgs', 'PbrProtocolParametersArgsDict']]] = None,
                  protocol_type: Optional[pulumi.Input[str]] = None,
                  service_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 source: Optional[pulumi.Input[pulumi.InputType['PbrSourceArgs']]] = None,
+                 source: Optional[pulumi.Input[Union['PbrSourceArgs', 'PbrSourceArgsDict']]] = None,
                  vpc_name: Optional[pulumi.Input[str]] = None,
                  vpc_reference_uuid: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -431,14 +431,14 @@ class Pbr(pulumi.CustomResource):
 
         pbr = nutanix.Pbr("pbr",
             action="PERMIT",
-            destination=nutanix.PbrDestinationArgs(
-                address_type="ALL",
-            ),
+            destination={
+                "address_type": "ALL",
+            },
             priority=123,
             protocol_type="ALL",
-            source=nutanix.PbrSourceArgs(
-                address_type="ALL",
-            ),
+            source={
+                "address_type": "ALL",
+            },
             vpc_name="test123")
         ```
 
@@ -473,14 +473,14 @@ class Pbr(pulumi.CustomResource):
 
         pbr = nutanix.Pbr("pbr",
             action="PERMIT",
-            destination=nutanix.PbrDestinationArgs(
-                address_type="ALL",
-            ),
+            destination={
+                "address_type": "ALL",
+            },
             priority=123,
             protocol_type="ALL",
-            source=nutanix.PbrSourceArgs(
-                address_type="ALL",
-            ),
+            source={
+                "address_type": "ALL",
+            },
             vpc_name="test123")
         ```
 
@@ -501,14 +501,14 @@ class Pbr(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action: Optional[pulumi.Input[str]] = None,
                  api_version: Optional[pulumi.Input[str]] = None,
-                 destination: Optional[pulumi.Input[pulumi.InputType['PbrDestinationArgs']]] = None,
+                 destination: Optional[pulumi.Input[Union['PbrDestinationArgs', 'PbrDestinationArgsDict']]] = None,
                  is_bidirectional: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  priority: Optional[pulumi.Input[int]] = None,
-                 protocol_parameters: Optional[pulumi.Input[pulumi.InputType['PbrProtocolParametersArgs']]] = None,
+                 protocol_parameters: Optional[pulumi.Input[Union['PbrProtocolParametersArgs', 'PbrProtocolParametersArgsDict']]] = None,
                  protocol_type: Optional[pulumi.Input[str]] = None,
                  service_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 source: Optional[pulumi.Input[pulumi.InputType['PbrSourceArgs']]] = None,
+                 source: Optional[pulumi.Input[Union['PbrSourceArgs', 'PbrSourceArgsDict']]] = None,
                  vpc_name: Optional[pulumi.Input[str]] = None,
                  vpc_reference_uuid: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -555,15 +555,15 @@ class Pbr(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             action: Optional[pulumi.Input[str]] = None,
             api_version: Optional[pulumi.Input[str]] = None,
-            destination: Optional[pulumi.Input[pulumi.InputType['PbrDestinationArgs']]] = None,
+            destination: Optional[pulumi.Input[Union['PbrDestinationArgs', 'PbrDestinationArgsDict']]] = None,
             is_bidirectional: Optional[pulumi.Input[bool]] = None,
             metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             priority: Optional[pulumi.Input[int]] = None,
-            protocol_parameters: Optional[pulumi.Input[pulumi.InputType['PbrProtocolParametersArgs']]] = None,
+            protocol_parameters: Optional[pulumi.Input[Union['PbrProtocolParametersArgs', 'PbrProtocolParametersArgsDict']]] = None,
             protocol_type: Optional[pulumi.Input[str]] = None,
             service_ip_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            source: Optional[pulumi.Input[pulumi.InputType['PbrSourceArgs']]] = None,
+            source: Optional[pulumi.Input[Union['PbrSourceArgs', 'PbrSourceArgsDict']]] = None,
             vpc_name: Optional[pulumi.Input[str]] = None,
             vpc_reference_uuid: Optional[pulumi.Input[str]] = None) -> 'Pbr':
         """

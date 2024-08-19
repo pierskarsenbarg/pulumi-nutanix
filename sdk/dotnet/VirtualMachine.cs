@@ -223,7 +223,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - (Optional) Generic key value pair used for custom attributes in sysprep.
         /// </summary>
         [Output("guestCustomizationSysprepCustomKeyValues")]
-        public Output<ImmutableDictionary<string, object>> GuestCustomizationSysprepCustomKeyValues { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> GuestCustomizationSysprepCustomKeyValues { get; private set; } = null!;
 
         /// <summary>
         /// - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
@@ -283,7 +283,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - (Ooptional) Credentials to login server.
         /// </summary>
         [Output("ngtCredentials")]
-        public Output<ImmutableDictionary<string, object>> NgtCredentials { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> NgtCredentials { get; private set; } = null!;
 
         /// <summary>
         /// Application names that are enabled.
@@ -588,14 +588,14 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         [Input("guestCustomizationSysprepCustomKeyValues")]
-        private InputMap<object>? _guestCustomizationSysprepCustomKeyValues;
+        private InputMap<string>? _guestCustomizationSysprepCustomKeyValues;
 
         /// <summary>
         /// - (Optional) Generic key value pair used for custom attributes in sysprep.
         /// </summary>
-        public InputMap<object> GuestCustomizationSysprepCustomKeyValues
+        public InputMap<string> GuestCustomizationSysprepCustomKeyValues
         {
-            get => _guestCustomizationSysprepCustomKeyValues ?? (_guestCustomizationSysprepCustomKeyValues = new InputMap<object>());
+            get => _guestCustomizationSysprepCustomKeyValues ?? (_guestCustomizationSysprepCustomKeyValues = new InputMap<string>());
             set => _guestCustomizationSysprepCustomKeyValues = value;
         }
 
@@ -636,14 +636,14 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? Name { get; set; }
 
         [Input("ngtCredentials")]
-        private InputMap<object>? _ngtCredentials;
+        private InputMap<string>? _ngtCredentials;
 
         /// <summary>
         /// - (Ooptional) Credentials to login server.
         /// </summary>
-        public InputMap<object> NgtCredentials
+        public InputMap<string> NgtCredentials
         {
-            get => _ngtCredentials ?? (_ngtCredentials = new InputMap<object>());
+            get => _ngtCredentials ?? (_ngtCredentials = new InputMap<string>());
             set => _ngtCredentials = value;
         }
 
@@ -947,14 +947,14 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         [Input("guestCustomizationSysprepCustomKeyValues")]
-        private InputMap<object>? _guestCustomizationSysprepCustomKeyValues;
+        private InputMap<string>? _guestCustomizationSysprepCustomKeyValues;
 
         /// <summary>
         /// - (Optional) Generic key value pair used for custom attributes in sysprep.
         /// </summary>
-        public InputMap<object> GuestCustomizationSysprepCustomKeyValues
+        public InputMap<string> GuestCustomizationSysprepCustomKeyValues
         {
-            get => _guestCustomizationSysprepCustomKeyValues ?? (_guestCustomizationSysprepCustomKeyValues = new InputMap<object>());
+            get => _guestCustomizationSysprepCustomKeyValues ?? (_guestCustomizationSysprepCustomKeyValues = new InputMap<string>());
             set => _guestCustomizationSysprepCustomKeyValues = value;
         }
 
@@ -1025,14 +1025,14 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? Name { get; set; }
 
         [Input("ngtCredentials")]
-        private InputMap<object>? _ngtCredentials;
+        private InputMap<string>? _ngtCredentials;
 
         /// <summary>
         /// - (Ooptional) Credentials to login server.
         /// </summary>
-        public InputMap<object> NgtCredentials
+        public InputMap<string> NgtCredentials
         {
-            get => _ngtCredentials ?? (_ngtCredentials = new InputMap<object>());
+            get => _ngtCredentials ?? (_ngtCredentials = new InputMap<string>());
             set => _ngtCredentials = value;
         }
 

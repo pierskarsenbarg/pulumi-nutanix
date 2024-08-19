@@ -82,7 +82,7 @@ class AwaitableGetFloatingIpsResult(GetFloatingIpsResult):
             metadatas=self.metadatas)
 
 
-def get_floating_ips(metadatas: Optional[Sequence[pulumi.InputType['GetFloatingIpsMetadataArgs']]] = None,
+def get_floating_ips(metadatas: Optional[Sequence[Union['GetFloatingIpsMetadataArgs', 'GetFloatingIpsMetadataArgsDict']]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFloatingIpsResult:
     """
     Provides a datasource to retrieve all the floating IPs .
@@ -97,7 +97,7 @@ def get_floating_ips(metadatas: Optional[Sequence[pulumi.InputType['GetFloatingI
     ```
 
 
-    :param Sequence[pulumi.InputType['GetFloatingIpsMetadataArgs']] metadatas: - The floating_ip kind metadata.
+    :param Sequence[Union['GetFloatingIpsMetadataArgs', 'GetFloatingIpsMetadataArgsDict']] metadatas: - The floating_ip kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
@@ -112,7 +112,7 @@ def get_floating_ips(metadatas: Optional[Sequence[pulumi.InputType['GetFloatingI
 
 
 @_utilities.lift_output_func(get_floating_ips)
-def get_floating_ips_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetFloatingIpsMetadataArgs']]]]] = None,
+def get_floating_ips_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetFloatingIpsMetadataArgs', 'GetFloatingIpsMetadataArgsDict']]]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFloatingIpsResult]:
     """
     Provides a datasource to retrieve all the floating IPs .
@@ -127,6 +127,6 @@ def get_floating_ips_output(metadatas: Optional[pulumi.Input[Optional[Sequence[p
     ```
 
 
-    :param Sequence[pulumi.InputType['GetFloatingIpsMetadataArgs']] metadatas: - The floating_ip kind metadata.
+    :param Sequence[Union['GetFloatingIpsMetadataArgs', 'GetFloatingIpsMetadataArgsDict']] metadatas: - The floating_ip kind metadata.
     """
     ...

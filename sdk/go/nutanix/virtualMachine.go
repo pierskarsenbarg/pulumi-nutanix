@@ -153,7 +153,7 @@ type VirtualMachine struct {
 	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	GuestCustomizationSysprep pulumi.StringMapOutput `pulumi:"guestCustomizationSysprep"`
 	// - (Optional) Generic key value pair used for custom attributes in sysprep.
-	GuestCustomizationSysprepCustomKeyValues pulumi.MapOutput `pulumi:"guestCustomizationSysprepCustomKeyValues"`
+	GuestCustomizationSysprepCustomKeyValues pulumi.StringMapOutput `pulumi:"guestCustomizationSysprepCustomKeyValues"`
 	// - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
 	GuestOsId pulumi.StringOutput `pulumi:"guestOsId"`
 	// - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
@@ -173,7 +173,7 @@ type VirtualMachine struct {
 	// - (Required) The name for the vm.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// - (Ooptional) Credentials to login server.
-	NgtCredentials pulumi.MapOutput `pulumi:"ngtCredentials"`
+	NgtCredentials pulumi.StringMapOutput `pulumi:"ngtCredentials"`
 	// Application names that are enabled.
 	NgtEnabledCapabilityLists pulumi.StringArrayOutput `pulumi:"ngtEnabledCapabilityLists"`
 	// - Status NICs attached to the VM.
@@ -283,7 +283,7 @@ type virtualMachineState struct {
 	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	GuestCustomizationSysprep map[string]string `pulumi:"guestCustomizationSysprep"`
 	// - (Optional) Generic key value pair used for custom attributes in sysprep.
-	GuestCustomizationSysprepCustomKeyValues map[string]interface{} `pulumi:"guestCustomizationSysprepCustomKeyValues"`
+	GuestCustomizationSysprepCustomKeyValues map[string]string `pulumi:"guestCustomizationSysprepCustomKeyValues"`
 	// - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
 	GuestOsId *string `pulumi:"guestOsId"`
 	// - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
@@ -303,7 +303,7 @@ type virtualMachineState struct {
 	// - (Required) The name for the vm.
 	Name *string `pulumi:"name"`
 	// - (Ooptional) Credentials to login server.
-	NgtCredentials map[string]interface{} `pulumi:"ngtCredentials"`
+	NgtCredentials map[string]string `pulumi:"ngtCredentials"`
 	// Application names that are enabled.
 	NgtEnabledCapabilityLists []string `pulumi:"ngtEnabledCapabilityLists"`
 	// - Status NICs attached to the VM.
@@ -381,7 +381,7 @@ type VirtualMachineState struct {
 	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	GuestCustomizationSysprep pulumi.StringMapInput
 	// - (Optional) Generic key value pair used for custom attributes in sysprep.
-	GuestCustomizationSysprepCustomKeyValues pulumi.MapInput
+	GuestCustomizationSysprepCustomKeyValues pulumi.StringMapInput
 	// - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
 	GuestOsId pulumi.StringPtrInput
 	// - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
@@ -401,7 +401,7 @@ type VirtualMachineState struct {
 	// - (Required) The name for the vm.
 	Name pulumi.StringPtrInput
 	// - (Ooptional) Credentials to login server.
-	NgtCredentials pulumi.MapInput
+	NgtCredentials pulumi.StringMapInput
 	// Application names that are enabled.
 	NgtEnabledCapabilityLists pulumi.StringArrayInput
 	// - Status NICs attached to the VM.
@@ -479,7 +479,7 @@ type virtualMachineArgs struct {
 	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	GuestCustomizationSysprep map[string]string `pulumi:"guestCustomizationSysprep"`
 	// - (Optional) Generic key value pair used for custom attributes in sysprep.
-	GuestCustomizationSysprepCustomKeyValues map[string]interface{} `pulumi:"guestCustomizationSysprepCustomKeyValues"`
+	GuestCustomizationSysprepCustomKeyValues map[string]string `pulumi:"guestCustomizationSysprepCustomKeyValues"`
 	// - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
 	GuestOsId *string `pulumi:"guestOsId"`
 	// - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
@@ -493,7 +493,7 @@ type virtualMachineArgs struct {
 	// - (Required) The name for the vm.
 	Name *string `pulumi:"name"`
 	// - (Ooptional) Credentials to login server.
-	NgtCredentials map[string]interface{} `pulumi:"ngtCredentials"`
+	NgtCredentials map[string]string `pulumi:"ngtCredentials"`
 	// Application names that are enabled.
 	NgtEnabledCapabilityLists []string `pulumi:"ngtEnabledCapabilityLists"`
 	// - (Optional) Spec NICs attached to the VM.
@@ -562,7 +562,7 @@ type VirtualMachineArgs struct {
 	// - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
 	GuestCustomizationSysprep pulumi.StringMapInput
 	// - (Optional) Generic key value pair used for custom attributes in sysprep.
-	GuestCustomizationSysprepCustomKeyValues pulumi.MapInput
+	GuestCustomizationSysprepCustomKeyValues pulumi.StringMapInput
 	// - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
 	GuestOsId pulumi.StringPtrInput
 	// - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
@@ -576,7 +576,7 @@ type VirtualMachineArgs struct {
 	// - (Required) The name for the vm.
 	Name pulumi.StringPtrInput
 	// - (Ooptional) Credentials to login server.
-	NgtCredentials pulumi.MapInput
+	NgtCredentials pulumi.StringMapInput
 	// Application names that are enabled.
 	NgtEnabledCapabilityLists pulumi.StringArrayInput
 	// - (Optional) Spec NICs attached to the VM.
@@ -794,8 +794,8 @@ func (o VirtualMachineOutput) GuestCustomizationSysprep() pulumi.StringMapOutput
 }
 
 // - (Optional) Generic key value pair used for custom attributes in sysprep.
-func (o VirtualMachineOutput) GuestCustomizationSysprepCustomKeyValues() pulumi.MapOutput {
-	return o.ApplyT(func(v *VirtualMachine) pulumi.MapOutput { return v.GuestCustomizationSysprepCustomKeyValues }).(pulumi.MapOutput)
+func (o VirtualMachineOutput) GuestCustomizationSysprepCustomKeyValues() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VirtualMachine) pulumi.StringMapOutput { return v.GuestCustomizationSysprepCustomKeyValues }).(pulumi.StringMapOutput)
 }
 
 // - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
@@ -844,8 +844,8 @@ func (o VirtualMachineOutput) Name() pulumi.StringOutput {
 }
 
 // - (Ooptional) Credentials to login server.
-func (o VirtualMachineOutput) NgtCredentials() pulumi.MapOutput {
-	return o.ApplyT(func(v *VirtualMachine) pulumi.MapOutput { return v.NgtCredentials }).(pulumi.MapOutput)
+func (o VirtualMachineOutput) NgtCredentials() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VirtualMachine) pulumi.StringMapOutput { return v.NgtCredentials }).(pulumi.StringMapOutput)
 }
 
 // Application names that are enabled.

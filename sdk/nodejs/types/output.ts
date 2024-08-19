@@ -415,7 +415,7 @@ export interface FoundationCentralImageClusterNodeList {
     /**
      * Hardware attributes override json for the node.
      */
-    hardwareAttributesOverride: {[key: string]: any};
+    hardwareAttributesOverride: {[key: string]: string};
     /**
      * Gateway of the hypervisor.
      */
@@ -1502,11 +1502,11 @@ export interface GetClustersEntity {
     /**
      * - Map of software on the cluster with software type as the key.
      */
-    softwareMapNcc: {[key: string]: any};
+    softwareMapNcc: {[key: string]: string};
     /**
      * - Map of software on the cluster with software type as the key.
      */
-    softwareMapNos: {[key: string]: any};
+    softwareMapNos: {[key: string]: string};
     /**
      * - UTC date and time in RFC-3339 format when the key expires
      */
@@ -2244,7 +2244,7 @@ export interface GetFoundationCentralImagedNodesListImagedNode {
     /**
      * Hardware attributes json of the node.
      */
-    hardwareAttributes: {[key: string]: any};
+    hardwareAttributes: {[key: string]: string};
     /**
      * gateway of the hypervisor.
      */
@@ -10774,7 +10774,7 @@ export interface GetSubnetCategory {
 }
 
 export interface GetSubnetMessageList {
-    details: {[key: string]: any};
+    details: {[key: string]: string};
     message: string;
     reason: string;
 }
@@ -10891,7 +10891,7 @@ export interface GetSubnetsEntityCategory {
 }
 
 export interface GetSubnetsEntityMessageList {
-    details: {[key: string]: any};
+    details: {[key: string]: string};
     message: string;
     reason: string;
 }
@@ -11467,7 +11467,7 @@ export interface GetVirtualMachineGpuList {
 }
 
 export interface GetVirtualMachineMessageList {
-    details: {[key: string]: any};
+    details: {[key: string]: string};
     message: string;
     reason: string;
 }

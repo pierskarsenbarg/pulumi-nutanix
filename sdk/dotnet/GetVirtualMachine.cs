@@ -171,7 +171,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - Generic key value pair used for custom attributes in cloud init.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> GuestCustomizationCloudInitCustomKeyValues;
+        public readonly ImmutableDictionary<string, string> GuestCustomizationCloudInitCustomKeyValues;
         /// <summary>
         /// The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
         /// </summary>
@@ -191,7 +191,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - Generic key value pair used for custom attributes in sysprep.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> GuestCustomizationSysprepCustomKeyValues;
+        public readonly ImmutableDictionary<string, string> GuestCustomizationSysprepCustomKeyValues;
         /// <summary>
         /// - Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
         /// </summary>
@@ -233,7 +233,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// - Credentials to login server.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> NgtCredentials;
+        public readonly ImmutableDictionary<string, string> NgtCredentials;
         /// <summary>
         /// Application names that are enabled.
         /// </summary>
@@ -323,7 +323,7 @@ namespace PiersKarsenbarg.Nutanix
 
             ImmutableArray<Outputs.GetVirtualMachineGpuListResult> gpuLists,
 
-            ImmutableDictionary<string, object> guestCustomizationCloudInitCustomKeyValues,
+            ImmutableDictionary<string, string> guestCustomizationCloudInitCustomKeyValues,
 
             string guestCustomizationCloudInitMetaData,
 
@@ -333,7 +333,7 @@ namespace PiersKarsenbarg.Nutanix
 
             ImmutableDictionary<string, string> guestCustomizationSysprep,
 
-            ImmutableDictionary<string, object> guestCustomizationSysprepCustomKeyValues,
+            ImmutableDictionary<string, string> guestCustomizationSysprepCustomKeyValues,
 
             string guestOsId,
 
@@ -357,7 +357,7 @@ namespace PiersKarsenbarg.Nutanix
 
             string name,
 
-            ImmutableDictionary<string, object> ngtCredentials,
+            ImmutableDictionary<string, string> ngtCredentials,
 
             ImmutableArray<string> ngtEnabledCapabilityLists,
 

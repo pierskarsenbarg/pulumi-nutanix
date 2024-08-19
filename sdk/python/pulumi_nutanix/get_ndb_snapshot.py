@@ -505,9 +505,9 @@ class AwaitableGetNdbSnapshotResult(GetNdbSnapshotResult):
             type=self.type)
 
 
-def get_ndb_snapshot(filters: Optional[Sequence[pulumi.InputType['GetNdbSnapshotFilterArgs']]] = None,
+def get_ndb_snapshot(filters: Optional[Sequence[Union['GetNdbSnapshotFilterArgs', 'GetNdbSnapshotFilterArgsDict']]] = None,
                      snapshot_id: Optional[str] = None,
-                     tags: Optional[Sequence[pulumi.InputType['GetNdbSnapshotTagArgs']]] = None,
+                     tags: Optional[Sequence[Union['GetNdbSnapshotTagArgs', 'GetNdbSnapshotTagArgsDict']]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNdbSnapshotResult:
     """
     Describes the snapshot present in Nutanix Database Service
@@ -518,16 +518,16 @@ def get_ndb_snapshot(filters: Optional[Sequence[pulumi.InputType['GetNdbSnapshot
     import pulumi
     import pulumi_nutanix as nutanix
 
-    snaps = nutanix.get_ndb_snapshot(filters=[nutanix.GetNdbSnapshotFilterArgs(
-            load_replicated_child_snapshots="true",
-        )],
+    snaps = nutanix.get_ndb_snapshot(filters=[{
+            "load_replicated_child_snapshots": "true",
+        }],
         snapshot_id="{{ snapshot_id }}")
     ```
 
 
-    :param Sequence[pulumi.InputType['GetNdbSnapshotFilterArgs']] filters: Filters will fetch the snapshot details as per input
+    :param Sequence[Union['GetNdbSnapshotFilterArgs', 'GetNdbSnapshotFilterArgsDict']] filters: Filters will fetch the snapshot details as per input
     :param str snapshot_id: Snapshot ID to be given
-    :param Sequence[pulumi.InputType['GetNdbSnapshotTagArgs']] tags: tags
+    :param Sequence[Union['GetNdbSnapshotTagArgs', 'GetNdbSnapshotTagArgsDict']] tags: tags
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -581,9 +581,9 @@ def get_ndb_snapshot(filters: Optional[Sequence[pulumi.InputType['GetNdbSnapshot
 
 
 @_utilities.lift_output_func(get_ndb_snapshot)
-def get_ndb_snapshot_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNdbSnapshotFilterArgs']]]]] = None,
+def get_ndb_snapshot_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbSnapshotFilterArgs', 'GetNdbSnapshotFilterArgsDict']]]]] = None,
                             snapshot_id: Optional[pulumi.Input[str]] = None,
-                            tags: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNdbSnapshotTagArgs']]]]] = None,
+                            tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbSnapshotTagArgs', 'GetNdbSnapshotTagArgsDict']]]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbSnapshotResult]:
     """
     Describes the snapshot present in Nutanix Database Service
@@ -594,15 +594,15 @@ def get_ndb_snapshot_output(filters: Optional[pulumi.Input[Optional[Sequence[pul
     import pulumi
     import pulumi_nutanix as nutanix
 
-    snaps = nutanix.get_ndb_snapshot(filters=[nutanix.GetNdbSnapshotFilterArgs(
-            load_replicated_child_snapshots="true",
-        )],
+    snaps = nutanix.get_ndb_snapshot(filters=[{
+            "load_replicated_child_snapshots": "true",
+        }],
         snapshot_id="{{ snapshot_id }}")
     ```
 
 
-    :param Sequence[pulumi.InputType['GetNdbSnapshotFilterArgs']] filters: Filters will fetch the snapshot details as per input
+    :param Sequence[Union['GetNdbSnapshotFilterArgs', 'GetNdbSnapshotFilterArgsDict']] filters: Filters will fetch the snapshot details as per input
     :param str snapshot_id: Snapshot ID to be given
-    :param Sequence[pulumi.InputType['GetNdbSnapshotTagArgs']] tags: tags
+    :param Sequence[Union['GetNdbSnapshotTagArgs', 'GetNdbSnapshotTagArgsDict']] tags: tags
     """
     ...

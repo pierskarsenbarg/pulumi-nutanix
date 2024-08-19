@@ -1011,31 +1011,31 @@ class NetworkSecurityRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  ad_rule_action: Optional[pulumi.Input[str]] = None,
-                 ad_rule_inbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAdRuleInboundAllowListArgs']]]]] = None,
-                 ad_rule_outbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAdRuleOutboundAllowListArgs']]]]] = None,
+                 ad_rule_inbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAdRuleInboundAllowListArgs', 'NetworkSecurityRuleAdRuleInboundAllowListArgsDict']]]]] = None,
+                 ad_rule_outbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAdRuleOutboundAllowListArgs', 'NetworkSecurityRuleAdRuleOutboundAllowListArgsDict']]]]] = None,
                  ad_rule_target_group_default_internal_policy: Optional[pulumi.Input[str]] = None,
                  ad_rule_target_group_filter_kind_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 ad_rule_target_group_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs']]]]] = None,
+                 ad_rule_target_group_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs', 'NetworkSecurityRuleAdRuleTargetGroupFilterParamArgsDict']]]]] = None,
                  ad_rule_target_group_filter_type: Optional[pulumi.Input[str]] = None,
                  ad_rule_target_group_peer_specification_type: Optional[pulumi.Input[str]] = None,
                  allow_ipv6_traffic: Optional[pulumi.Input[bool]] = None,
                  app_rule_action: Optional[pulumi.Input[str]] = None,
-                 app_rule_inbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAppRuleInboundAllowListArgs']]]]] = None,
-                 app_rule_outbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAppRuleOutboundAllowListArgs']]]]] = None,
+                 app_rule_inbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAppRuleInboundAllowListArgs', 'NetworkSecurityRuleAppRuleInboundAllowListArgsDict']]]]] = None,
+                 app_rule_outbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAppRuleOutboundAllowListArgs', 'NetworkSecurityRuleAppRuleOutboundAllowListArgsDict']]]]] = None,
                  app_rule_target_group_default_internal_policy: Optional[pulumi.Input[str]] = None,
                  app_rule_target_group_filter_kind_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 app_rule_target_group_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs']]]]] = None,
+                 app_rule_target_group_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs', 'NetworkSecurityRuleAppRuleTargetGroupFilterParamArgsDict']]]]] = None,
                  app_rule_target_group_filter_type: Optional[pulumi.Input[str]] = None,
                  app_rule_target_group_peer_specification_type: Optional[pulumi.Input[str]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleCategoryArgs']]]]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleCategoryArgs', 'NetworkSecurityRuleCategoryArgsDict']]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  is_policy_hitlog_enabled: Optional[pulumi.Input[bool]] = None,
                  isolation_rule_action: Optional[pulumi.Input[str]] = None,
                  isolation_rule_first_entity_filter_kind_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 isolation_rule_first_entity_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs']]]]] = None,
+                 isolation_rule_first_entity_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs', 'NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgsDict']]]]] = None,
                  isolation_rule_first_entity_filter_type: Optional[pulumi.Input[str]] = None,
                  isolation_rule_second_entity_filter_kind_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 isolation_rule_second_entity_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs']]]]] = None,
+                 isolation_rule_second_entity_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs', 'NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgsDict']]]]] = None,
                  isolation_rule_second_entity_filter_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -1058,16 +1058,16 @@ class NetworkSecurityRule(pulumi.CustomResource):
             description="Isolation Rule Example",
             isolation_rule_action="APPLY",
             isolation_rule_first_entity_filter_kind_lists=["vm"],
-            isolation_rule_first_entity_filter_params=[nutanix.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs(
-                name="Environment",
-                values=["Dev"],
-            )],
+            isolation_rule_first_entity_filter_params=[{
+                "name": "Environment",
+                "values": ["Dev"],
+            }],
             isolation_rule_first_entity_filter_type="CATEGORIES_MATCH_ALL",
             isolation_rule_second_entity_filter_kind_lists=["vm"],
-            isolation_rule_second_entity_filter_params=[nutanix.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs(
-                name="Environment",
-                values=["Production"],
-            )],
+            isolation_rule_second_entity_filter_params=[{
+                "name": "Environment",
+                "values": ["Production"],
+            }],
             isolation_rule_second_entity_filter_type="CATEGORIES_MATCH_ALL")
         ```
 
@@ -1078,85 +1078,85 @@ class NetworkSecurityRule(pulumi.CustomResource):
 
         service1 = nutanix.ServiceGroup("service1",
             description="test",
-            service_lists=[nutanix.ServiceGroupServiceListArgs(
-                protocol="TCP",
-                tcp_port_range_lists=[
-                    nutanix.ServiceGroupServiceListTcpPortRangeListArgs(
-                        start_port=22,
-                        end_port=22,
-                    ),
-                    nutanix.ServiceGroupServiceListTcpPortRangeListArgs(
-                        start_port=2222,
-                        end_port=2222,
-                    ),
+            service_lists=[{
+                "protocol": "TCP",
+                "tcp_port_range_lists": [
+                    {
+                        "start_port": 22,
+                        "end_port": 22,
+                    },
+                    {
+                        "start_port": 2222,
+                        "end_port": 2222,
+                    },
                 ],
-            )])
+            }])
         address1 = nutanix.AddressGroup("address1",
             description="test",
-            ip_address_block_lists=[nutanix.AddressGroupIpAddressBlockListArgs(
-                ip="10.0.0.0",
-                prefix_length=24,
-            )])
+            ip_address_block_lists=[{
+                "ip": "10.0.0.0",
+                "prefix_length": 24,
+            }])
         ad_group_user_1 = nutanix.CategoryValue("ad-group-user-1",
             description="group user category value",
             value="AD")
         v_di = nutanix.NetworkSecurityRule("vDI",
             ad_rule_action="APPLY",
             description="test",
-            ad_rule_inbound_allow_lists=[nutanix.NetworkSecurityRuleAdRuleInboundAllowListArgs(
-                ip_subnet="10.0.0.0",
-                ip_subnet_prefix_length="8",
-                peer_specification_type="IP_SUBNET",
-                protocol="ALL",
-            )],
+            ad_rule_inbound_allow_lists=[{
+                "ip_subnet": "10.0.0.0",
+                "ip_subnet_prefix_length": "8",
+                "peer_specification_type": "IP_SUBNET",
+                "protocol": "ALL",
+            }],
             ad_rule_target_group_default_internal_policy="DENY_ALL",
             ad_rule_target_group_filter_kind_lists=["vm"],
-            ad_rule_target_group_filter_params=[nutanix.NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs(
-                name="AD",
-                values=["AD"],
-            )],
+            ad_rule_target_group_filter_params=[{
+                "name": "AD",
+                "values": ["AD"],
+            }],
             ad_rule_target_group_filter_type="CATEGORIES_MATCH_ALL",
             ad_rule_target_group_peer_specification_type="FILTER",
-            ad_rule_outbound_allow_lists=[nutanix.NetworkSecurityRuleAdRuleOutboundAllowListArgs(
-                peer_specification_type="ALL",
-                service_group_lists=[nutanix.NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupListArgs(
-                    kind="service_group",
-                    uuid=service1.id,
-                )],
-                address_group_inclusion_lists=[nutanix.NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionListArgs(
-                    kind="address_group",
-                    uuid=address1.id,
-                )],
-            )],
+            ad_rule_outbound_allow_lists=[{
+                "peer_specification_type": "ALL",
+                "service_group_lists": [{
+                    "kind": "service_group",
+                    "uuid": service1.id,
+                }],
+                "address_group_inclusion_lists": [{
+                    "kind": "address_group",
+                    "uuid": address1.id,
+                }],
+            }],
             opts = pulumi.ResourceOptions(depends_on=[ad_group_user_1]))
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] ad_rule_action: - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAdRuleInboundAllowListArgs']]]] ad_rule_inbound_allow_lists: - (Optional) The set of categories that matching VMs need to have.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAdRuleOutboundAllowListArgs']]]] ad_rule_outbound_allow_lists: - (Optional)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAdRuleInboundAllowListArgs', 'NetworkSecurityRuleAdRuleInboundAllowListArgsDict']]]] ad_rule_inbound_allow_lists: - (Optional) The set of categories that matching VMs need to have.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAdRuleOutboundAllowListArgs', 'NetworkSecurityRuleAdRuleOutboundAllowListArgsDict']]]] ad_rule_outbound_allow_lists: - (Optional)
         :param pulumi.Input[str] ad_rule_target_group_default_internal_policy: - (Optional) - Default policy for communication within target group.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ad_rule_target_group_filter_kind_lists: - (Optional) - List of kinds associated with this filter.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs']]]] ad_rule_target_group_filter_params: - (Optional) - A list of category key and list of values.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs', 'NetworkSecurityRuleAdRuleTargetGroupFilterParamArgsDict']]]] ad_rule_target_group_filter_params: - (Optional) - A list of category key and list of values.
         :param pulumi.Input[str] ad_rule_target_group_filter_type: - (Optional) - The type of the filter being used.
         :param pulumi.Input[str] ad_rule_target_group_peer_specification_type: - (Optional) - Way to identify the object for which rule is applied.
         :param pulumi.Input[str] app_rule_action: - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAppRuleInboundAllowListArgs']]]] app_rule_inbound_allow_lists: - (Optional) The set of categories that matching VMs need to have.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAppRuleOutboundAllowListArgs']]]] app_rule_outbound_allow_lists: - (Optional)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAppRuleInboundAllowListArgs', 'NetworkSecurityRuleAppRuleInboundAllowListArgsDict']]]] app_rule_inbound_allow_lists: - (Optional) The set of categories that matching VMs need to have.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAppRuleOutboundAllowListArgs', 'NetworkSecurityRuleAppRuleOutboundAllowListArgsDict']]]] app_rule_outbound_allow_lists: - (Optional)
         :param pulumi.Input[str] app_rule_target_group_default_internal_policy: - (Optional) - Default policy for communication within target group.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] app_rule_target_group_filter_kind_lists: - (Optional) - List of kinds associated with this filter.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs']]]] app_rule_target_group_filter_params: - (Optional) - A list of category key and list of values.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs', 'NetworkSecurityRuleAppRuleTargetGroupFilterParamArgsDict']]]] app_rule_target_group_filter_params: - (Optional) - A list of category key and list of values.
         :param pulumi.Input[str] app_rule_target_group_filter_type: - (Optional) - The type of the filter being used.
         :param pulumi.Input[str] app_rule_target_group_peer_specification_type: - (Optional) - Way to identify the object for which rule is applied.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleCategoryArgs']]]] categories: - (Optional) Categories for the network_security_rule.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleCategoryArgs', 'NetworkSecurityRuleCategoryArgsDict']]]] categories: - (Optional) Categories for the network_security_rule.
         :param pulumi.Input[str] description: - (Optional) A description for network_security_rule.
         :param pulumi.Input[str] isolation_rule_action: - (Optional) - These rules are used for environmental isolation.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] isolation_rule_first_entity_filter_kind_lists: - (Optional) - List of kinds associated with this filter.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs']]]] isolation_rule_first_entity_filter_params: - (Optional) - A list of category key and list of values.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs', 'NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgsDict']]]] isolation_rule_first_entity_filter_params: - (Optional) - A list of category key and list of values.
         :param pulumi.Input[str] isolation_rule_first_entity_filter_type: - (Optional) - The type of the filter being used.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] isolation_rule_second_entity_filter_kind_lists: - (Optional) - List of kinds associated with this filter.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs']]]] isolation_rule_second_entity_filter_params: - (Optional) - A list of category key and list of values.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs', 'NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgsDict']]]] isolation_rule_second_entity_filter_params: - (Optional) - A list of category key and list of values.
         :param pulumi.Input[str] isolation_rule_second_entity_filter_type: - (Optional) - The type of the filter being used.
         :param pulumi.Input[str] name: - (Required) The name for the network_security_rule.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] owner_reference: - (Optional) The reference to a user.
@@ -1185,16 +1185,16 @@ class NetworkSecurityRule(pulumi.CustomResource):
             description="Isolation Rule Example",
             isolation_rule_action="APPLY",
             isolation_rule_first_entity_filter_kind_lists=["vm"],
-            isolation_rule_first_entity_filter_params=[nutanix.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs(
-                name="Environment",
-                values=["Dev"],
-            )],
+            isolation_rule_first_entity_filter_params=[{
+                "name": "Environment",
+                "values": ["Dev"],
+            }],
             isolation_rule_first_entity_filter_type="CATEGORIES_MATCH_ALL",
             isolation_rule_second_entity_filter_kind_lists=["vm"],
-            isolation_rule_second_entity_filter_params=[nutanix.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs(
-                name="Environment",
-                values=["Production"],
-            )],
+            isolation_rule_second_entity_filter_params=[{
+                "name": "Environment",
+                "values": ["Production"],
+            }],
             isolation_rule_second_entity_filter_type="CATEGORIES_MATCH_ALL")
         ```
 
@@ -1205,56 +1205,56 @@ class NetworkSecurityRule(pulumi.CustomResource):
 
         service1 = nutanix.ServiceGroup("service1",
             description="test",
-            service_lists=[nutanix.ServiceGroupServiceListArgs(
-                protocol="TCP",
-                tcp_port_range_lists=[
-                    nutanix.ServiceGroupServiceListTcpPortRangeListArgs(
-                        start_port=22,
-                        end_port=22,
-                    ),
-                    nutanix.ServiceGroupServiceListTcpPortRangeListArgs(
-                        start_port=2222,
-                        end_port=2222,
-                    ),
+            service_lists=[{
+                "protocol": "TCP",
+                "tcp_port_range_lists": [
+                    {
+                        "start_port": 22,
+                        "end_port": 22,
+                    },
+                    {
+                        "start_port": 2222,
+                        "end_port": 2222,
+                    },
                 ],
-            )])
+            }])
         address1 = nutanix.AddressGroup("address1",
             description="test",
-            ip_address_block_lists=[nutanix.AddressGroupIpAddressBlockListArgs(
-                ip="10.0.0.0",
-                prefix_length=24,
-            )])
+            ip_address_block_lists=[{
+                "ip": "10.0.0.0",
+                "prefix_length": 24,
+            }])
         ad_group_user_1 = nutanix.CategoryValue("ad-group-user-1",
             description="group user category value",
             value="AD")
         v_di = nutanix.NetworkSecurityRule("vDI",
             ad_rule_action="APPLY",
             description="test",
-            ad_rule_inbound_allow_lists=[nutanix.NetworkSecurityRuleAdRuleInboundAllowListArgs(
-                ip_subnet="10.0.0.0",
-                ip_subnet_prefix_length="8",
-                peer_specification_type="IP_SUBNET",
-                protocol="ALL",
-            )],
+            ad_rule_inbound_allow_lists=[{
+                "ip_subnet": "10.0.0.0",
+                "ip_subnet_prefix_length": "8",
+                "peer_specification_type": "IP_SUBNET",
+                "protocol": "ALL",
+            }],
             ad_rule_target_group_default_internal_policy="DENY_ALL",
             ad_rule_target_group_filter_kind_lists=["vm"],
-            ad_rule_target_group_filter_params=[nutanix.NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs(
-                name="AD",
-                values=["AD"],
-            )],
+            ad_rule_target_group_filter_params=[{
+                "name": "AD",
+                "values": ["AD"],
+            }],
             ad_rule_target_group_filter_type="CATEGORIES_MATCH_ALL",
             ad_rule_target_group_peer_specification_type="FILTER",
-            ad_rule_outbound_allow_lists=[nutanix.NetworkSecurityRuleAdRuleOutboundAllowListArgs(
-                peer_specification_type="ALL",
-                service_group_lists=[nutanix.NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupListArgs(
-                    kind="service_group",
-                    uuid=service1.id,
-                )],
-                address_group_inclusion_lists=[nutanix.NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionListArgs(
-                    kind="address_group",
-                    uuid=address1.id,
-                )],
-            )],
+            ad_rule_outbound_allow_lists=[{
+                "peer_specification_type": "ALL",
+                "service_group_lists": [{
+                    "kind": "service_group",
+                    "uuid": service1.id,
+                }],
+                "address_group_inclusion_lists": [{
+                    "kind": "address_group",
+                    "uuid": address1.id,
+                }],
+            }],
             opts = pulumi.ResourceOptions(depends_on=[ad_group_user_1]))
         ```
 
@@ -1274,31 +1274,31 @@ class NetworkSecurityRule(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  ad_rule_action: Optional[pulumi.Input[str]] = None,
-                 ad_rule_inbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAdRuleInboundAllowListArgs']]]]] = None,
-                 ad_rule_outbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAdRuleOutboundAllowListArgs']]]]] = None,
+                 ad_rule_inbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAdRuleInboundAllowListArgs', 'NetworkSecurityRuleAdRuleInboundAllowListArgsDict']]]]] = None,
+                 ad_rule_outbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAdRuleOutboundAllowListArgs', 'NetworkSecurityRuleAdRuleOutboundAllowListArgsDict']]]]] = None,
                  ad_rule_target_group_default_internal_policy: Optional[pulumi.Input[str]] = None,
                  ad_rule_target_group_filter_kind_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 ad_rule_target_group_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs']]]]] = None,
+                 ad_rule_target_group_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs', 'NetworkSecurityRuleAdRuleTargetGroupFilterParamArgsDict']]]]] = None,
                  ad_rule_target_group_filter_type: Optional[pulumi.Input[str]] = None,
                  ad_rule_target_group_peer_specification_type: Optional[pulumi.Input[str]] = None,
                  allow_ipv6_traffic: Optional[pulumi.Input[bool]] = None,
                  app_rule_action: Optional[pulumi.Input[str]] = None,
-                 app_rule_inbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAppRuleInboundAllowListArgs']]]]] = None,
-                 app_rule_outbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAppRuleOutboundAllowListArgs']]]]] = None,
+                 app_rule_inbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAppRuleInboundAllowListArgs', 'NetworkSecurityRuleAppRuleInboundAllowListArgsDict']]]]] = None,
+                 app_rule_outbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAppRuleOutboundAllowListArgs', 'NetworkSecurityRuleAppRuleOutboundAllowListArgsDict']]]]] = None,
                  app_rule_target_group_default_internal_policy: Optional[pulumi.Input[str]] = None,
                  app_rule_target_group_filter_kind_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 app_rule_target_group_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs']]]]] = None,
+                 app_rule_target_group_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs', 'NetworkSecurityRuleAppRuleTargetGroupFilterParamArgsDict']]]]] = None,
                  app_rule_target_group_filter_type: Optional[pulumi.Input[str]] = None,
                  app_rule_target_group_peer_specification_type: Optional[pulumi.Input[str]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleCategoryArgs']]]]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleCategoryArgs', 'NetworkSecurityRuleCategoryArgsDict']]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  is_policy_hitlog_enabled: Optional[pulumi.Input[bool]] = None,
                  isolation_rule_action: Optional[pulumi.Input[str]] = None,
                  isolation_rule_first_entity_filter_kind_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 isolation_rule_first_entity_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs']]]]] = None,
+                 isolation_rule_first_entity_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs', 'NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgsDict']]]]] = None,
                  isolation_rule_first_entity_filter_type: Optional[pulumi.Input[str]] = None,
                  isolation_rule_second_entity_filter_kind_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 isolation_rule_second_entity_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs']]]]] = None,
+                 isolation_rule_second_entity_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs', 'NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgsDict']]]]] = None,
                  isolation_rule_second_entity_filter_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
@@ -1355,32 +1355,32 @@ class NetworkSecurityRule(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             ad_rule_action: Optional[pulumi.Input[str]] = None,
-            ad_rule_inbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAdRuleInboundAllowListArgs']]]]] = None,
-            ad_rule_outbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAdRuleOutboundAllowListArgs']]]]] = None,
+            ad_rule_inbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAdRuleInboundAllowListArgs', 'NetworkSecurityRuleAdRuleInboundAllowListArgsDict']]]]] = None,
+            ad_rule_outbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAdRuleOutboundAllowListArgs', 'NetworkSecurityRuleAdRuleOutboundAllowListArgsDict']]]]] = None,
             ad_rule_target_group_default_internal_policy: Optional[pulumi.Input[str]] = None,
             ad_rule_target_group_filter_kind_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            ad_rule_target_group_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs']]]]] = None,
+            ad_rule_target_group_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs', 'NetworkSecurityRuleAdRuleTargetGroupFilterParamArgsDict']]]]] = None,
             ad_rule_target_group_filter_type: Optional[pulumi.Input[str]] = None,
             ad_rule_target_group_peer_specification_type: Optional[pulumi.Input[str]] = None,
             allow_ipv6_traffic: Optional[pulumi.Input[bool]] = None,
             api_version: Optional[pulumi.Input[str]] = None,
             app_rule_action: Optional[pulumi.Input[str]] = None,
-            app_rule_inbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAppRuleInboundAllowListArgs']]]]] = None,
-            app_rule_outbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAppRuleOutboundAllowListArgs']]]]] = None,
+            app_rule_inbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAppRuleInboundAllowListArgs', 'NetworkSecurityRuleAppRuleInboundAllowListArgsDict']]]]] = None,
+            app_rule_outbound_allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAppRuleOutboundAllowListArgs', 'NetworkSecurityRuleAppRuleOutboundAllowListArgsDict']]]]] = None,
             app_rule_target_group_default_internal_policy: Optional[pulumi.Input[str]] = None,
             app_rule_target_group_filter_kind_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            app_rule_target_group_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs']]]]] = None,
+            app_rule_target_group_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs', 'NetworkSecurityRuleAppRuleTargetGroupFilterParamArgsDict']]]]] = None,
             app_rule_target_group_filter_type: Optional[pulumi.Input[str]] = None,
             app_rule_target_group_peer_specification_type: Optional[pulumi.Input[str]] = None,
-            categories: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleCategoryArgs']]]]] = None,
+            categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleCategoryArgs', 'NetworkSecurityRuleCategoryArgsDict']]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             is_policy_hitlog_enabled: Optional[pulumi.Input[bool]] = None,
             isolation_rule_action: Optional[pulumi.Input[str]] = None,
             isolation_rule_first_entity_filter_kind_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            isolation_rule_first_entity_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs']]]]] = None,
+            isolation_rule_first_entity_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs', 'NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgsDict']]]]] = None,
             isolation_rule_first_entity_filter_type: Optional[pulumi.Input[str]] = None,
             isolation_rule_second_entity_filter_kind_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            isolation_rule_second_entity_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs']]]]] = None,
+            isolation_rule_second_entity_filter_params: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs', 'NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgsDict']]]]] = None,
             isolation_rule_second_entity_filter_type: Optional[pulumi.Input[str]] = None,
             metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
@@ -1394,30 +1394,30 @@ class NetworkSecurityRule(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] ad_rule_action: - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAdRuleInboundAllowListArgs']]]] ad_rule_inbound_allow_lists: - (Optional) The set of categories that matching VMs need to have.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAdRuleOutboundAllowListArgs']]]] ad_rule_outbound_allow_lists: - (Optional)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAdRuleInboundAllowListArgs', 'NetworkSecurityRuleAdRuleInboundAllowListArgsDict']]]] ad_rule_inbound_allow_lists: - (Optional) The set of categories that matching VMs need to have.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAdRuleOutboundAllowListArgs', 'NetworkSecurityRuleAdRuleOutboundAllowListArgsDict']]]] ad_rule_outbound_allow_lists: - (Optional)
         :param pulumi.Input[str] ad_rule_target_group_default_internal_policy: - (Optional) - Default policy for communication within target group.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ad_rule_target_group_filter_kind_lists: - (Optional) - List of kinds associated with this filter.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs']]]] ad_rule_target_group_filter_params: - (Optional) - A list of category key and list of values.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs', 'NetworkSecurityRuleAdRuleTargetGroupFilterParamArgsDict']]]] ad_rule_target_group_filter_params: - (Optional) - A list of category key and list of values.
         :param pulumi.Input[str] ad_rule_target_group_filter_type: - (Optional) - The type of the filter being used.
         :param pulumi.Input[str] ad_rule_target_group_peer_specification_type: - (Optional) - Way to identify the object for which rule is applied.
         :param pulumi.Input[str] api_version: The version of the API.
         :param pulumi.Input[str] app_rule_action: - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inbound_allow_list will not anything into target group. Empty outbound_allow_list will allow everything from target group.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAppRuleInboundAllowListArgs']]]] app_rule_inbound_allow_lists: - (Optional) The set of categories that matching VMs need to have.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAppRuleOutboundAllowListArgs']]]] app_rule_outbound_allow_lists: - (Optional)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAppRuleInboundAllowListArgs', 'NetworkSecurityRuleAppRuleInboundAllowListArgsDict']]]] app_rule_inbound_allow_lists: - (Optional) The set of categories that matching VMs need to have.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAppRuleOutboundAllowListArgs', 'NetworkSecurityRuleAppRuleOutboundAllowListArgsDict']]]] app_rule_outbound_allow_lists: - (Optional)
         :param pulumi.Input[str] app_rule_target_group_default_internal_policy: - (Optional) - Default policy for communication within target group.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] app_rule_target_group_filter_kind_lists: - (Optional) - List of kinds associated with this filter.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs']]]] app_rule_target_group_filter_params: - (Optional) - A list of category key and list of values.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs', 'NetworkSecurityRuleAppRuleTargetGroupFilterParamArgsDict']]]] app_rule_target_group_filter_params: - (Optional) - A list of category key and list of values.
         :param pulumi.Input[str] app_rule_target_group_filter_type: - (Optional) - The type of the filter being used.
         :param pulumi.Input[str] app_rule_target_group_peer_specification_type: - (Optional) - Way to identify the object for which rule is applied.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleCategoryArgs']]]] categories: - (Optional) Categories for the network_security_rule.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleCategoryArgs', 'NetworkSecurityRuleCategoryArgsDict']]]] categories: - (Optional) Categories for the network_security_rule.
         :param pulumi.Input[str] description: - (Optional) A description for network_security_rule.
         :param pulumi.Input[str] isolation_rule_action: - (Optional) - These rules are used for environmental isolation.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] isolation_rule_first_entity_filter_kind_lists: - (Optional) - List of kinds associated with this filter.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs']]]] isolation_rule_first_entity_filter_params: - (Optional) - A list of category key and list of values.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs', 'NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgsDict']]]] isolation_rule_first_entity_filter_params: - (Optional) - A list of category key and list of values.
         :param pulumi.Input[str] isolation_rule_first_entity_filter_type: - (Optional) - The type of the filter being used.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] isolation_rule_second_entity_filter_kind_lists: - (Optional) - List of kinds associated with this filter.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs']]]] isolation_rule_second_entity_filter_params: - (Optional) - A list of category key and list of values.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs', 'NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgsDict']]]] isolation_rule_second_entity_filter_params: - (Optional) - A list of category key and list of values.
         :param pulumi.Input[str] isolation_rule_second_entity_filter_type: - (Optional) - The type of the filter being used.
         :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: - The network_security_rule kind metadata.
         :param pulumi.Input[str] name: - (Required) The name for the network_security_rule.

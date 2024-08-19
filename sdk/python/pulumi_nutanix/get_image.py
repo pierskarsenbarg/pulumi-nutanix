@@ -289,7 +289,7 @@ class AwaitableGetImageResult(GetImageResult):
             version=self.version)
 
 
-def get_image(categories: Optional[Sequence[pulumi.InputType['GetImageCategoryArgs']]] = None,
+def get_image(categories: Optional[Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict']]] = None,
               image_id: Optional[str] = None,
               image_name: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetImageResult:
@@ -297,7 +297,7 @@ def get_image(categories: Optional[Sequence[pulumi.InputType['GetImageCategoryAr
     Describes a Image
 
 
-    :param Sequence[pulumi.InputType['GetImageCategoryArgs']] categories: - Categories for the image.
+    :param Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict']] categories: - Categories for the image.
     :param str image_id: Represents image UUID
     :param str image_name: Represents image name
     """
@@ -335,7 +335,7 @@ def get_image(categories: Optional[Sequence[pulumi.InputType['GetImageCategoryAr
 
 
 @_utilities.lift_output_func(get_image)
-def get_image_output(categories: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetImageCategoryArgs']]]]] = None,
+def get_image_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict']]]]] = None,
                      image_id: Optional[pulumi.Input[Optional[str]]] = None,
                      image_name: Optional[pulumi.Input[Optional[str]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetImageResult]:
@@ -343,7 +343,7 @@ def get_image_output(categories: Optional[pulumi.Input[Optional[Sequence[pulumi.
     Describes a Image
 
 
-    :param Sequence[pulumi.InputType['GetImageCategoryArgs']] categories: - Categories for the image.
+    :param Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict']] categories: - Categories for the image.
     :param str image_id: Represents image UUID
     :param str image_name: Represents image name
     """

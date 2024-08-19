@@ -347,7 +347,7 @@ class AwaitableGetNdbDatabaseResult(GetNdbDatabaseResult):
 
 
 def get_ndb_database(database_id: Optional[str] = None,
-                     tags: Optional[Sequence[pulumi.InputType['GetNdbDatabaseTagArgs']]] = None,
+                     tags: Optional[Sequence[Union['GetNdbDatabaseTagArgs', 'GetNdbDatabaseTagArgsDict']]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNdbDatabaseResult:
     """
     Describes a database instance in Nutanix Database Service
@@ -364,7 +364,7 @@ def get_ndb_database(database_id: Optional[str] = None,
 
 
     :param str database_id: ID of database instance
-    :param Sequence[pulumi.InputType['GetNdbDatabaseTagArgs']] tags: - tags attached
+    :param Sequence[Union['GetNdbDatabaseTagArgs', 'GetNdbDatabaseTagArgsDict']] tags: - tags attached
     """
     __args__ = dict()
     __args__['databaseId'] = database_id
@@ -404,7 +404,7 @@ def get_ndb_database(database_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_ndb_database)
 def get_ndb_database_output(database_id: Optional[pulumi.Input[str]] = None,
-                            tags: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNdbDatabaseTagArgs']]]]] = None,
+                            tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbDatabaseTagArgs', 'GetNdbDatabaseTagArgsDict']]]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbDatabaseResult]:
     """
     Describes a database instance in Nutanix Database Service
@@ -421,6 +421,6 @@ def get_ndb_database_output(database_id: Optional[pulumi.Input[str]] = None,
 
 
     :param str database_id: ID of database instance
-    :param Sequence[pulumi.InputType['GetNdbDatabaseTagArgs']] tags: - tags attached
+    :param Sequence[Union['GetNdbDatabaseTagArgs', 'GetNdbDatabaseTagArgsDict']] tags: - tags attached
     """
     ...

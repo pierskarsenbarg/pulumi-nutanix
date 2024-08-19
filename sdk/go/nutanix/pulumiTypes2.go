@@ -32766,9 +32766,9 @@ func (o GetSubnetCategoryArrayOutput) Index(i pulumi.IntInput) GetSubnetCategory
 }
 
 type GetSubnetMessageList struct {
-	Details map[string]interface{} `pulumi:"details"`
-	Message string                 `pulumi:"message"`
-	Reason  string                 `pulumi:"reason"`
+	Details map[string]string `pulumi:"details"`
+	Message string            `pulumi:"message"`
+	Reason  string            `pulumi:"reason"`
 }
 
 // GetSubnetMessageListInput is an input type that accepts GetSubnetMessageListArgs and GetSubnetMessageListOutput values.
@@ -32783,9 +32783,9 @@ type GetSubnetMessageListInput interface {
 }
 
 type GetSubnetMessageListArgs struct {
-	Details pulumi.MapInput    `pulumi:"details"`
-	Message pulumi.StringInput `pulumi:"message"`
-	Reason  pulumi.StringInput `pulumi:"reason"`
+	Details pulumi.StringMapInput `pulumi:"details"`
+	Message pulumi.StringInput    `pulumi:"message"`
+	Reason  pulumi.StringInput    `pulumi:"reason"`
 }
 
 func (GetSubnetMessageListArgs) ElementType() reflect.Type {
@@ -32839,8 +32839,8 @@ func (o GetSubnetMessageListOutput) ToGetSubnetMessageListOutputWithContext(ctx 
 	return o
 }
 
-func (o GetSubnetMessageListOutput) Details() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSubnetMessageList) map[string]interface{} { return v.Details }).(pulumi.MapOutput)
+func (o GetSubnetMessageListOutput) Details() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSubnetMessageList) map[string]string { return v.Details }).(pulumi.StringMapOutput)
 }
 
 func (o GetSubnetMessageListOutput) Message() pulumi.StringOutput {
@@ -33318,9 +33318,9 @@ func (o GetSubnetsEntityCategoryArrayOutput) Index(i pulumi.IntInput) GetSubnets
 }
 
 type GetSubnetsEntityMessageList struct {
-	Details map[string]interface{} `pulumi:"details"`
-	Message string                 `pulumi:"message"`
-	Reason  string                 `pulumi:"reason"`
+	Details map[string]string `pulumi:"details"`
+	Message string            `pulumi:"message"`
+	Reason  string            `pulumi:"reason"`
 }
 
 // GetSubnetsEntityMessageListInput is an input type that accepts GetSubnetsEntityMessageListArgs and GetSubnetsEntityMessageListOutput values.
@@ -33335,9 +33335,9 @@ type GetSubnetsEntityMessageListInput interface {
 }
 
 type GetSubnetsEntityMessageListArgs struct {
-	Details pulumi.MapInput    `pulumi:"details"`
-	Message pulumi.StringInput `pulumi:"message"`
-	Reason  pulumi.StringInput `pulumi:"reason"`
+	Details pulumi.StringMapInput `pulumi:"details"`
+	Message pulumi.StringInput    `pulumi:"message"`
+	Reason  pulumi.StringInput    `pulumi:"reason"`
 }
 
 func (GetSubnetsEntityMessageListArgs) ElementType() reflect.Type {
@@ -33391,8 +33391,8 @@ func (o GetSubnetsEntityMessageListOutput) ToGetSubnetsEntityMessageListOutputWi
 	return o
 }
 
-func (o GetSubnetsEntityMessageListOutput) Details() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSubnetsEntityMessageList) map[string]interface{} { return v.Details }).(pulumi.MapOutput)
+func (o GetSubnetsEntityMessageListOutput) Details() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSubnetsEntityMessageList) map[string]string { return v.Details }).(pulumi.StringMapOutput)
 }
 
 func (o GetSubnetsEntityMessageListOutput) Message() pulumi.StringOutput {
@@ -37682,9 +37682,9 @@ func (o GetVirtualMachineGpuListArrayOutput) Index(i pulumi.IntInput) GetVirtual
 }
 
 type GetVirtualMachineMessageList struct {
-	Details map[string]interface{} `pulumi:"details"`
-	Message string                 `pulumi:"message"`
-	Reason  string                 `pulumi:"reason"`
+	Details map[string]string `pulumi:"details"`
+	Message string            `pulumi:"message"`
+	Reason  string            `pulumi:"reason"`
 }
 
 // GetVirtualMachineMessageListInput is an input type that accepts GetVirtualMachineMessageListArgs and GetVirtualMachineMessageListOutput values.
@@ -37699,9 +37699,9 @@ type GetVirtualMachineMessageListInput interface {
 }
 
 type GetVirtualMachineMessageListArgs struct {
-	Details pulumi.MapInput    `pulumi:"details"`
-	Message pulumi.StringInput `pulumi:"message"`
-	Reason  pulumi.StringInput `pulumi:"reason"`
+	Details pulumi.StringMapInput `pulumi:"details"`
+	Message pulumi.StringInput    `pulumi:"message"`
+	Reason  pulumi.StringInput    `pulumi:"reason"`
 }
 
 func (GetVirtualMachineMessageListArgs) ElementType() reflect.Type {
@@ -37755,8 +37755,8 @@ func (o GetVirtualMachineMessageListOutput) ToGetVirtualMachineMessageListOutput
 	return o
 }
 
-func (o GetVirtualMachineMessageListOutput) Details() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVirtualMachineMessageList) map[string]interface{} { return v.Details }).(pulumi.MapOutput)
+func (o GetVirtualMachineMessageListOutput) Details() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVirtualMachineMessageList) map[string]string { return v.Details }).(pulumi.StringMapOutput)
 }
 
 func (o GetVirtualMachineMessageListOutput) Message() pulumi.StringOutput {

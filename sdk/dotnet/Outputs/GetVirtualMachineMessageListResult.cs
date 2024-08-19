@@ -14,13 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVirtualMachineMessageListResult
     {
-        public readonly ImmutableDictionary<string, object> Details;
+        public readonly ImmutableDictionary<string, string> Details;
         public readonly string Message;
         public readonly string Reason;
 
         [OutputConstructor]
         private GetVirtualMachineMessageListResult(
-            ImmutableDictionary<string, object> details,
+            ImmutableDictionary<string, string> details,
 
             string message,
 

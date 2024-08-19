@@ -299,7 +299,7 @@ class NdbLinkedDatabases(pulumi.CustomResource):
             date_created: Optional[pulumi.Input[str]] = None,
             date_modified: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
-            infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NdbLinkedDatabasesInfoArgs']]]]] = None,
+            infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NdbLinkedDatabasesInfoArgs', 'NdbLinkedDatabasesInfoArgsDict']]]]] = None,
             metric: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             parent_database_id: Optional[pulumi.Input[str]] = None,

@@ -700,30 +700,30 @@ class Project(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 account_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectAccountReferenceListArgs']]]]] = None,
-                 acps: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectAcpArgs']]]]] = None,
+                 account_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectAccountReferenceListArgs', 'ProjectAccountReferenceListArgsDict']]]]] = None,
+                 acps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectAcpArgs', 'ProjectAcpArgsDict']]]]] = None,
                  api_version: Optional[pulumi.Input[str]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectCategoryArgs']]]]] = None,
-                 cluster_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectClusterReferenceListArgs']]]]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectCategoryArgs', 'ProjectCategoryArgsDict']]]]] = None,
+                 cluster_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectClusterReferenceListArgs', 'ProjectClusterReferenceListArgsDict']]]]] = None,
                  cluster_uuid: Optional[pulumi.Input[str]] = None,
-                 default_environment_reference: Optional[pulumi.Input[pulumi.InputType['ProjectDefaultEnvironmentReferenceArgs']]] = None,
-                 default_subnet_reference: Optional[pulumi.Input[pulumi.InputType['ProjectDefaultSubnetReferenceArgs']]] = None,
+                 default_environment_reference: Optional[pulumi.Input[Union['ProjectDefaultEnvironmentReferenceArgs', 'ProjectDefaultEnvironmentReferenceArgsDict']]] = None,
+                 default_subnet_reference: Optional[pulumi.Input[Union['ProjectDefaultSubnetReferenceArgs', 'ProjectDefaultSubnetReferenceArgsDict']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  enable_collab: Optional[pulumi.Input[bool]] = None,
-                 environment_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectEnvironmentReferenceListArgs']]]]] = None,
-                 external_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectExternalNetworkListArgs']]]]] = None,
-                 external_user_group_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectExternalUserGroupReferenceListArgs']]]]] = None,
+                 environment_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectEnvironmentReferenceListArgs', 'ProjectEnvironmentReferenceListArgsDict']]]]] = None,
+                 external_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectExternalNetworkListArgs', 'ProjectExternalNetworkListArgsDict']]]]] = None,
+                 external_user_group_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectExternalUserGroupReferenceListArgs', 'ProjectExternalUserGroupReferenceListArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-                 resource_domain: Optional[pulumi.Input[pulumi.InputType['ProjectResourceDomainArgs']]] = None,
-                 subnet_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectSubnetReferenceListArgs']]]]] = None,
-                 tunnel_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectTunnelReferenceListArgs']]]]] = None,
+                 resource_domain: Optional[pulumi.Input[Union['ProjectResourceDomainArgs', 'ProjectResourceDomainArgsDict']]] = None,
+                 subnet_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectSubnetReferenceListArgs', 'ProjectSubnetReferenceListArgsDict']]]]] = None,
+                 tunnel_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectTunnelReferenceListArgs', 'ProjectTunnelReferenceListArgsDict']]]]] = None,
                  use_project_internal: Optional[pulumi.Input[bool]] = None,
-                 user_group_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserGroupListArgs']]]]] = None,
-                 user_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserListArgs']]]]] = None,
-                 user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserReferenceListArgs']]]]] = None,
-                 vpc_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectVpcReferenceListArgs']]]]] = None,
+                 user_group_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectUserGroupListArgs', 'ProjectUserGroupListArgsDict']]]]] = None,
+                 user_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectUserListArgs', 'ProjectUserListArgsDict']]]]] = None,
+                 user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectUserReferenceListArgs', 'ProjectUserReferenceListArgsDict']]]]] = None,
+                 vpc_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectVpcReferenceListArgs', 'ProjectVpcReferenceListArgsDict']]]]] = None,
                  __props__=None):
         """
         Provides a Nutanix Project resource to Create a Project.
@@ -757,106 +757,106 @@ class Project(pulumi.CustomResource):
             ])
         project_test_project = nutanix.Project("projectTestProject",
             description="This is my project",
-            categories=[nutanix.ProjectCategoryArgs(
-                name="Environment",
-                value="Staging",
-            )],
-            resource_domain=nutanix.ProjectResourceDomainArgs(
-                resources=[nutanix.ProjectResourceDomainResourceArgs(
-                    limit=4,
-                    resource_type="STORAGE",
-                )],
-            ),
-            default_subnet_reference=nutanix.ProjectDefaultSubnetReferenceArgs(
-                uuid=subnet.metadata["uuid"],
-            ),
+            categories=[{
+                "name": "Environment",
+                "value": "Staging",
+            }],
+            resource_domain={
+                "resources": [{
+                    "limit": 4,
+                    "resource_type": "STORAGE",
+                }],
+            },
+            default_subnet_reference={
+                "uuid": subnet.metadata["uuid"],
+            },
             api_version="3.1")
         # set use_project_internal flag to create project with acps
         project_test_index_project_project = nutanix.Project("projectTestIndex/projectProject",
             description="This is my project",
             cluster_uuid="<YOUR_CLUSTER_ID>",
             use_project_internal=True,
-            default_subnet_reference=nutanix.ProjectDefaultSubnetReferenceArgs(
-                uuid=subnet.metadata["uuid"],
-            ),
-            user_reference_lists=[nutanix.ProjectUserReferenceListArgs(
-                name="{{user_name}}",
-                kind="user",
-                uuid="{{user_uuid}}",
-            )],
-            subnet_reference_lists=[nutanix.ProjectSubnetReferenceListArgs(
-                uuid=resource["nutanix_subnet"]["sub"]["id"],
-            )],
-            acps=[nutanix.ProjectAcpArgs(
-                name="{{acp_name}}",
-                role_reference=nutanix.ProjectAcpRoleReferenceArgs(
-                    kind="role",
-                    uuid="{{role_uuid}}",
-                    name="Developer",
-                ),
-                user_reference_lists=[nutanix.ProjectAcpUserReferenceListArgs(
-                    name="{{user_name}}",
-                    kind="user",
-                    uuid="{{user_uuid}}",
-                )],
-                description="{{description}}",
-            )],
+            default_subnet_reference={
+                "uuid": subnet.metadata["uuid"],
+            },
+            user_reference_lists=[{
+                "name": "{{user_name}}",
+                "kind": "user",
+                "uuid": "{{user_uuid}}",
+            }],
+            subnet_reference_lists=[{
+                "uuid": resource["nutanix_subnet"]["sub"]["id"],
+            }],
+            acps=[{
+                "name": "{{acp_name}}",
+                "role_reference": {
+                    "kind": "role",
+                    "uuid": "{{role_uuid}}",
+                    "name": "Developer",
+                },
+                "user_reference_lists": [{
+                    "name": "{{user_name}}",
+                    "kind": "user",
+                    "uuid": "{{user_uuid}}",
+                }],
+                "description": "{{description}}",
+            }],
             api_version="3.1")
         ## Create a project with user which not added in the PC
         project_test_nutanix_index_project_project = nutanix.Project("projectTestNutanixIndex/projectProject",
             description="This is my project",
             cluster_uuid="<YOUR_CLUSTER_ID>",
             use_project_internal=True,
-            default_subnet_reference=nutanix.ProjectDefaultSubnetReferenceArgs(
-                uuid=subnet.metadata["uuid"],
-            ),
-            user_reference_lists=[nutanix.ProjectUserReferenceListArgs(
-                name="{{user_name}}",
-                kind="user",
-                uuid="{{user_uuid}}",
-            )],
-            subnet_reference_lists=[nutanix.ProjectSubnetReferenceListArgs(
-                uuid=resource["nutanix_subnet"]["sub"]["id"],
-            )],
-            acps=[nutanix.ProjectAcpArgs(
-                name="{{acp_name}}",
-                role_reference=nutanix.ProjectAcpRoleReferenceArgs(
-                    kind="role",
-                    uuid="{{role_uuid}}",
-                    name="Developer",
-                ),
-                user_reference_lists=[nutanix.ProjectAcpUserReferenceListArgs(
-                    name="{{user_name}}",
-                    kind="user",
-                    uuid="{{user_uuid}}",
-                )],
-                description="{{description}}",
-            )],
-            user_lists=[nutanix.ProjectUserListArgs(
-                metadata={
+            default_subnet_reference={
+                "uuid": subnet.metadata["uuid"],
+            },
+            user_reference_lists=[{
+                "name": "{{user_name}}",
+                "kind": "user",
+                "uuid": "{{user_uuid}}",
+            }],
+            subnet_reference_lists=[{
+                "uuid": resource["nutanix_subnet"]["sub"]["id"],
+            }],
+            acps=[{
+                "name": "{{acp_name}}",
+                "role_reference": {
+                    "kind": "role",
+                    "uuid": "{{role_uuid}}",
+                    "name": "Developer",
+                },
+                "user_reference_lists": [{
+                    "name": "{{user_name}}",
+                    "kind": "user",
+                    "uuid": "{{user_uuid}}",
+                }],
+                "description": "{{description}}",
+            }],
+            user_lists=[{
+                "metadata": {
                     "kind": "user",
                     "uuid": "{{ UUID of the USER }}",
                 },
-                directory_service_user=nutanix.ProjectUserListDirectoryServiceUserArgs(
-                    user_principal_name="{{ Name of user }}",
-                    directory_service_reference=nutanix.ProjectUserListDirectoryServiceUserDirectoryServiceReferenceArgs(
-                        uuid="{{ DIRECTORY SERVICE UUID }}",
-                        kind="directory_service",
-                    ),
-                ),
-            )],
+                "directory_service_user": {
+                    "user_principal_name": "{{ Name of user }}",
+                    "directory_service_reference": {
+                        "uuid": "{{ DIRECTORY SERVICE UUID }}",
+                        "kind": "directory_service",
+                    },
+                },
+            }],
             api_version="3.1")
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectCategoryArgs']]]] categories: - (Optional) The category values represented as a dictionary of key > list of values.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProjectCategoryArgs', 'ProjectCategoryArgsDict']]]] categories: - (Optional) The category values represented as a dictionary of key > list of values.
         :param pulumi.Input[str] cluster_uuid: The UUID of cluster. (Required when using project_internal flag).
         :param pulumi.Input[str] description: A description for project.
         :param pulumi.Input[bool] enable_collab: flag to allow collaboration of projects. (Use with project_internal flag)
         :param pulumi.Input[str] name: The name for the project.
         :param pulumi.Input[bool] use_project_internal: flag to use project internal for user role mapping
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserReferenceListArgs']]]] user_reference_lists: List of Reference of users.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProjectUserReferenceListArgs', 'ProjectUserReferenceListArgsDict']]]] user_reference_lists: List of Reference of users.
         """
         ...
     @overload
@@ -896,94 +896,94 @@ class Project(pulumi.CustomResource):
             ])
         project_test_project = nutanix.Project("projectTestProject",
             description="This is my project",
-            categories=[nutanix.ProjectCategoryArgs(
-                name="Environment",
-                value="Staging",
-            )],
-            resource_domain=nutanix.ProjectResourceDomainArgs(
-                resources=[nutanix.ProjectResourceDomainResourceArgs(
-                    limit=4,
-                    resource_type="STORAGE",
-                )],
-            ),
-            default_subnet_reference=nutanix.ProjectDefaultSubnetReferenceArgs(
-                uuid=subnet.metadata["uuid"],
-            ),
+            categories=[{
+                "name": "Environment",
+                "value": "Staging",
+            }],
+            resource_domain={
+                "resources": [{
+                    "limit": 4,
+                    "resource_type": "STORAGE",
+                }],
+            },
+            default_subnet_reference={
+                "uuid": subnet.metadata["uuid"],
+            },
             api_version="3.1")
         # set use_project_internal flag to create project with acps
         project_test_index_project_project = nutanix.Project("projectTestIndex/projectProject",
             description="This is my project",
             cluster_uuid="<YOUR_CLUSTER_ID>",
             use_project_internal=True,
-            default_subnet_reference=nutanix.ProjectDefaultSubnetReferenceArgs(
-                uuid=subnet.metadata["uuid"],
-            ),
-            user_reference_lists=[nutanix.ProjectUserReferenceListArgs(
-                name="{{user_name}}",
-                kind="user",
-                uuid="{{user_uuid}}",
-            )],
-            subnet_reference_lists=[nutanix.ProjectSubnetReferenceListArgs(
-                uuid=resource["nutanix_subnet"]["sub"]["id"],
-            )],
-            acps=[nutanix.ProjectAcpArgs(
-                name="{{acp_name}}",
-                role_reference=nutanix.ProjectAcpRoleReferenceArgs(
-                    kind="role",
-                    uuid="{{role_uuid}}",
-                    name="Developer",
-                ),
-                user_reference_lists=[nutanix.ProjectAcpUserReferenceListArgs(
-                    name="{{user_name}}",
-                    kind="user",
-                    uuid="{{user_uuid}}",
-                )],
-                description="{{description}}",
-            )],
+            default_subnet_reference={
+                "uuid": subnet.metadata["uuid"],
+            },
+            user_reference_lists=[{
+                "name": "{{user_name}}",
+                "kind": "user",
+                "uuid": "{{user_uuid}}",
+            }],
+            subnet_reference_lists=[{
+                "uuid": resource["nutanix_subnet"]["sub"]["id"],
+            }],
+            acps=[{
+                "name": "{{acp_name}}",
+                "role_reference": {
+                    "kind": "role",
+                    "uuid": "{{role_uuid}}",
+                    "name": "Developer",
+                },
+                "user_reference_lists": [{
+                    "name": "{{user_name}}",
+                    "kind": "user",
+                    "uuid": "{{user_uuid}}",
+                }],
+                "description": "{{description}}",
+            }],
             api_version="3.1")
         ## Create a project with user which not added in the PC
         project_test_nutanix_index_project_project = nutanix.Project("projectTestNutanixIndex/projectProject",
             description="This is my project",
             cluster_uuid="<YOUR_CLUSTER_ID>",
             use_project_internal=True,
-            default_subnet_reference=nutanix.ProjectDefaultSubnetReferenceArgs(
-                uuid=subnet.metadata["uuid"],
-            ),
-            user_reference_lists=[nutanix.ProjectUserReferenceListArgs(
-                name="{{user_name}}",
-                kind="user",
-                uuid="{{user_uuid}}",
-            )],
-            subnet_reference_lists=[nutanix.ProjectSubnetReferenceListArgs(
-                uuid=resource["nutanix_subnet"]["sub"]["id"],
-            )],
-            acps=[nutanix.ProjectAcpArgs(
-                name="{{acp_name}}",
-                role_reference=nutanix.ProjectAcpRoleReferenceArgs(
-                    kind="role",
-                    uuid="{{role_uuid}}",
-                    name="Developer",
-                ),
-                user_reference_lists=[nutanix.ProjectAcpUserReferenceListArgs(
-                    name="{{user_name}}",
-                    kind="user",
-                    uuid="{{user_uuid}}",
-                )],
-                description="{{description}}",
-            )],
-            user_lists=[nutanix.ProjectUserListArgs(
-                metadata={
+            default_subnet_reference={
+                "uuid": subnet.metadata["uuid"],
+            },
+            user_reference_lists=[{
+                "name": "{{user_name}}",
+                "kind": "user",
+                "uuid": "{{user_uuid}}",
+            }],
+            subnet_reference_lists=[{
+                "uuid": resource["nutanix_subnet"]["sub"]["id"],
+            }],
+            acps=[{
+                "name": "{{acp_name}}",
+                "role_reference": {
+                    "kind": "role",
+                    "uuid": "{{role_uuid}}",
+                    "name": "Developer",
+                },
+                "user_reference_lists": [{
+                    "name": "{{user_name}}",
+                    "kind": "user",
+                    "uuid": "{{user_uuid}}",
+                }],
+                "description": "{{description}}",
+            }],
+            user_lists=[{
+                "metadata": {
                     "kind": "user",
                     "uuid": "{{ UUID of the USER }}",
                 },
-                directory_service_user=nutanix.ProjectUserListDirectoryServiceUserArgs(
-                    user_principal_name="{{ Name of user }}",
-                    directory_service_reference=nutanix.ProjectUserListDirectoryServiceUserDirectoryServiceReferenceArgs(
-                        uuid="{{ DIRECTORY SERVICE UUID }}",
-                        kind="directory_service",
-                    ),
-                ),
-            )],
+                "directory_service_user": {
+                    "user_principal_name": "{{ Name of user }}",
+                    "directory_service_reference": {
+                        "uuid": "{{ DIRECTORY SERVICE UUID }}",
+                        "kind": "directory_service",
+                    },
+                },
+            }],
             api_version="3.1")
         ```
 
@@ -1002,30 +1002,30 @@ class Project(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 account_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectAccountReferenceListArgs']]]]] = None,
-                 acps: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectAcpArgs']]]]] = None,
+                 account_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectAccountReferenceListArgs', 'ProjectAccountReferenceListArgsDict']]]]] = None,
+                 acps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectAcpArgs', 'ProjectAcpArgsDict']]]]] = None,
                  api_version: Optional[pulumi.Input[str]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectCategoryArgs']]]]] = None,
-                 cluster_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectClusterReferenceListArgs']]]]] = None,
+                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectCategoryArgs', 'ProjectCategoryArgsDict']]]]] = None,
+                 cluster_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectClusterReferenceListArgs', 'ProjectClusterReferenceListArgsDict']]]]] = None,
                  cluster_uuid: Optional[pulumi.Input[str]] = None,
-                 default_environment_reference: Optional[pulumi.Input[pulumi.InputType['ProjectDefaultEnvironmentReferenceArgs']]] = None,
-                 default_subnet_reference: Optional[pulumi.Input[pulumi.InputType['ProjectDefaultSubnetReferenceArgs']]] = None,
+                 default_environment_reference: Optional[pulumi.Input[Union['ProjectDefaultEnvironmentReferenceArgs', 'ProjectDefaultEnvironmentReferenceArgsDict']]] = None,
+                 default_subnet_reference: Optional[pulumi.Input[Union['ProjectDefaultSubnetReferenceArgs', 'ProjectDefaultSubnetReferenceArgsDict']]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  enable_collab: Optional[pulumi.Input[bool]] = None,
-                 environment_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectEnvironmentReferenceListArgs']]]]] = None,
-                 external_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectExternalNetworkListArgs']]]]] = None,
-                 external_user_group_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectExternalUserGroupReferenceListArgs']]]]] = None,
+                 environment_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectEnvironmentReferenceListArgs', 'ProjectEnvironmentReferenceListArgsDict']]]]] = None,
+                 external_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectExternalNetworkListArgs', 'ProjectExternalNetworkListArgsDict']]]]] = None,
+                 external_user_group_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectExternalUserGroupReferenceListArgs', 'ProjectExternalUserGroupReferenceListArgsDict']]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-                 resource_domain: Optional[pulumi.Input[pulumi.InputType['ProjectResourceDomainArgs']]] = None,
-                 subnet_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectSubnetReferenceListArgs']]]]] = None,
-                 tunnel_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectTunnelReferenceListArgs']]]]] = None,
+                 resource_domain: Optional[pulumi.Input[Union['ProjectResourceDomainArgs', 'ProjectResourceDomainArgsDict']]] = None,
+                 subnet_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectSubnetReferenceListArgs', 'ProjectSubnetReferenceListArgsDict']]]]] = None,
+                 tunnel_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectTunnelReferenceListArgs', 'ProjectTunnelReferenceListArgsDict']]]]] = None,
                  use_project_internal: Optional[pulumi.Input[bool]] = None,
-                 user_group_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserGroupListArgs']]]]] = None,
-                 user_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserListArgs']]]]] = None,
-                 user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserReferenceListArgs']]]]] = None,
-                 vpc_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectVpcReferenceListArgs']]]]] = None,
+                 user_group_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectUserGroupListArgs', 'ProjectUserGroupListArgsDict']]]]] = None,
+                 user_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectUserListArgs', 'ProjectUserListArgsDict']]]]] = None,
+                 user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectUserReferenceListArgs', 'ProjectUserReferenceListArgsDict']]]]] = None,
+                 vpc_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectVpcReferenceListArgs', 'ProjectVpcReferenceListArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1076,33 +1076,33 @@ class Project(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            account_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectAccountReferenceListArgs']]]]] = None,
-            acps: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectAcpArgs']]]]] = None,
+            account_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectAccountReferenceListArgs', 'ProjectAccountReferenceListArgsDict']]]]] = None,
+            acps: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectAcpArgs', 'ProjectAcpArgsDict']]]]] = None,
             api_version: Optional[pulumi.Input[str]] = None,
-            categories: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectCategoryArgs']]]]] = None,
-            cluster_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectClusterReferenceListArgs']]]]] = None,
+            categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectCategoryArgs', 'ProjectCategoryArgsDict']]]]] = None,
+            cluster_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectClusterReferenceListArgs', 'ProjectClusterReferenceListArgsDict']]]]] = None,
             cluster_uuid: Optional[pulumi.Input[str]] = None,
-            default_environment_reference: Optional[pulumi.Input[pulumi.InputType['ProjectDefaultEnvironmentReferenceArgs']]] = None,
-            default_subnet_reference: Optional[pulumi.Input[pulumi.InputType['ProjectDefaultSubnetReferenceArgs']]] = None,
+            default_environment_reference: Optional[pulumi.Input[Union['ProjectDefaultEnvironmentReferenceArgs', 'ProjectDefaultEnvironmentReferenceArgsDict']]] = None,
+            default_subnet_reference: Optional[pulumi.Input[Union['ProjectDefaultSubnetReferenceArgs', 'ProjectDefaultSubnetReferenceArgsDict']]] = None,
             description: Optional[pulumi.Input[str]] = None,
             enable_collab: Optional[pulumi.Input[bool]] = None,
-            environment_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectEnvironmentReferenceListArgs']]]]] = None,
-            external_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectExternalNetworkListArgs']]]]] = None,
-            external_user_group_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectExternalUserGroupReferenceListArgs']]]]] = None,
+            environment_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectEnvironmentReferenceListArgs', 'ProjectEnvironmentReferenceListArgsDict']]]]] = None,
+            external_network_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectExternalNetworkListArgs', 'ProjectExternalNetworkListArgsDict']]]]] = None,
+            external_user_group_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectExternalUserGroupReferenceListArgs', 'ProjectExternalUserGroupReferenceListArgsDict']]]]] = None,
             is_default: Optional[pulumi.Input[bool]] = None,
             metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
-            resource_domain: Optional[pulumi.Input[pulumi.InputType['ProjectResourceDomainArgs']]] = None,
+            resource_domain: Optional[pulumi.Input[Union['ProjectResourceDomainArgs', 'ProjectResourceDomainArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            subnet_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectSubnetReferenceListArgs']]]]] = None,
-            tunnel_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectTunnelReferenceListArgs']]]]] = None,
+            subnet_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectSubnetReferenceListArgs', 'ProjectSubnetReferenceListArgsDict']]]]] = None,
+            tunnel_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectTunnelReferenceListArgs', 'ProjectTunnelReferenceListArgsDict']]]]] = None,
             use_project_internal: Optional[pulumi.Input[bool]] = None,
-            user_group_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserGroupListArgs']]]]] = None,
-            user_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserListArgs']]]]] = None,
-            user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserReferenceListArgs']]]]] = None,
-            vpc_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectVpcReferenceListArgs']]]]] = None) -> 'Project':
+            user_group_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectUserGroupListArgs', 'ProjectUserGroupListArgsDict']]]]] = None,
+            user_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectUserListArgs', 'ProjectUserListArgsDict']]]]] = None,
+            user_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectUserReferenceListArgs', 'ProjectUserReferenceListArgsDict']]]]] = None,
+            vpc_reference_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectVpcReferenceListArgs', 'ProjectVpcReferenceListArgsDict']]]]] = None) -> 'Project':
         """
         Get an existing Project resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1110,13 +1110,13 @@ class Project(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectCategoryArgs']]]] categories: - (Optional) The category values represented as a dictionary of key > list of values.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProjectCategoryArgs', 'ProjectCategoryArgsDict']]]] categories: - (Optional) The category values represented as a dictionary of key > list of values.
         :param pulumi.Input[str] cluster_uuid: The UUID of cluster. (Required when using project_internal flag).
         :param pulumi.Input[str] description: A description for project.
         :param pulumi.Input[bool] enable_collab: flag to allow collaboration of projects. (Use with project_internal flag)
         :param pulumi.Input[str] name: The name for the project.
         :param pulumi.Input[bool] use_project_internal: flag to use project internal for user role mapping
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProjectUserReferenceListArgs']]]] user_reference_lists: List of Reference of users.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProjectUserReferenceListArgs', 'ProjectUserReferenceListArgsDict']]]] user_reference_lists: List of Reference of users.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 

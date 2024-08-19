@@ -172,7 +172,7 @@ class AwaitableGetRoleResult(GetRoleResult):
             state=self.state)
 
 
-def get_role(categories: Optional[Sequence[pulumi.InputType['GetRoleCategoryArgs']]] = None,
+def get_role(categories: Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']]] = None,
              role_id: Optional[str] = None,
              role_name: Optional[str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRoleResult:
@@ -180,7 +180,7 @@ def get_role(categories: Optional[Sequence[pulumi.InputType['GetRoleCategoryArgs
     Describes a Role.
 
 
-    :param Sequence[pulumi.InputType['GetRoleCategoryArgs']] categories: - Categories for the Role.
+    :param Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']] categories: - Categories for the Role.
     :param str role_id: - (Optional) The UUID of a Role.
     :param str role_name: - (Optional) The name of a Role.
     """
@@ -207,7 +207,7 @@ def get_role(categories: Optional[Sequence[pulumi.InputType['GetRoleCategoryArgs
 
 
 @_utilities.lift_output_func(get_role)
-def get_role_output(categories: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRoleCategoryArgs']]]]] = None,
+def get_role_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']]]]] = None,
                     role_id: Optional[pulumi.Input[Optional[str]]] = None,
                     role_name: Optional[pulumi.Input[Optional[str]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRoleResult]:
@@ -215,7 +215,7 @@ def get_role_output(categories: Optional[pulumi.Input[Optional[Sequence[pulumi.I
     Describes a Role.
 
 
-    :param Sequence[pulumi.InputType['GetRoleCategoryArgs']] categories: - Categories for the Role.
+    :param Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']] categories: - Categories for the Role.
     :param str role_id: - (Optional) The UUID of a Role.
     :param str role_name: - (Optional) The name of a Role.
     """

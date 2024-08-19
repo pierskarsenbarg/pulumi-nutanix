@@ -147,7 +147,7 @@ class ServiceGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 service_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ServiceGroupServiceListArgs']]]]] = None,
+                 service_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict']]]]] = None,
                  __props__=None):
         """
         Provides a resource to create a service group based on the input parameters.
@@ -160,26 +160,26 @@ class ServiceGroup(pulumi.CustomResource):
 
         test = nutanix.ServiceGroup("test",
             description="this is service group",
-            service_lists=[nutanix.ServiceGroupServiceListArgs(
-                protocol="TCP",
-                tcp_port_range_lists=[
-                    nutanix.ServiceGroupServiceListTcpPortRangeListArgs(
-                        end_port=22,
-                        start_port=22,
-                    ),
-                    nutanix.ServiceGroupServiceListTcpPortRangeListArgs(
-                        end_port=2222,
-                        start_port=2222,
-                    ),
+            service_lists=[{
+                "protocol": "TCP",
+                "tcp_port_range_lists": [
+                    {
+                        "end_port": 22,
+                        "start_port": 22,
+                    },
+                    {
+                        "end_port": 2222,
+                        "start_port": 2222,
+                    },
                 ],
-            )])
+            }])
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: - (Optional) Description of the service group
         :param pulumi.Input[str] name: - (Required) Name of the service group
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ServiceGroupServiceListArgs']]]] service_lists: - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict']]]] service_lists: - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
         """
         ...
     @overload
@@ -198,19 +198,19 @@ class ServiceGroup(pulumi.CustomResource):
 
         test = nutanix.ServiceGroup("test",
             description="this is service group",
-            service_lists=[nutanix.ServiceGroupServiceListArgs(
-                protocol="TCP",
-                tcp_port_range_lists=[
-                    nutanix.ServiceGroupServiceListTcpPortRangeListArgs(
-                        end_port=22,
-                        start_port=22,
-                    ),
-                    nutanix.ServiceGroupServiceListTcpPortRangeListArgs(
-                        end_port=2222,
-                        start_port=2222,
-                    ),
+            service_lists=[{
+                "protocol": "TCP",
+                "tcp_port_range_lists": [
+                    {
+                        "end_port": 22,
+                        "start_port": 22,
+                    },
+                    {
+                        "end_port": 2222,
+                        "start_port": 2222,
+                    },
                 ],
-            )])
+            }])
         ```
 
         :param str resource_name: The name of the resource.
@@ -230,7 +230,7 @@ class ServiceGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 service_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ServiceGroupServiceListArgs']]]]] = None,
+                 service_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -258,7 +258,7 @@ class ServiceGroup(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             description: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
-            service_lists: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ServiceGroupServiceListArgs']]]]] = None,
+            service_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict']]]]] = None,
             system_defined: Optional[pulumi.Input[bool]] = None) -> 'ServiceGroup':
         """
         Get an existing ServiceGroup resource's state with the given name, id, and optional extra
@@ -269,7 +269,7 @@ class ServiceGroup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] description: - (Optional) Description of the service group
         :param pulumi.Input[str] name: - (Required) Name of the service group
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ServiceGroupServiceListArgs']]]] service_lists: - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ServiceGroupServiceListArgs', 'ServiceGroupServiceListArgsDict']]]] service_lists: - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
         :param pulumi.Input[bool] system_defined: - (ReadOnly) boolean value to denote if the service group is system defined
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))

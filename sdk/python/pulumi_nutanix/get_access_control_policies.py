@@ -82,7 +82,7 @@ class AwaitableGetAccessControlPoliciesResult(GetAccessControlPoliciesResult):
             metadatas=self.metadatas)
 
 
-def get_access_control_policies(metadatas: Optional[Sequence[pulumi.InputType['GetAccessControlPoliciesMetadataArgs']]] = None,
+def get_access_control_policies(metadatas: Optional[Sequence[Union['GetAccessControlPoliciesMetadataArgs', 'GetAccessControlPoliciesMetadataArgsDict']]] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAccessControlPoliciesResult:
     """
     Describes a list of access control policies.
@@ -90,7 +90,7 @@ def get_access_control_policies(metadatas: Optional[Sequence[pulumi.InputType['G
     ## Example Usage
 
 
-    :param Sequence[pulumi.InputType['GetAccessControlPoliciesMetadataArgs']] metadatas: - The Access Control Policy kind metadata.
+    :param Sequence[Union['GetAccessControlPoliciesMetadataArgs', 'GetAccessControlPoliciesMetadataArgsDict']] metadatas: - The Access Control Policy kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
@@ -105,7 +105,7 @@ def get_access_control_policies(metadatas: Optional[Sequence[pulumi.InputType['G
 
 
 @_utilities.lift_output_func(get_access_control_policies)
-def get_access_control_policies_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetAccessControlPoliciesMetadataArgs']]]]] = None,
+def get_access_control_policies_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetAccessControlPoliciesMetadataArgs', 'GetAccessControlPoliciesMetadataArgsDict']]]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAccessControlPoliciesResult]:
     """
     Describes a list of access control policies.
@@ -113,6 +113,6 @@ def get_access_control_policies_output(metadatas: Optional[pulumi.Input[Optional
     ## Example Usage
 
 
-    :param Sequence[pulumi.InputType['GetAccessControlPoliciesMetadataArgs']] metadatas: - The Access Control Policy kind metadata.
+    :param Sequence[Union['GetAccessControlPoliciesMetadataArgs', 'GetAccessControlPoliciesMetadataArgsDict']] metadatas: - The Access Control Policy kind metadata.
     """
     ...

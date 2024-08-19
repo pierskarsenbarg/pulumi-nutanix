@@ -37,7 +37,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// Hardware attributes override json for the node.
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? HardwareAttributesOverride;
+        public readonly ImmutableDictionary<string, string>? HardwareAttributesOverride;
         /// <summary>
         /// Gateway of the hypervisor.
         /// </summary>
@@ -99,7 +99,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             int? cvmVlanId,
 
-            ImmutableDictionary<string, object>? hardwareAttributesOverride,
+            ImmutableDictionary<string, string>? hardwareAttributesOverride,
 
             string? hypervisorGateway,
 

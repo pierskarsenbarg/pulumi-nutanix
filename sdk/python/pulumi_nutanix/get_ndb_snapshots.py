@@ -64,7 +64,7 @@ class AwaitableGetNdbSnapshotsResult(GetNdbSnapshotsResult):
             snapshots=self.snapshots)
 
 
-def get_ndb_snapshots(filters: Optional[Sequence[pulumi.InputType['GetNdbSnapshotsFilterArgs']]] = None,
+def get_ndb_snapshots(filters: Optional[Sequence[Union['GetNdbSnapshotsFilterArgs', 'GetNdbSnapshotsFilterArgsDict']]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNdbSnapshotsResult:
     """
     List all snapshots present in Nutanix Database Service
@@ -75,9 +75,9 @@ def get_ndb_snapshots(filters: Optional[Sequence[pulumi.InputType['GetNdbSnapsho
     import pulumi
     import pulumi_nutanix as nutanix
 
-    snaps = nutanix.get_ndb_snapshots(filters=[nutanix.GetNdbSnapshotsFilterArgs(
-        time_machine_id="{{ time_machine_id }}",
-    )])
+    snaps = nutanix.get_ndb_snapshots(filters=[{
+        "time_machine_id": "{{ time_machine_id }}",
+    }])
     ```
 
     ## Attribute Reference
@@ -129,7 +129,7 @@ def get_ndb_snapshots(filters: Optional[Sequence[pulumi.InputType['GetNdbSnapsho
     See detailed information in [NDB Snapshots](https://www.nutanix.dev/api_references/ndb/#/d0b89ff892448-get-list-of-all-snapshots).
 
 
-    :param Sequence[pulumi.InputType['GetNdbSnapshotsFilterArgs']] filters: filters help to fetch the snapshots based on input
+    :param Sequence[Union['GetNdbSnapshotsFilterArgs', 'GetNdbSnapshotsFilterArgsDict']] filters: filters help to fetch the snapshots based on input
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -143,7 +143,7 @@ def get_ndb_snapshots(filters: Optional[Sequence[pulumi.InputType['GetNdbSnapsho
 
 
 @_utilities.lift_output_func(get_ndb_snapshots)
-def get_ndb_snapshots_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNdbSnapshotsFilterArgs']]]]] = None,
+def get_ndb_snapshots_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbSnapshotsFilterArgs', 'GetNdbSnapshotsFilterArgsDict']]]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbSnapshotsResult]:
     """
     List all snapshots present in Nutanix Database Service
@@ -154,9 +154,9 @@ def get_ndb_snapshots_output(filters: Optional[pulumi.Input[Optional[Sequence[pu
     import pulumi
     import pulumi_nutanix as nutanix
 
-    snaps = nutanix.get_ndb_snapshots(filters=[nutanix.GetNdbSnapshotsFilterArgs(
-        time_machine_id="{{ time_machine_id }}",
-    )])
+    snaps = nutanix.get_ndb_snapshots(filters=[{
+        "time_machine_id": "{{ time_machine_id }}",
+    }])
     ```
 
     ## Attribute Reference
@@ -208,6 +208,6 @@ def get_ndb_snapshots_output(filters: Optional[pulumi.Input[Optional[Sequence[pu
     See detailed information in [NDB Snapshots](https://www.nutanix.dev/api_references/ndb/#/d0b89ff892448-get-list-of-all-snapshots).
 
 
-    :param Sequence[pulumi.InputType['GetNdbSnapshotsFilterArgs']] filters: filters help to fetch the snapshots based on input
+    :param Sequence[Union['GetNdbSnapshotsFilterArgs', 'GetNdbSnapshotsFilterArgsDict']] filters: filters help to fetch the snapshots based on input
     """
     ...

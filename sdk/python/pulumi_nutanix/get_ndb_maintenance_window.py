@@ -200,7 +200,7 @@ class AwaitableGetNdbMaintenanceWindowResult(GetNdbMaintenanceWindowResult):
 
 
 def get_ndb_maintenance_window(id: Optional[str] = None,
-                               tags: Optional[Sequence[pulumi.InputType['GetNdbMaintenanceWindowTagArgs']]] = None,
+                               tags: Optional[Sequence[Union['GetNdbMaintenanceWindowTagArgs', 'GetNdbMaintenanceWindowTagArgsDict']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNdbMaintenanceWindowResult:
     """
     Describes a maintenance window in Nutanix Database Service
@@ -216,7 +216,7 @@ def get_ndb_maintenance_window(id: Optional[str] = None,
 
 
     :param str id: Maintenance window id.
-    :param Sequence[pulumi.InputType['GetNdbMaintenanceWindowTagArgs']] tags: tags of maintenance window
+    :param Sequence[Union['GetNdbMaintenanceWindowTagArgs', 'GetNdbMaintenanceWindowTagArgsDict']] tags: tags of maintenance window
     """
     __args__ = dict()
     __args__['id'] = id
@@ -243,7 +243,7 @@ def get_ndb_maintenance_window(id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_ndb_maintenance_window)
 def get_ndb_maintenance_window_output(id: Optional[pulumi.Input[str]] = None,
-                                      tags: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNdbMaintenanceWindowTagArgs']]]]] = None,
+                                      tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbMaintenanceWindowTagArgs', 'GetNdbMaintenanceWindowTagArgsDict']]]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbMaintenanceWindowResult]:
     """
     Describes a maintenance window in Nutanix Database Service
@@ -259,6 +259,6 @@ def get_ndb_maintenance_window_output(id: Optional[pulumi.Input[str]] = None,
 
 
     :param str id: Maintenance window id.
-    :param Sequence[pulumi.InputType['GetNdbMaintenanceWindowTagArgs']] tags: tags of maintenance window
+    :param Sequence[Union['GetNdbMaintenanceWindowTagArgs', 'GetNdbMaintenanceWindowTagArgsDict']] tags: tags of maintenance window
     """
     ...

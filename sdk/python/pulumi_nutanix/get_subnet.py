@@ -388,8 +388,8 @@ class AwaitableGetSubnetResult(GetSubnetResult):
             vswitch_name=self.vswitch_name)
 
 
-def get_subnet(additional_filters: Optional[Sequence[pulumi.InputType['GetSubnetAdditionalFilterArgs']]] = None,
-               categories: Optional[Sequence[pulumi.InputType['GetSubnetCategoryArgs']]] = None,
+def get_subnet(additional_filters: Optional[Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict']]] = None,
+               categories: Optional[Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict']]] = None,
                subnet_id: Optional[str] = None,
                subnet_name: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSubnetResult:
@@ -397,8 +397,8 @@ def get_subnet(additional_filters: Optional[Sequence[pulumi.InputType['GetSubnet
     Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
 
 
-    :param Sequence[pulumi.InputType['GetSubnetAdditionalFilterArgs']] additional_filters: - Additional filters to narrow down list of subnets.
-    :param Sequence[pulumi.InputType['GetSubnetCategoryArgs']] categories: The API Version.
+    :param Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict']] additional_filters: - Additional filters to narrow down list of subnets.
+    :param Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict']] categories: The API Version.
     :param str subnet_id: - (Optional) The ID for the subnet.
     :param str subnet_name: - (Optional) The name for the subnet
     """
@@ -446,8 +446,8 @@ def get_subnet(additional_filters: Optional[Sequence[pulumi.InputType['GetSubnet
 
 
 @_utilities.lift_output_func(get_subnet)
-def get_subnet_output(additional_filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSubnetAdditionalFilterArgs']]]]] = None,
-                      categories: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSubnetCategoryArgs']]]]] = None,
+def get_subnet_output(additional_filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict']]]]] = None,
+                      categories: Optional[pulumi.Input[Optional[Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict']]]]] = None,
                       subnet_id: Optional[pulumi.Input[Optional[str]]] = None,
                       subnet_name: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubnetResult]:
@@ -455,8 +455,8 @@ def get_subnet_output(additional_filters: Optional[pulumi.Input[Optional[Sequenc
     Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
 
 
-    :param Sequence[pulumi.InputType['GetSubnetAdditionalFilterArgs']] additional_filters: - Additional filters to narrow down list of subnets.
-    :param Sequence[pulumi.InputType['GetSubnetCategoryArgs']] categories: The API Version.
+    :param Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict']] additional_filters: - Additional filters to narrow down list of subnets.
+    :param Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict']] categories: The API Version.
     :param str subnet_id: - (Optional) The ID for the subnet.
     :param str subnet_name: - (Optional) The name for the subnet
     """

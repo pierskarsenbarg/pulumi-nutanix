@@ -73,7 +73,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// Hardware attributes json of the node.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> HardwareAttributes;
+        public readonly ImmutableDictionary<string, string> HardwareAttributes;
         /// <summary>
         /// gateway of the hypervisor.
         /// </summary>
@@ -182,7 +182,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string foundationVersion,
 
-            ImmutableDictionary<string, object> hardwareAttributes,
+            ImmutableDictionary<string, string> hardwareAttributes,
 
             string hypervisorGateway,
 

@@ -277,7 +277,7 @@ class GetVirtualMachineResult:
 
     @property
     @pulumi.getter(name="guestCustomizationCloudInitCustomKeyValues")
-    def guest_customization_cloud_init_custom_key_values(self) -> Mapping[str, Any]:
+    def guest_customization_cloud_init_custom_key_values(self) -> Mapping[str, str]:
         """
         - Generic key value pair used for custom attributes in cloud init.
         """
@@ -317,7 +317,7 @@ class GetVirtualMachineResult:
 
     @property
     @pulumi.getter(name="guestCustomizationSysprepCustomKeyValues")
-    def guest_customization_sysprep_custom_key_values(self) -> Mapping[str, Any]:
+    def guest_customization_sysprep_custom_key_values(self) -> Mapping[str, str]:
         """
         - Generic key value pair used for custom attributes in sysprep.
         """
@@ -407,7 +407,7 @@ class GetVirtualMachineResult:
 
     @property
     @pulumi.getter(name="ngtCredentials")
-    def ngt_credentials(self) -> Mapping[str, Any]:
+    def ngt_credentials(self) -> Mapping[str, str]:
         """
         - Credentials to login server.
         """
@@ -594,7 +594,7 @@ class AwaitableGetVirtualMachineResult(GetVirtualMachineResult):
 
 def get_virtual_machine(boot_device_disk_address: Optional[Mapping[str, str]] = None,
                         boot_device_mac_address: Optional[str] = None,
-                        categories: Optional[Sequence[pulumi.InputType['GetVirtualMachineCategoryArgs']]] = None,
+                        categories: Optional[Sequence[Union['GetVirtualMachineCategoryArgs', 'GetVirtualMachineCategoryArgsDict']]] = None,
                         vm_id: Optional[str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVirtualMachineResult:
     """
@@ -603,7 +603,7 @@ def get_virtual_machine(boot_device_disk_address: Optional[Mapping[str, str]] = 
 
     :param Mapping[str, str] boot_device_disk_address: - Address of disk to boot from.
     :param str boot_device_mac_address: - MAC address of nic to boot from.
-    :param Sequence[pulumi.InputType['GetVirtualMachineCategoryArgs']] categories: - Categories for the vm.
+    :param Sequence[Union['GetVirtualMachineCategoryArgs', 'GetVirtualMachineCategoryArgsDict']] categories: - Categories for the vm.
     :param str vm_id: Represents virtual machine UUID
     """
     __args__ = dict()
@@ -668,7 +668,7 @@ def get_virtual_machine(boot_device_disk_address: Optional[Mapping[str, str]] = 
 @_utilities.lift_output_func(get_virtual_machine)
 def get_virtual_machine_output(boot_device_disk_address: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
                                boot_device_mac_address: Optional[pulumi.Input[Optional[str]]] = None,
-                               categories: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetVirtualMachineCategoryArgs']]]]] = None,
+                               categories: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualMachineCategoryArgs', 'GetVirtualMachineCategoryArgsDict']]]]] = None,
                                vm_id: Optional[pulumi.Input[str]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualMachineResult]:
     """
@@ -677,7 +677,7 @@ def get_virtual_machine_output(boot_device_disk_address: Optional[pulumi.Input[O
 
     :param Mapping[str, str] boot_device_disk_address: - Address of disk to boot from.
     :param str boot_device_mac_address: - MAC address of nic to boot from.
-    :param Sequence[pulumi.InputType['GetVirtualMachineCategoryArgs']] categories: - Categories for the vm.
+    :param Sequence[Union['GetVirtualMachineCategoryArgs', 'GetVirtualMachineCategoryArgsDict']] categories: - Categories for the vm.
     :param str vm_id: Represents virtual machine UUID
     """
     ...

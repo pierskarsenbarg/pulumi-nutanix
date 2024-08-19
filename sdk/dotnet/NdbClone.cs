@@ -13,30 +13,49 @@ namespace PiersKarsenbarg.Nutanix
     /// <summary>
     /// Provides a resource to perform the clone of database instance based on the input parameters.
     /// 
-    /// ## resource for cloning using Point in time given time machine name
+    /// ## Example Usage
     /// 
-    ///     resource "nutanix.NdbClone" "name" {
-    ///         time_machine_name = "test-pg-inst"
-    ///         name = "test-inst-tf-check"
-    ///         nx_cluster_id = "{{ nx_Cluster_id }}"
-    ///         ssh_public_key = "{{ sshkey }}"
-    ///         user_pitr_timestamp=  "{{ point_in_time }}"
-    ///         time_zone = "Asia/Calcutta"
-    ///         create_dbserver = true
-    ///         compute_profile_id = "{{ compute_profile_id }}"
-    ///         network_profile_id ="{{ network_profile_id }}"
-    ///         database_parameter_profile_id =  "{{ databse_profile_id }}"
-    ///         nodes{
-    ///             vm_name= "test_vm_clone"
-    ///             compute_profile_id = "{{ compute_profile_id }}"
-    ///             network_profile_id ="{{ network_profile_id }}"
-    ///             nx_cluster_id = "{{ nx_Cluster_id }}"
-    ///         }
-    ///         postgresql_info{
-    ///             vm_name="test_vm_clone"
-    ///             db_password= "pass"
-    ///         }
-    ///     }
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var name = new Nutanix.NdbClone("name", new()
+    ///     {
+    ///         ComputeProfileId = "{{ compute_profile_id }}",
+    ///         CreateDbserver = true,
+    ///         DatabaseParameterProfileId = "{{ databse_profile_id }}",
+    ///         NetworkProfileId = "{{ network_profile_id }}",
+    ///         Nodes = new[]
+    ///         {
+    ///             new Nutanix.Inputs.NdbCloneNodeArgs
+    ///             {
+    ///                 ComputeProfileId = "{{ compute_profile_id }}",
+    ///                 NetworkProfileId = "{{ network_profile_id }}",
+    ///                 NxClusterId = "{{ nx_Cluster_id }}",
+    ///                 VmName = "test_vm_clone",
+    ///             },
+    ///         },
+    ///         NxClusterId = "{{ nx_Cluster_id }}",
+    ///         PostgresqlInfos = new[]
+    ///         {
+    ///             new Nutanix.Inputs.NdbClonePostgresqlInfoArgs
+    ///             {
+    ///                 DbPassword = "pass",
+    ///                 VmName = "test_vm_clone",
+    ///             },
+    ///         },
+    ///         SshPublicKey = "{{ sshkey }}",
+    ///         TimeMachineName = "test-pg-inst",
+    ///         TimeZone = "Asia/Calcutta",
+    ///         UserPitrTimestamp = "{{ point_in_time }}",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/ndbClone:NdbClone")]
     public partial class NdbClone : global::Pulumi.CustomResource

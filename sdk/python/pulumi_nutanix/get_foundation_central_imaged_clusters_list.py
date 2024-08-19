@@ -97,7 +97,7 @@ class AwaitableGetFoundationCentralImagedClustersListResult(GetFoundationCentral
             offset=self.offset)
 
 
-def get_foundation_central_imaged_clusters_list(filters: Optional[pulumi.InputType['GetFoundationCentralImagedClustersListFiltersArgs']] = None,
+def get_foundation_central_imaged_clusters_list(filters: Optional[Union['GetFoundationCentralImagedClustersListFiltersArgs', 'GetFoundationCentralImagedClustersListFiltersArgsDict']] = None,
                                                 length: Optional[int] = None,
                                                 offset: Optional[int] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFoundationCentralImagedClustersListResult:
@@ -134,7 +134,7 @@ def get_foundation_central_imaged_clusters_list(filters: Optional[pulumi.InputTy
 
 
 @_utilities.lift_output_func(get_foundation_central_imaged_clusters_list)
-def get_foundation_central_imaged_clusters_list_output(filters: Optional[pulumi.Input[Optional[pulumi.InputType['GetFoundationCentralImagedClustersListFiltersArgs']]]] = None,
+def get_foundation_central_imaged_clusters_list_output(filters: Optional[pulumi.Input[Optional[Union['GetFoundationCentralImagedClustersListFiltersArgs', 'GetFoundationCentralImagedClustersListFiltersArgsDict']]]] = None,
                                                        length: Optional[pulumi.Input[Optional[int]]] = None,
                                                        offset: Optional[pulumi.Input[Optional[int]]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationCentralImagedClustersListResult]:

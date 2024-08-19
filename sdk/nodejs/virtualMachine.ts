@@ -174,7 +174,7 @@ export class VirtualMachine extends pulumi.CustomResource {
     /**
      * - (Optional) Generic key value pair used for custom attributes in sysprep.
      */
-    public readonly guestCustomizationSysprepCustomKeyValues!: pulumi.Output<{[key: string]: any}>;
+    public readonly guestCustomizationSysprepCustomKeyValues!: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
      */
@@ -214,7 +214,7 @@ export class VirtualMachine extends pulumi.CustomResource {
     /**
      * - (Ooptional) Credentials to login server.
      */
-    public readonly ngtCredentials!: pulumi.Output<{[key: string]: any}>;
+    public readonly ngtCredentials!: pulumi.Output<{[key: string]: string}>;
     /**
      * Application names that are enabled.
      */
@@ -488,7 +488,7 @@ export interface VirtualMachineState {
     /**
      * - (Optional) Generic key value pair used for custom attributes in sysprep.
      */
-    guestCustomizationSysprepCustomKeyValues?: pulumi.Input<{[key: string]: any}>;
+    guestCustomizationSysprepCustomKeyValues?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
      */
@@ -528,7 +528,7 @@ export interface VirtualMachineState {
     /**
      * - (Ooptional) Credentials to login server.
      */
-    ngtCredentials?: pulumi.Input<{[key: string]: any}>;
+    ngtCredentials?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Application names that are enabled.
      */
@@ -675,7 +675,7 @@ export interface VirtualMachineArgs {
     /**
      * - (Optional) Generic key value pair used for custom attributes in sysprep.
      */
-    guestCustomizationSysprepCustomKeyValues?: pulumi.Input<{[key: string]: any}>;
+    guestCustomizationSysprepCustomKeyValues?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
      */
@@ -703,7 +703,7 @@ export interface VirtualMachineArgs {
     /**
      * - (Ooptional) Credentials to login server.
      */
-    ngtCredentials?: pulumi.Input<{[key: string]: any}>;
+    ngtCredentials?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Application names that are enabled.
      */

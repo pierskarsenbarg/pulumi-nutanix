@@ -364,14 +364,14 @@ class AwaitableGetHostResult(GetHostResult):
             windows_domain=self.windows_domain)
 
 
-def get_host(categories: Optional[Sequence[pulumi.InputType['GetHostCategoryArgs']]] = None,
+def get_host(categories: Optional[Sequence[Union['GetHostCategoryArgs', 'GetHostCategoryArgsDict']]] = None,
              host_id: Optional[str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetHostResult:
     """
     Describes a Host
 
 
-    :param Sequence[pulumi.InputType['GetHostCategoryArgs']] categories: - Categories for the image.
+    :param Sequence[Union['GetHostCategoryArgs', 'GetHostCategoryArgsDict']] categories: - Categories for the image.
     :param str host_id: Represents hosts uuid
     """
     __args__ = dict()
@@ -412,14 +412,14 @@ def get_host(categories: Optional[Sequence[pulumi.InputType['GetHostCategoryArgs
 
 
 @_utilities.lift_output_func(get_host)
-def get_host_output(categories: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetHostCategoryArgs']]]]] = None,
+def get_host_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetHostCategoryArgs', 'GetHostCategoryArgsDict']]]]] = None,
                     host_id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHostResult]:
     """
     Describes a Host
 
 
-    :param Sequence[pulumi.InputType['GetHostCategoryArgs']] categories: - Categories for the image.
+    :param Sequence[Union['GetHostCategoryArgs', 'GetHostCategoryArgsDict']] categories: - Categories for the image.
     :param str host_id: Represents hosts uuid
     """
     ...

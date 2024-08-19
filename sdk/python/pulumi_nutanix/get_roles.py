@@ -82,7 +82,7 @@ class AwaitableGetRolesResult(GetRolesResult):
             metadatas=self.metadatas)
 
 
-def get_roles(metadatas: Optional[Sequence[pulumi.InputType['GetRolesMetadataArgs']]] = None,
+def get_roles(metadatas: Optional[Sequence[Union['GetRolesMetadataArgs', 'GetRolesMetadataArgsDict']]] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRolesResult:
     """
     Describes a list of roles.
@@ -97,7 +97,7 @@ def get_roles(metadatas: Optional[Sequence[pulumi.InputType['GetRolesMetadataArg
     ```
 
 
-    :param Sequence[pulumi.InputType['GetRolesMetadataArgs']] metadatas: - The role kind metadata.
+    :param Sequence[Union['GetRolesMetadataArgs', 'GetRolesMetadataArgsDict']] metadatas: - The role kind metadata.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
@@ -112,7 +112,7 @@ def get_roles(metadatas: Optional[Sequence[pulumi.InputType['GetRolesMetadataArg
 
 
 @_utilities.lift_output_func(get_roles)
-def get_roles_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetRolesMetadataArgs']]]]] = None,
+def get_roles_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetRolesMetadataArgs', 'GetRolesMetadataArgsDict']]]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRolesResult]:
     """
     Describes a list of roles.
@@ -127,6 +127,6 @@ def get_roles_output(metadatas: Optional[pulumi.Input[Optional[Sequence[pulumi.I
     ```
 
 
-    :param Sequence[pulumi.InputType['GetRolesMetadataArgs']] metadatas: - The role kind metadata.
+    :param Sequence[Union['GetRolesMetadataArgs', 'GetRolesMetadataArgsDict']] metadatas: - The role kind metadata.
     """
     ...
