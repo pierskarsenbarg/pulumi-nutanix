@@ -108,14 +108,20 @@ type GetFoundationCentralClusterDetailsResult struct {
 
 func GetFoundationCentralClusterDetailsOutput(ctx *pulumi.Context, args GetFoundationCentralClusterDetailsOutputArgs, opts ...pulumi.InvokeOption) GetFoundationCentralClusterDetailsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetFoundationCentralClusterDetailsResult, error) {
+		ApplyT(func(v interface{}) (GetFoundationCentralClusterDetailsResultOutput, error) {
 			args := v.(GetFoundationCentralClusterDetailsArgs)
-			r, err := GetFoundationCentralClusterDetails(ctx, &args, opts...)
-			var s GetFoundationCentralClusterDetailsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetFoundationCentralClusterDetailsResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", args, &rv, "", opts...)
+			if err != nil {
+				return GetFoundationCentralClusterDetailsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetFoundationCentralClusterDetailsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetFoundationCentralClusterDetailsResultOutput), nil
+			}
+			return output, nil
 		}).(GetFoundationCentralClusterDetailsResultOutput)
 }
 

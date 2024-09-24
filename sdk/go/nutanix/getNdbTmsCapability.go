@@ -51,14 +51,20 @@ type GetNdbTmsCapabilityResult struct {
 
 func GetNdbTmsCapabilityOutput(ctx *pulumi.Context, args GetNdbTmsCapabilityOutputArgs, opts ...pulumi.InvokeOption) GetNdbTmsCapabilityResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNdbTmsCapabilityResult, error) {
+		ApplyT(func(v interface{}) (GetNdbTmsCapabilityResultOutput, error) {
 			args := v.(GetNdbTmsCapabilityArgs)
-			r, err := GetNdbTmsCapability(ctx, &args, opts...)
-			var s GetNdbTmsCapabilityResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNdbTmsCapabilityResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbTmsCapability:getNdbTmsCapability", args, &rv, "", opts...)
+			if err != nil {
+				return GetNdbTmsCapabilityResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNdbTmsCapabilityResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNdbTmsCapabilityResultOutput), nil
+			}
+			return output, nil
 		}).(GetNdbTmsCapabilityResultOutput)
 }
 

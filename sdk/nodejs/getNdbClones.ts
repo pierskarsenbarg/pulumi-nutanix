@@ -24,7 +24,6 @@ import * as utilities from "./utilities";
  */
 export function getNdbClones(args?: GetNdbClonesArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbClonesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbClones:getNdbClones", {
         "filters": args.filters,
@@ -72,7 +71,11 @@ export interface GetNdbClonesResult {
  * ```
  */
 export function getNdbClonesOutput(args?: GetNdbClonesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbClonesResult> {
-    return pulumi.output(args).apply((a: any) => getNdbClones(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbClones:getNdbClones", {
+        "filters": args.filters,
+    }, opts);
 }
 
 /**

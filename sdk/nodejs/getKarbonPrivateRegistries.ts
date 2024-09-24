@@ -10,7 +10,6 @@ import * as utilities from "./utilities";
  * Describes a List of Karbon private registry entry
  */
 export function getKarbonPrivateRegistries(opts?: pulumi.InvokeOptions): Promise<GetKarbonPrivateRegistriesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getKarbonPrivateRegistries:getKarbonPrivateRegistries", {
     }, opts);
@@ -30,5 +29,7 @@ export interface GetKarbonPrivateRegistriesResult {
  * Describes a List of Karbon private registry entry
  */
 export function getKarbonPrivateRegistriesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetKarbonPrivateRegistriesResult> {
-    return pulumi.output(getKarbonPrivateRegistries(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getKarbonPrivateRegistries:getKarbonPrivateRegistries", {
+    }, opts);
 }

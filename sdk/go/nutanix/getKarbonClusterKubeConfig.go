@@ -76,14 +76,20 @@ type GetKarbonClusterKubeConfigResult struct {
 
 func GetKarbonClusterKubeConfigOutput(ctx *pulumi.Context, args GetKarbonClusterKubeConfigOutputArgs, opts ...pulumi.InvokeOption) GetKarbonClusterKubeConfigResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetKarbonClusterKubeConfigResult, error) {
+		ApplyT(func(v interface{}) (GetKarbonClusterKubeConfigResultOutput, error) {
 			args := v.(GetKarbonClusterKubeConfigArgs)
-			r, err := GetKarbonClusterKubeConfig(ctx, &args, opts...)
-			var s GetKarbonClusterKubeConfigResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetKarbonClusterKubeConfigResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig", args, &rv, "", opts...)
+			if err != nil {
+				return GetKarbonClusterKubeConfigResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetKarbonClusterKubeConfigResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetKarbonClusterKubeConfigResultOutput), nil
+			}
+			return output, nil
 		}).(GetKarbonClusterKubeConfigResultOutput)
 }
 

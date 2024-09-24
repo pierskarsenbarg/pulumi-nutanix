@@ -19,7 +19,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getFoundationCentralImagedNodeDetails(args: GetFoundationCentralImagedNodeDetailsArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralImagedNodeDetailsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails", {
         "imagedNodeUuid": args.imagedNodeUuid,
@@ -206,7 +205,12 @@ export interface GetFoundationCentralImagedNodeDetailsResult {
  * ```
  */
 export function getFoundationCentralImagedNodeDetailsOutput(args: GetFoundationCentralImagedNodeDetailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralImagedNodeDetailsResult> {
-    return pulumi.output(args).apply((a: any) => getFoundationCentralImagedNodeDetails(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails", {
+        "imagedNodeUuid": args.imagedNodeUuid,
+        "ipv6Interface": args.ipv6Interface,
+        "objectVersion": args.objectVersion,
+    }, opts);
 }
 
 /**

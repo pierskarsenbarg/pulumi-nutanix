@@ -11,7 +11,6 @@ import * as utilities from "./utilities";
  */
 export function getStaticRoutes(args?: GetStaticRoutesArgs, opts?: pulumi.InvokeOptions): Promise<GetStaticRoutesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getStaticRoutes:getStaticRoutes", {
         "vpcName": args.vpcName,
@@ -61,7 +60,12 @@ export interface GetStaticRoutesResult {
  * Provides a datasource to retrieve static routes within VPCs given vpc_uuid.
  */
 export function getStaticRoutesOutput(args?: GetStaticRoutesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStaticRoutesResult> {
-    return pulumi.output(args).apply((a: any) => getStaticRoutes(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getStaticRoutes:getStaticRoutes", {
+        "vpcName": args.vpcName,
+        "vpcReferenceUuid": args.vpcReferenceUuid,
+    }, opts);
 }
 
 /**

@@ -113,14 +113,20 @@ type LookupNdbClusterResult struct {
 
 func LookupNdbClusterOutput(ctx *pulumi.Context, args LookupNdbClusterOutputArgs, opts ...pulumi.InvokeOption) LookupNdbClusterResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupNdbClusterResult, error) {
+		ApplyT(func(v interface{}) (LookupNdbClusterResultOutput, error) {
 			args := v.(LookupNdbClusterArgs)
-			r, err := LookupNdbCluster(ctx, &args, opts...)
-			var s LookupNdbClusterResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupNdbClusterResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbCluster:getNdbCluster", args, &rv, "", opts...)
+			if err != nil {
+				return LookupNdbClusterResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupNdbClusterResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupNdbClusterResultOutput), nil
+			}
+			return output, nil
 		}).(LookupNdbClusterResultOutput)
 }
 

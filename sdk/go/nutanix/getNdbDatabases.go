@@ -93,14 +93,20 @@ type GetNdbDatabasesResult struct {
 
 func GetNdbDatabasesOutput(ctx *pulumi.Context, args GetNdbDatabasesOutputArgs, opts ...pulumi.InvokeOption) GetNdbDatabasesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNdbDatabasesResult, error) {
+		ApplyT(func(v interface{}) (GetNdbDatabasesResultOutput, error) {
 			args := v.(GetNdbDatabasesArgs)
-			r, err := GetNdbDatabases(ctx, &args, opts...)
-			var s GetNdbDatabasesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNdbDatabasesResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbDatabases:getNdbDatabases", args, &rv, "", opts...)
+			if err != nil {
+				return GetNdbDatabasesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNdbDatabasesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNdbDatabasesResultOutput), nil
+			}
+			return output, nil
 		}).(GetNdbDatabasesResultOutput)
 }
 

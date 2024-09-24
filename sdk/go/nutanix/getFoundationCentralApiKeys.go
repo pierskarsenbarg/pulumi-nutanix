@@ -72,14 +72,20 @@ type LookupFoundationCentralApiKeysResult struct {
 
 func LookupFoundationCentralApiKeysOutput(ctx *pulumi.Context, args LookupFoundationCentralApiKeysOutputArgs, opts ...pulumi.InvokeOption) LookupFoundationCentralApiKeysResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupFoundationCentralApiKeysResult, error) {
+		ApplyT(func(v interface{}) (LookupFoundationCentralApiKeysResultOutput, error) {
 			args := v.(LookupFoundationCentralApiKeysArgs)
-			r, err := LookupFoundationCentralApiKeys(ctx, &args, opts...)
-			var s LookupFoundationCentralApiKeysResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupFoundationCentralApiKeysResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys", args, &rv, "", opts...)
+			if err != nil {
+				return LookupFoundationCentralApiKeysResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupFoundationCentralApiKeysResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupFoundationCentralApiKeysResultOutput), nil
+			}
+			return output, nil
 		}).(LookupFoundationCentralApiKeysResultOutput)
 }
 

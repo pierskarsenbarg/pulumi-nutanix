@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  */
 export function getPbrs(args?: GetPbrsArgs, opts?: pulumi.InvokeOptions): Promise<GetPbrsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getPbrs:getPbrs", {
         "metadatas": args.metadatas,
@@ -71,7 +70,11 @@ export interface GetPbrsResult {
  * ```
  */
 export function getPbrsOutput(args?: GetPbrsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPbrsResult> {
-    return pulumi.output(args).apply((a: any) => getPbrs(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getPbrs:getPbrs", {
+        "metadatas": args.metadatas,
+    }, opts);
 }
 
 /**

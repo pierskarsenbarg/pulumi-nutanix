@@ -25,7 +25,6 @@ import * as utilities from "./utilities";
  */
 export function getSubnets(args?: GetSubnetsArgs, opts?: pulumi.InvokeOptions): Promise<GetSubnetsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getSubnets:getSubnets", {
         "metadatas": args.metadatas,
@@ -81,7 +80,11 @@ export interface GetSubnetsResult {
  * ```
  */
 export function getSubnetsOutput(args?: GetSubnetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubnetsResult> {
-    return pulumi.output(args).apply((a: any) => getSubnets(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getSubnets:getSubnets", {
+        "metadatas": args.metadatas,
+    }, opts);
 }
 
 /**

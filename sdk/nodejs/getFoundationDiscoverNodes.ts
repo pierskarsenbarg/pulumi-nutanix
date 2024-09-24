@@ -19,7 +19,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getFoundationDiscoverNodes(opts?: pulumi.InvokeOptions): Promise<GetFoundationDiscoverNodesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationDiscoverNodes:getFoundationDiscoverNodes", {
     }, opts);
@@ -51,5 +50,7 @@ export interface GetFoundationDiscoverNodesResult {
  * ```
  */
 export function getFoundationDiscoverNodesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationDiscoverNodesResult> {
-    return pulumi.output(getFoundationDiscoverNodes(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getFoundationDiscoverNodes:getFoundationDiscoverNodes", {
+    }, opts);
 }

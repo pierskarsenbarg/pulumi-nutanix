@@ -55,13 +55,19 @@ type GetNdbMaintenanceWindowsResult struct {
 }
 
 func GetNdbMaintenanceWindowsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetNdbMaintenanceWindowsResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetNdbMaintenanceWindowsResult, error) {
-		r, err := GetNdbMaintenanceWindows(ctx, opts...)
-		var s GetNdbMaintenanceWindowsResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetNdbMaintenanceWindowsResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetNdbMaintenanceWindowsResult
+		secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbMaintenanceWindows:getNdbMaintenanceWindows", nil, &rv, "", opts...)
+		if err != nil {
+			return GetNdbMaintenanceWindowsResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetNdbMaintenanceWindowsResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetNdbMaintenanceWindowsResultOutput), nil
+		}
+		return output, nil
 	}).(GetNdbMaintenanceWindowsResultOutput)
 }
 

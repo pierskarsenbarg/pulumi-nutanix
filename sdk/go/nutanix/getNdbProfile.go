@@ -105,14 +105,20 @@ type LookupNdbProfileResult struct {
 
 func LookupNdbProfileOutput(ctx *pulumi.Context, args LookupNdbProfileOutputArgs, opts ...pulumi.InvokeOption) LookupNdbProfileResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupNdbProfileResult, error) {
+		ApplyT(func(v interface{}) (LookupNdbProfileResultOutput, error) {
 			args := v.(LookupNdbProfileArgs)
-			r, err := LookupNdbProfile(ctx, &args, opts...)
-			var s LookupNdbProfileResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupNdbProfileResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbProfile:getNdbProfile", args, &rv, "", opts...)
+			if err != nil {
+				return LookupNdbProfileResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupNdbProfileResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupNdbProfileResultOutput), nil
+			}
+			return output, nil
 		}).(LookupNdbProfileResultOutput)
 }
 

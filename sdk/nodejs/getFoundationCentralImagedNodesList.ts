@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  */
 export function getFoundationCentralImagedNodesList(args?: GetFoundationCentralImagedNodesListArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralImagedNodesListResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationCentralImagedNodesList:getFoundationCentralImagedNodesList", {
         "filters": args.filters,
@@ -80,7 +79,13 @@ export interface GetFoundationCentralImagedNodesListResult {
  * ```
  */
 export function getFoundationCentralImagedNodesListOutput(args?: GetFoundationCentralImagedNodesListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralImagedNodesListResult> {
-    return pulumi.output(args).apply((a: any) => getFoundationCentralImagedNodesList(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getFoundationCentralImagedNodesList:getFoundationCentralImagedNodesList", {
+        "filters": args.filters,
+        "length": args.length,
+        "offset": args.offset,
+    }, opts);
 }
 
 /**

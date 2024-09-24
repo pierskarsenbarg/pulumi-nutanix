@@ -11,7 +11,6 @@ import * as utilities from "./utilities";
  */
 export function getUser(args?: GetUserArgs, opts?: pulumi.InvokeOptions): Promise<GetUserResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getUser:getUser", {
         "categories": args.categories,
@@ -105,7 +104,15 @@ export interface GetUserResult {
  * Provides a datasource to retrieve a user based on the input parameters.
  */
 export function getUserOutput(args?: GetUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserResult> {
-    return pulumi.output(args).apply((a: any) => getUser(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getUser:getUser", {
+        "categories": args.categories,
+        "ownerReference": args.ownerReference,
+        "projectReference": args.projectReference,
+        "userId": args.userId,
+        "userName": args.userName,
+    }, opts);
 }
 
 /**

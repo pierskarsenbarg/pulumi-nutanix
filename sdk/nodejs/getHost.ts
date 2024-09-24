@@ -10,7 +10,6 @@ import * as utilities from "./utilities";
  * Describes a Host
  */
 export function getHost(args: GetHostArgs, opts?: pulumi.InvokeOptions): Promise<GetHostResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getHost:getHost", {
         "categories": args.categories,
@@ -147,7 +146,11 @@ export interface GetHostResult {
  * Describes a Host
  */
 export function getHostOutput(args: GetHostOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHostResult> {
-    return pulumi.output(args).apply((a: any) => getHost(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getHost:getHost", {
+        "categories": args.categories,
+        "hostId": args.hostId,
+    }, opts);
 }
 
 /**

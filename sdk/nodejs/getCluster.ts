@@ -11,7 +11,6 @@ import * as utilities from "./utilities";
  */
 export function getCluster(args?: GetClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getCluster:getCluster", {
         "categories": args.categories,
@@ -239,7 +238,13 @@ export interface GetClusterResult {
  * Describes Clusters
  */
 export function getClusterOutput(args?: GetClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterResult> {
-    return pulumi.output(args).apply((a: any) => getCluster(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getCluster:getCluster", {
+        "categories": args.categories,
+        "clusterId": args.clusterId,
+        "name": args.name,
+    }, opts);
 }
 
 /**

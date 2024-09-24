@@ -64,14 +64,20 @@ type LookupAccessControlPolicyResult struct {
 
 func LookupAccessControlPolicyOutput(ctx *pulumi.Context, args LookupAccessControlPolicyOutputArgs, opts ...pulumi.InvokeOption) LookupAccessControlPolicyResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupAccessControlPolicyResult, error) {
+		ApplyT(func(v interface{}) (LookupAccessControlPolicyResultOutput, error) {
 			args := v.(LookupAccessControlPolicyArgs)
-			r, err := LookupAccessControlPolicy(ctx, &args, opts...)
-			var s LookupAccessControlPolicyResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupAccessControlPolicyResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getAccessControlPolicy:getAccessControlPolicy", args, &rv, "", opts...)
+			if err != nil {
+				return LookupAccessControlPolicyResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupAccessControlPolicyResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupAccessControlPolicyResultOutput), nil
+			}
+			return output, nil
 		}).(LookupAccessControlPolicyResultOutput)
 }
 

@@ -11,7 +11,6 @@ import * as utilities from "./utilities";
  */
 export function getSubnet(args?: GetSubnetArgs, opts?: pulumi.InvokeOptions): Promise<GetSubnetResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getSubnet:getSubnet", {
         "additionalFilters": args.additionalFilters,
@@ -150,7 +149,14 @@ export interface GetSubnetResult {
  * Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
  */
 export function getSubnetOutput(args?: GetSubnetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubnetResult> {
-    return pulumi.output(args).apply((a: any) => getSubnet(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getSubnet:getSubnet", {
+        "additionalFilters": args.additionalFilters,
+        "categories": args.categories,
+        "subnetId": args.subnetId,
+        "subnetName": args.subnetName,
+    }, opts);
 }
 
 /**

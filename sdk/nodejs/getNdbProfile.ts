@@ -24,7 +24,6 @@ import * as utilities from "./utilities";
  */
 export function getNdbProfile(args?: GetNdbProfileArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbProfileResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbProfile:getNdbProfile", {
         "engine": args.engine,
@@ -147,7 +146,14 @@ export interface GetNdbProfileResult {
  * ```
  */
 export function getNdbProfileOutput(args?: GetNdbProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbProfileResult> {
-    return pulumi.output(args).apply((a: any) => getNdbProfile(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbProfile:getNdbProfile", {
+        "engine": args.engine,
+        "profileId": args.profileId,
+        "profileName": args.profileName,
+        "profileType": args.profileType,
+    }, opts);
 }
 
 /**

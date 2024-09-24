@@ -11,7 +11,6 @@ import * as utilities from "./utilities";
  */
 export function getRole(args?: GetRoleArgs, opts?: pulumi.InvokeOptions): Promise<GetRoleResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getRole:getRole", {
         "categories": args.categories,
@@ -89,7 +88,13 @@ export interface GetRoleResult {
  * Describes a Role.
  */
 export function getRoleOutput(args?: GetRoleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRoleResult> {
-    return pulumi.output(args).apply((a: any) => getRole(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getRole:getRole", {
+        "categories": args.categories,
+        "roleId": args.roleId,
+        "roleName": args.roleName,
+    }, opts);
 }
 
 /**

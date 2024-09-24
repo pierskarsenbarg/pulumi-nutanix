@@ -19,7 +19,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getNdbDbservers(opts?: pulumi.InvokeOptions): Promise<GetNdbDbserversResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbDbservers:getNdbDbservers", {
     }, opts);
@@ -48,5 +47,7 @@ export interface GetNdbDbserversResult {
  * ```
  */
 export function getNdbDbserversOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbDbserversResult> {
-    return pulumi.output(getNdbDbservers(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbDbservers:getNdbDbservers", {
+    }, opts);
 }

@@ -113,14 +113,20 @@ type LookupNdbDatabaseResult struct {
 
 func LookupNdbDatabaseOutput(ctx *pulumi.Context, args LookupNdbDatabaseOutputArgs, opts ...pulumi.InvokeOption) LookupNdbDatabaseResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupNdbDatabaseResult, error) {
+		ApplyT(func(v interface{}) (LookupNdbDatabaseResultOutput, error) {
 			args := v.(LookupNdbDatabaseArgs)
-			r, err := LookupNdbDatabase(ctx, &args, opts...)
-			var s LookupNdbDatabaseResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupNdbDatabaseResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbDatabase:getNdbDatabase", args, &rv, "", opts...)
+			if err != nil {
+				return LookupNdbDatabaseResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupNdbDatabaseResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupNdbDatabaseResultOutput), nil
+			}
+			return output, nil
 		}).(LookupNdbDatabaseResultOutput)
 }
 

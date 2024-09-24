@@ -51,7 +51,6 @@ import * as utilities from "./utilities";
  */
 export function getNdbDatabases(args?: GetNdbDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbDatabasesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbDatabases:getNdbDatabases", {
         "databaseType": args.databaseType,
@@ -123,7 +122,11 @@ export interface GetNdbDatabasesResult {
  * See detailed information in [List Database Instances](https://www.nutanix.dev/api_references/ndb/#/1e508756bcdcc-get-all-the-databases).
  */
 export function getNdbDatabasesOutput(args?: GetNdbDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbDatabasesResult> {
-    return pulumi.output(args).apply((a: any) => getNdbDatabases(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbDatabases:getNdbDatabases", {
+        "databaseType": args.databaseType,
+    }, opts);
 }
 
 /**

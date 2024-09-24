@@ -87,13 +87,19 @@ type GetNdbClustersResult struct {
 }
 
 func GetNdbClustersOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetNdbClustersResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetNdbClustersResult, error) {
-		r, err := GetNdbClusters(ctx, opts...)
-		var s GetNdbClustersResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetNdbClustersResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetNdbClustersResult
+		secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbClusters:getNdbClusters", nil, &rv, "", opts...)
+		if err != nil {
+			return GetNdbClustersResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetNdbClustersResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetNdbClustersResultOutput), nil
+		}
+		return output, nil
 	}).(GetNdbClustersResultOutput)
 }
 

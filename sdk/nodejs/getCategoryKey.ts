@@ -8,7 +8,6 @@ import * as utilities from "./utilities";
  * Describe a Nutanix Category Key and its values (if it has them).
  */
 export function getCategoryKey(args: GetCategoryKeyArgs, opts?: pulumi.InvokeOptions): Promise<GetCategoryKeyResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getCategoryKey:getCategoryKey", {
         "name": args.name,
@@ -55,7 +54,10 @@ export interface GetCategoryKeyResult {
  * Describe a Nutanix Category Key and its values (if it has them).
  */
 export function getCategoryKeyOutput(args: GetCategoryKeyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCategoryKeyResult> {
-    return pulumi.output(args).apply((a: any) => getCategoryKey(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getCategoryKey:getCategoryKey", {
+        "name": args.name,
+    }, opts);
 }
 
 /**

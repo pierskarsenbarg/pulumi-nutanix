@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  */
 export function getPermissions(args?: GetPermissionsArgs, opts?: pulumi.InvokeOptions): Promise<GetPermissionsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getPermissions:getPermissions", {
         "metadatas": args.metadatas,
@@ -71,7 +70,11 @@ export interface GetPermissionsResult {
  * ```
  */
 export function getPermissionsOutput(args?: GetPermissionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPermissionsResult> {
-    return pulumi.output(args).apply((a: any) => getPermissions(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getPermissions:getPermissions", {
+        "metadatas": args.metadatas,
+    }, opts);
 }
 
 /**

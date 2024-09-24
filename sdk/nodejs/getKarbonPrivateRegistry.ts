@@ -9,7 +9,6 @@ import * as utilities from "./utilities";
  */
 export function getKarbonPrivateRegistry(args?: GetKarbonPrivateRegistryArgs, opts?: pulumi.InvokeOptions): Promise<GetKarbonPrivateRegistryResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry", {
         "privateRegistryId": args.privateRegistryId,
@@ -58,7 +57,12 @@ export interface GetKarbonPrivateRegistryResult {
  * Describes Karbon private registry entry
  */
 export function getKarbonPrivateRegistryOutput(args?: GetKarbonPrivateRegistryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKarbonPrivateRegistryResult> {
-    return pulumi.output(args).apply((a: any) => getKarbonPrivateRegistry(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry", {
+        "privateRegistryId": args.privateRegistryId,
+        "privateRegistryName": args.privateRegistryName,
+    }, opts);
 }
 
 /**

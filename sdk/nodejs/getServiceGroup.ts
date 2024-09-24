@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getServiceGroup(args: GetServiceGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceGroupResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getServiceGroup:getServiceGroup", {
         "uuid": args.uuid,
@@ -36,7 +35,10 @@ export interface GetServiceGroupResult {
     readonly uuid: string;
 }
 export function getServiceGroupOutput(args: GetServiceGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceGroupResult> {
-    return pulumi.output(args).apply((a: any) => getServiceGroup(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getServiceGroup:getServiceGroup", {
+        "uuid": args.uuid,
+    }, opts);
 }
 
 /**

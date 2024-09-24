@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  */
 export function getAddressGroups(args?: GetAddressGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetAddressGroupsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getAddressGroups:getAddressGroups", {
         "metadatas": args.metadatas,
@@ -67,7 +66,11 @@ export interface GetAddressGroupsResult {
  * ```
  */
 export function getAddressGroupsOutput(args?: GetAddressGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressGroupsResult> {
-    return pulumi.output(args).apply((a: any) => getAddressGroups(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getAddressGroups:getAddressGroups", {
+        "metadatas": args.metadatas,
+    }, opts);
 }
 
 /**

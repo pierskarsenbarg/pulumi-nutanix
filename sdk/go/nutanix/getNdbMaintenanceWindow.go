@@ -89,14 +89,20 @@ type LookupNdbMaintenanceWindowResult struct {
 
 func LookupNdbMaintenanceWindowOutput(ctx *pulumi.Context, args LookupNdbMaintenanceWindowOutputArgs, opts ...pulumi.InvokeOption) LookupNdbMaintenanceWindowResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupNdbMaintenanceWindowResult, error) {
+		ApplyT(func(v interface{}) (LookupNdbMaintenanceWindowResultOutput, error) {
 			args := v.(LookupNdbMaintenanceWindowArgs)
-			r, err := LookupNdbMaintenanceWindow(ctx, &args, opts...)
-			var s LookupNdbMaintenanceWindowResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupNdbMaintenanceWindowResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbMaintenanceWindow:getNdbMaintenanceWindow", args, &rv, "", opts...)
+			if err != nil {
+				return LookupNdbMaintenanceWindowResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupNdbMaintenanceWindowResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupNdbMaintenanceWindowResultOutput), nil
+			}
+			return output, nil
 		}).(LookupNdbMaintenanceWindowResultOutput)
 }
 

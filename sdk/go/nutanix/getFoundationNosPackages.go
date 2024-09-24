@@ -61,13 +61,19 @@ type GetFoundationNosPackagesResult struct {
 }
 
 func GetFoundationNosPackagesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetFoundationNosPackagesResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetFoundationNosPackagesResult, error) {
-		r, err := GetFoundationNosPackages(ctx, opts...)
-		var s GetFoundationNosPackagesResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetFoundationNosPackagesResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetFoundationNosPackagesResult
+		secret, err := ctx.InvokePackageRaw("nutanix:index/getFoundationNosPackages:getFoundationNosPackages", nil, &rv, "", opts...)
+		if err != nil {
+			return GetFoundationNosPackagesResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetFoundationNosPackagesResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetFoundationNosPackagesResultOutput), nil
+		}
+		return output, nil
 	}).(GetFoundationNosPackagesResultOutput)
 }
 

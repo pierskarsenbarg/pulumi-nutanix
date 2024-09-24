@@ -21,7 +21,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getNdbMaintenanceWindow(args: GetNdbMaintenanceWindowArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbMaintenanceWindowResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbMaintenanceWindow:getNdbMaintenanceWindow", {
         "id": args.id,
@@ -116,7 +115,11 @@ export interface GetNdbMaintenanceWindowResult {
  * ```
  */
 export function getNdbMaintenanceWindowOutput(args: GetNdbMaintenanceWindowOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbMaintenanceWindowResult> {
-    return pulumi.output(args).apply((a: any) => getNdbMaintenanceWindow(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbMaintenanceWindow:getNdbMaintenanceWindow", {
+        "id": args.id,
+        "tags": args.tags,
+    }, opts);
 }
 
 /**

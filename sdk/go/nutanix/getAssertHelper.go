@@ -35,14 +35,20 @@ type GetAssertHelperResult struct {
 
 func GetAssertHelperOutput(ctx *pulumi.Context, args GetAssertHelperOutputArgs, opts ...pulumi.InvokeOption) GetAssertHelperResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAssertHelperResult, error) {
+		ApplyT(func(v interface{}) (GetAssertHelperResultOutput, error) {
 			args := v.(GetAssertHelperArgs)
-			r, err := GetAssertHelper(ctx, &args, opts...)
-			var s GetAssertHelperResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAssertHelperResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getAssertHelper:getAssertHelper", args, &rv, "", opts...)
+			if err != nil {
+				return GetAssertHelperResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAssertHelperResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAssertHelperResultOutput), nil
+			}
+			return output, nil
 		}).(GetAssertHelperResultOutput)
 }
 
