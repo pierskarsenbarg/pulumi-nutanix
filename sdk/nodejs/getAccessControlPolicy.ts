@@ -11,7 +11,6 @@ import * as utilities from "./utilities";
  */
 export function getAccessControlPolicy(args?: GetAccessControlPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessControlPolicyResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getAccessControlPolicy:getAccessControlPolicy", {
         "accessControlPolicyId": args.accessControlPolicyId,
@@ -95,7 +94,13 @@ export interface GetAccessControlPolicyResult {
  * Describes an Access Control Policy.
  */
 export function getAccessControlPolicyOutput(args?: GetAccessControlPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessControlPolicyResult> {
-    return pulumi.output(args).apply((a: any) => getAccessControlPolicy(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getAccessControlPolicy:getAccessControlPolicy", {
+        "accessControlPolicyId": args.accessControlPolicyId,
+        "accessControlPolicyName": args.accessControlPolicyName,
+        "categories": args.categories,
+    }, opts);
 }
 
 /**

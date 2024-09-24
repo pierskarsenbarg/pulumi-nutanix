@@ -99,14 +99,20 @@ type LookupNdbSlaResult struct {
 
 func LookupNdbSlaOutput(ctx *pulumi.Context, args LookupNdbSlaOutputArgs, opts ...pulumi.InvokeOption) LookupNdbSlaResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupNdbSlaResult, error) {
+		ApplyT(func(v interface{}) (LookupNdbSlaResultOutput, error) {
 			args := v.(LookupNdbSlaArgs)
-			r, err := LookupNdbSla(ctx, &args, opts...)
-			var s LookupNdbSlaResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupNdbSlaResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbSla:getNdbSla", args, &rv, "", opts...)
+			if err != nil {
+				return LookupNdbSlaResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupNdbSlaResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupNdbSlaResultOutput), nil
+			}
+			return output, nil
 		}).(LookupNdbSlaResultOutput)
 }
 

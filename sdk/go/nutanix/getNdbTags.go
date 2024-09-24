@@ -64,14 +64,20 @@ type GetNdbTagsResult struct {
 
 func GetNdbTagsOutput(ctx *pulumi.Context, args GetNdbTagsOutputArgs, opts ...pulumi.InvokeOption) GetNdbTagsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNdbTagsResult, error) {
+		ApplyT(func(v interface{}) (GetNdbTagsResultOutput, error) {
 			args := v.(GetNdbTagsArgs)
-			r, err := GetNdbTags(ctx, &args, opts...)
-			var s GetNdbTagsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNdbTagsResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbTags:getNdbTags", args, &rv, "", opts...)
+			if err != nil {
+				return GetNdbTagsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNdbTagsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNdbTagsResultOutput), nil
+			}
+			return output, nil
 		}).(GetNdbTagsResultOutput)
 }
 

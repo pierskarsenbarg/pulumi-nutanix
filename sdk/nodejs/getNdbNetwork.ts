@@ -22,7 +22,6 @@ import * as utilities from "./utilities";
  */
 export function getNdbNetwork(args?: GetNdbNetworkArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbNetworkResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbNetwork:getNdbNetwork", {
         "id": args.id,
@@ -104,7 +103,12 @@ export interface GetNdbNetworkResult {
  * ```
  */
 export function getNdbNetworkOutput(args?: GetNdbNetworkOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbNetworkResult> {
-    return pulumi.output(args).apply((a: any) => getNdbNetwork(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbNetwork:getNdbNetwork", {
+        "id": args.id,
+        "name": args.name,
+    }, opts);
 }
 
 /**

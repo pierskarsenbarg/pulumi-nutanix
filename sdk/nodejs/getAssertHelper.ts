@@ -8,7 +8,6 @@ import * as utilities from "./utilities";
 
 export function getAssertHelper(args?: GetAssertHelperArgs, opts?: pulumi.InvokeOptions): Promise<GetAssertHelperResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getAssertHelper:getAssertHelper", {
         "checks": args.checks,
@@ -33,7 +32,11 @@ export interface GetAssertHelperResult {
     readonly id: string;
 }
 export function getAssertHelperOutput(args?: GetAssertHelperOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAssertHelperResult> {
-    return pulumi.output(args).apply((a: any) => getAssertHelper(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getAssertHelper:getAssertHelper", {
+        "checks": args.checks,
+    }, opts);
 }
 
 /**

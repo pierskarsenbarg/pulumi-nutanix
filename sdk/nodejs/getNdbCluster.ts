@@ -23,7 +23,6 @@ import * as utilities from "./utilities";
  */
 export function getNdbCluster(args?: GetNdbClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbClusterResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbCluster:getNdbCluster", {
         "clusterId": args.clusterId,
@@ -164,7 +163,12 @@ export interface GetNdbClusterResult {
  * ```
  */
 export function getNdbClusterOutput(args?: GetNdbClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbClusterResult> {
-    return pulumi.output(args).apply((a: any) => getNdbCluster(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbCluster:getNdbCluster", {
+        "clusterId": args.clusterId,
+        "clusterName": args.clusterName,
+    }, opts);
 }
 
 /**

@@ -51,7 +51,6 @@ import * as utilities from "./utilities";
  * See detailed information in [NDB Clusters](https://www.nutanix.dev/api_references/ndb/#/b00cac8329db1-get-a-list-of-all-clusters).
  */
 export function getNdbClusters(opts?: pulumi.InvokeOptions): Promise<GetNdbClustersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbClusters:getNdbClusters", {
     }, opts);
@@ -115,5 +114,7 @@ export interface GetNdbClustersResult {
  * See detailed information in [NDB Clusters](https://www.nutanix.dev/api_references/ndb/#/b00cac8329db1-get-a-list-of-all-clusters).
  */
 export function getNdbClustersOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbClustersResult> {
-    return pulumi.output(getNdbClusters(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbClusters:getNdbClusters", {
+    }, opts);
 }

@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  */
 export function getFoundationCentralImagedClustersList(args?: GetFoundationCentralImagedClustersListArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralImagedClustersListResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationCentralImagedClustersList:getFoundationCentralImagedClustersList", {
         "filters": args.filters,
@@ -77,7 +76,13 @@ export interface GetFoundationCentralImagedClustersListResult {
  * ```
  */
 export function getFoundationCentralImagedClustersListOutput(args?: GetFoundationCentralImagedClustersListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralImagedClustersListResult> {
-    return pulumi.output(args).apply((a: any) => getFoundationCentralImagedClustersList(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getFoundationCentralImagedClustersList:getFoundationCentralImagedClustersList", {
+        "filters": args.filters,
+        "length": args.length,
+        "offset": args.offset,
+    }, opts);
 }
 
 /**

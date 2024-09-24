@@ -42,7 +42,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getNetworkSecurityRule(args: GetNetworkSecurityRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkSecurityRuleResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule", {
         "categories": args.categories,
@@ -246,7 +245,11 @@ export interface GetNetworkSecurityRuleResult {
  * ```
  */
 export function getNetworkSecurityRuleOutput(args: GetNetworkSecurityRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSecurityRuleResult> {
-    return pulumi.output(args).apply((a: any) => getNetworkSecurityRule(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule", {
+        "categories": args.categories,
+        "networkSecurityRuleId": args.networkSecurityRuleId,
+    }, opts);
 }
 
 /**

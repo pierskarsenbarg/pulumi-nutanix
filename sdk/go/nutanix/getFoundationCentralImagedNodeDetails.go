@@ -134,14 +134,20 @@ type GetFoundationCentralImagedNodeDetailsResult struct {
 
 func GetFoundationCentralImagedNodeDetailsOutput(ctx *pulumi.Context, args GetFoundationCentralImagedNodeDetailsOutputArgs, opts ...pulumi.InvokeOption) GetFoundationCentralImagedNodeDetailsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetFoundationCentralImagedNodeDetailsResult, error) {
+		ApplyT(func(v interface{}) (GetFoundationCentralImagedNodeDetailsResultOutput, error) {
 			args := v.(GetFoundationCentralImagedNodeDetailsArgs)
-			r, err := GetFoundationCentralImagedNodeDetails(ctx, &args, opts...)
-			var s GetFoundationCentralImagedNodeDetailsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetFoundationCentralImagedNodeDetailsResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails", args, &rv, "", opts...)
+			if err != nil {
+				return GetFoundationCentralImagedNodeDetailsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetFoundationCentralImagedNodeDetailsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetFoundationCentralImagedNodeDetailsResultOutput), nil
+			}
+			return output, nil
 		}).(GetFoundationCentralImagedNodeDetailsResultOutput)
 }
 

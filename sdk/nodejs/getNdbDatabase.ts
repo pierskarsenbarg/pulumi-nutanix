@@ -22,7 +22,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getNdbDatabase(args: GetNdbDatabaseArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbDatabaseResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbDatabase:getNdbDatabase", {
         "databaseId": args.databaseId,
@@ -161,7 +160,11 @@ export interface GetNdbDatabaseResult {
  * ```
  */
 export function getNdbDatabaseOutput(args: GetNdbDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbDatabaseResult> {
-    return pulumi.output(args).apply((a: any) => getNdbDatabase(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbDatabase:getNdbDatabase", {
+        "databaseId": args.databaseId,
+        "tags": args.tags,
+    }, opts);
 }
 
 /**

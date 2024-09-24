@@ -21,7 +21,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getFoundationCentralClusterDetails(args: GetFoundationCentralClusterDetailsArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralClusterDetailsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", {
         "clusterExternalIp": args.clusterExternalIp,
@@ -161,7 +160,17 @@ export interface GetFoundationCentralClusterDetailsResult {
  * ```
  */
 export function getFoundationCentralClusterDetailsOutput(args: GetFoundationCentralClusterDetailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralClusterDetailsResult> {
-    return pulumi.output(args).apply((a: any) => getFoundationCentralClusterDetails(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", {
+        "clusterExternalIp": args.clusterExternalIp,
+        "clusterName": args.clusterName,
+        "clusterSize": args.clusterSize,
+        "clusterStatus": args.clusterStatus,
+        "commonNetworkSettings": args.commonNetworkSettings,
+        "imagedClusterUuid": args.imagedClusterUuid,
+        "redundancyFactor": args.redundancyFactor,
+        "storageNodeCount": args.storageNodeCount,
+    }, opts);
 }
 
 /**

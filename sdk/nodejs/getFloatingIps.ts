@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  */
 export function getFloatingIps(args?: GetFloatingIpsArgs, opts?: pulumi.InvokeOptions): Promise<GetFloatingIpsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFloatingIps:getFloatingIps", {
         "metadatas": args.metadatas,
@@ -71,7 +70,11 @@ export interface GetFloatingIpsResult {
  * ```
  */
 export function getFloatingIpsOutput(args?: GetFloatingIpsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFloatingIpsResult> {
-    return pulumi.output(args).apply((a: any) => getFloatingIps(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getFloatingIps:getFloatingIps", {
+        "metadatas": args.metadatas,
+    }, opts);
 }
 
 /**

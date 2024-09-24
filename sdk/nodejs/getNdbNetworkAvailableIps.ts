@@ -21,7 +21,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getNdbNetworkAvailableIps(args: GetNdbNetworkAvailableIpsArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbNetworkAvailableIpsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbNetworkAvailableIps:getNdbNetworkAvailableIps", {
         "profileId": args.profileId,
@@ -70,7 +69,10 @@ export interface GetNdbNetworkAvailableIpsResult {
  * ```
  */
 export function getNdbNetworkAvailableIpsOutput(args: GetNdbNetworkAvailableIpsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbNetworkAvailableIpsResult> {
-    return pulumi.output(args).apply((a: any) => getNdbNetworkAvailableIps(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbNetworkAvailableIps:getNdbNetworkAvailableIps", {
+        "profileId": args.profileId,
+    }, opts);
 }
 
 /**

@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getNdbSlas(opts?: pulumi.InvokeOptions): Promise<GetNdbSlasResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbSlas:getNdbSlas", {
     }, opts);
@@ -53,5 +52,7 @@ export interface GetNdbSlasResult {
  * ```
  */
 export function getNdbSlasOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbSlasResult> {
-    return pulumi.output(getNdbSlas(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbSlas:getNdbSlas", {
+    }, opts);
 }

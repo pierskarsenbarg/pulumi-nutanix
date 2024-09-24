@@ -44,14 +44,20 @@ type GetAccessControlPoliciesResult struct {
 
 func GetAccessControlPoliciesOutput(ctx *pulumi.Context, args GetAccessControlPoliciesOutputArgs, opts ...pulumi.InvokeOption) GetAccessControlPoliciesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetAccessControlPoliciesResult, error) {
+		ApplyT(func(v interface{}) (GetAccessControlPoliciesResultOutput, error) {
 			args := v.(GetAccessControlPoliciesArgs)
-			r, err := GetAccessControlPolicies(ctx, &args, opts...)
-			var s GetAccessControlPoliciesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetAccessControlPoliciesResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getAccessControlPolicies:getAccessControlPolicies", args, &rv, "", opts...)
+			if err != nil {
+				return GetAccessControlPoliciesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetAccessControlPoliciesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetAccessControlPoliciesResultOutput), nil
+			}
+			return output, nil
 		}).(GetAccessControlPoliciesResultOutput)
 }
 

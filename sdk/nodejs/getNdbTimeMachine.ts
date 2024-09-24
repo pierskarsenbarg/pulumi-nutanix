@@ -11,7 +11,6 @@ import * as utilities from "./utilities";
  */
 export function getNdbTimeMachine(args?: GetNdbTimeMachineArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbTimeMachineResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbTimeMachine:getNdbTimeMachine", {
         "tags": args.tags,
@@ -155,7 +154,13 @@ export interface GetNdbTimeMachineResult {
  * Describes a time machine present in Nutanix Database Service
  */
 export function getNdbTimeMachineOutput(args?: GetNdbTimeMachineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbTimeMachineResult> {
-    return pulumi.output(args).apply((a: any) => getNdbTimeMachine(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbTimeMachine:getNdbTimeMachine", {
+        "tags": args.tags,
+        "timeMachineId": args.timeMachineId,
+        "timeMachineName": args.timeMachineName,
+    }, opts);
 }
 
 /**

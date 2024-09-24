@@ -36,7 +36,6 @@ import * as utilities from "./utilities";
  * See detailed information in [Nutanix Clusters](https://www.nutanix.dev/api_references/prism-central-v3/#/d93c30e04327e-get-a-list-of-existing-clusters).
  */
 export function getClusters(opts?: pulumi.InvokeOptions): Promise<GetClustersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getClusters:getClusters", {
     }, opts);
@@ -89,5 +88,7 @@ export interface GetClustersResult {
  * See detailed information in [Nutanix Clusters](https://www.nutanix.dev/api_references/prism-central-v3/#/d93c30e04327e-get-a-list-of-existing-clusters).
  */
 export function getClustersOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetClustersResult> {
-    return pulumi.output(getClusters(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getClusters:getClusters", {
+    }, opts);
 }

@@ -23,7 +23,6 @@ import * as utilities from "./utilities";
  */
 export function getKarbonClusterSsh(args?: GetKarbonClusterSshArgs, opts?: pulumi.InvokeOptions): Promise<GetKarbonClusterSshResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", {
         "karbonClusterId": args.karbonClusterId,
@@ -90,7 +89,12 @@ export interface GetKarbonClusterSshResult {
  * ```
  */
 export function getKarbonClusterSshOutput(args?: GetKarbonClusterSshOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKarbonClusterSshResult> {
-    return pulumi.output(args).apply((a: any) => getKarbonClusterSsh(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", {
+        "karbonClusterId": args.karbonClusterId,
+        "karbonClusterName": args.karbonClusterName,
+    }, opts);
 }
 
 /**

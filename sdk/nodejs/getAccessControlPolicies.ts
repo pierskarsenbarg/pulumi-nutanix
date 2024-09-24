@@ -13,7 +13,6 @@ import * as utilities from "./utilities";
  */
 export function getAccessControlPolicies(args?: GetAccessControlPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessControlPoliciesResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getAccessControlPolicies:getAccessControlPolicies", {
         "metadatas": args.metadatas,
@@ -57,7 +56,11 @@ export interface GetAccessControlPoliciesResult {
  * ## Example Usage
  */
 export function getAccessControlPoliciesOutput(args?: GetAccessControlPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessControlPoliciesResult> {
-    return pulumi.output(args).apply((a: any) => getAccessControlPolicies(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getAccessControlPolicies:getAccessControlPolicies", {
+        "metadatas": args.metadatas,
+    }, opts);
 }
 
 /**

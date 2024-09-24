@@ -19,7 +19,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getNdbMaintenanceWindows(opts?: pulumi.InvokeOptions): Promise<GetNdbMaintenanceWindowsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbMaintenanceWindows:getNdbMaintenanceWindows", {
     }, opts);
@@ -51,5 +50,7 @@ export interface GetNdbMaintenanceWindowsResult {
  * ```
  */
 export function getNdbMaintenanceWindowsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbMaintenanceWindowsResult> {
-    return pulumi.output(getNdbMaintenanceWindows(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbMaintenanceWindows:getNdbMaintenanceWindows", {
+    }, opts);
 }

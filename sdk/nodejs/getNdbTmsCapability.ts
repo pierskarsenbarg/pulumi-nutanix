@@ -7,7 +7,6 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 export function getNdbTmsCapability(args: GetNdbTmsCapabilityArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbTmsCapabilityResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbTmsCapability:getNdbTmsCapability", {
         "timeMachineId": args.timeMachineId,
@@ -48,7 +47,10 @@ export interface GetNdbTmsCapabilityResult {
     readonly type: string;
 }
 export function getNdbTmsCapabilityOutput(args: GetNdbTmsCapabilityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbTmsCapabilityResult> {
-    return pulumi.output(args).apply((a: any) => getNdbTmsCapability(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbTmsCapability:getNdbTmsCapability", {
+        "timeMachineId": args.timeMachineId,
+    }, opts);
 }
 
 /**

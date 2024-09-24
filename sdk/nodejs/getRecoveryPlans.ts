@@ -19,7 +19,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getRecoveryPlans(opts?: pulumi.InvokeOptions): Promise<GetRecoveryPlansResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getRecoveryPlans:getRecoveryPlans", {
     }, opts);
@@ -55,5 +54,7 @@ export interface GetRecoveryPlansResult {
  * ```
  */
 export function getRecoveryPlansOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetRecoveryPlansResult> {
-    return pulumi.output(getRecoveryPlans(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getRecoveryPlans:getRecoveryPlans", {
+    }, opts);
 }

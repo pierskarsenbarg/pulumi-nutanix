@@ -74,13 +74,19 @@ type GetClustersResult struct {
 }
 
 func GetClustersOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetClustersResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetClustersResult, error) {
-		r, err := GetClusters(ctx, opts...)
-		var s GetClustersResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetClustersResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetClustersResult
+		secret, err := ctx.InvokePackageRaw("nutanix:index/getClusters:getClusters", nil, &rv, "", opts...)
+		if err != nil {
+			return GetClustersResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetClustersResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetClustersResultOutput), nil
+		}
+		return output, nil
 	}).(GetClustersResultOutput)
 }
 

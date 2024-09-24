@@ -54,13 +54,19 @@ type GetKarbonClustersResult struct {
 }
 
 func GetKarbonClustersOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetKarbonClustersResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetKarbonClustersResult, error) {
-		r, err := GetKarbonClusters(ctx, opts...)
-		var s GetKarbonClustersResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetKarbonClustersResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetKarbonClustersResult
+		secret, err := ctx.InvokePackageRaw("nutanix:index/getKarbonClusters:getKarbonClusters", nil, &rv, "", opts...)
+		if err != nil {
+			return GetKarbonClustersResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetKarbonClustersResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetKarbonClustersResultOutput), nil
+		}
+		return output, nil
 	}).(GetKarbonClustersResultOutput)
 }
 

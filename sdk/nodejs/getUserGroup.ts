@@ -28,7 +28,6 @@ import * as utilities from "./utilities";
  */
 export function getUserGroup(args?: GetUserGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetUserGroupResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getUserGroup:getUserGroup", {
         "categories": args.categories,
@@ -147,7 +146,16 @@ export interface GetUserGroupResult {
  * ```
  */
 export function getUserGroupOutput(args?: GetUserGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserGroupResult> {
-    return pulumi.output(args).apply((a: any) => getUserGroup(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getUserGroup:getUserGroup", {
+        "categories": args.categories,
+        "ownerReference": args.ownerReference,
+        "projectReference": args.projectReference,
+        "userGroupDistinguishedName": args.userGroupDistinguishedName,
+        "userGroupId": args.userGroupId,
+        "userGroupName": args.userGroupName,
+    }, opts);
 }
 
 /**

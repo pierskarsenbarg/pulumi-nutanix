@@ -10,7 +10,6 @@ import * as utilities from "./utilities";
  * Describes a list of hosts
  */
 export function getHosts(opts?: pulumi.InvokeOptions): Promise<GetHostsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getHosts:getHosts", {
     }, opts);
@@ -37,5 +36,7 @@ export interface GetHostsResult {
  * Describes a list of hosts
  */
 export function getHostsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetHostsResult> {
-    return pulumi.output(getHosts(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getHosts:getHosts", {
+    }, opts);
 }

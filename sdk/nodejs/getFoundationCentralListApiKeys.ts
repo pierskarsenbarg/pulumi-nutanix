@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  */
 export function getFoundationCentralListApiKeys(args?: GetFoundationCentralListApiKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralListApiKeysResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationCentralListApiKeys:getFoundationCentralListApiKeys", {
         "length": args.length,
@@ -82,7 +81,13 @@ export interface GetFoundationCentralListApiKeysResult {
  * ```
  */
 export function getFoundationCentralListApiKeysOutput(args?: GetFoundationCentralListApiKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralListApiKeysResult> {
-    return pulumi.output(args).apply((a: any) => getFoundationCentralListApiKeys(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getFoundationCentralListApiKeys:getFoundationCentralListApiKeys", {
+        "length": args.length,
+        "metadata": args.metadata,
+        "offset": args.offset,
+    }, opts);
 }
 
 /**

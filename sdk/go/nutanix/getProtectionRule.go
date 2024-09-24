@@ -116,14 +116,20 @@ type LookupProtectionRuleResult struct {
 
 func LookupProtectionRuleOutput(ctx *pulumi.Context, args LookupProtectionRuleOutputArgs, opts ...pulumi.InvokeOption) LookupProtectionRuleResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupProtectionRuleResult, error) {
+		ApplyT(func(v interface{}) (LookupProtectionRuleResultOutput, error) {
 			args := v.(LookupProtectionRuleArgs)
-			r, err := LookupProtectionRule(ctx, &args, opts...)
-			var s LookupProtectionRuleResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupProtectionRuleResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getProtectionRule:getProtectionRule", args, &rv, "", opts...)
+			if err != nil {
+				return LookupProtectionRuleResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupProtectionRuleResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupProtectionRuleResultOutput), nil
+			}
+			return output, nil
 		}).(LookupProtectionRuleResultOutput)
 }
 

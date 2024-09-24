@@ -19,7 +19,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getProtectionRules(opts?: pulumi.InvokeOptions): Promise<GetProtectionRulesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getProtectionRules:getProtectionRules", {
     }, opts);
@@ -55,5 +54,7 @@ export interface GetProtectionRulesResult {
  * ```
  */
 export function getProtectionRulesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionRulesResult> {
-    return pulumi.output(getProtectionRules(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getProtectionRules:getProtectionRules", {
+    }, opts);
 }

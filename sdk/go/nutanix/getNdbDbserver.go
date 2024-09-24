@@ -134,14 +134,20 @@ type GetNdbDbserverResult struct {
 
 func GetNdbDbserverOutput(ctx *pulumi.Context, args GetNdbDbserverOutputArgs, opts ...pulumi.InvokeOption) GetNdbDbserverResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetNdbDbserverResult, error) {
+		ApplyT(func(v interface{}) (GetNdbDbserverResultOutput, error) {
 			args := v.(GetNdbDbserverArgs)
-			r, err := GetNdbDbserver(ctx, &args, opts...)
-			var s GetNdbDbserverResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetNdbDbserverResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbDbserver:getNdbDbserver", args, &rv, "", opts...)
+			if err != nil {
+				return GetNdbDbserverResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetNdbDbserverResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetNdbDbserverResultOutput), nil
+			}
+			return output, nil
 		}).(GetNdbDbserverResultOutput)
 }
 

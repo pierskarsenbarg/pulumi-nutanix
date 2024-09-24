@@ -10,7 +10,6 @@ import * as utilities from "./utilities";
  * Describes a Virtual Machine
  */
 export function getVirtualMachine(args: GetVirtualMachineArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualMachineResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getVirtualMachine:getVirtualMachine", {
         "bootDeviceDiskAddress": args.bootDeviceDiskAddress,
@@ -225,7 +224,13 @@ export interface GetVirtualMachineResult {
  * Describes a Virtual Machine
  */
 export function getVirtualMachineOutput(args: GetVirtualMachineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualMachineResult> {
-    return pulumi.output(args).apply((a: any) => getVirtualMachine(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getVirtualMachine:getVirtualMachine", {
+        "bootDeviceDiskAddress": args.bootDeviceDiskAddress,
+        "bootDeviceMacAddress": args.bootDeviceMacAddress,
+        "categories": args.categories,
+        "vmId": args.vmId,
+    }, opts);
 }
 
 /**

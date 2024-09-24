@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  */
 export function getVpcs(args?: GetVpcsArgs, opts?: pulumi.InvokeOptions): Promise<GetVpcsResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getVpcs:getVpcs", {
         "metadatas": args.metadatas,
@@ -71,7 +70,11 @@ export interface GetVpcsResult {
  * ```
  */
 export function getVpcsOutput(args?: GetVpcsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVpcsResult> {
-    return pulumi.output(args).apply((a: any) => getVpcs(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getVpcs:getVpcs", {
+        "metadatas": args.metadatas,
+    }, opts);
 }
 
 /**

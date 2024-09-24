@@ -19,7 +19,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getFoundationCentralApiKeys(args: GetFoundationCentralApiKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationCentralApiKeysResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys", {
         "keyUuid": args.keyUuid,
@@ -80,7 +79,10 @@ export interface GetFoundationCentralApiKeysResult {
  * ```
  */
 export function getFoundationCentralApiKeysOutput(args: GetFoundationCentralApiKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralApiKeysResult> {
-    return pulumi.output(args).apply((a: any) => getFoundationCentralApiKeys(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys", {
+        "keyUuid": args.keyUuid,
+    }, opts);
 }
 
 /**

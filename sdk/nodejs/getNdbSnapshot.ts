@@ -24,7 +24,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getNdbSnapshot(args: GetNdbSnapshotArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbSnapshotResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbSnapshot:getNdbSnapshot", {
         "filters": args.filters,
@@ -217,7 +216,12 @@ export interface GetNdbSnapshotResult {
  * ```
  */
 export function getNdbSnapshotOutput(args: GetNdbSnapshotOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbSnapshotResult> {
-    return pulumi.output(args).apply((a: any) => getNdbSnapshot(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbSnapshot:getNdbSnapshot", {
+        "filters": args.filters,
+        "snapshotId": args.snapshotId,
+        "tags": args.tags,
+    }, opts);
 }
 
 /**

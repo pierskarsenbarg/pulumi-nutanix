@@ -25,7 +25,6 @@ import * as utilities from "./utilities";
  */
 export function getPermission(args?: GetPermissionArgs, opts?: pulumi.InvokeOptions): Promise<GetPermissionResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getPermission:getPermission", {
         "categories": args.categories,
@@ -122,7 +121,13 @@ export interface GetPermissionResult {
  * ```
  */
 export function getPermissionOutput(args?: GetPermissionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPermissionResult> {
-    return pulumi.output(args).apply((a: any) => getPermission(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getPermission:getPermission", {
+        "categories": args.categories,
+        "permissionId": args.permissionId,
+        "permissionName": args.permissionName,
+    }, opts);
 }
 
 /**

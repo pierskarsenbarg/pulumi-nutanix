@@ -23,7 +23,6 @@ import * as utilities from "./utilities";
  * See detailed information in [Nutanix Foundation Nos Packages](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzODg-get-list-of-aos-packages-available-in-foundation).
  */
 export function getFoundationNosPackages(opts?: pulumi.InvokeOptions): Promise<GetFoundationNosPackagesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationNosPackages:getFoundationNosPackages", {
     }, opts);
@@ -61,5 +60,7 @@ export interface GetFoundationNosPackagesResult {
  * See detailed information in [Nutanix Foundation Nos Packages](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzODg-get-list-of-aos-packages-available-in-foundation).
  */
 export function getFoundationNosPackagesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationNosPackagesResult> {
-    return pulumi.output(getFoundationNosPackages(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getFoundationNosPackages:getFoundationNosPackages", {
+    }, opts);
 }

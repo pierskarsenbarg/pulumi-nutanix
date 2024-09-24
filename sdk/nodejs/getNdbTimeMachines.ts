@@ -19,7 +19,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getNdbTimeMachines(opts?: pulumi.InvokeOptions): Promise<GetNdbTimeMachinesResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbTimeMachines:getNdbTimeMachines", {
     }, opts);
@@ -48,5 +47,7 @@ export interface GetNdbTimeMachinesResult {
  * ```
  */
 export function getNdbTimeMachinesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbTimeMachinesResult> {
-    return pulumi.output(getNdbTimeMachines(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbTimeMachines:getNdbTimeMachines", {
+    }, opts);
 }

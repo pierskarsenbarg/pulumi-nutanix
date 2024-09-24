@@ -33,13 +33,19 @@ type GetHostsResult struct {
 }
 
 func GetHostsOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetHostsResultOutput {
-	return pulumi.ToOutput(0).ApplyT(func(int) (GetHostsResult, error) {
-		r, err := GetHosts(ctx, opts...)
-		var s GetHostsResult
-		if r != nil {
-			s = *r
+	return pulumi.ToOutput(0).ApplyT(func(int) (GetHostsResultOutput, error) {
+		opts = internal.PkgInvokeDefaultOpts(opts)
+		var rv GetHostsResult
+		secret, err := ctx.InvokePackageRaw("nutanix:index/getHosts:getHosts", nil, &rv, "", opts...)
+		if err != nil {
+			return GetHostsResultOutput{}, err
 		}
-		return s, err
+
+		output := pulumi.ToOutput(rv).(GetHostsResultOutput)
+		if secret {
+			return pulumi.ToSecret(output).(GetHostsResultOutput), nil
+		}
+		return output, nil
 	}).(GetHostsResultOutput)
 }
 

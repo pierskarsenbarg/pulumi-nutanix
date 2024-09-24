@@ -22,7 +22,6 @@ import * as utilities from "./utilities";
  */
 export function getNdbDbserver(args?: GetNdbDbserverArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbDbserverResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbDbserver:getNdbDbserver", {
         "dbserverClusterId": args.dbserverClusterId,
@@ -204,7 +203,18 @@ export interface GetNdbDbserverResult {
  * ```
  */
 export function getNdbDbserverOutput(args?: GetNdbDbserverOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbDbserverResult> {
-    return pulumi.output(args).apply((a: any) => getNdbDbserver(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbDbserver:getNdbDbserver", {
+        "dbserverClusterId": args.dbserverClusterId,
+        "id": args.id,
+        "ip": args.ip,
+        "name": args.name,
+        "nxClusterId": args.nxClusterId,
+        "tags": args.tags,
+        "vmClusterId": args.vmClusterId,
+        "vmClusterName": args.vmClusterName,
+    }, opts);
 }
 
 /**

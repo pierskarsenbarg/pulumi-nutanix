@@ -47,14 +47,20 @@ type LookupStaticRoutesResult struct {
 
 func LookupStaticRoutesOutput(ctx *pulumi.Context, args LookupStaticRoutesOutputArgs, opts ...pulumi.InvokeOption) LookupStaticRoutesResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupStaticRoutesResult, error) {
+		ApplyT(func(v interface{}) (LookupStaticRoutesResultOutput, error) {
 			args := v.(LookupStaticRoutesArgs)
-			r, err := LookupStaticRoutes(ctx, &args, opts...)
-			var s LookupStaticRoutesResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupStaticRoutesResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getStaticRoutes:getStaticRoutes", args, &rv, "", opts...)
+			if err != nil {
+				return LookupStaticRoutesResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupStaticRoutesResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupStaticRoutesResultOutput), nil
+			}
+			return output, nil
 		}).(LookupStaticRoutesResultOutput)
 }
 

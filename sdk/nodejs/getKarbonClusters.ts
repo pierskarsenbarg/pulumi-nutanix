@@ -19,7 +19,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getKarbonClusters(opts?: pulumi.InvokeOptions): Promise<GetKarbonClustersResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getKarbonClusters:getKarbonClusters", {
     }, opts);
@@ -48,5 +47,7 @@ export interface GetKarbonClustersResult {
  * ```
  */
 export function getKarbonClustersOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetKarbonClustersResult> {
-    return pulumi.output(getKarbonClusters(opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getKarbonClusters:getKarbonClusters", {
+    }, opts);
 }

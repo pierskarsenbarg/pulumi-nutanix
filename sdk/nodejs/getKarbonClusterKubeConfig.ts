@@ -23,7 +23,6 @@ import * as utilities from "./utilities";
  */
 export function getKarbonClusterKubeConfig(args?: GetKarbonClusterKubeConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetKarbonClusterKubeConfigResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig", {
         "karbonClusterId": args.karbonClusterId,
@@ -78,7 +77,12 @@ export interface GetKarbonClusterKubeConfigResult {
  * ```
  */
 export function getKarbonClusterKubeConfigOutput(args?: GetKarbonClusterKubeConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKarbonClusterKubeConfigResult> {
-    return pulumi.output(args).apply((a: any) => getKarbonClusterKubeConfig(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig", {
+        "karbonClusterId": args.karbonClusterId,
+        "karbonClusterName": args.karbonClusterName,
+    }, opts);
 }
 
 /**

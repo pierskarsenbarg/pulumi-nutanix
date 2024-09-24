@@ -25,7 +25,6 @@ import * as utilities from "./utilities";
  * ```
  */
 export function getFoundationNodeNetworkDetails(args: GetFoundationNodeNetworkDetailsArgs, opts?: pulumi.InvokeOptions): Promise<GetFoundationNodeNetworkDetailsResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", {
         "ipv6Addresses": args.ipv6Addresses,
@@ -81,7 +80,11 @@ export interface GetFoundationNodeNetworkDetailsResult {
  * ```
  */
 export function getFoundationNodeNetworkDetailsOutput(args: GetFoundationNodeNetworkDetailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationNodeNetworkDetailsResult> {
-    return pulumi.output(args).apply((a: any) => getFoundationNodeNetworkDetails(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", {
+        "ipv6Addresses": args.ipv6Addresses,
+        "timeout": args.timeout,
+    }, opts);
 }
 
 /**

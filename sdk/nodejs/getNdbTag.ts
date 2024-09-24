@@ -20,7 +20,6 @@ import * as utilities from "./utilities";
  */
 export function getNdbTag(args?: GetNdbTagArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbTagResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbTag:getNdbTag", {
         "id": args.id,
@@ -99,7 +98,12 @@ export interface GetNdbTagResult {
  * ```
  */
 export function getNdbTagOutput(args?: GetNdbTagOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbTagResult> {
-    return pulumi.output(args).apply((a: any) => getNdbTag(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbTag:getNdbTag", {
+        "id": args.id,
+        "name": args.name,
+    }, opts);
 }
 
 /**

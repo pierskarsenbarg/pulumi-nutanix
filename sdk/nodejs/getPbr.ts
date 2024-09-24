@@ -10,7 +10,6 @@ import * as utilities from "./utilities";
  * Provides a datasource to retrieve PBR with pbrUuid .
  */
 export function getPbr(args: GetPbrArgs, opts?: pulumi.InvokeOptions): Promise<GetPbrResult> {
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getPbr:getPbr", {
         "pbrUuid": args.pbrUuid,
@@ -57,7 +56,10 @@ export interface GetPbrResult {
  * Provides a datasource to retrieve PBR with pbrUuid .
  */
 export function getPbrOutput(args: GetPbrOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPbrResult> {
-    return pulumi.output(args).apply((a: any) => getPbr(a, opts))
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getPbr:getPbr", {
+        "pbrUuid": args.pbrUuid,
+    }, opts);
 }
 
 /**

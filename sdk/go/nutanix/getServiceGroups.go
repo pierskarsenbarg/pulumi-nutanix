@@ -36,14 +36,20 @@ type GetServiceGroupsResult struct {
 
 func GetServiceGroupsOutput(ctx *pulumi.Context, args GetServiceGroupsOutputArgs, opts ...pulumi.InvokeOption) GetServiceGroupsResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetServiceGroupsResult, error) {
+		ApplyT(func(v interface{}) (GetServiceGroupsResultOutput, error) {
 			args := v.(GetServiceGroupsArgs)
-			r, err := GetServiceGroups(ctx, &args, opts...)
-			var s GetServiceGroupsResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv GetServiceGroupsResult
+			secret, err := ctx.InvokePackageRaw("nutanix:index/getServiceGroups:getServiceGroups", args, &rv, "", opts...)
+			if err != nil {
+				return GetServiceGroupsResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(GetServiceGroupsResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(GetServiceGroupsResultOutput), nil
+			}
+			return output, nil
 		}).(GetServiceGroupsResultOutput)
 }
 

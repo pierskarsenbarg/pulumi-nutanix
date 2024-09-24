@@ -21,7 +21,6 @@ import * as utilities from "./utilities";
  */
 export function getNdbSla(args?: GetNdbSlaArgs, opts?: pulumi.InvokeOptions): Promise<GetNdbSlaResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("nutanix:index/getNdbSla:getNdbSla", {
         "slaId": args.slaId,
@@ -134,7 +133,12 @@ export interface GetNdbSlaResult {
  * ```
  */
 export function getNdbSlaOutput(args?: GetNdbSlaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbSlaResult> {
-    return pulumi.output(args).apply((a: any) => getNdbSla(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("nutanix:index/getNdbSla:getNdbSla", {
+        "slaId": args.slaId,
+        "slaName": args.slaName,
+    }, opts);
 }
 
 /**
