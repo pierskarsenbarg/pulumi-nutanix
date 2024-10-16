@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -120,9 +125,6 @@ def get_ndb_databases(database_type: Optional[str] = None,
         database_instances=pulumi.get(__ret__, 'database_instances'),
         database_type=pulumi.get(__ret__, 'database_type'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_ndb_databases)
 def get_ndb_databases_output(database_type: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbDatabasesResult]:
     """
@@ -168,4 +170,11 @@ def get_ndb_databases_output(database_type: Optional[pulumi.Input[Optional[str]]
 
     See detailed information in [List Database Instances](https://www.nutanix.dev/api_references/ndb/#/1e508756bcdcc-get-all-the-databases).
     """
-    ...
+    __args__ = dict()
+    __args__['databaseType'] = database_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbDatabases:getNdbDatabases', __args__, opts=opts, typ=GetNdbDatabasesResult)
+    return __ret__.apply(lambda __response__: GetNdbDatabasesResult(
+        database_instances=pulumi.get(__response__, 'database_instances'),
+        database_type=pulumi.get(__response__, 'database_type'),
+        id=pulumi.get(__response__, 'id')))

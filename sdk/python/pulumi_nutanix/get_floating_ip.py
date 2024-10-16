@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -122,9 +127,6 @@ def get_floating_ip(floating_ip_uuid: Optional[str] = None,
         metadata=pulumi.get(__ret__, 'metadata'),
         specs=pulumi.get(__ret__, 'specs'),
         statuses=pulumi.get(__ret__, 'statuses'))
-
-
-@_utilities.lift_output_func(get_floating_ip)
 def get_floating_ip_output(floating_ip_uuid: Optional[pulumi.Input[str]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFloatingIpResult]:
     """
@@ -133,4 +135,14 @@ def get_floating_ip_output(floating_ip_uuid: Optional[pulumi.Input[str]] = None,
 
     :param str floating_ip_uuid: Floating IP UUID
     """
-    ...
+    __args__ = dict()
+    __args__['floatingIpUuid'] = floating_ip_uuid
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getFloatingIp:getFloatingIp', __args__, opts=opts, typ=GetFloatingIpResult)
+    return __ret__.apply(lambda __response__: GetFloatingIpResult(
+        api_version=pulumi.get(__response__, 'api_version'),
+        floating_ip_uuid=pulumi.get(__response__, 'floating_ip_uuid'),
+        id=pulumi.get(__response__, 'id'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        specs=pulumi.get(__response__, 'specs'),
+        statuses=pulumi.get(__response__, 'statuses')))

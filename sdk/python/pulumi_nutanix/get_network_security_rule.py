@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -598,9 +603,6 @@ def get_network_security_rule(categories: Optional[Sequence[Union['GetNetworkSec
         quarantine_rule_target_group_filter_params=pulumi.get(__ret__, 'quarantine_rule_target_group_filter_params'),
         quarantine_rule_target_group_filter_type=pulumi.get(__ret__, 'quarantine_rule_target_group_filter_type'),
         quarantine_rule_target_group_peer_specification_type=pulumi.get(__ret__, 'quarantine_rule_target_group_peer_specification_type'))
-
-
-@_utilities.lift_output_func(get_network_security_rule)
 def get_network_security_rule_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict']]]]] = None,
                                      network_security_rule_id: Optional[pulumi.Input[str]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkSecurityRuleResult]:
@@ -639,4 +641,51 @@ def get_network_security_rule_output(categories: Optional[pulumi.Input[Optional[
     :param Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict']] categories: Categories for the network_security_rule.
     :param str network_security_rule_id: Represents network security rule UUID
     """
-    ...
+    __args__ = dict()
+    __args__['categories'] = categories
+    __args__['networkSecurityRuleId'] = network_security_rule_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule', __args__, opts=opts, typ=GetNetworkSecurityRuleResult)
+    return __ret__.apply(lambda __response__: GetNetworkSecurityRuleResult(
+        ad_rule_action=pulumi.get(__response__, 'ad_rule_action'),
+        ad_rule_inbound_allow_lists=pulumi.get(__response__, 'ad_rule_inbound_allow_lists'),
+        ad_rule_outbound_allow_lists=pulumi.get(__response__, 'ad_rule_outbound_allow_lists'),
+        ad_rule_target_group_default_internal_policy=pulumi.get(__response__, 'ad_rule_target_group_default_internal_policy'),
+        ad_rule_target_group_filter_kind_lists=pulumi.get(__response__, 'ad_rule_target_group_filter_kind_lists'),
+        ad_rule_target_group_filter_params=pulumi.get(__response__, 'ad_rule_target_group_filter_params'),
+        ad_rule_target_group_filter_type=pulumi.get(__response__, 'ad_rule_target_group_filter_type'),
+        ad_rule_target_group_peer_specification_type=pulumi.get(__response__, 'ad_rule_target_group_peer_specification_type'),
+        allow_ipv6_traffic=pulumi.get(__response__, 'allow_ipv6_traffic'),
+        api_version=pulumi.get(__response__, 'api_version'),
+        app_rule_action=pulumi.get(__response__, 'app_rule_action'),
+        app_rule_inbound_allow_lists=pulumi.get(__response__, 'app_rule_inbound_allow_lists'),
+        app_rule_outbound_allow_lists=pulumi.get(__response__, 'app_rule_outbound_allow_lists'),
+        app_rule_target_group_default_internal_policy=pulumi.get(__response__, 'app_rule_target_group_default_internal_policy'),
+        app_rule_target_group_filter_kind_lists=pulumi.get(__response__, 'app_rule_target_group_filter_kind_lists'),
+        app_rule_target_group_filter_params=pulumi.get(__response__, 'app_rule_target_group_filter_params'),
+        app_rule_target_group_filter_type=pulumi.get(__response__, 'app_rule_target_group_filter_type'),
+        app_rule_target_group_peer_specification_type=pulumi.get(__response__, 'app_rule_target_group_peer_specification_type'),
+        categories=pulumi.get(__response__, 'categories'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        is_policy_hitlog_enabled=pulumi.get(__response__, 'is_policy_hitlog_enabled'),
+        isolation_rule_action=pulumi.get(__response__, 'isolation_rule_action'),
+        isolation_rule_first_entity_filter_kind_lists=pulumi.get(__response__, 'isolation_rule_first_entity_filter_kind_lists'),
+        isolation_rule_first_entity_filter_params=pulumi.get(__response__, 'isolation_rule_first_entity_filter_params'),
+        isolation_rule_first_entity_filter_type=pulumi.get(__response__, 'isolation_rule_first_entity_filter_type'),
+        isolation_rule_second_entity_filter_kind_lists=pulumi.get(__response__, 'isolation_rule_second_entity_filter_kind_lists'),
+        isolation_rule_second_entity_filter_params=pulumi.get(__response__, 'isolation_rule_second_entity_filter_params'),
+        isolation_rule_second_entity_filter_type=pulumi.get(__response__, 'isolation_rule_second_entity_filter_type'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        name=pulumi.get(__response__, 'name'),
+        network_security_rule_id=pulumi.get(__response__, 'network_security_rule_id'),
+        owner_reference=pulumi.get(__response__, 'owner_reference'),
+        project_reference=pulumi.get(__response__, 'project_reference'),
+        quarantine_rule_action=pulumi.get(__response__, 'quarantine_rule_action'),
+        quarantine_rule_inbound_allow_lists=pulumi.get(__response__, 'quarantine_rule_inbound_allow_lists'),
+        quarantine_rule_outbound_allow_lists=pulumi.get(__response__, 'quarantine_rule_outbound_allow_lists'),
+        quarantine_rule_target_group_default_internal_policy=pulumi.get(__response__, 'quarantine_rule_target_group_default_internal_policy'),
+        quarantine_rule_target_group_filter_kind_lists=pulumi.get(__response__, 'quarantine_rule_target_group_filter_kind_lists'),
+        quarantine_rule_target_group_filter_params=pulumi.get(__response__, 'quarantine_rule_target_group_filter_params'),
+        quarantine_rule_target_group_filter_type=pulumi.get(__response__, 'quarantine_rule_target_group_filter_type'),
+        quarantine_rule_target_group_peer_specification_type=pulumi.get(__response__, 'quarantine_rule_target_group_peer_specification_type')))

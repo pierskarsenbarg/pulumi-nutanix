@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			dbs, err := nutanix.GetNdbDatabases(ctx, nil, nil)
+//			dbs, err := nutanix.GetNdbDatabases(ctx, &nutanix.GetNdbDatabasesArgs{}, nil)
 //			if err != nil {
 //				return err
 //			}

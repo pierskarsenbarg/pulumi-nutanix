@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -299,9 +304,6 @@ def get_foundation_central_cluster_details(cluster_external_ip: Optional[str] = 
         redundancy_factor=pulumi.get(__ret__, 'redundancy_factor'),
         storage_node_count=pulumi.get(__ret__, 'storage_node_count'),
         workflow_type=pulumi.get(__ret__, 'workflow_type'))
-
-
-@_utilities.lift_output_func(get_foundation_central_cluster_details)
 def get_foundation_central_cluster_details_output(cluster_external_ip: Optional[pulumi.Input[Optional[str]]] = None,
                                                   cluster_name: Optional[pulumi.Input[Optional[str]]] = None,
                                                   cluster_size: Optional[pulumi.Input[Optional[int]]] = None,
@@ -333,4 +335,32 @@ def get_foundation_central_cluster_details_output(cluster_external_ip: Optional[
     :param int redundancy_factor: Redundancy factor of the cluster.
     :param int storage_node_count: Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
     """
-    ...
+    __args__ = dict()
+    __args__['clusterExternalIp'] = cluster_external_ip
+    __args__['clusterName'] = cluster_name
+    __args__['clusterSize'] = cluster_size
+    __args__['clusterStatus'] = cluster_status
+    __args__['commonNetworkSettings'] = common_network_settings
+    __args__['imagedClusterUuid'] = imaged_cluster_uuid
+    __args__['redundancyFactor'] = redundancy_factor
+    __args__['storageNodeCount'] = storage_node_count
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails', __args__, opts=opts, typ=GetFoundationCentralClusterDetailsResult)
+    return __ret__.apply(lambda __response__: GetFoundationCentralClusterDetailsResult(
+        archived=pulumi.get(__response__, 'archived'),
+        cluster_external_ip=pulumi.get(__response__, 'cluster_external_ip'),
+        cluster_name=pulumi.get(__response__, 'cluster_name'),
+        cluster_size=pulumi.get(__response__, 'cluster_size'),
+        cluster_status=pulumi.get(__response__, 'cluster_status'),
+        common_network_settings=pulumi.get(__response__, 'common_network_settings'),
+        created_timestamp=pulumi.get(__response__, 'created_timestamp'),
+        current_time=pulumi.get(__response__, 'current_time'),
+        destroyed=pulumi.get(__response__, 'destroyed'),
+        foundation_init_configs=pulumi.get(__response__, 'foundation_init_configs'),
+        foundation_init_node_uuid=pulumi.get(__response__, 'foundation_init_node_uuid'),
+        id=pulumi.get(__response__, 'id'),
+        imaged_cluster_uuid=pulumi.get(__response__, 'imaged_cluster_uuid'),
+        imaged_node_uuid_lists=pulumi.get(__response__, 'imaged_node_uuid_lists'),
+        redundancy_factor=pulumi.get(__response__, 'redundancy_factor'),
+        storage_node_count=pulumi.get(__response__, 'storage_node_count'),
+        workflow_type=pulumi.get(__response__, 'workflow_type')))

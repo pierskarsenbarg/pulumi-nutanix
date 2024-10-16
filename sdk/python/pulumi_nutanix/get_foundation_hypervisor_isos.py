@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -135,9 +140,6 @@ def get_foundation_hypervisor_isos(opts: Optional[pulumi.InvokeOptions] = None) 
         kvms=pulumi.get(__ret__, 'kvms'),
         linuxes=pulumi.get(__ret__, 'linuxes'),
         xens=pulumi.get(__ret__, 'xens'))
-
-
-@_utilities.lift_output_func(get_foundation_hypervisor_isos)
 def get_foundation_hypervisor_isos_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationHypervisorIsosResult]:
     """
     Describes a list of hypervisor isos image file details present in foundation vm
@@ -157,4 +159,13 @@ def get_foundation_hypervisor_isos_output(opts: Optional[pulumi.InvokeOptions] =
 
     See detailed information in [Nutanix Foundation Hypervisor Isos](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjM0MDE-list-hypervisor-images-available-in-foundation).
     """
-    ...
+    __args__ = dict()
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getFoundationHypervisorIsos:getFoundationHypervisorIsos', __args__, opts=opts, typ=GetFoundationHypervisorIsosResult)
+    return __ret__.apply(lambda __response__: GetFoundationHypervisorIsosResult(
+        esxes=pulumi.get(__response__, 'esxes'),
+        hypervs=pulumi.get(__response__, 'hypervs'),
+        id=pulumi.get(__response__, 'id'),
+        kvms=pulumi.get(__response__, 'kvms'),
+        linuxes=pulumi.get(__response__, 'linuxes'),
+        xens=pulumi.get(__response__, 'xens')))

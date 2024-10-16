@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -74,9 +79,6 @@ def get_ndb_dbservers(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableG
     return AwaitableGetNdbDbserversResult(
         dbservers=pulumi.get(__ret__, 'dbservers'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_ndb_dbservers)
 def get_ndb_dbservers_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbDbserversResult]:
     """
     List of all Database Server VM in Nutanix Database Service
@@ -90,4 +92,9 @@ def get_ndb_dbservers_output(opts: Optional[pulumi.InvokeOptions] = None) -> pul
     dbservers = nutanix.get_ndb_dbservers()
     ```
     """
-    ...
+    __args__ = dict()
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbDbservers:getNdbDbservers', __args__, opts=opts, typ=GetNdbDbserversResult)
+    return __ret__.apply(lambda __response__: GetNdbDbserversResult(
+        dbservers=pulumi.get(__response__, 'dbservers'),
+        id=pulumi.get(__response__, 'id')))

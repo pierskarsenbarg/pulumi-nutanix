@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -78,9 +83,6 @@ def get_ndb_slas(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNdb
     return AwaitableGetNdbSlasResult(
         id=pulumi.get(__ret__, 'id'),
         slas=pulumi.get(__ret__, 'slas'))
-
-
-@_utilities.lift_output_func(get_ndb_slas)
 def get_ndb_slas_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbSlasResult]:
     """
     Lists all SLAs in Nutanix Database Service
@@ -95,4 +97,9 @@ def get_ndb_slas_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.O
     pulumi.export("sla", slas)
     ```
     """
-    ...
+    __args__ = dict()
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbSlas:getNdbSlas', __args__, opts=opts, typ=GetNdbSlasResult)
+    return __ret__.apply(lambda __response__: GetNdbSlasResult(
+        id=pulumi.get(__response__, 'id'),
+        slas=pulumi.get(__response__, 'slas')))

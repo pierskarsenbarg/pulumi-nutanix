@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -237,9 +242,6 @@ def get_permission(categories: Optional[Sequence[Union['GetPermissionCategoryArg
         permission_name=pulumi.get(__ret__, 'permission_name'),
         project_reference=pulumi.get(__ret__, 'project_reference'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_permission)
 def get_permission_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict']]]]] = None,
                           permission_id: Optional[pulumi.Input[Optional[str]]] = None,
                           permission_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -262,4 +264,24 @@ def get_permission_output(categories: Optional[pulumi.Input[Optional[Sequence[Un
     :param str permission_id: The `id` of the permission.
     :param str permission_name: The `name` of the permission.
     """
-    ...
+    __args__ = dict()
+    __args__['categories'] = categories
+    __args__['permissionId'] = permission_id
+    __args__['permissionName'] = permission_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getPermission:getPermission', __args__, opts=opts, typ=GetPermissionResult)
+    return __ret__.apply(lambda __response__: GetPermissionResult(
+        api_version=pulumi.get(__response__, 'api_version'),
+        categories=pulumi.get(__response__, 'categories'),
+        description=pulumi.get(__response__, 'description'),
+        fields=pulumi.get(__response__, 'fields'),
+        id=pulumi.get(__response__, 'id'),
+        kind=pulumi.get(__response__, 'kind'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        name=pulumi.get(__response__, 'name'),
+        operation=pulumi.get(__response__, 'operation'),
+        owner_reference=pulumi.get(__response__, 'owner_reference'),
+        permission_id=pulumi.get(__response__, 'permission_id'),
+        permission_name=pulumi.get(__response__, 'permission_name'),
+        project_reference=pulumi.get(__response__, 'project_reference'),
+        state=pulumi.get(__response__, 'state')))

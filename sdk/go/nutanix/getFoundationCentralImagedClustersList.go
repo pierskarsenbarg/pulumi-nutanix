@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.GetFoundationCentralImagedClustersList(ctx, nil, nil)
+//			_, err := nutanix.GetFoundationCentralImagedClustersList(ctx, &nutanix.GetFoundationCentralImagedClustersListArgs{}, nil)
 //			if err != nil {
 //				return err
 //			}

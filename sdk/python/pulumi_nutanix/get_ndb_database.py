@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -400,9 +405,6 @@ def get_ndb_database(database_id: Optional[str] = None,
         time_machines=pulumi.get(__ret__, 'time_machines'),
         time_zone=pulumi.get(__ret__, 'time_zone'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_ndb_database)
 def get_ndb_database_output(database_id: Optional[pulumi.Input[str]] = None,
                             tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbDatabaseTagArgs', 'GetNdbDatabaseTagArgsDict']]]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbDatabaseResult]:
@@ -423,4 +425,36 @@ def get_ndb_database_output(database_id: Optional[pulumi.Input[str]] = None,
     :param str database_id: ID of database instance
     :param Sequence[Union['GetNdbDatabaseTagArgs', 'GetNdbDatabaseTagArgsDict']] tags: - tags attached
     """
-    ...
+    __args__ = dict()
+    __args__['databaseId'] = database_id
+    __args__['tags'] = tags
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbDatabase:getNdbDatabase', __args__, opts=opts, typ=GetNdbDatabaseResult)
+    return __ret__.apply(lambda __response__: GetNdbDatabaseResult(
+        clone=pulumi.get(__response__, 'clone'),
+        clustered=pulumi.get(__response__, 'clustered'),
+        database_cluster_type=pulumi.get(__response__, 'database_cluster_type'),
+        database_id=pulumi.get(__response__, 'database_id'),
+        database_name=pulumi.get(__response__, 'database_name'),
+        database_nodes=pulumi.get(__response__, 'database_nodes'),
+        databases=pulumi.get(__response__, 'databases'),
+        date_created=pulumi.get(__response__, 'date_created'),
+        date_modified=pulumi.get(__response__, 'date_modified'),
+        dbserver_logical_cluster=pulumi.get(__response__, 'dbserver_logical_cluster'),
+        dbserver_logical_cluster_id=pulumi.get(__response__, 'dbserver_logical_cluster_id'),
+        description=pulumi.get(__response__, 'description'),
+        era_created=pulumi.get(__response__, 'era_created'),
+        id=pulumi.get(__response__, 'id'),
+        infos=pulumi.get(__response__, 'infos'),
+        lcm_configs=pulumi.get(__response__, 'lcm_configs'),
+        linked_databases=pulumi.get(__response__, 'linked_databases'),
+        metric=pulumi.get(__response__, 'metric'),
+        name=pulumi.get(__response__, 'name'),
+        parent_database_id=pulumi.get(__response__, 'parent_database_id'),
+        properties=pulumi.get(__response__, 'properties'),
+        status=pulumi.get(__response__, 'status'),
+        tags=pulumi.get(__response__, 'tags'),
+        time_machine_id=pulumi.get(__response__, 'time_machine_id'),
+        time_machines=pulumi.get(__response__, 'time_machines'),
+        time_zone=pulumi.get(__response__, 'time_zone'),
+        type=pulumi.get(__response__, 'type')))

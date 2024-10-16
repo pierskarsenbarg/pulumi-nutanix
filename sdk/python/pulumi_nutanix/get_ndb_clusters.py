@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -109,9 +114,6 @@ def get_ndb_clusters(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGe
     return AwaitableGetNdbClustersResult(
         clusters=pulumi.get(__ret__, 'clusters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_ndb_clusters)
 def get_ndb_clusters_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbClustersResult]:
     """
     List all clusters in Nutanix Database Service
@@ -157,4 +159,9 @@ def get_ndb_clusters_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulu
 
     See detailed information in [NDB Clusters](https://www.nutanix.dev/api_references/ndb/#/b00cac8329db1-get-a-list-of-all-clusters).
     """
-    ...
+    __args__ = dict()
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbClusters:getNdbClusters', __args__, opts=opts, typ=GetNdbClustersResult)
+    return __ret__.apply(lambda __response__: GetNdbClustersResult(
+        clusters=pulumi.get(__response__, 'clusters'),
+        id=pulumi.get(__response__, 'id')))

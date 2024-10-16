@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -392,9 +397,6 @@ def get_ndb_cluster(cluster_id: Optional[str] = None,
         unique_name=pulumi.get(__ret__, 'unique_name'),
         username=pulumi.get(__ret__, 'username'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_ndb_cluster)
 def get_ndb_cluster_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                            cluster_name: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbClusterResult]:
@@ -415,4 +417,35 @@ def get_ndb_cluster_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = N
     :param str cluster_id: ID of cluster
     :param str cluster_name: and `cluster_id` are mutually exclusive.
     """
-    ...
+    __args__ = dict()
+    __args__['clusterId'] = cluster_id
+    __args__['clusterName'] = cluster_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbCluster:getNdbCluster', __args__, opts=opts, typ=GetNdbClusterResult)
+    return __ret__.apply(lambda __response__: GetNdbClusterResult(
+        cloud_info=pulumi.get(__response__, 'cloud_info'),
+        cloud_type=pulumi.get(__response__, 'cloud_type'),
+        cluster_id=pulumi.get(__response__, 'cluster_id'),
+        cluster_name=pulumi.get(__response__, 'cluster_name'),
+        date_created=pulumi.get(__response__, 'date_created'),
+        date_modified=pulumi.get(__response__, 'date_modified'),
+        description=pulumi.get(__response__, 'description'),
+        entity_counts=pulumi.get(__response__, 'entity_counts'),
+        fqdns=pulumi.get(__response__, 'fqdns'),
+        healthy=pulumi.get(__response__, 'healthy'),
+        hypervisor_type=pulumi.get(__response__, 'hypervisor_type'),
+        hypervisor_version=pulumi.get(__response__, 'hypervisor_version'),
+        id=pulumi.get(__response__, 'id'),
+        ip_addresses=pulumi.get(__response__, 'ip_addresses'),
+        management_server_info=pulumi.get(__response__, 'management_server_info'),
+        name=pulumi.get(__response__, 'name'),
+        nx_cluster_uuid=pulumi.get(__response__, 'nx_cluster_uuid'),
+        owner_id=pulumi.get(__response__, 'owner_id'),
+        password=pulumi.get(__response__, 'password'),
+        properties=pulumi.get(__response__, 'properties'),
+        reference_count=pulumi.get(__response__, 'reference_count'),
+        resource_configs=pulumi.get(__response__, 'resource_configs'),
+        status=pulumi.get(__response__, 'status'),
+        unique_name=pulumi.get(__response__, 'unique_name'),
+        username=pulumi.get(__response__, 'username'),
+        version=pulumi.get(__response__, 'version')))

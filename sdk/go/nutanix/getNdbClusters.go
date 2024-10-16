@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			clusters, err := nutanix.GetNdbClusters(ctx, nil, nil)
+//			clusters, err := nutanix.GetNdbClusters(ctx, map[string]interface{}{}, nil)
 //			if err != nil {
 //				return err
 //			}

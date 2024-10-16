@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -516,9 +521,6 @@ def get_foundation_central_imaged_node_details(imaged_node_uuid: Optional[str] =
         node_state=pulumi.get(__ret__, 'node_state'),
         node_type=pulumi.get(__ret__, 'node_type'),
         object_version=pulumi.get(__ret__, 'object_version'))
-
-
-@_utilities.lift_output_func(get_foundation_central_imaged_node_details)
 def get_foundation_central_imaged_node_details_output(imaged_node_uuid: Optional[pulumi.Input[str]] = None,
                                                       ipv6_interface: Optional[pulumi.Input[Optional[str]]] = None,
                                                       object_version: Optional[pulumi.Input[Optional[int]]] = None,
@@ -540,4 +542,45 @@ def get_foundation_central_imaged_node_details_output(imaged_node_uuid: Optional
     :param str ipv6_interface: Name of the cvm interface having ipv6 address.
     :param int object_version: Version of the node used for CAS.
     """
-    ...
+    __args__ = dict()
+    __args__['imagedNodeUuid'] = imaged_node_uuid
+    __args__['ipv6Interface'] = ipv6_interface
+    __args__['objectVersion'] = object_version
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails', __args__, opts=opts, typ=GetFoundationCentralImagedNodeDetailsResult)
+    return __ret__.apply(lambda __response__: GetFoundationCentralImagedNodeDetailsResult(
+        aos_version=pulumi.get(__response__, 'aos_version'),
+        api_key_uuid=pulumi.get(__response__, 'api_key_uuid'),
+        available=pulumi.get(__response__, 'available'),
+        block_serial=pulumi.get(__response__, 'block_serial'),
+        created_timestamp=pulumi.get(__response__, 'created_timestamp'),
+        current_time=pulumi.get(__response__, 'current_time'),
+        cvm_gateway=pulumi.get(__response__, 'cvm_gateway'),
+        cvm_ip=pulumi.get(__response__, 'cvm_ip'),
+        cvm_ipv6=pulumi.get(__response__, 'cvm_ipv6'),
+        cvm_netmask=pulumi.get(__response__, 'cvm_netmask'),
+        cvm_up=pulumi.get(__response__, 'cvm_up'),
+        cvm_uuid=pulumi.get(__response__, 'cvm_uuid'),
+        cvm_vlan_id=pulumi.get(__response__, 'cvm_vlan_id'),
+        foundation_version=pulumi.get(__response__, 'foundation_version'),
+        hardware_attributes=pulumi.get(__response__, 'hardware_attributes'),
+        hypervisor_gateway=pulumi.get(__response__, 'hypervisor_gateway'),
+        hypervisor_hostname=pulumi.get(__response__, 'hypervisor_hostname'),
+        hypervisor_ip=pulumi.get(__response__, 'hypervisor_ip'),
+        hypervisor_netmask=pulumi.get(__response__, 'hypervisor_netmask'),
+        hypervisor_type=pulumi.get(__response__, 'hypervisor_type'),
+        hypervisor_version=pulumi.get(__response__, 'hypervisor_version'),
+        id=pulumi.get(__response__, 'id'),
+        imaged_cluster_uuid=pulumi.get(__response__, 'imaged_cluster_uuid'),
+        imaged_node_uuid=pulumi.get(__response__, 'imaged_node_uuid'),
+        ipmi_gateway=pulumi.get(__response__, 'ipmi_gateway'),
+        ipmi_ip=pulumi.get(__response__, 'ipmi_ip'),
+        ipmi_netmask=pulumi.get(__response__, 'ipmi_netmask'),
+        ipv6_interface=pulumi.get(__response__, 'ipv6_interface'),
+        latest_hb_ts_lists=pulumi.get(__response__, 'latest_hb_ts_lists'),
+        model=pulumi.get(__response__, 'model'),
+        node_position=pulumi.get(__response__, 'node_position'),
+        node_serial=pulumi.get(__response__, 'node_serial'),
+        node_state=pulumi.get(__response__, 'node_state'),
+        node_type=pulumi.get(__response__, 'node_type'),
+        object_version=pulumi.get(__response__, 'object_version')))

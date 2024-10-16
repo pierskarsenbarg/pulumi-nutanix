@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -204,9 +209,6 @@ def get_role(categories: Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRole
         role_id=pulumi.get(__ret__, 'role_id'),
         role_name=pulumi.get(__ret__, 'role_name'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_role)
 def get_role_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']]]]] = None,
                     role_id: Optional[pulumi.Input[Optional[str]]] = None,
                     role_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -219,4 +221,22 @@ def get_role_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['G
     :param str role_id: - (Optional) The UUID of a Role.
     :param str role_name: - (Optional) The name of a Role.
     """
-    ...
+    __args__ = dict()
+    __args__['categories'] = categories
+    __args__['roleId'] = role_id
+    __args__['roleName'] = role_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getRole:getRole', __args__, opts=opts, typ=GetRoleResult)
+    return __ret__.apply(lambda __response__: GetRoleResult(
+        api_version=pulumi.get(__response__, 'api_version'),
+        categories=pulumi.get(__response__, 'categories'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        name=pulumi.get(__response__, 'name'),
+        owner_reference=pulumi.get(__response__, 'owner_reference'),
+        permission_reference_lists=pulumi.get(__response__, 'permission_reference_lists'),
+        project_reference=pulumi.get(__response__, 'project_reference'),
+        role_id=pulumi.get(__response__, 'role_id'),
+        role_name=pulumi.get(__response__, 'role_name'),
+        state=pulumi.get(__response__, 'state')))

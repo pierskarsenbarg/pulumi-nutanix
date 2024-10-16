@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -68,12 +73,15 @@ def get_assert_helper(checks: Optional[Sequence[Union['GetAssertHelperCheckArgs'
     return AwaitableGetAssertHelperResult(
         checks=pulumi.get(__ret__, 'checks'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_assert_helper)
 def get_assert_helper_output(checks: Optional[pulumi.Input[Optional[Sequence[Union['GetAssertHelperCheckArgs', 'GetAssertHelperCheckArgsDict']]]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAssertHelperResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['checks'] = checks
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getAssertHelper:getAssertHelper', __args__, opts=opts, typ=GetAssertHelperResult)
+    return __ret__.apply(lambda __response__: GetAssertHelperResult(
+        checks=pulumi.get(__response__, 'checks'),
+        id=pulumi.get(__response__, 'id')))

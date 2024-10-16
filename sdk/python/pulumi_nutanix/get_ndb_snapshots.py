@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -140,9 +145,6 @@ def get_ndb_snapshots(filters: Optional[Sequence[Union['GetNdbSnapshotsFilterArg
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         snapshots=pulumi.get(__ret__, 'snapshots'))
-
-
-@_utilities.lift_output_func(get_ndb_snapshots)
 def get_ndb_snapshots_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbSnapshotsFilterArgs', 'GetNdbSnapshotsFilterArgsDict']]]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbSnapshotsResult]:
     """
@@ -210,4 +212,11 @@ def get_ndb_snapshots_output(filters: Optional[pulumi.Input[Optional[Sequence[Un
 
     :param Sequence[Union['GetNdbSnapshotsFilterArgs', 'GetNdbSnapshotsFilterArgsDict']] filters: filters help to fetch the snapshots based on input
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbSnapshots:getNdbSnapshots', __args__, opts=opts, typ=GetNdbSnapshotsResult)
+    return __ret__.apply(lambda __response__: GetNdbSnapshotsResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        snapshots=pulumi.get(__response__, 'snapshots')))

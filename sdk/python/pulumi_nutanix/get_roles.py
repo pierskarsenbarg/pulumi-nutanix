@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -109,9 +114,6 @@ def get_roles(metadatas: Optional[Sequence[Union['GetRolesMetadataArgs', 'GetRol
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-
-
-@_utilities.lift_output_func(get_roles)
 def get_roles_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetRolesMetadataArgs', 'GetRolesMetadataArgsDict']]]]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRolesResult]:
     """
@@ -129,4 +131,12 @@ def get_roles_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['G
 
     :param Sequence[Union['GetRolesMetadataArgs', 'GetRolesMetadataArgsDict']] metadatas: - The role kind metadata.
     """
-    ...
+    __args__ = dict()
+    __args__['metadatas'] = metadatas
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getRoles:getRoles', __args__, opts=opts, typ=GetRolesResult)
+    return __ret__.apply(lambda __response__: GetRolesResult(
+        api_version=pulumi.get(__response__, 'api_version'),
+        entities=pulumi.get(__response__, 'entities'),
+        id=pulumi.get(__response__, 'id'),
+        metadatas=pulumi.get(__response__, 'metadatas')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -197,9 +202,6 @@ def get_recovery_plan(categories: Optional[Sequence[Union['GetRecoveryPlanCatego
         recovery_plan_name=pulumi.get(__ret__, 'recovery_plan_name'),
         stage_lists=pulumi.get(__ret__, 'stage_lists'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_recovery_plan)
 def get_recovery_plan_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetRecoveryPlanCategoryArgs', 'GetRecoveryPlanCategoryArgsDict']]]]] = None,
                              recovery_plan_id: Optional[pulumi.Input[Optional[str]]] = None,
                              recovery_plan_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -210,4 +212,23 @@ def get_recovery_plan_output(categories: Optional[pulumi.Input[Optional[Sequence
 
     :param str recovery_plan_id: - (Required) The `id` of the Recovery Plan.
     """
-    ...
+    __args__ = dict()
+    __args__['categories'] = categories
+    __args__['recoveryPlanId'] = recovery_plan_id
+    __args__['recoveryPlanName'] = recovery_plan_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getRecoveryPlan:getRecoveryPlan', __args__, opts=opts, typ=GetRecoveryPlanResult)
+    return __ret__.apply(lambda __response__: GetRecoveryPlanResult(
+        api_version=pulumi.get(__response__, 'api_version'),
+        categories=pulumi.get(__response__, 'categories'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        name=pulumi.get(__response__, 'name'),
+        owner_references=pulumi.get(__response__, 'owner_references'),
+        parameters=pulumi.get(__response__, 'parameters'),
+        project_references=pulumi.get(__response__, 'project_references'),
+        recovery_plan_id=pulumi.get(__response__, 'recovery_plan_id'),
+        recovery_plan_name=pulumi.get(__response__, 'recovery_plan_name'),
+        stage_lists=pulumi.get(__response__, 'stage_lists'),
+        state=pulumi.get(__response__, 'state')))

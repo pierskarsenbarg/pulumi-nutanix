@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -432,9 +437,6 @@ def get_ndb_time_machine(tags: Optional[Sequence[Union['GetNdbTimeMachineTagArgs
         time_machine_id=pulumi.get(__ret__, 'time_machine_id'),
         time_machine_name=pulumi.get(__ret__, 'time_machine_name'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_ndb_time_machine)
 def get_ndb_time_machine_output(tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbTimeMachineTagArgs', 'GetNdbTimeMachineTagArgsDict']]]]] = None,
                                 time_machine_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 time_machine_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -447,4 +449,40 @@ def get_ndb_time_machine_output(tags: Optional[pulumi.Input[Optional[Sequence[Un
     :param str time_machine_id: time machine id
     :param str time_machine_name: time machine name
     """
-    ...
+    __args__ = dict()
+    __args__['tags'] = tags
+    __args__['timeMachineId'] = time_machine_id
+    __args__['timeMachineName'] = time_machine_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbTimeMachine:getNdbTimeMachine', __args__, opts=opts, typ=GetNdbTimeMachineResult)
+    return __ret__.apply(lambda __response__: GetNdbTimeMachineResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        category=pulumi.get(__response__, 'category'),
+        clone=pulumi.get(__response__, 'clone'),
+        clones=pulumi.get(__response__, 'clones'),
+        clustered=pulumi.get(__response__, 'clustered'),
+        database=pulumi.get(__response__, 'database'),
+        database_id=pulumi.get(__response__, 'database_id'),
+        date_created=pulumi.get(__response__, 'date_created'),
+        date_modified=pulumi.get(__response__, 'date_modified'),
+        description=pulumi.get(__response__, 'description'),
+        ea_status=pulumi.get(__response__, 'ea_status'),
+        id=pulumi.get(__response__, 'id'),
+        internal=pulumi.get(__response__, 'internal'),
+        metric=pulumi.get(__response__, 'metric'),
+        name=pulumi.get(__response__, 'name'),
+        owner_id=pulumi.get(__response__, 'owner_id'),
+        properties=pulumi.get(__response__, 'properties'),
+        schedule_id=pulumi.get(__response__, 'schedule_id'),
+        schedules=pulumi.get(__response__, 'schedules'),
+        scope=pulumi.get(__response__, 'scope'),
+        sla_id=pulumi.get(__response__, 'sla_id'),
+        sla_update_in_progress=pulumi.get(__response__, 'sla_update_in_progress'),
+        sla_update_metadata=pulumi.get(__response__, 'sla_update_metadata'),
+        slas=pulumi.get(__response__, 'slas'),
+        source_nx_clusters=pulumi.get(__response__, 'source_nx_clusters'),
+        status=pulumi.get(__response__, 'status'),
+        tags=pulumi.get(__response__, 'tags'),
+        time_machine_id=pulumi.get(__response__, 'time_machine_id'),
+        time_machine_name=pulumi.get(__response__, 'time_machine_name'),
+        type=pulumi.get(__response__, 'type')))

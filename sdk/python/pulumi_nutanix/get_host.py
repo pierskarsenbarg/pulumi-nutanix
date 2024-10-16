@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -409,9 +414,6 @@ def get_host(categories: Optional[Sequence[Union['GetHostCategoryArgs', 'GetHost
         rackable_unit_reference=pulumi.get(__ret__, 'rackable_unit_reference'),
         serial_number=pulumi.get(__ret__, 'serial_number'),
         windows_domain=pulumi.get(__ret__, 'windows_domain'))
-
-
-@_utilities.lift_output_func(get_host)
 def get_host_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetHostCategoryArgs', 'GetHostCategoryArgsDict']]]]] = None,
                     host_id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHostResult]:
@@ -422,4 +424,37 @@ def get_host_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['G
     :param Sequence[Union['GetHostCategoryArgs', 'GetHostCategoryArgsDict']] categories: - Categories for the image.
     :param str host_id: Represents hosts uuid
     """
-    ...
+    __args__ = dict()
+    __args__['categories'] = categories
+    __args__['hostId'] = host_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getHost:getHost', __args__, opts=opts, typ=GetHostResult)
+    return __ret__.apply(lambda __response__: GetHostResult(
+        api_version=pulumi.get(__response__, 'api_version'),
+        block=pulumi.get(__response__, 'block'),
+        categories=pulumi.get(__response__, 'categories'),
+        cluster_reference=pulumi.get(__response__, 'cluster_reference'),
+        controller_vm=pulumi.get(__response__, 'controller_vm'),
+        cpu_capacity_hz=pulumi.get(__response__, 'cpu_capacity_hz'),
+        cpu_model=pulumi.get(__response__, 'cpu_model'),
+        failover_cluster=pulumi.get(__response__, 'failover_cluster'),
+        gpu_driver_version=pulumi.get(__response__, 'gpu_driver_version'),
+        gpu_lists=pulumi.get(__response__, 'gpu_lists'),
+        host_disks_reference_lists=pulumi.get(__response__, 'host_disks_reference_lists'),
+        host_id=pulumi.get(__response__, 'host_id'),
+        host_nics_id_lists=pulumi.get(__response__, 'host_nics_id_lists'),
+        host_type=pulumi.get(__response__, 'host_type'),
+        hypervisor=pulumi.get(__response__, 'hypervisor'),
+        id=pulumi.get(__response__, 'id'),
+        ipmi=pulumi.get(__response__, 'ipmi'),
+        memory_capacity_mib=pulumi.get(__response__, 'memory_capacity_mib'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        monitoring_state=pulumi.get(__response__, 'monitoring_state'),
+        name=pulumi.get(__response__, 'name'),
+        num_cpu_cores=pulumi.get(__response__, 'num_cpu_cores'),
+        num_cpu_sockets=pulumi.get(__response__, 'num_cpu_sockets'),
+        owner_reference=pulumi.get(__response__, 'owner_reference'),
+        project_reference=pulumi.get(__response__, 'project_reference'),
+        rackable_unit_reference=pulumi.get(__response__, 'rackable_unit_reference'),
+        serial_number=pulumi.get(__response__, 'serial_number'),
+        windows_domain=pulumi.get(__response__, 'windows_domain')))

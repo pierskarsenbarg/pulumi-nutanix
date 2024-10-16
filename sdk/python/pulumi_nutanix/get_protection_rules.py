@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -90,9 +95,6 @@ def get_protection_rules(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitab
         api_version=pulumi.get(__ret__, 'api_version'),
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_protection_rules)
 def get_protection_rules_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectionRulesResult]:
     """
     Describes Protection Rules
@@ -106,4 +108,10 @@ def get_protection_rules_output(opts: Optional[pulumi.InvokeOptions] = None) -> 
     protection_rules = nutanix.get_protection_rules()
     ```
     """
-    ...
+    __args__ = dict()
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getProtectionRules:getProtectionRules', __args__, opts=opts, typ=GetProtectionRulesResult)
+    return __ret__.apply(lambda __response__: GetProtectionRulesResult(
+        api_version=pulumi.get(__response__, 'api_version'),
+        entities=pulumi.get(__response__, 'entities'),
+        id=pulumi.get(__response__, 'id')))

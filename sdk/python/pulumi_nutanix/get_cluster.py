@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -705,9 +710,6 @@ def get_cluster(categories: Optional[Sequence[Union['GetClusterCategoryArgs', 'G
         state=pulumi.get(__ret__, 'state'),
         supported_information_verbosity=pulumi.get(__ret__, 'supported_information_verbosity'),
         timezone=pulumi.get(__ret__, 'timezone'))
-
-
-@_utilities.lift_output_func(get_cluster)
 def get_cluster_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetClusterCategoryArgs', 'GetClusterCategoryArgsDict']]]]] = None,
                        cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                        name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -720,4 +722,61 @@ def get_cluster_output(categories: Optional[pulumi.Input[Optional[Sequence[Union
     :param str cluster_id: Represents clusters uuid
     :param str name: Represents the name of cluster
     """
-    ...
+    __args__ = dict()
+    __args__['categories'] = categories
+    __args__['clusterId'] = cluster_id
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getCluster:getCluster', __args__, opts=opts, typ=GetClusterResult)
+    return __ret__.apply(lambda __response__: GetClusterResult(
+        analysis_vm_efficiency_map=pulumi.get(__response__, 'analysis_vm_efficiency_map'),
+        api_version=pulumi.get(__response__, 'api_version'),
+        authorized_public_key_lists=pulumi.get(__response__, 'authorized_public_key_lists'),
+        build=pulumi.get(__response__, 'build'),
+        ca_certificate_lists=pulumi.get(__response__, 'ca_certificate_lists'),
+        categories=pulumi.get(__response__, 'categories'),
+        certification_signing_info=pulumi.get(__response__, 'certification_signing_info'),
+        client_auth=pulumi.get(__response__, 'client_auth'),
+        cluster_arch=pulumi.get(__response__, 'cluster_arch'),
+        cluster_id=pulumi.get(__response__, 'cluster_id'),
+        domain_server_credentials=pulumi.get(__response__, 'domain_server_credentials'),
+        domain_server_name=pulumi.get(__response__, 'domain_server_name'),
+        domain_server_nameserver=pulumi.get(__response__, 'domain_server_nameserver'),
+        enabled_feature_lists=pulumi.get(__response__, 'enabled_feature_lists'),
+        encryption_status=pulumi.get(__response__, 'encryption_status'),
+        external_data_services_ip=pulumi.get(__response__, 'external_data_services_ip'),
+        external_ip=pulumi.get(__response__, 'external_ip'),
+        external_subnet=pulumi.get(__response__, 'external_subnet'),
+        gpu_driver_version=pulumi.get(__response__, 'gpu_driver_version'),
+        http_proxy_lists=pulumi.get(__response__, 'http_proxy_lists'),
+        http_proxy_whitelists=pulumi.get(__response__, 'http_proxy_whitelists'),
+        id=pulumi.get(__response__, 'id'),
+        internal_subnet=pulumi.get(__response__, 'internal_subnet'),
+        is_available=pulumi.get(__response__, 'is_available'),
+        management_server_lists=pulumi.get(__response__, 'management_server_lists'),
+        masquerading_ip=pulumi.get(__response__, 'masquerading_ip'),
+        masquerading_port=pulumi.get(__response__, 'masquerading_port'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        name=pulumi.get(__response__, 'name'),
+        name_server_ip_lists=pulumi.get(__response__, 'name_server_ip_lists'),
+        nfs_subnet_whitelists=pulumi.get(__response__, 'nfs_subnet_whitelists'),
+        nodes=pulumi.get(__response__, 'nodes'),
+        ntp_server_ip_lists=pulumi.get(__response__, 'ntp_server_ip_lists'),
+        operation_mode=pulumi.get(__response__, 'operation_mode'),
+        owner_reference=pulumi.get(__response__, 'owner_reference'),
+        project_reference=pulumi.get(__response__, 'project_reference'),
+        service_lists=pulumi.get(__response__, 'service_lists'),
+        smtp_server_address=pulumi.get(__response__, 'smtp_server_address'),
+        smtp_server_credentials=pulumi.get(__response__, 'smtp_server_credentials'),
+        smtp_server_email_address=pulumi.get(__response__, 'smtp_server_email_address'),
+        smtp_server_proxy_type_lists=pulumi.get(__response__, 'smtp_server_proxy_type_lists'),
+        smtp_server_type=pulumi.get(__response__, 'smtp_server_type'),
+        software_map_ncc=pulumi.get(__response__, 'software_map_ncc'),
+        software_map_nos=pulumi.get(__response__, 'software_map_nos'),
+        ssl_key_expire_datetime=pulumi.get(__response__, 'ssl_key_expire_datetime'),
+        ssl_key_name=pulumi.get(__response__, 'ssl_key_name'),
+        ssl_key_signing_info=pulumi.get(__response__, 'ssl_key_signing_info'),
+        ssl_key_type=pulumi.get(__response__, 'ssl_key_type'),
+        state=pulumi.get(__response__, 'state'),
+        supported_information_verbosity=pulumi.get(__response__, 'supported_information_verbosity'),
+        timezone=pulumi.get(__response__, 'timezone')))

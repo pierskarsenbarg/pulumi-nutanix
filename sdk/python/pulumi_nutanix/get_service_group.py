@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -107,12 +112,19 @@ def get_service_group(uuid: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         service_lists=pulumi.get(__ret__, 'service_lists'),
         uuid=pulumi.get(__ret__, 'uuid'))
-
-
-@_utilities.lift_output_func(get_service_group)
 def get_service_group_output(uuid: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceGroupResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['uuid'] = uuid
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getServiceGroup:getServiceGroup', __args__, opts=opts, typ=GetServiceGroupResult)
+    return __ret__.apply(lambda __response__: GetServiceGroupResult(
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        is_system_defined=pulumi.get(__response__, 'is_system_defined'),
+        name=pulumi.get(__response__, 'name'),
+        service_lists=pulumi.get(__response__, 'service_lists'),
+        uuid=pulumi.get(__response__, 'uuid')))

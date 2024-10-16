@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -443,9 +448,6 @@ def get_subnet(additional_filters: Optional[Sequence[Union['GetSubnetAdditionalF
         vlan_id=pulumi.get(__ret__, 'vlan_id'),
         vpc_reference=pulumi.get(__ret__, 'vpc_reference'),
         vswitch_name=pulumi.get(__ret__, 'vswitch_name'))
-
-
-@_utilities.lift_output_func(get_subnet)
 def get_subnet_output(additional_filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubnetAdditionalFilterArgs', 'GetSubnetAdditionalFilterArgsDict']]]]] = None,
                       categories: Optional[pulumi.Input[Optional[Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict']]]]] = None,
                       subnet_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -460,4 +462,43 @@ def get_subnet_output(additional_filters: Optional[pulumi.Input[Optional[Sequenc
     :param str subnet_id: - (Optional) The ID for the subnet.
     :param str subnet_name: - (Optional) The name for the subnet
     """
-    ...
+    __args__ = dict()
+    __args__['additionalFilters'] = additional_filters
+    __args__['categories'] = categories
+    __args__['subnetId'] = subnet_id
+    __args__['subnetName'] = subnet_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getSubnet:getSubnet', __args__, opts=opts, typ=GetSubnetResult)
+    return __ret__.apply(lambda __response__: GetSubnetResult(
+        additional_filters=pulumi.get(__response__, 'additional_filters'),
+        api_version=pulumi.get(__response__, 'api_version'),
+        availability_zone_reference=pulumi.get(__response__, 'availability_zone_reference'),
+        categories=pulumi.get(__response__, 'categories'),
+        cluster_name=pulumi.get(__response__, 'cluster_name'),
+        cluster_uuid=pulumi.get(__response__, 'cluster_uuid'),
+        default_gateway_ip=pulumi.get(__response__, 'default_gateway_ip'),
+        description=pulumi.get(__response__, 'description'),
+        dhcp_domain_name_server_lists=pulumi.get(__response__, 'dhcp_domain_name_server_lists'),
+        dhcp_domain_search_lists=pulumi.get(__response__, 'dhcp_domain_search_lists'),
+        dhcp_options=pulumi.get(__response__, 'dhcp_options'),
+        dhcp_server_address=pulumi.get(__response__, 'dhcp_server_address'),
+        dhcp_server_address_port=pulumi.get(__response__, 'dhcp_server_address_port'),
+        enable_nat=pulumi.get(__response__, 'enable_nat'),
+        id=pulumi.get(__response__, 'id'),
+        ip_config_pool_list_ranges=pulumi.get(__response__, 'ip_config_pool_list_ranges'),
+        is_external=pulumi.get(__response__, 'is_external'),
+        message_lists=pulumi.get(__response__, 'message_lists'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        name=pulumi.get(__response__, 'name'),
+        network_function_chain_reference=pulumi.get(__response__, 'network_function_chain_reference'),
+        owner_reference=pulumi.get(__response__, 'owner_reference'),
+        prefix_length=pulumi.get(__response__, 'prefix_length'),
+        project_reference=pulumi.get(__response__, 'project_reference'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_id=pulumi.get(__response__, 'subnet_id'),
+        subnet_ip=pulumi.get(__response__, 'subnet_ip'),
+        subnet_name=pulumi.get(__response__, 'subnet_name'),
+        subnet_type=pulumi.get(__response__, 'subnet_type'),
+        vlan_id=pulumi.get(__response__, 'vlan_id'),
+        vpc_reference=pulumi.get(__response__, 'vpc_reference'),
+        vswitch_name=pulumi.get(__response__, 'vswitch_name')))

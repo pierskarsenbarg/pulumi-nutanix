@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -74,9 +79,6 @@ def get_karbon_clusters(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitabl
     return AwaitableGetKarbonClustersResult(
         clusters=pulumi.get(__ret__, 'clusters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_karbon_clusters)
 def get_karbon_clusters_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKarbonClustersResult]:
     """
     Describes Karbon Clusters
@@ -90,4 +92,9 @@ def get_karbon_clusters_output(opts: Optional[pulumi.InvokeOptions] = None) -> p
     clusters = nutanix.get_karbon_clusters()
     ```
     """
-    ...
+    __args__ = dict()
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getKarbonClusters:getKarbonClusters', __args__, opts=opts, typ=GetKarbonClustersResult)
+    return __ret__.apply(lambda __response__: GetKarbonClustersResult(
+        clusters=pulumi.get(__response__, 'clusters'),
+        id=pulumi.get(__response__, 'id')))

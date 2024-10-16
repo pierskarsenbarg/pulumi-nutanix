@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -185,9 +190,6 @@ def get_ndb_tag(id: Optional[str] = None,
         required=pulumi.get(__ret__, 'required'),
         status=pulumi.get(__ret__, 'status'),
         values=pulumi.get(__ret__, 'values'))
-
-
-@_utilities.lift_output_func(get_ndb_tag)
 def get_ndb_tag_output(id: Optional[pulumi.Input[Optional[str]]] = None,
                        name: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbTagResult]:
@@ -207,4 +209,19 @@ def get_ndb_tag_output(id: Optional[pulumi.Input[Optional[str]]] = None,
     :param str id: tag id. Conflicts with  name.
     :param str name: tag name. Conflicts with id.
     """
-    ...
+    __args__ = dict()
+    __args__['id'] = id
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbTag:getNdbTag', __args__, opts=opts, typ=GetNdbTagResult)
+    return __ret__.apply(lambda __response__: GetNdbTagResult(
+        date_created=pulumi.get(__response__, 'date_created'),
+        date_modified=pulumi.get(__response__, 'date_modified'),
+        description=pulumi.get(__response__, 'description'),
+        entity_type=pulumi.get(__response__, 'entity_type'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        owner=pulumi.get(__response__, 'owner'),
+        required=pulumi.get(__response__, 'required'),
+        status=pulumi.get(__response__, 'status'),
+        values=pulumi.get(__response__, 'values')))

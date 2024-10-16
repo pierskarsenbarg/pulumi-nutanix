@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -95,9 +100,6 @@ def get_ndb_network_available_ips(profile_id: Optional[str] = None,
         available_ips=pulumi.get(__ret__, 'available_ips'),
         id=pulumi.get(__ret__, 'id'),
         profile_id=pulumi.get(__ret__, 'profile_id'))
-
-
-@_utilities.lift_output_func(get_ndb_network_available_ips)
 def get_ndb_network_available_ips_output(profile_id: Optional[pulumi.Input[str]] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbNetworkAvailableIpsResult]:
     """
@@ -115,4 +117,11 @@ def get_ndb_network_available_ips_output(profile_id: Optional[pulumi.Input[str]]
 
     :param str profile_id: (Required) Network Profile id.
     """
-    ...
+    __args__ = dict()
+    __args__['profileId'] = profile_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbNetworkAvailableIps:getNdbNetworkAvailableIps', __args__, opts=opts, typ=GetNdbNetworkAvailableIpsResult)
+    return __ret__.apply(lambda __response__: GetNdbNetworkAvailableIpsResult(
+        available_ips=pulumi.get(__response__, 'available_ips'),
+        id=pulumi.get(__response__, 'id'),
+        profile_id=pulumi.get(__response__, 'profile_id')))

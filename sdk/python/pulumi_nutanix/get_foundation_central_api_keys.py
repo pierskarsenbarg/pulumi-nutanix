@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -133,9 +138,6 @@ def get_foundation_central_api_keys(key_uuid: Optional[str] = None,
         current_time=pulumi.get(__ret__, 'current_time'),
         id=pulumi.get(__ret__, 'id'),
         key_uuid=pulumi.get(__ret__, 'key_uuid'))
-
-
-@_utilities.lift_output_func(get_foundation_central_api_keys)
 def get_foundation_central_api_keys_output(key_uuid: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationCentralApiKeysResult]:
     """
@@ -153,4 +155,14 @@ def get_foundation_central_api_keys_output(key_uuid: Optional[pulumi.Input[str]]
 
     :param str key_uuid: UUID of the key which needs to be fetched.
     """
-    ...
+    __args__ = dict()
+    __args__['keyUuid'] = key_uuid
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys', __args__, opts=opts, typ=GetFoundationCentralApiKeysResult)
+    return __ret__.apply(lambda __response__: GetFoundationCentralApiKeysResult(
+        alias=pulumi.get(__response__, 'alias'),
+        api_key=pulumi.get(__response__, 'api_key'),
+        created_timestamp=pulumi.get(__response__, 'created_timestamp'),
+        current_time=pulumi.get(__response__, 'current_time'),
+        id=pulumi.get(__response__, 'id'),
+        key_uuid=pulumi.get(__response__, 'key_uuid')))

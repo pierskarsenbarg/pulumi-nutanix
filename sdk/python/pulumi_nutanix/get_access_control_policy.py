@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -239,9 +244,6 @@ def get_access_control_policy(access_control_policy_id: Optional[str] = None,
         state=pulumi.get(__ret__, 'state'),
         user_group_reference_lists=pulumi.get(__ret__, 'user_group_reference_lists'),
         user_reference_lists=pulumi.get(__ret__, 'user_reference_lists'))
-
-
-@_utilities.lift_output_func(get_access_control_policy)
 def get_access_control_policy_output(access_control_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      access_control_policy_name: Optional[pulumi.Input[Optional[str]]] = None,
                                      categories: Optional[pulumi.Input[Optional[Sequence[Union['GetAccessControlPolicyCategoryArgs', 'GetAccessControlPolicyCategoryArgsDict']]]]] = None,
@@ -253,4 +255,25 @@ def get_access_control_policy_output(access_control_policy_id: Optional[pulumi.I
     :param str access_control_policy_id: - (Required) The UUID of an access control policy.
     :param Sequence[Union['GetAccessControlPolicyCategoryArgs', 'GetAccessControlPolicyCategoryArgsDict']] categories: - The category values represented as a dictionary of key > list of values.
     """
-    ...
+    __args__ = dict()
+    __args__['accessControlPolicyId'] = access_control_policy_id
+    __args__['accessControlPolicyName'] = access_control_policy_name
+    __args__['categories'] = categories
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getAccessControlPolicy:getAccessControlPolicy', __args__, opts=opts, typ=GetAccessControlPolicyResult)
+    return __ret__.apply(lambda __response__: GetAccessControlPolicyResult(
+        access_control_policy_id=pulumi.get(__response__, 'access_control_policy_id'),
+        access_control_policy_name=pulumi.get(__response__, 'access_control_policy_name'),
+        api_version=pulumi.get(__response__, 'api_version'),
+        categories=pulumi.get(__response__, 'categories'),
+        context_filter_lists=pulumi.get(__response__, 'context_filter_lists'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        name=pulumi.get(__response__, 'name'),
+        owner_reference=pulumi.get(__response__, 'owner_reference'),
+        project_reference=pulumi.get(__response__, 'project_reference'),
+        role_references=pulumi.get(__response__, 'role_references'),
+        state=pulumi.get(__response__, 'state'),
+        user_group_reference_lists=pulumi.get(__response__, 'user_group_reference_lists'),
+        user_reference_lists=pulumi.get(__response__, 'user_reference_lists')))

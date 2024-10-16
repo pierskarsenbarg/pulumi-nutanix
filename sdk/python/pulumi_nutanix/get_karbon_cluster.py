@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -194,9 +199,6 @@ def get_karbon_cluster(karbon_cluster_id: Optional[str] = None,
         uuid=pulumi.get(__ret__, 'uuid'),
         version=pulumi.get(__ret__, 'version'),
         worker_node_pools=pulumi.get(__ret__, 'worker_node_pools'))
-
-
-@_utilities.lift_output_func(get_karbon_cluster)
 def get_karbon_cluster_output(karbon_cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                               karbon_cluster_name: Optional[pulumi.Input[Optional[str]]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKarbonClusterResult]:
@@ -216,4 +218,21 @@ def get_karbon_cluster_output(karbon_cluster_id: Optional[pulumi.Input[Optional[
     :param str karbon_cluster_id: Represents karbon cluster uuid
     :param str karbon_cluster_name: Represents the name of karbon cluster
     """
-    ...
+    __args__ = dict()
+    __args__['karbonClusterId'] = karbon_cluster_id
+    __args__['karbonClusterName'] = karbon_cluster_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getKarbonCluster:getKarbonCluster', __args__, opts=opts, typ=GetKarbonClusterResult)
+    return __ret__.apply(lambda __response__: GetKarbonClusterResult(
+        deployment_type=pulumi.get(__response__, 'deployment_type'),
+        etcd_node_pools=pulumi.get(__response__, 'etcd_node_pools'),
+        id=pulumi.get(__response__, 'id'),
+        karbon_cluster_id=pulumi.get(__response__, 'karbon_cluster_id'),
+        karbon_cluster_name=pulumi.get(__response__, 'karbon_cluster_name'),
+        kubeapi_server_ipv4_address=pulumi.get(__response__, 'kubeapi_server_ipv4_address'),
+        master_node_pools=pulumi.get(__response__, 'master_node_pools'),
+        name=pulumi.get(__response__, 'name'),
+        status=pulumi.get(__response__, 'status'),
+        uuid=pulumi.get(__response__, 'uuid'),
+        version=pulumi.get(__response__, 'version'),
+        worker_node_pools=pulumi.get(__response__, 'worker_node_pools')))

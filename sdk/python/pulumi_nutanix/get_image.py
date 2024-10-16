@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -332,9 +337,6 @@ def get_image(categories: Optional[Sequence[Union['GetImageCategoryArgs', 'GetIm
         source_uri=pulumi.get(__ret__, 'source_uri'),
         state=pulumi.get(__ret__, 'state'),
         version=pulumi.get(__ret__, 'version'))
-
-
-@_utilities.lift_output_func(get_image)
 def get_image_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict']]]]] = None,
                      image_id: Optional[pulumi.Input[Optional[str]]] = None,
                      image_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -347,4 +349,33 @@ def get_image_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['
     :param str image_id: Represents image UUID
     :param str image_name: Represents image name
     """
-    ...
+    __args__ = dict()
+    __args__['categories'] = categories
+    __args__['imageId'] = image_id
+    __args__['imageName'] = image_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getImage:getImage', __args__, opts=opts, typ=GetImageResult)
+    return __ret__.apply(lambda __response__: GetImageResult(
+        api_version=pulumi.get(__response__, 'api_version'),
+        architecture=pulumi.get(__response__, 'architecture'),
+        availability_zone_reference=pulumi.get(__response__, 'availability_zone_reference'),
+        categories=pulumi.get(__response__, 'categories'),
+        checksum=pulumi.get(__response__, 'checksum'),
+        cluster_name=pulumi.get(__response__, 'cluster_name'),
+        cluster_references=pulumi.get(__response__, 'cluster_references'),
+        cluster_uuid=pulumi.get(__response__, 'cluster_uuid'),
+        current_cluster_reference_lists=pulumi.get(__response__, 'current_cluster_reference_lists'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        image_id=pulumi.get(__response__, 'image_id'),
+        image_name=pulumi.get(__response__, 'image_name'),
+        image_type=pulumi.get(__response__, 'image_type'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        name=pulumi.get(__response__, 'name'),
+        owner_reference=pulumi.get(__response__, 'owner_reference'),
+        project_reference=pulumi.get(__response__, 'project_reference'),
+        retrieval_uri_lists=pulumi.get(__response__, 'retrieval_uri_lists'),
+        size_bytes=pulumi.get(__response__, 'size_bytes'),
+        source_uri=pulumi.get(__response__, 'source_uri'),
+        state=pulumi.get(__response__, 'state'),
+        version=pulumi.get(__response__, 'version')))

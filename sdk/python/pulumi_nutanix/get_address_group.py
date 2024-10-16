@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -140,9 +145,6 @@ def get_address_group(uuid: Optional[str] = None,
         ip_address_block_lists=pulumi.get(__ret__, 'ip_address_block_lists'),
         name=pulumi.get(__ret__, 'name'),
         uuid=pulumi.get(__ret__, 'uuid'))
-
-
-@_utilities.lift_output_func(get_address_group)
 def get_address_group_output(uuid: Optional[pulumi.Input[str]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddressGroupResult]:
     """
@@ -166,4 +168,14 @@ def get_address_group_output(uuid: Optional[pulumi.Input[str]] = None,
 
     :param str uuid: - (Required) UUID of the address group
     """
-    ...
+    __args__ = dict()
+    __args__['uuid'] = uuid
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getAddressGroup:getAddressGroup', __args__, opts=opts, typ=GetAddressGroupResult)
+    return __ret__.apply(lambda __response__: GetAddressGroupResult(
+        address_group_string=pulumi.get(__response__, 'address_group_string'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        ip_address_block_lists=pulumi.get(__response__, 'ip_address_block_lists'),
+        name=pulumi.get(__response__, 'name'),
+        uuid=pulumi.get(__response__, 'uuid')))

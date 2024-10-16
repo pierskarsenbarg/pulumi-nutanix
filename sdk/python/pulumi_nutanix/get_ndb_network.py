@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -189,9 +194,6 @@ def get_ndb_network(id: Optional[str] = None,
         properties_maps=pulumi.get(__ret__, 'properties_maps'),
         stretched_vlan_id=pulumi.get(__ret__, 'stretched_vlan_id'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_ndb_network)
 def get_ndb_network_output(id: Optional[pulumi.Input[Optional[str]]] = None,
                            name: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbNetworkResult]:
@@ -211,4 +213,19 @@ def get_ndb_network_output(id: Optional[pulumi.Input[Optional[str]]] = None,
     :param str id: id of network
     :param str name: name of network
     """
-    ...
+    __args__ = dict()
+    __args__['id'] = id
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbNetwork:getNdbNetwork', __args__, opts=opts, typ=GetNdbNetworkResult)
+    return __ret__.apply(lambda __response__: GetNdbNetworkResult(
+        cluster_id=pulumi.get(__response__, 'cluster_id'),
+        id=pulumi.get(__response__, 'id'),
+        ip_addresses=pulumi.get(__response__, 'ip_addresses'),
+        ip_pools=pulumi.get(__response__, 'ip_pools'),
+        managed=pulumi.get(__response__, 'managed'),
+        name=pulumi.get(__response__, 'name'),
+        properties=pulumi.get(__response__, 'properties'),
+        properties_maps=pulumi.get(__response__, 'properties_maps'),
+        stretched_vlan_id=pulumi.get(__response__, 'stretched_vlan_id'),
+        type=pulumi.get(__response__, 'type')))

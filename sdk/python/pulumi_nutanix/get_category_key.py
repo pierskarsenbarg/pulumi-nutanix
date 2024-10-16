@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -121,9 +126,6 @@ def get_category_key(name: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         system_defined=pulumi.get(__ret__, 'system_defined'),
         values=pulumi.get(__ret__, 'values'))
-
-
-@_utilities.lift_output_func(get_category_key)
 def get_category_key_output(name: Optional[pulumi.Input[str]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCategoryKeyResult]:
     """
@@ -132,4 +134,14 @@ def get_category_key_output(name: Optional[pulumi.Input[str]] = None,
 
     :param str name: - (Required) The name for the category key.
     """
-    ...
+    __args__ = dict()
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getCategoryKey:getCategoryKey', __args__, opts=opts, typ=GetCategoryKeyResult)
+    return __ret__.apply(lambda __response__: GetCategoryKeyResult(
+        api_version=pulumi.get(__response__, 'api_version'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        system_defined=pulumi.get(__response__, 'system_defined'),
+        values=pulumi.get(__response__, 'values')))

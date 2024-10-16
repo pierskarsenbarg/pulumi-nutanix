@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -227,12 +232,31 @@ def get_ndb_tms_capability(time_machine_id: Optional[str] = None,
         source=pulumi.get(__ret__, 'source'),
         time_machine_id=pulumi.get(__ret__, 'time_machine_id'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_ndb_tms_capability)
 def get_ndb_tms_capability_output(time_machine_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbTmsCapabilityResult]:
     """
     Use this data source to access information about an existing resource.
     """
-    ...
+    __args__ = dict()
+    __args__['timeMachineId'] = time_machine_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbTmsCapability:getNdbTmsCapability', __args__, opts=opts, typ=GetNdbTmsCapabilityResult)
+    return __ret__.apply(lambda __response__: GetNdbTmsCapabilityResult(
+        capabilities=pulumi.get(__response__, 'capabilities'),
+        capability_reset_time=pulumi.get(__response__, 'capability_reset_time'),
+        database_ids=pulumi.get(__response__, 'database_ids'),
+        heal_with_reset_capability=pulumi.get(__response__, 'heal_with_reset_capability'),
+        id=pulumi.get(__response__, 'id'),
+        last_continuous_snapshot_time=pulumi.get(__response__, 'last_continuous_snapshot_time'),
+        last_continuous_snapshots=pulumi.get(__response__, 'last_continuous_snapshots'),
+        last_db_logs=pulumi.get(__response__, 'last_db_logs'),
+        log_catchup_start_time=pulumi.get(__response__, 'log_catchup_start_time'),
+        log_time_info=pulumi.get(__response__, 'log_time_info'),
+        nx_cluster_association_type=pulumi.get(__response__, 'nx_cluster_association_type'),
+        nx_cluster_id=pulumi.get(__response__, 'nx_cluster_id'),
+        output_time_zone=pulumi.get(__response__, 'output_time_zone'),
+        overall_continuous_range_end_time=pulumi.get(__response__, 'overall_continuous_range_end_time'),
+        sla_id=pulumi.get(__response__, 'sla_id'),
+        source=pulumi.get(__response__, 'source'),
+        time_machine_id=pulumi.get(__response__, 'time_machine_id'),
+        type=pulumi.get(__response__, 'type')))

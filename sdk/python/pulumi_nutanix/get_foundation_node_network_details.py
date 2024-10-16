@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -109,9 +114,6 @@ def get_foundation_node_network_details(ipv6_addresses: Optional[Sequence[str]] 
         ipv6_addresses=pulumi.get(__ret__, 'ipv6_addresses'),
         nodes=pulumi.get(__ret__, 'nodes'),
         timeout=pulumi.get(__ret__, 'timeout'))
-
-
-@_utilities.lift_output_func(get_foundation_node_network_details)
 def get_foundation_node_network_details_output(ipv6_addresses: Optional[pulumi.Input[Sequence[str]]] = None,
                                                timeout: Optional[pulumi.Input[Optional[str]]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationNodeNetworkDetailsResult]:
@@ -135,4 +137,13 @@ def get_foundation_node_network_details_output(ipv6_addresses: Optional[pulumi.I
     :param Sequence[str] ipv6_addresses: list of ipv6 addresses
     :param str timeout: timeout in seconds
     """
-    ...
+    __args__ = dict()
+    __args__['ipv6Addresses'] = ipv6_addresses
+    __args__['timeout'] = timeout
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails', __args__, opts=opts, typ=GetFoundationNodeNetworkDetailsResult)
+    return __ret__.apply(lambda __response__: GetFoundationNodeNetworkDetailsResult(
+        id=pulumi.get(__response__, 'id'),
+        ipv6_addresses=pulumi.get(__response__, 'ipv6_addresses'),
+        nodes=pulumi.get(__response__, 'nodes'),
+        timeout=pulumi.get(__response__, 'timeout')))
