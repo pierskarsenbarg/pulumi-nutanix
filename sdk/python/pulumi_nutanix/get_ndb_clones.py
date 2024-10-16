@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -95,9 +100,6 @@ def get_ndb_clones(filters: Optional[Sequence[Union['GetNdbClonesFilterArgs', 'G
         clones=pulumi.get(__ret__, 'clones'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_ndb_clones)
 def get_ndb_clones_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbClonesFilterArgs', 'GetNdbClonesFilterArgsDict']]]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbClonesResult]:
     """
@@ -117,4 +119,11 @@ def get_ndb_clones_output(filters: Optional[pulumi.Input[Optional[Sequence[Union
 
     :param Sequence[Union['GetNdbClonesFilterArgs', 'GetNdbClonesFilterArgsDict']] filters: Fetches the clone info based on given params
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbClones:getNdbClones', __args__, opts=opts, typ=GetNdbClonesResult)
+    return __ret__.apply(lambda __response__: GetNdbClonesResult(
+        clones=pulumi.get(__response__, 'clones'),
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id')))

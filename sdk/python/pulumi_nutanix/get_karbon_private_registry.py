@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -121,9 +126,6 @@ def get_karbon_private_registry(private_registry_id: Optional[str] = None,
         private_registry_id=pulumi.get(__ret__, 'private_registry_id'),
         private_registry_name=pulumi.get(__ret__, 'private_registry_name'),
         uuid=pulumi.get(__ret__, 'uuid'))
-
-
-@_utilities.lift_output_func(get_karbon_private_registry)
 def get_karbon_private_registry_output(private_registry_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        private_registry_name: Optional[pulumi.Input[Optional[str]]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKarbonPrivateRegistryResult]:
@@ -134,4 +136,15 @@ def get_karbon_private_registry_output(private_registry_id: Optional[pulumi.Inpu
     :param str private_registry_id: Represents karbon private registry uuid
     :param str private_registry_name: Represents the name of karbon private registry
     """
-    ...
+    __args__ = dict()
+    __args__['privateRegistryId'] = private_registry_id
+    __args__['privateRegistryName'] = private_registry_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry', __args__, opts=opts, typ=GetKarbonPrivateRegistryResult)
+    return __ret__.apply(lambda __response__: GetKarbonPrivateRegistryResult(
+        endpoint=pulumi.get(__response__, 'endpoint'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        private_registry_id=pulumi.get(__response__, 'private_registry_id'),
+        private_registry_name=pulumi.get(__response__, 'private_registry_name'),
+        uuid=pulumi.get(__response__, 'uuid')))

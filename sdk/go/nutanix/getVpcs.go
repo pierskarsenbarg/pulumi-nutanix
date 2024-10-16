@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.GetVpcs(ctx, nil, nil)
+//			_, err := nutanix.GetVpcs(ctx, &nutanix.GetVpcsArgs{}, nil)
 //			if err != nil {
 //				return err
 //			}

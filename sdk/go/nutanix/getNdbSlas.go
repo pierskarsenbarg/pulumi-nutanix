@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			slas, err := nutanix.GetNdbSlas(ctx, nil, nil)
+//			slas, err := nutanix.GetNdbSlas(ctx, map[string]interface{}{}, nil)
 //			if err != nil {
 //				return err
 //			}

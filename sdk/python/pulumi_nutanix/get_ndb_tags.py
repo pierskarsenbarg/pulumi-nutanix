@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -95,9 +100,6 @@ def get_ndb_tags(entity_type: Optional[str] = None,
         entity_type=pulumi.get(__ret__, 'entity_type'),
         id=pulumi.get(__ret__, 'id'),
         tags=pulumi.get(__ret__, 'tags'))
-
-
-@_utilities.lift_output_func(get_ndb_tags)
 def get_ndb_tags_output(entity_type: Optional[pulumi.Input[Optional[str]]] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbTagsResult]:
     """
@@ -115,4 +117,11 @@ def get_ndb_tags_output(entity_type: Optional[pulumi.Input[Optional[str]]] = Non
 
     :param str entity_type: entity for the tag to be associated with.
     """
-    ...
+    __args__ = dict()
+    __args__['entityType'] = entity_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbTags:getNdbTags', __args__, opts=opts, typ=GetNdbTagsResult)
+    return __ret__.apply(lambda __response__: GetNdbTagsResult(
+        entity_type=pulumi.get(__response__, 'entity_type'),
+        id=pulumi.get(__response__, 'id'),
+        tags=pulumi.get(__response__, 'tags')))

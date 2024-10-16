@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -112,9 +117,6 @@ def get_subnets(metadatas: Optional[Sequence[Union['GetSubnetsMetadataArgs', 'Ge
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-
-
-@_utilities.lift_output_func(get_subnets)
 def get_subnets_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetSubnetsMetadataArgs', 'GetSubnetsMetadataArgsDict']]]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubnetsResult]:
     """
@@ -135,4 +137,12 @@ def get_subnets_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union[
 
     :param Sequence[Union['GetSubnetsMetadataArgs', 'GetSubnetsMetadataArgsDict']] metadatas: The subnet kind metadata.
     """
-    ...
+    __args__ = dict()
+    __args__['metadatas'] = metadatas
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getSubnets:getSubnets', __args__, opts=opts, typ=GetSubnetsResult)
+    return __ret__.apply(lambda __response__: GetSubnetsResult(
+        api_version=pulumi.get(__response__, 'api_version'),
+        entities=pulumi.get(__response__, 'entities'),
+        id=pulumi.get(__response__, 'id'),
+        metadatas=pulumi.get(__response__, 'metadatas')))

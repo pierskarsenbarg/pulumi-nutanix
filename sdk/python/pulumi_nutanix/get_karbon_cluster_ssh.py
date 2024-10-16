@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -144,9 +149,6 @@ def get_karbon_cluster_ssh(karbon_cluster_id: Optional[str] = None,
         karbon_cluster_name=pulumi.get(__ret__, 'karbon_cluster_name'),
         private_key=pulumi.get(__ret__, 'private_key'),
         username=pulumi.get(__ret__, 'username'))
-
-
-@_utilities.lift_output_func(get_karbon_cluster_ssh)
 def get_karbon_cluster_ssh_output(karbon_cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                                   karbon_cluster_name: Optional[pulumi.Input[Optional[str]]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKarbonClusterSshResult]:
@@ -167,4 +169,16 @@ def get_karbon_cluster_ssh_output(karbon_cluster_id: Optional[pulumi.Input[Optio
     :param str karbon_cluster_id: Represents karbon cluster uuid
     :param str karbon_cluster_name: Represents the name of karbon cluster
     """
-    ...
+    __args__ = dict()
+    __args__['karbonClusterId'] = karbon_cluster_id
+    __args__['karbonClusterName'] = karbon_cluster_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh', __args__, opts=opts, typ=GetKarbonClusterSshResult)
+    return __ret__.apply(lambda __response__: GetKarbonClusterSshResult(
+        certificate=pulumi.get(__response__, 'certificate'),
+        expiry_time=pulumi.get(__response__, 'expiry_time'),
+        id=pulumi.get(__response__, 'id'),
+        karbon_cluster_id=pulumi.get(__response__, 'karbon_cluster_id'),
+        karbon_cluster_name=pulumi.get(__response__, 'karbon_cluster_name'),
+        private_key=pulumi.get(__response__, 'private_key'),
+        username=pulumi.get(__response__, 'username')))

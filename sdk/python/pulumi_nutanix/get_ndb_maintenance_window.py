@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -239,9 +244,6 @@ def get_ndb_maintenance_window(id: Optional[str] = None,
         status=pulumi.get(__ret__, 'status'),
         tags=pulumi.get(__ret__, 'tags'),
         timezone=pulumi.get(__ret__, 'timezone'))
-
-
-@_utilities.lift_output_func(get_ndb_maintenance_window)
 def get_ndb_maintenance_window_output(id: Optional[pulumi.Input[str]] = None,
                                       tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbMaintenanceWindowTagArgs', 'GetNdbMaintenanceWindowTagArgsDict']]]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbMaintenanceWindowResult]:
@@ -261,4 +263,23 @@ def get_ndb_maintenance_window_output(id: Optional[pulumi.Input[str]] = None,
     :param str id: Maintenance window id.
     :param Sequence[Union['GetNdbMaintenanceWindowTagArgs', 'GetNdbMaintenanceWindowTagArgsDict']] tags: tags of maintenance window
     """
-    ...
+    __args__ = dict()
+    __args__['id'] = id
+    __args__['tags'] = tags
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbMaintenanceWindow:getNdbMaintenanceWindow', __args__, opts=opts, typ=GetNdbMaintenanceWindowResult)
+    return __ret__.apply(lambda __response__: GetNdbMaintenanceWindowResult(
+        access_level=pulumi.get(__response__, 'access_level'),
+        date_created=pulumi.get(__response__, 'date_created'),
+        date_modified=pulumi.get(__response__, 'date_modified'),
+        description=pulumi.get(__response__, 'description'),
+        entity_task_assocs=pulumi.get(__response__, 'entity_task_assocs'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        next_run_time=pulumi.get(__response__, 'next_run_time'),
+        owner_id=pulumi.get(__response__, 'owner_id'),
+        properties=pulumi.get(__response__, 'properties'),
+        schedules=pulumi.get(__response__, 'schedules'),
+        status=pulumi.get(__response__, 'status'),
+        tags=pulumi.get(__response__, 'tags'),
+        timezone=pulumi.get(__response__, 'timezone')))

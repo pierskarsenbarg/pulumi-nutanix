@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -109,9 +114,6 @@ def get_floating_ips(metadatas: Optional[Sequence[Union['GetFloatingIpsMetadataA
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-
-
-@_utilities.lift_output_func(get_floating_ips)
 def get_floating_ips_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetFloatingIpsMetadataArgs', 'GetFloatingIpsMetadataArgsDict']]]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFloatingIpsResult]:
     """
@@ -129,4 +131,12 @@ def get_floating_ips_output(metadatas: Optional[pulumi.Input[Optional[Sequence[U
 
     :param Sequence[Union['GetFloatingIpsMetadataArgs', 'GetFloatingIpsMetadataArgsDict']] metadatas: - The floating_ip kind metadata.
     """
-    ...
+    __args__ = dict()
+    __args__['metadatas'] = metadatas
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getFloatingIps:getFloatingIps', __args__, opts=opts, typ=GetFloatingIpsResult)
+    return __ret__.apply(lambda __response__: GetFloatingIpsResult(
+        api_version=pulumi.get(__response__, 'api_version'),
+        entities=pulumi.get(__response__, 'entities'),
+        id=pulumi.get(__response__, 'id'),
+        metadatas=pulumi.get(__response__, 'metadatas')))

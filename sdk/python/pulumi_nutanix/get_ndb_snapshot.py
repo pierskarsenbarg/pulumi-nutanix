@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -578,9 +583,6 @@ def get_ndb_snapshot(filters: Optional[Sequence[Union['GetNdbSnapshotFilterArgs'
         timezone=pulumi.get(__ret__, 'timezone'),
         to_timestamp=pulumi.get(__ret__, 'to_timestamp'),
         type=pulumi.get(__ret__, 'type'))
-
-
-@_utilities.lift_output_func(get_ndb_snapshot)
 def get_ndb_snapshot_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbSnapshotFilterArgs', 'GetNdbSnapshotFilterArgsDict']]]]] = None,
                             snapshot_id: Optional[pulumi.Input[str]] = None,
                             tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbSnapshotTagArgs', 'GetNdbSnapshotTagArgsDict']]]]] = None,
@@ -605,4 +607,51 @@ def get_ndb_snapshot_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     :param str snapshot_id: Snapshot ID to be given
     :param Sequence[Union['GetNdbSnapshotTagArgs', 'GetNdbSnapshotTagArgsDict']] tags: tags
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['snapshotId'] = snapshot_id
+    __args__['tags'] = tags
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbSnapshot:getNdbSnapshot', __args__, opts=opts, typ=GetNdbSnapshotResult)
+    return __ret__.apply(lambda __response__: GetNdbSnapshotResult(
+        app_info_version=pulumi.get(__response__, 'app_info_version'),
+        applicable_types=pulumi.get(__response__, 'applicable_types'),
+        database_node_id=pulumi.get(__response__, 'database_node_id'),
+        database_snapshot=pulumi.get(__response__, 'database_snapshot'),
+        date_created=pulumi.get(__response__, 'date_created'),
+        date_modified=pulumi.get(__response__, 'date_modified'),
+        dbserver_id=pulumi.get(__response__, 'dbserver_id'),
+        dbserver_ip=pulumi.get(__response__, 'dbserver_ip'),
+        dbserver_name=pulumi.get(__response__, 'dbserver_name'),
+        dbserver_storage_metadata_version=pulumi.get(__response__, 'dbserver_storage_metadata_version'),
+        description=pulumi.get(__response__, 'description'),
+        filters=pulumi.get(__response__, 'filters'),
+        from_timestamp=pulumi.get(__response__, 'from_timestamp'),
+        id=pulumi.get(__response__, 'id'),
+        lcm_configs=pulumi.get(__response__, 'lcm_configs'),
+        name=pulumi.get(__response__, 'name'),
+        nx_cluster_id=pulumi.get(__response__, 'nx_cluster_id'),
+        parent_snapshot=pulumi.get(__response__, 'parent_snapshot'),
+        parent_snapshot_id=pulumi.get(__response__, 'parent_snapshot_id'),
+        processed=pulumi.get(__response__, 'processed'),
+        properties=pulumi.get(__response__, 'properties'),
+        protection_domain_id=pulumi.get(__response__, 'protection_domain_id'),
+        replicated_snapshots=pulumi.get(__response__, 'replicated_snapshots'),
+        santized=pulumi.get(__response__, 'santized'),
+        santized_from_snapshot_id=pulumi.get(__response__, 'santized_from_snapshot_id'),
+        santized_snapshots=pulumi.get(__response__, 'santized_snapshots'),
+        snapshot_family=pulumi.get(__response__, 'snapshot_family'),
+        snapshot_id=pulumi.get(__response__, 'snapshot_id'),
+        snapshot_size=pulumi.get(__response__, 'snapshot_size'),
+        snapshot_timestamp=pulumi.get(__response__, 'snapshot_timestamp'),
+        snapshot_timestamp_date=pulumi.get(__response__, 'snapshot_timestamp_date'),
+        snapshot_uuid=pulumi.get(__response__, 'snapshot_uuid'),
+        software_database_snapshot=pulumi.get(__response__, 'software_database_snapshot'),
+        software_snapshot=pulumi.get(__response__, 'software_snapshot'),
+        software_snapshot_id=pulumi.get(__response__, 'software_snapshot_id'),
+        status=pulumi.get(__response__, 'status'),
+        tags=pulumi.get(__response__, 'tags'),
+        time_machine_id=pulumi.get(__response__, 'time_machine_id'),
+        timezone=pulumi.get(__response__, 'timezone'),
+        to_timestamp=pulumi.get(__response__, 'to_timestamp'),
+        type=pulumi.get(__response__, 'type')))

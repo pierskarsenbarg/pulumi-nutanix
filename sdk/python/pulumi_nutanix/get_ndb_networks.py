@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -77,9 +82,6 @@ def get_ndb_networks(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGe
     return AwaitableGetNdbNetworksResult(
         id=pulumi.get(__ret__, 'id'),
         networks=pulumi.get(__ret__, 'networks'))
-
-
-@_utilities.lift_output_func(get_ndb_networks)
 def get_ndb_networks_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbNetworksResult]:
     """
     List of networks in Nutanix Database Service
@@ -93,4 +95,9 @@ def get_ndb_networks_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulu
     nw = nutanix.get_ndb_networks()
     ```
     """
-    ...
+    __args__ = dict()
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbNetworks:getNdbNetworks', __args__, opts=opts, typ=GetNdbNetworksResult)
+    return __ret__.apply(lambda __response__: GetNdbNetworksResult(
+        id=pulumi.get(__response__, 'id'),
+        networks=pulumi.get(__response__, 'networks')))

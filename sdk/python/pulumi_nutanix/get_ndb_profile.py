@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -325,9 +330,6 @@ def get_ndb_profile(engine: Optional[str] = None,
         topology=pulumi.get(__ret__, 'topology'),
         type=pulumi.get(__ret__, 'type'),
         versions=pulumi.get(__ret__, 'versions'))
-
-
-@_utilities.lift_output_func(get_ndb_profile)
 def get_ndb_profile_output(engine: Optional[pulumi.Input[Optional[str]]] = None,
                            profile_id: Optional[pulumi.Input[Optional[str]]] = None,
                            profile_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -353,4 +355,32 @@ def get_ndb_profile_output(engine: Optional[pulumi.Input[Optional[str]]] = None,
     :param str profile_name: Profile Name for query
     :param str profile_type: Profile type. Types: Software, Compute, Network and Database_Parameter
     """
-    ...
+    __args__ = dict()
+    __args__['engine'] = engine
+    __args__['profileId'] = profile_id
+    __args__['profileName'] = profile_name
+    __args__['profileType'] = profile_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbProfile:getNdbProfile', __args__, opts=opts, typ=GetNdbProfileResult)
+    return __ret__.apply(lambda __response__: GetNdbProfileResult(
+        assoc_databases=pulumi.get(__response__, 'assoc_databases'),
+        assoc_db_servers=pulumi.get(__response__, 'assoc_db_servers'),
+        cluster_availabilities=pulumi.get(__response__, 'cluster_availabilities'),
+        db_version=pulumi.get(__response__, 'db_version'),
+        description=pulumi.get(__response__, 'description'),
+        engine=pulumi.get(__response__, 'engine'),
+        engine_type=pulumi.get(__response__, 'engine_type'),
+        id=pulumi.get(__response__, 'id'),
+        latest_version=pulumi.get(__response__, 'latest_version'),
+        latest_version_id=pulumi.get(__response__, 'latest_version_id'),
+        name=pulumi.get(__response__, 'name'),
+        nx_cluster_id=pulumi.get(__response__, 'nx_cluster_id'),
+        owner=pulumi.get(__response__, 'owner'),
+        profile_id=pulumi.get(__response__, 'profile_id'),
+        profile_name=pulumi.get(__response__, 'profile_name'),
+        profile_type=pulumi.get(__response__, 'profile_type'),
+        status=pulumi.get(__response__, 'status'),
+        system_profile=pulumi.get(__response__, 'system_profile'),
+        topology=pulumi.get(__response__, 'topology'),
+        type=pulumi.get(__response__, 'type'),
+        versions=pulumi.get(__response__, 'versions')))

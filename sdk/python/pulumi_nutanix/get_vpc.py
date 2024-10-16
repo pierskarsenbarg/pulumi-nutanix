@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -135,9 +140,6 @@ def get_vpc(vpc_name: Optional[str] = None,
         statuses=pulumi.get(__ret__, 'statuses'),
         vpc_name=pulumi.get(__ret__, 'vpc_name'),
         vpc_uuid=pulumi.get(__ret__, 'vpc_uuid'))
-
-
-@_utilities.lift_output_func(get_vpc)
 def get_vpc_output(vpc_name: Optional[pulumi.Input[Optional[str]]] = None,
                    vpc_uuid: Optional[pulumi.Input[Optional[str]]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVpcResult]:
@@ -148,4 +150,16 @@ def get_vpc_output(vpc_name: Optional[pulumi.Input[Optional[str]]] = None,
     :param str vpc_name: vpc Name
     :param str vpc_uuid: vpc UUID
     """
-    ...
+    __args__ = dict()
+    __args__['vpcName'] = vpc_name
+    __args__['vpcUuid'] = vpc_uuid
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getVpc:getVpc', __args__, opts=opts, typ=GetVpcResult)
+    return __ret__.apply(lambda __response__: GetVpcResult(
+        api_version=pulumi.get(__response__, 'api_version'),
+        id=pulumi.get(__response__, 'id'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        specs=pulumi.get(__response__, 'specs'),
+        statuses=pulumi.get(__response__, 'statuses'),
+        vpc_name=pulumi.get(__response__, 'vpc_name'),
+        vpc_uuid=pulumi.get(__response__, 'vpc_uuid')))

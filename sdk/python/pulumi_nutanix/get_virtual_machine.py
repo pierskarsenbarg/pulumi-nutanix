@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -663,9 +668,6 @@ def get_virtual_machine(boot_device_disk_address: Optional[Mapping[str, str]] = 
         state=pulumi.get(__ret__, 'state'),
         vga_console_enabled=pulumi.get(__ret__, 'vga_console_enabled'),
         vm_id=pulumi.get(__ret__, 'vm_id'))
-
-
-@_utilities.lift_output_func(get_virtual_machine)
 def get_virtual_machine_output(boot_device_disk_address: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
                                boot_device_mac_address: Optional[pulumi.Input[Optional[str]]] = None,
                                categories: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualMachineCategoryArgs', 'GetVirtualMachineCategoryArgsDict']]]]] = None,
@@ -680,4 +682,59 @@ def get_virtual_machine_output(boot_device_disk_address: Optional[pulumi.Input[O
     :param Sequence[Union['GetVirtualMachineCategoryArgs', 'GetVirtualMachineCategoryArgsDict']] categories: - Categories for the vm.
     :param str vm_id: Represents virtual machine UUID
     """
-    ...
+    __args__ = dict()
+    __args__['bootDeviceDiskAddress'] = boot_device_disk_address
+    __args__['bootDeviceMacAddress'] = boot_device_mac_address
+    __args__['categories'] = categories
+    __args__['vmId'] = vm_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getVirtualMachine:getVirtualMachine', __args__, opts=opts, typ=GetVirtualMachineResult)
+    return __ret__.apply(lambda __response__: GetVirtualMachineResult(
+        api_version=pulumi.get(__response__, 'api_version'),
+        availability_zone_reference=pulumi.get(__response__, 'availability_zone_reference'),
+        boot_device_disk_address=pulumi.get(__response__, 'boot_device_disk_address'),
+        boot_device_mac_address=pulumi.get(__response__, 'boot_device_mac_address'),
+        boot_device_order_lists=pulumi.get(__response__, 'boot_device_order_lists'),
+        boot_type=pulumi.get(__response__, 'boot_type'),
+        categories=pulumi.get(__response__, 'categories'),
+        cluster_name=pulumi.get(__response__, 'cluster_name'),
+        cluster_uuid=pulumi.get(__response__, 'cluster_uuid'),
+        description=pulumi.get(__response__, 'description'),
+        disk_lists=pulumi.get(__response__, 'disk_lists'),
+        enable_cpu_passthrough=pulumi.get(__response__, 'enable_cpu_passthrough'),
+        enable_script_exec=pulumi.get(__response__, 'enable_script_exec'),
+        gpu_lists=pulumi.get(__response__, 'gpu_lists'),
+        guest_customization_cloud_init_custom_key_values=pulumi.get(__response__, 'guest_customization_cloud_init_custom_key_values'),
+        guest_customization_cloud_init_meta_data=pulumi.get(__response__, 'guest_customization_cloud_init_meta_data'),
+        guest_customization_cloud_init_user_data=pulumi.get(__response__, 'guest_customization_cloud_init_user_data'),
+        guest_customization_is_overridable=pulumi.get(__response__, 'guest_customization_is_overridable'),
+        guest_customization_sysprep=pulumi.get(__response__, 'guest_customization_sysprep'),
+        guest_customization_sysprep_custom_key_values=pulumi.get(__response__, 'guest_customization_sysprep_custom_key_values'),
+        guest_os_id=pulumi.get(__response__, 'guest_os_id'),
+        hardware_clock_timezone=pulumi.get(__response__, 'hardware_clock_timezone'),
+        host_reference=pulumi.get(__response__, 'host_reference'),
+        hypervisor_type=pulumi.get(__response__, 'hypervisor_type'),
+        id=pulumi.get(__response__, 'id'),
+        is_vcpu_hard_pinned=pulumi.get(__response__, 'is_vcpu_hard_pinned'),
+        machine_type=pulumi.get(__response__, 'machine_type'),
+        memory_size_mib=pulumi.get(__response__, 'memory_size_mib'),
+        message_lists=pulumi.get(__response__, 'message_lists'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        name=pulumi.get(__response__, 'name'),
+        ngt_credentials=pulumi.get(__response__, 'ngt_credentials'),
+        ngt_enabled_capability_lists=pulumi.get(__response__, 'ngt_enabled_capability_lists'),
+        nic_lists=pulumi.get(__response__, 'nic_lists'),
+        num_sockets=pulumi.get(__response__, 'num_sockets'),
+        num_vcpus_per_socket=pulumi.get(__response__, 'num_vcpus_per_socket'),
+        num_vnuma_nodes=pulumi.get(__response__, 'num_vnuma_nodes'),
+        nutanix_guest_tools=pulumi.get(__response__, 'nutanix_guest_tools'),
+        owner_reference=pulumi.get(__response__, 'owner_reference'),
+        parent_reference=pulumi.get(__response__, 'parent_reference'),
+        power_state=pulumi.get(__response__, 'power_state'),
+        power_state_mechanism=pulumi.get(__response__, 'power_state_mechanism'),
+        project_reference=pulumi.get(__response__, 'project_reference'),
+        serial_port_lists=pulumi.get(__response__, 'serial_port_lists'),
+        should_fail_on_script_failure=pulumi.get(__response__, 'should_fail_on_script_failure'),
+        state=pulumi.get(__response__, 'state'),
+        vga_console_enabled=pulumi.get(__response__, 'vga_console_enabled'),
+        vm_id=pulumi.get(__response__, 'vm_id')))

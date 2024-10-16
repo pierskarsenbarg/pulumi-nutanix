@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -300,9 +305,6 @@ def get_ndb_sla(sla_id: Optional[str] = None,
         unique_name=pulumi.get(__ret__, 'unique_name'),
         weekly_retention=pulumi.get(__ret__, 'weekly_retention'),
         yearly_retention=pulumi.get(__ret__, 'yearly_retention'))
-
-
-@_utilities.lift_output_func(get_ndb_sla)
 def get_ndb_sla_output(sla_id: Optional[pulumi.Input[Optional[str]]] = None,
                        sla_name: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbSlaResult]:
@@ -323,4 +325,28 @@ def get_ndb_sla_output(sla_id: Optional[pulumi.Input[Optional[str]]] = None,
     :param str sla_id: and `sla_name` are mutually exclusive.
     :param str sla_name: SLA Name for query
     """
-    ...
+    __args__ = dict()
+    __args__['slaId'] = sla_id
+    __args__['slaName'] = sla_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbSla:getNdbSla', __args__, opts=opts, typ=GetNdbSlaResult)
+    return __ret__.apply(lambda __response__: GetNdbSlaResult(
+        continuous_retention=pulumi.get(__response__, 'continuous_retention'),
+        current_active_frequency=pulumi.get(__response__, 'current_active_frequency'),
+        daily_retention=pulumi.get(__response__, 'daily_retention'),
+        date_created=pulumi.get(__response__, 'date_created'),
+        date_modified=pulumi.get(__response__, 'date_modified'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        monthly_retention=pulumi.get(__response__, 'monthly_retention'),
+        name=pulumi.get(__response__, 'name'),
+        owner_id=pulumi.get(__response__, 'owner_id'),
+        pitr_enabled=pulumi.get(__response__, 'pitr_enabled'),
+        quartely_retention=pulumi.get(__response__, 'quartely_retention'),
+        reference_count=pulumi.get(__response__, 'reference_count'),
+        sla_id=pulumi.get(__response__, 'sla_id'),
+        sla_name=pulumi.get(__response__, 'sla_name'),
+        system_sla=pulumi.get(__response__, 'system_sla'),
+        unique_name=pulumi.get(__response__, 'unique_name'),
+        weekly_retention=pulumi.get(__response__, 'weekly_retention'),
+        yearly_retention=pulumi.get(__response__, 'yearly_retention')))

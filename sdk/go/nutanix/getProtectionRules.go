@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.GetProtectionRules(ctx, nil, nil)
+//			_, err := nutanix.GetProtectionRules(ctx, map[string]interface{}{}, nil)
 //			if err != nil {
 //				return err
 //			}

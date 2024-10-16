@@ -27,7 +27,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			profiles, err := nutanix.GetNdbProfiles(ctx, nil, nil)
+//			profiles, err := nutanix.GetNdbProfiles(ctx, &nutanix.GetNdbProfilesArgs{}, nil)
 //			if err != nil {
 //				return err
 //			}

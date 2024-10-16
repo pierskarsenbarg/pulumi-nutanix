@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -109,9 +114,6 @@ def get_pbrs(metadatas: Optional[Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsM
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
-
-
-@_utilities.lift_output_func(get_pbrs)
 def get_pbrs_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsMetadataArgsDict']]]]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPbrsResult]:
     """
@@ -129,4 +131,12 @@ def get_pbrs_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['Ge
 
     :param Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsMetadataArgsDict']] metadatas: - The routing policies kind metadata.
     """
-    ...
+    __args__ = dict()
+    __args__['metadatas'] = metadatas
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getPbrs:getPbrs', __args__, opts=opts, typ=GetPbrsResult)
+    return __ret__.apply(lambda __response__: GetPbrsResult(
+        api_version=pulumi.get(__response__, 'api_version'),
+        entities=pulumi.get(__response__, 'entities'),
+        id=pulumi.get(__response__, 'id'),
+        metadatas=pulumi.get(__response__, 'metadatas')))

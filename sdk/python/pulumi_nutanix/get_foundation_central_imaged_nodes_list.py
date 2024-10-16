@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -134,9 +139,6 @@ def get_foundation_central_imaged_nodes_list(filters: Optional[Union['GetFoundat
         length=pulumi.get(__ret__, 'length'),
         metadatas=pulumi.get(__ret__, 'metadatas'),
         offset=pulumi.get(__ret__, 'offset'))
-
-
-@_utilities.lift_output_func(get_foundation_central_imaged_nodes_list)
 def get_foundation_central_imaged_nodes_list_output(filters: Optional[pulumi.Input[Optional[Union['GetFoundationCentralImagedNodesListFiltersArgs', 'GetFoundationCentralImagedNodesListFiltersArgsDict']]]] = None,
                                                     length: Optional[pulumi.Input[Optional[int]]] = None,
                                                     offset: Optional[pulumi.Input[Optional[int]]] = None,
@@ -157,4 +159,16 @@ def get_foundation_central_imaged_nodes_list_output(filters: Optional[pulumi.Inp
     :param int length: The number of records retrieved.
     :param int offset: Offset from the start of the object list.
     """
-    ...
+    __args__ = dict()
+    __args__['filters'] = filters
+    __args__['length'] = length
+    __args__['offset'] = offset
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getFoundationCentralImagedNodesList:getFoundationCentralImagedNodesList', __args__, opts=opts, typ=GetFoundationCentralImagedNodesListResult)
+    return __ret__.apply(lambda __response__: GetFoundationCentralImagedNodesListResult(
+        filters=pulumi.get(__response__, 'filters'),
+        id=pulumi.get(__response__, 'id'),
+        imaged_nodes=pulumi.get(__response__, 'imaged_nodes'),
+        length=pulumi.get(__response__, 'length'),
+        metadatas=pulumi.get(__response__, 'metadatas'),
+        offset=pulumi.get(__response__, 'offset')))

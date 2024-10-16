@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -435,9 +440,6 @@ def get_project(categories: Optional[Sequence[Union['GetProjectCategoryArgs', 'G
         tunnel_reference_lists=pulumi.get(__ret__, 'tunnel_reference_lists'),
         user_reference_lists=pulumi.get(__ret__, 'user_reference_lists'),
         vpc_reference_lists=pulumi.get(__ret__, 'vpc_reference_lists'))
-
-
-@_utilities.lift_output_func(get_project)
 def get_project_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetProjectCategoryArgs', 'GetProjectCategoryArgsDict']]]]] = None,
                        external_user_group_reference_lists: Optional[pulumi.Input[Optional[Sequence[Union['GetProjectExternalUserGroupReferenceListArgs', 'GetProjectExternalUserGroupReferenceListArgsDict']]]]] = None,
                        project_id: Optional[pulumi.Input[Optional[str]]] = None,
@@ -507,4 +509,38 @@ def get_project_output(categories: Optional[pulumi.Input[Optional[Sequence[Union
            * `subnet_reference_list.#.name` - The name of a subnet.
     :param Sequence[Union['GetProjectUserReferenceListArgs', 'GetProjectUserReferenceListArgsDict']] user_reference_lists: List of Reference of users.
     """
-    ...
+    __args__ = dict()
+    __args__['categories'] = categories
+    __args__['externalUserGroupReferenceLists'] = external_user_group_reference_lists
+    __args__['projectId'] = project_id
+    __args__['projectName'] = project_name
+    __args__['subnetReferenceLists'] = subnet_reference_lists
+    __args__['userReferenceLists'] = user_reference_lists
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getProject:getProject', __args__, opts=opts, typ=GetProjectResult)
+    return __ret__.apply(lambda __response__: GetProjectResult(
+        account_reference_lists=pulumi.get(__response__, 'account_reference_lists'),
+        acps=pulumi.get(__response__, 'acps'),
+        api_version=pulumi.get(__response__, 'api_version'),
+        categories=pulumi.get(__response__, 'categories'),
+        cluster_reference_lists=pulumi.get(__response__, 'cluster_reference_lists'),
+        default_environment_references=pulumi.get(__response__, 'default_environment_references'),
+        default_subnet_reference=pulumi.get(__response__, 'default_subnet_reference'),
+        description=pulumi.get(__response__, 'description'),
+        environment_reference_lists=pulumi.get(__response__, 'environment_reference_lists'),
+        external_network_lists=pulumi.get(__response__, 'external_network_lists'),
+        external_user_group_reference_lists=pulumi.get(__response__, 'external_user_group_reference_lists'),
+        id=pulumi.get(__response__, 'id'),
+        is_default=pulumi.get(__response__, 'is_default'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        name=pulumi.get(__response__, 'name'),
+        owner_reference=pulumi.get(__response__, 'owner_reference'),
+        project_id=pulumi.get(__response__, 'project_id'),
+        project_name=pulumi.get(__response__, 'project_name'),
+        project_reference=pulumi.get(__response__, 'project_reference'),
+        resource_domains=pulumi.get(__response__, 'resource_domains'),
+        state=pulumi.get(__response__, 'state'),
+        subnet_reference_lists=pulumi.get(__response__, 'subnet_reference_lists'),
+        tunnel_reference_lists=pulumi.get(__response__, 'tunnel_reference_lists'),
+        user_reference_lists=pulumi.get(__response__, 'user_reference_lists'),
+        vpc_reference_lists=pulumi.get(__response__, 'vpc_reference_lists')))

@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -260,9 +265,6 @@ def get_user_group(categories: Optional[Sequence[Union['GetUserGroupCategoryArgs
         user_group_id=pulumi.get(__ret__, 'user_group_id'),
         user_group_name=pulumi.get(__ret__, 'user_group_name'),
         user_group_type=pulumi.get(__ret__, 'user_group_type'))
-
-
-@_utilities.lift_output_func(get_user_group)
 def get_user_group_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetUserGroupCategoryArgs', 'GetUserGroupCategoryArgsDict']]]]] = None,
                           owner_reference: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
                           project_reference: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
@@ -292,4 +294,28 @@ def get_user_group_output(categories: Optional[pulumi.Input[Optional[Sequence[Un
     :param str user_group_id: - (Optional) The UUID for the user group
     :param str user_group_name: - (Optional) The name for the user group
     """
-    ...
+    __args__ = dict()
+    __args__['categories'] = categories
+    __args__['ownerReference'] = owner_reference
+    __args__['projectReference'] = project_reference
+    __args__['userGroupDistinguishedName'] = user_group_distinguished_name
+    __args__['userGroupId'] = user_group_id
+    __args__['userGroupName'] = user_group_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getUserGroup:getUserGroup', __args__, opts=opts, typ=GetUserGroupResult)
+    return __ret__.apply(lambda __response__: GetUserGroupResult(
+        access_control_policy_reference_lists=pulumi.get(__response__, 'access_control_policy_reference_lists'),
+        api_version=pulumi.get(__response__, 'api_version'),
+        categories=pulumi.get(__response__, 'categories'),
+        directory_service_user_groups=pulumi.get(__response__, 'directory_service_user_groups'),
+        display_name=pulumi.get(__response__, 'display_name'),
+        id=pulumi.get(__response__, 'id'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        owner_reference=pulumi.get(__response__, 'owner_reference'),
+        project_reference=pulumi.get(__response__, 'project_reference'),
+        project_reference_lists=pulumi.get(__response__, 'project_reference_lists'),
+        state=pulumi.get(__response__, 'state'),
+        user_group_distinguished_name=pulumi.get(__response__, 'user_group_distinguished_name'),
+        user_group_id=pulumi.get(__response__, 'user_group_id'),
+        user_group_name=pulumi.get(__response__, 'user_group_name'),
+        user_group_type=pulumi.get(__response__, 'user_group_type')))

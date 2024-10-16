@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -251,9 +256,6 @@ def get_protection_rule(categories: Optional[Sequence[Union['GetProtectionRuleCa
         protection_rule_name=pulumi.get(__ret__, 'protection_rule_name'),
         start_time=pulumi.get(__ret__, 'start_time'),
         state=pulumi.get(__ret__, 'state'))
-
-
-@_utilities.lift_output_func(get_protection_rule)
 def get_protection_rule_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectionRuleCategoryArgs', 'GetProtectionRuleCategoryArgsDict']]]]] = None,
                                protection_rule_id: Optional[pulumi.Input[Optional[str]]] = None,
                                protection_rule_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -293,4 +295,25 @@ def get_protection_rule_output(categories: Optional[pulumi.Input[Optional[Sequen
 
     :param str protection_rule_id: - (Required) The `id` of the protection rule.
     """
-    ...
+    __args__ = dict()
+    __args__['categories'] = categories
+    __args__['protectionRuleId'] = protection_rule_id
+    __args__['protectionRuleName'] = protection_rule_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getProtectionRule:getProtectionRule', __args__, opts=opts, typ=GetProtectionRuleResult)
+    return __ret__.apply(lambda __response__: GetProtectionRuleResult(
+        api_version=pulumi.get(__response__, 'api_version'),
+        availability_zone_connectivity_lists=pulumi.get(__response__, 'availability_zone_connectivity_lists'),
+        categories=pulumi.get(__response__, 'categories'),
+        category_filters=pulumi.get(__response__, 'category_filters'),
+        description=pulumi.get(__response__, 'description'),
+        id=pulumi.get(__response__, 'id'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        name=pulumi.get(__response__, 'name'),
+        ordered_availability_zone_lists=pulumi.get(__response__, 'ordered_availability_zone_lists'),
+        owner_references=pulumi.get(__response__, 'owner_references'),
+        project_references=pulumi.get(__response__, 'project_references'),
+        protection_rule_id=pulumi.get(__response__, 'protection_rule_id'),
+        protection_rule_name=pulumi.get(__response__, 'protection_rule_name'),
+        start_time=pulumi.get(__response__, 'start_time'),
+        state=pulumi.get(__response__, 'state')))

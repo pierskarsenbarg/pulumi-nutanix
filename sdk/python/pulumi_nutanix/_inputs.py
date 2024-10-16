@@ -4,613 +4,1233 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
     'AccessControlPolicyCategoryArgs',
+    'AccessControlPolicyCategoryArgsDict',
     'AccessControlPolicyContextFilterListArgs',
+    'AccessControlPolicyContextFilterListArgsDict',
     'AccessControlPolicyContextFilterListEntityFilterExpressionListArgs',
+    'AccessControlPolicyContextFilterListEntityFilterExpressionListArgsDict',
     'AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs',
+    'AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgsDict',
     'AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs',
+    'AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgsDict',
     'AccessControlPolicyContextFilterListScopeFilterExpressionListArgs',
+    'AccessControlPolicyContextFilterListScopeFilterExpressionListArgsDict',
     'AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideArgs',
+    'AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideArgsDict',
     'AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs',
+    'AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgsDict',
     'AccessControlPolicyOwnerReferenceArgs',
+    'AccessControlPolicyOwnerReferenceArgsDict',
     'AccessControlPolicyRoleReferenceArgs',
+    'AccessControlPolicyRoleReferenceArgsDict',
     'AccessControlPolicyUserGroupReferenceListArgs',
+    'AccessControlPolicyUserGroupReferenceListArgsDict',
     'AccessControlPolicyUserReferenceListArgs',
+    'AccessControlPolicyUserReferenceListArgsDict',
     'AddressGroupIpAddressBlockListArgs',
+    'AddressGroupIpAddressBlockListArgsDict',
     'FoundationCentralImageClusterClusterStatusArgs',
+    'FoundationCentralImageClusterClusterStatusArgsDict',
     'FoundationCentralImageClusterClusterStatusClusterProgressDetailArgs',
+    'FoundationCentralImageClusterClusterStatusClusterProgressDetailArgsDict',
     'FoundationCentralImageClusterClusterStatusNodeProgressDetailArgs',
+    'FoundationCentralImageClusterClusterStatusNodeProgressDetailArgsDict',
     'FoundationCentralImageClusterCommonNetworkSettingsArgs',
+    'FoundationCentralImageClusterCommonNetworkSettingsArgsDict',
     'FoundationCentralImageClusterFoundationInitConfigArgs',
+    'FoundationCentralImageClusterFoundationInitConfigArgsDict',
     'FoundationCentralImageClusterFoundationInitConfigBlockArgs',
+    'FoundationCentralImageClusterFoundationInitConfigBlockArgsDict',
     'FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs',
+    'FoundationCentralImageClusterFoundationInitConfigBlockNodeArgsDict',
     'FoundationCentralImageClusterFoundationInitConfigClusterArgs',
+    'FoundationCentralImageClusterFoundationInitConfigClusterArgsDict',
     'FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs',
+    'FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgsDict',
     'FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs',
+    'FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgsDict',
     'FoundationCentralImageClusterHypervisorIsoDetailsArgs',
+    'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict',
     'FoundationCentralImageClusterNodeListArgs',
+    'FoundationCentralImageClusterNodeListArgsDict',
     'FoundationImageNodesBlockArgs',
+    'FoundationImageNodesBlockArgsDict',
     'FoundationImageNodesBlockNodeArgs',
+    'FoundationImageNodesBlockNodeArgsDict',
     'FoundationImageNodesBlockNodeUcsmParamsArgs',
+    'FoundationImageNodesBlockNodeUcsmParamsArgsDict',
     'FoundationImageNodesBlockNodeVswitchArgs',
+    'FoundationImageNodesBlockNodeVswitchArgsDict',
     'FoundationImageNodesClusterArgs',
+    'FoundationImageNodesClusterArgsDict',
     'FoundationImageNodesClusterUrlArgs',
+    'FoundationImageNodesClusterUrlArgsDict',
     'FoundationImageNodesEosMetadataArgs',
+    'FoundationImageNodesEosMetadataArgsDict',
     'FoundationImageNodesFcSettingsArgs',
+    'FoundationImageNodesFcSettingsArgsDict',
     'FoundationImageNodesFcSettingsFcMetadataArgs',
+    'FoundationImageNodesFcSettingsFcMetadataArgsDict',
     'FoundationImageNodesHypervisorIsoArgs',
+    'FoundationImageNodesHypervisorIsoArgsDict',
     'FoundationImageNodesHypervisorIsoEsxArgs',
+    'FoundationImageNodesHypervisorIsoEsxArgsDict',
     'FoundationImageNodesHypervisorIsoHypervArgs',
+    'FoundationImageNodesHypervisorIsoHypervArgsDict',
     'FoundationImageNodesHypervisorIsoKvmArgs',
+    'FoundationImageNodesHypervisorIsoKvmArgsDict',
     'FoundationImageNodesHypervisorIsoXenArgs',
+    'FoundationImageNodesHypervisorIsoXenArgsDict',
     'FoundationImageNodesTestsArgs',
+    'FoundationImageNodesTestsArgsDict',
     'FoundationIpmiConfigBlockArgs',
+    'FoundationIpmiConfigBlockArgsDict',
     'FoundationIpmiConfigBlockNodeArgs',
+    'FoundationIpmiConfigBlockNodeArgsDict',
     'ImageCategoryArgs',
+    'ImageCategoryArgsDict',
     'ImageClusterReferenceArgs',
+    'ImageClusterReferenceArgsDict',
     'ImageCurrentClusterReferenceListArgs',
+    'ImageCurrentClusterReferenceListArgsDict',
     'KarbonClusterActivePassiveConfigArgs',
+    'KarbonClusterActivePassiveConfigArgsDict',
     'KarbonClusterCniConfigArgs',
+    'KarbonClusterCniConfigArgsDict',
     'KarbonClusterCniConfigCalicoConfigArgs',
+    'KarbonClusterCniConfigCalicoConfigArgsDict',
     'KarbonClusterCniConfigCalicoConfigIpPoolConfigArgs',
+    'KarbonClusterCniConfigCalicoConfigIpPoolConfigArgsDict',
     'KarbonClusterCniConfigFlannelConfigArgs',
+    'KarbonClusterCniConfigFlannelConfigArgsDict',
     'KarbonClusterEtcdNodePoolArgs',
+    'KarbonClusterEtcdNodePoolArgsDict',
     'KarbonClusterEtcdNodePoolAhvConfigArgs',
+    'KarbonClusterEtcdNodePoolAhvConfigArgsDict',
     'KarbonClusterEtcdNodePoolNodeArgs',
+    'KarbonClusterEtcdNodePoolNodeArgsDict',
     'KarbonClusterExternalLbConfigArgs',
+    'KarbonClusterExternalLbConfigArgsDict',
     'KarbonClusterExternalLbConfigMasterNodesConfigArgs',
+    'KarbonClusterExternalLbConfigMasterNodesConfigArgsDict',
     'KarbonClusterMasterNodePoolArgs',
+    'KarbonClusterMasterNodePoolArgsDict',
     'KarbonClusterMasterNodePoolAhvConfigArgs',
+    'KarbonClusterMasterNodePoolAhvConfigArgsDict',
     'KarbonClusterMasterNodePoolNodeArgs',
+    'KarbonClusterMasterNodePoolNodeArgsDict',
     'KarbonClusterPrivateRegistryArgs',
+    'KarbonClusterPrivateRegistryArgsDict',
     'KarbonClusterSingleMasterConfigArgs',
+    'KarbonClusterSingleMasterConfigArgsDict',
     'KarbonClusterStorageClassConfigArgs',
+    'KarbonClusterStorageClassConfigArgsDict',
     'KarbonClusterStorageClassConfigVolumesConfigArgs',
+    'KarbonClusterStorageClassConfigVolumesConfigArgsDict',
     'KarbonClusterWorkerNodePoolArgs',
+    'KarbonClusterWorkerNodePoolArgsDict',
     'KarbonClusterWorkerNodePoolAhvConfigArgs',
+    'KarbonClusterWorkerNodePoolAhvConfigArgsDict',
     'KarbonClusterWorkerNodePoolNodeArgs',
+    'KarbonClusterWorkerNodePoolNodeArgsDict',
     'KarbonWorkerNodepoolAhvConfigArgs',
+    'KarbonWorkerNodepoolAhvConfigArgsDict',
     'KarbonWorkerNodepoolNodeArgs',
+    'KarbonWorkerNodepoolNodeArgsDict',
     'NdbCloneActionargumentArgs',
+    'NdbCloneActionargumentArgsDict',
     'NdbCloneDatabaseNodeArgs',
+    'NdbCloneDatabaseNodeArgsDict',
     'NdbCloneDatabaseNodeInfoArgs',
+    'NdbCloneDatabaseNodeInfoArgsDict',
     'NdbCloneDatabaseNodePropertyArgs',
+    'NdbCloneDatabaseNodePropertyArgsDict',
     'NdbCloneDatabaseNodeProtectionDomainArgs',
+    'NdbCloneDatabaseNodeProtectionDomainArgsDict',
     'NdbCloneDatabaseNodeProtectionDomainPropertyArgs',
+    'NdbCloneDatabaseNodeProtectionDomainPropertyArgsDict',
     'NdbCloneDatabaseNodeTagArgs',
+    'NdbCloneDatabaseNodeTagArgsDict',
     'NdbCloneInfoArgs',
+    'NdbCloneInfoArgsDict',
     'NdbCloneInfoBpgConfigArgs',
+    'NdbCloneInfoBpgConfigArgsDict',
     'NdbCloneInfoBpgConfigBpgDbParamArgs',
+    'NdbCloneInfoBpgConfigBpgDbParamArgsDict',
     'NdbCloneInfoBpgConfigStorageArgs',
+    'NdbCloneInfoBpgConfigStorageArgsDict',
     'NdbCloneInfoBpgConfigStorageArchiveStorageArgs',
+    'NdbCloneInfoBpgConfigStorageArchiveStorageArgsDict',
     'NdbCloneInfoBpgConfigStorageDataDiskArgs',
+    'NdbCloneInfoBpgConfigStorageDataDiskArgsDict',
     'NdbCloneInfoBpgConfigStorageLogDiskArgs',
+    'NdbCloneInfoBpgConfigStorageLogDiskArgsDict',
     'NdbCloneInfoBpgConfigVmPropertyArgs',
+    'NdbCloneInfoBpgConfigVmPropertyArgsDict',
     'NdbCloneLcmConfigArgs',
+    'NdbCloneLcmConfigArgsDict',
     'NdbCloneLcmConfigDatabaseLcmConfigArgs',
+    'NdbCloneLcmConfigDatabaseLcmConfigArgsDict',
     'NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs',
+    'NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgsDict',
     'NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs',
+    'NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgsDict',
     'NdbCloneLinkedDatabaseArgs',
+    'NdbCloneLinkedDatabaseArgsDict',
     'NdbCloneLinkedDatabaseInfoArgs',
+    'NdbCloneLinkedDatabaseInfoArgsDict',
     'NdbCloneNodeArgs',
+    'NdbCloneNodeArgsDict',
     'NdbCloneNodePropertyArgs',
+    'NdbCloneNodePropertyArgsDict',
     'NdbClonePostgresqlInfoArgs',
+    'NdbClonePostgresqlInfoArgsDict',
     'NdbClonePropertyArgs',
+    'NdbClonePropertyArgsDict',
     'NdbCloneTagArgs',
+    'NdbCloneTagArgsDict',
     'NdbCloneTimeMachineArgs',
+    'NdbCloneTimeMachineArgsDict',
     'NdbCloneTimeMachinePropertyArgs',
+    'NdbCloneTimeMachinePropertyArgsDict',
     'NdbCloneTimeMachineScheduleArgs',
+    'NdbCloneTimeMachineScheduleArgsDict',
     'NdbCloneTimeMachineScheduleContinuousScheduleArgs',
+    'NdbCloneTimeMachineScheduleContinuousScheduleArgsDict',
     'NdbCloneTimeMachineScheduleDailyScheduleArgs',
+    'NdbCloneTimeMachineScheduleDailyScheduleArgsDict',
     'NdbCloneTimeMachineScheduleMonthlyScheduleArgs',
+    'NdbCloneTimeMachineScheduleMonthlyScheduleArgsDict',
     'NdbCloneTimeMachineScheduleQuartelyScheduleArgs',
+    'NdbCloneTimeMachineScheduleQuartelyScheduleArgsDict',
     'NdbCloneTimeMachineScheduleSnapshotTimeOfDayArgs',
+    'NdbCloneTimeMachineScheduleSnapshotTimeOfDayArgsDict',
     'NdbCloneTimeMachineScheduleWeeklyScheduleArgs',
+    'NdbCloneTimeMachineScheduleWeeklyScheduleArgsDict',
     'NdbCloneTimeMachineScheduleYearlyScheduleArgs',
+    'NdbCloneTimeMachineScheduleYearlyScheduleArgsDict',
     'NdbCloneTimeMachineSlaArgs',
+    'NdbCloneTimeMachineSlaArgsDict',
     'NdbCloneTimeMachineTagArgs',
+    'NdbCloneTimeMachineTagArgsDict',
     'NdbClusterAgentNetworkInfoArgs',
+    'NdbClusterAgentNetworkInfoArgsDict',
     'NdbClusterEntityCountArgs',
+    'NdbClusterEntityCountArgsDict',
     'NdbClusterEntityCountEngineCountArgs',
+    'NdbClusterEntityCountEngineCountArgsDict',
     'NdbClusterEntityCountEngineCountMariadbDatabaseArgs',
+    'NdbClusterEntityCountEngineCountMariadbDatabaseArgsDict',
     'NdbClusterEntityCountEngineCountMariadbDatabaseProfileArgs',
+    'NdbClusterEntityCountEngineCountMariadbDatabaseProfileArgsDict',
     'NdbClusterEntityCountEngineCountMongodbDatabaseArgs',
+    'NdbClusterEntityCountEngineCountMongodbDatabaseArgsDict',
     'NdbClusterEntityCountEngineCountMongodbDatabaseProfileArgs',
+    'NdbClusterEntityCountEngineCountMongodbDatabaseProfileArgsDict',
     'NdbClusterEntityCountEngineCountMysqlDatabaseArgs',
+    'NdbClusterEntityCountEngineCountMysqlDatabaseArgsDict',
     'NdbClusterEntityCountEngineCountMysqlDatabaseProfileArgs',
+    'NdbClusterEntityCountEngineCountMysqlDatabaseProfileArgsDict',
     'NdbClusterEntityCountEngineCountOracleDatabaseArgs',
+    'NdbClusterEntityCountEngineCountOracleDatabaseArgsDict',
     'NdbClusterEntityCountEngineCountOracleDatabaseProfileArgs',
+    'NdbClusterEntityCountEngineCountOracleDatabaseProfileArgsDict',
     'NdbClusterEntityCountEngineCountPostgresDatabaseArgs',
+    'NdbClusterEntityCountEngineCountPostgresDatabaseArgsDict',
     'NdbClusterEntityCountEngineCountPostgresDatabaseProfileArgs',
+    'NdbClusterEntityCountEngineCountPostgresDatabaseProfileArgsDict',
     'NdbClusterEntityCountEngineCountSaphanaDatabaseArgs',
+    'NdbClusterEntityCountEngineCountSaphanaDatabaseArgsDict',
     'NdbClusterEntityCountEngineCountSaphanaDatabaseProfileArgs',
+    'NdbClusterEntityCountEngineCountSaphanaDatabaseProfileArgsDict',
     'NdbClusterEntityCountEngineCountSqlserverDatabaseArgs',
+    'NdbClusterEntityCountEngineCountSqlserverDatabaseArgsDict',
     'NdbClusterEntityCountEngineCountSqlserverDatabaseProfileArgs',
+    'NdbClusterEntityCountEngineCountSqlserverDatabaseProfileArgsDict',
     'NdbClusterNetworksInfoArgs',
+    'NdbClusterNetworksInfoArgsDict',
     'NdbClusterNetworksInfoNetworkInfoArgs',
+    'NdbClusterNetworksInfoNetworkInfoArgsDict',
     'NdbClusterPropertyArgs',
+    'NdbClusterPropertyArgsDict',
     'NdbClusterResourceConfigArgs',
+    'NdbClusterResourceConfigArgsDict',
     'NdbDatabaseActionargumentArgs',
+    'NdbDatabaseActionargumentArgsDict',
     'NdbDatabaseClusterInfoArgs',
+    'NdbDatabaseClusterInfoArgsDict',
     'NdbDatabaseClusterInfoClusterIpInfoArgs',
+    'NdbDatabaseClusterInfoClusterIpInfoArgsDict',
     'NdbDatabaseClusterInfoClusterIpInfoIpInfoArgs',
+    'NdbDatabaseClusterInfoClusterIpInfoIpInfoArgsDict',
     'NdbDatabaseDatabaseNodeArgs',
+    'NdbDatabaseDatabaseNodeArgsDict',
     'NdbDatabaseDatabaseNodeInfoArgs',
+    'NdbDatabaseDatabaseNodeInfoArgsDict',
     'NdbDatabaseDatabaseNodePropertyArgs',
+    'NdbDatabaseDatabaseNodePropertyArgsDict',
     'NdbDatabaseDatabaseNodeProtectionDomainArgs',
+    'NdbDatabaseDatabaseNodeProtectionDomainArgsDict',
     'NdbDatabaseDatabaseNodeProtectionDomainPropertyArgs',
+    'NdbDatabaseDatabaseNodeProtectionDomainPropertyArgsDict',
     'NdbDatabaseDatabaseNodeTagArgs',
+    'NdbDatabaseDatabaseNodeTagArgsDict',
     'NdbDatabaseInfoArgs',
+    'NdbDatabaseInfoArgsDict',
     'NdbDatabaseInfoBpgConfigArgs',
+    'NdbDatabaseInfoBpgConfigArgsDict',
     'NdbDatabaseInfoBpgConfigBpgDbParamArgs',
+    'NdbDatabaseInfoBpgConfigBpgDbParamArgsDict',
     'NdbDatabaseInfoBpgConfigStorageArgs',
+    'NdbDatabaseInfoBpgConfigStorageArgsDict',
     'NdbDatabaseInfoBpgConfigStorageArchiveStorageArgs',
+    'NdbDatabaseInfoBpgConfigStorageArchiveStorageArgsDict',
     'NdbDatabaseInfoBpgConfigStorageDataDiskArgs',
+    'NdbDatabaseInfoBpgConfigStorageDataDiskArgsDict',
     'NdbDatabaseInfoBpgConfigStorageLogDiskArgs',
+    'NdbDatabaseInfoBpgConfigStorageLogDiskArgsDict',
     'NdbDatabaseInfoBpgConfigVmPropertyArgs',
+    'NdbDatabaseInfoBpgConfigVmPropertyArgsDict',
     'NdbDatabaseLcmConfigArgs',
+    'NdbDatabaseLcmConfigArgsDict',
     'NdbDatabaseLcmConfigExpiryDetailArgs',
+    'NdbDatabaseLcmConfigExpiryDetailArgsDict',
     'NdbDatabaseLcmConfigPostDeleteCommandArgs',
+    'NdbDatabaseLcmConfigPostDeleteCommandArgsDict',
     'NdbDatabaseLcmConfigPreDeleteCommandArgs',
+    'NdbDatabaseLcmConfigPreDeleteCommandArgsDict',
     'NdbDatabaseLcmConfigRefreshDetailArgs',
+    'NdbDatabaseLcmConfigRefreshDetailArgsDict',
     'NdbDatabaseLinkedDatabaseArgs',
+    'NdbDatabaseLinkedDatabaseArgsDict',
     'NdbDatabaseLinkedDatabaseInfoArgs',
+    'NdbDatabaseLinkedDatabaseInfoArgsDict',
     'NdbDatabaseMaintenanceTasksArgs',
+    'NdbDatabaseMaintenanceTasksArgsDict',
     'NdbDatabaseMaintenanceTasksTaskArgs',
+    'NdbDatabaseMaintenanceTasksTaskArgsDict',
     'NdbDatabaseNodeArgs',
+    'NdbDatabaseNodeArgsDict',
     'NdbDatabaseNodeIpInfoArgs',
+    'NdbDatabaseNodeIpInfoArgsDict',
     'NdbDatabaseNodePropertyArgs',
+    'NdbDatabaseNodePropertyArgsDict',
     'NdbDatabasePostgresqlInfoArgs',
+    'NdbDatabasePostgresqlInfoArgsDict',
     'NdbDatabasePostgresqlInfoHaInstanceArgs',
+    'NdbDatabasePostgresqlInfoHaInstanceArgsDict',
     'NdbDatabasePropertyArgs',
+    'NdbDatabasePropertyArgsDict',
     'NdbDatabaseRestoreDatabaseNodeArgs',
+    'NdbDatabaseRestoreDatabaseNodeArgsDict',
     'NdbDatabaseRestoreDatabaseNodeInfoArgs',
+    'NdbDatabaseRestoreDatabaseNodeInfoArgsDict',
     'NdbDatabaseRestoreDatabaseNodePropertyArgs',
+    'NdbDatabaseRestoreDatabaseNodePropertyArgsDict',
     'NdbDatabaseRestoreDatabaseNodeProtectionDomainArgs',
+    'NdbDatabaseRestoreDatabaseNodeProtectionDomainArgsDict',
     'NdbDatabaseRestoreDatabaseNodeProtectionDomainPropertyArgs',
+    'NdbDatabaseRestoreDatabaseNodeProtectionDomainPropertyArgsDict',
     'NdbDatabaseRestoreDatabaseNodeTagArgs',
+    'NdbDatabaseRestoreDatabaseNodeTagArgsDict',
     'NdbDatabaseRestoreInfoArgs',
+    'NdbDatabaseRestoreInfoArgsDict',
     'NdbDatabaseRestoreInfoBpgConfigArgs',
+    'NdbDatabaseRestoreInfoBpgConfigArgsDict',
     'NdbDatabaseRestoreInfoBpgConfigBpgDbParamArgs',
+    'NdbDatabaseRestoreInfoBpgConfigBpgDbParamArgsDict',
     'NdbDatabaseRestoreInfoBpgConfigStorageArgs',
+    'NdbDatabaseRestoreInfoBpgConfigStorageArgsDict',
     'NdbDatabaseRestoreInfoBpgConfigStorageArchiveStorageArgs',
+    'NdbDatabaseRestoreInfoBpgConfigStorageArchiveStorageArgsDict',
     'NdbDatabaseRestoreInfoBpgConfigStorageDataDiskArgs',
+    'NdbDatabaseRestoreInfoBpgConfigStorageDataDiskArgsDict',
     'NdbDatabaseRestoreInfoBpgConfigStorageLogDiskArgs',
+    'NdbDatabaseRestoreInfoBpgConfigStorageLogDiskArgsDict',
     'NdbDatabaseRestoreInfoBpgConfigVmPropertyArgs',
+    'NdbDatabaseRestoreInfoBpgConfigVmPropertyArgsDict',
     'NdbDatabaseRestoreLcmConfigArgs',
+    'NdbDatabaseRestoreLcmConfigArgsDict',
     'NdbDatabaseRestoreLcmConfigExpiryDetailArgs',
+    'NdbDatabaseRestoreLcmConfigExpiryDetailArgsDict',
     'NdbDatabaseRestoreLcmConfigPostDeleteCommandArgs',
+    'NdbDatabaseRestoreLcmConfigPostDeleteCommandArgsDict',
     'NdbDatabaseRestoreLcmConfigPreDeleteCommandArgs',
+    'NdbDatabaseRestoreLcmConfigPreDeleteCommandArgsDict',
     'NdbDatabaseRestoreLcmConfigRefreshDetailArgs',
+    'NdbDatabaseRestoreLcmConfigRefreshDetailArgsDict',
     'NdbDatabaseRestoreLinkedDatabaseArgs',
+    'NdbDatabaseRestoreLinkedDatabaseArgsDict',
     'NdbDatabaseRestoreLinkedDatabaseInfoArgs',
+    'NdbDatabaseRestoreLinkedDatabaseInfoArgsDict',
     'NdbDatabaseRestorePropertyArgs',
+    'NdbDatabaseRestorePropertyArgsDict',
     'NdbDatabaseRestoreTagArgs',
+    'NdbDatabaseRestoreTagArgsDict',
     'NdbDatabaseRestoreTimeMachineArgs',
+    'NdbDatabaseRestoreTimeMachineArgsDict',
     'NdbDatabaseRestoreTimeMachinePropertyArgs',
+    'NdbDatabaseRestoreTimeMachinePropertyArgsDict',
     'NdbDatabaseRestoreTimeMachineScheduleArgs',
+    'NdbDatabaseRestoreTimeMachineScheduleArgsDict',
     'NdbDatabaseRestoreTimeMachineScheduleContinuousScheduleArgs',
+    'NdbDatabaseRestoreTimeMachineScheduleContinuousScheduleArgsDict',
     'NdbDatabaseRestoreTimeMachineScheduleDailyScheduleArgs',
+    'NdbDatabaseRestoreTimeMachineScheduleDailyScheduleArgsDict',
     'NdbDatabaseRestoreTimeMachineScheduleMonthlyScheduleArgs',
+    'NdbDatabaseRestoreTimeMachineScheduleMonthlyScheduleArgsDict',
     'NdbDatabaseRestoreTimeMachineScheduleQuartelyScheduleArgs',
+    'NdbDatabaseRestoreTimeMachineScheduleQuartelyScheduleArgsDict',
     'NdbDatabaseRestoreTimeMachineScheduleSnapshotTimeOfDayArgs',
+    'NdbDatabaseRestoreTimeMachineScheduleSnapshotTimeOfDayArgsDict',
     'NdbDatabaseRestoreTimeMachineScheduleWeeklyScheduleArgs',
+    'NdbDatabaseRestoreTimeMachineScheduleWeeklyScheduleArgsDict',
     'NdbDatabaseRestoreTimeMachineScheduleYearlyScheduleArgs',
+    'NdbDatabaseRestoreTimeMachineScheduleYearlyScheduleArgsDict',
     'NdbDatabaseRestoreTimeMachineSlaArgs',
+    'NdbDatabaseRestoreTimeMachineSlaArgsDict',
     'NdbDatabaseRestoreTimeMachineTagArgs',
+    'NdbDatabaseRestoreTimeMachineTagArgsDict',
     'NdbDatabaseScaleDatabaseNodeArgs',
+    'NdbDatabaseScaleDatabaseNodeArgsDict',
     'NdbDatabaseScaleDatabaseNodeInfoArgs',
+    'NdbDatabaseScaleDatabaseNodeInfoArgsDict',
     'NdbDatabaseScaleDatabaseNodePropertyArgs',
+    'NdbDatabaseScaleDatabaseNodePropertyArgsDict',
     'NdbDatabaseScaleDatabaseNodeProtectionDomainArgs',
+    'NdbDatabaseScaleDatabaseNodeProtectionDomainArgsDict',
     'NdbDatabaseScaleDatabaseNodeProtectionDomainPropertyArgs',
+    'NdbDatabaseScaleDatabaseNodeProtectionDomainPropertyArgsDict',
     'NdbDatabaseScaleDatabaseNodeTagArgs',
+    'NdbDatabaseScaleDatabaseNodeTagArgsDict',
     'NdbDatabaseScaleInfoArgs',
+    'NdbDatabaseScaleInfoArgsDict',
     'NdbDatabaseScaleInfoBpgConfigArgs',
+    'NdbDatabaseScaleInfoBpgConfigArgsDict',
     'NdbDatabaseScaleInfoBpgConfigBpgDbParamArgs',
+    'NdbDatabaseScaleInfoBpgConfigBpgDbParamArgsDict',
     'NdbDatabaseScaleInfoBpgConfigStorageArgs',
+    'NdbDatabaseScaleInfoBpgConfigStorageArgsDict',
     'NdbDatabaseScaleInfoBpgConfigStorageArchiveStorageArgs',
+    'NdbDatabaseScaleInfoBpgConfigStorageArchiveStorageArgsDict',
     'NdbDatabaseScaleInfoBpgConfigStorageDataDiskArgs',
+    'NdbDatabaseScaleInfoBpgConfigStorageDataDiskArgsDict',
     'NdbDatabaseScaleInfoBpgConfigStorageLogDiskArgs',
+    'NdbDatabaseScaleInfoBpgConfigStorageLogDiskArgsDict',
     'NdbDatabaseScaleInfoBpgConfigVmPropertyArgs',
+    'NdbDatabaseScaleInfoBpgConfigVmPropertyArgsDict',
     'NdbDatabaseScaleLcmConfigArgs',
+    'NdbDatabaseScaleLcmConfigArgsDict',
     'NdbDatabaseScaleLcmConfigExpiryDetailArgs',
+    'NdbDatabaseScaleLcmConfigExpiryDetailArgsDict',
     'NdbDatabaseScaleLcmConfigPostDeleteCommandArgs',
+    'NdbDatabaseScaleLcmConfigPostDeleteCommandArgsDict',
     'NdbDatabaseScaleLcmConfigPreDeleteCommandArgs',
+    'NdbDatabaseScaleLcmConfigPreDeleteCommandArgsDict',
     'NdbDatabaseScaleLcmConfigRefreshDetailArgs',
+    'NdbDatabaseScaleLcmConfigRefreshDetailArgsDict',
     'NdbDatabaseScaleLinkedDatabaseArgs',
+    'NdbDatabaseScaleLinkedDatabaseArgsDict',
     'NdbDatabaseScaleLinkedDatabaseInfoArgs',
+    'NdbDatabaseScaleLinkedDatabaseInfoArgsDict',
     'NdbDatabaseScalePropertyArgs',
+    'NdbDatabaseScalePropertyArgsDict',
     'NdbDatabaseScaleTagArgs',
+    'NdbDatabaseScaleTagArgsDict',
     'NdbDatabaseScaleTimeMachineArgs',
+    'NdbDatabaseScaleTimeMachineArgsDict',
     'NdbDatabaseScaleTimeMachinePropertyArgs',
+    'NdbDatabaseScaleTimeMachinePropertyArgsDict',
     'NdbDatabaseScaleTimeMachineScheduleArgs',
+    'NdbDatabaseScaleTimeMachineScheduleArgsDict',
     'NdbDatabaseScaleTimeMachineScheduleContinuousScheduleArgs',
+    'NdbDatabaseScaleTimeMachineScheduleContinuousScheduleArgsDict',
     'NdbDatabaseScaleTimeMachineScheduleDailyScheduleArgs',
+    'NdbDatabaseScaleTimeMachineScheduleDailyScheduleArgsDict',
     'NdbDatabaseScaleTimeMachineScheduleMonthlyScheduleArgs',
+    'NdbDatabaseScaleTimeMachineScheduleMonthlyScheduleArgsDict',
     'NdbDatabaseScaleTimeMachineScheduleQuartelyScheduleArgs',
+    'NdbDatabaseScaleTimeMachineScheduleQuartelyScheduleArgsDict',
     'NdbDatabaseScaleTimeMachineScheduleSnapshotTimeOfDayArgs',
+    'NdbDatabaseScaleTimeMachineScheduleSnapshotTimeOfDayArgsDict',
     'NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleArgs',
+    'NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleArgsDict',
     'NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs',
+    'NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgsDict',
     'NdbDatabaseScaleTimeMachineSlaArgs',
+    'NdbDatabaseScaleTimeMachineSlaArgsDict',
     'NdbDatabaseScaleTimeMachineTagArgs',
+    'NdbDatabaseScaleTimeMachineTagArgsDict',
     'NdbDatabaseSnapshotLcmConfigArgs',
+    'NdbDatabaseSnapshotLcmConfigArgsDict',
     'NdbDatabaseSnapshotLcmConfigExpiryDetailArgs',
+    'NdbDatabaseSnapshotLcmConfigExpiryDetailArgsDict',
     'NdbDatabaseSnapshotLcmConfigPostDeleteCommandArgs',
+    'NdbDatabaseSnapshotLcmConfigPostDeleteCommandArgsDict',
     'NdbDatabaseSnapshotLcmConfigPreDeleteCommandArgs',
+    'NdbDatabaseSnapshotLcmConfigPreDeleteCommandArgsDict',
     'NdbDatabaseSnapshotLcmConfigRefreshDetailArgs',
+    'NdbDatabaseSnapshotLcmConfigRefreshDetailArgsDict',
     'NdbDatabaseSnapshotPropertyArgs',
+    'NdbDatabaseSnapshotPropertyArgsDict',
     'NdbDatabaseSnapshotTagArgs',
+    'NdbDatabaseSnapshotTagArgsDict',
     'NdbDatabaseTagArgs',
+    'NdbDatabaseTagArgsDict',
     'NdbDatabaseTimeMachineArgs',
+    'NdbDatabaseTimeMachineArgsDict',
     'NdbDatabaseTimeMachinePropertyArgs',
+    'NdbDatabaseTimeMachinePropertyArgsDict',
     'NdbDatabaseTimeMachineScheduleArgs',
+    'NdbDatabaseTimeMachineScheduleArgsDict',
     'NdbDatabaseTimeMachineScheduleContinuousScheduleArgs',
+    'NdbDatabaseTimeMachineScheduleContinuousScheduleArgsDict',
     'NdbDatabaseTimeMachineScheduleDailyScheduleArgs',
+    'NdbDatabaseTimeMachineScheduleDailyScheduleArgsDict',
     'NdbDatabaseTimeMachineScheduleMonthlyScheduleArgs',
+    'NdbDatabaseTimeMachineScheduleMonthlyScheduleArgsDict',
     'NdbDatabaseTimeMachineScheduleQuartelyScheduleArgs',
+    'NdbDatabaseTimeMachineScheduleQuartelyScheduleArgsDict',
     'NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayArgs',
+    'NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayArgsDict',
     'NdbDatabaseTimeMachineScheduleWeeklyScheduleArgs',
+    'NdbDatabaseTimeMachineScheduleWeeklyScheduleArgsDict',
     'NdbDatabaseTimeMachineScheduleYearlyScheduleArgs',
+    'NdbDatabaseTimeMachineScheduleYearlyScheduleArgsDict',
     'NdbDatabaseTimeMachineSlaArgs',
+    'NdbDatabaseTimeMachineSlaArgsDict',
     'NdbDatabaseTimeMachineTagArgs',
+    'NdbDatabaseTimeMachineTagArgsDict',
     'NdbDatabaseTimemachineinfoArgs',
+    'NdbDatabaseTimemachineinfoArgsDict',
     'NdbDatabaseTimemachineinfoScheduleArgs',
+    'NdbDatabaseTimemachineinfoScheduleArgsDict',
     'NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgs',
+    'NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgsDict',
     'NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgs',
+    'NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgsDict',
     'NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgs',
+    'NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgsDict',
     'NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgs',
+    'NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgsDict',
     'NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgs',
+    'NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgsDict',
     'NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgs',
+    'NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgsDict',
     'NdbDatabaseTimemachineinfoSlaDetailArgs',
+    'NdbDatabaseTimemachineinfoSlaDetailArgsDict',
     'NdbDatabaseTimemachineinfoSlaDetailPrimarySlaArgs',
+    'NdbDatabaseTimemachineinfoSlaDetailPrimarySlaArgsDict',
     'NdbDatabaseTimemachineinfoTagArgs',
+    'NdbDatabaseTimemachineinfoTagArgsDict',
     'NdbDbserverVmCredentialArgs',
+    'NdbDbserverVmCredentialArgsDict',
     'NdbDbserverVmMaintenanceTasksArgs',
+    'NdbDbserverVmMaintenanceTasksArgsDict',
     'NdbDbserverVmMaintenanceTasksTaskArgs',
+    'NdbDbserverVmMaintenanceTasksTaskArgsDict',
     'NdbDbserverVmPostgresDatabaseArgs',
+    'NdbDbserverVmPostgresDatabaseArgsDict',
     'NdbDbserverVmPropertyArgs',
+    'NdbDbserverVmPropertyArgsDict',
     'NdbDbserverVmTagArgs',
+    'NdbDbserverVmTagArgsDict',
     'NdbLinkedDatabasesInfoArgs',
+    'NdbLinkedDatabasesInfoArgsDict',
     'NdbLinkedDatabasesInfoInfoArgs',
+    'NdbLinkedDatabasesInfoInfoArgsDict',
     'NdbMaintenanceTaskEntityTaskAssociationArgs',
+    'NdbMaintenanceTaskEntityTaskAssociationArgsDict',
     'NdbMaintenanceTaskEntityTaskAssociationPayloadArgs',
+    'NdbMaintenanceTaskEntityTaskAssociationPayloadArgsDict',
     'NdbMaintenanceTaskEntityTaskAssociationPayloadPrePostCommandArgs',
+    'NdbMaintenanceTaskEntityTaskAssociationPayloadPrePostCommandArgsDict',
     'NdbMaintenanceTaskEntityTaskAssociationPropertyArgs',
+    'NdbMaintenanceTaskEntityTaskAssociationPropertyArgsDict',
     'NdbMaintenanceTaskEntityTaskAssociationTagArgs',
+    'NdbMaintenanceTaskEntityTaskAssociationTagArgsDict',
     'NdbMaintenanceTaskTaskArgs',
+    'NdbMaintenanceTaskTaskArgsDict',
     'NdbMaintenanceWindowEntityTaskAssocArgs',
+    'NdbMaintenanceWindowEntityTaskAssocArgsDict',
     'NdbMaintenanceWindowEntityTaskAssocPayloadArgs',
+    'NdbMaintenanceWindowEntityTaskAssocPayloadArgsDict',
     'NdbMaintenanceWindowEntityTaskAssocPayloadPrePostCommandArgs',
+    'NdbMaintenanceWindowEntityTaskAssocPayloadPrePostCommandArgsDict',
     'NdbMaintenanceWindowEntityTaskAssocPropertyArgs',
+    'NdbMaintenanceWindowEntityTaskAssocPropertyArgsDict',
     'NdbMaintenanceWindowEntityTaskAssocTagArgs',
+    'NdbMaintenanceWindowEntityTaskAssocTagArgsDict',
     'NdbMaintenanceWindowPropertyArgs',
+    'NdbMaintenanceWindowPropertyArgsDict',
     'NdbMaintenanceWindowScheduleArgs',
+    'NdbMaintenanceWindowScheduleArgsDict',
     'NdbMaintenanceWindowTagArgs',
+    'NdbMaintenanceWindowTagArgsDict',
     'NdbNetworkIpPoolArgs',
+    'NdbNetworkIpPoolArgsDict',
     'NdbNetworkIpPoolAddressArgs',
+    'NdbNetworkIpPoolAddressArgsDict',
     'NdbNetworkPropertiesMapArgs',
+    'NdbNetworkPropertiesMapArgsDict',
     'NdbNetworkPropertyArgs',
+    'NdbNetworkPropertyArgsDict',
     'NdbProfileClusterAvailabilityArgs',
+    'NdbProfileClusterAvailabilityArgsDict',
     'NdbProfileComputeProfileArgs',
+    'NdbProfileComputeProfileArgsDict',
     'NdbProfileDatabaseParameterProfileArgs',
+    'NdbProfileDatabaseParameterProfileArgsDict',
     'NdbProfileDatabaseParameterProfilePostgresDatabaseArgs',
+    'NdbProfileDatabaseParameterProfilePostgresDatabaseArgsDict',
     'NdbProfileNetworkProfileArgs',
+    'NdbProfileNetworkProfileArgsDict',
     'NdbProfileNetworkProfilePostgresDatabaseArgs',
+    'NdbProfileNetworkProfilePostgresDatabaseArgsDict',
     'NdbProfileNetworkProfilePostgresDatabaseHaInstanceArgs',
+    'NdbProfileNetworkProfilePostgresDatabaseHaInstanceArgsDict',
     'NdbProfileNetworkProfilePostgresDatabaseSingleInstanceArgs',
+    'NdbProfileNetworkProfilePostgresDatabaseSingleInstanceArgsDict',
     'NdbProfileNetworkProfileVersionClusterAssociationArgs',
+    'NdbProfileNetworkProfileVersionClusterAssociationArgsDict',
     'NdbProfileSoftwareProfileArgs',
+    'NdbProfileSoftwareProfileArgsDict',
     'NdbProfileSoftwareProfilePostgresDatabaseArgs',
+    'NdbProfileSoftwareProfilePostgresDatabaseArgsDict',
     'NdbProfileVersionArgs',
+    'NdbProfileVersionArgsDict',
     'NdbProfileVersionPropertyArgs',
+    'NdbProfileVersionPropertyArgsDict',
     'NdbProfileVersionVersionClusterAssociationArgs',
+    'NdbProfileVersionVersionClusterAssociationArgsDict',
     'NdbProfileVersionVersionClusterAssociationPropertyArgs',
+    'NdbProfileVersionVersionClusterAssociationPropertyArgsDict',
     'NdbRegisterDatabaseActionargumentArgs',
+    'NdbRegisterDatabaseActionargumentArgsDict',
     'NdbRegisterDatabaseDatabaseNodeArgs',
+    'NdbRegisterDatabaseDatabaseNodeArgsDict',
     'NdbRegisterDatabaseDatabaseNodeInfoArgs',
+    'NdbRegisterDatabaseDatabaseNodeInfoArgsDict',
     'NdbRegisterDatabaseDatabaseNodePropertyArgs',
+    'NdbRegisterDatabaseDatabaseNodePropertyArgsDict',
     'NdbRegisterDatabaseDatabaseNodeProtectionDomainArgs',
+    'NdbRegisterDatabaseDatabaseNodeProtectionDomainArgsDict',
     'NdbRegisterDatabaseDatabaseNodeProtectionDomainPropertyArgs',
+    'NdbRegisterDatabaseDatabaseNodeProtectionDomainPropertyArgsDict',
     'NdbRegisterDatabaseDatabaseNodeTagArgs',
+    'NdbRegisterDatabaseDatabaseNodeTagArgsDict',
     'NdbRegisterDatabaseInfoArgs',
+    'NdbRegisterDatabaseInfoArgsDict',
     'NdbRegisterDatabaseInfoBpgConfigArgs',
+    'NdbRegisterDatabaseInfoBpgConfigArgsDict',
     'NdbRegisterDatabaseInfoBpgConfigBpgDbParamArgs',
+    'NdbRegisterDatabaseInfoBpgConfigBpgDbParamArgsDict',
     'NdbRegisterDatabaseInfoBpgConfigStorageArgs',
+    'NdbRegisterDatabaseInfoBpgConfigStorageArgsDict',
     'NdbRegisterDatabaseInfoBpgConfigStorageArchiveStorageArgs',
+    'NdbRegisterDatabaseInfoBpgConfigStorageArchiveStorageArgsDict',
     'NdbRegisterDatabaseInfoBpgConfigStorageDataDiskArgs',
+    'NdbRegisterDatabaseInfoBpgConfigStorageDataDiskArgsDict',
     'NdbRegisterDatabaseInfoBpgConfigStorageLogDiskArgs',
+    'NdbRegisterDatabaseInfoBpgConfigStorageLogDiskArgsDict',
     'NdbRegisterDatabaseInfoBpgConfigVmPropertyArgs',
+    'NdbRegisterDatabaseInfoBpgConfigVmPropertyArgsDict',
     'NdbRegisterDatabaseLcmConfigArgs',
+    'NdbRegisterDatabaseLcmConfigArgsDict',
     'NdbRegisterDatabaseLcmConfigExpiryDetailArgs',
+    'NdbRegisterDatabaseLcmConfigExpiryDetailArgsDict',
     'NdbRegisterDatabaseLcmConfigPostDeleteCommandArgs',
+    'NdbRegisterDatabaseLcmConfigPostDeleteCommandArgsDict',
     'NdbRegisterDatabaseLcmConfigPreDeleteCommandArgs',
+    'NdbRegisterDatabaseLcmConfigPreDeleteCommandArgsDict',
     'NdbRegisterDatabaseLcmConfigRefreshDetailArgs',
+    'NdbRegisterDatabaseLcmConfigRefreshDetailArgsDict',
     'NdbRegisterDatabaseLinkedDatabaseArgs',
+    'NdbRegisterDatabaseLinkedDatabaseArgsDict',
     'NdbRegisterDatabaseLinkedDatabaseInfoArgs',
+    'NdbRegisterDatabaseLinkedDatabaseInfoArgsDict',
     'NdbRegisterDatabasePostgressInfoArgs',
+    'NdbRegisterDatabasePostgressInfoArgsDict',
     'NdbRegisterDatabasePropertyArgs',
+    'NdbRegisterDatabasePropertyArgsDict',
     'NdbRegisterDatabaseTagArgs',
+    'NdbRegisterDatabaseTagArgsDict',
     'NdbRegisterDatabaseTimeMachineArgs',
+    'NdbRegisterDatabaseTimeMachineArgsDict',
     'NdbRegisterDatabaseTimeMachineInfoArgs',
+    'NdbRegisterDatabaseTimeMachineInfoArgsDict',
     'NdbRegisterDatabaseTimeMachineInfoScheduleArgs',
+    'NdbRegisterDatabaseTimeMachineInfoScheduleArgsDict',
     'NdbRegisterDatabaseTimeMachineInfoScheduleContinuousscheduleArgs',
+    'NdbRegisterDatabaseTimeMachineInfoScheduleContinuousscheduleArgsDict',
     'NdbRegisterDatabaseTimeMachineInfoScheduleMonthlyscheduleArgs',
+    'NdbRegisterDatabaseTimeMachineInfoScheduleMonthlyscheduleArgsDict',
     'NdbRegisterDatabaseTimeMachineInfoScheduleQuartelyscheduleArgs',
+    'NdbRegisterDatabaseTimeMachineInfoScheduleQuartelyscheduleArgsDict',
     'NdbRegisterDatabaseTimeMachineInfoScheduleSnapshottimeofdayArgs',
+    'NdbRegisterDatabaseTimeMachineInfoScheduleSnapshottimeofdayArgsDict',
     'NdbRegisterDatabaseTimeMachineInfoScheduleWeeklyscheduleArgs',
+    'NdbRegisterDatabaseTimeMachineInfoScheduleWeeklyscheduleArgsDict',
     'NdbRegisterDatabaseTimeMachineInfoScheduleYearlyscheduleArgs',
+    'NdbRegisterDatabaseTimeMachineInfoScheduleYearlyscheduleArgsDict',
     'NdbRegisterDatabaseTimeMachineInfoSlaDetailArgs',
+    'NdbRegisterDatabaseTimeMachineInfoSlaDetailArgsDict',
     'NdbRegisterDatabaseTimeMachineInfoSlaDetailPrimarySlaArgs',
+    'NdbRegisterDatabaseTimeMachineInfoSlaDetailPrimarySlaArgsDict',
     'NdbRegisterDatabaseTimeMachineInfoTagArgs',
+    'NdbRegisterDatabaseTimeMachineInfoTagArgsDict',
     'NdbRegisterDatabaseTimeMachinePropertyArgs',
+    'NdbRegisterDatabaseTimeMachinePropertyArgsDict',
     'NdbRegisterDatabaseTimeMachineScheduleArgs',
+    'NdbRegisterDatabaseTimeMachineScheduleArgsDict',
     'NdbRegisterDatabaseTimeMachineScheduleContinuousScheduleArgs',
+    'NdbRegisterDatabaseTimeMachineScheduleContinuousScheduleArgsDict',
     'NdbRegisterDatabaseTimeMachineScheduleDailyScheduleArgs',
+    'NdbRegisterDatabaseTimeMachineScheduleDailyScheduleArgsDict',
     'NdbRegisterDatabaseTimeMachineScheduleMonthlyScheduleArgs',
+    'NdbRegisterDatabaseTimeMachineScheduleMonthlyScheduleArgsDict',
     'NdbRegisterDatabaseTimeMachineScheduleQuartelyScheduleArgs',
+    'NdbRegisterDatabaseTimeMachineScheduleQuartelyScheduleArgsDict',
     'NdbRegisterDatabaseTimeMachineScheduleSnapshotTimeOfDayArgs',
+    'NdbRegisterDatabaseTimeMachineScheduleSnapshotTimeOfDayArgsDict',
     'NdbRegisterDatabaseTimeMachineScheduleWeeklyScheduleArgs',
+    'NdbRegisterDatabaseTimeMachineScheduleWeeklyScheduleArgsDict',
     'NdbRegisterDatabaseTimeMachineScheduleYearlyScheduleArgs',
+    'NdbRegisterDatabaseTimeMachineScheduleYearlyScheduleArgsDict',
     'NdbRegisterDatabaseTimeMachineSlaArgs',
+    'NdbRegisterDatabaseTimeMachineSlaArgsDict',
     'NdbRegisterDatabaseTimeMachineTagArgs',
+    'NdbRegisterDatabaseTimeMachineTagArgsDict',
     'NdbRegisterDbserverCredentialArgs',
+    'NdbRegisterDbserverCredentialArgsDict',
     'NdbRegisterDbserverPostgresDatabaseArgs',
+    'NdbRegisterDbserverPostgresDatabaseArgsDict',
     'NdbRegisterDbserverPropertyArgs',
+    'NdbRegisterDbserverPropertyArgsDict',
     'NdbRegisterDbserverTagArgs',
+    'NdbRegisterDbserverTagArgsDict',
     'NdbScaleDatabaseDatabaseNodeArgs',
+    'NdbScaleDatabaseDatabaseNodeArgsDict',
     'NdbScaleDatabaseDatabaseNodeInfoArgs',
+    'NdbScaleDatabaseDatabaseNodeInfoArgsDict',
     'NdbScaleDatabaseDatabaseNodePropertyArgs',
+    'NdbScaleDatabaseDatabaseNodePropertyArgsDict',
     'NdbScaleDatabaseDatabaseNodeProtectionDomainArgs',
+    'NdbScaleDatabaseDatabaseNodeProtectionDomainArgsDict',
     'NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArgs',
+    'NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArgsDict',
     'NdbScaleDatabaseDatabaseNodeTagArgs',
+    'NdbScaleDatabaseDatabaseNodeTagArgsDict',
     'NdbScaleDatabaseInfoArgs',
+    'NdbScaleDatabaseInfoArgsDict',
     'NdbScaleDatabaseInfoBpgConfigArgs',
+    'NdbScaleDatabaseInfoBpgConfigArgsDict',
     'NdbScaleDatabaseInfoBpgConfigBpgDbParamArgs',
+    'NdbScaleDatabaseInfoBpgConfigBpgDbParamArgsDict',
     'NdbScaleDatabaseInfoBpgConfigStorageArgs',
+    'NdbScaleDatabaseInfoBpgConfigStorageArgsDict',
     'NdbScaleDatabaseInfoBpgConfigStorageArchiveStorageArgs',
+    'NdbScaleDatabaseInfoBpgConfigStorageArchiveStorageArgsDict',
     'NdbScaleDatabaseInfoBpgConfigStorageDataDiskArgs',
+    'NdbScaleDatabaseInfoBpgConfigStorageDataDiskArgsDict',
     'NdbScaleDatabaseInfoBpgConfigStorageLogDiskArgs',
+    'NdbScaleDatabaseInfoBpgConfigStorageLogDiskArgsDict',
     'NdbScaleDatabaseInfoBpgConfigVmPropertyArgs',
+    'NdbScaleDatabaseInfoBpgConfigVmPropertyArgsDict',
     'NdbScaleDatabaseLcmConfigArgs',
+    'NdbScaleDatabaseLcmConfigArgsDict',
     'NdbScaleDatabaseLcmConfigExpiryDetailArgs',
+    'NdbScaleDatabaseLcmConfigExpiryDetailArgsDict',
     'NdbScaleDatabaseLcmConfigPostDeleteCommandArgs',
+    'NdbScaleDatabaseLcmConfigPostDeleteCommandArgsDict',
     'NdbScaleDatabaseLcmConfigPreDeleteCommandArgs',
+    'NdbScaleDatabaseLcmConfigPreDeleteCommandArgsDict',
     'NdbScaleDatabaseLcmConfigRefreshDetailArgs',
+    'NdbScaleDatabaseLcmConfigRefreshDetailArgsDict',
     'NdbScaleDatabaseLinkedDatabaseArgs',
+    'NdbScaleDatabaseLinkedDatabaseArgsDict',
     'NdbScaleDatabaseLinkedDatabaseInfoArgs',
+    'NdbScaleDatabaseLinkedDatabaseInfoArgsDict',
     'NdbScaleDatabasePropertyArgs',
+    'NdbScaleDatabasePropertyArgsDict',
     'NdbScaleDatabaseTagArgs',
+    'NdbScaleDatabaseTagArgsDict',
     'NdbScaleDatabaseTimeMachineArgs',
+    'NdbScaleDatabaseTimeMachineArgsDict',
     'NdbScaleDatabaseTimeMachinePropertyArgs',
+    'NdbScaleDatabaseTimeMachinePropertyArgsDict',
     'NdbScaleDatabaseTimeMachineScheduleArgs',
+    'NdbScaleDatabaseTimeMachineScheduleArgsDict',
     'NdbScaleDatabaseTimeMachineScheduleContinuousScheduleArgs',
+    'NdbScaleDatabaseTimeMachineScheduleContinuousScheduleArgsDict',
     'NdbScaleDatabaseTimeMachineScheduleDailyScheduleArgs',
+    'NdbScaleDatabaseTimeMachineScheduleDailyScheduleArgsDict',
     'NdbScaleDatabaseTimeMachineScheduleMonthlyScheduleArgs',
+    'NdbScaleDatabaseTimeMachineScheduleMonthlyScheduleArgsDict',
     'NdbScaleDatabaseTimeMachineScheduleQuartelyScheduleArgs',
+    'NdbScaleDatabaseTimeMachineScheduleQuartelyScheduleArgsDict',
     'NdbScaleDatabaseTimeMachineScheduleSnapshotTimeOfDayArgs',
+    'NdbScaleDatabaseTimeMachineScheduleSnapshotTimeOfDayArgsDict',
     'NdbScaleDatabaseTimeMachineScheduleWeeklyScheduleArgs',
+    'NdbScaleDatabaseTimeMachineScheduleWeeklyScheduleArgsDict',
     'NdbScaleDatabaseTimeMachineScheduleYearlyScheduleArgs',
+    'NdbScaleDatabaseTimeMachineScheduleYearlyScheduleArgsDict',
     'NdbScaleDatabaseTimeMachineSlaArgs',
+    'NdbScaleDatabaseTimeMachineSlaArgsDict',
     'NdbScaleDatabaseTimeMachineTagArgs',
+    'NdbScaleDatabaseTimeMachineTagArgsDict',
     'NdbSoftwareVersionProfilePostgresDatabaseArgs',
+    'NdbSoftwareVersionProfilePostgresDatabaseArgsDict',
     'NdbSoftwareVersionProfilePropertyArgs',
+    'NdbSoftwareVersionProfilePropertyArgsDict',
     'NdbSoftwareVersionProfileVersionClusterAssociationArgs',
+    'NdbSoftwareVersionProfileVersionClusterAssociationArgsDict',
     'NdbSoftwareVersionProfileVersionClusterAssociationPropertyArgs',
+    'NdbSoftwareVersionProfileVersionClusterAssociationPropertyArgsDict',
     'NdbStretchedVlanMetadataArgs',
+    'NdbStretchedVlanMetadataArgsDict',
     'NdbStretchedVlanVlansListArgs',
+    'NdbStretchedVlanVlansListArgsDict',
     'NdbStretchedVlanVlansListPropertiesMapArgs',
+    'NdbStretchedVlanVlansListPropertiesMapArgsDict',
     'NdbStretchedVlanVlansListPropertyArgs',
+    'NdbStretchedVlanVlansListPropertyArgsDict',
     'NetworkSecurityRuleAdRuleInboundAllowListArgs',
+    'NetworkSecurityRuleAdRuleInboundAllowListArgsDict',
     'NetworkSecurityRuleAdRuleInboundAllowListAddressGroupInclusionListArgs',
+    'NetworkSecurityRuleAdRuleInboundAllowListAddressGroupInclusionListArgsDict',
     'NetworkSecurityRuleAdRuleInboundAllowListFilterParamArgs',
+    'NetworkSecurityRuleAdRuleInboundAllowListFilterParamArgsDict',
     'NetworkSecurityRuleAdRuleInboundAllowListIcmpTypeCodeListArgs',
+    'NetworkSecurityRuleAdRuleInboundAllowListIcmpTypeCodeListArgsDict',
     'NetworkSecurityRuleAdRuleInboundAllowListServiceGroupListArgs',
+    'NetworkSecurityRuleAdRuleInboundAllowListServiceGroupListArgsDict',
     'NetworkSecurityRuleAdRuleInboundAllowListTcpPortRangeListArgs',
+    'NetworkSecurityRuleAdRuleInboundAllowListTcpPortRangeListArgsDict',
     'NetworkSecurityRuleAdRuleInboundAllowListUdpPortRangeListArgs',
+    'NetworkSecurityRuleAdRuleInboundAllowListUdpPortRangeListArgsDict',
     'NetworkSecurityRuleAdRuleOutboundAllowListArgs',
+    'NetworkSecurityRuleAdRuleOutboundAllowListArgsDict',
     'NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionListArgs',
+    'NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionListArgsDict',
     'NetworkSecurityRuleAdRuleOutboundAllowListFilterParamArgs',
+    'NetworkSecurityRuleAdRuleOutboundAllowListFilterParamArgsDict',
     'NetworkSecurityRuleAdRuleOutboundAllowListIcmpTypeCodeListArgs',
+    'NetworkSecurityRuleAdRuleOutboundAllowListIcmpTypeCodeListArgsDict',
     'NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupListArgs',
+    'NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupListArgsDict',
     'NetworkSecurityRuleAdRuleOutboundAllowListTcpPortRangeListArgs',
+    'NetworkSecurityRuleAdRuleOutboundAllowListTcpPortRangeListArgsDict',
     'NetworkSecurityRuleAdRuleOutboundAllowListUdpPortRangeListArgs',
+    'NetworkSecurityRuleAdRuleOutboundAllowListUdpPortRangeListArgsDict',
     'NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs',
+    'NetworkSecurityRuleAdRuleTargetGroupFilterParamArgsDict',
     'NetworkSecurityRuleAppRuleInboundAllowListArgs',
+    'NetworkSecurityRuleAppRuleInboundAllowListArgsDict',
     'NetworkSecurityRuleAppRuleInboundAllowListAddressGroupInclusionListArgs',
+    'NetworkSecurityRuleAppRuleInboundAllowListAddressGroupInclusionListArgsDict',
     'NetworkSecurityRuleAppRuleInboundAllowListFilterParamArgs',
+    'NetworkSecurityRuleAppRuleInboundAllowListFilterParamArgsDict',
     'NetworkSecurityRuleAppRuleInboundAllowListIcmpTypeCodeListArgs',
+    'NetworkSecurityRuleAppRuleInboundAllowListIcmpTypeCodeListArgsDict',
     'NetworkSecurityRuleAppRuleInboundAllowListServiceGroupListArgs',
+    'NetworkSecurityRuleAppRuleInboundAllowListServiceGroupListArgsDict',
     'NetworkSecurityRuleAppRuleInboundAllowListTcpPortRangeListArgs',
+    'NetworkSecurityRuleAppRuleInboundAllowListTcpPortRangeListArgsDict',
     'NetworkSecurityRuleAppRuleInboundAllowListUdpPortRangeListArgs',
+    'NetworkSecurityRuleAppRuleInboundAllowListUdpPortRangeListArgsDict',
     'NetworkSecurityRuleAppRuleOutboundAllowListArgs',
+    'NetworkSecurityRuleAppRuleOutboundAllowListArgsDict',
     'NetworkSecurityRuleAppRuleOutboundAllowListAddressGroupInclusionListArgs',
+    'NetworkSecurityRuleAppRuleOutboundAllowListAddressGroupInclusionListArgsDict',
     'NetworkSecurityRuleAppRuleOutboundAllowListFilterParamArgs',
+    'NetworkSecurityRuleAppRuleOutboundAllowListFilterParamArgsDict',
     'NetworkSecurityRuleAppRuleOutboundAllowListIcmpTypeCodeListArgs',
+    'NetworkSecurityRuleAppRuleOutboundAllowListIcmpTypeCodeListArgsDict',
     'NetworkSecurityRuleAppRuleOutboundAllowListServiceGroupListArgs',
+    'NetworkSecurityRuleAppRuleOutboundAllowListServiceGroupListArgsDict',
     'NetworkSecurityRuleAppRuleOutboundAllowListTcpPortRangeListArgs',
+    'NetworkSecurityRuleAppRuleOutboundAllowListTcpPortRangeListArgsDict',
     'NetworkSecurityRuleAppRuleOutboundAllowListUdpPortRangeListArgs',
+    'NetworkSecurityRuleAppRuleOutboundAllowListUdpPortRangeListArgsDict',
     'NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs',
+    'NetworkSecurityRuleAppRuleTargetGroupFilterParamArgsDict',
     'NetworkSecurityRuleCategoryArgs',
+    'NetworkSecurityRuleCategoryArgsDict',
     'NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs',
+    'NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgsDict',
     'NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs',
+    'NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgsDict',
     'PbrDestinationArgs',
+    'PbrDestinationArgsDict',
     'PbrProtocolParametersArgs',
+    'PbrProtocolParametersArgsDict',
     'PbrProtocolParametersIcmpArgs',
+    'PbrProtocolParametersIcmpArgsDict',
     'PbrProtocolParametersTcpArgs',
+    'PbrProtocolParametersTcpArgsDict',
     'PbrProtocolParametersTcpDestinationPortRangeListArgs',
+    'PbrProtocolParametersTcpDestinationPortRangeListArgsDict',
     'PbrProtocolParametersTcpSourcePortRangeListArgs',
+    'PbrProtocolParametersTcpSourcePortRangeListArgsDict',
     'PbrProtocolParametersUdpArgs',
+    'PbrProtocolParametersUdpArgsDict',
     'PbrProtocolParametersUdpDestinationPortRangeListArgs',
+    'PbrProtocolParametersUdpDestinationPortRangeListArgsDict',
     'PbrProtocolParametersUdpSourcePortRangeListArgs',
+    'PbrProtocolParametersUdpSourcePortRangeListArgsDict',
     'PbrSourceArgs',
+    'PbrSourceArgsDict',
     'ProjectAccountReferenceListArgs',
+    'ProjectAccountReferenceListArgsDict',
     'ProjectAcpArgs',
+    'ProjectAcpArgsDict',
     'ProjectAcpContextFilterListArgs',
+    'ProjectAcpContextFilterListArgsDict',
     'ProjectAcpContextFilterListEntityFilterExpressionListArgs',
+    'ProjectAcpContextFilterListEntityFilterExpressionListArgsDict',
     'ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArgs',
+    'ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArgsDict',
     'ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs',
+    'ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgsDict',
     'ProjectAcpContextFilterListScopeFilterExpressionListArgs',
+    'ProjectAcpContextFilterListScopeFilterExpressionListArgsDict',
     'ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs',
+    'ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgsDict',
     'ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs',
+    'ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgsDict',
     'ProjectAcpRoleReferenceArgs',
+    'ProjectAcpRoleReferenceArgsDict',
     'ProjectAcpUserGroupReferenceListArgs',
+    'ProjectAcpUserGroupReferenceListArgsDict',
     'ProjectAcpUserReferenceListArgs',
+    'ProjectAcpUserReferenceListArgsDict',
     'ProjectCategoryArgs',
+    'ProjectCategoryArgsDict',
     'ProjectClusterReferenceListArgs',
+    'ProjectClusterReferenceListArgsDict',
     'ProjectDefaultEnvironmentReferenceArgs',
+    'ProjectDefaultEnvironmentReferenceArgsDict',
     'ProjectDefaultSubnetReferenceArgs',
+    'ProjectDefaultSubnetReferenceArgsDict',
     'ProjectEnvironmentReferenceListArgs',
+    'ProjectEnvironmentReferenceListArgsDict',
     'ProjectExternalNetworkListArgs',
+    'ProjectExternalNetworkListArgsDict',
     'ProjectExternalUserGroupReferenceListArgs',
+    'ProjectExternalUserGroupReferenceListArgsDict',
     'ProjectResourceDomainArgs',
+    'ProjectResourceDomainArgsDict',
     'ProjectResourceDomainResourceArgs',
+    'ProjectResourceDomainResourceArgsDict',
     'ProjectSubnetReferenceListArgs',
+    'ProjectSubnetReferenceListArgsDict',
     'ProjectTunnelReferenceListArgs',
+    'ProjectTunnelReferenceListArgsDict',
     'ProjectUserGroupListArgs',
+    'ProjectUserGroupListArgsDict',
     'ProjectUserGroupListDirectoryServiceOusArgs',
+    'ProjectUserGroupListDirectoryServiceOusArgsDict',
     'ProjectUserGroupListDirectoryServiceUserGroupArgs',
+    'ProjectUserGroupListDirectoryServiceUserGroupArgsDict',
     'ProjectUserGroupListSamlUserGroupArgs',
+    'ProjectUserGroupListSamlUserGroupArgsDict',
     'ProjectUserListArgs',
+    'ProjectUserListArgsDict',
     'ProjectUserListDirectoryServiceUserArgs',
+    'ProjectUserListDirectoryServiceUserArgsDict',
     'ProjectUserListDirectoryServiceUserDirectoryServiceReferenceArgs',
+    'ProjectUserListDirectoryServiceUserDirectoryServiceReferenceArgsDict',
     'ProjectUserListIdentityProviderUserArgs',
+    'ProjectUserListIdentityProviderUserArgsDict',
     'ProjectUserListIdentityProviderUserIdentityProviderReferenceArgs',
+    'ProjectUserListIdentityProviderUserIdentityProviderReferenceArgsDict',
     'ProjectUserReferenceListArgs',
+    'ProjectUserReferenceListArgsDict',
     'ProjectVpcReferenceListArgs',
+    'ProjectVpcReferenceListArgsDict',
     'ProtectionRuleAvailabilityZoneConnectivityListArgs',
+    'ProtectionRuleAvailabilityZoneConnectivityListArgsDict',
     'ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs',
+    'ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgsDict',
     'ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs',
+    'ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgsDict',
     'ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListRemoteSnapshotRetentionPolicyArgs',
+    'ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListRemoteSnapshotRetentionPolicyArgsDict',
     'ProtectionRuleCategoryArgs',
+    'ProtectionRuleCategoryArgsDict',
     'ProtectionRuleCategoryFilterArgs',
+    'ProtectionRuleCategoryFilterArgsDict',
     'ProtectionRuleCategoryFilterParamArgs',
+    'ProtectionRuleCategoryFilterParamArgsDict',
     'ProtectionRuleOrderedAvailabilityZoneListArgs',
+    'ProtectionRuleOrderedAvailabilityZoneListArgsDict',
     'ProtectionRuleOwnerReferenceArgs',
+    'ProtectionRuleOwnerReferenceArgsDict',
     'ProtectionRuleProjectReferenceArgs',
+    'ProtectionRuleProjectReferenceArgsDict',
     'RecoveryPlanCategoryArgs',
+    'RecoveryPlanCategoryArgsDict',
     'RecoveryPlanOwnerReferenceArgs',
+    'RecoveryPlanOwnerReferenceArgsDict',
     'RecoveryPlanParametersArgs',
+    'RecoveryPlanParametersArgsDict',
     'RecoveryPlanParametersFloatingIpAssignmentListArgs',
+    'RecoveryPlanParametersFloatingIpAssignmentListArgsDict',
     'RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListArgs',
+    'RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListArgsDict',
     'RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListRecoveryFloatingIpConfigArgs',
+    'RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListRecoveryFloatingIpConfigArgsDict',
     'RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListTestFloatingIpConfigArgs',
+    'RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListTestFloatingIpConfigArgsDict',
     'RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmNicInformationArgs',
+    'RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmNicInformationArgsDict',
     'RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReferenceArgs',
+    'RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReferenceArgsDict',
     'RecoveryPlanParametersNetworkMappingListArgs',
+    'RecoveryPlanParametersNetworkMappingListArgsDict',
     'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListArgs',
+    'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListArgsDict',
     'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceListArgs',
+    'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceListArgsDict',
     'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListArgs',
+    'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListArgsDict',
     'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListIpConfigListArgs',
+    'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListIpConfigListArgsDict',
     'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReferenceArgs',
+    'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReferenceArgsDict',
     'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkArgs',
+    'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkArgsDict',
     'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetListArgs',
+    'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetListArgsDict',
     'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferenceArgs',
+    'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferenceArgsDict',
     'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferenceArgs',
+    'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferenceArgsDict',
     'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListArgs',
+    'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListArgsDict',
     'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListIpConfigListArgs',
+    'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListIpConfigListArgsDict',
     'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReferenceArgs',
+    'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReferenceArgsDict',
     'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkArgs',
+    'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkArgsDict',
     'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkSubnetListArgs',
+    'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkSubnetListArgsDict',
     'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceArgs',
+    'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceArgsDict',
     'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferenceArgs',
+    'RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferenceArgsDict',
     'RecoveryPlanProjectReferenceArgs',
+    'RecoveryPlanProjectReferenceArgsDict',
     'RecoveryPlanStageListArgs',
+    'RecoveryPlanStageListArgsDict',
     'RecoveryPlanStageListStageWorkArgs',
+    'RecoveryPlanStageListStageWorkArgsDict',
     'RecoveryPlanStageListStageWorkRecoverEntitiesArgs',
+    'RecoveryPlanStageListStageWorkRecoverEntitiesArgsDict',
     'RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs',
+    'RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgsDict',
     'RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgs',
+    'RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgsDict',
     'RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListScriptListArgs',
+    'RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListScriptListArgsDict',
     'RoleCategoryArgs',
+    'RoleCategoryArgsDict',
     'RoleOwnerReferenceArgs',
+    'RoleOwnerReferenceArgsDict',
     'RolePermissionReferenceListArgs',
+    'RolePermissionReferenceListArgsDict',
     'RoleProjectReferenceArgs',
+    'RoleProjectReferenceArgsDict',
     'ServiceGroupServiceListArgs',
+    'ServiceGroupServiceListArgsDict',
     'ServiceGroupServiceListIcmpTypeCodeListArgs',
+    'ServiceGroupServiceListIcmpTypeCodeListArgsDict',
     'ServiceGroupServiceListTcpPortRangeListArgs',
+    'ServiceGroupServiceListTcpPortRangeListArgsDict',
     'ServiceGroupServiceListUdpPortRangeListArgs',
+    'ServiceGroupServiceListUdpPortRangeListArgsDict',
     'StaticRoutesDefaultRouteNexthopArgs',
+    'StaticRoutesDefaultRouteNexthopArgsDict',
     'StaticRoutesStaticRoutesListArgs',
+    'StaticRoutesStaticRoutesListArgsDict',
     'SubnetCategoryArgs',
+    'SubnetCategoryArgsDict',
     'UserAccessControlPolicyReferenceListArgs',
+    'UserAccessControlPolicyReferenceListArgsDict',
     'UserCategoryArgs',
+    'UserCategoryArgsDict',
     'UserDirectoryServiceUserArgs',
+    'UserDirectoryServiceUserArgsDict',
     'UserDirectoryServiceUserDirectoryServiceReferenceArgs',
+    'UserDirectoryServiceUserDirectoryServiceReferenceArgsDict',
     'UserGroupsCategoryArgs',
+    'UserGroupsCategoryArgsDict',
     'UserGroupsDirectoryServiceOusArgs',
+    'UserGroupsDirectoryServiceOusArgsDict',
     'UserGroupsDirectoryServiceUserGroupArgs',
+    'UserGroupsDirectoryServiceUserGroupArgsDict',
     'UserGroupsSamlUserGroupArgs',
+    'UserGroupsSamlUserGroupArgsDict',
     'UserIdentityProviderUserArgs',
+    'UserIdentityProviderUserArgsDict',
     'UserIdentityProviderUserIdentityProviderReferenceArgs',
+    'UserIdentityProviderUserIdentityProviderReferenceArgsDict',
     'UserProjectReferenceListArgs',
+    'UserProjectReferenceListArgsDict',
     'VirtualMachineCategoryArgs',
+    'VirtualMachineCategoryArgsDict',
     'VirtualMachineDiskListArgs',
+    'VirtualMachineDiskListArgsDict',
     'VirtualMachineDiskListDevicePropertiesArgs',
+    'VirtualMachineDiskListDevicePropertiesArgsDict',
     'VirtualMachineDiskListStorageConfigArgs',
+    'VirtualMachineDiskListStorageConfigArgsDict',
     'VirtualMachineDiskListStorageConfigStorageContainerReferenceArgs',
+    'VirtualMachineDiskListStorageConfigStorageContainerReferenceArgsDict',
     'VirtualMachineGpuListArgs',
+    'VirtualMachineGpuListArgsDict',
     'VirtualMachineNicListArgs',
+    'VirtualMachineNicListArgsDict',
     'VirtualMachineNicListIpEndpointListArgs',
+    'VirtualMachineNicListIpEndpointListArgsDict',
     'VirtualMachineNicListStatusArgs',
+    'VirtualMachineNicListStatusArgsDict',
     'VirtualMachineNicListStatusIpEndpointListArgs',
+    'VirtualMachineNicListStatusIpEndpointListArgsDict',
     'VirtualMachineSerialPortListArgs',
+    'VirtualMachineSerialPortListArgsDict',
     'VpcCommonDomainNameServerIpListArgs',
+    'VpcCommonDomainNameServerIpListArgsDict',
     'VpcExternalSubnetListStatusArgs',
+    'VpcExternalSubnetListStatusArgsDict',
     'VpcExternalSubnetListStatusActiveGatewayNodeArgs',
+    'VpcExternalSubnetListStatusActiveGatewayNodeArgsDict',
     'VpcExternallyRoutablePrefixListArgs',
+    'VpcExternallyRoutablePrefixListArgsDict',
     'GetAccessControlPoliciesMetadataArgs',
+    'GetAccessControlPoliciesMetadataArgsDict',
     'GetAccessControlPolicyCategoryArgs',
+    'GetAccessControlPolicyCategoryArgsDict',
     'GetAddressGroupsMetadataArgs',
+    'GetAddressGroupsMetadataArgsDict',
     'GetAssertHelperCheckArgs',
+    'GetAssertHelperCheckArgsDict',
     'GetClusterCategoryArgs',
+    'GetClusterCategoryArgsDict',
     'GetFloatingIpsMetadataArgs',
+    'GetFloatingIpsMetadataArgsDict',
     'GetFoundationCentralClusterDetailsClusterStatusArgs',
+    'GetFoundationCentralClusterDetailsClusterStatusArgsDict',
     'GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs',
+    'GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgsDict',
     'GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs',
+    'GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgsDict',
     'GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs',
+    'GetFoundationCentralClusterDetailsCommonNetworkSettingsArgsDict',
     'GetFoundationCentralImagedClustersListFiltersArgs',
+    'GetFoundationCentralImagedClustersListFiltersArgsDict',
     'GetFoundationCentralImagedNodesListFiltersArgs',
+    'GetFoundationCentralImagedNodesListFiltersArgsDict',
     'GetFoundationCentralListApiKeysMetadataArgs',
+    'GetFoundationCentralListApiKeysMetadataArgsDict',
     'GetHostCategoryArgs',
+    'GetHostCategoryArgsDict',
     'GetImageCategoryArgs',
+    'GetImageCategoryArgsDict',
     'GetNdbCloneFilterArgs',
+    'GetNdbCloneFilterArgsDict',
     'GetNdbCloneTagArgs',
+    'GetNdbCloneTagArgsDict',
     'GetNdbClonesFilterArgs',
+    'GetNdbClonesFilterArgsDict',
     'GetNdbDatabaseTagArgs',
+    'GetNdbDatabaseTagArgsDict',
     'GetNdbDbserverTagArgs',
+    'GetNdbDbserverTagArgsDict',
     'GetNdbMaintenanceWindowTagArgs',
+    'GetNdbMaintenanceWindowTagArgsDict',
     'GetNdbSnapshotFilterArgs',
+    'GetNdbSnapshotFilterArgsDict',
     'GetNdbSnapshotTagArgs',
+    'GetNdbSnapshotTagArgsDict',
     'GetNdbSnapshotsFilterArgs',
+    'GetNdbSnapshotsFilterArgsDict',
     'GetNdbTimeMachineTagArgs',
+    'GetNdbTimeMachineTagArgsDict',
     'GetNetworkSecurityRuleCategoryArgs',
+    'GetNetworkSecurityRuleCategoryArgsDict',
     'GetPbrsMetadataArgs',
+    'GetPbrsMetadataArgsDict',
     'GetPermissionCategoryArgs',
+    'GetPermissionCategoryArgsDict',
     'GetPermissionsMetadataArgs',
+    'GetPermissionsMetadataArgsDict',
     'GetProjectCategoryArgs',
+    'GetProjectCategoryArgsDict',
     'GetProjectExternalUserGroupReferenceListArgs',
+    'GetProjectExternalUserGroupReferenceListArgsDict',
     'GetProjectSubnetReferenceListArgs',
+    'GetProjectSubnetReferenceListArgsDict',
     'GetProjectUserReferenceListArgs',
+    'GetProjectUserReferenceListArgsDict',
     'GetProtectionRuleCategoryArgs',
+    'GetProtectionRuleCategoryArgsDict',
     'GetRecoveryPlanCategoryArgs',
+    'GetRecoveryPlanCategoryArgsDict',
     'GetRoleCategoryArgs',
+    'GetRoleCategoryArgsDict',
     'GetRolesMetadataArgs',
+    'GetRolesMetadataArgsDict',
     'GetServiceGroupsMetadataArgs',
+    'GetServiceGroupsMetadataArgsDict',
     'GetSubnetAdditionalFilterArgs',
+    'GetSubnetAdditionalFilterArgsDict',
     'GetSubnetCategoryArgs',
+    'GetSubnetCategoryArgsDict',
     'GetSubnetsMetadataArgs',
+    'GetSubnetsMetadataArgsDict',
     'GetUserCategoryArgs',
+    'GetUserCategoryArgsDict',
     'GetUserGroupCategoryArgs',
+    'GetUserGroupCategoryArgsDict',
     'GetUserGroupsMetadataArgs',
+    'GetUserGroupsMetadataArgsDict',
     'GetUsersMetadataArgs',
+    'GetUsersMetadataArgsDict',
     'GetVirtualMachineCategoryArgs',
+    'GetVirtualMachineCategoryArgsDict',
     'GetVpcsMetadataArgs',
+    'GetVpcsMetadataArgsDict',
 ]
+
+MYPY = False
+
+if not MYPY:
+    class AccessControlPolicyCategoryArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Name of the Access Control Policy.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - value of the key.
+        """
+elif False:
+    AccessControlPolicyCategoryArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AccessControlPolicyCategoryArgs:
@@ -651,6 +1271,19 @@ class AccessControlPolicyCategoryArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class AccessControlPolicyContextFilterListArgsDict(TypedDict):
+        entity_filter_expression_lists: pulumi.Input[Sequence[pulumi.Input['AccessControlPolicyContextFilterListEntityFilterExpressionListArgsDict']]]
+        """
+        A list of Entity filter expressions.
+        """
+        scope_filter_expression_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['AccessControlPolicyContextFilterListScopeFilterExpressionListArgsDict']]]]
+        """
+        - (Optional) Filter the scope of an Access Control Policy.
+        """
+elif False:
+    AccessControlPolicyContextFilterListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AccessControlPolicyContextFilterListArgs:
     def __init__(__self__, *,
@@ -688,6 +1321,23 @@ class AccessControlPolicyContextFilterListArgs:
     def scope_filter_expression_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AccessControlPolicyContextFilterListScopeFilterExpressionListArgs']]]]):
         pulumi.set(self, "scope_filter_expression_lists", value)
 
+
+if not MYPY:
+    class AccessControlPolicyContextFilterListEntityFilterExpressionListArgsDict(TypedDict):
+        operator: pulumi.Input[str]
+        """
+        - (Required) The operator in the filter expression.
+        """
+        right_hand_side: pulumi.Input['AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgsDict']
+        """
+        - (Required) The right hand side (RHS) of an scope expression.
+        """
+        left_hand_side_entity_type: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional)  The LHS of the filter expression - the entity type.
+        """
+elif False:
+    AccessControlPolicyContextFilterListEntityFilterExpressionListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AccessControlPolicyContextFilterListEntityFilterExpressionListArgs:
@@ -741,6 +1391,23 @@ class AccessControlPolicyContextFilterListEntityFilterExpressionListArgs:
     def left_hand_side_entity_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "left_hand_side_entity_type", value)
 
+
+if not MYPY:
+    class AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgsDict(TypedDict):
+        categories: NotRequired[pulumi.Input['AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgsDict']]
+        """
+        - (Optional) The category values represented as a dictionary of key > list of values.
+        """
+        collection: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+        """
+        uuid_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        - (Optional) The explicit list of UUIDs for the given kind.
+        """
+elif False:
+    AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideArgs:
@@ -797,6 +1464,19 @@ class AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSid
         pulumi.set(self, "uuid_lists", value)
 
 
+if not MYPY:
+    class AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Name of the Access Control Policy.
+        """
+        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        - value of the key.
+        """
+elif False:
+    AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs:
     def __init__(__self__, *,
@@ -835,6 +1515,23 @@ class AccessControlPolicyContextFilterListEntityFilterExpressionListRightHandSid
     def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "values", value)
 
+
+if not MYPY:
+    class AccessControlPolicyContextFilterListScopeFilterExpressionListArgsDict(TypedDict):
+        left_hand_side: pulumi.Input[str]
+        """
+        - (Optional)  The LHS of the filter expression - the scope type.
+        """
+        operator: pulumi.Input[str]
+        """
+        - (Required) The operator of the filter expression.
+        """
+        right_hand_side: pulumi.Input['AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideArgsDict']
+        """
+        - (Required) The right hand side (RHS) of an scope expression.
+        """
+elif False:
+    AccessControlPolicyContextFilterListScopeFilterExpressionListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AccessControlPolicyContextFilterListScopeFilterExpressionListArgs:
@@ -887,6 +1584,23 @@ class AccessControlPolicyContextFilterListScopeFilterExpressionListArgs:
     def right_hand_side(self, value: pulumi.Input['AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideArgs']):
         pulumi.set(self, "right_hand_side", value)
 
+
+if not MYPY:
+    class AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideArgsDict(TypedDict):
+        categories: NotRequired[pulumi.Input['AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgsDict']]
+        """
+        - (Optional) The category values represented as a dictionary of key > list of values.
+        """
+        collection: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+        """
+        uuid_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        - (Optional) The explicit list of UUIDs for the given kind.
+        """
+elif False:
+    AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideArgs:
@@ -943,6 +1657,19 @@ class AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSide
         pulumi.set(self, "uuid_lists", value)
 
 
+if not MYPY:
+    class AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Name of the Access Control Policy.
+        """
+        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        - value of the key.
+        """
+elif False:
+    AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs:
     def __init__(__self__, *,
@@ -981,6 +1708,23 @@ class AccessControlPolicyContextFilterListScopeFilterExpressionListRightHandSide
     def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "values", value)
 
+
+if not MYPY:
+    class AccessControlPolicyOwnerReferenceArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Name of the Access Control Policy.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - the UUID(Required).
+        """
+elif False:
+    AccessControlPolicyOwnerReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AccessControlPolicyOwnerReferenceArgs:
@@ -1037,6 +1781,23 @@ class AccessControlPolicyOwnerReferenceArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class AccessControlPolicyRoleReferenceArgsDict(TypedDict):
+        kind: pulumi.Input[str]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        uuid: pulumi.Input[str]
+        """
+        - the UUID(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Name of the Access Control Policy.
+        """
+elif False:
+    AccessControlPolicyRoleReferenceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AccessControlPolicyRoleReferenceArgs:
     def __init__(__self__, *,
@@ -1089,6 +1850,23 @@ class AccessControlPolicyRoleReferenceArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class AccessControlPolicyUserGroupReferenceListArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        - the UUID(Required).
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Name of the Access Control Policy.
+        """
+elif False:
+    AccessControlPolicyUserGroupReferenceListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AccessControlPolicyUserGroupReferenceListArgs:
@@ -1144,6 +1922,23 @@ class AccessControlPolicyUserGroupReferenceListArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class AccessControlPolicyUserReferenceListArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        - the UUID(Required).
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Name of the Access Control Policy.
+        """
+elif False:
+    AccessControlPolicyUserReferenceListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AccessControlPolicyUserReferenceListArgs:
     def __init__(__self__, *,
@@ -1198,6 +1993,21 @@ class AccessControlPolicyUserReferenceListArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class AddressGroupIpAddressBlockListArgsDict(TypedDict):
+        ip: pulumi.Input[str]
+        """
+        - (Required) IP of the address block
+        """
+        prefix_length: pulumi.Input[int]
+        """
+        - (Required) Prefix length of address block in int
+
+        See detailed information in [Nutanix Address Groups](https://www.nutanix.dev/api_references/prism-central-v3/#/5ccef53a546a4-create-a-new-address-group).
+        """
+elif False:
+    AddressGroupIpAddressBlockListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class AddressGroupIpAddressBlockListArgs:
     def __init__(__self__, *,
@@ -1238,6 +2048,19 @@ class AddressGroupIpAddressBlockListArgs:
     def prefix_length(self, value: pulumi.Input[int]):
         pulumi.set(self, "prefix_length", value)
 
+
+if not MYPY:
+    class FoundationCentralImageClusterClusterStatusArgsDict(TypedDict):
+        aggregate_percent_complete: NotRequired[pulumi.Input[float]]
+        cluster_creation_started: NotRequired[pulumi.Input[bool]]
+        cluster_progress_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterClusterStatusClusterProgressDetailArgsDict']]]]
+        current_foundation_ip: NotRequired[pulumi.Input[str]]
+        foundation_session_id: NotRequired[pulumi.Input[str]]
+        imaging_stopped: NotRequired[pulumi.Input[bool]]
+        intent_picked_up: NotRequired[pulumi.Input[bool]]
+        node_progress_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterClusterStatusNodeProgressDetailArgsDict']]]]
+elif False:
+    FoundationCentralImageClusterClusterStatusArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FoundationCentralImageClusterClusterStatusArgs:
@@ -1340,6 +2163,18 @@ class FoundationCentralImageClusterClusterStatusArgs:
         pulumi.set(self, "node_progress_details", value)
 
 
+if not MYPY:
+    class FoundationCentralImageClusterClusterStatusClusterProgressDetailArgsDict(TypedDict):
+        cluster_name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the cluster.
+        """
+        message_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        percent_complete: NotRequired[pulumi.Input[float]]
+        status: NotRequired[pulumi.Input[str]]
+elif False:
+    FoundationCentralImageClusterClusterStatusClusterProgressDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FoundationCentralImageClusterClusterStatusClusterProgressDetailArgs:
     def __init__(__self__, *,
@@ -1398,6 +2233,20 @@ class FoundationCentralImageClusterClusterStatusClusterProgressDetailArgs:
     def status(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "status", value)
 
+
+if not MYPY:
+    class FoundationCentralImageClusterClusterStatusNodeProgressDetailArgsDict(TypedDict):
+        imaged_node_uuid: NotRequired[pulumi.Input[str]]
+        """
+        UUID of the node.
+        """
+        imaging_stopped: NotRequired[pulumi.Input[bool]]
+        intent_picked_up: NotRequired[pulumi.Input[bool]]
+        message_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        percent_complete: NotRequired[pulumi.Input[float]]
+        status: NotRequired[pulumi.Input[str]]
+elif False:
+    FoundationCentralImageClusterClusterStatusNodeProgressDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FoundationCentralImageClusterClusterStatusNodeProgressDetailArgs:
@@ -1482,6 +2331,27 @@ class FoundationCentralImageClusterClusterStatusNodeProgressDetailArgs:
         pulumi.set(self, "status", value)
 
 
+if not MYPY:
+    class FoundationCentralImageClusterCommonNetworkSettingsArgsDict(TypedDict):
+        cvm_dns_servers: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of dns servers for the cvms in the cluster.
+        """
+        cvm_ntp_servers: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of ntp servers for the cvms in the cluster.
+        """
+        hypervisor_dns_servers: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of dns servers for the hypervisors in the cluster.
+        """
+        hypervisor_ntp_servers: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        List of ntp servers for the hypervisors in the cluster.
+        """
+elif False:
+    FoundationCentralImageClusterCommonNetworkSettingsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FoundationCentralImageClusterCommonNetworkSettingsArgs:
     def __init__(__self__, *,
@@ -1552,6 +2422,49 @@ class FoundationCentralImageClusterCommonNetworkSettingsArgs:
     def hypervisor_ntp_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "hypervisor_ntp_servers", value)
 
+
+if not MYPY:
+    class FoundationCentralImageClusterFoundationInitConfigArgsDict(TypedDict):
+        blocks: NotRequired[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterFoundationInitConfigBlockArgsDict']]]]
+        clusters: NotRequired[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterFoundationInitConfigClusterArgsDict']]]]
+        cvm_gateway: NotRequired[pulumi.Input[str]]
+        """
+        Gateway of the cvm.
+        """
+        cvm_netmask: NotRequired[pulumi.Input[str]]
+        """
+        Netmask of the cvm.
+        """
+        dns_servers: NotRequired[pulumi.Input[str]]
+        hyperv_product_key: NotRequired[pulumi.Input[str]]
+        """
+        Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+        """
+        hyperv_sku: NotRequired[pulumi.Input[str]]
+        """
+        SKU of hyperv to be installed if hypervisor_type is hyperv.
+        """
+        hypervisor_gateway: NotRequired[pulumi.Input[str]]
+        """
+        Gateway of the hypervisor.
+        """
+        hypervisor_iso_url: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        hypervisor_isos: NotRequired[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgsDict']]]]
+        hypervisor_netmask: NotRequired[pulumi.Input[str]]
+        """
+        Netmask of the hypervisor.
+        """
+        ipmi_gateway: NotRequired[pulumi.Input[str]]
+        """
+        Gateway of the ipmi.
+        """
+        ipmi_netmask: NotRequired[pulumi.Input[str]]
+        """
+        Netmask of the ipmi.
+        """
+        nos_package_urls: NotRequired[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgsDict']]]]
+elif False:
+    FoundationCentralImageClusterFoundationInitConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FoundationCentralImageClusterFoundationInitConfigArgs:
@@ -1760,6 +2673,13 @@ class FoundationCentralImageClusterFoundationInitConfigArgs:
         pulumi.set(self, "nos_package_urls", value)
 
 
+if not MYPY:
+    class FoundationCentralImageClusterFoundationInitConfigBlockArgsDict(TypedDict):
+        block_id: NotRequired[pulumi.Input[str]]
+        nodes: NotRequired[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterFoundationInitConfigBlockNodeArgsDict']]]]
+elif False:
+    FoundationCentralImageClusterFoundationInitConfigBlockArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FoundationCentralImageClusterFoundationInitConfigBlockArgs:
     def __init__(__self__, *,
@@ -1788,6 +2708,44 @@ class FoundationCentralImageClusterFoundationInitConfigBlockArgs:
     def nodes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs']]]]):
         pulumi.set(self, "nodes", value)
 
+
+if not MYPY:
+    class FoundationCentralImageClusterFoundationInitConfigBlockNodeArgsDict(TypedDict):
+        cvm_ip: NotRequired[pulumi.Input[str]]
+        """
+        IP address to be set for the cvm on the node.
+        """
+        cvm_vlan_id: NotRequired[pulumi.Input[int]]
+        """
+        Vlan tag of the cvm, if the cvm is on a vlan.
+        """
+        fc_imaged_node_uuid: NotRequired[pulumi.Input[str]]
+        hardware_attributes_override: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Hardware attributes override json for the node.
+        """
+        hypervisor: NotRequired[pulumi.Input[str]]
+        hypervisor_hostname: NotRequired[pulumi.Input[str]]
+        """
+        Name to be set for the hypervisor host.
+        """
+        hypervisor_ip: NotRequired[pulumi.Input[str]]
+        """
+        IP address to be set for the hypervisor on the node.
+        """
+        image_now: NotRequired[pulumi.Input[bool]]
+        """
+        True, if the node should be imaged, False, otherwise.
+        """
+        ipmi_ip: NotRequired[pulumi.Input[str]]
+        """
+        IP address to be set for the ipmi of the node.
+        """
+        ipv6_address: NotRequired[pulumi.Input[str]]
+        node_position: NotRequired[pulumi.Input[str]]
+        node_serial: NotRequired[pulumi.Input[str]]
+elif False:
+    FoundationCentralImageClusterFoundationInitConfigBlockNodeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs:
@@ -1968,6 +2926,38 @@ class FoundationCentralImageClusterFoundationInitConfigBlockNodeArgs:
         pulumi.set(self, "node_serial", value)
 
 
+if not MYPY:
+    class FoundationCentralImageClusterFoundationInitConfigClusterArgsDict(TypedDict):
+        cluster_external_ip: NotRequired[pulumi.Input[str]]
+        """
+        External management ip of the cluster.
+        """
+        cluster_init_now: NotRequired[pulumi.Input[bool]]
+        cluster_init_successful: NotRequired[pulumi.Input[bool]]
+        cluster_members: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        cluster_name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the cluster.
+        """
+        cvm_dns_servers: NotRequired[pulumi.Input[str]]
+        """
+        List of dns servers for the cvms in the cluster.
+        """
+        cvm_ntp_servers: NotRequired[pulumi.Input[str]]
+        """
+        List of ntp servers for the cvms in the cluster.
+        """
+        redundancy_factor: NotRequired[pulumi.Input[int]]
+        """
+        Redundancy factor of the cluster.
+        """
+        timezone: NotRequired[pulumi.Input[str]]
+        """
+        Timezone to be set on the cluster.
+        """
+elif False:
+    FoundationCentralImageClusterFoundationInitConfigClusterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FoundationCentralImageClusterFoundationInitConfigClusterArgs:
     def __init__(__self__, *,
@@ -2107,6 +3097,23 @@ class FoundationCentralImageClusterFoundationInitConfigClusterArgs:
         pulumi.set(self, "timezone", value)
 
 
+if not MYPY:
+    class FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgsDict(TypedDict):
+        hypervisor_type: NotRequired[pulumi.Input[str]]
+        """
+        Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+        """
+        sha256sum: NotRequired[pulumi.Input[str]]
+        """
+        sha256sum of the hypervisor iso.
+        """
+        url: NotRequired[pulumi.Input[str]]
+        """
+        URL to download hypervisor iso. Required only if imaging is needed.
+        """
+elif False:
+    FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs:
     def __init__(__self__, *,
@@ -2162,6 +3169,19 @@ class FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs:
         pulumi.set(self, "url", value)
 
 
+if not MYPY:
+    class FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgsDict(TypedDict):
+        sha256sum: NotRequired[pulumi.Input[str]]
+        """
+        sha256sum of the hypervisor iso.
+        """
+        url: NotRequired[pulumi.Input[str]]
+        """
+        URL to download hypervisor iso. Required only if imaging is needed.
+        """
+elif False:
+    FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs:
     def __init__(__self__, *,
@@ -2200,6 +3220,27 @@ class FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArgs:
     def url(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "url", value)
 
+
+if not MYPY:
+    class FoundationCentralImageClusterHypervisorIsoDetailsArgsDict(TypedDict):
+        hyperv_product_key: NotRequired[pulumi.Input[str]]
+        """
+        Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+        """
+        hyperv_sku: NotRequired[pulumi.Input[str]]
+        """
+        SKU of hyperv to be installed if hypervisor_type is hyperv.
+        """
+        sha256sum: NotRequired[pulumi.Input[str]]
+        """
+        sha256sum of the hypervisor iso.
+        """
+        url: NotRequired[pulumi.Input[str]]
+        """
+        URL to download hypervisor iso. Required only if imaging is needed.
+        """
+elif False:
+    FoundationCentralImageClusterHypervisorIsoDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FoundationCentralImageClusterHypervisorIsoDetailsArgs:
@@ -2271,6 +3312,83 @@ class FoundationCentralImageClusterHypervisorIsoDetailsArgs:
     def url(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "url", value)
 
+
+if not MYPY:
+    class FoundationCentralImageClusterNodeListArgsDict(TypedDict):
+        cvm_gateway: NotRequired[pulumi.Input[str]]
+        """
+        Gateway of the cvm.
+        """
+        cvm_ip: NotRequired[pulumi.Input[str]]
+        """
+        IP address to be set for the cvm on the node.
+        """
+        cvm_netmask: NotRequired[pulumi.Input[str]]
+        """
+        Netmask of the cvm.
+        """
+        cvm_ram_gb: NotRequired[pulumi.Input[int]]
+        """
+        Amount of memory to be assigned for the cvm.
+        """
+        cvm_vlan_id: NotRequired[pulumi.Input[int]]
+        """
+        Vlan tag of the cvm, if the cvm is on a vlan.
+        """
+        hardware_attributes_override: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Hardware attributes override json for the node.
+        """
+        hypervisor_gateway: NotRequired[pulumi.Input[str]]
+        """
+        Gateway of the hypervisor.
+        """
+        hypervisor_hostname: NotRequired[pulumi.Input[str]]
+        """
+        Name to be set for the hypervisor host.
+        """
+        hypervisor_ip: NotRequired[pulumi.Input[str]]
+        """
+        IP address to be set for the hypervisor on the node.
+        """
+        hypervisor_netmask: NotRequired[pulumi.Input[str]]
+        """
+        Netmask of the hypervisor.
+        """
+        hypervisor_type: NotRequired[pulumi.Input[str]]
+        """
+        Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
+        """
+        image_now: NotRequired[pulumi.Input[bool]]
+        """
+        True, if the node should be imaged, False, otherwise.
+        """
+        imaged_node_uuid: NotRequired[pulumi.Input[str]]
+        """
+        UUID of the node.
+        """
+        ipmi_gateway: NotRequired[pulumi.Input[str]]
+        """
+        Gateway of the ipmi.
+        """
+        ipmi_ip: NotRequired[pulumi.Input[str]]
+        """
+        IP address to be set for the ipmi of the node.
+        """
+        ipmi_netmask: NotRequired[pulumi.Input[str]]
+        """
+        Netmask of the ipmi.
+        """
+        rdma_passthrough: NotRequired[pulumi.Input[bool]]
+        """
+        Passthrough RDMA nic to CVM if possible, default to false.
+        """
+        use_existing_network_settings: NotRequired[pulumi.Input[bool]]
+        """
+        Decides whether to use the existing network settings for the node. If True, the existing network settings of the node will be used during cluster creation. If False, then client must provide new network settings. If all nodes are booted in phoenix, this field is, by default, considered to be False.
+        """
+elif False:
+    FoundationCentralImageClusterNodeListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FoundationCentralImageClusterNodeListArgs:
@@ -2567,6 +3685,16 @@ class FoundationCentralImageClusterNodeListArgs:
         pulumi.set(self, "use_existing_network_settings", value)
 
 
+if not MYPY:
+    class FoundationImageNodesBlockArgsDict(TypedDict):
+        nodes: pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesBlockNodeArgsDict']]]
+        block_id: NotRequired[pulumi.Input[str]]
+        """
+        - Block ID.
+        """
+elif False:
+    FoundationImageNodesBlockArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FoundationImageNodesBlockArgs:
     def __init__(__self__, *,
@@ -2600,6 +3728,143 @@ class FoundationImageNodesBlockArgs:
     def block_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "block_id", value)
 
+
+if not MYPY:
+    class FoundationImageNodesBlockNodeArgsDict(TypedDict):
+        hypervisor_hostname: pulumi.Input[str]
+        """
+        - (Required) Hypervisor Hostname.
+        """
+        hypervisor_ip: pulumi.Input[str]
+        """
+        - (Required) Hypervisor IP address.
+        """
+        node_position: pulumi.Input[str]
+        """
+        - (Required) Position of the node in the block.
+        """
+        bond_lacp_rate: NotRequired[pulumi.Input[str]]
+        """
+        - (Required if node is lacp configured) slow or fast if lacp if being used at the switch
+        """
+        bond_mode: NotRequired[pulumi.Input[str]]
+        """
+        - (Required if node is capable) dynamic if using LACP, static for LAG
+        """
+        bond_uplinks: NotRequired[pulumi.Input[str]]
+        """
+        - MAC Addresses of NICs in a team/bond
+        """
+        cluster_id: NotRequired[pulumi.Input[str]]
+        """
+        - ID of cluster.
+        """
+        current_cvm_vlan_tag: NotRequired[pulumi.Input[int]]
+        """
+        - Current CVM vlan tag. 0 Value with remove vlan tag.
+        """
+        current_network_interface: NotRequired[pulumi.Input[str]]
+        """
+        - CVM current network interface.
+        """
+        cvm_gb_ram: NotRequired[pulumi.Input[int]]
+        """
+        - RAM capacity of CVM in GB.
+        """
+        cvm_ip: NotRequired[pulumi.Input[str]]
+        cvm_num_vcpus: NotRequired[pulumi.Input[int]]
+        """
+        - Number of CVM vcpus.
+        """
+        device_hint: NotRequired[pulumi.Input[str]]
+        """
+        - use "vm_installer" to enable CVM imaging from standalone.
+        """
+        exlude_boot_serial: NotRequired[pulumi.Input[str]]
+        """
+        - serial of boot device to be excluded (used by NX G6 platforms)
+        """
+        hypervisor: NotRequired[pulumi.Input[str]]
+        image_delay: NotRequired[pulumi.Input[int]]
+        """
+        - Imaging delay.
+        """
+        image_now: NotRequired[pulumi.Input[bool]]
+        """
+        - (Optional, Default = true) If the node should be imaged now.
+        """
+        image_successful: NotRequired[pulumi.Input[bool]]
+        ipmi_configure_now: NotRequired[pulumi.Input[bool]]
+        """
+        - Whether IPMI should be configured.
+        """
+        ipmi_gateway: NotRequired[pulumi.Input[str]]
+        """
+        - (Required incase using IPMI based imaging either here or outside blocks) IPMI gateway for this node
+        """
+        ipmi_ip: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) IPMI IP address.
+        """
+        ipmi_mac: NotRequired[pulumi.Input[str]]
+        """
+        - IPMI MAC address.
+        """
+        ipmi_netmask: NotRequired[pulumi.Input[str]]
+        """
+        - (Required incase using IPMI based imaging either here or outside blocks) IPMI netmask for this node
+        """
+        ipmi_password: NotRequired[pulumi.Input[str]]
+        """
+        - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
+        """
+        ipmi_user: NotRequired[pulumi.Input[str]]
+        """
+        - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+        """
+        ipv6_address: NotRequired[pulumi.Input[str]]
+        """
+        - (Required when device_hint = "vm_installer" for imaging using node's existing cvm for imaging) IPV6 address.
+        """
+        ipv6_interface: NotRequired[pulumi.Input[str]]
+        """
+        - (Required when device_hint = "vm_installer" for imaging using node's existing cvm for imaging) ipv6 interface.
+        """
+        mitigate_low_boot_space: NotRequired[pulumi.Input[bool]]
+        """
+        - relocate bootbank files to make space for phoenix files.
+        """
+        node_serial: NotRequired[pulumi.Input[str]]
+        """
+        - serial number of the node.
+        """
+        rdma_mac_addr: NotRequired[pulumi.Input[str]]
+        """
+        - mac address of nic to be used for rdma
+        """
+        rdma_passthrough: NotRequired[pulumi.Input[bool]]
+        """
+        - (Required if node is capable) passthru RDMA nic to CVM if possible, default to false
+        """
+        ucsm_managed_mode: NotRequired[pulumi.Input[str]]
+        """
+        - UCSM Managed mode.
+        """
+        ucsm_node_serial: NotRequired[pulumi.Input[str]]
+        """
+        - UCSM node serial.
+        """
+        ucsm_params: NotRequired[pulumi.Input['FoundationImageNodesBlockNodeUcsmParamsArgsDict']]
+        """
+        - Object of UCSM parameters.
+        * `ucsm_params.native_vlan` :- If the vlan is native.
+        * `ucsm_params.keep_ucsm_settings` :- Whether UCSM settings should be kept.
+        * `ucsm_params.mac_pool` :- Mac address pool.
+        * `ucsm_params.vlan_name` :- Name of vlan.
+        """
+        vswitches: NotRequired[pulumi.Input[Sequence[pulumi.Input['FoundationImageNodesBlockNodeVswitchArgsDict']]]]
+elif False:
+    FoundationImageNodesBlockNodeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FoundationImageNodesBlockNodeArgs:
@@ -3157,6 +4422,15 @@ class FoundationImageNodesBlockNodeArgs:
         pulumi.set(self, "vswitches", value)
 
 
+if not MYPY:
+    class FoundationImageNodesBlockNodeUcsmParamsArgsDict(TypedDict):
+        keep_ucsm_settings: NotRequired[pulumi.Input[bool]]
+        mac_pool: NotRequired[pulumi.Input[str]]
+        native_vlan: NotRequired[pulumi.Input[bool]]
+        vlan_name: NotRequired[pulumi.Input[str]]
+elif False:
+    FoundationImageNodesBlockNodeUcsmParamsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FoundationImageNodesBlockNodeUcsmParamsArgs:
     def __init__(__self__, *,
@@ -3209,6 +4483,20 @@ class FoundationImageNodesBlockNodeUcsmParamsArgs:
     def vlan_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vlan_name", value)
 
+
+if not MYPY:
+    class FoundationImageNodesBlockNodeVswitchArgsDict(TypedDict):
+        bond_mode: NotRequired[pulumi.Input[str]]
+        """
+        - (Required if node is capable) dynamic if using LACP, static for LAG
+        """
+        lacp: NotRequired[pulumi.Input[str]]
+        mtu: NotRequired[pulumi.Input[int]]
+        name: NotRequired[pulumi.Input[str]]
+        other_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        uplinks: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+elif False:
+    FoundationImageNodesBlockNodeVswitchArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FoundationImageNodesBlockNodeVswitchArgs:
@@ -3292,6 +4580,71 @@ class FoundationImageNodesBlockNodeVswitchArgs:
     def uplinks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "uplinks", value)
 
+
+if not MYPY:
+    class FoundationImageNodesClusterArgsDict(TypedDict):
+        cluster_members: pulumi.Input[Sequence[pulumi.Input[str]]]
+        """
+        - (Required) Members in the cluster.
+        """
+        cluster_name: pulumi.Input[str]
+        """
+        - (Required) Name of the cluster.
+        """
+        redundancy_factor: pulumi.Input[int]
+        """
+        - (Required) Cluster Redundancy Factor.
+        """
+        backplane_netmask: NotRequired[pulumi.Input[str]]
+        """
+        - Backplane netmask.
+        """
+        backplane_subnet: NotRequired[pulumi.Input[str]]
+        """
+        - Backplane subnet address.
+        """
+        backplane_vlan: NotRequired[pulumi.Input[str]]
+        """
+        - Backplane vlan.
+        """
+        cluster_external_ip: NotRequired[pulumi.Input[str]]
+        """
+        - External IP of the cluster.
+        """
+        cluster_init_now: NotRequired[pulumi.Input[bool]]
+        """
+        - (Optional, Default = true) If cluster should be created.
+        """
+        cluster_init_successful: NotRequired[pulumi.Input[bool]]
+        """
+        - If cluster initialization was successful.
+        """
+        cvm_dns_servers: NotRequired[pulumi.Input[str]]
+        """
+        - DNS servers of CVM.
+        """
+        cvm_ntp_servers: NotRequired[pulumi.Input[str]]
+        """
+        - NTP servers of CVM.
+        """
+        enable_ns: NotRequired[pulumi.Input[bool]]
+        """
+        - If network segmentation should be enabled.
+        """
+        hypervisor_ntp_servers: NotRequired[pulumi.Input[str]]
+        """
+        - NTP servers of hypervisor.
+        """
+        single_node_cluster: NotRequired[pulumi.Input[bool]]
+        """
+        - If it is a single node cluster.
+        """
+        timezone: NotRequired[pulumi.Input[str]]
+        """
+        - Set timezone for every CVM
+        """
+elif False:
+    FoundationImageNodesClusterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FoundationImageNodesClusterArgs:
@@ -3537,6 +4890,16 @@ class FoundationImageNodesClusterArgs:
         pulumi.set(self, "timezone", value)
 
 
+if not MYPY:
+    class FoundationImageNodesClusterUrlArgsDict(TypedDict):
+        cluster_name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) Name of the cluster.
+        """
+        cluster_url: NotRequired[pulumi.Input[str]]
+elif False:
+    FoundationImageNodesClusterUrlArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FoundationImageNodesClusterUrlArgs:
     def __init__(__self__, *,
@@ -3571,6 +4934,23 @@ class FoundationImageNodesClusterUrlArgs:
     def cluster_url(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "cluster_url", value)
 
+
+if not MYPY:
+    class FoundationImageNodesEosMetadataArgsDict(TypedDict):
+        account_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        - arrya of account names
+        """
+        config_id: NotRequired[pulumi.Input[str]]
+        """
+        - Id of the Eos config uploaded in foundation GUI.
+        """
+        email: NotRequired[pulumi.Input[str]]
+        """
+        - Email address of the user who downloaded Eos config.
+        """
+elif False:
+    FoundationImageNodesEosMetadataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FoundationImageNodesEosMetadataArgs:
@@ -3627,6 +5007,21 @@ class FoundationImageNodesEosMetadataArgs:
         pulumi.set(self, "email", value)
 
 
+if not MYPY:
+    class FoundationImageNodesFcSettingsArgsDict(TypedDict):
+        fc_metadata: pulumi.Input['FoundationImageNodesFcSettingsFcMetadataArgsDict']
+        """
+        - Foundation Central metadata which will be transferred to the newly imaged node.
+        * `fc_metadata.fc_ip` :- IP address of foundation central.
+        * `fc_metadata.api_key` :- api_key which the node uses to register itself with foundation central.
+        """
+        foundation_central: pulumi.Input[bool]
+        """
+        - If this attribute is set to True, FC workflow will be invoked.
+        """
+elif False:
+    FoundationImageNodesFcSettingsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FoundationImageNodesFcSettingsArgs:
     def __init__(__self__, *,
@@ -3668,6 +5063,13 @@ class FoundationImageNodesFcSettingsArgs:
         pulumi.set(self, "foundation_central", value)
 
 
+if not MYPY:
+    class FoundationImageNodesFcSettingsFcMetadataArgsDict(TypedDict):
+        api_key: pulumi.Input[str]
+        fc_ip: pulumi.Input[str]
+elif False:
+    FoundationImageNodesFcSettingsFcMetadataArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FoundationImageNodesFcSettingsFcMetadataArgs:
     def __init__(__self__, *,
@@ -3694,6 +5096,27 @@ class FoundationImageNodesFcSettingsFcMetadataArgs:
     def fc_ip(self, value: pulumi.Input[str]):
         pulumi.set(self, "fc_ip", value)
 
+
+if not MYPY:
+    class FoundationImageNodesHypervisorIsoArgsDict(TypedDict):
+        esx: NotRequired[pulumi.Input['FoundationImageNodesHypervisorIsoEsxArgsDict']]
+        """
+        - Details of hypervisor ISO of type esx.
+        """
+        hyperv: NotRequired[pulumi.Input['FoundationImageNodesHypervisorIsoHypervArgsDict']]
+        """
+        - Details of hypervisor ISO of type hyperv.
+        """
+        kvm: NotRequired[pulumi.Input['FoundationImageNodesHypervisorIsoKvmArgsDict']]
+        """
+        - Details of hypervisor ISO of type kvm.
+        """
+        xen: NotRequired[pulumi.Input['FoundationImageNodesHypervisorIsoXenArgsDict']]
+        """
+        - Details of hypervisor ISO of type xen.
+        """
+elif False:
+    FoundationImageNodesHypervisorIsoArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FoundationImageNodesHypervisorIsoArgs:
@@ -3766,6 +5189,19 @@ class FoundationImageNodesHypervisorIsoArgs:
         pulumi.set(self, "xen", value)
 
 
+if not MYPY:
+    class FoundationImageNodesHypervisorIsoEsxArgsDict(TypedDict):
+        checksum: pulumi.Input[str]
+        """
+        - (Required) Filename of hypervisor ISO.
+        """
+        filename: pulumi.Input[str]
+        """
+        - (Required) Checksum for ISO file.
+        """
+elif False:
+    FoundationImageNodesHypervisorIsoEsxArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FoundationImageNodesHypervisorIsoEsxArgs:
     def __init__(__self__, *,
@@ -3802,6 +5238,19 @@ class FoundationImageNodesHypervisorIsoEsxArgs:
     def filename(self, value: pulumi.Input[str]):
         pulumi.set(self, "filename", value)
 
+
+if not MYPY:
+    class FoundationImageNodesHypervisorIsoHypervArgsDict(TypedDict):
+        checksum: pulumi.Input[str]
+        """
+        - (Required) Filename of hypervisor ISO.
+        """
+        filename: pulumi.Input[str]
+        """
+        - (Required) Checksum for ISO file.
+        """
+elif False:
+    FoundationImageNodesHypervisorIsoHypervArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FoundationImageNodesHypervisorIsoHypervArgs:
@@ -3840,6 +5289,19 @@ class FoundationImageNodesHypervisorIsoHypervArgs:
         pulumi.set(self, "filename", value)
 
 
+if not MYPY:
+    class FoundationImageNodesHypervisorIsoKvmArgsDict(TypedDict):
+        checksum: pulumi.Input[str]
+        """
+        - (Required) Filename of hypervisor ISO.
+        """
+        filename: pulumi.Input[str]
+        """
+        - (Required) Checksum for ISO file.
+        """
+elif False:
+    FoundationImageNodesHypervisorIsoKvmArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FoundationImageNodesHypervisorIsoKvmArgs:
     def __init__(__self__, *,
@@ -3877,6 +5339,19 @@ class FoundationImageNodesHypervisorIsoKvmArgs:
         pulumi.set(self, "filename", value)
 
 
+if not MYPY:
+    class FoundationImageNodesHypervisorIsoXenArgsDict(TypedDict):
+        checksum: pulumi.Input[str]
+        """
+        - (Required) Filename of hypervisor ISO.
+        """
+        filename: pulumi.Input[str]
+        """
+        - (Required) Checksum for ISO file.
+        """
+elif False:
+    FoundationImageNodesHypervisorIsoXenArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FoundationImageNodesHypervisorIsoXenArgs:
     def __init__(__self__, *,
@@ -3913,6 +5388,19 @@ class FoundationImageNodesHypervisorIsoXenArgs:
     def filename(self, value: pulumi.Input[str]):
         pulumi.set(self, "filename", value)
 
+
+if not MYPY:
+    class FoundationImageNodesTestsArgsDict(TypedDict):
+        run_ncc: NotRequired[pulumi.Input[bool]]
+        """
+        - Whether NCC checks should run.
+        """
+        run_syscheck: NotRequired[pulumi.Input[bool]]
+        """
+        - Whether system checks should run.
+        """
+elif False:
+    FoundationImageNodesTestsArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FoundationImageNodesTestsArgs:
@@ -3953,6 +5441,19 @@ class FoundationImageNodesTestsArgs:
         pulumi.set(self, "run_syscheck", value)
 
 
+if not MYPY:
+    class FoundationIpmiConfigBlockArgsDict(TypedDict):
+        nodes: pulumi.Input[Sequence[pulumi.Input['FoundationIpmiConfigBlockNodeArgsDict']]]
+        """
+        - (Required) array of nodes for ipmi config.
+        """
+        block_id: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Block Id
+        """
+elif False:
+    FoundationIpmiConfigBlockArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class FoundationIpmiConfigBlockArgs:
     def __init__(__self__, *,
@@ -3990,6 +5491,31 @@ class FoundationIpmiConfigBlockArgs:
     def block_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "block_id", value)
 
+
+if not MYPY:
+    class FoundationIpmiConfigBlockNodeArgsDict(TypedDict):
+        ipmi_configure_now: pulumi.Input[bool]
+        """
+        - (Required) Whether IPMI should be configured. Should be kept true to configure
+        """
+        ipmi_ip: pulumi.Input[str]
+        """
+        - IPMI IP address.
+        """
+        ipmi_mac: pulumi.Input[str]
+        """
+        - (Required) IPMI mac address.
+        """
+        ipmi_configure_successful: NotRequired[pulumi.Input[bool]]
+        """
+        - Whether IPMI was successfully configured.
+        """
+        ipmi_message: NotRequired[pulumi.Input[str]]
+        """
+        - IPMI configuration status message if any.
+        """
+elif False:
+    FoundationIpmiConfigBlockNodeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class FoundationIpmiConfigBlockNodeArgs:
@@ -4075,6 +5601,16 @@ class FoundationIpmiConfigBlockNodeArgs:
         pulumi.set(self, "ipmi_message", value)
 
 
+if not MYPY:
+    class ImageCategoryArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) The name for the image.
+        """
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    ImageCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ImageCategoryArgs:
     def __init__(__self__, *,
@@ -4109,6 +5645,23 @@ class ImageCategoryArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class ImageClusterReferenceArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) The name for the image.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - the UUID(Required).
+        """
+elif False:
+    ImageClusterReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ImageClusterReferenceArgs:
@@ -4165,6 +5718,23 @@ class ImageClusterReferenceArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class ImageCurrentClusterReferenceListArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) The name for the image.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - the UUID(Required).
+        """
+elif False:
+    ImageCurrentClusterReferenceListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ImageCurrentClusterReferenceListArgs:
     def __init__(__self__, *,
@@ -4220,6 +5790,12 @@ class ImageCurrentClusterReferenceListArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class KarbonClusterActivePassiveConfigArgsDict(TypedDict):
+        external_ipv4_address: pulumi.Input[str]
+elif False:
+    KarbonClusterActivePassiveConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class KarbonClusterActivePassiveConfigArgs:
     def __init__(__self__, *,
@@ -4235,6 +5811,33 @@ class KarbonClusterActivePassiveConfigArgs:
     def external_ipv4_address(self, value: pulumi.Input[str]):
         pulumi.set(self, "external_ipv4_address", value)
 
+
+if not MYPY:
+    class KarbonClusterCniConfigArgsDict(TypedDict):
+        calico_config: NotRequired[pulumi.Input['KarbonClusterCniConfigCalicoConfigArgsDict']]
+        """
+        - (Optional) Configuration of the calico CNI provider.
+        * `calico_config.ip_pool_config`: - (Optional) List of IP pools to be configured/managed by calico.
+        * `calico_config.ip_pool_config.cidr`: - (Optional) IP range to use for this pool, it should fall within pod cidr.
+        """
+        flannel_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['KarbonClusterCniConfigFlannelConfigArgsDict']]]]
+        """
+        - (Optional) Configuration of the flannel container network interface (CNI) provider.
+        """
+        node_cidr_mask_size: NotRequired[pulumi.Input[int]]
+        """
+        - (Optional) The size of the subnet from the pod_ipv4_cidr assigned to each host. A value of 24 would allow up to 255 pods per node.
+        """
+        pod_ipv4_cidr: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) CIDR for pods in the cluster.
+        """
+        service_ipv4_cidr: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Classless inter-domain routing (CIDR) for k8s services in the cluster.
+        """
+elif False:
+    KarbonClusterCniConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class KarbonClusterCniConfigArgs:
@@ -4327,6 +5930,12 @@ class KarbonClusterCniConfigArgs:
         pulumi.set(self, "service_ipv4_cidr", value)
 
 
+if not MYPY:
+    class KarbonClusterCniConfigCalicoConfigArgsDict(TypedDict):
+        ip_pool_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['KarbonClusterCniConfigCalicoConfigIpPoolConfigArgsDict']]]]
+elif False:
+    KarbonClusterCniConfigCalicoConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class KarbonClusterCniConfigCalicoConfigArgs:
     def __init__(__self__, *,
@@ -4343,6 +5952,12 @@ class KarbonClusterCniConfigCalicoConfigArgs:
     def ip_pool_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['KarbonClusterCniConfigCalicoConfigIpPoolConfigArgs']]]]):
         pulumi.set(self, "ip_pool_configs", value)
 
+
+if not MYPY:
+    class KarbonClusterCniConfigCalicoConfigIpPoolConfigArgsDict(TypedDict):
+        cidr: NotRequired[pulumi.Input[str]]
+elif False:
+    KarbonClusterCniConfigCalicoConfigIpPoolConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class KarbonClusterCniConfigCalicoConfigIpPoolConfigArgs:
@@ -4361,11 +5976,49 @@ class KarbonClusterCniConfigCalicoConfigIpPoolConfigArgs:
         pulumi.set(self, "cidr", value)
 
 
+if not MYPY:
+    class KarbonClusterCniConfigFlannelConfigArgsDict(TypedDict):
+        pass
+elif False:
+    KarbonClusterCniConfigFlannelConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class KarbonClusterCniConfigFlannelConfigArgs:
     def __init__(__self__):
         pass
 
+
+if not MYPY:
+    class KarbonClusterEtcdNodePoolArgsDict(TypedDict):
+        node_os_version: pulumi.Input[str]
+        """
+        - (Required) The version of the node OS image. **Note:** Updates to this attribute forces new resource creation.
+        """
+        num_instances: pulumi.Input[int]
+        """
+        - (Required) Number of nodes in the node pool. **Note:** Updates to etcd or master node pool forces new resource creation.
+        """
+        ahv_config: NotRequired[pulumi.Input['KarbonClusterEtcdNodePoolAhvConfigArgsDict']]
+        """
+        - (Optional) VM configuration in AHV. **Note:** Updates to this attribute forces new resource creation.
+        * `ahv_config.cpu`: - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+        * `ahv_config.disk_mib`: - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+        * `ahv_config.memory_mib`: - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+        * `ahv_config.network_uuid`: - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+        * `ahv_config.prism_element_cluster_uuid`: - (Required) The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
+        """
+        nodes: NotRequired[pulumi.Input[Sequence[pulumi.Input['KarbonClusterEtcdNodePoolNodeArgsDict']]]]
+        """
+        - List of the deployed nodes in the node pool.
+        * `nodes.hostname`: - Hostname of the deployed node.
+        * `nodes.ipv4_address`: - IP of the deployed node.
+        """
+elif False:
+    KarbonClusterEtcdNodePoolArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class KarbonClusterEtcdNodePoolArgs:
@@ -4466,6 +6119,16 @@ class KarbonClusterEtcdNodePoolArgs:
         pulumi.set(self, "nodes", value)
 
 
+if not MYPY:
+    class KarbonClusterEtcdNodePoolAhvConfigArgsDict(TypedDict):
+        network_uuid: pulumi.Input[str]
+        prism_element_cluster_uuid: pulumi.Input[str]
+        cpu: NotRequired[pulumi.Input[int]]
+        disk_mib: NotRequired[pulumi.Input[int]]
+        memory_mib: NotRequired[pulumi.Input[int]]
+elif False:
+    KarbonClusterEtcdNodePoolAhvConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class KarbonClusterEtcdNodePoolAhvConfigArgs:
     def __init__(__self__, *,
@@ -4529,6 +6192,13 @@ class KarbonClusterEtcdNodePoolAhvConfigArgs:
         pulumi.set(self, "memory_mib", value)
 
 
+if not MYPY:
+    class KarbonClusterEtcdNodePoolNodeArgsDict(TypedDict):
+        hostname: NotRequired[pulumi.Input[str]]
+        ipv4_address: NotRequired[pulumi.Input[str]]
+elif False:
+    KarbonClusterEtcdNodePoolNodeArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class KarbonClusterEtcdNodePoolNodeArgs:
     def __init__(__self__, *,
@@ -4558,6 +6228,13 @@ class KarbonClusterEtcdNodePoolNodeArgs:
         pulumi.set(self, "ipv4_address", value)
 
 
+if not MYPY:
+    class KarbonClusterExternalLbConfigArgsDict(TypedDict):
+        external_ipv4_address: pulumi.Input[str]
+        master_nodes_configs: pulumi.Input[Sequence[pulumi.Input['KarbonClusterExternalLbConfigMasterNodesConfigArgsDict']]]
+elif False:
+    KarbonClusterExternalLbConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class KarbonClusterExternalLbConfigArgs:
     def __init__(__self__, *,
@@ -4584,6 +6261,13 @@ class KarbonClusterExternalLbConfigArgs:
     def master_nodes_configs(self, value: pulumi.Input[Sequence[pulumi.Input['KarbonClusterExternalLbConfigMasterNodesConfigArgs']]]):
         pulumi.set(self, "master_nodes_configs", value)
 
+
+if not MYPY:
+    class KarbonClusterExternalLbConfigMasterNodesConfigArgsDict(TypedDict):
+        ipv4_address: pulumi.Input[str]
+        node_pool_name: NotRequired[pulumi.Input[str]]
+elif False:
+    KarbonClusterExternalLbConfigMasterNodesConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class KarbonClusterExternalLbConfigMasterNodesConfigArgs:
@@ -4612,6 +6296,38 @@ class KarbonClusterExternalLbConfigMasterNodesConfigArgs:
     def node_pool_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "node_pool_name", value)
 
+
+if not MYPY:
+    class KarbonClusterMasterNodePoolArgsDict(TypedDict):
+        node_os_version: pulumi.Input[str]
+        """
+        - (Required) The version of the node OS image. **Note:** Updates to this attribute forces new resource creation.
+        """
+        num_instances: pulumi.Input[int]
+        """
+        - (Required) Number of nodes in the node pool. **Note:** Updates to etcd or master node pool forces new resource creation.
+        """
+        ahv_config: NotRequired[pulumi.Input['KarbonClusterMasterNodePoolAhvConfigArgsDict']]
+        """
+        - (Optional) VM configuration in AHV. **Note:** Updates to this attribute forces new resource creation.
+        * `ahv_config.cpu`: - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+        * `ahv_config.disk_mib`: - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+        * `ahv_config.memory_mib`: - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+        * `ahv_config.network_uuid`: - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+        * `ahv_config.prism_element_cluster_uuid`: - (Required) The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
+        """
+        nodes: NotRequired[pulumi.Input[Sequence[pulumi.Input['KarbonClusterMasterNodePoolNodeArgsDict']]]]
+        """
+        - List of the deployed nodes in the node pool.
+        * `nodes.hostname`: - Hostname of the deployed node.
+        * `nodes.ipv4_address`: - IP of the deployed node.
+        """
+elif False:
+    KarbonClusterMasterNodePoolArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class KarbonClusterMasterNodePoolArgs:
@@ -4712,6 +6428,16 @@ class KarbonClusterMasterNodePoolArgs:
         pulumi.set(self, "nodes", value)
 
 
+if not MYPY:
+    class KarbonClusterMasterNodePoolAhvConfigArgsDict(TypedDict):
+        network_uuid: pulumi.Input[str]
+        prism_element_cluster_uuid: pulumi.Input[str]
+        cpu: NotRequired[pulumi.Input[int]]
+        disk_mib: NotRequired[pulumi.Input[int]]
+        memory_mib: NotRequired[pulumi.Input[int]]
+elif False:
+    KarbonClusterMasterNodePoolAhvConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class KarbonClusterMasterNodePoolAhvConfigArgs:
     def __init__(__self__, *,
@@ -4775,6 +6501,13 @@ class KarbonClusterMasterNodePoolAhvConfigArgs:
         pulumi.set(self, "memory_mib", value)
 
 
+if not MYPY:
+    class KarbonClusterMasterNodePoolNodeArgsDict(TypedDict):
+        hostname: NotRequired[pulumi.Input[str]]
+        ipv4_address: NotRequired[pulumi.Input[str]]
+elif False:
+    KarbonClusterMasterNodePoolNodeArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class KarbonClusterMasterNodePoolNodeArgs:
     def __init__(__self__, *,
@@ -4804,6 +6537,12 @@ class KarbonClusterMasterNodePoolNodeArgs:
         pulumi.set(self, "ipv4_address", value)
 
 
+if not MYPY:
+    class KarbonClusterPrivateRegistryArgsDict(TypedDict):
+        registry_name: pulumi.Input[str]
+elif False:
+    KarbonClusterPrivateRegistryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class KarbonClusterPrivateRegistryArgs:
     def __init__(__self__, *,
@@ -4820,11 +6559,39 @@ class KarbonClusterPrivateRegistryArgs:
         pulumi.set(self, "registry_name", value)
 
 
+if not MYPY:
+    class KarbonClusterSingleMasterConfigArgsDict(TypedDict):
+        pass
+elif False:
+    KarbonClusterSingleMasterConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class KarbonClusterSingleMasterConfigArgs:
     def __init__(__self__):
         pass
 
+
+if not MYPY:
+    class KarbonClusterStorageClassConfigArgsDict(TypedDict):
+        volumes_config: pulumi.Input['KarbonClusterStorageClassConfigVolumesConfigArgsDict']
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) The name of the storage class.
+        """
+        reclaim_policy: NotRequired[pulumi.Input[str]]
+        """
+        Reclaim policy for persistent volumes provisioned using the specified storage class.
+        * `volumes_config.#.file_system` - (Optional) Karbon uses either the ext4 or xfs file-system on the volume disk.
+        * `volumes_config.#.flash_mode` - (Optional) Pins the persistent volumes to the flash tier in case of a `true` value.
+        * `volumes_config.#.password` - (Required) The password of the Prism Element user that the API calls use to provision volumes.
+        * `volumes_config.#.prism_element_cluster_uuid` - (Required) The universally unique identifier (UUID) of the Prism Element cluster.
+        * `volumes_config.#.storage_container` - (Required) Name of the storage container the storage container uses to provision volumes.
+        * `volumes_config.#.username` - (Required) Username of the Prism Element user that the API calls use to provision volumes.
+
+        **Note:** Updates to this attribute forces new resource creation.
+        """
+elif False:
+    KarbonClusterStorageClassConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class KarbonClusterStorageClassConfigArgs:
@@ -4891,6 +6658,17 @@ class KarbonClusterStorageClassConfigArgs:
     def reclaim_policy(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "reclaim_policy", value)
 
+
+if not MYPY:
+    class KarbonClusterStorageClassConfigVolumesConfigArgsDict(TypedDict):
+        password: pulumi.Input[str]
+        prism_element_cluster_uuid: pulumi.Input[str]
+        storage_container: pulumi.Input[str]
+        username: pulumi.Input[str]
+        file_system: NotRequired[pulumi.Input[str]]
+        flash_mode: NotRequired[pulumi.Input[bool]]
+elif False:
+    KarbonClusterStorageClassConfigVolumesConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class KarbonClusterStorageClassConfigVolumesConfigArgs:
@@ -4964,6 +6742,38 @@ class KarbonClusterStorageClassConfigVolumesConfigArgs:
     def flash_mode(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "flash_mode", value)
 
+
+if not MYPY:
+    class KarbonClusterWorkerNodePoolArgsDict(TypedDict):
+        node_os_version: pulumi.Input[str]
+        """
+        - (Required) The version of the node OS image. **Note:** Updates to this attribute forces new resource creation.
+        """
+        num_instances: pulumi.Input[int]
+        """
+        - (Required) Number of nodes in the node pool. **Note:** Updates to etcd or master node pool forces new resource creation.
+        """
+        ahv_config: NotRequired[pulumi.Input['KarbonClusterWorkerNodePoolAhvConfigArgsDict']]
+        """
+        - (Optional) VM configuration in AHV. **Note:** Updates to this attribute forces new resource creation.
+        * `ahv_config.cpu`: - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+        * `ahv_config.disk_mib`: - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+        * `ahv_config.memory_mib`: - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+        * `ahv_config.network_uuid`: - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+        * `ahv_config.prism_element_cluster_uuid`: - (Required) The unique universal identifier (UUID) of the Prism Element cluster used to deploy VMs for this node pool.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Unique name of the node pool. **Note:** Updates to this attribute forces new resource creation.
+        """
+        nodes: NotRequired[pulumi.Input[Sequence[pulumi.Input['KarbonClusterWorkerNodePoolNodeArgsDict']]]]
+        """
+        - List of the deployed nodes in the node pool.
+        * `nodes.hostname`: - Hostname of the deployed node.
+        * `nodes.ipv4_address`: - IP of the deployed node.
+        """
+elif False:
+    KarbonClusterWorkerNodePoolArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class KarbonClusterWorkerNodePoolArgs:
@@ -5064,6 +6874,16 @@ class KarbonClusterWorkerNodePoolArgs:
         pulumi.set(self, "nodes", value)
 
 
+if not MYPY:
+    class KarbonClusterWorkerNodePoolAhvConfigArgsDict(TypedDict):
+        network_uuid: pulumi.Input[str]
+        prism_element_cluster_uuid: pulumi.Input[str]
+        cpu: NotRequired[pulumi.Input[int]]
+        disk_mib: NotRequired[pulumi.Input[int]]
+        memory_mib: NotRequired[pulumi.Input[int]]
+elif False:
+    KarbonClusterWorkerNodePoolAhvConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class KarbonClusterWorkerNodePoolAhvConfigArgs:
     def __init__(__self__, *,
@@ -5127,6 +6947,13 @@ class KarbonClusterWorkerNodePoolAhvConfigArgs:
         pulumi.set(self, "memory_mib", value)
 
 
+if not MYPY:
+    class KarbonClusterWorkerNodePoolNodeArgsDict(TypedDict):
+        hostname: NotRequired[pulumi.Input[str]]
+        ipv4_address: NotRequired[pulumi.Input[str]]
+elif False:
+    KarbonClusterWorkerNodePoolNodeArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class KarbonClusterWorkerNodePoolNodeArgs:
     def __init__(__self__, *,
@@ -5155,6 +6982,35 @@ class KarbonClusterWorkerNodePoolNodeArgs:
     def ipv4_address(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ipv4_address", value)
 
+
+if not MYPY:
+    class KarbonWorkerNodepoolAhvConfigArgsDict(TypedDict):
+        network_uuid: pulumi.Input[str]
+        """
+        - (Required) The UUID of the network for the VMs deployed with this resource configuration.
+        """
+        cpu: NotRequired[pulumi.Input[int]]
+        """
+        - (Required) The number of VCPUs allocated for each VM on the PE cluster.
+        """
+        disk_mib: NotRequired[pulumi.Input[int]]
+        """
+        - (Optional) Size of local storage for each VM on the PE cluster in MiB.
+        """
+        iscsi_network_uuid: NotRequired[pulumi.Input[str]]
+        """
+        VM network UUID for isolating iscsi data traffic.
+        """
+        memory_mib: NotRequired[pulumi.Input[int]]
+        """
+        - (Optional) Memory allocated for each VM on the PE cluster in MiB.
+        """
+        prism_element_cluster_uuid: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) The unique universal identifier (UUID) of the Prism Element
+        """
+elif False:
+    KarbonWorkerNodepoolAhvConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class KarbonWorkerNodepoolAhvConfigArgs:
@@ -5258,6 +7114,19 @@ class KarbonWorkerNodepoolAhvConfigArgs:
         pulumi.set(self, "prism_element_cluster_uuid", value)
 
 
+if not MYPY:
+    class KarbonWorkerNodepoolNodeArgsDict(TypedDict):
+        hostname: NotRequired[pulumi.Input[str]]
+        """
+        hostname of node
+        """
+        ipv4_address: NotRequired[pulumi.Input[str]]
+        """
+        ipv4 address of node
+        """
+elif False:
+    KarbonWorkerNodepoolNodeArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class KarbonWorkerNodepoolNodeArgs:
     def __init__(__self__, *,
@@ -5297,6 +7166,19 @@ class KarbonWorkerNodepoolNodeArgs:
         pulumi.set(self, "ipv4_address", value)
 
 
+if not MYPY:
+    class NdbCloneActionargumentArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        - (Required) name of argument
+        """
+        value: pulumi.Input[str]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbCloneActionargumentArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneActionargumentArgs:
     def __init__(__self__, *,
@@ -5333,6 +7215,56 @@ class NdbCloneActionargumentArgs:
     def value(self, value: pulumi.Input[str]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbCloneDatabaseNodeArgsDict(TypedDict):
+        access_level: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        database_id: NotRequired[pulumi.Input[str]]
+        database_status: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for clone
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        last modified date for clone
+        """
+        dbserver: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        dbserver_id: NotRequired[pulumi.Input[str]]
+        """
+        Specify if you want to create a database server. This value can be set to true or false as required.
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        database instance description
+        """
+        id: NotRequired[pulumi.Input[str]]
+        infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneDatabaseNodeInfoArgsDict']]]]
+        """
+        info of clone
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        database instance name
+        """
+        primary: NotRequired[pulumi.Input[bool]]
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneDatabaseNodePropertyArgsDict']]]]
+        """
+        List of all the properties
+        """
+        protection_domain_id: NotRequired[pulumi.Input[str]]
+        protection_domains: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneDatabaseNodeProtectionDomainArgsDict']]]]
+        software_installation_id: NotRequired[pulumi.Input[str]]
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of clone
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneDatabaseNodeTagArgsDict']]]]
+        """
+        allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        """
+elif False:
+    NdbCloneDatabaseNodeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneDatabaseNodeArgs:
@@ -5593,6 +7525,16 @@ class NdbCloneDatabaseNodeArgs:
         pulumi.set(self, "tags", value)
 
 
+if not MYPY:
+    class NdbCloneDatabaseNodeInfoArgsDict(TypedDict):
+        info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        info of clone
+        """
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbCloneDatabaseNodeInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneDatabaseNodeInfoArgs:
     def __init__(__self__, *,
@@ -5627,6 +7569,25 @@ class NdbCloneDatabaseNodeInfoArgs:
     def secure_info(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "secure_info", value)
 
+
+if not MYPY:
+    class NdbCloneDatabaseNodePropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        database instance description
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        database instance name
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbCloneDatabaseNodePropertyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneDatabaseNodePropertyArgs:
@@ -5706,6 +7667,45 @@ class NdbCloneDatabaseNodePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbCloneDatabaseNodeProtectionDomainArgsDict(TypedDict):
+        assoc_entities: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        cloud_id: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for clone
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        last modified date for clone
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        database instance description
+        """
+        era_created: NotRequired[pulumi.Input[bool]]
+        id: NotRequired[pulumi.Input[str]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        database instance name
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        primary_host: NotRequired[pulumi.Input[str]]
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneDatabaseNodeProtectionDomainPropertyArgsDict']]]]
+        """
+        List of all the properties
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of clone
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        type of clone
+        """
+elif False:
+    NdbCloneDatabaseNodeProtectionDomainArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneDatabaseNodeProtectionDomainArgs:
@@ -5898,6 +7898,25 @@ class NdbCloneDatabaseNodeProtectionDomainArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class NdbCloneDatabaseNodeProtectionDomainPropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        database instance description
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        database instance name
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbCloneDatabaseNodeProtectionDomainPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneDatabaseNodeProtectionDomainPropertyArgs:
     def __init__(__self__, *,
@@ -5977,6 +7996,19 @@ class NdbCloneDatabaseNodeProtectionDomainPropertyArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbCloneDatabaseNodeTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbCloneDatabaseNodeTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneDatabaseNodeTagArgs:
     def __init__(__self__, *,
@@ -6048,6 +8080,13 @@ class NdbCloneDatabaseNodeTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbCloneInfoArgsDict(TypedDict):
+        bpg_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneInfoBpgConfigArgsDict']]]]
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbCloneInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneInfoArgs:
     def __init__(__self__, *,
@@ -6076,6 +8115,14 @@ class NdbCloneInfoArgs:
     def secure_info(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "secure_info", value)
 
+
+if not MYPY:
+    class NdbCloneInfoBpgConfigArgsDict(TypedDict):
+        bpg_db_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneInfoBpgConfigBpgDbParamArgsDict']]]]
+        storages: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneInfoBpgConfigStorageArgsDict']]]]
+        vm_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneInfoBpgConfigVmPropertyArgsDict']]]]
+elif False:
+    NdbCloneInfoBpgConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneInfoBpgConfigArgs:
@@ -6117,6 +8164,17 @@ class NdbCloneInfoBpgConfigArgs:
     def vm_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbCloneInfoBpgConfigVmPropertyArgs']]]]):
         pulumi.set(self, "vm_properties", value)
 
+
+if not MYPY:
+    class NdbCloneInfoBpgConfigBpgDbParamArgsDict(TypedDict):
+        effective_cache_size: NotRequired[pulumi.Input[str]]
+        maintenance_work_mem: NotRequired[pulumi.Input[str]]
+        max_parallel_workers_per_gather: NotRequired[pulumi.Input[str]]
+        max_worker_processes: NotRequired[pulumi.Input[str]]
+        shared_buffers: NotRequired[pulumi.Input[str]]
+        work_mem: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbCloneInfoBpgConfigBpgDbParamArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneInfoBpgConfigBpgDbParamArgs:
@@ -6195,6 +8253,14 @@ class NdbCloneInfoBpgConfigBpgDbParamArgs:
         pulumi.set(self, "work_mem", value)
 
 
+if not MYPY:
+    class NdbCloneInfoBpgConfigStorageArgsDict(TypedDict):
+        archive_storages: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneInfoBpgConfigStorageArchiveStorageArgsDict']]]]
+        data_disks: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneInfoBpgConfigStorageDataDiskArgsDict']]]]
+        log_disks: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneInfoBpgConfigStorageLogDiskArgsDict']]]]
+elif False:
+    NdbCloneInfoBpgConfigStorageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneInfoBpgConfigStorageArgs:
     def __init__(__self__, *,
@@ -6236,6 +8302,12 @@ class NdbCloneInfoBpgConfigStorageArgs:
         pulumi.set(self, "log_disks", value)
 
 
+if not MYPY:
+    class NdbCloneInfoBpgConfigStorageArchiveStorageArgsDict(TypedDict):
+        size: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbCloneInfoBpgConfigStorageArchiveStorageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneInfoBpgConfigStorageArchiveStorageArgs:
     def __init__(__self__, *,
@@ -6253,6 +8325,12 @@ class NdbCloneInfoBpgConfigStorageArchiveStorageArgs:
         pulumi.set(self, "size", value)
 
 
+if not MYPY:
+    class NdbCloneInfoBpgConfigStorageDataDiskArgsDict(TypedDict):
+        count: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbCloneInfoBpgConfigStorageDataDiskArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneInfoBpgConfigStorageDataDiskArgs:
     def __init__(__self__, *,
@@ -6269,6 +8347,13 @@ class NdbCloneInfoBpgConfigStorageDataDiskArgs:
     def count(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "count", value)
 
+
+if not MYPY:
+    class NdbCloneInfoBpgConfigStorageLogDiskArgsDict(TypedDict):
+        count: NotRequired[pulumi.Input[float]]
+        size: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbCloneInfoBpgConfigStorageLogDiskArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneInfoBpgConfigStorageLogDiskArgs:
@@ -6298,6 +8383,18 @@ class NdbCloneInfoBpgConfigStorageLogDiskArgs:
     def size(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "size", value)
 
+
+if not MYPY:
+    class NdbCloneInfoBpgConfigVmPropertyArgsDict(TypedDict):
+        dirty_background_ratio: NotRequired[pulumi.Input[float]]
+        dirty_expire_centisecs: NotRequired[pulumi.Input[float]]
+        dirty_ratio: NotRequired[pulumi.Input[float]]
+        dirty_writeback_centisecs: NotRequired[pulumi.Input[float]]
+        nr_hugepages: NotRequired[pulumi.Input[float]]
+        overcommit_memory: NotRequired[pulumi.Input[float]]
+        swappiness: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbCloneInfoBpgConfigVmPropertyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneInfoBpgConfigVmPropertyArgs:
@@ -6388,6 +8485,12 @@ class NdbCloneInfoBpgConfigVmPropertyArgs:
         pulumi.set(self, "swappiness", value)
 
 
+if not MYPY:
+    class NdbCloneLcmConfigArgsDict(TypedDict):
+        database_lcm_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneLcmConfigDatabaseLcmConfigArgsDict']]]]
+elif False:
+    NdbCloneLcmConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneLcmConfigArgs:
     def __init__(__self__, *,
@@ -6404,6 +8507,13 @@ class NdbCloneLcmConfigArgs:
     def database_lcm_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbCloneLcmConfigDatabaseLcmConfigArgs']]]]):
         pulumi.set(self, "database_lcm_configs", value)
 
+
+if not MYPY:
+    class NdbCloneLcmConfigDatabaseLcmConfigArgsDict(TypedDict):
+        expiry_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgsDict']]]]
+        refresh_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgsDict']]]]
+elif False:
+    NdbCloneLcmConfigDatabaseLcmConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneLcmConfigDatabaseLcmConfigArgs:
@@ -6433,6 +8543,14 @@ class NdbCloneLcmConfigDatabaseLcmConfigArgs:
     def refresh_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs']]]]):
         pulumi.set(self, "refresh_details", value)
 
+
+if not MYPY:
+    class NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgsDict(TypedDict):
+        expiry_date_timezone: pulumi.Input[str]
+        delete_database: NotRequired[pulumi.Input[bool]]
+        expire_in_days: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs:
@@ -6474,6 +8592,14 @@ class NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs:
         pulumi.set(self, "expire_in_days", value)
 
 
+if not MYPY:
+    class NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgsDict(TypedDict):
+        refresh_date_timezone: NotRequired[pulumi.Input[str]]
+        refresh_in_days: NotRequired[pulumi.Input[int]]
+        refresh_time: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs:
     def __init__(__self__, *,
@@ -6514,6 +8640,52 @@ class NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs:
     def refresh_time(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "refresh_time", value)
 
+
+if not MYPY:
+    class NdbCloneLinkedDatabaseArgsDict(TypedDict):
+        database_name: NotRequired[pulumi.Input[str]]
+        """
+        database name
+        """
+        database_status: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for clone
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        last modified date for clone
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        database instance description
+        """
+        id: NotRequired[pulumi.Input[str]]
+        infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneLinkedDatabaseInfoArgsDict']]]]
+        """
+        info of clone
+        """
+        metric: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        database instance name
+        """
+        parent_database_id: NotRequired[pulumi.Input[str]]
+        parent_linked_database_id: NotRequired[pulumi.Input[str]]
+        snapshot_id: NotRequired[pulumi.Input[str]]
+        """
+        snapshot id from where clone is created
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of clone
+        """
+        timezone: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbCloneLinkedDatabaseArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneLinkedDatabaseArgs:
@@ -6726,6 +8898,16 @@ class NdbCloneLinkedDatabaseArgs:
         pulumi.set(self, "timezone", value)
 
 
+if not MYPY:
+    class NdbCloneLinkedDatabaseInfoArgsDict(TypedDict):
+        info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        info of clone
+        """
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbCloneLinkedDatabaseInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneLinkedDatabaseInfoArgs:
     def __init__(__self__, *,
@@ -6760,6 +8942,39 @@ class NdbCloneLinkedDatabaseInfoArgs:
     def secure_info(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "secure_info", value)
 
+
+if not MYPY:
+    class NdbCloneNodeArgsDict(TypedDict):
+        compute_profile_id: NotRequired[pulumi.Input[str]]
+        """
+        specify compute profile id
+        """
+        dbserver_id: NotRequired[pulumi.Input[str]]
+        """
+        dberver id
+        """
+        network_profile_id: NotRequired[pulumi.Input[str]]
+        """
+        specify network profile id
+        """
+        new_db_server_time_zone: NotRequired[pulumi.Input[str]]
+        """
+        dbserver time zone
+        """
+        nx_cluster_id: NotRequired[pulumi.Input[str]]
+        """
+        cluster id
+        """
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneNodePropertyArgsDict']]]]
+        """
+        properties of vm
+        """
+        vm_name: NotRequired[pulumi.Input[str]]
+        """
+        name for the database server VM.
+        """
+elif False:
+    NdbCloneNodeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneNodeArgs:
@@ -6880,6 +9095,19 @@ class NdbCloneNodeArgs:
         pulumi.set(self, "vm_name", value)
 
 
+if not MYPY:
+    class NdbCloneNodePropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        database instance name
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbCloneNodePropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneNodePropertyArgs:
     def __init__(__self__, *,
@@ -6918,6 +9146,31 @@ class NdbCloneNodePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbClonePostgresqlInfoArgsDict(TypedDict):
+        db_password: pulumi.Input[str]
+        """
+        password of the postgres superuser.
+        """
+        vm_name: pulumi.Input[str]
+        """
+        name for the database server VM.
+        """
+        dbserver_description: NotRequired[pulumi.Input[str]]
+        """
+        description for the dbserver.
+        """
+        post_clone_cmd: NotRequired[pulumi.Input[str]]
+        """
+        OS command that you want to run after the instance is created.
+        """
+        pre_clone_cmd: NotRequired[pulumi.Input[str]]
+        """
+        OS command that you want to run before the instance is created.
+        """
+elif False:
+    NdbClonePostgresqlInfoArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbClonePostgresqlInfoArgs:
@@ -7004,6 +9257,19 @@ class NdbClonePostgresqlInfoArgs:
         pulumi.set(self, "pre_clone_cmd", value)
 
 
+if not MYPY:
+    class NdbClonePropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        database instance name
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbClonePropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbClonePropertyArgs:
     def __init__(__self__, *,
@@ -7042,6 +9308,19 @@ class NdbClonePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbCloneTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbCloneTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneTagArgs:
@@ -7113,6 +9392,69 @@ class NdbCloneTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbCloneTimeMachineArgsDict(TypedDict):
+        access_level: NotRequired[pulumi.Input[str]]
+        clone: NotRequired[pulumi.Input[bool]]
+        """
+        cloned or not
+        """
+        clones: NotRequired[pulumi.Input[str]]
+        clustered: NotRequired[pulumi.Input[bool]]
+        """
+        clone will be clustered or not
+        """
+        database: NotRequired[pulumi.Input[str]]
+        database_id: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for clone
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        last modified date for clone
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        database instance description
+        """
+        ea_status: NotRequired[pulumi.Input[str]]
+        id: NotRequired[pulumi.Input[str]]
+        metric: NotRequired[pulumi.Input[str]]
+        """
+        Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        database instance name
+        """
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneTimeMachinePropertyArgsDict']]]]
+        """
+        List of all the properties
+        """
+        schedule_id: NotRequired[pulumi.Input[str]]
+        schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneTimeMachineScheduleArgsDict']]]]
+        scope: NotRequired[pulumi.Input[str]]
+        sla_id: NotRequired[pulumi.Input[str]]
+        sla_update_in_progress: NotRequired[pulumi.Input[bool]]
+        sla_update_metadata: NotRequired[pulumi.Input[str]]
+        slas: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneTimeMachineSlaArgsDict']]]]
+        source_nx_clusters: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of clone
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneTimeMachineTagArgsDict']]]]
+        """
+        allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        type of clone
+        """
+elif False:
+    NdbCloneTimeMachineArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneTimeMachineArgs:
@@ -7465,6 +9807,25 @@ class NdbCloneTimeMachineArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class NdbCloneTimeMachinePropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        database instance description
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        database instance name
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbCloneTimeMachinePropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneTimeMachinePropertyArgs:
     def __init__(__self__, *,
@@ -7543,6 +9904,45 @@ class NdbCloneTimeMachinePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbCloneTimeMachineScheduleArgsDict(TypedDict):
+        continuous_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneTimeMachineScheduleContinuousScheduleArgsDict']]]]
+        daily_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneTimeMachineScheduleDailyScheduleArgsDict']]]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for clone
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        last modified date for clone
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        database instance description
+        """
+        global_policy: NotRequired[pulumi.Input[bool]]
+        id: NotRequired[pulumi.Input[str]]
+        monthly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneTimeMachineScheduleMonthlyScheduleArgsDict']]]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        database instance name
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        quartely_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneTimeMachineScheduleQuartelyScheduleArgsDict']]]]
+        reference_count: NotRequired[pulumi.Input[int]]
+        snapshot_time_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneTimeMachineScheduleSnapshotTimeOfDayArgsDict']]]]
+        start_time: NotRequired[pulumi.Input[str]]
+        system_policy: NotRequired[pulumi.Input[bool]]
+        time_zone: NotRequired[pulumi.Input[str]]
+        """
+        timezone
+        """
+        unique_name: NotRequired[pulumi.Input[str]]
+        weekly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneTimeMachineScheduleWeeklyScheduleArgsDict']]]]
+        yearly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbCloneTimeMachineScheduleYearlyScheduleArgsDict']]]]
+elif False:
+    NdbCloneTimeMachineScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneTimeMachineScheduleArgs:
@@ -7799,6 +10199,14 @@ class NdbCloneTimeMachineScheduleArgs:
         pulumi.set(self, "yearly_schedules", value)
 
 
+if not MYPY:
+    class NdbCloneTimeMachineScheduleContinuousScheduleArgsDict(TypedDict):
+        enabled: NotRequired[pulumi.Input[bool]]
+        log_backup_interval: NotRequired[pulumi.Input[int]]
+        snapshots_per_day: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbCloneTimeMachineScheduleContinuousScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneTimeMachineScheduleContinuousScheduleArgs:
     def __init__(__self__, *,
@@ -7840,6 +10248,12 @@ class NdbCloneTimeMachineScheduleContinuousScheduleArgs:
         pulumi.set(self, "snapshots_per_day", value)
 
 
+if not MYPY:
+    class NdbCloneTimeMachineScheduleDailyScheduleArgsDict(TypedDict):
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbCloneTimeMachineScheduleDailyScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneTimeMachineScheduleDailyScheduleArgs:
     def __init__(__self__, *,
@@ -7856,6 +10270,13 @@ class NdbCloneTimeMachineScheduleDailyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbCloneTimeMachineScheduleMonthlyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbCloneTimeMachineScheduleMonthlyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneTimeMachineScheduleMonthlyScheduleArgs:
@@ -7885,6 +10306,15 @@ class NdbCloneTimeMachineScheduleMonthlyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbCloneTimeMachineScheduleQuartelyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+        start_month: NotRequired[pulumi.Input[str]]
+        start_month_value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbCloneTimeMachineScheduleQuartelyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneTimeMachineScheduleQuartelyScheduleArgs:
@@ -7939,6 +10369,15 @@ class NdbCloneTimeMachineScheduleQuartelyScheduleArgs:
         pulumi.set(self, "start_month_value", value)
 
 
+if not MYPY:
+    class NdbCloneTimeMachineScheduleSnapshotTimeOfDayArgsDict(TypedDict):
+        extra: NotRequired[pulumi.Input[bool]]
+        hours: NotRequired[pulumi.Input[int]]
+        minutes: NotRequired[pulumi.Input[int]]
+        seconds: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbCloneTimeMachineScheduleSnapshotTimeOfDayArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneTimeMachineScheduleSnapshotTimeOfDayArgs:
     def __init__(__self__, *,
@@ -7992,6 +10431,14 @@ class NdbCloneTimeMachineScheduleSnapshotTimeOfDayArgs:
         pulumi.set(self, "seconds", value)
 
 
+if not MYPY:
+    class NdbCloneTimeMachineScheduleWeeklyScheduleArgsDict(TypedDict):
+        day_of_week: NotRequired[pulumi.Input[str]]
+        day_of_week_value: NotRequired[pulumi.Input[str]]
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbCloneTimeMachineScheduleWeeklyScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneTimeMachineScheduleWeeklyScheduleArgs:
     def __init__(__self__, *,
@@ -8032,6 +10479,15 @@ class NdbCloneTimeMachineScheduleWeeklyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbCloneTimeMachineScheduleYearlyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+        month: NotRequired[pulumi.Input[str]]
+        month_value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbCloneTimeMachineScheduleYearlyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneTimeMachineScheduleYearlyScheduleArgs:
@@ -8085,6 +10541,40 @@ class NdbCloneTimeMachineScheduleYearlyScheduleArgs:
     def month_value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "month_value", value)
 
+
+if not MYPY:
+    class NdbCloneTimeMachineSlaArgsDict(TypedDict):
+        continuous_retention: NotRequired[pulumi.Input[int]]
+        current_active_frequency: NotRequired[pulumi.Input[str]]
+        daily_retention: NotRequired[pulumi.Input[int]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for clone
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        last modified date for clone
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        database instance description
+        """
+        id: NotRequired[pulumi.Input[str]]
+        monthly_retention: NotRequired[pulumi.Input[int]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        database instance name
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        pitr_enabled: NotRequired[pulumi.Input[bool]]
+        quarterly_retention: NotRequired[pulumi.Input[int]]
+        reference_count: NotRequired[pulumi.Input[int]]
+        system_sla: NotRequired[pulumi.Input[bool]]
+        unique_name: NotRequired[pulumi.Input[str]]
+        weekly_retention: NotRequired[pulumi.Input[int]]
+        yearly_retention: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbCloneTimeMachineSlaArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbCloneTimeMachineSlaArgs:
@@ -8313,6 +10803,19 @@ class NdbCloneTimeMachineSlaArgs:
         pulumi.set(self, "yearly_retention", value)
 
 
+if not MYPY:
+    class NdbCloneTimeMachineTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbCloneTimeMachineTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbCloneTimeMachineTagArgs:
     def __init__(__self__, *,
@@ -8384,6 +10887,19 @@ class NdbCloneTimeMachineTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbClusterAgentNetworkInfoArgsDict(TypedDict):
+        dns: NotRequired[pulumi.Input[str]]
+        """
+        string of DNS servers(comma separted).
+        """
+        ntp: NotRequired[pulumi.Input[str]]
+        """
+        string of NTP servers(comma separted).
+        """
+elif False:
+    NdbClusterAgentNetworkInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbClusterAgentNetworkInfoArgs:
     def __init__(__self__, *,
@@ -8423,6 +10939,13 @@ class NdbClusterAgentNetworkInfoArgs:
         pulumi.set(self, "ntp", value)
 
 
+if not MYPY:
+    class NdbClusterEntityCountArgsDict(TypedDict):
+        db_servers: NotRequired[pulumi.Input[int]]
+        engine_counts: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountEngineCountArgsDict']]]]
+elif False:
+    NdbClusterEntityCountArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbClusterEntityCountArgs:
     def __init__(__self__, *,
@@ -8451,6 +10974,18 @@ class NdbClusterEntityCountArgs:
     def engine_counts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountEngineCountArgs']]]]):
         pulumi.set(self, "engine_counts", value)
 
+
+if not MYPY:
+    class NdbClusterEntityCountEngineCountArgsDict(TypedDict):
+        mariadb_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountEngineCountMariadbDatabaseArgsDict']]]]
+        mongodb_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountEngineCountMongodbDatabaseArgsDict']]]]
+        mysql_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountEngineCountMysqlDatabaseArgsDict']]]]
+        oracle_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountEngineCountOracleDatabaseArgsDict']]]]
+        postgres_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountEngineCountPostgresDatabaseArgsDict']]]]
+        saphana_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountEngineCountSaphanaDatabaseArgsDict']]]]
+        sqlserver_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountEngineCountSqlserverDatabaseArgsDict']]]]
+elif False:
+    NdbClusterEntityCountEngineCountArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbClusterEntityCountEngineCountArgs:
@@ -8541,6 +11076,13 @@ class NdbClusterEntityCountEngineCountArgs:
         pulumi.set(self, "sqlserver_databases", value)
 
 
+if not MYPY:
+    class NdbClusterEntityCountEngineCountMariadbDatabaseArgsDict(TypedDict):
+        profiles: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountEngineCountMariadbDatabaseProfileArgsDict']]]]
+        time_machines: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbClusterEntityCountEngineCountMariadbDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbClusterEntityCountEngineCountMariadbDatabaseArgs:
     def __init__(__self__, *,
@@ -8569,6 +11111,17 @@ class NdbClusterEntityCountEngineCountMariadbDatabaseArgs:
     def time_machines(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "time_machines", value)
 
+
+if not MYPY:
+    class NdbClusterEntityCountEngineCountMariadbDatabaseProfileArgsDict(TypedDict):
+        compute: NotRequired[pulumi.Input[int]]
+        database_parameter: NotRequired[pulumi.Input[int]]
+        network: NotRequired[pulumi.Input[int]]
+        software: NotRequired[pulumi.Input[int]]
+        storage: NotRequired[pulumi.Input[int]]
+        windows_domain: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbClusterEntityCountEngineCountMariadbDatabaseProfileArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbClusterEntityCountEngineCountMariadbDatabaseProfileArgs:
@@ -8647,6 +11200,13 @@ class NdbClusterEntityCountEngineCountMariadbDatabaseProfileArgs:
         pulumi.set(self, "windows_domain", value)
 
 
+if not MYPY:
+    class NdbClusterEntityCountEngineCountMongodbDatabaseArgsDict(TypedDict):
+        profiles: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountEngineCountMongodbDatabaseProfileArgsDict']]]]
+        time_machines: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbClusterEntityCountEngineCountMongodbDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbClusterEntityCountEngineCountMongodbDatabaseArgs:
     def __init__(__self__, *,
@@ -8675,6 +11235,17 @@ class NdbClusterEntityCountEngineCountMongodbDatabaseArgs:
     def time_machines(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "time_machines", value)
 
+
+if not MYPY:
+    class NdbClusterEntityCountEngineCountMongodbDatabaseProfileArgsDict(TypedDict):
+        compute: NotRequired[pulumi.Input[int]]
+        database_parameter: NotRequired[pulumi.Input[int]]
+        network: NotRequired[pulumi.Input[int]]
+        software: NotRequired[pulumi.Input[int]]
+        storage: NotRequired[pulumi.Input[int]]
+        windows_domain: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbClusterEntityCountEngineCountMongodbDatabaseProfileArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbClusterEntityCountEngineCountMongodbDatabaseProfileArgs:
@@ -8753,6 +11324,13 @@ class NdbClusterEntityCountEngineCountMongodbDatabaseProfileArgs:
         pulumi.set(self, "windows_domain", value)
 
 
+if not MYPY:
+    class NdbClusterEntityCountEngineCountMysqlDatabaseArgsDict(TypedDict):
+        profiles: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountEngineCountMysqlDatabaseProfileArgsDict']]]]
+        time_machines: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbClusterEntityCountEngineCountMysqlDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbClusterEntityCountEngineCountMysqlDatabaseArgs:
     def __init__(__self__, *,
@@ -8781,6 +11359,17 @@ class NdbClusterEntityCountEngineCountMysqlDatabaseArgs:
     def time_machines(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "time_machines", value)
 
+
+if not MYPY:
+    class NdbClusterEntityCountEngineCountMysqlDatabaseProfileArgsDict(TypedDict):
+        compute: NotRequired[pulumi.Input[int]]
+        database_parameter: NotRequired[pulumi.Input[int]]
+        network: NotRequired[pulumi.Input[int]]
+        software: NotRequired[pulumi.Input[int]]
+        storage: NotRequired[pulumi.Input[int]]
+        windows_domain: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbClusterEntityCountEngineCountMysqlDatabaseProfileArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbClusterEntityCountEngineCountMysqlDatabaseProfileArgs:
@@ -8859,6 +11448,13 @@ class NdbClusterEntityCountEngineCountMysqlDatabaseProfileArgs:
         pulumi.set(self, "windows_domain", value)
 
 
+if not MYPY:
+    class NdbClusterEntityCountEngineCountOracleDatabaseArgsDict(TypedDict):
+        profiles: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountEngineCountOracleDatabaseProfileArgsDict']]]]
+        time_machines: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbClusterEntityCountEngineCountOracleDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbClusterEntityCountEngineCountOracleDatabaseArgs:
     def __init__(__self__, *,
@@ -8887,6 +11483,17 @@ class NdbClusterEntityCountEngineCountOracleDatabaseArgs:
     def time_machines(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "time_machines", value)
 
+
+if not MYPY:
+    class NdbClusterEntityCountEngineCountOracleDatabaseProfileArgsDict(TypedDict):
+        compute: NotRequired[pulumi.Input[int]]
+        database_parameter: NotRequired[pulumi.Input[int]]
+        network: NotRequired[pulumi.Input[int]]
+        software: NotRequired[pulumi.Input[int]]
+        storage: NotRequired[pulumi.Input[int]]
+        windows_domain: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbClusterEntityCountEngineCountOracleDatabaseProfileArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbClusterEntityCountEngineCountOracleDatabaseProfileArgs:
@@ -8965,6 +11572,13 @@ class NdbClusterEntityCountEngineCountOracleDatabaseProfileArgs:
         pulumi.set(self, "windows_domain", value)
 
 
+if not MYPY:
+    class NdbClusterEntityCountEngineCountPostgresDatabaseArgsDict(TypedDict):
+        profiles: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountEngineCountPostgresDatabaseProfileArgsDict']]]]
+        time_machines: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbClusterEntityCountEngineCountPostgresDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbClusterEntityCountEngineCountPostgresDatabaseArgs:
     def __init__(__self__, *,
@@ -8993,6 +11607,17 @@ class NdbClusterEntityCountEngineCountPostgresDatabaseArgs:
     def time_machines(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "time_machines", value)
 
+
+if not MYPY:
+    class NdbClusterEntityCountEngineCountPostgresDatabaseProfileArgsDict(TypedDict):
+        compute: NotRequired[pulumi.Input[int]]
+        database_parameter: NotRequired[pulumi.Input[int]]
+        network: NotRequired[pulumi.Input[int]]
+        software: NotRequired[pulumi.Input[int]]
+        storage: NotRequired[pulumi.Input[int]]
+        windows_domain: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbClusterEntityCountEngineCountPostgresDatabaseProfileArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbClusterEntityCountEngineCountPostgresDatabaseProfileArgs:
@@ -9071,6 +11696,13 @@ class NdbClusterEntityCountEngineCountPostgresDatabaseProfileArgs:
         pulumi.set(self, "windows_domain", value)
 
 
+if not MYPY:
+    class NdbClusterEntityCountEngineCountSaphanaDatabaseArgsDict(TypedDict):
+        profiles: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountEngineCountSaphanaDatabaseProfileArgsDict']]]]
+        time_machines: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbClusterEntityCountEngineCountSaphanaDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbClusterEntityCountEngineCountSaphanaDatabaseArgs:
     def __init__(__self__, *,
@@ -9099,6 +11731,17 @@ class NdbClusterEntityCountEngineCountSaphanaDatabaseArgs:
     def time_machines(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "time_machines", value)
 
+
+if not MYPY:
+    class NdbClusterEntityCountEngineCountSaphanaDatabaseProfileArgsDict(TypedDict):
+        compute: NotRequired[pulumi.Input[int]]
+        database_parameter: NotRequired[pulumi.Input[int]]
+        network: NotRequired[pulumi.Input[int]]
+        software: NotRequired[pulumi.Input[int]]
+        storage: NotRequired[pulumi.Input[int]]
+        windows_domain: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbClusterEntityCountEngineCountSaphanaDatabaseProfileArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbClusterEntityCountEngineCountSaphanaDatabaseProfileArgs:
@@ -9177,6 +11820,13 @@ class NdbClusterEntityCountEngineCountSaphanaDatabaseProfileArgs:
         pulumi.set(self, "windows_domain", value)
 
 
+if not MYPY:
+    class NdbClusterEntityCountEngineCountSqlserverDatabaseArgsDict(TypedDict):
+        profiles: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbClusterEntityCountEngineCountSqlserverDatabaseProfileArgsDict']]]]
+        time_machines: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbClusterEntityCountEngineCountSqlserverDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbClusterEntityCountEngineCountSqlserverDatabaseArgs:
     def __init__(__self__, *,
@@ -9205,6 +11855,17 @@ class NdbClusterEntityCountEngineCountSqlserverDatabaseArgs:
     def time_machines(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "time_machines", value)
 
+
+if not MYPY:
+    class NdbClusterEntityCountEngineCountSqlserverDatabaseProfileArgsDict(TypedDict):
+        compute: NotRequired[pulumi.Input[int]]
+        database_parameter: NotRequired[pulumi.Input[int]]
+        network: NotRequired[pulumi.Input[int]]
+        software: NotRequired[pulumi.Input[int]]
+        storage: NotRequired[pulumi.Input[int]]
+        windows_domain: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbClusterEntityCountEngineCountSqlserverDatabaseProfileArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbClusterEntityCountEngineCountSqlserverDatabaseProfileArgs:
@@ -9283,6 +11944,26 @@ class NdbClusterEntityCountEngineCountSqlserverDatabaseProfileArgs:
         pulumi.set(self, "windows_domain", value)
 
 
+if not MYPY:
+    class NdbClusterNetworksInfoArgsDict(TypedDict):
+        access_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        VLAN access types for which you want to configure network segmentation. Supports [PRISM, DSIP, DBSERVER ]. 
+        Prism Element: Select this VLAN access type to configure a VLAN that the NDB agent VM can use to communicate with Prism.
+        Prism iSCSI Data Service. Select this VLAN access type to configure a VLAN that the agent VM can use to make connection requests to the iSCSI data services IP.
+        DBServer Access from NDB server. Select this VLAN access type to configure a VLAN that is used for communications between the NDB agent VM and the database server VM on the newly registered NDB server cluster.
+        """
+        network_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbClusterNetworksInfoNetworkInfoArgsDict']]]]
+        """
+        network segmentation to segment the network traffic
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        type of vlan. Supported [DHCP, Static, IPAM]
+        """
+elif False:
+    NdbClusterNetworksInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbClusterNetworksInfoArgs:
     def __init__(__self__, *,
@@ -9343,6 +12024,27 @@ class NdbClusterNetworksInfoArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class NdbClusterNetworksInfoNetworkInfoArgsDict(TypedDict):
+        gateway: NotRequired[pulumi.Input[str]]
+        """
+        gateway of agent network
+        """
+        static_ip: NotRequired[pulumi.Input[str]]
+        """
+        static ip of agent network
+        """
+        subnet_mask: NotRequired[pulumi.Input[str]]
+        """
+        subnet mask of agent network
+        """
+        vlan_name: NotRequired[pulumi.Input[str]]
+        """
+        vlan name
+        """
+elif False:
+    NdbClusterNetworksInfoNetworkInfoArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbClusterNetworksInfoNetworkInfoArgs:
@@ -9414,6 +12116,22 @@ class NdbClusterNetworksInfoNetworkInfoArgs:
     def vlan_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vlan_name", value)
 
+
+if not MYPY:
+    class NdbClusterPropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of cluster
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        name of the cluster to be registered
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbClusterPropertyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbClusterPropertyArgs:
@@ -9490,6 +12208,13 @@ class NdbClusterPropertyArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbClusterResourceConfigArgsDict(TypedDict):
+        memory_threshold_percentage: NotRequired[pulumi.Input[float]]
+        storage_threshold_percentage: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbClusterResourceConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbClusterResourceConfigArgs:
     def __init__(__self__, *,
@@ -9518,6 +12243,19 @@ class NdbClusterResourceConfigArgs:
     def storage_threshold_percentage(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "storage_threshold_percentage", value)
 
+
+if not MYPY:
+    class NdbDatabaseActionargumentArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        - (Required) name of argument
+        """
+        value: pulumi.Input[str]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbDatabaseActionargumentArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseActionargumentArgs:
@@ -9556,6 +12294,12 @@ class NdbDatabaseActionargumentArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbDatabaseClusterInfoArgsDict(TypedDict):
+        cluster_ip_infos: pulumi.Input[Sequence[pulumi.Input['NdbDatabaseClusterInfoClusterIpInfoArgsDict']]]
+elif False:
+    NdbDatabaseClusterInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseClusterInfoArgs:
     def __init__(__self__, *,
@@ -9571,6 +12315,19 @@ class NdbDatabaseClusterInfoArgs:
     def cluster_ip_infos(self, value: pulumi.Input[Sequence[pulumi.Input['NdbDatabaseClusterInfoClusterIpInfoArgs']]]):
         pulumi.set(self, "cluster_ip_infos", value)
 
+
+if not MYPY:
+    class NdbDatabaseClusterInfoClusterIpInfoArgsDict(TypedDict):
+        nx_cluster_id: pulumi.Input[str]
+        """
+        - (Optional) cluster id.
+        """
+        ip_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseClusterInfoClusterIpInfoIpInfoArgsDict']]]]
+        """
+        - (Optional) IP infos for custom network profile.
+        """
+elif False:
+    NdbDatabaseClusterInfoClusterIpInfoArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseClusterInfoClusterIpInfoArgs:
@@ -9610,6 +12367,13 @@ class NdbDatabaseClusterInfoClusterIpInfoArgs:
         pulumi.set(self, "ip_infos", value)
 
 
+if not MYPY:
+    class NdbDatabaseClusterInfoClusterIpInfoIpInfoArgsDict(TypedDict):
+        ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        ip_type: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseClusterInfoClusterIpInfoIpInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseClusterInfoClusterIpInfoIpInfoArgs:
     def __init__(__self__, *,
@@ -9638,6 +12402,41 @@ class NdbDatabaseClusterInfoClusterIpInfoIpInfoArgs:
     def ip_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ip_type", value)
 
+
+if not MYPY:
+    class NdbDatabaseDatabaseNodeArgsDict(TypedDict):
+        access_level: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        database_id: NotRequired[pulumi.Input[str]]
+        database_status: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        date_modified: NotRequired[pulumi.Input[str]]
+        dbserver: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        dbserver_id: NotRequired[pulumi.Input[str]]
+        description: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) The description
+        """
+        id: NotRequired[pulumi.Input[str]]
+        infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseDatabaseNodeInfoArgsDict']]]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) Name of the instance.
+        """
+        primary: NotRequired[pulumi.Input[bool]]
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseDatabaseNodePropertyArgsDict']]]]
+        """
+        List of all the properties
+        """
+        protection_domain_id: NotRequired[pulumi.Input[str]]
+        protection_domains: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseDatabaseNodeProtectionDomainArgsDict']]]]
+        software_installation_id: NotRequired[pulumi.Input[str]]
+        status: NotRequired[pulumi.Input[str]]
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseDatabaseNodeTagArgsDict']]]]
+        """
+        - (Optional) tags
+        """
+elif False:
+    NdbDatabaseDatabaseNodeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseDatabaseNodeArgs:
@@ -9878,6 +12677,13 @@ class NdbDatabaseDatabaseNodeArgs:
         pulumi.set(self, "tags", value)
 
 
+if not MYPY:
+    class NdbDatabaseDatabaseNodeInfoArgsDict(TypedDict):
+        info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbDatabaseDatabaseNodeInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseDatabaseNodeInfoArgs:
     def __init__(__self__, *,
@@ -9906,6 +12712,25 @@ class NdbDatabaseDatabaseNodeInfoArgs:
     def secure_info(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "secure_info", value)
 
+
+if not MYPY:
+    class NdbDatabaseDatabaseNodePropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) The description
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) Name of the instance.
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbDatabaseDatabaseNodePropertyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseDatabaseNodePropertyArgs:
@@ -9985,6 +12810,33 @@ class NdbDatabaseDatabaseNodePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbDatabaseDatabaseNodeProtectionDomainArgsDict(TypedDict):
+        assoc_entities: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        cloud_id: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        date_modified: NotRequired[pulumi.Input[str]]
+        description: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) The description
+        """
+        era_created: NotRequired[pulumi.Input[bool]]
+        id: NotRequired[pulumi.Input[str]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) Name of the instance.
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        primary_host: NotRequired[pulumi.Input[str]]
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseDatabaseNodeProtectionDomainPropertyArgsDict']]]]
+        """
+        List of all the properties
+        """
+        status: NotRequired[pulumi.Input[str]]
+        type: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseDatabaseNodeProtectionDomainArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseDatabaseNodeProtectionDomainArgs:
@@ -10161,6 +13013,25 @@ class NdbDatabaseDatabaseNodeProtectionDomainArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class NdbDatabaseDatabaseNodeProtectionDomainPropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) The description
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) Name of the instance.
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbDatabaseDatabaseNodeProtectionDomainPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseDatabaseNodeProtectionDomainPropertyArgs:
     def __init__(__self__, *,
@@ -10240,6 +13111,19 @@ class NdbDatabaseDatabaseNodeProtectionDomainPropertyArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbDatabaseDatabaseNodeTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbDatabaseDatabaseNodeTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseDatabaseNodeTagArgs:
     def __init__(__self__, *,
@@ -10311,6 +13195,13 @@ class NdbDatabaseDatabaseNodeTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbDatabaseInfoArgsDict(TypedDict):
+        bpg_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseInfoBpgConfigArgsDict']]]]
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbDatabaseInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseInfoArgs:
     def __init__(__self__, *,
@@ -10339,6 +13230,14 @@ class NdbDatabaseInfoArgs:
     def secure_info(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "secure_info", value)
 
+
+if not MYPY:
+    class NdbDatabaseInfoBpgConfigArgsDict(TypedDict):
+        bpg_db_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseInfoBpgConfigBpgDbParamArgsDict']]]]
+        storages: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseInfoBpgConfigStorageArgsDict']]]]
+        vm_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseInfoBpgConfigVmPropertyArgsDict']]]]
+elif False:
+    NdbDatabaseInfoBpgConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseInfoBpgConfigArgs:
@@ -10380,6 +13279,17 @@ class NdbDatabaseInfoBpgConfigArgs:
     def vm_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseInfoBpgConfigVmPropertyArgs']]]]):
         pulumi.set(self, "vm_properties", value)
 
+
+if not MYPY:
+    class NdbDatabaseInfoBpgConfigBpgDbParamArgsDict(TypedDict):
+        effective_cache_size: NotRequired[pulumi.Input[str]]
+        maintenance_work_mem: NotRequired[pulumi.Input[str]]
+        max_parallel_workers_per_gather: NotRequired[pulumi.Input[str]]
+        max_worker_processes: NotRequired[pulumi.Input[str]]
+        shared_buffers: NotRequired[pulumi.Input[str]]
+        work_mem: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseInfoBpgConfigBpgDbParamArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseInfoBpgConfigBpgDbParamArgs:
@@ -10458,6 +13368,14 @@ class NdbDatabaseInfoBpgConfigBpgDbParamArgs:
         pulumi.set(self, "work_mem", value)
 
 
+if not MYPY:
+    class NdbDatabaseInfoBpgConfigStorageArgsDict(TypedDict):
+        archive_storages: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseInfoBpgConfigStorageArchiveStorageArgsDict']]]]
+        data_disks: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseInfoBpgConfigStorageDataDiskArgsDict']]]]
+        log_disks: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseInfoBpgConfigStorageLogDiskArgsDict']]]]
+elif False:
+    NdbDatabaseInfoBpgConfigStorageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseInfoBpgConfigStorageArgs:
     def __init__(__self__, *,
@@ -10499,6 +13417,12 @@ class NdbDatabaseInfoBpgConfigStorageArgs:
         pulumi.set(self, "log_disks", value)
 
 
+if not MYPY:
+    class NdbDatabaseInfoBpgConfigStorageArchiveStorageArgsDict(TypedDict):
+        size: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbDatabaseInfoBpgConfigStorageArchiveStorageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseInfoBpgConfigStorageArchiveStorageArgs:
     def __init__(__self__, *,
@@ -10516,6 +13440,12 @@ class NdbDatabaseInfoBpgConfigStorageArchiveStorageArgs:
         pulumi.set(self, "size", value)
 
 
+if not MYPY:
+    class NdbDatabaseInfoBpgConfigStorageDataDiskArgsDict(TypedDict):
+        count: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbDatabaseInfoBpgConfigStorageDataDiskArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseInfoBpgConfigStorageDataDiskArgs:
     def __init__(__self__, *,
@@ -10532,6 +13462,13 @@ class NdbDatabaseInfoBpgConfigStorageDataDiskArgs:
     def count(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "count", value)
 
+
+if not MYPY:
+    class NdbDatabaseInfoBpgConfigStorageLogDiskArgsDict(TypedDict):
+        count: NotRequired[pulumi.Input[float]]
+        size: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbDatabaseInfoBpgConfigStorageLogDiskArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseInfoBpgConfigStorageLogDiskArgs:
@@ -10561,6 +13498,18 @@ class NdbDatabaseInfoBpgConfigStorageLogDiskArgs:
     def size(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "size", value)
 
+
+if not MYPY:
+    class NdbDatabaseInfoBpgConfigVmPropertyArgsDict(TypedDict):
+        dirty_background_ratio: NotRequired[pulumi.Input[float]]
+        dirty_expire_centisecs: NotRequired[pulumi.Input[float]]
+        dirty_ratio: NotRequired[pulumi.Input[float]]
+        dirty_writeback_centisecs: NotRequired[pulumi.Input[float]]
+        nr_hugepages: NotRequired[pulumi.Input[float]]
+        overcommit_memory: NotRequired[pulumi.Input[float]]
+        swappiness: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbDatabaseInfoBpgConfigVmPropertyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseInfoBpgConfigVmPropertyArgs:
@@ -10651,6 +13600,15 @@ class NdbDatabaseInfoBpgConfigVmPropertyArgs:
         pulumi.set(self, "swappiness", value)
 
 
+if not MYPY:
+    class NdbDatabaseLcmConfigArgsDict(TypedDict):
+        expiry_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseLcmConfigExpiryDetailArgsDict']]]]
+        post_delete_commands: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseLcmConfigPostDeleteCommandArgsDict']]]]
+        pre_delete_commands: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseLcmConfigPreDeleteCommandArgsDict']]]]
+        refresh_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseLcmConfigRefreshDetailArgsDict']]]]
+elif False:
+    NdbDatabaseLcmConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseLcmConfigArgs:
     def __init__(__self__, *,
@@ -10703,6 +13661,23 @@ class NdbDatabaseLcmConfigArgs:
     def refresh_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseLcmConfigRefreshDetailArgs']]]]):
         pulumi.set(self, "refresh_details", value)
 
+
+if not MYPY:
+    class NdbDatabaseLcmConfigExpiryDetailArgsDict(TypedDict):
+        delete_database: NotRequired[pulumi.Input[bool]]
+        delete_time_machine: NotRequired[pulumi.Input[bool]]
+        """
+        - (Optional) Delete the database's Time Machine (snapshots/logs) from the NDB. Default value is true
+        """
+        delete_vm: NotRequired[pulumi.Input[bool]]
+        effective_timestamp: NotRequired[pulumi.Input[str]]
+        expire_in_days: NotRequired[pulumi.Input[int]]
+        expiry_date_timezone: NotRequired[pulumi.Input[str]]
+        expiry_timestamp: NotRequired[pulumi.Input[str]]
+        remind_before_in_days: NotRequired[pulumi.Input[int]]
+        user_created: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbDatabaseLcmConfigExpiryDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseLcmConfigExpiryDetailArgs:
@@ -10823,6 +13798,12 @@ class NdbDatabaseLcmConfigExpiryDetailArgs:
         pulumi.set(self, "user_created", value)
 
 
+if not MYPY:
+    class NdbDatabaseLcmConfigPostDeleteCommandArgsDict(TypedDict):
+        command: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseLcmConfigPostDeleteCommandArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseLcmConfigPostDeleteCommandArgs:
     def __init__(__self__, *,
@@ -10840,6 +13821,12 @@ class NdbDatabaseLcmConfigPostDeleteCommandArgs:
         pulumi.set(self, "command", value)
 
 
+if not MYPY:
+    class NdbDatabaseLcmConfigPreDeleteCommandArgsDict(TypedDict):
+        command: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseLcmConfigPreDeleteCommandArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseLcmConfigPreDeleteCommandArgs:
     def __init__(__self__, *,
@@ -10856,6 +13843,18 @@ class NdbDatabaseLcmConfigPreDeleteCommandArgs:
     def command(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "command", value)
 
+
+if not MYPY:
+    class NdbDatabaseLcmConfigRefreshDetailArgsDict(TypedDict):
+        last_refresh_date: NotRequired[pulumi.Input[str]]
+        next_refresh_date: NotRequired[pulumi.Input[str]]
+        refresh_date_timezone: NotRequired[pulumi.Input[str]]
+        refresh_in_days: NotRequired[pulumi.Input[int]]
+        refresh_in_hours: NotRequired[pulumi.Input[int]]
+        refresh_in_months: NotRequired[pulumi.Input[int]]
+        refresh_time: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseLcmConfigRefreshDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseLcmConfigRefreshDetailArgs:
@@ -10945,6 +13944,31 @@ class NdbDatabaseLcmConfigRefreshDetailArgs:
     def refresh_time(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "refresh_time", value)
 
+
+if not MYPY:
+    class NdbDatabaseLinkedDatabaseArgsDict(TypedDict):
+        database_name: NotRequired[pulumi.Input[str]]
+        database_status: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        date_modified: NotRequired[pulumi.Input[str]]
+        description: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) The description
+        """
+        id: NotRequired[pulumi.Input[str]]
+        infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseLinkedDatabaseInfoArgsDict']]]]
+        metric: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) Name of the instance.
+        """
+        parent_database_id: NotRequired[pulumi.Input[str]]
+        parent_linked_database_id: NotRequired[pulumi.Input[str]]
+        snapshot_id: NotRequired[pulumi.Input[str]]
+        status: NotRequired[pulumi.Input[str]]
+        timezone: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseLinkedDatabaseArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseLinkedDatabaseArgs:
@@ -11129,6 +14153,13 @@ class NdbDatabaseLinkedDatabaseArgs:
         pulumi.set(self, "timezone", value)
 
 
+if not MYPY:
+    class NdbDatabaseLinkedDatabaseInfoArgsDict(TypedDict):
+        info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbDatabaseLinkedDatabaseInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseLinkedDatabaseInfoArgs:
     def __init__(__self__, *,
@@ -11158,6 +14189,13 @@ class NdbDatabaseLinkedDatabaseInfoArgs:
         pulumi.set(self, "secure_info", value)
 
 
+if not MYPY:
+    class NdbDatabaseMaintenanceTasksArgsDict(TypedDict):
+        maintenance_window_id: NotRequired[pulumi.Input[str]]
+        tasks: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseMaintenanceTasksTaskArgsDict']]]]
+elif False:
+    NdbDatabaseMaintenanceTasksArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseMaintenanceTasksArgs:
     def __init__(__self__, *,
@@ -11186,6 +14224,14 @@ class NdbDatabaseMaintenanceTasksArgs:
     def tasks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseMaintenanceTasksTaskArgs']]]]):
         pulumi.set(self, "tasks", value)
 
+
+if not MYPY:
+    class NdbDatabaseMaintenanceTasksTaskArgsDict(TypedDict):
+        post_command: NotRequired[pulumi.Input[str]]
+        pre_command: NotRequired[pulumi.Input[str]]
+        task_type: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseMaintenanceTasksTaskArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseMaintenanceTasksTaskArgs:
@@ -11227,6 +14273,39 @@ class NdbDatabaseMaintenanceTasksTaskArgs:
     def task_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "task_type", value)
 
+
+if not MYPY:
+    class NdbDatabaseNodeArgsDict(TypedDict):
+        vmname: pulumi.Input[str]
+        """
+        - (Required) name of vm
+        """
+        computeprofileid: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) compute profile id
+        """
+        dbserverid: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Database server ID required for existing VM
+        """
+        ip_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseNodeIpInfoArgsDict']]]]
+        """
+        - (Optional) IP infos for custom network profile.
+        """
+        networkprofileid: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) network profile ID
+        """
+        nx_cluster_id: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) cluster id.
+        """
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseNodePropertyArgsDict']]]]
+        """
+        - (Optional) list of additional properties
+        """
+elif False:
+    NdbDatabaseNodeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseNodeArgs:
@@ -11346,6 +14425,13 @@ class NdbDatabaseNodeArgs:
         pulumi.set(self, "properties", value)
 
 
+if not MYPY:
+    class NdbDatabaseNodeIpInfoArgsDict(TypedDict):
+        ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        ip_type: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseNodeIpInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseNodeIpInfoArgs:
     def __init__(__self__, *,
@@ -11374,6 +14460,19 @@ class NdbDatabaseNodeIpInfoArgs:
     def ip_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ip_type", value)
 
+
+if not MYPY:
+    class NdbDatabaseNodePropertyArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        - (Required) Name of the instance.
+        """
+        value: pulumi.Input[str]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbDatabaseNodePropertyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseNodePropertyArgs:
@@ -11411,6 +14510,55 @@ class NdbDatabaseNodePropertyArgs:
     def value(self, value: pulumi.Input[str]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbDatabasePostgresqlInfoArgsDict(TypedDict):
+        database_names: pulumi.Input[str]
+        """
+        - (Required) name of initial database to be created
+        """
+        database_size: pulumi.Input[str]
+        """
+        - (Required) initial database size
+        """
+        db_password: pulumi.Input[str]
+        """
+        - (Required) database instance password
+        """
+        listener_port: pulumi.Input[str]
+        """
+        - (Required) listener port for database instance
+        """
+        allocate_pg_hugepage: NotRequired[pulumi.Input[bool]]
+        """
+        - (Optional) allocate huge page. Default: false
+        """
+        auth_method: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) auth methods. Default: md5
+        """
+        auto_tune_staging_drive: NotRequired[pulumi.Input[bool]]
+        """
+        - (Optional) enable auto tuning of staging drive. Default: false
+        """
+        cluster_database: NotRequired[pulumi.Input[bool]]
+        """
+        - (Optional) if clustered database. Default: false
+        """
+        ha_instance: NotRequired[pulumi.Input['NdbDatabasePostgresqlInfoHaInstanceArgsDict']]
+        """
+        - (Optional) High Availability instance
+        """
+        post_create_script: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) post instance create script
+        """
+        pre_create_script: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) pre instance create script
+        """
+elif False:
+    NdbDatabasePostgresqlInfoArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabasePostgresqlInfoArgs:
@@ -11590,6 +14738,60 @@ class NdbDatabasePostgresqlInfoArgs:
     def pre_create_script(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "pre_create_script", value)
 
+
+if not MYPY:
+    class NdbDatabasePostgresqlInfoHaInstanceArgsDict(TypedDict):
+        cluster_name: pulumi.Input[str]
+        """
+        - (Required) cluster name
+        """
+        patroni_cluster_name: pulumi.Input[str]
+        """
+        - (Required) patroni cluster name
+        """
+        proxy_read_port: pulumi.Input[str]
+        """
+        -  (Required) proxy read port
+        """
+        proxy_write_port: pulumi.Input[str]
+        """
+        - (Required) proxy write port
+        """
+        archive_wal_expire_days: NotRequired[pulumi.Input[int]]
+        """
+        - (Optional) archive wal expire days. Default is set to -1
+        """
+        backup_policy: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) backup policy for instance. Default is "primary_only"
+        """
+        cluster_description: NotRequired[pulumi.Input[str]]
+        deploy_haproxy: NotRequired[pulumi.Input[bool]]
+        """
+        - (Optional) HA proxy node. Default is set to false
+        """
+        enable_peer_auth: NotRequired[pulumi.Input[bool]]
+        """
+        - (Optional) enable peer auth . Default is set to false.
+        """
+        enable_synchronous_mode: NotRequired[pulumi.Input[bool]]
+        """
+        - (Optional) enable synchronous mode. Default is set to true
+        """
+        failover_mode: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) failover mode of nodes.
+        """
+        node_type: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) node type of instance. Default is set to database
+        """
+        provision_virtual_ip: NotRequired[pulumi.Input[bool]]
+        """
+        - (Optional) provisional virtual ip. Default is set to true
+        """
+elif False:
+    NdbDatabasePostgresqlInfoHaInstanceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabasePostgresqlInfoHaInstanceArgs:
@@ -11798,6 +15000,19 @@ class NdbDatabasePostgresqlInfoHaInstanceArgs:
         pulumi.set(self, "provision_virtual_ip", value)
 
 
+if not MYPY:
+    class NdbDatabasePropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) Name of the instance.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbDatabasePropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabasePropertyArgs:
     def __init__(__self__, *,
@@ -11836,6 +15051,56 @@ class NdbDatabasePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbDatabaseRestoreDatabaseNodeArgsDict(TypedDict):
+        access_level: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        database_id: NotRequired[pulumi.Input[str]]
+        """
+        database id
+        """
+        database_status: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        dbserver: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        dbserver_id: NotRequired[pulumi.Input[str]]
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        id: NotRequired[pulumi.Input[str]]
+        infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreDatabaseNodeInfoArgsDict']]]]
+        """
+        info of instance
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        primary: NotRequired[pulumi.Input[bool]]
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreDatabaseNodePropertyArgsDict']]]]
+        """
+        properties of database created
+        """
+        protection_domain_id: NotRequired[pulumi.Input[str]]
+        protection_domains: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreDatabaseNodeProtectionDomainArgsDict']]]]
+        software_installation_id: NotRequired[pulumi.Input[str]]
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of instance
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreDatabaseNodeTagArgsDict']]]]
+        """
+        allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        """
+elif False:
+    NdbDatabaseRestoreDatabaseNodeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseRestoreDatabaseNodeArgs:
@@ -12096,6 +15361,16 @@ class NdbDatabaseRestoreDatabaseNodeArgs:
         pulumi.set(self, "tags", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestoreDatabaseNodeInfoArgsDict(TypedDict):
+        info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        info of instance
+        """
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbDatabaseRestoreDatabaseNodeInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestoreDatabaseNodeInfoArgs:
     def __init__(__self__, *,
@@ -12130,6 +15405,22 @@ class NdbDatabaseRestoreDatabaseNodeInfoArgs:
     def secure_info(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "secure_info", value)
 
+
+if not MYPY:
+    class NdbDatabaseRestoreDatabaseNodePropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseRestoreDatabaseNodePropertyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseRestoreDatabaseNodePropertyArgs:
@@ -12205,6 +15496,45 @@ class NdbDatabaseRestoreDatabaseNodePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbDatabaseRestoreDatabaseNodeProtectionDomainArgsDict(TypedDict):
+        assoc_entities: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        cloud_id: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        era_created: NotRequired[pulumi.Input[bool]]
+        id: NotRequired[pulumi.Input[str]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        primary_host: NotRequired[pulumi.Input[str]]
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreDatabaseNodeProtectionDomainPropertyArgsDict']]]]
+        """
+        properties of database created
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of instance
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        type of database
+        """
+elif False:
+    NdbDatabaseRestoreDatabaseNodeProtectionDomainArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseRestoreDatabaseNodeProtectionDomainArgs:
@@ -12397,6 +15727,22 @@ class NdbDatabaseRestoreDatabaseNodeProtectionDomainArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestoreDatabaseNodeProtectionDomainPropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseRestoreDatabaseNodeProtectionDomainPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestoreDatabaseNodeProtectionDomainPropertyArgs:
     def __init__(__self__, *,
@@ -12472,6 +15818,16 @@ class NdbDatabaseRestoreDatabaseNodeProtectionDomainPropertyArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestoreDatabaseNodeTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseRestoreDatabaseNodeTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestoreDatabaseNodeTagArgs:
     def __init__(__self__, *,
@@ -12537,6 +15893,13 @@ class NdbDatabaseRestoreDatabaseNodeTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestoreInfoArgsDict(TypedDict):
+        bpg_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreInfoBpgConfigArgsDict']]]]
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbDatabaseRestoreInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestoreInfoArgs:
     def __init__(__self__, *,
@@ -12565,6 +15928,14 @@ class NdbDatabaseRestoreInfoArgs:
     def secure_info(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "secure_info", value)
 
+
+if not MYPY:
+    class NdbDatabaseRestoreInfoBpgConfigArgsDict(TypedDict):
+        bpg_db_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreInfoBpgConfigBpgDbParamArgsDict']]]]
+        storages: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreInfoBpgConfigStorageArgsDict']]]]
+        vm_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreInfoBpgConfigVmPropertyArgsDict']]]]
+elif False:
+    NdbDatabaseRestoreInfoBpgConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseRestoreInfoBpgConfigArgs:
@@ -12606,6 +15977,17 @@ class NdbDatabaseRestoreInfoBpgConfigArgs:
     def vm_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreInfoBpgConfigVmPropertyArgs']]]]):
         pulumi.set(self, "vm_properties", value)
 
+
+if not MYPY:
+    class NdbDatabaseRestoreInfoBpgConfigBpgDbParamArgsDict(TypedDict):
+        effective_cache_size: NotRequired[pulumi.Input[str]]
+        maintenance_work_mem: NotRequired[pulumi.Input[str]]
+        max_parallel_workers_per_gather: NotRequired[pulumi.Input[str]]
+        max_worker_processes: NotRequired[pulumi.Input[str]]
+        shared_buffers: NotRequired[pulumi.Input[str]]
+        work_mem: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseRestoreInfoBpgConfigBpgDbParamArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseRestoreInfoBpgConfigBpgDbParamArgs:
@@ -12684,6 +16066,14 @@ class NdbDatabaseRestoreInfoBpgConfigBpgDbParamArgs:
         pulumi.set(self, "work_mem", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestoreInfoBpgConfigStorageArgsDict(TypedDict):
+        archive_storages: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreInfoBpgConfigStorageArchiveStorageArgsDict']]]]
+        data_disks: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreInfoBpgConfigStorageDataDiskArgsDict']]]]
+        log_disks: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreInfoBpgConfigStorageLogDiskArgsDict']]]]
+elif False:
+    NdbDatabaseRestoreInfoBpgConfigStorageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestoreInfoBpgConfigStorageArgs:
     def __init__(__self__, *,
@@ -12725,6 +16115,12 @@ class NdbDatabaseRestoreInfoBpgConfigStorageArgs:
         pulumi.set(self, "log_disks", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestoreInfoBpgConfigStorageArchiveStorageArgsDict(TypedDict):
+        size: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbDatabaseRestoreInfoBpgConfigStorageArchiveStorageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestoreInfoBpgConfigStorageArchiveStorageArgs:
     def __init__(__self__, *,
@@ -12742,6 +16138,12 @@ class NdbDatabaseRestoreInfoBpgConfigStorageArchiveStorageArgs:
         pulumi.set(self, "size", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestoreInfoBpgConfigStorageDataDiskArgsDict(TypedDict):
+        count: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbDatabaseRestoreInfoBpgConfigStorageDataDiskArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestoreInfoBpgConfigStorageDataDiskArgs:
     def __init__(__self__, *,
@@ -12758,6 +16160,13 @@ class NdbDatabaseRestoreInfoBpgConfigStorageDataDiskArgs:
     def count(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "count", value)
 
+
+if not MYPY:
+    class NdbDatabaseRestoreInfoBpgConfigStorageLogDiskArgsDict(TypedDict):
+        count: NotRequired[pulumi.Input[float]]
+        size: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbDatabaseRestoreInfoBpgConfigStorageLogDiskArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseRestoreInfoBpgConfigStorageLogDiskArgs:
@@ -12787,6 +16196,18 @@ class NdbDatabaseRestoreInfoBpgConfigStorageLogDiskArgs:
     def size(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "size", value)
 
+
+if not MYPY:
+    class NdbDatabaseRestoreInfoBpgConfigVmPropertyArgsDict(TypedDict):
+        dirty_background_ratio: NotRequired[pulumi.Input[float]]
+        dirty_expire_centisecs: NotRequired[pulumi.Input[float]]
+        dirty_ratio: NotRequired[pulumi.Input[float]]
+        dirty_writeback_centisecs: NotRequired[pulumi.Input[float]]
+        nr_hugepages: NotRequired[pulumi.Input[float]]
+        overcommit_memory: NotRequired[pulumi.Input[float]]
+        swappiness: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbDatabaseRestoreInfoBpgConfigVmPropertyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseRestoreInfoBpgConfigVmPropertyArgs:
@@ -12877,6 +16298,15 @@ class NdbDatabaseRestoreInfoBpgConfigVmPropertyArgs:
         pulumi.set(self, "swappiness", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestoreLcmConfigArgsDict(TypedDict):
+        expiry_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreLcmConfigExpiryDetailArgsDict']]]]
+        post_delete_commands: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreLcmConfigPostDeleteCommandArgsDict']]]]
+        pre_delete_commands: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreLcmConfigPreDeleteCommandArgsDict']]]]
+        refresh_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreLcmConfigRefreshDetailArgsDict']]]]
+elif False:
+    NdbDatabaseRestoreLcmConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestoreLcmConfigArgs:
     def __init__(__self__, *,
@@ -12929,6 +16359,20 @@ class NdbDatabaseRestoreLcmConfigArgs:
     def refresh_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreLcmConfigRefreshDetailArgs']]]]):
         pulumi.set(self, "refresh_details", value)
 
+
+if not MYPY:
+    class NdbDatabaseRestoreLcmConfigExpiryDetailArgsDict(TypedDict):
+        delete_database: NotRequired[pulumi.Input[bool]]
+        delete_time_machine: NotRequired[pulumi.Input[bool]]
+        delete_vm: NotRequired[pulumi.Input[bool]]
+        effective_timestamp: NotRequired[pulumi.Input[str]]
+        expire_in_days: NotRequired[pulumi.Input[int]]
+        expiry_date_timezone: NotRequired[pulumi.Input[str]]
+        expiry_timestamp: NotRequired[pulumi.Input[str]]
+        remind_before_in_days: NotRequired[pulumi.Input[int]]
+        user_created: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbDatabaseRestoreLcmConfigExpiryDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseRestoreLcmConfigExpiryDetailArgs:
@@ -13043,6 +16487,12 @@ class NdbDatabaseRestoreLcmConfigExpiryDetailArgs:
         pulumi.set(self, "user_created", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestoreLcmConfigPostDeleteCommandArgsDict(TypedDict):
+        command: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseRestoreLcmConfigPostDeleteCommandArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestoreLcmConfigPostDeleteCommandArgs:
     def __init__(__self__, *,
@@ -13060,6 +16510,12 @@ class NdbDatabaseRestoreLcmConfigPostDeleteCommandArgs:
         pulumi.set(self, "command", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestoreLcmConfigPreDeleteCommandArgsDict(TypedDict):
+        command: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseRestoreLcmConfigPreDeleteCommandArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestoreLcmConfigPreDeleteCommandArgs:
     def __init__(__self__, *,
@@ -13076,6 +16532,18 @@ class NdbDatabaseRestoreLcmConfigPreDeleteCommandArgs:
     def command(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "command", value)
 
+
+if not MYPY:
+    class NdbDatabaseRestoreLcmConfigRefreshDetailArgsDict(TypedDict):
+        last_refresh_date: NotRequired[pulumi.Input[str]]
+        next_refresh_date: NotRequired[pulumi.Input[str]]
+        refresh_date_timezone: NotRequired[pulumi.Input[str]]
+        refresh_in_days: NotRequired[pulumi.Input[int]]
+        refresh_in_hours: NotRequired[pulumi.Input[int]]
+        refresh_in_months: NotRequired[pulumi.Input[int]]
+        refresh_time: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseRestoreLcmConfigRefreshDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseRestoreLcmConfigRefreshDetailArgs:
@@ -13165,6 +16633,55 @@ class NdbDatabaseRestoreLcmConfigRefreshDetailArgs:
     def refresh_time(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "refresh_time", value)
 
+
+if not MYPY:
+    class NdbDatabaseRestoreLinkedDatabaseArgsDict(TypedDict):
+        database_name: NotRequired[pulumi.Input[str]]
+        """
+        name of database
+        """
+        database_status: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        id: NotRequired[pulumi.Input[str]]
+        infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreLinkedDatabaseInfoArgsDict']]]]
+        """
+        info of instance
+        """
+        metric: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        parent_database_id: NotRequired[pulumi.Input[str]]
+        """
+        parent database id
+        """
+        parent_linked_database_id: NotRequired[pulumi.Input[str]]
+        snapshot_id: NotRequired[pulumi.Input[str]]
+        """
+        snapshot id from you want to use for restoring the instance
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of instance
+        """
+        timezone: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseRestoreLinkedDatabaseArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseRestoreLinkedDatabaseArgs:
@@ -13381,6 +16898,16 @@ class NdbDatabaseRestoreLinkedDatabaseArgs:
         pulumi.set(self, "timezone", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestoreLinkedDatabaseInfoArgsDict(TypedDict):
+        info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        info of instance
+        """
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbDatabaseRestoreLinkedDatabaseInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestoreLinkedDatabaseInfoArgs:
     def __init__(__self__, *,
@@ -13416,6 +16943,16 @@ class NdbDatabaseRestoreLinkedDatabaseInfoArgs:
         pulumi.set(self, "secure_info", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestorePropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseRestorePropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestorePropertyArgs:
     def __init__(__self__, *,
@@ -13450,6 +16987,16 @@ class NdbDatabaseRestorePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbDatabaseRestoreTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseRestoreTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseRestoreTagArgs:
@@ -13515,6 +17062,69 @@ class NdbDatabaseRestoreTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbDatabaseRestoreTimeMachineArgsDict(TypedDict):
+        access_level: NotRequired[pulumi.Input[str]]
+        clone: NotRequired[pulumi.Input[bool]]
+        """
+        whether instance is cloned or not
+        """
+        clones: NotRequired[pulumi.Input[str]]
+        clustered: NotRequired[pulumi.Input[bool]]
+        database: NotRequired[pulumi.Input[str]]
+        database_id: NotRequired[pulumi.Input[str]]
+        """
+        database id
+        """
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        ea_status: NotRequired[pulumi.Input[str]]
+        id: NotRequired[pulumi.Input[str]]
+        metric: NotRequired[pulumi.Input[str]]
+        """
+        Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreTimeMachinePropertyArgsDict']]]]
+        """
+        properties of database created
+        """
+        schedule_id: NotRequired[pulumi.Input[str]]
+        schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreTimeMachineScheduleArgsDict']]]]
+        scope: NotRequired[pulumi.Input[str]]
+        sla_id: NotRequired[pulumi.Input[str]]
+        sla_update_in_progress: NotRequired[pulumi.Input[bool]]
+        sla_update_metadata: NotRequired[pulumi.Input[str]]
+        slas: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreTimeMachineSlaArgsDict']]]]
+        source_nx_clusters: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of instance
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreTimeMachineTagArgsDict']]]]
+        """
+        allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        type of database
+        """
+elif False:
+    NdbDatabaseRestoreTimeMachineArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseRestoreTimeMachineArgs:
@@ -13867,6 +17477,22 @@ class NdbDatabaseRestoreTimeMachineArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestoreTimeMachinePropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseRestoreTimeMachinePropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestoreTimeMachinePropertyArgs:
     def __init__(__self__, *,
@@ -13941,6 +17567,45 @@ class NdbDatabaseRestoreTimeMachinePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbDatabaseRestoreTimeMachineScheduleArgsDict(TypedDict):
+        continuous_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreTimeMachineScheduleContinuousScheduleArgsDict']]]]
+        daily_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreTimeMachineScheduleDailyScheduleArgsDict']]]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        global_policy: NotRequired[pulumi.Input[bool]]
+        id: NotRequired[pulumi.Input[str]]
+        monthly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreTimeMachineScheduleMonthlyScheduleArgsDict']]]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        quartely_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreTimeMachineScheduleQuartelyScheduleArgsDict']]]]
+        reference_count: NotRequired[pulumi.Input[int]]
+        snapshot_time_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreTimeMachineScheduleSnapshotTimeOfDayArgsDict']]]]
+        start_time: NotRequired[pulumi.Input[str]]
+        system_policy: NotRequired[pulumi.Input[bool]]
+        time_zone: NotRequired[pulumi.Input[str]]
+        """
+        timezone on which instance is created xw
+        """
+        unique_name: NotRequired[pulumi.Input[str]]
+        weekly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreTimeMachineScheduleWeeklyScheduleArgsDict']]]]
+        yearly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseRestoreTimeMachineScheduleYearlyScheduleArgsDict']]]]
+elif False:
+    NdbDatabaseRestoreTimeMachineScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseRestoreTimeMachineScheduleArgs:
@@ -14197,6 +17862,14 @@ class NdbDatabaseRestoreTimeMachineScheduleArgs:
         pulumi.set(self, "yearly_schedules", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestoreTimeMachineScheduleContinuousScheduleArgsDict(TypedDict):
+        enabled: NotRequired[pulumi.Input[bool]]
+        log_backup_interval: NotRequired[pulumi.Input[int]]
+        snapshots_per_day: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbDatabaseRestoreTimeMachineScheduleContinuousScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestoreTimeMachineScheduleContinuousScheduleArgs:
     def __init__(__self__, *,
@@ -14238,6 +17911,12 @@ class NdbDatabaseRestoreTimeMachineScheduleContinuousScheduleArgs:
         pulumi.set(self, "snapshots_per_day", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestoreTimeMachineScheduleDailyScheduleArgsDict(TypedDict):
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbDatabaseRestoreTimeMachineScheduleDailyScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestoreTimeMachineScheduleDailyScheduleArgs:
     def __init__(__self__, *,
@@ -14254,6 +17933,13 @@ class NdbDatabaseRestoreTimeMachineScheduleDailyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbDatabaseRestoreTimeMachineScheduleMonthlyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbDatabaseRestoreTimeMachineScheduleMonthlyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseRestoreTimeMachineScheduleMonthlyScheduleArgs:
@@ -14283,6 +17969,15 @@ class NdbDatabaseRestoreTimeMachineScheduleMonthlyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbDatabaseRestoreTimeMachineScheduleQuartelyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+        start_month: NotRequired[pulumi.Input[str]]
+        start_month_value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseRestoreTimeMachineScheduleQuartelyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseRestoreTimeMachineScheduleQuartelyScheduleArgs:
@@ -14337,6 +18032,15 @@ class NdbDatabaseRestoreTimeMachineScheduleQuartelyScheduleArgs:
         pulumi.set(self, "start_month_value", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestoreTimeMachineScheduleSnapshotTimeOfDayArgsDict(TypedDict):
+        extra: NotRequired[pulumi.Input[bool]]
+        hours: NotRequired[pulumi.Input[int]]
+        minutes: NotRequired[pulumi.Input[int]]
+        seconds: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbDatabaseRestoreTimeMachineScheduleSnapshotTimeOfDayArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestoreTimeMachineScheduleSnapshotTimeOfDayArgs:
     def __init__(__self__, *,
@@ -14390,6 +18094,14 @@ class NdbDatabaseRestoreTimeMachineScheduleSnapshotTimeOfDayArgs:
         pulumi.set(self, "seconds", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestoreTimeMachineScheduleWeeklyScheduleArgsDict(TypedDict):
+        day_of_week: NotRequired[pulumi.Input[str]]
+        day_of_week_value: NotRequired[pulumi.Input[str]]
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbDatabaseRestoreTimeMachineScheduleWeeklyScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestoreTimeMachineScheduleWeeklyScheduleArgs:
     def __init__(__self__, *,
@@ -14430,6 +18142,15 @@ class NdbDatabaseRestoreTimeMachineScheduleWeeklyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbDatabaseRestoreTimeMachineScheduleYearlyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+        month: NotRequired[pulumi.Input[str]]
+        month_value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseRestoreTimeMachineScheduleYearlyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseRestoreTimeMachineScheduleYearlyScheduleArgs:
@@ -14483,6 +18204,40 @@ class NdbDatabaseRestoreTimeMachineScheduleYearlyScheduleArgs:
     def month_value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "month_value", value)
 
+
+if not MYPY:
+    class NdbDatabaseRestoreTimeMachineSlaArgsDict(TypedDict):
+        continuous_retention: NotRequired[pulumi.Input[int]]
+        current_active_frequency: NotRequired[pulumi.Input[str]]
+        daily_retention: NotRequired[pulumi.Input[int]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        id: NotRequired[pulumi.Input[str]]
+        monthly_retention: NotRequired[pulumi.Input[int]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        pitr_enabled: NotRequired[pulumi.Input[bool]]
+        quarterly_retention: NotRequired[pulumi.Input[int]]
+        reference_count: NotRequired[pulumi.Input[int]]
+        system_sla: NotRequired[pulumi.Input[bool]]
+        unique_name: NotRequired[pulumi.Input[str]]
+        weekly_retention: NotRequired[pulumi.Input[int]]
+        yearly_retention: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbDatabaseRestoreTimeMachineSlaArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseRestoreTimeMachineSlaArgs:
@@ -14711,6 +18466,16 @@ class NdbDatabaseRestoreTimeMachineSlaArgs:
         pulumi.set(self, "yearly_retention", value)
 
 
+if not MYPY:
+    class NdbDatabaseRestoreTimeMachineTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseRestoreTimeMachineTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseRestoreTimeMachineTagArgs:
     def __init__(__self__, *,
@@ -14775,6 +18540,53 @@ class NdbDatabaseRestoreTimeMachineTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbDatabaseScaleDatabaseNodeArgsDict(TypedDict):
+        access_level: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        database_id: NotRequired[pulumi.Input[str]]
+        database_status: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        dbserver: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        dbserver_id: NotRequired[pulumi.Input[str]]
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        id: NotRequired[pulumi.Input[str]]
+        infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleDatabaseNodeInfoArgsDict']]]]
+        """
+        info of instance
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        primary: NotRequired[pulumi.Input[bool]]
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleDatabaseNodePropertyArgsDict']]]]
+        """
+        properties of database created
+        """
+        protection_domain_id: NotRequired[pulumi.Input[str]]
+        protection_domains: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleDatabaseNodeProtectionDomainArgsDict']]]]
+        software_installation_id: NotRequired[pulumi.Input[str]]
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of instance
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleDatabaseNodeTagArgsDict']]]]
+        """
+        allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        """
+elif False:
+    NdbDatabaseScaleDatabaseNodeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseScaleDatabaseNodeArgs:
@@ -15031,6 +18843,16 @@ class NdbDatabaseScaleDatabaseNodeArgs:
         pulumi.set(self, "tags", value)
 
 
+if not MYPY:
+    class NdbDatabaseScaleDatabaseNodeInfoArgsDict(TypedDict):
+        info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        info of instance
+        """
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbDatabaseScaleDatabaseNodeInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScaleDatabaseNodeInfoArgs:
     def __init__(__self__, *,
@@ -15065,6 +18887,22 @@ class NdbDatabaseScaleDatabaseNodeInfoArgs:
     def secure_info(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "secure_info", value)
 
+
+if not MYPY:
+    class NdbDatabaseScaleDatabaseNodePropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseScaleDatabaseNodePropertyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseScaleDatabaseNodePropertyArgs:
@@ -15140,6 +18978,45 @@ class NdbDatabaseScaleDatabaseNodePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbDatabaseScaleDatabaseNodeProtectionDomainArgsDict(TypedDict):
+        assoc_entities: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        cloud_id: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        era_created: NotRequired[pulumi.Input[bool]]
+        id: NotRequired[pulumi.Input[str]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        primary_host: NotRequired[pulumi.Input[str]]
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleDatabaseNodeProtectionDomainPropertyArgsDict']]]]
+        """
+        properties of database created
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of instance
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        type of database
+        """
+elif False:
+    NdbDatabaseScaleDatabaseNodeProtectionDomainArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseScaleDatabaseNodeProtectionDomainArgs:
@@ -15332,6 +19209,22 @@ class NdbDatabaseScaleDatabaseNodeProtectionDomainArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class NdbDatabaseScaleDatabaseNodeProtectionDomainPropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseScaleDatabaseNodeProtectionDomainPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScaleDatabaseNodeProtectionDomainPropertyArgs:
     def __init__(__self__, *,
@@ -15407,6 +19300,16 @@ class NdbDatabaseScaleDatabaseNodeProtectionDomainPropertyArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbDatabaseScaleDatabaseNodeTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseScaleDatabaseNodeTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScaleDatabaseNodeTagArgs:
     def __init__(__self__, *,
@@ -15472,6 +19375,13 @@ class NdbDatabaseScaleDatabaseNodeTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbDatabaseScaleInfoArgsDict(TypedDict):
+        bpg_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleInfoBpgConfigArgsDict']]]]
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbDatabaseScaleInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScaleInfoArgs:
     def __init__(__self__, *,
@@ -15500,6 +19410,14 @@ class NdbDatabaseScaleInfoArgs:
     def secure_info(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "secure_info", value)
 
+
+if not MYPY:
+    class NdbDatabaseScaleInfoBpgConfigArgsDict(TypedDict):
+        bpg_db_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleInfoBpgConfigBpgDbParamArgsDict']]]]
+        storages: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleInfoBpgConfigStorageArgsDict']]]]
+        vm_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleInfoBpgConfigVmPropertyArgsDict']]]]
+elif False:
+    NdbDatabaseScaleInfoBpgConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseScaleInfoBpgConfigArgs:
@@ -15541,6 +19459,17 @@ class NdbDatabaseScaleInfoBpgConfigArgs:
     def vm_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleInfoBpgConfigVmPropertyArgs']]]]):
         pulumi.set(self, "vm_properties", value)
 
+
+if not MYPY:
+    class NdbDatabaseScaleInfoBpgConfigBpgDbParamArgsDict(TypedDict):
+        effective_cache_size: NotRequired[pulumi.Input[str]]
+        maintenance_work_mem: NotRequired[pulumi.Input[str]]
+        max_parallel_workers_per_gather: NotRequired[pulumi.Input[str]]
+        max_worker_processes: NotRequired[pulumi.Input[str]]
+        shared_buffers: NotRequired[pulumi.Input[str]]
+        work_mem: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseScaleInfoBpgConfigBpgDbParamArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseScaleInfoBpgConfigBpgDbParamArgs:
@@ -15619,6 +19548,14 @@ class NdbDatabaseScaleInfoBpgConfigBpgDbParamArgs:
         pulumi.set(self, "work_mem", value)
 
 
+if not MYPY:
+    class NdbDatabaseScaleInfoBpgConfigStorageArgsDict(TypedDict):
+        archive_storages: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleInfoBpgConfigStorageArchiveStorageArgsDict']]]]
+        data_disks: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleInfoBpgConfigStorageDataDiskArgsDict']]]]
+        log_disks: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleInfoBpgConfigStorageLogDiskArgsDict']]]]
+elif False:
+    NdbDatabaseScaleInfoBpgConfigStorageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScaleInfoBpgConfigStorageArgs:
     def __init__(__self__, *,
@@ -15660,6 +19597,12 @@ class NdbDatabaseScaleInfoBpgConfigStorageArgs:
         pulumi.set(self, "log_disks", value)
 
 
+if not MYPY:
+    class NdbDatabaseScaleInfoBpgConfigStorageArchiveStorageArgsDict(TypedDict):
+        size: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbDatabaseScaleInfoBpgConfigStorageArchiveStorageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScaleInfoBpgConfigStorageArchiveStorageArgs:
     def __init__(__self__, *,
@@ -15677,6 +19620,12 @@ class NdbDatabaseScaleInfoBpgConfigStorageArchiveStorageArgs:
         pulumi.set(self, "size", value)
 
 
+if not MYPY:
+    class NdbDatabaseScaleInfoBpgConfigStorageDataDiskArgsDict(TypedDict):
+        count: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbDatabaseScaleInfoBpgConfigStorageDataDiskArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScaleInfoBpgConfigStorageDataDiskArgs:
     def __init__(__self__, *,
@@ -15693,6 +19642,13 @@ class NdbDatabaseScaleInfoBpgConfigStorageDataDiskArgs:
     def count(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "count", value)
 
+
+if not MYPY:
+    class NdbDatabaseScaleInfoBpgConfigStorageLogDiskArgsDict(TypedDict):
+        count: NotRequired[pulumi.Input[float]]
+        size: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbDatabaseScaleInfoBpgConfigStorageLogDiskArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseScaleInfoBpgConfigStorageLogDiskArgs:
@@ -15722,6 +19678,18 @@ class NdbDatabaseScaleInfoBpgConfigStorageLogDiskArgs:
     def size(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "size", value)
 
+
+if not MYPY:
+    class NdbDatabaseScaleInfoBpgConfigVmPropertyArgsDict(TypedDict):
+        dirty_background_ratio: NotRequired[pulumi.Input[float]]
+        dirty_expire_centisecs: NotRequired[pulumi.Input[float]]
+        dirty_ratio: NotRequired[pulumi.Input[float]]
+        dirty_writeback_centisecs: NotRequired[pulumi.Input[float]]
+        nr_hugepages: NotRequired[pulumi.Input[float]]
+        overcommit_memory: NotRequired[pulumi.Input[float]]
+        swappiness: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbDatabaseScaleInfoBpgConfigVmPropertyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseScaleInfoBpgConfigVmPropertyArgs:
@@ -15812,6 +19780,15 @@ class NdbDatabaseScaleInfoBpgConfigVmPropertyArgs:
         pulumi.set(self, "swappiness", value)
 
 
+if not MYPY:
+    class NdbDatabaseScaleLcmConfigArgsDict(TypedDict):
+        expiry_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleLcmConfigExpiryDetailArgsDict']]]]
+        post_delete_commands: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleLcmConfigPostDeleteCommandArgsDict']]]]
+        pre_delete_commands: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleLcmConfigPreDeleteCommandArgsDict']]]]
+        refresh_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleLcmConfigRefreshDetailArgsDict']]]]
+elif False:
+    NdbDatabaseScaleLcmConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScaleLcmConfigArgs:
     def __init__(__self__, *,
@@ -15864,6 +19841,20 @@ class NdbDatabaseScaleLcmConfigArgs:
     def refresh_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleLcmConfigRefreshDetailArgs']]]]):
         pulumi.set(self, "refresh_details", value)
 
+
+if not MYPY:
+    class NdbDatabaseScaleLcmConfigExpiryDetailArgsDict(TypedDict):
+        delete_database: NotRequired[pulumi.Input[bool]]
+        delete_time_machine: NotRequired[pulumi.Input[bool]]
+        delete_vm: NotRequired[pulumi.Input[bool]]
+        effective_timestamp: NotRequired[pulumi.Input[str]]
+        expire_in_days: NotRequired[pulumi.Input[int]]
+        expiry_date_timezone: NotRequired[pulumi.Input[str]]
+        expiry_timestamp: NotRequired[pulumi.Input[str]]
+        remind_before_in_days: NotRequired[pulumi.Input[int]]
+        user_created: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbDatabaseScaleLcmConfigExpiryDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseScaleLcmConfigExpiryDetailArgs:
@@ -15978,6 +19969,12 @@ class NdbDatabaseScaleLcmConfigExpiryDetailArgs:
         pulumi.set(self, "user_created", value)
 
 
+if not MYPY:
+    class NdbDatabaseScaleLcmConfigPostDeleteCommandArgsDict(TypedDict):
+        command: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseScaleLcmConfigPostDeleteCommandArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScaleLcmConfigPostDeleteCommandArgs:
     def __init__(__self__, *,
@@ -15995,6 +19992,12 @@ class NdbDatabaseScaleLcmConfigPostDeleteCommandArgs:
         pulumi.set(self, "command", value)
 
 
+if not MYPY:
+    class NdbDatabaseScaleLcmConfigPreDeleteCommandArgsDict(TypedDict):
+        command: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseScaleLcmConfigPreDeleteCommandArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScaleLcmConfigPreDeleteCommandArgs:
     def __init__(__self__, *,
@@ -16011,6 +20014,18 @@ class NdbDatabaseScaleLcmConfigPreDeleteCommandArgs:
     def command(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "command", value)
 
+
+if not MYPY:
+    class NdbDatabaseScaleLcmConfigRefreshDetailArgsDict(TypedDict):
+        last_refresh_date: NotRequired[pulumi.Input[str]]
+        next_refresh_date: NotRequired[pulumi.Input[str]]
+        refresh_date_timezone: NotRequired[pulumi.Input[str]]
+        refresh_in_days: NotRequired[pulumi.Input[int]]
+        refresh_in_hours: NotRequired[pulumi.Input[int]]
+        refresh_in_months: NotRequired[pulumi.Input[int]]
+        refresh_time: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseScaleLcmConfigRefreshDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseScaleLcmConfigRefreshDetailArgs:
@@ -16100,6 +20115,52 @@ class NdbDatabaseScaleLcmConfigRefreshDetailArgs:
     def refresh_time(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "refresh_time", value)
 
+
+if not MYPY:
+    class NdbDatabaseScaleLinkedDatabaseArgsDict(TypedDict):
+        database_name: NotRequired[pulumi.Input[str]]
+        """
+        name of database
+        """
+        database_status: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        id: NotRequired[pulumi.Input[str]]
+        infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleLinkedDatabaseInfoArgsDict']]]]
+        """
+        info of instance
+        """
+        metric: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        parent_database_id: NotRequired[pulumi.Input[str]]
+        """
+        parent database id
+        """
+        parent_linked_database_id: NotRequired[pulumi.Input[str]]
+        snapshot_id: NotRequired[pulumi.Input[str]]
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of instance
+        """
+        timezone: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseScaleLinkedDatabaseArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseScaleLinkedDatabaseArgs:
@@ -16312,6 +20373,16 @@ class NdbDatabaseScaleLinkedDatabaseArgs:
         pulumi.set(self, "timezone", value)
 
 
+if not MYPY:
+    class NdbDatabaseScaleLinkedDatabaseInfoArgsDict(TypedDict):
+        info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        info of instance
+        """
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbDatabaseScaleLinkedDatabaseInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScaleLinkedDatabaseInfoArgs:
     def __init__(__self__, *,
@@ -16347,6 +20418,16 @@ class NdbDatabaseScaleLinkedDatabaseInfoArgs:
         pulumi.set(self, "secure_info", value)
 
 
+if not MYPY:
+    class NdbDatabaseScalePropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseScalePropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScalePropertyArgs:
     def __init__(__self__, *,
@@ -16381,6 +20462,16 @@ class NdbDatabaseScalePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbDatabaseScaleTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseScaleTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseScaleTagArgs:
@@ -16446,6 +20537,66 @@ class NdbDatabaseScaleTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbDatabaseScaleTimeMachineArgsDict(TypedDict):
+        access_level: NotRequired[pulumi.Input[str]]
+        clone: NotRequired[pulumi.Input[bool]]
+        """
+        whether instance is cloned or not
+        """
+        clones: NotRequired[pulumi.Input[str]]
+        clustered: NotRequired[pulumi.Input[bool]]
+        database: NotRequired[pulumi.Input[str]]
+        database_id: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        ea_status: NotRequired[pulumi.Input[str]]
+        id: NotRequired[pulumi.Input[str]]
+        metric: NotRequired[pulumi.Input[str]]
+        """
+        Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleTimeMachinePropertyArgsDict']]]]
+        """
+        properties of database created
+        """
+        schedule_id: NotRequired[pulumi.Input[str]]
+        schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleTimeMachineScheduleArgsDict']]]]
+        scope: NotRequired[pulumi.Input[str]]
+        sla_id: NotRequired[pulumi.Input[str]]
+        sla_update_in_progress: NotRequired[pulumi.Input[bool]]
+        sla_update_metadata: NotRequired[pulumi.Input[str]]
+        slas: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleTimeMachineSlaArgsDict']]]]
+        source_nx_clusters: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of instance
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleTimeMachineTagArgsDict']]]]
+        """
+        allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        type of database
+        """
+elif False:
+    NdbDatabaseScaleTimeMachineArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseScaleTimeMachineArgs:
@@ -16794,6 +20945,22 @@ class NdbDatabaseScaleTimeMachineArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class NdbDatabaseScaleTimeMachinePropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseScaleTimeMachinePropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScaleTimeMachinePropertyArgs:
     def __init__(__self__, *,
@@ -16868,6 +21035,45 @@ class NdbDatabaseScaleTimeMachinePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbDatabaseScaleTimeMachineScheduleArgsDict(TypedDict):
+        continuous_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleTimeMachineScheduleContinuousScheduleArgsDict']]]]
+        daily_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleTimeMachineScheduleDailyScheduleArgsDict']]]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        global_policy: NotRequired[pulumi.Input[bool]]
+        id: NotRequired[pulumi.Input[str]]
+        monthly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleTimeMachineScheduleMonthlyScheduleArgsDict']]]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        quartely_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleTimeMachineScheduleQuartelyScheduleArgsDict']]]]
+        reference_count: NotRequired[pulumi.Input[int]]
+        snapshot_time_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleTimeMachineScheduleSnapshotTimeOfDayArgsDict']]]]
+        start_time: NotRequired[pulumi.Input[str]]
+        system_policy: NotRequired[pulumi.Input[bool]]
+        time_zone: NotRequired[pulumi.Input[str]]
+        """
+        timezone on which instance is created xw
+        """
+        unique_name: NotRequired[pulumi.Input[str]]
+        weekly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleArgsDict']]]]
+        yearly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgsDict']]]]
+elif False:
+    NdbDatabaseScaleTimeMachineScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseScaleTimeMachineScheduleArgs:
@@ -17124,6 +21330,14 @@ class NdbDatabaseScaleTimeMachineScheduleArgs:
         pulumi.set(self, "yearly_schedules", value)
 
 
+if not MYPY:
+    class NdbDatabaseScaleTimeMachineScheduleContinuousScheduleArgsDict(TypedDict):
+        enabled: NotRequired[pulumi.Input[bool]]
+        log_backup_interval: NotRequired[pulumi.Input[int]]
+        snapshots_per_day: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbDatabaseScaleTimeMachineScheduleContinuousScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScaleTimeMachineScheduleContinuousScheduleArgs:
     def __init__(__self__, *,
@@ -17165,6 +21379,12 @@ class NdbDatabaseScaleTimeMachineScheduleContinuousScheduleArgs:
         pulumi.set(self, "snapshots_per_day", value)
 
 
+if not MYPY:
+    class NdbDatabaseScaleTimeMachineScheduleDailyScheduleArgsDict(TypedDict):
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbDatabaseScaleTimeMachineScheduleDailyScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScaleTimeMachineScheduleDailyScheduleArgs:
     def __init__(__self__, *,
@@ -17181,6 +21401,13 @@ class NdbDatabaseScaleTimeMachineScheduleDailyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbDatabaseScaleTimeMachineScheduleMonthlyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbDatabaseScaleTimeMachineScheduleMonthlyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseScaleTimeMachineScheduleMonthlyScheduleArgs:
@@ -17210,6 +21437,15 @@ class NdbDatabaseScaleTimeMachineScheduleMonthlyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbDatabaseScaleTimeMachineScheduleQuartelyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+        start_month: NotRequired[pulumi.Input[str]]
+        start_month_value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseScaleTimeMachineScheduleQuartelyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseScaleTimeMachineScheduleQuartelyScheduleArgs:
@@ -17264,6 +21500,15 @@ class NdbDatabaseScaleTimeMachineScheduleQuartelyScheduleArgs:
         pulumi.set(self, "start_month_value", value)
 
 
+if not MYPY:
+    class NdbDatabaseScaleTimeMachineScheduleSnapshotTimeOfDayArgsDict(TypedDict):
+        extra: NotRequired[pulumi.Input[bool]]
+        hours: NotRequired[pulumi.Input[int]]
+        minutes: NotRequired[pulumi.Input[int]]
+        seconds: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbDatabaseScaleTimeMachineScheduleSnapshotTimeOfDayArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScaleTimeMachineScheduleSnapshotTimeOfDayArgs:
     def __init__(__self__, *,
@@ -17317,6 +21562,14 @@ class NdbDatabaseScaleTimeMachineScheduleSnapshotTimeOfDayArgs:
         pulumi.set(self, "seconds", value)
 
 
+if not MYPY:
+    class NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleArgsDict(TypedDict):
+        day_of_week: NotRequired[pulumi.Input[str]]
+        day_of_week_value: NotRequired[pulumi.Input[str]]
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleArgs:
     def __init__(__self__, *,
@@ -17357,6 +21610,15 @@ class NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+        month: NotRequired[pulumi.Input[str]]
+        month_value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs:
@@ -17410,6 +21672,40 @@ class NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs:
     def month_value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "month_value", value)
 
+
+if not MYPY:
+    class NdbDatabaseScaleTimeMachineSlaArgsDict(TypedDict):
+        continuous_retention: NotRequired[pulumi.Input[int]]
+        current_active_frequency: NotRequired[pulumi.Input[str]]
+        daily_retention: NotRequired[pulumi.Input[int]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        id: NotRequired[pulumi.Input[str]]
+        monthly_retention: NotRequired[pulumi.Input[int]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        pitr_enabled: NotRequired[pulumi.Input[bool]]
+        quarterly_retention: NotRequired[pulumi.Input[int]]
+        reference_count: NotRequired[pulumi.Input[int]]
+        system_sla: NotRequired[pulumi.Input[bool]]
+        unique_name: NotRequired[pulumi.Input[str]]
+        weekly_retention: NotRequired[pulumi.Input[int]]
+        yearly_retention: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbDatabaseScaleTimeMachineSlaArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseScaleTimeMachineSlaArgs:
@@ -17638,6 +21934,16 @@ class NdbDatabaseScaleTimeMachineSlaArgs:
         pulumi.set(self, "yearly_retention", value)
 
 
+if not MYPY:
+    class NdbDatabaseScaleTimeMachineTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseScaleTimeMachineTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseScaleTimeMachineTagArgs:
     def __init__(__self__, *,
@@ -17703,6 +22009,15 @@ class NdbDatabaseScaleTimeMachineTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbDatabaseSnapshotLcmConfigArgsDict(TypedDict):
+        expiry_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseSnapshotLcmConfigExpiryDetailArgsDict']]]]
+        post_delete_commands: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseSnapshotLcmConfigPostDeleteCommandArgsDict']]]]
+        pre_delete_commands: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseSnapshotLcmConfigPreDeleteCommandArgsDict']]]]
+        refresh_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseSnapshotLcmConfigRefreshDetailArgsDict']]]]
+elif False:
+    NdbDatabaseSnapshotLcmConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseSnapshotLcmConfigArgs:
     def __init__(__self__, *,
@@ -17755,6 +22070,23 @@ class NdbDatabaseSnapshotLcmConfigArgs:
     def refresh_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseSnapshotLcmConfigRefreshDetailArgs']]]]):
         pulumi.set(self, "refresh_details", value)
 
+
+if not MYPY:
+    class NdbDatabaseSnapshotLcmConfigExpiryDetailArgsDict(TypedDict):
+        delete_database: NotRequired[pulumi.Input[bool]]
+        delete_time_machine: NotRequired[pulumi.Input[bool]]
+        delete_vm: NotRequired[pulumi.Input[bool]]
+        effective_timestamp: NotRequired[pulumi.Input[str]]
+        expire_in_days: NotRequired[pulumi.Input[int]]
+        expiry_date_timezone: NotRequired[pulumi.Input[str]]
+        """
+        Default is set to Asia/Calcutta
+        """
+        expiry_timestamp: NotRequired[pulumi.Input[str]]
+        remind_before_in_days: NotRequired[pulumi.Input[int]]
+        user_created: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbDatabaseSnapshotLcmConfigExpiryDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseSnapshotLcmConfigExpiryDetailArgs:
@@ -17875,6 +22207,12 @@ class NdbDatabaseSnapshotLcmConfigExpiryDetailArgs:
         pulumi.set(self, "user_created", value)
 
 
+if not MYPY:
+    class NdbDatabaseSnapshotLcmConfigPostDeleteCommandArgsDict(TypedDict):
+        command: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseSnapshotLcmConfigPostDeleteCommandArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseSnapshotLcmConfigPostDeleteCommandArgs:
     def __init__(__self__, *,
@@ -17892,6 +22230,12 @@ class NdbDatabaseSnapshotLcmConfigPostDeleteCommandArgs:
         pulumi.set(self, "command", value)
 
 
+if not MYPY:
+    class NdbDatabaseSnapshotLcmConfigPreDeleteCommandArgsDict(TypedDict):
+        command: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseSnapshotLcmConfigPreDeleteCommandArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseSnapshotLcmConfigPreDeleteCommandArgs:
     def __init__(__self__, *,
@@ -17908,6 +22252,18 @@ class NdbDatabaseSnapshotLcmConfigPreDeleteCommandArgs:
     def command(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "command", value)
 
+
+if not MYPY:
+    class NdbDatabaseSnapshotLcmConfigRefreshDetailArgsDict(TypedDict):
+        last_refresh_date: NotRequired[pulumi.Input[str]]
+        next_refresh_date: NotRequired[pulumi.Input[str]]
+        refresh_date_timezone: NotRequired[pulumi.Input[str]]
+        refresh_in_days: NotRequired[pulumi.Input[int]]
+        refresh_in_hours: NotRequired[pulumi.Input[int]]
+        refresh_in_months: NotRequired[pulumi.Input[int]]
+        refresh_time: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseSnapshotLcmConfigRefreshDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseSnapshotLcmConfigRefreshDetailArgs:
@@ -17998,6 +22354,22 @@ class NdbDatabaseSnapshotLcmConfigRefreshDetailArgs:
         pulumi.set(self, "refresh_time", value)
 
 
+if not MYPY:
+    class NdbDatabaseSnapshotPropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of snapshot
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Snapshot name. Default value is era_manual_snapshot.
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseSnapshotPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseSnapshotPropertyArgs:
     def __init__(__self__, *,
@@ -18073,6 +22445,16 @@ class NdbDatabaseSnapshotPropertyArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbDatabaseSnapshotTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseSnapshotTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseSnapshotTagArgs:
     def __init__(__self__, *,
@@ -18137,6 +22519,19 @@ class NdbDatabaseSnapshotTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbDatabaseTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbDatabaseTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseTagArgs:
@@ -18208,6 +22603,54 @@ class NdbDatabaseTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbDatabaseTimeMachineArgsDict(TypedDict):
+        access_level: NotRequired[pulumi.Input[str]]
+        clone: NotRequired[pulumi.Input[bool]]
+        clones: NotRequired[pulumi.Input[str]]
+        clustered: NotRequired[pulumi.Input[bool]]
+        """
+        - (Optional) If clustered database. Default: false
+        """
+        database: NotRequired[pulumi.Input[str]]
+        database_id: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        date_modified: NotRequired[pulumi.Input[str]]
+        description: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) The description
+        """
+        ea_status: NotRequired[pulumi.Input[str]]
+        id: NotRequired[pulumi.Input[str]]
+        metric: NotRequired[pulumi.Input[str]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) Name of the instance.
+        """
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimeMachinePropertyArgsDict']]]]
+        """
+        List of all the properties
+        """
+        schedule_id: NotRequired[pulumi.Input[str]]
+        schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimeMachineScheduleArgsDict']]]]
+        """
+        - (Optional) schedule for snapshots
+        """
+        scope: NotRequired[pulumi.Input[str]]
+        sla_id: NotRequired[pulumi.Input[str]]
+        sla_update_in_progress: NotRequired[pulumi.Input[bool]]
+        sla_update_metadata: NotRequired[pulumi.Input[str]]
+        slas: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimeMachineSlaArgsDict']]]]
+        source_nx_clusters: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        status: NotRequired[pulumi.Input[str]]
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimeMachineTagArgsDict']]]]
+        """
+        - (Optional) tags
+        """
+        type: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseTimeMachineArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseTimeMachineArgs:
@@ -18540,6 +22983,25 @@ class NdbDatabaseTimeMachineArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class NdbDatabaseTimeMachinePropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) The description
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) Name of the instance.
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbDatabaseTimeMachinePropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseTimeMachinePropertyArgs:
     def __init__(__self__, *,
@@ -18618,6 +23080,36 @@ class NdbDatabaseTimeMachinePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbDatabaseTimeMachineScheduleArgsDict(TypedDict):
+        continuous_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimeMachineScheduleContinuousScheduleArgsDict']]]]
+        daily_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimeMachineScheduleDailyScheduleArgsDict']]]]
+        date_created: NotRequired[pulumi.Input[str]]
+        date_modified: NotRequired[pulumi.Input[str]]
+        description: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) The description
+        """
+        global_policy: NotRequired[pulumi.Input[bool]]
+        id: NotRequired[pulumi.Input[str]]
+        monthly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimeMachineScheduleMonthlyScheduleArgsDict']]]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) Name of the instance.
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        quartely_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimeMachineScheduleQuartelyScheduleArgsDict']]]]
+        reference_count: NotRequired[pulumi.Input[int]]
+        snapshot_time_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayArgsDict']]]]
+        start_time: NotRequired[pulumi.Input[str]]
+        system_policy: NotRequired[pulumi.Input[bool]]
+        time_zone: NotRequired[pulumi.Input[str]]
+        unique_name: NotRequired[pulumi.Input[str]]
+        weekly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimeMachineScheduleWeeklyScheduleArgsDict']]]]
+        yearly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimeMachineScheduleYearlyScheduleArgsDict']]]]
+elif False:
+    NdbDatabaseTimeMachineScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseTimeMachineScheduleArgs:
@@ -18862,6 +23354,14 @@ class NdbDatabaseTimeMachineScheduleArgs:
         pulumi.set(self, "yearly_schedules", value)
 
 
+if not MYPY:
+    class NdbDatabaseTimeMachineScheduleContinuousScheduleArgsDict(TypedDict):
+        enabled: NotRequired[pulumi.Input[bool]]
+        log_backup_interval: NotRequired[pulumi.Input[int]]
+        snapshots_per_day: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbDatabaseTimeMachineScheduleContinuousScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseTimeMachineScheduleContinuousScheduleArgs:
     def __init__(__self__, *,
@@ -18903,6 +23403,12 @@ class NdbDatabaseTimeMachineScheduleContinuousScheduleArgs:
         pulumi.set(self, "snapshots_per_day", value)
 
 
+if not MYPY:
+    class NdbDatabaseTimeMachineScheduleDailyScheduleArgsDict(TypedDict):
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbDatabaseTimeMachineScheduleDailyScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseTimeMachineScheduleDailyScheduleArgs:
     def __init__(__self__, *,
@@ -18919,6 +23425,13 @@ class NdbDatabaseTimeMachineScheduleDailyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbDatabaseTimeMachineScheduleMonthlyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbDatabaseTimeMachineScheduleMonthlyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseTimeMachineScheduleMonthlyScheduleArgs:
@@ -18948,6 +23461,15 @@ class NdbDatabaseTimeMachineScheduleMonthlyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbDatabaseTimeMachineScheduleQuartelyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+        start_month: NotRequired[pulumi.Input[str]]
+        start_month_value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseTimeMachineScheduleQuartelyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseTimeMachineScheduleQuartelyScheduleArgs:
@@ -19001,6 +23523,24 @@ class NdbDatabaseTimeMachineScheduleQuartelyScheduleArgs:
     def start_month_value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "start_month_value", value)
 
+
+if not MYPY:
+    class NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayArgsDict(TypedDict):
+        extra: NotRequired[pulumi.Input[bool]]
+        hours: NotRequired[pulumi.Input[int]]
+        """
+        - (Required) hours
+        """
+        minutes: NotRequired[pulumi.Input[int]]
+        """
+        - (Required) minutes
+        """
+        seconds: NotRequired[pulumi.Input[int]]
+        """
+        - (Required) seconds
+        """
+elif False:
+    NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayArgs:
@@ -19069,6 +23609,14 @@ class NdbDatabaseTimeMachineScheduleSnapshotTimeOfDayArgs:
         pulumi.set(self, "seconds", value)
 
 
+if not MYPY:
+    class NdbDatabaseTimeMachineScheduleWeeklyScheduleArgsDict(TypedDict):
+        day_of_week: NotRequired[pulumi.Input[str]]
+        day_of_week_value: NotRequired[pulumi.Input[str]]
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbDatabaseTimeMachineScheduleWeeklyScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseTimeMachineScheduleWeeklyScheduleArgs:
     def __init__(__self__, *,
@@ -19109,6 +23657,18 @@ class NdbDatabaseTimeMachineScheduleWeeklyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbDatabaseTimeMachineScheduleYearlyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+        month: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) month for snapshot
+        """
+        month_value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDatabaseTimeMachineScheduleYearlyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseTimeMachineScheduleYearlyScheduleArgs:
@@ -19168,6 +23728,34 @@ class NdbDatabaseTimeMachineScheduleYearlyScheduleArgs:
     def month_value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "month_value", value)
 
+
+if not MYPY:
+    class NdbDatabaseTimeMachineSlaArgsDict(TypedDict):
+        continuous_retention: NotRequired[pulumi.Input[int]]
+        current_active_frequency: NotRequired[pulumi.Input[str]]
+        daily_retention: NotRequired[pulumi.Input[int]]
+        date_created: NotRequired[pulumi.Input[str]]
+        date_modified: NotRequired[pulumi.Input[str]]
+        description: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) The description
+        """
+        id: NotRequired[pulumi.Input[str]]
+        monthly_retention: NotRequired[pulumi.Input[int]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) Name of the instance.
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        pitr_enabled: NotRequired[pulumi.Input[bool]]
+        quarterly_retention: NotRequired[pulumi.Input[int]]
+        reference_count: NotRequired[pulumi.Input[int]]
+        system_sla: NotRequired[pulumi.Input[bool]]
+        unique_name: NotRequired[pulumi.Input[str]]
+        weekly_retention: NotRequired[pulumi.Input[int]]
+        yearly_retention: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbDatabaseTimeMachineSlaArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseTimeMachineSlaArgs:
@@ -19388,6 +23976,19 @@ class NdbDatabaseTimeMachineSlaArgs:
         pulumi.set(self, "yearly_retention", value)
 
 
+if not MYPY:
+    class NdbDatabaseTimeMachineTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbDatabaseTimeMachineTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseTimeMachineTagArgs:
     def __init__(__self__, *,
@@ -19458,6 +24059,39 @@ class NdbDatabaseTimeMachineTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbDatabaseTimemachineinfoArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        - (Required) name of time machine
+        """
+        schedule: pulumi.Input['NdbDatabaseTimemachineinfoScheduleArgsDict']
+        """
+        - (Optional) schedule for snapshots
+        """
+        autotunelogdrive: NotRequired[pulumi.Input[bool]]
+        """
+        - (Optional) enable auto tune log drive. Default: true
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) description of time machine
+        """
+        sla_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimemachineinfoSlaDetailArgsDict']]]]
+        """
+        -  (optional) SLA details for HA instance
+        """
+        slaid: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) SLA ID for single instance
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimemachineinfoTagArgsDict']]]]
+        """
+        - (Optional) tags
+        """
+elif False:
+    NdbDatabaseTimemachineinfoArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseTimemachineinfoArgs:
@@ -19576,6 +24210,35 @@ class NdbDatabaseTimemachineinfoArgs:
         pulumi.set(self, "tags", value)
 
 
+if not MYPY:
+    class NdbDatabaseTimemachineinfoScheduleArgsDict(TypedDict):
+        continuousschedule: NotRequired[pulumi.Input['NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgsDict']]
+        """
+        - (Optional) snapshot freq and log config
+        """
+        monthlyschedule: NotRequired[pulumi.Input['NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgsDict']]
+        """
+        - (Optional) monthly snapshot config
+        """
+        quartelyschedule: NotRequired[pulumi.Input['NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgsDict']]
+        """
+        - (Optional) quaterly snapshot config
+        """
+        snapshottimeofday: NotRequired[pulumi.Input['NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgsDict']]
+        """
+        - (Optional) daily snapshot config
+        """
+        weeklyschedule: NotRequired[pulumi.Input['NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgsDict']]
+        """
+        - (Optional) weekly snapshot config
+        """
+        yearlyschedule: NotRequired[pulumi.Input['NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgsDict']]
+        """
+        - (Optional) yearly snapshot config
+        """
+elif False:
+    NdbDatabaseTimemachineinfoScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseTimemachineinfoScheduleArgs:
     def __init__(__self__, *,
@@ -19679,6 +24342,23 @@ class NdbDatabaseTimemachineinfoScheduleArgs:
         pulumi.set(self, "yearlyschedule", value)
 
 
+if not MYPY:
+    class NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgsDict(TypedDict):
+        enabled: pulumi.Input[bool]
+        """
+        - (Required) to enable
+        """
+        logbackupinterval: pulumi.Input[int]
+        """
+        - (Required) log catchup interval for database
+        """
+        snapshotsperday: pulumi.Input[int]
+        """
+        - (Required) num of snapshots per day
+        """
+elif False:
+    NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgs:
     def __init__(__self__, *,
@@ -19731,6 +24411,19 @@ class NdbDatabaseTimemachineinfoScheduleContinuousscheduleArgs:
         pulumi.set(self, "snapshotsperday", value)
 
 
+if not MYPY:
+    class NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgsDict(TypedDict):
+        dayofmonth: pulumi.Input[int]
+        """
+        - (Required) day of month to take snapshot
+        """
+        enabled: pulumi.Input[bool]
+        """
+        - (Required) to enable
+        """
+elif False:
+    NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgs:
     def __init__(__self__, *,
@@ -19767,6 +24460,23 @@ class NdbDatabaseTimemachineinfoScheduleMonthlyscheduleArgs:
     def enabled(self, value: pulumi.Input[bool]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgsDict(TypedDict):
+        dayofmonth: pulumi.Input[int]
+        """
+        - (Required) month's day for snapshot
+        """
+        enabled: pulumi.Input[bool]
+        """
+        - (Required) to enable
+        """
+        startmonth: pulumi.Input[str]
+        """
+        - (Required) quarter start month
+        """
+elif False:
+    NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgs:
@@ -19820,6 +24530,23 @@ class NdbDatabaseTimemachineinfoScheduleQuartelyscheduleArgs:
         pulumi.set(self, "startmonth", value)
 
 
+if not MYPY:
+    class NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgsDict(TypedDict):
+        hours: pulumi.Input[int]
+        """
+        - (Required) hours
+        """
+        minutes: pulumi.Input[int]
+        """
+        - (Required) minutes
+        """
+        seconds: pulumi.Input[int]
+        """
+        - (Required) seconds
+        """
+elif False:
+    NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgs:
     def __init__(__self__, *,
@@ -19872,6 +24599,19 @@ class NdbDatabaseTimemachineinfoScheduleSnapshottimeofdayArgs:
         pulumi.set(self, "seconds", value)
 
 
+if not MYPY:
+    class NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgsDict(TypedDict):
+        dayofweek: pulumi.Input[str]
+        """
+        - (Required) day of week to take snaphsot. Eg. "WEDNESDAY"
+        """
+        enabled: pulumi.Input[bool]
+        """
+        - (Required) to enable
+        """
+elif False:
+    NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgs:
     def __init__(__self__, *,
@@ -19908,6 +24648,23 @@ class NdbDatabaseTimemachineinfoScheduleWeeklyscheduleArgs:
     def enabled(self, value: pulumi.Input[bool]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgsDict(TypedDict):
+        dayofmonth: pulumi.Input[int]
+        """
+        - (Required) day of month to take snapshot
+        """
+        enabled: pulumi.Input[bool]
+        """
+        - (Required) to enable
+        """
+        month: pulumi.Input[str]
+        """
+        - (Required) month for snapshot
+        """
+elif False:
+    NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgs:
@@ -19961,6 +24718,17 @@ class NdbDatabaseTimemachineinfoScheduleYearlyscheduleArgs:
         pulumi.set(self, "month", value)
 
 
+if not MYPY:
+    class NdbDatabaseTimemachineinfoSlaDetailArgsDict(TypedDict):
+        primary_slas: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimemachineinfoSlaDetailPrimarySlaArgsDict']]]]
+        """
+        - (Required) primary sla details
+        * `primary_sla.sla_id` :- (Required) sla id
+        * `primary_sla.nx_cluster_ids` -: (Optioanl) cluster ids
+        """
+elif False:
+    NdbDatabaseTimemachineinfoSlaDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDatabaseTimemachineinfoSlaDetailArgs:
     def __init__(__self__, *,
@@ -19987,6 +24755,16 @@ class NdbDatabaseTimemachineinfoSlaDetailArgs:
     def primary_slas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbDatabaseTimemachineinfoSlaDetailPrimarySlaArgs']]]]):
         pulumi.set(self, "primary_slas", value)
 
+
+if not MYPY:
+    class NdbDatabaseTimemachineinfoSlaDetailPrimarySlaArgsDict(TypedDict):
+        sla_id: pulumi.Input[str]
+        """
+        description of SLA ID.
+        """
+        nx_cluster_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+elif False:
+    NdbDatabaseTimemachineinfoSlaDetailPrimarySlaArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseTimemachineinfoSlaDetailPrimarySlaArgs:
@@ -20021,6 +24799,19 @@ class NdbDatabaseTimemachineinfoSlaDetailPrimarySlaArgs:
     def nx_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "nx_cluster_ids", value)
 
+
+if not MYPY:
+    class NdbDatabaseTimemachineinfoTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbDatabaseTimemachineinfoTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDatabaseTimemachineinfoTagArgs:
@@ -20093,6 +24884,14 @@ class NdbDatabaseTimemachineinfoTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbDbserverVmCredentialArgsDict(TypedDict):
+        password: pulumi.Input[str]
+        username: pulumi.Input[str]
+        label: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDbserverVmCredentialArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDbserverVmCredentialArgs:
     def __init__(__self__, *,
@@ -20131,6 +24930,22 @@ class NdbDbserverVmCredentialArgs:
     def label(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "label", value)
 
+
+if not MYPY:
+    class NdbDbserverVmMaintenanceTasksArgsDict(TypedDict):
+        maintenance_window_id: NotRequired[pulumi.Input[str]]
+        """
+        Associate an existing maintenance window id. NDB starts OS patching or database patching as per the schedule defined in the maintenance window.
+        """
+        tasks: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbDbserverVmMaintenanceTasksTaskArgsDict']]]]
+        """
+        Tasks for the maintenance.
+        * `tasks.task_type`: use this option if you want NDB to perform database patching or OS patching automatically. Supports [ OS_PATCHING, DB_PATCHING ].
+        * `tasks.pre_command`: add pre (operating system and database patching) commands.
+        * `tasks.post_command`:add post (operating system and database patching) commands.
+        """
+elif False:
+    NdbDbserverVmMaintenanceTasksArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDbserverVmMaintenanceTasksArgs:
@@ -20177,6 +24992,14 @@ class NdbDbserverVmMaintenanceTasksArgs:
         pulumi.set(self, "tasks", value)
 
 
+if not MYPY:
+    class NdbDbserverVmMaintenanceTasksTaskArgsDict(TypedDict):
+        post_command: NotRequired[pulumi.Input[str]]
+        pre_command: NotRequired[pulumi.Input[str]]
+        task_type: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDbserverVmMaintenanceTasksTaskArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDbserverVmMaintenanceTasksTaskArgs:
     def __init__(__self__, *,
@@ -20218,6 +25041,19 @@ class NdbDbserverVmMaintenanceTasksTaskArgs:
         pulumi.set(self, "task_type", value)
 
 
+if not MYPY:
+    class NdbDbserverVmPostgresDatabaseArgsDict(TypedDict):
+        vm_name: pulumi.Input[str]
+        """
+        name for the database server VM.
+        """
+        client_public_key: NotRequired[pulumi.Input[str]]
+        """
+        use SSH public keys to access the database server VM.
+        """
+elif False:
+    NdbDbserverVmPostgresDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDbserverVmPostgresDatabaseArgs:
     def __init__(__self__, *,
@@ -20256,6 +25092,16 @@ class NdbDbserverVmPostgresDatabaseArgs:
         pulumi.set(self, "client_public_key", value)
 
 
+if not MYPY:
+    class NdbDbserverVmPropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        name of the dbserver vm
+        """
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDbserverVmPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbDbserverVmPropertyArgs:
     def __init__(__self__, *,
@@ -20290,6 +25136,16 @@ class NdbDbserverVmPropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbDbserverVmTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbDbserverVmTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbDbserverVmTagArgs:
@@ -20356,6 +25212,13 @@ class NdbDbserverVmTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbLinkedDatabasesInfoArgsDict(TypedDict):
+        infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbLinkedDatabasesInfoInfoArgsDict']]]]
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbLinkedDatabasesInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbLinkedDatabasesInfoArgs:
     def __init__(__self__, *,
@@ -20385,6 +25248,12 @@ class NdbLinkedDatabasesInfoArgs:
         pulumi.set(self, "secure_info", value)
 
 
+if not MYPY:
+    class NdbLinkedDatabasesInfoInfoArgsDict(TypedDict):
+        created_by: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbLinkedDatabasesInfoInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbLinkedDatabasesInfoInfoArgs:
     def __init__(__self__, *,
@@ -20401,6 +25270,76 @@ class NdbLinkedDatabasesInfoInfoArgs:
     def created_by(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "created_by", value)
 
+
+if not MYPY:
+    class NdbMaintenanceTaskEntityTaskAssociationArgsDict(TypedDict):
+        access_level: NotRequired[pulumi.Input[str]]
+        """
+        access level of tasks
+        """
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        created date of task
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        modified date of task
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of maintenance window
+        """
+        entity: NotRequired[pulumi.Input[str]]
+        entity_id: NotRequired[pulumi.Input[str]]
+        """
+        entity id
+        """
+        entity_type: NotRequired[pulumi.Input[str]]
+        """
+        type of the entity. i.e. DBSERVER
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        id of maintenance window
+        """
+        maintenance_window_id: NotRequired[pulumi.Input[str]]
+        """
+        maintenance window id which has to be associated
+        """
+        maintenance_window_owner_id: NotRequired[pulumi.Input[str]]
+        """
+        maintenance window owner id
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        name of of maintenance window
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        """
+        owner id of task
+        """
+        payloads: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceTaskEntityTaskAssociationPayloadArgsDict']]]]
+        """
+        list of pre post commands of OS or DB task
+        """
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceTaskEntityTaskAssociationPropertyArgsDict']]]]
+        """
+        properties of task
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of task
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceTaskEntityTaskAssociationTagArgsDict']]]]
+        """
+        tags of task
+        """
+        task_type: NotRequired[pulumi.Input[str]]
+        """
+        type of the task. OS or DB
+        """
+elif False:
+    NdbMaintenanceTaskEntityTaskAssociationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbMaintenanceTaskEntityTaskAssociationArgs:
@@ -20677,6 +25616,15 @@ class NdbMaintenanceTaskEntityTaskAssociationArgs:
         pulumi.set(self, "task_type", value)
 
 
+if not MYPY:
+    class NdbMaintenanceTaskEntityTaskAssociationPayloadArgsDict(TypedDict):
+        pre_post_commands: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceTaskEntityTaskAssociationPayloadPrePostCommandArgsDict']]]]
+        """
+        Pre Post command of Task
+        """
+elif False:
+    NdbMaintenanceTaskEntityTaskAssociationPayloadArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbMaintenanceTaskEntityTaskAssociationPayloadArgs:
     def __init__(__self__, *,
@@ -20699,6 +25647,19 @@ class NdbMaintenanceTaskEntityTaskAssociationPayloadArgs:
     def pre_post_commands(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceTaskEntityTaskAssociationPayloadPrePostCommandArgs']]]]):
         pulumi.set(self, "pre_post_commands", value)
 
+
+if not MYPY:
+    class NdbMaintenanceTaskEntityTaskAssociationPayloadPrePostCommandArgsDict(TypedDict):
+        post_command: NotRequired[pulumi.Input[str]]
+        """
+        post command of task
+        """
+        pre_command: NotRequired[pulumi.Input[str]]
+        """
+        pre command of task
+        """
+elif False:
+    NdbMaintenanceTaskEntityTaskAssociationPayloadPrePostCommandArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbMaintenanceTaskEntityTaskAssociationPayloadPrePostCommandArgs:
@@ -20739,6 +25700,16 @@ class NdbMaintenanceTaskEntityTaskAssociationPayloadPrePostCommandArgs:
         pulumi.set(self, "pre_command", value)
 
 
+if not MYPY:
+    class NdbMaintenanceTaskEntityTaskAssociationPropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        name of of maintenance window
+        """
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbMaintenanceTaskEntityTaskAssociationPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbMaintenanceTaskEntityTaskAssociationPropertyArgs:
     def __init__(__self__, *,
@@ -20773,6 +25744,22 @@ class NdbMaintenanceTaskEntityTaskAssociationPropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbMaintenanceTaskEntityTaskAssociationTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        """
+        entity id
+        """
+        entity_type: NotRequired[pulumi.Input[str]]
+        """
+        type of the entity. i.e. DBSERVER
+        """
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbMaintenanceTaskEntityTaskAssociationTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbMaintenanceTaskEntityTaskAssociationTagArgs:
@@ -20849,6 +25836,23 @@ class NdbMaintenanceTaskEntityTaskAssociationTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbMaintenanceTaskTaskArgsDict(TypedDict):
+        post_command: NotRequired[pulumi.Input[str]]
+        """
+        command that you want to run after patching the OS/DB
+        """
+        pre_command: NotRequired[pulumi.Input[str]]
+        """
+        command that you want to run before patching the OS/DB
+        """
+        task_type: NotRequired[pulumi.Input[str]]
+        """
+        type of task. Supports [ "OS_PATCHING", "DB_PATCHING" ]
+        """
+elif False:
+    NdbMaintenanceTaskTaskArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbMaintenanceTaskTaskArgs:
     def __init__(__self__, *,
@@ -20903,6 +25907,55 @@ class NdbMaintenanceTaskTaskArgs:
     def task_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "task_type", value)
 
+
+if not MYPY:
+    class NdbMaintenanceWindowEntityTaskAssocArgsDict(TypedDict):
+        access_level: NotRequired[pulumi.Input[str]]
+        """
+        access level
+        """
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        created date of maintenance window
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        modified date of maintenance window
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        Description for maintenance window
+        """
+        entity: NotRequired[pulumi.Input[str]]
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        id: NotRequired[pulumi.Input[str]]
+        maintenance_window_id: NotRequired[pulumi.Input[str]]
+        maintenance_window_owner_id: NotRequired[pulumi.Input[str]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name for the maintenance window.
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        """
+        owner id of maintenance window
+        """
+        payloads: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowEntityTaskAssocPayloadArgsDict']]]]
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowEntityTaskAssocPropertyArgsDict']]]]
+        """
+        properties of maintenance window
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of maintennace window
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowEntityTaskAssocTagArgsDict']]]]
+        """
+        tags of maintenance window
+        """
+        task_type: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbMaintenanceWindowEntityTaskAssocArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbMaintenanceWindowEntityTaskAssocArgs:
@@ -21151,6 +26204,12 @@ class NdbMaintenanceWindowEntityTaskAssocArgs:
         pulumi.set(self, "task_type", value)
 
 
+if not MYPY:
+    class NdbMaintenanceWindowEntityTaskAssocPayloadArgsDict(TypedDict):
+        pre_post_commands: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowEntityTaskAssocPayloadPrePostCommandArgsDict']]]]
+elif False:
+    NdbMaintenanceWindowEntityTaskAssocPayloadArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbMaintenanceWindowEntityTaskAssocPayloadArgs:
     def __init__(__self__, *,
@@ -21167,6 +26226,13 @@ class NdbMaintenanceWindowEntityTaskAssocPayloadArgs:
     def pre_post_commands(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbMaintenanceWindowEntityTaskAssocPayloadPrePostCommandArgs']]]]):
         pulumi.set(self, "pre_post_commands", value)
 
+
+if not MYPY:
+    class NdbMaintenanceWindowEntityTaskAssocPayloadPrePostCommandArgsDict(TypedDict):
+        post_command: NotRequired[pulumi.Input[str]]
+        pre_command: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbMaintenanceWindowEntityTaskAssocPayloadPrePostCommandArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbMaintenanceWindowEntityTaskAssocPayloadPrePostCommandArgs:
@@ -21196,6 +26262,16 @@ class NdbMaintenanceWindowEntityTaskAssocPayloadPrePostCommandArgs:
     def pre_command(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "pre_command", value)
 
+
+if not MYPY:
+    class NdbMaintenanceWindowEntityTaskAssocPropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name for the maintenance window.
+        """
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbMaintenanceWindowEntityTaskAssocPropertyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbMaintenanceWindowEntityTaskAssocPropertyArgs:
@@ -21231,6 +26307,16 @@ class NdbMaintenanceWindowEntityTaskAssocPropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbMaintenanceWindowEntityTaskAssocTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbMaintenanceWindowEntityTaskAssocTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbMaintenanceWindowEntityTaskAssocTagArgs:
@@ -21297,6 +26383,16 @@ class NdbMaintenanceWindowEntityTaskAssocTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbMaintenanceWindowPropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name for the maintenance window.
+        """
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbMaintenanceWindowPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbMaintenanceWindowPropertyArgs:
     def __init__(__self__, *,
@@ -21331,6 +26427,38 @@ class NdbMaintenanceWindowPropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbMaintenanceWindowScheduleArgsDict(TypedDict):
+        day_of_week: NotRequired[pulumi.Input[str]]
+        """
+        Day of the week to trigger maintenance window. Supports [ MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
+        """
+        duration: NotRequired[pulumi.Input[int]]
+        """
+        duration in hours. Default is 2
+        """
+        hour: NotRequired[pulumi.Input[int]]
+        minute: NotRequired[pulumi.Input[int]]
+        recurrence: NotRequired[pulumi.Input[str]]
+        """
+        Supported values [ MONTHLY, WEEKLY ]
+        """
+        start_time: NotRequired[pulumi.Input[str]]
+        """
+        start time for maintenance window to trigger
+        """
+        threshold: NotRequired[pulumi.Input[str]]
+        timezone: NotRequired[pulumi.Input[str]]
+        """
+        timezone . Default is Asia/Calcutta .
+        """
+        week_of_month: NotRequired[pulumi.Input[int]]
+        """
+        week of the month. Supports [1, 2, 3, 4] .
+        """
+elif False:
+    NdbMaintenanceWindowScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbMaintenanceWindowScheduleArgs:
@@ -21471,6 +26599,16 @@ class NdbMaintenanceWindowScheduleArgs:
         pulumi.set(self, "week_of_month", value)
 
 
+if not MYPY:
+    class NdbMaintenanceWindowTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbMaintenanceWindowTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbMaintenanceWindowTagArgs:
     def __init__(__self__, *,
@@ -21535,6 +26673,22 @@ class NdbMaintenanceWindowTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbNetworkIpPoolArgsDict(TypedDict):
+        addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbNetworkIpPoolAddressArgsDict']]]]
+        end_ip: NotRequired[pulumi.Input[str]]
+        """
+        ending IP address range for new database servers
+        """
+        id: NotRequired[pulumi.Input[str]]
+        modified_by: NotRequired[pulumi.Input[str]]
+        start_ip: NotRequired[pulumi.Input[str]]
+        """
+        starting IP address range for new database servers
+        """
+elif False:
+    NdbNetworkIpPoolArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbNetworkIpPoolArgs:
@@ -21611,6 +26765,13 @@ class NdbNetworkIpPoolArgs:
         pulumi.set(self, "start_ip", value)
 
 
+if not MYPY:
+    class NdbNetworkIpPoolAddressArgsDict(TypedDict):
+        ip: NotRequired[pulumi.Input[str]]
+        status: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbNetworkIpPoolAddressArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbNetworkIpPoolAddressArgs:
     def __init__(__self__, *,
@@ -21639,6 +26800,15 @@ class NdbNetworkIpPoolAddressArgs:
     def status(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "status", value)
 
+
+if not MYPY:
+    class NdbNetworkPropertiesMapArgsDict(TypedDict):
+        vlan_gateway: NotRequired[pulumi.Input[str]]
+        vlan_primary_dns: NotRequired[pulumi.Input[str]]
+        vlan_secondary_dns: NotRequired[pulumi.Input[str]]
+        vlan_subnet_mask: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbNetworkPropertiesMapArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbNetworkPropertiesMapArgs:
@@ -21693,6 +26863,17 @@ class NdbNetworkPropertiesMapArgs:
         pulumi.set(self, "vlan_subnet_mask", value)
 
 
+if not MYPY:
+    class NdbNetworkPropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of the vlan to be attached in NDB
+        """
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbNetworkPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbNetworkPropertyArgs:
     def __init__(__self__, *,
@@ -21739,6 +26920,23 @@ class NdbNetworkPropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbProfileClusterAvailabilityArgsDict(TypedDict):
+        date_created: NotRequired[pulumi.Input[str]]
+        date_modified: NotRequired[pulumi.Input[str]]
+        nx_cluster_id: NotRequired[pulumi.Input[str]]
+        """
+        cluster on which profile created
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        profile_id: NotRequired[pulumi.Input[str]]
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of profile
+        """
+elif False:
+    NdbProfileClusterAvailabilityArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbProfileClusterAvailabilityArgs:
@@ -21827,6 +27025,23 @@ class NdbProfileClusterAvailabilityArgs:
         pulumi.set(self, "status", value)
 
 
+if not MYPY:
+    class NdbProfileComputeProfileArgsDict(TypedDict):
+        core_per_cpu: NotRequired[pulumi.Input[str]]
+        """
+        number of cores per vCPU for the database server VM.
+        """
+        cpus: NotRequired[pulumi.Input[str]]
+        """
+        number of vCPUs for the database server VM.
+        """
+        memory_size: NotRequired[pulumi.Input[str]]
+        """
+        amount of memory for the database server VM.
+        """
+elif False:
+    NdbProfileComputeProfileArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbProfileComputeProfileArgs:
     def __init__(__self__, *,
@@ -21881,6 +27096,40 @@ class NdbProfileComputeProfileArgs:
     def memory_size(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "memory_size", value)
 
+
+if not MYPY:
+    class NdbProfileDatabaseParameterProfileArgsDict(TypedDict):
+        postgres_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfilePostgresDatabaseArgsDict']]]]
+        """
+        Database parameters suuported for postgress.
+        * `postgres_database.max_connections`: (Optional) Determines the maximum number of concurrent connections to the database server. The default is set to 100
+        * `postgres_database.max_replication_slots`: (Optional) Specifies the maximum number of replication slots that the server can support. The default is zero. wal_level must be set to archive or higher to allow replication slots to be used. Setting it to a lower value than the number of currently existing replication slots will prevent the server from starting.
+        * `postgres_database.effective_io_concurrency`: (Optional) Sets the number of concurrent disk I/O operations that PostgreSQL expects can be executed simultaneously. Raising this value will increase the number of I/O operations that any individual PostgreSQL session attempts to initiate in parallel.
+        * `postgres_database.timezone`: (Optional) Sets the time zone for displaying and interpreting time stamps. Defult is UTC .
+        * `postgres_database.max_prepared_transactions`: (Optional) Sets the maximum number of transactions that can be in the prepared state simultaneously. Setting this parameter to zero (which is the default) disables the prepared-transaction feature.
+        * `postgres_database.max_locks_per_transaction`: (Optional) This parameter controls the average number of object locks allocated for each transaction; individual transactions can lock more objects as long as the locks of all transactions fit in the lock table. Default is 64.
+        * `postgres_database.max_wal_senders`: (Optional) Specifies the maximum number of concurrent connections from standby servers or streaming base backup clients (i.e., the maximum number of simultaneously running WAL sender processes). The default is 10.
+        * `postgres_database.max_worker_processes`: (Optional) Sets the maximum number of background processes that the system can support. The default is 8.
+        * `postgres_database.min_wal_size`: (Optional) As long as WAL disk usage stays below this setting, old WAL files are always recycled for future use at a checkpoint, rather than removed. This can be used to ensure that enough WAL space is reserved to handle spikes in WAL usage, for example when running large batch jobs. The default is 80 MB.
+        * `postgres_database.max_wal_size`: (Optional) Maximum size to let the WAL grow to between automatic WAL checkpoints. The default is 1 GB
+        * `postgres_database.checkpoint_timeout`: (Optional) Sets the maximum time between automatic WAL checkpoints . High Value gives Good Performance, but takes More Recovery Time, Reboot time. can reduce the I/O load on your system, especially when using large values for shared_buffers. Default is 5min
+        * `postgres_database.autovacuum`: (Optional) Controls whether the server should run the autovacuum launcher daemon. This is on by default; however, track_counts must also be enabled for autovacuum to work.
+        * `postgres_database.checkpoint_completion_target`: (Optional)
+        Specifies the target of checkpoint completion, as a fraction of total time between checkpoints. Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval . Formula - (checkpoint_timeout - 2min) / checkpoint_timeout. The default is 0.5.
+        * `postgres_database.autovacuum_freeze_max_age`: (Optional) Age at which to autovacuum a table to prevent transaction ID wraparound. Default is 200000000
+        * `postgres_database.autovacuum_vacuum_threshold`: (Optional) Min number of row updates before vacuum. Minimum number of tuple updates or deletes prior to vacuum. Take value in KB. Default is 50 .
+        * `postgres_database.autovacuum_vacuum_scale_factor`: (Optional) Number of tuple updates or deletes prior to vacuum as a fraction of reltuples. Default is 0.2
+        * `postgres_database.autovacuum_work_mem`: (Optional) Sets the maximum memory to be used by each autovacuum worker process. Unit is in KB. Default is -1
+        * `postgres_database.autovacuum_max_workers`: (Optional) Sets the maximum number of simultaneously running autovacuum worker processes. Default is 3
+        * `postgres_database.autovacuum_vacuum_cost_delay`: (Optional) Vacuum cost delay in milliseconds, for autovacuum. Specifies the cost delay value that will be used in automatic VACUUM operation. Default is 2ms
+        * `postgres_database.wal_buffers`: (Optional)
+        Sets the number of disk-page buffers in shared memory for WAL. The amount of shared memory used for WAL data that has not yet been written to disk. The default is -1.
+        * `postgres_database.synchronous_commit`: (Optional) Sets the current transaction's synchronization level. Specifies whether transaction commit will wait for WAL records to be written to disk before the command returns a success indication to the client. Default is on.
+        * `postgres_database.random_page_cost`: (Optional) Sets the planner's estimate of the cost of a nonsequentially fetched disk page. Sets the planner's estimate of the cost of a non-sequentially-fetched disk page. The default is 4.0.
+        * `postgres_database.wal_keep_segments`: (Optional) Sets the number of WAL files held for standby servers, Specifies the minimum number of past log file segments kept in the pg_wal directory. Default is 700 .
+        """
+elif False:
+    NdbProfileDatabaseParameterProfileArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbProfileDatabaseParameterProfileArgs:
@@ -21954,6 +27203,34 @@ class NdbProfileDatabaseParameterProfileArgs:
     def postgres_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileDatabaseParameterProfilePostgresDatabaseArgs']]]]):
         pulumi.set(self, "postgres_databases", value)
 
+
+if not MYPY:
+    class NdbProfileDatabaseParameterProfilePostgresDatabaseArgsDict(TypedDict):
+        autovacuum: NotRequired[pulumi.Input[str]]
+        autovacuum_freeze_max_age: NotRequired[pulumi.Input[str]]
+        autovacuum_max_workers: NotRequired[pulumi.Input[str]]
+        autovacuum_vacuum_cost_delay: NotRequired[pulumi.Input[str]]
+        autovacuum_vacuum_scale_factor: NotRequired[pulumi.Input[str]]
+        autovacuum_vacuum_threshold: NotRequired[pulumi.Input[str]]
+        autovacuum_work_mem: NotRequired[pulumi.Input[str]]
+        checkpoint_completion_target: NotRequired[pulumi.Input[str]]
+        checkpoint_timeout: NotRequired[pulumi.Input[str]]
+        effective_io_concurrency: NotRequired[pulumi.Input[str]]
+        max_connections: NotRequired[pulumi.Input[str]]
+        max_locks_per_transaction: NotRequired[pulumi.Input[str]]
+        max_prepared_transactions: NotRequired[pulumi.Input[str]]
+        max_replication_slots: NotRequired[pulumi.Input[str]]
+        max_wal_senders: NotRequired[pulumi.Input[str]]
+        max_wal_size: NotRequired[pulumi.Input[str]]
+        max_worker_processes: NotRequired[pulumi.Input[str]]
+        min_wal_size: NotRequired[pulumi.Input[str]]
+        random_page_cost: NotRequired[pulumi.Input[str]]
+        synchronous_commit: NotRequired[pulumi.Input[str]]
+        timezone: NotRequired[pulumi.Input[str]]
+        wal_buffers: NotRequired[pulumi.Input[str]]
+        wal_keep_segments: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbProfileDatabaseParameterProfilePostgresDatabaseArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbProfileDatabaseParameterProfilePostgresDatabaseArgs:
@@ -22236,6 +27513,34 @@ class NdbProfileDatabaseParameterProfilePostgresDatabaseArgs:
         pulumi.set(self, "wal_keep_segments", value)
 
 
+if not MYPY:
+    class NdbProfileNetworkProfileArgsDict(TypedDict):
+        topology: pulumi.Input[str]
+        """
+        Topology supported for network profile. Allowed values are "cluster" and "single"
+        """
+        postgres_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfilePostgresDatabaseArgsDict']]]]
+        """
+        Postgres Info to create network profile
+
+        * `postgres_database.single_instance`: (Optional) Info for postgres database to create single instance network profile.
+        * `postgres_database.single_instance.vlan_name`: (Required) specify the VLAN to provide the IP address used to connect the database from the public network.
+        * `postgres_database.single_instance.enable_ip_address_selection`: (Optional) If Advanced Network Segmentation is enabled, then this vLAN needs to be a static vLAN and needs to be true.
+
+        * `postgres_database.ha_instance`: (Optional) Info for craeting Network profile for HA instance
+        * `postgres_database.ha_instance.vlan_name`: (Required) specify the VLANs for network
+        * `postgres_database.ha_instance.cluster_name`: (Required) specify the cluster name associated with given VLANs
+        * `postgres_database.ha_instance.cluster_id`: (Optional) specify the cluster ids associated with given VLANs
+        * `postgres_database.ha_instance.num_of_clusters`: (Required) number of cluster attached to network profile
+        """
+        version_cluster_associations: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfileVersionClusterAssociationArgsDict']]]]
+        """
+        cluster associated with VLAN. this is used with Single instance for postgres database.
+        * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
+        """
+elif False:
+    NdbProfileNetworkProfileArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbProfileNetworkProfileArgs:
     def __init__(__self__, *,
@@ -22312,6 +27617,13 @@ class NdbProfileNetworkProfileArgs:
         pulumi.set(self, "version_cluster_associations", value)
 
 
+if not MYPY:
+    class NdbProfileNetworkProfilePostgresDatabaseArgsDict(TypedDict):
+        ha_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfilePostgresDatabaseHaInstanceArgsDict']]]]
+        single_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfilePostgresDatabaseSingleInstanceArgsDict']]]]
+elif False:
+    NdbProfileNetworkProfilePostgresDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbProfileNetworkProfilePostgresDatabaseArgs:
     def __init__(__self__, *,
@@ -22340,6 +27652,15 @@ class NdbProfileNetworkProfilePostgresDatabaseArgs:
     def single_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbProfileNetworkProfilePostgresDatabaseSingleInstanceArgs']]]]):
         pulumi.set(self, "single_instances", value)
 
+
+if not MYPY:
+    class NdbProfileNetworkProfilePostgresDatabaseHaInstanceArgsDict(TypedDict):
+        cluster_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        cluster_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        num_of_clusters: NotRequired[pulumi.Input[str]]
+        vlan_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+elif False:
+    NdbProfileNetworkProfilePostgresDatabaseHaInstanceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbProfileNetworkProfilePostgresDatabaseHaInstanceArgs:
@@ -22394,6 +27715,13 @@ class NdbProfileNetworkProfilePostgresDatabaseHaInstanceArgs:
         pulumi.set(self, "vlan_names", value)
 
 
+if not MYPY:
+    class NdbProfileNetworkProfilePostgresDatabaseSingleInstanceArgsDict(TypedDict):
+        enable_ip_address_selection: NotRequired[pulumi.Input[str]]
+        vlan_name: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbProfileNetworkProfilePostgresDatabaseSingleInstanceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbProfileNetworkProfilePostgresDatabaseSingleInstanceArgs:
     def __init__(__self__, *,
@@ -22423,6 +27751,15 @@ class NdbProfileNetworkProfilePostgresDatabaseSingleInstanceArgs:
         pulumi.set(self, "vlan_name", value)
 
 
+if not MYPY:
+    class NdbProfileNetworkProfileVersionClusterAssociationArgsDict(TypedDict):
+        nx_cluster_id: pulumi.Input[str]
+        """
+        cluster on which profile created
+        """
+elif False:
+    NdbProfileNetworkProfileVersionClusterAssociationArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbProfileNetworkProfileVersionClusterAssociationArgs:
     def __init__(__self__, *,
@@ -22444,6 +27781,28 @@ class NdbProfileNetworkProfileVersionClusterAssociationArgs:
     def nx_cluster_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "nx_cluster_id", value)
 
+
+if not MYPY:
+    class NdbProfileSoftwareProfileArgsDict(TypedDict):
+        topology: pulumi.Input[str]
+        """
+        Topology of software profile. Allowed values are "cluster" and "single"
+        """
+        available_cluster_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        specify Nutanix clusters where this profile is available.
+        """
+        postgres_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbProfileSoftwareProfilePostgresDatabaseArgsDict']]]]
+        """
+        Software profile info about postgres database.
+        * `postgres_database.source_dbserver_id`: source dbserver id where postgress software will be installed.
+        * `postgres_database.base_profile_version_name`: name for the software profile version.
+        * `postgres_database.base_profile_version_description`: description for the software profile version.
+        * `postgres_database.os_notes`: a note to provide additional information about the operating system
+        * `postgres_database.db_software_notes`: a note to provide additional information about the database software.
+        """
+elif False:
+    NdbProfileSoftwareProfileArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbProfileSoftwareProfileArgs:
@@ -22509,6 +27868,16 @@ class NdbProfileSoftwareProfileArgs:
         pulumi.set(self, "postgres_databases", value)
 
 
+if not MYPY:
+    class NdbProfileSoftwareProfilePostgresDatabaseArgsDict(TypedDict):
+        base_profile_version_description: NotRequired[pulumi.Input[str]]
+        base_profile_version_name: NotRequired[pulumi.Input[str]]
+        db_software_notes: NotRequired[pulumi.Input[str]]
+        os_notes: NotRequired[pulumi.Input[str]]
+        source_dbserver_id: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbProfileSoftwareProfilePostgresDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbProfileSoftwareProfilePostgresDatabaseArgs:
     def __init__(__self__, *,
@@ -22573,6 +27942,50 @@ class NdbProfileSoftwareProfilePostgresDatabaseArgs:
     def source_dbserver_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "source_dbserver_id", value)
 
+
+if not MYPY:
+    class NdbProfileVersionArgsDict(TypedDict):
+        db_version: NotRequired[pulumi.Input[str]]
+        deprecated: NotRequired[pulumi.Input[bool]]
+        description: NotRequired[pulumi.Input[str]]
+        """
+        Description of profile
+        """
+        engine_type: NotRequired[pulumi.Input[str]]
+        """
+        Engine Type of database
+        """
+        id: NotRequired[pulumi.Input[str]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of profile
+        """
+        owner: NotRequired[pulumi.Input[str]]
+        """
+        owner  of profile
+        """
+        profile_id: NotRequired[pulumi.Input[str]]
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbProfileVersionPropertyArgsDict']]]]
+        properties_map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        published: NotRequired[pulumi.Input[bool]]
+        """
+        Publish for all users
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of profile
+        """
+        system_profile: NotRequired[pulumi.Input[bool]]
+        topology: NotRequired[pulumi.Input[str]]
+        type: NotRequired[pulumi.Input[str]]
+        version: NotRequired[pulumi.Input[str]]
+        version_cluster_associations: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbProfileVersionVersionClusterAssociationArgsDict']]]]
+        """
+        cluster associated with VLAN. this is used with Single instance for postgres database.
+        * `version_cluster_association.nx_cluster_id`: (Required) cluster id for associated VLAN.
+        """
+elif False:
+    NdbProfileVersionArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbProfileVersionArgs:
@@ -22815,6 +28228,17 @@ class NdbProfileVersionArgs:
         pulumi.set(self, "version_cluster_associations", value)
 
 
+if not MYPY:
+    class NdbProfileVersionPropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of profile
+        """
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbProfileVersionPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbProfileVersionPropertyArgs:
     def __init__(__self__, *,
@@ -22861,6 +28285,25 @@ class NdbProfileVersionPropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbProfileVersionVersionClusterAssociationArgsDict(TypedDict):
+        date_created: NotRequired[pulumi.Input[str]]
+        date_modified: NotRequired[pulumi.Input[str]]
+        nx_cluster_id: NotRequired[pulumi.Input[str]]
+        """
+        cluster on which profile created
+        """
+        optimized_for_provisioning: NotRequired[pulumi.Input[bool]]
+        owner_id: NotRequired[pulumi.Input[str]]
+        profile_version_id: NotRequired[pulumi.Input[str]]
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbProfileVersionVersionClusterAssociationPropertyArgsDict']]]]
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of profile
+        """
+elif False:
+    NdbProfileVersionVersionClusterAssociationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbProfileVersionVersionClusterAssociationArgs:
@@ -22973,6 +28416,17 @@ class NdbProfileVersionVersionClusterAssociationArgs:
         pulumi.set(self, "status", value)
 
 
+if not MYPY:
+    class NdbProfileVersionVersionClusterAssociationPropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of profile
+        """
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbProfileVersionVersionClusterAssociationPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbProfileVersionVersionClusterAssociationPropertyArgs:
     def __init__(__self__, *,
@@ -23020,6 +28474,19 @@ class NdbProfileVersionVersionClusterAssociationPropertyArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseActionargumentArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        - (Required) name of argument
+        """
+        value: pulumi.Input[str]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbRegisterDatabaseActionargumentArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseActionargumentArgs:
     def __init__(__self__, *,
@@ -23056,6 +28523,56 @@ class NdbRegisterDatabaseActionargumentArgs:
     def value(self, value: pulumi.Input[str]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseDatabaseNodeArgsDict(TypedDict):
+        access_level: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        database_id: NotRequired[pulumi.Input[str]]
+        database_status: NotRequired[pulumi.Input[str]]
+        """
+        status of database
+        """
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        dbserver: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        dbserver_id: NotRequired[pulumi.Input[str]]
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description
+        """
+        id: NotRequired[pulumi.Input[str]]
+        infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseDatabaseNodeInfoArgsDict']]]]
+        """
+        info of instance
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        primary: NotRequired[pulumi.Input[bool]]
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseDatabaseNodePropertyArgsDict']]]]
+        """
+        properties of database created
+        """
+        protection_domain_id: NotRequired[pulumi.Input[str]]
+        protection_domains: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseDatabaseNodeProtectionDomainArgsDict']]]]
+        software_installation_id: NotRequired[pulumi.Input[str]]
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of instance
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseDatabaseNodeTagArgsDict']]]]
+        """
+        tags
+        """
+elif False:
+    NdbRegisterDatabaseDatabaseNodeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseDatabaseNodeArgs:
@@ -23316,6 +28833,16 @@ class NdbRegisterDatabaseDatabaseNodeArgs:
         pulumi.set(self, "tags", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseDatabaseNodeInfoArgsDict(TypedDict):
+        info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        info of instance
+        """
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbRegisterDatabaseDatabaseNodeInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseDatabaseNodeInfoArgs:
     def __init__(__self__, *,
@@ -23350,6 +28877,25 @@ class NdbRegisterDatabaseDatabaseNodeInfoArgs:
     def secure_info(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "secure_info", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseDatabaseNodePropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbRegisterDatabaseDatabaseNodePropertyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseDatabaseNodePropertyArgs:
@@ -23429,6 +28975,45 @@ class NdbRegisterDatabaseDatabaseNodePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseDatabaseNodeProtectionDomainArgsDict(TypedDict):
+        assoc_entities: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        cloud_id: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description
+        """
+        era_created: NotRequired[pulumi.Input[bool]]
+        id: NotRequired[pulumi.Input[str]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        primary_host: NotRequired[pulumi.Input[str]]
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseDatabaseNodeProtectionDomainPropertyArgsDict']]]]
+        """
+        properties of database created
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of instance
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        type of database
+        """
+elif False:
+    NdbRegisterDatabaseDatabaseNodeProtectionDomainArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseDatabaseNodeProtectionDomainArgs:
@@ -23621,6 +29206,25 @@ class NdbRegisterDatabaseDatabaseNodeProtectionDomainArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseDatabaseNodeProtectionDomainPropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbRegisterDatabaseDatabaseNodeProtectionDomainPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseDatabaseNodeProtectionDomainPropertyArgs:
     def __init__(__self__, *,
@@ -23700,6 +29304,19 @@ class NdbRegisterDatabaseDatabaseNodeProtectionDomainPropertyArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseDatabaseNodeTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbRegisterDatabaseDatabaseNodeTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseDatabaseNodeTagArgs:
     def __init__(__self__, *,
@@ -23771,6 +29388,13 @@ class NdbRegisterDatabaseDatabaseNodeTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseInfoArgsDict(TypedDict):
+        bpg_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseInfoBpgConfigArgsDict']]]]
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbRegisterDatabaseInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseInfoArgs:
     def __init__(__self__, *,
@@ -23799,6 +29423,14 @@ class NdbRegisterDatabaseInfoArgs:
     def secure_info(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "secure_info", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseInfoBpgConfigArgsDict(TypedDict):
+        bpg_db_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseInfoBpgConfigBpgDbParamArgsDict']]]]
+        storages: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseInfoBpgConfigStorageArgsDict']]]]
+        vm_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseInfoBpgConfigVmPropertyArgsDict']]]]
+elif False:
+    NdbRegisterDatabaseInfoBpgConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseInfoBpgConfigArgs:
@@ -23840,6 +29472,17 @@ class NdbRegisterDatabaseInfoBpgConfigArgs:
     def vm_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseInfoBpgConfigVmPropertyArgs']]]]):
         pulumi.set(self, "vm_properties", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseInfoBpgConfigBpgDbParamArgsDict(TypedDict):
+        effective_cache_size: NotRequired[pulumi.Input[str]]
+        maintenance_work_mem: NotRequired[pulumi.Input[str]]
+        max_parallel_workers_per_gather: NotRequired[pulumi.Input[str]]
+        max_worker_processes: NotRequired[pulumi.Input[str]]
+        shared_buffers: NotRequired[pulumi.Input[str]]
+        work_mem: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbRegisterDatabaseInfoBpgConfigBpgDbParamArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseInfoBpgConfigBpgDbParamArgs:
@@ -23918,6 +29561,14 @@ class NdbRegisterDatabaseInfoBpgConfigBpgDbParamArgs:
         pulumi.set(self, "work_mem", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseInfoBpgConfigStorageArgsDict(TypedDict):
+        archive_storages: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseInfoBpgConfigStorageArchiveStorageArgsDict']]]]
+        data_disks: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseInfoBpgConfigStorageDataDiskArgsDict']]]]
+        log_disks: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseInfoBpgConfigStorageLogDiskArgsDict']]]]
+elif False:
+    NdbRegisterDatabaseInfoBpgConfigStorageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseInfoBpgConfigStorageArgs:
     def __init__(__self__, *,
@@ -23959,6 +29610,12 @@ class NdbRegisterDatabaseInfoBpgConfigStorageArgs:
         pulumi.set(self, "log_disks", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseInfoBpgConfigStorageArchiveStorageArgsDict(TypedDict):
+        size: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbRegisterDatabaseInfoBpgConfigStorageArchiveStorageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseInfoBpgConfigStorageArchiveStorageArgs:
     def __init__(__self__, *,
@@ -23976,6 +29633,12 @@ class NdbRegisterDatabaseInfoBpgConfigStorageArchiveStorageArgs:
         pulumi.set(self, "size", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseInfoBpgConfigStorageDataDiskArgsDict(TypedDict):
+        count: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbRegisterDatabaseInfoBpgConfigStorageDataDiskArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseInfoBpgConfigStorageDataDiskArgs:
     def __init__(__self__, *,
@@ -23992,6 +29655,13 @@ class NdbRegisterDatabaseInfoBpgConfigStorageDataDiskArgs:
     def count(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "count", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseInfoBpgConfigStorageLogDiskArgsDict(TypedDict):
+        count: NotRequired[pulumi.Input[float]]
+        size: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbRegisterDatabaseInfoBpgConfigStorageLogDiskArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseInfoBpgConfigStorageLogDiskArgs:
@@ -24021,6 +29691,18 @@ class NdbRegisterDatabaseInfoBpgConfigStorageLogDiskArgs:
     def size(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "size", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseInfoBpgConfigVmPropertyArgsDict(TypedDict):
+        dirty_background_ratio: NotRequired[pulumi.Input[float]]
+        dirty_expire_centisecs: NotRequired[pulumi.Input[float]]
+        dirty_ratio: NotRequired[pulumi.Input[float]]
+        dirty_writeback_centisecs: NotRequired[pulumi.Input[float]]
+        nr_hugepages: NotRequired[pulumi.Input[float]]
+        overcommit_memory: NotRequired[pulumi.Input[float]]
+        swappiness: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbRegisterDatabaseInfoBpgConfigVmPropertyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseInfoBpgConfigVmPropertyArgs:
@@ -24111,6 +29793,15 @@ class NdbRegisterDatabaseInfoBpgConfigVmPropertyArgs:
         pulumi.set(self, "swappiness", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseLcmConfigArgsDict(TypedDict):
+        expiry_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseLcmConfigExpiryDetailArgsDict']]]]
+        post_delete_commands: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseLcmConfigPostDeleteCommandArgsDict']]]]
+        pre_delete_commands: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseLcmConfigPreDeleteCommandArgsDict']]]]
+        refresh_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseLcmConfigRefreshDetailArgsDict']]]]
+elif False:
+    NdbRegisterDatabaseLcmConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseLcmConfigArgs:
     def __init__(__self__, *,
@@ -24163,6 +29854,23 @@ class NdbRegisterDatabaseLcmConfigArgs:
     def refresh_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseLcmConfigRefreshDetailArgs']]]]):
         pulumi.set(self, "refresh_details", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseLcmConfigExpiryDetailArgsDict(TypedDict):
+        delete_database: NotRequired[pulumi.Input[bool]]
+        delete_time_machine: NotRequired[pulumi.Input[bool]]
+        """
+        - (Optional) Delete the database's Time Machine (snapshots/logs) from the NDB. Default value is true
+        """
+        delete_vm: NotRequired[pulumi.Input[bool]]
+        effective_timestamp: NotRequired[pulumi.Input[str]]
+        expire_in_days: NotRequired[pulumi.Input[int]]
+        expiry_date_timezone: NotRequired[pulumi.Input[str]]
+        expiry_timestamp: NotRequired[pulumi.Input[str]]
+        remind_before_in_days: NotRequired[pulumi.Input[int]]
+        user_created: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbRegisterDatabaseLcmConfigExpiryDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseLcmConfigExpiryDetailArgs:
@@ -24283,6 +29991,12 @@ class NdbRegisterDatabaseLcmConfigExpiryDetailArgs:
         pulumi.set(self, "user_created", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseLcmConfigPostDeleteCommandArgsDict(TypedDict):
+        command: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbRegisterDatabaseLcmConfigPostDeleteCommandArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseLcmConfigPostDeleteCommandArgs:
     def __init__(__self__, *,
@@ -24300,6 +30014,12 @@ class NdbRegisterDatabaseLcmConfigPostDeleteCommandArgs:
         pulumi.set(self, "command", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseLcmConfigPreDeleteCommandArgsDict(TypedDict):
+        command: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbRegisterDatabaseLcmConfigPreDeleteCommandArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseLcmConfigPreDeleteCommandArgs:
     def __init__(__self__, *,
@@ -24316,6 +30036,18 @@ class NdbRegisterDatabaseLcmConfigPreDeleteCommandArgs:
     def command(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "command", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseLcmConfigRefreshDetailArgsDict(TypedDict):
+        last_refresh_date: NotRequired[pulumi.Input[str]]
+        next_refresh_date: NotRequired[pulumi.Input[str]]
+        refresh_date_timezone: NotRequired[pulumi.Input[str]]
+        refresh_in_days: NotRequired[pulumi.Input[int]]
+        refresh_in_hours: NotRequired[pulumi.Input[int]]
+        refresh_in_months: NotRequired[pulumi.Input[int]]
+        refresh_time: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbRegisterDatabaseLcmConfigRefreshDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseLcmConfigRefreshDetailArgs:
@@ -24405,6 +30137,55 @@ class NdbRegisterDatabaseLcmConfigRefreshDetailArgs:
     def refresh_time(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "refresh_time", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseLinkedDatabaseArgsDict(TypedDict):
+        database_name: NotRequired[pulumi.Input[str]]
+        """
+        name of database
+        """
+        database_status: NotRequired[pulumi.Input[str]]
+        """
+        status of database
+        """
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description
+        """
+        id: NotRequired[pulumi.Input[str]]
+        infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseLinkedDatabaseInfoArgsDict']]]]
+        """
+        info of instance
+        """
+        metric: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        parent_database_id: NotRequired[pulumi.Input[str]]
+        """
+        parent database id
+        """
+        parent_linked_database_id: NotRequired[pulumi.Input[str]]
+        snapshot_id: NotRequired[pulumi.Input[str]]
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of instance
+        """
+        timezone: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbRegisterDatabaseLinkedDatabaseArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseLinkedDatabaseArgs:
@@ -24621,6 +30402,16 @@ class NdbRegisterDatabaseLinkedDatabaseArgs:
         pulumi.set(self, "timezone", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseLinkedDatabaseInfoArgsDict(TypedDict):
+        info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        info of instance
+        """
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbRegisterDatabaseLinkedDatabaseInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseLinkedDatabaseInfoArgs:
     def __init__(__self__, *,
@@ -24655,6 +30446,51 @@ class NdbRegisterDatabaseLinkedDatabaseInfoArgs:
     def secure_info(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "secure_info", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabasePostgressInfoArgsDict(TypedDict):
+        db_name: pulumi.Input[str]
+        """
+        name of the database server VM on which the instance you want to register is running.
+        """
+        db_password: pulumi.Input[str]
+        """
+        database password
+        """
+        listener_port: pulumi.Input[str]
+        """
+        listner port of database
+        """
+        postgres_software_home: pulumi.Input[str]
+        """
+        path to the PostgreSQL home directory in which the PostgreSQL software is installed.
+        """
+        allow_multiple_databases: NotRequired[pulumi.Input[bool]]
+        """
+        allow multiple databases. Default is true
+        """
+        backup_policy: NotRequired[pulumi.Input[str]]
+        """
+        backup policy of database. Default is prefer_secondary.
+        """
+        db_user: NotRequired[pulumi.Input[str]]
+        """
+        username of the NDB drive user account that has sudo access.
+        """
+        software_home: NotRequired[pulumi.Input[str]]
+        """
+        path to the directory in which the PostgreSQL software is installed.
+        """
+        switch_log: NotRequired[pulumi.Input[bool]]
+        """
+        switch log of database. Default is true
+        """
+        vm_ip: NotRequired[pulumi.Input[str]]
+        """
+        VM IP of the database server VM on which the instance you want to register is running.
+        """
+elif False:
+    NdbRegisterDatabasePostgressInfoArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabasePostgressInfoArgs:
@@ -24819,6 +30655,19 @@ class NdbRegisterDatabasePostgressInfoArgs:
         pulumi.set(self, "vm_ip", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabasePropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbRegisterDatabasePropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabasePropertyArgs:
     def __init__(__self__, *,
@@ -24857,6 +30706,19 @@ class NdbRegisterDatabasePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbRegisterDatabaseTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseTagArgs:
@@ -24928,6 +30790,72 @@ class NdbRegisterDatabaseTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineArgsDict(TypedDict):
+        access_level: NotRequired[pulumi.Input[str]]
+        clone: NotRequired[pulumi.Input[bool]]
+        """
+        whether instance is cloned or not
+        """
+        clones: NotRequired[pulumi.Input[str]]
+        clustered: NotRequired[pulumi.Input[bool]]
+        """
+        clustered or not. Default is false
+        """
+        database: NotRequired[pulumi.Input[str]]
+        database_id: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description
+        """
+        ea_status: NotRequired[pulumi.Input[str]]
+        id: NotRequired[pulumi.Input[str]]
+        metric: NotRequired[pulumi.Input[str]]
+        """
+        Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachinePropertyArgsDict']]]]
+        """
+        properties of database created
+        """
+        schedule_id: NotRequired[pulumi.Input[str]]
+        schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineScheduleArgsDict']]]]
+        """
+        - (Optional) schedule for snapshots
+        """
+        scope: NotRequired[pulumi.Input[str]]
+        sla_id: NotRequired[pulumi.Input[str]]
+        sla_update_in_progress: NotRequired[pulumi.Input[bool]]
+        sla_update_metadata: NotRequired[pulumi.Input[str]]
+        slas: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineSlaArgsDict']]]]
+        source_nx_clusters: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of instance
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineTagArgsDict']]]]
+        """
+        tags
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        type of database
+        """
+elif False:
+    NdbRegisterDatabaseTimeMachineArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineArgs:
@@ -25284,6 +31212,39 @@ class NdbRegisterDatabaseTimeMachineArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineInfoArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        - (Required) name of time machine
+        """
+        schedule: pulumi.Input['NdbRegisterDatabaseTimeMachineInfoScheduleArgsDict']
+        """
+        - (Optional) schedule for snapshots
+        """
+        autotunelogdrive: NotRequired[pulumi.Input[bool]]
+        """
+        - (Optional) enable auto tune log drive. Default: true
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) description of time machine
+        """
+        sla_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineInfoSlaDetailArgsDict']]]]
+        """
+        -  (optional) SLA details for HA instance
+        """
+        slaid: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) SLA ID for single instance
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineInfoTagArgsDict']]]]
+        """
+        - (Optional) tags
+        """
+elif False:
+    NdbRegisterDatabaseTimeMachineInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineInfoArgs:
     def __init__(__self__, *,
@@ -25401,6 +31362,35 @@ class NdbRegisterDatabaseTimeMachineInfoArgs:
         pulumi.set(self, "tags", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineInfoScheduleArgsDict(TypedDict):
+        continuousschedule: NotRequired[pulumi.Input['NdbRegisterDatabaseTimeMachineInfoScheduleContinuousscheduleArgsDict']]
+        """
+        - (Optional) snapshot freq and log config
+        """
+        monthlyschedule: NotRequired[pulumi.Input['NdbRegisterDatabaseTimeMachineInfoScheduleMonthlyscheduleArgsDict']]
+        """
+        - (Optional) monthly snapshot config
+        """
+        quartelyschedule: NotRequired[pulumi.Input['NdbRegisterDatabaseTimeMachineInfoScheduleQuartelyscheduleArgsDict']]
+        """
+        - (Optional) quaterly snapshot config
+        """
+        snapshottimeofday: NotRequired[pulumi.Input['NdbRegisterDatabaseTimeMachineInfoScheduleSnapshottimeofdayArgsDict']]
+        """
+        - (Optional) daily snapshot config
+        """
+        weeklyschedule: NotRequired[pulumi.Input['NdbRegisterDatabaseTimeMachineInfoScheduleWeeklyscheduleArgsDict']]
+        """
+        - (Optional) weekly snapshot config
+        """
+        yearlyschedule: NotRequired[pulumi.Input['NdbRegisterDatabaseTimeMachineInfoScheduleYearlyscheduleArgsDict']]
+        """
+        - (Optional) yearly snapshot config
+        """
+elif False:
+    NdbRegisterDatabaseTimeMachineInfoScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineInfoScheduleArgs:
     def __init__(__self__, *,
@@ -25504,6 +31494,14 @@ class NdbRegisterDatabaseTimeMachineInfoScheduleArgs:
         pulumi.set(self, "yearlyschedule", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineInfoScheduleContinuousscheduleArgsDict(TypedDict):
+        enabled: pulumi.Input[bool]
+        logbackupinterval: pulumi.Input[int]
+        snapshotsperday: pulumi.Input[int]
+elif False:
+    NdbRegisterDatabaseTimeMachineInfoScheduleContinuousscheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineInfoScheduleContinuousscheduleArgs:
     def __init__(__self__, *,
@@ -25542,6 +31540,13 @@ class NdbRegisterDatabaseTimeMachineInfoScheduleContinuousscheduleArgs:
         pulumi.set(self, "snapshotsperday", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineInfoScheduleMonthlyscheduleArgsDict(TypedDict):
+        dayofmonth: pulumi.Input[int]
+        enabled: pulumi.Input[bool]
+elif False:
+    NdbRegisterDatabaseTimeMachineInfoScheduleMonthlyscheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineInfoScheduleMonthlyscheduleArgs:
     def __init__(__self__, *,
@@ -25568,6 +31573,14 @@ class NdbRegisterDatabaseTimeMachineInfoScheduleMonthlyscheduleArgs:
     def enabled(self, value: pulumi.Input[bool]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineInfoScheduleQuartelyscheduleArgsDict(TypedDict):
+        dayofmonth: pulumi.Input[int]
+        enabled: pulumi.Input[bool]
+        startmonth: pulumi.Input[str]
+elif False:
+    NdbRegisterDatabaseTimeMachineInfoScheduleQuartelyscheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineInfoScheduleQuartelyscheduleArgs:
@@ -25607,6 +31620,14 @@ class NdbRegisterDatabaseTimeMachineInfoScheduleQuartelyscheduleArgs:
         pulumi.set(self, "startmonth", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineInfoScheduleSnapshottimeofdayArgsDict(TypedDict):
+        hours: pulumi.Input[int]
+        minutes: pulumi.Input[int]
+        seconds: pulumi.Input[int]
+elif False:
+    NdbRegisterDatabaseTimeMachineInfoScheduleSnapshottimeofdayArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineInfoScheduleSnapshottimeofdayArgs:
     def __init__(__self__, *,
@@ -25645,6 +31666,13 @@ class NdbRegisterDatabaseTimeMachineInfoScheduleSnapshottimeofdayArgs:
         pulumi.set(self, "seconds", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineInfoScheduleWeeklyscheduleArgsDict(TypedDict):
+        dayofweek: pulumi.Input[str]
+        enabled: pulumi.Input[bool]
+elif False:
+    NdbRegisterDatabaseTimeMachineInfoScheduleWeeklyscheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineInfoScheduleWeeklyscheduleArgs:
     def __init__(__self__, *,
@@ -25671,6 +31699,14 @@ class NdbRegisterDatabaseTimeMachineInfoScheduleWeeklyscheduleArgs:
     def enabled(self, value: pulumi.Input[bool]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineInfoScheduleYearlyscheduleArgsDict(TypedDict):
+        dayofmonth: pulumi.Input[int]
+        enabled: pulumi.Input[bool]
+        month: pulumi.Input[str]
+elif False:
+    NdbRegisterDatabaseTimeMachineInfoScheduleYearlyscheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineInfoScheduleYearlyscheduleArgs:
@@ -25710,6 +31746,17 @@ class NdbRegisterDatabaseTimeMachineInfoScheduleYearlyscheduleArgs:
         pulumi.set(self, "month", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineInfoSlaDetailArgsDict(TypedDict):
+        primary_slas: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineInfoSlaDetailPrimarySlaArgsDict']]]]
+        """
+        - (Required) primary sla details
+        * `primary_sla.sla_id` :- (Required) sla id
+        * `primary_sla.nx_cluster_ids` -: (Optioanl) cluster ids
+        """
+elif False:
+    NdbRegisterDatabaseTimeMachineInfoSlaDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineInfoSlaDetailArgs:
     def __init__(__self__, *,
@@ -25736,6 +31783,16 @@ class NdbRegisterDatabaseTimeMachineInfoSlaDetailArgs:
     def primary_slas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineInfoSlaDetailPrimarySlaArgs']]]]):
         pulumi.set(self, "primary_slas", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineInfoSlaDetailPrimarySlaArgsDict(TypedDict):
+        sla_id: pulumi.Input[str]
+        """
+        description of SLA ID.
+        """
+        nx_cluster_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+elif False:
+    NdbRegisterDatabaseTimeMachineInfoSlaDetailPrimarySlaArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineInfoSlaDetailPrimarySlaArgs:
@@ -25770,6 +31827,19 @@ class NdbRegisterDatabaseTimeMachineInfoSlaDetailPrimarySlaArgs:
     def nx_cluster_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "nx_cluster_ids", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineInfoTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbRegisterDatabaseTimeMachineInfoTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineInfoTagArgs:
@@ -25841,6 +31911,25 @@ class NdbRegisterDatabaseTimeMachineInfoTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachinePropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbRegisterDatabaseTimeMachinePropertyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachinePropertyArgs:
@@ -25920,6 +32009,45 @@ class NdbRegisterDatabaseTimeMachinePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineScheduleArgsDict(TypedDict):
+        continuous_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineScheduleContinuousScheduleArgsDict']]]]
+        daily_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineScheduleDailyScheduleArgsDict']]]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description
+        """
+        global_policy: NotRequired[pulumi.Input[bool]]
+        id: NotRequired[pulumi.Input[str]]
+        monthly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineScheduleMonthlyScheduleArgsDict']]]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        quartely_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineScheduleQuartelyScheduleArgsDict']]]]
+        reference_count: NotRequired[pulumi.Input[int]]
+        snapshot_time_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineScheduleSnapshotTimeOfDayArgsDict']]]]
+        start_time: NotRequired[pulumi.Input[str]]
+        system_policy: NotRequired[pulumi.Input[bool]]
+        time_zone: NotRequired[pulumi.Input[str]]
+        """
+        timezone on which instance is created xw
+        """
+        unique_name: NotRequired[pulumi.Input[str]]
+        weekly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineScheduleWeeklyScheduleArgsDict']]]]
+        yearly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbRegisterDatabaseTimeMachineScheduleYearlyScheduleArgsDict']]]]
+elif False:
+    NdbRegisterDatabaseTimeMachineScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineScheduleArgs:
@@ -26176,6 +32304,14 @@ class NdbRegisterDatabaseTimeMachineScheduleArgs:
         pulumi.set(self, "yearly_schedules", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineScheduleContinuousScheduleArgsDict(TypedDict):
+        enabled: NotRequired[pulumi.Input[bool]]
+        log_backup_interval: NotRequired[pulumi.Input[int]]
+        snapshots_per_day: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbRegisterDatabaseTimeMachineScheduleContinuousScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineScheduleContinuousScheduleArgs:
     def __init__(__self__, *,
@@ -26217,6 +32353,12 @@ class NdbRegisterDatabaseTimeMachineScheduleContinuousScheduleArgs:
         pulumi.set(self, "snapshots_per_day", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineScheduleDailyScheduleArgsDict(TypedDict):
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbRegisterDatabaseTimeMachineScheduleDailyScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineScheduleDailyScheduleArgs:
     def __init__(__self__, *,
@@ -26233,6 +32375,13 @@ class NdbRegisterDatabaseTimeMachineScheduleDailyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineScheduleMonthlyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbRegisterDatabaseTimeMachineScheduleMonthlyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineScheduleMonthlyScheduleArgs:
@@ -26262,6 +32411,15 @@ class NdbRegisterDatabaseTimeMachineScheduleMonthlyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineScheduleQuartelyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+        start_month: NotRequired[pulumi.Input[str]]
+        start_month_value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbRegisterDatabaseTimeMachineScheduleQuartelyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineScheduleQuartelyScheduleArgs:
@@ -26316,6 +32474,15 @@ class NdbRegisterDatabaseTimeMachineScheduleQuartelyScheduleArgs:
         pulumi.set(self, "start_month_value", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineScheduleSnapshotTimeOfDayArgsDict(TypedDict):
+        extra: NotRequired[pulumi.Input[bool]]
+        hours: NotRequired[pulumi.Input[int]]
+        minutes: NotRequired[pulumi.Input[int]]
+        seconds: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbRegisterDatabaseTimeMachineScheduleSnapshotTimeOfDayArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineScheduleSnapshotTimeOfDayArgs:
     def __init__(__self__, *,
@@ -26369,6 +32536,14 @@ class NdbRegisterDatabaseTimeMachineScheduleSnapshotTimeOfDayArgs:
         pulumi.set(self, "seconds", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineScheduleWeeklyScheduleArgsDict(TypedDict):
+        day_of_week: NotRequired[pulumi.Input[str]]
+        day_of_week_value: NotRequired[pulumi.Input[str]]
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbRegisterDatabaseTimeMachineScheduleWeeklyScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineScheduleWeeklyScheduleArgs:
     def __init__(__self__, *,
@@ -26409,6 +32584,15 @@ class NdbRegisterDatabaseTimeMachineScheduleWeeklyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineScheduleYearlyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+        month: NotRequired[pulumi.Input[str]]
+        month_value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbRegisterDatabaseTimeMachineScheduleYearlyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineScheduleYearlyScheduleArgs:
@@ -26462,6 +32646,40 @@ class NdbRegisterDatabaseTimeMachineScheduleYearlyScheduleArgs:
     def month_value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "month_value", value)
 
+
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineSlaArgsDict(TypedDict):
+        continuous_retention: NotRequired[pulumi.Input[int]]
+        current_active_frequency: NotRequired[pulumi.Input[str]]
+        daily_retention: NotRequired[pulumi.Input[int]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description
+        """
+        id: NotRequired[pulumi.Input[str]]
+        monthly_retention: NotRequired[pulumi.Input[int]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        pitr_enabled: NotRequired[pulumi.Input[bool]]
+        quarterly_retention: NotRequired[pulumi.Input[int]]
+        reference_count: NotRequired[pulumi.Input[int]]
+        system_sla: NotRequired[pulumi.Input[bool]]
+        unique_name: NotRequired[pulumi.Input[str]]
+        weekly_retention: NotRequired[pulumi.Input[int]]
+        yearly_retention: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbRegisterDatabaseTimeMachineSlaArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineSlaArgs:
@@ -26690,6 +32908,19 @@ class NdbRegisterDatabaseTimeMachineSlaArgs:
         pulumi.set(self, "yearly_retention", value)
 
 
+if not MYPY:
+    class NdbRegisterDatabaseTimeMachineTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) value for argument
+        """
+elif False:
+    NdbRegisterDatabaseTimeMachineTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDatabaseTimeMachineTagArgs:
     def __init__(__self__, *,
@@ -26761,6 +32992,20 @@ class NdbRegisterDatabaseTimeMachineTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbRegisterDbserverCredentialArgsDict(TypedDict):
+        password: pulumi.Input[str]
+        """
+        password of the NDB drive user account. Conflicts with ssh_key.
+        """
+        username: pulumi.Input[str]
+        """
+        username of the NDB drive user account that has sudo access
+        """
+        label: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbRegisterDbserverCredentialArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDbserverCredentialArgs:
     def __init__(__self__, *,
@@ -26810,6 +33055,19 @@ class NdbRegisterDbserverCredentialArgs:
         pulumi.set(self, "label", value)
 
 
+if not MYPY:
+    class NdbRegisterDbserverPostgresDatabaseArgsDict(TypedDict):
+        listener_port: NotRequired[pulumi.Input[str]]
+        """
+        listener port of db server
+        """
+        postgres_software_home: NotRequired[pulumi.Input[str]]
+        """
+        path to the PostgreSQL home directory in which the PostgreSQL software is installed
+        """
+elif False:
+    NdbRegisterDbserverPostgresDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDbserverPostgresDatabaseArgs:
     def __init__(__self__, *,
@@ -26849,6 +33107,16 @@ class NdbRegisterDbserverPostgresDatabaseArgs:
         pulumi.set(self, "postgres_software_home", value)
 
 
+if not MYPY:
+    class NdbRegisterDbserverPropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of db server vm. Should be used in Update Method only.
+        """
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbRegisterDbserverPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbRegisterDbserverPropertyArgs:
     def __init__(__self__, *,
@@ -26883,6 +33151,16 @@ class NdbRegisterDbserverPropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbRegisterDbserverTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbRegisterDbserverTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbRegisterDbserverTagArgs:
@@ -26948,6 +33226,53 @@ class NdbRegisterDbserverTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbScaleDatabaseDatabaseNodeArgsDict(TypedDict):
+        access_level: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        database_id: NotRequired[pulumi.Input[str]]
+        database_status: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        dbserver: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        dbserver_id: NotRequired[pulumi.Input[str]]
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        id: NotRequired[pulumi.Input[str]]
+        infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeInfoArgsDict']]]]
+        """
+        info of instance
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        primary: NotRequired[pulumi.Input[bool]]
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodePropertyArgsDict']]]]
+        """
+        properties of database created
+        """
+        protection_domain_id: NotRequired[pulumi.Input[str]]
+        protection_domains: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeProtectionDomainArgsDict']]]]
+        software_installation_id: NotRequired[pulumi.Input[str]]
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of instance
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeTagArgsDict']]]]
+        """
+        allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        """
+elif False:
+    NdbScaleDatabaseDatabaseNodeArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbScaleDatabaseDatabaseNodeArgs:
@@ -27204,6 +33529,16 @@ class NdbScaleDatabaseDatabaseNodeArgs:
         pulumi.set(self, "tags", value)
 
 
+if not MYPY:
+    class NdbScaleDatabaseDatabaseNodeInfoArgsDict(TypedDict):
+        info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        info of instance
+        """
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbScaleDatabaseDatabaseNodeInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabaseDatabaseNodeInfoArgs:
     def __init__(__self__, *,
@@ -27238,6 +33573,22 @@ class NdbScaleDatabaseDatabaseNodeInfoArgs:
     def secure_info(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "secure_info", value)
 
+
+if not MYPY:
+    class NdbScaleDatabaseDatabaseNodePropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbScaleDatabaseDatabaseNodePropertyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbScaleDatabaseDatabaseNodePropertyArgs:
@@ -27313,6 +33664,45 @@ class NdbScaleDatabaseDatabaseNodePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbScaleDatabaseDatabaseNodeProtectionDomainArgsDict(TypedDict):
+        assoc_entities: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        cloud_id: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        era_created: NotRequired[pulumi.Input[bool]]
+        id: NotRequired[pulumi.Input[str]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        primary_host: NotRequired[pulumi.Input[str]]
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArgsDict']]]]
+        """
+        properties of database created
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of instance
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        type of database
+        """
+elif False:
+    NdbScaleDatabaseDatabaseNodeProtectionDomainArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbScaleDatabaseDatabaseNodeProtectionDomainArgs:
@@ -27505,6 +33895,22 @@ class NdbScaleDatabaseDatabaseNodeProtectionDomainArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArgs:
     def __init__(__self__, *,
@@ -27580,6 +33986,16 @@ class NdbScaleDatabaseDatabaseNodeProtectionDomainPropertyArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbScaleDatabaseDatabaseNodeTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbScaleDatabaseDatabaseNodeTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabaseDatabaseNodeTagArgs:
     def __init__(__self__, *,
@@ -27645,6 +34061,13 @@ class NdbScaleDatabaseDatabaseNodeTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbScaleDatabaseInfoArgsDict(TypedDict):
+        bpg_configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseInfoBpgConfigArgsDict']]]]
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbScaleDatabaseInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabaseInfoArgs:
     def __init__(__self__, *,
@@ -27673,6 +34096,14 @@ class NdbScaleDatabaseInfoArgs:
     def secure_info(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "secure_info", value)
 
+
+if not MYPY:
+    class NdbScaleDatabaseInfoBpgConfigArgsDict(TypedDict):
+        bpg_db_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseInfoBpgConfigBpgDbParamArgsDict']]]]
+        storages: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseInfoBpgConfigStorageArgsDict']]]]
+        vm_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseInfoBpgConfigVmPropertyArgsDict']]]]
+elif False:
+    NdbScaleDatabaseInfoBpgConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbScaleDatabaseInfoBpgConfigArgs:
@@ -27714,6 +34145,17 @@ class NdbScaleDatabaseInfoBpgConfigArgs:
     def vm_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseInfoBpgConfigVmPropertyArgs']]]]):
         pulumi.set(self, "vm_properties", value)
 
+
+if not MYPY:
+    class NdbScaleDatabaseInfoBpgConfigBpgDbParamArgsDict(TypedDict):
+        effective_cache_size: NotRequired[pulumi.Input[str]]
+        maintenance_work_mem: NotRequired[pulumi.Input[str]]
+        max_parallel_workers_per_gather: NotRequired[pulumi.Input[str]]
+        max_worker_processes: NotRequired[pulumi.Input[str]]
+        shared_buffers: NotRequired[pulumi.Input[str]]
+        work_mem: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbScaleDatabaseInfoBpgConfigBpgDbParamArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbScaleDatabaseInfoBpgConfigBpgDbParamArgs:
@@ -27792,6 +34234,14 @@ class NdbScaleDatabaseInfoBpgConfigBpgDbParamArgs:
         pulumi.set(self, "work_mem", value)
 
 
+if not MYPY:
+    class NdbScaleDatabaseInfoBpgConfigStorageArgsDict(TypedDict):
+        archive_storages: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseInfoBpgConfigStorageArchiveStorageArgsDict']]]]
+        data_disks: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseInfoBpgConfigStorageDataDiskArgsDict']]]]
+        log_disks: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseInfoBpgConfigStorageLogDiskArgsDict']]]]
+elif False:
+    NdbScaleDatabaseInfoBpgConfigStorageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabaseInfoBpgConfigStorageArgs:
     def __init__(__self__, *,
@@ -27833,6 +34283,12 @@ class NdbScaleDatabaseInfoBpgConfigStorageArgs:
         pulumi.set(self, "log_disks", value)
 
 
+if not MYPY:
+    class NdbScaleDatabaseInfoBpgConfigStorageArchiveStorageArgsDict(TypedDict):
+        size: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbScaleDatabaseInfoBpgConfigStorageArchiveStorageArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabaseInfoBpgConfigStorageArchiveStorageArgs:
     def __init__(__self__, *,
@@ -27850,6 +34306,12 @@ class NdbScaleDatabaseInfoBpgConfigStorageArchiveStorageArgs:
         pulumi.set(self, "size", value)
 
 
+if not MYPY:
+    class NdbScaleDatabaseInfoBpgConfigStorageDataDiskArgsDict(TypedDict):
+        count: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbScaleDatabaseInfoBpgConfigStorageDataDiskArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabaseInfoBpgConfigStorageDataDiskArgs:
     def __init__(__self__, *,
@@ -27866,6 +34328,13 @@ class NdbScaleDatabaseInfoBpgConfigStorageDataDiskArgs:
     def count(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "count", value)
 
+
+if not MYPY:
+    class NdbScaleDatabaseInfoBpgConfigStorageLogDiskArgsDict(TypedDict):
+        count: NotRequired[pulumi.Input[float]]
+        size: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbScaleDatabaseInfoBpgConfigStorageLogDiskArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbScaleDatabaseInfoBpgConfigStorageLogDiskArgs:
@@ -27895,6 +34364,18 @@ class NdbScaleDatabaseInfoBpgConfigStorageLogDiskArgs:
     def size(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "size", value)
 
+
+if not MYPY:
+    class NdbScaleDatabaseInfoBpgConfigVmPropertyArgsDict(TypedDict):
+        dirty_background_ratio: NotRequired[pulumi.Input[float]]
+        dirty_expire_centisecs: NotRequired[pulumi.Input[float]]
+        dirty_ratio: NotRequired[pulumi.Input[float]]
+        dirty_writeback_centisecs: NotRequired[pulumi.Input[float]]
+        nr_hugepages: NotRequired[pulumi.Input[float]]
+        overcommit_memory: NotRequired[pulumi.Input[float]]
+        swappiness: NotRequired[pulumi.Input[float]]
+elif False:
+    NdbScaleDatabaseInfoBpgConfigVmPropertyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbScaleDatabaseInfoBpgConfigVmPropertyArgs:
@@ -27985,6 +34466,15 @@ class NdbScaleDatabaseInfoBpgConfigVmPropertyArgs:
         pulumi.set(self, "swappiness", value)
 
 
+if not MYPY:
+    class NdbScaleDatabaseLcmConfigArgsDict(TypedDict):
+        expiry_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLcmConfigExpiryDetailArgsDict']]]]
+        post_delete_commands: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLcmConfigPostDeleteCommandArgsDict']]]]
+        pre_delete_commands: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLcmConfigPreDeleteCommandArgsDict']]]]
+        refresh_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLcmConfigRefreshDetailArgsDict']]]]
+elif False:
+    NdbScaleDatabaseLcmConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabaseLcmConfigArgs:
     def __init__(__self__, *,
@@ -28037,6 +34527,20 @@ class NdbScaleDatabaseLcmConfigArgs:
     def refresh_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLcmConfigRefreshDetailArgs']]]]):
         pulumi.set(self, "refresh_details", value)
 
+
+if not MYPY:
+    class NdbScaleDatabaseLcmConfigExpiryDetailArgsDict(TypedDict):
+        delete_database: NotRequired[pulumi.Input[bool]]
+        delete_time_machine: NotRequired[pulumi.Input[bool]]
+        delete_vm: NotRequired[pulumi.Input[bool]]
+        effective_timestamp: NotRequired[pulumi.Input[str]]
+        expire_in_days: NotRequired[pulumi.Input[int]]
+        expiry_date_timezone: NotRequired[pulumi.Input[str]]
+        expiry_timestamp: NotRequired[pulumi.Input[str]]
+        remind_before_in_days: NotRequired[pulumi.Input[int]]
+        user_created: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbScaleDatabaseLcmConfigExpiryDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbScaleDatabaseLcmConfigExpiryDetailArgs:
@@ -28151,6 +34655,12 @@ class NdbScaleDatabaseLcmConfigExpiryDetailArgs:
         pulumi.set(self, "user_created", value)
 
 
+if not MYPY:
+    class NdbScaleDatabaseLcmConfigPostDeleteCommandArgsDict(TypedDict):
+        command: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbScaleDatabaseLcmConfigPostDeleteCommandArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabaseLcmConfigPostDeleteCommandArgs:
     def __init__(__self__, *,
@@ -28168,6 +34678,12 @@ class NdbScaleDatabaseLcmConfigPostDeleteCommandArgs:
         pulumi.set(self, "command", value)
 
 
+if not MYPY:
+    class NdbScaleDatabaseLcmConfigPreDeleteCommandArgsDict(TypedDict):
+        command: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbScaleDatabaseLcmConfigPreDeleteCommandArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabaseLcmConfigPreDeleteCommandArgs:
     def __init__(__self__, *,
@@ -28184,6 +34700,18 @@ class NdbScaleDatabaseLcmConfigPreDeleteCommandArgs:
     def command(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "command", value)
 
+
+if not MYPY:
+    class NdbScaleDatabaseLcmConfigRefreshDetailArgsDict(TypedDict):
+        last_refresh_date: NotRequired[pulumi.Input[str]]
+        next_refresh_date: NotRequired[pulumi.Input[str]]
+        refresh_date_timezone: NotRequired[pulumi.Input[str]]
+        refresh_in_days: NotRequired[pulumi.Input[int]]
+        refresh_in_hours: NotRequired[pulumi.Input[int]]
+        refresh_in_months: NotRequired[pulumi.Input[int]]
+        refresh_time: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbScaleDatabaseLcmConfigRefreshDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbScaleDatabaseLcmConfigRefreshDetailArgs:
@@ -28273,6 +34801,52 @@ class NdbScaleDatabaseLcmConfigRefreshDetailArgs:
     def refresh_time(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "refresh_time", value)
 
+
+if not MYPY:
+    class NdbScaleDatabaseLinkedDatabaseArgsDict(TypedDict):
+        database_name: NotRequired[pulumi.Input[str]]
+        """
+        name of database
+        """
+        database_status: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        id: NotRequired[pulumi.Input[str]]
+        infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseLinkedDatabaseInfoArgsDict']]]]
+        """
+        info of instance
+        """
+        metric: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        parent_database_id: NotRequired[pulumi.Input[str]]
+        """
+        parent database id
+        """
+        parent_linked_database_id: NotRequired[pulumi.Input[str]]
+        snapshot_id: NotRequired[pulumi.Input[str]]
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of instance
+        """
+        timezone: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbScaleDatabaseLinkedDatabaseArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbScaleDatabaseLinkedDatabaseArgs:
@@ -28485,6 +35059,16 @@ class NdbScaleDatabaseLinkedDatabaseArgs:
         pulumi.set(self, "timezone", value)
 
 
+if not MYPY:
+    class NdbScaleDatabaseLinkedDatabaseInfoArgsDict(TypedDict):
+        info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        info of instance
+        """
+        secure_info: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    NdbScaleDatabaseLinkedDatabaseInfoArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabaseLinkedDatabaseInfoArgs:
     def __init__(__self__, *,
@@ -28520,6 +35104,16 @@ class NdbScaleDatabaseLinkedDatabaseInfoArgs:
         pulumi.set(self, "secure_info", value)
 
 
+if not MYPY:
+    class NdbScaleDatabasePropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbScaleDatabasePropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabasePropertyArgs:
     def __init__(__self__, *,
@@ -28554,6 +35148,16 @@ class NdbScaleDatabasePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbScaleDatabaseTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbScaleDatabaseTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbScaleDatabaseTagArgs:
@@ -28619,6 +35223,66 @@ class NdbScaleDatabaseTagArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbScaleDatabaseTimeMachineArgsDict(TypedDict):
+        access_level: NotRequired[pulumi.Input[str]]
+        clone: NotRequired[pulumi.Input[bool]]
+        """
+        whether instance is cloned or not
+        """
+        clones: NotRequired[pulumi.Input[str]]
+        clustered: NotRequired[pulumi.Input[bool]]
+        database: NotRequired[pulumi.Input[str]]
+        database_id: NotRequired[pulumi.Input[str]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        ea_status: NotRequired[pulumi.Input[str]]
+        id: NotRequired[pulumi.Input[str]]
+        metric: NotRequired[pulumi.Input[str]]
+        """
+        Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachinePropertyArgsDict']]]]
+        """
+        properties of database created
+        """
+        schedule_id: NotRequired[pulumi.Input[str]]
+        schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineScheduleArgsDict']]]]
+        scope: NotRequired[pulumi.Input[str]]
+        sla_id: NotRequired[pulumi.Input[str]]
+        sla_update_in_progress: NotRequired[pulumi.Input[bool]]
+        sla_update_metadata: NotRequired[pulumi.Input[str]]
+        slas: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineSlaArgsDict']]]]
+        source_nx_clusters: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of instance
+        """
+        tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineTagArgsDict']]]]
+        """
+        allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        type of database
+        """
+elif False:
+    NdbScaleDatabaseTimeMachineArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbScaleDatabaseTimeMachineArgs:
@@ -28967,6 +35631,22 @@ class NdbScaleDatabaseTimeMachineArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class NdbScaleDatabaseTimeMachinePropertyArgsDict(TypedDict):
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        ref_id: NotRequired[pulumi.Input[str]]
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbScaleDatabaseTimeMachinePropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabaseTimeMachinePropertyArgs:
     def __init__(__self__, *,
@@ -29041,6 +35721,45 @@ class NdbScaleDatabaseTimeMachinePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbScaleDatabaseTimeMachineScheduleArgsDict(TypedDict):
+        continuous_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineScheduleContinuousScheduleArgsDict']]]]
+        daily_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineScheduleDailyScheduleArgsDict']]]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        global_policy: NotRequired[pulumi.Input[bool]]
+        id: NotRequired[pulumi.Input[str]]
+        monthly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineScheduleMonthlyScheduleArgsDict']]]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        quartely_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineScheduleQuartelyScheduleArgsDict']]]]
+        reference_count: NotRequired[pulumi.Input[int]]
+        snapshot_time_of_days: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineScheduleSnapshotTimeOfDayArgsDict']]]]
+        start_time: NotRequired[pulumi.Input[str]]
+        system_policy: NotRequired[pulumi.Input[bool]]
+        time_zone: NotRequired[pulumi.Input[str]]
+        """
+        timezone on which instance is created xw
+        """
+        unique_name: NotRequired[pulumi.Input[str]]
+        weekly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineScheduleWeeklyScheduleArgsDict']]]]
+        yearly_schedules: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbScaleDatabaseTimeMachineScheduleYearlyScheduleArgsDict']]]]
+elif False:
+    NdbScaleDatabaseTimeMachineScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbScaleDatabaseTimeMachineScheduleArgs:
@@ -29297,6 +36016,14 @@ class NdbScaleDatabaseTimeMachineScheduleArgs:
         pulumi.set(self, "yearly_schedules", value)
 
 
+if not MYPY:
+    class NdbScaleDatabaseTimeMachineScheduleContinuousScheduleArgsDict(TypedDict):
+        enabled: NotRequired[pulumi.Input[bool]]
+        log_backup_interval: NotRequired[pulumi.Input[int]]
+        snapshots_per_day: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbScaleDatabaseTimeMachineScheduleContinuousScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabaseTimeMachineScheduleContinuousScheduleArgs:
     def __init__(__self__, *,
@@ -29338,6 +36065,12 @@ class NdbScaleDatabaseTimeMachineScheduleContinuousScheduleArgs:
         pulumi.set(self, "snapshots_per_day", value)
 
 
+if not MYPY:
+    class NdbScaleDatabaseTimeMachineScheduleDailyScheduleArgsDict(TypedDict):
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbScaleDatabaseTimeMachineScheduleDailyScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabaseTimeMachineScheduleDailyScheduleArgs:
     def __init__(__self__, *,
@@ -29354,6 +36087,13 @@ class NdbScaleDatabaseTimeMachineScheduleDailyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbScaleDatabaseTimeMachineScheduleMonthlyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbScaleDatabaseTimeMachineScheduleMonthlyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbScaleDatabaseTimeMachineScheduleMonthlyScheduleArgs:
@@ -29383,6 +36123,15 @@ class NdbScaleDatabaseTimeMachineScheduleMonthlyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbScaleDatabaseTimeMachineScheduleQuartelyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+        start_month: NotRequired[pulumi.Input[str]]
+        start_month_value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbScaleDatabaseTimeMachineScheduleQuartelyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbScaleDatabaseTimeMachineScheduleQuartelyScheduleArgs:
@@ -29437,6 +36186,15 @@ class NdbScaleDatabaseTimeMachineScheduleQuartelyScheduleArgs:
         pulumi.set(self, "start_month_value", value)
 
 
+if not MYPY:
+    class NdbScaleDatabaseTimeMachineScheduleSnapshotTimeOfDayArgsDict(TypedDict):
+        extra: NotRequired[pulumi.Input[bool]]
+        hours: NotRequired[pulumi.Input[int]]
+        minutes: NotRequired[pulumi.Input[int]]
+        seconds: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbScaleDatabaseTimeMachineScheduleSnapshotTimeOfDayArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabaseTimeMachineScheduleSnapshotTimeOfDayArgs:
     def __init__(__self__, *,
@@ -29490,6 +36248,14 @@ class NdbScaleDatabaseTimeMachineScheduleSnapshotTimeOfDayArgs:
         pulumi.set(self, "seconds", value)
 
 
+if not MYPY:
+    class NdbScaleDatabaseTimeMachineScheduleWeeklyScheduleArgsDict(TypedDict):
+        day_of_week: NotRequired[pulumi.Input[str]]
+        day_of_week_value: NotRequired[pulumi.Input[str]]
+        enabled: NotRequired[pulumi.Input[bool]]
+elif False:
+    NdbScaleDatabaseTimeMachineScheduleWeeklyScheduleArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabaseTimeMachineScheduleWeeklyScheduleArgs:
     def __init__(__self__, *,
@@ -29530,6 +36296,15 @@ class NdbScaleDatabaseTimeMachineScheduleWeeklyScheduleArgs:
     def enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "enabled", value)
 
+
+if not MYPY:
+    class NdbScaleDatabaseTimeMachineScheduleYearlyScheduleArgsDict(TypedDict):
+        day_of_month: NotRequired[pulumi.Input[int]]
+        enabled: NotRequired[pulumi.Input[bool]]
+        month: NotRequired[pulumi.Input[str]]
+        month_value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbScaleDatabaseTimeMachineScheduleYearlyScheduleArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbScaleDatabaseTimeMachineScheduleYearlyScheduleArgs:
@@ -29583,6 +36358,40 @@ class NdbScaleDatabaseTimeMachineScheduleYearlyScheduleArgs:
     def month_value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "month_value", value)
 
+
+if not MYPY:
+    class NdbScaleDatabaseTimeMachineSlaArgsDict(TypedDict):
+        continuous_retention: NotRequired[pulumi.Input[int]]
+        current_active_frequency: NotRequired[pulumi.Input[str]]
+        daily_retention: NotRequired[pulumi.Input[int]]
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created for db instance
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified for instance
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        description of database instance
+        """
+        id: NotRequired[pulumi.Input[str]]
+        monthly_retention: NotRequired[pulumi.Input[int]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of database instance
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        pitr_enabled: NotRequired[pulumi.Input[bool]]
+        quarterly_retention: NotRequired[pulumi.Input[int]]
+        reference_count: NotRequired[pulumi.Input[int]]
+        system_sla: NotRequired[pulumi.Input[bool]]
+        unique_name: NotRequired[pulumi.Input[str]]
+        weekly_retention: NotRequired[pulumi.Input[int]]
+        yearly_retention: NotRequired[pulumi.Input[int]]
+elif False:
+    NdbScaleDatabaseTimeMachineSlaArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbScaleDatabaseTimeMachineSlaArgs:
@@ -29811,6 +36620,16 @@ class NdbScaleDatabaseTimeMachineSlaArgs:
         pulumi.set(self, "yearly_retention", value)
 
 
+if not MYPY:
+    class NdbScaleDatabaseTimeMachineTagArgsDict(TypedDict):
+        entity_id: NotRequired[pulumi.Input[str]]
+        entity_type: NotRequired[pulumi.Input[str]]
+        tag_id: NotRequired[pulumi.Input[str]]
+        tag_name: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbScaleDatabaseTimeMachineTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbScaleDatabaseTimeMachineTagArgs:
     def __init__(__self__, *,
@@ -29876,6 +36695,23 @@ class NdbScaleDatabaseTimeMachineTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbSoftwareVersionProfilePostgresDatabaseArgsDict(TypedDict):
+        db_software_notes: NotRequired[pulumi.Input[str]]
+        """
+        db software notes
+        """
+        os_notes: NotRequired[pulumi.Input[str]]
+        """
+        os notes for software profile
+        """
+        source_dbserver_id: NotRequired[pulumi.Input[str]]
+        """
+        source dbserver id
+        """
+elif False:
+    NdbSoftwareVersionProfilePostgresDatabaseArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbSoftwareVersionProfilePostgresDatabaseArgs:
     def __init__(__self__, *,
@@ -29931,6 +36767,23 @@ class NdbSoftwareVersionProfilePostgresDatabaseArgs:
         pulumi.set(self, "source_dbserver_id", value)
 
 
+if not MYPY:
+    class NdbSoftwareVersionProfilePropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of profile
+        """
+        secure: NotRequired[pulumi.Input[bool]]
+        """
+        secure or not
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        value of property
+        """
+elif False:
+    NdbSoftwareVersionProfilePropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbSoftwareVersionProfilePropertyArgs:
     def __init__(__self__, *,
@@ -29985,6 +36838,43 @@ class NdbSoftwareVersionProfilePropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NdbSoftwareVersionProfileVersionClusterAssociationArgsDict(TypedDict):
+        date_created: NotRequired[pulumi.Input[str]]
+        """
+        date created of profile
+        """
+        date_modified: NotRequired[pulumi.Input[str]]
+        """
+        date modified of profile
+        """
+        nx_cluster_id: NotRequired[pulumi.Input[str]]
+        """
+        nutanix cluster id
+        """
+        optimized_for_provisioning: NotRequired[pulumi.Input[bool]]
+        """
+        version optimized for provisioning
+        """
+        owner_id: NotRequired[pulumi.Input[str]]
+        """
+        owner id
+        """
+        profile_version_id: NotRequired[pulumi.Input[str]]
+        """
+        profile version id
+        """
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbSoftwareVersionProfileVersionClusterAssociationPropertyArgsDict']]]]
+        """
+        properties of software profile
+        """
+        status: NotRequired[pulumi.Input[str]]
+        """
+        status of profile. Allowed Values are "deprecated", "published", "unpublished"
+        """
+elif False:
+    NdbSoftwareVersionProfileVersionClusterAssociationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbSoftwareVersionProfileVersionClusterAssociationArgs:
@@ -30121,6 +37011,23 @@ class NdbSoftwareVersionProfileVersionClusterAssociationArgs:
         pulumi.set(self, "status", value)
 
 
+if not MYPY:
+    class NdbSoftwareVersionProfileVersionClusterAssociationPropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        Name of profile
+        """
+        secure: NotRequired[pulumi.Input[bool]]
+        """
+        secure or not
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        value of property
+        """
+elif False:
+    NdbSoftwareVersionProfileVersionClusterAssociationPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbSoftwareVersionProfileVersionClusterAssociationPropertyArgs:
     def __init__(__self__, *,
@@ -30176,6 +37083,13 @@ class NdbSoftwareVersionProfileVersionClusterAssociationPropertyArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NdbStretchedVlanMetadataArgsDict(TypedDict):
+        gateway: NotRequired[pulumi.Input[str]]
+        subnet_mask: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbStretchedVlanMetadataArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbStretchedVlanMetadataArgs:
     def __init__(__self__, *,
@@ -30204,6 +37118,43 @@ class NdbStretchedVlanMetadataArgs:
     def subnet_mask(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "subnet_mask", value)
 
+
+if not MYPY:
+    class NdbStretchedVlanVlansListArgsDict(TypedDict):
+        cluster_id: NotRequired[pulumi.Input[str]]
+        """
+        cluster id where network is present
+        """
+        id: NotRequired[pulumi.Input[str]]
+        """
+        network id
+        """
+        managed: NotRequired[pulumi.Input[bool]]
+        """
+        network managed by NDB or not
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        name for the stretched VLAN
+        """
+        properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbStretchedVlanVlansListPropertyArgsDict']]]]
+        """
+        properties of network
+        """
+        properties_maps: NotRequired[pulumi.Input[Sequence[pulumi.Input['NdbStretchedVlanVlansListPropertiesMapArgsDict']]]]
+        """
+        properties map of network
+        """
+        stretched_vlan_id: NotRequired[pulumi.Input[str]]
+        """
+        stretched vlan id
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
+        """
+elif False:
+    NdbStretchedVlanVlansListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NdbStretchedVlanVlansListArgs:
@@ -30340,6 +37291,27 @@ class NdbStretchedVlanVlansListArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class NdbStretchedVlanVlansListPropertiesMapArgsDict(TypedDict):
+        vlan_gateway: NotRequired[pulumi.Input[str]]
+        """
+        gateway of vlan
+        """
+        vlan_primary_dns: NotRequired[pulumi.Input[str]]
+        """
+        primary dns of vlan
+        """
+        vlan_secondary_dns: NotRequired[pulumi.Input[str]]
+        """
+        secondary dns of vlan
+        """
+        vlan_subnet_mask: NotRequired[pulumi.Input[str]]
+        """
+        subnet mask of vlan
+        """
+elif False:
+    NdbStretchedVlanVlansListPropertiesMapArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbStretchedVlanVlansListPropertiesMapArgs:
     def __init__(__self__, *,
@@ -30411,6 +37383,17 @@ class NdbStretchedVlanVlansListPropertiesMapArgs:
         pulumi.set(self, "vlan_subnet_mask", value)
 
 
+if not MYPY:
+    class NdbStretchedVlanVlansListPropertyArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        name for the stretched VLAN
+        """
+        secure: NotRequired[pulumi.Input[bool]]
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NdbStretchedVlanVlansListPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NdbStretchedVlanVlansListPropertyArgs:
     def __init__(__self__, *,
@@ -30457,6 +37440,25 @@ class NdbStretchedVlanVlansListPropertyArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class NetworkSecurityRuleAdRuleInboundAllowListArgsDict(TypedDict):
+        address_group_inclusion_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAdRuleInboundAllowListAddressGroupInclusionListArgsDict']]]]
+        expiration_time: NotRequired[pulumi.Input[str]]
+        filter_kind_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        filter_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAdRuleInboundAllowListFilterParamArgsDict']]]]
+        filter_type: NotRequired[pulumi.Input[str]]
+        icmp_type_code_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAdRuleInboundAllowListIcmpTypeCodeListArgsDict']]]]
+        ip_subnet: NotRequired[pulumi.Input[str]]
+        ip_subnet_prefix_length: NotRequired[pulumi.Input[str]]
+        network_function_chain_reference: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        peer_specification_type: NotRequired[pulumi.Input[str]]
+        protocol: NotRequired[pulumi.Input[str]]
+        service_group_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAdRuleInboundAllowListServiceGroupListArgsDict']]]]
+        tcp_port_range_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAdRuleInboundAllowListTcpPortRangeListArgsDict']]]]
+        udp_port_range_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAdRuleInboundAllowListUdpPortRangeListArgsDict']]]]
+elif False:
+    NetworkSecurityRuleAdRuleInboundAllowListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NetworkSecurityRuleAdRuleInboundAllowListArgs:
@@ -30631,6 +37633,23 @@ class NetworkSecurityRuleAdRuleInboundAllowListArgs:
         pulumi.set(self, "udp_port_range_lists", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAdRuleInboundAllowListAddressGroupInclusionListArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) The name for the network_security_rule.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - the UUID(Required).
+        """
+elif False:
+    NetworkSecurityRuleAdRuleInboundAllowListAddressGroupInclusionListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAdRuleInboundAllowListAddressGroupInclusionListArgs:
     def __init__(__self__, *,
@@ -30686,6 +37705,16 @@ class NetworkSecurityRuleAdRuleInboundAllowListAddressGroupInclusionListArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAdRuleInboundAllowListFilterParamArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        - (Required) The name for the network_security_rule.
+        """
+        values: pulumi.Input[Sequence[pulumi.Input[str]]]
+elif False:
+    NetworkSecurityRuleAdRuleInboundAllowListFilterParamArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAdRuleInboundAllowListFilterParamArgs:
     def __init__(__self__, *,
@@ -30719,6 +37748,13 @@ class NetworkSecurityRuleAdRuleInboundAllowListFilterParamArgs:
         pulumi.set(self, "values", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAdRuleInboundAllowListIcmpTypeCodeListArgsDict(TypedDict):
+        code: NotRequired[pulumi.Input[str]]
+        type: NotRequired[pulumi.Input[str]]
+elif False:
+    NetworkSecurityRuleAdRuleInboundAllowListIcmpTypeCodeListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAdRuleInboundAllowListIcmpTypeCodeListArgs:
     def __init__(__self__, *,
@@ -30747,6 +37783,23 @@ class NetworkSecurityRuleAdRuleInboundAllowListIcmpTypeCodeListArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class NetworkSecurityRuleAdRuleInboundAllowListServiceGroupListArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) The name for the network_security_rule.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - the UUID(Required).
+        """
+elif False:
+    NetworkSecurityRuleAdRuleInboundAllowListServiceGroupListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NetworkSecurityRuleAdRuleInboundAllowListServiceGroupListArgs:
@@ -30803,6 +37856,13 @@ class NetworkSecurityRuleAdRuleInboundAllowListServiceGroupListArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAdRuleInboundAllowListTcpPortRangeListArgsDict(TypedDict):
+        end_port: NotRequired[pulumi.Input[int]]
+        start_port: NotRequired[pulumi.Input[int]]
+elif False:
+    NetworkSecurityRuleAdRuleInboundAllowListTcpPortRangeListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAdRuleInboundAllowListTcpPortRangeListArgs:
     def __init__(__self__, *,
@@ -30832,6 +37892,13 @@ class NetworkSecurityRuleAdRuleInboundAllowListTcpPortRangeListArgs:
         pulumi.set(self, "start_port", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAdRuleInboundAllowListUdpPortRangeListArgsDict(TypedDict):
+        end_port: NotRequired[pulumi.Input[int]]
+        start_port: NotRequired[pulumi.Input[int]]
+elif False:
+    NetworkSecurityRuleAdRuleInboundAllowListUdpPortRangeListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAdRuleInboundAllowListUdpPortRangeListArgs:
     def __init__(__self__, *,
@@ -30860,6 +37927,25 @@ class NetworkSecurityRuleAdRuleInboundAllowListUdpPortRangeListArgs:
     def start_port(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "start_port", value)
 
+
+if not MYPY:
+    class NetworkSecurityRuleAdRuleOutboundAllowListArgsDict(TypedDict):
+        address_group_inclusion_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionListArgsDict']]]]
+        expiration_time: NotRequired[pulumi.Input[str]]
+        filter_kind_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        filter_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAdRuleOutboundAllowListFilterParamArgsDict']]]]
+        filter_type: NotRequired[pulumi.Input[str]]
+        icmp_type_code_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAdRuleOutboundAllowListIcmpTypeCodeListArgsDict']]]]
+        ip_subnet: NotRequired[pulumi.Input[str]]
+        ip_subnet_prefix_length: NotRequired[pulumi.Input[str]]
+        network_function_chain_reference: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        peer_specification_type: NotRequired[pulumi.Input[str]]
+        protocol: NotRequired[pulumi.Input[str]]
+        service_group_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupListArgsDict']]]]
+        tcp_port_range_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAdRuleOutboundAllowListTcpPortRangeListArgsDict']]]]
+        udp_port_range_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAdRuleOutboundAllowListUdpPortRangeListArgsDict']]]]
+elif False:
+    NetworkSecurityRuleAdRuleOutboundAllowListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NetworkSecurityRuleAdRuleOutboundAllowListArgs:
@@ -31034,6 +38120,23 @@ class NetworkSecurityRuleAdRuleOutboundAllowListArgs:
         pulumi.set(self, "udp_port_range_lists", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionListArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) The name for the network_security_rule.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - the UUID(Required).
+        """
+elif False:
+    NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionListArgs:
     def __init__(__self__, *,
@@ -31089,6 +38192,16 @@ class NetworkSecurityRuleAdRuleOutboundAllowListAddressGroupInclusionListArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAdRuleOutboundAllowListFilterParamArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        - (Required) The name for the network_security_rule.
+        """
+        values: pulumi.Input[Sequence[pulumi.Input[str]]]
+elif False:
+    NetworkSecurityRuleAdRuleOutboundAllowListFilterParamArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAdRuleOutboundAllowListFilterParamArgs:
     def __init__(__self__, *,
@@ -31122,6 +38235,13 @@ class NetworkSecurityRuleAdRuleOutboundAllowListFilterParamArgs:
         pulumi.set(self, "values", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAdRuleOutboundAllowListIcmpTypeCodeListArgsDict(TypedDict):
+        code: NotRequired[pulumi.Input[str]]
+        type: NotRequired[pulumi.Input[str]]
+elif False:
+    NetworkSecurityRuleAdRuleOutboundAllowListIcmpTypeCodeListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAdRuleOutboundAllowListIcmpTypeCodeListArgs:
     def __init__(__self__, *,
@@ -31150,6 +38270,23 @@ class NetworkSecurityRuleAdRuleOutboundAllowListIcmpTypeCodeListArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupListArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) The name for the network_security_rule.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - the UUID(Required).
+        """
+elif False:
+    NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupListArgs:
@@ -31206,6 +38343,13 @@ class NetworkSecurityRuleAdRuleOutboundAllowListServiceGroupListArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAdRuleOutboundAllowListTcpPortRangeListArgsDict(TypedDict):
+        end_port: NotRequired[pulumi.Input[int]]
+        start_port: NotRequired[pulumi.Input[int]]
+elif False:
+    NetworkSecurityRuleAdRuleOutboundAllowListTcpPortRangeListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAdRuleOutboundAllowListTcpPortRangeListArgs:
     def __init__(__self__, *,
@@ -31235,6 +38379,13 @@ class NetworkSecurityRuleAdRuleOutboundAllowListTcpPortRangeListArgs:
         pulumi.set(self, "start_port", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAdRuleOutboundAllowListUdpPortRangeListArgsDict(TypedDict):
+        end_port: NotRequired[pulumi.Input[int]]
+        start_port: NotRequired[pulumi.Input[int]]
+elif False:
+    NetworkSecurityRuleAdRuleOutboundAllowListUdpPortRangeListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAdRuleOutboundAllowListUdpPortRangeListArgs:
     def __init__(__self__, *,
@@ -31263,6 +38414,16 @@ class NetworkSecurityRuleAdRuleOutboundAllowListUdpPortRangeListArgs:
     def start_port(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "start_port", value)
 
+
+if not MYPY:
+    class NetworkSecurityRuleAdRuleTargetGroupFilterParamArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        - (Required) The name for the network_security_rule.
+        """
+        values: pulumi.Input[Sequence[pulumi.Input[str]]]
+elif False:
+    NetworkSecurityRuleAdRuleTargetGroupFilterParamArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs:
@@ -31296,6 +38457,25 @@ class NetworkSecurityRuleAdRuleTargetGroupFilterParamArgs:
     def values(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
         pulumi.set(self, "values", value)
 
+
+if not MYPY:
+    class NetworkSecurityRuleAppRuleInboundAllowListArgsDict(TypedDict):
+        address_group_inclusion_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAppRuleInboundAllowListAddressGroupInclusionListArgsDict']]]]
+        expiration_time: NotRequired[pulumi.Input[str]]
+        filter_kind_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        filter_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAppRuleInboundAllowListFilterParamArgsDict']]]]
+        filter_type: NotRequired[pulumi.Input[str]]
+        icmp_type_code_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAppRuleInboundAllowListIcmpTypeCodeListArgsDict']]]]
+        ip_subnet: NotRequired[pulumi.Input[str]]
+        ip_subnet_prefix_length: NotRequired[pulumi.Input[str]]
+        network_function_chain_reference: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        peer_specification_type: NotRequired[pulumi.Input[str]]
+        protocol: NotRequired[pulumi.Input[str]]
+        service_group_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAppRuleInboundAllowListServiceGroupListArgsDict']]]]
+        tcp_port_range_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAppRuleInboundAllowListTcpPortRangeListArgsDict']]]]
+        udp_port_range_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAppRuleInboundAllowListUdpPortRangeListArgsDict']]]]
+elif False:
+    NetworkSecurityRuleAppRuleInboundAllowListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NetworkSecurityRuleAppRuleInboundAllowListArgs:
@@ -31470,6 +38650,23 @@ class NetworkSecurityRuleAppRuleInboundAllowListArgs:
         pulumi.set(self, "udp_port_range_lists", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAppRuleInboundAllowListAddressGroupInclusionListArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) The name for the network_security_rule.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - the UUID(Required).
+        """
+elif False:
+    NetworkSecurityRuleAppRuleInboundAllowListAddressGroupInclusionListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAppRuleInboundAllowListAddressGroupInclusionListArgs:
     def __init__(__self__, *,
@@ -31525,6 +38722,16 @@ class NetworkSecurityRuleAppRuleInboundAllowListAddressGroupInclusionListArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAppRuleInboundAllowListFilterParamArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        - (Required) The name for the network_security_rule.
+        """
+        values: pulumi.Input[Sequence[pulumi.Input[str]]]
+elif False:
+    NetworkSecurityRuleAppRuleInboundAllowListFilterParamArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAppRuleInboundAllowListFilterParamArgs:
     def __init__(__self__, *,
@@ -31558,6 +38765,13 @@ class NetworkSecurityRuleAppRuleInboundAllowListFilterParamArgs:
         pulumi.set(self, "values", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAppRuleInboundAllowListIcmpTypeCodeListArgsDict(TypedDict):
+        code: NotRequired[pulumi.Input[str]]
+        type: NotRequired[pulumi.Input[str]]
+elif False:
+    NetworkSecurityRuleAppRuleInboundAllowListIcmpTypeCodeListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAppRuleInboundAllowListIcmpTypeCodeListArgs:
     def __init__(__self__, *,
@@ -31586,6 +38800,23 @@ class NetworkSecurityRuleAppRuleInboundAllowListIcmpTypeCodeListArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class NetworkSecurityRuleAppRuleInboundAllowListServiceGroupListArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) The name for the network_security_rule.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - the UUID(Required).
+        """
+elif False:
+    NetworkSecurityRuleAppRuleInboundAllowListServiceGroupListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NetworkSecurityRuleAppRuleInboundAllowListServiceGroupListArgs:
@@ -31642,6 +38873,13 @@ class NetworkSecurityRuleAppRuleInboundAllowListServiceGroupListArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAppRuleInboundAllowListTcpPortRangeListArgsDict(TypedDict):
+        end_port: NotRequired[pulumi.Input[int]]
+        start_port: NotRequired[pulumi.Input[int]]
+elif False:
+    NetworkSecurityRuleAppRuleInboundAllowListTcpPortRangeListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAppRuleInboundAllowListTcpPortRangeListArgs:
     def __init__(__self__, *,
@@ -31671,6 +38909,13 @@ class NetworkSecurityRuleAppRuleInboundAllowListTcpPortRangeListArgs:
         pulumi.set(self, "start_port", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAppRuleInboundAllowListUdpPortRangeListArgsDict(TypedDict):
+        end_port: NotRequired[pulumi.Input[int]]
+        start_port: NotRequired[pulumi.Input[int]]
+elif False:
+    NetworkSecurityRuleAppRuleInboundAllowListUdpPortRangeListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAppRuleInboundAllowListUdpPortRangeListArgs:
     def __init__(__self__, *,
@@ -31699,6 +38944,25 @@ class NetworkSecurityRuleAppRuleInboundAllowListUdpPortRangeListArgs:
     def start_port(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "start_port", value)
 
+
+if not MYPY:
+    class NetworkSecurityRuleAppRuleOutboundAllowListArgsDict(TypedDict):
+        address_group_inclusion_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAppRuleOutboundAllowListAddressGroupInclusionListArgsDict']]]]
+        expiration_time: NotRequired[pulumi.Input[str]]
+        filter_kind_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        filter_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAppRuleOutboundAllowListFilterParamArgsDict']]]]
+        filter_type: NotRequired[pulumi.Input[str]]
+        icmp_type_code_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAppRuleOutboundAllowListIcmpTypeCodeListArgsDict']]]]
+        ip_subnet: NotRequired[pulumi.Input[str]]
+        ip_subnet_prefix_length: NotRequired[pulumi.Input[str]]
+        network_function_chain_reference: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        peer_specification_type: NotRequired[pulumi.Input[str]]
+        protocol: NotRequired[pulumi.Input[str]]
+        service_group_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAppRuleOutboundAllowListServiceGroupListArgsDict']]]]
+        tcp_port_range_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAppRuleOutboundAllowListTcpPortRangeListArgsDict']]]]
+        udp_port_range_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['NetworkSecurityRuleAppRuleOutboundAllowListUdpPortRangeListArgsDict']]]]
+elif False:
+    NetworkSecurityRuleAppRuleOutboundAllowListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NetworkSecurityRuleAppRuleOutboundAllowListArgs:
@@ -31873,6 +39137,23 @@ class NetworkSecurityRuleAppRuleOutboundAllowListArgs:
         pulumi.set(self, "udp_port_range_lists", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAppRuleOutboundAllowListAddressGroupInclusionListArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) The name for the network_security_rule.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - the UUID(Required).
+        """
+elif False:
+    NetworkSecurityRuleAppRuleOutboundAllowListAddressGroupInclusionListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAppRuleOutboundAllowListAddressGroupInclusionListArgs:
     def __init__(__self__, *,
@@ -31928,6 +39209,16 @@ class NetworkSecurityRuleAppRuleOutboundAllowListAddressGroupInclusionListArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAppRuleOutboundAllowListFilterParamArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        - (Required) The name for the network_security_rule.
+        """
+        values: pulumi.Input[Sequence[pulumi.Input[str]]]
+elif False:
+    NetworkSecurityRuleAppRuleOutboundAllowListFilterParamArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAppRuleOutboundAllowListFilterParamArgs:
     def __init__(__self__, *,
@@ -31961,6 +39252,13 @@ class NetworkSecurityRuleAppRuleOutboundAllowListFilterParamArgs:
         pulumi.set(self, "values", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAppRuleOutboundAllowListIcmpTypeCodeListArgsDict(TypedDict):
+        code: NotRequired[pulumi.Input[str]]
+        type: NotRequired[pulumi.Input[str]]
+elif False:
+    NetworkSecurityRuleAppRuleOutboundAllowListIcmpTypeCodeListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAppRuleOutboundAllowListIcmpTypeCodeListArgs:
     def __init__(__self__, *,
@@ -31989,6 +39287,23 @@ class NetworkSecurityRuleAppRuleOutboundAllowListIcmpTypeCodeListArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class NetworkSecurityRuleAppRuleOutboundAllowListServiceGroupListArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) The name for the network_security_rule.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - the UUID(Required).
+        """
+elif False:
+    NetworkSecurityRuleAppRuleOutboundAllowListServiceGroupListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NetworkSecurityRuleAppRuleOutboundAllowListServiceGroupListArgs:
@@ -32045,6 +39360,13 @@ class NetworkSecurityRuleAppRuleOutboundAllowListServiceGroupListArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAppRuleOutboundAllowListTcpPortRangeListArgsDict(TypedDict):
+        end_port: NotRequired[pulumi.Input[int]]
+        start_port: NotRequired[pulumi.Input[int]]
+elif False:
+    NetworkSecurityRuleAppRuleOutboundAllowListTcpPortRangeListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAppRuleOutboundAllowListTcpPortRangeListArgs:
     def __init__(__self__, *,
@@ -32074,6 +39396,13 @@ class NetworkSecurityRuleAppRuleOutboundAllowListTcpPortRangeListArgs:
         pulumi.set(self, "start_port", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleAppRuleOutboundAllowListUdpPortRangeListArgsDict(TypedDict):
+        end_port: NotRequired[pulumi.Input[int]]
+        start_port: NotRequired[pulumi.Input[int]]
+elif False:
+    NetworkSecurityRuleAppRuleOutboundAllowListUdpPortRangeListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleAppRuleOutboundAllowListUdpPortRangeListArgs:
     def __init__(__self__, *,
@@ -32102,6 +39431,16 @@ class NetworkSecurityRuleAppRuleOutboundAllowListUdpPortRangeListArgs:
     def start_port(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "start_port", value)
 
+
+if not MYPY:
+    class NetworkSecurityRuleAppRuleTargetGroupFilterParamArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        - (Required) The name for the network_security_rule.
+        """
+        values: pulumi.Input[Sequence[pulumi.Input[str]]]
+elif False:
+    NetworkSecurityRuleAppRuleTargetGroupFilterParamArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs:
@@ -32135,6 +39474,16 @@ class NetworkSecurityRuleAppRuleTargetGroupFilterParamArgs:
     def values(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
         pulumi.set(self, "values", value)
 
+
+if not MYPY:
+    class NetworkSecurityRuleCategoryArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) The name for the network_security_rule.
+        """
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    NetworkSecurityRuleCategoryArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class NetworkSecurityRuleCategoryArgs:
@@ -32171,6 +39520,16 @@ class NetworkSecurityRuleCategoryArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        - (Required) The name for the network_security_rule.
+        """
+        values: pulumi.Input[Sequence[pulumi.Input[str]]]
+elif False:
+    NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs:
     def __init__(__self__, *,
@@ -32204,6 +39563,16 @@ class NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs:
         pulumi.set(self, "values", value)
 
 
+if not MYPY:
+    class NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        - (Required) The name for the network_security_rule.
+        """
+        values: pulumi.Input[Sequence[pulumi.Input[str]]]
+elif False:
+    NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs:
     def __init__(__self__, *,
@@ -32236,6 +39605,14 @@ class NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs:
     def values(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
         pulumi.set(self, "values", value)
 
+
+if not MYPY:
+    class PbrDestinationArgsDict(TypedDict):
+        address_type: NotRequired[pulumi.Input[str]]
+        prefix_length: NotRequired[pulumi.Input[int]]
+        subnet_ip: NotRequired[pulumi.Input[str]]
+elif False:
+    PbrDestinationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class PbrDestinationArgs:
@@ -32277,6 +39654,15 @@ class PbrDestinationArgs:
     def subnet_ip(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "subnet_ip", value)
 
+
+if not MYPY:
+    class PbrProtocolParametersArgsDict(TypedDict):
+        icmp: NotRequired[pulumi.Input['PbrProtocolParametersIcmpArgsDict']]
+        protocol_number: NotRequired[pulumi.Input[str]]
+        tcp: NotRequired[pulumi.Input['PbrProtocolParametersTcpArgsDict']]
+        udp: NotRequired[pulumi.Input['PbrProtocolParametersUdpArgsDict']]
+elif False:
+    PbrProtocolParametersArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class PbrProtocolParametersArgs:
@@ -32331,6 +39717,13 @@ class PbrProtocolParametersArgs:
         pulumi.set(self, "udp", value)
 
 
+if not MYPY:
+    class PbrProtocolParametersIcmpArgsDict(TypedDict):
+        icmp_code: pulumi.Input[int]
+        icmp_type: pulumi.Input[int]
+elif False:
+    PbrProtocolParametersIcmpArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class PbrProtocolParametersIcmpArgs:
     def __init__(__self__, *,
@@ -32357,6 +39750,13 @@ class PbrProtocolParametersIcmpArgs:
     def icmp_type(self, value: pulumi.Input[int]):
         pulumi.set(self, "icmp_type", value)
 
+
+if not MYPY:
+    class PbrProtocolParametersTcpArgsDict(TypedDict):
+        destination_port_range_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['PbrProtocolParametersTcpDestinationPortRangeListArgsDict']]]]
+        source_port_range_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['PbrProtocolParametersTcpSourcePortRangeListArgsDict']]]]
+elif False:
+    PbrProtocolParametersTcpArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class PbrProtocolParametersTcpArgs:
@@ -32387,6 +39787,13 @@ class PbrProtocolParametersTcpArgs:
         pulumi.set(self, "source_port_range_lists", value)
 
 
+if not MYPY:
+    class PbrProtocolParametersTcpDestinationPortRangeListArgsDict(TypedDict):
+        end_port: NotRequired[pulumi.Input[int]]
+        start_port: NotRequired[pulumi.Input[int]]
+elif False:
+    PbrProtocolParametersTcpDestinationPortRangeListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class PbrProtocolParametersTcpDestinationPortRangeListArgs:
     def __init__(__self__, *,
@@ -32415,6 +39822,13 @@ class PbrProtocolParametersTcpDestinationPortRangeListArgs:
     def start_port(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "start_port", value)
 
+
+if not MYPY:
+    class PbrProtocolParametersTcpSourcePortRangeListArgsDict(TypedDict):
+        end_port: NotRequired[pulumi.Input[int]]
+        start_port: NotRequired[pulumi.Input[int]]
+elif False:
+    PbrProtocolParametersTcpSourcePortRangeListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class PbrProtocolParametersTcpSourcePortRangeListArgs:
@@ -32445,6 +39859,13 @@ class PbrProtocolParametersTcpSourcePortRangeListArgs:
         pulumi.set(self, "start_port", value)
 
 
+if not MYPY:
+    class PbrProtocolParametersUdpArgsDict(TypedDict):
+        destination_port_range_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['PbrProtocolParametersUdpDestinationPortRangeListArgsDict']]]]
+        source_port_range_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['PbrProtocolParametersUdpSourcePortRangeListArgsDict']]]]
+elif False:
+    PbrProtocolParametersUdpArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class PbrProtocolParametersUdpArgs:
     def __init__(__self__, *,
@@ -32473,6 +39894,13 @@ class PbrProtocolParametersUdpArgs:
     def source_port_range_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PbrProtocolParametersUdpSourcePortRangeListArgs']]]]):
         pulumi.set(self, "source_port_range_lists", value)
 
+
+if not MYPY:
+    class PbrProtocolParametersUdpDestinationPortRangeListArgsDict(TypedDict):
+        end_port: NotRequired[pulumi.Input[int]]
+        start_port: NotRequired[pulumi.Input[int]]
+elif False:
+    PbrProtocolParametersUdpDestinationPortRangeListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class PbrProtocolParametersUdpDestinationPortRangeListArgs:
@@ -32503,6 +39931,13 @@ class PbrProtocolParametersUdpDestinationPortRangeListArgs:
         pulumi.set(self, "start_port", value)
 
 
+if not MYPY:
+    class PbrProtocolParametersUdpSourcePortRangeListArgsDict(TypedDict):
+        end_port: NotRequired[pulumi.Input[int]]
+        start_port: NotRequired[pulumi.Input[int]]
+elif False:
+    PbrProtocolParametersUdpSourcePortRangeListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class PbrProtocolParametersUdpSourcePortRangeListArgs:
     def __init__(__self__, *,
@@ -32531,6 +39966,14 @@ class PbrProtocolParametersUdpSourcePortRangeListArgs:
     def start_port(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "start_port", value)
 
+
+if not MYPY:
+    class PbrSourceArgsDict(TypedDict):
+        address_type: NotRequired[pulumi.Input[str]]
+        prefix_length: NotRequired[pulumi.Input[int]]
+        subnet_ip: NotRequired[pulumi.Input[str]]
+elif False:
+    PbrSourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class PbrSourceArgs:
@@ -32572,6 +40015,23 @@ class PbrSourceArgs:
     def subnet_ip(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "subnet_ip", value)
 
+
+if not MYPY:
+    class ProjectAccountReferenceListArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+elif False:
+    ProjectAccountReferenceListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectAccountReferenceListArgs:
@@ -32626,6 +40086,36 @@ class ProjectAccountReferenceListArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class ProjectAcpArgsDict(TypedDict):
+        role_reference: pulumi.Input['ProjectAcpRoleReferenceArgsDict']
+        """
+        Reference to role.
+        """
+        context_filter_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProjectAcpContextFilterListArgsDict']]]]
+        """
+        The list of context filters. These are OR filters. The scope-expression-list defines the context, and the filter works in conjunction with the entity-expression-list.
+        """
+        description: NotRequired[pulumi.Input[str]]
+        """
+        A description for project.
+        """
+        metadata: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+        user_group_reference_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProjectAcpUserGroupReferenceListArgsDict']]]]
+        """
+        List of Reference of users groups.
+        """
+        user_reference_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProjectAcpUserReferenceListArgsDict']]]]
+        """
+        List of Reference of users.
+        """
+elif False:
+    ProjectAcpArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectAcpArgs:
@@ -32741,6 +40231,19 @@ class ProjectAcpArgs:
         pulumi.set(self, "user_reference_lists", value)
 
 
+if not MYPY:
+    class ProjectAcpContextFilterListArgsDict(TypedDict):
+        entity_filter_expression_lists: pulumi.Input[Sequence[pulumi.Input['ProjectAcpContextFilterListEntityFilterExpressionListArgsDict']]]
+        """
+        (Required) A list of Entity filter expressions.
+        """
+        scope_filter_expression_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProjectAcpContextFilterListScopeFilterExpressionListArgsDict']]]]
+        """
+        - (Optional) Filter the scope of an Access Control Policy.
+        """
+elif False:
+    ProjectAcpContextFilterListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectAcpContextFilterListArgs:
     def __init__(__self__, *,
@@ -32778,6 +40281,23 @@ class ProjectAcpContextFilterListArgs:
     def scope_filter_expression_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectAcpContextFilterListScopeFilterExpressionListArgs']]]]):
         pulumi.set(self, "scope_filter_expression_lists", value)
 
+
+if not MYPY:
+    class ProjectAcpContextFilterListEntityFilterExpressionListArgsDict(TypedDict):
+        operator: pulumi.Input[str]
+        """
+        - (Required) The operator in the filter expression.
+        """
+        right_hand_side: pulumi.Input['ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArgsDict']
+        """
+        - (Required) The right hand side (RHS) of an scope expression.
+        """
+        left_hand_side_entity_type: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional)  The LHS of the filter expression - the entity type.
+        """
+elif False:
+    ProjectAcpContextFilterListEntityFilterExpressionListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectAcpContextFilterListEntityFilterExpressionListArgs:
@@ -32831,6 +40351,23 @@ class ProjectAcpContextFilterListEntityFilterExpressionListArgs:
     def left_hand_side_entity_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "left_hand_side_entity_type", value)
 
+
+if not MYPY:
+    class ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArgsDict(TypedDict):
+        categories: NotRequired[pulumi.Input['ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgsDict']]
+        """
+        - (Optional) The category values represented as a dictionary of key > list of values.
+        """
+        collection: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+        """
+        uuid_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        - (Optional) The explicit list of UUIDs for the given kind.
+        """
+elif False:
+    ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArgs:
@@ -32887,6 +40424,19 @@ class ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideArgs:
         pulumi.set(self, "uuid_lists", value)
 
 
+if not MYPY:
+    class ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        value of the key.
+        """
+elif False:
+    ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategoriesArgs:
     def __init__(__self__, *,
@@ -32925,6 +40475,23 @@ class ProjectAcpContextFilterListEntityFilterExpressionListRightHandSideCategori
     def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "values", value)
 
+
+if not MYPY:
+    class ProjectAcpContextFilterListScopeFilterExpressionListArgsDict(TypedDict):
+        left_hand_side: pulumi.Input[str]
+        """
+        - (Optional)  The LHS of the filter expression - the scope type.
+        """
+        operator: pulumi.Input[str]
+        """
+        - (Required) The operator in the filter expression.
+        """
+        right_hand_side: pulumi.Input['ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgsDict']
+        """
+        - (Required) The right hand side (RHS) of an scope expression.
+        """
+elif False:
+    ProjectAcpContextFilterListScopeFilterExpressionListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectAcpContextFilterListScopeFilterExpressionListArgs:
@@ -32977,6 +40544,23 @@ class ProjectAcpContextFilterListScopeFilterExpressionListArgs:
     def right_hand_side(self, value: pulumi.Input['ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs']):
         pulumi.set(self, "right_hand_side", value)
 
+
+if not MYPY:
+    class ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgsDict(TypedDict):
+        categories: NotRequired[pulumi.Input['ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgsDict']]
+        """
+        - (Optional) The category values represented as a dictionary of key > list of values.
+        """
+        collection: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional)  A representative term for supported groupings of entities. ALL = All the entities of a given kind.
+        """
+        uuid_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        - (Optional) The explicit list of UUIDs for the given kind.
+        """
+elif False:
+    ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs:
@@ -33033,6 +40617,19 @@ class ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideArgs:
         pulumi.set(self, "uuid_lists", value)
 
 
+if not MYPY:
+    class ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        """
+        value of the key.
+        """
+elif False:
+    ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategoriesArgs:
     def __init__(__self__, *,
@@ -33071,6 +40668,23 @@ class ProjectAcpContextFilterListScopeFilterExpressionListRightHandSideCategorie
     def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "values", value)
 
+
+if not MYPY:
+    class ProjectAcpRoleReferenceArgsDict(TypedDict):
+        kind: pulumi.Input[str]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+elif False:
+    ProjectAcpRoleReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectAcpRoleReferenceArgs:
@@ -33124,6 +40738,23 @@ class ProjectAcpRoleReferenceArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class ProjectAcpUserGroupReferenceListArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+elif False:
+    ProjectAcpUserGroupReferenceListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectAcpUserGroupReferenceListArgs:
@@ -33179,6 +40810,23 @@ class ProjectAcpUserGroupReferenceListArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class ProjectAcpUserReferenceListArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+elif False:
+    ProjectAcpUserReferenceListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectAcpUserReferenceListArgs:
     def __init__(__self__, *,
@@ -33233,6 +40881,19 @@ class ProjectAcpUserReferenceListArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class ProjectCategoryArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        value of the key.
+        """
+elif False:
+    ProjectCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectCategoryArgs:
     def __init__(__self__, *,
@@ -33271,6 +40932,23 @@ class ProjectCategoryArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class ProjectClusterReferenceListArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+elif False:
+    ProjectClusterReferenceListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectClusterReferenceListArgs:
@@ -33326,6 +41004,23 @@ class ProjectClusterReferenceListArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class ProjectDefaultEnvironmentReferenceArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+elif False:
+    ProjectDefaultEnvironmentReferenceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectDefaultEnvironmentReferenceArgs:
     def __init__(__self__, *,
@@ -33379,6 +41074,23 @@ class ProjectDefaultEnvironmentReferenceArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class ProjectDefaultSubnetReferenceArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+elif False:
+    ProjectDefaultSubnetReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectDefaultSubnetReferenceArgs:
@@ -33434,6 +41146,23 @@ class ProjectDefaultSubnetReferenceArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class ProjectEnvironmentReferenceListArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+elif False:
+    ProjectEnvironmentReferenceListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectEnvironmentReferenceListArgs:
     def __init__(__self__, *,
@@ -33488,6 +41217,19 @@ class ProjectEnvironmentReferenceListArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class ProjectExternalNetworkListArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+elif False:
+    ProjectExternalNetworkListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectExternalNetworkListArgs:
     def __init__(__self__, *,
@@ -33525,6 +41267,23 @@ class ProjectExternalNetworkListArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class ProjectExternalUserGroupReferenceListArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+elif False:
+    ProjectExternalUserGroupReferenceListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectExternalUserGroupReferenceListArgs:
@@ -33580,6 +41339,12 @@ class ProjectExternalUserGroupReferenceListArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class ProjectResourceDomainArgsDict(TypedDict):
+        resources: pulumi.Input[Sequence[pulumi.Input['ProjectResourceDomainResourceArgsDict']]]
+elif False:
+    ProjectResourceDomainArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectResourceDomainArgs:
     def __init__(__self__, *,
@@ -33595,6 +41360,18 @@ class ProjectResourceDomainArgs:
     def resources(self, value: pulumi.Input[Sequence[pulumi.Input['ProjectResourceDomainResourceArgs']]]):
         pulumi.set(self, "resources", value)
 
+
+if not MYPY:
+    class ProjectResourceDomainResourceArgsDict(TypedDict):
+        limit: pulumi.Input[int]
+        resource_type: pulumi.Input[str]
+        units: NotRequired[pulumi.Input[str]]
+        value: NotRequired[pulumi.Input[int]]
+        """
+        value of the key.
+        """
+elif False:
+    ProjectResourceDomainResourceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectResourceDomainResourceArgs:
@@ -33653,6 +41430,23 @@ class ProjectResourceDomainResourceArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class ProjectSubnetReferenceListArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+elif False:
+    ProjectSubnetReferenceListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectSubnetReferenceListArgs:
     def __init__(__self__, *,
@@ -33706,6 +41500,23 @@ class ProjectSubnetReferenceListArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class ProjectTunnelReferenceListArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+elif False:
+    ProjectTunnelReferenceListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectTunnelReferenceListArgs:
@@ -33761,6 +41572,15 @@ class ProjectTunnelReferenceListArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class ProjectUserGroupListArgsDict(TypedDict):
+        directory_service_ous: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProjectUserGroupListDirectoryServiceOusArgsDict']]]]
+        directory_service_user_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProjectUserGroupListDirectoryServiceUserGroupArgsDict']]]]
+        metadata: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        saml_user_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProjectUserGroupListSamlUserGroupArgsDict']]]]
+elif False:
+    ProjectUserGroupListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectUserGroupListArgs:
     def __init__(__self__, *,
@@ -33814,6 +41634,12 @@ class ProjectUserGroupListArgs:
         pulumi.set(self, "saml_user_groups", value)
 
 
+if not MYPY:
+    class ProjectUserGroupListDirectoryServiceOusArgsDict(TypedDict):
+        distinguished_name: pulumi.Input[str]
+elif False:
+    ProjectUserGroupListDirectoryServiceOusArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectUserGroupListDirectoryServiceOusArgs:
     def __init__(__self__, *,
@@ -33830,6 +41656,12 @@ class ProjectUserGroupListDirectoryServiceOusArgs:
         pulumi.set(self, "distinguished_name", value)
 
 
+if not MYPY:
+    class ProjectUserGroupListDirectoryServiceUserGroupArgsDict(TypedDict):
+        distinguished_name: pulumi.Input[str]
+elif False:
+    ProjectUserGroupListDirectoryServiceUserGroupArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectUserGroupListDirectoryServiceUserGroupArgs:
     def __init__(__self__, *,
@@ -33845,6 +41677,16 @@ class ProjectUserGroupListDirectoryServiceUserGroupArgs:
     def distinguished_name(self, value: pulumi.Input[str]):
         pulumi.set(self, "distinguished_name", value)
 
+
+if not MYPY:
+    class ProjectUserGroupListSamlUserGroupArgsDict(TypedDict):
+        idp_uuid: pulumi.Input[str]
+        name: pulumi.Input[str]
+        """
+        The name for the project.
+        """
+elif False:
+    ProjectUserGroupListSamlUserGroupArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectUserGroupListSamlUserGroupArgs:
@@ -33878,6 +41720,14 @@ class ProjectUserGroupListSamlUserGroupArgs:
     def name(self, value: pulumi.Input[str]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class ProjectUserListArgsDict(TypedDict):
+        directory_service_user: NotRequired[pulumi.Input['ProjectUserListDirectoryServiceUserArgsDict']]
+        identity_provider_user: NotRequired[pulumi.Input['ProjectUserListIdentityProviderUserArgsDict']]
+        metadata: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    ProjectUserListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectUserListArgs:
@@ -33920,6 +41770,14 @@ class ProjectUserListArgs:
         pulumi.set(self, "metadata", value)
 
 
+if not MYPY:
+    class ProjectUserListDirectoryServiceUserArgsDict(TypedDict):
+        directory_service_reference: pulumi.Input['ProjectUserListDirectoryServiceUserDirectoryServiceReferenceArgsDict']
+        default_user_principal_name: NotRequired[pulumi.Input[str]]
+        user_principal_name: NotRequired[pulumi.Input[str]]
+elif False:
+    ProjectUserListDirectoryServiceUserArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectUserListDirectoryServiceUserArgs:
     def __init__(__self__, *,
@@ -33959,6 +41817,23 @@ class ProjectUserListDirectoryServiceUserArgs:
     def user_principal_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "user_principal_name", value)
 
+
+if not MYPY:
+    class ProjectUserListDirectoryServiceUserDirectoryServiceReferenceArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+elif False:
+    ProjectUserListDirectoryServiceUserDirectoryServiceReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectUserListDirectoryServiceUserDirectoryServiceReferenceArgs:
@@ -34014,6 +41889,13 @@ class ProjectUserListDirectoryServiceUserDirectoryServiceReferenceArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class ProjectUserListIdentityProviderUserArgsDict(TypedDict):
+        identity_provider_reference: pulumi.Input['ProjectUserListIdentityProviderUserIdentityProviderReferenceArgsDict']
+        username: NotRequired[pulumi.Input[str]]
+elif False:
+    ProjectUserListIdentityProviderUserArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectUserListIdentityProviderUserArgs:
     def __init__(__self__, *,
@@ -34041,6 +41923,23 @@ class ProjectUserListIdentityProviderUserArgs:
     def username(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "username", value)
 
+
+if not MYPY:
+    class ProjectUserListIdentityProviderUserIdentityProviderReferenceArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+elif False:
+    ProjectUserListIdentityProviderUserIdentityProviderReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectUserListIdentityProviderUserIdentityProviderReferenceArgs:
@@ -34096,6 +41995,23 @@ class ProjectUserListIdentityProviderUserIdentityProviderReferenceArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class ProjectUserReferenceListArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+elif False:
+    ProjectUserReferenceListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProjectUserReferenceListArgs:
     def __init__(__self__, *,
@@ -34149,6 +42065,23 @@ class ProjectUserReferenceListArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class ProjectVpcReferenceListArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the project.
+        """
+elif False:
+    ProjectVpcReferenceListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProjectVpcReferenceListArgs:
@@ -34204,6 +42137,14 @@ class ProjectVpcReferenceListArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class ProtectionRuleAvailabilityZoneConnectivityListArgsDict(TypedDict):
+        destination_availability_zone_index: NotRequired[pulumi.Input[int]]
+        snapshot_schedule_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgsDict']]]]
+        source_availability_zone_index: NotRequired[pulumi.Input[int]]
+elif False:
+    ProtectionRuleAvailabilityZoneConnectivityListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProtectionRuleAvailabilityZoneConnectivityListArgs:
     def __init__(__self__, *,
@@ -34244,6 +42185,16 @@ class ProtectionRuleAvailabilityZoneConnectivityListArgs:
     def source_availability_zone_index(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "source_availability_zone_index", value)
 
+
+if not MYPY:
+    class ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgsDict(TypedDict):
+        recovery_point_objective_secs: pulumi.Input[int]
+        auto_suspend_timeout_secs: NotRequired[pulumi.Input[int]]
+        local_snapshot_retention_policy: NotRequired[pulumi.Input['ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgsDict']]
+        remote_snapshot_retention_policy: NotRequired[pulumi.Input['ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListRemoteSnapshotRetentionPolicyArgsDict']]
+        snapshot_type: NotRequired[pulumi.Input[str]]
+elif False:
+    ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs:
@@ -34309,6 +42260,14 @@ class ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs:
         pulumi.set(self, "snapshot_type", value)
 
 
+if not MYPY:
+    class ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgsDict(TypedDict):
+        num_snapshots: NotRequired[pulumi.Input[int]]
+        rollup_retention_policy_multiple: NotRequired[pulumi.Input[int]]
+        rollup_retention_policy_snapshot_interval_type: NotRequired[pulumi.Input[str]]
+elif False:
+    ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs:
     def __init__(__self__, *,
@@ -34349,6 +42308,14 @@ class ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSna
     def rollup_retention_policy_snapshot_interval_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "rollup_retention_policy_snapshot_interval_type", value)
 
+
+if not MYPY:
+    class ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListRemoteSnapshotRetentionPolicyArgsDict(TypedDict):
+        num_snapshots: NotRequired[pulumi.Input[int]]
+        rollup_retention_policy_multiple: NotRequired[pulumi.Input[int]]
+        rollup_retention_policy_snapshot_interval_type: NotRequired[pulumi.Input[str]]
+elif False:
+    ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListRemoteSnapshotRetentionPolicyArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListRemoteSnapshotRetentionPolicyArgs:
@@ -34391,6 +42358,19 @@ class ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListRemoteSn
         pulumi.set(self, "rollup_retention_policy_snapshot_interval_type", value)
 
 
+if not MYPY:
+    class ProtectionRuleCategoryArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the protection rule.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        value of the key.
+        """
+elif False:
+    ProtectionRuleCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProtectionRuleCategoryArgs:
     def __init__(__self__, *,
@@ -34429,6 +42409,14 @@ class ProtectionRuleCategoryArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class ProtectionRuleCategoryFilterArgsDict(TypedDict):
+        kind_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+        params: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleCategoryFilterParamArgsDict']]]]
+        type: NotRequired[pulumi.Input[str]]
+elif False:
+    ProtectionRuleCategoryFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProtectionRuleCategoryFilterArgs:
@@ -34471,6 +42459,16 @@ class ProtectionRuleCategoryFilterArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class ProtectionRuleCategoryFilterParamArgsDict(TypedDict):
+        name: pulumi.Input[str]
+        """
+        The name for the protection rule.
+        """
+        values: pulumi.Input[Sequence[pulumi.Input[str]]]
+elif False:
+    ProtectionRuleCategoryFilterParamArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProtectionRuleCategoryFilterParamArgs:
     def __init__(__self__, *,
@@ -34504,6 +42502,13 @@ class ProtectionRuleCategoryFilterParamArgs:
         pulumi.set(self, "values", value)
 
 
+if not MYPY:
+    class ProtectionRuleOrderedAvailabilityZoneListArgsDict(TypedDict):
+        availability_zone_url: NotRequired[pulumi.Input[str]]
+        cluster_uuid: NotRequired[pulumi.Input[str]]
+elif False:
+    ProtectionRuleOrderedAvailabilityZoneListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProtectionRuleOrderedAvailabilityZoneListArgs:
     def __init__(__self__, *,
@@ -34532,6 +42537,23 @@ class ProtectionRuleOrderedAvailabilityZoneListArgs:
     def cluster_uuid(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "cluster_uuid", value)
 
+
+if not MYPY:
+    class ProtectionRuleOwnerReferenceArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the protection rule.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        (Required) the UUID.
+        """
+elif False:
+    ProtectionRuleOwnerReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ProtectionRuleOwnerReferenceArgs:
@@ -34588,6 +42610,23 @@ class ProtectionRuleOwnerReferenceArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class ProtectionRuleProjectReferenceArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the protection rule.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        (Required) the UUID.
+        """
+elif False:
+    ProtectionRuleProjectReferenceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ProtectionRuleProjectReferenceArgs:
     def __init__(__self__, *,
@@ -34643,6 +42682,19 @@ class ProtectionRuleProjectReferenceArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class RecoveryPlanCategoryArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the Recovery Plan.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        value of the key.
+        """
+elif False:
+    RecoveryPlanCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanCategoryArgs:
     def __init__(__self__, *,
@@ -34681,6 +42733,23 @@ class RecoveryPlanCategoryArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class RecoveryPlanOwnerReferenceArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the Recovery Plan.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        (Required) the UUID.
+        """
+elif False:
+    RecoveryPlanOwnerReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RecoveryPlanOwnerReferenceArgs:
@@ -34737,6 +42806,13 @@ class RecoveryPlanOwnerReferenceArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class RecoveryPlanParametersArgsDict(TypedDict):
+        floating_ip_assignment_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanParametersFloatingIpAssignmentListArgsDict']]]]
+        network_mapping_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListArgsDict']]]]
+elif False:
+    RecoveryPlanParametersArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanParametersArgs:
     def __init__(__self__, *,
@@ -34766,6 +42842,13 @@ class RecoveryPlanParametersArgs:
         pulumi.set(self, "network_mapping_lists", value)
 
 
+if not MYPY:
+    class RecoveryPlanParametersFloatingIpAssignmentListArgsDict(TypedDict):
+        availability_zone_url: pulumi.Input[str]
+        vm_ip_assignment_lists: pulumi.Input[Sequence[pulumi.Input['RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListArgsDict']]]
+elif False:
+    RecoveryPlanParametersFloatingIpAssignmentListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanParametersFloatingIpAssignmentListArgs:
     def __init__(__self__, *,
@@ -34792,6 +42875,15 @@ class RecoveryPlanParametersFloatingIpAssignmentListArgs:
     def vm_ip_assignment_lists(self, value: pulumi.Input[Sequence[pulumi.Input['RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListArgs']]]):
         pulumi.set(self, "vm_ip_assignment_lists", value)
 
+
+if not MYPY:
+    class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListArgsDict(TypedDict):
+        vm_nic_information: pulumi.Input['RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmNicInformationArgsDict']
+        vm_reference: pulumi.Input['RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReferenceArgsDict']
+        recovery_floating_ip_config: NotRequired[pulumi.Input['RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListRecoveryFloatingIpConfigArgsDict']]
+        test_floating_ip_config: NotRequired[pulumi.Input['RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListTestFloatingIpConfigArgsDict']]
+elif False:
+    RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListArgs:
@@ -34844,6 +42936,13 @@ class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListArgs:
         pulumi.set(self, "test_floating_ip_config", value)
 
 
+if not MYPY:
+    class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListRecoveryFloatingIpConfigArgsDict(TypedDict):
+        ip: NotRequired[pulumi.Input[str]]
+        should_allocate_dynamically: NotRequired[pulumi.Input[bool]]
+elif False:
+    RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListRecoveryFloatingIpConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListRecoveryFloatingIpConfigArgs:
     def __init__(__self__, *,
@@ -34873,6 +42972,13 @@ class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListRecoveryFl
         pulumi.set(self, "should_allocate_dynamically", value)
 
 
+if not MYPY:
+    class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListTestFloatingIpConfigArgsDict(TypedDict):
+        ip: NotRequired[pulumi.Input[str]]
+        should_allocate_dynamically: NotRequired[pulumi.Input[bool]]
+elif False:
+    RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListTestFloatingIpConfigArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListTestFloatingIpConfigArgs:
     def __init__(__self__, *,
@@ -34901,6 +43007,16 @@ class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListTestFloati
     def should_allocate_dynamically(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "should_allocate_dynamically", value)
 
+
+if not MYPY:
+    class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmNicInformationArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        ip: NotRequired[pulumi.Input[str]]
+elif False:
+    RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmNicInformationArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmNicInformationArgs:
@@ -34935,6 +43051,23 @@ class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmNicInfor
     def ip(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ip", value)
 
+
+if not MYPY:
+    class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReferenceArgsDict(TypedDict):
+        kind: pulumi.Input[str]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the Recovery Plan.
+        """
+elif False:
+    RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReferenceArgs:
@@ -34989,6 +43122,13 @@ class RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListVmReferenc
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class RecoveryPlanParametersNetworkMappingListArgsDict(TypedDict):
+        are_networks_stretched: NotRequired[pulumi.Input[bool]]
+        availability_zone_network_mapping_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListArgsDict']]]]
+elif False:
+    RecoveryPlanParametersNetworkMappingListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanParametersNetworkMappingListArgs:
     def __init__(__self__, *,
@@ -35017,6 +43157,17 @@ class RecoveryPlanParametersNetworkMappingListArgs:
     def availability_zone_network_mapping_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListArgs']]]]):
         pulumi.set(self, "availability_zone_network_mapping_lists", value)
 
+
+if not MYPY:
+    class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListArgsDict(TypedDict):
+        availability_zone_url: NotRequired[pulumi.Input[str]]
+        cluster_reference_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceListArgsDict']]]]
+        recovery_ip_assignment_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListArgsDict']]]]
+        recovery_network: NotRequired[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkArgsDict']]
+        test_ip_assignment_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListArgsDict']]]]
+        test_network: NotRequired[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkArgsDict']]
+elif False:
+    RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListArgs:
@@ -35095,6 +43246,23 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
         pulumi.set(self, "test_network", value)
 
 
+if not MYPY:
+    class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceListArgsDict(TypedDict):
+        kind: pulumi.Input[str]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        uuid: pulumi.Input[str]
+        """
+        (Required) the UUID.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the Recovery Plan.
+        """
+elif False:
+    RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListClusterReferenceListArgs:
     def __init__(__self__, *,
@@ -35148,6 +43316,13 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListArgsDict(TypedDict):
+        ip_config_lists: pulumi.Input[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListIpConfigListArgsDict']]]
+        vm_reference: pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReferenceArgsDict']
+elif False:
+    RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListArgs:
     def __init__(__self__, *,
@@ -35175,6 +43350,12 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
         pulumi.set(self, "vm_reference", value)
 
 
+if not MYPY:
+    class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListIpConfigListArgsDict(TypedDict):
+        ip_address: pulumi.Input[str]
+elif False:
+    RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListIpConfigListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListIpConfigListArgs:
     def __init__(__self__, *,
@@ -35190,6 +43371,23 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
     def ip_address(self, value: pulumi.Input[str]):
         pulumi.set(self, "ip_address", value)
 
+
+if not MYPY:
+    class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReferenceArgsDict(TypedDict):
+        kind: pulumi.Input[str]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the Recovery Plan.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        (Required) the UUID.
+        """
+elif False:
+    RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryIpAssignmentListVmReferenceArgs:
@@ -35244,6 +43442,19 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
     def uuid(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "uuid", value)
 
+
+if not MYPY:
+    class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the Recovery Plan.
+        """
+        subnet_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetListArgsDict']]]]
+        use_vpc_reference: NotRequired[pulumi.Input[bool]]
+        virtual_network_reference: NotRequired[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferenceArgsDict']]
+        vpc_reference: NotRequired[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferenceArgsDict']]
+elif False:
+    RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkArgs:
@@ -35316,6 +43527,14 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
         pulumi.set(self, "vpc_reference", value)
 
 
+if not MYPY:
+    class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetListArgsDict(TypedDict):
+        gateway_ip: pulumi.Input[str]
+        prefix_length: pulumi.Input[int]
+        external_connectivity_state: NotRequired[pulumi.Input[str]]
+elif False:
+    RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetListArgs:
     def __init__(__self__, *,
@@ -35354,6 +43573,23 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
     def external_connectivity_state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "external_connectivity_state", value)
 
+
+if not MYPY:
+    class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferenceArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the Recovery Plan.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        (Required) the UUID.
+        """
+elif False:
+    RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferenceArgs:
@@ -35410,6 +43646,23 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferenceArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the Recovery Plan.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        (Required) the UUID.
+        """
+elif False:
+    RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferenceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferenceArgs:
     def __init__(__self__, *,
@@ -35465,6 +43718,13 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListArgsDict(TypedDict):
+        ip_config_lists: pulumi.Input[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListIpConfigListArgsDict']]]
+        vm_reference: pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReferenceArgsDict']
+elif False:
+    RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListArgs:
     def __init__(__self__, *,
@@ -35492,6 +43752,12 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
         pulumi.set(self, "vm_reference", value)
 
 
+if not MYPY:
+    class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListIpConfigListArgsDict(TypedDict):
+        ip_address: pulumi.Input[str]
+elif False:
+    RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListIpConfigListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListIpConfigListArgs:
     def __init__(__self__, *,
@@ -35507,6 +43773,23 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
     def ip_address(self, value: pulumi.Input[str]):
         pulumi.set(self, "ip_address", value)
 
+
+if not MYPY:
+    class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReferenceArgsDict(TypedDict):
+        kind: pulumi.Input[str]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the Recovery Plan.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        (Required) the UUID.
+        """
+elif False:
+    RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestIpAssignmentListVmReferenceArgs:
@@ -35561,6 +43844,19 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
     def uuid(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "uuid", value)
 
+
+if not MYPY:
+    class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the Recovery Plan.
+        """
+        subnet_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkSubnetListArgsDict']]]]
+        use_vpc_reference: NotRequired[pulumi.Input[bool]]
+        virtual_network_reference: NotRequired[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceArgsDict']]
+        vpc_reference: NotRequired[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferenceArgsDict']]
+elif False:
+    RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkArgs:
@@ -35633,6 +43929,14 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
         pulumi.set(self, "vpc_reference", value)
 
 
+if not MYPY:
+    class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkSubnetListArgsDict(TypedDict):
+        gateway_ip: pulumi.Input[str]
+        prefix_length: pulumi.Input[int]
+        external_connectivity_state: NotRequired[pulumi.Input[str]]
+elif False:
+    RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkSubnetListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkSubnetListArgs:
     def __init__(__self__, *,
@@ -35671,6 +43975,23 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
     def external_connectivity_state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "external_connectivity_state", value)
 
+
+if not MYPY:
+    class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the Recovery Plan.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        (Required) the UUID.
+        """
+elif False:
+    RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceArgs:
@@ -35727,6 +44048,23 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferenceArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the Recovery Plan.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        (Required) the UUID.
+        """
+elif False:
+    RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferenceArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferenceArgs:
     def __init__(__self__, *,
@@ -35781,6 +44119,23 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
     def uuid(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "uuid", value)
 
+
+if not MYPY:
+    class RecoveryPlanProjectReferenceArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the Recovery Plan.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        (Required) the UUID.
+        """
+elif False:
+    RecoveryPlanProjectReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RecoveryPlanProjectReferenceArgs:
@@ -35837,6 +44192,14 @@ class RecoveryPlanProjectReferenceArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class RecoveryPlanStageListArgsDict(TypedDict):
+        stage_work: pulumi.Input['RecoveryPlanStageListStageWorkArgsDict']
+        delay_time_secs: NotRequired[pulumi.Input[int]]
+        stage_uuid: NotRequired[pulumi.Input[str]]
+elif False:
+    RecoveryPlanStageListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanStageListArgs:
     def __init__(__self__, *,
@@ -35877,6 +44240,12 @@ class RecoveryPlanStageListArgs:
         pulumi.set(self, "stage_uuid", value)
 
 
+if not MYPY:
+    class RecoveryPlanStageListStageWorkArgsDict(TypedDict):
+        recover_entities: NotRequired[pulumi.Input['RecoveryPlanStageListStageWorkRecoverEntitiesArgsDict']]
+elif False:
+    RecoveryPlanStageListStageWorkArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanStageListStageWorkArgs:
     def __init__(__self__, *,
@@ -35894,6 +44263,12 @@ class RecoveryPlanStageListStageWorkArgs:
         pulumi.set(self, "recover_entities", value)
 
 
+if not MYPY:
+    class RecoveryPlanStageListStageWorkRecoverEntitiesArgsDict(TypedDict):
+        entity_info_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgsDict']]]]
+elif False:
+    RecoveryPlanStageListStageWorkRecoverEntitiesArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanStageListStageWorkRecoverEntitiesArgs:
     def __init__(__self__, *,
@@ -35910,6 +44285,16 @@ class RecoveryPlanStageListStageWorkRecoverEntitiesArgs:
     def entity_info_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs']]]]):
         pulumi.set(self, "entity_info_lists", value)
 
+
+if not MYPY:
+    class RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgsDict(TypedDict):
+        any_entity_reference_kind: NotRequired[pulumi.Input[str]]
+        any_entity_reference_name: NotRequired[pulumi.Input[str]]
+        any_entity_reference_uuid: NotRequired[pulumi.Input[str]]
+        categories: NotRequired[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgsDict']]]]
+        script_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListScriptListArgsDict']]]]
+elif False:
+    RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs:
@@ -35976,6 +44361,19 @@ class RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListArgs:
         pulumi.set(self, "script_lists", value)
 
 
+if not MYPY:
+    class RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        The name for the Recovery Plan.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        value of the key.
+        """
+elif False:
+    RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgs:
     def __init__(__self__, *,
@@ -36015,6 +44413,13 @@ class RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListCategoryArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListScriptListArgsDict(TypedDict):
+        enable_script_exec: pulumi.Input[bool]
+        timeout: NotRequired[pulumi.Input[str]]
+elif False:
+    RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListScriptListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListScriptListArgs:
     def __init__(__self__, *,
@@ -36042,6 +44447,19 @@ class RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListScriptListArgs:
     def timeout(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "timeout", value)
 
+
+if not MYPY:
+    class RoleCategoryArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Name of the role.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - value of the key.
+        """
+elif False:
+    RoleCategoryArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RoleCategoryArgs:
@@ -36081,6 +44499,23 @@ class RoleCategoryArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class RoleOwnerReferenceArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Name of the role.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - the UUID(Required).
+        """
+elif False:
+    RoleOwnerReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RoleOwnerReferenceArgs:
@@ -36137,6 +44572,23 @@ class RoleOwnerReferenceArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class RolePermissionReferenceListArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        - the UUID(Required).
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Name of the role.
+        """
+elif False:
+    RolePermissionReferenceListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class RolePermissionReferenceListArgs:
     def __init__(__self__, *,
@@ -36190,6 +44642,23 @@ class RolePermissionReferenceListArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class RoleProjectReferenceArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Name of the role.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - the UUID(Required).
+        """
+elif False:
+    RoleProjectReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class RoleProjectReferenceArgs:
@@ -36245,6 +44714,27 @@ class RoleProjectReferenceArgs:
     def uuid(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "uuid", value)
 
+
+if not MYPY:
+    class ServiceGroupServiceListArgsDict(TypedDict):
+        icmp_type_code_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ServiceGroupServiceListIcmpTypeCodeListArgsDict']]]]
+        """
+        - (Optional) ICMP type code list
+        """
+        protocol: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) The UserPrincipalName of the user from the directory service.
+        """
+        tcp_port_range_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ServiceGroupServiceListTcpPortRangeListArgsDict']]]]
+        """
+        - (Optional) TCP Port range list
+        """
+        udp_port_range_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ServiceGroupServiceListUdpPortRangeListArgsDict']]]]
+        """
+        - (Optional) UDP port range list
+        """
+elif False:
+    ServiceGroupServiceListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ServiceGroupServiceListArgs:
@@ -36317,6 +44807,19 @@ class ServiceGroupServiceListArgs:
         pulumi.set(self, "udp_port_range_lists", value)
 
 
+if not MYPY:
+    class ServiceGroupServiceListIcmpTypeCodeListArgsDict(TypedDict):
+        code: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Code as text
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Type as text
+        """
+elif False:
+    ServiceGroupServiceListIcmpTypeCodeListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ServiceGroupServiceListIcmpTypeCodeListArgs:
     def __init__(__self__, *,
@@ -36356,6 +44859,13 @@ class ServiceGroupServiceListIcmpTypeCodeListArgs:
         pulumi.set(self, "type", value)
 
 
+if not MYPY:
+    class ServiceGroupServiceListTcpPortRangeListArgsDict(TypedDict):
+        end_port: NotRequired[pulumi.Input[int]]
+        start_port: NotRequired[pulumi.Input[int]]
+elif False:
+    ServiceGroupServiceListTcpPortRangeListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class ServiceGroupServiceListTcpPortRangeListArgs:
     def __init__(__self__, *,
@@ -36384,6 +44894,13 @@ class ServiceGroupServiceListTcpPortRangeListArgs:
     def start_port(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "start_port", value)
 
+
+if not MYPY:
+    class ServiceGroupServiceListUdpPortRangeListArgsDict(TypedDict):
+        end_port: NotRequired[pulumi.Input[int]]
+        start_port: NotRequired[pulumi.Input[int]]
+elif False:
+    ServiceGroupServiceListUdpPortRangeListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class ServiceGroupServiceListUdpPortRangeListArgs:
@@ -36414,6 +44931,15 @@ class ServiceGroupServiceListUdpPortRangeListArgs:
         pulumi.set(self, "start_port", value)
 
 
+if not MYPY:
+    class StaticRoutesDefaultRouteNexthopArgsDict(TypedDict):
+        external_subnet_reference_uuid: NotRequired[pulumi.Input[str]]
+        """
+        Reference to a subnet.
+        """
+elif False:
+    StaticRoutesDefaultRouteNexthopArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class StaticRoutesDefaultRouteNexthopArgs:
     def __init__(__self__, *,
@@ -36436,6 +44962,23 @@ class StaticRoutesDefaultRouteNexthopArgs:
     def external_subnet_reference_uuid(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "external_subnet_reference_uuid", value)
 
+
+if not MYPY:
+    class StaticRoutesStaticRoutesListArgsDict(TypedDict):
+        destination: pulumi.Input[str]
+        """
+        Destination ip with prefix.
+        """
+        external_subnet_reference_uuid: NotRequired[pulumi.Input[str]]
+        """
+        Reference to a subnet. Supported with 2022.x .
+        """
+        vpn_connection_reference_uuid: NotRequired[pulumi.Input[str]]
+        """
+        Reference to a vpn connection.
+        """
+elif False:
+    StaticRoutesStaticRoutesListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class StaticRoutesStaticRoutesListArgs:
@@ -36491,6 +45034,19 @@ class StaticRoutesStaticRoutesListArgs:
         pulumi.set(self, "vpn_connection_reference_uuid", value)
 
 
+if not MYPY:
+    class SubnetCategoryArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) Subnet name (Readonly).
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - value of the key.
+        """
+elif False:
+    SubnetCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class SubnetCategoryArgs:
     def __init__(__self__, *,
@@ -36529,6 +45085,23 @@ class SubnetCategoryArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class UserAccessControlPolicyReferenceListArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name. (Default depends on the resource you are referencing)
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - the name(Optional).
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - the UUID(Required).
+        """
+elif False:
+    UserAccessControlPolicyReferenceListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class UserAccessControlPolicyReferenceListArgs:
@@ -36585,6 +45158,19 @@ class UserAccessControlPolicyReferenceListArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class UserCategoryArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - the name(Optional).
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - value of the key.
+        """
+elif False:
+    UserCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class UserCategoryArgs:
     def __init__(__self__, *,
@@ -36623,6 +45209,20 @@ class UserCategoryArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class UserDirectoryServiceUserArgsDict(TypedDict):
+        directory_service_reference: pulumi.Input['UserDirectoryServiceUserDirectoryServiceReferenceArgsDict']
+        """
+        - (Optional) The reference to a directory service. See #reference for to look the supported attributes.
+        """
+        default_user_principal_name: NotRequired[pulumi.Input[str]]
+        user_principal_name: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) The UserPrincipalName of the user from the directory service.
+        """
+elif False:
+    UserDirectoryServiceUserArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class UserDirectoryServiceUserArgs:
@@ -36673,6 +45273,23 @@ class UserDirectoryServiceUserArgs:
     def user_principal_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "user_principal_name", value)
 
+
+if not MYPY:
+    class UserDirectoryServiceUserDirectoryServiceReferenceArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        - the UUID(Required).
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name. (Default depends on the resource you are referencing)
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - the name(Optional).
+        """
+elif False:
+    UserDirectoryServiceUserDirectoryServiceReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class UserDirectoryServiceUserDirectoryServiceReferenceArgs:
@@ -36728,6 +45345,16 @@ class UserDirectoryServiceUserDirectoryServiceReferenceArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class UserGroupsCategoryArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - subnet name.
+        """
+        value: NotRequired[pulumi.Input[str]]
+elif False:
+    UserGroupsCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class UserGroupsCategoryArgs:
     def __init__(__self__, *,
@@ -36763,6 +45390,15 @@ class UserGroupsCategoryArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class UserGroupsDirectoryServiceOusArgsDict(TypedDict):
+        distinguished_name: pulumi.Input[str]
+        """
+        - (Required) The Distinguished name for the user group.
+        """
+elif False:
+    UserGroupsDirectoryServiceOusArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class UserGroupsDirectoryServiceOusArgs:
     def __init__(__self__, *,
@@ -36785,6 +45421,15 @@ class UserGroupsDirectoryServiceOusArgs:
         pulumi.set(self, "distinguished_name", value)
 
 
+if not MYPY:
+    class UserGroupsDirectoryServiceUserGroupArgsDict(TypedDict):
+        distinguished_name: pulumi.Input[str]
+        """
+        - (Required) The Distinguished name for the user group.
+        """
+elif False:
+    UserGroupsDirectoryServiceUserGroupArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class UserGroupsDirectoryServiceUserGroupArgs:
     def __init__(__self__, *,
@@ -36806,6 +45451,19 @@ class UserGroupsDirectoryServiceUserGroupArgs:
     def distinguished_name(self, value: pulumi.Input[str]):
         pulumi.set(self, "distinguished_name", value)
 
+
+if not MYPY:
+    class UserGroupsSamlUserGroupArgsDict(TypedDict):
+        idp_uuid: pulumi.Input[str]
+        """
+        - (Required) The UUID of the Identity Provider that the group belongs to.
+        """
+        name: pulumi.Input[str]
+        """
+        - (Required) The name of the SAML group which the IDP provides.
+        """
+elif False:
+    UserGroupsSamlUserGroupArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class UserGroupsSamlUserGroupArgs:
@@ -36844,6 +45502,19 @@ class UserGroupsSamlUserGroupArgs:
         pulumi.set(self, "name", value)
 
 
+if not MYPY:
+    class UserIdentityProviderUserArgsDict(TypedDict):
+        identity_provider_reference: pulumi.Input['UserIdentityProviderUserIdentityProviderReferenceArgsDict']
+        """
+        - (Optional) The reference to a identity provider. See #reference for to look the supported attributes.
+        """
+        username: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) The username from identity provider. Name ID for SAML Identity Provider.
+        """
+elif False:
+    UserIdentityProviderUserArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class UserIdentityProviderUserArgs:
     def __init__(__self__, *,
@@ -36881,6 +45552,23 @@ class UserIdentityProviderUserArgs:
     def username(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "username", value)
 
+
+if not MYPY:
+    class UserIdentityProviderUserIdentityProviderReferenceArgsDict(TypedDict):
+        uuid: pulumi.Input[str]
+        """
+        - the UUID(Required).
+        """
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name. (Default depends on the resource you are referencing)
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - the name(Optional).
+        """
+elif False:
+    UserIdentityProviderUserIdentityProviderReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class UserIdentityProviderUserIdentityProviderReferenceArgs:
@@ -36935,6 +45623,23 @@ class UserIdentityProviderUserIdentityProviderReferenceArgs:
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
 
+
+if not MYPY:
+    class UserProjectReferenceListArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name. (Default depends on the resource you are referencing)
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - the name(Optional).
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - the UUID(Required).
+        """
+elif False:
+    UserProjectReferenceListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class UserProjectReferenceListArgs:
@@ -36991,6 +45696,19 @@ class UserProjectReferenceListArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class VirtualMachineCategoryArgsDict(TypedDict):
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) The name for the vm.
+        """
+        value: NotRequired[pulumi.Input[str]]
+        """
+        - value of the key.
+        """
+elif False:
+    VirtualMachineCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VirtualMachineCategoryArgs:
     def __init__(__self__, *,
@@ -37029,6 +45747,35 @@ class VirtualMachineCategoryArgs:
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class VirtualMachineDiskListArgsDict(TypedDict):
+        data_source_reference: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        Reference to a data source.
+
+        The disk_size (the disk size_mib and the disk_size_bytes attributes) is only honored by creating an empty disk. When you are creating from an image, the size is ignored and the disk becomes the size of the image from which it was cloned. In VM creation, you can't set either disk size_mib or disk_size_bytes when you set data_source_reference but, you can update the disk_size after creation (second apply).
+        """
+        device_properties: NotRequired[pulumi.Input['VirtualMachineDiskListDevicePropertiesArgsDict']]
+        """
+        Properties to a device.
+        """
+        disk_size_bytes: NotRequired[pulumi.Input[int]]
+        """
+        Size of the disk in Bytes.
+        """
+        disk_size_mib: NotRequired[pulumi.Input[int]]
+        """
+        Size of the disk in MiB. Must match the size specified in 'disk_size_bytes' - rounded up to the nearest MiB - when that field is present.
+        """
+        storage_config: NotRequired[pulumi.Input['VirtualMachineDiskListStorageConfigArgsDict']]
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) The device ID which is used to uniquely identify this particular disk.
+        """
+        volume_group_reference: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+elif False:
+    VirtualMachineDiskListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VirtualMachineDiskListArgs:
@@ -37145,6 +45892,19 @@ class VirtualMachineDiskListArgs:
         pulumi.set(self, "volume_group_reference", value)
 
 
+if not MYPY:
+    class VirtualMachineDiskListDevicePropertiesArgsDict(TypedDict):
+        device_type: NotRequired[pulumi.Input[str]]
+        """
+        - A Disk type (default: DISK).
+        """
+        disk_address: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        - Address of disk to boot from.
+        """
+elif False:
+    VirtualMachineDiskListDevicePropertiesArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VirtualMachineDiskListDevicePropertiesArgs:
     def __init__(__self__, *,
@@ -37183,6 +45943,23 @@ class VirtualMachineDiskListDevicePropertiesArgs:
     def disk_address(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "disk_address", value)
 
+
+if not MYPY:
+    class VirtualMachineDiskListStorageConfigArgsDict(TypedDict):
+        flash_mode: NotRequired[pulumi.Input[str]]
+        """
+        - State of the storage policy to pin virtual disks to the hot tier. When specified as a VM attribute, the storage policy applies to all virtual disks of the VM unless overridden by the same attribute specified for a virtual disk.
+        """
+        storage_container_references: NotRequired[pulumi.Input[Sequence[pulumi.Input['VirtualMachineDiskListStorageConfigStorageContainerReferenceArgsDict']]]]
+        """
+        - Reference to a kind. Either one of (kind, uuid) or url needs to be specified. Requires Prism Central / AOS 5.17+.
+        * `storage_container_reference.#.url`: - GET query on the URL will provide information on the source.
+        * `storage_container_reference.#.kind`: - kind of the container reference
+        * `storage_container_reference.#.name`: - name of the container reference
+        * `storage_container_reference.#.uuid`: - uiid of the container reference
+        """
+elif False:
+    VirtualMachineDiskListStorageConfigArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VirtualMachineDiskListStorageConfigArgs:
@@ -37230,6 +46007,24 @@ class VirtualMachineDiskListStorageConfigArgs:
     def storage_container_references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineDiskListStorageConfigStorageContainerReferenceArgs']]]]):
         pulumi.set(self, "storage_container_references", value)
 
+
+if not MYPY:
+    class VirtualMachineDiskListStorageConfigStorageContainerReferenceArgsDict(TypedDict):
+        kind: NotRequired[pulumi.Input[str]]
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (Required) The name for the vm.
+        """
+        url: NotRequired[pulumi.Input[str]]
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - the UUID(Required).
+        """
+elif False:
+    VirtualMachineDiskListStorageConfigStorageContainerReferenceArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VirtualMachineDiskListStorageConfigStorageContainerReferenceArgs:
@@ -37297,6 +46092,51 @@ class VirtualMachineDiskListStorageConfigStorageContainerReferenceArgs:
     def uuid(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "uuid", value)
 
+
+if not MYPY:
+    class VirtualMachineGpuListArgsDict(TypedDict):
+        device_id: NotRequired[pulumi.Input[int]]
+        """
+        - (Computed) The device ID of the GPU.
+        """
+        fraction: NotRequired[pulumi.Input[int]]
+        """
+        Fraction of the physical GPU assigned.
+        """
+        frame_buffer_size_mib: NotRequired[pulumi.Input[int]]
+        """
+        - (ReadOnly) GPU frame buffer size in MiB.
+        """
+        guest_driver_version: NotRequired[pulumi.Input[str]]
+        """
+        - (ReadOnly) Last determined guest driver version.
+        """
+        mode: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) The mode of this GPU.
+        """
+        name: NotRequired[pulumi.Input[str]]
+        """
+        - (ReadOnly) Name of the GPU resource.
+        """
+        num_virtual_display_heads: NotRequired[pulumi.Input[int]]
+        """
+        - (ReadOnly) Number of supported virtual display heads.
+        """
+        pci_address: NotRequired[pulumi.Input[str]]
+        """
+        GPU {segment:bus:device:function} (sbdf) address if assigned.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - (ReadOnly) UUID of the GPU.
+        """
+        vendor: NotRequired[pulumi.Input[str]]
+        """
+        - (Optional) The vendor of the GPU.
+        """
+elif False:
+    VirtualMachineGpuListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VirtualMachineGpuListArgs:
@@ -37464,6 +46304,55 @@ class VirtualMachineGpuListArgs:
     def vendor(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vendor", value)
 
+
+if not MYPY:
+    class VirtualMachineNicListArgsDict(TypedDict):
+        ip_endpoint_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['VirtualMachineNicListIpEndpointListArgsDict']]]]
+        """
+        - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+        """
+        is_connected: NotRequired[pulumi.Input[str]]
+        """
+        - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        """
+        mac_address: NotRequired[pulumi.Input[str]]
+        """
+        - The MAC address for the adapter.
+        """
+        model: NotRequired[pulumi.Input[str]]
+        """
+        - The model of this NIC. (Options : VIRTIO , E1000).
+        """
+        network_function_chain_reference: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        - The reference to a network_function_chain.
+        """
+        network_function_nic_type: NotRequired[pulumi.Input[str]]
+        """
+        - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
+        """
+        nic_type: NotRequired[pulumi.Input[str]]
+        """
+        - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
+        """
+        num_queues: NotRequired[pulumi.Input[int]]
+        """
+        - The number of tx/rx queue pairs for this NIC.
+        """
+        subnet_name: NotRequired[pulumi.Input[str]]
+        """
+        - The name of the subnet reference to.
+        """
+        subnet_uuid: NotRequired[pulumi.Input[str]]
+        """
+        - The reference to a subnet.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - The NIC's UUID, which is used to uniquely identify this particular NIC. This UUID may be used to refer to the NIC outside the context of the particular VM it is attached to.
+        """
+elif False:
+    VirtualMachineNicListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VirtualMachineNicListArgs:
@@ -37648,6 +46537,19 @@ class VirtualMachineNicListArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class VirtualMachineNicListIpEndpointListArgsDict(TypedDict):
+        ip: NotRequired[pulumi.Input[str]]
+        """
+        - Address string.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        - Address type. It can only be "ASSIGNED" in the spec. If no type is specified in the spec, the default type is set to "ASSIGNED". (Options : ASSIGNED , LEARNED)
+        """
+elif False:
+    VirtualMachineNicListIpEndpointListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VirtualMachineNicListIpEndpointListArgs:
     def __init__(__self__, *,
@@ -37686,6 +46588,59 @@ class VirtualMachineNicListIpEndpointListArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class VirtualMachineNicListStatusArgsDict(TypedDict):
+        floating_ip: NotRequired[pulumi.Input[str]]
+        """
+        -  The Floating IP associated with the vnic. (Only in `nic_list_status`)
+        """
+        ip_endpoint_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['VirtualMachineNicListStatusIpEndpointListArgsDict']]]]
+        """
+        - IP endpoints for the adapter. Currently, IPv4 addresses are supported.
+        """
+        is_connected: NotRequired[pulumi.Input[str]]
+        """
+        - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        """
+        mac_address: NotRequired[pulumi.Input[str]]
+        """
+        - The MAC address for the adapter.
+        """
+        model: NotRequired[pulumi.Input[str]]
+        """
+        - The model of this NIC. (Options : VIRTIO , E1000).
+        """
+        network_function_chain_reference: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[str]]]]
+        """
+        - The reference to a network_function_chain.
+        """
+        network_function_nic_type: NotRequired[pulumi.Input[str]]
+        """
+        - The type of this Network function NIC. Defaults to INGRESS. (Options : INGRESS , EGRESS , TAP).
+        """
+        nic_type: NotRequired[pulumi.Input[str]]
+        """
+        - The type of this NIC. Defaults to NORMAL_NIC. (Options : NORMAL_NIC , DIRECT_NIC , NETWORK_FUNCTION_NIC).
+        """
+        num_queues: NotRequired[pulumi.Input[int]]
+        """
+        - The number of tx/rx queue pairs for this NIC.
+        """
+        subnet_name: NotRequired[pulumi.Input[str]]
+        """
+        - The name of the subnet reference to.
+        """
+        subnet_uuid: NotRequired[pulumi.Input[str]]
+        """
+        - The reference to a subnet.
+        """
+        uuid: NotRequired[pulumi.Input[str]]
+        """
+        - the UUID(Required).
+        """
+elif False:
+    VirtualMachineNicListStatusArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VirtualMachineNicListStatusArgs:
@@ -37886,6 +46841,19 @@ class VirtualMachineNicListStatusArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class VirtualMachineNicListStatusIpEndpointListArgsDict(TypedDict):
+        ip: NotRequired[pulumi.Input[str]]
+        """
+        - Address string.
+        """
+        type: NotRequired[pulumi.Input[str]]
+        """
+        - Address type. It can only be "ASSIGNED" in the spec. If no type is specified in the spec, the default type is set to "ASSIGNED". (Options : ASSIGNED , LEARNED)
+        """
+elif False:
+    VirtualMachineNicListStatusIpEndpointListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VirtualMachineNicListStatusIpEndpointListArgs:
     def __init__(__self__, *,
@@ -37924,6 +46892,19 @@ class VirtualMachineNicListStatusIpEndpointListArgs:
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
 
+
+if not MYPY:
+    class VirtualMachineSerialPortListArgsDict(TypedDict):
+        index: NotRequired[pulumi.Input[int]]
+        """
+        - Index of the serial port (int).
+        """
+        is_connected: NotRequired[pulumi.Input[bool]]
+        """
+        - Indicates whether the serial port connection is connected or not (`true` or `false`).
+        """
+elif False:
+    VirtualMachineSerialPortListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VirtualMachineSerialPortListArgs:
@@ -37964,6 +46945,15 @@ class VirtualMachineSerialPortListArgs:
         pulumi.set(self, "is_connected", value)
 
 
+if not MYPY:
+    class VpcCommonDomainNameServerIpListArgsDict(TypedDict):
+        ip: NotRequired[pulumi.Input[str]]
+        """
+        ip address.
+        """
+elif False:
+    VpcCommonDomainNameServerIpListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VpcCommonDomainNameServerIpListArgs:
     def __init__(__self__, *,
@@ -37986,6 +46976,14 @@ class VpcCommonDomainNameServerIpListArgs:
     def ip(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ip", value)
 
+
+if not MYPY:
+    class VpcExternalSubnetListStatusArgsDict(TypedDict):
+        external_subnet_reference: pulumi.Input[Mapping[str, pulumi.Input[str]]]
+        active_gateway_node: NotRequired[pulumi.Input['VpcExternalSubnetListStatusActiveGatewayNodeArgsDict']]
+        external_ip_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[str]]]]
+elif False:
+    VpcExternalSubnetListStatusArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VpcExternalSubnetListStatusArgs:
@@ -38027,6 +47025,13 @@ class VpcExternalSubnetListStatusArgs:
         pulumi.set(self, "external_ip_lists", value)
 
 
+if not MYPY:
+    class VpcExternalSubnetListStatusActiveGatewayNodeArgsDict(TypedDict):
+        host_reference: pulumi.Input[Mapping[str, pulumi.Input[str]]]
+        ip_address: NotRequired[pulumi.Input[str]]
+elif False:
+    VpcExternalSubnetListStatusActiveGatewayNodeArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class VpcExternalSubnetListStatusActiveGatewayNodeArgs:
     def __init__(__self__, *,
@@ -38054,6 +47059,19 @@ class VpcExternalSubnetListStatusActiveGatewayNodeArgs:
     def ip_address(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ip_address", value)
 
+
+if not MYPY:
+    class VpcExternallyRoutablePrefixListArgsDict(TypedDict):
+        ip: pulumi.Input[str]
+        """
+        ip address.
+        """
+        prefix_length: pulumi.Input[int]
+        """
+        prefix length.
+        """
+elif False:
+    VpcExternallyRoutablePrefixListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class VpcExternallyRoutablePrefixListArgs:
@@ -38091,6 +47109,20 @@ class VpcExternallyRoutablePrefixListArgs:
     def prefix_length(self, value: pulumi.Input[int]):
         pulumi.set(self, "prefix_length", value)
 
+
+if not MYPY:
+    class GetAccessControlPoliciesMetadataArgsDict(TypedDict):
+        filter: str
+        kind: str
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        length: int
+        offset: int
+        sort_attribute: str
+        sort_order: str
+elif False:
+    GetAccessControlPoliciesMetadataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetAccessControlPoliciesMetadataArgs:
@@ -38169,6 +47201,19 @@ class GetAccessControlPoliciesMetadataArgs:
         pulumi.set(self, "sort_order", value)
 
 
+if not MYPY:
+    class GetAccessControlPolicyCategoryArgsDict(TypedDict):
+        name: str
+        """
+        - the name(Optional).
+        """
+        value: str
+        """
+        - value of the key.
+        """
+elif False:
+    GetAccessControlPolicyCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetAccessControlPolicyCategoryArgs:
     def __init__(__self__, *,
@@ -38205,6 +47250,32 @@ class GetAccessControlPolicyCategoryArgs:
     def value(self, value: str):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class GetAddressGroupsMetadataArgsDict(TypedDict):
+        filter: str
+        """
+        (Optional) Filter in FIQL Syntax
+        """
+        kind: str
+        length: int
+        """
+        (Optional) Integer
+        """
+        offset: int
+        """
+        (Optional) Integer
+        """
+        sort_attribute: str
+        """
+        (Optional) attribute to sort
+        """
+        sort_order: str
+        """
+        (Optional) order of sorting
+        """
+elif False:
+    GetAddressGroupsMetadataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetAddressGroupsMetadataArgs:
@@ -38299,6 +47370,13 @@ class GetAddressGroupsMetadataArgs:
         pulumi.set(self, "sort_order", value)
 
 
+if not MYPY:
+    class GetAssertHelperCheckArgsDict(TypedDict):
+        condition: bool
+        error_message: str
+elif False:
+    GetAssertHelperCheckArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetAssertHelperCheckArgs:
     def __init__(__self__, *,
@@ -38325,6 +47403,19 @@ class GetAssertHelperCheckArgs:
     def error_message(self, value: str):
         pulumi.set(self, "error_message", value)
 
+
+if not MYPY:
+    class GetClusterCategoryArgsDict(TypedDict):
+        name: str
+        """
+        - the key name.
+        """
+        value: str
+        """
+        - value of the key.
+        """
+elif False:
+    GetClusterCategoryArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetClusterCategoryArgs:
@@ -38362,6 +47453,21 @@ class GetClusterCategoryArgs:
     def value(self, value: str):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class GetFloatingIpsMetadataArgsDict(TypedDict):
+        filter: str
+        kind: str
+        """
+        - The kind name (Default value: project).
+        """
+        length: int
+        offset: int
+        sort_attribute: str
+        sort_order: str
+        total_matches: int
+elif False:
+    GetFloatingIpsMetadataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetFloatingIpsMetadataArgs:
@@ -38450,6 +47556,43 @@ class GetFloatingIpsMetadataArgs:
     def total_matches(self, value: int):
         pulumi.set(self, "total_matches", value)
 
+
+if not MYPY:
+    class GetFoundationCentralClusterDetailsClusterStatusArgsDict(TypedDict):
+        aggregate_percent_complete: float
+        """
+        Overall progress percentage including imaging and cluster creation.
+        """
+        cluster_creation_started: bool
+        """
+        Denotes whether cluster creation has started in a phoenix workflow. For foundation workflows, this field will be same as intent_picked_up.
+        """
+        cluster_progress_details: Sequence['GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgsDict']
+        """
+        Denotes the progress status of cluster creation.
+        """
+        current_foundation_ip: str
+        """
+        Current IP address of the coordinating foundation node.
+        """
+        foundation_session_id: str
+        """
+        Foundation session id for cluster creation.
+        """
+        imaging_stopped: bool
+        """
+        Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+        """
+        intent_picked_up: bool
+        """
+        Denotes whether the remote nodes has picked up the cluster creation intent.
+        """
+        node_progress_details: Sequence['GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgsDict']
+        """
+        List of progress details of each node.
+        """
+elif False:
+    GetFoundationCentralClusterDetailsClusterStatusArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetFoundationCentralClusterDetailsClusterStatusArgs:
@@ -38578,6 +47721,27 @@ class GetFoundationCentralClusterDetailsClusterStatusArgs:
         pulumi.set(self, "node_progress_details", value)
 
 
+if not MYPY:
+    class GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgsDict(TypedDict):
+        cluster_name: str
+        """
+        Cluster name.
+        """
+        message_lists: Sequence[str]
+        """
+        List of messages for the client based on process state.
+        """
+        percent_complete: float
+        """
+        Percent completion of cluster creation process.
+        """
+        status: str
+        """
+        Current status of cluster creation process.
+        """
+elif False:
+    GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs:
     def __init__(__self__, *,
@@ -38644,6 +47808,35 @@ class GetFoundationCentralClusterDetailsClusterStatusClusterProgressDetailArgs:
     def status(self, value: str):
         pulumi.set(self, "status", value)
 
+
+if not MYPY:
+    class GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgsDict(TypedDict):
+        imaged_node_uuid: str
+        """
+        UUID of the node.
+        """
+        imaging_stopped: bool
+        """
+        Describes whether imaging has stopped. True indicates that process has stopped. False indicates that process is still going on. This field will only be used by phoenix nodes to update FC.
+        """
+        intent_picked_up: bool
+        """
+        Denotes whether the remote nodes has picked up the cluster creation intent.
+        """
+        message_lists: Sequence[str]
+        """
+        List of messages for the client based on process state.
+        """
+        percent_complete: float
+        """
+        Percent completion of cluster creation process.
+        """
+        status: str
+        """
+        Current status of cluster creation process.
+        """
+elif False:
+    GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs:
@@ -38742,6 +47935,27 @@ class GetFoundationCentralClusterDetailsClusterStatusNodeProgressDetailArgs:
         pulumi.set(self, "status", value)
 
 
+if not MYPY:
+    class GetFoundationCentralClusterDetailsCommonNetworkSettingsArgsDict(TypedDict):
+        cvm_dns_servers: Sequence[str]
+        """
+        List of dns servers for the cvms in the cluster.
+        """
+        cvm_ntp_servers: Sequence[str]
+        """
+        List of ntp servers for the cvms in the cluster.
+        """
+        hypervisor_dns_servers: Sequence[str]
+        """
+        List of dns servers for the hypervisors in the cluster.
+        """
+        hypervisor_ntp_servers: Sequence[str]
+        """
+        List of ntp servers for the hypervisors in the cluster.
+        """
+elif False:
+    GetFoundationCentralClusterDetailsCommonNetworkSettingsArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs:
     def __init__(__self__, *,
@@ -38809,6 +48023,15 @@ class GetFoundationCentralClusterDetailsCommonNetworkSettingsArgs:
         pulumi.set(self, "hypervisor_ntp_servers", value)
 
 
+if not MYPY:
+    class GetFoundationCentralImagedClustersListFiltersArgsDict(TypedDict):
+        archived: NotRequired[bool]
+        """
+        True if the cluster creation request is archived, False otherwise
+        """
+elif False:
+    GetFoundationCentralImagedClustersListFiltersArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetFoundationCentralImagedClustersListFiltersArgs:
     def __init__(__self__, *,
@@ -38832,6 +48055,15 @@ class GetFoundationCentralImagedClustersListFiltersArgs:
         pulumi.set(self, "archived", value)
 
 
+if not MYPY:
+    class GetFoundationCentralImagedNodesListFiltersArgsDict(TypedDict):
+        node_state: NotRequired[str]
+        """
+        Specifies whether the node is discovering, available or unavailable for cluster creation.
+        """
+elif False:
+    GetFoundationCentralImagedNodesListFiltersArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetFoundationCentralImagedNodesListFiltersArgs:
     def __init__(__self__, *,
@@ -38854,6 +48086,23 @@ class GetFoundationCentralImagedNodesListFiltersArgs:
     def node_state(self, value: Optional[str]):
         pulumi.set(self, "node_state", value)
 
+
+if not MYPY:
+    class GetFoundationCentralListApiKeysMetadataArgsDict(TypedDict):
+        length: int
+        """
+        The number of records retrieved.
+        """
+        offset: int
+        """
+        Offset from the start of the object list.
+        """
+        total_matches: int
+        """
+        Total matches found.
+        """
+elif False:
+    GetFoundationCentralListApiKeysMetadataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetFoundationCentralListApiKeysMetadataArgs:
@@ -38907,6 +48156,19 @@ class GetFoundationCentralListApiKeysMetadataArgs:
         pulumi.set(self, "total_matches", value)
 
 
+if not MYPY:
+    class GetHostCategoryArgsDict(TypedDict):
+        name: str
+        """
+        - the key name.
+        """
+        value: str
+        """
+        - value of the key.
+        """
+elif False:
+    GetHostCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetHostCategoryArgs:
     def __init__(__self__, *,
@@ -38944,6 +48206,16 @@ class GetHostCategoryArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class GetImageCategoryArgsDict(TypedDict):
+        name: str
+        """
+        - the name.
+        """
+        value: str
+elif False:
+    GetImageCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetImageCategoryArgs:
     def __init__(__self__, *,
@@ -38976,6 +48248,27 @@ class GetImageCategoryArgs:
     def value(self, value: str):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class GetNdbCloneFilterArgsDict(TypedDict):
+        any_status: NotRequired[str]
+        """
+        Get entity(s) if it satisfies query criteria irrespective of status (retrieve even deleted). Default is false
+        """
+        detailed: NotRequired[str]
+        """
+        Load entities with complete details. Default is false
+        """
+        load_dbserver_cluster: NotRequired[str]
+        """
+        Load cluster info. Default is false
+        """
+        timezone: NotRequired[str]
+        """
+        Default is UTC
+        """
+elif False:
+    GetNdbCloneFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetNdbCloneFilterArgs:
@@ -39048,6 +48341,16 @@ class GetNdbCloneFilterArgs:
         pulumi.set(self, "timezone", value)
 
 
+if not MYPY:
+    class GetNdbCloneTagArgsDict(TypedDict):
+        entity_id: str
+        entity_type: str
+        tag_id: str
+        tag_name: str
+        value: str
+elif False:
+    GetNdbCloneTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetNdbCloneTagArgs:
     def __init__(__self__, *,
@@ -39107,6 +48410,35 @@ class GetNdbCloneTagArgs:
     def value(self, value: str):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class GetNdbClonesFilterArgsDict(TypedDict):
+        any_status: NotRequired[str]
+        """
+        Get entity(s) if it satisfies query criteria irrespective of status (retrieve even deleted). Default is false
+        """
+        detailed: NotRequired[str]
+        """
+        Load entities with complete details. Default is false
+        """
+        load_dbserver_cluster: NotRequired[str]
+        """
+        Load cluster info. Default is false
+        """
+        order_by_dbserver_cluster: NotRequired[str]
+        """
+        Sorted by dbserver cluster. Default is false
+        """
+        order_by_dbserver_logical_cluster: NotRequired[str]
+        """
+        Sorted by dbserver logical cluster.  Default is false
+        """
+        timezone: NotRequired[str]
+        """
+        Default is UTC
+        """
+elif False:
+    GetNdbClonesFilterArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetNdbClonesFilterArgs:
@@ -39211,6 +48543,16 @@ class GetNdbClonesFilterArgs:
         pulumi.set(self, "timezone", value)
 
 
+if not MYPY:
+    class GetNdbDatabaseTagArgsDict(TypedDict):
+        entity_id: str
+        entity_type: str
+        tag_id: str
+        tag_name: str
+        value: str
+elif False:
+    GetNdbDatabaseTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetNdbDatabaseTagArgs:
     def __init__(__self__, *,
@@ -39270,6 +48612,16 @@ class GetNdbDatabaseTagArgs:
     def value(self, value: str):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class GetNdbDbserverTagArgsDict(TypedDict):
+        entity_id: str
+        entity_type: str
+        tag_id: str
+        tag_name: str
+        value: str
+elif False:
+    GetNdbDbserverTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetNdbDbserverTagArgs:
@@ -39331,6 +48683,16 @@ class GetNdbDbserverTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class GetNdbMaintenanceWindowTagArgsDict(TypedDict):
+        entity_id: str
+        entity_type: str
+        tag_id: str
+        tag_name: str
+        value: str
+elif False:
+    GetNdbMaintenanceWindowTagArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetNdbMaintenanceWindowTagArgs:
     def __init__(__self__, *,
@@ -39391,6 +48753,19 @@ class GetNdbMaintenanceWindowTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class GetNdbSnapshotFilterArgsDict(TypedDict):
+        load_replicated_child_snapshots: NotRequired[str]
+        """
+        load child snapshots. Default is false
+        """
+        timezone: NotRequired[str]
+        """
+        Default is UTC
+        """
+elif False:
+    GetNdbSnapshotFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetNdbSnapshotFilterArgs:
     def __init__(__self__, *,
@@ -39429,6 +48804,16 @@ class GetNdbSnapshotFilterArgs:
     def timezone(self, value: Optional[str]):
         pulumi.set(self, "timezone", value)
 
+
+if not MYPY:
+    class GetNdbSnapshotTagArgsDict(TypedDict):
+        entity_id: str
+        entity_type: str
+        tag_id: str
+        tag_name: str
+        value: str
+elif False:
+    GetNdbSnapshotTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetNdbSnapshotTagArgs:
@@ -39490,6 +48875,15 @@ class GetNdbSnapshotTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class GetNdbSnapshotsFilterArgsDict(TypedDict):
+        time_machine_id: NotRequired[str]
+        """
+        Fetches all the snapshots for a given time machine
+        """
+elif False:
+    GetNdbSnapshotsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetNdbSnapshotsFilterArgs:
     def __init__(__self__, *,
@@ -39512,6 +48906,16 @@ class GetNdbSnapshotsFilterArgs:
     def time_machine_id(self, value: Optional[str]):
         pulumi.set(self, "time_machine_id", value)
 
+
+if not MYPY:
+    class GetNdbTimeMachineTagArgsDict(TypedDict):
+        entity_id: str
+        entity_type: str
+        tag_id: str
+        tag_name: str
+        value: str
+elif False:
+    GetNdbTimeMachineTagArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetNdbTimeMachineTagArgs:
@@ -39573,6 +48977,19 @@ class GetNdbTimeMachineTagArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class GetNetworkSecurityRuleCategoryArgsDict(TypedDict):
+        name: str
+        """
+        - the name.
+        """
+        value: str
+        """
+        - value of the key.
+        """
+elif False:
+    GetNetworkSecurityRuleCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetNetworkSecurityRuleCategoryArgs:
     def __init__(__self__, *,
@@ -39609,6 +49026,21 @@ class GetNetworkSecurityRuleCategoryArgs:
     def value(self, value: str):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class GetPbrsMetadataArgsDict(TypedDict):
+        filter: str
+        kind: str
+        """
+        - The kind name (Default value: project).
+        """
+        length: int
+        offset: int
+        sort_attribute: str
+        sort_order: str
+        total_matches: int
+elif False:
+    GetPbrsMetadataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetPbrsMetadataArgs:
@@ -39698,6 +49130,19 @@ class GetPbrsMetadataArgs:
         pulumi.set(self, "total_matches", value)
 
 
+if not MYPY:
+    class GetPermissionCategoryArgsDict(TypedDict):
+        name: str
+        """
+        the name.
+        """
+        value: str
+        """
+        value of the key.
+        """
+elif False:
+    GetPermissionCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetPermissionCategoryArgs:
     def __init__(__self__, *,
@@ -39734,6 +49179,20 @@ class GetPermissionCategoryArgs:
     def value(self, value: str):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class GetPermissionsMetadataArgsDict(TypedDict):
+        filter: str
+        kind: str
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        length: int
+        offset: int
+        sort_attribute: str
+        sort_order: str
+elif False:
+    GetPermissionsMetadataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetPermissionsMetadataArgs:
@@ -39812,6 +49271,19 @@ class GetPermissionsMetadataArgs:
         pulumi.set(self, "sort_order", value)
 
 
+if not MYPY:
+    class GetProjectCategoryArgsDict(TypedDict):
+        name: str
+        """
+        the name.
+        """
+        value: str
+        """
+        value of the key.
+        """
+elif False:
+    GetProjectCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetProjectCategoryArgs:
     def __init__(__self__, *,
@@ -39848,6 +49320,23 @@ class GetProjectCategoryArgs:
     def value(self, value: str):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class GetProjectExternalUserGroupReferenceListArgsDict(TypedDict):
+        kind: str
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: str
+        """
+        the name.
+        """
+        uuid: str
+        """
+        (Required) the UUID.
+        """
+elif False:
+    GetProjectExternalUserGroupReferenceListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetProjectExternalUserGroupReferenceListArgs:
@@ -39901,6 +49390,23 @@ class GetProjectExternalUserGroupReferenceListArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class GetProjectSubnetReferenceListArgsDict(TypedDict):
+        kind: str
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: str
+        """
+        the name.
+        """
+        uuid: str
+        """
+        (Required) the UUID.
+        """
+elif False:
+    GetProjectSubnetReferenceListArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetProjectSubnetReferenceListArgs:
     def __init__(__self__, *,
@@ -39952,6 +49458,23 @@ class GetProjectSubnetReferenceListArgs:
     def uuid(self, value: str):
         pulumi.set(self, "uuid", value)
 
+
+if not MYPY:
+    class GetProjectUserReferenceListArgsDict(TypedDict):
+        kind: str
+        """
+        (Required) The kind name (Default value: `project`).
+        """
+        name: str
+        """
+        the name.
+        """
+        uuid: str
+        """
+        (Required) the UUID.
+        """
+elif False:
+    GetProjectUserReferenceListArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetProjectUserReferenceListArgs:
@@ -40005,6 +49528,19 @@ class GetProjectUserReferenceListArgs:
         pulumi.set(self, "uuid", value)
 
 
+if not MYPY:
+    class GetProtectionRuleCategoryArgsDict(TypedDict):
+        name: str
+        """
+        (Optional) the name.
+        """
+        value: str
+        """
+        value of the key.
+        """
+elif False:
+    GetProtectionRuleCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetProtectionRuleCategoryArgs:
     def __init__(__self__, *,
@@ -40041,6 +49577,19 @@ class GetProtectionRuleCategoryArgs:
     def value(self, value: str):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class GetRecoveryPlanCategoryArgsDict(TypedDict):
+        name: str
+        """
+        (Optional) the name.
+        """
+        value: str
+        """
+        value of the key.
+        """
+elif False:
+    GetRecoveryPlanCategoryArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetRecoveryPlanCategoryArgs:
@@ -40079,6 +49628,19 @@ class GetRecoveryPlanCategoryArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class GetRoleCategoryArgsDict(TypedDict):
+        name: str
+        """
+        - the name(Optional).
+        """
+        value: str
+        """
+        - value of the key.
+        """
+elif False:
+    GetRoleCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetRoleCategoryArgs:
     def __init__(__self__, *,
@@ -40115,6 +49677,20 @@ class GetRoleCategoryArgs:
     def value(self, value: str):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class GetRolesMetadataArgsDict(TypedDict):
+        filter: str
+        kind: str
+        """
+        - The kind name (Default value: project)(Required).
+        """
+        length: int
+        offset: int
+        sort_attribute: str
+        sort_order: str
+elif False:
+    GetRolesMetadataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetRolesMetadataArgs:
@@ -40193,6 +49769,17 @@ class GetRolesMetadataArgs:
         pulumi.set(self, "sort_order", value)
 
 
+if not MYPY:
+    class GetServiceGroupsMetadataArgsDict(TypedDict):
+        filter: str
+        kind: str
+        length: int
+        offset: int
+        sort_attribute: str
+        sort_order: str
+elif False:
+    GetServiceGroupsMetadataArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetServiceGroupsMetadataArgs:
     def __init__(__self__, *,
@@ -40264,6 +49851,16 @@ class GetServiceGroupsMetadataArgs:
         pulumi.set(self, "sort_order", value)
 
 
+if not MYPY:
+    class GetSubnetAdditionalFilterArgsDict(TypedDict):
+        name: str
+        """
+        - the name(Optional).
+        """
+        values: Sequence[str]
+elif False:
+    GetSubnetAdditionalFilterArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetSubnetAdditionalFilterArgs:
     def __init__(__self__, *,
@@ -40296,6 +49893,19 @@ class GetSubnetAdditionalFilterArgs:
     def values(self, value: Sequence[str]):
         pulumi.set(self, "values", value)
 
+
+if not MYPY:
+    class GetSubnetCategoryArgsDict(TypedDict):
+        name: str
+        """
+        - the name(Optional).
+        """
+        value: str
+        """
+        - value of the key.
+        """
+elif False:
+    GetSubnetCategoryArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetSubnetCategoryArgs:
@@ -40333,6 +49943,20 @@ class GetSubnetCategoryArgs:
     def value(self, value: str):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class GetSubnetsMetadataArgsDict(TypedDict):
+        filter: str
+        kind: str
+        """
+        The kind name (Default value: project.
+        """
+        length: int
+        offset: int
+        sort_attribute: str
+        sort_order: str
+elif False:
+    GetSubnetsMetadataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetSubnetsMetadataArgs:
@@ -40411,6 +50035,19 @@ class GetSubnetsMetadataArgs:
         pulumi.set(self, "sort_order", value)
 
 
+if not MYPY:
+    class GetUserCategoryArgsDict(TypedDict):
+        name: str
+        """
+        - (Optional) The name for the user
+        """
+        value: str
+        """
+        - value of the key.
+        """
+elif False:
+    GetUserCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetUserCategoryArgs:
     def __init__(__self__, *,
@@ -40448,6 +50085,19 @@ class GetUserCategoryArgs:
         pulumi.set(self, "value", value)
 
 
+if not MYPY:
+    class GetUserGroupCategoryArgsDict(TypedDict):
+        name: str
+        """
+        - the name(Optional).
+        """
+        value: str
+        """
+        - value of the key.
+        """
+elif False:
+    GetUserGroupCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetUserGroupCategoryArgs:
     def __init__(__self__, *,
@@ -40484,6 +50134,17 @@ class GetUserGroupCategoryArgs:
     def value(self, value: str):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class GetUserGroupsMetadataArgsDict(TypedDict):
+        filter: str
+        kind: str
+        length: int
+        offset: int
+        sort_attribute: str
+        sort_order: str
+elif False:
+    GetUserGroupsMetadataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetUserGroupsMetadataArgs:
@@ -40555,6 +50216,20 @@ class GetUserGroupsMetadataArgs:
     def sort_order(self, value: str):
         pulumi.set(self, "sort_order", value)
 
+
+if not MYPY:
+    class GetUsersMetadataArgsDict(TypedDict):
+        filter: str
+        kind: str
+        """
+        - The kind name. (Default depends on the resource you are referencing)
+        """
+        length: int
+        offset: int
+        sort_attribute: str
+        sort_order: str
+elif False:
+    GetUsersMetadataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetUsersMetadataArgs:
@@ -40633,6 +50308,19 @@ class GetUsersMetadataArgs:
         pulumi.set(self, "sort_order", value)
 
 
+if not MYPY:
+    class GetVirtualMachineCategoryArgsDict(TypedDict):
+        name: str
+        """
+        - the name.
+        """
+        value: str
+        """
+        - value of the key.
+        """
+elif False:
+    GetVirtualMachineCategoryArgsDict: TypeAlias = Mapping[str, Any]
+
 @pulumi.input_type
 class GetVirtualMachineCategoryArgs:
     def __init__(__self__, *,
@@ -40669,6 +50357,21 @@ class GetVirtualMachineCategoryArgs:
     def value(self, value: str):
         pulumi.set(self, "value", value)
 
+
+if not MYPY:
+    class GetVpcsMetadataArgsDict(TypedDict):
+        filter: str
+        kind: str
+        """
+        - The kind name (Default value: project).
+        """
+        length: int
+        offset: int
+        sort_attribute: str
+        sort_order: str
+        total_matches: int
+elif False:
+    GetVpcsMetadataArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class GetVpcsMetadataArgs:

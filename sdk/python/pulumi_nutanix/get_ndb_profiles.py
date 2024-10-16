@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -129,9 +134,6 @@ def get_ndb_profiles(engine: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         profile_type=pulumi.get(__ret__, 'profile_type'),
         profiles=pulumi.get(__ret__, 'profiles'))
-
-
-@_utilities.lift_output_func(get_ndb_profiles)
 def get_ndb_profiles_output(engine: Optional[pulumi.Input[Optional[str]]] = None,
                             profile_type: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbProfilesResult]:
@@ -175,4 +177,13 @@ def get_ndb_profiles_output(engine: Optional[pulumi.Input[Optional[str]]] = None
     :param str engine: Database engine. For eg. postgres_database
     :param str profile_type: profile type. Types: Software, Compute, Network and Database_Parameter
     """
-    ...
+    __args__ = dict()
+    __args__['engine'] = engine
+    __args__['profileType'] = profile_type
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbProfiles:getNdbProfiles', __args__, opts=opts, typ=GetNdbProfilesResult)
+    return __ret__.apply(lambda __response__: GetNdbProfilesResult(
+        engine=pulumi.get(__response__, 'engine'),
+        id=pulumi.get(__response__, 'id'),
+        profile_type=pulumi.get(__response__, 'profile_type'),
+        profiles=pulumi.get(__response__, 'profiles')))

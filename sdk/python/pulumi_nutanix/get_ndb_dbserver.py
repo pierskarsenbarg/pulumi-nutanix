@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 from ._inputs import *
@@ -507,9 +512,6 @@ def get_ndb_dbserver(dbserver_cluster_id: Optional[str] = None,
         vm_timezone=pulumi.get(__ret__, 'vm_timezone'),
         windows_db_server=pulumi.get(__ret__, 'windows_db_server'),
         working_directory=pulumi.get(__ret__, 'working_directory'))
-
-
-@_utilities.lift_output_func(get_ndb_dbserver)
 def get_ndb_dbserver_output(dbserver_cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                             id: Optional[pulumi.Input[Optional[str]]] = None,
                             ip: Optional[pulumi.Input[Optional[str]]] = None,
@@ -539,4 +541,50 @@ def get_ndb_dbserver_output(dbserver_cluster_id: Optional[pulumi.Input[Optional[
     :param str vm_cluster_id: vm cluster id of database server
     :param str vm_cluster_name: vm cluster name of database server
     """
-    ...
+    __args__ = dict()
+    __args__['dbserverClusterId'] = dbserver_cluster_id
+    __args__['id'] = id
+    __args__['ip'] = ip
+    __args__['name'] = name
+    __args__['nxClusterId'] = nx_cluster_id
+    __args__['tags'] = tags
+    __args__['vmClusterId'] = vm_cluster_id
+    __args__['vmClusterName'] = vm_cluster_name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbDbserver:getNdbDbserver', __args__, opts=opts, typ=GetNdbDbserverResult)
+    return __ret__.apply(lambda __response__: GetNdbDbserverResult(
+        access_key_id=pulumi.get(__response__, 'access_key_id'),
+        access_level=pulumi.get(__response__, 'access_level'),
+        associated_time_machine_ids=pulumi.get(__response__, 'associated_time_machine_ids'),
+        client_id=pulumi.get(__response__, 'client_id'),
+        clustered=pulumi.get(__response__, 'clustered'),
+        database_type=pulumi.get(__response__, 'database_type'),
+        date_created=pulumi.get(__response__, 'date_created'),
+        date_modified=pulumi.get(__response__, 'date_modified'),
+        dbserver_cluster_id=pulumi.get(__response__, 'dbserver_cluster_id'),
+        dbserver_invalid_ea_state=pulumi.get(__response__, 'dbserver_invalid_ea_state'),
+        description=pulumi.get(__response__, 'description'),
+        era_drive_id=pulumi.get(__response__, 'era_drive_id'),
+        era_version=pulumi.get(__response__, 'era_version'),
+        fqdns=pulumi.get(__response__, 'fqdns'),
+        id=pulumi.get(__response__, 'id'),
+        ip=pulumi.get(__response__, 'ip'),
+        ip_addresses=pulumi.get(__response__, 'ip_addresses'),
+        is_server_driven=pulumi.get(__response__, 'is_server_driven'),
+        mac_addresses=pulumi.get(__response__, 'mac_addresses'),
+        name=pulumi.get(__response__, 'name'),
+        nx_cluster_id=pulumi.get(__response__, 'nx_cluster_id'),
+        properties=pulumi.get(__response__, 'properties'),
+        protection_domain_id=pulumi.get(__response__, 'protection_domain_id'),
+        query_count=pulumi.get(__response__, 'query_count'),
+        status=pulumi.get(__response__, 'status'),
+        tags=pulumi.get(__response__, 'tags'),
+        type=pulumi.get(__response__, 'type'),
+        valid_diagnostic_bundle_state=pulumi.get(__response__, 'valid_diagnostic_bundle_state'),
+        vm_cluster_id=pulumi.get(__response__, 'vm_cluster_id'),
+        vm_cluster_name=pulumi.get(__response__, 'vm_cluster_name'),
+        vm_cluster_uuid=pulumi.get(__response__, 'vm_cluster_uuid'),
+        vm_infos=pulumi.get(__response__, 'vm_infos'),
+        vm_timezone=pulumi.get(__response__, 'vm_timezone'),
+        windows_db_server=pulumi.get(__response__, 'windows_db_server'),
+        working_directory=pulumi.get(__response__, 'working_directory')))

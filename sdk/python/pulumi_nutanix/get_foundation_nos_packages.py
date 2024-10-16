@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -82,9 +87,6 @@ def get_foundation_nos_packages(opts: Optional[pulumi.InvokeOptions] = None) -> 
     return AwaitableGetFoundationNosPackagesResult(
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'))
-
-
-@_utilities.lift_output_func(get_foundation_nos_packages)
 def get_foundation_nos_packages_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationNosPackagesResult]:
     """
     Describes a list of nos (aos) packages present in foundation vm
@@ -104,4 +106,9 @@ def get_foundation_nos_packages_output(opts: Optional[pulumi.InvokeOptions] = No
 
     See detailed information in [Nutanix Foundation Nos Packages](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjMzODg-get-list-of-aos-packages-available-in-foundation).
     """
-    ...
+    __args__ = dict()
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getFoundationNosPackages:getFoundationNosPackages', __args__, opts=opts, typ=GetFoundationNosPackagesResult)
+    return __ret__.apply(lambda __response__: GetFoundationNosPackagesResult(
+        entities=pulumi.get(__response__, 'entities'),
+        id=pulumi.get(__response__, 'id')))

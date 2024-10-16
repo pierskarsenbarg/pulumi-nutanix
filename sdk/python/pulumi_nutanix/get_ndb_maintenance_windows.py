@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -77,9 +82,6 @@ def get_ndb_maintenance_windows(opts: Optional[pulumi.InvokeOptions] = None) -> 
     return AwaitableGetNdbMaintenanceWindowsResult(
         id=pulumi.get(__ret__, 'id'),
         maintenance_windows=pulumi.get(__ret__, 'maintenance_windows'))
-
-
-@_utilities.lift_output_func(get_ndb_maintenance_windows)
 def get_ndb_maintenance_windows_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbMaintenanceWindowsResult]:
     """
     List of maintenance windows in Nutanix Database Service
@@ -93,4 +95,9 @@ def get_ndb_maintenance_windows_output(opts: Optional[pulumi.InvokeOptions] = No
     windows = nutanix.get_ndb_maintenance_windows()
     ```
     """
-    ...
+    __args__ = dict()
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbMaintenanceWindows:getNdbMaintenanceWindows', __args__, opts=opts, typ=GetNdbMaintenanceWindowsResult)
+    return __ret__.apply(lambda __response__: GetNdbMaintenanceWindowsResult(
+        id=pulumi.get(__response__, 'id'),
+        maintenance_windows=pulumi.get(__response__, 'maintenance_windows')))

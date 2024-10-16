@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 from . import outputs
 
@@ -122,9 +127,6 @@ def get_pbr(pbr_uuid: Optional[str] = None,
         pbr_uuid=pulumi.get(__ret__, 'pbr_uuid'),
         specs=pulumi.get(__ret__, 'specs'),
         statuses=pulumi.get(__ret__, 'statuses'))
-
-
-@_utilities.lift_output_func(get_pbr)
 def get_pbr_output(pbr_uuid: Optional[pulumi.Input[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPbrResult]:
     """
@@ -133,4 +135,14 @@ def get_pbr_output(pbr_uuid: Optional[pulumi.Input[str]] = None,
 
     :param str pbr_uuid: pbr UUID
     """
-    ...
+    __args__ = dict()
+    __args__['pbrUuid'] = pbr_uuid
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('nutanix:index/getPbr:getPbr', __args__, opts=opts, typ=GetPbrResult)
+    return __ret__.apply(lambda __response__: GetPbrResult(
+        api_version=pulumi.get(__response__, 'api_version'),
+        id=pulumi.get(__response__, 'id'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        pbr_uuid=pulumi.get(__response__, 'pbr_uuid'),
+        specs=pulumi.get(__response__, 'specs'),
+        statuses=pulumi.get(__response__, 'statuses')))
