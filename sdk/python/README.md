@@ -1,6 +1,6 @@
 # Nutanix Resource Provider
 
-The Nutanix Resource Provider lets you manage [Nutanix](http://example.com) resources.
+The Nutanix Resource Provider lets you manage [Nutanix](https://nutanix.com) resources.
 
 ## Installing
 
@@ -53,4 +53,4 @@ The following configuration points are available for the `nutanix` provider:
 
 ## Reference
 
-For detailed reference documentation, please visit [the Pulumi registry](https://www.pulumi.com/registry/packages/foo/api-docs/).
+For detailed reference documentation, please visit [the Pulumi registry](https://www.pulumi.com/registry/packages/nutanix/api-docs/).
