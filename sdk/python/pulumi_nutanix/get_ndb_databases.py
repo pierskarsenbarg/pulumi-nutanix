@@ -126,7 +126,7 @@ def get_ndb_databases(database_type: Optional[str] = None,
         database_type=pulumi.get(__ret__, 'database_type'),
         id=pulumi.get(__ret__, 'id'))
 def get_ndb_databases_output(database_type: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbDatabasesResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbDatabasesResult]:
     """
     List all database instances in Nutanix Database Service
 
@@ -172,7 +172,7 @@ def get_ndb_databases_output(database_type: Optional[pulumi.Input[Optional[str]]
     """
     __args__ = dict()
     __args__['databaseType'] = database_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbDatabases:getNdbDatabases', __args__, opts=opts, typ=GetNdbDatabasesResult)
     return __ret__.apply(lambda __response__: GetNdbDatabasesResult(
         database_instances=pulumi.get(__response__, 'database_instances'),

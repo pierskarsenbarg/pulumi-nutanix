@@ -212,7 +212,7 @@ def get_role(categories: Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRole
 def get_role_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetRoleCategoryArgs', 'GetRoleCategoryArgsDict']]]]] = None,
                     role_id: Optional[pulumi.Input[Optional[str]]] = None,
                     role_name: Optional[pulumi.Input[Optional[str]]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRoleResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRoleResult]:
     """
     Describes a Role.
 
@@ -225,7 +225,7 @@ def get_role_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['G
     __args__['categories'] = categories
     __args__['roleId'] = role_id
     __args__['roleName'] = role_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getRole:getRole', __args__, opts=opts, typ=GetRoleResult)
     return __ret__.apply(lambda __response__: GetRoleResult(
         api_version=pulumi.get(__response__, 'api_version'),

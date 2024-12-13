@@ -83,7 +83,7 @@ def get_ndb_slas(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNdb
     return AwaitableGetNdbSlasResult(
         id=pulumi.get(__ret__, 'id'),
         slas=pulumi.get(__ret__, 'slas'))
-def get_ndb_slas_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbSlasResult]:
+def get_ndb_slas_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbSlasResult]:
     """
     Lists all SLAs in Nutanix Database Service
 
@@ -98,7 +98,7 @@ def get_ndb_slas_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.O
     ```
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbSlas:getNdbSlas', __args__, opts=opts, typ=GetNdbSlasResult)
     return __ret__.apply(lambda __response__: GetNdbSlasResult(
         id=pulumi.get(__response__, 'id'),

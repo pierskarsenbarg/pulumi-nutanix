@@ -70,7 +70,7 @@ export interface GetNdbClonesResult {
  * });
  * ```
  */
-export function getNdbClonesOutput(args?: GetNdbClonesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbClonesResult> {
+export function getNdbClonesOutput(args?: GetNdbClonesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbClonesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbClones:getNdbClones", {

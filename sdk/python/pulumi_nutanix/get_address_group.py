@@ -146,7 +146,7 @@ def get_address_group(uuid: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         uuid=pulumi.get(__ret__, 'uuid'))
 def get_address_group_output(uuid: Optional[pulumi.Input[str]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddressGroupResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAddressGroupResult]:
     """
     Provides a datasource to retrieve a address group.
 
@@ -170,7 +170,7 @@ def get_address_group_output(uuid: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['uuid'] = uuid
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getAddressGroup:getAddressGroup', __args__, opts=opts, typ=GetAddressGroupResult)
     return __ret__.apply(lambda __response__: GetAddressGroupResult(
         address_group_string=pulumi.get(__response__, 'address_group_string'),

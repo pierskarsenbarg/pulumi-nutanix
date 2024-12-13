@@ -399,7 +399,7 @@ def get_ndb_cluster(cluster_id: Optional[str] = None,
         version=pulumi.get(__ret__, 'version'))
 def get_ndb_cluster_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                            cluster_name: Optional[pulumi.Input[Optional[str]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbClusterResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbClusterResult]:
     """
     Describes a cluster in Nutanix Database Service
 
@@ -420,7 +420,7 @@ def get_ndb_cluster_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = N
     __args__ = dict()
     __args__['clusterId'] = cluster_id
     __args__['clusterName'] = cluster_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbCluster:getNdbCluster', __args__, opts=opts, typ=GetNdbClusterResult)
     return __ret__.apply(lambda __response__: GetNdbClusterResult(
         cloud_info=pulumi.get(__response__, 'cloud_info'),

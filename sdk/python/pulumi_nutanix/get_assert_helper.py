@@ -74,13 +74,13 @@ def get_assert_helper(checks: Optional[Sequence[Union['GetAssertHelperCheckArgs'
         checks=pulumi.get(__ret__, 'checks'),
         id=pulumi.get(__ret__, 'id'))
 def get_assert_helper_output(checks: Optional[pulumi.Input[Optional[Sequence[Union['GetAssertHelperCheckArgs', 'GetAssertHelperCheckArgsDict']]]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAssertHelperResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssertHelperResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['checks'] = checks
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getAssertHelper:getAssertHelper', __args__, opts=opts, typ=GetAssertHelperResult)
     return __ret__.apply(lambda __response__: GetAssertHelperResult(
         checks=pulumi.get(__response__, 'checks'),

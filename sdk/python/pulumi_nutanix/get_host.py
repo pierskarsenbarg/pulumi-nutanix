@@ -416,7 +416,7 @@ def get_host(categories: Optional[Sequence[Union['GetHostCategoryArgs', 'GetHost
         windows_domain=pulumi.get(__ret__, 'windows_domain'))
 def get_host_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetHostCategoryArgs', 'GetHostCategoryArgsDict']]]]] = None,
                     host_id: Optional[pulumi.Input[str]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHostResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHostResult]:
     """
     Describes a Host
 
@@ -427,7 +427,7 @@ def get_host_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['G
     __args__ = dict()
     __args__['categories'] = categories
     __args__['hostId'] = host_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getHost:getHost', __args__, opts=opts, typ=GetHostResult)
     return __ret__.apply(lambda __response__: GetHostResult(
         api_version=pulumi.get(__response__, 'api_version'),

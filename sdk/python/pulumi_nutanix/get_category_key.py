@@ -127,7 +127,7 @@ def get_category_key(name: Optional[str] = None,
         system_defined=pulumi.get(__ret__, 'system_defined'),
         values=pulumi.get(__ret__, 'values'))
 def get_category_key_output(name: Optional[pulumi.Input[str]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCategoryKeyResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCategoryKeyResult]:
     """
     Describe a Nutanix Category Key and its values (if it has them).
 
@@ -136,7 +136,7 @@ def get_category_key_output(name: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getCategoryKey:getCategoryKey', __args__, opts=opts, typ=GetCategoryKeyResult)
     return __ret__.apply(lambda __response__: GetCategoryKeyResult(
         api_version=pulumi.get(__response__, 'api_version'),

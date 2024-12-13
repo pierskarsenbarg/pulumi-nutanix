@@ -334,7 +334,7 @@ def get_ndb_profile_output(engine: Optional[pulumi.Input[Optional[str]]] = None,
                            profile_id: Optional[pulumi.Input[Optional[str]]] = None,
                            profile_name: Optional[pulumi.Input[Optional[str]]] = None,
                            profile_type: Optional[pulumi.Input[Optional[str]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbProfileResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbProfileResult]:
     """
     Describes a profile in Nutanix Database Service
 
@@ -360,7 +360,7 @@ def get_ndb_profile_output(engine: Optional[pulumi.Input[Optional[str]]] = None,
     __args__['profileId'] = profile_id
     __args__['profileName'] = profile_name
     __args__['profileType'] = profile_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbProfile:getNdbProfile', __args__, opts=opts, typ=GetNdbProfileResult)
     return __ret__.apply(lambda __response__: GetNdbProfileResult(
         assoc_databases=pulumi.get(__response__, 'assoc_databases'),

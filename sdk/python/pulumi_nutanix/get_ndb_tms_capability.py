@@ -233,13 +233,13 @@ def get_ndb_tms_capability(time_machine_id: Optional[str] = None,
         time_machine_id=pulumi.get(__ret__, 'time_machine_id'),
         type=pulumi.get(__ret__, 'type'))
 def get_ndb_tms_capability_output(time_machine_id: Optional[pulumi.Input[str]] = None,
-                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbTmsCapabilityResult]:
+                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbTmsCapabilityResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['timeMachineId'] = time_machine_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbTmsCapability:getNdbTmsCapability', __args__, opts=opts, typ=GetNdbTmsCapabilityResult)
     return __ret__.apply(lambda __response__: GetNdbTmsCapabilityResult(
         capabilities=pulumi.get(__response__, 'capabilities'),

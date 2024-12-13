@@ -159,7 +159,7 @@ export interface GetNdbDatabaseResult {
  * export const db1Output = db1;
  * ```
  */
-export function getNdbDatabaseOutput(args: GetNdbDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbDatabaseResult> {
+export function getNdbDatabaseOutput(args: GetNdbDatabaseOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbDatabaseResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbDatabase:getNdbDatabase", {
         "databaseId": args.databaseId,

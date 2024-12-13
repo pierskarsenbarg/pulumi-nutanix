@@ -34,7 +34,7 @@ export interface GetServiceGroupResult {
     readonly serviceLists: outputs.GetServiceGroupServiceList[];
     readonly uuid: string;
 }
-export function getServiceGroupOutput(args: GetServiceGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceGroupResult> {
+export function getServiceGroupOutput(args: GetServiceGroupOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetServiceGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getServiceGroup:getServiceGroup", {
         "uuid": args.uuid,

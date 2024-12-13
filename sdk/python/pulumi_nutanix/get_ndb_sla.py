@@ -307,7 +307,7 @@ def get_ndb_sla(sla_id: Optional[str] = None,
         yearly_retention=pulumi.get(__ret__, 'yearly_retention'))
 def get_ndb_sla_output(sla_id: Optional[pulumi.Input[Optional[str]]] = None,
                        sla_name: Optional[pulumi.Input[Optional[str]]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbSlaResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbSlaResult]:
     """
     Describes a SLA in Nutanix Database Service
 
@@ -328,7 +328,7 @@ def get_ndb_sla_output(sla_id: Optional[pulumi.Input[Optional[str]]] = None,
     __args__ = dict()
     __args__['slaId'] = sla_id
     __args__['slaName'] = sla_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbSla:getNdbSla', __args__, opts=opts, typ=GetNdbSlaResult)
     return __ret__.apply(lambda __response__: GetNdbSlaResult(
         continuous_retention=pulumi.get(__response__, 'continuous_retention'),

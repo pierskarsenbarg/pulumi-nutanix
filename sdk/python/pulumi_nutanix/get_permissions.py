@@ -115,7 +115,7 @@ def get_permissions(metadatas: Optional[Sequence[Union['GetPermissionsMetadataAr
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
 def get_permissions_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetPermissionsMetadataArgs', 'GetPermissionsMetadataArgsDict']]]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPermissionsResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPermissionsResult]:
     """
     Provides a datasource to retrieve all the permissions.
 
@@ -133,7 +133,7 @@ def get_permissions_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Un
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getPermissions:getPermissions', __args__, opts=opts, typ=GetPermissionsResult)
     return __ret__.apply(lambda __response__: GetPermissionsResult(
         api_version=pulumi.get(__response__, 'api_version'),

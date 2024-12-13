@@ -204,7 +204,7 @@ export interface GetFoundationCentralImagedNodeDetailsResult {
  * });
  * ```
  */
-export function getFoundationCentralImagedNodeDetailsOutput(args: GetFoundationCentralImagedNodeDetailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralImagedNodeDetailsResult> {
+export function getFoundationCentralImagedNodeDetailsOutput(args: GetFoundationCentralImagedNodeDetailsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFoundationCentralImagedNodeDetailsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails", {
         "imagedNodeUuid": args.imagedNodeUuid,

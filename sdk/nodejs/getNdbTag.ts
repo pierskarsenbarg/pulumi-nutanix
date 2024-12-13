@@ -97,7 +97,7 @@ export interface GetNdbTagResult {
  * });
  * ```
  */
-export function getNdbTagOutput(args?: GetNdbTagOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbTagResult> {
+export function getNdbTagOutput(args?: GetNdbTagOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbTagResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbTag:getNdbTag", {

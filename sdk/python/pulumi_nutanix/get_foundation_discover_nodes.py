@@ -82,7 +82,7 @@ def get_foundation_discover_nodes(opts: Optional[pulumi.InvokeOptions] = None) -
     return AwaitableGetFoundationDiscoverNodesResult(
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'))
-def get_foundation_discover_nodes_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationDiscoverNodesResult]:
+def get_foundation_discover_nodes_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFoundationDiscoverNodesResult]:
     """
     Discovers and lists Nutanix-imaged nodes within an IPv6 network.
 
@@ -96,7 +96,7 @@ def get_foundation_discover_nodes_output(opts: Optional[pulumi.InvokeOptions] = 
     ```
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getFoundationDiscoverNodes:getFoundationDiscoverNodes', __args__, opts=opts, typ=GetFoundationDiscoverNodesResult)
     return __ret__.apply(lambda __response__: GetFoundationDiscoverNodesResult(
         entities=pulumi.get(__response__, 'entities'),

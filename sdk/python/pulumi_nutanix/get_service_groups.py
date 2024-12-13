@@ -84,13 +84,13 @@ def get_service_groups(metadatas: Optional[Sequence[Union['GetServiceGroupsMetad
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
 def get_service_groups_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceGroupsMetadataArgs', 'GetServiceGroupsMetadataArgsDict']]]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceGroupsResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceGroupsResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getServiceGroups:getServiceGroups', __args__, opts=opts, typ=GetServiceGroupsResult)
     return __ret__.apply(lambda __response__: GetServiceGroupsResult(
         entities=pulumi.get(__response__, 'entities'),

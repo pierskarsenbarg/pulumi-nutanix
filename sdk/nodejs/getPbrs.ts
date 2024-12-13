@@ -69,7 +69,7 @@ export interface GetPbrsResult {
  * const test = nutanix.getPbrs({});
  * ```
  */
-export function getPbrsOutput(args?: GetPbrsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPbrsResult> {
+export function getPbrsOutput(args?: GetPbrsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPbrsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getPbrs:getPbrs", {

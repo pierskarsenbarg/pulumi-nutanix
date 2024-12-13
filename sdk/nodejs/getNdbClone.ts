@@ -193,7 +193,7 @@ export interface GetNdbCloneResult {
  * });
  * ```
  */
-export function getNdbCloneOutput(args?: GetNdbCloneOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbCloneResult> {
+export function getNdbCloneOutput(args?: GetNdbCloneOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbCloneResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbClone:getNdbClone", {

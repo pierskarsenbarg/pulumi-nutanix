@@ -162,7 +162,7 @@ export interface GetNdbClusterResult {
  * export const cluster = c1;
  * ```
  */
-export function getNdbClusterOutput(args?: GetNdbClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbClusterResult> {
+export function getNdbClusterOutput(args?: GetNdbClusterOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbClusterResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbCluster:getNdbCluster", {

@@ -520,7 +520,7 @@ def get_ndb_dbserver_output(dbserver_cluster_id: Optional[pulumi.Input[Optional[
                             tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbDbserverTagArgs', 'GetNdbDbserverTagArgsDict']]]]] = None,
                             vm_cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                             vm_cluster_name: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbDbserverResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbDbserverResult]:
     """
     Describes Database Server VM in Nutanix Database Service
 
@@ -550,7 +550,7 @@ def get_ndb_dbserver_output(dbserver_cluster_id: Optional[pulumi.Input[Optional[
     __args__['tags'] = tags
     __args__['vmClusterId'] = vm_cluster_id
     __args__['vmClusterName'] = vm_cluster_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbDbserver:getNdbDbserver', __args__, opts=opts, typ=GetNdbDbserverResult)
     return __ret__.apply(lambda __response__: GetNdbDbserverResult(
         access_key_id=pulumi.get(__response__, 'access_key_id'),

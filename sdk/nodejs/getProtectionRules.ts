@@ -53,7 +53,7 @@ export interface GetProtectionRulesResult {
  * const protectionRules = nutanix.getProtectionRules({});
  * ```
  */
-export function getProtectionRulesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionRulesResult> {
+export function getProtectionRulesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectionRulesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getProtectionRules:getProtectionRules", {
     }, opts);

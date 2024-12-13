@@ -49,7 +49,7 @@ export interface GetNdbNetworksResult {
  * const nw = nutanix.getNdbNetworks({});
  * ```
  */
-export function getNdbNetworksOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbNetworksResult> {
+export function getNdbNetworksOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbNetworksResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbNetworks:getNdbNetworks", {
     }, opts);

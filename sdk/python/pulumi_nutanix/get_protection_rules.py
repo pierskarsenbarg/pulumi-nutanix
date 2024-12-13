@@ -95,7 +95,7 @@ def get_protection_rules(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitab
         api_version=pulumi.get(__ret__, 'api_version'),
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'))
-def get_protection_rules_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectionRulesResult]:
+def get_protection_rules_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionRulesResult]:
     """
     Describes Protection Rules
 
@@ -109,7 +109,7 @@ def get_protection_rules_output(opts: Optional[pulumi.InvokeOptions] = None) -> 
     ```
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getProtectionRules:getProtectionRules', __args__, opts=opts, typ=GetProtectionRulesResult)
     return __ret__.apply(lambda __response__: GetProtectionRulesResult(
         api_version=pulumi.get(__response__, 'api_version'),

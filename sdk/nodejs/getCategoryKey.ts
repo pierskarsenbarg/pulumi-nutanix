@@ -53,7 +53,7 @@ export interface GetCategoryKeyResult {
 /**
  * Describe a Nutanix Category Key and its values (if it has them).
  */
-export function getCategoryKeyOutput(args: GetCategoryKeyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCategoryKeyResult> {
+export function getCategoryKeyOutput(args: GetCategoryKeyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCategoryKeyResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getCategoryKey:getCategoryKey", {
         "name": args.name,

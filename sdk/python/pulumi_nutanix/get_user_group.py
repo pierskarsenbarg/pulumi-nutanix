@@ -271,7 +271,7 @@ def get_user_group_output(categories: Optional[pulumi.Input[Optional[Sequence[Un
                           user_group_distinguished_name: Optional[pulumi.Input[Optional[str]]] = None,
                           user_group_id: Optional[pulumi.Input[Optional[str]]] = None,
                           user_group_name: Optional[pulumi.Input[Optional[str]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserGroupResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserGroupResult]:
     """
     Provides a datasource to retrieve a user group based on the input parameters.
 
@@ -301,7 +301,7 @@ def get_user_group_output(categories: Optional[pulumi.Input[Optional[Sequence[Un
     __args__['userGroupDistinguishedName'] = user_group_distinguished_name
     __args__['userGroupId'] = user_group_id
     __args__['userGroupName'] = user_group_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getUserGroup:getUserGroup', __args__, opts=opts, typ=GetUserGroupResult)
     return __ret__.apply(lambda __response__: GetUserGroupResult(
         access_control_policy_reference_lists=pulumi.get(__response__, 'access_control_policy_reference_lists'),

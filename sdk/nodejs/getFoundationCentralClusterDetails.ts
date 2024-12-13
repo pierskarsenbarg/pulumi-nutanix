@@ -159,7 +159,7 @@ export interface GetFoundationCentralClusterDetailsResult {
  * });
  * ```
  */
-export function getFoundationCentralClusterDetailsOutput(args: GetFoundationCentralClusterDetailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralClusterDetailsResult> {
+export function getFoundationCentralClusterDetailsOutput(args: GetFoundationCentralClusterDetailsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFoundationCentralClusterDetailsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", {
         "clusterExternalIp": args.clusterExternalIp,

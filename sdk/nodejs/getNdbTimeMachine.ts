@@ -153,7 +153,7 @@ export interface GetNdbTimeMachineResult {
 /**
  * Describes a time machine present in Nutanix Database Service
  */
-export function getNdbTimeMachineOutput(args?: GetNdbTimeMachineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbTimeMachineResult> {
+export function getNdbTimeMachineOutput(args?: GetNdbTimeMachineOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbTimeMachineResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbTimeMachine:getNdbTimeMachine", {

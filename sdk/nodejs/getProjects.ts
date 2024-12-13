@@ -53,7 +53,7 @@ export interface GetProjectsResult {
  * const projects = nutanix.getProjects({});
  * ```
  */
-export function getProjectsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetProjectsResult> {
+export function getProjectsOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProjectsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getProjects:getProjects", {
     }, opts);

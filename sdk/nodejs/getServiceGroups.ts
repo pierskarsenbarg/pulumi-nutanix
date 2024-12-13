@@ -32,7 +32,7 @@ export interface GetServiceGroupsResult {
     readonly id: string;
     readonly metadatas: outputs.GetServiceGroupsMetadata[];
 }
-export function getServiceGroupsOutput(args?: GetServiceGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceGroupsResult> {
+export function getServiceGroupsOutput(args?: GetServiceGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetServiceGroupsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getServiceGroups:getServiceGroups", {

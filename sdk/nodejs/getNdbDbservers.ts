@@ -46,7 +46,7 @@ export interface GetNdbDbserversResult {
  * const dbservers = nutanix.getNdbDbservers({});
  * ```
  */
-export function getNdbDbserversOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbDbserversResult> {
+export function getNdbDbserversOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbDbserversResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbDbservers:getNdbDbservers", {
     }, opts);

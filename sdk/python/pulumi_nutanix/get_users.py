@@ -121,7 +121,7 @@ def get_users(metadatas: Optional[Sequence[Union['GetUsersMetadataArgs', 'GetUse
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
 def get_users_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetUsersMetadataArgs', 'GetUsersMetadataArgsDict']]]]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUsersResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUsersResult]:
     """
     Provides a datasource to retrieve all the users.
 
@@ -145,7 +145,7 @@ def get_users_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['G
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getUsers:getUsers', __args__, opts=opts, typ=GetUsersResult)
     return __ret__.apply(lambda __response__: GetUsersResult(
         api_version=pulumi.get(__response__, 'api_version'),

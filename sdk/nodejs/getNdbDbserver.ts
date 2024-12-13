@@ -202,7 +202,7 @@ export interface GetNdbDbserverResult {
  * });
  * ```
  */
-export function getNdbDbserverOutput(args?: GetNdbDbserverOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbDbserverResult> {
+export function getNdbDbserverOutput(args?: GetNdbDbserverOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbDbserverResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbDbserver:getNdbDbserver", {

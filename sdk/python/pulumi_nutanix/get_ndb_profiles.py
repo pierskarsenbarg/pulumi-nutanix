@@ -136,7 +136,7 @@ def get_ndb_profiles(engine: Optional[str] = None,
         profiles=pulumi.get(__ret__, 'profiles'))
 def get_ndb_profiles_output(engine: Optional[pulumi.Input[Optional[str]]] = None,
                             profile_type: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbProfilesResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbProfilesResult]:
     """
     List profiles in Nutanix Database Service
 
@@ -180,7 +180,7 @@ def get_ndb_profiles_output(engine: Optional[pulumi.Input[Optional[str]]] = None
     __args__ = dict()
     __args__['engine'] = engine
     __args__['profileType'] = profile_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbProfiles:getNdbProfiles', __args__, opts=opts, typ=GetNdbProfilesResult)
     return __ret__.apply(lambda __response__: GetNdbProfilesResult(
         engine=pulumi.get(__response__, 'engine'),

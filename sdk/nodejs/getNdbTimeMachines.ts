@@ -46,7 +46,7 @@ export interface GetNdbTimeMachinesResult {
  * const tms = nutanix.getNdbTimeMachines({});
  * ```
  */
-export function getNdbTimeMachinesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbTimeMachinesResult> {
+export function getNdbTimeMachinesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbTimeMachinesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbTimeMachines:getNdbTimeMachines", {
     }, opts);

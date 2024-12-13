@@ -672,7 +672,7 @@ def get_virtual_machine_output(boot_device_disk_address: Optional[pulumi.Input[O
                                boot_device_mac_address: Optional[pulumi.Input[Optional[str]]] = None,
                                categories: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualMachineCategoryArgs', 'GetVirtualMachineCategoryArgsDict']]]]] = None,
                                vm_id: Optional[pulumi.Input[str]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualMachineResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualMachineResult]:
     """
     Describes a Virtual Machine
 
@@ -687,7 +687,7 @@ def get_virtual_machine_output(boot_device_disk_address: Optional[pulumi.Input[O
     __args__['bootDeviceMacAddress'] = boot_device_mac_address
     __args__['categories'] = categories
     __args__['vmId'] = vm_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getVirtualMachine:getVirtualMachine', __args__, opts=opts, typ=GetVirtualMachineResult)
     return __ret__.apply(lambda __response__: GetVirtualMachineResult(
         api_version=pulumi.get(__response__, 'api_version'),

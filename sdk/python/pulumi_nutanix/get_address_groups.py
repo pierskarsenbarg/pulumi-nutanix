@@ -102,7 +102,7 @@ def get_address_groups(metadatas: Optional[Sequence[Union['GetAddressGroupsMetad
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
 def get_address_groups_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetAddressGroupsMetadataArgs', 'GetAddressGroupsMetadataArgsDict']]]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAddressGroupsResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAddressGroupsResult]:
     """
     Provides a datasource to retrieve list of address groups.
 
@@ -120,7 +120,7 @@ def get_address_groups_output(metadatas: Optional[pulumi.Input[Optional[Sequence
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getAddressGroups:getAddressGroups', __args__, opts=opts, typ=GetAddressGroupsResult)
     return __ret__.apply(lambda __response__: GetAddressGroupsResult(
         entities=pulumi.get(__response__, 'entities'),

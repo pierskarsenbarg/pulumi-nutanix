@@ -31,7 +31,7 @@ export interface GetAssertHelperResult {
      */
     readonly id: string;
 }
-export function getAssertHelperOutput(args?: GetAssertHelperOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAssertHelperResult> {
+export function getAssertHelperOutput(args?: GetAssertHelperOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAssertHelperResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getAssertHelper:getAssertHelper", {

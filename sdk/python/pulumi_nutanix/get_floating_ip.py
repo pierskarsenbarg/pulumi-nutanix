@@ -128,7 +128,7 @@ def get_floating_ip(floating_ip_uuid: Optional[str] = None,
         specs=pulumi.get(__ret__, 'specs'),
         statuses=pulumi.get(__ret__, 'statuses'))
 def get_floating_ip_output(floating_ip_uuid: Optional[pulumi.Input[str]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFloatingIpResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFloatingIpResult]:
     """
     Provides a datasource to retrieve floating IPs with floating_ip_uuid .
 
@@ -137,7 +137,7 @@ def get_floating_ip_output(floating_ip_uuid: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['floatingIpUuid'] = floating_ip_uuid
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getFloatingIp:getFloatingIp', __args__, opts=opts, typ=GetFloatingIpResult)
     return __ret__.apply(lambda __response__: GetFloatingIpResult(
         api_version=pulumi.get(__response__, 'api_version'),

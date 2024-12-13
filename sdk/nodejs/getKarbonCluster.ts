@@ -89,7 +89,7 @@ export interface GetKarbonClusterResult {
  * });
  * ```
  */
-export function getKarbonClusterOutput(args?: GetKarbonClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKarbonClusterResult> {
+export function getKarbonClusterOutput(args?: GetKarbonClusterOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetKarbonClusterResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getKarbonCluster:getKarbonCluster", {

@@ -101,7 +101,7 @@ def get_ndb_network_available_ips(profile_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         profile_id=pulumi.get(__ret__, 'profile_id'))
 def get_ndb_network_available_ips_output(profile_id: Optional[pulumi.Input[str]] = None,
-                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbNetworkAvailableIpsResult]:
+                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbNetworkAvailableIpsResult]:
     """
     List of available IPs in Network
 
@@ -119,7 +119,7 @@ def get_ndb_network_available_ips_output(profile_id: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['profileId'] = profile_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbNetworkAvailableIps:getNdbNetworkAvailableIps', __args__, opts=opts, typ=GetNdbNetworkAvailableIpsResult)
     return __ret__.apply(lambda __response__: GetNdbNetworkAvailableIpsResult(
         available_ips=pulumi.get(__response__, 'available_ips'),

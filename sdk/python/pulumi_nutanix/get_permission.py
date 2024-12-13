@@ -245,7 +245,7 @@ def get_permission(categories: Optional[Sequence[Union['GetPermissionCategoryArg
 def get_permission_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetPermissionCategoryArgs', 'GetPermissionCategoryArgsDict']]]]] = None,
                           permission_id: Optional[pulumi.Input[Optional[str]]] = None,
                           permission_name: Optional[pulumi.Input[Optional[str]]] = None,
-                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPermissionResult]:
+                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPermissionResult]:
     """
     Describe a Nutanix Permission and its values (if it has them).
 
@@ -268,7 +268,7 @@ def get_permission_output(categories: Optional[pulumi.Input[Optional[Sequence[Un
     __args__['categories'] = categories
     __args__['permissionId'] = permission_id
     __args__['permissionName'] = permission_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getPermission:getPermission', __args__, opts=opts, typ=GetPermissionResult)
     return __ret__.apply(lambda __response__: GetPermissionResult(
         api_version=pulumi.get(__response__, 'api_version'),

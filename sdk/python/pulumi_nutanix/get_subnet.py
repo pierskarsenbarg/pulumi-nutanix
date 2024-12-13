@@ -452,7 +452,7 @@ def get_subnet_output(additional_filters: Optional[pulumi.Input[Optional[Sequenc
                       categories: Optional[pulumi.Input[Optional[Sequence[Union['GetSubnetCategoryArgs', 'GetSubnetCategoryArgsDict']]]]] = None,
                       subnet_id: Optional[pulumi.Input[Optional[str]]] = None,
                       subnet_name: Optional[pulumi.Input[Optional[str]]] = None,
-                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubnetResult]:
+                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubnetResult]:
     """
     Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
 
@@ -467,7 +467,7 @@ def get_subnet_output(additional_filters: Optional[pulumi.Input[Optional[Sequenc
     __args__['categories'] = categories
     __args__['subnetId'] = subnet_id
     __args__['subnetName'] = subnet_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getSubnet:getSubnet', __args__, opts=opts, typ=GetSubnetResult)
     return __ret__.apply(lambda __response__: GetSubnetResult(
         additional_filters=pulumi.get(__response__, 'additional_filters'),

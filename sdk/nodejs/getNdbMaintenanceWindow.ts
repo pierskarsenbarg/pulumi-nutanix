@@ -114,7 +114,7 @@ export interface GetNdbMaintenanceWindowResult {
  * });
  * ```
  */
-export function getNdbMaintenanceWindowOutput(args: GetNdbMaintenanceWindowOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbMaintenanceWindowResult> {
+export function getNdbMaintenanceWindowOutput(args: GetNdbMaintenanceWindowOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbMaintenanceWindowResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbMaintenanceWindow:getNdbMaintenanceWindow", {
         "id": args.id,

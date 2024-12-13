@@ -78,7 +78,7 @@ export interface GetFoundationCentralImagedNodesListResult {
  * const nodesList = nutanix.getFoundationCentralImagedNodesList({});
  * ```
  */
-export function getFoundationCentralImagedNodesListOutput(args?: GetFoundationCentralImagedNodesListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralImagedNodesListResult> {
+export function getFoundationCentralImagedNodesListOutput(args?: GetFoundationCentralImagedNodesListOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFoundationCentralImagedNodesListResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getFoundationCentralImagedNodesList:getFoundationCentralImagedNodesList", {

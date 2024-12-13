@@ -244,7 +244,7 @@ export interface GetNetworkSecurityRuleResult {
  * });
  * ```
  */
-export function getNetworkSecurityRuleOutput(args: GetNetworkSecurityRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSecurityRuleResult> {
+export function getNetworkSecurityRuleOutput(args: GetNetworkSecurityRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkSecurityRuleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule", {
         "categories": args.categories,

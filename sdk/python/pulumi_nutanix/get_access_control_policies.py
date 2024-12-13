@@ -108,7 +108,7 @@ def get_access_control_policies(metadatas: Optional[Sequence[Union['GetAccessCon
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
 def get_access_control_policies_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetAccessControlPoliciesMetadataArgs', 'GetAccessControlPoliciesMetadataArgsDict']]]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAccessControlPoliciesResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAccessControlPoliciesResult]:
     """
     Describes a list of access control policies.
 
@@ -119,7 +119,7 @@ def get_access_control_policies_output(metadatas: Optional[pulumi.Input[Optional
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getAccessControlPolicies:getAccessControlPolicies', __args__, opts=opts, typ=GetAccessControlPoliciesResult)
     return __ret__.apply(lambda __response__: GetAccessControlPoliciesResult(
         api_version=pulumi.get(__response__, 'api_version'),

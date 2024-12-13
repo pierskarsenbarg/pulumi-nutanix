@@ -55,7 +55,7 @@ export interface GetAccessControlPoliciesResult {
  *
  * ## Example Usage
  */
-export function getAccessControlPoliciesOutput(args?: GetAccessControlPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessControlPoliciesResult> {
+export function getAccessControlPoliciesOutput(args?: GetAccessControlPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAccessControlPoliciesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getAccessControlPolicies:getAccessControlPolicies", {

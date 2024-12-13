@@ -133,7 +133,7 @@ def get_foundation_central_list_api_keys(length: Optional[int] = None,
 def get_foundation_central_list_api_keys_output(length: Optional[pulumi.Input[Optional[int]]] = None,
                                                 metadata: Optional[pulumi.Input[Optional[Union['GetFoundationCentralListApiKeysMetadataArgs', 'GetFoundationCentralListApiKeysMetadataArgsDict']]]] = None,
                                                 offset: Optional[pulumi.Input[Optional[int]]] = None,
-                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationCentralListApiKeysResult]:
+                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFoundationCentralListApiKeysResult]:
     """
     List all the api keys created in Foundation Central.
 
@@ -155,7 +155,7 @@ def get_foundation_central_list_api_keys_output(length: Optional[pulumi.Input[Op
     __args__['length'] = length
     __args__['metadata'] = metadata
     __args__['offset'] = offset
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getFoundationCentralListApiKeys:getFoundationCentralListApiKeys', __args__, opts=opts, typ=GetFoundationCentralListApiKeysResult)
     return __ret__.apply(lambda __response__: GetFoundationCentralListApiKeysResult(
         api_keys=pulumi.get(__response__, 'api_keys'),

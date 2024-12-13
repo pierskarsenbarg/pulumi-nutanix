@@ -79,7 +79,7 @@ def get_ndb_time_machines(opts: Optional[pulumi.InvokeOptions] = None) -> Awaita
     return AwaitableGetNdbTimeMachinesResult(
         id=pulumi.get(__ret__, 'id'),
         time_machines=pulumi.get(__ret__, 'time_machines'))
-def get_ndb_time_machines_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbTimeMachinesResult]:
+def get_ndb_time_machines_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbTimeMachinesResult]:
     """
     List all time machines present in Nutanix Database Service
 
@@ -93,7 +93,7 @@ def get_ndb_time_machines_output(opts: Optional[pulumi.InvokeOptions] = None) ->
     ```
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbTimeMachines:getNdbTimeMachines', __args__, opts=opts, typ=GetNdbTimeMachinesResult)
     return __ret__.apply(lambda __response__: GetNdbTimeMachinesResult(
         id=pulumi.get(__response__, 'id'),

@@ -163,7 +163,7 @@ export interface GetNdbSnapshotsResult {
  *
  * See detailed information in [NDB Snapshots](https://www.nutanix.dev/api_references/ndb/#/d0b89ff892448-get-list-of-all-snapshots).
  */
-export function getNdbSnapshotsOutput(args?: GetNdbSnapshotsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbSnapshotsResult> {
+export function getNdbSnapshotsOutput(args?: GetNdbSnapshotsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbSnapshotsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbSnapshots:getNdbSnapshots", {

@@ -86,12 +86,12 @@ def get_hosts(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetHostsR
         api_version=pulumi.get(__ret__, 'api_version'),
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'))
-def get_hosts_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetHostsResult]:
+def get_hosts_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHostsResult]:
     """
     Describes a list of hosts
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getHosts:getHosts', __args__, opts=opts, typ=GetHostsResult)
     return __ret__.apply(lambda __response__: GetHostsResult(
         api_version=pulumi.get(__response__, 'api_version'),
