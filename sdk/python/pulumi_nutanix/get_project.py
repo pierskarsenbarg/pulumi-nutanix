@@ -446,7 +446,7 @@ def get_project_output(categories: Optional[pulumi.Input[Optional[Sequence[Union
                        project_name: Optional[pulumi.Input[Optional[str]]] = None,
                        subnet_reference_lists: Optional[pulumi.Input[Optional[Sequence[Union['GetProjectSubnetReferenceListArgs', 'GetProjectSubnetReferenceListArgsDict']]]]] = None,
                        user_reference_lists: Optional[pulumi.Input[Optional[Sequence[Union['GetProjectUserReferenceListArgs', 'GetProjectUserReferenceListArgsDict']]]]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProjectResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProjectResult]:
     """
     Describe a Nutanix Project and its values (if it has them).
 
@@ -516,7 +516,7 @@ def get_project_output(categories: Optional[pulumi.Input[Optional[Sequence[Union
     __args__['projectName'] = project_name
     __args__['subnetReferenceLists'] = subnet_reference_lists
     __args__['userReferenceLists'] = user_reference_lists
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getProject:getProject', __args__, opts=opts, typ=GetProjectResult)
     return __ret__.apply(lambda __response__: GetProjectResult(
         account_reference_lists=pulumi.get(__response__, 'account_reference_lists'),

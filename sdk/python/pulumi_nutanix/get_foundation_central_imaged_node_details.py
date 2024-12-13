@@ -524,7 +524,7 @@ def get_foundation_central_imaged_node_details(imaged_node_uuid: Optional[str] =
 def get_foundation_central_imaged_node_details_output(imaged_node_uuid: Optional[pulumi.Input[str]] = None,
                                                       ipv6_interface: Optional[pulumi.Input[Optional[str]]] = None,
                                                       object_version: Optional[pulumi.Input[Optional[int]]] = None,
-                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationCentralImagedNodeDetailsResult]:
+                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFoundationCentralImagedNodeDetailsResult]:
     """
     Get the details of a single node given its UUID.
 
@@ -546,7 +546,7 @@ def get_foundation_central_imaged_node_details_output(imaged_node_uuid: Optional
     __args__['imagedNodeUuid'] = imaged_node_uuid
     __args__['ipv6Interface'] = ipv6_interface
     __args__['objectVersion'] = object_version
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails', __args__, opts=opts, typ=GetFoundationCentralImagedNodeDetailsResult)
     return __ret__.apply(lambda __response__: GetFoundationCentralImagedNodeDetailsResult(
         aos_version=pulumi.get(__response__, 'aos_version'),

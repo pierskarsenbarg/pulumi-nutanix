@@ -65,7 +65,7 @@ export interface GetNdbTagsResult {
  * const tags = nutanix.getNdbTags({});
  * ```
  */
-export function getNdbTagsOutput(args?: GetNdbTagsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbTagsResult> {
+export function getNdbTagsOutput(args?: GetNdbTagsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbTagsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbTags:getNdbTags", {

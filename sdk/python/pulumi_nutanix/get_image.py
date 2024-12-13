@@ -340,7 +340,7 @@ def get_image(categories: Optional[Sequence[Union['GetImageCategoryArgs', 'GetIm
 def get_image_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetImageCategoryArgs', 'GetImageCategoryArgsDict']]]]] = None,
                      image_id: Optional[pulumi.Input[Optional[str]]] = None,
                      image_name: Optional[pulumi.Input[Optional[str]]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetImageResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImageResult]:
     """
     Describes a Image
 
@@ -353,7 +353,7 @@ def get_image_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['
     __args__['categories'] = categories
     __args__['imageId'] = image_id
     __args__['imageName'] = image_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getImage:getImage', __args__, opts=opts, typ=GetImageResult)
     return __ret__.apply(lambda __response__: GetImageResult(
         api_version=pulumi.get(__response__, 'api_version'),

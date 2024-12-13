@@ -128,7 +128,7 @@ def get_pbr(pbr_uuid: Optional[str] = None,
         specs=pulumi.get(__ret__, 'specs'),
         statuses=pulumi.get(__ret__, 'statuses'))
 def get_pbr_output(pbr_uuid: Optional[pulumi.Input[str]] = None,
-                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPbrResult]:
+                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPbrResult]:
     """
     Provides a datasource to retrieve PBR with pbr_uuid .
 
@@ -137,7 +137,7 @@ def get_pbr_output(pbr_uuid: Optional[pulumi.Input[str]] = None,
     """
     __args__ = dict()
     __args__['pbrUuid'] = pbr_uuid
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getPbr:getPbr', __args__, opts=opts, typ=GetPbrResult)
     return __ret__.apply(lambda __response__: GetPbrResult(
         api_version=pulumi.get(__response__, 'api_version'),

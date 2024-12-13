@@ -93,7 +93,7 @@ export interface GetAccessControlPolicyResult {
 /**
  * Describes an Access Control Policy.
  */
-export function getAccessControlPolicyOutput(args?: GetAccessControlPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessControlPolicyResult> {
+export function getAccessControlPolicyOutput(args?: GetAccessControlPolicyOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAccessControlPolicyResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getAccessControlPolicy:getAccessControlPolicy", {

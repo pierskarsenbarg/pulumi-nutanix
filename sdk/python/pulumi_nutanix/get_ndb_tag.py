@@ -192,7 +192,7 @@ def get_ndb_tag(id: Optional[str] = None,
         values=pulumi.get(__ret__, 'values'))
 def get_ndb_tag_output(id: Optional[pulumi.Input[Optional[str]]] = None,
                        name: Optional[pulumi.Input[Optional[str]]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbTagResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbTagResult]:
     """
     Describes a tag in Nutanix Database Service
 
@@ -212,7 +212,7 @@ def get_ndb_tag_output(id: Optional[pulumi.Input[Optional[str]]] = None,
     __args__ = dict()
     __args__['id'] = id
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbTag:getNdbTag', __args__, opts=opts, typ=GetNdbTagResult)
     return __ret__.apply(lambda __response__: GetNdbTagResult(
         date_created=pulumi.get(__response__, 'date_created'),

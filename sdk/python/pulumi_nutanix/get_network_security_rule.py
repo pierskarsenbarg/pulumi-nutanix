@@ -605,7 +605,7 @@ def get_network_security_rule(categories: Optional[Sequence[Union['GetNetworkSec
         quarantine_rule_target_group_peer_specification_type=pulumi.get(__ret__, 'quarantine_rule_target_group_peer_specification_type'))
 def get_network_security_rule_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkSecurityRuleCategoryArgs', 'GetNetworkSecurityRuleCategoryArgsDict']]]]] = None,
                                      network_security_rule_id: Optional[pulumi.Input[str]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkSecurityRuleResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSecurityRuleResult]:
     """
     Describes a Network security rule
 
@@ -644,7 +644,7 @@ def get_network_security_rule_output(categories: Optional[pulumi.Input[Optional[
     __args__ = dict()
     __args__['categories'] = categories
     __args__['networkSecurityRuleId'] = network_security_rule_id
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule', __args__, opts=opts, typ=GetNetworkSecurityRuleResult)
     return __ret__.apply(lambda __response__: GetNetworkSecurityRuleResult(
         ad_rule_action=pulumi.get(__response__, 'ad_rule_action'),

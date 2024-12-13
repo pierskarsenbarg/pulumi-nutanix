@@ -46,7 +46,7 @@ export interface GetNdbTmsCapabilityResult {
     readonly timeMachineId: string;
     readonly type: string;
 }
-export function getNdbTmsCapabilityOutput(args: GetNdbTmsCapabilityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbTmsCapabilityResult> {
+export function getNdbTmsCapabilityOutput(args: GetNdbTmsCapabilityOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbTmsCapabilityResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbTmsCapability:getNdbTmsCapability", {
         "timeMachineId": args.timeMachineId,

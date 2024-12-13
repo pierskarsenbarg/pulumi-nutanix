@@ -128,7 +128,7 @@ def get_karbon_private_registry(private_registry_id: Optional[str] = None,
         uuid=pulumi.get(__ret__, 'uuid'))
 def get_karbon_private_registry_output(private_registry_id: Optional[pulumi.Input[Optional[str]]] = None,
                                        private_registry_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKarbonPrivateRegistryResult]:
+                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKarbonPrivateRegistryResult]:
     """
     Describes Karbon private registry entry
 
@@ -139,7 +139,7 @@ def get_karbon_private_registry_output(private_registry_id: Optional[pulumi.Inpu
     __args__ = dict()
     __args__['privateRegistryId'] = private_registry_id
     __args__['privateRegistryName'] = private_registry_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry', __args__, opts=opts, typ=GetKarbonPrivateRegistryResult)
     return __ret__.apply(lambda __response__: GetKarbonPrivateRegistryResult(
         endpoint=pulumi.get(__response__, 'endpoint'),

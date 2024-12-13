@@ -113,7 +113,7 @@ export interface GetNdbClustersResult {
  *
  * See detailed information in [NDB Clusters](https://www.nutanix.dev/api_references/ndb/#/b00cac8329db1-get-a-list-of-all-clusters).
  */
-export function getNdbClustersOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbClustersResult> {
+export function getNdbClustersOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbClustersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbClusters:getNdbClusters", {
     }, opts);

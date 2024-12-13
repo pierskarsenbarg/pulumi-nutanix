@@ -80,7 +80,7 @@ export interface GetFoundationCentralListApiKeysResult {
  * const apiKeysList = nutanix.getFoundationCentralListApiKeys({});
  * ```
  */
-export function getFoundationCentralListApiKeysOutput(args?: GetFoundationCentralListApiKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralListApiKeysResult> {
+export function getFoundationCentralListApiKeysOutput(args?: GetFoundationCentralListApiKeysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFoundationCentralListApiKeysResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getFoundationCentralListApiKeys:getFoundationCentralListApiKeys", {

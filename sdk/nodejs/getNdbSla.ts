@@ -132,7 +132,7 @@ export interface GetNdbSlaResult {
  * export const sla = sla1;
  * ```
  */
-export function getNdbSlaOutput(args?: GetNdbSlaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbSlaResult> {
+export function getNdbSlaOutput(args?: GetNdbSlaOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbSlaResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbSla:getNdbSla", {

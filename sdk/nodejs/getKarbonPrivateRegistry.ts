@@ -56,7 +56,7 @@ export interface GetKarbonPrivateRegistryResult {
 /**
  * Describes Karbon private registry entry
  */
-export function getKarbonPrivateRegistryOutput(args?: GetKarbonPrivateRegistryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKarbonPrivateRegistryResult> {
+export function getKarbonPrivateRegistryOutput(args?: GetKarbonPrivateRegistryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetKarbonPrivateRegistryResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry", {

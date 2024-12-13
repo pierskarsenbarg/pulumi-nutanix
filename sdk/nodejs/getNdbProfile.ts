@@ -145,7 +145,7 @@ export interface GetNdbProfileResult {
  * export const profile = profile1;
  * ```
  */
-export function getNdbProfileOutput(args?: GetNdbProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbProfileResult> {
+export function getNdbProfileOutput(args?: GetNdbProfileOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbProfileResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbProfile:getNdbProfile", {

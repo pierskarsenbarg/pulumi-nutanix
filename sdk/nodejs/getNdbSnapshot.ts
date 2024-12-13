@@ -215,7 +215,7 @@ export interface GetNdbSnapshotResult {
  * });
  * ```
  */
-export function getNdbSnapshotOutput(args: GetNdbSnapshotOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbSnapshotResult> {
+export function getNdbSnapshotOutput(args: GetNdbSnapshotOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbSnapshotResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbSnapshot:getNdbSnapshot", {
         "filters": args.filters,

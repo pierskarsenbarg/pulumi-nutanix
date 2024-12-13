@@ -440,7 +440,7 @@ def get_ndb_time_machine(tags: Optional[Sequence[Union['GetNdbTimeMachineTagArgs
 def get_ndb_time_machine_output(tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbTimeMachineTagArgs', 'GetNdbTimeMachineTagArgsDict']]]]] = None,
                                 time_machine_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 time_machine_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbTimeMachineResult]:
+                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbTimeMachineResult]:
     """
     Describes a time machine present in Nutanix Database Service
 
@@ -453,7 +453,7 @@ def get_ndb_time_machine_output(tags: Optional[pulumi.Input[Optional[Sequence[Un
     __args__['tags'] = tags
     __args__['timeMachineId'] = time_machine_id
     __args__['timeMachineName'] = time_machine_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbTimeMachine:getNdbTimeMachine', __args__, opts=opts, typ=GetNdbTimeMachineResult)
     return __ret__.apply(lambda __response__: GetNdbTimeMachineResult(
         access_level=pulumi.get(__response__, 'access_level'),

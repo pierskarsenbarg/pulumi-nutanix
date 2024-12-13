@@ -586,7 +586,7 @@ def get_ndb_snapshot(filters: Optional[Sequence[Union['GetNdbSnapshotFilterArgs'
 def get_ndb_snapshot_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbSnapshotFilterArgs', 'GetNdbSnapshotFilterArgsDict']]]]] = None,
                             snapshot_id: Optional[pulumi.Input[str]] = None,
                             tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbSnapshotTagArgs', 'GetNdbSnapshotTagArgsDict']]]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbSnapshotResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbSnapshotResult]:
     """
     Describes the snapshot present in Nutanix Database Service
 
@@ -611,7 +611,7 @@ def get_ndb_snapshot_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     __args__['filters'] = filters
     __args__['snapshotId'] = snapshot_id
     __args__['tags'] = tags
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbSnapshot:getNdbSnapshot', __args__, opts=opts, typ=GetNdbSnapshotResult)
     return __ret__.apply(lambda __response__: GetNdbSnapshotResult(
         app_info_version=pulumi.get(__response__, 'app_info_version'),

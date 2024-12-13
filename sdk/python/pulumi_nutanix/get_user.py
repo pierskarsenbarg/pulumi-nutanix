@@ -257,7 +257,7 @@ def get_user_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['G
                     project_reference: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
                     user_id: Optional[pulumi.Input[Optional[str]]] = None,
                     user_name: Optional[pulumi.Input[Optional[str]]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserResult]:
     """
     Provides a datasource to retrieve a user based on the input parameters.
 
@@ -272,7 +272,7 @@ def get_user_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['G
     __args__['projectReference'] = project_reference
     __args__['userId'] = user_id
     __args__['userName'] = user_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getUser:getUser', __args__, opts=opts, typ=GetUserResult)
     return __ret__.apply(lambda __response__: GetUserResult(
         access_control_policy_reference_lists=pulumi.get(__response__, 'access_control_policy_reference_lists'),

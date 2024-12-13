@@ -115,7 +115,7 @@ def get_roles(metadatas: Optional[Sequence[Union['GetRolesMetadataArgs', 'GetRol
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
 def get_roles_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetRolesMetadataArgs', 'GetRolesMetadataArgsDict']]]]] = None,
-                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRolesResult]:
+                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRolesResult]:
     """
     Describes a list of roles.
 
@@ -133,7 +133,7 @@ def get_roles_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['G
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getRoles:getRoles', __args__, opts=opts, typ=GetRolesResult)
     return __ret__.apply(lambda __response__: GetRolesResult(
         api_version=pulumi.get(__response__, 'api_version'),

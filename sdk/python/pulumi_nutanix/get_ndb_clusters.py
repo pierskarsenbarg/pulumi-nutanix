@@ -114,7 +114,7 @@ def get_ndb_clusters(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGe
     return AwaitableGetNdbClustersResult(
         clusters=pulumi.get(__ret__, 'clusters'),
         id=pulumi.get(__ret__, 'id'))
-def get_ndb_clusters_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbClustersResult]:
+def get_ndb_clusters_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbClustersResult]:
     """
     List all clusters in Nutanix Database Service
 
@@ -160,7 +160,7 @@ def get_ndb_clusters_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulu
     See detailed information in [NDB Clusters](https://www.nutanix.dev/api_references/ndb/#/b00cac8329db1-get-a-list-of-all-clusters).
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbClusters:getNdbClusters', __args__, opts=opts, typ=GetNdbClustersResult)
     return __ret__.apply(lambda __response__: GetNdbClustersResult(
         clusters=pulumi.get(__response__, 'clusters'),

@@ -312,7 +312,7 @@ def get_foundation_central_cluster_details_output(cluster_external_ip: Optional[
                                                   imaged_cluster_uuid: Optional[pulumi.Input[str]] = None,
                                                   redundancy_factor: Optional[pulumi.Input[Optional[int]]] = None,
                                                   storage_node_count: Optional[pulumi.Input[Optional[int]]] = None,
-                                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationCentralClusterDetailsResult]:
+                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFoundationCentralClusterDetailsResult]:
     """
     Get a cluster details created using Foundation Central.
 
@@ -344,7 +344,7 @@ def get_foundation_central_cluster_details_output(cluster_external_ip: Optional[
     __args__['imagedClusterUuid'] = imaged_cluster_uuid
     __args__['redundancyFactor'] = redundancy_factor
     __args__['storageNodeCount'] = storage_node_count
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails', __args__, opts=opts, typ=GetFoundationCentralClusterDetailsResult)
     return __ret__.apply(lambda __response__: GetFoundationCentralClusterDetailsResult(
         archived=pulumi.get(__response__, 'archived'),

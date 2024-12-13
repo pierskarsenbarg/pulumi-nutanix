@@ -77,7 +77,7 @@ export interface GetFoundationHypervisorIsosResult {
  *
  * See detailed information in [Nutanix Foundation Hypervisor Isos](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjM0MDE-list-hypervisor-images-available-in-foundation).
  */
-export function getFoundationHypervisorIsosOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationHypervisorIsosResult> {
+export function getFoundationHypervisorIsosOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFoundationHypervisorIsosResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getFoundationHypervisorIsos:getFoundationHypervisorIsos", {
     }, opts);

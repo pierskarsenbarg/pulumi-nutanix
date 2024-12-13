@@ -35,7 +35,7 @@ export interface GetHostsResult {
 /**
  * Describes a list of hosts
  */
-export function getHostsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetHostsResult> {
+export function getHostsOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetHostsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getHosts:getHosts", {
     }, opts);

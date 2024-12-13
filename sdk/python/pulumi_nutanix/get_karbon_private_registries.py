@@ -70,12 +70,12 @@ def get_karbon_private_registries(opts: Optional[pulumi.InvokeOptions] = None) -
     return AwaitableGetKarbonPrivateRegistriesResult(
         id=pulumi.get(__ret__, 'id'),
         private_registries=pulumi.get(__ret__, 'private_registries'))
-def get_karbon_private_registries_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKarbonPrivateRegistriesResult]:
+def get_karbon_private_registries_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKarbonPrivateRegistriesResult]:
     """
     Describes a List of Karbon private registry entry
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getKarbonPrivateRegistries:getKarbonPrivateRegistries', __args__, opts=opts, typ=GetKarbonPrivateRegistriesResult)
     return __ret__.apply(lambda __response__: GetKarbonPrivateRegistriesResult(
         id=pulumi.get(__response__, 'id'),

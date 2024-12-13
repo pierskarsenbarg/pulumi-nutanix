@@ -115,7 +115,7 @@ def get_pbrs(metadatas: Optional[Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsM
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
 def get_pbrs_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetPbrsMetadataArgs', 'GetPbrsMetadataArgsDict']]]]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPbrsResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPbrsResult]:
     """
     Provides a datasource to retrieve all the pbrs.
 
@@ -133,7 +133,7 @@ def get_pbrs_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['Ge
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getPbrs:getPbrs', __args__, opts=opts, typ=GetPbrsResult)
     return __ret__.apply(lambda __response__: GetPbrsResult(
         api_version=pulumi.get(__response__, 'api_version'),

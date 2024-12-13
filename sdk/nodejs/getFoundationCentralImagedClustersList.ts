@@ -75,7 +75,7 @@ export interface GetFoundationCentralImagedClustersListResult {
  * const imagedClustersList = nutanix.getFoundationCentralImagedClustersList({});
  * ```
  */
-export function getFoundationCentralImagedClustersListOutput(args?: GetFoundationCentralImagedClustersListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralImagedClustersListResult> {
+export function getFoundationCentralImagedClustersListOutput(args?: GetFoundationCentralImagedClustersListOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFoundationCentralImagedClustersListResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getFoundationCentralImagedClustersList:getFoundationCentralImagedClustersList", {

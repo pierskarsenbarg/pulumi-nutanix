@@ -247,7 +247,7 @@ def get_access_control_policy(access_control_policy_id: Optional[str] = None,
 def get_access_control_policy_output(access_control_policy_id: Optional[pulumi.Input[Optional[str]]] = None,
                                      access_control_policy_name: Optional[pulumi.Input[Optional[str]]] = None,
                                      categories: Optional[pulumi.Input[Optional[Sequence[Union['GetAccessControlPolicyCategoryArgs', 'GetAccessControlPolicyCategoryArgsDict']]]]] = None,
-                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAccessControlPolicyResult]:
+                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAccessControlPolicyResult]:
     """
     Describes an Access Control Policy.
 
@@ -259,7 +259,7 @@ def get_access_control_policy_output(access_control_policy_id: Optional[pulumi.I
     __args__['accessControlPolicyId'] = access_control_policy_id
     __args__['accessControlPolicyName'] = access_control_policy_name
     __args__['categories'] = categories
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getAccessControlPolicy:getAccessControlPolicy', __args__, opts=opts, typ=GetAccessControlPolicyResult)
     return __ret__.apply(lambda __response__: GetAccessControlPolicyResult(
         access_control_policy_id=pulumi.get(__response__, 'access_control_policy_id'),

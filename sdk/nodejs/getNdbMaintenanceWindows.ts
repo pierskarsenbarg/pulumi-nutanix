@@ -49,7 +49,7 @@ export interface GetNdbMaintenanceWindowsResult {
  * const windows = nutanix.getNdbMaintenanceWindows({});
  * ```
  */
-export function getNdbMaintenanceWindowsOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbMaintenanceWindowsResult> {
+export function getNdbMaintenanceWindowsOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbMaintenanceWindowsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbMaintenanceWindows:getNdbMaintenanceWindows", {
     }, opts);

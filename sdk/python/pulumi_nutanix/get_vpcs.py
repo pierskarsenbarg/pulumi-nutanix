@@ -115,7 +115,7 @@ def get_vpcs(metadatas: Optional[Sequence[Union['GetVpcsMetadataArgs', 'GetVpcsM
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
 def get_vpcs_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetVpcsMetadataArgs', 'GetVpcsMetadataArgsDict']]]]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVpcsResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVpcsResult]:
     """
     Provides a datasource to retrieve all the vpcs.
 
@@ -133,7 +133,7 @@ def get_vpcs_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['Ge
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getVpcs:getVpcs', __args__, opts=opts, typ=GetVpcsResult)
     return __ret__.apply(lambda __response__: GetVpcsResult(
         api_version=pulumi.get(__response__, 'api_version'),

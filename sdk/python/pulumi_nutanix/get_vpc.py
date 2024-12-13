@@ -142,7 +142,7 @@ def get_vpc(vpc_name: Optional[str] = None,
         vpc_uuid=pulumi.get(__ret__, 'vpc_uuid'))
 def get_vpc_output(vpc_name: Optional[pulumi.Input[Optional[str]]] = None,
                    vpc_uuid: Optional[pulumi.Input[Optional[str]]] = None,
-                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVpcResult]:
+                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVpcResult]:
     """
     Provides a datasource to retrieve VPC with vpc_uuid or vpc_name .
 
@@ -153,7 +153,7 @@ def get_vpc_output(vpc_name: Optional[pulumi.Input[Optional[str]]] = None,
     __args__ = dict()
     __args__['vpcName'] = vpc_name
     __args__['vpcUuid'] = vpc_uuid
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getVpc:getVpc', __args__, opts=opts, typ=GetVpcResult)
     return __ret__.apply(lambda __response__: GetVpcResult(
         api_version=pulumi.get(__response__, 'api_version'),

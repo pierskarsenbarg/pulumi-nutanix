@@ -139,7 +139,7 @@ def get_karbon_cluster_kube_config(karbon_cluster_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'))
 def get_karbon_cluster_kube_config_output(karbon_cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                                           karbon_cluster_name: Optional[pulumi.Input[Optional[str]]] = None,
-                                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKarbonClusterKubeConfigResult]:
+                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKarbonClusterKubeConfigResult]:
     """
     Describes the SSH config from a Karbon Cluster
 
@@ -160,7 +160,7 @@ def get_karbon_cluster_kube_config_output(karbon_cluster_id: Optional[pulumi.Inp
     __args__ = dict()
     __args__['karbonClusterId'] = karbon_cluster_id
     __args__['karbonClusterName'] = karbon_cluster_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig', __args__, opts=opts, typ=GetKarbonClusterKubeConfigResult)
     return __ret__.apply(lambda __response__: GetKarbonClusterKubeConfigResult(
         access_token=pulumi.get(__response__, 'access_token'),

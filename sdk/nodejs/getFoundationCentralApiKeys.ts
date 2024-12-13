@@ -78,7 +78,7 @@ export interface GetFoundationCentralApiKeysResult {
  * });
  * ```
  */
-export function getFoundationCentralApiKeysOutput(args: GetFoundationCentralApiKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationCentralApiKeysResult> {
+export function getFoundationCentralApiKeysOutput(args: GetFoundationCentralApiKeysOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFoundationCentralApiKeysResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys", {
         "keyUuid": args.keyUuid,

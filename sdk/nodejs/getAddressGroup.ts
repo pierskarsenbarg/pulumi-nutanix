@@ -96,7 +96,7 @@ export interface GetAddressGroupResult {
  * });
  * ```
  */
-export function getAddressGroupOutput(args: GetAddressGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressGroupResult> {
+export function getAddressGroupOutput(args: GetAddressGroupOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAddressGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getAddressGroup:getAddressGroup", {
         "uuid": args.uuid,

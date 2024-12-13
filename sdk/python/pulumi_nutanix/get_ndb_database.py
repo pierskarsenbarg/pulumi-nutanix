@@ -407,7 +407,7 @@ def get_ndb_database(database_id: Optional[str] = None,
         type=pulumi.get(__ret__, 'type'))
 def get_ndb_database_output(database_id: Optional[pulumi.Input[str]] = None,
                             tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbDatabaseTagArgs', 'GetNdbDatabaseTagArgsDict']]]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbDatabaseResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbDatabaseResult]:
     """
     Describes a database instance in Nutanix Database Service
 
@@ -428,7 +428,7 @@ def get_ndb_database_output(database_id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['databaseId'] = database_id
     __args__['tags'] = tags
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbDatabase:getNdbDatabase', __args__, opts=opts, typ=GetNdbDatabaseResult)
     return __ret__.apply(lambda __response__: GetNdbDatabaseResult(
         clone=pulumi.get(__response__, 'clone'),

@@ -67,7 +67,7 @@ export interface GetRecoveryPlanResult {
 /**
  * Describe a Nutanix Recovery Plan and its values (if it has them).
  */
-export function getRecoveryPlanOutput(args?: GetRecoveryPlanOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecoveryPlanResult> {
+export function getRecoveryPlanOutput(args?: GetRecoveryPlanOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRecoveryPlanResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getRecoveryPlan:getRecoveryPlan", {

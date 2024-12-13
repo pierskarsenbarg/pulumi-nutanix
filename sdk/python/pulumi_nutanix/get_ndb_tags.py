@@ -101,7 +101,7 @@ def get_ndb_tags(entity_type: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         tags=pulumi.get(__ret__, 'tags'))
 def get_ndb_tags_output(entity_type: Optional[pulumi.Input[Optional[str]]] = None,
-                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbTagsResult]:
+                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbTagsResult]:
     """
     List of tags in Nutanix Database Service
 
@@ -119,7 +119,7 @@ def get_ndb_tags_output(entity_type: Optional[pulumi.Input[Optional[str]]] = Non
     """
     __args__ = dict()
     __args__['entityType'] = entity_type
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbTags:getNdbTags', __args__, opts=opts, typ=GetNdbTagsResult)
     return __ret__.apply(lambda __response__: GetNdbTagsResult(
         entity_type=pulumi.get(__response__, 'entity_type'),

@@ -82,7 +82,7 @@ def get_ndb_networks(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGe
     return AwaitableGetNdbNetworksResult(
         id=pulumi.get(__ret__, 'id'),
         networks=pulumi.get(__ret__, 'networks'))
-def get_ndb_networks_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbNetworksResult]:
+def get_ndb_networks_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbNetworksResult]:
     """
     List of networks in Nutanix Database Service
 
@@ -96,7 +96,7 @@ def get_ndb_networks_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulu
     ```
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbNetworks:getNdbNetworks', __args__, opts=opts, typ=GetNdbNetworksResult)
     return __ret__.apply(lambda __response__: GetNdbNetworksResult(
         id=pulumi.get(__response__, 'id'),

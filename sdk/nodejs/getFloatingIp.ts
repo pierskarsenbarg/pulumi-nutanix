@@ -55,7 +55,7 @@ export interface GetFloatingIpResult {
 /**
  * Provides a datasource to retrieve floating IPs with floatingIpUuid .
  */
-export function getFloatingIpOutput(args: GetFloatingIpOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFloatingIpResult> {
+export function getFloatingIpOutput(args: GetFloatingIpOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFloatingIpResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getFloatingIp:getFloatingIp", {
         "floatingIpUuid": args.floatingIpUuid,

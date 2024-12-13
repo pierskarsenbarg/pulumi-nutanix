@@ -139,7 +139,7 @@ def get_foundation_central_api_keys(key_uuid: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         key_uuid=pulumi.get(__ret__, 'key_uuid'))
 def get_foundation_central_api_keys_output(key_uuid: Optional[pulumi.Input[str]] = None,
-                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationCentralApiKeysResult]:
+                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFoundationCentralApiKeysResult]:
     """
     Get an api key given its UUID.
 
@@ -157,7 +157,7 @@ def get_foundation_central_api_keys_output(key_uuid: Optional[pulumi.Input[str]]
     """
     __args__ = dict()
     __args__['keyUuid'] = key_uuid
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys', __args__, opts=opts, typ=GetFoundationCentralApiKeysResult)
     return __ret__.apply(lambda __response__: GetFoundationCentralApiKeysResult(
         alias=pulumi.get(__response__, 'alias'),

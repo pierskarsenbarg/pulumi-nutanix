@@ -53,7 +53,7 @@ export interface GetRecoveryPlansResult {
  * const recoveryPlans = nutanix.getRecoveryPlans({});
  * ```
  */
-export function getRecoveryPlansOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetRecoveryPlansResult> {
+export function getRecoveryPlansOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRecoveryPlansResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getRecoveryPlans:getRecoveryPlans", {
     }, opts);

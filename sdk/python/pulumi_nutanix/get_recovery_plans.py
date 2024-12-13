@@ -95,7 +95,7 @@ def get_recovery_plans(opts: Optional[pulumi.InvokeOptions] = None) -> Awaitable
         api_version=pulumi.get(__ret__, 'api_version'),
         entities=pulumi.get(__ret__, 'entities'),
         id=pulumi.get(__ret__, 'id'))
-def get_recovery_plans_output(opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRecoveryPlansResult]:
+def get_recovery_plans_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecoveryPlansResult]:
     """
     Describes Recovery Plans
 
@@ -109,7 +109,7 @@ def get_recovery_plans_output(opts: Optional[pulumi.InvokeOptions] = None) -> pu
     ```
     """
     __args__ = dict()
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getRecoveryPlans:getRecoveryPlans', __args__, opts=opts, typ=GetRecoveryPlansResult)
     return __ret__.apply(lambda __response__: GetRecoveryPlansResult(
         api_version=pulumi.get(__response__, 'api_version'),

@@ -148,7 +148,7 @@ export interface GetSubnetResult {
 /**
  * Provides a resource to create a subnet based on the input parameters. A subnet is a block of IP addresses.
  */
-export function getSubnetOutput(args?: GetSubnetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubnetResult> {
+export function getSubnetOutput(args?: GetSubnetOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSubnetResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getSubnet:getSubnet", {

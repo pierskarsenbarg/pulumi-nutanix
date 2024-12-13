@@ -118,7 +118,7 @@ def get_subnets(metadatas: Optional[Sequence[Union['GetSubnetsMetadataArgs', 'Ge
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
 def get_subnets_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetSubnetsMetadataArgs', 'GetSubnetsMetadataArgsDict']]]]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSubnetsResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubnetsResult]:
     """
     Describes a list of subnets
 
@@ -139,7 +139,7 @@ def get_subnets_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union[
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getSubnets:getSubnets', __args__, opts=opts, typ=GetSubnetsResult)
     return __ret__.apply(lambda __response__: GetSubnetsResult(
         api_version=pulumi.get(__response__, 'api_version'),

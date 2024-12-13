@@ -223,7 +223,7 @@ export interface GetVirtualMachineResult {
 /**
  * Describes a Virtual Machine
  */
-export function getVirtualMachineOutput(args: GetVirtualMachineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualMachineResult> {
+export function getVirtualMachineOutput(args: GetVirtualMachineOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVirtualMachineResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getVirtualMachine:getVirtualMachine", {
         "bootDeviceDiskAddress": args.bootDeviceDiskAddress,

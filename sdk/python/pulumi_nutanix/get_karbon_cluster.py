@@ -201,7 +201,7 @@ def get_karbon_cluster(karbon_cluster_id: Optional[str] = None,
         worker_node_pools=pulumi.get(__ret__, 'worker_node_pools'))
 def get_karbon_cluster_output(karbon_cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                               karbon_cluster_name: Optional[pulumi.Input[Optional[str]]] = None,
-                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetKarbonClusterResult]:
+                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKarbonClusterResult]:
     """
     Describes a Karbon Cluster
 
@@ -221,7 +221,7 @@ def get_karbon_cluster_output(karbon_cluster_id: Optional[pulumi.Input[Optional[
     __args__ = dict()
     __args__['karbonClusterId'] = karbon_cluster_id
     __args__['karbonClusterName'] = karbon_cluster_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getKarbonCluster:getKarbonCluster', __args__, opts=opts, typ=GetKarbonClusterResult)
     return __ret__.apply(lambda __response__: GetKarbonClusterResult(
         deployment_type=pulumi.get(__response__, 'deployment_type'),

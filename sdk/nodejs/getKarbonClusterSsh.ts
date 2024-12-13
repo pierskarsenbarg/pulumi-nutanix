@@ -88,7 +88,7 @@ export interface GetKarbonClusterSshResult {
  * });
  * ```
  */
-export function getKarbonClusterSshOutput(args?: GetKarbonClusterSshOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKarbonClusterSshResult> {
+export function getKarbonClusterSshOutput(args?: GetKarbonClusterSshOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetKarbonClusterSshResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", {

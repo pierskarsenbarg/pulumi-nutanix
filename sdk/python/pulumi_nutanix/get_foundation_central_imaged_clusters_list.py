@@ -139,7 +139,7 @@ def get_foundation_central_imaged_clusters_list(filters: Optional[Union['GetFoun
 def get_foundation_central_imaged_clusters_list_output(filters: Optional[pulumi.Input[Optional[Union['GetFoundationCentralImagedClustersListFiltersArgs', 'GetFoundationCentralImagedClustersListFiltersArgsDict']]]] = None,
                                                        length: Optional[pulumi.Input[Optional[int]]] = None,
                                                        offset: Optional[pulumi.Input[Optional[int]]] = None,
-                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFoundationCentralImagedClustersListResult]:
+                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFoundationCentralImagedClustersListResult]:
     """
     List all the clusters created using Foundation Central.
 
@@ -160,7 +160,7 @@ def get_foundation_central_imaged_clusters_list_output(filters: Optional[pulumi.
     __args__['filters'] = filters
     __args__['length'] = length
     __args__['offset'] = offset
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getFoundationCentralImagedClustersList:getFoundationCentralImagedClustersList', __args__, opts=opts, typ=GetFoundationCentralImagedClustersListResult)
     return __ret__.apply(lambda __response__: GetFoundationCentralImagedClustersListResult(
         filters=pulumi.get(__response__, 'filters'),

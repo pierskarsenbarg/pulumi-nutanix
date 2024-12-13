@@ -140,7 +140,7 @@ export interface GetProtectionRuleResult {
  * });
  * ```
  */
-export function getProtectionRuleOutput(args?: GetProtectionRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionRuleResult> {
+export function getProtectionRuleOutput(args?: GetProtectionRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectionRuleResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getProtectionRule:getProtectionRule", {

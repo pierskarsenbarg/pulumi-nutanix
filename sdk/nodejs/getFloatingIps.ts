@@ -69,7 +69,7 @@ export interface GetFloatingIpsResult {
  * const test = nutanix.getFloatingIps({});
  * ```
  */
-export function getFloatingIpsOutput(args?: GetFloatingIpsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFloatingIpsResult> {
+export function getFloatingIpsOutput(args?: GetFloatingIpsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFloatingIpsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getFloatingIps:getFloatingIps", {

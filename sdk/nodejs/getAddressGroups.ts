@@ -65,7 +65,7 @@ export interface GetAddressGroupsResult {
  * const addrGroups = nutanix.getAddressGroups({});
  * ```
  */
-export function getAddressGroupsOutput(args?: GetAddressGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressGroupsResult> {
+export function getAddressGroupsOutput(args?: GetAddressGroupsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAddressGroupsResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getAddressGroups:getAddressGroups", {

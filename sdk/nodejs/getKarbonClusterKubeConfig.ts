@@ -76,7 +76,7 @@ export interface GetKarbonClusterKubeConfigResult {
  * });
  * ```
  */
-export function getKarbonClusterKubeConfigOutput(args?: GetKarbonClusterKubeConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKarbonClusterKubeConfigResult> {
+export function getKarbonClusterKubeConfigOutput(args?: GetKarbonClusterKubeConfigOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetKarbonClusterKubeConfigResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getKarbonClusterKubeConfig:getKarbonClusterKubeConfig", {

@@ -68,7 +68,7 @@ export interface GetNdbNetworkAvailableIpsResult {
  * });
  * ```
  */
-export function getNdbNetworkAvailableIpsOutput(args: GetNdbNetworkAvailableIpsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbNetworkAvailableIpsResult> {
+export function getNdbNetworkAvailableIpsOutput(args: GetNdbNetworkAvailableIpsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbNetworkAvailableIpsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbNetworkAvailableIps:getNdbNetworkAvailableIps", {
         "profileId": args.profileId,

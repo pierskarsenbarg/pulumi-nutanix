@@ -713,7 +713,7 @@ def get_cluster(categories: Optional[Sequence[Union['GetClusterCategoryArgs', 'G
 def get_cluster_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetClusterCategoryArgs', 'GetClusterCategoryArgsDict']]]]] = None,
                        cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
                        name: Optional[pulumi.Input[Optional[str]]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetClusterResult]:
+                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterResult]:
     """
     Describes Clusters
 
@@ -726,7 +726,7 @@ def get_cluster_output(categories: Optional[pulumi.Input[Optional[Sequence[Union
     __args__['categories'] = categories
     __args__['clusterId'] = cluster_id
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getCluster:getCluster', __args__, opts=opts, typ=GetClusterResult)
     return __ret__.apply(lambda __response__: GetClusterResult(
         analysis_vm_efficiency_map=pulumi.get(__response__, 'analysis_vm_efficiency_map'),

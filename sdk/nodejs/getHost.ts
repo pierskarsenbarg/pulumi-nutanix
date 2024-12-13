@@ -145,7 +145,7 @@ export interface GetHostResult {
 /**
  * Describes a Host
  */
-export function getHostOutput(args: GetHostOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHostResult> {
+export function getHostOutput(args: GetHostOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetHostResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getHost:getHost", {
         "categories": args.categories,

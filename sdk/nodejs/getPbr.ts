@@ -55,7 +55,7 @@ export interface GetPbrResult {
 /**
  * Provides a datasource to retrieve PBR with pbrUuid .
  */
-export function getPbrOutput(args: GetPbrOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPbrResult> {
+export function getPbrOutput(args: GetPbrOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPbrResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getPbr:getPbr", {
         "pbrUuid": args.pbrUuid,

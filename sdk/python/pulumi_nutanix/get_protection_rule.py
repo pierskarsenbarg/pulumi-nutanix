@@ -259,7 +259,7 @@ def get_protection_rule(categories: Optional[Sequence[Union['GetProtectionRuleCa
 def get_protection_rule_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectionRuleCategoryArgs', 'GetProtectionRuleCategoryArgsDict']]]]] = None,
                                protection_rule_id: Optional[pulumi.Input[Optional[str]]] = None,
                                protection_rule_name: Optional[pulumi.Input[Optional[str]]] = None,
-                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetProtectionRuleResult]:
+                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionRuleResult]:
     """
     Describe a Nutanix Protection Rule and its values (if it has them).
 
@@ -299,7 +299,7 @@ def get_protection_rule_output(categories: Optional[pulumi.Input[Optional[Sequen
     __args__['categories'] = categories
     __args__['protectionRuleId'] = protection_rule_id
     __args__['protectionRuleName'] = protection_rule_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getProtectionRule:getProtectionRule', __args__, opts=opts, typ=GetProtectionRuleResult)
     return __ret__.apply(lambda __response__: GetProtectionRuleResult(
         api_version=pulumi.get(__response__, 'api_version'),

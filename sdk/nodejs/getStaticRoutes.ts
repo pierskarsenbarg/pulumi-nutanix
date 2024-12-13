@@ -59,7 +59,7 @@ export interface GetStaticRoutesResult {
 /**
  * Provides a datasource to retrieve static routes within VPCs given vpc_uuid.
  */
-export function getStaticRoutesOutput(args?: GetStaticRoutesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStaticRoutesResult> {
+export function getStaticRoutesOutput(args?: GetStaticRoutesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetStaticRoutesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getStaticRoutes:getStaticRoutes", {

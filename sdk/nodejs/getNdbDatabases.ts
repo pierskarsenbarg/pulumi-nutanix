@@ -121,7 +121,7 @@ export interface GetNdbDatabasesResult {
  *
  * See detailed information in [List Database Instances](https://www.nutanix.dev/api_references/ndb/#/1e508756bcdcc-get-all-the-databases).
  */
-export function getNdbDatabasesOutput(args?: GetNdbDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbDatabasesResult> {
+export function getNdbDatabasesOutput(args?: GetNdbDatabasesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbDatabasesResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbDatabases:getNdbDatabases", {

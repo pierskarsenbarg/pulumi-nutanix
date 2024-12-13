@@ -102,7 +102,7 @@ export interface GetNdbNetworkResult {
  * });
  * ```
  */
-export function getNdbNetworkOutput(args?: GetNdbNetworkOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbNetworkResult> {
+export function getNdbNetworkOutput(args?: GetNdbNetworkOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbNetworkResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbNetwork:getNdbNetwork", {

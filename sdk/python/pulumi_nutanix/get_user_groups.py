@@ -106,7 +106,7 @@ def get_user_groups(metadatas: Optional[Sequence[Union['GetUserGroupsMetadataArg
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
 def get_user_groups_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetUserGroupsMetadataArgs', 'GetUserGroupsMetadataArgsDict']]]]] = None,
-                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserGroupsResult]:
+                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserGroupsResult]:
     """
     Provides a datasource to retrieve all the user groups.
 
@@ -124,7 +124,7 @@ def get_user_groups_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Un
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getUserGroups:getUserGroups', __args__, opts=opts, typ=GetUserGroupsResult)
     return __ret__.apply(lambda __response__: GetUserGroupsResult(
         api_version=pulumi.get(__response__, 'api_version'),

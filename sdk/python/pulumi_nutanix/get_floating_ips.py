@@ -115,7 +115,7 @@ def get_floating_ips(metadatas: Optional[Sequence[Union['GetFloatingIpsMetadataA
         id=pulumi.get(__ret__, 'id'),
         metadatas=pulumi.get(__ret__, 'metadatas'))
 def get_floating_ips_output(metadatas: Optional[pulumi.Input[Optional[Sequence[Union['GetFloatingIpsMetadataArgs', 'GetFloatingIpsMetadataArgsDict']]]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFloatingIpsResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFloatingIpsResult]:
     """
     Provides a datasource to retrieve all the floating IPs .
 
@@ -133,7 +133,7 @@ def get_floating_ips_output(metadatas: Optional[pulumi.Input[Optional[Sequence[U
     """
     __args__ = dict()
     __args__['metadatas'] = metadatas
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getFloatingIps:getFloatingIps', __args__, opts=opts, typ=GetFloatingIpsResult)
     return __ret__.apply(lambda __response__: GetFloatingIpsResult(
         api_version=pulumi.get(__response__, 'api_version'),

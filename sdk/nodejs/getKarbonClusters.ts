@@ -46,7 +46,7 @@ export interface GetKarbonClustersResult {
  * const clusters = nutanix.getKarbonClusters({});
  * ```
  */
-export function getKarbonClustersOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetKarbonClustersResult> {
+export function getKarbonClustersOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetKarbonClustersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getKarbonClusters:getKarbonClusters", {
     }, opts);

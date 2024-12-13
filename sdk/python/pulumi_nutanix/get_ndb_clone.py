@@ -472,7 +472,7 @@ def get_ndb_clone_output(clone_id: Optional[pulumi.Input[Optional[str]]] = None,
                          clone_name: Optional[pulumi.Input[Optional[str]]] = None,
                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbCloneFilterArgs', 'GetNdbCloneFilterArgsDict']]]]] = None,
                          tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbCloneTagArgs', 'GetNdbCloneTagArgsDict']]]]] = None,
-                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbCloneResult]:
+                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbCloneResult]:
     """
     Describes the clone present in Nutanix Database Service
 
@@ -499,7 +499,7 @@ def get_ndb_clone_output(clone_id: Optional[pulumi.Input[Optional[str]]] = None,
     __args__['cloneName'] = clone_name
     __args__['filters'] = filters
     __args__['tags'] = tags
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbClone:getNdbClone', __args__, opts=opts, typ=GetNdbCloneResult)
     return __ret__.apply(lambda __response__: GetNdbCloneResult(
         clone=pulumi.get(__response__, 'clone'),

@@ -51,7 +51,7 @@ export interface GetNdbSlasResult {
  * export const sla = slas;
  * ```
  */
-export function getNdbSlasOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetNdbSlasResult> {
+export function getNdbSlasOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNdbSlasResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getNdbSlas:getNdbSlas", {
     }, opts);

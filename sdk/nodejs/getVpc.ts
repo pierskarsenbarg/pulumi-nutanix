@@ -62,7 +62,7 @@ export interface GetVpcResult {
 /**
  * Provides a datasource to retrieve VPC with vpcUuid or vpcName .
  */
-export function getVpcOutput(args?: GetVpcOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVpcResult> {
+export function getVpcOutput(args?: GetVpcOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVpcResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getVpc:getVpc", {

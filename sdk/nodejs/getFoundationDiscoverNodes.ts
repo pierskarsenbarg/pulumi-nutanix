@@ -49,7 +49,7 @@ export interface GetFoundationDiscoverNodesResult {
  * const discoveredNodes = nutanix.getFoundationDiscoverNodes({});
  * ```
  */
-export function getFoundationDiscoverNodesOutput(opts?: pulumi.InvokeOptions): pulumi.Output<GetFoundationDiscoverNodesResult> {
+export function getFoundationDiscoverNodesOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFoundationDiscoverNodesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("nutanix:index/getFoundationDiscoverNodes:getFoundationDiscoverNodes", {
     }, opts);

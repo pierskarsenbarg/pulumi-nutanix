@@ -246,7 +246,7 @@ def get_ndb_maintenance_window(id: Optional[str] = None,
         timezone=pulumi.get(__ret__, 'timezone'))
 def get_ndb_maintenance_window_output(id: Optional[pulumi.Input[str]] = None,
                                       tags: Optional[pulumi.Input[Optional[Sequence[Union['GetNdbMaintenanceWindowTagArgs', 'GetNdbMaintenanceWindowTagArgsDict']]]]] = None,
-                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNdbMaintenanceWindowResult]:
+                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNdbMaintenanceWindowResult]:
     """
     Describes a maintenance window in Nutanix Database Service
 
@@ -266,7 +266,7 @@ def get_ndb_maintenance_window_output(id: Optional[pulumi.Input[str]] = None,
     __args__ = dict()
     __args__['id'] = id
     __args__['tags'] = tags
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getNdbMaintenanceWindow:getNdbMaintenanceWindow', __args__, opts=opts, typ=GetNdbMaintenanceWindowResult)
     return __ret__.apply(lambda __response__: GetNdbMaintenanceWindowResult(
         access_level=pulumi.get(__response__, 'access_level'),

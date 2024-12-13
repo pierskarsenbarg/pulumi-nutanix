@@ -205,7 +205,7 @@ def get_recovery_plan(categories: Optional[Sequence[Union['GetRecoveryPlanCatego
 def get_recovery_plan_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['GetRecoveryPlanCategoryArgs', 'GetRecoveryPlanCategoryArgsDict']]]]] = None,
                              recovery_plan_id: Optional[pulumi.Input[Optional[str]]] = None,
                              recovery_plan_name: Optional[pulumi.Input[Optional[str]]] = None,
-                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRecoveryPlanResult]:
+                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecoveryPlanResult]:
     """
     Describe a Nutanix Recovery Plan and its values (if it has them).
 
@@ -216,7 +216,7 @@ def get_recovery_plan_output(categories: Optional[pulumi.Input[Optional[Sequence
     __args__['categories'] = categories
     __args__['recoveryPlanId'] = recovery_plan_id
     __args__['recoveryPlanName'] = recovery_plan_name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('nutanix:index/getRecoveryPlan:getRecoveryPlan', __args__, opts=opts, typ=GetRecoveryPlanResult)
     return __ret__.apply(lambda __response__: GetRecoveryPlanResult(
         api_version=pulumi.get(__response__, 'api_version'),
