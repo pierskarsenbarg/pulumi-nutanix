@@ -69,6 +69,35 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetKarbonClusterSshResult> Invoke(GetKarbonClusterSshInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetKarbonClusterSshResult>("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", args ?? new GetKarbonClusterSshInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describes the SSH config from a Karbon Cluster
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var sshbyid = Nutanix.GetKarbonClusterSsh.Invoke(new()
+        ///     {
+        ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
+        ///     });
+        /// 
+        ///     var sshbyname = Nutanix.GetKarbonClusterSsh.Invoke(new()
+        ///     {
+        ///         KarbonClusterName = "&lt;YOUR-CLUSTER-NAME&gt;",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetKarbonClusterSshResult> Invoke(GetKarbonClusterSshInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetKarbonClusterSshResult>("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", args ?? new GetKarbonClusterSshInvokeArgs(), options.WithDefaults());
     }
 
 

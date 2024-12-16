@@ -53,6 +53,27 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetProtectionRulesResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionRulesResult>("nutanix:index/getProtectionRules:getProtectionRules", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// Describes Protection Rules
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var protectionRules = Nutanix.GetProtectionRules.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProtectionRulesResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProtectionRulesResult>("nutanix:index/getProtectionRules:getProtectionRules", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

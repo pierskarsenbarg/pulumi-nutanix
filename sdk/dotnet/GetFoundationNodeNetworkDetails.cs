@@ -69,6 +69,35 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetFoundationNodeNetworkDetailsResult> Invoke(GetFoundationNodeNetworkDetailsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationNodeNetworkDetailsResult>("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", args ?? new GetFoundationNodeNetworkDetailsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Gets hypervisor, CVM &amp; IPMI info of the discovered nodes using their ipv6 address.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var networkDetails = Nutanix.GetFoundationNodeNetworkDetails.Invoke(new()
+        ///     {
+        ///         Ipv6Addresses = new[]
+        ///         {
+        ///             "&lt;ipv6-address-1&gt;",
+        ///             "&lt;ipv6-address-2&gt;",
+        ///         },
+        ///         Timeout = "30",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFoundationNodeNetworkDetailsResult> Invoke(GetFoundationNodeNetworkDetailsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationNodeNetworkDetailsResult>("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", args ?? new GetFoundationNodeNetworkDetailsInvokeArgs(), options.WithDefaults());
     }
 
 

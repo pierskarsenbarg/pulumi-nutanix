@@ -143,21 +143,11 @@ type GetNdbSnapshotResult struct {
 }
 
 func GetNdbSnapshotOutput(ctx *pulumi.Context, args GetNdbSnapshotOutputArgs, opts ...pulumi.InvokeOption) GetNdbSnapshotResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetNdbSnapshotResultOutput, error) {
 			args := v.(GetNdbSnapshotArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetNdbSnapshotResult
-			secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbSnapshot:getNdbSnapshot", args, &rv, "", opts...)
-			if err != nil {
-				return GetNdbSnapshotResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetNdbSnapshotResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetNdbSnapshotResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("nutanix:index/getNdbSnapshot:getNdbSnapshot", args, GetNdbSnapshotResultOutput{}, options).(GetNdbSnapshotResultOutput), nil
 		}).(GetNdbSnapshotResultOutput)
 }
 

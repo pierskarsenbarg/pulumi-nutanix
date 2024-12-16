@@ -53,6 +53,27 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetNdbDbserversResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbDbserversResult>("nutanix:index/getNdbDbservers:getNdbDbservers", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// List of all Database Server VM in Nutanix Database Service
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var dbservers = Nutanix.GetNdbDbservers.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNdbDbserversResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNdbDbserversResult>("nutanix:index/getNdbDbservers:getNdbDbservers", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

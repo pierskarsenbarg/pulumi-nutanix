@@ -73,6 +73,37 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetNdbSnapshotResult> Invoke(GetNdbSnapshotInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbSnapshotResult>("nutanix:index/getNdbSnapshot:getNdbSnapshot", args ?? new GetNdbSnapshotInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describes the snapshot present in Nutanix Database Service
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var snaps = Nutanix.GetNdbSnapshot.Invoke(new()
+        ///     {
+        ///         Filters = new[]
+        ///         {
+        ///             new Nutanix.Inputs.GetNdbSnapshotFilterInputArgs
+        ///             {
+        ///                 LoadReplicatedChildSnapshots = "true",
+        ///             },
+        ///         },
+        ///         SnapshotId = "{{ snapshot_id }}",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNdbSnapshotResult> Invoke(GetNdbSnapshotInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNdbSnapshotResult>("nutanix:index/getNdbSnapshot:getNdbSnapshot", args ?? new GetNdbSnapshotInvokeArgs(), options.WithDefaults());
     }
 
 

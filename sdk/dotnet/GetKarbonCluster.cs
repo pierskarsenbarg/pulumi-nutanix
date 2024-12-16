@@ -59,6 +59,30 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetKarbonClusterResult> Invoke(GetKarbonClusterInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetKarbonClusterResult>("nutanix:index/getKarbonCluster:getKarbonCluster", args ?? new GetKarbonClusterInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describes a Karbon Cluster
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var cluster = Nutanix.GetKarbonCluster.Invoke(new()
+        ///     {
+        ///         KarbonClusterId = "&lt;YOUR-CLUSTER-ID&gt;",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetKarbonClusterResult> Invoke(GetKarbonClusterInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetKarbonClusterResult>("nutanix:index/getKarbonCluster:getKarbonCluster", args ?? new GetKarbonClusterInvokeArgs(), options.WithDefaults());
     }
 
 

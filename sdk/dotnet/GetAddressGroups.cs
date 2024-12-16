@@ -53,6 +53,27 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetAddressGroupsResult> Invoke(GetAddressGroupsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAddressGroupsResult>("nutanix:index/getAddressGroups:getAddressGroups", args ?? new GetAddressGroupsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Provides a datasource to retrieve list of address groups.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var addrGroups = Nutanix.GetAddressGroups.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAddressGroupsResult> Invoke(GetAddressGroupsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAddressGroupsResult>("nutanix:index/getAddressGroups:getAddressGroups", args ?? new GetAddressGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -45,21 +45,11 @@ type LookupKarbonPrivateRegistryResult struct {
 }
 
 func LookupKarbonPrivateRegistryOutput(ctx *pulumi.Context, args LookupKarbonPrivateRegistryOutputArgs, opts ...pulumi.InvokeOption) LookupKarbonPrivateRegistryResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupKarbonPrivateRegistryResultOutput, error) {
 			args := v.(LookupKarbonPrivateRegistryArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupKarbonPrivateRegistryResult
-			secret, err := ctx.InvokePackageRaw("nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry", args, &rv, "", opts...)
-			if err != nil {
-				return LookupKarbonPrivateRegistryResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupKarbonPrivateRegistryResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupKarbonPrivateRegistryResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry", args, LookupKarbonPrivateRegistryResultOutput{}, options).(LookupKarbonPrivateRegistryResultOutput), nil
 		}).(LookupKarbonPrivateRegistryResultOutput)
 }
 

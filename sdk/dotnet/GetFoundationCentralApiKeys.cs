@@ -59,6 +59,30 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetFoundationCentralApiKeysResult> Invoke(GetFoundationCentralApiKeysInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralApiKeysResult>("nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys", args ?? new GetFoundationCentralApiKeysInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Get an api key given its UUID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var apiKeysList = Nutanix.GetFoundationCentralApiKeys.Invoke(new()
+        ///     {
+        ///         KeyUuid = "&lt;KEY_UUID&gt;",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFoundationCentralApiKeysResult> Invoke(GetFoundationCentralApiKeysInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralApiKeysResult>("nutanix:index/getFoundationCentralApiKeys:getFoundationCentralApiKeys", args ?? new GetFoundationCentralApiKeysInvokeArgs(), options.WithDefaults());
     }
 
 

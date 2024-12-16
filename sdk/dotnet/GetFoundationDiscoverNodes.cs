@@ -53,6 +53,27 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetFoundationDiscoverNodesResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationDiscoverNodesResult>("nutanix:index/getFoundationDiscoverNodes:getFoundationDiscoverNodes", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// Discovers and lists Nutanix-imaged nodes within an IPv6 network.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var discoveredNodes = Nutanix.GetFoundationDiscoverNodes.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFoundationDiscoverNodesResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationDiscoverNodesResult>("nutanix:index/getFoundationDiscoverNodes:getFoundationDiscoverNodes", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

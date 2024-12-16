@@ -149,6 +149,75 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetProtectionRuleResult> Invoke(GetProtectionRuleInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionRuleResult>("nutanix:index/getProtectionRule:getProtectionRule", args ?? new GetProtectionRuleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describe a Nutanix Protection Rule and its values (if it has them).
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var protectionRuleTest = new Nutanix.ProtectionRule("protectionRuleTest", new()
+        ///     {
+        ///         Description = "test",
+        ///         OrderedAvailabilityZoneLists = new[]
+        ///         {
+        ///             new Nutanix.Inputs.ProtectionRuleOrderedAvailabilityZoneListArgs
+        ///             {
+        ///                 AvailabilityZoneUrl = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
+        ///             },
+        ///         },
+        ///         AvailabilityZoneConnectivityLists = new[]
+        ///         {
+        ///             new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListArgs
+        ///             {
+        ///                 SnapshotScheduleLists = new[]
+        ///                 {
+        ///                     new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListArgs
+        ///                     {
+        ///                         RecoveryPointObjectiveSecs = 3600,
+        ///                         SnapshotType = "CRASH_CONSISTENT",
+        ///                         LocalSnapshotRetentionPolicy = new Nutanix.Inputs.ProtectionRuleAvailabilityZoneConnectivityListSnapshotScheduleListLocalSnapshotRetentionPolicyArgs
+        ///                         {
+        ///                             NumSnapshots = 1,
+        ///                         },
+        ///                     },
+        ///                 },
+        ///             },
+        ///         },
+        ///         CategoryFilter = new Nutanix.Inputs.ProtectionRuleCategoryFilterArgs
+        ///         {
+        ///             Params = new[]
+        ///             {
+        ///                 new Nutanix.Inputs.ProtectionRuleCategoryFilterParamArgs
+        ///                 {
+        ///                     Name = "Environment",
+        ///                     Values = new[]
+        ///                     {
+        ///                         "Dev",
+        ///                     },
+        ///                 },
+        ///             },
+        ///         },
+        ///     });
+        /// 
+        ///     var test = Nutanix.GetProtectionRule.Invoke(new()
+        ///     {
+        ///         ProtectionRuleId = protectionRuleTest.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProtectionRuleResult> Invoke(GetProtectionRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProtectionRuleResult>("nutanix:index/getProtectionRule:getProtectionRule", args ?? new GetProtectionRuleInvokeArgs(), options.WithDefaults());
     }
 
 

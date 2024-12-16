@@ -59,6 +59,30 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetNdbMaintenanceWindowResult> Invoke(GetNdbMaintenanceWindowInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbMaintenanceWindowResult>("nutanix:index/getNdbMaintenanceWindow:getNdbMaintenanceWindow", args ?? new GetNdbMaintenanceWindowInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describes a maintenance window in Nutanix Database Service
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var window = Nutanix.GetNdbMaintenanceWindow.Invoke(new()
+        ///     {
+        ///         Id = "{{ maintenance_window_id }}",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNdbMaintenanceWindowResult> Invoke(GetNdbMaintenanceWindowInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNdbMaintenanceWindowResult>("nutanix:index/getNdbMaintenanceWindow:getNdbMaintenanceWindow", args ?? new GetNdbMaintenanceWindowInvokeArgs(), options.WithDefaults());
     }
 
 

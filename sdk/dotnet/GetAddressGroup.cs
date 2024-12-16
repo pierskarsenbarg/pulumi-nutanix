@@ -87,6 +87,44 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetAddressGroupResult> Invoke(GetAddressGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAddressGroupResult>("nutanix:index/getAddressGroup:getAddressGroup", args ?? new GetAddressGroupInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Provides a datasource to retrieve a address group.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAddress = new Nutanix.AddressGroup("testAddress", new()
+        ///     {
+        ///         Description = "test address groups resource",
+        ///         IpAddressBlockLists = new[]
+        ///         {
+        ///             new Nutanix.Inputs.AddressGroupIpAddressBlockListArgs
+        ///             {
+        ///                 Ip = "10.0.0.0",
+        ///                 PrefixLength = 24,
+        ///             },
+        ///         },
+        ///     });
+        /// 
+        ///     var addrGroup = Nutanix.GetAddressGroup.Invoke(new()
+        ///     {
+        ///         Uuid = testAddress.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetAddressGroupResult> Invoke(GetAddressGroupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAddressGroupResult>("nutanix:index/getAddressGroup:getAddressGroup", args ?? new GetAddressGroupInvokeArgs(), options.WithDefaults());
     }
 
 

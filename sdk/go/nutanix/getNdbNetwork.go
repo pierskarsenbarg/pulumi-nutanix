@@ -81,21 +81,11 @@ type LookupNdbNetworkResult struct {
 }
 
 func LookupNdbNetworkOutput(ctx *pulumi.Context, args LookupNdbNetworkOutputArgs, opts ...pulumi.InvokeOption) LookupNdbNetworkResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupNdbNetworkResultOutput, error) {
 			args := v.(LookupNdbNetworkArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupNdbNetworkResult
-			secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbNetwork:getNdbNetwork", args, &rv, "", opts...)
-			if err != nil {
-				return LookupNdbNetworkResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupNdbNetworkResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupNdbNetworkResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("nutanix:index/getNdbNetwork:getNdbNetwork", args, LookupNdbNetworkResultOutput{}, options).(LookupNdbNetworkResultOutput), nil
 		}).(LookupNdbNetworkResultOutput)
 }
 

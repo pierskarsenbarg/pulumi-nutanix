@@ -55,18 +55,8 @@ type GetNdbDbserversResult struct {
 
 func GetNdbDbserversOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetNdbDbserversResultOutput {
 	return pulumi.ToOutput(0).ApplyT(func(int) (GetNdbDbserversResultOutput, error) {
-		opts = internal.PkgInvokeDefaultOpts(opts)
-		var rv GetNdbDbserversResult
-		secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbDbservers:getNdbDbservers", nil, &rv, "", opts...)
-		if err != nil {
-			return GetNdbDbserversResultOutput{}, err
-		}
-
-		output := pulumi.ToOutput(rv).(GetNdbDbserversResultOutput)
-		if secret {
-			return pulumi.ToSecret(output).(GetNdbDbserversResultOutput), nil
-		}
-		return output, nil
+		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+		return ctx.InvokeOutput("nutanix:index/getNdbDbservers:getNdbDbservers", nil, GetNdbDbserversResultOutput{}, options).(GetNdbDbserversResultOutput), nil
 	}).(GetNdbDbserversResultOutput)
 }
 

@@ -17,6 +17,9 @@ namespace PiersKarsenbarg.Nutanix
 
         public static Output<GetNdbTmsCapabilityResult> Invoke(GetNdbTmsCapabilityInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbTmsCapabilityResult>("nutanix:index/getNdbTmsCapability:getNdbTmsCapability", args ?? new GetNdbTmsCapabilityInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetNdbTmsCapabilityResult> Invoke(GetNdbTmsCapabilityInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNdbTmsCapabilityResult>("nutanix:index/getNdbTmsCapability:getNdbTmsCapability", args ?? new GetNdbTmsCapabilityInvokeArgs(), options.WithDefaults());
     }
 
 

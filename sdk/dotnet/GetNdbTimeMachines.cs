@@ -53,6 +53,27 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetNdbTimeMachinesResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbTimeMachinesResult>("nutanix:index/getNdbTimeMachines:getNdbTimeMachines", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// List all time machines present in Nutanix Database Service
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var tms = Nutanix.GetNdbTimeMachines.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNdbTimeMachinesResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNdbTimeMachinesResult>("nutanix:index/getNdbTimeMachines:getNdbTimeMachines", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

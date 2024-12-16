@@ -23,6 +23,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetRecoveryPlanResult> Invoke(GetRecoveryPlanInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRecoveryPlanResult>("nutanix:index/getRecoveryPlan:getRecoveryPlan", args ?? new GetRecoveryPlanInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describe a Nutanix Recovery Plan and its values (if it has them).
+        /// </summary>
+        public static Output<GetRecoveryPlanResult> Invoke(GetRecoveryPlanInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRecoveryPlanResult>("nutanix:index/getRecoveryPlan:getRecoveryPlan", args ?? new GetRecoveryPlanInvokeArgs(), options.WithDefaults());
     }
 
 

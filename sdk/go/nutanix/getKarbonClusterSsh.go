@@ -79,21 +79,11 @@ type GetKarbonClusterSshResult struct {
 }
 
 func GetKarbonClusterSshOutput(ctx *pulumi.Context, args GetKarbonClusterSshOutputArgs, opts ...pulumi.InvokeOption) GetKarbonClusterSshResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetKarbonClusterSshResultOutput, error) {
 			args := v.(GetKarbonClusterSshArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetKarbonClusterSshResult
-			secret, err := ctx.InvokePackageRaw("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", args, &rv, "", opts...)
-			if err != nil {
-				return GetKarbonClusterSshResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetKarbonClusterSshResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetKarbonClusterSshResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("nutanix:index/getKarbonClusterSsh:getKarbonClusterSsh", args, GetKarbonClusterSshResultOutput{}, options).(GetKarbonClusterSshResultOutput), nil
 		}).(GetKarbonClusterSshResultOutput)
 }
 

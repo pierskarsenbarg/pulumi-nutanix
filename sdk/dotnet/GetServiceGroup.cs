@@ -17,6 +17,9 @@ namespace PiersKarsenbarg.Nutanix
 
         public static Output<GetServiceGroupResult> Invoke(GetServiceGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceGroupResult>("nutanix:index/getServiceGroup:getServiceGroup", args ?? new GetServiceGroupInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetServiceGroupResult> Invoke(GetServiceGroupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetServiceGroupResult>("nutanix:index/getServiceGroup:getServiceGroup", args ?? new GetServiceGroupInvokeArgs(), options.WithDefaults());
     }
 
 

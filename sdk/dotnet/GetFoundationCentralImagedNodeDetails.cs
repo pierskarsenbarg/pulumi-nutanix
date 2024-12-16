@@ -59,6 +59,30 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetFoundationCentralImagedNodeDetailsResult> Invoke(GetFoundationCentralImagedNodeDetailsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralImagedNodeDetailsResult>("nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails", args ?? new GetFoundationCentralImagedNodeDetailsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Get the details of a single node given its UUID.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var nodesDetails = Nutanix.GetFoundationCentralImagedNodeDetails.Invoke(new()
+        ///     {
+        ///         ImagedNodeUuid = "&lt;IMAGED-NODE-UUID&gt;",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFoundationCentralImagedNodeDetailsResult> Invoke(GetFoundationCentralImagedNodeDetailsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralImagedNodeDetailsResult>("nutanix:index/getFoundationCentralImagedNodeDetails:getFoundationCentralImagedNodeDetails", args ?? new GetFoundationCentralImagedNodeDetailsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -53,6 +53,27 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetFoundationCentralListApiKeysResult> Invoke(GetFoundationCentralListApiKeysInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralListApiKeysResult>("nutanix:index/getFoundationCentralListApiKeys:getFoundationCentralListApiKeys", args ?? new GetFoundationCentralListApiKeysInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// List all the api keys created in Foundation Central.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var apiKeysList = Nutanix.GetFoundationCentralListApiKeys.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFoundationCentralListApiKeysResult> Invoke(GetFoundationCentralListApiKeysInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralListApiKeysResult>("nutanix:index/getFoundationCentralListApiKeys:getFoundationCentralListApiKeys", args ?? new GetFoundationCentralListApiKeysInvokeArgs(), options.WithDefaults());
     }
 
 

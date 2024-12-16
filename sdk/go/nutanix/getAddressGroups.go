@@ -63,21 +63,11 @@ type GetAddressGroupsResult struct {
 }
 
 func GetAddressGroupsOutput(ctx *pulumi.Context, args GetAddressGroupsOutputArgs, opts ...pulumi.InvokeOption) GetAddressGroupsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetAddressGroupsResultOutput, error) {
 			args := v.(GetAddressGroupsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetAddressGroupsResult
-			secret, err := ctx.InvokePackageRaw("nutanix:index/getAddressGroups:getAddressGroups", args, &rv, "", opts...)
-			if err != nil {
-				return GetAddressGroupsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetAddressGroupsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetAddressGroupsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("nutanix:index/getAddressGroups:getAddressGroups", args, GetAddressGroupsResultOutput{}, options).(GetAddressGroupsResultOutput), nil
 		}).(GetAddressGroupsResultOutput)
 }
 

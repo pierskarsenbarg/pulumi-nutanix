@@ -65,21 +65,11 @@ type GetNdbNetworkAvailableIpsResult struct {
 }
 
 func GetNdbNetworkAvailableIpsOutput(ctx *pulumi.Context, args GetNdbNetworkAvailableIpsOutputArgs, opts ...pulumi.InvokeOption) GetNdbNetworkAvailableIpsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetNdbNetworkAvailableIpsResultOutput, error) {
 			args := v.(GetNdbNetworkAvailableIpsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetNdbNetworkAvailableIpsResult
-			secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbNetworkAvailableIps:getNdbNetworkAvailableIps", args, &rv, "", opts...)
-			if err != nil {
-				return GetNdbNetworkAvailableIpsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetNdbNetworkAvailableIpsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetNdbNetworkAvailableIpsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("nutanix:index/getNdbNetworkAvailableIps:getNdbNetworkAvailableIps", args, GetNdbNetworkAvailableIpsResultOutput{}, options).(GetNdbNetworkAvailableIpsResultOutput), nil
 		}).(GetNdbNetworkAvailableIpsResultOutput)
 }
 

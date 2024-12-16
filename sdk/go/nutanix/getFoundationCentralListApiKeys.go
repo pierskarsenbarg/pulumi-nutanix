@@ -70,21 +70,11 @@ type GetFoundationCentralListApiKeysResult struct {
 }
 
 func GetFoundationCentralListApiKeysOutput(ctx *pulumi.Context, args GetFoundationCentralListApiKeysOutputArgs, opts ...pulumi.InvokeOption) GetFoundationCentralListApiKeysResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFoundationCentralListApiKeysResultOutput, error) {
 			args := v.(GetFoundationCentralListApiKeysArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFoundationCentralListApiKeysResult
-			secret, err := ctx.InvokePackageRaw("nutanix:index/getFoundationCentralListApiKeys:getFoundationCentralListApiKeys", args, &rv, "", opts...)
-			if err != nil {
-				return GetFoundationCentralListApiKeysResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFoundationCentralListApiKeysResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFoundationCentralListApiKeysResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("nutanix:index/getFoundationCentralListApiKeys:getFoundationCentralListApiKeys", args, GetFoundationCentralListApiKeysResultOutput{}, options).(GetFoundationCentralListApiKeysResultOutput), nil
 		}).(GetFoundationCentralListApiKeysResultOutput)
 }
 
