@@ -71,21 +71,11 @@ type GetFoundationNodeNetworkDetailsResult struct {
 }
 
 func GetFoundationNodeNetworkDetailsOutput(ctx *pulumi.Context, args GetFoundationNodeNetworkDetailsOutputArgs, opts ...pulumi.InvokeOption) GetFoundationNodeNetworkDetailsResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFoundationNodeNetworkDetailsResultOutput, error) {
 			args := v.(GetFoundationNodeNetworkDetailsArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFoundationNodeNetworkDetailsResult
-			secret, err := ctx.InvokePackageRaw("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", args, &rv, "", opts...)
-			if err != nil {
-				return GetFoundationNodeNetworkDetailsResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFoundationNodeNetworkDetailsResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFoundationNodeNetworkDetailsResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("nutanix:index/getFoundationNodeNetworkDetails:getFoundationNodeNetworkDetails", args, GetFoundationNodeNetworkDetailsResultOutput{}, options).(GetFoundationNodeNetworkDetailsResultOutput), nil
 		}).(GetFoundationNodeNetworkDetailsResultOutput)
 }
 

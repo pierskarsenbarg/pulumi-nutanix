@@ -57,18 +57,8 @@ type GetNdbSlasResult struct {
 
 func GetNdbSlasOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetNdbSlasResultOutput {
 	return pulumi.ToOutput(0).ApplyT(func(int) (GetNdbSlasResultOutput, error) {
-		opts = internal.PkgInvokeDefaultOpts(opts)
-		var rv GetNdbSlasResult
-		secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbSlas:getNdbSlas", nil, &rv, "", opts...)
-		if err != nil {
-			return GetNdbSlasResultOutput{}, err
-		}
-
-		output := pulumi.ToOutput(rv).(GetNdbSlasResultOutput)
-		if secret {
-			return pulumi.ToSecret(output).(GetNdbSlasResultOutput), nil
-		}
-		return output, nil
+		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+		return ctx.InvokeOutput("nutanix:index/getNdbSlas:getNdbSlas", nil, GetNdbSlasResultOutput{}, options).(GetNdbSlasResultOutput), nil
 	}).(GetNdbSlasResultOutput)
 }
 

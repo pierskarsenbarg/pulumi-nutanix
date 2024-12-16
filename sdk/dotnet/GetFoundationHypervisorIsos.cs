@@ -65,6 +65,33 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetFoundationHypervisorIsosResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationHypervisorIsosResult>("nutanix:index/getFoundationHypervisorIsos:getFoundationHypervisorIsos", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// Describes a list of hypervisor isos image file details present in foundation vm
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var hypervisorIsos = Nutanix.GetFoundationHypervisorIsos.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// 
+        /// ## Note
+        /// 
+        /// * This data source only lists .iso files details.
+        /// 
+        /// See detailed information in [Nutanix Foundation Hypervisor Isos](https://www.nutanix.dev/api_references/foundation/#/b3A6MjIyMjM0MDE-list-hypervisor-images-available-in-foundation).
+        /// </summary>
+        public static Output<GetFoundationHypervisorIsosResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationHypervisorIsosResult>("nutanix:index/getFoundationHypervisorIsos:getFoundationHypervisorIsos", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

@@ -53,6 +53,27 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetPbrsResult> Invoke(GetPbrsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPbrsResult>("nutanix:index/getPbrs:getPbrs", args ?? new GetPbrsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Provides a datasource to retrieve all the pbrs.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var test = Nutanix.GetPbrs.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPbrsResult> Invoke(GetPbrsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPbrsResult>("nutanix:index/getPbrs:getPbrs", args ?? new GetPbrsInvokeArgs(), options.WithDefaults());
     }
 
 

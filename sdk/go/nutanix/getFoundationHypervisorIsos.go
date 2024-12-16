@@ -70,18 +70,8 @@ type GetFoundationHypervisorIsosResult struct {
 
 func GetFoundationHypervisorIsosOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetFoundationHypervisorIsosResultOutput {
 	return pulumi.ToOutput(0).ApplyT(func(int) (GetFoundationHypervisorIsosResultOutput, error) {
-		opts = internal.PkgInvokeDefaultOpts(opts)
-		var rv GetFoundationHypervisorIsosResult
-		secret, err := ctx.InvokePackageRaw("nutanix:index/getFoundationHypervisorIsos:getFoundationHypervisorIsos", nil, &rv, "", opts...)
-		if err != nil {
-			return GetFoundationHypervisorIsosResultOutput{}, err
-		}
-
-		output := pulumi.ToOutput(rv).(GetFoundationHypervisorIsosResultOutput)
-		if secret {
-			return pulumi.ToSecret(output).(GetFoundationHypervisorIsosResultOutput), nil
-		}
-		return output, nil
+		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+		return ctx.InvokeOutput("nutanix:index/getFoundationHypervisorIsos:getFoundationHypervisorIsos", nil, GetFoundationHypervisorIsosResultOutput{}, options).(GetFoundationHypervisorIsosResultOutput), nil
 	}).(GetFoundationHypervisorIsosResultOutput)
 }
 

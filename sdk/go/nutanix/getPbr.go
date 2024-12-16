@@ -44,21 +44,11 @@ type LookupPbrResult struct {
 }
 
 func LookupPbrOutput(ctx *pulumi.Context, args LookupPbrOutputArgs, opts ...pulumi.InvokeOption) LookupPbrResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupPbrResultOutput, error) {
 			args := v.(LookupPbrArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupPbrResult
-			secret, err := ctx.InvokePackageRaw("nutanix:index/getPbr:getPbr", args, &rv, "", opts...)
-			if err != nil {
-				return LookupPbrResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupPbrResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupPbrResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("nutanix:index/getPbr:getPbr", args, LookupPbrResultOutput{}, options).(LookupPbrResultOutput), nil
 		}).(LookupPbrResultOutput)
 }
 

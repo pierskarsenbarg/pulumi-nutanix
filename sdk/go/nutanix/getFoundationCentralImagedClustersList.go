@@ -69,21 +69,11 @@ type GetFoundationCentralImagedClustersListResult struct {
 }
 
 func GetFoundationCentralImagedClustersListOutput(ctx *pulumi.Context, args GetFoundationCentralImagedClustersListOutputArgs, opts ...pulumi.InvokeOption) GetFoundationCentralImagedClustersListResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (GetFoundationCentralImagedClustersListResultOutput, error) {
 			args := v.(GetFoundationCentralImagedClustersListArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv GetFoundationCentralImagedClustersListResult
-			secret, err := ctx.InvokePackageRaw("nutanix:index/getFoundationCentralImagedClustersList:getFoundationCentralImagedClustersList", args, &rv, "", opts...)
-			if err != nil {
-				return GetFoundationCentralImagedClustersListResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(GetFoundationCentralImagedClustersListResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(GetFoundationCentralImagedClustersListResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("nutanix:index/getFoundationCentralImagedClustersList:getFoundationCentralImagedClustersList", args, GetFoundationCentralImagedClustersListResultOutput{}, options).(GetFoundationCentralImagedClustersListResultOutput), nil
 		}).(GetFoundationCentralImagedClustersListResultOutput)
 }
 

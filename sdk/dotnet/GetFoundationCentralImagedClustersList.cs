@@ -53,6 +53,27 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetFoundationCentralImagedClustersListResult> Invoke(GetFoundationCentralImagedClustersListInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralImagedClustersListResult>("nutanix:index/getFoundationCentralImagedClustersList:getFoundationCentralImagedClustersList", args ?? new GetFoundationCentralImagedClustersListInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// List all the clusters created using Foundation Central.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var imagedClustersList = Nutanix.GetFoundationCentralImagedClustersList.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFoundationCentralImagedClustersListResult> Invoke(GetFoundationCentralImagedClustersListInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralImagedClustersListResult>("nutanix:index/getFoundationCentralImagedClustersList:getFoundationCentralImagedClustersList", args ?? new GetFoundationCentralImagedClustersListInvokeArgs(), options.WithDefaults());
     }
 
 

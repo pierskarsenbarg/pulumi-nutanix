@@ -53,6 +53,27 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetProjectsResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProjectsResult>("nutanix:index/getProjects:getProjects", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// Describes Projects
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var projects = Nutanix.GetProjects.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProjectsResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProjectsResult>("nutanix:index/getProjects:getProjects", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

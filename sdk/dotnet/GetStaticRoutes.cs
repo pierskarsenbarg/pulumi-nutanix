@@ -23,6 +23,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetStaticRoutesResult> Invoke(GetStaticRoutesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStaticRoutesResult>("nutanix:index/getStaticRoutes:getStaticRoutes", args ?? new GetStaticRoutesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Provides a datasource to retrieve static routes within VPCs given vpc_uuid.
+        /// </summary>
+        public static Output<GetStaticRoutesResult> Invoke(GetStaticRoutesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetStaticRoutesResult>("nutanix:index/getStaticRoutes:getStaticRoutes", args ?? new GetStaticRoutesInvokeArgs(), options.WithDefaults());
     }
 
 

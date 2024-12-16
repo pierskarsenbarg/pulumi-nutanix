@@ -23,6 +23,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetNdbTimeMachineResult> Invoke(GetNdbTimeMachineInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbTimeMachineResult>("nutanix:index/getNdbTimeMachine:getNdbTimeMachine", args ?? new GetNdbTimeMachineInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describes a time machine present in Nutanix Database Service
+        /// </summary>
+        public static Output<GetNdbTimeMachineResult> Invoke(GetNdbTimeMachineInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNdbTimeMachineResult>("nutanix:index/getNdbTimeMachine:getNdbTimeMachine", args ?? new GetNdbTimeMachineInvokeArgs(), options.WithDefaults());
     }
 
 

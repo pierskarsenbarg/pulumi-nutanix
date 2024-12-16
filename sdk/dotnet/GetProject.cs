@@ -173,6 +173,87 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetProjectResult> Invoke(GetProjectInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProjectResult>("nutanix:index/getProject:getProject", args ?? new GetProjectInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describe a Nutanix Project and its values (if it has them).
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var subnet = new Nutanix.Subnet("subnet", new()
+        ///     {
+        ///         ClusterUuid = "&lt;YOUR_CLUSTER_ID&gt;",
+        ///         Description = "Description of my unit test VLAN",
+        ///         VlanId = 31,
+        ///         SubnetType = "VLAN",
+        ///         SubnetIp = "10.250.140.0",
+        ///         DefaultGatewayIp = "10.250.140.1",
+        ///         PrefixLength = 24,
+        ///         DhcpOptions = 
+        ///         {
+        ///             { "boot_file_name", "bootfile" },
+        ///             { "domain_name", "nutanix" },
+        ///             { "tftp_server_name", "10.250.140.200" },
+        ///         },
+        ///         DhcpDomainNameServerLists = new[]
+        ///         {
+        ///             "8.8.8.8",
+        ///             "4.2.2.2",
+        ///         },
+        ///         DhcpDomainSearchLists = new[]
+        ///         {
+        ///             "terraform.nutanix.com",
+        ///             "terraform.unit.test.com",
+        ///         },
+        ///     });
+        /// 
+        ///     var projectTest = new Nutanix.Project("projectTest", new()
+        ///     {
+        ///         Description = "This is my project",
+        ///         Categories = new[]
+        ///         {
+        ///             new Nutanix.Inputs.ProjectCategoryArgs
+        ///             {
+        ///                 Name = "Environment",
+        ///                 Value = "Staging",
+        ///             },
+        ///         },
+        ///         ResourceDomain = new Nutanix.Inputs.ProjectResourceDomainArgs
+        ///         {
+        ///             Resources = new[]
+        ///             {
+        ///                 new Nutanix.Inputs.ProjectResourceDomainResourceArgs
+        ///                 {
+        ///                     Limit = 4,
+        ///                     ResourceType = "STORAGE",
+        ///                 },
+        ///             },
+        ///         },
+        ///         DefaultSubnetReference = new Nutanix.Inputs.ProjectDefaultSubnetReferenceArgs
+        ///         {
+        ///             Uuid = subnet.Metadata.Apply(metadata =&gt; metadata.Uuid),
+        ///         },
+        ///         ApiVersion = "3.1",
+        ///     });
+        /// 
+        ///     var test = Nutanix.GetProject.Invoke(new()
+        ///     {
+        ///         ProjectId = projectTest.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetProjectResult> Invoke(GetProjectInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetProjectResult>("nutanix:index/getProject:getProject", args ?? new GetProjectInvokeArgs(), options.WithDefaults());
     }
 
 

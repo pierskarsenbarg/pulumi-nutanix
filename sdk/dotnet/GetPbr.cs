@@ -23,6 +23,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetPbrResult> Invoke(GetPbrInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPbrResult>("nutanix:index/getPbr:getPbr", args ?? new GetPbrInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Provides a datasource to retrieve PBR with pbr_uuid .
+        /// </summary>
+        public static Output<GetPbrResult> Invoke(GetPbrInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPbrResult>("nutanix:index/getPbr:getPbr", args ?? new GetPbrInvokeArgs(), options.WithDefaults());
     }
 
 

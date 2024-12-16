@@ -58,18 +58,8 @@ type GetProtectionRulesResult struct {
 
 func GetProtectionRulesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetProtectionRulesResultOutput {
 	return pulumi.ToOutput(0).ApplyT(func(int) (GetProtectionRulesResultOutput, error) {
-		opts = internal.PkgInvokeDefaultOpts(opts)
-		var rv GetProtectionRulesResult
-		secret, err := ctx.InvokePackageRaw("nutanix:index/getProtectionRules:getProtectionRules", nil, &rv, "", opts...)
-		if err != nil {
-			return GetProtectionRulesResultOutput{}, err
-		}
-
-		output := pulumi.ToOutput(rv).(GetProtectionRulesResultOutput)
-		if secret {
-			return pulumi.ToSecret(output).(GetProtectionRulesResultOutput), nil
-		}
-		return output, nil
+		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+		return ctx.InvokeOutput("nutanix:index/getProtectionRules:getProtectionRules", nil, GetProtectionRulesResultOutput{}, options).(GetProtectionRulesResultOutput), nil
 	}).(GetProtectionRulesResultOutput)
 }
 

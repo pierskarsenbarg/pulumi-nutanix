@@ -23,6 +23,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetHostsResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetHostsResult>("nutanix:index/getHosts:getHosts", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// Describes a list of hosts
+        /// </summary>
+        public static Output<GetHostsResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetHostsResult>("nutanix:index/getHosts:getHosts", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

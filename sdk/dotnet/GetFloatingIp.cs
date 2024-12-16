@@ -23,6 +23,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetFloatingIpResult> Invoke(GetFloatingIpInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFloatingIpResult>("nutanix:index/getFloatingIp:getFloatingIp", args ?? new GetFloatingIpInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Provides a datasource to retrieve floating IPs with floating_ip_uuid .
+        /// </summary>
+        public static Output<GetFloatingIpResult> Invoke(GetFloatingIpInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFloatingIpResult>("nutanix:index/getFloatingIp:getFloatingIp", args ?? new GetFloatingIpInvokeArgs(), options.WithDefaults());
     }
 
 

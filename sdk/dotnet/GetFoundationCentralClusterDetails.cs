@@ -59,6 +59,30 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetFoundationCentralClusterDetailsResult> Invoke(GetFoundationCentralClusterDetailsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralClusterDetailsResult>("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", args ?? new GetFoundationCentralClusterDetailsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Get a cluster details created using Foundation Central.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var imagedClusterDetails = Nutanix.GetFoundationCentralClusterDetails.Invoke(new()
+        ///     {
+        ///         ImagedClusterUuid = "&lt;CLUSTER-UUID&gt;",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFoundationCentralClusterDetailsResult> Invoke(GetFoundationCentralClusterDetailsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralClusterDetailsResult>("nutanix:index/getFoundationCentralClusterDetails:getFoundationCentralClusterDetails", args ?? new GetFoundationCentralClusterDetailsInvokeArgs(), options.WithDefaults());
     }
 
 

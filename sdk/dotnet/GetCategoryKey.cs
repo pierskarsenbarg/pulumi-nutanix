@@ -23,6 +23,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetCategoryKeyResult> Invoke(GetCategoryKeyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCategoryKeyResult>("nutanix:index/getCategoryKey:getCategoryKey", args ?? new GetCategoryKeyInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describe a Nutanix Category Key and its values (if it has them).
+        /// </summary>
+        public static Output<GetCategoryKeyResult> Invoke(GetCategoryKeyInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetCategoryKeyResult>("nutanix:index/getCategoryKey:getCategoryKey", args ?? new GetCategoryKeyInvokeArgs(), options.WithDefaults());
     }
 
 

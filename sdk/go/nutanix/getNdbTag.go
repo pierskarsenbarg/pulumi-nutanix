@@ -80,21 +80,11 @@ type LookupNdbTagResult struct {
 }
 
 func LookupNdbTagOutput(ctx *pulumi.Context, args LookupNdbTagOutputArgs, opts ...pulumi.InvokeOption) LookupNdbTagResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupNdbTagResultOutput, error) {
 			args := v.(LookupNdbTagArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupNdbTagResult
-			secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbTag:getNdbTag", args, &rv, "", opts...)
-			if err != nil {
-				return LookupNdbTagResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupNdbTagResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupNdbTagResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("nutanix:index/getNdbTag:getNdbTag", args, LookupNdbTagResultOutput{}, options).(LookupNdbTagResultOutput), nil
 		}).(LookupNdbTagResultOutput)
 }
 

@@ -87,6 +87,44 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetClustersResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetClustersResult>("nutanix:index/getClusters:getClusters", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// Describes Clusters
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var clusters = Nutanix.GetClusters.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// 
+        /// ## Reference
+        /// 
+        /// The `project_reference`, `owner_reference`, `availability_zone_reference`, `cluster_reference`, attributes supports the following:
+        /// 
+        /// * `kind`: - The kind name (Default value: project).
+        /// * `name`: - the name.
+        /// * `UUID`: - the UUID.
+        /// 
+        /// ### Version
+        /// 
+        /// The version attribute supports the following:
+        /// 
+        /// * `product_name`: - Name of the producer/distribution of the image. For example windows or red hat.
+        /// * `product_version`: - Version string for the disk image.
+        /// 
+        /// See detailed information in [Nutanix Clusters](https://www.nutanix.dev/api_references/prism-central-v3/#/d93c30e04327e-get-a-list-of-existing-clusters).
+        /// </summary>
+        public static Output<GetClustersResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetClustersResult>("nutanix:index/getClusters:getClusters", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

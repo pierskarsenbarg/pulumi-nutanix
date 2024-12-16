@@ -69,6 +69,35 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetPermissionResult> Invoke(GetPermissionInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPermissionResult>("nutanix:index/getPermission:getPermission", args ?? new GetPermissionInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describe a Nutanix Permission and its values (if it has them).
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var byuuid = Nutanix.GetPermission.Invoke(new()
+        ///     {
+        ///         PermissionId = "26b81a55-2bca-48c6-9fab-4f82c6bb4284",
+        ///     });
+        /// 
+        ///     var byname = Nutanix.GetPermission.Invoke(new()
+        ///     {
+        ///         PermissionName = "Access_Console_Virtual_Machine",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetPermissionResult> Invoke(GetPermissionInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetPermissionResult>("nutanix:index/getPermission:getPermission", args ?? new GetPermissionInvokeArgs(), options.WithDefaults());
     }
 
 

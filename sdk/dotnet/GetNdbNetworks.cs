@@ -53,6 +53,27 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetNdbNetworksResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbNetworksResult>("nutanix:index/getNdbNetworks:getNdbNetworks", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// List of networks in Nutanix Database Service
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var nw = Nutanix.GetNdbNetworks.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNdbNetworksResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNdbNetworksResult>("nutanix:index/getNdbNetworks:getNdbNetworks", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

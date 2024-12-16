@@ -59,6 +59,30 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetNdbNetworkResult> Invoke(GetNdbNetworkInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbNetworkResult>("nutanix:index/getNdbNetwork:getNdbNetwork", args ?? new GetNdbNetworkInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describes a network in Nutanix Database Service
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var nw = Nutanix.GetNdbNetwork.Invoke(new()
+        ///     {
+        ///         Id = "{{ id of network }}",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNdbNetworkResult> Invoke(GetNdbNetworkInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNdbNetworkResult>("nutanix:index/getNdbNetwork:getNdbNetwork", args ?? new GetNdbNetworkInvokeArgs(), options.WithDefaults());
     }
 
 

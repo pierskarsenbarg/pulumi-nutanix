@@ -53,6 +53,27 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetRecoveryPlansResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRecoveryPlansResult>("nutanix:index/getRecoveryPlans:getRecoveryPlans", InvokeArgs.Empty, options.WithDefaults());
+
+        /// <summary>
+        /// Describes Recovery Plans
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var recoveryPlans = Nutanix.GetRecoveryPlans.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetRecoveryPlansResult> Invoke(InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRecoveryPlansResult>("nutanix:index/getRecoveryPlans:getRecoveryPlans", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

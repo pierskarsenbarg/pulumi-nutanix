@@ -56,18 +56,8 @@ type GetNdbNetworksResult struct {
 
 func GetNdbNetworksOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetNdbNetworksResultOutput {
 	return pulumi.ToOutput(0).ApplyT(func(int) (GetNdbNetworksResultOutput, error) {
-		opts = internal.PkgInvokeDefaultOpts(opts)
-		var rv GetNdbNetworksResult
-		secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbNetworks:getNdbNetworks", nil, &rv, "", opts...)
-		if err != nil {
-			return GetNdbNetworksResultOutput{}, err
-		}
-
-		output := pulumi.ToOutput(rv).(GetNdbNetworksResultOutput)
-		if secret {
-			return pulumi.ToSecret(output).(GetNdbNetworksResultOutput), nil
-		}
-		return output, nil
+		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+		return ctx.InvokeOutput("nutanix:index/getNdbNetworks:getNdbNetworks", nil, GetNdbNetworksResultOutput{}, options).(GetNdbNetworksResultOutput), nil
 	}).(GetNdbNetworksResultOutput)
 }
 

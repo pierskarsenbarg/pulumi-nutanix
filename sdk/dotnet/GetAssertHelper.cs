@@ -17,6 +17,9 @@ namespace PiersKarsenbarg.Nutanix
 
         public static Output<GetAssertHelperResult> Invoke(GetAssertHelperInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAssertHelperResult>("nutanix:index/getAssertHelper:getAssertHelper", args ?? new GetAssertHelperInvokeArgs(), options.WithDefaults());
+
+        public static Output<GetAssertHelperResult> Invoke(GetAssertHelperInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAssertHelperResult>("nutanix:index/getAssertHelper:getAssertHelper", args ?? new GetAssertHelperInvokeArgs(), options.WithDefaults());
     }
 
 

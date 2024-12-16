@@ -44,21 +44,11 @@ type LookupCategoryKeyResult struct {
 }
 
 func LookupCategoryKeyOutput(ctx *pulumi.Context, args LookupCategoryKeyOutputArgs, opts ...pulumi.InvokeOption) LookupCategoryKeyResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupCategoryKeyResultOutput, error) {
 			args := v.(LookupCategoryKeyArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupCategoryKeyResult
-			secret, err := ctx.InvokePackageRaw("nutanix:index/getCategoryKey:getCategoryKey", args, &rv, "", opts...)
-			if err != nil {
-				return LookupCategoryKeyResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupCategoryKeyResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupCategoryKeyResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("nutanix:index/getCategoryKey:getCategoryKey", args, LookupCategoryKeyResultOutput{}, options).(LookupCategoryKeyResultOutput), nil
 		}).(LookupCategoryKeyResultOutput)
 }
 

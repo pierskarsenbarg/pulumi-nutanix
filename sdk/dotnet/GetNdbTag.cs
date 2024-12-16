@@ -59,6 +59,30 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetNdbTagResult> Invoke(GetNdbTagInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbTagResult>("nutanix:index/getNdbTag:getNdbTag", args ?? new GetNdbTagInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describes a tag in Nutanix Database Service
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var tag = Nutanix.GetNdbTag.Invoke(new()
+        ///     {
+        ///         Id = "{{ tag id }}",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNdbTagResult> Invoke(GetNdbTagInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNdbTagResult>("nutanix:index/getNdbTag:getNdbTag", args ?? new GetNdbTagInvokeArgs(), options.WithDefaults());
     }
 
 

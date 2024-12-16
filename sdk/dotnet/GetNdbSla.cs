@@ -67,6 +67,34 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetNdbSlaResult> Invoke(GetNdbSlaInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbSlaResult>("nutanix:index/getNdbSla:getNdbSla", args ?? new GetNdbSlaInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describes a SLA in Nutanix Database Service
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var sla1 = Nutanix.GetNdbSla.Invoke(new()
+        ///     {
+        ///         SlaName = "test-sla",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["sla"] = sla1,
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNdbSlaResult> Invoke(GetNdbSlaInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNdbSlaResult>("nutanix:index/getNdbSla:getNdbSla", args ?? new GetNdbSlaInvokeArgs(), options.WithDefaults());
     }
 
 

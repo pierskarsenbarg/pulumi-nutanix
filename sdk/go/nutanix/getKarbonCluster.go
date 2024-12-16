@@ -78,21 +78,11 @@ type LookupKarbonClusterResult struct {
 }
 
 func LookupKarbonClusterOutput(ctx *pulumi.Context, args LookupKarbonClusterOutputArgs, opts ...pulumi.InvokeOption) LookupKarbonClusterResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupKarbonClusterResultOutput, error) {
 			args := v.(LookupKarbonClusterArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupKarbonClusterResult
-			secret, err := ctx.InvokePackageRaw("nutanix:index/getKarbonCluster:getKarbonCluster", args, &rv, "", opts...)
-			if err != nil {
-				return LookupKarbonClusterResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupKarbonClusterResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupKarbonClusterResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("nutanix:index/getKarbonCluster:getKarbonCluster", args, LookupKarbonClusterResultOutput{}, options).(LookupKarbonClusterResultOutput), nil
 		}).(LookupKarbonClusterResultOutput)
 }
 

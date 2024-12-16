@@ -23,6 +23,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetRoleResult> Invoke(GetRoleInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRoleResult>("nutanix:index/getRole:getRole", args ?? new GetRoleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describes a Role.
+        /// </summary>
+        public static Output<GetRoleResult> Invoke(GetRoleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetRoleResult>("nutanix:index/getRole:getRole", args ?? new GetRoleInvokeArgs(), options.WithDefaults());
     }
 
 

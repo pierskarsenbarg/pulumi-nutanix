@@ -59,6 +59,30 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetNdbNetworkAvailableIpsResult> Invoke(GetNdbNetworkAvailableIpsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbNetworkAvailableIpsResult>("nutanix:index/getNdbNetworkAvailableIps:getNdbNetworkAvailableIps", args ?? new GetNdbNetworkAvailableIpsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// List of available IPs in Network
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var network = Nutanix.GetNdbNetworkAvailableIps.Invoke(new()
+        ///     {
+        ///         ProfileId = "{{ network_profile_id }}",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNdbNetworkAvailableIpsResult> Invoke(GetNdbNetworkAvailableIpsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNdbNetworkAvailableIpsResult>("nutanix:index/getNdbNetworkAvailableIps:getNdbNetworkAvailableIps", args ?? new GetNdbNetworkAvailableIpsInvokeArgs(), options.WithDefaults());
     }
 
 

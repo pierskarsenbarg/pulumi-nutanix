@@ -53,6 +53,27 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetFoundationCentralImagedNodesListResult> Invoke(GetFoundationCentralImagedNodesListInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralImagedNodesListResult>("nutanix:index/getFoundationCentralImagedNodesList:getFoundationCentralImagedNodesList", args ?? new GetFoundationCentralImagedNodesListInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// List all the nodes registered with Foundation Central
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var nodesList = Nutanix.GetFoundationCentralImagedNodesList.Invoke();
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetFoundationCentralImagedNodesListResult> Invoke(GetFoundationCentralImagedNodesListInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetFoundationCentralImagedNodesListResult>("nutanix:index/getFoundationCentralImagedNodesList:getFoundationCentralImagedNodesList", args ?? new GetFoundationCentralImagedNodesListInvokeArgs(), options.WithDefaults());
     }
 
 

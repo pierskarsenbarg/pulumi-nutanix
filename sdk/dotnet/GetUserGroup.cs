@@ -79,6 +79,40 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetUserGroupResult> Invoke(GetUserGroupInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserGroupResult>("nutanix:index/getUserGroup:getUserGroup", args ?? new GetUserGroupInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Provides a datasource to retrieve a user group based on the input parameters.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var usergroup = Nutanix.GetUserGroup.Invoke(new()
+        ///     {
+        ///         UserGroupId = "dd30a856-8e72-4158-b716-98455ceda220",
+        ///     });
+        /// 
+        ///     var usergroupbyname = Nutanix.GetUserGroup.Invoke(new()
+        ///     {
+        ///         UserGroupName = "example-group-1",
+        ///     });
+        /// 
+        ///     var test = Nutanix.GetUserGroup.Invoke(new()
+        ///     {
+        ///         UserGroupDistinguishedName = "cn=example-group-1,cn=users,dc=ntnxlab,dc=local",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUserGroupResult> Invoke(GetUserGroupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUserGroupResult>("nutanix:index/getUserGroup:getUserGroup", args ?? new GetUserGroupInvokeArgs(), options.WithDefaults());
     }
 
 

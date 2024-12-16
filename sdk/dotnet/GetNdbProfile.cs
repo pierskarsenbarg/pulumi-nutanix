@@ -69,6 +69,35 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetNdbProfileResult> Invoke(GetNdbProfileInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbProfileResult>("nutanix:index/getNdbProfile:getNdbProfile", args ?? new GetNdbProfileInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describes a profile in Nutanix Database Service
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var profile1 = Nutanix.GetNdbProfile.Invoke(new()
+        ///     {
+        ///         ProfileType = "Network",
+        ///         ProfileName = "TEST_NETWORK_PROFILE",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["profile"] = profile1,
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNdbProfileResult> Invoke(GetNdbProfileInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNdbProfileResult>("nutanix:index/getNdbProfile:getNdbProfile", args ?? new GetNdbProfileInvokeArgs(), options.WithDefaults());
     }
 
 

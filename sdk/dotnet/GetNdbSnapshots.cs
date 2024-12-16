@@ -169,6 +169,85 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetNdbSnapshotsResult> Invoke(GetNdbSnapshotsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbSnapshotsResult>("nutanix:index/getNdbSnapshots:getNdbSnapshots", args ?? new GetNdbSnapshotsInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// List all snapshots present in Nutanix Database Service
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var snaps = Nutanix.GetNdbSnapshots.Invoke(new()
+        ///     {
+        ///         Filters = new[]
+        ///         {
+        ///             new Nutanix.Inputs.GetNdbSnapshotsFilterInputArgs
+        ///             {
+        ///                 TimeMachineId = "{{ time_machine_id }}",
+        ///             },
+        ///         },
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// 
+        /// ## Attribute Reference 
+        /// 
+        /// * `snapshots`: List of snapshots
+        /// 
+        /// ### snapshots
+        /// 
+        /// * `id`: name of snapshot
+        /// * `description`: description of snapshot
+        /// * `properties`: properties 
+        /// * `owner_id`: owner id 
+        /// * `date_created`: created date
+        /// * `date_modified`: modified date
+        /// * `properties`: properties 
+        /// * `tags`: tags
+        /// * `snapshot_uuid`: snapshot uuid 
+        /// * `nx_cluster_id`: nx cluster id
+        /// * `protection_domain_id`: protection domain
+        /// * `parent_snapshot_id`: parent snapshot id
+        /// * `database_node_id`: database node id
+        /// * `app_info_version`: App info version
+        /// * `status`: status
+        /// * `type`: type
+        /// * `applicable_types`: Applicable types
+        /// * `snapshot_timestamp`: snapshot timeStamp
+        /// * `metadata`: metadata of snapshot 
+        /// * `software_snapshot_id`: software snapshot id
+        /// * `software_database_snapshot`: software database snapshot
+        /// * `dbserver_storage_metadata_version`: dbserver storage metadata version
+        /// * `santised_from_snapshot_id`: sanitized  snapshot id
+        /// * `timezone`: timezone
+        /// * `processed`: processed
+        /// * `database_snapshot`: database snapshot
+        /// * `from_timestamp`: from timestamp
+        /// * `to_timestamp`: to timestamp
+        /// * `dbserver_id`: dbserver id
+        /// * `dbserver_name`: dbserver name
+        /// * `dbserver_ip`:dbserver ip
+        /// * `replicated_snapshots`: replicated snapshots
+        /// * `software_snapshot`: software snapshot
+        /// * `santised_snapshots`:santised snapshots
+        /// * `snapshot_family`: snapshot family
+        /// * `snapshot_timestamp_date`: snapshot timestamp date
+        /// * `lcm_config`: LCM config
+        /// * `parent_snapshot`: parent snapshot
+        /// * `snapshot_size`: snapshot size
+        /// 
+        /// 
+        /// See detailed information in [NDB Snapshots](https://www.nutanix.dev/api_references/ndb/#/d0b89ff892448-get-list-of-all-snapshots).
+        /// </summary>
+        public static Output<GetNdbSnapshotsResult> Invoke(GetNdbSnapshotsInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNdbSnapshotsResult>("nutanix:index/getNdbSnapshots:getNdbSnapshots", args ?? new GetNdbSnapshotsInvokeArgs(), options.WithDefaults());
     }
 
 

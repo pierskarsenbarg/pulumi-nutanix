@@ -18,7 +18,7 @@ def readme():
 
 
 setup(name='pulumi_nutanix',
-      python_requires='>=3.8',
+      python_requires='>=3.9',
       version=VERSION,
       description="A Pulumi package for creating and managing Nutanix cloud resources.",
       long_description=readme(),

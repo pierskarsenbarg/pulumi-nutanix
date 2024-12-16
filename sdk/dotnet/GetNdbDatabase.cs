@@ -67,6 +67,34 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetNdbDatabaseResult> Invoke(GetNdbDatabaseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbDatabaseResult>("nutanix:index/getNdbDatabase:getNdbDatabase", args ?? new GetNdbDatabaseInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describes a database instance in Nutanix Database Service
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var db1 = Nutanix.GetNdbDatabase.Invoke(new()
+        ///     {
+        ///         DatabaseId = "&lt;sample-id&gt;",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["db1Output"] = db1,
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNdbDatabaseResult> Invoke(GetNdbDatabaseInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNdbDatabaseResult>("nutanix:index/getNdbDatabase:getNdbDatabase", args ?? new GetNdbDatabaseInvokeArgs(), options.WithDefaults());
     }
 
 

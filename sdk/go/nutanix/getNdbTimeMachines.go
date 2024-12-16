@@ -55,18 +55,8 @@ type GetNdbTimeMachinesResult struct {
 
 func GetNdbTimeMachinesOutput(ctx *pulumi.Context, opts ...pulumi.InvokeOption) GetNdbTimeMachinesResultOutput {
 	return pulumi.ToOutput(0).ApplyT(func(int) (GetNdbTimeMachinesResultOutput, error) {
-		opts = internal.PkgInvokeDefaultOpts(opts)
-		var rv GetNdbTimeMachinesResult
-		secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbTimeMachines:getNdbTimeMachines", nil, &rv, "", opts...)
-		if err != nil {
-			return GetNdbTimeMachinesResultOutput{}, err
-		}
-
-		output := pulumi.ToOutput(rv).(GetNdbTimeMachinesResultOutput)
-		if secret {
-			return pulumi.ToSecret(output).(GetNdbTimeMachinesResultOutput), nil
-		}
-		return output, nil
+		options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+		return ctx.InvokeOutput("nutanix:index/getNdbTimeMachines:getNdbTimeMachines", nil, GetNdbTimeMachinesResultOutput{}, options).(GetNdbTimeMachinesResultOutput), nil
 	}).(GetNdbTimeMachinesResultOutput)
 }
 

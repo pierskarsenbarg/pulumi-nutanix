@@ -23,6 +23,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetKarbonPrivateRegistryResult> Invoke(GetKarbonPrivateRegistryInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetKarbonPrivateRegistryResult>("nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry", args ?? new GetKarbonPrivateRegistryInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describes Karbon private registry entry
+        /// </summary>
+        public static Output<GetKarbonPrivateRegistryResult> Invoke(GetKarbonPrivateRegistryInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetKarbonPrivateRegistryResult>("nutanix:index/getKarbonPrivateRegistry:getKarbonPrivateRegistry", args ?? new GetKarbonPrivateRegistryInvokeArgs(), options.WithDefaults());
     }
 
 

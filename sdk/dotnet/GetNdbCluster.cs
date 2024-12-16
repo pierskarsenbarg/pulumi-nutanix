@@ -67,6 +67,34 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetNdbClusterResult> Invoke(GetNdbClusterInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNdbClusterResult>("nutanix:index/getNdbCluster:getNdbCluster", args ?? new GetNdbClusterInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describes a cluster in Nutanix Database Service
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var c1 = Nutanix.GetNdbCluster.Invoke(new()
+        ///     {
+        ///         ClusterName = "&lt;era-cluster-name&gt;",
+        ///     });
+        /// 
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["cluster"] = c1,
+        ///     };
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNdbClusterResult> Invoke(GetNdbClusterInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNdbClusterResult>("nutanix:index/getNdbCluster:getNdbCluster", args ?? new GetNdbClusterInvokeArgs(), options.WithDefaults());
     }
 
 

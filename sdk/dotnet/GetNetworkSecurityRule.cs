@@ -145,6 +145,73 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetNetworkSecurityRuleResult> Invoke(GetNetworkSecurityRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityRuleResult>("nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule", args ?? new GetNetworkSecurityRuleInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describes a Network security rule
+        /// 
+        /// &gt; NOTE: The use of network_security_rule is only applicable in AHV clusters and requires Microsegmentation to be enabled. This feature is a function of the Flow product and requires a Flow license. For more information on Flow and Microsegmentation please visit https://www.nutanix.com/products/flow
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ### Isolate Development VMs From Production VMs And Get Its Information)
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var isolation = new Nutanix.NetworkSecurityRule("isolation", new()
+        ///     {
+        ///         Description = "Isolation Rule Example",
+        ///         IsolationRuleAction = "APPLY",
+        ///         IsolationRuleFirstEntityFilterKindLists = new[]
+        ///         {
+        ///             "vm",
+        ///         },
+        ///         IsolationRuleFirstEntityFilterParams = new[]
+        ///         {
+        ///             new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParamArgs
+        ///             {
+        ///                 Name = "Environment",
+        ///                 Values = new[]
+        ///                 {
+        ///                     "Dev",
+        ///                 },
+        ///             },
+        ///         },
+        ///         IsolationRuleFirstEntityFilterType = "CATEGORIES_MATCH_ALL",
+        ///         IsolationRuleSecondEntityFilterKindLists = new[]
+        ///         {
+        ///             "vm",
+        ///         },
+        ///         IsolationRuleSecondEntityFilterParams = new[]
+        ///         {
+        ///             new Nutanix.Inputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParamArgs
+        ///             {
+        ///                 Name = "Environment",
+        ///                 Values = new[]
+        ///                 {
+        ///                     "Production",
+        ///                 },
+        ///             },
+        ///         },
+        ///         IsolationRuleSecondEntityFilterType = "CATEGORIES_MATCH_ALL",
+        ///     });
+        /// 
+        ///     var test = Nutanix.GetNetworkSecurityRule.Invoke(new()
+        ///     {
+        ///         NetworkSecurityRuleId = isolation.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetNetworkSecurityRuleResult> Invoke(GetNetworkSecurityRuleInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityRuleResult>("nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule", args ?? new GetNetworkSecurityRuleInvokeArgs(), options.WithDefaults());
     }
 
 

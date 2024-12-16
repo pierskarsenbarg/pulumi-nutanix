@@ -129,21 +129,11 @@ type LookupNdbCloneResult struct {
 }
 
 func LookupNdbCloneOutput(ctx *pulumi.Context, args LookupNdbCloneOutputArgs, opts ...pulumi.InvokeOption) LookupNdbCloneResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupNdbCloneResultOutput, error) {
 			args := v.(LookupNdbCloneArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupNdbCloneResult
-			secret, err := ctx.InvokePackageRaw("nutanix:index/getNdbClone:getNdbClone", args, &rv, "", opts...)
-			if err != nil {
-				return LookupNdbCloneResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupNdbCloneResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupNdbCloneResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("nutanix:index/getNdbClone:getNdbClone", args, LookupNdbCloneResultOutput{}, options).(LookupNdbCloneResultOutput), nil
 		}).(LookupNdbCloneResultOutput)
 }
 

@@ -168,21 +168,11 @@ type LookupNetworkSecurityRuleResult struct {
 }
 
 func LookupNetworkSecurityRuleOutput(ctx *pulumi.Context, args LookupNetworkSecurityRuleOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkSecurityRuleResultOutput {
-	return pulumi.ToOutputWithContext(context.Background(), args).
+	return pulumi.ToOutputWithContext(ctx.Context(), args).
 		ApplyT(func(v interface{}) (LookupNetworkSecurityRuleResultOutput, error) {
 			args := v.(LookupNetworkSecurityRuleArgs)
-			opts = internal.PkgInvokeDefaultOpts(opts)
-			var rv LookupNetworkSecurityRuleResult
-			secret, err := ctx.InvokePackageRaw("nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule", args, &rv, "", opts...)
-			if err != nil {
-				return LookupNetworkSecurityRuleResultOutput{}, err
-			}
-
-			output := pulumi.ToOutput(rv).(LookupNetworkSecurityRuleResultOutput)
-			if secret {
-				return pulumi.ToSecret(output).(LookupNetworkSecurityRuleResultOutput), nil
-			}
-			return output, nil
+			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+			return ctx.InvokeOutput("nutanix:index/getNetworkSecurityRule:getNetworkSecurityRule", args, LookupNetworkSecurityRuleResultOutput{}, options).(LookupNetworkSecurityRuleResultOutput), nil
 		}).(LookupNetworkSecurityRuleResultOutput)
 }
 

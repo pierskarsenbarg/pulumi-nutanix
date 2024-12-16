@@ -35,6 +35,18 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public static Output<GetAccessControlPoliciesResult> Invoke(GetAccessControlPoliciesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAccessControlPoliciesResult>("nutanix:index/getAccessControlPolicies:getAccessControlPolicies", args ?? new GetAccessControlPoliciesInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Describes a list of access control policies.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ``` hcl
+        /// data "nutanix_access_control_policies" "test" {}
+        /// ```
+        /// </summary>
+        public static Output<GetAccessControlPoliciesResult> Invoke(GetAccessControlPoliciesInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetAccessControlPoliciesResult>("nutanix:index/getAccessControlPolicies:getAccessControlPolicies", args ?? new GetAccessControlPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 
