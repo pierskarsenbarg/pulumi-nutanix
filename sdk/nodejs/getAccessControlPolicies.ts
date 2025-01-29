@@ -10,6 +10,13 @@ import * as utilities from "./utilities";
  * Describes a list of access control policies.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const test = nutanix.getAccessControlPolicies({});
+ * ```
  */
 export function getAccessControlPolicies(args?: GetAccessControlPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessControlPoliciesResult> {
     args = args || {};
@@ -54,6 +61,13 @@ export interface GetAccessControlPoliciesResult {
  * Describes a list of access control policies.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const test = nutanix.getAccessControlPolicies({});
+ * ```
  */
 export function getAccessControlPoliciesOutput(args?: GetAccessControlPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAccessControlPoliciesResult> {
     args = args || {};

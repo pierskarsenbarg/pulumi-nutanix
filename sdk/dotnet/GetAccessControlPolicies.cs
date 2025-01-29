@@ -17,8 +17,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
-        /// ``` hcl
-        /// data "nutanix_access_control_policies" "test" {}
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var test = Nutanix.GetAccessControlPolicies.Invoke();
+        /// 
+        /// });
         /// ```
         /// </summary>
         public static Task<GetAccessControlPoliciesResult> InvokeAsync(GetAccessControlPoliciesArgs? args = null, InvokeOptions? options = null)
@@ -29,8 +38,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
-        /// ``` hcl
-        /// data "nutanix_access_control_policies" "test" {}
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var test = Nutanix.GetAccessControlPolicies.Invoke();
+        /// 
+        /// });
         /// ```
         /// </summary>
         public static Output<GetAccessControlPoliciesResult> Invoke(GetAccessControlPoliciesInvokeArgs? args = null, InvokeOptions? options = null)
@@ -41,8 +59,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## Example Usage
         /// 
-        /// ``` hcl
-        /// data "nutanix_access_control_policies" "test" {}
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var test = Nutanix.GetAccessControlPolicies.Invoke();
+        /// 
+        /// });
         /// ```
         /// </summary>
         public static Output<GetAccessControlPoliciesResult> Invoke(GetAccessControlPoliciesInvokeArgs args, InvokeOutputOptions options)

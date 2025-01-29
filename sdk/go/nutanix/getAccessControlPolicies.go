@@ -14,6 +14,28 @@ import (
 // Describes a list of access control policies.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetAccessControlPolicies(ctx, &nutanix.GetAccessControlPoliciesArgs{}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetAccessControlPolicies(ctx *pulumi.Context, args *GetAccessControlPoliciesArgs, opts ...pulumi.InvokeOption) (*GetAccessControlPoliciesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAccessControlPoliciesResult
