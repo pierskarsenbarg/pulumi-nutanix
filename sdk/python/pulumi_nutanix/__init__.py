@@ -7,9 +7,19 @@ import typing
 # Export this package's modules as members:
 from .access_control_policy import *
 from .address_group import *
+from .address_groups_v2 import *
+from .authorization_policy_v2 import *
 from .category_key import *
+from .category_v2 import *
 from .category_value import *
+from .cluster_add_node_v2 import *
+from .cluster_v2 import *
+from .clusters_discover_unconfigured_nodes_v2 import *
+from .clusters_unconfigured_node_networks_v2 import *
+from .deploy_templates_v2 import *
+from .directory_services_v2 import *
 from .floating_ip import *
+from .floating_ip_v2 import *
 from .foundation_central_api_keys import *
 from .foundation_central_image_cluster import *
 from .foundation_image import *
@@ -18,13 +28,25 @@ from .foundation_ipmi_config import *
 from .get_access_control_policies import *
 from .get_access_control_policy import *
 from .get_address_group import *
+from .get_address_group_v2 import *
 from .get_address_groups import *
+from .get_address_groups_v2 import *
 from .get_assert_helper import *
+from .get_authorization_policies_v2 import *
+from .get_authorization_policy_v2 import *
+from .get_categories_v2 import *
 from .get_category_key import *
+from .get_category_v2 import *
 from .get_cluster import *
+from .get_cluster_v2 import *
 from .get_clusters import *
+from .get_clusters_v2 import *
+from .get_directory_service_v2 import *
+from .get_directory_services_v2 import *
 from .get_floating_ip import *
+from .get_floating_ip_v2 import *
 from .get_floating_ips import *
+from .get_floating_ips_v2 import *
 from .get_foundation_central_api_keys import *
 from .get_foundation_central_cluster_details import *
 from .get_foundation_central_imaged_clusters_list import *
@@ -36,8 +58,14 @@ from .get_foundation_hypervisor_isos import *
 from .get_foundation_node_network_details import *
 from .get_foundation_nos_packages import *
 from .get_host import *
+from .get_host_v2 import *
 from .get_hosts import *
+from .get_hosts_v2 import *
 from .get_image import *
+from .get_image_placement_policies_v2 import *
+from .get_image_placement_policy_v2 import *
+from .get_image_v2 import *
+from .get_images_v2 import *
 from .get_karbon_cluster import *
 from .get_karbon_cluster_kube_config import *
 from .get_karbon_cluster_ssh import *
@@ -68,9 +96,16 @@ from .get_ndb_tags import *
 from .get_ndb_time_machine import *
 from .get_ndb_time_machines import *
 from .get_ndb_tms_capability import *
+from .get_network_security_policies_v2 import *
+from .get_network_security_policy_v2 import *
 from .get_network_security_rule import *
+from .get_ngt_configuration_v2 import *
+from .get_operation_v2 import *
+from .get_operations_v2 import *
 from .get_pbr import *
+from .get_pbr_v2 import *
 from .get_pbrs import *
+from .get_pbrs_v2 import *
 from .get_permission import *
 from .get_permissions import *
 from .get_project import *
@@ -79,21 +114,57 @@ from .get_protection_rule import *
 from .get_protection_rules import *
 from .get_recovery_plan import *
 from .get_recovery_plans import *
+from .get_recovery_point_v2 import *
+from .get_recovery_points_v2 import *
 from .get_role import *
+from .get_role_v2 import *
 from .get_roles import *
+from .get_roles_v2 import *
+from .get_route_table_v2 import *
+from .get_route_tables_v2 import *
+from .get_route_v2 import *
+from .get_routes_v2 import *
+from .get_saml_identity_provider_v2 import *
+from .get_saml_identity_providers_v2 import *
 from .get_service_group import *
+from .get_service_group_v2 import *
 from .get_service_groups import *
+from .get_service_groups_v2 import *
 from .get_static_routes import *
+from .get_storage_container_stats_info_v2 import *
+from .get_storage_container_v2 import *
+from .get_storage_containers_v2 import *
 from .get_subnet import *
+from .get_subnet_v2 import *
 from .get_subnets import *
+from .get_subnets_v2 import *
+from .get_template_v2 import *
+from .get_templates_v2 import *
 from .get_user import *
 from .get_user_group import *
+from .get_user_group_v2 import *
 from .get_user_groups import *
+from .get_user_groups_v2 import *
+from .get_user_v2 import *
 from .get_users import *
+from .get_users_v2 import *
 from .get_virtual_machine import *
+from .get_virtual_machine_v2 import *
+from .get_virtual_machines_v2 import *
+from .get_vm_recovery_point_info_v2 import *
+from .get_volume_group_disk_v2 import *
+from .get_volume_group_disks_v2 import *
+from .get_volume_group_v2 import *
+from .get_volume_groups_v2 import *
+from .get_volume_iscsi_client_v2 import *
+from .get_volume_iscsi_clients_v2 import *
 from .get_vpc import *
+from .get_vpc_v2 import *
 from .get_vpcs import *
+from .get_vpcs_v2 import *
 from .image import *
+from .image_placement_policy_v2 import *
+from .images_v2 import *
 from .karbon_cluster import *
 from .karbon_private_registry import *
 from .karbon_worker_nodepool import *
@@ -120,20 +191,52 @@ from .ndb_software_version_profile import *
 from .ndb_stretched_vlan import *
 from .ndb_tag import *
 from .ndb_tms_cluster import *
+from .network_security_policy_v2 import *
 from .network_security_rule import *
+from .ngt_insert_iso_v2 import *
+from .ngt_installation_v2 import *
+from .ngt_upgrade_v2 import *
 from .pbr import *
+from .pbr_v2 import *
+from .pc_registration_v2 import *
 from .project import *
 from .protection_rule import *
 from .provider import *
 from .recovery_plan import *
+from .recovery_point_replicate_v2 import *
+from .recovery_point_restore_v2 import *
+from .recovery_points_v2 import *
 from .role import *
+from .roles_v2 import *
+from .routes_v2 import *
+from .saml_identity_providers_v2 import *
 from .service_group import *
+from .service_groups_v2 import *
 from .static_routes import *
+from .storage_containers_v2 import *
 from .subnet import *
+from .subnet_v2 import *
+from .template_guest_os_actions_v2 import *
+from .template_v2 import *
 from .user import *
 from .user_groups import *
+from .user_groups_v2 import *
+from .users_v2 import *
 from .virtual_machine import *
+from .virtual_machine_v2 import *
+from .vm_cdrom_insert_eject_v2 import *
+from .vm_clone_v2 import *
+from .vm_gc_update_v2 import *
+from .vm_network_device_assign_ip_v2 import *
+from .vm_network_device_migrate_v2 import *
+from .vm_revert_v2 import *
+from .vm_shutdown_action_v2 import *
+from .volume_group_disk_v2 import *
+from .volume_group_iscsi_client_v2 import *
+from .volume_group_v2 import *
+from .volume_group_vm_v2 import *
 from .vpc import *
+from .vpc_v2 import *
 from ._inputs import *
 from . import outputs
 
@@ -165,10 +268,34 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/addressGroupsV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/addressGroupsV2:AddressGroupsV2": "AddressGroupsV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/authorizationPolicyV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/authorizationPolicyV2:AuthorizationPolicyV2": "AuthorizationPolicyV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/categoryKey",
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/categoryKey:CategoryKey": "CategoryKey"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/categoryV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/categoryV2:CategoryV2": "CategoryV2"
   }
  },
  {
@@ -181,10 +308,66 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/clusterAddNodeV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/clusterAddNodeV2:ClusterAddNodeV2": "ClusterAddNodeV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/clusterV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/clusterV2:ClusterV2": "ClusterV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/clustersDiscoverUnconfiguredNodesV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/clustersDiscoverUnconfiguredNodesV2:ClustersDiscoverUnconfiguredNodesV2": "ClustersDiscoverUnconfiguredNodesV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/clustersUnconfiguredNodeNetworksV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/clustersUnconfiguredNodeNetworksV2:ClustersUnconfiguredNodeNetworksV2": "ClustersUnconfiguredNodeNetworksV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/deployTemplatesV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/deployTemplatesV2:DeployTemplatesV2": "DeployTemplatesV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/directoryServicesV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/directoryServicesV2:DirectoryServicesV2": "DirectoryServicesV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/floatingIp",
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/floatingIp:FloatingIp": "FloatingIp"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/floatingIpV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/floatingIpV2:FloatingIpV2": "FloatingIpV2"
   }
  },
  {
@@ -233,6 +416,22 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/image:Image": "Image"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/imagePlacementPolicyV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/imagePlacementPolicyV2:ImagePlacementPolicyV2": "ImagePlacementPolicyV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/imagesV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/imagesV2:ImagesV2": "ImagesV2"
   }
  },
  {
@@ -445,6 +644,14 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/networkSecurityPolicyV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/networkSecurityPolicyV2:NetworkSecurityPolicyV2": "NetworkSecurityPolicyV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/networkSecurityRule",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -453,10 +660,50 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/ngtInsertIsoV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ngtInsertIsoV2:NgtInsertIsoV2": "NgtInsertIsoV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ngtInstallationV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ngtInstallationV2:NgtInstallationV2": "NgtInstallationV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/ngtUpgradeV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/ngtUpgradeV2:NgtUpgradeV2": "NgtUpgradeV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/pbr",
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/pbr:Pbr": "Pbr"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/pbrV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/pbrV2:PbrV2": "PbrV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/pcRegistrationV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/pcRegistrationV2:PcRegistrationV2": "PcRegistrationV2"
   }
  },
  {
@@ -485,10 +732,58 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/recoveryPointReplicateV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/recoveryPointReplicateV2:RecoveryPointReplicateV2": "RecoveryPointReplicateV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/recoveryPointRestoreV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/recoveryPointRestoreV2:RecoveryPointRestoreV2": "RecoveryPointRestoreV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/recoveryPointsV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/recoveryPointsV2:RecoveryPointsV2": "RecoveryPointsV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/role",
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/role:Role": "Role"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/rolesV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/rolesV2:RolesV2": "RolesV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/routesV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/routesV2:RoutesV2": "RoutesV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/samlIdentityProvidersV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/samlIdentityProvidersV2:SamlIdentityProvidersV2": "SamlIdentityProvidersV2"
   }
  },
  {
@@ -501,6 +796,14 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/serviceGroupsV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/serviceGroupsV2:ServiceGroupsV2": "ServiceGroupsV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/staticRoutes",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -509,10 +812,42 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/storageContainersV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/storageContainersV2:StorageContainersV2": "StorageContainersV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/subnet",
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/subnet:Subnet": "Subnet"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/subnetV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/subnetV2:SubnetV2": "SubnetV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/templateGuestOsActionsV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/templateGuestOsActionsV2:TemplateGuestOsActionsV2": "TemplateGuestOsActionsV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/templateV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/templateV2:TemplateV2": "TemplateV2"
   }
  },
  {
@@ -533,6 +868,22 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/userGroupsV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/userGroupsV2:UserGroupsV2": "UserGroupsV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/usersV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/usersV2:UsersV2": "UsersV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/virtualMachine",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -541,10 +892,114 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/virtualMachineV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/virtualMachineV2:VirtualMachineV2": "VirtualMachineV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/vmCdromInsertEjectV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/vmCdromInsertEjectV2:VmCdromInsertEjectV2": "VmCdromInsertEjectV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/vmCloneV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/vmCloneV2:VmCloneV2": "VmCloneV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/vmGcUpdateV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/vmGcUpdateV2:VmGcUpdateV2": "VmGcUpdateV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/vmNetworkDeviceAssignIpV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/vmNetworkDeviceAssignIpV2:VmNetworkDeviceAssignIpV2": "VmNetworkDeviceAssignIpV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/vmNetworkDeviceMigrateV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/vmNetworkDeviceMigrateV2:VmNetworkDeviceMigrateV2": "VmNetworkDeviceMigrateV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/vmRevertV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/vmRevertV2:VmRevertV2": "VmRevertV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/vmShutdownActionV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/vmShutdownActionV2:VmShutdownActionV2": "VmShutdownActionV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/volumeGroupDiskV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/volumeGroupDiskV2:VolumeGroupDiskV2": "VolumeGroupDiskV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/volumeGroupIscsiClientV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/volumeGroupIscsiClientV2:VolumeGroupIscsiClientV2": "VolumeGroupIscsiClientV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/volumeGroupV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/volumeGroupV2:VolumeGroupV2": "VolumeGroupV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/volumeGroupVmV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/volumeGroupVmV2:VolumeGroupVmV2": "VolumeGroupVmV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/vpc",
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/vpc:Vpc": "Vpc"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/vpcV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/vpcV2:VpcV2": "VpcV2"
   }
  }
 ]

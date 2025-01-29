@@ -25,12 +25,32 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AccessControlPolicy{}
 	case "nutanix:index/addressGroup:AddressGroup":
 		r = &AddressGroup{}
+	case "nutanix:index/addressGroupsV2:AddressGroupsV2":
+		r = &AddressGroupsV2{}
+	case "nutanix:index/authorizationPolicyV2:AuthorizationPolicyV2":
+		r = &AuthorizationPolicyV2{}
 	case "nutanix:index/categoryKey:CategoryKey":
 		r = &CategoryKey{}
+	case "nutanix:index/categoryV2:CategoryV2":
+		r = &CategoryV2{}
 	case "nutanix:index/categoryValue:CategoryValue":
 		r = &CategoryValue{}
+	case "nutanix:index/clusterAddNodeV2:ClusterAddNodeV2":
+		r = &ClusterAddNodeV2{}
+	case "nutanix:index/clusterV2:ClusterV2":
+		r = &ClusterV2{}
+	case "nutanix:index/clustersDiscoverUnconfiguredNodesV2:ClustersDiscoverUnconfiguredNodesV2":
+		r = &ClustersDiscoverUnconfiguredNodesV2{}
+	case "nutanix:index/clustersUnconfiguredNodeNetworksV2:ClustersUnconfiguredNodeNetworksV2":
+		r = &ClustersUnconfiguredNodeNetworksV2{}
+	case "nutanix:index/deployTemplatesV2:DeployTemplatesV2":
+		r = &DeployTemplatesV2{}
+	case "nutanix:index/directoryServicesV2:DirectoryServicesV2":
+		r = &DirectoryServicesV2{}
 	case "nutanix:index/floatingIp:FloatingIp":
 		r = &FloatingIp{}
+	case "nutanix:index/floatingIpV2:FloatingIpV2":
+		r = &FloatingIpV2{}
 	case "nutanix:index/foundationCentralApiKeys:FoundationCentralApiKeys":
 		r = &FoundationCentralApiKeys{}
 	case "nutanix:index/foundationCentralImageCluster:FoundationCentralImageCluster":
@@ -43,6 +63,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &FoundationIpmiConfig{}
 	case "nutanix:index/image:Image":
 		r = &Image{}
+	case "nutanix:index/imagePlacementPolicyV2:ImagePlacementPolicyV2":
+		r = &ImagePlacementPolicyV2{}
+	case "nutanix:index/imagesV2:ImagesV2":
+		r = &ImagesV2{}
 	case "nutanix:index/karbonCluster:KarbonCluster":
 		r = &KarbonCluster{}
 	case "nutanix:index/karbonPrivateRegistry:KarbonPrivateRegistry":
@@ -95,32 +119,96 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &NdbTag{}
 	case "nutanix:index/ndbTmsCluster:NdbTmsCluster":
 		r = &NdbTmsCluster{}
+	case "nutanix:index/networkSecurityPolicyV2:NetworkSecurityPolicyV2":
+		r = &NetworkSecurityPolicyV2{}
 	case "nutanix:index/networkSecurityRule:NetworkSecurityRule":
 		r = &NetworkSecurityRule{}
+	case "nutanix:index/ngtInsertIsoV2:NgtInsertIsoV2":
+		r = &NgtInsertIsoV2{}
+	case "nutanix:index/ngtInstallationV2:NgtInstallationV2":
+		r = &NgtInstallationV2{}
+	case "nutanix:index/ngtUpgradeV2:NgtUpgradeV2":
+		r = &NgtUpgradeV2{}
 	case "nutanix:index/pbr:Pbr":
 		r = &Pbr{}
+	case "nutanix:index/pbrV2:PbrV2":
+		r = &PbrV2{}
+	case "nutanix:index/pcRegistrationV2:PcRegistrationV2":
+		r = &PcRegistrationV2{}
 	case "nutanix:index/project:Project":
 		r = &Project{}
 	case "nutanix:index/protectionRule:ProtectionRule":
 		r = &ProtectionRule{}
 	case "nutanix:index/recoveryPlan:RecoveryPlan":
 		r = &RecoveryPlan{}
+	case "nutanix:index/recoveryPointReplicateV2:RecoveryPointReplicateV2":
+		r = &RecoveryPointReplicateV2{}
+	case "nutanix:index/recoveryPointRestoreV2:RecoveryPointRestoreV2":
+		r = &RecoveryPointRestoreV2{}
+	case "nutanix:index/recoveryPointsV2:RecoveryPointsV2":
+		r = &RecoveryPointsV2{}
 	case "nutanix:index/role:Role":
 		r = &Role{}
+	case "nutanix:index/rolesV2:RolesV2":
+		r = &RolesV2{}
+	case "nutanix:index/routesV2:RoutesV2":
+		r = &RoutesV2{}
+	case "nutanix:index/samlIdentityProvidersV2:SamlIdentityProvidersV2":
+		r = &SamlIdentityProvidersV2{}
 	case "nutanix:index/serviceGroup:ServiceGroup":
 		r = &ServiceGroup{}
+	case "nutanix:index/serviceGroupsV2:ServiceGroupsV2":
+		r = &ServiceGroupsV2{}
 	case "nutanix:index/staticRoutes:StaticRoutes":
 		r = &StaticRoutes{}
+	case "nutanix:index/storageContainersV2:StorageContainersV2":
+		r = &StorageContainersV2{}
 	case "nutanix:index/subnet:Subnet":
 		r = &Subnet{}
+	case "nutanix:index/subnetV2:SubnetV2":
+		r = &SubnetV2{}
+	case "nutanix:index/templateGuestOsActionsV2:TemplateGuestOsActionsV2":
+		r = &TemplateGuestOsActionsV2{}
+	case "nutanix:index/templateV2:TemplateV2":
+		r = &TemplateV2{}
 	case "nutanix:index/user:User":
 		r = &User{}
 	case "nutanix:index/userGroups:UserGroups":
 		r = &UserGroups{}
+	case "nutanix:index/userGroupsV2:UserGroupsV2":
+		r = &UserGroupsV2{}
+	case "nutanix:index/usersV2:UsersV2":
+		r = &UsersV2{}
 	case "nutanix:index/virtualMachine:VirtualMachine":
 		r = &VirtualMachine{}
+	case "nutanix:index/virtualMachineV2:VirtualMachineV2":
+		r = &VirtualMachineV2{}
+	case "nutanix:index/vmCdromInsertEjectV2:VmCdromInsertEjectV2":
+		r = &VmCdromInsertEjectV2{}
+	case "nutanix:index/vmCloneV2:VmCloneV2":
+		r = &VmCloneV2{}
+	case "nutanix:index/vmGcUpdateV2:VmGcUpdateV2":
+		r = &VmGcUpdateV2{}
+	case "nutanix:index/vmNetworkDeviceAssignIpV2:VmNetworkDeviceAssignIpV2":
+		r = &VmNetworkDeviceAssignIpV2{}
+	case "nutanix:index/vmNetworkDeviceMigrateV2:VmNetworkDeviceMigrateV2":
+		r = &VmNetworkDeviceMigrateV2{}
+	case "nutanix:index/vmRevertV2:VmRevertV2":
+		r = &VmRevertV2{}
+	case "nutanix:index/vmShutdownActionV2:VmShutdownActionV2":
+		r = &VmShutdownActionV2{}
+	case "nutanix:index/volumeGroupDiskV2:VolumeGroupDiskV2":
+		r = &VolumeGroupDiskV2{}
+	case "nutanix:index/volumeGroupIscsiClientV2:VolumeGroupIscsiClientV2":
+		r = &VolumeGroupIscsiClientV2{}
+	case "nutanix:index/volumeGroupV2:VolumeGroupV2":
+		r = &VolumeGroupV2{}
+	case "nutanix:index/volumeGroupVmV2:VolumeGroupVmV2":
+		r = &VolumeGroupVmV2{}
 	case "nutanix:index/vpc:Vpc":
 		r = &Vpc{}
+	case "nutanix:index/vpcV2:VpcV2":
+		r = &VpcV2{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -164,7 +252,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/addressGroupsV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/authorizationPolicyV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/categoryKey",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/categoryV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -174,7 +277,42 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/clusterAddNodeV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/clusterV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/clustersDiscoverUnconfiguredNodesV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/clustersUnconfiguredNodeNetworksV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/deployTemplatesV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/directoryServicesV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/floatingIp",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/floatingIpV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -205,6 +343,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/image",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/imagePlacementPolicyV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/imagesV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -339,12 +487,42 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/networkSecurityPolicyV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/networkSecurityRule",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/ngtInsertIsoV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ngtInstallationV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/ngtUpgradeV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/pbr",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/pbrV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/pcRegistrationV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -364,7 +542,37 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/recoveryPointReplicateV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/recoveryPointRestoreV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/recoveryPointsV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/role",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/rolesV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/routesV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/samlIdentityProvidersV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -374,12 +582,37 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/serviceGroupsV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/staticRoutes",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/storageContainersV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/subnet",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/subnetV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/templateGuestOsActionsV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/templateV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -394,12 +627,87 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/userGroupsV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/usersV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/virtualMachine",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/virtualMachineV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/vmCdromInsertEjectV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/vmCloneV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/vmGcUpdateV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/vmNetworkDeviceAssignIpV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/vmNetworkDeviceMigrateV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/vmRevertV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/vmShutdownActionV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/volumeGroupDiskV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/volumeGroupIscsiClientV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/volumeGroupV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/volumeGroupVmV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/vpc",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/vpcV2",
 		&module{version},
 	)
 	pulumi.RegisterResourcePackage(

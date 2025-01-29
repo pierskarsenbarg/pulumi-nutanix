@@ -14,6 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVpcsEntityStatusResourceExternalSubnetListResult
     {
+        public readonly int ActiveGatewayCount;
         /// <summary>
         /// Active Gateway Node. Only present in VPC Status Resources.
         /// </summary>
@@ -29,12 +30,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
         [OutputConstructor]
         private GetVpcsEntityStatusResourceExternalSubnetListResult(
+            int activeGatewayCount,
+
             ImmutableArray<Outputs.GetVpcsEntityStatusResourceExternalSubnetListActiveGatewayNodeResult> activeGatewayNodes,
 
             ImmutableArray<string> externalIpLists,
 
             ImmutableDictionary<string, string> externalSubnetReference)
         {
+            ActiveGatewayCount = activeGatewayCount;
             ActiveGatewayNodes = activeGatewayNodes;
             ExternalIpLists = externalIpLists;
             ExternalSubnetReference = externalSubnetReference;

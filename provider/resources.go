@@ -24,7 +24,7 @@ import (
 	shim "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim"
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
-	"github.com/terraform-providers/terraform-provider-nutanix/nutanix"
+	nutanix "github.com/terraform-providers/terraform-provider-nutanix/nutanix/provider"
 )
 
 // all of the token components used below.

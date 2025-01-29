@@ -182,6 +182,3087 @@ export interface AddressGroupIpAddressBlockList {
     prefixLength: number;
 }
 
+export interface AddressGroupsV2IpRange {
+    endIp: string;
+    startIp: string;
+}
+
+export interface AddressGroupsV2Ipv4Address {
+    prefixLength: number;
+    value: string;
+}
+
+export interface AddressGroupsV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface AuthorizationPolicyV2Entity {
+    reserved?: string;
+}
+
+export interface AuthorizationPolicyV2Identity {
+    reserved?: string;
+}
+
+export interface CategoryV2Association {
+    /**
+     * External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+     */
+    categoryId: string;
+    /**
+     * Count of associations of a particular type of entity or policy
+     */
+    count: string;
+    /**
+     * An enum denoting the resource group.
+     * Resources can be organized into either an entity or a policy.
+     * Valid values are:
+     * - `POLICY`:  A ResourceGroup denoting a nutanix policy like VM host affinity policy, image placement policy, access control policy, and so on.<br> A category is generally associated with many entities.<br> The policy which is associated with this category, is then applied to those entities which are also associated with the same category.
+     * - `ENTITY`: A ResourceGroup denoting a nutanix entity like VM, cluster, host, image, and so on.<br> A category is generally associated with many entities.<br> A policy is then applied to these entities through the category.
+     */
+    resourceGroup: string;
+    /**
+     * An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+     * Valid values are:
+     * - `APP`:  A resource of type application.
+     * - `PROTECTION_RULE`:  A policy or rule of type protection rule.
+     * - `IMAGE_RATE_LIMIT`: A resource of type rate limit.
+     * - `MH_VM`: A resource of type Virtual Machine.
+     * - `BLUEPRINT`:  A resource of type blueprint.
+     * - `HOST`:  A resource representing the underlying host, the machine hosting the hypervisors and VMs.
+     * - `IMAGE`:  A resource of type image.
+     * - `VM_VM_ANTI_AFFINITY_POLICY`:  A policy of type VM-VM anti-affinity; This policy decides that the specified set of VMs are running on different hosts.
+     * - `ACCESS_CONTROL_POLICY`: A policy or rule of type access control policy or ACP; the rules that decide authorization of users to access an API.
+     * - `VM_HOST_AFFINITY_POLICY`: A policy of type VM host affinity; The policy decides the affinity between a set of VMs to be run only a specified set of hosts
+     * - `NGT_POLICY`:  A policy or rule of type NGT policy.
+     * - `RECOVERY_PLAN`:  A policy or rule of type recovery plan.
+     * - `MARKETPLACE_ITEM`: A resource of type marketplace item.
+     * - `CLUSTER`:  A resource of type cluster, usually refers to a PE cluster.
+     * - `NETWORK_SECURITY_RULE`:  A rule of type network security.
+     * - `HOST_NIC`:  A resource of type Physical NIC.
+     * - `ACTION_RULE`:  A policy of type Playbook.
+     * - `VOLUMEGROUP`:  A resource of type volume group.
+     * - `REPORT`:  A resource of type report.
+     * - `STORAGE_POLICY`: A policy or rule of type storage policy.
+     * - `BUNDLE`:  A resource of type bundle.
+     * - `QOS_POLICY`: A policy or rule of type QoS policy.
+     * - `SUBNET`:  A resource of type network subnets.
+     * - `VM`: A resource of type Virtual Machine.
+     * - `NETWORK_SECURITY_POLICY`:  A policy of type network security.
+     * - `POLICY_SCHEMA`:  Policies like user-defined-alerts.
+     * - `IMAGE_PLACEMENT_POLICY`:  A policy of type image placement.
+     */
+    resourceType: string;
+}
+
+export interface CategoryV2DetailedAssociation {
+    /**
+     * External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+     */
+    categoryId: string;
+    /**
+     * An enum denoting the resource group.
+     * Resources can be organized into either an entity or a policy.
+     * Valid values are:
+     * - `POLICY`:  A ResourceGroup denoting a nutanix policy like VM host affinity policy, image placement policy, access control policy, and so on.<br> A category is generally associated with many entities.<br> The policy which is associated with this category, is then applied to those entities which are also associated with the same category.
+     * - `ENTITY`: A ResourceGroup denoting a nutanix entity like VM, cluster, host, image, and so on.<br> A category is generally associated with many entities.<br> A policy is then applied to these entities through the category.
+     */
+    resourceGroup: string;
+    /**
+     * The UUID of the entity or policy associated with the particular category.
+     */
+    resourceId: string;
+    /**
+     * An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+     * Valid values are:
+     * - `APP`:  A resource of type application.
+     * - `PROTECTION_RULE`:  A policy or rule of type protection rule.
+     * - `IMAGE_RATE_LIMIT`: A resource of type rate limit.
+     * - `MH_VM`: A resource of type Virtual Machine.
+     * - `BLUEPRINT`:  A resource of type blueprint.
+     * - `HOST`:  A resource representing the underlying host, the machine hosting the hypervisors and VMs.
+     * - `IMAGE`:  A resource of type image.
+     * - `VM_VM_ANTI_AFFINITY_POLICY`:  A policy of type VM-VM anti-affinity; This policy decides that the specified set of VMs are running on different hosts.
+     * - `ACCESS_CONTROL_POLICY`: A policy or rule of type access control policy or ACP; the rules that decide authorization of users to access an API.
+     * - `VM_HOST_AFFINITY_POLICY`: A policy of type VM host affinity; The policy decides the affinity between a set of VMs to be run only a specified set of hosts
+     * - `NGT_POLICY`:  A policy or rule of type NGT policy.
+     * - `RECOVERY_PLAN`:  A policy or rule of type recovery plan.
+     * - `MARKETPLACE_ITEM`: A resource of type marketplace item.
+     * - `CLUSTER`:  A resource of type cluster, usually refers to a PE cluster.
+     * - `NETWORK_SECURITY_RULE`:  A rule of type network security.
+     * - `HOST_NIC`:  A resource of type Physical NIC.
+     * - `ACTION_RULE`:  A policy of type Playbook.
+     * - `VOLUMEGROUP`:  A resource of type volume group.
+     * - `REPORT`:  A resource of type report.
+     * - `STORAGE_POLICY`: A policy or rule of type storage policy.
+     * - `BUNDLE`:  A resource of type bundle.
+     * - `QOS_POLICY`: A policy or rule of type QoS policy.
+     * - `SUBNET`:  A resource of type network subnets.
+     * - `VM`: A resource of type Virtual Machine.
+     * - `NETWORK_SECURITY_POLICY`:  A policy of type network security.
+     * - `POLICY_SCHEMA`:  Policies like user-defined-alerts.
+     * - `IMAGE_PLACEMENT_POLICY`:  A policy of type image placement.
+     */
+    resourceType: string;
+}
+
+export interface ClusterAddNodeV2ConfigParam {
+    /**
+     * -(Optional) HyperV Credentials.
+     */
+    hipervs: outputs.ClusterAddNodeV2ConfigParamHiperv[];
+    /**
+     * -(Optional) Indicates whether the node is compute only or not.
+     */
+    isComputeOnly: boolean;
+    /**
+     * -(Optional) Indicates whether the node is marked to be never schedulable or not.
+     */
+    isNeverSchedulable: boolean;
+    /**
+     * -(Optional) Indicates if node is compatible or not.
+     */
+    isNosCompatible: boolean;
+    /**
+     * -(Optional) Indicates if node discovery need to be skipped or not.
+     */
+    shouldSkipDiscovery: boolean;
+    /**
+     * -(Optional) Indicates if node imaging needs to be skipped or not.
+     */
+    shouldSkipImaging: boolean;
+    /**
+     * -(Optional) Indicates if rack awareness needs to be validated or not.
+     */
+    shouldValidateRackAwareness: boolean;
+    /**
+     * -(Optional) Target hypervisor.
+     */
+    targetHypervisor: string;
+}
+
+export interface ClusterAddNodeV2ConfigParamHiperv {
+    /**
+     * -(Optional) UserName and Password model.
+     */
+    domainDetails: outputs.ClusterAddNodeV2ConfigParamHipervDomainDetail[];
+    /**
+     * -(Optional) UserName and Password model.
+     */
+    failoverClusterDetails: outputs.ClusterAddNodeV2ConfigParamHipervFailoverClusterDetail[];
+}
+
+export interface ClusterAddNodeV2ConfigParamHipervDomainDetail {
+    /**
+     * -(Optional) Cluster name. This is part of payload for both cluster create & update operations.
+     */
+    clusterName: string;
+    /**
+     * -(Optional) Password.
+     */
+    password: string;
+    /**
+     * -(Optional) Username.
+     */
+    username: string;
+}
+
+export interface ClusterAddNodeV2ConfigParamHipervFailoverClusterDetail {
+    /**
+     * -(Optional) Cluster name. This is part of payload for both cluster create & update operations.
+     */
+    clusterName: string;
+    /**
+     * -(Optional) Password.
+     */
+    password: string;
+    /**
+     * -(Optional) Username.
+     */
+    username: string;
+}
+
+export interface ClusterAddNodeV2NodeParam {
+    /**
+     * -(Optional) Block list of a cluster.
+     */
+    blockLists: outputs.ClusterAddNodeV2NodeParamBlockList[];
+    /**
+     * -(Optional) Hypervisor bundle information.
+     */
+    bundleInfos: outputs.ClusterAddNodeV2NodeParamBundleInfo[];
+    computeNodeLists: outputs.ClusterAddNodeV2NodeParamComputeNodeList[];
+    /**
+     * -(Optional) Hyperv SKU.
+     */
+    hypervSku: string;
+    /**
+     * -(Optional) Hypervisor type to md5sum map.
+     */
+    hypervisorIsos: outputs.ClusterAddNodeV2NodeParamHypervisorIso[];
+    /**
+     * -(Required) List of nodes in a cluster.
+     */
+    nodeLists: outputs.ClusterAddNodeV2NodeParamNodeList[];
+    /**
+     * -(Optional) Indicates if the host networking needs to be skipped or not.
+     */
+    shouldSkipHostNetworking: boolean;
+}
+
+export interface ClusterAddNodeV2NodeParamBlockList {
+    /**
+     * -(Required) List of nodes in a block.
+     */
+    blockId: string;
+    /**
+     * -(Optional) Indicates if the host networking needs to be skipped or not.
+     */
+    rackName: string;
+}
+
+export interface ClusterAddNodeV2NodeParamBundleInfo {
+    /**
+     * -(Optional) Name of the hypervisor bundle.
+     */
+    name: string;
+}
+
+export interface ClusterAddNodeV2NodeParamComputeNodeList {
+    blockId: string;
+    digitalCertificateMapLists: outputs.ClusterAddNodeV2NodeParamComputeNodeListDigitalCertificateMapList[];
+    hypervisorHostname?: string;
+    hypervisorIps: outputs.ClusterAddNodeV2NodeParamComputeNodeListHypervisorIp[];
+    ipmiIps: outputs.ClusterAddNodeV2NodeParamComputeNodeListIpmiIp[];
+    model: string;
+    nodePosition: string;
+    nodeUuid: string;
+}
+
+export interface ClusterAddNodeV2NodeParamComputeNodeListDigitalCertificateMapList {
+    /**
+     * -(Optional) Field containing digitalCertificateBase64 and keyManagementServerUuid for key management server.
+     */
+    key: string;
+    value: string;
+}
+
+export interface ClusterAddNodeV2NodeParamComputeNodeListHypervisorIp {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.ClusterAddNodeV2NodeParamComputeNodeListHypervisorIpIpv4[];
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.ClusterAddNodeV2NodeParamComputeNodeListHypervisorIpIpv6[];
+}
+
+export interface ClusterAddNodeV2NodeParamComputeNodeListHypervisorIpIpv4 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface ClusterAddNodeV2NodeParamComputeNodeListHypervisorIpIpv6 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface ClusterAddNodeV2NodeParamComputeNodeListIpmiIp {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.ClusterAddNodeV2NodeParamComputeNodeListIpmiIpIpv4[];
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.ClusterAddNodeV2NodeParamComputeNodeListIpmiIpIpv6[];
+}
+
+export interface ClusterAddNodeV2NodeParamComputeNodeListIpmiIpIpv4 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface ClusterAddNodeV2NodeParamComputeNodeListIpmiIpIpv6 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface ClusterAddNodeV2NodeParamHypervisorIso {
+    md5Sum: string;
+    /**
+     * -(Optional) Hypervisor type.
+     * Valid values are:
+     * - `XEN`: Xen hypervisor.
+     * - `HYPERV`: Hyper-V hypervisor.
+     * - `NATIVEHOST`: NativeHost type where AOS runs natively, without hypervisor.
+     * - `ESX`: ESX hypervisor.
+     * - `AHV`: AHV hypervisor.
+     */
+    type: string;
+}
+
+export interface ClusterAddNodeV2NodeParamNodeList {
+    /**
+     * -(Optional) Block ID.
+     */
+    blockId: string;
+    /**
+     * -(Optional) Current network interface of a node.
+     */
+    currentNetworkInterface: string;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    cvmIps: outputs.ClusterAddNodeV2NodeParamNodeListCvmIp[];
+    /**
+     * -(Optional) List of objects containing digitalCertificateBase64 and keyManagementServerUuid fields for key management server.
+     */
+    digitalCertificateMapLists: outputs.ClusterAddNodeV2NodeParamNodeListDigitalCertificateMapList[];
+    /**
+     * -(Optional) Name of the host.
+     */
+    hypervisorHostname: string;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    hypervisorIps: outputs.ClusterAddNodeV2NodeParamNodeListHypervisorIp[];
+    /**
+     * -(Optional) Hypervisor type.
+     * Valid values are:
+     * - `XEN`: Xen hypervisor.
+     * - `HYPERV`: Hyper-V hypervisor.
+     * - `NATIVEHOST`: NativeHost type where AOS runs natively, without hypervisor.
+     * - `ESX`: ESX hypervisor.
+     * - `AHV`: AHV hypervisor.
+     */
+    hypervisorType: string;
+    /**
+     * -(Optional) Host version of the node.
+     */
+    hypervisorVersion: string;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    ipmiIps: outputs.ClusterAddNodeV2NodeParamNodeListIpmiIp[];
+    isLightCompute: boolean;
+    /**
+     * -(Optional) Is ROBO mixed hypervisor.
+     */
+    isRoboMixedHypervisor: boolean;
+    /**
+     * -(Optional) Rackable unit model name.
+     */
+    model: string;
+    /**
+     * -(Optional) Active and standby uplink information of the target nodes.
+     */
+    networks?: outputs.ClusterAddNodeV2NodeParamNodeListNetwork[];
+    /**
+     * -(Optional) Node position.
+     */
+    nodePosition: string;
+    /**
+     * -(Optional) Node UUID.
+     */
+    nodeUuid: string;
+    /**
+     * -(Optional) NOS software version of a node.
+     */
+    nosVersion: string;
+}
+
+export interface ClusterAddNodeV2NodeParamNodeListCvmIp {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.ClusterAddNodeV2NodeParamNodeListCvmIpIpv4[];
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.ClusterAddNodeV2NodeParamNodeListCvmIpIpv6[];
+}
+
+export interface ClusterAddNodeV2NodeParamNodeListCvmIpIpv4 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface ClusterAddNodeV2NodeParamNodeListCvmIpIpv6 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface ClusterAddNodeV2NodeParamNodeListDigitalCertificateMapList {
+    /**
+     * -(Optional) Field containing digitalCertificateBase64 and keyManagementServerUuid for key management server.
+     */
+    key: string;
+    value: string;
+}
+
+export interface ClusterAddNodeV2NodeParamNodeListHypervisorIp {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.ClusterAddNodeV2NodeParamNodeListHypervisorIpIpv4[];
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.ClusterAddNodeV2NodeParamNodeListHypervisorIpIpv6[];
+}
+
+export interface ClusterAddNodeV2NodeParamNodeListHypervisorIpIpv4 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface ClusterAddNodeV2NodeParamNodeListHypervisorIpIpv6 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface ClusterAddNodeV2NodeParamNodeListIpmiIp {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.ClusterAddNodeV2NodeParamNodeListIpmiIpIpv4[];
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.ClusterAddNodeV2NodeParamNodeListIpmiIpIpv6[];
+}
+
+export interface ClusterAddNodeV2NodeParamNodeListIpmiIpIpv4 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface ClusterAddNodeV2NodeParamNodeListIpmiIpIpv6 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface ClusterAddNodeV2NodeParamNodeListNetwork {
+    /**
+     * -(Optional) Name of the uplink.
+     */
+    name?: string;
+    /**
+     * -(Optional) List of network types.
+     */
+    networks?: string[];
+    /**
+     * -(Optional) Active and standby uplink information of the target nodes.
+     */
+    uplinks?: outputs.ClusterAddNodeV2NodeParamNodeListNetworkUplink[];
+}
+
+export interface ClusterAddNodeV2NodeParamNodeListNetworkUplink {
+    /**
+     * -(Optional) Active uplink information.
+     */
+    actives?: outputs.ClusterAddNodeV2NodeParamNodeListNetworkUplinkActive[];
+    /**
+     * -(Optional) Standby uplink information.
+     */
+    standbies?: outputs.ClusterAddNodeV2NodeParamNodeListNetworkUplinkStandby[];
+}
+
+export interface ClusterAddNodeV2NodeParamNodeListNetworkUplinkActive {
+    /**
+     * -(Optional) Mac address.
+     */
+    mac?: string;
+    /**
+     * -(Optional) Interface name.
+     */
+    name?: string;
+    /**
+     * -(Optional) Interface value.
+     */
+    value?: string;
+}
+
+export interface ClusterAddNodeV2NodeParamNodeListNetworkUplinkStandby {
+    /**
+     * -(Optional) Mac address.
+     */
+    mac?: string;
+    /**
+     * -(Optional) Interface name.
+     */
+    name?: string;
+    /**
+     * -(Optional) Interface value.
+     */
+    value?: string;
+}
+
+export interface ClusterAddNodeV2RemoveNodeParam {
+    /**
+     * -(Optional) Extra parameters for node addition.
+     */
+    extraParams?: outputs.ClusterAddNodeV2RemoveNodeParamExtraParam[];
+    /**
+     * -(Optional) Indicates if prechecks can be skipped for node removal.
+     */
+    shouldSkipPrechecks?: boolean;
+    /**
+     * -(Optional) Indicates if node removal can be skipped.
+     */
+    shouldSkipRemove?: boolean;
+}
+
+export interface ClusterAddNodeV2RemoveNodeParamExtraParam {
+    /**
+     * -(Optional) Indicates if add check needs to be skipped or not.
+     *
+     *
+     *
+     *
+     * See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/expandCluster).
+     */
+    shouldSkipAddCheck?: boolean;
+    /**
+     * -(Optional) Indicates if upgrade check needs to be skipped or not.
+     */
+    shouldSkipUpgradeCheck?: boolean;
+    /**
+     * -(Optional) Indicates if space check needs to be skipped or not.
+     */
+    skipSpaceCheck?: boolean;
+}
+
+export interface ClusterV2Config {
+    /**
+     * - (Optional) Public ssh key details. This is part of payload for cluster update operation only.
+     */
+    authorizedPublicKeyLists: outputs.ClusterV2ConfigAuthorizedPublicKeyList[];
+    /**
+     * - (Optional) Build information details.
+     */
+    buildInfos: outputs.ClusterV2ConfigBuildInfo[];
+    /**
+     * - (Optional) Cluster arch.
+     * Valid values are:
+     * - "PPC64LE" PPC64LE cluster architecture type.
+     * - "X86_64" X86_64 cluster architecture type.
+     */
+    clusterArch: string;
+    /**
+     * - (Optional) Cluster function. This is part of payload for cluster 
+     * create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
+     * Valid values are:
+     * - "AOS"
+     * - "PRISM_CENTRAL"
+     * - "CLOUD_DATA_GATEWAY"
+     * - "AFS"
+     * - "ONE_NODE"
+     * - "TWO_NODE"
+     * - "ANALYTICS_PLATFORM"
+     */
+    clusterFunctions: string[];
+    clusterSoftwareMaps: outputs.ClusterV2ConfigClusterSoftwareMap[];
+    /**
+     * - (Optional) Encryption in transit Status.
+     * Valid values are:
+     * - "DISABLED"	Disabled encryption status.
+     * - "ENABLED"	Enabled encryption status.
+     */
+    encryptionInTransitStatus: string;
+    encryptionOptions: string[];
+    encryptionScopes: string[];
+    /**
+     * - (Optional) Fault tolerant state of cluster.
+     */
+    faultToleranceStates: outputs.ClusterV2ConfigFaultToleranceState[];
+    hypervisorTypes: string[];
+    incarnationId: number;
+    isAvailable: boolean;
+    isLts: boolean;
+    isPasswordRemoteLoginEnabled: boolean;
+    isRemoteSupportEnabled: boolean;
+    /**
+     * - (Optional) Cluster operation mode. This is part of payload for cluster
+     * update operation only.
+     * Valid values are:
+     * - "OVERRIDE"	Override operation mode.
+     * - "STAND_ALONE"	Stand-alone operation mode.
+     * - "SWITCH_TO_TWO_NODE"	Switch to two-node operation mode.
+     * - "NORMAL"	Normal operation mode.
+     * - "READ_ONLY"	Read-only operation mode.
+     */
+    operationMode: string;
+    /**
+     * - (Optional) Pulse status for a cluster.
+     */
+    pulseStatuses: outputs.ClusterV2ConfigPulseStatus[];
+    /**
+     * - (Optional) Redundancy factor of a cluster. This is part of payload for both cluster create & update operations.
+     */
+    redundancyFactor: number;
+    timezone: string;
+}
+
+export interface ClusterV2ConfigAuthorizedPublicKeyList {
+    /**
+     * Ssh key value.
+     */
+    key: string;
+    /**
+     * Ssh key name.
+     */
+    name: string;
+}
+
+export interface ClusterV2ConfigBuildInfo {
+    /**
+     * Software build type.
+     */
+    buildType: string;
+    /**
+     * Commit Id used for version.
+     */
+    commitId: string;
+    /**
+     * Full name of software version.
+     */
+    fullVersion: string;
+    /**
+     * Short commit Id used for version.
+     */
+    shortCommitId: string;
+    /**
+     * Software version.
+     */
+    version: string;
+}
+
+export interface ClusterV2ConfigClusterSoftwareMap {
+    softwareType: string;
+    /**
+     * Software version.
+     */
+    version: string;
+}
+
+export interface ClusterV2ConfigFaultToleranceState {
+    currentClusterFaultTolerance: string;
+    currentMaxFaultTolerance: number;
+    desiredClusterFaultTolerance: string;
+    desiredMaxFaultTolerance: number;
+    /**
+     * Domain awareness level corresponds to unit of cluster group. This is part of payload for both cluster create & update operations.
+     * Valid values are:
+     * - "RACK"	Rack level awareness.
+     * - "NODE"	Node level awareness.
+     * - "BLOCK"	Block level awareness.
+     * - "DISK"	Disk level awareness.
+     */
+    domainAwarenessLevel: string;
+    redundancyStatuses: outputs.ClusterV2ConfigFaultToleranceStateRedundancyStatus[];
+}
+
+export interface ClusterV2ConfigFaultToleranceStateRedundancyStatus {
+    isCassandraPreparationDone: boolean;
+    isZookeeperPreparationDone: boolean;
+}
+
+export interface ClusterV2ConfigPulseStatus {
+    /**
+     * - (Optional) Flag to indicate if pulse is enabled or not.
+     */
+    isEnabled: boolean;
+    /**
+     * - (Optional) PII scrubbing level.
+     * Valid values are:
+     * - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
+     * - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
+     */
+    piiScrubbingLevel: string;
+}
+
+export interface ClusterV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface ClusterV2Network {
+    /**
+     * Params associated to the backplane network segmentation. This is part of payload for cluster(create operation only.)
+     */
+    backplanes: outputs.ClusterV2NetworkBackplane[];
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    externalAddresses: outputs.ClusterV2NetworkExternalAddress[];
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    externalDataServicesIps: outputs.ClusterV2NetworkExternalDataServicesIp[];
+    externalSubnet: string;
+    /**
+     * Cluster fully qualified domain name. This is part of payload for cluster update operation only.
+     */
+    fqdn: string;
+    /**
+     * List of HTTP Proxy server configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+     */
+    httpProxyLists: outputs.ClusterV2NetworkHttpProxyList[];
+    httpProxyWhiteLists: outputs.ClusterV2NetworkHttpProxyWhiteList[];
+    internalSubnet: string;
+    /**
+     * Management server type.
+     * Valid values are:
+     * - "PRISM_CENTRAL"	Prism Central management server.
+     * - "EXTERNAL"	External management server.
+     * - "LOCAL"	Local management server.
+     */
+    keyManagementServerType: string;
+    /**
+     * Management server information.
+     */
+    managementServers: outputs.ClusterV2NetworkManagementServer[];
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    masqueradingIps: outputs.ClusterV2NetworkMasqueradingIp[];
+    masqueradingPort: string;
+    /**
+     * List of name servers on a cluster. This is part of payload for both cluster create & update operations. For create operation, only ipv4 address / fqdn values are supported currently.
+     */
+    nameServerIpLists: outputs.ClusterV2NetworkNameServerIpList[];
+    /**
+     * NFS subnet whitelist addresses. This is part of payload for cluster update operation only.
+     */
+    nfsSubnetWhiteLists: string[];
+    /**
+     * List of NTP servers on a cluster. This is part of payload for both cluster create & update operations. For create operation, only ipv4 address / fqdn values are supported currently.
+     */
+    ntpServerIpLists: outputs.ClusterV2NetworkNtpServerIpList[];
+    /**
+     * SMTP servers on a cluster. This is part of payload for cluster update operation only.
+     */
+    smtpServers: outputs.ClusterV2NetworkSmtpServer[];
+}
+
+export interface ClusterV2NetworkBackplane {
+    /**
+     * Flag to indicate if the backplane segmentation needs to be enabled or not.
+     */
+    isSegmentationEnabled: boolean;
+    /**
+     * Netmask configs.
+     */
+    netmasks: outputs.ClusterV2NetworkBackplaneNetmask[];
+    /**
+     * Subnet configs.
+     */
+    subnets: outputs.ClusterV2NetworkBackplaneSubnet[];
+    /**
+     * VLAN Id tagged to the backplane network on the cluster. This is part of cluster create payload.
+     */
+    vlanTag: number;
+}
+
+export interface ClusterV2NetworkBackplaneNetmask {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface ClusterV2NetworkBackplaneSubnet {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface ClusterV2NetworkExternalAddress {
+    /**
+     * - (Optional) ip adresss params.
+     */
+    ipv4s: outputs.ClusterV2NetworkExternalAddressIpv4[];
+    /**
+     * - (Optional) Ip address params.
+     */
+    ipv6s: outputs.ClusterV2NetworkExternalAddressIpv6[];
+}
+
+export interface ClusterV2NetworkExternalAddressIpv4 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface ClusterV2NetworkExternalAddressIpv6 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     *
+     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     */
+    value: string;
+}
+
+export interface ClusterV2NetworkExternalDataServicesIp {
+    /**
+     * - (Optional) ip adresss params.
+     */
+    ipv4s: outputs.ClusterV2NetworkExternalDataServicesIpIpv4[];
+    /**
+     * - (Optional) Ip address params.
+     */
+    ipv6s: outputs.ClusterV2NetworkExternalDataServicesIpIpv6[];
+}
+
+export interface ClusterV2NetworkExternalDataServicesIpIpv4 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface ClusterV2NetworkExternalDataServicesIpIpv6 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     *
+     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     */
+    value: string;
+}
+
+export interface ClusterV2NetworkHttpProxyList {
+    /**
+     * - (Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    ipAddresses: outputs.ClusterV2NetworkHttpProxyListIpAddress[];
+    /**
+     * - (Required) HTTP Proxy server name configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+     */
+    name: string;
+    /**
+     * - (Optional) HTTP Proxy server password needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+     */
+    password?: string;
+    /**
+     * - (Optional) HTTP Proxy server port configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+     */
+    port: number;
+    proxyTypes: string[];
+    /**
+     * - (Optional) HTTP Proxy server username needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+     */
+    username: string;
+}
+
+export interface ClusterV2NetworkHttpProxyListIpAddress {
+    /**
+     * - (Optional) ip adresss params.
+     */
+    ipv4s: outputs.ClusterV2NetworkHttpProxyListIpAddressIpv4[];
+    /**
+     * - (Optional) Ip address params.
+     */
+    ipv6s: outputs.ClusterV2NetworkHttpProxyListIpAddressIpv6[];
+}
+
+export interface ClusterV2NetworkHttpProxyListIpAddressIpv4 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface ClusterV2NetworkHttpProxyListIpAddressIpv6 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     *
+     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     */
+    value: string;
+}
+
+export interface ClusterV2NetworkHttpProxyWhiteList {
+    /**
+     * - (Required) Target's identifier which is exempted from going through the configured HTTP Proxy.
+     */
+    target: string;
+    /**
+     * - (Optional) Target type.
+     * Valid values are:
+     * - "IPV6_ADDRESS"	IPV6 address.
+     * - "HOST_NAME"	Name of the host.
+     * - "IPV4_ADDRESS"	IPV4 address.
+     * - "DOMAIN_NAME_SUFFIX"	Domain Name Suffix required for http proxy whitelist.
+     * - "IPV4_NETWORK_MASK" Network Mask of the IpV4 family.
+     */
+    targetType: string;
+}
+
+export interface ClusterV2NetworkManagementServer {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    ips: outputs.ClusterV2NetworkManagementServerIp[];
+    isDrsEnabled: boolean;
+    isInUse: boolean;
+    /**
+     * Indicates whether it is registered or not.
+     */
+    isRegistered: boolean;
+    /**
+     * Management server type.
+     * Valid values are:
+     * - "VCENTER"	Vcenter management server.
+     */
+    type: string;
+}
+
+export interface ClusterV2NetworkManagementServerIp {
+    /**
+     * - (Optional) ip adresss params.
+     */
+    ipv4s: outputs.ClusterV2NetworkManagementServerIpIpv4[];
+    /**
+     * - (Optional) Ip address params.
+     */
+    ipv6s: outputs.ClusterV2NetworkManagementServerIpIpv6[];
+}
+
+export interface ClusterV2NetworkManagementServerIpIpv4 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface ClusterV2NetworkManagementServerIpIpv6 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     *
+     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     */
+    value: string;
+}
+
+export interface ClusterV2NetworkMasqueradingIp {
+    /**
+     * - (Optional) ip adresss params.
+     */
+    ipv4s: outputs.ClusterV2NetworkMasqueradingIpIpv4[];
+    /**
+     * - (Optional) Ip address params.
+     */
+    ipv6s: outputs.ClusterV2NetworkMasqueradingIpIpv6[];
+}
+
+export interface ClusterV2NetworkMasqueradingIpIpv4 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface ClusterV2NetworkMasqueradingIpIpv6 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     *
+     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     */
+    value: string;
+}
+
+export interface ClusterV2NetworkNameServerIpList {
+    /**
+     * - (Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns: outputs.ClusterV2NetworkNameServerIpListFqdn[];
+    /**
+     * - (Optional) ip adresss params.
+     */
+    ipv4s: outputs.ClusterV2NetworkNameServerIpListIpv4[];
+    /**
+     * - (Optional) Ip address params.
+     */
+    ipv6s: outputs.ClusterV2NetworkNameServerIpListIpv6[];
+}
+
+export interface ClusterV2NetworkNameServerIpListFqdn {
+    value: string;
+}
+
+export interface ClusterV2NetworkNameServerIpListIpv4 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface ClusterV2NetworkNameServerIpListIpv6 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     *
+     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     */
+    value: string;
+}
+
+export interface ClusterV2NetworkNtpServerIpList {
+    /**
+     * - (Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns: outputs.ClusterV2NetworkNtpServerIpListFqdn[];
+    /**
+     * - (Optional) ip adresss params.
+     */
+    ipv4s: outputs.ClusterV2NetworkNtpServerIpListIpv4[];
+    /**
+     * - (Optional) Ip address params.
+     */
+    ipv6s: outputs.ClusterV2NetworkNtpServerIpListIpv6[];
+}
+
+export interface ClusterV2NetworkNtpServerIpListFqdn {
+    value: string;
+}
+
+export interface ClusterV2NetworkNtpServerIpListIpv4 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface ClusterV2NetworkNtpServerIpListIpv6 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     *
+     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     */
+    value: string;
+}
+
+export interface ClusterV2NetworkSmtpServer {
+    /**
+     * SMTP email address.
+     */
+    emailAddress: string;
+    /**
+     * SMTP network details.
+     */
+    servers: outputs.ClusterV2NetworkSmtpServerServer[];
+    /**
+     * Type of SMTP server.
+     * Valid values are:
+     * - "PLAIN"	Plain type SMTP server.
+     * - "STARTTLS"	Start TLS type SMTP server.
+     * - "SSL"	SSL type SMTP server.
+     */
+    type: string;
+}
+
+export interface ClusterV2NetworkSmtpServerServer {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    ipAddresses: outputs.ClusterV2NetworkSmtpServerServerIpAddress[];
+    /**
+     * SMTP server password.
+     */
+    password?: string;
+    /**
+     * SMTP port.
+     */
+    port: number;
+    /**
+     * SMTP server user name.
+     */
+    username: string;
+}
+
+export interface ClusterV2NetworkSmtpServerServerIpAddress {
+    /**
+     * - (Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns: outputs.ClusterV2NetworkSmtpServerServerIpAddressFqdn[];
+    /**
+     * - (Optional) ip adresss params.
+     */
+    ipv4s: outputs.ClusterV2NetworkSmtpServerServerIpAddressIpv4[];
+    /**
+     * - (Optional) Ip address params.
+     */
+    ipv6s: outputs.ClusterV2NetworkSmtpServerServerIpAddressIpv6[];
+}
+
+export interface ClusterV2NetworkSmtpServerServerIpAddressFqdn {
+    value: string;
+}
+
+export interface ClusterV2NetworkSmtpServerServerIpAddressIpv4 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface ClusterV2NetworkSmtpServerServerIpAddressIpv6 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     *
+     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     */
+    value: string;
+}
+
+export interface ClusterV2Node {
+    /**
+     * - (Optional) List of nodes in a cluster.
+     */
+    nodeLists: outputs.ClusterV2NodeNodeList[];
+    numberOfNodes: number;
+}
+
+export interface ClusterV2NodeNodeList {
+    /**
+     * - (Required) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    controllerVmIps: outputs.ClusterV2NodeNodeListControllerVmIp[];
+    /**
+     * - (Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    hostIps: outputs.ClusterV2NodeNodeListHostIp[];
+    nodeUuid: string;
+}
+
+export interface ClusterV2NodeNodeListControllerVmIp {
+    /**
+     * - (Optional) ip adresss params.
+     */
+    ipv4s: outputs.ClusterV2NodeNodeListControllerVmIpIpv4[];
+    /**
+     * - (Optional) Ip address params.
+     */
+    ipv6s: outputs.ClusterV2NodeNodeListControllerVmIpIpv6[];
+}
+
+export interface ClusterV2NodeNodeListControllerVmIpIpv4 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface ClusterV2NodeNodeListControllerVmIpIpv6 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     *
+     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     */
+    value: string;
+}
+
+export interface ClusterV2NodeNodeListHostIp {
+    /**
+     * - (Optional) ip adresss params.
+     */
+    ipv4s: outputs.ClusterV2NodeNodeListHostIpIpv4[];
+    /**
+     * - (Optional) Ip address params.
+     */
+    ipv6s: outputs.ClusterV2NodeNodeListHostIpIpv6[];
+}
+
+export interface ClusterV2NodeNodeListHostIpIpv4 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     */
+    value: string;
+}
+
+export interface ClusterV2NodeNodeListHostIpIpv6 {
+    /**
+     * - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - (Required) Ip address.
+     *
+     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     */
+    value: string;
+}
+
+export interface ClustersDiscoverUnconfiguredNodesV2IpFilterList {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.ClustersDiscoverUnconfiguredNodesV2IpFilterListIpv4[];
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.ClustersDiscoverUnconfiguredNodesV2IpFilterListIpv6[];
+}
+
+export interface ClustersDiscoverUnconfiguredNodesV2IpFilterListIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ClustersDiscoverUnconfiguredNodesV2IpFilterListIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode {
+    /**
+     * Cluster arch type.
+     */
+    arch: string;
+    /**
+     * Attributes of a node.
+     */
+    attributes: outputs.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeAttribute[];
+    /**
+     * Cluster ID.
+     */
+    clusterId: string;
+    /**
+     * CPU type.
+     */
+    cpuTypes: string[];
+    /**
+     * Current CVM VLAN tag.
+     */
+    currentCvmVlanTag: string;
+    /**
+     * Current network interface of a node.
+     */
+    currentNetworkInterface: string;
+    /**
+     * CVM IP.
+     */
+    cvmIps: outputs.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeCvmIp[];
+    /**
+     * Foundation version.
+     */
+    foundationVersion: string;
+    /**
+     * Host type.
+     */
+    hostType: string;
+    /**
+     * Hypervisor IP Address.
+     */
+    hypervisorIps: outputs.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeHypervisorIp[];
+    /**
+     * Hypervisor type.
+     */
+    hypervisorType: string;
+    /**
+     * Host version of the node.
+     */
+    hypervisorVersion: string;
+    /**
+     * Interface IPV6 address.
+     */
+    interfaceIpv6: string;
+    /**
+     * IPMI IP Address.
+     */
+    ipmiIps: outputs.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeIpmiIp[];
+    /**
+     * Secure boot status.
+     */
+    isSecureBooted: boolean;
+    /**
+     * Position of a node in a rackable unit.
+     */
+    nodePosition: string;
+    /**
+     * UUID of the host.
+     */
+    nodeUuid: string;
+    /**
+     * NOS software version of a node.
+     */
+    nosVersion: string;
+    /**
+     * Maximum number of nodes in rackable-unit.
+     */
+    rackableUnitMaxNodes: number;
+    /**
+     * Rackable unit model type.
+     */
+    rackableUnitModel: string;
+    /**
+     * Rackable unit serial name.
+     */
+    rackableUnitSerial: string;
+}
+
+export interface ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeAttribute {
+    /**
+     * Default workload.
+     */
+    defaultWorkload: string;
+    /**
+     * Indicates whether the model is supported or not.
+     */
+    isModelSupported: boolean;
+    /**
+     * Indicates whether the hypervisor is robo mixed or not.
+     */
+    isRoboMixedHypervisor: boolean;
+    /**
+     * LCM family name.
+     */
+    lcmFamily: string;
+    /**
+     * Indicates if cvm interface can work with 1 GIG NIC or not.
+     */
+    shouldWorkWith1gNic: boolean;
+}
+
+export interface ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeCvmIp {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeCvmIpIpv4[];
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeCvmIpIpv6[];
+}
+
+export interface ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeCvmIpIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeCvmIpIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeHypervisorIp {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeHypervisorIpIpv4[];
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeHypervisorIpIpv6[];
+}
+
+export interface ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeHypervisorIpIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeHypervisorIpIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeIpmiIp {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeIpmiIpIpv4[];
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeIpmiIpIpv6[];
+}
+
+export interface ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeIpmiIpIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ClustersDiscoverUnconfiguredNodesV2UnconfiguredNodeIpmiIpIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodeList {
+    /**
+     * -(Optional) Block ID.
+     */
+    blockId: string;
+    /**
+     * -(Optional) Current network interface.
+     */
+    currentNetworkInterface: string;
+    /**
+     * -(Optional) CVM IP.
+     */
+    cvmIps: outputs.ClustersUnconfiguredNodeNetworksV2NodeListCvmIp[];
+    /**
+     * -(Optional) Digital certificate map list.
+     */
+    digitalCertificateMapLists: outputs.ClustersUnconfiguredNodeNetworksV2NodeListDigitalCertificateMapList[];
+    /**
+     * -(Optional) Hypervisor IP.
+     */
+    hypervisorIps: outputs.ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIp[];
+    /**
+     * -(Optional) Hypervisor type.
+     */
+    hypervisorType: string;
+    /**
+     * -(Optional) Hypervisor version.
+     */
+    hypervisorVersion: string;
+    /**
+     * -(Optional) IPMI IP.
+     */
+    ipmiIps: outputs.ClustersUnconfiguredNodeNetworksV2NodeListIpmiIp[];
+    /**
+     * -(Optional) Is compute only.
+     */
+    isComputeOnly: boolean;
+    isLightCompute: boolean;
+    /**
+     * -(Optional) Is ROBO mixed hypervisor.
+     */
+    isRoboMixedHypervisor: boolean;
+    /**
+     * -(Optional) Model name.
+     */
+    model: string;
+    /**
+     * -(Optional) Node position.
+     */
+    nodePosition: string;
+    /**
+     * -(Optional) Node UUID.
+     */
+    nodeUuid: string;
+    /**
+     * -(Optional) NOS version.
+     */
+    nosVersion: string;
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodeListCvmIp {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.ClustersUnconfiguredNodeNetworksV2NodeListCvmIpIpv4[];
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.ClustersUnconfiguredNodeNetworksV2NodeListCvmIpIpv6[];
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodeListCvmIpIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodeListCvmIpIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodeListDigitalCertificateMapList {
+    /**
+     * -(Optional) Field containing digitalCertificateBase64 and keyManagementServerUuid for key management server.
+     */
+    key: string;
+    value: string;
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIp {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIpIpv4[];
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIpIpv6[];
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIpIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIpIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodeListIpmiIp {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.ClustersUnconfiguredNodeNetworksV2NodeListIpmiIpIpv4[];
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.ClustersUnconfiguredNodeNetworksV2NodeListIpmiIpIpv6[];
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodeListIpmiIpIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodeListIpmiIpIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail {
+    /**
+     * - Network information for the given nodes.
+     */
+    networkInfos: outputs.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailNetworkInfo[];
+    /**
+     * - List of uplinks information for each CVM IP.
+     */
+    uplinks: outputs.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailUplink[];
+    /**
+     * - List of warning messages.
+     */
+    warnings: string[];
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailNetworkInfo {
+    /**
+     * - Network information of HCI nodes.
+     */
+    hcis: outputs.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailNetworkInfoHci[];
+    /**
+     * - Network information of SO nodes.
+     */
+    sos: outputs.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailNetworkInfoSo[];
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailNetworkInfoHci {
+    /**
+     * - Hypervisor type.
+     */
+    hypervisorType: string;
+    /**
+     * - Interface name.
+     */
+    name: string;
+    /**
+     * - List of networks for interface.
+     */
+    networks: string[];
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailNetworkInfoSo {
+    /**
+     * - Hypervisor type.
+     */
+    hypervisorType: string;
+    /**
+     * - Interface name.
+     */
+    name: string;
+    /**
+     * - List of networks for interface.
+     */
+    networks: string[];
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailUplink {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    cvmIps: outputs.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailUplinkCvmIp[];
+    /**
+     * - Uplink details for a controller VM.
+     */
+    uplinkLists: outputs.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailUplinkUplinkList[];
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailUplinkCvmIp {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailUplinkCvmIpIpv4[];
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailUplinkCvmIpIpv6[];
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailUplinkCvmIpIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailUplinkCvmIpIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailUplinkUplinkList {
+    /**
+     * - MAC address.
+     */
+    mac: string;
+    /**
+     * - Interface name.
+     */
+    name: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMap {
+    guestCustomizations: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomization[];
+    memorySizeBytes?: number;
+    name?: string;
+    nics?: outputs.DeployTemplatesV2OverrideVmConfigMapNic[];
+    numCoresPerSocket?: number;
+    numSockets?: number;
+    numThreadsPerCore?: number;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomization {
+    configs: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfig[];
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfig {
+    cloudInits: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInit[];
+    syspreps: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprep[];
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInit {
+    cloudInitScripts: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScript[];
+    datasourceType?: string;
+    metadata: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScript {
+    customKeyValues: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue[];
+    userDatas: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptUserData[];
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue {
+    keyValuePairs: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair {
+    name: string;
+    values: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitCloudInitScriptUserData {
+    value: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprep {
+    installType: string;
+    sysprepScripts: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScript[];
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScript {
+    customKeyValues: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue[];
+    unattendXmls: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXml[];
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
+    keyValuePairs: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    name: string;
+    values: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXml {
+    value: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNic {
+    backingInfos?: outputs.DeployTemplatesV2OverrideVmConfigMapNicBackingInfo[];
+    extId: string;
+    networkInfos?: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo[];
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicBackingInfo {
+    isConnected?: boolean;
+    macAddress?: string;
+    model?: string;
+    numQueues?: number;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfo {
+    ipv4Configs?: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4Config[];
+    ipv4Infos: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4Info[];
+    networkFunctionChains?: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChain[];
+    networkFunctionNicType?: string;
+    nicType?: string;
+    shouldAllowUnknownMacs?: boolean;
+    subnets?: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnet[];
+    trunkedVlans?: number[];
+    vlanMode?: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4Config {
+    ipAddresses?: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4ConfigIpAddress[];
+    secondaryIpAddressLists?: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
+    shouldAssignIp?: boolean;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: number;
+    value?: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: number;
+    value?: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4Info {
+    learnedIpAddresses: outputs.DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4InfoLearnedIpAddress[];
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoNetworkFunctionChain {
+    extId?: string;
+}
+
+export interface DeployTemplatesV2OverrideVmConfigMapNicNetworkInfoSubnet {
+    extId?: string;
+}
+
+export interface DirectoryServicesV2OpenLdapConfiguration {
+    /**
+     * -(Required) this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+     */
+    userConfigurations: outputs.DirectoryServicesV2OpenLdapConfigurationUserConfiguration[];
+    /**
+     * -(Required) this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+     */
+    userGroupConfigurations: outputs.DirectoryServicesV2OpenLdapConfigurationUserGroupConfiguration[];
+}
+
+export interface DirectoryServicesV2OpenLdapConfigurationUserConfiguration {
+    /**
+     * -(Required) Object class in the OpenLDAP system that corresponds to Users.
+     */
+    userObjectClass: string;
+    /**
+     * -(Required) Base DN for User search.
+     */
+    userSearchBase: string;
+    /**
+     * -(Required) Unique Identifier for each User which can be used in Authentication.
+     */
+    usernameAttribute: string;
+}
+
+export interface DirectoryServicesV2OpenLdapConfigurationUserGroupConfiguration {
+    /**
+     * -(Required) Attribute in a group that associates Users to the group.
+     */
+    groupMemberAttribute: string;
+    /**
+     * -(Required) User attribute value that will be used in group entity to associate User to the group.
+     */
+    groupMemberAttributeValue: string;
+    /**
+     * -(Required) Object class in the OpenLDAP system that corresponds to groups.
+     */
+    groupObjectClass: string;
+    /**
+     * -(Required) Base DN for group search.
+     */
+    groupSearchBase: string;
+}
+
+export interface DirectoryServicesV2ServiceAccount {
+    /**
+     * -(Required) Password to connect to the Directory Service.
+     */
+    password: string;
+    /**
+     * -(Required) Username to connect to the Directory Service.
+     */
+    username: string;
+}
+
+export interface FloatingIpV2Association {
+    /**
+     * Association of Floating IP with private IP
+     * - `private_ip_association.vpc_reference`: (Required) VPC in which the private IP exists.
+     * - `private_ip_association.private_ip`: (Required) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    privateIpAssociations?: outputs.FloatingIpV2AssociationPrivateIpAssociation[];
+    /**
+     * Association of Floating IP with nic
+     * - `vm_nic_association.vm_nic_reference`: (Required) VM NIC reference.
+     * - `vm_nic_association.vpc_reference`: (Optional) VPC reference to which the VM NIC subnet belongs.
+     */
+    vmNicAssociations?: outputs.FloatingIpV2AssociationVmNicAssociation[];
+}
+
+export interface FloatingIpV2AssociationPrivateIpAssociation {
+    privateIps: outputs.FloatingIpV2AssociationPrivateIpAssociationPrivateIp[];
+    /**
+     * VPC reference UUID
+     */
+    vpcReference: string;
+}
+
+export interface FloatingIpV2AssociationPrivateIpAssociationPrivateIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.FloatingIpV2AssociationPrivateIpAssociationPrivateIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.FloatingIpV2AssociationPrivateIpAssociationPrivateIpIpv6[];
+}
+
+export interface FloatingIpV2AssociationPrivateIpAssociationPrivateIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2AssociationPrivateIpAssociationPrivateIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2AssociationVmNicAssociation {
+    /**
+     * VM NIC reference.
+     */
+    vmNicReference: string;
+    /**
+     * VPC reference UUID
+     */
+    vpcReference: string;
+}
+
+export interface FloatingIpV2ExternalSubnet {
+    bridgeName: string;
+    clusterName: string;
+    clusterReference: string;
+    /**
+     * Description for the Floating IP.
+     */
+    description: string;
+    dhcpOptions: outputs.FloatingIpV2ExternalSubnetDhcpOption[];
+    dynamicIpAddresses: outputs.FloatingIpV2ExternalSubnetDynamicIpAddress[];
+    extId: string;
+    hypervisorType: string;
+    ipConfigs: outputs.FloatingIpV2ExternalSubnetIpConfig[];
+    ipPrefix: string;
+    ipUsages: outputs.FloatingIpV2ExternalSubnetIpUsage[];
+    isAdvancedNetworking: boolean;
+    isExternal: boolean;
+    isNatEnabled: boolean;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.FloatingIpV2ExternalSubnetLink[];
+    migrationState: string;
+    /**
+     * Name of the floating IP.
+     */
+    name: string;
+    networkFunctionChainReference: string;
+    networkId: number;
+    reservedIpAddresses: outputs.FloatingIpV2ExternalSubnetReservedIpAddress[];
+    subnetType: string;
+    virtualSwitchReference: string;
+    virtualSwitches: outputs.FloatingIpV2ExternalSubnetVirtualSwitch[];
+    /**
+     * VPC reference UUID
+     */
+    vpcReference: string;
+    /**
+     * Networking common base object
+     */
+    vpcs: outputs.FloatingIpV2ExternalSubnetVpc[];
+}
+
+export interface FloatingIpV2ExternalSubnetDhcpOption {
+    bootFileName: string;
+    domainName: string;
+    domainNameServers: outputs.FloatingIpV2ExternalSubnetDhcpOptionDomainNameServer[];
+    ntpServers: outputs.FloatingIpV2ExternalSubnetDhcpOptionNtpServer[];
+    searchDomains: string[];
+    tftpServerName: string;
+}
+
+export interface FloatingIpV2ExternalSubnetDhcpOptionDomainNameServer {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.FloatingIpV2ExternalSubnetDhcpOptionDomainNameServerIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.FloatingIpV2ExternalSubnetDhcpOptionDomainNameServerIpv6[];
+}
+
+export interface FloatingIpV2ExternalSubnetDhcpOptionDomainNameServerIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetDhcpOptionDomainNameServerIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetDhcpOptionNtpServer {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.FloatingIpV2ExternalSubnetDhcpOptionNtpServerIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.FloatingIpV2ExternalSubnetDhcpOptionNtpServerIpv6[];
+}
+
+export interface FloatingIpV2ExternalSubnetDhcpOptionNtpServerIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetDhcpOptionNtpServerIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetDynamicIpAddress {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.FloatingIpV2ExternalSubnetDynamicIpAddressIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.FloatingIpV2ExternalSubnetDynamicIpAddressIpv6[];
+}
+
+export interface FloatingIpV2ExternalSubnetDynamicIpAddressIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetDynamicIpAddressIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetIpConfig {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.FloatingIpV2ExternalSubnetIpConfigIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.FloatingIpV2ExternalSubnetIpConfigIpv6[];
+}
+
+export interface FloatingIpV2ExternalSubnetIpConfigIpv4 {
+    defaultGatewayIps: outputs.FloatingIpV2ExternalSubnetIpConfigIpv4DefaultGatewayIp[];
+    dhcpServerAddresses: outputs.FloatingIpV2ExternalSubnetIpConfigIpv4DhcpServerAddress[];
+    ipSubnets: outputs.FloatingIpV2ExternalSubnetIpConfigIpv4IpSubnet[];
+    poolLists: outputs.FloatingIpV2ExternalSubnetIpConfigIpv4PoolList[];
+}
+
+export interface FloatingIpV2ExternalSubnetIpConfigIpv4DefaultGatewayIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetIpConfigIpv4DhcpServerAddress {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetIpConfigIpv4IpSubnet {
+    ips: outputs.FloatingIpV2ExternalSubnetIpConfigIpv4IpSubnetIp[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface FloatingIpV2ExternalSubnetIpConfigIpv4IpSubnetIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetIpConfigIpv4PoolList {
+    endIps: outputs.FloatingIpV2ExternalSubnetIpConfigIpv4PoolListEndIp[];
+    startIps: outputs.FloatingIpV2ExternalSubnetIpConfigIpv4PoolListStartIp[];
+}
+
+export interface FloatingIpV2ExternalSubnetIpConfigIpv4PoolListEndIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetIpConfigIpv4PoolListStartIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetIpConfigIpv6 {
+    defaultGatewayIps: outputs.FloatingIpV2ExternalSubnetIpConfigIpv6DefaultGatewayIp[];
+    dhcpServerAddresses: outputs.FloatingIpV2ExternalSubnetIpConfigIpv6DhcpServerAddress[];
+    ipSubnets: outputs.FloatingIpV2ExternalSubnetIpConfigIpv6IpSubnet[];
+    poolLists: outputs.FloatingIpV2ExternalSubnetIpConfigIpv6PoolList[];
+}
+
+export interface FloatingIpV2ExternalSubnetIpConfigIpv6DefaultGatewayIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetIpConfigIpv6DhcpServerAddress {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetIpConfigIpv6IpSubnet {
+    ips: outputs.FloatingIpV2ExternalSubnetIpConfigIpv6IpSubnetIp[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface FloatingIpV2ExternalSubnetIpConfigIpv6IpSubnetIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetIpConfigIpv6PoolList {
+    endIps: outputs.FloatingIpV2ExternalSubnetIpConfigIpv6PoolListEndIp[];
+    startIps: outputs.FloatingIpV2ExternalSubnetIpConfigIpv6PoolListStartIp[];
+}
+
+export interface FloatingIpV2ExternalSubnetIpConfigIpv6PoolListEndIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetIpConfigIpv6PoolListStartIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetIpUsage {
+    ipPoolUsages: outputs.FloatingIpV2ExternalSubnetIpUsageIpPoolUsage[];
+    numAssignedIps: number;
+    numFreeIps: number;
+    numMacs: number;
+}
+
+export interface FloatingIpV2ExternalSubnetIpUsageIpPoolUsage {
+    numFreeIps: number;
+    numTotalIps: number;
+    ranges: outputs.FloatingIpV2ExternalSubnetIpUsageIpPoolUsageRange[];
+}
+
+export interface FloatingIpV2ExternalSubnetIpUsageIpPoolUsageRange {
+    endIps: outputs.FloatingIpV2ExternalSubnetIpUsageIpPoolUsageRangeEndIp[];
+    startIps: outputs.FloatingIpV2ExternalSubnetIpUsageIpPoolUsageRangeStartIp[];
+}
+
+export interface FloatingIpV2ExternalSubnetIpUsageIpPoolUsageRangeEndIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetIpUsageIpPoolUsageRangeStartIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetLink {
+    href: string;
+    rel: string;
+}
+
+export interface FloatingIpV2ExternalSubnetReservedIpAddress {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVirtualSwitch {
+    bondMode: boolean;
+    clusters: outputs.FloatingIpV2ExternalSubnetVirtualSwitchCluster[];
+    /**
+     * Description for the Floating IP.
+     */
+    description: string;
+    extId: string;
+    hasDeploymentError: boolean;
+    isDefault: boolean;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.FloatingIpV2ExternalSubnetVirtualSwitchLink[];
+    /**
+     * Metadata associated with this resource.
+     */
+    metadatas: outputs.FloatingIpV2ExternalSubnetVirtualSwitchMetadata[];
+    mtu: number;
+    /**
+     * Name of the floating IP.
+     */
+    name: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVirtualSwitchCluster {
+    extId: string;
+    gatewayIpAddresses: outputs.FloatingIpV2ExternalSubnetVirtualSwitchClusterGatewayIpAddress[];
+    hosts: outputs.FloatingIpV2ExternalSubnetVirtualSwitchClusterHost[];
+}
+
+export interface FloatingIpV2ExternalSubnetVirtualSwitchClusterGatewayIpAddress {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVirtualSwitchClusterHost {
+    extId: string;
+    hostNics: string[];
+    internalBridgeName: string;
+    ipAddresses: outputs.FloatingIpV2ExternalSubnetVirtualSwitchClusterHostIpAddress[];
+    routeTable: number;
+}
+
+export interface FloatingIpV2ExternalSubnetVirtualSwitchClusterHostIpAddress {
+    ips: outputs.FloatingIpV2ExternalSubnetVirtualSwitchClusterHostIpAddressIp[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface FloatingIpV2ExternalSubnetVirtualSwitchClusterHostIpAddressIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVirtualSwitchLink {
+    href: string;
+    rel: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVirtualSwitchMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVpc {
+    commonDhcpOptions: outputs.FloatingIpV2ExternalSubnetVpcCommonDhcpOption[];
+    /**
+     * Description for the Floating IP.
+     */
+    description: string;
+    extId: string;
+    externalRoutingDomainReference: string;
+    externalSubnets: outputs.FloatingIpV2ExternalSubnetVpcExternalSubnet[];
+    externallyRoutablePrefixes: outputs.FloatingIpV2ExternalSubnetVpcExternallyRoutablePrefix[];
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.FloatingIpV2ExternalSubnetVpcLink[];
+    /**
+     * Metadata associated with this resource.
+     */
+    metadatas: outputs.FloatingIpV2ExternalSubnetVpcMetadata[];
+    /**
+     * Name of the floating IP.
+     */
+    name: string;
+    snatIps: outputs.FloatingIpV2ExternalSubnetVpcSnatIp[];
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+    vpcType: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVpcCommonDhcpOption {
+    domainNameServers: outputs.FloatingIpV2ExternalSubnetVpcCommonDhcpOptionDomainNameServer[];
+}
+
+export interface FloatingIpV2ExternalSubnetVpcCommonDhcpOptionDomainNameServer {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.FloatingIpV2ExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.FloatingIpV2ExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6[];
+}
+
+export interface FloatingIpV2ExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVpcExternalSubnet {
+    activeGatewayCount: number;
+    activeGatewayNodes: outputs.FloatingIpV2ExternalSubnetVpcExternalSubnetActiveGatewayNode[];
+    externalIps: outputs.FloatingIpV2ExternalSubnetVpcExternalSubnetExternalIp[];
+    gatewayNodes: string[];
+    subnetReference: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVpcExternalSubnetActiveGatewayNode {
+    nodeId: string;
+    nodeIpAddresses: outputs.FloatingIpV2ExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress[];
+}
+
+export interface FloatingIpV2ExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.FloatingIpV2ExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.FloatingIpV2ExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6[];
+}
+
+export interface FloatingIpV2ExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVpcExternalSubnetExternalIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.FloatingIpV2ExternalSubnetVpcExternalSubnetExternalIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.FloatingIpV2ExternalSubnetVpcExternalSubnetExternalIpIpv6[];
+}
+
+export interface FloatingIpV2ExternalSubnetVpcExternalSubnetExternalIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVpcExternalSubnetExternalIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVpcExternallyRoutablePrefix {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.FloatingIpV2ExternalSubnetVpcExternallyRoutablePrefixIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.FloatingIpV2ExternalSubnetVpcExternallyRoutablePrefixIpv6[];
+}
+
+export interface FloatingIpV2ExternalSubnetVpcExternallyRoutablePrefixIpv4 {
+    ips: outputs.FloatingIpV2ExternalSubnetVpcExternallyRoutablePrefixIpv4Ip[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface FloatingIpV2ExternalSubnetVpcExternallyRoutablePrefixIpv4Ip {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVpcExternallyRoutablePrefixIpv6 {
+    ips: outputs.FloatingIpV2ExternalSubnetVpcExternallyRoutablePrefixIpv6Ip[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface FloatingIpV2ExternalSubnetVpcExternallyRoutablePrefixIpv6Ip {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVpcLink {
+    href: string;
+    rel: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVpcMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVpcSnatIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.FloatingIpV2ExternalSubnetVpcSnatIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.FloatingIpV2ExternalSubnetVpcSnatIpIpv6[];
+}
+
+export interface FloatingIpV2ExternalSubnetVpcSnatIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2ExternalSubnetVpcSnatIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2FloatingIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.FloatingIpV2FloatingIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.FloatingIpV2FloatingIpIpv6[];
+}
+
+export interface FloatingIpV2FloatingIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2FloatingIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2Link {
+    href?: string;
+    rel?: string;
+}
+
+export interface FloatingIpV2Metadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface FloatingIpV2VmNic {
+    privateIp?: string;
+}
+
+export interface FloatingIpV2Vpc {
+    commonDhcpOptions: outputs.FloatingIpV2VpcCommonDhcpOption[];
+    /**
+     * Description for the Floating IP.
+     */
+    description: string;
+    extId: string;
+    externalRoutingDomainReference: string;
+    externalSubnets: outputs.FloatingIpV2VpcExternalSubnet[];
+    externallyRoutablePrefixes: outputs.FloatingIpV2VpcExternallyRoutablePrefix[];
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.FloatingIpV2VpcLink[];
+    /**
+     * Metadata associated with this resource.
+     */
+    metadatas: outputs.FloatingIpV2VpcMetadata[];
+    /**
+     * Name of the floating IP.
+     */
+    name: string;
+    snatIps: outputs.FloatingIpV2VpcSnatIp[];
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+    vpcType: string;
+}
+
+export interface FloatingIpV2VpcCommonDhcpOption {
+    domainNameServers: outputs.FloatingIpV2VpcCommonDhcpOptionDomainNameServer[];
+}
+
+export interface FloatingIpV2VpcCommonDhcpOptionDomainNameServer {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.FloatingIpV2VpcCommonDhcpOptionDomainNameServerIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.FloatingIpV2VpcCommonDhcpOptionDomainNameServerIpv6[];
+}
+
+export interface FloatingIpV2VpcCommonDhcpOptionDomainNameServerIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2VpcCommonDhcpOptionDomainNameServerIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2VpcExternalSubnet {
+    activeGatewayCount: number;
+    activeGatewayNodes: outputs.FloatingIpV2VpcExternalSubnetActiveGatewayNode[];
+    externalIps: outputs.FloatingIpV2VpcExternalSubnetExternalIp[];
+    gatewayNodes: string[];
+    subnetReference: string;
+}
+
+export interface FloatingIpV2VpcExternalSubnetActiveGatewayNode {
+    nodeId: string;
+    nodeIpAddresses: outputs.FloatingIpV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress[];
+}
+
+export interface FloatingIpV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.FloatingIpV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.FloatingIpV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6[];
+}
+
+export interface FloatingIpV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2VpcExternalSubnetExternalIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.FloatingIpV2VpcExternalSubnetExternalIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.FloatingIpV2VpcExternalSubnetExternalIpIpv6[];
+}
+
+export interface FloatingIpV2VpcExternalSubnetExternalIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2VpcExternalSubnetExternalIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2VpcExternallyRoutablePrefix {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.FloatingIpV2VpcExternallyRoutablePrefixIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.FloatingIpV2VpcExternallyRoutablePrefixIpv6[];
+}
+
+export interface FloatingIpV2VpcExternallyRoutablePrefixIpv4 {
+    ips: outputs.FloatingIpV2VpcExternallyRoutablePrefixIpv4Ip[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface FloatingIpV2VpcExternallyRoutablePrefixIpv4Ip {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2VpcExternallyRoutablePrefixIpv6 {
+    ips: outputs.FloatingIpV2VpcExternallyRoutablePrefixIpv6Ip[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface FloatingIpV2VpcExternallyRoutablePrefixIpv6Ip {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2VpcLink {
+    href: string;
+    rel: string;
+}
+
+export interface FloatingIpV2VpcMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface FloatingIpV2VpcSnatIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.FloatingIpV2VpcSnatIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.FloatingIpV2VpcSnatIpIpv6[];
+}
+
+export interface FloatingIpV2VpcSnatIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface FloatingIpV2VpcSnatIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
 export interface FoundationCentralImageClusterClusterStatus {
     aggregatePercentComplete: number;
     clusterCreationStarted: boolean;
@@ -1210,6 +4291,33 @@ export interface GetAddressGroupIpAddressBlockList {
     prefixLength: number;
 }
 
+export interface GetAddressGroupV2IpRange {
+    /**
+     * end ip
+     */
+    endIp: string;
+    /**
+     * start ip
+     */
+    startIp: string;
+}
+
+export interface GetAddressGroupV2Ipv4Address {
+    /**
+     * The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * ip of address
+     */
+    value: string;
+}
+
+export interface GetAddressGroupV2Link {
+    href: string;
+    rel: string;
+}
+
 export interface GetAddressGroupsEntity {
     /**
      * Information about address_group
@@ -1291,9 +4399,243 @@ export interface GetAddressGroupsMetadata {
     sortOrder: string;
 }
 
+export interface GetAddressGroupsV2AddressGroup {
+    /**
+     * created by.
+     */
+    createdBy: string;
+    /**
+     * A user defined annotation for an Address Group.
+     */
+    description: string;
+    /**
+     * Address group UUID.
+     */
+    extId: string;
+    /**
+     * List of IP range containing start and end IP
+     */
+    ipRanges: outputs.GetAddressGroupsV2AddressGroupIpRange[];
+    /**
+     * List of CIDR blocks in the Address Group.
+     */
+    ipv4Addresses: outputs.GetAddressGroupsV2AddressGroupIpv4Address[];
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetAddressGroupsV2AddressGroupLink[];
+    /**
+     * A short identifier for an Address Group.
+     */
+    name: string;
+    /**
+     * Reference to policy associated with Address Group.
+     */
+    policyReferences: string[];
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+}
+
+export interface GetAddressGroupsV2AddressGroupIpRange {
+    /**
+     * end ip
+     */
+    endIp: string;
+    /**
+     * start ip
+     */
+    startIp: string;
+}
+
+export interface GetAddressGroupsV2AddressGroupIpv4Address {
+    /**
+     * The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * ip of address
+     */
+    value: string;
+}
+
+export interface GetAddressGroupsV2AddressGroupLink {
+    href: string;
+    rel: string;
+}
+
 export interface GetAssertHelperCheck {
     condition: boolean;
     errorMessage: string;
+}
+
+export interface GetAuthorizationPoliciesV2AuthPolicy {
+    authorizationPolicyType: string;
+    clientName: string;
+    createdBy: string;
+    createdTime: string;
+    description: string;
+    displayName: string;
+    entities: outputs.GetAuthorizationPoliciesV2AuthPolicyEntity[];
+    extId: string;
+    identities: outputs.GetAuthorizationPoliciesV2AuthPolicyIdentity[];
+    isSystemDefined: boolean;
+    lastUpdatedTime: string;
+    role: string;
+}
+
+export interface GetAuthorizationPoliciesV2AuthPolicyEntity {
+    reserved: string;
+}
+
+export interface GetAuthorizationPoliciesV2AuthPolicyIdentity {
+    reserved: string;
+}
+
+export interface GetAuthorizationPolicyV2Entity {
+    reserved: string;
+}
+
+export interface GetAuthorizationPolicyV2Identity {
+    reserved: string;
+}
+
+export interface GetCategoriesV2Category {
+    /**
+     * This field gives basic information about resources that are associated to the category.
+     */
+    associations: outputs.GetCategoriesV2CategoryAssociation[];
+    /**
+     * A string consisting of the description of the category as defined by the user.
+     */
+    description: string;
+    /**
+     * This field gives detailed information about resources that are associated to the category.
+     */
+    detailedAssociations: outputs.GetCategoriesV2CategoryDetailedAssociation[];
+    /**
+     * The extID for the category.
+     */
+    extId: string;
+    /**
+     * The key of a category when it is represented in key:value format.
+     */
+    key: string;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetCategoriesV2CategoryLink[];
+    /**
+     * This field contains the UUID of a user who owns the category.
+     */
+    ownerUuid: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+    /**
+     * Denotes the type of a category.
+     * There are three types of categories: SYSTEM, INTERNAL, and USER.
+     */
+    type: string;
+    /**
+     * The value of a category when it is represented in key:value format
+     */
+    value: string;
+}
+
+export interface GetCategoriesV2CategoryAssociation {
+    /**
+     * External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+     */
+    categoryId: string;
+    /**
+     * Count of associations of a particular type of entity or policy
+     */
+    count: string;
+    /**
+     * An enum denoting the resource group.
+     * Resources can be organized into either an entity or a policy.
+     */
+    resourceGroup: string;
+    /**
+     * An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+     */
+    resourceType: string;
+}
+
+export interface GetCategoriesV2CategoryDetailedAssociation {
+    /**
+     * External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+     */
+    categoryId: string;
+    /**
+     * An enum denoting the resource group.
+     * Resources can be organized into either an entity or a policy.
+     */
+    resourceGroup: string;
+    /**
+     * The UUID of the entity or policy associated with the particular category.
+     *
+     *
+     * See detailed information in [Nutanix Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0).
+     */
+    resourceId: string;
+    /**
+     * An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+     */
+    resourceType: string;
+}
+
+export interface GetCategoriesV2CategoryLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetCategoryV2Association {
+    /**
+     * External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+     */
+    categoryId: string;
+    /**
+     * Count of associations of a particular type of entity or policy
+     */
+    count: string;
+    /**
+     * An enum denoting the resource group.
+     * Resources can be organized into either an entity or a policy.
+     */
+    resourceGroup: string;
+    /**
+     * An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+     */
+    resourceType: string;
+}
+
+export interface GetCategoryV2DetailedAssociation {
+    /**
+     * External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+     */
+    categoryId: string;
+    /**
+     * An enum denoting the resource group.
+     * Resources can be organized into either an entity or a policy.
+     */
+    resourceGroup: string;
+    /**
+     * The UUID of the entity or policy associated with the particular category.
+     */
+    resourceId: string;
+    /**
+     * An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+     */
+    resourceType: string;
+}
+
+export interface GetCategoryV2Link {
+    href: string;
+    rel: string;
 }
 
 export interface GetClusterAuthorizedPublicKeyList {
@@ -1342,6 +4684,838 @@ export interface GetClusterNode {
     ip: string;
     type: string;
     version: string;
+}
+
+export interface GetClusterV2Config {
+    /**
+     * - Public ssh key details. This is part of payload for cluster update operation only.
+     */
+    authorizedPublicKeyLists: outputs.GetClusterV2ConfigAuthorizedPublicKeyList[];
+    /**
+     * - Build information details.
+     */
+    buildInfos: outputs.GetClusterV2ConfigBuildInfo[];
+    /**
+     * - Cluster arch.
+     * Valid values are:
+     * - "PPC64LE" PPC64LE cluster architecture type.
+     * - "X86_64" X86_64 cluster architecture type.
+     */
+    clusterArch: string;
+    /**
+     * - Cluster function. This is part of payload for cluster
+     * create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
+     * Valid values are:
+     * - "AOS"
+     * - "PRISM_CENTRAL"
+     * - "CLOUD_DATA_GATEWAY"
+     * - "AFS"
+     * - "ONE_NODE"
+     * - "TWO_NODE"
+     * - "ANALYTICS_PLATFORM"
+     */
+    clusterFunctions: string[];
+    /**
+     * - Cluster software version details.
+     */
+    clusterSoftwareMaps: outputs.GetClusterV2ConfigClusterSoftwareMap[];
+    /**
+     * - Encryption in transit Status.
+     * Valid values are:
+     * - "DISABLED"	Disabled encryption status.
+     * - "ENABLED" 	Enabled encryption status.
+     */
+    encryptionInTransitStatus: string;
+    /**
+     * - Encryption option.
+     * Valid values are:
+     * - "SOFTWARE".
+     * - "HARDWARE".
+     * - "SOFTWARE_AND_HARDWARE"
+     */
+    encryptionOptions: string[];
+    /**
+     * - Encryption scope.
+     * Valid values are:
+     * - "CLUSTER".
+     * - "CONTAINER".
+     */
+    encryptionScopes: string[];
+    /**
+     * - Fault tolerance state of a cluster.
+     */
+    faultToleranceStates: outputs.GetClusterV2ConfigFaultToleranceState[];
+    /**
+     * - Hypervisor types.
+     * Valid values are:
+     * - "AHV".
+     * - "ESX".
+     * - "HYPERV".
+     * - "XEN".
+     * - "NATIVEHOST".
+     */
+    hypervisorTypes: string[];
+    /**
+     * - Cluster incarnation Id. This is part of payload for cluster update operation only.
+     */
+    incarnationId: number;
+    /**
+     * - Indicates if cluster is available to contact or not.
+     */
+    isAvailable: boolean;
+    /**
+     * - Indicates whether the release is categorized as Long-term or not.
+     */
+    isLts: boolean;
+    /**
+     * - Indicates whether the password ssh into the cluster is enabled or not.
+     */
+    isPasswordRemoteLoginEnabled: boolean;
+    /**
+     * - Remote support status.
+     */
+    isRemoteSupportEnabled: boolean;
+    /**
+     * - Cluster operation mode. This is part of payload for cluster
+     * update operation only.
+     * Valid values are:
+     * - "OVERRIDE"	Override operation mode.
+     * - "STAND_ALONE"	Stand-alone operation mode.
+     * - "SWITCH_TO_TWO_NODE"	Switch to two-node operation mode.
+     * - "NORMAL"	Normal operation mode.
+     * - "READ_ONLY"	Read-only operation mode.
+     */
+    operationMode: string;
+    /**
+     * - Pulse status for a cluster.
+     */
+    pulseStatuses: outputs.GetClusterV2ConfigPulseStatus[];
+    /**
+     * - Redundancy factor of a cluster. This is part of payload for both cluster create & update operations.
+     */
+    redundancyFactor: number;
+    /**
+     * - Time zone on a cluster.
+     */
+    timezone: string;
+}
+
+export interface GetClusterV2ConfigAuthorizedPublicKeyList {
+    /**
+     * - SSH key value.
+     */
+    key: string;
+    /**
+     * - HTTP Proxy server name configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+     */
+    name: string;
+}
+
+export interface GetClusterV2ConfigBuildInfo {
+    /**
+     * - Software build type.
+     */
+    buildType: string;
+    /**
+     * - Commit ID used for version.
+     */
+    commitId: string;
+    /**
+     * - Full name of software version.
+     */
+    fullVersion: string;
+    /**
+     * - Short commit Id used for version.
+     */
+    shortCommitId: string;
+    /**
+     * - Software version.
+     */
+    version: string;
+}
+
+export interface GetClusterV2ConfigClusterSoftwareMap {
+    /**
+     * - Software type. This is part of payload for cluster create operation only.
+     * Valid values are:
+     * - "PRISM_CENTRAL": Prism Central software type.
+     * - "NOS": NOS software.
+     * - "NCC": NCC software.
+     */
+    softwareType: string;
+    /**
+     * - Software version.
+     */
+    version: string;
+}
+
+export interface GetClusterV2ConfigFaultToleranceState {
+    /**
+     * - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
+     * Valid values are:
+     * - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
+     * - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
+     * - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
+     * - "CFT_0N_AND_0D":    - System can not handle any fault with a node or a disk.
+     */
+    currentClusterFaultTolerance: string;
+    /**
+     * - Maximum fault tolerance that is supported currently.
+     */
+    currentMaxFaultTolerance: number;
+    /**
+     * - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
+     * Valid values are:
+     * - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
+     * - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
+     * - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
+     * - "CFT_0N_AND_0D":    - System can not handle any fault with a node or a disk.
+     */
+    desiredClusterFaultTolerance: string;
+    /**
+     * - Maximum fault tolerance desired.
+     */
+    desiredMaxFaultTolerance: number;
+    /**
+     * - Domain awareness level corresponds to unit of cluster group. This is part of payload for both cluster create & update operations.
+     * Valid values are:
+     * - "RACK"	Rack level awareness.
+     * - "NODE"	Node level awareness.
+     * - "BLOCK"	Block level awareness.
+     * - "DISK"	Disk level awareness.
+     */
+    domainAwarenessLevel: string;
+    /**
+     * - Redundancy Status of the cluster
+     */
+    redundancyStatuses: outputs.GetClusterV2ConfigFaultToleranceStateRedundancyStatus[];
+}
+
+export interface GetClusterV2ConfigFaultToleranceStateRedundancyStatus {
+    /**
+     * - Boolean flag to indicate if Cassandra ensemble can meet the desired FT.
+     */
+    isCassandraPreparationDone: boolean;
+    /**
+     * - Boolean flag to indicate if Zookeeper ensemble can meet the desired FT.
+     */
+    isZookeeperPreparationDone: boolean;
+}
+
+export interface GetClusterV2ConfigPulseStatus {
+    /**
+     * - (Optional) Flag to indicate if pulse is enabled or not.
+     */
+    isEnabled: boolean;
+    /**
+     * - (Optional) PII scrubbing level.
+     * Valid values are:
+     * - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
+     * - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
+     */
+    piiScrubbingLevel: string;
+}
+
+export interface GetClusterV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetClusterV2Network {
+    /**
+     * - Params associated to the backplane network segmentation. This is part of payload for cluster create operation only.
+     */
+    backplanes: outputs.GetClusterV2NetworkBackplane[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    externalAddresses: outputs.GetClusterV2NetworkExternalAddress[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    externalDataServicesIps: outputs.GetClusterV2NetworkExternalDataServicesIp[];
+    /**
+     * - Cluster external subnet address.
+     */
+    externalSubnet: string;
+    /**
+     * - Fully Qualified Domain Name (FQDN) of the server.
+     */
+    fqdn: string;
+    /**
+     * - List of HTTP Proxy server configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+     */
+    httpProxyLists: outputs.GetClusterV2NetworkHttpProxyList[];
+    httpProxyWhiteLists: outputs.GetClusterV2NetworkHttpProxyWhiteList[];
+    /**
+     * - Cluster internal subnet address.
+     */
+    internalSubnet: string;
+    /**
+     * - Key management server type.
+     * Valid values are:
+     * - "PRISM_CENTRAL"	Prism Central management server.
+     * - "EXTERNAL"	External management server.
+     * - "LOCAL"	Local management server.
+     */
+    keyManagementServerType: string;
+    /**
+     * - Management server information.
+     */
+    managementServers: outputs.GetClusterV2NetworkManagementServer[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    masqueradingIps: outputs.GetClusterV2NetworkMasqueradingIp[];
+    /**
+     * - The port to connect to the cluster when using masquerading IP.
+     */
+    masqueradingPort: string;
+    /**
+     * - List of name servers on a cluster. This is part of payload for both cluster create & update operations. For create operation, only ipv4 address / fqdn values are supported currently
+     */
+    nameServerIpLists: outputs.GetClusterV2NetworkNameServerIpList[];
+    nfsSubnetWhiteLists: string[];
+    /**
+     * - List of NTP servers on a cluster. This is part of payload for both cluster create & update operations. For create operation, only ipv4 address / fqdn values are supported currently.
+     */
+    ntpServerIpLists: outputs.GetClusterV2NetworkNtpServerIpList[];
+    /**
+     * - SMTP servers on a cluster. This is part of payload for cluster update operation only.
+     */
+    smtpServers: outputs.GetClusterV2NetworkSmtpServer[];
+}
+
+export interface GetClusterV2NetworkBackplane {
+    /**
+     * - Flag to indicate if the backplane segmentation needs to be enabled or not.
+     */
+    isSegmentationEnabled: boolean;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    netmasks: outputs.GetClusterV2NetworkBackplaneNetmask[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    subnets: outputs.GetClusterV2NetworkBackplaneSubnet[];
+    /**
+     * - VLAN Id tagged to the backplane network on the cluster. This is part of cluster create payload.
+     */
+    vlanTag: number;
+}
+
+export interface GetClusterV2NetworkBackplaneNetmask {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: string;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkBackplaneSubnet {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: string;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkExternalAddress {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClusterV2NetworkExternalAddressIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClusterV2NetworkExternalAddressIpv6[];
+}
+
+export interface GetClusterV2NetworkExternalAddressIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkExternalAddressIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkExternalDataServicesIp {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClusterV2NetworkExternalDataServicesIpIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClusterV2NetworkExternalDataServicesIpIpv6[];
+}
+
+export interface GetClusterV2NetworkExternalDataServicesIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkExternalDataServicesIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkHttpProxyList {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+     */
+    ipAddresses: outputs.GetClusterV2NetworkHttpProxyListIpAddress[];
+    /**
+     * - HTTP Proxy server name configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+     */
+    name: string;
+    /**
+     * - SMTP server password.
+     */
+    password: string;
+    /**
+     * - SMTP port.
+     */
+    port: number;
+    proxyTypes: string[];
+    /**
+     * - SMTP server user name.
+     */
+    username: string;
+}
+
+export interface GetClusterV2NetworkHttpProxyListIpAddress {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClusterV2NetworkHttpProxyListIpAddressIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClusterV2NetworkHttpProxyListIpAddressIpv6[];
+}
+
+export interface GetClusterV2NetworkHttpProxyListIpAddressIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkHttpProxyListIpAddressIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkHttpProxyWhiteList {
+    /**
+     * - Target's identifier which is exempted from going through the configured HTTP Proxy.
+     */
+    target: string;
+    /**
+     * - Type of the target which is exempted from going through the configured HTTP Proxy.
+     * Valid values are:
+     * - "IPV6_ADDRESS"	IPV6 address.
+     * - "HOST_NAME"	Name of the host.
+     * - "DOMAIN_NAME_SUFFIX" Domain Name Suffix required for http proxy whitelist.
+     * - "IPV4_NETWORK_MASK" Network Mask of the IpV4 family.
+     * - "IPV4_ADDRESS" IPV4 address.
+     */
+    targetType: string;
+}
+
+export interface GetClusterV2NetworkManagementServer {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+     */
+    ips: outputs.GetClusterV2NetworkManagementServerIp[];
+    /**
+     * - Indicates whether it is DRS enabled or not.
+     */
+    isDrsEnabled: boolean;
+    /**
+     * - Indicates whether the host is managed by an entity or not.
+     */
+    isInUse: boolean;
+    /**
+     * - Indicates whether it is registered or not.
+     */
+    isRegistered: boolean;
+    /**
+     * - Type of management server.
+     * Valid values are:
+     * - "VCENTER"   	Vcenter management server.
+     */
+    type: boolean;
+}
+
+export interface GetClusterV2NetworkManagementServerIp {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClusterV2NetworkManagementServerIpIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClusterV2NetworkManagementServerIpIpv6[];
+}
+
+export interface GetClusterV2NetworkManagementServerIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkManagementServerIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkMasqueradingIp {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClusterV2NetworkMasqueradingIpIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClusterV2NetworkMasqueradingIpIpv6[];
+}
+
+export interface GetClusterV2NetworkMasqueradingIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkMasqueradingIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkNameServerIpList {
+    /**
+     * - Fully Qualified Domain Name (FQDN) of the server.
+     */
+    fqdns: outputs.GetClusterV2NetworkNameServerIpListFqdn[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClusterV2NetworkNameServerIpListIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClusterV2NetworkNameServerIpListIpv6[];
+}
+
+export interface GetClusterV2NetworkNameServerIpListFqdn {
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkNameServerIpListIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkNameServerIpListIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkNtpServerIpList {
+    /**
+     * - Fully Qualified Domain Name (FQDN) of the server.
+     */
+    fqdns: outputs.GetClusterV2NetworkNtpServerIpListFqdn[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClusterV2NetworkNtpServerIpListIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClusterV2NetworkNtpServerIpListIpv6[];
+}
+
+export interface GetClusterV2NetworkNtpServerIpListFqdn {
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkNtpServerIpListIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkNtpServerIpListIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkSmtpServer {
+    /**
+     * - SMTP email address.
+     */
+    emailAddress: string;
+    /**
+     * - SMTP network details.
+     */
+    servers: outputs.GetClusterV2NetworkSmtpServerServer[];
+    /**
+     * - Type of management server.
+     * Valid values are:
+     * - "VCENTER"   	Vcenter management server.
+     */
+    type: string;
+}
+
+export interface GetClusterV2NetworkSmtpServerServer {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+     */
+    ipAddresses: outputs.GetClusterV2NetworkSmtpServerServerIpAddress[];
+    /**
+     * - SMTP server password.
+     */
+    password: string;
+    /**
+     * - SMTP port.
+     */
+    port: number;
+    /**
+     * - SMTP server user name.
+     */
+    username: string;
+}
+
+export interface GetClusterV2NetworkSmtpServerServerIpAddress {
+    /**
+     * - Fully Qualified Domain Name (FQDN) of the server.
+     */
+    fqdns: outputs.GetClusterV2NetworkSmtpServerServerIpAddressFqdn[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClusterV2NetworkSmtpServerServerIpAddressIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClusterV2NetworkSmtpServerServerIpAddressIpv6[];
+}
+
+export interface GetClusterV2NetworkSmtpServerServerIpAddressFqdn {
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkSmtpServerServerIpAddressIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NetworkSmtpServerServerIpAddressIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2Node {
+    /**
+     * - List of nodes in a cluster.
+     */
+    nodeLists: outputs.GetClusterV2NodeNodeList[];
+    /**
+     * - Number of nodes in a cluster.
+     */
+    numberOfNodes: number;
+}
+
+export interface GetClusterV2NodeNodeList {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    controllerVmIps: outputs.GetClusterV2NodeNodeListControllerVmIp[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    hostIps: outputs.GetClusterV2NodeNodeListHostIp[];
+    /**
+     * - UUID of the host.
+     */
+    nodeUuid: string;
+}
+
+export interface GetClusterV2NodeNodeListControllerVmIp {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClusterV2NodeNodeListControllerVmIpIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClusterV2NodeNodeListControllerVmIpIpv6[];
+}
+
+export interface GetClusterV2NodeNodeListControllerVmIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NodeNodeListControllerVmIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NodeNodeListHostIp {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClusterV2NodeNodeListHostIpIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClusterV2NodeNodeListHostIpIpv6[];
+}
+
+export interface GetClusterV2NodeNodeListHostIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClusterV2NodeNodeListHostIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
 }
 
 export interface GetClustersEntity {
@@ -1582,6 +5756,1081 @@ export interface GetClustersEntityNode {
     version: string;
 }
 
+export interface GetClustersV2ClusterEntity {
+    /**
+     * -  Score to indicate how much cluster is eligible for storing domain manager backup.
+     */
+    backupEligibilityScore: number;
+    /**
+     * -  List of categories associated to the PE cluster.
+     */
+    categories: string[];
+    /**
+     * -  Cluster profile UUID.
+     */
+    clusterProfileExtId: string;
+    /**
+     * -  Cluster configuration details.
+     */
+    configs: outputs.GetClustersV2ClusterEntityConfig[];
+    /**
+     * -  The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
+     */
+    containerName: string;
+    /**
+     * -(Optional) A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby.
+     * The `expand` can be applied on the following fields:
+     * - clusterProfile
+     * - storageSummary
+     */
+    expand?: string;
+    /**
+     * -  A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * -  Number of inefficient VMs in the cluster.
+     */
+    inefficientVmCount: number;
+    /**
+     * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetClustersV2ClusterEntityLink[];
+    /**
+     * - HTTP Proxy server name configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+     */
+    name: string;
+    /**
+     * -  Network details of a cluster.
+     */
+    networks: outputs.GetClustersV2ClusterEntityNetwork[];
+    /**
+     * -  Node reference for a cluster.
+     */
+    nodes: outputs.GetClustersV2ClusterEntityNode[];
+    /**
+     * -  globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+     */
+    tenantId: string;
+    /**
+     * -  Upgrade status of a cluster.
+     * Valid values are:
+     * - "CANCELLED"	The cluster upgrade is cancelled.
+     * - "FAILED"	The cluster upgrade failed.
+     * - "QUEUED"	The cluster upgrade is in the queue.
+     * - "SUCCEEDED"	The cluster was upgraded successfully.
+     * - "DOWNLOADING" The luster upgrade is downloading.
+     * - "PENDING"The cluster upgrade is in pending state.
+     * - "UPGRADING" The cluster is in upgrade state.
+     * - "PREUPGRADE" The cluster is in pre-upgrade state.
+     * - "SCHEDULED" The cluster upgrade is in scheduled state.
+     */
+    upgradeStatus: string;
+    /**
+     * -  Number of VMs in the cluster.
+     */
+    vmCount: number;
+}
+
+export interface GetClustersV2ClusterEntityConfig {
+    /**
+     * - Public ssh key details. This is part of payload for cluster update operation only.
+     */
+    authorizedPublicKeyLists: outputs.GetClustersV2ClusterEntityConfigAuthorizedPublicKeyList[];
+    /**
+     * - Build information details.
+     */
+    buildInfos: outputs.GetClustersV2ClusterEntityConfigBuildInfo[];
+    /**
+     * - Cluster arch.
+     * Valid values are:
+     * - "PPC64LE" PPC64LE cluster architecture type.
+     * - "X86_64" X86_64 cluster architecture type.
+     */
+    clusterArch: string;
+    /**
+     * - Cluster function. This is part of payload for cluster
+     * create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
+     * Valid values are:
+     * - "AOS"
+     * - "PRISM_CENTRAL"
+     * - "CLOUD_DATA_GATEWAY"
+     * - "AFS"
+     * - "ONE_NODE"
+     * - "TWO_NODE"
+     * - "ANALYTICS_PLATFORM"
+     */
+    clusterFunctions: string[];
+    /**
+     * - Cluster software version details.
+     */
+    clusterSoftwareMaps: outputs.GetClustersV2ClusterEntityConfigClusterSoftwareMap[];
+    /**
+     * - Encryption in transit Status.
+     * Valid values are:
+     * - "DISABLED"	Disabled encryption status.
+     * - "ENABLED" 	Enabled encryption status.
+     */
+    encryptionInTransitStatus: string;
+    /**
+     * - Encryption option.
+     * Valid values are:
+     * - "SOFTWARE".
+     * - "HARDWARE".
+     * - "SOFTWARE_AND_HARDWARE"
+     */
+    encryptionOptions: string[];
+    /**
+     * - Encryption scope.
+     * Valid values are:
+     * - "CLUSTER".
+     * - "CONTAINER".
+     */
+    encryptionScopes: string[];
+    /**
+     * - Fault tolerance state of a cluster.
+     */
+    faultToleranceStates: outputs.GetClustersV2ClusterEntityConfigFaultToleranceState[];
+    /**
+     * - Hypervisor types.
+     * Valid values are:
+     * - "AHV".
+     * - "ESX".
+     * - "HYPERV".
+     * - "XEN".
+     * - "NATIVEHOST".
+     */
+    hypervisorTypes: string[];
+    /**
+     * - Cluster incarnation Id. This is part of payload for cluster update operation only.
+     */
+    incarnationId: number;
+    /**
+     * - Indicates if cluster is available to contact or not.
+     */
+    isAvailable: boolean;
+    /**
+     * - Indicates whether the release is categorized as Long-term or not.
+     */
+    isLts: boolean;
+    /**
+     * - Indicates whether the password ssh into the cluster is enabled or not.
+     */
+    isPasswordRemoteLoginEnabled: boolean;
+    /**
+     * - Remote support status.
+     */
+    isRemoteSupportEnabled: boolean;
+    /**
+     * - Cluster operation mode. This is part of payload for cluster
+     * update operation only.
+     * Valid values are:
+     * - "OVERRIDE"	Override operation mode.
+     * - "STAND_ALONE"	Stand-alone operation mode.
+     * - "SWITCH_TO_TWO_NODE"	Switch to two-node operation mode.
+     * - "NORMAL"	Normal operation mode.
+     * - "READ_ONLY"	Read-only operation mode.
+     */
+    operationMode: string;
+    /**
+     * - Pulse status for a cluster.
+     */
+    pulseStatuses: outputs.GetClustersV2ClusterEntityConfigPulseStatus[];
+    /**
+     * - Redundancy factor of a cluster. This is part of payload for both cluster create & update operations.
+     */
+    redundancyFactor: number;
+    /**
+     * - Time zone on a cluster.
+     */
+    timezone: string;
+}
+
+export interface GetClustersV2ClusterEntityConfigAuthorizedPublicKeyList {
+    /**
+     * - SSH key value.
+     */
+    key: string;
+    /**
+     * - HTTP Proxy server name configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+     */
+    name: string;
+}
+
+export interface GetClustersV2ClusterEntityConfigBuildInfo {
+    /**
+     * - Software build type.
+     */
+    buildType: string;
+    /**
+     * - Commit ID used for version.
+     */
+    commitId: string;
+    /**
+     * - Full name of software version.
+     */
+    fullVersion: string;
+    /**
+     * - Short commit Id used for version.
+     */
+    shortCommitId: string;
+    /**
+     * - Software version.
+     */
+    version: string;
+}
+
+export interface GetClustersV2ClusterEntityConfigClusterSoftwareMap {
+    /**
+     * - Software type. This is part of payload for cluster create operation only.
+     * Valid values are:
+     * - "PRISM_CENTRAL": Prism Central software type.
+     * - "NOS": NOS software.
+     * - "NCC": NCC software.
+     */
+    softwareType: string;
+    /**
+     * - Software version.
+     */
+    version: string;
+}
+
+export interface GetClustersV2ClusterEntityConfigFaultToleranceState {
+    /**
+     * - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
+     * Valid values are:
+     * - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
+     * - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
+     * - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
+     * - "CFT_0N_AND_0D":    - System can not handle any fault with a node or a disk.
+     */
+    currentClusterFaultTolerance: string;
+    /**
+     * - Maximum fault tolerance that is supported currently.
+     */
+    currentMaxFaultTolerance: number;
+    /**
+     * - Cluster Fault tolerance. Set desiredClusterFaultTolerance for cluster create and update.
+     * Valid values are:
+     * - "CFT_1N_OR_1D":     - System can handle fault of one node or one disk.
+     * - "CFT_2N_OR_2D":     - System can handle fault of two nodes or two disks.
+     * - "CFT_1N_AND_1D":    - System can handle fault of one node and one disk on the other node simultaneously.
+     * - "CFT_0N_AND_0D":    - System can not handle any fault with a node or a disk.
+     */
+    desiredClusterFaultTolerance: string;
+    /**
+     * - Maximum fault tolerance desired.
+     */
+    desiredMaxFaultTolerance: number;
+    /**
+     * - Domain awareness level corresponds to unit of cluster group. This is part of payload for both cluster create & update operations.
+     * Valid values are:
+     * - "RACK"	Rack level awareness.
+     * - "NODE"	Node level awareness.
+     * - "BLOCK"	Block level awareness.
+     * - "DISK"	Disk level awareness.
+     */
+    domainAwarenessLevel: string;
+    /**
+     * - Redundancy Status of the cluster
+     */
+    redundancyStatuses: outputs.GetClustersV2ClusterEntityConfigFaultToleranceStateRedundancyStatus[];
+}
+
+export interface GetClustersV2ClusterEntityConfigFaultToleranceStateRedundancyStatus {
+    /**
+     * - Boolean flag to indicate if Cassandra ensemble can meet the desired FT.
+     */
+    isCassandraPreparationDone: boolean;
+    /**
+     * - Boolean flag to indicate if Zookeeper ensemble can meet the desired FT.
+     */
+    isZookeeperPreparationDone: boolean;
+}
+
+export interface GetClustersV2ClusterEntityConfigPulseStatus {
+    /**
+     * - (Optional) Flag to indicate if pulse is enabled or not.
+     */
+    isEnabled: boolean;
+    /**
+     * - (Optional) PII scrubbing level.
+     * Valid values are:
+     * - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
+     * - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
+     */
+    piiScrubbingLevel: string;
+}
+
+export interface GetClustersV2ClusterEntityLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetClustersV2ClusterEntityNetwork {
+    /**
+     * - Params associated to the backplane network segmentation. This is part of payload for cluster create operation only.
+     */
+    backplanes: outputs.GetClustersV2ClusterEntityNetworkBackplane[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    externalAddresses: outputs.GetClustersV2ClusterEntityNetworkExternalAddress[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    externalDataServicesIps: outputs.GetClustersV2ClusterEntityNetworkExternalDataServicesIp[];
+    /**
+     * - Cluster external subnet address.
+     */
+    externalSubnet: string;
+    /**
+     * - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
+     */
+    fqdn: string;
+    /**
+     * - List of HTTP Proxy server configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+     */
+    httpProxyLists: outputs.GetClustersV2ClusterEntityNetworkHttpProxyList[];
+    httpProxyWhiteLists: outputs.GetClustersV2ClusterEntityNetworkHttpProxyWhiteList[];
+    /**
+     * - Cluster internal subnet address.
+     */
+    internalSubnet: string;
+    /**
+     * - Key management server type.
+     * Valid values are:
+     * - "PRISM_CENTRAL"	Prism Central management server.
+     * - "EXTERNAL"	External management server.
+     * - "LOCAL"	Local management server.
+     */
+    keyManagementServerType: string;
+    /**
+     * - Management server information.
+     */
+    managementServers: outputs.GetClustersV2ClusterEntityNetworkManagementServer[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    masqueradingIps: outputs.GetClustersV2ClusterEntityNetworkMasqueradingIp[];
+    /**
+     * - The port to connect to the cluster when using masquerading IP.
+     */
+    masqueradingPort: string;
+    /**
+     * - List of name servers on a cluster. This is part of payload for both cluster create & update operations. For create operation, only ipv4 address / fqdn values are supported currently
+     */
+    nameServerIpLists: outputs.GetClustersV2ClusterEntityNetworkNameServerIpList[];
+    nfsSubnetWhiteLists: string[];
+    /**
+     * - List of NTP servers on a cluster. This is part of payload for both cluster create & update operations. For create operation, only ipv4 address / fqdn values are supported currently.
+     */
+    ntpServerIpLists: outputs.GetClustersV2ClusterEntityNetworkNtpServerIpList[];
+    /**
+     * - SMTP servers on a cluster. This is part of payload for cluster update operation only.
+     */
+    smtpServers: outputs.GetClustersV2ClusterEntityNetworkSmtpServer[];
+}
+
+export interface GetClustersV2ClusterEntityNetworkBackplane {
+    /**
+     * - Flag to indicate if the backplane segmentation needs to be enabled or not.
+     */
+    isSegmentationEnabled: boolean;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    netmasks: outputs.GetClustersV2ClusterEntityNetworkBackplaneNetmask[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    subnets: outputs.GetClustersV2ClusterEntityNetworkBackplaneSubnet[];
+    /**
+     * - VLAN Id tagged to the backplane network on the cluster. This is part of cluster create payload.
+     */
+    vlanTag: number;
+}
+
+export interface GetClustersV2ClusterEntityNetworkBackplaneNetmask {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: string;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkBackplaneSubnet {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: string;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkExternalAddress {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClustersV2ClusterEntityNetworkExternalAddressIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClustersV2ClusterEntityNetworkExternalAddressIpv6[];
+}
+
+export interface GetClustersV2ClusterEntityNetworkExternalAddressIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkExternalAddressIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkExternalDataServicesIp {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6[];
+}
+
+export interface GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkHttpProxyList {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+     */
+    ipAddresses: outputs.GetClustersV2ClusterEntityNetworkHttpProxyListIpAddress[];
+    /**
+     * - HTTP Proxy server name configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+     */
+    name: string;
+    /**
+     * - SMTP server password.
+     */
+    password: string;
+    /**
+     * - SMTP port.
+     */
+    port: number;
+    proxyTypes: string[];
+    /**
+     * - SMTP server user name.
+     */
+    username: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkHttpProxyListIpAddress {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6[];
+}
+
+export interface GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkHttpProxyWhiteList {
+    /**
+     * - Target's identifier which is exempted from going through the configured HTTP Proxy.
+     */
+    target: string;
+    /**
+     * - Type of the target which is exempted from going through the configured HTTP Proxy.
+     * Valid values are:
+     * - "IPV6_ADDRESS"	IPV6 address.
+     * - "HOST_NAME"	Name of the host.
+     * - "DOMAIN_NAME_SUFFIX" Domain Name Suffix required for http proxy whitelist.
+     * - "IPV4_NETWORK_MASK" Network Mask of the IpV4 family.
+     * - "IPV4_ADDRESS" IPV4 address.
+     */
+    targetType: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkManagementServer {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+     */
+    ips: outputs.GetClustersV2ClusterEntityNetworkManagementServerIp[];
+    /**
+     * - Indicates whether it is DRS enabled or not.
+     */
+    isDrsEnabled: boolean;
+    /**
+     * - Indicates whether the host is managed by an entity or not.
+     */
+    isInUse: boolean;
+    /**
+     * - Indicates whether it is registered or not.
+     */
+    isRegistered: boolean;
+    /**
+     * - Type of management server.
+     * Valid values are:
+     * - "VCENTER"   	Vcenter management server.
+     */
+    type: boolean;
+}
+
+export interface GetClustersV2ClusterEntityNetworkManagementServerIp {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClustersV2ClusterEntityNetworkManagementServerIpIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClustersV2ClusterEntityNetworkManagementServerIpIpv6[];
+}
+
+export interface GetClustersV2ClusterEntityNetworkManagementServerIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkManagementServerIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkMasqueradingIp {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6[];
+}
+
+export interface GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkNameServerIpList {
+    /**
+     * - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
+     */
+    fqdns: outputs.GetClustersV2ClusterEntityNetworkNameServerIpListFqdn[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClustersV2ClusterEntityNetworkNameServerIpListIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClustersV2ClusterEntityNetworkNameServerIpListIpv6[];
+}
+
+export interface GetClustersV2ClusterEntityNetworkNameServerIpListFqdn {
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkNameServerIpListIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkNameServerIpListIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkNtpServerIpList {
+    /**
+     * - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
+     */
+    fqdns: outputs.GetClustersV2ClusterEntityNetworkNtpServerIpListFqdn[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClustersV2ClusterEntityNetworkNtpServerIpListIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClustersV2ClusterEntityNetworkNtpServerIpListIpv6[];
+}
+
+export interface GetClustersV2ClusterEntityNetworkNtpServerIpListFqdn {
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkNtpServerIpListIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkNtpServerIpListIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkSmtpServer {
+    /**
+     * - SMTP email address.
+     */
+    emailAddress: string;
+    /**
+     * - SMTP network details.
+     */
+    servers: outputs.GetClustersV2ClusterEntityNetworkSmtpServerServer[];
+    /**
+     * - Type of management server.
+     * Valid values are:
+     * - "VCENTER"   	Vcenter management server.
+     */
+    type: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkSmtpServerServer {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+     */
+    ipAddresses: outputs.GetClustersV2ClusterEntityNetworkSmtpServerServerIpAddress[];
+    /**
+     * - SMTP server password.
+     */
+    password: string;
+    /**
+     * - SMTP port.
+     */
+    port: number;
+    /**
+     * - SMTP server user name.
+     */
+    username: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkSmtpServerServerIpAddress {
+    /**
+     * - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
+     */
+    fqdns: outputs.GetClustersV2ClusterEntityNetworkSmtpServerServerIpAddressFqdn[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClustersV2ClusterEntityNetworkSmtpServerServerIpAddressIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClustersV2ClusterEntityNetworkSmtpServerServerIpAddressIpv6[];
+}
+
+export interface GetClustersV2ClusterEntityNetworkSmtpServerServerIpAddressFqdn {
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkSmtpServerServerIpAddressIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNetworkSmtpServerServerIpAddressIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNode {
+    /**
+     * - List of nodes in a cluster.
+     */
+    nodeLists: outputs.GetClustersV2ClusterEntityNodeNodeList[];
+    /**
+     * - Number of nodes in a cluster.
+     */
+    numberOfNodes: number;
+}
+
+export interface GetClustersV2ClusterEntityNodeNodeList {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    controllerVmIps: outputs.GetClustersV2ClusterEntityNodeNodeListControllerVmIp[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    hostIps: outputs.GetClustersV2ClusterEntityNodeNodeListHostIp[];
+    /**
+     * - UUID of the host.
+     */
+    nodeUuid: string;
+}
+
+export interface GetClustersV2ClusterEntityNodeNodeListControllerVmIp {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClustersV2ClusterEntityNodeNodeListControllerVmIpIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClustersV2ClusterEntityNodeNodeListControllerVmIpIpv6[];
+}
+
+export interface GetClustersV2ClusterEntityNodeNodeListControllerVmIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNodeNodeListControllerVmIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNodeNodeListHostIp {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetClustersV2ClusterEntityNodeNodeListHostIpIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetClustersV2ClusterEntityNodeNodeListHostIpIpv6[];
+}
+
+export interface GetClustersV2ClusterEntityNodeNodeListHostIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetClustersV2ClusterEntityNodeNodeListHostIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: string;
+}
+
+export interface GetDirectoryServiceV2OpenLdapConfiguration {
+    /**
+     * - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+     */
+    userConfigurations: outputs.GetDirectoryServiceV2OpenLdapConfigurationUserConfiguration[];
+    /**
+     * - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+     */
+    userGroupConfigurations: outputs.GetDirectoryServiceV2OpenLdapConfigurationUserGroupConfiguration[];
+}
+
+export interface GetDirectoryServiceV2OpenLdapConfigurationUserConfiguration {
+    /**
+     * - Object class in the OpenLDAP system that corresponds to Users.
+     */
+    userObjectClass: string;
+    /**
+     * - Base DN for User search.
+     */
+    userSearchBase: string;
+    /**
+     * - Unique Identifier for each User which can be used in Authentication.
+     */
+    usernameAttribute: string;
+}
+
+export interface GetDirectoryServiceV2OpenLdapConfigurationUserGroupConfiguration {
+    /**
+     * - Attribute in a group that associates Users to the group.
+     */
+    groupMemberAttribute: string;
+    /**
+     * - User attribute value that will be used in group entity to associate User to the group.
+     */
+    groupMemberAttributeValue: string;
+    /**
+     * - Object class in the OpenLDAP system that corresponds to groups.
+     */
+    groupObjectClass: string;
+    /**
+     * - Base DN for group search.
+     */
+    groupSearchBase: string;
+}
+
+export interface GetDirectoryServiceV2ServiceAccount {
+    /**
+     * - Password to connect to the Directory Service.
+     */
+    password: string;
+    /**
+     * - Username to connect to the Directory Service.
+     */
+    username: string;
+}
+
+export interface GetDirectoryServicesV2DirectoryService {
+    /**
+     * - User or Service who created the Directory Service.
+     */
+    createdBy: string;
+    /**
+     * - Creation time of the Directory Service.
+     */
+    createdTime: string;
+    /**
+     * - Type of Directory Service, Supported values are: "ACTIVE_DIRECTORY" (Directory Service type is Active Directory.) and "OPEN_LDAP" (Directory Service type is Open LDAP.)
+     */
+    directoryType: string;
+    /**
+     * - Domain name for the Directory Service.
+     */
+    domainName: string;
+    /**
+     * - A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * - Group membership search type for the Directory Service. Supported values are: "NON_RECURSIVE" (Doesn't search recursively within groups.) and "RECURSIVE" (Searches recursively within groups.)
+     */
+    groupSearchType: string;
+    /**
+     * - Last updated time of the Directory Service.
+     */
+    lastUpdatedTime: string;
+    /**
+     * - Name for the Directory Service.
+     */
+    name: string;
+    /**
+     * - Configuration for OpenLDAP Directory Service.
+     */
+    openLdapConfigurations: outputs.GetDirectoryServicesV2DirectoryServiceOpenLdapConfiguration[];
+    /**
+     * - Secondary URL for the Directory Service.
+     */
+    secondaryUrls: string[];
+    /**
+     * - Information of Service account to connect to the Directory Service.
+     */
+    serviceAccounts: outputs.GetDirectoryServicesV2DirectoryServiceServiceAccount[];
+    /**
+     * - URL for the Directory Service.
+     */
+    url: string;
+    /**
+     * - List of allowed User Groups for the Directory Service.
+     */
+    whiteListedGroups: string[];
+}
+
+export interface GetDirectoryServicesV2DirectoryServiceOpenLdapConfiguration {
+    /**
+     * - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+     */
+    userConfigurations: outputs.GetDirectoryServicesV2DirectoryServiceOpenLdapConfigurationUserConfiguration[];
+    /**
+     * - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+     */
+    userGroupConfigurations: outputs.GetDirectoryServicesV2DirectoryServiceOpenLdapConfigurationUserGroupConfiguration[];
+}
+
+export interface GetDirectoryServicesV2DirectoryServiceOpenLdapConfigurationUserConfiguration {
+    /**
+     * - Object class in the OpenLDAP system that corresponds to Users.
+     */
+    userObjectClass: string;
+    /**
+     * - Base DN for User search.
+     */
+    userSearchBase: string;
+    /**
+     * - Unique Identifier for each User which can be used in Authentication.
+     */
+    usernameAttribute: string;
+}
+
+export interface GetDirectoryServicesV2DirectoryServiceOpenLdapConfigurationUserGroupConfiguration {
+    /**
+     * - Attribute in a group that associates Users to the group.
+     */
+    groupMemberAttribute: string;
+    /**
+     * - User attribute value that will be used in group entity to associate User to the group.
+     */
+    groupMemberAttributeValue: string;
+    /**
+     * - Object class in the OpenLDAP system that corresponds to groups.
+     */
+    groupObjectClass: string;
+    /**
+     * - Base DN for group search.
+     */
+    groupSearchBase: string;
+}
+
+export interface GetDirectoryServicesV2DirectoryServiceServiceAccount {
+    /**
+     * - Password to connect to the Directory Service.
+     */
+    password: string;
+    /**
+     * - Username to connect to the Directory Service.
+     */
+    username: string;
+}
+
 export interface GetFloatingIpSpec {
     /**
      * Floating IP allocation status.
@@ -1644,6 +6893,1079 @@ export interface GetFloatingIpStatusResource {
      * The reference to a vpc
      */
     vpcReference: {[key: string]: string};
+}
+
+export interface GetFloatingIpV2Association {
+    /**
+     * Association of Floating IP with private IP
+     */
+    privateIpAssociations: outputs.GetFloatingIpV2AssociationPrivateIpAssociation[];
+    /**
+     * Association of Floating IP with nic
+     */
+    vmNicAssociations: outputs.GetFloatingIpV2AssociationVmNicAssociation[];
+}
+
+export interface GetFloatingIpV2AssociationPrivateIpAssociation {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    privateIps: outputs.GetFloatingIpV2AssociationPrivateIpAssociationPrivateIp[];
+    /**
+     * VPC in which the private IP exists.
+     */
+    vpcReference: string;
+}
+
+export interface GetFloatingIpV2AssociationPrivateIpAssociationPrivateIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpV2AssociationPrivateIpAssociationPrivateIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpV2AssociationPrivateIpAssociationPrivateIpIpv6[];
+}
+
+export interface GetFloatingIpV2AssociationPrivateIpAssociationPrivateIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2AssociationPrivateIpAssociationPrivateIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2AssociationVmNicAssociation {
+    /**
+     * VM NIC reference.
+     */
+    vmNicReference: string;
+    /**
+     * VPC reference to which the VM NIC subnet belongs.
+     */
+    vpcReference: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnet {
+    bridgeName: string;
+    clusterName: string;
+    clusterReference: string;
+    /**
+     * Description for the Floating IP.
+     */
+    description: string;
+    dhcpOptions: outputs.GetFloatingIpV2ExternalSubnetDhcpOption[];
+    dynamicIpAddresses: outputs.GetFloatingIpV2ExternalSubnetDynamicIpAddress[];
+    /**
+     * Floating IP UUID
+     */
+    extId: string;
+    hypervisorType: string;
+    ipConfigs: outputs.GetFloatingIpV2ExternalSubnetIpConfig[];
+    ipPrefix: string;
+    ipUsages: outputs.GetFloatingIpV2ExternalSubnetIpUsage[];
+    isAdvancedNetworking: boolean;
+    isExternal: boolean;
+    isNatEnabled: boolean;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetFloatingIpV2ExternalSubnetLink[];
+    migrationState: string;
+    /**
+     * Name of the floating IP.
+     */
+    name: string;
+    networkFunctionChainReference: string;
+    networkId: number;
+    reservedIpAddresses: outputs.GetFloatingIpV2ExternalSubnetReservedIpAddress[];
+    subnetType: string;
+    virtualSwitchReference: string;
+    virtualSwitches: outputs.GetFloatingIpV2ExternalSubnetVirtualSwitch[];
+    /**
+     * VPC reference UUID
+     */
+    vpcReference: string;
+    /**
+     * Networking common base object
+     */
+    vpcs: outputs.GetFloatingIpV2ExternalSubnetVpc[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetDhcpOption {
+    bootFileName: string;
+    domainName: string;
+    domainNameServers: outputs.GetFloatingIpV2ExternalSubnetDhcpOptionDomainNameServer[];
+    ntpServers: outputs.GetFloatingIpV2ExternalSubnetDhcpOptionNtpServer[];
+    searchDomains: string[];
+    tftpServerName: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetDhcpOptionDomainNameServer {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpV2ExternalSubnetDhcpOptionDomainNameServerIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpV2ExternalSubnetDhcpOptionDomainNameServerIpv6[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetDhcpOptionDomainNameServerIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetDhcpOptionDomainNameServerIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetDhcpOptionNtpServer {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpV2ExternalSubnetDhcpOptionNtpServerIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpV2ExternalSubnetDhcpOptionNtpServerIpv6[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetDhcpOptionNtpServerIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetDhcpOptionNtpServerIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetDynamicIpAddress {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpV2ExternalSubnetDynamicIpAddressIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpV2ExternalSubnetDynamicIpAddressIpv6[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetDynamicIpAddressIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetDynamicIpAddressIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpConfig {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpV2ExternalSubnetIpConfigIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpV2ExternalSubnetIpConfigIpv6[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpConfigIpv4 {
+    defaultGatewayIps: outputs.GetFloatingIpV2ExternalSubnetIpConfigIpv4DefaultGatewayIp[];
+    dhcpServerAddresses: outputs.GetFloatingIpV2ExternalSubnetIpConfigIpv4DhcpServerAddress[];
+    ipSubnets: outputs.GetFloatingIpV2ExternalSubnetIpConfigIpv4IpSubnet[];
+    poolLists: outputs.GetFloatingIpV2ExternalSubnetIpConfigIpv4PoolList[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpConfigIpv4DefaultGatewayIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpConfigIpv4DhcpServerAddress {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpConfigIpv4IpSubnet {
+    ips: outputs.GetFloatingIpV2ExternalSubnetIpConfigIpv4IpSubnetIp[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpConfigIpv4IpSubnetIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpConfigIpv4PoolList {
+    endIps: outputs.GetFloatingIpV2ExternalSubnetIpConfigIpv4PoolListEndIp[];
+    startIps: outputs.GetFloatingIpV2ExternalSubnetIpConfigIpv4PoolListStartIp[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpConfigIpv4PoolListEndIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpConfigIpv4PoolListStartIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpConfigIpv6 {
+    defaultGatewayIps: outputs.GetFloatingIpV2ExternalSubnetIpConfigIpv6DefaultGatewayIp[];
+    dhcpServerAddresses: outputs.GetFloatingIpV2ExternalSubnetIpConfigIpv6DhcpServerAddress[];
+    ipSubnets: outputs.GetFloatingIpV2ExternalSubnetIpConfigIpv6IpSubnet[];
+    poolLists: outputs.GetFloatingIpV2ExternalSubnetIpConfigIpv6PoolList[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpConfigIpv6DefaultGatewayIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpConfigIpv6DhcpServerAddress {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpConfigIpv6IpSubnet {
+    ips: outputs.GetFloatingIpV2ExternalSubnetIpConfigIpv6IpSubnetIp[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpConfigIpv6IpSubnetIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpConfigIpv6PoolList {
+    endIps: outputs.GetFloatingIpV2ExternalSubnetIpConfigIpv6PoolListEndIp[];
+    startIps: outputs.GetFloatingIpV2ExternalSubnetIpConfigIpv6PoolListStartIp[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpConfigIpv6PoolListEndIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpConfigIpv6PoolListStartIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpUsage {
+    ipPoolUsages: outputs.GetFloatingIpV2ExternalSubnetIpUsageIpPoolUsage[];
+    numAssignedIps: number;
+    numFreeIps: number;
+    numMacs: number;
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpUsageIpPoolUsage {
+    numFreeIps: number;
+    numTotalIps: number;
+    ranges: outputs.GetFloatingIpV2ExternalSubnetIpUsageIpPoolUsageRange[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpUsageIpPoolUsageRange {
+    endIps: outputs.GetFloatingIpV2ExternalSubnetIpUsageIpPoolUsageRangeEndIp[];
+    startIps: outputs.GetFloatingIpV2ExternalSubnetIpUsageIpPoolUsageRangeStartIp[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpUsageIpPoolUsageRangeEndIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetIpUsageIpPoolUsageRangeStartIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetReservedIpAddress {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVirtualSwitch {
+    bondMode: boolean;
+    clusters: outputs.GetFloatingIpV2ExternalSubnetVirtualSwitchCluster[];
+    /**
+     * Description for the Floating IP.
+     */
+    description: string;
+    /**
+     * Floating IP UUID
+     */
+    extId: string;
+    hasDeploymentError: boolean;
+    isDefault: boolean;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetFloatingIpV2ExternalSubnetVirtualSwitchLink[];
+    /**
+     * Metadata associated with this resource.
+     */
+    metadatas: outputs.GetFloatingIpV2ExternalSubnetVirtualSwitchMetadata[];
+    mtu: number;
+    /**
+     * Name of the floating IP.
+     */
+    name: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVirtualSwitchCluster {
+    /**
+     * Floating IP UUID
+     */
+    extId: string;
+    gatewayIpAddresses: outputs.GetFloatingIpV2ExternalSubnetVirtualSwitchClusterGatewayIpAddress[];
+    hosts: outputs.GetFloatingIpV2ExternalSubnetVirtualSwitchClusterHost[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetVirtualSwitchClusterGatewayIpAddress {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVirtualSwitchClusterHost {
+    /**
+     * Floating IP UUID
+     */
+    extId: string;
+    hostNics: string[];
+    internalBridgeName: string;
+    ipAddresses: outputs.GetFloatingIpV2ExternalSubnetVirtualSwitchClusterHostIpAddress[];
+    routeTable: number;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVirtualSwitchClusterHostIpAddress {
+    ips: outputs.GetFloatingIpV2ExternalSubnetVirtualSwitchClusterHostIpAddressIp[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVirtualSwitchClusterHostIpAddressIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVirtualSwitchLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVirtualSwitchMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpc {
+    commonDhcpOptions: outputs.GetFloatingIpV2ExternalSubnetVpcCommonDhcpOption[];
+    /**
+     * Description for the Floating IP.
+     */
+    description: string;
+    /**
+     * Floating IP UUID
+     */
+    extId: string;
+    externalRoutingDomainReference: string;
+    externalSubnets: outputs.GetFloatingIpV2ExternalSubnetVpcExternalSubnet[];
+    externallyRoutablePrefixes: outputs.GetFloatingIpV2ExternalSubnetVpcExternallyRoutablePrefix[];
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetFloatingIpV2ExternalSubnetVpcLink[];
+    /**
+     * Metadata associated with this resource.
+     */
+    metadatas: outputs.GetFloatingIpV2ExternalSubnetVpcMetadata[];
+    /**
+     * Name of the floating IP.
+     */
+    name: string;
+    snatIps: outputs.GetFloatingIpV2ExternalSubnetVpcSnatIp[];
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+    vpcType: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcCommonDhcpOption {
+    domainNameServers: outputs.GetFloatingIpV2ExternalSubnetVpcCommonDhcpOptionDomainNameServer[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcCommonDhcpOptionDomainNameServer {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpV2ExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpV2ExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcExternalSubnet {
+    activeGatewayCount: number;
+    activeGatewayNodes: outputs.GetFloatingIpV2ExternalSubnetVpcExternalSubnetActiveGatewayNode[];
+    externalIps: outputs.GetFloatingIpV2ExternalSubnetVpcExternalSubnetExternalIp[];
+    gatewayNodes: string[];
+    subnetReference: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcExternalSubnetActiveGatewayNode {
+    nodeId: string;
+    nodeIpAddresses: outputs.GetFloatingIpV2ExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpV2ExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpV2ExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcExternalSubnetExternalIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpV2ExternalSubnetVpcExternalSubnetExternalIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpV2ExternalSubnetVpcExternalSubnetExternalIpIpv6[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcExternalSubnetExternalIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcExternalSubnetExternalIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcExternallyRoutablePrefix {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpV2ExternalSubnetVpcExternallyRoutablePrefixIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpV2ExternalSubnetVpcExternallyRoutablePrefixIpv6[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcExternallyRoutablePrefixIpv4 {
+    ips: outputs.GetFloatingIpV2ExternalSubnetVpcExternallyRoutablePrefixIpv4Ip[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcExternallyRoutablePrefixIpv4Ip {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcExternallyRoutablePrefixIpv6 {
+    ips: outputs.GetFloatingIpV2ExternalSubnetVpcExternallyRoutablePrefixIpv6Ip[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcExternallyRoutablePrefixIpv6Ip {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcSnatIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpV2ExternalSubnetVpcSnatIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpV2ExternalSubnetVpcSnatIpIpv6[];
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcSnatIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2ExternalSubnetVpcSnatIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2FloatingIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpV2FloatingIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpV2FloatingIpIpv6[];
+}
+
+export interface GetFloatingIpV2FloatingIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2FloatingIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetFloatingIpV2Metadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetFloatingIpV2VmNic {
+    /**
+     * Private IP value in string
+     */
+    privateIp: string;
+}
+
+export interface GetFloatingIpV2Vpc {
+    commonDhcpOptions: outputs.GetFloatingIpV2VpcCommonDhcpOption[];
+    /**
+     * Description for the Floating IP.
+     */
+    description: string;
+    /**
+     * Floating IP UUID
+     */
+    extId: string;
+    externalRoutingDomainReference: string;
+    externalSubnets: outputs.GetFloatingIpV2VpcExternalSubnet[];
+    externallyRoutablePrefixes: outputs.GetFloatingIpV2VpcExternallyRoutablePrefix[];
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetFloatingIpV2VpcLink[];
+    /**
+     * Metadata associated with this resource.
+     */
+    metadatas: outputs.GetFloatingIpV2VpcMetadata[];
+    /**
+     * Name of the floating IP.
+     */
+    name: string;
+    snatIps: outputs.GetFloatingIpV2VpcSnatIp[];
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+    vpcType: string;
+}
+
+export interface GetFloatingIpV2VpcCommonDhcpOption {
+    domainNameServers: outputs.GetFloatingIpV2VpcCommonDhcpOptionDomainNameServer[];
+}
+
+export interface GetFloatingIpV2VpcCommonDhcpOptionDomainNameServer {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpV2VpcCommonDhcpOptionDomainNameServerIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpV2VpcCommonDhcpOptionDomainNameServerIpv6[];
+}
+
+export interface GetFloatingIpV2VpcCommonDhcpOptionDomainNameServerIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2VpcCommonDhcpOptionDomainNameServerIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2VpcExternalSubnet {
+    activeGatewayCount: number;
+    activeGatewayNodes: outputs.GetFloatingIpV2VpcExternalSubnetActiveGatewayNode[];
+    externalIps: outputs.GetFloatingIpV2VpcExternalSubnetExternalIp[];
+    gatewayNodes: string[];
+    subnetReference: string;
+}
+
+export interface GetFloatingIpV2VpcExternalSubnetActiveGatewayNode {
+    nodeId: string;
+    nodeIpAddresses: outputs.GetFloatingIpV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress[];
+}
+
+export interface GetFloatingIpV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6[];
+}
+
+export interface GetFloatingIpV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2VpcExternalSubnetExternalIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpV2VpcExternalSubnetExternalIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpV2VpcExternalSubnetExternalIpIpv6[];
+}
+
+export interface GetFloatingIpV2VpcExternalSubnetExternalIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2VpcExternalSubnetExternalIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2VpcExternallyRoutablePrefix {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpV2VpcExternallyRoutablePrefixIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpV2VpcExternallyRoutablePrefixIpv6[];
+}
+
+export interface GetFloatingIpV2VpcExternallyRoutablePrefixIpv4 {
+    ips: outputs.GetFloatingIpV2VpcExternallyRoutablePrefixIpv4Ip[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface GetFloatingIpV2VpcExternallyRoutablePrefixIpv4Ip {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2VpcExternallyRoutablePrefixIpv6 {
+    ips: outputs.GetFloatingIpV2VpcExternallyRoutablePrefixIpv6Ip[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface GetFloatingIpV2VpcExternallyRoutablePrefixIpv6Ip {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2VpcLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetFloatingIpV2VpcMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetFloatingIpV2VpcSnatIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpV2VpcSnatIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpV2VpcSnatIpIpv6[];
+}
+
+export interface GetFloatingIpV2VpcSnatIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpV2VpcSnatIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
 }
 
 export interface GetFloatingIpsEntity {
@@ -1736,6 +8058,1150 @@ export interface GetFloatingIpsMetadata {
     sortAttribute: string;
     sortOrder: string;
     totalMatches: number;
+}
+
+export interface GetFloatingIpsV2FloatingIp {
+    /**
+     * Association status of floating IP.
+     */
+    associationStatus: string;
+    /**
+     * Association of the Floating IP with either NIC or Private IP
+     */
+    associations: outputs.GetFloatingIpsV2FloatingIpAssociation[];
+    /**
+     * Description for the Floating IP.
+     */
+    description: string;
+    /**
+     * Floating IP UUID
+     */
+    extId: string;
+    /**
+     * External subnet reference for the Floating IP to be allocated in on-prem only.
+     */
+    externalSubnetReference: string;
+    /**
+     * Networking common base object
+     */
+    externalSubnets: outputs.GetFloatingIpsV2FloatingIpExternalSubnet[];
+    /**
+     * Floating IP value in string
+     */
+    floatingIpValue: string;
+    /**
+     * Floating IP address.
+     */
+    floatingIps: outputs.GetFloatingIpsV2FloatingIpFloatingIp[];
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetFloatingIpsV2FloatingIpLink[];
+    /**
+     * Metadata associated with this resource.
+     */
+    metadatas: outputs.GetFloatingIpsV2FloatingIpMetadata[];
+    /**
+     * Name of the floating IP.
+     */
+    name: string;
+    /**
+     * Private IP value in string
+     */
+    privateIp: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+    /**
+     * VM NIC reference.
+     */
+    vmNicReference: string;
+    /**
+     * Virtual NIC for projections
+     */
+    vmNics: outputs.GetFloatingIpsV2FloatingIpVmNic[];
+    /**
+     * VPC reference UUID
+     */
+    vpcReference: string;
+    /**
+     * Networking common base object
+     */
+    vpcs: outputs.GetFloatingIpsV2FloatingIpVpc[];
+}
+
+export interface GetFloatingIpsV2FloatingIpAssociation {
+    /**
+     * Association of Floating IP with private IP
+     */
+    privateIpAssociations: outputs.GetFloatingIpsV2FloatingIpAssociationPrivateIpAssociation[];
+    /**
+     * Association of Floating IP with nic
+     */
+    vmNicAssociations: outputs.GetFloatingIpsV2FloatingIpAssociationVmNicAssociation[];
+}
+
+export interface GetFloatingIpsV2FloatingIpAssociationPrivateIpAssociation {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    privateIps: outputs.GetFloatingIpsV2FloatingIpAssociationPrivateIpAssociationPrivateIp[];
+    /**
+     * VPC in which the private IP exists.
+     */
+    vpcReference: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpAssociationPrivateIpAssociationPrivateIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpsV2FloatingIpAssociationPrivateIpAssociationPrivateIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpsV2FloatingIpAssociationPrivateIpAssociationPrivateIpIpv6[];
+}
+
+export interface GetFloatingIpsV2FloatingIpAssociationPrivateIpAssociationPrivateIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpAssociationPrivateIpAssociationPrivateIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpAssociationVmNicAssociation {
+    /**
+     * VM NIC reference.
+     */
+    vmNicReference: string;
+    /**
+     * VPC reference to which the VM NIC subnet belongs.
+     */
+    vpcReference: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnet {
+    bridgeName: string;
+    clusterName: string;
+    clusterReference: string;
+    /**
+     * Description for the Floating IP.
+     */
+    description: string;
+    dhcpOptions: outputs.GetFloatingIpsV2FloatingIpExternalSubnetDhcpOption[];
+    dynamicIpAddresses: outputs.GetFloatingIpsV2FloatingIpExternalSubnetDynamicIpAddress[];
+    /**
+     * Floating IP UUID
+     */
+    extId: string;
+    hypervisorType: string;
+    ipConfigs: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpConfig[];
+    ipPrefix: string;
+    ipUsages: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpUsage[];
+    isAdvancedNetworking: boolean;
+    isExternal: boolean;
+    isNatEnabled: boolean;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetFloatingIpsV2FloatingIpExternalSubnetLink[];
+    migrationState: string;
+    /**
+     * Name of the floating IP.
+     */
+    name: string;
+    networkFunctionChainReference: string;
+    networkId: number;
+    reservedIpAddresses: outputs.GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress[];
+    subnetType: string;
+    virtualSwitchReference: string;
+    virtualSwitches: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch[];
+    /**
+     * VPC reference UUID
+     */
+    vpcReference: string;
+    /**
+     * Networking common base object
+     */
+    vpcs: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpc[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetDhcpOption {
+    bootFileName: string;
+    domainName: string;
+    domainNameServers: outputs.GetFloatingIpsV2FloatingIpExternalSubnetDhcpOptionDomainNameServer[];
+    ntpServers: outputs.GetFloatingIpsV2FloatingIpExternalSubnetDhcpOptionNtpServer[];
+    searchDomains: string[];
+    tftpServerName: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetDhcpOptionDomainNameServer {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetDhcpOptionDomainNameServerIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetDhcpOptionDomainNameServerIpv6[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetDhcpOptionDomainNameServerIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetDhcpOptionDomainNameServerIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetDhcpOptionNtpServer {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetDhcpOptionNtpServerIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetDhcpOptionNtpServerIpv6[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetDhcpOptionNtpServerIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetDhcpOptionNtpServerIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetDynamicIpAddress {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetDynamicIpAddressIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetDynamicIpAddressIpv6[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetDynamicIpAddressIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetDynamicIpAddressIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpConfig {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv4 {
+    defaultGatewayIps: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv4DefaultGatewayIp[];
+    dhcpServerAddresses: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv4DhcpServerAddress[];
+    ipSubnets: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv4IpSubnet[];
+    poolLists: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv4PoolList[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv4DefaultGatewayIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv4DhcpServerAddress {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv4IpSubnet {
+    ips: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv4IpSubnetIp[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv4IpSubnetIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv4PoolList {
+    endIps: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv4PoolListEndIp[];
+    startIps: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv4PoolListStartIp[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv4PoolListEndIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv4PoolListStartIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6 {
+    defaultGatewayIps: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6DefaultGatewayIp[];
+    dhcpServerAddresses: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6DhcpServerAddress[];
+    ipSubnets: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6IpSubnet[];
+    poolLists: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6PoolList[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6DefaultGatewayIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6DhcpServerAddress {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6IpSubnet {
+    ips: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6IpSubnetIp[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6IpSubnetIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6PoolList {
+    endIps: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6PoolListEndIp[];
+    startIps: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6PoolListStartIp[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6PoolListEndIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpConfigIpv6PoolListStartIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpUsage {
+    ipPoolUsages: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage[];
+    numAssignedIps: number;
+    numFreeIps: number;
+    numMacs: number;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsage {
+    numFreeIps: number;
+    numTotalIps: number;
+    ranges: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRange {
+    endIps: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp[];
+    startIps: outputs.GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeEndIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetIpUsageIpPoolUsageRangeStartIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetReservedIpAddress {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitch {
+    bondMode: boolean;
+    clusters: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster[];
+    /**
+     * Description for the Floating IP.
+     */
+    description: string;
+    /**
+     * Floating IP UUID
+     */
+    extId: string;
+    hasDeploymentError: boolean;
+    isDefault: boolean;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink[];
+    /**
+     * Metadata associated with this resource.
+     */
+    metadatas: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata[];
+    mtu: number;
+    /**
+     * Name of the floating IP.
+     */
+    name: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchCluster {
+    /**
+     * Floating IP UUID
+     */
+    extId: string;
+    gatewayIpAddresses: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress[];
+    hosts: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterGatewayIpAddress {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHost {
+    /**
+     * Floating IP UUID
+     */
+    extId: string;
+    hostNics: string[];
+    internalBridgeName: string;
+    ipAddresses: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress[];
+    routeTable: number;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddress {
+    ips: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchClusterHostIpAddressIp {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVirtualSwitchMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpc {
+    commonDhcpOptions: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption[];
+    /**
+     * Description for the Floating IP.
+     */
+    description: string;
+    /**
+     * Floating IP UUID
+     */
+    extId: string;
+    externalRoutingDomainReference: string;
+    externalSubnets: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet[];
+    externallyRoutablePrefixes: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix[];
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcLink[];
+    /**
+     * Metadata associated with this resource.
+     */
+    metadatas: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata[];
+    /**
+     * Name of the floating IP.
+     */
+    name: string;
+    snatIps: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp[];
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+    vpcType: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOption {
+    domainNameServers: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServer {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcCommonDhcpOptionDomainNameServerIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnet {
+    activeGatewayCount: number;
+    activeGatewayNodes: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode[];
+    externalIps: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp[];
+    gatewayNodes: string[];
+    subnetReference: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNode {
+    nodeId: string;
+    nodeIpAddresses: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcExternalSubnetExternalIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefix {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4 {
+    ips: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv4Ip {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6 {
+    ips: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcExternallyRoutablePrefixIpv6Ip {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv6[];
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpFloatingIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpsV2FloatingIpFloatingIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpsV2FloatingIpFloatingIpIpv6[];
+}
+
+export interface GetFloatingIpsV2FloatingIpFloatingIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpFloatingIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpVmNic {
+    /**
+     * Private IP value in string
+     */
+    privateIp: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpVpc {
+    commonDhcpOptions: outputs.GetFloatingIpsV2FloatingIpVpcCommonDhcpOption[];
+    /**
+     * Description for the Floating IP.
+     */
+    description: string;
+    /**
+     * Floating IP UUID
+     */
+    extId: string;
+    externalRoutingDomainReference: string;
+    externalSubnets: outputs.GetFloatingIpsV2FloatingIpVpcExternalSubnet[];
+    externallyRoutablePrefixes: outputs.GetFloatingIpsV2FloatingIpVpcExternallyRoutablePrefix[];
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetFloatingIpsV2FloatingIpVpcLink[];
+    /**
+     * Metadata associated with this resource.
+     */
+    metadatas: outputs.GetFloatingIpsV2FloatingIpVpcMetadata[];
+    /**
+     * Name of the floating IP.
+     */
+    name: string;
+    snatIps: outputs.GetFloatingIpsV2FloatingIpVpcSnatIp[];
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+    vpcType: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcCommonDhcpOption {
+    domainNameServers: outputs.GetFloatingIpsV2FloatingIpVpcCommonDhcpOptionDomainNameServer[];
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcCommonDhcpOptionDomainNameServer {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpsV2FloatingIpVpcCommonDhcpOptionDomainNameServerIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpsV2FloatingIpVpcCommonDhcpOptionDomainNameServerIpv6[];
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcCommonDhcpOptionDomainNameServerIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcCommonDhcpOptionDomainNameServerIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcExternalSubnet {
+    activeGatewayCount: number;
+    activeGatewayNodes: outputs.GetFloatingIpsV2FloatingIpVpcExternalSubnetActiveGatewayNode[];
+    externalIps: outputs.GetFloatingIpsV2FloatingIpVpcExternalSubnetExternalIp[];
+    gatewayNodes: string[];
+    subnetReference: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcExternalSubnetActiveGatewayNode {
+    nodeId: string;
+    nodeIpAddresses: outputs.GetFloatingIpsV2FloatingIpVpcExternalSubnetActiveGatewayNodeNodeIpAddress[];
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcExternalSubnetActiveGatewayNodeNodeIpAddress {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpsV2FloatingIpVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpsV2FloatingIpVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6[];
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcExternalSubnetExternalIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpsV2FloatingIpVpcExternalSubnetExternalIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpsV2FloatingIpVpcExternalSubnetExternalIpIpv6[];
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcExternalSubnetExternalIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcExternalSubnetExternalIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcExternallyRoutablePrefix {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpsV2FloatingIpVpcExternallyRoutablePrefixIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpsV2FloatingIpVpcExternallyRoutablePrefixIpv6[];
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcExternallyRoutablePrefixIpv4 {
+    ips: outputs.GetFloatingIpsV2FloatingIpVpcExternallyRoutablePrefixIpv4Ip[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcExternallyRoutablePrefixIpv4Ip {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcExternallyRoutablePrefixIpv6 {
+    ips: outputs.GetFloatingIpsV2FloatingIpVpcExternallyRoutablePrefixIpv6Ip[];
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcExternallyRoutablePrefixIpv6Ip {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcSnatIp {
+    /**
+     * Reference to IP Configuration
+     */
+    ipv4s: outputs.GetFloatingIpsV2FloatingIpVpcSnatIpIpv4[];
+    /**
+     * Reference to IP Configuration
+     */
+    ipv6s: outputs.GetFloatingIpsV2FloatingIpVpcSnatIpIpv6[];
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcSnatIpIpv4 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetFloatingIpsV2FloatingIpVpcSnatIpIpv6 {
+    /**
+     * Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
 }
 
 export interface GetFoundationCentralClusterDetailsClusterStatus {
@@ -2622,6 +10088,349 @@ export interface GetHostHostDisksReferenceList {
     uuid: string;
 }
 
+export interface GetHostV2Cluster {
+    /**
+     * - Cluster name. This is part of payload for both cluster create & update operations.
+     */
+    name: string;
+    /**
+     * - Disk UUID.
+     */
+    uuid: string;
+}
+
+export interface GetHostV2ControllerVm {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    backplaneAddresses: outputs.GetHostV2ControllerVmBackplaneAddress[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    externalAddresses: outputs.GetHostV2ControllerVmExternalAddress[];
+    /**
+     * - Controller VM Id.
+     */
+    id: number;
+    /**
+     * - Maintenance mode status.
+     */
+    maintenanceMode: boolean;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    natIps: outputs.GetHostV2ControllerVmNatIp[];
+    /**
+     * - NAT port.
+     */
+    natPort: number;
+    /**
+     * - RDMA backplane address.
+     */
+    rdmaBackplaneAddresses: outputs.GetHostV2ControllerVmRdmaBackplaneAddress[];
+}
+
+export interface GetHostV2ControllerVmBackplaneAddress {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetHostV2ControllerVmBackplaneAddressIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetHostV2ControllerVmBackplaneAddressIpv6[];
+}
+
+export interface GetHostV2ControllerVmBackplaneAddressIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    value: string;
+}
+
+export interface GetHostV2ControllerVmBackplaneAddressIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    value: string;
+}
+
+export interface GetHostV2ControllerVmExternalAddress {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetHostV2ControllerVmExternalAddressIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetHostV2ControllerVmExternalAddressIpv6[];
+}
+
+export interface GetHostV2ControllerVmExternalAddressIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    value: string;
+}
+
+export interface GetHostV2ControllerVmExternalAddressIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    value: string;
+}
+
+export interface GetHostV2ControllerVmNatIp {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetHostV2ControllerVmNatIpIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetHostV2ControllerVmNatIpIpv6[];
+}
+
+export interface GetHostV2ControllerVmNatIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    value: string;
+}
+
+export interface GetHostV2ControllerVmNatIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    value: string;
+}
+
+export interface GetHostV2ControllerVmRdmaBackplaneAddress {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetHostV2ControllerVmRdmaBackplaneAddressIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetHostV2ControllerVmRdmaBackplaneAddressIpv6[];
+}
+
+export interface GetHostV2ControllerVmRdmaBackplaneAddressIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    value: string;
+}
+
+export interface GetHostV2ControllerVmRdmaBackplaneAddressIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    value: string;
+}
+
+export interface GetHostV2Disk {
+    /**
+     * - Disk mount path.
+     */
+    mountPath: string;
+    /**
+     * - Disk serial Id.
+     */
+    serialId: string;
+    /**
+     * - Disk size.
+     */
+    sizeInBytes: number;
+    /**
+     * - Disk storage Tier type.
+     * * `HDD`: HDD storage tier.
+     * * `PCIE_SSD`: PCIE SSD storage tier.
+     * * `SATA_SSD`: SATA SSD storage tier.
+     */
+    storageTier: string;
+    /**
+     * - Disk UUID.
+     */
+    uuid: string;
+}
+
+export interface GetHostV2Hypervisor {
+    /**
+     * - Status of Acropolis connection to hypervisor.
+     * * `DISCONNECTED`: Acropolis disconnected.
+     * * `CONNECTED`: Acropolis connected.
+     */
+    acropolisConnectionState: string;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    externalAddresses: outputs.GetHostV2HypervisorExternalAddress[];
+    /**
+     * - Hypervisor full name.
+     */
+    fullName: string;
+    /**
+     * - Number of VMs.
+     */
+    numberOfVms: number;
+    /**
+     * - Hypervisor state.
+     * * `HA_HEALING_TARGET`: Hypervisor in HA healing target state.
+     * * `ENTERING_MAINTENANCE_MODE`: Hypervisor entering maintenance mode.
+     * * `RESERVED_FOR_HA_FAILOVER`: Hypervisor reserved for HA failover.
+     * * `HA_HEALING_SOURCE`: Hypervisor in HA healing source state.
+     * * `RESERVING_FOR_HA_FAILOVER`: Hypervisor that is planned to be reserved for HA failover.
+     * * `HA_FAILOVER_SOURCE`: Hypervisor in HA failover source state.
+     * * `ACROPOLIS_NORMAL`: Hypervisor in Acropolis normal state.
+     * * `ENTERED_MAINTENANCE_MODE`: Hypervisor entered maintenance mode.
+     * * `ENTERING_MAINTENANCE_MODE_FROM_HA_FAILOVER`: Hypervisor entering maintenance mode from HA failover.
+     * * `HA_FAILOVER_TARGET`: Hypervisor in HA failover target state.
+     */
+    state: string;
+    /**
+     * - Hypervisor type.
+     * * `XEN`: Xen hypervisor.
+     * * `HYPERV`: HyperV hypervisor.
+     * * `ESX`: ESX hypervisor.
+     * * `AHV`: AHV hypervisor.
+     */
+    type: string;
+    /**
+     * - Hypervisor user name.
+     */
+    userName: string;
+}
+
+export interface GetHostV2HypervisorExternalAddress {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetHostV2HypervisorExternalAddressIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetHostV2HypervisorExternalAddressIpv6[];
+}
+
+export interface GetHostV2HypervisorExternalAddressIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    value: string;
+}
+
+export interface GetHostV2HypervisorExternalAddressIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    value: string;
+}
+
+export interface GetHostV2Ipmi {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    ips: outputs.GetHostV2IpmiIp[];
+    /**
+     * - IPMI username.
+     */
+    username: string;
+}
+
+export interface GetHostV2IpmiIp {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetHostV2IpmiIpIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetHostV2IpmiIpIpv6[];
+}
+
+export interface GetHostV2IpmiIpIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    value: string;
+}
+
+export interface GetHostV2IpmiIpIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    value: string;
+}
+
+export interface GetHostV2KeyManagementDeviceToCertStatus {
+    isCertificatePresent: boolean;
+    /**
+     * - Key management server name.
+     */
+    keyManagementServerName: string;
+}
+
+export interface GetHostV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
 export interface GetHostsEntity {
     /**
      * The API version.
@@ -2779,6 +10588,207 @@ export interface GetHostsEntityHostDisksReferenceList {
     uuid: string;
 }
 
+export interface GetHostsV2HostEntity {
+    blockModel: string;
+    blockSerial: string;
+    bootTimeUsecs: number;
+    clusterExtId: string;
+    /**
+     * * `cpuCapacityHz`
+     * * `cpuFrequencyHz`
+     * * `cpuModel`
+     * * `defaultVhdContainerUuid`
+     * * `defaultVhdLocation`
+     * * `defaultVmContainerUuid`
+     * * `defaultVmLocation`
+     * * `failoverClusterFqdn`
+     * * `failoverClusterNodeStatus`
+     * * `gpuDriverVersion`
+     * * `gpuList`
+     * * `hostName`
+     * * `hostType`
+     * * `maintenanceState`
+     * * `memorySizeBytes`
+     * * `nodeStatus`
+     * * `numberOfCpuCores`
+     * * `numberOfCpuSockets`
+     * * `numberOfCpuThreads`
+     * * `rebootPending`
+     */
+    clusters: outputs.GetHostsV2HostEntityCluster[];
+    controllerVms: outputs.GetHostsV2HostEntityControllerVm[];
+    cpuCapacityHz: number;
+    cpuFrequencyHz: number;
+    cpuModel: string;
+    defaultVhdContainerUuid: string;
+    defaultVhdLocation: string;
+    defaultVmContainerUuid: string;
+    defaultVmLocation: string;
+    disks: outputs.GetHostsV2HostEntityDisk[];
+    extId: string;
+    failoverClusterFqdn: string;
+    failoverClusterNodeStatus: string;
+    gpuDriverVersion: string;
+    gpuLists: string[];
+    hasCsr: boolean;
+    hostName: string;
+    hostType: string;
+    hypervisors: outputs.GetHostsV2HostEntityHypervisor[];
+    ipmis: outputs.GetHostsV2HostEntityIpmi[];
+    isDegraded: boolean;
+    isHardwareVirtualized: boolean;
+    isRebootPending: boolean;
+    isSecureBooted: boolean;
+    keyManagementDeviceToCertStatuses: outputs.GetHostsV2HostEntityKeyManagementDeviceToCertStatus[];
+    links: outputs.GetHostsV2HostEntityLink[];
+    maintenanceState: string;
+    memorySizeBytes: number;
+    nodeStatus: string;
+    numberOfCpuCores: number;
+    numberOfCpuSockets: number;
+    numberOfCpuThreads: number;
+    rackableUnitUuid: string;
+    tenantId: string;
+}
+
+export interface GetHostsV2HostEntityCluster {
+    name: string;
+    uuid: string;
+}
+
+export interface GetHostsV2HostEntityControllerVm {
+    backplaneAddresses: outputs.GetHostsV2HostEntityControllerVmBackplaneAddress[];
+    externalAddresses: outputs.GetHostsV2HostEntityControllerVmExternalAddress[];
+    id: number;
+    maintenanceMode: boolean;
+    natIps: outputs.GetHostsV2HostEntityControllerVmNatIp[];
+    natPort: number;
+    rdmaBackplaneAddresses: outputs.GetHostsV2HostEntityControllerVmRdmaBackplaneAddress[];
+}
+
+export interface GetHostsV2HostEntityControllerVmBackplaneAddress {
+    ipv4s: outputs.GetHostsV2HostEntityControllerVmBackplaneAddressIpv4[];
+    ipv6s: outputs.GetHostsV2HostEntityControllerVmBackplaneAddressIpv6[];
+}
+
+export interface GetHostsV2HostEntityControllerVmBackplaneAddressIpv4 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetHostsV2HostEntityControllerVmBackplaneAddressIpv6 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetHostsV2HostEntityControllerVmExternalAddress {
+    ipv4s: outputs.GetHostsV2HostEntityControllerVmExternalAddressIpv4[];
+    ipv6s: outputs.GetHostsV2HostEntityControllerVmExternalAddressIpv6[];
+}
+
+export interface GetHostsV2HostEntityControllerVmExternalAddressIpv4 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetHostsV2HostEntityControllerVmExternalAddressIpv6 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetHostsV2HostEntityControllerVmNatIp {
+    ipv4s: outputs.GetHostsV2HostEntityControllerVmNatIpIpv4[];
+    ipv6s: outputs.GetHostsV2HostEntityControllerVmNatIpIpv6[];
+}
+
+export interface GetHostsV2HostEntityControllerVmNatIpIpv4 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetHostsV2HostEntityControllerVmNatIpIpv6 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetHostsV2HostEntityControllerVmRdmaBackplaneAddress {
+    ipv4s: outputs.GetHostsV2HostEntityControllerVmRdmaBackplaneAddressIpv4[];
+    ipv6s: outputs.GetHostsV2HostEntityControllerVmRdmaBackplaneAddressIpv6[];
+}
+
+export interface GetHostsV2HostEntityControllerVmRdmaBackplaneAddressIpv4 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetHostsV2HostEntityControllerVmRdmaBackplaneAddressIpv6 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetHostsV2HostEntityDisk {
+    mountPath: string;
+    serialId: string;
+    sizeInBytes: number;
+    storageTier: string;
+    uuid: string;
+}
+
+export interface GetHostsV2HostEntityHypervisor {
+    acropolisConnectionState: string;
+    externalAddresses: outputs.GetHostsV2HostEntityHypervisorExternalAddress[];
+    fullName: string;
+    numberOfVms: number;
+    state: string;
+    type: string;
+    userName: string;
+}
+
+export interface GetHostsV2HostEntityHypervisorExternalAddress {
+    ipv4s: outputs.GetHostsV2HostEntityHypervisorExternalAddressIpv4[];
+    ipv6s: outputs.GetHostsV2HostEntityHypervisorExternalAddressIpv6[];
+}
+
+export interface GetHostsV2HostEntityHypervisorExternalAddressIpv4 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetHostsV2HostEntityHypervisorExternalAddressIpv6 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetHostsV2HostEntityIpmi {
+    ips: outputs.GetHostsV2HostEntityIpmiIp[];
+    username: string;
+}
+
+export interface GetHostsV2HostEntityIpmiIp {
+    ipv4s: outputs.GetHostsV2HostEntityIpmiIpIpv4[];
+    ipv6s: outputs.GetHostsV2HostEntityIpmiIpIpv6[];
+}
+
+export interface GetHostsV2HostEntityIpmiIpIpv4 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetHostsV2HostEntityIpmiIpIpv6 {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetHostsV2HostEntityKeyManagementDeviceToCertStatus {
+    isCertificatePresent: boolean;
+    keyManagementServerName: string;
+}
+
+export interface GetHostsV2HostEntityLink {
+    href: string;
+    rel: string;
+}
+
 export interface GetImageCategory {
     /**
      * - the name.
@@ -2815,6 +10825,209 @@ export interface GetImageCurrentClusterReferenceList {
      * - the UUID.
      */
     uuid: string;
+}
+
+export interface GetImagePlacementPoliciesV2PlacementPolicy {
+    /**
+     * (Required) Category-based entity filter.
+     */
+    clusterEntityFilters: outputs.GetImagePlacementPoliciesV2PlacementPolicyClusterEntityFilter[];
+    createTime: string;
+    /**
+     * (Optional) Description of the image placement policy.
+     */
+    description: string;
+    /**
+     * (Optional) Enforcement status of the image placement policy. Valid values "ACTIVE", "SUSPENDED"
+     */
+    enforcementState: string;
+    /**
+     * The external identifier of an image placement policy.
+     */
+    extId: string;
+    /**
+     * (Required) Category-based entity filter.
+     */
+    imageEntityFilters: outputs.GetImagePlacementPoliciesV2PlacementPolicyImageEntityFilter[];
+    lastUpdateTime: string;
+    /**
+     * (Required) Name of the image placement policy.
+     */
+    name: string;
+    ownerExtId: string;
+    /**
+     * (Required) Type of the image placement policy. Valid values "HARD", "SOFT"
+     */
+    placementType: string;
+}
+
+export interface GetImagePlacementPoliciesV2PlacementPolicyClusterEntityFilter {
+    /**
+     * Array of strings
+     */
+    categoryExtIds: string[];
+    /**
+     * (Required) Filter matching type. Valid values "CATEGORIES_MATCH_ALL", "CATEGORIES_MATCH_ANY"
+     */
+    type: string;
+}
+
+export interface GetImagePlacementPoliciesV2PlacementPolicyImageEntityFilter {
+    /**
+     * Array of strings
+     */
+    categoryExtIds: string[];
+    /**
+     * (Required) Filter matching type. Valid values "CATEGORIES_MATCH_ALL", "CATEGORIES_MATCH_ANY"
+     */
+    type: string;
+}
+
+export interface GetImagePlacementPolicyV2ClusterEntityFilter {
+    /**
+     * Array of strings
+     */
+    categoryExtIds: string[];
+    /**
+     * (Required) Filter matching type. Valid values "CATEGORIES_MATCH_ALL", "CATEGORIES_MATCH_ANY"
+     */
+    type: string;
+}
+
+export interface GetImagePlacementPolicyV2ImageEntityFilter {
+    /**
+     * Array of strings
+     */
+    categoryExtIds: string[];
+    /**
+     * (Required) Filter matching type. Valid values "CATEGORIES_MATCH_ALL", "CATEGORIES_MATCH_ANY"
+     */
+    type: string;
+}
+
+export interface GetImageV2Checksum {
+    hexDigest: string;
+}
+
+export interface GetImageV2PlacementPolicyStatus {
+    /**
+     * Compliance status for a placement policy.
+     */
+    complianceStatus: string;
+    /**
+     * List of image placement policy external identifier that conflict with the current one.
+     */
+    conflictingPolicyExtIds: string[];
+    /**
+     * List of cluster external identifiers for the enforced placement policy.
+     */
+    enforcedClusterExtIds: string[];
+    /**
+     * Indicates whether the placement policy enforcement is ongoing or has failed.
+     */
+    enforcementMode: string;
+    /**
+     * Image placement policy external identifier.
+     */
+    placementPolicyExtId: string;
+    /**
+     * List of cluster external identifiers of the image location for the enforced placement policy.
+     */
+    policyClusterExtIds: string[];
+}
+
+export interface GetImageV2Source {
+    objectLiteSources: outputs.GetImageV2SourceObjectLiteSource[];
+    urlSources: outputs.GetImageV2SourceUrlSource[];
+    vmDiskSources: outputs.GetImageV2SourceVmDiskSource[];
+}
+
+export interface GetImageV2SourceObjectLiteSource {
+    key: string;
+}
+
+export interface GetImageV2SourceUrlSource {
+    /**
+     * Basic authentication credentials for image source HTTP/S URL.
+     */
+    basicAuths: outputs.GetImageV2SourceUrlSourceBasicAuth[];
+    shouldAllowInsecureUrl: boolean;
+    /**
+     * The URL for creating an image.
+     */
+    url: string;
+}
+
+export interface GetImageV2SourceUrlSourceBasicAuth {
+    /**
+     * Password for basic authentication.
+     */
+    password: string;
+    /**
+     * Username for basic authentication.
+     */
+    username: string;
+}
+
+export interface GetImageV2SourceVmDiskSource {
+    /**
+     * The external identifier of an image.
+     */
+    extId: string;
+}
+
+export interface GetImagesV2Image {
+    categoryExtIds: string[];
+    checksums: outputs.GetImagesV2ImageChecksum[];
+    clusterLocationExtIds: string[];
+    createTime: string;
+    description: string;
+    extId: string;
+    lastUpdateTime: string;
+    name: string;
+    ownerExtId: string;
+    placementPolicyStatuses: outputs.GetImagesV2ImagePlacementPolicyStatus[];
+    sizeBytes: number;
+    sources: outputs.GetImagesV2ImageSource[];
+    type: string;
+}
+
+export interface GetImagesV2ImageChecksum {
+    hexDigest: string;
+}
+
+export interface GetImagesV2ImagePlacementPolicyStatus {
+    complianceStatus: string;
+    conflictingPolicyExtIds: string[];
+    enforcedClusterExtIds: string[];
+    enforcementMode: string;
+    placementPolicyExtId: string;
+    policyClusterExtIds: string[];
+}
+
+export interface GetImagesV2ImageSource {
+    objectLiteSources: outputs.GetImagesV2ImageSourceObjectLiteSource[];
+    urlSources: outputs.GetImagesV2ImageSourceUrlSource[];
+    vmDiskSources: outputs.GetImagesV2ImageSourceVmDiskSource[];
+}
+
+export interface GetImagesV2ImageSourceObjectLiteSource {
+    key: string;
+}
+
+export interface GetImagesV2ImageSourceUrlSource {
+    basicAuths: outputs.GetImagesV2ImageSourceUrlSourceBasicAuth[];
+    shouldAllowInsecureUrl: boolean;
+    url: string;
+}
+
+export interface GetImagesV2ImageSourceUrlSourceBasicAuth {
+    password: string;
+    username: string;
+}
+
+export interface GetImagesV2ImageSourceVmDiskSource {
+    extId: string;
 }
 
 export interface GetKarbonClusterEtcdNodePool {
@@ -7619,6 +15832,504 @@ export interface GetNdbTmsCapabilityLastDbLogMetadataDeregisterInfo {
     operations: string[];
 }
 
+export interface GetNetworkSecurityPoliciesV2NetworkPolicy {
+    /**
+     * created by.
+     */
+    createdBy: string;
+    /**
+     * creation time of NSP
+     */
+    creationTime: string;
+    /**
+     * A user defined annotation for a policy.
+     */
+    description: string;
+    /**
+     * Network security policy UUID.
+     */
+    extId: string;
+    /**
+     * If Hitlog is enabled.
+     */
+    isHitlogEnabled: boolean;
+    /**
+     * If Ipv6 Traffic is allowed.
+     */
+    isIpv6TrafficAllowed: boolean;
+    /**
+     * Is system defined NSP
+     */
+    isSystemDefined: boolean;
+    /**
+     * last updated time
+     */
+    lastUpdateTime: string;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyLink[];
+    /**
+     * Name of the Flow Network Security Policy.
+     */
+    name: string;
+    /**
+     * A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+     */
+    rules: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRule[];
+    /**
+     * Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
+     */
+    scope: string;
+    /**
+     * Uuids of the secured groups in the NSP.
+     */
+    securedGroups: string[];
+    /**
+     * Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it.
+     */
+    state: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity
+     */
+    tenantId: string;
+    /**
+     * Defines the type of rules that can be used in a policy.
+     */
+    type: string;
+    /**
+     * A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
+     */
+    vpcReferences: string[];
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRule {
+    /**
+     * A user defined annotation for a rule.
+     */
+    description: string;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleLink[];
+    /**
+     * Spec for rules.
+     */
+    specs: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpec[];
+    /**
+     * The type for a rule - the value chosen here restricts which specification can be chosen.
+     */
+    type: string;
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpec {
+    /**
+     * Application Rule Spec.
+     */
+    applicationRuleSpecs: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecApplicationRuleSpec[];
+    /**
+     * Intra entity group Rule Spec
+     */
+    intraEntityGroupRuleSpecs: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecIntraEntityGroupRuleSpec[];
+    /**
+     * Multi Environment Isolation Rule Spec.
+     */
+    multiEnvIsolationRuleSpecs: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecMultiEnvIsolationRuleSpec[];
+    /**
+     * Two Environment Isolation Rule Spec.
+     */
+    twoEnvIsolationRuleSpecs: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecTwoEnvIsolationRuleSpec[];
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecApplicationRuleSpec {
+    /**
+     * A list of address group references.
+     */
+    destAddressGroupReferences: string[];
+    /**
+     * A specification to how allow mode traffic should be applied, either ALL or NONE.
+     */
+    destAllowSpec: string;
+    /**
+     * List of categories that define a set of network endpoints as outbound.
+     */
+    destCategoryReferences: string[];
+    /**
+     * destination subnet value
+     */
+    destSubnets: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecApplicationRuleSpecDestSubnet[];
+    /**
+     * icmp services
+     */
+    icmpServices: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecApplicationRuleSpecIcmpService[];
+    /**
+     * Denotes if rule allows traffic for all protocol.
+     */
+    isAllProtocolAllowed: boolean;
+    /**
+     * A reference to the network function chain in the rule.
+     */
+    networkFunctionChainReference: string;
+    /**
+     * A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories.
+     */
+    securedGroupCategoryReferences: string[];
+    /**
+     * A list of service group references.
+     */
+    serviceGroupReferences: string[];
+    /**
+     * A list of address group references.
+     */
+    srcAddressGroupReferences: string[];
+    /**
+     * A specification to how allow mode traffic should be applied, either ALL or NONE.
+     */
+    srcAllowSpec: string;
+    /**
+     * List of categories that define a set of network endpoints as inbound.
+     */
+    srcCategoryReferences: string[];
+    /**
+     * source subnet value
+     */
+    srcSubnets: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecApplicationRuleSpecSrcSubnet[];
+    /**
+     * tcp services
+     */
+    tcpServices: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecApplicationRuleSpecTcpService[];
+    /**
+     * udp services
+     */
+    udpServices: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecApplicationRuleSpecUdpService[];
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecApplicationRuleSpecDestSubnet {
+    prefixLength: string;
+    value: string;
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecApplicationRuleSpecIcmpService {
+    /**
+     * Icmp service Code. Ignore this field if Code has to be ANY.
+     *
+     *
+     * See detailed information in [Nutanix Security Policies v4](https://developers.nutanix.com/api-reference?namespace=microseg&version=v4.0).
+     */
+    code: number;
+    /**
+     * Set this field to true if both Type and Code is ANY.
+     */
+    isAllAllowed: boolean;
+    /**
+     * Icmp service Type. Ignore this field if Type has to be ANY.
+     */
+    type: number;
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecApplicationRuleSpecSrcSubnet {
+    prefixLength: string;
+    value: string;
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecApplicationRuleSpecTcpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
+    startPort: number;
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecApplicationRuleSpecUdpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
+    startPort: number;
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecIntraEntityGroupRuleSpec {
+    /**
+     * List of secured group action.
+     */
+    securedGroupAction: string;
+    /**
+     * A specification to whether traffic between intra secured group entities should be allowed or denied.
+     */
+    securedGroupCategoryReferences: string[];
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecMultiEnvIsolationRuleSpec {
+    /**
+     * Multi Environment Isolation Rule Spec.
+     */
+    specs: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecMultiEnvIsolationRuleSpecSpec[];
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecMultiEnvIsolationRuleSpecSpec {
+    /**
+     * all to all isolation group
+     */
+    allToAllIsolationGroups: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroup[];
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroup {
+    /**
+     * Denotes the list of secured groups that will be used in All to All mutual isolation.
+     */
+    isolationGroups: outputs.GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroupIsolationGroup[];
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroupIsolationGroup {
+    /**
+     * External identifiers of categories belonging to the isolation group.
+     */
+    groupCategoryReferences: string[];
+}
+
+export interface GetNetworkSecurityPoliciesV2NetworkPolicyRuleSpecTwoEnvIsolationRuleSpec {
+    /**
+     * Denotes the first group of category uuids that will be used in an isolation policy.
+     */
+    firstIsolationGroups: string[];
+    /**
+     * Denotes the second group of category uuids that will be used in an isolation policy.
+     */
+    secondIsolationGroups: string[];
+}
+
+export interface GetNetworkSecurityPolicyV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetNetworkSecurityPolicyV2Rule {
+    /**
+     * A user defined annotation for a rule.
+     */
+    description: string;
+    /**
+     * Network security policy UUID.
+     */
+    extId: string;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetNetworkSecurityPolicyV2RuleLink[];
+    /**
+     * Multi Environment Isolation Rule Spec.
+     */
+    specs: outputs.GetNetworkSecurityPolicyV2RuleSpec[];
+    /**
+     * Icmp service Type. Ignore this field if Type has to be ANY.
+     */
+    type: string;
+}
+
+export interface GetNetworkSecurityPolicyV2RuleLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpec {
+    /**
+     * Application Rule Spec.
+     */
+    applicationRuleSpecs: outputs.GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpec[];
+    /**
+     * Intra entity group Rule Spec
+     */
+    intraEntityGroupRuleSpecs: outputs.GetNetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpec[];
+    /**
+     * Multi Environment Isolation Rule Spec.
+     */
+    multiEnvIsolationRuleSpecs: outputs.GetNetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpec[];
+    /**
+     * Two Environment Isolation Rule Spec.
+     */
+    twoEnvIsolationRuleSpecs: outputs.GetNetworkSecurityPolicyV2RuleSpecTwoEnvIsolationRuleSpec[];
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpec {
+    /**
+     * A list of address group references.
+     */
+    destAddressGroupReferences: string[];
+    /**
+     * A specification to how allow mode traffic should be applied, either ALL or NONE.
+     */
+    destAllowSpec: string;
+    /**
+     * List of categories that define a set of network endpoints as outbound.
+     */
+    destCategoryReferences: string[];
+    /**
+     * destination subnet value
+     */
+    destSubnets: outputs.GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecDestSubnet[];
+    /**
+     * icmp services
+     */
+    icmpServices: outputs.GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecIcmpService[];
+    /**
+     * Denotes if rule allows traffic for all protocol.
+     */
+    isAllProtocolAllowed: boolean;
+    /**
+     * A reference to the network function chain in the rule.
+     */
+    networkFunctionChainReference: string;
+    /**
+     * A specification to whether traffic between intra secured group entities should be allowed or denied.
+     */
+    securedGroupCategoryReferences: string[];
+    /**
+     * A list of service group references.
+     */
+    serviceGroupReferences: string[];
+    /**
+     * A list of address group references.
+     */
+    srcAddressGroupReferences: string[];
+    /**
+     * A specification to how allow mode traffic should be applied, either ALL or NONE.
+     */
+    srcAllowSpec: string;
+    /**
+     * List of categories that define a set of network endpoints as inbound.
+     */
+    srcCategoryReferences: string[];
+    /**
+     * source subnet value
+     */
+    srcSubnets: outputs.GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecSrcSubnet[];
+    /**
+     * tcp services
+     */
+    tcpServices: outputs.GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecTcpService[];
+    /**
+     * udp services
+     */
+    udpServices: outputs.GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecUdpService[];
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecDestSubnet {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecIcmpService {
+    /**
+     * Icmp service Code. Ignore this field if Code has to be ANY.
+     */
+    code: number;
+    /**
+     * Set this field to true if both Type and Code is ANY.
+     */
+    isAllAllowed: boolean;
+    /**
+     * Icmp service Type. Ignore this field if Type has to be ANY.
+     */
+    type: number;
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecSrcSubnet {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecTcpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
+    startPort: number;
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecUdpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
+    startPort: number;
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpec {
+    /**
+     * List of secured group action.
+     */
+    securedGroupAction: string;
+    /**
+     * A specification to whether traffic between intra secured group entities should be allowed or denied.
+     */
+    securedGroupCategoryReferences: string[];
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpec {
+    /**
+     * Multi Environment Isolation Rule Spec.
+     */
+    specs: outputs.GetNetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpec[];
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpec {
+    /**
+     * all to all isolation group
+     */
+    allToAllIsolationGroups: outputs.GetNetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroup[];
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroup {
+    /**
+     * Denotes the list of secured groups that will be used in All to All mutual isolation.
+     */
+    isolationGroups: outputs.GetNetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroupIsolationGroup[];
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroupIsolationGroup {
+    /**
+     * External identifiers of categories belonging to the isolation group.
+     */
+    groupCategoryReferences: string[];
+}
+
+export interface GetNetworkSecurityPolicyV2RuleSpecTwoEnvIsolationRuleSpec {
+    /**
+     * Denotes the first group of category uuids that will be used in an isolation policy.
+     */
+    firstIsolationGroups: string[];
+    /**
+     * Denotes the second group of category uuids that will be used in an isolation policy.
+     */
+    secondIsolationGroups: string[];
+}
+
 export interface GetNetworkSecurityRuleAdRuleInboundAllowList {
     addressGroupInclusionLists: outputs.GetNetworkSecurityRuleAdRuleInboundAllowListAddressGroupInclusionList[];
     expirationTime: string;
@@ -8026,6 +16737,73 @@ export interface GetNetworkSecurityRuleQuarantineRuleTargetGroupFilterParam {
     values: string[];
 }
 
+export interface GetOperationV2AssociatedEndpointList {
+    /**
+     * Version of the API for the provided associated endpoint.
+     */
+    apiVersion: string;
+    /**
+     * Endpoint URL.
+     */
+    endpointUrl: string;
+    /**
+     * HTTP method for the provided associated endpoint.
+     */
+    httpMethod: string;
+}
+
+export interface GetOperationsV2Operation {
+    /**
+     * List of associated endpoint objects for the Operation.
+     */
+    associatedEndpointLists: outputs.GetOperationsV2OperationAssociatedEndpointList[];
+    /**
+     * Client that created the entity.
+     */
+    clientName: string;
+    createdTime: string;
+    description: string;
+    /**
+     * Permission name.
+     */
+    displayName: string;
+    /**
+     * Type of entity associated with this Operation.
+     */
+    entityType: string;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * Permission last updated time.
+     */
+    lastUpdatedTime: string;
+    /**
+     * The Operation type. Currently we support INTERNAL, EXTERNAL and SYSTEM_DEFINED_ONLY.
+     */
+    operationType: string;
+    /**
+     * List of related Operations. These are the Operations which might need to be given access to, along with the current Operation, for certain workflows to succeed.
+     */
+    relatedOperationLists: string[];
+}
+
+export interface GetOperationsV2OperationAssociatedEndpointList {
+    /**
+     * Version of the API for the provided associated endpoint.
+     */
+    apiVersion: string;
+    /**
+     * Endpoint URL.
+     */
+    endpointUrl: string;
+    /**
+     * HTTP method for the provided associated endpoint.
+     */
+    httpMethod: string;
+}
+
 export interface GetPbrSpec {
     /**
      * - the name.
@@ -8306,6 +17084,376 @@ export interface GetPbrStatusResourceSource {
      * IP subnet provided as an address.
      */
     subnetIp?: string;
+}
+
+export interface GetPbrV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetPbrV2Metadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetPbrV2Policy {
+    /**
+     * If True, policies in the reverse direction will be installed with the same action but source and destination will be swapped.
+     */
+    isBidirectional: boolean;
+    /**
+     * The action to be taken on the traffic matching the routing policy.
+     */
+    policyActions: outputs.GetPbrV2PolicyPolicyAction[];
+    /**
+     * Match condition for the traffic that is entering the VPC.
+     */
+    policyMatches: outputs.GetPbrV2PolicyPolicyMatch[];
+}
+
+export interface GetPbrV2PolicyPolicyAction {
+    /**
+     * Routing policy action type.
+     */
+    actionType: string;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    nexthopIpAddresses: outputs.GetPbrV2PolicyPolicyActionNexthopIpAddress[];
+    /**
+     * Routing policy Reroute params.
+     */
+    rerouteParams: outputs.GetPbrV2PolicyPolicyActionRerouteParam[];
+}
+
+export interface GetPbrV2PolicyPolicyActionNexthopIpAddress {
+    ipv4s: outputs.GetPbrV2PolicyPolicyActionNexthopIpAddressIpv4[];
+    ipv6s: outputs.GetPbrV2PolicyPolicyActionNexthopIpAddressIpv6[];
+}
+
+export interface GetPbrV2PolicyPolicyActionNexthopIpAddressIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrV2PolicyPolicyActionNexthopIpAddressIpv6 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrV2PolicyPolicyActionRerouteParam {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    egressServiceIps: outputs.GetPbrV2PolicyPolicyActionRerouteParamEgressServiceIp[];
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    ingressServiceIps: outputs.GetPbrV2PolicyPolicyActionRerouteParamIngressServiceIp[];
+    /**
+     * Type of fallback action in reroute case when service VM is down.
+     */
+    rerouteFallbackAction: string;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    serviceIps: outputs.GetPbrV2PolicyPolicyActionRerouteParamServiceIp[];
+}
+
+export interface GetPbrV2PolicyPolicyActionRerouteParamEgressServiceIp {
+    ipv4s: outputs.GetPbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4[];
+    ipv6s: outputs.GetPbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6[];
+}
+
+export interface GetPbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrV2PolicyPolicyActionRerouteParamIngressServiceIp {
+    ipv4s: outputs.GetPbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4[];
+    ipv6s: outputs.GetPbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6[];
+}
+
+export interface GetPbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrV2PolicyPolicyActionRerouteParamServiceIp {
+    ipv4s: outputs.GetPbrV2PolicyPolicyActionRerouteParamServiceIpIpv4[];
+    ipv6s: outputs.GetPbrV2PolicyPolicyActionRerouteParamServiceIpIpv6[];
+}
+
+export interface GetPbrV2PolicyPolicyActionRerouteParamServiceIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrV2PolicyPolicyActionRerouteParamServiceIpIpv6 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrV2PolicyPolicyMatch {
+    /**
+     * Address Type like "EXTERNAL" or "ANY".
+     */
+    destinations: outputs.GetPbrV2PolicyPolicyMatchDestination[];
+    /**
+     * Protocol Params Object.
+     */
+    protocolParameters: outputs.GetPbrV2PolicyPolicyMatchProtocolParameter[];
+    /**
+     * Routing Policy IP protocol type.
+     */
+    protocolType: string;
+    /**
+     * Address Type like "EXTERNAL" or "ANY".
+     */
+    sources: outputs.GetPbrV2PolicyPolicyMatchSource[];
+}
+
+export interface GetPbrV2PolicyPolicyMatchDestination {
+    /**
+     * Address Type like "EXTERNAL" or "ANY".
+     */
+    addressType: string;
+    /**
+     * Subnet Prefix
+     */
+    subnetPrefixes: outputs.GetPbrV2PolicyPolicyMatchDestinationSubnetPrefix[];
+}
+
+export interface GetPbrV2PolicyPolicyMatchDestinationSubnetPrefix {
+    ipv4s: outputs.GetPbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4[];
+    ipv6s: outputs.GetPbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6[];
+}
+
+export interface GetPbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4 {
+    /**
+     * IP of address
+     */
+    ips: outputs.GetPbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip[];
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+}
+
+export interface GetPbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6 {
+    /**
+     * IP of address
+     */
+    ips: outputs.GetPbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Ip[];
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+}
+
+export interface GetPbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Ip {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrV2PolicyPolicyMatchProtocolParameter {
+    /**
+     * ICMP object
+     */
+    icmpObjects: outputs.GetPbrV2PolicyPolicyMatchProtocolParameterIcmpObject[];
+    /**
+     * Layer Four Protocol Object.
+     */
+    layerFourProtocolObjects: outputs.GetPbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObject[];
+    /**
+     * Protocol Number Object.
+     */
+    protocolNumberObjects: outputs.GetPbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObject[];
+}
+
+export interface GetPbrV2PolicyPolicyMatchProtocolParameterIcmpObject {
+    /**
+     * icmp code
+     */
+    icmpCode: number;
+    /**
+     * icmp type
+     */
+    icmpType: number;
+}
+
+export interface GetPbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObject {
+    /**
+     * Start and end port ranges object.
+     */
+    destinationPortRanges: outputs.GetPbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRange[];
+    /**
+     * Start and end port ranges object.
+     */
+    sourcePortRanges: outputs.GetPbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRange[];
+}
+
+export interface GetPbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRange {
+    endPort: number;
+    startPort: number;
+}
+
+export interface GetPbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRange {
+    endPort: number;
+    startPort: number;
+}
+
+export interface GetPbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObject {
+    /**
+     * protocol number
+     */
+    protocolNumber: number;
+}
+
+export interface GetPbrV2PolicyPolicyMatchSource {
+    /**
+     * Address Type like "EXTERNAL" or "ANY".
+     */
+    addressType: string;
+    /**
+     * Subnet Prefix
+     */
+    subnetPrefixes: outputs.GetPbrV2PolicyPolicyMatchSourceSubnetPrefix[];
+}
+
+export interface GetPbrV2PolicyPolicyMatchSourceSubnetPrefix {
+    ipv4s: outputs.GetPbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4[];
+    ipv6s: outputs.GetPbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6[];
+}
+
+export interface GetPbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4 {
+    /**
+     * IP of address
+     */
+    ips: outputs.GetPbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip[];
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+}
+
+export interface GetPbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6 {
+    /**
+     * IP of address
+     */
+    ips: outputs.GetPbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Ip[];
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+}
+
+export interface GetPbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Ip {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrV2Vpc {
+    /**
+     * Name of the routing policy.
+     */
+    name: string;
 }
 
 export interface GetPbrsEntity {
@@ -8616,6 +17764,401 @@ export interface GetPbrsMetadata {
     sortAttribute: string;
     sortOrder: string;
     totalMatches: number;
+}
+
+export interface GetPbrsV2RoutingPolicy {
+    /**
+     * A description of the routing policy.
+     */
+    description: string;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetPbrsV2RoutingPolicyLink[];
+    /**
+     * Metadata associated with this resource.
+     */
+    metadatas: outputs.GetPbrsV2RoutingPolicyMetadata[];
+    /**
+     * Name of the routing policy.
+     */
+    name: string;
+    /**
+     * Routing Policies
+     */
+    policies: outputs.GetPbrsV2RoutingPolicyPolicy[];
+    /**
+     * Priority of the routing policy.
+     */
+    priority: number;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity
+     */
+    tenantId: string;
+    /**
+     * ExtId of the VPC extId to which the routing policy belongs.
+     */
+    vpcExtId: string;
+    /**
+     * VPC name for projections
+     */
+    vpcs: outputs.GetPbrsV2RoutingPolicyVpc[];
+}
+
+export interface GetPbrsV2RoutingPolicyLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetPbrsV2RoutingPolicyMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicy {
+    /**
+     * If True, policies in the reverse direction will be installed with the same action but source and destination will be swapped.
+     */
+    isBidirectional: boolean;
+    /**
+     * The action to be taken on the traffic matching the routing policy.
+     */
+    policyActions: outputs.GetPbrsV2RoutingPolicyPolicyPolicyAction[];
+    /**
+     * Match condition for the traffic that is entering the VPC.
+     */
+    policyMatches: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatch[];
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyAction {
+    /**
+     * Routing policy action type.
+     */
+    actionType: string;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    nexthopIpAddresses: outputs.GetPbrsV2RoutingPolicyPolicyPolicyActionNexthopIpAddress[];
+    /**
+     * Routing policy Reroute params.
+     */
+    rerouteParams: outputs.GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParam[];
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyActionNexthopIpAddress {
+    ipv4s: outputs.GetPbrsV2RoutingPolicyPolicyPolicyActionNexthopIpAddressIpv4[];
+    ipv6s: outputs.GetPbrsV2RoutingPolicyPolicyPolicyActionNexthopIpAddressIpv6[];
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyActionNexthopIpAddressIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     *
+     * See detailed information in [Nutanix Routing Policies v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
+     */
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyActionNexthopIpAddressIpv6 {
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParam {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    egressServiceIps: outputs.GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamEgressServiceIp[];
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    ingressServiceIps: outputs.GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamIngressServiceIp[];
+    /**
+     * Type of fallback action in reroute case when service VM is down.
+     */
+    rerouteFallbackAction: string;
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    serviceIps: outputs.GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamServiceIp[];
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamEgressServiceIp {
+    ipv4s: outputs.GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamEgressServiceIpIpv4[];
+    ipv6s: outputs.GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamEgressServiceIpIpv6[];
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamEgressServiceIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     *
+     * See detailed information in [Nutanix Routing Policies v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
+     */
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamEgressServiceIpIpv6 {
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamIngressServiceIp {
+    ipv4s: outputs.GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamIngressServiceIpIpv4[];
+    ipv6s: outputs.GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamIngressServiceIpIpv6[];
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamIngressServiceIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     *
+     * See detailed information in [Nutanix Routing Policies v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
+     */
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamIngressServiceIpIpv6 {
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamServiceIp {
+    ipv4s: outputs.GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamServiceIpIpv4[];
+    ipv6s: outputs.GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamServiceIpIpv6[];
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamServiceIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     *
+     * See detailed information in [Nutanix Routing Policies v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
+     */
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyActionRerouteParamServiceIpIpv6 {
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatch {
+    /**
+     * Address Type like "EXTERNAL" or "ANY".
+     */
+    destinations: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchDestination[];
+    /**
+     * Protocol Params Object.
+     */
+    protocolParameters: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchProtocolParameter[];
+    /**
+     * Routing Policy IP protocol type.
+     */
+    protocolType: string;
+    /**
+     * Address Type like "EXTERNAL" or "ANY".
+     */
+    sources: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchSource[];
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchDestination {
+    /**
+     * Address Type like "EXTERNAL" or "ANY".
+     */
+    addressType: string;
+    /**
+     * Subnet Prefix
+     */
+    subnetPrefixes: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefix[];
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefix {
+    ipv4s: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefixIpv4[];
+    ipv6s: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefixIpv6[];
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefixIpv4 {
+    /**
+     * IP of address
+     */
+    ips: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefixIpv4Ip[];
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     *
+     * See detailed information in [Nutanix Routing Policies v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
+     */
+    prefixLength: number;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefixIpv4Ip {
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefixIpv6 {
+    /**
+     * IP of address
+     */
+    ips: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefixIpv6Ip[];
+    prefixLength: number;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefixIpv6Ip {
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchProtocolParameter {
+    /**
+     * ICMP object
+     */
+    icmpObjects: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchProtocolParameterIcmpObject[];
+    /**
+     * Layer Four Protocol Object.
+     */
+    layerFourProtocolObjects: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchProtocolParameterLayerFourProtocolObject[];
+    /**
+     * Protocol Number Object.
+     */
+    protocolNumberObjects: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchProtocolParameterProtocolNumberObject[];
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchProtocolParameterIcmpObject {
+    /**
+     * icmp code
+     */
+    icmpCode: number;
+    /**
+     * icmp type
+     */
+    icmpType: number;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchProtocolParameterLayerFourProtocolObject {
+    /**
+     * Start and end port ranges object.
+     */
+    destinationPortRanges: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRange[];
+    /**
+     * Start and end port ranges object.
+     */
+    sourcePortRanges: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRange[];
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRange {
+    endPort: number;
+    startPort: number;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRange {
+    endPort: number;
+    startPort: number;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchProtocolParameterProtocolNumberObject {
+    /**
+     * protocol number
+     */
+    protocolNumber: number;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchSource {
+    /**
+     * Address Type like "EXTERNAL" or "ANY".
+     */
+    addressType: string;
+    /**
+     * Subnet Prefix
+     */
+    subnetPrefixes: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchSourceSubnetPrefix[];
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchSourceSubnetPrefix {
+    ipv4s: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchSourceSubnetPrefixIpv4[];
+    ipv6s: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchSourceSubnetPrefixIpv6[];
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchSourceSubnetPrefixIpv4 {
+    /**
+     * IP of address
+     */
+    ips: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchSourceSubnetPrefixIpv4Ip[];
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     *
+     * See detailed information in [Nutanix Routing Policies v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
+     */
+    prefixLength: number;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchSourceSubnetPrefixIpv4Ip {
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchSourceSubnetPrefixIpv6 {
+    /**
+     * IP of address
+     */
+    ips: outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchSourceSubnetPrefixIpv6Ip[];
+    prefixLength: number;
+}
+
+export interface GetPbrsV2RoutingPolicyPolicyPolicyMatchSourceSubnetPrefixIpv6Ip {
+    prefixLength: number;
+    /**
+     * ip value
+     */
+    value: string;
+}
+
+export interface GetPbrsV2RoutingPolicyVpc {
+    /**
+     * Name of the routing policy.
+     */
+    name: string;
 }
 
 export interface GetPermissionCategory {
@@ -10310,6 +19853,431 @@ export interface GetRecoveryPlansEntityStageListStageWorkRecoverEntityEntityInfo
     timeout: string;
 }
 
+export interface GetRecoveryPointV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetRecoveryPointV2LocationReference {
+    /**
+     * External identifier of the cluster where the recovery point is present.
+     */
+    locationExtId: string;
+}
+
+export interface GetRecoveryPointV2VmRecoveryPoint {
+    /**
+     * User-defined application-consistent properties for the recovery point.
+     */
+    applicationConsistentProperties: outputs.GetRecoveryPointV2VmRecoveryPointApplicationConsistentProperty[];
+    /**
+     * External identifier of the Consistency group which the entity was part of at the time of recovery point creation.
+     */
+    consistencyGroupExtId: string;
+    /**
+     * The UTC date and time in ISO-8601 format when the Recovery point is created.
+     */
+    creationTime: string;
+    /**
+     * array of disk recovery points.
+     */
+    diskRecoveryPoints: outputs.GetRecoveryPointV2VmRecoveryPointDiskRecoveryPoint[];
+    /**
+     * The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
+     */
+    expirationTime: string;
+    /**
+     * recovery point UUID
+     */
+    extId: string;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetRecoveryPointV2VmRecoveryPointLink[];
+    /**
+     * Location agnostic identifier of the recovery point. This identifier is used to identify the same instances of a recovery point across different sites.
+     */
+    locationAgnosticId: string;
+    /**
+     * The name of the Recovery point.
+     */
+    name: string;
+    /**
+     * Type of the Recovery point.
+     */
+    recoveryPointType: string;
+    /**
+     * The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
+     * * supported values:
+     * * `COMPLETE`: -  The Recovery point is in a complete state and ready to be consumed.
+     */
+    status: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity
+     */
+    tenantId: string;
+    /**
+     * Category key-value pairs associated with the VM at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' is displayed as 'dept/hr'.
+     */
+    vmCategories: string[];
+    /**
+     * VM external identifier which is captured as a part of this recovery point.
+     */
+    vmExtId: string;
+}
+
+export interface GetRecoveryPointV2VmRecoveryPointApplicationConsistentProperty {
+    /**
+     * The backup type specifies the criteria for identifying the files to be backed up. This property should be specified to the application-consistent recovery points for Windows VMs/agents. The following backup types are supported for the application-consistent recovery points:
+     * * supported values:
+     * * `FULL_BACKUP`: -  All the files are backed up irrespective of their last backup date/time or state. Also, this backup type updates the backup history of each file that participated in the recovery point. If not explicitly specified, this is the default backup type.
+     * * `COPY_BACKUP`: -  this backup type does not update the backup history of individual files involved in the recovery point.
+     */
+    backupType: string;
+    /**
+     * value: `dataprotection.v4.common.VssProperties`
+     */
+    objectType: string;
+    /**
+     * Indicates whether the given set of VSS writers' UUIDs should be included or excluded from the application consistent recovery point. By default, the value is set to false, indicating that all listed VSS writers' UUIDs will be excluded.
+     */
+    shouldIncludeWriters: boolean;
+    /**
+     * Indicates whether to store the VSS metadata if the user is interested in application-specific backup/restore. The VSS metadata consists of VSS writers and requester metadata details. These are compressed into a cabinet file(.cab file) during a VSS backup operation. This cabinet file must be saved to the backup media during a backup operation, as it is required during the restore operation.
+     */
+    shouldStoreVssMetadata: boolean;
+    /**
+     * List of VSS writer UUIDs that are used in an application consistent recovery point. The default values are the system and the registry writer UUIDs.
+     */
+    writers: string[];
+}
+
+export interface GetRecoveryPointV2VmRecoveryPointDiskRecoveryPoint {
+    /**
+     * External identifier of the disk.
+     */
+    diskExtId: string;
+    /**
+     * External identifier of the disk recovery point.
+     */
+    diskRecoveryPointExtId: string;
+}
+
+export interface GetRecoveryPointV2VmRecoveryPointLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetRecoveryPointV2VolumeGroupRecoveryPoint {
+    /**
+     * External identifier of the Consistency group which the entity was part of at the time of recovery point creation.
+     */
+    consistencyGroupExtId: string;
+    /**
+     * array of disk recovery points.
+     */
+    diskRecoveryPoints: outputs.GetRecoveryPointV2VolumeGroupRecoveryPointDiskRecoveryPoint[];
+    /**
+     * recovery point UUID
+     */
+    extId: string;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetRecoveryPointV2VolumeGroupRecoveryPointLink[];
+    /**
+     * Location agnostic identifier of the recovery point. This identifier is used to identify the same instances of a recovery point across different sites.
+     */
+    locationAgnosticId: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity
+     */
+    tenantId: string;
+    /**
+     * Category key-value pairs associated with the volume group at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' will be represented as 'dept/hr'.
+     */
+    volumeGroupCategories: string[];
+    /**
+     * Volume Group external identifier which is captured as part of this recovery point.
+     */
+    volumeGroupExtId: string;
+}
+
+export interface GetRecoveryPointV2VolumeGroupRecoveryPointDiskRecoveryPoint {
+    /**
+     * External identifier of the disk.
+     */
+    diskExtId: string;
+    /**
+     * External identifier of the disk recovery point.
+     */
+    diskRecoveryPointExtId: string;
+}
+
+export interface GetRecoveryPointV2VolumeGroupRecoveryPointLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetRecoveryPointsV2RecoveryPoint {
+    /**
+     * The UTC date and time in ISO-8601 format when the Recovery point is created.
+     */
+    creationTime: string;
+    /**
+     * The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
+     */
+    expirationTime: string;
+    /**
+     * recovery point UUID
+     */
+    extId: string;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetRecoveryPointsV2RecoveryPointLink[];
+    /**
+     * Location agnostic identifier of the recovery point. This identifier is used to identify the same instances of a recovery point across different sites.
+     */
+    locationAgnosticId: string;
+    /**
+     * List of location references where the VM or volume group recovery point are a part of the specified recovery point.
+     */
+    locationReferences: outputs.GetRecoveryPointsV2RecoveryPointLocationReference[];
+    /**
+     * The name of the Recovery point.
+     */
+    name: string;
+    /**
+     * A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
+     */
+    ownerExtId: string;
+    /**
+     * Type of the Recovery point.
+     */
+    recoveryPointType: string;
+    /**
+     * The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
+     * * supported values:
+     * * `COMPLETE`: -  The Recovery point is in a complete state and ready to be consumed.
+     */
+    status: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity
+     */
+    tenantId: string;
+    /**
+     * List of VM recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
+     */
+    vmRecoveryPoints: outputs.GetRecoveryPointsV2RecoveryPointVmRecoveryPoint[];
+    /**
+     * List of volume group recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
+     */
+    volumeGroupRecoveryPoints: outputs.GetRecoveryPointsV2RecoveryPointVolumeGroupRecoveryPoint[];
+}
+
+export interface GetRecoveryPointsV2RecoveryPointLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetRecoveryPointsV2RecoveryPointLocationReference {
+    /**
+     * External identifier of the cluster where the recovery point is present.
+     */
+    locationExtId: string;
+}
+
+export interface GetRecoveryPointsV2RecoveryPointVmRecoveryPoint {
+    /**
+     * User-defined application-consistent properties for the recovery point.
+     */
+    applicationConsistentProperties: outputs.GetRecoveryPointsV2RecoveryPointVmRecoveryPointApplicationConsistentProperty[];
+    /**
+     * External identifier of the Consistency group which the entity was part of at the time of recovery point creation.
+     */
+    consistencyGroupExtId: string;
+    /**
+     * The UTC date and time in ISO-8601 format when the Recovery point is created.
+     */
+    creationTime: string;
+    /**
+     * array of disk recovery points.
+     */
+    diskRecoveryPoints: outputs.GetRecoveryPointsV2RecoveryPointVmRecoveryPointDiskRecoveryPoint[];
+    /**
+     * The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
+     */
+    expirationTime: string;
+    /**
+     * recovery point UUID
+     */
+    extId: string;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetRecoveryPointsV2RecoveryPointVmRecoveryPointLink[];
+    /**
+     * Location agnostic identifier of the recovery point. This identifier is used to identify the same instances of a recovery point across different sites.
+     */
+    locationAgnosticId: string;
+    /**
+     * The name of the Recovery point.
+     */
+    name: string;
+    /**
+     * Type of the Recovery point.
+     */
+    recoveryPointType: string;
+    /**
+     * The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
+     * * supported values:
+     * * `COMPLETE`: -  The Recovery point is in a complete state and ready to be consumed.
+     */
+    status: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity
+     */
+    tenantId: string;
+    /**
+     * Category key-value pairs associated with the VM at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' is displayed as 'dept/hr'.
+     */
+    vmCategories: string[];
+    /**
+     * VM external identifier which is captured as a part of this recovery point.
+     */
+    vmExtId: string;
+}
+
+export interface GetRecoveryPointsV2RecoveryPointVmRecoveryPointApplicationConsistentProperty {
+    /**
+     * The backup type specifies the criteria for identifying the files to be backed up. This property should be specified to the application-consistent recovery points for Windows VMs/agents. The following backup types are supported for the application-consistent recovery points:
+     * * supported values:
+     * * `FULL_BACKUP`: -  All the files are backed up irrespective of their last backup date/time or state. Also, this backup type updates the backup history of each file that participated in the recovery point. If not explicitly specified, this is the default backup type.
+     * * `COPY_BACKUP`: -  this backup type does not update the backup history of individual files involved in the recovery point.
+     */
+    backupType: string;
+    /**
+     * value: `dataprotection.v4.common.VssProperties`
+     */
+    objectType: string;
+    /**
+     * Indicates whether the given set of VSS writers' UUIDs should be included or excluded from the application consistent recovery point. By default, the value is set to false, indicating that all listed VSS writers' UUIDs will be excluded.
+     */
+    shouldIncludeWriters: boolean;
+    /**
+     * Indicates whether to store the VSS metadata if the user is interested in application-specific backup/restore. The VSS metadata consists of VSS writers and requester metadata details. These are compressed into a cabinet file(.cab file) during a VSS backup operation. This cabinet file must be saved to the backup media during a backup operation, as it is required during the restore operation.
+     */
+    shouldStoreVssMetadata: boolean;
+    /**
+     * List of VSS writer UUIDs that are used in an application consistent recovery point. The default values are the system and the registry writer UUIDs.
+     */
+    writers: string[];
+}
+
+export interface GetRecoveryPointsV2RecoveryPointVmRecoveryPointDiskRecoveryPoint {
+    /**
+     * External identifier of the disk.
+     */
+    diskExtId: string;
+    /**
+     * External identifier of the disk recovery point.
+     */
+    diskRecoveryPointExtId: string;
+}
+
+export interface GetRecoveryPointsV2RecoveryPointVmRecoveryPointLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetRecoveryPointsV2RecoveryPointVolumeGroupRecoveryPoint {
+    /**
+     * External identifier of the Consistency group which the entity was part of at the time of recovery point creation.
+     */
+    consistencyGroupExtId: string;
+    /**
+     * array of disk recovery points.
+     */
+    diskRecoveryPoints: outputs.GetRecoveryPointsV2RecoveryPointVolumeGroupRecoveryPointDiskRecoveryPoint[];
+    /**
+     * recovery point UUID
+     */
+    extId: string;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetRecoveryPointsV2RecoveryPointVolumeGroupRecoveryPointLink[];
+    /**
+     * Location agnostic identifier of the recovery point. This identifier is used to identify the same instances of a recovery point across different sites.
+     */
+    locationAgnosticId: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity
+     */
+    tenantId: string;
+    /**
+     * Category key-value pairs associated with the volume group at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' will be represented as 'dept/hr'.
+     */
+    volumeGroupCategories: string[];
+    /**
+     * Volume Group external identifier which is captured as part of this recovery point.
+     */
+    volumeGroupExtId: string;
+}
+
+export interface GetRecoveryPointsV2RecoveryPointVolumeGroupRecoveryPointDiskRecoveryPoint {
+    /**
+     * External identifier of the disk.
+     */
+    diskExtId: string;
+    /**
+     * External identifier of the disk recovery point.
+     */
+    diskRecoveryPointExtId: string;
+}
+
+export interface GetRecoveryPointsV2RecoveryPointVolumeGroupRecoveryPointLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
 export interface GetRoleCategory {
     /**
      * - the name(Optional).
@@ -10334,6 +20302,17 @@ export interface GetRolePermissionReferenceList {
      * - the UUID(Required).
      */
     uuid: string;
+}
+
+export interface GetRoleV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
 }
 
 export interface GetRolesEntity {
@@ -10414,6 +20393,521 @@ export interface GetRolesMetadata {
     sortOrder: string;
 }
 
+export interface GetRolesV2Role {
+    /**
+     * - List of Accessible Clients for the Role.
+     */
+    accessibleClients: string[];
+    /**
+     * - List of Accessible Entity Types for the Role.
+     */
+    accessibleEntityTypes: string[];
+    /**
+     * - Number of Users assigned to given Role.
+     */
+    assignedUsersCount: number;
+    /**
+     * - Number of User Groups assigned to given Role.
+     */
+    assignedUsersGroupsCount: number;
+    /**
+     * - Client that created the entity.
+     */
+    clientName: string;
+    /**
+     * - User or Service Name that created the Role.
+     */
+    createdBy: string;
+    /**
+     * - The creation time of the Role.
+     */
+    createdTime: string;
+    /**
+     * - Description of the Role.
+     */
+    description: string;
+    /**
+     * - The display name for the Role.
+     */
+    displayName: string;
+    /**
+     * - A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * - Flag identifying if the Role is system defined or not.
+     */
+    isSystemDefined: boolean;
+    /**
+     * - The time when the Role was last updated.
+     */
+    lastUpdatedTime: string;
+    /**
+     * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetRolesV2RoleLink[];
+    /**
+     * - List of operations for the role.
+     */
+    operations: string[];
+    /**
+     * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+     */
+    tenantId: string;
+}
+
+export interface GetRolesV2RoleLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetRouteTableV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetRouteTableV2Metadata {
+    /**
+     * A list of globally unique identifiers that represent all the categories the resource is associated with.
+     */
+    categoryIds: string[];
+    /**
+     * A globally unique identifier that represents the owner of this resource.
+     */
+    ownerReferenceId: string;
+    /**
+     * The userName of the owner of this resource.
+     */
+    ownerUserName: string;
+    /**
+     * The name of the project this resource belongs to.
+     */
+    projectName: string;
+    /**
+     * A globally unique identifier that represents the project this resource belongs to.
+     */
+    projectReferenceId: string;
+}
+
+export interface GetRouteTablesV2RouteTable {
+    /**
+     * Route UUID
+     */
+    extId: string;
+    /**
+     * External routing domain associated with this route table.
+     */
+    externalRoutingDomainReference: string;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetRouteTablesV2RouteTableLink[];
+    /**
+     * Metadata associated with this resource.
+     */
+    metadatas: outputs.GetRouteTablesV2RouteTableMetadata[];
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity
+     */
+    tenantId: string;
+    /**
+     * VPC reference.
+     */
+    vpcReference: string;
+}
+
+export interface GetRouteTablesV2RouteTableLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetRouteTablesV2RouteTableMetadata {
+    /**
+     * A list of globally unique identifiers that represent all the categories the resource is associated with.
+     */
+    categoryIds: string[];
+    /**
+     * A globally unique identifier that represents the owner of this resource.
+     */
+    ownerReferenceId: string;
+    /**
+     * The userName of the owner of this resource.
+     */
+    ownerUserName: string;
+    /**
+     * The name of the project this resource belongs to.
+     */
+    projectName: string;
+    /**
+     * A globally unique identifier that represents the project this resource belongs to.
+     */
+    projectReferenceId: string;
+}
+
+export interface GetRouteV2Destination {
+    /**
+     * IPv4 Address
+     */
+    ipv4: outputs.GetRouteV2DestinationIpv4;
+    /**
+     * IPv6 Address
+     */
+    ipv6: outputs.GetRouteV2DestinationIpv6;
+}
+
+export interface GetRouteV2DestinationIpv4 {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ip: outputs.GetRouteV2DestinationIpv4Ip;
+    /**
+     * The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength: number;
+}
+
+export interface GetRouteV2DestinationIpv4Ip {
+    /**
+     * The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * The IPv4 address of the host.
+     */
+    value: string;
+}
+
+export interface GetRouteV2DestinationIpv6 {
+    /**
+     * IP address format
+     */
+    ip: outputs.GetRouteV2DestinationIpv6Ip;
+    /**
+     * The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength: number;
+}
+
+export interface GetRouteV2DestinationIpv6Ip {
+    /**
+     * The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * The IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface GetRouteV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetRouteV2Metadata {
+    /**
+     * A list of globally unique identifiers that represent all the categories the resource is associated with.
+     */
+    categoryIds: string[];
+    /**
+     * A globally unique identifier that represents the owner of this resource.
+     */
+    ownerReferenceId: string;
+    /**
+     * The userName of the owner of this resource.
+     */
+    ownerUserName: string;
+    /**
+     * The name of the project this resource belongs to.
+     */
+    projectName: string;
+    /**
+     * A globally unique identifier that represents the project this resource belongs to.
+     */
+    projectReferenceId: string;
+}
+
+export interface GetRouteV2NextHop {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    nextHopIpAddresses: outputs.GetRouteV2NextHopNextHopIpAddress[];
+    nextHopName: string;
+    /**
+     * The reference to a link, such as a VPN connection or a subnet.
+     */
+    nextHopReference: string;
+    /**
+     * Nexthop type.
+     * - supported values:
+     * - `LOCAL_SUBNET`: - Next hop is an internal subnet.
+     * - `DIRECT_CONNECT_VIF`: - Next hop is a direct connect VIF.
+     * - `VPN_CONNECTION`: - Next hop is a VPN connection.
+     * - `IP_ADDRESS`: - Next hop is an IP address.
+     * - `EXTERNAL_SUBNET`: - Next hop is an external subnet.
+     */
+    nextHopType: string;
+}
+
+export interface GetRouteV2NextHopNextHopIpAddress {
+    /**
+     * IPv4 Address
+     */
+    ipv4: outputs.GetRouteV2NextHopNextHopIpAddressIpv4;
+    /**
+     * IPv6 Address
+     */
+    ipv6: outputs.GetRouteV2NextHopNextHopIpAddressIpv6;
+}
+
+export interface GetRouteV2NextHopNextHopIpAddressIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of IP address
+     */
+    value: string;
+}
+
+export interface GetRouteV2NextHopNextHopIpAddressIpv6 {
+    /**
+     * The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of IP address
+     */
+    value: string;
+}
+
+export interface GetRoutesV2Route {
+    /**
+     * BGP session description.
+     */
+    description: string;
+    /**
+     * Destination IP Subnet Configuration.
+     */
+    destinations: outputs.GetRoutesV2RouteDestination[];
+    /**
+     * Route UUID
+     */
+    extId: string;
+    /**
+     * External routing domain associated with this route table.
+     */
+    externalRoutingDomainReference: string;
+    /**
+     * Indicates whether the route is active in the forwarding plane.
+     */
+    isActive: boolean;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetRoutesV2RouteLink[];
+    /**
+     * Metadata associated with this resource.
+     */
+    metadatas: outputs.GetRoutesV2RouteMetadata[];
+    /**
+     * Route name.
+     */
+    name: string;
+    /**
+     * Route nexthop.
+     */
+    nextHops: outputs.GetRoutesV2RouteNextHop[];
+    /**
+     * Route priority. A higher value implies greater preference is assigned to the route.
+     */
+    priority: number;
+    /**
+     * Route table UUID
+     */
+    routeTableExtId: string;
+    /**
+     * Route table reference.
+     */
+    routeTableReference: string;
+    /**
+     * Route type. Acceptable values are "STATIC", "LOCAL", "DYNAMIC"
+     */
+    routeType: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity
+     */
+    tenantId: string;
+    /**
+     * VPC reference.
+     */
+    vpcReference: string;
+}
+
+export interface GetRoutesV2RouteDestination {
+    /**
+     * IPv4 Address
+     */
+    ipv4: outputs.GetRoutesV2RouteDestinationIpv4;
+    /**
+     * IPv6 Address
+     */
+    ipv6: outputs.GetRoutesV2RouteDestinationIpv6;
+}
+
+export interface GetRoutesV2RouteDestinationIpv4 {
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ip: outputs.GetRoutesV2RouteDestinationIpv4Ip;
+    /**
+     * The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength: number;
+}
+
+export interface GetRoutesV2RouteDestinationIpv4Ip {
+    /**
+     * The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * The IPv4 address of the host.
+     */
+    value: string;
+}
+
+export interface GetRoutesV2RouteDestinationIpv6 {
+    /**
+     * IP address format
+     */
+    ip: outputs.GetRoutesV2RouteDestinationIpv6Ip;
+    /**
+     * The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength: number;
+}
+
+export interface GetRoutesV2RouteDestinationIpv6Ip {
+    /**
+     * The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * The IPv6 address of the host.
+     */
+    value: string;
+}
+
+export interface GetRoutesV2RouteLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetRoutesV2RouteMetadata {
+    /**
+     * A list of globally unique identifiers that represent all the categories the resource is associated with.
+     */
+    categoryIds: string[];
+    /**
+     * A globally unique identifier that represents the owner of this resource.
+     */
+    ownerReferenceId: string;
+    /**
+     * The userName of the owner of this resource.
+     */
+    ownerUserName: string;
+    /**
+     * The name of the project this resource belongs to.
+     */
+    projectName: string;
+    /**
+     * A globally unique identifier that represents the project this resource belongs to.
+     */
+    projectReferenceId: string;
+}
+
+export interface GetRoutesV2RouteNextHop {
+    nextHopIpAddresses: outputs.GetRoutesV2RouteNextHopNextHopIpAddress[];
+    nextHopName: string;
+    nextHopReference: string;
+    nextHopType: string;
+}
+
+export interface GetRoutesV2RouteNextHopNextHopIpAddress {
+    /**
+     * IPv4 Address
+     */
+    ipv4: outputs.GetRoutesV2RouteNextHopNextHopIpAddressIpv4;
+    /**
+     * IPv6 Address
+     */
+    ipv6: outputs.GetRoutesV2RouteNextHopNextHopIpAddressIpv6;
+}
+
+export interface GetRoutesV2RouteNextHopNextHopIpAddressIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of IP address
+     */
+    value: string;
+}
+
+export interface GetRoutesV2RouteNextHopNextHopIpAddressIpv6 {
+    /**
+     * The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of IP address
+     */
+    value: string;
+}
+
+export interface GetSamlIdentityProviderV2IdpMetadata {
+    certificate: string;
+    entityId: string;
+    errorUrl: string;
+    loginUrl: string;
+    logoutUrl: string;
+    nameIdPolicyFormat: string;
+}
+
+export interface GetSamlIdentityProvidersV2IdentityProvider {
+    createdBy: string;
+    createdTime: string;
+    customAttributes: string[];
+    emailAttribute: string;
+    entityIssuer: string;
+    extId: string;
+    groupsAttribute: string;
+    groupsDelim: string;
+    idpMetadatas: outputs.GetSamlIdentityProvidersV2IdentityProviderIdpMetadata[];
+    isSignedAuthnReqEnabled: boolean;
+    lastUpdatedTime: string;
+    name: string;
+    usernameAttribute: string;
+}
+
+export interface GetSamlIdentityProvidersV2IdentityProviderIdpMetadata {
+    certificate: string;
+    entityId: string;
+    errorUrl: string;
+    loginUrl: string;
+    logoutUrl: string;
+    nameIdPolicyFormat: string;
+}
+
 export interface GetServiceGroupServiceList {
     icmpTypeCodeLists: outputs.GetServiceGroupServiceListIcmpTypeCodeList[];
     protocol: string;
@@ -10433,6 +20927,48 @@ export interface GetServiceGroupServiceListTcpPortRangeList {
 
 export interface GetServiceGroupServiceListUdpPortRangeList {
     endPort: number;
+    startPort: number;
+}
+
+export interface GetServiceGroupV2IcmpService {
+    /**
+     * Icmp service Code. Ignore this field if Code has to be ANY
+     */
+    code: number;
+    /**
+     * Set this field to true if both Type and Code is ANY.
+     */
+    isAllAllowed: boolean;
+    /**
+     * Icmp service Type. Ignore this field if Type has to be ANY.
+     */
+    type: number;
+}
+
+export interface GetServiceGroupV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetServiceGroupV2TcpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
+    startPort: number;
+}
+
+export interface GetServiceGroupV2UdpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
     startPort: number;
 }
 
@@ -10487,6 +21023,95 @@ export interface GetServiceGroupsMetadata {
     offset: number;
     sortAttribute: string;
     sortOrder: string;
+}
+
+export interface GetServiceGroupsV2ServiceGroup {
+    /**
+     * created by.
+     */
+    createdBy: string;
+    /**
+     * A user defined annotation for an service Group.
+     */
+    description: string;
+    /**
+     * service group UUID.
+     */
+    extId: string;
+    /**
+     * Icmp Type Code List.
+     */
+    icmpServices: outputs.GetServiceGroupsV2ServiceGroupIcmpService[];
+    /**
+     * Service Group is system defined or not.
+     */
+    isSystemDefined: boolean;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetServiceGroupsV2ServiceGroupLink[];
+    /**
+     * A short identifier for an service Group.
+     */
+    name: string;
+    /**
+     * Reference to policy associated with Service Group.
+     */
+    policyReferences: string[];
+    /**
+     * List of TCP ports in the service.
+     */
+    tcpServices: outputs.GetServiceGroupsV2ServiceGroupTcpService[];
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+    /**
+     * List of UDP ports in the service.
+     */
+    udpServices: outputs.GetServiceGroupsV2ServiceGroupUdpService[];
+}
+
+export interface GetServiceGroupsV2ServiceGroupIcmpService {
+    /**
+     * Icmp service Code. Ignore this field if Code has to be ANY
+     */
+    code: number;
+    /**
+     * Set this field to true if both Type and Code is ANY.
+     */
+    isAllAllowed: boolean;
+    /**
+     * Icmp service Type. Ignore this field if Type has to be ANY.
+     */
+    type: number;
+}
+
+export interface GetServiceGroupsV2ServiceGroupLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetServiceGroupsV2ServiceGroupTcpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
+    startPort: number;
+}
+
+export interface GetServiceGroupsV2ServiceGroupUdpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
+    startPort: number;
 }
 
 export interface GetStaticRoutesSpec {
@@ -10754,6 +21379,388 @@ export interface GetStaticRoutesStatusResourceStaticRoutesListNexthop {
     vpnConnectionReference: {[key: string]: string};
 }
 
+export interface GetStorageContainerStatsInfoV2ControllerAvgIoLatencyuSec {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2ControllerAvgReadIoLatencyuSec {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2ControllerAvgWriteIoLatencyuSec {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2ControllerIoBandwidthKbp {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2ControllerNumIop {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2ControllerNumReadIop {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2ControllerNumWriteIop {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2ControllerReadIoBandwidthKbp {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2ControllerReadIoRatioPpm {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2ControllerWriteIoBandwidthKbp {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2ControllerWriteIoRatioPpm {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2DataReductionCloneSavingRatioPpm {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2DataReductionCompressionSavingRatioPpm {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2DataReductionDedupSavingRatioPpm {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2DataReductionErasureCodingSavingRatioPpm {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2DataReductionOverallPostReductionByte {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2DataReductionOverallPreReductionByte {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2DataReductionSavedByte {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2DataReductionSavingRatioPpm {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2DataReductionSnapshotSavingRatioPpm {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2DataReductionThinProvisionSavingRatioPpm {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2DataReductionTotalSavingRatioPpm {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2DataReductionZeroWriteSavingsByte {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2Health {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetStorageContainerStatsInfoV2StorageActualPhysicalUsageByte {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2StorageCapacityByte {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2StorageFreeByte {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2StorageReplicationFactor {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2StorageReservedCapacityByte {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2StorageTierDasSataUsageByte {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2StorageTierSsdUsageByte {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerStatsInfoV2StorageUsageByte {
+    timestamp: string;
+    value: number;
+}
+
+export interface GetStorageContainerV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetStorageContainerV2NfsWhitelistAddress {
+    /**
+     * Reference to address configuration
+     */
+    fqdns: outputs.GetStorageContainerV2NfsWhitelistAddressFqdn[];
+    /**
+     * Reference to address configuration
+     */
+    ipv4s: outputs.GetStorageContainerV2NfsWhitelistAddressIpv4[];
+    /**
+     * Reference to address configuration
+     */
+    ipv6s: outputs.GetStorageContainerV2NfsWhitelistAddressIpv6[];
+}
+
+export interface GetStorageContainerV2NfsWhitelistAddressFqdn {
+    /**
+     * value of fqdn address
+     */
+    value: string;
+}
+
+export interface GetStorageContainerV2NfsWhitelistAddressIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of fqdn address
+     */
+    value: string;
+}
+
+export interface GetStorageContainerV2NfsWhitelistAddressIpv6 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of fqdn address
+     */
+    value: string;
+}
+
+export interface GetStorageContainersV2StorageContainer {
+    /**
+     * - Affinity host extId for RF 1 Storage Container.
+     */
+    affinityHostExtId: string;
+    /**
+     * - Indicates the current status of Cache Deduplication for the Container. available values:  `NONE`,    `OFF`,    `ON`
+     */
+    cacheDeduplication: string;
+    /**
+     * - ext id for the cluster owning the storage container.
+     */
+    clusterExtId: string;
+    /**
+     * - Corresponding name of the Cluster owning the Storage Container instance.
+     */
+    clusterName: string;
+    /**
+     * - The compression delay in seconds.
+     */
+    compressionDelaySecs: number;
+    /**
+     * - the storage container ext id
+     */
+    containerExtId: string;
+    /**
+     * - Indicates the current status value for Erasure Coding for the Container. available values:  `NONE`,    `OFF`,    `ON`
+     */
+    erasureCode: string;
+    /**
+     * - Delay in performing ErasureCode for the current Container instance.
+     */
+    erasureCodeDelaySecs: number;
+    /**
+     * - the storage container uuid
+     */
+    extId: string;
+    /**
+     * - Indicates whether to prefer a higher Erasure Code fault domain.
+     */
+    hasHigherEcFaultDomainPreference: boolean;
+    /**
+     * - Indicates whether the compression is enabled for the Container.
+     */
+    isCompressionEnabled: boolean;
+    /**
+     * - Indicates whether the Container is encrypted or not.
+     */
+    isEncrypted: boolean;
+    /**
+     * - Indicates whether data written to this container should be inline erasure coded or not. This field is only considered when ErasureCoding is enabled.
+     */
+    isInlineEcEnabled: boolean;
+    /**
+     * - Indicates whether the Container is internal and is managed by Nutanix.
+     */
+    isInternal: boolean;
+    /**
+     * - Indicates if the Storage Container is marked for removal. This field is set when the Storage Container is about to be destroyed.
+     */
+    isMarkedForRemoval: boolean;
+    /**
+     * - Indicates whether the NFS whitelist is inherited from global config.
+     */
+    isNfsWhitelistInherited: boolean;
+    /**
+     * - Indicates whether the Container instance has software encryption enabled.
+     */
+    isSoftwareEncryptionEnabled: boolean;
+    /**
+     * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetStorageContainersV2StorageContainerLink[];
+    /**
+     * - Max capacity of the Container as defined by the user.
+     */
+    logicalAdvertisedCapacityBytes: number;
+    /**
+     * - Total reserved size (in bytes) of the container (set by Admin). This also accounts for the container's replication factor. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity.
+     */
+    logicalExplicitReservedCapacityBytes: number;
+    /**
+     * - This is the summation of reservations provisioned on all VDisks in the container. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity
+     */
+    logicalImplicitReservedCapacityBytes: number;
+    /**
+     * - Maximum physical capacity of the Storage Container in bytes.
+     */
+    maxCapacityBytes: number;
+    /**
+     * Name of the storage container.  Note that the name of Storage Container should be unique per cluster.
+     */
+    name: string;
+    /**
+     * - List of NFS addresses which need to be whitelisted.
+     */
+    nfsWhitelistAddresses: outputs.GetStorageContainersV2StorageContainerNfsWhitelistAddress[];
+    /**
+     * - Indicates the current status of Disk Deduplication for the Container. available values:  `NONE`,    `OFF`,    `POST_PROCESS`
+     */
+    onDiskDedup: string;
+    /**
+     * - owner ext id
+     */
+    ownerExtId: string;
+    /**
+     * - Replication factor of the Storage Container.
+     */
+    replicationFactor: number;
+    /**
+     * - extId of the Storage Pool owning the Storage Container instance.
+     */
+    storagePoolExtId: string;
+    /**
+     * - A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+}
+
+export interface GetStorageContainersV2StorageContainerLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetStorageContainersV2StorageContainerNfsWhitelistAddress {
+    /**
+     * Reference to address configuration
+     */
+    fqdns: outputs.GetStorageContainersV2StorageContainerNfsWhitelistAddressFqdn[];
+    /**
+     * Reference to address configuration
+     */
+    ipv4s: outputs.GetStorageContainersV2StorageContainerNfsWhitelistAddressIpv4[];
+    /**
+     * Reference to address configuration
+     */
+    ipv6s: outputs.GetStorageContainersV2StorageContainerNfsWhitelistAddressIpv6[];
+}
+
+export interface GetStorageContainersV2StorageContainerNfsWhitelistAddressFqdn {
+    /**
+     * value of fqdn address
+     */
+    value: string;
+}
+
+export interface GetStorageContainersV2StorageContainerNfsWhitelistAddressIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of fqdn address
+     */
+    value: string;
+}
+
+export interface GetStorageContainersV2StorageContainerNfsWhitelistAddressIpv6 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of fqdn address
+     */
+    value: string;
+}
+
 export interface GetSubnetAdditionalFilter {
     /**
      * - the name(Optional).
@@ -10777,6 +21784,757 @@ export interface GetSubnetMessageList {
     details: {[key: string]: string};
     message: string;
     reason: string;
+}
+
+export interface GetSubnetV2DhcpOption {
+    /**
+     * Boot file name
+     */
+    bootFileName: string;
+    /**
+     * The DNS domain name of the client.
+     */
+    domainName: string;
+    /**
+     * List of Domain Name Server addresses.
+     */
+    domainNameServers: outputs.GetSubnetV2DhcpOptionDomainNameServer[];
+    /**
+     * List of NTP server addresses
+     */
+    ntpServers: outputs.GetSubnetV2DhcpOptionNtpServer[];
+    /**
+     * The DNS domain search list.
+     */
+    searchDomains: string[];
+    /**
+     * TFTP server name
+     */
+    tftpServerName: string;
+}
+
+export interface GetSubnetV2DhcpOptionDomainNameServer {
+    /**
+     * IP V4 configuration.
+     */
+    ipv4s: outputs.GetSubnetV2DhcpOptionDomainNameServerIpv4[];
+    /**
+     * IP V6 configuration
+     */
+    ipv6s: outputs.GetSubnetV2DhcpOptionDomainNameServerIpv6[];
+}
+
+export interface GetSubnetV2DhcpOptionDomainNameServerIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2DhcpOptionDomainNameServerIpv6 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2DhcpOptionNtpServer {
+    /**
+     * IP V4 configuration.
+     */
+    ipv4s: outputs.GetSubnetV2DhcpOptionNtpServerIpv4[];
+    /**
+     * IP V6 configuration
+     */
+    ipv6s: outputs.GetSubnetV2DhcpOptionNtpServerIpv6[];
+}
+
+export interface GetSubnetV2DhcpOptionNtpServerIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2DhcpOptionNtpServerIpv6 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2DynamicIpAddress {
+    /**
+     * IP V4 configuration.
+     */
+    ipv4s: outputs.GetSubnetV2DynamicIpAddressIpv4[];
+    /**
+     * IP V6 configuration
+     */
+    ipv6s: outputs.GetSubnetV2DynamicIpAddressIpv6[];
+}
+
+export interface GetSubnetV2DynamicIpAddressIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2DynamicIpAddressIpv6 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2IpConfig {
+    /**
+     * IP V4 configuration.
+     */
+    ipv4s: outputs.GetSubnetV2IpConfigIpv4[];
+    /**
+     * IP V6 configuration
+     */
+    ipv6s: outputs.GetSubnetV2IpConfigIpv6[];
+}
+
+export interface GetSubnetV2IpConfigIpv4 {
+    /**
+     * Reference to address configuration
+     */
+    defaultGatewayIps: outputs.GetSubnetV2IpConfigIpv4DefaultGatewayIp[];
+    /**
+     * Reference to address configuration
+     */
+    dhcpServerAddresses: outputs.GetSubnetV2IpConfigIpv4DhcpServerAddress[];
+    /**
+     * subnet ip
+     */
+    ipSubnets: outputs.GetSubnetV2IpConfigIpv4IpSubnet[];
+    /**
+     * Pool of IP addresses from where IPs are allocated.
+     */
+    poolLists: outputs.GetSubnetV2IpConfigIpv4PoolList[];
+}
+
+export interface GetSubnetV2IpConfigIpv4DefaultGatewayIp {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2IpConfigIpv4DhcpServerAddress {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2IpConfigIpv4IpSubnet {
+    /**
+     * Reference to address configuration
+     */
+    ips: outputs.GetSubnetV2IpConfigIpv4IpSubnetIp[];
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+}
+
+export interface GetSubnetV2IpConfigIpv4IpSubnetIp {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2IpConfigIpv4PoolList {
+    /**
+     * Reference to address configuration
+     */
+    endIps: outputs.GetSubnetV2IpConfigIpv4PoolListEndIp[];
+    /**
+     * Reference to address configuration
+     */
+    startIps: outputs.GetSubnetV2IpConfigIpv4PoolListStartIp[];
+}
+
+export interface GetSubnetV2IpConfigIpv4PoolListEndIp {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2IpConfigIpv4PoolListStartIp {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2IpConfigIpv6 {
+    /**
+     * Reference to address configuration
+     */
+    defaultGatewayIps: outputs.GetSubnetV2IpConfigIpv6DefaultGatewayIp[];
+    /**
+     * Reference to address configuration
+     */
+    dhcpServerAddresses: outputs.GetSubnetV2IpConfigIpv6DhcpServerAddress[];
+    /**
+     * subnet ip
+     */
+    ipSubnets: outputs.GetSubnetV2IpConfigIpv6IpSubnet[];
+    /**
+     * Pool of IP addresses from where IPs are allocated.
+     */
+    poolLists: outputs.GetSubnetV2IpConfigIpv6PoolList[];
+}
+
+export interface GetSubnetV2IpConfigIpv6DefaultGatewayIp {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2IpConfigIpv6DhcpServerAddress {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2IpConfigIpv6IpSubnet {
+    /**
+     * Reference to address configuration
+     */
+    ips: outputs.GetSubnetV2IpConfigIpv6IpSubnetIp[];
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+}
+
+export interface GetSubnetV2IpConfigIpv6IpSubnetIp {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2IpConfigIpv6PoolList {
+    /**
+     * Reference to address configuration
+     */
+    endIps: outputs.GetSubnetV2IpConfigIpv6PoolListEndIp[];
+    /**
+     * Reference to address configuration
+     */
+    startIps: outputs.GetSubnetV2IpConfigIpv6PoolListStartIp[];
+}
+
+export interface GetSubnetV2IpConfigIpv6PoolListEndIp {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2IpConfigIpv6PoolListStartIp {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2IpUsage {
+    /**
+     * IP Pool usages
+     */
+    ipPoolUsages: outputs.GetSubnetV2IpUsageIpPoolUsage[];
+    /**
+     * Number of assigned IPs.
+     */
+    numAssignedIps: number;
+    /**
+     * Number of free IPs
+     */
+    numFreeIps: number;
+    /**
+     * Number of MAC addresses.
+     */
+    numMacs: number;
+}
+
+export interface GetSubnetV2IpUsageIpPoolUsage {
+    /**
+     * Number of free IPs
+     */
+    numFreeIps: number;
+    /**
+     * Total number of IPs in this pool.
+     */
+    numTotalIps: number;
+    /**
+     * Start/end IP address range.
+     */
+    ranges: outputs.GetSubnetV2IpUsageIpPoolUsageRange[];
+}
+
+export interface GetSubnetV2IpUsageIpPoolUsageRange {
+    /**
+     * Reference to address configuration
+     */
+    endIps: outputs.GetSubnetV2IpUsageIpPoolUsageRangeEndIp[];
+    /**
+     * Reference to address configuration
+     */
+    startIps: outputs.GetSubnetV2IpUsageIpPoolUsageRangeStartIp[];
+}
+
+export interface GetSubnetV2IpUsageIpPoolUsageRangeEndIp {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2IpUsageIpPoolUsageRangeStartIp {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetSubnetV2ReservedIpAddress {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2VirtualSwitch {
+    bondMode: boolean;
+    clusters: outputs.GetSubnetV2VirtualSwitchCluster[];
+    /**
+     * Description of the subnet.
+     */
+    description: string;
+    /**
+     * - (Required) The UUID of the subnet.
+     */
+    extId: string;
+    hasDeploymentError: boolean;
+    isDefault: boolean;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetSubnetV2VirtualSwitchLink[];
+    metadatas: outputs.GetSubnetV2VirtualSwitchMetadata[];
+    mtu: number;
+    /**
+     * Name of the subnet.
+     */
+    name: string;
+    tenantId: string;
+}
+
+export interface GetSubnetV2VirtualSwitchCluster {
+    /**
+     * - (Required) The UUID of the subnet.
+     */
+    extId: string;
+    gatewayIpAddresses: outputs.GetSubnetV2VirtualSwitchClusterGatewayIpAddress[];
+    hosts: outputs.GetSubnetV2VirtualSwitchClusterHost[];
+}
+
+export interface GetSubnetV2VirtualSwitchClusterGatewayIpAddress {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2VirtualSwitchClusterHost {
+    /**
+     * - (Required) The UUID of the subnet.
+     */
+    extId: string;
+    hostNics: string[];
+    internalBridgeName: string;
+    ipAddresses: outputs.GetSubnetV2VirtualSwitchClusterHostIpAddress[];
+    routeTable: number;
+}
+
+export interface GetSubnetV2VirtualSwitchClusterHostIpAddress {
+    /**
+     * Reference to address configuration
+     */
+    ips: outputs.GetSubnetV2VirtualSwitchClusterHostIpAddressIp[];
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+}
+
+export interface GetSubnetV2VirtualSwitchClusterHostIpAddressIp {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2VirtualSwitchLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetSubnetV2VirtualSwitchMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetSubnetV2Vpc {
+    commonDhcpOptions: outputs.GetSubnetV2VpcCommonDhcpOption[];
+    /**
+     * Description of the subnet.
+     */
+    description: string;
+    /**
+     * - (Required) The UUID of the subnet.
+     */
+    extId: string;
+    externalRoutingDomainReference: string;
+    externalSubnets: outputs.GetSubnetV2VpcExternalSubnet[];
+    externallyRoutablePrefixes: outputs.GetSubnetV2VpcExternallyRoutablePrefix[];
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetSubnetV2VpcLink[];
+    metadatas: outputs.GetSubnetV2VpcMetadata[];
+    /**
+     * Name of the subnet.
+     */
+    name: string;
+    snatIps: outputs.GetSubnetV2VpcSnatIp[];
+    tenantId: string;
+    vpcType: string;
+}
+
+export interface GetSubnetV2VpcCommonDhcpOption {
+    /**
+     * List of Domain Name Server addresses.
+     */
+    domainNameServers: outputs.GetSubnetV2VpcCommonDhcpOptionDomainNameServer[];
+}
+
+export interface GetSubnetV2VpcCommonDhcpOptionDomainNameServer {
+    /**
+     * IP V4 configuration.
+     */
+    ipv4s: outputs.GetSubnetV2VpcCommonDhcpOptionDomainNameServerIpv4[];
+    /**
+     * IP V6 configuration
+     */
+    ipv6s: outputs.GetSubnetV2VpcCommonDhcpOptionDomainNameServerIpv6[];
+}
+
+export interface GetSubnetV2VpcCommonDhcpOptionDomainNameServerIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2VpcCommonDhcpOptionDomainNameServerIpv6 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2VpcExternalSubnet {
+    activeGatewayCount: number;
+    activeGatewayNodes: outputs.GetSubnetV2VpcExternalSubnetActiveGatewayNode[];
+    externalIps: outputs.GetSubnetV2VpcExternalSubnetExternalIp[];
+    gatewayNodes: string[];
+    subnetReference: string;
+}
+
+export interface GetSubnetV2VpcExternalSubnetActiveGatewayNode {
+    nodeId: string;
+    nodeIpAddresses: outputs.GetSubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress[];
+}
+
+export interface GetSubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress {
+    /**
+     * IP V4 configuration.
+     */
+    ipv4s: outputs.GetSubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4[];
+    /**
+     * IP V6 configuration
+     */
+    ipv6s: outputs.GetSubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6[];
+}
+
+export interface GetSubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2VpcExternalSubnetExternalIp {
+    /**
+     * IP V4 configuration.
+     */
+    ipv4s: outputs.GetSubnetV2VpcExternalSubnetExternalIpIpv4[];
+    /**
+     * IP V6 configuration
+     */
+    ipv6s: outputs.GetSubnetV2VpcExternalSubnetExternalIpIpv6[];
+}
+
+export interface GetSubnetV2VpcExternalSubnetExternalIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2VpcExternalSubnetExternalIpIpv6 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2VpcExternallyRoutablePrefix {
+    /**
+     * IP V4 configuration.
+     */
+    ipv4s: outputs.GetSubnetV2VpcExternallyRoutablePrefixIpv4[];
+    /**
+     * IP V6 configuration
+     */
+    ipv6s: outputs.GetSubnetV2VpcExternallyRoutablePrefixIpv6[];
+}
+
+export interface GetSubnetV2VpcExternallyRoutablePrefixIpv4 {
+    /**
+     * Reference to address configuration
+     */
+    ips: outputs.GetSubnetV2VpcExternallyRoutablePrefixIpv4Ip[];
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+}
+
+export interface GetSubnetV2VpcExternallyRoutablePrefixIpv4Ip {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2VpcExternallyRoutablePrefixIpv6 {
+    /**
+     * Reference to address configuration
+     */
+    ips: outputs.GetSubnetV2VpcExternallyRoutablePrefixIpv6Ip[];
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+}
+
+export interface GetSubnetV2VpcExternallyRoutablePrefixIpv6Ip {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2VpcLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetSubnetV2VpcMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetSubnetV2VpcSnatIp {
+    /**
+     * IP V4 configuration.
+     */
+    ipv4s: outputs.GetSubnetV2VpcSnatIpIpv4[];
+    /**
+     * IP V6 configuration
+     */
+    ipv6s: outputs.GetSubnetV2VpcSnatIpIpv6[];
+}
+
+export interface GetSubnetV2VpcSnatIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetV2VpcSnatIpIpv6 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
 }
 
 export interface GetSubnetsEntity {
@@ -10906,6 +22664,3699 @@ export interface GetSubnetsMetadata {
     offset: number;
     sortAttribute: string;
     sortOrder: string;
+}
+
+export interface GetSubnetsV2Subnet {
+    /**
+     * Name of the bridge on the host for the subnet.
+     */
+    bridgeName: string;
+    /**
+     * Cluster Name
+     */
+    clusterName: string;
+    /**
+     * UUID of the cluster this subnet belongs to.
+     */
+    clusterReference: string;
+    /**
+     * Description of the subnet.
+     */
+    description: string;
+    /**
+     * List of DHCP options to be configured.
+     */
+    dhcpOptions: outputs.GetSubnetsV2SubnetDhcpOption[];
+    /**
+     * List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
+     */
+    dynamicIpAddresses: outputs.GetSubnetsV2SubnetDynamicIpAddress[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * Hypervisor Type
+     */
+    hypervisorType: string;
+    /**
+     * IP configuration for the subnet.
+     */
+    ipConfigs: outputs.GetSubnetsV2SubnetIpConfig[];
+    /**
+     * IP Prefix in CIDR format.
+     */
+    ipPrefix: string;
+    /**
+     * IP usage statistics.
+     */
+    ipUsages: outputs.GetSubnetsV2SubnetIpUsage[];
+    /**
+     * Indicates whether the subnet is used for advanced networking.
+     */
+    isAdvancedNetworking: boolean;
+    /**
+     * Indicates whether the subnet is used for external connectivity.
+     */
+    isExternal: boolean;
+    /**
+     * Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
+     */
+    isNatEnabled: boolean;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetSubnetsV2SubnetLink[];
+    /**
+     * Migration state of the subnet. This field is read-only.
+     */
+    migrationState: string;
+    /**
+     * Name of the subnet.
+     */
+    name: string;
+    /**
+     * UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
+     */
+    networkFunctionChainReference: string;
+    /**
+     * or VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
+     */
+    networkId: number;
+    /**
+     * List of IPs that are excluded while allocating IP addresses to VM ports.
+     */
+    reservedIpAddresses: outputs.GetSubnetsV2SubnetReservedIpAddress[];
+    /**
+     * Type of subnet.
+     */
+    subnetType: string;
+    /**
+     * UUID of the virtual switch this subnet belongs to (type VLAN only).
+     */
+    virtualSwitchReference: string;
+    /**
+     * Schema to configure a virtual switch
+     */
+    virtualSwitches: outputs.GetSubnetsV2SubnetVirtualSwitch[];
+    /**
+     * UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
+     */
+    vpcReference: string;
+    /**
+     * Networking common base object
+     */
+    vpcs: outputs.GetSubnetsV2SubnetVpc[];
+}
+
+export interface GetSubnetsV2SubnetDhcpOption {
+    /**
+     * Boot file name
+     */
+    bootFileName: string;
+    /**
+     * The DNS domain name of the client.
+     */
+    domainName: string;
+    /**
+     * List of Domain Name Server addresses.
+     */
+    domainNameServers: outputs.GetSubnetsV2SubnetDhcpOptionDomainNameServer[];
+    /**
+     * List of NTP server addresses
+     */
+    ntpServers: outputs.GetSubnetsV2SubnetDhcpOptionNtpServer[];
+    /**
+     * The DNS domain search list.
+     */
+    searchDomains: string[];
+    /**
+     * TFTP server name
+     */
+    tftpServerName: string;
+}
+
+export interface GetSubnetsV2SubnetDhcpOptionDomainNameServer {
+    /**
+     * IPv4 Object
+     */
+    ipv4s: outputs.GetSubnetsV2SubnetDhcpOptionDomainNameServerIpv4[];
+    /**
+     * IPv6 Object
+     */
+    ipv6s: outputs.GetSubnetsV2SubnetDhcpOptionDomainNameServerIpv6[];
+}
+
+export interface GetSubnetsV2SubnetDhcpOptionDomainNameServerIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     *
+     * See detailed information in [Nutanix Subnet v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetDhcpOptionDomainNameServerIpv6 {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetDhcpOptionNtpServer {
+    ipv4s: outputs.GetSubnetsV2SubnetDhcpOptionNtpServerIpv4[];
+    ipv6s: outputs.GetSubnetsV2SubnetDhcpOptionNtpServerIpv6[];
+}
+
+export interface GetSubnetsV2SubnetDhcpOptionNtpServerIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     *
+     * See detailed information in [Nutanix Subnet v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetDhcpOptionNtpServerIpv6 {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetDynamicIpAddress {
+    ipv4s: outputs.GetSubnetsV2SubnetDynamicIpAddressIpv4[];
+    ipv6s: outputs.GetSubnetsV2SubnetDynamicIpAddressIpv6[];
+}
+
+export interface GetSubnetsV2SubnetDynamicIpAddressIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     *
+     * See detailed information in [Nutanix Subnet v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetDynamicIpAddressIpv6 {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetIpConfig {
+    /**
+     * IP V4 configuration.
+     */
+    ipv4s: outputs.GetSubnetsV2SubnetIpConfigIpv4[];
+    /**
+     * IP V6 configuration
+     */
+    ipv6s: outputs.GetSubnetsV2SubnetIpConfigIpv6[];
+}
+
+export interface GetSubnetsV2SubnetIpConfigIpv4 {
+    /**
+     * Reference to address configuration
+     */
+    defaultGatewayIps: outputs.GetSubnetsV2SubnetIpConfigIpv4DefaultGatewayIp[];
+    /**
+     * Reference to address configuration
+     */
+    dhcpServerAddresses: outputs.GetSubnetsV2SubnetIpConfigIpv4DhcpServerAddress[];
+    /**
+     * subnet ip
+     */
+    ipSubnets: outputs.GetSubnetsV2SubnetIpConfigIpv4IpSubnet[];
+    /**
+     * Pool of IP addresses from where IPs are allocated.
+     */
+    poolLists: outputs.GetSubnetsV2SubnetIpConfigIpv4PoolList[];
+}
+
+export interface GetSubnetsV2SubnetIpConfigIpv4DefaultGatewayIp {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetIpConfigIpv4DhcpServerAddress {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetIpConfigIpv4IpSubnet {
+    /**
+     * Reference to address configuration
+     */
+    ips: outputs.GetSubnetsV2SubnetIpConfigIpv4IpSubnetIp[];
+    /**
+     * The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength: number;
+}
+
+export interface GetSubnetsV2SubnetIpConfigIpv4IpSubnetIp {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetIpConfigIpv4PoolList {
+    /**
+     * Reference to address configuration
+     */
+    endIps: outputs.GetSubnetsV2SubnetIpConfigIpv4PoolListEndIp[];
+    /**
+     * Reference to address configuration
+     */
+    startIps: outputs.GetSubnetsV2SubnetIpConfigIpv4PoolListStartIp[];
+}
+
+export interface GetSubnetsV2SubnetIpConfigIpv4PoolListEndIp {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetIpConfigIpv4PoolListStartIp {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetIpConfigIpv6 {
+    /**
+     * Reference to address configuration
+     */
+    defaultGatewayIps: outputs.GetSubnetsV2SubnetIpConfigIpv6DefaultGatewayIp[];
+    /**
+     * Reference to address configuration
+     */
+    dhcpServerAddresses: outputs.GetSubnetsV2SubnetIpConfigIpv6DhcpServerAddress[];
+    /**
+     * subnet ip
+     */
+    ipSubnets: outputs.GetSubnetsV2SubnetIpConfigIpv6IpSubnet[];
+    /**
+     * Pool of IP addresses from where IPs are allocated.
+     */
+    poolLists: outputs.GetSubnetsV2SubnetIpConfigIpv6PoolList[];
+}
+
+export interface GetSubnetsV2SubnetIpConfigIpv6DefaultGatewayIp {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetIpConfigIpv6DhcpServerAddress {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetIpConfigIpv6IpSubnet {
+    /**
+     * Reference to address configuration
+     */
+    ips: outputs.GetSubnetsV2SubnetIpConfigIpv6IpSubnetIp[];
+    /**
+     * The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength: number;
+}
+
+export interface GetSubnetsV2SubnetIpConfigIpv6IpSubnetIp {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetIpConfigIpv6PoolList {
+    /**
+     * Reference to address configuration
+     */
+    endIps: outputs.GetSubnetsV2SubnetIpConfigIpv6PoolListEndIp[];
+    /**
+     * Reference to address configuration
+     */
+    startIps: outputs.GetSubnetsV2SubnetIpConfigIpv6PoolListStartIp[];
+}
+
+export interface GetSubnetsV2SubnetIpConfigIpv6PoolListEndIp {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetIpConfigIpv6PoolListStartIp {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetIpUsage {
+    /**
+     * IP Pool usages
+     */
+    ipPoolUsages: outputs.GetSubnetsV2SubnetIpUsageIpPoolUsage[];
+    /**
+     * Number of assigned IPs.
+     */
+    numAssignedIps: number;
+    /**
+     * Number of free IPs.
+     */
+    numFreeIps: number;
+    /**
+     * Number of MAC addresses.
+     */
+    numMacs: number;
+}
+
+export interface GetSubnetsV2SubnetIpUsageIpPoolUsage {
+    /**
+     * Number of free IPs
+     */
+    numFreeIps: number;
+    /**
+     * Total number of IPs in this pool.
+     */
+    numTotalIps: number;
+    /**
+     * Start/end IP address range.
+     */
+    ranges: outputs.GetSubnetsV2SubnetIpUsageIpPoolUsageRange[];
+}
+
+export interface GetSubnetsV2SubnetIpUsageIpPoolUsageRange {
+    /**
+     * Reference to address configuration
+     */
+    endIps: outputs.GetSubnetsV2SubnetIpUsageIpPoolUsageRangeEndIp[];
+    /**
+     * Reference to address configuration
+     */
+    startIps: outputs.GetSubnetsV2SubnetIpUsageIpPoolUsageRangeStartIp[];
+}
+
+export interface GetSubnetsV2SubnetIpUsageIpPoolUsageRangeEndIp {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetIpUsageIpPoolUsageRangeStartIp {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetSubnetsV2SubnetReservedIpAddress {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetVirtualSwitch {
+    bondMode: boolean;
+    clusters: outputs.GetSubnetsV2SubnetVirtualSwitchCluster[];
+    /**
+     * Description of the subnet.
+     */
+    description: string;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    hasDeploymentError: boolean;
+    isDefault: boolean;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetSubnetsV2SubnetVirtualSwitchLink[];
+    metadatas: outputs.GetSubnetsV2SubnetVirtualSwitchMetadata[];
+    mtu: number;
+    /**
+     * Name of the subnet.
+     */
+    name: string;
+    tenantId: string;
+}
+
+export interface GetSubnetsV2SubnetVirtualSwitchCluster {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    gatewayIpAddresses: outputs.GetSubnetsV2SubnetVirtualSwitchClusterGatewayIpAddress[];
+    hosts: outputs.GetSubnetsV2SubnetVirtualSwitchClusterHost[];
+}
+
+export interface GetSubnetsV2SubnetVirtualSwitchClusterGatewayIpAddress {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetVirtualSwitchClusterHost {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    hostNics: string[];
+    internalBridgeName: string;
+    ipAddresses: outputs.GetSubnetsV2SubnetVirtualSwitchClusterHostIpAddress[];
+    routeTable: number;
+}
+
+export interface GetSubnetsV2SubnetVirtualSwitchClusterHostIpAddress {
+    /**
+     * Reference to address configuration
+     */
+    ips: outputs.GetSubnetsV2SubnetVirtualSwitchClusterHostIpAddressIp[];
+    prefixLength: number;
+}
+
+export interface GetSubnetsV2SubnetVirtualSwitchClusterHostIpAddressIp {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetVirtualSwitchLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetSubnetsV2SubnetVirtualSwitchMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetSubnetsV2SubnetVpc {
+    commonDhcpOptions: outputs.GetSubnetsV2SubnetVpcCommonDhcpOption[];
+    /**
+     * Description of the subnet.
+     */
+    description: string;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    externalRoutingDomainReference: string;
+    externalSubnets: outputs.GetSubnetsV2SubnetVpcExternalSubnet[];
+    externallyRoutablePrefixes: outputs.GetSubnetsV2SubnetVpcExternallyRoutablePrefix[];
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetSubnetsV2SubnetVpcLink[];
+    metadatas: outputs.GetSubnetsV2SubnetVpcMetadata[];
+    /**
+     * Name of the subnet.
+     */
+    name: string;
+    snatIps: outputs.GetSubnetsV2SubnetVpcSnatIp[];
+    tenantId: string;
+    vpcType: string;
+}
+
+export interface GetSubnetsV2SubnetVpcCommonDhcpOption {
+    /**
+     * List of Domain Name Server addresses.
+     */
+    domainNameServers: outputs.GetSubnetsV2SubnetVpcCommonDhcpOptionDomainNameServer[];
+}
+
+export interface GetSubnetsV2SubnetVpcCommonDhcpOptionDomainNameServer {
+    /**
+     * IPv4 Object
+     */
+    ipv4s: outputs.GetSubnetsV2SubnetVpcCommonDhcpOptionDomainNameServerIpv4[];
+    /**
+     * IPv6 Object
+     */
+    ipv6s: outputs.GetSubnetsV2SubnetVpcCommonDhcpOptionDomainNameServerIpv6[];
+}
+
+export interface GetSubnetsV2SubnetVpcCommonDhcpOptionDomainNameServerIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     *
+     * See detailed information in [Nutanix Subnet v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetVpcCommonDhcpOptionDomainNameServerIpv6 {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetVpcExternalSubnet {
+    activeGatewayCount: number;
+    activeGatewayNodes: outputs.GetSubnetsV2SubnetVpcExternalSubnetActiveGatewayNode[];
+    externalIps: outputs.GetSubnetsV2SubnetVpcExternalSubnetExternalIp[];
+    gatewayNodes: string[];
+    subnetReference: string;
+}
+
+export interface GetSubnetsV2SubnetVpcExternalSubnetActiveGatewayNode {
+    nodeId: string;
+    nodeIpAddresses: outputs.GetSubnetsV2SubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress[];
+}
+
+export interface GetSubnetsV2SubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddress {
+    ipv4s: outputs.GetSubnetsV2SubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4[];
+    ipv6s: outputs.GetSubnetsV2SubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6[];
+}
+
+export interface GetSubnetsV2SubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     *
+     * See detailed information in [Nutanix Subnet v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetVpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetVpcExternalSubnetExternalIp {
+    ipv4s: outputs.GetSubnetsV2SubnetVpcExternalSubnetExternalIpIpv4[];
+    ipv6s: outputs.GetSubnetsV2SubnetVpcExternalSubnetExternalIpIpv6[];
+}
+
+export interface GetSubnetsV2SubnetVpcExternalSubnetExternalIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     *
+     * See detailed information in [Nutanix Subnet v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetVpcExternalSubnetExternalIpIpv6 {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetVpcExternallyRoutablePrefix {
+    ipv4s: outputs.GetSubnetsV2SubnetVpcExternallyRoutablePrefixIpv4[];
+    ipv6s: outputs.GetSubnetsV2SubnetVpcExternallyRoutablePrefixIpv6[];
+}
+
+export interface GetSubnetsV2SubnetVpcExternallyRoutablePrefixIpv4 {
+    /**
+     * Reference to address configuration
+     */
+    ips: outputs.GetSubnetsV2SubnetVpcExternallyRoutablePrefixIpv4Ip[];
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     *
+     * See detailed information in [Nutanix Subnet v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
+     */
+    prefixLength: number;
+}
+
+export interface GetSubnetsV2SubnetVpcExternallyRoutablePrefixIpv4Ip {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetVpcExternallyRoutablePrefixIpv6 {
+    /**
+     * Reference to address configuration
+     */
+    ips: outputs.GetSubnetsV2SubnetVpcExternallyRoutablePrefixIpv6Ip[];
+    prefixLength: number;
+}
+
+export interface GetSubnetsV2SubnetVpcExternallyRoutablePrefixIpv6Ip {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetVpcLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetSubnetsV2SubnetVpcMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetSubnetsV2SubnetVpcSnatIp {
+    ipv4s: outputs.GetSubnetsV2SubnetVpcSnatIpIpv4[];
+    ipv6s: outputs.GetSubnetsV2SubnetVpcSnatIpIpv6[];
+}
+
+export interface GetSubnetsV2SubnetVpcSnatIpIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     *
+     * See detailed information in [Nutanix Subnet v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0).
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetSubnetsV2SubnetVpcSnatIpIpv6 {
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetTemplateV2CreatedBy {
+    /**
+     * Any additional attribute for the User.
+     */
+    additionalAttributes: outputs.GetTemplateV2CreatedByAdditionalAttribute[];
+    creationType: string;
+    /**
+     * VM description
+     */
+    description: string;
+    /**
+     * Display name for the User.
+     */
+    displayName: string;
+    /**
+     * Email Id for the User.
+     */
+    emailId: string;
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+    /**
+     * First name for the User.
+     */
+    firstName: string;
+    /**
+     * Identifier of the IDP for the User.
+     */
+    idpId: string;
+    /**
+     * Flag to force the User to reset password.
+     */
+    isForceResetPasswordEnabled: boolean;
+    /**
+     * Last name for the User.
+     */
+    lastName: string;
+    /**
+     * Default locale for the User.
+     */
+    locale: string;
+    /**
+     * Middle name for the User.
+     */
+    middleInitial: string;
+    password: string;
+    /**
+     * Default Region for the User.
+     */
+    region: string;
+    /**
+     * Status of the User.
+     */
+    status: string;
+    /**
+     * Type of the User.
+     */
+    userType: string;
+    /**
+     * Identifier for the User in the form an email address.
+     */
+    username: string;
+}
+
+export interface GetTemplateV2CreatedByAdditionalAttribute {
+    /**
+     * Name of the GPU resource.
+     */
+    name: string;
+    values: outputs.GetTemplateV2CreatedByAdditionalAttributeValue[];
+}
+
+export interface GetTemplateV2CreatedByAdditionalAttributeValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplateV2CreatedByAdditionalAttributeValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplateV2CreatedByAdditionalAttributeValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface GetTemplateV2GuestUpdateStatus {
+    /**
+     * The identifier of the temporary VM created on initiating Guest OS Update.
+     */
+    deployedVmReference: string;
+}
+
+export interface GetTemplateV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpec {
+    /**
+     * VM creation time
+     */
+    createTime: string;
+    /**
+     * User or Service who created the User.
+     */
+    createdBies: outputs.GetTemplateV2TemplateVersionSpecCreatedBy[];
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+    /**
+     * Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise.
+     */
+    isActiveVersion: boolean;
+    /**
+     * Allow or disallow override of the Guest Customization during Template deployment.
+     */
+    isGcOverrideEnabled: boolean;
+    links: outputs.GetTemplateV2TemplateVersionSpecLink[];
+    tenantId: string;
+    /**
+     * The user defined description of a Template Version.
+     */
+    versionDescription: string;
+    /**
+     * The user defined name of a Template Version.
+     */
+    versionName: string;
+    /**
+     * VM configuration.
+     */
+    vmSpecs: outputs.GetTemplateV2TemplateVersionSpecVmSpec[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecCreatedBy {
+    /**
+     * Any additional attribute for the User.
+     */
+    additionalAttributes: outputs.GetTemplateV2TemplateVersionSpecCreatedByAdditionalAttribute[];
+    creationType: string;
+    /**
+     * VM description
+     */
+    description: string;
+    /**
+     * Display name for the User.
+     */
+    displayName: string;
+    /**
+     * Email Id for the User.
+     */
+    emailId: string;
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+    /**
+     * First name for the User.
+     */
+    firstName: string;
+    /**
+     * Identifier of the IDP for the User.
+     */
+    idpId: string;
+    /**
+     * Flag to force the User to reset password.
+     */
+    isForceResetPasswordEnabled: boolean;
+    /**
+     * Last name for the User.
+     */
+    lastName: string;
+    /**
+     * Default locale for the User.
+     */
+    locale: string;
+    /**
+     * Middle name for the User.
+     */
+    middleInitial: string;
+    password: string;
+    /**
+     * Default Region for the User.
+     */
+    region: string;
+    /**
+     * Status of the User.
+     */
+    status: string;
+    /**
+     * Type of the User.
+     */
+    userType: string;
+    /**
+     * Identifier for the User in the form an email address.
+     */
+    username: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecCreatedByAdditionalAttribute {
+    /**
+     * Name of the GPU resource.
+     */
+    name: string;
+    values: outputs.GetTemplateV2TemplateVersionSpecCreatedByAdditionalAttributeValue[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecCreatedByAdditionalAttributeValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplateV2TemplateVersionSpecCreatedByAdditionalAttributeValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecCreatedByAdditionalAttributeValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface GetTemplateV2TemplateVersionSpecLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpec {
+    /**
+     * Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
+     */
+    apcConfigs: outputs.GetTemplateV2TemplateVersionSpecVmSpecApcConfig[];
+    availabilityZones: outputs.GetTemplateV2TemplateVersionSpecVmSpecAvailabilityZone[];
+    /**
+     * BIOS UUID of the VM. It should be of type UUID.
+     */
+    biosUuid: string;
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
+    bootConfigs: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfig[];
+    /**
+     * Categories for the VM.
+     */
+    categories: outputs.GetTemplateV2TemplateVersionSpecVmSpecCategory[];
+    /**
+     * CD-ROMs attached to the VM.
+     */
+    cdRoms: outputs.GetTemplateV2TemplateVersionSpecVmSpecCdRom[];
+    /**
+     * Reference to a cluster.
+     */
+    clusters: outputs.GetTemplateV2TemplateVersionSpecVmSpecCluster[];
+    /**
+     * VM creation time
+     */
+    createTime: string;
+    /**
+     * VM description
+     */
+    description: string;
+    /**
+     * Disks attached to the VM.
+     */
+    disks: outputs.GetTemplateV2TemplateVersionSpecVmSpecDisk[];
+    /**
+     * The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor
+     */
+    enabledCpuFeatures: string[];
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+    /**
+     * Generation UUID of the VM. It should be of type UUID.
+     */
+    generationUuid: string;
+    /**
+     * GPUs attached to the VM.
+     */
+    gpuses: outputs.GetTemplateV2TemplateVersionSpecVmSpecGpus[];
+    /**
+     * Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+     */
+    guestCustomizations: outputs.GetTemplateV2TemplateVersionSpecVmSpecGuestCustomization[];
+    /**
+     * The details about Nutanix Guest Tools for a VM.
+     */
+    guestTools: outputs.GetTemplateV2TemplateVersionSpecVmSpecGuestTool[];
+    /**
+     * VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+     */
+    hardwareClockTimezone: string;
+    /**
+     * Reference to the host, the VM is running on.
+     */
+    hosts: outputs.GetTemplateV2TemplateVersionSpecVmSpecHost[];
+    /**
+     * Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
+     */
+    isAgentVm: boolean;
+    /**
+     * Indicates whether to remove AHV branding from VM firmware tables or not.
+     */
+    isBrandingEnabled: boolean;
+    isCpuHotplugEnabled: boolean;
+    /**
+     * Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
+     */
+    isCpuPassthroughEnabled: boolean;
+    isCrossClusterMigrationInProgress: boolean;
+    /**
+     * Indicates whether the vGPU console is enabled or not.
+     */
+    isGpuConsoleEnabled: boolean;
+    isLiveMigrateCapable: boolean;
+    /**
+     * Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
+     */
+    isMemoryOvercommitEnabled: boolean;
+    isScsiControllerEnabled: boolean;
+    /**
+     * Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
+     */
+    isVcpuHardPinningEnabled: boolean;
+    /**
+     * Indicates whether the VGA console should be disabled or not.
+     */
+    isVgaConsoleEnabled: boolean;
+    links: outputs.GetTemplateV2TemplateVersionSpecVmSpecLink[];
+    /**
+     * Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+     */
+    machineType: string;
+    /**
+     * Memory size in bytes.
+     */
+    memorySizeBytes: number;
+    /**
+     * Name of the GPU resource.
+     */
+    name: string;
+    /**
+     * NICs attached to the VM.
+     */
+    nics: outputs.GetTemplateV2TemplateVersionSpecVmSpecNic[];
+    /**
+     * Number of cores per socket.
+     */
+    numCoresPerSocket: number;
+    /**
+     * Number of NUMA nodes. 0 means NUMA is disabled.
+     */
+    numNumaNodes: number;
+    /**
+     * Number of vCPU sockets.
+     */
+    numSockets: number;
+    /**
+     * Number of threads per core
+     */
+    numThreadsPerCore: number;
+    /**
+     * Ownership information for the VM.
+     */
+    ownershipInfos: outputs.GetTemplateV2TemplateVersionSpecVmSpecOwnershipInfo[];
+    pciDevices: outputs.GetTemplateV2TemplateVersionSpecVmSpecPciDevice[];
+    powerState: string;
+    /**
+     * Status of protection policy applied to this VM.
+     */
+    protectionPolicyStates: outputs.GetTemplateV2TemplateVersionSpecVmSpecProtectionPolicyState[];
+    /**
+     * The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
+     */
+    protectionType: string;
+    /**
+     * Serial ports configured on the VM.
+     */
+    serialPorts: outputs.GetTemplateV2TemplateVersionSpecVmSpecSerialPort[];
+    /**
+     * Reference to an entity that the VM should be cloned or created from
+     */
+    sources: outputs.GetTemplateV2TemplateVersionSpecVmSpecSource[];
+    /**
+     * Storage configuration for VM disks
+     */
+    storageConfigs: outputs.GetTemplateV2TemplateVersionSpecVmSpecStorageConfig[];
+    tenantId: string;
+    /**
+     * VM last updated time.
+     */
+    updateTime: string;
+    /**
+     * Indicates how the vTPM for the VM should be configured.
+     */
+    vtpmConfigs: outputs.GetTemplateV2TemplateVersionSpecVmSpecVtpmConfig[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecApcConfig {
+    /**
+     * CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
+     */
+    cpuModels: outputs.GetTemplateV2TemplateVersionSpecVmSpecApcConfigCpuModel[];
+    /**
+     * If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
+     */
+    isApcEnabled: boolean;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecApcConfigCpuModel {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+    /**
+     * Name of the CPU model associated with the VM.
+     */
+    name: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecAvailabilityZone {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfig {
+    /**
+     * LegacyBoot config Object
+     */
+    legacyBoots: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBoot[];
+    /**
+     * UefiBoot config Object
+     */
+    uefiBoots: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBoot[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBoot {
+    /**
+     * Boot Device object
+     */
+    bootDevices: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDevice[];
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
+    bootOrders: string[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDevice {
+    /**
+     * Disk address.
+     */
+    bootDeviceDisks: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDisk[];
+    /**
+     * Disk Nic address.
+     */
+    bootDeviceNics: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceNic[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDisk {
+    /**
+     * Virtual Machine disk (VM disk).
+     */
+    diskAddresses: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
+    /**
+     * Bus type for the device
+     */
+    busType: string;
+    /**
+     * Device index on the bus. This field is ignored unless the bus details are specified.
+     */
+    index: number;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceNic {
+    /**
+     * mac address
+     */
+    macAddress: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBoot {
+    /**
+     * Boot Device object
+     */
+    bootDevices: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDevice[];
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
+    bootOrders: string[];
+    /**
+     * Indicate whether to enable secure boot or not
+     */
+    isSecureBootEnabled: boolean;
+    /**
+     * Configuration for NVRAM to be presented to the VM.
+     */
+    nvramDevices: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDevice[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDevice {
+    /**
+     * Disk address.
+     */
+    bootDeviceDisks: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDisk[];
+    /**
+     * Disk Nic address.
+     */
+    bootDeviceNics: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceNic[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDisk {
+    /**
+     * Virtual Machine disk (VM disk).
+     */
+    diskAddresses: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
+    /**
+     * Bus type for the device
+     */
+    busType: string;
+    /**
+     * Device index on the bus. This field is ignored unless the bus details are specified.
+     */
+    index: number;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceNic {
+    /**
+     * mac address
+     */
+    macAddress: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDevice {
+    /**
+     * Storage provided by Nutanix ADSF
+     */
+    backingStorageInfos: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfo[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfo {
+    /**
+     * A reference to a disk or image that contains the contents of a disk.
+     */
+    dataSources: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSource[];
+    /**
+     * The globally unique identifier of a VM disk. It should be of type UUID.
+     */
+    diskExtId: string;
+    /**
+     * Size of the disk in Bytes
+     */
+    diskSizeBytes: number;
+    /**
+     * Indicates if the disk is undergoing migration to another container.
+     */
+    isMigrationInProgress: boolean;
+    /**
+     * Storage configuration for VM disks
+     */
+    storageConfigs: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig[];
+    /**
+     * This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
+    storageContainers: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSource {
+    /**
+     * Reference to image or vm disk
+     */
+    references: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference {
+    /**
+     * Image Reference
+     */
+    imageReferences: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference[];
+    /**
+     * Vm Disk Reference
+     */
+    vmDiskReferences: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference {
+    /**
+     * The globally unique identifier of an image. It should be of type UUID.
+     */
+    imageExtId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference {
+    /**
+     * Disk address.
+     */
+    diskAddresses: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress[];
+    /**
+     * The globally unique identifier of a VM disk. It should be of type UUID.
+     */
+    diskExtId: string;
+    /**
+     * This is a reference to a VM.
+     */
+    vmReferences: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    /**
+     * Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     */
+    busType: string;
+    /**
+     * Device index on the bus. This field is ignored unless the bus details are specified.
+     */
+    index: number;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled: boolean;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecCategory {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecCdRom {
+    /**
+     * Defines a NIC emulated by the hypervisor
+     */
+    backingInfos: outputs.GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo[];
+    /**
+     * Virtual Machine disk (VM disk).
+     */
+    diskAddresses: outputs.GetTemplateV2TemplateVersionSpecVmSpecCdRomDiskAddress[];
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+    /**
+     * Type of ISO image inserted in CD-ROM
+     */
+    isoType: string;
+    links: outputs.GetTemplateV2TemplateVersionSpecVmSpecCdRomLink[];
+    tenantId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo {
+    /**
+     * A reference to a disk or image that contains the contents of a disk.
+     */
+    dataSources: outputs.GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSource[];
+    /**
+     * The globally unique identifier of a VM disk. It should be of type UUID.
+     */
+    diskExtId: string;
+    /**
+     * Size of the disk in Bytes
+     */
+    diskSizeBytes: number;
+    /**
+     * Indicates if the disk is undergoing migration to another container.
+     */
+    isMigrationInProgress: boolean;
+    /**
+     * Storage configuration for VM disks
+     */
+    storageConfigs: outputs.GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig[];
+    /**
+     * This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
+    storageContainers: outputs.GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainer[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSource {
+    /**
+     * Reference to image or vm disk
+     */
+    references: outputs.GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReference[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReference {
+    /**
+     * Image Reference
+     */
+    imageReferences: outputs.GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReference[];
+    /**
+     * Vm Disk Reference
+     */
+    vmDiskReferences: outputs.GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReference[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReference {
+    /**
+     * The globally unique identifier of an image. It should be of type UUID.
+     */
+    imageExtId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReference {
+    /**
+     * Disk address.
+     */
+    diskAddresses: outputs.GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress[];
+    /**
+     * The globally unique identifier of a VM disk. It should be of type UUID.
+     */
+    diskExtId: string;
+    /**
+     * This is a reference to a VM.
+     */
+    vmReferences: outputs.GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    /**
+     * Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     */
+    busType: string;
+    /**
+     * Device index on the bus. This field is ignored unless the bus details are specified.
+     */
+    index: number;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled: boolean;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainer {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecCdRomDiskAddress {
+    /**
+     * Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     */
+    busType: string;
+    /**
+     * Device index on the bus. This field is ignored unless the bus details are specified.
+     */
+    index: number;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecCdRomLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecCluster {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecDisk {
+    /**
+     * Defines a NIC emulated by the hypervisor
+     */
+    backingInfos: outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfo[];
+    /**
+     * Virtual Machine disk (VM disk).
+     */
+    diskAddresses: outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskDiskAddress[];
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+    links: outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskLink[];
+    tenantId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfo {
+    /**
+     * Volume Group Reference
+     */
+    adfsVolumeGroupReferences: outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference[];
+    /**
+     * backing Info for vmDisk
+     */
+    vmDisks: outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference {
+    /**
+     * The globally unique identifier of an ADSF volume group. It should be of type UUID.
+     */
+    volumeGroupExtId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk {
+    /**
+     * A reference to a disk or image that contains the contents of a disk.
+     */
+    dataSources: outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSource[];
+    /**
+     * The globally unique identifier of a VM disk. It should be of type UUID.
+     */
+    diskExtId: string;
+    /**
+     * Size of the disk in Bytes
+     */
+    diskSizeBytes: number;
+    /**
+     * Indicates if the disk is undergoing migration to another container.
+     */
+    isMigrationInProgress: boolean;
+    /**
+     * Storage configuration for VM disks
+     */
+    storageConfigs: outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig[];
+    /**
+     * This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
+    storageContainers: outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSource {
+    /**
+     * Reference to image or vm disk
+     */
+    references: outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference {
+    /**
+     * Image Reference
+     */
+    imageReferences: outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceImageReference[];
+    /**
+     * Vm Disk Reference
+     */
+    vmDiskReferences: outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReference[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceImageReference {
+    /**
+     * The globally unique identifier of an image. It should be of type UUID.
+     */
+    imageExtId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReference {
+    /**
+     * Disk address.
+     */
+    diskAddresses: outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress[];
+    /**
+     * The globally unique identifier of a VM disk. It should be of type UUID.
+     */
+    diskExtId: string;
+    /**
+     * This is a reference to a VM.
+     */
+    vmReferences: outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress {
+    /**
+     * Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     */
+    busType: string;
+    /**
+     * Device index on the bus. This field is ignored unless the bus details are specified.
+     */
+    index: number;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled: boolean;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecDiskDiskAddress {
+    /**
+     * Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     */
+    busType: string;
+    /**
+     * Device index on the bus. This field is ignored unless the bus details are specified.
+     */
+    index: number;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecDiskLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGpus {
+    /**
+     * The device Id of the GPU.
+     */
+    deviceId: number;
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+    /**
+     * Fraction of the physical GPU assigned.
+     */
+    fraction: number;
+    /**
+     * GPU frame buffer size in bytes.
+     */
+    frameBufferSizeBytes: number;
+    /**
+     * Last determined guest driver version.
+     */
+    guestDriverVersion: string;
+    links: outputs.GetTemplateV2TemplateVersionSpecVmSpecGpusLink[];
+    /**
+     * The mode of this GPU.
+     */
+    mode: string;
+    /**
+     * Name of the GPU resource.
+     */
+    name: string;
+    /**
+     * Number of supported virtual display heads.
+     */
+    numVirtualDisplayHeads: number;
+    /**
+     * The (S)egment:(B)us:(D)evice.(F)unction hardware address. See
+     */
+    pciAddresses: outputs.GetTemplateV2TemplateVersionSpecVmSpecGpusPciAddress[];
+    tenantId: string;
+    /**
+     * The vendor of the GPU.
+     */
+    vendor: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGpusLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGpusPciAddress {
+    bus: number;
+    device: number;
+    func: number;
+    segment: number;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGuestCustomization {
+    /**
+     * The Nutanix Guest Tools customization settings.
+     */
+    configs: outputs.GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfig[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfig {
+    /**
+     * CloudInit Config
+     */
+    cloudInits: outputs.GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit[];
+    /**
+     * Sysprep config
+     */
+    syspreps: outputs.GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprep[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit {
+    /**
+     * The script to use for cloud-init.
+     */
+    cloudInitScripts: outputs.GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScript[];
+    /**
+     * Type of datasource. Default: CONFIG_DRIVE_V2
+     */
+    datasourceType: string;
+    /**
+     * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     */
+    metadata: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScript {
+    customKeyValues: outputs.GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue[];
+    /**
+     * user data object
+     */
+    userDatas: outputs.GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptUserData[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue {
+    keyValuePairs: outputs.GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair {
+    /**
+     * Name of the GPU resource.
+     */
+    name: string;
+    values: outputs.GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptUserData {
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprep {
+    /**
+     * Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Default is 'PREPARED'.
+     */
+    installType: string;
+    /**
+     * Object either UnattendXml or CustomKeyValues
+     */
+    sysprepScripts: outputs.GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScript[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScript {
+    /**
+     * The list of the individual KeyValuePair elements.
+     */
+    customKeyValues: outputs.GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue[];
+    /**
+     * xml object
+     */
+    unattendXmls: outputs.GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptUnattendXml[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
+    keyValuePairs: outputs.GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    /**
+     * Name of the GPU resource.
+     */
+    name: string;
+    values: outputs.GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptUnattendXml {
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecGuestTool {
+    /**
+     * Version of Nutanix Guest Tools available on the cluster.
+     */
+    availableVersion: string;
+    /**
+     * The list of the application names that are enabled on the guest VM.
+     */
+    capabilities: string[];
+    /**
+     * Version of the operating system on the VM
+     */
+    guestOsVersion: string;
+    /**
+     * Indicates whether Nutanix Guest Tools is enabled or not.
+     */
+    isEnabled: boolean;
+    /**
+     * Indicates whether Nutanix Guest Tools is installed on the VM or not.
+     */
+    isInstalled: boolean;
+    /**
+     * Indicates whether Nutanix Guest Tools ISO is inserted or not.
+     */
+    isIsoInserted: boolean;
+    /**
+     * Indicates whether the communication from VM to CVM is active or not.
+     */
+    isReachable: boolean;
+    /**
+     * Indicates whether the VM mobility drivers are installed on the VM or not.
+     */
+    isVmMobilityDriversInstalled: boolean;
+    /**
+     * Indicates whether the VM is configured to take VSS snapshots through NGT or not.
+     */
+    isVssSnapshotCapable: boolean;
+    /**
+     * Virtual trusted platform module version.
+     */
+    version: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecHost {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecNic {
+    /**
+     * Defines a NIC emulated by the hypervisor
+     */
+    backingInfos: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicBackingInfo[];
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+    links: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicLink[];
+    /**
+     * Network information for a NIC.
+     */
+    networkInfos: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfo[];
+    tenantId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecNicBackingInfo {
+    /**
+     * Indicates whether the serial port is connected or not.
+     */
+    isConnected?: boolean;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress: string;
+    /**
+     * Options for the NIC emulation.
+     */
+    model: string;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC
+     */
+    numQueues?: number;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecNicLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Config[];
+    ipv4Infos: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Info[];
+    /**
+     * The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+     */
+    networkFunctionChains: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain[];
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
+    networkFunctionNicType: string;
+    /**
+     * NIC type. Defaults to NORMAL_NIC.
+     */
+    nicType: string;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs: boolean;
+    /**
+     * Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+     */
+    subnets: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet[];
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans: number[];
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Config {
+    ipAddresses: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigIpAddress[];
+    secondaryIpAddressLists: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
+    shouldAssignIp: boolean;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Info {
+    learnedIpAddresses: outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4InfoLearnedIpAddress[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecOwnershipInfo {
+    /**
+     * Owner reference
+     */
+    owners: outputs.GetTemplateV2TemplateVersionSpecVmSpecOwnershipInfoOwner[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecOwnershipInfoOwner {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecPciDevice {
+    assignedDeviceInfos: outputs.GetTemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfo[];
+    /**
+     * Defines a NIC emulated by the hypervisor
+     */
+    backingInfos: outputs.GetTemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfo[];
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+    links: outputs.GetTemplateV2TemplateVersionSpecVmSpecPciDeviceLink[];
+    tenantId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfo {
+    devices: outputs.GetTemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoDevice[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoDevice {
+    deviceExtId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfo {
+    pcieDeviceReferences: outputs.GetTemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReference[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReference {
+    deviceExtId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecPciDeviceLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecProtectionPolicyState {
+    /**
+     * Reference to the policy object in use.
+     */
+    policies: outputs.GetTemplateV2TemplateVersionSpecVmSpecProtectionPolicyStatePolicy[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecProtectionPolicyStatePolicy {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecSerialPort {
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+    /**
+     * Index of the serial port.
+     */
+    index: number;
+    /**
+     * Indicates whether the serial port is connected or not.
+     */
+    isConnected: boolean;
+    links: outputs.GetTemplateV2TemplateVersionSpecVmSpecSerialPortLink[];
+    tenantId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecSerialPortLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecSource {
+    /**
+     * Entity Type of source
+     */
+    entityType: string;
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled: boolean;
+    /**
+     * QoS parameters to be enforced.
+     */
+    qosConfigs: outputs.GetTemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfig[];
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfig {
+    /**
+     * Throttled IOPS for the governed entities. The block size for the I/O is 32 kB.
+     */
+    throttledIops: number;
+}
+
+export interface GetTemplateV2TemplateVersionSpecVmSpecVtpmConfig {
+    /**
+     * Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
+     */
+    isVtpmEnabled: boolean;
+    /**
+     * Virtual trusted platform module version.
+     */
+    version: string;
+}
+
+export interface GetTemplateV2UpdatedBy {
+    /**
+     * Any additional attribute for the User.
+     */
+    additionalAttributes: outputs.GetTemplateV2UpdatedByAdditionalAttribute[];
+    creationType: string;
+    /**
+     * VM description
+     */
+    description: string;
+    /**
+     * Display name for the User.
+     */
+    displayName: string;
+    /**
+     * Email Id for the User.
+     */
+    emailId: string;
+    /**
+     * The identifier of a Template.
+     */
+    extId: string;
+    /**
+     * First name for the User.
+     */
+    firstName: string;
+    /**
+     * Identifier of the IDP for the User.
+     */
+    idpId: string;
+    /**
+     * Flag to force the User to reset password.
+     */
+    isForceResetPasswordEnabled: boolean;
+    /**
+     * Last name for the User.
+     */
+    lastName: string;
+    /**
+     * Default locale for the User.
+     */
+    locale: string;
+    /**
+     * Middle name for the User.
+     */
+    middleInitial: string;
+    password: string;
+    /**
+     * Default Region for the User.
+     */
+    region: string;
+    /**
+     * Status of the User.
+     */
+    status: string;
+    /**
+     * Type of the User.
+     */
+    userType: string;
+    /**
+     * Identifier for the User in the form an email address.
+     */
+    username: string;
+}
+
+export interface GetTemplateV2UpdatedByAdditionalAttribute {
+    /**
+     * Name of the GPU resource.
+     */
+    name: string;
+    values: outputs.GetTemplateV2UpdatedByAdditionalAttributeValue[];
+}
+
+export interface GetTemplateV2UpdatedByAdditionalAttributeValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplateV2UpdatedByAdditionalAttributeValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplateV2UpdatedByAdditionalAttributeValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface GetTemplatesV2Template {
+    /**
+     * Time when the Template was created.
+     */
+    createTime: string;
+    /**
+     * Information of the User.
+     */
+    createdBies: outputs.GetTemplatesV2TemplateCreatedBy[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * Status of a Guest Update.
+     */
+    guestUpdateStatuses: outputs.GetTemplatesV2TemplateGuestUpdateStatus[];
+    links: outputs.GetTemplatesV2TemplateLink[];
+    /**
+     * The user defined description of a Template.
+     */
+    templateDescription: string;
+    /**
+     * The user defined name of a Template.
+     */
+    templateName: string;
+    /**
+     * A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance
+     */
+    templateVersionSpecs: outputs.GetTemplatesV2TemplateTemplateVersionSpec[];
+    tenantId: string;
+    /**
+     * Time when the Template was last updated.
+     */
+    updateTime: string;
+    updatedBies: outputs.GetTemplatesV2TemplateUpdatedBy[];
+}
+
+export interface GetTemplatesV2TemplateCreatedBy {
+    /**
+     * Any additional attribute for the User.
+     */
+    additionalAttributes: outputs.GetTemplatesV2TemplateCreatedByAdditionalAttribute[];
+    creationType: string;
+    /**
+     * VM description
+     */
+    description: string;
+    /**
+     * Display name for the User.
+     */
+    displayName: string;
+    /**
+     * Email Id for the User.
+     */
+    emailId: string;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * First name for the User.
+     */
+    firstName: string;
+    /**
+     * Identifier of the IDP for the User.
+     */
+    idpId: string;
+    /**
+     * Flag to force the User to reset password.
+     */
+    isForceResetPasswordEnabled: boolean;
+    /**
+     * Last name for the User.
+     */
+    lastName: string;
+    /**
+     * Default locale for the User.
+     */
+    locale: string;
+    /**
+     * Middle name for the User.
+     */
+    middleInitial: string;
+    password: string;
+    /**
+     * Default Region for the User.
+     */
+    region: string;
+    /**
+     * Status of the User.
+     */
+    status: string;
+    /**
+     * Type of the User.
+     */
+    userType: string;
+    /**
+     * Identifier for the User in the form an email address.
+     */
+    username: string;
+}
+
+export interface GetTemplatesV2TemplateCreatedByAdditionalAttribute {
+    name: string;
+    values: outputs.GetTemplatesV2TemplateCreatedByAdditionalAttributeValue[];
+}
+
+export interface GetTemplatesV2TemplateCreatedByAdditionalAttributeValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplatesV2TemplateCreatedByAdditionalAttributeValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplatesV2TemplateCreatedByAdditionalAttributeValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface GetTemplatesV2TemplateGuestUpdateStatus {
+    /**
+     * The identifier of the temporary VM created on initiating Guest OS Update.
+     */
+    deployedVmReference: string;
+}
+
+export interface GetTemplatesV2TemplateLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpec {
+    /**
+     * Time when the Template was created.
+     */
+    createTime: string;
+    /**
+     * Information of the User.
+     */
+    createdBies: outputs.GetTemplatesV2TemplateTemplateVersionSpecCreatedBy[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise.
+     */
+    isActiveVersion: boolean;
+    /**
+     * Allow or disallow override of the Guest Customization during Template deployment.
+     */
+    isGcOverrideEnabled: boolean;
+    links: outputs.GetTemplatesV2TemplateTemplateVersionSpecLink[];
+    tenantId: string;
+    /**
+     * The user defined description of a Template Version.
+     */
+    versionDescription: string;
+    /**
+     * The user defined name of a Template Version.
+     */
+    versionName: string;
+    /**
+     * VM configuration.
+     */
+    vmSpecs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpec[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecCreatedBy {
+    /**
+     * Any additional attribute for the User.
+     */
+    additionalAttributes: outputs.GetTemplatesV2TemplateTemplateVersionSpecCreatedByAdditionalAttribute[];
+    creationType: string;
+    /**
+     * VM description
+     */
+    description: string;
+    /**
+     * Display name for the User.
+     */
+    displayName: string;
+    /**
+     * Email Id for the User.
+     */
+    emailId: string;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * First name for the User.
+     */
+    firstName: string;
+    /**
+     * Identifier of the IDP for the User.
+     */
+    idpId: string;
+    /**
+     * Flag to force the User to reset password.
+     */
+    isForceResetPasswordEnabled: boolean;
+    /**
+     * Last name for the User.
+     */
+    lastName: string;
+    /**
+     * Default locale for the User.
+     */
+    locale: string;
+    /**
+     * Middle name for the User.
+     */
+    middleInitial: string;
+    password: string;
+    /**
+     * Default Region for the User.
+     */
+    region: string;
+    /**
+     * Status of the User.
+     */
+    status: string;
+    /**
+     * Type of the User.
+     */
+    userType: string;
+    /**
+     * Identifier for the User in the form an email address.
+     */
+    username: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecCreatedByAdditionalAttribute {
+    name: string;
+    values: outputs.GetTemplatesV2TemplateTemplateVersionSpecCreatedByAdditionalAttributeValue[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecCreatedByAdditionalAttributeValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplatesV2TemplateTemplateVersionSpecCreatedByAdditionalAttributeValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecCreatedByAdditionalAttributeValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpec {
+    /**
+     * Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
+     */
+    apcConfigs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecApcConfig[];
+    availabilityZones: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecAvailabilityZone[];
+    /**
+     * BIOS UUID of the VM. It should be of type UUID.
+     */
+    biosUuid: string;
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
+    bootConfigs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfig[];
+    /**
+     * Categories for the VM.
+     */
+    categories: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCategory[];
+    /**
+     * CD-ROMs attached to the VM.
+     */
+    cdRoms: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRom[];
+    /**
+     * Reference to a cluster.
+     */
+    clusters: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCluster[];
+    /**
+     * VM creation time
+     */
+    createTime: string;
+    /**
+     * VM description
+     */
+    description: string;
+    /**
+     * Disks attached to the VM.
+     */
+    disks: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDisk[];
+    /**
+     * The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor
+     */
+    enabledCpuFeatures: string[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * Generation UUID of the VM. It should be of type UUID.
+     */
+    generationUuid: string;
+    /**
+     * GPUs attached to the VM.
+     */
+    gpuses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGpus[];
+    /**
+     * Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+     */
+    guestCustomizations: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomization[];
+    /**
+     * The details about Nutanix Guest Tools for a VM.
+     */
+    guestTools: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestTool[];
+    /**
+     * VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+     */
+    hardwareClockTimezone: string;
+    /**
+     * Reference to the host, the VM is running on.
+     */
+    hosts: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecHost[];
+    /**
+     * Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
+     */
+    isAgentVm: boolean;
+    /**
+     * Indicates whether to remove AHV branding from VM firmware tables or not.
+     */
+    isBrandingEnabled: boolean;
+    isCpuHotplugEnabled: boolean;
+    /**
+     * Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
+     */
+    isCpuPassthroughEnabled: boolean;
+    isCrossClusterMigrationInProgress: boolean;
+    /**
+     * Indicates whether the vGPU console is enabled or not.
+     */
+    isGpuConsoleEnabled: boolean;
+    isLiveMigrateCapable: boolean;
+    /**
+     * Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
+     */
+    isMemoryOvercommitEnabled: boolean;
+    isScsiControllerEnabled: boolean;
+    /**
+     * Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
+     */
+    isVcpuHardPinningEnabled: boolean;
+    /**
+     * Indicates whether the VGA console should be disabled or not.
+     */
+    isVgaConsoleEnabled: boolean;
+    links: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecLink[];
+    /**
+     * Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+     */
+    machineType: string;
+    /**
+     * Memory size in bytes.
+     */
+    memorySizeBytes: number;
+    /**
+     * VM name.
+     */
+    name: string;
+    /**
+     * NICs attached to the VM.
+     */
+    nics: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNic[];
+    /**
+     * Number of cores per socket.
+     */
+    numCoresPerSocket: number;
+    /**
+     * Number of NUMA nodes. 0 means NUMA is disabled.
+     */
+    numNumaNodes: number;
+    /**
+     * Number of vCPU sockets.
+     */
+    numSockets: number;
+    /**
+     * Number of threads per core
+     */
+    numThreadsPerCore: number;
+    /**
+     * Ownership information for the VM.
+     */
+    ownershipInfos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecOwnershipInfo[];
+    pciDevices: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecPciDevice[];
+    powerState: string;
+    /**
+     * Status of protection policy applied to this VM.
+     */
+    protectionPolicyStates: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecProtectionPolicyState[];
+    /**
+     * The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
+     */
+    protectionType: string;
+    /**
+     * Serial ports configured on the VM.
+     */
+    serialPorts: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecSerialPort[];
+    /**
+     * Reference to an entity that the VM should be cloned or created from
+     */
+    sources: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecSource[];
+    /**
+     * Storage configuration for VM.
+     */
+    storageConfigs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecStorageConfig[];
+    tenantId: string;
+    /**
+     * VM last updated time.
+     */
+    updateTime: string;
+    /**
+     * Indicates how the vTPM for the VM should be configured.
+     */
+    vtpmConfigs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecVtpmConfig[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecApcConfig {
+    /**
+     * CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
+     * * `cpu_model.ext_id`: The globally unique identifier of the CPU model associated with the VM.
+     * * `cpu_model.name`: Name of the CPU model associated with the VM.
+     */
+    cpuModels: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecApcConfigCpuModel[];
+    /**
+     * If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
+     */
+    isApcEnabled: boolean;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecApcConfigCpuModel {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    name: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecAvailabilityZone {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfig {
+    /**
+     * LegacyBoot config Object
+     */
+    legacyBoots: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigLegacyBoot[];
+    /**
+     * UefiBoot config Object
+     */
+    uefiBoots: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBoot[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigLegacyBoot {
+    /**
+     * Boot Device object
+     * * `boot_device.boot_device_disk`: Disk address.
+     * * `boot_device.boot_device_disk.disk_address.bus_type`: Bus type for the device
+     * * `boot_device.boot_device_disk.disk_address.index`: Device index on the bus. This field is ignored unless the bus details are specified.
+     *
+     * * `boot_device.boot_device_nic`: Disk Nic address.
+     * * `boot_device.boot_device_nic.mac_address`: mac address
+     */
+    bootDevices: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigLegacyBootBootDevice[];
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
+    bootOrders: string[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigLegacyBootBootDevice {
+    bootDeviceDisks: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDisk[];
+    bootDeviceNics: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceNic[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDisk {
+    diskAddresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
+    busType: string;
+    /**
+     * Index of the serial port.
+     */
+    index: number;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceNic {
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBoot {
+    /**
+     * Boot Device object
+     * * `boot_device.boot_device_disk`: Disk address.
+     * * `boot_device.boot_device_disk.disk_address.bus_type`: Bus type for the device
+     * * `boot_device.boot_device_disk.disk_address.index`: Device index on the bus. This field is ignored unless the bus details are specified.
+     *
+     * * `boot_device.boot_device_nic`: Disk Nic address.
+     * * `boot_device.boot_device_nic.mac_address`: mac address
+     */
+    bootDevices: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootBootDevice[];
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
+    bootOrders: string[];
+    /**
+     * Indicate whether to enable secure boot or not
+     */
+    isSecureBootEnabled: boolean;
+    /**
+     * Configuration for NVRAM to be presented to the VM.
+     * * `nvram_device.backing_storage_info`: Storage provided by Nutanix ADSF
+     */
+    nvramDevices: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDevice[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootBootDevice {
+    bootDeviceDisks: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDisk[];
+    bootDeviceNics: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceNic[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDisk {
+    diskAddresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
+    busType: string;
+    /**
+     * Index of the serial port.
+     */
+    index: number;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceNic {
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDevice {
+    backingStorageInfos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfo[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfo {
+    dataSources: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSource[];
+    diskExtId: string;
+    diskSizeBytes: number;
+    isMigrationInProgress: boolean;
+    storageConfigs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig[];
+    storageContainers: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSource {
+    /**
+     * Reference to image or vm disk
+     */
+    references: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference {
+    /**
+     * Image Reference
+     * * `image_reference.image_ext_id`: The globally unique identifier of an image. It should be of type UUID.
+     */
+    imageReferences: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference[];
+    /**
+     * Vm Disk Reference
+     * * `vm_disk_reference.disk_ext_id`:  The globally unique identifier of a VM disk. It should be of type UUID.
+     * * `vm_disk_reference.disk_address`: Disk address.
+     * * `vm_disk_reference.vm_reference`: This is a reference to a VM.
+     */
+    vmDiskReferences: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference {
+    imageExtId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference {
+    diskAddresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress[];
+    diskExtId: string;
+    vmReferences: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType: string;
+    /**
+     * Index of the serial port.
+     */
+    index: number;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled: boolean;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecCategory {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRom {
+    /**
+     * Storage provided by Nutanix ADSF
+     */
+    backingInfos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfo[];
+    /**
+     * Virtual Machine disk (VM disk).
+     */
+    diskAddresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomDiskAddress[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * Type of ISO image inserted in CD-ROM
+     */
+    isoType: string;
+    links: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomLink[];
+    tenantId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfo {
+    /**
+     * A reference to a disk or image that contains the contents of a disk.
+     */
+    dataSources: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoDataSource[];
+    /**
+     * The globally unique identifier of a VM disk. It should be of type UUID.
+     */
+    diskExtId: string;
+    /**
+     * Size of the disk in Bytes
+     */
+    diskSizeBytes: number;
+    /**
+     * Indicates if the disk is undergoing migration to another container.
+     */
+    isMigrationInProgress: boolean;
+    /**
+     * Storage configuration for VM disks
+     * * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    storageConfigs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig[];
+    /**
+     * This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
+    storageContainers: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoStorageContainer[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoDataSource {
+    /**
+     * Reference to image or vm disk
+     */
+    references: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReference[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReference {
+    /**
+     * Image Reference
+     * * `image_reference.image_ext_id`: The globally unique identifier of an image. It should be of type UUID.
+     */
+    imageReferences: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReference[];
+    /**
+     * Vm Disk Reference
+     * * `vm_disk_reference.disk_ext_id`:  The globally unique identifier of a VM disk. It should be of type UUID.
+     * * `vm_disk_reference.disk_address`: Disk address.
+     * * `vm_disk_reference.vm_reference`: This is a reference to a VM.
+     */
+    vmDiskReferences: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReference[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReference {
+    imageExtId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReference {
+    diskAddresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress[];
+    diskExtId: string;
+    vmReferences: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType: string;
+    /**
+     * Index of the serial port.
+     */
+    index: number;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled: boolean;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoStorageContainer {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomDiskAddress {
+    busType: string;
+    /**
+     * Index of the serial port.
+     */
+    index: number;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecCluster {
+    /**
+     * The globally unique identifier of a cluster.
+     */
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecDisk {
+    /**
+     * Supporting storage to create virtual disk on.
+     * * `backing_info.vm_disk`: backing Info for vmDisk
+     * * `backing_info.adfs_volume_group_reference`: Volume Group Reference
+     * * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: The globally unique identifier of an ADSF volume group. It should be of type UUID.
+     */
+    backingInfos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfo[];
+    /**
+     * Disk address.
+     * * `disk_address.bus_type`: Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * * `disk_address.index`: Device index on the bus. This field is ignored unless the bus details are specified.
+     */
+    diskAddresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskDiskAddress[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    links: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskLink[];
+    tenantId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfo {
+    adfsVolumeGroupReferences: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference[];
+    vmDisks: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDisk[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference {
+    volumeGroupExtId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDisk {
+    dataSources: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSource[];
+    diskExtId: string;
+    diskSizeBytes: number;
+    isMigrationInProgress: boolean;
+    storageConfigs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig[];
+    storageContainers: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSource {
+    /**
+     * Reference to image or vm disk
+     */
+    references: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference {
+    /**
+     * Image Reference
+     * * `image_reference.image_ext_id`: The globally unique identifier of an image. It should be of type UUID.
+     */
+    imageReferences: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceImageReference[];
+    /**
+     * Vm Disk Reference
+     * * `vm_disk_reference.disk_ext_id`:  The globally unique identifier of a VM disk. It should be of type UUID.
+     * * `vm_disk_reference.disk_address`: Disk address.
+     * * `vm_disk_reference.vm_reference`: This is a reference to a VM.
+     */
+    vmDiskReferences: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReference[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceImageReference {
+    imageExtId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReference {
+    diskAddresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress[];
+    diskExtId: string;
+    vmReferences: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType: string;
+    /**
+     * Index of the serial port.
+     */
+    index: number;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled: boolean;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskDiskAddress {
+    busType: string;
+    /**
+     * Index of the serial port.
+     */
+    index: number;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGpus {
+    /**
+     * The device Id of the GPU.
+     */
+    deviceId: number;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * Fraction of the physical GPU assigned.
+     */
+    fraction: number;
+    /**
+     * GPU frame buffer size in bytes.
+     */
+    frameBufferSizeBytes: number;
+    /**
+     * Last determined guest driver version.
+     */
+    guestDriverVersion: string;
+    links: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGpusLink[];
+    /**
+     * The mode of this GPU.
+     */
+    mode: string;
+    /**
+     * Name of the GPU resource.
+     */
+    name: string;
+    /**
+     * Number of supported virtual display heads.
+     */
+    numVirtualDisplayHeads: number;
+    /**
+     * The (S)egment:(B)us:(D)evice.(F)unction hardware address. See
+     */
+    pciAddresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGpusPciAddress[];
+    tenantId: string;
+    /**
+     * The vendor of the GPU.
+     */
+    vendor: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGpusLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGpusPciAddress {
+    bus: number;
+    device: number;
+    func: number;
+    segment: number;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomization {
+    /**
+     * The Nutanix Guest Tools customization settings.
+     *
+     * * `config.sysprep`: Sysprep config
+     * * `config.cloud_init`: CloudInit Config
+     */
+    configs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfig[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfig {
+    cloudInits: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit[];
+    syspreps: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigSysprep[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit {
+    /**
+     * The script to use for cloud-init.
+     * * `cloud_init_script.user_data`: user data object
+     * * `cloud_init_script.custom_keys`: The list of the individual KeyValuePair elements.
+     */
+    cloudInitScripts: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScript[];
+    /**
+     * Type of datasource. Default: CONFIG_DRIVE_V2
+     */
+    datasourceType: string;
+    /**
+     * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     */
+    metadata: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScript {
+    customKeyValues: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue[];
+    userDatas: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptUserData[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue {
+    keyValuePairs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair {
+    name: string;
+    values: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptUserData {
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigSysprep {
+    /**
+     * Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Default is 'PREPARED'.
+     */
+    installType: string;
+    /**
+     * Object either UnattendXml or CustomKeyValues
+     * * `sysprep_script.unattend_xml`: xml object
+     * * `sysprep_script.custom_key_values`: The list of the individual KeyValuePair elements.
+     */
+    sysprepScripts: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScript[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScript {
+    customKeyValues: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue[];
+    unattendXmls: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptUnattendXml[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
+    keyValuePairs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    name: string;
+    values: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptUnattendXml {
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestTool {
+    /**
+     * Version of Nutanix Guest Tools available on the cluster.
+     */
+    availableVersion: string;
+    /**
+     * The list of the application names that are enabled on the guest VM.
+     */
+    capabilities: string[];
+    /**
+     * Version of the operating system on the VM
+     */
+    guestOsVersion: string;
+    /**
+     * Indicates whether Nutanix Guest Tools is enabled or not.
+     */
+    isEnabled: boolean;
+    /**
+     * Indicates whether Nutanix Guest Tools is installed on the VM or not.
+     */
+    isInstalled: boolean;
+    /**
+     * Indicates whether Nutanix Guest Tools ISO is inserted or not.
+     */
+    isIsoInserted: boolean;
+    /**
+     * Indicates whether the communication from VM to CVM is active or not.
+     */
+    isReachable: boolean;
+    /**
+     * Indicates whether the VM mobility drivers are installed on the VM or not.
+     */
+    isVmMobilityDriversInstalled: boolean;
+    /**
+     * Indicates whether the VM is configured to take VSS snapshots through NGT or not.
+     */
+    isVssSnapshotCapable: boolean;
+    /**
+     * Version of Nutanix Guest Tools installed on the VM.
+     */
+    version: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecHost {
+    /**
+     * The globally unique identifier of a host.
+     */
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecNic {
+    /**
+     * Defines a NIC emulated by the hypervisor
+     */
+    backingInfos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicBackingInfo[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption
+     */
+    extId: string;
+    links: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicLink[];
+    /**
+     * Network information for a NIC.
+     */
+    networkInfos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfo[];
+    tenantId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicBackingInfo {
+    isConnected?: boolean;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress: string;
+    /**
+     * Options for the NIC emulation.
+     */
+    model: string;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC
+     */
+    numQueues?: number;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfoIpv4Config[];
+    ipv4Infos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfoIpv4Info[];
+    /**
+     * The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+     */
+    networkFunctionChains: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain[];
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
+    networkFunctionNicType: string;
+    /**
+     * NIC type. Defaults to NORMAL_NIC.
+     */
+    nicType: string;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs: boolean;
+    /**
+     * Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+     */
+    subnets: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfoSubnet[];
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans: number[];
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfoIpv4Config {
+    ipAddresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigIpAddress[];
+    secondaryIpAddressLists: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
+    shouldAssignIp: boolean;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfoIpv4Info {
+    learnedIpAddresses: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfoIpv4InfoLearnedIpAddress[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfoSubnet {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecOwnershipInfo {
+    /**
+     * Owner reference
+     * * `owner.ext_id`: The globally unique identifier of a VM owner.
+     */
+    owners: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecOwnershipInfoOwner[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecOwnershipInfoOwner {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecPciDevice {
+    assignedDeviceInfos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfo[];
+    backingInfos: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecPciDeviceBackingInfo[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    links: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecPciDeviceLink[];
+    tenantId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfo {
+    devices: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoDevice[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoDevice {
+    deviceExtId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecPciDeviceBackingInfo {
+    pcieDeviceReferences: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReference[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReference {
+    deviceExtId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecPciDeviceLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecProtectionPolicyState {
+    /**
+     * Reference to the policy object in use.
+     */
+    policies: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecProtectionPolicyStatePolicy[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecProtectionPolicyStatePolicy {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecSerialPort {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * Index of the serial port.
+     */
+    index: number;
+    /**
+     * Indicates whether the serial port is connected or not.
+     */
+    isConnected: boolean;
+    links: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecSerialPortLink[];
+    tenantId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecSerialPortLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecSource {
+    /**
+     * Entity Type of source
+     */
+    entityType: string;
+    /**
+     * The globally unique identifier of a VM. It should be of type UUID.
+     */
+    extId: string;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled: boolean;
+    /**
+     * QoS parameters to be enforced.
+     * * `qos_config.throttled_iops`: Throttled IOPS for the governed entities. The block size for the I/O is 32 kB.
+     */
+    qosConfigs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecStorageConfigQosConfig[];
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecStorageConfigQosConfig {
+    throttledIops: number;
+}
+
+export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecVtpmConfig {
+    /**
+     * Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
+     */
+    isVtpmEnabled: boolean;
+    /**
+     * Virtual trusted platform module version.
+     */
+    version: string;
+}
+
+export interface GetTemplatesV2TemplateUpdatedBy {
+    /**
+     * Any additional attribute for the User.
+     */
+    additionalAttributes: outputs.GetTemplatesV2TemplateUpdatedByAdditionalAttribute[];
+    creationType: string;
+    /**
+     * VM description
+     */
+    description: string;
+    /**
+     * Display name for the User.
+     */
+    displayName: string;
+    /**
+     * Email Id for the User.
+     */
+    emailId: string;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * First name for the User.
+     */
+    firstName: string;
+    /**
+     * Identifier of the IDP for the User.
+     */
+    idpId: string;
+    /**
+     * Flag to force the User to reset password.
+     */
+    isForceResetPasswordEnabled: boolean;
+    /**
+     * Last name for the User.
+     */
+    lastName: string;
+    /**
+     * Default locale for the User.
+     */
+    locale: string;
+    /**
+     * Middle name for the User.
+     */
+    middleInitial: string;
+    password: string;
+    /**
+     * Default Region for the User.
+     */
+    region: string;
+    /**
+     * Status of the User.
+     */
+    status: string;
+    /**
+     * Type of the User.
+     */
+    userType: string;
+    /**
+     * Identifier for the User in the form an email address.
+     */
+    username: string;
+}
+
+export interface GetTemplatesV2TemplateUpdatedByAdditionalAttribute {
+    name: string;
+    values: outputs.GetTemplatesV2TemplateUpdatedByAdditionalAttributeValue[];
+}
+
+export interface GetTemplatesV2TemplateUpdatedByAdditionalAttributeValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.GetTemplatesV2TemplateUpdatedByAdditionalAttributeValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface GetTemplatesV2TemplateUpdatedByAdditionalAttributeValueMapOfString {
+    map: {[key: string]: string};
 }
 
 export interface GetUserAccessControlPolicyReferenceList {
@@ -11139,6 +26590,41 @@ export interface GetUserGroupsMetadata {
     sortOrder: string;
 }
 
+export interface GetUserGroupsV2UserGroup {
+    /**
+     * - User or Service who created the User Group.
+     */
+    createdBy: string;
+    /**
+     * - Creation time of the User Group.
+     */
+    createdTime: string;
+    /**
+     * - Identifier for the User Group in the form of a distinguished name.
+     */
+    distinguishedName: string;
+    /**
+     * The External Identifier of the User Group.
+     */
+    extId: string;
+    /**
+     * - Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+     */
+    groupType: string;
+    /**
+     * - Identifier of the IDP for the User Group.
+     */
+    idpId: string;
+    /**
+     * - Last updated time of the User Group.
+     */
+    lastUpdatedTime: string;
+    /**
+     * - Common Name of the User Group.
+     */
+    name: string;
+}
+
 export interface GetUserIdentityProviderUser {
     /**
      * - (Optional) The reference to a identity provider. See #reference for to look the supported attributes.
@@ -11178,6 +26664,66 @@ export interface GetUserProjectReferenceList {
      * - (Optional) The UUID for the user.
      */
     uuid: string;
+}
+
+export interface GetUserV2AdditionalAttribute {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    name: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    value: number;
+}
+
+export interface GetUserV2BucketsAccessKey {
+    /**
+     * - Name of the Bucket Access Key.
+     */
+    accessKeyName: string;
+    /**
+     * - Creation time for the Bucket Access Key.
+     */
+    createdTime: string;
+    /**
+     * - A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetUserV2BucketsAccessKeyLink[];
+    /**
+     * - Secret Access Key, it will be returned only during Bucket Access Key creation.
+     */
+    secretAccessKey: string;
+    /**
+     * - User Identifier who owns the Bucket Access Key.
+     */
+    userId: string;
+}
+
+export interface GetUserV2BucketsAccessKeyLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetUserV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
 }
 
 export interface GetUsersEntity {
@@ -11339,6 +26885,158 @@ export interface GetUsersMetadata {
     offset: number;
     sortAttribute: string;
     sortOrder: string;
+}
+
+export interface GetUsersV2User {
+    /**
+     * -  Any additional attribute for the User.
+     */
+    additionalAttributes: outputs.GetUsersV2UserAdditionalAttribute[];
+    /**
+     * - Bucket Access Keys for the User.
+     */
+    bucketsAccessKeys: outputs.GetUsersV2UserBucketsAccessKey[];
+    /**
+     * - User or Service who created the User.
+     */
+    createdBy: string;
+    /**
+     * - Creation time for the Bucket Access Key.
+     */
+    createdTime: string;
+    /**
+     * - Display name for the User.
+     */
+    displayName: string;
+    /**
+     * - Email Id for the User.
+     */
+    emailId: string;
+    /**
+     * - A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * - First name for the User.
+     */
+    firstName: string;
+    /**
+     * - Identifier of the IDP for the User.
+     */
+    idpId: string;
+    /**
+     * - Flag to force the User to reset password.
+     */
+    isForceResetPassword: boolean;
+    /**
+     * - Last successful logged in time for the User.
+     */
+    lastLoginTime: string;
+    /**
+     * - Last name for the User.
+     */
+    lastName: string;
+    /**
+     * - Last updated by this User ID.
+     */
+    lastUpdatedBy: string;
+    /**
+     * - Last updated time of the User.
+     */
+    lastUpdatedTime: string;
+    /**
+     * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetUsersV2UserLink[];
+    /**
+     * - Default locale for the User.
+     */
+    locale: string;
+    /**
+     * - Middle name for the User.
+     */
+    middleInitial: string;
+    /**
+     * - Default Region for the User.
+     */
+    region: string;
+    /**
+     * - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
+     */
+    status: string;
+    /**
+     * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+     */
+    tenantId: string;
+    /**
+     * - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
+     * Type of the User.
+     */
+    userType: string;
+    /**
+     * - Identifier for the User in the form an email address.
+     */
+    username: string;
+}
+
+export interface GetUsersV2UserAdditionalAttribute {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    name: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    value: number;
+}
+
+export interface GetUsersV2UserBucketsAccessKey {
+    /**
+     * - Name of the Bucket Access Key.
+     */
+    accessKeyName: string;
+    /**
+     * - Creation time for the Bucket Access Key.
+     */
+    createdTime: string;
+    /**
+     * - A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetUsersV2UserBucketsAccessKeyLink[];
+    /**
+     * - Secret Access Key, it will be returned only during Bucket Access Key creation.
+     */
+    secretAccessKey: string;
+    /**
+     * - User Identifier who owns the Bucket Access Key.
+     */
+    userId: string;
+}
+
+export interface GetUsersV2UserBucketsAccessKeyLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetUsersV2UserLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
 }
 
 export interface GetVirtualMachineCategory {
@@ -11545,6 +27243,2034 @@ export interface GetVirtualMachineSerialPortList {
     isConnected: boolean;
 }
 
+export interface GetVirtualMachineV2ApcConfig {
+    /**
+     * CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
+     */
+    cpuModels: outputs.GetVirtualMachineV2ApcConfigCpuModel[];
+    /**
+     * If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
+     */
+    isApcEnabled: boolean;
+}
+
+export interface GetVirtualMachineV2ApcConfigCpuModel {
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+    /**
+     * Name of the CPU model associated with the VM.
+     */
+    name: string;
+}
+
+export interface GetVirtualMachineV2AvailabilityZone {
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachineV2BootConfig {
+    /**
+     * LegacyBoot config Object
+     */
+    legacyBoots: outputs.GetVirtualMachineV2BootConfigLegacyBoot[];
+    /**
+     * UefiBoot config Object
+     */
+    uefiBoots: outputs.GetVirtualMachineV2BootConfigUefiBoot[];
+}
+
+export interface GetVirtualMachineV2BootConfigLegacyBoot {
+    /**
+     * Boot Device object
+     */
+    bootDevices: outputs.GetVirtualMachineV2BootConfigLegacyBootBootDevice[];
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
+    bootOrders: string[];
+}
+
+export interface GetVirtualMachineV2BootConfigLegacyBootBootDevice {
+    /**
+     * Disk address.
+     */
+    bootDeviceDisks: outputs.GetVirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceDisk[];
+    /**
+     * Disk Nic address.
+     */
+    bootDeviceNics: outputs.GetVirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceNic[];
+}
+
+export interface GetVirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceDisk {
+    /**
+     * Virtual Machine disk (VM disk).
+     */
+    diskAddresses: outputs.GetVirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress[];
+}
+
+export interface GetVirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
+    /**
+     * Bus type for the device
+     */
+    busType: string;
+    /**
+     * Device index on the bus. This field is ignored unless the bus details are specified.
+     */
+    index: number;
+}
+
+export interface GetVirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceNic {
+    /**
+     * mac address
+     */
+    macAddress: string;
+}
+
+export interface GetVirtualMachineV2BootConfigUefiBoot {
+    /**
+     * Indicate whether to enable secure boot or not
+     */
+    isSecureBootEnabled: boolean;
+    /**
+     * Configuration for NVRAM to be presented to the VM.
+     */
+    nvramDevices: outputs.GetVirtualMachineV2BootConfigUefiBootNvramDevice[];
+}
+
+export interface GetVirtualMachineV2BootConfigUefiBootNvramDevice {
+    /**
+     * Storage provided by Nutanix ADSF
+     */
+    backingStorageInfos: outputs.GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo[];
+}
+
+export interface GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo {
+    /**
+     * A reference to a disk or image that contains the contents of a disk.
+     */
+    dataSources: outputs.GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource[];
+    /**
+     * The globally unique identifier of a VM disk. It should be of type UUID.
+     */
+    diskExtId: string;
+    /**
+     * Size of the disk in Bytes
+     */
+    diskSizeBytes: number;
+    /**
+     * Indicates if the disk is undergoing migration to another container.
+     */
+    isMigrationInProgress: boolean;
+    /**
+     * Storage configuration for VM disks
+     */
+    storageConfigs: outputs.GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig[];
+    /**
+     * This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
+    storageContainers: outputs.GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer[];
+}
+
+export interface GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource {
+    /**
+     * Reference to image or vm disk
+     */
+    references: outputs.GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference[];
+}
+
+export interface GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference {
+    /**
+     * Image Reference
+     */
+    imageReferences: outputs.GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference[];
+    /**
+     * Vm Disk Reference
+     */
+    vmDiskReferences: outputs.GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference[];
+}
+
+export interface GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference {
+    /**
+     * The globally unique identifier of an image. It should be of type UUID.
+     */
+    imageExtId: string;
+}
+
+export interface GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference {
+    /**
+     * Disk address.
+     */
+    diskAddresses: outputs.GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress[];
+    /**
+     * The globally unique identifier of a VM disk. It should be of type UUID.
+     */
+    diskExtId: string;
+    /**
+     * This is a reference to a VM.
+     */
+    vmReferences: outputs.GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    /**
+     * Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     */
+    busType: string;
+    /**
+     * Device index on the bus. This field is ignored unless the bus details are specified.
+     */
+    index: number;
+}
+
+export interface GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled: boolean;
+}
+
+export interface GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer {
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachineV2Category {
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachineV2CdRom {
+    /**
+     * Defines a NIC emulated by the hypervisor
+     */
+    backingInfos: outputs.GetVirtualMachineV2CdRomBackingInfo[];
+    /**
+     * Virtual Machine disk (VM disk).
+     */
+    diskAddresses: outputs.GetVirtualMachineV2CdRomDiskAddress[];
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+    /**
+     * Type of ISO image inserted in CD-ROM
+     */
+    isoType: string;
+}
+
+export interface GetVirtualMachineV2CdRomBackingInfo {
+    /**
+     * A reference to a disk or image that contains the contents of a disk.
+     */
+    dataSources: outputs.GetVirtualMachineV2CdRomBackingInfoDataSource[];
+    /**
+     * The globally unique identifier of a VM disk. It should be of type UUID.
+     */
+    diskExtId: string;
+    /**
+     * Size of the disk in Bytes
+     */
+    diskSizeBytes: number;
+    /**
+     * Indicates if the disk is undergoing migration to another container.
+     */
+    isMigrationInProgress: boolean;
+    /**
+     * Storage configuration for VM disks
+     */
+    storageConfigs: outputs.GetVirtualMachineV2CdRomBackingInfoStorageConfig[];
+    /**
+     * This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
+    storageContainers: outputs.GetVirtualMachineV2CdRomBackingInfoStorageContainer[];
+}
+
+export interface GetVirtualMachineV2CdRomBackingInfoDataSource {
+    /**
+     * Reference to image or vm disk
+     */
+    references: outputs.GetVirtualMachineV2CdRomBackingInfoDataSourceReference[];
+}
+
+export interface GetVirtualMachineV2CdRomBackingInfoDataSourceReference {
+    /**
+     * Image Reference
+     */
+    imageReferences: outputs.GetVirtualMachineV2CdRomBackingInfoDataSourceReferenceImageReference[];
+    /**
+     * Vm Disk Reference
+     */
+    vmDiskReferences: outputs.GetVirtualMachineV2CdRomBackingInfoDataSourceReferenceVmDiskReference[];
+}
+
+export interface GetVirtualMachineV2CdRomBackingInfoDataSourceReferenceImageReference {
+    /**
+     * The globally unique identifier of an image. It should be of type UUID.
+     */
+    imageExtId: string;
+}
+
+export interface GetVirtualMachineV2CdRomBackingInfoDataSourceReferenceVmDiskReference {
+    /**
+     * Disk address.
+     */
+    diskAddresses: outputs.GetVirtualMachineV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress[];
+    /**
+     * The globally unique identifier of a VM disk. It should be of type UUID.
+     */
+    diskExtId: string;
+    /**
+     * This is a reference to a VM.
+     */
+    vmReferences: outputs.GetVirtualMachineV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface GetVirtualMachineV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    /**
+     * Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     */
+    busType: string;
+    /**
+     * Device index on the bus. This field is ignored unless the bus details are specified.
+     */
+    index: number;
+}
+
+export interface GetVirtualMachineV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachineV2CdRomBackingInfoStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled: boolean;
+}
+
+export interface GetVirtualMachineV2CdRomBackingInfoStorageContainer {
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachineV2CdRomDiskAddress {
+    /**
+     * Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     */
+    busType: string;
+    /**
+     * Device index on the bus. This field is ignored unless the bus details are specified.
+     */
+    index: number;
+}
+
+export interface GetVirtualMachineV2Cluster {
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachineV2Disk {
+    /**
+     * Defines a NIC emulated by the hypervisor
+     */
+    backingInfos: outputs.GetVirtualMachineV2DiskBackingInfo[];
+    /**
+     * Virtual Machine disk (VM disk).
+     */
+    diskAddresses: outputs.GetVirtualMachineV2DiskDiskAddress[];
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachineV2DiskBackingInfo {
+    /**
+     * Volume Group Reference
+     */
+    adfsVolumeGroupReferences: outputs.GetVirtualMachineV2DiskBackingInfoAdfsVolumeGroupReference[];
+    /**
+     * backing Info for vmDisk
+     */
+    vmDisks: outputs.GetVirtualMachineV2DiskBackingInfoVmDisk[];
+}
+
+export interface GetVirtualMachineV2DiskBackingInfoAdfsVolumeGroupReference {
+    /**
+     * The globally unique identifier of an ADSF volume group. It should be of type UUID.
+     */
+    volumeGroupExtId: string;
+}
+
+export interface GetVirtualMachineV2DiskBackingInfoVmDisk {
+    /**
+     * A reference to a disk or image that contains the contents of a disk.
+     */
+    dataSources: outputs.GetVirtualMachineV2DiskBackingInfoVmDiskDataSource[];
+    /**
+     * The globally unique identifier of a VM disk. It should be of type UUID.
+     */
+    diskExtId: string;
+    /**
+     * Size of the disk in Bytes
+     */
+    diskSizeBytes: number;
+    /**
+     * Indicates if the disk is undergoing migration to another container.
+     */
+    isMigrationInProgress: boolean;
+    /**
+     * Storage configuration for VM disks
+     */
+    storageConfigs: outputs.GetVirtualMachineV2DiskBackingInfoVmDiskStorageConfig[];
+    /**
+     * This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
+    storageContainers: outputs.GetVirtualMachineV2DiskBackingInfoVmDiskStorageContainer[];
+}
+
+export interface GetVirtualMachineV2DiskBackingInfoVmDiskDataSource {
+    /**
+     * Reference to image or vm disk
+     */
+    references: outputs.GetVirtualMachineV2DiskBackingInfoVmDiskDataSourceReference[];
+}
+
+export interface GetVirtualMachineV2DiskBackingInfoVmDiskDataSourceReference {
+    /**
+     * Image Reference
+     */
+    imageReferences: outputs.GetVirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceImageReference[];
+    /**
+     * Vm Disk Reference
+     */
+    vmDiskReferences: outputs.GetVirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReference[];
+}
+
+export interface GetVirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceImageReference {
+    /**
+     * The globally unique identifier of an image. It should be of type UUID.
+     */
+    imageExtId: string;
+}
+
+export interface GetVirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReference {
+    /**
+     * Disk address.
+     */
+    diskAddresses: outputs.GetVirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress[];
+    /**
+     * The globally unique identifier of a VM disk. It should be of type UUID.
+     */
+    diskExtId: string;
+    /**
+     * This is a reference to a VM.
+     */
+    vmReferences: outputs.GetVirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface GetVirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress {
+    /**
+     * Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     */
+    busType: string;
+    /**
+     * Device index on the bus. This field is ignored unless the bus details are specified.
+     */
+    index: number;
+}
+
+export interface GetVirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachineV2DiskBackingInfoVmDiskStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled: boolean;
+}
+
+export interface GetVirtualMachineV2DiskBackingInfoVmDiskStorageContainer {
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachineV2DiskDiskAddress {
+    /**
+     * Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     */
+    busType: string;
+    /**
+     * Device index on the bus. This field is ignored unless the bus details are specified.
+     */
+    index: number;
+}
+
+export interface GetVirtualMachineV2Gpus {
+    /**
+     * The device Id of the GPU.
+     */
+    deviceId: number;
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+    /**
+     * Fraction of the physical GPU assigned.
+     */
+    fraction: number;
+    /**
+     * GPU frame buffer size in bytes.
+     */
+    frameBufferSizeBytes: number;
+    /**
+     * Last determined guest driver version.
+     */
+    guestDriverVersion: string;
+    /**
+     * The mode of this GPU.
+     */
+    mode: string;
+    /**
+     * Name of the GPU resource.
+     */
+    name: string;
+    /**
+     * Number of supported virtual display heads.
+     */
+    numVirtualDisplayHeads: number;
+    /**
+     * The (S)egment:(B)us:(D)evice.(F)unction hardware address. See
+     */
+    pciAddresses: outputs.GetVirtualMachineV2GpusPciAddress[];
+    /**
+     * The vendor of the GPU.
+     */
+    vendor: string;
+}
+
+export interface GetVirtualMachineV2GpusPciAddress {
+    bus: number;
+    device: number;
+    func: number;
+    segment: number;
+}
+
+export interface GetVirtualMachineV2GuestCustomization {
+    /**
+     * The Nutanix Guest Tools customization settings.
+     */
+    configs: outputs.GetVirtualMachineV2GuestCustomizationConfig[];
+}
+
+export interface GetVirtualMachineV2GuestCustomizationConfig {
+    /**
+     * CloudInit Config
+     */
+    cloudInits: outputs.GetVirtualMachineV2GuestCustomizationConfigCloudInit[];
+    /**
+     * Sysprep config
+     */
+    syspreps: outputs.GetVirtualMachineV2GuestCustomizationConfigSysprep[];
+}
+
+export interface GetVirtualMachineV2GuestCustomizationConfigCloudInit {
+    /**
+     * The script to use for cloud-init.
+     */
+    cloudInitScripts: outputs.GetVirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScript[];
+    /**
+     * Type of datasource. Default: CONFIG_DRIVE_V2
+     */
+    datasourceType: string;
+    /**
+     * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+     */
+    metadata: string;
+}
+
+export interface GetVirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScript {
+    /**
+     * The list of the individual KeyValuePair elements.
+     */
+    customKeys: outputs.GetVirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKey[];
+    /**
+     * user data object
+     */
+    userDatas: outputs.GetVirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptUserData[];
+}
+
+export interface GetVirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKey {
+    keyValuePairs: outputs.GetVirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePair[];
+}
+
+export interface GetVirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePair {
+    /**
+     * Name of the GPU resource.
+     */
+    name: string;
+    value: string;
+}
+
+export interface GetVirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptUserData {
+    value: string;
+}
+
+export interface GetVirtualMachineV2GuestCustomizationConfigSysprep {
+    /**
+     * Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Default is 'PREPARED'.
+     */
+    installType: string;
+    /**
+     * Object either UnattendXml or CustomKeyValues
+     */
+    sysprepScripts: outputs.GetVirtualMachineV2GuestCustomizationConfigSysprepSysprepScript[];
+}
+
+export interface GetVirtualMachineV2GuestCustomizationConfigSysprepSysprepScript {
+    /**
+     * The list of the individual KeyValuePair elements.
+     */
+    customKeyValues: outputs.GetVirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValue[];
+    /**
+     * xml object
+     */
+    unattendXmls: outputs.GetVirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml[];
+}
+
+export interface GetVirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
+    keyValuePairs: outputs.GetVirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface GetVirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    /**
+     * Name of the GPU resource.
+     */
+    name: string;
+    value: string;
+}
+
+export interface GetVirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml {
+    value: string;
+}
+
+export interface GetVirtualMachineV2GuestTool {
+    /**
+     * Version of Nutanix Guest Tools available on the cluster.
+     */
+    availableVersion: string;
+    /**
+     * The list of the application names that are enabled on the guest VM.
+     */
+    capabilities: string[];
+    /**
+     * Version of the operating system on the VM
+     */
+    guestOsVersion: string;
+    /**
+     * Indicates whether Nutanix Guest Tools is enabled or not.
+     */
+    isEnabled: boolean;
+    /**
+     * Indicates whether Nutanix Guest Tools is installed on the VM or not.
+     */
+    isInstalled: boolean;
+    /**
+     * Indicates whether Nutanix Guest Tools ISO is inserted or not.
+     */
+    isIsoInserted: boolean;
+    /**
+     * Indicates whether the communication from VM to CVM is active or not.
+     */
+    isReachable: boolean;
+    /**
+     * Indicates whether the VM mobility drivers are installed on the VM or not.
+     */
+    isVmMobilityDriversInstalled: boolean;
+    /**
+     * Indicates whether the VM is configured to take VSS snapshots through NGT or not.
+     */
+    isVssSnapshotCapable: boolean;
+    /**
+     * Virtual trusted platform module version.
+     */
+    version: string;
+}
+
+export interface GetVirtualMachineV2Host {
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachineV2Nic {
+    /**
+     * Defines a NIC emulated by the hypervisor
+     */
+    backingInfos: outputs.GetVirtualMachineV2NicBackingInfo[];
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+    /**
+     * Network information for a NIC.
+     */
+    networkInfos: outputs.GetVirtualMachineV2NicNetworkInfo[];
+}
+
+export interface GetVirtualMachineV2NicBackingInfo {
+    /**
+     * Indicates whether the serial port is connected or not.
+     */
+    isConnected: boolean;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress: string;
+    /**
+     * Options for the NIC emulation.
+     */
+    model: string;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC
+     */
+    numQueues: number;
+}
+
+export interface GetVirtualMachineV2NicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs: outputs.GetVirtualMachineV2NicNetworkInfoIpv4Config[];
+    ipv4Infos: outputs.GetVirtualMachineV2NicNetworkInfoIpv4Info[];
+    /**
+     * The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+     */
+    networkFunctionChains: outputs.GetVirtualMachineV2NicNetworkInfoNetworkFunctionChain[];
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
+    networkFunctionNicType: string;
+    /**
+     * NIC type. Defaults to NORMAL_NIC.
+     */
+    nicType: string;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs: boolean;
+    /**
+     * Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+     */
+    subnets: outputs.GetVirtualMachineV2NicNetworkInfoSubnet[];
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans: number[];
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode: string;
+}
+
+export interface GetVirtualMachineV2NicNetworkInfoIpv4Config {
+    ipAddresses: outputs.GetVirtualMachineV2NicNetworkInfoIpv4ConfigIpAddress[];
+    secondaryIpAddressLists: outputs.GetVirtualMachineV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
+    shouldAssignIp: boolean;
+}
+
+export interface GetVirtualMachineV2NicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetVirtualMachineV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetVirtualMachineV2NicNetworkInfoIpv4Info {
+    learnedIpAddresses: outputs.GetVirtualMachineV2NicNetworkInfoIpv4InfoLearnedIpAddress[];
+}
+
+export interface GetVirtualMachineV2NicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetVirtualMachineV2NicNetworkInfoNetworkFunctionChain {
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachineV2NicNetworkInfoSubnet {
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachineV2OwnershipInfo {
+    /**
+     * Owner reference
+     */
+    owners: outputs.GetVirtualMachineV2OwnershipInfoOwner[];
+}
+
+export interface GetVirtualMachineV2OwnershipInfoOwner {
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachineV2ProtectionPolicyState {
+    /**
+     * Reference to the policy object in use.
+     */
+    policies: outputs.GetVirtualMachineV2ProtectionPolicyStatePolicy[];
+}
+
+export interface GetVirtualMachineV2ProtectionPolicyStatePolicy {
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachineV2SerialPort {
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+    /**
+     * Index of the serial port.
+     */
+    index: number;
+    /**
+     * Indicates whether the serial port is connected or not.
+     */
+    isConnected: boolean;
+}
+
+export interface GetVirtualMachineV2Source {
+    /**
+     * Entity Type of source
+     */
+    entityType: string;
+    /**
+     * Represents virtual machine UUID
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachineV2StorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled: boolean;
+    /**
+     * QoS parameters to be enforced.
+     */
+    qosConfigs: outputs.GetVirtualMachineV2StorageConfigQosConfig[];
+}
+
+export interface GetVirtualMachineV2StorageConfigQosConfig {
+    /**
+     * Throttled IOPS for the governed entities. The block size for the I/O is 32 kB.
+     */
+    throttledIops: number;
+}
+
+export interface GetVirtualMachineV2VtpmConfig {
+    /**
+     * Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
+     */
+    isVtpmEnabled: boolean;
+    /**
+     * Virtual trusted platform module version.
+     */
+    version: string;
+}
+
+export interface GetVirtualMachinesV2Vm {
+    /**
+     * Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
+     */
+    apcConfigs: outputs.GetVirtualMachinesV2VmApcConfig[];
+    availabilityZones: outputs.GetVirtualMachinesV2VmAvailabilityZone[];
+    /**
+     * BIOS UUID of the VM. It should be of type UUID.
+     */
+    biosUuid: string;
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+     */
+    bootConfigs: outputs.GetVirtualMachinesV2VmBootConfig[];
+    /**
+     * Categories for the VM.
+     */
+    categories: outputs.GetVirtualMachinesV2VmCategory[];
+    /**
+     * CD-ROMs attached to the VM.
+     */
+    cdRoms: outputs.GetVirtualMachinesV2VmCdRom[];
+    /**
+     * Reference to a cluster.
+     */
+    clusters: outputs.GetVirtualMachinesV2VmCluster[];
+    /**
+     * VM creation time
+     */
+    createTime: string;
+    /**
+     * VM description
+     */
+    description: string;
+    /**
+     * Disks attached to the VM.
+     */
+    disks: outputs.GetVirtualMachinesV2VmDisk[];
+    /**
+     * The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor
+     */
+    enabledCpuFeatures: string[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * Generation UUID of the VM. It should be of type UUID.
+     */
+    generationUuid: string;
+    /**
+     * GPUs attached to the VM.
+     */
+    gpuses: outputs.GetVirtualMachinesV2VmGpus[];
+    /**
+     * Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+     */
+    guestCustomizations: outputs.GetVirtualMachinesV2VmGuestCustomization[];
+    /**
+     * The details about Nutanix Guest Tools for a VM.
+     */
+    guestTools: outputs.GetVirtualMachinesV2VmGuestTool[];
+    /**
+     * VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+     */
+    hardwareClockTimezone: string;
+    /**
+     * Reference to the host, the VM is running on.
+     */
+    hosts: outputs.GetVirtualMachinesV2VmHost[];
+    /**
+     * Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
+     */
+    isAgentVm: boolean;
+    /**
+     * Indicates whether to remove AHV branding from VM firmware tables or not.
+     */
+    isBrandingEnabled: boolean;
+    /**
+     * Indicates whether the VM CPU hotplug is enabled.
+     */
+    isCpuHotplugEnabled: boolean;
+    /**
+     * Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
+     */
+    isCpuPassthroughEnabled: boolean;
+    /**
+     * Indicates whether the vGPU console is enabled or not.
+     */
+    isGpuConsoleEnabled: boolean;
+    /**
+     * Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
+     */
+    isMemoryOvercommitEnabled: boolean;
+    /**
+     * Indicates whether the VM SCSI controller is enabled.
+     */
+    isScsiControllerEnabled: boolean;
+    /**
+     * Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
+     */
+    isVcpuHardPinningEnabled: boolean;
+    /**
+     * Indicates whether the VGA console should be disabled or not.
+     */
+    isVgaConsoleEnabled: boolean;
+    /**
+     * Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+     */
+    machineType: string;
+    /**
+     * Memory size in bytes.
+     */
+    memorySizeBytes: number;
+    /**
+     * VM name.
+     */
+    name: string;
+    /**
+     * NICs attached to the VM.
+     */
+    nics: outputs.GetVirtualMachinesV2VmNic[];
+    /**
+     * Number of cores per socket.
+     */
+    numCoresPerSocket: number;
+    /**
+     * Number of NUMA nodes. 0 means NUMA is disabled.
+     */
+    numNumaNodes: number;
+    /**
+     * Number of vCPU sockets.
+     */
+    numSockets: number;
+    /**
+     * Number of threads per core
+     */
+    numThreadsPerCore: number;
+    /**
+     * Ownership information for the VM.
+     */
+    ownershipInfos: outputs.GetVirtualMachinesV2VmOwnershipInfo[];
+    powerState: string;
+    /**
+     * Status of protection policy applied to this VM.
+     */
+    protectionPolicyStates: outputs.GetVirtualMachinesV2VmProtectionPolicyState[];
+    /**
+     * The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
+     */
+    protectionType: string;
+    /**
+     * Serial ports configured on the VM.
+     */
+    serialPorts: outputs.GetVirtualMachinesV2VmSerialPort[];
+    /**
+     * Reference to an entity that the VM should be cloned or created from
+     */
+    sources: outputs.GetVirtualMachinesV2VmSource[];
+    /**
+     * Storage configuration for VM.
+     */
+    storageConfigs: outputs.GetVirtualMachinesV2VmStorageConfig[];
+    /**
+     * VM last updated time.
+     */
+    updateTime: string;
+    /**
+     * Indicates how the vTPM for the VM should be configured.
+     */
+    vtpmConfigs: outputs.GetVirtualMachinesV2VmVtpmConfig[];
+}
+
+export interface GetVirtualMachinesV2VmApcConfig {
+    cpuModels: outputs.GetVirtualMachinesV2VmApcConfigCpuModel[];
+    isApcEnabled: boolean;
+}
+
+export interface GetVirtualMachinesV2VmApcConfigCpuModel {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * VM name.
+     */
+    name: string;
+}
+
+export interface GetVirtualMachinesV2VmAvailabilityZone {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachinesV2VmBootConfig {
+    legacyBoots: outputs.GetVirtualMachinesV2VmBootConfigLegacyBoot[];
+    uefiBoots: outputs.GetVirtualMachinesV2VmBootConfigUefiBoot[];
+}
+
+export interface GetVirtualMachinesV2VmBootConfigLegacyBoot {
+    bootDevices: outputs.GetVirtualMachinesV2VmBootConfigLegacyBootBootDevice[];
+    bootOrders: string[];
+}
+
+export interface GetVirtualMachinesV2VmBootConfigLegacyBootBootDevice {
+    bootDeviceDisks: outputs.GetVirtualMachinesV2VmBootConfigLegacyBootBootDeviceBootDeviceDisk[];
+    bootDeviceNics: outputs.GetVirtualMachinesV2VmBootConfigLegacyBootBootDeviceBootDeviceNic[];
+}
+
+export interface GetVirtualMachinesV2VmBootConfigLegacyBootBootDeviceBootDeviceDisk {
+    diskAddresses: outputs.GetVirtualMachinesV2VmBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress[];
+}
+
+export interface GetVirtualMachinesV2VmBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface GetVirtualMachinesV2VmBootConfigLegacyBootBootDeviceBootDeviceNic {
+    macAddress: string;
+}
+
+export interface GetVirtualMachinesV2VmBootConfigUefiBoot {
+    isSecureBootEnabled: boolean;
+    nvramDevices: outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDevice[];
+}
+
+export interface GetVirtualMachinesV2VmBootConfigUefiBootNvramDevice {
+    backingStorageInfos: outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfo[];
+}
+
+export interface GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfo {
+    dataSources: outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoDataSource[];
+    diskExtId: string;
+    diskSizeBytes: number;
+    isMigrationInProgress: boolean;
+    /**
+     * Storage configuration for VM.
+     */
+    storageConfigs: outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig[];
+    storageContainers: outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer[];
+}
+
+export interface GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoDataSource {
+    references: outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference[];
+}
+
+export interface GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference {
+    imageReferences: outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference[];
+    vmDiskReferences: outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference[];
+}
+
+export interface GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference {
+    imageExtId: string;
+}
+
+export interface GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference {
+    diskAddresses: outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress[];
+    diskExtId: string;
+    vmReferences: outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig {
+    isFlashModeEnabled: boolean;
+}
+
+export interface GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachinesV2VmCategory {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachinesV2VmCdRom {
+    backingInfos: outputs.GetVirtualMachinesV2VmCdRomBackingInfo[];
+    diskAddresses: outputs.GetVirtualMachinesV2VmCdRomDiskAddress[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    isoType: string;
+}
+
+export interface GetVirtualMachinesV2VmCdRomBackingInfo {
+    dataSources: outputs.GetVirtualMachinesV2VmCdRomBackingInfoDataSource[];
+    diskExtId: string;
+    diskSizeBytes: number;
+    isMigrationInProgress: boolean;
+    /**
+     * Storage configuration for VM.
+     */
+    storageConfigs: outputs.GetVirtualMachinesV2VmCdRomBackingInfoStorageConfig[];
+    storageContainers: outputs.GetVirtualMachinesV2VmCdRomBackingInfoStorageContainer[];
+}
+
+export interface GetVirtualMachinesV2VmCdRomBackingInfoDataSource {
+    references: outputs.GetVirtualMachinesV2VmCdRomBackingInfoDataSourceReference[];
+}
+
+export interface GetVirtualMachinesV2VmCdRomBackingInfoDataSourceReference {
+    imageReferences: outputs.GetVirtualMachinesV2VmCdRomBackingInfoDataSourceReferenceImageReference[];
+    vmDiskReferences: outputs.GetVirtualMachinesV2VmCdRomBackingInfoDataSourceReferenceVmDiskReference[];
+}
+
+export interface GetVirtualMachinesV2VmCdRomBackingInfoDataSourceReferenceImageReference {
+    imageExtId: string;
+}
+
+export interface GetVirtualMachinesV2VmCdRomBackingInfoDataSourceReferenceVmDiskReference {
+    diskAddresses: outputs.GetVirtualMachinesV2VmCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress[];
+    diskExtId: string;
+    vmReferences: outputs.GetVirtualMachinesV2VmCdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface GetVirtualMachinesV2VmCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface GetVirtualMachinesV2VmCdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachinesV2VmCdRomBackingInfoStorageConfig {
+    isFlashModeEnabled: boolean;
+}
+
+export interface GetVirtualMachinesV2VmCdRomBackingInfoStorageContainer {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachinesV2VmCdRomDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface GetVirtualMachinesV2VmCluster {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachinesV2VmDisk {
+    backingInfos: outputs.GetVirtualMachinesV2VmDiskBackingInfo[];
+    diskAddresses: outputs.GetVirtualMachinesV2VmDiskDiskAddress[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachinesV2VmDiskBackingInfo {
+    adfsVolumeGroupReferences: outputs.GetVirtualMachinesV2VmDiskBackingInfoAdfsVolumeGroupReference[];
+    vmDisks: outputs.GetVirtualMachinesV2VmDiskBackingInfoVmDisk[];
+}
+
+export interface GetVirtualMachinesV2VmDiskBackingInfoAdfsVolumeGroupReference {
+    volumeGroupExtId: string;
+}
+
+export interface GetVirtualMachinesV2VmDiskBackingInfoVmDisk {
+    dataSources: outputs.GetVirtualMachinesV2VmDiskBackingInfoVmDiskDataSource[];
+    diskExtId: string;
+    diskSizeBytes: number;
+    isMigrationInProgress: boolean;
+    /**
+     * Storage configuration for VM.
+     */
+    storageConfigs: outputs.GetVirtualMachinesV2VmDiskBackingInfoVmDiskStorageConfig[];
+    storageContainers: outputs.GetVirtualMachinesV2VmDiskBackingInfoVmDiskStorageContainer[];
+}
+
+export interface GetVirtualMachinesV2VmDiskBackingInfoVmDiskDataSource {
+    references: outputs.GetVirtualMachinesV2VmDiskBackingInfoVmDiskDataSourceReference[];
+}
+
+export interface GetVirtualMachinesV2VmDiskBackingInfoVmDiskDataSourceReference {
+    imageReferences: outputs.GetVirtualMachinesV2VmDiskBackingInfoVmDiskDataSourceReferenceImageReference[];
+    vmDiskReferences: outputs.GetVirtualMachinesV2VmDiskBackingInfoVmDiskDataSourceReferenceVmDiskReference[];
+}
+
+export interface GetVirtualMachinesV2VmDiskBackingInfoVmDiskDataSourceReferenceImageReference {
+    imageExtId: string;
+}
+
+export interface GetVirtualMachinesV2VmDiskBackingInfoVmDiskDataSourceReferenceVmDiskReference {
+    diskAddresses: outputs.GetVirtualMachinesV2VmDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress[];
+    diskExtId: string;
+    vmReferences: outputs.GetVirtualMachinesV2VmDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface GetVirtualMachinesV2VmDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface GetVirtualMachinesV2VmDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachinesV2VmDiskBackingInfoVmDiskStorageConfig {
+    isFlashModeEnabled: boolean;
+}
+
+export interface GetVirtualMachinesV2VmDiskBackingInfoVmDiskStorageContainer {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachinesV2VmDiskDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface GetVirtualMachinesV2VmGpus {
+    deviceId: number;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    fraction: number;
+    frameBufferSizeBytes: number;
+    guestDriverVersion: string;
+    mode: string;
+    /**
+     * VM name.
+     */
+    name: string;
+    numVirtualDisplayHeads: number;
+    pciAddresses: outputs.GetVirtualMachinesV2VmGpusPciAddress[];
+    vendor: string;
+}
+
+export interface GetVirtualMachinesV2VmGpusPciAddress {
+    bus: number;
+    device: number;
+    func: number;
+    segment: number;
+}
+
+export interface GetVirtualMachinesV2VmGuestCustomization {
+    configs: outputs.GetVirtualMachinesV2VmGuestCustomizationConfig[];
+}
+
+export interface GetVirtualMachinesV2VmGuestCustomizationConfig {
+    cloudInits: outputs.GetVirtualMachinesV2VmGuestCustomizationConfigCloudInit[];
+    syspreps: outputs.GetVirtualMachinesV2VmGuestCustomizationConfigSysprep[];
+}
+
+export interface GetVirtualMachinesV2VmGuestCustomizationConfigCloudInit {
+    cloudInitScripts: outputs.GetVirtualMachinesV2VmGuestCustomizationConfigCloudInitCloudInitScript[];
+    datasourceType: string;
+    metadata: string;
+}
+
+export interface GetVirtualMachinesV2VmGuestCustomizationConfigCloudInitCloudInitScript {
+    customKeys: outputs.GetVirtualMachinesV2VmGuestCustomizationConfigCloudInitCloudInitScriptCustomKey[];
+    userDatas: outputs.GetVirtualMachinesV2VmGuestCustomizationConfigCloudInitCloudInitScriptUserData[];
+}
+
+export interface GetVirtualMachinesV2VmGuestCustomizationConfigCloudInitCloudInitScriptCustomKey {
+    keyValuePairs: outputs.GetVirtualMachinesV2VmGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePair[];
+}
+
+export interface GetVirtualMachinesV2VmGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePair {
+    /**
+     * VM name.
+     */
+    name: string;
+    value: string;
+}
+
+export interface GetVirtualMachinesV2VmGuestCustomizationConfigCloudInitCloudInitScriptUserData {
+    value: string;
+}
+
+export interface GetVirtualMachinesV2VmGuestCustomizationConfigSysprep {
+    installType: string;
+    sysprepScripts: outputs.GetVirtualMachinesV2VmGuestCustomizationConfigSysprepSysprepScript[];
+}
+
+export interface GetVirtualMachinesV2VmGuestCustomizationConfigSysprepSysprepScript {
+    customKeyValues: outputs.GetVirtualMachinesV2VmGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue[];
+    unattendXmls: outputs.GetVirtualMachinesV2VmGuestCustomizationConfigSysprepSysprepScriptUnattendXml[];
+}
+
+export interface GetVirtualMachinesV2VmGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
+    keyValuePairs: outputs.GetVirtualMachinesV2VmGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface GetVirtualMachinesV2VmGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    /**
+     * VM name.
+     */
+    name: string;
+    value: string;
+}
+
+export interface GetVirtualMachinesV2VmGuestCustomizationConfigSysprepSysprepScriptUnattendXml {
+    value: string;
+}
+
+export interface GetVirtualMachinesV2VmGuestTool {
+    availableVersion: string;
+    capabilities: string[];
+    guestOsVersion: string;
+    isEnabled: boolean;
+    isInstalled: boolean;
+    isIsoInserted: boolean;
+    isReachable: boolean;
+    isVmMobilityDriversInstalled: boolean;
+    isVssSnapshotCapable: boolean;
+    version: string;
+}
+
+export interface GetVirtualMachinesV2VmHost {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachinesV2VmNic {
+    backingInfos: outputs.GetVirtualMachinesV2VmNicBackingInfo[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    networkInfos: outputs.GetVirtualMachinesV2VmNicNetworkInfo[];
+}
+
+export interface GetVirtualMachinesV2VmNicBackingInfo {
+    isConnected: boolean;
+    macAddress: string;
+    model: string;
+    numQueues: number;
+}
+
+export interface GetVirtualMachinesV2VmNicNetworkInfo {
+    ipv4Configs: outputs.GetVirtualMachinesV2VmNicNetworkInfoIpv4Config[];
+    ipv4Infos: outputs.GetVirtualMachinesV2VmNicNetworkInfoIpv4Info[];
+    networkFunctionChains: outputs.GetVirtualMachinesV2VmNicNetworkInfoNetworkFunctionChain[];
+    networkFunctionNicType: string;
+    nicType: string;
+    shouldAllowUnknownMacs: boolean;
+    subnets: outputs.GetVirtualMachinesV2VmNicNetworkInfoSubnet[];
+    trunkedVlans: number[];
+    vlanMode: string;
+}
+
+export interface GetVirtualMachinesV2VmNicNetworkInfoIpv4Config {
+    ipAddresses: outputs.GetVirtualMachinesV2VmNicNetworkInfoIpv4ConfigIpAddress[];
+    secondaryIpAddressLists: outputs.GetVirtualMachinesV2VmNicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
+    shouldAssignIp: boolean;
+}
+
+export interface GetVirtualMachinesV2VmNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetVirtualMachinesV2VmNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetVirtualMachinesV2VmNicNetworkInfoIpv4Info {
+    learnedIpAddresses: outputs.GetVirtualMachinesV2VmNicNetworkInfoIpv4InfoLearnedIpAddress[];
+}
+
+export interface GetVirtualMachinesV2VmNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength: number;
+    value: string;
+}
+
+export interface GetVirtualMachinesV2VmNicNetworkInfoNetworkFunctionChain {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachinesV2VmNicNetworkInfoSubnet {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachinesV2VmOwnershipInfo {
+    owners: outputs.GetVirtualMachinesV2VmOwnershipInfoOwner[];
+}
+
+export interface GetVirtualMachinesV2VmOwnershipInfoOwner {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachinesV2VmProtectionPolicyState {
+    policies: outputs.GetVirtualMachinesV2VmProtectionPolicyStatePolicy[];
+}
+
+export interface GetVirtualMachinesV2VmProtectionPolicyStatePolicy {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachinesV2VmSerialPort {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    index: number;
+    isConnected: boolean;
+}
+
+export interface GetVirtualMachinesV2VmSource {
+    entityType: string;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface GetVirtualMachinesV2VmStorageConfig {
+    isFlashModeEnabled: boolean;
+    qosConfigs: outputs.GetVirtualMachinesV2VmStorageConfigQosConfig[];
+}
+
+export interface GetVirtualMachinesV2VmStorageConfigQosConfig {
+    throttledIops: number;
+}
+
+export interface GetVirtualMachinesV2VmVtpmConfig {
+    isVtpmEnabled: boolean;
+    version: string;
+}
+
+export interface GetVmRecoveryPointInfoV2ApplicationConsistentProperty {
+    /**
+     * The backup type specifies the criteria for identifying the files to be backed up. This property should be specified to the application-consistent recovery points for Windows VMs/agents. The following backup types are supported for the application-consistent recovery points:
+     * * supported values:
+     * * `FULL_BACKUP`: -  All the files are backed up irrespective of their last backup date/time or state. Also, this backup type updates the backup history of each file that participated in the recovery point. If not explicitly specified, this is the default backup type.
+     * * `COPY_BACKUP`: -  this backup type does not update the backup history of individual files involved in the recovery point.
+     */
+    backupType: string;
+    /**
+     * value: `dataprotection.v4.common.VssProperties`
+     */
+    objectType: string;
+    /**
+     * Indicates whether the given set of VSS writers' UUIDs should be included or excluded from the application consistent recovery point. By default, the value is set to false, indicating that all listed VSS writers' UUIDs will be excluded.
+     */
+    shouldIncludeWriters: boolean;
+    /**
+     * Indicates whether to store the VSS metadata if the user is interested in application-specific backup/restore. The VSS metadata consists of VSS writers and requester metadata details. These are compressed into a cabinet file(.cab file) during a VSS backup operation. This cabinet file must be saved to the backup media during a backup operation, as it is required during the restore operation.
+     */
+    shouldStoreVssMetadata: boolean;
+    /**
+     * List of VSS writer UUIDs that are used in an application consistent recovery point. The default values are the system and the registry writer UUIDs.
+     */
+    writers: string[];
+}
+
+export interface GetVmRecoveryPointInfoV2DiskRecoveryPoint {
+    /**
+     * External identifier of the disk.
+     */
+    diskExtId: string;
+    /**
+     * External identifier of the disk recovery point.
+     */
+    diskRecoveryPointExtId: string;
+}
+
+export interface GetVmRecoveryPointInfoV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetVolumeGroupDiskV2DiskDataSourceReference {
+    /**
+     * - The Entity Type of the Data Source Reference.
+     */
+    entityType: string;
+    /**
+     * - The external identifier of the Data Source Reference.
+     */
+    extId: string;
+    /**
+     * - The name of the Data Source Reference.bled for the Volume Group.
+     */
+    name: string;
+    /**
+     * - The uri list of the Data Source Reference.
+     */
+    uris: any[][];
+}
+
+export interface GetVolumeGroupDiskV2DiskStorageFeature {
+    /**
+     * - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+     */
+    flashModes: outputs.GetVolumeGroupDiskV2DiskStorageFeatureFlashMode[];
+}
+
+export interface GetVolumeGroupDiskV2DiskStorageFeatureFlashMode {
+    /**
+     * - Indicates whether the flash mode is enabled for the Volume Group Disk.
+     */
+    isEnabled: boolean;
+}
+
+export interface GetVolumeGroupDiskV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetVolumeGroupDisksV2Disk {
+    /**
+     * - Volume Disk description.
+     */
+    description: string;
+    /**
+     * - Disk Data Source Reference.
+     */
+    diskDataSourceReferences: outputs.GetVolumeGroupDisksV2DiskDiskDataSourceReference[];
+    /**
+     * - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+     */
+    diskSizeBytes: number;
+    /**
+     * - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
+     */
+    diskStorageFeatures: outputs.GetVolumeGroupDisksV2DiskDiskStorageFeature[];
+    /**
+     * - The external identifier of the Data Source Reference.
+     */
+    extId: string;
+    /**
+     * - Index of the disk in a Volume Group. This field is optional and immutable.
+     */
+    index: number;
+    /**
+     * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetVolumeGroupDisksV2DiskLink[];
+    /**
+     * - Storage container on which the disk must be created. This is a read-only field.
+     */
+    storageContainerId: string;
+    /**
+     * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+     */
+    tenantId: string;
+}
+
+export interface GetVolumeGroupDisksV2DiskDiskDataSourceReference {
+    /**
+     * - The Entity Type of the Data Source Reference.
+     */
+    entityType: string;
+    /**
+     * - The external identifier of the Data Source Reference.
+     */
+    extId: string;
+    /**
+     * - The name of the Data Source Reference.bled for the Volume Group.
+     */
+    name: string;
+    /**
+     * - The uri list of the Data Source Reference.
+     */
+    uris: any[][];
+}
+
+export interface GetVolumeGroupDisksV2DiskDiskStorageFeature {
+    /**
+     * - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+     */
+    flashModes: outputs.GetVolumeGroupDisksV2DiskDiskStorageFeatureFlashMode[];
+}
+
+export interface GetVolumeGroupDisksV2DiskDiskStorageFeatureFlashMode {
+    /**
+     * - Indicates whether the flash mode is enabled for the Volume Group Disk.
+     */
+    isEnabled: boolean;
+}
+
+export interface GetVolumeGroupDisksV2DiskLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetVolumeGroupV2IscsiFeature {
+    /**
+     * - The authentication type enabled for the Volume Group.
+     */
+    enabledAuthentications: string;
+}
+
+export interface GetVolumeGroupV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetVolumeGroupV2StorageFeature {
+    /**
+     * - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+     */
+    flashModes: outputs.GetVolumeGroupV2StorageFeatureFlashMode[];
+}
+
+export interface GetVolumeGroupV2StorageFeatureFlashMode {
+    /**
+     * - Indicates whether the flash mode is enabled for the Volume Group.
+     */
+    isEnabled: boolean;
+}
+
+export interface GetVolumeGroupsV2Volume {
+    /**
+     * - The UUID of the cluster that will host the Volume Group.
+     */
+    clusterReference: string;
+    /**
+     * - Service/user who created this Volume Group.
+     */
+    createdBy: string;
+    /**
+     * - Volume Group description. This is an optional field.
+     */
+    description: string;
+    /**
+     * - The authentication type enabled for the Volume Group.
+     */
+    enabledAuthentications: string;
+    /**
+     * - A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * - Indicates whether the Volume Group is meant to be hidden or not.
+     */
+    isHidden: boolean;
+    /**
+     * - iSCSI specific settings for the Volume Group.
+     */
+    iscsiFeatures: outputs.GetVolumeGroupsV2VolumeIscsiFeature[];
+    /**
+     * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetVolumeGroupsV2VolumeLink[];
+    /**
+     * -(Required) Volume Group name. This is an optional field.
+     */
+    name: string;
+    /**
+     * - Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
+     */
+    sharingStatus: string;
+    /**
+     * - Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
+     */
+    shouldLoadBalanceVmAttachments: boolean;
+    /**
+     * - Storage optimization features which must be enabled on the Volume Group.
+     */
+    storageFeatures: outputs.GetVolumeGroupsV2VolumeStorageFeature[];
+    /**
+     * - Name of the external client target that will be visible and accessible to the client.
+     */
+    targetName: string;
+    /**
+     * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+     */
+    tenantId: string;
+    /**
+     * - Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+     */
+    usageType: string;
+}
+
+export interface GetVolumeGroupsV2VolumeIscsiFeature {
+    /**
+     * - The authentication type enabled for the Volume Group.
+     */
+    enabledAuthentications: string;
+}
+
+export interface GetVolumeGroupsV2VolumeLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetVolumeGroupsV2VolumeStorageFeature {
+    /**
+     * - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+     */
+    flashModes: outputs.GetVolumeGroupsV2VolumeStorageFeatureFlashMode[];
+}
+
+export interface GetVolumeGroupsV2VolumeStorageFeatureFlashMode {
+    /**
+     * - Indicates whether the flash mode is enabled for the Volume Group.
+     */
+    isEnabled: boolean;
+}
+
+export interface GetVolumeIscsiClientV2AttachedTarget {
+    /**
+     * - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
+     */
+    iscsiTargetName: string;
+    /**
+     * - Number of virtual targets generated for the iSCSI target. This field is immutable.
+     */
+    numVirtualTargets: number;
+}
+
+export interface GetVolumeIscsiClientV2IscsiInitiatorNetworkId {
+    /**
+     * - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns: outputs.GetVolumeIscsiClientV2IscsiInitiatorNetworkIdFqdn[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetVolumeIscsiClientV2IscsiInitiatorNetworkIdIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetVolumeIscsiClientV2IscsiInitiatorNetworkIdIpv6[];
+}
+
+export interface GetVolumeIscsiClientV2IscsiInitiatorNetworkIdFqdn {
+    /**
+     * - The fully qualified domain name.
+     */
+    value: string;
+}
+
+export interface GetVolumeIscsiClientV2IscsiInitiatorNetworkIdIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * - The fully qualified domain name.
+     */
+    value: string;
+}
+
+export interface GetVolumeIscsiClientV2IscsiInitiatorNetworkIdIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * - The fully qualified domain name.
+     */
+    value: string;
+}
+
+export interface GetVolumeIscsiClientV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface GetVolumeIscsiClientsV2IscsiClient {
+    /**
+     * associated with each iSCSI target corresponding to the iSCSI client)
+     */
+    attachedTargets: outputs.GetVolumeIscsiClientsV2IscsiClientAttachedTarget[];
+    /**
+     * -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
+     */
+    attachmentSite: string;
+    /**
+     * The UUID of the cluster that will host the iSCSI client. This field is read-only.
+     */
+    clusterReference: string;
+    /**
+     * -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
+     */
+    enabledAuthentications: string;
+    /**
+     * - A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * -iSCSI initiator name. During the attach operation, exactly one of iscsiInitiatorName and iscsiInitiatorNetworkId must be specified. This field is immutable.
+     */
+    iscsiInitiatorName: string;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+     */
+    iscsiInitiatorNetworkIds?: outputs.GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkId[];
+    /**
+     * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetVolumeIscsiClientsV2IscsiClientLink[];
+    /**
+     * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+     */
+    tenantId: string;
+}
+
+export interface GetVolumeIscsiClientsV2IscsiClientAttachedTarget {
+    /**
+     * - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
+     */
+    iscsiTargetName: string;
+    /**
+     * - Number of virtual targets generated for the iSCSI target. This field is immutable.
+     */
+    numVirtualTargets: number;
+}
+
+export interface GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkId {
+    /**
+     * - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns: outputs.GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdn[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6[];
+}
+
+export interface GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdn {
+    /**
+     * - The fully qualified domain name.
+     */
+    value: string;
+}
+
+export interface GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * - The fully qualified domain name.
+     */
+    value: string;
+}
+
+export interface GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * - The fully qualified domain name.
+     */
+    value: string;
+}
+
+export interface GetVolumeIscsiClientsV2IscsiClientLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
 export interface GetVpcSpec {
     /**
      * - the name.
@@ -11678,6 +29404,241 @@ export interface GetVpcStatusResourceExternallyRoutablePrefixList {
     prefixLength: number;
 }
 
+export interface GetVpcV2CommonDhcpOption {
+    /**
+     * List of Domain Name Server addresses
+     */
+    domainNameServers: outputs.GetVpcV2CommonDhcpOptionDomainNameServer[];
+}
+
+export interface GetVpcV2CommonDhcpOptionDomainNameServer {
+    /**
+     * Reference to address configuration
+     */
+    ipv4s: outputs.GetVpcV2CommonDhcpOptionDomainNameServerIpv4[];
+    /**
+     * Reference to address configuration
+     */
+    ipv6s: outputs.GetVpcV2CommonDhcpOptionDomainNameServerIpv6[];
+}
+
+export interface GetVpcV2CommonDhcpOptionDomainNameServerIpv4 {
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcV2CommonDhcpOptionDomainNameServerIpv6 {
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcV2ExternalSubnet {
+    /**
+     * Maximum number of active gateway nodes for the VPC external subnet association.
+     */
+    activeGatewayCount: number;
+    /**
+     * Reference of gateway nodes
+     */
+    activeGatewayNodes: outputs.GetVpcV2ExternalSubnetActiveGatewayNode[];
+    /**
+     * List of IP Addresses used for SNAT, if NAT is enabled on the external subnet. If NAT is not enabled, this specifies the IP address of the VPC port connected to the external gateway.
+     */
+    externalIps: outputs.GetVpcV2ExternalSubnetExternalIp[];
+    /**
+     * List of gateway nodes that can be used for external connectivity.
+     */
+    gatewayNodes: string[];
+    /**
+     * External subnet reference.
+     */
+    subnetReference: string;
+}
+
+export interface GetVpcV2ExternalSubnetActiveGatewayNode {
+    nodeId: string;
+    nodeIpAddresses: outputs.GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddress[];
+}
+
+export interface GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddress {
+    /**
+     * IP V4 Configuration
+     */
+    ipv4s: outputs.GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4[];
+    /**
+     * IP V6 Configuration
+     */
+    ipv6s: outputs.GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6[];
+}
+
+export interface GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcV2ExternalSubnetExternalIp {
+    /**
+     * IP V4 Configuration
+     */
+    ipv4s: outputs.GetVpcV2ExternalSubnetExternalIpIpv4[];
+    /**
+     * IP V6 Configuration
+     */
+    ipv6s: outputs.GetVpcV2ExternalSubnetExternalIpIpv6[];
+}
+
+export interface GetVpcV2ExternalSubnetExternalIpIpv4 {
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcV2ExternalSubnetExternalIpIpv6 {
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcV2ExternallyRoutablePrefix {
+    /**
+     * IP V4 Configuration
+     */
+    ipv4s: outputs.GetVpcV2ExternallyRoutablePrefixIpv4[];
+    /**
+     * IP V6 Configuration
+     */
+    ipv6s: outputs.GetVpcV2ExternallyRoutablePrefixIpv6[];
+}
+
+export interface GetVpcV2ExternallyRoutablePrefixIpv4 {
+    /**
+     * Reference to address configuration
+     */
+    ips: outputs.GetVpcV2ExternallyRoutablePrefixIpv4Ip[];
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+}
+
+export interface GetVpcV2ExternallyRoutablePrefixIpv4Ip {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcV2ExternallyRoutablePrefixIpv6 {
+    /**
+     * Reference to address configuration
+     */
+    ips: outputs.GetVpcV2ExternallyRoutablePrefixIpv6Ip[];
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+}
+
+export interface GetVpcV2ExternallyRoutablePrefixIpv6Ip {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetVpcV2Metadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetVpcV2SnatIp {
+    /**
+     * IP V4 Configuration
+     */
+    ipv4s: outputs.GetVpcV2SnatIpIpv4[];
+    /**
+     * IP V6 Configuration
+     */
+    ipv6s: outputs.GetVpcV2SnatIpIpv6[];
+}
+
+export interface GetVpcV2SnatIpIpv4 {
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcV2SnatIpIpv6 {
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
 export interface GetVpcsEntity {
     /**
      * - The vpc kind metadata.
@@ -11790,6 +29751,7 @@ export interface GetVpcsEntityStatusResourceCommonDomainNameServerIpList {
 }
 
 export interface GetVpcsEntityStatusResourceExternalSubnetList {
+    activeGatewayCount: number;
     /**
      * Active Gateway Node. Only present in VPC Status Resources.
      */
@@ -11839,6 +29801,292 @@ export interface GetVpcsMetadata {
     totalMatches: number;
 }
 
+export interface GetVpcsV2Vpc {
+    /**
+     * List of DHCP options to be configured.
+     */
+    commonDhcpOptions: outputs.GetVpcsV2VpcCommonDhcpOption[];
+    /**
+     * Description of the VPC.
+     */
+    description: string;
+    /**
+     * ext_id of VPC.
+     */
+    extId: string;
+    /**
+     * External routing domain associated with this route table
+     */
+    externalRoutingDomainReference: string;
+    /**
+     * List of external subnets that the VPC is attached to.
+     */
+    externalSubnets: outputs.GetVpcsV2VpcExternalSubnet[];
+    /**
+     * CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
+     */
+    externallyRoutablePrefixes: outputs.GetVpcsV2VpcExternallyRoutablePrefix[];
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.GetVpcsV2VpcLink[];
+    /**
+     * Metadata associated with this resource.
+     */
+    metadatas: outputs.GetVpcsV2VpcMetadata[];
+    /**
+     * Name of the VPC.
+     */
+    name: string;
+    /**
+     * List of IP Addresses used for SNAT.
+     */
+    snatIps: outputs.GetVpcsV2VpcSnatIp[];
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+    /**
+     * Type of VPC.
+     */
+    vpcType: string;
+}
+
+export interface GetVpcsV2VpcCommonDhcpOption {
+    /**
+     * List of Domain Name Server addresses
+     */
+    domainNameServers: outputs.GetVpcsV2VpcCommonDhcpOptionDomainNameServer[];
+}
+
+export interface GetVpcsV2VpcCommonDhcpOptionDomainNameServer {
+    /**
+     * Reference to address configuration
+     */
+    ipv4s: outputs.GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4[];
+    /**
+     * Reference to address configuration
+     */
+    ipv6s: outputs.GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6[];
+}
+
+export interface GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4 {
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6 {
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcsV2VpcExternalSubnet {
+    /**
+     * Maximum number of active gateway nodes for the VPC external subnet association.
+     */
+    activeGatewayCount: number;
+    /**
+     * Reference of gateway nodes
+     */
+    activeGatewayNodes: outputs.GetVpcsV2VpcExternalSubnetActiveGatewayNode[];
+    /**
+     * List of IP Addresses used for SNAT, if NAT is enabled on the external subnet. If NAT is not enabled, this specifies the IP address of the VPC port connected to the external gateway.
+     */
+    externalIps: outputs.GetVpcsV2VpcExternalSubnetExternalIp[];
+    /**
+     * List of gateway nodes that can be used for external connectivity.
+     */
+    gatewayNodes: string[];
+    /**
+     * External subnet reference.
+     */
+    subnetReference: string;
+}
+
+export interface GetVpcsV2VpcExternalSubnetActiveGatewayNode {
+    nodeId: string;
+    nodeIpAddresses: outputs.GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress[];
+}
+
+export interface GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress {
+    /**
+     * IP V4 Configuration
+     */
+    ipv4s: outputs.GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4[];
+    /**
+     * IP V6 Configuration
+     */
+    ipv6s: outputs.GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6[];
+}
+
+export interface GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcsV2VpcExternalSubnetExternalIp {
+    /**
+     * IP V4 Configuration
+     */
+    ipv4s: outputs.GetVpcsV2VpcExternalSubnetExternalIpIpv4[];
+    /**
+     * IP V6 Configuration
+     */
+    ipv6s: outputs.GetVpcsV2VpcExternalSubnetExternalIpIpv6[];
+}
+
+export interface GetVpcsV2VpcExternalSubnetExternalIpIpv4 {
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcsV2VpcExternalSubnetExternalIpIpv6 {
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcsV2VpcExternallyRoutablePrefix {
+    /**
+     * IP V4 Configuration
+     */
+    ipv4s: outputs.GetVpcsV2VpcExternallyRoutablePrefixIpv4[];
+    /**
+     * IP V6 Configuration
+     */
+    ipv6s: outputs.GetVpcsV2VpcExternallyRoutablePrefixIpv6[];
+}
+
+export interface GetVpcsV2VpcExternallyRoutablePrefixIpv4 {
+    /**
+     * Reference to address configuration
+     */
+    ips: outputs.GetVpcsV2VpcExternallyRoutablePrefixIpv4Ip[];
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+}
+
+export interface GetVpcsV2VpcExternallyRoutablePrefixIpv4Ip {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcsV2VpcExternallyRoutablePrefixIpv6 {
+    /**
+     * Reference to address configuration
+     */
+    ips: outputs.GetVpcsV2VpcExternallyRoutablePrefixIpv6Ip[];
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+}
+
+export interface GetVpcsV2VpcExternallyRoutablePrefixIpv6Ip {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcsV2VpcLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetVpcsV2VpcMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface GetVpcsV2VpcSnatIp {
+    /**
+     * IP V4 Configuration
+     */
+    ipv4s: outputs.GetVpcsV2VpcSnatIpIpv4[];
+    /**
+     * IP V6 Configuration
+     */
+    ipv6s: outputs.GetVpcsV2VpcSnatIpIpv6[];
+}
+
+export interface GetVpcsV2VpcSnatIpIpv4 {
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
+export interface GetVpcsV2VpcSnatIpIpv6 {
+    /**
+     * The prefix length of the network
+     */
+    prefixLength: number;
+    /**
+     * value of address
+     */
+    value: string;
+}
+
 export interface ImageCategory {
     /**
      * - (Required) The name for the image.
@@ -11875,6 +30123,70 @@ export interface ImageCurrentClusterReferenceList {
      * - the UUID(Required).
      */
     uuid: string;
+}
+
+export interface ImagePlacementPolicyV2ClusterEntityFilter {
+    /**
+     * Array of strings
+     *
+     *
+     * See detailed information in [Nutanix Image Placement Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0)
+     */
+    categoryExtIds: string[];
+    /**
+     * Filter matching type. Valid values "CATEGORIES_MATCH_ALL", "CATEGORIES_MATCH_ANY"
+     */
+    type: string;
+}
+
+export interface ImagePlacementPolicyV2ImageEntityFilter {
+    /**
+     * Array of strings
+     */
+    categoryExtIds: string[];
+    /**
+     * Filter matching type. Valid values "CATEGORIES_MATCH_ALL", "CATEGORIES_MATCH_ANY"
+     */
+    type: string;
+}
+
+export interface ImagesV2Checksum {
+    hexDigest: string;
+    objectType: string;
+}
+
+export interface ImagesV2PlacementPolicyStatus {
+    complianceStatus: string;
+    conflictingPolicyExtIds: string[];
+    enforcedClusterExtIds: string[];
+    enforcementMode: string;
+    placementPolicyExtId: string;
+    policyClusterExtIds: string[];
+}
+
+export interface ImagesV2Source {
+    objectLiteSources?: outputs.ImagesV2SourceObjectLiteSource[];
+    urlSources?: outputs.ImagesV2SourceUrlSource[];
+    vmDiskSources?: outputs.ImagesV2SourceVmDiskSource[];
+}
+
+export interface ImagesV2SourceObjectLiteSource {
+    key: string;
+}
+
+export interface ImagesV2SourceUrlSource {
+    basicAuths?: outputs.ImagesV2SourceUrlSourceBasicAuth[];
+    shouldAllowInsecureUrl?: boolean;
+    url: string;
+}
+
+export interface ImagesV2SourceUrlSourceBasicAuth {
+    password: string;
+    username: string;
+}
+
+export interface ImagesV2SourceVmDiskSource {
+    extId: string;
 }
 
 export interface KarbonClusterActivePassiveConfig {
@@ -16586,6 +34898,218 @@ export interface NdbStretchedVlanVlansListProperty {
     value: string;
 }
 
+export interface NetworkSecurityPolicyV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface NetworkSecurityPolicyV2Rule {
+    /**
+     * A user defined annotation for a rule.
+     */
+    description: string;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.NetworkSecurityPolicyV2RuleLink[];
+    /**
+     * Spec for rules.
+     */
+    specs: outputs.NetworkSecurityPolicyV2RuleSpec[];
+    /**
+     * The type for a rule—the value chosen here restricts which specification can be chosen. Acceptable values are "QUARANTINE", "TWO_ENV_ISOLATION", "APPLICATION", "INTRA_GROUP".
+     */
+    type: string;
+}
+
+export interface NetworkSecurityPolicyV2RuleLink {
+    href: string;
+    rel: string;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpec {
+    /**
+     * Application Rule Spec.
+     */
+    applicationRuleSpecs?: outputs.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpec[];
+    /**
+     * Intra entity group Rule Spec
+     */
+    intraEntityGroupRuleSpecs: outputs.NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpec[];
+    /**
+     * Multi Environment Isolation Rule Spec.
+     */
+    multiEnvIsolationRuleSpecs: outputs.NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpec[];
+    /**
+     * Two Environment Isolation Rule Spec.
+     */
+    twoEnvIsolationRuleSpecs?: outputs.NetworkSecurityPolicyV2RuleSpecTwoEnvIsolationRuleSpec[];
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpec {
+    /**
+     * A list of address group references.
+     */
+    destAddressGroupReferences: string[];
+    /**
+     * A specification to how allow mode traffic should be applied, either ALL or NONE.
+     */
+    destAllowSpec: string;
+    /**
+     * List of categories that define a set of network endpoints as outbound.
+     */
+    destCategoryReferences: string[];
+    /**
+     * destination subnet value
+     */
+    destSubnets: outputs.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecDestSubnet[];
+    /**
+     * icmp services
+     */
+    icmpServices?: outputs.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecIcmpService[];
+    /**
+     * Denotes if rule allows traffic for all protocol.
+     */
+    isAllProtocolAllowed: boolean;
+    /**
+     * A reference to the network function chain in the rule.
+     */
+    networkFunctionChainReference: string;
+    /**
+     * A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories.
+     */
+    securedGroupCategoryReferences: string[];
+    /**
+     * A list of service group references.
+     */
+    serviceGroupReferences: string[];
+    /**
+     * A list of address group references.
+     */
+    srcAddressGroupReferences: string[];
+    /**
+     * A specification to how allow mode traffic should be applied, either ALL or NONE.
+     */
+    srcAllowSpec: string;
+    /**
+     * List of categories that define a set of network endpoints as inbound.
+     */
+    srcCategoryReferences: string[];
+    /**
+     * source subnet value
+     */
+    srcSubnets: outputs.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecSrcSubnet[];
+    /**
+     * tcp services
+     */
+    tcpServices?: outputs.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecTcpService[];
+    /**
+     * udp services
+     */
+    udpServices?: outputs.NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecUdpService[];
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecDestSubnet {
+    prefixLength: string;
+    value: string;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecIcmpService {
+    /**
+     * Icmp service Code. Ignore this field if Code has to be ANY.
+     */
+    code: number;
+    /**
+     * Set this field to true if both Type and Code is ANY.
+     */
+    isAllAllowed: boolean;
+    /**
+     * Icmp service Type. Ignore this field if Type has to be ANY.
+     */
+    type: number;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecSrcSubnet {
+    prefixLength: string;
+    value: string;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecTcpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
+    startPort: number;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecUdpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
+    startPort: number;
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpec {
+    /**
+     * List of secured group action.
+     */
+    securedGroupAction: string;
+    /**
+     * A specification to whether traffic between intra secured group entities should be allowed or denied.
+     */
+    securedGroupCategoryReferences: string[];
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpec {
+    /**
+     * Multi Environment Isolation Rule Spec.
+     */
+    specs: outputs.NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpec[];
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpec {
+    /**
+     * all to all isolation groups
+     */
+    allToAllIsolationGroups: outputs.NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroup[];
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroup {
+    /**
+     * Denotes the list of secured groups that will be used in All to All mutual isolation.
+     */
+    isolationGroups: outputs.NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroupIsolationGroup[];
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecSpecAllToAllIsolationGroupIsolationGroup {
+    /**
+     * External identifiers of categories belonging to the isolation group.
+     */
+    groupCategoryReferences: string[];
+}
+
+export interface NetworkSecurityPolicyV2RuleSpecTwoEnvIsolationRuleSpec {
+    /**
+     * Denotes the first group of category uuids that will be used in an isolation policy.
+     */
+    firstIsolationGroups: string[];
+    /**
+     * Denotes the second group of category uuids that will be used in an isolation policy.
+     */
+    secondIsolationGroups: string[];
+}
+
 export interface NetworkSecurityRuleAdRuleInboundAllowList {
     addressGroupInclusionLists: outputs.NetworkSecurityRuleAdRuleInboundAllowListAddressGroupInclusionList[];
     expirationTime: string;
@@ -16906,6 +35430,59 @@ export interface NetworkSecurityRuleIsolationRuleSecondEntityFilterParam {
     values: string[];
 }
 
+export interface NgtInstallationV2Credential {
+    /**
+     * - (Required) password to sign in to server
+     */
+    password: string;
+    /**
+     * - (Required) username to sign in to server
+     */
+    username: string;
+}
+
+export interface NgtInstallationV2RebootPreference {
+    /**
+     * - Restart schedule.
+     */
+    schedule?: outputs.NgtInstallationV2RebootPreferenceSchedule;
+    /**
+     * - Schedule type for restart.
+     * * `LATER` : Schedule a restart for a specific time.
+     * * `SKIP` : Do not schedule a restart.
+     * * `IMMEDIATE` : Schedule an immediate restart.
+     */
+    scheduleType: string;
+}
+
+export interface NgtInstallationV2RebootPreferenceSchedule {
+    /**
+     * - The start time for a scheduled restart.
+     */
+    startTime: string;
+}
+
+export interface NgtUpgradeV2RebootPreference {
+    /**
+     * - Restart schedule.
+     */
+    schedule?: outputs.NgtUpgradeV2RebootPreferenceSchedule;
+    /**
+     * - Schedule type for restart.
+     * * `LATER` : Schedule a restart for a specific time.
+     * * `SKIP` : Do not schedule a restart.
+     * * `IMMEDIATE` : Schedule an immediate restart.
+     */
+    scheduleType: string;
+}
+
+export interface NgtUpgradeV2RebootPreferenceSchedule {
+    /**
+     * - The start time for a scheduled restart.
+     */
+    startTime: string;
+}
+
 export interface PbrDestination {
     addressType?: string;
     prefixLength?: number;
@@ -16958,6 +35535,697 @@ export interface PbrSource {
     addressType?: string;
     prefixLength?: number;
     subnetIp?: string;
+}
+
+export interface PbrV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface PbrV2Metadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface PbrV2Policy {
+    isBidirectional: boolean;
+    policyActions: outputs.PbrV2PolicyPolicyAction[];
+    policyMatches: outputs.PbrV2PolicyPolicyMatch[];
+}
+
+export interface PbrV2PolicyPolicyAction {
+    actionType: string;
+    nexthopIpAddresses: outputs.PbrV2PolicyPolicyActionNexthopIpAddress[];
+    rerouteParams: outputs.PbrV2PolicyPolicyActionRerouteParam[];
+}
+
+export interface PbrV2PolicyPolicyActionNexthopIpAddress {
+    ipv4s: outputs.PbrV2PolicyPolicyActionNexthopIpAddressIpv4[];
+    ipv6s: outputs.PbrV2PolicyPolicyActionNexthopIpAddressIpv6[];
+}
+
+export interface PbrV2PolicyPolicyActionNexthopIpAddressIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface PbrV2PolicyPolicyActionNexthopIpAddressIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface PbrV2PolicyPolicyActionRerouteParam {
+    egressServiceIps: outputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIp[];
+    ingressServiceIps: outputs.PbrV2PolicyPolicyActionRerouteParamIngressServiceIp[];
+    rerouteFallbackAction: string;
+    serviceIps: outputs.PbrV2PolicyPolicyActionRerouteParamServiceIp[];
+}
+
+export interface PbrV2PolicyPolicyActionRerouteParamEgressServiceIp {
+    ipv4s: outputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4[];
+    ipv6s: outputs.PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6[];
+}
+
+export interface PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface PbrV2PolicyPolicyActionRerouteParamEgressServiceIpIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface PbrV2PolicyPolicyActionRerouteParamIngressServiceIp {
+    ipv4s: outputs.PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4[];
+    ipv6s: outputs.PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6[];
+}
+
+export interface PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface PbrV2PolicyPolicyActionRerouteParamIngressServiceIpIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface PbrV2PolicyPolicyActionRerouteParamServiceIp {
+    ipv4s: outputs.PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4[];
+    ipv6s: outputs.PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6[];
+}
+
+export interface PbrV2PolicyPolicyActionRerouteParamServiceIpIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface PbrV2PolicyPolicyActionRerouteParamServiceIpIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface PbrV2PolicyPolicyMatch {
+    destinations: outputs.PbrV2PolicyPolicyMatchDestination[];
+    protocolParameters: outputs.PbrV2PolicyPolicyMatchProtocolParameter[];
+    protocolType: string;
+    sources: outputs.PbrV2PolicyPolicyMatchSource[];
+}
+
+export interface PbrV2PolicyPolicyMatchDestination {
+    addressType: string;
+    subnetPrefixes: outputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefix[];
+}
+
+export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefix {
+    ipv4s: outputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4[];
+    ipv6s: outputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6[];
+}
+
+export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4 {
+    ips: outputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip[];
+    prefixLength: number;
+}
+
+export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Ip {
+    prefixLength: number;
+    value: string;
+}
+
+export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6 {
+    ips: outputs.PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Ip[];
+    prefixLength: number;
+}
+
+export interface PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Ip {
+    prefixLength: number;
+    value: string;
+}
+
+export interface PbrV2PolicyPolicyMatchProtocolParameter {
+    icmpObjects: outputs.PbrV2PolicyPolicyMatchProtocolParameterIcmpObject[];
+    layerFourProtocolObjects: outputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObject[];
+    protocolNumberObjects: outputs.PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObject[];
+}
+
+export interface PbrV2PolicyPolicyMatchProtocolParameterIcmpObject {
+    icmpCode: number;
+    icmpType: number;
+}
+
+export interface PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObject {
+    destinationPortRanges: outputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRange[];
+    sourcePortRanges: outputs.PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRange[];
+}
+
+export interface PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectDestinationPortRange {
+    endPort: number;
+    startPort: number;
+}
+
+export interface PbrV2PolicyPolicyMatchProtocolParameterLayerFourProtocolObjectSourcePortRange {
+    endPort: number;
+    startPort: number;
+}
+
+export interface PbrV2PolicyPolicyMatchProtocolParameterProtocolNumberObject {
+    protocolNumber: number;
+}
+
+export interface PbrV2PolicyPolicyMatchSource {
+    addressType: string;
+    subnetPrefixes: outputs.PbrV2PolicyPolicyMatchSourceSubnetPrefix[];
+}
+
+export interface PbrV2PolicyPolicyMatchSourceSubnetPrefix {
+    ipv4s: outputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4[];
+    ipv6s: outputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6[];
+}
+
+export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4 {
+    ips: outputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip[];
+    prefixLength: number;
+}
+
+export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Ip {
+    prefixLength: number;
+    value: string;
+}
+
+export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6 {
+    ips: outputs.PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Ip[];
+    prefixLength: number;
+}
+
+export interface PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Ip {
+    prefixLength: number;
+    value: string;
+}
+
+export interface PbrV2Vpc {
+    name: string;
+}
+
+export interface PcRegistrationV2Config {
+    bootstrapConfigs: outputs.PcRegistrationV2ConfigBootstrapConfig[];
+    buildInfos: outputs.PcRegistrationV2ConfigBuildInfo[];
+    name: string;
+    resourceConfigs: outputs.PcRegistrationV2ConfigResourceConfig[];
+    shouldEnableLockdownMode: boolean;
+    size: string;
+}
+
+export interface PcRegistrationV2ConfigBootstrapConfig {
+    environmentInfos: outputs.PcRegistrationV2ConfigBootstrapConfigEnvironmentInfo[];
+}
+
+export interface PcRegistrationV2ConfigBootstrapConfigEnvironmentInfo {
+    providerType: string;
+    provisioningType: string;
+    type: string;
+}
+
+export interface PcRegistrationV2ConfigBuildInfo {
+    version: string;
+}
+
+export interface PcRegistrationV2ConfigResourceConfig {
+    containerExtIds: string[];
+    dataDiskSizeBytes: number;
+    memorySizeBytes: number;
+    numVcpus: number;
+}
+
+export interface PcRegistrationV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface PcRegistrationV2Network {
+    externalAddresses: outputs.PcRegistrationV2NetworkExternalAddress[];
+    externalNetworks: outputs.PcRegistrationV2NetworkExternalNetwork[];
+    /**
+     * - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdn: string;
+    nameServers?: outputs.PcRegistrationV2NetworkNameServer[];
+    ntpServers?: outputs.PcRegistrationV2NetworkNtpServer[];
+}
+
+export interface PcRegistrationV2NetworkExternalAddress {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.PcRegistrationV2NetworkExternalAddressIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.PcRegistrationV2NetworkExternalAddressIpv6[];
+}
+
+export interface PcRegistrationV2NetworkExternalAddressIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
+     */
+    value: string;
+}
+
+export interface PcRegistrationV2NetworkExternalAddressIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    value: string;
+}
+
+export interface PcRegistrationV2NetworkExternalNetwork {
+    defaultGateways?: outputs.PcRegistrationV2NetworkExternalNetworkDefaultGateway[];
+    ipRanges: outputs.PcRegistrationV2NetworkExternalNetworkIpRange[];
+    networkExtId: string;
+    subnetMasks?: outputs.PcRegistrationV2NetworkExternalNetworkSubnetMask[];
+}
+
+export interface PcRegistrationV2NetworkExternalNetworkDefaultGateway {
+    /**
+     * - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: outputs.PcRegistrationV2NetworkExternalNetworkDefaultGatewayFqdn[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.PcRegistrationV2NetworkExternalNetworkDefaultGatewayIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.PcRegistrationV2NetworkExternalNetworkDefaultGatewayIpv6[];
+}
+
+export interface PcRegistrationV2NetworkExternalNetworkDefaultGatewayFqdn {
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value?: string;
+}
+
+export interface PcRegistrationV2NetworkExternalNetworkDefaultGatewayIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
+     */
+    value: string;
+}
+
+export interface PcRegistrationV2NetworkExternalNetworkDefaultGatewayIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    value: string;
+}
+
+export interface PcRegistrationV2NetworkExternalNetworkIpRange {
+    begins: outputs.PcRegistrationV2NetworkExternalNetworkIpRangeBegin[];
+    ends: outputs.PcRegistrationV2NetworkExternalNetworkIpRangeEnd[];
+}
+
+export interface PcRegistrationV2NetworkExternalNetworkIpRangeBegin {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.PcRegistrationV2NetworkExternalNetworkIpRangeBeginIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.PcRegistrationV2NetworkExternalNetworkIpRangeBeginIpv6[];
+}
+
+export interface PcRegistrationV2NetworkExternalNetworkIpRangeBeginIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
+     */
+    value: string;
+}
+
+export interface PcRegistrationV2NetworkExternalNetworkIpRangeBeginIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    value: string;
+}
+
+export interface PcRegistrationV2NetworkExternalNetworkIpRangeEnd {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.PcRegistrationV2NetworkExternalNetworkIpRangeEndIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.PcRegistrationV2NetworkExternalNetworkIpRangeEndIpv6[];
+}
+
+export interface PcRegistrationV2NetworkExternalNetworkIpRangeEndIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
+     */
+    value: string;
+}
+
+export interface PcRegistrationV2NetworkExternalNetworkIpRangeEndIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    value: string;
+}
+
+export interface PcRegistrationV2NetworkExternalNetworkSubnetMask {
+    /**
+     * - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: outputs.PcRegistrationV2NetworkExternalNetworkSubnetMaskFqdn[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.PcRegistrationV2NetworkExternalNetworkSubnetMaskIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.PcRegistrationV2NetworkExternalNetworkSubnetMaskIpv6[];
+}
+
+export interface PcRegistrationV2NetworkExternalNetworkSubnetMaskFqdn {
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value?: string;
+}
+
+export interface PcRegistrationV2NetworkExternalNetworkSubnetMaskIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
+     */
+    value: string;
+}
+
+export interface PcRegistrationV2NetworkExternalNetworkSubnetMaskIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    value: string;
+}
+
+export interface PcRegistrationV2NetworkNameServer {
+    /**
+     * - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: outputs.PcRegistrationV2NetworkNameServerFqdn[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.PcRegistrationV2NetworkNameServerIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.PcRegistrationV2NetworkNameServerIpv6[];
+}
+
+export interface PcRegistrationV2NetworkNameServerFqdn {
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value?: string;
+}
+
+export interface PcRegistrationV2NetworkNameServerIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
+     */
+    value: string;
+}
+
+export interface PcRegistrationV2NetworkNameServerIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    value: string;
+}
+
+export interface PcRegistrationV2NetworkNtpServer {
+    /**
+     * - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: outputs.PcRegistrationV2NetworkNtpServerFqdn[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.PcRegistrationV2NetworkNtpServerIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.PcRegistrationV2NetworkNtpServerIpv6[];
+}
+
+export interface PcRegistrationV2NetworkNtpServerFqdn {
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value?: string;
+}
+
+export interface PcRegistrationV2NetworkNtpServerIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
+     */
+    value: string;
+}
+
+export interface PcRegistrationV2NetworkNtpServerIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    value: string;
+}
+
+export interface PcRegistrationV2RemoteCluster {
+    /**
+     * - The registration request consists of the remote cluster details.
+     */
+    aosRemoteClusterSpec?: outputs.PcRegistrationV2RemoteClusterAosRemoteClusterSpec;
+    /**
+     * - The registration request consists of the remote cluster details. using the cluster reference.
+     */
+    clusterReference?: outputs.PcRegistrationV2RemoteClusterClusterReference;
+    /**
+     * - The registration request consists of the remote cluster details. and cloud type.
+     */
+    domainManagerRemoteClusterSpec?: outputs.PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpec;
+}
+
+export interface PcRegistrationV2RemoteClusterAosRemoteClusterSpec {
+    /**
+     * -(Required)  Address configuration of a remote cluster. It requires the address of the remote, that is an IP or domain name along with the basic authentication credentials.
+     */
+    remoteCluster: outputs.PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteCluster;
+}
+
+export interface PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteCluster {
+    /**
+     * -(Required)  An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+     */
+    addresses: outputs.PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterAddress[];
+    /**
+     * -(Required)  Credentials to connect to a remote cluster.
+     */
+    credentials: outputs.PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterCredentials;
+}
+
+export interface PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterAddress {
+    /**
+     * - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: outputs.PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterAddressFqdn[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterAddressIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterAddressIpv6[];
+}
+
+export interface PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterAddressFqdn {
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value?: string;
+}
+
+export interface PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterAddressIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
+     */
+    value: string;
+}
+
+export interface PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterAddressIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    value: string;
+}
+
+export interface PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterCredentials {
+    /**
+     * -(Required)  An authentication scheme that requires the client to present a username and password. The server will service the request only if it can validate the user-ID and password for the protection space of the Request-URI.
+     */
+    authentication: outputs.PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterCredentialsAuthentication;
+}
+
+export interface PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterCredentialsAuthentication {
+    /**
+     * -(Required)  Password required for the basic auth scheme.
+     *
+     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/register).
+     */
+    password: string;
+    /**
+     * -(Required)  Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.
+     */
+    username: string;
+}
+
+export interface PcRegistrationV2RemoteClusterClusterReference {
+    /**
+     * -(Required)  Cluster UUID of a remote cluster.
+     */
+    extId: string;
+}
+
+export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpec {
+    /**
+     * -(Required)  Enum denoting whether the domain manager (Prism Central) instance is reachable with its physical address or reachable through the My Nutanix portal. Based on the above description, the allowed enum values are:
+     * * `NUTANIX_HOSTED_CLOUD` : Domain manager (Prism Central) reachable through My Nutanix portal.
+     * * `ONPREM_CLOUD`: Domain manager (Prism Central) reachable on it's physical address.
+     */
+    cloudType: string;
+    /**
+     * -(Required)  Address configuration of a remote cluster. It requires the address of the remote, that is an IP or domain name along with the basic authentication credentials.
+     */
+    remoteCluster?: outputs.PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteCluster;
+}
+
+export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteCluster {
+    /**
+     * -(Required)  An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+     */
+    addresses: outputs.PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterAddress[];
+    /**
+     * -(Required)  Credentials to connect to a remote cluster.
+     */
+    credentials: outputs.PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterCredentials;
+}
+
+export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterAddress {
+    /**
+     * - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: outputs.PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterAddressFqdn[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterAddressIpv4[];
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterAddressIpv6[];
+}
+
+export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterAddressFqdn {
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value?: string;
+}
+
+export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterAddressIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
+     */
+    value: string;
+}
+
+export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterAddressIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: number;
+    value: string;
+}
+
+export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterCredentials {
+    /**
+     * -(Required)  An authentication scheme that requires the client to present a username and password. The server will service the request only if it can validate the user-ID and password for the protection space of the Request-URI.
+     */
+    authentication: outputs.PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterCredentialsAuthentication;
+}
+
+export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterCredentialsAuthentication {
+    /**
+     * -(Required)  Password required for the basic auth scheme.
+     *
+     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/register).
+     */
+    password: string;
+    /**
+     * -(Required)  Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.
+     */
+    username: string;
 }
 
 export interface ProjectAccountReferenceList {
@@ -17768,6 +37036,215 @@ export interface RecoveryPlanStageListStageWorkRecoverEntitiesEntityInfoListScri
     timeout: string;
 }
 
+export interface RecoveryPointRestoreV2VmRecoveryPointRestoreOverride {
+    /**
+     * -(Required) External identifier of a VM recovery point, that is a part of the top-level recovery point.
+     */
+    vmRecoveryPointExtId: string;
+}
+
+export interface RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverride {
+    /**
+     * -(Optional) Protected resource/recovery point restore that overrides the volume group configuration. The specified properties will be overridden for the restored volume group.
+     */
+    volumeGroupOverrideSpecs?: outputs.RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideVolumeGroupOverrideSpec[];
+    /**
+     * -(Required) External identifier of a volume group recovery point, that is a part of the top-level recovery point.
+     */
+    volumeGroupRecoveryPointExtId: string;
+}
+
+export interface RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideVolumeGroupOverrideSpec {
+    /**
+     * -(Optional) The name of the restored volume group.
+     */
+    name?: string;
+}
+
+export interface RecoveryPointsV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface RecoveryPointsV2LocationReference {
+    /**
+     * External identifier of the cluster where the recovery point is present.
+     */
+    locationExtId: string;
+}
+
+export interface RecoveryPointsV2VmRecoveryPoint {
+    /**
+     * User-defined application-consistent properties for the recovery point.
+     */
+    applicationConsistentProperties: outputs.RecoveryPointsV2VmRecoveryPointApplicationConsistentProperty[];
+    /**
+     * External identifier of the Consistency group which the entity was part of at the time of recovery point creation.
+     */
+    consistencyGroupExtId: string;
+    /**
+     * The UTC date and time in ISO-8601 format when the Recovery point is created.
+     */
+    creationTime: string;
+    /**
+     * array of disk recovery points.
+     */
+    diskRecoveryPoints: outputs.RecoveryPointsV2VmRecoveryPointDiskRecoveryPoint[];
+    /**
+     * The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
+     */
+    expirationTime: string;
+    /**
+     * recovery point UUID
+     */
+    extId: string;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.RecoveryPointsV2VmRecoveryPointLink[];
+    /**
+     * Location agnostic identifier of the recovery point. This identifier is used to identify the same instances of a recovery point across different sites.
+     */
+    locationAgnosticId: string;
+    /**
+     * The name of the Recovery point.
+     */
+    name: string;
+    /**
+     * Type of the Recovery point.
+     */
+    recoveryPointType: string;
+    /**
+     * The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
+     * * supported values:
+     * * `COMPLETE`: - The Recovery point is in a complete state and ready to be consumed.
+     */
+    status: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity
+     */
+    tenantId: string;
+    /**
+     * Category key-value pairs associated with the VM at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' is displayed as 'dept/hr'.
+     */
+    vmCategories: string[];
+    /**
+     * VM external identifier which is captured as a part of this recovery point.
+     */
+    vmExtId: string;
+}
+
+export interface RecoveryPointsV2VmRecoveryPointApplicationConsistentProperty {
+    /**
+     * -(Required) The backup type specifies the criteria for identifying the files to be backed up. This property should be specified to the application-consistent recovery points for Windows VMs/agents. The following backup types are supported for the application-consistent recovery points:
+     * * supported values:
+     * * `FULL_BACKUP`: -  All the files are backed up irrespective of their last backup date/time or state. Also, this backup type updates the backup history of each file that participated in the recovery point. If not explicitly specified, this is the default backup type.
+     * * `COPY_BACKUP`: -  this backup type does not update the backup history of individual files involved in the recovery point.
+     */
+    backupType: string;
+    /**
+     * -(Required) value: `dataprotection.v4.common.VssProperties`
+     */
+    objectType: string;
+    /**
+     * -(Optional) Indicates whether the given set of VSS writers' UUIDs should be included or excluded from the application consistent recovery point. By default, the value is set to false, indicating that all listed VSS writers' UUIDs will be excluded.
+     */
+    shouldIncludeWriters: boolean;
+    /**
+     * -(Optional) Indicates whether to store the VSS metadata if the user is interested in application-specific backup/restore. The VSS metadata consists of VSS writers and requester metadata details. These are compressed into a cabinet file(.cab file) during a VSS backup operation. This cabinet file must be saved to the backup media during a backup operation, as it is required during the restore operation.
+     */
+    shouldStoreVssMetadata: boolean;
+    /**
+     * -(Optional) List of VSS writer UUIDs that are used in an application consistent recovery point. The default values are the system and the registry writer UUIDs.
+     */
+    writers: string[];
+}
+
+export interface RecoveryPointsV2VmRecoveryPointDiskRecoveryPoint {
+    /**
+     * External identifier of the disk.
+     */
+    diskExtId: string;
+    /**
+     * External identifier of the disk recovery point.
+     */
+    diskRecoveryPointExtId: string;
+}
+
+export interface RecoveryPointsV2VmRecoveryPointLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface RecoveryPointsV2VolumeGroupRecoveryPoint {
+    /**
+     * External identifier of the Consistency group which the entity was part of at the time of recovery point creation.
+     */
+    consistencyGroupExtId: string;
+    /**
+     * array of disk recovery points.
+     */
+    diskRecoveryPoints: outputs.RecoveryPointsV2VolumeGroupRecoveryPointDiskRecoveryPoint[];
+    /**
+     * recovery point UUID
+     */
+    extId: string;
+    /**
+     * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.RecoveryPointsV2VolumeGroupRecoveryPointLink[];
+    /**
+     * Location agnostic identifier of the recovery point. This identifier is used to identify the same instances of a recovery point across different sites.
+     */
+    locationAgnosticId: string;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity
+     */
+    tenantId: string;
+    /**
+     * Category key-value pairs associated with the volume group at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' will be represented as 'dept/hr'.
+     */
+    volumeGroupCategories: string[];
+    /**
+     * Volume Group external identifier which is captured as part of this recovery point.
+     */
+    volumeGroupExtId: string;
+}
+
+export interface RecoveryPointsV2VolumeGroupRecoveryPointDiskRecoveryPoint {
+    /**
+     * External identifier of the disk.
+     */
+    diskExtId: string;
+    /**
+     * External identifier of the disk recovery point.
+     */
+    diskRecoveryPointExtId: string;
+}
+
+export interface RecoveryPointsV2VolumeGroupRecoveryPointLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
 export interface RoleCategory {
     /**
      * - (Optional) Name of the role.
@@ -17824,6 +37301,157 @@ export interface RoleProjectReference {
     uuid?: string;
 }
 
+export interface RolesV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface RoutesV2Destination {
+    /**
+     * IPv4 Subnet Object
+     * * `ipv4.ip`: (Required) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     * * `ipv4.ip.value`: (Required) The IPv4 address of the host.
+     * * `ipv4.ip.prefix_length`: (Optional) The prefix length of the network to which this host IPv4 address belongs.
+     * * `ipv4.prefix_length`: (Required) The prefix length of the network to which this host IPv4 address belongs.
+     */
+    ipv4: outputs.RoutesV2DestinationIpv4;
+    /**
+     * IPv6 Subnet Object
+     * * `ipv6.ip`: (Required) IP address format
+     * * `ipv6.ip.value`: (Required) The IPv6 address of the host.
+     * * `ipv6.ip.prefix_length`: (Optional) The prefix length of the network to which this host IPv6 address belongs.
+     * * `ipv6.prefix_length`: (Required) The prefix length of the network to which this host IPv6 address belongs.
+     */
+    ipv6: outputs.RoutesV2DestinationIpv6;
+}
+
+export interface RoutesV2DestinationIpv4 {
+    ip: outputs.RoutesV2DestinationIpv4Ip;
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+}
+
+export interface RoutesV2DestinationIpv4Ip {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of IP address
+     */
+    value: string;
+}
+
+export interface RoutesV2DestinationIpv6 {
+    ip: outputs.RoutesV2DestinationIpv6Ip;
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+}
+
+export interface RoutesV2DestinationIpv6Ip {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of IP address
+     */
+    value: string;
+}
+
+export interface RoutesV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface RoutesV2Metadata {
+    /**
+     * A list of globally unique identifiers that represent all the categories the resource is associated with.
+     */
+    categoryIds: string[];
+    /**
+     * A globally unique identifier that represents the owner of this resource.
+     */
+    ownerReferenceId: string;
+    /**
+     * The userName of the owner of this resource.
+     */
+    ownerUserName: string;
+    /**
+     * The name of the project this resource belongs to.
+     */
+    projectName: string;
+    /**
+     * A globally unique identifier that represents the project this resource belongs to.
+     */
+    projectReferenceId: string;
+}
+
+export interface RoutesV2NextHop {
+    nextHopIpAddresses: outputs.RoutesV2NextHopNextHopIpAddress[];
+    nextHopName: string;
+    nextHopReference: string;
+    nextHopType: string;
+}
+
+export interface RoutesV2NextHopNextHopIpAddress {
+    /**
+     * IPv4 Address
+     */
+    ipv4: outputs.RoutesV2NextHopNextHopIpAddressIpv4;
+    /**
+     * IPv6 Address
+     */
+    ipv6: outputs.RoutesV2NextHopNextHopIpAddressIpv6;
+}
+
+export interface RoutesV2NextHopNextHopIpAddressIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of IP address
+     */
+    value: string;
+}
+
+export interface RoutesV2NextHopNextHopIpAddressIpv6 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of IP address
+     */
+    value: string;
+}
+
+export interface SamlIdentityProvidersV2IdpMetadata {
+    certificate: string;
+    entityId: string;
+    errorUrl?: string;
+    loginUrl: string;
+    logoutUrl?: string;
+    nameIdPolicyFormat?: string;
+}
+
 export interface ServiceGroupServiceList {
     /**
      * - (Optional) ICMP type code list
@@ -17864,6 +37492,48 @@ export interface ServiceGroupServiceListUdpPortRangeList {
     startPort?: number;
 }
 
+export interface ServiceGroupsV2IcmpService {
+    /**
+     * Icmp service Code. Ignore this field if Code has to be ANY
+     */
+    code?: number;
+    /**
+     * Set this field to true if both Type and Code is ANY. Default is False.
+     */
+    isAllAllowed: boolean;
+    /**
+     * Icmp service Type. Ignore this field if Type has to be ANY.
+     */
+    type?: number;
+}
+
+export interface ServiceGroupsV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface ServiceGroupsV2TcpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
+    startPort: number;
+}
+
+export interface ServiceGroupsV2UdpService {
+    /**
+     * end port
+     */
+    endPort: number;
+    /**
+     * start port
+     */
+    startPort: number;
+}
+
 export interface StaticRoutesDefaultRouteNexthop {
     /**
      * Reference to a subnet.
@@ -17886,6 +37556,55 @@ export interface StaticRoutesStaticRoutesList {
     vpnConnectionReferenceUuid?: string;
 }
 
+export interface StorageContainersV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface StorageContainersV2NfsWhitelistAddress {
+    /**
+     * Reference to address configuration
+     */
+    fqdns: outputs.StorageContainersV2NfsWhitelistAddressFqdn[];
+    /**
+     * Reference to address configuration
+     */
+    ipv4s: outputs.StorageContainersV2NfsWhitelistAddressIpv4[];
+    /**
+     * Reference to address configuration
+     */
+    ipv6s: outputs.StorageContainersV2NfsWhitelistAddressIpv6[];
+}
+
+export interface StorageContainersV2NfsWhitelistAddressFqdn {
+    /**
+     * value of fqdn address
+     */
+    value: string;
+}
+
+export interface StorageContainersV2NfsWhitelistAddressIpv4 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of fqdn address
+     */
+    value: string;
+}
+
+export interface StorageContainersV2NfsWhitelistAddressIpv6 {
+    /**
+     * The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * value of fqdn address
+     */
+    value: string;
+}
+
 export interface SubnetCategory {
     /**
      * - (Optional) Subnet name (Readonly).
@@ -17895,6 +37614,1364 @@ export interface SubnetCategory {
      * - value of the key.
      */
     value: string;
+}
+
+export interface SubnetV2DhcpOption {
+    bootFileName: string;
+    domainName: string;
+    domainNameServers: outputs.SubnetV2DhcpOptionDomainNameServer[];
+    ntpServers: outputs.SubnetV2DhcpOptionNtpServer[];
+    searchDomains: string[];
+    tftpServerName: string;
+}
+
+export interface SubnetV2DhcpOptionDomainNameServer {
+    ipv4s: outputs.SubnetV2DhcpOptionDomainNameServerIpv4[];
+    ipv6s: outputs.SubnetV2DhcpOptionDomainNameServerIpv6[];
+}
+
+export interface SubnetV2DhcpOptionDomainNameServerIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2DhcpOptionDomainNameServerIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2DhcpOptionNtpServer {
+    ipv4s: outputs.SubnetV2DhcpOptionNtpServerIpv4[];
+    ipv6s: outputs.SubnetV2DhcpOptionNtpServerIpv6[];
+}
+
+export interface SubnetV2DhcpOptionNtpServerIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2DhcpOptionNtpServerIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2DynamicIpAddress {
+    ipv4s: outputs.SubnetV2DynamicIpAddressIpv4[];
+    ipv6s: outputs.SubnetV2DynamicIpAddressIpv6[];
+}
+
+export interface SubnetV2DynamicIpAddressIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2DynamicIpAddressIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2IpConfig {
+    ipv4s: outputs.SubnetV2IpConfigIpv4[];
+    ipv6s: outputs.SubnetV2IpConfigIpv6[];
+}
+
+export interface SubnetV2IpConfigIpv4 {
+    defaultGatewayIps: outputs.SubnetV2IpConfigIpv4DefaultGatewayIp[];
+    dhcpServerAddresses: outputs.SubnetV2IpConfigIpv4DhcpServerAddress[];
+    ipSubnets: outputs.SubnetV2IpConfigIpv4IpSubnet[];
+    poolLists: outputs.SubnetV2IpConfigIpv4PoolList[];
+}
+
+export interface SubnetV2IpConfigIpv4DefaultGatewayIp {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2IpConfigIpv4DhcpServerAddress {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2IpConfigIpv4IpSubnet {
+    ips: outputs.SubnetV2IpConfigIpv4IpSubnetIp[];
+    prefixLength: number;
+}
+
+export interface SubnetV2IpConfigIpv4IpSubnetIp {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2IpConfigIpv4PoolList {
+    endIps: outputs.SubnetV2IpConfigIpv4PoolListEndIp[];
+    startIps: outputs.SubnetV2IpConfigIpv4PoolListStartIp[];
+}
+
+export interface SubnetV2IpConfigIpv4PoolListEndIp {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2IpConfigIpv4PoolListStartIp {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2IpConfigIpv6 {
+    defaultGatewayIps: outputs.SubnetV2IpConfigIpv6DefaultGatewayIp[];
+    dhcpServerAddresses: outputs.SubnetV2IpConfigIpv6DhcpServerAddress[];
+    ipSubnets: outputs.SubnetV2IpConfigIpv6IpSubnet[];
+    poolLists: outputs.SubnetV2IpConfigIpv6PoolList[];
+}
+
+export interface SubnetV2IpConfigIpv6DefaultGatewayIp {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2IpConfigIpv6DhcpServerAddress {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2IpConfigIpv6IpSubnet {
+    ips: outputs.SubnetV2IpConfigIpv6IpSubnetIp[];
+    prefixLength: number;
+}
+
+export interface SubnetV2IpConfigIpv6IpSubnetIp {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2IpConfigIpv6PoolList {
+    endIps: outputs.SubnetV2IpConfigIpv6PoolListEndIp[];
+    startIps: outputs.SubnetV2IpConfigIpv6PoolListStartIp[];
+}
+
+export interface SubnetV2IpConfigIpv6PoolListEndIp {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2IpConfigIpv6PoolListStartIp {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2IpUsage {
+    ipPoolUsages: outputs.SubnetV2IpUsageIpPoolUsage[];
+    numAssignedIps: number;
+    numFreeIps: number;
+    numMacs: number;
+}
+
+export interface SubnetV2IpUsageIpPoolUsage {
+    numFreeIps: number;
+    numTotalIps: number;
+    ranges: outputs.SubnetV2IpUsageIpPoolUsageRange[];
+}
+
+export interface SubnetV2IpUsageIpPoolUsageRange {
+    endIps: outputs.SubnetV2IpUsageIpPoolUsageRangeEndIp[];
+    startIps: outputs.SubnetV2IpUsageIpPoolUsageRangeStartIp[];
+}
+
+export interface SubnetV2IpUsageIpPoolUsageRangeEndIp {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2IpUsageIpPoolUsageRangeStartIp {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2Link {
+    href?: string;
+    rel?: string;
+}
+
+export interface SubnetV2ReservedIpAddress {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2VirtualSwitch {
+    bondMode: boolean;
+    clusters: outputs.SubnetV2VirtualSwitchCluster[];
+    description: string;
+    extId: string;
+    hasDeploymentError: boolean;
+    isDefault: boolean;
+    links: outputs.SubnetV2VirtualSwitchLink[];
+    metadatas: outputs.SubnetV2VirtualSwitchMetadata[];
+    mtu: number;
+    name: string;
+    tenantId: string;
+}
+
+export interface SubnetV2VirtualSwitchCluster {
+    extId: string;
+    gatewayIpAddresses: outputs.SubnetV2VirtualSwitchClusterGatewayIpAddress[];
+    hosts: outputs.SubnetV2VirtualSwitchClusterHost[];
+}
+
+export interface SubnetV2VirtualSwitchClusterGatewayIpAddress {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2VirtualSwitchClusterHost {
+    extId: string;
+    hostNics: string[];
+    internalBridgeName: string;
+    ipAddresses: outputs.SubnetV2VirtualSwitchClusterHostIpAddress[];
+    routeTable: number;
+}
+
+export interface SubnetV2VirtualSwitchClusterHostIpAddress {
+    ips: outputs.SubnetV2VirtualSwitchClusterHostIpAddressIp[];
+    prefixLength: number;
+}
+
+export interface SubnetV2VirtualSwitchClusterHostIpAddressIp {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2VirtualSwitchLink {
+    href: string;
+    rel: string;
+}
+
+export interface SubnetV2VirtualSwitchMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface SubnetV2Vpc {
+    commonDhcpOptions: outputs.SubnetV2VpcCommonDhcpOption[];
+    description: string;
+    extId: string;
+    externalRoutingDomainReference: string;
+    externalSubnets: outputs.SubnetV2VpcExternalSubnet[];
+    externallyRoutablePrefixes: outputs.SubnetV2VpcExternallyRoutablePrefix[];
+    links: outputs.SubnetV2VpcLink[];
+    metadatas: outputs.SubnetV2VpcMetadata[];
+    name: string;
+    snatIps: outputs.SubnetV2VpcSnatIp[];
+    tenantId: string;
+    vpcType: string;
+}
+
+export interface SubnetV2VpcCommonDhcpOption {
+    domainNameServers: outputs.SubnetV2VpcCommonDhcpOptionDomainNameServer[];
+}
+
+export interface SubnetV2VpcCommonDhcpOptionDomainNameServer {
+    ipv4s: outputs.SubnetV2VpcCommonDhcpOptionDomainNameServerIpv4[];
+    ipv6s: outputs.SubnetV2VpcCommonDhcpOptionDomainNameServerIpv6[];
+}
+
+export interface SubnetV2VpcCommonDhcpOptionDomainNameServerIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2VpcCommonDhcpOptionDomainNameServerIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2VpcExternalSubnet {
+    activeGatewayCount: number;
+    activeGatewayNodes: outputs.SubnetV2VpcExternalSubnetActiveGatewayNode[];
+    externalIps: outputs.SubnetV2VpcExternalSubnetExternalIp[];
+    gatewayNodes: string[];
+    subnetReference: string;
+}
+
+export interface SubnetV2VpcExternalSubnetActiveGatewayNode {
+    nodeId: string;
+    nodeIpAddresses: outputs.SubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress[];
+}
+
+export interface SubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddress {
+    ipv4s: outputs.SubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4[];
+    ipv6s: outputs.SubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6[];
+}
+
+export interface SubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2VpcExternalSubnetExternalIp {
+    ipv4s: outputs.SubnetV2VpcExternalSubnetExternalIpIpv4[];
+    ipv6s: outputs.SubnetV2VpcExternalSubnetExternalIpIpv6[];
+}
+
+export interface SubnetV2VpcExternalSubnetExternalIpIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2VpcExternalSubnetExternalIpIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2VpcExternallyRoutablePrefix {
+    ipv4s: outputs.SubnetV2VpcExternallyRoutablePrefixIpv4[];
+    ipv6s: outputs.SubnetV2VpcExternallyRoutablePrefixIpv6[];
+}
+
+export interface SubnetV2VpcExternallyRoutablePrefixIpv4 {
+    ips: outputs.SubnetV2VpcExternallyRoutablePrefixIpv4Ip[];
+    prefixLength: number;
+}
+
+export interface SubnetV2VpcExternallyRoutablePrefixIpv4Ip {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2VpcExternallyRoutablePrefixIpv6 {
+    ips: outputs.SubnetV2VpcExternallyRoutablePrefixIpv6Ip[];
+    prefixLength: number;
+}
+
+export interface SubnetV2VpcExternallyRoutablePrefixIpv6Ip {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2VpcLink {
+    href: string;
+    rel: string;
+}
+
+export interface SubnetV2VpcMetadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface SubnetV2VpcSnatIp {
+    ipv4s: outputs.SubnetV2VpcSnatIpIpv4[];
+    ipv6s: outputs.SubnetV2VpcSnatIpIpv6[];
+}
+
+export interface SubnetV2VpcSnatIpIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface SubnetV2VpcSnatIpIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface TemplateV2CreatedBy {
+    additionalAttributes: outputs.TemplateV2CreatedByAdditionalAttribute[];
+    creationType: string;
+    description: string;
+    displayName: string;
+    emailId: string;
+    extId: string;
+    firstName: string;
+    idpId: string;
+    isForceResetPasswordEnabled: boolean;
+    lastName: string;
+    locale: string;
+    middleInitial: string;
+    password: string;
+    region: string;
+    status: string;
+    userType: string;
+    username: string;
+}
+
+export interface TemplateV2CreatedByAdditionalAttribute {
+    name: string;
+    values: outputs.TemplateV2CreatedByAdditionalAttributeValue[];
+}
+
+export interface TemplateV2CreatedByAdditionalAttributeValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.TemplateV2CreatedByAdditionalAttributeValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface TemplateV2CreatedByAdditionalAttributeValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface TemplateV2GuestUpdateStatus {
+    deployedVmReference: string;
+}
+
+export interface TemplateV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface TemplateV2TemplateVersionSpec {
+    createTime: string;
+    createdBies: outputs.TemplateV2TemplateVersionSpecCreatedBy[];
+    extId: string;
+    isActiveVersion?: boolean;
+    isGcOverrideEnabled: boolean;
+    links: outputs.TemplateV2TemplateVersionSpecLink[];
+    tenantId: string;
+    versionDescription: string;
+    versionName: string;
+    versionSource: outputs.TemplateV2TemplateVersionSpecVersionSource;
+    versionSourceDiscriminator: string;
+    vmSpecs: outputs.TemplateV2TemplateVersionSpecVmSpec[];
+}
+
+export interface TemplateV2TemplateVersionSpecCreatedBy {
+    additionalAttributes: outputs.TemplateV2TemplateVersionSpecCreatedByAdditionalAttribute[];
+    creationType: string;
+    description: string;
+    displayName: string;
+    emailId: string;
+    extId: string;
+    firstName: string;
+    idpId: string;
+    isForceResetPasswordEnabled: boolean;
+    lastName: string;
+    locale: string;
+    middleInitial: string;
+    password: string;
+    region: string;
+    status: string;
+    userType: string;
+    username: string;
+}
+
+export interface TemplateV2TemplateVersionSpecCreatedByAdditionalAttribute {
+    name: string;
+    values: outputs.TemplateV2TemplateVersionSpecCreatedByAdditionalAttributeValue[];
+}
+
+export interface TemplateV2TemplateVersionSpecCreatedByAdditionalAttributeValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.TemplateV2TemplateVersionSpecCreatedByAdditionalAttributeValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface TemplateV2TemplateVersionSpecCreatedByAdditionalAttributeValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface TemplateV2TemplateVersionSpecLink {
+    href: string;
+    rel: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSource {
+    templateVersionReference: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReference;
+    templateVmReference: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReference;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReference {
+    overrideVmConfigs: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig[];
+    versionId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfig {
+    guestCustomizations: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomization[];
+    memorySizeBytes?: number;
+    name: string;
+    nics: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic[];
+    numCoresPerSocket: number;
+    numSockets: number;
+    numThreadsPerCore: number;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomization {
+    configs: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfig[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfig {
+    cloudInits: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInit[];
+    syspreps: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprep[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInit {
+    cloudInitScripts: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScript[];
+    datasourceType: string;
+    metadata: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScript {
+    customKeyValues: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue[];
+    userDatas: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptUserData[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue {
+    keyValuePairs: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair {
+    name: string;
+    values: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigCloudInitCloudInitScriptUserData {
+    value: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprep {
+    installType: string;
+    sysprepScripts: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScript[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScript {
+    customKeyValues: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue[];
+    unattendXmls: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptUnattendXml[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
+    keyValuePairs: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    name: string;
+    values: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigGuestCustomizationConfigSysprepSysprepScriptUnattendXml {
+    value: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNic {
+    backingInfos: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo[];
+    extId: string;
+    links: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicLink[];
+    networkInfos: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo[];
+    tenantId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfo {
+    isConnected?: boolean;
+    macAddress: string;
+    model: string;
+    numQueues?: number;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicLink {
+    href: string;
+    rel: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfo {
+    ipv4Configs: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Config[];
+    ipv4Infos: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Info[];
+    networkFunctionChains: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChain[];
+    networkFunctionNicType: string;
+    nicType: string;
+    shouldAllowUnknownMacs: boolean;
+    subnets: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnet[];
+    trunkedVlans: number[];
+    vlanMode: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Config {
+    ipAddresses: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigIpAddress[];
+    secondaryIpAddressLists: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
+    shouldAssignIp: boolean;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4Info {
+    learnedIpAddresses: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4InfoLearnedIpAddress[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoNetworkFunctionChain {
+    extId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoSubnet {
+    extId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReference {
+    extId: string;
+    guestCustomizations: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomization[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomization {
+    configs: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfig[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfig {
+    cloudInits: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInit[];
+    syspreps: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprep[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInit {
+    cloudInitScripts: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScript[];
+    datasourceType: string;
+    metadata: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScript {
+    customKeyValues: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue[];
+    userDatas: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptUserData[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue {
+    keyValuePairs: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair {
+    name: string;
+    values: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigCloudInitCloudInitScriptUserData {
+    value: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprep {
+    installType: string;
+    sysprepScripts: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScript[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScript {
+    customKeyValues: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue[];
+    unattendXmls: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptUnattendXml[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
+    keyValuePairs: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    name: string;
+    values: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptUnattendXml {
+    value: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpec {
+    apcConfigs: outputs.TemplateV2TemplateVersionSpecVmSpecApcConfig[];
+    availabilityZones: outputs.TemplateV2TemplateVersionSpecVmSpecAvailabilityZone[];
+    biosUuid: string;
+    bootConfigs: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfig[];
+    categories: outputs.TemplateV2TemplateVersionSpecVmSpecCategory[];
+    cdRoms: outputs.TemplateV2TemplateVersionSpecVmSpecCdRom[];
+    clusters: outputs.TemplateV2TemplateVersionSpecVmSpecCluster[];
+    createTime: string;
+    description: string;
+    disks: outputs.TemplateV2TemplateVersionSpecVmSpecDisk[];
+    enabledCpuFeatures: string[];
+    extId: string;
+    generationUuid: string;
+    gpuses: outputs.TemplateV2TemplateVersionSpecVmSpecGpus[];
+    guestCustomizations: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomization[];
+    guestTools: outputs.TemplateV2TemplateVersionSpecVmSpecGuestTool[];
+    hardwareClockTimezone: string;
+    hosts: outputs.TemplateV2TemplateVersionSpecVmSpecHost[];
+    isAgentVm: boolean;
+    isBrandingEnabled: boolean;
+    isCpuHotplugEnabled: boolean;
+    isCpuPassthroughEnabled: boolean;
+    isCrossClusterMigrationInProgress: boolean;
+    isGpuConsoleEnabled: boolean;
+    isLiveMigrateCapable: boolean;
+    isMemoryOvercommitEnabled: boolean;
+    isScsiControllerEnabled: boolean;
+    isVcpuHardPinningEnabled: boolean;
+    isVgaConsoleEnabled: boolean;
+    links: outputs.TemplateV2TemplateVersionSpecVmSpecLink[];
+    machineType: string;
+    memorySizeBytes: number;
+    name: string;
+    nics: outputs.TemplateV2TemplateVersionSpecVmSpecNic[];
+    numCoresPerSocket: number;
+    numNumaNodes: number;
+    numSockets: number;
+    numThreadsPerCore: number;
+    ownershipInfos: outputs.TemplateV2TemplateVersionSpecVmSpecOwnershipInfo[];
+    pciDevices: outputs.TemplateV2TemplateVersionSpecVmSpecPciDevice[];
+    powerState: string;
+    protectionPolicyStates: outputs.TemplateV2TemplateVersionSpecVmSpecProtectionPolicyState[];
+    protectionType: string;
+    serialPorts: outputs.TemplateV2TemplateVersionSpecVmSpecSerialPort[];
+    sources: outputs.TemplateV2TemplateVersionSpecVmSpecSource[];
+    storageConfigs: outputs.TemplateV2TemplateVersionSpecVmSpecStorageConfig[];
+    tenantId: string;
+    updateTime: string;
+    vtpmConfigs: outputs.TemplateV2TemplateVersionSpecVmSpecVtpmConfig[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecApcConfig {
+    cpuModels: outputs.TemplateV2TemplateVersionSpecVmSpecApcConfigCpuModel[];
+    isApcEnabled: boolean;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecApcConfigCpuModel {
+    extId: string;
+    name: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecAvailabilityZone {
+    extId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfig {
+    legacyBoots: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBoot[];
+    uefiBoots: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBoot[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBoot {
+    bootDevices: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDevice[];
+    bootOrders: string[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDevice {
+    bootDeviceDisks: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDisk[];
+    bootDeviceNics: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceNic[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDisk {
+    diskAddresses: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigLegacyBootBootDeviceBootDeviceNic {
+    macAddress: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBoot {
+    bootDevices: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDevice[];
+    bootOrders: string[];
+    isSecureBootEnabled: boolean;
+    nvramDevices: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDevice[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDevice {
+    bootDeviceDisks: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDisk[];
+    bootDeviceNics: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceNic[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDisk {
+    diskAddresses: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootBootDeviceBootDeviceNic {
+    macAddress: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDevice {
+    backingStorageInfos: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfo[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfo {
+    dataSources: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSource[];
+    diskExtId: string;
+    diskSizeBytes: number;
+    isMigrationInProgress: boolean;
+    storageConfigs: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig[];
+    storageContainers: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSource {
+    references: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference {
+    imageReferences: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference[];
+    vmDiskReferences: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference {
+    imageExtId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference {
+    diskAddresses: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress[];
+    diskExtId: string;
+    vmReferences: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference {
+    extId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig {
+    isFlashModeEnabled: boolean;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer {
+    extId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecCategory {
+    extId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecCdRom {
+    backingInfos: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo[];
+    diskAddresses: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddress[];
+    extId: string;
+    isoType: string;
+    links: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomLink[];
+    tenantId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo {
+    dataSources: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSource[];
+    diskExtId: string;
+    diskSizeBytes: number;
+    isMigrationInProgress: boolean;
+    storageConfigs: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig[];
+    storageContainers: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainer[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSource {
+    references: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReference[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReference {
+    imageReferences: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReference[];
+    vmDiskReferences: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReference[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceImageReference {
+    imageExtId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReference {
+    diskAddresses: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress[];
+    diskExtId: string;
+    vmReferences: outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference {
+    extId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig {
+    isFlashModeEnabled: boolean;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainer {
+    extId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecCdRomDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecCdRomLink {
+    href: string;
+    rel: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecCluster {
+    extId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecDisk {
+    backingInfos: outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfo[];
+    diskAddresses: outputs.TemplateV2TemplateVersionSpecVmSpecDiskDiskAddress[];
+    extId: string;
+    links: outputs.TemplateV2TemplateVersionSpecVmSpecDiskLink[];
+    tenantId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfo {
+    adfsVolumeGroupReferences: outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference[];
+    vmDisks: outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference {
+    volumeGroupExtId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk {
+    dataSources: outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSource[];
+    diskExtId: string;
+    diskSizeBytes: number;
+    isMigrationInProgress: boolean;
+    storageConfigs: outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig[];
+    storageContainers: outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSource {
+    references: outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference {
+    imageReferences: outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceImageReference[];
+    vmDiskReferences: outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReference[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceImageReference {
+    imageExtId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReference {
+    diskAddresses: outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress[];
+    diskExtId: string;
+    vmReferences: outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference {
+    extId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig {
+    isFlashModeEnabled: boolean;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer {
+    extId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecDiskDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecDiskLink {
+    href: string;
+    rel: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGpus {
+    deviceId: number;
+    extId: string;
+    fraction: number;
+    frameBufferSizeBytes: number;
+    guestDriverVersion: string;
+    links: outputs.TemplateV2TemplateVersionSpecVmSpecGpusLink[];
+    mode: string;
+    name: string;
+    numVirtualDisplayHeads: number;
+    pciAddresses: outputs.TemplateV2TemplateVersionSpecVmSpecGpusPciAddress[];
+    tenantId: string;
+    vendor: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGpusLink {
+    href: string;
+    rel: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGpusPciAddress {
+    bus: number;
+    device: number;
+    func: number;
+    segment: number;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomization {
+    configs: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfig[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfig {
+    cloudInits: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit[];
+    syspreps: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprep[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInit {
+    cloudInitScripts: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScript[];
+    datasourceType: string;
+    metadata: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScript {
+    customKeyValues: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue[];
+    userDatas: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptUserData[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue {
+    keyValuePairs: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair {
+    name: string;
+    values: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptUserData {
+    value: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprep {
+    installType: string;
+    sysprepScripts: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScript[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScript {
+    customKeyValues: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue[];
+    unattendXmls: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptUnattendXml[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
+    keyValuePairs: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    name: string;
+    values: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptUnattendXml {
+    value: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecGuestTool {
+    availableVersion: string;
+    capabilities: string[];
+    guestOsVersion: string;
+    isEnabled: boolean;
+    isInstalled: boolean;
+    isIsoInserted: boolean;
+    isReachable: boolean;
+    isVmMobilityDriversInstalled: boolean;
+    isVssSnapshotCapable: boolean;
+    version: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecHost {
+    extId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecLink {
+    href: string;
+    rel: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNic {
+    backingInfos: outputs.TemplateV2TemplateVersionSpecVmSpecNicBackingInfo[];
+    extId: string;
+    links: outputs.TemplateV2TemplateVersionSpecVmSpecNicLink[];
+    networkInfos: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo[];
+    tenantId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicBackingInfo {
+    isConnected?: boolean;
+    macAddress: string;
+    model: string;
+    numQueues?: number;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicLink {
+    href: string;
+    rel: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfo {
+    ipv4Configs: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Config[];
+    ipv4Infos: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Info[];
+    networkFunctionChains: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain[];
+    networkFunctionNicType: string;
+    nicType: string;
+    shouldAllowUnknownMacs: boolean;
+    subnets: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet[];
+    trunkedVlans: number[];
+    vlanMode: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Config {
+    ipAddresses: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigIpAddress[];
+    secondaryIpAddressLists: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
+    shouldAssignIp: boolean;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4Info {
+    learnedIpAddresses: outputs.TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4InfoLearnedIpAddress[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoNetworkFunctionChain {
+    extId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecNicNetworkInfoSubnet {
+    extId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecOwnershipInfo {
+    owners: outputs.TemplateV2TemplateVersionSpecVmSpecOwnershipInfoOwner[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecOwnershipInfoOwner {
+    extId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecPciDevice {
+    assignedDeviceInfos: outputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfo[];
+    backingInfos: outputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfo[];
+    extId: string;
+    links: outputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceLink[];
+    tenantId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfo {
+    devices: outputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoDevice[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoDevice {
+    deviceExtId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfo {
+    pcieDeviceReferences: outputs.TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReference[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecPciDeviceBackingInfoPcieDeviceReference {
+    deviceExtId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecPciDeviceLink {
+    href: string;
+    rel: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecProtectionPolicyState {
+    policies: outputs.TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStatePolicy[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecProtectionPolicyStatePolicy {
+    extId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecSerialPort {
+    extId: string;
+    index: number;
+    isConnected: boolean;
+    links: outputs.TemplateV2TemplateVersionSpecVmSpecSerialPortLink[];
+    tenantId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecSerialPortLink {
+    href: string;
+    rel: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecSource {
+    entityType: string;
+    extId: string;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecStorageConfig {
+    isFlashModeEnabled: boolean;
+    qosConfigs: outputs.TemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfig[];
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecStorageConfigQosConfig {
+    throttledIops: number;
+}
+
+export interface TemplateV2TemplateVersionSpecVmSpecVtpmConfig {
+    isVtpmEnabled: boolean;
+    version: string;
+}
+
+export interface TemplateV2UpdatedBy {
+    additionalAttributes: outputs.TemplateV2UpdatedByAdditionalAttribute[];
+    creationType: string;
+    description: string;
+    displayName: string;
+    emailId: string;
+    extId: string;
+    firstName: string;
+    idpId: string;
+    isForceResetPasswordEnabled: boolean;
+    lastName: string;
+    locale: string;
+    middleInitial: string;
+    password: string;
+    region: string;
+    status: string;
+    userType: string;
+    username: string;
+}
+
+export interface TemplateV2UpdatedByAdditionalAttribute {
+    name: string;
+    values: outputs.TemplateV2UpdatedByAdditionalAttributeValue[];
+}
+
+export interface TemplateV2UpdatedByAdditionalAttributeValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.TemplateV2UpdatedByAdditionalAttributeValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface TemplateV2UpdatedByAdditionalAttributeValueMapOfString {
+    map: {[key: string]: string};
 }
 
 export interface UserAccessControlPolicyReferenceList {
@@ -18022,6 +39099,66 @@ export interface UserProjectReferenceList {
      * - the UUID(Required).
      */
     uuid: string;
+}
+
+export interface UsersV2AdditionalAttribute {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    name: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    value: number;
+}
+
+export interface UsersV2BucketsAccessKey {
+    /**
+     * - Name of the Bucket Access Key.
+     */
+    accessKeyName: string;
+    /**
+     * - Creation time for the Bucket Access Key.
+     */
+    createdTime: string;
+    /**
+     * - A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+     */
+    links: outputs.UsersV2BucketsAccessKeyLink[];
+    /**
+     * - Secret Access Key, it will be returned only during Bucket Access Key creation.
+     */
+    secretAccessKey: string;
+    /**
+     * - User Identifier who owns the Bucket Access Key.
+     */
+    userId: string;
+}
+
+export interface UsersV2BucketsAccessKeyLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
+}
+
+export interface UsersV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+     */
+    rel: string;
 }
 
 export interface VirtualMachineCategory {
@@ -18278,6 +39415,1463 @@ export interface VirtualMachineSerialPortList {
     isConnected: boolean;
 }
 
+export interface VirtualMachineV2ApcConfig {
+    /**
+     * CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
+     * * `cpu_model.name`: (Required) Name of the CPU model associated with the VM.
+     */
+    cpuModels: outputs.VirtualMachineV2ApcConfigCpuModel[];
+    /**
+     * If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
+     */
+    isApcEnabled: boolean;
+}
+
+export interface VirtualMachineV2ApcConfigCpuModel {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * VM name.
+     */
+    name: string;
+}
+
+export interface VirtualMachineV2AvailabilityZone {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface VirtualMachineV2BootConfig {
+    /**
+     * LegacyBoot config Object
+     */
+    legacyBoots: outputs.VirtualMachineV2BootConfigLegacyBoot[];
+    /**
+     * UefiBoot config Object
+     */
+    uefiBoots: outputs.VirtualMachineV2BootConfigUefiBoot[];
+}
+
+export interface VirtualMachineV2BootConfigLegacyBoot {
+    /**
+     * Boot Device object
+     * * `boot_device.boot_device_disk`: (Optional) Disk address.
+     * * `boot_device.boot_device_disk.disk_address.bus_type`: (Required) Bus type for the device
+     * * `boot_device.boot_device_disk.disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+     *
+     * * `boot_device.boot_device_nic`: (Optional) Disk Nic address.
+     * * `boot_device.boot_device_nic.mac_address`: (Required) mac address
+     */
+    bootDevices: outputs.VirtualMachineV2BootConfigLegacyBootBootDevice[];
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
+     */
+    bootOrders: string[];
+}
+
+export interface VirtualMachineV2BootConfigLegacyBootBootDevice {
+    bootDeviceDisks: outputs.VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceDisk[];
+    bootDeviceNics: outputs.VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceNic[];
+}
+
+export interface VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceDisk {
+    diskAddresses: outputs.VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress[];
+}
+
+export interface VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
+    busType: string;
+    /**
+     * Index of the serial port.
+     */
+    index: number;
+}
+
+export interface VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceNic {
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress: string;
+}
+
+export interface VirtualMachineV2BootConfigUefiBoot {
+    /**
+     * Indicate whether to enable secure boot or not
+     */
+    isSecureBootEnabled: boolean;
+    /**
+     * Configuration for NVRAM to be presented to the VM.
+     * * `nvram_device.backing_storage_info`: (Required) Storage provided by Nutanix ADSF
+     */
+    nvramDevices: outputs.VirtualMachineV2BootConfigUefiBootNvramDevice[];
+}
+
+export interface VirtualMachineV2BootConfigUefiBootNvramDevice {
+    backingStorageInfos: outputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo[];
+}
+
+export interface VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo {
+    dataSources: outputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource[];
+    diskSizeBytes: number;
+    /**
+     * Storage configuration for VM.
+     */
+    storageConfigs: outputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig[];
+    storageContainers: outputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer[];
+}
+
+export interface VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource {
+    /**
+     * Reference to image or vm disk
+     */
+    references: outputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference[];
+}
+
+export interface VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference {
+    /**
+     * Image Reference
+     * * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+     */
+    imageReferences: outputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference[];
+    /**
+     * Vm Disk Reference
+     * * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     * * `vm_disk_reference.disk_address`: (Optional) Disk address.
+     * * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
+     */
+    vmDiskReferences: outputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference[];
+}
+
+export interface VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference {
+    imageExtId: string;
+}
+
+export interface VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference {
+    diskAddresses: outputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress[];
+    diskExtId: string;
+    vmReferences: outputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType: string;
+    /**
+     * Index of the serial port.
+     */
+    index: number;
+}
+
+export interface VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled: boolean;
+}
+
+export interface VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface VirtualMachineV2Category {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface VirtualMachineV2CdRom {
+    /**
+     * Storage provided by Nutanix ADSF
+     */
+    backingInfos: outputs.VirtualMachineV2CdRomBackingInfo[];
+    /**
+     * Virtual Machine disk (VM disk).
+     */
+    diskAddresses: outputs.VirtualMachineV2CdRomDiskAddress[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * Type of ISO image inserted in CD-ROM. Valid values "OTHER", "GUEST_TOOLS", "GUEST_CUSTOMIZATION" .
+     */
+    isoType: string;
+}
+
+export interface VirtualMachineV2CdRomBackingInfo {
+    /**
+     * A reference to a disk or image that contains the contents of a disk.
+     */
+    dataSources: outputs.VirtualMachineV2CdRomBackingInfoDataSource[];
+    diskExtId: string;
+    /**
+     * Size of the disk in Bytes
+     */
+    diskSizeBytes: number;
+    isMigrationInProgress: boolean;
+    /**
+     * Storage configuration for VM disks
+     * * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    storageConfigs: outputs.VirtualMachineV2CdRomBackingInfoStorageConfig[];
+    /**
+     * This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+     */
+    storageContainers: outputs.VirtualMachineV2CdRomBackingInfoStorageContainer[];
+}
+
+export interface VirtualMachineV2CdRomBackingInfoDataSource {
+    isMigrationInProgress: boolean;
+    /**
+     * Reference to image or vm disk
+     */
+    references: outputs.VirtualMachineV2CdRomBackingInfoDataSourceReference[];
+}
+
+export interface VirtualMachineV2CdRomBackingInfoDataSourceReference {
+    /**
+     * Image Reference
+     * * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+     */
+    imageReferences: outputs.VirtualMachineV2CdRomBackingInfoDataSourceReferenceImageReference[];
+    /**
+     * Vm Disk Reference
+     * * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     * * `vm_disk_reference.disk_address`: (Optional) Disk address.
+     * * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
+     */
+    vmDiskReferences: outputs.VirtualMachineV2CdRomBackingInfoDataSourceReferenceVmDiskReference[];
+}
+
+export interface VirtualMachineV2CdRomBackingInfoDataSourceReferenceImageReference {
+    imageExtId: string;
+}
+
+export interface VirtualMachineV2CdRomBackingInfoDataSourceReferenceVmDiskReference {
+    diskAddresses: outputs.VirtualMachineV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress[];
+    diskExtId: string;
+    vmReferences: outputs.VirtualMachineV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface VirtualMachineV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType: string;
+    /**
+     * Index of the serial port.
+     */
+    index: number;
+}
+
+export interface VirtualMachineV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface VirtualMachineV2CdRomBackingInfoStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled: boolean;
+}
+
+export interface VirtualMachineV2CdRomBackingInfoStorageContainer {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface VirtualMachineV2CdRomDiskAddress {
+    busType: string;
+    /**
+     * Index of the serial port.
+     */
+    index: number;
+}
+
+export interface VirtualMachineV2Cluster {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface VirtualMachineV2Disk {
+    /**
+     * Supporting storage to create virtual disk on.
+     * * `backing_info.vm_disk`:(Optional) backing Info for vmDisk
+     * * `backing_info.adfs_volume_group_reference`: (Required) Volume Group Reference
+     * * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: (Required) The globally unique identifier of an ADSF volume group. It should be of type UUID.
+     */
+    backingInfos: outputs.VirtualMachineV2DiskBackingInfo[];
+    /**
+     * Disk address.
+     * * `disk_address.bus_type`: (Required) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+     * * `disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+     */
+    diskAddresses: outputs.VirtualMachineV2DiskDiskAddress[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface VirtualMachineV2DiskBackingInfo {
+    adfsVolumeGroupReferences: outputs.VirtualMachineV2DiskBackingInfoAdfsVolumeGroupReference[];
+    vmDisks: outputs.VirtualMachineV2DiskBackingInfoVmDisk[];
+}
+
+export interface VirtualMachineV2DiskBackingInfoAdfsVolumeGroupReference {
+    volumeGroupExtId: string;
+}
+
+export interface VirtualMachineV2DiskBackingInfoVmDisk {
+    dataSources: outputs.VirtualMachineV2DiskBackingInfoVmDiskDataSource[];
+    diskExtId: string;
+    diskSizeBytes: number;
+    isMigrationInProgress: boolean;
+    /**
+     * Storage configuration for VM.
+     */
+    storageConfigs: outputs.VirtualMachineV2DiskBackingInfoVmDiskStorageConfig[];
+    storageContainers: outputs.VirtualMachineV2DiskBackingInfoVmDiskStorageContainer[];
+}
+
+export interface VirtualMachineV2DiskBackingInfoVmDiskDataSource {
+    /**
+     * Reference to image or vm disk
+     */
+    references: outputs.VirtualMachineV2DiskBackingInfoVmDiskDataSourceReference[];
+}
+
+export interface VirtualMachineV2DiskBackingInfoVmDiskDataSourceReference {
+    /**
+     * Image Reference
+     * * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
+     */
+    imageReferences: outputs.VirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceImageReference[];
+    /**
+     * Vm Disk Reference
+     * * `vm_disk_reference.disk_ext_id`: (Optional) The globally unique identifier of a VM disk. It should be of type UUID.
+     * * `vm_disk_reference.disk_address`: (Optional) Disk address.
+     * * `vm_disk_reference.vm_reference`: (Optional) This is a reference to a VM.
+     */
+    vmDiskReferences: outputs.VirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReference[];
+}
+
+export interface VirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceImageReference {
+    imageExtId: string;
+}
+
+export interface VirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReference {
+    diskAddresses: outputs.VirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress[];
+    diskExtId: string;
+    vmReferences: outputs.VirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface VirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType: string;
+    /**
+     * Index of the serial port.
+     */
+    index: number;
+}
+
+export interface VirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface VirtualMachineV2DiskBackingInfoVmDiskStorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled: boolean;
+}
+
+export interface VirtualMachineV2DiskBackingInfoVmDiskStorageContainer {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface VirtualMachineV2DiskDiskAddress {
+    busType: string;
+    /**
+     * Index of the serial port.
+     */
+    index: number;
+}
+
+export interface VirtualMachineV2Gpus {
+    /**
+     * The device Id of the GPU.
+     */
+    deviceId: number;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    fraction: number;
+    frameBufferSizeBytes: number;
+    guestDriverVersion: string;
+    links: outputs.VirtualMachineV2GpusLink[];
+    /**
+     * The mode of this GPU. Valid values "PASSTHROUGH_GRAPHICS", "PASSTHROUGH_COMPUTE", "VIRTUAL" .
+     */
+    mode: string;
+    /**
+     * VM name.
+     */
+    name: string;
+    numVirtualDisplayHeads: number;
+    /**
+     * The (S)egment:(B)us:(D)evice.(F)unction hardware address.
+     */
+    pciAddresses: outputs.VirtualMachineV2GpusPciAddress[];
+    tenantId: string;
+    /**
+     * The vendor of the GPU. Valid values "NVIDIA", "AMD", "INTEL" .
+     */
+    vendor: string;
+}
+
+export interface VirtualMachineV2GpusLink {
+    href: string;
+    rel: string;
+}
+
+export interface VirtualMachineV2GpusPciAddress {
+    bus: number;
+    device: number;
+    func: number;
+    segment: number;
+}
+
+export interface VirtualMachineV2GuestCustomization {
+    /**
+     * The Nutanix Guest Tools customization settings.
+     *
+     * * `config.sysprep`: (Optional) Sysprep config
+     * * `config.cloud_init`: (Optional) CloudInit Config
+     */
+    configs: outputs.VirtualMachineV2GuestCustomizationConfig[];
+}
+
+export interface VirtualMachineV2GuestCustomizationConfig {
+    cloudInits: outputs.VirtualMachineV2GuestCustomizationConfigCloudInit[];
+    syspreps: outputs.VirtualMachineV2GuestCustomizationConfigSysprep[];
+}
+
+export interface VirtualMachineV2GuestCustomizationConfigCloudInit {
+    /**
+     * The script to use for cloud-init.
+     * * `cloud_init_script.user_data`: (Optional) user data object
+     * * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
+     */
+    cloudInitScripts: outputs.VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScript[];
+    /**
+     * Type of datasource. Default: CONFIG_DRIVE_V2
+     */
+    datasourceType?: string;
+    /**
+     * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     */
+    metadata: string;
+}
+
+export interface VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScript {
+    customKeyValues: outputs.VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue[];
+    userDatas: outputs.VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptUserData[];
+}
+
+export interface VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValue {
+    keyValuePairs: outputs.VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePair {
+    /**
+     * VM name.
+     */
+    name: string;
+    values: outputs.VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptUserData {
+    value: string;
+}
+
+export interface VirtualMachineV2GuestCustomizationConfigSysprep {
+    /**
+     * Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Values allowed is 'PREPARED', 'FRESH'.
+     */
+    installType: string;
+    /**
+     * Object either UnattendXml or CustomKeyValues
+     * * `sysprep_script.unattend_xml`: (Optional) xml object
+     * * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
+     */
+    sysprepScripts: outputs.VirtualMachineV2GuestCustomizationConfigSysprepSysprepScript[];
+}
+
+export interface VirtualMachineV2GuestCustomizationConfigSysprepSysprepScript {
+    customKeyValues: outputs.VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValue[];
+    unattendXmls: outputs.VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml[];
+}
+
+export interface VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
+    keyValuePairs: outputs.VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    /**
+     * VM name.
+     */
+    name: string;
+    values: outputs.VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue[];
+}
+
+export interface VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValue {
+    boolean: boolean;
+    integer: number;
+    integerLists: number[];
+    mapOfStrings: outputs.VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString[];
+    object: {[key: string]: string};
+    string: string;
+    stringLists: string[];
+}
+
+export interface VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map: {[key: string]: string};
+}
+
+export interface VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml {
+    value: string;
+}
+
+export interface VirtualMachineV2GuestTool {
+    availableVersion: string;
+    /**
+     * The list of the application names that are enabled on the guest VM.
+     */
+    capabilities: string[];
+    guestOsVersion: string;
+    /**
+     * Indicates whether Nutanix Guest Tools is enabled or not.
+     */
+    isEnabled: boolean;
+    isInstalled: boolean;
+    isIsoInserted: boolean;
+    isReachable: boolean;
+    isVmMobilityDriversInstalled: boolean;
+    isVssSnapshotCapable: boolean;
+    version: string;
+}
+
+export interface VirtualMachineV2Host {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface VirtualMachineV2Nic {
+    /**
+     * Defines a NIC emulated by the hypervisor
+     */
+    backingInfos: outputs.VirtualMachineV2NicBackingInfo[];
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * Network information for a NIC.
+     */
+    networkInfos: outputs.VirtualMachineV2NicNetworkInfo[];
+}
+
+export interface VirtualMachineV2NicBackingInfo {
+    isConnected: boolean;
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress: string;
+    /**
+     * Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
+     */
+    model: string;
+    /**
+     * The number of Tx/Rx queue pairs for this NIC. Default is 1.
+     */
+    numQueues?: number;
+}
+
+export interface VirtualMachineV2NicNetworkInfo {
+    /**
+     * The IP address configurations.
+     */
+    ipv4Configs: outputs.VirtualMachineV2NicNetworkInfoIpv4Config[];
+    ipv4Infos: outputs.VirtualMachineV2NicNetworkInfoIpv4Info[];
+    /**
+     * The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+     */
+    networkFunctionChains: outputs.VirtualMachineV2NicNetworkInfoNetworkFunctionChain[];
+    /**
+     * The type of this Network function NIC. Defaults to INGRESS.
+     */
+    networkFunctionNicType: string;
+    /**
+     * NIC type. Valid values "SPAN_DESTINATION_NIC",  "NORMAL_NIC", "DIRECT_NIC", "NETWORK_FUNCTION_NIC" .
+     */
+    nicType: string;
+    /**
+     * Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+     */
+    shouldAllowUnknownMacs: boolean;
+    /**
+     * Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+     */
+    subnets: outputs.VirtualMachineV2NicNetworkInfoSubnet[];
+    /**
+     * List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+     */
+    trunkedVlans: number[];
+    /**
+     * all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+     */
+    vlanMode: string;
+}
+
+export interface VirtualMachineV2NicNetworkInfoIpv4Config {
+    ipAddresses: outputs.VirtualMachineV2NicNetworkInfoIpv4ConfigIpAddress[];
+    secondaryIpAddressLists: outputs.VirtualMachineV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
+    shouldAssignIp: boolean;
+}
+
+export interface VirtualMachineV2NicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface VirtualMachineV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface VirtualMachineV2NicNetworkInfoIpv4Info {
+    learnedIpAddresses: outputs.VirtualMachineV2NicNetworkInfoIpv4InfoLearnedIpAddress[];
+}
+
+export interface VirtualMachineV2NicNetworkInfoIpv4InfoLearnedIpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface VirtualMachineV2NicNetworkInfoNetworkFunctionChain {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface VirtualMachineV2NicNetworkInfoSubnet {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface VirtualMachineV2OwnershipInfo {
+    owners: outputs.VirtualMachineV2OwnershipInfoOwner[];
+}
+
+export interface VirtualMachineV2OwnershipInfoOwner {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface VirtualMachineV2ProtectionPolicyState {
+    policies: outputs.VirtualMachineV2ProtectionPolicyStatePolicy[];
+}
+
+export interface VirtualMachineV2ProtectionPolicyStatePolicy {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+}
+
+export interface VirtualMachineV2SerialPort {
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * Index of the serial port.
+     */
+    index: number;
+    /**
+     * Indicates whether the serial port is connected or not.
+     */
+    isConnected: boolean;
+}
+
+export interface VirtualMachineV2Source {
+    entityType: string;
+}
+
+export interface VirtualMachineV2StorageConfig {
+    /**
+     * Indicates whether the virtual disk is pinned to the hot tier or not.
+     */
+    isFlashModeEnabled: boolean;
+    /**
+     * QoS parameters to be enforced.
+     * * `qos_config.throttled_iops`: (Optional) Throttled IOPS for the governed entities. The block size for the I/O is 32 kB.
+     */
+    qosConfigs: outputs.VirtualMachineV2StorageConfigQosConfig[];
+}
+
+export interface VirtualMachineV2StorageConfigQosConfig {
+    throttledIops: number;
+}
+
+export interface VirtualMachineV2VtpmConfig {
+    /**
+     * Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
+     */
+    isVtpmEnabled: boolean;
+}
+
+export interface VmCdromInsertEjectV2BackingInfo {
+    dataSources?: outputs.VmCdromInsertEjectV2BackingInfoDataSource[];
+    diskSizeBytes?: number;
+    storageConfigs?: outputs.VmCdromInsertEjectV2BackingInfoStorageConfig[];
+    storageContainers: outputs.VmCdromInsertEjectV2BackingInfoStorageContainer[];
+}
+
+export interface VmCdromInsertEjectV2BackingInfoDataSource {
+    references?: outputs.VmCdromInsertEjectV2BackingInfoDataSourceReference[];
+}
+
+export interface VmCdromInsertEjectV2BackingInfoDataSourceReference {
+    imageReferences?: outputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference[];
+    vmDiskReferences?: outputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference[];
+}
+
+export interface VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference {
+    imageExtId?: string;
+}
+
+export interface VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference {
+    diskAddresses?: outputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress[];
+    diskExtId?: string;
+    vmReferences?: outputs.VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType?: string;
+    index?: number;
+}
+
+export interface VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference {
+    extId?: string;
+}
+
+export interface VmCdromInsertEjectV2BackingInfoStorageConfig {
+    isFlashModeEnabled?: boolean;
+}
+
+export interface VmCdromInsertEjectV2BackingInfoStorageContainer {
+    extId?: string;
+}
+
+export interface VmCloneV2ApcConfig {
+    cpuModels: outputs.VmCloneV2ApcConfigCpuModel[];
+    isApcEnabled: boolean;
+}
+
+export interface VmCloneV2ApcConfigCpuModel {
+    extId: string;
+    name: string;
+}
+
+export interface VmCloneV2BootConfig {
+    legacyBoots: outputs.VmCloneV2BootConfigLegacyBoot[];
+    uefiBoots: outputs.VmCloneV2BootConfigUefiBoot[];
+}
+
+export interface VmCloneV2BootConfigLegacyBoot {
+    bootDevices: outputs.VmCloneV2BootConfigLegacyBootBootDevice[];
+    bootOrders: string[];
+}
+
+export interface VmCloneV2BootConfigLegacyBootBootDevice {
+    bootDeviceDisks: outputs.VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk[];
+    bootDeviceNics: outputs.VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic[];
+}
+
+export interface VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk {
+    diskAddresses: outputs.VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress[];
+}
+
+export interface VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic {
+    macAddress: string;
+}
+
+export interface VmCloneV2BootConfigUefiBoot {
+    isSecureBootEnabled: boolean;
+    nvramDevices: outputs.VmCloneV2BootConfigUefiBootNvramDevice[];
+}
+
+export interface VmCloneV2BootConfigUefiBootNvramDevice {
+    backingStorageInfos: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo[];
+}
+
+export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo {
+    dataSources: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource[];
+    diskSizeBytes: number;
+    storageConfigs: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig[];
+    storageContainers: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer[];
+}
+
+export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource {
+    references: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference[];
+}
+
+export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReference {
+    imageReferences: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference[];
+    vmDiskReferences: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference[];
+}
+
+export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceImageReference {
+    imageExtId: string;
+}
+
+export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReference {
+    diskAddresses: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress[];
+    diskExtId: string;
+    vmReferences: outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceVmReference {
+    extId: string;
+}
+
+export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig {
+    isFlashModeEnabled: boolean;
+}
+
+export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer {
+    extId: string;
+}
+
+export interface VmCloneV2Category {
+    extId: string;
+}
+
+export interface VmCloneV2CdRom {
+    backingInfos: outputs.VmCloneV2CdRomBackingInfo[];
+    diskAddresses: outputs.VmCloneV2CdRomDiskAddress[];
+    extId: string;
+    isoType: string;
+}
+
+export interface VmCloneV2CdRomBackingInfo {
+    dataSources: outputs.VmCloneV2CdRomBackingInfoDataSource[];
+    diskExtId: string;
+    diskSizeBytes: number;
+    isMigrationInProgress: boolean;
+    storageConfigs: outputs.VmCloneV2CdRomBackingInfoStorageConfig[];
+    storageContainers: outputs.VmCloneV2CdRomBackingInfoStorageContainer[];
+}
+
+export interface VmCloneV2CdRomBackingInfoDataSource {
+    references: outputs.VmCloneV2CdRomBackingInfoDataSourceReference[];
+}
+
+export interface VmCloneV2CdRomBackingInfoDataSourceReference {
+    imageReferences: outputs.VmCloneV2CdRomBackingInfoDataSourceReferenceImageReference[];
+    vmDiskReferences: outputs.VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReference[];
+}
+
+export interface VmCloneV2CdRomBackingInfoDataSourceReferenceImageReference {
+    imageExtId: string;
+}
+
+export interface VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReference {
+    diskAddresses: outputs.VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress[];
+    diskExtId: string;
+    vmReferences: outputs.VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface VmCloneV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceVmReference {
+    extId: string;
+}
+
+export interface VmCloneV2CdRomBackingInfoStorageConfig {
+    isFlashModeEnabled: boolean;
+}
+
+export interface VmCloneV2CdRomBackingInfoStorageContainer {
+    extId: string;
+}
+
+export interface VmCloneV2CdRomDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface VmCloneV2Cluster {
+    extId: string;
+}
+
+export interface VmCloneV2Disk {
+    backingInfos: outputs.VmCloneV2DiskBackingInfo[];
+    diskAddresses: outputs.VmCloneV2DiskDiskAddress[];
+    extId: string;
+}
+
+export interface VmCloneV2DiskBackingInfo {
+    adfsVolumeGroupReferences: outputs.VmCloneV2DiskBackingInfoAdfsVolumeGroupReference[];
+    vmDisks: outputs.VmCloneV2DiskBackingInfoVmDisk[];
+}
+
+export interface VmCloneV2DiskBackingInfoAdfsVolumeGroupReference {
+    volumeGroupExtId: string;
+}
+
+export interface VmCloneV2DiskBackingInfoVmDisk {
+    dataSources: outputs.VmCloneV2DiskBackingInfoVmDiskDataSource[];
+    diskExtId: string;
+    diskSizeBytes: number;
+    isMigrationInProgress: boolean;
+    storageConfigs: outputs.VmCloneV2DiskBackingInfoVmDiskStorageConfig[];
+    storageContainers: outputs.VmCloneV2DiskBackingInfoVmDiskStorageContainer[];
+}
+
+export interface VmCloneV2DiskBackingInfoVmDiskDataSource {
+    references: outputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReference[];
+}
+
+export interface VmCloneV2DiskBackingInfoVmDiskDataSourceReference {
+    imageReferences: outputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReference[];
+    vmDiskReferences: outputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReference[];
+}
+
+export interface VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceImageReference {
+    imageExtId: string;
+}
+
+export interface VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReference {
+    diskAddresses: outputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress[];
+    diskExtId: string;
+    vmReferences: outputs.VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference[];
+}
+
+export interface VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface VmCloneV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceVmReference {
+    extId: string;
+}
+
+export interface VmCloneV2DiskBackingInfoVmDiskStorageConfig {
+    isFlashModeEnabled: boolean;
+}
+
+export interface VmCloneV2DiskBackingInfoVmDiskStorageContainer {
+    extId: string;
+}
+
+export interface VmCloneV2DiskDiskAddress {
+    busType: string;
+    index: number;
+}
+
+export interface VmCloneV2Gpus {
+    deviceId: number;
+    extId: string;
+    fraction: number;
+    frameBufferSizeBytes: number;
+    guestDriverVersion: string;
+    mode: string;
+    name: string;
+    numVirtualDisplayHeads: number;
+    pciAddresses: outputs.VmCloneV2GpusPciAddress[];
+    vendor: string;
+}
+
+export interface VmCloneV2GpusPciAddress {
+    bus: number;
+    device: number;
+    func: number;
+    segment: number;
+}
+
+export interface VmCloneV2GuestCustomization {
+    configs: outputs.VmCloneV2GuestCustomizationConfig[];
+}
+
+export interface VmCloneV2GuestCustomizationConfig {
+    cloudInits: outputs.VmCloneV2GuestCustomizationConfigCloudInit[];
+    syspreps: outputs.VmCloneV2GuestCustomizationConfigSysprep[];
+}
+
+export interface VmCloneV2GuestCustomizationConfigCloudInit {
+    cloudInitScripts: outputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScript[];
+    datasourceType?: string;
+    metadata: string;
+}
+
+export interface VmCloneV2GuestCustomizationConfigCloudInitCloudInitScript {
+    customKeys: outputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKey[];
+    userDatas: outputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserData[];
+}
+
+export interface VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKey {
+    keyValuePairs: outputs.VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePair[];
+}
+
+export interface VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePair {
+    name: string;
+    value: string;
+}
+
+export interface VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptUserData {
+    value: string;
+}
+
+export interface VmCloneV2GuestCustomizationConfigSysprep {
+    installType: string;
+    sysprepScripts: outputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScript[];
+}
+
+export interface VmCloneV2GuestCustomizationConfigSysprepSysprepScript {
+    customKeyValues: outputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValue[];
+    unattendXmls: outputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml[];
+}
+
+export interface VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValue {
+    keyValuePairs: outputs.VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    name: string;
+    value: string;
+}
+
+export interface VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml {
+    value: string;
+}
+
+export interface VmCloneV2GuestTool {
+    availableVersion: string;
+    capabilities: string[];
+    guestOsVersion: string;
+    isEnabled: boolean;
+    isInstalled: boolean;
+    isIsoInserted: boolean;
+    isReachable: boolean;
+    isVmMobilityDriversInstalled: boolean;
+    isVssSnapshotCapable: boolean;
+    version: string;
+}
+
+export interface VmCloneV2Host {
+    extId: string;
+}
+
+export interface VmCloneV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface VmCloneV2Nic {
+    backingInfos: outputs.VmCloneV2NicBackingInfo[];
+    extId: string;
+    networkInfos: outputs.VmCloneV2NicNetworkInfo[];
+}
+
+export interface VmCloneV2NicBackingInfo {
+    isConnected: boolean;
+    macAddress: string;
+    model: string;
+    numQueues?: number;
+}
+
+export interface VmCloneV2NicNetworkInfo {
+    ipv4Configs: outputs.VmCloneV2NicNetworkInfoIpv4Config[];
+    networkFunctionChains: outputs.VmCloneV2NicNetworkInfoNetworkFunctionChain[];
+    networkFunctionNicType: string;
+    nicType: string;
+    shouldAllowUnknownMacs: boolean;
+    subnets: outputs.VmCloneV2NicNetworkInfoSubnet[];
+    trunkedVlans: number[];
+    vlanMode: string;
+}
+
+export interface VmCloneV2NicNetworkInfoIpv4Config {
+    ipAddresses: outputs.VmCloneV2NicNetworkInfoIpv4ConfigIpAddress[];
+    secondaryIpAddressLists: outputs.VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList[];
+    shouldAssignIp: boolean;
+}
+
+export interface VmCloneV2NicNetworkInfoIpv4ConfigIpAddress {
+    prefixLength: number;
+    value: string;
+}
+
+export interface VmCloneV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    prefixLength: number;
+    value: string;
+}
+
+export interface VmCloneV2NicNetworkInfoNetworkFunctionChain {
+    extId: string;
+}
+
+export interface VmCloneV2NicNetworkInfoSubnet {
+    extId: string;
+}
+
+export interface VmCloneV2OwnershipInfo {
+    owners: outputs.VmCloneV2OwnershipInfoOwner[];
+}
+
+export interface VmCloneV2OwnershipInfoOwner {
+    extId: string;
+}
+
+export interface VmCloneV2ProtectionPolicyState {
+    policies: outputs.VmCloneV2ProtectionPolicyStatePolicy[];
+}
+
+export interface VmCloneV2ProtectionPolicyStatePolicy {
+    extId: string;
+}
+
+export interface VmCloneV2SerialPort {
+    extId: string;
+    index: number;
+    isConnected: boolean;
+}
+
+export interface VmCloneV2Source {
+    entityType: string;
+    extId: string;
+}
+
+export interface VmCloneV2StorageConfig {
+    isFlashModeEnabled: boolean;
+    qosConfigs: outputs.VmCloneV2StorageConfigQosConfig[];
+}
+
+export interface VmCloneV2StorageConfigQosConfig {
+    throttledIops: number;
+}
+
+export interface VmCloneV2VtpmConfig {
+    isVtpmEnabled: boolean;
+    version: string;
+}
+
+export interface VmGcUpdateV2Config {
+    cloudInits: outputs.VmGcUpdateV2ConfigCloudInit[];
+    syspreps: outputs.VmGcUpdateV2ConfigSysprep[];
+}
+
+export interface VmGcUpdateV2ConfigCloudInit {
+    cloudInitScripts: outputs.VmGcUpdateV2ConfigCloudInitCloudInitScript[];
+    datasourceType?: string;
+    metadata: string;
+}
+
+export interface VmGcUpdateV2ConfigCloudInitCloudInitScript {
+    customKeys: outputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKey[];
+    userDatas: outputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptUserData[];
+}
+
+export interface VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKey {
+    keyValuePairs: outputs.VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePair[];
+}
+
+export interface VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePair {
+    name: string;
+    value: string;
+}
+
+export interface VmGcUpdateV2ConfigCloudInitCloudInitScriptUserData {
+    value: string;
+}
+
+export interface VmGcUpdateV2ConfigSysprep {
+    installType: string;
+    sysprepScripts: outputs.VmGcUpdateV2ConfigSysprepSysprepScript[];
+}
+
+export interface VmGcUpdateV2ConfigSysprepSysprepScript {
+    customKeyValues: outputs.VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValue[];
+    unattendXmls: outputs.VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXml[];
+}
+
+export interface VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValue {
+    keyValuePairs: outputs.VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePair[];
+}
+
+export interface VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePair {
+    name: string;
+    value: string;
+}
+
+export interface VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXml {
+    value: string;
+}
+
+export interface VmNetworkDeviceAssignIpV2IpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface VmNetworkDeviceMigrateV2IpAddress {
+    prefixLength?: number;
+    value: string;
+}
+
+export interface VmNetworkDeviceMigrateV2Subnet {
+    extId?: string;
+}
+
+export interface VmShutdownActionV2GuestPowerStateTransitionConfig {
+    /**
+     * Indicates whether to run the set script before the VM shutdowns/restarts.
+     */
+    shouldEnableScriptExec?: boolean;
+    /**
+     * Indicates whether to abort VM shutdown/restart if the script fails.
+     *
+     *
+     * See detailed information in [Nutanix VMs Power Action V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0).
+     */
+    shouldFailOnScriptFailure?: boolean;
+}
+
+export interface VolumeGroupDiskV2DiskDataSourceReference {
+    /**
+     * - The Entity Type of the Data Source Reference.
+     */
+    entityType?: string;
+    /**
+     * - The external identifier of the Data Source Reference.
+     */
+    extId: string;
+    /**
+     * - The name of the Data Source Reference.bled for the Volume Group.
+     */
+    name?: string;
+    /**
+     * - The uri list of the Data Source Reference.
+     */
+    uris: string[];
+}
+
+export interface VolumeGroupDiskV2DiskStorageFeature {
+    /**
+     * - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+     */
+    flashModes?: outputs.VolumeGroupDiskV2DiskStorageFeatureFlashMode[];
+}
+
+export interface VolumeGroupDiskV2DiskStorageFeatureFlashMode {
+    /**
+     * - Indicates whether the flash mode is enabled for the Volume Group Disk.
+     *
+     * See detailed information in [Nutanix Volumes V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0).
+     */
+    isEnabled?: boolean;
+}
+
+export interface VolumeGroupIscsiClientV2IscsiInitiatorNetworkId {
+    /**
+     * A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns: outputs.VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdFqdn[];
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s: outputs.VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdIpv4[];
+    /**
+     * An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s: outputs.VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdIpv6[];
+}
+
+export interface VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdFqdn {
+    /**
+     * - The fully qualified domain name.
+     *
+     *
+     * See detailed information in [Nutanix Volumes V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0).
+     */
+    value: string;
+}
+
+export interface VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    value: string;
+}
+
+export interface VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv6 address belongs.
+     */
+    prefixLength: number;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    value: string;
+}
+
+export interface VolumeGroupV2Disk {
+    /**
+     * - Volume Disk description.
+     */
+    description?: string;
+    /**
+     * -(Required) Disk Data Source Reference.
+     */
+    diskDataSourceReferences: outputs.VolumeGroupV2DiskDiskDataSourceReference[];
+    /**
+     * - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+     */
+    diskSizeBytes: number;
+    /**
+     * - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
+     */
+    diskStorageFeatures?: outputs.VolumeGroupV2DiskDiskStorageFeature[];
+    /**
+     * - Index of the disk in a Volume Group. This field is optional and immutable.
+     */
+    index?: number;
+}
+
+export interface VolumeGroupV2DiskDiskDataSourceReference {
+    /**
+     * - The Entity Type of the Data Source Reference.
+     */
+    entityType?: string;
+    /**
+     * - The external identifier of the Data Source Reference.
+     */
+    extId: string;
+    /**
+     * - The name of the Data Source Reference.bled for the Volume Group.
+     */
+    name?: string;
+    /**
+     * - The uri list of the Data Source Reference.
+     */
+    uris: string[];
+}
+
+export interface VolumeGroupV2DiskDiskStorageFeature {
+    /**
+     * - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+     */
+    flashModes?: outputs.VolumeGroupV2DiskDiskStorageFeatureFlashMode[];
+}
+
+export interface VolumeGroupV2DiskDiskStorageFeatureFlashMode {
+    /**
+     * - Indicates whether the flash mode is enabled for the Volume Group Disk.
+     *
+     * See detailed information in [Nutanix Volumes V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/createVolumeGroup).
+     */
+    isEnabled?: boolean;
+}
+
+export interface VolumeGroupV2IscsiFeature {
+    /**
+     * - The authentication type enabled for the Volume Group.
+     */
+    enabledAuthentications?: string;
+    /**
+     * Target secret in case of a CHAP authentication. This field must only be provided in case the authentication type is not set to CHAP. This is an optional field and it cannot be retrieved once configured.
+     */
+    targetSecret?: string;
+}
+
+export interface VolumeGroupV2StorageFeature {
+    /**
+     * - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+     */
+    flashModes?: outputs.VolumeGroupV2StorageFeatureFlashMode[];
+}
+
+export interface VolumeGroupV2StorageFeatureFlashMode {
+    /**
+     * - Indicates whether the flash mode is enabled for the Volume Group Disk.
+     *
+     * See detailed information in [Nutanix Volumes V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/createVolumeGroup).
+     */
+    isEnabled?: boolean;
+}
+
 export interface VpcCommonDomainNameServerIpList {
     /**
      * ip address.
@@ -18305,5 +40899,147 @@ export interface VpcExternallyRoutablePrefixList {
      * prefix length.
      */
     prefixLength: number;
+}
+
+export interface VpcV2CommonDhcpOption {
+    /**
+     * List of Domain Name Server addresses
+     * - `domain_name_servers.ipv4`:(Optional) Reference to address configuration
+     * - `domain_name_servers.ipv6`: (Optional) Reference to address configuration
+     */
+    domainNameServers: outputs.VpcV2CommonDhcpOptionDomainNameServer[];
+}
+
+export interface VpcV2CommonDhcpOptionDomainNameServer {
+    ipv4s: outputs.VpcV2CommonDhcpOptionDomainNameServerIpv4[];
+    ipv6s: outputs.VpcV2CommonDhcpOptionDomainNameServerIpv6[];
+}
+
+export interface VpcV2CommonDhcpOptionDomainNameServerIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface VpcV2CommonDhcpOptionDomainNameServerIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface VpcV2ExternalSubnet {
+    activeGatewayCount: number;
+    activeGatewayNodes: outputs.VpcV2ExternalSubnetActiveGatewayNode[];
+    /**
+     * List of IP Addresses used for SNAT, if NAT is enabled on the external subnet. If NAT is not enabled, this specifies the IP address of the VPC port connected to the external gateway.
+     */
+    externalIps: outputs.VpcV2ExternalSubnetExternalIp[];
+    gatewayNodes: string[];
+    /**
+     * External subnet reference.
+     */
+    subnetReference: string;
+}
+
+export interface VpcV2ExternalSubnetActiveGatewayNode {
+    nodeId: string;
+    nodeIpAddresses: outputs.VpcV2ExternalSubnetActiveGatewayNodeNodeIpAddress[];
+}
+
+export interface VpcV2ExternalSubnetActiveGatewayNodeNodeIpAddress {
+    ipv4s: outputs.VpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4[];
+    ipv6s: outputs.VpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6[];
+}
+
+export interface VpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface VpcV2ExternalSubnetActiveGatewayNodeNodeIpAddressIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface VpcV2ExternalSubnetExternalIp {
+    /**
+     * Reference to address configuration
+     */
+    ipv4s: outputs.VpcV2ExternalSubnetExternalIpIpv4[];
+    /**
+     * Reference to address configuration
+     */
+    ipv6s: outputs.VpcV2ExternalSubnetExternalIpIpv6[];
+}
+
+export interface VpcV2ExternalSubnetExternalIpIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface VpcV2ExternalSubnetExternalIpIpv6 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface VpcV2ExternallyRoutablePrefix {
+    /**
+     * IP V4 Configuration
+     * - `ipv4.ip`: (Required) Reference to address configuration
+     * - `ipv4.prefix_length`: (Required) The prefix length of the network
+     */
+    ipv4s: outputs.VpcV2ExternallyRoutablePrefixIpv4[];
+    /**
+     * IP V6 Configuration
+     * - `ipv6.ip`: (Required) Reference to address configuration
+     * - `ipv6.prefix_length`: (Required) The prefix length of the network
+     */
+    ipv6s: outputs.VpcV2ExternallyRoutablePrefixIpv6[];
+}
+
+export interface VpcV2ExternallyRoutablePrefixIpv4 {
+    ips: outputs.VpcV2ExternallyRoutablePrefixIpv4Ip[];
+    prefixLength: number;
+}
+
+export interface VpcV2ExternallyRoutablePrefixIpv4Ip {
+    prefixLength: number;
+    value: string;
+}
+
+export interface VpcV2ExternallyRoutablePrefixIpv6 {
+    ips: outputs.VpcV2ExternallyRoutablePrefixIpv6Ip[];
+    prefixLength: number;
+}
+
+export interface VpcV2ExternallyRoutablePrefixIpv6Ip {
+    prefixLength: number;
+    value: string;
+}
+
+export interface VpcV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface VpcV2Metadata {
+    categoryIds: any[][];
+    ownerReferenceId: string;
+    ownerUserName: string;
+    projectName: string;
+    projectReferenceId: string;
+}
+
+export interface VpcV2SnatIp {
+    ipv4s: outputs.VpcV2SnatIpIpv4[];
+    ipv6s: outputs.VpcV2SnatIpIpv6[];
+}
+
+export interface VpcV2SnatIpIpv4 {
+    prefixLength: number;
+    value: string;
+}
+
+export interface VpcV2SnatIpIpv6 {
+    prefixLength: number;
+    value: string;
 }
 

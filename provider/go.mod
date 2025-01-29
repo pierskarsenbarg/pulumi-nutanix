@@ -6,13 +6,13 @@ toolchain go1.23.2
 
 replace (
 	github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20250124205414-92ccb3765401
-	github.com/terraform-providers/terraform-provider-nutanix => github.com/pierskarsenbarg/terraform-provider-nutanix v1.6.2-0.20240528163917-bf1aea8fe346
+	github.com/terraform-providers/terraform-provider-nutanix => github.com/pierskarsenbarg/terraform-provider-nutanix v1.6.2-0.20250129141831-201aa51c14d1
 )
 
 require (
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.102.0
 	github.com/pulumi/pulumi/sdk/v3 v3.147.0
-	github.com/terraform-providers/terraform-provider-nutanix v1.9.5
+	github.com/terraform-providers/terraform-provider-nutanix v1.6.2-0.20250129141831-201aa51c14d1
 )
 
 require (
@@ -127,6 +127,14 @@ require (
 	github.com/muesli/reflow v0.3.0 // indirect
 	github.com/muesli/termenv v0.15.2 // indirect
 	github.com/natefinch/atomic v1.0.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/clustermgmt-go-client/v4 v4.0.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/dataprotection-go-client/v4 v4.0.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/iam-go-client/v4 v4.0.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/microseg-go-client/v4 v4.0.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/networking-go-client/v4 v4.0.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/prism-go-client/v4 v4.0.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/vmm-go-client/v4 v4.0.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/volumes-go-client/v4 v4.0.1 // indirect
 	github.com/oklog/run v1.1.0 // indirect
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
 	github.com/opentracing/basictracer-go v1.1.0 // indirect
@@ -154,6 +162,7 @@ require (
 	github.com/segmentio/encoding v0.3.5 // indirect
 	github.com/sergi/go-diff v1.3.2-0.20230802210424-5b0b94c5c0d3 // indirect
 	github.com/shopspring/decimal v1.3.1 // indirect
+	github.com/sirupsen/logrus v1.9.0 // indirect
 	github.com/skeema/knownhosts v1.3.0 // indirect
 	github.com/spf13/afero v1.10.0 // indirect
 	github.com/spf13/cast v1.5.0 // indirect
