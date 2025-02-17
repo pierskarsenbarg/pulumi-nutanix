@@ -16,7 +16,7 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const categories = nutanix.getCategoriesV2({});
- * const categories-filtered = nutanix.getCategoriesV2({
+ * const categories_filtered = nutanix.getCategoriesV2({
  *     filter: "key eq '{<key value>}'",
  * });
  * ```
@@ -90,7 +90,7 @@ export interface GetCategoriesV2Result {
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const categories = nutanix.getCategoriesV2({});
- * const categories-filtered = nutanix.getCategoriesV2({
+ * const categories_filtered = nutanix.getCategoriesV2({
  *     filter: "key eq '{<key value>}'",
  * });
  * ```

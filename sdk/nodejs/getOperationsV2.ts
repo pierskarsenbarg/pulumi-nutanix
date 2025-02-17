@@ -15,8 +15,8 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const operations-1 = nutanix.getOperationsV2({});
- * const operations-2 = nutanix.getOperationsV2({
+ * const operations_1 = nutanix.getOperationsV2({});
+ * const operations_2 = nutanix.getOperationsV2({
  *     filter: "display_name eq 'test-Permission-filter'",
  * });
  * ```
@@ -101,8 +101,8 @@ export interface GetOperationsV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const operations-1 = nutanix.getOperationsV2({});
- * const operations-2 = nutanix.getOperationsV2({
+ * const operations_1 = nutanix.getOperationsV2({});
+ * const operations_2 = nutanix.getOperationsV2({
  *     filter: "display_name eq 'test-Permission-filter'",
  * });
  * ```

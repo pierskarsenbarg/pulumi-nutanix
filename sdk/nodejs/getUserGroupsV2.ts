@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const user-groups = nutanix.getUserGroupsV2({});
+ * const user_groups = nutanix.getUserGroupsV2({});
  * ```
  *
  * ## Argument Reference
@@ -78,7 +78,7 @@ export interface GetUserGroupsV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const user-groups = nutanix.getUserGroupsV2({});
+ * const user_groups = nutanix.getUserGroupsV2({});
  * ```
  *
  * ## Argument Reference

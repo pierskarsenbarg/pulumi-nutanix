@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const floating-ips = nutanix.getFloatingIpsV2({});
+ * const floating_ips = nutanix.getFloatingIpsV2({});
  * ```
  */
 export function getFloatingIpsV2(args?: GetFloatingIpsV2Args, opts?: pulumi.InvokeOptions): Promise<GetFloatingIpsV2Result> {
@@ -80,7 +80,7 @@ export interface GetFloatingIpsV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const floating-ips = nutanix.getFloatingIpsV2({});
+ * const floating_ips = nutanix.getFloatingIpsV2({});
  * ```
  */
 export function getFloatingIpsV2Output(args?: GetFloatingIpsV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFloatingIpsV2Result> {

@@ -16,11 +16,11 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const vms = nutanix.getVirtualMachinesV2({});
- * const vms-1 = nutanix.getVirtualMachinesV2({
+ * const vms_1 = nutanix.getVirtualMachinesV2({
  *     limit: 2,
  *     page: 0,
  * });
- * const vms-2 = nutanix.getVirtualMachinesV2({
+ * const vms_2 = nutanix.getVirtualMachinesV2({
  *     filter: "name eq 'test-vm-filter'",
  * });
  * ```
@@ -106,11 +106,11 @@ export interface GetVirtualMachinesV2Result {
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const vms = nutanix.getVirtualMachinesV2({});
- * const vms-1 = nutanix.getVirtualMachinesV2({
+ * const vms_1 = nutanix.getVirtualMachinesV2({
  *     limit: 2,
  *     page: 0,
  * });
- * const vms-2 = nutanix.getVirtualMachinesV2({
+ * const vms_2 = nutanix.getVirtualMachinesV2({
  *     filter: "name eq 'test-vm-filter'",
  * });
  * ```

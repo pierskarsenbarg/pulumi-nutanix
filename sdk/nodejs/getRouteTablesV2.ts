@@ -15,8 +15,8 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const all-tables = nutanix.getRouteTablesV2({});
- * const route-tables-with-filter = nutanix.getRouteTablesV2({
+ * const all_tables = nutanix.getRouteTablesV2({});
+ * const route_tables_with_filter = nutanix.getRouteTablesV2({
  *     filter: "vpcReference eq '<vpc_uuid>'",
  * });
  * ```
@@ -82,8 +82,8 @@ export interface GetRouteTablesV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const all-tables = nutanix.getRouteTablesV2({});
- * const route-tables-with-filter = nutanix.getRouteTablesV2({
+ * const all_tables = nutanix.getRouteTablesV2({});
+ * const route_tables_with_filter = nutanix.getRouteTablesV2({
  *     filter: "vpcReference eq '<vpc_uuid>'",
  * });
  * ```
