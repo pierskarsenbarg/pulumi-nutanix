@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const storage-containers = nutanix.getStorageContainersV2({});
+ * const storage_containers = nutanix.getStorageContainersV2({});
  * ```
  */
 export function getStorageContainersV2(args?: GetStorageContainersV2Args, opts?: pulumi.InvokeOptions): Promise<GetStorageContainersV2Result> {
@@ -83,7 +83,7 @@ export interface GetStorageContainersV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const storage-containers = nutanix.getStorageContainersV2({});
+ * const storage_containers = nutanix.getStorageContainersV2({});
  * ```
  */
 export function getStorageContainersV2Output(args?: GetStorageContainersV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetStorageContainersV2Result> {

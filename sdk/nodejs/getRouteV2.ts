@@ -15,7 +15,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const route-by-id = nutanix.getRouteV2({
+ * const route_by_id = nutanix.getRouteV2({
  *     extId: "<route_uuid>",
  *     routeTableExtId: "<route_table_uuid>",
  * });
@@ -118,7 +118,7 @@ export interface GetRouteV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const route-by-id = nutanix.getRouteV2({
+ * const route_by_id = nutanix.getRouteV2({
  *     extId: "<route_uuid>",
  *     routeTableExtId: "<route_table_uuid>",
  * });

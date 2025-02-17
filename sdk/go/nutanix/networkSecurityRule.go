@@ -114,7 +114,7 @@ import (
 //			if err != nil {
 //				return err
 //			}
-//			_, err = nutanix.NewCategoryValue(ctx, "ad-group-user-1", &nutanix.CategoryValueArgs{
+//			ad_group_user_1, err := nutanix.NewCategoryValue(ctx, "ad-group-user-1", &nutanix.CategoryValueArgs{
 //				Description: pulumi.String("group user category value"),
 //				Value:       pulumi.String("AD"),
 //			})

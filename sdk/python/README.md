@@ -48,8 +48,13 @@ dotnet add package PiersKarsenbarg.Nutanix
 
 The following configuration points are available for the `nutanix` provider:
 
-- `nutanix:apiKey` (environment: `NUTANIX_API_KEY`) - the API key for `nutanix`
-- `nutanix:region` (environment: `NUTANIX_REGION`) - the region in which to deploy resources
+| Option     | Required/Optional | Description                                                                                                                                         |
+| ---------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `username` | Required          | This is the username for the Prism Elements or Prism Central instance. This can also be specified with the `NUTANIX_USERNAME` environment variable. |
+| `password` | Required          | This is the password for the Prism Elements or Prism Central instance. This can also be specified with the `NUTANIX_PASSWORD` environment variable. |
+| `endpoint` | Required          | This is the endpoint for the Prism Elements or Prism Central instance. This can also be specified with the NUTANIX_ENDPOINT environment variable.   |
+| `insecure` | Optional          | This specifies whether to allow verify ssl certificates. This can also be specified with `NUTANIX_INSECURE`. Defaults to `false`.                     |
+| `port`     | Optional          | This is the port for the Prism Elements or Prism Central instance. This can also be specified with the `NUTANIX_PORT` environment variable. Defaults to `9440`. |
 
 ## Reference
 
