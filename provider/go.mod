@@ -1,7 +1,8 @@
 module github.com/pierskarsenbarg/pulumi-nutanix/provider
 
-go 1.22.3
-toolchain go1.23.2
+go 1.23.0
+
+toolchain go1.23.6
 
 replace (
 	github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20250124205414-92ccb3765401
