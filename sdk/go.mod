@@ -1,11 +1,11 @@
 module github.com/pierskarsenbarg/pulumi-nutanix/sdk
 
 go 1.22
-toolchain go1.23.7
+toolchain go1.24.1
 
 require (
 	github.com/blang/semver v3.5.1+incompatible
-	github.com/pulumi/pulumi/sdk/v3 v3.154.0
+	github.com/pulumi/pulumi/sdk/v3 v3.157.0
 )
 
 require (
