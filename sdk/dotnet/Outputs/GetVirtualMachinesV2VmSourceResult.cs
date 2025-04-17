@@ -15,9 +15,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetVirtualMachinesV2VmSourceResult
     {
         public readonly string EntityType;
-        /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
-        /// </summary>
         public readonly string ExtId;
 
         [OutputConstructor]

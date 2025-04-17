@@ -14,105 +14,30 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetSubnetsV2SubnetResult
     {
-        /// <summary>
-        /// Name of the bridge on the host for the subnet.
-        /// </summary>
         public readonly string BridgeName;
-        /// <summary>
-        /// Cluster Name
-        /// </summary>
         public readonly string ClusterName;
-        /// <summary>
-        /// UUID of the cluster this subnet belongs to.
-        /// </summary>
         public readonly string ClusterReference;
-        /// <summary>
-        /// Description of the subnet.
-        /// </summary>
         public readonly string Description;
-        /// <summary>
-        /// List of DHCP options to be configured.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetDhcpOptionResult> DhcpOptions;
-        /// <summary>
-        /// List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetDynamicIpAddressResult> DynamicIpAddresses;
-        /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
-        /// </summary>
         public readonly string ExtId;
-        /// <summary>
-        /// Hypervisor Type
-        /// </summary>
         public readonly string HypervisorType;
-        /// <summary>
-        /// IP configuration for the subnet.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetIpConfigResult> IpConfigs;
-        /// <summary>
-        /// IP Prefix in CIDR format.
-        /// </summary>
         public readonly string IpPrefix;
-        /// <summary>
-        /// IP usage statistics.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetIpUsageResult> IpUsages;
-        /// <summary>
-        /// Indicates whether the subnet is used for advanced networking.
-        /// </summary>
         public readonly bool IsAdvancedNetworking;
-        /// <summary>
-        /// Indicates whether the subnet is used for external connectivity.
-        /// </summary>
         public readonly bool IsExternal;
-        /// <summary>
-        /// Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
-        /// </summary>
         public readonly bool IsNatEnabled;
-        /// <summary>
-        /// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetLinkResult> Links;
-        /// <summary>
-        /// Migration state of the subnet. This field is read-only.
-        /// </summary>
         public readonly string MigrationState;
-        /// <summary>
-        /// Name of the subnet.
-        /// </summary>
         public readonly string Name;
-        /// <summary>
-        /// UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
-        /// </summary>
         public readonly string NetworkFunctionChainReference;
-        /// <summary>
-        /// or VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
-        /// </summary>
         public readonly int NetworkId;
-        /// <summary>
-        /// List of IPs that are excluded while allocating IP addresses to VM ports.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetReservedIpAddressResult> ReservedIpAddresses;
-        /// <summary>
-        /// Type of subnet.
-        /// </summary>
         public readonly string SubnetType;
-        /// <summary>
-        /// UUID of the virtual switch this subnet belongs to (type VLAN only).
-        /// </summary>
         public readonly string VirtualSwitchReference;
-        /// <summary>
-        /// Schema to configure a virtual switch
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetVirtualSwitchResult> VirtualSwitches;
-        /// <summary>
-        /// UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
-        /// </summary>
         public readonly string VpcReference;
-        /// <summary>
-        /// Networking common base object
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetVpcResult> Vpcs;
 
         [OutputConstructor]

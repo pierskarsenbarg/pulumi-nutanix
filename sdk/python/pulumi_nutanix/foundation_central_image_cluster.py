@@ -30,6 +30,7 @@ class FoundationCentralImageClusterArgs:
                  cluster_status: Optional[pulumi.Input['FoundationCentralImageClusterClusterStatusArgs']] = None,
                  common_network_settings: Optional[pulumi.Input['FoundationCentralImageClusterCommonNetworkSettingsArgs']] = None,
                  hypervisor_iso_details: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs']] = None,
+                 hypervisor_isos: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsosArgs']] = None,
                  image_cluster_uuid: Optional[pulumi.Input[builtins.str]] = None,
                  node_lists: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterNodeListArgs']]]] = None,
                  redundancy_factor: Optional[pulumi.Input[builtins.int]] = None,
@@ -44,7 +45,8 @@ class FoundationCentralImageClusterArgs:
         :param pulumi.Input[builtins.str] cluster_name: Name of the cluster.
         :param pulumi.Input[builtins.int] cluster_size: Number of nodes in the cluster.
         :param pulumi.Input['FoundationCentralImageClusterCommonNetworkSettingsArgs'] common_network_settings: Common network settings across the nodes in the cluster.
-        :param pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs'] hypervisor_iso_details: Details of the hypervisor iso.
+        :param pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs'] hypervisor_iso_details: Details of the hypervisor iso. (Deprecated)
+        :param pulumi.Input['FoundationCentralImageClusterHypervisorIsosArgs'] hypervisor_isos: Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
         :param pulumi.Input[builtins.int] redundancy_factor: Redundancy factor of the cluster.
         :param pulumi.Input[builtins.int] storage_node_count: Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
         :param pulumi.Input[builtins.str] timezone: Timezone to be set on the cluster.
@@ -65,6 +67,8 @@ class FoundationCentralImageClusterArgs:
             pulumi.set(__self__, "common_network_settings", common_network_settings)
         if hypervisor_iso_details is not None:
             pulumi.set(__self__, "hypervisor_iso_details", hypervisor_iso_details)
+        if hypervisor_isos is not None:
+            pulumi.set(__self__, "hypervisor_isos", hypervisor_isos)
         if image_cluster_uuid is not None:
             pulumi.set(__self__, "image_cluster_uuid", image_cluster_uuid)
         if node_lists is not None:
@@ -163,13 +167,25 @@ class FoundationCentralImageClusterArgs:
     @pulumi.getter(name="hypervisorIsoDetails")
     def hypervisor_iso_details(self) -> Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs']]:
         """
-        Details of the hypervisor iso.
+        Details of the hypervisor iso. (Deprecated)
         """
         return pulumi.get(self, "hypervisor_iso_details")
 
     @hypervisor_iso_details.setter
     def hypervisor_iso_details(self, value: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs']]):
         pulumi.set(self, "hypervisor_iso_details", value)
+
+    @property
+    @pulumi.getter(name="hypervisorIsos")
+    def hypervisor_isos(self) -> Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsosArgs']]:
+        """
+        Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
+        """
+        return pulumi.get(self, "hypervisor_isos")
+
+    @hypervisor_isos.setter
+    def hypervisor_isos(self, value: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsosArgs']]):
+        pulumi.set(self, "hypervisor_isos", value)
 
     @property
     @pulumi.getter(name="imageClusterUuid")
@@ -252,6 +268,7 @@ class _FoundationCentralImageClusterState:
                  foundation_init_configs: Optional[pulumi.Input[Sequence[pulumi.Input['FoundationCentralImageClusterFoundationInitConfigArgs']]]] = None,
                  foundation_init_node_uuid: Optional[pulumi.Input[builtins.str]] = None,
                  hypervisor_iso_details: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs']] = None,
+                 hypervisor_isos: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsosArgs']] = None,
                  image_cluster_uuid: Optional[pulumi.Input[builtins.str]] = None,
                  imaged_cluster_uuid: Optional[pulumi.Input[builtins.str]] = None,
                  imaged_node_uuid_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -269,7 +286,8 @@ class _FoundationCentralImageClusterState:
         :param pulumi.Input[builtins.str] cluster_name: Name of the cluster.
         :param pulumi.Input[builtins.int] cluster_size: Number of nodes in the cluster.
         :param pulumi.Input['FoundationCentralImageClusterCommonNetworkSettingsArgs'] common_network_settings: Common network settings across the nodes in the cluster.
-        :param pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs'] hypervisor_iso_details: Details of the hypervisor iso.
+        :param pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs'] hypervisor_iso_details: Details of the hypervisor iso. (Deprecated)
+        :param pulumi.Input['FoundationCentralImageClusterHypervisorIsosArgs'] hypervisor_isos: Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
         :param pulumi.Input[builtins.str] imaged_cluster_uuid: Unique id of the cluster.
         :param pulumi.Input[builtins.int] redundancy_factor: Redundancy factor of the cluster.
         :param pulumi.Input[builtins.int] storage_node_count: Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
@@ -303,6 +321,8 @@ class _FoundationCentralImageClusterState:
             pulumi.set(__self__, "foundation_init_node_uuid", foundation_init_node_uuid)
         if hypervisor_iso_details is not None:
             pulumi.set(__self__, "hypervisor_iso_details", hypervisor_iso_details)
+        if hypervisor_isos is not None:
+            pulumi.set(__self__, "hypervisor_isos", hypervisor_isos)
         if image_cluster_uuid is not None:
             pulumi.set(__self__, "image_cluster_uuid", image_cluster_uuid)
         if imaged_cluster_uuid is not None:
@@ -461,13 +481,25 @@ class _FoundationCentralImageClusterState:
     @pulumi.getter(name="hypervisorIsoDetails")
     def hypervisor_iso_details(self) -> Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs']]:
         """
-        Details of the hypervisor iso.
+        Details of the hypervisor iso. (Deprecated)
         """
         return pulumi.get(self, "hypervisor_iso_details")
 
     @hypervisor_iso_details.setter
     def hypervisor_iso_details(self, value: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsoDetailsArgs']]):
         pulumi.set(self, "hypervisor_iso_details", value)
+
+    @property
+    @pulumi.getter(name="hypervisorIsos")
+    def hypervisor_isos(self) -> Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsosArgs']]:
+        """
+        Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
+        """
+        return pulumi.get(self, "hypervisor_isos")
+
+    @hypervisor_isos.setter
+    def hypervisor_isos(self, value: Optional[pulumi.Input['FoundationCentralImageClusterHypervisorIsosArgs']]):
+        pulumi.set(self, "hypervisor_isos", value)
 
     @property
     @pulumi.getter(name="imageClusterUuid")
@@ -576,6 +608,7 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
                  cluster_status: Optional[pulumi.Input[Union['FoundationCentralImageClusterClusterStatusArgs', 'FoundationCentralImageClusterClusterStatusArgsDict']]] = None,
                  common_network_settings: Optional[pulumi.Input[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']]] = None,
                  hypervisor_iso_details: Optional[pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']]] = None,
+                 hypervisor_isos: Optional[pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']]] = None,
                  image_cluster_uuid: Optional[pulumi.Input[builtins.str]] = None,
                  node_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict']]]]] = None,
                  redundancy_factor: Optional[pulumi.Input[builtins.int]] = None,
@@ -593,7 +626,8 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] cluster_name: Name of the cluster.
         :param pulumi.Input[builtins.int] cluster_size: Number of nodes in the cluster.
         :param pulumi.Input[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']] common_network_settings: Common network settings across the nodes in the cluster.
-        :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']] hypervisor_iso_details: Details of the hypervisor iso.
+        :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']] hypervisor_iso_details: Details of the hypervisor iso. (Deprecated)
+        :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']] hypervisor_isos: Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
         :param pulumi.Input[builtins.int] redundancy_factor: Redundancy factor of the cluster.
         :param pulumi.Input[builtins.int] storage_node_count: Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
         :param pulumi.Input[builtins.str] timezone: Timezone to be set on the cluster.
@@ -629,6 +663,7 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
                  cluster_status: Optional[pulumi.Input[Union['FoundationCentralImageClusterClusterStatusArgs', 'FoundationCentralImageClusterClusterStatusArgsDict']]] = None,
                  common_network_settings: Optional[pulumi.Input[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']]] = None,
                  hypervisor_iso_details: Optional[pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']]] = None,
+                 hypervisor_isos: Optional[pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']]] = None,
                  image_cluster_uuid: Optional[pulumi.Input[builtins.str]] = None,
                  node_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationCentralImageClusterNodeListArgs', 'FoundationCentralImageClusterNodeListArgsDict']]]]] = None,
                  redundancy_factor: Optional[pulumi.Input[builtins.int]] = None,
@@ -652,6 +687,7 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
             __props__.__dict__["cluster_status"] = cluster_status
             __props__.__dict__["common_network_settings"] = common_network_settings
             __props__.__dict__["hypervisor_iso_details"] = hypervisor_iso_details
+            __props__.__dict__["hypervisor_isos"] = hypervisor_isos
             __props__.__dict__["image_cluster_uuid"] = image_cluster_uuid
             __props__.__dict__["node_lists"] = node_lists
             __props__.__dict__["redundancy_factor"] = redundancy_factor
@@ -691,6 +727,7 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
             foundation_init_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FoundationCentralImageClusterFoundationInitConfigArgs', 'FoundationCentralImageClusterFoundationInitConfigArgsDict']]]]] = None,
             foundation_init_node_uuid: Optional[pulumi.Input[builtins.str]] = None,
             hypervisor_iso_details: Optional[pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']]] = None,
+            hypervisor_isos: Optional[pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']]] = None,
             image_cluster_uuid: Optional[pulumi.Input[builtins.str]] = None,
             imaged_cluster_uuid: Optional[pulumi.Input[builtins.str]] = None,
             imaged_node_uuid_lists: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -713,7 +750,8 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] cluster_name: Name of the cluster.
         :param pulumi.Input[builtins.int] cluster_size: Number of nodes in the cluster.
         :param pulumi.Input[Union['FoundationCentralImageClusterCommonNetworkSettingsArgs', 'FoundationCentralImageClusterCommonNetworkSettingsArgsDict']] common_network_settings: Common network settings across the nodes in the cluster.
-        :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']] hypervisor_iso_details: Details of the hypervisor iso.
+        :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsoDetailsArgs', 'FoundationCentralImageClusterHypervisorIsoDetailsArgsDict']] hypervisor_iso_details: Details of the hypervisor iso. (Deprecated)
+        :param pulumi.Input[Union['FoundationCentralImageClusterHypervisorIsosArgs', 'FoundationCentralImageClusterHypervisorIsosArgsDict']] hypervisor_isos: Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
         :param pulumi.Input[builtins.str] imaged_cluster_uuid: Unique id of the cluster.
         :param pulumi.Input[builtins.int] redundancy_factor: Redundancy factor of the cluster.
         :param pulumi.Input[builtins.int] storage_node_count: Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
@@ -737,6 +775,7 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
         __props__.__dict__["foundation_init_configs"] = foundation_init_configs
         __props__.__dict__["foundation_init_node_uuid"] = foundation_init_node_uuid
         __props__.__dict__["hypervisor_iso_details"] = hypervisor_iso_details
+        __props__.__dict__["hypervisor_isos"] = hypervisor_isos
         __props__.__dict__["image_cluster_uuid"] = image_cluster_uuid
         __props__.__dict__["imaged_cluster_uuid"] = imaged_cluster_uuid
         __props__.__dict__["imaged_node_uuid_lists"] = imaged_node_uuid_lists
@@ -835,9 +874,17 @@ class FoundationCentralImageCluster(pulumi.CustomResource):
     @pulumi.getter(name="hypervisorIsoDetails")
     def hypervisor_iso_details(self) -> pulumi.Output['outputs.FoundationCentralImageClusterHypervisorIsoDetails']:
         """
-        Details of the hypervisor iso.
+        Details of the hypervisor iso. (Deprecated)
         """
         return pulumi.get(self, "hypervisor_iso_details")
+
+    @property
+    @pulumi.getter(name="hypervisorIsos")
+    def hypervisor_isos(self) -> pulumi.Output[Optional['outputs.FoundationCentralImageClusterHypervisorIsos']]:
+        """
+        Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
+        """
+        return pulumi.get(self, "hypervisor_isos")
 
     @property
     @pulumi.getter(name="imageClusterUuid")

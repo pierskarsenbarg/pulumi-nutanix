@@ -71,10 +71,16 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> FoundationInitNodeUuid { get; private set; } = null!;
 
         /// <summary>
-        /// Details of the hypervisor iso.
+        /// Details of the hypervisor iso. (Deprecated)
         /// </summary>
         [Output("hypervisorIsoDetails")]
         public Output<Outputs.FoundationCentralImageClusterHypervisorIsoDetails> HypervisorIsoDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Details of the hypervisor iso. Required for deploying node with AOS &gt;= 6.8
+        /// </summary>
+        [Output("hypervisorIsos")]
+        public Output<Outputs.FoundationCentralImageClusterHypervisorIsos?> HypervisorIsos { get; private set; } = null!;
 
         [Output("imageClusterUuid")]
         public Output<string> ImageClusterUuid { get; private set; } = null!;
@@ -202,10 +208,16 @@ namespace PiersKarsenbarg.Nutanix
         public Input<Inputs.FoundationCentralImageClusterCommonNetworkSettingsArgs>? CommonNetworkSettings { get; set; }
 
         /// <summary>
-        /// Details of the hypervisor iso.
+        /// Details of the hypervisor iso. (Deprecated)
         /// </summary>
         [Input("hypervisorIsoDetails")]
         public Input<Inputs.FoundationCentralImageClusterHypervisorIsoDetailsArgs>? HypervisorIsoDetails { get; set; }
+
+        /// <summary>
+        /// Details of the hypervisor iso. Required for deploying node with AOS &gt;= 6.8
+        /// </summary>
+        [Input("hypervisorIsos")]
+        public Input<Inputs.FoundationCentralImageClusterHypervisorIsosArgs>? HypervisorIsos { get; set; }
 
         [Input("imageClusterUuid")]
         public Input<string>? ImageClusterUuid { get; set; }
@@ -310,10 +322,16 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? FoundationInitNodeUuid { get; set; }
 
         /// <summary>
-        /// Details of the hypervisor iso.
+        /// Details of the hypervisor iso. (Deprecated)
         /// </summary>
         [Input("hypervisorIsoDetails")]
         public Input<Inputs.FoundationCentralImageClusterHypervisorIsoDetailsGetArgs>? HypervisorIsoDetails { get; set; }
+
+        /// <summary>
+        /// Details of the hypervisor iso. Required for deploying node with AOS &gt;= 6.8
+        /// </summary>
+        [Input("hypervisorIsos")]
+        public Input<Inputs.FoundationCentralImageClusterHypervisorIsosGetArgs>? HypervisorIsos { get; set; }
 
         [Input("imageClusterUuid")]
         public Input<string>? ImageClusterUuid { get; set; }

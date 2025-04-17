@@ -213,18 +213,18 @@ class RecoveryPointRestoreV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        # restore RP 
-        example = nutanix.RecoveryPointRestoreV2("example",
-            cluster_ext_id="<cluster_external_id>",
-            ext_id="<recovery_point_external_id>",
+        # restore RP
+        rp_restore = nutanix.RecoveryPointRestoreV2("rp-restore",
+            cluster_ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+            ext_id="150a7ed0-9d05-4f35-a060-16dac4c835d0",
             vm_recovery_point_restore_overrides=[{
-                "vm_recovery_point_ext_id": "<vm_recovery_point_uuid>",
+                "vm_recovery_point_ext_id": "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             }],
             volume_group_recovery_point_restore_overrides=[{
                 "volume_group_override_specs": [{
-                    "name": "<volume_group_restored_name>",
+                    "name": "vg_restored",
                 }],
-                "volume_group_recovery_point_ext_id": "<volume_group_recovery_point_uuid>",
+                "volume_group_recovery_point_ext_id": "8a938cc5-282b-48c4-81be-de22de145d07",
             }])
         ```
 
@@ -251,18 +251,18 @@ class RecoveryPointRestoreV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        # restore RP 
-        example = nutanix.RecoveryPointRestoreV2("example",
-            cluster_ext_id="<cluster_external_id>",
-            ext_id="<recovery_point_external_id>",
+        # restore RP
+        rp_restore = nutanix.RecoveryPointRestoreV2("rp-restore",
+            cluster_ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+            ext_id="150a7ed0-9d05-4f35-a060-16dac4c835d0",
             vm_recovery_point_restore_overrides=[{
-                "vm_recovery_point_ext_id": "<vm_recovery_point_uuid>",
+                "vm_recovery_point_ext_id": "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
             }],
             volume_group_recovery_point_restore_overrides=[{
                 "volume_group_override_specs": [{
-                    "name": "<volume_group_restored_name>",
+                    "name": "vg_restored",
                 }],
-                "volume_group_recovery_point_ext_id": "<volume_group_recovery_point_uuid>",
+                "volume_group_recovery_point_ext_id": "8a938cc5-282b-48c4-81be-de22de145d07",
             }])
         ```
 

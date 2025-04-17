@@ -15,63 +15,63 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetVolumeGroupsV2VolumeResult
     {
         /// <summary>
-        /// - The UUID of the cluster that will host the Volume Group.
+        /// The UUID of the cluster that will host the Volume Group. This is a mandatory field for creating a Volume Group on Prism Central.
         /// </summary>
         public readonly string ClusterReference;
         /// <summary>
-        /// - Service/user who created this Volume Group.
+        /// Service/user who created this Volume Group. This is an optional field.
         /// </summary>
         public readonly string CreatedBy;
         /// <summary>
-        /// - Volume Group description. This is an optional field.
+        /// Volume Group description. This is an optional field.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// - The authentication type enabled for the Volume Group.
+        /// The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided.
         /// </summary>
         public readonly string EnabledAuthentications;
         /// <summary>
-        /// - A globally unique identifier of an instance that is suitable for external consumption.
+        /// A globally unique identifier of an instance that is suitable for external consumption.
         /// </summary>
         public readonly string ExtId;
         /// <summary>
-        /// - Indicates whether the Volume Group is meant to be hidden or not.
+        /// Indicates whether the Volume Group is meant to be hidden or not. This is an optional field. If omitted, the VG will not be hidden.
         /// </summary>
         public readonly bool IsHidden;
         /// <summary>
-        /// - iSCSI specific settings for the Volume Group.
+        /// iSCSI specific settings for the Volume Group. This is an optional field.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVolumeGroupsV2VolumeIscsiFeatureResult> IscsiFeatures;
         /// <summary>
-        /// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVolumeGroupsV2VolumeLinkResult> Links;
         /// <summary>
-        /// -(Required) Volume Group name. This is an optional field.
+        /// Volume Group name. This is an optional field.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// - Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
+        /// Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field
         /// </summary>
         public readonly string SharingStatus;
         /// <summary>
-        /// - Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
+        /// Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
         /// </summary>
         public readonly bool ShouldLoadBalanceVmAttachments;
         /// <summary>
-        /// - Storage optimization features which must be enabled on the Volume Group.
+        /// Storage optimization features which must be enabled on the Volume Group. This is an optional field.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVolumeGroupsV2VolumeStorageFeatureResult> StorageFeatures;
         /// <summary>
-        /// - Name of the external client target that will be visible and accessible to the client.
+        /// Name of the external client target that will be visible and accessible to the client. This is an optional field.
         /// </summary>
         public readonly string TargetName;
         /// <summary>
-        /// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
         /// </summary>
         public readonly string TenantId;
         /// <summary>
-        /// - Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
+        /// Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group. This is an optional field.
         /// </summary>
         public readonly string UsageType;
 

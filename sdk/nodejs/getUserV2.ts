@@ -15,8 +15,8 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const user = nutanix.getUserV2({
- *     extId: "<user ext Id>",
+ * const get_user = nutanix.getUserV2({
+ *     extId: "d3a3232a-9055-4740-b54f-b21a33524565",
  * });
  * ```
  *
@@ -143,8 +143,8 @@ export interface GetUserV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const user = nutanix.getUserV2({
- *     extId: "<user ext Id>",
+ * const get_user = nutanix.getUserV2({
+ *     extId: "d3a3232a-9055-4740-b54f-b21a33524565",
  * });
  * ```
  *

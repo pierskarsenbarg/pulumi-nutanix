@@ -13,6 +13,42 @@ import (
 )
 
 // Provides Nutanix resource to Installs Nutanix Guest Tools in a Virtual Machine by using the provided credentials.
+//
+// ## Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewNgtInstallationV2(ctx, "example", &nutanix.NgtInstallationV2Args{
+//				Capablities: pulumi.StringArray{
+//					pulumi.String("VSS_SNAPSHOT"),
+//				},
+//				Credential: &nutanix.NgtInstallationV2CredentialArgs{
+//					Password: pulumi.String("pass.1234567890"),
+//					Username: pulumi.String("username"),
+//				},
+//				ExtId: pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),
+//				RebootPreference: &nutanix.NgtInstallationV2RebootPreferenceArgs{
+//					ScheduleType: pulumi.String("IMMEDIATE"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type NgtInstallationV2 struct {
 	pulumi.CustomResourceState
 

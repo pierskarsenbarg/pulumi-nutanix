@@ -14,9 +14,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetSubnetsV2SubnetVpcCommonDhcpOptionResult
     {
-        /// <summary>
-        /// List of Domain Name Server addresses.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetVpcCommonDhcpOptionDomainNameServerResult> DomainNameServers;
 
         [OutputConstructor]

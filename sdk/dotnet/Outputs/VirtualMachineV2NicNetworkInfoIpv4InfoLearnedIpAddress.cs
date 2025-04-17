@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VirtualMachineV2NicNetworkInfoIpv4InfoLearnedIpAddress
     {
+        /// <summary>
+        /// The prefix length of the IP address.
+        /// </summary>
         public readonly int? PrefixLength;
         public readonly string Value;
 

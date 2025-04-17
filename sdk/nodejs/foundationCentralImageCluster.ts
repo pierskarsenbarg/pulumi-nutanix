@@ -66,9 +66,13 @@ export class FoundationCentralImageCluster extends pulumi.CustomResource {
     public /*out*/ readonly foundationInitConfigs!: pulumi.Output<outputs.FoundationCentralImageClusterFoundationInitConfig[]>;
     public /*out*/ readonly foundationInitNodeUuid!: pulumi.Output<string>;
     /**
-     * Details of the hypervisor iso.
+     * Details of the hypervisor iso. (Deprecated)
      */
     public readonly hypervisorIsoDetails!: pulumi.Output<outputs.FoundationCentralImageClusterHypervisorIsoDetails>;
+    /**
+     * Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
+     */
+    public readonly hypervisorIsos!: pulumi.Output<outputs.FoundationCentralImageClusterHypervisorIsos | undefined>;
     public readonly imageClusterUuid!: pulumi.Output<string>;
     /**
      * Unique id of the cluster.
@@ -118,6 +122,7 @@ export class FoundationCentralImageCluster extends pulumi.CustomResource {
             resourceInputs["foundationInitConfigs"] = state ? state.foundationInitConfigs : undefined;
             resourceInputs["foundationInitNodeUuid"] = state ? state.foundationInitNodeUuid : undefined;
             resourceInputs["hypervisorIsoDetails"] = state ? state.hypervisorIsoDetails : undefined;
+            resourceInputs["hypervisorIsos"] = state ? state.hypervisorIsos : undefined;
             resourceInputs["imageClusterUuid"] = state ? state.imageClusterUuid : undefined;
             resourceInputs["imagedClusterUuid"] = state ? state.imagedClusterUuid : undefined;
             resourceInputs["imagedNodeUuidLists"] = state ? state.imagedNodeUuidLists : undefined;
@@ -137,6 +142,7 @@ export class FoundationCentralImageCluster extends pulumi.CustomResource {
             resourceInputs["clusterStatus"] = args ? args.clusterStatus : undefined;
             resourceInputs["commonNetworkSettings"] = args ? args.commonNetworkSettings : undefined;
             resourceInputs["hypervisorIsoDetails"] = args ? args.hypervisorIsoDetails : undefined;
+            resourceInputs["hypervisorIsos"] = args ? args.hypervisorIsos : undefined;
             resourceInputs["imageClusterUuid"] = args ? args.imageClusterUuid : undefined;
             resourceInputs["nodeLists"] = args ? args.nodeLists : undefined;
             resourceInputs["redundancyFactor"] = args ? args.redundancyFactor : undefined;
@@ -194,9 +200,13 @@ export interface FoundationCentralImageClusterState {
     foundationInitConfigs?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterFoundationInitConfig>[]>;
     foundationInitNodeUuid?: pulumi.Input<string>;
     /**
-     * Details of the hypervisor iso.
+     * Details of the hypervisor iso. (Deprecated)
      */
     hypervisorIsoDetails?: pulumi.Input<inputs.FoundationCentralImageClusterHypervisorIsoDetails>;
+    /**
+     * Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
+     */
+    hypervisorIsos?: pulumi.Input<inputs.FoundationCentralImageClusterHypervisorIsos>;
     imageClusterUuid?: pulumi.Input<string>;
     /**
      * Unique id of the cluster.
@@ -250,9 +260,13 @@ export interface FoundationCentralImageClusterArgs {
      */
     commonNetworkSettings?: pulumi.Input<inputs.FoundationCentralImageClusterCommonNetworkSettings>;
     /**
-     * Details of the hypervisor iso.
+     * Details of the hypervisor iso. (Deprecated)
      */
     hypervisorIsoDetails?: pulumi.Input<inputs.FoundationCentralImageClusterHypervisorIsoDetails>;
+    /**
+     * Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
+     */
+    hypervisorIsos?: pulumi.Input<inputs.FoundationCentralImageClusterHypervisorIsos>;
     imageClusterUuid?: pulumi.Input<string>;
     nodeLists?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterNodeList>[]>;
     /**

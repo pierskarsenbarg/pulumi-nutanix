@@ -14,9 +14,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateGuestUpdateStatusResult
     {
-        /// <summary>
-        /// The identifier of the temporary VM created on initiating Guest OS Update.
-        /// </summary>
         public readonly string DeployedVmReference;
 
         [OutputConstructor]

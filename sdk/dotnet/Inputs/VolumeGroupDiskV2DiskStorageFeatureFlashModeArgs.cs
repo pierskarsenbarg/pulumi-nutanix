@@ -16,7 +16,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// <summary>
         /// - Indicates whether the flash mode is enabled for the Volume Group Disk.
         /// 
-        /// See detailed information in [Nutanix Volumes V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0).
+        /// See detailed information in [Nutanix Create Volume Disk V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0#tag/VolumeGroups/operation/createVolumeDisk).
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }

@@ -30,22 +30,22 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// restore RP
-//			_, err := nutanix.NewRecoveryPointRestoreV2(ctx, "example", &nutanix.RecoveryPointRestoreV2Args{
-//				ClusterExtId: pulumi.String("<cluster_external_id>"),
-//				ExtId:        pulumi.String("<recovery_point_external_id>"),
+//			_, err := nutanix.NewRecoveryPointRestoreV2(ctx, "rp-restore", &nutanix.RecoveryPointRestoreV2Args{
+//				ClusterExtId: pulumi.String("1cefd0f5-6d38-4c9b-a07c-bdd2db004224"),
+//				ExtId:        pulumi.String("150a7ed0-9d05-4f35-a060-16dac4c835d0"),
 //				VmRecoveryPointRestoreOverrides: nutanix.RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArray{
 //					&nutanix.RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs{
-//						VmRecoveryPointExtId: pulumi.String("<vm_recovery_point_uuid>"),
+//						VmRecoveryPointExtId: pulumi.String("1cefd0f5-6d38-4c9b-a07c-bdd2db004224"),
 //					},
 //				},
 //				VolumeGroupRecoveryPointRestoreOverrides: nutanix.RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArray{
 //					&nutanix.RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideArgs{
 //						VolumeGroupOverrideSpecs: nutanix.RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideVolumeGroupOverrideSpecArray{
 //							&nutanix.RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideVolumeGroupOverrideSpecArgs{
-//								Name: pulumi.String("<volume_group_restored_name>"),
+//								Name: pulumi.String("vg_restored"),
 //							},
 //						},
-//						VolumeGroupRecoveryPointExtId: pulumi.String("<volume_group_recovery_point_uuid>"),
+//						VolumeGroupRecoveryPointExtId: pulumi.String("8a938cc5-282b-48c4-81be-de22de145d07"),
 //					},
 //				},
 //			})

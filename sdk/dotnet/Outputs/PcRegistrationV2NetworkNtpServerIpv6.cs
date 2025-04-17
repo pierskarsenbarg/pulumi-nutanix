@@ -18,13 +18,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// </summary>
         public readonly int? PrefixLength;
-        public readonly string? Value;
+        public readonly string Value;
 
         [OutputConstructor]
         private PcRegistrationV2NetworkNtpServerIpv6(
             int? prefixLength,
 
-            string? value)
+            string value)
         {
             PrefixLength = prefixLength;
             Value = value;

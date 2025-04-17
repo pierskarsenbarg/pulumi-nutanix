@@ -15,9 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const addrGroup = nutanix.getAddressGroupsV2({});
- * const addrGroupFiltered = nutanix.getAddressGroupsV2({
- *     filter: "name eq '%[1]s'",
+ * const list_addr_groups = nutanix.getAddressGroupsV2({});
+ * const list_addr_group_filtered = nutanix.getAddressGroupsV2({
+ *     filter: "name eq 'td-addr-group'",
+ * });
+ * const list_addr_groups_filter_limit = nutanix.getAddressGroupsV2({
+ *     filter: "name eq 'td-addr-group'",
+ *     limit: 1,
  * });
  * ```
  */
@@ -38,7 +42,11 @@ export function getAddressGroupsV2(args?: GetAddressGroupsV2Args, opts?: pulumi.
  */
 export interface GetAddressGroupsV2Args {
     /**
-     * A URL query parameter that allows clients to filter a collection of resources.
+     * A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+     * - createdBy
+     * - description
+     * - extId
+     * - name
      */
     filter?: string;
     /**
@@ -46,7 +54,10 @@ export interface GetAddressGroupsV2Args {
      */
     limit?: number;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+     * - description
+     * - extId
+     * - name
      */
     orderBy?: string;
     /**
@@ -54,7 +65,15 @@ export interface GetAddressGroupsV2Args {
      */
     page?: number;
     /**
-     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions
+     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. The select can be applied to the following fields:
+     * - createdBy
+     * - description
+     * - extId
+     * - ipRanges
+     * - links
+     * - name
+     * - policyReferences
+     * - tenantId
      */
     select?: string;
 }
@@ -63,6 +82,9 @@ export interface GetAddressGroupsV2Args {
  * A collection of values returned by getAddressGroupsV2.
  */
 export interface GetAddressGroupsV2Result {
+    /**
+     * List of address groups
+     */
     readonly addressGroups: outputs.GetAddressGroupsV2AddressGroup[];
     readonly filter?: string;
     /**
@@ -83,9 +105,13 @@ export interface GetAddressGroupsV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const addrGroup = nutanix.getAddressGroupsV2({});
- * const addrGroupFiltered = nutanix.getAddressGroupsV2({
- *     filter: "name eq '%[1]s'",
+ * const list_addr_groups = nutanix.getAddressGroupsV2({});
+ * const list_addr_group_filtered = nutanix.getAddressGroupsV2({
+ *     filter: "name eq 'td-addr-group'",
+ * });
+ * const list_addr_groups_filter_limit = nutanix.getAddressGroupsV2({
+ *     filter: "name eq 'td-addr-group'",
+ *     limit: 1,
  * });
  * ```
  */
@@ -106,7 +132,11 @@ export function getAddressGroupsV2Output(args?: GetAddressGroupsV2OutputArgs, op
  */
 export interface GetAddressGroupsV2OutputArgs {
     /**
-     * A URL query parameter that allows clients to filter a collection of resources.
+     * A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+     * - createdBy
+     * - description
+     * - extId
+     * - name
      */
     filter?: pulumi.Input<string>;
     /**
@@ -114,7 +144,10 @@ export interface GetAddressGroupsV2OutputArgs {
      */
     limit?: pulumi.Input<number>;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+     * - description
+     * - extId
+     * - name
      */
     orderBy?: pulumi.Input<string>;
     /**
@@ -122,7 +155,15 @@ export interface GetAddressGroupsV2OutputArgs {
      */
     page?: pulumi.Input<number>;
     /**
-     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions
+     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. The select can be applied to the following fields:
+     * - createdBy
+     * - description
+     * - extId
+     * - ipRanges
+     * - links
+     * - name
+     * - policyReferences
+     * - tenantId
      */
     select?: pulumi.Input<string>;
 }

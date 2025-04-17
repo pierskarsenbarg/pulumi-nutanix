@@ -20,8 +20,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefixIpv4IpResult> Ips;
         /// <summary>
         /// The prefix length of the network to which this host IPv4/IPv6 address belongs.
-        /// 
-        /// See detailed information in [Nutanix Routing Policies v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.0).
         /// </summary>
         public readonly int PrefixLength;
 

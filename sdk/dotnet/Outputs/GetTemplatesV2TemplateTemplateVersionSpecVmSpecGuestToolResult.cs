@@ -14,45 +14,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestToolResult
     {
-        /// <summary>
-        /// Version of Nutanix Guest Tools available on the cluster.
-        /// </summary>
         public readonly string AvailableVersion;
-        /// <summary>
-        /// The list of the application names that are enabled on the guest VM.
-        /// </summary>
         public readonly ImmutableArray<string> Capabilities;
-        /// <summary>
-        /// Version of the operating system on the VM
-        /// </summary>
         public readonly string GuestOsVersion;
-        /// <summary>
-        /// Indicates whether Nutanix Guest Tools is enabled or not.
-        /// </summary>
         public readonly bool IsEnabled;
-        /// <summary>
-        /// Indicates whether Nutanix Guest Tools is installed on the VM or not.
-        /// </summary>
         public readonly bool IsInstalled;
-        /// <summary>
-        /// Indicates whether Nutanix Guest Tools ISO is inserted or not.
-        /// </summary>
         public readonly bool IsIsoInserted;
-        /// <summary>
-        /// Indicates whether the communication from VM to CVM is active or not.
-        /// </summary>
         public readonly bool IsReachable;
-        /// <summary>
-        /// Indicates whether the VM mobility drivers are installed on the VM or not.
-        /// </summary>
         public readonly bool IsVmMobilityDriversInstalled;
-        /// <summary>
-        /// Indicates whether the VM is configured to take VSS snapshots through NGT or not.
-        /// </summary>
         public readonly bool IsVssSnapshotCapable;
-        /// <summary>
-        /// Version of Nutanix Guest Tools installed on the VM.
-        /// </summary>
         public readonly string Version;
 
         [OutputConstructor]

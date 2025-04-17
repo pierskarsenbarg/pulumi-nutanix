@@ -12,6 +12,48 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides Nutanix resource to create VPC.
+    /// 
+    /// ## Example
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var storage_container = new Nutanix.StorageContainersV2("storage-container", new()
+    ///     {
+    ///         CacheDeduplication = "OFF",
+    ///         ErasureCode = "OFF",
+    ///         HasHigherEcFaultDomainPreference = false,
+    ///         IsCompressionEnabled = true,
+    ///         IsInlineEcEnabled = false,
+    ///         IsInternal = false,
+    ///         IsSoftwareEncryptionEnabled = false,
+    ///         LogicalAdvertisedCapacityBytes = 1073741824000,
+    ///         LogicalExplicitReservedCapacityBytes = 32,
+    ///         NfsWhitelistAddresses = new[]
+    ///         {
+    ///             new Nutanix.Inputs.StorageContainersV2NfsWhitelistAddressArgs
+    ///             {
+    ///                 Ipv4s = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.StorageContainersV2NfsWhitelistAddressIpv4Args
+    ///                     {
+    ///                         PrefixLength = 32,
+    ///                         Value = "192.168.15.0",
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         OnDiskDedup = "OFF",
+    ///         ReplicationFactor = 1,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/storageContainersV2:StorageContainersV2")]
     public partial class StorageContainersV2 : global::Pulumi.CustomResource

@@ -22,19 +22,13 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var vg = new Nutanix.VolumeGroupV2("vg", new()
-        ///     {
-        ///         ClusterReference = local.Cluster1,
-        ///     });
-        /// 
         ///     var volumeGroup = Nutanix.GetVolumeGroupV2.Invoke(new()
         ///     {
-        ///         ExtId = resource.Nutanix_volume_group_v2.Test.Id,
+        ///         ExtId = "d09aeec9-5bb7-4bfd-9717-a051178f6e7c",
         ///     });
         /// 
         /// });
@@ -53,19 +47,13 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var vg = new Nutanix.VolumeGroupV2("vg", new()
-        ///     {
-        ///         ClusterReference = local.Cluster1,
-        ///     });
-        /// 
         ///     var volumeGroup = Nutanix.GetVolumeGroupV2.Invoke(new()
         ///     {
-        ///         ExtId = resource.Nutanix_volume_group_v2.Test.Id,
+        ///         ExtId = "d09aeec9-5bb7-4bfd-9717-a051178f6e7c",
         ///     });
         /// 
         /// });
@@ -84,19 +72,13 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var vg = new Nutanix.VolumeGroupV2("vg", new()
-        ///     {
-        ///         ClusterReference = local.Cluster1,
-        ///     });
-        /// 
         ///     var volumeGroup = Nutanix.GetVolumeGroupV2.Invoke(new()
         ///     {
-        ///         ExtId = resource.Nutanix_volume_group_v2.Test.Id,
+        ///         ExtId = "d09aeec9-5bb7-4bfd-9717-a051178f6e7c",
         ///     });
         /// 
         /// });

@@ -16,7 +16,7 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const example = nutanix.getVolumeIscsiClientV2({
- *     extId: _var.iscsi_client_ext_id,
+ *     extId: "be0e4630-23da-4b9c-a76b-f24fd64b46b6",
  * });
  * ```
  *
@@ -97,7 +97,7 @@ export interface GetVolumeIscsiClientV2Result {
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const example = nutanix.getVolumeIscsiClientV2({
- *     extId: _var.iscsi_client_ext_id,
+ *     extId: "be0e4630-23da-4b9c-a76b-f24fd64b46b6",
  * });
  * ```
  *

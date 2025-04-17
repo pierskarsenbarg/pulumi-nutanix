@@ -20,85 +20,14 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var exampleVolumeGroupV2 = new Nutanix.VolumeGroupV2("exampleVolumeGroupV2", new()
+        ///     var list_volume_disks = Nutanix.GetVolumeGroupDisksV2.Invoke(new()
         ///     {
-        ///         Description = "Test Volume group with min spec and no Auth",
-        ///         ShouldLoadBalanceVmAttachments = false,
-        ///         SharingStatus = "SHARED",
-        ///         TargetName = "volumegroup-test-0",
-        ///         CreatedBy = "Test",
-        ///         ClusterReference = "&lt;Cluster uuid&gt;",
-        ///         IscsiFeatures = new[]
-        ///         {
-        ///             new Nutanix.Inputs.VolumeGroupV2IscsiFeatureArgs
-        ///             {
-        ///                 EnabledAuthentications = "CHAP",
-        ///                 TargetSecret = "1234567891011",
-        ///             },
-        ///         },
-        ///         StorageFeatures = new[]
-        ///         {
-        ///             new Nutanix.Inputs.VolumeGroupV2StorageFeatureArgs
-        ///             {
-        ///                 FlashModes = new[]
-        ///                 {
-        ///                     new Nutanix.Inputs.VolumeGroupV2StorageFeatureFlashModeArgs
-        ///                     {
-        ///                         IsEnabled = true,
-        ///                     },
-        ///                 },
-        ///             },
-        ///         },
-        ///         UsageType = "USER",
-        ///         IsHidden = false,
-        ///     });
-        /// 
-        ///     // Attach a volume group disk to the previous volume group
-        ///     var exampleVolumeGroupDiskV2 = new Nutanix.VolumeGroupDiskV2("exampleVolumeGroupDiskV2", new()
-        ///     {
-        ///         VolumeGroupExtId = resource.Nutanix_volume_group_v2.Example.Id,
-        ///         Index = 1,
-        ///         Description = "create volume disk test",
-        ///         DiskSizeBytes = 5368709120,
-        ///         DiskDataSourceReferences = new[]
-        ///         {
-        ///             new Nutanix.Inputs.VolumeGroupDiskV2DiskDataSourceReferenceArgs
-        ///             {
-        ///                 Name = "disk1",
-        ///                 ExtId = @var.Disk_data_source_ref_ext_id,
-        ///                 EntityType = "STORAGE_CONTAINER",
-        ///                 Uris = new[]
-        ///                 {
-        ///                     "uri1",
-        ///                     "uri2",
-        ///                 },
-        ///             },
-        ///         },
-        ///         DiskStorageFeatures = new[]
-        ///         {
-        ///             new Nutanix.Inputs.VolumeGroupDiskV2DiskStorageFeatureArgs
-        ///             {
-        ///                 FlashModes = new[]
-        ///                 {
-        ///                     new Nutanix.Inputs.VolumeGroupDiskV2DiskStorageFeatureFlashModeArgs
-        ///                     {
-        ///                         IsEnabled = false,
-        ///                     },
-        ///                 },
-        ///             },
-        ///         },
-        ///     });
-        /// 
-        ///     var exampleVolumeGroupDisksV2 = Nutanix.GetVolumeGroupDisksV2.Invoke(new()
-        ///     {
-        ///         VolumeGroupExtId = resource.Nutanix_volume_group_v2.Example.Id,
-        ///         Filter = "startswith(storageContainerId, var.filter_value)",
-        ///         Limit = 1,
+        ///         Filter = "storageContainerId eq '07c2da68-bb67-4535-9b2a-81504f6bb2e3'",
+        ///         VolumeGroupExtId = "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
         ///     });
         /// 
         /// });
@@ -127,85 +56,14 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var exampleVolumeGroupV2 = new Nutanix.VolumeGroupV2("exampleVolumeGroupV2", new()
+        ///     var list_volume_disks = Nutanix.GetVolumeGroupDisksV2.Invoke(new()
         ///     {
-        ///         Description = "Test Volume group with min spec and no Auth",
-        ///         ShouldLoadBalanceVmAttachments = false,
-        ///         SharingStatus = "SHARED",
-        ///         TargetName = "volumegroup-test-0",
-        ///         CreatedBy = "Test",
-        ///         ClusterReference = "&lt;Cluster uuid&gt;",
-        ///         IscsiFeatures = new[]
-        ///         {
-        ///             new Nutanix.Inputs.VolumeGroupV2IscsiFeatureArgs
-        ///             {
-        ///                 EnabledAuthentications = "CHAP",
-        ///                 TargetSecret = "1234567891011",
-        ///             },
-        ///         },
-        ///         StorageFeatures = new[]
-        ///         {
-        ///             new Nutanix.Inputs.VolumeGroupV2StorageFeatureArgs
-        ///             {
-        ///                 FlashModes = new[]
-        ///                 {
-        ///                     new Nutanix.Inputs.VolumeGroupV2StorageFeatureFlashModeArgs
-        ///                     {
-        ///                         IsEnabled = true,
-        ///                     },
-        ///                 },
-        ///             },
-        ///         },
-        ///         UsageType = "USER",
-        ///         IsHidden = false,
-        ///     });
-        /// 
-        ///     // Attach a volume group disk to the previous volume group
-        ///     var exampleVolumeGroupDiskV2 = new Nutanix.VolumeGroupDiskV2("exampleVolumeGroupDiskV2", new()
-        ///     {
-        ///         VolumeGroupExtId = resource.Nutanix_volume_group_v2.Example.Id,
-        ///         Index = 1,
-        ///         Description = "create volume disk test",
-        ///         DiskSizeBytes = 5368709120,
-        ///         DiskDataSourceReferences = new[]
-        ///         {
-        ///             new Nutanix.Inputs.VolumeGroupDiskV2DiskDataSourceReferenceArgs
-        ///             {
-        ///                 Name = "disk1",
-        ///                 ExtId = @var.Disk_data_source_ref_ext_id,
-        ///                 EntityType = "STORAGE_CONTAINER",
-        ///                 Uris = new[]
-        ///                 {
-        ///                     "uri1",
-        ///                     "uri2",
-        ///                 },
-        ///             },
-        ///         },
-        ///         DiskStorageFeatures = new[]
-        ///         {
-        ///             new Nutanix.Inputs.VolumeGroupDiskV2DiskStorageFeatureArgs
-        ///             {
-        ///                 FlashModes = new[]
-        ///                 {
-        ///                     new Nutanix.Inputs.VolumeGroupDiskV2DiskStorageFeatureFlashModeArgs
-        ///                     {
-        ///                         IsEnabled = false,
-        ///                     },
-        ///                 },
-        ///             },
-        ///         },
-        ///     });
-        /// 
-        ///     var exampleVolumeGroupDisksV2 = Nutanix.GetVolumeGroupDisksV2.Invoke(new()
-        ///     {
-        ///         VolumeGroupExtId = resource.Nutanix_volume_group_v2.Example.Id,
-        ///         Filter = "startswith(storageContainerId, var.filter_value)",
-        ///         Limit = 1,
+        ///         Filter = "storageContainerId eq '07c2da68-bb67-4535-9b2a-81504f6bb2e3'",
+        ///         VolumeGroupExtId = "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
         ///     });
         /// 
         /// });
@@ -234,85 +92,14 @@ namespace PiersKarsenbarg.Nutanix
         /// using System.Collections.Generic;
         /// using System.Linq;
         /// using Pulumi;
-        /// using Nutanix = PiersKarsenbarg.Nutanix;
         /// using Nutanix = Pulumi.Nutanix;
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var exampleVolumeGroupV2 = new Nutanix.VolumeGroupV2("exampleVolumeGroupV2", new()
+        ///     var list_volume_disks = Nutanix.GetVolumeGroupDisksV2.Invoke(new()
         ///     {
-        ///         Description = "Test Volume group with min spec and no Auth",
-        ///         ShouldLoadBalanceVmAttachments = false,
-        ///         SharingStatus = "SHARED",
-        ///         TargetName = "volumegroup-test-0",
-        ///         CreatedBy = "Test",
-        ///         ClusterReference = "&lt;Cluster uuid&gt;",
-        ///         IscsiFeatures = new[]
-        ///         {
-        ///             new Nutanix.Inputs.VolumeGroupV2IscsiFeatureArgs
-        ///             {
-        ///                 EnabledAuthentications = "CHAP",
-        ///                 TargetSecret = "1234567891011",
-        ///             },
-        ///         },
-        ///         StorageFeatures = new[]
-        ///         {
-        ///             new Nutanix.Inputs.VolumeGroupV2StorageFeatureArgs
-        ///             {
-        ///                 FlashModes = new[]
-        ///                 {
-        ///                     new Nutanix.Inputs.VolumeGroupV2StorageFeatureFlashModeArgs
-        ///                     {
-        ///                         IsEnabled = true,
-        ///                     },
-        ///                 },
-        ///             },
-        ///         },
-        ///         UsageType = "USER",
-        ///         IsHidden = false,
-        ///     });
-        /// 
-        ///     // Attach a volume group disk to the previous volume group
-        ///     var exampleVolumeGroupDiskV2 = new Nutanix.VolumeGroupDiskV2("exampleVolumeGroupDiskV2", new()
-        ///     {
-        ///         VolumeGroupExtId = resource.Nutanix_volume_group_v2.Example.Id,
-        ///         Index = 1,
-        ///         Description = "create volume disk test",
-        ///         DiskSizeBytes = 5368709120,
-        ///         DiskDataSourceReferences = new[]
-        ///         {
-        ///             new Nutanix.Inputs.VolumeGroupDiskV2DiskDataSourceReferenceArgs
-        ///             {
-        ///                 Name = "disk1",
-        ///                 ExtId = @var.Disk_data_source_ref_ext_id,
-        ///                 EntityType = "STORAGE_CONTAINER",
-        ///                 Uris = new[]
-        ///                 {
-        ///                     "uri1",
-        ///                     "uri2",
-        ///                 },
-        ///             },
-        ///         },
-        ///         DiskStorageFeatures = new[]
-        ///         {
-        ///             new Nutanix.Inputs.VolumeGroupDiskV2DiskStorageFeatureArgs
-        ///             {
-        ///                 FlashModes = new[]
-        ///                 {
-        ///                     new Nutanix.Inputs.VolumeGroupDiskV2DiskStorageFeatureFlashModeArgs
-        ///                     {
-        ///                         IsEnabled = false,
-        ///                     },
-        ///                 },
-        ///             },
-        ///         },
-        ///     });
-        /// 
-        ///     var exampleVolumeGroupDisksV2 = Nutanix.GetVolumeGroupDisksV2.Invoke(new()
-        ///     {
-        ///         VolumeGroupExtId = resource.Nutanix_volume_group_v2.Example.Id,
-        ///         Filter = "startswith(storageContainerId, var.filter_value)",
-        ///         Limit = 1,
+        ///         Filter = "storageContainerId eq '07c2da68-bb67-4535-9b2a-81504f6bb2e3'",
+        ///         VolumeGroupExtId = "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
         ///     });
         /// 
         /// });

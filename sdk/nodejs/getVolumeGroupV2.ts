@@ -13,12 +13,10 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const vg = new nutanix.VolumeGroupV2("vg", {clusterReference: local.cluster1});
  * const volumeGroup = nutanix.getVolumeGroupV2({
- *     extId: resource.nutanix_volume_group_v2.test.id,
+ *     extId: "d09aeec9-5bb7-4bfd-9717-a051178f6e7c",
  * });
  * ```
  */
@@ -115,12 +113,10 @@ export interface GetVolumeGroupV2Result {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const vg = new nutanix.VolumeGroupV2("vg", {clusterReference: local.cluster1});
  * const volumeGroup = nutanix.getVolumeGroupV2({
- *     extId: resource.nutanix_volume_group_v2.test.id,
+ *     extId: "d09aeec9-5bb7-4bfd-9717-a051178f6e7c",
  * });
  * ```
  */

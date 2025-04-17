@@ -31,6 +31,25 @@ import (
 //			if err != nil {
 //				return err
 //			}
+//			_, err = nutanix.GetFloatingIpsV2(ctx, &nutanix.GetFloatingIpsV2Args{
+//				Filter: pulumi.StringRef("name eq 'floating_ip_example'"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.GetFloatingIpsV2(ctx, &nutanix.GetFloatingIpsV2Args{
+//				Limit: pulumi.IntRef(10),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.GetFloatingIpsV2(ctx, &nutanix.GetFloatingIpsV2Args{
+//				Filter: pulumi.StringRef("name eq 'floating_ip_example'"),
+//				Limit:  pulumi.IntRef(10),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
 //			return nil
 //		})
 //	}
@@ -48,13 +67,24 @@ func GetFloatingIpsV2(ctx *pulumi.Context, args *GetFloatingIpsV2Args, opts ...p
 
 // A collection of arguments for invoking getFloatingIpsV2.
 type GetFloatingIpsV2Args struct {
-	// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+	// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. The expand can be applied to the following fields:
+	// - externalSubnet
+	// - vpc
+	// - vmNic
 	Expand *string `pulumi:"expand"`
-	// A URL query parameter that allows clients to filter a collection of resources.
+	// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+	// - externalSubnetReference
+	// - floatingIp/ipv4/value
+	// - floatingIp/ipv6/value
+	// - loadBalancerSessionReference
+	// - name
 	Filter *string `pulumi:"filter"`
 	// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
 	Limit *int `pulumi:"limit"`
-	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+	// - floatingIp/ipv4/value
+	// - floatingIp/ipv6/value
+	// - name
 	OrderBy *string `pulumi:"orderBy"`
 	// A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
 	Page *int `pulumi:"page"`
@@ -62,8 +92,9 @@ type GetFloatingIpsV2Args struct {
 
 // A collection of values returned by getFloatingIpsV2.
 type GetFloatingIpsV2Result struct {
-	Expand      *string                      `pulumi:"expand"`
-	Filter      *string                      `pulumi:"filter"`
+	Expand *string `pulumi:"expand"`
+	Filter *string `pulumi:"filter"`
+	// List of all Floating IPs.
 	FloatingIps []GetFloatingIpsV2FloatingIp `pulumi:"floatingIps"`
 	// The provider-assigned unique ID for this managed resource.
 	Id      string  `pulumi:"id"`
@@ -83,13 +114,24 @@ func GetFloatingIpsV2Output(ctx *pulumi.Context, args GetFloatingIpsV2OutputArgs
 
 // A collection of arguments for invoking getFloatingIpsV2.
 type GetFloatingIpsV2OutputArgs struct {
-	// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+	// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. The expand can be applied to the following fields:
+	// - externalSubnet
+	// - vpc
+	// - vmNic
 	Expand pulumi.StringPtrInput `pulumi:"expand"`
-	// A URL query parameter that allows clients to filter a collection of resources.
+	// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+	// - externalSubnetReference
+	// - floatingIp/ipv4/value
+	// - floatingIp/ipv6/value
+	// - loadBalancerSessionReference
+	// - name
 	Filter pulumi.StringPtrInput `pulumi:"filter"`
 	// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
 	Limit pulumi.IntPtrInput `pulumi:"limit"`
-	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+	// - floatingIp/ipv4/value
+	// - floatingIp/ipv6/value
+	// - name
 	OrderBy pulumi.StringPtrInput `pulumi:"orderBy"`
 	// A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
 	Page pulumi.IntPtrInput `pulumi:"page"`
@@ -122,6 +164,7 @@ func (o GetFloatingIpsV2ResultOutput) Filter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFloatingIpsV2Result) *string { return v.Filter }).(pulumi.StringPtrOutput)
 }
 
+// List of all Floating IPs.
 func (o GetFloatingIpsV2ResultOutput) FloatingIps() GetFloatingIpsV2FloatingIpArrayOutput {
 	return o.ApplyT(func(v GetFloatingIpsV2Result) []GetFloatingIpsV2FloatingIp { return v.FloatingIps }).(GetFloatingIpsV2FloatingIpArrayOutput)
 }

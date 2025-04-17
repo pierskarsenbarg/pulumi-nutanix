@@ -250,7 +250,7 @@ def get_cluster_v2(expand: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    cluster = nutanix.get_cluster_v2(ext_id="<YOUR-CLUSTER-ID>")
+    get_cluster = nutanix.get_cluster_v2(ext_id="c2c249b0-98a0-43fa-9ff6-dcde578d3936")
     ```
 
 
@@ -295,7 +295,7 @@ def get_cluster_v2_output(expand: Optional[pulumi.Input[Optional[builtins.str]]]
     import pulumi
     import pulumi_nutanix as nutanix
 
-    cluster = nutanix.get_cluster_v2(ext_id="<YOUR-CLUSTER-ID>")
+    get_cluster = nutanix.get_cluster_v2(ext_id="c2c249b0-98a0-43fa-9ff6-dcde578d3936")
     ```
 
 

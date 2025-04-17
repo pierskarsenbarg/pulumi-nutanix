@@ -15,15 +15,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdResult
     {
         /// <summary>
-        /// - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+        /// A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnResult> Fqdns;
         /// <summary>
-        /// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+        /// An unique address that identifies a device on the internet or a local network in IPv4 format.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv4Result> Ipv4s;
         /// <summary>
-        /// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+        /// An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Result> Ipv6s;
 

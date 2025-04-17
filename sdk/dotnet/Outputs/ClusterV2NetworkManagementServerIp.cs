@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class ClusterV2NetworkManagementServerIp
     {
         /// <summary>
-        /// - (Optional) ip adresss params.
+        /// - (Optional) ip address params.
         /// </summary>
         public readonly ImmutableArray<Outputs.ClusterV2NetworkManagementServerIpIpv4> Ipv4s;
         /// <summary>

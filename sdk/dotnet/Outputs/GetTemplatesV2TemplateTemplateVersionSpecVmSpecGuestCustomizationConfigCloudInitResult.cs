@@ -14,19 +14,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitResult
     {
-        /// <summary>
-        /// The script to use for cloud-init.
-        /// * `cloud_init_script.user_data`: user data object
-        /// * `cloud_init_script.custom_keys`: The list of the individual KeyValuePair elements.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigCloudInitCloudInitScriptResult> CloudInitScripts;
-        /// <summary>
-        /// Type of datasource. Default: CONFIG_DRIVE_V2
-        /// </summary>
         public readonly string DatasourceType;
-        /// <summary>
-        /// The contents of the meta_data configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
-        /// </summary>
         public readonly string Metadata;
 
         [OutputConstructor]

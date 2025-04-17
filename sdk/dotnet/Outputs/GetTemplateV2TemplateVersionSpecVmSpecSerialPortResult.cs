@@ -26,7 +26,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// Indicates whether the serial port is connected or not.
         /// </summary>
         public readonly bool IsConnected;
+        /// <summary>
+        /// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecSerialPortLinkResult> Links;
+        /// <summary>
+        /// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// </summary>
         public readonly string TenantId;
 
         [OutputConstructor]

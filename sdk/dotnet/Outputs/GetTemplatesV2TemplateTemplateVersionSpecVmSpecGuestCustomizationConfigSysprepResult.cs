@@ -14,15 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigSysprepResult
     {
-        /// <summary>
-        /// Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Default is 'PREPARED'.
-        /// </summary>
         public readonly string InstallType;
-        /// <summary>
-        /// Object either UnattendXml or CustomKeyValues
-        /// * `sysprep_script.unattend_xml`: xml object
-        /// * `sysprep_script.custom_key_values`: The list of the individual KeyValuePair elements.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigSysprepSysprepScriptResult> SysprepScripts;
 
         [OutputConstructor]

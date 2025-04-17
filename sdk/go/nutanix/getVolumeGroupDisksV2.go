@@ -26,68 +26,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewVolumeGroupV2(ctx, "exampleVolumeGroupV2", &nutanix.VolumeGroupV2Args{
-//				Description:                    pulumi.String("Test Volume group with min spec and no Auth"),
-//				ShouldLoadBalanceVmAttachments: pulumi.Bool(false),
-//				SharingStatus:                  pulumi.String("SHARED"),
-//				TargetName:                     pulumi.String("volumegroup-test-0"),
-//				CreatedBy:                      pulumi.String("Test"),
-//				ClusterReference:               pulumi.String("<Cluster uuid>"),
-//				IscsiFeatures: nutanix.VolumeGroupV2IscsiFeatureArray{
-//					&nutanix.VolumeGroupV2IscsiFeatureArgs{
-//						EnabledAuthentications: pulumi.String("CHAP"),
-//						TargetSecret:           pulumi.String("1234567891011"),
-//					},
-//				},
-//				StorageFeatures: nutanix.VolumeGroupV2StorageFeatureArray{
-//					&nutanix.VolumeGroupV2StorageFeatureArgs{
-//						FlashModes: nutanix.VolumeGroupV2StorageFeatureFlashModeArray{
-//							&nutanix.VolumeGroupV2StorageFeatureFlashModeArgs{
-//								IsEnabled: pulumi.Bool(true),
-//							},
-//						},
-//					},
-//				},
-//				UsageType: pulumi.String("USER"),
-//				IsHidden:  pulumi.Bool(false),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			// Attach a volume group disk to the previous volume group
-//			_, err = nutanix.NewVolumeGroupDiskV2(ctx, "exampleVolumeGroupDiskV2", &nutanix.VolumeGroupDiskV2Args{
-//				VolumeGroupExtId: pulumi.Any(resource.Nutanix_volume_group_v2.Example.Id),
-//				Index:            pulumi.Int(1),
-//				Description:      pulumi.String("create volume disk test"),
-//				DiskSizeBytes:    pulumi.Int(5368709120),
-//				DiskDataSourceReferences: nutanix.VolumeGroupDiskV2DiskDataSourceReferenceArray{
-//					&nutanix.VolumeGroupDiskV2DiskDataSourceReferenceArgs{
-//						Name:       pulumi.String("disk1"),
-//						ExtId:      pulumi.Any(_var.Disk_data_source_ref_ext_id),
-//						EntityType: pulumi.String("STORAGE_CONTAINER"),
-//						Uris: pulumi.StringArray{
-//							pulumi.String("uri1"),
-//							pulumi.String("uri2"),
-//						},
-//					},
-//				},
-//				DiskStorageFeatures: nutanix.VolumeGroupDiskV2DiskStorageFeatureArray{
-//					&nutanix.VolumeGroupDiskV2DiskStorageFeatureArgs{
-//						FlashModes: nutanix.VolumeGroupDiskV2DiskStorageFeatureFlashModeArray{
-//							&nutanix.VolumeGroupDiskV2DiskStorageFeatureFlashModeArgs{
-//								IsEnabled: pulumi.Bool(false),
-//							},
-//						},
-//					},
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			_, err = nutanix.GetVolumeGroupDisksV2(ctx, &nutanix.GetVolumeGroupDisksV2Args{
-//				VolumeGroupExtId: resource.Nutanix_volume_group_v2.Example.Id,
-//				Filter:           pulumi.StringRef("startswith(storageContainerId, var.filter_value)"),
-//				Limit:            pulumi.IntRef(1),
+//			_, err := nutanix.GetVolumeGroupDisksV2(ctx, &nutanix.GetVolumeGroupDisksV2Args{
+//				Filter:           pulumi.StringRef("storageContainerId eq '07c2da68-bb67-4535-9b2a-81504f6bb2e3'"),
+//				VolumeGroupExtId: "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
 //			}, nil)
 //			if err != nil {
 //				return err

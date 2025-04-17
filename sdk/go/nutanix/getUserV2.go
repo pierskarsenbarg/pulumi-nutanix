@@ -28,7 +28,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.GetUserV2(ctx, &nutanix.GetUserV2Args{
-//				ExtId: "<user ext Id>",
+//				ExtId: "d3a3232a-9055-4740-b54f-b21a33524565",
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -312,7 +312,7 @@ def get_user_v2(ext_id: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    user = nutanix.get_user_v2(ext_id="<user ext Id>")
+    get_user = nutanix.get_user_v2(ext_id="d3a3232a-9055-4740-b54f-b21a33524565")
     ```
 
     ## Argument Reference
@@ -363,7 +363,7 @@ def get_user_v2_output(ext_id: Optional[pulumi.Input[builtins.str]] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    user = nutanix.get_user_v2(ext_id="<user ext Id>")
+    get_user = nutanix.get_user_v2(ext_id="d3a3232a-9055-4740-b54f-b21a33524565")
     ```
 
     ## Argument Reference

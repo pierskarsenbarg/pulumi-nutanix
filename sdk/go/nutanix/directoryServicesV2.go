@@ -28,16 +28,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewDirectoryServicesV2(ctx, "example", &nutanix.DirectoryServicesV2Args{
-//				DirectoryType: pulumi.String("directory type"),
-//				DomainName:    pulumi.String("domain name"),
+//			// Add Directory Service .
+//			_, err := nutanix.NewDirectoryServicesV2(ctx, "active-directory", &nutanix.DirectoryServicesV2Args{
+//				Url:           pulumi.String("ldap://10.xx.xx.xx:xxxx"),
+//				DirectoryType: pulumi.String("ACTIVE_DIRECTORY"),
+//				DomainName:    pulumi.String("nutanix.com"),
 //				ServiceAccounts: nutanix.DirectoryServicesV2ServiceAccountArray{
 //					&nutanix.DirectoryServicesV2ServiceAccountArgs{
-//						Password: pulumi.String("service account password"),
-//						Username: pulumi.String("service account username"),
+//						Username: pulumi.String("username"),
+//						Password: pulumi.String("password"),
 //					},
 //				},
-//				Url: pulumi.String("URL for the Directory Service"),
+//				WhiteListedGroups: pulumi.StringArray{
+//					pulumi.String("example"),
+//				},
 //			})
 //			if err != nil {
 //				return err

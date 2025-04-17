@@ -9,6 +9,7 @@ import typing
 from .access_control_policy import *
 from .address_group import *
 from .address_groups_v2 import *
+from .associate_category_to_volume_group_v2 import *
 from .authorization_policy_v2 import *
 from .category_key import *
 from .category_v2 import *
@@ -35,6 +36,7 @@ from .get_address_groups_v2 import *
 from .get_assert_helper import *
 from .get_authorization_policies_v2 import *
 from .get_authorization_policy_v2 import *
+from .get_blueprint_runtime_editables import *
 from .get_categories_v2 import *
 from .get_category_key import *
 from .get_category_v2 import *
@@ -73,6 +75,10 @@ from .get_karbon_cluster_ssh import *
 from .get_karbon_clusters import *
 from .get_karbon_private_registries import *
 from .get_karbon_private_registry import *
+from .get_lcm_config_v2 import *
+from .get_lcm_entities_v2 import *
+from .get_lcm_entity_v2 import *
+from .get_lcm_status_v2 import *
 from .get_ndb_clone import *
 from .get_ndb_clones import *
 from .get_ndb_cluster import *
@@ -107,16 +113,27 @@ from .get_pbr import *
 from .get_pbr_v2 import *
 from .get_pbrs import *
 from .get_pbrs_v2 import *
+from .get_pc_backup_target_v2 import *
+from .get_pc_backup_targets_v2 import *
+from .get_pc_restore_point_v2 import *
+from .get_pc_restore_points_v2 import *
+from .get_pc_restore_source_v2 import *
+from .get_pc_v2 import *
+from .get_pcs_v2 import *
 from .get_permission import *
 from .get_permissions import *
 from .get_project import *
 from .get_projects import *
+from .get_protected_resource_v2 import *
+from .get_protection_policies_v2 import *
+from .get_protection_policy_v2 import *
 from .get_protection_rule import *
 from .get_protection_rules import *
 from .get_recovery_plan import *
 from .get_recovery_plans import *
 from .get_recovery_point_v2 import *
 from .get_recovery_points_v2 import *
+from .get_restorable_pcs_v2 import *
 from .get_role import *
 from .get_role_v2 import *
 from .get_roles import *
@@ -127,6 +144,9 @@ from .get_route_v2 import *
 from .get_routes_v2 import *
 from .get_saml_identity_provider_v2 import *
 from .get_saml_identity_providers_v2 import *
+from .get_self_service_app import *
+from .get_self_service_app_snapshots import *
+from .get_self_service_snapshot_policy_list import *
 from .get_service_group import *
 from .get_service_group_v2 import *
 from .get_service_groups import *
@@ -169,6 +189,10 @@ from .images_v2 import *
 from .karbon_cluster import *
 from .karbon_private_registry import *
 from .karbon_worker_nodepool import *
+from .lcm_config_v2 import *
+from .lcm_perform_inventory_v2 import *
+from .lcm_prechecks_v2 import *
+from .lcm_upgrade_v2 import *
 from .ndb_authorize_dbserver import *
 from .ndb_clone import *
 from .ndb_clone_refresh import *
@@ -199,18 +223,31 @@ from .ngt_installation_v2 import *
 from .ngt_upgrade_v2 import *
 from .pbr import *
 from .pbr_v2 import *
+from .pc_backup_target_v2 import *
+from .pc_deploy_v2 import *
 from .pc_registration_v2 import *
+from .pc_restore_source_v2 import *
+from .pc_restore_v2 import *
+from .pc_unregistration_v2 import *
 from .project import *
+from .promote_protected_resource_v2 import *
+from .protection_policy_v2 import *
 from .protection_rule import *
 from .provider import *
 from .recovery_plan import *
 from .recovery_point_replicate_v2 import *
 from .recovery_point_restore_v2 import *
 from .recovery_points_v2 import *
+from .restore_protected_resource_v2 import *
 from .role import *
 from .roles_v2 import *
 from .routes_v2 import *
 from .saml_identity_providers_v2 import *
+from .self_service_app_custom_action import *
+from .self_service_app_patch import *
+from .self_service_app_provision import *
+from .self_service_app_recovery_point import *
+from .self_service_app_restore import *
 from .service_group import *
 from .service_groups_v2 import *
 from .static_routes import *
@@ -273,6 +310,14 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/addressGroupsV2:AddressGroupsV2": "AddressGroupsV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/associateCategoryToVolumeGroupV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/associateCategoryToVolumeGroupV2:AssociateCategoryToVolumeGroupV2": "AssociateCategoryToVolumeGroupV2"
   }
  },
  {
@@ -457,6 +502,38 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/karbonWorkerNodepool:KarbonWorkerNodepool": "KarbonWorkerNodepool"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/lcmConfigV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/lcmConfigV2:LcmConfigV2": "LcmConfigV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/lcmPerformInventoryV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/lcmPerformInventoryV2:LcmPerformInventoryV2": "LcmPerformInventoryV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/lcmPrechecksV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/lcmPrechecksV2:LcmPrechecksV2": "LcmPrechecksV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/lcmUpgradeV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/lcmUpgradeV2:LcmUpgradeV2": "LcmUpgradeV2"
   }
  },
  {
@@ -701,6 +778,22 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/pcBackupTargetV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/pcBackupTargetV2:PcBackupTargetV2": "PcBackupTargetV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/pcDeployV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/pcDeployV2:PcDeployV2": "PcDeployV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/pcRegistrationV2",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -709,10 +802,50 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/pcRestoreSourceV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/pcRestoreSourceV2:PcRestoreSourceV2": "PcRestoreSourceV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/pcRestoreV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/pcRestoreV2:PcRestoreV2": "PcRestoreV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/pcUnregistrationV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/pcUnregistrationV2:PcUnregistrationV2": "PcUnregistrationV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/project",
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/project:Project": "Project"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/promoteProtectedResourceV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/promoteProtectedResourceV2:PromoteProtectedResourceV2": "PromoteProtectedResourceV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/protectionPolicyV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/protectionPolicyV2:ProtectionPolicyV2": "ProtectionPolicyV2"
   }
  },
  {
@@ -757,6 +890,14 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/restoreProtectedResourceV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/restoreProtectedResourceV2:RestoreProtectedResourceV2": "RestoreProtectedResourceV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/role",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -785,6 +926,46 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/samlIdentityProvidersV2:SamlIdentityProvidersV2": "SamlIdentityProvidersV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/selfServiceAppCustomAction",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/selfServiceAppCustomAction:SelfServiceAppCustomAction": "SelfServiceAppCustomAction"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/selfServiceAppPatch",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/selfServiceAppPatch:SelfServiceAppPatch": "SelfServiceAppPatch"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/selfServiceAppProvision",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/selfServiceAppProvision:SelfServiceAppProvision": "SelfServiceAppProvision"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/selfServiceAppRecoveryPoint",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/selfServiceAppRecoveryPoint:SelfServiceAppRecoveryPoint": "SelfServiceAppRecoveryPoint"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/selfServiceAppRestore",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/selfServiceAppRestore:SelfServiceAppRestore": "SelfServiceAppRestore"
   }
  },
  {

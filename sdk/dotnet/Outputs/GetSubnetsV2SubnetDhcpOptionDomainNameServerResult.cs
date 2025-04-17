@@ -14,13 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetSubnetsV2SubnetDhcpOptionDomainNameServerResult
     {
-        /// <summary>
-        /// IPv4 Object
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetDhcpOptionDomainNameServerIpv4Result> Ipv4s;
-        /// <summary>
-        /// IPv6 Object
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetDhcpOptionDomainNameServerIpv6Result> Ipv6s;
 
         [OutputConstructor]

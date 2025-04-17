@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Get a single recovery point  corresponding to the extId.
+ * Get the VM recovery point identified by ex_id.
  *
  * ## Example Usage
  *
@@ -15,9 +15,9 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const example = nutanix.getVmRecoveryPointInfoV2({
- *     extId: "<vm_recovery_point_uuid>",
- *     recoveryPointExtId: "<recovery_point_uuid>",
+ * const rp_vm_info = nutanix.getVmRecoveryPointInfoV2({
+ *     extId: "85ac418e-c847-45ab-9816-40a3c4de148c",
+ *     recoveryPointExtId: "af1070f7-c946-49da-9b17-e337e06e0a18",
  * });
  * ```
  */
@@ -42,6 +42,9 @@ export interface GetVmRecoveryPointInfoV2Args {
      * The external identifier that can be used to identify a VM recovery point.
      */
     extId: string;
+    /**
+     * The external identifier that can be used to retrieve the recovery point using its URL.
+     */
     recoveryPointExtId: string;
 }
 
@@ -93,7 +96,7 @@ export interface GetVmRecoveryPointInfoV2Result {
     readonly vmExtId: string;
 }
 /**
- * Get a single recovery point  corresponding to the extId.
+ * Get the VM recovery point identified by ex_id.
  *
  * ## Example Usage
  *
@@ -101,9 +104,9 @@ export interface GetVmRecoveryPointInfoV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const example = nutanix.getVmRecoveryPointInfoV2({
- *     extId: "<vm_recovery_point_uuid>",
- *     recoveryPointExtId: "<recovery_point_uuid>",
+ * const rp_vm_info = nutanix.getVmRecoveryPointInfoV2({
+ *     extId: "85ac418e-c847-45ab-9816-40a3c4de148c",
+ *     recoveryPointExtId: "af1070f7-c946-49da-9b17-e337e06e0a18",
  * });
  * ```
  */
@@ -128,5 +131,8 @@ export interface GetVmRecoveryPointInfoV2OutputArgs {
      * The external identifier that can be used to identify a VM recovery point.
      */
     extId: pulumi.Input<string>;
+    /**
+     * The external identifier that can be used to retrieve the recovery point using its URL.
+     */
     recoveryPointExtId: pulumi.Input<string>;
 }

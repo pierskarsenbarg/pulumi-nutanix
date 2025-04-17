@@ -197,6 +197,28 @@ export interface AddressGroupsV2Link {
     rel?: pulumi.Input<string>;
 }
 
+export interface AssociateCategoryToVolumeGroupV2Category {
+    /**
+     * -(Optional) Type of entity that's represented by this reference. Default value is "CATEGORY". Valid values are:
+     * * "CATEGORY".
+     *
+     * See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/associateCategory).
+     */
+    entityType?: pulumi.Input<string>;
+    /**
+     * -(Required) The external identifier of the category.
+     */
+    extId: pulumi.Input<string>;
+    /**
+     * -(Optional) Name of entity that's represented by this reference
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * -(Optional) URI of entities that's represented by this reference.
+     */
+    uris?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
 export interface AuthorizationPolicyV2Entity {
     reserved?: pulumi.Input<string>;
 }
@@ -753,7 +775,7 @@ export interface ClusterV2Config {
      */
     clusterArch?: pulumi.Input<string>;
     /**
-     * - (Optional) Cluster function. This is part of payload for cluster 
+     * - (Optional) Cluster function. This is part of payload for cluster
      * create operation only (allowed enum values for creation are AOS, ONE_NODE & TWO_NODE only).
      * Valid values are:
      * - "AOS"
@@ -797,7 +819,7 @@ export interface ClusterV2Config {
      */
     operationMode?: pulumi.Input<string>;
     /**
-     * - (Optional) Pulse status for a cluster.
+     * - (Optional) Pulse status for a cluster. `supported only for update operations and not available during creation.`
      */
     pulseStatuses?: pulumi.Input<pulumi.Input<inputs.ClusterV2ConfigPulseStatus>[]>;
     /**
@@ -992,7 +1014,7 @@ export interface ClusterV2NetworkBackplaneSubnet {
 
 export interface ClusterV2NetworkExternalAddress {
     /**
-     * - (Optional) ip adresss params.
+     * - (Optional) ip address params.
      */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.ClusterV2NetworkExternalAddressIpv4>[]>;
     /**
@@ -1020,14 +1042,14 @@ export interface ClusterV2NetworkExternalAddressIpv6 {
     /**
      * - (Required) Ip address.
      *
-     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
 
 export interface ClusterV2NetworkExternalDataServicesIp {
     /**
-     * - (Optional) ip adresss params.
+     * - (Optional) ip address params.
      */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.ClusterV2NetworkExternalDataServicesIpIpv4>[]>;
     /**
@@ -1055,7 +1077,7 @@ export interface ClusterV2NetworkExternalDataServicesIpIpv6 {
     /**
      * - (Required) Ip address.
      *
-     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
@@ -1086,7 +1108,7 @@ export interface ClusterV2NetworkHttpProxyList {
 
 export interface ClusterV2NetworkHttpProxyListIpAddress {
     /**
-     * - (Optional) ip adresss params.
+     * - (Optional) ip address params.
      */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.ClusterV2NetworkHttpProxyListIpAddressIpv4>[]>;
     /**
@@ -1114,7 +1136,7 @@ export interface ClusterV2NetworkHttpProxyListIpAddressIpv6 {
     /**
      * - (Required) Ip address.
      *
-     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
@@ -1157,7 +1179,7 @@ export interface ClusterV2NetworkManagementServer {
 
 export interface ClusterV2NetworkManagementServerIp {
     /**
-     * - (Optional) ip adresss params.
+     * - (Optional) ip address params.
      */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.ClusterV2NetworkManagementServerIpIpv4>[]>;
     /**
@@ -1185,14 +1207,14 @@ export interface ClusterV2NetworkManagementServerIpIpv6 {
     /**
      * - (Required) Ip address.
      *
-     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
 
 export interface ClusterV2NetworkMasqueradingIp {
     /**
-     * - (Optional) ip adresss params.
+     * - (Optional) ip address params.
      */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.ClusterV2NetworkMasqueradingIpIpv4>[]>;
     /**
@@ -1220,7 +1242,7 @@ export interface ClusterV2NetworkMasqueradingIpIpv6 {
     /**
      * - (Required) Ip address.
      *
-     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
@@ -1231,7 +1253,7 @@ export interface ClusterV2NetworkNameServerIpList {
      */
     fqdns?: pulumi.Input<pulumi.Input<inputs.ClusterV2NetworkNameServerIpListFqdn>[]>;
     /**
-     * - (Optional) ip adresss params.
+     * - (Optional) ip address params.
      */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.ClusterV2NetworkNameServerIpListIpv4>[]>;
     /**
@@ -1263,7 +1285,7 @@ export interface ClusterV2NetworkNameServerIpListIpv6 {
     /**
      * - (Required) Ip address.
      *
-     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
@@ -1274,7 +1296,7 @@ export interface ClusterV2NetworkNtpServerIpList {
      */
     fqdns?: pulumi.Input<pulumi.Input<inputs.ClusterV2NetworkNtpServerIpListFqdn>[]>;
     /**
-     * - (Optional) ip adresss params.
+     * - (Optional) ip address params.
      */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.ClusterV2NetworkNtpServerIpListIpv4>[]>;
     /**
@@ -1306,7 +1328,7 @@ export interface ClusterV2NetworkNtpServerIpListIpv6 {
     /**
      * - (Required) Ip address.
      *
-     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
@@ -1355,7 +1377,7 @@ export interface ClusterV2NetworkSmtpServerServerIpAddress {
      */
     fqdns?: pulumi.Input<pulumi.Input<inputs.ClusterV2NetworkSmtpServerServerIpAddressFqdn>[]>;
     /**
-     * - (Optional) ip adresss params.
+     * - (Optional) ip address params.
      */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.ClusterV2NetworkSmtpServerServerIpAddressIpv4>[]>;
     /**
@@ -1387,7 +1409,7 @@ export interface ClusterV2NetworkSmtpServerServerIpAddressIpv6 {
     /**
      * - (Required) Ip address.
      *
-     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
@@ -1414,7 +1436,7 @@ export interface ClusterV2NodeNodeList {
 
 export interface ClusterV2NodeNodeListControllerVmIp {
     /**
-     * - (Optional) ip adresss params.
+     * - (Optional) ip address params.
      */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.ClusterV2NodeNodeListControllerVmIpIpv4>[]>;
     /**
@@ -1442,14 +1464,14 @@ export interface ClusterV2NodeNodeListControllerVmIpIpv6 {
     /**
      * - (Required) Ip address.
      *
-     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
 
 export interface ClusterV2NodeNodeListHostIp {
     /**
-     * - (Optional) ip adresss params.
+     * - (Optional) ip address params.
      */
     ipv4s?: pulumi.Input<pulumi.Input<inputs.ClusterV2NodeNodeListHostIpIpv4>[]>;
     /**
@@ -1477,7 +1499,7 @@ export interface ClusterV2NodeNodeListHostIpIpv6 {
     /**
      * - (Required) Ip address.
      *
-     * See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+     * See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
      */
     value: pulumi.Input<string>;
 }
@@ -3340,6 +3362,9 @@ export interface FoundationCentralImageClusterFoundationInitConfig {
      */
     hypervisorGateway?: pulumi.Input<string>;
     hypervisorIsoUrl?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
+     */
     hypervisorIsos?: pulumi.Input<pulumi.Input<inputs.FoundationCentralImageClusterFoundationInitConfigHypervisorIso>[]>;
     /**
      * Netmask of the hypervisor.
@@ -3428,9 +3453,6 @@ export interface FoundationCentralImageClusterFoundationInitConfigCluster {
 }
 
 export interface FoundationCentralImageClusterFoundationInitConfigHypervisorIso {
-    /**
-     * Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-     */
     hypervisorType?: pulumi.Input<string>;
     /**
      * sha256sum of the hypervisor iso.
@@ -3462,6 +3484,26 @@ export interface FoundationCentralImageClusterHypervisorIsoDetails {
      * SKU of hyperv to be installed if hypervisorType is hyperv.
      */
     hypervSku?: pulumi.Input<string>;
+    /**
+     * sha256sum of the hypervisor iso.
+     */
+    sha256sum?: pulumi.Input<string>;
+    /**
+     * URL to download hypervisor iso. Required only if imaging is needed.
+     */
+    url?: pulumi.Input<string>;
+}
+
+export interface FoundationCentralImageClusterHypervisorIsos {
+    /**
+     * Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+     */
+    hypervProductKey?: pulumi.Input<string>;
+    /**
+     * SKU of hyperv to be installed if hypervisorType is hyperv.
+     */
+    hypervSku?: pulumi.Input<string>;
+    hypervisorType?: pulumi.Input<string>;
     /**
      * sha256sum of the hypervisor iso.
      */
@@ -3513,9 +3555,6 @@ export interface FoundationCentralImageClusterNodeList {
      * Netmask of the hypervisor.
      */
     hypervisorNetmask?: pulumi.Input<string>;
-    /**
-     * Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-     */
     hypervisorType?: pulumi.Input<string>;
     /**
      * True, if the node should be imaged, False, otherwise.
@@ -5300,7 +5339,7 @@ export interface ImagePlacementPolicyV2ClusterEntityFilter {
      * Array of strings
      *
      *
-     * See detailed information in [Nutanix Image Placement Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0)
+     * See detailed information in [Nutanix Create Image Placement Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/ImagePlacementPolicies/operation/createPlacementPolicy)
      */
     categoryExtIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -5610,6 +5649,77 @@ export interface KarbonWorkerNodepoolNode {
      * ipv4 address of node
      */
     ipv4Address?: pulumi.Input<string>;
+}
+
+export interface LcmPrechecksV2EntityUpdateSpec {
+    /**
+     * UUID of the LCM entity.
+     */
+    entityUuid: pulumi.Input<string>;
+    /**
+     * Version to upgrade to.
+     *
+     * See detailed information in [Nutanix LCM Prechecks v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Prechecks/operation/performPrechecks)
+     */
+    toVersion: pulumi.Input<string>;
+}
+
+export interface LcmPrechecksV2ManagementServer {
+    /**
+     * Type of Hypervisor present in the cluster. Enum Values:
+     * * "HYPERV" : Hyper-V Hypervisor.
+     * * "ESX" : ESX Hypervisor.
+     * * "AHV" : Nutanix AHV Hypervisor.
+     */
+    hypervisorType: pulumi.Input<string>;
+    /**
+     * IP address of the management server.
+     */
+    ip: pulumi.Input<string>;
+    /**
+     * Password to login to the management server.
+     */
+    password: pulumi.Input<string>;
+    /**
+     * Username to login to the management server.
+     */
+    username: pulumi.Input<string>;
+}
+
+export interface LcmUpgradeV2EntityUpdateSpec {
+    /**
+     * UUID of the LCM entity.
+     */
+    entityUuid: pulumi.Input<string>;
+    /**
+     * Version to upgrade to.
+     *
+     *
+     * See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Upgrades/operation/performUpgrade).
+     */
+    toVersion: pulumi.Input<string>;
+}
+
+export interface LcmUpgradeV2ManagementServer {
+    /**
+     * Type of Hypervisor present in the cluster. Enum Values:
+     * * "HYPERV" : Hyper-V Hypervisor.
+     * * "ESX" : ESX Hypervisor.
+     * * "AHV" : Nutanix AHV Hypervisor.
+     */
+    hypervisorType: pulumi.Input<string>;
+    /**
+     * IP address of the management server.
+     */
+    ip: pulumi.Input<string>;
+    /**
+     * Password to login to the management server.
+     */
+    password: pulumi.Input<string>;
+    /**
+     * Username to login to the management server.
+     */
+    username: pulumi.Input<string>;
 }
 
 export interface NdbCloneActionargument {
@@ -10184,7 +10294,7 @@ export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpec {
 }
 
 export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecDestSubnet {
-    prefixLength?: pulumi.Input<string>;
+    prefixLength?: pulumi.Input<number>;
     value?: pulumi.Input<string>;
 }
 
@@ -10204,7 +10314,7 @@ export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecIcmpService {
 }
 
 export interface NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecSrcSubnet {
-    prefixLength?: pulumi.Input<string>;
+    prefixLength?: pulumi.Input<number>;
     value?: pulumi.Input<string>;
 }
 
@@ -10900,17 +11010,810 @@ export interface PbrV2Vpc {
     name?: pulumi.Input<string>;
 }
 
-export interface PcRegistrationV2Config {
-    bootstrapConfigs?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2ConfigBootstrapConfig>[]>;
-    buildInfos?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2ConfigBuildInfo>[]>;
+export interface PcBackupTargetV2Link {
+    href?: pulumi.Input<string>;
+    rel?: pulumi.Input<string>;
+}
+
+export interface PcBackupTargetV2Location {
+    /**
+     * -(Optional) A boolean value indicating whether to enable lockdown mode for a cluster.
+     */
+    clusterLocations?: pulumi.Input<pulumi.Input<inputs.PcBackupTargetV2LocationClusterLocation>[]>;
+    /**
+     * -(Optional) Currently representing the build information to be used for the cluster creation.
+     */
+    objectStoreLocations?: pulumi.Input<pulumi.Input<inputs.PcBackupTargetV2LocationObjectStoreLocation>[]>;
+}
+
+export interface PcBackupTargetV2LocationClusterLocation {
+    /**
+     * -(Required) Cluster reference of the remote cluster to be connected.
+     */
+    configs: pulumi.Input<pulumi.Input<inputs.PcBackupTargetV2LocationClusterLocationConfig>[]>;
+}
+
+export interface PcBackupTargetV2LocationClusterLocationConfig {
+    /**
+     * -(Required) Cluster UUID of a remote cluster.
+     */
+    extId: pulumi.Input<string>;
     name?: pulumi.Input<string>;
+}
+
+export interface PcBackupTargetV2LocationObjectStoreLocation {
+    /**
+     * -(Optional) Backup policy for the object store provided.
+     */
+    backupPolicies?: pulumi.Input<pulumi.Input<inputs.PcBackupTargetV2LocationObjectStoreLocationBackupPolicy>[]>;
+    /**
+     * -(Required) The base model of S3 object store endpoint where domain manager is backed up.
+     */
+    providerConfigs: pulumi.Input<pulumi.Input<inputs.PcBackupTargetV2LocationObjectStoreLocationProviderConfig>[]>;
+}
+
+export interface PcBackupTargetV2LocationObjectStoreLocationBackupPolicy {
+    /**
+     * -(Required) RPO interval in minutes at which the backup will be taken. The Value should be in the range of 60 to 1440.
+     *
+     * See detailed information in [Nutanix Create Backup Target V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/createBackupTarget).
+     */
+    rpoInMinutes: pulumi.Input<number>;
+}
+
+export interface PcBackupTargetV2LocationObjectStoreLocationProviderConfig {
+    /**
+     * -(Required) The bucket name of the object store endpoint where backup data of domain manager is to be stored.
+     */
+    bucketName: pulumi.Input<string>;
+    /**
+     * -(Optional) Secret credentials model for the object store containing access key ID and secret access key.
+     */
+    credentials?: pulumi.Input<inputs.PcBackupTargetV2LocationObjectStoreLocationProviderConfigCredentials>;
+    /**
+     * -(Optional) The region name of the object store endpoint where backup data of domain manager is stored. Default is `us-east-1`.
+     */
+    region?: pulumi.Input<string>;
+}
+
+export interface PcBackupTargetV2LocationObjectStoreLocationProviderConfigCredentials {
+    /**
+     * -(Required) Access key ID for the object store provided for backup target.
+     */
+    accessKeyId: pulumi.Input<string>;
+    /**
+     * -(Required) Secret access key for the object store provided for backup target.
+     */
+    secretAccessKey: pulumi.Input<string>;
+}
+
+export interface PcDeployV2Config {
+    /**
+     * - (Optional) Bootstrap configuration details for the domain manager (Prism Central).
+     */
+    bootstrapConfig?: pulumi.Input<inputs.PcDeployV2ConfigBootstrapConfig>;
+    /**
+     * -(Required) Currently representing the build information to be used for the cluster creation.
+     */
+    buildInfo: pulumi.Input<inputs.PcDeployV2ConfigBuildInfo>;
+    /**
+     * - (Optional) The credentials consist of a username and password for a particular user like admin. Users can pass the credentials of admin users currently which will be configured in the create domain manager operation.
+     */
+    credentials?: pulumi.Input<pulumi.Input<inputs.PcDeployV2ConfigCredential>[]>;
+    /**
+     * -(Required) Name of the domain manager (Prism Central).
+     */
+    name: pulumi.Input<string>;
+    /**
+     * -(Optional) This configuration is used to provide the resource-related details like container external identifiers, number of VCPUs, memory size, data disk size of the domain manager (Prism Central). In the case of a multi-node setup, the sum of resources like number of VCPUs, memory size and data disk size are provided.
+     */
+    resourceConfigs?: pulumi.Input<pulumi.Input<inputs.PcDeployV2ConfigResourceConfig>[]>;
+    /**
+     * -(Optional) A boolean value indicating whether to enable lockdown mode for a cluster.
+     */
+    shouldEnableLockdownMode?: pulumi.Input<boolean>;
+    /**
+     * - (Required) Domain manager (Prism Central) size is an enumeration of starter, small, large, or extra large starter values. The allowed values are:
+     * - `SMALL` : Domain manager (Prism Central) of size small.
+     * - `LARGE` : Domain manager (Prism Central) of size large.
+     * - `EXTRALARGE` : Domain manager (Prism Central) of size extra large.
+     * - `STARTER` : Domain manager (Prism Central) of size starter.
+     */
+    size: pulumi.Input<string>;
+}
+
+export interface PcDeployV2ConfigBootstrapConfig {
+    /**
+     * -(Optional) Cloud-init configuration for the domain manager (Prism Central) cluster.
+     */
+    cloudInitConfigs?: pulumi.Input<pulumi.Input<inputs.PcDeployV2ConfigBootstrapConfigCloudInitConfig>[]>;
+    /**
+     * -(Optional) Environment information for the domain manager (Prism Central) cluster.
+     */
+    environmentInfo?: pulumi.Input<inputs.PcDeployV2ConfigBootstrapConfigEnvironmentInfo>;
+}
+
+export interface PcDeployV2ConfigBootstrapConfigCloudInitConfig {
+    /**
+     * -(Optional) The script to use for cloud-init.
+     * - `cloud_init_script.user_data`: -(Optional) user data object
+     * - `cloud_init_script.custom_keys`: -(Optional) The list of the individual KeyValuePair elements.
+     */
+    cloudInitScripts?: pulumi.Input<pulumi.Input<inputs.PcDeployV2ConfigBootstrapConfigCloudInitConfigCloudInitScript>[]>;
+    /**
+     * -(Optional) Type of datasource. Default: CONFIG_DRIVE_V2
+     */
+    datasourceType?: pulumi.Input<string>;
+    /**
+     * -(Optional)The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     */
+    metadata?: pulumi.Input<string>;
+}
+
+export interface PcDeployV2ConfigBootstrapConfigCloudInitConfigCloudInitScript {
+    customKeyValues?: pulumi.Input<pulumi.Input<inputs.PcDeployV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValue>[]>;
+    userDatas?: pulumi.Input<pulumi.Input<inputs.PcDeployV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptUserData>[]>;
+}
+
+export interface PcDeployV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValue {
+    keyValuePairs?: pulumi.Input<pulumi.Input<inputs.PcDeployV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePair>[]>;
+}
+
+export interface PcDeployV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePair {
+    /**
+     * -(Required) Name of the domain manager (Prism Central).
+     */
+    name?: pulumi.Input<string>;
+    values?: pulumi.Input<pulumi.Input<inputs.PcDeployV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue>[]>;
+}
+
+export interface PcDeployV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue {
+    boolean?: pulumi.Input<boolean>;
+    integer?: pulumi.Input<number>;
+    integerLists?: pulumi.Input<pulumi.Input<number>[]>;
+    mapOfStrings?: pulumi.Input<pulumi.Input<inputs.PcDeployV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString>[]>;
+    object?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    string?: pulumi.Input<string>;
+    stringLists?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface PcDeployV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface PcDeployV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptUserData {
+    value?: pulumi.Input<string>;
+}
+
+export interface PcDeployV2ConfigBootstrapConfigEnvironmentInfo {
+    /**
+     * -(Optional) Enums denoting the provider type of the PC, that is, AHV or ESXi.
+     * Following are the supported provider types:
+     * - `VSPHERE` : Vsphere cloud provider.
+     * - `AZURE` : Azure cloud provider.
+     * - `NTNX` : Nutanix cloud provider.
+     * - `GCP` : GCP cloud provider.
+     * - `AWS` : AWS cloud provider.
+     */
+    providerType?: pulumi.Input<string>;
+    /**
+     * -(Optional) Enums denoting the instance type of the cloud PC. It indicates whether the PC is created on bare-metal or on a cloud-provisioned VM. Hence, it supports two possible values:
+     * - `NTNX` : Nutanix instance.
+     * - `NATIVE` : Native instance.
+     */
+    provisioningType?: pulumi.Input<string>;
+    /**
+     * -(Optional) Enums denoting the environment type of the PC, that is, on-prem PC or cloud PC.
+     * Following are the supported entity types:
+     * - `ONPREM` : On-prem environment.
+     * - `NTNX_CLOUD` : Nutanix cloud environment.
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface PcDeployV2ConfigBuildInfo {
+    /**
+     * -(Required) Software version.
+     */
+    version?: pulumi.Input<string>;
+}
+
+export interface PcDeployV2ConfigCredential {
+    /**
+     * -(Required) Password required for the basic auth scheme.
+     */
+    password: pulumi.Input<string>;
+    /**
+     * -(Required) Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.
+     */
+    username: pulumi.Input<string>;
+}
+
+export interface PcDeployV2ConfigResourceConfig {
+    /**
+     * -(Optional) The external identifier of the container that will be used to create the domain manager (Prism Central) cluster.
+     */
+    containerExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    dataDiskSizeBytes?: pulumi.Input<number>;
+    memorySizeBytes?: pulumi.Input<number>;
+    numVcpus?: pulumi.Input<number>;
+}
+
+export interface PcDeployV2Network {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    externalAddress?: pulumi.Input<inputs.PcDeployV2NetworkExternalAddress>;
+    /**
+     * -(Required) This configuration is used to manage Prism Central.
+     */
+    externalNetworks?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkExternalNetwork>[]>;
+    fqdn?: pulumi.Input<string>;
+    /**
+     * -(Required) This configuration is used to internally manage Prism Central network.
+     */
+    internalNetworks?: pulumi.Input<inputs.PcDeployV2NetworkInternalNetworks>;
+    /**
+     * -(Required) List of name servers on a cluster. This is part of payload for both cluster create & update operations. For create operation, only ipv4 address / fqdn values are supported currently.
+     */
+    nameServers: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkNameServer>[]>;
+    /**
+     * -(Required) List of NTP servers on a cluster. This is part of payload for both cluster create & update operations. For create operation, only ipv4 address / fqdn values are supported currently.
+     */
+    ntpServers: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkNtpServer>[]>;
+}
+
+export interface PcDeployV2NetworkExternalAddress {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkExternalAddressIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkExternalAddressIpv6>[]>;
+}
+
+export interface PcDeployV2NetworkExternalAddressIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkExternalAddressIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkExternalNetwork {
+    /**
+     * -(Required) An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+     */
+    defaultGateway: pulumi.Input<inputs.PcDeployV2NetworkExternalNetworkDefaultGateway>;
+    /**
+     * -(Required) Range of IPs used for Prism Central network setup.
+     */
+    ipRanges: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkExternalNetworkIpRange>[]>;
+    /**
+     * -(Required) The network external identifier to which Domain Manager (Prism Central) is to be deployed or is already configured.
+     */
+    networkExtId: pulumi.Input<string>;
+    /**
+     * -(Required) An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+     */
+    subnetMask: pulumi.Input<inputs.PcDeployV2NetworkExternalNetworkSubnetMask>;
+}
+
+export interface PcDeployV2NetworkExternalNetworkDefaultGateway {
+    /**
+     * -(Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkExternalNetworkDefaultGatewayFqdn>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkExternalNetworkDefaultGatewayIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkExternalNetworkDefaultGatewayIpv6>[]>;
+}
+
+export interface PcDeployV2NetworkExternalNetworkDefaultGatewayFqdn {
+    /**
+     * -(Optional) The fully qualified domain name of the host.
+     *
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/createDomainManager).
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkExternalNetworkDefaultGatewayIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkExternalNetworkDefaultGatewayIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkExternalNetworkIpRange {
+    /**
+     * -(Optional) The beginning IP address of the range.
+     */
+    begin?: pulumi.Input<inputs.PcDeployV2NetworkExternalNetworkIpRangeBegin>;
+    /**
+     * -(Optional) The ending IP address of the range.
+     */
+    end?: pulumi.Input<inputs.PcDeployV2NetworkExternalNetworkIpRangeEnd>;
+}
+
+export interface PcDeployV2NetworkExternalNetworkIpRangeBegin {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkExternalNetworkIpRangeBeginIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkExternalNetworkIpRangeBeginIpv6>[]>;
+}
+
+export interface PcDeployV2NetworkExternalNetworkIpRangeBeginIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkExternalNetworkIpRangeBeginIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkExternalNetworkIpRangeEnd {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkExternalNetworkIpRangeEndIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkExternalNetworkIpRangeEndIpv6>[]>;
+}
+
+export interface PcDeployV2NetworkExternalNetworkIpRangeEndIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkExternalNetworkIpRangeEndIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkExternalNetworkSubnetMask {
+    /**
+     * -(Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkExternalNetworkSubnetMaskFqdn>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkExternalNetworkSubnetMaskIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkExternalNetworkSubnetMaskIpv6>[]>;
+}
+
+export interface PcDeployV2NetworkExternalNetworkSubnetMaskFqdn {
+    /**
+     * -(Optional) The fully qualified domain name of the host.
+     *
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/createDomainManager).
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkExternalNetworkSubnetMaskIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkExternalNetworkSubnetMaskIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkInternalNetworks {
+    /**
+     * -(Required) An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+     */
+    defaultGateway: pulumi.Input<inputs.PcDeployV2NetworkInternalNetworksDefaultGateway>;
+    /**
+     * -(Required) Range of IPs used for Prism Central network setup.
+     */
+    ipRanges: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkInternalNetworksIpRange>[]>;
+    /**
+     * -(Required) An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+     */
+    subnetMask: pulumi.Input<inputs.PcDeployV2NetworkInternalNetworksSubnetMask>;
+}
+
+export interface PcDeployV2NetworkInternalNetworksDefaultGateway {
+    /**
+     * -(Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkInternalNetworksDefaultGatewayFqdn>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkInternalNetworksDefaultGatewayIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkInternalNetworksDefaultGatewayIpv6>[]>;
+}
+
+export interface PcDeployV2NetworkInternalNetworksDefaultGatewayFqdn {
+    /**
+     * -(Optional) The fully qualified domain name of the host.
+     *
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/createDomainManager).
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkInternalNetworksDefaultGatewayIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkInternalNetworksDefaultGatewayIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkInternalNetworksIpRange {
+    /**
+     * -(Optional) The beginning IP address of the range.
+     */
+    begin?: pulumi.Input<inputs.PcDeployV2NetworkInternalNetworksIpRangeBegin>;
+    /**
+     * -(Optional) The ending IP address of the range.
+     */
+    end?: pulumi.Input<inputs.PcDeployV2NetworkInternalNetworksIpRangeEnd>;
+}
+
+export interface PcDeployV2NetworkInternalNetworksIpRangeBegin {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkInternalNetworksIpRangeBeginIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkInternalNetworksIpRangeBeginIpv6>[]>;
+}
+
+export interface PcDeployV2NetworkInternalNetworksIpRangeBeginIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkInternalNetworksIpRangeBeginIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkInternalNetworksIpRangeEnd {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkInternalNetworksIpRangeEndIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkInternalNetworksIpRangeEndIpv6>[]>;
+}
+
+export interface PcDeployV2NetworkInternalNetworksIpRangeEndIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkInternalNetworksIpRangeEndIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkInternalNetworksSubnetMask {
+    /**
+     * -(Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkInternalNetworksSubnetMaskFqdn>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkInternalNetworksSubnetMaskIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkInternalNetworksSubnetMaskIpv6>[]>;
+}
+
+export interface PcDeployV2NetworkInternalNetworksSubnetMaskFqdn {
+    /**
+     * -(Optional) The fully qualified domain name of the host.
+     *
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/createDomainManager).
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkInternalNetworksSubnetMaskIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkInternalNetworksSubnetMaskIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkNameServer {
+    /**
+     * -(Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkNameServerFqdn>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkNameServerIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkNameServerIpv6>[]>;
+}
+
+export interface PcDeployV2NetworkNameServerFqdn {
+    /**
+     * -(Optional) The fully qualified domain name of the host.
+     *
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/createDomainManager).
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkNameServerIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkNameServerIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkNtpServer {
+    /**
+     * -(Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkNtpServerFqdn>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkNtpServerIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcDeployV2NetworkNtpServerIpv6>[]>;
+}
+
+export interface PcDeployV2NetworkNtpServerFqdn {
+    /**
+     * -(Optional) The fully qualified domain name of the host.
+     *
+     * See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/createDomainManager).
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkNtpServerIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcDeployV2NetworkNtpServerIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRegistrationV2Config {
+    bootstrapConfig?: pulumi.Input<inputs.PcRegistrationV2ConfigBootstrapConfig>;
+    buildInfo: pulumi.Input<inputs.PcRegistrationV2ConfigBuildInfo>;
+    /**
+     * -(Required)  Credentials to connect to a remote cluster.
+     */
+    credentials?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2ConfigCredential>[]>;
+    name: pulumi.Input<string>;
     resourceConfigs?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2ConfigResourceConfig>[]>;
     shouldEnableLockdownMode?: pulumi.Input<boolean>;
-    size?: pulumi.Input<string>;
+    size: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2ConfigBootstrapConfig {
-    environmentInfos?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2ConfigBootstrapConfigEnvironmentInfo>[]>;
+    cloudInitConfigs?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2ConfigBootstrapConfigCloudInitConfig>[]>;
+    environmentInfo?: pulumi.Input<inputs.PcRegistrationV2ConfigBootstrapConfigEnvironmentInfo>;
+}
+
+export interface PcRegistrationV2ConfigBootstrapConfigCloudInitConfig {
+    cloudInitScripts?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2ConfigBootstrapConfigCloudInitConfigCloudInitScript>[]>;
+    datasourceType?: pulumi.Input<string>;
+    metadata?: pulumi.Input<string>;
+}
+
+export interface PcRegistrationV2ConfigBootstrapConfigCloudInitConfigCloudInitScript {
+    customKeyValues?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValue>[]>;
+    userDatas?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptUserData>[]>;
+}
+
+export interface PcRegistrationV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValue {
+    keyValuePairs?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePair>[]>;
+}
+
+export interface PcRegistrationV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePair {
+    name?: pulumi.Input<string>;
+    values?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue>[]>;
+}
+
+export interface PcRegistrationV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue {
+    boolean?: pulumi.Input<boolean>;
+    integer?: pulumi.Input<number>;
+    integerLists?: pulumi.Input<pulumi.Input<number>[]>;
+    mapOfStrings?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString>[]>;
+    object?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    string?: pulumi.Input<string>;
+    stringLists?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface PcRegistrationV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface PcRegistrationV2ConfigBootstrapConfigCloudInitConfigCloudInitScriptUserData {
+    value?: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2ConfigBootstrapConfigEnvironmentInfo {
@@ -10921,6 +11824,19 @@ export interface PcRegistrationV2ConfigBootstrapConfigEnvironmentInfo {
 
 export interface PcRegistrationV2ConfigBuildInfo {
     version?: pulumi.Input<string>;
+}
+
+export interface PcRegistrationV2ConfigCredential {
+    /**
+     * -(Required)  Password required for the basic auth scheme.
+     *
+     * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/register).
+     */
+    password: pulumi.Input<string>;
+    /**
+     * -(Required)  Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.
+     */
+    username: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2ConfigResourceConfig {
@@ -10936,14 +11852,15 @@ export interface PcRegistrationV2Link {
 }
 
 export interface PcRegistrationV2Network {
-    externalAddresses?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkExternalAddress>[]>;
+    externalAddress?: pulumi.Input<inputs.PcRegistrationV2NetworkExternalAddress>;
     externalNetworks?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkExternalNetwork>[]>;
     /**
      * - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
      */
     fqdn?: pulumi.Input<string>;
-    nameServers?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkNameServer>[]>;
-    ntpServers?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkNtpServer>[]>;
+    internalNetworks?: pulumi.Input<inputs.PcRegistrationV2NetworkInternalNetworks>;
+    nameServers: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkNameServer>[]>;
+    ntpServers: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkNtpServer>[]>;
 }
 
 export interface PcRegistrationV2NetworkExternalAddress {
@@ -10965,7 +11882,7 @@ export interface PcRegistrationV2NetworkExternalAddressIpv4 {
     /**
      * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
      */
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2NetworkExternalAddressIpv6 {
@@ -10973,14 +11890,14 @@ export interface PcRegistrationV2NetworkExternalAddressIpv6 {
      * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
      */
     prefixLength?: pulumi.Input<number>;
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2NetworkExternalNetwork {
-    defaultGateways?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkExternalNetworkDefaultGateway>[]>;
-    ipRanges?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkExternalNetworkIpRange>[]>;
-    networkExtId?: pulumi.Input<string>;
-    subnetMasks?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkExternalNetworkSubnetMask>[]>;
+    defaultGateway: pulumi.Input<inputs.PcRegistrationV2NetworkExternalNetworkDefaultGateway>;
+    ipRanges: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkExternalNetworkIpRange>[]>;
+    networkExtId: pulumi.Input<string>;
+    subnetMask: pulumi.Input<inputs.PcRegistrationV2NetworkExternalNetworkSubnetMask>;
 }
 
 export interface PcRegistrationV2NetworkExternalNetworkDefaultGateway {
@@ -11002,7 +11919,7 @@ export interface PcRegistrationV2NetworkExternalNetworkDefaultGatewayFqdn {
     /**
      * - The fully qualified domain name of the host.
      */
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2NetworkExternalNetworkDefaultGatewayIpv4 {
@@ -11013,7 +11930,7 @@ export interface PcRegistrationV2NetworkExternalNetworkDefaultGatewayIpv4 {
     /**
      * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
      */
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2NetworkExternalNetworkDefaultGatewayIpv6 {
@@ -11021,12 +11938,12 @@ export interface PcRegistrationV2NetworkExternalNetworkDefaultGatewayIpv6 {
      * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
      */
     prefixLength?: pulumi.Input<number>;
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2NetworkExternalNetworkIpRange {
-    begins?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkExternalNetworkIpRangeBegin>[]>;
-    ends?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkExternalNetworkIpRangeEnd>[]>;
+    begin?: pulumi.Input<inputs.PcRegistrationV2NetworkExternalNetworkIpRangeBegin>;
+    end?: pulumi.Input<inputs.PcRegistrationV2NetworkExternalNetworkIpRangeEnd>;
 }
 
 export interface PcRegistrationV2NetworkExternalNetworkIpRangeBegin {
@@ -11048,7 +11965,7 @@ export interface PcRegistrationV2NetworkExternalNetworkIpRangeBeginIpv4 {
     /**
      * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
      */
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2NetworkExternalNetworkIpRangeBeginIpv6 {
@@ -11056,7 +11973,7 @@ export interface PcRegistrationV2NetworkExternalNetworkIpRangeBeginIpv6 {
      * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
      */
     prefixLength?: pulumi.Input<number>;
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2NetworkExternalNetworkIpRangeEnd {
@@ -11078,7 +11995,7 @@ export interface PcRegistrationV2NetworkExternalNetworkIpRangeEndIpv4 {
     /**
      * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
      */
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2NetworkExternalNetworkIpRangeEndIpv6 {
@@ -11086,7 +12003,7 @@ export interface PcRegistrationV2NetworkExternalNetworkIpRangeEndIpv6 {
      * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
      */
     prefixLength?: pulumi.Input<number>;
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2NetworkExternalNetworkSubnetMask {
@@ -11108,7 +12025,7 @@ export interface PcRegistrationV2NetworkExternalNetworkSubnetMaskFqdn {
     /**
      * - The fully qualified domain name of the host.
      */
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2NetworkExternalNetworkSubnetMaskIpv4 {
@@ -11119,7 +12036,7 @@ export interface PcRegistrationV2NetworkExternalNetworkSubnetMaskIpv4 {
     /**
      * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
      */
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2NetworkExternalNetworkSubnetMaskIpv6 {
@@ -11127,7 +12044,160 @@ export interface PcRegistrationV2NetworkExternalNetworkSubnetMaskIpv6 {
      * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
      */
     prefixLength?: pulumi.Input<number>;
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
+}
+
+export interface PcRegistrationV2NetworkInternalNetworks {
+    defaultGateway: pulumi.Input<inputs.PcRegistrationV2NetworkInternalNetworksDefaultGateway>;
+    ipRanges: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkInternalNetworksIpRange>[]>;
+    subnetMask: pulumi.Input<inputs.PcRegistrationV2NetworkInternalNetworksSubnetMask>;
+}
+
+export interface PcRegistrationV2NetworkInternalNetworksDefaultGateway {
+    /**
+     * - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkInternalNetworksDefaultGatewayFqdn>[]>;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkInternalNetworksDefaultGatewayIpv4>[]>;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkInternalNetworksDefaultGatewayIpv6>[]>;
+}
+
+export interface PcRegistrationV2NetworkInternalNetworksDefaultGatewayFqdn {
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRegistrationV2NetworkInternalNetworksDefaultGatewayIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRegistrationV2NetworkInternalNetworksDefaultGatewayIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    value: pulumi.Input<string>;
+}
+
+export interface PcRegistrationV2NetworkInternalNetworksIpRange {
+    begin?: pulumi.Input<inputs.PcRegistrationV2NetworkInternalNetworksIpRangeBegin>;
+    end?: pulumi.Input<inputs.PcRegistrationV2NetworkInternalNetworksIpRangeEnd>;
+}
+
+export interface PcRegistrationV2NetworkInternalNetworksIpRangeBegin {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkInternalNetworksIpRangeBeginIpv4>[]>;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkInternalNetworksIpRangeBeginIpv6>[]>;
+}
+
+export interface PcRegistrationV2NetworkInternalNetworksIpRangeBeginIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRegistrationV2NetworkInternalNetworksIpRangeBeginIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    value: pulumi.Input<string>;
+}
+
+export interface PcRegistrationV2NetworkInternalNetworksIpRangeEnd {
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkInternalNetworksIpRangeEndIpv4>[]>;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkInternalNetworksIpRangeEndIpv6>[]>;
+}
+
+export interface PcRegistrationV2NetworkInternalNetworksIpRangeEndIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRegistrationV2NetworkInternalNetworksIpRangeEndIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    value: pulumi.Input<string>;
+}
+
+export interface PcRegistrationV2NetworkInternalNetworksSubnetMask {
+    /**
+     * - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkInternalNetworksSubnetMaskFqdn>[]>;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkInternalNetworksSubnetMaskIpv4>[]>;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcRegistrationV2NetworkInternalNetworksSubnetMaskIpv6>[]>;
+}
+
+export interface PcRegistrationV2NetworkInternalNetworksSubnetMaskFqdn {
+    /**
+     * - The fully qualified domain name of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRegistrationV2NetworkInternalNetworksSubnetMaskIpv4 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRegistrationV2NetworkInternalNetworksSubnetMaskIpv6 {
+    /**
+     * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2NetworkNameServer {
@@ -11149,7 +12219,7 @@ export interface PcRegistrationV2NetworkNameServerFqdn {
     /**
      * - The fully qualified domain name of the host.
      */
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2NetworkNameServerIpv4 {
@@ -11160,7 +12230,7 @@ export interface PcRegistrationV2NetworkNameServerIpv4 {
     /**
      * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
      */
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2NetworkNameServerIpv6 {
@@ -11168,7 +12238,7 @@ export interface PcRegistrationV2NetworkNameServerIpv6 {
      * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
      */
     prefixLength?: pulumi.Input<number>;
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2NetworkNtpServer {
@@ -11190,7 +12260,7 @@ export interface PcRegistrationV2NetworkNtpServerFqdn {
     /**
      * - The fully qualified domain name of the host.
      */
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2NetworkNtpServerIpv4 {
@@ -11201,7 +12271,7 @@ export interface PcRegistrationV2NetworkNtpServerIpv4 {
     /**
      * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
      */
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2NetworkNtpServerIpv6 {
@@ -11209,7 +12279,7 @@ export interface PcRegistrationV2NetworkNtpServerIpv6 {
      * - The prefix length of the network to which this host IPv4/IPv6 address belongs.
      */
     prefixLength?: pulumi.Input<number>;
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2RemoteCluster {
@@ -11264,7 +12334,7 @@ export interface PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterA
     /**
      * - The fully qualified domain name of the host.
      */
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterAddressIpv4 {
@@ -11323,7 +12393,7 @@ export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpec {
     /**
      * -(Required)  Address configuration of a remote cluster. It requires the address of the remote, that is an IP or domain name along with the basic authentication credentials.
      */
-    remoteCluster?: pulumi.Input<inputs.PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteCluster>;
+    remoteCluster: pulumi.Input<inputs.PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteCluster>;
 }
 
 export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteCluster {
@@ -11356,7 +12426,7 @@ export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemo
     /**
      * - The fully qualified domain name of the host.
      */
-    value?: pulumi.Input<string>;
+    value: pulumi.Input<string>;
 }
 
 export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterAddressIpv4 {
@@ -11396,6 +12466,774 @@ export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemo
      * -(Required)  Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.
      */
     username: pulumi.Input<string>;
+}
+
+export interface PcRestoreSourceV2Link {
+    href?: pulumi.Input<string>;
+    rel?: pulumi.Input<string>;
+}
+
+export interface PcRestoreSourceV2Location {
+    /**
+     * -(Optional) A boolean value indicating whether to enable lockdown mode for a cluster.
+     */
+    clusterLocations?: pulumi.Input<pulumi.Input<inputs.PcRestoreSourceV2LocationClusterLocation>[]>;
+    /**
+     * -(Optional) Currently representing the build information to be used for the cluster creation.
+     */
+    objectStoreLocations?: pulumi.Input<pulumi.Input<inputs.PcRestoreSourceV2LocationObjectStoreLocation>[]>;
+}
+
+export interface PcRestoreSourceV2LocationClusterLocation {
+    /**
+     * -(Required) Cluster reference of the remote cluster to be connected.
+     */
+    configs: pulumi.Input<pulumi.Input<inputs.PcRestoreSourceV2LocationClusterLocationConfig>[]>;
+}
+
+export interface PcRestoreSourceV2LocationClusterLocationConfig {
+    /**
+     * -(Required) Cluster UUID of a remote cluster.
+     */
+    extId: pulumi.Input<string>;
+    name?: pulumi.Input<string>;
+}
+
+export interface PcRestoreSourceV2LocationObjectStoreLocation {
+    /**
+     * -(Optional) Backup policy for the object store provided.
+     */
+    backupPolicies?: pulumi.Input<pulumi.Input<inputs.PcRestoreSourceV2LocationObjectStoreLocationBackupPolicy>[]>;
+    /**
+     * -(Required) The base model of S3 object store endpoint where domain manager is backed up.
+     */
+    providerConfigs: pulumi.Input<pulumi.Input<inputs.PcRestoreSourceV2LocationObjectStoreLocationProviderConfig>[]>;
+}
+
+export interface PcRestoreSourceV2LocationObjectStoreLocationBackupPolicy {
+    /**
+     * -(Required) RPO interval in minutes at which the backup will be taken. The Value should be in the range of 60 to 1440.
+     *
+     * See detailed information in [Nutanix Restore Source V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/createRestoreSource).
+     */
+    rpoInMinutes: pulumi.Input<number>;
+}
+
+export interface PcRestoreSourceV2LocationObjectStoreLocationProviderConfig {
+    /**
+     * -(Required) The bucket name of the object store endpoint where backup data of domain manager is to be stored.
+     */
+    bucketName: pulumi.Input<string>;
+    /**
+     * -(Optional) Secret credentials model for the object store containing access key ID and secret access key.
+     */
+    credentials?: pulumi.Input<inputs.PcRestoreSourceV2LocationObjectStoreLocationProviderConfigCredentials>;
+    /**
+     * -(Optional) The region name of the object store endpoint where backup data of domain manager is stored. Default is `us-east-1`.
+     */
+    region?: pulumi.Input<string>;
+}
+
+export interface PcRestoreSourceV2LocationObjectStoreLocationProviderConfigCredentials {
+    /**
+     * -(Required) Access key ID for the object store provided for backup target.
+     */
+    accessKeyId: pulumi.Input<string>;
+    /**
+     * -(Required) Secret access key for the object store provided for backup target.
+     */
+    secretAccessKey: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManager {
+    /**
+     * -(Required) Domain manager (Prism Central) cluster configuration details.
+     */
+    configs: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerConfig>[]>;
+    hostingClusterExtId?: pulumi.Input<string>;
+    isRegisteredWithHostingCluster?: pulumi.Input<boolean>;
+    /**
+     * -(Required) Domain manager (Prism Central) network configuration details.
+     */
+    networks: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetwork>[]>;
+    nodeExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `false`.
+     */
+    shouldEnableHighAvailability?: pulumi.Input<boolean>;
+}
+
+export interface PcRestoreV2DomainManagerConfig {
+    /**
+     * - (Optional) Bootstrap configuration details for the domain manager (Prism Central).
+     */
+    bootstrapConfig?: pulumi.Input<inputs.PcRestoreV2DomainManagerConfigBootstrapConfig>;
+    /**
+     * -(Required) Currently representing the build information to be used for the cluster creation.
+     */
+    buildInfo: pulumi.Input<inputs.PcRestoreV2DomainManagerConfigBuildInfo>;
+    /**
+     * - (Optional) The credentials consist of a username and password for a particular user like admin. Users can pass the credentials of admin users currently which will be configured in the create domain manager operation.
+     */
+    credentials?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerConfigCredential>[]>;
+    /**
+     * -(Required) Name of the domain manager (Prism Central).
+     */
+    name: pulumi.Input<string>;
+    /**
+     * -(Optional) This configuration is used to provide the resource-related details like container external identifiers, number of VCPUs, memory size, data disk size of the domain manager (Prism Central). In the case of a multi-node setup, the sum of resources like number of VCPUs, memory size and data disk size are provided.
+     */
+    resourceConfigs?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerConfigResourceConfig>[]>;
+    /**
+     * -(Optional) A boolean value indicating whether to enable lockdown mode for a cluster.
+     */
+    shouldEnableLockdownMode?: pulumi.Input<boolean>;
+    /**
+     * - (Required) Domain manager (Prism Central) size is an enumeration of starter, small, large, or extra large starter values. The allowed values are:
+     * - `SMALL` : Domain manager (Prism Central) of size small.
+     * - `LARGE` : Domain manager (Prism Central) of size large.
+     * - `EXTRALARGE` : Domain manager (Prism Central) of size extra large.
+     * - `STARTER` : Domain manager (Prism Central) of size starter.
+     */
+    size: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerConfigBootstrapConfig {
+    /**
+     * -(Optional) Cloud-init configuration for the domain manager (Prism Central) cluster.
+     */
+    cloudInitConfigs?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfig>[]>;
+    /**
+     * -(Optional) Environment information for the domain manager (Prism Central) cluster.
+     */
+    environmentInfo?: pulumi.Input<inputs.PcRestoreV2DomainManagerConfigBootstrapConfigEnvironmentInfo>;
+}
+
+export interface PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfig {
+    /**
+     * -(Optional) The script to use for cloud-init.
+     * - `cloud_init_script.user_data`: -(Optional) user data object
+     * - `cloud_init_script.custom_keys`: -(Optional) The list of the individual KeyValuePair elements.
+     */
+    cloudInitScripts?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScript>[]>;
+    /**
+     * -(Optional) Type of datasource. Default: CONFIG_DRIVE_V2
+     */
+    datasourceType?: pulumi.Input<string>;
+    /**
+     * -(Optional)The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
+     */
+    metadata?: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScript {
+    customKeyValues?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValue>[]>;
+    userDatas?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserData>[]>;
+}
+
+export interface PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValue {
+    keyValuePairs?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePair>[]>;
+}
+
+export interface PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePair {
+    /**
+     * -(Required) Name of the domain manager (Prism Central).
+     */
+    name?: pulumi.Input<string>;
+    values?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue>[]>;
+}
+
+export interface PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue {
+    boolean?: pulumi.Input<boolean>;
+    integer?: pulumi.Input<number>;
+    integerLists?: pulumi.Input<pulumi.Input<number>[]>;
+    mapOfStrings?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString>[]>;
+    object?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    string?: pulumi.Input<string>;
+    stringLists?: pulumi.Input<pulumi.Input<string>[]>;
+}
+
+export interface PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString {
+    map?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+}
+
+export interface PcRestoreV2DomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserData {
+    value?: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerConfigBootstrapConfigEnvironmentInfo {
+    /**
+     * -(Optional) Enums denoting the provider type of the PC, that is, AHV or ESXi.
+     * Following are the supported provider types:
+     * - `VSPHERE` : Vsphere cloud provider.
+     * - `AZURE` : Azure cloud provider.
+     * - `NTNX` : Nutanix cloud provider.
+     * - `GCP` : GCP cloud provider.
+     * - `AWS` : AWS cloud provider.
+     */
+    providerType?: pulumi.Input<string>;
+    /**
+     * -(Optional) Enums denoting the instance type of the cloud PC. It indicates whether the PC is created on bare-metal or on a cloud-provisioned VM. Hence, it supports two possible values:
+     * - `NTNX` : Nutanix instance.
+     * - `NATIVE` : Native instance.
+     */
+    provisioningType?: pulumi.Input<string>;
+    /**
+     * -(Optional) Enums denoting the environment type of the PC, that is, on-prem PC or cloud PC.
+     * Following are the supported entity types:
+     * - `ONPREM` : On-prem environment.
+     * - `NTNX_CLOUD` : Nutanix cloud environment.
+     */
+    type?: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerConfigBuildInfo {
+    /**
+     * -(Optional) Software version.
+     */
+    version?: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerConfigCredential {
+    /**
+     * -(Required) Password required for the basic auth scheme.
+     */
+    password: pulumi.Input<string>;
+    /**
+     * -(Required) Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.
+     */
+    username: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerConfigResourceConfig {
+    /**
+     * -(Optional) The external identifier of the container that will be used to create the domain manager (Prism Central) cluster.
+     */
+    containerExtIds?: pulumi.Input<pulumi.Input<string>[]>;
+    dataDiskSizeBytes?: pulumi.Input<number>;
+    memorySizeBytes?: pulumi.Input<number>;
+    numVcpus?: pulumi.Input<number>;
+}
+
+export interface PcRestoreV2DomainManagerNetwork {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+     */
+    externalAddress?: pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalAddress>;
+    /**
+     * -(Required) This configuration is used to manage Prism Central.
+     */
+    externalNetworks?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalNetwork>[]>;
+    fqdn?: pulumi.Input<string>;
+    /**
+     * -(Required) This configuration is used to internally manage Prism Central network.
+     */
+    internalNetworks?: pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkInternalNetworks>;
+    /**
+     * -(Required) List of name servers on a cluster. This is part of payload for both cluster create & update operations. For create operation, only ipv4 address / fqdn values are supported currently.
+     */
+    nameServers: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkNameServer>[]>;
+    /**
+     * -(Required) List of NTP servers on a cluster. This is part of payload for both cluster create & update operations. For create operation, only ipv4 address / fqdn values are supported currently.
+     */
+    ntpServers: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkNtpServer>[]>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalAddress {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalAddressIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalAddressIpv6>[]>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalAddressIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalAddressIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalNetwork {
+    /**
+     * -(Required) An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+     */
+    defaultGateway: pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalNetworkDefaultGateway>;
+    /**
+     * -(Required) Range of IPs used for Prism Central network setup.
+     */
+    ipRanges: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalNetworkIpRange>[]>;
+    /**
+     * -(Required) The network external identifier to which Domain Manager (Prism Central) is to be deployed or is already configured.
+     */
+    networkExtId: pulumi.Input<string>;
+    /**
+     * -(Required) An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+     */
+    subnetMask: pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalNetworkSubnetMask>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalNetworkDefaultGateway {
+    /**
+     * -(Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalNetworkDefaultGatewayFqdn>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalNetworkDefaultGatewayIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalNetworkDefaultGatewayIpv6>[]>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalNetworkDefaultGatewayFqdn {
+    /**
+     * -(Optional) The fully qualified domain name of the host.
+     *
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/restore).
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalNetworkDefaultGatewayIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalNetworkDefaultGatewayIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalNetworkIpRange {
+    /**
+     * -(Optional) The beginning IP address of the range.
+     */
+    begin?: pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalNetworkIpRangeBegin>;
+    /**
+     * -(Optional) The ending IP address of the range.
+     */
+    end?: pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalNetworkIpRangeEnd>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalNetworkIpRangeBegin {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalNetworkIpRangeBeginIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalNetworkIpRangeBeginIpv6>[]>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalNetworkIpRangeBeginIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalNetworkIpRangeBeginIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalNetworkIpRangeEnd {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalNetworkIpRangeEndIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalNetworkIpRangeEndIpv6>[]>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalNetworkIpRangeEndIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalNetworkIpRangeEndIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalNetworkSubnetMask {
+    /**
+     * -(Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalNetworkSubnetMaskFqdn>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalNetworkSubnetMaskIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkExternalNetworkSubnetMaskIpv6>[]>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalNetworkSubnetMaskFqdn {
+    /**
+     * -(Optional) The fully qualified domain name of the host.
+     *
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/restore).
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalNetworkSubnetMaskIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkExternalNetworkSubnetMaskIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkInternalNetworks {
+    /**
+     * -(Required) An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+     */
+    defaultGateway: pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkInternalNetworksDefaultGateway>;
+    /**
+     * -(Required) Range of IPs used for Prism Central network setup.
+     */
+    ipRanges: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkInternalNetworksIpRange>[]>;
+    /**
+     * -(Required) An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+     */
+    subnetMask: pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkInternalNetworksSubnetMask>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkInternalNetworksDefaultGateway {
+    /**
+     * -(Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkInternalNetworksDefaultGatewayFqdn>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkInternalNetworksDefaultGatewayIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkInternalNetworksDefaultGatewayIpv6>[]>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkInternalNetworksDefaultGatewayFqdn {
+    /**
+     * -(Optional) The fully qualified domain name of the host.
+     *
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/restore).
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkInternalNetworksDefaultGatewayIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkInternalNetworksDefaultGatewayIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkInternalNetworksIpRange {
+    /**
+     * -(Optional) The beginning IP address of the range.
+     */
+    begin?: pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkInternalNetworksIpRangeBegin>;
+    /**
+     * -(Optional) The ending IP address of the range.
+     */
+    end?: pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkInternalNetworksIpRangeEnd>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkInternalNetworksIpRangeBegin {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkInternalNetworksIpRangeBeginIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkInternalNetworksIpRangeBeginIpv6>[]>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkInternalNetworksIpRangeBeginIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkInternalNetworksIpRangeBeginIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkInternalNetworksIpRangeEnd {
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkInternalNetworksIpRangeEndIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkInternalNetworksIpRangeEndIpv6>[]>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkInternalNetworksIpRangeEndIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkInternalNetworksIpRangeEndIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkInternalNetworksSubnetMask {
+    /**
+     * -(Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkInternalNetworksSubnetMaskFqdn>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkInternalNetworksSubnetMaskIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkInternalNetworksSubnetMaskIpv6>[]>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkInternalNetworksSubnetMaskFqdn {
+    /**
+     * -(Optional) The fully qualified domain name of the host.
+     *
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/restore).
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkInternalNetworksSubnetMaskIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkInternalNetworksSubnetMaskIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkNameServer {
+    /**
+     * -(Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkNameServerFqdn>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkNameServerIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkNameServerIpv6>[]>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkNameServerFqdn {
+    /**
+     * -(Optional) The fully qualified domain name of the host.
+     *
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/restore).
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkNameServerIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkNameServerIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkNtpServer {
+    /**
+     * -(Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
+     */
+    fqdns?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkNtpServerFqdn>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv4 format.
+     */
+    ipv4s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkNtpServerIpv4>[]>;
+    /**
+     * -(Optional) An unique address that identifies a device on the internet or a local network in IPv6 format.
+     */
+    ipv6s?: pulumi.Input<pulumi.Input<inputs.PcRestoreV2DomainManagerNetworkNtpServerIpv6>[]>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkNtpServerFqdn {
+    /**
+     * -(Optional) The fully qualified domain name of the host.
+     *
+     * See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/restore).
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkNtpServerIpv4 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
+}
+
+export interface PcRestoreV2DomainManagerNetworkNtpServerIpv6 {
+    /**
+     * -(Optional) The prefix length of the network to which this host IPv4/IPv6 address belongs.
+     */
+    prefixLength?: pulumi.Input<number>;
+    /**
+     * -(Required) The IPv4/IPv6 address of the host.
+     */
+    value: pulumi.Input<string>;
 }
 
 export interface ProjectAccountReferenceList {
@@ -11818,6 +13656,161 @@ export interface ProjectVpcReferenceList {
      * (Required) the UUID.
      */
     uuid: pulumi.Input<string>;
+}
+
+export interface ProtectionPolicyV2Link {
+    href?: pulumi.Input<string>;
+    rel?: pulumi.Input<string>;
+}
+
+export interface ProtectionPolicyV2ReplicationConfiguration {
+    /**
+     * -(Optional) Label of the source location from the replication locations list, where the entity will be replicated.
+     */
+    remoteLocationLabel?: pulumi.Input<string>;
+    /**
+     * -(Required) Schedule for protection. The schedule specifies the recovery point objective and the retention policy for the participating locations.
+     */
+    schedule: pulumi.Input<inputs.ProtectionPolicyV2ReplicationConfigurationSchedule>;
+    /**
+     * -(Required) Label of the source location from the replication locations list, where the entity is running. The location of type MST can not be specified as the replication source.
+     */
+    sourceLocationLabel: pulumi.Input<string>;
+}
+
+export interface ProtectionPolicyV2ReplicationConfigurationSchedule {
+    /**
+     * -(Required) The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
+     * - Minute(s): 1, 2, 3, 4, 5, 6, 10, 12, 15
+     * - Hour(s): 1, 2, 3, 4, 6, 8, 12
+     * - Day(s): 1
+     * - Week(s): 1, 2
+     */
+    recoveryPointObjectiveTimeSeconds?: pulumi.Input<number>;
+    /**
+     * -(Optional) Type of recovery point.
+     * * `CRASH_CONSISTENT`: Crash-consistent Recovery points capture all the VM and application level details.
+     * * `APP_CONSISTENT`: Application-consistent Recovery points can capture all the data stored in the memory and also the in-progress transaction details.
+     */
+    recoveryPointType?: pulumi.Input<string>;
+    /**
+     * -(Optional) Specifies the retention policy for the recovery point schedule.
+     */
+    retention?: pulumi.Input<inputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetention>;
+    /**
+     * -(Optional) Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.
+     */
+    startTime?: pulumi.Input<string>;
+    /**
+     * -(Optional) Auto suspend timeout if there is a connection failure between locations for synchronous replication. If this value is not set, then the policy will not be suspended.
+     */
+    syncReplicationAutoSuspendTimeoutSeconds?: pulumi.Input<number>;
+}
+
+export interface ProtectionPolicyV2ReplicationConfigurationScheduleRetention {
+    /**
+     * -(Optional) Auto rollup retention policy.
+     */
+    autoRollupRetention?: pulumi.Input<inputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetention>;
+    /**
+     * -(Optional) Linear retention policy.
+     */
+    linearRetention?: pulumi.Input<inputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionLinearRetention>;
+}
+
+export interface ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetention {
+    /**
+     * -(Required) Specifies the auto rollup retention details.
+     */
+    local: pulumi.Input<inputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionLocal>;
+    /**
+     * -(Optional) Specifies the auto rollup retention details.
+     */
+    remote?: pulumi.Input<inputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionRemote>;
+}
+
+export interface ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionLocal {
+    /**
+     * -(Required) Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
+     *
+     *
+     *
+     * See detailed information in [Nutanix Protection Policy v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.0#tag/ProtectionPolicies/operation/createProtectionPolicy).
+     */
+    frequency: pulumi.Input<number>;
+    /**
+     * -(Required) Snapshot interval period.
+     * * `YEARLY`: Specifies the number of latest yearly recovery points to retain.
+     * * `WEEKLY`: Specifies the number of latest weekly recovery points to retain.
+     * * `DAILY`: Specifies the number of latest daily recovery points to retain.
+     * * `MONTHLY`: Specifies the number of latest monthly recovery points to retain.
+     * * `HOURLY`: Specifies the number of latest hourly recovery points to retain.
+     */
+    snapshotIntervalType?: pulumi.Input<string>;
+}
+
+export interface ProtectionPolicyV2ReplicationConfigurationScheduleRetentionAutoRollupRetentionRemote {
+    /**
+     * -(Required) Multiplier to 'snapshotIntervalType'. For example, if 'snapshotIntervalType' is 'YEARLY' and 'multiple' is 5, then 5 years worth of rollup snapshots will be retained.
+     *
+     *
+     *
+     * See detailed information in [Nutanix Protection Policy v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.0#tag/ProtectionPolicies/operation/createProtectionPolicy).
+     */
+    frequency: pulumi.Input<number>;
+    /**
+     * -(Required) Snapshot interval period.
+     * * `YEARLY`: Specifies the number of latest yearly recovery points to retain.
+     * * `WEEKLY`: Specifies the number of latest weekly recovery points to retain.
+     * * `DAILY`: Specifies the number of latest daily recovery points to retain.
+     * * `MONTHLY`: Specifies the number of latest monthly recovery points to retain.
+     * * `HOURLY`: Specifies the number of latest hourly recovery points to retain.
+     */
+    snapshotIntervalType?: pulumi.Input<string>;
+}
+
+export interface ProtectionPolicyV2ReplicationConfigurationScheduleRetentionLinearRetention {
+    /**
+     * -(Required) Specifies the number of recovery points to retain on the local location.
+     */
+    local: pulumi.Input<number>;
+    /**
+     * -(Optional) Specifies the number of recovery points to retain on the remote location.
+     */
+    remote?: pulumi.Input<number>;
+}
+
+export interface ProtectionPolicyV2ReplicationLocation {
+    /**
+     * -(Required) External identifier of the domain manager.
+     */
+    domainManagerExtId: pulumi.Input<string>;
+    /**
+     * -(Optional) One of the locations must be specified as the primary location. All the other locations must be connected to the primary location.
+     */
+    isPrimary?: pulumi.Input<boolean>;
+    /**
+     * -(Required) This is a unique user defined label of the replication location. It is used to identify the location in the replication configurations.
+     */
+    label: pulumi.Input<string>;
+    /**
+     * -(Optional) Specifies the replication sub-locations where recovery points can be created or replicated.
+     */
+    replicationSubLocation?: pulumi.Input<inputs.ProtectionPolicyV2ReplicationLocationReplicationSubLocation>;
+}
+
+export interface ProtectionPolicyV2ReplicationLocationReplicationSubLocation {
+    /**
+     * -(Optional) External identifier of the clusters.
+     */
+    clusterExtIds: pulumi.Input<inputs.ProtectionPolicyV2ReplicationLocationReplicationSubLocationClusterExtIds>;
+}
+
+export interface ProtectionPolicyV2ReplicationLocationReplicationSubLocationClusterExtIds {
+    /**
+     * -(Optional) External identifier of the clusters.
+     */
+    clusterExtIds: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 export interface ProtectionRuleAvailabilityZoneConnectivityList {
@@ -12620,6 +14613,524 @@ export interface SamlIdentityProvidersV2IdpMetadata {
     loginUrl: pulumi.Input<string>;
     logoutUrl?: pulumi.Input<string>;
     nameIdPolicyFormat?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppPatchCategory {
+    /**
+     * - (Optional) The operation to perform on the category. (e.g. "add", "delete")
+     */
+    operation: pulumi.Input<string>;
+    /**
+     * - (Optional, string) The value of the category. A Key:Value pair (e.g. "AppType:Oracle_DB"). There should not be any space in value.
+     */
+    value?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppPatchDisk {
+    /**
+     * - (Optional, integer) The size of the disk to allocate (in MiB).
+     */
+    diskSizeMib?: pulumi.Input<number>;
+    /**
+     * - (Optional) The operation to perform on the category. (e.g. "add", "delete")
+     */
+    operation: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppPatchNic {
+    /**
+     * - (Optional, string) The index of the NIC. A dummy string for now.
+     */
+    index?: pulumi.Input<number>;
+    /**
+     * - (Optional) The operation to perform on the category. (e.g. "add", "delete")
+     */
+    operation?: pulumi.Input<string>;
+    /**
+     * - (Optional, string) The UUID of the subnet to which the NIC should be attached.
+     */
+    subnetUuid?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppPatchVmConfig {
+    /**
+     * - (Optional, integer) The amount of memory (in MiB) to allocate for the VM.
+     */
+    memorySizeMib?: pulumi.Input<number>;
+    /**
+     * - (Optional, integer) The number of vCPUs to assign.
+     */
+    numSockets?: pulumi.Input<number>;
+    /**
+     * - (Optional, integer) The number of cores per vCPU to assign to the VM.
+     */
+    numVcpusPerSocket?: pulumi.Input<number>;
+}
+
+export interface SelfServiceAppProvisionAction {
+    /**
+     * description of the action
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * name of action.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * UUID of the action.
+     */
+    uuid?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppProvisionAppSummary {
+    /**
+     * The profile assigned to the application.
+     */
+    applicationProfile?: pulumi.Input<string>;
+    /**
+     * The UUID of the application.
+     */
+    applicationUuid?: pulumi.Input<string>;
+    /**
+     * The blueprint associated with the application.
+     */
+    blueprint?: pulumi.Input<string>;
+    /**
+     * The timestamp when the application was created.
+     */
+    createdOn?: pulumi.Input<string>;
+    /**
+     * The timestamp when the application was last updated.
+     */
+    lastUpdatedOn?: pulumi.Input<string>;
+    /**
+     * The owner of the application.
+     */
+    owner?: pulumi.Input<string>;
+    /**
+     * The project associated with the application.
+     */
+    project?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppProvisionRuntimeEditable {
+    /**
+     * -  A list of actions associated with the blueprint. Each action contains runtime specifications (defined in RuntimeSpec).
+     */
+    actionLists?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionRuntimeEditableActionList>[]>;
+    /**
+     * -  A list of application profiles associated with the blueprint. Each application profile contains runtime specifications (defined in RuntimeSpec).
+     */
+    appProfile?: pulumi.Input<inputs.SelfServiceAppProvisionRuntimeEditableAppProfile>;
+    /**
+     * -  A list of credentials associated with the blueprint. Each credential contains runtime specifications (defined in RuntimeSpec).
+     */
+    credentialLists?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionRuntimeEditableCredentialList>[]>;
+    /**
+     * -  A list of deployments associated with the blueprint. Each deployment contains runtime specifications (defined in RuntimeSpec).
+     */
+    deploymentLists?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionRuntimeEditableDeploymentList>[]>;
+    /**
+     * -  A list of packages associated with the blueprint. Each package contains runtime specifications (defined in RuntimeSpec).
+     */
+    packageLists?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionRuntimeEditablePackageList>[]>;
+    /**
+     * -  A list of restore configurations associated with the blueprint. Each restore configuration contains runtime specifications (defined in RuntimeSpec).
+     */
+    restoreConfigLists?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionRuntimeEditableRestoreConfigList>[]>;
+    /**
+     * - A list of services associated with the blueprint. Each service contains runtime specifications (defined in RuntimeSpec).
+     */
+    serviceLists?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionRuntimeEditableServiceList>[]>;
+    /**
+     * - A list of snapshot configurations associated with the blueprint. Each snapshot configuration contains runtime specifications (defined in RuntimeSpec).
+     */
+    snapshotConfigLists?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionRuntimeEditableSnapshotConfigList>[]>;
+    /**
+     * - A list of substrates associated with the blueprint. Each substrate contains runtime specifications (defined in RuntimeSpec).
+     */
+    substrateLists?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionRuntimeEditableSubstrateList>[]>;
+    /**
+     * - A list of tasks associated with the blueprint. Each task contains runtime specifications (defined in RuntimeSpec).
+     */
+    taskLists?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionRuntimeEditableTaskList>[]>;
+    /**
+     * - A list of variables associated with the blueprint. Each variable contains runtime specifications (defined in RuntimeSpec).
+     */
+    variableLists?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionRuntimeEditableVariableList>[]>;
+}
+
+export interface SelfServiceAppProvisionRuntimeEditableActionList {
+    /**
+     * (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+     */
+    context?: pulumi.Input<string>;
+    /**
+     * description of the action
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * name of action.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * -   The type of network interface.
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * UUID of the action.
+     */
+    uuid?: pulumi.Input<string>;
+    /**
+     * (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+     */
+    value?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppProvisionRuntimeEditableAppProfile {
+    /**
+     * (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+     */
+    context?: pulumi.Input<string>;
+    /**
+     * description of the action
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * name of action.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * -   The type of network interface.
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * UUID of the action.
+     */
+    uuid?: pulumi.Input<string>;
+    /**
+     * (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+     */
+    value?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppProvisionRuntimeEditableCredentialList {
+    /**
+     * (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+     */
+    context?: pulumi.Input<string>;
+    /**
+     * description of the action
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * name of action.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * -   The type of network interface.
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * UUID of the action.
+     */
+    uuid?: pulumi.Input<string>;
+    /**
+     * (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+     */
+    value?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppProvisionRuntimeEditableDeploymentList {
+    /**
+     * (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+     */
+    context?: pulumi.Input<string>;
+    /**
+     * description of the action
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * name of action.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * -   The type of network interface.
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * UUID of the action.
+     */
+    uuid?: pulumi.Input<string>;
+    /**
+     * (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+     */
+    value?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppProvisionRuntimeEditablePackageList {
+    /**
+     * (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+     */
+    context?: pulumi.Input<string>;
+    /**
+     * description of the action
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * name of action.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * -   The type of network interface.
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * UUID of the action.
+     */
+    uuid?: pulumi.Input<string>;
+    /**
+     * (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+     */
+    value?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppProvisionRuntimeEditableRestoreConfigList {
+    /**
+     * (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+     */
+    context?: pulumi.Input<string>;
+    /**
+     * description of the action
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * name of action.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * -   The type of network interface.
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * UUID of the action.
+     */
+    uuid?: pulumi.Input<string>;
+    /**
+     * (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+     */
+    value?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppProvisionRuntimeEditableServiceList {
+    /**
+     * (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+     */
+    context?: pulumi.Input<string>;
+    /**
+     * description of the action
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * name of action.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * -   The type of network interface.
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * UUID of the action.
+     */
+    uuid?: pulumi.Input<string>;
+    /**
+     * (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+     */
+    value?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppProvisionRuntimeEditableSnapshotConfigList {
+    /**
+     * (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+     */
+    context?: pulumi.Input<string>;
+    /**
+     * description of the action
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * name of action.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * -   The type of network interface.
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * UUID of the action.
+     */
+    uuid?: pulumi.Input<string>;
+    /**
+     * (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+     */
+    value?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppProvisionRuntimeEditableSubstrateList {
+    /**
+     * (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+     */
+    context?: pulumi.Input<string>;
+    /**
+     * description of the action
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * name of action.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * -   The type of network interface.
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * UUID of the action.
+     */
+    uuid?: pulumi.Input<string>;
+    /**
+     * (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+     */
+    value?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppProvisionRuntimeEditableTaskList {
+    /**
+     * (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+     */
+    context?: pulumi.Input<string>;
+    /**
+     * description of the action
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * name of action.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * -   The type of network interface.
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * UUID of the action.
+     */
+    uuid?: pulumi.Input<string>;
+    /**
+     * (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+     */
+    value?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppProvisionRuntimeEditableVariableList {
+    /**
+     * (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+     */
+    context?: pulumi.Input<string>;
+    /**
+     * description of the action
+     */
+    description?: pulumi.Input<string>;
+    /**
+     * name of action.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * -   The type of network interface.
+     */
+    type?: pulumi.Input<string>;
+    /**
+     * UUID of the action.
+     */
+    uuid?: pulumi.Input<string>;
+    /**
+     * (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+     */
+    value?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppProvisionVm {
+    /**
+     * -  A map of categories applied to the VM. Each key is a category name, and the value is the category value.
+     */
+    categories?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * -  Cluster-related information for the VM.
+     */
+    clusterInfos?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionVmClusterInfo>[]>;
+    /**
+     * -  Configuration details for the VM.
+     */
+    configurations?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionVmConfiguration>[]>;
+    /**
+     * -  A list of network interfaces attached to the VM.
+     */
+    nics?: pulumi.Input<pulumi.Input<inputs.SelfServiceAppProvisionVmNic>[]>;
+}
+
+export interface SelfServiceAppProvisionVmClusterInfo {
+    /**
+     * -   The name of the cluster.
+     */
+    clusterName?: pulumi.Input<string>;
+    /**
+     * -   The UUID of the cluster.
+     */
+    clusterUuid?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppProvisionVmConfiguration {
+    /**
+     * -   Number of CPU cores.
+     */
+    cores?: pulumi.Input<number>;
+    /**
+     * -   The VM image used.
+     */
+    image?: pulumi.Input<string>;
+    /**
+     * -   IP address of the VM.
+     */
+    ipAddress?: pulumi.Input<string>;
+    /**
+     * -  Memory allocated to the VM.
+     */
+    memory?: pulumi.Input<number>;
+    /**
+     * name of action.
+     */
+    name?: pulumi.Input<string>;
+    /**
+     * -   Number of virtual CPUs assigned to the VM.
+     */
+    vcpus?: pulumi.Input<number>;
+    /**
+     * -   The UUID of the VM.
+     */
+    vmUuid?: pulumi.Input<string>;
+}
+
+export interface SelfServiceAppProvisionVmNic {
+    /**
+     * -   The MAC address of the VM's network interface.
+     */
+    macAddress?: pulumi.Input<string>;
+    /**
+     * -   The subnet the VM's network interface is attached to.
+     */
+    subnet?: pulumi.Input<string>;
+    /**
+     * -   The type of network interface.
+     */
+    type?: pulumi.Input<string>;
 }
 
 export interface ServiceGroupServiceList {
@@ -14610,7 +17121,7 @@ export interface VirtualMachineV2ApcConfigCpuModel {
 
 export interface VirtualMachineV2AvailabilityZone {
     /**
-     * A globally unique identifier of an instance that is suitable for external consumption.
+     * The globally unique identifier of an availability zone type UUID.
      */
     extId?: pulumi.Input<string>;
 }
@@ -14655,7 +17166,7 @@ export interface VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceDisk {
 export interface VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
     busType?: pulumi.Input<string>;
     /**
-     * Index of the serial port.
+     * ) Index of the serial port.
      */
     index?: pulumi.Input<number>;
 }
@@ -14669,6 +17180,20 @@ export interface VirtualMachineV2BootConfigLegacyBootBootDeviceBootDeviceNic {
 
 export interface VirtualMachineV2BootConfigUefiBoot {
     /**
+     * Boot Device object
+     * * `boot_device.boot_device_disk`: (Optional) Disk address.
+     * * `boot_device.boot_device_disk.disk_address.bus_type`: (Required) Bus type for the device
+     * * `boot_device.boot_device_disk.disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
+     *
+     * * `boot_device.boot_device_nic`: (Optional) Disk Nic address.
+     * * `boot_device.boot_device_nic.mac_address`: (Required) mac address
+     */
+    bootDevices?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2BootConfigUefiBootBootDevice>[]>;
+    /**
+     * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order. Valid values are 'CDROM', 'DISK', 'NETWORK'.
+     */
+    bootOrders?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * Indicate whether to enable secure boot or not
      */
     isSecureBootEnabled?: pulumi.Input<boolean>;
@@ -14679,13 +17204,39 @@ export interface VirtualMachineV2BootConfigUefiBoot {
     nvramDevices?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2BootConfigUefiBootNvramDevice>[]>;
 }
 
+export interface VirtualMachineV2BootConfigUefiBootBootDevice {
+    bootDeviceDisks?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2BootConfigUefiBootBootDeviceBootDeviceDisk>[]>;
+    bootDeviceNics?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2BootConfigUefiBootBootDeviceBootDeviceNic>[]>;
+}
+
+export interface VirtualMachineV2BootConfigUefiBootBootDeviceBootDeviceDisk {
+    diskAddresses?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress>[]>;
+}
+
+export interface VirtualMachineV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
+    busType?: pulumi.Input<string>;
+    /**
+     * ) Index of the serial port.
+     */
+    index?: pulumi.Input<number>;
+}
+
+export interface VirtualMachineV2BootConfigUefiBootBootDeviceBootDeviceNic {
+    /**
+     * MAC address of the emulated NIC.
+     */
+    macAddress?: pulumi.Input<string>;
+}
+
 export interface VirtualMachineV2BootConfigUefiBootNvramDevice {
     backingStorageInfos?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo>[]>;
 }
 
 export interface VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo {
     dataSources?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource>[]>;
+    diskExtId?: pulumi.Input<string>;
     diskSizeBytes?: pulumi.Input<number>;
+    isMigrationInProgress?: pulumi.Input<boolean>;
     /**
      * Storage configuration for VM.
      */
@@ -14728,7 +17279,7 @@ export interface VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo
 export interface VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSourceReferenceVmDiskReferenceDiskAddress {
     busType?: pulumi.Input<string>;
     /**
-     * Index of the serial port.
+     * ) Index of the serial port.
      */
     index?: pulumi.Input<number>;
 }
@@ -14756,7 +17307,7 @@ export interface VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo
 
 export interface VirtualMachineV2Category {
     /**
-     * A globally unique identifier of an instance that is suitable for external consumption.
+     * A globally unique identifier of a VM category of type UUID.
      */
     extId?: pulumi.Input<string>;
 }
@@ -14803,7 +17354,6 @@ export interface VirtualMachineV2CdRomBackingInfo {
 }
 
 export interface VirtualMachineV2CdRomBackingInfoDataSource {
-    isMigrationInProgress?: pulumi.Input<boolean>;
     /**
      * Reference to image or vm disk
      */
@@ -14838,7 +17388,7 @@ export interface VirtualMachineV2CdRomBackingInfoDataSourceReferenceVmDiskRefere
 export interface VirtualMachineV2CdRomBackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
     busType?: pulumi.Input<string>;
     /**
-     * Index of the serial port.
+     * ) Index of the serial port.
      */
     index?: pulumi.Input<number>;
 }
@@ -14867,14 +17417,14 @@ export interface VirtualMachineV2CdRomBackingInfoStorageContainer {
 export interface VirtualMachineV2CdRomDiskAddress {
     busType?: pulumi.Input<string>;
     /**
-     * Index of the serial port.
+     * ) Index of the serial port.
      */
     index?: pulumi.Input<number>;
 }
 
 export interface VirtualMachineV2Cluster {
     /**
-     * A globally unique identifier of an instance that is suitable for external consumption.
+     * The globally unique identifier of a cluster type UUID.
      */
     extId?: pulumi.Input<string>;
 }
@@ -14955,7 +17505,7 @@ export interface VirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskR
 export interface VirtualMachineV2DiskBackingInfoVmDiskDataSourceReferenceVmDiskReferenceDiskAddress {
     busType?: pulumi.Input<string>;
     /**
-     * Index of the serial port.
+     * ) Index of the serial port.
      */
     index?: pulumi.Input<number>;
 }
@@ -14984,7 +17534,7 @@ export interface VirtualMachineV2DiskBackingInfoVmDiskStorageContainer {
 export interface VirtualMachineV2DiskDiskAddress {
     busType?: pulumi.Input<string>;
     /**
-     * Index of the serial port.
+     * ) Index of the serial port.
      */
     index?: pulumi.Input<number>;
 }
@@ -15003,7 +17553,7 @@ export interface VirtualMachineV2Gpus {
     guestDriverVersion?: pulumi.Input<string>;
     links?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2GpusLink>[]>;
     /**
-     * The mode of this GPU. Valid values "PASSTHROUGH_GRAPHICS", "PASSTHROUGH_COMPUTE", "VIRTUAL" .
+     * ) The mode of this GPU. Valid values "PASSTHROUGH_GRAPHICS", "PASSTHROUGH_COMPUTE", "VIRTUAL" .
      */
     mode?: pulumi.Input<string>;
     /**
@@ -15038,8 +17588,8 @@ export interface VirtualMachineV2GuestCustomization {
     /**
      * The Nutanix Guest Tools customization settings.
      *
-     * * `config.sysprep`: (Optional) Sysprep config
-     * * `config.cloud_init`: (Optional) CloudInit Config
+     * * `config.sysprep`: Sysprep config
+     * * `config.cloud_init`: CloudInit Config
      */
     configs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2GuestCustomizationConfig>[]>;
 }
@@ -15170,7 +17720,7 @@ export interface VirtualMachineV2GuestTool {
 
 export interface VirtualMachineV2Host {
     /**
-     * A globally unique identifier of an instance that is suitable for external consumption.
+     * A globally unique identifier of a host of type UUID.
      */
     extId?: pulumi.Input<string>;
 }
@@ -15230,6 +17780,7 @@ export interface VirtualMachineV2NicNetworkInfo {
     shouldAllowUnknownMacs?: pulumi.Input<boolean>;
     /**
      * Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC
+     * * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
      */
     subnets?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNetworkInfoSubnet>[]>;
     /**
@@ -15243,17 +17794,35 @@ export interface VirtualMachineV2NicNetworkInfo {
 }
 
 export interface VirtualMachineV2NicNetworkInfoIpv4Config {
+    /**
+     * The IP address of the NIC.
+     */
     ipAddresses?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNetworkInfoIpv4ConfigIpAddress>[]>;
+    /**
+     * Secondary IP addresses for the NIC.
+     */
     secondaryIpAddressLists?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList>[]>;
+    /**
+     * If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+     */
     shouldAssignIp?: pulumi.Input<boolean>;
 }
 
 export interface VirtualMachineV2NicNetworkInfoIpv4ConfigIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
     prefixLength?: pulumi.Input<number>;
+    /**
+     * The IPv4 address of the host.
+     */
     value?: pulumi.Input<string>;
 }
 
 export interface VirtualMachineV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList {
+    /**
+     * The prefix length of the IP address.
+     */
     prefixLength?: pulumi.Input<number>;
     value?: pulumi.Input<string>;
 }
@@ -15263,6 +17832,9 @@ export interface VirtualMachineV2NicNetworkInfoIpv4Info {
 }
 
 export interface VirtualMachineV2NicNetworkInfoIpv4InfoLearnedIpAddress {
+    /**
+     * The prefix length of the IP address.
+     */
     prefixLength?: pulumi.Input<number>;
     value: pulumi.Input<string>;
 }
@@ -15282,6 +17854,10 @@ export interface VirtualMachineV2NicNetworkInfoSubnet {
 }
 
 export interface VirtualMachineV2OwnershipInfo {
+    /**
+     * Reference to the owner.
+     * * `owner.ext_id`: A globally unique identifier of a VM owner type UUID.
+     */
     owners?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2OwnershipInfoOwner>[]>;
 }
 
@@ -15293,6 +17869,10 @@ export interface VirtualMachineV2OwnershipInfoOwner {
 }
 
 export interface VirtualMachineV2ProtectionPolicyState {
+    /**
+     * Reference to the policy object in use.
+     * * `policy.ext_id`: (Optional) Reference to the policy object in use.
+     */
     policies?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2ProtectionPolicyStatePolicy>[]>;
 }
 
@@ -15309,7 +17889,7 @@ export interface VirtualMachineV2SerialPort {
      */
     extId?: pulumi.Input<string>;
     /**
-     * Index of the serial port.
+     * ) Index of the serial port.
      */
     index?: pulumi.Input<number>;
     /**
@@ -15319,7 +17899,16 @@ export interface VirtualMachineV2SerialPort {
 }
 
 export interface VirtualMachineV2Source {
+    /**
+     * Reference to an entity from which the VM should be cloned or created. Values are:
+     * - VM_RECOVERY_POINT: Reference to the recovery point entity from which the VM should be cloned or created.
+     * - VM: Reference to an entity from which the VM should be cloned or created.
+     */
     entityType?: pulumi.Input<string>;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId?: pulumi.Input<string>;
 }
 
 export interface VirtualMachineV2StorageConfig {
@@ -15343,6 +17932,7 @@ export interface VirtualMachineV2VtpmConfig {
      * Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
      */
     isVtpmEnabled?: pulumi.Input<boolean>;
+    version?: pulumi.Input<string>;
 }
 
 export interface VmCdromInsertEjectV2BackingInfo {
@@ -15427,8 +18017,28 @@ export interface VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic {
 }
 
 export interface VmCloneV2BootConfigUefiBoot {
+    bootDevices?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootBootDevice>[]>;
+    bootOrders?: pulumi.Input<pulumi.Input<string>[]>;
     isSecureBootEnabled?: pulumi.Input<boolean>;
     nvramDevices?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootNvramDevice>[]>;
+}
+
+export interface VmCloneV2BootConfigUefiBootBootDevice {
+    bootDeviceDisks?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk>[]>;
+    bootDeviceNics?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic>[]>;
+}
+
+export interface VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk {
+    diskAddresses?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress>[]>;
+}
+
+export interface VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
+    busType?: pulumi.Input<string>;
+    index?: pulumi.Input<number>;
+}
+
+export interface VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic {
+    macAddress?: pulumi.Input<string>;
 }
 
 export interface VmCloneV2BootConfigUefiBootNvramDevice {
@@ -15437,7 +18047,9 @@ export interface VmCloneV2BootConfigUefiBootNvramDevice {
 
 export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo {
     dataSources?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource>[]>;
+    diskExtId?: pulumi.Input<string>;
     diskSizeBytes?: pulumi.Input<number>;
+    isMigrationInProgress?: pulumi.Input<boolean>;
     storageConfigs?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig>[]>;
     storageContainers?: pulumi.Input<pulumi.Input<inputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer>[]>;
 }
@@ -15870,14 +18482,21 @@ export interface VmShutdownActionV2GuestPowerStateTransitionConfig {
      * Indicates whether to abort VM shutdown/restart if the script fails.
      *
      *
-     * See detailed information in [Nutanix VMs Power Action V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0).
+     * See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/shutdownVm).
+     * See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/shutdownGuestVm).
+     * See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/rebootVm).
+     * See detailed information in [Nutanix VMs Power Action Reboot Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Vm/operation/rebootGuestVm).
      */
     shouldFailOnScriptFailure?: pulumi.Input<boolean>;
 }
 
 export interface VolumeGroupDiskV2DiskDataSourceReference {
     /**
-     * - The Entity Type of the Data Source Reference.
+     * - The Entity Type of the Data Source Reference. valid values are:
+     * - STORAGE_CONTAINER
+     * - VM_DISK
+     * - VOLUME_DISK
+     * - DISK_RECOVERY_POINT
      */
     entityType?: pulumi.Input<string>;
     /**
@@ -15905,7 +18524,7 @@ export interface VolumeGroupDiskV2DiskStorageFeatureFlashMode {
     /**
      * - Indicates whether the flash mode is enabled for the Volume Group Disk.
      *
-     * See detailed information in [Nutanix Volumes V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0).
+     * See detailed information in [Nutanix Create Volume Disk V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/createVolumeDisk).
      */
     isEnabled?: pulumi.Input<boolean>;
 }
@@ -15930,7 +18549,7 @@ export interface VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdFqdn {
      * - The fully qualified domain name.
      *
      *
-     * See detailed information in [Nutanix Volumes V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0).
+     * See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/attachIscsiClient).
      */
     value?: pulumi.Input<string>;
 }
@@ -16010,7 +18629,7 @@ export interface VolumeGroupV2DiskDiskStorageFeatureFlashMode {
     /**
      * - Indicates whether the flash mode is enabled for the Volume Group Disk.
      *
-     * See detailed information in [Nutanix Volumes V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/createVolumeGroup).
+     * See detailed information in [Nutanix Create Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/createVolumeGroup).
      */
     isEnabled?: pulumi.Input<boolean>;
 }
@@ -16037,7 +18656,7 @@ export interface VolumeGroupV2StorageFeatureFlashMode {
     /**
      * - Indicates whether the flash mode is enabled for the Volume Group Disk.
      *
-     * See detailed information in [Nutanix Volumes V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/createVolumeGroup).
+     * See detailed information in [Nutanix Create Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/createVolumeGroup).
      */
     isEnabled?: pulumi.Input<boolean>;
 }

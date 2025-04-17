@@ -31,6 +31,25 @@ import (
 //			if err != nil {
 //				return err
 //			}
+//			_, err = nutanix.GetPbrsV2(ctx, &nutanix.GetPbrsV2Args{
+//				Filter: pulumi.StringRef("name eq 'pbr_example'"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.GetPbrsV2(ctx, &nutanix.GetPbrsV2Args{
+//				Limit: pulumi.IntRef(10),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.GetPbrsV2(ctx, &nutanix.GetPbrsV2Args{
+//				Filter: pulumi.StringRef("name eq 'pbr_example'"),
+//				Limit:  pulumi.IntRef(10),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
 //			return nil
 //		})
 //	}
@@ -48,11 +67,19 @@ func GetPbrsV2(ctx *pulumi.Context, args *GetPbrsV2Args, opts ...pulumi.InvokeOp
 
 // A collection of arguments for invoking getPbrsV2.
 type GetPbrsV2Args struct {
-	// A URL query parameter that allows clients to filter a collection of resources.
+	// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+	// - name
+	// - policies/policyAction/actionType
+	// - policies/policyMatch/protocolType
+	// - policies/policyMatch/source
+	// - priority
+	// - vpcExtId
 	Filter *string `pulumi:"filter"`
 	// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
 	Limit *int `pulumi:"limit"`
-	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+	// - name
+	// - priority
 	OrderBy *string `pulumi:"orderBy"`
 	// A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
 	Page *int `pulumi:"page"`
@@ -62,10 +89,11 @@ type GetPbrsV2Args struct {
 type GetPbrsV2Result struct {
 	Filter *string `pulumi:"filter"`
 	// The provider-assigned unique ID for this managed resource.
-	Id              string                   `pulumi:"id"`
-	Limit           *int                     `pulumi:"limit"`
-	OrderBy         *string                  `pulumi:"orderBy"`
-	Page            *int                     `pulumi:"page"`
+	Id      string  `pulumi:"id"`
+	Limit   *int    `pulumi:"limit"`
+	OrderBy *string `pulumi:"orderBy"`
+	Page    *int    `pulumi:"page"`
+	// List all of routing policies.
 	RoutingPolicies []GetPbrsV2RoutingPolicy `pulumi:"routingPolicies"`
 }
 
@@ -80,11 +108,19 @@ func GetPbrsV2Output(ctx *pulumi.Context, args GetPbrsV2OutputArgs, opts ...pulu
 
 // A collection of arguments for invoking getPbrsV2.
 type GetPbrsV2OutputArgs struct {
-	// A URL query parameter that allows clients to filter a collection of resources.
+	// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+	// - name
+	// - policies/policyAction/actionType
+	// - policies/policyMatch/protocolType
+	// - policies/policyMatch/source
+	// - priority
+	// - vpcExtId
 	Filter pulumi.StringPtrInput `pulumi:"filter"`
 	// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
 	Limit pulumi.IntPtrInput `pulumi:"limit"`
-	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+	// - name
+	// - priority
 	OrderBy pulumi.StringPtrInput `pulumi:"orderBy"`
 	// A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
 	Page pulumi.IntPtrInput `pulumi:"page"`
@@ -130,6 +166,7 @@ func (o GetPbrsV2ResultOutput) Page() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetPbrsV2Result) *int { return v.Page }).(pulumi.IntPtrOutput)
 }
 
+// List all of routing policies.
 func (o GetPbrsV2ResultOutput) RoutingPolicies() GetPbrsV2RoutingPolicyArrayOutput {
 	return o.ApplyT(func(v GetPbrsV2Result) []GetPbrsV2RoutingPolicy { return v.RoutingPolicies }).(GetPbrsV2RoutingPolicyArrayOutput)
 }

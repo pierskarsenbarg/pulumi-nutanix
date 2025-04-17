@@ -12,21 +12,18 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
- * import * as nutanix from "@pulumi/nutanix";
  *
- * const categories = nutanix.getCategoriesV2({});
- * const category0 = data.nutanix_categories_v4.categories.categories[0].ext_id;
  * const example = new nutanix.ImagePlacementPolicyV2("example", {
- *     description: "%[2]s",
- *     placementType: "SOFT",
  *     clusterEntityFilters: [{
- *         categoryExtIds: [category0],
+ *         categoryExtIds: ["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"],
  *         type: "CATEGORIES_MATCH_ALL",
  *     }],
+ *     description: "%[2]s",
  *     imageEntityFilters: [{
- *         categoryExtIds: [category0],
+ *         categoryExtIds: ["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"],
  *         type: "CATEGORIES_MATCH_ALL",
  *     }],
+ *     placementType: "SOFT",
  * });
  * ```
  */

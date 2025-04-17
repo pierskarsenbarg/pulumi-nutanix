@@ -261,33 +261,15 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        example_volume_group_v2 = nutanix.VolumeGroupV2("exampleVolumeGroupV2",
-            description="Test Volume group with min spec and no Auth",
-            should_load_balance_vm_attachments=False,
-            sharing_status="SHARED",
-            target_name="volumegroup-test-0",
-            created_by="Test",
-            cluster_reference="<Cluster uuid>",
-            iscsi_features=[{
-                "enabled_authentications": "CHAP",
-                "target_secret": "1234567891011",
-            }],
-            storage_features=[{
-                "flash_modes": [{
-                    "is_enabled": True,
-                }],
-            }],
-            usage_type="USER",
-            is_hidden=False)
         # create new volume group disk  and attached it to the previous volume group
-        example_volume_group_disk_v2 = nutanix.VolumeGroupDiskV2("exampleVolumeGroupDiskV2",
-            volume_group_ext_id=resource["nutanix_volume_group_v2"]["example"]["id"],
+        example = nutanix.VolumeGroupDiskV2("example",
+            volume_group_ext_id="cf7de8b9-88ed-477d-a602-c34ab7174c01",
             index=1,
-            description="create volume disk test",
+            description="create volume disk example",
             disk_size_bytes=5368709120,
             disk_data_source_references=[{
                 "name": "disk1",
-                "ext_id": var["disk_data_source_ref_ext_id"],
+                "ext_id": "1d92110d-26b5-46c0-8c93-20b8171373e0",
                 "entity_type": "STORAGE_CONTAINER",
                 "uris": [
                     "uri1",
@@ -325,33 +307,15 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        example_volume_group_v2 = nutanix.VolumeGroupV2("exampleVolumeGroupV2",
-            description="Test Volume group with min spec and no Auth",
-            should_load_balance_vm_attachments=False,
-            sharing_status="SHARED",
-            target_name="volumegroup-test-0",
-            created_by="Test",
-            cluster_reference="<Cluster uuid>",
-            iscsi_features=[{
-                "enabled_authentications": "CHAP",
-                "target_secret": "1234567891011",
-            }],
-            storage_features=[{
-                "flash_modes": [{
-                    "is_enabled": True,
-                }],
-            }],
-            usage_type="USER",
-            is_hidden=False)
         # create new volume group disk  and attached it to the previous volume group
-        example_volume_group_disk_v2 = nutanix.VolumeGroupDiskV2("exampleVolumeGroupDiskV2",
-            volume_group_ext_id=resource["nutanix_volume_group_v2"]["example"]["id"],
+        example = nutanix.VolumeGroupDiskV2("example",
+            volume_group_ext_id="cf7de8b9-88ed-477d-a602-c34ab7174c01",
             index=1,
-            description="create volume disk test",
+            description="create volume disk example",
             disk_size_bytes=5368709120,
             disk_data_source_references=[{
                 "name": "disk1",
-                "ext_id": var["disk_data_source_ref_ext_id"],
+                "ext_id": "1d92110d-26b5-46c0-8c93-20b8171373e0",
                 "entity_type": "STORAGE_CONTAINER",
                 "uris": [
                     "uri1",

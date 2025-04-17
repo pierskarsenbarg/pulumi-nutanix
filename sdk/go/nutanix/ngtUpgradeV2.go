@@ -13,6 +13,35 @@ import (
 )
 
 // Provides Nutanix resource to Trigger an in-guest upgrade of Nutanix Guest Tools.
+//
+// ## Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewNgtUpgradeV2(ctx, "example", &nutanix.NgtUpgradeV2Args{
+//				ExtId: pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),
+//				RebootPreference: &nutanix.NgtUpgradeV2RebootPreferenceArgs{
+//					ScheduleType: pulumi.String("IMMEDIATE"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type NgtUpgradeV2 struct {
 	pulumi.CustomResourceState
 

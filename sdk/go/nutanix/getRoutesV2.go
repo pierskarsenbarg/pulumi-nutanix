@@ -12,33 +12,6 @@ import (
 )
 
 // Provides Nutanix resource to List Routes request.
-//
-// ## Example
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.LookupRoutesV2(ctx, &nutanix.LookupRoutesV2Args{
-//				Limit:           pulumi.IntRef(3),
-//				RouteTableExtId: "<route_table_uuid>",
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func LookupRoutesV2(ctx *pulumi.Context, args *LookupRoutesV2Args, opts ...pulumi.InvokeOption) (*LookupRoutesV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupRoutesV2Result

@@ -12,6 +12,32 @@ import (
 )
 
 // Retrieve the image details for the provided external identifier.
+//
+// ## Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetImageV2(ctx, &nutanix.GetImageV2Args{
+//				ExtId: "0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetImageV2(ctx *pulumi.Context, args *GetImageV2Args, opts ...pulumi.InvokeOption) (*GetImageV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetImageV2Result

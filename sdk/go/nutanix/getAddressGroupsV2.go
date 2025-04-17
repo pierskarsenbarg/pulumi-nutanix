@@ -32,7 +32,14 @@ import (
 //				return err
 //			}
 //			_, err = nutanix.LookupAddressGroupsV2(ctx, &nutanix.LookupAddressGroupsV2Args{
-//				Filter: pulumi.StringRef("name eq '%[1]s'"),
+//				Filter: pulumi.StringRef("name eq 'td-addr-group'"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.LookupAddressGroupsV2(ctx, &nutanix.LookupAddressGroupsV2Args{
+//				Filter: pulumi.StringRef("name eq 'td-addr-group'"),
+//				Limit:  pulumi.IntRef(1),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -54,20 +61,36 @@ func LookupAddressGroupsV2(ctx *pulumi.Context, args *LookupAddressGroupsV2Args,
 
 // A collection of arguments for invoking getAddressGroupsV2.
 type LookupAddressGroupsV2Args struct {
-	// A URL query parameter that allows clients to filter a collection of resources.
+	// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+	// - createdBy
+	// - description
+	// - extId
+	// - name
 	Filter *string `pulumi:"filter"`
 	// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
 	Limit *int `pulumi:"limit"`
-	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+	// - description
+	// - extId
+	// - name
 	OrderBy *string `pulumi:"orderBy"`
 	// A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
 	Page *int `pulumi:"page"`
-	// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions
+	// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. The select can be applied to the following fields:
+	// - createdBy
+	// - description
+	// - extId
+	// - ipRanges
+	// - links
+	// - name
+	// - policyReferences
+	// - tenantId
 	Select *string `pulumi:"select"`
 }
 
 // A collection of values returned by getAddressGroupsV2.
 type LookupAddressGroupsV2Result struct {
+	// List of address groups
 	AddressGroups []GetAddressGroupsV2AddressGroup `pulumi:"addressGroups"`
 	Filter        *string                          `pulumi:"filter"`
 	// The provider-assigned unique ID for this managed resource.
@@ -89,15 +112,30 @@ func LookupAddressGroupsV2Output(ctx *pulumi.Context, args LookupAddressGroupsV2
 
 // A collection of arguments for invoking getAddressGroupsV2.
 type LookupAddressGroupsV2OutputArgs struct {
-	// A URL query parameter that allows clients to filter a collection of resources.
+	// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+	// - createdBy
+	// - description
+	// - extId
+	// - name
 	Filter pulumi.StringPtrInput `pulumi:"filter"`
 	// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
 	Limit pulumi.IntPtrInput `pulumi:"limit"`
-	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+	// - description
+	// - extId
+	// - name
 	OrderBy pulumi.StringPtrInput `pulumi:"orderBy"`
 	// A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
 	Page pulumi.IntPtrInput `pulumi:"page"`
-	// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions
+	// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. The select can be applied to the following fields:
+	// - createdBy
+	// - description
+	// - extId
+	// - ipRanges
+	// - links
+	// - name
+	// - policyReferences
+	// - tenantId
 	Select pulumi.StringPtrInput `pulumi:"select"`
 }
 
@@ -120,6 +158,7 @@ func (o LookupAddressGroupsV2ResultOutput) ToLookupAddressGroupsV2ResultOutputWi
 	return o
 }
 
+// List of address groups
 func (o LookupAddressGroupsV2ResultOutput) AddressGroups() GetAddressGroupsV2AddressGroupArrayOutput {
 	return o.ApplyT(func(v LookupAddressGroupsV2Result) []GetAddressGroupsV2AddressGroup { return v.AddressGroups }).(GetAddressGroupsV2AddressGroupArrayOutput)
 }

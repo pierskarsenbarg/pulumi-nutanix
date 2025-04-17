@@ -242,7 +242,7 @@ def get_role_v2(ext_id: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    role = nutanix.get_role_v2(ext_id="<role_uuid>")
+    role = nutanix.get_role_v2(ext_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
     ```
 
 
@@ -281,7 +281,7 @@ def get_role_v2_output(ext_id: Optional[pulumi.Input[builtins.str]] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    role = nutanix.get_role_v2(ext_id="<role_uuid>")
+    role = nutanix.get_role_v2(ext_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
     ```
 
 

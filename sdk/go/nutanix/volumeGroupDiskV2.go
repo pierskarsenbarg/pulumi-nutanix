@@ -28,44 +28,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewVolumeGroupV2(ctx, "exampleVolumeGroupV2", &nutanix.VolumeGroupV2Args{
-//				Description:                    pulumi.String("Test Volume group with min spec and no Auth"),
-//				ShouldLoadBalanceVmAttachments: pulumi.Bool(false),
-//				SharingStatus:                  pulumi.String("SHARED"),
-//				TargetName:                     pulumi.String("volumegroup-test-0"),
-//				CreatedBy:                      pulumi.String("Test"),
-//				ClusterReference:               pulumi.String("<Cluster uuid>"),
-//				IscsiFeatures: nutanix.VolumeGroupV2IscsiFeatureArray{
-//					&nutanix.VolumeGroupV2IscsiFeatureArgs{
-//						EnabledAuthentications: pulumi.String("CHAP"),
-//						TargetSecret:           pulumi.String("1234567891011"),
-//					},
-//				},
-//				StorageFeatures: nutanix.VolumeGroupV2StorageFeatureArray{
-//					&nutanix.VolumeGroupV2StorageFeatureArgs{
-//						FlashModes: nutanix.VolumeGroupV2StorageFeatureFlashModeArray{
-//							&nutanix.VolumeGroupV2StorageFeatureFlashModeArgs{
-//								IsEnabled: pulumi.Bool(true),
-//							},
-//						},
-//					},
-//				},
-//				UsageType: pulumi.String("USER"),
-//				IsHidden:  pulumi.Bool(false),
-//			})
-//			if err != nil {
-//				return err
-//			}
 //			// create new volume group disk  and attached it to the previous volume group
-//			_, err = nutanix.NewVolumeGroupDiskV2(ctx, "exampleVolumeGroupDiskV2", &nutanix.VolumeGroupDiskV2Args{
-//				VolumeGroupExtId: pulumi.Any(resource.Nutanix_volume_group_v2.Example.Id),
+//			_, err := nutanix.NewVolumeGroupDiskV2(ctx, "example", &nutanix.VolumeGroupDiskV2Args{
+//				VolumeGroupExtId: pulumi.String("cf7de8b9-88ed-477d-a602-c34ab7174c01"),
 //				Index:            pulumi.Int(1),
-//				Description:      pulumi.String("create volume disk test"),
+//				Description:      pulumi.String("create volume disk example"),
 //				DiskSizeBytes:    pulumi.Int(5368709120),
 //				DiskDataSourceReferences: nutanix.VolumeGroupDiskV2DiskDataSourceReferenceArray{
 //					&nutanix.VolumeGroupDiskV2DiskDataSourceReferenceArgs{
 //						Name:       pulumi.String("disk1"),
-//						ExtId:      pulumi.Any(_var.Disk_data_source_ref_ext_id),
+//						ExtId:      pulumi.String("1d92110d-26b5-46c0-8c93-20b8171373e0"),
 //						EntityType: pulumi.String("STORAGE_CONTAINER"),
 //						Uris: pulumi.StringArray{
 //							pulumi.String("uri1"),

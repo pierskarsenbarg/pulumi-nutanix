@@ -28,7 +28,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.GetVolumeIscsiClientV2(ctx, &nutanix.GetVolumeIscsiClientV2Args{
-//				ExtId: _var.Iscsi_client_ext_id,
+//				ExtId: "be0e4630-23da-4b9c-a76b-f24fd64b46b6",
 //			}, nil)
 //			if err != nil {
 //				return err

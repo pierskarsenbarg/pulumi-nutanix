@@ -54,9 +54,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// Netmask of the hypervisor.
         /// </summary>
         public readonly string? HypervisorNetmask;
-        /// <summary>
-        /// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-        /// </summary>
         public readonly string? HypervisorType;
         /// <summary>
         /// True, if the node should be imaged, False, otherwise.

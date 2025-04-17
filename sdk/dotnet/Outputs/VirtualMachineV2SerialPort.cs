@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string? ExtId;
         /// <summary>
-        /// Index of the serial port.
+        /// ) Index of the serial port.
         /// </summary>
         public readonly int? Index;
         /// <summary>

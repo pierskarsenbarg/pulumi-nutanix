@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class VirtualMachineV2AvailabilityZone
     {
         /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
+        /// The globally unique identifier of an availability zone type UUID.
         /// </summary>
         public readonly string? ExtId;
 

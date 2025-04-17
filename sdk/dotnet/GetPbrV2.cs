@@ -25,9 +25,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var pbr = Nutanix.GetPbrV2.Invoke(new()
+        ///     var get_pbr = Nutanix.GetPbrV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;pbr_uuid&gt;",
+        ///         ExtId = "96a22c81-ed58-4bed-96bc-46b488626612",
         ///     });
         /// 
         /// });
@@ -49,9 +49,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var pbr = Nutanix.GetPbrV2.Invoke(new()
+        ///     var get_pbr = Nutanix.GetPbrV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;pbr_uuid&gt;",
+        ///         ExtId = "96a22c81-ed58-4bed-96bc-46b488626612",
         ///     });
         /// 
         /// });
@@ -73,9 +73,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var pbr = Nutanix.GetPbrV2.Invoke(new()
+        ///     var get_pbr = Nutanix.GetPbrV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;pbr_uuid&gt;",
+        ///         ExtId = "96a22c81-ed58-4bed-96bc-46b488626612",
         ///     });
         /// 
         /// });

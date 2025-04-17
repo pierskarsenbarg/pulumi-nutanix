@@ -21,7 +21,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// Count of associations of a particular type of entity or policy
         /// </summary>
-        public readonly string Count;
+        public readonly int Count;
         /// <summary>
         /// An enum denoting the resource group.
         /// Resources can be organized into either an entity or a policy.
@@ -36,7 +36,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         private GetCategoryV2AssociationResult(
             string categoryId,
 
-            string count,
+            int count,
 
             string resourceGroup,
 

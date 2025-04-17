@@ -175,7 +175,7 @@ def get_vm_recovery_point_info_v2(disk_recovery_points: Optional[Sequence[Union[
                                   recovery_point_ext_id: Optional[builtins.str] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVmRecoveryPointInfoV2Result:
     """
-    Get a single recovery point  corresponding to the extId.
+    Get the VM recovery point identified by ex_id.
 
     ## Example Usage
 
@@ -183,13 +183,14 @@ def get_vm_recovery_point_info_v2(disk_recovery_points: Optional[Sequence[Union[
     import pulumi
     import pulumi_nutanix as nutanix
 
-    example = nutanix.get_vm_recovery_point_info_v2(ext_id="<vm_recovery_point_uuid>",
-        recovery_point_ext_id="<recovery_point_uuid>")
+    rp_vm_info = nutanix.get_vm_recovery_point_info_v2(ext_id="85ac418e-c847-45ab-9816-40a3c4de148c",
+        recovery_point_ext_id="af1070f7-c946-49da-9b17-e337e06e0a18")
     ```
 
 
     :param Sequence[Union['GetVmRecoveryPointInfoV2DiskRecoveryPointArgs', 'GetVmRecoveryPointInfoV2DiskRecoveryPointArgsDict']] disk_recovery_points: array of disk recovery points.
     :param builtins.str ext_id: The external identifier that can be used to identify a VM recovery point.
+    :param builtins.str recovery_point_ext_id: The external identifier that can be used to retrieve the recovery point using its URL.
     """
     __args__ = dict()
     __args__['diskRecoveryPoints'] = disk_recovery_points
@@ -215,7 +216,7 @@ def get_vm_recovery_point_info_v2_output(disk_recovery_points: Optional[pulumi.I
                                          recovery_point_ext_id: Optional[pulumi.Input[builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmRecoveryPointInfoV2Result]:
     """
-    Get a single recovery point  corresponding to the extId.
+    Get the VM recovery point identified by ex_id.
 
     ## Example Usage
 
@@ -223,13 +224,14 @@ def get_vm_recovery_point_info_v2_output(disk_recovery_points: Optional[pulumi.I
     import pulumi
     import pulumi_nutanix as nutanix
 
-    example = nutanix.get_vm_recovery_point_info_v2(ext_id="<vm_recovery_point_uuid>",
-        recovery_point_ext_id="<recovery_point_uuid>")
+    rp_vm_info = nutanix.get_vm_recovery_point_info_v2(ext_id="85ac418e-c847-45ab-9816-40a3c4de148c",
+        recovery_point_ext_id="af1070f7-c946-49da-9b17-e337e06e0a18")
     ```
 
 
     :param Sequence[Union['GetVmRecoveryPointInfoV2DiskRecoveryPointArgs', 'GetVmRecoveryPointInfoV2DiskRecoveryPointArgsDict']] disk_recovery_points: array of disk recovery points.
     :param builtins.str ext_id: The external identifier that can be used to identify a VM recovery point.
+    :param builtins.str recovery_point_ext_id: The external identifier that can be used to retrieve the recovery point using its URL.
     """
     __args__ = dict()
     __args__['diskRecoveryPoints'] = disk_recovery_points

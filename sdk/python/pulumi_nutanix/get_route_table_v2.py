@@ -134,7 +134,7 @@ def get_route_table_v2(ext_id: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    route_table = nutanix.get_route_table_v2(ext_id="<route_table_uuid>")
+    get_route_table = nutanix.get_route_table_v2(ext_id="ad7692ff-50f8-4a47-b3c9-fd5a3462d455")
     ```
 
 
@@ -164,7 +164,7 @@ def get_route_table_v2_output(ext_id: Optional[pulumi.Input[builtins.str]] = Non
     import pulumi
     import pulumi_nutanix as nutanix
 
-    route_table = nutanix.get_route_table_v2(ext_id="<route_table_uuid>")
+    get_route_table = nutanix.get_route_table_v2(ext_id="ad7692ff-50f8-4a47-b3c9-fd5a3462d455")
     ```
 
 

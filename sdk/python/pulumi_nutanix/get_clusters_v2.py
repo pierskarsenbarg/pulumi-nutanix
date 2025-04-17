@@ -65,6 +65,9 @@ class GetClustersV2Result:
     @property
     @pulumi.getter(name="clusterEntities")
     def cluster_entities(self) -> Sequence['outputs.GetClustersV2ClusterEntityResult']:
+        """
+        - List of cluster entities.
+        """
         return pulumi.get(self, "cluster_entities")
 
     @property
@@ -140,11 +143,14 @@ def get_clusters_v2(apply: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    clusters = nutanix.get_clusters_v2(filter="startswith(name, 'PC_')")
+    cls = nutanix.get_clusters_v2()
+    filtered_cls = nutanix.get_clusters_v2(filter="name eq 'cluster-1'")
+    paged_cls = nutanix.get_clusters_v2(limit=10,
+        page=1)
     ```
 
 
-    :param builtins.str apply: -(Optional) A URL query parameter that allows clients to specify a sequence of transformations to the entity set, such as groupby, filter, aggregate etc. As of now only support for groupby exists.For example '\\$apply=groupby((templateName))' would get all templates grouped by templateName. 
+    :param builtins.str apply: -(Optional) A URL query parameter that allows clients to specify a sequence of transformations to the entity set, such as groupby, filter, aggregate etc. As of now only support for groupby exists.For example '\\$apply=groupby((templateName))' would get all templates grouped by templateName.
            The apply can be applied on the following fields:
            - config/buildInfo/version
            - nodes/numberOfNodes
@@ -168,7 +174,7 @@ def get_clusters_v2(apply: Optional[builtins.str] = None,
            - network/keyManagementServerType
            - upgradeStatus
     :param builtins.int limit: -(Optional) A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-    :param builtins.str order_by: -(Optional) A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\\$orderby=templateName desc' would get all templates sorted by templateName in descending order. 
+    :param builtins.str order_by: -(Optional) A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\\$orderby=templateName desc' would get all templates sorted by templateName in descending order.
            The orderby can be applied to the following fields:
            - backupEligibilityScore
            - config/buildInfo/version
@@ -181,7 +187,7 @@ def get_clusters_v2(apply: Optional[builtins.str] = None,
            - upgradeStatus
            - vmCount
     :param builtins.int page: -(Optional) A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
-    :param builtins.str select: -(Optional) A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. 
+    :param builtins.str select: -(Optional) A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned.
            The select  can be applied to the following fields:
            - backupEligibilityScore
            - inefficientVmCount
@@ -227,11 +233,14 @@ def get_clusters_v2_output(apply: Optional[pulumi.Input[Optional[builtins.str]]]
     import pulumi
     import pulumi_nutanix as nutanix
 
-    clusters = nutanix.get_clusters_v2(filter="startswith(name, 'PC_')")
+    cls = nutanix.get_clusters_v2()
+    filtered_cls = nutanix.get_clusters_v2(filter="name eq 'cluster-1'")
+    paged_cls = nutanix.get_clusters_v2(limit=10,
+        page=1)
     ```
 
 
-    :param builtins.str apply: -(Optional) A URL query parameter that allows clients to specify a sequence of transformations to the entity set, such as groupby, filter, aggregate etc. As of now only support for groupby exists.For example '\\$apply=groupby((templateName))' would get all templates grouped by templateName. 
+    :param builtins.str apply: -(Optional) A URL query parameter that allows clients to specify a sequence of transformations to the entity set, such as groupby, filter, aggregate etc. As of now only support for groupby exists.For example '\\$apply=groupby((templateName))' would get all templates grouped by templateName.
            The apply can be applied on the following fields:
            - config/buildInfo/version
            - nodes/numberOfNodes
@@ -255,7 +264,7 @@ def get_clusters_v2_output(apply: Optional[pulumi.Input[Optional[builtins.str]]]
            - network/keyManagementServerType
            - upgradeStatus
     :param builtins.int limit: -(Optional) A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-    :param builtins.str order_by: -(Optional) A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\\$orderby=templateName desc' would get all templates sorted by templateName in descending order. 
+    :param builtins.str order_by: -(Optional) A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\\$orderby=templateName desc' would get all templates sorted by templateName in descending order.
            The orderby can be applied to the following fields:
            - backupEligibilityScore
            - config/buildInfo/version
@@ -268,7 +277,7 @@ def get_clusters_v2_output(apply: Optional[pulumi.Input[Optional[builtins.str]]]
            - upgradeStatus
            - vmCount
     :param builtins.int page: -(Optional) A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
-    :param builtins.str select: -(Optional) A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. 
+    :param builtins.str select: -(Optional) A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned.
            The select  can be applied to the following fields:
            - backupEligibilityScore
            - inefficientVmCount

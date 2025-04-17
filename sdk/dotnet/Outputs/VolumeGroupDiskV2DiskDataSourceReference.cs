@@ -15,7 +15,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class VolumeGroupDiskV2DiskDataSourceReference
     {
         /// <summary>
-        /// - The Entity Type of the Data Source Reference.
+        /// - The Entity Type of the Data Source Reference. valid values are:
+        /// - STORAGE_CONTAINER
+        /// - VM_DISK
+        /// - VOLUME_DISK
+        /// - DISK_RECOVERY_POINT
         /// </summary>
         public readonly string? EntityType;
         /// <summary>
