@@ -24,8 +24,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// <summary>
         /// -(Required)  Address configuration of a remote cluster. It requires the address of the remote, that is an IP or domain name along with the basic authentication credentials.
         /// </summary>
-        [Input("remoteCluster")]
-        public Input<Inputs.PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterGetArgs>? RemoteCluster { get; set; }
+        [Input("remoteCluster", required: true)]
+        public Input<Inputs.PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterGetArgs> RemoteCluster { get; set; } = null!;
 
         public PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecGetArgs()
         {

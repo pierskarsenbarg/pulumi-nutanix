@@ -13,7 +13,7 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetVmRecoveryPointInfoV2
     {
         /// <summary>
-        /// Get a single recovery point  corresponding to the extId.
+        /// Get the VM recovery point identified by ex_id.
         /// 
         /// ## Example Usage
         /// 
@@ -25,10 +25,10 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetVmRecoveryPointInfoV2.Invoke(new()
+        ///     var rp_vm_info = Nutanix.GetVmRecoveryPointInfoV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;vm_recovery_point_uuid&gt;",
-        ///         RecoveryPointExtId = "&lt;recovery_point_uuid&gt;",
+        ///         ExtId = "85ac418e-c847-45ab-9816-40a3c4de148c",
+        ///         RecoveryPointExtId = "af1070f7-c946-49da-9b17-e337e06e0a18",
         ///     });
         /// 
         /// });
@@ -38,7 +38,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVmRecoveryPointInfoV2Result>("nutanix:index/getVmRecoveryPointInfoV2:getVmRecoveryPointInfoV2", args ?? new GetVmRecoveryPointInfoV2Args(), options.WithDefaults());
 
         /// <summary>
-        /// Get a single recovery point  corresponding to the extId.
+        /// Get the VM recovery point identified by ex_id.
         /// 
         /// ## Example Usage
         /// 
@@ -50,10 +50,10 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetVmRecoveryPointInfoV2.Invoke(new()
+        ///     var rp_vm_info = Nutanix.GetVmRecoveryPointInfoV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;vm_recovery_point_uuid&gt;",
-        ///         RecoveryPointExtId = "&lt;recovery_point_uuid&gt;",
+        ///         ExtId = "85ac418e-c847-45ab-9816-40a3c4de148c",
+        ///         RecoveryPointExtId = "af1070f7-c946-49da-9b17-e337e06e0a18",
         ///     });
         /// 
         /// });
@@ -63,7 +63,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.Invoke<GetVmRecoveryPointInfoV2Result>("nutanix:index/getVmRecoveryPointInfoV2:getVmRecoveryPointInfoV2", args ?? new GetVmRecoveryPointInfoV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Get a single recovery point  corresponding to the extId.
+        /// Get the VM recovery point identified by ex_id.
         /// 
         /// ## Example Usage
         /// 
@@ -75,10 +75,10 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetVmRecoveryPointInfoV2.Invoke(new()
+        ///     var rp_vm_info = Nutanix.GetVmRecoveryPointInfoV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;vm_recovery_point_uuid&gt;",
-        ///         RecoveryPointExtId = "&lt;recovery_point_uuid&gt;",
+        ///         ExtId = "85ac418e-c847-45ab-9816-40a3c4de148c",
+        ///         RecoveryPointExtId = "af1070f7-c946-49da-9b17-e337e06e0a18",
         ///     });
         /// 
         /// });
@@ -109,6 +109,9 @@ namespace PiersKarsenbarg.Nutanix
         [Input("extId", required: true)]
         public string ExtId { get; set; } = null!;
 
+        /// <summary>
+        /// The external identifier that can be used to retrieve the recovery point using its URL.
+        /// </summary>
         [Input("recoveryPointExtId", required: true)]
         public string RecoveryPointExtId { get; set; } = null!;
 
@@ -138,6 +141,9 @@ namespace PiersKarsenbarg.Nutanix
         [Input("extId", required: true)]
         public Input<string> ExtId { get; set; } = null!;
 
+        /// <summary>
+        /// The external identifier that can be used to retrieve the recovery point using its URL.
+        /// </summary>
         [Input("recoveryPointExtId", required: true)]
         public Input<string> RecoveryPointExtId { get; set; } = null!;
 

@@ -15,20 +15,16 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetVirtualMachinesV2VmGpusResult
     {
         public readonly int DeviceId;
-        /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
-        /// </summary>
         public readonly string ExtId;
         public readonly int Fraction;
         public readonly int FrameBufferSizeBytes;
         public readonly string GuestDriverVersion;
+        public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmGpusLinkResult> Links;
         public readonly string Mode;
-        /// <summary>
-        /// VM name.
-        /// </summary>
         public readonly string Name;
         public readonly int NumVirtualDisplayHeads;
         public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmGpusPciAddressResult> PciAddresses;
+        public readonly string TenantId;
         public readonly string Vendor;
 
         [OutputConstructor]
@@ -43,6 +39,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string guestDriverVersion,
 
+            ImmutableArray<Outputs.GetVirtualMachinesV2VmGpusLinkResult> links,
+
             string mode,
 
             string name,
@@ -51,6 +49,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<Outputs.GetVirtualMachinesV2VmGpusPciAddressResult> pciAddresses,
 
+            string tenantId,
+
             string vendor)
         {
             DeviceId = deviceId;
@@ -58,10 +58,12 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             Fraction = fraction;
             FrameBufferSizeBytes = frameBufferSizeBytes;
             GuestDriverVersion = guestDriverVersion;
+            Links = links;
             Mode = mode;
             Name = name;
             NumVirtualDisplayHeads = numVirtualDisplayHeads;
             PciAddresses = pciAddresses;
+            TenantId = tenantId;
             Vendor = vendor;
         }
     }

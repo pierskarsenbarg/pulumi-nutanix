@@ -17,10 +17,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// - The fully qualified domain name of the host.
         /// </summary>
-        public readonly string? Value;
+        public readonly string Value;
 
         [OutputConstructor]
-        private PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterAddressFqdn(string? value)
+        private PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterAddressFqdn(string value)
         {
             Value = value;
         }

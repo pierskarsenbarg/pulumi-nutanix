@@ -15,7 +15,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Fetches an operation based on the external identifier.
         /// 
-        /// 
         /// ## Example
         /// 
         /// ```csharp
@@ -28,7 +27,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var operation = Nutanix.GetOperationV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;ext-id&gt;",
+        ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
         ///     });
         /// 
         /// });
@@ -40,7 +39,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Fetches an operation based on the external identifier.
         /// 
-        /// 
         /// ## Example
         /// 
         /// ```csharp
@@ -53,7 +51,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var operation = Nutanix.GetOperationV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;ext-id&gt;",
+        ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
         ///     });
         /// 
         /// });
@@ -65,7 +63,6 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// Fetches an operation based on the external identifier.
         /// 
-        /// 
         /// ## Example
         /// 
         /// ```csharp
@@ -78,7 +75,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var operation = Nutanix.GetOperationV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;ext-id&gt;",
+        ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
         ///     });
         /// 
         /// });
@@ -129,6 +126,9 @@ namespace PiersKarsenbarg.Nutanix
         /// Client that created the entity.
         /// </summary>
         public readonly string ClientName;
+        /// <summary>
+        /// Permission creation time
+        /// </summary>
         public readonly string CreatedTime;
         /// <summary>
         /// Permission description

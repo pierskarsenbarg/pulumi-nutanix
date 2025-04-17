@@ -13,10 +13,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * // revert Vm  
+ * // revert Vm
  * const example = new nutanix.VmRevertV2("example", {
- *     extId: "<VM_UUID>",
- *     vmRecoveryPointExtId: "<Vm_Recovery_Point_UUID>",
+ *     extId: "8a938cc5-282b-48c4-81be-de22de145d07",
+ *     vmRecoveryPointExtId: "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
  * });
  * ```
  */

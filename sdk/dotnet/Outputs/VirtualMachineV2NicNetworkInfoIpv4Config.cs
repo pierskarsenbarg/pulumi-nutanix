@@ -14,8 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VirtualMachineV2NicNetworkInfoIpv4Config
     {
+        /// <summary>
+        /// The IP address of the NIC.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VirtualMachineV2NicNetworkInfoIpv4ConfigIpAddress> IpAddresses;
+        /// <summary>
+        /// Secondary IP addresses for the NIC.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VirtualMachineV2NicNetworkInfoIpv4ConfigSecondaryIpAddressList> SecondaryIpAddressLists;
+        /// <summary>
+        /// If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+        /// </summary>
         public readonly bool? ShouldAssignIp;
 
         [OutputConstructor]

@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class VirtualMachineV2Category
     {
         /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
+        /// A globally unique identifier of a VM category of type UUID.
         /// </summary>
         public readonly string? ExtId;
 

@@ -36,6 +36,59 @@ import (
 //	}
 //
 // ```
+//
+// ## Storage Container
+//
+// The `storageContainers` contains list of Storage Container objects. Each Storage Container object contains the following attributes:
+//
+// * `extId`: - the storage container uuid
+// * `tenantId`: - A globally unique identifier that represents the tenant that owns this entity.
+// * `links`: - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+//
+// * `containerExtId`: - the storage container ext id
+// * `ownerExtId`: - owner ext id
+// * `name`: Name of the storage container.  Note that the name of Storage Container should be unique per cluster.
+// * `clusterExtId`: - ext id for the cluster owning the storage container.
+// * `storagePoolExtId`: - extId of the Storage Pool owning the Storage Container instance.
+// * `isMarkedForRemoval`: - Indicates if the Storage Container is marked for removal. This field is set when the Storage Container is about to be destroyed.
+// * `maxCapacityBytes`: - Maximum physical capacity of the Storage Container in bytes.
+// * `logicalExplicitReservedCapacityBytes`: - Total reserved size (in bytes) of the container (set by Admin). This also accounts for the container's replication factor. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity.
+// * `logicalImplicitReservedCapacityBytes`: - This is the summation of reservations provisioned on all VDisks in the container. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity
+// * `logicalAdvertisedCapacityBytes`: - Max capacity of the Container as defined by the user.
+// * `replicationFactor`: - Replication factor of the Storage Container.
+// * `nfsWhitelistAddresses`: - List of NFS addresses which need to be whitelisted.
+// * `isNfsWhitelistInherited`: - Indicates whether the NFS whitelist is inherited from global config.
+// * `erasureCode`: - Indicates the current status value for Erasure Coding for the Container. available values:  `NONE`,    `OFF`,    `ON`
+//
+// * `isInlineEcEnabled`: - Indicates whether data written to this container should be inline erasure coded or not. This field is only considered when ErasureCoding is enabled.
+// * `hasHigherEcFaultDomainPreference`: - Indicates whether to prefer a higher Erasure Code fault domain.
+// * `erasureCodeDelaySecs`: - Delay in performing ErasureCode for the current Container instance.
+// * `cacheDeduplication`: - Indicates the current status of Cache Deduplication for the Container. available values:  `NONE`,    `OFF`,    `ON`
+// * `onDiskDedup`: - Indicates the current status of Disk Deduplication for the Container. available values:  `NONE`,    `OFF`,    `POST_PROCESS`
+// * `isCompressionEnabled`: - Indicates whether the compression is enabled for the Container.
+// * `compressionDelaySecs`: - The compression delay in seconds.
+// * `isInternal`: - Indicates whether the Container is internal and is managed by Nutanix.
+// * `isSoftwareEncryptionEnabled`: - Indicates whether the Container instance has software encryption enabled.
+// * `isEncrypted`: - Indicates whether the Container is encrypted or not.
+// * `affinityHostExtId`: - Affinity host extId for RF 1 Storage Container.
+// * `clusterName`: - Corresponding name of the Cluster owning the Storage Container instance.
+//
+// ### nfsWhitelistAddresses
+//
+// * `ipv4`: Reference to address configuration
+// * `ipv6`: Reference to address configuration
+// * `fqdn`: Reference to address configuration
+//
+// ### ipv4, ipv6 (Reference to address configuration)
+//
+// * `value`: value of address
+// * `prefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
+//
+// ### fqdn (Reference to address configuration)
+//
+// * `value`: value of fqdn address
+//
+// See detailed information in [Nutanix List Storage Containers v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/StorageContainers/operation/listStorageContainers).
 func LookupStorageContainersV2(ctx *pulumi.Context, args *LookupStorageContainersV2Args, opts ...pulumi.InvokeOption) (*LookupStorageContainersV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupStorageContainersV2Result
@@ -66,11 +119,12 @@ type LookupStorageContainersV2Result struct {
 	Apply  *string `pulumi:"apply"`
 	Filter *string `pulumi:"filter"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string                                   `pulumi:"id"`
-	Limit             *int                                     `pulumi:"limit"`
-	OrderBy           *string                                  `pulumi:"orderBy"`
-	Page              *int                                     `pulumi:"page"`
-	Select            *string                                  `pulumi:"select"`
+	Id      string  `pulumi:"id"`
+	Limit   *int    `pulumi:"limit"`
+	OrderBy *string `pulumi:"orderBy"`
+	Page    *int    `pulumi:"page"`
+	Select  *string `pulumi:"select"`
+	// Lists the Storage Containers present in the system.
 	StorageContainers []GetStorageContainersV2StorageContainer `pulumi:"storageContainers"`
 }
 
@@ -146,6 +200,7 @@ func (o LookupStorageContainersV2ResultOutput) Select() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LookupStorageContainersV2Result) *string { return v.Select }).(pulumi.StringPtrOutput)
 }
 
+// Lists the Storage Containers present in the system.
 func (o LookupStorageContainersV2ResultOutput) StorageContainers() GetStorageContainersV2StorageContainerArrayOutput {
 	return o.ApplyT(func(v LookupStorageContainersV2Result) []GetStorageContainersV2StorageContainer {
 		return v.StorageContainers

@@ -522,8 +522,8 @@ def get_host_v2(cluster_ext_id: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    host = nutanix.get_host_v2(cluster_ext_id="<cluster uuid>",
-        ext_id="<host uuid>")
+    host = nutanix.get_host_v2(cluster_ext_id="021151dc-3ed1-4fec-a81d-39606451750c",
+        ext_id="919c9488-0b50-4fc8-9159-923e56a3abca")
     ```
 
 
@@ -588,8 +588,8 @@ def get_host_v2_output(cluster_ext_id: Optional[pulumi.Input[builtins.str]] = No
     import pulumi
     import pulumi_nutanix as nutanix
 
-    host = nutanix.get_host_v2(cluster_ext_id="<cluster uuid>",
-        ext_id="<host uuid>")
+    host = nutanix.get_host_v2(cluster_ext_id="021151dc-3ed1-4fec-a81d-39606451750c",
+        ext_id="919c9488-0b50-4fc8-9159-923e56a3abca")
     ```
 
 

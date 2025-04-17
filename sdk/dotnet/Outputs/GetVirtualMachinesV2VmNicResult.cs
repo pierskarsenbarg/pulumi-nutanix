@@ -15,9 +15,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetVirtualMachinesV2VmNicResult
     {
         public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmNicBackingInfoResult> BackingInfos;
-        /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
-        /// </summary>
         public readonly string ExtId;
         public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmNicNetworkInfoResult> NetworkInfos;
 

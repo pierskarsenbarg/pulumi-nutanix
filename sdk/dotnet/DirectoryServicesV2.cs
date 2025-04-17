@@ -23,19 +23,24 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example = new Nutanix.DirectoryServicesV2("example", new()
+    ///     // Add Directory Service .
+    ///     var active_directory = new Nutanix.DirectoryServicesV2("active-directory", new()
     ///     {
-    ///         DirectoryType = "directory type",
-    ///         DomainName = "domain name",
+    ///         Url = "ldap://10.xx.xx.xx:xxxx",
+    ///         DirectoryType = "ACTIVE_DIRECTORY",
+    ///         DomainName = "nutanix.com",
     ///         ServiceAccounts = new[]
     ///         {
     ///             new Nutanix.Inputs.DirectoryServicesV2ServiceAccountArgs
     ///             {
-    ///                 Password = "service account password",
-    ///                 Username = "service account username",
+    ///                 Username = "username",
+    ///                 Password = "password",
     ///             },
     ///         },
-    ///         Url = "URL for the Directory Service",
+    ///         WhiteListedGroups = new[]
+    ///         {
+    ///             "example",
+    ///         },
     ///     });
     /// 
     /// });

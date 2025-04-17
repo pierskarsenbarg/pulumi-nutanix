@@ -12,6 +12,32 @@ import (
 )
 
 // Retrieve the image placement policy details for the provided external identifier.
+//
+// ## Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.LookupImagePlacementPolicyV2(ctx, &nutanix.LookupImagePlacementPolicyV2Args{
+//				ExtId: "cf96e27a-4e52-4cec-b563-d0b25413cc4a",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupImagePlacementPolicyV2(ctx *pulumi.Context, args *LookupImagePlacementPolicyV2Args, opts ...pulumi.InvokeOption) (*LookupImagePlacementPolicyV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupImagePlacementPolicyV2Result
@@ -35,7 +61,9 @@ type LookupImagePlacementPolicyV2Result struct {
 	CreateTime           string                                         `pulumi:"createTime"`
 	// (Optional) Description of the image placement policy.
 	Description string `pulumi:"description"`
-	// (Optional) Enforcement status of the image placement policy. Valid values "ACTIVE", "SUSPENDED"
+	// (Optional) Enforcement status of the image placement policy. Valid values:
+	// - ACTIVE: The image placement policy is being actively enforced.
+	// - SUSPENDED: The policy enforcement for image placement is suspended.
 	EnforcementState string `pulumi:"enforcementState"`
 	ExtId            string `pulumi:"extId"`
 	// The provider-assigned unique ID for this managed resource.
@@ -46,7 +74,9 @@ type LookupImagePlacementPolicyV2Result struct {
 	// (Required) Name of the image placement policy.
 	Name       string `pulumi:"name"`
 	OwnerExtId string `pulumi:"ownerExtId"`
-	// (Required) Type of the image placement policy. Valid values "HARD", "SOFT"
+	// (Required) Type of the image placement policy. Valid values:
+	// - HARD: Hard placement policy. Images can only be placed on clusters enforced by the image placement policy.
+	// - SOFT: Soft placement policy. Images can be placed on clusters apart from those enforced by the image placement policy.
 	PlacementType string `pulumi:"placementType"`
 }
 
@@ -100,7 +130,9 @@ func (o LookupImagePlacementPolicyV2ResultOutput) Description() pulumi.StringOut
 	return o.ApplyT(func(v LookupImagePlacementPolicyV2Result) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Optional) Enforcement status of the image placement policy. Valid values "ACTIVE", "SUSPENDED"
+// (Optional) Enforcement status of the image placement policy. Valid values:
+// - ACTIVE: The image placement policy is being actively enforced.
+// - SUSPENDED: The policy enforcement for image placement is suspended.
 func (o LookupImagePlacementPolicyV2ResultOutput) EnforcementState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImagePlacementPolicyV2Result) string { return v.EnforcementState }).(pulumi.StringOutput)
 }
@@ -134,7 +166,9 @@ func (o LookupImagePlacementPolicyV2ResultOutput) OwnerExtId() pulumi.StringOutp
 	return o.ApplyT(func(v LookupImagePlacementPolicyV2Result) string { return v.OwnerExtId }).(pulumi.StringOutput)
 }
 
-// (Required) Type of the image placement policy. Valid values "HARD", "SOFT"
+// (Required) Type of the image placement policy. Valid values:
+// - HARD: Hard placement policy. Images can only be placed on clusters enforced by the image placement policy.
+// - SOFT: Soft placement policy. Images can be placed on clusters apart from those enforced by the image placement policy.
 func (o LookupImagePlacementPolicyV2ResultOutput) PlacementType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupImagePlacementPolicyV2Result) string { return v.PlacementType }).(pulumi.StringOutput)
 }

@@ -17,8 +17,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// The Nutanix Guest Tools customization settings.
         /// 
-        /// * `config.sysprep`: (Optional) Sysprep config
-        /// * `config.cloud_init`: (Optional) CloudInit Config
+        /// * `config.sysprep`: Sysprep config
+        /// * `config.cloud_init`: CloudInit Config
         /// </summary>
         public readonly ImmutableArray<Outputs.VirtualMachineV2GuestCustomizationConfig> Configs;
 

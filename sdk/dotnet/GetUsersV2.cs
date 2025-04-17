@@ -25,7 +25,12 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var users = Nutanix.GetUsersV2.Invoke();
+        ///     var list_users = Nutanix.GetUsersV2.Invoke();
+        /// 
+        ///     var filtered_users = Nutanix.GetUsersV2.Invoke(new()
+        ///     {
+        ///         Filter = "username eq 'username-example'",
+        ///     });
         /// 
         /// });
         /// ```
@@ -59,7 +64,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     * lastUpdatedTime
         ///     * userType
         ///     * username
-        /// * `select` : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. following fields: 
+        /// * `select` : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. following fields:
         ///     * additionalAttributes
         ///     * bucketsAccessKeys
         ///     * createdBy
@@ -99,7 +104,12 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var users = Nutanix.GetUsersV2.Invoke();
+        ///     var list_users = Nutanix.GetUsersV2.Invoke();
+        /// 
+        ///     var filtered_users = Nutanix.GetUsersV2.Invoke(new()
+        ///     {
+        ///         Filter = "username eq 'username-example'",
+        ///     });
         /// 
         /// });
         /// ```
@@ -133,7 +143,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     * lastUpdatedTime
         ///     * userType
         ///     * username
-        /// * `select` : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. following fields: 
+        /// * `select` : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. following fields:
         ///     * additionalAttributes
         ///     * bucketsAccessKeys
         ///     * createdBy
@@ -173,7 +183,12 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var users = Nutanix.GetUsersV2.Invoke();
+        ///     var list_users = Nutanix.GetUsersV2.Invoke();
+        /// 
+        ///     var filtered_users = Nutanix.GetUsersV2.Invoke(new()
+        ///     {
+        ///         Filter = "username eq 'username-example'",
+        ///     });
         /// 
         /// });
         /// ```
@@ -207,7 +222,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     * lastUpdatedTime
         ///     * userType
         ///     * username
-        /// * `select` : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. following fields: 
+        /// * `select` : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. following fields:
         ///     * additionalAttributes
         ///     * bucketsAccessKeys
         ///     * createdBy

@@ -30,7 +30,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string? ClusterArch;
         /// <summary>
-        /// - (Optional) Cluster function. This is part of payload for cluster 
+        /// - (Optional) Cluster function. This is part of payload for cluster
         /// create operation only (allowed enum values for creation are AOS, ONE_NODE &amp; TWO_NODE only).
         /// Valid values are:
         /// - "AOS"
@@ -74,7 +74,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string? OperationMode;
         /// <summary>
-        /// - (Optional) Pulse status for a cluster.
+        /// - (Optional) Pulse status for a cluster. `supported only for update operations and not available during creation.`
         /// </summary>
         public readonly ImmutableArray<Outputs.ClusterV2ConfigPulseStatus> PulseStatuses;
         /// <summary>

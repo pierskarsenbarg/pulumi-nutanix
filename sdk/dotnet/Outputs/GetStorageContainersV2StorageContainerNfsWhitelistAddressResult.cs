@@ -14,17 +14,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetStorageContainersV2StorageContainerNfsWhitelistAddressResult
     {
-        /// <summary>
-        /// Reference to address configuration
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainersV2StorageContainerNfsWhitelistAddressFqdnResult> Fqdns;
-        /// <summary>
-        /// Reference to address configuration
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainersV2StorageContainerNfsWhitelistAddressIpv4Result> Ipv4s;
-        /// <summary>
-        /// Reference to address configuration
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetStorageContainersV2StorageContainerNfsWhitelistAddressIpv6Result> Ipv6s;
 
         [OutputConstructor]

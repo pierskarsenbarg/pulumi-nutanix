@@ -64,6 +64,9 @@ class GetFloatingIpsV2Result:
     @property
     @pulumi.getter(name="floatingIps")
     def floating_ips(self) -> Sequence['outputs.GetFloatingIpsV2FloatingIpResult']:
+        """
+        List of all Floating IPs.
+        """
         return pulumi.get(self, "floating_ips")
 
     @property
@@ -121,13 +124,28 @@ def get_floating_ips_v2(expand: Optional[builtins.str] = None,
     import pulumi_nutanix as nutanix
 
     floating_ips = nutanix.get_floating_ips_v2()
+    floating_ips_filter = nutanix.get_floating_ips_v2(filter="name eq 'floating_ip_example'")
+    floating_ips_limit = nutanix.get_floating_ips_v2(limit=10)
+    floating_ips_filter_limit = nutanix.get_floating_ips_v2(filter="name eq 'floating_ip_example'",
+        limit=10)
     ```
 
 
-    :param builtins.str expand: A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
-    :param builtins.str filter: A URL query parameter that allows clients to filter a collection of resources.
+    :param builtins.str expand: A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. The expand can be applied to the following fields:
+           - externalSubnet
+           - vpc
+           - vmNic
+    :param builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+           - externalSubnetReference
+           - floatingIp/ipv4/value
+           - floatingIp/ipv6/value
+           - loadBalancerSessionReference
+           - name
     :param builtins.int limit: A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-    :param builtins.str order_by: A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+    :param builtins.str order_by: A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+           - floatingIp/ipv4/value
+           - floatingIp/ipv6/value
+           - name
     :param builtins.int page: A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
     """
     __args__ = dict()
@@ -163,13 +181,28 @@ def get_floating_ips_v2_output(expand: Optional[pulumi.Input[Optional[builtins.s
     import pulumi_nutanix as nutanix
 
     floating_ips = nutanix.get_floating_ips_v2()
+    floating_ips_filter = nutanix.get_floating_ips_v2(filter="name eq 'floating_ip_example'")
+    floating_ips_limit = nutanix.get_floating_ips_v2(limit=10)
+    floating_ips_filter_limit = nutanix.get_floating_ips_v2(filter="name eq 'floating_ip_example'",
+        limit=10)
     ```
 
 
-    :param builtins.str expand: A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
-    :param builtins.str filter: A URL query parameter that allows clients to filter a collection of resources.
+    :param builtins.str expand: A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. The expand can be applied to the following fields:
+           - externalSubnet
+           - vpc
+           - vmNic
+    :param builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+           - externalSubnetReference
+           - floatingIp/ipv4/value
+           - floatingIp/ipv6/value
+           - loadBalancerSessionReference
+           - name
     :param builtins.int limit: A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-    :param builtins.str order_by: A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+    :param builtins.str order_by: A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+           - floatingIp/ipv4/value
+           - floatingIp/ipv6/value
+           - name
     :param builtins.int page: A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
     """
     __args__ = dict()

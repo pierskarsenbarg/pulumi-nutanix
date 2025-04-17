@@ -14,7 +14,11 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class VolumeGroupDiskV2DiskDataSourceReferenceGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - The Entity Type of the Data Source Reference.
+        /// - The Entity Type of the Data Source Reference. valid values are:
+        /// - STORAGE_CONTAINER
+        /// - VM_DISK
+        /// - VOLUME_DISK
+        /// - DISK_RECOVERY_POINT
         /// </summary>
         [Input("entityType")]
         public Input<string>? EntityType { get; set; }

@@ -54,6 +54,9 @@ class GetAddressGroupsV2Result:
     @property
     @pulumi.getter(name="addressGroups")
     def address_groups(self) -> Sequence['outputs.GetAddressGroupsV2AddressGroupResult']:
+        """
+        List of address groups
+        """
         return pulumi.get(self, "address_groups")
 
     @property
@@ -120,16 +123,33 @@ def get_address_groups_v2(filter: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    addr_group = nutanix.get_address_groups_v2()
-    addr_group_filtered = nutanix.get_address_groups_v2(filter="name eq '%[1]s'")
+    list_addr_groups = nutanix.get_address_groups_v2()
+    list_addr_group_filtered = nutanix.get_address_groups_v2(filter="name eq 'td-addr-group'")
+    list_addr_groups_filter_limit = nutanix.get_address_groups_v2(filter="name eq 'td-addr-group'",
+        limit=1)
     ```
 
 
-    :param builtins.str filter: A URL query parameter that allows clients to filter a collection of resources.
+    :param builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+           - createdBy
+           - description
+           - extId
+           - name
     :param builtins.int limit: A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-    :param builtins.str order_by: A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+    :param builtins.str order_by: A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+           - description
+           - extId
+           - name
     :param builtins.int page: A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
-    :param builtins.str select: A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions
+    :param builtins.str select: A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. The select can be applied to the following fields:
+           - createdBy
+           - description
+           - extId
+           - ipRanges
+           - links
+           - name
+           - policyReferences
+           - tenantId
     """
     __args__ = dict()
     __args__['filter'] = filter
@@ -163,16 +183,33 @@ def get_address_groups_v2_output(filter: Optional[pulumi.Input[Optional[builtins
     import pulumi
     import pulumi_nutanix as nutanix
 
-    addr_group = nutanix.get_address_groups_v2()
-    addr_group_filtered = nutanix.get_address_groups_v2(filter="name eq '%[1]s'")
+    list_addr_groups = nutanix.get_address_groups_v2()
+    list_addr_group_filtered = nutanix.get_address_groups_v2(filter="name eq 'td-addr-group'")
+    list_addr_groups_filter_limit = nutanix.get_address_groups_v2(filter="name eq 'td-addr-group'",
+        limit=1)
     ```
 
 
-    :param builtins.str filter: A URL query parameter that allows clients to filter a collection of resources.
+    :param builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+           - createdBy
+           - description
+           - extId
+           - name
     :param builtins.int limit: A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-    :param builtins.str order_by: A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+    :param builtins.str order_by: A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+           - description
+           - extId
+           - name
     :param builtins.int page: A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
-    :param builtins.str select: A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions
+    :param builtins.str select: A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. The select can be applied to the following fields:
+           - createdBy
+           - description
+           - extId
+           - ipRanges
+           - links
+           - name
+           - policyReferences
+           - tenantId
     """
     __args__ = dict()
     __args__['filter'] = filter

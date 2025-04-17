@@ -14,9 +14,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigResult
     {
-        /// <summary>
-        /// Indicates whether the virtual disk is pinned to the hot tier or not.
-        /// </summary>
         public readonly bool IsFlashModeEnabled;
 
         [OutputConstructor]

@@ -8,6 +8,18 @@ import * as utilities from "./utilities";
 
 /**
  * Describes a Query the Volume Disk identified by {extId} in the Volume Group identified by {volumeGroupExtId}.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const example = nutanix.getVolumeGroupDiskV2({
+ *     extId: "1d92110d-26b5-46c0-8c93-20b8171373e0",
+ *     volumeGroupExtId: "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+ * });
+ * ```
  */
 export function getVolumeGroupDiskV2(args: GetVolumeGroupDiskV2Args, opts?: pulumi.InvokeOptions): Promise<GetVolumeGroupDiskV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -76,6 +88,18 @@ export interface GetVolumeGroupDiskV2Result {
 }
 /**
  * Describes a Query the Volume Disk identified by {extId} in the Volume Group identified by {volumeGroupExtId}.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const example = nutanix.getVolumeGroupDiskV2({
+ *     extId: "1d92110d-26b5-46c0-8c93-20b8171373e0",
+ *     volumeGroupExtId: "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+ * });
+ * ```
  */
 export function getVolumeGroupDiskV2Output(args: GetVolumeGroupDiskV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVolumeGroupDiskV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

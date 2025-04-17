@@ -15,9 +15,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetSubnetsV2SubnetVirtualSwitchClusterHostIpAddressIpResult
     {
         public readonly int PrefixLength;
-        /// <summary>
-        /// value of address
-        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

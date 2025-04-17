@@ -25,9 +25,16 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var usrGroup = new Nutanix.UserGroupsV2("usrGroup", new()
     ///     {
-    ///         DistinguishedName = "&lt;distinguished name of the user group&gt;",
-    ///         GroupType = "&lt;group Type&gt;",
-    ///         IdpId = "&lt;idp uuid of user group&gt;",
+    ///         DistinguishedName = "cn=group_0664229e,ou=group,dc=devtest,dc=local",
+    ///         GroupType = "LDAP",
+    ///         IdpId = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+    ///     });
+    /// 
+    ///     // Saml User group
+    ///     var saml_ug = new Nutanix.UserGroupsV2("saml-ug", new()
+    ///     {
+    ///         GroupType = "SAML",
+    ///         IdpId = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
     ///     });
     /// 
     /// });
@@ -61,7 +68,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> ExtId { get; private set; } = null!;
 
         /// <summary>
-        /// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        /// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
         /// </summary>
         [Output("groupType")]
         public Output<string> GroupType { get; private set; } = null!;
@@ -144,7 +151,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? ExtId { get; set; }
 
         /// <summary>
-        /// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        /// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
         /// </summary>
         [Input("groupType", required: true)]
         public Input<string> GroupType { get; set; } = null!;
@@ -194,7 +201,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? ExtId { get; set; }
 
         /// <summary>
-        /// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        /// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
         /// </summary>
         [Input("groupType")]
         public Input<string>? GroupType { get; set; }

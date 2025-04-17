@@ -19,6 +19,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("isVtpmEnabled")]
         public Input<bool>? IsVtpmEnabled { get; set; }
 
+        [Input("version")]
+        public Input<string>? Version { get; set; }
+
         public VirtualMachineV2VtpmConfigArgs()
         {
         }

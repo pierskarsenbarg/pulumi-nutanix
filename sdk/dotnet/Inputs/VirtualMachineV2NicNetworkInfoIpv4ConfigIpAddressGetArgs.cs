@@ -13,9 +13,15 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class VirtualMachineV2NicNetworkInfoIpv4ConfigIpAddressGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The prefix length of the IP address.
+        /// </summary>
         [Input("prefixLength")]
         public Input<int>? PrefixLength { get; set; }
 
+        /// <summary>
+        /// The IPv4 address of the host.
+        /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }
 

@@ -23,7 +23,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// Indicates whether to abort VM shutdown/restart if the script fails.
         /// 
         /// 
-        /// See detailed information in [Nutanix VMs Power Action V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0).
+        /// See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Vm/operation/shutdownVm).
+        /// See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Vm/operation/shutdownGuestVm).
+        /// See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Vm/operation/rebootVm).
+        /// See detailed information in [Nutanix VMs Power Action Reboot Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Vm/operation/rebootGuestVm).
         /// </summary>
         [Input("shouldFailOnScriptFailure")]
         public Input<bool>? ShouldFailOnScriptFailure { get; set; }

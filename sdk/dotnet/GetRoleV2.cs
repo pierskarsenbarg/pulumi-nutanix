@@ -27,7 +27,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var role = Nutanix.GetRoleV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;role_uuid&gt;",
+        ///         ExtId = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
         ///     });
         /// 
         /// });
@@ -51,7 +51,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var role = Nutanix.GetRoleV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;role_uuid&gt;",
+        ///         ExtId = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
         ///     });
         /// 
         /// });
@@ -75,7 +75,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var role = Nutanix.GetRoleV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;role_uuid&gt;",
+        ///         ExtId = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
         ///     });
         /// 
         /// });

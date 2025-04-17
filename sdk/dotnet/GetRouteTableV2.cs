@@ -26,9 +26,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var route_table = Nutanix.GetRouteTableV2.Invoke(new()
+        ///     var get_route_table = Nutanix.GetRouteTableV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;route_table_uuid&gt;",
+        ///         ExtId = "ad7692ff-50f8-4a47-b3c9-fd5a3462d455",
         ///     });
         /// 
         /// });
@@ -51,9 +51,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var route_table = Nutanix.GetRouteTableV2.Invoke(new()
+        ///     var get_route_table = Nutanix.GetRouteTableV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;route_table_uuid&gt;",
+        ///         ExtId = "ad7692ff-50f8-4a47-b3c9-fd5a3462d455",
         ///     });
         /// 
         /// });
@@ -76,9 +76,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var route_table = Nutanix.GetRouteTableV2.Invoke(new()
+        ///     var get_route_table = Nutanix.GetRouteTableV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;route_table_uuid&gt;",
+        ///         ExtId = "ad7692ff-50f8-4a47-b3c9-fd5a3462d455",
         ///     });
         /// 
         /// });

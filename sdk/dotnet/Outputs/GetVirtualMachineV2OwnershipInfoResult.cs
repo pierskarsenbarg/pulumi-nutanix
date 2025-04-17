@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetVirtualMachineV2OwnershipInfoResult
     {
         /// <summary>
-        /// Owner reference
+        /// Reference to the owner.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVirtualMachineV2OwnershipInfoOwnerResult> Owners;
 

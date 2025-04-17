@@ -28,7 +28,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.GetAddressGroupV2(ctx, &nutanix.GetAddressGroupV2Args{
-//				ExtId: "{{ address_group uuid }}",
+//				ExtId: "0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b",
 //			}, nil)
 //			if err != nil {
 //				return err

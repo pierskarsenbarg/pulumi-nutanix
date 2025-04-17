@@ -21,13 +21,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
         /// </summary>
-        public readonly string? Value;
+        public readonly string Value;
 
         [OutputConstructor]
         private PcRegistrationV2NetworkExternalNetworkSubnetMaskIpv4(
             int? prefixLength,
 
-            string? value)
+            string value)
         {
             PrefixLength = prefixLength;
             Value = value;

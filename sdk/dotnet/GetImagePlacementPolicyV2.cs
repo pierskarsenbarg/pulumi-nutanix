@@ -14,18 +14,72 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Retrieve the image placement policy details for the provided external identifier.
+        /// 
+        /// ## Example
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var ipp = Nutanix.GetImagePlacementPolicyV2.Invoke(new()
+        ///     {
+        ///         ExtId = "cf96e27a-4e52-4cec-b563-d0b25413cc4a",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetImagePlacementPolicyV2Result> InvokeAsync(GetImagePlacementPolicyV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetImagePlacementPolicyV2Result>("nutanix:index/getImagePlacementPolicyV2:getImagePlacementPolicyV2", args ?? new GetImagePlacementPolicyV2Args(), options.WithDefaults());
 
         /// <summary>
         /// Retrieve the image placement policy details for the provided external identifier.
+        /// 
+        /// ## Example
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var ipp = Nutanix.GetImagePlacementPolicyV2.Invoke(new()
+        ///     {
+        ///         ExtId = "cf96e27a-4e52-4cec-b563-d0b25413cc4a",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetImagePlacementPolicyV2Result> Invoke(GetImagePlacementPolicyV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetImagePlacementPolicyV2Result>("nutanix:index/getImagePlacementPolicyV2:getImagePlacementPolicyV2", args ?? new GetImagePlacementPolicyV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// Retrieve the image placement policy details for the provided external identifier.
+        /// 
+        /// ## Example
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var ipp = Nutanix.GetImagePlacementPolicyV2.Invoke(new()
+        ///     {
+        ///         ExtId = "cf96e27a-4e52-4cec-b563-d0b25413cc4a",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetImagePlacementPolicyV2Result> Invoke(GetImagePlacementPolicyV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetImagePlacementPolicyV2Result>("nutanix:index/getImagePlacementPolicyV2:getImagePlacementPolicyV2", args ?? new GetImagePlacementPolicyV2InvokeArgs(), options.WithDefaults());
@@ -74,7 +128,9 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// (Optional) Enforcement status of the image placement policy. Valid values "ACTIVE", "SUSPENDED"
+        /// (Optional) Enforcement status of the image placement policy. Valid values:
+        /// - ACTIVE: The image placement policy is being actively enforced.
+        /// - SUSPENDED: The policy enforcement for image placement is suspended.
         /// </summary>
         public readonly string EnforcementState;
         public readonly string ExtId;
@@ -93,7 +149,9 @@ namespace PiersKarsenbarg.Nutanix
         public readonly string Name;
         public readonly string OwnerExtId;
         /// <summary>
-        /// (Required) Type of the image placement policy. Valid values "HARD", "SOFT"
+        /// (Required) Type of the image placement policy. Valid values:
+        /// - HARD: Hard placement policy. Images can only be placed on clusters enforced by the image placement policy.
+        /// - SOFT: Soft placement policy. Images can be placed on clusters apart from those enforced by the image placement policy.
         /// </summary>
         public readonly string PlacementType;
 

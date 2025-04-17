@@ -6,6 +6,20 @@ import * as utilities from "./utilities";
 
 /**
  * External identifier of the replicated recovery point can be found in the task completion details under the key
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * // replicate RP
+ * const rp_replicate = new nutanix.RecoveryPointReplicateV2("rp-replicate", {
+ *     clusterExtId: "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+ *     extId: "150a7ed0-9d05-4f35-a060-16dac4c835d0",
+ *     pcExtId: "8a938cc5-282b-48c4-81be-de22de145d07",
+ * });
+ * ```
  */
 export class RecoveryPointReplicateV2 extends pulumi.CustomResource {
     /**

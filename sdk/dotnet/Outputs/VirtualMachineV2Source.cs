@@ -14,12 +14,25 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VirtualMachineV2Source
     {
+        /// <summary>
+        /// Reference to an entity from which the VM should be cloned or created. Values are:
+        /// - VM_RECOVERY_POINT: Reference to the recovery point entity from which the VM should be cloned or created.
+        /// - VM: Reference to an entity from which the VM should be cloned or created.
+        /// </summary>
         public readonly string? EntityType;
+        /// <summary>
+        /// A globally unique identifier of an instance that is suitable for external consumption.
+        /// </summary>
+        public readonly string? ExtId;
 
         [OutputConstructor]
-        private VirtualMachineV2Source(string? entityType)
+        private VirtualMachineV2Source(
+            string? entityType,
+
+            string? extId)
         {
             EntityType = entityType;
+            ExtId = extId;
         }
     }
 }

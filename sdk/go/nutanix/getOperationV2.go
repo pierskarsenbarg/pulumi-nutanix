@@ -28,7 +28,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.GetOperationV2(ctx, &nutanix.GetOperationV2Args{
-//				ExtId: "<ext-id>",
+//				ExtId: "8a938cc5-282b-48c4-81be-de22de145d07",
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -59,7 +59,8 @@ type GetOperationV2Result struct {
 	// List of associated endpoint objects for the Operation.
 	AssociatedEndpointLists []GetOperationV2AssociatedEndpointList `pulumi:"associatedEndpointLists"`
 	// Client that created the entity.
-	ClientName  string `pulumi:"clientName"`
+	ClientName string `pulumi:"clientName"`
+	// Permission creation time
 	CreatedTime string `pulumi:"createdTime"`
 	// Permission description
 	Description string `pulumi:"description"`
@@ -123,6 +124,7 @@ func (o GetOperationV2ResultOutput) ClientName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOperationV2Result) string { return v.ClientName }).(pulumi.StringOutput)
 }
 
+// Permission creation time
 func (o GetOperationV2ResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOperationV2Result) string { return v.CreatedTime }).(pulumi.StringOutput)
 }

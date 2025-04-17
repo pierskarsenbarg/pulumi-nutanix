@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetVolumeGroupsV2VolumeStorageFeatureResult
     {
         /// <summary>
-        /// - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+        /// Once configured, this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVolumeGroupsV2VolumeStorageFeatureFlashModeResult> FlashModes;
 

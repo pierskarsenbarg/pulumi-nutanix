@@ -14,9 +14,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetRecoveryPointsV2RecoveryPointLocationReferenceResult
     {
-        /// <summary>
-        /// External identifier of the cluster where the recovery point is present.
-        /// </summary>
         public readonly string LocationExtId;
 
         [OutputConstructor]

@@ -14,29 +14,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetSubnetsV2SubnetDhcpOptionResult
     {
-        /// <summary>
-        /// Boot file name
-        /// </summary>
         public readonly string BootFileName;
-        /// <summary>
-        /// The DNS domain name of the client.
-        /// </summary>
         public readonly string DomainName;
-        /// <summary>
-        /// List of Domain Name Server addresses.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetDhcpOptionDomainNameServerResult> DomainNameServers;
-        /// <summary>
-        /// List of NTP server addresses
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetDhcpOptionNtpServerResult> NtpServers;
-        /// <summary>
-        /// The DNS domain search list.
-        /// </summary>
         public readonly ImmutableArray<string> SearchDomains;
-        /// <summary>
-        /// TFTP server name
-        /// </summary>
         public readonly string TftpServerName;
 
         [OutputConstructor]

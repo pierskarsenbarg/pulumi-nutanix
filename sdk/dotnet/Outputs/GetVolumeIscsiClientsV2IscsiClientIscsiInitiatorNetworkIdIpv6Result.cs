@@ -15,11 +15,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdIpv6Result
     {
         /// <summary>
-        /// - The prefix length of the network to which this host IPv6 address belongs.
+        /// The prefix length of the network to which this host IPv6 address belongs.
         /// </summary>
         public readonly int PrefixLength;
         /// <summary>
-        /// - The fully qualified domain name.
+        /// An unique address that identifies a device on the internet or a local network in IPv6 format.
         /// </summary>
         public readonly string Value;
 

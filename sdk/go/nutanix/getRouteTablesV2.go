@@ -32,7 +32,13 @@ import (
 //				return err
 //			}
 //			_, err = nutanix.GetRouteTablesV2(ctx, &nutanix.GetRouteTablesV2Args{
-//				Filter: pulumi.StringRef("vpcReference eq '<vpc_uuid>'"),
+//				Filter: pulumi.StringRef("vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.GetRouteTablesV2(ctx, &nutanix.GetRouteTablesV2Args{
+//				OrderBy: pulumi.StringRef("vpcReference"),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -73,10 +79,11 @@ type GetRouteTablesV2Args struct {
 type GetRouteTablesV2Result struct {
 	Filter *string `pulumi:"filter"`
 	// The provider-assigned unique ID for this managed resource.
-	Id          string                       `pulumi:"id"`
-	Limit       *int                         `pulumi:"limit"`
-	OrderBy     *string                      `pulumi:"orderBy"`
-	Page        *int                         `pulumi:"page"`
+	Id      string  `pulumi:"id"`
+	Limit   *int    `pulumi:"limit"`
+	OrderBy *string `pulumi:"orderBy"`
+	Page    *int    `pulumi:"page"`
+	// A list of route tables.
 	RouteTables []GetRouteTablesV2RouteTable `pulumi:"routeTables"`
 }
 
@@ -146,6 +153,7 @@ func (o GetRouteTablesV2ResultOutput) Page() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v GetRouteTablesV2Result) *int { return v.Page }).(pulumi.IntPtrOutput)
 }
 
+// A list of route tables.
 func (o GetRouteTablesV2ResultOutput) RouteTables() GetRouteTablesV2RouteTableArrayOutput {
 	return o.ApplyT(func(v GetRouteTablesV2Result) []GetRouteTablesV2RouteTable { return v.RouteTables }).(GetRouteTablesV2RouteTableArrayOutput)
 }

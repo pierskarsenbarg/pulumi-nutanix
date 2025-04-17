@@ -24,16 +24,16 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     // restore RP 
-    ///     var example = new Nutanix.RecoveryPointRestoreV2("example", new()
+    ///     // restore RP
+    ///     var rp_restore = new Nutanix.RecoveryPointRestoreV2("rp-restore", new()
     ///     {
-    ///         ClusterExtId = "&lt;cluster_external_id&gt;",
-    ///         ExtId = "&lt;recovery_point_external_id&gt;",
+    ///         ClusterExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+    ///         ExtId = "150a7ed0-9d05-4f35-a060-16dac4c835d0",
     ///         VmRecoveryPointRestoreOverrides = new[]
     ///         {
     ///             new Nutanix.Inputs.RecoveryPointRestoreV2VmRecoveryPointRestoreOverrideArgs
     ///             {
-    ///                 VmRecoveryPointExtId = "&lt;vm_recovery_point_uuid&gt;",
+    ///                 VmRecoveryPointExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
     ///             },
     ///         },
     ///         VolumeGroupRecoveryPointRestoreOverrides = new[]
@@ -44,10 +44,10 @@ namespace PiersKarsenbarg.Nutanix
     ///                 {
     ///                     new Nutanix.Inputs.RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverrideVolumeGroupOverrideSpecArgs
     ///                     {
-    ///                         Name = "&lt;volume_group_restored_name&gt;",
+    ///                         Name = "vg_restored",
     ///                     },
     ///                 },
-    ///                 VolumeGroupRecoveryPointExtId = "&lt;volume_group_recovery_point_uuid&gt;",
+    ///                 VolumeGroupRecoveryPointExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
     ///             },
     ///         },
     ///     });

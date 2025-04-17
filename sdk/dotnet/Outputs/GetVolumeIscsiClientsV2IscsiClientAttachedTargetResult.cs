@@ -15,11 +15,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetVolumeIscsiClientsV2IscsiClientAttachedTargetResult
     {
         /// <summary>
-        /// - Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
+        /// Name of the iSCSI target that the iSCSI client is connected to. This is a read-only field.
         /// </summary>
         public readonly string IscsiTargetName;
         /// <summary>
-        /// - Number of virtual targets generated for the iSCSI target. This field is immutable.
+        /// Number of virtual targets generated for the iSCSI target. This field is immutable.
         /// </summary>
         public readonly int NumVirtualTargets;
 

@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetVolumeGroupsV2VolumeIscsiFeatureResult
     {
         /// <summary>
-        /// - The authentication type enabled for the Volume Group.
+        /// The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided.
         /// </summary>
         public readonly string EnabledAuthentications;
 

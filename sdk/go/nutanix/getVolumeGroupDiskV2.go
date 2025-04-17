@@ -12,6 +12,33 @@ import (
 )
 
 // Describes a Query the Volume Disk identified by {extId} in the Volume Group identified by {volumeGroupExtId}.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.LookupVolumeGroupDiskV2(ctx, &nutanix.LookupVolumeGroupDiskV2Args{
+//				ExtId:            "1d92110d-26b5-46c0-8c93-20b8171373e0",
+//				VolumeGroupExtId: "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupVolumeGroupDiskV2(ctx *pulumi.Context, args *LookupVolumeGroupDiskV2Args, opts ...pulumi.InvokeOption) (*LookupVolumeGroupDiskV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupVolumeGroupDiskV2Result

@@ -8,6 +8,36 @@ import * as utilities from "./utilities";
 
 /**
  * Provides Nutanix resource to create Floating IPs.
+ *
+ * ## Example1 :  create Floating IP with External Subnet
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * // create Floating IP with External Subnet UUID
+ * const fip_ext_subnet = new nutanix.FloatingIpV2("fip-ext-subnet", {
+ *     description: "example fip  description",
+ *     externalSubnetReference: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+ * });
+ * ```
+ *
+ * ## Example2 :  create Floating IP with External Subnet with vm association
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const fip_ext_subnet_vm = new nutanix.FloatingIpV2("fip-ext-subnet-vm", {
+ *     associations: [{
+ *         vmNicAssociations: [{
+ *             vmNicReference: "31e4b3b1-4b3b-4b3b-4b3b-4b3b4b3b4b3b",
+ *         }],
+ *     }],
+ *     description: "example fip  description",
+ *     externalSubnetReference: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+ * });
+ * ```
  */
 export class FloatingIpV2 extends pulumi.CustomResource {
     /**

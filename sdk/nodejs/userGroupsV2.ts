@@ -14,9 +14,14 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
  * const usrGroup = new nutanix.UserGroupsV2("usrGroup", {
- *     distinguishedName: "<distinguished name of the user group>",
- *     groupType: "<group Type>",
- *     idpId: "<idp uuid of user group>",
+ *     distinguishedName: "cn=group_0664229e,ou=group,dc=devtest,dc=local",
+ *     groupType: "LDAP",
+ *     idpId: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+ * });
+ * // Saml User group
+ * const saml_ug = new nutanix.UserGroupsV2("saml-ug", {
+ *     groupType: "SAML",
+ *     idpId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
  * });
  * ```
  */
@@ -65,7 +70,7 @@ export class UserGroupsV2 extends pulumi.CustomResource {
      */
     public readonly extId!: pulumi.Output<string>;
     /**
-     * -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+     * -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
      */
     public readonly groupType!: pulumi.Output<string>;
     /**
@@ -145,7 +150,7 @@ export interface UserGroupsV2State {
      */
     extId?: pulumi.Input<string>;
     /**
-     * -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+     * -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
      */
     groupType?: pulumi.Input<string>;
     /**
@@ -175,7 +180,7 @@ export interface UserGroupsV2Args {
      */
     extId?: pulumi.Input<string>;
     /**
-     * -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+     * -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
      */
     groupType: pulumi.Input<string>;
     /**

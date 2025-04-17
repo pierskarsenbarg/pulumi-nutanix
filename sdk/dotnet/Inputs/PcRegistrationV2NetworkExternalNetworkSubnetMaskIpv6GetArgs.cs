@@ -19,8 +19,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("prefixLength")]
         public Input<int>? PrefixLength { get; set; }
 
-        [Input("value")]
-        public Input<string>? Value { get; set; }
+        [Input("value", required: true)]
+        public Input<string> Value { get; set; } = null!;
 
         public PcRegistrationV2NetworkExternalNetworkSubnetMaskIpv6GetArgs()
         {

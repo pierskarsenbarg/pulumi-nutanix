@@ -15,7 +15,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo
     {
         public readonly ImmutableArray<Outputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource> DataSources;
+        public readonly string? DiskExtId;
         public readonly int? DiskSizeBytes;
+        public readonly bool? IsMigrationInProgress;
         /// <summary>
         /// Storage configuration for VM.
         /// </summary>
@@ -26,14 +28,20 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         private VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo(
             ImmutableArray<Outputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource> dataSources,
 
+            string? diskExtId,
+
             int? diskSizeBytes,
+
+            bool? isMigrationInProgress,
 
             ImmutableArray<Outputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig> storageConfigs,
 
             ImmutableArray<Outputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer> storageContainers)
         {
             DataSources = dataSources;
+            DiskExtId = diskExtId;
             DiskSizeBytes = diskSizeBytes;
+            IsMigrationInProgress = isMigrationInProgress;
             StorageConfigs = storageConfigs;
             StorageContainers = storageContainers;
         }

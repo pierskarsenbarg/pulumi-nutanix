@@ -14,39 +14,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateResult
     {
-        /// <summary>
-        /// Time when the Template was created.
-        /// </summary>
         public readonly string CreateTime;
-        /// <summary>
-        /// Information of the User.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateCreatedByResult> CreatedBies;
-        /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
-        /// </summary>
         public readonly string ExtId;
-        /// <summary>
-        /// Status of a Guest Update.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateGuestUpdateStatusResult> GuestUpdateStatuses;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateLinkResult> Links;
-        /// <summary>
-        /// The user defined description of a Template.
-        /// </summary>
         public readonly string TemplateDescription;
-        /// <summary>
-        /// The user defined name of a Template.
-        /// </summary>
         public readonly string TemplateName;
-        /// <summary>
-        /// A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecResult> TemplateVersionSpecs;
         public readonly string TenantId;
-        /// <summary>
-        /// Time when the Template was last updated.
-        /// </summary>
         public readonly string UpdateTime;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateUpdatedByResult> UpdatedBies;
 

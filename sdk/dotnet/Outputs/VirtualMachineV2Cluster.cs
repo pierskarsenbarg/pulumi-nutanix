@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class VirtualMachineV2Cluster
     {
         /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
+        /// The globally unique identifier of a cluster type UUID.
         /// </summary>
         public readonly string? ExtId;
 

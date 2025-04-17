@@ -25,9 +25,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetDirectoryServiceV2.Invoke(new()
+        ///     var get_active_directory = Nutanix.GetDirectoryServiceV2.Invoke(new()
         ///     {
-        ///         ExtId = "directory service ext id",
+        ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
         ///     });
         /// 
         /// });
@@ -49,9 +49,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetDirectoryServiceV2.Invoke(new()
+        ///     var get_active_directory = Nutanix.GetDirectoryServiceV2.Invoke(new()
         ///     {
-        ///         ExtId = "directory service ext id",
+        ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
         ///     });
         /// 
         /// });
@@ -73,9 +73,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetDirectoryServiceV2.Invoke(new()
+        ///     var get_active_directory = Nutanix.GetDirectoryServiceV2.Invoke(new()
         ///     {
-        ///         ExtId = "directory service ext id",
+        ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
         ///     });
         /// 
         /// });

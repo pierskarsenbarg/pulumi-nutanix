@@ -7,7 +7,7 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
- * Provides a datasource to retrieve floating IP with floatingIpUuid .
+ * Provides a datasource to retrieve the floating IP for this extId.
  *
  * ## Example Usage
  *
@@ -15,8 +15,8 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const example = nutanix.getFloatingIpV2({
- *     extId: "{{ floating_ip_uuid }}",
+ * const get_floating_ip = nutanix.getFloatingIpV2({
+ *     extId: "cf1a7643-605e-4622-9f2a-b3fdccdbd072",
  * });
  * ```
  */
@@ -112,7 +112,7 @@ export interface GetFloatingIpV2Result {
     readonly vpcs: outputs.GetFloatingIpV2Vpc[];
 }
 /**
- * Provides a datasource to retrieve floating IP with floatingIpUuid .
+ * Provides a datasource to retrieve the floating IP for this extId.
  *
  * ## Example Usage
  *
@@ -120,8 +120,8 @@ export interface GetFloatingIpV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const example = nutanix.getFloatingIpV2({
- *     extId: "{{ floating_ip_uuid }}",
+ * const get_floating_ip = nutanix.getFloatingIpV2({
+ *     extId: "cf1a7643-605e-4622-9f2a-b3fdccdbd072",
  * });
  * ```
  */

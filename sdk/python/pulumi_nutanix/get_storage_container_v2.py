@@ -404,6 +404,15 @@ def get_storage_container_v2(ext_id: Optional[builtins.str] = None,
     """
     Provides a datasource to Fetch the configuration details of the existing Storage Container identified by the {containerExtId}.
 
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    get_storage_container = nutanix.get_storage_container_v2(ext_id="1891fd3a-1ef7-4947-af56-9ee4b973c6fd")
+    ```
+
 
     :param builtins.str ext_id: storage container UUID
     """
@@ -447,6 +456,15 @@ def get_storage_container_v2_output(ext_id: Optional[pulumi.Input[builtins.str]]
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStorageContainerV2Result]:
     """
     Provides a datasource to Fetch the configuration details of the existing Storage Container identified by the {containerExtId}.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    get_storage_container = nutanix.get_storage_container_v2(ext_id="1891fd3a-1ef7-4947-af56-9ee4b973c6fd")
+    ```
 
 
     :param builtins.str ext_id: storage container UUID

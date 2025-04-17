@@ -28,8 +28,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.GetHostV2(ctx, &nutanix.GetHostV2Args{
-//				ClusterExtId: "<cluster uuid>",
-//				ExtId:        "<host uuid>",
+//				ClusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+//				ExtId:        "919c9488-0b50-4fc8-9159-923e56a3abca",
 //			}, nil)
 //			if err != nil {
 //				return err

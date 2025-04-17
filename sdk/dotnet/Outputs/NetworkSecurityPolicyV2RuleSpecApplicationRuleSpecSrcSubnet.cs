@@ -14,12 +14,12 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecSrcSubnet
     {
-        public readonly string? PrefixLength;
+        public readonly int? PrefixLength;
         public readonly string? Value;
 
         [OutputConstructor]
         private NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecSrcSubnet(
-            string? prefixLength,
+            int? prefixLength,
 
             string? value)
         {

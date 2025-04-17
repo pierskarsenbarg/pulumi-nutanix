@@ -12,6 +12,41 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Performs Guest OS actions on given template. It Initiates, Completes and Cancels the Guest OS operation.
+    /// 
+    /// ## Example
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var example_1 = new Nutanix.TemplateGuestOsActionsV2("example-1", new()
+    ///     {
+    ///         Action = "initiate",
+    ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+    ///         VersionId = "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
+    ///     });
+    /// 
+    ///     var example_2 = new Nutanix.TemplateGuestOsActionsV2("example-2", new()
+    ///     {
+    ///         Action = "complete",
+    ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
+    ///         IsActiveVersion = "true",
+    ///         VersionDescription = "version desc",
+    ///         VersionName = "version_name",
+    ///     });
+    /// 
+    ///     var example_3 = new Nutanix.TemplateGuestOsActionsV2("example-3", new()
+    ///     {
+    ///         Action = "cancel",
+    ///         ExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/templateGuestOsActionsV2:TemplateGuestOsActionsV2")]
     public partial class TemplateGuestOsActionsV2 : global::Pulumi.CustomResource
@@ -32,7 +67,9 @@ namespace PiersKarsenbarg.Nutanix
         /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
         /// 
         /// 
-        /// See detailed information in [Nutanix Template Guest OS Action V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0).
+        /// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/initiateGuestUpdate).
+        /// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/completeGuestUpdate).
+        /// See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/cancelGuestUpdate).
         /// </summary>
         [Output("isActiveVersion")]
         public Output<string?> IsActiveVersion { get; private set; } = null!;
@@ -118,7 +155,9 @@ namespace PiersKarsenbarg.Nutanix
         /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
         /// 
         /// 
-        /// See detailed information in [Nutanix Template Guest OS Action V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0).
+        /// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/initiateGuestUpdate).
+        /// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/completeGuestUpdate).
+        /// See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/cancelGuestUpdate).
         /// </summary>
         [Input("isActiveVersion")]
         public Input<string>? IsActiveVersion { get; set; }
@@ -165,7 +204,9 @@ namespace PiersKarsenbarg.Nutanix
         /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
         /// 
         /// 
-        /// See detailed information in [Nutanix Template Guest OS Action V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0).
+        /// See detailed information in [Nutanix Template Guest OS Action Initiate V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/initiateGuestUpdate).
+        /// See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/completeGuestUpdate).
+        /// See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/Templates/operation/cancelGuestUpdate).
         /// </summary>
         [Input("isActiveVersion")]
         public Input<string>? IsActiveVersion { get; set; }

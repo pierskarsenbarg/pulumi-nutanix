@@ -14,18 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicResult
     {
-        /// <summary>
-        /// Defines a NIC emulated by the hypervisor
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicBackingInfoResult> BackingInfos;
-        /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption
-        /// </summary>
         public readonly string ExtId;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicLinkResult> Links;
-        /// <summary>
-        /// Network information for a NIC.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicNetworkInfoResult> NetworkInfos;
         public readonly string TenantId;
 

@@ -15,11 +15,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetVolumeIscsiClientsV2IscsiClientLinkResult
     {
         /// <summary>
-        /// - The URL at which the entity described by the link can be accessed.
+        /// The URL at which the entity described by the link can be accessed.
         /// </summary>
         public readonly string Href;
         /// <summary>
-        /// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        /// A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
         /// </summary>
         public readonly string Rel;
 

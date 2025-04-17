@@ -218,7 +218,7 @@ def get_directory_service_v2(ext_id: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    example = nutanix.get_directory_service_v2(ext_id="directory service ext id")
+    get_active_directory = nutanix.get_directory_service_v2(ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
     ```
 
 
@@ -255,7 +255,7 @@ def get_directory_service_v2_output(ext_id: Optional[pulumi.Input[builtins.str]]
     import pulumi
     import pulumi_nutanix as nutanix
 
-    example = nutanix.get_directory_service_v2(ext_id="directory service ext id")
+    get_active_directory = nutanix.get_directory_service_v2(ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
     ```
 
 

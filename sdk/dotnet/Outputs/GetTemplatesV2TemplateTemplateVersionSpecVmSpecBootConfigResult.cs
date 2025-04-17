@@ -14,13 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigResult
     {
-        /// <summary>
-        /// LegacyBoot config Object
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigLegacyBootResult> LegacyBoots;
-        /// <summary>
-        /// UefiBoot config Object
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootResult> UefiBoots;
 
         [OutputConstructor]

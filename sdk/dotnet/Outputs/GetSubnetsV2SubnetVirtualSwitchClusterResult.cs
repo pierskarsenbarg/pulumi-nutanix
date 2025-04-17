@@ -14,9 +14,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetSubnetsV2SubnetVirtualSwitchClusterResult
     {
-        /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
-        /// </summary>
         public readonly string ExtId;
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetVirtualSwitchClusterGatewayIpAddressResult> GatewayIpAddresses;
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetVirtualSwitchClusterHostResult> Hosts;

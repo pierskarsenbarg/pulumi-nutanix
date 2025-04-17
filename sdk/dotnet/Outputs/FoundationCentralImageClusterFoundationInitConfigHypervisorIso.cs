@@ -14,9 +14,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class FoundationCentralImageClusterFoundationInitConfigHypervisorIso
     {
-        /// <summary>
-        /// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-        /// </summary>
         public readonly string? HypervisorType;
         /// <summary>
         /// sha256sum of the hypervisor iso.

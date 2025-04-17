@@ -23,11 +23,11 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     // revert Vm  
+    ///     // revert Vm
     ///     var example = new Nutanix.VmRevertV2("example", new()
     ///     {
-    ///         ExtId = "&lt;VM_UUID&gt;",
-    ///         VmRecoveryPointExtId = "&lt;Vm_Recovery_Point_UUID&gt;",
+    ///         ExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
+    ///         VmRecoveryPointExtId = "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
     ///     });
     /// 
     /// });

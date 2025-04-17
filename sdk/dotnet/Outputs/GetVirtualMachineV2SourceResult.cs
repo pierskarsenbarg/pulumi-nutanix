@@ -15,7 +15,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetVirtualMachineV2SourceResult
     {
         /// <summary>
-        /// Entity Type of source
+        /// Reference to an entity from which the VM should be cloned or created. Values are:
+        /// - VM_RECOVERY_POINT: Reference to the recovery point entity from which the VM should be cloned or created.
+        /// - VM: Reference to an entity from which the VM should be cloned or created.
         /// </summary>
         public readonly string EntityType;
         /// <summary>

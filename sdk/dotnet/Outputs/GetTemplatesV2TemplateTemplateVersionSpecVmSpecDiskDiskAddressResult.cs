@@ -15,9 +15,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskDiskAddressResult
     {
         public readonly string BusType;
-        /// <summary>
-        /// Index of the serial port.
-        /// </summary>
         public readonly int Index;
 
         [OutputConstructor]

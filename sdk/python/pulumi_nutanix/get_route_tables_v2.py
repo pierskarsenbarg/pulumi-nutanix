@@ -79,6 +79,9 @@ class GetRouteTablesV2Result:
     @property
     @pulumi.getter(name="routeTables")
     def route_tables(self) -> Sequence['outputs.GetRouteTablesV2RouteTableResult']:
+        """
+        A list of route tables.
+        """
         return pulumi.get(self, "route_tables")
 
 
@@ -111,7 +114,8 @@ def get_route_tables_v2(filter: Optional[builtins.str] = None,
     import pulumi_nutanix as nutanix
 
     all_tables = nutanix.get_route_tables_v2()
-    route_tables_with_filter = nutanix.get_route_tables_v2(filter="vpcReference eq '<vpc_uuid>'")
+    route_tables_with_filter = nutanix.get_route_tables_v2(filter="vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'")
+    route_tables_with_orderby = nutanix.get_route_tables_v2(order_by="vpcReference")
     ```
 
 
@@ -155,7 +159,8 @@ def get_route_tables_v2_output(filter: Optional[pulumi.Input[Optional[builtins.s
     import pulumi_nutanix as nutanix
 
     all_tables = nutanix.get_route_tables_v2()
-    route_tables_with_filter = nutanix.get_route_tables_v2(filter="vpcReference eq '<vpc_uuid>'")
+    route_tables_with_filter = nutanix.get_route_tables_v2(filter="vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'")
+    route_tables_with_orderby = nutanix.get_route_tables_v2(order_by="vpcReference")
     ```
 
 

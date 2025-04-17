@@ -14,17 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PcRegistrationV2NetworkExternalNetworkIpRange
     {
-        public readonly ImmutableArray<Outputs.PcRegistrationV2NetworkExternalNetworkIpRangeBegin> Begins;
-        public readonly ImmutableArray<Outputs.PcRegistrationV2NetworkExternalNetworkIpRangeEnd> Ends;
+        public readonly Outputs.PcRegistrationV2NetworkExternalNetworkIpRangeBegin? Begin;
+        public readonly Outputs.PcRegistrationV2NetworkExternalNetworkIpRangeEnd? End;
 
         [OutputConstructor]
         private PcRegistrationV2NetworkExternalNetworkIpRange(
-            ImmutableArray<Outputs.PcRegistrationV2NetworkExternalNetworkIpRangeBegin> begins,
+            Outputs.PcRegistrationV2NetworkExternalNetworkIpRangeBegin? begin,
 
-            ImmutableArray<Outputs.PcRegistrationV2NetworkExternalNetworkIpRangeEnd> ends)
+            Outputs.PcRegistrationV2NetworkExternalNetworkIpRangeEnd? end)
         {
-            Begins = begins;
-            Ends = ends;
+            Begin = begin;
+            End = end;
         }
     }
 }

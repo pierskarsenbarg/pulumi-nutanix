@@ -26,30 +26,25 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.GetCategoriesV2(ctx, &nutanix.GetCategoriesV2Args{}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			category0 := data.Nutanix_categories_v4.Categories.Categories[0].Ext_id
-//			_, err = nutanix.NewImagePlacementPolicyV2(ctx, "example", &nutanix.ImagePlacementPolicyV2Args{
-//				Description:   pulumi.String("%[2]s"),
-//				PlacementType: pulumi.String("SOFT"),
+//			_, err := nutanix.NewImagePlacementPolicyV2(ctx, "example", &nutanix.ImagePlacementPolicyV2Args{
 //				ClusterEntityFilters: nutanix.ImagePlacementPolicyV2ClusterEntityFilterArray{
 //					&nutanix.ImagePlacementPolicyV2ClusterEntityFilterArgs{
 //						CategoryExtIds: pulumi.StringArray{
-//							category0,
+//							pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),
 //						},
 //						Type: pulumi.String("CATEGORIES_MATCH_ALL"),
 //					},
 //				},
+//				Description: pulumi.String("%[2]s"),
 //				ImageEntityFilters: nutanix.ImagePlacementPolicyV2ImageEntityFilterArray{
 //					&nutanix.ImagePlacementPolicyV2ImageEntityFilterArgs{
 //						CategoryExtIds: pulumi.StringArray{
-//							category0,
+//							pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),
 //						},
 //						Type: pulumi.String("CATEGORIES_MATCH_ALL"),
 //					},
 //				},
+//				PlacementType: pulumi.String("SOFT"),
 //			})
 //			if err != nil {
 //				return err

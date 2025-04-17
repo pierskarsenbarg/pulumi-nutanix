@@ -13,8 +13,8 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const usergroup = nutanix.getUserGroupV2({
- *     extId: "<External Identifier of the User Group.>",
+ * const get_ug = nutanix.getUserGroupV2({
+ *     extId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
  * });
  * ```
  */
@@ -85,8 +85,8 @@ export interface GetUserGroupV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const usergroup = nutanix.getUserGroupV2({
- *     extId: "<External Identifier of the User Group.>",
+ * const get_ug = nutanix.getUserGroupV2({
+ *     extId: "a2a8650a-358a-4791-90c9-7a8b6e2989d6",
  * });
  * ```
  */

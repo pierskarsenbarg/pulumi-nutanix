@@ -14,12 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PcRegistrationV2ConfigBootstrapConfig
     {
-        public readonly ImmutableArray<Outputs.PcRegistrationV2ConfigBootstrapConfigEnvironmentInfo> EnvironmentInfos;
+        public readonly ImmutableArray<Outputs.PcRegistrationV2ConfigBootstrapConfigCloudInitConfig> CloudInitConfigs;
+        public readonly Outputs.PcRegistrationV2ConfigBootstrapConfigEnvironmentInfo? EnvironmentInfo;
 
         [OutputConstructor]
-        private PcRegistrationV2ConfigBootstrapConfig(ImmutableArray<Outputs.PcRegistrationV2ConfigBootstrapConfigEnvironmentInfo> environmentInfos)
+        private PcRegistrationV2ConfigBootstrapConfig(
+            ImmutableArray<Outputs.PcRegistrationV2ConfigBootstrapConfigCloudInitConfig> cloudInitConfigs,
+
+            Outputs.PcRegistrationV2ConfigBootstrapConfigEnvironmentInfo? environmentInfo)
         {
-            EnvironmentInfos = environmentInfos;
+            CloudInitConfigs = cloudInitConfigs;
+            EnvironmentInfo = environmentInfo;
         }
     }
 }

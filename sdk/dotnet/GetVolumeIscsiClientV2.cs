@@ -29,7 +29,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var example = Nutanix.GetVolumeIscsiClientV2.Invoke(new()
         ///     {
-        ///         ExtId = @var.Iscsi_client_ext_id,
+        ///         ExtId = "be0e4630-23da-4b9c-a76b-f24fd64b46b6",
         ///     });
         /// 
         /// });
@@ -62,7 +62,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var example = Nutanix.GetVolumeIscsiClientV2.Invoke(new()
         ///     {
-        ///         ExtId = @var.Iscsi_client_ext_id,
+        ///         ExtId = "be0e4630-23da-4b9c-a76b-f24fd64b46b6",
         ///     });
         /// 
         /// });
@@ -95,7 +95,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var example = Nutanix.GetVolumeIscsiClientV2.Invoke(new()
         ///     {
-        ///         ExtId = @var.Iscsi_client_ext_id,
+        ///         ExtId = "be0e4630-23da-4b9c-a76b-f24fd64b46b6",
         ///     });
         /// 
         /// });

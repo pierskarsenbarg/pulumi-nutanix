@@ -123,7 +123,8 @@ def get_users_v2(filter: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    users = nutanix.get_users_v2()
+    list_users = nutanix.get_users_v2()
+    filtered_users = nutanix.get_users_v2(filter="username eq 'username-example'")
     ```
 
     ## Argument Reference
@@ -211,7 +212,8 @@ def get_users_v2_output(filter: Optional[pulumi.Input[Optional[builtins.str]]] =
     import pulumi
     import pulumi_nutanix as nutanix
 
-    users = nutanix.get_users_v2()
+    list_users = nutanix.get_users_v2()
+    filtered_users = nutanix.get_users_v2(filter="username eq 'username-example'")
     ```
 
     ## Argument Reference

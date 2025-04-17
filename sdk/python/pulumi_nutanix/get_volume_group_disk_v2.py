@@ -174,6 +174,16 @@ def get_volume_group_disk_v2(ext_id: Optional[builtins.str] = None,
     """
     Describes a Query the Volume Disk identified by {extId} in the Volume Group identified by {volumeGroupExtId}.
 
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    example = nutanix.get_volume_group_disk_v2(ext_id="1d92110d-26b5-46c0-8c93-20b8171373e0",
+        volume_group_ext_id="3770be9d-06be-4e25-b85d-3457d9b0ceb1")
+    ```
+
 
     :param builtins.str ext_id: - The external identifier of the Data Source Reference.
     """
@@ -200,6 +210,16 @@ def get_volume_group_disk_v2_output(ext_id: Optional[pulumi.Input[builtins.str]]
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeGroupDiskV2Result]:
     """
     Describes a Query the Volume Disk identified by {extId} in the Volume Group identified by {volumeGroupExtId}.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    example = nutanix.get_volume_group_disk_v2(ext_id="1d92110d-26b5-46c0-8c93-20b8171373e0",
+        volume_group_ext_id="3770be9d-06be-4e25-b85d-3457d9b0ceb1")
+    ```
 
 
     :param builtins.str ext_id: - The external identifier of the Data Source Reference.

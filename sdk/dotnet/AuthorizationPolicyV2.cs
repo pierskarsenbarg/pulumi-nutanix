@@ -12,6 +12,45 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides Nutanix resource to create authorization policy.
+    /// 
+    /// ## Example
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var ap_example = new Nutanix.AuthorizationPolicyV2("ap-example", new()
+    ///     {
+    ///         AuthorizationPolicyType = "USER_DEFINED",
+    ///         Description = "authorization policy example",
+    ///         DisplayName = "auth_policy_example",
+    ///         Entities = new[]
+    ///         {
+    ///             new Nutanix.Inputs.AuthorizationPolicyV2EntityArgs
+    ///             {
+    ///                 Reserved = "{\"images\":{\"*\":{\"eq\":\"*\"}}}",
+    ///             },
+    ///             new Nutanix.Inputs.AuthorizationPolicyV2EntityArgs
+    ///             {
+    ///                 Reserved = "{\"marketplace_item\":{\"owner_uuid\":{\"eq\":\"SELF_OWNED\"}}}",
+    ///             },
+    ///         },
+    ///         Identities = new[]
+    ///         {
+    ///             new Nutanix.Inputs.AuthorizationPolicyV2IdentityArgs
+    ///             {
+    ///                 Reserved = "{\"user\":{\"uuid\":{\"anyof\":[\"00000000-0000-0000-0000-000000000000\"]}}}",
+    ///             },
+    ///         },
+    ///         Role = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/authorizationPolicyV2:AuthorizationPolicyV2")]
     public partial class AuthorizationPolicyV2 : global::Pulumi.CustomResource

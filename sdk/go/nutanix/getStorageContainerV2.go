@@ -12,6 +12,32 @@ import (
 )
 
 // Provides a datasource to Fetch the configuration details of the existing Storage Container identified by the {containerExtId}.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetStorageContainerV2(ctx, &nutanix.GetStorageContainerV2Args{
+//				ExtId: "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetStorageContainerV2(ctx *pulumi.Context, args *GetStorageContainerV2Args, opts ...pulumi.InvokeOption) (*GetStorageContainerV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetStorageContainerV2Result

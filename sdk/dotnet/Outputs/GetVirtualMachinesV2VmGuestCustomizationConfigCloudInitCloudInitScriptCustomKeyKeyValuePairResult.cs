@@ -14,9 +14,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVirtualMachinesV2VmGuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValuePairResult
     {
-        /// <summary>
-        /// VM name.
-        /// </summary>
         public readonly string Name;
         public readonly string Value;
 

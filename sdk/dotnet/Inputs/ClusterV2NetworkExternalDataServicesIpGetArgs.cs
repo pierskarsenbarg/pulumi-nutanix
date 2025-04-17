@@ -17,7 +17,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<Inputs.ClusterV2NetworkExternalDataServicesIpIpv4GetArgs>? _ipv4s;
 
         /// <summary>
-        /// - (Optional) ip adresss params.
+        /// - (Optional) ip address params.
         /// </summary>
         public InputList<Inputs.ClusterV2NetworkExternalDataServicesIpIpv4GetArgs> Ipv4s
         {

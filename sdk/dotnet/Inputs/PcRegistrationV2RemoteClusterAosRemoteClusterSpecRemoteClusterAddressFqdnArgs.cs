@@ -16,8 +16,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// <summary>
         /// - The fully qualified domain name of the host.
         /// </summary>
-        [Input("value")]
-        public Input<string>? Value { get; set; }
+        [Input("value", required: true)]
+        public Input<string> Value { get; set; } = null!;
 
         public PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterAddressFqdnArgs()
         {

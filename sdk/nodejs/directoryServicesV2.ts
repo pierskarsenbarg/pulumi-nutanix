@@ -15,14 +15,16 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const example = new nutanix.DirectoryServicesV2("example", {
- *     directoryType: "directory type",
- *     domainName: "domain name",
+ * // Add Directory Service .
+ * const active_directory = new nutanix.DirectoryServicesV2("active-directory", {
+ *     url: "ldap://10.xx.xx.xx:xxxx",
+ *     directoryType: "ACTIVE_DIRECTORY",
+ *     domainName: "nutanix.com",
  *     serviceAccounts: [{
- *         password: "service account password",
- *         username: "service account username",
+ *         username: "username",
+ *         password: "password",
  *     }],
- *     url: "URL for the Directory Service",
+ *     whiteListedGroups: ["example"],
  * });
  * ```
  */

@@ -14,13 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecVtpmConfigResult
     {
-        /// <summary>
-        /// Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
-        /// </summary>
         public readonly bool IsVtpmEnabled;
-        /// <summary>
-        /// Virtual trusted platform module version.
-        /// </summary>
         public readonly string Version;
 
         [OutputConstructor]

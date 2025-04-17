@@ -14,6 +14,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VirtualMachineV2ProtectionPolicyState
     {
+        /// <summary>
+        /// Reference to the policy object in use.
+        /// * `policy.ext_id`: (Optional) Reference to the policy object in use.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VirtualMachineV2ProtectionPolicyStatePolicy> Policies;
 
         [OutputConstructor]

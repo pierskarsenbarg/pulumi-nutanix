@@ -14,21 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetSubnetsV2SubnetIpUsageResult
     {
-        /// <summary>
-        /// IP Pool usages
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetIpUsageIpPoolUsageResult> IpPoolUsages;
-        /// <summary>
-        /// Number of assigned IPs.
-        /// </summary>
         public readonly int NumAssignedIps;
-        /// <summary>
-        /// Number of free IPs.
-        /// </summary>
         public readonly int NumFreeIps;
-        /// <summary>
-        /// Number of MAC addresses.
-        /// </summary>
         public readonly int NumMacs;
 
         [OutputConstructor]

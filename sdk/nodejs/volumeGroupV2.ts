@@ -21,7 +21,7 @@ import * as utilities from "./utilities";
  *     sharingStatus: "SHARED",
  *     targetName: "volumegroup-test-001234",
  *     createdBy: "example",
- *     clusterReference: "<Cluster uuid>",
+ *     clusterReference: "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
  *     iscsiFeatures: [{
  *         enabledAuthentications: "CHAP",
  *         targetSecret: "123456789abc",

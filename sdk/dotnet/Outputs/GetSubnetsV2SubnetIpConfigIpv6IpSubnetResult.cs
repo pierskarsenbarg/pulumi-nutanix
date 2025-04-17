@@ -14,13 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetSubnetsV2SubnetIpConfigIpv6IpSubnetResult
     {
-        /// <summary>
-        /// Reference to address configuration
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetIpConfigIpv6IpSubnetIpResult> Ips;
-        /// <summary>
-        /// The prefix length of the network to which this host IPv4 address belongs.
-        /// </summary>
         public readonly int PrefixLength;
 
         [OutputConstructor]

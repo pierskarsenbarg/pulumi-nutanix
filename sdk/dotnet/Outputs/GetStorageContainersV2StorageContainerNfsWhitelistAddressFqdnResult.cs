@@ -14,9 +14,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetStorageContainersV2StorageContainerNfsWhitelistAddressFqdnResult
     {
-        /// <summary>
-        /// value of fqdn address
-        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

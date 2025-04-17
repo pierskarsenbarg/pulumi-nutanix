@@ -15,8 +15,69 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const vpcs = nutanix.getVpcsV2({});
+ * const list_vpcs = nutanix.getVpcsV2({});
+ * const list_vpcs_with_filter = nutanix.getVpcsV2({
+ *     filter: "vpcType eq 'VLAN'",
+ * });
+ * const list_vpcs_with_order_by_limit_filter = nutanix.getVpcsV2({
+ *     filter: "vpcType eq 'VLAN'",
+ *     limit: 10,
+ *     orderBy: "name desc",
+ * });
  * ```
+ *
+ * ## vpcs
+ *
+ * The `vpcs` object contains the following attributes:
+ *
+ * - `extId`: extId of VPC.
+ * - `name`: Name of the VPC.
+ * - `description`: Description of the VPC.
+ * - `commonDhcpOptions`: List of DHCP options to be configured.
+ * - `vpcType`: Type of VPC.
+ * - `snatIps`: List of IP Addresses used for SNAT.
+ * - `externalSubnets`: List of external subnets that the VPC is attached to.
+ * - `externalRoutingDomainReference`: External routing domain associated with this route table
+ * - `externallyRoutablePrefixes`: CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
+ * - `tenantId`: A globally unique identifier that represents the tenant that owns this entity.
+ * - `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+ * - `metadata`: Metadata associated with this resource.
+ *
+ * ### commonDhcpOptions
+ *
+ * - `domainNameServers`: List of Domain Name Server addresses
+ * - `domain_name_servers.ipv4`: Reference to address configuration
+ * - `domain_name_servers.ipv6`: Reference to address configuration
+ *
+ * ### externalSubnets
+ *
+ * - `subnetReference`: External subnet reference.
+ * - `externalIps`: List of IP Addresses used for SNAT, if NAT is enabled on the external subnet. If NAT is not enabled, this specifies the IP address of the VPC port connected to the external gateway.
+ * - `gatewayNodes`: List of gateway nodes that can be used for external connectivity.
+ * - `activeGatewayNode`: Reference of gateway nodes
+ * - `activeGatewayCount`: Maximum number of active gateway nodes for the VPC external subnet association.
+ *
+ * ### snat_ips, externalIps
+ *
+ * - `ipv4`: Reference to address configuration
+ * - `ipv6`: Reference to address configuration
+ *
+ * ### externallyRoutablePrefixes
+ *
+ * - `ipv4`: IP V4 Configuration
+ * - `ipv4.ip`: Reference to address configuration
+ * - `ipv4.prefix_length`: The prefix length of the network
+ *
+ * - `ipv6`: IP V6 Configuration
+ * - `ipv6.ip`: Reference to address configuration
+ * - `ipv6.prefix_length`: The prefix length of the network
+ *
+ * ### ipv4, ipv6 (Reference to address configuration)
+ *
+ * - `value`: value of address
+ * - `prefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
+ *
+ * See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0#tag/Vpcs/operation/listVpcs).
  */
 export function getVpcsV2(args?: GetVpcsV2Args, opts?: pulumi.InvokeOptions): Promise<GetVpcsV2Result> {
     args = args || {};
@@ -35,7 +96,8 @@ export function getVpcsV2(args?: GetVpcsV2Args, opts?: pulumi.InvokeOptions): Pr
  */
 export interface GetVpcsV2Args {
     /**
-     * A URL query parameter that allows clients to filter a collection of resources.
+     * A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+     * - `extId`
      */
     filter?: string;
     /**
@@ -43,7 +105,7 @@ export interface GetVpcsV2Args {
      */
     limit?: number;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default.
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
      */
     orderBy?: string;
     /**
@@ -51,7 +113,7 @@ export interface GetVpcsV2Args {
      */
     page?: number;
     /**
-     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions.
+     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. The select can be applied to the following fields:
      */
     select?: string;
 }
@@ -69,6 +131,9 @@ export interface GetVpcsV2Result {
     readonly orderBy?: string;
     readonly page?: number;
     readonly select?: string;
+    /**
+     * List of all existing VPCs.
+     */
     readonly vpcs: outputs.GetVpcsV2Vpc[];
 }
 /**
@@ -80,8 +145,69 @@ export interface GetVpcsV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const vpcs = nutanix.getVpcsV2({});
+ * const list_vpcs = nutanix.getVpcsV2({});
+ * const list_vpcs_with_filter = nutanix.getVpcsV2({
+ *     filter: "vpcType eq 'VLAN'",
+ * });
+ * const list_vpcs_with_order_by_limit_filter = nutanix.getVpcsV2({
+ *     filter: "vpcType eq 'VLAN'",
+ *     limit: 10,
+ *     orderBy: "name desc",
+ * });
  * ```
+ *
+ * ## vpcs
+ *
+ * The `vpcs` object contains the following attributes:
+ *
+ * - `extId`: extId of VPC.
+ * - `name`: Name of the VPC.
+ * - `description`: Description of the VPC.
+ * - `commonDhcpOptions`: List of DHCP options to be configured.
+ * - `vpcType`: Type of VPC.
+ * - `snatIps`: List of IP Addresses used for SNAT.
+ * - `externalSubnets`: List of external subnets that the VPC is attached to.
+ * - `externalRoutingDomainReference`: External routing domain associated with this route table
+ * - `externallyRoutablePrefixes`: CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
+ * - `tenantId`: A globally unique identifier that represents the tenant that owns this entity.
+ * - `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+ * - `metadata`: Metadata associated with this resource.
+ *
+ * ### commonDhcpOptions
+ *
+ * - `domainNameServers`: List of Domain Name Server addresses
+ * - `domain_name_servers.ipv4`: Reference to address configuration
+ * - `domain_name_servers.ipv6`: Reference to address configuration
+ *
+ * ### externalSubnets
+ *
+ * - `subnetReference`: External subnet reference.
+ * - `externalIps`: List of IP Addresses used for SNAT, if NAT is enabled on the external subnet. If NAT is not enabled, this specifies the IP address of the VPC port connected to the external gateway.
+ * - `gatewayNodes`: List of gateway nodes that can be used for external connectivity.
+ * - `activeGatewayNode`: Reference of gateway nodes
+ * - `activeGatewayCount`: Maximum number of active gateway nodes for the VPC external subnet association.
+ *
+ * ### snat_ips, externalIps
+ *
+ * - `ipv4`: Reference to address configuration
+ * - `ipv6`: Reference to address configuration
+ *
+ * ### externallyRoutablePrefixes
+ *
+ * - `ipv4`: IP V4 Configuration
+ * - `ipv4.ip`: Reference to address configuration
+ * - `ipv4.prefix_length`: The prefix length of the network
+ *
+ * - `ipv6`: IP V6 Configuration
+ * - `ipv6.ip`: Reference to address configuration
+ * - `ipv6.prefix_length`: The prefix length of the network
+ *
+ * ### ipv4, ipv6 (Reference to address configuration)
+ *
+ * - `value`: value of address
+ * - `prefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
+ *
+ * See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0#tag/Vpcs/operation/listVpcs).
  */
 export function getVpcsV2Output(args?: GetVpcsV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVpcsV2Result> {
     args = args || {};
@@ -100,7 +226,8 @@ export function getVpcsV2Output(args?: GetVpcsV2OutputArgs, opts?: pulumi.Invoke
  */
 export interface GetVpcsV2OutputArgs {
     /**
-     * A URL query parameter that allows clients to filter a collection of resources.
+     * A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+     * - `extId`
      */
     filter?: pulumi.Input<string>;
     /**
@@ -108,7 +235,7 @@ export interface GetVpcsV2OutputArgs {
      */
     limit?: pulumi.Input<number>;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default.
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
      */
     orderBy?: pulumi.Input<string>;
     /**
@@ -116,7 +243,7 @@ export interface GetVpcsV2OutputArgs {
      */
     page?: pulumi.Input<number>;
     /**
-     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions.
+     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. The select can be applied to the following fields:
      */
     select?: pulumi.Input<string>;
 }

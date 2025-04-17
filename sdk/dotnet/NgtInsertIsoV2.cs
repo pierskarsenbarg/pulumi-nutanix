@@ -12,6 +12,29 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides Nutanix resource toInserts the Nutanix Guest Tools installation and configuration ISO into a virtual machine.
+    /// 
+    /// ## Example
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var example = new Nutanix.NgtInsertIsoV2("example", new()
+    ///     {
+    ///         Capablities = new[]
+    ///         {
+    ///             "VSS_SNAPSHOT",
+    ///         },
+    ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+    ///         IsConfigOnly = false,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/ngtInsertIsoV2:NgtInsertIsoV2")]
     public partial class NgtInsertIsoV2 : global::Pulumi.CustomResource

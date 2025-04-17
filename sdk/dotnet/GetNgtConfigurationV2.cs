@@ -14,18 +14,75 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Provides Nutanix datasource to Retrieves the Nutanix Guest Tools configuration for a Virtual Machine.
+        /// 
+        /// 
+        /// ## Example
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Nutanix.GetNgtConfigurationV2.Invoke(new()
+        ///     {
+        ///         ExtId = "f29535e2-6bd8-4782-b879-409f17217b31",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetNgtConfigurationV2Result> InvokeAsync(GetNgtConfigurationV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNgtConfigurationV2Result>("nutanix:index/getNgtConfigurationV2:getNgtConfigurationV2", args ?? new GetNgtConfigurationV2Args(), options.WithDefaults());
 
         /// <summary>
         /// Provides Nutanix datasource to Retrieves the Nutanix Guest Tools configuration for a Virtual Machine.
+        /// 
+        /// 
+        /// ## Example
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Nutanix.GetNgtConfigurationV2.Invoke(new()
+        ///     {
+        ///         ExtId = "f29535e2-6bd8-4782-b879-409f17217b31",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetNgtConfigurationV2Result> Invoke(GetNgtConfigurationV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNgtConfigurationV2Result>("nutanix:index/getNgtConfigurationV2:getNgtConfigurationV2", args ?? new GetNgtConfigurationV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides Nutanix datasource to Retrieves the Nutanix Guest Tools configuration for a Virtual Machine.
+        /// 
+        /// 
+        /// ## Example
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Nutanix.GetNgtConfigurationV2.Invoke(new()
+        ///     {
+        ///         ExtId = "f29535e2-6bd8-4782-b879-409f17217b31",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetNgtConfigurationV2Result> Invoke(GetNgtConfigurationV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNgtConfigurationV2Result>("nutanix:index/getNgtConfigurationV2:getNgtConfigurationV2", args ?? new GetNgtConfigurationV2InvokeArgs(), options.WithDefaults());

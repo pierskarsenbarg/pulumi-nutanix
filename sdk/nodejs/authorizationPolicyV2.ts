@@ -8,6 +8,31 @@ import * as utilities from "./utilities";
 
 /**
  * Provides Nutanix resource to create authorization policy.
+ *
+ * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const ap_example = new nutanix.AuthorizationPolicyV2("ap-example", {
+ *     authorizationPolicyType: "USER_DEFINED",
+ *     description: "authorization policy example",
+ *     displayName: "auth_policy_example",
+ *     entities: [
+ *         {
+ *             reserved: "{\"images\":{\"*\":{\"eq\":\"*\"}}}",
+ *         },
+ *         {
+ *             reserved: "{\"marketplace_item\":{\"owner_uuid\":{\"eq\":\"SELF_OWNED\"}}}",
+ *         },
+ *     ],
+ *     identities: [{
+ *         reserved: "{\"user\":{\"uuid\":{\"anyof\":[\"00000000-0000-0000-0000-000000000000\"]}}}",
+ *     }],
+ *     role: "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+ * });
+ * ```
  */
 export class AuthorizationPolicyV2 extends pulumi.CustomResource {
     /**

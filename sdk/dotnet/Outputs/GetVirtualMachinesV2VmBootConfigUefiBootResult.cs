@@ -14,15 +14,23 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVirtualMachinesV2VmBootConfigUefiBootResult
     {
+        public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmBootConfigUefiBootBootDeviceResult> BootDevices;
+        public readonly ImmutableArray<string> BootOrders;
         public readonly bool IsSecureBootEnabled;
         public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceResult> NvramDevices;
 
         [OutputConstructor]
         private GetVirtualMachinesV2VmBootConfigUefiBootResult(
+            ImmutableArray<Outputs.GetVirtualMachinesV2VmBootConfigUefiBootBootDeviceResult> bootDevices,
+
+            ImmutableArray<string> bootOrders,
+
             bool isSecureBootEnabled,
 
             ImmutableArray<Outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceResult> nvramDevices)
         {
+            BootDevices = bootDevices;
+            BootOrders = bootOrders;
             IsSecureBootEnabled = isSecureBootEnabled;
             NvramDevices = nvramDevices;
         }
