@@ -15,34 +15,15 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const exampleVolumeGroupV2 = new nutanix.VolumeGroupV2("exampleVolumeGroupV2", {
- *     description: "Test Volume group with min spec and no Auth",
- *     shouldLoadBalanceVmAttachments: false,
- *     sharingStatus: "SHARED",
- *     targetName: "volumegroup-test-0",
- *     createdBy: "Test",
- *     clusterReference: "<Cluster uuid>",
- *     iscsiFeatures: [{
- *         enabledAuthentications: "CHAP",
- *         targetSecret: "1234567891011",
- *     }],
- *     storageFeatures: [{
- *         flashModes: [{
- *             isEnabled: true,
- *         }],
- *     }],
- *     usageType: "USER",
- *     isHidden: false,
- * });
  * // create new volume group disk  and attached it to the previous volume group
- * const exampleVolumeGroupDiskV2 = new nutanix.VolumeGroupDiskV2("exampleVolumeGroupDiskV2", {
- *     volumeGroupExtId: resource.nutanix_volume_group_v2.example.id,
+ * const example = new nutanix.VolumeGroupDiskV2("example", {
+ *     volumeGroupExtId: "cf7de8b9-88ed-477d-a602-c34ab7174c01",
  *     index: 1,
- *     description: "create volume disk test",
+ *     description: "create volume disk example",
  *     diskSizeBytes: 5368709120,
  *     diskDataSourceReferences: [{
  *         name: "disk1",
- *         extId: _var.disk_data_source_ref_ext_id,
+ *         extId: "1d92110d-26b5-46c0-8c93-20b8171373e0",
  *         entityType: "STORAGE_CONTAINER",
  *         uris: [
  *             "uri1",

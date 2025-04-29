@@ -13,15 +13,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class PcRegistrationV2NetworkExternalNetworkGetArgs : global::Pulumi.ResourceArgs
     {
-        [Input("defaultGateways")]
-        private InputList<Inputs.PcRegistrationV2NetworkExternalNetworkDefaultGatewayGetArgs>? _defaultGateways;
-        public InputList<Inputs.PcRegistrationV2NetworkExternalNetworkDefaultGatewayGetArgs> DefaultGateways
-        {
-            get => _defaultGateways ?? (_defaultGateways = new InputList<Inputs.PcRegistrationV2NetworkExternalNetworkDefaultGatewayGetArgs>());
-            set => _defaultGateways = value;
-        }
+        [Input("defaultGateway", required: true)]
+        public Input<Inputs.PcRegistrationV2NetworkExternalNetworkDefaultGatewayGetArgs> DefaultGateway { get; set; } = null!;
 
-        [Input("ipRanges")]
+        [Input("ipRanges", required: true)]
         private InputList<Inputs.PcRegistrationV2NetworkExternalNetworkIpRangeGetArgs>? _ipRanges;
         public InputList<Inputs.PcRegistrationV2NetworkExternalNetworkIpRangeGetArgs> IpRanges
         {
@@ -29,16 +24,11 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _ipRanges = value;
         }
 
-        [Input("networkExtId")]
-        public Input<string>? NetworkExtId { get; set; }
+        [Input("networkExtId", required: true)]
+        public Input<string> NetworkExtId { get; set; } = null!;
 
-        [Input("subnetMasks")]
-        private InputList<Inputs.PcRegistrationV2NetworkExternalNetworkSubnetMaskGetArgs>? _subnetMasks;
-        public InputList<Inputs.PcRegistrationV2NetworkExternalNetworkSubnetMaskGetArgs> SubnetMasks
-        {
-            get => _subnetMasks ?? (_subnetMasks = new InputList<Inputs.PcRegistrationV2NetworkExternalNetworkSubnetMaskGetArgs>());
-            set => _subnetMasks = value;
-        }
+        [Input("subnetMask", required: true)]
+        public Input<Inputs.PcRegistrationV2NetworkExternalNetworkSubnetMaskGetArgs> SubnetMask { get; set; } = null!;
 
         public PcRegistrationV2NetworkExternalNetworkGetArgs()
         {

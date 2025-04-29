@@ -1929,6 +1929,139 @@ func (o AddressGroupsV2LinkArrayOutput) Index(i pulumi.IntInput) AddressGroupsV2
 	}).(AddressGroupsV2LinkOutput)
 }
 
+type AssociateCategoryToVolumeGroupV2Category struct {
+	// -(Optional) Type of entity that's represented by this reference. Default value is "CATEGORY". Valid values are:
+	// * "CATEGORY".
+	//
+	// See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/associateCategory).
+	EntityType *string `pulumi:"entityType"`
+	// -(Required) The external identifier of the category.
+	ExtId string `pulumi:"extId"`
+	// -(Optional) Name of entity that's represented by this reference
+	Name *string `pulumi:"name"`
+	// -(Optional) URI of entities that's represented by this reference.
+	Uris []string `pulumi:"uris"`
+}
+
+// AssociateCategoryToVolumeGroupV2CategoryInput is an input type that accepts AssociateCategoryToVolumeGroupV2CategoryArgs and AssociateCategoryToVolumeGroupV2CategoryOutput values.
+// You can construct a concrete instance of `AssociateCategoryToVolumeGroupV2CategoryInput` via:
+//
+//	AssociateCategoryToVolumeGroupV2CategoryArgs{...}
+type AssociateCategoryToVolumeGroupV2CategoryInput interface {
+	pulumi.Input
+
+	ToAssociateCategoryToVolumeGroupV2CategoryOutput() AssociateCategoryToVolumeGroupV2CategoryOutput
+	ToAssociateCategoryToVolumeGroupV2CategoryOutputWithContext(context.Context) AssociateCategoryToVolumeGroupV2CategoryOutput
+}
+
+type AssociateCategoryToVolumeGroupV2CategoryArgs struct {
+	// -(Optional) Type of entity that's represented by this reference. Default value is "CATEGORY". Valid values are:
+	// * "CATEGORY".
+	//
+	// See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/associateCategory).
+	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
+	// -(Required) The external identifier of the category.
+	ExtId pulumi.StringInput `pulumi:"extId"`
+	// -(Optional) Name of entity that's represented by this reference
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// -(Optional) URI of entities that's represented by this reference.
+	Uris pulumi.StringArrayInput `pulumi:"uris"`
+}
+
+func (AssociateCategoryToVolumeGroupV2CategoryArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssociateCategoryToVolumeGroupV2Category)(nil)).Elem()
+}
+
+func (i AssociateCategoryToVolumeGroupV2CategoryArgs) ToAssociateCategoryToVolumeGroupV2CategoryOutput() AssociateCategoryToVolumeGroupV2CategoryOutput {
+	return i.ToAssociateCategoryToVolumeGroupV2CategoryOutputWithContext(context.Background())
+}
+
+func (i AssociateCategoryToVolumeGroupV2CategoryArgs) ToAssociateCategoryToVolumeGroupV2CategoryOutputWithContext(ctx context.Context) AssociateCategoryToVolumeGroupV2CategoryOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssociateCategoryToVolumeGroupV2CategoryOutput)
+}
+
+// AssociateCategoryToVolumeGroupV2CategoryArrayInput is an input type that accepts AssociateCategoryToVolumeGroupV2CategoryArray and AssociateCategoryToVolumeGroupV2CategoryArrayOutput values.
+// You can construct a concrete instance of `AssociateCategoryToVolumeGroupV2CategoryArrayInput` via:
+//
+//	AssociateCategoryToVolumeGroupV2CategoryArray{ AssociateCategoryToVolumeGroupV2CategoryArgs{...} }
+type AssociateCategoryToVolumeGroupV2CategoryArrayInput interface {
+	pulumi.Input
+
+	ToAssociateCategoryToVolumeGroupV2CategoryArrayOutput() AssociateCategoryToVolumeGroupV2CategoryArrayOutput
+	ToAssociateCategoryToVolumeGroupV2CategoryArrayOutputWithContext(context.Context) AssociateCategoryToVolumeGroupV2CategoryArrayOutput
+}
+
+type AssociateCategoryToVolumeGroupV2CategoryArray []AssociateCategoryToVolumeGroupV2CategoryInput
+
+func (AssociateCategoryToVolumeGroupV2CategoryArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssociateCategoryToVolumeGroupV2Category)(nil)).Elem()
+}
+
+func (i AssociateCategoryToVolumeGroupV2CategoryArray) ToAssociateCategoryToVolumeGroupV2CategoryArrayOutput() AssociateCategoryToVolumeGroupV2CategoryArrayOutput {
+	return i.ToAssociateCategoryToVolumeGroupV2CategoryArrayOutputWithContext(context.Background())
+}
+
+func (i AssociateCategoryToVolumeGroupV2CategoryArray) ToAssociateCategoryToVolumeGroupV2CategoryArrayOutputWithContext(ctx context.Context) AssociateCategoryToVolumeGroupV2CategoryArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AssociateCategoryToVolumeGroupV2CategoryArrayOutput)
+}
+
+type AssociateCategoryToVolumeGroupV2CategoryOutput struct{ *pulumi.OutputState }
+
+func (AssociateCategoryToVolumeGroupV2CategoryOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AssociateCategoryToVolumeGroupV2Category)(nil)).Elem()
+}
+
+func (o AssociateCategoryToVolumeGroupV2CategoryOutput) ToAssociateCategoryToVolumeGroupV2CategoryOutput() AssociateCategoryToVolumeGroupV2CategoryOutput {
+	return o
+}
+
+func (o AssociateCategoryToVolumeGroupV2CategoryOutput) ToAssociateCategoryToVolumeGroupV2CategoryOutputWithContext(ctx context.Context) AssociateCategoryToVolumeGroupV2CategoryOutput {
+	return o
+}
+
+// -(Optional) Type of entity that's represented by this reference. Default value is "CATEGORY". Valid values are:
+// * "CATEGORY".
+//
+// See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/associateCategory).
+func (o AssociateCategoryToVolumeGroupV2CategoryOutput) EntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssociateCategoryToVolumeGroupV2Category) *string { return v.EntityType }).(pulumi.StringPtrOutput)
+}
+
+// -(Required) The external identifier of the category.
+func (o AssociateCategoryToVolumeGroupV2CategoryOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v AssociateCategoryToVolumeGroupV2Category) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+// -(Optional) Name of entity that's represented by this reference
+func (o AssociateCategoryToVolumeGroupV2CategoryOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AssociateCategoryToVolumeGroupV2Category) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// -(Optional) URI of entities that's represented by this reference.
+func (o AssociateCategoryToVolumeGroupV2CategoryOutput) Uris() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v AssociateCategoryToVolumeGroupV2Category) []string { return v.Uris }).(pulumi.StringArrayOutput)
+}
+
+type AssociateCategoryToVolumeGroupV2CategoryArrayOutput struct{ *pulumi.OutputState }
+
+func (AssociateCategoryToVolumeGroupV2CategoryArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AssociateCategoryToVolumeGroupV2Category)(nil)).Elem()
+}
+
+func (o AssociateCategoryToVolumeGroupV2CategoryArrayOutput) ToAssociateCategoryToVolumeGroupV2CategoryArrayOutput() AssociateCategoryToVolumeGroupV2CategoryArrayOutput {
+	return o
+}
+
+func (o AssociateCategoryToVolumeGroupV2CategoryArrayOutput) ToAssociateCategoryToVolumeGroupV2CategoryArrayOutputWithContext(ctx context.Context) AssociateCategoryToVolumeGroupV2CategoryArrayOutput {
+	return o
+}
+
+func (o AssociateCategoryToVolumeGroupV2CategoryArrayOutput) Index(i pulumi.IntInput) AssociateCategoryToVolumeGroupV2CategoryOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AssociateCategoryToVolumeGroupV2Category {
+		return vs[0].([]AssociateCategoryToVolumeGroupV2Category)[vs[1].(int)]
+	}).(AssociateCategoryToVolumeGroupV2CategoryOutput)
+}
+
 type AuthorizationPolicyV2Entity struct {
 	Reserved *string `pulumi:"reserved"`
 }
@@ -6423,7 +6556,7 @@ type ClusterV2Config struct {
 	// - "NORMAL"	Normal operation mode.
 	// - "READ_ONLY"	Read-only operation mode.
 	OperationMode *string `pulumi:"operationMode"`
-	// - (Optional) Pulse status for a cluster.
+	// - (Optional) Pulse status for a cluster. `supported only for update operations and not available during creation.`
 	PulseStatuses []ClusterV2ConfigPulseStatus `pulumi:"pulseStatuses"`
 	// - (Optional) Redundancy factor of a cluster. This is part of payload for both cluster create & update operations.
 	RedundancyFactor *int    `pulumi:"redundancyFactor"`
@@ -6487,7 +6620,7 @@ type ClusterV2ConfigArgs struct {
 	// - "NORMAL"	Normal operation mode.
 	// - "READ_ONLY"	Read-only operation mode.
 	OperationMode pulumi.StringPtrInput `pulumi:"operationMode"`
-	// - (Optional) Pulse status for a cluster.
+	// - (Optional) Pulse status for a cluster. `supported only for update operations and not available during creation.`
 	PulseStatuses ClusterV2ConfigPulseStatusArrayInput `pulumi:"pulseStatuses"`
 	// - (Optional) Redundancy factor of a cluster. This is part of payload for both cluster create & update operations.
 	RedundancyFactor pulumi.IntPtrInput    `pulumi:"redundancyFactor"`
@@ -6638,7 +6771,7 @@ func (o ClusterV2ConfigOutput) OperationMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterV2Config) *string { return v.OperationMode }).(pulumi.StringPtrOutput)
 }
 
-// - (Optional) Pulse status for a cluster.
+// - (Optional) Pulse status for a cluster. `supported only for update operations and not available during creation.`
 func (o ClusterV2ConfigOutput) PulseStatuses() ClusterV2ConfigPulseStatusArrayOutput {
 	return o.ApplyT(func(v ClusterV2Config) []ClusterV2ConfigPulseStatus { return v.PulseStatuses }).(ClusterV2ConfigPulseStatusArrayOutput)
 }
@@ -8042,7 +8175,7 @@ func (o ClusterV2NetworkBackplaneSubnetArrayOutput) Index(i pulumi.IntInput) Clu
 }
 
 type ClusterV2NetworkExternalAddress struct {
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s []ClusterV2NetworkExternalAddressIpv4 `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s []ClusterV2NetworkExternalAddressIpv6 `pulumi:"ipv6s"`
@@ -8060,7 +8193,7 @@ type ClusterV2NetworkExternalAddressInput interface {
 }
 
 type ClusterV2NetworkExternalAddressArgs struct {
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s ClusterV2NetworkExternalAddressIpv4ArrayInput `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s ClusterV2NetworkExternalAddressIpv6ArrayInput `pulumi:"ipv6s"`
@@ -8117,7 +8250,7 @@ func (o ClusterV2NetworkExternalAddressOutput) ToClusterV2NetworkExternalAddress
 	return o
 }
 
-// - (Optional) ip adresss params.
+// - (Optional) ip address params.
 func (o ClusterV2NetworkExternalAddressOutput) Ipv4s() ClusterV2NetworkExternalAddressIpv4ArrayOutput {
 	return o.ApplyT(func(v ClusterV2NetworkExternalAddress) []ClusterV2NetworkExternalAddressIpv4 { return v.Ipv4s }).(ClusterV2NetworkExternalAddressIpv4ArrayOutput)
 }
@@ -8258,7 +8391,7 @@ type ClusterV2NetworkExternalAddressIpv6 struct {
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -8278,7 +8411,7 @@ type ClusterV2NetworkExternalAddressIpv6Args struct {
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -8340,7 +8473,7 @@ func (o ClusterV2NetworkExternalAddressIpv6Output) PrefixLength() pulumi.IntPtrO
 
 // - (Required) Ip address.
 //
-// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NetworkExternalAddressIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NetworkExternalAddressIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -8366,7 +8499,7 @@ func (o ClusterV2NetworkExternalAddressIpv6ArrayOutput) Index(i pulumi.IntInput)
 }
 
 type ClusterV2NetworkExternalDataServicesIp struct {
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s []ClusterV2NetworkExternalDataServicesIpIpv4 `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s []ClusterV2NetworkExternalDataServicesIpIpv6 `pulumi:"ipv6s"`
@@ -8384,7 +8517,7 @@ type ClusterV2NetworkExternalDataServicesIpInput interface {
 }
 
 type ClusterV2NetworkExternalDataServicesIpArgs struct {
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s ClusterV2NetworkExternalDataServicesIpIpv4ArrayInput `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s ClusterV2NetworkExternalDataServicesIpIpv6ArrayInput `pulumi:"ipv6s"`
@@ -8441,7 +8574,7 @@ func (o ClusterV2NetworkExternalDataServicesIpOutput) ToClusterV2NetworkExternal
 	return o
 }
 
-// - (Optional) ip adresss params.
+// - (Optional) ip address params.
 func (o ClusterV2NetworkExternalDataServicesIpOutput) Ipv4s() ClusterV2NetworkExternalDataServicesIpIpv4ArrayOutput {
 	return o.ApplyT(func(v ClusterV2NetworkExternalDataServicesIp) []ClusterV2NetworkExternalDataServicesIpIpv4 {
 		return v.Ipv4s
@@ -8586,7 +8719,7 @@ type ClusterV2NetworkExternalDataServicesIpIpv6 struct {
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -8606,7 +8739,7 @@ type ClusterV2NetworkExternalDataServicesIpIpv6Args struct {
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -8668,7 +8801,7 @@ func (o ClusterV2NetworkExternalDataServicesIpIpv6Output) PrefixLength() pulumi.
 
 // - (Required) Ip address.
 //
-// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NetworkExternalDataServicesIpIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NetworkExternalDataServicesIpIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -8833,7 +8966,7 @@ func (o ClusterV2NetworkHttpProxyListArrayOutput) Index(i pulumi.IntInput) Clust
 }
 
 type ClusterV2NetworkHttpProxyListIpAddress struct {
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s []ClusterV2NetworkHttpProxyListIpAddressIpv4 `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s []ClusterV2NetworkHttpProxyListIpAddressIpv6 `pulumi:"ipv6s"`
@@ -8851,7 +8984,7 @@ type ClusterV2NetworkHttpProxyListIpAddressInput interface {
 }
 
 type ClusterV2NetworkHttpProxyListIpAddressArgs struct {
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s ClusterV2NetworkHttpProxyListIpAddressIpv4ArrayInput `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s ClusterV2NetworkHttpProxyListIpAddressIpv6ArrayInput `pulumi:"ipv6s"`
@@ -8908,7 +9041,7 @@ func (o ClusterV2NetworkHttpProxyListIpAddressOutput) ToClusterV2NetworkHttpProx
 	return o
 }
 
-// - (Optional) ip adresss params.
+// - (Optional) ip address params.
 func (o ClusterV2NetworkHttpProxyListIpAddressOutput) Ipv4s() ClusterV2NetworkHttpProxyListIpAddressIpv4ArrayOutput {
 	return o.ApplyT(func(v ClusterV2NetworkHttpProxyListIpAddress) []ClusterV2NetworkHttpProxyListIpAddressIpv4 {
 		return v.Ipv4s
@@ -9053,7 +9186,7 @@ type ClusterV2NetworkHttpProxyListIpAddressIpv6 struct {
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -9073,7 +9206,7 @@ type ClusterV2NetworkHttpProxyListIpAddressIpv6Args struct {
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -9135,7 +9268,7 @@ func (o ClusterV2NetworkHttpProxyListIpAddressIpv6Output) PrefixLength() pulumi.
 
 // - (Required) Ip address.
 //
-// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NetworkHttpProxyListIpAddressIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NetworkHttpProxyListIpAddressIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -9418,7 +9551,7 @@ func (o ClusterV2NetworkManagementServerArrayOutput) Index(i pulumi.IntInput) Cl
 }
 
 type ClusterV2NetworkManagementServerIp struct {
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s []ClusterV2NetworkManagementServerIpIpv4 `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s []ClusterV2NetworkManagementServerIpIpv6 `pulumi:"ipv6s"`
@@ -9436,7 +9569,7 @@ type ClusterV2NetworkManagementServerIpInput interface {
 }
 
 type ClusterV2NetworkManagementServerIpArgs struct {
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s ClusterV2NetworkManagementServerIpIpv4ArrayInput `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s ClusterV2NetworkManagementServerIpIpv6ArrayInput `pulumi:"ipv6s"`
@@ -9493,7 +9626,7 @@ func (o ClusterV2NetworkManagementServerIpOutput) ToClusterV2NetworkManagementSe
 	return o
 }
 
-// - (Optional) ip adresss params.
+// - (Optional) ip address params.
 func (o ClusterV2NetworkManagementServerIpOutput) Ipv4s() ClusterV2NetworkManagementServerIpIpv4ArrayOutput {
 	return o.ApplyT(func(v ClusterV2NetworkManagementServerIp) []ClusterV2NetworkManagementServerIpIpv4 { return v.Ipv4s }).(ClusterV2NetworkManagementServerIpIpv4ArrayOutput)
 }
@@ -9634,7 +9767,7 @@ type ClusterV2NetworkManagementServerIpIpv6 struct {
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -9654,7 +9787,7 @@ type ClusterV2NetworkManagementServerIpIpv6Args struct {
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -9716,7 +9849,7 @@ func (o ClusterV2NetworkManagementServerIpIpv6Output) PrefixLength() pulumi.IntP
 
 // - (Required) Ip address.
 //
-// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NetworkManagementServerIpIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NetworkManagementServerIpIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -9742,7 +9875,7 @@ func (o ClusterV2NetworkManagementServerIpIpv6ArrayOutput) Index(i pulumi.IntInp
 }
 
 type ClusterV2NetworkMasqueradingIp struct {
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s []ClusterV2NetworkMasqueradingIpIpv4 `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s []ClusterV2NetworkMasqueradingIpIpv6 `pulumi:"ipv6s"`
@@ -9760,7 +9893,7 @@ type ClusterV2NetworkMasqueradingIpInput interface {
 }
 
 type ClusterV2NetworkMasqueradingIpArgs struct {
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s ClusterV2NetworkMasqueradingIpIpv4ArrayInput `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s ClusterV2NetworkMasqueradingIpIpv6ArrayInput `pulumi:"ipv6s"`
@@ -9817,7 +9950,7 @@ func (o ClusterV2NetworkMasqueradingIpOutput) ToClusterV2NetworkMasqueradingIpOu
 	return o
 }
 
-// - (Optional) ip adresss params.
+// - (Optional) ip address params.
 func (o ClusterV2NetworkMasqueradingIpOutput) Ipv4s() ClusterV2NetworkMasqueradingIpIpv4ArrayOutput {
 	return o.ApplyT(func(v ClusterV2NetworkMasqueradingIp) []ClusterV2NetworkMasqueradingIpIpv4 { return v.Ipv4s }).(ClusterV2NetworkMasqueradingIpIpv4ArrayOutput)
 }
@@ -9958,7 +10091,7 @@ type ClusterV2NetworkMasqueradingIpIpv6 struct {
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -9978,7 +10111,7 @@ type ClusterV2NetworkMasqueradingIpIpv6Args struct {
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -10040,7 +10173,7 @@ func (o ClusterV2NetworkMasqueradingIpIpv6Output) PrefixLength() pulumi.IntPtrOu
 
 // - (Required) Ip address.
 //
-// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NetworkMasqueradingIpIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NetworkMasqueradingIpIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -10068,7 +10201,7 @@ func (o ClusterV2NetworkMasqueradingIpIpv6ArrayOutput) Index(i pulumi.IntInput) 
 type ClusterV2NetworkNameServerIpList struct {
 	// - (Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
 	Fqdns []ClusterV2NetworkNameServerIpListFqdn `pulumi:"fqdns"`
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s []ClusterV2NetworkNameServerIpListIpv4 `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s []ClusterV2NetworkNameServerIpListIpv6 `pulumi:"ipv6s"`
@@ -10088,7 +10221,7 @@ type ClusterV2NetworkNameServerIpListInput interface {
 type ClusterV2NetworkNameServerIpListArgs struct {
 	// - (Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
 	Fqdns ClusterV2NetworkNameServerIpListFqdnArrayInput `pulumi:"fqdns"`
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s ClusterV2NetworkNameServerIpListIpv4ArrayInput `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s ClusterV2NetworkNameServerIpListIpv6ArrayInput `pulumi:"ipv6s"`
@@ -10150,7 +10283,7 @@ func (o ClusterV2NetworkNameServerIpListOutput) Fqdns() ClusterV2NetworkNameServ
 	return o.ApplyT(func(v ClusterV2NetworkNameServerIpList) []ClusterV2NetworkNameServerIpListFqdn { return v.Fqdns }).(ClusterV2NetworkNameServerIpListFqdnArrayOutput)
 }
 
-// - (Optional) ip adresss params.
+// - (Optional) ip address params.
 func (o ClusterV2NetworkNameServerIpListOutput) Ipv4s() ClusterV2NetworkNameServerIpListIpv4ArrayOutput {
 	return o.ApplyT(func(v ClusterV2NetworkNameServerIpList) []ClusterV2NetworkNameServerIpListIpv4 { return v.Ipv4s }).(ClusterV2NetworkNameServerIpListIpv4ArrayOutput)
 }
@@ -10385,7 +10518,7 @@ type ClusterV2NetworkNameServerIpListIpv6 struct {
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -10405,7 +10538,7 @@ type ClusterV2NetworkNameServerIpListIpv6Args struct {
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -10467,7 +10600,7 @@ func (o ClusterV2NetworkNameServerIpListIpv6Output) PrefixLength() pulumi.IntPtr
 
 // - (Required) Ip address.
 //
-// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NetworkNameServerIpListIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NetworkNameServerIpListIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -10495,7 +10628,7 @@ func (o ClusterV2NetworkNameServerIpListIpv6ArrayOutput) Index(i pulumi.IntInput
 type ClusterV2NetworkNtpServerIpList struct {
 	// - (Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
 	Fqdns []ClusterV2NetworkNtpServerIpListFqdn `pulumi:"fqdns"`
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s []ClusterV2NetworkNtpServerIpListIpv4 `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s []ClusterV2NetworkNtpServerIpListIpv6 `pulumi:"ipv6s"`
@@ -10515,7 +10648,7 @@ type ClusterV2NetworkNtpServerIpListInput interface {
 type ClusterV2NetworkNtpServerIpListArgs struct {
 	// - (Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
 	Fqdns ClusterV2NetworkNtpServerIpListFqdnArrayInput `pulumi:"fqdns"`
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s ClusterV2NetworkNtpServerIpListIpv4ArrayInput `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s ClusterV2NetworkNtpServerIpListIpv6ArrayInput `pulumi:"ipv6s"`
@@ -10577,7 +10710,7 @@ func (o ClusterV2NetworkNtpServerIpListOutput) Fqdns() ClusterV2NetworkNtpServer
 	return o.ApplyT(func(v ClusterV2NetworkNtpServerIpList) []ClusterV2NetworkNtpServerIpListFqdn { return v.Fqdns }).(ClusterV2NetworkNtpServerIpListFqdnArrayOutput)
 }
 
-// - (Optional) ip adresss params.
+// - (Optional) ip address params.
 func (o ClusterV2NetworkNtpServerIpListOutput) Ipv4s() ClusterV2NetworkNtpServerIpListIpv4ArrayOutput {
 	return o.ApplyT(func(v ClusterV2NetworkNtpServerIpList) []ClusterV2NetworkNtpServerIpListIpv4 { return v.Ipv4s }).(ClusterV2NetworkNtpServerIpListIpv4ArrayOutput)
 }
@@ -10812,7 +10945,7 @@ type ClusterV2NetworkNtpServerIpListIpv6 struct {
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -10832,7 +10965,7 @@ type ClusterV2NetworkNtpServerIpListIpv6Args struct {
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -10894,7 +11027,7 @@ func (o ClusterV2NetworkNtpServerIpListIpv6Output) PrefixLength() pulumi.IntPtrO
 
 // - (Required) Ip address.
 //
-// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NetworkNtpServerIpListIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NetworkNtpServerIpListIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -11175,7 +11308,7 @@ func (o ClusterV2NetworkSmtpServerServerArrayOutput) Index(i pulumi.IntInput) Cl
 type ClusterV2NetworkSmtpServerServerIpAddress struct {
 	// - (Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
 	Fqdns []ClusterV2NetworkSmtpServerServerIpAddressFqdn `pulumi:"fqdns"`
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s []ClusterV2NetworkSmtpServerServerIpAddressIpv4 `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s []ClusterV2NetworkSmtpServerServerIpAddressIpv6 `pulumi:"ipv6s"`
@@ -11195,7 +11328,7 @@ type ClusterV2NetworkSmtpServerServerIpAddressInput interface {
 type ClusterV2NetworkSmtpServerServerIpAddressArgs struct {
 	// - (Optional) A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
 	Fqdns ClusterV2NetworkSmtpServerServerIpAddressFqdnArrayInput `pulumi:"fqdns"`
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s ClusterV2NetworkSmtpServerServerIpAddressIpv4ArrayInput `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s ClusterV2NetworkSmtpServerServerIpAddressIpv6ArrayInput `pulumi:"ipv6s"`
@@ -11259,7 +11392,7 @@ func (o ClusterV2NetworkSmtpServerServerIpAddressOutput) Fqdns() ClusterV2Networ
 	}).(ClusterV2NetworkSmtpServerServerIpAddressFqdnArrayOutput)
 }
 
-// - (Optional) ip adresss params.
+// - (Optional) ip address params.
 func (o ClusterV2NetworkSmtpServerServerIpAddressOutput) Ipv4s() ClusterV2NetworkSmtpServerServerIpAddressIpv4ArrayOutput {
 	return o.ApplyT(func(v ClusterV2NetworkSmtpServerServerIpAddress) []ClusterV2NetworkSmtpServerServerIpAddressIpv4 {
 		return v.Ipv4s
@@ -11498,7 +11631,7 @@ type ClusterV2NetworkSmtpServerServerIpAddressIpv6 struct {
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -11518,7 +11651,7 @@ type ClusterV2NetworkSmtpServerServerIpAddressIpv6Args struct {
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -11580,7 +11713,7 @@ func (o ClusterV2NetworkSmtpServerServerIpAddressIpv6Output) PrefixLength() pulu
 
 // - (Required) Ip address.
 //
-// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NetworkSmtpServerServerIpAddressIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NetworkSmtpServerServerIpAddressIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -11821,7 +11954,7 @@ func (o ClusterV2NodeNodeListArrayOutput) Index(i pulumi.IntInput) ClusterV2Node
 }
 
 type ClusterV2NodeNodeListControllerVmIp struct {
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s []ClusterV2NodeNodeListControllerVmIpIpv4 `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s []ClusterV2NodeNodeListControllerVmIpIpv6 `pulumi:"ipv6s"`
@@ -11839,7 +11972,7 @@ type ClusterV2NodeNodeListControllerVmIpInput interface {
 }
 
 type ClusterV2NodeNodeListControllerVmIpArgs struct {
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s ClusterV2NodeNodeListControllerVmIpIpv4ArrayInput `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s ClusterV2NodeNodeListControllerVmIpIpv6ArrayInput `pulumi:"ipv6s"`
@@ -11896,7 +12029,7 @@ func (o ClusterV2NodeNodeListControllerVmIpOutput) ToClusterV2NodeNodeListContro
 	return o
 }
 
-// - (Optional) ip adresss params.
+// - (Optional) ip address params.
 func (o ClusterV2NodeNodeListControllerVmIpOutput) Ipv4s() ClusterV2NodeNodeListControllerVmIpIpv4ArrayOutput {
 	return o.ApplyT(func(v ClusterV2NodeNodeListControllerVmIp) []ClusterV2NodeNodeListControllerVmIpIpv4 { return v.Ipv4s }).(ClusterV2NodeNodeListControllerVmIpIpv4ArrayOutput)
 }
@@ -12037,7 +12170,7 @@ type ClusterV2NodeNodeListControllerVmIpIpv6 struct {
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -12057,7 +12190,7 @@ type ClusterV2NodeNodeListControllerVmIpIpv6Args struct {
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -12119,7 +12252,7 @@ func (o ClusterV2NodeNodeListControllerVmIpIpv6Output) PrefixLength() pulumi.Int
 
 // - (Required) Ip address.
 //
-// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NodeNodeListControllerVmIpIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NodeNodeListControllerVmIpIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -12145,7 +12278,7 @@ func (o ClusterV2NodeNodeListControllerVmIpIpv6ArrayOutput) Index(i pulumi.IntIn
 }
 
 type ClusterV2NodeNodeListHostIp struct {
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s []ClusterV2NodeNodeListHostIpIpv4 `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s []ClusterV2NodeNodeListHostIpIpv6 `pulumi:"ipv6s"`
@@ -12163,7 +12296,7 @@ type ClusterV2NodeNodeListHostIpInput interface {
 }
 
 type ClusterV2NodeNodeListHostIpArgs struct {
-	// - (Optional) ip adresss params.
+	// - (Optional) ip address params.
 	Ipv4s ClusterV2NodeNodeListHostIpIpv4ArrayInput `pulumi:"ipv4s"`
 	// - (Optional) Ip address params.
 	Ipv6s ClusterV2NodeNodeListHostIpIpv6ArrayInput `pulumi:"ipv6s"`
@@ -12220,7 +12353,7 @@ func (o ClusterV2NodeNodeListHostIpOutput) ToClusterV2NodeNodeListHostIpOutputWi
 	return o
 }
 
-// - (Optional) ip adresss params.
+// - (Optional) ip address params.
 func (o ClusterV2NodeNodeListHostIpOutput) Ipv4s() ClusterV2NodeNodeListHostIpIpv4ArrayOutput {
 	return o.ApplyT(func(v ClusterV2NodeNodeListHostIp) []ClusterV2NodeNodeListHostIpIpv4 { return v.Ipv4s }).(ClusterV2NodeNodeListHostIpIpv4ArrayOutput)
 }
@@ -12361,7 +12494,7 @@ type ClusterV2NodeNodeListHostIpIpv6 struct {
 	PrefixLength *int `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value string `pulumi:"value"`
 }
 
@@ -12381,7 +12514,7 @@ type ClusterV2NodeNodeListHostIpIpv6Args struct {
 	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
 	// - (Required) Ip address.
 	//
-	// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+	// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -12443,7 +12576,7 @@ func (o ClusterV2NodeNodeListHostIpIpv6Output) PrefixLength() pulumi.IntPtrOutpu
 
 // - (Required) Ip address.
 //
-// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0).
+// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.0#tag/Clusters/operation/createCluster).
 func (o ClusterV2NodeNodeListHostIpIpv6Output) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterV2NodeNodeListHostIpIpv6) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -31764,9 +31897,10 @@ type FoundationCentralImageClusterFoundationInitConfig struct {
 	// SKU of hyperv to be installed if hypervisorType is hyperv.
 	HypervSku *string `pulumi:"hypervSku"`
 	// Gateway of the hypervisor.
-	HypervisorGateway *string                                                          `pulumi:"hypervisorGateway"`
-	HypervisorIsoUrl  map[string]string                                                `pulumi:"hypervisorIsoUrl"`
-	HypervisorIsos    []FoundationCentralImageClusterFoundationInitConfigHypervisorIso `pulumi:"hypervisorIsos"`
+	HypervisorGateway *string           `pulumi:"hypervisorGateway"`
+	HypervisorIsoUrl  map[string]string `pulumi:"hypervisorIsoUrl"`
+	// Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
+	HypervisorIsos []FoundationCentralImageClusterFoundationInitConfigHypervisorIso `pulumi:"hypervisorIsos"`
 	// Netmask of the hypervisor.
 	HypervisorNetmask *string `pulumi:"hypervisorNetmask"`
 	// Gateway of the ipmi.
@@ -31800,9 +31934,10 @@ type FoundationCentralImageClusterFoundationInitConfigArgs struct {
 	// SKU of hyperv to be installed if hypervisorType is hyperv.
 	HypervSku pulumi.StringPtrInput `pulumi:"hypervSku"`
 	// Gateway of the hypervisor.
-	HypervisorGateway pulumi.StringPtrInput                                                    `pulumi:"hypervisorGateway"`
-	HypervisorIsoUrl  pulumi.StringMapInput                                                    `pulumi:"hypervisorIsoUrl"`
-	HypervisorIsos    FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArrayInput `pulumi:"hypervisorIsos"`
+	HypervisorGateway pulumi.StringPtrInput `pulumi:"hypervisorGateway"`
+	HypervisorIsoUrl  pulumi.StringMapInput `pulumi:"hypervisorIsoUrl"`
+	// Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
+	HypervisorIsos FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArrayInput `pulumi:"hypervisorIsos"`
 	// Netmask of the hypervisor.
 	HypervisorNetmask pulumi.StringPtrInput `pulumi:"hypervisorNetmask"`
 	// Gateway of the ipmi.
@@ -31908,6 +32043,7 @@ func (o FoundationCentralImageClusterFoundationInitConfigOutput) HypervisorIsoUr
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) map[string]string { return v.HypervisorIsoUrl }).(pulumi.StringMapOutput)
 }
 
+// Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
 func (o FoundationCentralImageClusterFoundationInitConfigOutput) HypervisorIsos() FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArrayOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfig) []FoundationCentralImageClusterFoundationInitConfigHypervisorIso {
 		return v.HypervisorIsos
@@ -32403,7 +32539,6 @@ func (o FoundationCentralImageClusterFoundationInitConfigClusterArrayOutput) Ind
 }
 
 type FoundationCentralImageClusterFoundationInitConfigHypervisorIso struct {
-	// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
 	HypervisorType *string `pulumi:"hypervisorType"`
 	// sha256sum of the hypervisor iso.
 	Sha256sum *string `pulumi:"sha256sum"`
@@ -32423,7 +32558,6 @@ type FoundationCentralImageClusterFoundationInitConfigHypervisorIsoInput interfa
 }
 
 type FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs struct {
-	// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
 	HypervisorType pulumi.StringPtrInput `pulumi:"hypervisorType"`
 	// sha256sum of the hypervisor iso.
 	Sha256sum pulumi.StringPtrInput `pulumi:"sha256sum"`
@@ -32482,7 +32616,6 @@ func (o FoundationCentralImageClusterFoundationInitConfigHypervisorIsoOutput) To
 	return o
 }
 
-// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
 func (o FoundationCentralImageClusterFoundationInitConfigHypervisorIsoOutput) HypervisorType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterFoundationInitConfigHypervisorIso) *string {
 		return v.HypervisorType
@@ -32819,6 +32952,215 @@ func (o FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput) Url() pulumi
 	}).(pulumi.StringPtrOutput)
 }
 
+type FoundationCentralImageClusterHypervisorIsos struct {
+	// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+	HypervProductKey *string `pulumi:"hypervProductKey"`
+	// SKU of hyperv to be installed if hypervisorType is hyperv.
+	HypervSku      *string `pulumi:"hypervSku"`
+	HypervisorType *string `pulumi:"hypervisorType"`
+	// sha256sum of the hypervisor iso.
+	Sha256sum *string `pulumi:"sha256sum"`
+	// URL to download hypervisor iso. Required only if imaging is needed.
+	Url *string `pulumi:"url"`
+}
+
+// FoundationCentralImageClusterHypervisorIsosInput is an input type that accepts FoundationCentralImageClusterHypervisorIsosArgs and FoundationCentralImageClusterHypervisorIsosOutput values.
+// You can construct a concrete instance of `FoundationCentralImageClusterHypervisorIsosInput` via:
+//
+//	FoundationCentralImageClusterHypervisorIsosArgs{...}
+type FoundationCentralImageClusterHypervisorIsosInput interface {
+	pulumi.Input
+
+	ToFoundationCentralImageClusterHypervisorIsosOutput() FoundationCentralImageClusterHypervisorIsosOutput
+	ToFoundationCentralImageClusterHypervisorIsosOutputWithContext(context.Context) FoundationCentralImageClusterHypervisorIsosOutput
+}
+
+type FoundationCentralImageClusterHypervisorIsosArgs struct {
+	// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+	HypervProductKey pulumi.StringPtrInput `pulumi:"hypervProductKey"`
+	// SKU of hyperv to be installed if hypervisorType is hyperv.
+	HypervSku      pulumi.StringPtrInput `pulumi:"hypervSku"`
+	HypervisorType pulumi.StringPtrInput `pulumi:"hypervisorType"`
+	// sha256sum of the hypervisor iso.
+	Sha256sum pulumi.StringPtrInput `pulumi:"sha256sum"`
+	// URL to download hypervisor iso. Required only if imaging is needed.
+	Url pulumi.StringPtrInput `pulumi:"url"`
+}
+
+func (FoundationCentralImageClusterHypervisorIsosArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FoundationCentralImageClusterHypervisorIsos)(nil)).Elem()
+}
+
+func (i FoundationCentralImageClusterHypervisorIsosArgs) ToFoundationCentralImageClusterHypervisorIsosOutput() FoundationCentralImageClusterHypervisorIsosOutput {
+	return i.ToFoundationCentralImageClusterHypervisorIsosOutputWithContext(context.Background())
+}
+
+func (i FoundationCentralImageClusterHypervisorIsosArgs) ToFoundationCentralImageClusterHypervisorIsosOutputWithContext(ctx context.Context) FoundationCentralImageClusterHypervisorIsosOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FoundationCentralImageClusterHypervisorIsosOutput)
+}
+
+func (i FoundationCentralImageClusterHypervisorIsosArgs) ToFoundationCentralImageClusterHypervisorIsosPtrOutput() FoundationCentralImageClusterHypervisorIsosPtrOutput {
+	return i.ToFoundationCentralImageClusterHypervisorIsosPtrOutputWithContext(context.Background())
+}
+
+func (i FoundationCentralImageClusterHypervisorIsosArgs) ToFoundationCentralImageClusterHypervisorIsosPtrOutputWithContext(ctx context.Context) FoundationCentralImageClusterHypervisorIsosPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FoundationCentralImageClusterHypervisorIsosOutput).ToFoundationCentralImageClusterHypervisorIsosPtrOutputWithContext(ctx)
+}
+
+// FoundationCentralImageClusterHypervisorIsosPtrInput is an input type that accepts FoundationCentralImageClusterHypervisorIsosArgs, FoundationCentralImageClusterHypervisorIsosPtr and FoundationCentralImageClusterHypervisorIsosPtrOutput values.
+// You can construct a concrete instance of `FoundationCentralImageClusterHypervisorIsosPtrInput` via:
+//
+//	        FoundationCentralImageClusterHypervisorIsosArgs{...}
+//
+//	or:
+//
+//	        nil
+type FoundationCentralImageClusterHypervisorIsosPtrInput interface {
+	pulumi.Input
+
+	ToFoundationCentralImageClusterHypervisorIsosPtrOutput() FoundationCentralImageClusterHypervisorIsosPtrOutput
+	ToFoundationCentralImageClusterHypervisorIsosPtrOutputWithContext(context.Context) FoundationCentralImageClusterHypervisorIsosPtrOutput
+}
+
+type foundationCentralImageClusterHypervisorIsosPtrType FoundationCentralImageClusterHypervisorIsosArgs
+
+func FoundationCentralImageClusterHypervisorIsosPtr(v *FoundationCentralImageClusterHypervisorIsosArgs) FoundationCentralImageClusterHypervisorIsosPtrInput {
+	return (*foundationCentralImageClusterHypervisorIsosPtrType)(v)
+}
+
+func (*foundationCentralImageClusterHypervisorIsosPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FoundationCentralImageClusterHypervisorIsos)(nil)).Elem()
+}
+
+func (i *foundationCentralImageClusterHypervisorIsosPtrType) ToFoundationCentralImageClusterHypervisorIsosPtrOutput() FoundationCentralImageClusterHypervisorIsosPtrOutput {
+	return i.ToFoundationCentralImageClusterHypervisorIsosPtrOutputWithContext(context.Background())
+}
+
+func (i *foundationCentralImageClusterHypervisorIsosPtrType) ToFoundationCentralImageClusterHypervisorIsosPtrOutputWithContext(ctx context.Context) FoundationCentralImageClusterHypervisorIsosPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FoundationCentralImageClusterHypervisorIsosPtrOutput)
+}
+
+type FoundationCentralImageClusterHypervisorIsosOutput struct{ *pulumi.OutputState }
+
+func (FoundationCentralImageClusterHypervisorIsosOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FoundationCentralImageClusterHypervisorIsos)(nil)).Elem()
+}
+
+func (o FoundationCentralImageClusterHypervisorIsosOutput) ToFoundationCentralImageClusterHypervisorIsosOutput() FoundationCentralImageClusterHypervisorIsosOutput {
+	return o
+}
+
+func (o FoundationCentralImageClusterHypervisorIsosOutput) ToFoundationCentralImageClusterHypervisorIsosOutputWithContext(ctx context.Context) FoundationCentralImageClusterHypervisorIsosOutput {
+	return o
+}
+
+func (o FoundationCentralImageClusterHypervisorIsosOutput) ToFoundationCentralImageClusterHypervisorIsosPtrOutput() FoundationCentralImageClusterHypervisorIsosPtrOutput {
+	return o.ToFoundationCentralImageClusterHypervisorIsosPtrOutputWithContext(context.Background())
+}
+
+func (o FoundationCentralImageClusterHypervisorIsosOutput) ToFoundationCentralImageClusterHypervisorIsosPtrOutputWithContext(ctx context.Context) FoundationCentralImageClusterHypervisorIsosPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FoundationCentralImageClusterHypervisorIsos) *FoundationCentralImageClusterHypervisorIsos {
+		return &v
+	}).(FoundationCentralImageClusterHypervisorIsosPtrOutput)
+}
+
+// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+func (o FoundationCentralImageClusterHypervisorIsosOutput) HypervProductKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FoundationCentralImageClusterHypervisorIsos) *string { return v.HypervProductKey }).(pulumi.StringPtrOutput)
+}
+
+// SKU of hyperv to be installed if hypervisorType is hyperv.
+func (o FoundationCentralImageClusterHypervisorIsosOutput) HypervSku() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FoundationCentralImageClusterHypervisorIsos) *string { return v.HypervSku }).(pulumi.StringPtrOutput)
+}
+
+func (o FoundationCentralImageClusterHypervisorIsosOutput) HypervisorType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FoundationCentralImageClusterHypervisorIsos) *string { return v.HypervisorType }).(pulumi.StringPtrOutput)
+}
+
+// sha256sum of the hypervisor iso.
+func (o FoundationCentralImageClusterHypervisorIsosOutput) Sha256sum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FoundationCentralImageClusterHypervisorIsos) *string { return v.Sha256sum }).(pulumi.StringPtrOutput)
+}
+
+// URL to download hypervisor iso. Required only if imaging is needed.
+func (o FoundationCentralImageClusterHypervisorIsosOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FoundationCentralImageClusterHypervisorIsos) *string { return v.Url }).(pulumi.StringPtrOutput)
+}
+
+type FoundationCentralImageClusterHypervisorIsosPtrOutput struct{ *pulumi.OutputState }
+
+func (FoundationCentralImageClusterHypervisorIsosPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FoundationCentralImageClusterHypervisorIsos)(nil)).Elem()
+}
+
+func (o FoundationCentralImageClusterHypervisorIsosPtrOutput) ToFoundationCentralImageClusterHypervisorIsosPtrOutput() FoundationCentralImageClusterHypervisorIsosPtrOutput {
+	return o
+}
+
+func (o FoundationCentralImageClusterHypervisorIsosPtrOutput) ToFoundationCentralImageClusterHypervisorIsosPtrOutputWithContext(ctx context.Context) FoundationCentralImageClusterHypervisorIsosPtrOutput {
+	return o
+}
+
+func (o FoundationCentralImageClusterHypervisorIsosPtrOutput) Elem() FoundationCentralImageClusterHypervisorIsosOutput {
+	return o.ApplyT(func(v *FoundationCentralImageClusterHypervisorIsos) FoundationCentralImageClusterHypervisorIsos {
+		if v != nil {
+			return *v
+		}
+		var ret FoundationCentralImageClusterHypervisorIsos
+		return ret
+	}).(FoundationCentralImageClusterHypervisorIsosOutput)
+}
+
+// Product key for hyperv isos. Required only if the hypervisor type is hyperv and product key is mandatory (ex: for volume license).
+func (o FoundationCentralImageClusterHypervisorIsosPtrOutput) HypervProductKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FoundationCentralImageClusterHypervisorIsos) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HypervProductKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// SKU of hyperv to be installed if hypervisorType is hyperv.
+func (o FoundationCentralImageClusterHypervisorIsosPtrOutput) HypervSku() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FoundationCentralImageClusterHypervisorIsos) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HypervSku
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o FoundationCentralImageClusterHypervisorIsosPtrOutput) HypervisorType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FoundationCentralImageClusterHypervisorIsos) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HypervisorType
+	}).(pulumi.StringPtrOutput)
+}
+
+// sha256sum of the hypervisor iso.
+func (o FoundationCentralImageClusterHypervisorIsosPtrOutput) Sha256sum() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FoundationCentralImageClusterHypervisorIsos) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Sha256sum
+	}).(pulumi.StringPtrOutput)
+}
+
+// URL to download hypervisor iso. Required only if imaging is needed.
+func (o FoundationCentralImageClusterHypervisorIsosPtrOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FoundationCentralImageClusterHypervisorIsos) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Url
+	}).(pulumi.StringPtrOutput)
+}
+
 type FoundationCentralImageClusterNodeList struct {
 	// Gateway of the cvm.
 	CvmGateway *string `pulumi:"cvmGateway"`
@@ -32840,8 +33182,7 @@ type FoundationCentralImageClusterNodeList struct {
 	HypervisorIp *string `pulumi:"hypervisorIp"`
 	// Netmask of the hypervisor.
 	HypervisorNetmask *string `pulumi:"hypervisorNetmask"`
-	// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-	HypervisorType *string `pulumi:"hypervisorType"`
+	HypervisorType    *string `pulumi:"hypervisorType"`
 	// True, if the node should be imaged, False, otherwise.
 	ImageNow *bool `pulumi:"imageNow"`
 	// UUID of the node.
@@ -32890,8 +33231,7 @@ type FoundationCentralImageClusterNodeListArgs struct {
 	HypervisorIp pulumi.StringPtrInput `pulumi:"hypervisorIp"`
 	// Netmask of the hypervisor.
 	HypervisorNetmask pulumi.StringPtrInput `pulumi:"hypervisorNetmask"`
-	// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-	HypervisorType pulumi.StringPtrInput `pulumi:"hypervisorType"`
+	HypervisorType    pulumi.StringPtrInput `pulumi:"hypervisorType"`
 	// True, if the node should be imaged, False, otherwise.
 	ImageNow pulumi.BoolPtrInput `pulumi:"imageNow"`
 	// UUID of the node.
@@ -33009,7 +33349,6 @@ func (o FoundationCentralImageClusterNodeListOutput) HypervisorNetmask() pulumi.
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.HypervisorNetmask }).(pulumi.StringPtrOutput)
 }
 
-// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
 func (o FoundationCentralImageClusterNodeListOutput) HypervisorType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationCentralImageClusterNodeList) *string { return v.HypervisorType }).(pulumi.StringPtrOutput)
 }
@@ -36242,7 +36581,7 @@ func (o ImageCurrentClusterReferenceListArrayOutput) Index(i pulumi.IntInput) Im
 type ImagePlacementPolicyV2ClusterEntityFilter struct {
 	// Array of strings
 	//
-	// See detailed information in [Nutanix Image Placement Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0)
+	// See detailed information in [Nutanix Create Image Placement Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/ImagePlacementPolicies/operation/createPlacementPolicy)
 	CategoryExtIds []string `pulumi:"categoryExtIds"`
 	// Filter matching type. Valid values "CATEGORIES_MATCH_ALL", "CATEGORIES_MATCH_ANY"
 	Type string `pulumi:"type"`
@@ -36262,7 +36601,7 @@ type ImagePlacementPolicyV2ClusterEntityFilterInput interface {
 type ImagePlacementPolicyV2ClusterEntityFilterArgs struct {
 	// Array of strings
 	//
-	// See detailed information in [Nutanix Image Placement Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0)
+	// See detailed information in [Nutanix Create Image Placement Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/ImagePlacementPolicies/operation/createPlacementPolicy)
 	CategoryExtIds pulumi.StringArrayInput `pulumi:"categoryExtIds"`
 	// Filter matching type. Valid values "CATEGORIES_MATCH_ALL", "CATEGORIES_MATCH_ANY"
 	Type pulumi.StringInput `pulumi:"type"`
@@ -36321,7 +36660,7 @@ func (o ImagePlacementPolicyV2ClusterEntityFilterOutput) ToImagePlacementPolicyV
 
 // Array of strings
 //
-// See detailed information in [Nutanix Image Placement Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0)
+// See detailed information in [Nutanix Create Image Placement Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/ImagePlacementPolicies/operation/createPlacementPolicy)
 func (o ImagePlacementPolicyV2ClusterEntityFilterOutput) CategoryExtIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ImagePlacementPolicyV2ClusterEntityFilter) []string { return v.CategoryExtIds }).(pulumi.StringArrayOutput)
 }
@@ -40665,6 +41004,642 @@ func (o KarbonWorkerNodepoolNodeArrayOutput) Index(i pulumi.IntInput) KarbonWork
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) KarbonWorkerNodepoolNode {
 		return vs[0].([]KarbonWorkerNodepoolNode)[vs[1].(int)]
 	}).(KarbonWorkerNodepoolNodeOutput)
+}
+
+type LcmPrechecksV2EntityUpdateSpec struct {
+	// UUID of the LCM entity.
+	EntityUuid string `pulumi:"entityUuid"`
+	// Version to upgrade to.
+	//
+	// See detailed information in [Nutanix LCM Prechecks v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Prechecks/operation/performPrechecks)
+	ToVersion string `pulumi:"toVersion"`
+}
+
+// LcmPrechecksV2EntityUpdateSpecInput is an input type that accepts LcmPrechecksV2EntityUpdateSpecArgs and LcmPrechecksV2EntityUpdateSpecOutput values.
+// You can construct a concrete instance of `LcmPrechecksV2EntityUpdateSpecInput` via:
+//
+//	LcmPrechecksV2EntityUpdateSpecArgs{...}
+type LcmPrechecksV2EntityUpdateSpecInput interface {
+	pulumi.Input
+
+	ToLcmPrechecksV2EntityUpdateSpecOutput() LcmPrechecksV2EntityUpdateSpecOutput
+	ToLcmPrechecksV2EntityUpdateSpecOutputWithContext(context.Context) LcmPrechecksV2EntityUpdateSpecOutput
+}
+
+type LcmPrechecksV2EntityUpdateSpecArgs struct {
+	// UUID of the LCM entity.
+	EntityUuid pulumi.StringInput `pulumi:"entityUuid"`
+	// Version to upgrade to.
+	//
+	// See detailed information in [Nutanix LCM Prechecks v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Prechecks/operation/performPrechecks)
+	ToVersion pulumi.StringInput `pulumi:"toVersion"`
+}
+
+func (LcmPrechecksV2EntityUpdateSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LcmPrechecksV2EntityUpdateSpec)(nil)).Elem()
+}
+
+func (i LcmPrechecksV2EntityUpdateSpecArgs) ToLcmPrechecksV2EntityUpdateSpecOutput() LcmPrechecksV2EntityUpdateSpecOutput {
+	return i.ToLcmPrechecksV2EntityUpdateSpecOutputWithContext(context.Background())
+}
+
+func (i LcmPrechecksV2EntityUpdateSpecArgs) ToLcmPrechecksV2EntityUpdateSpecOutputWithContext(ctx context.Context) LcmPrechecksV2EntityUpdateSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LcmPrechecksV2EntityUpdateSpecOutput)
+}
+
+// LcmPrechecksV2EntityUpdateSpecArrayInput is an input type that accepts LcmPrechecksV2EntityUpdateSpecArray and LcmPrechecksV2EntityUpdateSpecArrayOutput values.
+// You can construct a concrete instance of `LcmPrechecksV2EntityUpdateSpecArrayInput` via:
+//
+//	LcmPrechecksV2EntityUpdateSpecArray{ LcmPrechecksV2EntityUpdateSpecArgs{...} }
+type LcmPrechecksV2EntityUpdateSpecArrayInput interface {
+	pulumi.Input
+
+	ToLcmPrechecksV2EntityUpdateSpecArrayOutput() LcmPrechecksV2EntityUpdateSpecArrayOutput
+	ToLcmPrechecksV2EntityUpdateSpecArrayOutputWithContext(context.Context) LcmPrechecksV2EntityUpdateSpecArrayOutput
+}
+
+type LcmPrechecksV2EntityUpdateSpecArray []LcmPrechecksV2EntityUpdateSpecInput
+
+func (LcmPrechecksV2EntityUpdateSpecArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LcmPrechecksV2EntityUpdateSpec)(nil)).Elem()
+}
+
+func (i LcmPrechecksV2EntityUpdateSpecArray) ToLcmPrechecksV2EntityUpdateSpecArrayOutput() LcmPrechecksV2EntityUpdateSpecArrayOutput {
+	return i.ToLcmPrechecksV2EntityUpdateSpecArrayOutputWithContext(context.Background())
+}
+
+func (i LcmPrechecksV2EntityUpdateSpecArray) ToLcmPrechecksV2EntityUpdateSpecArrayOutputWithContext(ctx context.Context) LcmPrechecksV2EntityUpdateSpecArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LcmPrechecksV2EntityUpdateSpecArrayOutput)
+}
+
+type LcmPrechecksV2EntityUpdateSpecOutput struct{ *pulumi.OutputState }
+
+func (LcmPrechecksV2EntityUpdateSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LcmPrechecksV2EntityUpdateSpec)(nil)).Elem()
+}
+
+func (o LcmPrechecksV2EntityUpdateSpecOutput) ToLcmPrechecksV2EntityUpdateSpecOutput() LcmPrechecksV2EntityUpdateSpecOutput {
+	return o
+}
+
+func (o LcmPrechecksV2EntityUpdateSpecOutput) ToLcmPrechecksV2EntityUpdateSpecOutputWithContext(ctx context.Context) LcmPrechecksV2EntityUpdateSpecOutput {
+	return o
+}
+
+// UUID of the LCM entity.
+func (o LcmPrechecksV2EntityUpdateSpecOutput) EntityUuid() pulumi.StringOutput {
+	return o.ApplyT(func(v LcmPrechecksV2EntityUpdateSpec) string { return v.EntityUuid }).(pulumi.StringOutput)
+}
+
+// Version to upgrade to.
+//
+// See detailed information in [Nutanix LCM Prechecks v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Prechecks/operation/performPrechecks)
+func (o LcmPrechecksV2EntityUpdateSpecOutput) ToVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LcmPrechecksV2EntityUpdateSpec) string { return v.ToVersion }).(pulumi.StringOutput)
+}
+
+type LcmPrechecksV2EntityUpdateSpecArrayOutput struct{ *pulumi.OutputState }
+
+func (LcmPrechecksV2EntityUpdateSpecArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LcmPrechecksV2EntityUpdateSpec)(nil)).Elem()
+}
+
+func (o LcmPrechecksV2EntityUpdateSpecArrayOutput) ToLcmPrechecksV2EntityUpdateSpecArrayOutput() LcmPrechecksV2EntityUpdateSpecArrayOutput {
+	return o
+}
+
+func (o LcmPrechecksV2EntityUpdateSpecArrayOutput) ToLcmPrechecksV2EntityUpdateSpecArrayOutputWithContext(ctx context.Context) LcmPrechecksV2EntityUpdateSpecArrayOutput {
+	return o
+}
+
+func (o LcmPrechecksV2EntityUpdateSpecArrayOutput) Index(i pulumi.IntInput) LcmPrechecksV2EntityUpdateSpecOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LcmPrechecksV2EntityUpdateSpec {
+		return vs[0].([]LcmPrechecksV2EntityUpdateSpec)[vs[1].(int)]
+	}).(LcmPrechecksV2EntityUpdateSpecOutput)
+}
+
+type LcmPrechecksV2ManagementServer struct {
+	// Type of Hypervisor present in the cluster. Enum Values:
+	// * "HYPERV" : Hyper-V Hypervisor.
+	// * "ESX" : ESX Hypervisor.
+	// * "AHV" : Nutanix AHV Hypervisor.
+	HypervisorType string `pulumi:"hypervisorType"`
+	// IP address of the management server.
+	Ip string `pulumi:"ip"`
+	// Password to login to the management server.
+	Password string `pulumi:"password"`
+	// Username to login to the management server.
+	Username string `pulumi:"username"`
+}
+
+// LcmPrechecksV2ManagementServerInput is an input type that accepts LcmPrechecksV2ManagementServerArgs and LcmPrechecksV2ManagementServerOutput values.
+// You can construct a concrete instance of `LcmPrechecksV2ManagementServerInput` via:
+//
+//	LcmPrechecksV2ManagementServerArgs{...}
+type LcmPrechecksV2ManagementServerInput interface {
+	pulumi.Input
+
+	ToLcmPrechecksV2ManagementServerOutput() LcmPrechecksV2ManagementServerOutput
+	ToLcmPrechecksV2ManagementServerOutputWithContext(context.Context) LcmPrechecksV2ManagementServerOutput
+}
+
+type LcmPrechecksV2ManagementServerArgs struct {
+	// Type of Hypervisor present in the cluster. Enum Values:
+	// * "HYPERV" : Hyper-V Hypervisor.
+	// * "ESX" : ESX Hypervisor.
+	// * "AHV" : Nutanix AHV Hypervisor.
+	HypervisorType pulumi.StringInput `pulumi:"hypervisorType"`
+	// IP address of the management server.
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// Password to login to the management server.
+	Password pulumi.StringInput `pulumi:"password"`
+	// Username to login to the management server.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (LcmPrechecksV2ManagementServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LcmPrechecksV2ManagementServer)(nil)).Elem()
+}
+
+func (i LcmPrechecksV2ManagementServerArgs) ToLcmPrechecksV2ManagementServerOutput() LcmPrechecksV2ManagementServerOutput {
+	return i.ToLcmPrechecksV2ManagementServerOutputWithContext(context.Background())
+}
+
+func (i LcmPrechecksV2ManagementServerArgs) ToLcmPrechecksV2ManagementServerOutputWithContext(ctx context.Context) LcmPrechecksV2ManagementServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LcmPrechecksV2ManagementServerOutput)
+}
+
+func (i LcmPrechecksV2ManagementServerArgs) ToLcmPrechecksV2ManagementServerPtrOutput() LcmPrechecksV2ManagementServerPtrOutput {
+	return i.ToLcmPrechecksV2ManagementServerPtrOutputWithContext(context.Background())
+}
+
+func (i LcmPrechecksV2ManagementServerArgs) ToLcmPrechecksV2ManagementServerPtrOutputWithContext(ctx context.Context) LcmPrechecksV2ManagementServerPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LcmPrechecksV2ManagementServerOutput).ToLcmPrechecksV2ManagementServerPtrOutputWithContext(ctx)
+}
+
+// LcmPrechecksV2ManagementServerPtrInput is an input type that accepts LcmPrechecksV2ManagementServerArgs, LcmPrechecksV2ManagementServerPtr and LcmPrechecksV2ManagementServerPtrOutput values.
+// You can construct a concrete instance of `LcmPrechecksV2ManagementServerPtrInput` via:
+//
+//	        LcmPrechecksV2ManagementServerArgs{...}
+//
+//	or:
+//
+//	        nil
+type LcmPrechecksV2ManagementServerPtrInput interface {
+	pulumi.Input
+
+	ToLcmPrechecksV2ManagementServerPtrOutput() LcmPrechecksV2ManagementServerPtrOutput
+	ToLcmPrechecksV2ManagementServerPtrOutputWithContext(context.Context) LcmPrechecksV2ManagementServerPtrOutput
+}
+
+type lcmPrechecksV2ManagementServerPtrType LcmPrechecksV2ManagementServerArgs
+
+func LcmPrechecksV2ManagementServerPtr(v *LcmPrechecksV2ManagementServerArgs) LcmPrechecksV2ManagementServerPtrInput {
+	return (*lcmPrechecksV2ManagementServerPtrType)(v)
+}
+
+func (*lcmPrechecksV2ManagementServerPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**LcmPrechecksV2ManagementServer)(nil)).Elem()
+}
+
+func (i *lcmPrechecksV2ManagementServerPtrType) ToLcmPrechecksV2ManagementServerPtrOutput() LcmPrechecksV2ManagementServerPtrOutput {
+	return i.ToLcmPrechecksV2ManagementServerPtrOutputWithContext(context.Background())
+}
+
+func (i *lcmPrechecksV2ManagementServerPtrType) ToLcmPrechecksV2ManagementServerPtrOutputWithContext(ctx context.Context) LcmPrechecksV2ManagementServerPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LcmPrechecksV2ManagementServerPtrOutput)
+}
+
+type LcmPrechecksV2ManagementServerOutput struct{ *pulumi.OutputState }
+
+func (LcmPrechecksV2ManagementServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LcmPrechecksV2ManagementServer)(nil)).Elem()
+}
+
+func (o LcmPrechecksV2ManagementServerOutput) ToLcmPrechecksV2ManagementServerOutput() LcmPrechecksV2ManagementServerOutput {
+	return o
+}
+
+func (o LcmPrechecksV2ManagementServerOutput) ToLcmPrechecksV2ManagementServerOutputWithContext(ctx context.Context) LcmPrechecksV2ManagementServerOutput {
+	return o
+}
+
+func (o LcmPrechecksV2ManagementServerOutput) ToLcmPrechecksV2ManagementServerPtrOutput() LcmPrechecksV2ManagementServerPtrOutput {
+	return o.ToLcmPrechecksV2ManagementServerPtrOutputWithContext(context.Background())
+}
+
+func (o LcmPrechecksV2ManagementServerOutput) ToLcmPrechecksV2ManagementServerPtrOutputWithContext(ctx context.Context) LcmPrechecksV2ManagementServerPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v LcmPrechecksV2ManagementServer) *LcmPrechecksV2ManagementServer {
+		return &v
+	}).(LcmPrechecksV2ManagementServerPtrOutput)
+}
+
+// Type of Hypervisor present in the cluster. Enum Values:
+// * "HYPERV" : Hyper-V Hypervisor.
+// * "ESX" : ESX Hypervisor.
+// * "AHV" : Nutanix AHV Hypervisor.
+func (o LcmPrechecksV2ManagementServerOutput) HypervisorType() pulumi.StringOutput {
+	return o.ApplyT(func(v LcmPrechecksV2ManagementServer) string { return v.HypervisorType }).(pulumi.StringOutput)
+}
+
+// IP address of the management server.
+func (o LcmPrechecksV2ManagementServerOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v LcmPrechecksV2ManagementServer) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+// Password to login to the management server.
+func (o LcmPrechecksV2ManagementServerOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v LcmPrechecksV2ManagementServer) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// Username to login to the management server.
+func (o LcmPrechecksV2ManagementServerOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v LcmPrechecksV2ManagementServer) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type LcmPrechecksV2ManagementServerPtrOutput struct{ *pulumi.OutputState }
+
+func (LcmPrechecksV2ManagementServerPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**LcmPrechecksV2ManagementServer)(nil)).Elem()
+}
+
+func (o LcmPrechecksV2ManagementServerPtrOutput) ToLcmPrechecksV2ManagementServerPtrOutput() LcmPrechecksV2ManagementServerPtrOutput {
+	return o
+}
+
+func (o LcmPrechecksV2ManagementServerPtrOutput) ToLcmPrechecksV2ManagementServerPtrOutputWithContext(ctx context.Context) LcmPrechecksV2ManagementServerPtrOutput {
+	return o
+}
+
+func (o LcmPrechecksV2ManagementServerPtrOutput) Elem() LcmPrechecksV2ManagementServerOutput {
+	return o.ApplyT(func(v *LcmPrechecksV2ManagementServer) LcmPrechecksV2ManagementServer {
+		if v != nil {
+			return *v
+		}
+		var ret LcmPrechecksV2ManagementServer
+		return ret
+	}).(LcmPrechecksV2ManagementServerOutput)
+}
+
+// Type of Hypervisor present in the cluster. Enum Values:
+// * "HYPERV" : Hyper-V Hypervisor.
+// * "ESX" : ESX Hypervisor.
+// * "AHV" : Nutanix AHV Hypervisor.
+func (o LcmPrechecksV2ManagementServerPtrOutput) HypervisorType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LcmPrechecksV2ManagementServer) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.HypervisorType
+	}).(pulumi.StringPtrOutput)
+}
+
+// IP address of the management server.
+func (o LcmPrechecksV2ManagementServerPtrOutput) Ip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LcmPrechecksV2ManagementServer) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Ip
+	}).(pulumi.StringPtrOutput)
+}
+
+// Password to login to the management server.
+func (o LcmPrechecksV2ManagementServerPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LcmPrechecksV2ManagementServer) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// Username to login to the management server.
+func (o LcmPrechecksV2ManagementServerPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LcmPrechecksV2ManagementServer) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+type LcmUpgradeV2EntityUpdateSpec struct {
+	// UUID of the LCM entity.
+	EntityUuid string `pulumi:"entityUuid"`
+	// Version to upgrade to.
+	//
+	// See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Upgrades/operation/performUpgrade).
+	ToVersion string `pulumi:"toVersion"`
+}
+
+// LcmUpgradeV2EntityUpdateSpecInput is an input type that accepts LcmUpgradeV2EntityUpdateSpecArgs and LcmUpgradeV2EntityUpdateSpecOutput values.
+// You can construct a concrete instance of `LcmUpgradeV2EntityUpdateSpecInput` via:
+//
+//	LcmUpgradeV2EntityUpdateSpecArgs{...}
+type LcmUpgradeV2EntityUpdateSpecInput interface {
+	pulumi.Input
+
+	ToLcmUpgradeV2EntityUpdateSpecOutput() LcmUpgradeV2EntityUpdateSpecOutput
+	ToLcmUpgradeV2EntityUpdateSpecOutputWithContext(context.Context) LcmUpgradeV2EntityUpdateSpecOutput
+}
+
+type LcmUpgradeV2EntityUpdateSpecArgs struct {
+	// UUID of the LCM entity.
+	EntityUuid pulumi.StringInput `pulumi:"entityUuid"`
+	// Version to upgrade to.
+	//
+	// See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Upgrades/operation/performUpgrade).
+	ToVersion pulumi.StringInput `pulumi:"toVersion"`
+}
+
+func (LcmUpgradeV2EntityUpdateSpecArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LcmUpgradeV2EntityUpdateSpec)(nil)).Elem()
+}
+
+func (i LcmUpgradeV2EntityUpdateSpecArgs) ToLcmUpgradeV2EntityUpdateSpecOutput() LcmUpgradeV2EntityUpdateSpecOutput {
+	return i.ToLcmUpgradeV2EntityUpdateSpecOutputWithContext(context.Background())
+}
+
+func (i LcmUpgradeV2EntityUpdateSpecArgs) ToLcmUpgradeV2EntityUpdateSpecOutputWithContext(ctx context.Context) LcmUpgradeV2EntityUpdateSpecOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LcmUpgradeV2EntityUpdateSpecOutput)
+}
+
+// LcmUpgradeV2EntityUpdateSpecArrayInput is an input type that accepts LcmUpgradeV2EntityUpdateSpecArray and LcmUpgradeV2EntityUpdateSpecArrayOutput values.
+// You can construct a concrete instance of `LcmUpgradeV2EntityUpdateSpecArrayInput` via:
+//
+//	LcmUpgradeV2EntityUpdateSpecArray{ LcmUpgradeV2EntityUpdateSpecArgs{...} }
+type LcmUpgradeV2EntityUpdateSpecArrayInput interface {
+	pulumi.Input
+
+	ToLcmUpgradeV2EntityUpdateSpecArrayOutput() LcmUpgradeV2EntityUpdateSpecArrayOutput
+	ToLcmUpgradeV2EntityUpdateSpecArrayOutputWithContext(context.Context) LcmUpgradeV2EntityUpdateSpecArrayOutput
+}
+
+type LcmUpgradeV2EntityUpdateSpecArray []LcmUpgradeV2EntityUpdateSpecInput
+
+func (LcmUpgradeV2EntityUpdateSpecArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LcmUpgradeV2EntityUpdateSpec)(nil)).Elem()
+}
+
+func (i LcmUpgradeV2EntityUpdateSpecArray) ToLcmUpgradeV2EntityUpdateSpecArrayOutput() LcmUpgradeV2EntityUpdateSpecArrayOutput {
+	return i.ToLcmUpgradeV2EntityUpdateSpecArrayOutputWithContext(context.Background())
+}
+
+func (i LcmUpgradeV2EntityUpdateSpecArray) ToLcmUpgradeV2EntityUpdateSpecArrayOutputWithContext(ctx context.Context) LcmUpgradeV2EntityUpdateSpecArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LcmUpgradeV2EntityUpdateSpecArrayOutput)
+}
+
+type LcmUpgradeV2EntityUpdateSpecOutput struct{ *pulumi.OutputState }
+
+func (LcmUpgradeV2EntityUpdateSpecOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LcmUpgradeV2EntityUpdateSpec)(nil)).Elem()
+}
+
+func (o LcmUpgradeV2EntityUpdateSpecOutput) ToLcmUpgradeV2EntityUpdateSpecOutput() LcmUpgradeV2EntityUpdateSpecOutput {
+	return o
+}
+
+func (o LcmUpgradeV2EntityUpdateSpecOutput) ToLcmUpgradeV2EntityUpdateSpecOutputWithContext(ctx context.Context) LcmUpgradeV2EntityUpdateSpecOutput {
+	return o
+}
+
+// UUID of the LCM entity.
+func (o LcmUpgradeV2EntityUpdateSpecOutput) EntityUuid() pulumi.StringOutput {
+	return o.ApplyT(func(v LcmUpgradeV2EntityUpdateSpec) string { return v.EntityUuid }).(pulumi.StringOutput)
+}
+
+// Version to upgrade to.
+//
+// See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Upgrades/operation/performUpgrade).
+func (o LcmUpgradeV2EntityUpdateSpecOutput) ToVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LcmUpgradeV2EntityUpdateSpec) string { return v.ToVersion }).(pulumi.StringOutput)
+}
+
+type LcmUpgradeV2EntityUpdateSpecArrayOutput struct{ *pulumi.OutputState }
+
+func (LcmUpgradeV2EntityUpdateSpecArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LcmUpgradeV2EntityUpdateSpec)(nil)).Elem()
+}
+
+func (o LcmUpgradeV2EntityUpdateSpecArrayOutput) ToLcmUpgradeV2EntityUpdateSpecArrayOutput() LcmUpgradeV2EntityUpdateSpecArrayOutput {
+	return o
+}
+
+func (o LcmUpgradeV2EntityUpdateSpecArrayOutput) ToLcmUpgradeV2EntityUpdateSpecArrayOutputWithContext(ctx context.Context) LcmUpgradeV2EntityUpdateSpecArrayOutput {
+	return o
+}
+
+func (o LcmUpgradeV2EntityUpdateSpecArrayOutput) Index(i pulumi.IntInput) LcmUpgradeV2EntityUpdateSpecOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LcmUpgradeV2EntityUpdateSpec {
+		return vs[0].([]LcmUpgradeV2EntityUpdateSpec)[vs[1].(int)]
+	}).(LcmUpgradeV2EntityUpdateSpecOutput)
+}
+
+type LcmUpgradeV2ManagementServer struct {
+	// Type of Hypervisor present in the cluster. Enum Values:
+	// * "HYPERV" : Hyper-V Hypervisor.
+	// * "ESX" : ESX Hypervisor.
+	// * "AHV" : Nutanix AHV Hypervisor.
+	HypervisorType string `pulumi:"hypervisorType"`
+	// IP address of the management server.
+	Ip string `pulumi:"ip"`
+	// Password to login to the management server.
+	Password string `pulumi:"password"`
+	// Username to login to the management server.
+	Username string `pulumi:"username"`
+}
+
+// LcmUpgradeV2ManagementServerInput is an input type that accepts LcmUpgradeV2ManagementServerArgs and LcmUpgradeV2ManagementServerOutput values.
+// You can construct a concrete instance of `LcmUpgradeV2ManagementServerInput` via:
+//
+//	LcmUpgradeV2ManagementServerArgs{...}
+type LcmUpgradeV2ManagementServerInput interface {
+	pulumi.Input
+
+	ToLcmUpgradeV2ManagementServerOutput() LcmUpgradeV2ManagementServerOutput
+	ToLcmUpgradeV2ManagementServerOutputWithContext(context.Context) LcmUpgradeV2ManagementServerOutput
+}
+
+type LcmUpgradeV2ManagementServerArgs struct {
+	// Type of Hypervisor present in the cluster. Enum Values:
+	// * "HYPERV" : Hyper-V Hypervisor.
+	// * "ESX" : ESX Hypervisor.
+	// * "AHV" : Nutanix AHV Hypervisor.
+	HypervisorType pulumi.StringInput `pulumi:"hypervisorType"`
+	// IP address of the management server.
+	Ip pulumi.StringInput `pulumi:"ip"`
+	// Password to login to the management server.
+	Password pulumi.StringInput `pulumi:"password"`
+	// Username to login to the management server.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (LcmUpgradeV2ManagementServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LcmUpgradeV2ManagementServer)(nil)).Elem()
+}
+
+func (i LcmUpgradeV2ManagementServerArgs) ToLcmUpgradeV2ManagementServerOutput() LcmUpgradeV2ManagementServerOutput {
+	return i.ToLcmUpgradeV2ManagementServerOutputWithContext(context.Background())
+}
+
+func (i LcmUpgradeV2ManagementServerArgs) ToLcmUpgradeV2ManagementServerOutputWithContext(ctx context.Context) LcmUpgradeV2ManagementServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LcmUpgradeV2ManagementServerOutput)
+}
+
+func (i LcmUpgradeV2ManagementServerArgs) ToLcmUpgradeV2ManagementServerPtrOutput() LcmUpgradeV2ManagementServerPtrOutput {
+	return i.ToLcmUpgradeV2ManagementServerPtrOutputWithContext(context.Background())
+}
+
+func (i LcmUpgradeV2ManagementServerArgs) ToLcmUpgradeV2ManagementServerPtrOutputWithContext(ctx context.Context) LcmUpgradeV2ManagementServerPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LcmUpgradeV2ManagementServerOutput).ToLcmUpgradeV2ManagementServerPtrOutputWithContext(ctx)
+}
+
+// LcmUpgradeV2ManagementServerPtrInput is an input type that accepts LcmUpgradeV2ManagementServerArgs, LcmUpgradeV2ManagementServerPtr and LcmUpgradeV2ManagementServerPtrOutput values.
+// You can construct a concrete instance of `LcmUpgradeV2ManagementServerPtrInput` via:
+//
+//	        LcmUpgradeV2ManagementServerArgs{...}
+//
+//	or:
+//
+//	        nil
+type LcmUpgradeV2ManagementServerPtrInput interface {
+	pulumi.Input
+
+	ToLcmUpgradeV2ManagementServerPtrOutput() LcmUpgradeV2ManagementServerPtrOutput
+	ToLcmUpgradeV2ManagementServerPtrOutputWithContext(context.Context) LcmUpgradeV2ManagementServerPtrOutput
+}
+
+type lcmUpgradeV2ManagementServerPtrType LcmUpgradeV2ManagementServerArgs
+
+func LcmUpgradeV2ManagementServerPtr(v *LcmUpgradeV2ManagementServerArgs) LcmUpgradeV2ManagementServerPtrInput {
+	return (*lcmUpgradeV2ManagementServerPtrType)(v)
+}
+
+func (*lcmUpgradeV2ManagementServerPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**LcmUpgradeV2ManagementServer)(nil)).Elem()
+}
+
+func (i *lcmUpgradeV2ManagementServerPtrType) ToLcmUpgradeV2ManagementServerPtrOutput() LcmUpgradeV2ManagementServerPtrOutput {
+	return i.ToLcmUpgradeV2ManagementServerPtrOutputWithContext(context.Background())
+}
+
+func (i *lcmUpgradeV2ManagementServerPtrType) ToLcmUpgradeV2ManagementServerPtrOutputWithContext(ctx context.Context) LcmUpgradeV2ManagementServerPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LcmUpgradeV2ManagementServerPtrOutput)
+}
+
+type LcmUpgradeV2ManagementServerOutput struct{ *pulumi.OutputState }
+
+func (LcmUpgradeV2ManagementServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LcmUpgradeV2ManagementServer)(nil)).Elem()
+}
+
+func (o LcmUpgradeV2ManagementServerOutput) ToLcmUpgradeV2ManagementServerOutput() LcmUpgradeV2ManagementServerOutput {
+	return o
+}
+
+func (o LcmUpgradeV2ManagementServerOutput) ToLcmUpgradeV2ManagementServerOutputWithContext(ctx context.Context) LcmUpgradeV2ManagementServerOutput {
+	return o
+}
+
+func (o LcmUpgradeV2ManagementServerOutput) ToLcmUpgradeV2ManagementServerPtrOutput() LcmUpgradeV2ManagementServerPtrOutput {
+	return o.ToLcmUpgradeV2ManagementServerPtrOutputWithContext(context.Background())
+}
+
+func (o LcmUpgradeV2ManagementServerOutput) ToLcmUpgradeV2ManagementServerPtrOutputWithContext(ctx context.Context) LcmUpgradeV2ManagementServerPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v LcmUpgradeV2ManagementServer) *LcmUpgradeV2ManagementServer {
+		return &v
+	}).(LcmUpgradeV2ManagementServerPtrOutput)
+}
+
+// Type of Hypervisor present in the cluster. Enum Values:
+// * "HYPERV" : Hyper-V Hypervisor.
+// * "ESX" : ESX Hypervisor.
+// * "AHV" : Nutanix AHV Hypervisor.
+func (o LcmUpgradeV2ManagementServerOutput) HypervisorType() pulumi.StringOutput {
+	return o.ApplyT(func(v LcmUpgradeV2ManagementServer) string { return v.HypervisorType }).(pulumi.StringOutput)
+}
+
+// IP address of the management server.
+func (o LcmUpgradeV2ManagementServerOutput) Ip() pulumi.StringOutput {
+	return o.ApplyT(func(v LcmUpgradeV2ManagementServer) string { return v.Ip }).(pulumi.StringOutput)
+}
+
+// Password to login to the management server.
+func (o LcmUpgradeV2ManagementServerOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v LcmUpgradeV2ManagementServer) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// Username to login to the management server.
+func (o LcmUpgradeV2ManagementServerOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v LcmUpgradeV2ManagementServer) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type LcmUpgradeV2ManagementServerPtrOutput struct{ *pulumi.OutputState }
+
+func (LcmUpgradeV2ManagementServerPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**LcmUpgradeV2ManagementServer)(nil)).Elem()
+}
+
+func (o LcmUpgradeV2ManagementServerPtrOutput) ToLcmUpgradeV2ManagementServerPtrOutput() LcmUpgradeV2ManagementServerPtrOutput {
+	return o
+}
+
+func (o LcmUpgradeV2ManagementServerPtrOutput) ToLcmUpgradeV2ManagementServerPtrOutputWithContext(ctx context.Context) LcmUpgradeV2ManagementServerPtrOutput {
+	return o
+}
+
+func (o LcmUpgradeV2ManagementServerPtrOutput) Elem() LcmUpgradeV2ManagementServerOutput {
+	return o.ApplyT(func(v *LcmUpgradeV2ManagementServer) LcmUpgradeV2ManagementServer {
+		if v != nil {
+			return *v
+		}
+		var ret LcmUpgradeV2ManagementServer
+		return ret
+	}).(LcmUpgradeV2ManagementServerOutput)
+}
+
+// Type of Hypervisor present in the cluster. Enum Values:
+// * "HYPERV" : Hyper-V Hypervisor.
+// * "ESX" : ESX Hypervisor.
+// * "AHV" : Nutanix AHV Hypervisor.
+func (o LcmUpgradeV2ManagementServerPtrOutput) HypervisorType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LcmUpgradeV2ManagementServer) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.HypervisorType
+	}).(pulumi.StringPtrOutput)
+}
+
+// IP address of the management server.
+func (o LcmUpgradeV2ManagementServerPtrOutput) Ip() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LcmUpgradeV2ManagementServer) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Ip
+	}).(pulumi.StringPtrOutput)
+}
+
+// Password to login to the management server.
+func (o LcmUpgradeV2ManagementServerPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LcmUpgradeV2ManagementServer) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// Username to login to the management server.
+func (o LcmUpgradeV2ManagementServerPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LcmUpgradeV2ManagementServer) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Username
+	}).(pulumi.StringPtrOutput)
 }
 
 type NdbCloneActionargument struct {
@@ -61071,779 +62046,6 @@ func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput) Index(i pu
 	}).(NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput)
 }
 
-type NdbDatabaseScaleTimeMachineSla struct {
-	ContinuousRetention    *int    `pulumi:"continuousRetention"`
-	CurrentActiveFrequency *string `pulumi:"currentActiveFrequency"`
-	DailyRetention         *int    `pulumi:"dailyRetention"`
-	// date created for db instance
-	DateCreated *string `pulumi:"dateCreated"`
-	// date modified for instance
-	DateModified *string `pulumi:"dateModified"`
-	// description of database instance
-	Description      *string `pulumi:"description"`
-	Id               *string `pulumi:"id"`
-	MonthlyRetention *int    `pulumi:"monthlyRetention"`
-	// Name of database instance
-	Name               *string `pulumi:"name"`
-	OwnerId            *string `pulumi:"ownerId"`
-	PitrEnabled        *bool   `pulumi:"pitrEnabled"`
-	QuarterlyRetention *int    `pulumi:"quarterlyRetention"`
-	ReferenceCount     *int    `pulumi:"referenceCount"`
-	SystemSla          *bool   `pulumi:"systemSla"`
-	UniqueName         *string `pulumi:"uniqueName"`
-	WeeklyRetention    *int    `pulumi:"weeklyRetention"`
-	YearlyRetention    *int    `pulumi:"yearlyRetention"`
-}
-
-// NdbDatabaseScaleTimeMachineSlaInput is an input type that accepts NdbDatabaseScaleTimeMachineSlaArgs and NdbDatabaseScaleTimeMachineSlaOutput values.
-// You can construct a concrete instance of `NdbDatabaseScaleTimeMachineSlaInput` via:
-//
-//	NdbDatabaseScaleTimeMachineSlaArgs{...}
-type NdbDatabaseScaleTimeMachineSlaInput interface {
-	pulumi.Input
-
-	ToNdbDatabaseScaleTimeMachineSlaOutput() NdbDatabaseScaleTimeMachineSlaOutput
-	ToNdbDatabaseScaleTimeMachineSlaOutputWithContext(context.Context) NdbDatabaseScaleTimeMachineSlaOutput
-}
-
-type NdbDatabaseScaleTimeMachineSlaArgs struct {
-	ContinuousRetention    pulumi.IntPtrInput    `pulumi:"continuousRetention"`
-	CurrentActiveFrequency pulumi.StringPtrInput `pulumi:"currentActiveFrequency"`
-	DailyRetention         pulumi.IntPtrInput    `pulumi:"dailyRetention"`
-	// date created for db instance
-	DateCreated pulumi.StringPtrInput `pulumi:"dateCreated"`
-	// date modified for instance
-	DateModified pulumi.StringPtrInput `pulumi:"dateModified"`
-	// description of database instance
-	Description      pulumi.StringPtrInput `pulumi:"description"`
-	Id               pulumi.StringPtrInput `pulumi:"id"`
-	MonthlyRetention pulumi.IntPtrInput    `pulumi:"monthlyRetention"`
-	// Name of database instance
-	Name               pulumi.StringPtrInput `pulumi:"name"`
-	OwnerId            pulumi.StringPtrInput `pulumi:"ownerId"`
-	PitrEnabled        pulumi.BoolPtrInput   `pulumi:"pitrEnabled"`
-	QuarterlyRetention pulumi.IntPtrInput    `pulumi:"quarterlyRetention"`
-	ReferenceCount     pulumi.IntPtrInput    `pulumi:"referenceCount"`
-	SystemSla          pulumi.BoolPtrInput   `pulumi:"systemSla"`
-	UniqueName         pulumi.StringPtrInput `pulumi:"uniqueName"`
-	WeeklyRetention    pulumi.IntPtrInput    `pulumi:"weeklyRetention"`
-	YearlyRetention    pulumi.IntPtrInput    `pulumi:"yearlyRetention"`
-}
-
-func (NdbDatabaseScaleTimeMachineSlaArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbDatabaseScaleTimeMachineSla)(nil)).Elem()
-}
-
-func (i NdbDatabaseScaleTimeMachineSlaArgs) ToNdbDatabaseScaleTimeMachineSlaOutput() NdbDatabaseScaleTimeMachineSlaOutput {
-	return i.ToNdbDatabaseScaleTimeMachineSlaOutputWithContext(context.Background())
-}
-
-func (i NdbDatabaseScaleTimeMachineSlaArgs) ToNdbDatabaseScaleTimeMachineSlaOutputWithContext(ctx context.Context) NdbDatabaseScaleTimeMachineSlaOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbDatabaseScaleTimeMachineSlaOutput)
-}
-
-// NdbDatabaseScaleTimeMachineSlaArrayInput is an input type that accepts NdbDatabaseScaleTimeMachineSlaArray and NdbDatabaseScaleTimeMachineSlaArrayOutput values.
-// You can construct a concrete instance of `NdbDatabaseScaleTimeMachineSlaArrayInput` via:
-//
-//	NdbDatabaseScaleTimeMachineSlaArray{ NdbDatabaseScaleTimeMachineSlaArgs{...} }
-type NdbDatabaseScaleTimeMachineSlaArrayInput interface {
-	pulumi.Input
-
-	ToNdbDatabaseScaleTimeMachineSlaArrayOutput() NdbDatabaseScaleTimeMachineSlaArrayOutput
-	ToNdbDatabaseScaleTimeMachineSlaArrayOutputWithContext(context.Context) NdbDatabaseScaleTimeMachineSlaArrayOutput
-}
-
-type NdbDatabaseScaleTimeMachineSlaArray []NdbDatabaseScaleTimeMachineSlaInput
-
-func (NdbDatabaseScaleTimeMachineSlaArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbDatabaseScaleTimeMachineSla)(nil)).Elem()
-}
-
-func (i NdbDatabaseScaleTimeMachineSlaArray) ToNdbDatabaseScaleTimeMachineSlaArrayOutput() NdbDatabaseScaleTimeMachineSlaArrayOutput {
-	return i.ToNdbDatabaseScaleTimeMachineSlaArrayOutputWithContext(context.Background())
-}
-
-func (i NdbDatabaseScaleTimeMachineSlaArray) ToNdbDatabaseScaleTimeMachineSlaArrayOutputWithContext(ctx context.Context) NdbDatabaseScaleTimeMachineSlaArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbDatabaseScaleTimeMachineSlaArrayOutput)
-}
-
-type NdbDatabaseScaleTimeMachineSlaOutput struct{ *pulumi.OutputState }
-
-func (NdbDatabaseScaleTimeMachineSlaOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbDatabaseScaleTimeMachineSla)(nil)).Elem()
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaOutput) ToNdbDatabaseScaleTimeMachineSlaOutput() NdbDatabaseScaleTimeMachineSlaOutput {
-	return o
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaOutput) ToNdbDatabaseScaleTimeMachineSlaOutputWithContext(ctx context.Context) NdbDatabaseScaleTimeMachineSlaOutput {
-	return o
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaOutput) ContinuousRetention() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineSla) *int { return v.ContinuousRetention }).(pulumi.IntPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaOutput) CurrentActiveFrequency() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineSla) *string { return v.CurrentActiveFrequency }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaOutput) DailyRetention() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineSla) *int { return v.DailyRetention }).(pulumi.IntPtrOutput)
-}
-
-// date created for db instance
-func (o NdbDatabaseScaleTimeMachineSlaOutput) DateCreated() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineSla) *string { return v.DateCreated }).(pulumi.StringPtrOutput)
-}
-
-// date modified for instance
-func (o NdbDatabaseScaleTimeMachineSlaOutput) DateModified() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineSla) *string { return v.DateModified }).(pulumi.StringPtrOutput)
-}
-
-// description of database instance
-func (o NdbDatabaseScaleTimeMachineSlaOutput) Description() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineSla) *string { return v.Description }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaOutput) Id() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineSla) *string { return v.Id }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaOutput) MonthlyRetention() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineSla) *int { return v.MonthlyRetention }).(pulumi.IntPtrOutput)
-}
-
-// Name of database instance
-func (o NdbDatabaseScaleTimeMachineSlaOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineSla) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaOutput) OwnerId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineSla) *string { return v.OwnerId }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaOutput) PitrEnabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineSla) *bool { return v.PitrEnabled }).(pulumi.BoolPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaOutput) QuarterlyRetention() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineSla) *int { return v.QuarterlyRetention }).(pulumi.IntPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaOutput) ReferenceCount() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineSla) *int { return v.ReferenceCount }).(pulumi.IntPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaOutput) SystemSla() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineSla) *bool { return v.SystemSla }).(pulumi.BoolPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaOutput) UniqueName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineSla) *string { return v.UniqueName }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaOutput) WeeklyRetention() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineSla) *int { return v.WeeklyRetention }).(pulumi.IntPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaOutput) YearlyRetention() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineSla) *int { return v.YearlyRetention }).(pulumi.IntPtrOutput)
-}
-
-type NdbDatabaseScaleTimeMachineSlaArrayOutput struct{ *pulumi.OutputState }
-
-func (NdbDatabaseScaleTimeMachineSlaArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbDatabaseScaleTimeMachineSla)(nil)).Elem()
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaArrayOutput) ToNdbDatabaseScaleTimeMachineSlaArrayOutput() NdbDatabaseScaleTimeMachineSlaArrayOutput {
-	return o
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaArrayOutput) ToNdbDatabaseScaleTimeMachineSlaArrayOutputWithContext(ctx context.Context) NdbDatabaseScaleTimeMachineSlaArrayOutput {
-	return o
-}
-
-func (o NdbDatabaseScaleTimeMachineSlaArrayOutput) Index(i pulumi.IntInput) NdbDatabaseScaleTimeMachineSlaOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbDatabaseScaleTimeMachineSla {
-		return vs[0].([]NdbDatabaseScaleTimeMachineSla)[vs[1].(int)]
-	}).(NdbDatabaseScaleTimeMachineSlaOutput)
-}
-
-type NdbDatabaseScaleTimeMachineTag struct {
-	EntityId   *string `pulumi:"entityId"`
-	EntityType *string `pulumi:"entityType"`
-	TagId      *string `pulumi:"tagId"`
-	TagName    *string `pulumi:"tagName"`
-	Value      *string `pulumi:"value"`
-}
-
-// NdbDatabaseScaleTimeMachineTagInput is an input type that accepts NdbDatabaseScaleTimeMachineTagArgs and NdbDatabaseScaleTimeMachineTagOutput values.
-// You can construct a concrete instance of `NdbDatabaseScaleTimeMachineTagInput` via:
-//
-//	NdbDatabaseScaleTimeMachineTagArgs{...}
-type NdbDatabaseScaleTimeMachineTagInput interface {
-	pulumi.Input
-
-	ToNdbDatabaseScaleTimeMachineTagOutput() NdbDatabaseScaleTimeMachineTagOutput
-	ToNdbDatabaseScaleTimeMachineTagOutputWithContext(context.Context) NdbDatabaseScaleTimeMachineTagOutput
-}
-
-type NdbDatabaseScaleTimeMachineTagArgs struct {
-	EntityId   pulumi.StringPtrInput `pulumi:"entityId"`
-	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
-	TagId      pulumi.StringPtrInput `pulumi:"tagId"`
-	TagName    pulumi.StringPtrInput `pulumi:"tagName"`
-	Value      pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (NdbDatabaseScaleTimeMachineTagArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbDatabaseScaleTimeMachineTag)(nil)).Elem()
-}
-
-func (i NdbDatabaseScaleTimeMachineTagArgs) ToNdbDatabaseScaleTimeMachineTagOutput() NdbDatabaseScaleTimeMachineTagOutput {
-	return i.ToNdbDatabaseScaleTimeMachineTagOutputWithContext(context.Background())
-}
-
-func (i NdbDatabaseScaleTimeMachineTagArgs) ToNdbDatabaseScaleTimeMachineTagOutputWithContext(ctx context.Context) NdbDatabaseScaleTimeMachineTagOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbDatabaseScaleTimeMachineTagOutput)
-}
-
-// NdbDatabaseScaleTimeMachineTagArrayInput is an input type that accepts NdbDatabaseScaleTimeMachineTagArray and NdbDatabaseScaleTimeMachineTagArrayOutput values.
-// You can construct a concrete instance of `NdbDatabaseScaleTimeMachineTagArrayInput` via:
-//
-//	NdbDatabaseScaleTimeMachineTagArray{ NdbDatabaseScaleTimeMachineTagArgs{...} }
-type NdbDatabaseScaleTimeMachineTagArrayInput interface {
-	pulumi.Input
-
-	ToNdbDatabaseScaleTimeMachineTagArrayOutput() NdbDatabaseScaleTimeMachineTagArrayOutput
-	ToNdbDatabaseScaleTimeMachineTagArrayOutputWithContext(context.Context) NdbDatabaseScaleTimeMachineTagArrayOutput
-}
-
-type NdbDatabaseScaleTimeMachineTagArray []NdbDatabaseScaleTimeMachineTagInput
-
-func (NdbDatabaseScaleTimeMachineTagArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbDatabaseScaleTimeMachineTag)(nil)).Elem()
-}
-
-func (i NdbDatabaseScaleTimeMachineTagArray) ToNdbDatabaseScaleTimeMachineTagArrayOutput() NdbDatabaseScaleTimeMachineTagArrayOutput {
-	return i.ToNdbDatabaseScaleTimeMachineTagArrayOutputWithContext(context.Background())
-}
-
-func (i NdbDatabaseScaleTimeMachineTagArray) ToNdbDatabaseScaleTimeMachineTagArrayOutputWithContext(ctx context.Context) NdbDatabaseScaleTimeMachineTagArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbDatabaseScaleTimeMachineTagArrayOutput)
-}
-
-type NdbDatabaseScaleTimeMachineTagOutput struct{ *pulumi.OutputState }
-
-func (NdbDatabaseScaleTimeMachineTagOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbDatabaseScaleTimeMachineTag)(nil)).Elem()
-}
-
-func (o NdbDatabaseScaleTimeMachineTagOutput) ToNdbDatabaseScaleTimeMachineTagOutput() NdbDatabaseScaleTimeMachineTagOutput {
-	return o
-}
-
-func (o NdbDatabaseScaleTimeMachineTagOutput) ToNdbDatabaseScaleTimeMachineTagOutputWithContext(ctx context.Context) NdbDatabaseScaleTimeMachineTagOutput {
-	return o
-}
-
-func (o NdbDatabaseScaleTimeMachineTagOutput) EntityId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineTag) *string { return v.EntityId }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineTagOutput) EntityType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineTag) *string { return v.EntityType }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineTagOutput) TagId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineTag) *string { return v.TagId }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineTagOutput) TagName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineTag) *string { return v.TagName }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineTagOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineTag) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type NdbDatabaseScaleTimeMachineTagArrayOutput struct{ *pulumi.OutputState }
-
-func (NdbDatabaseScaleTimeMachineTagArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbDatabaseScaleTimeMachineTag)(nil)).Elem()
-}
-
-func (o NdbDatabaseScaleTimeMachineTagArrayOutput) ToNdbDatabaseScaleTimeMachineTagArrayOutput() NdbDatabaseScaleTimeMachineTagArrayOutput {
-	return o
-}
-
-func (o NdbDatabaseScaleTimeMachineTagArrayOutput) ToNdbDatabaseScaleTimeMachineTagArrayOutputWithContext(ctx context.Context) NdbDatabaseScaleTimeMachineTagArrayOutput {
-	return o
-}
-
-func (o NdbDatabaseScaleTimeMachineTagArrayOutput) Index(i pulumi.IntInput) NdbDatabaseScaleTimeMachineTagOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbDatabaseScaleTimeMachineTag {
-		return vs[0].([]NdbDatabaseScaleTimeMachineTag)[vs[1].(int)]
-	}).(NdbDatabaseScaleTimeMachineTagOutput)
-}
-
-type NdbDatabaseSnapshotLcmConfig struct {
-	ExpiryDetails      []NdbDatabaseSnapshotLcmConfigExpiryDetail      `pulumi:"expiryDetails"`
-	PostDeleteCommands []NdbDatabaseSnapshotLcmConfigPostDeleteCommand `pulumi:"postDeleteCommands"`
-	PreDeleteCommands  []NdbDatabaseSnapshotLcmConfigPreDeleteCommand  `pulumi:"preDeleteCommands"`
-	RefreshDetails     []NdbDatabaseSnapshotLcmConfigRefreshDetail     `pulumi:"refreshDetails"`
-}
-
-// NdbDatabaseSnapshotLcmConfigInput is an input type that accepts NdbDatabaseSnapshotLcmConfigArgs and NdbDatabaseSnapshotLcmConfigOutput values.
-// You can construct a concrete instance of `NdbDatabaseSnapshotLcmConfigInput` via:
-//
-//	NdbDatabaseSnapshotLcmConfigArgs{...}
-type NdbDatabaseSnapshotLcmConfigInput interface {
-	pulumi.Input
-
-	ToNdbDatabaseSnapshotLcmConfigOutput() NdbDatabaseSnapshotLcmConfigOutput
-	ToNdbDatabaseSnapshotLcmConfigOutputWithContext(context.Context) NdbDatabaseSnapshotLcmConfigOutput
-}
-
-type NdbDatabaseSnapshotLcmConfigArgs struct {
-	ExpiryDetails      NdbDatabaseSnapshotLcmConfigExpiryDetailArrayInput      `pulumi:"expiryDetails"`
-	PostDeleteCommands NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayInput `pulumi:"postDeleteCommands"`
-	PreDeleteCommands  NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayInput  `pulumi:"preDeleteCommands"`
-	RefreshDetails     NdbDatabaseSnapshotLcmConfigRefreshDetailArrayInput     `pulumi:"refreshDetails"`
-}
-
-func (NdbDatabaseSnapshotLcmConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbDatabaseSnapshotLcmConfig)(nil)).Elem()
-}
-
-func (i NdbDatabaseSnapshotLcmConfigArgs) ToNdbDatabaseSnapshotLcmConfigOutput() NdbDatabaseSnapshotLcmConfigOutput {
-	return i.ToNdbDatabaseSnapshotLcmConfigOutputWithContext(context.Background())
-}
-
-func (i NdbDatabaseSnapshotLcmConfigArgs) ToNdbDatabaseSnapshotLcmConfigOutputWithContext(ctx context.Context) NdbDatabaseSnapshotLcmConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbDatabaseSnapshotLcmConfigOutput)
-}
-
-// NdbDatabaseSnapshotLcmConfigArrayInput is an input type that accepts NdbDatabaseSnapshotLcmConfigArray and NdbDatabaseSnapshotLcmConfigArrayOutput values.
-// You can construct a concrete instance of `NdbDatabaseSnapshotLcmConfigArrayInput` via:
-//
-//	NdbDatabaseSnapshotLcmConfigArray{ NdbDatabaseSnapshotLcmConfigArgs{...} }
-type NdbDatabaseSnapshotLcmConfigArrayInput interface {
-	pulumi.Input
-
-	ToNdbDatabaseSnapshotLcmConfigArrayOutput() NdbDatabaseSnapshotLcmConfigArrayOutput
-	ToNdbDatabaseSnapshotLcmConfigArrayOutputWithContext(context.Context) NdbDatabaseSnapshotLcmConfigArrayOutput
-}
-
-type NdbDatabaseSnapshotLcmConfigArray []NdbDatabaseSnapshotLcmConfigInput
-
-func (NdbDatabaseSnapshotLcmConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbDatabaseSnapshotLcmConfig)(nil)).Elem()
-}
-
-func (i NdbDatabaseSnapshotLcmConfigArray) ToNdbDatabaseSnapshotLcmConfigArrayOutput() NdbDatabaseSnapshotLcmConfigArrayOutput {
-	return i.ToNdbDatabaseSnapshotLcmConfigArrayOutputWithContext(context.Background())
-}
-
-func (i NdbDatabaseSnapshotLcmConfigArray) ToNdbDatabaseSnapshotLcmConfigArrayOutputWithContext(ctx context.Context) NdbDatabaseSnapshotLcmConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbDatabaseSnapshotLcmConfigArrayOutput)
-}
-
-type NdbDatabaseSnapshotLcmConfigOutput struct{ *pulumi.OutputState }
-
-func (NdbDatabaseSnapshotLcmConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbDatabaseSnapshotLcmConfig)(nil)).Elem()
-}
-
-func (o NdbDatabaseSnapshotLcmConfigOutput) ToNdbDatabaseSnapshotLcmConfigOutput() NdbDatabaseSnapshotLcmConfigOutput {
-	return o
-}
-
-func (o NdbDatabaseSnapshotLcmConfigOutput) ToNdbDatabaseSnapshotLcmConfigOutputWithContext(ctx context.Context) NdbDatabaseSnapshotLcmConfigOutput {
-	return o
-}
-
-func (o NdbDatabaseSnapshotLcmConfigOutput) ExpiryDetails() NdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput {
-	return o.ApplyT(func(v NdbDatabaseSnapshotLcmConfig) []NdbDatabaseSnapshotLcmConfigExpiryDetail {
-		return v.ExpiryDetails
-	}).(NdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput)
-}
-
-func (o NdbDatabaseSnapshotLcmConfigOutput) PostDeleteCommands() NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput {
-	return o.ApplyT(func(v NdbDatabaseSnapshotLcmConfig) []NdbDatabaseSnapshotLcmConfigPostDeleteCommand {
-		return v.PostDeleteCommands
-	}).(NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput)
-}
-
-func (o NdbDatabaseSnapshotLcmConfigOutput) PreDeleteCommands() NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput {
-	return o.ApplyT(func(v NdbDatabaseSnapshotLcmConfig) []NdbDatabaseSnapshotLcmConfigPreDeleteCommand {
-		return v.PreDeleteCommands
-	}).(NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput)
-}
-
-func (o NdbDatabaseSnapshotLcmConfigOutput) RefreshDetails() NdbDatabaseSnapshotLcmConfigRefreshDetailArrayOutput {
-	return o.ApplyT(func(v NdbDatabaseSnapshotLcmConfig) []NdbDatabaseSnapshotLcmConfigRefreshDetail {
-		return v.RefreshDetails
-	}).(NdbDatabaseSnapshotLcmConfigRefreshDetailArrayOutput)
-}
-
-type NdbDatabaseSnapshotLcmConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (NdbDatabaseSnapshotLcmConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbDatabaseSnapshotLcmConfig)(nil)).Elem()
-}
-
-func (o NdbDatabaseSnapshotLcmConfigArrayOutput) ToNdbDatabaseSnapshotLcmConfigArrayOutput() NdbDatabaseSnapshotLcmConfigArrayOutput {
-	return o
-}
-
-func (o NdbDatabaseSnapshotLcmConfigArrayOutput) ToNdbDatabaseSnapshotLcmConfigArrayOutputWithContext(ctx context.Context) NdbDatabaseSnapshotLcmConfigArrayOutput {
-	return o
-}
-
-func (o NdbDatabaseSnapshotLcmConfigArrayOutput) Index(i pulumi.IntInput) NdbDatabaseSnapshotLcmConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbDatabaseSnapshotLcmConfig {
-		return vs[0].([]NdbDatabaseSnapshotLcmConfig)[vs[1].(int)]
-	}).(NdbDatabaseSnapshotLcmConfigOutput)
-}
-
-type NdbDatabaseSnapshotLcmConfigExpiryDetail struct {
-	DeleteDatabase     *bool   `pulumi:"deleteDatabase"`
-	DeleteTimeMachine  *bool   `pulumi:"deleteTimeMachine"`
-	DeleteVm           *bool   `pulumi:"deleteVm"`
-	EffectiveTimestamp *string `pulumi:"effectiveTimestamp"`
-	ExpireInDays       *int    `pulumi:"expireInDays"`
-	// Default is set to Asia/Calcutta
-	ExpiryDateTimezone *string `pulumi:"expiryDateTimezone"`
-	ExpiryTimestamp    *string `pulumi:"expiryTimestamp"`
-	RemindBeforeInDays *int    `pulumi:"remindBeforeInDays"`
-	UserCreated        *bool   `pulumi:"userCreated"`
-}
-
-// NdbDatabaseSnapshotLcmConfigExpiryDetailInput is an input type that accepts NdbDatabaseSnapshotLcmConfigExpiryDetailArgs and NdbDatabaseSnapshotLcmConfigExpiryDetailOutput values.
-// You can construct a concrete instance of `NdbDatabaseSnapshotLcmConfigExpiryDetailInput` via:
-//
-//	NdbDatabaseSnapshotLcmConfigExpiryDetailArgs{...}
-type NdbDatabaseSnapshotLcmConfigExpiryDetailInput interface {
-	pulumi.Input
-
-	ToNdbDatabaseSnapshotLcmConfigExpiryDetailOutput() NdbDatabaseSnapshotLcmConfigExpiryDetailOutput
-	ToNdbDatabaseSnapshotLcmConfigExpiryDetailOutputWithContext(context.Context) NdbDatabaseSnapshotLcmConfigExpiryDetailOutput
-}
-
-type NdbDatabaseSnapshotLcmConfigExpiryDetailArgs struct {
-	DeleteDatabase     pulumi.BoolPtrInput   `pulumi:"deleteDatabase"`
-	DeleteTimeMachine  pulumi.BoolPtrInput   `pulumi:"deleteTimeMachine"`
-	DeleteVm           pulumi.BoolPtrInput   `pulumi:"deleteVm"`
-	EffectiveTimestamp pulumi.StringPtrInput `pulumi:"effectiveTimestamp"`
-	ExpireInDays       pulumi.IntPtrInput    `pulumi:"expireInDays"`
-	// Default is set to Asia/Calcutta
-	ExpiryDateTimezone pulumi.StringPtrInput `pulumi:"expiryDateTimezone"`
-	ExpiryTimestamp    pulumi.StringPtrInput `pulumi:"expiryTimestamp"`
-	RemindBeforeInDays pulumi.IntPtrInput    `pulumi:"remindBeforeInDays"`
-	UserCreated        pulumi.BoolPtrInput   `pulumi:"userCreated"`
-}
-
-func (NdbDatabaseSnapshotLcmConfigExpiryDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbDatabaseSnapshotLcmConfigExpiryDetail)(nil)).Elem()
-}
-
-func (i NdbDatabaseSnapshotLcmConfigExpiryDetailArgs) ToNdbDatabaseSnapshotLcmConfigExpiryDetailOutput() NdbDatabaseSnapshotLcmConfigExpiryDetailOutput {
-	return i.ToNdbDatabaseSnapshotLcmConfigExpiryDetailOutputWithContext(context.Background())
-}
-
-func (i NdbDatabaseSnapshotLcmConfigExpiryDetailArgs) ToNdbDatabaseSnapshotLcmConfigExpiryDetailOutputWithContext(ctx context.Context) NdbDatabaseSnapshotLcmConfigExpiryDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbDatabaseSnapshotLcmConfigExpiryDetailOutput)
-}
-
-// NdbDatabaseSnapshotLcmConfigExpiryDetailArrayInput is an input type that accepts NdbDatabaseSnapshotLcmConfigExpiryDetailArray and NdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput values.
-// You can construct a concrete instance of `NdbDatabaseSnapshotLcmConfigExpiryDetailArrayInput` via:
-//
-//	NdbDatabaseSnapshotLcmConfigExpiryDetailArray{ NdbDatabaseSnapshotLcmConfigExpiryDetailArgs{...} }
-type NdbDatabaseSnapshotLcmConfigExpiryDetailArrayInput interface {
-	pulumi.Input
-
-	ToNdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput() NdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput
-	ToNdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutputWithContext(context.Context) NdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput
-}
-
-type NdbDatabaseSnapshotLcmConfigExpiryDetailArray []NdbDatabaseSnapshotLcmConfigExpiryDetailInput
-
-func (NdbDatabaseSnapshotLcmConfigExpiryDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbDatabaseSnapshotLcmConfigExpiryDetail)(nil)).Elem()
-}
-
-func (i NdbDatabaseSnapshotLcmConfigExpiryDetailArray) ToNdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput() NdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput {
-	return i.ToNdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutputWithContext(context.Background())
-}
-
-func (i NdbDatabaseSnapshotLcmConfigExpiryDetailArray) ToNdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutputWithContext(ctx context.Context) NdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput)
-}
-
-type NdbDatabaseSnapshotLcmConfigExpiryDetailOutput struct{ *pulumi.OutputState }
-
-func (NdbDatabaseSnapshotLcmConfigExpiryDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbDatabaseSnapshotLcmConfigExpiryDetail)(nil)).Elem()
-}
-
-func (o NdbDatabaseSnapshotLcmConfigExpiryDetailOutput) ToNdbDatabaseSnapshotLcmConfigExpiryDetailOutput() NdbDatabaseSnapshotLcmConfigExpiryDetailOutput {
-	return o
-}
-
-func (o NdbDatabaseSnapshotLcmConfigExpiryDetailOutput) ToNdbDatabaseSnapshotLcmConfigExpiryDetailOutputWithContext(ctx context.Context) NdbDatabaseSnapshotLcmConfigExpiryDetailOutput {
-	return o
-}
-
-func (o NdbDatabaseSnapshotLcmConfigExpiryDetailOutput) DeleteDatabase() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseSnapshotLcmConfigExpiryDetail) *bool { return v.DeleteDatabase }).(pulumi.BoolPtrOutput)
-}
-
-func (o NdbDatabaseSnapshotLcmConfigExpiryDetailOutput) DeleteTimeMachine() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseSnapshotLcmConfigExpiryDetail) *bool { return v.DeleteTimeMachine }).(pulumi.BoolPtrOutput)
-}
-
-func (o NdbDatabaseSnapshotLcmConfigExpiryDetailOutput) DeleteVm() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseSnapshotLcmConfigExpiryDetail) *bool { return v.DeleteVm }).(pulumi.BoolPtrOutput)
-}
-
-func (o NdbDatabaseSnapshotLcmConfigExpiryDetailOutput) EffectiveTimestamp() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseSnapshotLcmConfigExpiryDetail) *string { return v.EffectiveTimestamp }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbDatabaseSnapshotLcmConfigExpiryDetailOutput) ExpireInDays() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseSnapshotLcmConfigExpiryDetail) *int { return v.ExpireInDays }).(pulumi.IntPtrOutput)
-}
-
-// Default is set to Asia/Calcutta
-func (o NdbDatabaseSnapshotLcmConfigExpiryDetailOutput) ExpiryDateTimezone() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseSnapshotLcmConfigExpiryDetail) *string { return v.ExpiryDateTimezone }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbDatabaseSnapshotLcmConfigExpiryDetailOutput) ExpiryTimestamp() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseSnapshotLcmConfigExpiryDetail) *string { return v.ExpiryTimestamp }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbDatabaseSnapshotLcmConfigExpiryDetailOutput) RemindBeforeInDays() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseSnapshotLcmConfigExpiryDetail) *int { return v.RemindBeforeInDays }).(pulumi.IntPtrOutput)
-}
-
-func (o NdbDatabaseSnapshotLcmConfigExpiryDetailOutput) UserCreated() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseSnapshotLcmConfigExpiryDetail) *bool { return v.UserCreated }).(pulumi.BoolPtrOutput)
-}
-
-type NdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (NdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbDatabaseSnapshotLcmConfigExpiryDetail)(nil)).Elem()
-}
-
-func (o NdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput) ToNdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput() NdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput {
-	return o
-}
-
-func (o NdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput) ToNdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutputWithContext(ctx context.Context) NdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput {
-	return o
-}
-
-func (o NdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput) Index(i pulumi.IntInput) NdbDatabaseSnapshotLcmConfigExpiryDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbDatabaseSnapshotLcmConfigExpiryDetail {
-		return vs[0].([]NdbDatabaseSnapshotLcmConfigExpiryDetail)[vs[1].(int)]
-	}).(NdbDatabaseSnapshotLcmConfigExpiryDetailOutput)
-}
-
-type NdbDatabaseSnapshotLcmConfigPostDeleteCommand struct {
-	Command *string `pulumi:"command"`
-}
-
-// NdbDatabaseSnapshotLcmConfigPostDeleteCommandInput is an input type that accepts NdbDatabaseSnapshotLcmConfigPostDeleteCommandArgs and NdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput values.
-// You can construct a concrete instance of `NdbDatabaseSnapshotLcmConfigPostDeleteCommandInput` via:
-//
-//	NdbDatabaseSnapshotLcmConfigPostDeleteCommandArgs{...}
-type NdbDatabaseSnapshotLcmConfigPostDeleteCommandInput interface {
-	pulumi.Input
-
-	ToNdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput() NdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput
-	ToNdbDatabaseSnapshotLcmConfigPostDeleteCommandOutputWithContext(context.Context) NdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput
-}
-
-type NdbDatabaseSnapshotLcmConfigPostDeleteCommandArgs struct {
-	Command pulumi.StringPtrInput `pulumi:"command"`
-}
-
-func (NdbDatabaseSnapshotLcmConfigPostDeleteCommandArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbDatabaseSnapshotLcmConfigPostDeleteCommand)(nil)).Elem()
-}
-
-func (i NdbDatabaseSnapshotLcmConfigPostDeleteCommandArgs) ToNdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput() NdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput {
-	return i.ToNdbDatabaseSnapshotLcmConfigPostDeleteCommandOutputWithContext(context.Background())
-}
-
-func (i NdbDatabaseSnapshotLcmConfigPostDeleteCommandArgs) ToNdbDatabaseSnapshotLcmConfigPostDeleteCommandOutputWithContext(ctx context.Context) NdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput)
-}
-
-// NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayInput is an input type that accepts NdbDatabaseSnapshotLcmConfigPostDeleteCommandArray and NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput values.
-// You can construct a concrete instance of `NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayInput` via:
-//
-//	NdbDatabaseSnapshotLcmConfigPostDeleteCommandArray{ NdbDatabaseSnapshotLcmConfigPostDeleteCommandArgs{...} }
-type NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayInput interface {
-	pulumi.Input
-
-	ToNdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput() NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput
-	ToNdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutputWithContext(context.Context) NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput
-}
-
-type NdbDatabaseSnapshotLcmConfigPostDeleteCommandArray []NdbDatabaseSnapshotLcmConfigPostDeleteCommandInput
-
-func (NdbDatabaseSnapshotLcmConfigPostDeleteCommandArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbDatabaseSnapshotLcmConfigPostDeleteCommand)(nil)).Elem()
-}
-
-func (i NdbDatabaseSnapshotLcmConfigPostDeleteCommandArray) ToNdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput() NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput {
-	return i.ToNdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutputWithContext(context.Background())
-}
-
-func (i NdbDatabaseSnapshotLcmConfigPostDeleteCommandArray) ToNdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutputWithContext(ctx context.Context) NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput)
-}
-
-type NdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput struct{ *pulumi.OutputState }
-
-func (NdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbDatabaseSnapshotLcmConfigPostDeleteCommand)(nil)).Elem()
-}
-
-func (o NdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput) ToNdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput() NdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput {
-	return o
-}
-
-func (o NdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput) ToNdbDatabaseSnapshotLcmConfigPostDeleteCommandOutputWithContext(ctx context.Context) NdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput {
-	return o
-}
-
-func (o NdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput) Command() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseSnapshotLcmConfigPostDeleteCommand) *string { return v.Command }).(pulumi.StringPtrOutput)
-}
-
-type NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput struct{ *pulumi.OutputState }
-
-func (NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbDatabaseSnapshotLcmConfigPostDeleteCommand)(nil)).Elem()
-}
-
-func (o NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput) ToNdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput() NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput {
-	return o
-}
-
-func (o NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput) ToNdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutputWithContext(ctx context.Context) NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput {
-	return o
-}
-
-func (o NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput) Index(i pulumi.IntInput) NdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbDatabaseSnapshotLcmConfigPostDeleteCommand {
-		return vs[0].([]NdbDatabaseSnapshotLcmConfigPostDeleteCommand)[vs[1].(int)]
-	}).(NdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput)
-}
-
-type NdbDatabaseSnapshotLcmConfigPreDeleteCommand struct {
-	Command *string `pulumi:"command"`
-}
-
-// NdbDatabaseSnapshotLcmConfigPreDeleteCommandInput is an input type that accepts NdbDatabaseSnapshotLcmConfigPreDeleteCommandArgs and NdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput values.
-// You can construct a concrete instance of `NdbDatabaseSnapshotLcmConfigPreDeleteCommandInput` via:
-//
-//	NdbDatabaseSnapshotLcmConfigPreDeleteCommandArgs{...}
-type NdbDatabaseSnapshotLcmConfigPreDeleteCommandInput interface {
-	pulumi.Input
-
-	ToNdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput() NdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput
-	ToNdbDatabaseSnapshotLcmConfigPreDeleteCommandOutputWithContext(context.Context) NdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput
-}
-
-type NdbDatabaseSnapshotLcmConfigPreDeleteCommandArgs struct {
-	Command pulumi.StringPtrInput `pulumi:"command"`
-}
-
-func (NdbDatabaseSnapshotLcmConfigPreDeleteCommandArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbDatabaseSnapshotLcmConfigPreDeleteCommand)(nil)).Elem()
-}
-
-func (i NdbDatabaseSnapshotLcmConfigPreDeleteCommandArgs) ToNdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput() NdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput {
-	return i.ToNdbDatabaseSnapshotLcmConfigPreDeleteCommandOutputWithContext(context.Background())
-}
-
-func (i NdbDatabaseSnapshotLcmConfigPreDeleteCommandArgs) ToNdbDatabaseSnapshotLcmConfigPreDeleteCommandOutputWithContext(ctx context.Context) NdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput)
-}
-
-// NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayInput is an input type that accepts NdbDatabaseSnapshotLcmConfigPreDeleteCommandArray and NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput values.
-// You can construct a concrete instance of `NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayInput` via:
-//
-//	NdbDatabaseSnapshotLcmConfigPreDeleteCommandArray{ NdbDatabaseSnapshotLcmConfigPreDeleteCommandArgs{...} }
-type NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayInput interface {
-	pulumi.Input
-
-	ToNdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput() NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput
-	ToNdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutputWithContext(context.Context) NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput
-}
-
-type NdbDatabaseSnapshotLcmConfigPreDeleteCommandArray []NdbDatabaseSnapshotLcmConfigPreDeleteCommandInput
-
-func (NdbDatabaseSnapshotLcmConfigPreDeleteCommandArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbDatabaseSnapshotLcmConfigPreDeleteCommand)(nil)).Elem()
-}
-
-func (i NdbDatabaseSnapshotLcmConfigPreDeleteCommandArray) ToNdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput() NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput {
-	return i.ToNdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutputWithContext(context.Background())
-}
-
-func (i NdbDatabaseSnapshotLcmConfigPreDeleteCommandArray) ToNdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutputWithContext(ctx context.Context) NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput)
-}
-
-type NdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput struct{ *pulumi.OutputState }
-
-func (NdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbDatabaseSnapshotLcmConfigPreDeleteCommand)(nil)).Elem()
-}
-
-func (o NdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput) ToNdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput() NdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput {
-	return o
-}
-
-func (o NdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput) ToNdbDatabaseSnapshotLcmConfigPreDeleteCommandOutputWithContext(ctx context.Context) NdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput {
-	return o
-}
-
-func (o NdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput) Command() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseSnapshotLcmConfigPreDeleteCommand) *string { return v.Command }).(pulumi.StringPtrOutput)
-}
-
-type NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput struct{ *pulumi.OutputState }
-
-func (NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbDatabaseSnapshotLcmConfigPreDeleteCommand)(nil)).Elem()
-}
-
-func (o NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput) ToNdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput() NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput {
-	return o
-}
-
-func (o NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput) ToNdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutputWithContext(ctx context.Context) NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput {
-	return o
-}
-
-func (o NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput) Index(i pulumi.IntInput) NdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbDatabaseSnapshotLcmConfigPreDeleteCommand {
-		return vs[0].([]NdbDatabaseSnapshotLcmConfigPreDeleteCommand)[vs[1].(int)]
-	}).(NdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AccessControlPolicyCategoryInput)(nil)).Elem(), AccessControlPolicyCategoryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AccessControlPolicyCategoryArrayInput)(nil)).Elem(), AccessControlPolicyCategoryArray{})
@@ -61875,6 +62077,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AddressGroupsV2Ipv4AddressArrayInput)(nil)).Elem(), AddressGroupsV2Ipv4AddressArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AddressGroupsV2LinkInput)(nil)).Elem(), AddressGroupsV2LinkArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AddressGroupsV2LinkArrayInput)(nil)).Elem(), AddressGroupsV2LinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssociateCategoryToVolumeGroupV2CategoryInput)(nil)).Elem(), AssociateCategoryToVolumeGroupV2CategoryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AssociateCategoryToVolumeGroupV2CategoryArrayInput)(nil)).Elem(), AssociateCategoryToVolumeGroupV2CategoryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AuthorizationPolicyV2EntityInput)(nil)).Elem(), AuthorizationPolicyV2EntityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AuthorizationPolicyV2EntityArrayInput)(nil)).Elem(), AuthorizationPolicyV2EntityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AuthorizationPolicyV2IdentityInput)(nil)).Elem(), AuthorizationPolicyV2IdentityArgs{})
@@ -62407,6 +62611,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArrayInput)(nil)).Elem(), FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FoundationCentralImageClusterHypervisorIsoDetailsInput)(nil)).Elem(), FoundationCentralImageClusterHypervisorIsoDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FoundationCentralImageClusterHypervisorIsoDetailsPtrInput)(nil)).Elem(), FoundationCentralImageClusterHypervisorIsoDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FoundationCentralImageClusterHypervisorIsosInput)(nil)).Elem(), FoundationCentralImageClusterHypervisorIsosArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FoundationCentralImageClusterHypervisorIsosPtrInput)(nil)).Elem(), FoundationCentralImageClusterHypervisorIsosArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FoundationCentralImageClusterNodeListInput)(nil)).Elem(), FoundationCentralImageClusterNodeListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FoundationCentralImageClusterNodeListArrayInput)(nil)).Elem(), FoundationCentralImageClusterNodeListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FoundationImageNodesBlockInput)(nil)).Elem(), FoundationImageNodesBlockArgs{})
@@ -62511,6 +62717,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*KarbonWorkerNodepoolAhvConfigPtrInput)(nil)).Elem(), KarbonWorkerNodepoolAhvConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KarbonWorkerNodepoolNodeInput)(nil)).Elem(), KarbonWorkerNodepoolNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KarbonWorkerNodepoolNodeArrayInput)(nil)).Elem(), KarbonWorkerNodepoolNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LcmPrechecksV2EntityUpdateSpecInput)(nil)).Elem(), LcmPrechecksV2EntityUpdateSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LcmPrechecksV2EntityUpdateSpecArrayInput)(nil)).Elem(), LcmPrechecksV2EntityUpdateSpecArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LcmPrechecksV2ManagementServerInput)(nil)).Elem(), LcmPrechecksV2ManagementServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LcmPrechecksV2ManagementServerPtrInput)(nil)).Elem(), LcmPrechecksV2ManagementServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LcmUpgradeV2EntityUpdateSpecInput)(nil)).Elem(), LcmUpgradeV2EntityUpdateSpecArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LcmUpgradeV2EntityUpdateSpecArrayInput)(nil)).Elem(), LcmUpgradeV2EntityUpdateSpecArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LcmUpgradeV2ManagementServerInput)(nil)).Elem(), LcmUpgradeV2ManagementServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LcmUpgradeV2ManagementServerPtrInput)(nil)).Elem(), LcmUpgradeV2ManagementServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneActionargumentInput)(nil)).Elem(), NdbCloneActionargumentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneActionargumentArrayInput)(nil)).Elem(), NdbCloneActionargumentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneDatabaseNodeInput)(nil)).Elem(), NdbCloneDatabaseNodeArgs{})
@@ -62831,18 +63045,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleArrayInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineScheduleYearlyScheduleInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineSlaInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineSlaArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineSlaArrayInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineSlaArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineTagInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineTagArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineTagArrayInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineTagArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseSnapshotLcmConfigInput)(nil)).Elem(), NdbDatabaseSnapshotLcmConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseSnapshotLcmConfigArrayInput)(nil)).Elem(), NdbDatabaseSnapshotLcmConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseSnapshotLcmConfigExpiryDetailInput)(nil)).Elem(), NdbDatabaseSnapshotLcmConfigExpiryDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseSnapshotLcmConfigExpiryDetailArrayInput)(nil)).Elem(), NdbDatabaseSnapshotLcmConfigExpiryDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseSnapshotLcmConfigPostDeleteCommandInput)(nil)).Elem(), NdbDatabaseSnapshotLcmConfigPostDeleteCommandArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayInput)(nil)).Elem(), NdbDatabaseSnapshotLcmConfigPostDeleteCommandArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseSnapshotLcmConfigPreDeleteCommandInput)(nil)).Elem(), NdbDatabaseSnapshotLcmConfigPreDeleteCommandArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayInput)(nil)).Elem(), NdbDatabaseSnapshotLcmConfigPreDeleteCommandArray{})
 	pulumi.RegisterOutputType(AccessControlPolicyCategoryOutput{})
 	pulumi.RegisterOutputType(AccessControlPolicyCategoryArrayOutput{})
 	pulumi.RegisterOutputType(AccessControlPolicyContextFilterListOutput{})
@@ -62873,6 +63075,8 @@ func init() {
 	pulumi.RegisterOutputType(AddressGroupsV2Ipv4AddressArrayOutput{})
 	pulumi.RegisterOutputType(AddressGroupsV2LinkOutput{})
 	pulumi.RegisterOutputType(AddressGroupsV2LinkArrayOutput{})
+	pulumi.RegisterOutputType(AssociateCategoryToVolumeGroupV2CategoryOutput{})
+	pulumi.RegisterOutputType(AssociateCategoryToVolumeGroupV2CategoryArrayOutput{})
 	pulumi.RegisterOutputType(AuthorizationPolicyV2EntityOutput{})
 	pulumi.RegisterOutputType(AuthorizationPolicyV2EntityArrayOutput{})
 	pulumi.RegisterOutputType(AuthorizationPolicyV2IdentityOutput{})
@@ -63405,6 +63609,8 @@ func init() {
 	pulumi.RegisterOutputType(FoundationCentralImageClusterFoundationInitConfigNosPackageUrlArrayOutput{})
 	pulumi.RegisterOutputType(FoundationCentralImageClusterHypervisorIsoDetailsOutput{})
 	pulumi.RegisterOutputType(FoundationCentralImageClusterHypervisorIsoDetailsPtrOutput{})
+	pulumi.RegisterOutputType(FoundationCentralImageClusterHypervisorIsosOutput{})
+	pulumi.RegisterOutputType(FoundationCentralImageClusterHypervisorIsosPtrOutput{})
 	pulumi.RegisterOutputType(FoundationCentralImageClusterNodeListOutput{})
 	pulumi.RegisterOutputType(FoundationCentralImageClusterNodeListArrayOutput{})
 	pulumi.RegisterOutputType(FoundationImageNodesBlockOutput{})
@@ -63509,6 +63715,14 @@ func init() {
 	pulumi.RegisterOutputType(KarbonWorkerNodepoolAhvConfigPtrOutput{})
 	pulumi.RegisterOutputType(KarbonWorkerNodepoolNodeOutput{})
 	pulumi.RegisterOutputType(KarbonWorkerNodepoolNodeArrayOutput{})
+	pulumi.RegisterOutputType(LcmPrechecksV2EntityUpdateSpecOutput{})
+	pulumi.RegisterOutputType(LcmPrechecksV2EntityUpdateSpecArrayOutput{})
+	pulumi.RegisterOutputType(LcmPrechecksV2ManagementServerOutput{})
+	pulumi.RegisterOutputType(LcmPrechecksV2ManagementServerPtrOutput{})
+	pulumi.RegisterOutputType(LcmUpgradeV2EntityUpdateSpecOutput{})
+	pulumi.RegisterOutputType(LcmUpgradeV2EntityUpdateSpecArrayOutput{})
+	pulumi.RegisterOutputType(LcmUpgradeV2ManagementServerOutput{})
+	pulumi.RegisterOutputType(LcmUpgradeV2ManagementServerPtrOutput{})
 	pulumi.RegisterOutputType(NdbCloneActionargumentOutput{})
 	pulumi.RegisterOutputType(NdbCloneActionargumentArrayOutput{})
 	pulumi.RegisterOutputType(NdbCloneDatabaseNodeOutput{})
@@ -63829,16 +64043,4 @@ func init() {
 	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleArrayOutput{})
 	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput{})
 	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput{})
-	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineSlaOutput{})
-	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineSlaArrayOutput{})
-	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineTagOutput{})
-	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineTagArrayOutput{})
-	pulumi.RegisterOutputType(NdbDatabaseSnapshotLcmConfigOutput{})
-	pulumi.RegisterOutputType(NdbDatabaseSnapshotLcmConfigArrayOutput{})
-	pulumi.RegisterOutputType(NdbDatabaseSnapshotLcmConfigExpiryDetailOutput{})
-	pulumi.RegisterOutputType(NdbDatabaseSnapshotLcmConfigExpiryDetailArrayOutput{})
-	pulumi.RegisterOutputType(NdbDatabaseSnapshotLcmConfigPostDeleteCommandOutput{})
-	pulumi.RegisterOutputType(NdbDatabaseSnapshotLcmConfigPostDeleteCommandArrayOutput{})
-	pulumi.RegisterOutputType(NdbDatabaseSnapshotLcmConfigPreDeleteCommandOutput{})
-	pulumi.RegisterOutputType(NdbDatabaseSnapshotLcmConfigPreDeleteCommandArrayOutput{})
 }

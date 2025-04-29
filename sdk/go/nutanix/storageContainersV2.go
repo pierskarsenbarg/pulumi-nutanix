@@ -13,6 +13,52 @@ import (
 )
 
 // Provides Nutanix resource to create VPC.
+//
+// ## Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewStorageContainersV2(ctx, "storage-container", &nutanix.StorageContainersV2Args{
+//				CacheDeduplication:                   pulumi.String("OFF"),
+//				ErasureCode:                          pulumi.String("OFF"),
+//				HasHigherEcFaultDomainPreference:     pulumi.Bool(false),
+//				IsCompressionEnabled:                 pulumi.Bool(true),
+//				IsInlineEcEnabled:                    pulumi.Bool(false),
+//				IsInternal:                           pulumi.Bool(false),
+//				IsSoftwareEncryptionEnabled:          pulumi.Bool(false),
+//				LogicalAdvertisedCapacityBytes:       pulumi.Int(1073741824000),
+//				LogicalExplicitReservedCapacityBytes: pulumi.Int(32),
+//				NfsWhitelistAddresses: nutanix.StorageContainersV2NfsWhitelistAddressArray{
+//					&nutanix.StorageContainersV2NfsWhitelistAddressArgs{
+//						Ipv4s: nutanix.StorageContainersV2NfsWhitelistAddressIpv4Array{
+//							&nutanix.StorageContainersV2NfsWhitelistAddressIpv4Args{
+//								PrefixLength: pulumi.Int(32),
+//								Value:        pulumi.String("192.168.15.0"),
+//							},
+//						},
+//					},
+//				},
+//				OnDiskDedup:       pulumi.String("OFF"),
+//				ReplicationFactor: pulumi.Int(1),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type StorageContainersV2 struct {
 	pulumi.CustomResourceState
 

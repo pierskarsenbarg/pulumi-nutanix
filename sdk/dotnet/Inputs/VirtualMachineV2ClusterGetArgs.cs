@@ -14,7 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class VirtualMachineV2ClusterGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
+        /// The globally unique identifier of a cluster type UUID.
         /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }

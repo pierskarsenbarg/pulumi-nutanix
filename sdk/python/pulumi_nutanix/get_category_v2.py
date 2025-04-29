@@ -184,8 +184,19 @@ def get_category_v2(expand: Optional[builtins.str] = None,
     """
     Fetch a category
 
+    ## Example
 
-    :param builtins.str expand: A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    get_category = nutanix.get_category_v2(ext_id="85e68112-5b2b-4220-bc8d-e529e4bf420e")
+    ```
+
+
+    :param builtins.str expand: A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \\$filter, \\$select and \\$orderby. The following expansion keys are supported:
+           - associations
+           - detailedAssociations
     :param builtins.str ext_id: The extID for the category.
     """
     __args__ = dict()
@@ -213,8 +224,19 @@ def get_category_v2_output(expand: Optional[pulumi.Input[Optional[builtins.str]]
     """
     Fetch a category
 
+    ## Example
 
-    :param builtins.str expand: A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    get_category = nutanix.get_category_v2(ext_id="85e68112-5b2b-4220-bc8d-e529e4bf420e")
+    ```
+
+
+    :param builtins.str expand: A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \\$filter, \\$select and \\$orderby. The following expansion keys are supported:
+           - associations
+           - detailedAssociations
     :param builtins.str ext_id: The extID for the category.
     """
     __args__ = dict()

@@ -12,6 +12,27 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// External identifier of the replicated recovery point can be found in the task completion details under the key
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     // replicate RP
+    ///     var rp_replicate = new Nutanix.RecoveryPointReplicateV2("rp-replicate", new()
+    ///     {
+    ///         ClusterExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+    ///         ExtId = "150a7ed0-9d05-4f35-a060-16dac4c835d0",
+    ///         PcExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/recoveryPointReplicateV2:RecoveryPointReplicateV2")]
     public partial class RecoveryPointReplicateV2 : global::Pulumi.CustomResource

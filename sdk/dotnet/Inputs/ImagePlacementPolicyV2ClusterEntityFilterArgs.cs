@@ -20,7 +20,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// Array of strings
         /// 
         /// 
-        /// See detailed information in [Nutanix Image Placement Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0)
+        /// See detailed information in [Nutanix Create Image Placement Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.0#tag/ImagePlacementPolicies/operation/createPlacementPolicy)
         /// </summary>
         public InputList<string> CategoryExtIds
         {

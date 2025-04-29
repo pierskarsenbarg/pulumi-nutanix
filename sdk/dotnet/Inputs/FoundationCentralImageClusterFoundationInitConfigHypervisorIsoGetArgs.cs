@@ -13,9 +13,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class FoundationCentralImageClusterFoundationInitConfigHypervisorIsoGetArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// Type of hypervisor to be installed. Must be one of {kvm, esx, hyperv}.
-        /// </summary>
         [Input("hypervisorType")]
         public Input<string>? HypervisorType { get; set; }
 

@@ -14,13 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVpcsV2VpcExternallyRoutablePrefixIpv6Result
     {
-        /// <summary>
-        /// Reference to address configuration
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetVpcsV2VpcExternallyRoutablePrefixIpv6IpResult> Ips;
-        /// <summary>
-        /// The prefix length of the network
-        /// </summary>
         public readonly int PrefixLength;
 
         [OutputConstructor]

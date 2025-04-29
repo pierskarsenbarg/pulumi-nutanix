@@ -512,6 +512,34 @@ class FloatingIpV2(pulumi.CustomResource):
         """
         Provides Nutanix resource to create Floating IPs.
 
+        ## Example1 :  create Floating IP with External Subnet
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        # create Floating IP with External Subnet UUID
+        fip_ext_subnet = nutanix.FloatingIpV2("fip-ext-subnet",
+            description="example fip  description",
+            external_subnet_reference="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+        ```
+
+        ## Example2 :  create Floating IP with External Subnet with vm association
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        fip_ext_subnet_vm = nutanix.FloatingIpV2("fip-ext-subnet-vm",
+            associations=[{
+                "vm_nic_associations": [{
+                    "vm_nic_reference": "31e4b3b1-4b3b-4b3b-4b3b-4b3b4b3b4b3b",
+                }],
+            }],
+            description="example fip  description",
+            external_subnet_reference="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['FloatingIpV2AssociationArgs', 'FloatingIpV2AssociationArgsDict']]]] associations: Association of the Floating IP with either NIC or Private IP
@@ -533,6 +561,34 @@ class FloatingIpV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides Nutanix resource to create Floating IPs.
+
+        ## Example1 :  create Floating IP with External Subnet
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        # create Floating IP with External Subnet UUID
+        fip_ext_subnet = nutanix.FloatingIpV2("fip-ext-subnet",
+            description="example fip  description",
+            external_subnet_reference="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+        ```
+
+        ## Example2 :  create Floating IP with External Subnet with vm association
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        fip_ext_subnet_vm = nutanix.FloatingIpV2("fip-ext-subnet-vm",
+            associations=[{
+                "vm_nic_associations": [{
+                    "vm_nic_reference": "31e4b3b1-4b3b-4b3b-4b3b-4b3b4b3b4b3b",
+                }],
+            }],
+            description="example fip  description",
+            external_subnet_reference="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+        ```
 
         :param str resource_name: The name of the resource.
         :param FloatingIpV2Args args: The arguments to use to populate this resource's properties.

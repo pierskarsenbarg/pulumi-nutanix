@@ -23,13 +23,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// -(Required)  Address configuration of a remote cluster. It requires the address of the remote, that is an IP or domain name along with the basic authentication credentials.
         /// </summary>
-        public readonly Outputs.PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteCluster? RemoteCluster;
+        public readonly Outputs.PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteCluster RemoteCluster;
 
         [OutputConstructor]
         private PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpec(
             string cloudType,
 
-            Outputs.PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteCluster? remoteCluster)
+            Outputs.PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteCluster remoteCluster)
         {
             CloudType = cloudType;
             RemoteCluster = remoteCluster;

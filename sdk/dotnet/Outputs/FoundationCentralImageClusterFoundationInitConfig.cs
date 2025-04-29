@@ -38,6 +38,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string? HypervisorGateway;
         public readonly ImmutableDictionary<string, string>? HypervisorIsoUrl;
+        /// <summary>
+        /// Details of the hypervisor iso. Required for deploying node with AOS &gt;= 6.8
+        /// </summary>
         public readonly ImmutableArray<Outputs.FoundationCentralImageClusterFoundationInitConfigHypervisorIso> HypervisorIsos;
         /// <summary>
         /// Netmask of the hypervisor.

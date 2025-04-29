@@ -131,7 +131,7 @@ def get_hosts_v2(apply: Optional[builtins.str] = None,
     :param builtins.str apply: -(Optional) A URL query parameter that allows clients to specify a sequence of transformations to the entity set, such as groupby, filter, aggregate etc. As of now only support for groupby exists.For example '\\$apply=groupby((templateName))' would get all templates grouped by templateName. The groupby can be applied on the following fields:
            * `cluster/name`
            * `hypervisor/type`
-    :param builtins.str filter: -(Optional) A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields: 
+    :param builtins.str filter: -(Optional) A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
            * `bootTimeUsecs`
            * `cluster/name`
            * `cluster/uuid`
@@ -153,7 +153,7 @@ def get_hosts_v2(apply: Optional[builtins.str] = None,
            * `numberOfCpuThreads`
     :param builtins.int limit: -(Optional) A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
     :param builtins.int page: -(Optional) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
-    :param builtins.str select: -(Optional) A query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., \\*), then all properties on the matching resource will be returned. The select can be applied to the following fields: 
+    :param builtins.str select: -(Optional) A query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., \\*), then all properties on the matching resource will be returned. The select can be applied to the following fields:
            * `blockModel`
            * `blockSerial`
            * `bootTimeUsecs`
@@ -191,7 +191,7 @@ def get_hosts_v2_output(apply: Optional[pulumi.Input[Optional[builtins.str]]] = 
     :param builtins.str apply: -(Optional) A URL query parameter that allows clients to specify a sequence of transformations to the entity set, such as groupby, filter, aggregate etc. As of now only support for groupby exists.For example '\\$apply=groupby((templateName))' would get all templates grouped by templateName. The groupby can be applied on the following fields:
            * `cluster/name`
            * `hypervisor/type`
-    :param builtins.str filter: -(Optional) A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields: 
+    :param builtins.str filter: -(Optional) A URL query parameter that allows clients to filter a collection of resources. The expression specified with \\$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \\$filter must conform to the OData V4.01 URL conventions. For example, filter '\\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
            * `bootTimeUsecs`
            * `cluster/name`
            * `cluster/uuid`
@@ -213,7 +213,7 @@ def get_hosts_v2_output(apply: Optional[pulumi.Input[Optional[builtins.str]]] = 
            * `numberOfCpuThreads`
     :param builtins.int limit: -(Optional) A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
     :param builtins.int page: -(Optional) A query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource.
-    :param builtins.str select: -(Optional) A query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., \\*), then all properties on the matching resource will be returned. The select can be applied to the following fields: 
+    :param builtins.str select: -(Optional) A query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \\$select must conform to the OData V4.01 URL conventions. If a \\$select expression consists of a single select item that is an asterisk (i.e., \\*), then all properties on the matching resource will be returned. The select can be applied to the following fields:
            * `blockModel`
            * `blockSerial`
            * `bootTimeUsecs`

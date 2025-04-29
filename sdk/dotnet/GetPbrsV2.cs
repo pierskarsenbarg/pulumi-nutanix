@@ -27,6 +27,22 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var pbrs = Nutanix.GetPbrsV2.Invoke();
         /// 
+        ///     var pbrs_filter = Nutanix.GetPbrsV2.Invoke(new()
+        ///     {
+        ///         Filter = "name eq 'pbr_example'",
+        ///     });
+        /// 
+        ///     var pbrs_limit = Nutanix.GetPbrsV2.Invoke(new()
+        ///     {
+        ///         Limit = 10,
+        ///     });
+        /// 
+        ///     var pbrs_filter_limit = Nutanix.GetPbrsV2.Invoke(new()
+        ///     {
+        ///         Filter = "name eq 'pbr_example'",
+        ///         Limit = 10,
+        ///     });
+        /// 
         /// });
         /// ```
         /// </summary>
@@ -47,6 +63,22 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     var pbrs = Nutanix.GetPbrsV2.Invoke();
+        /// 
+        ///     var pbrs_filter = Nutanix.GetPbrsV2.Invoke(new()
+        ///     {
+        ///         Filter = "name eq 'pbr_example'",
+        ///     });
+        /// 
+        ///     var pbrs_limit = Nutanix.GetPbrsV2.Invoke(new()
+        ///     {
+        ///         Limit = 10,
+        ///     });
+        /// 
+        ///     var pbrs_filter_limit = Nutanix.GetPbrsV2.Invoke(new()
+        ///     {
+        ///         Filter = "name eq 'pbr_example'",
+        ///         Limit = 10,
+        ///     });
         /// 
         /// });
         /// ```
@@ -69,6 +101,22 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var pbrs = Nutanix.GetPbrsV2.Invoke();
         /// 
+        ///     var pbrs_filter = Nutanix.GetPbrsV2.Invoke(new()
+        ///     {
+        ///         Filter = "name eq 'pbr_example'",
+        ///     });
+        /// 
+        ///     var pbrs_limit = Nutanix.GetPbrsV2.Invoke(new()
+        ///     {
+        ///         Limit = 10,
+        ///     });
+        /// 
+        ///     var pbrs_filter_limit = Nutanix.GetPbrsV2.Invoke(new()
+        ///     {
+        ///         Filter = "name eq 'pbr_example'",
+        ///         Limit = 10,
+        ///     });
+        /// 
         /// });
         /// ```
         /// </summary>
@@ -80,7 +128,13 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetPbrsV2Args : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A URL query parameter that allows clients to filter a collection of resources.
+        /// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+        /// - name
+        /// - policies/policyAction/actionType
+        /// - policies/policyMatch/protocolType
+        /// - policies/policyMatch/source
+        /// - priority
+        /// - vpcExtId
         /// </summary>
         [Input("filter")]
         public string? Filter { get; set; }
@@ -92,7 +146,9 @@ namespace PiersKarsenbarg.Nutanix
         public int? Limit { get; set; }
 
         /// <summary>
-        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+        /// - name
+        /// - priority
         /// </summary>
         [Input("orderBy")]
         public string? OrderBy { get; set; }
@@ -112,7 +168,13 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetPbrsV2InvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A URL query parameter that allows clients to filter a collection of resources.
+        /// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+        /// - name
+        /// - policies/policyAction/actionType
+        /// - policies/policyMatch/protocolType
+        /// - policies/policyMatch/source
+        /// - priority
+        /// - vpcExtId
         /// </summary>
         [Input("filter")]
         public Input<string>? Filter { get; set; }
@@ -124,7 +186,9 @@ namespace PiersKarsenbarg.Nutanix
         public Input<int>? Limit { get; set; }
 
         /// <summary>
-        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+        /// - name
+        /// - priority
         /// </summary>
         [Input("orderBy")]
         public Input<string>? OrderBy { get; set; }
@@ -153,6 +217,9 @@ namespace PiersKarsenbarg.Nutanix
         public readonly int? Limit;
         public readonly string? OrderBy;
         public readonly int? Page;
+        /// <summary>
+        /// List all of routing policies.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetPbrsV2RoutingPolicyResult> RoutingPolicies;
 
         [OutputConstructor]

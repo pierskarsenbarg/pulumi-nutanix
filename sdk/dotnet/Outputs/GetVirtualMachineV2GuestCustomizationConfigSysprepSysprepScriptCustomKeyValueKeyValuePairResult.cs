@@ -18,6 +18,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// Name of the GPU resource.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The IPv4 address of the host.
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

@@ -240,8 +240,8 @@ def get_route_v2(ext_id: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    route_by_id = nutanix.get_route_v2(ext_id="<route_uuid>",
-        route_table_ext_id="<route_table_uuid>")
+    route_by_id = nutanix.get_route_v2(ext_id="7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+        route_table_ext_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
     ```
 
 
@@ -283,8 +283,8 @@ def get_route_v2_output(ext_id: Optional[pulumi.Input[builtins.str]] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    route_by_id = nutanix.get_route_v2(ext_id="<route_uuid>",
-        route_table_ext_id="<route_table_uuid>")
+    route_by_id = nutanix.get_route_v2(ext_id="7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+        route_table_ext_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
     ```
 
 

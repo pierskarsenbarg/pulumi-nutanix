@@ -14,18 +14,72 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Retrieve the image details for the provided external identifier.
+        /// 
+        /// ## Example
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var get_image = Nutanix.GetImageV2.Invoke(new()
+        ///     {
+        ///         ExtId = "0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetImageV2Result> InvokeAsync(GetImageV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetImageV2Result>("nutanix:index/getImageV2:getImageV2", args ?? new GetImageV2Args(), options.WithDefaults());
 
         /// <summary>
         /// Retrieve the image details for the provided external identifier.
+        /// 
+        /// ## Example
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var get_image = Nutanix.GetImageV2.Invoke(new()
+        ///     {
+        ///         ExtId = "0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetImageV2Result> Invoke(GetImageV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetImageV2Result>("nutanix:index/getImageV2:getImageV2", args ?? new GetImageV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// Retrieve the image details for the provided external identifier.
+        /// 
+        /// ## Example
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var get_image = Nutanix.GetImageV2.Invoke(new()
+        ///     {
+        ///         ExtId = "0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetImageV2Result> Invoke(GetImageV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetImageV2Result>("nutanix:index/getImageV2:getImageV2", args ?? new GetImageV2InvokeArgs(), options.WithDefaults());

@@ -14,17 +14,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetSubnetsV2SubnetIpUsageIpPoolUsageResult
     {
-        /// <summary>
-        /// Number of free IPs
-        /// </summary>
         public readonly int NumFreeIps;
-        /// <summary>
-        /// Total number of IPs in this pool.
-        /// </summary>
         public readonly int NumTotalIps;
-        /// <summary>
-        /// Start/end IP address range.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetIpUsageIpPoolUsageRangeResult> Ranges;
 
         [OutputConstructor]

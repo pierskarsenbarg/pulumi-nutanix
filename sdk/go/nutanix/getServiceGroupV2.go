@@ -12,6 +12,32 @@ import (
 )
 
 // Get an service Group by ExtID
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetServiceGroupV2(ctx, &nutanix.GetServiceGroupV2Args{
+//				ExtId: "07167778-266d-4052-9992-f30cbfd52e83",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetServiceGroupV2(ctx *pulumi.Context, args *GetServiceGroupV2Args, opts ...pulumi.InvokeOption) (*GetServiceGroupV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetServiceGroupV2Result

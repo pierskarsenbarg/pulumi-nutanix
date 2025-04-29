@@ -14,75 +14,18 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Provides Nutanix resource to List Routes request.
-        /// 
-        /// ## Example
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var routes = Nutanix.GetRoutesV2.Invoke(new()
-        ///     {
-        ///         Limit = 3,
-        ///         RouteTableExtId = "&lt;route_table_uuid&gt;",
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Task<GetRoutesV2Result> InvokeAsync(GetRoutesV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRoutesV2Result>("nutanix:index/getRoutesV2:getRoutesV2", args ?? new GetRoutesV2Args(), options.WithDefaults());
 
         /// <summary>
         /// Provides Nutanix resource to List Routes request.
-        /// 
-        /// ## Example
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var routes = Nutanix.GetRoutesV2.Invoke(new()
-        ///     {
-        ///         Limit = 3,
-        ///         RouteTableExtId = "&lt;route_table_uuid&gt;",
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetRoutesV2Result> Invoke(GetRoutesV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRoutesV2Result>("nutanix:index/getRoutesV2:getRoutesV2", args ?? new GetRoutesV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// Provides Nutanix resource to List Routes request.
-        /// 
-        /// ## Example
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using System.Linq;
-        /// using Pulumi;
-        /// using Nutanix = Pulumi.Nutanix;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var routes = Nutanix.GetRoutesV2.Invoke(new()
-        ///     {
-        ///         Limit = 3,
-        ///         RouteTableExtId = "&lt;route_table_uuid&gt;",
-        ///     });
-        /// 
-        /// });
-        /// ```
         /// </summary>
         public static Output<GetRoutesV2Result> Invoke(GetRoutesV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetRoutesV2Result>("nutanix:index/getRoutesV2:getRoutesV2", args ?? new GetRoutesV2InvokeArgs(), options.WithDefaults());

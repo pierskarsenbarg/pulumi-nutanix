@@ -14,13 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetRecoveryPointsV2RecoveryPointVolumeGroupRecoveryPointDiskRecoveryPointResult
     {
-        /// <summary>
-        /// External identifier of the disk.
-        /// </summary>
         public readonly string DiskExtId;
-        /// <summary>
-        /// External identifier of the disk recovery point.
-        /// </summary>
         public readonly string DiskRecoveryPointExtId;
 
         [OutputConstructor]

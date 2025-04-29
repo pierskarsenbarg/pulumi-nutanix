@@ -14,14 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecStorageConfigResult
     {
-        /// <summary>
-        /// Indicates whether the virtual disk is pinned to the hot tier or not.
-        /// </summary>
         public readonly bool IsFlashModeEnabled;
-        /// <summary>
-        /// QoS parameters to be enforced.
-        /// * `qos_config.throttled_iops`: Throttled IOPS for the governed entities. The block size for the I/O is 32 kB.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecStorageConfigQosConfigResult> QosConfigs;
 
         [OutputConstructor]

@@ -31,11 +31,358 @@ import (
 //			if err != nil {
 //				return err
 //			}
+//			_, err = nutanix.GetTemplatesV2(ctx, &nutanix.GetTemplatesV2Args{
+//				Filter: pulumi.StringRef("startswith(templateName,'template_name')"),
+//				Limit:  pulumi.IntRef(10),
+//				Page:   pulumi.IntRef(1),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
 //			return nil
 //		})
 //	}
 //
 // ```
+//
+// ## Templates
+//
+// The `templates` object is a list of all templates. Each template has the following attributes:
+//
+// * `tenantId` - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+// * `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+// * `extId`: A globally unique identifier of an instance that is suitable for external consumption.
+// * `templateName`: The user defined name of a Template.
+// * `templateDescription`: The user defined description of a Template.
+// * `templateVersionSpec`: A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance
+// * `guestUpdateStatus`: Status of a Guest Update.
+// * `createTime`: Time when the Template was created.
+// * `updateTime`: Time when the Template was last updated.
+// * `createdBy`: Information of the User.
+// * `updatedBy`: Information of the User.
+//
+// ### Links
+// The `links` attribute supports the following:
+//
+// * `href`: - The URL at which the entity described by the link can be accessed.
+// * `rel`: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+//
+// ### Template Version Spec
+// The `templateVersionSpec` attribute supports the following:
+//
+// * `extId`: A globally unique identifier of an instance that is suitable for external consumption.
+// * `versionName`: The user defined name of a Template Version.
+// * `versionDescription`: The user defined description of a Template Version.
+// * `vmSpec`: VM configuration.
+// * `createTime`: Time when the Template was created.
+// * `createdBy`: Information of the User.
+// * `isActiveVersion`: Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise.
+// * `isGcOverrideEnabled`: Allow or disallow override of the Guest Customization during Template deployment.
+//
+// ### guestUpdateStatus
+// Status of a Guest Update.
+//
+// * `deployedVmReference`: The identifier of the temporary VM created on initiating Guest OS Update.
+//
+// ### vmSpec
+//
+// * `name`: VM name.
+// * `description`: VM description
+// * `createTime`: VM creation time
+// * `updateTime`: VM last updated time.
+// * `source`: Reference to an entity that the VM should be cloned or created from
+// * `numSockets`: Number of vCPU sockets.
+// * `numCoresPerSocket`: Number of cores per socket.
+// * `numThreadsPerCore`: Number of threads per core
+// * `numNumaNodes`: Number of NUMA nodes. 0 means NUMA is disabled.
+// * `memorySizeBytes`: Memory size in bytes.
+// * `isVcpuHardPinningEnabled`: Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
+// * `isCpuPassthroughEnabled`: Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
+// * `enabledCpuFeatures`: The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor
+// * `isMemoryOvercommitEnabled`: Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
+// * `isGpuConsoleEnabled`: Indicates whether the vGPU console is enabled or not.
+// * `generationUuid`: Generation UUID of the VM. It should be of type UUID.
+// * `biosUuid`: BIOS UUID of the VM. It should be of type UUID.
+// * `categories`: Categories for the VM.
+// * `ownershipInfo`: Ownership information for the VM.
+// * `host`: Reference to the host, the VM is running on.
+// * `cluster`: Reference to a cluster.
+// * `guestCustomization`: Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+// * `guestTools`: The details about Nutanix Guest Tools for a VM.
+// * `hardwareClockTimezone`: VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+// * `isBrandingEnabled`: Indicates whether to remove AHV branding from VM firmware tables or not.
+// * `bootConfig`: Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+// * `isVgaConsoleEnabled`: Indicates whether the VGA console should be disabled or not.
+// * `machineType`: Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+// * `vtpmConfig`: Indicates how the vTPM for the VM should be configured.
+// * `isAgentVm`: Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
+// * `apcConfig`: Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
+// * `storageConfig`: Storage configuration for VM.
+// * `disks`: Disks attached to the VM.
+// * `cdRoms`: CD-ROMs attached to the VM.
+// * `nics`: NICs attached to the VM.
+// * `gpus`: GPUs attached to the VM.
+// * `serialPorts`: Serial ports configured on the VM.
+// * `protectionType`: The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
+// * `protectionPolicyState`: Status of protection policy applied to this VM.
+//
+// ### Source
+//
+// The `source` attribute supports the following:
+//
+// * `entityType`: Reference to an entity from which the VM should be cloned or created. Values are:
+//   - VM_RECOVERY_POINT: Reference to the recovery point entity from which the VM should be cloned or created.
+//   - VM: Reference to an entity from which the VM should be cloned or created.
+//
+// * `extId`: A globally unique identifier of a VM of type UUID.
+//
+// ### Categories
+// The `categories` attribute supports the following:
+//
+// * `extId`: A globally unique identifier of a VM category of type UUID.
+//
+// ### Ownership Info
+// The `ownershipInfo` attribute supports the following:
+//
+// * `owner`: Reference to the owner.
+// * `owner.ext_id`: A globally unique identifier of a VM owner type UUID.
+//
+// ### Host
+// The `host` attribute supports the following:
+//
+// * `extId`: A globally unique identifier of a host of type UUID.
+//
+// ### Cluster
+// The `cluster` attribute supports the following:
+//
+// * `extId`: The globally unique identifier of a cluster type UUID.
+//
+// ### Availability Zone
+// The `availabilityZone` attribute supports the following:
+//
+// * `extId`: The globally unique identifier of an availability zone type UUID.
+//
+// ### Guest Customization
+// The `guestCustomization` attribute supports the following:
+//
+// * `config`: The Nutanix Guest Tools customization settings.
+//
+// * `config.sysprep`: Sysprep config
+// * `config.cloud_init`: CloudInit Config
+//
+// #### config.sysprep
+// * `installType`: Indicates whether the guest will be freshly installed using this unattend configuration, or this unattend configuration will be applied to a pre-prepared image. Default is 'PREPARED'.
+// * `sysprepScript`: Object either UnattendXml or CustomKeyValues
+// * `sysprep_script.unattend_xml`: xml object
+// * `sysprep_script.custom_key_values`: The list of the individual KeyValuePair elements.
+//
+// #### config.cloud_init
+// * `datasourceType`: Type of datasource. Default: CONFIG_DRIVE_V2
+// * `metadata`: The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
+// * `cloudInitScript`: The script to use for cloud-init.
+// * `cloud_init_script.user_data`: user data object
+// * `cloud_init_script.custom_keys`: The list of the individual KeyValuePair elements.
+//
+// ### Guest Tools
+// The `guestTools` attribute supports the following:
+//
+// * `version`: Version of Nutanix Guest Tools installed on the VM.
+// * `isInstalled`: Indicates whether Nutanix Guest Tools is installed on the VM or not.
+// * `isIsoInserted`: Indicates whether Nutanix Guest Tools ISO is inserted or not.
+// * `availableVersion`: Version of Nutanix Guest Tools available on the cluster.
+// * `guestOsVersion`: Version of the operating system on the VM
+// * `isReachable`: Indicates whether the communication from VM to CVM is active or not.
+// * `isVssSnapshotCapable`: Indicates whether the VM is configured to take VSS snapshots through NGT or not.
+// * `isVmMobilityDriversInstalled`: Indicates whether the VM mobility drivers are installed on the VM or not.
+// * `isEnabled`: Indicates whether Nutanix Guest Tools is enabled or not.
+// * `capabilities`: The list of the application names that are enabled on the guest VM.
+//
+// ### Boot Config
+// The `bootConfig` attribute supports the following:
+//
+// * `legacyBoot`: LegacyBoot config Object
+// * `uefiBoot`: UefiBoot config Object
+//
+// #### boot_config.legacy_boot
+// * `bootDevice`: Boot Device object
+// * `boot_device.boot_device_disk`: Disk address.
+// * `boot_device.boot_device_disk.disk_address.bus_type`: Bus type for the device
+// * `boot_device.boot_device_disk.disk_address.index`: Device index on the bus. This field is ignored unless the bus details are specified.
+//
+// * `boot_device.boot_device_nic`: Disk Nic address.
+// * `boot_device.boot_device_nic.mac_address`: mac address
+//
+// * `bootOrder`: Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+//
+// #### boot_config.uefi_boot
+// * `isSecureBootEnabled`: Indicate whether to enable secure boot or not
+// * `nvramDevice`: Configuration for NVRAM to be presented to the VM.
+// * `nvram_device.backing_storage_info`: Storage provided by Nutanix ADSF
+//
+// ##### nvram_device.backing_storage_info
+// * `diskExtId`: The globally unique identifier of a VM disk. It should be of type UUID.
+// * `diskSizeBytes`: Size of the disk in Bytes
+// * `storageContainer`: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+// * `storageConfig`: Storage configuration for VM disks
+// * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
+// * `dataSource`: A reference to a disk or image that contains the contents of a disk.
+// * `isMigrationInProgress`: Indicates if the disk is undergoing migration to another container.
+//
+// ### VTPM Config
+// The `vtpmConfig` attribute supports the following:
+//
+// * `isVtpmEnabled`: Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
+// * `version`: Virtual trusted platform module version.
+//
+// ### APC Config
+// The `apcConfig` attribute supports the following:
+//
+// * `isApcEnabled`: If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
+// * `cpuModel`: CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
+// * `cpu_model.ext_id`: The globally unique identifier of the CPU model associated with the VM.
+// * `cpu_model.name`: Name of the CPU model associated with the VM.
+//
+// ### Storage Config
+// The `storageConfig` attribute supports the following:
+//
+// * `isFlashModeEnabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
+// * `qosConfig`: QoS parameters to be enforced.
+// * `qos_config.throttled_iops`: Throttled IOPS for the governed entities. The block size for the I/O is 32 kB.
+//
+// ### Disks
+// The `disks` attribute supports the following:
+//
+// * `extId`: A globally unique identifier of an instance that is suitable for external consumption.
+// * `diskAddress`: Disk address.
+// * `disk_address.bus_type`: Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+// * `disk_address.index`: Device index on the bus. This field is ignored unless the bus details are specified.
+// * `backingInfo`: Supporting storage to create virtual disk on.
+// * `backing_info.vm_disk`: backing Info for vmDisk
+// * `backing_info.adfs_volume_group_reference`: Volume Group Reference
+// * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: The globally unique identifier of an ADSF volume group. It should be of type UUID.
+//
+// #### backing_info.vm_disk
+// * `diskExtId`: The globally unique identifier of a VM disk. It should be of type UUID.
+// * `diskSizeBytes`: Size of the disk in Bytes
+// * `storageContainer`: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+// * `storage_container.ext_id`: A globally unique identifier of a VM disk container. It should be of type UUID.
+// * `storageConfig`: Storage configuration for VM disks
+// * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
+// * `dataSource`: A reference to a disk or image that contains the contents of a disk.
+// * `isMigrationInProgress`: Indicates if the disk is undergoing migration to another container.
+//
+// #### backing_info.vm_disk.data_source
+// * `reference`: Reference to image or vm disk
+// * `reference.image_reference`: Image Reference
+// * `reference.image_reference.image_ext_id`: The globally unique identifier of an image. It should be of type UUID.
+// * `reference.vm_disk_reference`: Vm Disk Reference
+// * `reference.vm_disk_reference.disk_ext_id`:  The globally unique identifier of a VM disk. It should be of type UUID.
+// * `reference.vm_disk_reference.disk_address`: Disk address.
+// * `reference.vm_disk_reference.disk_address.bus_type`: Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
+// * `reference.vm_disk_reference.disk_address.index`: Device index on the bus. This field is ignored unless the bus details are specified.
+// * `reference.vm_disk_reference.vm_reference`: This is a reference to a VM.
+// * `reference.vm_disk_reference.vm_reference.ext_id`: A globally unique identifier of a VM of type UUID.
+//
+// ### CD-ROMs
+// The `cdRoms` attribute supports the following:
+//
+// * `extId`: A globally unique identifier of an instance that is suitable for external consumption.
+// * `diskAddress`: Virtual Machine disk (VM disk).
+// * `backingInfo`: Storage provided by Nutanix ADSF
+// * `isoType`: Type of ISO image inserted in CD-ROM
+//
+// ### NICs
+// The `nics` attribute supports the following:
+//
+// * `extId`: A globally unique identifier of an instance that is suitable for external consumption
+// * `backingInfo`: Defines a NIC emulated by the hypervisor
+// * `networkInfo`: Network information for a NIC.
+//
+// ### nics.backing_info
+// * `model`: Options for the NIC emulation.
+// * `macAddress`: MAC address of the emulated NIC.
+// * `isConnected`: Indicates whether the NIC is connected or not. Default is True.
+// * `numQueues`: The number of Tx/Rx queue pairs for this NIC
+//
+// ### nics.network_info
+// * `nicType`: NIC type. Defaults to NORMAL_NIC. The acceptable values are: SPAN_DESTINATION_NIC, NORMAL_NIC, DIRECT_NIC, NETWORK_FUNCTION_NIC.
+// * `networkFunctionChain`: The network function chain associates with the NIC. Only valid if nicType is NORMAL_NIC.
+// * `network_function_chain.ext_id`: The globally unique identifier of a network function chain. It should be of type UUID.
+// * `networkFunctionNicType`: The type of this Network function NIC. Defaults to INGRESS.  values are: TAP, EGRESS, INGRESS.
+// * `subnet`: Network identifier for this adapter. Only valid if nicType is NORMAL_NIC or DIRECT_NIC.
+// * `subnet.ext_id`: The globally unique identifier of a subnet of type UUID.
+// * `vlanMode`: all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs. values are: ACCESS, TRUNKED.
+// * `trunkedVlans`: List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
+// * `shouldAllowUnknownMacs`: Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
+// * `ipv4Config`: The IP address configurations.
+// * `ipv4Info`: The runtime IP address information of the NIC.
+//
+// #### nics.ipv4_config
+// * `shouldAssignIp`: If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+// * `ipAddress`: The IP address of the NIC.
+// * `secondaryIpAddressList`: Secondary IP addresses for the NIC.
+//
+// ##### ip_address, secondaryIpAddressList
+// * `value`: The IPv4 address of the host.
+// * `prefixLength`: The prefix length of the IP address.
+//
+// #### nics.ipv4_info
+// * `learnedIpAddresses`: The list of IP addresses learned by the NIC.
+//
+// ##### learnedIpAddresses
+// * `value`: The IPv4 address of the host.
+// * `prefixLength`: The prefix length of the IP address.
+//
+// ### gpus
+// * `extId`: A globally unique identifier of an instance that is suitable for external consumption.
+// * `mode`: The mode of this GPU.
+// * `deviceId`: The device Id of the GPU.
+// * `vendor`: The vendor of the GPU.
+// * `pciAddress`: The (S)egment:(B)us:(D)evice.(F)unction hardware address. See
+// * `guestDriverVersion`: Last determined guest driver version.
+// * `name`: Name of the GPU resource.
+// * `frameBufferSizeBytes`: GPU frame buffer size in bytes.
+// * `numVirtualDisplayHeads`: Number of supported virtual display heads.
+// * `fraction`: Fraction of the physical GPU assigned.
+//
+// ### gpus.pci_address
+// * `segment`
+// * `bus`
+// * `device`
+// * `func`
+//
+// ### serialPorts
+// * `extId`: A globally unique identifier of an instance that is suitable for external consumption.
+// * `isConnected`: Indicates whether the serial port is connected or not.
+// * `index`: Index of the serial port.
+//
+// ### protectionPolicyState
+// * `policy`: Reference to the policy object in use.
+//
+// ### created_by, lastUpdatedBy
+//
+// * `extId`: A globally unique identifier of an instance that is suitable for external consumption.
+// * `username`: Identifier for the User in the form an email address.
+// * `userType`: Type of the User.
+// * `idpId`: Identifier of the IDP for the User.
+// * `displayName`: Display name for the User.
+// * `firstName`: First name for the User.
+// * `middleInitial`: Middle name for the User.
+// * `lastName`: Last name for the User.
+// * `emailId`: Email Id for the User.
+// * `locale`: Default locale for the User.
+// * `region`: Default Region for the User.
+// * `isForceResetPasswordEnabled`: Flag to force the User to reset password.
+// * `additionalAttributes`: Any additional attribute for the User.
+// * `status`: Status of the User.
+// * `bucketsAccessKeys`: Bucket Access Keys for the User.
+// * `lastLoginTime`: Last successful logged in time for the User.
+// * `createdTime`: Creation time of the User.
+// * `lastUpdatedTime`: Last updated time of the User.
+// * `createdBy`: User or Service who created the User.
+// * `lastUpdatedBy`: Last updated by this User ID.
+//
+// See detailed information in [Nutanix List Templates V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/listTemplates).
 func GetTemplatesV2(ctx *pulumi.Context, args *GetTemplatesV2Args, opts ...pulumi.InvokeOption) (*GetTemplatesV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTemplatesV2Result
@@ -48,14 +395,26 @@ func GetTemplatesV2(ctx *pulumi.Context, args *GetTemplatesV2Args, opts ...pulum
 
 // A collection of arguments for invoking getTemplatesV2.
 type GetTemplatesV2Args struct {
-	// A URL query parameter that allows clients to filter a collection of resources. The expression specified with $filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the $filter must conform to the OData V4.01 URL conventions.
+	// A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
+	// - templateName
 	Filter *string `pulumi:"filter"`
 	// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
 	Limit *int `pulumi:"limit"`
-	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default.
+	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
+	// - templateName
+	// - updateTime
 	OrderBy *string `pulumi:"orderBy"`
 	// A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results. Default is 0.
-	Page   *int    `pulumi:"page"`
+	Page *int `pulumi:"page"`
+	// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. If a $select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. The select can be applied to the following fields:
+	// - createTime
+	// - createdBy
+	// - guestUpdateStatus
+	// - templateDescription
+	// - templateName
+	// - templateVersionSpec
+	// - updateTime
+	// - updatedBy
 	Select *string `pulumi:"select"`
 }
 
@@ -63,11 +422,12 @@ type GetTemplatesV2Args struct {
 type GetTemplatesV2Result struct {
 	Filter *string `pulumi:"filter"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string                   `pulumi:"id"`
-	Limit     *int                     `pulumi:"limit"`
-	OrderBy   *string                  `pulumi:"orderBy"`
-	Page      *int                     `pulumi:"page"`
-	Select    *string                  `pulumi:"select"`
+	Id      string  `pulumi:"id"`
+	Limit   *int    `pulumi:"limit"`
+	OrderBy *string `pulumi:"orderBy"`
+	Page    *int    `pulumi:"page"`
+	Select  *string `pulumi:"select"`
+	// List of all templates.
 	Templates []GetTemplatesV2Template `pulumi:"templates"`
 }
 
@@ -82,14 +442,26 @@ func GetTemplatesV2Output(ctx *pulumi.Context, args GetTemplatesV2OutputArgs, op
 
 // A collection of arguments for invoking getTemplatesV2.
 type GetTemplatesV2OutputArgs struct {
-	// A URL query parameter that allows clients to filter a collection of resources. The expression specified with $filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the $filter must conform to the OData V4.01 URL conventions.
+	// A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
+	// - templateName
 	Filter pulumi.StringPtrInput `pulumi:"filter"`
 	// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
 	Limit pulumi.IntPtrInput `pulumi:"limit"`
-	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default.
+	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
+	// - templateName
+	// - updateTime
 	OrderBy pulumi.StringPtrInput `pulumi:"orderBy"`
 	// A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results. Default is 0.
-	Page   pulumi.IntPtrInput    `pulumi:"page"`
+	Page pulumi.IntPtrInput `pulumi:"page"`
+	// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. If a $select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. The select can be applied to the following fields:
+	// - createTime
+	// - createdBy
+	// - guestUpdateStatus
+	// - templateDescription
+	// - templateName
+	// - templateVersionSpec
+	// - updateTime
+	// - updatedBy
 	Select pulumi.StringPtrInput `pulumi:"select"`
 }
 
@@ -137,6 +509,7 @@ func (o GetTemplatesV2ResultOutput) Select() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetTemplatesV2Result) *string { return v.Select }).(pulumi.StringPtrOutput)
 }
 
+// List of all templates.
 func (o GetTemplatesV2ResultOutput) Templates() GetTemplatesV2TemplateArrayOutput {
 	return o.ApplyT(func(v GetTemplatesV2Result) []GetTemplatesV2Template { return v.Templates }).(GetTemplatesV2TemplateArrayOutput)
 }

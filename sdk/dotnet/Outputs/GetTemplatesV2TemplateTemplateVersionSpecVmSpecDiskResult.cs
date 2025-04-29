@@ -14,22 +14,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskResult
     {
-        /// <summary>
-        /// Supporting storage to create virtual disk on.
-        /// * `backing_info.vm_disk`: backing Info for vmDisk
-        /// * `backing_info.adfs_volume_group_reference`: Volume Group Reference
-        /// * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: The globally unique identifier of an ADSF volume group. It should be of type UUID.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoResult> BackingInfos;
-        /// <summary>
-        /// Disk address.
-        /// * `disk_address.bus_type`: Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-        /// * `disk_address.index`: Device index on the bus. This field is ignored unless the bus details are specified.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskDiskAddressResult> DiskAddresses;
-        /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
-        /// </summary>
         public readonly string ExtId;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskLinkResult> Links;
         public readonly string TenantId;

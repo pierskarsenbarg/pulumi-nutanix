@@ -28,7 +28,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.LookupClusterV2(ctx, &nutanix.LookupClusterV2Args{
-//				ExtId: "<YOUR-CLUSTER-ID>",
+//				ExtId: "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
 //			}, nil)
 //			if err != nil {
 //				return err

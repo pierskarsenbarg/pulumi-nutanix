@@ -16,6 +16,16 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const floating_ips = nutanix.getFloatingIpsV2({});
+ * const floating_ips_filter = nutanix.getFloatingIpsV2({
+ *     filter: "name eq 'floating_ip_example'",
+ * });
+ * const floating_ips_limit = nutanix.getFloatingIpsV2({
+ *     limit: 10,
+ * });
+ * const floating_ips_filter_limit = nutanix.getFloatingIpsV2({
+ *     filter: "name eq 'floating_ip_example'",
+ *     limit: 10,
+ * });
  * ```
  */
 export function getFloatingIpsV2(args?: GetFloatingIpsV2Args, opts?: pulumi.InvokeOptions): Promise<GetFloatingIpsV2Result> {
@@ -35,11 +45,19 @@ export function getFloatingIpsV2(args?: GetFloatingIpsV2Args, opts?: pulumi.Invo
  */
 export interface GetFloatingIpsV2Args {
     /**
-     * A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+     * A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. The expand can be applied to the following fields:
+     * - externalSubnet
+     * - vpc
+     * - vmNic
      */
     expand?: string;
     /**
-     * A URL query parameter that allows clients to filter a collection of resources.
+     * A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+     * - externalSubnetReference
+     * - floatingIp/ipv4/value
+     * - floatingIp/ipv6/value
+     * - loadBalancerSessionReference
+     * - name
      */
     filter?: string;
     /**
@@ -47,7 +65,10 @@ export interface GetFloatingIpsV2Args {
      */
     limit?: number;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+     * - floatingIp/ipv4/value
+     * - floatingIp/ipv6/value
+     * - name
      */
     orderBy?: string;
     /**
@@ -62,6 +83,9 @@ export interface GetFloatingIpsV2Args {
 export interface GetFloatingIpsV2Result {
     readonly expand?: string;
     readonly filter?: string;
+    /**
+     * List of all Floating IPs.
+     */
     readonly floatingIps: outputs.GetFloatingIpsV2FloatingIp[];
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -81,6 +105,16 @@ export interface GetFloatingIpsV2Result {
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const floating_ips = nutanix.getFloatingIpsV2({});
+ * const floating_ips_filter = nutanix.getFloatingIpsV2({
+ *     filter: "name eq 'floating_ip_example'",
+ * });
+ * const floating_ips_limit = nutanix.getFloatingIpsV2({
+ *     limit: 10,
+ * });
+ * const floating_ips_filter_limit = nutanix.getFloatingIpsV2({
+ *     filter: "name eq 'floating_ip_example'",
+ *     limit: 10,
+ * });
  * ```
  */
 export function getFloatingIpsV2Output(args?: GetFloatingIpsV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFloatingIpsV2Result> {
@@ -100,11 +134,19 @@ export function getFloatingIpsV2Output(args?: GetFloatingIpsV2OutputArgs, opts?:
  */
 export interface GetFloatingIpsV2OutputArgs {
     /**
-     * A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+     * A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. The expand can be applied to the following fields:
+     * - externalSubnet
+     * - vpc
+     * - vmNic
      */
     expand?: pulumi.Input<string>;
     /**
-     * A URL query parameter that allows clients to filter a collection of resources.
+     * A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+     * - externalSubnetReference
+     * - floatingIp/ipv4/value
+     * - floatingIp/ipv6/value
+     * - loadBalancerSessionReference
+     * - name
      */
     filter?: pulumi.Input<string>;
     /**
@@ -112,7 +154,10 @@ export interface GetFloatingIpsV2OutputArgs {
      */
     limit?: pulumi.Input<number>;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+     * - floatingIp/ipv4/value
+     * - floatingIp/ipv6/value
+     * - name
      */
     orderBy?: pulumi.Input<string>;
     /**

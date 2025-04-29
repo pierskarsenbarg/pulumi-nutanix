@@ -14,39 +14,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecResult
     {
-        /// <summary>
-        /// Time when the Template was created.
-        /// </summary>
         public readonly string CreateTime;
-        /// <summary>
-        /// Information of the User.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecCreatedByResult> CreatedBies;
-        /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
-        /// </summary>
         public readonly string ExtId;
-        /// <summary>
-        /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise.
-        /// </summary>
         public readonly bool IsActiveVersion;
-        /// <summary>
-        /// Allow or disallow override of the Guest Customization during Template deployment.
-        /// </summary>
         public readonly bool IsGcOverrideEnabled;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecLinkResult> Links;
         public readonly string TenantId;
-        /// <summary>
-        /// The user defined description of a Template Version.
-        /// </summary>
         public readonly string VersionDescription;
-        /// <summary>
-        /// The user defined name of a Template Version.
-        /// </summary>
         public readonly string VersionName;
-        /// <summary>
-        /// VM configuration.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecResult> VmSpecs;
 
         [OutputConstructor]

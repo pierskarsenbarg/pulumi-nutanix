@@ -82,6 +82,9 @@ class GetOperationV2Result:
     @property
     @pulumi.getter(name="createdTime")
     def created_time(self) -> builtins.str:
+        """
+        Permission creation time
+        """
         return pulumi.get(self, "created_time")
 
     @property
@@ -179,7 +182,7 @@ def get_operation_v2(ext_id: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    operation = nutanix.get_operation_v2(ext_id="<ext-id>")
+    operation = nutanix.get_operation_v2(ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
     ```
 
 
@@ -213,7 +216,7 @@ def get_operation_v2_output(ext_id: Optional[pulumi.Input[builtins.str]] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    operation = nutanix.get_operation_v2(ext_id="<ext-id>")
+    operation = nutanix.get_operation_v2(ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
     ```
 
 

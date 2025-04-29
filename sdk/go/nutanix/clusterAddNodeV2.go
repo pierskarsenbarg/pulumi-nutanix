@@ -13,6 +13,224 @@ import (
 )
 
 // Add node on a cluster identified by {extId}.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+// func main() {
+// pulumi.Run(func(ctx *pulumi.Context) error {
+// // cluster of 3 node uuid that we want to add node
+// clustersExtId := "00057b8b-0b3b-4b3b-0000-000000000000";
+// // for example
+// cvmIp := "10.xx.xx.xx";
+// //# check if the node to add is un configured or not
+// cluster_node, err := nutanix.NewClustersDiscoverUnconfiguredNodesV2(ctx, "cluster-node", &nutanix.ClustersDiscoverUnconfiguredNodesV2Args{
+// ExtId: pulumi.String(clustersExtId),
+// AddressType: pulumi.String("IPV4"),
+// IpFilterLists: nutanix.ClustersDiscoverUnconfiguredNodesV2IpFilterListArray{
+// &nutanix.ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs{
+// Ipv4s: nutanix.ClustersDiscoverUnconfiguredNodesV2IpFilterListIpv4Array{
+// &nutanix.ClustersDiscoverUnconfiguredNodesV2IpFilterListIpv4Args{
+// Value: pulumi.String(cvmIp),
+// },
+// },
+// },
+// },
+// })
+// if err != nil {
+// return err
+// }
+// //# fetch Network info for unconfigured node
+// node_network_info, err := nutanix.NewClustersUnconfiguredNodeNetworksV2(ctx, "node-network-info", &nutanix.ClustersUnconfiguredNodeNetworksV2Args{
+// ExtId: pulumi.String(clustersExtId),
+// RequestType: pulumi.String("expand_cluster"),
+// NodeLists: nutanix.ClustersUnconfiguredNodeNetworksV2NodeListArray{
+// &nutanix.ClustersUnconfiguredNodeNetworksV2NodeListArgs{
+// CvmIps: nutanix.ClustersUnconfiguredNodeNetworksV2NodeListCvmIpArray{
+// &nutanix.ClustersUnconfiguredNodeNetworksV2NodeListCvmIpArgs{
+// Ipv4s: nutanix.ClustersUnconfiguredNodeNetworksV2NodeListCvmIpIpv4Array{
+// &nutanix.ClustersUnconfiguredNodeNetworksV2NodeListCvmIpIpv4Args{
+// Value: pulumi.String(cvmIp),
+// },
+// },
+// },
+// },
+// HypervisorIps: nutanix.ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIpArray{
+// &nutanix.ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIpArgs{
+// Ipv4s: nutanix.ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIpIpv4Array{
+// &nutanix.ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIpIpv4Args{
+// Value: cluster_node.UnconfiguredNodes.ApplyT(func(unconfiguredNodes []nutanix.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode) (*string, error) {
+// return &unconfiguredNodes[0].HypervisorIps[0].Ipv4s[0].Value, nil
+// }).(pulumi.StringPtrOutput),
+// },
+// },
+// },
+// },
+// },
+// },
+// }, pulumi.DependsOn([]pulumi.Resource{
+// cluster_node,
+// }))
+// if err != nil {
+// return err
+// }
+// //# add node to the cluster
+// _, err = nutanix.NewClusterAddNodeV2(ctx, "add-node", &nutanix.ClusterAddNodeV2Args{
+// ClusterExtId: pulumi.String(clustersExtId),
+// ShouldSkipAddNode: pulumi.Bool(false),
+// ShouldSkipPreExpandChecks: pulumi.Bool(false),
+// NodeParams: nutanix.ClusterAddNodeV2NodeParamArray{
+// &nutanix.ClusterAddNodeV2NodeParamArgs{
+// ShouldSkipHostNetworking: pulumi.Bool(false),
+// HypervisorIsos: nutanix.ClusterAddNodeV2NodeParamHypervisorIsoArray{
+// &nutanix.ClusterAddNodeV2NodeParamHypervisorIsoArgs{
+// Type: cluster_node.UnconfiguredNodes.ApplyT(func(unconfiguredNodes []nutanix.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode) (*string, error) {
+// return &unconfiguredNodes[0].HypervisorType, nil
+// }).(pulumi.StringPtrOutput),
+// },
+// },
+// NodeLists: nutanix.ClusterAddNodeV2NodeParamNodeListArray{
+// &nutanix.ClusterAddNodeV2NodeParamNodeListArgs{
+// NodeUuid: cluster_node.UnconfiguredNodes.ApplyT(func(unconfiguredNodes []nutanix.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode) (*string, error) {
+// return &unconfiguredNodes[0].NodeUuid, nil
+// }).(pulumi.StringPtrOutput),
+// Model: cluster_node.UnconfiguredNodes.ApplyT(func(unconfiguredNodes []nutanix.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode) (*string, error) {
+// return &unconfiguredNodes[0].RackableUnitModel, nil
+// }).(pulumi.StringPtrOutput),
+// BlockId: cluster_node.UnconfiguredNodes.ApplyT(func(unconfiguredNodes []nutanix.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode) (*string, error) {
+// return &unconfiguredNodes[0].RackableUnitSerial, nil
+// }).(pulumi.StringPtrOutput),
+// HypervisorType: cluster_node.UnconfiguredNodes.ApplyT(func(unconfiguredNodes []nutanix.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode) (*string, error) {
+// return &unconfiguredNodes[0].HypervisorType, nil
+// }).(pulumi.StringPtrOutput),
+// HypervisorVersion: cluster_node.UnconfiguredNodes.ApplyT(func(unconfiguredNodes []nutanix.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode) (*string, error) {
+// return &unconfiguredNodes[0].HypervisorVersion, nil
+// }).(pulumi.StringPtrOutput),
+// NodePosition: cluster_node.UnconfiguredNodes.ApplyT(func(unconfiguredNodes []nutanix.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode) (*string, error) {
+// return &unconfiguredNodes[0].NodePosition, nil
+// }).(pulumi.StringPtrOutput),
+// NosVersion: cluster_node.UnconfiguredNodes.ApplyT(func(unconfiguredNodes []nutanix.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode) (*string, error) {
+// return &unconfiguredNodes[0].NosVersion, nil
+// }).(pulumi.StringPtrOutput),
+// HypervisorHostname: pulumi.String("example"),
+// CurrentNetworkInterface: node_network_info.NodesNetworkingDetails.ApplyT(func(nodesNetworkingDetails []nutanix.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail) (*string, error) {
+// return &nodesNetworkingDetails[0].Uplinks[0].UplinkLists[0].Name, nil
+// }).(pulumi.StringPtrOutput),
+// HypervisorIps: nutanix.ClusterAddNodeV2NodeParamNodeListHypervisorIpArray{
+// &nutanix.ClusterAddNodeV2NodeParamNodeListHypervisorIpArgs{
+// Ipv4s: nutanix.ClusterAddNodeV2NodeParamNodeListHypervisorIpIpv4Array{
+// &nutanix.ClusterAddNodeV2NodeParamNodeListHypervisorIpIpv4Args{
+// Value: cluster_node.UnconfiguredNodes.ApplyT(func(unconfiguredNodes []nutanix.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode) (*string, error) {
+// return &unconfiguredNodes[0].HypervisorIps[0].Ipv4s[0].Value, nil
+// }).(pulumi.StringPtrOutput),
+// },
+// },
+// },
+// },
+// CvmIps: nutanix.ClusterAddNodeV2NodeParamNodeListCvmIpArray{
+// &nutanix.ClusterAddNodeV2NodeParamNodeListCvmIpArgs{
+// Ipv4s: nutanix.ClusterAddNodeV2NodeParamNodeListCvmIpIpv4Array{
+// &nutanix.ClusterAddNodeV2NodeParamNodeListCvmIpIpv4Args{
+// Value: pulumi.String(cvmIp),
+// },
+// },
+// },
+// },
+// IpmiIps: nutanix.ClusterAddNodeV2NodeParamNodeListIpmiIpArray{
+// &nutanix.ClusterAddNodeV2NodeParamNodeListIpmiIpArgs{
+// Ipv4s: nutanix.ClusterAddNodeV2NodeParamNodeListIpmiIpIpv4Array{
+// &nutanix.ClusterAddNodeV2NodeParamNodeListIpmiIpIpv4Args{
+// Value: cluster_node.UnconfiguredNodes.ApplyT(func(unconfiguredNodes []nutanix.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode) (*string, error) {
+// return &unconfiguredNodes[0].IpmiIps[0].Ipv4s[0].Value, nil
+// }).(pulumi.StringPtrOutput),
+// },
+// },
+// },
+// },
+// IsRoboMixedHypervisor: pulumi.Bool(true),
+// Networks: nutanix.ClusterAddNodeV2NodeParamNodeListNetworkArray{
+// &nutanix.ClusterAddNodeV2NodeParamNodeListNetworkArgs{
+// Name: node_network_info.NodesNetworkingDetails.ApplyT(func(nodesNetworkingDetails []nutanix.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail) (*string, error) {
+// return &nodesNetworkingDetails[0].NetworkInfos[0].Hcis[0].Name, nil
+// }).(pulumi.StringPtrOutput),
+// Networks: node_network_info.NodesNetworkingDetails.ApplyT(func(nodesNetworkingDetails []nutanix.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail) (interface{}, error) {
+// return nodesNetworkingDetails[0].NetworkInfos[0].Hcis[0].Networks, nil
+// }).(pulumi.Interface{}Output),
+// Uplinks: nutanix.ClusterAddNodeV2NodeParamNodeListNetworkUplinkArray{
+// &nutanix.ClusterAddNodeV2NodeParamNodeListNetworkUplinkArgs{
+// Actives: nutanix.ClusterAddNodeV2NodeParamNodeListNetworkUplinkActiveArray{
+// &nutanix.ClusterAddNodeV2NodeParamNodeListNetworkUplinkActiveArgs{
+// Name: node_network_info.NodesNetworkingDetails.ApplyT(func(nodesNetworkingDetails []nutanix.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail) (*string, error) {
+// return &nodesNetworkingDetails[0].Uplinks[0].UplinkLists[0].Name, nil
+// }).(pulumi.StringPtrOutput),
+// Mac: node_network_info.NodesNetworkingDetails.ApplyT(func(nodesNetworkingDetails []nutanix.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail) (*string, error) {
+// return &nodesNetworkingDetails[0].Uplinks[0].UplinkLists[0].Mac, nil
+// }).(pulumi.StringPtrOutput),
+// Value: node_network_info.NodesNetworkingDetails.ApplyT(func(nodesNetworkingDetails []nutanix.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail) (*string, error) {
+// return &nodesNetworkingDetails[0].Uplinks[0].UplinkLists[0].Name, nil
+// }).(pulumi.StringPtrOutput),
+// },
+// },
+// Standbies: nutanix.ClusterAddNodeV2NodeParamNodeListNetworkUplinkStandbyArray{
+// &nutanix.ClusterAddNodeV2NodeParamNodeListNetworkUplinkStandbyArgs{
+// Name: node_network_info.NodesNetworkingDetails.ApplyT(func(nodesNetworkingDetails []nutanix.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail) (*string, error) {
+// return &nodesNetworkingDetails[0].Uplinks[0].UplinkLists[1].Name, nil
+// }).(pulumi.StringPtrOutput),
+// Mac: node_network_info.NodesNetworkingDetails.ApplyT(func(nodesNetworkingDetails []nutanix.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail) (*string, error) {
+// return &nodesNetworkingDetails[0].Uplinks[0].UplinkLists[1].Mac, nil
+// }).(pulumi.StringPtrOutput),
+// Value: node_network_info.NodesNetworkingDetails.ApplyT(func(nodesNetworkingDetails []nutanix.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail) (*string, error) {
+// return &nodesNetworkingDetails[0].Uplinks[0].UplinkLists[1].Name, nil
+// }).(pulumi.StringPtrOutput),
+// },
+// },
+// },
+// },
+// },
+// },
+// },
+// },
+// },
+// },
+// ConfigParams: nutanix.ClusterAddNodeV2ConfigParamArray{
+// &nutanix.ClusterAddNodeV2ConfigParamArgs{
+// ShouldSkipImaging: pulumi.Bool(true),
+// TargetHypervisor: cluster_node.UnconfiguredNodes.ApplyT(func(unconfiguredNodes []nutanix.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode) (*string, error) {
+// return &unconfiguredNodes[0].HypervisorType, nil
+// }).(pulumi.StringPtrOutput),
+// },
+// },
+// RemoveNodeParams: nutanix.ClusterAddNodeV2RemoveNodeParamArray{
+// &nutanix.ClusterAddNodeV2RemoveNodeParamArgs{
+// ExtraParams: nutanix.ClusterAddNodeV2RemoveNodeParamExtraParamArray{
+// &nutanix.ClusterAddNodeV2RemoveNodeParamExtraParamArgs{
+// ShouldSkipUpgradeCheck: pulumi.Bool(false),
+// SkipSpaceCheck: pulumi.Bool(false),
+// ShouldSkipAddCheck: pulumi.Bool(false),
+// },
+// },
+// ShouldSkipRemove: pulumi.Bool(false),
+// ShouldSkipPrechecks: pulumi.Bool(false),
+// },
+// },
+// }, pulumi.DependsOn([]pulumi.Resource{
+// node_network_info,
+// }))
+// if err != nil {
+// return err
+// }
+// return nil
+// })
+// }
+// ```
 type ClusterAddNodeV2 struct {
 	pulumi.CustomResourceState
 

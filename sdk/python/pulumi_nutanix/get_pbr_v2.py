@@ -179,7 +179,7 @@ def get_pbr_v2(ext_id: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    pbr = nutanix.get_pbr_v2(ext_id="<pbr_uuid>")
+    get_pbr = nutanix.get_pbr_v2(ext_id="96a22c81-ed58-4bed-96bc-46b488626612")
     ```
     """
     __args__ = dict()
@@ -210,7 +210,7 @@ def get_pbr_v2_output(ext_id: Optional[pulumi.Input[builtins.str]] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    pbr = nutanix.get_pbr_v2(ext_id="<pbr_uuid>")
+    get_pbr = nutanix.get_pbr_v2(ext_id="96a22c81-ed58-4bed-96bc-46b488626612")
     ```
     """
     __args__ = dict()

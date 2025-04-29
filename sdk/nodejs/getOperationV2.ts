@@ -16,7 +16,7 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const operation = nutanix.getOperationV2({
- *     extId: "<ext-id>",
+ *     extId: "8a938cc5-282b-48c4-81be-de22de145d07",
  * });
  * ```
  */
@@ -49,6 +49,9 @@ export interface GetOperationV2Result {
      * Client that created the entity.
      */
     readonly clientName: string;
+    /**
+     * Permission creation time
+     */
     readonly createdTime: string;
     /**
      * Permission description
@@ -93,7 +96,7 @@ export interface GetOperationV2Result {
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const operation = nutanix.getOperationV2({
- *     extId: "<ext-id>",
+ *     extId: "8a938cc5-282b-48c4-81be-de22de145d07",
  * });
  * ```
  */

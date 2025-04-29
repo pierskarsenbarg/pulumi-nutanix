@@ -37,6 +37,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly bool? ShouldAllowUnknownMacs;
         /// <summary>
         /// Network identifier for this adapter. Only valid if nic_type is NORMAL_NIC or DIRECT_NIC
+        /// * `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
         /// </summary>
         public readonly ImmutableArray<Outputs.VirtualMachineV2NicNetworkInfoSubnet> Subnets;
         /// <summary>

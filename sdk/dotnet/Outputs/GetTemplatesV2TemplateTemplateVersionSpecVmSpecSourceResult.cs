@@ -14,13 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecSourceResult
     {
-        /// <summary>
-        /// Entity Type of source
-        /// </summary>
         public readonly string EntityType;
-        /// <summary>
-        /// The globally unique identifier of a VM. It should be of type UUID.
-        /// </summary>
         public readonly string ExtId;
 
         [OutputConstructor]

@@ -13,21 +13,11 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class PcRegistrationV2NetworkExternalNetworkIpRangeArgs : global::Pulumi.ResourceArgs
     {
-        [Input("begins")]
-        private InputList<Inputs.PcRegistrationV2NetworkExternalNetworkIpRangeBeginArgs>? _begins;
-        public InputList<Inputs.PcRegistrationV2NetworkExternalNetworkIpRangeBeginArgs> Begins
-        {
-            get => _begins ?? (_begins = new InputList<Inputs.PcRegistrationV2NetworkExternalNetworkIpRangeBeginArgs>());
-            set => _begins = value;
-        }
+        [Input("begin")]
+        public Input<Inputs.PcRegistrationV2NetworkExternalNetworkIpRangeBeginArgs>? Begin { get; set; }
 
-        [Input("ends")]
-        private InputList<Inputs.PcRegistrationV2NetworkExternalNetworkIpRangeEndArgs>? _ends;
-        public InputList<Inputs.PcRegistrationV2NetworkExternalNetworkIpRangeEndArgs> Ends
-        {
-            get => _ends ?? (_ends = new InputList<Inputs.PcRegistrationV2NetworkExternalNetworkIpRangeEndArgs>());
-            set => _ends = value;
-        }
+        [Input("end")]
+        public Input<Inputs.PcRegistrationV2NetworkExternalNetworkIpRangeEndArgs>? End { get; set; }
 
         public PcRegistrationV2NetworkExternalNetworkIpRangeArgs()
         {

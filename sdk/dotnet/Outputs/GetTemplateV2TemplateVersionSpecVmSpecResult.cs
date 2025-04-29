@@ -115,6 +115,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// Indicates whether the VGA console should be disabled or not.
         /// </summary>
         public readonly bool IsVgaConsoleEnabled;
+        /// <summary>
+        /// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecLinkResult> Links;
         /// <summary>
         /// Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
@@ -174,6 +177,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// Storage configuration for VM disks
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecStorageConfigResult> StorageConfigs;
+        /// <summary>
+        /// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// </summary>
         public readonly string TenantId;
         /// <summary>
         /// VM last updated time.

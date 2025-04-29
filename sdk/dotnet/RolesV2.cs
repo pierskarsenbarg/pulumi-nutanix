@@ -20,14 +20,27 @@ namespace PiersKarsenbarg.Nutanix
     /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// using Nutanix = Pulumi.Nutanix;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var example = new Nutanix.RolesV2("example", new()
+    ///     var operations_filtered_list = Nutanix.GetOperationsV2.Invoke(new()
     ///     {
-    ///         Description = "test description",
-    ///         DisplayName = "{{ display-name }}",
-    ///         Operations = "{{ operations }}",
+    ///         Filter = "startswith(displayName, 'Create_')",
+    ///     });
+    /// 
+    ///     // Create role
+    ///     var example_role = new Nutanix.RolesV2("example-role", new()
+    ///     {
+    ///         DisplayName = "example_role",
+    ///         Description = "create example role",
+    ///         Operations = new[]
+    ///         {
+    ///             operations_filtered_list.Apply(operations_filtered_list =&gt; operations_filtered_list.Apply(getOperationsV2Result =&gt; getOperationsV2Result.Operations[0]?.ExtId)),
+    ///             operations_filtered_list.Apply(operations_filtered_list =&gt; operations_filtered_list.Apply(getOperationsV2Result =&gt; getOperationsV2Result.Operations[1]?.ExtId)),
+    ///             operations_filtered_list.Apply(operations_filtered_list =&gt; operations_filtered_list.Apply(getOperationsV2Result =&gt; getOperationsV2Result.Operations[2]?.ExtId)),
+    ///             operations_filtered_list.Apply(operations_filtered_list =&gt; operations_filtered_list.Apply(getOperationsV2Result =&gt; getOperationsV2Result.Operations[3]?.ExtId)),
+    ///         },
     ///     });
     /// 
     /// });

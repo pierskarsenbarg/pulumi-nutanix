@@ -15,8 +15,8 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const addrGroup = nutanix.getAddressGroupV2({
- *     extId: "{{ address_group uuid }}",
+ * const get_addr_group = nutanix.getAddressGroupV2({
+ *     extId: "0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b",
  * });
  * ```
  */
@@ -93,8 +93,8 @@ export interface GetAddressGroupV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const addrGroup = nutanix.getAddressGroupV2({
- *     extId: "{{ address_group uuid }}",
+ * const get_addr_group = nutanix.getAddressGroupV2({
+ *     extId: "0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b",
  * });
  * ```
  */

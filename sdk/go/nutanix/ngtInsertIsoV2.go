@@ -13,6 +13,36 @@ import (
 )
 
 // Provides Nutanix resource toInserts the Nutanix Guest Tools installation and configuration ISO into a virtual machine.
+//
+// ## Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewNgtInsertIsoV2(ctx, "example", &nutanix.NgtInsertIsoV2Args{
+//				Capablities: pulumi.StringArray{
+//					pulumi.String("VSS_SNAPSHOT"),
+//				},
+//				ExtId:        pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),
+//				IsConfigOnly: pulumi.Bool(false),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type NgtInsertIsoV2 struct {
 	pulumi.CustomResourceState
 

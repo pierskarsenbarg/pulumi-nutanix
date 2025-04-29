@@ -14,67 +14,22 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateUpdatedByResult
     {
-        /// <summary>
-        /// Any additional attribute for the User.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateUpdatedByAdditionalAttributeResult> AdditionalAttributes;
         public readonly string CreationType;
-        /// <summary>
-        /// VM description
-        /// </summary>
         public readonly string Description;
-        /// <summary>
-        /// Display name for the User.
-        /// </summary>
         public readonly string DisplayName;
-        /// <summary>
-        /// Email Id for the User.
-        /// </summary>
         public readonly string EmailId;
-        /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
-        /// </summary>
         public readonly string ExtId;
-        /// <summary>
-        /// First name for the User.
-        /// </summary>
         public readonly string FirstName;
-        /// <summary>
-        /// Identifier of the IDP for the User.
-        /// </summary>
         public readonly string IdpId;
-        /// <summary>
-        /// Flag to force the User to reset password.
-        /// </summary>
         public readonly bool IsForceResetPasswordEnabled;
-        /// <summary>
-        /// Last name for the User.
-        /// </summary>
         public readonly string LastName;
-        /// <summary>
-        /// Default locale for the User.
-        /// </summary>
         public readonly string Locale;
-        /// <summary>
-        /// Middle name for the User.
-        /// </summary>
         public readonly string MiddleInitial;
         public readonly string Password;
-        /// <summary>
-        /// Default Region for the User.
-        /// </summary>
         public readonly string Region;
-        /// <summary>
-        /// Status of the User.
-        /// </summary>
         public readonly string Status;
-        /// <summary>
-        /// Type of the User.
-        /// </summary>
         public readonly string UserType;
-        /// <summary>
-        /// Identifier for the User in the form an email address.
-        /// </summary>
         public readonly string Username;
 
         [OutputConstructor]

@@ -22,7 +22,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// Client that created the entity.
         /// </summary>
         public readonly string ClientName;
+        /// <summary>
+        /// Permission creation time
+        /// </summary>
         public readonly string CreatedTime;
+        /// <summary>
+        /// Permission description
+        /// </summary>
         public readonly string Description;
         /// <summary>
         /// Permission name.

@@ -12,6 +12,70 @@ import (
 )
 
 // Provides Nutanix resource to create Floating IPs.
+//
+// ## Example1 :  create Floating IP with External Subnet
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// create Floating IP with External Subnet UUID
+//			_, err := nutanix.NewFloatingIpV2(ctx, "fip-ext-subnet", &nutanix.FloatingIpV2Args{
+//				Description:             pulumi.String("example fip  description"),
+//				ExternalSubnetReference: pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Example2 :  create Floating IP with External Subnet with vm association
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewFloatingIpV2(ctx, "fip-ext-subnet-vm", &nutanix.FloatingIpV2Args{
+//				Associations: nutanix.FloatingIpV2AssociationArray{
+//					&nutanix.FloatingIpV2AssociationArgs{
+//						VmNicAssociations: nutanix.FloatingIpV2AssociationVmNicAssociationArray{
+//							&nutanix.FloatingIpV2AssociationVmNicAssociationArgs{
+//								VmNicReference: pulumi.String("31e4b3b1-4b3b-4b3b-4b3b-4b3b4b3b4b3b"),
+//							},
+//						},
+//					},
+//				},
+//				Description:             pulumi.String("example fip  description"),
+//				ExternalSubnetReference: pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type FloatingIpV2 struct {
 	pulumi.CustomResourceState
 

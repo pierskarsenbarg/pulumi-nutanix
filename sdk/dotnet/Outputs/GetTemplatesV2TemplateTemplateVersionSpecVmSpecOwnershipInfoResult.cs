@@ -14,10 +14,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecOwnershipInfoResult
     {
-        /// <summary>
-        /// Owner reference
-        /// * `owner.ext_id`: The globally unique identifier of a VM owner.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecOwnershipInfoOwnerResult> Owners;
 
         [OutputConstructor]

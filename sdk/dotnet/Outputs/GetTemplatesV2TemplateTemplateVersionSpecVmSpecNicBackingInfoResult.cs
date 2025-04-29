@@ -15,17 +15,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicBackingInfoResult
     {
         public readonly bool? IsConnected;
-        /// <summary>
-        /// MAC address of the emulated NIC.
-        /// </summary>
         public readonly string MacAddress;
-        /// <summary>
-        /// Options for the NIC emulation.
-        /// </summary>
         public readonly string Model;
-        /// <summary>
-        /// The number of Tx/Rx queue pairs for this NIC
-        /// </summary>
         public readonly int? NumQueues;
 
         [OutputConstructor]

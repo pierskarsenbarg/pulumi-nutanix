@@ -12,6 +12,28 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides Nutanix resource to Trigger an in-guest upgrade of Nutanix Guest Tools.
+    /// 
+    /// ## Example
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var example = new Nutanix.NgtUpgradeV2("example", new()
+    ///     {
+    ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+    ///         RebootPreference = new Nutanix.Inputs.NgtUpgradeV2RebootPreferenceArgs
+    ///         {
+    ///             ScheduleType = "IMMEDIATE",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/ngtUpgradeV2:NgtUpgradeV2")]
     public partial class NgtUpgradeV2 : global::Pulumi.CustomResource

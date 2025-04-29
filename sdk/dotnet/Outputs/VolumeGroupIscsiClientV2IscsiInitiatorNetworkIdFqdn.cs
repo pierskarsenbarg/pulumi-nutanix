@@ -18,7 +18,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// - The fully qualified domain name.
         /// 
         /// 
-        /// See detailed information in [Nutanix Volumes V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0).
+        /// See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0#tag/VolumeGroups/operation/attachIscsiClient).
         /// </summary>
         public readonly string? Value;
 

@@ -623,7 +623,7 @@ class VolumeGroupV2(pulumi.CustomResource):
             sharing_status="SHARED",
             target_name="volumegroup-test-001234",
             created_by="example",
-            cluster_reference="<Cluster uuid>",
+            cluster_reference="ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
             iscsi_features=[{
                 "enabled_authentications": "CHAP",
                 "target_secret": "123456789abc",
@@ -683,7 +683,7 @@ class VolumeGroupV2(pulumi.CustomResource):
             sharing_status="SHARED",
             target_name="volumegroup-test-001234",
             created_by="example",
-            cluster_reference="<Cluster uuid>",
+            cluster_reference="ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
             iscsi_features=[{
                 "enabled_authentications": "CHAP",
                 "target_secret": "123456789abc",

@@ -8,6 +8,17 @@ import * as utilities from "./utilities";
 
 /**
  * Get an service Group by ExtID
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const serviceGroup = nutanix.getServiceGroupV2({
+ *     extId: "07167778-266d-4052-9992-f30cbfd52e83",
+ * });
+ * ```
  */
 export function getServiceGroupV2(args: GetServiceGroupV2Args, opts?: pulumi.InvokeOptions): Promise<GetServiceGroupV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -78,6 +89,17 @@ export interface GetServiceGroupV2Result {
 }
 /**
  * Get an service Group by ExtID
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const serviceGroup = nutanix.getServiceGroupV2({
+ *     extId: "07167778-266d-4052-9992-f30cbfd52e83",
+ * });
+ * ```
  */
 export function getServiceGroupV2Output(args: GetServiceGroupV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetServiceGroupV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

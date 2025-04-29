@@ -157,7 +157,7 @@ def get_user_group_v2(ext_id: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    usergroup = nutanix.get_user_group_v2(ext_id="<External Identifier of the User Group.>")
+    get_ug = nutanix.get_user_group_v2(ext_id="a2a8650a-358a-4791-90c9-7a8b6e2989d6")
     ```
 
 
@@ -189,7 +189,7 @@ def get_user_group_v2_output(ext_id: Optional[pulumi.Input[builtins.str]] = None
     import pulumi
     import pulumi_nutanix as nutanix
 
-    usergroup = nutanix.get_user_group_v2(ext_id="<External Identifier of the User Group.>")
+    get_ug = nutanix.get_user_group_v2(ext_id="a2a8650a-358a-4791-90c9-7a8b6e2989d6")
     ```
 
 

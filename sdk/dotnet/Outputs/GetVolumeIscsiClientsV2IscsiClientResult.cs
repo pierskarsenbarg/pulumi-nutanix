@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVolumeIscsiClientsV2IscsiClientAttachedTargetResult> AttachedTargets;
         /// <summary>
-        /// -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
+        /// The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group.
         /// </summary>
         public readonly string AttachmentSite;
         /// <summary>
@@ -27,27 +27,27 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string ClusterReference;
         /// <summary>
-        /// -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
+        /// The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided.
         /// </summary>
         public readonly string EnabledAuthentications;
         /// <summary>
-        /// - A globally unique identifier of an instance that is suitable for external consumption.
+        /// A globally unique identifier of an instance that is suitable for external consumption.
         /// </summary>
         public readonly string ExtId;
         /// <summary>
-        /// -iSCSI initiator name. During the attach operation, exactly one of iscsiInitiatorName and iscsiInitiatorNetworkId must be specified. This field is immutable.
+        /// iSCSI initiator name. During the attach operation, exactly one of iscsiInitiatorName and iscsiInitiatorNetworkId must be specified. This field is immutable.
         /// </summary>
         public readonly string IscsiInitiatorName;
         /// <summary>
-        /// - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+        /// An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdResult> IscsiInitiatorNetworkIds;
         /// <summary>
-        /// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVolumeIscsiClientsV2IscsiClientLinkResult> Links;
         /// <summary>
-        /// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
         /// </summary>
         public readonly string TenantId;
 

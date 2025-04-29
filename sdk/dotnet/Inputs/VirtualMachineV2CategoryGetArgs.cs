@@ -14,7 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class VirtualMachineV2CategoryGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
+        /// A globally unique identifier of a VM category of type UUID.
         /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }

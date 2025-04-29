@@ -27,8 +27,47 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewServiceGroupsV2(ctx, "service-group", &nutanix.ServiceGroupsV2Args{
-//				Description: pulumi.String("{{ desc }}"),
+//			// Add Service  group. with TCP and UDP
+//			_, err := nutanix.NewServiceGroupsV2(ctx, "tcp-udp-service", &nutanix.ServiceGroupsV2Args{
+//				Description: pulumi.String("service group description"),
+//				TcpServices: nutanix.ServiceGroupsV2TcpServiceArray{
+//					&nutanix.ServiceGroupsV2TcpServiceArgs{
+//						EndPort:   pulumi.Int(232),
+//						StartPort: pulumi.Int(232),
+//					},
+//				},
+//				UdpServices: nutanix.ServiceGroupsV2UdpServiceArray{
+//					&nutanix.ServiceGroupsV2UdpServiceArgs{
+//						EndPort:   pulumi.Int(232),
+//						StartPort: pulumi.Int(232),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			// service group with ICMP
+//			_, err = nutanix.NewServiceGroupsV2(ctx, "icmp-service", &nutanix.ServiceGroupsV2Args{
+//				Description: pulumi.String("service group description"),
+//				IcmpServices: nutanix.ServiceGroupsV2IcmpServiceArray{
+//					&nutanix.ServiceGroupsV2IcmpServiceArgs{
+//						Code: pulumi.Int(0),
+//						Type: pulumi.Int(8),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			// service group with All TCP, UDP and ICMP
+//			_, err = nutanix.NewServiceGroupsV2(ctx, "all-service", &nutanix.ServiceGroupsV2Args{
+//				Description: pulumi.String("service group description"),
+//				IcmpServices: nutanix.ServiceGroupsV2IcmpServiceArray{
+//					&nutanix.ServiceGroupsV2IcmpServiceArgs{
+//						Code: pulumi.Int(0),
+//						Type: pulumi.Int(8),
+//					},
+//				},
 //				TcpServices: nutanix.ServiceGroupsV2TcpServiceArray{
 //					&nutanix.ServiceGroupsV2TcpServiceArgs{
 //						EndPort:   pulumi.Int(232),

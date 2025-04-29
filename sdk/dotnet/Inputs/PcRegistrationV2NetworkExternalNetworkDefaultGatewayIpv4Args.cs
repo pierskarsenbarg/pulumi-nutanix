@@ -22,8 +22,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// <summary>
         /// - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format.
         /// </summary>
-        [Input("value")]
-        public Input<string>? Value { get; set; }
+        [Input("value", required: true)]
+        public Input<string> Value { get; set; } = null!;
 
         public PcRegistrationV2NetworkExternalNetworkDefaultGatewayIpv4Args()
         {

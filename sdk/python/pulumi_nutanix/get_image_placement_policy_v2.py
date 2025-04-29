@@ -88,7 +88,9 @@ class GetImagePlacementPolicyV2Result:
     @pulumi.getter(name="enforcementState")
     def enforcement_state(self) -> builtins.str:
         """
-        (Optional) Enforcement status of the image placement policy. Valid values "ACTIVE", "SUSPENDED"
+        (Optional) Enforcement status of the image placement policy. Valid values:
+        - ACTIVE: The image placement policy is being actively enforced.
+        - SUSPENDED: The policy enforcement for image placement is suspended.
         """
         return pulumi.get(self, "enforcement_state")
 
@@ -135,7 +137,9 @@ class GetImagePlacementPolicyV2Result:
     @pulumi.getter(name="placementType")
     def placement_type(self) -> builtins.str:
         """
-        (Required) Type of the image placement policy. Valid values "HARD", "SOFT"
+        (Required) Type of the image placement policy. Valid values:
+        - HARD: Hard placement policy. Images can only be placed on clusters enforced by the image placement policy.
+        - SOFT: Soft placement policy. Images can be placed on clusters apart from those enforced by the image placement policy.
         """
         return pulumi.get(self, "placement_type")
 
@@ -164,6 +168,15 @@ def get_image_placement_policy_v2(ext_id: Optional[builtins.str] = None,
     """
     Retrieve the image placement policy details for the provided external identifier.
 
+    ## Example
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    ipp = nutanix.get_image_placement_policy_v2(ext_id="cf96e27a-4e52-4cec-b563-d0b25413cc4a")
+    ```
+
 
     :param builtins.str ext_id: The external identifier of an image placement policy.
     """
@@ -188,6 +201,15 @@ def get_image_placement_policy_v2_output(ext_id: Optional[pulumi.Input[builtins.
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImagePlacementPolicyV2Result]:
     """
     Retrieve the image placement policy details for the provided external identifier.
+
+    ## Example
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    ipp = nutanix.get_image_placement_policy_v2(ext_id="cf96e27a-4e52-4cec-b563-d0b25413cc4a")
+    ```
 
 
     :param builtins.str ext_id: The external identifier of an image placement policy.

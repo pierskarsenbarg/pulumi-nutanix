@@ -15,7 +15,10 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const users = nutanix.getUsersV2({});
+ * const list_users = nutanix.getUsersV2({});
+ * const filtered_users = nutanix.getUsersV2({
+ *     filter: "username eq 'username-example'",
+ * });
  * ```
  *
  * ## Argument Reference
@@ -121,7 +124,10 @@ export interface GetUsersV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const users = nutanix.getUsersV2({});
+ * const list_users = nutanix.getUsersV2({});
+ * const filtered_users = nutanix.getUsersV2({
+ *     filter: "username eq 'username-example'",
+ * });
  * ```
  *
  * ## Argument Reference

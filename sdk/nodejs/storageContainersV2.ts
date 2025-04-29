@@ -8,6 +8,33 @@ import * as utilities from "./utilities";
 
 /**
  * Provides Nutanix resource to create VPC.
+ *
+ * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const storage_container = new nutanix.StorageContainersV2("storage-container", {
+ *     cacheDeduplication: "OFF",
+ *     erasureCode: "OFF",
+ *     hasHigherEcFaultDomainPreference: false,
+ *     isCompressionEnabled: true,
+ *     isInlineEcEnabled: false,
+ *     isInternal: false,
+ *     isSoftwareEncryptionEnabled: false,
+ *     logicalAdvertisedCapacityBytes: 1073741824000,
+ *     logicalExplicitReservedCapacityBytes: 32,
+ *     nfsWhitelistAddresses: [{
+ *         ipv4s: [{
+ *             prefixLength: 32,
+ *             value: "192.168.15.0",
+ *         }],
+ *     }],
+ *     onDiskDedup: "OFF",
+ *     replicationFactor: 1,
+ * });
+ * ```
  */
 export class StorageContainersV2 extends pulumi.CustomResource {
     /**

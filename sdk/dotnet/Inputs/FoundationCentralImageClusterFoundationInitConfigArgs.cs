@@ -72,6 +72,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("hypervisorIsos")]
         private InputList<Inputs.FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs>? _hypervisorIsos;
+
+        /// <summary>
+        /// Details of the hypervisor iso. Required for deploying node with AOS &gt;= 6.8
+        /// </summary>
         public InputList<Inputs.FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs> HypervisorIsos
         {
             get => _hypervisorIsos ?? (_hypervisorIsos = new InputList<Inputs.FoundationCentralImageClusterFoundationInitConfigHypervisorIsoArgs>());

@@ -8,6 +8,117 @@ import * as utilities from "./utilities";
 
 /**
  * Add node on a cluster identified by {extId}.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * // cluster of 3 node uuid that we want to add node
+ * const clustersExtId = "00057b8b-0b3b-4b3b-0000-000000000000";
+ * // for example
+ * const cvmIp = "10.xx.xx.xx";
+ * //# check if the node to add is un configured or not
+ * const cluster_node = new nutanix.ClustersDiscoverUnconfiguredNodesV2("cluster-node", {
+ *     extId: clustersExtId,
+ *     addressType: "IPV4",
+ *     ipFilterLists: [{
+ *         ipv4s: [{
+ *             value: cvmIp,
+ *         }],
+ *     }],
+ * });
+ * //# fetch Network info for unconfigured node
+ * const node_network_info = new nutanix.ClustersUnconfiguredNodeNetworksV2("node-network-info", {
+ *     extId: clustersExtId,
+ *     requestType: "expand_cluster",
+ *     nodeLists: [{
+ *         cvmIps: [{
+ *             ipv4s: [{
+ *                 value: cvmIp,
+ *             }],
+ *         }],
+ *         hypervisorIps: [{
+ *             ipv4s: [{
+ *                 value: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].hypervisorIps?.[0]?.ipv4s?.[0]?.value),
+ *             }],
+ *         }],
+ *     }],
+ * }, {
+ *     dependsOn: [cluster_node],
+ * });
+ * //# add node to the cluster
+ * const add_node = new nutanix.ClusterAddNodeV2("add-node", {
+ *     clusterExtId: clustersExtId,
+ *     shouldSkipAddNode: false,
+ *     shouldSkipPreExpandChecks: false,
+ *     nodeParams: [{
+ *         shouldSkipHostNetworking: false,
+ *         hypervisorIsos: [{
+ *             type: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].hypervisorType),
+ *         }],
+ *         nodeLists: [{
+ *             nodeUuid: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].nodeUuid),
+ *             model: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].rackableUnitModel),
+ *             blockId: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].rackableUnitSerial),
+ *             hypervisorType: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].hypervisorType),
+ *             hypervisorVersion: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].hypervisorVersion),
+ *             nodePosition: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].nodePosition),
+ *             nosVersion: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].nosVersion),
+ *             hypervisorHostname: "example",
+ *             currentNetworkInterface: node_network_info.nodesNetworkingDetails.apply(nodesNetworkingDetails => nodesNetworkingDetails[0].uplinks?.[0]?.uplinkLists?.[0]?.name),
+ *             hypervisorIps: [{
+ *                 ipv4s: [{
+ *                     value: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].hypervisorIps?.[0]?.ipv4s?.[0]?.value),
+ *                 }],
+ *             }],
+ *             cvmIps: [{
+ *                 ipv4s: [{
+ *                     value: cvmIp,
+ *                 }],
+ *             }],
+ *             ipmiIps: [{
+ *                 ipv4s: [{
+ *                     value: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].ipmiIps?.[0]?.ipv4s?.[0]?.value),
+ *                 }],
+ *             }],
+ *             isRoboMixedHypervisor: true,
+ *             networks: [{
+ *                 name: node_network_info.nodesNetworkingDetails.apply(nodesNetworkingDetails => nodesNetworkingDetails[0].networkInfos?.[0]?.hcis?.[0]?.name),
+ *                 networks: node_network_info.nodesNetworkingDetails.apply(nodesNetworkingDetails => nodesNetworkingDetails[0].networkInfos?.[0]?.hcis?.[0]?.networks),
+ *                 uplinks: [{
+ *                     actives: [{
+ *                         name: node_network_info.nodesNetworkingDetails.apply(nodesNetworkingDetails => nodesNetworkingDetails[0].uplinks?.[0]?.uplinkLists?.[0]?.name),
+ *                         mac: node_network_info.nodesNetworkingDetails.apply(nodesNetworkingDetails => nodesNetworkingDetails[0].uplinks?.[0]?.uplinkLists?.[0]?.mac),
+ *                         value: node_network_info.nodesNetworkingDetails.apply(nodesNetworkingDetails => nodesNetworkingDetails[0].uplinks?.[0]?.uplinkLists?.[0]?.name),
+ *                     }],
+ *                     standbies: [{
+ *                         name: node_network_info.nodesNetworkingDetails.apply(nodesNetworkingDetails => nodesNetworkingDetails[0].uplinks?.[0]?.uplinkLists?.[1]?.name),
+ *                         mac: node_network_info.nodesNetworkingDetails.apply(nodesNetworkingDetails => nodesNetworkingDetails[0].uplinks?.[0]?.uplinkLists?.[1]?.mac),
+ *                         value: node_network_info.nodesNetworkingDetails.apply(nodesNetworkingDetails => nodesNetworkingDetails[0].uplinks?.[0]?.uplinkLists?.[1]?.name),
+ *                     }],
+ *                 }],
+ *             }],
+ *         }],
+ *     }],
+ *     configParams: [{
+ *         shouldSkipImaging: true,
+ *         targetHypervisor: cluster_node.unconfiguredNodes.apply(unconfiguredNodes => unconfiguredNodes[0].hypervisorType),
+ *     }],
+ *     removeNodeParams: [{
+ *         extraParams: [{
+ *             shouldSkipUpgradeCheck: false,
+ *             skipSpaceCheck: false,
+ *             shouldSkipAddCheck: false,
+ *         }],
+ *         shouldSkipRemove: false,
+ *         shouldSkipPrechecks: false,
+ *     }],
+ * }, {
+ *     dependsOn: [node_network_info],
+ * });
+ * ```
  */
 export class ClusterAddNodeV2 extends pulumi.CustomResource {
     /**

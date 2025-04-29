@@ -371,6 +371,30 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
         """
         Provides Nutanix resource to create authorization policy.
 
+        ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        ap_example = nutanix.AuthorizationPolicyV2("ap-example",
+            authorization_policy_type="USER_DEFINED",
+            description="authorization policy example",
+            display_name="auth_policy_example",
+            entities=[
+                {
+                    "reserved": "{\\"images\\":{\\"*\\":{\\"eq\\":\\"*\\"}}}",
+                },
+                {
+                    "reserved": "{\\"marketplace_item\\":{\\"owner_uuid\\":{\\"eq\\":\\"SELF_OWNED\\"}}}",
+                },
+            ],
+            identities=[{
+                "reserved": "{\\"user\\":{\\"uuid\\":{\\"anyof\\":[\\"00000000-0000-0000-0000-000000000000\\"]}}}",
+            }],
+            role="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] authorization_policy_type: Type of Authorization Policy.
@@ -394,6 +418,30 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides Nutanix resource to create authorization policy.
+
+        ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        ap_example = nutanix.AuthorizationPolicyV2("ap-example",
+            authorization_policy_type="USER_DEFINED",
+            description="authorization policy example",
+            display_name="auth_policy_example",
+            entities=[
+                {
+                    "reserved": "{\\"images\\":{\\"*\\":{\\"eq\\":\\"*\\"}}}",
+                },
+                {
+                    "reserved": "{\\"marketplace_item\\":{\\"owner_uuid\\":{\\"eq\\":\\"SELF_OWNED\\"}}}",
+                },
+            ],
+            identities=[{
+                "reserved": "{\\"user\\":{\\"uuid\\":{\\"anyof\\":[\\"00000000-0000-0000-0000-000000000000\\"]}}}",
+            }],
+            role="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+        ```
 
         :param str resource_name: The name of the resource.
         :param AuthorizationPolicyV2Args args: The arguments to use to populate this resource's properties.

@@ -13,19 +13,73 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetStorageContainerV2
     {
         /// <summary>
-        /// Provides a datasource to Fetch the configuration details of the existing Storage Container identified by the {containerExtId}. 
+        /// Provides a datasource to Fetch the configuration details of the existing Storage Container identified by the {containerExtId}.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var get_storage_container = Nutanix.GetStorageContainerV2.Invoke(new()
+        ///     {
+        ///         ExtId = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetStorageContainerV2Result> InvokeAsync(GetStorageContainerV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetStorageContainerV2Result>("nutanix:index/getStorageContainerV2:getStorageContainerV2", args ?? new GetStorageContainerV2Args(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to Fetch the configuration details of the existing Storage Container identified by the {containerExtId}. 
+        /// Provides a datasource to Fetch the configuration details of the existing Storage Container identified by the {containerExtId}.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var get_storage_container = Nutanix.GetStorageContainerV2.Invoke(new()
+        ///     {
+        ///         ExtId = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetStorageContainerV2Result> Invoke(GetStorageContainerV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetStorageContainerV2Result>("nutanix:index/getStorageContainerV2:getStorageContainerV2", args ?? new GetStorageContainerV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to Fetch the configuration details of the existing Storage Container identified by the {containerExtId}. 
+        /// Provides a datasource to Fetch the configuration details of the existing Storage Container identified by the {containerExtId}.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var get_storage_container = Nutanix.GetStorageContainerV2.Invoke(new()
+        ///     {
+        ///         ExtId = "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetStorageContainerV2Result> Invoke(GetStorageContainerV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetStorageContainerV2Result>("nutanix:index/getStorageContainerV2:getStorageContainerV2", args ?? new GetStorageContainerV2InvokeArgs(), options.WithDefaults());

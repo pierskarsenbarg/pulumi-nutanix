@@ -242,8 +242,7 @@ def get_volume_group_v2(ext_id: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    vg = nutanix.VolumeGroupV2("vg", cluster_reference=local["cluster1"])
-    volume_group = nutanix.get_volume_group_v2(ext_id=resource["nutanix_volume_group_v2"]["test"]["id"])
+    volume_group = nutanix.get_volume_group_v2(ext_id="d09aeec9-5bb7-4bfd-9717-a051178f6e7c")
     ```
 
 
@@ -282,8 +281,7 @@ def get_volume_group_v2_output(ext_id: Optional[pulumi.Input[builtins.str]] = No
     import pulumi
     import pulumi_nutanix as nutanix
 
-    vg = nutanix.VolumeGroupV2("vg", cluster_reference=local["cluster1"])
-    volume_group = nutanix.get_volume_group_v2(ext_id=resource["nutanix_volume_group_v2"]["test"]["id"])
+    volume_group = nutanix.get_volume_group_v2(ext_id="d09aeec9-5bb7-4bfd-9717-a051178f6e7c")
     ```
 
 

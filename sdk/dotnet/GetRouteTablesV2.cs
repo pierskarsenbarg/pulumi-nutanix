@@ -29,7 +29,12 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         ///     var route_tables_with_filter = Nutanix.GetRouteTablesV2.Invoke(new()
         ///     {
-        ///         Filter = "vpcReference eq '&lt;vpc_uuid&gt;'",
+        ///         Filter = "vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'",
+        ///     });
+        /// 
+        ///     var route_tables_with_orderby = Nutanix.GetRouteTablesV2.Invoke(new()
+        ///     {
+        ///         OrderBy = "vpcReference",
         ///     });
         /// 
         /// });
@@ -55,7 +60,12 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         ///     var route_tables_with_filter = Nutanix.GetRouteTablesV2.Invoke(new()
         ///     {
-        ///         Filter = "vpcReference eq '&lt;vpc_uuid&gt;'",
+        ///         Filter = "vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'",
+        ///     });
+        /// 
+        ///     var route_tables_with_orderby = Nutanix.GetRouteTablesV2.Invoke(new()
+        ///     {
+        ///         OrderBy = "vpcReference",
         ///     });
         /// 
         /// });
@@ -81,7 +91,12 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         ///     var route_tables_with_filter = Nutanix.GetRouteTablesV2.Invoke(new()
         ///     {
-        ///         Filter = "vpcReference eq '&lt;vpc_uuid&gt;'",
+        ///         Filter = "vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'",
+        ///     });
+        /// 
+        ///     var route_tables_with_orderby = Nutanix.GetRouteTablesV2.Invoke(new()
+        ///     {
+        ///         OrderBy = "vpcReference",
         ///     });
         /// 
         /// });
@@ -178,6 +193,9 @@ namespace PiersKarsenbarg.Nutanix
         public readonly int? Limit;
         public readonly string? OrderBy;
         public readonly int? Page;
+        /// <summary>
+        /// A list of route tables.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetRouteTablesV2RouteTableResult> RouteTables;
 
         [OutputConstructor]

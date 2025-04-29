@@ -14,46 +14,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetCategoriesV2CategoryResult
     {
-        /// <summary>
-        /// This field gives basic information about resources that are associated to the category.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetCategoriesV2CategoryAssociationResult> Associations;
-        /// <summary>
-        /// A string consisting of the description of the category as defined by the user.
-        /// </summary>
         public readonly string Description;
-        /// <summary>
-        /// This field gives detailed information about resources that are associated to the category.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetCategoriesV2CategoryDetailedAssociationResult> DetailedAssociations;
-        /// <summary>
-        /// The extID for the category.
-        /// </summary>
         public readonly string ExtId;
-        /// <summary>
-        /// The key of a category when it is represented in key:value format.
-        /// </summary>
         public readonly string Key;
-        /// <summary>
-        /// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetCategoriesV2CategoryLinkResult> Links;
-        /// <summary>
-        /// This field contains the UUID of a user who owns the category.
-        /// </summary>
         public readonly string OwnerUuid;
-        /// <summary>
-        /// A globally unique identifier that represents the tenant that owns this entity.
-        /// </summary>
         public readonly string TenantId;
-        /// <summary>
-        /// Denotes the type of a category.
-        /// There are three types of categories: SYSTEM, INTERNAL, and USER.
-        /// </summary>
         public readonly string Type;
-        /// <summary>
-        /// The value of a category when it is represented in key:value format
-        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

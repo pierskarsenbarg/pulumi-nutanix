@@ -255,7 +255,7 @@ class AwaitableGetFloatingIpV2Result(GetFloatingIpV2Result):
 def get_floating_ip_v2(ext_id: Optional[builtins.str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFloatingIpV2Result:
     """
-    Provides a datasource to retrieve floating IP with floating_ip_uuid .
+    Provides a datasource to retrieve the floating IP for this extId.
 
     ## Example Usage
 
@@ -263,7 +263,7 @@ def get_floating_ip_v2(ext_id: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    example = nutanix.get_floating_ip_v2(ext_id="{{ floating_ip_uuid }}")
+    get_floating_ip = nutanix.get_floating_ip_v2(ext_id="cf1a7643-605e-4622-9f2a-b3fdccdbd072")
     ```
 
 
@@ -296,7 +296,7 @@ def get_floating_ip_v2(ext_id: Optional[builtins.str] = None,
 def get_floating_ip_v2_output(ext_id: Optional[pulumi.Input[builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFloatingIpV2Result]:
     """
-    Provides a datasource to retrieve floating IP with floating_ip_uuid .
+    Provides a datasource to retrieve the floating IP for this extId.
 
     ## Example Usage
 
@@ -304,7 +304,7 @@ def get_floating_ip_v2_output(ext_id: Optional[pulumi.Input[builtins.str]] = Non
     import pulumi
     import pulumi_nutanix as nutanix
 
-    example = nutanix.get_floating_ip_v2(ext_id="{{ floating_ip_uuid }}")
+    get_floating_ip = nutanix.get_floating_ip_v2(ext_id="cf1a7643-605e-4622-9f2a-b3fdccdbd072")
     ```
 
 

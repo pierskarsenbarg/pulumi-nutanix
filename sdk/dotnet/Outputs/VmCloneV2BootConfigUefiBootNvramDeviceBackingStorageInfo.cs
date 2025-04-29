@@ -15,7 +15,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo
     {
         public readonly ImmutableArray<Outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource> DataSources;
+        public readonly string? DiskExtId;
         public readonly int? DiskSizeBytes;
+        public readonly bool? IsMigrationInProgress;
         public readonly ImmutableArray<Outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig> StorageConfigs;
         public readonly ImmutableArray<Outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer> StorageContainers;
 
@@ -23,14 +25,20 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         private VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo(
             ImmutableArray<Outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoDataSource> dataSources,
 
+            string? diskExtId,
+
             int? diskSizeBytes,
+
+            bool? isMigrationInProgress,
 
             ImmutableArray<Outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig> storageConfigs,
 
             ImmutableArray<Outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer> storageContainers)
         {
             DataSources = dataSources;
+            DiskExtId = diskExtId;
             DiskSizeBytes = diskSizeBytes;
+            IsMigrationInProgress = isMigrationInProgress;
             StorageConfigs = storageConfigs;
             StorageContainers = storageContainers;
         }

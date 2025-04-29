@@ -14,13 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVpcsV2VpcExternalSubnetExternalIpIpv4Result
     {
-        /// <summary>
-        /// The prefix length of the network
-        /// </summary>
         public readonly int PrefixLength;
-        /// <summary>
-        /// value of address
-        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

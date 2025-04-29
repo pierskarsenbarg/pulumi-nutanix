@@ -27,7 +27,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var template = Nutanix.GetTemplateV2.Invoke(new()
         ///     {
-        ///         ExtId = "{{ ext_id of template }}",
+        ///         ExtId = "7ad31035-9e8b-4fb1-b8fd-fa39326887d8",
         ///     });
         /// 
         /// });
@@ -51,7 +51,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var template = Nutanix.GetTemplateV2.Invoke(new()
         ///     {
-        ///         ExtId = "{{ ext_id of template }}",
+        ///         ExtId = "7ad31035-9e8b-4fb1-b8fd-fa39326887d8",
         ///     });
         /// 
         /// });
@@ -75,7 +75,7 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var template = Nutanix.GetTemplateV2.Invoke(new()
         ///     {
-        ///         ExtId = "{{ ext_id of template }}",
+        ///         ExtId = "7ad31035-9e8b-4fb1-b8fd-fa39326887d8",
         ///     });
         /// 
         /// });
@@ -138,6 +138,9 @@ namespace PiersKarsenbarg.Nutanix
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplateV2LinkResult> Links;
         /// <summary>
         /// The user defined description of a Template.
@@ -151,6 +154,9 @@ namespace PiersKarsenbarg.Nutanix
         /// A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecResult> TemplateVersionSpecs;
+        /// <summary>
+        /// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// </summary>
         public readonly string TenantId;
         /// <summary>
         /// VM last updated time.

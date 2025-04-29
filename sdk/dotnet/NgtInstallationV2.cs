@@ -12,6 +12,37 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides Nutanix resource to Installs Nutanix Guest Tools in a Virtual Machine by using the provided credentials.
+    /// 
+    /// ## Example
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var example = new Nutanix.NgtInstallationV2("example", new()
+    ///     {
+    ///         Capablities = new[]
+    ///         {
+    ///             "VSS_SNAPSHOT",
+    ///         },
+    ///         Credential = new Nutanix.Inputs.NgtInstallationV2CredentialArgs
+    ///         {
+    ///             Password = "pass.1234567890",
+    ///             Username = "username",
+    ///         },
+    ///         ExtId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+    ///         RebootPreference = new Nutanix.Inputs.NgtInstallationV2RebootPreferenceArgs
+    ///         {
+    ///             ScheduleType = "IMMEDIATE",
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/ngtInstallationV2:NgtInstallationV2")]
     public partial class NgtInstallationV2 : global::Pulumi.CustomResource

@@ -13,6 +13,22 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class VmCloneV2BootConfigUefiBootGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("bootDevices")]
+        private InputList<Inputs.VmCloneV2BootConfigUefiBootBootDeviceGetArgs>? _bootDevices;
+        public InputList<Inputs.VmCloneV2BootConfigUefiBootBootDeviceGetArgs> BootDevices
+        {
+            get => _bootDevices ?? (_bootDevices = new InputList<Inputs.VmCloneV2BootConfigUefiBootBootDeviceGetArgs>());
+            set => _bootDevices = value;
+        }
+
+        [Input("bootOrders")]
+        private InputList<string>? _bootOrders;
+        public InputList<string> BootOrders
+        {
+            get => _bootOrders ?? (_bootOrders = new InputList<string>());
+            set => _bootOrders = value;
+        }
+
         [Input("isSecureBootEnabled")]
         public Input<bool>? IsSecureBootEnabled { get; set; }
 

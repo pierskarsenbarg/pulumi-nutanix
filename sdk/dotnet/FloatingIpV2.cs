@@ -12,6 +12,58 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides Nutanix resource to create Floating IPs.
+    /// 
+    /// ## Example1 :  create Floating IP with External Subnet
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     // create Floating IP with External Subnet UUID
+    ///     var fip_ext_subnet = new Nutanix.FloatingIpV2("fip-ext-subnet", new()
+    ///     {
+    ///         Description = "example fip  description",
+    ///         ExternalSubnetReference = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ## Example2 :  create Floating IP with External Subnet with vm association
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var fip_ext_subnet_vm = new Nutanix.FloatingIpV2("fip-ext-subnet-vm", new()
+    ///     {
+    ///         Associations = new[]
+    ///         {
+    ///             new Nutanix.Inputs.FloatingIpV2AssociationArgs
+    ///             {
+    ///                 VmNicAssociations = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.FloatingIpV2AssociationVmNicAssociationArgs
+    ///                     {
+    ///                         VmNicReference = "31e4b3b1-4b3b-4b3b-4b3b-4b3b4b3b4b3b",
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Description = "example fip  description",
+    ///         ExternalSubnetReference = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/floatingIpV2:FloatingIpV2")]
     public partial class FloatingIpV2 : global::Pulumi.CustomResource

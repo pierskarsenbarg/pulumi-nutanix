@@ -14,18 +14,75 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Describes a Query the Volume Disk identified by {extId} in the Volume Group identified by {volumeGroupExtId}.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Nutanix.GetVolumeGroupDiskV2.Invoke(new()
+        ///     {
+        ///         ExtId = "1d92110d-26b5-46c0-8c93-20b8171373e0",
+        ///         VolumeGroupExtId = "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetVolumeGroupDiskV2Result> InvokeAsync(GetVolumeGroupDiskV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVolumeGroupDiskV2Result>("nutanix:index/getVolumeGroupDiskV2:getVolumeGroupDiskV2", args ?? new GetVolumeGroupDiskV2Args(), options.WithDefaults());
 
         /// <summary>
         /// Describes a Query the Volume Disk identified by {extId} in the Volume Group identified by {volumeGroupExtId}.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Nutanix.GetVolumeGroupDiskV2.Invoke(new()
+        ///     {
+        ///         ExtId = "1d92110d-26b5-46c0-8c93-20b8171373e0",
+        ///         VolumeGroupExtId = "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetVolumeGroupDiskV2Result> Invoke(GetVolumeGroupDiskV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupDiskV2Result>("nutanix:index/getVolumeGroupDiskV2:getVolumeGroupDiskV2", args ?? new GetVolumeGroupDiskV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// Describes a Query the Volume Disk identified by {extId} in the Volume Group identified by {volumeGroupExtId}.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var example = Nutanix.GetVolumeGroupDiskV2.Invoke(new()
+        ///     {
+        ///         ExtId = "1d92110d-26b5-46c0-8c93-20b8171373e0",
+        ///         VolumeGroupExtId = "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetVolumeGroupDiskV2Result> Invoke(GetVolumeGroupDiskV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupDiskV2Result>("nutanix:index/getVolumeGroupDiskV2:getVolumeGroupDiskV2", args ?? new GetVolumeGroupDiskV2InvokeArgs(), options.WithDefaults());

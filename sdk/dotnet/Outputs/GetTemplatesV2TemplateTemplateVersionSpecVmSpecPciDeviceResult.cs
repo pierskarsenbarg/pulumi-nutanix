@@ -16,9 +16,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecPciDeviceAssignedDeviceInfoResult> AssignedDeviceInfos;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecPciDeviceBackingInfoResult> BackingInfos;
-        /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
-        /// </summary>
         public readonly string ExtId;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecPciDeviceLinkResult> Links;
         public readonly string TenantId;

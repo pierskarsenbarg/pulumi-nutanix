@@ -109,6 +109,9 @@ class GetTemplateV2Result:
     @property
     @pulumi.getter
     def links(self) -> Sequence['outputs.GetTemplateV2LinkResult']:
+        """
+        - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        """
         return pulumi.get(self, "links")
 
     @property
@@ -138,6 +141,9 @@ class GetTemplateV2Result:
     @property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> builtins.str:
+        """
+        A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        """
         return pulumi.get(self, "tenant_id")
 
     @property
@@ -188,7 +194,7 @@ def get_template_v2(ext_id: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    template = nutanix.get_template_v2(ext_id="{{ ext_id of template }}")
+    template = nutanix.get_template_v2(ext_id="7ad31035-9e8b-4fb1-b8fd-fa39326887d8")
     ```
 
 
@@ -223,7 +229,7 @@ def get_template_v2_output(ext_id: Optional[pulumi.Input[builtins.str]] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    template = nutanix.get_template_v2(ext_id="{{ ext_id of template }}")
+    template = nutanix.get_template_v2(ext_id="7ad31035-9e8b-4fb1-b8fd-fa39326887d8")
     ```
 
 

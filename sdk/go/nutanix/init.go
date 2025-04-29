@@ -27,6 +27,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AddressGroup{}
 	case "nutanix:index/addressGroupsV2:AddressGroupsV2":
 		r = &AddressGroupsV2{}
+	case "nutanix:index/associateCategoryToVolumeGroupV2:AssociateCategoryToVolumeGroupV2":
+		r = &AssociateCategoryToVolumeGroupV2{}
 	case "nutanix:index/authorizationPolicyV2:AuthorizationPolicyV2":
 		r = &AuthorizationPolicyV2{}
 	case "nutanix:index/categoryKey:CategoryKey":
@@ -73,6 +75,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &KarbonPrivateRegistry{}
 	case "nutanix:index/karbonWorkerNodepool:KarbonWorkerNodepool":
 		r = &KarbonWorkerNodepool{}
+	case "nutanix:index/lcmConfigV2:LcmConfigV2":
+		r = &LcmConfigV2{}
+	case "nutanix:index/lcmPerformInventoryV2:LcmPerformInventoryV2":
+		r = &LcmPerformInventoryV2{}
+	case "nutanix:index/lcmPrechecksV2:LcmPrechecksV2":
+		r = &LcmPrechecksV2{}
+	case "nutanix:index/lcmUpgradeV2:LcmUpgradeV2":
+		r = &LcmUpgradeV2{}
 	case "nutanix:index/ndbAuthorizeDbserver:NdbAuthorizeDbserver":
 		r = &NdbAuthorizeDbserver{}
 	case "nutanix:index/ndbClone:NdbClone":
@@ -133,10 +143,24 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Pbr{}
 	case "nutanix:index/pbrV2:PbrV2":
 		r = &PbrV2{}
+	case "nutanix:index/pcBackupTargetV2:PcBackupTargetV2":
+		r = &PcBackupTargetV2{}
+	case "nutanix:index/pcDeployV2:PcDeployV2":
+		r = &PcDeployV2{}
 	case "nutanix:index/pcRegistrationV2:PcRegistrationV2":
 		r = &PcRegistrationV2{}
+	case "nutanix:index/pcRestoreSourceV2:PcRestoreSourceV2":
+		r = &PcRestoreSourceV2{}
+	case "nutanix:index/pcRestoreV2:PcRestoreV2":
+		r = &PcRestoreV2{}
+	case "nutanix:index/pcUnregistrationV2:PcUnregistrationV2":
+		r = &PcUnregistrationV2{}
 	case "nutanix:index/project:Project":
 		r = &Project{}
+	case "nutanix:index/promoteProtectedResourceV2:PromoteProtectedResourceV2":
+		r = &PromoteProtectedResourceV2{}
+	case "nutanix:index/protectionPolicyV2:ProtectionPolicyV2":
+		r = &ProtectionPolicyV2{}
 	case "nutanix:index/protectionRule:ProtectionRule":
 		r = &ProtectionRule{}
 	case "nutanix:index/recoveryPlan:RecoveryPlan":
@@ -147,6 +171,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &RecoveryPointRestoreV2{}
 	case "nutanix:index/recoveryPointsV2:RecoveryPointsV2":
 		r = &RecoveryPointsV2{}
+	case "nutanix:index/restoreProtectedResourceV2:RestoreProtectedResourceV2":
+		r = &RestoreProtectedResourceV2{}
 	case "nutanix:index/role:Role":
 		r = &Role{}
 	case "nutanix:index/rolesV2:RolesV2":
@@ -155,6 +181,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &RoutesV2{}
 	case "nutanix:index/samlIdentityProvidersV2:SamlIdentityProvidersV2":
 		r = &SamlIdentityProvidersV2{}
+	case "nutanix:index/selfServiceAppCustomAction:SelfServiceAppCustomAction":
+		r = &SelfServiceAppCustomAction{}
+	case "nutanix:index/selfServiceAppPatch:SelfServiceAppPatch":
+		r = &SelfServiceAppPatch{}
+	case "nutanix:index/selfServiceAppProvision:SelfServiceAppProvision":
+		r = &SelfServiceAppProvision{}
+	case "nutanix:index/selfServiceAppRecoveryPoint:SelfServiceAppRecoveryPoint":
+		r = &SelfServiceAppRecoveryPoint{}
+	case "nutanix:index/selfServiceAppRestore:SelfServiceAppRestore":
+		r = &SelfServiceAppRestore{}
 	case "nutanix:index/serviceGroup:ServiceGroup":
 		r = &ServiceGroup{}
 	case "nutanix:index/serviceGroupsV2:ServiceGroupsV2":
@@ -253,6 +289,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/addressGroupsV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/associateCategoryToVolumeGroupV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -368,6 +409,26 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/karbonWorkerNodepool",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/lcmConfigV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/lcmPerformInventoryV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/lcmPrechecksV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/lcmUpgradeV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -522,12 +583,47 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/pcBackupTargetV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/pcDeployV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/pcRegistrationV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/pcRestoreSourceV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/pcRestoreV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/pcUnregistrationV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/project",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/promoteProtectedResourceV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/protectionPolicyV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -557,6 +653,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/restoreProtectedResourceV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/role",
 		&module{version},
 	)
@@ -573,6 +674,31 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/samlIdentityProvidersV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/selfServiceAppCustomAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/selfServiceAppPatch",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/selfServiceAppProvision",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/selfServiceAppRecoveryPoint",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/selfServiceAppRestore",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

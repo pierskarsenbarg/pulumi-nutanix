@@ -19,7 +19,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<string> CategoryExtIds;
         /// <summary>
-        /// (Required) Filter matching type. Valid values "CATEGORIES_MATCH_ALL", "CATEGORIES_MATCH_ANY"
+        /// (Required) Filter matching type. Valid values:
+        /// - CATEGORIES_MATCH_ALL: Image policy only applies to the entities that are matched to all the corresponding entity categories attached to the image policy.
+        /// - CATEGORIES_MATCH_ANY: Image policy applies to the entities that match any subset of the entity categories attached to the image policy.
         /// </summary>
         public readonly string Type;
 

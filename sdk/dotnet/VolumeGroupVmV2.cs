@@ -25,8 +25,8 @@ namespace PiersKarsenbarg.Nutanix
     /// {
     ///     var vgVmExample = new Nutanix.VolumeGroupVmV2("vgVmExample", new()
     ///     {
-    ///         VolumeGroupExtId = "&lt;vg uuid&gt;",
-    ///         VmExtId = @var.Vg_vm_ext_id,
+    ///         VmExtId = "8a938cc5-282b-48c4-81be-de22de145d07",
+    ///         VolumeGroupExtId = "1cdb5b48-fb2c-41b6-b751-b504117ee3e2",
     ///     });
     /// 
     /// });
@@ -42,10 +42,10 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> ExtId { get; private set; } = null!;
 
         /// <summary>
-        /// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group. 
+        /// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
         /// 
         /// 
-        /// See detailed information in [Nutanix Volumes V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0).
+        /// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0#tag/VolumeGroups/operation/attachVm).
         /// </summary>
         [Output("index")]
         public Output<int?> Index { get; private set; } = null!;
@@ -110,10 +110,10 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class VolumeGroupVmV2Args : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group. 
+        /// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
         /// 
         /// 
-        /// See detailed information in [Nutanix Volumes V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0).
+        /// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0#tag/VolumeGroups/operation/attachVm).
         /// </summary>
         [Input("index")]
         public Input<int>? Index { get; set; }
@@ -145,10 +145,10 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? ExtId { get; set; }
 
         /// <summary>
-        /// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group. 
+        /// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
         /// 
         /// 
-        /// See detailed information in [Nutanix Volumes V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0).
+        /// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.0#tag/VolumeGroups/operation/attachVm).
         /// </summary>
         [Input("index")]
         public Input<int>? Index { get; set; }

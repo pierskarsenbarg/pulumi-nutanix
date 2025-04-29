@@ -114,16 +114,6 @@ def get_routes_v2(filter: Optional[builtins.str] = None,
     """
     Provides Nutanix resource to List Routes request.
 
-    ## Example
-
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    routes = nutanix.get_routes_v2(limit=3,
-        route_table_ext_id="<route_table_uuid>")
-    ```
-
 
     :param builtins.str filter: A URL query parameter that allows clients to filter a collection of resources.
            - The filter can be applied to the following fields:
@@ -159,16 +149,6 @@ def get_routes_v2_output(filter: Optional[pulumi.Input[Optional[builtins.str]]] 
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRoutesV2Result]:
     """
     Provides Nutanix resource to List Routes request.
-
-    ## Example
-
-    ```python
-    import pulumi
-    import pulumi_nutanix as nutanix
-
-    routes = nutanix.get_routes_v2(limit=3,
-        route_table_ext_id="<route_table_uuid>")
-    ```
 
 
     :param builtins.str filter: A URL query parameter that allows clients to filter a collection of resources.

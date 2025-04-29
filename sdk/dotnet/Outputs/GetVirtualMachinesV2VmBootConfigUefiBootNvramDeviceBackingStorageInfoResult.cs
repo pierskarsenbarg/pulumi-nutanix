@@ -18,9 +18,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string DiskExtId;
         public readonly int DiskSizeBytes;
         public readonly bool IsMigrationInProgress;
-        /// <summary>
-        /// Storage configuration for VM.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigResult> StorageConfigs;
         public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerResult> StorageContainers;
 

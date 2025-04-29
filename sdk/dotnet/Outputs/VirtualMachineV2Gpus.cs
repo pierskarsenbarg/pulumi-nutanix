@@ -27,7 +27,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string? GuestDriverVersion;
         public readonly ImmutableArray<Outputs.VirtualMachineV2GpusLink> Links;
         /// <summary>
-        /// The mode of this GPU. Valid values "PASSTHROUGH_GRAPHICS", "PASSTHROUGH_COMPUTE", "VIRTUAL" .
+        /// ) The mode of this GPU. Valid values "PASSTHROUGH_GRAPHICS", "PASSTHROUGH_COMPUTE", "VIRTUAL" .
         /// </summary>
         public readonly string? Mode;
         /// <summary>

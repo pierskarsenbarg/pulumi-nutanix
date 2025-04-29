@@ -14,18 +14,72 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Get a single recovery point  corresponding to the extId.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var get_recovery_point = Nutanix.GetRecoveryPointV2.Invoke(new()
+        ///     {
+        ///         ExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetRecoveryPointV2Result> InvokeAsync(GetRecoveryPointV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetRecoveryPointV2Result>("nutanix:index/getRecoveryPointV2:getRecoveryPointV2", args ?? new GetRecoveryPointV2Args(), options.WithDefaults());
 
         /// <summary>
         /// Get a single recovery point  corresponding to the extId.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var get_recovery_point = Nutanix.GetRecoveryPointV2.Invoke(new()
+        ///     {
+        ///         ExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetRecoveryPointV2Result> Invoke(GetRecoveryPointV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetRecoveryPointV2Result>("nutanix:index/getRecoveryPointV2:getRecoveryPointV2", args ?? new GetRecoveryPointV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// Get a single recovery point  corresponding to the extId.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var get_recovery_point = Nutanix.GetRecoveryPointV2.Invoke(new()
+        ///     {
+        ///         ExtId = "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetRecoveryPointV2Result> Invoke(GetRecoveryPointV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetRecoveryPointV2Result>("nutanix:index/getRecoveryPointV2:getRecoveryPointV2", args ?? new GetRecoveryPointV2InvokeArgs(), options.WithDefaults());

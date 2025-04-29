@@ -15,6 +15,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetVirtualMachineV2BootConfigUefiBootResult
     {
         /// <summary>
+        /// Boot Device object
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVirtualMachineV2BootConfigUefiBootBootDeviceResult> BootDevices;
+        /// <summary>
+        /// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+        /// </summary>
+        public readonly ImmutableArray<string> BootOrders;
+        /// <summary>
         /// Indicate whether to enable secure boot or not
         /// </summary>
         public readonly bool IsSecureBootEnabled;
@@ -25,10 +33,16 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
         [OutputConstructor]
         private GetVirtualMachineV2BootConfigUefiBootResult(
+            ImmutableArray<Outputs.GetVirtualMachineV2BootConfigUefiBootBootDeviceResult> bootDevices,
+
+            ImmutableArray<string> bootOrders,
+
             bool isSecureBootEnabled,
 
             ImmutableArray<Outputs.GetVirtualMachineV2BootConfigUefiBootNvramDeviceResult> nvramDevices)
         {
+            BootDevices = bootDevices;
+            BootOrders = bootOrders;
             IsSecureBootEnabled = isSecureBootEnabled;
             NvramDevices = nvramDevices;
         }

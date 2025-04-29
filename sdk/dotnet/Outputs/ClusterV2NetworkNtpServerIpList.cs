@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.ClusterV2NetworkNtpServerIpListFqdn> Fqdns;
         /// <summary>
-        /// - (Optional) ip adresss params.
+        /// - (Optional) ip address params.
         /// </summary>
         public readonly ImmutableArray<Outputs.ClusterV2NetworkNtpServerIpListIpv4> Ipv4s;
         /// <summary>

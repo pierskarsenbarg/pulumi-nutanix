@@ -21,7 +21,7 @@ import * as utilities from "./utilities";
  *     recoveryPointType: "APPLICATION_CONSISTENT",
  *     status: "COMPLETE",
  *     vmRecoveryPoints: [{
- *         vmExtId: "<Vm-uuid-1>",
+ *         vmExtId: "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
  *     }],
  * });
  * ```

@@ -15,9 +15,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetSubnetsV2SubnetIpConfigIpv6DhcpServerAddressResult
     {
         public readonly int PrefixLength;
-        /// <summary>
-        /// value of address
-        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

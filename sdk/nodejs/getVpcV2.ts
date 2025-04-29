@@ -15,8 +15,8 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const example = nutanix.getVpcV2({
- *     extId: "{{ vpc uuid }}",
+ * const get_vpc = nutanix.getVpcV2({
+ *     extId: "8a938cc5-282b-48c4-81be-de22de145d07",
  * });
  * ```
  */
@@ -100,8 +100,8 @@ export interface GetVpcV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const example = nutanix.getVpcV2({
- *     extId: "{{ vpc uuid }}",
+ * const get_vpc = nutanix.getVpcV2({
+ *     extId: "8a938cc5-282b-48c4-81be-de22de145d07",
  * });
  * ```
  */

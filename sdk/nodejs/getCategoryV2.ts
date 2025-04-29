@@ -8,6 +8,17 @@ import * as utilities from "./utilities";
 
 /**
  * Fetch a category
+ *
+ * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const get_category = nutanix.getCategoryV2({
+ *     extId: "85e68112-5b2b-4220-bc8d-e529e4bf420e",
+ * });
+ * ```
  */
 export function getCategoryV2(args: GetCategoryV2Args, opts?: pulumi.InvokeOptions): Promise<GetCategoryV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -22,7 +33,9 @@ export function getCategoryV2(args: GetCategoryV2Args, opts?: pulumi.InvokeOptio
  */
 export interface GetCategoryV2Args {
     /**
-     * A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+     * A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported:
+     * - associations
+     * - detailedAssociations
      */
     expand?: string;
     /**
@@ -81,6 +94,17 @@ export interface GetCategoryV2Result {
 }
 /**
  * Fetch a category
+ *
+ * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const get_category = nutanix.getCategoryV2({
+ *     extId: "85e68112-5b2b-4220-bc8d-e529e4bf420e",
+ * });
+ * ```
  */
 export function getCategoryV2Output(args: GetCategoryV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCategoryV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -95,7 +119,9 @@ export function getCategoryV2Output(args: GetCategoryV2OutputArgs, opts?: pulumi
  */
 export interface GetCategoryV2OutputArgs {
     /**
-     * A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+     * A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported:
+     * - associations
+     * - detailedAssociations
      */
     expand?: pulumi.Input<string>;
     /**

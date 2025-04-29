@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetPbrsV2RoutingPolicyLinkResult
     {
+        /// <summary>
+        /// - The URL at which the entity described by the link can be accessed.
+        /// </summary>
         public readonly string Href;
+        /// <summary>
+        /// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        /// </summary>
         public readonly string Rel;
 
         [OutputConstructor]

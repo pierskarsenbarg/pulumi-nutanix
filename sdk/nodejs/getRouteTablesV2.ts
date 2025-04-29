@@ -17,7 +17,10 @@ import * as utilities from "./utilities";
  *
  * const all_tables = nutanix.getRouteTablesV2({});
  * const route_tables_with_filter = nutanix.getRouteTablesV2({
- *     filter: "vpcReference eq '<vpc_uuid>'",
+ *     filter: "vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'",
+ * });
+ * const route_tables_with_orderby = nutanix.getRouteTablesV2({
+ *     orderBy: "vpcReference",
  * });
  * ```
  */
@@ -71,6 +74,9 @@ export interface GetRouteTablesV2Result {
     readonly limit?: number;
     readonly orderBy?: string;
     readonly page?: number;
+    /**
+     * A list of route tables.
+     */
     readonly routeTables: outputs.GetRouteTablesV2RouteTable[];
 }
 /**
@@ -84,7 +90,10 @@ export interface GetRouteTablesV2Result {
  *
  * const all_tables = nutanix.getRouteTablesV2({});
  * const route_tables_with_filter = nutanix.getRouteTablesV2({
- *     filter: "vpcReference eq '<vpc_uuid>'",
+ *     filter: "vpcReference eq 'f4b4b3b4-4b4b-4b4b-4b4b-4b4b4b4b4b4b'",
+ * });
+ * const route_tables_with_orderby = nutanix.getRouteTablesV2({
+ *     orderBy: "vpcReference",
  * });
  * ```
  */

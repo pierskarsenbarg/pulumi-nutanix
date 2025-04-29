@@ -13,6 +13,52 @@ import (
 )
 
 // Provides Nutanix resource to Create Route.
+//
+// ## Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// create a route
+//			_, err := nutanix.NewRoutesV2(ctx, "route", &nutanix.RoutesV2Args{
+//				Description: pulumi.String("terraform example route to example create route"),
+//				Destination: &nutanix.RoutesV2DestinationArgs{
+//					Ipv4: &nutanix.RoutesV2DestinationIpv4Args{
+//						Ip: &nutanix.RoutesV2DestinationIpv4IpArgs{
+//							Value: pulumi.String("10.0.0.2"),
+//						},
+//						PrefixLength: pulumi.Int(32),
+//					},
+//				},
+//				Metadata: &nutanix.RoutesV2MetadataArgs{
+//					OwnerReferenceId:   pulumi.String("a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b"),
+//					ProjectReferenceId: pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),
+//				},
+//				NextHop: &nutanix.RoutesV2NextHopArgs{
+//					NextHopReference: pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
+//					NextHopType:      pulumi.String("EXTERNAL_SUBNET"),
+//				},
+//				RouteTableExtId: pulumi.String("c2c249b0-98a0-43fa-9ff6-dcde578d3936"),
+//				RouteType:       pulumi.String("STATIC"),
+//				VpcReference:    pulumi.String("8a938cc5-282b-48c4-81be-de22de145d07"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type RoutesV2 struct {
 	pulumi.CustomResourceState
 

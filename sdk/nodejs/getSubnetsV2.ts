@@ -8,6 +8,92 @@ import * as utilities from "./utilities";
 
 /**
  * Get the list of existing subnets.
+ *
+ * ## Subnets
+ *
+ * The `subnets` object contains the following attributes:
+ *
+ * - `extId`: A globally unique identifier of an instance that is suitable for external consumption.
+ * - `name`: Name of the subnet.
+ * - `description`: Description of the subnet.
+ * - `subnetType`: Type of subnet.
+ * - `networkId`: or VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
+ * - `dhcpOptions`: List of DHCP options to be configured.
+ * - `ipConfig`: IP configuration for the subnet.
+ * - `clusterReference`: UUID of the cluster this subnet belongs to.
+ * - `virtualSwitchReference`: UUID of the virtual switch this subnet belongs to (type VLAN only).
+ * - `vpcReference`: UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
+ * - `isNatEnabled`: Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
+ * - `isExternal`: Indicates whether the subnet is used for external connectivity.
+ * - `reservedIpAddresses`: List of IPs that are excluded while allocating IP addresses to VM ports.
+ * - `dynamicIpAddresses`: List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
+ * - `networkFunctionChainReference`: UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
+ * - `bridgeName`: Name of the bridge on the host for the subnet.
+ * - `isAdvancedNetworking`: Indicates whether the subnet is used for advanced networking.
+ * - `clusterName`: Cluster Name
+ * - `hypervisorType`: Hypervisor Type
+ * - `virtualSwitch`: Schema to configure a virtual switch
+ * - `vpc`: Networking common base object
+ * - `ipPrefix`: IP Prefix in CIDR format.
+ * - `ipUsage`: IP usage statistics.
+ * - `migrationState`: Migration state of the subnet. This field is read-only.
+ * - `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+ *
+ * ### dhcpOptions
+ *
+ * - `domainNameServers`: List of Domain Name Server addresses.
+ * - `domainName`: The DNS domain name of the client.
+ * - `searchDomains`: The DNS domain search list.
+ * - `tftpServerName`: TFTP server name
+ * - `bootFileName`: Boot file name
+ * - `ntpServers`: List of NTP server addresses
+ *
+ * ### domain_name_servers, ntpServers
+ *
+ * - `ipv4`: IPv4 Object
+ * - `ipv6`: IPv6 Object
+ *
+ * ### ipConfig
+ *
+ * - `ipv4`: IP V4 configuration.
+ * - `ipv6`: IP V6 configuration
+ *
+ * ### ip_config.ipv4, ip_config.ipv6
+ *
+ * - `ipSubnet`: subnet ip
+ * - `defaultGatewayIp`: Reference to address configuration
+ * - `dhcpServerAddress`: Reference to address configuration
+ * - `poolList`: Pool of IP addresses from where IPs are allocated.
+ *
+ * ### ipSubnet
+ *
+ * - `ip`: Reference to address configuration
+ * - `prefixLength`: The prefix length of the network to which this host IPv4 address belongs.
+ *
+ * ### poolList
+ *
+ * - `startIp`: Reference to address configuration
+ * - `endIp`: Reference to address configuration
+ *
+ * ### ipUsage
+ *
+ * - `numMacs`: Number of MAC addresses.
+ * - `numFreeIps`: Number of free IPs.
+ * - `numAssignedIps`: Number of assigned IPs.
+ * - `ipPoolUsages`: IP Pool usages
+ *
+ * ### ipPoolUsages
+ *
+ * - `numFreeIps`: Number of free IPs
+ * - `numTotalIps`: Total number of IPs in this pool.
+ * - `range`: Start/end IP address range.
+ *
+ * ### ipv4, ipv6 (Reference to address configuration)
+ *
+ * - `value`: value of address
+ * - `prefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
+ *
+ * See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0#tag/Subnets/operation/listSubnets).
  */
 export function getSubnetsV2(args?: GetSubnetsV2Args, opts?: pulumi.InvokeOptions): Promise<GetSubnetsV2Result> {
     args = args || {};
@@ -27,11 +113,15 @@ export function getSubnetsV2(args?: GetSubnetsV2Args, opts?: pulumi.InvokeOption
  */
 export interface GetSubnetsV2Args {
     /**
-     * A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+     * A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. The expand can be applied to the following fields:
+     * - `virtualSwitch`
      */
     expand?: string;
     /**
-     * A URL query parameter that allows clients to filter a collection of resources.
+     * A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+     * - `clusterReference`
+     * - `extId`
+     * - `isExternal`
      */
     filter?: string;
     /**
@@ -39,7 +129,7 @@ export interface GetSubnetsV2Args {
      */
     limit?: number;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
      */
     orderBy?: string;
     /**
@@ -47,7 +137,16 @@ export interface GetSubnetsV2Args {
      */
     page?: number;
     /**
-     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type.
+     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. The select can be applied to the following fields:
+     * - `clusterName`
+     * - `clusterReference`
+     * - `extId`
+     * - `hypervisorType`
+     * - `subnetType`
+     * - `ipPrefix`
+     * - `isAdvancedNetworking`
+     * - `isExternal`
+     * - `isNatEnabled`
      */
     select?: string;
 }
@@ -66,10 +165,99 @@ export interface GetSubnetsV2Result {
     readonly orderBy?: string;
     readonly page?: number;
     readonly select?: string;
+    /**
+     * List all of subnets
+     */
     readonly subnets: outputs.GetSubnetsV2Subnet[];
 }
 /**
  * Get the list of existing subnets.
+ *
+ * ## Subnets
+ *
+ * The `subnets` object contains the following attributes:
+ *
+ * - `extId`: A globally unique identifier of an instance that is suitable for external consumption.
+ * - `name`: Name of the subnet.
+ * - `description`: Description of the subnet.
+ * - `subnetType`: Type of subnet.
+ * - `networkId`: or VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
+ * - `dhcpOptions`: List of DHCP options to be configured.
+ * - `ipConfig`: IP configuration for the subnet.
+ * - `clusterReference`: UUID of the cluster this subnet belongs to.
+ * - `virtualSwitchReference`: UUID of the virtual switch this subnet belongs to (type VLAN only).
+ * - `vpcReference`: UUID of Virtual Private Cloud this subnet belongs to (type Overlay only).
+ * - `isNatEnabled`: Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
+ * - `isExternal`: Indicates whether the subnet is used for external connectivity.
+ * - `reservedIpAddresses`: List of IPs that are excluded while allocating IP addresses to VM ports.
+ * - `dynamicIpAddresses`: List of IPs, which are a subset from the reserved IP address list, that must be advertised to the SDN gateway.
+ * - `networkFunctionChainReference`: UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
+ * - `bridgeName`: Name of the bridge on the host for the subnet.
+ * - `isAdvancedNetworking`: Indicates whether the subnet is used for advanced networking.
+ * - `clusterName`: Cluster Name
+ * - `hypervisorType`: Hypervisor Type
+ * - `virtualSwitch`: Schema to configure a virtual switch
+ * - `vpc`: Networking common base object
+ * - `ipPrefix`: IP Prefix in CIDR format.
+ * - `ipUsage`: IP usage statistics.
+ * - `migrationState`: Migration state of the subnet. This field is read-only.
+ * - `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+ *
+ * ### dhcpOptions
+ *
+ * - `domainNameServers`: List of Domain Name Server addresses.
+ * - `domainName`: The DNS domain name of the client.
+ * - `searchDomains`: The DNS domain search list.
+ * - `tftpServerName`: TFTP server name
+ * - `bootFileName`: Boot file name
+ * - `ntpServers`: List of NTP server addresses
+ *
+ * ### domain_name_servers, ntpServers
+ *
+ * - `ipv4`: IPv4 Object
+ * - `ipv6`: IPv6 Object
+ *
+ * ### ipConfig
+ *
+ * - `ipv4`: IP V4 configuration.
+ * - `ipv6`: IP V6 configuration
+ *
+ * ### ip_config.ipv4, ip_config.ipv6
+ *
+ * - `ipSubnet`: subnet ip
+ * - `defaultGatewayIp`: Reference to address configuration
+ * - `dhcpServerAddress`: Reference to address configuration
+ * - `poolList`: Pool of IP addresses from where IPs are allocated.
+ *
+ * ### ipSubnet
+ *
+ * - `ip`: Reference to address configuration
+ * - `prefixLength`: The prefix length of the network to which this host IPv4 address belongs.
+ *
+ * ### poolList
+ *
+ * - `startIp`: Reference to address configuration
+ * - `endIp`: Reference to address configuration
+ *
+ * ### ipUsage
+ *
+ * - `numMacs`: Number of MAC addresses.
+ * - `numFreeIps`: Number of free IPs.
+ * - `numAssignedIps`: Number of assigned IPs.
+ * - `ipPoolUsages`: IP Pool usages
+ *
+ * ### ipPoolUsages
+ *
+ * - `numFreeIps`: Number of free IPs
+ * - `numTotalIps`: Total number of IPs in this pool.
+ * - `range`: Start/end IP address range.
+ *
+ * ### ipv4, ipv6 (Reference to address configuration)
+ *
+ * - `value`: value of address
+ * - `prefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
+ *
+ * See detailed information in [Nutanix List Subnets v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0#tag/Subnets/operation/listSubnets).
  */
 export function getSubnetsV2Output(args?: GetSubnetsV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSubnetsV2Result> {
     args = args || {};
@@ -89,11 +277,15 @@ export function getSubnetsV2Output(args?: GetSubnetsV2OutputArgs, opts?: pulumi.
  */
 export interface GetSubnetsV2OutputArgs {
     /**
-     * A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+     * A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. The expand can be applied to the following fields:
+     * - `virtualSwitch`
      */
     expand?: pulumi.Input<string>;
     /**
-     * A URL query parameter that allows clients to filter a collection of resources.
+     * A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+     * - `clusterReference`
+     * - `extId`
+     * - `isExternal`
      */
     filter?: pulumi.Input<string>;
     /**
@@ -101,7 +293,7 @@ export interface GetSubnetsV2OutputArgs {
      */
     limit?: pulumi.Input<number>;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
      */
     orderBy?: pulumi.Input<string>;
     /**
@@ -109,7 +301,16 @@ export interface GetSubnetsV2OutputArgs {
      */
     page?: pulumi.Input<number>;
     /**
-     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type.
+     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. The select can be applied to the following fields:
+     * - `clusterName`
+     * - `clusterReference`
+     * - `extId`
+     * - `hypervisorType`
+     * - `subnetType`
+     * - `ipPrefix`
+     * - `isAdvancedNetworking`
+     * - `isExternal`
+     * - `isNatEnabled`
      */
     select?: pulumi.Input<string>;
 }
