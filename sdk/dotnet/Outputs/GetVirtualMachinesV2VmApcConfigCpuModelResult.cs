@@ -14,13 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVirtualMachinesV2VmApcConfigCpuModelResult
     {
-        /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
-        /// </summary>
         public readonly string ExtId;
-        /// <summary>
-        /// VM name.
-        /// </summary>
         public readonly string Name;
 
         [OutputConstructor]

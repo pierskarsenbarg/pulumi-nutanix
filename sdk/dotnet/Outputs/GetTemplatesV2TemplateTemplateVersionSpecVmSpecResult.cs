@@ -14,174 +14,54 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecResult
     {
-        /// <summary>
-        /// Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecApcConfigResult> ApcConfigs;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecAvailabilityZoneResult> AvailabilityZones;
-        /// <summary>
-        /// BIOS UUID of the VM. It should be of type UUID.
-        /// </summary>
         public readonly string BiosUuid;
-        /// <summary>
-        /// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigResult> BootConfigs;
-        /// <summary>
-        /// Categories for the VM.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCategoryResult> Categories;
-        /// <summary>
-        /// CD-ROMs attached to the VM.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomResult> CdRoms;
-        /// <summary>
-        /// Reference to a cluster.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecClusterResult> Clusters;
-        /// <summary>
-        /// VM creation time
-        /// </summary>
         public readonly string CreateTime;
-        /// <summary>
-        /// VM description
-        /// </summary>
         public readonly string Description;
-        /// <summary>
-        /// Disks attached to the VM.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskResult> Disks;
-        /// <summary>
-        /// The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor
-        /// </summary>
         public readonly ImmutableArray<string> EnabledCpuFeatures;
-        /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
-        /// </summary>
         public readonly string ExtId;
-        /// <summary>
-        /// Generation UUID of the VM. It should be of type UUID.
-        /// </summary>
         public readonly string GenerationUuid;
-        /// <summary>
-        /// GPUs attached to the VM.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGpusResult> Gpuses;
-        /// <summary>
-        /// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationResult> GuestCustomizations;
-        /// <summary>
-        /// The details about Nutanix Guest Tools for a VM.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestToolResult> GuestTools;
-        /// <summary>
-        /// VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
-        /// </summary>
         public readonly string HardwareClockTimezone;
-        /// <summary>
-        /// Reference to the host, the VM is running on.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecHostResult> Hosts;
-        /// <summary>
-        /// Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
-        /// </summary>
         public readonly bool IsAgentVm;
-        /// <summary>
-        /// Indicates whether to remove AHV branding from VM firmware tables or not.
-        /// </summary>
         public readonly bool IsBrandingEnabled;
         public readonly bool IsCpuHotplugEnabled;
-        /// <summary>
-        /// Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
-        /// </summary>
         public readonly bool IsCpuPassthroughEnabled;
         public readonly bool IsCrossClusterMigrationInProgress;
-        /// <summary>
-        /// Indicates whether the vGPU console is enabled or not.
-        /// </summary>
         public readonly bool IsGpuConsoleEnabled;
         public readonly bool IsLiveMigrateCapable;
-        /// <summary>
-        /// Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
-        /// </summary>
         public readonly bool IsMemoryOvercommitEnabled;
         public readonly bool IsScsiControllerEnabled;
-        /// <summary>
-        /// Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
-        /// </summary>
         public readonly bool IsVcpuHardPinningEnabled;
-        /// <summary>
-        /// Indicates whether the VGA console should be disabled or not.
-        /// </summary>
         public readonly bool IsVgaConsoleEnabled;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecLinkResult> Links;
-        /// <summary>
-        /// Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-        /// </summary>
         public readonly string MachineType;
-        /// <summary>
-        /// Memory size in bytes.
-        /// </summary>
         public readonly int MemorySizeBytes;
-        /// <summary>
-        /// VM name.
-        /// </summary>
         public readonly string Name;
-        /// <summary>
-        /// NICs attached to the VM.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecNicResult> Nics;
-        /// <summary>
-        /// Number of cores per socket.
-        /// </summary>
         public readonly int NumCoresPerSocket;
-        /// <summary>
-        /// Number of NUMA nodes. 0 means NUMA is disabled.
-        /// </summary>
         public readonly int NumNumaNodes;
-        /// <summary>
-        /// Number of vCPU sockets.
-        /// </summary>
         public readonly int NumSockets;
-        /// <summary>
-        /// Number of threads per core
-        /// </summary>
         public readonly int NumThreadsPerCore;
-        /// <summary>
-        /// Ownership information for the VM.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecOwnershipInfoResult> OwnershipInfos;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecPciDeviceResult> PciDevices;
         public readonly string PowerState;
-        /// <summary>
-        /// Status of protection policy applied to this VM.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecProtectionPolicyStateResult> ProtectionPolicyStates;
-        /// <summary>
-        /// The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
-        /// </summary>
         public readonly string ProtectionType;
-        /// <summary>
-        /// Serial ports configured on the VM.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecSerialPortResult> SerialPorts;
-        /// <summary>
-        /// Reference to an entity that the VM should be cloned or created from
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecSourceResult> Sources;
-        /// <summary>
-        /// Storage configuration for VM.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecStorageConfigResult> StorageConfigs;
         public readonly string TenantId;
-        /// <summary>
-        /// VM last updated time.
-        /// </summary>
         public readonly string UpdateTime;
-        /// <summary>
-        /// Indicates how the vTPM for the VM should be configured.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecVtpmConfigResult> VtpmConfigs;
 
         [OutputConstructor]

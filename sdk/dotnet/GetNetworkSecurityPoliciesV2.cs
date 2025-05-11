@@ -35,7 +35,18 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetNetworkSecurityPoliciesV2Args : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A URL query parameter that allows clients to filter a collection of resources.
+        /// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+        /// - createdBy
+        /// - description
+        /// - extId
+        /// - isHitlogEnabled
+        /// - isIpv6TrafficAllowed
+        /// - isSystemDefined
+        /// - name
+        /// - securedGroups
+        /// - state
+        /// - type
+        /// - vpcReference
         /// </summary>
         [Input("filter")]
         public string? Filter { get; set; }
@@ -47,7 +58,15 @@ namespace PiersKarsenbarg.Nutanix
         public int? Limit { get; set; }
 
         /// <summary>
-        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+        /// - creationTime
+        /// - description
+        /// - extId
+        /// - isSystemDefined
+        /// - lastUpdateTime
+        /// - name
+        /// - state
+        /// - type
         /// </summary>
         [Input("orderBy")]
         public string? OrderBy { get; set; }
@@ -59,7 +78,25 @@ namespace PiersKarsenbarg.Nutanix
         public int? Page { get; set; }
 
         /// <summary>
-        /// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type.
+        /// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. The select can be applied to the following fields:
+        /// 
+        /// - createdBy
+        /// - creationTime
+        /// - description
+        /// - extId
+        /// - isHitlogEnabled
+        /// - isIpv6TrafficAllowed
+        /// - isSystemDefined
+        /// - lastUpdateTime
+        /// - links
+        /// - name
+        /// - rules
+        /// - scope
+        /// - securedGroups
+        /// - state
+        /// - tenantId
+        /// - type
+        /// - vpcReference
         /// </summary>
         [Input("select")]
         public string? Select { get; set; }
@@ -73,7 +110,18 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetNetworkSecurityPoliciesV2InvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A URL query parameter that allows clients to filter a collection of resources.
+        /// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+        /// - createdBy
+        /// - description
+        /// - extId
+        /// - isHitlogEnabled
+        /// - isIpv6TrafficAllowed
+        /// - isSystemDefined
+        /// - name
+        /// - securedGroups
+        /// - state
+        /// - type
+        /// - vpcReference
         /// </summary>
         [Input("filter")]
         public Input<string>? Filter { get; set; }
@@ -85,7 +133,15 @@ namespace PiersKarsenbarg.Nutanix
         public Input<int>? Limit { get; set; }
 
         /// <summary>
-        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+        /// - creationTime
+        /// - description
+        /// - extId
+        /// - isSystemDefined
+        /// - lastUpdateTime
+        /// - name
+        /// - state
+        /// - type
         /// </summary>
         [Input("orderBy")]
         public Input<string>? OrderBy { get; set; }
@@ -97,7 +153,25 @@ namespace PiersKarsenbarg.Nutanix
         public Input<int>? Page { get; set; }
 
         /// <summary>
-        /// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type.
+        /// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. The select can be applied to the following fields:
+        /// 
+        /// - createdBy
+        /// - creationTime
+        /// - description
+        /// - extId
+        /// - isHitlogEnabled
+        /// - isIpv6TrafficAllowed
+        /// - isSystemDefined
+        /// - lastUpdateTime
+        /// - links
+        /// - name
+        /// - rules
+        /// - scope
+        /// - securedGroups
+        /// - state
+        /// - tenantId
+        /// - type
+        /// - vpcReference
         /// </summary>
         [Input("select")]
         public Input<string>? Select { get; set; }

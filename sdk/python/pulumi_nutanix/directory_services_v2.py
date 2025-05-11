@@ -425,14 +425,16 @@ class DirectoryServicesV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        example = nutanix.DirectoryServicesV2("example",
-            directory_type="directory type",
-            domain_name="domain name",
+        # Add Directory Service .
+        active_directory = nutanix.DirectoryServicesV2("active-directory",
+            url="ldap://10.xx.xx.xx:xxxx",
+            directory_type="ACTIVE_DIRECTORY",
+            domain_name="nutanix.com",
             service_accounts=[{
-                "password": "service account password",
-                "username": "service account username",
+                "username": "username",
+                "password": "password",
             }],
-            url="URL for the Directory Service")
+            white_listed_groups=["example"])
         ```
 
         :param str resource_name: The name of the resource.
@@ -463,14 +465,16 @@ class DirectoryServicesV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        example = nutanix.DirectoryServicesV2("example",
-            directory_type="directory type",
-            domain_name="domain name",
+        # Add Directory Service .
+        active_directory = nutanix.DirectoryServicesV2("active-directory",
+            url="ldap://10.xx.xx.xx:xxxx",
+            directory_type="ACTIVE_DIRECTORY",
+            domain_name="nutanix.com",
             service_accounts=[{
-                "password": "service account password",
-                "username": "service account username",
+                "username": "username",
+                "password": "password",
             }],
-            url="URL for the Directory Service")
+            white_listed_groups=["example"])
         ```
 
         :param str resource_name: The name of the resource.

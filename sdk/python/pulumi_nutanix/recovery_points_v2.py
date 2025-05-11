@@ -387,7 +387,7 @@ class RecoveryPointsV2(pulumi.CustomResource):
             recovery_point_type="APPLICATION_CONSISTENT",
             status="COMPLETE",
             vm_recovery_points=[{
-                "vm_ext_id": "<Vm-uuid-1>",
+                "vm_ext_id": "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
             }])
         ```
 
@@ -426,7 +426,7 @@ class RecoveryPointsV2(pulumi.CustomResource):
             recovery_point_type="APPLICATION_CONSISTENT",
             status="COMPLETE",
             vm_recovery_points=[{
-                "vm_ext_id": "<Vm-uuid-1>",
+                "vm_ext_id": "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
             }])
         ```
 

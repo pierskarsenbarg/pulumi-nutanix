@@ -6,6 +6,19 @@ import * as utilities from "./utilities";
 
 /**
  * Provides Nutanix resource toInserts the Nutanix Guest Tools installation and configuration ISO into a virtual machine.
+ *
+ * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const example = new nutanix.NgtInsertIsoV2("example", {
+ *     capablities: ["VSS_SNAPSHOT"],
+ *     extId: "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+ *     isConfigOnly: false,
+ * });
+ * ```
  */
 export class NgtInsertIsoV2 extends pulumi.CustomResource {
     /**

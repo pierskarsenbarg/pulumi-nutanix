@@ -169,7 +169,7 @@ def get_address_group_v2(ext_id: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    addr_group = nutanix.get_address_group_v2(ext_id="{{ address_group uuid }}")
+    get_addr_group = nutanix.get_address_group_v2(ext_id="0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b")
     ```
 
 
@@ -205,7 +205,7 @@ def get_address_group_v2_output(ext_id: Optional[pulumi.Input[builtins.str]] = N
     import pulumi
     import pulumi_nutanix as nutanix
 
-    addr_group = nutanix.get_address_group_v2(ext_id="{{ address_group uuid }}")
+    get_addr_group = nutanix.get_address_group_v2(ext_id="0005b3b0-0b3b-4b3b-8b3b-0b3b3b3b3b3b")
     ```
 
 

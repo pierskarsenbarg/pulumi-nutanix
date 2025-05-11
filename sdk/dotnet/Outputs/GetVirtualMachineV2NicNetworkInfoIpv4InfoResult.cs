@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVirtualMachineV2NicNetworkInfoIpv4InfoResult
     {
+        /// <summary>
+        /// The list of IP addresses learned by the NIC.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetVirtualMachineV2NicNetworkInfoIpv4InfoLearnedIpAddressResult> LearnedIpAddresses;
 
         [OutputConstructor]

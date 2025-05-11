@@ -16,7 +16,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly string? BusType;
         /// <summary>
-        /// Index of the serial port.
+        /// ) Index of the serial port.
         /// </summary>
         public readonly int? Index;
 

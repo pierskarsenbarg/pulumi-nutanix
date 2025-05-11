@@ -8,6 +8,25 @@ import * as utilities from "./utilities";
 
 /**
  * Provides Nutanix resource to Installs Nutanix Guest Tools in a Virtual Machine by using the provided credentials.
+ *
+ * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const example = new nutanix.NgtInstallationV2("example", {
+ *     capablities: ["VSS_SNAPSHOT"],
+ *     credential: {
+ *         password: "pass.1234567890",
+ *         username: "username",
+ *     },
+ *     extId: "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+ *     rebootPreference: {
+ *         scheduleType: "IMMEDIATE",
+ *     },
+ * });
+ * ```
  */
 export class NgtInstallationV2 extends pulumi.CustomResource {
     /**

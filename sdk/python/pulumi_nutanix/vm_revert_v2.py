@@ -129,10 +129,10 @@ class VmRevertV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        # revert Vm  
+        # revert Vm
         example = nutanix.VmRevertV2("example",
-            ext_id="<VM_UUID>",
-            vm_recovery_point_ext_id="<Vm_Recovery_Point_UUID>")
+            ext_id="8a938cc5-282b-48c4-81be-de22de145d07",
+            vm_recovery_point_ext_id="c2c249b0-98a0-43fa-9ff6-dcde578d3936")
         ```
 
         :param str resource_name: The name of the resource.
@@ -155,10 +155,10 @@ class VmRevertV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        # revert Vm  
+        # revert Vm
         example = nutanix.VmRevertV2("example",
-            ext_id="<VM_UUID>",
-            vm_recovery_point_ext_id="<Vm_Recovery_Point_UUID>")
+            ext_id="8a938cc5-282b-48c4-81be-de22de145d07",
+            vm_recovery_point_ext_id="c2c249b0-98a0-43fa-9ff6-dcde578d3936")
         ```
 
         :param str resource_name: The name of the resource.

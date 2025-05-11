@@ -12,6 +12,49 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides Nutanix resource to Create Route.
+    /// 
+    /// ## Example
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     // create a route
+    ///     var route = new Nutanix.RoutesV2("route", new()
+    ///     {
+    ///         Description = "terraform example route to example create route",
+    ///         Destination = new Nutanix.Inputs.RoutesV2DestinationArgs
+    ///         {
+    ///             Ipv4 = new Nutanix.Inputs.RoutesV2DestinationIpv4Args
+    ///             {
+    ///                 Ip = new Nutanix.Inputs.RoutesV2DestinationIpv4IpArgs
+    ///                 {
+    ///                     Value = "10.0.0.2",
+    ///                 },
+    ///                 PrefixLength = 32,
+    ///             },
+    ///         },
+    ///         Metadata = new Nutanix.Inputs.RoutesV2MetadataArgs
+    ///         {
+    ///             OwnerReferenceId = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
+    ///             ProjectReferenceId = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+    ///         },
+    ///         NextHop = new Nutanix.Inputs.RoutesV2NextHopArgs
+    ///         {
+    ///             NextHopReference = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
+    ///             NextHopType = "EXTERNAL_SUBNET",
+    ///         },
+    ///         RouteTableExtId = "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
+    ///         RouteType = "STATIC",
+    ///         VpcReference = "8a938cc5-282b-48c4-81be-de22de145d07",
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/routesV2:RoutesV2")]
     public partial class RoutesV2 : global::Pulumi.CustomResource

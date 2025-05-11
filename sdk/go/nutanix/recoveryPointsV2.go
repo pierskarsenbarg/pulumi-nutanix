@@ -34,7 +34,7 @@ import (
 //				Status:            pulumi.String("COMPLETE"),
 //				VmRecoveryPoints: nutanix.RecoveryPointsV2VmRecoveryPointArray{
 //					&nutanix.RecoveryPointsV2VmRecoveryPointArgs{
-//						VmExtId: pulumi.String("<Vm-uuid-1>"),
+//						VmExtId: pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),
 //					},
 //				},
 //			})

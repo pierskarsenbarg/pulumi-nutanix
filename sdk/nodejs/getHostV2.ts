@@ -16,8 +16,8 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const host = nutanix.getHostV2({
- *     clusterExtId: "<cluster uuid>",
- *     extId: "<host uuid>",
+ *     clusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+ *     extId: "919c9488-0b50-4fc8-9159-923e56a3abca",
  * });
  * ```
  */
@@ -217,8 +217,8 @@ export interface GetHostV2Result {
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const host = nutanix.getHostV2({
- *     clusterExtId: "<cluster uuid>",
- *     extId: "<host uuid>",
+ *     clusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+ *     extId: "919c9488-0b50-4fc8-9159-923e56a3abca",
  * });
  * ```
  */

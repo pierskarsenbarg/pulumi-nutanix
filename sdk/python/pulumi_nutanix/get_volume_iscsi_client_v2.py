@@ -166,7 +166,7 @@ def get_volume_iscsi_client_v2(ext_id: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    example = nutanix.get_volume_iscsi_client_v2(ext_id=var["iscsi_client_ext_id"])
+    example = nutanix.get_volume_iscsi_client_v2(ext_id="be0e4630-23da-4b9c-a76b-f24fd64b46b6")
     ```
 
     ## Argument Reference
@@ -208,7 +208,7 @@ def get_volume_iscsi_client_v2_output(ext_id: Optional[pulumi.Input[builtins.str
     import pulumi
     import pulumi_nutanix as nutanix
 
-    example = nutanix.get_volume_iscsi_client_v2(ext_id=var["iscsi_client_ext_id"])
+    example = nutanix.get_volume_iscsi_client_v2(ext_id="be0e4630-23da-4b9c-a76b-f24fd64b46b6")
     ```
 
     ## Argument Reference

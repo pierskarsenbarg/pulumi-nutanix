@@ -27,7 +27,7 @@ class UserGroupsV2Args:
                  name: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a UserGroupsV2 resource.
-        :param pulumi.Input[builtins.str] group_type: -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        :param pulumi.Input[builtins.str] group_type: -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
         :param pulumi.Input[builtins.str] idp_id: -(Required) Identifier of the IDP for the User Group.
         :param pulumi.Input[builtins.str] distinguished_name: -(Optional) Identifier for the User Group in the form of a distinguished name.
         :param pulumi.Input[builtins.str] ext_id: The External Identifier of the User Group.
@@ -46,7 +46,7 @@ class UserGroupsV2Args:
     @pulumi.getter(name="groupType")
     def group_type(self) -> pulumi.Input[builtins.str]:
         """
-        -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
         """
         return pulumi.get(self, "group_type")
 
@@ -120,7 +120,7 @@ class _UserGroupsV2State:
         :param pulumi.Input[builtins.str] created_time: - Creation time of the User Group.
         :param pulumi.Input[builtins.str] distinguished_name: -(Optional) Identifier for the User Group in the form of a distinguished name.
         :param pulumi.Input[builtins.str] ext_id: The External Identifier of the User Group.
-        :param pulumi.Input[builtins.str] group_type: -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        :param pulumi.Input[builtins.str] group_type: -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
         :param pulumi.Input[builtins.str] idp_id: -(Required) Identifier of the IDP for the User Group.
         :param pulumi.Input[builtins.str] last_updated_time: - Last updated time of the User Group.
         :param pulumi.Input[builtins.str] name: -(Optional) Common Name of the User Group.
@@ -194,7 +194,7 @@ class _UserGroupsV2State:
     @pulumi.getter(name="groupType")
     def group_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
         """
         return pulumi.get(self, "group_type")
 
@@ -261,16 +261,20 @@ class UserGroupsV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         usr_group = nutanix.UserGroupsV2("usrGroup",
-            distinguished_name="<distinguished name of the user group>",
-            group_type="<group Type>",
-            idp_id="<idp uuid of user group>")
+            distinguished_name="cn=group_0664229e,ou=group,dc=devtest,dc=local",
+            group_type="LDAP",
+            idp_id="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+        # Saml User group
+        saml_ug = nutanix.UserGroupsV2("saml-ug",
+            group_type="SAML",
+            idp_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
         ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] distinguished_name: -(Optional) Identifier for the User Group in the form of a distinguished name.
         :param pulumi.Input[builtins.str] ext_id: The External Identifier of the User Group.
-        :param pulumi.Input[builtins.str] group_type: -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        :param pulumi.Input[builtins.str] group_type: -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
         :param pulumi.Input[builtins.str] idp_id: -(Required) Identifier of the IDP for the User Group.
         :param pulumi.Input[builtins.str] name: -(Optional) Common Name of the User Group.
         """
@@ -290,9 +294,13 @@ class UserGroupsV2(pulumi.CustomResource):
         import pulumi_nutanix as nutanix
 
         usr_group = nutanix.UserGroupsV2("usrGroup",
-            distinguished_name="<distinguished name of the user group>",
-            group_type="<group Type>",
-            idp_id="<idp uuid of user group>")
+            distinguished_name="cn=group_0664229e,ou=group,dc=devtest,dc=local",
+            group_type="LDAP",
+            idp_id="ba250e3e-1db1-4950-917f-a9e2ea35b8e3")
+        # Saml User group
+        saml_ug = nutanix.UserGroupsV2("saml-ug",
+            group_type="SAML",
+            idp_id="a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b")
         ```
 
         :param str resource_name: The name of the resource.
@@ -365,7 +373,7 @@ class UserGroupsV2(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] created_time: - Creation time of the User Group.
         :param pulumi.Input[builtins.str] distinguished_name: -(Optional) Identifier for the User Group in the form of a distinguished name.
         :param pulumi.Input[builtins.str] ext_id: The External Identifier of the User Group.
-        :param pulumi.Input[builtins.str] group_type: -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        :param pulumi.Input[builtins.str] group_type: -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
         :param pulumi.Input[builtins.str] idp_id: -(Required) Identifier of the IDP for the User Group.
         :param pulumi.Input[builtins.str] last_updated_time: - Last updated time of the User Group.
         :param pulumi.Input[builtins.str] name: -(Optional) Common Name of the User Group.
@@ -420,7 +428,7 @@ class UserGroupsV2(pulumi.CustomResource):
     @pulumi.getter(name="groupType")
     def group_type(self) -> pulumi.Output[builtins.str]:
         """
-        -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+        -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
         """
         return pulumi.get(self, "group_type")
 

@@ -8,6 +8,17 @@ import * as utilities from "./utilities";
 
 /**
  * Get a single recovery point  corresponding to the extId.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const get_recovery_point = nutanix.getRecoveryPointV2({
+ *     extId: "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+ * });
+ * ```
  */
 export function getRecoveryPointV2(args: GetRecoveryPointV2Args, opts?: pulumi.InvokeOptions): Promise<GetRecoveryPointV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -91,6 +102,17 @@ export interface GetRecoveryPointV2Result {
 }
 /**
  * Get a single recovery point  corresponding to the extId.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const get_recovery_point = nutanix.getRecoveryPointV2({
+ *     extId: "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+ * });
+ * ```
  */
 export function getRecoveryPointV2Output(args: GetRecoveryPointV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRecoveryPointV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

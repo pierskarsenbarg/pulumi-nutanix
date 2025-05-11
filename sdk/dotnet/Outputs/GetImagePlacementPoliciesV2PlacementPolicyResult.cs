@@ -24,7 +24,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// (Optional) Enforcement status of the image placement policy. Valid values "ACTIVE", "SUSPENDED"
+        /// (Optional) Enforcement status of the image placement policy. Valid values:
+        /// - ACTIVE: The image placement policy is being actively enforced.
+        /// - SUSPENDED: The policy enforcement for image placement is suspended.
         /// </summary>
         public readonly string EnforcementState;
         /// <summary>
@@ -42,7 +44,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string Name;
         public readonly string OwnerExtId;
         /// <summary>
-        /// (Required) Type of the image placement policy. Valid values "HARD", "SOFT"
+        /// (Required) Type of the image placement policy. Valid values:
+        /// - HARD: Hard placement policy. Images can only be placed on clusters enforced by the image placement policy.
+        /// - SOFT: Soft placement policy. Images can be placed on clusters apart from those enforced by the image placement policy.
         /// </summary>
         public readonly string PlacementType;
 

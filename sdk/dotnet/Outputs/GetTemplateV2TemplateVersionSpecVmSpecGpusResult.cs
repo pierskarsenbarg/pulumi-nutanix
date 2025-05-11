@@ -34,6 +34,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// Last determined guest driver version.
         /// </summary>
         public readonly string GuestDriverVersion;
+        /// <summary>
+        /// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecGpusLinkResult> Links;
         /// <summary>
         /// The mode of this GPU.
@@ -51,6 +54,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// The (S)egment:(B)us:(D)evice.(F)unction hardware address. See
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecGpusPciAddressResult> PciAddresses;
+        /// <summary>
+        /// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+        /// </summary>
         public readonly string TenantId;
         /// <summary>
         /// The vendor of the GPU.

@@ -8,6 +8,20 @@ import * as utilities from "./utilities";
 
 /**
  * Provides Nutanix resource to Trigger an in-guest upgrade of Nutanix Guest Tools.
+ *
+ * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const example = new nutanix.NgtUpgradeV2("example", {
+ *     extId: "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+ *     rebootPreference: {
+ *         scheduleType: "IMMEDIATE",
+ *     },
+ * });
+ * ```
  */
 export class NgtUpgradeV2 extends pulumi.CustomResource {
     /**

@@ -30,7 +30,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         SharingStatus = "SHARED",
     ///         TargetName = "volumegroup-test-001234",
     ///         CreatedBy = "example",
-    ///         ClusterReference = "&lt;Cluster uuid&gt;",
+    ///         ClusterReference = "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
     ///         IscsiFeatures = new[]
     ///         {
     ///             new Nutanix.Inputs.VolumeGroupV2IscsiFeatureArgs

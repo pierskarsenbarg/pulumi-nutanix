@@ -14,29 +14,16 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetCategoriesV2CategoryAssociationResult
     {
-        /// <summary>
-        /// External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
-        /// </summary>
         public readonly string CategoryId;
-        /// <summary>
-        /// Count of associations of a particular type of entity or policy
-        /// </summary>
-        public readonly string Count;
-        /// <summary>
-        /// An enum denoting the resource group.
-        /// Resources can be organized into either an entity or a policy.
-        /// </summary>
+        public readonly int Count;
         public readonly string ResourceGroup;
-        /// <summary>
-        /// An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
-        /// </summary>
         public readonly string ResourceType;
 
         [OutputConstructor]
         private GetCategoriesV2CategoryAssociationResult(
             string categoryId,
 
-            string count,
+            int count,
 
             string resourceGroup,
 

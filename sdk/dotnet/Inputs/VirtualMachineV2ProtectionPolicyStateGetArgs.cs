@@ -15,6 +15,11 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("policies")]
         private InputList<Inputs.VirtualMachineV2ProtectionPolicyStatePolicyGetArgs>? _policies;
+
+        /// <summary>
+        /// Reference to the policy object in use.
+        /// * `policy.ext_id`: (Optional) Reference to the policy object in use.
+        /// </summary>
         public InputList<Inputs.VirtualMachineV2ProtectionPolicyStatePolicyGetArgs> Policies
         {
             get => _policies ?? (_policies = new InputList<Inputs.VirtualMachineV2ProtectionPolicyStatePolicyGetArgs>());

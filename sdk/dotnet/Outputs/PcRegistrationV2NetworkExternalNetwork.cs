@@ -14,25 +14,25 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PcRegistrationV2NetworkExternalNetwork
     {
-        public readonly ImmutableArray<Outputs.PcRegistrationV2NetworkExternalNetworkDefaultGateway> DefaultGateways;
+        public readonly Outputs.PcRegistrationV2NetworkExternalNetworkDefaultGateway DefaultGateway;
         public readonly ImmutableArray<Outputs.PcRegistrationV2NetworkExternalNetworkIpRange> IpRanges;
-        public readonly string? NetworkExtId;
-        public readonly ImmutableArray<Outputs.PcRegistrationV2NetworkExternalNetworkSubnetMask> SubnetMasks;
+        public readonly string NetworkExtId;
+        public readonly Outputs.PcRegistrationV2NetworkExternalNetworkSubnetMask SubnetMask;
 
         [OutputConstructor]
         private PcRegistrationV2NetworkExternalNetwork(
-            ImmutableArray<Outputs.PcRegistrationV2NetworkExternalNetworkDefaultGateway> defaultGateways,
+            Outputs.PcRegistrationV2NetworkExternalNetworkDefaultGateway defaultGateway,
 
             ImmutableArray<Outputs.PcRegistrationV2NetworkExternalNetworkIpRange> ipRanges,
 
-            string? networkExtId,
+            string networkExtId,
 
-            ImmutableArray<Outputs.PcRegistrationV2NetworkExternalNetworkSubnetMask> subnetMasks)
+            Outputs.PcRegistrationV2NetworkExternalNetworkSubnetMask subnetMask)
         {
-            DefaultGateways = defaultGateways;
+            DefaultGateway = defaultGateway;
             IpRanges = ipRanges;
             NetworkExtId = networkExtId;
-            SubnetMasks = subnetMasks;
+            SubnetMask = subnetMask;
         }
     }
 }

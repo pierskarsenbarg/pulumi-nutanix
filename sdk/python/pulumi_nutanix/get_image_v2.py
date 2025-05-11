@@ -212,6 +212,15 @@ def get_image_v2(ext_id: Optional[builtins.str] = None,
     """
     Retrieve the image details for the provided external identifier.
 
+    ## Example
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    get_image = nutanix.get_image_v2(ext_id="0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b")
+    ```
+
 
     :param builtins.str ext_id: The external identifier of an image.
     """
@@ -239,6 +248,15 @@ def get_image_v2_output(ext_id: Optional[pulumi.Input[builtins.str]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImageV2Result]:
     """
     Retrieve the image details for the provided external identifier.
+
+    ## Example
+
+    ```python
+    import pulumi
+    import pulumi_nutanix as nutanix
+
+    get_image = nutanix.get_image_v2(ext_id="0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b")
+    ```
 
 
     :param builtins.str ext_id: The external identifier of an image.

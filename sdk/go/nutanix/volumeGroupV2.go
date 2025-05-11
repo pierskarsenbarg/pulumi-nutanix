@@ -34,7 +34,7 @@ import (
 //				SharingStatus:                  pulumi.String("SHARED"),
 //				TargetName:                     pulumi.String("volumegroup-test-001234"),
 //				CreatedBy:                      pulumi.String("example"),
-//				ClusterReference:               pulumi.String("<Cluster uuid>"),
+//				ClusterReference:               pulumi.String("ab520e1d-4950-1db1-917f-a9e2ea35b8e3"),
 //				IscsiFeatures: nutanix.VolumeGroupV2IscsiFeatureArray{
 //					&nutanix.VolumeGroupV2IscsiFeatureArgs{
 //						EnabledAuthentications: pulumi.String("CHAP"),

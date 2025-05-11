@@ -13,6 +13,35 @@ import (
 )
 
 // External identifier of the replicated recovery point can be found in the task completion details under the key
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// replicate RP
+//			_, err := nutanix.NewRecoveryPointReplicateV2(ctx, "rp-replicate", &nutanix.RecoveryPointReplicateV2Args{
+//				ClusterExtId: pulumi.String("1cefd0f5-6d38-4c9b-a07c-bdd2db004224"),
+//				ExtId:        pulumi.String("150a7ed0-9d05-4f35-a060-16dac4c835d0"),
+//				PcExtId:      pulumi.String("8a938cc5-282b-48c4-81be-de22de145d07"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type RecoveryPointReplicateV2 struct {
 	pulumi.CustomResourceState
 

@@ -285,6 +285,18 @@ class NgtInsertIsoV2(pulumi.CustomResource):
         """
         Provides Nutanix resource toInserts the Nutanix Guest Tools installation and configuration ISO into a virtual machine.
 
+        ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        example = nutanix.NgtInsertIsoV2("example",
+            capablities=["VSS_SNAPSHOT"],
+            ext_id="ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+            is_config_only=False)
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] capablities: The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
@@ -299,6 +311,18 @@ class NgtInsertIsoV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides Nutanix resource toInserts the Nutanix Guest Tools installation and configuration ISO into a virtual machine.
+
+        ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        example = nutanix.NgtInsertIsoV2("example",
+            capablities=["VSS_SNAPSHOT"],
+            ext_id="ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+            is_config_only=False)
+        ```
 
         :param str resource_name: The name of the resource.
         :param NgtInsertIsoV2Args args: The arguments to use to populate this resource's properties.

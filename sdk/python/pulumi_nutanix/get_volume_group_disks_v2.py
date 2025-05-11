@@ -132,47 +132,8 @@ def get_volume_group_disks_v2(filter: Optional[builtins.str] = None,
     import pulumi
     import pulumi_nutanix as nutanix
 
-    example_volume_group_v2 = nutanix.VolumeGroupV2("exampleVolumeGroupV2",
-        description="Test Volume group with min spec and no Auth",
-        should_load_balance_vm_attachments=False,
-        sharing_status="SHARED",
-        target_name="volumegroup-test-0",
-        created_by="Test",
-        cluster_reference="<Cluster uuid>",
-        iscsi_features=[{
-            "enabled_authentications": "CHAP",
-            "target_secret": "1234567891011",
-        }],
-        storage_features=[{
-            "flash_modes": [{
-                "is_enabled": True,
-            }],
-        }],
-        usage_type="USER",
-        is_hidden=False)
-    # Attach a volume group disk to the previous volume group
-    example_volume_group_disk_v2 = nutanix.VolumeGroupDiskV2("exampleVolumeGroupDiskV2",
-        volume_group_ext_id=resource["nutanix_volume_group_v2"]["example"]["id"],
-        index=1,
-        description="create volume disk test",
-        disk_size_bytes=5368709120,
-        disk_data_source_references=[{
-            "name": "disk1",
-            "ext_id": var["disk_data_source_ref_ext_id"],
-            "entity_type": "STORAGE_CONTAINER",
-            "uris": [
-                "uri1",
-                "uri2",
-            ],
-        }],
-        disk_storage_features=[{
-            "flash_modes": [{
-                "is_enabled": False,
-            }],
-        }])
-    example_volume_group_disks_v2 = nutanix.get_volume_group_disks_v2(volume_group_ext_id=resource["nutanix_volume_group_v2"]["example"]["id"],
-        filter="startswith(storageContainerId, var.filter_value)",
-        limit=1)
+    list_volume_disks = nutanix.get_volume_group_disks_v2(filter="storageContainerId eq '07c2da68-bb67-4535-9b2a-81504f6bb2e3'",
+        volume_group_ext_id="3770be9d-06be-4e25-b85d-3457d9b0ceb1")
     ```
 
     ## Argument Reference
@@ -221,47 +182,8 @@ def get_volume_group_disks_v2_output(filter: Optional[pulumi.Input[Optional[buil
     import pulumi
     import pulumi_nutanix as nutanix
 
-    example_volume_group_v2 = nutanix.VolumeGroupV2("exampleVolumeGroupV2",
-        description="Test Volume group with min spec and no Auth",
-        should_load_balance_vm_attachments=False,
-        sharing_status="SHARED",
-        target_name="volumegroup-test-0",
-        created_by="Test",
-        cluster_reference="<Cluster uuid>",
-        iscsi_features=[{
-            "enabled_authentications": "CHAP",
-            "target_secret": "1234567891011",
-        }],
-        storage_features=[{
-            "flash_modes": [{
-                "is_enabled": True,
-            }],
-        }],
-        usage_type="USER",
-        is_hidden=False)
-    # Attach a volume group disk to the previous volume group
-    example_volume_group_disk_v2 = nutanix.VolumeGroupDiskV2("exampleVolumeGroupDiskV2",
-        volume_group_ext_id=resource["nutanix_volume_group_v2"]["example"]["id"],
-        index=1,
-        description="create volume disk test",
-        disk_size_bytes=5368709120,
-        disk_data_source_references=[{
-            "name": "disk1",
-            "ext_id": var["disk_data_source_ref_ext_id"],
-            "entity_type": "STORAGE_CONTAINER",
-            "uris": [
-                "uri1",
-                "uri2",
-            ],
-        }],
-        disk_storage_features=[{
-            "flash_modes": [{
-                "is_enabled": False,
-            }],
-        }])
-    example_volume_group_disks_v2 = nutanix.get_volume_group_disks_v2(volume_group_ext_id=resource["nutanix_volume_group_v2"]["example"]["id"],
-        filter="startswith(storageContainerId, var.filter_value)",
-        limit=1)
+    list_volume_disks = nutanix.get_volume_group_disks_v2(filter="storageContainerId eq '07c2da68-bb67-4535-9b2a-81504f6bb2e3'",
+        volume_group_ext_id="3770be9d-06be-4e25-b85d-3457d9b0ceb1")
     ```
 
     ## Argument Reference

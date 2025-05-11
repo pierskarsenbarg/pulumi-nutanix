@@ -8,18 +8,6 @@ import * as utilities from "./utilities";
 
 /**
  * Provides Nutanix resource to List Routes request.
- *
- * ## Example
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
- *
- * const routes = nutanix.getRoutesV2({
- *     limit: 3,
- *     routeTableExtId: "<route_table_uuid>",
- * });
- * ```
  */
 export function getRoutesV2(args: GetRoutesV2Args, opts?: pulumi.InvokeOptions): Promise<GetRoutesV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -78,18 +66,6 @@ export interface GetRoutesV2Result {
 }
 /**
  * Provides Nutanix resource to List Routes request.
- *
- * ## Example
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pulumi/nutanix";
- *
- * const routes = nutanix.getRoutesV2({
- *     limit: 3,
- *     routeTableExtId: "<route_table_uuid>",
- * });
- * ```
  */
 export function getRoutesV2Output(args: GetRoutesV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetRoutesV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

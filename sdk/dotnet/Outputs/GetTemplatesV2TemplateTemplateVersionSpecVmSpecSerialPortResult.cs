@@ -14,17 +14,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecSerialPortResult
     {
-        /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
-        /// </summary>
         public readonly string ExtId;
-        /// <summary>
-        /// Index of the serial port.
-        /// </summary>
         public readonly int Index;
-        /// <summary>
-        /// Indicates whether the serial port is connected or not.
-        /// </summary>
         public readonly bool IsConnected;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecSerialPortLinkResult> Links;
         public readonly string TenantId;

@@ -28,7 +28,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.GetRouteTableV2(ctx, &nutanix.GetRouteTableV2Args{
-//				ExtId: "<route_table_uuid>",
+//				ExtId: "ad7692ff-50f8-4a47-b3c9-fd5a3462d455",
 //			}, nil)
 //			if err != nil {
 //				return err

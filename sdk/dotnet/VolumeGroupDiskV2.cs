@@ -23,52 +23,19 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var exampleVolumeGroupV2 = new Nutanix.VolumeGroupV2("exampleVolumeGroupV2", new()
-    ///     {
-    ///         Description = "Test Volume group with min spec and no Auth",
-    ///         ShouldLoadBalanceVmAttachments = false,
-    ///         SharingStatus = "SHARED",
-    ///         TargetName = "volumegroup-test-0",
-    ///         CreatedBy = "Test",
-    ///         ClusterReference = "&lt;Cluster uuid&gt;",
-    ///         IscsiFeatures = new[]
-    ///         {
-    ///             new Nutanix.Inputs.VolumeGroupV2IscsiFeatureArgs
-    ///             {
-    ///                 EnabledAuthentications = "CHAP",
-    ///                 TargetSecret = "1234567891011",
-    ///             },
-    ///         },
-    ///         StorageFeatures = new[]
-    ///         {
-    ///             new Nutanix.Inputs.VolumeGroupV2StorageFeatureArgs
-    ///             {
-    ///                 FlashModes = new[]
-    ///                 {
-    ///                     new Nutanix.Inputs.VolumeGroupV2StorageFeatureFlashModeArgs
-    ///                     {
-    ///                         IsEnabled = true,
-    ///                     },
-    ///                 },
-    ///             },
-    ///         },
-    ///         UsageType = "USER",
-    ///         IsHidden = false,
-    ///     });
-    /// 
     ///     // create new volume group disk  and attached it to the previous volume group
-    ///     var exampleVolumeGroupDiskV2 = new Nutanix.VolumeGroupDiskV2("exampleVolumeGroupDiskV2", new()
+    ///     var example = new Nutanix.VolumeGroupDiskV2("example", new()
     ///     {
-    ///         VolumeGroupExtId = resource.Nutanix_volume_group_v2.Example.Id,
+    ///         VolumeGroupExtId = "cf7de8b9-88ed-477d-a602-c34ab7174c01",
     ///         Index = 1,
-    ///         Description = "create volume disk test",
+    ///         Description = "create volume disk example",
     ///         DiskSizeBytes = 5368709120,
     ///         DiskDataSourceReferences = new[]
     ///         {
     ///             new Nutanix.Inputs.VolumeGroupDiskV2DiskDataSourceReferenceArgs
     ///             {
     ///                 Name = "disk1",
-    ///                 ExtId = @var.Disk_data_source_ref_ext_id,
+    ///                 ExtId = "1d92110d-26b5-46c0-8c93-20b8171373e0",
     ///                 EntityType = "STORAGE_CONTAINER",
     ///                 Uris = new[]
     ///                 {

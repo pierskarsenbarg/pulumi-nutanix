@@ -13,8 +13,19 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class VirtualMachineV2SourceArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Reference to an entity from which the VM should be cloned or created. Values are:
+        /// - VM_RECOVERY_POINT: Reference to the recovery point entity from which the VM should be cloned or created.
+        /// - VM: Reference to an entity from which the VM should be cloned or created.
+        /// </summary>
         [Input("entityType")]
         public Input<string>? EntityType { get; set; }
+
+        /// <summary>
+        /// A globally unique identifier of an instance that is suitable for external consumption.
+        /// </summary>
+        [Input("extId")]
+        public Input<string>? ExtId { get; set; }
 
         public VirtualMachineV2SourceArgs()
         {

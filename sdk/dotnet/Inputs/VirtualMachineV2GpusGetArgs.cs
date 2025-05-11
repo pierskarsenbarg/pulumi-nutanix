@@ -43,7 +43,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         }
 
         /// <summary>
-        /// The mode of this GPU. Valid values "PASSTHROUGH_GRAPHICS", "PASSTHROUGH_COMPUTE", "VIRTUAL" .
+        /// ) The mode of this GPU. Valid values "PASSTHROUGH_GRAPHICS", "PASSTHROUGH_COMPUTE", "VIRTUAL" .
         /// </summary>
         [Input("mode")]
         public Input<string>? Mode { get; set; }

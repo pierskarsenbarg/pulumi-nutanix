@@ -17,7 +17,7 @@ import * as utilities from "./utilities";
  *
  * const serviceGroup = nutanix.getServiceGroupsV2({});
  * const serviceGroupFiltered = nutanix.getServiceGroupsV2({
- *     filter: "name eq '%[1]s'",
+ *     filter: "name eq 'service_group_name'",
  * });
  * ```
  */
@@ -38,7 +38,8 @@ export function getServiceGroupsV2(args?: GetServiceGroupsV2Args, opts?: pulumi.
  */
 export interface GetServiceGroupsV2Args {
     /**
-     * A URL query parameter that allows clients to filter a collection of resources.
+     * A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+     * - `createdBy`
      */
     filter?: string;
     /**
@@ -46,7 +47,7 @@ export interface GetServiceGroupsV2Args {
      */
     limit?: number;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
      */
     orderBy?: string;
     /**
@@ -54,7 +55,8 @@ export interface GetServiceGroupsV2Args {
      */
     page?: number;
     /**
-     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions
+     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. The select can be applied to the following fields:
+     * - `createdBy`
      */
     select?: string;
 }
@@ -72,6 +74,9 @@ export interface GetServiceGroupsV2Result {
     readonly orderBy?: string;
     readonly page?: number;
     readonly select?: string;
+    /**
+     * List of service groups
+     */
     readonly serviceGroups: outputs.GetServiceGroupsV2ServiceGroup[];
 }
 /**
@@ -85,7 +90,7 @@ export interface GetServiceGroupsV2Result {
  *
  * const serviceGroup = nutanix.getServiceGroupsV2({});
  * const serviceGroupFiltered = nutanix.getServiceGroupsV2({
- *     filter: "name eq '%[1]s'",
+ *     filter: "name eq 'service_group_name'",
  * });
  * ```
  */
@@ -106,7 +111,8 @@ export function getServiceGroupsV2Output(args?: GetServiceGroupsV2OutputArgs, op
  */
 export interface GetServiceGroupsV2OutputArgs {
     /**
-     * A URL query parameter that allows clients to filter a collection of resources.
+     * A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+     * - `createdBy`
      */
     filter?: pulumi.Input<string>;
     /**
@@ -114,7 +120,7 @@ export interface GetServiceGroupsV2OutputArgs {
      */
     limit?: pulumi.Input<number>;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
      */
     orderBy?: pulumi.Input<string>;
     /**
@@ -122,7 +128,8 @@ export interface GetServiceGroupsV2OutputArgs {
      */
     page?: pulumi.Input<number>;
     /**
-     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions
+     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. The select can be applied to the following fields:
+     * - `createdBy`
      */
     select?: pulumi.Input<string>;
 }

@@ -16,9 +16,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmCdRomBackingInfoResult> BackingInfos;
         public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmCdRomDiskAddressResult> DiskAddresses;
-        /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
-        /// </summary>
         public readonly string ExtId;
         public readonly string IsoType;
 

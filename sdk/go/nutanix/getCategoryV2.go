@@ -12,6 +12,32 @@ import (
 )
 
 // Fetch a category
+//
+// ## Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.LookupCategoryV2(ctx, &nutanix.LookupCategoryV2Args{
+//				ExtId: "85e68112-5b2b-4220-bc8d-e529e4bf420e",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupCategoryV2(ctx *pulumi.Context, args *LookupCategoryV2Args, opts ...pulumi.InvokeOption) (*LookupCategoryV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupCategoryV2Result
@@ -24,7 +50,9 @@ func LookupCategoryV2(ctx *pulumi.Context, args *LookupCategoryV2Args, opts ...p
 
 // A collection of arguments for invoking getCategoryV2.
 type LookupCategoryV2Args struct {
-	// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+	// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported:
+	// - associations
+	// - detailedAssociations
 	Expand *string `pulumi:"expand"`
 	// The extID for the category.
 	ExtId string `pulumi:"extId"`
@@ -68,7 +96,9 @@ func LookupCategoryV2Output(ctx *pulumi.Context, args LookupCategoryV2OutputArgs
 
 // A collection of arguments for invoking getCategoryV2.
 type LookupCategoryV2OutputArgs struct {
-	// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+	// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported:
+	// - associations
+	// - detailedAssociations
 	Expand pulumi.StringPtrInput `pulumi:"expand"`
 	// The extID for the category.
 	ExtId pulumi.StringInput `pulumi:"extId"`

@@ -87,6 +87,9 @@ class GetServiceGroupsV2Result:
     @property
     @pulumi.getter(name="serviceGroups")
     def service_groups(self) -> Sequence['outputs.GetServiceGroupsV2ServiceGroupResult']:
+        """
+        List of service groups
+        """
         return pulumi.get(self, "service_groups")
 
 
@@ -121,15 +124,17 @@ def get_service_groups_v2(filter: Optional[builtins.str] = None,
     import pulumi_nutanix as nutanix
 
     service_group = nutanix.get_service_groups_v2()
-    service_group_filtered = nutanix.get_service_groups_v2(filter="name eq '%[1]s'")
+    service_group_filtered = nutanix.get_service_groups_v2(filter="name eq 'service_group_name'")
     ```
 
 
-    :param builtins.str filter: A URL query parameter that allows clients to filter a collection of resources.
+    :param builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+           - `createdBy`
     :param builtins.int limit: A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-    :param builtins.str order_by: A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+    :param builtins.str order_by: A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
     :param builtins.int page: A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
-    :param builtins.str select: A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions
+    :param builtins.str select: A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. The select can be applied to the following fields:
+           - `createdBy`
     """
     __args__ = dict()
     __args__['filter'] = filter
@@ -164,15 +169,17 @@ def get_service_groups_v2_output(filter: Optional[pulumi.Input[Optional[builtins
     import pulumi_nutanix as nutanix
 
     service_group = nutanix.get_service_groups_v2()
-    service_group_filtered = nutanix.get_service_groups_v2(filter="name eq '%[1]s'")
+    service_group_filtered = nutanix.get_service_groups_v2(filter="name eq 'service_group_name'")
     ```
 
 
-    :param builtins.str filter: A URL query parameter that allows clients to filter a collection of resources.
+    :param builtins.str filter: A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+           - `createdBy`
     :param builtins.int limit: A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-    :param builtins.str order_by: A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+    :param builtins.str order_by: A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
     :param builtins.int page: A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
-    :param builtins.str select: A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions
+    :param builtins.str select: A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. The select can be applied to the following fields:
+           - `createdBy`
     """
     __args__ = dict()
     __args__['filter'] = filter

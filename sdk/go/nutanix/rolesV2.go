@@ -28,10 +28,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.NewRolesV2(ctx, "example", &nutanix.RolesV2Args{
-//				Description: pulumi.String("test description"),
-//				DisplayName: pulumi.String("{{ display-name }}"),
-//				Operations:  pulumi.StringArray("{{ operations }}"),
+//			operations_filtered_list, err := nutanix.GetOperationsV2(ctx, &nutanix.GetOperationsV2Args{
+//				Filter: pulumi.StringRef("startswith(displayName, 'Create_')"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			// Create role
+//			_, err = nutanix.NewRolesV2(ctx, "example-role", &nutanix.RolesV2Args{
+//				DisplayName: pulumi.String("example_role"),
+//				Description: pulumi.String("create example role"),
+//				Operations: pulumi.StringArray{
+//					pulumi.String(operations_filtered_list.Operations[0].ExtId),
+//					pulumi.String(operations_filtered_list.Operations[1].ExtId),
+//					pulumi.String(operations_filtered_list.Operations[2].ExtId),
+//					pulumi.String(operations_filtered_list.Operations[3].ExtId),
+//				},
 //			})
 //			if err != nil {
 //				return err

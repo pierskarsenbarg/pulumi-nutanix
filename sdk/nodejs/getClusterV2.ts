@@ -15,8 +15,8 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const cluster = nutanix.getClusterV2({
- *     extId: "<YOUR-CLUSTER-ID>",
+ * const get_cluster = nutanix.getClusterV2({
+ *     extId: "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
  * });
  * ```
  */
@@ -130,8 +130,8 @@ export interface GetClusterV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const cluster = nutanix.getClusterV2({
- *     extId: "<YOUR-CLUSTER-ID>",
+ * const get_cluster = nutanix.getClusterV2({
+ *     extId: "c2c249b0-98a0-43fa-9ff6-dcde578d3936",
  * });
  * ```
  */

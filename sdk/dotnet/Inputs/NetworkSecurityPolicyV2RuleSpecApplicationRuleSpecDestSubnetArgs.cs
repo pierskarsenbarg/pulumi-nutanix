@@ -14,7 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecDestSubnetArgs : global::Pulumi.ResourceArgs
     {
         [Input("prefixLength")]
-        public Input<string>? PrefixLength { get; set; }
+        public Input<int>? PrefixLength { get; set; }
 
         [Input("value")]
         public Input<string>? Value { get; set; }

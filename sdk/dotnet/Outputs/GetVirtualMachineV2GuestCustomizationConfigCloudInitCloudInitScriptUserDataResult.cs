@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptUserDataResult
     {
+        /// <summary>
+        /// The IPv4 address of the host.
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

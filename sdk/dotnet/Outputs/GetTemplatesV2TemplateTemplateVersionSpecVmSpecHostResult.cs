@@ -14,9 +14,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecHostResult
     {
-        /// <summary>
-        /// The globally unique identifier of a host.
-        /// </summary>
         public readonly string ExtId;
 
         [OutputConstructor]

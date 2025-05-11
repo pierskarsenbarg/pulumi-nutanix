@@ -31,11 +31,78 @@ import (
 //			if err != nil {
 //				return err
 //			}
+//			_, err = nutanix.GetVpcsV2(ctx, &nutanix.GetVpcsV2Args{
+//				Filter: pulumi.StringRef("vpcType eq 'VLAN'"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.GetVpcsV2(ctx, &nutanix.GetVpcsV2Args{
+//				Filter:  pulumi.StringRef("vpcType eq 'VLAN'"),
+//				Limit:   pulumi.IntRef(10),
+//				OrderBy: pulumi.StringRef("name desc"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
 //			return nil
 //		})
 //	}
 //
 // ```
+//
+// ## vpcs
+//
+// The `vpcs` object contains the following attributes:
+//
+// - `extId`: extId of VPC.
+// - `name`: Name of the VPC.
+// - `description`: Description of the VPC.
+// - `commonDhcpOptions`: List of DHCP options to be configured.
+// - `vpcType`: Type of VPC.
+// - `snatIps`: List of IP Addresses used for SNAT.
+// - `externalSubnets`: List of external subnets that the VPC is attached to.
+// - `externalRoutingDomainReference`: External routing domain associated with this route table
+// - `externallyRoutablePrefixes`: CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
+// - `tenantId`: A globally unique identifier that represents the tenant that owns this entity.
+// - `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+// - `metadata`: Metadata associated with this resource.
+//
+// ### commonDhcpOptions
+//
+// - `domainNameServers`: List of Domain Name Server addresses
+// - `domain_name_servers.ipv4`: Reference to address configuration
+// - `domain_name_servers.ipv6`: Reference to address configuration
+//
+// ### externalSubnets
+//
+// - `subnetReference`: External subnet reference.
+// - `externalIps`: List of IP Addresses used for SNAT, if NAT is enabled on the external subnet. If NAT is not enabled, this specifies the IP address of the VPC port connected to the external gateway.
+// - `gatewayNodes`: List of gateway nodes that can be used for external connectivity.
+// - `activeGatewayNode`: Reference of gateway nodes
+// - `activeGatewayCount`: Maximum number of active gateway nodes for the VPC external subnet association.
+//
+// ### snat_ips, externalIps
+//
+// - `ipv4`: Reference to address configuration
+// - `ipv6`: Reference to address configuration
+//
+// ### externallyRoutablePrefixes
+//
+// - `ipv4`: IP V4 Configuration
+// - `ipv4.ip`: Reference to address configuration
+// - `ipv4.prefix_length`: The prefix length of the network
+//
+// - `ipv6`: IP V6 Configuration
+// - `ipv6.ip`: Reference to address configuration
+// - `ipv6.prefix_length`: The prefix length of the network
+//
+// ### ipv4, ipv6 (Reference to address configuration)
+//
+// - `value`: value of address
+// - `prefixLength`: The prefix length of the network to which this host IPv4/IPv6 address belongs.
+//
+// See detailed information in [Nutanix List VPC v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.0#tag/Vpcs/operation/listVpcs).
 func GetVpcsV2(ctx *pulumi.Context, args *GetVpcsV2Args, opts ...pulumi.InvokeOption) (*GetVpcsV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVpcsV2Result
@@ -48,15 +115,16 @@ func GetVpcsV2(ctx *pulumi.Context, args *GetVpcsV2Args, opts ...pulumi.InvokeOp
 
 // A collection of arguments for invoking getVpcsV2.
 type GetVpcsV2Args struct {
-	// A URL query parameter that allows clients to filter a collection of resources.
+	// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+	// - `extId`
 	Filter *string `pulumi:"filter"`
 	// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
 	Limit *int `pulumi:"limit"`
-	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default.
+	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
 	OrderBy *string `pulumi:"orderBy"`
 	// A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
 	Page *int `pulumi:"page"`
-	// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions.
+	// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. The select can be applied to the following fields:
 	Select *string `pulumi:"select"`
 }
 
@@ -64,12 +132,13 @@ type GetVpcsV2Args struct {
 type GetVpcsV2Result struct {
 	Filter *string `pulumi:"filter"`
 	// The provider-assigned unique ID for this managed resource.
-	Id      string         `pulumi:"id"`
-	Limit   *int           `pulumi:"limit"`
-	OrderBy *string        `pulumi:"orderBy"`
-	Page    *int           `pulumi:"page"`
-	Select  *string        `pulumi:"select"`
-	Vpcs    []GetVpcsV2Vpc `pulumi:"vpcs"`
+	Id      string  `pulumi:"id"`
+	Limit   *int    `pulumi:"limit"`
+	OrderBy *string `pulumi:"orderBy"`
+	Page    *int    `pulumi:"page"`
+	Select  *string `pulumi:"select"`
+	// List of all existing VPCs.
+	Vpcs []GetVpcsV2Vpc `pulumi:"vpcs"`
 }
 
 func GetVpcsV2Output(ctx *pulumi.Context, args GetVpcsV2OutputArgs, opts ...pulumi.InvokeOption) GetVpcsV2ResultOutput {
@@ -83,15 +152,16 @@ func GetVpcsV2Output(ctx *pulumi.Context, args GetVpcsV2OutputArgs, opts ...pulu
 
 // A collection of arguments for invoking getVpcsV2.
 type GetVpcsV2OutputArgs struct {
-	// A URL query parameter that allows clients to filter a collection of resources.
+	// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+	// - `extId`
 	Filter pulumi.StringPtrInput `pulumi:"filter"`
 	// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
 	Limit pulumi.IntPtrInput `pulumi:"limit"`
-	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default.
+	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
 	OrderBy pulumi.StringPtrInput `pulumi:"orderBy"`
 	// A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
 	Page pulumi.IntPtrInput `pulumi:"page"`
-	// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions.
+	// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. The select can be applied to the following fields:
 	Select pulumi.StringPtrInput `pulumi:"select"`
 }
 
@@ -139,6 +209,7 @@ func (o GetVpcsV2ResultOutput) Select() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetVpcsV2Result) *string { return v.Select }).(pulumi.StringPtrOutput)
 }
 
+// List of all existing VPCs.
 func (o GetVpcsV2ResultOutput) Vpcs() GetVpcsV2VpcArrayOutput {
 	return o.ApplyT(func(v GetVpcsV2Result) []GetVpcsV2Vpc { return v.Vpcs }).(GetVpcsV2VpcArrayOutput)
 }

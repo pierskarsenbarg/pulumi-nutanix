@@ -14,37 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetRecoveryPointsV2RecoveryPointVolumeGroupRecoveryPointResult
     {
-        /// <summary>
-        /// External identifier of the Consistency group which the entity was part of at the time of recovery point creation.
-        /// </summary>
         public readonly string ConsistencyGroupExtId;
-        /// <summary>
-        /// array of disk recovery points.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetRecoveryPointsV2RecoveryPointVolumeGroupRecoveryPointDiskRecoveryPointResult> DiskRecoveryPoints;
-        /// <summary>
-        /// recovery point UUID
-        /// </summary>
         public readonly string ExtId;
-        /// <summary>
-        /// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetRecoveryPointsV2RecoveryPointVolumeGroupRecoveryPointLinkResult> Links;
-        /// <summary>
-        /// Location agnostic identifier of the recovery point. This identifier is used to identify the same instances of a recovery point across different sites.
-        /// </summary>
         public readonly string LocationAgnosticId;
-        /// <summary>
-        /// A globally unique identifier that represents the tenant that owns this entity
-        /// </summary>
         public readonly string TenantId;
-        /// <summary>
-        /// Category key-value pairs associated with the volume group at the time of recovery point creation. The category key and value are separated by '/'. For example, a category with key 'dept' and value 'hr' will be represented as 'dept/hr'.
-        /// </summary>
         public readonly ImmutableArray<string> VolumeGroupCategories;
-        /// <summary>
-        /// Volume Group external identifier which is captured as part of this recovery point.
-        /// </summary>
         public readonly string VolumeGroupExtId;
 
         [OutputConstructor]

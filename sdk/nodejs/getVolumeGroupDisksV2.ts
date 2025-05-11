@@ -12,53 +12,11 @@ import * as utilities from "./utilities";
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const exampleVolumeGroupV2 = new nutanix.VolumeGroupV2("exampleVolumeGroupV2", {
- *     description: "Test Volume group with min spec and no Auth",
- *     shouldLoadBalanceVmAttachments: false,
- *     sharingStatus: "SHARED",
- *     targetName: "volumegroup-test-0",
- *     createdBy: "Test",
- *     clusterReference: "<Cluster uuid>",
- *     iscsiFeatures: [{
- *         enabledAuthentications: "CHAP",
- *         targetSecret: "1234567891011",
- *     }],
- *     storageFeatures: [{
- *         flashModes: [{
- *             isEnabled: true,
- *         }],
- *     }],
- *     usageType: "USER",
- *     isHidden: false,
- * });
- * // Attach a volume group disk to the previous volume group
- * const exampleVolumeGroupDiskV2 = new nutanix.VolumeGroupDiskV2("exampleVolumeGroupDiskV2", {
- *     volumeGroupExtId: resource.nutanix_volume_group_v2.example.id,
- *     index: 1,
- *     description: "create volume disk test",
- *     diskSizeBytes: 5368709120,
- *     diskDataSourceReferences: [{
- *         name: "disk1",
- *         extId: _var.disk_data_source_ref_ext_id,
- *         entityType: "STORAGE_CONTAINER",
- *         uris: [
- *             "uri1",
- *             "uri2",
- *         ],
- *     }],
- *     diskStorageFeatures: [{
- *         flashModes: [{
- *             isEnabled: false,
- *         }],
- *     }],
- * });
- * const exampleVolumeGroupDisksV2 = nutanix.getVolumeGroupDisksV2({
- *     volumeGroupExtId: resource.nutanix_volume_group_v2.example.id,
- *     filter: "startswith(storageContainerId, var.filter_value)",
- *     limit: 1,
+ * const list_volume_disks = nutanix.getVolumeGroupDisksV2({
+ *     filter: "storageContainerId eq '07c2da68-bb67-4535-9b2a-81504f6bb2e3'",
+ *     volumeGroupExtId: "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
  * });
  * ```
  *
@@ -123,53 +81,11 @@ export interface GetVolumeGroupDisksV2Result {
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
- * import * as nutanix from "@pierskarsenbarg/nutanix";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const exampleVolumeGroupV2 = new nutanix.VolumeGroupV2("exampleVolumeGroupV2", {
- *     description: "Test Volume group with min spec and no Auth",
- *     shouldLoadBalanceVmAttachments: false,
- *     sharingStatus: "SHARED",
- *     targetName: "volumegroup-test-0",
- *     createdBy: "Test",
- *     clusterReference: "<Cluster uuid>",
- *     iscsiFeatures: [{
- *         enabledAuthentications: "CHAP",
- *         targetSecret: "1234567891011",
- *     }],
- *     storageFeatures: [{
- *         flashModes: [{
- *             isEnabled: true,
- *         }],
- *     }],
- *     usageType: "USER",
- *     isHidden: false,
- * });
- * // Attach a volume group disk to the previous volume group
- * const exampleVolumeGroupDiskV2 = new nutanix.VolumeGroupDiskV2("exampleVolumeGroupDiskV2", {
- *     volumeGroupExtId: resource.nutanix_volume_group_v2.example.id,
- *     index: 1,
- *     description: "create volume disk test",
- *     diskSizeBytes: 5368709120,
- *     diskDataSourceReferences: [{
- *         name: "disk1",
- *         extId: _var.disk_data_source_ref_ext_id,
- *         entityType: "STORAGE_CONTAINER",
- *         uris: [
- *             "uri1",
- *             "uri2",
- *         ],
- *     }],
- *     diskStorageFeatures: [{
- *         flashModes: [{
- *             isEnabled: false,
- *         }],
- *     }],
- * });
- * const exampleVolumeGroupDisksV2 = nutanix.getVolumeGroupDisksV2({
- *     volumeGroupExtId: resource.nutanix_volume_group_v2.example.id,
- *     filter: "startswith(storageContainerId, var.filter_value)",
- *     limit: 1,
+ * const list_volume_disks = nutanix.getVolumeGroupDisksV2({
+ *     filter: "storageContainerId eq '07c2da68-bb67-4535-9b2a-81504f6bb2e3'",
+ *     volumeGroupExtId: "3770be9d-06be-4e25-b85d-3457d9b0ceb1",
  * });
  * ```
  *

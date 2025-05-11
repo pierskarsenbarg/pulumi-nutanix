@@ -13,7 +13,7 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetFloatingIpV2
     {
         /// <summary>
-        /// Provides a datasource to retrieve floating IP with floating_ip_uuid .
+        /// Provides a datasource to retrieve the floating IP for this extId.
         /// 
         /// ## Example Usage
         /// 
@@ -25,9 +25,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetFloatingIpV2.Invoke(new()
+        ///     var get_floating_ip = Nutanix.GetFloatingIpV2.Invoke(new()
         ///     {
-        ///         ExtId = "{{ floating_ip_uuid }}",
+        ///         ExtId = "cf1a7643-605e-4622-9f2a-b3fdccdbd072",
         ///     });
         /// 
         /// });
@@ -37,7 +37,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFloatingIpV2Result>("nutanix:index/getFloatingIpV2:getFloatingIpV2", args ?? new GetFloatingIpV2Args(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve floating IP with floating_ip_uuid .
+        /// Provides a datasource to retrieve the floating IP for this extId.
         /// 
         /// ## Example Usage
         /// 
@@ -49,9 +49,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetFloatingIpV2.Invoke(new()
+        ///     var get_floating_ip = Nutanix.GetFloatingIpV2.Invoke(new()
         ///     {
-        ///         ExtId = "{{ floating_ip_uuid }}",
+        ///         ExtId = "cf1a7643-605e-4622-9f2a-b3fdccdbd072",
         ///     });
         /// 
         /// });
@@ -61,7 +61,7 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.Invoke<GetFloatingIpV2Result>("nutanix:index/getFloatingIpV2:getFloatingIpV2", args ?? new GetFloatingIpV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Provides a datasource to retrieve floating IP with floating_ip_uuid .
+        /// Provides a datasource to retrieve the floating IP for this extId.
         /// 
         /// ## Example Usage
         /// 
@@ -73,9 +73,9 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var example = Nutanix.GetFloatingIpV2.Invoke(new()
+        ///     var get_floating_ip = Nutanix.GetFloatingIpV2.Invoke(new()
         ///     {
-        ///         ExtId = "{{ floating_ip_uuid }}",
+        ///         ExtId = "cf1a7643-605e-4622-9f2a-b3fdccdbd072",
         ///     });
         /// 
         /// });

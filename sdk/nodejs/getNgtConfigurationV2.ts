@@ -6,6 +6,17 @@ import * as utilities from "./utilities";
 
 /**
  * Provides Nutanix datasource to Retrieves the Nutanix Guest Tools configuration for a Virtual Machine.
+ *
+ * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const example = nutanix.getNgtConfigurationV2({
+ *     extId: "f29535e2-6bd8-4782-b879-409f17217b31",
+ * });
+ * ```
  */
 export function getNgtConfigurationV2(args: GetNgtConfigurationV2Args, opts?: pulumi.InvokeOptions): Promise<GetNgtConfigurationV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -79,6 +90,17 @@ export interface GetNgtConfigurationV2Result {
 }
 /**
  * Provides Nutanix datasource to Retrieves the Nutanix Guest Tools configuration for a Virtual Machine.
+ *
+ * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const example = nutanix.getNgtConfigurationV2({
+ *     extId: "f29535e2-6bd8-4782-b879-409f17217b31",
+ * });
+ * ```
  */
 export function getNgtConfigurationV2Output(args: GetNgtConfigurationV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNgtConfigurationV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

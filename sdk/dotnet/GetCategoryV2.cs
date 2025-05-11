@@ -14,18 +14,75 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Fetch a category
+        /// 
+        /// 
+        /// ## Example
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var get_category = Nutanix.GetCategoryV2.Invoke(new()
+        ///     {
+        ///         ExtId = "85e68112-5b2b-4220-bc8d-e529e4bf420e",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetCategoryV2Result> InvokeAsync(GetCategoryV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCategoryV2Result>("nutanix:index/getCategoryV2:getCategoryV2", args ?? new GetCategoryV2Args(), options.WithDefaults());
 
         /// <summary>
         /// Fetch a category
+        /// 
+        /// 
+        /// ## Example
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var get_category = Nutanix.GetCategoryV2.Invoke(new()
+        ///     {
+        ///         ExtId = "85e68112-5b2b-4220-bc8d-e529e4bf420e",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetCategoryV2Result> Invoke(GetCategoryV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCategoryV2Result>("nutanix:index/getCategoryV2:getCategoryV2", args ?? new GetCategoryV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// Fetch a category
+        /// 
+        /// 
+        /// ## Example
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var get_category = Nutanix.GetCategoryV2.Invoke(new()
+        ///     {
+        ///         ExtId = "85e68112-5b2b-4220-bc8d-e529e4bf420e",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetCategoryV2Result> Invoke(GetCategoryV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetCategoryV2Result>("nutanix:index/getCategoryV2:getCategoryV2", args ?? new GetCategoryV2InvokeArgs(), options.WithDefaults());
@@ -35,7 +92,9 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetCategoryV2Args : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+        /// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported:
+        /// - associations
+        /// - detailedAssociations
         /// </summary>
         [Input("expand")]
         public string? Expand { get; set; }
@@ -55,7 +114,9 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetCategoryV2InvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+        /// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported:
+        /// - associations
+        /// - detailedAssociations
         /// </summary>
         [Input("expand")]
         public Input<string>? Expand { get; set; }

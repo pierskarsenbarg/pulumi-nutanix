@@ -12,6 +12,32 @@ import (
 )
 
 // Provides Nutanix datasource to Retrieves the Nutanix Guest Tools configuration for a Virtual Machine.
+//
+// ## Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetNgtConfigurationV2(ctx, &nutanix.GetNgtConfigurationV2Args{
+//				ExtId: "f29535e2-6bd8-4782-b879-409f17217b31",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetNgtConfigurationV2(ctx *pulumi.Context, args *GetNgtConfigurationV2Args, opts ...pulumi.InvokeOption) (*GetNgtConfigurationV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNgtConfigurationV2Result

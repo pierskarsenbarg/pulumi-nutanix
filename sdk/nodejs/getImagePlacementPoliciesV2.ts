@@ -15,10 +15,11 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const ipp = nutanix.getImagePlacementPoliciesV2({
- *     filter: "startswith(name,'<name-prefix>')",
+ * const list_ipp = nutanix.getImagePlacementPoliciesV2({});
+ * const filtered_ipp = nutanix.getImagePlacementPoliciesV2({
+ *     filter: "startswith(name,'ipp_name')",
  *     limit: 10,
- *     page: 0,
+ *     page: 1,
  * });
  * ```
  */
@@ -39,7 +40,10 @@ export function getImagePlacementPoliciesV2(args?: GetImagePlacementPoliciesV2Ar
  */
 export interface GetImagePlacementPoliciesV2Args {
     /**
-     * A URL query parameter that allows clients to filter a collection of resources. The expression specified with $filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the $filter must conform to the OData V4.01 URL conventions
+     * A URL query parameter that allows clients to filter a collection of resources. The expression specified with $filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the $filter must conform to the OData V4.01 URL conventions. For example, filter '$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
+     * - description
+     * - enforcementState
+     * - name
      */
     filter?: string;
     /**
@@ -47,7 +51,10 @@ export interface GetImagePlacementPoliciesV2Args {
      */
     limit?: number;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
+     * - description
+     * - enforcementState
+     * - name
      */
     orderBy?: string;
     /**
@@ -55,7 +62,17 @@ export interface GetImagePlacementPoliciesV2Args {
      */
     page?: number;
     /**
-     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions.
+     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. If a $select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. The select can be applied to the following fields:
+     * - createTime
+     * - description
+     * - enforcementState
+     * - extId
+     * - lastUpdateTime
+     * - links
+     * - name
+     * - ownerExtId
+     * - placementType
+     * - tenantId
      */
     select?: string;
 }
@@ -87,10 +104,11 @@ export interface GetImagePlacementPoliciesV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const ipp = nutanix.getImagePlacementPoliciesV2({
- *     filter: "startswith(name,'<name-prefix>')",
+ * const list_ipp = nutanix.getImagePlacementPoliciesV2({});
+ * const filtered_ipp = nutanix.getImagePlacementPoliciesV2({
+ *     filter: "startswith(name,'ipp_name')",
  *     limit: 10,
- *     page: 0,
+ *     page: 1,
  * });
  * ```
  */
@@ -111,7 +129,10 @@ export function getImagePlacementPoliciesV2Output(args?: GetImagePlacementPolici
  */
 export interface GetImagePlacementPoliciesV2OutputArgs {
     /**
-     * A URL query parameter that allows clients to filter a collection of resources. The expression specified with $filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the $filter must conform to the OData V4.01 URL conventions
+     * A URL query parameter that allows clients to filter a collection of resources. The expression specified with $filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the $filter must conform to the OData V4.01 URL conventions. For example, filter '$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
+     * - description
+     * - enforcementState
+     * - name
      */
     filter?: pulumi.Input<string>;
     /**
@@ -119,7 +140,10 @@ export interface GetImagePlacementPoliciesV2OutputArgs {
      */
     limit?: pulumi.Input<number>;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
+     * - description
+     * - enforcementState
+     * - name
      */
     orderBy?: pulumi.Input<string>;
     /**
@@ -127,7 +151,17 @@ export interface GetImagePlacementPoliciesV2OutputArgs {
      */
     page?: pulumi.Input<number>;
     /**
-     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions.
+     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. If a $select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. The select can be applied to the following fields:
+     * - createTime
+     * - description
+     * - enforcementState
+     * - extId
+     * - lastUpdateTime
+     * - links
+     * - name
+     * - ownerExtId
+     * - placementType
+     * - tenantId
      */
     select?: pulumi.Input<string>;
 }

@@ -31,6 +31,12 @@ import (
 //			if err != nil {
 //				return err
 //			}
+//			_, err = nutanix.LookupUsersV2(ctx, &nutanix.LookupUsersV2Args{
+//				Filter: pulumi.StringRef("username eq 'username-example'"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
 //			return nil
 //		})
 //	}

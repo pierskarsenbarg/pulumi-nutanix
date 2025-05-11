@@ -13,6 +13,48 @@ import (
 )
 
 // Provides Nutanix resource to create authorization policy.
+//
+// ## Example
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.NewAuthorizationPolicyV2(ctx, "ap-example", &nutanix.AuthorizationPolicyV2Args{
+//				AuthorizationPolicyType: pulumi.String("USER_DEFINED"),
+//				Description:             pulumi.String("authorization policy example"),
+//				DisplayName:             pulumi.String("auth_policy_example"),
+//				Entities: nutanix.AuthorizationPolicyV2EntityArray{
+//					&nutanix.AuthorizationPolicyV2EntityArgs{
+//						Reserved: pulumi.String("{\"images\":{\"*\":{\"eq\":\"*\"}}}"),
+//					},
+//					&nutanix.AuthorizationPolicyV2EntityArgs{
+//						Reserved: pulumi.String("{\"marketplace_item\":{\"owner_uuid\":{\"eq\":\"SELF_OWNED\"}}}"),
+//					},
+//				},
+//				Identities: nutanix.AuthorizationPolicyV2IdentityArray{
+//					&nutanix.AuthorizationPolicyV2IdentityArgs{
+//						Reserved: pulumi.String("{\"user\":{\"uuid\":{\"anyof\":[\"00000000-0000-0000-0000-000000000000\"]}}}"),
+//					},
+//				},
+//				Role: pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type AuthorizationPolicyV2 struct {
 	pulumi.CustomResourceState
 

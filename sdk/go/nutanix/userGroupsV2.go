@@ -29,9 +29,17 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.NewUserGroupsV2(ctx, "usrGroup", &nutanix.UserGroupsV2Args{
-//				DistinguishedName: pulumi.String("<distinguished name of the user group>"),
-//				GroupType:         pulumi.String("<group Type>"),
-//				IdpId:             pulumi.String("<idp uuid of user group>"),
+//				DistinguishedName: pulumi.String("cn=group_0664229e,ou=group,dc=devtest,dc=local"),
+//				GroupType:         pulumi.String("LDAP"),
+//				IdpId:             pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			// Saml User group
+//			_, err = nutanix.NewUserGroupsV2(ctx, "saml-ug", &nutanix.UserGroupsV2Args{
+//				GroupType: pulumi.String("SAML"),
+//				IdpId:     pulumi.String("a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b"),
 //			})
 //			if err != nil {
 //				return err
@@ -52,7 +60,7 @@ type UserGroupsV2 struct {
 	DistinguishedName pulumi.StringPtrOutput `pulumi:"distinguishedName"`
 	// The External Identifier of the User Group.
 	ExtId pulumi.StringOutput `pulumi:"extId"`
-	// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+	// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
 	GroupType pulumi.StringOutput `pulumi:"groupType"`
 	// -(Required) Identifier of the IDP for the User Group.
 	IdpId pulumi.StringOutput `pulumi:"idpId"`
@@ -106,7 +114,7 @@ type userGroupsV2State struct {
 	DistinguishedName *string `pulumi:"distinguishedName"`
 	// The External Identifier of the User Group.
 	ExtId *string `pulumi:"extId"`
-	// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+	// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
 	GroupType *string `pulumi:"groupType"`
 	// -(Required) Identifier of the IDP for the User Group.
 	IdpId *string `pulumi:"idpId"`
@@ -125,7 +133,7 @@ type UserGroupsV2State struct {
 	DistinguishedName pulumi.StringPtrInput
 	// The External Identifier of the User Group.
 	ExtId pulumi.StringPtrInput
-	// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+	// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
 	GroupType pulumi.StringPtrInput
 	// -(Required) Identifier of the IDP for the User Group.
 	IdpId pulumi.StringPtrInput
@@ -144,7 +152,7 @@ type userGroupsV2Args struct {
 	DistinguishedName *string `pulumi:"distinguishedName"`
 	// The External Identifier of the User Group.
 	ExtId *string `pulumi:"extId"`
-	// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+	// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
 	GroupType string `pulumi:"groupType"`
 	// -(Required) Identifier of the IDP for the User Group.
 	IdpId string `pulumi:"idpId"`
@@ -158,7 +166,7 @@ type UserGroupsV2Args struct {
 	DistinguishedName pulumi.StringPtrInput
 	// The External Identifier of the User Group.
 	ExtId pulumi.StringPtrInput
-	// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+	// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
 	GroupType pulumi.StringInput
 	// -(Required) Identifier of the IDP for the User Group.
 	IdpId pulumi.StringInput
@@ -273,7 +281,7 @@ func (o UserGroupsV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserGroupsV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }
 
-// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)),  SAML (User Group belonging to a SAML IDP.)
+// -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
 func (o UserGroupsV2Output) GroupType() pulumi.StringOutput {
 	return o.ApplyT(func(v *UserGroupsV2) pulumi.StringOutput { return v.GroupType }).(pulumi.StringOutput)
 }

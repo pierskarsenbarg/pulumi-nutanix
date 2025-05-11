@@ -14,18 +14,72 @@ namespace PiersKarsenbarg.Nutanix
     {
         /// <summary>
         /// Get an service Group by ExtID
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var serviceGroup = Nutanix.GetServiceGroupV2.Invoke(new()
+        ///     {
+        ///         ExtId = "07167778-266d-4052-9992-f30cbfd52e83",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetServiceGroupV2Result> InvokeAsync(GetServiceGroupV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetServiceGroupV2Result>("nutanix:index/getServiceGroupV2:getServiceGroupV2", args ?? new GetServiceGroupV2Args(), options.WithDefaults());
 
         /// <summary>
         /// Get an service Group by ExtID
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var serviceGroup = Nutanix.GetServiceGroupV2.Invoke(new()
+        ///     {
+        ///         ExtId = "07167778-266d-4052-9992-f30cbfd52e83",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetServiceGroupV2Result> Invoke(GetServiceGroupV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceGroupV2Result>("nutanix:index/getServiceGroupV2:getServiceGroupV2", args ?? new GetServiceGroupV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
         /// Get an service Group by ExtID
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = Pulumi.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var serviceGroup = Nutanix.GetServiceGroupV2.Invoke(new()
+        ///     {
+        ///         ExtId = "07167778-266d-4052-9992-f30cbfd52e83",
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetServiceGroupV2Result> Invoke(GetServiceGroupV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceGroupV2Result>("nutanix:index/getServiceGroupV2:getServiceGroupV2", args ?? new GetServiceGroupV2InvokeArgs(), options.WithDefaults());

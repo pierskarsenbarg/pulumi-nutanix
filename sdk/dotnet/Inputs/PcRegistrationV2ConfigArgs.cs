@@ -13,24 +13,26 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class PcRegistrationV2ConfigArgs : global::Pulumi.ResourceArgs
     {
-        [Input("bootstrapConfigs")]
-        private InputList<Inputs.PcRegistrationV2ConfigBootstrapConfigArgs>? _bootstrapConfigs;
-        public InputList<Inputs.PcRegistrationV2ConfigBootstrapConfigArgs> BootstrapConfigs
+        [Input("bootstrapConfig")]
+        public Input<Inputs.PcRegistrationV2ConfigBootstrapConfigArgs>? BootstrapConfig { get; set; }
+
+        [Input("buildInfo", required: true)]
+        public Input<Inputs.PcRegistrationV2ConfigBuildInfoArgs> BuildInfo { get; set; } = null!;
+
+        [Input("credentials")]
+        private InputList<Inputs.PcRegistrationV2ConfigCredentialArgs>? _credentials;
+
+        /// <summary>
+        /// -(Required)  Credentials to connect to a remote cluster.
+        /// </summary>
+        public InputList<Inputs.PcRegistrationV2ConfigCredentialArgs> Credentials
         {
-            get => _bootstrapConfigs ?? (_bootstrapConfigs = new InputList<Inputs.PcRegistrationV2ConfigBootstrapConfigArgs>());
-            set => _bootstrapConfigs = value;
+            get => _credentials ?? (_credentials = new InputList<Inputs.PcRegistrationV2ConfigCredentialArgs>());
+            set => _credentials = value;
         }
 
-        [Input("buildInfos")]
-        private InputList<Inputs.PcRegistrationV2ConfigBuildInfoArgs>? _buildInfos;
-        public InputList<Inputs.PcRegistrationV2ConfigBuildInfoArgs> BuildInfos
-        {
-            get => _buildInfos ?? (_buildInfos = new InputList<Inputs.PcRegistrationV2ConfigBuildInfoArgs>());
-            set => _buildInfos = value;
-        }
-
-        [Input("name")]
-        public Input<string>? Name { get; set; }
+        [Input("name", required: true)]
+        public Input<string> Name { get; set; } = null!;
 
         [Input("resourceConfigs")]
         private InputList<Inputs.PcRegistrationV2ConfigResourceConfigArgs>? _resourceConfigs;
@@ -43,8 +45,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("shouldEnableLockdownMode")]
         public Input<bool>? ShouldEnableLockdownMode { get; set; }
 
-        [Input("size")]
-        public Input<string>? Size { get; set; }
+        [Input("size", required: true)]
+        public Input<string> Size { get; set; } = null!;
 
         public PcRegistrationV2ConfigArgs()
         {

@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetVolumeIscsiClientsV2IscsiClientIscsiInitiatorNetworkIdFqdnResult
     {
         /// <summary>
-        /// - The fully qualified domain name.
+        /// The fully qualified domain name.
         /// </summary>
         public readonly string Value;
 

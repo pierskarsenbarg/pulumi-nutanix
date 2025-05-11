@@ -27,8 +27,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.GetClustersV2(ctx, &nutanix.GetClustersV2Args{
-//				Filter: pulumi.StringRef("startswith(name, 'PC_')"),
+//			_, err := nutanix.GetClustersV2(ctx, &nutanix.GetClustersV2Args{}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.GetClustersV2(ctx, &nutanix.GetClustersV2Args{
+//				Filter: pulumi.StringRef("name eq 'cluster-1'"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.GetClustersV2(ctx, &nutanix.GetClustersV2Args{
+//				Limit: pulumi.IntRef(10),
+//				Page:  pulumi.IntRef(1),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -105,7 +116,8 @@ type GetClustersV2Args struct {
 
 // A collection of values returned by getClustersV2.
 type GetClustersV2Result struct {
-	Apply           *string                      `pulumi:"apply"`
+	Apply *string `pulumi:"apply"`
+	// - List of cluster entities.
 	ClusterEntities []GetClustersV2ClusterEntity `pulumi:"clusterEntities"`
 	Expand          *string                      `pulumi:"expand"`
 	Filter          *string                      `pulumi:"filter"`
@@ -204,6 +216,7 @@ func (o GetClustersV2ResultOutput) Apply() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetClustersV2Result) *string { return v.Apply }).(pulumi.StringPtrOutput)
 }
 
+// - List of cluster entities.
 func (o GetClustersV2ResultOutput) ClusterEntities() GetClustersV2ClusterEntityArrayOutput {
 	return o.ApplyT(func(v GetClustersV2Result) []GetClustersV2ClusterEntity { return v.ClusterEntities }).(GetClustersV2ClusterEntityArrayOutput)
 }

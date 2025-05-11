@@ -23,9 +23,54 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var service_group = new Nutanix.ServiceGroupsV2("service-group", new()
+    ///     // Add Service  group. with TCP and UDP
+    ///     var tcp_udp_service = new Nutanix.ServiceGroupsV2("tcp-udp-service", new()
     ///     {
-    ///         Description = "{{ desc }}",
+    ///         Description = "service group description",
+    ///         TcpServices = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ServiceGroupsV2TcpServiceArgs
+    ///             {
+    ///                 EndPort = 232,
+    ///                 StartPort = 232,
+    ///             },
+    ///         },
+    ///         UdpServices = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ServiceGroupsV2UdpServiceArgs
+    ///             {
+    ///                 EndPort = 232,
+    ///                 StartPort = 232,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     // service group with ICMP
+    ///     var icmp_service = new Nutanix.ServiceGroupsV2("icmp-service", new()
+    ///     {
+    ///         Description = "service group description",
+    ///         IcmpServices = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ServiceGroupsV2IcmpServiceArgs
+    ///             {
+    ///                 Code = 0,
+    ///                 Type = 8,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     // service group with All TCP, UDP and ICMP
+    ///     var all_service = new Nutanix.ServiceGroupsV2("all-service", new()
+    ///     {
+    ///         Description = "service group description",
+    ///         IcmpServices = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ServiceGroupsV2IcmpServiceArgs
+    ///             {
+    ///                 Code = 0,
+    ///                 Type = 8,
+    ///             },
+    ///         },
     ///         TcpServices = new[]
     ///         {
     ///             new Nutanix.Inputs.ServiceGroupsV2TcpServiceArgs

@@ -14,19 +14,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VirtualMachineV2CdRomBackingInfoDataSource
     {
-        public readonly bool? IsMigrationInProgress;
         /// <summary>
         /// Reference to image or vm disk
         /// </summary>
         public readonly ImmutableArray<Outputs.VirtualMachineV2CdRomBackingInfoDataSourceReference> References;
 
         [OutputConstructor]
-        private VirtualMachineV2CdRomBackingInfoDataSource(
-            bool? isMigrationInProgress,
-
-            ImmutableArray<Outputs.VirtualMachineV2CdRomBackingInfoDataSourceReference> references)
+        private VirtualMachineV2CdRomBackingInfoDataSource(ImmutableArray<Outputs.VirtualMachineV2CdRomBackingInfoDataSourceReference> references)
         {
-            IsMigrationInProgress = isMigrationInProgress;
             References = references;
         }
     }

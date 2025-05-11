@@ -15,9 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const operations_1 = nutanix.getOperationsV2({});
- * const operations_2 = nutanix.getOperationsV2({
- *     filter: "display_name eq 'test-Permission-filter'",
+ * const operation_list = nutanix.getOperationsV2({});
+ * const operation_list_filtered = nutanix.getOperationsV2({
+ *     filter: "displayName eq 'Create_Role'",
+ * });
+ * const operation_list_paginated = nutanix.getOperationsV2({
+ *     limit: 10,
+ *     page: 1,
  * });
  * ```
  */
@@ -38,7 +42,14 @@ export function getOperationsV2(args?: GetOperationsV2Args, opts?: pulumi.Invoke
  */
 export interface GetOperationsV2Args {
     /**
-     * A URL query parameter that allows clients to filter a collection of resources. The expression specified with $filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the $filter must conform to the OData V4.01 URL conventions
+     * A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. The filter can be applied to the following fields:
+     * - clientName
+     * - createdTime
+     * - displayName
+     * - entityType
+     * - extId
+     * - lastUpdatedTime
+     * - operationType
      */
     filter?: string;
     /**
@@ -46,7 +57,12 @@ export interface GetOperationsV2Args {
      */
     limit?: number;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+     * - createdTime
+     * - displayName
+     * - entityType
+     * - extId
+     * - lastUpdatedTime
      */
     orderBy?: string;
     /**
@@ -54,7 +70,19 @@ export interface GetOperationsV2Args {
      */
     page?: number;
     /**
-     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions.
+     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. it can be applied to the following fields:
+     * - associatedEndpointList
+     * - clientName
+     * - createdTime
+     * - description
+     * - displayName
+     * - entityType
+     * - extId
+     * - lastUpdatedTime
+     * - links
+     * - operationType
+     * - relatedOperationList
+     * - tenantId
      */
     select?: string;
 }
@@ -64,7 +92,14 @@ export interface GetOperationsV2Args {
  */
 export interface GetOperationsV2Result {
     /**
-     * A URL query parameter that allows clients to filter a collection of resources. The expression specified with $filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the $filter must conform to the OData V4.01 URL conventions
+     * A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. The filter can be applied to the following fields:
+     * - clientName
+     * - createdTime
+     * - displayName
+     * - entityType
+     * - extId
+     * - lastUpdatedTime
+     * - operationType
      */
     readonly filter?: string;
     /**
@@ -80,7 +115,12 @@ export interface GetOperationsV2Result {
      */
     readonly operations: outputs.GetOperationsV2Operation[];
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+     * - createdTime
+     * - displayName
+     * - entityType
+     * - extId
+     * - lastUpdatedTime
      */
     readonly orderBy?: string;
     /**
@@ -88,7 +128,19 @@ export interface GetOperationsV2Result {
      */
     readonly page?: number;
     /**
-     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions.
+     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. it can be applied to the following fields:
+     * - associatedEndpointList
+     * - clientName
+     * - createdTime
+     * - description
+     * - displayName
+     * - entityType
+     * - extId
+     * - lastUpdatedTime
+     * - links
+     * - operationType
+     * - relatedOperationList
+     * - tenantId
      */
     readonly select?: string;
 }
@@ -101,9 +153,13 @@ export interface GetOperationsV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const operations_1 = nutanix.getOperationsV2({});
- * const operations_2 = nutanix.getOperationsV2({
- *     filter: "display_name eq 'test-Permission-filter'",
+ * const operation_list = nutanix.getOperationsV2({});
+ * const operation_list_filtered = nutanix.getOperationsV2({
+ *     filter: "displayName eq 'Create_Role'",
+ * });
+ * const operation_list_paginated = nutanix.getOperationsV2({
+ *     limit: 10,
+ *     page: 1,
  * });
  * ```
  */
@@ -124,7 +180,14 @@ export function getOperationsV2Output(args?: GetOperationsV2OutputArgs, opts?: p
  */
 export interface GetOperationsV2OutputArgs {
     /**
-     * A URL query parameter that allows clients to filter a collection of resources. The expression specified with $filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the $filter must conform to the OData V4.01 URL conventions
+     * A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. The filter can be applied to the following fields:
+     * - clientName
+     * - createdTime
+     * - displayName
+     * - entityType
+     * - extId
+     * - lastUpdatedTime
+     * - operationType
      */
     filter?: pulumi.Input<string>;
     /**
@@ -132,7 +195,12 @@ export interface GetOperationsV2OutputArgs {
      */
     limit?: pulumi.Input<number>;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+     * - createdTime
+     * - displayName
+     * - entityType
+     * - extId
+     * - lastUpdatedTime
      */
     orderBy?: pulumi.Input<string>;
     /**
@@ -140,7 +208,19 @@ export interface GetOperationsV2OutputArgs {
      */
     page?: pulumi.Input<number>;
     /**
-     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions.
+     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. it can be applied to the following fields:
+     * - associatedEndpointList
+     * - clientName
+     * - createdTime
+     * - description
+     * - displayName
+     * - entityType
+     * - extId
+     * - lastUpdatedTime
+     * - links
+     * - operationType
+     * - relatedOperationList
+     * - tenantId
      */
     select?: pulumi.Input<string>;
 }

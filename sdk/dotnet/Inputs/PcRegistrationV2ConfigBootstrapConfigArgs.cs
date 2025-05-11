@@ -13,13 +13,16 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class PcRegistrationV2ConfigBootstrapConfigArgs : global::Pulumi.ResourceArgs
     {
-        [Input("environmentInfos")]
-        private InputList<Inputs.PcRegistrationV2ConfigBootstrapConfigEnvironmentInfoArgs>? _environmentInfos;
-        public InputList<Inputs.PcRegistrationV2ConfigBootstrapConfigEnvironmentInfoArgs> EnvironmentInfos
+        [Input("cloudInitConfigs")]
+        private InputList<Inputs.PcRegistrationV2ConfigBootstrapConfigCloudInitConfigArgs>? _cloudInitConfigs;
+        public InputList<Inputs.PcRegistrationV2ConfigBootstrapConfigCloudInitConfigArgs> CloudInitConfigs
         {
-            get => _environmentInfos ?? (_environmentInfos = new InputList<Inputs.PcRegistrationV2ConfigBootstrapConfigEnvironmentInfoArgs>());
-            set => _environmentInfos = value;
+            get => _cloudInitConfigs ?? (_cloudInitConfigs = new InputList<Inputs.PcRegistrationV2ConfigBootstrapConfigCloudInitConfigArgs>());
+            set => _cloudInitConfigs = value;
         }
+
+        [Input("environmentInfo")]
+        public Input<Inputs.PcRegistrationV2ConfigBootstrapConfigEnvironmentInfoArgs>? EnvironmentInfo { get; set; }
 
         public PcRegistrationV2ConfigBootstrapConfigArgs()
         {
