@@ -985,10 +985,8 @@ export type ProtectionRule = import("./protectionRule").ProtectionRule;
 export const ProtectionRule: typeof import("./protectionRule").ProtectionRule = null as any;
 utilities.lazyLoad(exports, ["ProtectionRule"], () => require("./protectionRule"));
 
-export { ProviderArgs } from "./provider";
-export type Provider = import("./provider").Provider;
-export const Provider: typeof import("./provider").Provider = null as any;
-utilities.lazyLoad(exports, ["Provider"], () => require("./provider"));
+export * from "./provider";
+import { Provider } from "./provider";
 
 export { RecoveryPlanArgs, RecoveryPlanState } from "./recoveryPlan";
 export type RecoveryPlan = import("./recoveryPlan").RecoveryPlan;

@@ -1379,6 +1379,7 @@ class _VirtualMachineV2State:
         pulumi.set(self, "vtpm_configs", value)
 
 
+@pulumi.type_token("nutanix:index/virtualMachineV2:VirtualMachineV2")
 class VirtualMachineV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

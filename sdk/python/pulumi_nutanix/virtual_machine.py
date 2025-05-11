@@ -1434,6 +1434,7 @@ class _VirtualMachineState:
         pulumi.set(self, "vga_console_enabled", value)
 
 
+@pulumi.type_token("nutanix:index/virtualMachine:VirtualMachine")
 class VirtualMachine(pulumi.CustomResource):
     @overload
     def __init__(__self__,

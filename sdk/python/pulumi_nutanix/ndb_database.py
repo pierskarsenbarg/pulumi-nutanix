@@ -1227,6 +1227,7 @@ class _NdbDatabaseState:
         pulumi.set(self, "vm_password", value)
 
 
+@pulumi.type_token("nutanix:index/ndbDatabase:NdbDatabase")
 class NdbDatabase(pulumi.CustomResource):
     @overload
     def __init__(__self__,

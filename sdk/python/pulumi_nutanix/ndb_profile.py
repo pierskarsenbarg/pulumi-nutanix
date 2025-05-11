@@ -435,6 +435,7 @@ class _NdbProfileState:
         pulumi.set(self, "versions", value)
 
 
+@pulumi.type_token("nutanix:index/ndbProfile:NdbProfile")
 class NdbProfile(pulumi.CustomResource):
     @overload
     def __init__(__self__,

@@ -165,6 +165,7 @@ class _NdbLogCatchupsState:
         pulumi.set(self, "time_machine_id", value)
 
 
+@pulumi.type_token("nutanix:index/ndbLogCatchups:NdbLogCatchups")
 class NdbLogCatchups(pulumi.CustomResource):
     @overload
     def __init__(__self__,

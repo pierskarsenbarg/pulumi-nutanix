@@ -450,6 +450,7 @@ class _NetworkSecurityPolicyV2State:
         pulumi.set(self, "vpc_references", value)
 
 
+@pulumi.type_token("nutanix:index/networkSecurityPolicyV2:NetworkSecurityPolicyV2")
 class NetworkSecurityPolicyV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

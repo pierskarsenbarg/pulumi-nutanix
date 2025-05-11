@@ -277,6 +277,7 @@ class _FloatingIpState:
         pulumi.set(self, "vpc_reference_uuid", value)
 
 
+@pulumi.type_token("nutanix:index/floatingIp:FloatingIp")
 class FloatingIp(pulumi.CustomResource):
     @overload
     def __init__(__self__,

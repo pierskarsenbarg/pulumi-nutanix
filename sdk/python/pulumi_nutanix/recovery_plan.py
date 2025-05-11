@@ -253,6 +253,7 @@ class _RecoveryPlanState:
         pulumi.set(self, "state", value)
 
 
+@pulumi.type_token("nutanix:index/recoveryPlan:RecoveryPlan")
 class RecoveryPlan(pulumi.CustomResource):
     @overload
     def __init__(__self__,

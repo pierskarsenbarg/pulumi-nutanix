@@ -225,6 +225,7 @@ class _ClusterAddNodeV2State:
         pulumi.set(self, "should_skip_pre_expand_checks", value)
 
 
+@pulumi.type_token("nutanix:index/clusterAddNodeV2:ClusterAddNodeV2")
 class ClusterAddNodeV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

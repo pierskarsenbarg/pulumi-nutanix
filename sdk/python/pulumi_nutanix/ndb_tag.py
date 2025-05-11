@@ -256,6 +256,7 @@ class _NdbTagState:
         pulumi.set(self, "values", value)
 
 
+@pulumi.type_token("nutanix:index/ndbTag:NdbTag")
 class NdbTag(pulumi.CustomResource):
     @overload
     def __init__(__self__,

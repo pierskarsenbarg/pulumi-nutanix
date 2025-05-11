@@ -1193,6 +1193,7 @@ class _FoundationImageNodesState:
         pulumi.set(self, "xs_master_username", value)
 
 
+@pulumi.type_token("nutanix:index/foundationImageNodes:FoundationImageNodes")
 class FoundationImageNodes(pulumi.CustomResource):
     @overload
     def __init__(__self__,

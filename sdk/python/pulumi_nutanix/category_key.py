@@ -129,6 +129,7 @@ class _CategoryKeyState:
         pulumi.set(self, "system_defined", value)
 
 
+@pulumi.type_token("nutanix:index/categoryKey:CategoryKey")
 class CategoryKey(pulumi.CustomResource):
     @overload
     def __init__(__self__,

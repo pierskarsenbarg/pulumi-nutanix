@@ -240,6 +240,7 @@ class _VolumeGroupDiskV2State:
         pulumi.set(self, "volume_group_ext_id", value)
 
 
+@pulumi.type_token("nutanix:index/volumeGroupDiskV2:VolumeGroupDiskV2")
 class VolumeGroupDiskV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

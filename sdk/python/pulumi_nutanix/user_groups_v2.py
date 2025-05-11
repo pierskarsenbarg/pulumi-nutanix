@@ -239,6 +239,7 @@ class _UserGroupsV2State:
         pulumi.set(self, "name", value)
 
 
+@pulumi.type_token("nutanix:index/userGroupsV2:UserGroupsV2")
 class UserGroupsV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

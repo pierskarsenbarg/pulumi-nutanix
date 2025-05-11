@@ -262,6 +262,7 @@ class _ImagesV2State:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("nutanix:index/imagesV2:ImagesV2")
 class ImagesV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

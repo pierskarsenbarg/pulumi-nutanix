@@ -146,6 +146,7 @@ class _AddressGroupState:
         pulumi.set(self, "name", value)
 
 
+@pulumi.type_token("nutanix:index/addressGroup:AddressGroup")
 class AddressGroup(pulumi.CustomResource):
     @overload
     def __init__(__self__,

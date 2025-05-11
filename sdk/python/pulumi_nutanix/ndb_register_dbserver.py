@@ -809,6 +809,7 @@ class _NdbRegisterDbserverState:
         pulumi.set(self, "working_directory", value)
 
 
+@pulumi.type_token("nutanix:index/ndbRegisterDbserver:NdbRegisterDbserver")
 class NdbRegisterDbserver(pulumi.CustomResource):
     @overload
     def __init__(__self__,

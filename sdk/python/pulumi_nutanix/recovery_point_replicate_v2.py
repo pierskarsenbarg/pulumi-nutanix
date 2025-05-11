@@ -143,6 +143,7 @@ class _RecoveryPointReplicateV2State:
         pulumi.set(self, "replicated_rp_ext_id", value)
 
 
+@pulumi.type_token("nutanix:index/recoveryPointReplicateV2:RecoveryPointReplicateV2")
 class RecoveryPointReplicateV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

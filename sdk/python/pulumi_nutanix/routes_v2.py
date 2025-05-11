@@ -433,6 +433,7 @@ class _RoutesV2State:
         pulumi.set(self, "vpc_reference", value)
 
 
+@pulumi.type_token("nutanix:index/routesV2:RoutesV2")
 class RoutesV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

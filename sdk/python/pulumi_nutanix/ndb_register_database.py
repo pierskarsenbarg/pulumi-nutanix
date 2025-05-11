@@ -1196,6 +1196,7 @@ class _NdbRegisterDatabaseState:
         pulumi.set(self, "working_directory", value)
 
 
+@pulumi.type_token("nutanix:index/ndbRegisterDatabase:NdbRegisterDatabase")
 class NdbRegisterDatabase(pulumi.CustomResource):
     @overload
     def __init__(__self__,

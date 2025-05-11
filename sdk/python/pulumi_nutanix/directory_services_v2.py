@@ -399,6 +399,7 @@ class _DirectoryServicesV2State:
         pulumi.set(self, "white_listed_groups", value)
 
 
+@pulumi.type_token("nutanix:index/directoryServicesV2:DirectoryServicesV2")
 class DirectoryServicesV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

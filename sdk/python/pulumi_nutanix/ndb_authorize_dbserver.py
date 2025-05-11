@@ -113,6 +113,7 @@ class _NdbAuthorizeDbserverState:
         pulumi.set(self, "time_machine_name", value)
 
 
+@pulumi.type_token("nutanix:index/ndbAuthorizeDbserver:NdbAuthorizeDbserver")
 class NdbAuthorizeDbserver(pulumi.CustomResource):
     @overload
     def __init__(__self__,

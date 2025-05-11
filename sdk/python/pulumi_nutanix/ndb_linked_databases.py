@@ -226,6 +226,7 @@ class _NdbLinkedDatabasesState:
         pulumi.set(self, "timezone", value)
 
 
+@pulumi.type_token("nutanix:index/ndbLinkedDatabases:NdbLinkedDatabases")
 class NdbLinkedDatabases(pulumi.CustomResource):
     @overload
     def __init__(__self__,

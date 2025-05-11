@@ -581,6 +581,7 @@ class _UsersV2State:
         pulumi.set(self, "username", value)
 
 
+@pulumi.type_token("nutanix:index/usersV2:UsersV2")
 class UsersV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

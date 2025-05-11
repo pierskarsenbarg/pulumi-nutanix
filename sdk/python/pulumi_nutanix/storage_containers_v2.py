@@ -826,6 +826,7 @@ class _StorageContainersV2State:
         pulumi.set(self, "tenant_id", value)
 
 
+@pulumi.type_token("nutanix:index/storageContainersV2:StorageContainersV2")
 class StorageContainersV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

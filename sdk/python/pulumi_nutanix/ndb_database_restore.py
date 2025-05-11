@@ -606,6 +606,7 @@ class _NdbDatabaseRestoreState:
         pulumi.set(self, "user_pitr_timestamp", value)
 
 
+@pulumi.type_token("nutanix:index/ndbDatabaseRestore:NdbDatabaseRestore")
 class NdbDatabaseRestore(pulumi.CustomResource):
     @overload
     def __init__(__self__,

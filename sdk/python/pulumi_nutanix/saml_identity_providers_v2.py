@@ -359,6 +359,7 @@ class _SamlIdentityProvidersV2State:
         pulumi.set(self, "username_attribute", value)
 
 
+@pulumi.type_token("nutanix:index/samlIdentityProvidersV2:SamlIdentityProvidersV2")
 class SamlIdentityProvidersV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

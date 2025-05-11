@@ -353,6 +353,7 @@ class _RolesV2State:
         pulumi.set(self, "tenant_id", value)
 
 
+@pulumi.type_token("nutanix:index/rolesV2:RolesV2")
 class RolesV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

@@ -385,6 +385,7 @@ class _NdbNetworkState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("nutanix:index/ndbNetwork:NdbNetwork")
 class NdbNetwork(pulumi.CustomResource):
     @overload
     def __init__(__self__,

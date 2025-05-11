@@ -835,6 +835,7 @@ class _NdbDbserverVmState:
         pulumi.set(self, "vm_timezone", value)
 
 
+@pulumi.type_token("nutanix:index/ndbDbserverVm:NdbDbserverVm")
 class NdbDbserverVm(pulumi.CustomResource):
     @overload
     def __init__(__self__,

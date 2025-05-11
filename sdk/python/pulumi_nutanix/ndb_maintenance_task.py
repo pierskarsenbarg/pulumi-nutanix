@@ -178,6 +178,7 @@ class _NdbMaintenanceTaskState:
         pulumi.set(self, "tasks", value)
 
 
+@pulumi.type_token("nutanix:index/ndbMaintenanceTask:NdbMaintenanceTask")
 class NdbMaintenanceTask(pulumi.CustomResource):
     @overload
     def __init__(__self__,

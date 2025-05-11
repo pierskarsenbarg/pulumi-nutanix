@@ -259,6 +259,7 @@ class _VpcState:
         pulumi.set(self, "name", value)
 
 
+@pulumi.type_token("nutanix:index/vpc:Vpc")
 class Vpc(pulumi.CustomResource):
     @overload
     def __init__(__self__,

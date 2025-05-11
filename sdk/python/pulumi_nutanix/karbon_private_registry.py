@@ -240,6 +240,7 @@ class _KarbonPrivateRegistryState:
         pulumi.set(self, "username", value)
 
 
+@pulumi.type_token("nutanix:index/karbonPrivateRegistry:KarbonPrivateRegistry")
 class KarbonPrivateRegistry(pulumi.CustomResource):
     @overload
     def __init__(__self__,

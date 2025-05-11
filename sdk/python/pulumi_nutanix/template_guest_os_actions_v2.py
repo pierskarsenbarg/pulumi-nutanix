@@ -235,6 +235,7 @@ class _TemplateGuestOsActionsV2State:
         pulumi.set(self, "version_name", value)
 
 
+@pulumi.type_token("nutanix:index/templateGuestOsActionsV2:TemplateGuestOsActionsV2")
 class TemplateGuestOsActionsV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

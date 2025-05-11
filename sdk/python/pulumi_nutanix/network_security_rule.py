@@ -1011,6 +1011,7 @@ class _NetworkSecurityRuleState:
         pulumi.set(self, "project_reference", value)
 
 
+@pulumi.type_token("nutanix:index/networkSecurityRule:NetworkSecurityRule")
 class NetworkSecurityRule(pulumi.CustomResource):
     @overload
     def __init__(__self__,

@@ -82,6 +82,7 @@ class _VmGcUpdateV2State:
         pulumi.set(self, "ext_id", value)
 
 
+@pulumi.type_token("nutanix:index/vmGcUpdateV2:VmGcUpdateV2")
 class VmGcUpdateV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

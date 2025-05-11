@@ -160,6 +160,7 @@ class _CategoryValueState:
         pulumi.set(self, "value", value)
 
 
+@pulumi.type_token("nutanix:index/categoryValue:CategoryValue")
 class CategoryValue(pulumi.CustomResource):
     @overload
     def __init__(__self__,

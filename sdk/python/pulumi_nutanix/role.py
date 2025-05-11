@@ -274,6 +274,7 @@ class _RoleState:
         pulumi.set(self, "state", value)
 
 
+@pulumi.type_token("nutanix:index/role:Role")
 class Role(pulumi.CustomResource):
     @overload
     def __init__(__self__,

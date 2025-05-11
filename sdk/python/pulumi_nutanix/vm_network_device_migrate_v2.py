@@ -151,6 +151,7 @@ class _VmNetworkDeviceMigrateV2State:
         pulumi.set(self, "vm_ext_id", value)
 
 
+@pulumi.type_token("nutanix:index/vmNetworkDeviceMigrateV2:VmNetworkDeviceMigrateV2")
 class VmNetworkDeviceMigrateV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

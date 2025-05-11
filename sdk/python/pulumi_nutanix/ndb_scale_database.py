@@ -632,6 +632,7 @@ class _NdbScaleDatabaseState:
         pulumi.set(self, "type", value)
 
 
+@pulumi.type_token("nutanix:index/ndbScaleDatabase:NdbScaleDatabase")
 class NdbScaleDatabase(pulumi.CustomResource):
     @overload
     def __init__(__self__,

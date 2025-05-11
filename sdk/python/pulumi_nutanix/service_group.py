@@ -146,6 +146,7 @@ class _ServiceGroupState:
         pulumi.set(self, "system_defined", value)
 
 
+@pulumi.type_token("nutanix:index/serviceGroup:ServiceGroup")
 class ServiceGroup(pulumi.CustomResource):
     @overload
     def __init__(__self__,

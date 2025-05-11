@@ -272,6 +272,7 @@ class _NgtInsertIsoV2State:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("nutanix:index/ngtInsertIsoV2:NgtInsertIsoV2")
 class NgtInsertIsoV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

@@ -694,6 +694,7 @@ class _VmCloneV2State:
         pulumi.set(self, "vtpm_configs", value)
 
 
+@pulumi.type_token("nutanix:index/vmCloneV2:VmCloneV2")
 class VmCloneV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,
