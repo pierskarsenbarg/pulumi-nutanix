@@ -465,6 +465,7 @@ class _NdbMaintenanceWindowState:
         pulumi.set(self, "week_of_month", value)
 
 
+@pulumi.type_token("nutanix:index/ndbMaintenanceWindow:NdbMaintenanceWindow")
 class NdbMaintenanceWindow(pulumi.CustomResource):
     @overload
     def __init__(__self__,

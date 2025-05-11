@@ -217,6 +217,7 @@ class _NdbStretchedVlanState:
         pulumi.set(self, "vlans_lists", value)
 
 
+@pulumi.type_token("nutanix:index/ndbStretchedVlan:NdbStretchedVlan")
 class NdbStretchedVlan(pulumi.CustomResource):
     @overload
     def __init__(__self__,

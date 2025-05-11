@@ -105,6 +105,7 @@ class _VmNetworkDeviceAssignIpV2State:
         pulumi.set(self, "vm_ext_id", value)
 
 
+@pulumi.type_token("nutanix:index/vmNetworkDeviceAssignIpV2:VmNetworkDeviceAssignIpV2")
 class VmNetworkDeviceAssignIpV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

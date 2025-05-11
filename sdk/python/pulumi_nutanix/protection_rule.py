@@ -301,6 +301,7 @@ class _ProtectionRuleState:
         pulumi.set(self, "state", value)
 
 
+@pulumi.type_token("nutanix:index/protectionRule:ProtectionRule")
 class ProtectionRule(pulumi.CustomResource):
     @overload
     def __init__(__self__,

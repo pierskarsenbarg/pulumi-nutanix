@@ -340,6 +340,7 @@ class _ImagePlacementPolicyV2State:
         pulumi.set(self, "should_cancel_running_tasks", value)
 
 
+@pulumi.type_token("nutanix:index/imagePlacementPolicyV2:ImagePlacementPolicyV2")
 class ImagePlacementPolicyV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

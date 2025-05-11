@@ -191,6 +191,7 @@ class _AddressGroupsV2State:
         pulumi.set(self, "tenant_id", value)
 
 
+@pulumi.type_token("nutanix:index/addressGroupsV2:AddressGroupsV2")
 class AddressGroupsV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

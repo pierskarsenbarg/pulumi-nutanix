@@ -160,6 +160,7 @@ class _NdbCloneRefreshState:
         pulumi.set(self, "user_pitr_timestamp", value)
 
 
+@pulumi.type_token("nutanix:index/ndbCloneRefresh:NdbCloneRefresh")
 class NdbCloneRefresh(pulumi.CustomResource):
     @overload
     def __init__(__self__,

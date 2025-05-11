@@ -282,6 +282,7 @@ class _ClustersDiscoverUnconfiguredNodesV2State:
         pulumi.set(self, "uuid_filter_lists", value)
 
 
+@pulumi.type_token("nutanix:index/clustersDiscoverUnconfiguredNodesV2:ClustersDiscoverUnconfiguredNodesV2")
 class ClustersDiscoverUnconfiguredNodesV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

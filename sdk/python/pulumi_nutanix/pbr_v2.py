@@ -224,6 +224,7 @@ class _PbrV2State:
         pulumi.set(self, "vpcs", value)
 
 
+@pulumi.type_token("nutanix:index/pbrV2:PbrV2")
 class PbrV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

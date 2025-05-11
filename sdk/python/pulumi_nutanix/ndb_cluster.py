@@ -701,6 +701,7 @@ class _NdbClusterState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("nutanix:index/ndbCluster:NdbCluster")
 class NdbCluster(pulumi.CustomResource):
     @overload
     def __init__(__self__,

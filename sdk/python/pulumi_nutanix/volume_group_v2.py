@@ -586,6 +586,7 @@ class _VolumeGroupV2State:
         pulumi.set(self, "usage_type", value)
 
 
+@pulumi.type_token("nutanix:index/volumeGroupV2:VolumeGroupV2")
 class VolumeGroupV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

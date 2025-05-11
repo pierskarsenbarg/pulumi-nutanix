@@ -559,6 +559,7 @@ class _ImageState:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("nutanix:index/image:Image")
 class Image(pulumi.CustomResource):
     @overload
     def __init__(__self__,

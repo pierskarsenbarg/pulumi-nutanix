@@ -701,6 +701,7 @@ class _ProjectState:
         pulumi.set(self, "vpc_reference_lists", value)
 
 
+@pulumi.type_token("nutanix:index/project:Project")
 class Project(pulumi.CustomResource):
     @overload
     def __init__(__self__,

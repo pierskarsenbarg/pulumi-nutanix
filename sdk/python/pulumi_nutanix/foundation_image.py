@@ -174,6 +174,7 @@ class _FoundationImageState:
         pulumi.set(self, "source", value)
 
 
+@pulumi.type_token("nutanix:index/foundationImage:FoundationImage")
 class FoundationImage(pulumi.CustomResource):
     @overload
     def __init__(__self__,

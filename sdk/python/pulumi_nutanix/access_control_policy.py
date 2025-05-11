@@ -330,6 +330,7 @@ class _AccessControlPolicyState:
         pulumi.set(self, "user_reference_lists", value)
 
 
+@pulumi.type_token("nutanix:index/accessControlPolicy:AccessControlPolicy")
 class AccessControlPolicy(pulumi.CustomResource):
     @overload
     def __init__(__self__,

@@ -193,6 +193,7 @@ class _RecoveryPointRestoreV2State:
         pulumi.set(self, "volume_group_recovery_point_restore_overrides", value)
 
 
+@pulumi.type_token("nutanix:index/recoveryPointRestoreV2:RecoveryPointRestoreV2")
 class RecoveryPointRestoreV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

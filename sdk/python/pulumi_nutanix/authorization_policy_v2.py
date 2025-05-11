@@ -355,6 +355,7 @@ class _AuthorizationPolicyV2State:
         pulumi.set(self, "role", value)
 
 
+@pulumi.type_token("nutanix:index/authorizationPolicyV2:AuthorizationPolicyV2")
 class AuthorizationPolicyV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

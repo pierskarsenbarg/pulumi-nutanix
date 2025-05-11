@@ -830,6 +830,7 @@ class _SubnetState:
         pulumi.set(self, "vswitch_name", value)
 
 
+@pulumi.type_token("nutanix:index/subnet:Subnet")
 class Subnet(pulumi.CustomResource):
     @overload
     def __init__(__self__,

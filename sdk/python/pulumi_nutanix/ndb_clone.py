@@ -1289,6 +1289,7 @@ class _NdbCloneState:
         pulumi.set(self, "vm_password", value)
 
 
+@pulumi.type_token("nutanix:index/ndbClone:NdbClone")
 class NdbClone(pulumi.CustomResource):
     @overload
     def __init__(__self__,

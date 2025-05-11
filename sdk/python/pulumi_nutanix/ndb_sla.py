@@ -417,6 +417,7 @@ class _NdbSlaState:
         pulumi.set(self, "yearly_retention", value)
 
 
+@pulumi.type_token("nutanix:index/ndbSla:NdbSla")
 class NdbSla(pulumi.CustomResource):
     @overload
     def __init__(__self__,

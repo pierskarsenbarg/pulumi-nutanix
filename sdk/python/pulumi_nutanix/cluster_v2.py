@@ -415,6 +415,7 @@ class _ClusterV2State:
         pulumi.set(self, "vm_count", value)
 
 
+@pulumi.type_token("nutanix:index/clusterV2:ClusterV2")
 class ClusterV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

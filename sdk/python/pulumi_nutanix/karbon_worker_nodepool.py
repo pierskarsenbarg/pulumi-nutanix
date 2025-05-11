@@ -241,6 +241,7 @@ class _KarbonWorkerNodepoolState:
         pulumi.set(self, "num_instances", value)
 
 
+@pulumi.type_token("nutanix:index/karbonWorkerNodepool:KarbonWorkerNodepool")
 class KarbonWorkerNodepool(pulumi.CustomResource):
     @overload
     def __init__(__self__,

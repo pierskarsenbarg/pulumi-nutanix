@@ -211,6 +211,7 @@ class _StaticRoutesState:
         pulumi.set(self, "vpc_uuid", value)
 
 
+@pulumi.type_token("nutanix:index/staticRoutes:StaticRoutes")
 class StaticRoutes(pulumi.CustomResource):
     @overload
     def __init__(__self__,

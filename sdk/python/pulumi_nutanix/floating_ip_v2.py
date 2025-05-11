@@ -491,6 +491,7 @@ class _FloatingIpV2State:
         pulumi.set(self, "vpcs", value)
 
 
+@pulumi.type_token("nutanix:index/floatingIpV2:FloatingIpV2")
 class FloatingIpV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

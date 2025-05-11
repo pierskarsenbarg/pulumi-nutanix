@@ -258,6 +258,7 @@ class _NgtUpgradeV2State:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("nutanix:index/ngtUpgradeV2:NgtUpgradeV2")
 class NgtUpgradeV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

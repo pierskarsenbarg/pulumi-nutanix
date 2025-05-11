@@ -105,6 +105,7 @@ class _VmCdromInsertEjectV2State:
         pulumi.set(self, "vm_ext_id", value)
 
 
+@pulumi.type_token("nutanix:index/vmCdromInsertEjectV2:VmCdromInsertEjectV2")
 class VmCdromInsertEjectV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

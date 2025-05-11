@@ -221,6 +221,7 @@ class _PcRegistrationV2State:
         pulumi.set(self, "tenant_id", value)
 
 
+@pulumi.type_token("nutanix:index/pcRegistrationV2:PcRegistrationV2")
 class PcRegistrationV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

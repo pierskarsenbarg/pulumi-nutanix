@@ -152,6 +152,7 @@ class _DeployTemplatesV2State:
         pulumi.set(self, "version_id", value)
 
 
+@pulumi.type_token("nutanix:index/deployTemplatesV2:DeployTemplatesV2")
 class DeployTemplatesV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

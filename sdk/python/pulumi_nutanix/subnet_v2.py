@@ -610,6 +610,7 @@ class _SubnetV2State:
         pulumi.set(self, "vpcs", value)
 
 
+@pulumi.type_token("nutanix:index/subnetV2:SubnetV2")
 class SubnetV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

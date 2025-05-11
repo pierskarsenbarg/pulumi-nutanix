@@ -165,6 +165,7 @@ class _ClustersUnconfiguredNodeNetworksV2State:
         pulumi.set(self, "request_type", value)
 
 
+@pulumi.type_token("nutanix:index/clustersUnconfiguredNodeNetworksV2:ClustersUnconfiguredNodeNetworksV2")
 class ClustersUnconfiguredNodeNetworksV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

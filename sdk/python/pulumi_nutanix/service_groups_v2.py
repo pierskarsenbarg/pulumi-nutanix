@@ -291,6 +291,7 @@ class _ServiceGroupsV2State:
         pulumi.set(self, "udp_services", value)
 
 
+@pulumi.type_token("nutanix:index/serviceGroupsV2:ServiceGroupsV2")
 class ServiceGroupsV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

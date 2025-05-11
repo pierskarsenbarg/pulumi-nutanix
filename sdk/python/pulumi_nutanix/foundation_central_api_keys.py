@@ -128,6 +128,7 @@ class _FoundationCentralApiKeysState:
         pulumi.set(self, "key_uuid", value)
 
 
+@pulumi.type_token("nutanix:index/foundationCentralApiKeys:FoundationCentralApiKeys")
 class FoundationCentralApiKeys(pulumi.CustomResource):
     @overload
     def __init__(__self__,

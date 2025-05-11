@@ -87,6 +87,15 @@ export class Provider extends pulumi.ProviderResource {
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
     }
+
+    /**
+     * This function returns a Terraform config object with terraform-namecased keys,to be used with the Terraform Module Provider.
+     */
+    terraformConfig(): pulumi.Output<Provider.TerraformConfigResult> {
+        return pulumi.runtime.call("pulumi:providers:nutanix/terraformConfig", {
+            "__self__": this,
+        }, this);
+    }
 }
 
 /**
@@ -138,4 +147,14 @@ export interface ProviderArgs {
      * Set if you know that the creation o update of a resource may take long time (minutes)
      */
     waitTimeout?: pulumi.Input<number>;
+}
+
+export namespace Provider {
+    /**
+     * The results of the Provider.terraformConfig method.
+     */
+    export interface TerraformConfigResult {
+        readonly result: {[key: string]: any};
+    }
+
 }

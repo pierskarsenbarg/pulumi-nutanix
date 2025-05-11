@@ -563,6 +563,7 @@ class _FoundationCentralImageClusterState:
         pulumi.set(self, "workflow_type", value)
 
 
+@pulumi.type_token("nutanix:index/foundationCentralImageCluster:FoundationCentralImageCluster")
 class FoundationCentralImageCluster(pulumi.CustomResource):
     @overload
     def __init__(__self__,

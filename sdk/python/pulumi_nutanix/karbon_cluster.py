@@ -449,6 +449,7 @@ class _KarbonClusterState:
         pulumi.set(self, "worker_node_pool", value)
 
 
+@pulumi.type_token("nutanix:index/karbonCluster:KarbonCluster")
 class KarbonCluster(pulumi.CustomResource):
     @overload
     def __init__(__self__,

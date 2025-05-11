@@ -111,6 +111,7 @@ class _VmRevertV2State:
         pulumi.set(self, "vm_recovery_point_ext_id", value)
 
 
+@pulumi.type_token("nutanix:index/vmRevertV2:VmRevertV2")
 class VmRevertV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

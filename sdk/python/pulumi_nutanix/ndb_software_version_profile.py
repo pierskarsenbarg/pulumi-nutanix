@@ -417,6 +417,7 @@ class _NdbSoftwareVersionProfileState:
         pulumi.set(self, "version_cluster_associations", value)
 
 
+@pulumi.type_token("nutanix:index/ndbSoftwareVersionProfile:NdbSoftwareVersionProfile")
 class NdbSoftwareVersionProfile(pulumi.CustomResource):
     @overload
     def __init__(__self__,

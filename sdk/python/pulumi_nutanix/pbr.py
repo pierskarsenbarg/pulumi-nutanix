@@ -406,6 +406,7 @@ class _PbrState:
         pulumi.set(self, "vpc_reference_uuid", value)
 
 
+@pulumi.type_token("nutanix:index/pbr:Pbr")
 class Pbr(pulumi.CustomResource):
     @overload
     def __init__(__self__,

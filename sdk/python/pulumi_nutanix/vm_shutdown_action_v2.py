@@ -129,6 +129,7 @@ class _VmShutdownActionV2State:
         pulumi.set(self, "guest_power_state_transition_configs", value)
 
 
+@pulumi.type_token("nutanix:index/vmShutdownActionV2:VmShutdownActionV2")
 class VmShutdownActionV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

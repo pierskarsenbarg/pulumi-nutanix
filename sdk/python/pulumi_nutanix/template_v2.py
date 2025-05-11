@@ -237,6 +237,7 @@ class _TemplateV2State:
         pulumi.set(self, "updated_bies", value)
 
 
+@pulumi.type_token("nutanix:index/templateV2:TemplateV2")
 class TemplateV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

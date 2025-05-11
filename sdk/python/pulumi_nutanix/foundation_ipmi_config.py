@@ -190,6 +190,7 @@ class _FoundationIpmiConfigState:
         pulumi.set(self, "ipmi_user", value)
 
 
+@pulumi.type_token("nutanix:index/foundationIpmiConfig:FoundationIpmiConfig")
 class FoundationIpmiConfig(pulumi.CustomResource):
     @overload
     def __init__(__self__,

@@ -322,6 +322,7 @@ class _NgtInstallationV2State:
         pulumi.set(self, "version", value)
 
 
+@pulumi.type_token("nutanix:index/ngtInstallationV2:NgtInstallationV2")
 class NgtInstallationV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,

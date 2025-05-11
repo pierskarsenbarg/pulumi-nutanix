@@ -323,6 +323,7 @@ class _UserState:
         pulumi.set(self, "user_type", value)
 
 
+@pulumi.type_token("nutanix:index/user:User")
 class User(pulumi.CustomResource):
     @overload
     def __init__(__self__,

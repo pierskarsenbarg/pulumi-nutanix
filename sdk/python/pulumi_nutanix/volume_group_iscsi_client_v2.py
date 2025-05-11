@@ -290,6 +290,7 @@ class _VolumeGroupIscsiClientV2State:
         pulumi.set(self, "vg_ext_id", value)
 
 
+@pulumi.type_token("nutanix:index/volumeGroupIscsiClientV2:VolumeGroupIscsiClientV2")
 class VolumeGroupIscsiClientV2(pulumi.CustomResource):
     @overload
     def __init__(__self__,
