@@ -33,9 +33,11 @@ type FoundationCentralImageCluster struct {
 	Destroyed              pulumi.BoolOutput                                            `pulumi:"destroyed"`
 	FoundationInitConfigs  FoundationCentralImageClusterFoundationInitConfigArrayOutput `pulumi:"foundationInitConfigs"`
 	FoundationInitNodeUuid pulumi.StringOutput                                          `pulumi:"foundationInitNodeUuid"`
-	// Details of the hypervisor iso.
+	// Details of the hypervisor iso. (Deprecated)
 	HypervisorIsoDetails FoundationCentralImageClusterHypervisorIsoDetailsOutput `pulumi:"hypervisorIsoDetails"`
-	ImageClusterUuid     pulumi.StringOutput                                     `pulumi:"imageClusterUuid"`
+	// Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
+	HypervisorIsos   FoundationCentralImageClusterHypervisorIsosPtrOutput `pulumi:"hypervisorIsos"`
+	ImageClusterUuid pulumi.StringOutput                                  `pulumi:"imageClusterUuid"`
 	// Unique id of the cluster.
 	ImagedClusterUuid   pulumi.StringOutput                              `pulumi:"imagedClusterUuid"`
 	ImagedNodeUuidLists pulumi.StringArrayOutput                         `pulumi:"imagedNodeUuidLists"`
@@ -99,9 +101,11 @@ type foundationCentralImageClusterState struct {
 	Destroyed              *bool                                               `pulumi:"destroyed"`
 	FoundationInitConfigs  []FoundationCentralImageClusterFoundationInitConfig `pulumi:"foundationInitConfigs"`
 	FoundationInitNodeUuid *string                                             `pulumi:"foundationInitNodeUuid"`
-	// Details of the hypervisor iso.
+	// Details of the hypervisor iso. (Deprecated)
 	HypervisorIsoDetails *FoundationCentralImageClusterHypervisorIsoDetails `pulumi:"hypervisorIsoDetails"`
-	ImageClusterUuid     *string                                            `pulumi:"imageClusterUuid"`
+	// Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
+	HypervisorIsos   *FoundationCentralImageClusterHypervisorIsos `pulumi:"hypervisorIsos"`
+	ImageClusterUuid *string                                      `pulumi:"imageClusterUuid"`
 	// Unique id of the cluster.
 	ImagedClusterUuid   *string                                 `pulumi:"imagedClusterUuid"`
 	ImagedNodeUuidLists []string                                `pulumi:"imagedNodeUuidLists"`
@@ -136,9 +140,11 @@ type FoundationCentralImageClusterState struct {
 	Destroyed              pulumi.BoolPtrInput
 	FoundationInitConfigs  FoundationCentralImageClusterFoundationInitConfigArrayInput
 	FoundationInitNodeUuid pulumi.StringPtrInput
-	// Details of the hypervisor iso.
+	// Details of the hypervisor iso. (Deprecated)
 	HypervisorIsoDetails FoundationCentralImageClusterHypervisorIsoDetailsPtrInput
-	ImageClusterUuid     pulumi.StringPtrInput
+	// Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
+	HypervisorIsos   FoundationCentralImageClusterHypervisorIsosPtrInput
+	ImageClusterUuid pulumi.StringPtrInput
 	// Unique id of the cluster.
 	ImagedClusterUuid   pulumi.StringPtrInput
 	ImagedNodeUuidLists pulumi.StringArrayInput
@@ -171,10 +177,12 @@ type foundationCentralImageClusterArgs struct {
 	ClusterStatus *FoundationCentralImageClusterClusterStatus `pulumi:"clusterStatus"`
 	// Common network settings across the nodes in the cluster.
 	CommonNetworkSettings *FoundationCentralImageClusterCommonNetworkSettings `pulumi:"commonNetworkSettings"`
-	// Details of the hypervisor iso.
+	// Details of the hypervisor iso. (Deprecated)
 	HypervisorIsoDetails *FoundationCentralImageClusterHypervisorIsoDetails `pulumi:"hypervisorIsoDetails"`
-	ImageClusterUuid     *string                                            `pulumi:"imageClusterUuid"`
-	NodeLists            []FoundationCentralImageClusterNodeList            `pulumi:"nodeLists"`
+	// Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
+	HypervisorIsos   *FoundationCentralImageClusterHypervisorIsos `pulumi:"hypervisorIsos"`
+	ImageClusterUuid *string                                      `pulumi:"imageClusterUuid"`
+	NodeLists        []FoundationCentralImageClusterNodeList      `pulumi:"nodeLists"`
 	// Redundancy factor of the cluster.
 	RedundancyFactor    *int  `pulumi:"redundancyFactor"`
 	SkipClusterCreation *bool `pulumi:"skipClusterCreation"`
@@ -199,10 +207,12 @@ type FoundationCentralImageClusterArgs struct {
 	ClusterStatus FoundationCentralImageClusterClusterStatusPtrInput
 	// Common network settings across the nodes in the cluster.
 	CommonNetworkSettings FoundationCentralImageClusterCommonNetworkSettingsPtrInput
-	// Details of the hypervisor iso.
+	// Details of the hypervisor iso. (Deprecated)
 	HypervisorIsoDetails FoundationCentralImageClusterHypervisorIsoDetailsPtrInput
-	ImageClusterUuid     pulumi.StringPtrInput
-	NodeLists            FoundationCentralImageClusterNodeListArrayInput
+	// Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
+	HypervisorIsos   FoundationCentralImageClusterHypervisorIsosPtrInput
+	ImageClusterUuid pulumi.StringPtrInput
+	NodeLists        FoundationCentralImageClusterNodeListArrayInput
 	// Redundancy factor of the cluster.
 	RedundancyFactor    pulumi.IntPtrInput
 	SkipClusterCreation pulumi.BoolPtrInput
@@ -363,11 +373,18 @@ func (o FoundationCentralImageClusterOutput) FoundationInitNodeUuid() pulumi.Str
 	return o.ApplyT(func(v *FoundationCentralImageCluster) pulumi.StringOutput { return v.FoundationInitNodeUuid }).(pulumi.StringOutput)
 }
 
-// Details of the hypervisor iso.
+// Details of the hypervisor iso. (Deprecated)
 func (o FoundationCentralImageClusterOutput) HypervisorIsoDetails() FoundationCentralImageClusterHypervisorIsoDetailsOutput {
 	return o.ApplyT(func(v *FoundationCentralImageCluster) FoundationCentralImageClusterHypervisorIsoDetailsOutput {
 		return v.HypervisorIsoDetails
 	}).(FoundationCentralImageClusterHypervisorIsoDetailsOutput)
+}
+
+// Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
+func (o FoundationCentralImageClusterOutput) HypervisorIsos() FoundationCentralImageClusterHypervisorIsosPtrOutput {
+	return o.ApplyT(func(v *FoundationCentralImageCluster) FoundationCentralImageClusterHypervisorIsosPtrOutput {
+		return v.HypervisorIsos
+	}).(FoundationCentralImageClusterHypervisorIsosPtrOutput)
 }
 
 func (o FoundationCentralImageClusterOutput) ImageClusterUuid() pulumi.StringOutput {

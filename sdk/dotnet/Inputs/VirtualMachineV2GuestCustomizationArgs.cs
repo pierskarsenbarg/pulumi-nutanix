@@ -19,8 +19,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// <summary>
         /// The Nutanix Guest Tools customization settings.
         /// 
-        /// * `config.sysprep`: (Optional) Sysprep config
-        /// * `config.cloud_init`: (Optional) CloudInit Config
+        /// * `config.sysprep`: Sysprep config
+        /// * `config.cloud_init`: CloudInit Config
         /// </summary>
         public InputList<Inputs.VirtualMachineV2GuestCustomizationConfigArgs> Configs
         {

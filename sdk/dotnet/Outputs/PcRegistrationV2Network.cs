@@ -14,30 +14,34 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PcRegistrationV2Network
     {
-        public readonly ImmutableArray<Outputs.PcRegistrationV2NetworkExternalAddress> ExternalAddresses;
+        public readonly Outputs.PcRegistrationV2NetworkExternalAddress? ExternalAddress;
         public readonly ImmutableArray<Outputs.PcRegistrationV2NetworkExternalNetwork> ExternalNetworks;
         /// <summary>
         /// - A fully qualified domain name that specifies its exact location in the tree hierarchy of the Domain Name System.
         /// </summary>
         public readonly string? Fqdn;
+        public readonly Outputs.PcRegistrationV2NetworkInternalNetworks? InternalNetworks;
         public readonly ImmutableArray<Outputs.PcRegistrationV2NetworkNameServer> NameServers;
         public readonly ImmutableArray<Outputs.PcRegistrationV2NetworkNtpServer> NtpServers;
 
         [OutputConstructor]
         private PcRegistrationV2Network(
-            ImmutableArray<Outputs.PcRegistrationV2NetworkExternalAddress> externalAddresses,
+            Outputs.PcRegistrationV2NetworkExternalAddress? externalAddress,
 
             ImmutableArray<Outputs.PcRegistrationV2NetworkExternalNetwork> externalNetworks,
 
             string? fqdn,
 
+            Outputs.PcRegistrationV2NetworkInternalNetworks? internalNetworks,
+
             ImmutableArray<Outputs.PcRegistrationV2NetworkNameServer> nameServers,
 
             ImmutableArray<Outputs.PcRegistrationV2NetworkNtpServer> ntpServers)
         {
-            ExternalAddresses = externalAddresses;
+            ExternalAddress = externalAddress;
             ExternalNetworks = externalNetworks;
             Fqdn = fqdn;
+            InternalNetworks = internalNetworks;
             NameServers = nameServers;
             NtpServers = ntpServers;
         }

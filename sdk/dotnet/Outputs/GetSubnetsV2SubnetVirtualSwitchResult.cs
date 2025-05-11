@@ -16,25 +16,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         public readonly bool BondMode;
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetVirtualSwitchClusterResult> Clusters;
-        /// <summary>
-        /// Description of the subnet.
-        /// </summary>
         public readonly string Description;
-        /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
-        /// </summary>
         public readonly string ExtId;
         public readonly bool HasDeploymentError;
         public readonly bool IsDefault;
-        /// <summary>
-        /// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetVirtualSwitchLinkResult> Links;
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetVirtualSwitchMetadataResult> Metadatas;
         public readonly int Mtu;
-        /// <summary>
-        /// Name of the subnet.
-        /// </summary>
         public readonly string Name;
         public readonly string TenantId;
 

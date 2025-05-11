@@ -15,8 +15,33 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
  *
- * const service_group = new nutanix.ServiceGroupsV2("service-group", {
- *     description: "{{ desc }}",
+ * // Add Service  group. with TCP and UDP
+ * const tcp_udp_service = new nutanix.ServiceGroupsV2("tcp-udp-service", {
+ *     description: "service group description",
+ *     tcpServices: [{
+ *         endPort: 232,
+ *         startPort: 232,
+ *     }],
+ *     udpServices: [{
+ *         endPort: 232,
+ *         startPort: 232,
+ *     }],
+ * });
+ * // service group with ICMP
+ * const icmp_service = new nutanix.ServiceGroupsV2("icmp-service", {
+ *     description: "service group description",
+ *     icmpServices: [{
+ *         code: 0,
+ *         type: 8,
+ *     }],
+ * });
+ * // service group with All TCP, UDP and ICMP
+ * const all_service = new nutanix.ServiceGroupsV2("all-service", {
+ *     description: "service group description",
+ *     icmpServices: [{
+ *         code: 0,
+ *         type: 8,
+ *     }],
  *     tcpServices: [{
  *         endPort: 232,
  *         startPort: 232,

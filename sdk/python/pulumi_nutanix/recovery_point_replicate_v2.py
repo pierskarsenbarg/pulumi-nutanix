@@ -156,6 +156,19 @@ class RecoveryPointReplicateV2(pulumi.CustomResource):
         """
         External identifier of the replicated recovery point can be found in the task completion details under the key
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        # replicate RP
+        rp_replicate = nutanix.RecoveryPointReplicateV2("rp-replicate",
+            cluster_ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+            ext_id="150a7ed0-9d05-4f35-a060-16dac4c835d0",
+            pc_ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] cluster_ext_id: -(Required) External identifier of the cluster.
@@ -170,6 +183,19 @@ class RecoveryPointReplicateV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         External identifier of the replicated recovery point can be found in the task completion details under the key
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        # replicate RP
+        rp_replicate = nutanix.RecoveryPointReplicateV2("rp-replicate",
+            cluster_ext_id="1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+            ext_id="150a7ed0-9d05-4f35-a060-16dac4c835d0",
+            pc_ext_id="8a938cc5-282b-48c4-81be-de22de145d07")
+        ```
 
         :param str resource_name: The name of the resource.
         :param RecoveryPointReplicateV2Args args: The arguments to use to populate this resource's properties.

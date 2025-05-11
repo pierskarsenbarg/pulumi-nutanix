@@ -20,6 +20,11 @@ export type AddressGroupsV2 = import("./addressGroupsV2").AddressGroupsV2;
 export const AddressGroupsV2: typeof import("./addressGroupsV2").AddressGroupsV2 = null as any;
 utilities.lazyLoad(exports, ["AddressGroupsV2"], () => require("./addressGroupsV2"));
 
+export { AssociateCategoryToVolumeGroupV2Args, AssociateCategoryToVolumeGroupV2State } from "./associateCategoryToVolumeGroupV2";
+export type AssociateCategoryToVolumeGroupV2 = import("./associateCategoryToVolumeGroupV2").AssociateCategoryToVolumeGroupV2;
+export const AssociateCategoryToVolumeGroupV2: typeof import("./associateCategoryToVolumeGroupV2").AssociateCategoryToVolumeGroupV2 = null as any;
+utilities.lazyLoad(exports, ["AssociateCategoryToVolumeGroupV2"], () => require("./associateCategoryToVolumeGroupV2"));
+
 export { AuthorizationPolicyV2Args, AuthorizationPolicyV2State } from "./authorizationPolicyV2";
 export type AuthorizationPolicyV2 = import("./authorizationPolicyV2").AuthorizationPolicyV2;
 export const AuthorizationPolicyV2: typeof import("./authorizationPolicyV2").AuthorizationPolicyV2 = null as any;
@@ -149,6 +154,11 @@ export { GetAuthorizationPolicyV2Args, GetAuthorizationPolicyV2Result, GetAuthor
 export const getAuthorizationPolicyV2: typeof import("./getAuthorizationPolicyV2").getAuthorizationPolicyV2 = null as any;
 export const getAuthorizationPolicyV2Output: typeof import("./getAuthorizationPolicyV2").getAuthorizationPolicyV2Output = null as any;
 utilities.lazyLoad(exports, ["getAuthorizationPolicyV2","getAuthorizationPolicyV2Output"], () => require("./getAuthorizationPolicyV2"));
+
+export { GetBlueprintRuntimeEditablesArgs, GetBlueprintRuntimeEditablesResult, GetBlueprintRuntimeEditablesOutputArgs } from "./getBlueprintRuntimeEditables";
+export const getBlueprintRuntimeEditables: typeof import("./getBlueprintRuntimeEditables").getBlueprintRuntimeEditables = null as any;
+export const getBlueprintRuntimeEditablesOutput: typeof import("./getBlueprintRuntimeEditables").getBlueprintRuntimeEditablesOutput = null as any;
+utilities.lazyLoad(exports, ["getBlueprintRuntimeEditables","getBlueprintRuntimeEditablesOutput"], () => require("./getBlueprintRuntimeEditables"));
 
 export { GetCategoriesV2Args, GetCategoriesV2Result, GetCategoriesV2OutputArgs } from "./getCategoriesV2";
 export const getCategoriesV2: typeof import("./getCategoriesV2").getCategoriesV2 = null as any;
@@ -340,6 +350,26 @@ export const getKarbonPrivateRegistry: typeof import("./getKarbonPrivateRegistry
 export const getKarbonPrivateRegistryOutput: typeof import("./getKarbonPrivateRegistry").getKarbonPrivateRegistryOutput = null as any;
 utilities.lazyLoad(exports, ["getKarbonPrivateRegistry","getKarbonPrivateRegistryOutput"], () => require("./getKarbonPrivateRegistry"));
 
+export { GetLcmConfigV2Args, GetLcmConfigV2Result, GetLcmConfigV2OutputArgs } from "./getLcmConfigV2";
+export const getLcmConfigV2: typeof import("./getLcmConfigV2").getLcmConfigV2 = null as any;
+export const getLcmConfigV2Output: typeof import("./getLcmConfigV2").getLcmConfigV2Output = null as any;
+utilities.lazyLoad(exports, ["getLcmConfigV2","getLcmConfigV2Output"], () => require("./getLcmConfigV2"));
+
+export { GetLcmEntitiesV2Args, GetLcmEntitiesV2Result, GetLcmEntitiesV2OutputArgs } from "./getLcmEntitiesV2";
+export const getLcmEntitiesV2: typeof import("./getLcmEntitiesV2").getLcmEntitiesV2 = null as any;
+export const getLcmEntitiesV2Output: typeof import("./getLcmEntitiesV2").getLcmEntitiesV2Output = null as any;
+utilities.lazyLoad(exports, ["getLcmEntitiesV2","getLcmEntitiesV2Output"], () => require("./getLcmEntitiesV2"));
+
+export { GetLcmEntityV2Args, GetLcmEntityV2Result, GetLcmEntityV2OutputArgs } from "./getLcmEntityV2";
+export const getLcmEntityV2: typeof import("./getLcmEntityV2").getLcmEntityV2 = null as any;
+export const getLcmEntityV2Output: typeof import("./getLcmEntityV2").getLcmEntityV2Output = null as any;
+utilities.lazyLoad(exports, ["getLcmEntityV2","getLcmEntityV2Output"], () => require("./getLcmEntityV2"));
+
+export { GetLcmStatusV2Args, GetLcmStatusV2Result, GetLcmStatusV2OutputArgs } from "./getLcmStatusV2";
+export const getLcmStatusV2: typeof import("./getLcmStatusV2").getLcmStatusV2 = null as any;
+export const getLcmStatusV2Output: typeof import("./getLcmStatusV2").getLcmStatusV2Output = null as any;
+utilities.lazyLoad(exports, ["getLcmStatusV2","getLcmStatusV2Output"], () => require("./getLcmStatusV2"));
+
 export { GetNdbCloneArgs, GetNdbCloneResult, GetNdbCloneOutputArgs } from "./getNdbClone";
 export const getNdbClone: typeof import("./getNdbClone").getNdbClone = null as any;
 export const getNdbCloneOutput: typeof import("./getNdbClone").getNdbCloneOutput = null as any;
@@ -510,6 +540,41 @@ export const getPbrsV2: typeof import("./getPbrsV2").getPbrsV2 = null as any;
 export const getPbrsV2Output: typeof import("./getPbrsV2").getPbrsV2Output = null as any;
 utilities.lazyLoad(exports, ["getPbrsV2","getPbrsV2Output"], () => require("./getPbrsV2"));
 
+export { GetPcBackupTargetV2Args, GetPcBackupTargetV2Result, GetPcBackupTargetV2OutputArgs } from "./getPcBackupTargetV2";
+export const getPcBackupTargetV2: typeof import("./getPcBackupTargetV2").getPcBackupTargetV2 = null as any;
+export const getPcBackupTargetV2Output: typeof import("./getPcBackupTargetV2").getPcBackupTargetV2Output = null as any;
+utilities.lazyLoad(exports, ["getPcBackupTargetV2","getPcBackupTargetV2Output"], () => require("./getPcBackupTargetV2"));
+
+export { GetPcBackupTargetsV2Args, GetPcBackupTargetsV2Result, GetPcBackupTargetsV2OutputArgs } from "./getPcBackupTargetsV2";
+export const getPcBackupTargetsV2: typeof import("./getPcBackupTargetsV2").getPcBackupTargetsV2 = null as any;
+export const getPcBackupTargetsV2Output: typeof import("./getPcBackupTargetsV2").getPcBackupTargetsV2Output = null as any;
+utilities.lazyLoad(exports, ["getPcBackupTargetsV2","getPcBackupTargetsV2Output"], () => require("./getPcBackupTargetsV2"));
+
+export { GetPcRestorePointV2Args, GetPcRestorePointV2Result, GetPcRestorePointV2OutputArgs } from "./getPcRestorePointV2";
+export const getPcRestorePointV2: typeof import("./getPcRestorePointV2").getPcRestorePointV2 = null as any;
+export const getPcRestorePointV2Output: typeof import("./getPcRestorePointV2").getPcRestorePointV2Output = null as any;
+utilities.lazyLoad(exports, ["getPcRestorePointV2","getPcRestorePointV2Output"], () => require("./getPcRestorePointV2"));
+
+export { GetPcRestorePointsV2Args, GetPcRestorePointsV2Result, GetPcRestorePointsV2OutputArgs } from "./getPcRestorePointsV2";
+export const getPcRestorePointsV2: typeof import("./getPcRestorePointsV2").getPcRestorePointsV2 = null as any;
+export const getPcRestorePointsV2Output: typeof import("./getPcRestorePointsV2").getPcRestorePointsV2Output = null as any;
+utilities.lazyLoad(exports, ["getPcRestorePointsV2","getPcRestorePointsV2Output"], () => require("./getPcRestorePointsV2"));
+
+export { GetPcRestoreSourceV2Args, GetPcRestoreSourceV2Result, GetPcRestoreSourceV2OutputArgs } from "./getPcRestoreSourceV2";
+export const getPcRestoreSourceV2: typeof import("./getPcRestoreSourceV2").getPcRestoreSourceV2 = null as any;
+export const getPcRestoreSourceV2Output: typeof import("./getPcRestoreSourceV2").getPcRestoreSourceV2Output = null as any;
+utilities.lazyLoad(exports, ["getPcRestoreSourceV2","getPcRestoreSourceV2Output"], () => require("./getPcRestoreSourceV2"));
+
+export { GetPcV2Args, GetPcV2Result, GetPcV2OutputArgs } from "./getPcV2";
+export const getPcV2: typeof import("./getPcV2").getPcV2 = null as any;
+export const getPcV2Output: typeof import("./getPcV2").getPcV2Output = null as any;
+utilities.lazyLoad(exports, ["getPcV2","getPcV2Output"], () => require("./getPcV2"));
+
+export { GetPcsV2Args, GetPcsV2Result, GetPcsV2OutputArgs } from "./getPcsV2";
+export const getPcsV2: typeof import("./getPcsV2").getPcsV2 = null as any;
+export const getPcsV2Output: typeof import("./getPcsV2").getPcsV2Output = null as any;
+utilities.lazyLoad(exports, ["getPcsV2","getPcsV2Output"], () => require("./getPcsV2"));
+
 export { GetPermissionArgs, GetPermissionResult, GetPermissionOutputArgs } from "./getPermission";
 export const getPermission: typeof import("./getPermission").getPermission = null as any;
 export const getPermissionOutput: typeof import("./getPermission").getPermissionOutput = null as any;
@@ -529,6 +594,21 @@ export { GetProjectsResult } from "./getProjects";
 export const getProjects: typeof import("./getProjects").getProjects = null as any;
 export const getProjectsOutput: typeof import("./getProjects").getProjectsOutput = null as any;
 utilities.lazyLoad(exports, ["getProjects","getProjectsOutput"], () => require("./getProjects"));
+
+export { GetProtectedResourceV2Args, GetProtectedResourceV2Result, GetProtectedResourceV2OutputArgs } from "./getProtectedResourceV2";
+export const getProtectedResourceV2: typeof import("./getProtectedResourceV2").getProtectedResourceV2 = null as any;
+export const getProtectedResourceV2Output: typeof import("./getProtectedResourceV2").getProtectedResourceV2Output = null as any;
+utilities.lazyLoad(exports, ["getProtectedResourceV2","getProtectedResourceV2Output"], () => require("./getProtectedResourceV2"));
+
+export { GetProtectionPoliciesV2Args, GetProtectionPoliciesV2Result, GetProtectionPoliciesV2OutputArgs } from "./getProtectionPoliciesV2";
+export const getProtectionPoliciesV2: typeof import("./getProtectionPoliciesV2").getProtectionPoliciesV2 = null as any;
+export const getProtectionPoliciesV2Output: typeof import("./getProtectionPoliciesV2").getProtectionPoliciesV2Output = null as any;
+utilities.lazyLoad(exports, ["getProtectionPoliciesV2","getProtectionPoliciesV2Output"], () => require("./getProtectionPoliciesV2"));
+
+export { GetProtectionPolicyV2Args, GetProtectionPolicyV2Result, GetProtectionPolicyV2OutputArgs } from "./getProtectionPolicyV2";
+export const getProtectionPolicyV2: typeof import("./getProtectionPolicyV2").getProtectionPolicyV2 = null as any;
+export const getProtectionPolicyV2Output: typeof import("./getProtectionPolicyV2").getProtectionPolicyV2Output = null as any;
+utilities.lazyLoad(exports, ["getProtectionPolicyV2","getProtectionPolicyV2Output"], () => require("./getProtectionPolicyV2"));
 
 export { GetProtectionRuleArgs, GetProtectionRuleResult, GetProtectionRuleOutputArgs } from "./getProtectionRule";
 export const getProtectionRule: typeof import("./getProtectionRule").getProtectionRule = null as any;
@@ -559,6 +639,11 @@ export { GetRecoveryPointsV2Args, GetRecoveryPointsV2Result, GetRecoveryPointsV2
 export const getRecoveryPointsV2: typeof import("./getRecoveryPointsV2").getRecoveryPointsV2 = null as any;
 export const getRecoveryPointsV2Output: typeof import("./getRecoveryPointsV2").getRecoveryPointsV2Output = null as any;
 utilities.lazyLoad(exports, ["getRecoveryPointsV2","getRecoveryPointsV2Output"], () => require("./getRecoveryPointsV2"));
+
+export { GetRestorablePcsV2Args, GetRestorablePcsV2Result, GetRestorablePcsV2OutputArgs } from "./getRestorablePcsV2";
+export const getRestorablePcsV2: typeof import("./getRestorablePcsV2").getRestorablePcsV2 = null as any;
+export const getRestorablePcsV2Output: typeof import("./getRestorablePcsV2").getRestorablePcsV2Output = null as any;
+utilities.lazyLoad(exports, ["getRestorablePcsV2","getRestorablePcsV2Output"], () => require("./getRestorablePcsV2"));
 
 export { GetRoleArgs, GetRoleResult, GetRoleOutputArgs } from "./getRole";
 export const getRole: typeof import("./getRole").getRole = null as any;
@@ -609,6 +694,21 @@ export { GetSamlIdentityProvidersV2Args, GetSamlIdentityProvidersV2Result, GetSa
 export const getSamlIdentityProvidersV2: typeof import("./getSamlIdentityProvidersV2").getSamlIdentityProvidersV2 = null as any;
 export const getSamlIdentityProvidersV2Output: typeof import("./getSamlIdentityProvidersV2").getSamlIdentityProvidersV2Output = null as any;
 utilities.lazyLoad(exports, ["getSamlIdentityProvidersV2","getSamlIdentityProvidersV2Output"], () => require("./getSamlIdentityProvidersV2"));
+
+export { GetSelfServiceAppArgs, GetSelfServiceAppResult, GetSelfServiceAppOutputArgs } from "./getSelfServiceApp";
+export const getSelfServiceApp: typeof import("./getSelfServiceApp").getSelfServiceApp = null as any;
+export const getSelfServiceAppOutput: typeof import("./getSelfServiceApp").getSelfServiceAppOutput = null as any;
+utilities.lazyLoad(exports, ["getSelfServiceApp","getSelfServiceAppOutput"], () => require("./getSelfServiceApp"));
+
+export { GetSelfServiceAppSnapshotsArgs, GetSelfServiceAppSnapshotsResult, GetSelfServiceAppSnapshotsOutputArgs } from "./getSelfServiceAppSnapshots";
+export const getSelfServiceAppSnapshots: typeof import("./getSelfServiceAppSnapshots").getSelfServiceAppSnapshots = null as any;
+export const getSelfServiceAppSnapshotsOutput: typeof import("./getSelfServiceAppSnapshots").getSelfServiceAppSnapshotsOutput = null as any;
+utilities.lazyLoad(exports, ["getSelfServiceAppSnapshots","getSelfServiceAppSnapshotsOutput"], () => require("./getSelfServiceAppSnapshots"));
+
+export { GetSelfServiceSnapshotPolicyListArgs, GetSelfServiceSnapshotPolicyListResult, GetSelfServiceSnapshotPolicyListOutputArgs } from "./getSelfServiceSnapshotPolicyList";
+export const getSelfServiceSnapshotPolicyList: typeof import("./getSelfServiceSnapshotPolicyList").getSelfServiceSnapshotPolicyList = null as any;
+export const getSelfServiceSnapshotPolicyListOutput: typeof import("./getSelfServiceSnapshotPolicyList").getSelfServiceSnapshotPolicyListOutput = null as any;
+utilities.lazyLoad(exports, ["getSelfServiceSnapshotPolicyList","getSelfServiceSnapshotPolicyListOutput"], () => require("./getSelfServiceSnapshotPolicyList"));
 
 export { GetServiceGroupArgs, GetServiceGroupResult, GetServiceGroupOutputArgs } from "./getServiceGroup";
 export const getServiceGroup: typeof import("./getServiceGroup").getServiceGroup = null as any;
@@ -820,6 +920,26 @@ export type KarbonWorkerNodepool = import("./karbonWorkerNodepool").KarbonWorker
 export const KarbonWorkerNodepool: typeof import("./karbonWorkerNodepool").KarbonWorkerNodepool = null as any;
 utilities.lazyLoad(exports, ["KarbonWorkerNodepool"], () => require("./karbonWorkerNodepool"));
 
+export { LcmConfigV2Args, LcmConfigV2State } from "./lcmConfigV2";
+export type LcmConfigV2 = import("./lcmConfigV2").LcmConfigV2;
+export const LcmConfigV2: typeof import("./lcmConfigV2").LcmConfigV2 = null as any;
+utilities.lazyLoad(exports, ["LcmConfigV2"], () => require("./lcmConfigV2"));
+
+export { LcmPerformInventoryV2Args, LcmPerformInventoryV2State } from "./lcmPerformInventoryV2";
+export type LcmPerformInventoryV2 = import("./lcmPerformInventoryV2").LcmPerformInventoryV2;
+export const LcmPerformInventoryV2: typeof import("./lcmPerformInventoryV2").LcmPerformInventoryV2 = null as any;
+utilities.lazyLoad(exports, ["LcmPerformInventoryV2"], () => require("./lcmPerformInventoryV2"));
+
+export { LcmPrechecksV2Args, LcmPrechecksV2State } from "./lcmPrechecksV2";
+export type LcmPrechecksV2 = import("./lcmPrechecksV2").LcmPrechecksV2;
+export const LcmPrechecksV2: typeof import("./lcmPrechecksV2").LcmPrechecksV2 = null as any;
+utilities.lazyLoad(exports, ["LcmPrechecksV2"], () => require("./lcmPrechecksV2"));
+
+export { LcmUpgradeV2Args, LcmUpgradeV2State } from "./lcmUpgradeV2";
+export type LcmUpgradeV2 = import("./lcmUpgradeV2").LcmUpgradeV2;
+export const LcmUpgradeV2: typeof import("./lcmUpgradeV2").LcmUpgradeV2 = null as any;
+utilities.lazyLoad(exports, ["LcmUpgradeV2"], () => require("./lcmUpgradeV2"));
+
 export { NdbAuthorizeDbserverArgs, NdbAuthorizeDbserverState } from "./ndbAuthorizeDbserver";
 export type NdbAuthorizeDbserver = import("./ndbAuthorizeDbserver").NdbAuthorizeDbserver;
 export const NdbAuthorizeDbserver: typeof import("./ndbAuthorizeDbserver").NdbAuthorizeDbserver = null as any;
@@ -970,15 +1090,50 @@ export type PbrV2 = import("./pbrV2").PbrV2;
 export const PbrV2: typeof import("./pbrV2").PbrV2 = null as any;
 utilities.lazyLoad(exports, ["PbrV2"], () => require("./pbrV2"));
 
+export { PcBackupTargetV2Args, PcBackupTargetV2State } from "./pcBackupTargetV2";
+export type PcBackupTargetV2 = import("./pcBackupTargetV2").PcBackupTargetV2;
+export const PcBackupTargetV2: typeof import("./pcBackupTargetV2").PcBackupTargetV2 = null as any;
+utilities.lazyLoad(exports, ["PcBackupTargetV2"], () => require("./pcBackupTargetV2"));
+
+export { PcDeployV2Args, PcDeployV2State } from "./pcDeployV2";
+export type PcDeployV2 = import("./pcDeployV2").PcDeployV2;
+export const PcDeployV2: typeof import("./pcDeployV2").PcDeployV2 = null as any;
+utilities.lazyLoad(exports, ["PcDeployV2"], () => require("./pcDeployV2"));
+
 export { PcRegistrationV2Args, PcRegistrationV2State } from "./pcRegistrationV2";
 export type PcRegistrationV2 = import("./pcRegistrationV2").PcRegistrationV2;
 export const PcRegistrationV2: typeof import("./pcRegistrationV2").PcRegistrationV2 = null as any;
 utilities.lazyLoad(exports, ["PcRegistrationV2"], () => require("./pcRegistrationV2"));
 
+export { PcRestoreSourceV2Args, PcRestoreSourceV2State } from "./pcRestoreSourceV2";
+export type PcRestoreSourceV2 = import("./pcRestoreSourceV2").PcRestoreSourceV2;
+export const PcRestoreSourceV2: typeof import("./pcRestoreSourceV2").PcRestoreSourceV2 = null as any;
+utilities.lazyLoad(exports, ["PcRestoreSourceV2"], () => require("./pcRestoreSourceV2"));
+
+export { PcRestoreV2Args, PcRestoreV2State } from "./pcRestoreV2";
+export type PcRestoreV2 = import("./pcRestoreV2").PcRestoreV2;
+export const PcRestoreV2: typeof import("./pcRestoreV2").PcRestoreV2 = null as any;
+utilities.lazyLoad(exports, ["PcRestoreV2"], () => require("./pcRestoreV2"));
+
+export { PcUnregistrationV2Args, PcUnregistrationV2State } from "./pcUnregistrationV2";
+export type PcUnregistrationV2 = import("./pcUnregistrationV2").PcUnregistrationV2;
+export const PcUnregistrationV2: typeof import("./pcUnregistrationV2").PcUnregistrationV2 = null as any;
+utilities.lazyLoad(exports, ["PcUnregistrationV2"], () => require("./pcUnregistrationV2"));
+
 export { ProjectArgs, ProjectState } from "./project";
 export type Project = import("./project").Project;
 export const Project: typeof import("./project").Project = null as any;
 utilities.lazyLoad(exports, ["Project"], () => require("./project"));
+
+export { PromoteProtectedResourceV2Args, PromoteProtectedResourceV2State } from "./promoteProtectedResourceV2";
+export type PromoteProtectedResourceV2 = import("./promoteProtectedResourceV2").PromoteProtectedResourceV2;
+export const PromoteProtectedResourceV2: typeof import("./promoteProtectedResourceV2").PromoteProtectedResourceV2 = null as any;
+utilities.lazyLoad(exports, ["PromoteProtectedResourceV2"], () => require("./promoteProtectedResourceV2"));
+
+export { ProtectionPolicyV2Args, ProtectionPolicyV2State } from "./protectionPolicyV2";
+export type ProtectionPolicyV2 = import("./protectionPolicyV2").ProtectionPolicyV2;
+export const ProtectionPolicyV2: typeof import("./protectionPolicyV2").ProtectionPolicyV2 = null as any;
+utilities.lazyLoad(exports, ["ProtectionPolicyV2"], () => require("./protectionPolicyV2"));
 
 export { ProtectionRuleArgs, ProtectionRuleState } from "./protectionRule";
 export type ProtectionRule = import("./protectionRule").ProtectionRule;
@@ -1008,6 +1163,11 @@ export type RecoveryPointsV2 = import("./recoveryPointsV2").RecoveryPointsV2;
 export const RecoveryPointsV2: typeof import("./recoveryPointsV2").RecoveryPointsV2 = null as any;
 utilities.lazyLoad(exports, ["RecoveryPointsV2"], () => require("./recoveryPointsV2"));
 
+export { RestoreProtectedResourceV2Args, RestoreProtectedResourceV2State } from "./restoreProtectedResourceV2";
+export type RestoreProtectedResourceV2 = import("./restoreProtectedResourceV2").RestoreProtectedResourceV2;
+export const RestoreProtectedResourceV2: typeof import("./restoreProtectedResourceV2").RestoreProtectedResourceV2 = null as any;
+utilities.lazyLoad(exports, ["RestoreProtectedResourceV2"], () => require("./restoreProtectedResourceV2"));
+
 export { RoleArgs, RoleState } from "./role";
 export type Role = import("./role").Role;
 export const Role: typeof import("./role").Role = null as any;
@@ -1027,6 +1187,31 @@ export { SamlIdentityProvidersV2Args, SamlIdentityProvidersV2State } from "./sam
 export type SamlIdentityProvidersV2 = import("./samlIdentityProvidersV2").SamlIdentityProvidersV2;
 export const SamlIdentityProvidersV2: typeof import("./samlIdentityProvidersV2").SamlIdentityProvidersV2 = null as any;
 utilities.lazyLoad(exports, ["SamlIdentityProvidersV2"], () => require("./samlIdentityProvidersV2"));
+
+export { SelfServiceAppCustomActionArgs, SelfServiceAppCustomActionState } from "./selfServiceAppCustomAction";
+export type SelfServiceAppCustomAction = import("./selfServiceAppCustomAction").SelfServiceAppCustomAction;
+export const SelfServiceAppCustomAction: typeof import("./selfServiceAppCustomAction").SelfServiceAppCustomAction = null as any;
+utilities.lazyLoad(exports, ["SelfServiceAppCustomAction"], () => require("./selfServiceAppCustomAction"));
+
+export { SelfServiceAppPatchArgs, SelfServiceAppPatchState } from "./selfServiceAppPatch";
+export type SelfServiceAppPatch = import("./selfServiceAppPatch").SelfServiceAppPatch;
+export const SelfServiceAppPatch: typeof import("./selfServiceAppPatch").SelfServiceAppPatch = null as any;
+utilities.lazyLoad(exports, ["SelfServiceAppPatch"], () => require("./selfServiceAppPatch"));
+
+export { SelfServiceAppProvisionArgs, SelfServiceAppProvisionState } from "./selfServiceAppProvision";
+export type SelfServiceAppProvision = import("./selfServiceAppProvision").SelfServiceAppProvision;
+export const SelfServiceAppProvision: typeof import("./selfServiceAppProvision").SelfServiceAppProvision = null as any;
+utilities.lazyLoad(exports, ["SelfServiceAppProvision"], () => require("./selfServiceAppProvision"));
+
+export { SelfServiceAppRecoveryPointArgs, SelfServiceAppRecoveryPointState } from "./selfServiceAppRecoveryPoint";
+export type SelfServiceAppRecoveryPoint = import("./selfServiceAppRecoveryPoint").SelfServiceAppRecoveryPoint;
+export const SelfServiceAppRecoveryPoint: typeof import("./selfServiceAppRecoveryPoint").SelfServiceAppRecoveryPoint = null as any;
+utilities.lazyLoad(exports, ["SelfServiceAppRecoveryPoint"], () => require("./selfServiceAppRecoveryPoint"));
+
+export { SelfServiceAppRestoreArgs, SelfServiceAppRestoreState } from "./selfServiceAppRestore";
+export type SelfServiceAppRestore = import("./selfServiceAppRestore").SelfServiceAppRestore;
+export const SelfServiceAppRestore: typeof import("./selfServiceAppRestore").SelfServiceAppRestore = null as any;
+utilities.lazyLoad(exports, ["SelfServiceAppRestore"], () => require("./selfServiceAppRestore"));
 
 export { ServiceGroupArgs, ServiceGroupState } from "./serviceGroup";
 export type ServiceGroup = import("./serviceGroup").ServiceGroup;
@@ -1183,6 +1368,8 @@ const _module = {
                 return new AddressGroup(name, <any>undefined, { urn })
             case "nutanix:index/addressGroupsV2:AddressGroupsV2":
                 return new AddressGroupsV2(name, <any>undefined, { urn })
+            case "nutanix:index/associateCategoryToVolumeGroupV2:AssociateCategoryToVolumeGroupV2":
+                return new AssociateCategoryToVolumeGroupV2(name, <any>undefined, { urn })
             case "nutanix:index/authorizationPolicyV2:AuthorizationPolicyV2":
                 return new AuthorizationPolicyV2(name, <any>undefined, { urn })
             case "nutanix:index/categoryKey:CategoryKey":
@@ -1229,6 +1416,14 @@ const _module = {
                 return new KarbonPrivateRegistry(name, <any>undefined, { urn })
             case "nutanix:index/karbonWorkerNodepool:KarbonWorkerNodepool":
                 return new KarbonWorkerNodepool(name, <any>undefined, { urn })
+            case "nutanix:index/lcmConfigV2:LcmConfigV2":
+                return new LcmConfigV2(name, <any>undefined, { urn })
+            case "nutanix:index/lcmPerformInventoryV2:LcmPerformInventoryV2":
+                return new LcmPerformInventoryV2(name, <any>undefined, { urn })
+            case "nutanix:index/lcmPrechecksV2:LcmPrechecksV2":
+                return new LcmPrechecksV2(name, <any>undefined, { urn })
+            case "nutanix:index/lcmUpgradeV2:LcmUpgradeV2":
+                return new LcmUpgradeV2(name, <any>undefined, { urn })
             case "nutanix:index/ndbAuthorizeDbserver:NdbAuthorizeDbserver":
                 return new NdbAuthorizeDbserver(name, <any>undefined, { urn })
             case "nutanix:index/ndbClone:NdbClone":
@@ -1289,10 +1484,24 @@ const _module = {
                 return new Pbr(name, <any>undefined, { urn })
             case "nutanix:index/pbrV2:PbrV2":
                 return new PbrV2(name, <any>undefined, { urn })
+            case "nutanix:index/pcBackupTargetV2:PcBackupTargetV2":
+                return new PcBackupTargetV2(name, <any>undefined, { urn })
+            case "nutanix:index/pcDeployV2:PcDeployV2":
+                return new PcDeployV2(name, <any>undefined, { urn })
             case "nutanix:index/pcRegistrationV2:PcRegistrationV2":
                 return new PcRegistrationV2(name, <any>undefined, { urn })
+            case "nutanix:index/pcRestoreSourceV2:PcRestoreSourceV2":
+                return new PcRestoreSourceV2(name, <any>undefined, { urn })
+            case "nutanix:index/pcRestoreV2:PcRestoreV2":
+                return new PcRestoreV2(name, <any>undefined, { urn })
+            case "nutanix:index/pcUnregistrationV2:PcUnregistrationV2":
+                return new PcUnregistrationV2(name, <any>undefined, { urn })
             case "nutanix:index/project:Project":
                 return new Project(name, <any>undefined, { urn })
+            case "nutanix:index/promoteProtectedResourceV2:PromoteProtectedResourceV2":
+                return new PromoteProtectedResourceV2(name, <any>undefined, { urn })
+            case "nutanix:index/protectionPolicyV2:ProtectionPolicyV2":
+                return new ProtectionPolicyV2(name, <any>undefined, { urn })
             case "nutanix:index/protectionRule:ProtectionRule":
                 return new ProtectionRule(name, <any>undefined, { urn })
             case "nutanix:index/recoveryPlan:RecoveryPlan":
@@ -1303,6 +1512,8 @@ const _module = {
                 return new RecoveryPointRestoreV2(name, <any>undefined, { urn })
             case "nutanix:index/recoveryPointsV2:RecoveryPointsV2":
                 return new RecoveryPointsV2(name, <any>undefined, { urn })
+            case "nutanix:index/restoreProtectedResourceV2:RestoreProtectedResourceV2":
+                return new RestoreProtectedResourceV2(name, <any>undefined, { urn })
             case "nutanix:index/role:Role":
                 return new Role(name, <any>undefined, { urn })
             case "nutanix:index/rolesV2:RolesV2":
@@ -1311,6 +1522,16 @@ const _module = {
                 return new RoutesV2(name, <any>undefined, { urn })
             case "nutanix:index/samlIdentityProvidersV2:SamlIdentityProvidersV2":
                 return new SamlIdentityProvidersV2(name, <any>undefined, { urn })
+            case "nutanix:index/selfServiceAppCustomAction:SelfServiceAppCustomAction":
+                return new SelfServiceAppCustomAction(name, <any>undefined, { urn })
+            case "nutanix:index/selfServiceAppPatch:SelfServiceAppPatch":
+                return new SelfServiceAppPatch(name, <any>undefined, { urn })
+            case "nutanix:index/selfServiceAppProvision:SelfServiceAppProvision":
+                return new SelfServiceAppProvision(name, <any>undefined, { urn })
+            case "nutanix:index/selfServiceAppRecoveryPoint:SelfServiceAppRecoveryPoint":
+                return new SelfServiceAppRecoveryPoint(name, <any>undefined, { urn })
+            case "nutanix:index/selfServiceAppRestore:SelfServiceAppRestore":
+                return new SelfServiceAppRestore(name, <any>undefined, { urn })
             case "nutanix:index/serviceGroup:ServiceGroup":
                 return new ServiceGroup(name, <any>undefined, { urn })
             case "nutanix:index/serviceGroupsV2:ServiceGroupsV2":
@@ -1373,6 +1594,7 @@ const _module = {
 pulumi.runtime.registerResourceModule("nutanix", "index/accessControlPolicy", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/addressGroup", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/addressGroupsV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/associateCategoryToVolumeGroupV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/authorizationPolicyV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/categoryKey", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/categoryV2", _module)
@@ -1396,6 +1618,10 @@ pulumi.runtime.registerResourceModule("nutanix", "index/imagesV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/karbonCluster", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/karbonPrivateRegistry", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/karbonWorkerNodepool", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/lcmConfigV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/lcmPerformInventoryV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/lcmPrechecksV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/lcmUpgradeV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/ndbAuthorizeDbserver", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/ndbClone", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/ndbCloneRefresh", _module)
@@ -1426,17 +1652,30 @@ pulumi.runtime.registerResourceModule("nutanix", "index/ngtInstallationV2", _mod
 pulumi.runtime.registerResourceModule("nutanix", "index/ngtUpgradeV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/pbr", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/pbrV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/pcBackupTargetV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/pcDeployV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/pcRegistrationV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/pcRestoreSourceV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/pcRestoreV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/pcUnregistrationV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/project", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/promoteProtectedResourceV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/protectionPolicyV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/protectionRule", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/recoveryPlan", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/recoveryPointReplicateV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/recoveryPointRestoreV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/recoveryPointsV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/restoreProtectedResourceV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/role", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/rolesV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/routesV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/samlIdentityProvidersV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/selfServiceAppCustomAction", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/selfServiceAppPatch", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/selfServiceAppProvision", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/selfServiceAppRecoveryPoint", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/selfServiceAppRestore", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/serviceGroup", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/serviceGroupsV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/staticRoutes", _module)

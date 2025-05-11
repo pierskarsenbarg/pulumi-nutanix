@@ -13,8 +13,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXmlGetArgs : global::Pulumi.ResourceArgs
     {
-        [Input("value")]
-        public Input<string>? Value { get; set; }
+        [Input("value", required: true)]
+        public Input<string> Value { get; set; } = null!;
 
         public DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXmlGetArgs()
         {

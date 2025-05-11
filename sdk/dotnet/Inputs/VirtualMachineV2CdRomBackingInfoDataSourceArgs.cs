@@ -13,9 +13,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class VirtualMachineV2CdRomBackingInfoDataSourceArgs : global::Pulumi.ResourceArgs
     {
-        [Input("isMigrationInProgress")]
-        public Input<bool>? IsMigrationInProgress { get; set; }
-
         [Input("references")]
         private InputList<Inputs.VirtualMachineV2CdRomBackingInfoDataSourceReferenceArgs>? _references;
 

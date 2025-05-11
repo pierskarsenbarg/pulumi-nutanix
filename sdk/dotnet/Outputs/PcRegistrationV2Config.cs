@@ -14,29 +14,36 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class PcRegistrationV2Config
     {
-        public readonly ImmutableArray<Outputs.PcRegistrationV2ConfigBootstrapConfig> BootstrapConfigs;
-        public readonly ImmutableArray<Outputs.PcRegistrationV2ConfigBuildInfo> BuildInfos;
-        public readonly string? Name;
+        public readonly Outputs.PcRegistrationV2ConfigBootstrapConfig? BootstrapConfig;
+        public readonly Outputs.PcRegistrationV2ConfigBuildInfo BuildInfo;
+        /// <summary>
+        /// -(Required)  Credentials to connect to a remote cluster.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.PcRegistrationV2ConfigCredential> Credentials;
+        public readonly string Name;
         public readonly ImmutableArray<Outputs.PcRegistrationV2ConfigResourceConfig> ResourceConfigs;
         public readonly bool? ShouldEnableLockdownMode;
-        public readonly string? Size;
+        public readonly string Size;
 
         [OutputConstructor]
         private PcRegistrationV2Config(
-            ImmutableArray<Outputs.PcRegistrationV2ConfigBootstrapConfig> bootstrapConfigs,
+            Outputs.PcRegistrationV2ConfigBootstrapConfig? bootstrapConfig,
 
-            ImmutableArray<Outputs.PcRegistrationV2ConfigBuildInfo> buildInfos,
+            Outputs.PcRegistrationV2ConfigBuildInfo buildInfo,
 
-            string? name,
+            ImmutableArray<Outputs.PcRegistrationV2ConfigCredential> credentials,
+
+            string name,
 
             ImmutableArray<Outputs.PcRegistrationV2ConfigResourceConfig> resourceConfigs,
 
             bool? shouldEnableLockdownMode,
 
-            string? size)
+            string size)
         {
-            BootstrapConfigs = bootstrapConfigs;
-            BuildInfos = buildInfos;
+            BootstrapConfig = bootstrapConfig;
+            BuildInfo = buildInfo;
+            Credentials = credentials;
             Name = name;
             ResourceConfigs = resourceConfigs;
             ShouldEnableLockdownMode = shouldEnableLockdownMode;

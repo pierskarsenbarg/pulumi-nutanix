@@ -8,6 +8,17 @@ import * as utilities from "./utilities";
 
 /**
  * Provides a datasource to Fetch the configuration details of the existing Storage Container identified by the {containerExtId}.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const get_storage_container = nutanix.getStorageContainerV2({
+ *     extId: "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+ * });
+ * ```
  */
 export function getStorageContainerV2(args: GetStorageContainerV2Args, opts?: pulumi.InvokeOptions): Promise<GetStorageContainerV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -153,6 +164,17 @@ export interface GetStorageContainerV2Result {
 }
 /**
  * Provides a datasource to Fetch the configuration details of the existing Storage Container identified by the {containerExtId}.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const get_storage_container = nutanix.getStorageContainerV2({
+ *     extId: "1891fd3a-1ef7-4947-af56-9ee4b973c6fd",
+ * });
+ * ```
  */
 export function getStorageContainerV2Output(args: GetStorageContainerV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetStorageContainerV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

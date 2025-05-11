@@ -241,6 +241,112 @@ class ClusterAddNodeV2(pulumi.CustomResource):
         """
         Add node on a cluster identified by {extId}.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        # cluster of 3 node uuid that we want to add node
+        clusters_ext_id = "00057b8b-0b3b-4b3b-0000-000000000000"
+        # for example
+        cvm_ip = "10.xx.xx.xx"
+        ## check if the node to add is un configured or not
+        cluster_node = nutanix.ClustersDiscoverUnconfiguredNodesV2("cluster-node",
+            ext_id=clusters_ext_id,
+            address_type="IPV4",
+            ip_filter_lists=[{
+                "ipv4s": [{
+                    "value": cvm_ip,
+                }],
+            }])
+        ## fetch Network info for unconfigured node
+        node_network_info = nutanix.ClustersUnconfiguredNodeNetworksV2("node-network-info",
+            ext_id=clusters_ext_id,
+            request_type="expand_cluster",
+            node_lists=[{
+                "cvm_ips": [{
+                    "ipv4s": [{
+                        "value": cvm_ip,
+                    }],
+                }],
+                "hypervisor_ips": [{
+                    "ipv4s": [{
+                        "value": cluster_node.unconfigured_nodes[0].hypervisor_ips[0].ipv4s[0].value,
+                    }],
+                }],
+            }],
+            opts = pulumi.ResourceOptions(depends_on=[cluster_node]))
+        ## add node to the cluster
+        add_node = nutanix.ClusterAddNodeV2("add-node",
+            cluster_ext_id=clusters_ext_id,
+            should_skip_add_node=False,
+            should_skip_pre_expand_checks=False,
+            node_params=[{
+                "should_skip_host_networking": False,
+                "hypervisor_isos": [{
+                    "type": cluster_node.unconfigured_nodes[0].hypervisor_type,
+                }],
+                "node_lists": [{
+                    "node_uuid": cluster_node.unconfigured_nodes[0].node_uuid,
+                    "model": cluster_node.unconfigured_nodes[0].rackable_unit_model,
+                    "block_id": cluster_node.unconfigured_nodes[0].rackable_unit_serial,
+                    "hypervisor_type": cluster_node.unconfigured_nodes[0].hypervisor_type,
+                    "hypervisor_version": cluster_node.unconfigured_nodes[0].hypervisor_version,
+                    "node_position": cluster_node.unconfigured_nodes[0].node_position,
+                    "nos_version": cluster_node.unconfigured_nodes[0].nos_version,
+                    "hypervisor_hostname": "example",
+                    "current_network_interface": node_network_info.nodes_networking_details[0].uplinks[0].uplink_lists[0].name,
+                    "hypervisor_ips": [{
+                        "ipv4s": [{
+                            "value": cluster_node.unconfigured_nodes[0].hypervisor_ips[0].ipv4s[0].value,
+                        }],
+                    }],
+                    "cvm_ips": [{
+                        "ipv4s": [{
+                            "value": cvm_ip,
+                        }],
+                    }],
+                    "ipmi_ips": [{
+                        "ipv4s": [{
+                            "value": cluster_node.unconfigured_nodes[0].ipmi_ips[0].ipv4s[0].value,
+                        }],
+                    }],
+                    "is_robo_mixed_hypervisor": True,
+                    "networks": [{
+                        "name": node_network_info.nodes_networking_details[0].network_infos[0].hcis[0].name,
+                        "networks": node_network_info.nodes_networking_details[0].network_infos[0].hcis[0].networks,
+                        "uplinks": [{
+                            "actives": [{
+                                "name": node_network_info.nodes_networking_details[0].uplinks[0].uplink_lists[0].name,
+                                "mac": node_network_info.nodes_networking_details[0].uplinks[0].uplink_lists[0].mac,
+                                "value": node_network_info.nodes_networking_details[0].uplinks[0].uplink_lists[0].name,
+                            }],
+                            "standbies": [{
+                                "name": node_network_info.nodes_networking_details[0].uplinks[0].uplink_lists[1].name,
+                                "mac": node_network_info.nodes_networking_details[0].uplinks[0].uplink_lists[1].mac,
+                                "value": node_network_info.nodes_networking_details[0].uplinks[0].uplink_lists[1].name,
+                            }],
+                        }],
+                    }],
+                }],
+            }],
+            config_params=[{
+                "should_skip_imaging": True,
+                "target_hypervisor": cluster_node.unconfigured_nodes[0].hypervisor_type,
+            }],
+            remove_node_params=[{
+                "extra_params": [{
+                    "should_skip_upgrade_check": False,
+                    "skip_space_check": False,
+                    "should_skip_add_check": False,
+                }],
+                "should_skip_remove": False,
+                "should_skip_prechecks": False,
+            }],
+            opts = pulumi.ResourceOptions(depends_on=[node_network_info]))
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] cluster_ext_id: -(Required) Cluster UUID.
@@ -258,6 +364,112 @@ class ClusterAddNodeV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Add node on a cluster identified by {extId}.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        # cluster of 3 node uuid that we want to add node
+        clusters_ext_id = "00057b8b-0b3b-4b3b-0000-000000000000"
+        # for example
+        cvm_ip = "10.xx.xx.xx"
+        ## check if the node to add is un configured or not
+        cluster_node = nutanix.ClustersDiscoverUnconfiguredNodesV2("cluster-node",
+            ext_id=clusters_ext_id,
+            address_type="IPV4",
+            ip_filter_lists=[{
+                "ipv4s": [{
+                    "value": cvm_ip,
+                }],
+            }])
+        ## fetch Network info for unconfigured node
+        node_network_info = nutanix.ClustersUnconfiguredNodeNetworksV2("node-network-info",
+            ext_id=clusters_ext_id,
+            request_type="expand_cluster",
+            node_lists=[{
+                "cvm_ips": [{
+                    "ipv4s": [{
+                        "value": cvm_ip,
+                    }],
+                }],
+                "hypervisor_ips": [{
+                    "ipv4s": [{
+                        "value": cluster_node.unconfigured_nodes[0].hypervisor_ips[0].ipv4s[0].value,
+                    }],
+                }],
+            }],
+            opts = pulumi.ResourceOptions(depends_on=[cluster_node]))
+        ## add node to the cluster
+        add_node = nutanix.ClusterAddNodeV2("add-node",
+            cluster_ext_id=clusters_ext_id,
+            should_skip_add_node=False,
+            should_skip_pre_expand_checks=False,
+            node_params=[{
+                "should_skip_host_networking": False,
+                "hypervisor_isos": [{
+                    "type": cluster_node.unconfigured_nodes[0].hypervisor_type,
+                }],
+                "node_lists": [{
+                    "node_uuid": cluster_node.unconfigured_nodes[0].node_uuid,
+                    "model": cluster_node.unconfigured_nodes[0].rackable_unit_model,
+                    "block_id": cluster_node.unconfigured_nodes[0].rackable_unit_serial,
+                    "hypervisor_type": cluster_node.unconfigured_nodes[0].hypervisor_type,
+                    "hypervisor_version": cluster_node.unconfigured_nodes[0].hypervisor_version,
+                    "node_position": cluster_node.unconfigured_nodes[0].node_position,
+                    "nos_version": cluster_node.unconfigured_nodes[0].nos_version,
+                    "hypervisor_hostname": "example",
+                    "current_network_interface": node_network_info.nodes_networking_details[0].uplinks[0].uplink_lists[0].name,
+                    "hypervisor_ips": [{
+                        "ipv4s": [{
+                            "value": cluster_node.unconfigured_nodes[0].hypervisor_ips[0].ipv4s[0].value,
+                        }],
+                    }],
+                    "cvm_ips": [{
+                        "ipv4s": [{
+                            "value": cvm_ip,
+                        }],
+                    }],
+                    "ipmi_ips": [{
+                        "ipv4s": [{
+                            "value": cluster_node.unconfigured_nodes[0].ipmi_ips[0].ipv4s[0].value,
+                        }],
+                    }],
+                    "is_robo_mixed_hypervisor": True,
+                    "networks": [{
+                        "name": node_network_info.nodes_networking_details[0].network_infos[0].hcis[0].name,
+                        "networks": node_network_info.nodes_networking_details[0].network_infos[0].hcis[0].networks,
+                        "uplinks": [{
+                            "actives": [{
+                                "name": node_network_info.nodes_networking_details[0].uplinks[0].uplink_lists[0].name,
+                                "mac": node_network_info.nodes_networking_details[0].uplinks[0].uplink_lists[0].mac,
+                                "value": node_network_info.nodes_networking_details[0].uplinks[0].uplink_lists[0].name,
+                            }],
+                            "standbies": [{
+                                "name": node_network_info.nodes_networking_details[0].uplinks[0].uplink_lists[1].name,
+                                "mac": node_network_info.nodes_networking_details[0].uplinks[0].uplink_lists[1].mac,
+                                "value": node_network_info.nodes_networking_details[0].uplinks[0].uplink_lists[1].name,
+                            }],
+                        }],
+                    }],
+                }],
+            }],
+            config_params=[{
+                "should_skip_imaging": True,
+                "target_hypervisor": cluster_node.unconfigured_nodes[0].hypervisor_type,
+            }],
+            remove_node_params=[{
+                "extra_params": [{
+                    "should_skip_upgrade_check": False,
+                    "skip_space_check": False,
+                    "should_skip_add_check": False,
+                }],
+                "should_skip_remove": False,
+                "should_skip_prechecks": False,
+            }],
+            opts = pulumi.ResourceOptions(depends_on=[node_network_info]))
+        ```
 
         :param str resource_name: The name of the resource.
         :param ClusterAddNodeV2Args args: The arguments to use to populate this resource's properties.

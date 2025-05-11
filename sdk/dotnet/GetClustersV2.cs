@@ -25,9 +25,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var clusters = Nutanix.GetClustersV2.Invoke(new()
+        ///     var cls = Nutanix.GetClustersV2.Invoke();
+        /// 
+        ///     var filtered_cls = Nutanix.GetClustersV2.Invoke(new()
         ///     {
-        ///         Filter = "startswith(name, 'PC_')",
+        ///         Filter = "name eq 'cluster-1'",
+        ///     });
+        /// 
+        ///     var paged_cls = Nutanix.GetClustersV2.Invoke(new()
+        ///     {
+        ///         Limit = 10,
+        ///         Page = 1,
         ///     });
         /// 
         /// });
@@ -49,9 +57,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var clusters = Nutanix.GetClustersV2.Invoke(new()
+        ///     var cls = Nutanix.GetClustersV2.Invoke();
+        /// 
+        ///     var filtered_cls = Nutanix.GetClustersV2.Invoke(new()
         ///     {
-        ///         Filter = "startswith(name, 'PC_')",
+        ///         Filter = "name eq 'cluster-1'",
+        ///     });
+        /// 
+        ///     var paged_cls = Nutanix.GetClustersV2.Invoke(new()
+        ///     {
+        ///         Limit = 10,
+        ///         Page = 1,
         ///     });
         /// 
         /// });
@@ -73,9 +89,17 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var clusters = Nutanix.GetClustersV2.Invoke(new()
+        ///     var cls = Nutanix.GetClustersV2.Invoke();
+        /// 
+        ///     var filtered_cls = Nutanix.GetClustersV2.Invoke(new()
         ///     {
-        ///         Filter = "startswith(name, 'PC_')",
+        ///         Filter = "name eq 'cluster-1'",
+        ///     });
+        /// 
+        ///     var paged_cls = Nutanix.GetClustersV2.Invoke(new()
+        ///     {
+        ///         Limit = 10,
+        ///         Page = 1,
         ///     });
         /// 
         /// });
@@ -89,7 +113,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetClustersV2Args : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// -(Optional) A URL query parameter that allows clients to specify a sequence of transformations to the entity set, such as groupby, filter, aggregate etc. As of now only support for groupby exists.For example '\$apply=groupby((templateName))' would get all templates grouped by templateName. 
+        /// -(Optional) A URL query parameter that allows clients to specify a sequence of transformations to the entity set, such as groupby, filter, aggregate etc. As of now only support for groupby exists.For example '\$apply=groupby((templateName))' would get all templates grouped by templateName.
         /// The apply can be applied on the following fields:
         /// - config/buildInfo/version
         /// - nodes/numberOfNodes
@@ -133,7 +157,7 @@ namespace PiersKarsenbarg.Nutanix
         public int? Limit { get; set; }
 
         /// <summary>
-        /// -(Optional) A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. 
+        /// -(Optional) A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order.
         /// The orderby can be applied to the following fields:
         /// - backupEligibilityScore
         /// - config/buildInfo/version
@@ -156,7 +180,7 @@ namespace PiersKarsenbarg.Nutanix
         public int? Page { get; set; }
 
         /// <summary>
-        /// -(Optional) A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. 
+        /// -(Optional) A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned.
         /// The select  can be applied to the following fields:
         /// - backupEligibilityScore
         /// - inefficientVmCount
@@ -176,7 +200,7 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetClustersV2InvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// -(Optional) A URL query parameter that allows clients to specify a sequence of transformations to the entity set, such as groupby, filter, aggregate etc. As of now only support for groupby exists.For example '\$apply=groupby((templateName))' would get all templates grouped by templateName. 
+        /// -(Optional) A URL query parameter that allows clients to specify a sequence of transformations to the entity set, such as groupby, filter, aggregate etc. As of now only support for groupby exists.For example '\$apply=groupby((templateName))' would get all templates grouped by templateName.
         /// The apply can be applied on the following fields:
         /// - config/buildInfo/version
         /// - nodes/numberOfNodes
@@ -220,7 +244,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<int>? Limit { get; set; }
 
         /// <summary>
-        /// -(Optional) A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. 
+        /// -(Optional) A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order.
         /// The orderby can be applied to the following fields:
         /// - backupEligibilityScore
         /// - config/buildInfo/version
@@ -243,7 +267,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<int>? Page { get; set; }
 
         /// <summary>
-        /// -(Optional) A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. 
+        /// -(Optional) A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned.
         /// The select  can be applied to the following fields:
         /// - backupEligibilityScore
         /// - inefficientVmCount
@@ -265,6 +289,9 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetClustersV2Result
     {
         public readonly string? Apply;
+        /// <summary>
+        /// - List of cluster entities.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetClustersV2ClusterEntityResult> ClusterEntities;
         public readonly string? Expand;
         public readonly string? Filter;

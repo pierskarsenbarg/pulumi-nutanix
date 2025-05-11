@@ -13,13 +13,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class PcRegistrationV2NetworkGetArgs : global::Pulumi.ResourceArgs
     {
-        [Input("externalAddresses")]
-        private InputList<Inputs.PcRegistrationV2NetworkExternalAddressGetArgs>? _externalAddresses;
-        public InputList<Inputs.PcRegistrationV2NetworkExternalAddressGetArgs> ExternalAddresses
-        {
-            get => _externalAddresses ?? (_externalAddresses = new InputList<Inputs.PcRegistrationV2NetworkExternalAddressGetArgs>());
-            set => _externalAddresses = value;
-        }
+        [Input("externalAddress")]
+        public Input<Inputs.PcRegistrationV2NetworkExternalAddressGetArgs>? ExternalAddress { get; set; }
 
         [Input("externalNetworks")]
         private InputList<Inputs.PcRegistrationV2NetworkExternalNetworkGetArgs>? _externalNetworks;
@@ -35,7 +30,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("fqdn")]
         public Input<string>? Fqdn { get; set; }
 
-        [Input("nameServers")]
+        [Input("internalNetworks")]
+        public Input<Inputs.PcRegistrationV2NetworkInternalNetworksGetArgs>? InternalNetworks { get; set; }
+
+        [Input("nameServers", required: true)]
         private InputList<Inputs.PcRegistrationV2NetworkNameServerGetArgs>? _nameServers;
         public InputList<Inputs.PcRegistrationV2NetworkNameServerGetArgs> NameServers
         {
@@ -43,7 +41,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _nameServers = value;
         }
 
-        [Input("ntpServers")]
+        [Input("ntpServers", required: true)]
         private InputList<Inputs.PcRegistrationV2NetworkNtpServerGetArgs>? _ntpServers;
         public InputList<Inputs.PcRegistrationV2NetworkNtpServerGetArgs> NtpServers
         {

@@ -26,7 +26,18 @@ export function getNetworkSecurityPoliciesV2(args?: GetNetworkSecurityPoliciesV2
  */
 export interface GetNetworkSecurityPoliciesV2Args {
     /**
-     * A URL query parameter that allows clients to filter a collection of resources.
+     * A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+     * - createdBy
+     * - description
+     * - extId
+     * - isHitlogEnabled
+     * - isIpv6TrafficAllowed
+     * - isSystemDefined
+     * - name
+     * - securedGroups
+     * - state
+     * - type
+     * - vpcReference
      */
     filter?: string;
     /**
@@ -34,7 +45,15 @@ export interface GetNetworkSecurityPoliciesV2Args {
      */
     limit?: number;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+     * - creationTime
+     * - description
+     * - extId
+     * - isSystemDefined
+     * - lastUpdateTime
+     * - name
+     * - state
+     * - type
      */
     orderBy?: string;
     /**
@@ -42,7 +61,25 @@ export interface GetNetworkSecurityPoliciesV2Args {
      */
     page?: number;
     /**
-     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type.
+     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. The select can be applied to the following fields:
+     *
+     * - createdBy
+     * - creationTime
+     * - description
+     * - extId
+     * - isHitlogEnabled
+     * - isIpv6TrafficAllowed
+     * - isSystemDefined
+     * - lastUpdateTime
+     * - links
+     * - name
+     * - rules
+     * - scope
+     * - securedGroups
+     * - state
+     * - tenantId
+     * - type
+     * - vpcReference
      */
     select?: string;
 }
@@ -82,7 +119,18 @@ export function getNetworkSecurityPoliciesV2Output(args?: GetNetworkSecurityPoli
  */
 export interface GetNetworkSecurityPoliciesV2OutputArgs {
     /**
-     * A URL query parameter that allows clients to filter a collection of resources.
+     * A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+     * - createdBy
+     * - description
+     * - extId
+     * - isHitlogEnabled
+     * - isIpv6TrafficAllowed
+     * - isSystemDefined
+     * - name
+     * - securedGroups
+     * - state
+     * - type
+     * - vpcReference
      */
     filter?: pulumi.Input<string>;
     /**
@@ -90,7 +138,15 @@ export interface GetNetworkSecurityPoliciesV2OutputArgs {
      */
     limit?: pulumi.Input<number>;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+     * - creationTime
+     * - description
+     * - extId
+     * - isSystemDefined
+     * - lastUpdateTime
+     * - name
+     * - state
+     * - type
      */
     orderBy?: pulumi.Input<string>;
     /**
@@ -98,7 +154,25 @@ export interface GetNetworkSecurityPoliciesV2OutputArgs {
      */
     page?: pulumi.Input<number>;
     /**
-     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type.
+     * A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. The select can be applied to the following fields:
+     *
+     * - createdBy
+     * - creationTime
+     * - description
+     * - extId
+     * - isHitlogEnabled
+     * - isIpv6TrafficAllowed
+     * - isSystemDefined
+     * - lastUpdateTime
+     * - links
+     * - name
+     * - rules
+     * - scope
+     * - securedGroups
+     * - state
+     * - tenantId
+     * - type
+     * - vpcReference
      */
     select?: pulumi.Input<string>;
 }

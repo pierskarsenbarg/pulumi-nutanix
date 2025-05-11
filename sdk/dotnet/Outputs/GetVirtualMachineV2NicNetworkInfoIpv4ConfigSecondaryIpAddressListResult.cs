@@ -14,7 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVirtualMachineV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListResult
     {
+        /// <summary>
+        /// The prefix length of the IP address.
+        /// </summary>
         public readonly int PrefixLength;
+        /// <summary>
+        /// The IPv4 address of the host.
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Get a single recovery point  corresponding to the extId.
+// Get the VM recovery point identified by ex_id.
 //
 // ## Example Usage
 //
@@ -28,8 +28,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.GetVmRecoveryPointInfoV2(ctx, &nutanix.GetVmRecoveryPointInfoV2Args{
-//				ExtId:              "<vm_recovery_point_uuid>",
-//				RecoveryPointExtId: "<recovery_point_uuid>",
+//				ExtId:              "85ac418e-c847-45ab-9816-40a3c4de148c",
+//				RecoveryPointExtId: "af1070f7-c946-49da-9b17-e337e06e0a18",
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -54,7 +54,8 @@ type GetVmRecoveryPointInfoV2Args struct {
 	// array of disk recovery points.
 	DiskRecoveryPoints []GetVmRecoveryPointInfoV2DiskRecoveryPoint `pulumi:"diskRecoveryPoints"`
 	// The external identifier that can be used to identify a VM recovery point.
-	ExtId              string `pulumi:"extId"`
+	ExtId string `pulumi:"extId"`
+	// The external identifier that can be used to retrieve the recovery point using its URL.
 	RecoveryPointExtId string `pulumi:"recoveryPointExtId"`
 }
 
@@ -98,7 +99,8 @@ type GetVmRecoveryPointInfoV2OutputArgs struct {
 	// array of disk recovery points.
 	DiskRecoveryPoints GetVmRecoveryPointInfoV2DiskRecoveryPointArrayInput `pulumi:"diskRecoveryPoints"`
 	// The external identifier that can be used to identify a VM recovery point.
-	ExtId              pulumi.StringInput `pulumi:"extId"`
+	ExtId pulumi.StringInput `pulumi:"extId"`
+	// The external identifier that can be used to retrieve the recovery point using its URL.
 	RecoveryPointExtId pulumi.StringInput `pulumi:"recoveryPointExtId"`
 }
 

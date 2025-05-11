@@ -18,40 +18,35 @@ namespace PiersKarsenbarg.Nutanix
     /// using System.Linq;
     /// using Pulumi;
     /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// using Nutanix = Pulumi.Nutanix;
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var categories = Nutanix.GetCategoriesV2.Invoke();
-    /// 
-    ///     var category0 = data.Nutanix_categories_v4.Categories.Categories[0].Ext_id;
-    /// 
     ///     var example = new Nutanix.ImagePlacementPolicyV2("example", new()
     ///     {
-    ///         Description = "%[2]s",
-    ///         PlacementType = "SOFT",
     ///         ClusterEntityFilters = new[]
     ///         {
     ///             new Nutanix.Inputs.ImagePlacementPolicyV2ClusterEntityFilterArgs
     ///             {
     ///                 CategoryExtIds = new[]
     ///                 {
-    ///                     category0,
+    ///                     "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
     ///                 },
     ///                 Type = "CATEGORIES_MATCH_ALL",
     ///             },
     ///         },
+    ///         Description = "%[2]s",
     ///         ImageEntityFilters = new[]
     ///         {
     ///             new Nutanix.Inputs.ImagePlacementPolicyV2ImageEntityFilterArgs
     ///             {
     ///                 CategoryExtIds = new[]
     ///                 {
-    ///                     category0,
+    ///                     "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
     ///                 },
     ///                 Type = "CATEGORIES_MATCH_ALL",
     ///             },
     ///         },
+    ///         PlacementType = "SOFT",
     ///     });
     /// 
     /// });

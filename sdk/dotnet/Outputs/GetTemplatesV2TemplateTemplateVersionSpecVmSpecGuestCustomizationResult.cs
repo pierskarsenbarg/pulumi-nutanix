@@ -14,12 +14,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationResult
     {
-        /// <summary>
-        /// The Nutanix Guest Tools customization settings.
-        /// 
-        /// * `config.sysprep`: Sysprep config
-        /// * `config.cloud_init`: CloudInit Config
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGuestCustomizationConfigResult> Configs;
 
         [OutputConstructor]

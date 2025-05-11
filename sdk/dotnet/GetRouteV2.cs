@@ -27,8 +27,8 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var route_by_id = Nutanix.GetRouteV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;route_uuid&gt;",
-        ///         RouteTableExtId = "&lt;route_table_uuid&gt;",
+        ///         ExtId = "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+        ///         RouteTableExtId = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
         ///     });
         /// 
         /// });
@@ -52,8 +52,8 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var route_by_id = Nutanix.GetRouteV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;route_uuid&gt;",
-        ///         RouteTableExtId = "&lt;route_table_uuid&gt;",
+        ///         ExtId = "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+        ///         RouteTableExtId = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
         ///     });
         /// 
         /// });
@@ -77,8 +77,8 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var route_by_id = Nutanix.GetRouteV2.Invoke(new()
         ///     {
-        ///         ExtId = "&lt;route_uuid&gt;",
-        ///         RouteTableExtId = "&lt;route_table_uuid&gt;",
+        ///         ExtId = "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+        ///         RouteTableExtId = "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
         ///     });
         /// 
         /// });

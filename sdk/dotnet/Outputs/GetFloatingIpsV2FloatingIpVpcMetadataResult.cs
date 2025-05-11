@@ -14,10 +14,25 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetFloatingIpsV2FloatingIpVpcMetadataResult
     {
+        /// <summary>
+        /// A list of globally unique identifiers that represent all the categories the resource is associated with.
+        /// </summary>
         public readonly ImmutableArray<ImmutableArray<object>> CategoryIds;
+        /// <summary>
+        /// A globally unique identifier that represents the owner of this resource.
+        /// </summary>
         public readonly string OwnerReferenceId;
+        /// <summary>
+        /// The userName of the owner of this resource.
+        /// </summary>
         public readonly string OwnerUserName;
+        /// <summary>
+        /// The name of the project this resource belongs to.
+        /// </summary>
         public readonly string ProjectName;
+        /// <summary>
+        /// A globally unique identifier that represents the project this resource belongs to.
+        /// </summary>
         public readonly string ProjectReferenceId;
 
         [OutputConstructor]

@@ -15,8 +15,13 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const clusters = nutanix.getClustersV2({
- *     filter: "startswith(name, 'PC_')",
+ * const cls = nutanix.getClustersV2({});
+ * const filtered_cls = nutanix.getClustersV2({
+ *     filter: "name eq 'cluster-1'",
+ * });
+ * const paged_cls = nutanix.getClustersV2({
+ *     limit: 10,
+ *     page: 1,
  * });
  * ```
  */
@@ -39,7 +44,7 @@ export function getClustersV2(args?: GetClustersV2Args, opts?: pulumi.InvokeOpti
  */
 export interface GetClustersV2Args {
     /**
-     * -(Optional) A URL query parameter that allows clients to specify a sequence of transformations to the entity set, such as groupby, filter, aggregate etc. As of now only support for groupby exists.For example '\$apply=groupby((templateName))' would get all templates grouped by templateName. 
+     * -(Optional) A URL query parameter that allows clients to specify a sequence of transformations to the entity set, such as groupby, filter, aggregate etc. As of now only support for groupby exists.For example '\$apply=groupby((templateName))' would get all templates grouped by templateName.
      * The apply can be applied on the following fields:
      * - config/buildInfo/version
      * - nodes/numberOfNodes
@@ -75,7 +80,7 @@ export interface GetClustersV2Args {
      */
     limit?: number;
     /**
-     * -(Optional) A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. 
+     * -(Optional) A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order.
      * The orderby can be applied to the following fields:
      * - backupEligibilityScore
      * - config/buildInfo/version
@@ -94,7 +99,7 @@ export interface GetClustersV2Args {
      */
     page?: number;
     /**
-     * -(Optional) A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. 
+     * -(Optional) A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned.
      * The select  can be applied to the following fields:
      * - backupEligibilityScore
      * - inefficientVmCount
@@ -110,6 +115,9 @@ export interface GetClustersV2Args {
  */
 export interface GetClustersV2Result {
     readonly apply?: string;
+    /**
+     * - List of cluster entities.
+     */
     readonly clusterEntities: outputs.GetClustersV2ClusterEntity[];
     readonly expand?: string;
     readonly filter?: string;
@@ -131,8 +139,13 @@ export interface GetClustersV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const clusters = nutanix.getClustersV2({
- *     filter: "startswith(name, 'PC_')",
+ * const cls = nutanix.getClustersV2({});
+ * const filtered_cls = nutanix.getClustersV2({
+ *     filter: "name eq 'cluster-1'",
+ * });
+ * const paged_cls = nutanix.getClustersV2({
+ *     limit: 10,
+ *     page: 1,
  * });
  * ```
  */
@@ -155,7 +168,7 @@ export function getClustersV2Output(args?: GetClustersV2OutputArgs, opts?: pulum
  */
 export interface GetClustersV2OutputArgs {
     /**
-     * -(Optional) A URL query parameter that allows clients to specify a sequence of transformations to the entity set, such as groupby, filter, aggregate etc. As of now only support for groupby exists.For example '\$apply=groupby((templateName))' would get all templates grouped by templateName. 
+     * -(Optional) A URL query parameter that allows clients to specify a sequence of transformations to the entity set, such as groupby, filter, aggregate etc. As of now only support for groupby exists.For example '\$apply=groupby((templateName))' would get all templates grouped by templateName.
      * The apply can be applied on the following fields:
      * - config/buildInfo/version
      * - nodes/numberOfNodes
@@ -191,7 +204,7 @@ export interface GetClustersV2OutputArgs {
      */
     limit?: pulumi.Input<number>;
     /**
-     * -(Optional) A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. 
+     * -(Optional) A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order.
      * The orderby can be applied to the following fields:
      * - backupEligibilityScore
      * - config/buildInfo/version
@@ -210,7 +223,7 @@ export interface GetClustersV2OutputArgs {
      */
     page?: pulumi.Input<number>;
     /**
-     * -(Optional) A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. 
+     * -(Optional) A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned.
      * The select  can be applied to the following fields:
      * - backupEligibilityScore
      * - inefficientVmCount

@@ -14,11 +14,21 @@ import * as utilities from "./utilities";
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pierskarsenbarg/nutanix";
+ * import * as nutanix from "@pulumi/nutanix";
  *
- * const example = new nutanix.RolesV2("example", {
- *     description: "test description",
- *     displayName: "{{ display-name }}",
- *     operations: "{{ operations }}",
+ * const operations_filtered_list = nutanix.getOperationsV2({
+ *     filter: "startswith(displayName, 'Create_')",
+ * });
+ * // Create role
+ * const example_role = new nutanix.RolesV2("example-role", {
+ *     displayName: "example_role",
+ *     description: "create example role",
+ *     operations: [
+ *         operations_filtered_list.then(operations_filtered_list => operations_filtered_list.operations?.[0]?.extId),
+ *         operations_filtered_list.then(operations_filtered_list => operations_filtered_list.operations?.[1]?.extId),
+ *         operations_filtered_list.then(operations_filtered_list => operations_filtered_list.operations?.[2]?.extId),
+ *         operations_filtered_list.then(operations_filtered_list => operations_filtered_list.operations?.[3]?.extId),
+ *     ],
  * });
  * ```
  */

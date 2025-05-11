@@ -29,7 +29,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         ///     var serviceGroupFiltered = Nutanix.GetServiceGroupsV2.Invoke(new()
         ///     {
-        ///         Filter = "name eq '%[1]s'",
+        ///         Filter = "name eq 'service_group_name'",
         ///     });
         /// 
         /// });
@@ -55,7 +55,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         ///     var serviceGroupFiltered = Nutanix.GetServiceGroupsV2.Invoke(new()
         ///     {
-        ///         Filter = "name eq '%[1]s'",
+        ///         Filter = "name eq 'service_group_name'",
         ///     });
         /// 
         /// });
@@ -81,7 +81,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         ///     var serviceGroupFiltered = Nutanix.GetServiceGroupsV2.Invoke(new()
         ///     {
-        ///         Filter = "name eq '%[1]s'",
+        ///         Filter = "name eq 'service_group_name'",
         ///     });
         /// 
         /// });
@@ -95,7 +95,8 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetServiceGroupsV2Args : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A URL query parameter that allows clients to filter a collection of resources.
+        /// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+        /// - `createdBy`
         /// </summary>
         [Input("filter")]
         public string? Filter { get; set; }
@@ -107,7 +108,7 @@ namespace PiersKarsenbarg.Nutanix
         public int? Limit { get; set; }
 
         /// <summary>
-        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
         /// </summary>
         [Input("orderBy")]
         public string? OrderBy { get; set; }
@@ -119,7 +120,8 @@ namespace PiersKarsenbarg.Nutanix
         public int? Page { get; set; }
 
         /// <summary>
-        /// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions
+        /// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. The select can be applied to the following fields:
+        /// - `createdBy`
         /// </summary>
         [Input("select")]
         public string? Select { get; set; }
@@ -133,7 +135,8 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetServiceGroupsV2InvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A URL query parameter that allows clients to filter a collection of resources.
+        /// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+        /// - `createdBy`
         /// </summary>
         [Input("filter")]
         public Input<string>? Filter { get; set; }
@@ -145,7 +148,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<int>? Limit { get; set; }
 
         /// <summary>
-        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
         /// </summary>
         [Input("orderBy")]
         public Input<string>? OrderBy { get; set; }
@@ -157,7 +160,8 @@ namespace PiersKarsenbarg.Nutanix
         public Input<int>? Page { get; set; }
 
         /// <summary>
-        /// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions
+        /// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the $select must conform to the OData V4.01 URL conventions. The select can be applied to the following fields:
+        /// - `createdBy`
         /// </summary>
         [Input("select")]
         public Input<string>? Select { get; set; }
@@ -181,6 +185,9 @@ namespace PiersKarsenbarg.Nutanix
         public readonly string? OrderBy;
         public readonly int? Page;
         public readonly string? Select;
+        /// <summary>
+        /// List of service groups
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceGroupsV2ServiceGroupResult> ServiceGroups;
 
         [OutputConstructor]

@@ -12,6 +12,32 @@ import (
 )
 
 // Get a single recovery point  corresponding to the extId.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := nutanix.GetRecoveryPointV2(ctx, &nutanix.GetRecoveryPointV2Args{
+//				ExtId: "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetRecoveryPointV2(ctx *pulumi.Context, args *GetRecoveryPointV2Args, opts ...pulumi.InvokeOption) (*GetRecoveryPointV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRecoveryPointV2Result

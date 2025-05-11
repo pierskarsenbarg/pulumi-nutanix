@@ -15,8 +15,8 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const pbr = nutanix.getPbrV2({
- *     extId: "<pbr_uuid>",
+ * const get_pbr = nutanix.getPbrV2({
+ *     extId: "96a22c81-ed58-4bed-96bc-46b488626612",
  * });
  * ```
  */
@@ -89,8 +89,8 @@ export interface GetPbrV2Result {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as nutanix from "@pulumi/nutanix";
  *
- * const pbr = nutanix.getPbrV2({
- *     extId: "<pbr_uuid>",
+ * const get_pbr = nutanix.getPbrV2({
+ *     extId: "96a22c81-ed58-4bed-96bc-46b488626612",
  * });
  * ```
  */

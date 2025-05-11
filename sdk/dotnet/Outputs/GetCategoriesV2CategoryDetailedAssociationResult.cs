@@ -14,25 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetCategoriesV2CategoryDetailedAssociationResult
     {
-        /// <summary>
-        /// External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
-        /// </summary>
         public readonly string CategoryId;
-        /// <summary>
-        /// An enum denoting the resource group.
-        /// Resources can be organized into either an entity or a policy.
-        /// </summary>
         public readonly string ResourceGroup;
-        /// <summary>
-        /// The UUID of the entity or policy associated with the particular category.
-        /// 
-        /// 
-        /// See detailed information in [Nutanix Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.0).
-        /// </summary>
         public readonly string ResourceId;
-        /// <summary>
-        /// An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
-        /// </summary>
         public readonly string ResourceType;
 
         [OutputConstructor]

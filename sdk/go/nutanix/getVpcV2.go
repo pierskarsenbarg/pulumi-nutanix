@@ -28,7 +28,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.LookupVpcV2(ctx, &nutanix.LookupVpcV2Args{
-//				ExtId: "{{ vpc uuid }}",
+//				ExtId: "8a938cc5-282b-48c4-81be-de22de145d07",
 //			}, nil)
 //			if err != nil {
 //				return err

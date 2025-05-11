@@ -374,10 +374,17 @@ class RolesV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        example = nutanix.RolesV2("example",
-            description="test description",
-            display_name="{{ display-name }}",
-            operations="{{ operations }}")
+        operations_filtered_list = nutanix.get_operations_v2(filter="startswith(displayName, 'Create_')")
+        # Create role
+        example_role = nutanix.RolesV2("example-role",
+            display_name="example_role",
+            description="create example role",
+            operations=[
+                operations_filtered_list.operations[0].ext_id,
+                operations_filtered_list.operations[1].ext_id,
+                operations_filtered_list.operations[2].ext_id,
+                operations_filtered_list.operations[3].ext_id,
+            ])
         ```
 
         :param str resource_name: The name of the resource.
@@ -403,10 +410,17 @@ class RolesV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        example = nutanix.RolesV2("example",
-            description="test description",
-            display_name="{{ display-name }}",
-            operations="{{ operations }}")
+        operations_filtered_list = nutanix.get_operations_v2(filter="startswith(displayName, 'Create_')")
+        # Create role
+        example_role = nutanix.RolesV2("example-role",
+            display_name="example_role",
+            description="create example role",
+            operations=[
+                operations_filtered_list.operations[0].ext_id,
+                operations_filtered_list.operations[1].ext_id,
+                operations_filtered_list.operations[2].ext_id,
+                operations_filtered_list.operations[3].ext_id,
+            ])
         ```
 
         :param str resource_name: The name of the resource.

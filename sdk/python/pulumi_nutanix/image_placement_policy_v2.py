@@ -363,19 +363,17 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        categories = nutanix.get_categories_v2()
-        category0 = data["nutanix_categories_v4"]["categories"]["categories"][0]["ext_id"]
         example = nutanix.ImagePlacementPolicyV2("example",
-            description="%[2]s",
-            placement_type="SOFT",
             cluster_entity_filters=[{
-                "category_ext_ids": [category0],
+                "category_ext_ids": ["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"],
                 "type": "CATEGORIES_MATCH_ALL",
             }],
+            description="%[2]s",
             image_entity_filters=[{
-                "category_ext_ids": [category0],
+                "category_ext_ids": ["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"],
                 "type": "CATEGORIES_MATCH_ALL",
-            }])
+            }],
+            placement_type="SOFT")
         ```
 
         :param str resource_name: The name of the resource.
@@ -401,19 +399,17 @@ class ImagePlacementPolicyV2(pulumi.CustomResource):
         import pulumi
         import pulumi_nutanix as nutanix
 
-        categories = nutanix.get_categories_v2()
-        category0 = data["nutanix_categories_v4"]["categories"]["categories"][0]["ext_id"]
         example = nutanix.ImagePlacementPolicyV2("example",
-            description="%[2]s",
-            placement_type="SOFT",
             cluster_entity_filters=[{
-                "category_ext_ids": [category0],
+                "category_ext_ids": ["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"],
                 "type": "CATEGORIES_MATCH_ALL",
             }],
+            description="%[2]s",
             image_entity_filters=[{
-                "category_ext_ids": [category0],
+                "category_ext_ids": ["ab520e1d-4950-1db1-917f-a9e2ea35b8e3"],
                 "type": "CATEGORIES_MATCH_ALL",
-            }])
+            }],
+            placement_type="SOFT")
         ```
 
         :param str resource_name: The name of the resource.

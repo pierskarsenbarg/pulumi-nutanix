@@ -16,9 +16,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     {
         /// <summary>
         /// Icmp service Code. Ignore this field if Code has to be ANY.
-        /// 
-        /// 
-        /// See detailed information in [Nutanix Security Policies v4](https://developers.nutanix.com/api-reference?namespace=microseg&amp;version=v4.0).
         /// </summary>
         public readonly int Code;
         /// <summary>

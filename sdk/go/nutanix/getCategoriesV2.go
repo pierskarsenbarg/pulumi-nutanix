@@ -27,21 +27,67 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := nutanix.GetCategoriesV2(ctx, &nutanix.GetCategoriesV2Args{}, nil)
+//			categories_list, err := nutanix.GetCategoriesV2(ctx, &nutanix.GetCategoriesV2Args{}, nil)
 //			if err != nil {
 //				return err
 //			}
 //			_, err = nutanix.GetCategoriesV2(ctx, &nutanix.GetCategoriesV2Args{
-//				Filter: pulumi.StringRef("key eq '{<key value>}'"),
+//				Page:  pulumi.IntRef(1),
+//				Limit: pulumi.IntRef(10),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
+//			_, err = nutanix.GetCategoriesV2(ctx, &nutanix.GetCategoriesV2Args{
+//				OrderBy: pulumi.StringRef("key desc"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = nutanix.GetCategoriesV2(ctx, &nutanix.GetCategoriesV2Args{
+//				Filter: pulumi.StringRef("key eq 'key_example'"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			ctx.Export("category", categories_list.Categories[0])
 //			return nil
 //		})
 //	}
 //
 // ```
+//
+// ## Categories
+//
+// The `categories` contains list of categories. Each category has the following attributes:
+//
+//   - `extId`: The extID for the category.
+//   - `key`: The key of a category when it is represented in key:value format.
+//   - `value`: The value of a category when it is represented in key:value format
+//   - `type`: Denotes the type of a category.
+//     There are three types of categories: SYSTEM, INTERNAL, and USER.
+//   - `description`: A string consisting of the description of the category as defined by the user.
+//   - `ownerUuid`: This field contains the UUID of a user who owns the category.
+//   - `associations`: This field gives basic information about resources that are associated to the category.
+//   - `detailedAssociations`: This field gives detailed information about resources that are associated to the category.
+//   - `tenantId`: A globally unique identifier that represents the tenant that owns this entity.
+//   - `links`: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+//
+// ### associations
+//   - `categoryId`: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+//   - `resourceType`: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+//   - `resourceGroup`: An enum denoting the resource group.
+//     Resources can be organized into either an entity or a policy.
+//   - `count`: Count of associations of a particular type of entity or policy
+//
+// ### detailedAssociations
+//   - `categoryId`: External identifier for the given category, used across all v4 apis/entities/resources where categories are referenced.
+//   - `resourceType`: An enum denoting the associated resource types. Resource types are further grouped into 2 types - entity or a policy.
+//   - `resourceGroup`: An enum denoting the resource group.
+//     Resources can be organized into either an entity or a policy.
+//   - `resourceId`: The UUID of the entity or policy associated with the particular category.
+//
+// See detailed information in [Nutanix List Categories v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/Categories/operation/listCategories).
 func GetCategoriesV2(ctx *pulumi.Context, args *GetCategoriesV2Args, opts ...pulumi.InvokeOption) (*GetCategoriesV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCategoriesV2Result
@@ -54,22 +100,38 @@ func GetCategoriesV2(ctx *pulumi.Context, args *GetCategoriesV2Args, opts ...pul
 
 // A collection of arguments for invoking getCategoriesV2.
 type GetCategoriesV2Args struct {
-	// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+	// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported:
+	// - associations
+	// - detailedAssociations
 	Expand *string `pulumi:"expand"`
-	// A URL query parameter that allows clients to filter a collection of resources.
+	// A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
+	// - extId
+	// - key
+	// - ownerUuid
+	// - type
+	// - value
 	Filter *string `pulumi:"filter"`
 	// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
 	Limit *int `pulumi:"limit"`
-	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
+	// - key
+	// - value
 	OrderBy *string `pulumi:"orderBy"`
 	// A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
 	Page *int `pulumi:"page"`
-	// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type.
+	// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. The select can be applied to the following fields:
+	// - description
+	// - extId
+	// - key
+	// - ownerUuid
+	// - type
+	// - value
 	Select *string `pulumi:"select"`
 }
 
 // A collection of values returned by getCategoriesV2.
 type GetCategoriesV2Result struct {
+	// List of categories
 	Categories []GetCategoriesV2Category `pulumi:"categories"`
 	Expand     *string                   `pulumi:"expand"`
 	Filter     *string                   `pulumi:"filter"`
@@ -92,17 +154,32 @@ func GetCategoriesV2Output(ctx *pulumi.Context, args GetCategoriesV2OutputArgs, 
 
 // A collection of arguments for invoking getCategoriesV2.
 type GetCategoriesV2OutputArgs struct {
-	// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+	// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported:
+	// - associations
+	// - detailedAssociations
 	Expand pulumi.StringPtrInput `pulumi:"expand"`
-	// A URL query parameter that allows clients to filter a collection of resources.
+	// A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
+	// - extId
+	// - key
+	// - ownerUuid
+	// - type
+	// - value
 	Filter pulumi.StringPtrInput `pulumi:"filter"`
 	// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
 	Limit pulumi.IntPtrInput `pulumi:"limit"`
-	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+	// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
+	// - key
+	// - value
 	OrderBy pulumi.StringPtrInput `pulumi:"orderBy"`
 	// A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
 	Page pulumi.IntPtrInput `pulumi:"page"`
-	// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type.
+	// A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. The select can be applied to the following fields:
+	// - description
+	// - extId
+	// - key
+	// - ownerUuid
+	// - type
+	// - value
 	Select pulumi.StringPtrInput `pulumi:"select"`
 }
 
@@ -125,6 +202,7 @@ func (o GetCategoriesV2ResultOutput) ToGetCategoriesV2ResultOutputWithContext(ct
 	return o
 }
 
+// List of categories
 func (o GetCategoriesV2ResultOutput) Categories() GetCategoriesV2CategoryArrayOutput {
 	return o.ApplyT(func(v GetCategoriesV2Result) []GetCategoriesV2Category { return v.Categories }).(GetCategoriesV2CategoryArrayOutput)
 }

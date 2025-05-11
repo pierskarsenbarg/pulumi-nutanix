@@ -14,6 +14,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VirtualMachineV2OwnershipInfo
     {
+        /// <summary>
+        /// Reference to the owner.
+        /// * `owner.ext_id`: A globally unique identifier of a VM owner type UUID.
+        /// </summary>
         public readonly ImmutableArray<Outputs.VirtualMachineV2OwnershipInfoOwner> Owners;
 
         [OutputConstructor]

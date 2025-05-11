@@ -14,15 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetSubnetsV2SubnetVpcExternallyRoutablePrefixIpv4Result
     {
-        /// <summary>
-        /// Reference to address configuration
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetVpcExternallyRoutablePrefixIpv4IpResult> Ips;
-        /// <summary>
-        /// The prefix length of the network to which this host IPv4/IPv6 address belongs.
-        /// 
-        /// See detailed information in [Nutanix Subnet v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.0).
-        /// </summary>
         public readonly int PrefixLength;
 
         [OutputConstructor]

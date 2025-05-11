@@ -16,6 +16,16 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const pbrs = nutanix.getPbrsV2({});
+ * const pbrs_filter = nutanix.getPbrsV2({
+ *     filter: "name eq 'pbr_example'",
+ * });
+ * const pbrs_limit = nutanix.getPbrsV2({
+ *     limit: 10,
+ * });
+ * const pbrs_filter_limit = nutanix.getPbrsV2({
+ *     filter: "name eq 'pbr_example'",
+ *     limit: 10,
+ * });
  * ```
  */
 export function getPbrsV2(args?: GetPbrsV2Args, opts?: pulumi.InvokeOptions): Promise<GetPbrsV2Result> {
@@ -34,7 +44,13 @@ export function getPbrsV2(args?: GetPbrsV2Args, opts?: pulumi.InvokeOptions): Pr
  */
 export interface GetPbrsV2Args {
     /**
-     * A URL query parameter that allows clients to filter a collection of resources.
+     * A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+     * - name
+     * - policies/policyAction/actionType
+     * - policies/policyMatch/protocolType
+     * - policies/policyMatch/source
+     * - priority
+     * - vpcExtId
      */
     filter?: string;
     /**
@@ -42,7 +58,9 @@ export interface GetPbrsV2Args {
      */
     limit?: number;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+     * - name
+     * - priority
      */
     orderBy?: string;
     /**
@@ -63,6 +81,9 @@ export interface GetPbrsV2Result {
     readonly limit?: number;
     readonly orderBy?: string;
     readonly page?: number;
+    /**
+     * List all of routing policies.
+     */
     readonly routingPolicies: outputs.GetPbrsV2RoutingPolicy[];
 }
 /**
@@ -75,6 +96,16 @@ export interface GetPbrsV2Result {
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const pbrs = nutanix.getPbrsV2({});
+ * const pbrs_filter = nutanix.getPbrsV2({
+ *     filter: "name eq 'pbr_example'",
+ * });
+ * const pbrs_limit = nutanix.getPbrsV2({
+ *     limit: 10,
+ * });
+ * const pbrs_filter_limit = nutanix.getPbrsV2({
+ *     filter: "name eq 'pbr_example'",
+ *     limit: 10,
+ * });
  * ```
  */
 export function getPbrsV2Output(args?: GetPbrsV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPbrsV2Result> {
@@ -93,7 +124,13 @@ export function getPbrsV2Output(args?: GetPbrsV2OutputArgs, opts?: pulumi.Invoke
  */
 export interface GetPbrsV2OutputArgs {
     /**
-     * A URL query parameter that allows clients to filter a collection of resources.
+     * A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+     * - name
+     * - policies/policyAction/actionType
+     * - policies/policyMatch/protocolType
+     * - policies/policyMatch/source
+     * - priority
+     * - vpcExtId
      */
     filter?: pulumi.Input<string>;
     /**
@@ -101,7 +138,9 @@ export interface GetPbrsV2OutputArgs {
      */
     limit?: pulumi.Input<number>;
     /**
-     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+     * A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+     * - name
+     * - priority
      */
     orderBy?: pulumi.Input<string>;
     /**

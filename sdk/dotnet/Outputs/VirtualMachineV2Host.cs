@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class VirtualMachineV2Host
     {
         /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
+        /// A globally unique identifier of a host of type UUID.
         /// </summary>
         public readonly string? ExtId;
 

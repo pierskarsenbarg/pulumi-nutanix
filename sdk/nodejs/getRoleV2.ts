@@ -16,7 +16,7 @@ import * as utilities from "./utilities";
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const role = nutanix.getRoleV2({
- *     extId: "<role_uuid>",
+ *     extId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
  * });
  * ```
  */
@@ -116,7 +116,7 @@ export interface GetRoleV2Result {
  * import * as nutanix from "@pulumi/nutanix";
  *
  * const role = nutanix.getRoleV2({
- *     extId: "<role_uuid>",
+ *     extId: "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
  * });
  * ```
  */

@@ -15,6 +15,10 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("ipAddresses")]
         private InputList<Inputs.VirtualMachineV2NicNetworkInfoIpv4ConfigIpAddressArgs>? _ipAddresses;
+
+        /// <summary>
+        /// The IP address of the NIC.
+        /// </summary>
         public InputList<Inputs.VirtualMachineV2NicNetworkInfoIpv4ConfigIpAddressArgs> IpAddresses
         {
             get => _ipAddresses ?? (_ipAddresses = new InputList<Inputs.VirtualMachineV2NicNetworkInfoIpv4ConfigIpAddressArgs>());
@@ -23,12 +27,19 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
         [Input("secondaryIpAddressLists")]
         private InputList<Inputs.VirtualMachineV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListArgs>? _secondaryIpAddressLists;
+
+        /// <summary>
+        /// Secondary IP addresses for the NIC.
+        /// </summary>
         public InputList<Inputs.VirtualMachineV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListArgs> SecondaryIpAddressLists
         {
             get => _secondaryIpAddressLists ?? (_secondaryIpAddressLists = new InputList<Inputs.VirtualMachineV2NicNetworkInfoIpv4ConfigSecondaryIpAddressListArgs>());
             set => _secondaryIpAddressLists = value;
         }
 
+        /// <summary>
+        /// If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
+        /// </summary>
         [Input("shouldAssignIp")]
         public Input<bool>? ShouldAssignIp { get; set; }
 

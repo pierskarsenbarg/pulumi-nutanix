@@ -6,13 +6,13 @@ toolchain go1.23.6
 
 replace (
 	github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20250221232320-8d4cfd37a3cd
-	github.com/terraform-providers/terraform-provider-nutanix => github.com/pierskarsenbarg/terraform-provider-nutanix v1.6.2-0.20250129141831-201aa51c14d1
+	github.com/terraform-providers/terraform-provider-nutanix => github.com/nutanix/terraform-provider-nutanix v1.9.6-0.20250509072702-cac904185e71
 )
 
 require (
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.108.0
 	github.com/pulumi/pulumi/sdk/v3 v3.166.0
-	github.com/terraform-providers/terraform-provider-nutanix v1.6.2-0.20250129141831-201aa51c14d1
+	github.com/terraform-providers/terraform-provider-nutanix v1.9.6-0.20250509072702-cac904185e71
 )
 
 require (
@@ -128,8 +128,10 @@ require (
 	github.com/muesli/termenv v0.15.2 // indirect
 	github.com/natefinch/atomic v1.0.1 // indirect
 	github.com/nutanix/ntnx-api-golang-clients/clustermgmt-go-client/v4 v4.0.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/datapolicies-go-client/v4 v4.0.1 // indirect
 	github.com/nutanix/ntnx-api-golang-clients/dataprotection-go-client/v4 v4.0.1 // indirect
 	github.com/nutanix/ntnx-api-golang-clients/iam-go-client/v4 v4.0.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/lifecycle-go-client/v4 v4.0.1 // indirect
 	github.com/nutanix/ntnx-api-golang-clients/microseg-go-client/v4 v4.0.1 // indirect
 	github.com/nutanix/ntnx-api-golang-clients/networking-go-client/v4 v4.0.1 // indirect
 	github.com/nutanix/ntnx-api-golang-clients/prism-go-client/v4 v4.0.1 // indirect

@@ -37,6 +37,13 @@ import (
 //			if err != nil {
 //				return err
 //			}
+//			_, err = nutanix.LookupRolesV2(ctx, &nutanix.LookupRolesV2Args{
+//				Filter:  pulumi.StringRef("displayName eq 'example_role'"),
+//				OrderBy: pulumi.StringRef("createdTime desc"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
 //			return nil
 //		})
 //	}
@@ -49,9 +56,39 @@ import (
 //
 // * `page`: - A URL query parameter that specifies the page number of the result set. It must be a positive integer between 0 and the maximum number of pages that are available for that resource. Any number out of this range might lead to no results.
 // * `limit` : A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
-// * `filter` :A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields: clientName, createdBy, extId, createdTime, displayName, extId, isSystemDefined, lastUpdatedTime.
-// * `orderby` : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields: createdTime, distinguishedName, displayName, extId, lastUpdatedTime.
-// * `select` : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. following fields: accessibleClients, accessibleEntityTypes, assignedUserGroupsCount, assignedUsersCount, clientName, createdBy, createdTime, description, displayName, extId, isSystemDefined, lastUpdatedTime, links, operations, tenantId.
+// * `filter` :A URL query parameter that allows clients to filter a collection of resources. The expression specified with \$filter is evaluated for each resource in the collection, and only items where the expression evaluates to true are included in the response. Expression specified with the \$filter must conform to the OData V4.01 URL conventions. For example, filter '\$filter=name eq 'karbon-ntnx-1.0' would filter the result on cluster name 'karbon-ntnx1.0', filter '\$filter=startswith(name, 'C')' would filter on cluster name starting with 'C'. The filter can be applied to the following fields:
+//   - clientName
+//   - createdBy
+//   - extId
+//   - createdTime
+//   - displayName
+//   - extId
+//   - isSystemDefined
+//   - lastUpdatedTime
+//
+// * `orderby` : A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. For example, '\$orderby=templateName desc' would get all templates sorted by templateName in descending order. The orderby can be applied to the following fields:
+//   - createdTime
+//   - distinguishedName
+//   - displayName
+//   - extId-
+//   - lastUpdatedTime
+//
+// * `select` : A URL query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., *), then all properties on the matching resource will be returned. following fields:
+//   - accessibleClients
+//   - accessibleEntityTypes
+//   - assignedUserGroupsCount
+//   - assignedUsersCount
+//   - clientName
+//   - createdBy
+//   - createdTime
+//   - description
+//   - displayName
+//   - extId
+//   - isSystemDefined
+//   - lastUpdatedTime
+//   - links
+//   - operations
+//   - tenantId
 func LookupRolesV2(ctx *pulumi.Context, args *LookupRolesV2Args, opts ...pulumi.InvokeOption) (*LookupRolesV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupRolesV2Result
@@ -75,12 +112,13 @@ type LookupRolesV2Args struct {
 type LookupRolesV2Result struct {
 	Filter *string `pulumi:"filter"`
 	// The provider-assigned unique ID for this managed resource.
-	Id      string           `pulumi:"id"`
-	Limit   *int             `pulumi:"limit"`
-	OrderBy *string          `pulumi:"orderBy"`
-	Page    *int             `pulumi:"page"`
-	Roles   []GetRolesV2Role `pulumi:"roles"`
-	Select  *string          `pulumi:"select"`
+	Id      string  `pulumi:"id"`
+	Limit   *int    `pulumi:"limit"`
+	OrderBy *string `pulumi:"orderBy"`
+	Page    *int    `pulumi:"page"`
+	// - List of Roles.
+	Roles  []GetRolesV2Role `pulumi:"roles"`
+	Select *string          `pulumi:"select"`
 }
 
 func LookupRolesV2Output(ctx *pulumi.Context, args LookupRolesV2OutputArgs, opts ...pulumi.InvokeOption) LookupRolesV2ResultOutput {
@@ -141,6 +179,7 @@ func (o LookupRolesV2ResultOutput) Page() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v LookupRolesV2Result) *int { return v.Page }).(pulumi.IntPtrOutput)
 }
 
+// - List of Roles.
 func (o LookupRolesV2ResultOutput) Roles() GetRolesV2RoleArrayOutput {
 	return o.ApplyT(func(v LookupRolesV2Result) []GetRolesV2Role { return v.Roles }).(GetRolesV2RoleArrayOutput)
 }

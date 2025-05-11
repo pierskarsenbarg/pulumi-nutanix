@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Provides a datasource to retrieve floating IP with floatingIpUuid .
+// Provides a datasource to retrieve the floating IP for this extId.
 //
 // ## Example Usage
 //
@@ -28,7 +28,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := nutanix.LookupFloatingIpV2(ctx, &nutanix.LookupFloatingIpV2Args{
-//				ExtId: "{{ floating_ip_uuid }}",
+//				ExtId: "cf1a7643-605e-4622-9f2a-b3fdccdbd072",
 //			}, nil)
 //			if err != nil {
 //				return err

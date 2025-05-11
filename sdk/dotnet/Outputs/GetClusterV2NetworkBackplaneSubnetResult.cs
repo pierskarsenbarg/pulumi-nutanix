@@ -17,7 +17,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
         /// </summary>
-        public readonly string PrefixLength;
+        public readonly int PrefixLength;
         /// <summary>
         /// - The fully qualified domain name of the host.
         /// </summary>
@@ -25,7 +25,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
         [OutputConstructor]
         private GetClusterV2NetworkBackplaneSubnetResult(
-            string prefixLength,
+            int prefixLength,
 
             string value)
         {

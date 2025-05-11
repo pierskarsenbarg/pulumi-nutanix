@@ -27,6 +27,22 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var floating_ips = Nutanix.GetFloatingIpsV2.Invoke();
         /// 
+        ///     var floating_ips_filter = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     {
+        ///         Filter = "name eq 'floating_ip_example'",
+        ///     });
+        /// 
+        ///     var floating_ips_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     {
+        ///         Limit = 10,
+        ///     });
+        /// 
+        ///     var floating_ips_filter_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     {
+        ///         Filter = "name eq 'floating_ip_example'",
+        ///         Limit = 10,
+        ///     });
+        /// 
         /// });
         /// ```
         /// </summary>
@@ -47,6 +63,22 @@ namespace PiersKarsenbarg.Nutanix
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
         ///     var floating_ips = Nutanix.GetFloatingIpsV2.Invoke();
+        /// 
+        ///     var floating_ips_filter = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     {
+        ///         Filter = "name eq 'floating_ip_example'",
+        ///     });
+        /// 
+        ///     var floating_ips_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     {
+        ///         Limit = 10,
+        ///     });
+        /// 
+        ///     var floating_ips_filter_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     {
+        ///         Filter = "name eq 'floating_ip_example'",
+        ///         Limit = 10,
+        ///     });
         /// 
         /// });
         /// ```
@@ -69,6 +101,22 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var floating_ips = Nutanix.GetFloatingIpsV2.Invoke();
         /// 
+        ///     var floating_ips_filter = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     {
+        ///         Filter = "name eq 'floating_ip_example'",
+        ///     });
+        /// 
+        ///     var floating_ips_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     {
+        ///         Limit = 10,
+        ///     });
+        /// 
+        ///     var floating_ips_filter_limit = Nutanix.GetFloatingIpsV2.Invoke(new()
+        ///     {
+        ///         Filter = "name eq 'floating_ip_example'",
+        ///         Limit = 10,
+        ///     });
+        /// 
         /// });
         /// ```
         /// </summary>
@@ -80,13 +128,21 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetFloatingIpsV2Args : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+        /// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. The expand can be applied to the following fields:
+        /// - externalSubnet
+        /// - vpc
+        /// - vmNic
         /// </summary>
         [Input("expand")]
         public string? Expand { get; set; }
 
         /// <summary>
-        /// A URL query parameter that allows clients to filter a collection of resources.
+        /// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+        /// - externalSubnetReference
+        /// - floatingIp/ipv4/value
+        /// - floatingIp/ipv6/value
+        /// - loadBalancerSessionReference
+        /// - name
         /// </summary>
         [Input("filter")]
         public string? Filter { get; set; }
@@ -98,7 +154,10 @@ namespace PiersKarsenbarg.Nutanix
         public int? Limit { get; set; }
 
         /// <summary>
-        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+        /// - floatingIp/ipv4/value
+        /// - floatingIp/ipv6/value
+        /// - name
         /// </summary>
         [Input("orderBy")]
         public string? OrderBy { get; set; }
@@ -118,13 +177,21 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class GetFloatingIpsV2InvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved.
+        /// A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. The expand can be applied to the following fields:
+        /// - externalSubnet
+        /// - vpc
+        /// - vmNic
         /// </summary>
         [Input("expand")]
         public Input<string>? Expand { get; set; }
 
         /// <summary>
-        /// A URL query parameter that allows clients to filter a collection of resources.
+        /// A URL query parameter that allows clients to filter a collection of resources. The filter can be applied to the following fields:
+        /// - externalSubnetReference
+        /// - floatingIp/ipv4/value
+        /// - floatingIp/ipv6/value
+        /// - loadBalancerSessionReference
+        /// - name
         /// </summary>
         [Input("filter")]
         public Input<string>? Filter { get; set; }
@@ -136,7 +203,10 @@ namespace PiersKarsenbarg.Nutanix
         public Input<int>? Limit { get; set; }
 
         /// <summary>
-        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default
+        /// A URL query parameter that allows clients to specify the sort criteria for the returned list of objects. Resources can be sorted in ascending order using asc or descending order using desc. If asc or desc are not specified, the resources will be sorted in ascending order by default. The orderby can be applied to the following fields:
+        /// - floatingIp/ipv4/value
+        /// - floatingIp/ipv6/value
+        /// - name
         /// </summary>
         [Input("orderBy")]
         public Input<string>? OrderBy { get; set; }
@@ -159,6 +229,9 @@ namespace PiersKarsenbarg.Nutanix
     {
         public readonly string? Expand;
         public readonly string? Filter;
+        /// <summary>
+        /// List of all Floating IPs.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetFloatingIpsV2FloatingIpResult> FloatingIps;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.

@@ -14,53 +14,21 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVpcsV2VpcResult
     {
-        /// <summary>
-        /// List of DHCP options to be configured.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetVpcsV2VpcCommonDhcpOptionResult> CommonDhcpOptions;
         /// <summary>
-        /// Description of the VPC.
+        /// - `extId`
+        /// - `externalRoutingDomainReference`
         /// </summary>
         public readonly string Description;
-        /// <summary>
-        /// ext_id of VPC.
-        /// </summary>
         public readonly string ExtId;
-        /// <summary>
-        /// External routing domain associated with this route table
-        /// </summary>
         public readonly string ExternalRoutingDomainReference;
-        /// <summary>
-        /// List of external subnets that the VPC is attached to.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetVpcsV2VpcExternalSubnetResult> ExternalSubnets;
-        /// <summary>
-        /// CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetVpcsV2VpcExternallyRoutablePrefixResult> ExternallyRoutablePrefixes;
-        /// <summary>
-        /// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetVpcsV2VpcLinkResult> Links;
-        /// <summary>
-        /// Metadata associated with this resource.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetVpcsV2VpcMetadataResult> Metadatas;
-        /// <summary>
-        /// Name of the VPC.
-        /// </summary>
         public readonly string Name;
-        /// <summary>
-        /// List of IP Addresses used for SNAT.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetVpcsV2VpcSnatIpResult> SnatIps;
-        /// <summary>
-        /// A globally unique identifier that represents the tenant that owns this entity.
-        /// </summary>
         public readonly string TenantId;
-        /// <summary>
-        /// Type of VPC.
-        /// </summary>
         public readonly string VpcType;
 
         [OutputConstructor]

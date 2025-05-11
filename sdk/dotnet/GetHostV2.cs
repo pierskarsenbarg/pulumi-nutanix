@@ -27,8 +27,8 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var host = Nutanix.GetHostV2.Invoke(new()
         ///     {
-        ///         ClusterExtId = "&lt;cluster uuid&gt;",
-        ///         ExtId = "&lt;host uuid&gt;",
+        ///         ClusterExtId = "021151dc-3ed1-4fec-a81d-39606451750c",
+        ///         ExtId = "919c9488-0b50-4fc8-9159-923e56a3abca",
         ///     });
         /// 
         /// });
@@ -52,8 +52,8 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var host = Nutanix.GetHostV2.Invoke(new()
         ///     {
-        ///         ClusterExtId = "&lt;cluster uuid&gt;",
-        ///         ExtId = "&lt;host uuid&gt;",
+        ///         ClusterExtId = "021151dc-3ed1-4fec-a81d-39606451750c",
+        ///         ExtId = "919c9488-0b50-4fc8-9159-923e56a3abca",
         ///     });
         /// 
         /// });
@@ -77,8 +77,8 @@ namespace PiersKarsenbarg.Nutanix
         /// {
         ///     var host = Nutanix.GetHostV2.Invoke(new()
         ///     {
-        ///         ClusterExtId = "&lt;cluster uuid&gt;",
-        ///         ExtId = "&lt;host uuid&gt;",
+        ///         ClusterExtId = "021151dc-3ed1-4fec-a81d-39606451750c",
+        ///         ExtId = "919c9488-0b50-4fc8-9159-923e56a3abca",
         ///     });
         /// 
         /// });

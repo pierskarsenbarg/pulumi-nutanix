@@ -8,6 +8,17 @@ import * as utilities from "./utilities";
 
 /**
  * Retrieve the image placement policy details for the provided external identifier.
+ *
+ * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const ipp = nutanix.getImagePlacementPolicyV2({
+ *     extId: "cf96e27a-4e52-4cec-b563-d0b25413cc4a",
+ * });
+ * ```
  */
 export function getImagePlacementPolicyV2(args: GetImagePlacementPolicyV2Args, opts?: pulumi.InvokeOptions): Promise<GetImagePlacementPolicyV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -40,7 +51,9 @@ export interface GetImagePlacementPolicyV2Result {
      */
     readonly description: string;
     /**
-     * (Optional) Enforcement status of the image placement policy. Valid values "ACTIVE", "SUSPENDED"
+     * (Optional) Enforcement status of the image placement policy. Valid values:
+     * - ACTIVE: The image placement policy is being actively enforced.
+     * - SUSPENDED: The policy enforcement for image placement is suspended.
      */
     readonly enforcementState: string;
     readonly extId: string;
@@ -59,12 +72,25 @@ export interface GetImagePlacementPolicyV2Result {
     readonly name: string;
     readonly ownerExtId: string;
     /**
-     * (Required) Type of the image placement policy. Valid values "HARD", "SOFT"
+     * (Required) Type of the image placement policy. Valid values:
+     * - HARD: Hard placement policy. Images can only be placed on clusters enforced by the image placement policy.
+     * - SOFT: Soft placement policy. Images can be placed on clusters apart from those enforced by the image placement policy.
      */
     readonly placementType: string;
 }
 /**
  * Retrieve the image placement policy details for the provided external identifier.
+ *
+ * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const ipp = nutanix.getImagePlacementPolicyV2({
+ *     extId: "cf96e27a-4e52-4cec-b563-d0b25413cc4a",
+ * });
+ * ```
  */
 export function getImagePlacementPolicyV2Output(args: GetImagePlacementPolicyV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetImagePlacementPolicyV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

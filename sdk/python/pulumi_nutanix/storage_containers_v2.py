@@ -857,6 +857,32 @@ class StorageContainersV2(pulumi.CustomResource):
         """
         Provides Nutanix resource to create VPC.
 
+        ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        storage_container = nutanix.StorageContainersV2("storage-container",
+            cache_deduplication="OFF",
+            erasure_code="OFF",
+            has_higher_ec_fault_domain_preference=False,
+            is_compression_enabled=True,
+            is_inline_ec_enabled=False,
+            is_internal=False,
+            is_software_encryption_enabled=False,
+            logical_advertised_capacity_bytes=1073741824000,
+            logical_explicit_reserved_capacity_bytes=32,
+            nfs_whitelist_addresses=[{
+                "ipv4s": [{
+                    "prefix_length": 32,
+                    "value": "192.168.15.0",
+                }],
+            }],
+            on_disk_dedup="OFF",
+            replication_factor=1)
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] affinity_host_ext_id: -(Optional) Affinity host extId for RF 1 Storage Container.
@@ -888,6 +914,32 @@ class StorageContainersV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides Nutanix resource to create VPC.
+
+        ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        storage_container = nutanix.StorageContainersV2("storage-container",
+            cache_deduplication="OFF",
+            erasure_code="OFF",
+            has_higher_ec_fault_domain_preference=False,
+            is_compression_enabled=True,
+            is_inline_ec_enabled=False,
+            is_internal=False,
+            is_software_encryption_enabled=False,
+            logical_advertised_capacity_bytes=1073741824000,
+            logical_explicit_reserved_capacity_bytes=32,
+            nfs_whitelist_addresses=[{
+                "ipv4s": [{
+                    "prefix_length": 32,
+                    "value": "192.168.15.0",
+                }],
+            }],
+            on_disk_dedup="OFF",
+            replication_factor=1)
+        ```
 
         :param str resource_name: The name of the resource.
         :param StorageContainersV2Args args: The arguments to use to populate this resource's properties.

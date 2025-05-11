@@ -14,10 +14,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml
     {
-        public readonly string? Value;
+        public readonly string Value;
 
         [OutputConstructor]
-        private VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml(string? value)
+        private VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml(string value)
         {
             Value = value;
         }

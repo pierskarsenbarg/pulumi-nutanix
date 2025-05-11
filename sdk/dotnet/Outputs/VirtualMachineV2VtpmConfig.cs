@@ -18,11 +18,16 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// Indicates whether the virtual trusted platform module is enabled for the Guest OS or not.
         /// </summary>
         public readonly bool? IsVtpmEnabled;
+        public readonly string? Version;
 
         [OutputConstructor]
-        private VirtualMachineV2VtpmConfig(bool? isVtpmEnabled)
+        private VirtualMachineV2VtpmConfig(
+            bool? isVtpmEnabled,
+
+            string? version)
         {
             IsVtpmEnabled = isVtpmEnabled;
+            Version = version;
         }
     }
 }

@@ -25,6 +25,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// <summary>
         /// Object either UnattendXml or CustomKeyValues
         /// * `sysprep_script.unattend_xml`: (Optional) xml object
+        /// * `sysprep_script.unattend_xml.value`: (Optional) base64 encoded sysprep unattended xml
         /// * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
         /// </summary>
         public InputList<Inputs.VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptGetArgs> SysprepScripts

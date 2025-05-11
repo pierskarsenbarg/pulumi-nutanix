@@ -30,8 +30,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			// revert Vm
 //			_, err := nutanix.NewVmRevertV2(ctx, "example", &nutanix.VmRevertV2Args{
-//				ExtId:                pulumi.String("<VM_UUID>"),
-//				VmRecoveryPointExtId: pulumi.String("<Vm_Recovery_Point_UUID>"),
+//				ExtId:                pulumi.String("8a938cc5-282b-48c4-81be-de22de145d07"),
+//				VmRecoveryPointExtId: pulumi.String("c2c249b0-98a0-43fa-9ff6-dcde578d3936"),
 //			})
 //			if err != nil {
 //				return err

@@ -337,6 +337,24 @@ class NgtInstallationV2(pulumi.CustomResource):
         """
         Provides Nutanix resource to Installs Nutanix Guest Tools in a Virtual Machine by using the provided credentials.
 
+        ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        example = nutanix.NgtInstallationV2("example",
+            capablities=["VSS_SNAPSHOT"],
+            credential={
+                "password": "pass.1234567890",
+                "username": "username",
+            },
+            ext_id="ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+            reboot_preference={
+                "schedule_type": "IMMEDIATE",
+            })
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] capablities: The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
@@ -353,6 +371,24 @@ class NgtInstallationV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides Nutanix resource to Installs Nutanix Guest Tools in a Virtual Machine by using the provided credentials.
+
+        ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        example = nutanix.NgtInstallationV2("example",
+            capablities=["VSS_SNAPSHOT"],
+            credential={
+                "password": "pass.1234567890",
+                "username": "username",
+            },
+            ext_id="ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+            reboot_preference={
+                "schedule_type": "IMMEDIATE",
+            })
+        ```
 
         :param str resource_name: The name of the resource.
         :param NgtInstallationV2Args args: The arguments to use to populate this resource's properties.

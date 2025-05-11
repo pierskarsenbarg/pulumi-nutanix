@@ -270,6 +270,19 @@ class NgtUpgradeV2(pulumi.CustomResource):
         """
         Provides Nutanix resource to Trigger an in-guest upgrade of Nutanix Guest Tools.
 
+        ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        example = nutanix.NgtUpgradeV2("example",
+            ext_id="ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+            reboot_preference={
+                "schedule_type": "IMMEDIATE",
+            })
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.str] ext_id: uuid of the Virtual Machine.
@@ -283,6 +296,19 @@ class NgtUpgradeV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides Nutanix resource to Trigger an in-guest upgrade of Nutanix Guest Tools.
+
+        ## Example
+
+        ```python
+        import pulumi
+        import pulumi_nutanix as nutanix
+
+        example = nutanix.NgtUpgradeV2("example",
+            ext_id="ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
+            reboot_preference={
+                "schedule_type": "IMMEDIATE",
+            })
+        ```
 
         :param str resource_name: The name of the resource.
         :param NgtUpgradeV2Args args: The arguments to use to populate this resource's properties.

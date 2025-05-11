@@ -15,6 +15,11 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("owners")]
         private InputList<Inputs.VirtualMachineV2OwnershipInfoOwnerGetArgs>? _owners;
+
+        /// <summary>
+        /// Reference to the owner.
+        /// * `owner.ext_id`: A globally unique identifier of a VM owner type UUID.
+        /// </summary>
         public InputList<Inputs.VirtualMachineV2OwnershipInfoOwnerGetArgs> Owners
         {
             get => _owners ?? (_owners = new InputList<Inputs.VirtualMachineV2OwnershipInfoOwnerGetArgs>());

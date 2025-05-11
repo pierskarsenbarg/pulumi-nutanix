@@ -14,13 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressResult
     {
-        /// <summary>
-        /// IP V4 Configuration
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv4Result> Ipv4s;
-        /// <summary>
-        /// IP V6 Configuration
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetVpcsV2VpcExternalSubnetActiveGatewayNodeNodeIpAddressIpv6Result> Ipv6s;
 
         [OutputConstructor]

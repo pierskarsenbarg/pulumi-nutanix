@@ -12,6 +12,230 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Add node on a cluster identified by {extId}.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Nutanix = PiersKarsenbarg.Nutanix;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     // cluster of 3 node uuid that we want to add node
+    ///     var clustersExtId = "00057b8b-0b3b-4b3b-0000-000000000000";
+    /// 
+    ///     // for example
+    ///     var cvmIp = "10.xx.xx.xx";
+    /// 
+    ///     //# check if the node to add is un configured or not
+    ///     var cluster_node = new Nutanix.ClustersDiscoverUnconfiguredNodesV2("cluster-node", new()
+    ///     {
+    ///         ExtId = clustersExtId,
+    ///         AddressType = "IPV4",
+    ///         IpFilterLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ClustersDiscoverUnconfiguredNodesV2IpFilterListArgs
+    ///             {
+    ///                 Ipv4s = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClustersDiscoverUnconfiguredNodesV2IpFilterListIpv4Args
+    ///                     {
+    ///                         Value = cvmIp,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    ///     //# fetch Network info for unconfigured node
+    ///     var node_network_info = new Nutanix.ClustersUnconfiguredNodeNetworksV2("node-network-info", new()
+    ///     {
+    ///         ExtId = clustersExtId,
+    ///         RequestType = "expand_cluster",
+    ///         NodeLists = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ClustersUnconfiguredNodeNetworksV2NodeListArgs
+    ///             {
+    ///                 CvmIps = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClustersUnconfiguredNodeNetworksV2NodeListCvmIpArgs
+    ///                     {
+    ///                         Ipv4s = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClustersUnconfiguredNodeNetworksV2NodeListCvmIpIpv4Args
+    ///                             {
+    ///                                 Value = cvmIp,
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 HypervisorIps = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIpArgs
+    ///                     {
+    ///                         Ipv4s = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClustersUnconfiguredNodeNetworksV2NodeListHypervisorIpIpv4Args
+    ///                             {
+    ///                                 Value = cluster_node.UnconfiguredNodes.Apply(unconfiguredNodes =&gt; unconfiguredNodes[0].HypervisorIps[0]?.Ipv4s[0]?.Value),
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///     }, new CustomResourceOptions
+    ///     {
+    ///         DependsOn =
+    ///         {
+    ///             cluster_node,
+    ///         },
+    ///     });
+    /// 
+    ///     //# add node to the cluster
+    ///     var add_node = new Nutanix.ClusterAddNodeV2("add-node", new()
+    ///     {
+    ///         ClusterExtId = clustersExtId,
+    ///         ShouldSkipAddNode = false,
+    ///         ShouldSkipPreExpandChecks = false,
+    ///         NodeParams = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ClusterAddNodeV2NodeParamArgs
+    ///             {
+    ///                 ShouldSkipHostNetworking = false,
+    ///                 HypervisorIsos = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClusterAddNodeV2NodeParamHypervisorIsoArgs
+    ///                     {
+    ///                         Type = cluster_node.UnconfiguredNodes.Apply(unconfiguredNodes =&gt; unconfiguredNodes[0].HypervisorType),
+    ///                     },
+    ///                 },
+    ///                 NodeLists = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClusterAddNodeV2NodeParamNodeListArgs
+    ///                     {
+    ///                         NodeUuid = cluster_node.UnconfiguredNodes.Apply(unconfiguredNodes =&gt; unconfiguredNodes[0].NodeUuid),
+    ///                         Model = cluster_node.UnconfiguredNodes.Apply(unconfiguredNodes =&gt; unconfiguredNodes[0].RackableUnitModel),
+    ///                         BlockId = cluster_node.UnconfiguredNodes.Apply(unconfiguredNodes =&gt; unconfiguredNodes[0].RackableUnitSerial),
+    ///                         HypervisorType = cluster_node.UnconfiguredNodes.Apply(unconfiguredNodes =&gt; unconfiguredNodes[0].HypervisorType),
+    ///                         HypervisorVersion = cluster_node.UnconfiguredNodes.Apply(unconfiguredNodes =&gt; unconfiguredNodes[0].HypervisorVersion),
+    ///                         NodePosition = cluster_node.UnconfiguredNodes.Apply(unconfiguredNodes =&gt; unconfiguredNodes[0].NodePosition),
+    ///                         NosVersion = cluster_node.UnconfiguredNodes.Apply(unconfiguredNodes =&gt; unconfiguredNodes[0].NosVersion),
+    ///                         HypervisorHostname = "example",
+    ///                         CurrentNetworkInterface = node_network_info.NodesNetworkingDetails.Apply(nodesNetworkingDetails =&gt; nodesNetworkingDetails[0].Uplinks[0]?.UplinkLists[0]?.Name),
+    ///                         HypervisorIps = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterAddNodeV2NodeParamNodeListHypervisorIpArgs
+    ///                             {
+    ///                                 Ipv4s = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.ClusterAddNodeV2NodeParamNodeListHypervisorIpIpv4Args
+    ///                                     {
+    ///                                         Value = cluster_node.UnconfiguredNodes.Apply(unconfiguredNodes =&gt; unconfiguredNodes[0].HypervisorIps[0]?.Ipv4s[0]?.Value),
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         CvmIps = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterAddNodeV2NodeParamNodeListCvmIpArgs
+    ///                             {
+    ///                                 Ipv4s = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.ClusterAddNodeV2NodeParamNodeListCvmIpIpv4Args
+    ///                                     {
+    ///                                         Value = cvmIp,
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         IpmiIps = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterAddNodeV2NodeParamNodeListIpmiIpArgs
+    ///                             {
+    ///                                 Ipv4s = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.ClusterAddNodeV2NodeParamNodeListIpmiIpIpv4Args
+    ///                                     {
+    ///                                         Value = cluster_node.UnconfiguredNodes.Apply(unconfiguredNodes =&gt; unconfiguredNodes[0].IpmiIps[0]?.Ipv4s[0]?.Value),
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                         IsRoboMixedHypervisor = true,
+    ///                         Networks = new[]
+    ///                         {
+    ///                             new Nutanix.Inputs.ClusterAddNodeV2NodeParamNodeListNetworkArgs
+    ///                             {
+    ///                                 Name = node_network_info.NodesNetworkingDetails.Apply(nodesNetworkingDetails =&gt; nodesNetworkingDetails[0].NetworkInfos[0]?.Hcis[0]?.Name),
+    ///                                 Networks = node_network_info.NodesNetworkingDetails.Apply(nodesNetworkingDetails =&gt; nodesNetworkingDetails[0].NetworkInfos[0]?.Hcis[0]?.Networks),
+    ///                                 Uplinks = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.ClusterAddNodeV2NodeParamNodeListNetworkUplinkArgs
+    ///                                     {
+    ///                                         Actives = new[]
+    ///                                         {
+    ///                                             new Nutanix.Inputs.ClusterAddNodeV2NodeParamNodeListNetworkUplinkActiveArgs
+    ///                                             {
+    ///                                                 Name = node_network_info.NodesNetworkingDetails.Apply(nodesNetworkingDetails =&gt; nodesNetworkingDetails[0].Uplinks[0]?.UplinkLists[0]?.Name),
+    ///                                                 Mac = node_network_info.NodesNetworkingDetails.Apply(nodesNetworkingDetails =&gt; nodesNetworkingDetails[0].Uplinks[0]?.UplinkLists[0]?.Mac),
+    ///                                                 Value = node_network_info.NodesNetworkingDetails.Apply(nodesNetworkingDetails =&gt; nodesNetworkingDetails[0].Uplinks[0]?.UplinkLists[0]?.Name),
+    ///                                             },
+    ///                                         },
+    ///                                         Standbies = new[]
+    ///                                         {
+    ///                                             new Nutanix.Inputs.ClusterAddNodeV2NodeParamNodeListNetworkUplinkStandbyArgs
+    ///                                             {
+    ///                                                 Name = node_network_info.NodesNetworkingDetails.Apply(nodesNetworkingDetails =&gt; nodesNetworkingDetails[0].Uplinks[0]?.UplinkLists[1]?.Name),
+    ///                                                 Mac = node_network_info.NodesNetworkingDetails.Apply(nodesNetworkingDetails =&gt; nodesNetworkingDetails[0].Uplinks[0]?.UplinkLists[1]?.Mac),
+    ///                                                 Value = node_network_info.NodesNetworkingDetails.Apply(nodesNetworkingDetails =&gt; nodesNetworkingDetails[0].Uplinks[0]?.UplinkLists[1]?.Name),
+    ///                                             },
+    ///                                         },
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         ConfigParams = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ClusterAddNodeV2ConfigParamArgs
+    ///             {
+    ///                 ShouldSkipImaging = true,
+    ///                 TargetHypervisor = cluster_node.UnconfiguredNodes.Apply(unconfiguredNodes =&gt; unconfiguredNodes[0].HypervisorType),
+    ///             },
+    ///         },
+    ///         RemoveNodeParams = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ClusterAddNodeV2RemoveNodeParamArgs
+    ///             {
+    ///                 ExtraParams = new[]
+    ///                 {
+    ///                     new Nutanix.Inputs.ClusterAddNodeV2RemoveNodeParamExtraParamArgs
+    ///                     {
+    ///                         ShouldSkipUpgradeCheck = false,
+    ///                         SkipSpaceCheck = false,
+    ///                         ShouldSkipAddCheck = false,
+    ///                     },
+    ///                 },
+    ///                 ShouldSkipRemove = false,
+    ///                 ShouldSkipPrechecks = false,
+    ///             },
+    ///         },
+    ///     }, new CustomResourceOptions
+    ///     {
+    ///         DependsOn =
+    ///         {
+    ///             node_network_info,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [NutanixResourceType("nutanix:index/clusterAddNodeV2:ClusterAddNodeV2")]
     public partial class ClusterAddNodeV2 : global::Pulumi.CustomResource

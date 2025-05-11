@@ -20,7 +20,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<string>? ExtId { get; set; }
 
         /// <summary>
-        /// Index of the serial port.
+        /// ) Index of the serial port.
         /// </summary>
         [Input("index")]
         public Input<int>? Index { get; set; }

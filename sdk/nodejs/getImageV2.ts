@@ -8,6 +8,17 @@ import * as utilities from "./utilities";
 
 /**
  * Retrieve the image details for the provided external identifier.
+ *
+ * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const get_image = nutanix.getImageV2({
+ *     extId: "0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b",
+ * });
+ * ```
  */
 export function getImageV2(args: GetImageV2Args, opts?: pulumi.InvokeOptions): Promise<GetImageV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -89,6 +100,17 @@ export interface GetImageV2Result {
 }
 /**
  * Retrieve the image details for the provided external identifier.
+ *
+ * ## Example
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pulumi/nutanix";
+ *
+ * const get_image = nutanix.getImageV2({
+ *     extId: "0005a7b1-0b3b-4b3b-8b3b-0b3b4b3b4b3b",
+ * });
+ * ```
  */
 export function getImageV2Output(args: GetImageV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetImageV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

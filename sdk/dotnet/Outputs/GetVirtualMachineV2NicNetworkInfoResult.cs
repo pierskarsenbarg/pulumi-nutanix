@@ -18,17 +18,20 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// The IP address configurations.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVirtualMachineV2NicNetworkInfoIpv4ConfigResult> Ipv4Configs;
+        /// <summary>
+        /// The runtime IP address information of the NIC.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetVirtualMachineV2NicNetworkInfoIpv4InfoResult> Ipv4Infos;
         /// <summary>
         /// The network function chain associates with the NIC. Only valid if nic_type is NORMAL_NIC.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVirtualMachineV2NicNetworkInfoNetworkFunctionChainResult> NetworkFunctionChains;
         /// <summary>
-        /// The type of this Network function NIC. Defaults to INGRESS.
+        /// The type of this Network function NIC. Defaults to INGRESS.  values are: TAP, EGRESS, INGRESS.
         /// </summary>
         public readonly string NetworkFunctionNicType;
         /// <summary>
-        /// NIC type. Defaults to NORMAL_NIC.
+        /// NIC type. Defaults to NORMAL_NIC. The acceptable values are: SPAN_DESTINATION_NIC, NORMAL_NIC, DIRECT_NIC, NETWORK_FUNCTION_NIC.
         /// </summary>
         public readonly string NicType;
         /// <summary>
@@ -36,7 +39,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly bool ShouldAllowUnknownMacs;
         /// <summary>
-        /// Network identifier for this adapter. Only valid if nic_type is NORMAL_NIC or DIRECT_NIC
+        /// Network identifier for this adapter. Only valid if nic_type is NORMAL_NIC or DIRECT_NIC.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVirtualMachineV2NicNetworkInfoSubnetResult> Subnets;
         /// <summary>
@@ -44,7 +47,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<int> TrunkedVlans;
         /// <summary>
-        /// all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
+        /// all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs. values are: ACCESS, TRUNKED.
         /// </summary>
         public readonly string VlanMode;
 

@@ -18,6 +18,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// IP of address
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPbrsV2RoutingPolicyPolicyPolicyMatchDestinationSubnetPrefixIpv6IpResult> Ips;
+        /// <summary>
+        /// The prefix length of the network to which this host IPv4/IPv6 address belongs.
+        /// </summary>
         public readonly int PrefixLength;
 
         [OutputConstructor]

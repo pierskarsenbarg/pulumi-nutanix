@@ -14,47 +14,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVmSpecGpusResult
     {
-        /// <summary>
-        /// The device Id of the GPU.
-        /// </summary>
         public readonly int DeviceId;
-        /// <summary>
-        /// A globally unique identifier of an instance that is suitable for external consumption.
-        /// </summary>
         public readonly string ExtId;
-        /// <summary>
-        /// Fraction of the physical GPU assigned.
-        /// </summary>
         public readonly int Fraction;
-        /// <summary>
-        /// GPU frame buffer size in bytes.
-        /// </summary>
         public readonly int FrameBufferSizeBytes;
-        /// <summary>
-        /// Last determined guest driver version.
-        /// </summary>
         public readonly string GuestDriverVersion;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGpusLinkResult> Links;
-        /// <summary>
-        /// The mode of this GPU.
-        /// </summary>
         public readonly string Mode;
-        /// <summary>
-        /// Name of the GPU resource.
-        /// </summary>
         public readonly string Name;
-        /// <summary>
-        /// Number of supported virtual display heads.
-        /// </summary>
         public readonly int NumVirtualDisplayHeads;
-        /// <summary>
-        /// The (S)egment:(B)us:(D)evice.(F)unction hardware address. See
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecGpusPciAddressResult> PciAddresses;
         public readonly string TenantId;
-        /// <summary>
-        /// The vendor of the GPU.
-        /// </summary>
         public readonly string Vendor;
 
         [OutputConstructor]

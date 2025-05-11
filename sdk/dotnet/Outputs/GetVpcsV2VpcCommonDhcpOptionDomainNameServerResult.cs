@@ -14,13 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetVpcsV2VpcCommonDhcpOptionDomainNameServerResult
     {
-        /// <summary>
-        /// Reference to address configuration
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv4Result> Ipv4s;
-        /// <summary>
-        /// Reference to address configuration
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetVpcsV2VpcCommonDhcpOptionDomainNameServerIpv6Result> Ipv6s;
 
         [OutputConstructor]

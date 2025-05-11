@@ -22,7 +22,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// <summary>
         /// - (Required) Ip address.
         /// 
-        /// See detailed information in [Nutanix Cluster Entity V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.0).
+        /// See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.0#tag/Clusters/operation/createCluster).
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;
