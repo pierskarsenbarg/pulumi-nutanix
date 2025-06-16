@@ -13,8 +13,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlGetArgs : global::Pulumi.ResourceArgs
     {
-        [Input("value", required: true)]
-        public Input<string> Value { get; set; } = null!;
+        [Input("value")]
+        public Input<string>? Value { get; set; }
 
         public VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlGetArgs()
         {
