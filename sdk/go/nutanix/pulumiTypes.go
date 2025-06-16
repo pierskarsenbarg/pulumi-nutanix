@@ -18354,7 +18354,7 @@ func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSyspr
 }
 
 type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXml struct {
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXmlInput is an input type that accepts DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXmlArgs and DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXmlOutput values.
@@ -18369,7 +18369,7 @@ type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepS
 }
 
 type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXmlArgs struct {
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXmlArgs) ElementType() reflect.Type {
@@ -18423,10 +18423,10 @@ func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSyspr
 	return o
 }
 
-func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXmlOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXml) string {
+func (o DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXmlOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXml) *string {
 		return v.Value
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 type DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXmlArrayOutput struct{ *pulumi.OutputState }

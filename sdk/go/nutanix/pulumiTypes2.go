@@ -51675,7 +51675,6 @@ func (o VirtualMachineV2GuestCustomizationConfigArrayOutput) Index(i pulumi.IntI
 type VirtualMachineV2GuestCustomizationConfigCloudInit struct {
 	// The script to use for cloud-init.
 	// * `cloud_init_script.user_data`: (Optional) user data object
-	// * `cloud_init_script.user_data.value`: (Optional) base64 encoded cloud init script as string
 	// * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
 	CloudInitScripts []VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScript `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
@@ -51698,7 +51697,6 @@ type VirtualMachineV2GuestCustomizationConfigCloudInitInput interface {
 type VirtualMachineV2GuestCustomizationConfigCloudInitArgs struct {
 	// The script to use for cloud-init.
 	// * `cloud_init_script.user_data`: (Optional) user data object
-	// * `cloud_init_script.user_data.value`: (Optional) base64 encoded cloud init script as string
 	// * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
 	CloudInitScripts VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptArrayInput `pulumi:"cloudInitScripts"`
 	// Type of datasource. Default: CONFIG_DRIVE_V2
@@ -51760,7 +51758,6 @@ func (o VirtualMachineV2GuestCustomizationConfigCloudInitOutput) ToVirtualMachin
 
 // The script to use for cloud-init.
 // * `cloud_init_script.user_data`: (Optional) user data object
-// * `cloud_init_script.user_data.value`: (Optional) base64 encoded cloud init script as string
 // * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
 func (o VirtualMachineV2GuestCustomizationConfigCloudInitOutput) CloudInitScripts() VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptArrayOutput {
 	return o.ApplyT(func(v VirtualMachineV2GuestCustomizationConfigCloudInit) []VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScript {
@@ -52446,7 +52443,6 @@ type VirtualMachineV2GuestCustomizationConfigSysprep struct {
 	InstallType *string `pulumi:"installType"`
 	// Object either UnattendXml or CustomKeyValues
 	// * `sysprep_script.unattend_xml`: (Optional) xml object
-	// * `sysprep_script.unattend_xml.value`: (Optional) base64 encoded sysprep unattended xml
 	// * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
 	SysprepScripts []VirtualMachineV2GuestCustomizationConfigSysprepSysprepScript `pulumi:"sysprepScripts"`
 }
@@ -52467,7 +52463,6 @@ type VirtualMachineV2GuestCustomizationConfigSysprepArgs struct {
 	InstallType pulumi.StringPtrInput `pulumi:"installType"`
 	// Object either UnattendXml or CustomKeyValues
 	// * `sysprep_script.unattend_xml`: (Optional) xml object
-	// * `sysprep_script.unattend_xml.value`: (Optional) base64 encoded sysprep unattended xml
 	// * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
 	SysprepScripts VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptArrayInput `pulumi:"sysprepScripts"`
 }
@@ -52530,7 +52525,6 @@ func (o VirtualMachineV2GuestCustomizationConfigSysprepOutput) InstallType() pul
 
 // Object either UnattendXml or CustomKeyValues
 // * `sysprep_script.unattend_xml`: (Optional) xml object
-// * `sysprep_script.unattend_xml.value`: (Optional) base64 encoded sysprep unattended xml
 // * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
 func (o VirtualMachineV2GuestCustomizationConfigSysprepOutput) SysprepScripts() VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptArrayOutput {
 	return o.ApplyT(func(v VirtualMachineV2GuestCustomizationConfigSysprep) []VirtualMachineV2GuestCustomizationConfigSysprepSysprepScript {
@@ -53106,7 +53100,7 @@ func (o VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyVal
 }
 
 type VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml struct {
-	Value string `pulumi:"value"`
+	Value *string `pulumi:"value"`
 }
 
 // VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlInput is an input type that accepts VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlArgs and VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlOutput values.
@@ -53121,7 +53115,7 @@ type VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlInpu
 }
 
 type VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlArgs struct {
-	Value pulumi.StringInput `pulumi:"value"`
+	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
 func (VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlArgs) ElementType() reflect.Type {
@@ -53175,8 +53169,10 @@ func (o VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlO
 	return o
 }
 
-func (o VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml) string { return v.Value }).(pulumi.StringOutput)
+func (o VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXml) *string {
+		return v.Value
+	}).(pulumi.StringPtrOutput)
 }
 
 type VirtualMachineV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlArrayOutput struct{ *pulumi.OutputState }

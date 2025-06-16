@@ -44740,7 +44740,6 @@ export interface VirtualMachineV2GuestCustomizationConfigCloudInit {
     /**
      * The script to use for cloud-init.
      * * `cloud_init_script.user_data`: (Optional) user data object
-     * * `cloud_init_script.user_data.value`: (Optional) base64 encoded cloud init script as string
      * * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
      */
     cloudInitScripts: outputs.VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScript[];
@@ -44797,7 +44796,6 @@ export interface VirtualMachineV2GuestCustomizationConfigSysprep {
     /**
      * Object either UnattendXml or CustomKeyValues
      * * `sysprep_script.unattend_xml`: (Optional) xml object
-     * * `sysprep_script.unattend_xml.value`: (Optional) base64 encoded sysprep unattended xml
      * * `sysprep_script.custom_key_values`: (Optional) The list of the individual KeyValuePair elements.
      */
     sysprepScripts: outputs.VirtualMachineV2GuestCustomizationConfigSysprepSysprepScript[];

@@ -19,7 +19,6 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// <summary>
         /// The script to use for cloud-init.
         /// * `cloud_init_script.user_data`: (Optional) user data object
-        /// * `cloud_init_script.user_data.value`: (Optional) base64 encoded cloud init script as string
         /// * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
         /// </summary>
         public InputList<Inputs.VirtualMachineV2GuestCustomizationConfigCloudInitCloudInitScriptArgs> CloudInitScripts
