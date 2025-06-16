@@ -4,6 +4,7 @@ env:
   PULUMI_GO_DEP_ROOT: ${{ github.workspace }}/..
   PULUMI_LOCAL_NUGET: ${{ github.workspace }}/nuget
   PULUMI_TEST_OWNER: "pierskarsenbarg"
+  PULUMI_VERSION: v3.175.0
 jobs:
   build_sdk:
     name: build_sdk
@@ -30,6 +31,8 @@ jobs:
           repo: pulumi/pulumictl
       - name: Install Pulumi CLI
         uses: pulumi/actions@v6
+        with:
+          pulumi-version: ${{env.PULUMI_VERSION}}
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -109,6 +112,8 @@ jobs:
           repo: pulumi/pulumictl
       - name: Install Pulumi CLI
         uses: pulumi/actions@v6
+        with:
+          pulumi-version: ${{env.PULUMI_VERSION}}
       - if: github.event_name == 'pull_request'
         name: Install Schema Tools
         uses: jaxxstorm/action-install-gh-release@v2.1.0
