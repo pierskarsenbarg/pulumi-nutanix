@@ -13,6 +13,210 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo struct {
+	Message    string   `pulumi:"message"`
+	Operations []string `pulumi:"operations"`
+}
+
+// GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArgs and GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput values.
+// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoInput` via:
+//
+//	GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArgs{...}
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoInput interface {
+	pulumi.Input
+
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArgs struct {
+	Message    pulumi.StringInput      `pulumi:"message"`
+	Operations pulumi.StringArrayInput `pulumi:"operations"`
+}
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo)(nil)).Elem()
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput {
+	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutputWithContext(context.Background())
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput)
+}
+
+// GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArray and GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput values.
+// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayInput` via:
+//
+//	GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArray{ GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArgs{...} }
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArray []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoInput
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo)(nil)).Elem()
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput {
+	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo)(nil)).Elem()
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo) string {
+		return v.Message
+	}).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput) Operations() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo) []string {
+		return v.Operations
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo)(nil)).Elem()
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput) Index(i pulumi.IntInput) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo {
+		return vs[0].([]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo)[vs[1].(int)]
+	}).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange struct {
+	First  string `pulumi:"first"`
+	Second string `pulumi:"second"`
+}
+
+// GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArgs and GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput values.
+// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeInput` via:
+//
+//	GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArgs{...}
+type GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeInput interface {
+	pulumi.Input
+
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput() GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArgs struct {
+	First  pulumi.StringInput `pulumi:"first"`
+	Second pulumi.StringInput `pulumi:"second"`
+}
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange)(nil)).Elem()
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput() GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput {
+	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutputWithContext(context.Background())
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput)
+}
+
+// GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArray and GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput values.
+// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayInput` via:
+//
+//	GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArray{ GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArgs{...} }
+type GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput
+	ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArray []GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeInput
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange)(nil)).Elem()
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput {
+	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange)(nil)).Elem()
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput() GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput) First() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange) string { return v.First }).(pulumi.StringOutput)
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput) Second() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange) string { return v.Second }).(pulumi.StringOutput)
+}
+
+type GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange)(nil)).Elem()
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput {
+	return o
+}
+
+func (o GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput) Index(i pulumi.IntInput) GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange {
+		return vs[0].([]GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange)[vs[1].(int)]
+	}).(GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput)
+}
+
 type GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRange struct {
 	First  string `pulumi:"first"`
 	Second string `pulumi:"second"`
@@ -55310,228 +55514,11 @@ func (o GetProjectsEntityEnvironmentReferenceListArrayOutput) Index(i pulumi.Int
 	}).(GetProjectsEntityEnvironmentReferenceListOutput)
 }
 
-type GetProjectsEntityExternalNetworkList struct {
-	// (Optional) the name.
-	Name string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetProjectsEntityExternalNetworkListInput is an input type that accepts GetProjectsEntityExternalNetworkListArgs and GetProjectsEntityExternalNetworkListOutput values.
-// You can construct a concrete instance of `GetProjectsEntityExternalNetworkListInput` via:
-//
-//	GetProjectsEntityExternalNetworkListArgs{...}
-type GetProjectsEntityExternalNetworkListInput interface {
-	pulumi.Input
-
-	ToGetProjectsEntityExternalNetworkListOutput() GetProjectsEntityExternalNetworkListOutput
-	ToGetProjectsEntityExternalNetworkListOutputWithContext(context.Context) GetProjectsEntityExternalNetworkListOutput
-}
-
-type GetProjectsEntityExternalNetworkListArgs struct {
-	// (Optional) the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetProjectsEntityExternalNetworkListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectsEntityExternalNetworkList)(nil)).Elem()
-}
-
-func (i GetProjectsEntityExternalNetworkListArgs) ToGetProjectsEntityExternalNetworkListOutput() GetProjectsEntityExternalNetworkListOutput {
-	return i.ToGetProjectsEntityExternalNetworkListOutputWithContext(context.Background())
-}
-
-func (i GetProjectsEntityExternalNetworkListArgs) ToGetProjectsEntityExternalNetworkListOutputWithContext(ctx context.Context) GetProjectsEntityExternalNetworkListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsEntityExternalNetworkListOutput)
-}
-
-// GetProjectsEntityExternalNetworkListArrayInput is an input type that accepts GetProjectsEntityExternalNetworkListArray and GetProjectsEntityExternalNetworkListArrayOutput values.
-// You can construct a concrete instance of `GetProjectsEntityExternalNetworkListArrayInput` via:
-//
-//	GetProjectsEntityExternalNetworkListArray{ GetProjectsEntityExternalNetworkListArgs{...} }
-type GetProjectsEntityExternalNetworkListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectsEntityExternalNetworkListArrayOutput() GetProjectsEntityExternalNetworkListArrayOutput
-	ToGetProjectsEntityExternalNetworkListArrayOutputWithContext(context.Context) GetProjectsEntityExternalNetworkListArrayOutput
-}
-
-type GetProjectsEntityExternalNetworkListArray []GetProjectsEntityExternalNetworkListInput
-
-func (GetProjectsEntityExternalNetworkListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectsEntityExternalNetworkList)(nil)).Elem()
-}
-
-func (i GetProjectsEntityExternalNetworkListArray) ToGetProjectsEntityExternalNetworkListArrayOutput() GetProjectsEntityExternalNetworkListArrayOutput {
-	return i.ToGetProjectsEntityExternalNetworkListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectsEntityExternalNetworkListArray) ToGetProjectsEntityExternalNetworkListArrayOutputWithContext(ctx context.Context) GetProjectsEntityExternalNetworkListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsEntityExternalNetworkListArrayOutput)
-}
-
-type GetProjectsEntityExternalNetworkListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectsEntityExternalNetworkListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectsEntityExternalNetworkList)(nil)).Elem()
-}
-
-func (o GetProjectsEntityExternalNetworkListOutput) ToGetProjectsEntityExternalNetworkListOutput() GetProjectsEntityExternalNetworkListOutput {
-	return o
-}
-
-func (o GetProjectsEntityExternalNetworkListOutput) ToGetProjectsEntityExternalNetworkListOutputWithContext(ctx context.Context) GetProjectsEntityExternalNetworkListOutput {
-	return o
-}
-
-// (Optional) the name.
-func (o GetProjectsEntityExternalNetworkListOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsEntityExternalNetworkList) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// (Required) the UUID.
-func (o GetProjectsEntityExternalNetworkListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsEntityExternalNetworkList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetProjectsEntityExternalNetworkListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectsEntityExternalNetworkListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectsEntityExternalNetworkList)(nil)).Elem()
-}
-
-func (o GetProjectsEntityExternalNetworkListArrayOutput) ToGetProjectsEntityExternalNetworkListArrayOutput() GetProjectsEntityExternalNetworkListArrayOutput {
-	return o
-}
-
-func (o GetProjectsEntityExternalNetworkListArrayOutput) ToGetProjectsEntityExternalNetworkListArrayOutputWithContext(ctx context.Context) GetProjectsEntityExternalNetworkListArrayOutput {
-	return o
-}
-
-func (o GetProjectsEntityExternalNetworkListArrayOutput) Index(i pulumi.IntInput) GetProjectsEntityExternalNetworkListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsEntityExternalNetworkList {
-		return vs[0].([]GetProjectsEntityExternalNetworkList)[vs[1].(int)]
-	}).(GetProjectsEntityExternalNetworkListOutput)
-}
-
-type GetProjectsEntityExternalUserGroupReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind string `pulumi:"kind"`
-	// (Optional) the name.
-	Name string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetProjectsEntityExternalUserGroupReferenceListInput is an input type that accepts GetProjectsEntityExternalUserGroupReferenceListArgs and GetProjectsEntityExternalUserGroupReferenceListOutput values.
-// You can construct a concrete instance of `GetProjectsEntityExternalUserGroupReferenceListInput` via:
-//
-//	GetProjectsEntityExternalUserGroupReferenceListArgs{...}
-type GetProjectsEntityExternalUserGroupReferenceListInput interface {
-	pulumi.Input
-
-	ToGetProjectsEntityExternalUserGroupReferenceListOutput() GetProjectsEntityExternalUserGroupReferenceListOutput
-	ToGetProjectsEntityExternalUserGroupReferenceListOutputWithContext(context.Context) GetProjectsEntityExternalUserGroupReferenceListOutput
-}
-
-type GetProjectsEntityExternalUserGroupReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringInput `pulumi:"kind"`
-	// (Optional) the name.
-	Name pulumi.StringInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetProjectsEntityExternalUserGroupReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectsEntityExternalUserGroupReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectsEntityExternalUserGroupReferenceListArgs) ToGetProjectsEntityExternalUserGroupReferenceListOutput() GetProjectsEntityExternalUserGroupReferenceListOutput {
-	return i.ToGetProjectsEntityExternalUserGroupReferenceListOutputWithContext(context.Background())
-}
-
-func (i GetProjectsEntityExternalUserGroupReferenceListArgs) ToGetProjectsEntityExternalUserGroupReferenceListOutputWithContext(ctx context.Context) GetProjectsEntityExternalUserGroupReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsEntityExternalUserGroupReferenceListOutput)
-}
-
-// GetProjectsEntityExternalUserGroupReferenceListArrayInput is an input type that accepts GetProjectsEntityExternalUserGroupReferenceListArray and GetProjectsEntityExternalUserGroupReferenceListArrayOutput values.
-// You can construct a concrete instance of `GetProjectsEntityExternalUserGroupReferenceListArrayInput` via:
-//
-//	GetProjectsEntityExternalUserGroupReferenceListArray{ GetProjectsEntityExternalUserGroupReferenceListArgs{...} }
-type GetProjectsEntityExternalUserGroupReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToGetProjectsEntityExternalUserGroupReferenceListArrayOutput() GetProjectsEntityExternalUserGroupReferenceListArrayOutput
-	ToGetProjectsEntityExternalUserGroupReferenceListArrayOutputWithContext(context.Context) GetProjectsEntityExternalUserGroupReferenceListArrayOutput
-}
-
-type GetProjectsEntityExternalUserGroupReferenceListArray []GetProjectsEntityExternalUserGroupReferenceListInput
-
-func (GetProjectsEntityExternalUserGroupReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectsEntityExternalUserGroupReferenceList)(nil)).Elem()
-}
-
-func (i GetProjectsEntityExternalUserGroupReferenceListArray) ToGetProjectsEntityExternalUserGroupReferenceListArrayOutput() GetProjectsEntityExternalUserGroupReferenceListArrayOutput {
-	return i.ToGetProjectsEntityExternalUserGroupReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i GetProjectsEntityExternalUserGroupReferenceListArray) ToGetProjectsEntityExternalUserGroupReferenceListArrayOutputWithContext(ctx context.Context) GetProjectsEntityExternalUserGroupReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsEntityExternalUserGroupReferenceListArrayOutput)
-}
-
-type GetProjectsEntityExternalUserGroupReferenceListOutput struct{ *pulumi.OutputState }
-
-func (GetProjectsEntityExternalUserGroupReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetProjectsEntityExternalUserGroupReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectsEntityExternalUserGroupReferenceListOutput) ToGetProjectsEntityExternalUserGroupReferenceListOutput() GetProjectsEntityExternalUserGroupReferenceListOutput {
-	return o
-}
-
-func (o GetProjectsEntityExternalUserGroupReferenceListOutput) ToGetProjectsEntityExternalUserGroupReferenceListOutputWithContext(ctx context.Context) GetProjectsEntityExternalUserGroupReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o GetProjectsEntityExternalUserGroupReferenceListOutput) Kind() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsEntityExternalUserGroupReferenceList) string { return v.Kind }).(pulumi.StringOutput)
-}
-
-// (Optional) the name.
-func (o GetProjectsEntityExternalUserGroupReferenceListOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsEntityExternalUserGroupReferenceList) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// (Required) the UUID.
-func (o GetProjectsEntityExternalUserGroupReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetProjectsEntityExternalUserGroupReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetProjectsEntityExternalUserGroupReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetProjectsEntityExternalUserGroupReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetProjectsEntityExternalUserGroupReferenceList)(nil)).Elem()
-}
-
-func (o GetProjectsEntityExternalUserGroupReferenceListArrayOutput) ToGetProjectsEntityExternalUserGroupReferenceListArrayOutput() GetProjectsEntityExternalUserGroupReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectsEntityExternalUserGroupReferenceListArrayOutput) ToGetProjectsEntityExternalUserGroupReferenceListArrayOutputWithContext(ctx context.Context) GetProjectsEntityExternalUserGroupReferenceListArrayOutput {
-	return o
-}
-
-func (o GetProjectsEntityExternalUserGroupReferenceListArrayOutput) Index(i pulumi.IntInput) GetProjectsEntityExternalUserGroupReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsEntityExternalUserGroupReferenceList {
-		return vs[0].([]GetProjectsEntityExternalUserGroupReferenceList)[vs[1].(int)]
-	}).(GetProjectsEntityExternalUserGroupReferenceListOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRangeInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRangeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRangeArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRangeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilitySnapshotInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilitySnapshotArgs{})
@@ -56504,10 +56491,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityCategoryArrayInput)(nil)).Elem(), GetProjectsEntityCategoryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityEnvironmentReferenceListInput)(nil)).Elem(), GetProjectsEntityEnvironmentReferenceListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityEnvironmentReferenceListArrayInput)(nil)).Elem(), GetProjectsEntityEnvironmentReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityExternalNetworkListInput)(nil)).Elem(), GetProjectsEntityExternalNetworkListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityExternalNetworkListArrayInput)(nil)).Elem(), GetProjectsEntityExternalNetworkListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityExternalUserGroupReferenceListInput)(nil)).Elem(), GetProjectsEntityExternalUserGroupReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityExternalUserGroupReferenceListArrayInput)(nil)).Elem(), GetProjectsEntityExternalUserGroupReferenceListArray{})
+	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput{})
+	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput{})
+	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput{})
 	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRangeOutput{})
 	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionUnprocessedRangeArrayOutput{})
 	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilitySnapshotOutput{})
@@ -57480,8 +57467,4 @@ func init() {
 	pulumi.RegisterOutputType(GetProjectsEntityCategoryArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectsEntityEnvironmentReferenceListOutput{})
 	pulumi.RegisterOutputType(GetProjectsEntityEnvironmentReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectsEntityExternalNetworkListOutput{})
-	pulumi.RegisterOutputType(GetProjectsEntityExternalNetworkListArrayOutput{})
-	pulumi.RegisterOutputType(GetProjectsEntityExternalUserGroupReferenceListOutput{})
-	pulumi.RegisterOutputType(GetProjectsEntityExternalUserGroupReferenceListArrayOutput{})
 }

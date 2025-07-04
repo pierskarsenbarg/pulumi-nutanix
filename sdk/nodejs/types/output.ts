@@ -11330,6 +11330,17 @@ export interface GetImageCurrentClusterReferenceList {
     uuid: string;
 }
 
+export interface GetImageDataSourceReference {
+    /**
+     * - The kind name (Default value: project).
+     */
+    kind: string;
+    /**
+     * - the UUID.
+     */
+    uuid: string;
+}
+
 export interface GetImagePlacementPoliciesV2PlacementPolicy {
     /**
      * (Required) Category-based entity filter.
@@ -32471,6 +32482,17 @@ export interface ImageCurrentClusterReferenceList {
     uuid: string;
 }
 
+export interface ImageDataSourceReference {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
+    kind: string;
+    /**
+     * - the UUID(Required).
+     */
+    uuid: string;
+}
+
 export interface ImagePlacementPolicyV2ClusterEntityFilter {
     /**
      * Array of strings
@@ -44157,7 +44179,7 @@ export interface VirtualMachineNicListIpEndpointList {
     /**
      * - Address type. It can only be "ASSIGNED" in the spec. If no type is specified in the spec, the default type is set to "ASSIGNED". (Options : ASSIGNED , LEARNED)
      */
-    type: string;
+    type?: string;
 }
 
 export interface VirtualMachineNicListStatus {

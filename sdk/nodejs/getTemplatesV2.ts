@@ -19,7 +19,7 @@ import * as utilities from "./utilities";
  * const filtered_templates = nutanix.getTemplatesV2({
  *     filter: "startswith(templateName,'template_name')",
  *     limit: 10,
- *     page: 1,
+ *     page: 0,
  * });
  * ```
  *
@@ -441,7 +441,7 @@ export interface GetTemplatesV2Result {
  * const filtered_templates = nutanix.getTemplatesV2({
  *     filter: "startswith(templateName,'template_name')",
  *     limit: 10,
- *     page: 1,
+ *     page: 0,
  * });
  * ```
  *

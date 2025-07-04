@@ -19,7 +19,7 @@ import * as utilities from "./utilities";
  * const filtered_images = nutanix.getImagesV2({
  *     filter: "startswith(name,'image_name')",
  *     limit: 10,
- *     page: 1,
+ *     page: 0,
  * });
  * ```
  *
@@ -148,7 +148,7 @@ export interface GetImagesV2Result {
  * const filtered_images = nutanix.getImagesV2({
  *     filter: "startswith(name,'image_name')",
  *     limit: 10,
- *     page: 1,
+ *     page: 0,
  * });
  * ```
  *

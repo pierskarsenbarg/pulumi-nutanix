@@ -13,6 +13,116 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp struct {
+	// Reference to IP Configuration
+	Ipv4s []GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4 `pulumi:"ipv4s"`
+	// Reference to IP Configuration
+	Ipv6s []GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv6 `pulumi:"ipv6s"`
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArgs{...}
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArgs struct {
+	// Reference to IP Configuration
+	Ipv4s GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4ArrayInput `pulumi:"ipv4s"`
+	// Reference to IP Configuration
+	Ipv6s GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput)
+}
+
+// GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput values.
+// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayInput` via:
+//
+//	GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArgs{...} }
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayInput interface {
+	pulumi.Input
+
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput
+	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpInput
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp)(nil)).Elem()
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput {
+	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput {
+	return o
+}
+
+// Reference to IP Configuration
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput) Ipv4s() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4ArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp) []GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4 {
+		return v.Ipv4s
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4ArrayOutput)
+}
+
+// Reference to IP Configuration
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput) Ipv6s() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv6ArrayOutput {
+	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp) []GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv6 {
+		return v.Ipv6s
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv6ArrayOutput)
+}
+
+type GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp)(nil)).Elem()
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput {
+	return o
+}
+
+func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp {
+		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp)[vs[1].(int)]
+	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput)
+}
+
 type GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4 struct {
 	// Prefix length of the network to which this host IPv4 address belongs. Default value is 32.
 	PrefixLength int `pulumi:"prefixLength"`
@@ -16251,6 +16361,112 @@ func (o GetImageCurrentClusterReferenceListArrayOutput) Index(i pulumi.IntInput)
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetImageCurrentClusterReferenceList {
 		return vs[0].([]GetImageCurrentClusterReferenceList)[vs[1].(int)]
 	}).(GetImageCurrentClusterReferenceListOutput)
+}
+
+type GetImageDataSourceReference struct {
+	// - The kind name (Default value: project).
+	Kind string `pulumi:"kind"`
+	// - the UUID.
+	Uuid string `pulumi:"uuid"`
+}
+
+// GetImageDataSourceReferenceInput is an input type that accepts GetImageDataSourceReferenceArgs and GetImageDataSourceReferenceOutput values.
+// You can construct a concrete instance of `GetImageDataSourceReferenceInput` via:
+//
+//	GetImageDataSourceReferenceArgs{...}
+type GetImageDataSourceReferenceInput interface {
+	pulumi.Input
+
+	ToGetImageDataSourceReferenceOutput() GetImageDataSourceReferenceOutput
+	ToGetImageDataSourceReferenceOutputWithContext(context.Context) GetImageDataSourceReferenceOutput
+}
+
+type GetImageDataSourceReferenceArgs struct {
+	// - The kind name (Default value: project).
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// - the UUID.
+	Uuid pulumi.StringInput `pulumi:"uuid"`
+}
+
+func (GetImageDataSourceReferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImageDataSourceReference)(nil)).Elem()
+}
+
+func (i GetImageDataSourceReferenceArgs) ToGetImageDataSourceReferenceOutput() GetImageDataSourceReferenceOutput {
+	return i.ToGetImageDataSourceReferenceOutputWithContext(context.Background())
+}
+
+func (i GetImageDataSourceReferenceArgs) ToGetImageDataSourceReferenceOutputWithContext(ctx context.Context) GetImageDataSourceReferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImageDataSourceReferenceOutput)
+}
+
+// GetImageDataSourceReferenceArrayInput is an input type that accepts GetImageDataSourceReferenceArray and GetImageDataSourceReferenceArrayOutput values.
+// You can construct a concrete instance of `GetImageDataSourceReferenceArrayInput` via:
+//
+//	GetImageDataSourceReferenceArray{ GetImageDataSourceReferenceArgs{...} }
+type GetImageDataSourceReferenceArrayInput interface {
+	pulumi.Input
+
+	ToGetImageDataSourceReferenceArrayOutput() GetImageDataSourceReferenceArrayOutput
+	ToGetImageDataSourceReferenceArrayOutputWithContext(context.Context) GetImageDataSourceReferenceArrayOutput
+}
+
+type GetImageDataSourceReferenceArray []GetImageDataSourceReferenceInput
+
+func (GetImageDataSourceReferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetImageDataSourceReference)(nil)).Elem()
+}
+
+func (i GetImageDataSourceReferenceArray) ToGetImageDataSourceReferenceArrayOutput() GetImageDataSourceReferenceArrayOutput {
+	return i.ToGetImageDataSourceReferenceArrayOutputWithContext(context.Background())
+}
+
+func (i GetImageDataSourceReferenceArray) ToGetImageDataSourceReferenceArrayOutputWithContext(ctx context.Context) GetImageDataSourceReferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetImageDataSourceReferenceArrayOutput)
+}
+
+type GetImageDataSourceReferenceOutput struct{ *pulumi.OutputState }
+
+func (GetImageDataSourceReferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetImageDataSourceReference)(nil)).Elem()
+}
+
+func (o GetImageDataSourceReferenceOutput) ToGetImageDataSourceReferenceOutput() GetImageDataSourceReferenceOutput {
+	return o
+}
+
+func (o GetImageDataSourceReferenceOutput) ToGetImageDataSourceReferenceOutputWithContext(ctx context.Context) GetImageDataSourceReferenceOutput {
+	return o
+}
+
+// - The kind name (Default value: project).
+func (o GetImageDataSourceReferenceOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImageDataSourceReference) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// - the UUID.
+func (o GetImageDataSourceReferenceOutput) Uuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImageDataSourceReference) string { return v.Uuid }).(pulumi.StringOutput)
+}
+
+type GetImageDataSourceReferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetImageDataSourceReferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetImageDataSourceReference)(nil)).Elem()
+}
+
+func (o GetImageDataSourceReferenceArrayOutput) ToGetImageDataSourceReferenceArrayOutput() GetImageDataSourceReferenceArrayOutput {
+	return o
+}
+
+func (o GetImageDataSourceReferenceArrayOutput) ToGetImageDataSourceReferenceArrayOutputWithContext(ctx context.Context) GetImageDataSourceReferenceArrayOutput {
+	return o
+}
+
+func (o GetImageDataSourceReferenceArrayOutput) Index(i pulumi.IntInput) GetImageDataSourceReferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetImageDataSourceReference {
+		return vs[0].([]GetImageDataSourceReference)[vs[1].(int)]
+	}).(GetImageDataSourceReferenceOutput)
 }
 
 type GetImagePlacementPoliciesV2PlacementPolicy struct {
@@ -64037,211 +64253,9 @@ func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput) I
 	}).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput)
 }
 
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo struct {
-	Message    string   `pulumi:"message"`
-	Operations []string `pulumi:"operations"`
-}
-
-// GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArgs and GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput values.
-// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoInput` via:
-//
-//	GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArgs{...}
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoInput interface {
-	pulumi.Input
-
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArgs struct {
-	Message    pulumi.StringInput      `pulumi:"message"`
-	Operations pulumi.StringArrayInput `pulumi:"operations"`
-}
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo)(nil)).Elem()
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput {
-	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutputWithContext(context.Background())
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput)
-}
-
-// GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArray and GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput values.
-// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayInput` via:
-//
-//	GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArray{ GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArgs{...} }
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArray []GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoInput
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo)(nil)).Elem()
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput {
-	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo)(nil)).Elem()
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo) string {
-		return v.Message
-	}).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput) Operations() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo) []string {
-		return v.Operations
-	}).(pulumi.StringArrayOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo)(nil)).Elem()
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput) Index(i pulumi.IntInput) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo {
-		return vs[0].([]GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfo)[vs[1].(int)]
-	}).(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange struct {
-	First  string `pulumi:"first"`
-	Second string `pulumi:"second"`
-}
-
-// GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArgs and GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput values.
-// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeInput` via:
-//
-//	GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArgs{...}
-type GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeInput interface {
-	pulumi.Input
-
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput() GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArgs struct {
-	First  pulumi.StringInput `pulumi:"first"`
-	Second pulumi.StringInput `pulumi:"second"`
-}
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange)(nil)).Elem()
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput() GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput {
-	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutputWithContext(context.Background())
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArgs) ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput)
-}
-
-// GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayInput is an input type that accepts GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArray and GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput values.
-// You can construct a concrete instance of `GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayInput` via:
-//
-//	GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArray{ GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArgs{...} }
-type GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput
-	ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutputWithContext(context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArray []GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeInput
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange)(nil)).Elem()
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput {
-	return i.ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArray) ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange)(nil)).Elem()
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput() GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput) First() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange) string { return v.First }).(pulumi.StringOutput)
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput) Second() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange) string { return v.Second }).(pulumi.StringOutput)
-}
-
-type GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange)(nil)).Elem()
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput() GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput) ToGetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutputWithContext(ctx context.Context) GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput {
-	return o
-}
-
-func (o GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput) Index(i pulumi.IntInput) GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange {
-		return vs[0].([]GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRange)[vs[1].(int)]
-	}).(GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4Args{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4ArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv6Input)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv6Args{})
@@ -64496,6 +64510,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageClusterReferenceArrayInput)(nil)).Elem(), GetImageClusterReferenceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageCurrentClusterReferenceListInput)(nil)).Elem(), GetImageCurrentClusterReferenceListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageCurrentClusterReferenceListArrayInput)(nil)).Elem(), GetImageCurrentClusterReferenceListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDataSourceReferenceInput)(nil)).Elem(), GetImageDataSourceReferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetImageDataSourceReferenceArrayInput)(nil)).Elem(), GetImageDataSourceReferenceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImagePlacementPoliciesV2PlacementPolicyInput)(nil)).Elem(), GetImagePlacementPoliciesV2PlacementPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImagePlacementPoliciesV2PlacementPolicyArrayInput)(nil)).Elem(), GetImagePlacementPoliciesV2PlacementPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImagePlacementPoliciesV2PlacementPolicyClusterEntityFilterInput)(nil)).Elem(), GetImagePlacementPoliciesV2PlacementPolicyClusterEntityFilterArgs{})
@@ -65236,10 +65252,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayInput)(nil)).Elem(), GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArray{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput{})
+	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput{})
 	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4Output{})
 	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4ArrayOutput{})
 	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv6Output{})
@@ -65494,6 +65508,8 @@ func init() {
 	pulumi.RegisterOutputType(GetImageClusterReferenceArrayOutput{})
 	pulumi.RegisterOutputType(GetImageCurrentClusterReferenceListOutput{})
 	pulumi.RegisterOutputType(GetImageCurrentClusterReferenceListArrayOutput{})
+	pulumi.RegisterOutputType(GetImageDataSourceReferenceOutput{})
+	pulumi.RegisterOutputType(GetImageDataSourceReferenceArrayOutput{})
 	pulumi.RegisterOutputType(GetImagePlacementPoliciesV2PlacementPolicyOutput{})
 	pulumi.RegisterOutputType(GetImagePlacementPoliciesV2PlacementPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetImagePlacementPoliciesV2PlacementPolicyClusterEntityFilterOutput{})
@@ -66234,8 +66250,4 @@ func init() {
 	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataOutput{})
 	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoOutput{})
-	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionDbLogMetadataDeregisterInfoArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeOutput{})
-	pulumi.RegisterOutputType(GetNdbTmsCapabilityCapabilityContinuousRegionProcessedRangeArrayOutput{})
 }

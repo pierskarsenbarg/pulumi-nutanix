@@ -13,6 +13,121 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ProjectTunnelReferenceList struct {
+	// (Required) The kind name (Default value: `project`).
+	Kind *string `pulumi:"kind"`
+	// The name for the project.
+	Name *string `pulumi:"name"`
+	// (Required) the UUID.
+	Uuid string `pulumi:"uuid"`
+}
+
+// ProjectTunnelReferenceListInput is an input type that accepts ProjectTunnelReferenceListArgs and ProjectTunnelReferenceListOutput values.
+// You can construct a concrete instance of `ProjectTunnelReferenceListInput` via:
+//
+//	ProjectTunnelReferenceListArgs{...}
+type ProjectTunnelReferenceListInput interface {
+	pulumi.Input
+
+	ToProjectTunnelReferenceListOutput() ProjectTunnelReferenceListOutput
+	ToProjectTunnelReferenceListOutputWithContext(context.Context) ProjectTunnelReferenceListOutput
+}
+
+type ProjectTunnelReferenceListArgs struct {
+	// (Required) The kind name (Default value: `project`).
+	Kind pulumi.StringPtrInput `pulumi:"kind"`
+	// The name for the project.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Required) the UUID.
+	Uuid pulumi.StringInput `pulumi:"uuid"`
+}
+
+func (ProjectTunnelReferenceListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectTunnelReferenceList)(nil)).Elem()
+}
+
+func (i ProjectTunnelReferenceListArgs) ToProjectTunnelReferenceListOutput() ProjectTunnelReferenceListOutput {
+	return i.ToProjectTunnelReferenceListOutputWithContext(context.Background())
+}
+
+func (i ProjectTunnelReferenceListArgs) ToProjectTunnelReferenceListOutputWithContext(ctx context.Context) ProjectTunnelReferenceListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectTunnelReferenceListOutput)
+}
+
+// ProjectTunnelReferenceListArrayInput is an input type that accepts ProjectTunnelReferenceListArray and ProjectTunnelReferenceListArrayOutput values.
+// You can construct a concrete instance of `ProjectTunnelReferenceListArrayInput` via:
+//
+//	ProjectTunnelReferenceListArray{ ProjectTunnelReferenceListArgs{...} }
+type ProjectTunnelReferenceListArrayInput interface {
+	pulumi.Input
+
+	ToProjectTunnelReferenceListArrayOutput() ProjectTunnelReferenceListArrayOutput
+	ToProjectTunnelReferenceListArrayOutputWithContext(context.Context) ProjectTunnelReferenceListArrayOutput
+}
+
+type ProjectTunnelReferenceListArray []ProjectTunnelReferenceListInput
+
+func (ProjectTunnelReferenceListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProjectTunnelReferenceList)(nil)).Elem()
+}
+
+func (i ProjectTunnelReferenceListArray) ToProjectTunnelReferenceListArrayOutput() ProjectTunnelReferenceListArrayOutput {
+	return i.ToProjectTunnelReferenceListArrayOutputWithContext(context.Background())
+}
+
+func (i ProjectTunnelReferenceListArray) ToProjectTunnelReferenceListArrayOutputWithContext(ctx context.Context) ProjectTunnelReferenceListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectTunnelReferenceListArrayOutput)
+}
+
+type ProjectTunnelReferenceListOutput struct{ *pulumi.OutputState }
+
+func (ProjectTunnelReferenceListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectTunnelReferenceList)(nil)).Elem()
+}
+
+func (o ProjectTunnelReferenceListOutput) ToProjectTunnelReferenceListOutput() ProjectTunnelReferenceListOutput {
+	return o
+}
+
+func (o ProjectTunnelReferenceListOutput) ToProjectTunnelReferenceListOutputWithContext(ctx context.Context) ProjectTunnelReferenceListOutput {
+	return o
+}
+
+// (Required) The kind name (Default value: `project`).
+func (o ProjectTunnelReferenceListOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProjectTunnelReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
+}
+
+// The name for the project.
+func (o ProjectTunnelReferenceListOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProjectTunnelReferenceList) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Required) the UUID.
+func (o ProjectTunnelReferenceListOutput) Uuid() pulumi.StringOutput {
+	return o.ApplyT(func(v ProjectTunnelReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
+}
+
+type ProjectTunnelReferenceListArrayOutput struct{ *pulumi.OutputState }
+
+func (ProjectTunnelReferenceListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProjectTunnelReferenceList)(nil)).Elem()
+}
+
+func (o ProjectTunnelReferenceListArrayOutput) ToProjectTunnelReferenceListArrayOutput() ProjectTunnelReferenceListArrayOutput {
+	return o
+}
+
+func (o ProjectTunnelReferenceListArrayOutput) ToProjectTunnelReferenceListArrayOutputWithContext(ctx context.Context) ProjectTunnelReferenceListArrayOutput {
+	return o
+}
+
+func (o ProjectTunnelReferenceListArrayOutput) Index(i pulumi.IntInput) ProjectTunnelReferenceListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProjectTunnelReferenceList {
+		return vs[0].([]ProjectTunnelReferenceList)[vs[1].(int)]
+	}).(ProjectTunnelReferenceListOutput)
+}
+
 type ProjectUserGroupList struct {
 	DirectoryServiceOus        []ProjectUserGroupListDirectoryServiceOus       `pulumi:"directoryServiceOus"`
 	DirectoryServiceUserGroups []ProjectUserGroupListDirectoryServiceUserGroup `pulumi:"directoryServiceUserGroups"`
@@ -57625,101 +57740,9 @@ func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutpu
 	}).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput)
 }
 
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic struct {
-	MacAddress *string `pulumi:"macAddress"`
-}
-
-// VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs and VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicInput` via:
-//
-//	VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs{...}
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput
-	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs struct {
-	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
-}
-
-func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput {
-	return i.ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput)
-}
-
-// VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray and VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayInput` via:
-//
-//	VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray{ VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs{...} }
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput
-	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicInput
-
-func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput {
-	return i.ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput)
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput) MacAddress() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic {
-		return vs[0].([]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic)[vs[1].(int)]
-	}).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectTunnelReferenceListInput)(nil)).Elem(), ProjectTunnelReferenceListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectTunnelReferenceListArrayInput)(nil)).Elem(), ProjectTunnelReferenceListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectUserGroupListInput)(nil)).Elem(), ProjectUserGroupListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectUserGroupListArrayInput)(nil)).Elem(), ProjectUserGroupListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectUserGroupListDirectoryServiceOusInput)(nil)).Elem(), ProjectUserGroupListDirectoryServiceOusArgs{})
@@ -58710,8 +58733,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray{})
+	pulumi.RegisterOutputType(ProjectTunnelReferenceListOutput{})
+	pulumi.RegisterOutputType(ProjectTunnelReferenceListArrayOutput{})
 	pulumi.RegisterOutputType(ProjectUserGroupListOutput{})
 	pulumi.RegisterOutputType(ProjectUserGroupListArrayOutput{})
 	pulumi.RegisterOutputType(ProjectUserGroupListDirectoryServiceOusOutput{})
@@ -59702,6 +59725,4 @@ func init() {
 	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput{})
 	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput{})
 	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput{})
 }

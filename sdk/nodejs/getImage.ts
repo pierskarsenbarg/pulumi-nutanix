@@ -63,6 +63,10 @@ export interface GetImageResult {
     readonly clusterUuid: string;
     readonly currentClusterReferenceLists: outputs.GetImageCurrentClusterReferenceList[];
     /**
+     * - Reference to a data source.
+     */
+    readonly dataSourceReferences: outputs.GetImageDataSourceReference[];
+    /**
      * - A description for image.
      */
     readonly description: string;

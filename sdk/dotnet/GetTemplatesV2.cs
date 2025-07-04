@@ -31,7 +31,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     {
         ///         Filter = "startswith(templateName,'template_name')",
         ///         Limit = 10,
-        ///         Page = 1,
+        ///         Page = 0,
         ///     });
         /// 
         /// });
@@ -413,7 +413,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     {
         ///         Filter = "startswith(templateName,'template_name')",
         ///         Limit = 10,
-        ///         Page = 1,
+        ///         Page = 0,
         ///     });
         /// 
         /// });
@@ -795,7 +795,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     {
         ///         Filter = "startswith(templateName,'template_name')",
         ///         Limit = 10,
-        ///         Page = 1,
+        ///         Page = 0,
         ///     });
         /// 
         /// });

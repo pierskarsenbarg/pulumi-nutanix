@@ -13,6 +13,212 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetVpcsV2VpcExternallyRoutablePrefix struct {
+	Ipv4s []GetVpcsV2VpcExternallyRoutablePrefixIpv4 `pulumi:"ipv4s"`
+	Ipv6s []GetVpcsV2VpcExternallyRoutablePrefixIpv6 `pulumi:"ipv6s"`
+}
+
+// GetVpcsV2VpcExternallyRoutablePrefixInput is an input type that accepts GetVpcsV2VpcExternallyRoutablePrefixArgs and GetVpcsV2VpcExternallyRoutablePrefixOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternallyRoutablePrefixInput` via:
+//
+//	GetVpcsV2VpcExternallyRoutablePrefixArgs{...}
+type GetVpcsV2VpcExternallyRoutablePrefixInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternallyRoutablePrefixOutput() GetVpcsV2VpcExternallyRoutablePrefixOutput
+	ToGetVpcsV2VpcExternallyRoutablePrefixOutputWithContext(context.Context) GetVpcsV2VpcExternallyRoutablePrefixOutput
+}
+
+type GetVpcsV2VpcExternallyRoutablePrefixArgs struct {
+	Ipv4s GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayInput `pulumi:"ipv4s"`
+	Ipv6s GetVpcsV2VpcExternallyRoutablePrefixIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetVpcsV2VpcExternallyRoutablePrefixArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefix)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternallyRoutablePrefixArgs) ToGetVpcsV2VpcExternallyRoutablePrefixOutput() GetVpcsV2VpcExternallyRoutablePrefixOutput {
+	return i.ToGetVpcsV2VpcExternallyRoutablePrefixOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternallyRoutablePrefixArgs) ToGetVpcsV2VpcExternallyRoutablePrefixOutputWithContext(ctx context.Context) GetVpcsV2VpcExternallyRoutablePrefixOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternallyRoutablePrefixOutput)
+}
+
+// GetVpcsV2VpcExternallyRoutablePrefixArrayInput is an input type that accepts GetVpcsV2VpcExternallyRoutablePrefixArray and GetVpcsV2VpcExternallyRoutablePrefixArrayOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternallyRoutablePrefixArrayInput` via:
+//
+//	GetVpcsV2VpcExternallyRoutablePrefixArray{ GetVpcsV2VpcExternallyRoutablePrefixArgs{...} }
+type GetVpcsV2VpcExternallyRoutablePrefixArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternallyRoutablePrefixArrayOutput() GetVpcsV2VpcExternallyRoutablePrefixArrayOutput
+	ToGetVpcsV2VpcExternallyRoutablePrefixArrayOutputWithContext(context.Context) GetVpcsV2VpcExternallyRoutablePrefixArrayOutput
+}
+
+type GetVpcsV2VpcExternallyRoutablePrefixArray []GetVpcsV2VpcExternallyRoutablePrefixInput
+
+func (GetVpcsV2VpcExternallyRoutablePrefixArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternallyRoutablePrefix)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternallyRoutablePrefixArray) ToGetVpcsV2VpcExternallyRoutablePrefixArrayOutput() GetVpcsV2VpcExternallyRoutablePrefixArrayOutput {
+	return i.ToGetVpcsV2VpcExternallyRoutablePrefixArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternallyRoutablePrefixArray) ToGetVpcsV2VpcExternallyRoutablePrefixArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternallyRoutablePrefixArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternallyRoutablePrefixArrayOutput)
+}
+
+type GetVpcsV2VpcExternallyRoutablePrefixOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternallyRoutablePrefixOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefix)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternallyRoutablePrefixOutput) ToGetVpcsV2VpcExternallyRoutablePrefixOutput() GetVpcsV2VpcExternallyRoutablePrefixOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternallyRoutablePrefixOutput) ToGetVpcsV2VpcExternallyRoutablePrefixOutputWithContext(ctx context.Context) GetVpcsV2VpcExternallyRoutablePrefixOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternallyRoutablePrefixOutput) Ipv4s() GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternallyRoutablePrefix) []GetVpcsV2VpcExternallyRoutablePrefixIpv4 {
+		return v.Ipv4s
+	}).(GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput)
+}
+
+func (o GetVpcsV2VpcExternallyRoutablePrefixOutput) Ipv6s() GetVpcsV2VpcExternallyRoutablePrefixIpv6ArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternallyRoutablePrefix) []GetVpcsV2VpcExternallyRoutablePrefixIpv6 {
+		return v.Ipv6s
+	}).(GetVpcsV2VpcExternallyRoutablePrefixIpv6ArrayOutput)
+}
+
+type GetVpcsV2VpcExternallyRoutablePrefixArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternallyRoutablePrefixArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternallyRoutablePrefix)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternallyRoutablePrefixArrayOutput) ToGetVpcsV2VpcExternallyRoutablePrefixArrayOutput() GetVpcsV2VpcExternallyRoutablePrefixArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternallyRoutablePrefixArrayOutput) ToGetVpcsV2VpcExternallyRoutablePrefixArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternallyRoutablePrefixArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternallyRoutablePrefixArrayOutput) Index(i pulumi.IntInput) GetVpcsV2VpcExternallyRoutablePrefixOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsV2VpcExternallyRoutablePrefix {
+		return vs[0].([]GetVpcsV2VpcExternallyRoutablePrefix)[vs[1].(int)]
+	}).(GetVpcsV2VpcExternallyRoutablePrefixOutput)
+}
+
+type GetVpcsV2VpcExternallyRoutablePrefixIpv4 struct {
+	Ips          []GetVpcsV2VpcExternallyRoutablePrefixIpv4Ip `pulumi:"ips"`
+	PrefixLength int                                          `pulumi:"prefixLength"`
+}
+
+// GetVpcsV2VpcExternallyRoutablePrefixIpv4Input is an input type that accepts GetVpcsV2VpcExternallyRoutablePrefixIpv4Args and GetVpcsV2VpcExternallyRoutablePrefixIpv4Output values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternallyRoutablePrefixIpv4Input` via:
+//
+//	GetVpcsV2VpcExternallyRoutablePrefixIpv4Args{...}
+type GetVpcsV2VpcExternallyRoutablePrefixIpv4Input interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternallyRoutablePrefixIpv4Output() GetVpcsV2VpcExternallyRoutablePrefixIpv4Output
+	ToGetVpcsV2VpcExternallyRoutablePrefixIpv4OutputWithContext(context.Context) GetVpcsV2VpcExternallyRoutablePrefixIpv4Output
+}
+
+type GetVpcsV2VpcExternallyRoutablePrefixIpv4Args struct {
+	Ips          GetVpcsV2VpcExternallyRoutablePrefixIpv4IpArrayInput `pulumi:"ips"`
+	PrefixLength pulumi.IntInput                                      `pulumi:"prefixLength"`
+}
+
+func (GetVpcsV2VpcExternallyRoutablePrefixIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixIpv4)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternallyRoutablePrefixIpv4Args) ToGetVpcsV2VpcExternallyRoutablePrefixIpv4Output() GetVpcsV2VpcExternallyRoutablePrefixIpv4Output {
+	return i.ToGetVpcsV2VpcExternallyRoutablePrefixIpv4OutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternallyRoutablePrefixIpv4Args) ToGetVpcsV2VpcExternallyRoutablePrefixIpv4OutputWithContext(ctx context.Context) GetVpcsV2VpcExternallyRoutablePrefixIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternallyRoutablePrefixIpv4Output)
+}
+
+// GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayInput is an input type that accepts GetVpcsV2VpcExternallyRoutablePrefixIpv4Array and GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayInput` via:
+//
+//	GetVpcsV2VpcExternallyRoutablePrefixIpv4Array{ GetVpcsV2VpcExternallyRoutablePrefixIpv4Args{...} }
+type GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput() GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput
+	ToGetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutputWithContext(context.Context) GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput
+}
+
+type GetVpcsV2VpcExternallyRoutablePrefixIpv4Array []GetVpcsV2VpcExternallyRoutablePrefixIpv4Input
+
+func (GetVpcsV2VpcExternallyRoutablePrefixIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternallyRoutablePrefixIpv4)(nil)).Elem()
+}
+
+func (i GetVpcsV2VpcExternallyRoutablePrefixIpv4Array) ToGetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput() GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput {
+	return i.ToGetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetVpcsV2VpcExternallyRoutablePrefixIpv4Array) ToGetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput)
+}
+
+type GetVpcsV2VpcExternallyRoutablePrefixIpv4Output struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternallyRoutablePrefixIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixIpv4)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternallyRoutablePrefixIpv4Output) ToGetVpcsV2VpcExternallyRoutablePrefixIpv4Output() GetVpcsV2VpcExternallyRoutablePrefixIpv4Output {
+	return o
+}
+
+func (o GetVpcsV2VpcExternallyRoutablePrefixIpv4Output) ToGetVpcsV2VpcExternallyRoutablePrefixIpv4OutputWithContext(ctx context.Context) GetVpcsV2VpcExternallyRoutablePrefixIpv4Output {
+	return o
+}
+
+func (o GetVpcsV2VpcExternallyRoutablePrefixIpv4Output) Ips() GetVpcsV2VpcExternallyRoutablePrefixIpv4IpArrayOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternallyRoutablePrefixIpv4) []GetVpcsV2VpcExternallyRoutablePrefixIpv4Ip {
+		return v.Ips
+	}).(GetVpcsV2VpcExternallyRoutablePrefixIpv4IpArrayOutput)
+}
+
+func (o GetVpcsV2VpcExternallyRoutablePrefixIpv4Output) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVpcsV2VpcExternallyRoutablePrefixIpv4) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+type GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVpcsV2VpcExternallyRoutablePrefixIpv4)(nil)).Elem()
+}
+
+func (o GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput) ToGetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput() GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput) ToGetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput {
+	return o
+}
+
+func (o GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput) Index(i pulumi.IntInput) GetVpcsV2VpcExternallyRoutablePrefixIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsV2VpcExternallyRoutablePrefixIpv4 {
+		return vs[0].([]GetVpcsV2VpcExternallyRoutablePrefixIpv4)[vs[1].(int)]
+	}).(GetVpcsV2VpcExternallyRoutablePrefixIpv4Output)
+}
+
 type GetVpcsV2VpcExternallyRoutablePrefixIpv4Ip struct {
 	PrefixLength int    `pulumi:"prefixLength"`
 	Value        string `pulumi:"value"`
@@ -834,6 +1040,10 @@ func (o GetVpcsV2VpcSnatIpIpv6ArrayOutput) Index(i pulumi.IntInput) GetVpcsV2Vpc
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixInput)(nil)).Elem(), GetVpcsV2VpcExternallyRoutablePrefixArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixArrayInput)(nil)).Elem(), GetVpcsV2VpcExternallyRoutablePrefixArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixIpv4Input)(nil)).Elem(), GetVpcsV2VpcExternallyRoutablePrefixIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayInput)(nil)).Elem(), GetVpcsV2VpcExternallyRoutablePrefixIpv4Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixIpv4IpInput)(nil)).Elem(), GetVpcsV2VpcExternallyRoutablePrefixIpv4IpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixIpv4IpArrayInput)(nil)).Elem(), GetVpcsV2VpcExternallyRoutablePrefixIpv4IpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixIpv6Input)(nil)).Elem(), GetVpcsV2VpcExternallyRoutablePrefixIpv6Args{})
@@ -850,6 +1060,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcSnatIpIpv4ArrayInput)(nil)).Elem(), GetVpcsV2VpcSnatIpIpv4Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcSnatIpIpv6Input)(nil)).Elem(), GetVpcsV2VpcSnatIpIpv6Args{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcSnatIpIpv6ArrayInput)(nil)).Elem(), GetVpcsV2VpcSnatIpIpv6Array{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternallyRoutablePrefixOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternallyRoutablePrefixArrayOutput{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternallyRoutablePrefixIpv4Output{})
+	pulumi.RegisterOutputType(GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput{})
 	pulumi.RegisterOutputType(GetVpcsV2VpcExternallyRoutablePrefixIpv4IpOutput{})
 	pulumi.RegisterOutputType(GetVpcsV2VpcExternallyRoutablePrefixIpv4IpArrayOutput{})
 	pulumi.RegisterOutputType(GetVpcsV2VpcExternallyRoutablePrefixIpv6Output{})

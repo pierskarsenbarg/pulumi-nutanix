@@ -13,11 +13,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class DirectoryServicesV2ServiceAccountGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("password", required: true)]
+        private Input<string>? _password;
+
         /// <summary>
         /// -(Required) Password to connect to the Directory Service.
         /// </summary>
-        [Input("password", required: true)]
-        public Input<string> Password { get; set; } = null!;
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// -(Required) Username to connect to the Directory Service.

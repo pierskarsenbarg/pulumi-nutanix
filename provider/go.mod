@@ -6,13 +6,13 @@ toolchain go1.23.6
 
 replace (
 	github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20250530111747-935112552988
-	github.com/terraform-providers/terraform-provider-nutanix => github.com/nutanix/terraform-provider-nutanix v1.9.6-0.20250509072702-cac904185e71
+	github.com/terraform-providers/terraform-provider-nutanix => github.com/nutanix/terraform-provider-nutanix v1.9.6-0.20250630105412-87ed6118a50a
 )
 
 require (
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.110.0
 	github.com/pulumi/pulumi/sdk/v3 v3.175.0
-	github.com/terraform-providers/terraform-provider-nutanix v1.9.6-0.20250509072702-cac904185e71
+	github.com/terraform-providers/terraform-provider-nutanix v1.9.6-0.20250630105412-87ed6118a50a
 )
 
 require (

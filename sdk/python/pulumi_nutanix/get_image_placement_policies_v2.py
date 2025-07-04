@@ -126,7 +126,7 @@ def get_image_placement_policies_v2(filter: Optional[builtins.str] = None,
     list_ipp = nutanix.get_image_placement_policies_v2()
     filtered_ipp = nutanix.get_image_placement_policies_v2(filter="startswith(name,'ipp_name')",
         limit=10,
-        page=1)
+        page=0)
     ```
 
 
@@ -187,7 +187,7 @@ def get_image_placement_policies_v2_output(filter: Optional[pulumi.Input[Optiona
     list_ipp = nutanix.get_image_placement_policies_v2()
     filtered_ipp = nutanix.get_image_placement_policies_v2(filter="startswith(name,'ipp_name')",
         limit=10,
-        page=1)
+        page=0)
     ```
 
 

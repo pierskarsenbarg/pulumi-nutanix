@@ -34,7 +34,7 @@ import (
 //			_, err = nutanix.GetTemplatesV2(ctx, &nutanix.GetTemplatesV2Args{
 //				Filter: pulumi.StringRef("startswith(templateName,'template_name')"),
 //				Limit:  pulumi.IntRef(10),
-//				Page:   pulumi.IntRef(1),
+//				Page:   pulumi.IntRef(0),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -726,6 +726,12 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
+        /// - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
+        /// </summary>
+        [Input("powerState")]
+        public Input<string>? PowerState { get; set; }
+
+        /// <summary>
         /// - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
         /// </summary>
         [Input("powerStateMechanism")]

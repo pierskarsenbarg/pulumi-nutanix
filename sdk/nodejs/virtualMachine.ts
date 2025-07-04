@@ -252,7 +252,7 @@ export class VirtualMachine extends pulumi.CustomResource {
     /**
      * - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
      */
-    public /*out*/ readonly powerState!: pulumi.Output<string>;
+    public readonly powerState!: pulumi.Output<string>;
     /**
      * - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
      */
@@ -382,6 +382,7 @@ export class VirtualMachine extends pulumi.CustomResource {
             resourceInputs["nutanixGuestTools"] = args ? args.nutanixGuestTools : undefined;
             resourceInputs["ownerReference"] = args ? args.ownerReference : undefined;
             resourceInputs["parentReference"] = args ? args.parentReference : undefined;
+            resourceInputs["powerState"] = args ? args.powerState : undefined;
             resourceInputs["powerStateMechanism"] = args ? args.powerStateMechanism : undefined;
             resourceInputs["projectReference"] = args ? args.projectReference : undefined;
             resourceInputs["serialPortLists"] = args ? args.serialPortLists : undefined;
@@ -394,7 +395,6 @@ export class VirtualMachine extends pulumi.CustomResource {
             resourceInputs["hypervisorType"] = undefined /*out*/;
             resourceInputs["metadata"] = undefined /*out*/;
             resourceInputs["nicListStatuses"] = undefined /*out*/;
-            resourceInputs["powerState"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -734,6 +734,10 @@ export interface VirtualMachineArgs {
      * - (Optional) Reference to an entity that the VM cloned from.
      */
     parentReference?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
+     */
+    powerState?: pulumi.Input<string>;
     /**
      * - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
      */

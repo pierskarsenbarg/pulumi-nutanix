@@ -13,6 +13,227 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetProjectsEntityExternalNetworkList struct {
+	// (Optional) the name.
+	Name string `pulumi:"name"`
+	// (Required) the UUID.
+	Uuid string `pulumi:"uuid"`
+}
+
+// GetProjectsEntityExternalNetworkListInput is an input type that accepts GetProjectsEntityExternalNetworkListArgs and GetProjectsEntityExternalNetworkListOutput values.
+// You can construct a concrete instance of `GetProjectsEntityExternalNetworkListInput` via:
+//
+//	GetProjectsEntityExternalNetworkListArgs{...}
+type GetProjectsEntityExternalNetworkListInput interface {
+	pulumi.Input
+
+	ToGetProjectsEntityExternalNetworkListOutput() GetProjectsEntityExternalNetworkListOutput
+	ToGetProjectsEntityExternalNetworkListOutputWithContext(context.Context) GetProjectsEntityExternalNetworkListOutput
+}
+
+type GetProjectsEntityExternalNetworkListArgs struct {
+	// (Optional) the name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Required) the UUID.
+	Uuid pulumi.StringInput `pulumi:"uuid"`
+}
+
+func (GetProjectsEntityExternalNetworkListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsEntityExternalNetworkList)(nil)).Elem()
+}
+
+func (i GetProjectsEntityExternalNetworkListArgs) ToGetProjectsEntityExternalNetworkListOutput() GetProjectsEntityExternalNetworkListOutput {
+	return i.ToGetProjectsEntityExternalNetworkListOutputWithContext(context.Background())
+}
+
+func (i GetProjectsEntityExternalNetworkListArgs) ToGetProjectsEntityExternalNetworkListOutputWithContext(ctx context.Context) GetProjectsEntityExternalNetworkListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsEntityExternalNetworkListOutput)
+}
+
+// GetProjectsEntityExternalNetworkListArrayInput is an input type that accepts GetProjectsEntityExternalNetworkListArray and GetProjectsEntityExternalNetworkListArrayOutput values.
+// You can construct a concrete instance of `GetProjectsEntityExternalNetworkListArrayInput` via:
+//
+//	GetProjectsEntityExternalNetworkListArray{ GetProjectsEntityExternalNetworkListArgs{...} }
+type GetProjectsEntityExternalNetworkListArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectsEntityExternalNetworkListArrayOutput() GetProjectsEntityExternalNetworkListArrayOutput
+	ToGetProjectsEntityExternalNetworkListArrayOutputWithContext(context.Context) GetProjectsEntityExternalNetworkListArrayOutput
+}
+
+type GetProjectsEntityExternalNetworkListArray []GetProjectsEntityExternalNetworkListInput
+
+func (GetProjectsEntityExternalNetworkListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsEntityExternalNetworkList)(nil)).Elem()
+}
+
+func (i GetProjectsEntityExternalNetworkListArray) ToGetProjectsEntityExternalNetworkListArrayOutput() GetProjectsEntityExternalNetworkListArrayOutput {
+	return i.ToGetProjectsEntityExternalNetworkListArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectsEntityExternalNetworkListArray) ToGetProjectsEntityExternalNetworkListArrayOutputWithContext(ctx context.Context) GetProjectsEntityExternalNetworkListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsEntityExternalNetworkListArrayOutput)
+}
+
+type GetProjectsEntityExternalNetworkListOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsEntityExternalNetworkListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsEntityExternalNetworkList)(nil)).Elem()
+}
+
+func (o GetProjectsEntityExternalNetworkListOutput) ToGetProjectsEntityExternalNetworkListOutput() GetProjectsEntityExternalNetworkListOutput {
+	return o
+}
+
+func (o GetProjectsEntityExternalNetworkListOutput) ToGetProjectsEntityExternalNetworkListOutputWithContext(ctx context.Context) GetProjectsEntityExternalNetworkListOutput {
+	return o
+}
+
+// (Optional) the name.
+func (o GetProjectsEntityExternalNetworkListOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsEntityExternalNetworkList) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Required) the UUID.
+func (o GetProjectsEntityExternalNetworkListOutput) Uuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsEntityExternalNetworkList) string { return v.Uuid }).(pulumi.StringOutput)
+}
+
+type GetProjectsEntityExternalNetworkListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsEntityExternalNetworkListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsEntityExternalNetworkList)(nil)).Elem()
+}
+
+func (o GetProjectsEntityExternalNetworkListArrayOutput) ToGetProjectsEntityExternalNetworkListArrayOutput() GetProjectsEntityExternalNetworkListArrayOutput {
+	return o
+}
+
+func (o GetProjectsEntityExternalNetworkListArrayOutput) ToGetProjectsEntityExternalNetworkListArrayOutputWithContext(ctx context.Context) GetProjectsEntityExternalNetworkListArrayOutput {
+	return o
+}
+
+func (o GetProjectsEntityExternalNetworkListArrayOutput) Index(i pulumi.IntInput) GetProjectsEntityExternalNetworkListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsEntityExternalNetworkList {
+		return vs[0].([]GetProjectsEntityExternalNetworkList)[vs[1].(int)]
+	}).(GetProjectsEntityExternalNetworkListOutput)
+}
+
+type GetProjectsEntityExternalUserGroupReferenceList struct {
+	// (Required) The kind name (Default value: `project`).
+	Kind string `pulumi:"kind"`
+	// (Optional) the name.
+	Name string `pulumi:"name"`
+	// (Required) the UUID.
+	Uuid string `pulumi:"uuid"`
+}
+
+// GetProjectsEntityExternalUserGroupReferenceListInput is an input type that accepts GetProjectsEntityExternalUserGroupReferenceListArgs and GetProjectsEntityExternalUserGroupReferenceListOutput values.
+// You can construct a concrete instance of `GetProjectsEntityExternalUserGroupReferenceListInput` via:
+//
+//	GetProjectsEntityExternalUserGroupReferenceListArgs{...}
+type GetProjectsEntityExternalUserGroupReferenceListInput interface {
+	pulumi.Input
+
+	ToGetProjectsEntityExternalUserGroupReferenceListOutput() GetProjectsEntityExternalUserGroupReferenceListOutput
+	ToGetProjectsEntityExternalUserGroupReferenceListOutputWithContext(context.Context) GetProjectsEntityExternalUserGroupReferenceListOutput
+}
+
+type GetProjectsEntityExternalUserGroupReferenceListArgs struct {
+	// (Required) The kind name (Default value: `project`).
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// (Optional) the name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Required) the UUID.
+	Uuid pulumi.StringInput `pulumi:"uuid"`
+}
+
+func (GetProjectsEntityExternalUserGroupReferenceListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsEntityExternalUserGroupReferenceList)(nil)).Elem()
+}
+
+func (i GetProjectsEntityExternalUserGroupReferenceListArgs) ToGetProjectsEntityExternalUserGroupReferenceListOutput() GetProjectsEntityExternalUserGroupReferenceListOutput {
+	return i.ToGetProjectsEntityExternalUserGroupReferenceListOutputWithContext(context.Background())
+}
+
+func (i GetProjectsEntityExternalUserGroupReferenceListArgs) ToGetProjectsEntityExternalUserGroupReferenceListOutputWithContext(ctx context.Context) GetProjectsEntityExternalUserGroupReferenceListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsEntityExternalUserGroupReferenceListOutput)
+}
+
+// GetProjectsEntityExternalUserGroupReferenceListArrayInput is an input type that accepts GetProjectsEntityExternalUserGroupReferenceListArray and GetProjectsEntityExternalUserGroupReferenceListArrayOutput values.
+// You can construct a concrete instance of `GetProjectsEntityExternalUserGroupReferenceListArrayInput` via:
+//
+//	GetProjectsEntityExternalUserGroupReferenceListArray{ GetProjectsEntityExternalUserGroupReferenceListArgs{...} }
+type GetProjectsEntityExternalUserGroupReferenceListArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectsEntityExternalUserGroupReferenceListArrayOutput() GetProjectsEntityExternalUserGroupReferenceListArrayOutput
+	ToGetProjectsEntityExternalUserGroupReferenceListArrayOutputWithContext(context.Context) GetProjectsEntityExternalUserGroupReferenceListArrayOutput
+}
+
+type GetProjectsEntityExternalUserGroupReferenceListArray []GetProjectsEntityExternalUserGroupReferenceListInput
+
+func (GetProjectsEntityExternalUserGroupReferenceListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsEntityExternalUserGroupReferenceList)(nil)).Elem()
+}
+
+func (i GetProjectsEntityExternalUserGroupReferenceListArray) ToGetProjectsEntityExternalUserGroupReferenceListArrayOutput() GetProjectsEntityExternalUserGroupReferenceListArrayOutput {
+	return i.ToGetProjectsEntityExternalUserGroupReferenceListArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectsEntityExternalUserGroupReferenceListArray) ToGetProjectsEntityExternalUserGroupReferenceListArrayOutputWithContext(ctx context.Context) GetProjectsEntityExternalUserGroupReferenceListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsEntityExternalUserGroupReferenceListArrayOutput)
+}
+
+type GetProjectsEntityExternalUserGroupReferenceListOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsEntityExternalUserGroupReferenceListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsEntityExternalUserGroupReferenceList)(nil)).Elem()
+}
+
+func (o GetProjectsEntityExternalUserGroupReferenceListOutput) ToGetProjectsEntityExternalUserGroupReferenceListOutput() GetProjectsEntityExternalUserGroupReferenceListOutput {
+	return o
+}
+
+func (o GetProjectsEntityExternalUserGroupReferenceListOutput) ToGetProjectsEntityExternalUserGroupReferenceListOutputWithContext(ctx context.Context) GetProjectsEntityExternalUserGroupReferenceListOutput {
+	return o
+}
+
+// (Required) The kind name (Default value: `project`).
+func (o GetProjectsEntityExternalUserGroupReferenceListOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsEntityExternalUserGroupReferenceList) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// (Optional) the name.
+func (o GetProjectsEntityExternalUserGroupReferenceListOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsEntityExternalUserGroupReferenceList) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Required) the UUID.
+func (o GetProjectsEntityExternalUserGroupReferenceListOutput) Uuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsEntityExternalUserGroupReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
+}
+
+type GetProjectsEntityExternalUserGroupReferenceListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsEntityExternalUserGroupReferenceListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsEntityExternalUserGroupReferenceList)(nil)).Elem()
+}
+
+func (o GetProjectsEntityExternalUserGroupReferenceListArrayOutput) ToGetProjectsEntityExternalUserGroupReferenceListArrayOutput() GetProjectsEntityExternalUserGroupReferenceListArrayOutput {
+	return o
+}
+
+func (o GetProjectsEntityExternalUserGroupReferenceListArrayOutput) ToGetProjectsEntityExternalUserGroupReferenceListArrayOutputWithContext(ctx context.Context) GetProjectsEntityExternalUserGroupReferenceListArrayOutput {
+	return o
+}
+
+func (o GetProjectsEntityExternalUserGroupReferenceListArrayOutput) Index(i pulumi.IntInput) GetProjectsEntityExternalUserGroupReferenceListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsEntityExternalUserGroupReferenceList {
+		return vs[0].([]GetProjectsEntityExternalUserGroupReferenceList)[vs[1].(int)]
+	}).(GetProjectsEntityExternalUserGroupReferenceListOutput)
+}
+
 type GetProjectsEntityResourceDomain struct {
 	// Array of the utilization/limit for resource types
 	// * `resource_domain.resources.#.limit` The resource consumption limit (unspecified is unlimited)
@@ -57212,256 +57433,11 @@ func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoArrayOutput) Index(
 	}).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoOutput)
 }
 
-type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference struct {
-	// The globally unique identifier of an ADSF volume group. It should be of type UUID.
-	VolumeGroupExtId string `pulumi:"volumeGroupExtId"`
-}
-
-// GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceInput is an input type that accepts GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArgs and GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput values.
-// You can construct a concrete instance of `GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceInput` via:
-//
-//	GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArgs{...}
-type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceInput interface {
-	pulumi.Input
-
-	ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput
-	ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutputWithContext(context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput
-}
-
-type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArgs struct {
-	// The globally unique identifier of an ADSF volume group. It should be of type UUID.
-	VolumeGroupExtId pulumi.StringInput `pulumi:"volumeGroupExtId"`
-}
-
-func (GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference)(nil)).Elem()
-}
-
-func (i GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArgs) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput {
-	return i.ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutputWithContext(context.Background())
-}
-
-func (i GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArgs) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutputWithContext(ctx context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput)
-}
-
-// GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayInput is an input type that accepts GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArray and GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput values.
-// You can construct a concrete instance of `GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayInput` via:
-//
-//	GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArray{ GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArgs{...} }
-type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayInput interface {
-	pulumi.Input
-
-	ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput
-	ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutputWithContext(context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput
-}
-
-type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArray []GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceInput
-
-func (GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference)(nil)).Elem()
-}
-
-func (i GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArray) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput {
-	return i.ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutputWithContext(context.Background())
-}
-
-func (i GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArray) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutputWithContext(ctx context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput)
-}
-
-type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput struct{ *pulumi.OutputState }
-
-func (GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference)(nil)).Elem()
-}
-
-func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput {
-	return o
-}
-
-func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutputWithContext(ctx context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput {
-	return o
-}
-
-// The globally unique identifier of an ADSF volume group. It should be of type UUID.
-func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput) VolumeGroupExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference) string {
-		return v.VolumeGroupExtId
-	}).(pulumi.StringOutput)
-}
-
-type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput struct{ *pulumi.OutputState }
-
-func (GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference)(nil)).Elem()
-}
-
-func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput {
-	return o
-}
-
-func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutputWithContext(ctx context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput {
-	return o
-}
-
-func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput) Index(i pulumi.IntInput) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference {
-		return vs[0].([]GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference)[vs[1].(int)]
-	}).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput)
-}
-
-type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk struct {
-	// A reference to a disk or image that contains the contents of a disk.
-	DataSources []GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSource `pulumi:"dataSources"`
-	// The globally unique identifier of a VM disk. It should be of type UUID.
-	DiskExtId string `pulumi:"diskExtId"`
-	// Size of the disk in Bytes
-	DiskSizeBytes int `pulumi:"diskSizeBytes"`
-	// Indicates if the disk is undergoing migration to another container.
-	IsMigrationInProgress bool `pulumi:"isMigrationInProgress"`
-	// Storage configuration for VM disks
-	StorageConfigs []GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig `pulumi:"storageConfigs"`
-	// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
-	StorageContainers []GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer `pulumi:"storageContainers"`
-}
-
-// GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskInput is an input type that accepts GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs and GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput values.
-// You can construct a concrete instance of `GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskInput` via:
-//
-//	GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs{...}
-type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskInput interface {
-	pulumi.Input
-
-	ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput
-	ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutputWithContext(context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput
-}
-
-type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs struct {
-	// A reference to a disk or image that contains the contents of a disk.
-	DataSources GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceArrayInput `pulumi:"dataSources"`
-	// The globally unique identifier of a VM disk. It should be of type UUID.
-	DiskExtId pulumi.StringInput `pulumi:"diskExtId"`
-	// Size of the disk in Bytes
-	DiskSizeBytes pulumi.IntInput `pulumi:"diskSizeBytes"`
-	// Indicates if the disk is undergoing migration to another container.
-	IsMigrationInProgress pulumi.BoolInput `pulumi:"isMigrationInProgress"`
-	// Storage configuration for VM disks
-	StorageConfigs GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigArrayInput `pulumi:"storageConfigs"`
-	// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
-	StorageContainers GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainerArrayInput `pulumi:"storageContainers"`
-}
-
-func (GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk)(nil)).Elem()
-}
-
-func (i GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput {
-	return i.ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutputWithContext(context.Background())
-}
-
-func (i GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutputWithContext(ctx context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput)
-}
-
-// GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayInput is an input type that accepts GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArray and GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput values.
-// You can construct a concrete instance of `GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayInput` via:
-//
-//	GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArray{ GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs{...} }
-type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayInput interface {
-	pulumi.Input
-
-	ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput
-	ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutputWithContext(context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput
-}
-
-type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArray []GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskInput
-
-func (GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk)(nil)).Elem()
-}
-
-func (i GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArray) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput {
-	return i.ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutputWithContext(context.Background())
-}
-
-func (i GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArray) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutputWithContext(ctx context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput)
-}
-
-type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput struct{ *pulumi.OutputState }
-
-func (GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk)(nil)).Elem()
-}
-
-func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput {
-	return o
-}
-
-func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutputWithContext(ctx context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput {
-	return o
-}
-
-// A reference to a disk or image that contains the contents of a disk.
-func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) DataSources() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceArrayOutput {
-	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk) []GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSource {
-		return v.DataSources
-	}).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceArrayOutput)
-}
-
-// The globally unique identifier of a VM disk. It should be of type UUID.
-func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) DiskExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk) string { return v.DiskExtId }).(pulumi.StringOutput)
-}
-
-// Size of the disk in Bytes
-func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) DiskSizeBytes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk) int { return v.DiskSizeBytes }).(pulumi.IntOutput)
-}
-
-// Indicates if the disk is undergoing migration to another container.
-func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) IsMigrationInProgress() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk) bool {
-		return v.IsMigrationInProgress
-	}).(pulumi.BoolOutput)
-}
-
-// Storage configuration for VM disks
-func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) StorageConfigs() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigArrayOutput {
-	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk) []GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig {
-		return v.StorageConfigs
-	}).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigArrayOutput)
-}
-
-// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
-func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) StorageContainers() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainerArrayOutput {
-	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk) []GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer {
-		return v.StorageContainers
-	}).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainerArrayOutput)
-}
-
-type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput struct{ *pulumi.OutputState }
-
-func (GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk)(nil)).Elem()
-}
-
-func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput {
-	return o
-}
-
-func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutputWithContext(ctx context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput {
-	return o
-}
-
-func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput) Index(i pulumi.IntInput) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk {
-		return vs[0].([]GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk)[vs[1].(int)]
-	}).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityExternalNetworkListInput)(nil)).Elem(), GetProjectsEntityExternalNetworkListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityExternalNetworkListArrayInput)(nil)).Elem(), GetProjectsEntityExternalNetworkListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityExternalUserGroupReferenceListInput)(nil)).Elem(), GetProjectsEntityExternalUserGroupReferenceListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityExternalUserGroupReferenceListArrayInput)(nil)).Elem(), GetProjectsEntityExternalUserGroupReferenceListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityResourceDomainInput)(nil)).Elem(), GetProjectsEntityResourceDomainArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityResourceDomainArrayInput)(nil)).Elem(), GetProjectsEntityResourceDomainArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsEntityResourceDomainResourceInput)(nil)).Elem(), GetProjectsEntityResourceDomainResourceArgs{})
@@ -58440,10 +58416,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskArrayInput)(nil)).Elem(), GetTemplateV2TemplateVersionSpecVmSpecDiskArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoInput)(nil)).Elem(), GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoArrayInput)(nil)).Elem(), GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceInput)(nil)).Elem(), GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayInput)(nil)).Elem(), GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskInput)(nil)).Elem(), GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayInput)(nil)).Elem(), GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArray{})
+	pulumi.RegisterOutputType(GetProjectsEntityExternalNetworkListOutput{})
+	pulumi.RegisterOutputType(GetProjectsEntityExternalNetworkListArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectsEntityExternalUserGroupReferenceListOutput{})
+	pulumi.RegisterOutputType(GetProjectsEntityExternalUserGroupReferenceListArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectsEntityResourceDomainOutput{})
 	pulumi.RegisterOutputType(GetProjectsEntityResourceDomainArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectsEntityResourceDomainResourceOutput{})
@@ -59422,8 +59398,4 @@ func init() {
 	pulumi.RegisterOutputType(GetTemplateV2TemplateVersionSpecVmSpecDiskArrayOutput{})
 	pulumi.RegisterOutputType(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoOutput{})
 	pulumi.RegisterOutputType(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoArrayOutput{})
-	pulumi.RegisterOutputType(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput{})
-	pulumi.RegisterOutputType(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput{})
-	pulumi.RegisterOutputType(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput{})
-	pulumi.RegisterOutputType(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput{})
 }
