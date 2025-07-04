@@ -47,6 +47,8 @@ type LookupImageResult struct {
 	ClusterReferences            []GetImageClusterReference            `pulumi:"clusterReferences"`
 	ClusterUuid                  string                                `pulumi:"clusterUuid"`
 	CurrentClusterReferenceLists []GetImageCurrentClusterReferenceList `pulumi:"currentClusterReferenceLists"`
+	// - Reference to a data source.
+	DataSourceReferences []GetImageDataSourceReference `pulumi:"dataSourceReferences"`
 	// - A description for image.
 	Description string `pulumi:"description"`
 	// The provider-assigned unique ID for this managed resource.
@@ -151,6 +153,11 @@ func (o LookupImageResultOutput) ClusterUuid() pulumi.StringOutput {
 
 func (o LookupImageResultOutput) CurrentClusterReferenceLists() GetImageCurrentClusterReferenceListArrayOutput {
 	return o.ApplyT(func(v LookupImageResult) []GetImageCurrentClusterReferenceList { return v.CurrentClusterReferenceLists }).(GetImageCurrentClusterReferenceListArrayOutput)
+}
+
+// - Reference to a data source.
+func (o LookupImageResultOutput) DataSourceReferences() GetImageDataSourceReferenceArrayOutput {
+	return o.ApplyT(func(v LookupImageResult) []GetImageDataSourceReference { return v.DataSourceReferences }).(GetImageDataSourceReferenceArrayOutput)
 }
 
 // - A description for image.

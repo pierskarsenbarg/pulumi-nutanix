@@ -36578,6 +36578,112 @@ func (o ImageCurrentClusterReferenceListArrayOutput) Index(i pulumi.IntInput) Im
 	}).(ImageCurrentClusterReferenceListOutput)
 }
 
+type ImageDataSourceReference struct {
+	// - The kind name (Default value: project)(Required).
+	Kind *string `pulumi:"kind"`
+	// - the UUID(Required).
+	Uuid *string `pulumi:"uuid"`
+}
+
+// ImageDataSourceReferenceInput is an input type that accepts ImageDataSourceReferenceArgs and ImageDataSourceReferenceOutput values.
+// You can construct a concrete instance of `ImageDataSourceReferenceInput` via:
+//
+//	ImageDataSourceReferenceArgs{...}
+type ImageDataSourceReferenceInput interface {
+	pulumi.Input
+
+	ToImageDataSourceReferenceOutput() ImageDataSourceReferenceOutput
+	ToImageDataSourceReferenceOutputWithContext(context.Context) ImageDataSourceReferenceOutput
+}
+
+type ImageDataSourceReferenceArgs struct {
+	// - The kind name (Default value: project)(Required).
+	Kind pulumi.StringPtrInput `pulumi:"kind"`
+	// - the UUID(Required).
+	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
+}
+
+func (ImageDataSourceReferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImageDataSourceReference)(nil)).Elem()
+}
+
+func (i ImageDataSourceReferenceArgs) ToImageDataSourceReferenceOutput() ImageDataSourceReferenceOutput {
+	return i.ToImageDataSourceReferenceOutputWithContext(context.Background())
+}
+
+func (i ImageDataSourceReferenceArgs) ToImageDataSourceReferenceOutputWithContext(ctx context.Context) ImageDataSourceReferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImageDataSourceReferenceOutput)
+}
+
+// ImageDataSourceReferenceArrayInput is an input type that accepts ImageDataSourceReferenceArray and ImageDataSourceReferenceArrayOutput values.
+// You can construct a concrete instance of `ImageDataSourceReferenceArrayInput` via:
+//
+//	ImageDataSourceReferenceArray{ ImageDataSourceReferenceArgs{...} }
+type ImageDataSourceReferenceArrayInput interface {
+	pulumi.Input
+
+	ToImageDataSourceReferenceArrayOutput() ImageDataSourceReferenceArrayOutput
+	ToImageDataSourceReferenceArrayOutputWithContext(context.Context) ImageDataSourceReferenceArrayOutput
+}
+
+type ImageDataSourceReferenceArray []ImageDataSourceReferenceInput
+
+func (ImageDataSourceReferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ImageDataSourceReference)(nil)).Elem()
+}
+
+func (i ImageDataSourceReferenceArray) ToImageDataSourceReferenceArrayOutput() ImageDataSourceReferenceArrayOutput {
+	return i.ToImageDataSourceReferenceArrayOutputWithContext(context.Background())
+}
+
+func (i ImageDataSourceReferenceArray) ToImageDataSourceReferenceArrayOutputWithContext(ctx context.Context) ImageDataSourceReferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ImageDataSourceReferenceArrayOutput)
+}
+
+type ImageDataSourceReferenceOutput struct{ *pulumi.OutputState }
+
+func (ImageDataSourceReferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ImageDataSourceReference)(nil)).Elem()
+}
+
+func (o ImageDataSourceReferenceOutput) ToImageDataSourceReferenceOutput() ImageDataSourceReferenceOutput {
+	return o
+}
+
+func (o ImageDataSourceReferenceOutput) ToImageDataSourceReferenceOutputWithContext(ctx context.Context) ImageDataSourceReferenceOutput {
+	return o
+}
+
+// - The kind name (Default value: project)(Required).
+func (o ImageDataSourceReferenceOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImageDataSourceReference) *string { return v.Kind }).(pulumi.StringPtrOutput)
+}
+
+// - the UUID(Required).
+func (o ImageDataSourceReferenceOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ImageDataSourceReference) *string { return v.Uuid }).(pulumi.StringPtrOutput)
+}
+
+type ImageDataSourceReferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (ImageDataSourceReferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ImageDataSourceReference)(nil)).Elem()
+}
+
+func (o ImageDataSourceReferenceArrayOutput) ToImageDataSourceReferenceArrayOutput() ImageDataSourceReferenceArrayOutput {
+	return o
+}
+
+func (o ImageDataSourceReferenceArrayOutput) ToImageDataSourceReferenceArrayOutputWithContext(ctx context.Context) ImageDataSourceReferenceArrayOutput {
+	return o
+}
+
+func (o ImageDataSourceReferenceArrayOutput) Index(i pulumi.IntInput) ImageDataSourceReferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ImageDataSourceReference {
+		return vs[0].([]ImageDataSourceReference)[vs[1].(int)]
+	}).(ImageDataSourceReferenceOutput)
+}
+
 type ImagePlacementPolicyV2ClusterEntityFilter struct {
 	// Array of strings
 	//
@@ -61934,118 +62040,6 @@ func (o NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleArrayOutput) Index(i pu
 	}).(NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleOutput)
 }
 
-type NdbDatabaseScaleTimeMachineScheduleYearlySchedule struct {
-	DayOfMonth *int    `pulumi:"dayOfMonth"`
-	Enabled    *bool   `pulumi:"enabled"`
-	Month      *string `pulumi:"month"`
-	MonthValue *string `pulumi:"monthValue"`
-}
-
-// NdbDatabaseScaleTimeMachineScheduleYearlyScheduleInput is an input type that accepts NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs and NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput values.
-// You can construct a concrete instance of `NdbDatabaseScaleTimeMachineScheduleYearlyScheduleInput` via:
-//
-//	NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs{...}
-type NdbDatabaseScaleTimeMachineScheduleYearlyScheduleInput interface {
-	pulumi.Input
-
-	ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput() NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput
-	ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutputWithContext(context.Context) NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput
-}
-
-type NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs struct {
-	DayOfMonth pulumi.IntPtrInput    `pulumi:"dayOfMonth"`
-	Enabled    pulumi.BoolPtrInput   `pulumi:"enabled"`
-	Month      pulumi.StringPtrInput `pulumi:"month"`
-	MonthValue pulumi.StringPtrInput `pulumi:"monthValue"`
-}
-
-func (NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbDatabaseScaleTimeMachineScheduleYearlySchedule)(nil)).Elem()
-}
-
-func (i NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs) ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput() NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput {
-	return i.ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutputWithContext(context.Background())
-}
-
-func (i NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs) ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutputWithContext(ctx context.Context) NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput)
-}
-
-// NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayInput is an input type that accepts NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArray and NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput values.
-// You can construct a concrete instance of `NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayInput` via:
-//
-//	NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArray{ NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs{...} }
-type NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayInput interface {
-	pulumi.Input
-
-	ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput() NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput
-	ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutputWithContext(context.Context) NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput
-}
-
-type NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArray []NdbDatabaseScaleTimeMachineScheduleYearlyScheduleInput
-
-func (NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbDatabaseScaleTimeMachineScheduleYearlySchedule)(nil)).Elem()
-}
-
-func (i NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArray) ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput() NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput {
-	return i.ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutputWithContext(context.Background())
-}
-
-func (i NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArray) ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutputWithContext(ctx context.Context) NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput)
-}
-
-type NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput struct{ *pulumi.OutputState }
-
-func (NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbDatabaseScaleTimeMachineScheduleYearlySchedule)(nil)).Elem()
-}
-
-func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput) ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput() NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput {
-	return o
-}
-
-func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput) ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutputWithContext(ctx context.Context) NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput {
-	return o
-}
-
-func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput) DayOfMonth() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineScheduleYearlySchedule) *int { return v.DayOfMonth }).(pulumi.IntPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput) Enabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineScheduleYearlySchedule) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput) Month() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineScheduleYearlySchedule) *string { return v.Month }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput) MonthValue() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineScheduleYearlySchedule) *string { return v.MonthValue }).(pulumi.StringPtrOutput)
-}
-
-type NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput struct{ *pulumi.OutputState }
-
-func (NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbDatabaseScaleTimeMachineScheduleYearlySchedule)(nil)).Elem()
-}
-
-func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput) ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput() NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput {
-	return o
-}
-
-func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput) ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutputWithContext(ctx context.Context) NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput {
-	return o
-}
-
-func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput) Index(i pulumi.IntInput) NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbDatabaseScaleTimeMachineScheduleYearlySchedule {
-		return vs[0].([]NdbDatabaseScaleTimeMachineScheduleYearlySchedule)[vs[1].(int)]
-	}).(NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AccessControlPolicyCategoryInput)(nil)).Elem(), AccessControlPolicyCategoryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AccessControlPolicyCategoryArrayInput)(nil)).Elem(), AccessControlPolicyCategoryArray{})
@@ -62655,6 +62649,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageClusterReferenceArrayInput)(nil)).Elem(), ImageClusterReferenceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageCurrentClusterReferenceListInput)(nil)).Elem(), ImageCurrentClusterReferenceListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageCurrentClusterReferenceListArrayInput)(nil)).Elem(), ImageCurrentClusterReferenceListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImageDataSourceReferenceInput)(nil)).Elem(), ImageDataSourceReferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ImageDataSourceReferenceArrayInput)(nil)).Elem(), ImageDataSourceReferenceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImagePlacementPolicyV2ClusterEntityFilterInput)(nil)).Elem(), ImagePlacementPolicyV2ClusterEntityFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImagePlacementPolicyV2ClusterEntityFilterArrayInput)(nil)).Elem(), ImagePlacementPolicyV2ClusterEntityFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImagePlacementPolicyV2ImageEntityFilterInput)(nil)).Elem(), ImagePlacementPolicyV2ImageEntityFilterArgs{})
@@ -63043,8 +63039,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineScheduleSnapshotTimeOfDayArrayInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineScheduleSnapshotTimeOfDayArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleArrayInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineScheduleYearlyScheduleInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArray{})
 	pulumi.RegisterOutputType(AccessControlPolicyCategoryOutput{})
 	pulumi.RegisterOutputType(AccessControlPolicyCategoryArrayOutput{})
 	pulumi.RegisterOutputType(AccessControlPolicyContextFilterListOutput{})
@@ -63653,6 +63647,8 @@ func init() {
 	pulumi.RegisterOutputType(ImageClusterReferenceArrayOutput{})
 	pulumi.RegisterOutputType(ImageCurrentClusterReferenceListOutput{})
 	pulumi.RegisterOutputType(ImageCurrentClusterReferenceListArrayOutput{})
+	pulumi.RegisterOutputType(ImageDataSourceReferenceOutput{})
+	pulumi.RegisterOutputType(ImageDataSourceReferenceArrayOutput{})
 	pulumi.RegisterOutputType(ImagePlacementPolicyV2ClusterEntityFilterOutput{})
 	pulumi.RegisterOutputType(ImagePlacementPolicyV2ClusterEntityFilterArrayOutput{})
 	pulumi.RegisterOutputType(ImagePlacementPolicyV2ImageEntityFilterOutput{})
@@ -64041,6 +64037,4 @@ func init() {
 	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineScheduleSnapshotTimeOfDayArrayOutput{})
 	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleOutput{})
 	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineScheduleWeeklyScheduleArrayOutput{})
-	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput{})
-	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput{})
 }

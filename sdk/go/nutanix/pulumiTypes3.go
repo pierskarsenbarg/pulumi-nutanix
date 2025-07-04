@@ -13,6 +13,100 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic struct {
+	MacAddress *string `pulumi:"macAddress"`
+}
+
+// VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs and VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicInput` via:
+//
+//	VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs{...}
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput
+	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs struct {
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
+}
+
+func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput {
+	return i.ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput)
+}
+
+// VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray and VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput values.
+// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayInput` via:
+//
+//	VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray{ VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs{...} }
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayInput interface {
+	pulumi.Input
+
+	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput
+	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicInput
+
+func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic)(nil)).Elem()
+}
+
+func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput {
+	return i.ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutputWithContext(context.Background())
+}
+
+func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput)
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput) MacAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
+}
+
+type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput struct{ *pulumi.OutputState }
+
+func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic)(nil)).Elem()
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput {
+	return o
+}
+
+func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic {
+		return vs[0].([]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic)[vs[1].(int)]
+	}).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput)
+}
+
 type VmCloneV2BootConfigUefiBootNvramDevice struct {
 	BackingStorageInfos []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo `pulumi:"backingStorageInfos"`
 }
@@ -57284,117 +57378,9 @@ func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput) Index(i 
 	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput)
 }
 
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp struct {
-	// Reference to IP Configuration
-	Ipv4s []GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4 `pulumi:"ipv4s"`
-	// Reference to IP Configuration
-	Ipv6s []GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv6 `pulumi:"ipv6s"`
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArgs and GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArgs{...}
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArgs struct {
-	// Reference to IP Configuration
-	Ipv4s GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4ArrayInput `pulumi:"ipv4s"`
-	// Reference to IP Configuration
-	Ipv6s GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArgs) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput)
-}
-
-// GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayInput is an input type that accepts GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArray and GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput values.
-// You can construct a concrete instance of `GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayInput` via:
-//
-//	GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArray{ GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArgs{...} }
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayInput interface {
-	pulumi.Input
-
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput
-	ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutputWithContext(context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArray []GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpInput
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp)(nil)).Elem()
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput {
-	return i.ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutputWithContext(context.Background())
-}
-
-func (i GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArray) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput {
-	return o
-}
-
-// Reference to IP Configuration
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput) Ipv4s() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4ArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp) []GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4 {
-		return v.Ipv4s
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv4ArrayOutput)
-}
-
-// Reference to IP Configuration
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput) Ipv6s() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv6ArrayOutput {
-	return o.ApplyT(func(v GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp) []GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv6 {
-		return v.Ipv6s
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpIpv6ArrayOutput)
-}
-
-type GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput struct{ *pulumi.OutputState }
-
-func (GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp)(nil)).Elem()
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput() GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput) ToGetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutputWithContext(ctx context.Context) GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput {
-	return o
-}
-
-func (o GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput) Index(i pulumi.IntInput) GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp {
-		return vs[0].([]GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIp)[vs[1].(int)]
-	}).(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootNvramDeviceInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootNvramDeviceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootNvramDeviceArrayInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootNvramDeviceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoArgs{})
@@ -58393,8 +58379,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayInput)(nil)).Elem(), GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArray{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput{})
+	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput{})
 	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootNvramDeviceOutput{})
 	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput{})
 	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoOutput{})
@@ -59393,6 +59379,4 @@ func init() {
 	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcLinkArrayOutput{})
 	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataOutput{})
 	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcMetadataArrayOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpOutput{})
-	pulumi.RegisterOutputType(GetFloatingIpsV2FloatingIpExternalSubnetVpcSnatIpArrayOutput{})
 }

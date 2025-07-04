@@ -29,7 +29,7 @@ class GetImageResult:
     """
     A collection of values returned by getImage.
     """
-    def __init__(__self__, api_version=None, architecture=None, availability_zone_reference=None, categories=None, checksum=None, cluster_name=None, cluster_references=None, cluster_uuid=None, current_cluster_reference_lists=None, description=None, id=None, image_id=None, image_name=None, image_type=None, metadata=None, name=None, owner_reference=None, project_reference=None, retrieval_uri_lists=None, size_bytes=None, source_uri=None, state=None, version=None):
+    def __init__(__self__, api_version=None, architecture=None, availability_zone_reference=None, categories=None, checksum=None, cluster_name=None, cluster_references=None, cluster_uuid=None, current_cluster_reference_lists=None, data_source_references=None, description=None, id=None, image_id=None, image_name=None, image_type=None, metadata=None, name=None, owner_reference=None, project_reference=None, retrieval_uri_lists=None, size_bytes=None, source_uri=None, state=None, version=None):
         if api_version and not isinstance(api_version, str):
             raise TypeError("Expected argument 'api_version' to be a str")
         pulumi.set(__self__, "api_version", api_version)
@@ -57,6 +57,9 @@ class GetImageResult:
         if current_cluster_reference_lists and not isinstance(current_cluster_reference_lists, list):
             raise TypeError("Expected argument 'current_cluster_reference_lists' to be a list")
         pulumi.set(__self__, "current_cluster_reference_lists", current_cluster_reference_lists)
+        if data_source_references and not isinstance(data_source_references, list):
+            raise TypeError("Expected argument 'data_source_references' to be a list")
+        pulumi.set(__self__, "data_source_references", data_source_references)
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
@@ -156,6 +159,14 @@ class GetImageResult:
     @pulumi.getter(name="currentClusterReferenceLists")
     def current_cluster_reference_lists(self) -> Sequence['outputs.GetImageCurrentClusterReferenceListResult']:
         return pulumi.get(self, "current_cluster_reference_lists")
+
+    @property
+    @pulumi.getter(name="dataSourceReferences")
+    def data_source_references(self) -> Sequence['outputs.GetImageDataSourceReferenceResult']:
+        """
+        - Reference to a data source.
+        """
+        return pulumi.get(self, "data_source_references")
 
     @property
     @pulumi.getter
@@ -279,6 +290,7 @@ class AwaitableGetImageResult(GetImageResult):
             cluster_references=self.cluster_references,
             cluster_uuid=self.cluster_uuid,
             current_cluster_reference_lists=self.current_cluster_reference_lists,
+            data_source_references=self.data_source_references,
             description=self.description,
             id=self.id,
             image_id=self.image_id,
@@ -324,6 +336,7 @@ def get_image(categories: Optional[Sequence[Union['GetImageCategoryArgs', 'GetIm
         cluster_references=pulumi.get(__ret__, 'cluster_references'),
         cluster_uuid=pulumi.get(__ret__, 'cluster_uuid'),
         current_cluster_reference_lists=pulumi.get(__ret__, 'current_cluster_reference_lists'),
+        data_source_references=pulumi.get(__ret__, 'data_source_references'),
         description=pulumi.get(__ret__, 'description'),
         id=pulumi.get(__ret__, 'id'),
         image_id=pulumi.get(__ret__, 'image_id'),
@@ -366,6 +379,7 @@ def get_image_output(categories: Optional[pulumi.Input[Optional[Sequence[Union['
         cluster_references=pulumi.get(__response__, 'cluster_references'),
         cluster_uuid=pulumi.get(__response__, 'cluster_uuid'),
         current_cluster_reference_lists=pulumi.get(__response__, 'current_cluster_reference_lists'),
+        data_source_references=pulumi.get(__response__, 'data_source_references'),
         description=pulumi.get(__response__, 'description'),
         id=pulumi.get(__response__, 'id'),
         image_id=pulumi.get(__response__, 'image_id'),

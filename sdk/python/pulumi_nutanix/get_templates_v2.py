@@ -126,7 +126,7 @@ def get_templates_v2(filter: Optional[builtins.str] = None,
     list_templates = nutanix.get_templates_v2()
     filtered_templates = nutanix.get_templates_v2(filter="startswith(templateName,'template_name')",
         limit=10,
-        page=1)
+        page=0)
     ```
 
     ## Templates
@@ -520,7 +520,7 @@ def get_templates_v2_output(filter: Optional[pulumi.Input[Optional[builtins.str]
     list_templates = nutanix.get_templates_v2()
     filtered_templates = nutanix.get_templates_v2(filter="startswith(templateName,'template_name')",
         limit=10,
-        page=1)
+        page=0)
     ```
 
     ## Templates

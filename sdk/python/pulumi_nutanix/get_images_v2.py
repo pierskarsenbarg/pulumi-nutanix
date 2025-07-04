@@ -126,7 +126,7 @@ def get_images_v2(filter: Optional[builtins.str] = None,
     list_images = nutanix.get_images_v2()
     filtered_images = nutanix.get_images_v2(filter="startswith(name,'image_name')",
         limit=10,
-        page=1)
+        page=0)
     ```
 
     ## Images
@@ -227,7 +227,7 @@ def get_images_v2_output(filter: Optional[pulumi.Input[Optional[builtins.str]]] 
     list_images = nutanix.get_images_v2()
     filtered_images = nutanix.get_images_v2(filter="startswith(name,'image_name')",
         limit=10,
-        page=1)
+        page=0)
     ```
 
     ## Images

@@ -13,6 +13,255 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference struct {
+	// The globally unique identifier of an ADSF volume group. It should be of type UUID.
+	VolumeGroupExtId string `pulumi:"volumeGroupExtId"`
+}
+
+// GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceInput is an input type that accepts GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArgs and GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput values.
+// You can construct a concrete instance of `GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceInput` via:
+//
+//	GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArgs{...}
+type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceInput interface {
+	pulumi.Input
+
+	ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput
+	ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutputWithContext(context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput
+}
+
+type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArgs struct {
+	// The globally unique identifier of an ADSF volume group. It should be of type UUID.
+	VolumeGroupExtId pulumi.StringInput `pulumi:"volumeGroupExtId"`
+}
+
+func (GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference)(nil)).Elem()
+}
+
+func (i GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArgs) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput {
+	return i.ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutputWithContext(context.Background())
+}
+
+func (i GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArgs) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutputWithContext(ctx context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput)
+}
+
+// GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayInput is an input type that accepts GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArray and GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput values.
+// You can construct a concrete instance of `GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayInput` via:
+//
+//	GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArray{ GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArgs{...} }
+type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayInput interface {
+	pulumi.Input
+
+	ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput
+	ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutputWithContext(context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput
+}
+
+type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArray []GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceInput
+
+func (GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference)(nil)).Elem()
+}
+
+func (i GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArray) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput {
+	return i.ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutputWithContext(context.Background())
+}
+
+func (i GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArray) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutputWithContext(ctx context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput)
+}
+
+type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput struct{ *pulumi.OutputState }
+
+func (GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference)(nil)).Elem()
+}
+
+func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput {
+	return o
+}
+
+func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutputWithContext(ctx context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput {
+	return o
+}
+
+// The globally unique identifier of an ADSF volume group. It should be of type UUID.
+func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput) VolumeGroupExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference) string {
+		return v.VolumeGroupExtId
+	}).(pulumi.StringOutput)
+}
+
+type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference)(nil)).Elem()
+}
+
+func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput {
+	return o
+}
+
+func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutputWithContext(ctx context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput {
+	return o
+}
+
+func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput) Index(i pulumi.IntInput) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference {
+		return vs[0].([]GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReference)[vs[1].(int)]
+	}).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput)
+}
+
+type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk struct {
+	// A reference to a disk or image that contains the contents of a disk.
+	DataSources []GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSource `pulumi:"dataSources"`
+	// The globally unique identifier of a VM disk. It should be of type UUID.
+	DiskExtId string `pulumi:"diskExtId"`
+	// Size of the disk in Bytes
+	DiskSizeBytes int `pulumi:"diskSizeBytes"`
+	// Indicates if the disk is undergoing migration to another container.
+	IsMigrationInProgress bool `pulumi:"isMigrationInProgress"`
+	// Storage configuration for VM disks
+	StorageConfigs []GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig `pulumi:"storageConfigs"`
+	// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+	StorageContainers []GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer `pulumi:"storageContainers"`
+}
+
+// GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskInput is an input type that accepts GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs and GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput values.
+// You can construct a concrete instance of `GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskInput` via:
+//
+//	GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs{...}
+type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskInput interface {
+	pulumi.Input
+
+	ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput
+	ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutputWithContext(context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput
+}
+
+type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs struct {
+	// A reference to a disk or image that contains the contents of a disk.
+	DataSources GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceArrayInput `pulumi:"dataSources"`
+	// The globally unique identifier of a VM disk. It should be of type UUID.
+	DiskExtId pulumi.StringInput `pulumi:"diskExtId"`
+	// Size of the disk in Bytes
+	DiskSizeBytes pulumi.IntInput `pulumi:"diskSizeBytes"`
+	// Indicates if the disk is undergoing migration to another container.
+	IsMigrationInProgress pulumi.BoolInput `pulumi:"isMigrationInProgress"`
+	// Storage configuration for VM disks
+	StorageConfigs GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigArrayInput `pulumi:"storageConfigs"`
+	// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+	StorageContainers GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainerArrayInput `pulumi:"storageContainers"`
+}
+
+func (GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk)(nil)).Elem()
+}
+
+func (i GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput {
+	return i.ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutputWithContext(context.Background())
+}
+
+func (i GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutputWithContext(ctx context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput)
+}
+
+// GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayInput is an input type that accepts GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArray and GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput values.
+// You can construct a concrete instance of `GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayInput` via:
+//
+//	GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArray{ GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs{...} }
+type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayInput interface {
+	pulumi.Input
+
+	ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput
+	ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutputWithContext(context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput
+}
+
+type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArray []GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskInput
+
+func (GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk)(nil)).Elem()
+}
+
+func (i GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArray) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput {
+	return i.ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutputWithContext(context.Background())
+}
+
+func (i GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArray) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutputWithContext(ctx context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput)
+}
+
+type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput struct{ *pulumi.OutputState }
+
+func (GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk)(nil)).Elem()
+}
+
+func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput {
+	return o
+}
+
+func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutputWithContext(ctx context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput {
+	return o
+}
+
+// A reference to a disk or image that contains the contents of a disk.
+func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) DataSources() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceArrayOutput {
+	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk) []GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSource {
+		return v.DataSources
+	}).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceArrayOutput)
+}
+
+// The globally unique identifier of a VM disk. It should be of type UUID.
+func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) DiskExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk) string { return v.DiskExtId }).(pulumi.StringOutput)
+}
+
+// Size of the disk in Bytes
+func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) DiskSizeBytes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk) int { return v.DiskSizeBytes }).(pulumi.IntOutput)
+}
+
+// Indicates if the disk is undergoing migration to another container.
+func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) IsMigrationInProgress() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk) bool {
+		return v.IsMigrationInProgress
+	}).(pulumi.BoolOutput)
+}
+
+// Storage configuration for VM disks
+func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) StorageConfigs() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigArrayOutput {
+	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk) []GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig {
+		return v.StorageConfigs
+	}).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigArrayOutput)
+}
+
+// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
+func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) StorageContainers() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainerArrayOutput {
+	return o.ApplyT(func(v GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk) []GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer {
+		return v.StorageContainers
+	}).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainerArrayOutput)
+}
+
+type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk)(nil)).Elem()
+}
+
+func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput() GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput {
+	return o
+}
+
+func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput) ToGetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutputWithContext(ctx context.Context) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput {
+	return o
+}
+
+func (o GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput) Index(i pulumi.IntInput) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk {
+		return vs[0].([]GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk)[vs[1].(int)]
+	}).(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput)
+}
+
 type GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSource struct {
 	// Reference to image or vm disk
 	References []GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReference `pulumi:"references"`
@@ -55388,213 +55637,11 @@ func (o GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput) Index(i pulumi.IntI
 	}).(GetVpcsV2VpcExternalSubnetExternalIpIpv6Output)
 }
 
-type GetVpcsV2VpcExternallyRoutablePrefix struct {
-	Ipv4s []GetVpcsV2VpcExternallyRoutablePrefixIpv4 `pulumi:"ipv4s"`
-	Ipv6s []GetVpcsV2VpcExternallyRoutablePrefixIpv6 `pulumi:"ipv6s"`
-}
-
-// GetVpcsV2VpcExternallyRoutablePrefixInput is an input type that accepts GetVpcsV2VpcExternallyRoutablePrefixArgs and GetVpcsV2VpcExternallyRoutablePrefixOutput values.
-// You can construct a concrete instance of `GetVpcsV2VpcExternallyRoutablePrefixInput` via:
-//
-//	GetVpcsV2VpcExternallyRoutablePrefixArgs{...}
-type GetVpcsV2VpcExternallyRoutablePrefixInput interface {
-	pulumi.Input
-
-	ToGetVpcsV2VpcExternallyRoutablePrefixOutput() GetVpcsV2VpcExternallyRoutablePrefixOutput
-	ToGetVpcsV2VpcExternallyRoutablePrefixOutputWithContext(context.Context) GetVpcsV2VpcExternallyRoutablePrefixOutput
-}
-
-type GetVpcsV2VpcExternallyRoutablePrefixArgs struct {
-	Ipv4s GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayInput `pulumi:"ipv4s"`
-	Ipv6s GetVpcsV2VpcExternallyRoutablePrefixIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetVpcsV2VpcExternallyRoutablePrefixArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefix)(nil)).Elem()
-}
-
-func (i GetVpcsV2VpcExternallyRoutablePrefixArgs) ToGetVpcsV2VpcExternallyRoutablePrefixOutput() GetVpcsV2VpcExternallyRoutablePrefixOutput {
-	return i.ToGetVpcsV2VpcExternallyRoutablePrefixOutputWithContext(context.Background())
-}
-
-func (i GetVpcsV2VpcExternallyRoutablePrefixArgs) ToGetVpcsV2VpcExternallyRoutablePrefixOutputWithContext(ctx context.Context) GetVpcsV2VpcExternallyRoutablePrefixOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternallyRoutablePrefixOutput)
-}
-
-// GetVpcsV2VpcExternallyRoutablePrefixArrayInput is an input type that accepts GetVpcsV2VpcExternallyRoutablePrefixArray and GetVpcsV2VpcExternallyRoutablePrefixArrayOutput values.
-// You can construct a concrete instance of `GetVpcsV2VpcExternallyRoutablePrefixArrayInput` via:
-//
-//	GetVpcsV2VpcExternallyRoutablePrefixArray{ GetVpcsV2VpcExternallyRoutablePrefixArgs{...} }
-type GetVpcsV2VpcExternallyRoutablePrefixArrayInput interface {
-	pulumi.Input
-
-	ToGetVpcsV2VpcExternallyRoutablePrefixArrayOutput() GetVpcsV2VpcExternallyRoutablePrefixArrayOutput
-	ToGetVpcsV2VpcExternallyRoutablePrefixArrayOutputWithContext(context.Context) GetVpcsV2VpcExternallyRoutablePrefixArrayOutput
-}
-
-type GetVpcsV2VpcExternallyRoutablePrefixArray []GetVpcsV2VpcExternallyRoutablePrefixInput
-
-func (GetVpcsV2VpcExternallyRoutablePrefixArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetVpcsV2VpcExternallyRoutablePrefix)(nil)).Elem()
-}
-
-func (i GetVpcsV2VpcExternallyRoutablePrefixArray) ToGetVpcsV2VpcExternallyRoutablePrefixArrayOutput() GetVpcsV2VpcExternallyRoutablePrefixArrayOutput {
-	return i.ToGetVpcsV2VpcExternallyRoutablePrefixArrayOutputWithContext(context.Background())
-}
-
-func (i GetVpcsV2VpcExternallyRoutablePrefixArray) ToGetVpcsV2VpcExternallyRoutablePrefixArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternallyRoutablePrefixArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternallyRoutablePrefixArrayOutput)
-}
-
-type GetVpcsV2VpcExternallyRoutablePrefixOutput struct{ *pulumi.OutputState }
-
-func (GetVpcsV2VpcExternallyRoutablePrefixOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefix)(nil)).Elem()
-}
-
-func (o GetVpcsV2VpcExternallyRoutablePrefixOutput) ToGetVpcsV2VpcExternallyRoutablePrefixOutput() GetVpcsV2VpcExternallyRoutablePrefixOutput {
-	return o
-}
-
-func (o GetVpcsV2VpcExternallyRoutablePrefixOutput) ToGetVpcsV2VpcExternallyRoutablePrefixOutputWithContext(ctx context.Context) GetVpcsV2VpcExternallyRoutablePrefixOutput {
-	return o
-}
-
-func (o GetVpcsV2VpcExternallyRoutablePrefixOutput) Ipv4s() GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput {
-	return o.ApplyT(func(v GetVpcsV2VpcExternallyRoutablePrefix) []GetVpcsV2VpcExternallyRoutablePrefixIpv4 {
-		return v.Ipv4s
-	}).(GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput)
-}
-
-func (o GetVpcsV2VpcExternallyRoutablePrefixOutput) Ipv6s() GetVpcsV2VpcExternallyRoutablePrefixIpv6ArrayOutput {
-	return o.ApplyT(func(v GetVpcsV2VpcExternallyRoutablePrefix) []GetVpcsV2VpcExternallyRoutablePrefixIpv6 {
-		return v.Ipv6s
-	}).(GetVpcsV2VpcExternallyRoutablePrefixIpv6ArrayOutput)
-}
-
-type GetVpcsV2VpcExternallyRoutablePrefixArrayOutput struct{ *pulumi.OutputState }
-
-func (GetVpcsV2VpcExternallyRoutablePrefixArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetVpcsV2VpcExternallyRoutablePrefix)(nil)).Elem()
-}
-
-func (o GetVpcsV2VpcExternallyRoutablePrefixArrayOutput) ToGetVpcsV2VpcExternallyRoutablePrefixArrayOutput() GetVpcsV2VpcExternallyRoutablePrefixArrayOutput {
-	return o
-}
-
-func (o GetVpcsV2VpcExternallyRoutablePrefixArrayOutput) ToGetVpcsV2VpcExternallyRoutablePrefixArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternallyRoutablePrefixArrayOutput {
-	return o
-}
-
-func (o GetVpcsV2VpcExternallyRoutablePrefixArrayOutput) Index(i pulumi.IntInput) GetVpcsV2VpcExternallyRoutablePrefixOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsV2VpcExternallyRoutablePrefix {
-		return vs[0].([]GetVpcsV2VpcExternallyRoutablePrefix)[vs[1].(int)]
-	}).(GetVpcsV2VpcExternallyRoutablePrefixOutput)
-}
-
-type GetVpcsV2VpcExternallyRoutablePrefixIpv4 struct {
-	Ips          []GetVpcsV2VpcExternallyRoutablePrefixIpv4Ip `pulumi:"ips"`
-	PrefixLength int                                          `pulumi:"prefixLength"`
-}
-
-// GetVpcsV2VpcExternallyRoutablePrefixIpv4Input is an input type that accepts GetVpcsV2VpcExternallyRoutablePrefixIpv4Args and GetVpcsV2VpcExternallyRoutablePrefixIpv4Output values.
-// You can construct a concrete instance of `GetVpcsV2VpcExternallyRoutablePrefixIpv4Input` via:
-//
-//	GetVpcsV2VpcExternallyRoutablePrefixIpv4Args{...}
-type GetVpcsV2VpcExternallyRoutablePrefixIpv4Input interface {
-	pulumi.Input
-
-	ToGetVpcsV2VpcExternallyRoutablePrefixIpv4Output() GetVpcsV2VpcExternallyRoutablePrefixIpv4Output
-	ToGetVpcsV2VpcExternallyRoutablePrefixIpv4OutputWithContext(context.Context) GetVpcsV2VpcExternallyRoutablePrefixIpv4Output
-}
-
-type GetVpcsV2VpcExternallyRoutablePrefixIpv4Args struct {
-	Ips          GetVpcsV2VpcExternallyRoutablePrefixIpv4IpArrayInput `pulumi:"ips"`
-	PrefixLength pulumi.IntInput                                      `pulumi:"prefixLength"`
-}
-
-func (GetVpcsV2VpcExternallyRoutablePrefixIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixIpv4)(nil)).Elem()
-}
-
-func (i GetVpcsV2VpcExternallyRoutablePrefixIpv4Args) ToGetVpcsV2VpcExternallyRoutablePrefixIpv4Output() GetVpcsV2VpcExternallyRoutablePrefixIpv4Output {
-	return i.ToGetVpcsV2VpcExternallyRoutablePrefixIpv4OutputWithContext(context.Background())
-}
-
-func (i GetVpcsV2VpcExternallyRoutablePrefixIpv4Args) ToGetVpcsV2VpcExternallyRoutablePrefixIpv4OutputWithContext(ctx context.Context) GetVpcsV2VpcExternallyRoutablePrefixIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternallyRoutablePrefixIpv4Output)
-}
-
-// GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayInput is an input type that accepts GetVpcsV2VpcExternallyRoutablePrefixIpv4Array and GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayInput` via:
-//
-//	GetVpcsV2VpcExternallyRoutablePrefixIpv4Array{ GetVpcsV2VpcExternallyRoutablePrefixIpv4Args{...} }
-type GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput() GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput
-	ToGetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutputWithContext(context.Context) GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput
-}
-
-type GetVpcsV2VpcExternallyRoutablePrefixIpv4Array []GetVpcsV2VpcExternallyRoutablePrefixIpv4Input
-
-func (GetVpcsV2VpcExternallyRoutablePrefixIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetVpcsV2VpcExternallyRoutablePrefixIpv4)(nil)).Elem()
-}
-
-func (i GetVpcsV2VpcExternallyRoutablePrefixIpv4Array) ToGetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput() GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput {
-	return i.ToGetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetVpcsV2VpcExternallyRoutablePrefixIpv4Array) ToGetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput)
-}
-
-type GetVpcsV2VpcExternallyRoutablePrefixIpv4Output struct{ *pulumi.OutputState }
-
-func (GetVpcsV2VpcExternallyRoutablePrefixIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixIpv4)(nil)).Elem()
-}
-
-func (o GetVpcsV2VpcExternallyRoutablePrefixIpv4Output) ToGetVpcsV2VpcExternallyRoutablePrefixIpv4Output() GetVpcsV2VpcExternallyRoutablePrefixIpv4Output {
-	return o
-}
-
-func (o GetVpcsV2VpcExternallyRoutablePrefixIpv4Output) ToGetVpcsV2VpcExternallyRoutablePrefixIpv4OutputWithContext(ctx context.Context) GetVpcsV2VpcExternallyRoutablePrefixIpv4Output {
-	return o
-}
-
-func (o GetVpcsV2VpcExternallyRoutablePrefixIpv4Output) Ips() GetVpcsV2VpcExternallyRoutablePrefixIpv4IpArrayOutput {
-	return o.ApplyT(func(v GetVpcsV2VpcExternallyRoutablePrefixIpv4) []GetVpcsV2VpcExternallyRoutablePrefixIpv4Ip {
-		return v.Ips
-	}).(GetVpcsV2VpcExternallyRoutablePrefixIpv4IpArrayOutput)
-}
-
-func (o GetVpcsV2VpcExternallyRoutablePrefixIpv4Output) PrefixLength() pulumi.IntOutput {
-	return o.ApplyT(func(v GetVpcsV2VpcExternallyRoutablePrefixIpv4) int { return v.PrefixLength }).(pulumi.IntOutput)
-}
-
-type GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetVpcsV2VpcExternallyRoutablePrefixIpv4)(nil)).Elem()
-}
-
-func (o GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput) ToGetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput() GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput {
-	return o
-}
-
-func (o GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput) ToGetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutputWithContext(ctx context.Context) GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput {
-	return o
-}
-
-func (o GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput) Index(i pulumi.IntInput) GetVpcsV2VpcExternallyRoutablePrefixIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVpcsV2VpcExternallyRoutablePrefixIpv4 {
-		return vs[0].([]GetVpcsV2VpcExternallyRoutablePrefixIpv4)[vs[1].(int)]
-	}).(GetVpcsV2VpcExternallyRoutablePrefixIpv4Output)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceInput)(nil)).Elem(), GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayInput)(nil)).Elem(), GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskInput)(nil)).Elem(), GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayInput)(nil)).Elem(), GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceInput)(nil)).Elem(), GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceArrayInput)(nil)).Elem(), GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceInput)(nil)).Elem(), GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceArgs{})
@@ -56591,10 +56638,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayInput)(nil)).Elem(), GetVpcsV2VpcExternalSubnetExternalIpIpv4Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetExternalIpIpv6Input)(nil)).Elem(), GetVpcsV2VpcExternalSubnetExternalIpIpv6Args{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayInput)(nil)).Elem(), GetVpcsV2VpcExternalSubnetExternalIpIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixInput)(nil)).Elem(), GetVpcsV2VpcExternallyRoutablePrefixArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixArrayInput)(nil)).Elem(), GetVpcsV2VpcExternallyRoutablePrefixArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixIpv4Input)(nil)).Elem(), GetVpcsV2VpcExternallyRoutablePrefixIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayInput)(nil)).Elem(), GetVpcsV2VpcExternallyRoutablePrefixIpv4Array{})
+	pulumi.RegisterOutputType(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceOutput{})
+	pulumi.RegisterOutputType(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoAdfsVolumeGroupReferenceArrayOutput{})
+	pulumi.RegisterOutputType(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput{})
+	pulumi.RegisterOutputType(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArrayOutput{})
 	pulumi.RegisterOutputType(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceOutput{})
 	pulumi.RegisterOutputType(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskDataSourceReferenceOutput{})
@@ -57591,8 +57638,4 @@ func init() {
 	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetExternalIpIpv4ArrayOutput{})
 	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetExternalIpIpv6Output{})
 	pulumi.RegisterOutputType(GetVpcsV2VpcExternalSubnetExternalIpIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetVpcsV2VpcExternallyRoutablePrefixOutput{})
-	pulumi.RegisterOutputType(GetVpcsV2VpcExternallyRoutablePrefixArrayOutput{})
-	pulumi.RegisterOutputType(GetVpcsV2VpcExternallyRoutablePrefixIpv4Output{})
-	pulumi.RegisterOutputType(GetVpcsV2VpcExternallyRoutablePrefixIpv4ArrayOutput{})
 }

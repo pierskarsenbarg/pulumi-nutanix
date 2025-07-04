@@ -31,7 +31,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     {
         ///         Filter = "startswith(name,'ipp_name')",
         ///         Limit = 10,
-        ///         Page = 1,
+        ///         Page = 0,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     {
         ///         Filter = "startswith(name,'ipp_name')",
         ///         Limit = 10,
-        ///         Page = 1,
+        ///         Page = 0,
         ///     });
         /// 
         /// });
@@ -87,7 +87,7 @@ namespace PiersKarsenbarg.Nutanix
         ///     {
         ///         Filter = "startswith(name,'ipp_name')",
         ///         Limit = 10,
-        ///         Page = 1,
+        ///         Page = 0,
         ///     });
         /// 
         /// });

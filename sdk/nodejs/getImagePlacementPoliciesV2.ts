@@ -19,7 +19,7 @@ import * as utilities from "./utilities";
  * const filtered_ipp = nutanix.getImagePlacementPoliciesV2({
  *     filter: "startswith(name,'ipp_name')",
  *     limit: 10,
- *     page: 1,
+ *     page: 0,
  * });
  * ```
  */
@@ -108,7 +108,7 @@ export interface GetImagePlacementPoliciesV2Result {
  * const filtered_ipp = nutanix.getImagePlacementPoliciesV2({
  *     filter: "startswith(name,'ipp_name')",
  *     limit: 10,
- *     page: 1,
+ *     page: 0,
  * });
  * ```
  */

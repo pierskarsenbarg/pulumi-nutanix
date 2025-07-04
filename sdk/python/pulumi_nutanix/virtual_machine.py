@@ -56,6 +56,7 @@ class VirtualMachineArgs:
                  nutanix_guest_tools: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  parent_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 power_state: Optional[pulumi.Input[builtins.str]] = None,
                  power_state_mechanism: Optional[pulumi.Input[builtins.str]] = None,
                  project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  serial_port_lists: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]]] = None,
@@ -97,6 +98,7 @@ class VirtualMachineArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] nutanix_guest_tools: - (Optional) Information regarding Nutanix Guest Tools.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] owner_reference: - (Optional) The reference to a user.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] parent_reference: - (Optional) Reference to an entity that the VM cloned from.
+        :param pulumi.Input[builtins.str] power_state: - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
         :param pulumi.Input[builtins.str] power_state_mechanism: - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \\"OFF\\" state. Power state mechanism (ACPI/GUEST/HARD).
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] project_reference: - (Optional) The reference to a project.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineSerialPortListArgs']]] serial_port_lists: - (Optional) Serial Ports configured on the VM.
@@ -171,6 +173,8 @@ class VirtualMachineArgs:
             pulumi.set(__self__, "owner_reference", owner_reference)
         if parent_reference is not None:
             pulumi.set(__self__, "parent_reference", parent_reference)
+        if power_state is not None:
+            pulumi.set(__self__, "power_state", power_state)
         if power_state_mechanism is not None:
             pulumi.set(__self__, "power_state_mechanism", power_state_mechanism)
         if project_reference is not None:
@@ -588,6 +592,18 @@ class VirtualMachineArgs:
     @parent_reference.setter
     def parent_reference(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
         pulumi.set(self, "parent_reference", value)
+
+    @property
+    @pulumi.getter(name="powerState")
+    def power_state(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
+        """
+        return pulumi.get(self, "power_state")
+
+    @power_state.setter
+    def power_state(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "power_state", value)
 
     @property
     @pulumi.getter(name="powerStateMechanism")
@@ -1474,6 +1490,7 @@ class VirtualMachine(pulumi.CustomResource):
                  nutanix_guest_tools: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  parent_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 power_state: Optional[pulumi.Input[builtins.str]] = None,
                  power_state_mechanism: Optional[pulumi.Input[builtins.str]] = None,
                  project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  serial_port_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineSerialPortListArgs', 'VirtualMachineSerialPortListArgsDict']]]]] = None,
@@ -1572,6 +1589,7 @@ class VirtualMachine(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] nutanix_guest_tools: - (Optional) Information regarding Nutanix Guest Tools.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] owner_reference: - (Optional) The reference to a user.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] parent_reference: - (Optional) Reference to an entity that the VM cloned from.
+        :param pulumi.Input[builtins.str] power_state: - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
         :param pulumi.Input[builtins.str] power_state_mechanism: - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \\"OFF\\" state. Power state mechanism (ACPI/GUEST/HARD).
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] project_reference: - (Optional) The reference to a project.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineSerialPortListArgs', 'VirtualMachineSerialPortListArgsDict']]]] serial_port_lists: - (Optional) Serial Ports configured on the VM.
@@ -1690,6 +1708,7 @@ class VirtualMachine(pulumi.CustomResource):
                  nutanix_guest_tools: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  owner_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  parent_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 power_state: Optional[pulumi.Input[builtins.str]] = None,
                  power_state_mechanism: Optional[pulumi.Input[builtins.str]] = None,
                  project_reference: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  serial_port_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualMachineSerialPortListArgs', 'VirtualMachineSerialPortListArgsDict']]]]] = None,
@@ -1741,6 +1760,7 @@ class VirtualMachine(pulumi.CustomResource):
             __props__.__dict__["nutanix_guest_tools"] = nutanix_guest_tools
             __props__.__dict__["owner_reference"] = owner_reference
             __props__.__dict__["parent_reference"] = parent_reference
+            __props__.__dict__["power_state"] = power_state
             __props__.__dict__["power_state_mechanism"] = power_state_mechanism
             __props__.__dict__["project_reference"] = project_reference
             __props__.__dict__["serial_port_lists"] = serial_port_lists
@@ -1753,7 +1773,6 @@ class VirtualMachine(pulumi.CustomResource):
             __props__.__dict__["hypervisor_type"] = None
             __props__.__dict__["metadata"] = None
             __props__.__dict__["nic_list_statuses"] = None
-            __props__.__dict__["power_state"] = None
             __props__.__dict__["state"] = None
         super(VirtualMachine, __self__).__init__(
             'nutanix:index/virtualMachine:VirtualMachine',

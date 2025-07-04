@@ -5334,6 +5334,17 @@ export interface ImageCurrentClusterReferenceList {
     uuid?: pulumi.Input<string>;
 }
 
+export interface ImageDataSourceReference {
+    /**
+     * - The kind name (Default value: project)(Required).
+     */
+    kind?: pulumi.Input<string>;
+    /**
+     * - the UUID(Required).
+     */
+    uuid?: pulumi.Input<string>;
+}
+
 export interface ImagePlacementPolicyV2ClusterEntityFilter {
     /**
      * Array of strings

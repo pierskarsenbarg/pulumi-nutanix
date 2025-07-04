@@ -29,6 +29,21 @@ namespace PiersKarsenbarg.Nutanix
     ///         SourceUri = "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
     ///     });
     /// 
+    ///     // Create image with data_source_reference
+    ///     var createImageWithDataSourceReference = new Nutanix.Image("createImageWithDataSourceReference", new()
+    ///     {
+    ///         DataSourceReferences = new[]
+    ///         {
+    ///             new Nutanix.Inputs.ImageDataSourceReferenceArgs
+    ///             {
+    ///                 Kind = "vm_disk",
+    ///                 Uuid = "&lt;uuid of the vm disk&gt;",
+    ///             },
+    ///         },
+    ///         Description = "Sql Server",
+    ///         ImageType = "DISK_IMAGE",
+    ///     });
+    /// 
     /// });
     /// ```
     /// </summary>
@@ -76,6 +91,12 @@ namespace PiersKarsenbarg.Nutanix
 
         [Output("currentClusterReferenceLists")]
         public Output<ImmutableArray<Outputs.ImageCurrentClusterReferenceList>> CurrentClusterReferenceLists { get; private set; } = null!;
+
+        /// <summary>
+        /// Reference to a data source.
+        /// </summary>
+        [Output("dataSourceReferences")]
+        public Output<ImmutableArray<Outputs.ImageDataSourceReference>> DataSourceReferences { get; private set; } = null!;
 
         /// <summary>
         /// - (Optional) A description for image.
@@ -246,6 +267,18 @@ namespace PiersKarsenbarg.Nutanix
             set => _clusterReferences = value;
         }
 
+        [Input("dataSourceReferences")]
+        private InputList<Inputs.ImageDataSourceReferenceArgs>? _dataSourceReferences;
+
+        /// <summary>
+        /// Reference to a data source.
+        /// </summary>
+        public InputList<Inputs.ImageDataSourceReferenceArgs> DataSourceReferences
+        {
+            get => _dataSourceReferences ?? (_dataSourceReferences = new InputList<Inputs.ImageDataSourceReferenceArgs>());
+            set => _dataSourceReferences = value;
+        }
+
         /// <summary>
         /// - (Optional) A description for image.
         /// </summary>
@@ -388,6 +421,18 @@ namespace PiersKarsenbarg.Nutanix
         {
             get => _currentClusterReferenceLists ?? (_currentClusterReferenceLists = new InputList<Inputs.ImageCurrentClusterReferenceListGetArgs>());
             set => _currentClusterReferenceLists = value;
+        }
+
+        [Input("dataSourceReferences")]
+        private InputList<Inputs.ImageDataSourceReferenceGetArgs>? _dataSourceReferences;
+
+        /// <summary>
+        /// Reference to a data source.
+        /// </summary>
+        public InputList<Inputs.ImageDataSourceReferenceGetArgs> DataSourceReferences
+        {
+            get => _dataSourceReferences ?? (_dataSourceReferences = new InputList<Inputs.ImageDataSourceReferenceGetArgs>());
+            set => _dataSourceReferences = value;
         }
 
         /// <summary>

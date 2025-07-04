@@ -122,6 +122,10 @@ namespace PiersKarsenbarg.Nutanix
         public readonly string ClusterUuid;
         public readonly ImmutableArray<Outputs.GetImageCurrentClusterReferenceListResult> CurrentClusterReferenceLists;
         /// <summary>
+        /// - Reference to a data source.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetImageDataSourceReferenceResult> DataSourceReferences;
+        /// <summary>
         /// - A description for image.
         /// </summary>
         public readonly string Description;
@@ -192,6 +196,8 @@ namespace PiersKarsenbarg.Nutanix
 
             ImmutableArray<Outputs.GetImageCurrentClusterReferenceListResult> currentClusterReferenceLists,
 
+            ImmutableArray<Outputs.GetImageDataSourceReferenceResult> dataSourceReferences,
+
             string description,
 
             string id,
@@ -229,6 +235,7 @@ namespace PiersKarsenbarg.Nutanix
             ClusterReferences = clusterReferences;
             ClusterUuid = clusterUuid;
             CurrentClusterReferenceLists = currentClusterReferenceLists;
+            DataSourceReferences = dataSourceReferences;
             Description = description;
             Id = id;
             ImageId = imageId;

@@ -510,6 +510,8 @@ type virtualMachineArgs struct {
 	OwnerReference map[string]string `pulumi:"ownerReference"`
 	// - (Optional) Reference to an entity that the VM cloned from.
 	ParentReference map[string]string `pulumi:"parentReference"`
+	// - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
+	PowerState *string `pulumi:"powerState"`
 	// - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
 	PowerStateMechanism *string `pulumi:"powerStateMechanism"`
 	// - (Optional) The reference to a project.
@@ -593,6 +595,8 @@ type VirtualMachineArgs struct {
 	OwnerReference pulumi.StringMapInput
 	// - (Optional) Reference to an entity that the VM cloned from.
 	ParentReference pulumi.StringMapInput
+	// - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
+	PowerState pulumi.StringPtrInput
 	// - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
 	PowerStateMechanism pulumi.StringPtrInput
 	// - (Optional) The reference to a project.

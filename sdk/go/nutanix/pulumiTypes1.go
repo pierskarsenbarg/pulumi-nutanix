@@ -13,6 +13,118 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type NdbDatabaseScaleTimeMachineScheduleYearlySchedule struct {
+	DayOfMonth *int    `pulumi:"dayOfMonth"`
+	Enabled    *bool   `pulumi:"enabled"`
+	Month      *string `pulumi:"month"`
+	MonthValue *string `pulumi:"monthValue"`
+}
+
+// NdbDatabaseScaleTimeMachineScheduleYearlyScheduleInput is an input type that accepts NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs and NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput values.
+// You can construct a concrete instance of `NdbDatabaseScaleTimeMachineScheduleYearlyScheduleInput` via:
+//
+//	NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs{...}
+type NdbDatabaseScaleTimeMachineScheduleYearlyScheduleInput interface {
+	pulumi.Input
+
+	ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput() NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput
+	ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutputWithContext(context.Context) NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput
+}
+
+type NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs struct {
+	DayOfMonth pulumi.IntPtrInput    `pulumi:"dayOfMonth"`
+	Enabled    pulumi.BoolPtrInput   `pulumi:"enabled"`
+	Month      pulumi.StringPtrInput `pulumi:"month"`
+	MonthValue pulumi.StringPtrInput `pulumi:"monthValue"`
+}
+
+func (NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NdbDatabaseScaleTimeMachineScheduleYearlySchedule)(nil)).Elem()
+}
+
+func (i NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs) ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput() NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput {
+	return i.ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutputWithContext(context.Background())
+}
+
+func (i NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs) ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutputWithContext(ctx context.Context) NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput)
+}
+
+// NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayInput is an input type that accepts NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArray and NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput values.
+// You can construct a concrete instance of `NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayInput` via:
+//
+//	NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArray{ NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs{...} }
+type NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayInput interface {
+	pulumi.Input
+
+	ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput() NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput
+	ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutputWithContext(context.Context) NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput
+}
+
+type NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArray []NdbDatabaseScaleTimeMachineScheduleYearlyScheduleInput
+
+func (NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NdbDatabaseScaleTimeMachineScheduleYearlySchedule)(nil)).Elem()
+}
+
+func (i NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArray) ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput() NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput {
+	return i.ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutputWithContext(context.Background())
+}
+
+func (i NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArray) ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutputWithContext(ctx context.Context) NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput)
+}
+
+type NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput struct{ *pulumi.OutputState }
+
+func (NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NdbDatabaseScaleTimeMachineScheduleYearlySchedule)(nil)).Elem()
+}
+
+func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput) ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput() NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput {
+	return o
+}
+
+func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput) ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutputWithContext(ctx context.Context) NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput {
+	return o
+}
+
+func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput) DayOfMonth() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineScheduleYearlySchedule) *int { return v.DayOfMonth }).(pulumi.IntPtrOutput)
+}
+
+func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput) Enabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineScheduleYearlySchedule) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
+}
+
+func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput) Month() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineScheduleYearlySchedule) *string { return v.Month }).(pulumi.StringPtrOutput)
+}
+
+func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput) MonthValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NdbDatabaseScaleTimeMachineScheduleYearlySchedule) *string { return v.MonthValue }).(pulumi.StringPtrOutput)
+}
+
+type NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput struct{ *pulumi.OutputState }
+
+func (NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NdbDatabaseScaleTimeMachineScheduleYearlySchedule)(nil)).Elem()
+}
+
+func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput) ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput() NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput {
+	return o
+}
+
+func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput) ToNdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutputWithContext(ctx context.Context) NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput {
+	return o
+}
+
+func (o NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput) Index(i pulumi.IntInput) NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbDatabaseScaleTimeMachineScheduleYearlySchedule {
+		return vs[0].([]NdbDatabaseScaleTimeMachineScheduleYearlySchedule)[vs[1].(int)]
+	}).(NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput)
+}
+
 type NdbDatabaseScaleTimeMachineSla struct {
 	ContinuousRetention    *int    `pulumi:"continuousRetention"`
 	CurrentActiveFrequency *string `pulumi:"currentActiveFrequency"`
@@ -61867,122 +61979,9 @@ func (o ProjectSubnetReferenceListArrayOutput) Index(i pulumi.IntInput) ProjectS
 	}).(ProjectSubnetReferenceListOutput)
 }
 
-type ProjectTunnelReferenceList struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind *string `pulumi:"kind"`
-	// The name for the project.
-	Name *string `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid string `pulumi:"uuid"`
-}
-
-// ProjectTunnelReferenceListInput is an input type that accepts ProjectTunnelReferenceListArgs and ProjectTunnelReferenceListOutput values.
-// You can construct a concrete instance of `ProjectTunnelReferenceListInput` via:
-//
-//	ProjectTunnelReferenceListArgs{...}
-type ProjectTunnelReferenceListInput interface {
-	pulumi.Input
-
-	ToProjectTunnelReferenceListOutput() ProjectTunnelReferenceListOutput
-	ToProjectTunnelReferenceListOutputWithContext(context.Context) ProjectTunnelReferenceListOutput
-}
-
-type ProjectTunnelReferenceListArgs struct {
-	// (Required) The kind name (Default value: `project`).
-	Kind pulumi.StringPtrInput `pulumi:"kind"`
-	// The name for the project.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Required) the UUID.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (ProjectTunnelReferenceListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectTunnelReferenceList)(nil)).Elem()
-}
-
-func (i ProjectTunnelReferenceListArgs) ToProjectTunnelReferenceListOutput() ProjectTunnelReferenceListOutput {
-	return i.ToProjectTunnelReferenceListOutputWithContext(context.Background())
-}
-
-func (i ProjectTunnelReferenceListArgs) ToProjectTunnelReferenceListOutputWithContext(ctx context.Context) ProjectTunnelReferenceListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectTunnelReferenceListOutput)
-}
-
-// ProjectTunnelReferenceListArrayInput is an input type that accepts ProjectTunnelReferenceListArray and ProjectTunnelReferenceListArrayOutput values.
-// You can construct a concrete instance of `ProjectTunnelReferenceListArrayInput` via:
-//
-//	ProjectTunnelReferenceListArray{ ProjectTunnelReferenceListArgs{...} }
-type ProjectTunnelReferenceListArrayInput interface {
-	pulumi.Input
-
-	ToProjectTunnelReferenceListArrayOutput() ProjectTunnelReferenceListArrayOutput
-	ToProjectTunnelReferenceListArrayOutputWithContext(context.Context) ProjectTunnelReferenceListArrayOutput
-}
-
-type ProjectTunnelReferenceListArray []ProjectTunnelReferenceListInput
-
-func (ProjectTunnelReferenceListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectTunnelReferenceList)(nil)).Elem()
-}
-
-func (i ProjectTunnelReferenceListArray) ToProjectTunnelReferenceListArrayOutput() ProjectTunnelReferenceListArrayOutput {
-	return i.ToProjectTunnelReferenceListArrayOutputWithContext(context.Background())
-}
-
-func (i ProjectTunnelReferenceListArray) ToProjectTunnelReferenceListArrayOutputWithContext(ctx context.Context) ProjectTunnelReferenceListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProjectTunnelReferenceListArrayOutput)
-}
-
-type ProjectTunnelReferenceListOutput struct{ *pulumi.OutputState }
-
-func (ProjectTunnelReferenceListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProjectTunnelReferenceList)(nil)).Elem()
-}
-
-func (o ProjectTunnelReferenceListOutput) ToProjectTunnelReferenceListOutput() ProjectTunnelReferenceListOutput {
-	return o
-}
-
-func (o ProjectTunnelReferenceListOutput) ToProjectTunnelReferenceListOutputWithContext(ctx context.Context) ProjectTunnelReferenceListOutput {
-	return o
-}
-
-// (Required) The kind name (Default value: `project`).
-func (o ProjectTunnelReferenceListOutput) Kind() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectTunnelReferenceList) *string { return v.Kind }).(pulumi.StringPtrOutput)
-}
-
-// The name for the project.
-func (o ProjectTunnelReferenceListOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProjectTunnelReferenceList) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-// (Required) the UUID.
-func (o ProjectTunnelReferenceListOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v ProjectTunnelReferenceList) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type ProjectTunnelReferenceListArrayOutput struct{ *pulumi.OutputState }
-
-func (ProjectTunnelReferenceListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProjectTunnelReferenceList)(nil)).Elem()
-}
-
-func (o ProjectTunnelReferenceListArrayOutput) ToProjectTunnelReferenceListArrayOutput() ProjectTunnelReferenceListArrayOutput {
-	return o
-}
-
-func (o ProjectTunnelReferenceListArrayOutput) ToProjectTunnelReferenceListArrayOutputWithContext(ctx context.Context) ProjectTunnelReferenceListArrayOutput {
-	return o
-}
-
-func (o ProjectTunnelReferenceListArrayOutput) Index(i pulumi.IntInput) ProjectTunnelReferenceListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProjectTunnelReferenceList {
-		return vs[0].([]ProjectTunnelReferenceList)[vs[1].(int)]
-	}).(ProjectTunnelReferenceListOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineScheduleYearlyScheduleInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineSlaInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineSlaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineSlaArrayInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineSlaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbDatabaseScaleTimeMachineTagInput)(nil)).Elem(), NdbDatabaseScaleTimeMachineTagArgs{})
@@ -62970,8 +62969,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectResourceDomainResourceArrayInput)(nil)).Elem(), ProjectResourceDomainResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectSubnetReferenceListInput)(nil)).Elem(), ProjectSubnetReferenceListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectSubnetReferenceListArrayInput)(nil)).Elem(), ProjectSubnetReferenceListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectTunnelReferenceListInput)(nil)).Elem(), ProjectTunnelReferenceListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*ProjectTunnelReferenceListArrayInput)(nil)).Elem(), ProjectTunnelReferenceListArray{})
+	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineScheduleYearlyScheduleOutput{})
+	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineScheduleYearlyScheduleArrayOutput{})
 	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineSlaOutput{})
 	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineSlaArrayOutput{})
 	pulumi.RegisterOutputType(NdbDatabaseScaleTimeMachineTagOutput{})
@@ -63959,6 +63958,4 @@ func init() {
 	pulumi.RegisterOutputType(ProjectResourceDomainResourceArrayOutput{})
 	pulumi.RegisterOutputType(ProjectSubnetReferenceListOutput{})
 	pulumi.RegisterOutputType(ProjectSubnetReferenceListArrayOutput{})
-	pulumi.RegisterOutputType(ProjectTunnelReferenceListOutput{})
-	pulumi.RegisterOutputType(ProjectTunnelReferenceListArrayOutput{})
 }

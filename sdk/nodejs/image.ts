@@ -19,6 +19,15 @@ import * as utilities from "./utilities";
  *     description: "Ubuntu",
  *     sourceUri: "http://archive.ubuntu.com/ubuntu/dists/bionic/main/installer-amd64/current/images/netboot/mini.iso",
  * });
+ * // Create image with data_source_reference
+ * const createImageWithDataSourceReference = new nutanix.Image("createImageWithDataSourceReference", {
+ *     dataSourceReferences: [{
+ *         kind: "vm_disk",
+ *         uuid: "<uuid of the vm disk>",
+ *     }],
+ *     description: "Sql Server",
+ *     imageType: "DISK_IMAGE",
+ * });
  * ```
  */
 export class Image extends pulumi.CustomResource {
@@ -73,6 +82,10 @@ export class Image extends pulumi.CustomResource {
     public readonly clusterReferences!: pulumi.Output<outputs.ImageClusterReference[]>;
     public /*out*/ readonly clusterUuid!: pulumi.Output<string>;
     public /*out*/ readonly currentClusterReferenceLists!: pulumi.Output<outputs.ImageCurrentClusterReferenceList[]>;
+    /**
+     * Reference to a data source.
+     */
+    public readonly dataSourceReferences!: pulumi.Output<outputs.ImageDataSourceReference[]>;
     /**
      * - (Optional) A description for image.
      */
@@ -144,6 +157,7 @@ export class Image extends pulumi.CustomResource {
             resourceInputs["clusterReferences"] = state ? state.clusterReferences : undefined;
             resourceInputs["clusterUuid"] = state ? state.clusterUuid : undefined;
             resourceInputs["currentClusterReferenceLists"] = state ? state.currentClusterReferenceLists : undefined;
+            resourceInputs["dataSourceReferences"] = state ? state.dataSourceReferences : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["imageType"] = state ? state.imageType : undefined;
             resourceInputs["metadata"] = state ? state.metadata : undefined;
@@ -163,6 +177,7 @@ export class Image extends pulumi.CustomResource {
             resourceInputs["categories"] = args ? args.categories : undefined;
             resourceInputs["checksum"] = args ? args.checksum : undefined;
             resourceInputs["clusterReferences"] = args ? args.clusterReferences : undefined;
+            resourceInputs["dataSourceReferences"] = args ? args.dataSourceReferences : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["imageType"] = args ? args.imageType : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
@@ -213,6 +228,10 @@ export interface ImageState {
     clusterReferences?: pulumi.Input<pulumi.Input<inputs.ImageClusterReference>[]>;
     clusterUuid?: pulumi.Input<string>;
     currentClusterReferenceLists?: pulumi.Input<pulumi.Input<inputs.ImageCurrentClusterReferenceList>[]>;
+    /**
+     * Reference to a data source.
+     */
+    dataSourceReferences?: pulumi.Input<pulumi.Input<inputs.ImageDataSourceReference>[]>;
     /**
      * - (Optional) A description for image.
      */
@@ -284,6 +303,10 @@ export interface ImageArgs {
      */
     checksum?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     clusterReferences?: pulumi.Input<pulumi.Input<inputs.ImageClusterReference>[]>;
+    /**
+     * Reference to a data source.
+     */
+    dataSourceReferences?: pulumi.Input<pulumi.Input<inputs.ImageDataSourceReference>[]>;
     /**
      * - (Optional) A description for image.
      */

@@ -605,6 +605,24 @@ class UsersV2(pulumi.CustomResource):
         """
         Provides Nutanix resource to Create a User.
 
+        ## Import
+
+        This helps to manage existing entities which are not created through terraform. Users can be imported using the `UUID`.  eg,
+
+        hcl
+
+        // create its configuration in the root module. For example:
+
+        resource "nutanix_users_v2" "import_user" {}
+
+        // execute this command
+
+        ```sh
+        $ pulumi import nutanix:index/usersV2:UsersV2 import_user <UUID>
+        ```
+
+        See detailed information in [Nutanix Users v4](https://developers.nutanix.com/api-reference?namespace=iam&version=v4.0#tag/Users/operation/createUser).
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['UsersV2AdditionalAttributeArgs', 'UsersV2AdditionalAttributeArgsDict']]]] additional_attributes: -  Any additional attribute for the User.
@@ -629,6 +647,24 @@ class UsersV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides Nutanix resource to Create a User.
+
+        ## Import
+
+        This helps to manage existing entities which are not created through terraform. Users can be imported using the `UUID`.  eg,
+
+        hcl
+
+        // create its configuration in the root module. For example:
+
+        resource "nutanix_users_v2" "import_user" {}
+
+        // execute this command
+
+        ```sh
+        $ pulumi import nutanix:index/usersV2:UsersV2 import_user <UUID>
+        ```
+
+        See detailed information in [Nutanix Users v4](https://developers.nutanix.com/api-reference?namespace=iam&version=v4.0#tag/Users/operation/createUser).
 
         :param str resource_name: The name of the resource.
         :param UsersV2Args args: The arguments to use to populate this resource's properties.

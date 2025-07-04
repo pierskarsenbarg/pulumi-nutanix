@@ -2189,8 +2189,8 @@ github.com/nutanix/ntnx-api-golang-clients/vmm-go-client/v4 v4.0.1 h1:4/neYUoEkE
 github.com/nutanix/ntnx-api-golang-clients/vmm-go-client/v4 v4.0.1/go.mod h1:CaWm4GFpAjQQDc6YXl/dUDrHpuW54h8j6Cj7EslE4Qk=
 github.com/nutanix/ntnx-api-golang-clients/volumes-go-client/v4 v4.0.1 h1:drMlCQoTpIxmveSyZVDihr083zry2Au7fIB5FHtI4Ew=
 github.com/nutanix/ntnx-api-golang-clients/volumes-go-client/v4 v4.0.1/go.mod h1:Z+RKLwsHYxAcFbZPy2ft3QAK9kBPt9bQdqXSp7eYWkY=
-github.com/nutanix/terraform-provider-nutanix v1.9.6-0.20250509072702-cac904185e71 h1:52Um4hDicQfEQehMK2SKWLI815MqaypvkaBTueHiqhk=
-github.com/nutanix/terraform-provider-nutanix v1.9.6-0.20250509072702-cac904185e71/go.mod h1:huzZzzFZJTA+F4/gPrqIR29GvoaYHjZILczeHtm+t7Q=
+github.com/nutanix/terraform-provider-nutanix v1.9.6-0.20250630105412-87ed6118a50a h1:36NBGjB9ib1pdFJyudDuDMSn+2HXMrrYfNZVWwW9OKk=
+github.com/nutanix/terraform-provider-nutanix v1.9.6-0.20250630105412-87ed6118a50a/go.mod h1:huzZzzFZJTA+F4/gPrqIR29GvoaYHjZILczeHtm+t7Q=
 github.com/nxadm/tail v1.4.4/go.mod h1:kenIhsEOeOJmVchQTgglprH7qJGnHDVpk1VPCcaMI8A=
 github.com/nxadm/tail v1.4.8/go.mod h1:+ncqLTQzXmGhMZNUePPaPqPvBxHAIsmXswZKocGu+AU=
 github.com/oklog/run v1.0.0/go.mod h1:dlhp/R75TPv97u0XWUtDeV/lRKWPKSdTuV0TZvrmrQA=
