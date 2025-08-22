@@ -62,63 +62,63 @@ export class RolesV2 extends pulumi.CustomResource {
     /**
      * - List of Accessible Clients for the Role.
      */
-    public /*out*/ readonly accessibleClients!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly accessibleClients: pulumi.Output<string[]>;
     /**
      * - List of Accessible Entity Types for the Role.
      */
-    public /*out*/ readonly accessibleEntityTypes!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly accessibleEntityTypes: pulumi.Output<string[]>;
     /**
      * - Number of Users assigned to given Role.
      */
-    public /*out*/ readonly assignedUsersCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly assignedUsersCount: pulumi.Output<number>;
     /**
      * - Number of User Groups assigned to given Role.
      */
-    public /*out*/ readonly assignedUsersGroupsCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly assignedUsersGroupsCount: pulumi.Output<number>;
     /**
      * - Client that created the entity.
      */
-    public readonly clientName!: pulumi.Output<string>;
+    declare public readonly clientName: pulumi.Output<string>;
     /**
      * - User or Service Name that created the Role.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * - The creation time of the Role.
      */
-    public /*out*/ readonly createdTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdTime: pulumi.Output<string>;
     /**
      * - Description of the Role.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * -(Required) The display name for the Role.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * - A globally unique identifier of an instance that is suitable for external consumption.
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * - Flag identifying if the Role is system defined or not.
      */
-    public /*out*/ readonly isSystemDefined!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isSystemDefined: pulumi.Output<boolean>;
     /**
      * - The time when the Role was last updated.
      */
-    public /*out*/ readonly lastUpdatedTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastUpdatedTime: pulumi.Output<string>;
     /**
      * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    public /*out*/ readonly links!: pulumi.Output<outputs.RolesV2Link[]>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.RolesV2Link[]>;
     /**
      * -(Required) List of operations for the role.
      */
-    public readonly operations!: pulumi.Output<string[]>;
+    declare public readonly operations: pulumi.Output<string[]>;
     /**
      * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
 
     /**
      * Create a RolesV2 resource with the given unique name, arguments, and options.
@@ -133,34 +133,34 @@ export class RolesV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RolesV2State | undefined;
-            resourceInputs["accessibleClients"] = state ? state.accessibleClients : undefined;
-            resourceInputs["accessibleEntityTypes"] = state ? state.accessibleEntityTypes : undefined;
-            resourceInputs["assignedUsersCount"] = state ? state.assignedUsersCount : undefined;
-            resourceInputs["assignedUsersGroupsCount"] = state ? state.assignedUsersGroupsCount : undefined;
-            resourceInputs["clientName"] = state ? state.clientName : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["createdTime"] = state ? state.createdTime : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["isSystemDefined"] = state ? state.isSystemDefined : undefined;
-            resourceInputs["lastUpdatedTime"] = state ? state.lastUpdatedTime : undefined;
-            resourceInputs["links"] = state ? state.links : undefined;
-            resourceInputs["operations"] = state ? state.operations : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
+            resourceInputs["accessibleClients"] = state?.accessibleClients;
+            resourceInputs["accessibleEntityTypes"] = state?.accessibleEntityTypes;
+            resourceInputs["assignedUsersCount"] = state?.assignedUsersCount;
+            resourceInputs["assignedUsersGroupsCount"] = state?.assignedUsersGroupsCount;
+            resourceInputs["clientName"] = state?.clientName;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["createdTime"] = state?.createdTime;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["isSystemDefined"] = state?.isSystemDefined;
+            resourceInputs["lastUpdatedTime"] = state?.lastUpdatedTime;
+            resourceInputs["links"] = state?.links;
+            resourceInputs["operations"] = state?.operations;
+            resourceInputs["tenantId"] = state?.tenantId;
         } else {
             const args = argsOrState as RolesV2Args | undefined;
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.operations === undefined) && !opts.urn) {
+            if (args?.operations === undefined && !opts.urn) {
                 throw new Error("Missing required property 'operations'");
             }
-            resourceInputs["clientName"] = args ? args.clientName : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["operations"] = args ? args.operations : undefined;
+            resourceInputs["clientName"] = args?.clientName;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["operations"] = args?.operations;
             resourceInputs["accessibleClients"] = undefined /*out*/;
             resourceInputs["accessibleEntityTypes"] = undefined /*out*/;
             resourceInputs["assignedUsersCount"] = undefined /*out*/;

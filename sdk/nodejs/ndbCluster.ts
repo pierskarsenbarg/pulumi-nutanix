@@ -40,115 +40,115 @@ export class NdbCluster extends pulumi.CustomResource {
     /**
      * agent network info to register cluster
      */
-    public readonly agentNetworkInfos!: pulumi.Output<outputs.NdbClusterAgentNetworkInfo[]>;
-    public readonly agentVmPrefix!: pulumi.Output<string | undefined>;
+    declare public readonly agentNetworkInfos: pulumi.Output<outputs.NdbClusterAgentNetworkInfo[]>;
+    declare public readonly agentVmPrefix: pulumi.Output<string | undefined>;
     /**
      * - cloud info
      */
-    public /*out*/ readonly cloudInfo!: pulumi.Output<string>;
+    declare public /*out*/ readonly cloudInfo: pulumi.Output<string>;
     /**
      * - cloud type
      */
-    public /*out*/ readonly cloudType!: pulumi.Output<string>;
+    declare public /*out*/ readonly cloudType: pulumi.Output<string>;
     /**
      * Prism Element IP address
      */
-    public readonly clusterIp!: pulumi.Output<string>;
-    public readonly clusterType!: pulumi.Output<string | undefined>;
+    declare public readonly clusterIp: pulumi.Output<string>;
+    declare public readonly clusterType: pulumi.Output<string | undefined>;
     /**
      * - creation date
      */
-    public /*out*/ readonly dateCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateCreated: pulumi.Output<string>;
     /**
      * - date modified
      */
-    public /*out*/ readonly dateModified!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateModified: pulumi.Output<string>;
     /**
      * description of cluster
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * - no. of entities related
      */
-    public /*out*/ readonly entityCounts!: pulumi.Output<outputs.NdbClusterEntityCount[]>;
+    declare public /*out*/ readonly entityCounts: pulumi.Output<outputs.NdbClusterEntityCount[]>;
     /**
      * - fqdn
      */
-    public /*out*/ readonly fqdns!: pulumi.Output<string>;
+    declare public /*out*/ readonly fqdns: pulumi.Output<string>;
     /**
      * - if healthy status
      */
-    public /*out*/ readonly healthy!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly healthy: pulumi.Output<boolean>;
     /**
      * - hypervisor type
      */
-    public /*out*/ readonly hypervisorType!: pulumi.Output<string>;
+    declare public /*out*/ readonly hypervisorType: pulumi.Output<string>;
     /**
      * - hypervisor version
      */
-    public /*out*/ readonly hypervisorVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly hypervisorVersion: pulumi.Output<string>;
     /**
      * - IP address
      */
-    public /*out*/ readonly ipAddresses!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly ipAddresses: pulumi.Output<string[]>;
     /**
      * - NA
      */
-    public /*out*/ readonly managementServerInfo!: pulumi.Output<string>;
+    declare public /*out*/ readonly managementServerInfo: pulumi.Output<string>;
     /**
      * name of the cluster to be registered
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * network segmentation to segment the network traffic of the agent VM.
      */
-    public readonly networksInfos!: pulumi.Output<outputs.NdbClusterNetworksInfo[]>;
+    declare public readonly networksInfos: pulumi.Output<outputs.NdbClusterNetworksInfo[]>;
     /**
      * - nutanix cluster uuid
      */
-    public /*out*/ readonly nxClusterUuid!: pulumi.Output<string>;
+    declare public /*out*/ readonly nxClusterUuid: pulumi.Output<string>;
     /**
      * - owner UUID
      */
-    public /*out*/ readonly ownerId!: pulumi.Output<string>;
+    declare public /*out*/ readonly ownerId: pulumi.Output<string>;
     /**
      * Prism Element password
      */
-    public readonly password!: pulumi.Output<string>;
-    public readonly port!: pulumi.Output<number | undefined>;
+    declare public readonly password: pulumi.Output<string>;
+    declare public readonly port: pulumi.Output<number | undefined>;
     /**
      * - list of properties
      */
-    public /*out*/ readonly properties!: pulumi.Output<outputs.NdbClusterProperty[]>;
-    public readonly protocol!: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly properties: pulumi.Output<outputs.NdbClusterProperty[]>;
+    declare public readonly protocol: pulumi.Output<string | undefined>;
     /**
      * - NA
      */
-    public /*out*/ readonly referenceCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly referenceCount: pulumi.Output<number>;
     /**
      * - resource related consumption info
      */
-    public /*out*/ readonly resourceConfigs!: pulumi.Output<outputs.NdbClusterResourceConfig[]>;
+    declare public /*out*/ readonly resourceConfigs: pulumi.Output<outputs.NdbClusterResourceConfig[]>;
     /**
      * - current status
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * select a storage container which is used for performing database operations in the cluster
      */
-    public readonly storageContainer!: pulumi.Output<string>;
+    declare public readonly storageContainer: pulumi.Output<string>;
     /**
      * - unique name of cluster
      */
-    public /*out*/ readonly uniqueName!: pulumi.Output<string>;
+    declare public /*out*/ readonly uniqueName: pulumi.Output<string>;
     /**
      * username of the Prism Element administrator
      */
-    public readonly username!: pulumi.Output<string>;
+    declare public readonly username: pulumi.Output<string>;
     /**
      * - version
      */
-    public readonly version!: pulumi.Output<string | undefined>;
+    declare public readonly version: pulumi.Output<string | undefined>;
 
     /**
      * Create a NdbCluster resource with the given unique name, arguments, and options.
@@ -163,70 +163,70 @@ export class NdbCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbClusterState | undefined;
-            resourceInputs["agentNetworkInfos"] = state ? state.agentNetworkInfos : undefined;
-            resourceInputs["agentVmPrefix"] = state ? state.agentVmPrefix : undefined;
-            resourceInputs["cloudInfo"] = state ? state.cloudInfo : undefined;
-            resourceInputs["cloudType"] = state ? state.cloudType : undefined;
-            resourceInputs["clusterIp"] = state ? state.clusterIp : undefined;
-            resourceInputs["clusterType"] = state ? state.clusterType : undefined;
-            resourceInputs["dateCreated"] = state ? state.dateCreated : undefined;
-            resourceInputs["dateModified"] = state ? state.dateModified : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["entityCounts"] = state ? state.entityCounts : undefined;
-            resourceInputs["fqdns"] = state ? state.fqdns : undefined;
-            resourceInputs["healthy"] = state ? state.healthy : undefined;
-            resourceInputs["hypervisorType"] = state ? state.hypervisorType : undefined;
-            resourceInputs["hypervisorVersion"] = state ? state.hypervisorVersion : undefined;
-            resourceInputs["ipAddresses"] = state ? state.ipAddresses : undefined;
-            resourceInputs["managementServerInfo"] = state ? state.managementServerInfo : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networksInfos"] = state ? state.networksInfos : undefined;
-            resourceInputs["nxClusterUuid"] = state ? state.nxClusterUuid : undefined;
-            resourceInputs["ownerId"] = state ? state.ownerId : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["protocol"] = state ? state.protocol : undefined;
-            resourceInputs["referenceCount"] = state ? state.referenceCount : undefined;
-            resourceInputs["resourceConfigs"] = state ? state.resourceConfigs : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["storageContainer"] = state ? state.storageContainer : undefined;
-            resourceInputs["uniqueName"] = state ? state.uniqueName : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["agentNetworkInfos"] = state?.agentNetworkInfos;
+            resourceInputs["agentVmPrefix"] = state?.agentVmPrefix;
+            resourceInputs["cloudInfo"] = state?.cloudInfo;
+            resourceInputs["cloudType"] = state?.cloudType;
+            resourceInputs["clusterIp"] = state?.clusterIp;
+            resourceInputs["clusterType"] = state?.clusterType;
+            resourceInputs["dateCreated"] = state?.dateCreated;
+            resourceInputs["dateModified"] = state?.dateModified;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["entityCounts"] = state?.entityCounts;
+            resourceInputs["fqdns"] = state?.fqdns;
+            resourceInputs["healthy"] = state?.healthy;
+            resourceInputs["hypervisorType"] = state?.hypervisorType;
+            resourceInputs["hypervisorVersion"] = state?.hypervisorVersion;
+            resourceInputs["ipAddresses"] = state?.ipAddresses;
+            resourceInputs["managementServerInfo"] = state?.managementServerInfo;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networksInfos"] = state?.networksInfos;
+            resourceInputs["nxClusterUuid"] = state?.nxClusterUuid;
+            resourceInputs["ownerId"] = state?.ownerId;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["protocol"] = state?.protocol;
+            resourceInputs["referenceCount"] = state?.referenceCount;
+            resourceInputs["resourceConfigs"] = state?.resourceConfigs;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["storageContainer"] = state?.storageContainer;
+            resourceInputs["uniqueName"] = state?.uniqueName;
+            resourceInputs["username"] = state?.username;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as NdbClusterArgs | undefined;
-            if ((!args || args.agentNetworkInfos === undefined) && !opts.urn) {
+            if (args?.agentNetworkInfos === undefined && !opts.urn) {
                 throw new Error("Missing required property 'agentNetworkInfos'");
             }
-            if ((!args || args.clusterIp === undefined) && !opts.urn) {
+            if (args?.clusterIp === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterIp'");
             }
-            if ((!args || args.networksInfos === undefined) && !opts.urn) {
+            if (args?.networksInfos === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networksInfos'");
             }
-            if ((!args || args.password === undefined) && !opts.urn) {
+            if (args?.password === undefined && !opts.urn) {
                 throw new Error("Missing required property 'password'");
             }
-            if ((!args || args.storageContainer === undefined) && !opts.urn) {
+            if (args?.storageContainer === undefined && !opts.urn) {
                 throw new Error("Missing required property 'storageContainer'");
             }
-            if ((!args || args.username === undefined) && !opts.urn) {
+            if (args?.username === undefined && !opts.urn) {
                 throw new Error("Missing required property 'username'");
             }
-            resourceInputs["agentNetworkInfos"] = args ? args.agentNetworkInfos : undefined;
-            resourceInputs["agentVmPrefix"] = args ? args.agentVmPrefix : undefined;
-            resourceInputs["clusterIp"] = args ? args.clusterIp : undefined;
-            resourceInputs["clusterType"] = args ? args.clusterType : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networksInfos"] = args ? args.networksInfos : undefined;
+            resourceInputs["agentNetworkInfos"] = args?.agentNetworkInfos;
+            resourceInputs["agentVmPrefix"] = args?.agentVmPrefix;
+            resourceInputs["clusterIp"] = args?.clusterIp;
+            resourceInputs["clusterType"] = args?.clusterType;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networksInfos"] = args?.networksInfos;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["protocol"] = args ? args.protocol : undefined;
-            resourceInputs["storageContainer"] = args ? args.storageContainer : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
-            resourceInputs["version"] = args ? args.version : undefined;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["protocol"] = args?.protocol;
+            resourceInputs["storageContainer"] = args?.storageContainer;
+            resourceInputs["username"] = args?.username;
+            resourceInputs["version"] = args?.version;
             resourceInputs["cloudInfo"] = undefined /*out*/;
             resourceInputs["cloudType"] = undefined /*out*/;
             resourceInputs["dateCreated"] = undefined /*out*/;

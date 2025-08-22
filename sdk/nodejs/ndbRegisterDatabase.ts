@@ -104,192 +104,192 @@ export class NdbRegisterDatabase extends pulumi.CustomResource {
     /**
      * action arguments
      */
-    public readonly actionarguments!: pulumi.Output<outputs.NdbRegisterDatabaseActionargument[] | undefined>;
+    declare public readonly actionarguments: pulumi.Output<outputs.NdbRegisterDatabaseActionargument[] | undefined>;
     /**
      * auto tune staging drive. Default is true
      */
-    public readonly autoTuneStagingDrive!: pulumi.Output<boolean | undefined>;
+    declare public readonly autoTuneStagingDrive: pulumi.Output<boolean | undefined>;
     /**
      * category of database. Default is "DEFAULT"
      */
-    public readonly category!: pulumi.Output<string | undefined>;
+    declare public readonly category: pulumi.Output<string | undefined>;
     /**
      * whether instance is cloned or not
      */
-    public /*out*/ readonly clone!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly clone: pulumi.Output<boolean>;
     /**
      * clustered or not. Default is false
      */
-    public readonly clustered!: pulumi.Output<boolean | undefined>;
+    declare public readonly clustered: pulumi.Output<boolean | undefined>;
     /**
      * database cluster type
      */
-    public /*out*/ readonly databaseClusterType!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseClusterType: pulumi.Output<string>;
     /**
      * name of database
      */
-    public readonly databaseName!: pulumi.Output<string>;
+    declare public readonly databaseName: pulumi.Output<string>;
     /**
      * database nodes associated with database instance
      */
-    public /*out*/ readonly databaseNodes!: pulumi.Output<outputs.NdbRegisterDatabaseDatabaseNode[]>;
+    declare public /*out*/ readonly databaseNodes: pulumi.Output<outputs.NdbRegisterDatabaseDatabaseNode[]>;
     /**
      * status of database
      */
-    public /*out*/ readonly databaseStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseStatus: pulumi.Output<string>;
     /**
      * type of database. Required value: postgres_database
      */
-    public readonly databaseType!: pulumi.Output<string>;
+    declare public readonly databaseType: pulumi.Output<string>;
     /**
      * date created for db instance
      */
-    public /*out*/ readonly dateCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateCreated: pulumi.Output<string>;
     /**
      * date modified for instance
      */
-    public /*out*/ readonly dateModified!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateModified: pulumi.Output<string>;
     /**
      * dbserver logical cluster
      */
-    public /*out*/ readonly dbserverLogicalCluster!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly dbserverLogicalCluster: pulumi.Output<{[key: string]: string}>;
     /**
      * dbserver logical cluster id
      */
-    public /*out*/ readonly dbserverLogicalClusterId!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbserverLogicalClusterId: pulumi.Output<string>;
     /**
      * - (Optional) Delete the database from the VM. Default value is false
      */
-    public readonly delete!: pulumi.Output<boolean | undefined>;
+    declare public readonly delete: pulumi.Output<boolean | undefined>;
     /**
      * - (Optional) Delete the logical cluster. Default is true
      */
-    public readonly deleteLogicalCluster!: pulumi.Output<boolean | undefined>;
+    declare public readonly deleteLogicalCluster: pulumi.Output<boolean | undefined>;
     /**
      * - (Optional) Delete the database's Time Machine (snapshots/logs) from the NDB. Default value is true
      */
-    public readonly deleteTimeMachine!: pulumi.Output<boolean | undefined>;
+    declare public readonly deleteTimeMachine: pulumi.Output<boolean | undefined>;
     /**
      * description
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * - (Optional) Force delete of instance. Default is false
      */
-    public readonly forced!: pulumi.Output<boolean | undefined>;
+    declare public readonly forced: pulumi.Output<boolean | undefined>;
     /**
      * forced install. Default:  true
      */
-    public readonly forcedInstall!: pulumi.Output<boolean | undefined>;
-    public /*out*/ readonly groupInfo!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly forcedInstall: pulumi.Output<boolean | undefined>;
+    declare public /*out*/ readonly groupInfo: pulumi.Output<{[key: string]: string}>;
     /**
      * info of instance
      */
-    public /*out*/ readonly infos!: pulumi.Output<outputs.NdbRegisterDatabaseInfo[]>;
+    declare public /*out*/ readonly infos: pulumi.Output<outputs.NdbRegisterDatabaseInfo[]>;
     /**
      * LCM config of instance
      */
-    public /*out*/ readonly lcmConfigs!: pulumi.Output<outputs.NdbRegisterDatabaseLcmConfig[]>;
+    declare public /*out*/ readonly lcmConfigs: pulumi.Output<outputs.NdbRegisterDatabaseLcmConfig[]>;
     /**
      * linked databases within database instance
      */
-    public /*out*/ readonly linkedDatabases!: pulumi.Output<outputs.NdbRegisterDatabaseLinkedDatabase[]>;
+    declare public /*out*/ readonly linkedDatabases: pulumi.Output<outputs.NdbRegisterDatabaseLinkedDatabase[]>;
     /**
      * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
      */
-    public /*out*/ readonly metric!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly metric: pulumi.Output<{[key: string]: string}>;
     /**
      * Name of database instance
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * cluster on which NDB is present
      */
-    public readonly nxClusterId!: pulumi.Output<string | undefined>;
+    declare public readonly nxClusterId: pulumi.Output<string | undefined>;
     /**
      * parent database id
      */
-    public /*out*/ readonly parentDatabaseId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentDatabaseId: pulumi.Output<string>;
     /**
      * parent source database id
      */
-    public /*out*/ readonly parentSourceDatabaseId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentSourceDatabaseId: pulumi.Output<string>;
     /**
      * parent time machine id
      */
-    public /*out*/ readonly parentTimeMachineId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentTimeMachineId: pulumi.Output<string>;
     /**
      * Postgress_Info for registering.
      */
-    public readonly postgressInfos!: pulumi.Output<outputs.NdbRegisterDatabasePostgressInfo[] | undefined>;
+    declare public readonly postgressInfos: pulumi.Output<outputs.NdbRegisterDatabasePostgressInfo[] | undefined>;
     /**
      * properties of database created
      */
-    public /*out*/ readonly properties!: pulumi.Output<outputs.NdbRegisterDatabaseProperty[]>;
+    declare public /*out*/ readonly properties: pulumi.Output<outputs.NdbRegisterDatabaseProperty[]>;
     /**
      * - (Optional) Unregister the database from NDB. Default value is true
      */
-    public readonly remove!: pulumi.Output<boolean | undefined>;
+    declare public readonly remove: pulumi.Output<boolean | undefined>;
     /**
      * Reset description in cluster
      */
-    public readonly resetDescriptionInNxCluster!: pulumi.Output<boolean | undefined>;
+    declare public readonly resetDescriptionInNxCluster: pulumi.Output<boolean | undefined>;
     /**
      * - (Optional) Soft remove. Default will be false
      */
-    public readonly softRemove!: pulumi.Output<boolean | undefined>;
+    declare public readonly softRemove: pulumi.Output<boolean | undefined>;
     /**
      * status of instance
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * tags
      */
-    public readonly tags!: pulumi.Output<outputs.NdbRegisterDatabaseTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.NdbRegisterDatabaseTag[]>;
     /**
      * time machine id of instance
      */
-    public /*out*/ readonly timeMachineId!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeMachineId: pulumi.Output<string>;
     /**
      * Time Machine info
      */
-    public readonly timeMachineInfo!: pulumi.Output<outputs.NdbRegisterDatabaseTimeMachineInfo | undefined>;
+    declare public readonly timeMachineInfo: pulumi.Output<outputs.NdbRegisterDatabaseTimeMachineInfo | undefined>;
     /**
      * Time Machine details of instance
      */
-    public /*out*/ readonly timeMachines!: pulumi.Output<outputs.NdbRegisterDatabaseTimeMachine[]>;
+    declare public /*out*/ readonly timeMachines: pulumi.Output<outputs.NdbRegisterDatabaseTimeMachine[]>;
     /**
      * timezone on which instance is created xw
      */
-    public /*out*/ readonly timeZone!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeZone: pulumi.Output<string>;
     /**
      * type of database
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
     /**
      * description for VM
      */
-    public readonly vmDescription!: pulumi.Output<string | undefined>;
+    declare public readonly vmDescription: pulumi.Output<string | undefined>;
     /**
      * IP address of dbserver VM
      */
-    public readonly vmIp!: pulumi.Output<string>;
+    declare public readonly vmIp: pulumi.Output<string>;
     /**
      * password of the NDB drive user account.
      */
-    public readonly vmPassword!: pulumi.Output<string | undefined>;
+    declare public readonly vmPassword: pulumi.Output<string | undefined>;
     /**
      * ssh key for vm
      */
-    public readonly vmSshkey!: pulumi.Output<string | undefined>;
+    declare public readonly vmSshkey: pulumi.Output<string | undefined>;
     /**
      * username of the NDB drive user account that has sudo access.
      */
-    public readonly vmUsername!: pulumi.Output<string | undefined>;
+    declare public readonly vmUsername: pulumi.Output<string | undefined>;
     /**
      * working directory. Default is /tmp
      */
-    public readonly workingDirectory!: pulumi.Output<string | undefined>;
+    declare public readonly workingDirectory: pulumi.Output<string | undefined>;
 
     /**
      * Create a NdbRegisterDatabase resource with the given unique name, arguments, and options.
@@ -304,90 +304,90 @@ export class NdbRegisterDatabase extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbRegisterDatabaseState | undefined;
-            resourceInputs["actionarguments"] = state ? state.actionarguments : undefined;
-            resourceInputs["autoTuneStagingDrive"] = state ? state.autoTuneStagingDrive : undefined;
-            resourceInputs["category"] = state ? state.category : undefined;
-            resourceInputs["clone"] = state ? state.clone : undefined;
-            resourceInputs["clustered"] = state ? state.clustered : undefined;
-            resourceInputs["databaseClusterType"] = state ? state.databaseClusterType : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["databaseNodes"] = state ? state.databaseNodes : undefined;
-            resourceInputs["databaseStatus"] = state ? state.databaseStatus : undefined;
-            resourceInputs["databaseType"] = state ? state.databaseType : undefined;
-            resourceInputs["dateCreated"] = state ? state.dateCreated : undefined;
-            resourceInputs["dateModified"] = state ? state.dateModified : undefined;
-            resourceInputs["dbserverLogicalCluster"] = state ? state.dbserverLogicalCluster : undefined;
-            resourceInputs["dbserverLogicalClusterId"] = state ? state.dbserverLogicalClusterId : undefined;
-            resourceInputs["delete"] = state ? state.delete : undefined;
-            resourceInputs["deleteLogicalCluster"] = state ? state.deleteLogicalCluster : undefined;
-            resourceInputs["deleteTimeMachine"] = state ? state.deleteTimeMachine : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["forced"] = state ? state.forced : undefined;
-            resourceInputs["forcedInstall"] = state ? state.forcedInstall : undefined;
-            resourceInputs["groupInfo"] = state ? state.groupInfo : undefined;
-            resourceInputs["infos"] = state ? state.infos : undefined;
-            resourceInputs["lcmConfigs"] = state ? state.lcmConfigs : undefined;
-            resourceInputs["linkedDatabases"] = state ? state.linkedDatabases : undefined;
-            resourceInputs["metric"] = state ? state.metric : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["nxClusterId"] = state ? state.nxClusterId : undefined;
-            resourceInputs["parentDatabaseId"] = state ? state.parentDatabaseId : undefined;
-            resourceInputs["parentSourceDatabaseId"] = state ? state.parentSourceDatabaseId : undefined;
-            resourceInputs["parentTimeMachineId"] = state ? state.parentTimeMachineId : undefined;
-            resourceInputs["postgressInfos"] = state ? state.postgressInfos : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["remove"] = state ? state.remove : undefined;
-            resourceInputs["resetDescriptionInNxCluster"] = state ? state.resetDescriptionInNxCluster : undefined;
-            resourceInputs["softRemove"] = state ? state.softRemove : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["timeMachineId"] = state ? state.timeMachineId : undefined;
-            resourceInputs["timeMachineInfo"] = state ? state.timeMachineInfo : undefined;
-            resourceInputs["timeMachines"] = state ? state.timeMachines : undefined;
-            resourceInputs["timeZone"] = state ? state.timeZone : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["vmDescription"] = state ? state.vmDescription : undefined;
-            resourceInputs["vmIp"] = state ? state.vmIp : undefined;
-            resourceInputs["vmPassword"] = state ? state.vmPassword : undefined;
-            resourceInputs["vmSshkey"] = state ? state.vmSshkey : undefined;
-            resourceInputs["vmUsername"] = state ? state.vmUsername : undefined;
-            resourceInputs["workingDirectory"] = state ? state.workingDirectory : undefined;
+            resourceInputs["actionarguments"] = state?.actionarguments;
+            resourceInputs["autoTuneStagingDrive"] = state?.autoTuneStagingDrive;
+            resourceInputs["category"] = state?.category;
+            resourceInputs["clone"] = state?.clone;
+            resourceInputs["clustered"] = state?.clustered;
+            resourceInputs["databaseClusterType"] = state?.databaseClusterType;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["databaseNodes"] = state?.databaseNodes;
+            resourceInputs["databaseStatus"] = state?.databaseStatus;
+            resourceInputs["databaseType"] = state?.databaseType;
+            resourceInputs["dateCreated"] = state?.dateCreated;
+            resourceInputs["dateModified"] = state?.dateModified;
+            resourceInputs["dbserverLogicalCluster"] = state?.dbserverLogicalCluster;
+            resourceInputs["dbserverLogicalClusterId"] = state?.dbserverLogicalClusterId;
+            resourceInputs["delete"] = state?.delete;
+            resourceInputs["deleteLogicalCluster"] = state?.deleteLogicalCluster;
+            resourceInputs["deleteTimeMachine"] = state?.deleteTimeMachine;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["forced"] = state?.forced;
+            resourceInputs["forcedInstall"] = state?.forcedInstall;
+            resourceInputs["groupInfo"] = state?.groupInfo;
+            resourceInputs["infos"] = state?.infos;
+            resourceInputs["lcmConfigs"] = state?.lcmConfigs;
+            resourceInputs["linkedDatabases"] = state?.linkedDatabases;
+            resourceInputs["metric"] = state?.metric;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["nxClusterId"] = state?.nxClusterId;
+            resourceInputs["parentDatabaseId"] = state?.parentDatabaseId;
+            resourceInputs["parentSourceDatabaseId"] = state?.parentSourceDatabaseId;
+            resourceInputs["parentTimeMachineId"] = state?.parentTimeMachineId;
+            resourceInputs["postgressInfos"] = state?.postgressInfos;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["remove"] = state?.remove;
+            resourceInputs["resetDescriptionInNxCluster"] = state?.resetDescriptionInNxCluster;
+            resourceInputs["softRemove"] = state?.softRemove;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["timeMachineId"] = state?.timeMachineId;
+            resourceInputs["timeMachineInfo"] = state?.timeMachineInfo;
+            resourceInputs["timeMachines"] = state?.timeMachines;
+            resourceInputs["timeZone"] = state?.timeZone;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["vmDescription"] = state?.vmDescription;
+            resourceInputs["vmIp"] = state?.vmIp;
+            resourceInputs["vmPassword"] = state?.vmPassword;
+            resourceInputs["vmSshkey"] = state?.vmSshkey;
+            resourceInputs["vmUsername"] = state?.vmUsername;
+            resourceInputs["workingDirectory"] = state?.workingDirectory;
         } else {
             const args = argsOrState as NdbRegisterDatabaseArgs | undefined;
-            if ((!args || args.databaseName === undefined) && !opts.urn) {
+            if (args?.databaseName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseName'");
             }
-            if ((!args || args.databaseType === undefined) && !opts.urn) {
+            if (args?.databaseType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseType'");
             }
-            if ((!args || args.vmIp === undefined) && !opts.urn) {
+            if (args?.vmIp === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vmIp'");
             }
-            resourceInputs["actionarguments"] = args ? args.actionarguments : undefined;
-            resourceInputs["autoTuneStagingDrive"] = args ? args.autoTuneStagingDrive : undefined;
-            resourceInputs["category"] = args ? args.category : undefined;
-            resourceInputs["clustered"] = args ? args.clustered : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
-            resourceInputs["databaseType"] = args ? args.databaseType : undefined;
-            resourceInputs["delete"] = args ? args.delete : undefined;
-            resourceInputs["deleteLogicalCluster"] = args ? args.deleteLogicalCluster : undefined;
-            resourceInputs["deleteTimeMachine"] = args ? args.deleteTimeMachine : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["forced"] = args ? args.forced : undefined;
-            resourceInputs["forcedInstall"] = args ? args.forcedInstall : undefined;
-            resourceInputs["nxClusterId"] = args ? args.nxClusterId : undefined;
-            resourceInputs["postgressInfos"] = args ? args.postgressInfos : undefined;
-            resourceInputs["remove"] = args ? args.remove : undefined;
-            resourceInputs["resetDescriptionInNxCluster"] = args ? args.resetDescriptionInNxCluster : undefined;
-            resourceInputs["softRemove"] = args ? args.softRemove : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["timeMachineInfo"] = args ? args.timeMachineInfo : undefined;
-            resourceInputs["vmDescription"] = args ? args.vmDescription : undefined;
-            resourceInputs["vmIp"] = args ? args.vmIp : undefined;
+            resourceInputs["actionarguments"] = args?.actionarguments;
+            resourceInputs["autoTuneStagingDrive"] = args?.autoTuneStagingDrive;
+            resourceInputs["category"] = args?.category;
+            resourceInputs["clustered"] = args?.clustered;
+            resourceInputs["databaseName"] = args?.databaseName;
+            resourceInputs["databaseType"] = args?.databaseType;
+            resourceInputs["delete"] = args?.delete;
+            resourceInputs["deleteLogicalCluster"] = args?.deleteLogicalCluster;
+            resourceInputs["deleteTimeMachine"] = args?.deleteTimeMachine;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["forced"] = args?.forced;
+            resourceInputs["forcedInstall"] = args?.forcedInstall;
+            resourceInputs["nxClusterId"] = args?.nxClusterId;
+            resourceInputs["postgressInfos"] = args?.postgressInfos;
+            resourceInputs["remove"] = args?.remove;
+            resourceInputs["resetDescriptionInNxCluster"] = args?.resetDescriptionInNxCluster;
+            resourceInputs["softRemove"] = args?.softRemove;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["timeMachineInfo"] = args?.timeMachineInfo;
+            resourceInputs["vmDescription"] = args?.vmDescription;
+            resourceInputs["vmIp"] = args?.vmIp;
             resourceInputs["vmPassword"] = args?.vmPassword ? pulumi.secret(args.vmPassword) : undefined;
             resourceInputs["vmSshkey"] = args?.vmSshkey ? pulumi.secret(args.vmSshkey) : undefined;
-            resourceInputs["vmUsername"] = args ? args.vmUsername : undefined;
-            resourceInputs["workingDirectory"] = args ? args.workingDirectory : undefined;
+            resourceInputs["vmUsername"] = args?.vmUsername;
+            resourceInputs["workingDirectory"] = args?.workingDirectory;
             resourceInputs["clone"] = undefined /*out*/;
             resourceInputs["databaseClusterType"] = undefined /*out*/;
             resourceInputs["databaseNodes"] = undefined /*out*/;

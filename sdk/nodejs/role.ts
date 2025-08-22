@@ -65,39 +65,39 @@ export class Role extends pulumi.CustomResource {
     /**
      * The version of the API.
      */
-    public /*out*/ readonly apiVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly apiVersion: pulumi.Output<string>;
     /**
      * - (Optional) Categories for the role.
      */
-    public readonly categories!: pulumi.Output<outputs.RoleCategory[]>;
+    declare public readonly categories: pulumi.Output<outputs.RoleCategory[]>;
     /**
      * - (Optional) The description of the role.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * - The role kind metadata.
      */
-    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) Name of the role.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * - (Optional) The reference to a user.
      */
-    public readonly ownerReference!: pulumi.Output<outputs.RoleOwnerReference>;
+    declare public readonly ownerReference: pulumi.Output<outputs.RoleOwnerReference>;
     /**
      * - (Required) List of permission references.
      */
-    public readonly permissionReferenceLists!: pulumi.Output<outputs.RolePermissionReferenceList[]>;
+    declare public readonly permissionReferenceLists: pulumi.Output<outputs.RolePermissionReferenceList[]>;
     /**
      * - (Optional) The reference to a project.
      */
-    public readonly projectReference!: pulumi.Output<outputs.RoleProjectReference>;
+    declare public readonly projectReference: pulumi.Output<outputs.RoleProjectReference>;
     /**
      * - The state of the role.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
      * Create a Role resource with the given unique name, arguments, and options.
@@ -112,26 +112,26 @@ export class Role extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RoleState | undefined;
-            resourceInputs["apiVersion"] = state ? state.apiVersion : undefined;
-            resourceInputs["categories"] = state ? state.categories : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownerReference"] = state ? state.ownerReference : undefined;
-            resourceInputs["permissionReferenceLists"] = state ? state.permissionReferenceLists : undefined;
-            resourceInputs["projectReference"] = state ? state.projectReference : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["apiVersion"] = state?.apiVersion;
+            resourceInputs["categories"] = state?.categories;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownerReference"] = state?.ownerReference;
+            resourceInputs["permissionReferenceLists"] = state?.permissionReferenceLists;
+            resourceInputs["projectReference"] = state?.projectReference;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as RoleArgs | undefined;
-            if ((!args || args.permissionReferenceLists === undefined) && !opts.urn) {
+            if (args?.permissionReferenceLists === undefined && !opts.urn) {
                 throw new Error("Missing required property 'permissionReferenceLists'");
             }
-            resourceInputs["categories"] = args ? args.categories : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownerReference"] = args ? args.ownerReference : undefined;
-            resourceInputs["permissionReferenceLists"] = args ? args.permissionReferenceLists : undefined;
-            resourceInputs["projectReference"] = args ? args.projectReference : undefined;
+            resourceInputs["categories"] = args?.categories;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownerReference"] = args?.ownerReference;
+            resourceInputs["permissionReferenceLists"] = args?.permissionReferenceLists;
+            resourceInputs["projectReference"] = args?.projectReference;
             resourceInputs["apiVersion"] = undefined /*out*/;
             resourceInputs["metadata"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

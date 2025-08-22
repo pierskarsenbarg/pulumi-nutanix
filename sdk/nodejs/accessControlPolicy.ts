@@ -40,44 +40,44 @@ export class AccessControlPolicy extends pulumi.CustomResource {
     /**
      * The version of the API.
      */
-    public /*out*/ readonly apiVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly apiVersion: pulumi.Output<string>;
     /**
      * - (Optional) Categories for the Access Control Policy.
      */
-    public readonly categories!: pulumi.Output<outputs.AccessControlPolicyCategory[]>;
-    public readonly contextFilterLists!: pulumi.Output<outputs.AccessControlPolicyContextFilterList[]>;
+    declare public readonly categories: pulumi.Output<outputs.AccessControlPolicyCategory[]>;
+    declare public readonly contextFilterLists: pulumi.Output<outputs.AccessControlPolicyContextFilterList[]>;
     /**
      * - (Optional) The description of Access Control Policy.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * - The Access Control Policy kind metadata.
      */
-    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) Name of the Access Control Policy.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * - (Optional) The reference to a user.
      */
-    public readonly ownerReference!: pulumi.Output<outputs.AccessControlPolicyOwnerReference>;
+    declare public readonly ownerReference: pulumi.Output<outputs.AccessControlPolicyOwnerReference>;
     /**
      * - (Required) The reference to a role.
      */
-    public readonly roleReference!: pulumi.Output<outputs.AccessControlPolicyRoleReference>;
+    declare public readonly roleReference: pulumi.Output<outputs.AccessControlPolicyRoleReference>;
     /**
      * - The state of the Access Control Policy.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * - (Optional) The User group(s) being assigned a given role.
      */
-    public readonly userGroupReferenceLists!: pulumi.Output<outputs.AccessControlPolicyUserGroupReferenceList[]>;
+    declare public readonly userGroupReferenceLists: pulumi.Output<outputs.AccessControlPolicyUserGroupReferenceList[]>;
     /**
      * - (Optional) The User(s) being assigned a given role.
      */
-    public readonly userReferenceLists!: pulumi.Output<outputs.AccessControlPolicyUserReferenceList[]>;
+    declare public readonly userReferenceLists: pulumi.Output<outputs.AccessControlPolicyUserReferenceList[]>;
 
     /**
      * Create a AccessControlPolicy resource with the given unique name, arguments, and options.
@@ -92,30 +92,30 @@ export class AccessControlPolicy extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AccessControlPolicyState | undefined;
-            resourceInputs["apiVersion"] = state ? state.apiVersion : undefined;
-            resourceInputs["categories"] = state ? state.categories : undefined;
-            resourceInputs["contextFilterLists"] = state ? state.contextFilterLists : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownerReference"] = state ? state.ownerReference : undefined;
-            resourceInputs["roleReference"] = state ? state.roleReference : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["userGroupReferenceLists"] = state ? state.userGroupReferenceLists : undefined;
-            resourceInputs["userReferenceLists"] = state ? state.userReferenceLists : undefined;
+            resourceInputs["apiVersion"] = state?.apiVersion;
+            resourceInputs["categories"] = state?.categories;
+            resourceInputs["contextFilterLists"] = state?.contextFilterLists;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownerReference"] = state?.ownerReference;
+            resourceInputs["roleReference"] = state?.roleReference;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["userGroupReferenceLists"] = state?.userGroupReferenceLists;
+            resourceInputs["userReferenceLists"] = state?.userReferenceLists;
         } else {
             const args = argsOrState as AccessControlPolicyArgs | undefined;
-            if ((!args || args.roleReference === undefined) && !opts.urn) {
+            if (args?.roleReference === undefined && !opts.urn) {
                 throw new Error("Missing required property 'roleReference'");
             }
-            resourceInputs["categories"] = args ? args.categories : undefined;
-            resourceInputs["contextFilterLists"] = args ? args.contextFilterLists : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownerReference"] = args ? args.ownerReference : undefined;
-            resourceInputs["roleReference"] = args ? args.roleReference : undefined;
-            resourceInputs["userGroupReferenceLists"] = args ? args.userGroupReferenceLists : undefined;
-            resourceInputs["userReferenceLists"] = args ? args.userReferenceLists : undefined;
+            resourceInputs["categories"] = args?.categories;
+            resourceInputs["contextFilterLists"] = args?.contextFilterLists;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownerReference"] = args?.ownerReference;
+            resourceInputs["roleReference"] = args?.roleReference;
+            resourceInputs["userGroupReferenceLists"] = args?.userGroupReferenceLists;
+            resourceInputs["userReferenceLists"] = args?.userReferenceLists;
             resourceInputs["apiVersion"] = undefined /*out*/;
             resourceInputs["metadata"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

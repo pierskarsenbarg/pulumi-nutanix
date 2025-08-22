@@ -50,7 +50,7 @@ export class LcmPerformInventoryV2 extends pulumi.CustomResource {
      *
      * See detailed information in [Nutanix LCM Perform Inventory v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Inventory/operation/performInventory)
      */
-    public readonly xClusterId!: pulumi.Output<string | undefined>;
+    declare public readonly xClusterId: pulumi.Output<string | undefined>;
 
     /**
      * Create a LcmPerformInventoryV2 resource with the given unique name, arguments, and options.
@@ -65,10 +65,10 @@ export class LcmPerformInventoryV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LcmPerformInventoryV2State | undefined;
-            resourceInputs["xClusterId"] = state ? state.xClusterId : undefined;
+            resourceInputs["xClusterId"] = state?.xClusterId;
         } else {
             const args = argsOrState as LcmPerformInventoryV2Args | undefined;
-            resourceInputs["xClusterId"] = args ? args.xClusterId : undefined;
+            resourceInputs["xClusterId"] = args?.xClusterId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LcmPerformInventoryV2.__pulumiType, name, resourceInputs, opts);

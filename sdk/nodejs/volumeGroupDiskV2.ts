@@ -69,31 +69,31 @@ export class VolumeGroupDiskV2 extends pulumi.CustomResource {
     /**
      * - Volume Disk description.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * -(Required) Disk Data Source Reference.
      */
-    public readonly diskDataSourceReferences!: pulumi.Output<outputs.VolumeGroupDiskV2DiskDataSourceReference[]>;
+    declare public readonly diskDataSourceReferences: pulumi.Output<outputs.VolumeGroupDiskV2DiskDataSourceReference[]>;
     /**
      * - ize of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
      */
-    public readonly diskSizeBytes!: pulumi.Output<number>;
+    declare public readonly diskSizeBytes: pulumi.Output<number>;
     /**
      * - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
      */
-    public readonly diskStorageFeatures!: pulumi.Output<outputs.VolumeGroupDiskV2DiskStorageFeature[] | undefined>;
+    declare public readonly diskStorageFeatures: pulumi.Output<outputs.VolumeGroupDiskV2DiskStorageFeature[] | undefined>;
     /**
      * - A globally unique identifier of an instance that is suitable for external consumption.
      */
-    public /*out*/ readonly extId!: pulumi.Output<string>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
     /**
      * - Index of the disk in a Volume Group. This field is optional and immutable.
      */
-    public readonly index!: pulumi.Output<number>;
+    declare public readonly index: pulumi.Output<number>;
     /**
      * The external identifier of the volume group.
      */
-    public readonly volumeGroupExtId!: pulumi.Output<string>;
+    declare public readonly volumeGroupExtId: pulumi.Output<string>;
 
     /**
      * Create a VolumeGroupDiskV2 resource with the given unique name, arguments, and options.
@@ -108,30 +108,30 @@ export class VolumeGroupDiskV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VolumeGroupDiskV2State | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["diskDataSourceReferences"] = state ? state.diskDataSourceReferences : undefined;
-            resourceInputs["diskSizeBytes"] = state ? state.diskSizeBytes : undefined;
-            resourceInputs["diskStorageFeatures"] = state ? state.diskStorageFeatures : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["index"] = state ? state.index : undefined;
-            resourceInputs["volumeGroupExtId"] = state ? state.volumeGroupExtId : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["diskDataSourceReferences"] = state?.diskDataSourceReferences;
+            resourceInputs["diskSizeBytes"] = state?.diskSizeBytes;
+            resourceInputs["diskStorageFeatures"] = state?.diskStorageFeatures;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["index"] = state?.index;
+            resourceInputs["volumeGroupExtId"] = state?.volumeGroupExtId;
         } else {
             const args = argsOrState as VolumeGroupDiskV2Args | undefined;
-            if ((!args || args.diskDataSourceReferences === undefined) && !opts.urn) {
+            if (args?.diskDataSourceReferences === undefined && !opts.urn) {
                 throw new Error("Missing required property 'diskDataSourceReferences'");
             }
-            if ((!args || args.diskSizeBytes === undefined) && !opts.urn) {
+            if (args?.diskSizeBytes === undefined && !opts.urn) {
                 throw new Error("Missing required property 'diskSizeBytes'");
             }
-            if ((!args || args.volumeGroupExtId === undefined) && !opts.urn) {
+            if (args?.volumeGroupExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'volumeGroupExtId'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["diskDataSourceReferences"] = args ? args.diskDataSourceReferences : undefined;
-            resourceInputs["diskSizeBytes"] = args ? args.diskSizeBytes : undefined;
-            resourceInputs["diskStorageFeatures"] = args ? args.diskStorageFeatures : undefined;
-            resourceInputs["index"] = args ? args.index : undefined;
-            resourceInputs["volumeGroupExtId"] = args ? args.volumeGroupExtId : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["diskDataSourceReferences"] = args?.diskDataSourceReferences;
+            resourceInputs["diskSizeBytes"] = args?.diskSizeBytes;
+            resourceInputs["diskStorageFeatures"] = args?.diskStorageFeatures;
+            resourceInputs["index"] = args?.index;
+            resourceInputs["volumeGroupExtId"] = args?.volumeGroupExtId;
             resourceInputs["extId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

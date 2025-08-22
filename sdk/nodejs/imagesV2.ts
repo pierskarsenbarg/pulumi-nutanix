@@ -34,18 +34,18 @@ export class ImagesV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === ImagesV2.__pulumiType;
     }
 
-    public readonly categoryExtIds!: pulumi.Output<string[]>;
-    public readonly checksums!: pulumi.Output<outputs.ImagesV2Checksum[] | undefined>;
-    public readonly clusterLocationExtIds!: pulumi.Output<string[]>;
-    public /*out*/ readonly createTime!: pulumi.Output<string>;
-    public readonly description!: pulumi.Output<string | undefined>;
-    public /*out*/ readonly lastUpdateTime!: pulumi.Output<string>;
-    public readonly name!: pulumi.Output<string>;
-    public /*out*/ readonly ownerExtId!: pulumi.Output<string>;
-    public /*out*/ readonly placementPolicyStatuses!: pulumi.Output<outputs.ImagesV2PlacementPolicyStatus[]>;
-    public /*out*/ readonly sizeBytes!: pulumi.Output<number>;
-    public readonly sources!: pulumi.Output<outputs.ImagesV2Source[] | undefined>;
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly categoryExtIds: pulumi.Output<string[]>;
+    declare public readonly checksums: pulumi.Output<outputs.ImagesV2Checksum[] | undefined>;
+    declare public readonly clusterLocationExtIds: pulumi.Output<string[]>;
+    declare public /*out*/ readonly createTime: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly lastUpdateTime: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public /*out*/ readonly ownerExtId: pulumi.Output<string>;
+    declare public /*out*/ readonly placementPolicyStatuses: pulumi.Output<outputs.ImagesV2PlacementPolicyStatus[]>;
+    declare public /*out*/ readonly sizeBytes: pulumi.Output<number>;
+    declare public readonly sources: pulumi.Output<outputs.ImagesV2Source[] | undefined>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a ImagesV2 resource with the given unique name, arguments, and options.
@@ -60,30 +60,30 @@ export class ImagesV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ImagesV2State | undefined;
-            resourceInputs["categoryExtIds"] = state ? state.categoryExtIds : undefined;
-            resourceInputs["checksums"] = state ? state.checksums : undefined;
-            resourceInputs["clusterLocationExtIds"] = state ? state.clusterLocationExtIds : undefined;
-            resourceInputs["createTime"] = state ? state.createTime : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["lastUpdateTime"] = state ? state.lastUpdateTime : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownerExtId"] = state ? state.ownerExtId : undefined;
-            resourceInputs["placementPolicyStatuses"] = state ? state.placementPolicyStatuses : undefined;
-            resourceInputs["sizeBytes"] = state ? state.sizeBytes : undefined;
-            resourceInputs["sources"] = state ? state.sources : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["categoryExtIds"] = state?.categoryExtIds;
+            resourceInputs["checksums"] = state?.checksums;
+            resourceInputs["clusterLocationExtIds"] = state?.clusterLocationExtIds;
+            resourceInputs["createTime"] = state?.createTime;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["lastUpdateTime"] = state?.lastUpdateTime;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownerExtId"] = state?.ownerExtId;
+            resourceInputs["placementPolicyStatuses"] = state?.placementPolicyStatuses;
+            resourceInputs["sizeBytes"] = state?.sizeBytes;
+            resourceInputs["sources"] = state?.sources;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as ImagesV2Args | undefined;
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["categoryExtIds"] = args ? args.categoryExtIds : undefined;
-            resourceInputs["checksums"] = args ? args.checksums : undefined;
-            resourceInputs["clusterLocationExtIds"] = args ? args.clusterLocationExtIds : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["sources"] = args ? args.sources : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["categoryExtIds"] = args?.categoryExtIds;
+            resourceInputs["checksums"] = args?.checksums;
+            resourceInputs["clusterLocationExtIds"] = args?.clusterLocationExtIds;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["sources"] = args?.sources;
+            resourceInputs["type"] = args?.type;
             resourceInputs["createTime"] = undefined /*out*/;
             resourceInputs["lastUpdateTime"] = undefined /*out*/;
             resourceInputs["ownerExtId"] = undefined /*out*/;

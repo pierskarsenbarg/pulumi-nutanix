@@ -78,31 +78,31 @@ export class KarbonWorkerNodepool extends pulumi.CustomResource {
     /**
      * VM configuration in AHV.
      */
-    public readonly ahvConfig!: pulumi.Output<outputs.KarbonWorkerNodepoolAhvConfig>;
+    declare public readonly ahvConfig: pulumi.Output<outputs.KarbonWorkerNodepoolAhvConfig>;
     /**
      * Kubernetes cluster name
      */
-    public readonly clusterName!: pulumi.Output<string>;
+    declare public readonly clusterName: pulumi.Output<string>;
     /**
      * labels of node
      */
-    public readonly labels!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly labels: pulumi.Output<{[key: string]: string}>;
     /**
      * unique worker nodepool name
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * The version of the node OS image
      */
-    public readonly nodeOsVersion!: pulumi.Output<string>;
+    declare public readonly nodeOsVersion: pulumi.Output<string>;
     /**
      * List of node details of pool.
      */
-    public /*out*/ readonly nodes!: pulumi.Output<outputs.KarbonWorkerNodepoolNode[]>;
+    declare public /*out*/ readonly nodes: pulumi.Output<outputs.KarbonWorkerNodepoolNode[]>;
     /**
      * number of node instances
      */
-    public readonly numInstances!: pulumi.Output<number>;
+    declare public readonly numInstances: pulumi.Output<number>;
 
     /**
      * Create a KarbonWorkerNodepool resource with the given unique name, arguments, and options.
@@ -117,27 +117,27 @@ export class KarbonWorkerNodepool extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as KarbonWorkerNodepoolState | undefined;
-            resourceInputs["ahvConfig"] = state ? state.ahvConfig : undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["labels"] = state ? state.labels : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["nodeOsVersion"] = state ? state.nodeOsVersion : undefined;
-            resourceInputs["nodes"] = state ? state.nodes : undefined;
-            resourceInputs["numInstances"] = state ? state.numInstances : undefined;
+            resourceInputs["ahvConfig"] = state?.ahvConfig;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["labels"] = state?.labels;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["nodeOsVersion"] = state?.nodeOsVersion;
+            resourceInputs["nodes"] = state?.nodes;
+            resourceInputs["numInstances"] = state?.numInstances;
         } else {
             const args = argsOrState as KarbonWorkerNodepoolArgs | undefined;
-            if ((!args || args.clusterName === undefined) && !opts.urn) {
+            if (args?.clusterName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterName'");
             }
-            if ((!args || args.numInstances === undefined) && !opts.urn) {
+            if (args?.numInstances === undefined && !opts.urn) {
                 throw new Error("Missing required property 'numInstances'");
             }
-            resourceInputs["ahvConfig"] = args ? args.ahvConfig : undefined;
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["labels"] = args ? args.labels : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["nodeOsVersion"] = args ? args.nodeOsVersion : undefined;
-            resourceInputs["numInstances"] = args ? args.numInstances : undefined;
+            resourceInputs["ahvConfig"] = args?.ahvConfig;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["labels"] = args?.labels;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["nodeOsVersion"] = args?.nodeOsVersion;
+            resourceInputs["numInstances"] = args?.numInstances;
             resourceInputs["nodes"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

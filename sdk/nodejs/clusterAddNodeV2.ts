@@ -151,27 +151,27 @@ export class ClusterAddNodeV2 extends pulumi.CustomResource {
     /**
      * -(Required) Cluster UUID.
      */
-    public readonly clusterExtId!: pulumi.Output<string>;
+    declare public readonly clusterExtId: pulumi.Output<string>;
     /**
      * -(Optional) Config parameters.
      */
-    public readonly configParams!: pulumi.Output<outputs.ClusterAddNodeV2ConfigParam[]>;
+    declare public readonly configParams: pulumi.Output<outputs.ClusterAddNodeV2ConfigParam[]>;
     /**
      * -(Required) Parameters of the node to be added.
      */
-    public readonly nodeParams!: pulumi.Output<outputs.ClusterAddNodeV2NodeParam[]>;
+    declare public readonly nodeParams: pulumi.Output<outputs.ClusterAddNodeV2NodeParam[]>;
     /**
      * -(Optional) configuration for node removal.
      */
-    public readonly removeNodeParams!: pulumi.Output<outputs.ClusterAddNodeV2RemoveNodeParam[] | undefined>;
+    declare public readonly removeNodeParams: pulumi.Output<outputs.ClusterAddNodeV2RemoveNodeParam[] | undefined>;
     /**
      * -(Optional) Indicates if node addition can be skipped.
      */
-    public readonly shouldSkipAddNode!: pulumi.Output<boolean>;
+    declare public readonly shouldSkipAddNode: pulumi.Output<boolean>;
     /**
      * -(Optional) Indicates if pre-expand checks can be skipped for node addition.
      */
-    public readonly shouldSkipPreExpandChecks!: pulumi.Output<boolean>;
+    declare public readonly shouldSkipPreExpandChecks: pulumi.Output<boolean>;
 
     /**
      * Create a ClusterAddNodeV2 resource with the given unique name, arguments, and options.
@@ -186,26 +186,26 @@ export class ClusterAddNodeV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClusterAddNodeV2State | undefined;
-            resourceInputs["clusterExtId"] = state ? state.clusterExtId : undefined;
-            resourceInputs["configParams"] = state ? state.configParams : undefined;
-            resourceInputs["nodeParams"] = state ? state.nodeParams : undefined;
-            resourceInputs["removeNodeParams"] = state ? state.removeNodeParams : undefined;
-            resourceInputs["shouldSkipAddNode"] = state ? state.shouldSkipAddNode : undefined;
-            resourceInputs["shouldSkipPreExpandChecks"] = state ? state.shouldSkipPreExpandChecks : undefined;
+            resourceInputs["clusterExtId"] = state?.clusterExtId;
+            resourceInputs["configParams"] = state?.configParams;
+            resourceInputs["nodeParams"] = state?.nodeParams;
+            resourceInputs["removeNodeParams"] = state?.removeNodeParams;
+            resourceInputs["shouldSkipAddNode"] = state?.shouldSkipAddNode;
+            resourceInputs["shouldSkipPreExpandChecks"] = state?.shouldSkipPreExpandChecks;
         } else {
             const args = argsOrState as ClusterAddNodeV2Args | undefined;
-            if ((!args || args.clusterExtId === undefined) && !opts.urn) {
+            if (args?.clusterExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterExtId'");
             }
-            if ((!args || args.nodeParams === undefined) && !opts.urn) {
+            if (args?.nodeParams === undefined && !opts.urn) {
                 throw new Error("Missing required property 'nodeParams'");
             }
-            resourceInputs["clusterExtId"] = args ? args.clusterExtId : undefined;
-            resourceInputs["configParams"] = args ? args.configParams : undefined;
-            resourceInputs["nodeParams"] = args ? args.nodeParams : undefined;
-            resourceInputs["removeNodeParams"] = args ? args.removeNodeParams : undefined;
-            resourceInputs["shouldSkipAddNode"] = args ? args.shouldSkipAddNode : undefined;
-            resourceInputs["shouldSkipPreExpandChecks"] = args ? args.shouldSkipPreExpandChecks : undefined;
+            resourceInputs["clusterExtId"] = args?.clusterExtId;
+            resourceInputs["configParams"] = args?.configParams;
+            resourceInputs["nodeParams"] = args?.nodeParams;
+            resourceInputs["removeNodeParams"] = args?.removeNodeParams;
+            resourceInputs["shouldSkipAddNode"] = args?.shouldSkipAddNode;
+            resourceInputs["shouldSkipPreExpandChecks"] = args?.shouldSkipPreExpandChecks;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ClusterAddNodeV2.__pulumiType, name, resourceInputs, opts);

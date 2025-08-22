@@ -62,27 +62,27 @@ export class FoundationImage extends pulumi.CustomResource {
     /**
      * - (Required) Name of installer file to be kept in foundation vm.
      */
-    public readonly filename!: pulumi.Output<string>;
+    declare public readonly filename: pulumi.Output<string>;
     /**
      * - If hypervisor ISO is in whitelist.
      */
-    public /*out*/ readonly inWhitelist!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly inWhitelist: pulumi.Output<boolean>;
     /**
      * - (Required) One of "kvm", "esx", "hyperv", "xen", or "nos".
      */
-    public readonly installerType!: pulumi.Output<string>;
+    declare public readonly installerType: pulumi.Output<string>;
     /**
      * - md5sum of the ISO.
      */
-    public /*out*/ readonly md5sum!: pulumi.Output<string>;
+    declare public /*out*/ readonly md5sum: pulumi.Output<string>;
     /**
      * - file location in foundation vm
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * - (Required) Complete path to the file in machine where the .tf  files runs.
      */
-    public readonly source!: pulumi.Output<string>;
+    declare public readonly source: pulumi.Output<string>;
 
     /**
      * Create a FoundationImage resource with the given unique name, arguments, and options.
@@ -97,26 +97,26 @@ export class FoundationImage extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FoundationImageState | undefined;
-            resourceInputs["filename"] = state ? state.filename : undefined;
-            resourceInputs["inWhitelist"] = state ? state.inWhitelist : undefined;
-            resourceInputs["installerType"] = state ? state.installerType : undefined;
-            resourceInputs["md5sum"] = state ? state.md5sum : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
+            resourceInputs["filename"] = state?.filename;
+            resourceInputs["inWhitelist"] = state?.inWhitelist;
+            resourceInputs["installerType"] = state?.installerType;
+            resourceInputs["md5sum"] = state?.md5sum;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["source"] = state?.source;
         } else {
             const args = argsOrState as FoundationImageArgs | undefined;
-            if ((!args || args.filename === undefined) && !opts.urn) {
+            if (args?.filename === undefined && !opts.urn) {
                 throw new Error("Missing required property 'filename'");
             }
-            if ((!args || args.installerType === undefined) && !opts.urn) {
+            if (args?.installerType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'installerType'");
             }
-            if ((!args || args.source === undefined) && !opts.urn) {
+            if (args?.source === undefined && !opts.urn) {
                 throw new Error("Missing required property 'source'");
             }
-            resourceInputs["filename"] = args ? args.filename : undefined;
-            resourceInputs["installerType"] = args ? args.installerType : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
+            resourceInputs["filename"] = args?.filename;
+            resourceInputs["installerType"] = args?.installerType;
+            resourceInputs["source"] = args?.source;
             resourceInputs["inWhitelist"] = undefined /*out*/;
             resourceInputs["md5sum"] = undefined /*out*/;
             resourceInputs["name"] = undefined /*out*/;

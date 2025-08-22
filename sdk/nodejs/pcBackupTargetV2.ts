@@ -66,20 +66,20 @@ export class PcBackupTargetV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === PcBackupTargetV2.__pulumiType;
     }
 
-    public /*out*/ readonly backupPauseReason!: pulumi.Output<string>;
+    declare public /*out*/ readonly backupPauseReason: pulumi.Output<string>;
     /**
      * -(Required) A unique identifier for the domain manager.
      */
-    public readonly domainManagerExtId!: pulumi.Output<string>;
-    public /*out*/ readonly extId!: pulumi.Output<string>;
-    public /*out*/ readonly isBackupPaused!: pulumi.Output<boolean>;
-    public /*out*/ readonly lastSyncTime!: pulumi.Output<string>;
-    public /*out*/ readonly links!: pulumi.Output<outputs.PcBackupTargetV2Link[]>;
+    declare public readonly domainManagerExtId: pulumi.Output<string>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
+    declare public /*out*/ readonly isBackupPaused: pulumi.Output<boolean>;
+    declare public /*out*/ readonly lastSyncTime: pulumi.Output<string>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.PcBackupTargetV2Link[]>;
     /**
      * -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
      */
-    public readonly location!: pulumi.Output<outputs.PcBackupTargetV2Location>;
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public readonly location: pulumi.Output<outputs.PcBackupTargetV2Location>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
 
     /**
      * Create a PcBackupTargetV2 resource with the given unique name, arguments, and options.
@@ -94,24 +94,24 @@ export class PcBackupTargetV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PcBackupTargetV2State | undefined;
-            resourceInputs["backupPauseReason"] = state ? state.backupPauseReason : undefined;
-            resourceInputs["domainManagerExtId"] = state ? state.domainManagerExtId : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["isBackupPaused"] = state ? state.isBackupPaused : undefined;
-            resourceInputs["lastSyncTime"] = state ? state.lastSyncTime : undefined;
-            resourceInputs["links"] = state ? state.links : undefined;
-            resourceInputs["location"] = state ? state.location : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
+            resourceInputs["backupPauseReason"] = state?.backupPauseReason;
+            resourceInputs["domainManagerExtId"] = state?.domainManagerExtId;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["isBackupPaused"] = state?.isBackupPaused;
+            resourceInputs["lastSyncTime"] = state?.lastSyncTime;
+            resourceInputs["links"] = state?.links;
+            resourceInputs["location"] = state?.location;
+            resourceInputs["tenantId"] = state?.tenantId;
         } else {
             const args = argsOrState as PcBackupTargetV2Args | undefined;
-            if ((!args || args.domainManagerExtId === undefined) && !opts.urn) {
+            if (args?.domainManagerExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'domainManagerExtId'");
             }
-            if ((!args || args.location === undefined) && !opts.urn) {
+            if (args?.location === undefined && !opts.urn) {
                 throw new Error("Missing required property 'location'");
             }
-            resourceInputs["domainManagerExtId"] = args ? args.domainManagerExtId : undefined;
-            resourceInputs["location"] = args ? args.location : undefined;
+            resourceInputs["domainManagerExtId"] = args?.domainManagerExtId;
+            resourceInputs["location"] = args?.location;
             resourceInputs["backupPauseReason"] = undefined /*out*/;
             resourceInputs["extId"] = undefined /*out*/;
             resourceInputs["isBackupPaused"] = undefined /*out*/;

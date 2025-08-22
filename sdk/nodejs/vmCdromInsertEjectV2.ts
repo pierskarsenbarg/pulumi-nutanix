@@ -34,9 +34,9 @@ export class VmCdromInsertEjectV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === VmCdromInsertEjectV2.__pulumiType;
     }
 
-    public readonly backingInfos!: pulumi.Output<outputs.VmCdromInsertEjectV2BackingInfo[] | undefined>;
-    public readonly extId!: pulumi.Output<string>;
-    public readonly vmExtId!: pulumi.Output<string>;
+    declare public readonly backingInfos: pulumi.Output<outputs.VmCdromInsertEjectV2BackingInfo[] | undefined>;
+    declare public readonly extId: pulumi.Output<string>;
+    declare public readonly vmExtId: pulumi.Output<string>;
 
     /**
      * Create a VmCdromInsertEjectV2 resource with the given unique name, arguments, and options.
@@ -51,20 +51,20 @@ export class VmCdromInsertEjectV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VmCdromInsertEjectV2State | undefined;
-            resourceInputs["backingInfos"] = state ? state.backingInfos : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["vmExtId"] = state ? state.vmExtId : undefined;
+            resourceInputs["backingInfos"] = state?.backingInfos;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["vmExtId"] = state?.vmExtId;
         } else {
             const args = argsOrState as VmCdromInsertEjectV2Args | undefined;
-            if ((!args || args.extId === undefined) && !opts.urn) {
+            if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
-            if ((!args || args.vmExtId === undefined) && !opts.urn) {
+            if (args?.vmExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vmExtId'");
             }
-            resourceInputs["backingInfos"] = args ? args.backingInfos : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["vmExtId"] = args ? args.vmExtId : undefined;
+            resourceInputs["backingInfos"] = args?.backingInfos;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["vmExtId"] = args?.vmExtId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(VmCdromInsertEjectV2.__pulumiType, name, resourceInputs, opts);

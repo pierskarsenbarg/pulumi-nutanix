@@ -62,11 +62,11 @@ export class TemplateGuestOsActionsV2 extends pulumi.CustomResource {
     /**
      * Actions to be performed. Acceptable values are "initiate", "complete", "cancel" .
      */
-    public readonly action!: pulumi.Output<string>;
+    declare public readonly action: pulumi.Output<string>;
     /**
      * The identifier of a Template.
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise. Default is true. Only applicable with `complete` action.
      *
@@ -75,19 +75,19 @@ export class TemplateGuestOsActionsV2 extends pulumi.CustomResource {
      * See detailed information in [Nutanix Template Guest OS Action Complete V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/completeGuestUpdate).
      * See detailed information in [Nutanix Template Guest OS Action Cancel V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.0#tag/Templates/operation/cancelGuestUpdate).
      */
-    public readonly isActiveVersion!: pulumi.Output<string | undefined>;
+    declare public readonly isActiveVersion: pulumi.Output<string | undefined>;
     /**
      * The user defined description of a Template Version. (Required) Only applicable with `complete` action.
      */
-    public readonly versionDescription!: pulumi.Output<string | undefined>;
+    declare public readonly versionDescription: pulumi.Output<string | undefined>;
     /**
      * The identifier of a Template Version. Only applicable with `Initiate` action.
      */
-    public readonly versionId!: pulumi.Output<string | undefined>;
+    declare public readonly versionId: pulumi.Output<string | undefined>;
     /**
      * The user defined name of a Template Version. Only applicable with `complete` action.
      */
-    public readonly versionName!: pulumi.Output<string | undefined>;
+    declare public readonly versionName: pulumi.Output<string | undefined>;
 
     /**
      * Create a TemplateGuestOsActionsV2 resource with the given unique name, arguments, and options.
@@ -102,26 +102,26 @@ export class TemplateGuestOsActionsV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TemplateGuestOsActionsV2State | undefined;
-            resourceInputs["action"] = state ? state.action : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["isActiveVersion"] = state ? state.isActiveVersion : undefined;
-            resourceInputs["versionDescription"] = state ? state.versionDescription : undefined;
-            resourceInputs["versionId"] = state ? state.versionId : undefined;
-            resourceInputs["versionName"] = state ? state.versionName : undefined;
+            resourceInputs["action"] = state?.action;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["isActiveVersion"] = state?.isActiveVersion;
+            resourceInputs["versionDescription"] = state?.versionDescription;
+            resourceInputs["versionId"] = state?.versionId;
+            resourceInputs["versionName"] = state?.versionName;
         } else {
             const args = argsOrState as TemplateGuestOsActionsV2Args | undefined;
-            if ((!args || args.action === undefined) && !opts.urn) {
+            if (args?.action === undefined && !opts.urn) {
                 throw new Error("Missing required property 'action'");
             }
-            if ((!args || args.extId === undefined) && !opts.urn) {
+            if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
-            resourceInputs["action"] = args ? args.action : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["isActiveVersion"] = args ? args.isActiveVersion : undefined;
-            resourceInputs["versionDescription"] = args ? args.versionDescription : undefined;
-            resourceInputs["versionId"] = args ? args.versionId : undefined;
-            resourceInputs["versionName"] = args ? args.versionName : undefined;
+            resourceInputs["action"] = args?.action;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["isActiveVersion"] = args?.isActiveVersion;
+            resourceInputs["versionDescription"] = args?.versionDescription;
+            resourceInputs["versionId"] = args?.versionId;
+            resourceInputs["versionName"] = args?.versionName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(TemplateGuestOsActionsV2.__pulumiType, name, resourceInputs, opts);

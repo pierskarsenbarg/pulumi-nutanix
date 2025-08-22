@@ -52,116 +52,116 @@ export class NdbDatabaseRestore extends pulumi.CustomResource {
     /**
      * whether instance is cloned or not
      */
-    public /*out*/ readonly clone!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly clone: pulumi.Output<boolean>;
     /**
      * database cluster type
      */
-    public /*out*/ readonly databaseClusterType!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseClusterType: pulumi.Output<string>;
     /**
      * database id
      */
-    public readonly databaseId!: pulumi.Output<string>;
-    public /*out*/ readonly databaseInstanceId!: pulumi.Output<string>;
+    declare public readonly databaseId: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseInstanceId: pulumi.Output<string>;
     /**
      * name of database
      */
-    public /*out*/ readonly databaseName!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseName: pulumi.Output<string>;
     /**
      * database nodes associated with database instance
      */
-    public /*out*/ readonly databaseNodes!: pulumi.Output<outputs.NdbDatabaseRestoreDatabaseNode[]>;
+    declare public /*out*/ readonly databaseNodes: pulumi.Output<outputs.NdbDatabaseRestoreDatabaseNode[]>;
     /**
      * date created for db instance
      */
-    public /*out*/ readonly dateCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateCreated: pulumi.Output<string>;
     /**
      * date modified for instance
      */
-    public /*out*/ readonly dateModified!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateModified: pulumi.Output<string>;
     /**
      * dbserver logical cluster
      */
-    public /*out*/ readonly dbserverLogicalCluster!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly dbserverLogicalCluster: pulumi.Output<{[key: string]: string}>;
     /**
      * dbserver logical cluster id
      */
-    public /*out*/ readonly dbserverLogicalClusterId!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbserverLogicalClusterId: pulumi.Output<string>;
     /**
      * description of database instance
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    declare public /*out*/ readonly description: pulumi.Output<string>;
     /**
      * info of instance
      */
-    public /*out*/ readonly infos!: pulumi.Output<outputs.NdbDatabaseRestoreInfo[]>;
+    declare public /*out*/ readonly infos: pulumi.Output<outputs.NdbDatabaseRestoreInfo[]>;
     /**
      * latest snapshot id
      */
-    public readonly latestSnapshot!: pulumi.Output<string | undefined>;
+    declare public readonly latestSnapshot: pulumi.Output<string | undefined>;
     /**
      * LCM config of instance
      */
-    public /*out*/ readonly lcmConfigs!: pulumi.Output<outputs.NdbDatabaseRestoreLcmConfig[]>;
+    declare public /*out*/ readonly lcmConfigs: pulumi.Output<outputs.NdbDatabaseRestoreLcmConfig[]>;
     /**
      * linked databases within database instance
      */
-    public /*out*/ readonly linkedDatabases!: pulumi.Output<outputs.NdbDatabaseRestoreLinkedDatabase[]>;
+    declare public /*out*/ readonly linkedDatabases: pulumi.Output<outputs.NdbDatabaseRestoreLinkedDatabase[]>;
     /**
      * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
      */
-    public /*out*/ readonly metric!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly metric: pulumi.Output<{[key: string]: string}>;
     /**
      * Name of database instance
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * parent database id
      */
-    public /*out*/ readonly parentDatabaseId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentDatabaseId: pulumi.Output<string>;
     /**
      * properties of database created
      */
-    public /*out*/ readonly properties!: pulumi.Output<outputs.NdbDatabaseRestoreProperty[]>;
+    declare public /*out*/ readonly properties: pulumi.Output<outputs.NdbDatabaseRestoreProperty[]>;
     /**
      * helps to restore the database with same config.
      */
-    public readonly restoreVersion!: pulumi.Output<number | undefined>;
+    declare public readonly restoreVersion: pulumi.Output<number | undefined>;
     /**
      * snapshot id from you want to use for restoring the instance
      */
-    public readonly snapshotId!: pulumi.Output<string | undefined>;
+    declare public readonly snapshotId: pulumi.Output<string | undefined>;
     /**
      * status of instance
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
      */
-    public readonly tags!: pulumi.Output<outputs.NdbDatabaseRestoreTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.NdbDatabaseRestoreTag[]>;
     /**
      * time machine id of instance
      */
-    public /*out*/ readonly timeMachineId!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeMachineId: pulumi.Output<string>;
     /**
      * Time Machine details of instance
      */
-    public /*out*/ readonly timeMachines!: pulumi.Output<outputs.NdbDatabaseRestoreTimeMachine[]>;
+    declare public /*out*/ readonly timeMachines: pulumi.Output<outputs.NdbDatabaseRestoreTimeMachine[]>;
     /**
      * timezone on which instance is created xw
      */
-    public /*out*/ readonly timeZone!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeZone: pulumi.Output<string>;
     /**
      * timezone . Should be used with  `userPitrTimestamp`
      */
-    public readonly timeZonePitr!: pulumi.Output<string | undefined>;
+    declare public readonly timeZonePitr: pulumi.Output<string | undefined>;
     /**
      * type of database
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
     /**
      * the time to which you want to restore your instance.
      */
-    public readonly userPitrTimestamp!: pulumi.Output<string | undefined>;
+    declare public readonly userPitrTimestamp: pulumi.Output<string | undefined>;
 
     /**
      * Create a NdbDatabaseRestore resource with the given unique name, arguments, and options.
@@ -176,47 +176,47 @@ export class NdbDatabaseRestore extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbDatabaseRestoreState | undefined;
-            resourceInputs["clone"] = state ? state.clone : undefined;
-            resourceInputs["databaseClusterType"] = state ? state.databaseClusterType : undefined;
-            resourceInputs["databaseId"] = state ? state.databaseId : undefined;
-            resourceInputs["databaseInstanceId"] = state ? state.databaseInstanceId : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["databaseNodes"] = state ? state.databaseNodes : undefined;
-            resourceInputs["dateCreated"] = state ? state.dateCreated : undefined;
-            resourceInputs["dateModified"] = state ? state.dateModified : undefined;
-            resourceInputs["dbserverLogicalCluster"] = state ? state.dbserverLogicalCluster : undefined;
-            resourceInputs["dbserverLogicalClusterId"] = state ? state.dbserverLogicalClusterId : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["infos"] = state ? state.infos : undefined;
-            resourceInputs["latestSnapshot"] = state ? state.latestSnapshot : undefined;
-            resourceInputs["lcmConfigs"] = state ? state.lcmConfigs : undefined;
-            resourceInputs["linkedDatabases"] = state ? state.linkedDatabases : undefined;
-            resourceInputs["metric"] = state ? state.metric : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["parentDatabaseId"] = state ? state.parentDatabaseId : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["restoreVersion"] = state ? state.restoreVersion : undefined;
-            resourceInputs["snapshotId"] = state ? state.snapshotId : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["timeMachineId"] = state ? state.timeMachineId : undefined;
-            resourceInputs["timeMachines"] = state ? state.timeMachines : undefined;
-            resourceInputs["timeZone"] = state ? state.timeZone : undefined;
-            resourceInputs["timeZonePitr"] = state ? state.timeZonePitr : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["userPitrTimestamp"] = state ? state.userPitrTimestamp : undefined;
+            resourceInputs["clone"] = state?.clone;
+            resourceInputs["databaseClusterType"] = state?.databaseClusterType;
+            resourceInputs["databaseId"] = state?.databaseId;
+            resourceInputs["databaseInstanceId"] = state?.databaseInstanceId;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["databaseNodes"] = state?.databaseNodes;
+            resourceInputs["dateCreated"] = state?.dateCreated;
+            resourceInputs["dateModified"] = state?.dateModified;
+            resourceInputs["dbserverLogicalCluster"] = state?.dbserverLogicalCluster;
+            resourceInputs["dbserverLogicalClusterId"] = state?.dbserverLogicalClusterId;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["infos"] = state?.infos;
+            resourceInputs["latestSnapshot"] = state?.latestSnapshot;
+            resourceInputs["lcmConfigs"] = state?.lcmConfigs;
+            resourceInputs["linkedDatabases"] = state?.linkedDatabases;
+            resourceInputs["metric"] = state?.metric;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["parentDatabaseId"] = state?.parentDatabaseId;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["restoreVersion"] = state?.restoreVersion;
+            resourceInputs["snapshotId"] = state?.snapshotId;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["timeMachineId"] = state?.timeMachineId;
+            resourceInputs["timeMachines"] = state?.timeMachines;
+            resourceInputs["timeZone"] = state?.timeZone;
+            resourceInputs["timeZonePitr"] = state?.timeZonePitr;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["userPitrTimestamp"] = state?.userPitrTimestamp;
         } else {
             const args = argsOrState as NdbDatabaseRestoreArgs | undefined;
-            if ((!args || args.databaseId === undefined) && !opts.urn) {
+            if (args?.databaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseId'");
             }
-            resourceInputs["databaseId"] = args ? args.databaseId : undefined;
-            resourceInputs["latestSnapshot"] = args ? args.latestSnapshot : undefined;
-            resourceInputs["restoreVersion"] = args ? args.restoreVersion : undefined;
-            resourceInputs["snapshotId"] = args ? args.snapshotId : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["timeZonePitr"] = args ? args.timeZonePitr : undefined;
-            resourceInputs["userPitrTimestamp"] = args ? args.userPitrTimestamp : undefined;
+            resourceInputs["databaseId"] = args?.databaseId;
+            resourceInputs["latestSnapshot"] = args?.latestSnapshot;
+            resourceInputs["restoreVersion"] = args?.restoreVersion;
+            resourceInputs["snapshotId"] = args?.snapshotId;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["timeZonePitr"] = args?.timeZonePitr;
+            resourceInputs["userPitrTimestamp"] = args?.userPitrTimestamp;
             resourceInputs["clone"] = undefined /*out*/;
             resourceInputs["databaseClusterType"] = undefined /*out*/;
             resourceInputs["databaseInstanceId"] = undefined /*out*/;

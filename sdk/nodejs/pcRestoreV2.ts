@@ -43,19 +43,19 @@ export class PcRestoreV2 extends pulumi.CustomResource {
     /**
      * -(Required) Domain manager (Prism Central) details.
      */
-    public readonly domainManager!: pulumi.Output<outputs.PcRestoreV2DomainManager>;
+    declare public readonly domainManager: pulumi.Output<outputs.PcRestoreV2DomainManager>;
     /**
      * -(Required) Restore point ID for the backup created in cluster/object store.
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * -(Required) A unique identifier for the domain manager.
      */
-    public readonly restorableDomainManagerExtId!: pulumi.Output<string>;
+    declare public readonly restorableDomainManagerExtId: pulumi.Output<string>;
     /**
      * -(Required) A unique identifier obtained from the restore source API that corresponds to the details provided for the restore source.
      */
-    public readonly restoreSourceExtId!: pulumi.Output<string>;
+    declare public readonly restoreSourceExtId: pulumi.Output<string>;
 
     /**
      * Create a PcRestoreV2 resource with the given unique name, arguments, and options.
@@ -70,28 +70,28 @@ export class PcRestoreV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PcRestoreV2State | undefined;
-            resourceInputs["domainManager"] = state ? state.domainManager : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["restorableDomainManagerExtId"] = state ? state.restorableDomainManagerExtId : undefined;
-            resourceInputs["restoreSourceExtId"] = state ? state.restoreSourceExtId : undefined;
+            resourceInputs["domainManager"] = state?.domainManager;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["restorableDomainManagerExtId"] = state?.restorableDomainManagerExtId;
+            resourceInputs["restoreSourceExtId"] = state?.restoreSourceExtId;
         } else {
             const args = argsOrState as PcRestoreV2Args | undefined;
-            if ((!args || args.domainManager === undefined) && !opts.urn) {
+            if (args?.domainManager === undefined && !opts.urn) {
                 throw new Error("Missing required property 'domainManager'");
             }
-            if ((!args || args.extId === undefined) && !opts.urn) {
+            if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
-            if ((!args || args.restorableDomainManagerExtId === undefined) && !opts.urn) {
+            if (args?.restorableDomainManagerExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'restorableDomainManagerExtId'");
             }
-            if ((!args || args.restoreSourceExtId === undefined) && !opts.urn) {
+            if (args?.restoreSourceExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'restoreSourceExtId'");
             }
-            resourceInputs["domainManager"] = args ? args.domainManager : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["restorableDomainManagerExtId"] = args ? args.restorableDomainManagerExtId : undefined;
-            resourceInputs["restoreSourceExtId"] = args ? args.restoreSourceExtId : undefined;
+            resourceInputs["domainManager"] = args?.domainManager;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["restorableDomainManagerExtId"] = args?.restorableDomainManagerExtId;
+            resourceInputs["restoreSourceExtId"] = args?.restoreSourceExtId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(PcRestoreV2.__pulumiType, name, resourceInputs, opts);

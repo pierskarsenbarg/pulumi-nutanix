@@ -34,15 +34,15 @@ export class AddressGroupsV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === AddressGroupsV2.__pulumiType;
     }
 
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
-    public readonly description!: pulumi.Output<string | undefined>;
-    public /*out*/ readonly extId!: pulumi.Output<string>;
-    public readonly ipRanges!: pulumi.Output<outputs.AddressGroupsV2IpRange[]>;
-    public readonly ipv4Addresses!: pulumi.Output<outputs.AddressGroupsV2Ipv4Address[]>;
-    public /*out*/ readonly links!: pulumi.Output<outputs.AddressGroupsV2Link[]>;
-    public readonly name!: pulumi.Output<string>;
-    public /*out*/ readonly policyReferences!: pulumi.Output<string[]>;
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
+    declare public readonly ipRanges: pulumi.Output<outputs.AddressGroupsV2IpRange[]>;
+    declare public readonly ipv4Addresses: pulumi.Output<outputs.AddressGroupsV2Ipv4Address[]>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.AddressGroupsV2Link[]>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public /*out*/ readonly policyReferences: pulumi.Output<string[]>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
 
     /**
      * Create a AddressGroupsV2 resource with the given unique name, arguments, and options.
@@ -57,21 +57,21 @@ export class AddressGroupsV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AddressGroupsV2State | undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["ipRanges"] = state ? state.ipRanges : undefined;
-            resourceInputs["ipv4Addresses"] = state ? state.ipv4Addresses : undefined;
-            resourceInputs["links"] = state ? state.links : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["policyReferences"] = state ? state.policyReferences : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["ipRanges"] = state?.ipRanges;
+            resourceInputs["ipv4Addresses"] = state?.ipv4Addresses;
+            resourceInputs["links"] = state?.links;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["policyReferences"] = state?.policyReferences;
+            resourceInputs["tenantId"] = state?.tenantId;
         } else {
             const args = argsOrState as AddressGroupsV2Args | undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["ipRanges"] = args ? args.ipRanges : undefined;
-            resourceInputs["ipv4Addresses"] = args ? args.ipv4Addresses : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["ipRanges"] = args?.ipRanges;
+            resourceInputs["ipv4Addresses"] = args?.ipv4Addresses;
+            resourceInputs["name"] = args?.name;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["extId"] = undefined /*out*/;
             resourceInputs["links"] = undefined /*out*/;

@@ -64,19 +64,19 @@ export class ServiceGroup extends pulumi.CustomResource {
     /**
      * - (Optional) Description of the service group
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * - (Required) Name of the service group
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * - (Required) list of services which have protocol (TCP / UDP / ICMP) along with port details
      */
-    public readonly serviceLists!: pulumi.Output<outputs.ServiceGroupServiceList[]>;
+    declare public readonly serviceLists: pulumi.Output<outputs.ServiceGroupServiceList[]>;
     /**
      * - (ReadOnly) boolean value to denote if the service group is system defined
      */
-    public /*out*/ readonly systemDefined!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly systemDefined: pulumi.Output<boolean>;
 
     /**
      * Create a ServiceGroup resource with the given unique name, arguments, and options.
@@ -91,18 +91,18 @@ export class ServiceGroup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ServiceGroupState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["serviceLists"] = state ? state.serviceLists : undefined;
-            resourceInputs["systemDefined"] = state ? state.systemDefined : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["serviceLists"] = state?.serviceLists;
+            resourceInputs["systemDefined"] = state?.systemDefined;
         } else {
             const args = argsOrState as ServiceGroupArgs | undefined;
-            if ((!args || args.serviceLists === undefined) && !opts.urn) {
+            if (args?.serviceLists === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serviceLists'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["serviceLists"] = args ? args.serviceLists : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["serviceLists"] = args?.serviceLists;
             resourceInputs["systemDefined"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

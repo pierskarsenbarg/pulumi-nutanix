@@ -48,31 +48,31 @@ export class KarbonPrivateRegistry extends pulumi.CustomResource {
     /**
      * - (Optional) Certificate of the private registry in format of base64-encoded byte array. **Note:** Updates to this attribute forces new resource creation.
      */
-    public readonly cert!: pulumi.Output<string | undefined>;
+    declare public readonly cert: pulumi.Output<string | undefined>;
     /**
      * - Endpoint of the private in format `url:port`.
      */
-    public /*out*/ readonly endpoint!: pulumi.Output<string>;
+    declare public /*out*/ readonly endpoint: pulumi.Output<string>;
     /**
      * - (Required) Name of the private registry configuration. **Note:** Updates to this attribute forces new resource creation.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * - (Optional) Password for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
      */
-    public readonly password!: pulumi.Output<string | undefined>;
+    declare public readonly password: pulumi.Output<string | undefined>;
     /**
      * - (Optional) Port of the private registry.
      */
-    public readonly port!: pulumi.Output<number | undefined>;
+    declare public readonly port: pulumi.Output<number | undefined>;
     /**
      * - (Optional) URL of the private registry. **Note:** Updates to this attribute forces new resource creation.
      */
-    public readonly url!: pulumi.Output<string>;
+    declare public readonly url: pulumi.Output<string>;
     /**
      * - (Optional) Username for authentication to the private registry. **Note:** Updates to this attribute forces new resource creation.
      */
-    public readonly username!: pulumi.Output<string | undefined>;
+    declare public readonly username: pulumi.Output<string | undefined>;
 
     /**
      * Create a KarbonPrivateRegistry resource with the given unique name, arguments, and options.
@@ -87,24 +87,24 @@ export class KarbonPrivateRegistry extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as KarbonPrivateRegistryState | undefined;
-            resourceInputs["cert"] = state ? state.cert : undefined;
-            resourceInputs["endpoint"] = state ? state.endpoint : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["port"] = state ? state.port : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
+            resourceInputs["cert"] = state?.cert;
+            resourceInputs["endpoint"] = state?.endpoint;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["port"] = state?.port;
+            resourceInputs["url"] = state?.url;
+            resourceInputs["username"] = state?.username;
         } else {
             const args = argsOrState as KarbonPrivateRegistryArgs | undefined;
-            if ((!args || args.url === undefined) && !opts.urn) {
+            if (args?.url === undefined && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
-            resourceInputs["cert"] = args ? args.cert : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["cert"] = args?.cert;
+            resourceInputs["name"] = args?.name;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["url"] = args?.url;
+            resourceInputs["username"] = args?.username;
             resourceInputs["endpoint"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

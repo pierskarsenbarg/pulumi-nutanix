@@ -93,23 +93,23 @@ export class NdbMaintenanceTask extends pulumi.CustomResource {
     /**
      * dbserver cluster ids. Conflicts with "dbserverId"
      */
-    public readonly dbserverClusters!: pulumi.Output<string[] | undefined>;
+    declare public readonly dbserverClusters: pulumi.Output<string[] | undefined>;
     /**
      * dbserver vm id. Conflicts with "dbserverCluster"
      */
-    public readonly dbserverIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly dbserverIds: pulumi.Output<string[] | undefined>;
     /**
      * Entity Task Association  List.
      */
-    public /*out*/ readonly entityTaskAssociations!: pulumi.Output<outputs.NdbMaintenanceTaskEntityTaskAssociation[]>;
+    declare public /*out*/ readonly entityTaskAssociations: pulumi.Output<outputs.NdbMaintenanceTaskEntityTaskAssociation[]>;
     /**
      * maintenance window id which has to be associated
      */
-    public readonly maintenanceWindowId!: pulumi.Output<string>;
+    declare public readonly maintenanceWindowId: pulumi.Output<string>;
     /**
      * task input for Operating System Patching or Database Patching or both
      */
-    public readonly tasks!: pulumi.Output<outputs.NdbMaintenanceTaskTask[] | undefined>;
+    declare public readonly tasks: pulumi.Output<outputs.NdbMaintenanceTaskTask[] | undefined>;
 
     /**
      * Create a NdbMaintenanceTask resource with the given unique name, arguments, and options.
@@ -124,20 +124,20 @@ export class NdbMaintenanceTask extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbMaintenanceTaskState | undefined;
-            resourceInputs["dbserverClusters"] = state ? state.dbserverClusters : undefined;
-            resourceInputs["dbserverIds"] = state ? state.dbserverIds : undefined;
-            resourceInputs["entityTaskAssociations"] = state ? state.entityTaskAssociations : undefined;
-            resourceInputs["maintenanceWindowId"] = state ? state.maintenanceWindowId : undefined;
-            resourceInputs["tasks"] = state ? state.tasks : undefined;
+            resourceInputs["dbserverClusters"] = state?.dbserverClusters;
+            resourceInputs["dbserverIds"] = state?.dbserverIds;
+            resourceInputs["entityTaskAssociations"] = state?.entityTaskAssociations;
+            resourceInputs["maintenanceWindowId"] = state?.maintenanceWindowId;
+            resourceInputs["tasks"] = state?.tasks;
         } else {
             const args = argsOrState as NdbMaintenanceTaskArgs | undefined;
-            if ((!args || args.maintenanceWindowId === undefined) && !opts.urn) {
+            if (args?.maintenanceWindowId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'maintenanceWindowId'");
             }
-            resourceInputs["dbserverClusters"] = args ? args.dbserverClusters : undefined;
-            resourceInputs["dbserverIds"] = args ? args.dbserverIds : undefined;
-            resourceInputs["maintenanceWindowId"] = args ? args.maintenanceWindowId : undefined;
-            resourceInputs["tasks"] = args ? args.tasks : undefined;
+            resourceInputs["dbserverClusters"] = args?.dbserverClusters;
+            resourceInputs["dbserverIds"] = args?.dbserverIds;
+            resourceInputs["maintenanceWindowId"] = args?.maintenanceWindowId;
+            resourceInputs["tasks"] = args?.tasks;
             resourceInputs["entityTaskAssociations"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

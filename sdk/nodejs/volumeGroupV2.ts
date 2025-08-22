@@ -70,74 +70,74 @@ export class VolumeGroupV2 extends pulumi.CustomResource {
      * - NONE : Volume Group has no attachment.
      * - DIRECT : Volume Group has a VM attachment.
      */
-    public readonly attachmentType!: pulumi.Output<string | undefined>;
+    declare public readonly attachmentType: pulumi.Output<string | undefined>;
     /**
      * -(Required) The UUID of the cluster that will host the Volume Group.
      */
-    public readonly clusterReference!: pulumi.Output<string>;
+    declare public readonly clusterReference: pulumi.Output<string>;
     /**
      * -(Optional) Service/user who created this Volume Group.
      */
-    public readonly createdBy!: pulumi.Output<string | undefined>;
+    declare public readonly createdBy: pulumi.Output<string | undefined>;
     /**
      * -(Optional) Volume Group description. This is an optional field.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * -(Optional) A list of Volume Disks to be attached to the Volume Group.
      */
-    public readonly disks!: pulumi.Output<outputs.VolumeGroupV2Disk[] | undefined>;
+    declare public readonly disks: pulumi.Output<outputs.VolumeGroupV2Disk[] | undefined>;
     /**
      * -(Optional) The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
      */
-    public readonly enabledAuthentications!: pulumi.Output<string | undefined>;
+    declare public readonly enabledAuthentications: pulumi.Output<string | undefined>;
     /**
      * -(Optional) A globally unique identifier of an instance that is suitable for external consumption.
      */
-    public /*out*/ readonly extId!: pulumi.Output<string>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
     /**
      * -(Optional) Indicates whether the Volume Group is meant to be hidden or not.
      */
-    public readonly isHidden!: pulumi.Output<boolean | undefined>;
+    declare public readonly isHidden: pulumi.Output<boolean | undefined>;
     /**
      * -(Optional) iSCSI specific settings for the Volume Group.
      */
-    public readonly iscsiFeatures!: pulumi.Output<outputs.VolumeGroupV2IscsiFeature[]>;
+    declare public readonly iscsiFeatures: pulumi.Output<outputs.VolumeGroupV2IscsiFeature[]>;
     /**
      * -(Required) Volume Group name. This is an optional field.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * -(Optional) Type of protocol to be used for Volume Group. Valid values are :
      * - NOT_ASSIGNED :  Volume Group does not use any protocol.
      * - ISCSI : Volume Group uses iSCSI protocol.
      * - NVMF : Volume Group uses NVMf protocol.
      */
-    public readonly protocol!: pulumi.Output<string | undefined>;
+    declare public readonly protocol: pulumi.Output<string | undefined>;
     /**
      * -(Optional) Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
      */
-    public readonly sharingStatus!: pulumi.Output<string | undefined>;
+    declare public readonly sharingStatus: pulumi.Output<string | undefined>;
     /**
      * -(Optional) Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
      */
-    public readonly shouldLoadBalanceVmAttachments!: pulumi.Output<boolean | undefined>;
+    declare public readonly shouldLoadBalanceVmAttachments: pulumi.Output<boolean | undefined>;
     /**
      * -(Optional) Storage optimization features which must be enabled on the Volume Group.
      */
-    public readonly storageFeatures!: pulumi.Output<outputs.VolumeGroupV2StorageFeature[] | undefined>;
+    declare public readonly storageFeatures: pulumi.Output<outputs.VolumeGroupV2StorageFeature[] | undefined>;
     /**
      * -(Optional) Name of the external client target that will be visible and accessible to the client.
      */
-    public readonly targetName!: pulumi.Output<string>;
+    declare public readonly targetName: pulumi.Output<string>;
     /**
      * The specifications contain the target prefix for external clients as the value. This is an optional field.
      */
-    public readonly targetPrefix!: pulumi.Output<string | undefined>;
+    declare public readonly targetPrefix: pulumi.Output<string | undefined>;
     /**
      * -(Optional) Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
      */
-    public readonly usageType!: pulumi.Output<string | undefined>;
+    declare public readonly usageType: pulumi.Output<string | undefined>;
 
     /**
      * Create a VolumeGroupV2 resource with the given unique name, arguments, and options.
@@ -152,44 +152,44 @@ export class VolumeGroupV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VolumeGroupV2State | undefined;
-            resourceInputs["attachmentType"] = state ? state.attachmentType : undefined;
-            resourceInputs["clusterReference"] = state ? state.clusterReference : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["disks"] = state ? state.disks : undefined;
-            resourceInputs["enabledAuthentications"] = state ? state.enabledAuthentications : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["isHidden"] = state ? state.isHidden : undefined;
-            resourceInputs["iscsiFeatures"] = state ? state.iscsiFeatures : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["protocol"] = state ? state.protocol : undefined;
-            resourceInputs["sharingStatus"] = state ? state.sharingStatus : undefined;
-            resourceInputs["shouldLoadBalanceVmAttachments"] = state ? state.shouldLoadBalanceVmAttachments : undefined;
-            resourceInputs["storageFeatures"] = state ? state.storageFeatures : undefined;
-            resourceInputs["targetName"] = state ? state.targetName : undefined;
-            resourceInputs["targetPrefix"] = state ? state.targetPrefix : undefined;
-            resourceInputs["usageType"] = state ? state.usageType : undefined;
+            resourceInputs["attachmentType"] = state?.attachmentType;
+            resourceInputs["clusterReference"] = state?.clusterReference;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["disks"] = state?.disks;
+            resourceInputs["enabledAuthentications"] = state?.enabledAuthentications;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["isHidden"] = state?.isHidden;
+            resourceInputs["iscsiFeatures"] = state?.iscsiFeatures;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["protocol"] = state?.protocol;
+            resourceInputs["sharingStatus"] = state?.sharingStatus;
+            resourceInputs["shouldLoadBalanceVmAttachments"] = state?.shouldLoadBalanceVmAttachments;
+            resourceInputs["storageFeatures"] = state?.storageFeatures;
+            resourceInputs["targetName"] = state?.targetName;
+            resourceInputs["targetPrefix"] = state?.targetPrefix;
+            resourceInputs["usageType"] = state?.usageType;
         } else {
             const args = argsOrState as VolumeGroupV2Args | undefined;
-            if ((!args || args.clusterReference === undefined) && !opts.urn) {
+            if (args?.clusterReference === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterReference'");
             }
-            resourceInputs["attachmentType"] = args ? args.attachmentType : undefined;
-            resourceInputs["clusterReference"] = args ? args.clusterReference : undefined;
-            resourceInputs["createdBy"] = args ? args.createdBy : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["disks"] = args ? args.disks : undefined;
-            resourceInputs["enabledAuthentications"] = args ? args.enabledAuthentications : undefined;
-            resourceInputs["isHidden"] = args ? args.isHidden : undefined;
-            resourceInputs["iscsiFeatures"] = args ? args.iscsiFeatures : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["protocol"] = args ? args.protocol : undefined;
-            resourceInputs["sharingStatus"] = args ? args.sharingStatus : undefined;
-            resourceInputs["shouldLoadBalanceVmAttachments"] = args ? args.shouldLoadBalanceVmAttachments : undefined;
-            resourceInputs["storageFeatures"] = args ? args.storageFeatures : undefined;
-            resourceInputs["targetName"] = args ? args.targetName : undefined;
-            resourceInputs["targetPrefix"] = args ? args.targetPrefix : undefined;
-            resourceInputs["usageType"] = args ? args.usageType : undefined;
+            resourceInputs["attachmentType"] = args?.attachmentType;
+            resourceInputs["clusterReference"] = args?.clusterReference;
+            resourceInputs["createdBy"] = args?.createdBy;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["disks"] = args?.disks;
+            resourceInputs["enabledAuthentications"] = args?.enabledAuthentications;
+            resourceInputs["isHidden"] = args?.isHidden;
+            resourceInputs["iscsiFeatures"] = args?.iscsiFeatures;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["protocol"] = args?.protocol;
+            resourceInputs["sharingStatus"] = args?.sharingStatus;
+            resourceInputs["shouldLoadBalanceVmAttachments"] = args?.shouldLoadBalanceVmAttachments;
+            resourceInputs["storageFeatures"] = args?.storageFeatures;
+            resourceInputs["targetName"] = args?.targetName;
+            resourceInputs["targetPrefix"] = args?.targetPrefix;
+            resourceInputs["usageType"] = args?.usageType;
             resourceInputs["extId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

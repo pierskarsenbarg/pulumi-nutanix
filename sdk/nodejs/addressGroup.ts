@@ -55,19 +55,19 @@ export class AddressGroup extends pulumi.CustomResource {
     /**
      * - (ReadOnly) Address Group string
      */
-    public /*out*/ readonly addressGroupString!: pulumi.Output<string>;
+    declare public /*out*/ readonly addressGroupString: pulumi.Output<string>;
     /**
      * - (Optional) Description of the service group
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * - (Required) list of IP address blocks with their prefix length
      */
-    public readonly ipAddressBlockLists!: pulumi.Output<outputs.AddressGroupIpAddressBlockList[]>;
+    declare public readonly ipAddressBlockLists: pulumi.Output<outputs.AddressGroupIpAddressBlockList[]>;
     /**
      * - (Required) Name of the service group
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
 
     /**
      * Create a AddressGroup resource with the given unique name, arguments, and options.
@@ -82,18 +82,18 @@ export class AddressGroup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AddressGroupState | undefined;
-            resourceInputs["addressGroupString"] = state ? state.addressGroupString : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["ipAddressBlockLists"] = state ? state.ipAddressBlockLists : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["addressGroupString"] = state?.addressGroupString;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["ipAddressBlockLists"] = state?.ipAddressBlockLists;
+            resourceInputs["name"] = state?.name;
         } else {
             const args = argsOrState as AddressGroupArgs | undefined;
-            if ((!args || args.ipAddressBlockLists === undefined) && !opts.urn) {
+            if (args?.ipAddressBlockLists === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ipAddressBlockLists'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["ipAddressBlockLists"] = args ? args.ipAddressBlockLists : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["ipAddressBlockLists"] = args?.ipAddressBlockLists;
+            resourceInputs["name"] = args?.name;
             resourceInputs["addressGroupString"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

@@ -54,67 +54,67 @@ export class NdbSla extends pulumi.CustomResource {
     /**
      * Duration in days for which transaction logs are retained in NDB.
      */
-    public readonly continuousRetention!: pulumi.Output<number | undefined>;
+    declare public readonly continuousRetention: pulumi.Output<number | undefined>;
     /**
      * slas current frequency
      */
-    public /*out*/ readonly currentActiveFrequency!: pulumi.Output<string>;
+    declare public /*out*/ readonly currentActiveFrequency: pulumi.Output<string>;
     /**
      * Duration in days for which a daily snapshot must be retained in NDB.
      */
-    public readonly dailyRetention!: pulumi.Output<number | undefined>;
+    declare public readonly dailyRetention: pulumi.Output<number | undefined>;
     /**
      * sla created data
      */
-    public /*out*/ readonly dateCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateCreated: pulumi.Output<string>;
     /**
      * sla last modified date
      */
-    public /*out*/ readonly dateModified!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateModified: pulumi.Output<string>;
     /**
      * Description of profile
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Duration in months for which a monthly snapshot must be retained in NDB
      */
-    public readonly monthlyRetention!: pulumi.Output<number | undefined>;
+    declare public readonly monthlyRetention: pulumi.Output<number | undefined>;
     /**
      * Name of profile
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * owner id
      */
-    public /*out*/ readonly ownerId!: pulumi.Output<string>;
+    declare public /*out*/ readonly ownerId: pulumi.Output<string>;
     /**
      * pitr enabled
      */
-    public /*out*/ readonly pitrEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly pitrEnabled: pulumi.Output<boolean>;
     /**
      * Duration in number of quarters for which a quarterly snapshot must be retained in NDB.
      */
-    public readonly quarterlyRetention!: pulumi.Output<number | undefined>;
+    declare public readonly quarterlyRetention: pulumi.Output<number | undefined>;
     /**
      * reference count
      */
-    public /*out*/ readonly referenceCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly referenceCount: pulumi.Output<number>;
     /**
      * refers whether sla is custom or built-in
      */
-    public /*out*/ readonly systemSla!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly systemSla: pulumi.Output<boolean>;
     /**
      * name of sla
      */
-    public /*out*/ readonly uniqueName!: pulumi.Output<string>;
+    declare public /*out*/ readonly uniqueName: pulumi.Output<string>;
     /**
      * Duration in weeks for which a weekly snapshot must be retained in NDB.
      */
-    public readonly weeklyRetention!: pulumi.Output<number | undefined>;
+    declare public readonly weeklyRetention: pulumi.Output<number | undefined>;
     /**
      * Not supported as of now.
      */
-    public readonly yearlyRetention!: pulumi.Output<number>;
+    declare public readonly yearlyRetention: pulumi.Output<number>;
 
     /**
      * Create a NdbSla resource with the given unique name, arguments, and options.
@@ -129,32 +129,32 @@ export class NdbSla extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbSlaState | undefined;
-            resourceInputs["continuousRetention"] = state ? state.continuousRetention : undefined;
-            resourceInputs["currentActiveFrequency"] = state ? state.currentActiveFrequency : undefined;
-            resourceInputs["dailyRetention"] = state ? state.dailyRetention : undefined;
-            resourceInputs["dateCreated"] = state ? state.dateCreated : undefined;
-            resourceInputs["dateModified"] = state ? state.dateModified : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["monthlyRetention"] = state ? state.monthlyRetention : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownerId"] = state ? state.ownerId : undefined;
-            resourceInputs["pitrEnabled"] = state ? state.pitrEnabled : undefined;
-            resourceInputs["quarterlyRetention"] = state ? state.quarterlyRetention : undefined;
-            resourceInputs["referenceCount"] = state ? state.referenceCount : undefined;
-            resourceInputs["systemSla"] = state ? state.systemSla : undefined;
-            resourceInputs["uniqueName"] = state ? state.uniqueName : undefined;
-            resourceInputs["weeklyRetention"] = state ? state.weeklyRetention : undefined;
-            resourceInputs["yearlyRetention"] = state ? state.yearlyRetention : undefined;
+            resourceInputs["continuousRetention"] = state?.continuousRetention;
+            resourceInputs["currentActiveFrequency"] = state?.currentActiveFrequency;
+            resourceInputs["dailyRetention"] = state?.dailyRetention;
+            resourceInputs["dateCreated"] = state?.dateCreated;
+            resourceInputs["dateModified"] = state?.dateModified;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["monthlyRetention"] = state?.monthlyRetention;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownerId"] = state?.ownerId;
+            resourceInputs["pitrEnabled"] = state?.pitrEnabled;
+            resourceInputs["quarterlyRetention"] = state?.quarterlyRetention;
+            resourceInputs["referenceCount"] = state?.referenceCount;
+            resourceInputs["systemSla"] = state?.systemSla;
+            resourceInputs["uniqueName"] = state?.uniqueName;
+            resourceInputs["weeklyRetention"] = state?.weeklyRetention;
+            resourceInputs["yearlyRetention"] = state?.yearlyRetention;
         } else {
             const args = argsOrState as NdbSlaArgs | undefined;
-            resourceInputs["continuousRetention"] = args ? args.continuousRetention : undefined;
-            resourceInputs["dailyRetention"] = args ? args.dailyRetention : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["monthlyRetention"] = args ? args.monthlyRetention : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["quarterlyRetention"] = args ? args.quarterlyRetention : undefined;
-            resourceInputs["weeklyRetention"] = args ? args.weeklyRetention : undefined;
-            resourceInputs["yearlyRetention"] = args ? args.yearlyRetention : undefined;
+            resourceInputs["continuousRetention"] = args?.continuousRetention;
+            resourceInputs["dailyRetention"] = args?.dailyRetention;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["monthlyRetention"] = args?.monthlyRetention;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["quarterlyRetention"] = args?.quarterlyRetention;
+            resourceInputs["weeklyRetention"] = args?.weeklyRetention;
+            resourceInputs["yearlyRetention"] = args?.yearlyRetention;
             resourceInputs["currentActiveFrequency"] = undefined /*out*/;
             resourceInputs["dateCreated"] = undefined /*out*/;
             resourceInputs["dateModified"] = undefined /*out*/;

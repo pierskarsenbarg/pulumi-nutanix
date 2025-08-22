@@ -60,36 +60,36 @@ export class FloatingIp extends pulumi.CustomResource {
     /**
      * The version of the API.
      */
-    public readonly apiVersion!: pulumi.Output<string>;
+    declare public readonly apiVersion: pulumi.Output<string>;
     /**
      * The reference to a subnet. Should not be used with 
      * {external_subnet_reference_uuid} .
      */
-    public readonly externalSubnetReferenceName!: pulumi.Output<string | undefined>;
+    declare public readonly externalSubnetReferenceName: pulumi.Output<string | undefined>;
     /**
      * The reference to a subnet. Should not be used with {external_subnet_reference_name} .
      */
-    public readonly externalSubnetReferenceUuid!: pulumi.Output<string>;
+    declare public readonly externalSubnetReferenceUuid: pulumi.Output<string>;
     /**
      * The floatingIps kind metadata.
      */
-    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
      * Private IP with which floating IP is associated. Should be used with vpcReference .
      */
-    public readonly privateIp!: pulumi.Output<string | undefined>;
+    declare public readonly privateIp: pulumi.Output<string | undefined>;
     /**
      * The reference to a vmNic .
      */
-    public readonly vmNicReferenceUuid!: pulumi.Output<string | undefined>;
+    declare public readonly vmNicReferenceUuid: pulumi.Output<string | undefined>;
     /**
      * The reference to a vpc. Should not be used with {vpc_reference_uuid}.
      */
-    public readonly vpcReferenceName!: pulumi.Output<string | undefined>;
+    declare public readonly vpcReferenceName: pulumi.Output<string | undefined>;
     /**
      * The reference to a vpc. Should not be used with {vpc_reference_name}.
      */
-    public readonly vpcReferenceUuid!: pulumi.Output<string>;
+    declare public readonly vpcReferenceUuid: pulumi.Output<string>;
 
     /**
      * Create a FloatingIp resource with the given unique name, arguments, and options.
@@ -104,23 +104,23 @@ export class FloatingIp extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FloatingIpState | undefined;
-            resourceInputs["apiVersion"] = state ? state.apiVersion : undefined;
-            resourceInputs["externalSubnetReferenceName"] = state ? state.externalSubnetReferenceName : undefined;
-            resourceInputs["externalSubnetReferenceUuid"] = state ? state.externalSubnetReferenceUuid : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["privateIp"] = state ? state.privateIp : undefined;
-            resourceInputs["vmNicReferenceUuid"] = state ? state.vmNicReferenceUuid : undefined;
-            resourceInputs["vpcReferenceName"] = state ? state.vpcReferenceName : undefined;
-            resourceInputs["vpcReferenceUuid"] = state ? state.vpcReferenceUuid : undefined;
+            resourceInputs["apiVersion"] = state?.apiVersion;
+            resourceInputs["externalSubnetReferenceName"] = state?.externalSubnetReferenceName;
+            resourceInputs["externalSubnetReferenceUuid"] = state?.externalSubnetReferenceUuid;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["privateIp"] = state?.privateIp;
+            resourceInputs["vmNicReferenceUuid"] = state?.vmNicReferenceUuid;
+            resourceInputs["vpcReferenceName"] = state?.vpcReferenceName;
+            resourceInputs["vpcReferenceUuid"] = state?.vpcReferenceUuid;
         } else {
             const args = argsOrState as FloatingIpArgs | undefined;
-            resourceInputs["apiVersion"] = args ? args.apiVersion : undefined;
-            resourceInputs["externalSubnetReferenceName"] = args ? args.externalSubnetReferenceName : undefined;
-            resourceInputs["externalSubnetReferenceUuid"] = args ? args.externalSubnetReferenceUuid : undefined;
-            resourceInputs["privateIp"] = args ? args.privateIp : undefined;
-            resourceInputs["vmNicReferenceUuid"] = args ? args.vmNicReferenceUuid : undefined;
-            resourceInputs["vpcReferenceName"] = args ? args.vpcReferenceName : undefined;
-            resourceInputs["vpcReferenceUuid"] = args ? args.vpcReferenceUuid : undefined;
+            resourceInputs["apiVersion"] = args?.apiVersion;
+            resourceInputs["externalSubnetReferenceName"] = args?.externalSubnetReferenceName;
+            resourceInputs["externalSubnetReferenceUuid"] = args?.externalSubnetReferenceUuid;
+            resourceInputs["privateIp"] = args?.privateIp;
+            resourceInputs["vmNicReferenceUuid"] = args?.vmNicReferenceUuid;
+            resourceInputs["vpcReferenceName"] = args?.vpcReferenceName;
+            resourceInputs["vpcReferenceUuid"] = args?.vpcReferenceUuid;
             resourceInputs["metadata"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

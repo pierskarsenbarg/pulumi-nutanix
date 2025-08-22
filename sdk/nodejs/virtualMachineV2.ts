@@ -40,173 +40,173 @@ export class VirtualMachineV2 extends pulumi.CustomResource {
     /**
      * Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
      */
-    public readonly apcConfigs!: pulumi.Output<outputs.VirtualMachineV2ApcConfig[]>;
-    public readonly availabilityZones!: pulumi.Output<outputs.VirtualMachineV2AvailabilityZone[]>;
+    declare public readonly apcConfigs: pulumi.Output<outputs.VirtualMachineV2ApcConfig[]>;
+    declare public readonly availabilityZones: pulumi.Output<outputs.VirtualMachineV2AvailabilityZone[]>;
     /**
      * BIOS UUID of the VM. It should be of type UUID.
      */
-    public readonly biosUuid!: pulumi.Output<string>;
+    declare public readonly biosUuid: pulumi.Output<string>;
     /**
      * Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
      */
-    public readonly bootConfigs!: pulumi.Output<outputs.VirtualMachineV2BootConfig[]>;
+    declare public readonly bootConfigs: pulumi.Output<outputs.VirtualMachineV2BootConfig[]>;
     /**
      * Categories for the VM.
      */
-    public readonly categories!: pulumi.Output<outputs.VirtualMachineV2Category[]>;
+    declare public readonly categories: pulumi.Output<outputs.VirtualMachineV2Category[]>;
     /**
      * CD-ROMs attached to the VM.
      */
-    public readonly cdRoms!: pulumi.Output<outputs.VirtualMachineV2CdRom[] | undefined>;
+    declare public readonly cdRoms: pulumi.Output<outputs.VirtualMachineV2CdRom[] | undefined>;
     /**
      * Reference to a cluster.
      */
-    public readonly clusters!: pulumi.Output<outputs.VirtualMachineV2Cluster[]>;
+    declare public readonly clusters: pulumi.Output<outputs.VirtualMachineV2Cluster[]>;
     /**
      * VM creation time
      */
-    public /*out*/ readonly createTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly createTime: pulumi.Output<string>;
     /**
      * VM description
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Disks attached to the VM.
      */
-    public readonly disks!: pulumi.Output<outputs.VirtualMachineV2Disk[] | undefined>;
+    declare public readonly disks: pulumi.Output<outputs.VirtualMachineV2Disk[] | undefined>;
     /**
      * The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor. Valid values are "HARDWARE_VIRTUALIZATION".
      */
-    public readonly enabledCpuFeatures!: pulumi.Output<string[]>;
+    declare public readonly enabledCpuFeatures: pulumi.Output<string[]>;
     /**
      * A globally unique identifier of an instance that is suitable for external consumption.
      */
-    public /*out*/ readonly extId!: pulumi.Output<string>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
     /**
      * Generation UUID of the VM. It should be of type UUID.
      */
-    public readonly generationUuid!: pulumi.Output<string>;
+    declare public readonly generationUuid: pulumi.Output<string>;
     /**
      * GPUs attached to the VM.
      */
-    public readonly gpuses!: pulumi.Output<outputs.VirtualMachineV2Gpus[] | undefined>;
+    declare public readonly gpuses: pulumi.Output<outputs.VirtualMachineV2Gpus[] | undefined>;
     /**
      * Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
      */
-    public readonly guestCustomizations!: pulumi.Output<outputs.VirtualMachineV2GuestCustomization[]>;
+    declare public readonly guestCustomizations: pulumi.Output<outputs.VirtualMachineV2GuestCustomization[]>;
     /**
      * The details about Nutanix Guest Tools for a VM.
      */
-    public readonly guestTools!: pulumi.Output<outputs.VirtualMachineV2GuestTool[] | undefined>;
+    declare public readonly guestTools: pulumi.Output<outputs.VirtualMachineV2GuestTool[] | undefined>;
     /**
      * VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
      */
-    public readonly hardwareClockTimezone!: pulumi.Output<string>;
+    declare public readonly hardwareClockTimezone: pulumi.Output<string>;
     /**
      * Reference to the host, the VM is running on.
      */
-    public readonly hosts!: pulumi.Output<outputs.VirtualMachineV2Host[]>;
+    declare public readonly hosts: pulumi.Output<outputs.VirtualMachineV2Host[]>;
     /**
      * Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
      */
-    public readonly isAgentVm!: pulumi.Output<boolean>;
+    declare public readonly isAgentVm: pulumi.Output<boolean>;
     /**
      * Indicates whether to remove AHV branding from VM firmware tables or not.
      */
-    public readonly isBrandingEnabled!: pulumi.Output<boolean>;
+    declare public readonly isBrandingEnabled: pulumi.Output<boolean>;
     /**
      * Indicates whether the VM CPU hotplug is enabled.
      */
-    public readonly isCpuHotplugEnabled!: pulumi.Output<boolean>;
+    declare public readonly isCpuHotplugEnabled: pulumi.Output<boolean>;
     /**
      * Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
      */
-    public readonly isCpuPassthroughEnabled!: pulumi.Output<boolean>;
+    declare public readonly isCpuPassthroughEnabled: pulumi.Output<boolean>;
     /**
      * Indicates whether the vGPU console is enabled or not.
      */
-    public readonly isGpuConsoleEnabled!: pulumi.Output<boolean>;
+    declare public readonly isGpuConsoleEnabled: pulumi.Output<boolean>;
     /**
      * Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
      */
-    public readonly isMemoryOvercommitEnabled!: pulumi.Output<boolean>;
+    declare public readonly isMemoryOvercommitEnabled: pulumi.Output<boolean>;
     /**
      * Indicates whether the VM SCSI controller is enabled.
      */
-    public readonly isScsiControllerEnabled!: pulumi.Output<boolean>;
+    declare public readonly isScsiControllerEnabled: pulumi.Output<boolean>;
     /**
      * Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
      */
-    public readonly isVcpuHardPinningEnabled!: pulumi.Output<boolean>;
+    declare public readonly isVcpuHardPinningEnabled: pulumi.Output<boolean>;
     /**
      * Indicates whether the VGA console should be disabled or not.
      */
-    public readonly isVgaConsoleEnabled!: pulumi.Output<boolean>;
+    declare public readonly isVgaConsoleEnabled: pulumi.Output<boolean>;
     /**
      * Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks. Valid values are "PSERIES", "Q35", "PC" .
      */
-    public readonly machineType!: pulumi.Output<string>;
+    declare public readonly machineType: pulumi.Output<string>;
     /**
      * Memory size in bytes.
      */
-    public readonly memorySizeBytes!: pulumi.Output<number>;
+    declare public readonly memorySizeBytes: pulumi.Output<number>;
     /**
      * VM name.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * NICs attached to the VM.
      */
-    public readonly nics!: pulumi.Output<outputs.VirtualMachineV2Nic[] | undefined>;
+    declare public readonly nics: pulumi.Output<outputs.VirtualMachineV2Nic[] | undefined>;
     /**
      * Number of cores per socket. Value should be at least 1.
      */
-    public readonly numCoresPerSocket!: pulumi.Output<number>;
+    declare public readonly numCoresPerSocket: pulumi.Output<number>;
     /**
      * Number of NUMA nodes. 0 means NUMA is disabled.
      */
-    public readonly numNumaNodes!: pulumi.Output<number>;
+    declare public readonly numNumaNodes: pulumi.Output<number>;
     /**
      * Number of vCPU sockets. Value should be at least 1.
      */
-    public readonly numSockets!: pulumi.Output<number>;
+    declare public readonly numSockets: pulumi.Output<number>;
     /**
      * Number of threads per core. Value should be at least 1.
      */
-    public readonly numThreadsPerCore!: pulumi.Output<number>;
+    declare public readonly numThreadsPerCore: pulumi.Output<number>;
     /**
      * Ownership information for the VM.
      */
-    public readonly ownershipInfos!: pulumi.Output<outputs.VirtualMachineV2OwnershipInfo[]>;
-    public readonly powerState!: pulumi.Output<string | undefined>;
+    declare public readonly ownershipInfos: pulumi.Output<outputs.VirtualMachineV2OwnershipInfo[]>;
+    declare public readonly powerState: pulumi.Output<string | undefined>;
     /**
      * Status of protection policy applied to this VM.
      */
-    public readonly protectionPolicyStates!: pulumi.Output<outputs.VirtualMachineV2ProtectionPolicyState[]>;
+    declare public readonly protectionPolicyStates: pulumi.Output<outputs.VirtualMachineV2ProtectionPolicyState[]>;
     /**
      * The type of protection applied on a VM. Valid values "PD_PROTECTED", "UNPROTECTED", "RULE_PROTECTED".
      */
-    public readonly protectionType!: pulumi.Output<string>;
+    declare public readonly protectionType: pulumi.Output<string>;
     /**
      * Serial ports configured on the VM.
      */
-    public readonly serialPorts!: pulumi.Output<outputs.VirtualMachineV2SerialPort[]>;
+    declare public readonly serialPorts: pulumi.Output<outputs.VirtualMachineV2SerialPort[]>;
     /**
      * Reference to an entity that the VM should be cloned or created from. Valid values are "VM", "VM_RECOVERY_POINT".
      */
-    public readonly sources!: pulumi.Output<outputs.VirtualMachineV2Source[]>;
+    declare public readonly sources: pulumi.Output<outputs.VirtualMachineV2Source[]>;
     /**
      * Storage configuration for VM.
      */
-    public readonly storageConfigs!: pulumi.Output<outputs.VirtualMachineV2StorageConfig[]>;
+    declare public readonly storageConfigs: pulumi.Output<outputs.VirtualMachineV2StorageConfig[]>;
     /**
      * VM last updated time.
      */
-    public /*out*/ readonly updateTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly updateTime: pulumi.Output<string>;
     /**
      * Indicates how the vTPM for the VM should be configured.
      */
-    public readonly vtpmConfigs!: pulumi.Output<outputs.VirtualMachineV2VtpmConfig[]>;
+    declare public readonly vtpmConfigs: pulumi.Output<outputs.VirtualMachineV2VtpmConfig[]>;
 
     /**
      * Create a VirtualMachineV2 resource with the given unique name, arguments, and options.
@@ -221,93 +221,93 @@ export class VirtualMachineV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VirtualMachineV2State | undefined;
-            resourceInputs["apcConfigs"] = state ? state.apcConfigs : undefined;
-            resourceInputs["availabilityZones"] = state ? state.availabilityZones : undefined;
-            resourceInputs["biosUuid"] = state ? state.biosUuid : undefined;
-            resourceInputs["bootConfigs"] = state ? state.bootConfigs : undefined;
-            resourceInputs["categories"] = state ? state.categories : undefined;
-            resourceInputs["cdRoms"] = state ? state.cdRoms : undefined;
-            resourceInputs["clusters"] = state ? state.clusters : undefined;
-            resourceInputs["createTime"] = state ? state.createTime : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["disks"] = state ? state.disks : undefined;
-            resourceInputs["enabledCpuFeatures"] = state ? state.enabledCpuFeatures : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["generationUuid"] = state ? state.generationUuid : undefined;
-            resourceInputs["gpuses"] = state ? state.gpuses : undefined;
-            resourceInputs["guestCustomizations"] = state ? state.guestCustomizations : undefined;
-            resourceInputs["guestTools"] = state ? state.guestTools : undefined;
-            resourceInputs["hardwareClockTimezone"] = state ? state.hardwareClockTimezone : undefined;
-            resourceInputs["hosts"] = state ? state.hosts : undefined;
-            resourceInputs["isAgentVm"] = state ? state.isAgentVm : undefined;
-            resourceInputs["isBrandingEnabled"] = state ? state.isBrandingEnabled : undefined;
-            resourceInputs["isCpuHotplugEnabled"] = state ? state.isCpuHotplugEnabled : undefined;
-            resourceInputs["isCpuPassthroughEnabled"] = state ? state.isCpuPassthroughEnabled : undefined;
-            resourceInputs["isGpuConsoleEnabled"] = state ? state.isGpuConsoleEnabled : undefined;
-            resourceInputs["isMemoryOvercommitEnabled"] = state ? state.isMemoryOvercommitEnabled : undefined;
-            resourceInputs["isScsiControllerEnabled"] = state ? state.isScsiControllerEnabled : undefined;
-            resourceInputs["isVcpuHardPinningEnabled"] = state ? state.isVcpuHardPinningEnabled : undefined;
-            resourceInputs["isVgaConsoleEnabled"] = state ? state.isVgaConsoleEnabled : undefined;
-            resourceInputs["machineType"] = state ? state.machineType : undefined;
-            resourceInputs["memorySizeBytes"] = state ? state.memorySizeBytes : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["nics"] = state ? state.nics : undefined;
-            resourceInputs["numCoresPerSocket"] = state ? state.numCoresPerSocket : undefined;
-            resourceInputs["numNumaNodes"] = state ? state.numNumaNodes : undefined;
-            resourceInputs["numSockets"] = state ? state.numSockets : undefined;
-            resourceInputs["numThreadsPerCore"] = state ? state.numThreadsPerCore : undefined;
-            resourceInputs["ownershipInfos"] = state ? state.ownershipInfos : undefined;
-            resourceInputs["powerState"] = state ? state.powerState : undefined;
-            resourceInputs["protectionPolicyStates"] = state ? state.protectionPolicyStates : undefined;
-            resourceInputs["protectionType"] = state ? state.protectionType : undefined;
-            resourceInputs["serialPorts"] = state ? state.serialPorts : undefined;
-            resourceInputs["sources"] = state ? state.sources : undefined;
-            resourceInputs["storageConfigs"] = state ? state.storageConfigs : undefined;
-            resourceInputs["updateTime"] = state ? state.updateTime : undefined;
-            resourceInputs["vtpmConfigs"] = state ? state.vtpmConfigs : undefined;
+            resourceInputs["apcConfigs"] = state?.apcConfigs;
+            resourceInputs["availabilityZones"] = state?.availabilityZones;
+            resourceInputs["biosUuid"] = state?.biosUuid;
+            resourceInputs["bootConfigs"] = state?.bootConfigs;
+            resourceInputs["categories"] = state?.categories;
+            resourceInputs["cdRoms"] = state?.cdRoms;
+            resourceInputs["clusters"] = state?.clusters;
+            resourceInputs["createTime"] = state?.createTime;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["disks"] = state?.disks;
+            resourceInputs["enabledCpuFeatures"] = state?.enabledCpuFeatures;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["generationUuid"] = state?.generationUuid;
+            resourceInputs["gpuses"] = state?.gpuses;
+            resourceInputs["guestCustomizations"] = state?.guestCustomizations;
+            resourceInputs["guestTools"] = state?.guestTools;
+            resourceInputs["hardwareClockTimezone"] = state?.hardwareClockTimezone;
+            resourceInputs["hosts"] = state?.hosts;
+            resourceInputs["isAgentVm"] = state?.isAgentVm;
+            resourceInputs["isBrandingEnabled"] = state?.isBrandingEnabled;
+            resourceInputs["isCpuHotplugEnabled"] = state?.isCpuHotplugEnabled;
+            resourceInputs["isCpuPassthroughEnabled"] = state?.isCpuPassthroughEnabled;
+            resourceInputs["isGpuConsoleEnabled"] = state?.isGpuConsoleEnabled;
+            resourceInputs["isMemoryOvercommitEnabled"] = state?.isMemoryOvercommitEnabled;
+            resourceInputs["isScsiControllerEnabled"] = state?.isScsiControllerEnabled;
+            resourceInputs["isVcpuHardPinningEnabled"] = state?.isVcpuHardPinningEnabled;
+            resourceInputs["isVgaConsoleEnabled"] = state?.isVgaConsoleEnabled;
+            resourceInputs["machineType"] = state?.machineType;
+            resourceInputs["memorySizeBytes"] = state?.memorySizeBytes;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["nics"] = state?.nics;
+            resourceInputs["numCoresPerSocket"] = state?.numCoresPerSocket;
+            resourceInputs["numNumaNodes"] = state?.numNumaNodes;
+            resourceInputs["numSockets"] = state?.numSockets;
+            resourceInputs["numThreadsPerCore"] = state?.numThreadsPerCore;
+            resourceInputs["ownershipInfos"] = state?.ownershipInfos;
+            resourceInputs["powerState"] = state?.powerState;
+            resourceInputs["protectionPolicyStates"] = state?.protectionPolicyStates;
+            resourceInputs["protectionType"] = state?.protectionType;
+            resourceInputs["serialPorts"] = state?.serialPorts;
+            resourceInputs["sources"] = state?.sources;
+            resourceInputs["storageConfigs"] = state?.storageConfigs;
+            resourceInputs["updateTime"] = state?.updateTime;
+            resourceInputs["vtpmConfigs"] = state?.vtpmConfigs;
         } else {
             const args = argsOrState as VirtualMachineV2Args | undefined;
-            resourceInputs["apcConfigs"] = args ? args.apcConfigs : undefined;
-            resourceInputs["availabilityZones"] = args ? args.availabilityZones : undefined;
-            resourceInputs["biosUuid"] = args ? args.biosUuid : undefined;
-            resourceInputs["bootConfigs"] = args ? args.bootConfigs : undefined;
-            resourceInputs["categories"] = args ? args.categories : undefined;
-            resourceInputs["cdRoms"] = args ? args.cdRoms : undefined;
-            resourceInputs["clusters"] = args ? args.clusters : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["disks"] = args ? args.disks : undefined;
-            resourceInputs["enabledCpuFeatures"] = args ? args.enabledCpuFeatures : undefined;
-            resourceInputs["generationUuid"] = args ? args.generationUuid : undefined;
-            resourceInputs["gpuses"] = args ? args.gpuses : undefined;
-            resourceInputs["guestCustomizations"] = args ? args.guestCustomizations : undefined;
-            resourceInputs["guestTools"] = args ? args.guestTools : undefined;
-            resourceInputs["hardwareClockTimezone"] = args ? args.hardwareClockTimezone : undefined;
-            resourceInputs["hosts"] = args ? args.hosts : undefined;
-            resourceInputs["isAgentVm"] = args ? args.isAgentVm : undefined;
-            resourceInputs["isBrandingEnabled"] = args ? args.isBrandingEnabled : undefined;
-            resourceInputs["isCpuHotplugEnabled"] = args ? args.isCpuHotplugEnabled : undefined;
-            resourceInputs["isCpuPassthroughEnabled"] = args ? args.isCpuPassthroughEnabled : undefined;
-            resourceInputs["isGpuConsoleEnabled"] = args ? args.isGpuConsoleEnabled : undefined;
-            resourceInputs["isMemoryOvercommitEnabled"] = args ? args.isMemoryOvercommitEnabled : undefined;
-            resourceInputs["isScsiControllerEnabled"] = args ? args.isScsiControllerEnabled : undefined;
-            resourceInputs["isVcpuHardPinningEnabled"] = args ? args.isVcpuHardPinningEnabled : undefined;
-            resourceInputs["isVgaConsoleEnabled"] = args ? args.isVgaConsoleEnabled : undefined;
-            resourceInputs["machineType"] = args ? args.machineType : undefined;
-            resourceInputs["memorySizeBytes"] = args ? args.memorySizeBytes : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["nics"] = args ? args.nics : undefined;
-            resourceInputs["numCoresPerSocket"] = args ? args.numCoresPerSocket : undefined;
-            resourceInputs["numNumaNodes"] = args ? args.numNumaNodes : undefined;
-            resourceInputs["numSockets"] = args ? args.numSockets : undefined;
-            resourceInputs["numThreadsPerCore"] = args ? args.numThreadsPerCore : undefined;
-            resourceInputs["ownershipInfos"] = args ? args.ownershipInfos : undefined;
-            resourceInputs["powerState"] = args ? args.powerState : undefined;
-            resourceInputs["protectionPolicyStates"] = args ? args.protectionPolicyStates : undefined;
-            resourceInputs["protectionType"] = args ? args.protectionType : undefined;
-            resourceInputs["serialPorts"] = args ? args.serialPorts : undefined;
-            resourceInputs["sources"] = args ? args.sources : undefined;
-            resourceInputs["storageConfigs"] = args ? args.storageConfigs : undefined;
-            resourceInputs["vtpmConfigs"] = args ? args.vtpmConfigs : undefined;
+            resourceInputs["apcConfigs"] = args?.apcConfigs;
+            resourceInputs["availabilityZones"] = args?.availabilityZones;
+            resourceInputs["biosUuid"] = args?.biosUuid;
+            resourceInputs["bootConfigs"] = args?.bootConfigs;
+            resourceInputs["categories"] = args?.categories;
+            resourceInputs["cdRoms"] = args?.cdRoms;
+            resourceInputs["clusters"] = args?.clusters;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["disks"] = args?.disks;
+            resourceInputs["enabledCpuFeatures"] = args?.enabledCpuFeatures;
+            resourceInputs["generationUuid"] = args?.generationUuid;
+            resourceInputs["gpuses"] = args?.gpuses;
+            resourceInputs["guestCustomizations"] = args?.guestCustomizations;
+            resourceInputs["guestTools"] = args?.guestTools;
+            resourceInputs["hardwareClockTimezone"] = args?.hardwareClockTimezone;
+            resourceInputs["hosts"] = args?.hosts;
+            resourceInputs["isAgentVm"] = args?.isAgentVm;
+            resourceInputs["isBrandingEnabled"] = args?.isBrandingEnabled;
+            resourceInputs["isCpuHotplugEnabled"] = args?.isCpuHotplugEnabled;
+            resourceInputs["isCpuPassthroughEnabled"] = args?.isCpuPassthroughEnabled;
+            resourceInputs["isGpuConsoleEnabled"] = args?.isGpuConsoleEnabled;
+            resourceInputs["isMemoryOvercommitEnabled"] = args?.isMemoryOvercommitEnabled;
+            resourceInputs["isScsiControllerEnabled"] = args?.isScsiControllerEnabled;
+            resourceInputs["isVcpuHardPinningEnabled"] = args?.isVcpuHardPinningEnabled;
+            resourceInputs["isVgaConsoleEnabled"] = args?.isVgaConsoleEnabled;
+            resourceInputs["machineType"] = args?.machineType;
+            resourceInputs["memorySizeBytes"] = args?.memorySizeBytes;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["nics"] = args?.nics;
+            resourceInputs["numCoresPerSocket"] = args?.numCoresPerSocket;
+            resourceInputs["numNumaNodes"] = args?.numNumaNodes;
+            resourceInputs["numSockets"] = args?.numSockets;
+            resourceInputs["numThreadsPerCore"] = args?.numThreadsPerCore;
+            resourceInputs["ownershipInfos"] = args?.ownershipInfos;
+            resourceInputs["powerState"] = args?.powerState;
+            resourceInputs["protectionPolicyStates"] = args?.protectionPolicyStates;
+            resourceInputs["protectionType"] = args?.protectionType;
+            resourceInputs["serialPorts"] = args?.serialPorts;
+            resourceInputs["sources"] = args?.sources;
+            resourceInputs["storageConfigs"] = args?.storageConfigs;
+            resourceInputs["vtpmConfigs"] = args?.vtpmConfigs;
             resourceInputs["createTime"] = undefined /*out*/;
             resourceInputs["extId"] = undefined /*out*/;
             resourceInputs["updateTime"] = undefined /*out*/;

@@ -37,63 +37,63 @@ export class FoundationCentralImageCluster extends pulumi.CustomResource {
     /**
      * Sha256sum of AOS package.
      */
-    public readonly aosPackageSha256sum!: pulumi.Output<string>;
+    declare public readonly aosPackageSha256sum: pulumi.Output<string>;
     /**
      * URL to download AOS package. Required only if imaging is needed.
      */
-    public readonly aosPackageUrl!: pulumi.Output<string>;
-    public /*out*/ readonly archived!: pulumi.Output<boolean>;
+    declare public readonly aosPackageUrl: pulumi.Output<string>;
+    declare public /*out*/ readonly archived: pulumi.Output<boolean>;
     /**
      * External management ip of the cluster.
      */
-    public readonly clusterExternalIp!: pulumi.Output<string>;
+    declare public readonly clusterExternalIp: pulumi.Output<string>;
     /**
      * Name of the cluster.
      */
-    public readonly clusterName!: pulumi.Output<string>;
+    declare public readonly clusterName: pulumi.Output<string>;
     /**
      * Number of nodes in the cluster.
      */
-    public readonly clusterSize!: pulumi.Output<number>;
-    public readonly clusterStatus!: pulumi.Output<outputs.FoundationCentralImageClusterClusterStatus>;
+    declare public readonly clusterSize: pulumi.Output<number>;
+    declare public readonly clusterStatus: pulumi.Output<outputs.FoundationCentralImageClusterClusterStatus>;
     /**
      * Common network settings across the nodes in the cluster.
      */
-    public readonly commonNetworkSettings!: pulumi.Output<outputs.FoundationCentralImageClusterCommonNetworkSettings>;
-    public /*out*/ readonly createdTimestamp!: pulumi.Output<string>;
-    public /*out*/ readonly currentTime!: pulumi.Output<string>;
-    public /*out*/ readonly destroyed!: pulumi.Output<boolean>;
-    public /*out*/ readonly foundationInitConfigs!: pulumi.Output<outputs.FoundationCentralImageClusterFoundationInitConfig[]>;
-    public /*out*/ readonly foundationInitNodeUuid!: pulumi.Output<string>;
+    declare public readonly commonNetworkSettings: pulumi.Output<outputs.FoundationCentralImageClusterCommonNetworkSettings>;
+    declare public /*out*/ readonly createdTimestamp: pulumi.Output<string>;
+    declare public /*out*/ readonly currentTime: pulumi.Output<string>;
+    declare public /*out*/ readonly destroyed: pulumi.Output<boolean>;
+    declare public /*out*/ readonly foundationInitConfigs: pulumi.Output<outputs.FoundationCentralImageClusterFoundationInitConfig[]>;
+    declare public /*out*/ readonly foundationInitNodeUuid: pulumi.Output<string>;
     /**
      * Details of the hypervisor iso. (Deprecated)
      */
-    public readonly hypervisorIsoDetails!: pulumi.Output<outputs.FoundationCentralImageClusterHypervisorIsoDetails>;
+    declare public readonly hypervisorIsoDetails: pulumi.Output<outputs.FoundationCentralImageClusterHypervisorIsoDetails>;
     /**
      * Details of the hypervisor iso. Required for deploying node with AOS >= 6.8
      */
-    public readonly hypervisorIsos!: pulumi.Output<outputs.FoundationCentralImageClusterHypervisorIsos | undefined>;
-    public readonly imageClusterUuid!: pulumi.Output<string>;
+    declare public readonly hypervisorIsos: pulumi.Output<outputs.FoundationCentralImageClusterHypervisorIsos | undefined>;
+    declare public readonly imageClusterUuid: pulumi.Output<string>;
     /**
      * Unique id of the cluster.
      */
-    public /*out*/ readonly imagedClusterUuid!: pulumi.Output<string>;
-    public /*out*/ readonly imagedNodeUuidLists!: pulumi.Output<string[]>;
-    public readonly nodeLists!: pulumi.Output<outputs.FoundationCentralImageClusterNodeList[]>;
+    declare public /*out*/ readonly imagedClusterUuid: pulumi.Output<string>;
+    declare public /*out*/ readonly imagedNodeUuidLists: pulumi.Output<string[]>;
+    declare public readonly nodeLists: pulumi.Output<outputs.FoundationCentralImageClusterNodeList[]>;
     /**
      * Redundancy factor of the cluster.
      */
-    public readonly redundancyFactor!: pulumi.Output<number>;
-    public readonly skipClusterCreation!: pulumi.Output<boolean | undefined>;
+    declare public readonly redundancyFactor: pulumi.Output<number>;
+    declare public readonly skipClusterCreation: pulumi.Output<boolean | undefined>;
     /**
      * Number of storage only nodes in the cluster. AHV iso for storage node will be taken from aos package.
      */
-    public readonly storageNodeCount!: pulumi.Output<number>;
+    declare public readonly storageNodeCount: pulumi.Output<number>;
     /**
      * Timezone to be set on the cluster.
      */
-    public readonly timezone!: pulumi.Output<string>;
-    public /*out*/ readonly workflowType!: pulumi.Output<string>;
+    declare public readonly timezone: pulumi.Output<string>;
+    declare public /*out*/ readonly workflowType: pulumi.Output<string>;
 
     /**
      * Create a FoundationCentralImageCluster resource with the given unique name, arguments, and options.
@@ -108,47 +108,47 @@ export class FoundationCentralImageCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FoundationCentralImageClusterState | undefined;
-            resourceInputs["aosPackageSha256sum"] = state ? state.aosPackageSha256sum : undefined;
-            resourceInputs["aosPackageUrl"] = state ? state.aosPackageUrl : undefined;
-            resourceInputs["archived"] = state ? state.archived : undefined;
-            resourceInputs["clusterExternalIp"] = state ? state.clusterExternalIp : undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["clusterSize"] = state ? state.clusterSize : undefined;
-            resourceInputs["clusterStatus"] = state ? state.clusterStatus : undefined;
-            resourceInputs["commonNetworkSettings"] = state ? state.commonNetworkSettings : undefined;
-            resourceInputs["createdTimestamp"] = state ? state.createdTimestamp : undefined;
-            resourceInputs["currentTime"] = state ? state.currentTime : undefined;
-            resourceInputs["destroyed"] = state ? state.destroyed : undefined;
-            resourceInputs["foundationInitConfigs"] = state ? state.foundationInitConfigs : undefined;
-            resourceInputs["foundationInitNodeUuid"] = state ? state.foundationInitNodeUuid : undefined;
-            resourceInputs["hypervisorIsoDetails"] = state ? state.hypervisorIsoDetails : undefined;
-            resourceInputs["hypervisorIsos"] = state ? state.hypervisorIsos : undefined;
-            resourceInputs["imageClusterUuid"] = state ? state.imageClusterUuid : undefined;
-            resourceInputs["imagedClusterUuid"] = state ? state.imagedClusterUuid : undefined;
-            resourceInputs["imagedNodeUuidLists"] = state ? state.imagedNodeUuidLists : undefined;
-            resourceInputs["nodeLists"] = state ? state.nodeLists : undefined;
-            resourceInputs["redundancyFactor"] = state ? state.redundancyFactor : undefined;
-            resourceInputs["skipClusterCreation"] = state ? state.skipClusterCreation : undefined;
-            resourceInputs["storageNodeCount"] = state ? state.storageNodeCount : undefined;
-            resourceInputs["timezone"] = state ? state.timezone : undefined;
-            resourceInputs["workflowType"] = state ? state.workflowType : undefined;
+            resourceInputs["aosPackageSha256sum"] = state?.aosPackageSha256sum;
+            resourceInputs["aosPackageUrl"] = state?.aosPackageUrl;
+            resourceInputs["archived"] = state?.archived;
+            resourceInputs["clusterExternalIp"] = state?.clusterExternalIp;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["clusterSize"] = state?.clusterSize;
+            resourceInputs["clusterStatus"] = state?.clusterStatus;
+            resourceInputs["commonNetworkSettings"] = state?.commonNetworkSettings;
+            resourceInputs["createdTimestamp"] = state?.createdTimestamp;
+            resourceInputs["currentTime"] = state?.currentTime;
+            resourceInputs["destroyed"] = state?.destroyed;
+            resourceInputs["foundationInitConfigs"] = state?.foundationInitConfigs;
+            resourceInputs["foundationInitNodeUuid"] = state?.foundationInitNodeUuid;
+            resourceInputs["hypervisorIsoDetails"] = state?.hypervisorIsoDetails;
+            resourceInputs["hypervisorIsos"] = state?.hypervisorIsos;
+            resourceInputs["imageClusterUuid"] = state?.imageClusterUuid;
+            resourceInputs["imagedClusterUuid"] = state?.imagedClusterUuid;
+            resourceInputs["imagedNodeUuidLists"] = state?.imagedNodeUuidLists;
+            resourceInputs["nodeLists"] = state?.nodeLists;
+            resourceInputs["redundancyFactor"] = state?.redundancyFactor;
+            resourceInputs["skipClusterCreation"] = state?.skipClusterCreation;
+            resourceInputs["storageNodeCount"] = state?.storageNodeCount;
+            resourceInputs["timezone"] = state?.timezone;
+            resourceInputs["workflowType"] = state?.workflowType;
         } else {
             const args = argsOrState as FoundationCentralImageClusterArgs | undefined;
-            resourceInputs["aosPackageSha256sum"] = args ? args.aosPackageSha256sum : undefined;
-            resourceInputs["aosPackageUrl"] = args ? args.aosPackageUrl : undefined;
-            resourceInputs["clusterExternalIp"] = args ? args.clusterExternalIp : undefined;
-            resourceInputs["clusterName"] = args ? args.clusterName : undefined;
-            resourceInputs["clusterSize"] = args ? args.clusterSize : undefined;
-            resourceInputs["clusterStatus"] = args ? args.clusterStatus : undefined;
-            resourceInputs["commonNetworkSettings"] = args ? args.commonNetworkSettings : undefined;
-            resourceInputs["hypervisorIsoDetails"] = args ? args.hypervisorIsoDetails : undefined;
-            resourceInputs["hypervisorIsos"] = args ? args.hypervisorIsos : undefined;
-            resourceInputs["imageClusterUuid"] = args ? args.imageClusterUuid : undefined;
-            resourceInputs["nodeLists"] = args ? args.nodeLists : undefined;
-            resourceInputs["redundancyFactor"] = args ? args.redundancyFactor : undefined;
-            resourceInputs["skipClusterCreation"] = args ? args.skipClusterCreation : undefined;
-            resourceInputs["storageNodeCount"] = args ? args.storageNodeCount : undefined;
-            resourceInputs["timezone"] = args ? args.timezone : undefined;
+            resourceInputs["aosPackageSha256sum"] = args?.aosPackageSha256sum;
+            resourceInputs["aosPackageUrl"] = args?.aosPackageUrl;
+            resourceInputs["clusterExternalIp"] = args?.clusterExternalIp;
+            resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["clusterSize"] = args?.clusterSize;
+            resourceInputs["clusterStatus"] = args?.clusterStatus;
+            resourceInputs["commonNetworkSettings"] = args?.commonNetworkSettings;
+            resourceInputs["hypervisorIsoDetails"] = args?.hypervisorIsoDetails;
+            resourceInputs["hypervisorIsos"] = args?.hypervisorIsos;
+            resourceInputs["imageClusterUuid"] = args?.imageClusterUuid;
+            resourceInputs["nodeLists"] = args?.nodeLists;
+            resourceInputs["redundancyFactor"] = args?.redundancyFactor;
+            resourceInputs["skipClusterCreation"] = args?.skipClusterCreation;
+            resourceInputs["storageNodeCount"] = args?.storageNodeCount;
+            resourceInputs["timezone"] = args?.timezone;
             resourceInputs["archived"] = undefined /*out*/;
             resourceInputs["createdTimestamp"] = undefined /*out*/;
             resourceInputs["currentTime"] = undefined /*out*/;

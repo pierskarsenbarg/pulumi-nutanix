@@ -53,27 +53,27 @@ export class LcmUpgradeV2 extends pulumi.CustomResource {
     /**
      * List of automated system operations to perform, to avoid precheck failure and let the system restore state after an update is complete. The allowed flag is: - 'powerOffUvms': This allows the system to automatically power off user VMs which cannot be migrated to other hosts and power them on when the update is done. This option can avoid pinned VM precheck failure on the host which needs to enter maintenance mode during the update and allow the update to go through. Items Enum: `POWER_OFF_UVMS`
      */
-    public readonly autoHandleFlags!: pulumi.Output<string[] | undefined>;
+    declare public readonly autoHandleFlags: pulumi.Output<string[] | undefined>;
     /**
      * List of entity update objects for getting recommendations.
      */
-    public readonly entityUpdateSpecs!: pulumi.Output<outputs.LcmUpgradeV2EntityUpdateSpec[] | undefined>;
+    declare public readonly entityUpdateSpecs: pulumi.Output<outputs.LcmUpgradeV2EntityUpdateSpec[] | undefined>;
     /**
      * Cluster management server configuration used while updating clusters with ESX or Hyper-V.
      */
-    public readonly managementServer!: pulumi.Output<outputs.LcmUpgradeV2ManagementServer | undefined>;
+    declare public readonly managementServer: pulumi.Output<outputs.LcmUpgradeV2ManagementServer | undefined>;
     /**
      * Number of seconds LCM waits for the VMs to come up after exiting host maintenance mode. Value in Range [ 60 .. 86400]
      */
-    public readonly maxWaitTimeInSecs!: pulumi.Output<number | undefined>;
+    declare public readonly maxWaitTimeInSecs: pulumi.Output<number | undefined>;
     /**
      * List of prechecks to skip. The allowed value is 'powerOffUvms' that skips the pinned VM prechecks. Items Enum: `POWER_OFF_UVMS`
      */
-    public readonly skippedPrecheckFlags!: pulumi.Output<string[] | undefined>;
+    declare public readonly skippedPrecheckFlags: pulumi.Output<string[] | undefined>;
     /**
      * Cluster uuid on which the resource is present or operation is being performed.
      */
-    public readonly xClusterId!: pulumi.Output<string | undefined>;
+    declare public readonly xClusterId: pulumi.Output<string | undefined>;
 
     /**
      * Create a LcmUpgradeV2 resource with the given unique name, arguments, and options.
@@ -88,20 +88,20 @@ export class LcmUpgradeV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LcmUpgradeV2State | undefined;
-            resourceInputs["autoHandleFlags"] = state ? state.autoHandleFlags : undefined;
-            resourceInputs["entityUpdateSpecs"] = state ? state.entityUpdateSpecs : undefined;
-            resourceInputs["managementServer"] = state ? state.managementServer : undefined;
-            resourceInputs["maxWaitTimeInSecs"] = state ? state.maxWaitTimeInSecs : undefined;
-            resourceInputs["skippedPrecheckFlags"] = state ? state.skippedPrecheckFlags : undefined;
-            resourceInputs["xClusterId"] = state ? state.xClusterId : undefined;
+            resourceInputs["autoHandleFlags"] = state?.autoHandleFlags;
+            resourceInputs["entityUpdateSpecs"] = state?.entityUpdateSpecs;
+            resourceInputs["managementServer"] = state?.managementServer;
+            resourceInputs["maxWaitTimeInSecs"] = state?.maxWaitTimeInSecs;
+            resourceInputs["skippedPrecheckFlags"] = state?.skippedPrecheckFlags;
+            resourceInputs["xClusterId"] = state?.xClusterId;
         } else {
             const args = argsOrState as LcmUpgradeV2Args | undefined;
-            resourceInputs["autoHandleFlags"] = args ? args.autoHandleFlags : undefined;
-            resourceInputs["entityUpdateSpecs"] = args ? args.entityUpdateSpecs : undefined;
-            resourceInputs["managementServer"] = args ? args.managementServer : undefined;
-            resourceInputs["maxWaitTimeInSecs"] = args ? args.maxWaitTimeInSecs : undefined;
-            resourceInputs["skippedPrecheckFlags"] = args ? args.skippedPrecheckFlags : undefined;
-            resourceInputs["xClusterId"] = args ? args.xClusterId : undefined;
+            resourceInputs["autoHandleFlags"] = args?.autoHandleFlags;
+            resourceInputs["entityUpdateSpecs"] = args?.entityUpdateSpecs;
+            resourceInputs["managementServer"] = args?.managementServer;
+            resourceInputs["maxWaitTimeInSecs"] = args?.maxWaitTimeInSecs;
+            resourceInputs["skippedPrecheckFlags"] = args?.skippedPrecheckFlags;
+            resourceInputs["xClusterId"] = args?.xClusterId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(LcmUpgradeV2.__pulumiType, name, resourceInputs, opts);

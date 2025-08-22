@@ -59,34 +59,34 @@ export class LcmConfigV2 extends pulumi.CustomResource {
     /**
      * The scheduled time in "%H:%M" 24-hour format of the next inventory execution. Used when autoInventoryEnabled is set to True. The default schedule time is 03:00(AM).
      */
-    public readonly autoInventorySchedule!: pulumi.Output<string | undefined>;
+    declare public readonly autoInventorySchedule: pulumi.Output<string | undefined>;
     /**
      * This field indicates whether LCM framework on the cluster is running in connected-site mode or darksite mode.
      */
-    public readonly connectivityType!: pulumi.Output<string | undefined>;
-    public /*out*/ readonly extId!: pulumi.Output<string>;
+    declare public readonly connectivityType: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
     /**
      * Indicates if LCM is enabled to auto-upgrade products. The default value is False.
      *
      * See detailed information in [Nutanix Update LCM Config V4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.0#tag/Config/operation/updateConfig)
      */
-    public readonly hasModuleAutoUpgradeEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly hasModuleAutoUpgradeEnabled: pulumi.Output<boolean | undefined>;
     /**
      * Indicates if the auto inventory operation is enabled. The default value is set to False.
      */
-    public readonly isAutoInventoryEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly isAutoInventoryEnabled: pulumi.Output<boolean | undefined>;
     /**
      * Indicates if the LCM URL has HTTPS enabled. The default value is True.
      */
-    public readonly isHttpsEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly isHttpsEnabled: pulumi.Output<boolean | undefined>;
     /**
      * URL of the LCM repository.
      */
-    public readonly url!: pulumi.Output<string | undefined>;
+    declare public readonly url: pulumi.Output<string | undefined>;
     /**
      * Cluster uuid on which the resource is present or operation is being performed.
      */
-    public readonly xClusterId!: pulumi.Output<string | undefined>;
+    declare public readonly xClusterId: pulumi.Output<string | undefined>;
 
     /**
      * Create a LcmConfigV2 resource with the given unique name, arguments, and options.
@@ -101,23 +101,23 @@ export class LcmConfigV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LcmConfigV2State | undefined;
-            resourceInputs["autoInventorySchedule"] = state ? state.autoInventorySchedule : undefined;
-            resourceInputs["connectivityType"] = state ? state.connectivityType : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["hasModuleAutoUpgradeEnabled"] = state ? state.hasModuleAutoUpgradeEnabled : undefined;
-            resourceInputs["isAutoInventoryEnabled"] = state ? state.isAutoInventoryEnabled : undefined;
-            resourceInputs["isHttpsEnabled"] = state ? state.isHttpsEnabled : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
-            resourceInputs["xClusterId"] = state ? state.xClusterId : undefined;
+            resourceInputs["autoInventorySchedule"] = state?.autoInventorySchedule;
+            resourceInputs["connectivityType"] = state?.connectivityType;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["hasModuleAutoUpgradeEnabled"] = state?.hasModuleAutoUpgradeEnabled;
+            resourceInputs["isAutoInventoryEnabled"] = state?.isAutoInventoryEnabled;
+            resourceInputs["isHttpsEnabled"] = state?.isHttpsEnabled;
+            resourceInputs["url"] = state?.url;
+            resourceInputs["xClusterId"] = state?.xClusterId;
         } else {
             const args = argsOrState as LcmConfigV2Args | undefined;
-            resourceInputs["autoInventorySchedule"] = args ? args.autoInventorySchedule : undefined;
-            resourceInputs["connectivityType"] = args ? args.connectivityType : undefined;
-            resourceInputs["hasModuleAutoUpgradeEnabled"] = args ? args.hasModuleAutoUpgradeEnabled : undefined;
-            resourceInputs["isAutoInventoryEnabled"] = args ? args.isAutoInventoryEnabled : undefined;
-            resourceInputs["isHttpsEnabled"] = args ? args.isHttpsEnabled : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
-            resourceInputs["xClusterId"] = args ? args.xClusterId : undefined;
+            resourceInputs["autoInventorySchedule"] = args?.autoInventorySchedule;
+            resourceInputs["connectivityType"] = args?.connectivityType;
+            resourceInputs["hasModuleAutoUpgradeEnabled"] = args?.hasModuleAutoUpgradeEnabled;
+            resourceInputs["isAutoInventoryEnabled"] = args?.isAutoInventoryEnabled;
+            resourceInputs["isHttpsEnabled"] = args?.isHttpsEnabled;
+            resourceInputs["url"] = args?.url;
+            resourceInputs["xClusterId"] = args?.xClusterId;
             resourceInputs["extId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

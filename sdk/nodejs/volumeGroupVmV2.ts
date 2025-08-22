@@ -50,22 +50,22 @@ export class VolumeGroupVmV2 extends pulumi.CustomResource {
     /**
      * A globally unique identifier of a task.
      */
-    public /*out*/ readonly extId!: pulumi.Output<string>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
     /**
      * -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
      *
      *
      * See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.0#tag/VolumeGroups/operation/attachVm).
      */
-    public readonly index!: pulumi.Output<number | undefined>;
+    declare public readonly index: pulumi.Output<number | undefined>;
     /**
      * -(Required) A globally unique identifier of an instance that is suitable for external consumption.
      */
-    public readonly vmExtId!: pulumi.Output<string>;
+    declare public readonly vmExtId: pulumi.Output<string>;
     /**
      * -(Required) The external identifier of the volume group.
      */
-    public readonly volumeGroupExtId!: pulumi.Output<string>;
+    declare public readonly volumeGroupExtId: pulumi.Output<string>;
 
     /**
      * Create a VolumeGroupVmV2 resource with the given unique name, arguments, and options.
@@ -80,21 +80,21 @@ export class VolumeGroupVmV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VolumeGroupVmV2State | undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["index"] = state ? state.index : undefined;
-            resourceInputs["vmExtId"] = state ? state.vmExtId : undefined;
-            resourceInputs["volumeGroupExtId"] = state ? state.volumeGroupExtId : undefined;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["index"] = state?.index;
+            resourceInputs["vmExtId"] = state?.vmExtId;
+            resourceInputs["volumeGroupExtId"] = state?.volumeGroupExtId;
         } else {
             const args = argsOrState as VolumeGroupVmV2Args | undefined;
-            if ((!args || args.vmExtId === undefined) && !opts.urn) {
+            if (args?.vmExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vmExtId'");
             }
-            if ((!args || args.volumeGroupExtId === undefined) && !opts.urn) {
+            if (args?.volumeGroupExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'volumeGroupExtId'");
             }
-            resourceInputs["index"] = args ? args.index : undefined;
-            resourceInputs["vmExtId"] = args ? args.vmExtId : undefined;
-            resourceInputs["volumeGroupExtId"] = args ? args.volumeGroupExtId : undefined;
+            resourceInputs["index"] = args?.index;
+            resourceInputs["vmExtId"] = args?.vmExtId;
+            resourceInputs["volumeGroupExtId"] = args?.volumeGroupExtId;
             resourceInputs["extId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

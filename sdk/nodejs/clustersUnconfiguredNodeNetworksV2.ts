@@ -37,20 +37,20 @@ export class ClustersUnconfiguredNodeNetworksV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === ClustersUnconfiguredNodeNetworksV2.__pulumiType;
     }
 
-    public readonly expand!: pulumi.Output<string | undefined>;
+    declare public readonly expand: pulumi.Output<string | undefined>;
     /**
      * -(Required) Cluster UUID.
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * -(Required) List of nodes for which the network information is required.
      */
-    public readonly nodeLists!: pulumi.Output<outputs.ClustersUnconfiguredNodeNetworksV2NodeList[]>;
-    public /*out*/ readonly nodesNetworkingDetails!: pulumi.Output<outputs.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail[]>;
+    declare public readonly nodeLists: pulumi.Output<outputs.ClustersUnconfiguredNodeNetworksV2NodeList[]>;
+    declare public /*out*/ readonly nodesNetworkingDetails: pulumi.Output<outputs.ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetail[]>;
     /**
      * -(Optional) Request type
      */
-    public readonly requestType!: pulumi.Output<string>;
+    declare public readonly requestType: pulumi.Output<string>;
 
     /**
      * Create a ClustersUnconfiguredNodeNetworksV2 resource with the given unique name, arguments, and options.
@@ -65,23 +65,23 @@ export class ClustersUnconfiguredNodeNetworksV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClustersUnconfiguredNodeNetworksV2State | undefined;
-            resourceInputs["expand"] = state ? state.expand : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["nodeLists"] = state ? state.nodeLists : undefined;
-            resourceInputs["nodesNetworkingDetails"] = state ? state.nodesNetworkingDetails : undefined;
-            resourceInputs["requestType"] = state ? state.requestType : undefined;
+            resourceInputs["expand"] = state?.expand;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["nodeLists"] = state?.nodeLists;
+            resourceInputs["nodesNetworkingDetails"] = state?.nodesNetworkingDetails;
+            resourceInputs["requestType"] = state?.requestType;
         } else {
             const args = argsOrState as ClustersUnconfiguredNodeNetworksV2Args | undefined;
-            if ((!args || args.extId === undefined) && !opts.urn) {
+            if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
-            if ((!args || args.nodeLists === undefined) && !opts.urn) {
+            if (args?.nodeLists === undefined && !opts.urn) {
                 throw new Error("Missing required property 'nodeLists'");
             }
-            resourceInputs["expand"] = args ? args.expand : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["nodeLists"] = args ? args.nodeLists : undefined;
-            resourceInputs["requestType"] = args ? args.requestType : undefined;
+            resourceInputs["expand"] = args?.expand;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["nodeLists"] = args?.nodeLists;
+            resourceInputs["requestType"] = args?.requestType;
             resourceInputs["nodesNetworkingDetails"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

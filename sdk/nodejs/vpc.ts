@@ -92,35 +92,35 @@ export class Vpc extends pulumi.CustomResource {
     /**
      * The version of the API.
      */
-    public readonly apiVersion!: pulumi.Output<string>;
+    declare public readonly apiVersion: pulumi.Output<string>;
     /**
      * List of domain name server IPs.
      */
-    public readonly commonDomainNameServerIpLists!: pulumi.Output<outputs.VpcCommonDomainNameServerIpList[]>;
+    declare public readonly commonDomainNameServerIpLists: pulumi.Output<outputs.VpcCommonDomainNameServerIpList[]>;
     /**
      * Status of List of external subnets attached to this VPC
      */
-    public /*out*/ readonly externalSubnetListStatuses!: pulumi.Output<outputs.VpcExternalSubnetListStatus[]>;
+    declare public /*out*/ readonly externalSubnetListStatuses: pulumi.Output<outputs.VpcExternalSubnetListStatus[]>;
     /**
      * List of external subnets name attached to this VPC. Should not be used with external_subnet_reference_uuid.
      */
-    public readonly externalSubnetReferenceNames!: pulumi.Output<string[] | undefined>;
+    declare public readonly externalSubnetReferenceNames: pulumi.Output<string[] | undefined>;
     /**
      * List of external subnets uuid attached to this VPC. Should not be used with external_subnet_reference_name.
      */
-    public readonly externalSubnetReferenceUuids!: pulumi.Output<string[]>;
+    declare public readonly externalSubnetReferenceUuids: pulumi.Output<string[]>;
     /**
      * List Externally Routable IP Addresses. Required when external subnet with NoNAT is used.
      */
-    public readonly externallyRoutablePrefixLists!: pulumi.Output<outputs.VpcExternallyRoutablePrefixList[]>;
+    declare public readonly externallyRoutablePrefixLists: pulumi.Output<outputs.VpcExternallyRoutablePrefixList[]>;
     /**
      * The vpc kind metadata.
      */
-    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
      * The name for the VPC.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
 
     /**
      * Create a Vpc resource with the given unique name, arguments, and options.
@@ -135,22 +135,22 @@ export class Vpc extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VpcState | undefined;
-            resourceInputs["apiVersion"] = state ? state.apiVersion : undefined;
-            resourceInputs["commonDomainNameServerIpLists"] = state ? state.commonDomainNameServerIpLists : undefined;
-            resourceInputs["externalSubnetListStatuses"] = state ? state.externalSubnetListStatuses : undefined;
-            resourceInputs["externalSubnetReferenceNames"] = state ? state.externalSubnetReferenceNames : undefined;
-            resourceInputs["externalSubnetReferenceUuids"] = state ? state.externalSubnetReferenceUuids : undefined;
-            resourceInputs["externallyRoutablePrefixLists"] = state ? state.externallyRoutablePrefixLists : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["apiVersion"] = state?.apiVersion;
+            resourceInputs["commonDomainNameServerIpLists"] = state?.commonDomainNameServerIpLists;
+            resourceInputs["externalSubnetListStatuses"] = state?.externalSubnetListStatuses;
+            resourceInputs["externalSubnetReferenceNames"] = state?.externalSubnetReferenceNames;
+            resourceInputs["externalSubnetReferenceUuids"] = state?.externalSubnetReferenceUuids;
+            resourceInputs["externallyRoutablePrefixLists"] = state?.externallyRoutablePrefixLists;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["name"] = state?.name;
         } else {
             const args = argsOrState as VpcArgs | undefined;
-            resourceInputs["apiVersion"] = args ? args.apiVersion : undefined;
-            resourceInputs["commonDomainNameServerIpLists"] = args ? args.commonDomainNameServerIpLists : undefined;
-            resourceInputs["externalSubnetReferenceNames"] = args ? args.externalSubnetReferenceNames : undefined;
-            resourceInputs["externalSubnetReferenceUuids"] = args ? args.externalSubnetReferenceUuids : undefined;
-            resourceInputs["externallyRoutablePrefixLists"] = args ? args.externallyRoutablePrefixLists : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["apiVersion"] = args?.apiVersion;
+            resourceInputs["commonDomainNameServerIpLists"] = args?.commonDomainNameServerIpLists;
+            resourceInputs["externalSubnetReferenceNames"] = args?.externalSubnetReferenceNames;
+            resourceInputs["externalSubnetReferenceUuids"] = args?.externalSubnetReferenceUuids;
+            resourceInputs["externallyRoutablePrefixLists"] = args?.externallyRoutablePrefixLists;
+            resourceInputs["name"] = args?.name;
             resourceInputs["externalSubnetListStatuses"] = undefined /*out*/;
             resourceInputs["metadata"] = undefined /*out*/;
         }

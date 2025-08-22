@@ -211,28 +211,28 @@ export class ProtectionPolicyV2 extends pulumi.CustomResource {
     /**
      * -(Optional) Host entity with its attributes.
      */
-    public readonly categoryIds!: pulumi.Output<string[]>;
+    declare public readonly categoryIds: pulumi.Output<string[]>;
     /**
      * -(Optional) Description of the protection policy.
      */
-    public readonly description!: pulumi.Output<string>;
-    public /*out*/ readonly extId!: pulumi.Output<string>;
-    public /*out*/ readonly isApprovalPolicyNeeded!: pulumi.Output<boolean>;
-    public /*out*/ readonly links!: pulumi.Output<outputs.ProtectionPolicyV2Link[]>;
+    declare public readonly description: pulumi.Output<string>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
+    declare public /*out*/ readonly isApprovalPolicyNeeded: pulumi.Output<boolean>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.ProtectionPolicyV2Link[]>;
     /**
      * -(Required) Name of the protection policy.
      */
-    public readonly name!: pulumi.Output<string>;
-    public /*out*/ readonly ownerExtId!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public /*out*/ readonly ownerExtId: pulumi.Output<string>;
     /**
      * -(Required) Cluster reference for an entity.
      */
-    public readonly replicationConfigurations!: pulumi.Output<outputs.ProtectionPolicyV2ReplicationConfiguration[]>;
+    declare public readonly replicationConfigurations: pulumi.Output<outputs.ProtectionPolicyV2ReplicationConfiguration[]>;
     /**
      * -(Required) Hypervisor details.
      */
-    public readonly replicationLocations!: pulumi.Output<outputs.ProtectionPolicyV2ReplicationLocation[]>;
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public readonly replicationLocations: pulumi.Output<outputs.ProtectionPolicyV2ReplicationLocation[]>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
 
     /**
      * Create a ProtectionPolicyV2 resource with the given unique name, arguments, and options.
@@ -247,32 +247,32 @@ export class ProtectionPolicyV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProtectionPolicyV2State | undefined;
-            resourceInputs["categoryIds"] = state ? state.categoryIds : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["isApprovalPolicyNeeded"] = state ? state.isApprovalPolicyNeeded : undefined;
-            resourceInputs["links"] = state ? state.links : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownerExtId"] = state ? state.ownerExtId : undefined;
-            resourceInputs["replicationConfigurations"] = state ? state.replicationConfigurations : undefined;
-            resourceInputs["replicationLocations"] = state ? state.replicationLocations : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
+            resourceInputs["categoryIds"] = state?.categoryIds;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["isApprovalPolicyNeeded"] = state?.isApprovalPolicyNeeded;
+            resourceInputs["links"] = state?.links;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownerExtId"] = state?.ownerExtId;
+            resourceInputs["replicationConfigurations"] = state?.replicationConfigurations;
+            resourceInputs["replicationLocations"] = state?.replicationLocations;
+            resourceInputs["tenantId"] = state?.tenantId;
         } else {
             const args = argsOrState as ProtectionPolicyV2Args | undefined;
-            if ((!args || args.categoryIds === undefined) && !opts.urn) {
+            if (args?.categoryIds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'categoryIds'");
             }
-            if ((!args || args.replicationConfigurations === undefined) && !opts.urn) {
+            if (args?.replicationConfigurations === undefined && !opts.urn) {
                 throw new Error("Missing required property 'replicationConfigurations'");
             }
-            if ((!args || args.replicationLocations === undefined) && !opts.urn) {
+            if (args?.replicationLocations === undefined && !opts.urn) {
                 throw new Error("Missing required property 'replicationLocations'");
             }
-            resourceInputs["categoryIds"] = args ? args.categoryIds : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["replicationConfigurations"] = args ? args.replicationConfigurations : undefined;
-            resourceInputs["replicationLocations"] = args ? args.replicationLocations : undefined;
+            resourceInputs["categoryIds"] = args?.categoryIds;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["replicationConfigurations"] = args?.replicationConfigurations;
+            resourceInputs["replicationLocations"] = args?.replicationLocations;
             resourceInputs["extId"] = undefined /*out*/;
             resourceInputs["isApprovalPolicyNeeded"] = undefined /*out*/;
             resourceInputs["links"] = undefined /*out*/;
