@@ -40,35 +40,35 @@ export class VolumeGroupIscsiClientV2 extends pulumi.CustomResource {
     /**
      * -(Optional) The site where the Volume Group attach operation should be processed. This is an optional field. This field may only be set if Metro DR has been configured for this Volume Group. Valid values are SECONDARY, PRIMARY.
      */
-    public readonly attachmentSite!: pulumi.Output<string | undefined>;
+    declare public readonly attachmentSite: pulumi.Output<string | undefined>;
     /**
      * -(Optional) iSCSI initiator client secret in case of CHAP authentication. This field should not be provided in case the authentication type is not set to CHAP.
      */
-    public readonly clientSecret!: pulumi.Output<string | undefined>;
+    declare public readonly clientSecret: pulumi.Output<string | undefined>;
     /**
      * -(Optional) (Optional) The authentication type enabled for the Volume Group. This is an optional field. If omitted, authentication is not configured for the Volume Group. If this is set to CHAP, the target/client secret must be provided. Valid values are CHAP, NONE
      */
-    public readonly enabledAuthentications!: pulumi.Output<string | undefined>;
+    declare public readonly enabledAuthentications: pulumi.Output<string | undefined>;
     /**
      * -(Required) A globally unique identifier of an instance that is suitable for external consumption.
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * -iSCSI initiator name. During the attach operation, exactly one of iscsiInitiatorName and iscsiInitiatorNetworkId must be specified. This field is immutable.
      */
-    public readonly iscsiInitiatorName!: pulumi.Output<string | undefined>;
+    declare public readonly iscsiInitiatorName: pulumi.Output<string | undefined>;
     /**
      * - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
      */
-    public readonly iscsiInitiatorNetworkIds!: pulumi.Output<outputs.VolumeGroupIscsiClientV2IscsiInitiatorNetworkId[] | undefined>;
+    declare public readonly iscsiInitiatorNetworkIds: pulumi.Output<outputs.VolumeGroupIscsiClientV2IscsiInitiatorNetworkId[] | undefined>;
     /**
      * -(Optional) Number of virtual targets generated for the iSCSI target. This field is immutable.
      */
-    public readonly numVirtualTargets!: pulumi.Output<number | undefined>;
+    declare public readonly numVirtualTargets: pulumi.Output<number | undefined>;
     /**
      * -(Required) The external identifier of the volume group.
      */
-    public readonly vgExtId!: pulumi.Output<string>;
+    declare public readonly vgExtId: pulumi.Output<string>;
 
     /**
      * Create a VolumeGroupIscsiClientV2 resource with the given unique name, arguments, and options.
@@ -83,27 +83,27 @@ export class VolumeGroupIscsiClientV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VolumeGroupIscsiClientV2State | undefined;
-            resourceInputs["attachmentSite"] = state ? state.attachmentSite : undefined;
-            resourceInputs["clientSecret"] = state ? state.clientSecret : undefined;
-            resourceInputs["enabledAuthentications"] = state ? state.enabledAuthentications : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["iscsiInitiatorName"] = state ? state.iscsiInitiatorName : undefined;
-            resourceInputs["iscsiInitiatorNetworkIds"] = state ? state.iscsiInitiatorNetworkIds : undefined;
-            resourceInputs["numVirtualTargets"] = state ? state.numVirtualTargets : undefined;
-            resourceInputs["vgExtId"] = state ? state.vgExtId : undefined;
+            resourceInputs["attachmentSite"] = state?.attachmentSite;
+            resourceInputs["clientSecret"] = state?.clientSecret;
+            resourceInputs["enabledAuthentications"] = state?.enabledAuthentications;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["iscsiInitiatorName"] = state?.iscsiInitiatorName;
+            resourceInputs["iscsiInitiatorNetworkIds"] = state?.iscsiInitiatorNetworkIds;
+            resourceInputs["numVirtualTargets"] = state?.numVirtualTargets;
+            resourceInputs["vgExtId"] = state?.vgExtId;
         } else {
             const args = argsOrState as VolumeGroupIscsiClientV2Args | undefined;
-            if ((!args || args.vgExtId === undefined) && !opts.urn) {
+            if (args?.vgExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vgExtId'");
             }
-            resourceInputs["attachmentSite"] = args ? args.attachmentSite : undefined;
-            resourceInputs["clientSecret"] = args ? args.clientSecret : undefined;
-            resourceInputs["enabledAuthentications"] = args ? args.enabledAuthentications : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["iscsiInitiatorName"] = args ? args.iscsiInitiatorName : undefined;
-            resourceInputs["iscsiInitiatorNetworkIds"] = args ? args.iscsiInitiatorNetworkIds : undefined;
-            resourceInputs["numVirtualTargets"] = args ? args.numVirtualTargets : undefined;
-            resourceInputs["vgExtId"] = args ? args.vgExtId : undefined;
+            resourceInputs["attachmentSite"] = args?.attachmentSite;
+            resourceInputs["clientSecret"] = args?.clientSecret;
+            resourceInputs["enabledAuthentications"] = args?.enabledAuthentications;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["iscsiInitiatorName"] = args?.iscsiInitiatorName;
+            resourceInputs["iscsiInitiatorNetworkIds"] = args?.iscsiInitiatorNetworkIds;
+            resourceInputs["numVirtualTargets"] = args?.numVirtualTargets;
+            resourceInputs["vgExtId"] = args?.vgExtId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(VolumeGroupIscsiClientV2.__pulumiType, name, resourceInputs, opts);

@@ -47,23 +47,23 @@ export class FoundationCentralApiKeys extends pulumi.CustomResource {
     /**
      * - (Required) Alias for the api key to be created.
      */
-    public readonly alias!: pulumi.Output<string>;
+    declare public readonly alias: pulumi.Output<string>;
     /**
      * Api key in string format.
      */
-    public /*out*/ readonly apiKey!: pulumi.Output<string>;
+    declare public /*out*/ readonly apiKey: pulumi.Output<string>;
     /**
      * Time when the api key was created.
      */
-    public /*out*/ readonly createdTimestamp!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdTimestamp: pulumi.Output<string>;
     /**
      * Current time of Foundation Central.
      */
-    public /*out*/ readonly currentTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly currentTime: pulumi.Output<string>;
     /**
      * UUID of the api key.
      */
-    public /*out*/ readonly keyUuid!: pulumi.Output<string>;
+    declare public /*out*/ readonly keyUuid: pulumi.Output<string>;
 
     /**
      * Create a FoundationCentralApiKeys resource with the given unique name, arguments, and options.
@@ -78,17 +78,17 @@ export class FoundationCentralApiKeys extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FoundationCentralApiKeysState | undefined;
-            resourceInputs["alias"] = state ? state.alias : undefined;
-            resourceInputs["apiKey"] = state ? state.apiKey : undefined;
-            resourceInputs["createdTimestamp"] = state ? state.createdTimestamp : undefined;
-            resourceInputs["currentTime"] = state ? state.currentTime : undefined;
-            resourceInputs["keyUuid"] = state ? state.keyUuid : undefined;
+            resourceInputs["alias"] = state?.alias;
+            resourceInputs["apiKey"] = state?.apiKey;
+            resourceInputs["createdTimestamp"] = state?.createdTimestamp;
+            resourceInputs["currentTime"] = state?.currentTime;
+            resourceInputs["keyUuid"] = state?.keyUuid;
         } else {
             const args = argsOrState as FoundationCentralApiKeysArgs | undefined;
-            if ((!args || args.alias === undefined) && !opts.urn) {
+            if (args?.alias === undefined && !opts.urn) {
                 throw new Error("Missing required property 'alias'");
             }
-            resourceInputs["alias"] = args ? args.alias : undefined;
+            resourceInputs["alias"] = args?.alias;
             resourceInputs["apiKey"] = undefined /*out*/;
             resourceInputs["createdTimestamp"] = undefined /*out*/;
             resourceInputs["currentTime"] = undefined /*out*/;

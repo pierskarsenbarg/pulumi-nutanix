@@ -37,22 +37,22 @@ export class RecoveryPlan extends pulumi.CustomResource {
         return obj['__pulumiType'] === RecoveryPlan.__pulumiType;
     }
 
-    public /*out*/ readonly apiVersion!: pulumi.Output<string>;
-    public readonly categories!: pulumi.Output<outputs.RecoveryPlanCategory[]>;
+    declare public /*out*/ readonly apiVersion: pulumi.Output<string>;
+    declare public readonly categories: pulumi.Output<outputs.RecoveryPlanCategory[]>;
     /**
      * A description for Recovery Plan.
      */
-    public readonly description!: pulumi.Output<string>;
-    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly description: pulumi.Output<string>;
+    declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
      * The name for the Recovery Plan.
      */
-    public readonly name!: pulumi.Output<string>;
-    public readonly ownerReference!: pulumi.Output<outputs.RecoveryPlanOwnerReference>;
-    public readonly parameters!: pulumi.Output<outputs.RecoveryPlanParameters>;
-    public readonly projectReference!: pulumi.Output<outputs.RecoveryPlanProjectReference>;
-    public readonly stageLists!: pulumi.Output<outputs.RecoveryPlanStageList[]>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public readonly ownerReference: pulumi.Output<outputs.RecoveryPlanOwnerReference>;
+    declare public readonly parameters: pulumi.Output<outputs.RecoveryPlanParameters>;
+    declare public readonly projectReference: pulumi.Output<outputs.RecoveryPlanProjectReference>;
+    declare public readonly stageLists: pulumi.Output<outputs.RecoveryPlanStageList[]>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
      * Create a RecoveryPlan resource with the given unique name, arguments, and options.
@@ -67,31 +67,31 @@ export class RecoveryPlan extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RecoveryPlanState | undefined;
-            resourceInputs["apiVersion"] = state ? state.apiVersion : undefined;
-            resourceInputs["categories"] = state ? state.categories : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownerReference"] = state ? state.ownerReference : undefined;
-            resourceInputs["parameters"] = state ? state.parameters : undefined;
-            resourceInputs["projectReference"] = state ? state.projectReference : undefined;
-            resourceInputs["stageLists"] = state ? state.stageLists : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["apiVersion"] = state?.apiVersion;
+            resourceInputs["categories"] = state?.categories;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownerReference"] = state?.ownerReference;
+            resourceInputs["parameters"] = state?.parameters;
+            resourceInputs["projectReference"] = state?.projectReference;
+            resourceInputs["stageLists"] = state?.stageLists;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as RecoveryPlanArgs | undefined;
-            if ((!args || args.parameters === undefined) && !opts.urn) {
+            if (args?.parameters === undefined && !opts.urn) {
                 throw new Error("Missing required property 'parameters'");
             }
-            if ((!args || args.stageLists === undefined) && !opts.urn) {
+            if (args?.stageLists === undefined && !opts.urn) {
                 throw new Error("Missing required property 'stageLists'");
             }
-            resourceInputs["categories"] = args ? args.categories : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownerReference"] = args ? args.ownerReference : undefined;
-            resourceInputs["parameters"] = args ? args.parameters : undefined;
-            resourceInputs["projectReference"] = args ? args.projectReference : undefined;
-            resourceInputs["stageLists"] = args ? args.stageLists : undefined;
+            resourceInputs["categories"] = args?.categories;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownerReference"] = args?.ownerReference;
+            resourceInputs["parameters"] = args?.parameters;
+            resourceInputs["projectReference"] = args?.projectReference;
+            resourceInputs["stageLists"] = args?.stageLists;
             resourceInputs["apiVersion"] = undefined /*out*/;
             resourceInputs["metadata"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

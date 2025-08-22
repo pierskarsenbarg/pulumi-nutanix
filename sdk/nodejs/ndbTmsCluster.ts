@@ -51,59 +51,59 @@ export class NdbTmsCluster extends pulumi.CustomResource {
     /**
      * created date of time machine associated with cluster
      */
-    public /*out*/ readonly dateCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateCreated: pulumi.Output<string>;
     /**
      * modified date of time machine associated with cluster
      */
-    public /*out*/ readonly dateModified!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateModified: pulumi.Output<string>;
     /**
      * description of nutanix cluster associated with time machine
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    declare public /*out*/ readonly description: pulumi.Output<string>;
     /**
      * log drive id
      */
-    public /*out*/ readonly logDriveId!: pulumi.Output<string>;
+    declare public /*out*/ readonly logDriveId: pulumi.Output<string>;
     /**
      * log drive status of time machine
      */
-    public /*out*/ readonly logDriveStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly logDriveStatus: pulumi.Output<string>;
     /**
      * Nutanix cluster id on the associated registered clusters.
      */
-    public readonly nxClusterId!: pulumi.Output<string>;
+    declare public readonly nxClusterId: pulumi.Output<string>;
     /**
      * owner id
      */
-    public /*out*/ readonly ownerId!: pulumi.Output<string>;
+    declare public /*out*/ readonly ownerId: pulumi.Output<string>;
     /**
      * schedule id of the data associated with time machine
      */
-    public /*out*/ readonly scheduleId!: pulumi.Output<string>;
+    declare public /*out*/ readonly scheduleId: pulumi.Output<string>;
     /**
      * SLA id for the associated cluster.
      */
-    public readonly slaId!: pulumi.Output<string>;
+    declare public readonly slaId: pulumi.Output<string>;
     /**
      * source is present or not
      */
-    public /*out*/ readonly source!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly source: pulumi.Output<boolean>;
     /**
      * source clusters in time machines
      */
-    public /*out*/ readonly sourceClusters!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly sourceClusters: pulumi.Output<string[]>;
     /**
      * status of the cluster associated with time machine
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * time machine id
      */
-    public readonly timeMachineId!: pulumi.Output<string>;
+    declare public readonly timeMachineId: pulumi.Output<string>;
     /**
      * Default value is "OTHER"
      */
-    public readonly type!: pulumi.Output<string | undefined>;
+    declare public readonly type: pulumi.Output<string | undefined>;
 
     /**
      * Create a NdbTmsCluster resource with the given unique name, arguments, and options.
@@ -118,35 +118,35 @@ export class NdbTmsCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbTmsClusterState | undefined;
-            resourceInputs["dateCreated"] = state ? state.dateCreated : undefined;
-            resourceInputs["dateModified"] = state ? state.dateModified : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["logDriveId"] = state ? state.logDriveId : undefined;
-            resourceInputs["logDriveStatus"] = state ? state.logDriveStatus : undefined;
-            resourceInputs["nxClusterId"] = state ? state.nxClusterId : undefined;
-            resourceInputs["ownerId"] = state ? state.ownerId : undefined;
-            resourceInputs["scheduleId"] = state ? state.scheduleId : undefined;
-            resourceInputs["slaId"] = state ? state.slaId : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["sourceClusters"] = state ? state.sourceClusters : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["timeMachineId"] = state ? state.timeMachineId : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["dateCreated"] = state?.dateCreated;
+            resourceInputs["dateModified"] = state?.dateModified;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["logDriveId"] = state?.logDriveId;
+            resourceInputs["logDriveStatus"] = state?.logDriveStatus;
+            resourceInputs["nxClusterId"] = state?.nxClusterId;
+            resourceInputs["ownerId"] = state?.ownerId;
+            resourceInputs["scheduleId"] = state?.scheduleId;
+            resourceInputs["slaId"] = state?.slaId;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["sourceClusters"] = state?.sourceClusters;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["timeMachineId"] = state?.timeMachineId;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as NdbTmsClusterArgs | undefined;
-            if ((!args || args.nxClusterId === undefined) && !opts.urn) {
+            if (args?.nxClusterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'nxClusterId'");
             }
-            if ((!args || args.slaId === undefined) && !opts.urn) {
+            if (args?.slaId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'slaId'");
             }
-            if ((!args || args.timeMachineId === undefined) && !opts.urn) {
+            if (args?.timeMachineId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'timeMachineId'");
             }
-            resourceInputs["nxClusterId"] = args ? args.nxClusterId : undefined;
-            resourceInputs["slaId"] = args ? args.slaId : undefined;
-            resourceInputs["timeMachineId"] = args ? args.timeMachineId : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["nxClusterId"] = args?.nxClusterId;
+            resourceInputs["slaId"] = args?.slaId;
+            resourceInputs["timeMachineId"] = args?.timeMachineId;
+            resourceInputs["type"] = args?.type;
             resourceInputs["dateCreated"] = undefined /*out*/;
             resourceInputs["dateModified"] = undefined /*out*/;
             resourceInputs["description"] = undefined /*out*/;

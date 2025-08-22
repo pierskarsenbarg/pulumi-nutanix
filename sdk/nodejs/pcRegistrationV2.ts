@@ -37,17 +37,17 @@ export class PcRegistrationV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === PcRegistrationV2.__pulumiType;
     }
 
-    public /*out*/ readonly configs!: pulumi.Output<outputs.PcRegistrationV2Config[]>;
-    public /*out*/ readonly extId!: pulumi.Output<string>;
-    public /*out*/ readonly hostingClusterExtId!: pulumi.Output<string>;
-    public /*out*/ readonly isRegisteredWithHostingCluster!: pulumi.Output<boolean>;
-    public /*out*/ readonly links!: pulumi.Output<outputs.PcRegistrationV2Link[]>;
-    public /*out*/ readonly networks!: pulumi.Output<outputs.PcRegistrationV2Network[]>;
-    public /*out*/ readonly nodeExtIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly configs: pulumi.Output<outputs.PcRegistrationV2Config[]>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
+    declare public /*out*/ readonly hostingClusterExtId: pulumi.Output<string>;
+    declare public /*out*/ readonly isRegisteredWithHostingCluster: pulumi.Output<boolean>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.PcRegistrationV2Link[]>;
+    declare public /*out*/ readonly networks: pulumi.Output<outputs.PcRegistrationV2Network[]>;
+    declare public /*out*/ readonly nodeExtIds: pulumi.Output<string[]>;
     /**
      * -(Required) The display name for the Role.
      */
-    public readonly pcExtId!: pulumi.Output<string>;
+    declare public readonly pcExtId: pulumi.Output<string>;
     /**
      * -(Required)  The registration request consists of the remote cluster details. Credentials must be of domain manager (Prism Central) role.
      * The remote cluster details are different based on the object type. The object type is used to determine the type of remote cluster. The object type can be one of the following:
@@ -55,9 +55,9 @@ export class PcRegistrationV2 extends pulumi.CustomResource {
      * * `prism.v4.management.AOSRemoteClusterSpec`
      * * `prism.v4.management.ClusterReference`
      */
-    public readonly remoteCluster!: pulumi.Output<outputs.PcRegistrationV2RemoteCluster>;
-    public /*out*/ readonly shouldEnableHighAvailability!: pulumi.Output<boolean>;
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public readonly remoteCluster: pulumi.Output<outputs.PcRegistrationV2RemoteCluster>;
+    declare public /*out*/ readonly shouldEnableHighAvailability: pulumi.Output<boolean>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
 
     /**
      * Create a PcRegistrationV2 resource with the given unique name, arguments, and options.
@@ -72,27 +72,27 @@ export class PcRegistrationV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PcRegistrationV2State | undefined;
-            resourceInputs["configs"] = state ? state.configs : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["hostingClusterExtId"] = state ? state.hostingClusterExtId : undefined;
-            resourceInputs["isRegisteredWithHostingCluster"] = state ? state.isRegisteredWithHostingCluster : undefined;
-            resourceInputs["links"] = state ? state.links : undefined;
-            resourceInputs["networks"] = state ? state.networks : undefined;
-            resourceInputs["nodeExtIds"] = state ? state.nodeExtIds : undefined;
-            resourceInputs["pcExtId"] = state ? state.pcExtId : undefined;
-            resourceInputs["remoteCluster"] = state ? state.remoteCluster : undefined;
-            resourceInputs["shouldEnableHighAvailability"] = state ? state.shouldEnableHighAvailability : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
+            resourceInputs["configs"] = state?.configs;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["hostingClusterExtId"] = state?.hostingClusterExtId;
+            resourceInputs["isRegisteredWithHostingCluster"] = state?.isRegisteredWithHostingCluster;
+            resourceInputs["links"] = state?.links;
+            resourceInputs["networks"] = state?.networks;
+            resourceInputs["nodeExtIds"] = state?.nodeExtIds;
+            resourceInputs["pcExtId"] = state?.pcExtId;
+            resourceInputs["remoteCluster"] = state?.remoteCluster;
+            resourceInputs["shouldEnableHighAvailability"] = state?.shouldEnableHighAvailability;
+            resourceInputs["tenantId"] = state?.tenantId;
         } else {
             const args = argsOrState as PcRegistrationV2Args | undefined;
-            if ((!args || args.pcExtId === undefined) && !opts.urn) {
+            if (args?.pcExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'pcExtId'");
             }
-            if ((!args || args.remoteCluster === undefined) && !opts.urn) {
+            if (args?.remoteCluster === undefined && !opts.urn) {
                 throw new Error("Missing required property 'remoteCluster'");
             }
-            resourceInputs["pcExtId"] = args ? args.pcExtId : undefined;
-            resourceInputs["remoteCluster"] = args ? args.remoteCluster : undefined;
+            resourceInputs["pcExtId"] = args?.pcExtId;
+            resourceInputs["remoteCluster"] = args?.remoteCluster;
             resourceInputs["configs"] = undefined /*out*/;
             resourceInputs["extId"] = undefined /*out*/;
             resourceInputs["hostingClusterExtId"] = undefined /*out*/;

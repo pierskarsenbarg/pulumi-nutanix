@@ -70,7 +70,7 @@ export class PromoteProtectedResourceV2 extends pulumi.CustomResource {
      *
      * See detailed information in [Nutanix Promote Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/ProtectedResources/operation/promoteProtectedResource).
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
 
     /**
      * Create a PromoteProtectedResourceV2 resource with the given unique name, arguments, and options.
@@ -85,13 +85,13 @@ export class PromoteProtectedResourceV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PromoteProtectedResourceV2State | undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
+            resourceInputs["extId"] = state?.extId;
         } else {
             const args = argsOrState as PromoteProtectedResourceV2Args | undefined;
-            if ((!args || args.extId === undefined) && !opts.urn) {
+            if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
-            resourceInputs["extId"] = args ? args.extId : undefined;
+            resourceInputs["extId"] = args?.extId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(PromoteProtectedResourceV2.__pulumiType, name, resourceInputs, opts);

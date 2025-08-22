@@ -102,18 +102,18 @@ export class RestoreProtectedResourceV2 extends pulumi.CustomResource {
     /**
      * -(Required) The external identifier of the cluster on which the entity has valid restorable time ranges. The restored entity will be created on the same cluster.
      */
-    public readonly clusterExtId!: pulumi.Output<string>;
+    declare public readonly clusterExtId: pulumi.Output<string>;
     /**
      * -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
      *
      *
      * See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.0#tag/ProtectedResources/operation/restoreProtectedResourcen).
      */
-    public readonly restoreTime!: pulumi.Output<string | undefined>;
+    declare public readonly restoreTime: pulumi.Output<string | undefined>;
 
     /**
      * Create a RestoreProtectedResourceV2 resource with the given unique name, arguments, and options.
@@ -128,20 +128,20 @@ export class RestoreProtectedResourceV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RestoreProtectedResourceV2State | undefined;
-            resourceInputs["clusterExtId"] = state ? state.clusterExtId : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["restoreTime"] = state ? state.restoreTime : undefined;
+            resourceInputs["clusterExtId"] = state?.clusterExtId;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["restoreTime"] = state?.restoreTime;
         } else {
             const args = argsOrState as RestoreProtectedResourceV2Args | undefined;
-            if ((!args || args.clusterExtId === undefined) && !opts.urn) {
+            if (args?.clusterExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterExtId'");
             }
-            if ((!args || args.extId === undefined) && !opts.urn) {
+            if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
-            resourceInputs["clusterExtId"] = args ? args.clusterExtId : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["restoreTime"] = args ? args.restoreTime : undefined;
+            resourceInputs["clusterExtId"] = args?.clusterExtId;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["restoreTime"] = args?.restoreTime;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(RestoreProtectedResourceV2.__pulumiType, name, resourceInputs, opts);

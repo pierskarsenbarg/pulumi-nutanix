@@ -58,71 +58,71 @@ export class NdbSoftwareVersionProfile extends pulumi.CustomResource {
     /**
      * available cluster ids
      */
-    public readonly availableClusterIds!: pulumi.Output<string[] | undefined>;
+    declare public readonly availableClusterIds: pulumi.Output<string[] | undefined>;
     /**
      * Db version of software profile
      */
-    public /*out*/ readonly dbVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbVersion: pulumi.Output<string>;
     /**
      * deprecated or not
      */
-    public /*out*/ readonly deprecated!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly deprecated: pulumi.Output<boolean>;
     /**
      * description of profile
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * engine type of profile
      */
-    public readonly engineType!: pulumi.Output<string>;
+    declare public readonly engineType: pulumi.Output<string>;
     /**
      * Name of profile
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * owner  of profile
      */
-    public /*out*/ readonly owner!: pulumi.Output<string>;
+    declare public /*out*/ readonly owner: pulumi.Output<string>;
     /**
      * postgres database info
      */
-    public readonly postgresDatabases!: pulumi.Output<outputs.NdbSoftwareVersionProfilePostgresDatabase[] | undefined>;
+    declare public readonly postgresDatabases: pulumi.Output<outputs.NdbSoftwareVersionProfilePostgresDatabase[] | undefined>;
     /**
      * profile id
      */
-    public readonly profileId!: pulumi.Output<string>;
+    declare public readonly profileId: pulumi.Output<string>;
     /**
      * properties of software profile
      */
-    public /*out*/ readonly properties!: pulumi.Output<outputs.NdbSoftwareVersionProfileProperty[]>;
+    declare public /*out*/ readonly properties: pulumi.Output<outputs.NdbSoftwareVersionProfileProperty[]>;
     /**
      * properties map of profile
      */
-    public /*out*/ readonly propertiesMap!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly propertiesMap: pulumi.Output<{[key: string]: string}>;
     /**
      * Published or not
      */
-    public /*out*/ readonly published!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly published: pulumi.Output<boolean>;
     /**
      * status of profile. Allowed Values are "deprecated", "published", "unpublished"
      */
-    public readonly status!: pulumi.Output<string | undefined>;
+    declare public readonly status: pulumi.Output<string | undefined>;
     /**
      * system profile or not.
      */
-    public /*out*/ readonly systemProfile!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly systemProfile: pulumi.Output<boolean>;
     /**
      * topology of software profile
      */
-    public /*out*/ readonly topology!: pulumi.Output<string>;
+    declare public /*out*/ readonly topology: pulumi.Output<string>;
     /**
      * Version of software profile
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
     /**
      * version cluster association
      */
-    public /*out*/ readonly versionClusterAssociations!: pulumi.Output<outputs.NdbSoftwareVersionProfileVersionClusterAssociation[]>;
+    declare public /*out*/ readonly versionClusterAssociations: pulumi.Output<outputs.NdbSoftwareVersionProfileVersionClusterAssociation[]>;
 
     /**
      * Create a NdbSoftwareVersionProfile resource with the given unique name, arguments, and options.
@@ -137,38 +137,38 @@ export class NdbSoftwareVersionProfile extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbSoftwareVersionProfileState | undefined;
-            resourceInputs["availableClusterIds"] = state ? state.availableClusterIds : undefined;
-            resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
-            resourceInputs["deprecated"] = state ? state.deprecated : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["engineType"] = state ? state.engineType : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["owner"] = state ? state.owner : undefined;
-            resourceInputs["postgresDatabases"] = state ? state.postgresDatabases : undefined;
-            resourceInputs["profileId"] = state ? state.profileId : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["propertiesMap"] = state ? state.propertiesMap : undefined;
-            resourceInputs["published"] = state ? state.published : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["systemProfile"] = state ? state.systemProfile : undefined;
-            resourceInputs["topology"] = state ? state.topology : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
-            resourceInputs["versionClusterAssociations"] = state ? state.versionClusterAssociations : undefined;
+            resourceInputs["availableClusterIds"] = state?.availableClusterIds;
+            resourceInputs["dbVersion"] = state?.dbVersion;
+            resourceInputs["deprecated"] = state?.deprecated;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["engineType"] = state?.engineType;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["owner"] = state?.owner;
+            resourceInputs["postgresDatabases"] = state?.postgresDatabases;
+            resourceInputs["profileId"] = state?.profileId;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["propertiesMap"] = state?.propertiesMap;
+            resourceInputs["published"] = state?.published;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["systemProfile"] = state?.systemProfile;
+            resourceInputs["topology"] = state?.topology;
+            resourceInputs["version"] = state?.version;
+            resourceInputs["versionClusterAssociations"] = state?.versionClusterAssociations;
         } else {
             const args = argsOrState as NdbSoftwareVersionProfileArgs | undefined;
-            if ((!args || args.engineType === undefined) && !opts.urn) {
+            if (args?.engineType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'engineType'");
             }
-            if ((!args || args.profileId === undefined) && !opts.urn) {
+            if (args?.profileId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'profileId'");
             }
-            resourceInputs["availableClusterIds"] = args ? args.availableClusterIds : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["engineType"] = args ? args.engineType : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["postgresDatabases"] = args ? args.postgresDatabases : undefined;
-            resourceInputs["profileId"] = args ? args.profileId : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
+            resourceInputs["availableClusterIds"] = args?.availableClusterIds;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["engineType"] = args?.engineType;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["postgresDatabases"] = args?.postgresDatabases;
+            resourceInputs["profileId"] = args?.profileId;
+            resourceInputs["status"] = args?.status;
             resourceInputs["dbVersion"] = undefined /*out*/;
             resourceInputs["deprecated"] = undefined /*out*/;
             resourceInputs["owner"] = undefined /*out*/;

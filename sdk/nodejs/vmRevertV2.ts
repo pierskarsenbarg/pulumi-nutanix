@@ -51,15 +51,15 @@ export class VmRevertV2 extends pulumi.CustomResource {
     /**
      * -(Required) The globally unique identifier of a VM. It should be of type UUID.
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * - The status of the Revert operation.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * -(Required) The external identifier of the VM Recovery Point.
      */
-    public readonly vmRecoveryPointExtId!: pulumi.Output<string>;
+    declare public readonly vmRecoveryPointExtId: pulumi.Output<string>;
 
     /**
      * Create a VmRevertV2 resource with the given unique name, arguments, and options.
@@ -74,19 +74,19 @@ export class VmRevertV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VmRevertV2State | undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["vmRecoveryPointExtId"] = state ? state.vmRecoveryPointExtId : undefined;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["vmRecoveryPointExtId"] = state?.vmRecoveryPointExtId;
         } else {
             const args = argsOrState as VmRevertV2Args | undefined;
-            if ((!args || args.extId === undefined) && !opts.urn) {
+            if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
-            if ((!args || args.vmRecoveryPointExtId === undefined) && !opts.urn) {
+            if (args?.vmRecoveryPointExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vmRecoveryPointExtId'");
             }
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["vmRecoveryPointExtId"] = args ? args.vmRecoveryPointExtId : undefined;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["vmRecoveryPointExtId"] = args?.vmRecoveryPointExtId;
             resourceInputs["status"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

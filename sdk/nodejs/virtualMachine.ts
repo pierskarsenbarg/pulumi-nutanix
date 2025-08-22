@@ -95,192 +95,192 @@ export class VirtualMachine extends pulumi.CustomResource {
     /**
      * The version of the API.
      */
-    public /*out*/ readonly apiVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly apiVersion: pulumi.Output<string>;
     /**
      * - (Optional) The reference to a availability_zone.
      */
-    public readonly availabilityZoneReference!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly availabilityZoneReference: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) Address of disk to boot from.
      */
-    public readonly bootDeviceDiskAddress!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly bootDeviceDiskAddress: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) MAC address of nic to boot from.
      */
-    public readonly bootDeviceMacAddress!: pulumi.Output<string>;
+    declare public readonly bootDeviceMacAddress: pulumi.Output<string>;
     /**
      * - (Optional) Indicates the order of device types in which VM should try to boot from. If boot device order is not provided the system will decide appropriate boot device order.
      */
-    public readonly bootDeviceOrderLists!: pulumi.Output<string[]>;
+    declare public readonly bootDeviceOrderLists: pulumi.Output<string[]>;
     /**
      * - (Optional) Indicates whether the VM should use Secure boot, UEFI boot or Legacy boot.If UEFI or; Secure boot is enabled then other legacy boot options (like bootDevice and; boot_device_order_list) are ignored. Secure boot depends on UEFI boot, i.e. enabling; Secure boot means that UEFI boot is also enabled. The possible value are: UEFI", "LEGACY", "SECURE_BOOT".
      */
-    public readonly bootType!: pulumi.Output<string>;
+    declare public readonly bootType: pulumi.Output<string>;
     /**
      * - (Optional) Categories for the vm.
      */
-    public readonly categories!: pulumi.Output<outputs.VirtualMachineCategory[]>;
-    public readonly cloudInitCdromUuid!: pulumi.Output<string>;
+    declare public readonly categories: pulumi.Output<outputs.VirtualMachineCategory[]>;
+    declare public readonly cloudInitCdromUuid: pulumi.Output<string>;
     /**
      * - The name of the cluster.
      */
-    public /*out*/ readonly clusterName!: pulumi.Output<string>;
+    declare public /*out*/ readonly clusterName: pulumi.Output<string>;
     /**
      * - (Required) The UUID of the cluster.
      */
-    public readonly clusterUuid!: pulumi.Output<string>;
+    declare public readonly clusterUuid: pulumi.Output<string>;
     /**
      * - (Optional) A description for vm.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Disks attached to the VM.
      */
-    public readonly diskLists!: pulumi.Output<outputs.VirtualMachineDiskList[]>;
+    declare public readonly diskLists: pulumi.Output<outputs.VirtualMachineDiskList[]>;
     /**
      * - (Optional) Add true to enable CPU passthrough.
      */
-    public readonly enableCpuPassthrough!: pulumi.Output<boolean | undefined>;
+    declare public readonly enableCpuPassthrough: pulumi.Output<boolean | undefined>;
     /**
      * - (Optional) Extra configs related to power state transition. Indicates whether to execute set script before ngt shutdown/reboot.
      */
-    public readonly enableScriptExec!: pulumi.Output<boolean>;
+    declare public readonly enableScriptExec: pulumi.Output<boolean>;
     /**
      * - (Optional) GPUs attached to the VM.
      */
-    public readonly gpuLists!: pulumi.Output<outputs.VirtualMachineGpuList[]>;
+    declare public readonly gpuLists: pulumi.Output<outputs.VirtualMachineGpuList[]>;
     /**
      * - (Optional) Generic key value pair used for custom attributes in cloud init.
      */
-    public readonly guestCustomizationCloudInitCustomKeyValues!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly guestCustomizationCloudInitCustomKeyValues: pulumi.Output<{[key: string]: string}>;
     /**
      * The contents of the metaData configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded.
      */
-    public readonly guestCustomizationCloudInitMetaData!: pulumi.Output<string>;
+    declare public readonly guestCustomizationCloudInitMetaData: pulumi.Output<string>;
     /**
      * - (Optional) The contents of the userData configuration for cloud-init. This can be formatted as YAML, JSON, or could be a shell script. The value must be base64 encoded.
      */
-    public readonly guestCustomizationCloudInitUserData!: pulumi.Output<string>;
+    declare public readonly guestCustomizationCloudInitUserData: pulumi.Output<string>;
     /**
      * - (Optional) Flag to allow override of customization by deployer.
      */
-    public readonly guestCustomizationIsOverridable!: pulumi.Output<boolean>;
+    declare public readonly guestCustomizationIsOverridable: pulumi.Output<boolean>;
     /**
      * - (Optional) VM guests may be customized at boot time using one of several different methods. Currently, cloud-init w/ ConfigDriveV2 (for Linux VMs) and Sysprep (for Windows VMs) are supported. Only ONE OF sysprep or cloudInit should be provided. Note that guest customization can currently only be set during VM creation. Attempting to change it after creation will result in an error. Additional properties can be specified. For example - in the context of VM template creation if \"override_script\" is set to \"True\" then the deployer can upload their own custom script.
      */
-    public readonly guestCustomizationSysprep!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly guestCustomizationSysprep: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) Generic key value pair used for custom attributes in sysprep.
      */
-    public readonly guestCustomizationSysprepCustomKeyValues!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly guestCustomizationSysprepCustomKeyValues: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) Guest OS Identifier. For ESX, refer to VMware documentation [link](https://www.vmware.com/support/developer/converter-sdk/conv43_apireference/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html) for the list of guest OS identifiers.
      */
-    public readonly guestOsId!: pulumi.Output<string>;
+    declare public readonly guestOsId: pulumi.Output<string>;
     /**
      * - (Optional) VM's hardware clock timezone in IANA TZDB format (America/Los_Angeles).
      */
-    public readonly hardwareClockTimezone!: pulumi.Output<string>;
+    declare public readonly hardwareClockTimezone: pulumi.Output<string>;
     /**
      * - Reference to a host.
      */
-    public /*out*/ readonly hostReference!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly hostReference: pulumi.Output<{[key: string]: string}>;
     /**
      * - The hypervisor type for the hypervisor the VM is hosted on.
      */
-    public /*out*/ readonly hypervisorType!: pulumi.Output<string>;
+    declare public /*out*/ readonly hypervisorType: pulumi.Output<string>;
     /**
      * - (Optional) Add true to enable CPU pinning.
      */
-    public readonly isVcpuHardPinned!: pulumi.Output<boolean | undefined>;
+    declare public readonly isVcpuHardPinned: pulumi.Output<boolean | undefined>;
     /**
      * - Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
      */
-    public readonly machineType!: pulumi.Output<string>;
+    declare public readonly machineType: pulumi.Output<string>;
     /**
      * - (Optional) Memory size in MiB. On updating memory to powered ON VMs should only be done in 1GB increments.
      */
-    public readonly memorySizeMib!: pulumi.Output<number>;
+    declare public readonly memorySizeMib: pulumi.Output<number>;
     /**
      * - The vm kind metadata.
      */
-    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Required) The name for the vm.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * - (Ooptional) Credentials to login server.
      */
-    public readonly ngtCredentials!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly ngtCredentials: pulumi.Output<{[key: string]: string}>;
     /**
      * Application names that are enabled.
      */
-    public readonly ngtEnabledCapabilityLists!: pulumi.Output<string[]>;
+    declare public readonly ngtEnabledCapabilityLists: pulumi.Output<string[]>;
     /**
      * - Status NICs attached to the VM.
      */
-    public /*out*/ readonly nicListStatuses!: pulumi.Output<outputs.VirtualMachineNicListStatus[]>;
+    declare public /*out*/ readonly nicListStatuses: pulumi.Output<outputs.VirtualMachineNicListStatus[]>;
     /**
      * - (Optional) Spec NICs attached to the VM.
      */
-    public readonly nicLists!: pulumi.Output<outputs.VirtualMachineNicList[]>;
+    declare public readonly nicLists: pulumi.Output<outputs.VirtualMachineNicList[]>;
     /**
      * - (Optional) Number of vCPU sockets.
      */
-    public readonly numSockets!: pulumi.Output<number>;
+    declare public readonly numSockets: pulumi.Output<number>;
     /**
      * - (Optional) Number of vCPUs per socket.
      */
-    public readonly numVcpusPerSocket!: pulumi.Output<number>;
+    declare public readonly numVcpusPerSocket: pulumi.Output<number>;
     /**
      * - (Optional) Number of vNUMA nodes. 0 means vNUMA is disabled.
      */
-    public readonly numVnumaNodes!: pulumi.Output<number>;
+    declare public readonly numVnumaNodes: pulumi.Output<number>;
     /**
      * - (Optional) Information regarding Nutanix Guest Tools.
      */
-    public readonly nutanixGuestTools!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly nutanixGuestTools: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) The reference to a user.
      */
-    public readonly ownerReference!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly ownerReference: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) Reference to an entity that the VM cloned from.
      */
-    public readonly parentReference!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly parentReference: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) The current or desired power state of the VM. (Options : ON , OFF)
      */
-    public readonly powerState!: pulumi.Output<string>;
+    declare public readonly powerState: pulumi.Output<string>;
     /**
      * - (Optional) Indicates the mechanism guiding the VM power state transition. Currently used for the transition to \"OFF\" state. Power state mechanism (ACPI/GUEST/HARD).
      */
-    public readonly powerStateMechanism!: pulumi.Output<string>;
+    declare public readonly powerStateMechanism: pulumi.Output<string>;
     /**
      * - (Optional) The reference to a project.
      */
-    public readonly projectReference!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly projectReference: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) Serial Ports configured on the VM.
      */
-    public readonly serialPortLists!: pulumi.Output<outputs.VirtualMachineSerialPortList[] | undefined>;
+    declare public readonly serialPortLists: pulumi.Output<outputs.VirtualMachineSerialPortList[] | undefined>;
     /**
      * - (Optional)  Extra configs related to power state transition. Indicates whether to abort ngt shutdown/reboot if script fails.
      */
-    public readonly shouldFailOnScriptFailure!: pulumi.Output<boolean>;
+    declare public readonly shouldFailOnScriptFailure: pulumi.Output<boolean>;
     /**
      * - The state of the vm.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * - (Optional) Use Hot Add when modifying VM resources. Passing value false will result in VM reboots. Default value is `true`.
      */
-    public readonly useHotAdd!: pulumi.Output<boolean | undefined>;
+    declare public readonly useHotAdd: pulumi.Output<boolean | undefined>;
     /**
      * - (Optional) Indicates whether VGA console should be enabled or not.
      */
-    public readonly vgaConsoleEnabled!: pulumi.Output<boolean>;
+    declare public readonly vgaConsoleEnabled: pulumi.Output<boolean>;
 
     /**
      * Create a VirtualMachine resource with the given unique name, arguments, and options.
@@ -295,100 +295,100 @@ export class VirtualMachine extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VirtualMachineState | undefined;
-            resourceInputs["apiVersion"] = state ? state.apiVersion : undefined;
-            resourceInputs["availabilityZoneReference"] = state ? state.availabilityZoneReference : undefined;
-            resourceInputs["bootDeviceDiskAddress"] = state ? state.bootDeviceDiskAddress : undefined;
-            resourceInputs["bootDeviceMacAddress"] = state ? state.bootDeviceMacAddress : undefined;
-            resourceInputs["bootDeviceOrderLists"] = state ? state.bootDeviceOrderLists : undefined;
-            resourceInputs["bootType"] = state ? state.bootType : undefined;
-            resourceInputs["categories"] = state ? state.categories : undefined;
-            resourceInputs["cloudInitCdromUuid"] = state ? state.cloudInitCdromUuid : undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["clusterUuid"] = state ? state.clusterUuid : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["diskLists"] = state ? state.diskLists : undefined;
-            resourceInputs["enableCpuPassthrough"] = state ? state.enableCpuPassthrough : undefined;
-            resourceInputs["enableScriptExec"] = state ? state.enableScriptExec : undefined;
-            resourceInputs["gpuLists"] = state ? state.gpuLists : undefined;
-            resourceInputs["guestCustomizationCloudInitCustomKeyValues"] = state ? state.guestCustomizationCloudInitCustomKeyValues : undefined;
-            resourceInputs["guestCustomizationCloudInitMetaData"] = state ? state.guestCustomizationCloudInitMetaData : undefined;
-            resourceInputs["guestCustomizationCloudInitUserData"] = state ? state.guestCustomizationCloudInitUserData : undefined;
-            resourceInputs["guestCustomizationIsOverridable"] = state ? state.guestCustomizationIsOverridable : undefined;
-            resourceInputs["guestCustomizationSysprep"] = state ? state.guestCustomizationSysprep : undefined;
-            resourceInputs["guestCustomizationSysprepCustomKeyValues"] = state ? state.guestCustomizationSysprepCustomKeyValues : undefined;
-            resourceInputs["guestOsId"] = state ? state.guestOsId : undefined;
-            resourceInputs["hardwareClockTimezone"] = state ? state.hardwareClockTimezone : undefined;
-            resourceInputs["hostReference"] = state ? state.hostReference : undefined;
-            resourceInputs["hypervisorType"] = state ? state.hypervisorType : undefined;
-            resourceInputs["isVcpuHardPinned"] = state ? state.isVcpuHardPinned : undefined;
-            resourceInputs["machineType"] = state ? state.machineType : undefined;
-            resourceInputs["memorySizeMib"] = state ? state.memorySizeMib : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ngtCredentials"] = state ? state.ngtCredentials : undefined;
-            resourceInputs["ngtEnabledCapabilityLists"] = state ? state.ngtEnabledCapabilityLists : undefined;
-            resourceInputs["nicListStatuses"] = state ? state.nicListStatuses : undefined;
-            resourceInputs["nicLists"] = state ? state.nicLists : undefined;
-            resourceInputs["numSockets"] = state ? state.numSockets : undefined;
-            resourceInputs["numVcpusPerSocket"] = state ? state.numVcpusPerSocket : undefined;
-            resourceInputs["numVnumaNodes"] = state ? state.numVnumaNodes : undefined;
-            resourceInputs["nutanixGuestTools"] = state ? state.nutanixGuestTools : undefined;
-            resourceInputs["ownerReference"] = state ? state.ownerReference : undefined;
-            resourceInputs["parentReference"] = state ? state.parentReference : undefined;
-            resourceInputs["powerState"] = state ? state.powerState : undefined;
-            resourceInputs["powerStateMechanism"] = state ? state.powerStateMechanism : undefined;
-            resourceInputs["projectReference"] = state ? state.projectReference : undefined;
-            resourceInputs["serialPortLists"] = state ? state.serialPortLists : undefined;
-            resourceInputs["shouldFailOnScriptFailure"] = state ? state.shouldFailOnScriptFailure : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["useHotAdd"] = state ? state.useHotAdd : undefined;
-            resourceInputs["vgaConsoleEnabled"] = state ? state.vgaConsoleEnabled : undefined;
+            resourceInputs["apiVersion"] = state?.apiVersion;
+            resourceInputs["availabilityZoneReference"] = state?.availabilityZoneReference;
+            resourceInputs["bootDeviceDiskAddress"] = state?.bootDeviceDiskAddress;
+            resourceInputs["bootDeviceMacAddress"] = state?.bootDeviceMacAddress;
+            resourceInputs["bootDeviceOrderLists"] = state?.bootDeviceOrderLists;
+            resourceInputs["bootType"] = state?.bootType;
+            resourceInputs["categories"] = state?.categories;
+            resourceInputs["cloudInitCdromUuid"] = state?.cloudInitCdromUuid;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["clusterUuid"] = state?.clusterUuid;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["diskLists"] = state?.diskLists;
+            resourceInputs["enableCpuPassthrough"] = state?.enableCpuPassthrough;
+            resourceInputs["enableScriptExec"] = state?.enableScriptExec;
+            resourceInputs["gpuLists"] = state?.gpuLists;
+            resourceInputs["guestCustomizationCloudInitCustomKeyValues"] = state?.guestCustomizationCloudInitCustomKeyValues;
+            resourceInputs["guestCustomizationCloudInitMetaData"] = state?.guestCustomizationCloudInitMetaData;
+            resourceInputs["guestCustomizationCloudInitUserData"] = state?.guestCustomizationCloudInitUserData;
+            resourceInputs["guestCustomizationIsOverridable"] = state?.guestCustomizationIsOverridable;
+            resourceInputs["guestCustomizationSysprep"] = state?.guestCustomizationSysprep;
+            resourceInputs["guestCustomizationSysprepCustomKeyValues"] = state?.guestCustomizationSysprepCustomKeyValues;
+            resourceInputs["guestOsId"] = state?.guestOsId;
+            resourceInputs["hardwareClockTimezone"] = state?.hardwareClockTimezone;
+            resourceInputs["hostReference"] = state?.hostReference;
+            resourceInputs["hypervisorType"] = state?.hypervisorType;
+            resourceInputs["isVcpuHardPinned"] = state?.isVcpuHardPinned;
+            resourceInputs["machineType"] = state?.machineType;
+            resourceInputs["memorySizeMib"] = state?.memorySizeMib;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ngtCredentials"] = state?.ngtCredentials;
+            resourceInputs["ngtEnabledCapabilityLists"] = state?.ngtEnabledCapabilityLists;
+            resourceInputs["nicListStatuses"] = state?.nicListStatuses;
+            resourceInputs["nicLists"] = state?.nicLists;
+            resourceInputs["numSockets"] = state?.numSockets;
+            resourceInputs["numVcpusPerSocket"] = state?.numVcpusPerSocket;
+            resourceInputs["numVnumaNodes"] = state?.numVnumaNodes;
+            resourceInputs["nutanixGuestTools"] = state?.nutanixGuestTools;
+            resourceInputs["ownerReference"] = state?.ownerReference;
+            resourceInputs["parentReference"] = state?.parentReference;
+            resourceInputs["powerState"] = state?.powerState;
+            resourceInputs["powerStateMechanism"] = state?.powerStateMechanism;
+            resourceInputs["projectReference"] = state?.projectReference;
+            resourceInputs["serialPortLists"] = state?.serialPortLists;
+            resourceInputs["shouldFailOnScriptFailure"] = state?.shouldFailOnScriptFailure;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["useHotAdd"] = state?.useHotAdd;
+            resourceInputs["vgaConsoleEnabled"] = state?.vgaConsoleEnabled;
         } else {
             const args = argsOrState as VirtualMachineArgs | undefined;
-            if ((!args || args.clusterUuid === undefined) && !opts.urn) {
+            if (args?.clusterUuid === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterUuid'");
             }
-            resourceInputs["availabilityZoneReference"] = args ? args.availabilityZoneReference : undefined;
-            resourceInputs["bootDeviceDiskAddress"] = args ? args.bootDeviceDiskAddress : undefined;
-            resourceInputs["bootDeviceMacAddress"] = args ? args.bootDeviceMacAddress : undefined;
-            resourceInputs["bootDeviceOrderLists"] = args ? args.bootDeviceOrderLists : undefined;
-            resourceInputs["bootType"] = args ? args.bootType : undefined;
-            resourceInputs["categories"] = args ? args.categories : undefined;
-            resourceInputs["cloudInitCdromUuid"] = args ? args.cloudInitCdromUuid : undefined;
-            resourceInputs["clusterUuid"] = args ? args.clusterUuid : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["diskLists"] = args ? args.diskLists : undefined;
-            resourceInputs["enableCpuPassthrough"] = args ? args.enableCpuPassthrough : undefined;
-            resourceInputs["enableScriptExec"] = args ? args.enableScriptExec : undefined;
-            resourceInputs["gpuLists"] = args ? args.gpuLists : undefined;
-            resourceInputs["guestCustomizationCloudInitCustomKeyValues"] = args ? args.guestCustomizationCloudInitCustomKeyValues : undefined;
-            resourceInputs["guestCustomizationCloudInitMetaData"] = args ? args.guestCustomizationCloudInitMetaData : undefined;
-            resourceInputs["guestCustomizationCloudInitUserData"] = args ? args.guestCustomizationCloudInitUserData : undefined;
-            resourceInputs["guestCustomizationIsOverridable"] = args ? args.guestCustomizationIsOverridable : undefined;
-            resourceInputs["guestCustomizationSysprep"] = args ? args.guestCustomizationSysprep : undefined;
-            resourceInputs["guestCustomizationSysprepCustomKeyValues"] = args ? args.guestCustomizationSysprepCustomKeyValues : undefined;
-            resourceInputs["guestOsId"] = args ? args.guestOsId : undefined;
-            resourceInputs["hardwareClockTimezone"] = args ? args.hardwareClockTimezone : undefined;
-            resourceInputs["isVcpuHardPinned"] = args ? args.isVcpuHardPinned : undefined;
-            resourceInputs["machineType"] = args ? args.machineType : undefined;
-            resourceInputs["memorySizeMib"] = args ? args.memorySizeMib : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ngtCredentials"] = args ? args.ngtCredentials : undefined;
-            resourceInputs["ngtEnabledCapabilityLists"] = args ? args.ngtEnabledCapabilityLists : undefined;
-            resourceInputs["nicLists"] = args ? args.nicLists : undefined;
-            resourceInputs["numSockets"] = args ? args.numSockets : undefined;
-            resourceInputs["numVcpusPerSocket"] = args ? args.numVcpusPerSocket : undefined;
-            resourceInputs["numVnumaNodes"] = args ? args.numVnumaNodes : undefined;
-            resourceInputs["nutanixGuestTools"] = args ? args.nutanixGuestTools : undefined;
-            resourceInputs["ownerReference"] = args ? args.ownerReference : undefined;
-            resourceInputs["parentReference"] = args ? args.parentReference : undefined;
-            resourceInputs["powerState"] = args ? args.powerState : undefined;
-            resourceInputs["powerStateMechanism"] = args ? args.powerStateMechanism : undefined;
-            resourceInputs["projectReference"] = args ? args.projectReference : undefined;
-            resourceInputs["serialPortLists"] = args ? args.serialPortLists : undefined;
-            resourceInputs["shouldFailOnScriptFailure"] = args ? args.shouldFailOnScriptFailure : undefined;
-            resourceInputs["useHotAdd"] = args ? args.useHotAdd : undefined;
-            resourceInputs["vgaConsoleEnabled"] = args ? args.vgaConsoleEnabled : undefined;
+            resourceInputs["availabilityZoneReference"] = args?.availabilityZoneReference;
+            resourceInputs["bootDeviceDiskAddress"] = args?.bootDeviceDiskAddress;
+            resourceInputs["bootDeviceMacAddress"] = args?.bootDeviceMacAddress;
+            resourceInputs["bootDeviceOrderLists"] = args?.bootDeviceOrderLists;
+            resourceInputs["bootType"] = args?.bootType;
+            resourceInputs["categories"] = args?.categories;
+            resourceInputs["cloudInitCdromUuid"] = args?.cloudInitCdromUuid;
+            resourceInputs["clusterUuid"] = args?.clusterUuid;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["diskLists"] = args?.diskLists;
+            resourceInputs["enableCpuPassthrough"] = args?.enableCpuPassthrough;
+            resourceInputs["enableScriptExec"] = args?.enableScriptExec;
+            resourceInputs["gpuLists"] = args?.gpuLists;
+            resourceInputs["guestCustomizationCloudInitCustomKeyValues"] = args?.guestCustomizationCloudInitCustomKeyValues;
+            resourceInputs["guestCustomizationCloudInitMetaData"] = args?.guestCustomizationCloudInitMetaData;
+            resourceInputs["guestCustomizationCloudInitUserData"] = args?.guestCustomizationCloudInitUserData;
+            resourceInputs["guestCustomizationIsOverridable"] = args?.guestCustomizationIsOverridable;
+            resourceInputs["guestCustomizationSysprep"] = args?.guestCustomizationSysprep;
+            resourceInputs["guestCustomizationSysprepCustomKeyValues"] = args?.guestCustomizationSysprepCustomKeyValues;
+            resourceInputs["guestOsId"] = args?.guestOsId;
+            resourceInputs["hardwareClockTimezone"] = args?.hardwareClockTimezone;
+            resourceInputs["isVcpuHardPinned"] = args?.isVcpuHardPinned;
+            resourceInputs["machineType"] = args?.machineType;
+            resourceInputs["memorySizeMib"] = args?.memorySizeMib;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ngtCredentials"] = args?.ngtCredentials;
+            resourceInputs["ngtEnabledCapabilityLists"] = args?.ngtEnabledCapabilityLists;
+            resourceInputs["nicLists"] = args?.nicLists;
+            resourceInputs["numSockets"] = args?.numSockets;
+            resourceInputs["numVcpusPerSocket"] = args?.numVcpusPerSocket;
+            resourceInputs["numVnumaNodes"] = args?.numVnumaNodes;
+            resourceInputs["nutanixGuestTools"] = args?.nutanixGuestTools;
+            resourceInputs["ownerReference"] = args?.ownerReference;
+            resourceInputs["parentReference"] = args?.parentReference;
+            resourceInputs["powerState"] = args?.powerState;
+            resourceInputs["powerStateMechanism"] = args?.powerStateMechanism;
+            resourceInputs["projectReference"] = args?.projectReference;
+            resourceInputs["serialPortLists"] = args?.serialPortLists;
+            resourceInputs["shouldFailOnScriptFailure"] = args?.shouldFailOnScriptFailure;
+            resourceInputs["useHotAdd"] = args?.useHotAdd;
+            resourceInputs["vgaConsoleEnabled"] = args?.vgaConsoleEnabled;
             resourceInputs["apiVersion"] = undefined /*out*/;
             resourceInputs["clusterName"] = undefined /*out*/;
             resourceInputs["hostReference"] = undefined /*out*/;

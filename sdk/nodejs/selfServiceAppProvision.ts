@@ -37,49 +37,49 @@ export class SelfServiceAppProvision extends pulumi.CustomResource {
     /**
      * - (Optional) System action to trigger after provisioning. Valid values: ["start", "stop", "restart"]
      */
-    public readonly action!: pulumi.Output<string | undefined>;
-    public /*out*/ readonly actions!: pulumi.Output<outputs.SelfServiceAppProvisionAction[]>;
+    declare public readonly action: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly actions: pulumi.Output<outputs.SelfServiceAppProvisionAction[]>;
     /**
      * - (Computed) API version used.
      */
-    public /*out*/ readonly apiVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly apiVersion: pulumi.Output<string>;
     /**
      * - (Optional) The description of application.
      *
      * Both are `bpName` and `bpUuid` are optional but atleast one of them to be provided for this resource to work.
      */
-    public readonly appDescription!: pulumi.Output<string | undefined>;
+    declare public readonly appDescription: pulumi.Output<string | undefined>;
     /**
      * - (Required) The name of the application you want to set.
      */
-    public readonly appName!: pulumi.Output<string>;
-    public /*out*/ readonly appSummaries!: pulumi.Output<outputs.SelfServiceAppProvisionAppSummary[]>;
+    declare public readonly appName: pulumi.Output<string>;
+    declare public /*out*/ readonly appSummaries: pulumi.Output<outputs.SelfServiceAppProvisionAppSummary[]>;
     /**
      * - (Optional) The name of the blueprint to launch.
      */
-    public readonly bpName!: pulumi.Output<string | undefined>;
+    declare public readonly bpName: pulumi.Output<string | undefined>;
     /**
      * - (Optional) The UUID of the blueprint to launch.
      */
-    public readonly bpUuid!: pulumi.Output<string | undefined>;
-    public readonly runtimeEditables!: pulumi.Output<outputs.SelfServiceAppProvisionRuntimeEditable[] | undefined>;
+    declare public readonly bpUuid: pulumi.Output<string | undefined>;
+    declare public readonly runtimeEditables: pulumi.Output<outputs.SelfServiceAppProvisionRuntimeEditable[] | undefined>;
     /**
      * - (Optional, Default: false) If true, the application is soft-deleted when the resource is destroyed.
      */
-    public readonly softDelete!: pulumi.Output<boolean | undefined>;
+    declare public readonly softDelete: pulumi.Output<boolean | undefined>;
     /**
      * - (Computed) Application specification (JSON string).
      */
-    public /*out*/ readonly spec!: pulumi.Output<string>;
+    declare public /*out*/ readonly spec: pulumi.Output<string>;
     /**
      * - (Computed) state of the application (e.g. running, stopped)
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * - (Computed) Application status coming as response from server.
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
-    public /*out*/ readonly vms!: pulumi.Output<outputs.SelfServiceAppProvisionVm[]>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
+    declare public /*out*/ readonly vms: pulumi.Output<outputs.SelfServiceAppProvisionVm[]>;
 
     /**
      * Create a SelfServiceAppProvision resource with the given unique name, arguments, and options.
@@ -94,32 +94,32 @@ export class SelfServiceAppProvision extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SelfServiceAppProvisionState | undefined;
-            resourceInputs["action"] = state ? state.action : undefined;
-            resourceInputs["actions"] = state ? state.actions : undefined;
-            resourceInputs["apiVersion"] = state ? state.apiVersion : undefined;
-            resourceInputs["appDescription"] = state ? state.appDescription : undefined;
-            resourceInputs["appName"] = state ? state.appName : undefined;
-            resourceInputs["appSummaries"] = state ? state.appSummaries : undefined;
-            resourceInputs["bpName"] = state ? state.bpName : undefined;
-            resourceInputs["bpUuid"] = state ? state.bpUuid : undefined;
-            resourceInputs["runtimeEditables"] = state ? state.runtimeEditables : undefined;
-            resourceInputs["softDelete"] = state ? state.softDelete : undefined;
-            resourceInputs["spec"] = state ? state.spec : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["vms"] = state ? state.vms : undefined;
+            resourceInputs["action"] = state?.action;
+            resourceInputs["actions"] = state?.actions;
+            resourceInputs["apiVersion"] = state?.apiVersion;
+            resourceInputs["appDescription"] = state?.appDescription;
+            resourceInputs["appName"] = state?.appName;
+            resourceInputs["appSummaries"] = state?.appSummaries;
+            resourceInputs["bpName"] = state?.bpName;
+            resourceInputs["bpUuid"] = state?.bpUuid;
+            resourceInputs["runtimeEditables"] = state?.runtimeEditables;
+            resourceInputs["softDelete"] = state?.softDelete;
+            resourceInputs["spec"] = state?.spec;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["vms"] = state?.vms;
         } else {
             const args = argsOrState as SelfServiceAppProvisionArgs | undefined;
-            if ((!args || args.appName === undefined) && !opts.urn) {
+            if (args?.appName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'appName'");
             }
-            resourceInputs["action"] = args ? args.action : undefined;
-            resourceInputs["appDescription"] = args ? args.appDescription : undefined;
-            resourceInputs["appName"] = args ? args.appName : undefined;
-            resourceInputs["bpName"] = args ? args.bpName : undefined;
-            resourceInputs["bpUuid"] = args ? args.bpUuid : undefined;
-            resourceInputs["runtimeEditables"] = args ? args.runtimeEditables : undefined;
-            resourceInputs["softDelete"] = args ? args.softDelete : undefined;
+            resourceInputs["action"] = args?.action;
+            resourceInputs["appDescription"] = args?.appDescription;
+            resourceInputs["appName"] = args?.appName;
+            resourceInputs["bpName"] = args?.bpName;
+            resourceInputs["bpUuid"] = args?.bpUuid;
+            resourceInputs["runtimeEditables"] = args?.runtimeEditables;
+            resourceInputs["softDelete"] = args?.softDelete;
             resourceInputs["actions"] = undefined /*out*/;
             resourceInputs["apiVersion"] = undefined /*out*/;
             resourceInputs["appSummaries"] = undefined /*out*/;

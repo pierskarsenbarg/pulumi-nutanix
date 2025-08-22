@@ -66,24 +66,24 @@ export class ProtectionRule extends pulumi.CustomResource {
         return obj['__pulumiType'] === ProtectionRule.__pulumiType;
     }
 
-    public /*out*/ readonly apiVersion!: pulumi.Output<string>;
-    public readonly availabilityZoneConnectivityLists!: pulumi.Output<outputs.ProtectionRuleAvailabilityZoneConnectivityList[]>;
-    public readonly categories!: pulumi.Output<outputs.ProtectionRuleCategory[]>;
-    public readonly categoryFilter!: pulumi.Output<outputs.ProtectionRuleCategoryFilter>;
+    declare public /*out*/ readonly apiVersion: pulumi.Output<string>;
+    declare public readonly availabilityZoneConnectivityLists: pulumi.Output<outputs.ProtectionRuleAvailabilityZoneConnectivityList[]>;
+    declare public readonly categories: pulumi.Output<outputs.ProtectionRuleCategory[]>;
+    declare public readonly categoryFilter: pulumi.Output<outputs.ProtectionRuleCategoryFilter>;
     /**
      * A description for protection rule.
      */
-    public readonly description!: pulumi.Output<string>;
-    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly description: pulumi.Output<string>;
+    declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
      * The name for the protection rule.
      */
-    public readonly name!: pulumi.Output<string>;
-    public readonly orderedAvailabilityZoneLists!: pulumi.Output<outputs.ProtectionRuleOrderedAvailabilityZoneList[]>;
-    public readonly ownerReference!: pulumi.Output<outputs.ProtectionRuleOwnerReference>;
-    public readonly projectReference!: pulumi.Output<outputs.ProtectionRuleProjectReference>;
-    public readonly startTime!: pulumi.Output<string>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public readonly orderedAvailabilityZoneLists: pulumi.Output<outputs.ProtectionRuleOrderedAvailabilityZoneList[]>;
+    declare public readonly ownerReference: pulumi.Output<outputs.ProtectionRuleOwnerReference>;
+    declare public readonly projectReference: pulumi.Output<outputs.ProtectionRuleProjectReference>;
+    declare public readonly startTime: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
      * Create a ProtectionRule resource with the given unique name, arguments, and options.
@@ -98,35 +98,35 @@ export class ProtectionRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProtectionRuleState | undefined;
-            resourceInputs["apiVersion"] = state ? state.apiVersion : undefined;
-            resourceInputs["availabilityZoneConnectivityLists"] = state ? state.availabilityZoneConnectivityLists : undefined;
-            resourceInputs["categories"] = state ? state.categories : undefined;
-            resourceInputs["categoryFilter"] = state ? state.categoryFilter : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["orderedAvailabilityZoneLists"] = state ? state.orderedAvailabilityZoneLists : undefined;
-            resourceInputs["ownerReference"] = state ? state.ownerReference : undefined;
-            resourceInputs["projectReference"] = state ? state.projectReference : undefined;
-            resourceInputs["startTime"] = state ? state.startTime : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["apiVersion"] = state?.apiVersion;
+            resourceInputs["availabilityZoneConnectivityLists"] = state?.availabilityZoneConnectivityLists;
+            resourceInputs["categories"] = state?.categories;
+            resourceInputs["categoryFilter"] = state?.categoryFilter;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["orderedAvailabilityZoneLists"] = state?.orderedAvailabilityZoneLists;
+            resourceInputs["ownerReference"] = state?.ownerReference;
+            resourceInputs["projectReference"] = state?.projectReference;
+            resourceInputs["startTime"] = state?.startTime;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as ProtectionRuleArgs | undefined;
-            if ((!args || args.availabilityZoneConnectivityLists === undefined) && !opts.urn) {
+            if (args?.availabilityZoneConnectivityLists === undefined && !opts.urn) {
                 throw new Error("Missing required property 'availabilityZoneConnectivityLists'");
             }
-            if ((!args || args.orderedAvailabilityZoneLists === undefined) && !opts.urn) {
+            if (args?.orderedAvailabilityZoneLists === undefined && !opts.urn) {
                 throw new Error("Missing required property 'orderedAvailabilityZoneLists'");
             }
-            resourceInputs["availabilityZoneConnectivityLists"] = args ? args.availabilityZoneConnectivityLists : undefined;
-            resourceInputs["categories"] = args ? args.categories : undefined;
-            resourceInputs["categoryFilter"] = args ? args.categoryFilter : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["orderedAvailabilityZoneLists"] = args ? args.orderedAvailabilityZoneLists : undefined;
-            resourceInputs["ownerReference"] = args ? args.ownerReference : undefined;
-            resourceInputs["projectReference"] = args ? args.projectReference : undefined;
-            resourceInputs["startTime"] = args ? args.startTime : undefined;
+            resourceInputs["availabilityZoneConnectivityLists"] = args?.availabilityZoneConnectivityLists;
+            resourceInputs["categories"] = args?.categories;
+            resourceInputs["categoryFilter"] = args?.categoryFilter;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["orderedAvailabilityZoneLists"] = args?.orderedAvailabilityZoneLists;
+            resourceInputs["ownerReference"] = args?.ownerReference;
+            resourceInputs["projectReference"] = args?.projectReference;
+            resourceInputs["startTime"] = args?.startTime;
             resourceInputs["apiVersion"] = undefined /*out*/;
             resourceInputs["metadata"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

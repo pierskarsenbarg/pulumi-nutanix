@@ -34,8 +34,8 @@ export class VmGcUpdateV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === VmGcUpdateV2.__pulumiType;
     }
 
-    public readonly configs!: pulumi.Output<outputs.VmGcUpdateV2Config[]>;
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly configs: pulumi.Output<outputs.VmGcUpdateV2Config[]>;
+    declare public readonly extId: pulumi.Output<string>;
 
     /**
      * Create a VmGcUpdateV2 resource with the given unique name, arguments, and options.
@@ -50,15 +50,15 @@ export class VmGcUpdateV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VmGcUpdateV2State | undefined;
-            resourceInputs["configs"] = state ? state.configs : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
+            resourceInputs["configs"] = state?.configs;
+            resourceInputs["extId"] = state?.extId;
         } else {
             const args = argsOrState as VmGcUpdateV2Args | undefined;
-            if ((!args || args.extId === undefined) && !opts.urn) {
+            if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
-            resourceInputs["configs"] = args ? args.configs : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
+            resourceInputs["configs"] = args?.configs;
+            resourceInputs["extId"] = args?.extId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(VmGcUpdateV2.__pulumiType, name, resourceInputs, opts);

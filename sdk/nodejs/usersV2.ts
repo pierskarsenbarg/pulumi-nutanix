@@ -58,82 +58,82 @@ export class UsersV2 extends pulumi.CustomResource {
     /**
      * -  Any additional attribute for the User.
      */
-    public readonly additionalAttributes!: pulumi.Output<outputs.UsersV2AdditionalAttribute[]>;
+    declare public readonly additionalAttributes: pulumi.Output<outputs.UsersV2AdditionalAttribute[]>;
     /**
      * - Bucket Access Keys for the User.
      */
-    public /*out*/ readonly bucketsAccessKeys!: pulumi.Output<outputs.UsersV2BucketsAccessKey[]>;
+    declare public /*out*/ readonly bucketsAccessKeys: pulumi.Output<outputs.UsersV2BucketsAccessKey[]>;
     /**
      * - User or Service who created the User.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * - Creation time for the Bucket Access Key.
      */
-    public /*out*/ readonly createdTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdTime: pulumi.Output<string>;
     /**
      * - Display name for the User.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * - Email Id for the User.
      */
-    public readonly emailId!: pulumi.Output<string>;
+    declare public readonly emailId: pulumi.Output<string>;
     /**
      * - A globally unique identifier of an instance that is suitable for external consumption.
      */
-    public /*out*/ readonly extId!: pulumi.Output<string>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
     /**
      * - First name for the User.
      */
-    public readonly firstName!: pulumi.Output<string>;
-    public readonly forceResetPassword!: pulumi.Output<boolean>;
+    declare public readonly firstName: pulumi.Output<string>;
+    declare public readonly forceResetPassword: pulumi.Output<boolean>;
     /**
      * - Identifier of the IDP for the User.
      */
-    public readonly idpId!: pulumi.Output<string>;
+    declare public readonly idpId: pulumi.Output<string>;
     /**
      * - Last successful logged in time for the User.
      */
-    public /*out*/ readonly lastLoginTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastLoginTime: pulumi.Output<string>;
     /**
      * - Last name for the User.
      */
-    public readonly lastName!: pulumi.Output<string>;
+    declare public readonly lastName: pulumi.Output<string>;
     /**
      * - Last updated time of the User.
      */
-    public /*out*/ readonly lastUpdatedTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastUpdatedTime: pulumi.Output<string>;
     /**
      * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    public /*out*/ readonly links!: pulumi.Output<outputs.UsersV2Link[]>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.UsersV2Link[]>;
     /**
      * - Default locale for the User.
      */
-    public readonly locale!: pulumi.Output<string>;
+    declare public readonly locale: pulumi.Output<string>;
     /**
      * - Middle name for the User.
      */
-    public readonly middleInitial!: pulumi.Output<string>;
-    public readonly password!: pulumi.Output<string>;
+    declare public readonly middleInitial: pulumi.Output<string>;
+    declare public readonly password: pulumi.Output<string>;
     /**
      * - Default Region for the User.
      */
-    public readonly region!: pulumi.Output<string>;
+    declare public readonly region: pulumi.Output<string>;
     /**
      * - Status of the User. `ACTIVE`: Denotes that the local User is active. `INACTIVE`: Denotes that the local User is inactive and needs to be reactivated.
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * - Enum: `$UNKNOWN` `$REDACTED` `LOCAL` `SAML` `LDAP` `EXTERNAL`
      * Type of the User.
      */
-    public readonly userType!: pulumi.Output<string>;
+    declare public readonly userType: pulumi.Output<string>;
     /**
      * - Identifier for the User in the form an email address.
      */
-    public readonly username!: pulumi.Output<string>;
+    declare public readonly username: pulumi.Output<string>;
 
     /**
      * Create a UsersV2 resource with the given unique name, arguments, and options.
@@ -148,49 +148,49 @@ export class UsersV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UsersV2State | undefined;
-            resourceInputs["additionalAttributes"] = state ? state.additionalAttributes : undefined;
-            resourceInputs["bucketsAccessKeys"] = state ? state.bucketsAccessKeys : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["createdTime"] = state ? state.createdTime : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["emailId"] = state ? state.emailId : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["firstName"] = state ? state.firstName : undefined;
-            resourceInputs["forceResetPassword"] = state ? state.forceResetPassword : undefined;
-            resourceInputs["idpId"] = state ? state.idpId : undefined;
-            resourceInputs["lastLoginTime"] = state ? state.lastLoginTime : undefined;
-            resourceInputs["lastName"] = state ? state.lastName : undefined;
-            resourceInputs["lastUpdatedTime"] = state ? state.lastUpdatedTime : undefined;
-            resourceInputs["links"] = state ? state.links : undefined;
-            resourceInputs["locale"] = state ? state.locale : undefined;
-            resourceInputs["middleInitial"] = state ? state.middleInitial : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["region"] = state ? state.region : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["userType"] = state ? state.userType : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
+            resourceInputs["additionalAttributes"] = state?.additionalAttributes;
+            resourceInputs["bucketsAccessKeys"] = state?.bucketsAccessKeys;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["createdTime"] = state?.createdTime;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["emailId"] = state?.emailId;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["firstName"] = state?.firstName;
+            resourceInputs["forceResetPassword"] = state?.forceResetPassword;
+            resourceInputs["idpId"] = state?.idpId;
+            resourceInputs["lastLoginTime"] = state?.lastLoginTime;
+            resourceInputs["lastName"] = state?.lastName;
+            resourceInputs["lastUpdatedTime"] = state?.lastUpdatedTime;
+            resourceInputs["links"] = state?.links;
+            resourceInputs["locale"] = state?.locale;
+            resourceInputs["middleInitial"] = state?.middleInitial;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["region"] = state?.region;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["userType"] = state?.userType;
+            resourceInputs["username"] = state?.username;
         } else {
             const args = argsOrState as UsersV2Args | undefined;
-            if ((!args || args.userType === undefined) && !opts.urn) {
+            if (args?.userType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'userType'");
             }
-            if ((!args || args.username === undefined) && !opts.urn) {
+            if (args?.username === undefined && !opts.urn) {
                 throw new Error("Missing required property 'username'");
             }
-            resourceInputs["additionalAttributes"] = args ? args.additionalAttributes : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["emailId"] = args ? args.emailId : undefined;
-            resourceInputs["firstName"] = args ? args.firstName : undefined;
-            resourceInputs["forceResetPassword"] = args ? args.forceResetPassword : undefined;
-            resourceInputs["idpId"] = args ? args.idpId : undefined;
-            resourceInputs["lastName"] = args ? args.lastName : undefined;
-            resourceInputs["locale"] = args ? args.locale : undefined;
-            resourceInputs["middleInitial"] = args ? args.middleInitial : undefined;
-            resourceInputs["password"] = args ? args.password : undefined;
-            resourceInputs["region"] = args ? args.region : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
-            resourceInputs["userType"] = args ? args.userType : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
+            resourceInputs["additionalAttributes"] = args?.additionalAttributes;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["emailId"] = args?.emailId;
+            resourceInputs["firstName"] = args?.firstName;
+            resourceInputs["forceResetPassword"] = args?.forceResetPassword;
+            resourceInputs["idpId"] = args?.idpId;
+            resourceInputs["lastName"] = args?.lastName;
+            resourceInputs["locale"] = args?.locale;
+            resourceInputs["middleInitial"] = args?.middleInitial;
+            resourceInputs["password"] = args?.password;
+            resourceInputs["region"] = args?.region;
+            resourceInputs["status"] = args?.status;
+            resourceInputs["userType"] = args?.userType;
+            resourceInputs["username"] = args?.username;
             resourceInputs["bucketsAccessKeys"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["createdTime"] = undefined /*out*/;

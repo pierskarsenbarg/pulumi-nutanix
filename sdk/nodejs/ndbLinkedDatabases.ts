@@ -34,20 +34,20 @@ export class NdbLinkedDatabases extends pulumi.CustomResource {
         return obj['__pulumiType'] === NdbLinkedDatabases.__pulumiType;
     }
 
-    public readonly databaseId!: pulumi.Output<string>;
-    public readonly databaseName!: pulumi.Output<string | undefined>;
-    public /*out*/ readonly databaseStatus!: pulumi.Output<string>;
-    public /*out*/ readonly dateCreated!: pulumi.Output<string>;
-    public /*out*/ readonly dateModified!: pulumi.Output<string>;
-    public /*out*/ readonly description!: pulumi.Output<string>;
-    public /*out*/ readonly infos!: pulumi.Output<outputs.NdbLinkedDatabasesInfo[]>;
-    public /*out*/ readonly metric!: pulumi.Output<{[key: string]: string}>;
-    public /*out*/ readonly name!: pulumi.Output<string>;
-    public /*out*/ readonly parentDatabaseId!: pulumi.Output<string>;
-    public /*out*/ readonly parentLinkedDatabaseId!: pulumi.Output<string>;
-    public /*out*/ readonly snapshotId!: pulumi.Output<string>;
-    public /*out*/ readonly status!: pulumi.Output<string>;
-    public /*out*/ readonly timezone!: pulumi.Output<string>;
+    declare public readonly databaseId: pulumi.Output<string>;
+    declare public readonly databaseName: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly databaseStatus: pulumi.Output<string>;
+    declare public /*out*/ readonly dateCreated: pulumi.Output<string>;
+    declare public /*out*/ readonly dateModified: pulumi.Output<string>;
+    declare public /*out*/ readonly description: pulumi.Output<string>;
+    declare public /*out*/ readonly infos: pulumi.Output<outputs.NdbLinkedDatabasesInfo[]>;
+    declare public /*out*/ readonly metric: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
+    declare public /*out*/ readonly parentDatabaseId: pulumi.Output<string>;
+    declare public /*out*/ readonly parentLinkedDatabaseId: pulumi.Output<string>;
+    declare public /*out*/ readonly snapshotId: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
+    declare public /*out*/ readonly timezone: pulumi.Output<string>;
 
     /**
      * Create a NdbLinkedDatabases resource with the given unique name, arguments, and options.
@@ -62,27 +62,27 @@ export class NdbLinkedDatabases extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbLinkedDatabasesState | undefined;
-            resourceInputs["databaseId"] = state ? state.databaseId : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["databaseStatus"] = state ? state.databaseStatus : undefined;
-            resourceInputs["dateCreated"] = state ? state.dateCreated : undefined;
-            resourceInputs["dateModified"] = state ? state.dateModified : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["infos"] = state ? state.infos : undefined;
-            resourceInputs["metric"] = state ? state.metric : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["parentDatabaseId"] = state ? state.parentDatabaseId : undefined;
-            resourceInputs["parentLinkedDatabaseId"] = state ? state.parentLinkedDatabaseId : undefined;
-            resourceInputs["snapshotId"] = state ? state.snapshotId : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["timezone"] = state ? state.timezone : undefined;
+            resourceInputs["databaseId"] = state?.databaseId;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["databaseStatus"] = state?.databaseStatus;
+            resourceInputs["dateCreated"] = state?.dateCreated;
+            resourceInputs["dateModified"] = state?.dateModified;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["infos"] = state?.infos;
+            resourceInputs["metric"] = state?.metric;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["parentDatabaseId"] = state?.parentDatabaseId;
+            resourceInputs["parentLinkedDatabaseId"] = state?.parentLinkedDatabaseId;
+            resourceInputs["snapshotId"] = state?.snapshotId;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["timezone"] = state?.timezone;
         } else {
             const args = argsOrState as NdbLinkedDatabasesArgs | undefined;
-            if ((!args || args.databaseId === undefined) && !opts.urn) {
+            if (args?.databaseId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseId'");
             }
-            resourceInputs["databaseId"] = args ? args.databaseId : undefined;
-            resourceInputs["databaseName"] = args ? args.databaseName : undefined;
+            resourceInputs["databaseId"] = args?.databaseId;
+            resourceInputs["databaseName"] = args?.databaseName;
             resourceInputs["databaseStatus"] = undefined /*out*/;
             resourceInputs["dateCreated"] = undefined /*out*/;
             resourceInputs["dateModified"] = undefined /*out*/;

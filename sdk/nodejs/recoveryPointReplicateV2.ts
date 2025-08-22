@@ -52,19 +52,19 @@ export class RecoveryPointReplicateV2 extends pulumi.CustomResource {
     /**
      * -(Required) External identifier of the cluster.
      */
-    public readonly clusterExtId!: pulumi.Output<string | undefined>;
+    declare public readonly clusterExtId: pulumi.Output<string | undefined>;
     /**
      * -(Required) The external identifier that can be used to retrieve the recovery point using its URL.
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * -(Required) External identifier of the Prism Central.
      */
-    public readonly pcExtId!: pulumi.Output<string>;
+    declare public readonly pcExtId: pulumi.Output<string>;
     /**
      * - External identifier of replicated recovery point.
      */
-    public /*out*/ readonly replicatedRpExtId!: pulumi.Output<string>;
+    declare public /*out*/ readonly replicatedRpExtId: pulumi.Output<string>;
 
     /**
      * Create a RecoveryPointReplicateV2 resource with the given unique name, arguments, and options.
@@ -79,21 +79,21 @@ export class RecoveryPointReplicateV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RecoveryPointReplicateV2State | undefined;
-            resourceInputs["clusterExtId"] = state ? state.clusterExtId : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["pcExtId"] = state ? state.pcExtId : undefined;
-            resourceInputs["replicatedRpExtId"] = state ? state.replicatedRpExtId : undefined;
+            resourceInputs["clusterExtId"] = state?.clusterExtId;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["pcExtId"] = state?.pcExtId;
+            resourceInputs["replicatedRpExtId"] = state?.replicatedRpExtId;
         } else {
             const args = argsOrState as RecoveryPointReplicateV2Args | undefined;
-            if ((!args || args.extId === undefined) && !opts.urn) {
+            if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
-            if ((!args || args.pcExtId === undefined) && !opts.urn) {
+            if (args?.pcExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'pcExtId'");
             }
-            resourceInputs["clusterExtId"] = args ? args.clusterExtId : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["pcExtId"] = args ? args.pcExtId : undefined;
+            resourceInputs["clusterExtId"] = args?.clusterExtId;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["pcExtId"] = args?.pcExtId;
             resourceInputs["replicatedRpExtId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

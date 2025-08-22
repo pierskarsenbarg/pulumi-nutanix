@@ -30,34 +30,34 @@ export class Provider extends pulumi.ProviderResource {
      * individual CVM address, as this would cause calls to fail during cluster lifecycle management operations, such as AOS
      * upgrades.
      */
-    public readonly endpoint!: pulumi.Output<string | undefined>;
+    declare public readonly endpoint: pulumi.Output<string | undefined>;
     /**
      * endpoint for foundation VM (eg. Foundation VM IP)
      */
-    public readonly foundationEndpoint!: pulumi.Output<string | undefined>;
+    declare public readonly foundationEndpoint: pulumi.Output<string | undefined>;
     /**
      * Port for foundation VM
      */
-    public readonly foundationPort!: pulumi.Output<string | undefined>;
+    declare public readonly foundationPort: pulumi.Output<string | undefined>;
     /**
      * endpoint for Era VM (era ip)
      */
-    public readonly ndbEndpoint!: pulumi.Output<string | undefined>;
-    public readonly ndbPassword!: pulumi.Output<string | undefined>;
-    public readonly ndbUsername!: pulumi.Output<string | undefined>;
+    declare public readonly ndbEndpoint: pulumi.Output<string | undefined>;
+    declare public readonly ndbPassword: pulumi.Output<string | undefined>;
+    declare public readonly ndbUsername: pulumi.Output<string | undefined>;
     /**
      * Password for provided user name.
      */
-    public readonly password!: pulumi.Output<string | undefined>;
+    declare public readonly password: pulumi.Output<string | undefined>;
     /**
      * Port for Nutanix Prism.
      */
-    public readonly port!: pulumi.Output<string | undefined>;
-    public readonly proxyUrl!: pulumi.Output<string | undefined>;
+    declare public readonly port: pulumi.Output<string | undefined>;
+    declare public readonly proxyUrl: pulumi.Output<string | undefined>;
     /**
      * User name for Nutanix Prism. Could be local cluster auth (e.g. 'admin') or directory auth.
      */
-    public readonly username!: pulumi.Output<string | undefined>;
+    declare public readonly username: pulumi.Output<string | undefined>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -70,19 +70,19 @@ export class Provider extends pulumi.ProviderResource {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
-            resourceInputs["endpoint"] = args ? args.endpoint : undefined;
-            resourceInputs["foundationEndpoint"] = args ? args.foundationEndpoint : undefined;
-            resourceInputs["foundationPort"] = args ? args.foundationPort : undefined;
-            resourceInputs["insecure"] = pulumi.output(args ? args.insecure : undefined).apply(JSON.stringify);
-            resourceInputs["ndbEndpoint"] = args ? args.ndbEndpoint : undefined;
-            resourceInputs["ndbPassword"] = args ? args.ndbPassword : undefined;
-            resourceInputs["ndbUsername"] = args ? args.ndbUsername : undefined;
-            resourceInputs["password"] = args ? args.password : undefined;
-            resourceInputs["port"] = args ? args.port : undefined;
-            resourceInputs["proxyUrl"] = args ? args.proxyUrl : undefined;
-            resourceInputs["sessionAuth"] = pulumi.output(args ? args.sessionAuth : undefined).apply(JSON.stringify);
-            resourceInputs["username"] = args ? args.username : undefined;
-            resourceInputs["waitTimeout"] = pulumi.output(args ? args.waitTimeout : undefined).apply(JSON.stringify);
+            resourceInputs["endpoint"] = args?.endpoint;
+            resourceInputs["foundationEndpoint"] = args?.foundationEndpoint;
+            resourceInputs["foundationPort"] = args?.foundationPort;
+            resourceInputs["insecure"] = pulumi.output(args?.insecure).apply(JSON.stringify);
+            resourceInputs["ndbEndpoint"] = args?.ndbEndpoint;
+            resourceInputs["ndbPassword"] = args?.ndbPassword;
+            resourceInputs["ndbUsername"] = args?.ndbUsername;
+            resourceInputs["password"] = args?.password;
+            resourceInputs["port"] = args?.port;
+            resourceInputs["proxyUrl"] = args?.proxyUrl;
+            resourceInputs["sessionAuth"] = pulumi.output(args?.sessionAuth).apply(JSON.stringify);
+            resourceInputs["username"] = args?.username;
+            resourceInputs["waitTimeout"] = pulumi.output(args?.waitTimeout).apply(JSON.stringify);
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Provider.__pulumiType, name, resourceInputs, opts);

@@ -71,63 +71,63 @@ export class RoutesV2 extends pulumi.CustomResource {
     /**
      * BGP session description.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Destination IP Subnet Configuration.
      */
-    public readonly destination!: pulumi.Output<outputs.RoutesV2Destination>;
+    declare public readonly destination: pulumi.Output<outputs.RoutesV2Destination>;
     /**
      * Route UUID
      */
-    public /*out*/ readonly extId!: pulumi.Output<string>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
     /**
      * External routing domain associated with this route table.
      */
-    public readonly externalRoutingDomainReference!: pulumi.Output<string>;
+    declare public readonly externalRoutingDomainReference: pulumi.Output<string>;
     /**
      * Indicates whether the route is active in the forwarding plane.
      */
-    public /*out*/ readonly isActive!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isActive: pulumi.Output<boolean>;
     /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    public /*out*/ readonly links!: pulumi.Output<outputs.RoutesV2Link[]>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.RoutesV2Link[]>;
     /**
      * Metadata associated with this resource.
      */
-    public readonly metadata!: pulumi.Output<outputs.RoutesV2Metadata>;
+    declare public readonly metadata: pulumi.Output<outputs.RoutesV2Metadata>;
     /**
      * Route name.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Route nexthop.
      */
-    public readonly nextHop!: pulumi.Output<outputs.RoutesV2NextHop>;
+    declare public readonly nextHop: pulumi.Output<outputs.RoutesV2NextHop>;
     /**
      * Route priority. A higher value implies greater preference is assigned to the route.
      */
-    public /*out*/ readonly priority!: pulumi.Output<number>;
+    declare public /*out*/ readonly priority: pulumi.Output<number>;
     /**
      * Route table UUID
      */
-    public readonly routeTableExtId!: pulumi.Output<string>;
+    declare public readonly routeTableExtId: pulumi.Output<string>;
     /**
      * Route table reference.
      */
-    public readonly routeTableReference!: pulumi.Output<string>;
+    declare public readonly routeTableReference: pulumi.Output<string>;
     /**
      * Route type. Acceptable values are "STATIC", "LOCAL", "DYNAMIC"
      */
-    public readonly routeType!: pulumi.Output<string>;
+    declare public readonly routeType: pulumi.Output<string>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
      * VPC reference.
      */
-    public readonly vpcReference!: pulumi.Output<string>;
+    declare public readonly vpcReference: pulumi.Output<string>;
 
     /**
      * Create a RoutesV2 resource with the given unique name, arguments, and options.
@@ -142,39 +142,39 @@ export class RoutesV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RoutesV2State | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["destination"] = state ? state.destination : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["externalRoutingDomainReference"] = state ? state.externalRoutingDomainReference : undefined;
-            resourceInputs["isActive"] = state ? state.isActive : undefined;
-            resourceInputs["links"] = state ? state.links : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["nextHop"] = state ? state.nextHop : undefined;
-            resourceInputs["priority"] = state ? state.priority : undefined;
-            resourceInputs["routeTableExtId"] = state ? state.routeTableExtId : undefined;
-            resourceInputs["routeTableReference"] = state ? state.routeTableReference : undefined;
-            resourceInputs["routeType"] = state ? state.routeType : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["vpcReference"] = state ? state.vpcReference : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["destination"] = state?.destination;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["externalRoutingDomainReference"] = state?.externalRoutingDomainReference;
+            resourceInputs["isActive"] = state?.isActive;
+            resourceInputs["links"] = state?.links;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["nextHop"] = state?.nextHop;
+            resourceInputs["priority"] = state?.priority;
+            resourceInputs["routeTableExtId"] = state?.routeTableExtId;
+            resourceInputs["routeTableReference"] = state?.routeTableReference;
+            resourceInputs["routeType"] = state?.routeType;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["vpcReference"] = state?.vpcReference;
         } else {
             const args = argsOrState as RoutesV2Args | undefined;
-            if ((!args || args.routeTableExtId === undefined) && !opts.urn) {
+            if (args?.routeTableExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'routeTableExtId'");
             }
-            if ((!args || args.routeType === undefined) && !opts.urn) {
+            if (args?.routeType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'routeType'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["destination"] = args ? args.destination : undefined;
-            resourceInputs["externalRoutingDomainReference"] = args ? args.externalRoutingDomainReference : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["nextHop"] = args ? args.nextHop : undefined;
-            resourceInputs["routeTableExtId"] = args ? args.routeTableExtId : undefined;
-            resourceInputs["routeTableReference"] = args ? args.routeTableReference : undefined;
-            resourceInputs["routeType"] = args ? args.routeType : undefined;
-            resourceInputs["vpcReference"] = args ? args.vpcReference : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["destination"] = args?.destination;
+            resourceInputs["externalRoutingDomainReference"] = args?.externalRoutingDomainReference;
+            resourceInputs["metadata"] = args?.metadata;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["nextHop"] = args?.nextHop;
+            resourceInputs["routeTableExtId"] = args?.routeTableExtId;
+            resourceInputs["routeTableReference"] = args?.routeTableReference;
+            resourceInputs["routeType"] = args?.routeType;
+            resourceInputs["vpcReference"] = args?.vpcReference;
             resourceInputs["extId"] = undefined /*out*/;
             resourceInputs["isActive"] = undefined /*out*/;
             resourceInputs["links"] = undefined /*out*/;

@@ -61,55 +61,55 @@ export class NdbNetwork extends pulumi.CustomResource {
     /**
      * Select the Nutanix cluster on which you want to add the VLAN.
      */
-    public readonly clusterId!: pulumi.Output<string>;
+    declare public readonly clusterId: pulumi.Output<string>;
     /**
      * dns domain for vlan. (Static IP address assignment only)
      */
-    public readonly dnsDomain!: pulumi.Output<string | undefined>;
+    declare public readonly dnsDomain: pulumi.Output<string | undefined>;
     /**
      * Gateway for vlan. Supports in Static IP address assignment only
      */
-    public readonly gateway!: pulumi.Output<string | undefined>;
+    declare public readonly gateway: pulumi.Output<string | undefined>;
     /**
      * Manage IP Address Pool in NDB option if you want to assign static IP addresses to your database server VMs
      */
-    public readonly ipPools!: pulumi.Output<outputs.NdbNetworkIpPool[]>;
+    declare public readonly ipPools: pulumi.Output<outputs.NdbNetworkIpPool[]>;
     /**
      * Managed by NDB or not
      */
-    public /*out*/ readonly managed!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly managed: pulumi.Output<boolean>;
     /**
      * Name of the vlan to be attached in NDB
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * primary dns for vlan. (Static IP address assignment only)
      */
-    public readonly primaryDns!: pulumi.Output<string | undefined>;
+    declare public readonly primaryDns: pulumi.Output<string | undefined>;
     /**
      * properties of network
      */
-    public /*out*/ readonly properties!: pulumi.Output<outputs.NdbNetworkProperty[]>;
+    declare public /*out*/ readonly properties: pulumi.Output<outputs.NdbNetworkProperty[]>;
     /**
      * properties map of network
      */
-    public /*out*/ readonly propertiesMaps!: pulumi.Output<outputs.NdbNetworkPropertiesMap[]>;
+    declare public /*out*/ readonly propertiesMaps: pulumi.Output<outputs.NdbNetworkPropertiesMap[]>;
     /**
      * secondary dns for vlan. (Static IP address assignment only)
      */
-    public readonly secondaryDns!: pulumi.Output<string | undefined>;
+    declare public readonly secondaryDns: pulumi.Output<string | undefined>;
     /**
      * stretched vlan id
      */
-    public /*out*/ readonly stretchedVlanId!: pulumi.Output<string>;
+    declare public /*out*/ readonly stretchedVlanId: pulumi.Output<string>;
     /**
      * Subnet mask for vlan. (Static IP address assignment only)
      */
-    public readonly subnetMask!: pulumi.Output<string | undefined>;
+    declare public readonly subnetMask: pulumi.Output<string | undefined>;
     /**
      * Vlan type. Supports [DHCP, Static]
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
 
     /**
      * Create a NdbNetwork resource with the given unique name, arguments, and options.
@@ -124,36 +124,36 @@ export class NdbNetwork extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbNetworkState | undefined;
-            resourceInputs["clusterId"] = state ? state.clusterId : undefined;
-            resourceInputs["dnsDomain"] = state ? state.dnsDomain : undefined;
-            resourceInputs["gateway"] = state ? state.gateway : undefined;
-            resourceInputs["ipPools"] = state ? state.ipPools : undefined;
-            resourceInputs["managed"] = state ? state.managed : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["primaryDns"] = state ? state.primaryDns : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["propertiesMaps"] = state ? state.propertiesMaps : undefined;
-            resourceInputs["secondaryDns"] = state ? state.secondaryDns : undefined;
-            resourceInputs["stretchedVlanId"] = state ? state.stretchedVlanId : undefined;
-            resourceInputs["subnetMask"] = state ? state.subnetMask : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["clusterId"] = state?.clusterId;
+            resourceInputs["dnsDomain"] = state?.dnsDomain;
+            resourceInputs["gateway"] = state?.gateway;
+            resourceInputs["ipPools"] = state?.ipPools;
+            resourceInputs["managed"] = state?.managed;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["primaryDns"] = state?.primaryDns;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["propertiesMaps"] = state?.propertiesMaps;
+            resourceInputs["secondaryDns"] = state?.secondaryDns;
+            resourceInputs["stretchedVlanId"] = state?.stretchedVlanId;
+            resourceInputs["subnetMask"] = state?.subnetMask;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as NdbNetworkArgs | undefined;
-            if ((!args || args.clusterId === undefined) && !opts.urn) {
+            if (args?.clusterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterId'");
             }
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["clusterId"] = args ? args.clusterId : undefined;
-            resourceInputs["dnsDomain"] = args ? args.dnsDomain : undefined;
-            resourceInputs["gateway"] = args ? args.gateway : undefined;
-            resourceInputs["ipPools"] = args ? args.ipPools : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["primaryDns"] = args ? args.primaryDns : undefined;
-            resourceInputs["secondaryDns"] = args ? args.secondaryDns : undefined;
-            resourceInputs["subnetMask"] = args ? args.subnetMask : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["clusterId"] = args?.clusterId;
+            resourceInputs["dnsDomain"] = args?.dnsDomain;
+            resourceInputs["gateway"] = args?.gateway;
+            resourceInputs["ipPools"] = args?.ipPools;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["primaryDns"] = args?.primaryDns;
+            resourceInputs["secondaryDns"] = args?.secondaryDns;
+            resourceInputs["subnetMask"] = args?.subnetMask;
+            resourceInputs["type"] = args?.type;
             resourceInputs["managed"] = undefined /*out*/;
             resourceInputs["properties"] = undefined /*out*/;
             resourceInputs["propertiesMaps"] = undefined /*out*/;

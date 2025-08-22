@@ -34,151 +34,151 @@ export class FoundationImageNodes extends pulumi.CustomResource {
         return obj['__pulumiType'] === FoundationImageNodes.__pulumiType;
     }
 
-    public readonly blocks!: pulumi.Output<outputs.FoundationImageNodesBlock[]>;
+    declare public readonly blocks: pulumi.Output<outputs.FoundationImageNodesBlock[]>;
     /**
      * - list containing cluster name and cluster urls for created clusters in current session
      * * `cluster_urls.#.cluster_name` :- clusterName
      * * `cluster_urls.#.cluster_url` :- url to access the cluster login
      */
-    public /*out*/ readonly clusterUrls!: pulumi.Output<outputs.FoundationImageNodesClusterUrl[]>;
-    public readonly clusters!: pulumi.Output<outputs.FoundationImageNodesCluster[] | undefined>;
+    declare public /*out*/ readonly clusterUrls: pulumi.Output<outputs.FoundationImageNodesClusterUrl[]>;
+    declare public readonly clusters: pulumi.Output<outputs.FoundationImageNodesCluster[] | undefined>;
     /**
      * - (Required) CVM gateway.
      */
-    public readonly cvmGateway!: pulumi.Output<string>;
+    declare public readonly cvmGateway: pulumi.Output<string>;
     /**
      * - (Required) CVM netmask.
      */
-    public readonly cvmNetmask!: pulumi.Output<string>;
+    declare public readonly cvmNetmask: pulumi.Output<string>;
     /**
      * - Contains user data from Eos portal.
      */
-    public readonly eosMetadata!: pulumi.Output<outputs.FoundationImageNodesEosMetadata | undefined>;
+    declare public readonly eosMetadata: pulumi.Output<outputs.FoundationImageNodesEosMetadata | undefined>;
     /**
      * - Foundation Central specific settings.
      */
-    public readonly fcSettings!: pulumi.Output<outputs.FoundationImageNodesFcSettings | undefined>;
+    declare public readonly fcSettings: pulumi.Output<outputs.FoundationImageNodesFcSettings | undefined>;
     /**
      * - Hyperv External virtual network adapter name.
      */
-    public readonly hypervExternalVnic!: pulumi.Output<string | undefined>;
+    declare public readonly hypervExternalVnic: pulumi.Output<string | undefined>;
     /**
      * - Hyperv External vswitch name.
      */
-    public readonly hypervExternalVswitch!: pulumi.Output<string | undefined>;
+    declare public readonly hypervExternalVswitch: pulumi.Output<string | undefined>;
     /**
      * - Hyperv product key.
      */
-    public readonly hypervProductKey!: pulumi.Output<string | undefined>;
+    declare public readonly hypervProductKey: pulumi.Output<string | undefined>;
     /**
      * - Hyperv SKU.
      */
-    public readonly hypervSku!: pulumi.Output<boolean | undefined>;
+    declare public readonly hypervSku: pulumi.Output<boolean | undefined>;
     /**
      * - (Required) Hypervisor gateway.
      */
-    public readonly hypervisorGateway!: pulumi.Output<string>;
+    declare public readonly hypervisorGateway: pulumi.Output<string>;
     /**
      * - Hypervisor ISO.
      */
-    public readonly hypervisorIso!: pulumi.Output<outputs.FoundationImageNodesHypervisorIso | undefined>;
-    public readonly hypervisorNameserver!: pulumi.Output<string | undefined>;
+    declare public readonly hypervisorIso: pulumi.Output<outputs.FoundationImageNodesHypervisorIso | undefined>;
+    declare public readonly hypervisorNameserver: pulumi.Output<string | undefined>;
     /**
      * - (Required) Hypervisor netmask.
      */
-    public readonly hypervisorNetmask!: pulumi.Output<string>;
+    declare public readonly hypervisorNetmask: pulumi.Output<string>;
     /**
      * - Hypervisor password.
      */
-    public readonly hypervisorPassword!: pulumi.Output<string | undefined>;
+    declare public readonly hypervisorPassword: pulumi.Output<string | undefined>;
     /**
      * - install script.
      */
-    public readonly installScript!: pulumi.Output<string | undefined>;
+    declare public readonly installScript: pulumi.Output<string | undefined>;
     /**
      * - (Required incase using IPMI based imaging either here or inside node spec) default IPMI gateway
      */
-    public readonly ipmiGateway!: pulumi.Output<string | undefined>;
+    declare public readonly ipmiGateway: pulumi.Output<string | undefined>;
     /**
      * - (Required incase using IPMI based imaging either here or inside node spec) default IPMI netmask
      */
-    public readonly ipmiNetmask!: pulumi.Output<string | undefined>;
+    declare public readonly ipmiNetmask: pulumi.Output<string | undefined>;
     /**
      * - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
      */
-    public readonly ipmiPassword!: pulumi.Output<string | undefined>;
+    declare public readonly ipmiPassword: pulumi.Output<string | undefined>;
     /**
      * - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
      */
-    public readonly ipmiUser!: pulumi.Output<string | undefined>;
+    declare public readonly ipmiUser: pulumi.Output<string | undefined>;
     /**
      * - Id of the custom layout which needs to be passed to imaging request.
      */
-    public readonly layoutEggUuid!: pulumi.Output<string | undefined>;
+    declare public readonly layoutEggUuid: pulumi.Output<string | undefined>;
     /**
      * - (Required) NOS package.
      */
-    public readonly nosPackage!: pulumi.Output<string>;
+    declare public readonly nosPackage: pulumi.Output<string>;
     /**
      * - sessionId of the imaging session
      */
-    public /*out*/ readonly sessionId!: pulumi.Output<string>;
+    declare public /*out*/ readonly sessionId: pulumi.Output<string>;
     /**
      * - If hypervisor installation should be skipped.
      */
-    public readonly skipHypervisor!: pulumi.Output<boolean | undefined>;
+    declare public readonly skipHypervisor: pulumi.Output<boolean | undefined>;
     /**
      * - Arguments to be passed to svmRescue for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
      */
-    public readonly svmRescueArgs!: pulumi.Output<string[] | undefined>;
+    declare public readonly svmRescueArgs: pulumi.Output<string[] | undefined>;
     /**
      * - Types of tests to be performed.
      */
-    public readonly tests!: pulumi.Output<outputs.FoundationImageNodesTests | undefined>;
+    declare public readonly tests: pulumi.Output<outputs.FoundationImageNodesTests | undefined>;
     /**
      * - UCSM IP address.
      */
-    public readonly ucsmIp!: pulumi.Output<string | undefined>;
+    declare public readonly ucsmIp: pulumi.Output<string | undefined>;
     /**
      * - UCSM password.
      */
-    public readonly ucsmPassword!: pulumi.Output<string | undefined>;
+    declare public readonly ucsmPassword: pulumi.Output<string | undefined>;
     /**
      * - UCSM username.
      */
-    public readonly ucsmUser!: pulumi.Output<string | undefined>;
+    declare public readonly ucsmUser: pulumi.Output<string | undefined>;
     /**
      * - UNC password.
      */
-    public readonly uncPassword!: pulumi.Output<string | undefined>;
+    declare public readonly uncPassword: pulumi.Output<string | undefined>;
     /**
      * - UNC Path.
      */
-    public readonly uncPath!: pulumi.Output<string | undefined>;
+    declare public readonly uncPath: pulumi.Output<string | undefined>;
     /**
      * - UNC username.
      */
-    public readonly uncUsername!: pulumi.Output<string | undefined>;
+    declare public readonly uncUsername: pulumi.Output<string | undefined>;
     /**
      * - xen config types.
      */
-    public readonly xenConfigType!: pulumi.Output<string | undefined>;
+    declare public readonly xenConfigType: pulumi.Output<string | undefined>;
     /**
      * - xen server master IP address.
      */
-    public readonly xsMasterIp!: pulumi.Output<string | undefined>;
+    declare public readonly xsMasterIp: pulumi.Output<string | undefined>;
     /**
      * - xen server master label.
      */
-    public readonly xsMasterLabel!: pulumi.Output<string | undefined>;
+    declare public readonly xsMasterLabel: pulumi.Output<string | undefined>;
     /**
      * - xen server master password.
      */
-    public readonly xsMasterPassword!: pulumi.Output<string | undefined>;
+    declare public readonly xsMasterPassword: pulumi.Output<string | undefined>;
     /**
      * - xen server master username.
      */
-    public readonly xsMasterUsername!: pulumi.Output<string | undefined>;
+    declare public readonly xsMasterUsername: pulumi.Output<string | undefined>;
 
     /**
      * Create a FoundationImageNodes resource with the given unique name, arguments, and options.
@@ -193,100 +193,100 @@ export class FoundationImageNodes extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FoundationImageNodesState | undefined;
-            resourceInputs["blocks"] = state ? state.blocks : undefined;
-            resourceInputs["clusterUrls"] = state ? state.clusterUrls : undefined;
-            resourceInputs["clusters"] = state ? state.clusters : undefined;
-            resourceInputs["cvmGateway"] = state ? state.cvmGateway : undefined;
-            resourceInputs["cvmNetmask"] = state ? state.cvmNetmask : undefined;
-            resourceInputs["eosMetadata"] = state ? state.eosMetadata : undefined;
-            resourceInputs["fcSettings"] = state ? state.fcSettings : undefined;
-            resourceInputs["hypervExternalVnic"] = state ? state.hypervExternalVnic : undefined;
-            resourceInputs["hypervExternalVswitch"] = state ? state.hypervExternalVswitch : undefined;
-            resourceInputs["hypervProductKey"] = state ? state.hypervProductKey : undefined;
-            resourceInputs["hypervSku"] = state ? state.hypervSku : undefined;
-            resourceInputs["hypervisorGateway"] = state ? state.hypervisorGateway : undefined;
-            resourceInputs["hypervisorIso"] = state ? state.hypervisorIso : undefined;
-            resourceInputs["hypervisorNameserver"] = state ? state.hypervisorNameserver : undefined;
-            resourceInputs["hypervisorNetmask"] = state ? state.hypervisorNetmask : undefined;
-            resourceInputs["hypervisorPassword"] = state ? state.hypervisorPassword : undefined;
-            resourceInputs["installScript"] = state ? state.installScript : undefined;
-            resourceInputs["ipmiGateway"] = state ? state.ipmiGateway : undefined;
-            resourceInputs["ipmiNetmask"] = state ? state.ipmiNetmask : undefined;
-            resourceInputs["ipmiPassword"] = state ? state.ipmiPassword : undefined;
-            resourceInputs["ipmiUser"] = state ? state.ipmiUser : undefined;
-            resourceInputs["layoutEggUuid"] = state ? state.layoutEggUuid : undefined;
-            resourceInputs["nosPackage"] = state ? state.nosPackage : undefined;
-            resourceInputs["sessionId"] = state ? state.sessionId : undefined;
-            resourceInputs["skipHypervisor"] = state ? state.skipHypervisor : undefined;
-            resourceInputs["svmRescueArgs"] = state ? state.svmRescueArgs : undefined;
-            resourceInputs["tests"] = state ? state.tests : undefined;
-            resourceInputs["ucsmIp"] = state ? state.ucsmIp : undefined;
-            resourceInputs["ucsmPassword"] = state ? state.ucsmPassword : undefined;
-            resourceInputs["ucsmUser"] = state ? state.ucsmUser : undefined;
-            resourceInputs["uncPassword"] = state ? state.uncPassword : undefined;
-            resourceInputs["uncPath"] = state ? state.uncPath : undefined;
-            resourceInputs["uncUsername"] = state ? state.uncUsername : undefined;
-            resourceInputs["xenConfigType"] = state ? state.xenConfigType : undefined;
-            resourceInputs["xsMasterIp"] = state ? state.xsMasterIp : undefined;
-            resourceInputs["xsMasterLabel"] = state ? state.xsMasterLabel : undefined;
-            resourceInputs["xsMasterPassword"] = state ? state.xsMasterPassword : undefined;
-            resourceInputs["xsMasterUsername"] = state ? state.xsMasterUsername : undefined;
+            resourceInputs["blocks"] = state?.blocks;
+            resourceInputs["clusterUrls"] = state?.clusterUrls;
+            resourceInputs["clusters"] = state?.clusters;
+            resourceInputs["cvmGateway"] = state?.cvmGateway;
+            resourceInputs["cvmNetmask"] = state?.cvmNetmask;
+            resourceInputs["eosMetadata"] = state?.eosMetadata;
+            resourceInputs["fcSettings"] = state?.fcSettings;
+            resourceInputs["hypervExternalVnic"] = state?.hypervExternalVnic;
+            resourceInputs["hypervExternalVswitch"] = state?.hypervExternalVswitch;
+            resourceInputs["hypervProductKey"] = state?.hypervProductKey;
+            resourceInputs["hypervSku"] = state?.hypervSku;
+            resourceInputs["hypervisorGateway"] = state?.hypervisorGateway;
+            resourceInputs["hypervisorIso"] = state?.hypervisorIso;
+            resourceInputs["hypervisorNameserver"] = state?.hypervisorNameserver;
+            resourceInputs["hypervisorNetmask"] = state?.hypervisorNetmask;
+            resourceInputs["hypervisorPassword"] = state?.hypervisorPassword;
+            resourceInputs["installScript"] = state?.installScript;
+            resourceInputs["ipmiGateway"] = state?.ipmiGateway;
+            resourceInputs["ipmiNetmask"] = state?.ipmiNetmask;
+            resourceInputs["ipmiPassword"] = state?.ipmiPassword;
+            resourceInputs["ipmiUser"] = state?.ipmiUser;
+            resourceInputs["layoutEggUuid"] = state?.layoutEggUuid;
+            resourceInputs["nosPackage"] = state?.nosPackage;
+            resourceInputs["sessionId"] = state?.sessionId;
+            resourceInputs["skipHypervisor"] = state?.skipHypervisor;
+            resourceInputs["svmRescueArgs"] = state?.svmRescueArgs;
+            resourceInputs["tests"] = state?.tests;
+            resourceInputs["ucsmIp"] = state?.ucsmIp;
+            resourceInputs["ucsmPassword"] = state?.ucsmPassword;
+            resourceInputs["ucsmUser"] = state?.ucsmUser;
+            resourceInputs["uncPassword"] = state?.uncPassword;
+            resourceInputs["uncPath"] = state?.uncPath;
+            resourceInputs["uncUsername"] = state?.uncUsername;
+            resourceInputs["xenConfigType"] = state?.xenConfigType;
+            resourceInputs["xsMasterIp"] = state?.xsMasterIp;
+            resourceInputs["xsMasterLabel"] = state?.xsMasterLabel;
+            resourceInputs["xsMasterPassword"] = state?.xsMasterPassword;
+            resourceInputs["xsMasterUsername"] = state?.xsMasterUsername;
         } else {
             const args = argsOrState as FoundationImageNodesArgs | undefined;
-            if ((!args || args.blocks === undefined) && !opts.urn) {
+            if (args?.blocks === undefined && !opts.urn) {
                 throw new Error("Missing required property 'blocks'");
             }
-            if ((!args || args.cvmGateway === undefined) && !opts.urn) {
+            if (args?.cvmGateway === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cvmGateway'");
             }
-            if ((!args || args.cvmNetmask === undefined) && !opts.urn) {
+            if (args?.cvmNetmask === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cvmNetmask'");
             }
-            if ((!args || args.hypervisorGateway === undefined) && !opts.urn) {
+            if (args?.hypervisorGateway === undefined && !opts.urn) {
                 throw new Error("Missing required property 'hypervisorGateway'");
             }
-            if ((!args || args.hypervisorNetmask === undefined) && !opts.urn) {
+            if (args?.hypervisorNetmask === undefined && !opts.urn) {
                 throw new Error("Missing required property 'hypervisorNetmask'");
             }
-            if ((!args || args.nosPackage === undefined) && !opts.urn) {
+            if (args?.nosPackage === undefined && !opts.urn) {
                 throw new Error("Missing required property 'nosPackage'");
             }
-            resourceInputs["blocks"] = args ? args.blocks : undefined;
-            resourceInputs["clusters"] = args ? args.clusters : undefined;
-            resourceInputs["cvmGateway"] = args ? args.cvmGateway : undefined;
-            resourceInputs["cvmNetmask"] = args ? args.cvmNetmask : undefined;
-            resourceInputs["eosMetadata"] = args ? args.eosMetadata : undefined;
-            resourceInputs["fcSettings"] = args ? args.fcSettings : undefined;
-            resourceInputs["hypervExternalVnic"] = args ? args.hypervExternalVnic : undefined;
-            resourceInputs["hypervExternalVswitch"] = args ? args.hypervExternalVswitch : undefined;
-            resourceInputs["hypervProductKey"] = args ? args.hypervProductKey : undefined;
-            resourceInputs["hypervSku"] = args ? args.hypervSku : undefined;
-            resourceInputs["hypervisorGateway"] = args ? args.hypervisorGateway : undefined;
-            resourceInputs["hypervisorIso"] = args ? args.hypervisorIso : undefined;
-            resourceInputs["hypervisorNameserver"] = args ? args.hypervisorNameserver : undefined;
-            resourceInputs["hypervisorNetmask"] = args ? args.hypervisorNetmask : undefined;
-            resourceInputs["hypervisorPassword"] = args ? args.hypervisorPassword : undefined;
-            resourceInputs["installScript"] = args ? args.installScript : undefined;
-            resourceInputs["ipmiGateway"] = args ? args.ipmiGateway : undefined;
-            resourceInputs["ipmiNetmask"] = args ? args.ipmiNetmask : undefined;
-            resourceInputs["ipmiPassword"] = args ? args.ipmiPassword : undefined;
-            resourceInputs["ipmiUser"] = args ? args.ipmiUser : undefined;
-            resourceInputs["layoutEggUuid"] = args ? args.layoutEggUuid : undefined;
-            resourceInputs["nosPackage"] = args ? args.nosPackage : undefined;
-            resourceInputs["skipHypervisor"] = args ? args.skipHypervisor : undefined;
-            resourceInputs["svmRescueArgs"] = args ? args.svmRescueArgs : undefined;
-            resourceInputs["tests"] = args ? args.tests : undefined;
-            resourceInputs["ucsmIp"] = args ? args.ucsmIp : undefined;
-            resourceInputs["ucsmPassword"] = args ? args.ucsmPassword : undefined;
-            resourceInputs["ucsmUser"] = args ? args.ucsmUser : undefined;
-            resourceInputs["uncPassword"] = args ? args.uncPassword : undefined;
-            resourceInputs["uncPath"] = args ? args.uncPath : undefined;
-            resourceInputs["uncUsername"] = args ? args.uncUsername : undefined;
-            resourceInputs["xenConfigType"] = args ? args.xenConfigType : undefined;
-            resourceInputs["xsMasterIp"] = args ? args.xsMasterIp : undefined;
-            resourceInputs["xsMasterLabel"] = args ? args.xsMasterLabel : undefined;
-            resourceInputs["xsMasterPassword"] = args ? args.xsMasterPassword : undefined;
-            resourceInputs["xsMasterUsername"] = args ? args.xsMasterUsername : undefined;
+            resourceInputs["blocks"] = args?.blocks;
+            resourceInputs["clusters"] = args?.clusters;
+            resourceInputs["cvmGateway"] = args?.cvmGateway;
+            resourceInputs["cvmNetmask"] = args?.cvmNetmask;
+            resourceInputs["eosMetadata"] = args?.eosMetadata;
+            resourceInputs["fcSettings"] = args?.fcSettings;
+            resourceInputs["hypervExternalVnic"] = args?.hypervExternalVnic;
+            resourceInputs["hypervExternalVswitch"] = args?.hypervExternalVswitch;
+            resourceInputs["hypervProductKey"] = args?.hypervProductKey;
+            resourceInputs["hypervSku"] = args?.hypervSku;
+            resourceInputs["hypervisorGateway"] = args?.hypervisorGateway;
+            resourceInputs["hypervisorIso"] = args?.hypervisorIso;
+            resourceInputs["hypervisorNameserver"] = args?.hypervisorNameserver;
+            resourceInputs["hypervisorNetmask"] = args?.hypervisorNetmask;
+            resourceInputs["hypervisorPassword"] = args?.hypervisorPassword;
+            resourceInputs["installScript"] = args?.installScript;
+            resourceInputs["ipmiGateway"] = args?.ipmiGateway;
+            resourceInputs["ipmiNetmask"] = args?.ipmiNetmask;
+            resourceInputs["ipmiPassword"] = args?.ipmiPassword;
+            resourceInputs["ipmiUser"] = args?.ipmiUser;
+            resourceInputs["layoutEggUuid"] = args?.layoutEggUuid;
+            resourceInputs["nosPackage"] = args?.nosPackage;
+            resourceInputs["skipHypervisor"] = args?.skipHypervisor;
+            resourceInputs["svmRescueArgs"] = args?.svmRescueArgs;
+            resourceInputs["tests"] = args?.tests;
+            resourceInputs["ucsmIp"] = args?.ucsmIp;
+            resourceInputs["ucsmPassword"] = args?.ucsmPassword;
+            resourceInputs["ucsmUser"] = args?.ucsmUser;
+            resourceInputs["uncPassword"] = args?.uncPassword;
+            resourceInputs["uncPath"] = args?.uncPath;
+            resourceInputs["uncUsername"] = args?.uncUsername;
+            resourceInputs["xenConfigType"] = args?.xenConfigType;
+            resourceInputs["xsMasterIp"] = args?.xsMasterIp;
+            resourceInputs["xsMasterLabel"] = args?.xsMasterLabel;
+            resourceInputs["xsMasterPassword"] = args?.xsMasterPassword;
+            resourceInputs["xsMasterUsername"] = args?.xsMasterUsername;
             resourceInputs["clusterUrls"] = undefined /*out*/;
             resourceInputs["sessionId"] = undefined /*out*/;
         }

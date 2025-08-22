@@ -53,121 +53,121 @@ export class NdbScaleDatabase extends pulumi.CustomResource {
     /**
      * type of instance. eg: postgres_database
      */
-    public readonly applicationType!: pulumi.Output<string>;
+    declare public readonly applicationType: pulumi.Output<string>;
     /**
      * whether instance is cloned or not
      */
-    public /*out*/ readonly clone!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly clone: pulumi.Output<boolean>;
     /**
      * data area (in GiB) to be added to the existing database.
      */
-    public readonly dataStorageSize!: pulumi.Output<number>;
+    declare public readonly dataStorageSize: pulumi.Output<number>;
     /**
      * database cluster type
      */
-    public /*out*/ readonly databaseClusterType!: pulumi.Output<string>;
-    public /*out*/ readonly databaseInstanceId!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseClusterType: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseInstanceId: pulumi.Output<string>;
     /**
      * name of database
      */
-    public /*out*/ readonly databaseName!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseName: pulumi.Output<string>;
     /**
      * database nodes associated with database instance
      */
-    public /*out*/ readonly databaseNodes!: pulumi.Output<outputs.NdbScaleDatabaseDatabaseNode[]>;
+    declare public /*out*/ readonly databaseNodes: pulumi.Output<outputs.NdbScaleDatabaseDatabaseNode[]>;
     /**
      * Database id
      */
-    public readonly databaseUuid!: pulumi.Output<string>;
+    declare public readonly databaseUuid: pulumi.Output<string>;
     /**
      * type of database
      */
-    public /*out*/ readonly databasetype!: pulumi.Output<string>;
+    declare public /*out*/ readonly databasetype: pulumi.Output<string>;
     /**
      * date created for db instance
      */
-    public /*out*/ readonly dateCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateCreated: pulumi.Output<string>;
     /**
      * date modified for instance
      */
-    public /*out*/ readonly dateModified!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateModified: pulumi.Output<string>;
     /**
      * dbserver logical cluster
      */
-    public /*out*/ readonly dbserverLogicalCluster!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly dbserverLogicalCluster: pulumi.Output<{[key: string]: string}>;
     /**
      * dbserver logical cluster id
      */
-    public /*out*/ readonly dbserverLogicalClusterId!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbserverLogicalClusterId: pulumi.Output<string>;
     /**
      * description of database instance
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    declare public /*out*/ readonly description: pulumi.Output<string>;
     /**
      * info of instance
      */
-    public /*out*/ readonly infos!: pulumi.Output<outputs.NdbScaleDatabaseInfo[]>;
+    declare public /*out*/ readonly infos: pulumi.Output<outputs.NdbScaleDatabaseInfo[]>;
     /**
      * LCM config of instance
      */
-    public /*out*/ readonly lcmConfigs!: pulumi.Output<outputs.NdbScaleDatabaseLcmConfig[]>;
+    declare public /*out*/ readonly lcmConfigs: pulumi.Output<outputs.NdbScaleDatabaseLcmConfig[]>;
     /**
      * linked databases within database instance
      */
-    public /*out*/ readonly linkedDatabases!: pulumi.Output<outputs.NdbScaleDatabaseLinkedDatabase[]>;
+    declare public /*out*/ readonly linkedDatabases: pulumi.Output<outputs.NdbScaleDatabaseLinkedDatabase[]>;
     /**
      * Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
      */
-    public /*out*/ readonly metric!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly metric: pulumi.Output<{[key: string]: string}>;
     /**
      * Name of database instance
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * parent database id
      */
-    public /*out*/ readonly parentDatabaseId!: pulumi.Output<string>;
-    public /*out*/ readonly parentSourceDatabaseId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentDatabaseId: pulumi.Output<string>;
+    declare public /*out*/ readonly parentSourceDatabaseId: pulumi.Output<string>;
     /**
      * post script command
      */
-    public readonly postScriptCmd!: pulumi.Output<string | undefined>;
+    declare public readonly postScriptCmd: pulumi.Output<string | undefined>;
     /**
      * pre script command
      */
-    public readonly preScriptCmd!: pulumi.Output<string | undefined>;
+    declare public readonly preScriptCmd: pulumi.Output<string | undefined>;
     /**
      * properties of database created
      */
-    public /*out*/ readonly properties!: pulumi.Output<outputs.NdbScaleDatabaseProperty[]>;
+    declare public /*out*/ readonly properties: pulumi.Output<outputs.NdbScaleDatabaseProperty[]>;
     /**
      * scale count helps to scale the same instance with same config
      */
-    public readonly scaleCount!: pulumi.Output<number | undefined>;
+    declare public readonly scaleCount: pulumi.Output<number | undefined>;
     /**
      * status of instance
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
      */
-    public readonly tags!: pulumi.Output<outputs.NdbScaleDatabaseTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.NdbScaleDatabaseTag[]>;
     /**
      * time machine id of instance
      */
-    public /*out*/ readonly timeMachineId!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeMachineId: pulumi.Output<string>;
     /**
      * Time Machine details of instance
      */
-    public /*out*/ readonly timeMachines!: pulumi.Output<outputs.NdbScaleDatabaseTimeMachine[]>;
+    declare public /*out*/ readonly timeMachines: pulumi.Output<outputs.NdbScaleDatabaseTimeMachine[]>;
     /**
      * timezone on which instance is created xw
      */
-    public /*out*/ readonly timeZone!: pulumi.Output<string>;
+    declare public /*out*/ readonly timeZone: pulumi.Output<string>;
     /**
      * type of database
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
 
     /**
      * Create a NdbScaleDatabase resource with the given unique name, arguments, and options.
@@ -182,55 +182,55 @@ export class NdbScaleDatabase extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbScaleDatabaseState | undefined;
-            resourceInputs["applicationType"] = state ? state.applicationType : undefined;
-            resourceInputs["clone"] = state ? state.clone : undefined;
-            resourceInputs["dataStorageSize"] = state ? state.dataStorageSize : undefined;
-            resourceInputs["databaseClusterType"] = state ? state.databaseClusterType : undefined;
-            resourceInputs["databaseInstanceId"] = state ? state.databaseInstanceId : undefined;
-            resourceInputs["databaseName"] = state ? state.databaseName : undefined;
-            resourceInputs["databaseNodes"] = state ? state.databaseNodes : undefined;
-            resourceInputs["databaseUuid"] = state ? state.databaseUuid : undefined;
-            resourceInputs["databasetype"] = state ? state.databasetype : undefined;
-            resourceInputs["dateCreated"] = state ? state.dateCreated : undefined;
-            resourceInputs["dateModified"] = state ? state.dateModified : undefined;
-            resourceInputs["dbserverLogicalCluster"] = state ? state.dbserverLogicalCluster : undefined;
-            resourceInputs["dbserverLogicalClusterId"] = state ? state.dbserverLogicalClusterId : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["infos"] = state ? state.infos : undefined;
-            resourceInputs["lcmConfigs"] = state ? state.lcmConfigs : undefined;
-            resourceInputs["linkedDatabases"] = state ? state.linkedDatabases : undefined;
-            resourceInputs["metric"] = state ? state.metric : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["parentDatabaseId"] = state ? state.parentDatabaseId : undefined;
-            resourceInputs["parentSourceDatabaseId"] = state ? state.parentSourceDatabaseId : undefined;
-            resourceInputs["postScriptCmd"] = state ? state.postScriptCmd : undefined;
-            resourceInputs["preScriptCmd"] = state ? state.preScriptCmd : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["scaleCount"] = state ? state.scaleCount : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["timeMachineId"] = state ? state.timeMachineId : undefined;
-            resourceInputs["timeMachines"] = state ? state.timeMachines : undefined;
-            resourceInputs["timeZone"] = state ? state.timeZone : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["applicationType"] = state?.applicationType;
+            resourceInputs["clone"] = state?.clone;
+            resourceInputs["dataStorageSize"] = state?.dataStorageSize;
+            resourceInputs["databaseClusterType"] = state?.databaseClusterType;
+            resourceInputs["databaseInstanceId"] = state?.databaseInstanceId;
+            resourceInputs["databaseName"] = state?.databaseName;
+            resourceInputs["databaseNodes"] = state?.databaseNodes;
+            resourceInputs["databaseUuid"] = state?.databaseUuid;
+            resourceInputs["databasetype"] = state?.databasetype;
+            resourceInputs["dateCreated"] = state?.dateCreated;
+            resourceInputs["dateModified"] = state?.dateModified;
+            resourceInputs["dbserverLogicalCluster"] = state?.dbserverLogicalCluster;
+            resourceInputs["dbserverLogicalClusterId"] = state?.dbserverLogicalClusterId;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["infos"] = state?.infos;
+            resourceInputs["lcmConfigs"] = state?.lcmConfigs;
+            resourceInputs["linkedDatabases"] = state?.linkedDatabases;
+            resourceInputs["metric"] = state?.metric;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["parentDatabaseId"] = state?.parentDatabaseId;
+            resourceInputs["parentSourceDatabaseId"] = state?.parentSourceDatabaseId;
+            resourceInputs["postScriptCmd"] = state?.postScriptCmd;
+            resourceInputs["preScriptCmd"] = state?.preScriptCmd;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["scaleCount"] = state?.scaleCount;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["timeMachineId"] = state?.timeMachineId;
+            resourceInputs["timeMachines"] = state?.timeMachines;
+            resourceInputs["timeZone"] = state?.timeZone;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as NdbScaleDatabaseArgs | undefined;
-            if ((!args || args.applicationType === undefined) && !opts.urn) {
+            if (args?.applicationType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'applicationType'");
             }
-            if ((!args || args.dataStorageSize === undefined) && !opts.urn) {
+            if (args?.dataStorageSize === undefined && !opts.urn) {
                 throw new Error("Missing required property 'dataStorageSize'");
             }
-            if ((!args || args.databaseUuid === undefined) && !opts.urn) {
+            if (args?.databaseUuid === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseUuid'");
             }
-            resourceInputs["applicationType"] = args ? args.applicationType : undefined;
-            resourceInputs["dataStorageSize"] = args ? args.dataStorageSize : undefined;
-            resourceInputs["databaseUuid"] = args ? args.databaseUuid : undefined;
-            resourceInputs["postScriptCmd"] = args ? args.postScriptCmd : undefined;
-            resourceInputs["preScriptCmd"] = args ? args.preScriptCmd : undefined;
-            resourceInputs["scaleCount"] = args ? args.scaleCount : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
+            resourceInputs["applicationType"] = args?.applicationType;
+            resourceInputs["dataStorageSize"] = args?.dataStorageSize;
+            resourceInputs["databaseUuid"] = args?.databaseUuid;
+            resourceInputs["postScriptCmd"] = args?.postScriptCmd;
+            resourceInputs["preScriptCmd"] = args?.preScriptCmd;
+            resourceInputs["scaleCount"] = args?.scaleCount;
+            resourceInputs["tags"] = args?.tags;
             resourceInputs["clone"] = undefined /*out*/;
             resourceInputs["databaseClusterType"] = undefined /*out*/;
             resourceInputs["databaseInstanceId"] = undefined /*out*/;

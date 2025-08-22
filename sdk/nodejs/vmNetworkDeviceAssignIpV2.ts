@@ -34,9 +34,9 @@ export class VmNetworkDeviceAssignIpV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === VmNetworkDeviceAssignIpV2.__pulumiType;
     }
 
-    public readonly extId!: pulumi.Output<string>;
-    public readonly ipAddresses!: pulumi.Output<outputs.VmNetworkDeviceAssignIpV2IpAddress[]>;
-    public readonly vmExtId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
+    declare public readonly ipAddresses: pulumi.Output<outputs.VmNetworkDeviceAssignIpV2IpAddress[]>;
+    declare public readonly vmExtId: pulumi.Output<string>;
 
     /**
      * Create a VmNetworkDeviceAssignIpV2 resource with the given unique name, arguments, and options.
@@ -51,20 +51,20 @@ export class VmNetworkDeviceAssignIpV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VmNetworkDeviceAssignIpV2State | undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["ipAddresses"] = state ? state.ipAddresses : undefined;
-            resourceInputs["vmExtId"] = state ? state.vmExtId : undefined;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["ipAddresses"] = state?.ipAddresses;
+            resourceInputs["vmExtId"] = state?.vmExtId;
         } else {
             const args = argsOrState as VmNetworkDeviceAssignIpV2Args | undefined;
-            if ((!args || args.extId === undefined) && !opts.urn) {
+            if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
-            if ((!args || args.vmExtId === undefined) && !opts.urn) {
+            if (args?.vmExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vmExtId'");
             }
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["ipAddresses"] = args ? args.ipAddresses : undefined;
-            resourceInputs["vmExtId"] = args ? args.vmExtId : undefined;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["ipAddresses"] = args?.ipAddresses;
+            resourceInputs["vmExtId"] = args?.vmExtId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(VmNetworkDeviceAssignIpV2.__pulumiType, name, resourceInputs, opts);

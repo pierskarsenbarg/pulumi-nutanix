@@ -59,19 +59,19 @@ export class SelfServiceAppCustomAction extends pulumi.CustomResource {
      *
      * Both (`appName` and `appUuid`) are optional. You can provide either of them. But atleast one of them is required to make this resource work.
      */
-    public readonly actionName!: pulumi.Output<string>;
+    declare public readonly actionName: pulumi.Output<string>;
     /**
      * - (Optional) The name of the application.
      */
-    public readonly appName!: pulumi.Output<string | undefined>;
+    declare public readonly appName: pulumi.Output<string | undefined>;
     /**
      * - (Optional) The UUID of the application.
      */
-    public readonly appUuid!: pulumi.Output<string | undefined>;
+    declare public readonly appUuid: pulumi.Output<string | undefined>;
     /**
      * - (Computed) The UUID of the runlog associated with the execution of the custom action. This can be used to track the progress or status of the action execution.
      */
-    public readonly runlogUuid!: pulumi.Output<string>;
+    declare public readonly runlogUuid: pulumi.Output<string>;
 
     /**
      * Create a SelfServiceAppCustomAction resource with the given unique name, arguments, and options.
@@ -86,19 +86,19 @@ export class SelfServiceAppCustomAction extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SelfServiceAppCustomActionState | undefined;
-            resourceInputs["actionName"] = state ? state.actionName : undefined;
-            resourceInputs["appName"] = state ? state.appName : undefined;
-            resourceInputs["appUuid"] = state ? state.appUuid : undefined;
-            resourceInputs["runlogUuid"] = state ? state.runlogUuid : undefined;
+            resourceInputs["actionName"] = state?.actionName;
+            resourceInputs["appName"] = state?.appName;
+            resourceInputs["appUuid"] = state?.appUuid;
+            resourceInputs["runlogUuid"] = state?.runlogUuid;
         } else {
             const args = argsOrState as SelfServiceAppCustomActionArgs | undefined;
-            if ((!args || args.actionName === undefined) && !opts.urn) {
+            if (args?.actionName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'actionName'");
             }
-            resourceInputs["actionName"] = args ? args.actionName : undefined;
-            resourceInputs["appName"] = args ? args.appName : undefined;
-            resourceInputs["appUuid"] = args ? args.appUuid : undefined;
-            resourceInputs["runlogUuid"] = args ? args.runlogUuid : undefined;
+            resourceInputs["actionName"] = args?.actionName;
+            resourceInputs["appName"] = args?.appName;
+            resourceInputs["appUuid"] = args?.appUuid;
+            resourceInputs["runlogUuid"] = args?.runlogUuid;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SelfServiceAppCustomAction.__pulumiType, name, resourceInputs, opts);

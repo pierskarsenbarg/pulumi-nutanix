@@ -145,53 +145,53 @@ export class KarbonCluster extends pulumi.CustomResource {
     /**
      * - (Optional) The active passive mode uses the Virtual Router Redundancy Protocol (VRRP) protocol to provide high availability of the master. **Note:** Updates to this attribute forces new resource creation.
      */
-    public readonly activePassiveConfig!: pulumi.Output<outputs.KarbonClusterActivePassiveConfig | undefined>;
+    declare public readonly activePassiveConfig: pulumi.Output<outputs.KarbonClusterActivePassiveConfig | undefined>;
     /**
      * - (Required) K8s cluster networking configuration. The flannel or the calico configuration needs to be provided. **Note:** Updates to this attribute forces new resource creation.
      */
-    public readonly cniConfig!: pulumi.Output<outputs.KarbonClusterCniConfig>;
-    public /*out*/ readonly deploymentType!: pulumi.Output<string>;
+    declare public readonly cniConfig: pulumi.Output<outputs.KarbonClusterCniConfig>;
+    declare public /*out*/ readonly deploymentType: pulumi.Output<string>;
     /**
      * - (Required) Configuration of the node pools that the nodes in the etcd cluster belong to. The etcd nodes require a minimum of 8,192 MiB memory and 409,60 MiB disk space.
      */
-    public readonly etcdNodePool!: pulumi.Output<outputs.KarbonClusterEtcdNodePool>;
+    declare public readonly etcdNodePool: pulumi.Output<outputs.KarbonClusterEtcdNodePool>;
     /**
      * - (Optional) The external load balancer configuration in the case of a multi-master-external-load-balancer type master deployment. **Note:** Updates to this attribute forces new resource creation.
      */
-    public readonly externalLbConfig!: pulumi.Output<outputs.KarbonClusterExternalLbConfig | undefined>;
-    public /*out*/ readonly kubeapiServerIpv4Address!: pulumi.Output<string>;
+    declare public readonly externalLbConfig: pulumi.Output<outputs.KarbonClusterExternalLbConfig | undefined>;
+    declare public /*out*/ readonly kubeapiServerIpv4Address: pulumi.Output<string>;
     /**
      * - (Required) Configuration of the master node pools.
      */
-    public readonly masterNodePool!: pulumi.Output<outputs.KarbonClusterMasterNodePool>;
+    declare public readonly masterNodePool: pulumi.Output<outputs.KarbonClusterMasterNodePool>;
     /**
      * - (Required) The name for the k8s cluster. **Note:** Updates to this attribute forces new resource creation.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * - (Optional) Allows the Karbon cluster to pull images of a list of private registries.
      */
-    public readonly privateRegistries!: pulumi.Output<outputs.KarbonClusterPrivateRegistry[] | undefined>;
+    declare public readonly privateRegistries: pulumi.Output<outputs.KarbonClusterPrivateRegistry[] | undefined>;
     /**
      * - (Optional) Configuration of a single master node. **Note:** Updates to this attribute forces new resource creation.
      */
-    public readonly singleMasterConfig!: pulumi.Output<outputs.KarbonClusterSingleMasterConfig | undefined>;
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public readonly singleMasterConfig: pulumi.Output<outputs.KarbonClusterSingleMasterConfig | undefined>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * - (Required) Storage class configuration attribute for defining the persistent volume attributes. **Note:** Updates to this attribute forces new resource creation.
      */
-    public readonly storageClassConfig!: pulumi.Output<outputs.KarbonClusterStorageClassConfig>;
+    declare public readonly storageClassConfig: pulumi.Output<outputs.KarbonClusterStorageClassConfig>;
     /**
      * - (Required) K8s version of the cluster. **Note:** Updates to this attribute forces new resource creation.
      */
-    public readonly version!: pulumi.Output<string>;
+    declare public readonly version: pulumi.Output<string>;
     /**
      * - (Optional) Maximum wait time for the Karbon cluster to provision.
      *
      * @deprecated use timeouts instead
      */
-    public readonly waitTimeoutMinutes!: pulumi.Output<number | undefined>;
-    public readonly workerNodePool!: pulumi.Output<outputs.KarbonClusterWorkerNodePool>;
+    declare public readonly waitTimeoutMinutes: pulumi.Output<number | undefined>;
+    declare public readonly workerNodePool: pulumi.Output<outputs.KarbonClusterWorkerNodePool>;
 
     /**
      * Create a KarbonCluster resource with the given unique name, arguments, and options.
@@ -206,53 +206,53 @@ export class KarbonCluster extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as KarbonClusterState | undefined;
-            resourceInputs["activePassiveConfig"] = state ? state.activePassiveConfig : undefined;
-            resourceInputs["cniConfig"] = state ? state.cniConfig : undefined;
-            resourceInputs["deploymentType"] = state ? state.deploymentType : undefined;
-            resourceInputs["etcdNodePool"] = state ? state.etcdNodePool : undefined;
-            resourceInputs["externalLbConfig"] = state ? state.externalLbConfig : undefined;
-            resourceInputs["kubeapiServerIpv4Address"] = state ? state.kubeapiServerIpv4Address : undefined;
-            resourceInputs["masterNodePool"] = state ? state.masterNodePool : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["privateRegistries"] = state ? state.privateRegistries : undefined;
-            resourceInputs["singleMasterConfig"] = state ? state.singleMasterConfig : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["storageClassConfig"] = state ? state.storageClassConfig : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
-            resourceInputs["waitTimeoutMinutes"] = state ? state.waitTimeoutMinutes : undefined;
-            resourceInputs["workerNodePool"] = state ? state.workerNodePool : undefined;
+            resourceInputs["activePassiveConfig"] = state?.activePassiveConfig;
+            resourceInputs["cniConfig"] = state?.cniConfig;
+            resourceInputs["deploymentType"] = state?.deploymentType;
+            resourceInputs["etcdNodePool"] = state?.etcdNodePool;
+            resourceInputs["externalLbConfig"] = state?.externalLbConfig;
+            resourceInputs["kubeapiServerIpv4Address"] = state?.kubeapiServerIpv4Address;
+            resourceInputs["masterNodePool"] = state?.masterNodePool;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["privateRegistries"] = state?.privateRegistries;
+            resourceInputs["singleMasterConfig"] = state?.singleMasterConfig;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["storageClassConfig"] = state?.storageClassConfig;
+            resourceInputs["version"] = state?.version;
+            resourceInputs["waitTimeoutMinutes"] = state?.waitTimeoutMinutes;
+            resourceInputs["workerNodePool"] = state?.workerNodePool;
         } else {
             const args = argsOrState as KarbonClusterArgs | undefined;
-            if ((!args || args.cniConfig === undefined) && !opts.urn) {
+            if (args?.cniConfig === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cniConfig'");
             }
-            if ((!args || args.etcdNodePool === undefined) && !opts.urn) {
+            if (args?.etcdNodePool === undefined && !opts.urn) {
                 throw new Error("Missing required property 'etcdNodePool'");
             }
-            if ((!args || args.masterNodePool === undefined) && !opts.urn) {
+            if (args?.masterNodePool === undefined && !opts.urn) {
                 throw new Error("Missing required property 'masterNodePool'");
             }
-            if ((!args || args.storageClassConfig === undefined) && !opts.urn) {
+            if (args?.storageClassConfig === undefined && !opts.urn) {
                 throw new Error("Missing required property 'storageClassConfig'");
             }
-            if ((!args || args.version === undefined) && !opts.urn) {
+            if (args?.version === undefined && !opts.urn) {
                 throw new Error("Missing required property 'version'");
             }
-            if ((!args || args.workerNodePool === undefined) && !opts.urn) {
+            if (args?.workerNodePool === undefined && !opts.urn) {
                 throw new Error("Missing required property 'workerNodePool'");
             }
-            resourceInputs["activePassiveConfig"] = args ? args.activePassiveConfig : undefined;
-            resourceInputs["cniConfig"] = args ? args.cniConfig : undefined;
-            resourceInputs["etcdNodePool"] = args ? args.etcdNodePool : undefined;
-            resourceInputs["externalLbConfig"] = args ? args.externalLbConfig : undefined;
-            resourceInputs["masterNodePool"] = args ? args.masterNodePool : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["privateRegistries"] = args ? args.privateRegistries : undefined;
-            resourceInputs["singleMasterConfig"] = args ? args.singleMasterConfig : undefined;
-            resourceInputs["storageClassConfig"] = args ? args.storageClassConfig : undefined;
-            resourceInputs["version"] = args ? args.version : undefined;
-            resourceInputs["waitTimeoutMinutes"] = args ? args.waitTimeoutMinutes : undefined;
-            resourceInputs["workerNodePool"] = args ? args.workerNodePool : undefined;
+            resourceInputs["activePassiveConfig"] = args?.activePassiveConfig;
+            resourceInputs["cniConfig"] = args?.cniConfig;
+            resourceInputs["etcdNodePool"] = args?.etcdNodePool;
+            resourceInputs["externalLbConfig"] = args?.externalLbConfig;
+            resourceInputs["masterNodePool"] = args?.masterNodePool;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["privateRegistries"] = args?.privateRegistries;
+            resourceInputs["singleMasterConfig"] = args?.singleMasterConfig;
+            resourceInputs["storageClassConfig"] = args?.storageClassConfig;
+            resourceInputs["version"] = args?.version;
+            resourceInputs["waitTimeoutMinutes"] = args?.waitTimeoutMinutes;
+            resourceInputs["workerNodePool"] = args?.workerNodePool;
             resourceInputs["deploymentType"] = undefined /*out*/;
             resourceInputs["kubeapiServerIpv4Address"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;

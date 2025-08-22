@@ -71,75 +71,75 @@ export class NdbMaintenanceWindow extends pulumi.CustomResource {
     /**
      * access level
      */
-    public /*out*/ readonly accessLevel!: pulumi.Output<string>;
+    declare public /*out*/ readonly accessLevel: pulumi.Output<string>;
     /**
      * created date of maintenance window
      */
-    public /*out*/ readonly dateCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateCreated: pulumi.Output<string>;
     /**
      * modified date of maintenance window
      */
-    public /*out*/ readonly dateModified!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateModified: pulumi.Output<string>;
     /**
      * Day of the week to trigger maintenance window. Supports [ MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
      */
-    public readonly dayOfWeek!: pulumi.Output<string | undefined>;
+    declare public readonly dayOfWeek: pulumi.Output<string | undefined>;
     /**
      * Description for maintenance window
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * duration in hours. Default is 2
      */
-    public readonly duration!: pulumi.Output<number | undefined>;
+    declare public readonly duration: pulumi.Output<number | undefined>;
     /**
      * entity task association for maintenance window
      */
-    public /*out*/ readonly entityTaskAssocs!: pulumi.Output<outputs.NdbMaintenanceWindowEntityTaskAssoc[]>;
+    declare public /*out*/ readonly entityTaskAssocs: pulumi.Output<outputs.NdbMaintenanceWindowEntityTaskAssoc[]>;
     /**
      * Name for the maintenance window.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * next run time for maintenance window to trigger
      */
-    public /*out*/ readonly nextRunTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly nextRunTime: pulumi.Output<string>;
     /**
      * owner id of maintenance window
      */
-    public /*out*/ readonly ownerId!: pulumi.Output<string>;
+    declare public /*out*/ readonly ownerId: pulumi.Output<string>;
     /**
      * properties of maintenance window
      */
-    public /*out*/ readonly properties!: pulumi.Output<outputs.NdbMaintenanceWindowProperty[]>;
+    declare public /*out*/ readonly properties: pulumi.Output<outputs.NdbMaintenanceWindowProperty[]>;
     /**
      * Supported values [ MONTHLY, WEEKLY ]
      */
-    public readonly recurrence!: pulumi.Output<string>;
+    declare public readonly recurrence: pulumi.Output<string>;
     /**
      * schedule of maintenance window
      */
-    public /*out*/ readonly schedules!: pulumi.Output<outputs.NdbMaintenanceWindowSchedule[]>;
+    declare public /*out*/ readonly schedules: pulumi.Output<outputs.NdbMaintenanceWindowSchedule[]>;
     /**
      * start time for maintenance window to trigger
      */
-    public readonly startTime!: pulumi.Output<string>;
+    declare public readonly startTime: pulumi.Output<string>;
     /**
      * status of maintennace window
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * tags of maintenance window
      */
-    public readonly tags!: pulumi.Output<outputs.NdbMaintenanceWindowTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.NdbMaintenanceWindowTag[]>;
     /**
      * timezone . Default is Asia/Calcutta .
      */
-    public readonly timezone!: pulumi.Output<string | undefined>;
+    declare public readonly timezone: pulumi.Output<string | undefined>;
     /**
      * week of the month. Supports [1, 2, 3, 4] .
      */
-    public readonly weekOfMonth!: pulumi.Output<number | undefined>;
+    declare public readonly weekOfMonth: pulumi.Output<number | undefined>;
 
     /**
      * Create a NdbMaintenanceWindow resource with the given unique name, arguments, and options.
@@ -154,41 +154,41 @@ export class NdbMaintenanceWindow extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbMaintenanceWindowState | undefined;
-            resourceInputs["accessLevel"] = state ? state.accessLevel : undefined;
-            resourceInputs["dateCreated"] = state ? state.dateCreated : undefined;
-            resourceInputs["dateModified"] = state ? state.dateModified : undefined;
-            resourceInputs["dayOfWeek"] = state ? state.dayOfWeek : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["duration"] = state ? state.duration : undefined;
-            resourceInputs["entityTaskAssocs"] = state ? state.entityTaskAssocs : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["nextRunTime"] = state ? state.nextRunTime : undefined;
-            resourceInputs["ownerId"] = state ? state.ownerId : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["recurrence"] = state ? state.recurrence : undefined;
-            resourceInputs["schedules"] = state ? state.schedules : undefined;
-            resourceInputs["startTime"] = state ? state.startTime : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["timezone"] = state ? state.timezone : undefined;
-            resourceInputs["weekOfMonth"] = state ? state.weekOfMonth : undefined;
+            resourceInputs["accessLevel"] = state?.accessLevel;
+            resourceInputs["dateCreated"] = state?.dateCreated;
+            resourceInputs["dateModified"] = state?.dateModified;
+            resourceInputs["dayOfWeek"] = state?.dayOfWeek;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["duration"] = state?.duration;
+            resourceInputs["entityTaskAssocs"] = state?.entityTaskAssocs;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["nextRunTime"] = state?.nextRunTime;
+            resourceInputs["ownerId"] = state?.ownerId;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["recurrence"] = state?.recurrence;
+            resourceInputs["schedules"] = state?.schedules;
+            resourceInputs["startTime"] = state?.startTime;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["timezone"] = state?.timezone;
+            resourceInputs["weekOfMonth"] = state?.weekOfMonth;
         } else {
             const args = argsOrState as NdbMaintenanceWindowArgs | undefined;
-            if ((!args || args.recurrence === undefined) && !opts.urn) {
+            if (args?.recurrence === undefined && !opts.urn) {
                 throw new Error("Missing required property 'recurrence'");
             }
-            if ((!args || args.startTime === undefined) && !opts.urn) {
+            if (args?.startTime === undefined && !opts.urn) {
                 throw new Error("Missing required property 'startTime'");
             }
-            resourceInputs["dayOfWeek"] = args ? args.dayOfWeek : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["duration"] = args ? args.duration : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["recurrence"] = args ? args.recurrence : undefined;
-            resourceInputs["startTime"] = args ? args.startTime : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["timezone"] = args ? args.timezone : undefined;
-            resourceInputs["weekOfMonth"] = args ? args.weekOfMonth : undefined;
+            resourceInputs["dayOfWeek"] = args?.dayOfWeek;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["duration"] = args?.duration;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["recurrence"] = args?.recurrence;
+            resourceInputs["startTime"] = args?.startTime;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["timezone"] = args?.timezone;
+            resourceInputs["weekOfMonth"] = args?.weekOfMonth;
             resourceInputs["accessLevel"] = undefined /*out*/;
             resourceInputs["dateCreated"] = undefined /*out*/;
             resourceInputs["dateModified"] = undefined /*out*/;

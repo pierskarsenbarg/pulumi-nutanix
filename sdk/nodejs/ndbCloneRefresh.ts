@@ -53,18 +53,18 @@ export class NdbCloneRefresh extends pulumi.CustomResource {
     /**
      * clone id
      */
-    public readonly cloneId!: pulumi.Output<string>;
+    declare public readonly cloneId: pulumi.Output<string>;
     /**
      * snapshot id where clone has to be refreshed
      */
-    public readonly snapshotId!: pulumi.Output<string | undefined>;
+    declare public readonly snapshotId: pulumi.Output<string | undefined>;
     /**
      * timezone. Default is Asia/Calcutta. 
      *
      * See detailed information in [NDB Clone Refresh](https://www.nutanix.dev/api_references/ndb/#/d4e53fff274fa-start-refresh-operation-for-the-given-clone).
      */
-    public readonly timezone!: pulumi.Output<string | undefined>;
-    public readonly userPitrTimestamp!: pulumi.Output<string | undefined>;
+    declare public readonly timezone: pulumi.Output<string | undefined>;
+    declare public readonly userPitrTimestamp: pulumi.Output<string | undefined>;
 
     /**
      * Create a NdbCloneRefresh resource with the given unique name, arguments, and options.
@@ -79,19 +79,19 @@ export class NdbCloneRefresh extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbCloneRefreshState | undefined;
-            resourceInputs["cloneId"] = state ? state.cloneId : undefined;
-            resourceInputs["snapshotId"] = state ? state.snapshotId : undefined;
-            resourceInputs["timezone"] = state ? state.timezone : undefined;
-            resourceInputs["userPitrTimestamp"] = state ? state.userPitrTimestamp : undefined;
+            resourceInputs["cloneId"] = state?.cloneId;
+            resourceInputs["snapshotId"] = state?.snapshotId;
+            resourceInputs["timezone"] = state?.timezone;
+            resourceInputs["userPitrTimestamp"] = state?.userPitrTimestamp;
         } else {
             const args = argsOrState as NdbCloneRefreshArgs | undefined;
-            if ((!args || args.cloneId === undefined) && !opts.urn) {
+            if (args?.cloneId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'cloneId'");
             }
-            resourceInputs["cloneId"] = args ? args.cloneId : undefined;
-            resourceInputs["snapshotId"] = args ? args.snapshotId : undefined;
-            resourceInputs["timezone"] = args ? args.timezone : undefined;
-            resourceInputs["userPitrTimestamp"] = args ? args.userPitrTimestamp : undefined;
+            resourceInputs["cloneId"] = args?.cloneId;
+            resourceInputs["snapshotId"] = args?.snapshotId;
+            resourceInputs["timezone"] = args?.timezone;
+            resourceInputs["userPitrTimestamp"] = args?.userPitrTimestamp;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NdbCloneRefresh.__pulumiType, name, resourceInputs, opts);

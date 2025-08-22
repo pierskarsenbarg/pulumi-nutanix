@@ -64,8 +64,8 @@ export class AssociateCategoryToVolumeGroupV2 extends pulumi.CustomResource {
     /**
      * -(Required) The category to be associated/disassociated with the Volume Group. This is a mandatory field.
      */
-    public readonly categories!: pulumi.Output<outputs.AssociateCategoryToVolumeGroupV2Category[] | undefined>;
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly categories: pulumi.Output<outputs.AssociateCategoryToVolumeGroupV2Category[] | undefined>;
+    declare public readonly extId: pulumi.Output<string>;
 
     /**
      * Create a AssociateCategoryToVolumeGroupV2 resource with the given unique name, arguments, and options.
@@ -80,15 +80,15 @@ export class AssociateCategoryToVolumeGroupV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AssociateCategoryToVolumeGroupV2State | undefined;
-            resourceInputs["categories"] = state ? state.categories : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
+            resourceInputs["categories"] = state?.categories;
+            resourceInputs["extId"] = state?.extId;
         } else {
             const args = argsOrState as AssociateCategoryToVolumeGroupV2Args | undefined;
-            if ((!args || args.extId === undefined) && !opts.urn) {
+            if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
-            resourceInputs["categories"] = args ? args.categories : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
+            resourceInputs["categories"] = args?.categories;
+            resourceInputs["extId"] = args?.extId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(AssociateCategoryToVolumeGroupV2.__pulumiType, name, resourceInputs, opts);

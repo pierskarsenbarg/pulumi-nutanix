@@ -55,20 +55,20 @@ export class LcmPrechecksV2 extends pulumi.CustomResource {
     /**
      * List of entity update objects for getting recommendations.
      */
-    public readonly entityUpdateSpecs!: pulumi.Output<outputs.LcmPrechecksV2EntityUpdateSpec[]>;
-    public /*out*/ readonly extId!: pulumi.Output<string>;
+    declare public readonly entityUpdateSpecs: pulumi.Output<outputs.LcmPrechecksV2EntityUpdateSpec[]>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
     /**
      * Cluster management server configuration used while updating clusters with ESX or Hyper-V.
      */
-    public readonly managementServer!: pulumi.Output<outputs.LcmPrechecksV2ManagementServer | undefined>;
+    declare public readonly managementServer: pulumi.Output<outputs.LcmPrechecksV2ManagementServer | undefined>;
     /**
      * List of prechecks to skip. The allowed value is 'powerOffUvms' that skips the pinned VM prechecks. Items Enum: `POWER_OFF_UVMS`
      */
-    public readonly skippedPrecheckFlags!: pulumi.Output<string[] | undefined>;
+    declare public readonly skippedPrecheckFlags: pulumi.Output<string[] | undefined>;
     /**
      * Cluster uuid on which the resource is present or operation is being performed.
      */
-    public readonly xClusterId!: pulumi.Output<string | undefined>;
+    declare public readonly xClusterId: pulumi.Output<string | undefined>;
 
     /**
      * Create a LcmPrechecksV2 resource with the given unique name, arguments, and options.
@@ -83,20 +83,20 @@ export class LcmPrechecksV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LcmPrechecksV2State | undefined;
-            resourceInputs["entityUpdateSpecs"] = state ? state.entityUpdateSpecs : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["managementServer"] = state ? state.managementServer : undefined;
-            resourceInputs["skippedPrecheckFlags"] = state ? state.skippedPrecheckFlags : undefined;
-            resourceInputs["xClusterId"] = state ? state.xClusterId : undefined;
+            resourceInputs["entityUpdateSpecs"] = state?.entityUpdateSpecs;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["managementServer"] = state?.managementServer;
+            resourceInputs["skippedPrecheckFlags"] = state?.skippedPrecheckFlags;
+            resourceInputs["xClusterId"] = state?.xClusterId;
         } else {
             const args = argsOrState as LcmPrechecksV2Args | undefined;
-            if ((!args || args.entityUpdateSpecs === undefined) && !opts.urn) {
+            if (args?.entityUpdateSpecs === undefined && !opts.urn) {
                 throw new Error("Missing required property 'entityUpdateSpecs'");
             }
-            resourceInputs["entityUpdateSpecs"] = args ? args.entityUpdateSpecs : undefined;
-            resourceInputs["managementServer"] = args ? args.managementServer : undefined;
-            resourceInputs["skippedPrecheckFlags"] = args ? args.skippedPrecheckFlags : undefined;
-            resourceInputs["xClusterId"] = args ? args.xClusterId : undefined;
+            resourceInputs["entityUpdateSpecs"] = args?.entityUpdateSpecs;
+            resourceInputs["managementServer"] = args?.managementServer;
+            resourceInputs["skippedPrecheckFlags"] = args?.skippedPrecheckFlags;
+            resourceInputs["xClusterId"] = args?.xClusterId;
             resourceInputs["extId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

@@ -52,162 +52,162 @@ export class NdbDatabaseSnapshot extends pulumi.CustomResource {
     /**
      * App info version
      */
-    public /*out*/ readonly appInfoVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly appInfoVersion: pulumi.Output<string>;
     /**
      * Applicable types
      */
-    public /*out*/ readonly applicableTypes!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly applicableTypes: pulumi.Output<string[]>;
     /**
      * database node id
      */
-    public /*out*/ readonly databaseNodeId!: pulumi.Output<string>;
+    declare public /*out*/ readonly databaseNodeId: pulumi.Output<string>;
     /**
      * database snapshot
      */
-    public /*out*/ readonly databaseSnapshot!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly databaseSnapshot: pulumi.Output<boolean>;
     /**
      * created date
      */
-    public /*out*/ readonly dateCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateCreated: pulumi.Output<string>;
     /**
      * modified date
      */
-    public /*out*/ readonly dateModified!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateModified: pulumi.Output<string>;
     /**
      * dbserver id
      */
-    public /*out*/ readonly dbserverId!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbserverId: pulumi.Output<string>;
     /**
      * dbserver ip
      */
-    public /*out*/ readonly dbserverIp!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbserverIp: pulumi.Output<string>;
     /**
      * dbserver name
      */
-    public /*out*/ readonly dbserverName!: pulumi.Output<string>;
+    declare public /*out*/ readonly dbserverName: pulumi.Output<string>;
     /**
      * dbserver storage metadata version
      */
-    public /*out*/ readonly dbserverStorageMetadataVersion!: pulumi.Output<number>;
+    declare public /*out*/ readonly dbserverStorageMetadataVersion: pulumi.Output<number>;
     /**
      * description of snapshot
      */
-    public /*out*/ readonly description!: pulumi.Output<string>;
+    declare public /*out*/ readonly description: pulumi.Output<string>;
     /**
      * Default is set to Asia/Calcutta
      */
-    public readonly expiryDateTimezone!: pulumi.Output<string | undefined>;
+    declare public readonly expiryDateTimezone: pulumi.Output<string | undefined>;
     /**
      * from timestamp
      */
-    public /*out*/ readonly fromTimestamp!: pulumi.Output<string>;
+    declare public /*out*/ readonly fromTimestamp: pulumi.Output<string>;
     /**
      * LCM config
      */
-    public /*out*/ readonly lcmConfigs!: pulumi.Output<outputs.NdbDatabaseSnapshotLcmConfig[]>;
+    declare public /*out*/ readonly lcmConfigs: pulumi.Output<outputs.NdbDatabaseSnapshotLcmConfig[]>;
     /**
      * Snapshot name. Default value is era_manual_snapshot.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * nx cluster id
      */
-    public /*out*/ readonly nxClusterId!: pulumi.Output<string>;
+    declare public /*out*/ readonly nxClusterId: pulumi.Output<string>;
     /**
      * parent snapshot
      */
-    public /*out*/ readonly parentSnapshot!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly parentSnapshot: pulumi.Output<boolean>;
     /**
      * parent snapshot id
      */
-    public /*out*/ readonly parentSnapshotId!: pulumi.Output<string>;
+    declare public /*out*/ readonly parentSnapshotId: pulumi.Output<string>;
     /**
      * processed
      */
-    public /*out*/ readonly processed!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly processed: pulumi.Output<boolean>;
     /**
      * properties
      */
-    public /*out*/ readonly properties!: pulumi.Output<outputs.NdbDatabaseSnapshotProperty[]>;
+    declare public /*out*/ readonly properties: pulumi.Output<outputs.NdbDatabaseSnapshotProperty[]>;
     /**
      * protection domain
      */
-    public /*out*/ readonly protectionDomainId!: pulumi.Output<string>;
+    declare public /*out*/ readonly protectionDomainId: pulumi.Output<string>;
     /**
      * Removal schedule after which the snapshot should be removed.
      */
-    public readonly removeScheduleInDays!: pulumi.Output<number | undefined>;
+    declare public readonly removeScheduleInDays: pulumi.Output<number | undefined>;
     /**
      * snapshots to be replicated to clusters.
      */
-    public readonly replicateToClusters!: pulumi.Output<string[] | undefined>;
+    declare public readonly replicateToClusters: pulumi.Output<string[] | undefined>;
     /**
      * replicated snapshots
      */
-    public /*out*/ readonly replicatedSnapshots!: pulumi.Output<string[]>;
-    public /*out*/ readonly santized!: pulumi.Output<boolean>;
-    public /*out*/ readonly santizedFromSnapshotId!: pulumi.Output<string>;
-    public /*out*/ readonly santizedSnapshots!: pulumi.Output<string>;
+    declare public /*out*/ readonly replicatedSnapshots: pulumi.Output<string[]>;
+    declare public /*out*/ readonly santized: pulumi.Output<boolean>;
+    declare public /*out*/ readonly santizedFromSnapshotId: pulumi.Output<string>;
+    declare public /*out*/ readonly santizedSnapshots: pulumi.Output<string>;
     /**
      * snapshot family
      */
-    public /*out*/ readonly snapshotFamily!: pulumi.Output<string>;
+    declare public /*out*/ readonly snapshotFamily: pulumi.Output<string>;
     /**
      * snapshot size
      */
-    public /*out*/ readonly snapshotSize!: pulumi.Output<number>;
+    declare public /*out*/ readonly snapshotSize: pulumi.Output<number>;
     /**
      * snapshot timeStamp
      */
-    public /*out*/ readonly snapshotTimestamp!: pulumi.Output<string>;
+    declare public /*out*/ readonly snapshotTimestamp: pulumi.Output<string>;
     /**
      * snapshot timestamp date
      */
-    public /*out*/ readonly snapshotTimestampDate!: pulumi.Output<number>;
+    declare public /*out*/ readonly snapshotTimestampDate: pulumi.Output<number>;
     /**
      * snapshot uuid
      */
-    public /*out*/ readonly snapshotUuid!: pulumi.Output<string>;
+    declare public /*out*/ readonly snapshotUuid: pulumi.Output<string>;
     /**
      * software database snapshot
      */
-    public /*out*/ readonly softwareDatabaseSnapshot!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly softwareDatabaseSnapshot: pulumi.Output<boolean>;
     /**
      * software snapshot
      */
-    public /*out*/ readonly softwareSnapshot!: pulumi.Output<string>;
+    declare public /*out*/ readonly softwareSnapshot: pulumi.Output<string>;
     /**
      * software snapshot id
      */
-    public /*out*/ readonly softwareSnapshotId!: pulumi.Output<string>;
+    declare public /*out*/ readonly softwareSnapshotId: pulumi.Output<string>;
     /**
      * status
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * tags
      */
-    public readonly tags!: pulumi.Output<outputs.NdbDatabaseSnapshotTag[]>;
+    declare public readonly tags: pulumi.Output<outputs.NdbDatabaseSnapshotTag[]>;
     /**
      * Time Machine Id
      */
-    public readonly timeMachineId!: pulumi.Output<string | undefined>;
+    declare public readonly timeMachineId: pulumi.Output<string | undefined>;
     /**
      * Time Machine Name
      */
-    public readonly timeMachineName!: pulumi.Output<string | undefined>;
+    declare public readonly timeMachineName: pulumi.Output<string | undefined>;
     /**
      * timezone
      */
-    public /*out*/ readonly timezone!: pulumi.Output<string>;
+    declare public /*out*/ readonly timezone: pulumi.Output<string>;
     /**
      * to timestamp
      */
-    public /*out*/ readonly toTimestamp!: pulumi.Output<string>;
+    declare public /*out*/ readonly toTimestamp: pulumi.Output<string>;
     /**
      * type
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
 
     /**
      * Create a NdbDatabaseSnapshot resource with the given unique name, arguments, and options.
@@ -222,57 +222,57 @@ export class NdbDatabaseSnapshot extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbDatabaseSnapshotState | undefined;
-            resourceInputs["appInfoVersion"] = state ? state.appInfoVersion : undefined;
-            resourceInputs["applicableTypes"] = state ? state.applicableTypes : undefined;
-            resourceInputs["databaseNodeId"] = state ? state.databaseNodeId : undefined;
-            resourceInputs["databaseSnapshot"] = state ? state.databaseSnapshot : undefined;
-            resourceInputs["dateCreated"] = state ? state.dateCreated : undefined;
-            resourceInputs["dateModified"] = state ? state.dateModified : undefined;
-            resourceInputs["dbserverId"] = state ? state.dbserverId : undefined;
-            resourceInputs["dbserverIp"] = state ? state.dbserverIp : undefined;
-            resourceInputs["dbserverName"] = state ? state.dbserverName : undefined;
-            resourceInputs["dbserverStorageMetadataVersion"] = state ? state.dbserverStorageMetadataVersion : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["expiryDateTimezone"] = state ? state.expiryDateTimezone : undefined;
-            resourceInputs["fromTimestamp"] = state ? state.fromTimestamp : undefined;
-            resourceInputs["lcmConfigs"] = state ? state.lcmConfigs : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["nxClusterId"] = state ? state.nxClusterId : undefined;
-            resourceInputs["parentSnapshot"] = state ? state.parentSnapshot : undefined;
-            resourceInputs["parentSnapshotId"] = state ? state.parentSnapshotId : undefined;
-            resourceInputs["processed"] = state ? state.processed : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["protectionDomainId"] = state ? state.protectionDomainId : undefined;
-            resourceInputs["removeScheduleInDays"] = state ? state.removeScheduleInDays : undefined;
-            resourceInputs["replicateToClusters"] = state ? state.replicateToClusters : undefined;
-            resourceInputs["replicatedSnapshots"] = state ? state.replicatedSnapshots : undefined;
-            resourceInputs["santized"] = state ? state.santized : undefined;
-            resourceInputs["santizedFromSnapshotId"] = state ? state.santizedFromSnapshotId : undefined;
-            resourceInputs["santizedSnapshots"] = state ? state.santizedSnapshots : undefined;
-            resourceInputs["snapshotFamily"] = state ? state.snapshotFamily : undefined;
-            resourceInputs["snapshotSize"] = state ? state.snapshotSize : undefined;
-            resourceInputs["snapshotTimestamp"] = state ? state.snapshotTimestamp : undefined;
-            resourceInputs["snapshotTimestampDate"] = state ? state.snapshotTimestampDate : undefined;
-            resourceInputs["snapshotUuid"] = state ? state.snapshotUuid : undefined;
-            resourceInputs["softwareDatabaseSnapshot"] = state ? state.softwareDatabaseSnapshot : undefined;
-            resourceInputs["softwareSnapshot"] = state ? state.softwareSnapshot : undefined;
-            resourceInputs["softwareSnapshotId"] = state ? state.softwareSnapshotId : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["timeMachineId"] = state ? state.timeMachineId : undefined;
-            resourceInputs["timeMachineName"] = state ? state.timeMachineName : undefined;
-            resourceInputs["timezone"] = state ? state.timezone : undefined;
-            resourceInputs["toTimestamp"] = state ? state.toTimestamp : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["appInfoVersion"] = state?.appInfoVersion;
+            resourceInputs["applicableTypes"] = state?.applicableTypes;
+            resourceInputs["databaseNodeId"] = state?.databaseNodeId;
+            resourceInputs["databaseSnapshot"] = state?.databaseSnapshot;
+            resourceInputs["dateCreated"] = state?.dateCreated;
+            resourceInputs["dateModified"] = state?.dateModified;
+            resourceInputs["dbserverId"] = state?.dbserverId;
+            resourceInputs["dbserverIp"] = state?.dbserverIp;
+            resourceInputs["dbserverName"] = state?.dbserverName;
+            resourceInputs["dbserverStorageMetadataVersion"] = state?.dbserverStorageMetadataVersion;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["expiryDateTimezone"] = state?.expiryDateTimezone;
+            resourceInputs["fromTimestamp"] = state?.fromTimestamp;
+            resourceInputs["lcmConfigs"] = state?.lcmConfigs;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["nxClusterId"] = state?.nxClusterId;
+            resourceInputs["parentSnapshot"] = state?.parentSnapshot;
+            resourceInputs["parentSnapshotId"] = state?.parentSnapshotId;
+            resourceInputs["processed"] = state?.processed;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["protectionDomainId"] = state?.protectionDomainId;
+            resourceInputs["removeScheduleInDays"] = state?.removeScheduleInDays;
+            resourceInputs["replicateToClusters"] = state?.replicateToClusters;
+            resourceInputs["replicatedSnapshots"] = state?.replicatedSnapshots;
+            resourceInputs["santized"] = state?.santized;
+            resourceInputs["santizedFromSnapshotId"] = state?.santizedFromSnapshotId;
+            resourceInputs["santizedSnapshots"] = state?.santizedSnapshots;
+            resourceInputs["snapshotFamily"] = state?.snapshotFamily;
+            resourceInputs["snapshotSize"] = state?.snapshotSize;
+            resourceInputs["snapshotTimestamp"] = state?.snapshotTimestamp;
+            resourceInputs["snapshotTimestampDate"] = state?.snapshotTimestampDate;
+            resourceInputs["snapshotUuid"] = state?.snapshotUuid;
+            resourceInputs["softwareDatabaseSnapshot"] = state?.softwareDatabaseSnapshot;
+            resourceInputs["softwareSnapshot"] = state?.softwareSnapshot;
+            resourceInputs["softwareSnapshotId"] = state?.softwareSnapshotId;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["timeMachineId"] = state?.timeMachineId;
+            resourceInputs["timeMachineName"] = state?.timeMachineName;
+            resourceInputs["timezone"] = state?.timezone;
+            resourceInputs["toTimestamp"] = state?.toTimestamp;
+            resourceInputs["type"] = state?.type;
         } else {
             const args = argsOrState as NdbDatabaseSnapshotArgs | undefined;
-            resourceInputs["expiryDateTimezone"] = args ? args.expiryDateTimezone : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["removeScheduleInDays"] = args ? args.removeScheduleInDays : undefined;
-            resourceInputs["replicateToClusters"] = args ? args.replicateToClusters : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["timeMachineId"] = args ? args.timeMachineId : undefined;
-            resourceInputs["timeMachineName"] = args ? args.timeMachineName : undefined;
+            resourceInputs["expiryDateTimezone"] = args?.expiryDateTimezone;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["removeScheduleInDays"] = args?.removeScheduleInDays;
+            resourceInputs["replicateToClusters"] = args?.replicateToClusters;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["timeMachineId"] = args?.timeMachineId;
+            resourceInputs["timeMachineName"] = args?.timeMachineName;
             resourceInputs["appInfoVersion"] = undefined /*out*/;
             resourceInputs["applicableTypes"] = undefined /*out*/;
             resourceInputs["databaseNodeId"] = undefined /*out*/;

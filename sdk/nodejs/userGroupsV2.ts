@@ -56,35 +56,35 @@ export class UserGroupsV2 extends pulumi.CustomResource {
     /**
      * - User or Service who created the User Group.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * - Creation time of the User Group.
      */
-    public /*out*/ readonly createdTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdTime: pulumi.Output<string>;
     /**
      * -(Optional) Identifier for the User Group in the form of a distinguished name.
      */
-    public readonly distinguishedName!: pulumi.Output<string | undefined>;
+    declare public readonly distinguishedName: pulumi.Output<string | undefined>;
     /**
      * The External Identifier of the User Group.
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * -(Required) Type of the User Group. LDAP (User Group belonging to a Directory Service (Open LDAP/AD)), SAML (User Group belonging to a SAML IDP.)
      */
-    public readonly groupType!: pulumi.Output<string>;
+    declare public readonly groupType: pulumi.Output<string>;
     /**
      * -(Required) Identifier of the IDP for the User Group.
      */
-    public readonly idpId!: pulumi.Output<string>;
+    declare public readonly idpId: pulumi.Output<string>;
     /**
      * - Last updated time of the User Group.
      */
-    public /*out*/ readonly lastUpdatedTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastUpdatedTime: pulumi.Output<string>;
     /**
      * -(Optional) Common Name of the User Group.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
 
     /**
      * Create a UserGroupsV2 resource with the given unique name, arguments, and options.
@@ -99,27 +99,27 @@ export class UserGroupsV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UserGroupsV2State | undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["createdTime"] = state ? state.createdTime : undefined;
-            resourceInputs["distinguishedName"] = state ? state.distinguishedName : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["groupType"] = state ? state.groupType : undefined;
-            resourceInputs["idpId"] = state ? state.idpId : undefined;
-            resourceInputs["lastUpdatedTime"] = state ? state.lastUpdatedTime : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["createdTime"] = state?.createdTime;
+            resourceInputs["distinguishedName"] = state?.distinguishedName;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["groupType"] = state?.groupType;
+            resourceInputs["idpId"] = state?.idpId;
+            resourceInputs["lastUpdatedTime"] = state?.lastUpdatedTime;
+            resourceInputs["name"] = state?.name;
         } else {
             const args = argsOrState as UserGroupsV2Args | undefined;
-            if ((!args || args.groupType === undefined) && !opts.urn) {
+            if (args?.groupType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'groupType'");
             }
-            if ((!args || args.idpId === undefined) && !opts.urn) {
+            if (args?.idpId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'idpId'");
             }
-            resourceInputs["distinguishedName"] = args ? args.distinguishedName : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["groupType"] = args ? args.groupType : undefined;
-            resourceInputs["idpId"] = args ? args.idpId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["distinguishedName"] = args?.distinguishedName;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["groupType"] = args?.groupType;
+            resourceInputs["idpId"] = args?.idpId;
+            resourceInputs["name"] = args?.name;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["createdTime"] = undefined /*out*/;
             resourceInputs["lastUpdatedTime"] = undefined /*out*/;

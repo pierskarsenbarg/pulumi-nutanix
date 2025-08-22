@@ -65,39 +65,39 @@ export class NdbTag extends pulumi.CustomResource {
     /**
      * date created of the tag
      */
-    public /*out*/ readonly dateCreated!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateCreated: pulumi.Output<string>;
     /**
      * modified date of tha tag
      */
-    public /*out*/ readonly dateModified!: pulumi.Output<string>;
+    declare public /*out*/ readonly dateModified: pulumi.Output<string>;
     /**
      * description for the tag
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * entity for the tag to be associated with. Supported values [ DATABASE, TIME_MACHINE, CLONE, DATABASE_SERVER ].
      */
-    public readonly entityType!: pulumi.Output<string>;
+    declare public readonly entityType: pulumi.Output<string>;
     /**
      * name for the tag
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * owner id of the tag
      */
-    public /*out*/ readonly owner!: pulumi.Output<string>;
+    declare public /*out*/ readonly owner: pulumi.Output<string>;
     /**
      * provide a tag value for entities.
      */
-    public readonly required!: pulumi.Output<boolean | undefined>;
+    declare public readonly required: pulumi.Output<boolean | undefined>;
     /**
      * Status of the tag. Supported values are [ ENABLED, DEPRECATED ]
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * value for the tag
      */
-    public /*out*/ readonly values!: pulumi.Output<number>;
+    declare public /*out*/ readonly values: pulumi.Output<number>;
 
     /**
      * Create a NdbTag resource with the given unique name, arguments, and options.
@@ -112,25 +112,25 @@ export class NdbTag extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbTagState | undefined;
-            resourceInputs["dateCreated"] = state ? state.dateCreated : undefined;
-            resourceInputs["dateModified"] = state ? state.dateModified : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["entityType"] = state ? state.entityType : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["owner"] = state ? state.owner : undefined;
-            resourceInputs["required"] = state ? state.required : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["values"] = state ? state.values : undefined;
+            resourceInputs["dateCreated"] = state?.dateCreated;
+            resourceInputs["dateModified"] = state?.dateModified;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["entityType"] = state?.entityType;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["owner"] = state?.owner;
+            resourceInputs["required"] = state?.required;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["values"] = state?.values;
         } else {
             const args = argsOrState as NdbTagArgs | undefined;
-            if ((!args || args.entityType === undefined) && !opts.urn) {
+            if (args?.entityType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'entityType'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["entityType"] = args ? args.entityType : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["required"] = args ? args.required : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["entityType"] = args?.entityType;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["required"] = args?.required;
+            resourceInputs["status"] = args?.status;
             resourceInputs["dateCreated"] = undefined /*out*/;
             resourceInputs["dateModified"] = undefined /*out*/;
             resourceInputs["owner"] = undefined /*out*/;

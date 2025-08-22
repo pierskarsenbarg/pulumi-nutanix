@@ -84,47 +84,47 @@ export class ServiceGroupsV2 extends pulumi.CustomResource {
     /**
      * created by.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * Description of the service group
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * address group uuid.
      */
-    public /*out*/ readonly extId!: pulumi.Output<string>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
     /**
      * Icmp Type Code List.
      */
-    public readonly icmpServices!: pulumi.Output<outputs.ServiceGroupsV2IcmpService[] | undefined>;
+    declare public readonly icmpServices: pulumi.Output<outputs.ServiceGroupsV2IcmpService[] | undefined>;
     /**
      * Service Group is system defined or not.
      */
-    public /*out*/ readonly isSystemDefined!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isSystemDefined: pulumi.Output<boolean>;
     /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    public /*out*/ readonly links!: pulumi.Output<outputs.ServiceGroupsV2Link[]>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.ServiceGroupsV2Link[]>;
     /**
      * Name of the service group
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Reference to policy associated with Address Group.
      */
-    public /*out*/ readonly policyReferences!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly policyReferences: pulumi.Output<string[]>;
     /**
      * List of TCP ports in the service.
      */
-    public readonly tcpServices!: pulumi.Output<outputs.ServiceGroupsV2TcpService[] | undefined>;
+    declare public readonly tcpServices: pulumi.Output<outputs.ServiceGroupsV2TcpService[] | undefined>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
      * List of UDP ports in the service.
      */
-    public readonly udpServices!: pulumi.Output<outputs.ServiceGroupsV2UdpService[] | undefined>;
+    declare public readonly udpServices: pulumi.Output<outputs.ServiceGroupsV2UdpService[] | undefined>;
 
     /**
      * Create a ServiceGroupsV2 resource with the given unique name, arguments, and options.
@@ -139,24 +139,24 @@ export class ServiceGroupsV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ServiceGroupsV2State | undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["icmpServices"] = state ? state.icmpServices : undefined;
-            resourceInputs["isSystemDefined"] = state ? state.isSystemDefined : undefined;
-            resourceInputs["links"] = state ? state.links : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["policyReferences"] = state ? state.policyReferences : undefined;
-            resourceInputs["tcpServices"] = state ? state.tcpServices : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["udpServices"] = state ? state.udpServices : undefined;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["icmpServices"] = state?.icmpServices;
+            resourceInputs["isSystemDefined"] = state?.isSystemDefined;
+            resourceInputs["links"] = state?.links;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["policyReferences"] = state?.policyReferences;
+            resourceInputs["tcpServices"] = state?.tcpServices;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["udpServices"] = state?.udpServices;
         } else {
             const args = argsOrState as ServiceGroupsV2Args | undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["icmpServices"] = args ? args.icmpServices : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["tcpServices"] = args ? args.tcpServices : undefined;
-            resourceInputs["udpServices"] = args ? args.udpServices : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["icmpServices"] = args?.icmpServices;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["tcpServices"] = args?.tcpServices;
+            resourceInputs["udpServices"] = args?.udpServices;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["extId"] = undefined /*out*/;
             resourceInputs["isSystemDefined"] = undefined /*out*/;

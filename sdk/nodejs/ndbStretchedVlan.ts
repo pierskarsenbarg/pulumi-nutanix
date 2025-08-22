@@ -76,29 +76,29 @@ export class NdbStretchedVlan extends pulumi.CustomResource {
     /**
      * Description of stretched vlan
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Update the stretched VLAN Gateway and Subnet Mask IP address
      * * `metadata.gateway`: Update the gateway of stretched vlan
      * * `metadata.subnet_mask`: Update the subnetMask of stretched vlan
      */
-    public readonly metadata!: pulumi.Output<outputs.NdbStretchedVlanMetadata>;
+    declare public readonly metadata: pulumi.Output<outputs.NdbStretchedVlanMetadata>;
     /**
      * name for the stretched VLAN
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * type of vlan. static VLANs that are managed in NDB can be added to a stretched VLAN.
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * list of vlan ids to be added in NDB
      */
-    public readonly vlanIds!: pulumi.Output<string[]>;
+    declare public readonly vlanIds: pulumi.Output<string[]>;
     /**
      * properties of vlans
      */
-    public /*out*/ readonly vlansLists!: pulumi.Output<outputs.NdbStretchedVlanVlansList[]>;
+    declare public /*out*/ readonly vlansLists: pulumi.Output<outputs.NdbStretchedVlanVlansList[]>;
 
     /**
      * Create a NdbStretchedVlan resource with the given unique name, arguments, and options.
@@ -113,25 +113,25 @@ export class NdbStretchedVlan extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbStretchedVlanState | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["vlanIds"] = state ? state.vlanIds : undefined;
-            resourceInputs["vlansLists"] = state ? state.vlansLists : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["vlanIds"] = state?.vlanIds;
+            resourceInputs["vlansLists"] = state?.vlansLists;
         } else {
             const args = argsOrState as NdbStretchedVlanArgs | undefined;
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            if ((!args || args.vlanIds === undefined) && !opts.urn) {
+            if (args?.vlanIds === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vlanIds'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["metadata"] = args ? args.metadata : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["vlanIds"] = args ? args.vlanIds : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["metadata"] = args?.metadata;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["vlanIds"] = args?.vlanIds;
             resourceInputs["vlansLists"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
