@@ -34,17 +34,17 @@ export class TemplateV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === TemplateV2.__pulumiType;
     }
 
-    public /*out*/ readonly createTime!: pulumi.Output<string>;
-    public readonly createdBies!: pulumi.Output<outputs.TemplateV2CreatedBy[]>;
-    public /*out*/ readonly extId!: pulumi.Output<string>;
-    public readonly guestUpdateStatuses!: pulumi.Output<outputs.TemplateV2GuestUpdateStatus[]>;
-    public /*out*/ readonly links!: pulumi.Output<outputs.TemplateV2Link[]>;
-    public readonly templateDescription!: pulumi.Output<string>;
-    public readonly templateName!: pulumi.Output<string>;
-    public readonly templateVersionSpec!: pulumi.Output<outputs.TemplateV2TemplateVersionSpec>;
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
-    public /*out*/ readonly updateTime!: pulumi.Output<string>;
-    public readonly updatedBies!: pulumi.Output<outputs.TemplateV2UpdatedBy[]>;
+    declare public /*out*/ readonly createTime: pulumi.Output<string>;
+    declare public readonly createdBies: pulumi.Output<outputs.TemplateV2CreatedBy[]>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
+    declare public readonly guestUpdateStatuses: pulumi.Output<outputs.TemplateV2GuestUpdateStatus[]>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.TemplateV2Link[]>;
+    declare public readonly templateDescription: pulumi.Output<string>;
+    declare public readonly templateName: pulumi.Output<string>;
+    declare public readonly templateVersionSpec: pulumi.Output<outputs.TemplateV2TemplateVersionSpec>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
+    declare public /*out*/ readonly updateTime: pulumi.Output<string>;
+    declare public readonly updatedBies: pulumi.Output<outputs.TemplateV2UpdatedBy[]>;
 
     /**
      * Create a TemplateV2 resource with the given unique name, arguments, and options.
@@ -59,31 +59,31 @@ export class TemplateV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as TemplateV2State | undefined;
-            resourceInputs["createTime"] = state ? state.createTime : undefined;
-            resourceInputs["createdBies"] = state ? state.createdBies : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["guestUpdateStatuses"] = state ? state.guestUpdateStatuses : undefined;
-            resourceInputs["links"] = state ? state.links : undefined;
-            resourceInputs["templateDescription"] = state ? state.templateDescription : undefined;
-            resourceInputs["templateName"] = state ? state.templateName : undefined;
-            resourceInputs["templateVersionSpec"] = state ? state.templateVersionSpec : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["updateTime"] = state ? state.updateTime : undefined;
-            resourceInputs["updatedBies"] = state ? state.updatedBies : undefined;
+            resourceInputs["createTime"] = state?.createTime;
+            resourceInputs["createdBies"] = state?.createdBies;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["guestUpdateStatuses"] = state?.guestUpdateStatuses;
+            resourceInputs["links"] = state?.links;
+            resourceInputs["templateDescription"] = state?.templateDescription;
+            resourceInputs["templateName"] = state?.templateName;
+            resourceInputs["templateVersionSpec"] = state?.templateVersionSpec;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["updateTime"] = state?.updateTime;
+            resourceInputs["updatedBies"] = state?.updatedBies;
         } else {
             const args = argsOrState as TemplateV2Args | undefined;
-            if ((!args || args.templateName === undefined) && !opts.urn) {
+            if (args?.templateName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'templateName'");
             }
-            if ((!args || args.templateVersionSpec === undefined) && !opts.urn) {
+            if (args?.templateVersionSpec === undefined && !opts.urn) {
                 throw new Error("Missing required property 'templateVersionSpec'");
             }
-            resourceInputs["createdBies"] = args ? args.createdBies : undefined;
-            resourceInputs["guestUpdateStatuses"] = args ? args.guestUpdateStatuses : undefined;
-            resourceInputs["templateDescription"] = args ? args.templateDescription : undefined;
-            resourceInputs["templateName"] = args ? args.templateName : undefined;
-            resourceInputs["templateVersionSpec"] = args ? args.templateVersionSpec : undefined;
-            resourceInputs["updatedBies"] = args ? args.updatedBies : undefined;
+            resourceInputs["createdBies"] = args?.createdBies;
+            resourceInputs["guestUpdateStatuses"] = args?.guestUpdateStatuses;
+            resourceInputs["templateDescription"] = args?.templateDescription;
+            resourceInputs["templateName"] = args?.templateName;
+            resourceInputs["templateVersionSpec"] = args?.templateVersionSpec;
+            resourceInputs["updatedBies"] = args?.updatedBies;
             resourceInputs["createTime"] = undefined /*out*/;
             resourceInputs["extId"] = undefined /*out*/;
             resourceInputs["links"] = undefined /*out*/;

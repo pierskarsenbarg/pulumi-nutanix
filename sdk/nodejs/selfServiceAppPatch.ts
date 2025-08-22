@@ -184,23 +184,23 @@ export class SelfServiceAppPatch extends pulumi.CustomResource {
     /**
      * - (Required) The UUID of the application.
      */
-    public readonly appUuid!: pulumi.Output<string>;
-    public readonly categories!: pulumi.Output<outputs.SelfServiceAppPatchCategory[] | undefined>;
+    declare public readonly appUuid: pulumi.Output<string>;
+    declare public readonly categories: pulumi.Output<outputs.SelfServiceAppPatchCategory[] | undefined>;
     /**
      * - (Required) The name of the patch configuration. (<b>Same as patchName for SINGLE VM)</b>
      */
-    public readonly configName!: pulumi.Output<string>;
-    public readonly disks!: pulumi.Output<outputs.SelfServiceAppPatchDisk[] | undefined>;
-    public readonly nics!: pulumi.Output<outputs.SelfServiceAppPatchNic[] | undefined>;
+    declare public readonly configName: pulumi.Output<string>;
+    declare public readonly disks: pulumi.Output<outputs.SelfServiceAppPatchDisk[] | undefined>;
+    declare public readonly nics: pulumi.Output<outputs.SelfServiceAppPatchNic[] | undefined>;
     /**
      * - (Required) The name of the patch to be applied. This is used to identify the action name which needs to be executed to update an application.
      */
-    public readonly patchName!: pulumi.Output<string>;
+    declare public readonly patchName: pulumi.Output<string>;
     /**
      * - (Computed) The UUID of the runlog that records the patch operation's execution details.
      */
-    public readonly runlogUuid!: pulumi.Output<string>;
-    public readonly vmConfigs!: pulumi.Output<outputs.SelfServiceAppPatchVmConfig[] | undefined>;
+    declare public readonly runlogUuid: pulumi.Output<string>;
+    declare public readonly vmConfigs: pulumi.Output<outputs.SelfServiceAppPatchVmConfig[] | undefined>;
 
     /**
      * Create a SelfServiceAppPatch resource with the given unique name, arguments, and options.
@@ -215,33 +215,33 @@ export class SelfServiceAppPatch extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SelfServiceAppPatchState | undefined;
-            resourceInputs["appUuid"] = state ? state.appUuid : undefined;
-            resourceInputs["categories"] = state ? state.categories : undefined;
-            resourceInputs["configName"] = state ? state.configName : undefined;
-            resourceInputs["disks"] = state ? state.disks : undefined;
-            resourceInputs["nics"] = state ? state.nics : undefined;
-            resourceInputs["patchName"] = state ? state.patchName : undefined;
-            resourceInputs["runlogUuid"] = state ? state.runlogUuid : undefined;
-            resourceInputs["vmConfigs"] = state ? state.vmConfigs : undefined;
+            resourceInputs["appUuid"] = state?.appUuid;
+            resourceInputs["categories"] = state?.categories;
+            resourceInputs["configName"] = state?.configName;
+            resourceInputs["disks"] = state?.disks;
+            resourceInputs["nics"] = state?.nics;
+            resourceInputs["patchName"] = state?.patchName;
+            resourceInputs["runlogUuid"] = state?.runlogUuid;
+            resourceInputs["vmConfigs"] = state?.vmConfigs;
         } else {
             const args = argsOrState as SelfServiceAppPatchArgs | undefined;
-            if ((!args || args.appUuid === undefined) && !opts.urn) {
+            if (args?.appUuid === undefined && !opts.urn) {
                 throw new Error("Missing required property 'appUuid'");
             }
-            if ((!args || args.configName === undefined) && !opts.urn) {
+            if (args?.configName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'configName'");
             }
-            if ((!args || args.patchName === undefined) && !opts.urn) {
+            if (args?.patchName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'patchName'");
             }
-            resourceInputs["appUuid"] = args ? args.appUuid : undefined;
-            resourceInputs["categories"] = args ? args.categories : undefined;
-            resourceInputs["configName"] = args ? args.configName : undefined;
-            resourceInputs["disks"] = args ? args.disks : undefined;
-            resourceInputs["nics"] = args ? args.nics : undefined;
-            resourceInputs["patchName"] = args ? args.patchName : undefined;
-            resourceInputs["runlogUuid"] = args ? args.runlogUuid : undefined;
-            resourceInputs["vmConfigs"] = args ? args.vmConfigs : undefined;
+            resourceInputs["appUuid"] = args?.appUuid;
+            resourceInputs["categories"] = args?.categories;
+            resourceInputs["configName"] = args?.configName;
+            resourceInputs["disks"] = args?.disks;
+            resourceInputs["nics"] = args?.nics;
+            resourceInputs["patchName"] = args?.patchName;
+            resourceInputs["runlogUuid"] = args?.runlogUuid;
+            resourceInputs["vmConfigs"] = args?.vmConfigs;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SelfServiceAppPatch.__pulumiType, name, resourceInputs, opts);

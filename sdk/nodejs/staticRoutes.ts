@@ -75,27 +75,27 @@ export class StaticRoutes extends pulumi.CustomResource {
     /**
      * The version of the API.
      */
-    public readonly apiVersion!: pulumi.Output<string>;
+    declare public readonly apiVersion: pulumi.Output<string>;
     /**
      * Default Route
      */
-    public readonly defaultRouteNexthops!: pulumi.Output<outputs.StaticRoutesDefaultRouteNexthop[] | undefined>;
+    declare public readonly defaultRouteNexthops: pulumi.Output<outputs.StaticRoutesDefaultRouteNexthop[] | undefined>;
     /**
      * The vpcRouteTable kind metadata.
      */
-    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
      * Static Routes.
      */
-    public readonly staticRoutesLists!: pulumi.Output<outputs.StaticRoutesStaticRoutesList[] | undefined>;
+    declare public readonly staticRoutesLists: pulumi.Output<outputs.StaticRoutesStaticRoutesList[] | undefined>;
     /**
      * vpc Name. Should not be used with vpc_uuid.
      */
-    public readonly vpcName!: pulumi.Output<string | undefined>;
+    declare public readonly vpcName: pulumi.Output<string | undefined>;
     /**
      * Reference to a VPC UUID. Should not be used with vpc_name.
      */
-    public readonly vpcUuid!: pulumi.Output<string>;
+    declare public readonly vpcUuid: pulumi.Output<string>;
 
     /**
      * Create a StaticRoutes resource with the given unique name, arguments, and options.
@@ -110,19 +110,19 @@ export class StaticRoutes extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as StaticRoutesState | undefined;
-            resourceInputs["apiVersion"] = state ? state.apiVersion : undefined;
-            resourceInputs["defaultRouteNexthops"] = state ? state.defaultRouteNexthops : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["staticRoutesLists"] = state ? state.staticRoutesLists : undefined;
-            resourceInputs["vpcName"] = state ? state.vpcName : undefined;
-            resourceInputs["vpcUuid"] = state ? state.vpcUuid : undefined;
+            resourceInputs["apiVersion"] = state?.apiVersion;
+            resourceInputs["defaultRouteNexthops"] = state?.defaultRouteNexthops;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["staticRoutesLists"] = state?.staticRoutesLists;
+            resourceInputs["vpcName"] = state?.vpcName;
+            resourceInputs["vpcUuid"] = state?.vpcUuid;
         } else {
             const args = argsOrState as StaticRoutesArgs | undefined;
-            resourceInputs["apiVersion"] = args ? args.apiVersion : undefined;
-            resourceInputs["defaultRouteNexthops"] = args ? args.defaultRouteNexthops : undefined;
-            resourceInputs["staticRoutesLists"] = args ? args.staticRoutesLists : undefined;
-            resourceInputs["vpcName"] = args ? args.vpcName : undefined;
-            resourceInputs["vpcUuid"] = args ? args.vpcUuid : undefined;
+            resourceInputs["apiVersion"] = args?.apiVersion;
+            resourceInputs["defaultRouteNexthops"] = args?.defaultRouteNexthops;
+            resourceInputs["staticRoutesLists"] = args?.staticRoutesLists;
+            resourceInputs["vpcName"] = args?.vpcName;
+            resourceInputs["vpcUuid"] = args?.vpcUuid;
             resourceInputs["metadata"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

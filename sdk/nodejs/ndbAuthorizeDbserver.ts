@@ -47,12 +47,12 @@ export class NdbAuthorizeDbserver extends pulumi.CustomResource {
         return obj['__pulumiType'] === NdbAuthorizeDbserver.__pulumiType;
     }
 
-    public readonly dbserversIds!: pulumi.Output<string[] | undefined>;
-    public readonly timeMachineId!: pulumi.Output<string | undefined>;
+    declare public readonly dbserversIds: pulumi.Output<string[] | undefined>;
+    declare public readonly timeMachineId: pulumi.Output<string | undefined>;
     /**
      * * `dbserversId `: (Required)
      */
-    public readonly timeMachineName!: pulumi.Output<string | undefined>;
+    declare public readonly timeMachineName: pulumi.Output<string | undefined>;
 
     /**
      * Create a NdbAuthorizeDbserver resource with the given unique name, arguments, and options.
@@ -67,14 +67,14 @@ export class NdbAuthorizeDbserver extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbAuthorizeDbserverState | undefined;
-            resourceInputs["dbserversIds"] = state ? state.dbserversIds : undefined;
-            resourceInputs["timeMachineId"] = state ? state.timeMachineId : undefined;
-            resourceInputs["timeMachineName"] = state ? state.timeMachineName : undefined;
+            resourceInputs["dbserversIds"] = state?.dbserversIds;
+            resourceInputs["timeMachineId"] = state?.timeMachineId;
+            resourceInputs["timeMachineName"] = state?.timeMachineName;
         } else {
             const args = argsOrState as NdbAuthorizeDbserverArgs | undefined;
-            resourceInputs["dbserversIds"] = args ? args.dbserversIds : undefined;
-            resourceInputs["timeMachineId"] = args ? args.timeMachineId : undefined;
-            resourceInputs["timeMachineName"] = args ? args.timeMachineName : undefined;
+            resourceInputs["dbserversIds"] = args?.dbserversIds;
+            resourceInputs["timeMachineId"] = args?.timeMachineId;
+            resourceInputs["timeMachineName"] = args?.timeMachineName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NdbAuthorizeDbserver.__pulumiType, name, resourceInputs, opts);

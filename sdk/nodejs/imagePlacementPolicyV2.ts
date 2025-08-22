@@ -58,36 +58,36 @@ export class ImagePlacementPolicyV2 extends pulumi.CustomResource {
     /**
      * Action to be performed on the image placement policy. Valid values "RESUME", "SUSPEND"
      */
-    public readonly action!: pulumi.Output<string | undefined>;
+    declare public readonly action: pulumi.Output<string | undefined>;
     /**
      * Category-based entity filter.
      */
-    public readonly clusterEntityFilters!: pulumi.Output<outputs.ImagePlacementPolicyV2ClusterEntityFilter[]>;
-    public /*out*/ readonly createTime!: pulumi.Output<string>;
+    declare public readonly clusterEntityFilters: pulumi.Output<outputs.ImagePlacementPolicyV2ClusterEntityFilter[]>;
+    declare public /*out*/ readonly createTime: pulumi.Output<string>;
     /**
      * Description of the image placement policy.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * Enforcement status of the image placement policy. Valid values "ACTIVE", "SUSPENDED"
      */
-    public readonly enforcementState!: pulumi.Output<string>;
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly enforcementState: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * Category-based entity filter.
      */
-    public readonly imageEntityFilters!: pulumi.Output<outputs.ImagePlacementPolicyV2ImageEntityFilter[]>;
-    public /*out*/ readonly lastUpdateTime!: pulumi.Output<string>;
+    declare public readonly imageEntityFilters: pulumi.Output<outputs.ImagePlacementPolicyV2ImageEntityFilter[]>;
+    declare public /*out*/ readonly lastUpdateTime: pulumi.Output<string>;
     /**
      * Name of the image placement policy.
      */
-    public readonly name!: pulumi.Output<string>;
-    public /*out*/ readonly ownerExtId!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public /*out*/ readonly ownerExtId: pulumi.Output<string>;
     /**
      * Type of the image placement policy. Valid values "HARD", "SOFT"
      */
-    public readonly placementType!: pulumi.Output<string>;
-    public readonly shouldCancelRunningTasks!: pulumi.Output<boolean | undefined>;
+    declare public readonly placementType: pulumi.Output<string>;
+    declare public readonly shouldCancelRunningTasks: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a ImagePlacementPolicyV2 resource with the given unique name, arguments, and options.
@@ -102,38 +102,38 @@ export class ImagePlacementPolicyV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ImagePlacementPolicyV2State | undefined;
-            resourceInputs["action"] = state ? state.action : undefined;
-            resourceInputs["clusterEntityFilters"] = state ? state.clusterEntityFilters : undefined;
-            resourceInputs["createTime"] = state ? state.createTime : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["enforcementState"] = state ? state.enforcementState : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["imageEntityFilters"] = state ? state.imageEntityFilters : undefined;
-            resourceInputs["lastUpdateTime"] = state ? state.lastUpdateTime : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownerExtId"] = state ? state.ownerExtId : undefined;
-            resourceInputs["placementType"] = state ? state.placementType : undefined;
-            resourceInputs["shouldCancelRunningTasks"] = state ? state.shouldCancelRunningTasks : undefined;
+            resourceInputs["action"] = state?.action;
+            resourceInputs["clusterEntityFilters"] = state?.clusterEntityFilters;
+            resourceInputs["createTime"] = state?.createTime;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["enforcementState"] = state?.enforcementState;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["imageEntityFilters"] = state?.imageEntityFilters;
+            resourceInputs["lastUpdateTime"] = state?.lastUpdateTime;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownerExtId"] = state?.ownerExtId;
+            resourceInputs["placementType"] = state?.placementType;
+            resourceInputs["shouldCancelRunningTasks"] = state?.shouldCancelRunningTasks;
         } else {
             const args = argsOrState as ImagePlacementPolicyV2Args | undefined;
-            if ((!args || args.clusterEntityFilters === undefined) && !opts.urn) {
+            if (args?.clusterEntityFilters === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterEntityFilters'");
             }
-            if ((!args || args.imageEntityFilters === undefined) && !opts.urn) {
+            if (args?.imageEntityFilters === undefined && !opts.urn) {
                 throw new Error("Missing required property 'imageEntityFilters'");
             }
-            if ((!args || args.placementType === undefined) && !opts.urn) {
+            if (args?.placementType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'placementType'");
             }
-            resourceInputs["action"] = args ? args.action : undefined;
-            resourceInputs["clusterEntityFilters"] = args ? args.clusterEntityFilters : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["enforcementState"] = args ? args.enforcementState : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["imageEntityFilters"] = args ? args.imageEntityFilters : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["placementType"] = args ? args.placementType : undefined;
-            resourceInputs["shouldCancelRunningTasks"] = args ? args.shouldCancelRunningTasks : undefined;
+            resourceInputs["action"] = args?.action;
+            resourceInputs["clusterEntityFilters"] = args?.clusterEntityFilters;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["enforcementState"] = args?.enforcementState;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["imageEntityFilters"] = args?.imageEntityFilters;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["placementType"] = args?.placementType;
+            resourceInputs["shouldCancelRunningTasks"] = args?.shouldCancelRunningTasks;
             resourceInputs["createTime"] = undefined /*out*/;
             resourceInputs["lastUpdateTime"] = undefined /*out*/;
             resourceInputs["ownerExtId"] = undefined /*out*/;

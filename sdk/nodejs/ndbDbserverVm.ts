@@ -39,92 +39,92 @@ export class NdbDbserverVm extends pulumi.CustomResource {
         return obj['__pulumiType'] === NdbDbserverVm.__pulumiType;
     }
 
-    public /*out*/ readonly clientId!: pulumi.Output<string>;
+    declare public /*out*/ readonly clientId: pulumi.Output<string>;
     /**
      * Compute profile id.
      */
-    public readonly computeProfileId!: pulumi.Output<string>;
-    public readonly credentials!: pulumi.Output<outputs.NdbDbserverVmCredential[] | undefined>;
+    declare public readonly computeProfileId: pulumi.Output<string>;
+    declare public readonly credentials: pulumi.Output<outputs.NdbDbserverVmCredential[] | undefined>;
     /**
      * database type. Valid values: postgres_database
      */
-    public readonly databaseType!: pulumi.Output<string>;
-    public /*out*/ readonly dbserverClusterId!: pulumi.Output<string>;
+    declare public readonly databaseType: pulumi.Output<string>;
+    declare public /*out*/ readonly dbserverClusterId: pulumi.Output<string>;
     /**
      * - (Optional) Delete the VM and associated storage. Default value is true
      */
-    public readonly delete!: pulumi.Output<boolean | undefined>;
+    declare public readonly delete: pulumi.Output<boolean | undefined>;
     /**
      * - (Optional) Delete volume grous. Default value is true
      */
-    public readonly deleteVgs!: pulumi.Output<boolean | undefined>;
+    declare public readonly deleteVgs: pulumi.Output<boolean | undefined>;
     /**
      * - (Optional) Delete the vm snapshots. Default is true
      */
-    public readonly deleteVmSnapshots!: pulumi.Output<boolean | undefined>;
+    declare public readonly deleteVmSnapshots: pulumi.Output<boolean | undefined>;
     /**
      * Type a description for the database server VM.
      */
-    public readonly description!: pulumi.Output<string>;
-    public /*out*/ readonly eraDriveId!: pulumi.Output<string>;
-    public /*out*/ readonly eraVersion!: pulumi.Output<string>;
-    public /*out*/ readonly fqdns!: pulumi.Output<string>;
-    public /*out*/ readonly ipAddresses!: pulumi.Output<string[]>;
-    public readonly latestSnapshot!: pulumi.Output<boolean | undefined>;
-    public /*out*/ readonly macAddresses!: pulumi.Output<string[]>;
+    declare public readonly description: pulumi.Output<string>;
+    declare public /*out*/ readonly eraDriveId: pulumi.Output<string>;
+    declare public /*out*/ readonly eraVersion: pulumi.Output<string>;
+    declare public /*out*/ readonly fqdns: pulumi.Output<string>;
+    declare public /*out*/ readonly ipAddresses: pulumi.Output<string[]>;
+    declare public readonly latestSnapshot: pulumi.Output<boolean | undefined>;
+    declare public /*out*/ readonly macAddresses: pulumi.Output<string[]>;
     /**
      * maintenance window configured to enable automated patching.
      */
-    public readonly maintenanceTasks!: pulumi.Output<outputs.NdbDbserverVmMaintenanceTasks | undefined>;
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public readonly maintenanceTasks: pulumi.Output<outputs.NdbDbserverVmMaintenanceTasks | undefined>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * Network profile id.
      */
-    public readonly networkProfileId!: pulumi.Output<string>;
-    public readonly nxClusterId!: pulumi.Output<string>;
+    declare public readonly networkProfileId: pulumi.Output<string>;
+    declare public readonly nxClusterId: pulumi.Output<string>;
     /**
      * Postgres database server vm
      */
-    public readonly postgresDatabases!: pulumi.Output<outputs.NdbDbserverVmPostgresDatabase[] | undefined>;
+    declare public readonly postgresDatabases: pulumi.Output<outputs.NdbDbserverVmPostgresDatabase[] | undefined>;
     /**
      * List of all the properties
      */
-    public /*out*/ readonly properties!: pulumi.Output<outputs.NdbDbserverVmProperty[]>;
+    declare public /*out*/ readonly properties: pulumi.Output<outputs.NdbDbserverVmProperty[]>;
     /**
      * - (Optional) Unregister the database from NDB. Default value is false
      */
-    public readonly remove!: pulumi.Output<boolean | undefined>;
+    declare public readonly remove: pulumi.Output<boolean | undefined>;
     /**
      * Snapshot id. If not given, it will use latest snapshot to provision db server vm.
      */
-    public readonly snapshotId!: pulumi.Output<string | undefined>;
+    declare public readonly snapshotId: pulumi.Output<string | undefined>;
     /**
      * - (Optional) Soft remove. Default will be false
      */
-    public readonly softRemove!: pulumi.Output<boolean | undefined>;
+    declare public readonly softRemove: pulumi.Output<boolean | undefined>;
     /**
      * software profile id you want to provision a database server VM from an existing software profile.Required with software_profile_version_id. Conflicts with timeMachineId .
      */
-    public readonly softwareProfileId!: pulumi.Output<string | undefined>;
+    declare public readonly softwareProfileId: pulumi.Output<string | undefined>;
     /**
      * SOftware Profile Version Id.
      */
-    public readonly softwareProfileVersionId!: pulumi.Output<string | undefined>;
-    public /*out*/ readonly status!: pulumi.Output<string>;
-    public readonly tags!: pulumi.Output<outputs.NdbDbserverVmTag[]>;
+    declare public readonly softwareProfileVersionId: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
+    declare public readonly tags: pulumi.Output<outputs.NdbDbserverVmTag[]>;
     /**
      * Time Machine id you want to provision a database server VM by using the database and operating system software stored in a time machine. Conflicts with software_profile_id.
      */
-    public readonly timeMachineId!: pulumi.Output<string | undefined>;
-    public readonly timezone!: pulumi.Output<string | undefined>;
-    public /*out*/ readonly type!: pulumi.Output<string>;
-    public /*out*/ readonly vmClusterName!: pulumi.Output<string>;
-    public /*out*/ readonly vmClusterUuid!: pulumi.Output<string>;
+    declare public readonly timeMachineId: pulumi.Output<string | undefined>;
+    declare public readonly timezone: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
+    declare public /*out*/ readonly vmClusterName: pulumi.Output<string>;
+    declare public /*out*/ readonly vmClusterUuid: pulumi.Output<string>;
     /**
      * password of the NDB drive user account.
      */
-    public readonly vmPassword!: pulumi.Output<string | undefined>;
-    public /*out*/ readonly vmTimezone!: pulumi.Output<string>;
+    declare public readonly vmPassword: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly vmTimezone: pulumi.Output<string>;
 
     /**
      * Create a NdbDbserverVm resource with the given unique name, arguments, and options.
@@ -139,75 +139,75 @@ export class NdbDbserverVm extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbDbserverVmState | undefined;
-            resourceInputs["clientId"] = state ? state.clientId : undefined;
-            resourceInputs["computeProfileId"] = state ? state.computeProfileId : undefined;
-            resourceInputs["credentials"] = state ? state.credentials : undefined;
-            resourceInputs["databaseType"] = state ? state.databaseType : undefined;
-            resourceInputs["dbserverClusterId"] = state ? state.dbserverClusterId : undefined;
-            resourceInputs["delete"] = state ? state.delete : undefined;
-            resourceInputs["deleteVgs"] = state ? state.deleteVgs : undefined;
-            resourceInputs["deleteVmSnapshots"] = state ? state.deleteVmSnapshots : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["eraDriveId"] = state ? state.eraDriveId : undefined;
-            resourceInputs["eraVersion"] = state ? state.eraVersion : undefined;
-            resourceInputs["fqdns"] = state ? state.fqdns : undefined;
-            resourceInputs["ipAddresses"] = state ? state.ipAddresses : undefined;
-            resourceInputs["latestSnapshot"] = state ? state.latestSnapshot : undefined;
-            resourceInputs["macAddresses"] = state ? state.macAddresses : undefined;
-            resourceInputs["maintenanceTasks"] = state ? state.maintenanceTasks : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkProfileId"] = state ? state.networkProfileId : undefined;
-            resourceInputs["nxClusterId"] = state ? state.nxClusterId : undefined;
-            resourceInputs["postgresDatabases"] = state ? state.postgresDatabases : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["remove"] = state ? state.remove : undefined;
-            resourceInputs["snapshotId"] = state ? state.snapshotId : undefined;
-            resourceInputs["softRemove"] = state ? state.softRemove : undefined;
-            resourceInputs["softwareProfileId"] = state ? state.softwareProfileId : undefined;
-            resourceInputs["softwareProfileVersionId"] = state ? state.softwareProfileVersionId : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["timeMachineId"] = state ? state.timeMachineId : undefined;
-            resourceInputs["timezone"] = state ? state.timezone : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["vmClusterName"] = state ? state.vmClusterName : undefined;
-            resourceInputs["vmClusterUuid"] = state ? state.vmClusterUuid : undefined;
-            resourceInputs["vmPassword"] = state ? state.vmPassword : undefined;
-            resourceInputs["vmTimezone"] = state ? state.vmTimezone : undefined;
+            resourceInputs["clientId"] = state?.clientId;
+            resourceInputs["computeProfileId"] = state?.computeProfileId;
+            resourceInputs["credentials"] = state?.credentials;
+            resourceInputs["databaseType"] = state?.databaseType;
+            resourceInputs["dbserverClusterId"] = state?.dbserverClusterId;
+            resourceInputs["delete"] = state?.delete;
+            resourceInputs["deleteVgs"] = state?.deleteVgs;
+            resourceInputs["deleteVmSnapshots"] = state?.deleteVmSnapshots;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["eraDriveId"] = state?.eraDriveId;
+            resourceInputs["eraVersion"] = state?.eraVersion;
+            resourceInputs["fqdns"] = state?.fqdns;
+            resourceInputs["ipAddresses"] = state?.ipAddresses;
+            resourceInputs["latestSnapshot"] = state?.latestSnapshot;
+            resourceInputs["macAddresses"] = state?.macAddresses;
+            resourceInputs["maintenanceTasks"] = state?.maintenanceTasks;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkProfileId"] = state?.networkProfileId;
+            resourceInputs["nxClusterId"] = state?.nxClusterId;
+            resourceInputs["postgresDatabases"] = state?.postgresDatabases;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["remove"] = state?.remove;
+            resourceInputs["snapshotId"] = state?.snapshotId;
+            resourceInputs["softRemove"] = state?.softRemove;
+            resourceInputs["softwareProfileId"] = state?.softwareProfileId;
+            resourceInputs["softwareProfileVersionId"] = state?.softwareProfileVersionId;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["timeMachineId"] = state?.timeMachineId;
+            resourceInputs["timezone"] = state?.timezone;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["vmClusterName"] = state?.vmClusterName;
+            resourceInputs["vmClusterUuid"] = state?.vmClusterUuid;
+            resourceInputs["vmPassword"] = state?.vmPassword;
+            resourceInputs["vmTimezone"] = state?.vmTimezone;
         } else {
             const args = argsOrState as NdbDbserverVmArgs | undefined;
-            if ((!args || args.computeProfileId === undefined) && !opts.urn) {
+            if (args?.computeProfileId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'computeProfileId'");
             }
-            if ((!args || args.databaseType === undefined) && !opts.urn) {
+            if (args?.databaseType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseType'");
             }
-            if ((!args || args.networkProfileId === undefined) && !opts.urn) {
+            if (args?.networkProfileId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'networkProfileId'");
             }
-            if ((!args || args.nxClusterId === undefined) && !opts.urn) {
+            if (args?.nxClusterId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'nxClusterId'");
             }
-            resourceInputs["computeProfileId"] = args ? args.computeProfileId : undefined;
-            resourceInputs["credentials"] = args ? args.credentials : undefined;
-            resourceInputs["databaseType"] = args ? args.databaseType : undefined;
-            resourceInputs["delete"] = args ? args.delete : undefined;
-            resourceInputs["deleteVgs"] = args ? args.deleteVgs : undefined;
-            resourceInputs["deleteVmSnapshots"] = args ? args.deleteVmSnapshots : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["latestSnapshot"] = args ? args.latestSnapshot : undefined;
-            resourceInputs["maintenanceTasks"] = args ? args.maintenanceTasks : undefined;
-            resourceInputs["networkProfileId"] = args ? args.networkProfileId : undefined;
-            resourceInputs["nxClusterId"] = args ? args.nxClusterId : undefined;
-            resourceInputs["postgresDatabases"] = args ? args.postgresDatabases : undefined;
-            resourceInputs["remove"] = args ? args.remove : undefined;
-            resourceInputs["snapshotId"] = args ? args.snapshotId : undefined;
-            resourceInputs["softRemove"] = args ? args.softRemove : undefined;
-            resourceInputs["softwareProfileId"] = args ? args.softwareProfileId : undefined;
-            resourceInputs["softwareProfileVersionId"] = args ? args.softwareProfileVersionId : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["timeMachineId"] = args ? args.timeMachineId : undefined;
-            resourceInputs["timezone"] = args ? args.timezone : undefined;
+            resourceInputs["computeProfileId"] = args?.computeProfileId;
+            resourceInputs["credentials"] = args?.credentials;
+            resourceInputs["databaseType"] = args?.databaseType;
+            resourceInputs["delete"] = args?.delete;
+            resourceInputs["deleteVgs"] = args?.deleteVgs;
+            resourceInputs["deleteVmSnapshots"] = args?.deleteVmSnapshots;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["latestSnapshot"] = args?.latestSnapshot;
+            resourceInputs["maintenanceTasks"] = args?.maintenanceTasks;
+            resourceInputs["networkProfileId"] = args?.networkProfileId;
+            resourceInputs["nxClusterId"] = args?.nxClusterId;
+            resourceInputs["postgresDatabases"] = args?.postgresDatabases;
+            resourceInputs["remove"] = args?.remove;
+            resourceInputs["snapshotId"] = args?.snapshotId;
+            resourceInputs["softRemove"] = args?.softRemove;
+            resourceInputs["softwareProfileId"] = args?.softwareProfileId;
+            resourceInputs["softwareProfileVersionId"] = args?.softwareProfileVersionId;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["timeMachineId"] = args?.timeMachineId;
+            resourceInputs["timezone"] = args?.timezone;
             resourceInputs["vmPassword"] = args?.vmPassword ? pulumi.secret(args.vmPassword) : undefined;
             resourceInputs["clientId"] = undefined /*out*/;
             resourceInputs["dbserverClusterId"] = undefined /*out*/;

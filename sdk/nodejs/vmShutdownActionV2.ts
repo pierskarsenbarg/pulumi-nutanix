@@ -40,15 +40,15 @@ export class VmShutdownActionV2 extends pulumi.CustomResource {
     /**
      * It supports "shutdown", "guestShutdown", "reboot", "guestReboot".
      */
-    public readonly action!: pulumi.Output<string>;
+    declare public readonly action: pulumi.Output<string>;
     /**
      * The globally unique identifier of a VM. It should be of type UUID.
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * Additional configuration for Nutanix Gust Tools power state transition. It should be only used with `guestShutdown` or `guestReboot`.
      */
-    public readonly guestPowerStateTransitionConfigs!: pulumi.Output<outputs.VmShutdownActionV2GuestPowerStateTransitionConfig[] | undefined>;
+    declare public readonly guestPowerStateTransitionConfigs: pulumi.Output<outputs.VmShutdownActionV2GuestPowerStateTransitionConfig[] | undefined>;
 
     /**
      * Create a VmShutdownActionV2 resource with the given unique name, arguments, and options.
@@ -63,20 +63,20 @@ export class VmShutdownActionV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VmShutdownActionV2State | undefined;
-            resourceInputs["action"] = state ? state.action : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["guestPowerStateTransitionConfigs"] = state ? state.guestPowerStateTransitionConfigs : undefined;
+            resourceInputs["action"] = state?.action;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["guestPowerStateTransitionConfigs"] = state?.guestPowerStateTransitionConfigs;
         } else {
             const args = argsOrState as VmShutdownActionV2Args | undefined;
-            if ((!args || args.action === undefined) && !opts.urn) {
+            if (args?.action === undefined && !opts.urn) {
                 throw new Error("Missing required property 'action'");
             }
-            if ((!args || args.extId === undefined) && !opts.urn) {
+            if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
-            resourceInputs["action"] = args ? args.action : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["guestPowerStateTransitionConfigs"] = args ? args.guestPowerStateTransitionConfigs : undefined;
+            resourceInputs["action"] = args?.action;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["guestPowerStateTransitionConfigs"] = args?.guestPowerStateTransitionConfigs;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(VmShutdownActionV2.__pulumiType, name, resourceInputs, opts);

@@ -59,55 +59,55 @@ export class DirectoryServicesV2 extends pulumi.CustomResource {
     /**
      * - User or Service who created the Directory Service.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * - Creation time of the Directory Service.
      */
-    public /*out*/ readonly createdTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdTime: pulumi.Output<string>;
     /**
      * -(Required) Type of Directory Service, Supported values are: "ACTIVE_DIRECTORY" (Directory Service type is Active Directory.) and "OPEN_LDAP" (Directory Service type is Open LDAP.)
      */
-    public readonly directoryType!: pulumi.Output<string>;
+    declare public readonly directoryType: pulumi.Output<string>;
     /**
      * -(Required) Domain name for the Directory Service.
      */
-    public readonly domainName!: pulumi.Output<string>;
+    declare public readonly domainName: pulumi.Output<string>;
     /**
      * -(Optional) A globally unique identifier of an instance that is suitable for external consumption.
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * -(Optional) Group membership search type for the Directory Service. Supported values are: "NON_RECURSIVE" (Doesn't search recursively within groups.) and "RECURSIVE" (Searches recursively within groups.)
      */
-    public readonly groupSearchType!: pulumi.Output<string>;
+    declare public readonly groupSearchType: pulumi.Output<string>;
     /**
      * - Last updated time of the Directory Service.
      */
-    public /*out*/ readonly lastUpdatedTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastUpdatedTime: pulumi.Output<string>;
     /**
      * -(Required) Name for the Directory Service.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * -(Optional) Configuration for OpenLDAP Directory Service.
      */
-    public readonly openLdapConfigurations!: pulumi.Output<outputs.DirectoryServicesV2OpenLdapConfiguration[]>;
+    declare public readonly openLdapConfigurations: pulumi.Output<outputs.DirectoryServicesV2OpenLdapConfiguration[]>;
     /**
      * -(Optional) Secondary URL for the Directory Service.
      */
-    public readonly secondaryUrls!: pulumi.Output<string[]>;
+    declare public readonly secondaryUrls: pulumi.Output<string[]>;
     /**
      * -(Required) Information of Service account to connect to the Directory Service.
      */
-    public readonly serviceAccounts!: pulumi.Output<outputs.DirectoryServicesV2ServiceAccount[]>;
+    declare public readonly serviceAccounts: pulumi.Output<outputs.DirectoryServicesV2ServiceAccount[]>;
     /**
      * -(Required) URL for the Directory Service.
      */
-    public readonly url!: pulumi.Output<string>;
+    declare public readonly url: pulumi.Output<string>;
     /**
      * -(Optional) List of allowed User Groups for the Directory Service.
      */
-    public readonly whiteListedGroups!: pulumi.Output<string[]>;
+    declare public readonly whiteListedGroups: pulumi.Output<string[]>;
 
     /**
      * Create a DirectoryServicesV2 resource with the given unique name, arguments, and options.
@@ -122,43 +122,43 @@ export class DirectoryServicesV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DirectoryServicesV2State | undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["createdTime"] = state ? state.createdTime : undefined;
-            resourceInputs["directoryType"] = state ? state.directoryType : undefined;
-            resourceInputs["domainName"] = state ? state.domainName : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["groupSearchType"] = state ? state.groupSearchType : undefined;
-            resourceInputs["lastUpdatedTime"] = state ? state.lastUpdatedTime : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["openLdapConfigurations"] = state ? state.openLdapConfigurations : undefined;
-            resourceInputs["secondaryUrls"] = state ? state.secondaryUrls : undefined;
-            resourceInputs["serviceAccounts"] = state ? state.serviceAccounts : undefined;
-            resourceInputs["url"] = state ? state.url : undefined;
-            resourceInputs["whiteListedGroups"] = state ? state.whiteListedGroups : undefined;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["createdTime"] = state?.createdTime;
+            resourceInputs["directoryType"] = state?.directoryType;
+            resourceInputs["domainName"] = state?.domainName;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["groupSearchType"] = state?.groupSearchType;
+            resourceInputs["lastUpdatedTime"] = state?.lastUpdatedTime;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["openLdapConfigurations"] = state?.openLdapConfigurations;
+            resourceInputs["secondaryUrls"] = state?.secondaryUrls;
+            resourceInputs["serviceAccounts"] = state?.serviceAccounts;
+            resourceInputs["url"] = state?.url;
+            resourceInputs["whiteListedGroups"] = state?.whiteListedGroups;
         } else {
             const args = argsOrState as DirectoryServicesV2Args | undefined;
-            if ((!args || args.directoryType === undefined) && !opts.urn) {
+            if (args?.directoryType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'directoryType'");
             }
-            if ((!args || args.domainName === undefined) && !opts.urn) {
+            if (args?.domainName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'domainName'");
             }
-            if ((!args || args.serviceAccounts === undefined) && !opts.urn) {
+            if (args?.serviceAccounts === undefined && !opts.urn) {
                 throw new Error("Missing required property 'serviceAccounts'");
             }
-            if ((!args || args.url === undefined) && !opts.urn) {
+            if (args?.url === undefined && !opts.urn) {
                 throw new Error("Missing required property 'url'");
             }
-            resourceInputs["directoryType"] = args ? args.directoryType : undefined;
-            resourceInputs["domainName"] = args ? args.domainName : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["groupSearchType"] = args ? args.groupSearchType : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["openLdapConfigurations"] = args ? args.openLdapConfigurations : undefined;
-            resourceInputs["secondaryUrls"] = args ? args.secondaryUrls : undefined;
-            resourceInputs["serviceAccounts"] = args ? args.serviceAccounts : undefined;
-            resourceInputs["url"] = args ? args.url : undefined;
-            resourceInputs["whiteListedGroups"] = args ? args.whiteListedGroups : undefined;
+            resourceInputs["directoryType"] = args?.directoryType;
+            resourceInputs["domainName"] = args?.domainName;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["groupSearchType"] = args?.groupSearchType;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["openLdapConfigurations"] = args?.openLdapConfigurations;
+            resourceInputs["secondaryUrls"] = args?.secondaryUrls;
+            resourceInputs["serviceAccounts"] = args?.serviceAccounts;
+            resourceInputs["url"] = args?.url;
+            resourceInputs["whiteListedGroups"] = args?.whiteListedGroups;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["createdTime"] = undefined /*out*/;
             resourceInputs["lastUpdatedTime"] = undefined /*out*/;

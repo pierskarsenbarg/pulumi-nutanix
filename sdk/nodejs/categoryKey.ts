@@ -47,19 +47,19 @@ export class CategoryKey extends pulumi.CustomResource {
     /**
      * (Optional) The version of the API.
      */
-    public /*out*/ readonly apiVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly apiVersion: pulumi.Output<string>;
     /**
      * - (Optional) A description for category key.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * - (Required) The name for the category key.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * - Specifying whether its a system defined category.
      */
-    public /*out*/ readonly systemDefined!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly systemDefined: pulumi.Output<boolean>;
 
     /**
      * Create a CategoryKey resource with the given unique name, arguments, and options.
@@ -74,14 +74,14 @@ export class CategoryKey extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CategoryKeyState | undefined;
-            resourceInputs["apiVersion"] = state ? state.apiVersion : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["systemDefined"] = state ? state.systemDefined : undefined;
+            resourceInputs["apiVersion"] = state?.apiVersion;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["systemDefined"] = state?.systemDefined;
         } else {
             const args = argsOrState as CategoryKeyArgs | undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["name"] = args?.name;
             resourceInputs["apiVersion"] = undefined /*out*/;
             resourceInputs["systemDefined"] = undefined /*out*/;
         }

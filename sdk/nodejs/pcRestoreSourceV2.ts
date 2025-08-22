@@ -93,16 +93,16 @@ export class PcRestoreSourceV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === PcRestoreSourceV2.__pulumiType;
     }
 
-    public /*out*/ readonly backupPauseReason!: pulumi.Output<string>;
-    public /*out*/ readonly extId!: pulumi.Output<string>;
-    public /*out*/ readonly isBackupPaused!: pulumi.Output<boolean>;
-    public /*out*/ readonly lastSyncTime!: pulumi.Output<string>;
-    public /*out*/ readonly links!: pulumi.Output<outputs.PcRestoreSourceV2Link[]>;
+    declare public /*out*/ readonly backupPauseReason: pulumi.Output<string>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
+    declare public /*out*/ readonly isBackupPaused: pulumi.Output<boolean>;
+    declare public /*out*/ readonly lastSyncTime: pulumi.Output<string>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.PcRestoreSourceV2Link[]>;
     /**
      * -(Required) Location of the backup target. For example, a cluster or an object store endpoint, such as AWS s3.
      */
-    public readonly location!: pulumi.Output<outputs.PcRestoreSourceV2Location>;
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public readonly location: pulumi.Output<outputs.PcRestoreSourceV2Location>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
 
     /**
      * Create a PcRestoreSourceV2 resource with the given unique name, arguments, and options.
@@ -117,19 +117,19 @@ export class PcRestoreSourceV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PcRestoreSourceV2State | undefined;
-            resourceInputs["backupPauseReason"] = state ? state.backupPauseReason : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["isBackupPaused"] = state ? state.isBackupPaused : undefined;
-            resourceInputs["lastSyncTime"] = state ? state.lastSyncTime : undefined;
-            resourceInputs["links"] = state ? state.links : undefined;
-            resourceInputs["location"] = state ? state.location : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
+            resourceInputs["backupPauseReason"] = state?.backupPauseReason;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["isBackupPaused"] = state?.isBackupPaused;
+            resourceInputs["lastSyncTime"] = state?.lastSyncTime;
+            resourceInputs["links"] = state?.links;
+            resourceInputs["location"] = state?.location;
+            resourceInputs["tenantId"] = state?.tenantId;
         } else {
             const args = argsOrState as PcRestoreSourceV2Args | undefined;
-            if ((!args || args.location === undefined) && !opts.urn) {
+            if (args?.location === undefined && !opts.urn) {
                 throw new Error("Missing required property 'location'");
             }
-            resourceInputs["location"] = args ? args.location : undefined;
+            resourceInputs["location"] = args?.location;
             resourceInputs["backupPauseReason"] = undefined /*out*/;
             resourceInputs["extId"] = undefined /*out*/;
             resourceInputs["isBackupPaused"] = undefined /*out*/;

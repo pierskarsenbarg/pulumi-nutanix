@@ -44,22 +44,22 @@ export class NdbLogCatchups extends pulumi.CustomResource {
         return obj['__pulumiType'] === NdbLogCatchups.__pulumiType;
     }
 
-    public readonly databaseId!: pulumi.Output<string | undefined>;
+    declare public readonly databaseId: pulumi.Output<string | undefined>;
     /**
      * Logs to Backup. The database may contain additional logs. Backup any remaining logs before restore or they will be lost.
      */
-    public readonly forRestore!: pulumi.Output<boolean | undefined>;
+    declare public readonly forRestore: pulumi.Output<boolean | undefined>;
     /**
      * it helps to perform same operation with same config.
      *
      *
      * See detailed information in [NDB Log Catchups](https://www.nutanix.dev/api_references/ndb/#/6100cd9959e52-start-log-catchup-for-given-time-machine) .
      */
-    public readonly logCatchupVersion!: pulumi.Output<number | undefined>;
+    declare public readonly logCatchupVersion: pulumi.Output<number | undefined>;
     /**
      * Time machine id of
      */
-    public readonly timeMachineId!: pulumi.Output<string | undefined>;
+    declare public readonly timeMachineId: pulumi.Output<string | undefined>;
 
     /**
      * Create a NdbLogCatchups resource with the given unique name, arguments, and options.
@@ -74,16 +74,16 @@ export class NdbLogCatchups extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbLogCatchupsState | undefined;
-            resourceInputs["databaseId"] = state ? state.databaseId : undefined;
-            resourceInputs["forRestore"] = state ? state.forRestore : undefined;
-            resourceInputs["logCatchupVersion"] = state ? state.logCatchupVersion : undefined;
-            resourceInputs["timeMachineId"] = state ? state.timeMachineId : undefined;
+            resourceInputs["databaseId"] = state?.databaseId;
+            resourceInputs["forRestore"] = state?.forRestore;
+            resourceInputs["logCatchupVersion"] = state?.logCatchupVersion;
+            resourceInputs["timeMachineId"] = state?.timeMachineId;
         } else {
             const args = argsOrState as NdbLogCatchupsArgs | undefined;
-            resourceInputs["databaseId"] = args ? args.databaseId : undefined;
-            resourceInputs["forRestore"] = args ? args.forRestore : undefined;
-            resourceInputs["logCatchupVersion"] = args ? args.logCatchupVersion : undefined;
-            resourceInputs["timeMachineId"] = args ? args.timeMachineId : undefined;
+            resourceInputs["databaseId"] = args?.databaseId;
+            resourceInputs["forRestore"] = args?.forRestore;
+            resourceInputs["logCatchupVersion"] = args?.logCatchupVersion;
+            resourceInputs["timeMachineId"] = args?.timeMachineId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NdbLogCatchups.__pulumiType, name, resourceInputs, opts);

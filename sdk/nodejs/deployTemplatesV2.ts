@@ -34,11 +34,11 @@ export class DeployTemplatesV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === DeployTemplatesV2.__pulumiType;
     }
 
-    public readonly clusterReference!: pulumi.Output<string>;
-    public readonly extId!: pulumi.Output<string>;
-    public readonly numberOfVms!: pulumi.Output<number>;
-    public readonly overrideVmConfigMaps!: pulumi.Output<outputs.DeployTemplatesV2OverrideVmConfigMap[] | undefined>;
-    public readonly versionId!: pulumi.Output<string | undefined>;
+    declare public readonly clusterReference: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
+    declare public readonly numberOfVms: pulumi.Output<number>;
+    declare public readonly overrideVmConfigMaps: pulumi.Output<outputs.DeployTemplatesV2OverrideVmConfigMap[] | undefined>;
+    declare public readonly versionId: pulumi.Output<string | undefined>;
 
     /**
      * Create a DeployTemplatesV2 resource with the given unique name, arguments, and options.
@@ -53,27 +53,27 @@ export class DeployTemplatesV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DeployTemplatesV2State | undefined;
-            resourceInputs["clusterReference"] = state ? state.clusterReference : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["numberOfVms"] = state ? state.numberOfVms : undefined;
-            resourceInputs["overrideVmConfigMaps"] = state ? state.overrideVmConfigMaps : undefined;
-            resourceInputs["versionId"] = state ? state.versionId : undefined;
+            resourceInputs["clusterReference"] = state?.clusterReference;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["numberOfVms"] = state?.numberOfVms;
+            resourceInputs["overrideVmConfigMaps"] = state?.overrideVmConfigMaps;
+            resourceInputs["versionId"] = state?.versionId;
         } else {
             const args = argsOrState as DeployTemplatesV2Args | undefined;
-            if ((!args || args.clusterReference === undefined) && !opts.urn) {
+            if (args?.clusterReference === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterReference'");
             }
-            if ((!args || args.extId === undefined) && !opts.urn) {
+            if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
-            if ((!args || args.numberOfVms === undefined) && !opts.urn) {
+            if (args?.numberOfVms === undefined && !opts.urn) {
                 throw new Error("Missing required property 'numberOfVms'");
             }
-            resourceInputs["clusterReference"] = args ? args.clusterReference : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["numberOfVms"] = args ? args.numberOfVms : undefined;
-            resourceInputs["overrideVmConfigMaps"] = args ? args.overrideVmConfigMaps : undefined;
-            resourceInputs["versionId"] = args ? args.versionId : undefined;
+            resourceInputs["clusterReference"] = args?.clusterReference;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["numberOfVms"] = args?.numberOfVms;
+            resourceInputs["overrideVmConfigMaps"] = args?.overrideVmConfigMaps;
+            resourceInputs["versionId"] = args?.versionId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(DeployTemplatesV2.__pulumiType, name, resourceInputs, opts);

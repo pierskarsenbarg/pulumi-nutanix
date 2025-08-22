@@ -43,15 +43,15 @@ export class PcDeployV2 extends pulumi.CustomResource {
     /**
      * -(Required) Domain manager (Prism Central) cluster configuration details.
      */
-    public readonly config!: pulumi.Output<outputs.PcDeployV2Config>;
+    declare public readonly config: pulumi.Output<outputs.PcDeployV2Config>;
     /**
      * -(Required) Domain manager (Prism Central) network configuration details.
      */
-    public readonly network!: pulumi.Output<outputs.PcDeployV2Network>;
+    declare public readonly network: pulumi.Output<outputs.PcDeployV2Network>;
     /**
      * -(Optional) This configuration enables Prism Central to be deployed in scale-out mode. Default is `false`.
      */
-    public readonly shouldEnableHighAvailability!: pulumi.Output<boolean | undefined>;
+    declare public readonly shouldEnableHighAvailability: pulumi.Output<boolean | undefined>;
 
     /**
      * Create a PcDeployV2 resource with the given unique name, arguments, and options.
@@ -66,20 +66,20 @@ export class PcDeployV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PcDeployV2State | undefined;
-            resourceInputs["config"] = state ? state.config : undefined;
-            resourceInputs["network"] = state ? state.network : undefined;
-            resourceInputs["shouldEnableHighAvailability"] = state ? state.shouldEnableHighAvailability : undefined;
+            resourceInputs["config"] = state?.config;
+            resourceInputs["network"] = state?.network;
+            resourceInputs["shouldEnableHighAvailability"] = state?.shouldEnableHighAvailability;
         } else {
             const args = argsOrState as PcDeployV2Args | undefined;
-            if ((!args || args.config === undefined) && !opts.urn) {
+            if (args?.config === undefined && !opts.urn) {
                 throw new Error("Missing required property 'config'");
             }
-            if ((!args || args.network === undefined) && !opts.urn) {
+            if (args?.network === undefined && !opts.urn) {
                 throw new Error("Missing required property 'network'");
             }
-            resourceInputs["config"] = args ? args.config : undefined;
-            resourceInputs["network"] = args ? args.network : undefined;
-            resourceInputs["shouldEnableHighAvailability"] = args ? args.shouldEnableHighAvailability : undefined;
+            resourceInputs["config"] = args?.config;
+            resourceInputs["network"] = args?.network;
+            resourceInputs["shouldEnableHighAvailability"] = args?.shouldEnableHighAvailability;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(PcDeployV2.__pulumiType, name, resourceInputs, opts);

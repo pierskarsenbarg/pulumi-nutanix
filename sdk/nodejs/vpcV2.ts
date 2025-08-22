@@ -40,48 +40,48 @@ export class VpcV2 extends pulumi.CustomResource {
     /**
      * List of DHCP options to be configured.
      */
-    public readonly commonDhcpOptions!: pulumi.Output<outputs.VpcV2CommonDhcpOption[]>;
+    declare public readonly commonDhcpOptions: pulumi.Output<outputs.VpcV2CommonDhcpOption[]>;
     /**
      * Description of the VPC.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * the vpc uuid.
      */
-    public /*out*/ readonly extId!: pulumi.Output<string>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
     /**
      * External routing domain associated with this route table
      */
-    public readonly externalRoutingDomainReference!: pulumi.Output<string>;
+    declare public readonly externalRoutingDomainReference: pulumi.Output<string>;
     /**
      * List of external subnets that the VPC is attached to.
      */
-    public readonly externalSubnets!: pulumi.Output<outputs.VpcV2ExternalSubnet[]>;
+    declare public readonly externalSubnets: pulumi.Output<outputs.VpcV2ExternalSubnet[]>;
     /**
      * CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
      */
-    public readonly externallyRoutablePrefixes!: pulumi.Output<outputs.VpcV2ExternallyRoutablePrefix[]>;
+    declare public readonly externallyRoutablePrefixes: pulumi.Output<outputs.VpcV2ExternallyRoutablePrefix[]>;
     /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    public /*out*/ readonly links!: pulumi.Output<outputs.VpcV2Link[]>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.VpcV2Link[]>;
     /**
      * The vpc kind metadata.
      */
-    public /*out*/ readonly metadatas!: pulumi.Output<outputs.VpcV2Metadata[]>;
+    declare public /*out*/ readonly metadatas: pulumi.Output<outputs.VpcV2Metadata[]>;
     /**
      * Name of the VPC.
      */
-    public readonly name!: pulumi.Output<string>;
-    public /*out*/ readonly snatIps!: pulumi.Output<outputs.VpcV2SnatIp[]>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public /*out*/ readonly snatIps: pulumi.Output<outputs.VpcV2SnatIp[]>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
      * Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
      */
-    public readonly vpcType!: pulumi.Output<string | undefined>;
+    declare public readonly vpcType: pulumi.Output<string | undefined>;
 
     /**
      * Create a VpcV2 resource with the given unique name, arguments, and options.
@@ -96,27 +96,27 @@ export class VpcV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VpcV2State | undefined;
-            resourceInputs["commonDhcpOptions"] = state ? state.commonDhcpOptions : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["externalRoutingDomainReference"] = state ? state.externalRoutingDomainReference : undefined;
-            resourceInputs["externalSubnets"] = state ? state.externalSubnets : undefined;
-            resourceInputs["externallyRoutablePrefixes"] = state ? state.externallyRoutablePrefixes : undefined;
-            resourceInputs["links"] = state ? state.links : undefined;
-            resourceInputs["metadatas"] = state ? state.metadatas : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["snatIps"] = state ? state.snatIps : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["vpcType"] = state ? state.vpcType : undefined;
+            resourceInputs["commonDhcpOptions"] = state?.commonDhcpOptions;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["externalRoutingDomainReference"] = state?.externalRoutingDomainReference;
+            resourceInputs["externalSubnets"] = state?.externalSubnets;
+            resourceInputs["externallyRoutablePrefixes"] = state?.externallyRoutablePrefixes;
+            resourceInputs["links"] = state?.links;
+            resourceInputs["metadatas"] = state?.metadatas;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["snatIps"] = state?.snatIps;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["vpcType"] = state?.vpcType;
         } else {
             const args = argsOrState as VpcV2Args | undefined;
-            resourceInputs["commonDhcpOptions"] = args ? args.commonDhcpOptions : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["externalRoutingDomainReference"] = args ? args.externalRoutingDomainReference : undefined;
-            resourceInputs["externalSubnets"] = args ? args.externalSubnets : undefined;
-            resourceInputs["externallyRoutablePrefixes"] = args ? args.externallyRoutablePrefixes : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["vpcType"] = args ? args.vpcType : undefined;
+            resourceInputs["commonDhcpOptions"] = args?.commonDhcpOptions;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["externalRoutingDomainReference"] = args?.externalRoutingDomainReference;
+            resourceInputs["externalSubnets"] = args?.externalSubnets;
+            resourceInputs["externallyRoutablePrefixes"] = args?.externallyRoutablePrefixes;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["vpcType"] = args?.vpcType;
             resourceInputs["extId"] = undefined /*out*/;
             resourceInputs["links"] = undefined /*out*/;
             resourceInputs["metadatas"] = undefined /*out*/;

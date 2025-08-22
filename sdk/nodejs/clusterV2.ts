@@ -37,41 +37,41 @@ export class ClusterV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === ClusterV2.__pulumiType;
     }
 
-    public /*out*/ readonly backupEligibilityScore!: pulumi.Output<number>;
+    declare public /*out*/ readonly backupEligibilityScore: pulumi.Output<number>;
     /**
      * - (Optional) The reference to a project.
      */
-    public readonly categories!: pulumi.Output<string[]>;
-    public /*out*/ readonly clusterProfileExtId!: pulumi.Output<string>;
+    declare public readonly categories: pulumi.Output<string[]>;
+    declare public /*out*/ readonly clusterProfileExtId: pulumi.Output<string>;
     /**
      * - (Optional) Cluster configuration details.
      */
-    public readonly configs!: pulumi.Output<outputs.ClusterV2Config[]>;
+    declare public readonly configs: pulumi.Output<outputs.ClusterV2Config[]>;
     /**
      * - (Optional) The name of the default container created as part of cluster creation. This is part of payload for cluster create operation only.
      */
-    public readonly containerName!: pulumi.Output<string>;
+    declare public readonly containerName: pulumi.Output<string>;
     /**
      * - (Optional) parameter that allows long-running operations to execute in a dry-run mode providing ability to identify trouble spots and system failures without performing the actual operation. Additionally this mode also offers a summary snapshot of the resultant system in order to better understand how things fit together. The operation runs in dry-run mode only if the provided value is true.
      */
-    public readonly dryrun!: pulumi.Output<boolean | undefined>;
-    public readonly expand!: pulumi.Output<string | undefined>;
-    public readonly extId!: pulumi.Output<string>;
-    public /*out*/ readonly inefficientVmCount!: pulumi.Output<number>;
-    public /*out*/ readonly links!: pulumi.Output<outputs.ClusterV2Link[]>;
+    declare public readonly dryrun: pulumi.Output<boolean | undefined>;
+    declare public readonly expand: pulumi.Output<string | undefined>;
+    declare public readonly extId: pulumi.Output<string>;
+    declare public /*out*/ readonly inefficientVmCount: pulumi.Output<number>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.ClusterV2Link[]>;
     /**
      * - (Required) The name for the vm.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * - (Optional) Network details of a cluster.
      */
-    public readonly networks!: pulumi.Output<outputs.ClusterV2Network[]>;
+    declare public readonly networks: pulumi.Output<outputs.ClusterV2Network[]>;
     /**
      * - (Optional) The reference to a node.
      */
-    public readonly nodes!: pulumi.Output<outputs.ClusterV2Node[]>;
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public readonly nodes: pulumi.Output<outputs.ClusterV2Node[]>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
      * - (Optional) The reference to a project.
      * Valid values are:
@@ -85,8 +85,8 @@ export class ClusterV2 extends pulumi.CustomResource {
      * - "PREUPGRADE"	The cluster is in pre-upgrade state.
      * - "SCHEDULED"	The cluster upgrade is in scheduled state.
      */
-    public /*out*/ readonly upgradeStatus!: pulumi.Output<string>;
-    public /*out*/ readonly vmCount!: pulumi.Output<number>;
+    declare public /*out*/ readonly upgradeStatus: pulumi.Output<string>;
+    declare public /*out*/ readonly vmCount: pulumi.Output<number>;
 
     /**
      * Create a ClusterV2 resource with the given unique name, arguments, and options.
@@ -101,33 +101,33 @@ export class ClusterV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClusterV2State | undefined;
-            resourceInputs["backupEligibilityScore"] = state ? state.backupEligibilityScore : undefined;
-            resourceInputs["categories"] = state ? state.categories : undefined;
-            resourceInputs["clusterProfileExtId"] = state ? state.clusterProfileExtId : undefined;
-            resourceInputs["configs"] = state ? state.configs : undefined;
-            resourceInputs["containerName"] = state ? state.containerName : undefined;
-            resourceInputs["dryrun"] = state ? state.dryrun : undefined;
-            resourceInputs["expand"] = state ? state.expand : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["inefficientVmCount"] = state ? state.inefficientVmCount : undefined;
-            resourceInputs["links"] = state ? state.links : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networks"] = state ? state.networks : undefined;
-            resourceInputs["nodes"] = state ? state.nodes : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["upgradeStatus"] = state ? state.upgradeStatus : undefined;
-            resourceInputs["vmCount"] = state ? state.vmCount : undefined;
+            resourceInputs["backupEligibilityScore"] = state?.backupEligibilityScore;
+            resourceInputs["categories"] = state?.categories;
+            resourceInputs["clusterProfileExtId"] = state?.clusterProfileExtId;
+            resourceInputs["configs"] = state?.configs;
+            resourceInputs["containerName"] = state?.containerName;
+            resourceInputs["dryrun"] = state?.dryrun;
+            resourceInputs["expand"] = state?.expand;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["inefficientVmCount"] = state?.inefficientVmCount;
+            resourceInputs["links"] = state?.links;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networks"] = state?.networks;
+            resourceInputs["nodes"] = state?.nodes;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["upgradeStatus"] = state?.upgradeStatus;
+            resourceInputs["vmCount"] = state?.vmCount;
         } else {
             const args = argsOrState as ClusterV2Args | undefined;
-            resourceInputs["categories"] = args ? args.categories : undefined;
-            resourceInputs["configs"] = args ? args.configs : undefined;
-            resourceInputs["containerName"] = args ? args.containerName : undefined;
-            resourceInputs["dryrun"] = args ? args.dryrun : undefined;
-            resourceInputs["expand"] = args ? args.expand : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networks"] = args ? args.networks : undefined;
-            resourceInputs["nodes"] = args ? args.nodes : undefined;
+            resourceInputs["categories"] = args?.categories;
+            resourceInputs["configs"] = args?.configs;
+            resourceInputs["containerName"] = args?.containerName;
+            resourceInputs["dryrun"] = args?.dryrun;
+            resourceInputs["expand"] = args?.expand;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networks"] = args?.networks;
+            resourceInputs["nodes"] = args?.nodes;
             resourceInputs["backupEligibilityScore"] = undefined /*out*/;
             resourceInputs["clusterProfileExtId"] = undefined /*out*/;
             resourceInputs["inefficientVmCount"] = undefined /*out*/;

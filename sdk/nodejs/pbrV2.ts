@@ -34,16 +34,16 @@ export class PbrV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === PbrV2.__pulumiType;
     }
 
-    public readonly description!: pulumi.Output<string>;
-    public readonly extId!: pulumi.Output<string>;
-    public /*out*/ readonly links!: pulumi.Output<outputs.PbrV2Link[]>;
-    public /*out*/ readonly metadatas!: pulumi.Output<outputs.PbrV2Metadata[]>;
-    public readonly name!: pulumi.Output<string>;
-    public readonly policies!: pulumi.Output<outputs.PbrV2Policy[]>;
-    public readonly priority!: pulumi.Output<number>;
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
-    public readonly vpcExtId!: pulumi.Output<string>;
-    public /*out*/ readonly vpcs!: pulumi.Output<outputs.PbrV2Vpc[]>;
+    declare public readonly description: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.PbrV2Link[]>;
+    declare public /*out*/ readonly metadatas: pulumi.Output<outputs.PbrV2Metadata[]>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public readonly policies: pulumi.Output<outputs.PbrV2Policy[]>;
+    declare public readonly priority: pulumi.Output<number>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
+    declare public readonly vpcExtId: pulumi.Output<string>;
+    declare public /*out*/ readonly vpcs: pulumi.Output<outputs.PbrV2Vpc[]>;
 
     /**
      * Create a PbrV2 resource with the given unique name, arguments, and options.
@@ -58,33 +58,33 @@ export class PbrV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PbrV2State | undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["links"] = state ? state.links : undefined;
-            resourceInputs["metadatas"] = state ? state.metadatas : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["policies"] = state ? state.policies : undefined;
-            resourceInputs["priority"] = state ? state.priority : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["vpcExtId"] = state ? state.vpcExtId : undefined;
-            resourceInputs["vpcs"] = state ? state.vpcs : undefined;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["links"] = state?.links;
+            resourceInputs["metadatas"] = state?.metadatas;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["policies"] = state?.policies;
+            resourceInputs["priority"] = state?.priority;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["vpcExtId"] = state?.vpcExtId;
+            resourceInputs["vpcs"] = state?.vpcs;
         } else {
             const args = argsOrState as PbrV2Args | undefined;
-            if ((!args || args.policies === undefined) && !opts.urn) {
+            if (args?.policies === undefined && !opts.urn) {
                 throw new Error("Missing required property 'policies'");
             }
-            if ((!args || args.priority === undefined) && !opts.urn) {
+            if (args?.priority === undefined && !opts.urn) {
                 throw new Error("Missing required property 'priority'");
             }
-            if ((!args || args.vpcExtId === undefined) && !opts.urn) {
+            if (args?.vpcExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vpcExtId'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["policies"] = args ? args.policies : undefined;
-            resourceInputs["priority"] = args ? args.priority : undefined;
-            resourceInputs["vpcExtId"] = args ? args.vpcExtId : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["policies"] = args?.policies;
+            resourceInputs["priority"] = args?.priority;
+            resourceInputs["vpcExtId"] = args?.vpcExtId;
             resourceInputs["links"] = undefined /*out*/;
             resourceInputs["metadatas"] = undefined /*out*/;
             resourceInputs["tenantId"] = undefined /*out*/;

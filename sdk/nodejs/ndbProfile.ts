@@ -40,71 +40,71 @@ export class NdbProfile extends pulumi.CustomResource {
     /**
      * associated databases of profiles
      */
-    public /*out*/ readonly assocDatabases!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly assocDatabases: pulumi.Output<string[]>;
     /**
      * associated database servers for associated profiles
      */
-    public /*out*/ readonly assocDbServers!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly assocDbServers: pulumi.Output<string[]>;
     /**
      * cluster availability of profile
      */
-    public /*out*/ readonly clusterAvailabilities!: pulumi.Output<outputs.NdbProfileClusterAvailability[]>;
+    declare public /*out*/ readonly clusterAvailabilities: pulumi.Output<outputs.NdbProfileClusterAvailability[]>;
     /**
      * Compute Profile
      */
-    public readonly computeProfiles!: pulumi.Output<outputs.NdbProfileComputeProfile[] | undefined>;
+    declare public readonly computeProfiles: pulumi.Output<outputs.NdbProfileComputeProfile[] | undefined>;
     /**
      * Database Parameter Profile
      */
-    public readonly databaseParameterProfiles!: pulumi.Output<outputs.NdbProfileDatabaseParameterProfile[] | undefined>;
+    declare public readonly databaseParameterProfiles: pulumi.Output<outputs.NdbProfileDatabaseParameterProfile[] | undefined>;
     /**
      * Description of profile
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Engine Type of database
      */
-    public readonly engineType!: pulumi.Output<string>;
+    declare public readonly engineType: pulumi.Output<string>;
     /**
      * latest version of profile
      */
-    public /*out*/ readonly latestVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly latestVersion: pulumi.Output<string>;
     /**
      * latest version id of profile
      */
-    public /*out*/ readonly latestVersionId!: pulumi.Output<string>;
+    declare public /*out*/ readonly latestVersionId: pulumi.Output<string>;
     /**
      * Name of profile
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * Network Profile
      */
-    public readonly networkProfiles!: pulumi.Output<outputs.NdbProfileNetworkProfile[] | undefined>;
+    declare public readonly networkProfiles: pulumi.Output<outputs.NdbProfileNetworkProfile[] | undefined>;
     /**
      * cluster on which profile created
      */
-    public /*out*/ readonly nxClusterId!: pulumi.Output<string>;
+    declare public /*out*/ readonly nxClusterId: pulumi.Output<string>;
     /**
      * owner  of profile
      */
-    public /*out*/ readonly owner!: pulumi.Output<string>;
+    declare public /*out*/ readonly owner: pulumi.Output<string>;
     /**
      * Publish for all users
      */
-    public readonly published!: pulumi.Output<boolean | undefined>;
+    declare public readonly published: pulumi.Output<boolean | undefined>;
     /**
      * Software Profile
      */
-    public readonly softwareProfile!: pulumi.Output<outputs.NdbProfileSoftwareProfile | undefined>;
+    declare public readonly softwareProfile: pulumi.Output<outputs.NdbProfileSoftwareProfile | undefined>;
     /**
      * status of profile
      */
-    public /*out*/ readonly status!: pulumi.Output<string>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
     /**
      * versions of associated profiles
      */
-    public /*out*/ readonly versions!: pulumi.Output<outputs.NdbProfileVersion[]>;
+    declare public /*out*/ readonly versions: pulumi.Output<outputs.NdbProfileVersion[]>;
 
     /**
      * Create a NdbProfile resource with the given unique name, arguments, and options.
@@ -119,33 +119,33 @@ export class NdbProfile extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbProfileState | undefined;
-            resourceInputs["assocDatabases"] = state ? state.assocDatabases : undefined;
-            resourceInputs["assocDbServers"] = state ? state.assocDbServers : undefined;
-            resourceInputs["clusterAvailabilities"] = state ? state.clusterAvailabilities : undefined;
-            resourceInputs["computeProfiles"] = state ? state.computeProfiles : undefined;
-            resourceInputs["databaseParameterProfiles"] = state ? state.databaseParameterProfiles : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["engineType"] = state ? state.engineType : undefined;
-            resourceInputs["latestVersion"] = state ? state.latestVersion : undefined;
-            resourceInputs["latestVersionId"] = state ? state.latestVersionId : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkProfiles"] = state ? state.networkProfiles : undefined;
-            resourceInputs["nxClusterId"] = state ? state.nxClusterId : undefined;
-            resourceInputs["owner"] = state ? state.owner : undefined;
-            resourceInputs["published"] = state ? state.published : undefined;
-            resourceInputs["softwareProfile"] = state ? state.softwareProfile : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["versions"] = state ? state.versions : undefined;
+            resourceInputs["assocDatabases"] = state?.assocDatabases;
+            resourceInputs["assocDbServers"] = state?.assocDbServers;
+            resourceInputs["clusterAvailabilities"] = state?.clusterAvailabilities;
+            resourceInputs["computeProfiles"] = state?.computeProfiles;
+            resourceInputs["databaseParameterProfiles"] = state?.databaseParameterProfiles;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["engineType"] = state?.engineType;
+            resourceInputs["latestVersion"] = state?.latestVersion;
+            resourceInputs["latestVersionId"] = state?.latestVersionId;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkProfiles"] = state?.networkProfiles;
+            resourceInputs["nxClusterId"] = state?.nxClusterId;
+            resourceInputs["owner"] = state?.owner;
+            resourceInputs["published"] = state?.published;
+            resourceInputs["softwareProfile"] = state?.softwareProfile;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["versions"] = state?.versions;
         } else {
             const args = argsOrState as NdbProfileArgs | undefined;
-            resourceInputs["computeProfiles"] = args ? args.computeProfiles : undefined;
-            resourceInputs["databaseParameterProfiles"] = args ? args.databaseParameterProfiles : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["engineType"] = args ? args.engineType : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkProfiles"] = args ? args.networkProfiles : undefined;
-            resourceInputs["published"] = args ? args.published : undefined;
-            resourceInputs["softwareProfile"] = args ? args.softwareProfile : undefined;
+            resourceInputs["computeProfiles"] = args?.computeProfiles;
+            resourceInputs["databaseParameterProfiles"] = args?.databaseParameterProfiles;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["engineType"] = args?.engineType;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkProfiles"] = args?.networkProfiles;
+            resourceInputs["published"] = args?.published;
+            resourceInputs["softwareProfile"] = args?.softwareProfile;
             resourceInputs["assocDatabases"] = undefined /*out*/;
             resourceInputs["assocDbServers"] = undefined /*out*/;
             resourceInputs["clusterAvailabilities"] = undefined /*out*/;

@@ -133,125 +133,125 @@ export class NetworkSecurityRule extends pulumi.CustomResource {
     /**
      * - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
      */
-    public readonly adRuleAction!: pulumi.Output<string>;
+    declare public readonly adRuleAction: pulumi.Output<string>;
     /**
      * - (Optional) The set of categories that matching VMs need to have.
      */
-    public readonly adRuleInboundAllowLists!: pulumi.Output<outputs.NetworkSecurityRuleAdRuleInboundAllowList[]>;
+    declare public readonly adRuleInboundAllowLists: pulumi.Output<outputs.NetworkSecurityRuleAdRuleInboundAllowList[]>;
     /**
      * - (Optional)
      */
-    public readonly adRuleOutboundAllowLists!: pulumi.Output<outputs.NetworkSecurityRuleAdRuleOutboundAllowList[]>;
+    declare public readonly adRuleOutboundAllowLists: pulumi.Output<outputs.NetworkSecurityRuleAdRuleOutboundAllowList[]>;
     /**
      * - (Optional) - Default policy for communication within target group.
      */
-    public readonly adRuleTargetGroupDefaultInternalPolicy!: pulumi.Output<string | undefined>;
+    declare public readonly adRuleTargetGroupDefaultInternalPolicy: pulumi.Output<string | undefined>;
     /**
      * - (Optional) - List of kinds associated with this filter.
      */
-    public readonly adRuleTargetGroupFilterKindLists!: pulumi.Output<string[]>;
+    declare public readonly adRuleTargetGroupFilterKindLists: pulumi.Output<string[]>;
     /**
      * - (Optional) - A list of category key and list of values.
      */
-    public readonly adRuleTargetGroupFilterParams!: pulumi.Output<outputs.NetworkSecurityRuleAdRuleTargetGroupFilterParam[]>;
+    declare public readonly adRuleTargetGroupFilterParams: pulumi.Output<outputs.NetworkSecurityRuleAdRuleTargetGroupFilterParam[]>;
     /**
      * - (Optional) - The type of the filter being used.
      */
-    public readonly adRuleTargetGroupFilterType!: pulumi.Output<string>;
+    declare public readonly adRuleTargetGroupFilterType: pulumi.Output<string>;
     /**
      * - (Optional) - Way to identify the object for which rule is applied.
      */
-    public readonly adRuleTargetGroupPeerSpecificationType!: pulumi.Output<string | undefined>;
-    public readonly allowIpv6Traffic!: pulumi.Output<boolean>;
+    declare public readonly adRuleTargetGroupPeerSpecificationType: pulumi.Output<string | undefined>;
+    declare public readonly allowIpv6Traffic: pulumi.Output<boolean>;
     /**
      * The version of the API.
      */
-    public /*out*/ readonly apiVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly apiVersion: pulumi.Output<string>;
     /**
      * - (Optional) - These rules govern what flows are allowed. Target group is a required attribute. Empty inboundAllowList will not anything into target group. Empty outboundAllowList will allow everything from target group.
      */
-    public readonly appRuleAction!: pulumi.Output<string>;
+    declare public readonly appRuleAction: pulumi.Output<string>;
     /**
      * - (Optional) The set of categories that matching VMs need to have.
      */
-    public readonly appRuleInboundAllowLists!: pulumi.Output<outputs.NetworkSecurityRuleAppRuleInboundAllowList[]>;
+    declare public readonly appRuleInboundAllowLists: pulumi.Output<outputs.NetworkSecurityRuleAppRuleInboundAllowList[]>;
     /**
      * - (Optional)
      */
-    public readonly appRuleOutboundAllowLists!: pulumi.Output<outputs.NetworkSecurityRuleAppRuleOutboundAllowList[]>;
+    declare public readonly appRuleOutboundAllowLists: pulumi.Output<outputs.NetworkSecurityRuleAppRuleOutboundAllowList[]>;
     /**
      * - (Optional) - Default policy for communication within target group.
      */
-    public readonly appRuleTargetGroupDefaultInternalPolicy!: pulumi.Output<string | undefined>;
+    declare public readonly appRuleTargetGroupDefaultInternalPolicy: pulumi.Output<string | undefined>;
     /**
      * - (Optional) - List of kinds associated with this filter.
      */
-    public readonly appRuleTargetGroupFilterKindLists!: pulumi.Output<string[]>;
+    declare public readonly appRuleTargetGroupFilterKindLists: pulumi.Output<string[]>;
     /**
      * - (Optional) - A list of category key and list of values.
      */
-    public readonly appRuleTargetGroupFilterParams!: pulumi.Output<outputs.NetworkSecurityRuleAppRuleTargetGroupFilterParam[]>;
+    declare public readonly appRuleTargetGroupFilterParams: pulumi.Output<outputs.NetworkSecurityRuleAppRuleTargetGroupFilterParam[]>;
     /**
      * - (Optional) - The type of the filter being used.
      */
-    public readonly appRuleTargetGroupFilterType!: pulumi.Output<string>;
+    declare public readonly appRuleTargetGroupFilterType: pulumi.Output<string>;
     /**
      * - (Optional) - Way to identify the object for which rule is applied.
      */
-    public readonly appRuleTargetGroupPeerSpecificationType!: pulumi.Output<string | undefined>;
+    declare public readonly appRuleTargetGroupPeerSpecificationType: pulumi.Output<string | undefined>;
     /**
      * - (Optional) Categories for the network_security_rule.
      */
-    public readonly categories!: pulumi.Output<outputs.NetworkSecurityRuleCategory[]>;
+    declare public readonly categories: pulumi.Output<outputs.NetworkSecurityRuleCategory[]>;
     /**
      * - (Optional) A description for network_security_rule.
      */
-    public readonly description!: pulumi.Output<string>;
-    public readonly isPolicyHitlogEnabled!: pulumi.Output<boolean>;
+    declare public readonly description: pulumi.Output<string>;
+    declare public readonly isPolicyHitlogEnabled: pulumi.Output<boolean>;
     /**
      * - (Optional) - These rules are used for environmental isolation.
      */
-    public readonly isolationRuleAction!: pulumi.Output<string>;
+    declare public readonly isolationRuleAction: pulumi.Output<string>;
     /**
      * - (Optional) - List of kinds associated with this filter.
      */
-    public readonly isolationRuleFirstEntityFilterKindLists!: pulumi.Output<string[]>;
+    declare public readonly isolationRuleFirstEntityFilterKindLists: pulumi.Output<string[]>;
     /**
      * - (Optional) - A list of category key and list of values.
      */
-    public readonly isolationRuleFirstEntityFilterParams!: pulumi.Output<outputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParam[]>;
+    declare public readonly isolationRuleFirstEntityFilterParams: pulumi.Output<outputs.NetworkSecurityRuleIsolationRuleFirstEntityFilterParam[]>;
     /**
      * - (Optional) - The type of the filter being used.
      */
-    public readonly isolationRuleFirstEntityFilterType!: pulumi.Output<string>;
+    declare public readonly isolationRuleFirstEntityFilterType: pulumi.Output<string>;
     /**
      * - (Optional) - List of kinds associated with this filter.
      */
-    public readonly isolationRuleSecondEntityFilterKindLists!: pulumi.Output<string[]>;
+    declare public readonly isolationRuleSecondEntityFilterKindLists: pulumi.Output<string[]>;
     /**
      * - (Optional) - A list of category key and list of values.
      */
-    public readonly isolationRuleSecondEntityFilterParams!: pulumi.Output<outputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParam[]>;
+    declare public readonly isolationRuleSecondEntityFilterParams: pulumi.Output<outputs.NetworkSecurityRuleIsolationRuleSecondEntityFilterParam[]>;
     /**
      * - (Optional) - The type of the filter being used.
      */
-    public readonly isolationRuleSecondEntityFilterType!: pulumi.Output<string>;
+    declare public readonly isolationRuleSecondEntityFilterType: pulumi.Output<string>;
     /**
      * - The networkSecurityRule kind metadata.
      */
-    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Required) The name for the network_security_rule.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * - (Optional) The reference to a user.
      */
-    public readonly ownerReference!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly ownerReference: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) The reference to a project.
      */
-    public readonly projectReference!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly projectReference: pulumi.Output<{[key: string]: string}>;
 
     /**
      * Create a NetworkSecurityRule resource with the given unique name, arguments, and options.
@@ -266,70 +266,70 @@ export class NetworkSecurityRule extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkSecurityRuleState | undefined;
-            resourceInputs["adRuleAction"] = state ? state.adRuleAction : undefined;
-            resourceInputs["adRuleInboundAllowLists"] = state ? state.adRuleInboundAllowLists : undefined;
-            resourceInputs["adRuleOutboundAllowLists"] = state ? state.adRuleOutboundAllowLists : undefined;
-            resourceInputs["adRuleTargetGroupDefaultInternalPolicy"] = state ? state.adRuleTargetGroupDefaultInternalPolicy : undefined;
-            resourceInputs["adRuleTargetGroupFilterKindLists"] = state ? state.adRuleTargetGroupFilterKindLists : undefined;
-            resourceInputs["adRuleTargetGroupFilterParams"] = state ? state.adRuleTargetGroupFilterParams : undefined;
-            resourceInputs["adRuleTargetGroupFilterType"] = state ? state.adRuleTargetGroupFilterType : undefined;
-            resourceInputs["adRuleTargetGroupPeerSpecificationType"] = state ? state.adRuleTargetGroupPeerSpecificationType : undefined;
-            resourceInputs["allowIpv6Traffic"] = state ? state.allowIpv6Traffic : undefined;
-            resourceInputs["apiVersion"] = state ? state.apiVersion : undefined;
-            resourceInputs["appRuleAction"] = state ? state.appRuleAction : undefined;
-            resourceInputs["appRuleInboundAllowLists"] = state ? state.appRuleInboundAllowLists : undefined;
-            resourceInputs["appRuleOutboundAllowLists"] = state ? state.appRuleOutboundAllowLists : undefined;
-            resourceInputs["appRuleTargetGroupDefaultInternalPolicy"] = state ? state.appRuleTargetGroupDefaultInternalPolicy : undefined;
-            resourceInputs["appRuleTargetGroupFilterKindLists"] = state ? state.appRuleTargetGroupFilterKindLists : undefined;
-            resourceInputs["appRuleTargetGroupFilterParams"] = state ? state.appRuleTargetGroupFilterParams : undefined;
-            resourceInputs["appRuleTargetGroupFilterType"] = state ? state.appRuleTargetGroupFilterType : undefined;
-            resourceInputs["appRuleTargetGroupPeerSpecificationType"] = state ? state.appRuleTargetGroupPeerSpecificationType : undefined;
-            resourceInputs["categories"] = state ? state.categories : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["isPolicyHitlogEnabled"] = state ? state.isPolicyHitlogEnabled : undefined;
-            resourceInputs["isolationRuleAction"] = state ? state.isolationRuleAction : undefined;
-            resourceInputs["isolationRuleFirstEntityFilterKindLists"] = state ? state.isolationRuleFirstEntityFilterKindLists : undefined;
-            resourceInputs["isolationRuleFirstEntityFilterParams"] = state ? state.isolationRuleFirstEntityFilterParams : undefined;
-            resourceInputs["isolationRuleFirstEntityFilterType"] = state ? state.isolationRuleFirstEntityFilterType : undefined;
-            resourceInputs["isolationRuleSecondEntityFilterKindLists"] = state ? state.isolationRuleSecondEntityFilterKindLists : undefined;
-            resourceInputs["isolationRuleSecondEntityFilterParams"] = state ? state.isolationRuleSecondEntityFilterParams : undefined;
-            resourceInputs["isolationRuleSecondEntityFilterType"] = state ? state.isolationRuleSecondEntityFilterType : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownerReference"] = state ? state.ownerReference : undefined;
-            resourceInputs["projectReference"] = state ? state.projectReference : undefined;
+            resourceInputs["adRuleAction"] = state?.adRuleAction;
+            resourceInputs["adRuleInboundAllowLists"] = state?.adRuleInboundAllowLists;
+            resourceInputs["adRuleOutboundAllowLists"] = state?.adRuleOutboundAllowLists;
+            resourceInputs["adRuleTargetGroupDefaultInternalPolicy"] = state?.adRuleTargetGroupDefaultInternalPolicy;
+            resourceInputs["adRuleTargetGroupFilterKindLists"] = state?.adRuleTargetGroupFilterKindLists;
+            resourceInputs["adRuleTargetGroupFilterParams"] = state?.adRuleTargetGroupFilterParams;
+            resourceInputs["adRuleTargetGroupFilterType"] = state?.adRuleTargetGroupFilterType;
+            resourceInputs["adRuleTargetGroupPeerSpecificationType"] = state?.adRuleTargetGroupPeerSpecificationType;
+            resourceInputs["allowIpv6Traffic"] = state?.allowIpv6Traffic;
+            resourceInputs["apiVersion"] = state?.apiVersion;
+            resourceInputs["appRuleAction"] = state?.appRuleAction;
+            resourceInputs["appRuleInboundAllowLists"] = state?.appRuleInboundAllowLists;
+            resourceInputs["appRuleOutboundAllowLists"] = state?.appRuleOutboundAllowLists;
+            resourceInputs["appRuleTargetGroupDefaultInternalPolicy"] = state?.appRuleTargetGroupDefaultInternalPolicy;
+            resourceInputs["appRuleTargetGroupFilterKindLists"] = state?.appRuleTargetGroupFilterKindLists;
+            resourceInputs["appRuleTargetGroupFilterParams"] = state?.appRuleTargetGroupFilterParams;
+            resourceInputs["appRuleTargetGroupFilterType"] = state?.appRuleTargetGroupFilterType;
+            resourceInputs["appRuleTargetGroupPeerSpecificationType"] = state?.appRuleTargetGroupPeerSpecificationType;
+            resourceInputs["categories"] = state?.categories;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["isPolicyHitlogEnabled"] = state?.isPolicyHitlogEnabled;
+            resourceInputs["isolationRuleAction"] = state?.isolationRuleAction;
+            resourceInputs["isolationRuleFirstEntityFilterKindLists"] = state?.isolationRuleFirstEntityFilterKindLists;
+            resourceInputs["isolationRuleFirstEntityFilterParams"] = state?.isolationRuleFirstEntityFilterParams;
+            resourceInputs["isolationRuleFirstEntityFilterType"] = state?.isolationRuleFirstEntityFilterType;
+            resourceInputs["isolationRuleSecondEntityFilterKindLists"] = state?.isolationRuleSecondEntityFilterKindLists;
+            resourceInputs["isolationRuleSecondEntityFilterParams"] = state?.isolationRuleSecondEntityFilterParams;
+            resourceInputs["isolationRuleSecondEntityFilterType"] = state?.isolationRuleSecondEntityFilterType;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownerReference"] = state?.ownerReference;
+            resourceInputs["projectReference"] = state?.projectReference;
         } else {
             const args = argsOrState as NetworkSecurityRuleArgs | undefined;
-            resourceInputs["adRuleAction"] = args ? args.adRuleAction : undefined;
-            resourceInputs["adRuleInboundAllowLists"] = args ? args.adRuleInboundAllowLists : undefined;
-            resourceInputs["adRuleOutboundAllowLists"] = args ? args.adRuleOutboundAllowLists : undefined;
-            resourceInputs["adRuleTargetGroupDefaultInternalPolicy"] = args ? args.adRuleTargetGroupDefaultInternalPolicy : undefined;
-            resourceInputs["adRuleTargetGroupFilterKindLists"] = args ? args.adRuleTargetGroupFilterKindLists : undefined;
-            resourceInputs["adRuleTargetGroupFilterParams"] = args ? args.adRuleTargetGroupFilterParams : undefined;
-            resourceInputs["adRuleTargetGroupFilterType"] = args ? args.adRuleTargetGroupFilterType : undefined;
-            resourceInputs["adRuleTargetGroupPeerSpecificationType"] = args ? args.adRuleTargetGroupPeerSpecificationType : undefined;
-            resourceInputs["allowIpv6Traffic"] = args ? args.allowIpv6Traffic : undefined;
-            resourceInputs["appRuleAction"] = args ? args.appRuleAction : undefined;
-            resourceInputs["appRuleInboundAllowLists"] = args ? args.appRuleInboundAllowLists : undefined;
-            resourceInputs["appRuleOutboundAllowLists"] = args ? args.appRuleOutboundAllowLists : undefined;
-            resourceInputs["appRuleTargetGroupDefaultInternalPolicy"] = args ? args.appRuleTargetGroupDefaultInternalPolicy : undefined;
-            resourceInputs["appRuleTargetGroupFilterKindLists"] = args ? args.appRuleTargetGroupFilterKindLists : undefined;
-            resourceInputs["appRuleTargetGroupFilterParams"] = args ? args.appRuleTargetGroupFilterParams : undefined;
-            resourceInputs["appRuleTargetGroupFilterType"] = args ? args.appRuleTargetGroupFilterType : undefined;
-            resourceInputs["appRuleTargetGroupPeerSpecificationType"] = args ? args.appRuleTargetGroupPeerSpecificationType : undefined;
-            resourceInputs["categories"] = args ? args.categories : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["isPolicyHitlogEnabled"] = args ? args.isPolicyHitlogEnabled : undefined;
-            resourceInputs["isolationRuleAction"] = args ? args.isolationRuleAction : undefined;
-            resourceInputs["isolationRuleFirstEntityFilterKindLists"] = args ? args.isolationRuleFirstEntityFilterKindLists : undefined;
-            resourceInputs["isolationRuleFirstEntityFilterParams"] = args ? args.isolationRuleFirstEntityFilterParams : undefined;
-            resourceInputs["isolationRuleFirstEntityFilterType"] = args ? args.isolationRuleFirstEntityFilterType : undefined;
-            resourceInputs["isolationRuleSecondEntityFilterKindLists"] = args ? args.isolationRuleSecondEntityFilterKindLists : undefined;
-            resourceInputs["isolationRuleSecondEntityFilterParams"] = args ? args.isolationRuleSecondEntityFilterParams : undefined;
-            resourceInputs["isolationRuleSecondEntityFilterType"] = args ? args.isolationRuleSecondEntityFilterType : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownerReference"] = args ? args.ownerReference : undefined;
-            resourceInputs["projectReference"] = args ? args.projectReference : undefined;
+            resourceInputs["adRuleAction"] = args?.adRuleAction;
+            resourceInputs["adRuleInboundAllowLists"] = args?.adRuleInboundAllowLists;
+            resourceInputs["adRuleOutboundAllowLists"] = args?.adRuleOutboundAllowLists;
+            resourceInputs["adRuleTargetGroupDefaultInternalPolicy"] = args?.adRuleTargetGroupDefaultInternalPolicy;
+            resourceInputs["adRuleTargetGroupFilterKindLists"] = args?.adRuleTargetGroupFilterKindLists;
+            resourceInputs["adRuleTargetGroupFilterParams"] = args?.adRuleTargetGroupFilterParams;
+            resourceInputs["adRuleTargetGroupFilterType"] = args?.adRuleTargetGroupFilterType;
+            resourceInputs["adRuleTargetGroupPeerSpecificationType"] = args?.adRuleTargetGroupPeerSpecificationType;
+            resourceInputs["allowIpv6Traffic"] = args?.allowIpv6Traffic;
+            resourceInputs["appRuleAction"] = args?.appRuleAction;
+            resourceInputs["appRuleInboundAllowLists"] = args?.appRuleInboundAllowLists;
+            resourceInputs["appRuleOutboundAllowLists"] = args?.appRuleOutboundAllowLists;
+            resourceInputs["appRuleTargetGroupDefaultInternalPolicy"] = args?.appRuleTargetGroupDefaultInternalPolicy;
+            resourceInputs["appRuleTargetGroupFilterKindLists"] = args?.appRuleTargetGroupFilterKindLists;
+            resourceInputs["appRuleTargetGroupFilterParams"] = args?.appRuleTargetGroupFilterParams;
+            resourceInputs["appRuleTargetGroupFilterType"] = args?.appRuleTargetGroupFilterType;
+            resourceInputs["appRuleTargetGroupPeerSpecificationType"] = args?.appRuleTargetGroupPeerSpecificationType;
+            resourceInputs["categories"] = args?.categories;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["isPolicyHitlogEnabled"] = args?.isPolicyHitlogEnabled;
+            resourceInputs["isolationRuleAction"] = args?.isolationRuleAction;
+            resourceInputs["isolationRuleFirstEntityFilterKindLists"] = args?.isolationRuleFirstEntityFilterKindLists;
+            resourceInputs["isolationRuleFirstEntityFilterParams"] = args?.isolationRuleFirstEntityFilterParams;
+            resourceInputs["isolationRuleFirstEntityFilterType"] = args?.isolationRuleFirstEntityFilterType;
+            resourceInputs["isolationRuleSecondEntityFilterKindLists"] = args?.isolationRuleSecondEntityFilterKindLists;
+            resourceInputs["isolationRuleSecondEntityFilterParams"] = args?.isolationRuleSecondEntityFilterParams;
+            resourceInputs["isolationRuleSecondEntityFilterType"] = args?.isolationRuleSecondEntityFilterType;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownerReference"] = args?.ownerReference;
+            resourceInputs["projectReference"] = args?.projectReference;
             resourceInputs["apiVersion"] = undefined /*out*/;
             resourceInputs["metadata"] = undefined /*out*/;
         }

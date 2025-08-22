@@ -37,94 +37,94 @@ export class NdbRegisterDbserver extends pulumi.CustomResource {
         return obj['__pulumiType'] === NdbRegisterDbserver.__pulumiType;
     }
 
-    public /*out*/ readonly clientId!: pulumi.Output<string>;
-    public readonly credentials!: pulumi.Output<outputs.NdbRegisterDbserverCredential[] | undefined>;
+    declare public /*out*/ readonly clientId: pulumi.Output<string>;
+    declare public readonly credentials: pulumi.Output<outputs.NdbRegisterDbserverCredential[] | undefined>;
     /**
      * database type i.e. postgres_database
      */
-    public readonly databaseType!: pulumi.Output<string>;
-    public /*out*/ readonly dbserverClusterId!: pulumi.Output<string>;
+    declare public readonly databaseType: pulumi.Output<string>;
+    declare public /*out*/ readonly dbserverClusterId: pulumi.Output<string>;
     /**
      * - (Optional) Delete the VM and associated storage. Default value is false
      */
-    public readonly delete!: pulumi.Output<boolean | undefined>;
+    declare public readonly delete: pulumi.Output<boolean | undefined>;
     /**
      * - (Optional) Delete volume grous. Default value is true
      */
-    public readonly deleteVgs!: pulumi.Output<boolean | undefined>;
+    declare public readonly deleteVgs: pulumi.Output<boolean | undefined>;
     /**
      * - (Optional) Delete the vm snapshots. Default is true
      */
-    public readonly deleteVmSnapshots!: pulumi.Output<boolean | undefined>;
+    declare public readonly deleteVmSnapshots: pulumi.Output<boolean | undefined>;
     /**
      * description of db server vm. Should be used in update Method only .
      */
-    public readonly description!: pulumi.Output<string>;
-    public /*out*/ readonly eraCreated!: pulumi.Output<boolean>;
-    public /*out*/ readonly eraDriveId!: pulumi.Output<string>;
-    public /*out*/ readonly eraVersion!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
+    declare public /*out*/ readonly eraCreated: pulumi.Output<boolean>;
+    declare public /*out*/ readonly eraDriveId: pulumi.Output<string>;
+    declare public /*out*/ readonly eraVersion: pulumi.Output<string>;
     /**
      * forced install the packages. Default is true
      */
-    public readonly forcedInstall!: pulumi.Output<boolean | undefined>;
-    public /*out*/ readonly fqdns!: pulumi.Output<string>;
-    public /*out*/ readonly internal!: pulumi.Output<boolean>;
-    public /*out*/ readonly ipAddresses!: pulumi.Output<string[]>;
-    public /*out*/ readonly macAddresses!: pulumi.Output<string[]>;
+    declare public readonly forcedInstall: pulumi.Output<boolean | undefined>;
+    declare public /*out*/ readonly fqdns: pulumi.Output<string>;
+    declare public /*out*/ readonly internal: pulumi.Output<boolean>;
+    declare public /*out*/ readonly ipAddresses: pulumi.Output<string[]>;
+    declare public /*out*/ readonly macAddresses: pulumi.Output<string[]>;
     /**
      * Name of db server vm. Should be used in Update Method only.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * cluster on which you want to register the database server VM.
      */
-    public readonly nxclusterId!: pulumi.Output<string | undefined>;
+    declare public readonly nxclusterId: pulumi.Output<string | undefined>;
     /**
      * password of the NDB drive user account. Conflicts with ssh_key.
      */
-    public readonly password!: pulumi.Output<string | undefined>;
+    declare public readonly password: pulumi.Output<string | undefined>;
     /**
      * postgres info for dbserver
      */
-    public readonly postgresDatabases!: pulumi.Output<outputs.NdbRegisterDbserverPostgresDatabase[] | undefined>;
+    declare public readonly postgresDatabases: pulumi.Output<outputs.NdbRegisterDbserverPostgresDatabase[] | undefined>;
     /**
      * List of all the properties
      */
-    public /*out*/ readonly properties!: pulumi.Output<outputs.NdbRegisterDbserverProperty[]>;
+    declare public /*out*/ readonly properties: pulumi.Output<outputs.NdbRegisterDbserverProperty[]>;
     /**
      * - (Optional) Unregister the database from NDB. Default value is true
      */
-    public readonly remove!: pulumi.Output<boolean | undefined>;
+    declare public readonly remove: pulumi.Output<boolean | undefined>;
     /**
      * - (Optional) Soft remove. Default will be false
      */
-    public readonly softRemove!: pulumi.Output<boolean | undefined>;
+    declare public readonly softRemove: pulumi.Output<boolean | undefined>;
     /**
      * the private key. Conflicts with password.
      */
-    public readonly sshKey!: pulumi.Output<string | undefined>;
-    public /*out*/ readonly status!: pulumi.Output<string>;
-    public readonly tags!: pulumi.Output<outputs.NdbRegisterDbserverTag[]>;
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    declare public readonly sshKey: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly status: pulumi.Output<string>;
+    declare public readonly tags: pulumi.Output<outputs.NdbRegisterDbserverTag[]>;
+    declare public /*out*/ readonly type: pulumi.Output<string>;
     /**
      * Updates the name and description in cluster. Should be used in Update Method only.
      */
-    public readonly updateNameDescriptionInCluster!: pulumi.Output<boolean | undefined>;
+    declare public readonly updateNameDescriptionInCluster: pulumi.Output<boolean | undefined>;
     /**
      * username of the NDB drive user account that has sudo access
      */
-    public readonly username!: pulumi.Output<string | undefined>;
-    public /*out*/ readonly vmClusterName!: pulumi.Output<string>;
-    public /*out*/ readonly vmClusterUuid!: pulumi.Output<string>;
+    declare public readonly username: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly vmClusterName: pulumi.Output<string>;
+    declare public /*out*/ readonly vmClusterUuid: pulumi.Output<string>;
     /**
      * IP address of the database server VM
      */
-    public readonly vmIp!: pulumi.Output<string>;
-    public /*out*/ readonly vmTimezone!: pulumi.Output<string>;
+    declare public readonly vmIp: pulumi.Output<string>;
+    declare public /*out*/ readonly vmTimezone: pulumi.Output<string>;
     /**
      * working directory of postgres. Default is "/tmp"
      */
-    public readonly workingDirectory!: pulumi.Output<string | undefined>;
+    declare public readonly workingDirectory: pulumi.Output<string | undefined>;
 
     /**
      * Create a NdbRegisterDbserver resource with the given unique name, arguments, and options.
@@ -139,67 +139,67 @@ export class NdbRegisterDbserver extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NdbRegisterDbserverState | undefined;
-            resourceInputs["clientId"] = state ? state.clientId : undefined;
-            resourceInputs["credentials"] = state ? state.credentials : undefined;
-            resourceInputs["databaseType"] = state ? state.databaseType : undefined;
-            resourceInputs["dbserverClusterId"] = state ? state.dbserverClusterId : undefined;
-            resourceInputs["delete"] = state ? state.delete : undefined;
-            resourceInputs["deleteVgs"] = state ? state.deleteVgs : undefined;
-            resourceInputs["deleteVmSnapshots"] = state ? state.deleteVmSnapshots : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["eraCreated"] = state ? state.eraCreated : undefined;
-            resourceInputs["eraDriveId"] = state ? state.eraDriveId : undefined;
-            resourceInputs["eraVersion"] = state ? state.eraVersion : undefined;
-            resourceInputs["forcedInstall"] = state ? state.forcedInstall : undefined;
-            resourceInputs["fqdns"] = state ? state.fqdns : undefined;
-            resourceInputs["internal"] = state ? state.internal : undefined;
-            resourceInputs["ipAddresses"] = state ? state.ipAddresses : undefined;
-            resourceInputs["macAddresses"] = state ? state.macAddresses : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["nxclusterId"] = state ? state.nxclusterId : undefined;
-            resourceInputs["password"] = state ? state.password : undefined;
-            resourceInputs["postgresDatabases"] = state ? state.postgresDatabases : undefined;
-            resourceInputs["properties"] = state ? state.properties : undefined;
-            resourceInputs["remove"] = state ? state.remove : undefined;
-            resourceInputs["softRemove"] = state ? state.softRemove : undefined;
-            resourceInputs["sshKey"] = state ? state.sshKey : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["tags"] = state ? state.tags : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["updateNameDescriptionInCluster"] = state ? state.updateNameDescriptionInCluster : undefined;
-            resourceInputs["username"] = state ? state.username : undefined;
-            resourceInputs["vmClusterName"] = state ? state.vmClusterName : undefined;
-            resourceInputs["vmClusterUuid"] = state ? state.vmClusterUuid : undefined;
-            resourceInputs["vmIp"] = state ? state.vmIp : undefined;
-            resourceInputs["vmTimezone"] = state ? state.vmTimezone : undefined;
-            resourceInputs["workingDirectory"] = state ? state.workingDirectory : undefined;
+            resourceInputs["clientId"] = state?.clientId;
+            resourceInputs["credentials"] = state?.credentials;
+            resourceInputs["databaseType"] = state?.databaseType;
+            resourceInputs["dbserverClusterId"] = state?.dbserverClusterId;
+            resourceInputs["delete"] = state?.delete;
+            resourceInputs["deleteVgs"] = state?.deleteVgs;
+            resourceInputs["deleteVmSnapshots"] = state?.deleteVmSnapshots;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["eraCreated"] = state?.eraCreated;
+            resourceInputs["eraDriveId"] = state?.eraDriveId;
+            resourceInputs["eraVersion"] = state?.eraVersion;
+            resourceInputs["forcedInstall"] = state?.forcedInstall;
+            resourceInputs["fqdns"] = state?.fqdns;
+            resourceInputs["internal"] = state?.internal;
+            resourceInputs["ipAddresses"] = state?.ipAddresses;
+            resourceInputs["macAddresses"] = state?.macAddresses;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["nxclusterId"] = state?.nxclusterId;
+            resourceInputs["password"] = state?.password;
+            resourceInputs["postgresDatabases"] = state?.postgresDatabases;
+            resourceInputs["properties"] = state?.properties;
+            resourceInputs["remove"] = state?.remove;
+            resourceInputs["softRemove"] = state?.softRemove;
+            resourceInputs["sshKey"] = state?.sshKey;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["tags"] = state?.tags;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["updateNameDescriptionInCluster"] = state?.updateNameDescriptionInCluster;
+            resourceInputs["username"] = state?.username;
+            resourceInputs["vmClusterName"] = state?.vmClusterName;
+            resourceInputs["vmClusterUuid"] = state?.vmClusterUuid;
+            resourceInputs["vmIp"] = state?.vmIp;
+            resourceInputs["vmTimezone"] = state?.vmTimezone;
+            resourceInputs["workingDirectory"] = state?.workingDirectory;
         } else {
             const args = argsOrState as NdbRegisterDbserverArgs | undefined;
-            if ((!args || args.databaseType === undefined) && !opts.urn) {
+            if (args?.databaseType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'databaseType'");
             }
-            if ((!args || args.vmIp === undefined) && !opts.urn) {
+            if (args?.vmIp === undefined && !opts.urn) {
                 throw new Error("Missing required property 'vmIp'");
             }
-            resourceInputs["credentials"] = args ? args.credentials : undefined;
-            resourceInputs["databaseType"] = args ? args.databaseType : undefined;
-            resourceInputs["delete"] = args ? args.delete : undefined;
-            resourceInputs["deleteVgs"] = args ? args.deleteVgs : undefined;
-            resourceInputs["deleteVmSnapshots"] = args ? args.deleteVmSnapshots : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["forcedInstall"] = args ? args.forcedInstall : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["nxclusterId"] = args ? args.nxclusterId : undefined;
+            resourceInputs["credentials"] = args?.credentials;
+            resourceInputs["databaseType"] = args?.databaseType;
+            resourceInputs["delete"] = args?.delete;
+            resourceInputs["deleteVgs"] = args?.deleteVgs;
+            resourceInputs["deleteVmSnapshots"] = args?.deleteVmSnapshots;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["forcedInstall"] = args?.forcedInstall;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["nxclusterId"] = args?.nxclusterId;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
-            resourceInputs["postgresDatabases"] = args ? args.postgresDatabases : undefined;
-            resourceInputs["remove"] = args ? args.remove : undefined;
-            resourceInputs["softRemove"] = args ? args.softRemove : undefined;
+            resourceInputs["postgresDatabases"] = args?.postgresDatabases;
+            resourceInputs["remove"] = args?.remove;
+            resourceInputs["softRemove"] = args?.softRemove;
             resourceInputs["sshKey"] = args?.sshKey ? pulumi.secret(args.sshKey) : undefined;
-            resourceInputs["tags"] = args ? args.tags : undefined;
-            resourceInputs["updateNameDescriptionInCluster"] = args ? args.updateNameDescriptionInCluster : undefined;
-            resourceInputs["username"] = args ? args.username : undefined;
-            resourceInputs["vmIp"] = args ? args.vmIp : undefined;
-            resourceInputs["workingDirectory"] = args ? args.workingDirectory : undefined;
+            resourceInputs["tags"] = args?.tags;
+            resourceInputs["updateNameDescriptionInCluster"] = args?.updateNameDescriptionInCluster;
+            resourceInputs["username"] = args?.username;
+            resourceInputs["vmIp"] = args?.vmIp;
+            resourceInputs["workingDirectory"] = args?.workingDirectory;
             resourceInputs["clientId"] = undefined /*out*/;
             resourceInputs["dbserverClusterId"] = undefined /*out*/;
             resourceInputs["eraCreated"] = undefined /*out*/;

@@ -43,32 +43,32 @@ export class ClustersDiscoverUnconfiguredNodesV2 extends pulumi.CustomResource {
      * - "IPV4"	IPV4 address type.
      * - "IPV6"	IPV6 address type.
      */
-    public readonly addressType!: pulumi.Output<string | undefined>;
+    declare public readonly addressType: pulumi.Output<string | undefined>;
     /**
      * -(Required) Cluster UUID.
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * - (Optional) Interface name that is used for packet broadcasting.
      */
-    public readonly interfaceFilterLists!: pulumi.Output<string[] | undefined>;
+    declare public readonly interfaceFilterLists: pulumi.Output<string[] | undefined>;
     /**
      * - (Optional) IP addresses of the unconfigured nodes.
      */
-    public readonly ipFilterLists!: pulumi.Output<outputs.ClustersDiscoverUnconfiguredNodesV2IpFilterList[] | undefined>;
+    declare public readonly ipFilterLists: pulumi.Output<outputs.ClustersDiscoverUnconfiguredNodesV2IpFilterList[] | undefined>;
     /**
      * - (Optional) Indicates if the discovery is manual or not.
      */
-    public readonly isManualDiscovery!: pulumi.Output<boolean | undefined>;
+    declare public readonly isManualDiscovery: pulumi.Output<boolean | undefined>;
     /**
      * - (Optional) Timeout for the workflow in seconds.
      */
-    public readonly timeout!: pulumi.Output<number | undefined>;
-    public /*out*/ readonly unconfiguredNodes!: pulumi.Output<outputs.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode[]>;
+    declare public readonly timeout: pulumi.Output<number | undefined>;
+    declare public /*out*/ readonly unconfiguredNodes: pulumi.Output<outputs.ClustersDiscoverUnconfiguredNodesV2UnconfiguredNode[]>;
     /**
      * - (Optional) Unconfigured node UUIDs.
      */
-    public readonly uuidFilterLists!: pulumi.Output<string[] | undefined>;
+    declare public readonly uuidFilterLists: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a ClustersDiscoverUnconfiguredNodesV2 resource with the given unique name, arguments, and options.
@@ -83,26 +83,26 @@ export class ClustersDiscoverUnconfiguredNodesV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ClustersDiscoverUnconfiguredNodesV2State | undefined;
-            resourceInputs["addressType"] = state ? state.addressType : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["interfaceFilterLists"] = state ? state.interfaceFilterLists : undefined;
-            resourceInputs["ipFilterLists"] = state ? state.ipFilterLists : undefined;
-            resourceInputs["isManualDiscovery"] = state ? state.isManualDiscovery : undefined;
-            resourceInputs["timeout"] = state ? state.timeout : undefined;
-            resourceInputs["unconfiguredNodes"] = state ? state.unconfiguredNodes : undefined;
-            resourceInputs["uuidFilterLists"] = state ? state.uuidFilterLists : undefined;
+            resourceInputs["addressType"] = state?.addressType;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["interfaceFilterLists"] = state?.interfaceFilterLists;
+            resourceInputs["ipFilterLists"] = state?.ipFilterLists;
+            resourceInputs["isManualDiscovery"] = state?.isManualDiscovery;
+            resourceInputs["timeout"] = state?.timeout;
+            resourceInputs["unconfiguredNodes"] = state?.unconfiguredNodes;
+            resourceInputs["uuidFilterLists"] = state?.uuidFilterLists;
         } else {
             const args = argsOrState as ClustersDiscoverUnconfiguredNodesV2Args | undefined;
-            if ((!args || args.extId === undefined) && !opts.urn) {
+            if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
-            resourceInputs["addressType"] = args ? args.addressType : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["interfaceFilterLists"] = args ? args.interfaceFilterLists : undefined;
-            resourceInputs["ipFilterLists"] = args ? args.ipFilterLists : undefined;
-            resourceInputs["isManualDiscovery"] = args ? args.isManualDiscovery : undefined;
-            resourceInputs["timeout"] = args ? args.timeout : undefined;
-            resourceInputs["uuidFilterLists"] = args ? args.uuidFilterLists : undefined;
+            resourceInputs["addressType"] = args?.addressType;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["interfaceFilterLists"] = args?.interfaceFilterLists;
+            resourceInputs["ipFilterLists"] = args?.ipFilterLists;
+            resourceInputs["isManualDiscovery"] = args?.isManualDiscovery;
+            resourceInputs["timeout"] = args?.timeout;
+            resourceInputs["uuidFilterLists"] = args?.uuidFilterLists;
             resourceInputs["unconfiguredNodes"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

@@ -70,51 +70,51 @@ export class AuthorizationPolicyV2 extends pulumi.CustomResource {
      * * `SERVICE_DEFINED` : ACP defined by a service.
      * * `USER_DEFINED` : ACP defined by an User.
      */
-    public readonly authorizationPolicyType!: pulumi.Output<string | undefined>;
+    declare public readonly authorizationPolicyType: pulumi.Output<string | undefined>;
     /**
      * Client that created the entity.
      */
-    public /*out*/ readonly clientName!: pulumi.Output<string>;
+    declare public /*out*/ readonly clientName: pulumi.Output<string>;
     /**
      * User or Service Name that created the Authorization Policy.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * The creation time of the Authorization Policy.
      */
-    public /*out*/ readonly createdTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdTime: pulumi.Output<string>;
     /**
      * Description of the Authorization Policy.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * Name of the Authorization Policy.
      */
-    public readonly displayName!: pulumi.Output<string>;
+    declare public readonly displayName: pulumi.Output<string>;
     /**
      * The entities being qualified by the Authorization Policy.
      */
-    public readonly entities!: pulumi.Output<outputs.AuthorizationPolicyV2Entity[]>;
+    declare public readonly entities: pulumi.Output<outputs.AuthorizationPolicyV2Entity[]>;
     /**
      * ext_id of Authorization policy.
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * The identities for which the Authorization Policy is created.
      */
-    public readonly identities!: pulumi.Output<outputs.AuthorizationPolicyV2Identity[]>;
+    declare public readonly identities: pulumi.Output<outputs.AuthorizationPolicyV2Identity[]>;
     /**
      * Flag identifying if the Authorization Policy is system defined or not.
      */
-    public /*out*/ readonly isSystemDefined!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isSystemDefined: pulumi.Output<boolean>;
     /**
      * The time when the Authorization Policy was last updated.
      */
-    public /*out*/ readonly lastUpdatedTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastUpdatedTime: pulumi.Output<string>;
     /**
      * The Role associated with the Authorization Policy.
      */
-    public readonly role!: pulumi.Output<string>;
+    declare public readonly role: pulumi.Output<string>;
 
     /**
      * Create a AuthorizationPolicyV2 resource with the given unique name, arguments, and options.
@@ -129,39 +129,39 @@ export class AuthorizationPolicyV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as AuthorizationPolicyV2State | undefined;
-            resourceInputs["authorizationPolicyType"] = state ? state.authorizationPolicyType : undefined;
-            resourceInputs["clientName"] = state ? state.clientName : undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["createdTime"] = state ? state.createdTime : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["entities"] = state ? state.entities : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["identities"] = state ? state.identities : undefined;
-            resourceInputs["isSystemDefined"] = state ? state.isSystemDefined : undefined;
-            resourceInputs["lastUpdatedTime"] = state ? state.lastUpdatedTime : undefined;
-            resourceInputs["role"] = state ? state.role : undefined;
+            resourceInputs["authorizationPolicyType"] = state?.authorizationPolicyType;
+            resourceInputs["clientName"] = state?.clientName;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["createdTime"] = state?.createdTime;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["entities"] = state?.entities;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["identities"] = state?.identities;
+            resourceInputs["isSystemDefined"] = state?.isSystemDefined;
+            resourceInputs["lastUpdatedTime"] = state?.lastUpdatedTime;
+            resourceInputs["role"] = state?.role;
         } else {
             const args = argsOrState as AuthorizationPolicyV2Args | undefined;
-            if ((!args || args.displayName === undefined) && !opts.urn) {
+            if (args?.displayName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.entities === undefined) && !opts.urn) {
+            if (args?.entities === undefined && !opts.urn) {
                 throw new Error("Missing required property 'entities'");
             }
-            if ((!args || args.identities === undefined) && !opts.urn) {
+            if (args?.identities === undefined && !opts.urn) {
                 throw new Error("Missing required property 'identities'");
             }
-            if ((!args || args.role === undefined) && !opts.urn) {
+            if (args?.role === undefined && !opts.urn) {
                 throw new Error("Missing required property 'role'");
             }
-            resourceInputs["authorizationPolicyType"] = args ? args.authorizationPolicyType : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["entities"] = args ? args.entities : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["identities"] = args ? args.identities : undefined;
-            resourceInputs["role"] = args ? args.role : undefined;
+            resourceInputs["authorizationPolicyType"] = args?.authorizationPolicyType;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["displayName"] = args?.displayName;
+            resourceInputs["entities"] = args?.entities;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["identities"] = args?.identities;
+            resourceInputs["role"] = args?.role;
             resourceInputs["clientName"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["createdTime"] = undefined /*out*/;

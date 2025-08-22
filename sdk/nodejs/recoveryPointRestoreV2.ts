@@ -63,27 +63,27 @@ export class RecoveryPointRestoreV2 extends pulumi.CustomResource {
     /**
      * -(Required) External identifier of the cluster.
      */
-    public readonly clusterExtId!: pulumi.Output<string>;
+    declare public readonly clusterExtId: pulumi.Output<string>;
     /**
      * -(Required) The external identifier that can be used to retrieve the recovery point using its URL.
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * - List of external identifiers of the created(restored) VMs.
      */
-    public /*out*/ readonly vmExtIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly vmExtIds: pulumi.Output<string[]>;
     /**
      * -(Optional) List of specifications to restore a specific VM recovery point(s) that are a part of the top-level recovery point. A specific VM recovery point can be selected for restore by specifying its external identifier along with override specification (if any).
      */
-    public readonly vmRecoveryPointRestoreOverrides!: pulumi.Output<outputs.RecoveryPointRestoreV2VmRecoveryPointRestoreOverride[] | undefined>;
+    declare public readonly vmRecoveryPointRestoreOverrides: pulumi.Output<outputs.RecoveryPointRestoreV2VmRecoveryPointRestoreOverride[] | undefined>;
     /**
      * - List of external identifiers of the created(restored) volume groups.
      */
-    public /*out*/ readonly volumeGroupExtIds!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly volumeGroupExtIds: pulumi.Output<string[]>;
     /**
      * -(Optional) List of specifications to restore a specific volume group recovery point(s) that are a part of the top-level recovery point. A specific volume group recovery point can be selected for restore by specifying its external identifier along with override specification (if any).
      */
-    public readonly volumeGroupRecoveryPointRestoreOverrides!: pulumi.Output<outputs.RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverride[] | undefined>;
+    declare public readonly volumeGroupRecoveryPointRestoreOverrides: pulumi.Output<outputs.RecoveryPointRestoreV2VolumeGroupRecoveryPointRestoreOverride[] | undefined>;
 
     /**
      * Create a RecoveryPointRestoreV2 resource with the given unique name, arguments, and options.
@@ -98,24 +98,24 @@ export class RecoveryPointRestoreV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RecoveryPointRestoreV2State | undefined;
-            resourceInputs["clusterExtId"] = state ? state.clusterExtId : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["vmExtIds"] = state ? state.vmExtIds : undefined;
-            resourceInputs["vmRecoveryPointRestoreOverrides"] = state ? state.vmRecoveryPointRestoreOverrides : undefined;
-            resourceInputs["volumeGroupExtIds"] = state ? state.volumeGroupExtIds : undefined;
-            resourceInputs["volumeGroupRecoveryPointRestoreOverrides"] = state ? state.volumeGroupRecoveryPointRestoreOverrides : undefined;
+            resourceInputs["clusterExtId"] = state?.clusterExtId;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["vmExtIds"] = state?.vmExtIds;
+            resourceInputs["vmRecoveryPointRestoreOverrides"] = state?.vmRecoveryPointRestoreOverrides;
+            resourceInputs["volumeGroupExtIds"] = state?.volumeGroupExtIds;
+            resourceInputs["volumeGroupRecoveryPointRestoreOverrides"] = state?.volumeGroupRecoveryPointRestoreOverrides;
         } else {
             const args = argsOrState as RecoveryPointRestoreV2Args | undefined;
-            if ((!args || args.clusterExtId === undefined) && !opts.urn) {
+            if (args?.clusterExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterExtId'");
             }
-            if ((!args || args.extId === undefined) && !opts.urn) {
+            if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
-            resourceInputs["clusterExtId"] = args ? args.clusterExtId : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["vmRecoveryPointRestoreOverrides"] = args ? args.vmRecoveryPointRestoreOverrides : undefined;
-            resourceInputs["volumeGroupRecoveryPointRestoreOverrides"] = args ? args.volumeGroupRecoveryPointRestoreOverrides : undefined;
+            resourceInputs["clusterExtId"] = args?.clusterExtId;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["vmRecoveryPointRestoreOverrides"] = args?.vmRecoveryPointRestoreOverrides;
+            resourceInputs["volumeGroupRecoveryPointRestoreOverrides"] = args?.volumeGroupRecoveryPointRestoreOverrides;
             resourceInputs["vmExtIds"] = undefined /*out*/;
             resourceInputs["volumeGroupExtIds"] = undefined /*out*/;
         }

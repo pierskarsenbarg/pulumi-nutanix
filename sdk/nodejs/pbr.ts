@@ -62,46 +62,46 @@ export class Pbr extends pulumi.CustomResource {
     /**
      * Routing policy action. Must be one of {DENY, PERMIT, REROUTE} .
      */
-    public readonly action!: pulumi.Output<string>;
+    declare public readonly action: pulumi.Output<string>;
     /**
      * The version of the API.
      */
-    public readonly apiVersion!: pulumi.Output<string>;
-    public readonly destination!: pulumi.Output<outputs.PbrDestination>;
+    declare public readonly apiVersion: pulumi.Output<string>;
+    declare public readonly destination: pulumi.Output<outputs.PbrDestination>;
     /**
      * Additionally create Policy in reverse direction. Should be used with {TCP, UDP with start and end port ranges and ICMP with icmp code and type}. Supported with 2022.x.
      */
-    public readonly isBidirectional!: pulumi.Output<boolean>;
+    declare public readonly isBidirectional: pulumi.Output<boolean>;
     /**
      * The routing policies kind metadata.
      */
-    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
      * name of policy
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * priority of policy
      */
-    public readonly priority!: pulumi.Output<number>;
-    public readonly protocolParameters!: pulumi.Output<outputs.PbrProtocolParameters | undefined>;
+    declare public readonly priority: pulumi.Output<number>;
+    declare public readonly protocolParameters: pulumi.Output<outputs.PbrProtocolParameters | undefined>;
     /**
      * Protocol type of policy based routing. Must be one of {TCP, UDP, ICMP, PROTOCOL_NUMBER, ALL} .
      */
-    public readonly protocolType!: pulumi.Output<string>;
+    declare public readonly protocolType: pulumi.Output<string>;
     /**
      * IP addresses of network services. This field is valid only when action is REROUTE.
      */
-    public readonly serviceIpLists!: pulumi.Output<string[]>;
-    public readonly source!: pulumi.Output<outputs.PbrSource>;
+    declare public readonly serviceIpLists: pulumi.Output<string[]>;
+    declare public readonly source: pulumi.Output<outputs.PbrSource>;
     /**
      * The reference to a vpc. Should not be used with {vpc_reference_uuid}
      */
-    public readonly vpcName!: pulumi.Output<string>;
+    declare public readonly vpcName: pulumi.Output<string>;
     /**
      * The reference to a vpc . Should not be used with {vpc_name} .
      */
-    public readonly vpcReferenceUuid!: pulumi.Output<string>;
+    declare public readonly vpcReferenceUuid: pulumi.Output<string>;
 
     /**
      * Create a Pbr resource with the given unique name, arguments, and options.
@@ -116,48 +116,48 @@ export class Pbr extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PbrState | undefined;
-            resourceInputs["action"] = state ? state.action : undefined;
-            resourceInputs["apiVersion"] = state ? state.apiVersion : undefined;
-            resourceInputs["destination"] = state ? state.destination : undefined;
-            resourceInputs["isBidirectional"] = state ? state.isBidirectional : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["priority"] = state ? state.priority : undefined;
-            resourceInputs["protocolParameters"] = state ? state.protocolParameters : undefined;
-            resourceInputs["protocolType"] = state ? state.protocolType : undefined;
-            resourceInputs["serviceIpLists"] = state ? state.serviceIpLists : undefined;
-            resourceInputs["source"] = state ? state.source : undefined;
-            resourceInputs["vpcName"] = state ? state.vpcName : undefined;
-            resourceInputs["vpcReferenceUuid"] = state ? state.vpcReferenceUuid : undefined;
+            resourceInputs["action"] = state?.action;
+            resourceInputs["apiVersion"] = state?.apiVersion;
+            resourceInputs["destination"] = state?.destination;
+            resourceInputs["isBidirectional"] = state?.isBidirectional;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["priority"] = state?.priority;
+            resourceInputs["protocolParameters"] = state?.protocolParameters;
+            resourceInputs["protocolType"] = state?.protocolType;
+            resourceInputs["serviceIpLists"] = state?.serviceIpLists;
+            resourceInputs["source"] = state?.source;
+            resourceInputs["vpcName"] = state?.vpcName;
+            resourceInputs["vpcReferenceUuid"] = state?.vpcReferenceUuid;
         } else {
             const args = argsOrState as PbrArgs | undefined;
-            if ((!args || args.action === undefined) && !opts.urn) {
+            if (args?.action === undefined && !opts.urn) {
                 throw new Error("Missing required property 'action'");
             }
-            if ((!args || args.destination === undefined) && !opts.urn) {
+            if (args?.destination === undefined && !opts.urn) {
                 throw new Error("Missing required property 'destination'");
             }
-            if ((!args || args.priority === undefined) && !opts.urn) {
+            if (args?.priority === undefined && !opts.urn) {
                 throw new Error("Missing required property 'priority'");
             }
-            if ((!args || args.protocolType === undefined) && !opts.urn) {
+            if (args?.protocolType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'protocolType'");
             }
-            if ((!args || args.source === undefined) && !opts.urn) {
+            if (args?.source === undefined && !opts.urn) {
                 throw new Error("Missing required property 'source'");
             }
-            resourceInputs["action"] = args ? args.action : undefined;
-            resourceInputs["apiVersion"] = args ? args.apiVersion : undefined;
-            resourceInputs["destination"] = args ? args.destination : undefined;
-            resourceInputs["isBidirectional"] = args ? args.isBidirectional : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["priority"] = args ? args.priority : undefined;
-            resourceInputs["protocolParameters"] = args ? args.protocolParameters : undefined;
-            resourceInputs["protocolType"] = args ? args.protocolType : undefined;
-            resourceInputs["serviceIpLists"] = args ? args.serviceIpLists : undefined;
-            resourceInputs["source"] = args ? args.source : undefined;
-            resourceInputs["vpcName"] = args ? args.vpcName : undefined;
-            resourceInputs["vpcReferenceUuid"] = args ? args.vpcReferenceUuid : undefined;
+            resourceInputs["action"] = args?.action;
+            resourceInputs["apiVersion"] = args?.apiVersion;
+            resourceInputs["destination"] = args?.destination;
+            resourceInputs["isBidirectional"] = args?.isBidirectional;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["priority"] = args?.priority;
+            resourceInputs["protocolParameters"] = args?.protocolParameters;
+            resourceInputs["protocolType"] = args?.protocolType;
+            resourceInputs["serviceIpLists"] = args?.serviceIpLists;
+            resourceInputs["source"] = args?.source;
+            resourceInputs["vpcName"] = args?.vpcName;
+            resourceInputs["vpcReferenceUuid"] = args?.vpcReferenceUuid;
             resourceInputs["metadata"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

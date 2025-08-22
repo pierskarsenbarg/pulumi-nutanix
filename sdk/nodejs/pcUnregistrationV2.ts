@@ -40,11 +40,11 @@ export class PcUnregistrationV2 extends pulumi.CustomResource {
      *
      * See detailed information in [Nutanix PC Unregistration V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.0#tag/DomainManager/operation/unregister).
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * -(Required) The external identifier of the domain manager (Prism Central) resource
      */
-    public readonly pcExtId!: pulumi.Output<string>;
+    declare public readonly pcExtId: pulumi.Output<string>;
 
     /**
      * Create a PcUnregistrationV2 resource with the given unique name, arguments, and options.
@@ -59,18 +59,18 @@ export class PcUnregistrationV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as PcUnregistrationV2State | undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["pcExtId"] = state ? state.pcExtId : undefined;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["pcExtId"] = state?.pcExtId;
         } else {
             const args = argsOrState as PcUnregistrationV2Args | undefined;
-            if ((!args || args.extId === undefined) && !opts.urn) {
+            if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
-            if ((!args || args.pcExtId === undefined) && !opts.urn) {
+            if (args?.pcExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'pcExtId'");
             }
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["pcExtId"] = args ? args.pcExtId : undefined;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["pcExtId"] = args?.pcExtId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(PcUnregistrationV2.__pulumiType, name, resourceInputs, opts);

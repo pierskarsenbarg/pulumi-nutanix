@@ -51,21 +51,21 @@ export class SelfServiceAppRecoveryPoint extends pulumi.CustomResource {
     /**
      * - (Required) The name of the snapshot action to trigger.
      */
-    public readonly actionName!: pulumi.Output<string>;
+    declare public readonly actionName: pulumi.Output<string>;
     /**
      * - (Optional) The name of the application
      */
-    public readonly appName!: pulumi.Output<string | undefined>;
+    declare public readonly appName: pulumi.Output<string | undefined>;
     /**
      * - (Required) The UUID of the application.
      *
      * Both (`appName` and `appUuid`) are optional but atleast one of them should be provided for resource to work.
      */
-    public readonly appUuid!: pulumi.Output<string | undefined>;
+    declare public readonly appUuid: pulumi.Output<string | undefined>;
     /**
      * - (Required) The name of recovery point.
      */
-    public readonly recoveryPointName!: pulumi.Output<string | undefined>;
+    declare public readonly recoveryPointName: pulumi.Output<string | undefined>;
 
     /**
      * Create a SelfServiceAppRecoveryPoint resource with the given unique name, arguments, and options.
@@ -80,19 +80,19 @@ export class SelfServiceAppRecoveryPoint extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SelfServiceAppRecoveryPointState | undefined;
-            resourceInputs["actionName"] = state ? state.actionName : undefined;
-            resourceInputs["appName"] = state ? state.appName : undefined;
-            resourceInputs["appUuid"] = state ? state.appUuid : undefined;
-            resourceInputs["recoveryPointName"] = state ? state.recoveryPointName : undefined;
+            resourceInputs["actionName"] = state?.actionName;
+            resourceInputs["appName"] = state?.appName;
+            resourceInputs["appUuid"] = state?.appUuid;
+            resourceInputs["recoveryPointName"] = state?.recoveryPointName;
         } else {
             const args = argsOrState as SelfServiceAppRecoveryPointArgs | undefined;
-            if ((!args || args.actionName === undefined) && !opts.urn) {
+            if (args?.actionName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'actionName'");
             }
-            resourceInputs["actionName"] = args ? args.actionName : undefined;
-            resourceInputs["appName"] = args ? args.appName : undefined;
-            resourceInputs["appUuid"] = args ? args.appUuid : undefined;
-            resourceInputs["recoveryPointName"] = args ? args.recoveryPointName : undefined;
+            resourceInputs["actionName"] = args?.actionName;
+            resourceInputs["appName"] = args?.appName;
+            resourceInputs["appUuid"] = args?.appUuid;
+            resourceInputs["recoveryPointName"] = args?.recoveryPointName;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SelfServiceAppRecoveryPoint.__pulumiType, name, resourceInputs, opts);

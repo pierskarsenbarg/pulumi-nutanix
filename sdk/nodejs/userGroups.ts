@@ -58,25 +58,25 @@ export class UserGroups extends pulumi.CustomResource {
         return obj['__pulumiType'] === UserGroups.__pulumiType;
     }
 
-    public readonly categories!: pulumi.Output<outputs.UserGroupsCategory[]>;
+    declare public readonly categories: pulumi.Output<outputs.UserGroupsCategory[]>;
     /**
      * - (Optional) A Directory Service organizational unit.
      */
-    public readonly directoryServiceOus!: pulumi.Output<outputs.UserGroupsDirectoryServiceOus[] | undefined>;
+    declare public readonly directoryServiceOus: pulumi.Output<outputs.UserGroupsDirectoryServiceOus[] | undefined>;
     /**
      * - (Optional) A Directory Service user group.
      */
-    public readonly directoryServiceUserGroups!: pulumi.Output<outputs.UserGroupsDirectoryServiceUserGroup[] | undefined>;
+    declare public readonly directoryServiceUserGroups: pulumi.Output<outputs.UserGroupsDirectoryServiceUserGroup[] | undefined>;
     /**
      * The userGroup kind metadata.
      */
-    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
-    public readonly ownerReference!: pulumi.Output<{[key: string]: string}>;
-    public readonly projectReference!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
+    declare public readonly ownerReference: pulumi.Output<{[key: string]: string}>;
+    declare public readonly projectReference: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * - (Optional) A SAML Service user group.
      */
-    public readonly samlUserGroups!: pulumi.Output<outputs.UserGroupsSamlUserGroup[] | undefined>;
+    declare public readonly samlUserGroups: pulumi.Output<outputs.UserGroupsSamlUserGroup[] | undefined>;
 
     /**
      * Create a UserGroups resource with the given unique name, arguments, and options.
@@ -91,21 +91,21 @@ export class UserGroups extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UserGroupsState | undefined;
-            resourceInputs["categories"] = state ? state.categories : undefined;
-            resourceInputs["directoryServiceOus"] = state ? state.directoryServiceOus : undefined;
-            resourceInputs["directoryServiceUserGroups"] = state ? state.directoryServiceUserGroups : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["ownerReference"] = state ? state.ownerReference : undefined;
-            resourceInputs["projectReference"] = state ? state.projectReference : undefined;
-            resourceInputs["samlUserGroups"] = state ? state.samlUserGroups : undefined;
+            resourceInputs["categories"] = state?.categories;
+            resourceInputs["directoryServiceOus"] = state?.directoryServiceOus;
+            resourceInputs["directoryServiceUserGroups"] = state?.directoryServiceUserGroups;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["ownerReference"] = state?.ownerReference;
+            resourceInputs["projectReference"] = state?.projectReference;
+            resourceInputs["samlUserGroups"] = state?.samlUserGroups;
         } else {
             const args = argsOrState as UserGroupsArgs | undefined;
-            resourceInputs["categories"] = args ? args.categories : undefined;
-            resourceInputs["directoryServiceOus"] = args ? args.directoryServiceOus : undefined;
-            resourceInputs["directoryServiceUserGroups"] = args ? args.directoryServiceUserGroups : undefined;
-            resourceInputs["ownerReference"] = args ? args.ownerReference : undefined;
-            resourceInputs["projectReference"] = args ? args.projectReference : undefined;
-            resourceInputs["samlUserGroups"] = args ? args.samlUserGroups : undefined;
+            resourceInputs["categories"] = args?.categories;
+            resourceInputs["directoryServiceOus"] = args?.directoryServiceOus;
+            resourceInputs["directoryServiceUserGroups"] = args?.directoryServiceUserGroups;
+            resourceInputs["ownerReference"] = args?.ownerReference;
+            resourceInputs["projectReference"] = args?.projectReference;
+            resourceInputs["samlUserGroups"] = args?.samlUserGroups;
             resourceInputs["metadata"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

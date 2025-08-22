@@ -161,54 +161,54 @@ export class Project extends pulumi.CustomResource {
         return obj['__pulumiType'] === Project.__pulumiType;
     }
 
-    public readonly accountReferenceLists!: pulumi.Output<outputs.ProjectAccountReferenceList[]>;
-    public readonly acps!: pulumi.Output<outputs.ProjectAcp[] | undefined>;
-    public readonly apiVersion!: pulumi.Output<string>;
+    declare public readonly accountReferenceLists: pulumi.Output<outputs.ProjectAccountReferenceList[]>;
+    declare public readonly acps: pulumi.Output<outputs.ProjectAcp[] | undefined>;
+    declare public readonly apiVersion: pulumi.Output<string>;
     /**
      * - (Optional) The category values represented as a dictionary of key > list of values.
      */
-    public readonly categories!: pulumi.Output<outputs.ProjectCategory[]>;
-    public readonly clusterReferenceLists!: pulumi.Output<outputs.ProjectClusterReferenceList[]>;
+    declare public readonly categories: pulumi.Output<outputs.ProjectCategory[]>;
+    declare public readonly clusterReferenceLists: pulumi.Output<outputs.ProjectClusterReferenceList[]>;
     /**
      * The UUID of cluster. (Required when using projectInternal flag).
      */
-    public readonly clusterUuid!: pulumi.Output<string | undefined>;
-    public readonly defaultEnvironmentReference!: pulumi.Output<outputs.ProjectDefaultEnvironmentReference>;
-    public readonly defaultSubnetReference!: pulumi.Output<outputs.ProjectDefaultSubnetReference>;
+    declare public readonly clusterUuid: pulumi.Output<string | undefined>;
+    declare public readonly defaultEnvironmentReference: pulumi.Output<outputs.ProjectDefaultEnvironmentReference>;
+    declare public readonly defaultSubnetReference: pulumi.Output<outputs.ProjectDefaultSubnetReference>;
     /**
      * A description for project.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * flag to allow collaboration of projects. (Use with projectInternal flag)
      */
-    public readonly enableCollab!: pulumi.Output<boolean | undefined>;
-    public readonly environmentReferenceLists!: pulumi.Output<outputs.ProjectEnvironmentReferenceList[]>;
-    public readonly externalNetworkLists!: pulumi.Output<outputs.ProjectExternalNetworkList[]>;
-    public readonly externalUserGroupReferenceLists!: pulumi.Output<outputs.ProjectExternalUserGroupReferenceList[]>;
-    public /*out*/ readonly isDefault!: pulumi.Output<boolean>;
-    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly enableCollab: pulumi.Output<boolean | undefined>;
+    declare public readonly environmentReferenceLists: pulumi.Output<outputs.ProjectEnvironmentReferenceList[]>;
+    declare public readonly externalNetworkLists: pulumi.Output<outputs.ProjectExternalNetworkList[]>;
+    declare public readonly externalUserGroupReferenceLists: pulumi.Output<outputs.ProjectExternalUserGroupReferenceList[]>;
+    declare public /*out*/ readonly isDefault: pulumi.Output<boolean>;
+    declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
      * The name for the project.
      */
-    public readonly name!: pulumi.Output<string>;
-    public readonly ownerReference!: pulumi.Output<{[key: string]: string}>;
-    public readonly projectReference!: pulumi.Output<{[key: string]: string}>;
-    public readonly resourceDomain!: pulumi.Output<outputs.ProjectResourceDomain | undefined>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
-    public readonly subnetReferenceLists!: pulumi.Output<outputs.ProjectSubnetReferenceList[]>;
-    public readonly tunnelReferenceLists!: pulumi.Output<outputs.ProjectTunnelReferenceList[]>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public readonly ownerReference: pulumi.Output<{[key: string]: string}>;
+    declare public readonly projectReference: pulumi.Output<{[key: string]: string}>;
+    declare public readonly resourceDomain: pulumi.Output<outputs.ProjectResourceDomain | undefined>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
+    declare public readonly subnetReferenceLists: pulumi.Output<outputs.ProjectSubnetReferenceList[]>;
+    declare public readonly tunnelReferenceLists: pulumi.Output<outputs.ProjectTunnelReferenceList[]>;
     /**
      * flag to use project internal for user role mapping
      */
-    public readonly useProjectInternal!: pulumi.Output<boolean | undefined>;
-    public readonly userGroupLists!: pulumi.Output<outputs.ProjectUserGroupList[] | undefined>;
-    public readonly userLists!: pulumi.Output<outputs.ProjectUserList[] | undefined>;
+    declare public readonly useProjectInternal: pulumi.Output<boolean | undefined>;
+    declare public readonly userGroupLists: pulumi.Output<outputs.ProjectUserGroupList[] | undefined>;
+    declare public readonly userLists: pulumi.Output<outputs.ProjectUserList[] | undefined>;
     /**
      * List of Reference of users.
      */
-    public readonly userReferenceLists!: pulumi.Output<outputs.ProjectUserReferenceList[]>;
-    public readonly vpcReferenceLists!: pulumi.Output<outputs.ProjectVpcReferenceList[]>;
+    declare public readonly userReferenceLists: pulumi.Output<outputs.ProjectUserReferenceList[]>;
+    declare public readonly vpcReferenceLists: pulumi.Output<outputs.ProjectVpcReferenceList[]>;
 
     /**
      * Create a Project resource with the given unique name, arguments, and options.
@@ -223,65 +223,65 @@ export class Project extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ProjectState | undefined;
-            resourceInputs["accountReferenceLists"] = state ? state.accountReferenceLists : undefined;
-            resourceInputs["acps"] = state ? state.acps : undefined;
-            resourceInputs["apiVersion"] = state ? state.apiVersion : undefined;
-            resourceInputs["categories"] = state ? state.categories : undefined;
-            resourceInputs["clusterReferenceLists"] = state ? state.clusterReferenceLists : undefined;
-            resourceInputs["clusterUuid"] = state ? state.clusterUuid : undefined;
-            resourceInputs["defaultEnvironmentReference"] = state ? state.defaultEnvironmentReference : undefined;
-            resourceInputs["defaultSubnetReference"] = state ? state.defaultSubnetReference : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["enableCollab"] = state ? state.enableCollab : undefined;
-            resourceInputs["environmentReferenceLists"] = state ? state.environmentReferenceLists : undefined;
-            resourceInputs["externalNetworkLists"] = state ? state.externalNetworkLists : undefined;
-            resourceInputs["externalUserGroupReferenceLists"] = state ? state.externalUserGroupReferenceLists : undefined;
-            resourceInputs["isDefault"] = state ? state.isDefault : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownerReference"] = state ? state.ownerReference : undefined;
-            resourceInputs["projectReference"] = state ? state.projectReference : undefined;
-            resourceInputs["resourceDomain"] = state ? state.resourceDomain : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetReferenceLists"] = state ? state.subnetReferenceLists : undefined;
-            resourceInputs["tunnelReferenceLists"] = state ? state.tunnelReferenceLists : undefined;
-            resourceInputs["useProjectInternal"] = state ? state.useProjectInternal : undefined;
-            resourceInputs["userGroupLists"] = state ? state.userGroupLists : undefined;
-            resourceInputs["userLists"] = state ? state.userLists : undefined;
-            resourceInputs["userReferenceLists"] = state ? state.userReferenceLists : undefined;
-            resourceInputs["vpcReferenceLists"] = state ? state.vpcReferenceLists : undefined;
+            resourceInputs["accountReferenceLists"] = state?.accountReferenceLists;
+            resourceInputs["acps"] = state?.acps;
+            resourceInputs["apiVersion"] = state?.apiVersion;
+            resourceInputs["categories"] = state?.categories;
+            resourceInputs["clusterReferenceLists"] = state?.clusterReferenceLists;
+            resourceInputs["clusterUuid"] = state?.clusterUuid;
+            resourceInputs["defaultEnvironmentReference"] = state?.defaultEnvironmentReference;
+            resourceInputs["defaultSubnetReference"] = state?.defaultSubnetReference;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["enableCollab"] = state?.enableCollab;
+            resourceInputs["environmentReferenceLists"] = state?.environmentReferenceLists;
+            resourceInputs["externalNetworkLists"] = state?.externalNetworkLists;
+            resourceInputs["externalUserGroupReferenceLists"] = state?.externalUserGroupReferenceLists;
+            resourceInputs["isDefault"] = state?.isDefault;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownerReference"] = state?.ownerReference;
+            resourceInputs["projectReference"] = state?.projectReference;
+            resourceInputs["resourceDomain"] = state?.resourceDomain;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetReferenceLists"] = state?.subnetReferenceLists;
+            resourceInputs["tunnelReferenceLists"] = state?.tunnelReferenceLists;
+            resourceInputs["useProjectInternal"] = state?.useProjectInternal;
+            resourceInputs["userGroupLists"] = state?.userGroupLists;
+            resourceInputs["userLists"] = state?.userLists;
+            resourceInputs["userReferenceLists"] = state?.userReferenceLists;
+            resourceInputs["vpcReferenceLists"] = state?.vpcReferenceLists;
         } else {
             const args = argsOrState as ProjectArgs | undefined;
-            if ((!args || args.defaultSubnetReference === undefined) && !opts.urn) {
+            if (args?.defaultSubnetReference === undefined && !opts.urn) {
                 throw new Error("Missing required property 'defaultSubnetReference'");
             }
-            if ((!args || args.description === undefined) && !opts.urn) {
+            if (args?.description === undefined && !opts.urn) {
                 throw new Error("Missing required property 'description'");
             }
-            resourceInputs["accountReferenceLists"] = args ? args.accountReferenceLists : undefined;
-            resourceInputs["acps"] = args ? args.acps : undefined;
-            resourceInputs["apiVersion"] = args ? args.apiVersion : undefined;
-            resourceInputs["categories"] = args ? args.categories : undefined;
-            resourceInputs["clusterReferenceLists"] = args ? args.clusterReferenceLists : undefined;
-            resourceInputs["clusterUuid"] = args ? args.clusterUuid : undefined;
-            resourceInputs["defaultEnvironmentReference"] = args ? args.defaultEnvironmentReference : undefined;
-            resourceInputs["defaultSubnetReference"] = args ? args.defaultSubnetReference : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["enableCollab"] = args ? args.enableCollab : undefined;
-            resourceInputs["environmentReferenceLists"] = args ? args.environmentReferenceLists : undefined;
-            resourceInputs["externalNetworkLists"] = args ? args.externalNetworkLists : undefined;
-            resourceInputs["externalUserGroupReferenceLists"] = args ? args.externalUserGroupReferenceLists : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["ownerReference"] = args ? args.ownerReference : undefined;
-            resourceInputs["projectReference"] = args ? args.projectReference : undefined;
-            resourceInputs["resourceDomain"] = args ? args.resourceDomain : undefined;
-            resourceInputs["subnetReferenceLists"] = args ? args.subnetReferenceLists : undefined;
-            resourceInputs["tunnelReferenceLists"] = args ? args.tunnelReferenceLists : undefined;
-            resourceInputs["useProjectInternal"] = args ? args.useProjectInternal : undefined;
-            resourceInputs["userGroupLists"] = args ? args.userGroupLists : undefined;
-            resourceInputs["userLists"] = args ? args.userLists : undefined;
-            resourceInputs["userReferenceLists"] = args ? args.userReferenceLists : undefined;
-            resourceInputs["vpcReferenceLists"] = args ? args.vpcReferenceLists : undefined;
+            resourceInputs["accountReferenceLists"] = args?.accountReferenceLists;
+            resourceInputs["acps"] = args?.acps;
+            resourceInputs["apiVersion"] = args?.apiVersion;
+            resourceInputs["categories"] = args?.categories;
+            resourceInputs["clusterReferenceLists"] = args?.clusterReferenceLists;
+            resourceInputs["clusterUuid"] = args?.clusterUuid;
+            resourceInputs["defaultEnvironmentReference"] = args?.defaultEnvironmentReference;
+            resourceInputs["defaultSubnetReference"] = args?.defaultSubnetReference;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["enableCollab"] = args?.enableCollab;
+            resourceInputs["environmentReferenceLists"] = args?.environmentReferenceLists;
+            resourceInputs["externalNetworkLists"] = args?.externalNetworkLists;
+            resourceInputs["externalUserGroupReferenceLists"] = args?.externalUserGroupReferenceLists;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["ownerReference"] = args?.ownerReference;
+            resourceInputs["projectReference"] = args?.projectReference;
+            resourceInputs["resourceDomain"] = args?.resourceDomain;
+            resourceInputs["subnetReferenceLists"] = args?.subnetReferenceLists;
+            resourceInputs["tunnelReferenceLists"] = args?.tunnelReferenceLists;
+            resourceInputs["useProjectInternal"] = args?.useProjectInternal;
+            resourceInputs["userGroupLists"] = args?.userGroupLists;
+            resourceInputs["userLists"] = args?.userLists;
+            resourceInputs["userReferenceLists"] = args?.userReferenceLists;
+            resourceInputs["vpcReferenceLists"] = args?.vpcReferenceLists;
             resourceInputs["isDefault"] = undefined /*out*/;
             resourceInputs["metadata"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;

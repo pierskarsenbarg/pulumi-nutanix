@@ -37,23 +37,23 @@ export class FoundationIpmiConfig extends pulumi.CustomResource {
     /**
      * - (Required) List of blocks.
      */
-    public readonly blocks!: pulumi.Output<outputs.FoundationIpmiConfigBlock[]>;
+    declare public readonly blocks: pulumi.Output<outputs.FoundationIpmiConfigBlock[]>;
     /**
      * - (Required) IPMI gateway.
      */
-    public readonly ipmiGateway!: pulumi.Output<string>;
+    declare public readonly ipmiGateway: pulumi.Output<string>;
     /**
      * - (Required) IPMI netmask.
      */
-    public readonly ipmiNetmask!: pulumi.Output<string>;
+    declare public readonly ipmiNetmask: pulumi.Output<string>;
     /**
      * - (Required) IPMI password.
      */
-    public readonly ipmiPassword!: pulumi.Output<string>;
+    declare public readonly ipmiPassword: pulumi.Output<string>;
     /**
      * - (Required) IPMI username.
      */
-    public readonly ipmiUser!: pulumi.Output<string>;
+    declare public readonly ipmiUser: pulumi.Output<string>;
 
     /**
      * Create a FoundationIpmiConfig resource with the given unique name, arguments, and options.
@@ -68,33 +68,33 @@ export class FoundationIpmiConfig extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FoundationIpmiConfigState | undefined;
-            resourceInputs["blocks"] = state ? state.blocks : undefined;
-            resourceInputs["ipmiGateway"] = state ? state.ipmiGateway : undefined;
-            resourceInputs["ipmiNetmask"] = state ? state.ipmiNetmask : undefined;
-            resourceInputs["ipmiPassword"] = state ? state.ipmiPassword : undefined;
-            resourceInputs["ipmiUser"] = state ? state.ipmiUser : undefined;
+            resourceInputs["blocks"] = state?.blocks;
+            resourceInputs["ipmiGateway"] = state?.ipmiGateway;
+            resourceInputs["ipmiNetmask"] = state?.ipmiNetmask;
+            resourceInputs["ipmiPassword"] = state?.ipmiPassword;
+            resourceInputs["ipmiUser"] = state?.ipmiUser;
         } else {
             const args = argsOrState as FoundationIpmiConfigArgs | undefined;
-            if ((!args || args.blocks === undefined) && !opts.urn) {
+            if (args?.blocks === undefined && !opts.urn) {
                 throw new Error("Missing required property 'blocks'");
             }
-            if ((!args || args.ipmiGateway === undefined) && !opts.urn) {
+            if (args?.ipmiGateway === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ipmiGateway'");
             }
-            if ((!args || args.ipmiNetmask === undefined) && !opts.urn) {
+            if (args?.ipmiNetmask === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ipmiNetmask'");
             }
-            if ((!args || args.ipmiPassword === undefined) && !opts.urn) {
+            if (args?.ipmiPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ipmiPassword'");
             }
-            if ((!args || args.ipmiUser === undefined) && !opts.urn) {
+            if (args?.ipmiUser === undefined && !opts.urn) {
                 throw new Error("Missing required property 'ipmiUser'");
             }
-            resourceInputs["blocks"] = args ? args.blocks : undefined;
-            resourceInputs["ipmiGateway"] = args ? args.ipmiGateway : undefined;
-            resourceInputs["ipmiNetmask"] = args ? args.ipmiNetmask : undefined;
-            resourceInputs["ipmiPassword"] = args ? args.ipmiPassword : undefined;
-            resourceInputs["ipmiUser"] = args ? args.ipmiUser : undefined;
+            resourceInputs["blocks"] = args?.blocks;
+            resourceInputs["ipmiGateway"] = args?.ipmiGateway;
+            resourceInputs["ipmiNetmask"] = args?.ipmiNetmask;
+            resourceInputs["ipmiPassword"] = args?.ipmiPassword;
+            resourceInputs["ipmiUser"] = args?.ipmiUser;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(FoundationIpmiConfig.__pulumiType, name, resourceInputs, opts);

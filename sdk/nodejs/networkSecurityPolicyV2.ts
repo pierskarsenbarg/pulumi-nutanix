@@ -40,71 +40,71 @@ export class NetworkSecurityPolicyV2 extends pulumi.CustomResource {
     /**
      * created by.
      */
-    public /*out*/ readonly createdBy!: pulumi.Output<string>;
+    declare public /*out*/ readonly createdBy: pulumi.Output<string>;
     /**
      * creation time of NSP
      */
-    public /*out*/ readonly creationTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly creationTime: pulumi.Output<string>;
     /**
      * A user defined annotation for a policy.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * A globally unique identifier of an instance that is suitable for external consumption.
      */
-    public /*out*/ readonly extId!: pulumi.Output<string>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
     /**
      * If Hitlog is enabled.
      */
-    public readonly isHitlogEnabled!: pulumi.Output<boolean | undefined>;
+    declare public readonly isHitlogEnabled: pulumi.Output<boolean | undefined>;
     /**
      * If Ipv6 Traffic is allowed.
      */
-    public readonly isIpv6TrafficAllowed!: pulumi.Output<boolean | undefined>;
+    declare public readonly isIpv6TrafficAllowed: pulumi.Output<boolean | undefined>;
     /**
      * Is system defined NSP
      */
-    public /*out*/ readonly isSystemDefined!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isSystemDefined: pulumi.Output<boolean>;
     /**
      * last updated time
      */
-    public /*out*/ readonly lastUpdateTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly lastUpdateTime: pulumi.Output<string>;
     /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    public /*out*/ readonly links!: pulumi.Output<outputs.NetworkSecurityPolicyV2Link[]>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.NetworkSecurityPolicyV2Link[]>;
     /**
      * Name of the Flow Network Security Policy.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
      */
-    public readonly rules!: pulumi.Output<outputs.NetworkSecurityPolicyV2Rule[] | undefined>;
+    declare public readonly rules: pulumi.Output<outputs.NetworkSecurityPolicyV2Rule[] | undefined>;
     /**
      * Defines the scope of the policy. Currently, only ALL_VLAN and VPC_LIST are supported. If scope is not provided, the default is set based on whether vpcReferences field is provided or not.
      */
-    public readonly scope!: pulumi.Output<string>;
+    declare public readonly scope: pulumi.Output<string>;
     /**
      * Uuids of the secured groups in the NSP.
      */
-    public /*out*/ readonly securedGroups!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly securedGroups: pulumi.Output<string[]>;
     /**
      * Whether the policy is applied or monitored; can be omitted or set null to save the policy without applying or monitoring it. Acceptable values are "SAVE", "MONITOR", "ENFORCE".
      */
-    public readonly state!: pulumi.Output<string | undefined>;
+    declare public readonly state: pulumi.Output<string | undefined>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
      * Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION".
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * A list of external ids for VPCs, used only when the scope of policy is a list of VPCs.
      */
-    public readonly vpcReferences!: pulumi.Output<string[] | undefined>;
+    declare public readonly vpcReferences: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a NetworkSecurityPolicyV2 resource with the given unique name, arguments, and options.
@@ -119,37 +119,37 @@ export class NetworkSecurityPolicyV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NetworkSecurityPolicyV2State | undefined;
-            resourceInputs["createdBy"] = state ? state.createdBy : undefined;
-            resourceInputs["creationTime"] = state ? state.creationTime : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["isHitlogEnabled"] = state ? state.isHitlogEnabled : undefined;
-            resourceInputs["isIpv6TrafficAllowed"] = state ? state.isIpv6TrafficAllowed : undefined;
-            resourceInputs["isSystemDefined"] = state ? state.isSystemDefined : undefined;
-            resourceInputs["lastUpdateTime"] = state ? state.lastUpdateTime : undefined;
-            resourceInputs["links"] = state ? state.links : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["rules"] = state ? state.rules : undefined;
-            resourceInputs["scope"] = state ? state.scope : undefined;
-            resourceInputs["securedGroups"] = state ? state.securedGroups : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["vpcReferences"] = state ? state.vpcReferences : undefined;
+            resourceInputs["createdBy"] = state?.createdBy;
+            resourceInputs["creationTime"] = state?.creationTime;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["isHitlogEnabled"] = state?.isHitlogEnabled;
+            resourceInputs["isIpv6TrafficAllowed"] = state?.isIpv6TrafficAllowed;
+            resourceInputs["isSystemDefined"] = state?.isSystemDefined;
+            resourceInputs["lastUpdateTime"] = state?.lastUpdateTime;
+            resourceInputs["links"] = state?.links;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["rules"] = state?.rules;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["securedGroups"] = state?.securedGroups;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["vpcReferences"] = state?.vpcReferences;
         } else {
             const args = argsOrState as NetworkSecurityPolicyV2Args | undefined;
-            if ((!args || args.type === undefined) && !opts.urn) {
+            if (args?.type === undefined && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["isHitlogEnabled"] = args ? args.isHitlogEnabled : undefined;
-            resourceInputs["isIpv6TrafficAllowed"] = args ? args.isIpv6TrafficAllowed : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["rules"] = args ? args.rules : undefined;
-            resourceInputs["scope"] = args ? args.scope : undefined;
-            resourceInputs["state"] = args ? args.state : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["vpcReferences"] = args ? args.vpcReferences : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["isHitlogEnabled"] = args?.isHitlogEnabled;
+            resourceInputs["isIpv6TrafficAllowed"] = args?.isIpv6TrafficAllowed;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["rules"] = args?.rules;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["state"] = args?.state;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["vpcReferences"] = args?.vpcReferences;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["creationTime"] = undefined /*out*/;
             resourceInputs["extId"] = undefined /*out*/;

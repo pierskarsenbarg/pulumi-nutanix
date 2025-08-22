@@ -57,7 +57,7 @@ export class CategoryV2 extends pulumi.CustomResource {
      * This field will be ignored, if given in the payload of updateCategoryById or createCategory APIs.
      * This field will not be present by default in listCategories API, unless the parameter $expand=associations is present in the URL.
      */
-    public /*out*/ readonly associations!: pulumi.Output<outputs.CategoryV2Association[]>;
+    declare public /*out*/ readonly associations: pulumi.Output<outputs.CategoryV2Association[]>;
     /**
      * -(Optional) A string consisting of the description of the category as defined by the user.
      * Description can be optionally provided in the payload of createCategory and updateCategoryById APIs.
@@ -65,14 +65,14 @@ export class CategoryV2 extends pulumi.CustomResource {
      * The server does not validate this value nor does it enforce the uniqueness or any other constraints.
      * It is the responsibility of the user to ensure that any semantic or syntactic constraints are retained when mutating this field.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * This field gives detailed information about the resources which are associated with the category.
      * The results present under this field contain the UUIDs of the entities and policies of various kinds associated with the category.
      * This field will be ignored, if given in the payload of updateCategoryById or createCategory APIs.
      * This field will not be present by default in listCategories or getCategoryById APIs, unless the parameter $expand=detailedAssociations is present in the URL.
      */
-    public /*out*/ readonly detailedAssociations!: pulumi.Output<outputs.CategoryV2DetailedAssociation[]>;
+    declare public /*out*/ readonly detailedAssociations: pulumi.Output<outputs.CategoryV2DetailedAssociation[]>;
     /**
      * -(Required) The key of a category when it is represented in key:value format. Constraints applicable when field is given in the payload during create and update:
      *
@@ -83,7 +83,7 @@ export class CategoryV2 extends pulumi.CustomResource {
      * It is a mandatory field in the payload of `createCategory` and `updateCategoryById` APIs.
      * This field can't be updated through `updateCategoryById` API.
      */
-    public readonly key!: pulumi.Output<string>;
+    declare public readonly key: pulumi.Output<string>;
     /**
      * -(Optional) This field contains the UUID of a user who owns the category.
      * This field will be ignored if given in the payload of createCategory API. Hence, when a category is created, the logged-in user automatically becomes the owner of the category.
@@ -91,7 +91,7 @@ export class CategoryV2 extends pulumi.CustomResource {
      * Validity of the user UUID can be checked by invoking the API: authn/users/{extId} in the 'Identity and Access Management' or 'IAM' namespace.
      * It is used for enabling RBAC access to self-owned categories.
      */
-    public readonly ownerUuid!: pulumi.Output<string>;
+    declare public readonly ownerUuid: pulumi.Output<string>;
     /**
      * -(Required) Denotes the type of a category.
      * Valid values are:
@@ -99,7 +99,7 @@ export class CategoryV2 extends pulumi.CustomResource {
      * - `INTERNAL` Predefined categories contained in the system to be used by internal services, APIs and workflows that involve categories. These categories will not be visible in the UI. However, these categories will be returned in the response of `listCategories` and `getCategoryById` APIs, and are available for filtering as well. Internal categories can't be created through the Categories API. They are predefined in a configuration file and are created at PC boot-up time. Internal categories can't be updated or deleted.
      * - `USER` These categories get created by users through the invocation of `createCategory` API. User-defined categories can be updated or deleted after creation.
      */
-    public readonly type!: pulumi.Output<string>;
+    declare public readonly type: pulumi.Output<string>;
     /**
      * -(Required) The value of a category when it is represented in key:value format.  Constraints applicable when field is given in the payload during create and update:
      *
@@ -111,7 +111,7 @@ export class CategoryV2 extends pulumi.CustomResource {
      * This field can't be updated through `updateCategoryById` API.
      * Updating the value will not change the extId of the category.
      */
-    public readonly value!: pulumi.Output<string>;
+    declare public readonly value: pulumi.Output<string>;
 
     /**
      * Create a CategoryV2 resource with the given unique name, arguments, and options.
@@ -126,26 +126,26 @@ export class CategoryV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CategoryV2State | undefined;
-            resourceInputs["associations"] = state ? state.associations : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["detailedAssociations"] = state ? state.detailedAssociations : undefined;
-            resourceInputs["key"] = state ? state.key : undefined;
-            resourceInputs["ownerUuid"] = state ? state.ownerUuid : undefined;
-            resourceInputs["type"] = state ? state.type : undefined;
-            resourceInputs["value"] = state ? state.value : undefined;
+            resourceInputs["associations"] = state?.associations;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["detailedAssociations"] = state?.detailedAssociations;
+            resourceInputs["key"] = state?.key;
+            resourceInputs["ownerUuid"] = state?.ownerUuid;
+            resourceInputs["type"] = state?.type;
+            resourceInputs["value"] = state?.value;
         } else {
             const args = argsOrState as CategoryV2Args | undefined;
-            if ((!args || args.key === undefined) && !opts.urn) {
+            if (args?.key === undefined && !opts.urn) {
                 throw new Error("Missing required property 'key'");
             }
-            if ((!args || args.value === undefined) && !opts.urn) {
+            if (args?.value === undefined && !opts.urn) {
                 throw new Error("Missing required property 'value'");
             }
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["key"] = args ? args.key : undefined;
-            resourceInputs["ownerUuid"] = args ? args.ownerUuid : undefined;
-            resourceInputs["type"] = args ? args.type : undefined;
-            resourceInputs["value"] = args ? args.value : undefined;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["key"] = args?.key;
+            resourceInputs["ownerUuid"] = args?.ownerUuid;
+            resourceInputs["type"] = args?.type;
+            resourceInputs["value"] = args?.value;
             resourceInputs["associations"] = undefined /*out*/;
             resourceInputs["detailedAssociations"] = undefined /*out*/;
         }

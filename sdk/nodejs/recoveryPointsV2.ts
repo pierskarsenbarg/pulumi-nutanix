@@ -57,60 +57,60 @@ export class RecoveryPointsV2 extends pulumi.CustomResource {
     /**
      * The UTC date and time in ISO-8601 format when the Recovery point is created.
      */
-    public /*out*/ readonly creationTime!: pulumi.Output<string>;
+    declare public /*out*/ readonly creationTime: pulumi.Output<string>;
     /**
      * -(Optional) The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
      */
-    public readonly expirationTime!: pulumi.Output<string>;
+    declare public readonly expirationTime: pulumi.Output<string>;
     /**
      * recovery point UUID
      */
-    public /*out*/ readonly extId!: pulumi.Output<string>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
     /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    public /*out*/ readonly links!: pulumi.Output<outputs.RecoveryPointsV2Link[]>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.RecoveryPointsV2Link[]>;
     /**
      * Location agnostic identifier of the recovery point. This identifier is used to identify the same instances of a recovery point across different sites.
      */
-    public /*out*/ readonly locationAgnosticId!: pulumi.Output<string>;
+    declare public /*out*/ readonly locationAgnosticId: pulumi.Output<string>;
     /**
      * List of location references where the VM or volume group recovery point are a part of the specified recovery point.
      */
-    public /*out*/ readonly locationReferences!: pulumi.Output<outputs.RecoveryPointsV2LocationReference[]>;
+    declare public /*out*/ readonly locationReferences: pulumi.Output<outputs.RecoveryPointsV2LocationReference[]>;
     /**
      * -(Optional) The name of the Recovery point.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
      */
-    public /*out*/ readonly ownerExtId!: pulumi.Output<string>;
+    declare public /*out*/ readonly ownerExtId: pulumi.Output<string>;
     /**
      * -(Optional) Type of the Recovery point.
      * * supported values:
      * * `CRASH_CONSISTENT`: -  capture all the VM and application level details.
      * * `APPLICATION_CONSISTENT`: -  stored in the memory and also the in-progress transaction details.
      */
-    public readonly recoveryPointType!: pulumi.Output<string>;
+    declare public readonly recoveryPointType: pulumi.Output<string>;
     /**
      * -(Optional) The status of the Recovery point, which indicates whether this Recovery point is fit to be consumed.
      * * supported values:
      * * `COMPLETE`: -  The Recovery point is in a complete state and ready to be consumed.
      */
-    public readonly status!: pulumi.Output<string>;
+    declare public readonly status: pulumi.Output<string>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
      * -(Optional) List of VM recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
      */
-    public readonly vmRecoveryPoints!: pulumi.Output<outputs.RecoveryPointsV2VmRecoveryPoint[] | undefined>;
+    declare public readonly vmRecoveryPoints: pulumi.Output<outputs.RecoveryPointsV2VmRecoveryPoint[] | undefined>;
     /**
      * -(Optional) List of volume group recovery point that are a part of the specified top-level recovery point. Note that a recovery point can contain a maximum number of 30 entities. These entities can be a combination of VM(s) and volume group(s).
      */
-    public readonly volumeGroupRecoveryPoints!: pulumi.Output<outputs.RecoveryPointsV2VolumeGroupRecoveryPoint[]>;
+    declare public readonly volumeGroupRecoveryPoints: pulumi.Output<outputs.RecoveryPointsV2VolumeGroupRecoveryPoint[]>;
 
     /**
      * Create a RecoveryPointsV2 resource with the given unique name, arguments, and options.
@@ -125,27 +125,27 @@ export class RecoveryPointsV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as RecoveryPointsV2State | undefined;
-            resourceInputs["creationTime"] = state ? state.creationTime : undefined;
-            resourceInputs["expirationTime"] = state ? state.expirationTime : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["links"] = state ? state.links : undefined;
-            resourceInputs["locationAgnosticId"] = state ? state.locationAgnosticId : undefined;
-            resourceInputs["locationReferences"] = state ? state.locationReferences : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownerExtId"] = state ? state.ownerExtId : undefined;
-            resourceInputs["recoveryPointType"] = state ? state.recoveryPointType : undefined;
-            resourceInputs["status"] = state ? state.status : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["vmRecoveryPoints"] = state ? state.vmRecoveryPoints : undefined;
-            resourceInputs["volumeGroupRecoveryPoints"] = state ? state.volumeGroupRecoveryPoints : undefined;
+            resourceInputs["creationTime"] = state?.creationTime;
+            resourceInputs["expirationTime"] = state?.expirationTime;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["links"] = state?.links;
+            resourceInputs["locationAgnosticId"] = state?.locationAgnosticId;
+            resourceInputs["locationReferences"] = state?.locationReferences;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownerExtId"] = state?.ownerExtId;
+            resourceInputs["recoveryPointType"] = state?.recoveryPointType;
+            resourceInputs["status"] = state?.status;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["vmRecoveryPoints"] = state?.vmRecoveryPoints;
+            resourceInputs["volumeGroupRecoveryPoints"] = state?.volumeGroupRecoveryPoints;
         } else {
             const args = argsOrState as RecoveryPointsV2Args | undefined;
-            resourceInputs["expirationTime"] = args ? args.expirationTime : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["recoveryPointType"] = args ? args.recoveryPointType : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
-            resourceInputs["vmRecoveryPoints"] = args ? args.vmRecoveryPoints : undefined;
-            resourceInputs["volumeGroupRecoveryPoints"] = args ? args.volumeGroupRecoveryPoints : undefined;
+            resourceInputs["expirationTime"] = args?.expirationTime;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["recoveryPointType"] = args?.recoveryPointType;
+            resourceInputs["status"] = args?.status;
+            resourceInputs["vmRecoveryPoints"] = args?.vmRecoveryPoints;
+            resourceInputs["volumeGroupRecoveryPoints"] = args?.volumeGroupRecoveryPoints;
             resourceInputs["creationTime"] = undefined /*out*/;
             resourceInputs["extId"] = undefined /*out*/;
             resourceInputs["links"] = undefined /*out*/;

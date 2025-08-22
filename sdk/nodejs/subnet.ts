@@ -40,108 +40,108 @@ export class Subnet extends pulumi.CustomResource {
     /**
      * The version of the API.
      */
-    public /*out*/ readonly apiVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly apiVersion: pulumi.Output<string>;
     /**
      * - (Optional) The reference to a availability_zone.
      */
-    public readonly availabilityZoneReference!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly availabilityZoneReference: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) The categories of the resource.
      */
-    public readonly categories!: pulumi.Output<outputs.SubnetCategory[]>;
-    public /*out*/ readonly clusterName!: pulumi.Output<string>;
+    declare public readonly categories: pulumi.Output<outputs.SubnetCategory[]>;
+    declare public /*out*/ readonly clusterName: pulumi.Output<string>;
     /**
      * - (Required) The UUID of the cluster.
      */
-    public readonly clusterUuid!: pulumi.Output<string | undefined>;
+    declare public readonly clusterUuid: pulumi.Output<string | undefined>;
     /**
      * - (Optional) Default gateway IP address.
      */
-    public readonly defaultGatewayIp!: pulumi.Output<string>;
+    declare public readonly defaultGatewayIp: pulumi.Output<string>;
     /**
      * - (Optional) A description for subnet.
      */
-    public readonly description!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string>;
     /**
      * - (Optional). List of Domain Name Server addresses .
      */
-    public readonly dhcpDomainNameServerLists!: pulumi.Output<string[]>;
+    declare public readonly dhcpDomainNameServerLists: pulumi.Output<string[]>;
     /**
      * - (Optional).The DNS domain search list .
      */
-    public readonly dhcpDomainSearchLists!: pulumi.Output<string[]>;
+    declare public readonly dhcpDomainSearchLists: pulumi.Output<string[]>;
     /**
      * - (Optional) Spec for defining DHCP options.
      */
-    public readonly dhcpOptions!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly dhcpOptions: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) Host address.
      */
-    public readonly dhcpServerAddress!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly dhcpServerAddress: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) Port Number.
      */
-    public readonly dhcpServerAddressPort!: pulumi.Output<number>;
+    declare public readonly dhcpServerAddressPort: pulumi.Output<number>;
     /**
      * - (Optional) Whether NAT should be performed for VPCs attaching to the subnet. This field is supported only for external subnets. NAT is enabled by default on external subnets.
      */
-    public readonly enableNat!: pulumi.Output<boolean>;
+    declare public readonly enableNat: pulumi.Output<boolean>;
     /**
      * -(Optional) Range of IPs.
      */
-    public readonly ipConfigPoolListRanges!: pulumi.Output<string[]>;
+    declare public readonly ipConfigPoolListRanges: pulumi.Output<string[]>;
     /**
      * - (Optional) Whether the subnet is external subnet or not.
      */
-    public readonly isExternal!: pulumi.Output<boolean>;
+    declare public readonly isExternal: pulumi.Output<boolean>;
     /**
      * - (Required) The subnet kind metadata.
      */
-    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) Subnet name (Readonly).
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * - (Optional) The reference to a network_function_chain.
      */
-    public readonly networkFunctionChainReference!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly networkFunctionChainReference: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) The reference to a user.
      */
-    public readonly ownerReference!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly ownerReference: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional).
      */
-    public readonly prefixLength!: pulumi.Output<number>;
+    declare public readonly prefixLength: pulumi.Output<number>;
     /**
      * - (Optional) The reference to a project.
      */
-    public readonly projectReference!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly projectReference: pulumi.Output<{[key: string]: string}>;
     /**
      * - The state of the subnet.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * - (Optional) Subnet IP address.
      */
-    public readonly subnetIp!: pulumi.Output<string>;
+    declare public readonly subnetIp: pulumi.Output<string>;
     /**
      * - (Optional). Valid Types are ["VLAN", "OVERLAY"]
      */
-    public readonly subnetType!: pulumi.Output<string>;
+    declare public readonly subnetType: pulumi.Output<string>;
     /**
      * - (Optional). For VLAN subnet.
      */
-    public readonly vlanId!: pulumi.Output<number>;
+    declare public readonly vlanId: pulumi.Output<number>;
     /**
      * VPC reference uuid
      */
-    public readonly vpcReferenceUuid!: pulumi.Output<string>;
+    declare public readonly vpcReferenceUuid: pulumi.Output<string>;
     /**
      * - (Optional).
      */
-    public readonly vswitchName!: pulumi.Output<string>;
+    declare public readonly vswitchName: pulumi.Output<string>;
 
     /**
      * Create a Subnet resource with the given unique name, arguments, and options.
@@ -156,61 +156,61 @@ export class Subnet extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SubnetState | undefined;
-            resourceInputs["apiVersion"] = state ? state.apiVersion : undefined;
-            resourceInputs["availabilityZoneReference"] = state ? state.availabilityZoneReference : undefined;
-            resourceInputs["categories"] = state ? state.categories : undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["clusterUuid"] = state ? state.clusterUuid : undefined;
-            resourceInputs["defaultGatewayIp"] = state ? state.defaultGatewayIp : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["dhcpDomainNameServerLists"] = state ? state.dhcpDomainNameServerLists : undefined;
-            resourceInputs["dhcpDomainSearchLists"] = state ? state.dhcpDomainSearchLists : undefined;
-            resourceInputs["dhcpOptions"] = state ? state.dhcpOptions : undefined;
-            resourceInputs["dhcpServerAddress"] = state ? state.dhcpServerAddress : undefined;
-            resourceInputs["dhcpServerAddressPort"] = state ? state.dhcpServerAddressPort : undefined;
-            resourceInputs["enableNat"] = state ? state.enableNat : undefined;
-            resourceInputs["ipConfigPoolListRanges"] = state ? state.ipConfigPoolListRanges : undefined;
-            resourceInputs["isExternal"] = state ? state.isExternal : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["networkFunctionChainReference"] = state ? state.networkFunctionChainReference : undefined;
-            resourceInputs["ownerReference"] = state ? state.ownerReference : undefined;
-            resourceInputs["prefixLength"] = state ? state.prefixLength : undefined;
-            resourceInputs["projectReference"] = state ? state.projectReference : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["subnetIp"] = state ? state.subnetIp : undefined;
-            resourceInputs["subnetType"] = state ? state.subnetType : undefined;
-            resourceInputs["vlanId"] = state ? state.vlanId : undefined;
-            resourceInputs["vpcReferenceUuid"] = state ? state.vpcReferenceUuid : undefined;
-            resourceInputs["vswitchName"] = state ? state.vswitchName : undefined;
+            resourceInputs["apiVersion"] = state?.apiVersion;
+            resourceInputs["availabilityZoneReference"] = state?.availabilityZoneReference;
+            resourceInputs["categories"] = state?.categories;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["clusterUuid"] = state?.clusterUuid;
+            resourceInputs["defaultGatewayIp"] = state?.defaultGatewayIp;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["dhcpDomainNameServerLists"] = state?.dhcpDomainNameServerLists;
+            resourceInputs["dhcpDomainSearchLists"] = state?.dhcpDomainSearchLists;
+            resourceInputs["dhcpOptions"] = state?.dhcpOptions;
+            resourceInputs["dhcpServerAddress"] = state?.dhcpServerAddress;
+            resourceInputs["dhcpServerAddressPort"] = state?.dhcpServerAddressPort;
+            resourceInputs["enableNat"] = state?.enableNat;
+            resourceInputs["ipConfigPoolListRanges"] = state?.ipConfigPoolListRanges;
+            resourceInputs["isExternal"] = state?.isExternal;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["networkFunctionChainReference"] = state?.networkFunctionChainReference;
+            resourceInputs["ownerReference"] = state?.ownerReference;
+            resourceInputs["prefixLength"] = state?.prefixLength;
+            resourceInputs["projectReference"] = state?.projectReference;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["subnetIp"] = state?.subnetIp;
+            resourceInputs["subnetType"] = state?.subnetType;
+            resourceInputs["vlanId"] = state?.vlanId;
+            resourceInputs["vpcReferenceUuid"] = state?.vpcReferenceUuid;
+            resourceInputs["vswitchName"] = state?.vswitchName;
         } else {
             const args = argsOrState as SubnetArgs | undefined;
-            if ((!args || args.subnetType === undefined) && !opts.urn) {
+            if (args?.subnetType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetType'");
             }
-            resourceInputs["availabilityZoneReference"] = args ? args.availabilityZoneReference : undefined;
-            resourceInputs["categories"] = args ? args.categories : undefined;
-            resourceInputs["clusterUuid"] = args ? args.clusterUuid : undefined;
-            resourceInputs["defaultGatewayIp"] = args ? args.defaultGatewayIp : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["dhcpDomainNameServerLists"] = args ? args.dhcpDomainNameServerLists : undefined;
-            resourceInputs["dhcpDomainSearchLists"] = args ? args.dhcpDomainSearchLists : undefined;
-            resourceInputs["dhcpOptions"] = args ? args.dhcpOptions : undefined;
-            resourceInputs["dhcpServerAddress"] = args ? args.dhcpServerAddress : undefined;
-            resourceInputs["dhcpServerAddressPort"] = args ? args.dhcpServerAddressPort : undefined;
-            resourceInputs["enableNat"] = args ? args.enableNat : undefined;
-            resourceInputs["ipConfigPoolListRanges"] = args ? args.ipConfigPoolListRanges : undefined;
-            resourceInputs["isExternal"] = args ? args.isExternal : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["networkFunctionChainReference"] = args ? args.networkFunctionChainReference : undefined;
-            resourceInputs["ownerReference"] = args ? args.ownerReference : undefined;
-            resourceInputs["prefixLength"] = args ? args.prefixLength : undefined;
-            resourceInputs["projectReference"] = args ? args.projectReference : undefined;
-            resourceInputs["subnetIp"] = args ? args.subnetIp : undefined;
-            resourceInputs["subnetType"] = args ? args.subnetType : undefined;
-            resourceInputs["vlanId"] = args ? args.vlanId : undefined;
-            resourceInputs["vpcReferenceUuid"] = args ? args.vpcReferenceUuid : undefined;
-            resourceInputs["vswitchName"] = args ? args.vswitchName : undefined;
+            resourceInputs["availabilityZoneReference"] = args?.availabilityZoneReference;
+            resourceInputs["categories"] = args?.categories;
+            resourceInputs["clusterUuid"] = args?.clusterUuid;
+            resourceInputs["defaultGatewayIp"] = args?.defaultGatewayIp;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["dhcpDomainNameServerLists"] = args?.dhcpDomainNameServerLists;
+            resourceInputs["dhcpDomainSearchLists"] = args?.dhcpDomainSearchLists;
+            resourceInputs["dhcpOptions"] = args?.dhcpOptions;
+            resourceInputs["dhcpServerAddress"] = args?.dhcpServerAddress;
+            resourceInputs["dhcpServerAddressPort"] = args?.dhcpServerAddressPort;
+            resourceInputs["enableNat"] = args?.enableNat;
+            resourceInputs["ipConfigPoolListRanges"] = args?.ipConfigPoolListRanges;
+            resourceInputs["isExternal"] = args?.isExternal;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["networkFunctionChainReference"] = args?.networkFunctionChainReference;
+            resourceInputs["ownerReference"] = args?.ownerReference;
+            resourceInputs["prefixLength"] = args?.prefixLength;
+            resourceInputs["projectReference"] = args?.projectReference;
+            resourceInputs["subnetIp"] = args?.subnetIp;
+            resourceInputs["subnetType"] = args?.subnetType;
+            resourceInputs["vlanId"] = args?.vlanId;
+            resourceInputs["vpcReferenceUuid"] = args?.vpcReferenceUuid;
+            resourceInputs["vswitchName"] = args?.vswitchName;
             resourceInputs["apiVersion"] = undefined /*out*/;
             resourceInputs["clusterName"] = undefined /*out*/;
             resourceInputs["metadata"] = undefined /*out*/;

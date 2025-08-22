@@ -63,25 +63,25 @@ export class SelfServiceAppRestore extends pulumi.CustomResource {
     /**
      * - (Optional) The name of the application
      */
-    public readonly appName!: pulumi.Output<string | undefined>;
+    declare public readonly appName: pulumi.Output<string | undefined>;
     /**
      * - (Optional) The UUID of the application.
      */
-    public readonly appUuid!: pulumi.Output<string | undefined>;
+    declare public readonly appUuid: pulumi.Output<string | undefined>;
     /**
      * - (Required) The name of the restore action to be performed.
      */
-    public readonly restoreActionName!: pulumi.Output<string>;
+    declare public readonly restoreActionName: pulumi.Output<string>;
     /**
      * - (Required) The UUID of the snapshot to which the application will be restored.
      *
      * Both (`appName` and `appUuid`) are optional but atleast one of them should be provided for resource to work.
      */
-    public readonly snapshotUuid!: pulumi.Output<string>;
+    declare public readonly snapshotUuid: pulumi.Output<string>;
     /**
      * - (Computed) This will be set after the restore action has been processed.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
 
     /**
      * Create a SelfServiceAppRestore resource with the given unique name, arguments, and options.
@@ -96,23 +96,23 @@ export class SelfServiceAppRestore extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SelfServiceAppRestoreState | undefined;
-            resourceInputs["appName"] = state ? state.appName : undefined;
-            resourceInputs["appUuid"] = state ? state.appUuid : undefined;
-            resourceInputs["restoreActionName"] = state ? state.restoreActionName : undefined;
-            resourceInputs["snapshotUuid"] = state ? state.snapshotUuid : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["appName"] = state?.appName;
+            resourceInputs["appUuid"] = state?.appUuid;
+            resourceInputs["restoreActionName"] = state?.restoreActionName;
+            resourceInputs["snapshotUuid"] = state?.snapshotUuid;
+            resourceInputs["state"] = state?.state;
         } else {
             const args = argsOrState as SelfServiceAppRestoreArgs | undefined;
-            if ((!args || args.restoreActionName === undefined) && !opts.urn) {
+            if (args?.restoreActionName === undefined && !opts.urn) {
                 throw new Error("Missing required property 'restoreActionName'");
             }
-            if ((!args || args.snapshotUuid === undefined) && !opts.urn) {
+            if (args?.snapshotUuid === undefined && !opts.urn) {
                 throw new Error("Missing required property 'snapshotUuid'");
             }
-            resourceInputs["appName"] = args ? args.appName : undefined;
-            resourceInputs["appUuid"] = args ? args.appUuid : undefined;
-            resourceInputs["restoreActionName"] = args ? args.restoreActionName : undefined;
-            resourceInputs["snapshotUuid"] = args ? args.snapshotUuid : undefined;
+            resourceInputs["appName"] = args?.appName;
+            resourceInputs["appUuid"] = args?.appUuid;
+            resourceInputs["restoreActionName"] = args?.restoreActionName;
+            resourceInputs["snapshotUuid"] = args?.snapshotUuid;
             resourceInputs["state"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);

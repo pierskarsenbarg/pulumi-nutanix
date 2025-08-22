@@ -70,63 +70,63 @@ export class FloatingIpV2 extends pulumi.CustomResource {
     /**
      * Association status of floating IP.
      */
-    public /*out*/ readonly associationStatus!: pulumi.Output<string>;
+    declare public /*out*/ readonly associationStatus: pulumi.Output<string>;
     /**
      * Association of the Floating IP with either NIC or Private IP
      */
-    public readonly associations!: pulumi.Output<outputs.FloatingIpV2Association[] | undefined>;
+    declare public readonly associations: pulumi.Output<outputs.FloatingIpV2Association[] | undefined>;
     /**
      * Description for the Floating IP.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly description: pulumi.Output<string | undefined>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * External subnet reference for the Floating IP to be allocated in on-prem only.
      */
-    public readonly externalSubnetReference!: pulumi.Output<string | undefined>;
+    declare public readonly externalSubnetReference: pulumi.Output<string | undefined>;
     /**
      * Networking common base object
      */
-    public readonly externalSubnets!: pulumi.Output<outputs.FloatingIpV2ExternalSubnet[]>;
-    public /*out*/ readonly floatingIpValue!: pulumi.Output<string>;
+    declare public readonly externalSubnets: pulumi.Output<outputs.FloatingIpV2ExternalSubnet[]>;
+    declare public /*out*/ readonly floatingIpValue: pulumi.Output<string>;
     /**
      * Floating IP address.
      */
-    public readonly floatingIps!: pulumi.Output<outputs.FloatingIpV2FloatingIp[]>;
+    declare public readonly floatingIps: pulumi.Output<outputs.FloatingIpV2FloatingIp[]>;
     /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    public /*out*/ readonly links!: pulumi.Output<outputs.FloatingIpV2Link[]>;
-    public readonly loadBalancerSessionReference!: pulumi.Output<string | undefined>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.FloatingIpV2Link[]>;
+    declare public readonly loadBalancerSessionReference: pulumi.Output<string | undefined>;
     /**
      * Metadata associated with this resource.
      */
-    public /*out*/ readonly metadatas!: pulumi.Output<outputs.FloatingIpV2Metadata[]>;
+    declare public /*out*/ readonly metadatas: pulumi.Output<outputs.FloatingIpV2Metadata[]>;
     /**
      * Name of the floating IP.
      */
-    public readonly name!: pulumi.Output<string>;
-    public /*out*/ readonly privateIp!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
+    declare public /*out*/ readonly privateIp: pulumi.Output<string>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
      * VM NIC reference.
      */
-    public readonly vmNicReference!: pulumi.Output<string>;
+    declare public readonly vmNicReference: pulumi.Output<string>;
     /**
      * Virtual NIC for projections
      */
-    public readonly vmNics!: pulumi.Output<outputs.FloatingIpV2VmNic[]>;
+    declare public readonly vmNics: pulumi.Output<outputs.FloatingIpV2VmNic[]>;
     /**
      * VPC reference UUID
      */
-    public readonly vpcReference!: pulumi.Output<string>;
+    declare public readonly vpcReference: pulumi.Output<string>;
     /**
      * Networking common base object
      */
-    public readonly vpcs!: pulumi.Output<outputs.FloatingIpV2Vpc[]>;
+    declare public readonly vpcs: pulumi.Output<outputs.FloatingIpV2Vpc[]>;
 
     /**
      * Create a FloatingIpV2 resource with the given unique name, arguments, and options.
@@ -141,38 +141,38 @@ export class FloatingIpV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as FloatingIpV2State | undefined;
-            resourceInputs["associationStatus"] = state ? state.associationStatus : undefined;
-            resourceInputs["associations"] = state ? state.associations : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["externalSubnetReference"] = state ? state.externalSubnetReference : undefined;
-            resourceInputs["externalSubnets"] = state ? state.externalSubnets : undefined;
-            resourceInputs["floatingIpValue"] = state ? state.floatingIpValue : undefined;
-            resourceInputs["floatingIps"] = state ? state.floatingIps : undefined;
-            resourceInputs["links"] = state ? state.links : undefined;
-            resourceInputs["loadBalancerSessionReference"] = state ? state.loadBalancerSessionReference : undefined;
-            resourceInputs["metadatas"] = state ? state.metadatas : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["privateIp"] = state ? state.privateIp : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
-            resourceInputs["vmNicReference"] = state ? state.vmNicReference : undefined;
-            resourceInputs["vmNics"] = state ? state.vmNics : undefined;
-            resourceInputs["vpcReference"] = state ? state.vpcReference : undefined;
-            resourceInputs["vpcs"] = state ? state.vpcs : undefined;
+            resourceInputs["associationStatus"] = state?.associationStatus;
+            resourceInputs["associations"] = state?.associations;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["externalSubnetReference"] = state?.externalSubnetReference;
+            resourceInputs["externalSubnets"] = state?.externalSubnets;
+            resourceInputs["floatingIpValue"] = state?.floatingIpValue;
+            resourceInputs["floatingIps"] = state?.floatingIps;
+            resourceInputs["links"] = state?.links;
+            resourceInputs["loadBalancerSessionReference"] = state?.loadBalancerSessionReference;
+            resourceInputs["metadatas"] = state?.metadatas;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["privateIp"] = state?.privateIp;
+            resourceInputs["tenantId"] = state?.tenantId;
+            resourceInputs["vmNicReference"] = state?.vmNicReference;
+            resourceInputs["vmNics"] = state?.vmNics;
+            resourceInputs["vpcReference"] = state?.vpcReference;
+            resourceInputs["vpcs"] = state?.vpcs;
         } else {
             const args = argsOrState as FloatingIpV2Args | undefined;
-            resourceInputs["associations"] = args ? args.associations : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["externalSubnetReference"] = args ? args.externalSubnetReference : undefined;
-            resourceInputs["externalSubnets"] = args ? args.externalSubnets : undefined;
-            resourceInputs["floatingIps"] = args ? args.floatingIps : undefined;
-            resourceInputs["loadBalancerSessionReference"] = args ? args.loadBalancerSessionReference : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["vmNicReference"] = args ? args.vmNicReference : undefined;
-            resourceInputs["vmNics"] = args ? args.vmNics : undefined;
-            resourceInputs["vpcReference"] = args ? args.vpcReference : undefined;
-            resourceInputs["vpcs"] = args ? args.vpcs : undefined;
+            resourceInputs["associations"] = args?.associations;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["externalSubnetReference"] = args?.externalSubnetReference;
+            resourceInputs["externalSubnets"] = args?.externalSubnets;
+            resourceInputs["floatingIps"] = args?.floatingIps;
+            resourceInputs["loadBalancerSessionReference"] = args?.loadBalancerSessionReference;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["vmNicReference"] = args?.vmNicReference;
+            resourceInputs["vmNics"] = args?.vmNics;
+            resourceInputs["vpcReference"] = args?.vpcReference;
+            resourceInputs["vpcs"] = args?.vpcs;
             resourceInputs["associationStatus"] = undefined /*out*/;
             resourceInputs["floatingIpValue"] = undefined /*out*/;
             resourceInputs["links"] = undefined /*out*/;

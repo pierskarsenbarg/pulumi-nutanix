@@ -67,116 +67,116 @@ export class StorageContainersV2 extends pulumi.CustomResource {
     /**
      * -(Optional) Affinity host extId for RF 1 Storage Container.
      */
-    public readonly affinityHostExtId!: pulumi.Output<string>;
+    declare public readonly affinityHostExtId: pulumi.Output<string>;
     /**
      * -(Optional) Indicates the current status of Cache Deduplication for the Container. available values:  `NONE`,    `OFF`,    `ON`
      */
-    public readonly cacheDeduplication!: pulumi.Output<string>;
+    declare public readonly cacheDeduplication: pulumi.Output<string>;
     /**
      * - ext id for the cluster owning the storage container.
      */
-    public readonly clusterExtId!: pulumi.Output<string>;
+    declare public readonly clusterExtId: pulumi.Output<string>;
     /**
      * - Corresponding name of the Cluster owning the Storage Container instance.
      */
-    public /*out*/ readonly clusterName!: pulumi.Output<string>;
+    declare public /*out*/ readonly clusterName: pulumi.Output<string>;
     /**
      * -(Optional) The compression delay in seconds.
      */
-    public readonly compressionDelaySecs!: pulumi.Output<number>;
+    declare public readonly compressionDelaySecs: pulumi.Output<number>;
     /**
      * - the storage container ext id
      */
-    public readonly containerExtId!: pulumi.Output<string>;
+    declare public readonly containerExtId: pulumi.Output<string>;
     /**
      * -(Optional) Indicates the current status value for Erasure Coding for the Container. available values:  `NONE`,    `OFF`,    `ON`
      */
-    public readonly erasureCode!: pulumi.Output<string>;
+    declare public readonly erasureCode: pulumi.Output<string>;
     /**
      * -(Optional) Delay in performing ErasureCode for the current Container instance.
      */
-    public readonly erasureCodeDelaySecs!: pulumi.Output<number>;
+    declare public readonly erasureCodeDelaySecs: pulumi.Output<number>;
     /**
      * - the storage container uuid
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * -(Optional) Indicates whether to prefer a higher Erasure Code fault domain.
      */
-    public readonly hasHigherEcFaultDomainPreference!: pulumi.Output<boolean>;
-    public readonly ignoreSmallFiles!: pulumi.Output<boolean>;
+    declare public readonly hasHigherEcFaultDomainPreference: pulumi.Output<boolean>;
+    declare public readonly ignoreSmallFiles: pulumi.Output<boolean>;
     /**
      * -(Optional) Indicates whether the compression is enabled for the Container.
      */
-    public readonly isCompressionEnabled!: pulumi.Output<boolean>;
+    declare public readonly isCompressionEnabled: pulumi.Output<boolean>;
     /**
      * - Indicates whether the Container is encrypted or not.
      */
-    public /*out*/ readonly isEncrypted!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isEncrypted: pulumi.Output<boolean>;
     /**
      * -(Optional) Indicates whether data written to this container should be inline erasure coded or not. This field is only considered when ErasureCoding is enabled.
      */
-    public readonly isInlineEcEnabled!: pulumi.Output<boolean>;
+    declare public readonly isInlineEcEnabled: pulumi.Output<boolean>;
     /**
      * - Indicates whether the Container is internal and is managed by Nutanix.
      */
-    public readonly isInternal!: pulumi.Output<boolean>;
+    declare public readonly isInternal: pulumi.Output<boolean>;
     /**
      * - Indicates if the Storage Container is marked for removal. This field is set when the Storage Container is about to be destroyed.
      */
-    public /*out*/ readonly isMarkedForRemoval!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isMarkedForRemoval: pulumi.Output<boolean>;
     /**
      * -(Optional) Indicates whether the Container instance has software encryption enabled.
      */
-    public readonly isSoftwareEncryptionEnabled!: pulumi.Output<boolean>;
+    declare public readonly isSoftwareEncryptionEnabled: pulumi.Output<boolean>;
     /**
      * - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
-    public /*out*/ readonly links!: pulumi.Output<outputs.StorageContainersV2Link[]>;
+    declare public /*out*/ readonly links: pulumi.Output<outputs.StorageContainersV2Link[]>;
     /**
      * -(Optional) Max capacity of the Container as defined by the user.
      */
-    public readonly logicalAdvertisedCapacityBytes!: pulumi.Output<number>;
+    declare public readonly logicalAdvertisedCapacityBytes: pulumi.Output<number>;
     /**
      * -(Optional) Total reserved size (in bytes) of the container (set by Admin). This also accounts for the container's replication factor. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity.
      */
-    public readonly logicalExplicitReservedCapacityBytes!: pulumi.Output<number>;
+    declare public readonly logicalExplicitReservedCapacityBytes: pulumi.Output<number>;
     /**
      * - This is the summation of reservations provisioned on all vdisks in the container. The actual reserved capacity of the container will be the maximum of explicitReservedCapacity and implicitReservedCapacity
      */
-    public /*out*/ readonly logicalImplicitReservedCapacityBytes!: pulumi.Output<number>;
+    declare public /*out*/ readonly logicalImplicitReservedCapacityBytes: pulumi.Output<number>;
     /**
      * - Maximum physical capacity of the Storage Container in bytes.
      */
-    public /*out*/ readonly maxCapacityBytes!: pulumi.Output<number>;
+    declare public /*out*/ readonly maxCapacityBytes: pulumi.Output<number>;
     /**
      * -(Required) Name of the storage container.  Note that the name of Storage Container should be unique per cluster.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * -(Optional) List of NFS addresses which need to be whitelisted.
      */
-    public readonly nfsWhitelistAddresses!: pulumi.Output<outputs.StorageContainersV2NfsWhitelistAddress[] | undefined>;
+    declare public readonly nfsWhitelistAddresses: pulumi.Output<outputs.StorageContainersV2NfsWhitelistAddress[] | undefined>;
     /**
      * - Indicates the current status of Disk Deduplication for the Container. available values:  `NONE`,    `OFF`,    `POST_PROCESS`
      */
-    public readonly onDiskDedup!: pulumi.Output<string>;
+    declare public readonly onDiskDedup: pulumi.Output<string>;
     /**
      * -(Optional) owner ext id
      */
-    public readonly ownerExtId!: pulumi.Output<string>;
+    declare public readonly ownerExtId: pulumi.Output<string>;
     /**
      * -(Optional) Replication factor of the Storage Container.
      */
-    public readonly replicationFactor!: pulumi.Output<number>;
+    declare public readonly replicationFactor: pulumi.Output<number>;
     /**
      * - extId of the Storage Pool owning the Storage Container instance.
      */
-    public /*out*/ readonly storagePoolExtId!: pulumi.Output<string>;
+    declare public /*out*/ readonly storagePoolExtId: pulumi.Output<string>;
     /**
      * - A globally unique identifier that represents the tenant that owns this entity.
      */
-    public /*out*/ readonly tenantId!: pulumi.Output<string>;
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
 
     /**
      * Create a StorageContainersV2 resource with the given unique name, arguments, and options.
@@ -191,61 +191,61 @@ export class StorageContainersV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as StorageContainersV2State | undefined;
-            resourceInputs["affinityHostExtId"] = state ? state.affinityHostExtId : undefined;
-            resourceInputs["cacheDeduplication"] = state ? state.cacheDeduplication : undefined;
-            resourceInputs["clusterExtId"] = state ? state.clusterExtId : undefined;
-            resourceInputs["clusterName"] = state ? state.clusterName : undefined;
-            resourceInputs["compressionDelaySecs"] = state ? state.compressionDelaySecs : undefined;
-            resourceInputs["containerExtId"] = state ? state.containerExtId : undefined;
-            resourceInputs["erasureCode"] = state ? state.erasureCode : undefined;
-            resourceInputs["erasureCodeDelaySecs"] = state ? state.erasureCodeDelaySecs : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["hasHigherEcFaultDomainPreference"] = state ? state.hasHigherEcFaultDomainPreference : undefined;
-            resourceInputs["ignoreSmallFiles"] = state ? state.ignoreSmallFiles : undefined;
-            resourceInputs["isCompressionEnabled"] = state ? state.isCompressionEnabled : undefined;
-            resourceInputs["isEncrypted"] = state ? state.isEncrypted : undefined;
-            resourceInputs["isInlineEcEnabled"] = state ? state.isInlineEcEnabled : undefined;
-            resourceInputs["isInternal"] = state ? state.isInternal : undefined;
-            resourceInputs["isMarkedForRemoval"] = state ? state.isMarkedForRemoval : undefined;
-            resourceInputs["isSoftwareEncryptionEnabled"] = state ? state.isSoftwareEncryptionEnabled : undefined;
-            resourceInputs["links"] = state ? state.links : undefined;
-            resourceInputs["logicalAdvertisedCapacityBytes"] = state ? state.logicalAdvertisedCapacityBytes : undefined;
-            resourceInputs["logicalExplicitReservedCapacityBytes"] = state ? state.logicalExplicitReservedCapacityBytes : undefined;
-            resourceInputs["logicalImplicitReservedCapacityBytes"] = state ? state.logicalImplicitReservedCapacityBytes : undefined;
-            resourceInputs["maxCapacityBytes"] = state ? state.maxCapacityBytes : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["nfsWhitelistAddresses"] = state ? state.nfsWhitelistAddresses : undefined;
-            resourceInputs["onDiskDedup"] = state ? state.onDiskDedup : undefined;
-            resourceInputs["ownerExtId"] = state ? state.ownerExtId : undefined;
-            resourceInputs["replicationFactor"] = state ? state.replicationFactor : undefined;
-            resourceInputs["storagePoolExtId"] = state ? state.storagePoolExtId : undefined;
-            resourceInputs["tenantId"] = state ? state.tenantId : undefined;
+            resourceInputs["affinityHostExtId"] = state?.affinityHostExtId;
+            resourceInputs["cacheDeduplication"] = state?.cacheDeduplication;
+            resourceInputs["clusterExtId"] = state?.clusterExtId;
+            resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["compressionDelaySecs"] = state?.compressionDelaySecs;
+            resourceInputs["containerExtId"] = state?.containerExtId;
+            resourceInputs["erasureCode"] = state?.erasureCode;
+            resourceInputs["erasureCodeDelaySecs"] = state?.erasureCodeDelaySecs;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["hasHigherEcFaultDomainPreference"] = state?.hasHigherEcFaultDomainPreference;
+            resourceInputs["ignoreSmallFiles"] = state?.ignoreSmallFiles;
+            resourceInputs["isCompressionEnabled"] = state?.isCompressionEnabled;
+            resourceInputs["isEncrypted"] = state?.isEncrypted;
+            resourceInputs["isInlineEcEnabled"] = state?.isInlineEcEnabled;
+            resourceInputs["isInternal"] = state?.isInternal;
+            resourceInputs["isMarkedForRemoval"] = state?.isMarkedForRemoval;
+            resourceInputs["isSoftwareEncryptionEnabled"] = state?.isSoftwareEncryptionEnabled;
+            resourceInputs["links"] = state?.links;
+            resourceInputs["logicalAdvertisedCapacityBytes"] = state?.logicalAdvertisedCapacityBytes;
+            resourceInputs["logicalExplicitReservedCapacityBytes"] = state?.logicalExplicitReservedCapacityBytes;
+            resourceInputs["logicalImplicitReservedCapacityBytes"] = state?.logicalImplicitReservedCapacityBytes;
+            resourceInputs["maxCapacityBytes"] = state?.maxCapacityBytes;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["nfsWhitelistAddresses"] = state?.nfsWhitelistAddresses;
+            resourceInputs["onDiskDedup"] = state?.onDiskDedup;
+            resourceInputs["ownerExtId"] = state?.ownerExtId;
+            resourceInputs["replicationFactor"] = state?.replicationFactor;
+            resourceInputs["storagePoolExtId"] = state?.storagePoolExtId;
+            resourceInputs["tenantId"] = state?.tenantId;
         } else {
             const args = argsOrState as StorageContainersV2Args | undefined;
-            if ((!args || args.clusterExtId === undefined) && !opts.urn) {
+            if (args?.clusterExtId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'clusterExtId'");
             }
-            resourceInputs["affinityHostExtId"] = args ? args.affinityHostExtId : undefined;
-            resourceInputs["cacheDeduplication"] = args ? args.cacheDeduplication : undefined;
-            resourceInputs["clusterExtId"] = args ? args.clusterExtId : undefined;
-            resourceInputs["compressionDelaySecs"] = args ? args.compressionDelaySecs : undefined;
-            resourceInputs["containerExtId"] = args ? args.containerExtId : undefined;
-            resourceInputs["erasureCode"] = args ? args.erasureCode : undefined;
-            resourceInputs["erasureCodeDelaySecs"] = args ? args.erasureCodeDelaySecs : undefined;
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["hasHigherEcFaultDomainPreference"] = args ? args.hasHigherEcFaultDomainPreference : undefined;
-            resourceInputs["ignoreSmallFiles"] = args ? args.ignoreSmallFiles : undefined;
-            resourceInputs["isCompressionEnabled"] = args ? args.isCompressionEnabled : undefined;
-            resourceInputs["isInlineEcEnabled"] = args ? args.isInlineEcEnabled : undefined;
-            resourceInputs["isInternal"] = args ? args.isInternal : undefined;
-            resourceInputs["isSoftwareEncryptionEnabled"] = args ? args.isSoftwareEncryptionEnabled : undefined;
-            resourceInputs["logicalAdvertisedCapacityBytes"] = args ? args.logicalAdvertisedCapacityBytes : undefined;
-            resourceInputs["logicalExplicitReservedCapacityBytes"] = args ? args.logicalExplicitReservedCapacityBytes : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["nfsWhitelistAddresses"] = args ? args.nfsWhitelistAddresses : undefined;
-            resourceInputs["onDiskDedup"] = args ? args.onDiskDedup : undefined;
-            resourceInputs["ownerExtId"] = args ? args.ownerExtId : undefined;
-            resourceInputs["replicationFactor"] = args ? args.replicationFactor : undefined;
+            resourceInputs["affinityHostExtId"] = args?.affinityHostExtId;
+            resourceInputs["cacheDeduplication"] = args?.cacheDeduplication;
+            resourceInputs["clusterExtId"] = args?.clusterExtId;
+            resourceInputs["compressionDelaySecs"] = args?.compressionDelaySecs;
+            resourceInputs["containerExtId"] = args?.containerExtId;
+            resourceInputs["erasureCode"] = args?.erasureCode;
+            resourceInputs["erasureCodeDelaySecs"] = args?.erasureCodeDelaySecs;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["hasHigherEcFaultDomainPreference"] = args?.hasHigherEcFaultDomainPreference;
+            resourceInputs["ignoreSmallFiles"] = args?.ignoreSmallFiles;
+            resourceInputs["isCompressionEnabled"] = args?.isCompressionEnabled;
+            resourceInputs["isInlineEcEnabled"] = args?.isInlineEcEnabled;
+            resourceInputs["isInternal"] = args?.isInternal;
+            resourceInputs["isSoftwareEncryptionEnabled"] = args?.isSoftwareEncryptionEnabled;
+            resourceInputs["logicalAdvertisedCapacityBytes"] = args?.logicalAdvertisedCapacityBytes;
+            resourceInputs["logicalExplicitReservedCapacityBytes"] = args?.logicalExplicitReservedCapacityBytes;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["nfsWhitelistAddresses"] = args?.nfsWhitelistAddresses;
+            resourceInputs["onDiskDedup"] = args?.onDiskDedup;
+            resourceInputs["ownerExtId"] = args?.ownerExtId;
+            resourceInputs["replicationFactor"] = args?.replicationFactor;
             resourceInputs["clusterName"] = undefined /*out*/;
             resourceInputs["isEncrypted"] = undefined /*out*/;
             resourceInputs["isMarkedForRemoval"] = undefined /*out*/;

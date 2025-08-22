@@ -54,51 +54,51 @@ export class NgtUpgradeV2 extends pulumi.CustomResource {
     /**
      * Version of Nutanix Guest Tools available on the cluster.
      */
-    public /*out*/ readonly availableVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly availableVersion: pulumi.Output<string>;
     /**
      * The list of the application names that are enabled on the guest VM. [`SELF_SERVICE_RESTORE`, `VSS_SNAPSHOT`]
      */
-    public /*out*/ readonly capablities!: pulumi.Output<string[]>;
+    declare public /*out*/ readonly capablities: pulumi.Output<string[]>;
     /**
      * uuid of the Virtual Machine.
      */
-    public readonly extId!: pulumi.Output<string>;
+    declare public readonly extId: pulumi.Output<string>;
     /**
      * Version of the operating system on the VM.
      */
-    public /*out*/ readonly guestOsVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly guestOsVersion: pulumi.Output<string>;
     /**
      * Indicates whether Nutanix Guest Tools is enabled or not.
      */
-    public /*out*/ readonly isEnabled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isEnabled: pulumi.Output<boolean>;
     /**
      * Indicates whether Nutanix Guest Tools is installed on the VM or not.
      */
-    public /*out*/ readonly isInstalled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isInstalled: pulumi.Output<boolean>;
     /**
      * Indicates whether Nutanix Guest Tools ISO is inserted or not.
      */
-    public /*out*/ readonly isIsoInserted!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isIsoInserted: pulumi.Output<boolean>;
     /**
      * Indicates whether the communication from VM to CVM is active or not.
      */
-    public /*out*/ readonly isReachable!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isReachable: pulumi.Output<boolean>;
     /**
      * Indicates whether the VM mobility drivers are installed on the VM or not.
      */
-    public /*out*/ readonly isVmMobilityDriversInstalled!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isVmMobilityDriversInstalled: pulumi.Output<boolean>;
     /**
      * Indicates whether the VM is configured to take VSS snapshots through NGT or not.
      */
-    public /*out*/ readonly isVssSnapshotCapable!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isVssSnapshotCapable: pulumi.Output<boolean>;
     /**
      * The restart schedule after installing or upgrading Nutanix Guest Tools.
      */
-    public readonly rebootPreference!: pulumi.Output<outputs.NgtUpgradeV2RebootPreference | undefined>;
+    declare public readonly rebootPreference: pulumi.Output<outputs.NgtUpgradeV2RebootPreference | undefined>;
     /**
      * Version of Nutanix Guest Tools installed on the VM.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    declare public /*out*/ readonly version: pulumi.Output<string>;
 
     /**
      * Create a NgtUpgradeV2 resource with the given unique name, arguments, and options.
@@ -113,25 +113,25 @@ export class NgtUpgradeV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as NgtUpgradeV2State | undefined;
-            resourceInputs["availableVersion"] = state ? state.availableVersion : undefined;
-            resourceInputs["capablities"] = state ? state.capablities : undefined;
-            resourceInputs["extId"] = state ? state.extId : undefined;
-            resourceInputs["guestOsVersion"] = state ? state.guestOsVersion : undefined;
-            resourceInputs["isEnabled"] = state ? state.isEnabled : undefined;
-            resourceInputs["isInstalled"] = state ? state.isInstalled : undefined;
-            resourceInputs["isIsoInserted"] = state ? state.isIsoInserted : undefined;
-            resourceInputs["isReachable"] = state ? state.isReachable : undefined;
-            resourceInputs["isVmMobilityDriversInstalled"] = state ? state.isVmMobilityDriversInstalled : undefined;
-            resourceInputs["isVssSnapshotCapable"] = state ? state.isVssSnapshotCapable : undefined;
-            resourceInputs["rebootPreference"] = state ? state.rebootPreference : undefined;
-            resourceInputs["version"] = state ? state.version : undefined;
+            resourceInputs["availableVersion"] = state?.availableVersion;
+            resourceInputs["capablities"] = state?.capablities;
+            resourceInputs["extId"] = state?.extId;
+            resourceInputs["guestOsVersion"] = state?.guestOsVersion;
+            resourceInputs["isEnabled"] = state?.isEnabled;
+            resourceInputs["isInstalled"] = state?.isInstalled;
+            resourceInputs["isIsoInserted"] = state?.isIsoInserted;
+            resourceInputs["isReachable"] = state?.isReachable;
+            resourceInputs["isVmMobilityDriversInstalled"] = state?.isVmMobilityDriversInstalled;
+            resourceInputs["isVssSnapshotCapable"] = state?.isVssSnapshotCapable;
+            resourceInputs["rebootPreference"] = state?.rebootPreference;
+            resourceInputs["version"] = state?.version;
         } else {
             const args = argsOrState as NgtUpgradeV2Args | undefined;
-            if ((!args || args.extId === undefined) && !opts.urn) {
+            if (args?.extId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'extId'");
             }
-            resourceInputs["extId"] = args ? args.extId : undefined;
-            resourceInputs["rebootPreference"] = args ? args.rebootPreference : undefined;
+            resourceInputs["extId"] = args?.extId;
+            resourceInputs["rebootPreference"] = args?.rebootPreference;
             resourceInputs["availableVersion"] = undefined /*out*/;
             resourceInputs["capablities"] = undefined /*out*/;
             resourceInputs["guestOsVersion"] = undefined /*out*/;

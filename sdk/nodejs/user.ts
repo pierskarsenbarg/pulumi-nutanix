@@ -66,55 +66,55 @@ export class User extends pulumi.CustomResource {
     /**
      * - List of ACP references. See #reference for more details.
      */
-    public /*out*/ readonly accessControlPolicyReferenceLists!: pulumi.Output<outputs.UserAccessControlPolicyReferenceList[]>;
+    declare public /*out*/ readonly accessControlPolicyReferenceLists: pulumi.Output<outputs.UserAccessControlPolicyReferenceList[]>;
     /**
      * The version of the API.
      */
-    public /*out*/ readonly apiVersion!: pulumi.Output<string>;
+    declare public /*out*/ readonly apiVersion: pulumi.Output<string>;
     /**
      * - (Optional) Categories for the Access Control Policy.
      */
-    public readonly categories!: pulumi.Output<outputs.UserCategory[]>;
+    declare public readonly categories: pulumi.Output<outputs.UserCategory[]>;
     /**
      * - (Optional) The directory service user configuration. See below for more information.
      */
-    public readonly directoryServiceUser!: pulumi.Output<outputs.UserDirectoryServiceUser>;
+    declare public readonly directoryServiceUser: pulumi.Output<outputs.UserDirectoryServiceUser>;
     /**
      * - The display name of the user (common name) provided by the directory service.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    declare public /*out*/ readonly displayName: pulumi.Output<string>;
     /**
      * - (Optional) (Optional) The identity provider user configuration. See below for more information.
      */
-    public readonly identityProviderUser!: pulumi.Output<outputs.UserIdentityProviderUser>;
+    declare public readonly identityProviderUser: pulumi.Output<outputs.UserIdentityProviderUser>;
     /**
      * - The vm kind metadata.
      */
-    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
+    declare public /*out*/ readonly metadata: pulumi.Output<{[key: string]: string}>;
     /**
      * - the name(Optional).
      */
-    public /*out*/ readonly name!: pulumi.Output<string>;
+    declare public /*out*/ readonly name: pulumi.Output<string>;
     /**
      * - (Optional) The reference to a user.
      */
-    public readonly ownerReference!: pulumi.Output<{[key: string]: string}>;
+    declare public readonly ownerReference: pulumi.Output<{[key: string]: string}>;
     /**
      * - (Optional) The reference to a project.
      */
-    public readonly projectReference!: pulumi.Output<{[key: string]: string} | undefined>;
+    declare public readonly projectReference: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * - A list of projects the user is part of. See #reference for more details.
      */
-    public /*out*/ readonly projectReferenceLists!: pulumi.Output<outputs.UserProjectReferenceList[]>;
+    declare public /*out*/ readonly projectReferenceLists: pulumi.Output<outputs.UserProjectReferenceList[]>;
     /**
      * - The state of the entity.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * - The name of the user.
      */
-    public /*out*/ readonly userType!: pulumi.Output<string>;
+    declare public /*out*/ readonly userType: pulumi.Output<string>;
 
     /**
      * Create a User resource with the given unique name, arguments, and options.
@@ -129,26 +129,26 @@ export class User extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UserState | undefined;
-            resourceInputs["accessControlPolicyReferenceLists"] = state ? state.accessControlPolicyReferenceLists : undefined;
-            resourceInputs["apiVersion"] = state ? state.apiVersion : undefined;
-            resourceInputs["categories"] = state ? state.categories : undefined;
-            resourceInputs["directoryServiceUser"] = state ? state.directoryServiceUser : undefined;
-            resourceInputs["displayName"] = state ? state.displayName : undefined;
-            resourceInputs["identityProviderUser"] = state ? state.identityProviderUser : undefined;
-            resourceInputs["metadata"] = state ? state.metadata : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["ownerReference"] = state ? state.ownerReference : undefined;
-            resourceInputs["projectReference"] = state ? state.projectReference : undefined;
-            resourceInputs["projectReferenceLists"] = state ? state.projectReferenceLists : undefined;
-            resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["userType"] = state ? state.userType : undefined;
+            resourceInputs["accessControlPolicyReferenceLists"] = state?.accessControlPolicyReferenceLists;
+            resourceInputs["apiVersion"] = state?.apiVersion;
+            resourceInputs["categories"] = state?.categories;
+            resourceInputs["directoryServiceUser"] = state?.directoryServiceUser;
+            resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["identityProviderUser"] = state?.identityProviderUser;
+            resourceInputs["metadata"] = state?.metadata;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["ownerReference"] = state?.ownerReference;
+            resourceInputs["projectReference"] = state?.projectReference;
+            resourceInputs["projectReferenceLists"] = state?.projectReferenceLists;
+            resourceInputs["state"] = state?.state;
+            resourceInputs["userType"] = state?.userType;
         } else {
             const args = argsOrState as UserArgs | undefined;
-            resourceInputs["categories"] = args ? args.categories : undefined;
-            resourceInputs["directoryServiceUser"] = args ? args.directoryServiceUser : undefined;
-            resourceInputs["identityProviderUser"] = args ? args.identityProviderUser : undefined;
-            resourceInputs["ownerReference"] = args ? args.ownerReference : undefined;
-            resourceInputs["projectReference"] = args ? args.projectReference : undefined;
+            resourceInputs["categories"] = args?.categories;
+            resourceInputs["directoryServiceUser"] = args?.directoryServiceUser;
+            resourceInputs["identityProviderUser"] = args?.identityProviderUser;
+            resourceInputs["ownerReference"] = args?.ownerReference;
+            resourceInputs["projectReference"] = args?.projectReference;
             resourceInputs["accessControlPolicyReferenceLists"] = undefined /*out*/;
             resourceInputs["apiVersion"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
