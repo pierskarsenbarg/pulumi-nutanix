@@ -10,7 +10,7 @@ replace (
 )
 
 require (
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.111.0
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.112.0
 	github.com/pulumi/pulumi/sdk/v3 v3.185.0
 	github.com/terraform-providers/terraform-provider-nutanix v1.9.6-0.20250630105412-87ed6118a50a
 )
