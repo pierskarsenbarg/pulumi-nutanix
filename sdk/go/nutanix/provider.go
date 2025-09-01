@@ -18,9 +18,10 @@ import (
 type Provider struct {
 	pulumi.ProviderResourceState
 
-	// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP note, this is never the data services VIP, and should not be an
-	// individual CVM address, as this would cause calls to fail during cluster lifecycle management operations, such as AOS
-	// upgrades.
+	// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
+	// note, this is never the data services VIP, and should not be an
+	// individual CVM address, as this would cause calls to fail during
+	// cluster lifecycle management operations, such as AOS upgrades.
 	Endpoint pulumi.StringPtrOutput `pulumi:"endpoint"`
 	// endpoint for foundation VM (eg. Foundation VM IP)
 	FoundationEndpoint pulumi.StringPtrOutput `pulumi:"foundationEndpoint"`
@@ -35,7 +36,8 @@ type Provider struct {
 	// Port for Nutanix Prism.
 	Port     pulumi.StringPtrOutput `pulumi:"port"`
 	ProxyUrl pulumi.StringPtrOutput `pulumi:"proxyUrl"`
-	// User name for Nutanix Prism. Could be local cluster auth (e.g. 'admin') or directory auth.
+	// User name for Nutanix Prism. Could be
+	// local cluster auth (e.g. 'admin') or directory auth.
 	Username pulumi.StringPtrOutput `pulumi:"username"`
 }
 
@@ -56,9 +58,10 @@ func NewProvider(ctx *pulumi.Context,
 }
 
 type providerArgs struct {
-	// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP note, this is never the data services VIP, and should not be an
-	// individual CVM address, as this would cause calls to fail during cluster lifecycle management operations, such as AOS
-	// upgrades.
+	// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
+	// note, this is never the data services VIP, and should not be an
+	// individual CVM address, as this would cause calls to fail during
+	// cluster lifecycle management operations, such as AOS upgrades.
 	Endpoint *string `pulumi:"endpoint"`
 	// endpoint for foundation VM (eg. Foundation VM IP)
 	FoundationEndpoint *string `pulumi:"foundationEndpoint"`
@@ -77,7 +80,8 @@ type providerArgs struct {
 	ProxyUrl *string `pulumi:"proxyUrl"`
 	// Use session authentification instead of basic auth for each request
 	SessionAuth *bool `pulumi:"sessionAuth"`
-	// User name for Nutanix Prism. Could be local cluster auth (e.g. 'admin') or directory auth.
+	// User name for Nutanix Prism. Could be
+	// local cluster auth (e.g. 'admin') or directory auth.
 	Username *string `pulumi:"username"`
 	// Set if you know that the creation o update of a resource may take long time (minutes)
 	WaitTimeout *int `pulumi:"waitTimeout"`
@@ -85,9 +89,10 @@ type providerArgs struct {
 
 // The set of arguments for constructing a Provider resource.
 type ProviderArgs struct {
-	// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP note, this is never the data services VIP, and should not be an
-	// individual CVM address, as this would cause calls to fail during cluster lifecycle management operations, such as AOS
-	// upgrades.
+	// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
+	// note, this is never the data services VIP, and should not be an
+	// individual CVM address, as this would cause calls to fail during
+	// cluster lifecycle management operations, such as AOS upgrades.
 	Endpoint pulumi.StringPtrInput
 	// endpoint for foundation VM (eg. Foundation VM IP)
 	FoundationEndpoint pulumi.StringPtrInput
@@ -106,7 +111,8 @@ type ProviderArgs struct {
 	ProxyUrl pulumi.StringPtrInput
 	// Use session authentification instead of basic auth for each request
 	SessionAuth pulumi.BoolPtrInput
-	// User name for Nutanix Prism. Could be local cluster auth (e.g. 'admin') or directory auth.
+	// User name for Nutanix Prism. Could be
+	// local cluster auth (e.g. 'admin') or directory auth.
 	Username pulumi.StringPtrInput
 	// Set if you know that the creation o update of a resource may take long time (minutes)
 	WaitTimeout pulumi.IntPtrInput
@@ -172,9 +178,10 @@ func (o ProviderOutput) ToProviderOutputWithContext(ctx context.Context) Provide
 	return o
 }
 
-// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP note, this is never the data services VIP, and should not be an
-// individual CVM address, as this would cause calls to fail during cluster lifecycle management operations, such as AOS
-// upgrades.
+// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
+// note, this is never the data services VIP, and should not be an
+// individual CVM address, as this would cause calls to fail during
+// cluster lifecycle management operations, such as AOS upgrades.
 func (o ProviderOutput) Endpoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.Endpoint }).(pulumi.StringPtrOutput)
 }
@@ -216,7 +223,8 @@ func (o ProviderOutput) ProxyUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.ProxyUrl }).(pulumi.StringPtrOutput)
 }
 
-// User name for Nutanix Prism. Could be local cluster auth (e.g. 'admin') or directory auth.
+// User name for Nutanix Prism. Could be
+// local cluster auth (e.g. 'admin') or directory auth.
 func (o ProviderOutput) Username() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.Username }).(pulumi.StringPtrOutput)
 }

@@ -20,9 +20,10 @@ namespace PiersKarsenbarg.Nutanix
     public partial class Provider : global::Pulumi.ProviderResource
     {
         /// <summary>
-        /// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP note, this is never the data services VIP, and should not be an
-        /// individual CVM address, as this would cause calls to fail during cluster lifecycle management operations, such as AOS
-        /// upgrades.
+        /// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
+        /// note, this is never the data services VIP, and should not be an
+        /// individual CVM address, as this would cause calls to fail during
+        /// cluster lifecycle management operations, such as AOS upgrades.
         /// </summary>
         [Output("endpoint")]
         public Output<string?> Endpoint { get; private set; } = null!;
@@ -67,7 +68,8 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string?> ProxyUrl { get; private set; } = null!;
 
         /// <summary>
-        /// User name for Nutanix Prism. Could be local cluster auth (e.g. 'admin') or directory auth.
+        /// User name for Nutanix Prism. Could be
+        /// local cluster auth (e.g. 'admin') or directory auth.
         /// </summary>
         [Output("username")]
         public Output<string?> Username { get; private set; } = null!;
@@ -108,9 +110,10 @@ namespace PiersKarsenbarg.Nutanix
     public sealed class ProviderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP note, this is never the data services VIP, and should not be an
-        /// individual CVM address, as this would cause calls to fail during cluster lifecycle management operations, such as AOS
-        /// upgrades.
+        /// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
+        /// note, this is never the data services VIP, and should not be an
+        /// individual CVM address, as this would cause calls to fail during
+        /// cluster lifecycle management operations, such as AOS upgrades.
         /// </summary>
         [Input("endpoint")]
         public Input<string>? Endpoint { get; set; }
@@ -167,7 +170,8 @@ namespace PiersKarsenbarg.Nutanix
         public Input<bool>? SessionAuth { get; set; }
 
         /// <summary>
-        /// User name for Nutanix Prism. Could be local cluster auth (e.g. 'admin') or directory auth.
+        /// User name for Nutanix Prism. Could be
+        /// local cluster auth (e.g. 'admin') or directory auth.
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }

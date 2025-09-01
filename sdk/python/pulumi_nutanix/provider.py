@@ -34,9 +34,10 @@ class ProviderArgs:
                  wait_timeout: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a Provider resource.
-        :param pulumi.Input[_builtins.str] endpoint: URL for Nutanix Prism (e.g IP or FQDN for cluster VIP note, this is never the data services VIP, and should not be an
-               individual CVM address, as this would cause calls to fail during cluster lifecycle management operations, such as AOS
-               upgrades.
+        :param pulumi.Input[_builtins.str] endpoint: URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
+               note, this is never the data services VIP, and should not be an
+               individual CVM address, as this would cause calls to fail during
+               cluster lifecycle management operations, such as AOS upgrades.
         :param pulumi.Input[_builtins.str] foundation_endpoint: endpoint for foundation VM (eg. Foundation VM IP)
         :param pulumi.Input[_builtins.str] foundation_port: Port for foundation VM
         :param pulumi.Input[_builtins.bool] insecure: Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is `false`
@@ -44,7 +45,8 @@ class ProviderArgs:
         :param pulumi.Input[_builtins.str] password: Password for provided user name.
         :param pulumi.Input[_builtins.str] port: Port for Nutanix Prism.
         :param pulumi.Input[_builtins.bool] session_auth: Use session authentification instead of basic auth for each request
-        :param pulumi.Input[_builtins.str] username: User name for Nutanix Prism. Could be local cluster auth (e.g. 'admin') or directory auth.
+        :param pulumi.Input[_builtins.str] username: User name for Nutanix Prism. Could be
+               local cluster auth (e.g. 'admin') or directory auth.
         :param pulumi.Input[_builtins.int] wait_timeout: Set if you know that the creation o update of a resource may take long time (minutes)
         """
         if endpoint is not None:
@@ -78,9 +80,10 @@ class ProviderArgs:
     @pulumi.getter
     def endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        URL for Nutanix Prism (e.g IP or FQDN for cluster VIP note, this is never the data services VIP, and should not be an
-        individual CVM address, as this would cause calls to fail during cluster lifecycle management operations, such as AOS
-        upgrades.
+        URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
+        note, this is never the data services VIP, and should not be an
+        individual CVM address, as this would cause calls to fail during
+        cluster lifecycle management operations, such as AOS upgrades.
         """
         return pulumi.get(self, "endpoint")
 
@@ -203,7 +206,8 @@ class ProviderArgs:
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        User name for Nutanix Prism. Could be local cluster auth (e.g. 'admin') or directory auth.
+        User name for Nutanix Prism. Could be
+        local cluster auth (e.g. 'admin') or directory auth.
         """
         return pulumi.get(self, "username")
 
@@ -252,9 +256,10 @@ class Provider(pulumi.ProviderResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] endpoint: URL for Nutanix Prism (e.g IP or FQDN for cluster VIP note, this is never the data services VIP, and should not be an
-               individual CVM address, as this would cause calls to fail during cluster lifecycle management operations, such as AOS
-               upgrades.
+        :param pulumi.Input[_builtins.str] endpoint: URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
+               note, this is never the data services VIP, and should not be an
+               individual CVM address, as this would cause calls to fail during
+               cluster lifecycle management operations, such as AOS upgrades.
         :param pulumi.Input[_builtins.str] foundation_endpoint: endpoint for foundation VM (eg. Foundation VM IP)
         :param pulumi.Input[_builtins.str] foundation_port: Port for foundation VM
         :param pulumi.Input[_builtins.bool] insecure: Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is `false`
@@ -262,7 +267,8 @@ class Provider(pulumi.ProviderResource):
         :param pulumi.Input[_builtins.str] password: Password for provided user name.
         :param pulumi.Input[_builtins.str] port: Port for Nutanix Prism.
         :param pulumi.Input[_builtins.bool] session_auth: Use session authentification instead of basic auth for each request
-        :param pulumi.Input[_builtins.str] username: User name for Nutanix Prism. Could be local cluster auth (e.g. 'admin') or directory auth.
+        :param pulumi.Input[_builtins.str] username: User name for Nutanix Prism. Could be
+               local cluster auth (e.g. 'admin') or directory auth.
         :param pulumi.Input[_builtins.int] wait_timeout: Set if you know that the creation o update of a resource may take long time (minutes)
         """
         ...
@@ -337,9 +343,10 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter
     def endpoint(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        URL for Nutanix Prism (e.g IP or FQDN for cluster VIP note, this is never the data services VIP, and should not be an
-        individual CVM address, as this would cause calls to fail during cluster lifecycle management operations, such as AOS
-        upgrades.
+        URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
+        note, this is never the data services VIP, and should not be an
+        individual CVM address, as this would cause calls to fail during
+        cluster lifecycle management operations, such as AOS upgrades.
         """
         return pulumi.get(self, "endpoint")
 
@@ -402,7 +409,8 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter
     def username(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        User name for Nutanix Prism. Could be local cluster auth (e.g. 'admin') or directory auth.
+        User name for Nutanix Prism. Could be
+        local cluster auth (e.g. 'admin') or directory auth.
         """
         return pulumi.get(self, "username")
 

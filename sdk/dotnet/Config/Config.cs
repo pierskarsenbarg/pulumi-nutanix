@@ -34,9 +34,10 @@ namespace PiersKarsenbarg.Nutanix
 
         private static readonly __Value<string?> _endpoint = new __Value<string?>(() => __config.Get("endpoint"));
         /// <summary>
-        /// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP note, this is never the data services VIP, and should not be an
-        /// individual CVM address, as this would cause calls to fail during cluster lifecycle management operations, such as AOS
-        /// upgrades.
+        /// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
+        /// note, this is never the data services VIP, and should not be an
+        /// individual CVM address, as this would cause calls to fail during
+        /// cluster lifecycle management operations, such as AOS upgrades.
         /// </summary>
         public static string? Endpoint
         {
@@ -137,7 +138,8 @@ namespace PiersKarsenbarg.Nutanix
 
         private static readonly __Value<string?> _username = new __Value<string?>(() => __config.Get("username"));
         /// <summary>
-        /// User name for Nutanix Prism. Could be local cluster auth (e.g. 'admin') or directory auth.
+        /// User name for Nutanix Prism. Could be
+        /// local cluster auth (e.g. 'admin') or directory auth.
         /// </summary>
         public static string? Username
         {
